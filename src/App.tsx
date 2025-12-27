@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router';
 import { DarkLayout, LightLayout } from '@/layouts/MainLayout';
 import { MobileMenu } from '@/components/ui/MobileMenu';
 import { useMenuState } from '@/hooks/useMenuState';
+import { UmamiAnalytics } from '@/components/analytics/UmamiAnalytics';
 
 // Critical path - keep eager
 import { MainWrappedPage } from '@/components/MainWrappedPage';
@@ -42,6 +43,7 @@ function MainWrappedRoute() {
 export default function App() {
   return (
     <BrowserRouter>
+      <UmamiAnalytics />
       <Suspense fallback={<PageLoader />}>
         <Routes>
           {/* Main page has special header behavior (scroll-based visibility) */}
