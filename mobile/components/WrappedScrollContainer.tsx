@@ -4,12 +4,11 @@
  * Shared component for both main wrapped and speaker wrapped.
  * Features:
  * - Full-screen snap pagination
- * - Animated progress bar
  * - Auto-scroll support
  * - Scroll locking during quizzes
  */
 
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo, useRef, useEffect } from 'react';
 import {
   View,
   FlatList,
@@ -19,16 +18,14 @@ import {
   Pressable,
   ListRenderItem,
   Platform,
+  InteractionManager,
+  ViewToken,
 } from 'react-native';
-import Animated, {
-  useAnimatedStyle,
-  withSpring,
-  useSharedValue,
-} from 'react-native-reanimated';
 import type { UseWrappedScrollReturn } from '../hooks/useWrappedScroll';
-import { SlideAnimationProvider } from '../contexts/SlideAnimationContext';
+import { useSlideStore } from '../stores/slideStore';
+import { useScreenWidth, useAvailableHeight } from '../stores/appStore';
 
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
+const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 // ─────────────────────────────────────────────────────────────
 // Types
@@ -53,6 +50,12 @@ interface WrappedScrollContainerProps<T> {
 // Component
 // ─────────────────────────────────────────────────────────────
 
+// Viewability config for tracking visible slides
+const viewabilityConfig = {
+  itemVisiblePercentThreshold: 50,
+  minimumViewTime: 100,
+};
+
 export function WrappedScrollContainer<T>({
   scrollState,
   items,
@@ -66,90 +69,125 @@ export function WrappedScrollContainer<T>({
     currentIndex,
     hasStarted,
     isScrollLocked,
-    progress,
     handleStart,
     handleMomentumScrollEnd,
   } = scrollState;
 
-  // Progress bar animation
-  const progressWidth = useSharedValue(0);
+  // Refs for stable callbacks (avoid wrappedRenderItem recreation)
+  const hasStartedRef = useRef(hasStarted);
+  hasStartedRef.current = hasStarted;
 
-  React.useEffect(() => {
-    progressWidth.value = withSpring(progress * 100, {
-      damping: 20,
-      stiffness: 100,
+  const handleStartRef = useRef(handleStart);
+  handleStartRef.current = handleStart;
+
+  // Get layout dimensions (primitive selectors prevent infinite re-render loops)
+  const screenWidth = useScreenWidth();
+  const availableHeight = useAvailableHeight();
+
+  // Get store actions via getState() - no subscription overhead since actions never change
+  const { setCurrentIndex, setVisibleIndices, setEffectsReady } =
+    useSlideStore.getState();
+
+  // Sync currentIndex to Zustand when it changes
+  useEffect(() => {
+    useSlideStore.getState().setCurrentIndex(currentIndex);
+  }, [currentIndex]);
+
+  // Defer effects loading - wait for initial render + interactions to complete
+  useEffect(() => {
+    const handle = InteractionManager.runAfterInteractions(() => {
+      // Add small delay to ensure initial paint is complete
+      setTimeout(() => {
+        useSlideStore.getState().setEffectsReady(true);
+      }, 150);
     });
-  }, [progress, progressWidth]);
+    return () => handle.cancel();
+  }, []);
 
-  const progressStyle = useAnimatedStyle(() => ({
-    width: `${progressWidth.value}%`,
-  }));
+  // Track visible slides for pausing off-screen animations
+  const onViewableItemsChanged = useRef(
+    ({ viewableItems }: { viewableItems: ViewToken[] }) => {
+      const indices = viewableItems
+        .map((item) => item.index)
+        .filter((index): index is number => index !== null);
+      setVisibleIndices(indices);
+    }
+  ).current;
 
-  // Wrapped render item with start handler
+  // Slide wrapper style with dynamic height
+  const slideWrapperStyle = useMemo(
+    () => ({
+      width: screenWidth,
+      height: availableHeight,
+    }),
+    [screenWidth, availableHeight]
+  );
+
+  // Wrapped render item with start handler - STABLE via refs
   const wrappedRenderItem = useCallback<ListRenderItem<T>>(
     (info) => {
       const isFirstItem = info.index === 0;
-      const shouldHandlePress = startOnFirstItemPress && isFirstItem && !hasStarted;
+      const shouldHandlePress =
+        startOnFirstItemPress && isFirstItem && !hasStartedRef.current;
 
       return (
         <Pressable
-          style={styles.slideWrapper}
-          onPress={shouldHandlePress ? handleStart : undefined}
+          style={slideWrapperStyle}
+          onPress={shouldHandlePress ? () => handleStartRef.current() : undefined}
         >
           {renderItem(info)}
         </Pressable>
       );
     },
-    [renderItem, hasStarted, handleStart, startOnFirstItemPress]
+    [renderItem, startOnFirstItemPress, slideWrapperStyle]
+    // hasStarted and handleStart now via refs - no dependency churn!
   );
 
   // Get item layout for optimization
   const getItemLayout = useCallback(
     (_: any, index: number) => ({
-      length: SCREEN_HEIGHT,
-      offset: SCREEN_HEIGHT * index,
+      length: availableHeight,
+      offset: availableHeight * index,
       index,
     }),
-    []
+    [availableHeight]
   );
 
   return (
-    <SlideAnimationProvider currentIndex={currentIndex}>
-      <View style={styles.container}>
-        <StatusBar barStyle="light-content" hidden={hideStatusBar} />
+    <View style={styles.container}>
+      <StatusBar barStyle="light-content" hidden={hideStatusBar} />
 
-        {/* Progress Bar */}
-        {hasStarted && (
-          <View style={styles.progressContainer}>
-            <Animated.View style={[styles.progressBar, progressStyle]} />
-          </View>
-        )}
-
-        {/* Slides */}
-        <FlatList
-          ref={flatListRef}
-          data={items}
-          renderItem={wrappedRenderItem}
-          keyExtractor={keyExtractor}
-          getItemLayout={getItemLayout}
-          extraData={currentIndex}
-          pagingEnabled
-          showsVerticalScrollIndicator={false}
-          snapToInterval={SCREEN_HEIGHT}
-          snapToAlignment="start"
-          decelerationRate="fast"
-          onMomentumScrollEnd={handleMomentumScrollEnd}
-          scrollEnabled={!isScrollLocked}
-          bounces={false}
-          initialNumToRender={2}
-          maxToRenderPerBatch={3}
-          windowSize={5}
-          // Android: Enable to unmount off-screen slides (saves memory & stops animations)
-          // iOS: Keep false as it can cause visual glitches with complex animations
-          removeClippedSubviews={Platform.OS === 'android'}
-        />
-      </View>
-    </SlideAnimationProvider>
+      {/* Slides */}
+      <FlatList
+        ref={flatListRef}
+        data={items}
+        renderItem={wrappedRenderItem}
+        keyExtractor={keyExtractor}
+        getItemLayout={getItemLayout}
+        pagingEnabled
+        showsVerticalScrollIndicator={false}
+        snapToInterval={availableHeight}
+        snapToAlignment="start"
+        decelerationRate="fast"
+        onMomentumScrollEnd={handleMomentumScrollEnd}
+        scrollEnabled={!isScrollLocked}
+        bounces={false}
+        // Performance optimizations
+        // - initialNumToRender: Start with 1 slide for fast initial paint
+        // - maxToRenderPerBatch: Render 1 at a time for memory efficiency
+        // - windowSize: 5 slides (2 before + current + 2 after) for smooth scrolling
+        // - updateCellsBatchingPeriod: Batch updates every 50ms to reduce JS thread work
+        initialNumToRender={1}
+        maxToRenderPerBatch={1}
+        windowSize={5}
+        updateCellsBatchingPeriod={50}
+        // Visibility tracking for pausing off-screen animations
+        viewabilityConfig={viewabilityConfig}
+        onViewableItemsChanged={onViewableItemsChanged}
+        // Disabled: removeClippedSubviews causes black flashes during fast scrolling
+        removeClippedSubviews={false}
+      />
+    </View>
   );
 }
 
@@ -161,22 +199,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#0a0a0a',
-  },
-  slideWrapper: {
-    width: SCREEN_WIDTH,
-    height: SCREEN_HEIGHT,
-  },
-  progressContainer: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    height: 3,
-    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-    zIndex: 100,
-  },
-  progressBar: {
-    height: '100%',
-    backgroundColor: '#ffffff',
   },
 });

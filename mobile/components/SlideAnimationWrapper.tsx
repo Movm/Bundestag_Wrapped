@@ -5,18 +5,15 @@
  * the slide becomes the current visible slide.
  */
 
-import React, { useEffect } from 'react';
-import { StyleSheet, Dimensions } from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { StyleSheet } from 'react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
   withTiming,
-  withSpring,
   withDelay,
 } from 'react-native-reanimated';
-import { useSlideAnimationContext } from '../contexts/SlideAnimationContext';
-
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
+import { useSlideActive } from '../stores/slideStore';
 
 interface SlideAnimationWrapperProps {
   index: number;
@@ -24,25 +21,24 @@ interface SlideAnimationWrapperProps {
 }
 
 export function SlideAnimationWrapper({ index, children }: SlideAnimationWrapperProps) {
-  const { currentIndex } = useSlideAnimationContext();
-  const isCurrent = index === currentIndex;
+  // Use Zustand selector - only re-renders when THIS slide's active state changes
+  const isCurrent = useSlideActive(index);
+  const hasAnimated = useRef(false);
 
-  // Animation values
+  // Animation values - start visible for first slide, hidden for others
   const opacity = useSharedValue(index === 0 ? 1 : 0);
   const translateY = useSharedValue(index === 0 ? 0 : 20);
 
   // Trigger animation when slide becomes current
   useEffect(() => {
-    if (isCurrent) {
-      // Small delay to ensure layout is ready
+    if (isCurrent && !hasAnimated.current) {
+      hasAnimated.current = true;
+      // Animate in
       opacity.value = withDelay(50, withTiming(1, { duration: 300 }));
       translateY.value = withDelay(50, withTiming(0, { duration: 350 }));
-    } else {
-      // Reset for next time (but don't animate out)
-      opacity.value = 0;
-      translateY.value = 20;
     }
-  }, [isCurrent]);
+    // Don't reset opacity when slide is no longer current - prevents black flash
+  }, [isCurrent, opacity, translateY]);
 
   const animatedStyle = useAnimatedStyle(() => ({
     opacity: opacity.value,
@@ -58,7 +54,6 @@ export function SlideAnimationWrapper({ index, children }: SlideAnimationWrapper
 
 const styles = StyleSheet.create({
   wrapper: {
-    width: SCREEN_WIDTH,
-    height: SCREEN_HEIGHT,
+    flex: 1,
   },
 });

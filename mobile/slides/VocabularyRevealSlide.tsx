@@ -1,86 +1,50 @@
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions, Pressable } from 'react-native';
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withRepeat,
-  withSequence,
-  withTiming,
-  ZoomIn,
-} from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
-import { LinearGradient } from 'expo-linear-gradient';
 import type { PartyStats } from '@/data/wrapped';
-import { getPartyColor } from '@/lib/party-colors';
-import { FLOAT_ANIMATIONS, BUBBLE_POSITIONS } from '@/shared/animations/timings';
+import { getPartyColor, BUBBLE_POSITIONS } from '@/shared';
 import {
   SlideContainer,
   SlideHeader,
   bubbleAnimations,
   rotateInStaggerEntering,
 } from './shared';
+import { useAvailableHeight, useTopInset } from '../stores/appStore';
+import { useDeferredRender } from '../hooks/useDeferredRender';
+import { useTop5Parties } from '../stores/precomputedDataStore';
+import { SkiaBubbles, BubbleConfig } from '../components/SkiaBubbles';
 
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
+const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 // ─────────────────────────────────────────────────────────────
 // Types
 // ─────────────────────────────────────────────────────────────
 
 interface VocabularyRevealSlideProps {
-  parties: PartyStats[];
+  slideIndex: number;
 }
 
 // ─────────────────────────────────────────────────────────────
-// Party Bubble Component
+// Party Bubble Overlay Component (text + tap handling only)
 // ─────────────────────────────────────────────────────────────
 
-interface PartyBubbleProps {
+interface PartyBubbleOverlayProps {
   party: PartyStats;
   index: number;
   position: { top: number; left: number };
+  availableHeight: number;
 }
 
 const BUBBLE_SIZE = Math.min(SCREEN_WIDTH * 0.35, 160);
 
-const PartyBubble = React.memo(function PartyBubble({ party, index, position }: PartyBubbleProps) {
+const PartyBubbleOverlay = React.memo(function PartyBubbleOverlay({
+  party,
+  index,
+  position,
+  availableHeight,
+}: PartyBubbleOverlayProps) {
   const [isFlipped, setIsFlipped] = React.useState(false);
-  const floatConfig = FLOAT_ANIMATIONS[index] || FLOAT_ANIMATIONS[0];
-
-  // Float animation - shared values are stable refs
-  const translateX = useSharedValue(0);
-  const translateY = useSharedValue(0);
-
-  // Memoize gradient colors
-  const gradientColors = React.useMemo(
-    () => [getPartyColor(party.party) + 'cc', getPartyColor(party.party)] as const,
-    [party.party]
-  );
-
-  React.useEffect(() => {
-    const duration = floatConfig.duration;
-    translateX.value = withRepeat(
-      withSequence(
-        withTiming(floatConfig.x[1], { duration: duration / 4 }),
-        withTiming(floatConfig.x[2], { duration: duration / 4 }),
-        withTiming(floatConfig.x[3], { duration: duration / 2 })
-      ),
-      -1,
-      true
-    );
-    translateY.value = withRepeat(
-      withSequence(
-        withTiming(floatConfig.y[1], { duration: duration / 4 }),
-        withTiming(floatConfig.y[2], { duration: duration / 4 }),
-        withTiming(floatConfig.y[3], { duration: duration / 2 })
-      ),
-      -1,
-      true
-    );
-  }, [floatConfig]);
-
-  const floatStyle = useAnimatedStyle(() => ({
-    transform: [{ translateX: translateX.value }, { translateY: translateY.value }],
-  }));
 
   const handlePress = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -94,46 +58,35 @@ const PartyBubble = React.memo(function PartyBubble({ party, index, position }: 
     <Animated.View
       entering={rotateInStaggerEntering(index, 200)}
       style={[
-        styles.bubbleContainer,
+        styles.bubbleOverlay,
         {
-          top: SCREEN_HEIGHT * (position.top / 100),
+          top: availableHeight * (position.top / 100),
           left: SCREEN_WIDTH * (position.left / 100),
         },
       ]}
     >
-      <Animated.View style={floatStyle}>
-        <Pressable onPress={handlePress}>
-          <LinearGradient
-            colors={gradientColors}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            style={styles.bubble}
-          >
-            {!isFlipped ? (
-              // Front - signature word
-              <View style={styles.bubbleContent}>
-                <Text style={styles.signatureWord}>{signatureWord?.word ?? '–'}</Text>
-              </View>
-            ) : (
-              // Back - party name + top words
-              <View style={styles.bubbleBackContent}>
-                <Text style={styles.partyTitle}>{party.party}</Text>
-                <View style={styles.wordList}>
-                  {backWords.map((w, i) => (
-                    <Text
-                      key={w.word}
-                      style={[styles.wordItem, i === 0 && styles.wordItemFirst]}
-                      numberOfLines={1}
-                    >
-                      {w.word}
-                    </Text>
-                  ))}
-                </View>
-              </View>
-            )}
-          </LinearGradient>
-        </Pressable>
-      </Animated.View>
+      <Pressable onPress={handlePress} style={styles.bubblePressable}>
+        {!isFlipped ? (
+          <View style={styles.bubbleContent}>
+            <Text style={styles.signatureWord}>{signatureWord?.word ?? '–'}</Text>
+          </View>
+        ) : (
+          <View style={styles.bubbleBackContent}>
+            <Text style={styles.partyTitle}>{party.party}</Text>
+            <View style={styles.wordList}>
+              {backWords.map((w, i) => (
+                <Text
+                  key={w.word}
+                  style={[styles.wordItem, i === 0 && styles.wordItemFirst]}
+                  numberOfLines={1}
+                >
+                  {w.word}
+                </Text>
+              ))}
+            </View>
+          </View>
+        )}
+      </Pressable>
     </Animated.View>
   );
 });
@@ -142,17 +95,34 @@ const PartyBubble = React.memo(function PartyBubble({ party, index, position }: 
 // Main Component
 // ─────────────────────────────────────────────────────────────
 
-export function VocabularyRevealSlide({ parties }: VocabularyRevealSlideProps) {
-  // Filter out fraktionslos and get top 5
-  const topParties = React.useMemo(
-    () => parties.filter((p) => p.party !== 'fraktionslos').slice(0, 5),
-    [parties]
-  );
+export function VocabularyRevealSlide({ slideIndex }: VocabularyRevealSlideProps) {
+  const availableHeight = useAvailableHeight();
+  const topInset = useTopInset();
+
+  // Defer bubble rendering until 300ms after slide becomes visible
+  // This allows header to appear first for faster perceived start
+  const showBubbles = useDeferredRender(slideIndex, 300);
+
+  // Use precomputed top 5 parties from store (computed once on mount)
+  const topParties = useTop5Parties();
+
+  // Create bubble configs for Skia Canvas
+  const bubbleConfigs = React.useMemo<BubbleConfig[]>(() => {
+    return topParties.map((party, i) => {
+      const pos = BUBBLE_POSITIONS.fiveItems[i];
+      return {
+        x: SCREEN_WIDTH * (pos.left / 100) + BUBBLE_SIZE / 2,
+        y: availableHeight * (pos.top / 100) + BUBBLE_SIZE / 2,
+        size: BUBBLE_SIZE,
+        color: getPartyColor(party.party),
+      };
+    });
+  }, [topParties, availableHeight]);
 
   return (
-    <SlideContainer>
-      {/* Header */}
-      <View style={styles.header}>
+    <SlideContainer slideId="reveal-vocabulary">
+      {/* Header - renders immediately, positioned below safe area */}
+      <View style={[styles.header, { top: topInset + 16 }]}>
         <SlideHeader
           emoji="📚"
           title="Partei-Vokabular"
@@ -160,20 +130,28 @@ export function VocabularyRevealSlide({ parties }: VocabularyRevealSlideProps) {
         />
       </View>
 
-      {/* Party Bubbles */}
-      {topParties.map((party, i) => (
-        <PartyBubble
+      {/* Skia Canvas - static gradient backgrounds */}
+      {showBubbles && (
+        <SkiaBubbles bubbles={bubbleConfigs} />
+      )}
+
+      {/* Native overlays - text + tap handling */}
+      {showBubbles && topParties.map((party, i) => (
+        <PartyBubbleOverlay
           key={party.party}
           party={party}
           index={i}
           position={BUBBLE_POSITIONS.fiveItems[i]}
+          availableHeight={availableHeight}
         />
       ))}
 
-      {/* Hint */}
-      <Animated.Text entering={bubbleAnimations.hint()} style={styles.hint}>
-        Tippe auf eine Blase für Details
-      </Animated.Text>
+      {/* Hint - deferred with bubbles */}
+      {showBubbles && (
+        <Animated.Text entering={bubbleAnimations.hint()} style={styles.hint}>
+          Tippe auf eine Blase für Details
+        </Animated.Text>
+      )}
     </SlideContainer>
   );
 }
@@ -185,27 +163,20 @@ export function VocabularyRevealSlide({ parties }: VocabularyRevealSlideProps) {
 const styles = StyleSheet.create({
   header: {
     position: 'absolute',
-    top: 40,
     left: 0,
     right: 0,
     zIndex: 10,
   },
-  bubbleContainer: {
+  bubbleOverlay: {
     position: 'absolute',
     width: BUBBLE_SIZE,
     height: BUBBLE_SIZE,
   },
-  bubble: {
-    width: BUBBLE_SIZE,
-    height: BUBBLE_SIZE,
-    borderRadius: BUBBLE_SIZE / 2,
+  bubblePressable: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.3,
-    shadowRadius: 16,
-    elevation: 8,
+    borderRadius: BUBBLE_SIZE / 2,
   },
   bubbleContent: {
     alignItems: 'center',
@@ -251,7 +222,7 @@ const styles = StyleSheet.create({
   },
   hint: {
     position: 'absolute',
-    bottom: 60,
+    bottom: 24,
     left: 0,
     right: 0,
     textAlign: 'center',

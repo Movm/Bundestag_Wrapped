@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Animated, { ZoomIn, FadeIn } from 'react-native-reanimated';
 import { SlideContainer, SlideHeader } from './shared';
+import { useTopInset } from '../stores/appStore';
 
 // ─────────────────────────────────────────────────────────────
 // Constants
@@ -34,10 +35,12 @@ interface CommonWordsRevealSlideProps {
 // ─────────────────────────────────────────────────────────────
 
 export function CommonWordsRevealSlide({ hotTopics }: CommonWordsRevealSlideProps) {
+  const topInset = useTopInset();
+
   return (
-    <SlideContainer>
+    <SlideContainer slideId="reveal-common-words">
       {/* Header */}
-      <View style={styles.header}>
+      <View style={[styles.header, { top: topInset + 40 }]}>
         <SlideHeader
           emoji="📊"
           title="Häufigste Wörter"
@@ -87,7 +90,6 @@ export function CommonWordsRevealSlide({ hotTopics }: CommonWordsRevealSlideProp
 const styles = StyleSheet.create({
   header: {
     position: 'absolute',
-    top: 40,
     left: 0,
     right: 0,
     zIndex: 10,

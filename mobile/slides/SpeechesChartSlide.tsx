@@ -1,19 +1,9 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, Dimensions, Pressable } from 'react-native';
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withRepeat,
-  withSequence,
-  withTiming,
-  ZoomIn,
-  FadeInDown,
-} from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
-import { LinearGradient } from 'expo-linear-gradient';
 import type { PartyStats } from '@/data/wrapped';
-import { getPartyColor } from '@/lib/party-colors';
-import { FLOAT_ANIMATIONS, BUBBLE_POSITIONS } from '@/shared/animations/timings';
+import { getPartyColor, BUBBLE_POSITIONS } from '@/shared';
 import {
   SlideContainer,
   bubbleAnimations,
@@ -22,67 +12,41 @@ import {
   fadeInEntering,
   bouncyStaggerEntering,
 } from './shared';
+import { useAppStore, useTopInset } from '../stores/appStore';
+import { useDeferredRender } from '../hooks/useDeferredRender';
+import { useTop5Parties, useSpeechBubbleSizes, useTotalSpeeches } from '../stores/precomputedDataStore';
+import { SkiaBubbles, BubbleConfig } from '../components/SkiaBubbles';
 
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
+const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 // ─────────────────────────────────────────────────────────────
 // Types
 // ─────────────────────────────────────────────────────────────
 
 interface SpeechesChartSlideProps {
-  parties: PartyStats[];
+  slideIndex: number;
 }
 
 // ─────────────────────────────────────────────────────────────
-// Speech Bubble Component
+// Bubble Overlay Component (text + tap handling only)
 // ─────────────────────────────────────────────────────────────
 
-interface SpeechBubbleProps {
+interface BubbleOverlayProps {
   party: PartyStats;
   index: number;
   position: { top: number; left: number };
   bubbleSize: number;
+  availableHeight: number;
 }
 
-const SpeechBubble = React.memo(function SpeechBubble({ party, index, position, bubbleSize }: SpeechBubbleProps) {
+const BubbleOverlay = React.memo(function BubbleOverlay({
+  party,
+  index,
+  position,
+  bubbleSize,
+  availableHeight,
+}: BubbleOverlayProps) {
   const [isFlipped, setIsFlipped] = React.useState(false);
-  const floatConfig = FLOAT_ANIMATIONS[index] || FLOAT_ANIMATIONS[0];
-
-  // Float animation - shared values are stable refs
-  const translateX = useSharedValue(0);
-  const translateY = useSharedValue(0);
-
-  // Memoize gradient colors
-  const gradientColors = React.useMemo(
-    () => [getPartyColor(party.party) + 'cc', getPartyColor(party.party)] as const,
-    [party.party]
-  );
-
-  React.useEffect(() => {
-    const duration = floatConfig.duration;
-    translateX.value = withRepeat(
-      withSequence(
-        withTiming(floatConfig.x[1], { duration: duration / 4 }),
-        withTiming(floatConfig.x[2], { duration: duration / 4 }),
-        withTiming(floatConfig.x[3], { duration: duration / 2 })
-      ),
-      -1,
-      true
-    );
-    translateY.value = withRepeat(
-      withSequence(
-        withTiming(floatConfig.y[1], { duration: duration / 4 }),
-        withTiming(floatConfig.y[2], { duration: duration / 4 }),
-        withTiming(floatConfig.y[3], { duration: duration / 2 })
-      ),
-      -1,
-      true
-    );
-  }, [floatConfig]);
-
-  const floatStyle = useAnimatedStyle(() => ({
-    transform: [{ translateX: translateX.value }, { translateY: translateY.value }],
-  }));
 
   const handlePress = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -93,44 +57,36 @@ const SpeechBubble = React.memo(function SpeechBubble({ party, index, position, 
     <Animated.View
       entering={bouncyStaggerEntering(index, 200)}
       style={[
-        styles.bubbleContainer,
+        styles.bubbleOverlay,
         {
-          top: SCREEN_HEIGHT * (position.top / 100),
+          top: availableHeight * (position.top / 100),
           left: SCREEN_WIDTH * (position.left / 100),
           width: bubbleSize,
           height: bubbleSize,
         },
       ]}
     >
-      <Animated.View style={floatStyle}>
-        <Pressable onPress={handlePress}>
-          <LinearGradient
-            colors={gradientColors}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            style={[styles.bubble, { width: bubbleSize, height: bubbleSize, borderRadius: bubbleSize / 2 }]}
-          >
-            {!isFlipped ? (
-              // Front - speech count
-              <View style={styles.bubbleContent}>
-                <Text style={styles.speechCount}>
-                  {party.speeches.toLocaleString('de-DE')}
-                </Text>
-                <Text style={styles.speechLabel}>Reden</Text>
-              </View>
-            ) : (
-              // Back - party name + wortbeitraege
-              <View style={styles.bubbleBackContent}>
-                <Text style={styles.partyTitle}>{party.party}</Text>
-                <Text style={styles.wortCount}>
-                  {party.wortbeitraege.toLocaleString('de-DE')}
-                </Text>
-                <Text style={styles.wortLabel}>Wortbeiträge</Text>
-              </View>
-            )}
-          </LinearGradient>
-        </Pressable>
-      </Animated.View>
+      <Pressable
+        onPress={handlePress}
+        style={[styles.bubblePressable, { borderRadius: bubbleSize / 2 }]}
+      >
+        {!isFlipped ? (
+          <View style={styles.bubbleContent}>
+            <Text style={styles.speechCount}>
+              {party.speeches.toLocaleString('de-DE')}
+            </Text>
+            <Text style={styles.speechLabel}>Reden</Text>
+          </View>
+        ) : (
+          <View style={styles.bubbleBackContent}>
+            <Text style={styles.partyTitle}>{party.party}</Text>
+            <Text style={styles.wortCount}>
+              {party.wortbeitraege.toLocaleString('de-DE')}
+            </Text>
+            <Text style={styles.wortLabel}>Wortbeiträge</Text>
+          </View>
+        )}
+      </Pressable>
     </Animated.View>
   );
 });
@@ -139,37 +95,39 @@ const SpeechBubble = React.memo(function SpeechBubble({ party, index, position, 
 // Main Component
 // ─────────────────────────────────────────────────────────────
 
-export function SpeechesChartSlide({ parties }: SpeechesChartSlideProps) {
-  // Filter out fraktionslos and get top 5
-  const top5 = useMemo(
-    () => parties.filter((p) => p.party !== 'fraktionslos').slice(0, 5),
-    [parties]
-  );
+export function SpeechesChartSlide({ slideIndex }: SpeechesChartSlideProps) {
+  // Direct selector - avoids object creation that can cause re-render loops
+  const availableHeight = useAppStore((s) => s.availableHeight);
+  const topInset = useTopInset();
 
-  // Calculate bubble sizes based on speech counts
-  const { bubbleSizes, totalReden } = useMemo(() => {
-    const speeches = top5.map((p) => p.speeches);
-    const minSpeeches = Math.min(...speeches);
-    const speechRange = Math.max(...speeches) - minSpeeches || 1;
+  // Defer bubble rendering until 300ms after slide becomes visible
+  // This allows header to appear first for faster perceived start
+  const showBubbles = useDeferredRender(slideIndex, 300);
 
-    const minSize = SCREEN_WIDTH * 0.22;
-    const maxSize = SCREEN_WIDTH * 0.36;
+  // Use precomputed data from store (computed once on mount, O(1) access)
+  // Separate selectors prevent object creation that can cause re-render loops
+  const top5 = useTop5Parties();
+  const bubbleSizes = useSpeechBubbleSizes();
+  const totalReden = useTotalSpeeches();
 
-    const sizes = top5.map((p) => {
-      const sizePercent = (p.speeches - minSpeeches) / speechRange;
-      return minSize + sizePercent * (maxSize - minSize);
+  // Create bubble configs for Skia Canvas
+  const bubbleConfigs = React.useMemo<BubbleConfig[]>(() => {
+    return top5.map((party, i) => {
+      const pos = BUBBLE_POSITIONS.fiveItems[i];
+      const size = bubbleSizes[i];
+      return {
+        x: SCREEN_WIDTH * (pos.left / 100) + size / 2,
+        y: availableHeight * (pos.top / 100) + size / 2,
+        size,
+        color: getPartyColor(party.party),
+      };
     });
-
-    return {
-      bubbleSizes: sizes,
-      totalReden: top5.reduce((sum, p) => sum + p.speeches, 0),
-    };
-  }, [top5]);
+  }, [top5, bubbleSizes, availableHeight]);
 
   return (
-    <SlideContainer>
-      {/* Header */}
-      <View style={styles.header}>
+    <SlideContainer slideId="chart-speeches">
+      {/* Header - renders immediately */}
+      <View style={[styles.header, { top: topInset + 16 }]}>
         <Animated.Text entering={emojiPopEntering(0)} style={styles.emoji}>
           🎤
         </Animated.Text>
@@ -184,21 +142,27 @@ export function SpeechesChartSlide({ parties }: SpeechesChartSlideProps) {
         </Animated.Text>
       </View>
 
-      {/* Speech Bubbles */}
-      {top5.map((party, i) => (
-        <SpeechBubble
+      {/* Skia Canvas - static gradient backgrounds */}
+      {showBubbles && <SkiaBubbles bubbles={bubbleConfigs} />}
+
+      {/* Native overlays - text + tap handling */}
+      {showBubbles && top5.map((party, i) => (
+        <BubbleOverlay
           key={party.party}
           party={party}
           index={i}
           position={BUBBLE_POSITIONS.fiveItems[i]}
           bubbleSize={bubbleSizes[i]}
+          availableHeight={availableHeight}
         />
       ))}
 
-      {/* Hint */}
-      <Animated.Text entering={bubbleAnimations.hint()} style={styles.hint}>
-        Tippe auf eine Blase für Details
-      </Animated.Text>
+      {/* Hint - deferred with bubbles */}
+      {showBubbles && (
+        <Animated.Text entering={bubbleAnimations.hint()} style={styles.hint}>
+          Tippe auf eine Blase für Details
+        </Animated.Text>
+      )}
     </SlideContainer>
   );
 }
@@ -210,7 +174,6 @@ export function SpeechesChartSlide({ parties }: SpeechesChartSlideProps) {
 const styles = StyleSheet.create({
   header: {
     position: 'absolute',
-    top: 40,
     left: 0,
     right: 0,
     zIndex: 10,
@@ -242,17 +205,13 @@ const styles = StyleSheet.create({
     marginTop: 8,
     lineHeight: 16,
   },
-  bubbleContainer: {
+  bubbleOverlay: {
     position: 'absolute',
   },
-  bubble: {
+  bubblePressable: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.3,
-    shadowRadius: 16,
-    elevation: 8,
   },
   bubbleContent: {
     alignItems: 'center',
@@ -303,7 +262,7 @@ const styles = StyleSheet.create({
   },
   hint: {
     position: 'absolute',
-    bottom: 60,
+    bottom: 24,
     left: 0,
     right: 0,
     textAlign: 'center',

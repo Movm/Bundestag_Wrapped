@@ -10,11 +10,19 @@ import Animated, {
   withSpring,
 } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
-import { PARTY_COLORS, getPartyBgColor } from '@/lib/party-colors';
-import { playSound } from '@/lib/sounds';
+import { PARTY_COLORS, getPartyBgColor, getThemeConfig } from '@/shared';
+import { playSound } from '~/lib/sounds';
 import { SlideContainer } from './SlideContainer';
 import { Confetti } from './Confetti';
 import { quizAnimations, getQuizOptionDelay } from './animations';
+import { useQuizNumber } from '../../stores/quizStore';
+import { TOTAL_QUIZ_QUESTIONS } from '../../components/SlideRenderer';
+
+// Convert RGB string "r, g, b" to hex "#rrggbb"
+function rgbToHex(rgb: string): string {
+  const [r, g, b] = rgb.split(',').map((n) => parseInt(n.trim(), 10));
+  return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+}
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const BUTTON_GAP = 12;
@@ -55,7 +63,12 @@ interface SlideQuizProps {
   onComplete: () => void;
   title?: string;
   emoji?: string;
+  /** Optional badge text. If not provided, uses quiz store for "Frage X/Y" format */
   badge?: string;
+  /** If true, auto-generate badge from quiz store. Default: true */
+  useStoreBadge?: boolean;
+  /** Slide ID for themed background (e.g., 'quiz-topics') */
+  slideId?: string;
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -99,7 +112,13 @@ function isEmojiOption(option: string): boolean {
 // Overlay Components
 // ─────────────────────────────────────────────────────────────
 
-function SuccessOverlay({ onComplete }: { onComplete: () => void }) {
+function SuccessOverlay({
+  onComplete,
+  colors,
+}: {
+  onComplete: () => void;
+  colors?: string[];
+}) {
   React.useEffect(() => {
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     playSound('correct');
@@ -109,12 +128,12 @@ function SuccessOverlay({ onComplete }: { onComplete: () => void }) {
 
   return (
     <Modal transparent animationType="none">
-      <Animated.View entering={FadeIn.duration(200)} exiting={FadeOut} style={styles.overlay}>
+      <Animated.View entering={FadeIn.duration(50)} exiting={FadeOut} style={styles.overlay}>
         {/* Confetti celebration effect - full screen */}
-        <Confetti count={40} />
+        <Confetti count={20} colors={colors} />
 
         <Animated.View
-          entering={ZoomIn.duration(300)}
+          entering={ZoomIn.duration(100)}
           style={styles.overlayContent}
         >
           <Text style={styles.overlayEmoji}>🎉</Text>
@@ -141,8 +160,8 @@ function WrongOverlay({
 
   return (
     <Modal transparent animationType="none">
-      <Animated.View entering={FadeIn.duration(200)} exiting={FadeOut} style={styles.wrongOverlay}>
-        <Animated.View entering={ZoomIn.duration(300)} style={styles.overlayContent}>
+      <Animated.View entering={FadeIn.duration(50)} exiting={FadeOut} style={styles.wrongOverlay}>
+        <Animated.View entering={ZoomIn.duration(100)} style={styles.overlayContent}>
           <Text style={styles.overlayEmoji}>😅</Text>
           <Text style={styles.wrongText}>Nicht ganz...</Text>
           <View style={styles.explanationContainer}>
@@ -256,8 +275,14 @@ export function SlideQuiz({
   onComplete,
   title,
   emoji,
-  badge,
+  badge: badgeProp,
+  useStoreBadge = true,
+  slideId,
 }: SlideQuizProps) {
+  // Get quiz number from store for badge - only this component subscribes
+  const quizNumber = useQuizNumber();
+  const badge = badgeProp ?? (useStoreBadge ? `Frage ${quizNumber}/${TOTAL_QUIZ_QUESTIONS}` : undefined);
+
   const quiz = useMemo(() => normalizeQuizConfig(rawQuiz), [rawQuiz]);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
@@ -270,6 +295,18 @@ export function SlideQuiz({
     [quiz.options]
   );
 
+  // Get confetti colors from slide theme (like web)
+  const confettiColors = useMemo(() => {
+    if (!slideId) return undefined;
+    const config = getThemeConfig(slideId);
+    return [
+      rgbToHex(config.colors.primary),
+      rgbToHex(config.colors.secondary),
+      rgbToHex(config.colors.glow),
+      '#ffffff', // White accent
+    ];
+  }, [slideId]);
+
   const handleSelect = useCallback(
     (answer: string) => {
       if (showResult) return;
@@ -279,10 +316,8 @@ export function SlideQuiz({
       setShowResult(true);
       onAnswer(correct);
 
-      // Minimal delay so user sees the green/red button feedback first
-      setTimeout(() => {
-        setShowOverlay(true);
-      }, 50);
+      // Show overlay immediately
+      setShowOverlay(true);
     },
     [showResult, quiz.correctAnswer, onAnswer]
   );
@@ -294,9 +329,11 @@ export function SlideQuiz({
   }, [onComplete]);
 
   return (
-    <SlideContainer>
-      {/* Result overlays - delayed to show button feedback first */}
-      {showOverlay && isCorrect && <SuccessOverlay onComplete={handleOverlayComplete} />}
+    <SlideContainer slideId={slideId}>
+      {/* Result overlays */}
+      {showOverlay && isCorrect && (
+        <SuccessOverlay onComplete={handleOverlayComplete} colors={confettiColors} />
+      )}
       {showOverlay && !isCorrect && (
         <WrongOverlay explanation={quiz.explanation} onComplete={handleOverlayComplete} />
       )}

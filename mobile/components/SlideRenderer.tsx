@@ -4,6 +4,7 @@ import { useRouter } from 'expo-router';
 import type { WrappedData } from '@/data/wrapped';
 import { QUIZZES } from '@/data/quizzes';
 import { INFO_SLIDES } from '@/data/info-slides';
+import { INTRO_SLIDES } from '@/data/intro-slides';
 import {
   SlideIntro,
   SlideInfo,
@@ -156,116 +157,86 @@ function EndSlide({ onRestart }: { onRestart?: () => void }) {
 interface SlideRendererProps {
   slide: SlideType;
   data: WrappedData;
-  quizNumber: number;
-  correctCount: number;
-  isQuizAnswered: boolean;
+  /** Index of this slide in the FlatList - used for visibility-based optimizations */
+  slideIndex: number;
+  // Quiz state now lives in quizStore - components subscribe selectively
   onQuizAnswer: (isCorrect: boolean) => void;
-  onQuizEnter: () => void;
   onQuizComplete: () => void;
   onStart: () => void;
   onRestart?: () => void;
 }
 
+// Track render counts per slide (debug)
+const renderCounts = new Map<string, number>();
+const renderTimes = new Map<string, number>();
+
 export const SlideRenderer = memo(function SlideRenderer({
   slide,
   data,
-  quizNumber,
-  correctCount,
-  isQuizAnswered,
+  slideIndex,
   onQuizAnswer,
-  onQuizEnter,
   onQuizComplete,
   onStart,
   onRestart,
 }: SlideRendererProps) {
+  // DEBUG: Track render count and timing
+  const renderStart = Date.now();
+  const count = (renderCounts.get(slide) || 0) + 1;
+  renderCounts.set(slide, count);
+
+  // Log every render with timing info
+  React.useEffect(() => {
+    const renderEnd = Date.now();
+    const duration = renderEnd - renderStart;
+    const lastTime = renderTimes.get(slide) || 0;
+    const gap = lastTime ? renderEnd - lastTime : 0;
+    renderTimes.set(slide, renderEnd);
+    console.log(`[Render] ${slide} #${count} took ${duration}ms (gap=${gap}ms)`);
+  });
+
   switch (slide) {
     // ─────────────────────────────────────────────────────────
-    // Topics Section
+    // Intro Slides (shared data from intro-slides.ts)
     // ─────────────────────────────────────────────────────────
     case 'intro-topics':
-      return (
-        <SlideIntro
-          emoji="💬"
-          title="Worüber redet der Bundestag?"
-          subtitle="Die Top-Themen 2024"
-        />
-      );
-
-    case 'reveal-topics':
-      if (!data.topicAnalysis) return <PlaceholderSlide slideType="reveal-topics" />;
-      return <TopicsRevealSlide topicAnalysis={data.topicAnalysis} />;
-
-    // ─────────────────────────────────────────────────────────
-    // Vocabulary Section (placeholder for now)
-    // ─────────────────────────────────────────────────────────
     case 'intro-vocabulary':
+    case 'intro-speeches':
+    case 'intro-drama':
+    case 'intro-discriminatory':
+    case 'intro-common-words':
+    case 'intro-moin':
+    case 'intro-swiftie':
+    case 'intro-tone': {
+      const intro = INTRO_SLIDES[slide];
+      if (!intro) return <PlaceholderSlide slideType={slide} />;
       return (
         <SlideIntro
-          emoji="📚"
-          title="Jede Partei hat ihre Lieblingswörter."
-          subtitle="Welche sind es?"
+          slideId={slide}
+          slideIndex={slideIndex}
+          emoji={intro.emoji}
+          title={intro.title}
+          subtitle={intro.subtitle}
         />
       );
+    }
+
+    // ─────────────────────────────────────────────────────────
+    // Reveal Slides
+    // ─────────────────────────────────────────────────────────
+    case 'reveal-topics':
+      return <TopicsRevealSlide slideIndex={slideIndex} />;
 
     case 'reveal-signature':
-      return <VocabularyRevealSlide parties={data.parties} />;
-
-    // ─────────────────────────────────────────────────────────
-    // Speeches Section
-    // ─────────────────────────────────────────────────────────
-    case 'intro-speeches':
-      return (
-        <SlideIntro
-          emoji="🎤"
-          title="Manche reden mehr als andere."
-          subtitle="Wer hat die meisten Reden gehalten?"
-        />
-      );
+      return <VocabularyRevealSlide slideIndex={slideIndex} />;
 
     case 'chart-speeches':
-      return <SpeechesChartSlide parties={data.parties} />;
-
-    // ─────────────────────────────────────────────────────────
-    // Drama Section
-    // ─────────────────────────────────────────────────────────
-    case 'intro-drama':
-      return (
-        <SlideIntro
-          emoji="🎭"
-          title="Es wird laut im Bundestag."
-          subtitle="Wer ruft am meisten dazwischen?"
-        />
-      );
+      return <SpeechesChartSlide slideIndex={slideIndex} />;
 
     case 'reveal-drama':
       return <DramaRevealSlide drama={data.drama} />;
 
-    // ─────────────────────────────────────────────────────────
-    // Discriminatory Section (placeholder)
-    // ─────────────────────────────────────────────────────────
-    case 'intro-discriminatory':
-      return (
-        <SlideIntro
-          emoji="⚠️"
-          title="Nicht alle Worte sind gleich."
-          subtitle="Diskriminierende Sprache im Bundestag"
-        />
-      );
-
     case 'reveal-discriminatory':
       return <DiscriminatoryRevealSlide toneAnalysis={data.toneAnalysis} />;
-
-    // ─────────────────────────────────────────────────────────
-    // Common Words Section (placeholder)
-    // ─────────────────────────────────────────────────────────
-    case 'intro-common-words':
-      return (
-        <SlideIntro
-          emoji="🔤"
-          title="Manche Wörter fallen öfter."
-          subtitle="Was sind die häufigsten?"
-        />
-      );
 
     case 'reveal-common-words':
       return <CommonWordsRevealSlide hotTopics={data.hotTopics} />;
@@ -273,15 +244,6 @@ export const SlideRenderer = memo(function SlideRenderer({
     // ─────────────────────────────────────────────────────────
     // Moin Section
     // ─────────────────────────────────────────────────────────
-    case 'intro-moin':
-      return (
-        <SlideIntro
-          emoji="👋"
-          title="Moin Moin!"
-          subtitle="Wer grüßt am norddeutschsten?"
-        />
-      );
-
     case 'quiz-moin':
       if (!data.moinSpeakers || data.moinSpeakers.length < 2) {
         return <PlaceholderSlide slideType="quiz-moin" />;
@@ -304,15 +266,6 @@ export const SlideRenderer = memo(function SlideRenderer({
     // ─────────────────────────────────────────────────────────
     // Swiftie Section
     // ─────────────────────────────────────────────────────────
-    case 'intro-swiftie':
-      return (
-        <SlideIntro
-          emoji="🎤"
-          title="Taylor Swift im Bundestag?"
-          subtitle="Easter Egg Alert!"
-        />
-      );
-
     case 'quiz-swiftie':
       return (
         <SwiftieSlide
@@ -326,23 +279,11 @@ export const SlideRenderer = memo(function SlideRenderer({
       return <SwiftieSlide phase="result" />;
 
     // ─────────────────────────────────────────────────────────
-    // Tone Section
+    // Tone & Gender Section
     // ─────────────────────────────────────────────────────────
-    case 'intro-tone':
-      return (
-        <SlideIntro
-          emoji="🎭"
-          title="Jede Fraktion hat ihren Stil."
-          subtitle="Wie klingen die Parteien?"
-        />
-      );
-
     case 'reveal-tone':
-      return <ToneRevealSlide toneAnalysis={data.toneAnalysis} />;
+      return <ToneRevealSlide slideIndex={slideIndex} />;
 
-    // ─────────────────────────────────────────────────────────
-    // Gender Section
-    // ─────────────────────────────────────────────────────────
     case 'reveal-gender':
       return <GenderRevealSlide genderAnalysis={data.genderAnalysis} />;
 
@@ -360,12 +301,13 @@ export const SlideRenderer = memo(function SlideRenderer({
       const question = QUIZZES[slide];
       if (!question) return <PlaceholderSlide slideType={slide} />;
 
+      // Badge auto-generated from quiz store (useQuizNumber inside SlideQuiz)
       return (
         <SlideQuiz
+          slideId={slide}
           quiz={question}
           onAnswer={onQuizAnswer}
           onComplete={onQuizComplete}
-          badge={`Frage ${quizNumber}/${TOTAL_QUIZ_QUESTIONS}`}
         />
       );
     }
@@ -385,16 +327,17 @@ export const SlideRenderer = memo(function SlideRenderer({
       const info = INFO_SLIDES[slide];
       if (!info) return <PlaceholderSlide slideType={slide} />;
 
-      return <SlideInfo emoji={info.emoji} title={info.title} body={info.body} />;
+      return <SlideInfo slideId={slide} slideIndex={slideIndex} emoji={info.emoji} title={info.title} body={info.body} />;
     }
 
     // ─────────────────────────────────────────────────────────
     // Share & Finale
     // ─────────────────────────────────────────────────────────
     case 'share':
+      // correctCount auto-read from quiz store (useCorrectCount inside ShareSlide)
       return (
         <ShareSlide
-          correctCount={correctCount}
+          slideIndex={slideIndex}
           totalQuestions={TOTAL_QUIZ_QUESTIONS}
         />
       );

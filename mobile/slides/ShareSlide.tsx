@@ -1,9 +1,9 @@
 /**
  * ShareSlide - Quiz result sharing screen with confetti animation
- * Similar to web version at src/components/slides/ShareSlide/
+ * Uses local Skia canvas rendering instead of server-side OG images
  */
 
-import { useState, useCallback, useEffect, useMemo, memo } from 'react';
+import { useState, useCallback, useEffect, useMemo, memo, useRef } from 'react';
 import {
   View,
   Text,
@@ -11,9 +11,7 @@ import {
   StyleSheet,
   Dimensions,
   Pressable,
-  Image,
   ActivityIndicator,
-  Alert,
 } from 'react-native';
 import Animated, {
   useSharedValue,
@@ -22,11 +20,12 @@ import Animated, {
   withRepeat,
   withSequence,
   withDelay,
-  FadeIn,
-  FadeInUp,
-  ZoomIn,
+  cancelAnimation,
   Easing,
 } from 'react-native-reanimated';
+import { captureRef } from 'react-native-view-shot';
+import { useSlideVisible } from '../stores/slideStore';
+import { useCorrectCount } from '../stores/quizStore';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Download, Share2 } from 'lucide-react-native';
 import {
@@ -37,22 +36,17 @@ import {
   snappyEntering,
   scaleInEntering,
 } from './shared';
-import {
-  getQuizImageUrl,
-  getQuizCacheFilename,
-  downloadAndCacheImage,
-  shareImage,
-  saveToGallery,
-} from '../lib/share-utils';
+import { shareImage, saveToGallery } from '../lib/share-utils';
+import { ShareCanvasSkia, SHARE_CANVAS_SIZE } from '../components/ShareCanvasSkia';
 
-const { height: SCREEN_HEIGHT, width: SCREEN_WIDTH } = Dimensions.get('window');
+const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
 // German flag colors for confetti
 const CONFETTI_COLORS = ['#000000', '#DD0000', '#FFCC00'];
 
 interface ShareSlideProps {
-  correctCount: number;
+  slideIndex: number;
   totalQuestions: number;
 }
 
@@ -66,6 +60,7 @@ interface ConfettiParticleProps {
   duration: number;
   delay: number;
   rotation: number;
+  isVisible: boolean;
 }
 
 const ConfettiParticle = memo(function ConfettiParticle({
@@ -74,13 +69,26 @@ const ConfettiParticle = memo(function ConfettiParticle({
   duration,
   delay,
   rotation,
+  isVisible,
 }: ConfettiParticleProps) {
   const translateY = useSharedValue(-20);
   const opacity = useSharedValue(0);
   const rotate = useSharedValue(0);
 
   useEffect(() => {
-    // Start animation after delay
+    if (!isVisible) {
+      // Pause animations when slide is off-screen
+      cancelAnimation(translateY);
+      cancelAnimation(opacity);
+      cancelAnimation(rotate);
+      // Reset to initial state
+      translateY.value = -20;
+      opacity.value = 0;
+      rotate.value = 0;
+      return;
+    }
+
+    // Start animation after delay when visible
     translateY.value = withDelay(
       delay,
       withRepeat(
@@ -121,7 +129,7 @@ const ConfettiParticle = memo(function ConfettiParticle({
         false
       )
     );
-  }, []);
+  }, [isVisible, delay, duration, rotation, translateY, opacity, rotate]);
 
   const animatedStyle = useAnimatedStyle(() => ({
     transform: [
@@ -146,10 +154,17 @@ const ConfettiParticle = memo(function ConfettiParticle({
 // Falling Confetti Container
 // ─────────────────────────────────────────────────────────────
 
-const FallingConfetti = memo(function FallingConfetti() {
+interface FallingConfettiProps {
+  slideIndex: number;
+}
+
+const FallingConfetti = memo(function FallingConfetti({ slideIndex }: FallingConfettiProps) {
+  const isVisible = useSlideVisible(slideIndex);
+
+  // Reduced from 30 to 15 particles for better performance
   const particles = useMemo(
     () =>
-      Array.from({ length: 30 }, (_, i) => ({
+      Array.from({ length: 15 }, (_, i) => ({
         id: i,
         left: Math.random() * 100,
         color: CONFETTI_COLORS[Math.floor(Math.random() * 3)],
@@ -170,6 +185,7 @@ const FallingConfetti = memo(function FallingConfetti() {
           duration={p.duration}
           delay={p.delay}
           rotation={p.rotation}
+          isVisible={isVisible}
         />
       ))}
     </View>
@@ -181,17 +197,21 @@ const FallingConfetti = memo(function FallingConfetti() {
 // ─────────────────────────────────────────────────────────────
 
 export const ShareSlide = memo(function ShareSlide({
-  correctCount,
+  slideIndex,
   totalQuestions,
 }: ShareSlideProps) {
+  const isVisible = useSlideVisible(slideIndex);
+  // Get correct count from quiz store - only ShareSlide subscribes
+  const correctCount = useCorrectCount();
   const [userName, setUserName] = useState('');
+  const [debouncedName, setDebouncedName] = useState('');
   const [imageUri, setImageUri] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isCapturing, setIsCapturing] = useState(false);
   const [isSharing, setIsSharing] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
 
-  // Debounce timer ref
-  const [debouncedName, setDebouncedName] = useState('');
+  // Ref for capturing the Skia canvas
+  const canvasRef = useRef<View>(null);
 
   // Debounce name input
   useEffect(() => {
@@ -201,36 +221,42 @@ export const ShareSlide = memo(function ShareSlide({
     return () => clearTimeout(timer);
   }, [userName]);
 
-  // Fetch image when name changes (debounced)
+  // Capture the canvas when name changes or on first render
   useEffect(() => {
+    if (!isVisible || !canvasRef.current) return;
+
     let cancelled = false;
 
-    const fetchImage = async () => {
-      setIsLoading(true);
+    const captureCanvas = async () => {
+      // Small delay to ensure Skia canvas is fully rendered
+      await new Promise((resolve) => setTimeout(resolve, 100));
+
+      if (cancelled || !canvasRef.current) return;
+
+      setIsCapturing(true);
       try {
-        const url = getQuizImageUrl(correctCount, totalQuestions, debouncedName || undefined);
-        const filename = getQuizCacheFilename(correctCount, totalQuestions, debouncedName || undefined);
-        const uri = await downloadAndCacheImage(url, filename);
+        const uri = await captureRef(canvasRef, {
+          format: 'png',
+          quality: 1,
+          result: 'tmpfile',
+        });
         if (!cancelled) {
           setImageUri(uri);
         }
       } catch (error) {
-        console.error('Failed to fetch share image:', error);
-        if (!cancelled) {
-          Alert.alert('Fehler', 'Das Bild konnte nicht geladen werden.');
-        }
+        console.error('Failed to capture share image:', error);
       } finally {
         if (!cancelled) {
-          setIsLoading(false);
+          setIsCapturing(false);
         }
       }
     };
 
-    fetchImage();
+    captureCanvas();
     return () => {
       cancelled = true;
     };
-  }, [correctCount, totalQuestions, debouncedName]);
+  }, [isVisible, debouncedName, correctCount, totalQuestions]);
 
   // Handle share button
   const handleShare = useCallback(async () => {
@@ -254,9 +280,11 @@ export const ShareSlide = memo(function ShareSlide({
     }
   }, [imageUri, isSaving]);
 
+  const isLoading = isCapturing || !imageUri;
+
   return (
-    <SlideContainer>
-      <FallingConfetti />
+    <SlideContainer slideId="share">
+      <FallingConfetti slideIndex={slideIndex} />
 
       <View style={styles.content}>
         {/* Header */}
@@ -293,22 +321,18 @@ export const ShareSlide = memo(function ShareSlide({
           />
         </Animated.View>
 
-        {/* Image Preview */}
+        {/* Image Preview - Skia canvas with view capture */}
         <Animated.View entering={scaleInEntering(500)} style={styles.previewContainer}>
-          {isLoading ? (
-            <View style={styles.loadingContainer}>
-              <ActivityIndicator size="large" color="#ec4899" />
-              <Text style={styles.loadingText}>Lade Vorschau...</Text>
-            </View>
-          ) : imageUri ? (
-            <Image
-              source={{ uri: imageUri }}
-              style={styles.previewImage}
-              resizeMode="contain"
+          <View ref={canvasRef} collapsable={false} style={styles.canvasWrapper}>
+            <ShareCanvasSkia
+              correctCount={correctCount}
+              totalQuestions={totalQuestions}
+              userName={debouncedName || undefined}
             />
-          ) : (
-            <View style={styles.loadingContainer}>
-              <Text style={styles.errorText}>Vorschau nicht verfügbar</Text>
+          </View>
+          {isCapturing && (
+            <View style={styles.capturingOverlay}>
+              <ActivityIndicator size="small" color="#ec4899" />
             </View>
           )}
         </Animated.View>
@@ -320,7 +344,7 @@ export const ShareSlide = memo(function ShareSlide({
             entering={snappyEntering(600)}
             style={[styles.saveButton, (isSaving || isLoading) && styles.buttonDisabled]}
             onPress={handleSave}
-            disabled={isSaving || isLoading || !imageUri}
+            disabled={isSaving || isLoading}
           >
             {isSaving ? (
               <ActivityIndicator color="#ffffff" size="small" />
@@ -337,7 +361,7 @@ export const ShareSlide = memo(function ShareSlide({
             entering={snappyEntering(700)}
             style={[styles.shareButton, (isSharing || isLoading) && styles.buttonDisabled]}
             onPress={handleShare}
-            disabled={isSharing || isLoading || !imageUri}
+            disabled={isSharing || isLoading}
           >
             {isSharing ? (
               <ActivityIndicator color="#ffffff" size="small" />
@@ -357,6 +381,9 @@ export const ShareSlide = memo(function ShareSlide({
 // ─────────────────────────────────────────────────────────────
 // Styles
 // ─────────────────────────────────────────────────────────────
+
+const PREVIEW_SIZE = Math.min(280, SHARE_CANVAS_SIZE);
+const SCALE = PREVIEW_SIZE / SHARE_CANVAS_SIZE;
 
 const styles = StyleSheet.create({
   confettiContainer: {
@@ -417,9 +444,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   previewContainer: {
-    width: '100%',
-    aspectRatio: 1,
-    maxWidth: 280,
+    width: PREVIEW_SIZE,
+    height: PREVIEW_SIZE,
     marginBottom: 20,
     borderRadius: 16,
     overflow: 'hidden',
@@ -427,23 +453,17 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'rgba(255, 255, 255, 0.1)',
   },
-  previewImage: {
-    width: '100%',
-    height: '100%',
+  canvasWrapper: {
+    width: SHARE_CANVAS_SIZE,
+    height: SHARE_CANVAS_SIZE,
+    transform: [{ scale: SCALE }],
+    transformOrigin: 'top left',
   },
-  loadingContainer: {
-    flex: 1,
+  capturingOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 12,
-  },
-  loadingText: {
-    fontSize: 14,
-    color: 'rgba(255, 255, 255, 0.5)',
-  },
-  errorText: {
-    fontSize: 14,
-    color: 'rgba(255, 255, 255, 0.5)',
   },
   buttonsContainer: {
     flexDirection: 'row',

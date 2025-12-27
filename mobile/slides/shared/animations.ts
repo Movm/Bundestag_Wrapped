@@ -14,7 +14,7 @@ import {
   SlideInLeft,
   SlideInRight,
 } from 'react-native-reanimated';
-import { SPRING, STAGGER, DURATION } from '@/shared/animations/timings';
+import { SPRING, STAGGER, DURATION, SLIDE_INTRO, SLIDE_INFO } from '@/shared';
 
 // ─────────────────────────────────────────────────────────────
 // Entrance Animations (using Reanimated's layout animations)
@@ -111,20 +111,30 @@ export const easeOutEasing = Easing.bezier(0, 0, 0.2, 1);
 
 /**
  * Intro slide animation sequence
+ * Matches web SlideIntro: soft spring, no bounce
  */
 export const introAnimations = {
-  emoji: (index: number = 0) => emojiPopEntering(100 + index * 100),
-  title: (index: number = 0) => fadeUpEntering(200 + index * 100),
-  subtitle: (index: number = 0) => fadeUpEntering(300 + index * 100),
+  emoji: () =>
+    ZoomIn.delay(SLIDE_INTRO.emoji.delay).springify(),
+  title: () =>
+    FadeInUp.delay(SLIDE_INTRO.title.delay).springify(),
+  subtitle: () =>
+    FadeIn.delay(SLIDE_INTRO.subtitle.delay)
+      .duration(SLIDE_INTRO.subtitle.duration),
 };
 
 /**
  * Info slide animation sequence
+ * Matches web SlideInfo: soft spring, no bounce
  */
 export const infoAnimations = {
-  emoji: () => emojiPopEntering(100),
-  title: () => fadeUpEntering(300),
-  body: () => fadeInEntering(500),
+  emoji: () =>
+    ZoomIn.delay(SLIDE_INFO.emoji.delay).springify(),
+  title: () =>
+    FadeInUp.delay(SLIDE_INFO.title.delay).springify(),
+  body: () =>
+    FadeIn.delay(SLIDE_INFO.body.delay)
+      .duration(SLIDE_INFO.body.duration),
 };
 
 /**
@@ -315,8 +325,8 @@ export const directionalStaggerEntering = (index: number, baseDelay: number = 20
 export const tiltInStaggerEntering = (index: number, baseDelay: number = 200) =>
   ZoomIn.delay(baseDelay + index * 100)
     .springify()
-    .stiffness(110)
-    .damping(12);
+    .stiffness(120)
+    .damping(18);
 
 /**
  * Chart/stats animation sequence

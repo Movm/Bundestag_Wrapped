@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Animated, { ZoomIn, FadeInDown, FadeIn } from 'react-native-reanimated';
 import type { ToneAnalysis } from '@/data/wrapped';
-import { getPartyColor } from '@/lib/party-colors';
+import { getPartyColor } from '@/shared';
 import {
   SlideContainer,
   emojiPopEntering,
@@ -37,14 +37,14 @@ export function DiscriminatoryRevealSlide({ toneAnalysis }: DiscriminatoryReveal
 
   if (!leader) {
     return (
-      <SlideContainer>
+      <SlideContainer slideId="reveal-discriminatory">
         <Text style={styles.noData}>Keine Daten verfügbar</Text>
       </SlideContainer>
     );
   }
 
   return (
-    <SlideContainer>
+    <SlideContainer slideId="reveal-discriminatory">
       <View style={styles.content}>
         {/* Emoji */}
         <Animated.Text entering={emojiPopEntering(0)} style={styles.emoji}>

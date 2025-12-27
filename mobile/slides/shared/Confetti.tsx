@@ -1,195 +1,161 @@
 /**
- * Confetti Component for React Native
+ * Confetti Component for React Native (Skia Canvas)
  *
- * Celebration effect with German flag colors.
- * Uses React Native Reanimated for performant animations.
+ * Simple colored rectangle particles with German flag colors.
+ * Performance: Single Canvas (vs 25 individual Views)
  */
 
-import { memo, useMemo, useEffect } from 'react';
-import { View, StyleSheet, Dimensions } from 'react-native';
-import Animated, {
+import { memo, useEffect, useMemo } from 'react';
+import { StyleSheet, Dimensions } from 'react-native';
+import {
+  Canvas,
+  RoundedRect,
+} from '@shopify/react-native-skia';
+import {
   useSharedValue,
-  useAnimatedStyle,
+  useDerivedValue,
   withTiming,
-  withSequence,
-  withDelay,
   Easing,
+  cancelAnimation,
 } from 'react-native-reanimated';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
-// German flag colors
-const CONFETTI_COLORS = ['#000000', '#DD0000', '#FFCC00'];
-
-// ─────────────────────────────────────────────────────────────
-// Types
-// ─────────────────────────────────────────────────────────────
+// German flag colors (like web version)
+const DEFAULT_COLORS = ['#000000', '#DD0000', '#FFCC00'];
 
 interface ParticleConfig {
   id: number;
-  startX: number;
-  startY: number;
-  endX: number;
-  endY: number;
+  x: number;
+  y: number;
   rotation: number;
-  delay: number;
   color: string;
-  duration: number;
-  size: number;
+  width: number;
+  height: number;
+  delay: number;
 }
-
-interface ConfettiParticleProps extends ParticleConfig {}
 
 interface ConfettiProps {
   count?: number;
-  origin?: { x: number; y: number };
-  onComplete?: () => void;
+  colors?: string[];
 }
 
-// ─────────────────────────────────────────────────────────────
-// Single Particle
-// ─────────────────────────────────────────────────────────────
+// Generate particle configs once
+const generateParticles = (count: number, colors: string[]): ParticleConfig[] => {
+  return Array.from({ length: count }, (_, i) => {
+    const size = 10 + Math.random() * 8; // 10-18px
+    return {
+      id: i,
+      x: Math.random() * (SCREEN_WIDTH - 20),
+      y: Math.random() * (SCREEN_HEIGHT - 20),
+      rotation: Math.random() * 45 - 22.5, // -22.5 to 22.5 degrees
+      color: colors[i % colors.length],
+      width: size,
+      height: size * 0.7,
+      delay: (i / count) * 0.2, // Stagger 0-0.2 for cascade effect
+    };
+  });
+};
 
-const ConfettiParticle = memo(function ConfettiParticle({
-  startX,
-  startY,
-  endX,
-  endY,
-  rotation,
-  delay,
-  color,
-  duration,
-  size,
-}: ConfettiParticleProps) {
-  const translateX = useSharedValue(startX);
-  const translateY = useSharedValue(startY);
-  const rotate = useSharedValue(0);
-  const scale = useSharedValue(0);
-  const opacity = useSharedValue(1);
+/**
+ * Single confetti particle drawn with Skia
+ */
+const ConfettiPiece = memo(function ConfettiPiece({
+  config,
+  progress,
+}: {
+  config: ParticleConfig;
+  progress: { value: number };
+}) {
+  // Derive opacity and scale from progress with staggered delay
+  const opacity = useDerivedValue(() => {
+    const adjustedProgress = Math.max(0, progress.value - config.delay) / (1 - config.delay);
+    if (adjustedProgress <= 0) return 0;
+    if (adjustedProgress < 0.3) {
+      // Fade in with slight overshoot
+      return Math.min(1, adjustedProgress / 0.2);
+    }
+    return 1;
+  }, [progress, config.delay]);
 
-  useEffect(() => {
-    // Horizontal movement - gentle drift
-    translateX.value = withDelay(
-      delay,
-      withTiming(endX, { duration, easing: Easing.inOut(Easing.sin) })
-    );
+  const scale = useDerivedValue(() => {
+    const adjustedProgress = Math.max(0, progress.value - config.delay) / (1 - config.delay);
+    if (adjustedProgress <= 0) return 0.3;
+    if (adjustedProgress < 0.2) {
+      // Pop in effect
+      return 0.3 + 0.7 * (adjustedProgress / 0.2);
+    }
+    return 1;
+  }, [progress, config.delay]);
 
-    // Vertical movement - fall with gentle acceleration
-    translateY.value = withDelay(
-      delay,
-      withTiming(endY, {
-        duration,
-        easing: Easing.in(Easing.quad),
-      })
-    );
+  const width = useDerivedValue(() => config.width * scale.value, [scale]);
+  const height = useDerivedValue(() => config.height * scale.value, [scale]);
 
-    // Rotation - continuous spin
-    rotate.value = withDelay(
-      delay,
-      withTiming(rotation, { duration, easing: Easing.linear })
-    );
-
-    // Scale - pop in then shrink
-    scale.value = withDelay(
-      delay,
-      withSequence(
-        withTiming(1, { duration: duration * 0.15 }),
-        withTiming(0.6, { duration: duration * 0.85 })
-      )
-    );
-
-    // Opacity - fade out at end
-    opacity.value = withDelay(
-      delay + duration * 0.6,
-      withTiming(0, { duration: duration * 0.4 })
-    );
-  }, [delay, duration, endX, endY, opacity, rotate, rotation, scale, translateX, translateY]);
-
-  const animatedStyle = useAnimatedStyle(() => ({
-    transform: [
-      { translateX: translateX.value },
-      { translateY: translateY.value },
-      { rotate: `${rotate.value}deg` },
-      { scale: scale.value },
-    ],
-    opacity: opacity.value,
-  }));
+  // Center the scaled rectangle
+  const x = useDerivedValue(
+    () => config.x + (config.width - width.value) / 2,
+    [width]
+  );
+  const y = useDerivedValue(
+    () => config.y + (config.height - height.value) / 2,
+    [height]
+  );
 
   return (
-    <Animated.View
-      style={[
-        styles.particle,
-        {
-          backgroundColor: color,
-          width: size,
-          height: size,
-          borderRadius: size * 0.2,
-        },
-        animatedStyle,
-      ]}
+    <RoundedRect
+      x={x}
+      y={y}
+      width={width}
+      height={height}
+      r={2}
+      color={config.color}
+      opacity={opacity}
+      transform={[{ rotate: config.rotation * (Math.PI / 180) }]}
+      origin={{ x: config.x + config.width / 2, y: config.y + config.height / 2 }}
     />
   );
 });
 
-// ─────────────────────────────────────────────────────────────
-// Main Component
-// ─────────────────────────────────────────────────────────────
-
+/**
+ * Confetti container - static particles spread across screen
+ */
 export const Confetti = memo(function Confetti({
   count = 25,
-  origin,
-  onComplete,
+  colors = DEFAULT_COLORS,
 }: ConfettiProps) {
-  // Pre-compute particle configurations for performance
-  const particles = useMemo<ParticleConfig[]>(() => {
-    return Array.from({ length: count }, (_, i) => {
-      // Spawn across the full width of the screen at the top
-      const startX = Math.random() * SCREEN_WIDTH;
-      const startY = -20 + Math.random() * 40; // Near top of screen
+  // Animation progress (0 → 1)
+  const progress = useSharedValue(0);
 
-      // Fall downward with slight horizontal drift
-      const horizontalDrift = (Math.random() - 0.5) * 100;
-      const fallDistance = SCREEN_HEIGHT * (0.7 + Math.random() * 0.4);
+  // Pre-compute particle configurations
+  const particles = useMemo<ParticleConfig[]>(
+    () => generateParticles(count, colors),
+    [count, colors]
+  );
 
-      return {
-        id: i,
-        startX: origin?.x ?? startX,
-        startY: origin?.y ?? startY,
-        endX: (origin?.x ?? startX) + horizontalDrift,
-        endY: (origin?.y ?? startY) + fallDistance,
-        rotation: (Math.random() * 720) - 360, // -360 to 360
-        delay: Math.random() * 300,
-        color: CONFETTI_COLORS[i % 3],
-        duration: 1200 + Math.random() * 600,
-        size: 8 + Math.random() * 8, // 8-16px
-      };
-    });
-  }, [count, origin?.x, origin?.y]);
-
-  // Trigger completion callback
   useEffect(() => {
-    if (onComplete) {
-      const maxDuration = Math.max(...particles.map((p) => p.delay + p.duration));
-      const timer = setTimeout(onComplete, maxDuration + 100);
-      return () => clearTimeout(timer);
-    }
-  }, [onComplete, particles]);
+    // Start animation
+    progress.value = 0;
+    progress.value = withTiming(1, {
+      duration: 400,
+      easing: Easing.out(Easing.ease),
+    });
+
+    return () => {
+      cancelAnimation(progress);
+    };
+  }, [progress]);
 
   return (
-    <View style={StyleSheet.absoluteFill} pointerEvents="none">
+    <Canvas style={styles.canvas} pointerEvents="none">
       {particles.map((p) => (
-        <ConfettiParticle key={p.id} {...p} />
+        <ConfettiPiece key={p.id} config={p} progress={progress} />
       ))}
-    </View>
+    </Canvas>
   );
 });
 
-// ─────────────────────────────────────────────────────────────
-// Styles
-// ─────────────────────────────────────────────────────────────
-
 const styles = StyleSheet.create({
-  particle: {
-    position: 'absolute',
+  canvas: {
+    ...StyleSheet.absoluteFillObject,
   },
 });

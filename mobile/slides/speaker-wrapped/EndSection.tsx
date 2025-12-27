@@ -1,18 +1,16 @@
-import { useState, useCallback } from 'react';
-import { View, Text, StyleSheet, Dimensions, Pressable, ActivityIndicator, Alert } from 'react-native';
+import { useState, useCallback, useRef, useEffect } from 'react';
+import { View, Text, StyleSheet, Dimensions, Pressable, ActivityIndicator } from 'react-native';
 import Animated, { FadeIn, FadeInUp, ZoomIn } from 'react-native-reanimated';
 import { useRouter } from 'expo-router';
-import * as Sharing from 'expo-sharing';
-import { File, Paths } from 'expo-file-system';
+import { captureRef } from 'react-native-view-shot';
 import { getPartyColor } from '@/shared';
 import { SPEAKER_CONTENT } from '@/shared/speaker-wrapped';
+import { shareImage } from '../../lib/share-utils';
+import { SpeakerShareCanvasSkia } from '../../components/SpeakerShareCanvasSkia';
 import type { SpeakerWrapped } from '~/types/wrapped';
 
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
-
-// OG Image API base URL - update this for production
-const OG_API_URL = process.env.EXPO_PUBLIC_OG_API_URL || 'https://bundestag-wrapped.de';
 
 interface EndSectionProps {
   data: SpeakerWrapped;
@@ -21,6 +19,7 @@ interface EndSectionProps {
 
 /**
  * EndSection - Final slide with fun facts and navigation buttons
+ * Uses local Skia canvas rendering for share images
  */
 export function EndSection({ data, onRestart }: EndSectionProps) {
   const router = useRouter();
@@ -29,52 +28,76 @@ export function EndSection({ data, onRestart }: EndSectionProps) {
   const funFacts = data.funFacts.slice(0, 4);
 
   const [isSharing, setIsSharing] = useState(false);
+  const [imageUri, setImageUri] = useState<string | null>(null);
+  const canvasRef = useRef<View>(null);
 
-  // Handle share: download OG image from API, then share
+  // Get signature word for the share image
+  const signatureWord = data.words.signatureWords[0] || null;
+
+  // Capture canvas on mount for faster sharing
+  useEffect(() => {
+    const captureCanvas = async () => {
+      if (!canvasRef.current) return;
+
+      // Small delay to ensure Skia canvas is rendered
+      await new Promise((resolve) => setTimeout(resolve, 200));
+
+      try {
+        const uri = await captureRef(canvasRef, {
+          format: 'png',
+          quality: 1,
+          result: 'tmpfile',
+        });
+        setImageUri(uri);
+      } catch (error) {
+        console.error('Failed to capture speaker share image:', error);
+      }
+    };
+
+    captureCanvas();
+  }, [data]);
+
+  // Handle share
   const handleShare = useCallback(async () => {
     if (isSharing) return;
-
-    // Check if sharing is available
-    const isAvailable = await Sharing.isAvailableAsync();
-    if (!isAvailable) {
-      Alert.alert('Teilen nicht verfügbar', 'Teilen wird auf diesem Gerät nicht unterstützt.');
-      return;
-    }
 
     setIsSharing(true);
 
     try {
-      // Generate slug from speaker name (matches API expectation)
-      const slug = data.name
-        .toLowerCase()
-        .replace(/\s+/g, '-')
-        .replace(/[äöü]/g, (m) => ({ 'ä': 'ae', 'ö': 'oe', 'ü': 'ue' }[m] || m))
-        .replace(/[^a-z0-9-]/g, '');
-
-      const imageUrl = `${OG_API_URL}/api/og/speaker/${slug}`;
-      const file = new File(Paths.cache, `bundestag-wrapped-${slug}.png`);
-
-      // Download the image (overwrites if exists)
-      const downloaded = await File.downloadFileAsync(imageUrl, file, { idempotent: true });
-
-      // Share the downloaded image
-      await Sharing.shareAsync(downloaded.uri, {
-        mimeType: 'image/png',
-        dialogTitle: 'Teile dein Bundestag Wrapped',
-      });
+      if (imageUri) {
+        await shareImage(imageUri, 'Teile dein Bundestag Wrapped');
+      } else {
+        // Fallback: try to capture now
+        if (canvasRef.current) {
+          const uri = await captureRef(canvasRef, {
+            format: 'png',
+            quality: 1,
+            result: 'tmpfile',
+          });
+          await shareImage(uri, 'Teile dein Bundestag Wrapped');
+        }
+      }
     } catch (error) {
       console.error('Share failed:', error);
-      Alert.alert(
-        'Teilen fehlgeschlagen',
-        'Das Bild konnte nicht geteilt werden. Bitte versuche es später erneut.'
-      );
     } finally {
       setIsSharing(false);
     }
-  }, [data.name, isSharing]);
+  }, [imageUri, isSharing]);
 
   return (
     <View style={styles.container}>
+      {/* Hidden canvas for share image capture */}
+      <View style={styles.hiddenCanvas}>
+        <View ref={canvasRef} collapsable={false}>
+          <SpeakerShareCanvasSkia
+            name={data.name}
+            party={data.party}
+            spiritAnimal={data.spiritAnimal}
+            signatureWord={signatureWord}
+          />
+        </View>
+      </View>
+
       <Animated.View entering={ZoomIn.delay(100).springify()} style={styles.content}>
         {/* Emoji */}
         <Text style={styles.emoji}>{content.emoji}</Text>
@@ -159,7 +182,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 24,
+    paddingTop: 100,
     backgroundColor: '#0a0a0a',
+  },
+  hiddenCanvas: {
+    position: 'absolute',
+    top: -9999,
+    left: -9999,
+    opacity: 0,
   },
   content: {
     alignItems: 'center',

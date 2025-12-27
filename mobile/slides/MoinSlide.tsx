@@ -10,7 +10,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
-import { getPartyColor } from '@/lib/party-colors';
+import { getPartyColor } from '@/shared';
 import { SlideContainer, SlideQuiz, type QuizConfig } from './shared';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -138,7 +138,7 @@ function ResultView({ speakers }: { speakers: MoinSpeaker[] }) {
   const topSpeakers = useMemo(() => speakers.slice(0, 4), [speakers]);
 
   return (
-    <SlideContainer>
+    <SlideContainer slideId="reveal-moin">
       <View style={styles.resultContent}>
         {/* Header */}
         <View style={styles.resultHeader}>

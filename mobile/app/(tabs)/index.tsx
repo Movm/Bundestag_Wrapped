@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useRouter } from 'expo-router';
 import { NativeSlideController } from '~/components/NativeSlideController';
+import { FloatingSoundToggle } from '~/components/FloatingSoundToggle';
 
 interface ErrorBoundaryState {
   hasError: boolean;
@@ -85,6 +86,7 @@ export default function WrappedTab() {
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
+      <FloatingSoundToggle />
       <ErrorBoundary onReset={() => router.replace('/(tabs)')}>
         <NativeSlideController />
       </ErrorBoundary>

@@ -1,12 +1,18 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import Animated, { FadeIn, FadeInDown, ZoomIn } from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 import { SlideContainer } from './SlideContainer';
+import { introAnimations } from './animations';
+import { useDeferredRender } from '../../hooks/useDeferredRender';
 
 interface SlideIntroProps {
   emoji: string;
   title?: string;
   subtitle?: string;
+  /** Slide ID for themed background (e.g., 'intro-topics') */
+  slideId?: string;
+  /** Slide index for visibility-based animation trigger */
+  slideIndex: number;
 }
 
 /**
@@ -15,36 +21,43 @@ interface SlideIntroProps {
  * Shows emoji with one sentence. Title optional.
  * Animations: emoji pops in, title slides up, subtitle fades in later.
  */
-export function SlideIntro({ emoji, title, subtitle }: SlideIntroProps) {
+export function SlideIntro({ emoji, title, subtitle, slideId, slideIndex }: SlideIntroProps) {
+  // Wait for slide to be visible before mounting animated content
+  const showContent = useDeferredRender(slideIndex, 0);
+
   return (
-    <SlideContainer>
+    <SlideContainer slideId={slideId}>
       <View style={styles.content}>
-        {/* Emoji with zoom pop effect */}
-        <Animated.Text
-          entering={ZoomIn.delay(100).springify()}
-          style={styles.emoji}
-        >
-          {emoji}
-        </Animated.Text>
+        {showContent && (
+          <>
+            {/* Emoji with zoom pop effect */}
+            <Animated.Text
+              entering={introAnimations.emoji()}
+              style={styles.emoji}
+            >
+              {emoji}
+            </Animated.Text>
 
-        {/* Title with slide-up animation */}
-        {title && (
-          <Animated.Text
-            entering={FadeInDown.delay(300).springify()}
-            style={styles.title}
-          >
-            {title}
-          </Animated.Text>
-        )}
+            {/* Title with slide-up animation (matches web) */}
+            {title && (
+              <Animated.Text
+                entering={introAnimations.title()}
+                style={styles.title}
+              >
+                {title}
+              </Animated.Text>
+            )}
 
-        {/* Subtitle with delayed fade-in */}
-        {subtitle && (
-          <Animated.Text
-            entering={FadeIn.delay(800).duration(400)}
-            style={styles.subtitle}
-          >
-            {subtitle}
-          </Animated.Text>
+            {/* Subtitle with slide-up animation (matches web) */}
+            {subtitle && (
+              <Animated.Text
+                entering={introAnimations.subtitle()}
+                style={styles.subtitle}
+              >
+                {subtitle}
+              </Animated.Text>
+            )}
+          </>
         )}
       </View>
     </SlideContainer>

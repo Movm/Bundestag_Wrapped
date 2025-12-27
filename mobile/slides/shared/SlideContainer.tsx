@@ -1,15 +1,16 @@
 import React from 'react';
-import { View, StyleSheet, Dimensions } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-
-const { height: SCREEN_HEIGHT } = Dimensions.get('window');
+import { View, StyleSheet } from 'react-native';
+import { useAvailableHeight, useTopInset } from '../../stores/appStore';
+import { BackgroundSystem } from '../../components/backgrounds';
 
 interface SlideContainerProps {
   children: React.ReactNode;
-  /** Whether to use SafeAreaView (default: true) */
-  useSafeArea?: boolean;
-  /** Custom background color */
+  /** Slide ID for theme selection (e.g., 'quiz-topics', 'reveal-drama') */
+  slideId?: string;
+  /** Custom background color (only used if slideId not provided) */
   backgroundColor?: string;
+  /** Whether to show dynamic background effects (default: true if slideId provided) */
+  showBackground?: boolean;
   /** Additional style */
   style?: object;
 }
@@ -18,25 +19,46 @@ interface SlideContainerProps {
  * SlideContainer - Foundation component for all native slides
  *
  * Provides:
- * - Full-height layout with centered content
- * - Safe area handling for notches/home indicators
- * - Dark background by default
+ * - Full-height layout with centered content (using availableHeight from LayoutContext)
+ * - Dynamic themed background effects when slideId is provided
+ * - Safe area handling via useTopInset() from store (top padding for notch/status bar)
+ * - Falls back to solid dark background when slideId not provided
  *
  * Note: Entrance animations are handled by SlideAnimationWrapper
  */
 export function SlideContainer({
   children,
-  useSafeArea = true,
+  slideId,
   backgroundColor = '#0a0a0a',
+  showBackground = true,
   style,
 }: SlideContainerProps) {
-  const Container = useSafeArea ? SafeAreaView : View;
+  const availableHeight = useAvailableHeight();
+  const topInset = useTopInset();
+  const hasThemedBackground = slideId && showBackground;
 
+  // If we have a slideId, render with themed background
+  // Note: No BackgroundProvider needed - BackgroundSystem uses Zustand directly
+  if (hasThemedBackground) {
+    return (
+      <View style={[styles.wrapper, { minHeight: availableHeight }]}>
+        {/* Background layer */}
+        <BackgroundSystem slideId={slideId} />
+
+        {/* Content layer - transparent to show background */}
+        <View style={[styles.container, styles.transparentContainer, { minHeight: availableHeight }, style]}>
+          <View style={[styles.content, { paddingTop: topInset }]}>{children}</View>
+        </View>
+      </View>
+    );
+  }
+
+  // Fallback to solid background
   return (
-    <View style={styles.wrapper}>
-      <Container style={[styles.container, { backgroundColor }, style]}>
-        <View style={styles.content}>{children}</View>
-      </Container>
+    <View style={[styles.wrapper, { minHeight: availableHeight }]}>
+      <View style={[styles.container, { backgroundColor, minHeight: availableHeight }, style]}>
+        <View style={[styles.content, { paddingTop: topInset }]}>{children}</View>
+      </View>
     </View>
   );
 }
@@ -44,11 +66,13 @@ export function SlideContainer({
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    minHeight: SCREEN_HEIGHT,
+    position: 'relative',
   },
   container: {
     flex: 1,
-    minHeight: SCREEN_HEIGHT,
+  },
+  transparentContainer: {
+    backgroundColor: 'transparent',
   },
   content: {
     flex: 1,

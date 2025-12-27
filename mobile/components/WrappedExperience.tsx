@@ -2,9 +2,12 @@
  * WrappedExperience - Main wrapped slide navigation
  *
  * Uses shared WrappedScrollContainer for unified scrolling behavior.
+ *
+ * PERFORMANCE: All callbacks are stable (empty deps or minimal deps).
+ * State is accessed via getState() to avoid dependency churn.
  */
 
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useEffect, useRef } from 'react';
 import type { WrappedData } from '@/data/wrapped';
 import { SlideRenderer, SLIDES, AUTO_SCROLL_SLIDES, AUTO_SCROLL_DELAY, type SlideType } from './SlideRenderer';
 import { WrappedScrollContainer } from './WrappedScrollContainer';
@@ -12,6 +15,9 @@ import { useWrappedScroll } from '../hooks/useWrappedScroll';
 import { SlideAnimationWrapper } from './SlideAnimationWrapper';
 import { useSlideTransitionSound } from '~/lib/sounds';
 import { useThemeMusic } from '~/lib/theme-music';
+import { useAppStore } from '../stores/appStore';
+import { usePrecomputedStore } from '../stores/precomputedDataStore';
+import { useQuizStore } from '../stores/quizStore';
 
 interface WrappedExperienceProps {
   data: WrappedData;
@@ -29,10 +35,18 @@ interface WrappedExperienceProps {
  * - Quiz state management
  */
 export function WrappedExperience({ data, onComplete }: WrappedExperienceProps) {
+  // Initialize precomputed data store - runs ONCE when data loads
+  // This precomputes heavy calculations (topic rankings, bubble sizes, tone summaries)
+  // so slides render instantly without O(n×m) calculations during scroll
+  useEffect(() => {
+    usePrecomputedStore.getState().initialize(data);
+    return () => usePrecomputedStore.getState().reset();
+  }, [data]);
+
   // Convert SLIDES to mutable array
   const slides = useMemo(() => [...SLIDES] as SlideType[], []);
 
-  // Use shared scroll hook
+  // Use shared scroll hook - now with STABLE handlers
   const scrollState = useWrappedScroll({
     items: slides,
     autoScrollItems: AUTO_SCROLL_SLIDES as Set<SlideType>,
@@ -42,66 +56,78 @@ export function WrappedExperience({ data, onComplete }: WrappedExperienceProps) 
     completeDelay: 2000,
   });
 
-  // Quiz state (track across all quizzes)
-  const [quizNumber, setQuizNumber] = React.useState(1);
-  const [correctCount, setCorrectCount] = React.useState(0);
-  const [answeredQuizzes, setAnsweredQuizzes] = React.useState<Set<SlideType>>(new Set());
-
   const currentSlide = scrollState.currentItem;
-  const isQuizAnswered = answeredQuizzes.has(currentSlide);
+
+  // Ref to access current slide in stable callbacks (avoids dependency churn)
+  const currentSlideRef = useRef(currentSlide);
+  currentSlideRef.current = currentSlide;
+
+  // Data ref for stable renderItem callback
+  const dataRef = useRef(data);
+  dataRef.current = data;
+
+  // Update current slide in store for accent color theming
+  React.useEffect(() => {
+    useAppStore.getState().setCurrentSlide(currentSlide);
+  }, [currentSlide]);
+
+  // Get store actions via getState() - no subscription overhead since actions never change
+  const { setCurrentTheme } = useAppStore.getState();
 
   // Play whoosh sound on slide transitions
   useSlideTransitionSound(currentSlide);
 
   // Play theme music based on current slide section
-  useThemeMusic(currentSlide);
+  useThemeMusic(currentSlide, setCurrentTheme);
 
-  // Quiz handlers
-  const handleQuizAnswer = useCallback(
-    (isCorrect: boolean) => {
-      if (isCorrect) {
-        setCorrectCount((prev) => prev + 1);
-      }
-      setAnsweredQuizzes((prev) => new Set(prev).add(currentSlide));
-      scrollState.handleQuizAnswer(isCorrect);
-    },
-    [currentSlide, scrollState]
-  );
+  // Store refs for stable callbacks
+  const scrollStateRef = useRef(scrollState);
+  scrollStateRef.current = scrollState;
+
+  // Quiz handlers - STABLE callbacks using refs (no scrollState dependency!)
+  const handleQuizAnswer = useCallback((isCorrect: boolean) => {
+    const slide = currentSlideRef.current;
+    useQuizStore.getState().answerQuiz(slide, isCorrect);
+    scrollStateRef.current.handleQuizAnswer(isCorrect);
+  }, []);
 
   const handleQuizComplete = useCallback(() => {
-    if (currentSlide.startsWith('quiz-') && !answeredQuizzes.has(currentSlide)) {
-      setQuizNumber((prev) => prev + 1);
+    const slide = currentSlideRef.current;
+    const { answeredQuizzes, incrementQuizNumber } = useQuizStore.getState();
+    if (slide.startsWith('quiz-') && !answeredQuizzes.has(slide)) {
+      incrementQuizNumber();
     }
-    scrollState.handleItemComplete();
-  }, [currentSlide, answeredQuizzes, scrollState]);
+    scrollStateRef.current.handleItemComplete();
+  }, []);
 
-  // Restart handler - resets all state and scrolls back to first slide
+  // Restart handler - resets quiz store and scrolls back to first slide
   const handleRestart = useCallback(() => {
-    setQuizNumber(1);
-    setCorrectCount(0);
-    setAnsweredQuizzes(new Set());
-    scrollState.reset();
-  }, [scrollState]);
+    useQuizStore.getState().reset();
+    scrollStateRef.current.reset();
+  }, []);
 
-  // Render slide
+  // handleStart - use ref for stability
+  const handleStart = useCallback(() => {
+    scrollStateRef.current.handleStart();
+  }, []);
+
+  // Render slide - PERF: Now truly stable! All handlers have empty deps
   const renderItem = useCallback(
     ({ item: slide, index }: { item: SlideType; index: number }) => (
       <SlideAnimationWrapper index={index}>
         <SlideRenderer
           slide={slide}
-          data={data}
-          quizNumber={quizNumber}
-          correctCount={correctCount}
-          isQuizAnswered={isQuizAnswered}
+          data={dataRef.current}
+          slideIndex={index}
           onQuizAnswer={handleQuizAnswer}
-          onQuizEnter={() => {}}
           onQuizComplete={handleQuizComplete}
-          onStart={scrollState.handleStart}
+          onStart={handleStart}
           onRestart={handleRestart}
         />
       </SlideAnimationWrapper>
     ),
-    [data, quizNumber, correctCount, isQuizAnswered, handleQuizAnswer, handleQuizComplete, scrollState.handleStart, handleRestart]
+    [handleQuizAnswer, handleQuizComplete, handleStart, handleRestart]
+    // All these are now stable (empty deps), so renderItem won't recreate!
   );
 
   // Key extractor

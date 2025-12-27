@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Animated, {
   ZoomIn,
-  FadeInDown,
+  FadeInUp,
   FadeIn,
   useSharedValue,
   useAnimatedReaction,
@@ -11,7 +11,7 @@ import Animated, {
   runOnJS,
 } from 'react-native-reanimated';
 import type { DramaStats } from '@/data/wrapped';
-import { getPartyColor } from '@/lib/party-colors';
+import { getPartyColor } from '@/shared';
 import { SlideContainer } from './shared';
 
 // ─────────────────────────────────────────────────────────────
@@ -84,7 +84,7 @@ export function DramaRevealSlide({ drama }: DramaRevealSlideProps) {
   const partyColor = getPartyColor(leader.party);
 
   return (
-    <SlideContainer>
+    <SlideContainer slideId="reveal-drama">
       <View style={styles.content}>
         {/* Phase 2: Emoji (appears after context starts building) */}
         <Animated.Text entering={ZoomIn.delay(EMOJI_DELAY).springify()} style={styles.emoji}>
@@ -92,13 +92,18 @@ export function DramaRevealSlide({ drama }: DramaRevealSlideProps) {
         </Animated.Text>
 
         {/* Phase 2: Name (wraps above the count) */}
-        <Animated.Text entering={FadeInDown.delay(NAME_DELAY)} style={styles.name}>
+        <Animated.Text
+          entering={FadeInUp.delay(NAME_DELAY).duration(400)}
+          style={styles.name}
+        >
           {leader.name}
         </Animated.Text>
 
         {/* Phase 2: Party Badge */}
         <Animated.View
-          entering={FadeInDown.delay(PARTY_DELAY).springify()}
+          entering={ZoomIn.delay(PARTY_DELAY)
+            .springify()
+            .withInitialValues({ transform: [{ scale: 0.8 }] })}
           style={[styles.partyBadge, { backgroundColor: partyColor }]}
         >
           <Text style={styles.partyBadgeText}>{leader.party}</Text>
@@ -106,7 +111,9 @@ export function DramaRevealSlide({ drama }: DramaRevealSlideProps) {
 
         {/* Phase 1: The big count - appears FIRST */}
         <Animated.Text
-          entering={FadeIn.delay(0).duration(300)}
+          entering={ZoomIn.delay(0)
+            .duration(300)
+            .withInitialValues({ transform: [{ scale: 0.9 }] })}
           style={[
             styles.count,
             {
@@ -119,12 +126,18 @@ export function DramaRevealSlide({ drama }: DramaRevealSlideProps) {
         </Animated.Text>
 
         {/* Phase 1: Label appears right after count finishes */}
-        <Animated.Text entering={FadeInDown.delay(LABEL_DELAY)} style={styles.label}>
+        <Animated.Text
+          entering={FadeInUp.delay(LABEL_DELAY).duration(400)}
+          style={styles.label}
+        >
           Zwischenrufe
         </Animated.Text>
 
         {/* Phase 2: Note at the end */}
-        <Animated.Text entering={FadeIn.delay(NOTE_DELAY)} style={styles.note}>
+        <Animated.Text
+          entering={FadeIn.delay(NOTE_DELAY).duration(500)}
+          style={styles.note}
+        >
           Mit über 4.000 (!) Zwischenrufen stört{'\n'}die AfD mit Abstand am meisten.
         </Animated.Text>
       </View>

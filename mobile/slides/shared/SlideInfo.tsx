@@ -1,12 +1,18 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import Animated, { FadeIn, FadeInDown, ZoomIn } from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 import { SlideContainer } from './SlideContainer';
+import { infoAnimations } from './animations';
+import { useDeferredRender } from '../../hooks/useDeferredRender';
 
 interface SlideInfoProps {
   emoji: string;
   title: string;
   body: string;
+  /** Slide ID for themed background (e.g., 'info-topics') */
+  slideId?: string;
+  /** Slide index for visibility-based animation trigger */
+  slideIndex: number;
 }
 
 /**
@@ -16,33 +22,40 @@ interface SlideInfoProps {
  * Shows emoji, title, and 1-2 sentences explaining the topic.
  * Animations: emoji pops in, title slides up, body fades in later.
  */
-export function SlideInfo({ emoji, title, body }: SlideInfoProps) {
+export function SlideInfo({ emoji, title, body, slideId, slideIndex }: SlideInfoProps) {
+  // Wait for slide to be visible before mounting animated content
+  const showContent = useDeferredRender(slideIndex, 0);
+
   return (
-    <SlideContainer>
+    <SlideContainer slideId={slideId}>
       <View style={styles.content}>
-        {/* Emoji with zoom pop effect */}
-        <Animated.Text
-          entering={ZoomIn.delay(100).springify()}
-          style={styles.emoji}
-        >
-          {emoji}
-        </Animated.Text>
+        {showContent && (
+          <>
+            {/* Emoji with zoom pop effect */}
+            <Animated.Text
+              entering={infoAnimations.emoji()}
+              style={styles.emoji}
+            >
+              {emoji}
+            </Animated.Text>
 
-        {/* Title with slide-up animation */}
-        <Animated.Text
-          entering={FadeInDown.delay(300).springify()}
-          style={styles.title}
-        >
-          {title}
-        </Animated.Text>
+            {/* Title with slide-up animation */}
+            <Animated.Text
+              entering={infoAnimations.title()}
+              style={styles.title}
+            >
+              {title}
+            </Animated.Text>
 
-        {/* Body with delayed fade-in */}
-        <Animated.Text
-          entering={FadeIn.delay(800).duration(400)}
-          style={styles.body}
-        >
-          {body}
-        </Animated.Text>
+            {/* Body with delayed fade-in */}
+            <Animated.Text
+              entering={infoAnimations.body()}
+              style={styles.body}
+            >
+              {body}
+            </Animated.Text>
+          </>
+        )}
       </View>
     </SlideContainer>
   );

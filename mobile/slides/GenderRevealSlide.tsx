@@ -12,7 +12,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
 import type { GenderAnalysis } from '@/data/wrapped';
-import { getPartyColor } from '@/lib/party-colors';
+import { getPartyColor } from '@/shared';
 import { SlideContainer } from './shared';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -108,7 +108,7 @@ export function GenderRevealSlide({ genderAnalysis }: GenderRevealSlideProps) {
 
   if (!distribution || sortedParties.length === 0) {
     return (
-      <SlideContainer>
+      <SlideContainer slideId="reveal-gender">
         <Text style={styles.noData}>Keine Daten verfügbar</Text>
       </SlideContainer>
     );
@@ -118,7 +118,7 @@ export function GenderRevealSlide({ genderAnalysis }: GenderRevealSlideProps) {
   const bottomParty = sortedParties[sortedParties.length - 1];
 
   return (
-    <SlideContainer>
+    <SlideContainer slideId="reveal-gender">
       <View style={styles.content}>
         {/* Header */}
         <Animated.Text entering={FadeIn.delay(0)} style={styles.subtitle}>

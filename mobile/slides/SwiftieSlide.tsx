@@ -11,7 +11,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
-import { getPartyColor } from '@/lib/party-colors';
+import { getPartyColor } from '@/shared';
 import {
   SlideContainer,
   SlideQuiz,
@@ -114,7 +114,7 @@ function ResultView() {
   const partyColor = getPartyColor(SWIFTIE.party);
 
   return (
-    <SlideContainer>
+    <SlideContainer slideId="reveal-swiftie">
       <View style={styles.resultContent}>
         {/* Emoji */}
         <AnimatedHeart />

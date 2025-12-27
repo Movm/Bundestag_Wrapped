@@ -1,22 +1,15 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, Dimensions, Pressable } from 'react-native';
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withRepeat,
-  withSequence,
-  withTiming,
-  ZoomIn,
-} from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
-import { LinearGradient } from 'expo-linear-gradient';
-import type { TopicAnalysis } from '@/data/wrapped';
-import { getPartyBgColor } from '@/lib/party-colors';
-import { FLOAT_ANIMATIONS, BUBBLE_POSITIONS } from '@/shared/animations/timings';
-import { TOPIC_BY_ID, type TopicMeta } from '@/shared/constants/topics';
+import { getPartyBgColor, BUBBLE_POSITIONS, TOPIC_BY_ID, type TopicMeta } from '@/shared';
 import { SlideContainer, SlideHeader, tiltInStaggerEntering, fadeInEntering } from './shared';
+import { useAvailableHeight, useTopInset } from '../stores/appStore';
+import { useDeferredRender } from '../hooks/useDeferredRender';
+import { useAllTopicRankings, useDisplayTopics } from '../stores/precomputedDataStore';
+import { SkiaBubbles, BubbleConfig } from '../components/SkiaBubbles';
 
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
+const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 // ─────────────────────────────────────────────────────────────
 // Types
@@ -28,62 +21,33 @@ interface PartyRanking {
 }
 
 interface TopicsRevealSlideProps {
-  topicAnalysis: TopicAnalysis;
+  slideIndex: number;
 }
 
 // ─────────────────────────────────────────────────────────────
-// Topic Bubble Component
+// Topic Bubble Overlay Component (text + tap handling only)
 // ─────────────────────────────────────────────────────────────
 
-interface TopicBubbleProps {
+interface TopicBubbleOverlayProps {
   topic: TopicMeta;
   rank: number;
   index: number;
   position: { top: number; left: number };
   partyRankings: PartyRanking[];
+  availableHeight: number;
 }
 
 const BUBBLE_SIZE = Math.min(SCREEN_WIDTH * 0.33, 150);
 
-const TopicBubble = React.memo(function TopicBubble({ topic, rank, index, position, partyRankings }: TopicBubbleProps) {
+const TopicBubbleOverlay = React.memo(function TopicBubbleOverlay({
+  topic,
+  rank,
+  index,
+  position,
+  partyRankings,
+  availableHeight,
+}: TopicBubbleOverlayProps) {
   const [isFlipped, setIsFlipped] = React.useState(false);
-  const floatConfig = FLOAT_ANIMATIONS[index] || FLOAT_ANIMATIONS[0];
-
-  // Float animation - shared values are stable refs
-  const translateX = useSharedValue(0);
-  const translateY = useSharedValue(0);
-
-  // Memoize gradient colors
-  const gradientColors = React.useMemo(
-    () => [topic.color, topic.color + 'dd'] as const,
-    [topic.color]
-  );
-
-  React.useEffect(() => {
-    const duration = floatConfig.duration;
-    translateX.value = withRepeat(
-      withSequence(
-        withTiming(floatConfig.x[1], { duration: duration / 4 }),
-        withTiming(floatConfig.x[2], { duration: duration / 4 }),
-        withTiming(floatConfig.x[3], { duration: duration / 2 })
-      ),
-      -1,
-      true
-    );
-    translateY.value = withRepeat(
-      withSequence(
-        withTiming(floatConfig.y[1], { duration: duration / 4 }),
-        withTiming(floatConfig.y[2], { duration: duration / 4 }),
-        withTiming(floatConfig.y[3], { duration: duration / 2 })
-      ),
-      -1,
-      true
-    );
-  }, [floatConfig]);
-
-  const floatStyle = useAnimatedStyle(() => ({
-    transform: [{ translateX: translateX.value }, { translateY: translateY.value }],
-  }));
 
   const handlePress = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -94,46 +58,35 @@ const TopicBubble = React.memo(function TopicBubble({ topic, rank, index, positi
     <Animated.View
       entering={tiltInStaggerEntering(index, 200)}
       style={[
-        styles.bubbleContainer,
+        styles.bubbleOverlay,
         {
-          top: SCREEN_HEIGHT * (position.top / 100),
+          top: availableHeight * (position.top / 100),
           left: SCREEN_WIDTH * (position.left / 100),
         },
       ]}
     >
-      <Animated.View style={floatStyle}>
-        <Pressable onPress={handlePress}>
-          <LinearGradient
-            colors={gradientColors}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            style={styles.bubble}
-          >
-            {!isFlipped ? (
-              // Front - rank and topic name
-              <View style={styles.bubbleContent}>
-                <Text style={styles.bubbleRank}>{rank}</Text>
-                <Text style={styles.bubbleName}>{topic.name}</Text>
+      <Pressable onPress={handlePress} style={styles.bubblePressable}>
+        {!isFlipped ? (
+          <View style={styles.bubbleContent}>
+            <Text style={styles.bubbleRank}>{rank}</Text>
+            <Text style={styles.bubbleName}>{topic.name}</Text>
+          </View>
+        ) : (
+          <View style={styles.bubbleBackContent}>
+            {partyRankings.slice(0, 5).map((pr, i) => (
+              <View key={pr.party} style={styles.partyRow}>
+                <Text style={styles.partyRankNum}>{i + 1}.</Text>
+                <View
+                  style={[styles.partyDot, { backgroundColor: getPartyBgColor(pr.party) }]}
+                />
+                <Text style={styles.partyName} numberOfLines={1}>
+                  {pr.party}
+                </Text>
               </View>
-            ) : (
-              // Back - party rankings
-              <View style={styles.bubbleBackContent}>
-                {partyRankings.slice(0, 5).map((pr, i) => (
-                  <View key={pr.party} style={styles.partyRow}>
-                    <Text style={styles.partyRankNum}>{i + 1}.</Text>
-                    <View
-                      style={[styles.partyDot, { backgroundColor: getPartyBgColor(pr.party) }]}
-                    />
-                    <Text style={styles.partyName} numberOfLines={1}>
-                      {pr.party}
-                    </Text>
-                  </View>
-                ))}
-              </View>
-            )}
-          </LinearGradient>
-        </Pressable>
-      </Animated.View>
+            ))}
+          </View>
+        )}
+      </Pressable>
     </Animated.View>
   );
 });
@@ -142,32 +95,36 @@ const TopicBubble = React.memo(function TopicBubble({ topic, rank, index, positi
 // Main Component
 // ─────────────────────────────────────────────────────────────
 
-export function TopicsRevealSlide({ topicAnalysis }: TopicsRevealSlideProps) {
-  const { topTopics, byParty } = topicAnalysis;
+export function TopicsRevealSlide({ slideIndex }: TopicsRevealSlideProps) {
+  const availableHeight = useAvailableHeight();
+  const topInset = useTopInset();
 
-  // Get top 5 topics for bubble layout
-  const displayTopics = useMemo(() => topTopics.slice(0, 5), [topTopics]);
+  // Defer bubble rendering until 300ms after slide becomes visible
+  // This allows header to appear first for faster perceived start
+  const showBubbles = useDeferredRender(slideIndex, 300);
 
-  // Pre-compute party rankings for all displayed topics at once
-  // This avoids recalculating rankings for each bubble on every render
-  const allPartyRankings = useMemo(() => {
-    const result: Record<string, PartyRanking[]> = {};
-    for (const topicScore of displayTopics) {
-      const rankings: PartyRanking[] = [];
-      for (const [party, topics] of Object.entries(byParty)) {
-        if (party === 'fraktionslos') continue;
-        const score = topics[topicScore.topic] || 0;
-        rankings.push({ party, score });
-      }
-      result[topicScore.topic] = rankings.sort((a, b) => b.score - a.score);
-    }
-    return result;
-  }, [displayTopics, byParty]);
+  // Use precomputed data from store (computed once on mount, O(1) access)
+  const displayTopics = useDisplayTopics();
+  const allPartyRankings = useAllTopicRankings();
+
+  // Create bubble configs for Skia Canvas
+  const bubbleConfigs = React.useMemo<BubbleConfig[]>(() => {
+    return displayTopics.map((topicScore, i) => {
+      const topic = TOPIC_BY_ID[topicScore.topic];
+      const pos = BUBBLE_POSITIONS.fiveItems[i];
+      return {
+        x: SCREEN_WIDTH * (pos.left / 100) + BUBBLE_SIZE / 2,
+        y: availableHeight * (pos.top / 100) + BUBBLE_SIZE / 2,
+        size: BUBBLE_SIZE,
+        color: topic?.color || '#888888',
+      };
+    });
+  }, [displayTopics, availableHeight]);
 
   return (
-    <SlideContainer>
-      {/* Header */}
-      <View style={styles.header}>
+    <SlideContainer slideId="reveal-topics">
+      {/* Header - renders immediately, positioned below safe area */}
+      <View style={[styles.header, { top: topInset + 16 }]}>
         <SlideHeader
           emoji="📊"
           title="Die Themen des Bundestags"
@@ -175,29 +132,37 @@ export function TopicsRevealSlide({ topicAnalysis }: TopicsRevealSlideProps) {
         />
       </View>
 
-      {/* Topic Bubbles */}
-      {displayTopics.map((topicScore, i) => {
+      {/* Skia Canvas - static gradient backgrounds */}
+      {showBubbles && (
+        <SkiaBubbles bubbles={bubbleConfigs} />
+      )}
+
+      {/* Native overlays - text + tap handling */}
+      {showBubbles && displayTopics.map((topicScore, i) => {
         const topic = TOPIC_BY_ID[topicScore.topic];
         if (!topic) return null;
         return (
-          <TopicBubble
+          <TopicBubbleOverlay
             key={topicScore.topic}
             topic={topic}
             rank={topicScore.rank}
             index={i}
             position={BUBBLE_POSITIONS.fiveItems[i]}
             partyRankings={allPartyRankings[topicScore.topic]}
+            availableHeight={availableHeight}
           />
         );
       })}
 
-      {/* Hint */}
-      <Animated.Text
-        entering={fadeInEntering(2200)}
-        style={styles.hint}
-      >
-        Tippe auf eine Blase für Details
-      </Animated.Text>
+      {/* Hint - deferred with bubbles */}
+      {showBubbles && (
+        <Animated.Text
+          entering={fadeInEntering(2200)}
+          style={styles.hint}
+        >
+          Tippe auf eine Blase für Details
+        </Animated.Text>
+      )}
     </SlideContainer>
   );
 }
@@ -209,27 +174,20 @@ export function TopicsRevealSlide({ topicAnalysis }: TopicsRevealSlideProps) {
 const styles = StyleSheet.create({
   header: {
     position: 'absolute',
-    top: 40,
     left: 0,
     right: 0,
     zIndex: 10,
   },
-  bubbleContainer: {
+  bubbleOverlay: {
     position: 'absolute',
     width: BUBBLE_SIZE,
     height: BUBBLE_SIZE,
   },
-  bubble: {
-    width: BUBBLE_SIZE,
-    height: BUBBLE_SIZE,
-    borderRadius: BUBBLE_SIZE / 2,
+  bubblePressable: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.3,
-    shadowRadius: 16,
-    elevation: 8,
+    borderRadius: BUBBLE_SIZE / 2,
   },
   bubbleContent: {
     alignItems: 'center',
@@ -283,7 +241,7 @@ const styles = StyleSheet.create({
   },
   hint: {
     position: 'absolute',
-    bottom: 60,
+    bottom: 24,
     left: 0,
     right: 0,
     textAlign: 'center',
