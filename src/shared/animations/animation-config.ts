@@ -189,11 +189,11 @@ export const FLOAT_ANIMATIONS = [
 export const BUBBLE_POSITIONS = {
   /** 5-item scattered layout (percentages) - constrained below header, centered */
   fiveItems: [
-    { top: 18, left: 15 },  // Upper-left
-    { top: 20, left: 50 },  // Upper-right
-    { top: 38, left: 32 },  // Center
-    { top: 56, left: 12 },  // Lower-left
-    { top: 58, left: 48 },  // Lower-right
+    { top: 28, left: 15 },  // Upper-left
+    { top: 30, left: 50 },  // Upper-right
+    { top: 46, left: 32 },  // Center
+    { top: 62, left: 12 },  // Lower-left
+    { top: 64, left: 48 },  // Lower-right
   ],
 
   /** 3-item medal layout for speakers */
@@ -216,7 +216,7 @@ export const DELAY = {
     body: 500,
   },
 
-  /** Intro slide sequence */
+  /** Intro slide sequence (legacy - use SLIDE_INTRO instead) */
   introSlide: {
     emoji: 100,
     title: 200,
@@ -225,6 +225,29 @@ export const DELAY = {
 
   /** Auto-scroll delay (ms) */
   autoScroll: 4000,
+} as const;
+
+// ─────────────────────────────────────────────────────────────
+// Slide Intro Animation Config
+// Shared between web (Motion) and mobile (Reanimated)
+// ─────────────────────────────────────────────────────────────
+
+export const SLIDE_INTRO = {
+  /** Emoji scale pop-in (scale 0→1, soft spring) */
+  emoji: { delay: 100 },
+  /** Title slide-up entrance (y: 30→0, soft spring) */
+  title: { delay: 300, translateY: 30 },
+  /** Subtitle simple fade */
+  subtitle: { delay: 800, duration: 500 },
+} as const;
+
+export const SLIDE_INFO = {
+  /** Emoji scale pop-in */
+  emoji: { delay: 100 },
+  /** Title slide-up entrance */
+  title: { delay: 300, translateY: 30 },
+  /** Body simple fade */
+  body: { delay: 800, duration: 400 },
 } as const;
 
 // ─────────────────────────────────────────────────────────────

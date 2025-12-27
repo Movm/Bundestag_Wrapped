@@ -4,38 +4,25 @@
  * Web-specific implementation using browser Audio API.
  * Uses shared types from @/shared/theme-music.
  *
- * Sound Files Inventory (public/sounds/):
- * USED:
- * - Broke For Free - Night Owl.mp3 (intro)
- * - Chromix - I Know You're Out There.mp3 (discriminatory)
- * - HoliznaCC0 - Mutant Club.mp3 (topics)
- * - IKILLYA - Godsize.mp3 (drama)
- * - jonas the plugexpert - APC - reflections - gobot rmx.mp3 (vocabulary, signature)
- * - Kevin MacLeod - Hyperfun.mp3 (swiftie)
- * - Kevin MacLeod - Hustle.mp3 (speeches, speakers, share)
- * - Kevin MacLeod - Dirt Rhodes.mp3 (common-words)
- * - Kidkanevil & DZA - Nuff Stickers.mp3 (gender)
- * - Lopkerjo - Love Others ICE.mp3 (tone)
- * - Podington Bear - Starling.mp3 (finale)
- * - sarah rasines - canción popular.mp3 (moin)
+ * Features:
+ * - LAZY LOADING: Only loads tracks when needed (not all 13 at startup)
+ * - Preloads next section's theme for seamless transitions
+ * - Crossfade between themes using browser Audio API
  *
- * UNUSED (kept for future use):
- * - Broke For Free - Living In Reverse.mp3
- * - Kevin MacLeod - The Cannery.mp3
- * - Kevin MacLeod - On the Ground.mp3
- * - Kevin MacLeod - Wagon Wheel Electronic.mp3
- * - OpVious - Wake Up.mp3
- * - The Professional Savage - White Youth Worker.mp3
- * - Tours - Enthusiast.mp3
+ * Sound Files Inventory (public/sounds/):
+ * All files use kebab-case names for Metro/asset bundler compatibility.
+ * See THEME_PATHS in @/shared/theme-music/types.ts for file mappings.
  */
 
+import { useEffect, useRef } from 'react';
 import type { SlideType } from '@/components/main-wrapped/constants';
-import { isMuted } from '@/lib/sounds';
+import { useAudioStore } from '@/stores/audioStore';
 import {
   type ThemeType,
   THEME_PATHS,
   THEME_VOLUME,
   CROSSFADE_DURATION,
+  SECTION_THEMES,
   getThemeForSlide as getThemeForSlideShared,
 } from '@/shared/theme-music';
 
@@ -43,6 +30,37 @@ import {
 export { type ThemeType, THEME_TRACK_INFO } from '@/shared/theme-music';
 
 const FADE_STEPS = 20; // Smooth fade with 20 steps
+
+// Section order for next-theme prediction
+const SECTION_ORDER: string[] = [
+  'topics',
+  'vocabulary',
+  'speeches',
+  'drama',
+  'discriminatory',
+  'common-words',
+  'moin',
+  'swiftie',
+  'tone',
+  'gender',
+  'share',
+  'finale',
+];
+
+/**
+ * Get the next theme to preload based on current slide
+ */
+function getNextTheme(currentSlide: string): ThemeType | null {
+  const section = currentSlide.replace(/^(intro|quiz|info|reveal|chart)-/, '');
+  const currentIndex = SECTION_ORDER.indexOf(section);
+
+  if (currentIndex === -1 || currentIndex >= SECTION_ORDER.length - 1) {
+    return null;
+  }
+
+  const nextSection = SECTION_ORDER[currentIndex + 1];
+  return SECTION_THEMES[nextSection] || null;
+}
 
 /**
  * Get the theme type for a given slide
@@ -53,44 +71,91 @@ export function getThemeForSlide(slideId: SlideType): ThemeType {
 
 /**
  * Theme Music Manager class
- * Singleton that handles crossfading between section themes
+ * Singleton that handles crossfading between section themes with LAZY LOADING
  */
 class ThemeMusicManager {
   private currentTheme: ThemeType | null = null;
+  private currentSlide: string | null = null;
   private audioElements: Map<ThemeType, HTMLAudioElement> = new Map();
-  private isInitialized = false;
+  private loadingThemes: Set<ThemeType> = new Set();
   private fadeIntervals: Map<ThemeType, number> = new Map();
   private isTransitioning = false;
 
   /**
-   * Initialize and preload all theme tracks
-   * Call on first user interaction to comply with autoplay policies
+   * Load a single theme track on-demand (LAZY LOADING)
+   * Returns cached audio element if already loaded
    */
-  init(): void {
-    if (this.isInitialized || typeof window === 'undefined') return;
+  private async loadTheme(theme: ThemeType): Promise<HTMLAudioElement | null> {
+    if (typeof window === 'undefined') return null;
 
-    Object.entries(THEME_PATHS).forEach(([theme, path]) => {
+    // Return cached audio element
+    if (this.audioElements.has(theme)) {
+      return this.audioElements.get(theme)!;
+    }
+
+    // Prevent duplicate loading
+    if (this.loadingThemes.has(theme)) {
+      // Wait for existing load to complete
+      while (this.loadingThemes.has(theme)) {
+        await new Promise(resolve => setTimeout(resolve, 50));
+      }
+      return this.audioElements.get(theme) || null;
+    }
+
+    this.loadingThemes.add(theme);
+
+    try {
+      const path = THEME_PATHS[theme];
+      if (!path) {
+        this.loadingThemes.delete(theme);
+        return null;
+      }
+
       const audio = new Audio(path);
       audio.loop = true;
-      audio.volume = 0; // Start silent
+      audio.volume = 0;
       audio.preload = 'auto';
-      audio.load();
-      this.audioElements.set(theme as ThemeType, audio);
-    });
 
-    this.isInitialized = true;
+      // Wait for audio to be ready
+      await new Promise<void>((resolve, reject) => {
+        audio.addEventListener('canplaythrough', () => resolve(), { once: true });
+        audio.addEventListener('error', () => reject(new Error('Failed to load')), { once: true });
+        audio.load();
+      });
+
+      this.audioElements.set(theme, audio);
+      this.loadingThemes.delete(theme);
+
+      return audio;
+    } catch (error) {
+      console.debug(`Failed to load theme ${theme}:`, error);
+      this.loadingThemes.delete(theme);
+      return null;
+    }
+  }
+
+  /**
+   * Preload next theme in background (non-blocking)
+   */
+  private preloadNextTheme(currentSlide: string): void {
+    const nextTheme = getNextTheme(currentSlide);
+    if (nextTheme && !this.audioElements.has(nextTheme)) {
+      // Fire and forget - don't await
+      this.loadTheme(nextTheme).catch(() => {});
+    }
   }
 
   /**
    * Play a theme (crossfade from current if different)
+   * Now with lazy loading - only loads the needed track
    */
-  playTheme(theme: ThemeType): void {
+  async playTheme(theme: ThemeType, slideId?: string): Promise<void> {
     if (typeof window === 'undefined') return;
-    if (isMuted()) return;
+    if (useAudioStore.getState().isMuted) return;
 
-    // Initialize on first play if needed
-    if (!this.isInitialized) {
-      this.init();
+    // Store current slide for preloading logic
+    if (slideId) {
+      this.currentSlide = slideId;
     }
 
     // Skip if already playing this theme
@@ -102,7 +167,23 @@ class ThemeMusicManager {
     }
 
     this.isTransitioning = true;
+
+    // Load the theme on-demand (lazy loading!)
+    const audio = await this.loadTheme(theme);
+    if (!audio) {
+      this.isTransitioning = false;
+      return;
+    }
+
     this.crossfadeTo(theme);
+
+    // Update store so UI components can react to theme changes
+    useAudioStore.getState().setCurrentTheme(theme);
+
+    // Preload next theme in background after starting current
+    if (this.currentSlide) {
+      this.preloadNextTheme(this.currentSlide);
+    }
   }
 
   /**
@@ -262,7 +343,7 @@ class ThemeMusicManager {
    * Resume current theme
    */
   resume(): void {
-    if (isMuted()) return;
+    if (useAudioStore.getState().isMuted) return;
 
     if (this.currentTheme) {
       const audio = this.audioElements.get(this.currentTheme);
@@ -288,6 +369,10 @@ class ThemeMusicManager {
     });
     this.fadeIntervals.clear();
     this.currentTheme = null;
+    this.currentSlide = null;
+
+    // Clear theme in store
+    useAudioStore.getState().setCurrentTheme(null);
   }
 
   /**
@@ -305,6 +390,27 @@ class ThemeMusicManager {
     const audio = this.audioElements.get(this.currentTheme);
     return audio ? !audio.paused : false;
   }
+
+  /**
+   * Cleanup all audio resources
+   * Call when leaving the wrapped experience to release memory
+   */
+  cleanup(): void {
+    this.stop();
+
+    // Release all audio elements
+    this.audioElements.forEach((audio) => {
+      audio.pause();
+      audio.src = ''; // Release network resources
+      audio.load(); // Reset audio element
+    });
+
+    this.audioElements.clear();
+    this.fadeIntervals.clear();
+    this.loadingThemes.clear();
+    this.currentTheme = null;
+    this.currentSlide = null;
+  }
 }
 
 // Export singleton instance
@@ -312,13 +418,20 @@ export const themeMusic = new ThemeMusicManager();
 
 /**
  * React hook for using theme music with slide changes
+ * Properly uses useEffect to trigger music only on actual slide transitions
  */
 export function useThemeMusic(currentSlide: SlideType | null): void {
-  if (typeof window === 'undefined') return;
+  const prevSlideRef = useRef<SlideType | null>(null);
 
-  // Only run on slide changes
-  if (!currentSlide) return;
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (!currentSlide) return;
 
-  const theme = getThemeForSlide(currentSlide);
-  themeMusic.playTheme(theme);
+    // Only play if slide actually changed (prevents unnecessary calls)
+    if (prevSlideRef.current === currentSlide) return;
+    prevSlideRef.current = currentSlide;
+
+    const theme = getThemeForSlide(currentSlide);
+    themeMusic.playTheme(theme);
+  }, [currentSlide]);
 }

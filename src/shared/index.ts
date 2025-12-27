@@ -7,7 +7,7 @@
  */
 
 // Animation configurations
-export * from './animations/timings';
+export * from './animations/animation-config';
 
 // Hooks
 export { useQuizConfig, type QuizConfig, type QuizConfigOptions } from './hooks/useQuizConfig';
@@ -33,3 +33,6 @@ export * from './speaker-wrapped';
 
 // Sound system (types and hook factory)
 export * from './sounds';
+
+// Theme backgrounds
+export * from './theme-backgrounds/types';

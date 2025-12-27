@@ -35,19 +35,19 @@ export type ThemeType =
   | 'rhodes';     // Kevin MacLeod - Dirt Rhodes (mellow, smooth)
 
 export const THEME_PATHS: Record<ThemeType, string> = {
-  night: '/sounds/Broke%20For%20Free%20-%20Night%20Owl.mp3',
-  mutant: '/sounds/HoliznaCC0%20-%20Mutant%20Club.mp3',
-  starling: '/sounds/Podington%20Bear%20-%20Starling.mp3',
-  industrial: '/sounds/IKILLYA%20-%20Godsize.mp3',
-  spacey: '/sounds/Chromix%20-%20I%20Know%20You%27re%20Out%20There.mp3',
-  playful: '/sounds/Kidkanevil%20%26%20DZA%20-%20Nuff%20Stickers.mp3',
-  chiptune: '/sounds/Kevin%20MacLeod%20-%20Hyperfun.mp3',
-  loveice: '/sounds/Lopkerjo%20-%20Love%20Others%20ICE.mp3',
-  popular: '/sounds/sarah%20rasines%20-%20canci%C3%B3n%20popular.mp3',
-  reverse: '/sounds/Broke%20For%20Free%20-%20Living%20In%20Reverse.mp3',
-  reflections: '/sounds/jonas%20the%20plugexpert%20-%20APC%20-%20reflections%20-%20gobot%20rmx.mp3',
-  hustle: '/sounds/Kevin%20MacLeod%20-%20Hustle.mp3',
-  rhodes: '/sounds/Kevin%20MacLeod%20-%20Dirt%20Rhodes.mp3',
+  night: '/sounds/broke-for-free-night-owl.mp3',
+  mutant: '/sounds/holiznacc0-mutant-club.mp3',
+  starling: '/sounds/podington-bear-starling.mp3',
+  industrial: '/sounds/ikillya-godsize.mp3',
+  spacey: '/sounds/chromix-i-know-youre-out-there.mp3',
+  playful: '/sounds/kidkanevil-dza-nuff-stickers.mp3',
+  chiptune: '/sounds/kevin-macleod-hyperfun.mp3',
+  loveice: '/sounds/lopkerjo-love-others-ice.mp3',
+  popular: '/sounds/sarah-rasines-cancion-popular.mp3',
+  reverse: '/sounds/broke-for-free-living-in-reverse.mp3',
+  reflections: '/sounds/jonas-the-plugexpert-apc-reflections-gobot-rmx.mp3',
+  hustle: '/sounds/kevin-macleod-hustle.mp3',
+  rhodes: '/sounds/kevin-macleod-dirt-rhodes.mp3',
 };
 
 export const THEME_TRACK_INFO: Record<ThemeType, { title: string; artist: string }> = {
@@ -112,6 +112,9 @@ export const SECTION_THEMES: Record<string, ThemeType> = {
 // Volume settings
 export const THEME_VOLUME = 0.35;
 export const CROSSFADE_DURATION = 1000; // 1 second
+
+// Track info display settings
+export const TRACK_INFO_DISPLAY_DURATION = 3000; // 3 seconds
 
 /**
  * Get the theme type for a given slide ID
