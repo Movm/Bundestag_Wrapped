@@ -1,5 +1,6 @@
 import { memo, useMemo } from 'react';
 import type { GenderAnalysis } from '@/data/wrapped';
+import { INTRO_SLIDES } from '@/data/intro-slides';
 import {
   SlideIntro,
   SlideQuiz,
@@ -38,11 +39,12 @@ export const GenderSlide = memo(function GenderSlide({
   });
 
   if (phase === 'intro') {
+    const intro = INTRO_SLIDES['intro-gender'];
     return (
       <SlideIntro
-        emoji="👩‍💼"
-        title="Geschlechterverteilung"
-        subtitle="Wer spricht wie oft im Bundestag?"
+        emoji={intro.emoji}
+        title={intro.title}
+        subtitle={intro.subtitle}
         slideId="intro-gender"
       />
     );

@@ -40,7 +40,7 @@ export function useSpeakerData(slug: string) {
   })
 }
 
-export function useSpeechesDb() {
+export function useSpeechesDb(options?: { enabled?: boolean }) {
   return useQuery<SpeechesData, Error>({
     queryKey: ['speeches'],
     queryFn: () => fetch('/speeches_db.json').then(r => {
@@ -48,10 +48,11 @@ export function useSpeechesDb() {
       return r.json()
     }),
     ...STATIC_DATA_OPTIONS,
+    enabled: options?.enabled ?? true,
   })
 }
 
-export function useWordsIndex() {
+export function useWordsIndex(options?: { enabled?: boolean }) {
   return useQuery<WordsIndex, Error>({
     queryKey: ['words-index'],
     queryFn: () => fetch('/words_index.json').then(r => {
@@ -59,5 +60,6 @@ export function useWordsIndex() {
       return r.json()
     }),
     ...STATIC_DATA_OPTIONS,
+    enabled: options?.enabled ?? true,
   })
 }

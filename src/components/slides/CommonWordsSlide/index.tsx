@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { INTRO_SLIDES } from '@/data/intro-slides';
 import {
   SlideIntro,
   SlideQuiz,
@@ -29,11 +30,12 @@ export const CommonWordsSlide = memo(function CommonWordsSlide({
   });
 
   if (phase === 'intro') {
+    const intro = INTRO_SLIDES['intro-common-words'];
     return (
       <SlideIntro
-        emoji="📊"
-        title="Diese Wörter nutzen alle Parteien."
-        subtitle="Was war das meistgenutzte Wort?"
+        emoji={intro.emoji}
+        title={intro.title}
+        subtitle={intro.subtitle}
         slideId="intro-common-words"
       />
     );

@@ -58,6 +58,7 @@ export function OrbsDecoration({
             strokeLinecap="round"
             fill="none"
             filter={`url(#orbs-blur-${side})`}
+            style={{ willChange: 'transform, opacity' }}
             initial={{ pathLength: 0, opacity: 0, scale: 0.8 }}
             animate={
               animate

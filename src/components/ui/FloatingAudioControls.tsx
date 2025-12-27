@@ -1,20 +1,15 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { Volume2, VolumeX, Music } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { isMuted, toggleMuted } from '@/lib/sounds';
-import { themeMusic, THEME_TRACK_INFO, type ThemeType } from '@/lib/theme-music';
+import { useAudioStore, useTrackInfo } from '@/stores/audioStore';
+import { themeMusic } from '@/lib/theme-music';
 
-interface FloatingAudioControlsProps {
-  currentTheme?: ThemeType | null;
-}
-
-export function FloatingAudioControls({ currentTheme }: FloatingAudioControlsProps) {
-  const [muted, setMuted] = useState(false);
+export function FloatingAudioControls() {
+  const muted = useAudioStore((s) => s.isMuted);
+  const toggleMute = useAudioStore((s) => s.toggleMute);
+  const currentTheme = useAudioStore((s) => s.currentTheme);
+  const trackInfo = useTrackInfo();
   const [showTrackInfo, setShowTrackInfo] = useState(false);
-
-  useEffect(() => {
-    setMuted(isMuted());
-  }, []);
 
   // Show track info briefly when theme changes
   useEffect(() => {
@@ -26,8 +21,7 @@ export function FloatingAudioControls({ currentTheme }: FloatingAudioControlsPro
   }, [currentTheme, muted]);
 
   const handleToggleMute = () => {
-    const newMuted = toggleMuted();
-    setMuted(newMuted);
+    const newMuted = toggleMute();
 
     // Also control theme music when muting/unmuting
     if (newMuted) {
@@ -36,8 +30,6 @@ export function FloatingAudioControls({ currentTheme }: FloatingAudioControlsPro
       themeMusic.resume();
     }
   };
-
-  const trackInfo = currentTheme ? THEME_TRACK_INFO[currentTheme] : null;
 
   return (
     <motion.div

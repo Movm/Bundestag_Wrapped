@@ -2,7 +2,8 @@ import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { Menu, X, Volume2, VolumeX, Music, Music2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { isMuted, toggleMuted, toggleBackgroundMusic, isBackgroundMusicPlaying } from '@/lib/sounds';
+import { toggleBackgroundMusic, isBackgroundMusicPlaying } from '@/lib/sounds';
+import { useAudioStore } from '@/stores/audioStore';
 
 interface HeaderProps {
   variant?: 'dark' | 'light';
@@ -12,17 +13,16 @@ interface HeaderProps {
 
 export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderProps) {
   const isDark = variant === 'dark';
-  const [muted, setMuted] = useState(false);
+  const muted = useAudioStore((s) => s.isMuted);
+  const toggleMute = useAudioStore((s) => s.toggleMute);
   const [musicPlaying, setMusicPlaying] = useState(false);
 
   useEffect(() => {
-    setMuted(isMuted());
     setMusicPlaying(isBackgroundMusicPlaying());
   }, []);
 
   const handleToggleMute = () => {
-    const newMuted = toggleMuted();
-    setMuted(newMuted);
+    toggleMute();
   };
 
   const handleToggleMusic = () => {

@@ -5,8 +5,8 @@
  * Creates a dreamy, floating atmosphere with gentle orbs.
  */
 
-import { memo, useMemo } from 'react';
-import { motion } from 'motion/react';
+import { memo, useMemo, useRef } from 'react';
+import { motion, useInView } from 'motion/react';
 import type { ThemeColors } from '@/shared/theme-backgrounds/types';
 
 interface OrbConfig {
@@ -34,6 +34,10 @@ export const OrbsEffect = memo(function OrbsEffect({
   colors,
   intensity = 1,
 }: OrbsEffectProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  // Only animate when visible - pauses infinite animations when off-screen
+  const isInView = useInView(containerRef, { amount: 0.1 });
+
   const baseOpacity = 0.12 * intensity;
 
   const orbs = useMemo(() => {
@@ -44,7 +48,7 @@ export const OrbsEffect = memo(function OrbsEffect({
   }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden">
       {orbs.map((orb, index) => (
         <motion.div
           key={`orb-${index}`}
@@ -61,15 +65,15 @@ export const OrbsEffect = memo(function OrbsEffect({
             filter: 'blur(40px)',
             transform: 'translate(-50%, -50%)',
           }}
-          animate={{
+          animate={isInView ? {
             x: [0, 30, -20, 10, 0],
             y: [0, -20, 15, -10, 0],
             scale: [1, 1.1, 0.95, 1.05, 1],
-          }}
+          } : {}}
           transition={{
             duration: orb.duration,
             delay: orb.delay,
-            repeat: Infinity,
+            repeat: isInView ? Infinity : 0,
             ease: 'easeInOut',
           }}
         />

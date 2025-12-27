@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { motion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 import { PartyBadge } from '@/components/ui/PartyBadge';
 
 interface MoinSpeaker {
@@ -23,24 +23,27 @@ export const WavingCard = memo(function WavingCard({
   isChampion,
   compact = false,
 }: WavingCardProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   // Compact version for runners-up on mobile
   if (compact) {
     return (
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay, type: 'spring', stiffness: 150, damping: 15 }}
         className="relative"
       >
         <motion.div
-          animate={{ y: [0, -3, 0] }}
+          animate={prefersReducedMotion ? {} : { y: [0, -3, 0] }}
           transition={{
             duration: 2.5,
-            repeat: Infinity,
+            repeat: prefersReducedMotion ? 0 : Infinity,
             ease: 'easeInOut',
             delay: rank * 0.2,
           }}
+          style={{ willChange: prefersReducedMotion ? 'auto' : 'transform' }}
           className="relative flex flex-col items-center p-3 rounded-xl bg-white/10 border border-white/20 backdrop-blur-sm"
         >
           <div className="absolute -top-2 -left-2 w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs bg-white/20 text-white/80">
@@ -63,7 +66,7 @@ export const WavingCard = memo(function WavingCard({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50, rotate: -10 }}
+      initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 50, rotate: prefersReducedMotion ? 0 : -10 }}
       whileInView={{ opacity: 1, y: 0, rotate: 0 }}
       viewport={{ once: true }}
       transition={{
@@ -75,16 +78,17 @@ export const WavingCard = memo(function WavingCard({
       className="relative"
     >
       <motion.div
-        animate={{
+        animate={prefersReducedMotion ? {} : {
           rotate: [-3, 3, -3],
           y: [0, -6, 0],
         }}
         transition={{
           duration: 2 + rank * 0.3,
-          repeat: Infinity,
+          repeat: prefersReducedMotion ? 0 : Infinity,
           ease: 'easeInOut',
           delay: rank * 0.2,
         }}
+        style={{ willChange: prefersReducedMotion ? 'auto' : 'transform' }}
         className={`
           relative flex flex-col items-center p-6 rounded-2xl
           ${isChampion
@@ -107,13 +111,14 @@ export const WavingCard = memo(function WavingCard({
         )}
 
         <motion.div
-          animate={{ rotate: [0, 15, -10, 15, 0] }}
+          animate={prefersReducedMotion ? {} : { rotate: [0, 15, -10, 15, 0] }}
           transition={{
             duration: 1.5,
-            repeat: Infinity,
+            repeat: prefersReducedMotion ? 0 : Infinity,
             repeatDelay: 2 + rank,
             ease: 'easeInOut',
           }}
+          style={{ willChange: prefersReducedMotion ? 'auto' : 'transform' }}
           className={`text-4xl md:text-5xl mb-3 ${isChampion ? '' : 'opacity-80'}`}
         >
           👋

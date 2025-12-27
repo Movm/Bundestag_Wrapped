@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { DecorativeAccents, AbstractParticles } from './DecorativeAccents';
+import { SLIDE_INTRO } from '@/shared/animations/animation-config';
 
 interface SlideIntroProps {
   emoji: string;
@@ -36,10 +37,8 @@ export function SlideIntro({ emoji, title, subtitle, showAccents = true, slideId
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{
-            delay: 0.1,
+            delay: SLIDE_INTRO.emoji.delay / 1000,
             type: 'spring',
-            bounce: 0.5,
-            duration: 0.6,
           }}
           className="text-6xl md:text-7xl mb-4 block"
         >
@@ -49,10 +48,13 @@ export function SlideIntro({ emoji, title, subtitle, showAccents = true, slideId
         {/* Title with slide-up spring animation */}
         {title && (
           <motion.h2
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: SLIDE_INTRO.title.translateY }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.3, type: 'spring', bounce: 0.3 }}
+          transition={{
+              delay: SLIDE_INTRO.title.delay / 1000,
+              type: 'spring',
+            }}
             className="text-2xl md:text-4xl font-black text-white mb-2"
           >
             {title}
@@ -65,7 +67,10 @@ export function SlideIntro({ emoji, title, subtitle, showAccents = true, slideId
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.8, duration: 0.5 }}
+            transition={{
+              delay: SLIDE_INTRO.subtitle.delay / 1000,
+              duration: SLIDE_INTRO.subtitle.duration / 1000,
+            }}
             className="text-white/60 text-xl md:text-2xl"
           >
             {subtitle}

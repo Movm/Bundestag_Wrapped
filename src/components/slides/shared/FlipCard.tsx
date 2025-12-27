@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from 'react';
-import { motion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 import { playSound } from '@/lib/sounds';
 
 interface FlipCardProps {
@@ -28,6 +28,7 @@ export function FlipCard({
 }: FlipCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
 
   const handleTouchStart = () => {
     setIsTouchDevice(true);
@@ -41,6 +42,24 @@ export function FlipCard({
       playSound('click');
     }
   };
+
+  // Reduced motion: show content without 3D flip animation
+  if (prefersReducedMotion) {
+    return (
+      <div
+        onClick={() => setIsFlipped((prev) => !prev)}
+        className={`cursor-pointer relative ${className}`}
+        style={{ width: size, height: size }}
+      >
+        <div className="absolute inset-0" style={{ opacity: isFlipped ? 0 : 1 }}>
+          {front}
+        </div>
+        <div className="absolute inset-0" style={{ opacity: isFlipped ? 1 : 0 }}>
+          {back}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <motion.div
@@ -56,6 +75,7 @@ export function FlipCard({
         perspective: 1000,
         width: size,
         height: size,
+        willChange: 'transform',
       }}
     >
       {/* Front face */}

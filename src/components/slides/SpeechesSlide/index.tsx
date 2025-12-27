@@ -1,5 +1,6 @@
 import { memo, useMemo } from 'react';
 import type { PartyStats } from '@/data/wrapped';
+import { INTRO_SLIDES } from '@/data/intro-slides';
 import {
   SlideIntro,
   SlideQuiz,
@@ -42,11 +43,12 @@ export const SpeechesSlide = memo(function SpeechesSlide({
   });
 
   if (phase === 'intro') {
+    const intro = INTRO_SLIDES['intro-speeches'];
     return (
       <SlideIntro
-        emoji="🎤"
-        title="Manche reden mehr als andere."
-        subtitle="Weißt du, wer am meisten am Rednerpult stand?"
+        emoji={intro.emoji}
+        title={intro.title}
+        subtitle={intro.subtitle}
         slideId="intro-speeches"
       />
     );

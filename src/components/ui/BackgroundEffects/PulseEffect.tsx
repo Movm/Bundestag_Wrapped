@@ -5,8 +5,8 @@
  * Creates a data-visualization feel with expanding rings.
  */
 
-import { memo } from 'react';
-import { motion } from 'motion/react';
+import { memo, useRef } from 'react';
+import { motion, useInView } from 'motion/react';
 import type { ThemeColors } from '@/shared/theme-backgrounds/types';
 
 interface PulseEffectProps {
@@ -20,10 +20,14 @@ export const PulseEffect = memo(function PulseEffect({
   colors,
   intensity = 1,
 }: PulseEffectProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  // Only animate when visible - pauses infinite animations when off-screen
+  const isInView = useInView(containerRef, { amount: 0.1 });
+
   const baseOpacity = 0.2 * intensity;
 
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden">
       {/* Center point glow */}
       <div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -57,7 +61,7 @@ export const PulseEffect = memo(function PulseEffect({
             scale: 5 / 120, // Start at 5vw equivalent
             opacity: baseOpacity,
           }}
-          animate={{
+          animate={isInView ? {
             scale: [5 / 120, 1], // Expand from 5vw to 120vw
             opacity: [baseOpacity, baseOpacity * 0.8, 0],
             borderColor: [
@@ -65,11 +69,11 @@ export const PulseEffect = memo(function PulseEffect({
               `rgba(${colors.secondary}, ${baseOpacity * 0.6})`,
               `rgba(${colors.secondary}, 0)`,
             ],
-          }}
+          } : { scale: 5 / 120, opacity: 0 }}
           transition={{
             duration: 8,
             delay: index * 1.6,
-            repeat: Infinity,
+            repeat: isInView ? Infinity : 0,
             ease: 'easeOut',
           }}
         />
@@ -88,13 +92,13 @@ export const PulseEffect = memo(function PulseEffect({
             transparent 60%)`,
           filter: 'blur(30px)',
         }}
-        animate={{
+        animate={isInView ? {
           scale: [1, 1.2, 1],
           opacity: [baseOpacity * 0.5, baseOpacity * 0.8, baseOpacity * 0.5],
-        }}
+        } : {}}
         transition={{
           duration: 6,
-          repeat: Infinity,
+          repeat: isInView ? Infinity : 0,
           ease: 'easeInOut',
         }}
       />

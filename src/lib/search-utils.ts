@@ -13,6 +13,8 @@ export interface ParsedQuery {
     maxWords?: number;
   };
   operator: 'AND' | 'OR';
+  // Pre-compiled regex patterns for term matching (performance optimization)
+  termRegexes: RegExp[];
 }
 
 export interface Speech {
@@ -90,6 +92,7 @@ export function parseSearchQuery(query: string): ParsedQuery {
     notTerms: [],
     fieldFilters: {},
     operator: 'AND',
+    termRegexes: [],
   };
 
   if (!query.trim()) return parsed;
@@ -153,6 +156,12 @@ export function parseSearchQuery(query: string): ParsedQuery {
     .filter((t) => t.length > 0)
     .map((t) => t.toLowerCase());
 
+  // Pre-compile regex patterns for term frequency matching (performance optimization)
+  // This avoids creating 1000s of regex objects when searching through speeches
+  parsed.termRegexes = parsed.terms.map(
+    (term) => new RegExp(escapeRegex(term), 'gi')
+  );
+
   return parsed;
 }
 
@@ -183,9 +192,10 @@ function calculateSpeechScore(speech: Speech, query: ParsedQuery): number {
     }
   }
 
-  // Boost for term frequency (capped)
-  for (const term of query.terms) {
-    const regex = new RegExp(escapeRegex(term), 'gi');
+  // Boost for term frequency (capped) - uses pre-compiled regex for performance
+  for (const regex of query.termRegexes) {
+    // Reset lastIndex since we're reusing the regex
+    regex.lastIndex = 0;
     const matches = (textLower.match(regex) || []).length;
     score += Math.min(matches, 5);
   }

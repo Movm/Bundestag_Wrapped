@@ -5,8 +5,8 @@
  * Creates a flowing, emotional atmosphere with ribbon-like curves.
  */
 
-import { memo } from 'react';
-import { motion } from 'motion/react';
+import { memo, useRef } from 'react';
+import { motion, useInView } from 'motion/react';
 import type { ThemeColors } from '@/shared/theme-backgrounds/types';
 
 interface RibbonConfig {
@@ -33,10 +33,14 @@ export const RibbonsEffect = memo(function RibbonsEffect({
   colors,
   intensity = 1,
 }: RibbonsEffectProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  // Only animate when visible - pauses infinite animations when off-screen
+  const isInView = useInView(containerRef, { amount: 0.1 });
+
   const baseOpacity = 0.2 * intensity;
 
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden">
       {RIBBON_CONFIGS.map((ribbon, index) => (
         <motion.div
           key={`ribbon-${index}`}
@@ -46,12 +50,12 @@ export const RibbonsEffect = memo(function RibbonsEffect({
             left: '-50%',
             height: ribbon.thickness + ribbon.amplitude * 2,
           }}
-          animate={{
+          animate={isInView ? {
             x: ['-25%', '0%', '-25%'],
-          }}
+          } : { x: '-25%' }}
           transition={{
             duration: ribbon.duration * 2,
-            repeat: Infinity,
+            repeat: isInView ? Infinity : 0,
             ease: 'linear',
           }}
         >
@@ -81,17 +85,17 @@ export const RibbonsEffect = memo(function RibbonsEffect({
               strokeWidth={ribbon.thickness}
               strokeLinecap="round"
               filter={`url(#ribbon-blur-${index})`}
-              animate={{
+              animate={isInView ? {
                 d: [
                   `M 0,50 Q 125,${50 - ribbon.amplitude / 2} 250,50 T 500,50 T 750,50 T 1000,50`,
                   `M 0,50 Q 125,${50 + ribbon.amplitude / 2} 250,50 T 500,50 T 750,50 T 1000,50`,
                   `M 0,50 Q 125,${50 - ribbon.amplitude / 2} 250,50 T 500,50 T 750,50 T 1000,50`,
                 ],
-              }}
+              } : {}}
               transition={{
                 duration: ribbon.duration,
                 delay: ribbon.delay,
-                repeat: Infinity,
+                repeat: isInView ? Infinity : 0,
                 ease: 'easeInOut',
               }}
             />
@@ -104,17 +108,17 @@ export const RibbonsEffect = memo(function RibbonsEffect({
               strokeWidth={ribbon.thickness * 4}
               strokeLinecap="round"
               filter={`url(#ribbon-blur-${index})`}
-              animate={{
+              animate={isInView ? {
                 d: [
                   `M 0,50 Q 125,${50 - ribbon.amplitude / 2} 250,50 T 500,50 T 750,50 T 1000,50`,
                   `M 0,50 Q 125,${50 + ribbon.amplitude / 2} 250,50 T 500,50 T 750,50 T 1000,50`,
                   `M 0,50 Q 125,${50 - ribbon.amplitude / 2} 250,50 T 500,50 T 750,50 T 1000,50`,
                 ],
-              }}
+              } : {}}
               transition={{
                 duration: ribbon.duration,
                 delay: ribbon.delay,
-                repeat: Infinity,
+                repeat: isInView ? Infinity : 0,
                 ease: 'easeInOut',
               }}
             />

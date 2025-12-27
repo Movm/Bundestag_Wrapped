@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import type { ToneAnalysis } from '@/data/wrapped';
+import { INTRO_SLIDES } from '@/data/intro-slides';
 import { SlideIntro, type SlidePhase } from '../shared';
 import { ResultView } from './ResultView';
 
@@ -13,11 +14,12 @@ export const DiscriminatorySlide = memo(function DiscriminatorySlide({
   phase = 'result',
 }: DiscriminatorySlideProps) {
   if (phase === 'intro') {
+    const intro = INTRO_SLIDES['intro-discriminatory'];
     return (
       <SlideIntro
-        emoji="⚠️"
-        title="Manche Begriffe sind nicht neutral."
-        subtitle="Welche Fraktion fällt auf?"
+        emoji={intro.emoji}
+        title={intro.title}
+        subtitle={intro.subtitle}
         slideId="intro-discriminatory"
       />
     );

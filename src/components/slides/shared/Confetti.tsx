@@ -1,5 +1,5 @@
 import { memo, useMemo } from 'react';
-import { motion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 
 const DEFAULT_COLORS = ['#000000', '#DD0000', '#FFCC00']; // German flag colors
 
@@ -12,11 +12,14 @@ interface ConfettiProps {
 /**
  * Memoized confetti animation component.
  * Pre-computes random values to prevent recalculation on re-renders.
+ * Respects prefers-reduced-motion for accessibility.
  */
 export const Confetti = memo(function Confetti({
   count = 20,
   colors = DEFAULT_COLORS,
 }: ConfettiProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   // Pre-compute random values ONCE when count/colors changes
   const particles = useMemo(
     () =>
@@ -31,6 +34,26 @@ export const Confetti = memo(function Confetti({
       })),
     [count, colors]
   );
+
+  // Respect reduced motion preferences - show static confetti instead
+  if (prefersReducedMotion) {
+    return (
+      <>
+        {particles.map((p) => (
+          <div
+            key={p.id}
+            className="absolute w-3 h-3 rounded-sm"
+            style={{
+              left: `${p.left}%`,
+              top: `${30 + Math.random() * 40}%`,
+              backgroundColor: p.color,
+              opacity: 0.8,
+            }}
+          />
+        ))}
+      </>
+    );
+  }
 
   return (
     <>

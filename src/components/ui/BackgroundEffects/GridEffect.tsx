@@ -5,8 +5,8 @@
  * Creates a balanced, analytical feel with geometric patterns.
  */
 
-import { memo } from 'react';
-import { motion } from 'motion/react';
+import { memo, useRef } from 'react';
+import { motion, useInView } from 'motion/react';
 import type { ThemeColors } from '@/shared/theme-backgrounds/types';
 
 interface GridEffectProps {
@@ -18,11 +18,15 @@ export const GridEffect = memo(function GridEffect({
   colors,
   intensity = 1,
 }: GridEffectProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  // Only animate when visible - pauses infinite animations when off-screen
+  const isInView = useInView(containerRef, { amount: 0.1 });
+
   const baseOpacity = 0.12 * intensity;
   const gridSize = 80; // pixels
 
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden">
       {/* Grid pattern using CSS */}
       <motion.div
         className="absolute inset-0"
@@ -33,12 +37,12 @@ export const GridEffect = memo(function GridEffect({
           `,
           backgroundSize: `${gridSize}px ${gridSize}px`,
         }}
-        animate={{
+        animate={isInView ? {
           opacity: [baseOpacity * 3, baseOpacity * 4, baseOpacity * 3],
-        }}
+        } : { opacity: baseOpacity * 3 }}
         transition={{
           duration: 4,
-          repeat: Infinity,
+          repeat: isInView ? Infinity : 0,
           ease: 'easeInOut',
         }}
       />
@@ -72,14 +76,14 @@ export const GridEffect = memo(function GridEffect({
               rgba(${colors.secondary}, ${baseOpacity * 1.5}) 0%,
               transparent 70%)`,
           }}
-          animate={{
+          animate={isInView ? {
             opacity: [0, baseOpacity * 3, 0],
             scale: [0.8, 1.2, 0.8],
-          }}
+          } : { opacity: 0, scale: 0.8 }}
           transition={{
             duration: 3,
             delay: cell.delay,
-            repeat: Infinity,
+            repeat: isInView ? Infinity : 0,
             ease: 'easeInOut',
           }}
         />

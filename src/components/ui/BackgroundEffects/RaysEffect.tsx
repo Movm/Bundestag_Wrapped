@@ -5,8 +5,8 @@
  * Creates a celebratory sunburst effect with golden rays.
  */
 
-import { memo } from 'react';
-import { motion } from 'motion/react';
+import { memo, useRef } from 'react';
+import { motion, useInView } from 'motion/react';
 import type { ThemeColors } from '@/shared/theme-backgrounds/types';
 
 interface RaysEffectProps {
@@ -20,10 +20,14 @@ export const RaysEffect = memo(function RaysEffect({
   colors,
   intensity = 1,
 }: RaysEffectProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  // Only animate when visible - pauses infinite animations when off-screen
+  const isInView = useInView(containerRef, { amount: 0.1 });
+
   const baseOpacity = 0.2 * intensity;
 
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden">
       {/* Central glow */}
       <motion.div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -36,13 +40,13 @@ export const RaysEffect = memo(function RaysEffect({
             transparent 70%)`,
           filter: 'blur(30px)',
         }}
-        animate={{
+        animate={isInView ? {
           scale: [1, 1.2, 1],
           opacity: [baseOpacity * 2, baseOpacity * 3, baseOpacity * 2],
-        }}
+        } : {}}
         transition={{
           duration: 4,
-          repeat: Infinity,
+          repeat: isInView ? Infinity : 0,
           ease: 'easeInOut',
         }}
       />
@@ -68,14 +72,14 @@ export const RaysEffect = memo(function RaysEffect({
                   rgba(${colors.glow}, ${baseOpacity * 0.5}) 50%,
                   transparent 100%)`,
               }}
-              animate={{
+              animate={isInView ? {
                 opacity: [baseOpacity, baseOpacity * 1.5, baseOpacity],
                 scaleY: [0.8, 1, 0.8],
-              }}
+              } : { opacity: baseOpacity, scaleY: 0.8 }}
               transition={{
                 duration: 3 + (index % 4) * 0.5,
                 delay: (index % 8) * 0.2,
-                repeat: Infinity,
+                repeat: isInView ? Infinity : 0,
                 ease: 'easeInOut',
               }}
             />
@@ -103,13 +107,13 @@ export const RaysEffect = memo(function RaysEffect({
                   rgba(${colors.glow}, ${baseOpacity * 0.3}) 60%,
                   transparent 100%)`,
               }}
-              animate={{
+              animate={isInView ? {
                 opacity: [baseOpacity * 0.5, baseOpacity, baseOpacity * 0.5],
-              }}
+              } : { opacity: baseOpacity * 0.5 }}
               transition={{
                 duration: 2 + (index % 3) * 0.5,
                 delay: (index % 6) * 0.3,
-                repeat: Infinity,
+                repeat: isInView ? Infinity : 0,
                 ease: 'easeInOut',
               }}
             />
@@ -126,13 +130,13 @@ export const RaysEffect = memo(function RaysEffect({
           borderColor: `rgba(${colors.glow}, ${baseOpacity * 0.3})`,
           boxShadow: `0 0 40px rgba(${colors.glow}, ${baseOpacity * 0.2})`,
         }}
-        animate={{
+        animate={isInView ? {
           scale: [1, 1.05, 1],
           opacity: [baseOpacity, baseOpacity * 1.3, baseOpacity],
-        }}
+        } : {}}
         transition={{
           duration: 5,
-          repeat: Infinity,
+          repeat: isInView ? Infinity : 0,
           ease: 'easeInOut',
         }}
       />

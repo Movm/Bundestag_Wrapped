@@ -1,4 +1,5 @@
 import { memo, useMemo } from 'react';
+import { INTRO_SLIDES } from '@/data/intro-slides';
 import {
   SlideIntro,
   SlideQuiz,
@@ -59,11 +60,12 @@ export const MoinSlide = memo(function MoinSlide({
   }, [moinSpeakers]);
 
   if (phase === 'intro') {
+    const intro = INTRO_SLIDES['intro-moin'];
     return (
       <SlideIntro
-        emoji="👋"
-        title="Moin!"
-        subtitle="Ein norddeutsches Grußwort hat es in den Bundestag geschafft."
+        emoji={intro.emoji}
+        title={intro.title}
+        subtitle={intro.subtitle}
         slideId="intro-moin"
       />
     );

@@ -5,8 +5,8 @@
  * Creates an intense, electric atmosphere with sharp lines.
  */
 
-import { memo, useMemo } from 'react';
-import { motion } from 'motion/react';
+import { memo, useMemo, useRef } from 'react';
+import { motion, useInView } from 'motion/react';
 import type { ThemeColors } from '@/shared/theme-backgrounds/types';
 
 interface BoltConfig {
@@ -27,6 +27,10 @@ export const LightningEffect = memo(function LightningEffect({
   colors,
   intensity = 1,
 }: LightningEffectProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  // Only animate when visible - pauses infinite animations when off-screen
+  const isInView = useInView(containerRef, { amount: 0.1 });
+
   const baseOpacity = 0.3 * intensity;
 
   const bolts = useMemo(() => {
@@ -46,7 +50,7 @@ export const LightningEffect = memo(function LightningEffect({
   }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden">
       {/* Ambient red glow */}
       <div
         className="absolute inset-0"
@@ -70,13 +74,13 @@ export const LightningEffect = memo(function LightningEffect({
             transformOrigin: 'top center',
           }}
           initial={{ opacity: 0 }}
-          animate={{
+          animate={isInView ? {
             opacity: [0, 0, baseOpacity, baseOpacity * 1.5, 0, 0],
-          }}
+          } : { opacity: 0 }}
           transition={{
             duration: bolt.duration,
             delay: bolt.delay,
-            repeat: Infinity,
+            repeat: isInView ? Infinity : 0,
             times: [0, 0.4, 0.45, 0.5, 0.55, 1],
             ease: 'easeInOut',
           }}
@@ -135,14 +139,14 @@ export const LightningEffect = memo(function LightningEffect({
               transparent 60%)`,
             filter: 'blur(20px)',
           }}
-          animate={{
+          animate={isInView ? {
             opacity: [0, 0, 1, 0, 0],
             scale: [0.5, 0.5, 1.2, 0.8, 0.5],
-          }}
+          } : { opacity: 0, scale: 0.5 }}
           transition={{
             duration: 4,
             delay: flash.delay,
-            repeat: Infinity,
+            repeat: isInView ? Infinity : 0,
             times: [0, 0.45, 0.5, 0.55, 1],
             ease: 'easeOut',
           }}

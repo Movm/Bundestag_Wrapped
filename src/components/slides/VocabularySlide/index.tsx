@@ -1,5 +1,6 @@
 import { memo, useMemo } from 'react';
 import type { PartyStats } from '@/data/wrapped';
+import { INTRO_SLIDES } from '@/data/intro-slides';
 import {
   SlideIntro,
   SlideQuiz,
@@ -38,11 +39,12 @@ export const VocabularySlide = memo(function VocabularySlide({
   });
 
   if (phase === 'intro') {
+    const intro = INTRO_SLIDES['intro-vocabulary'];
     return (
       <SlideIntro
-        emoji="📚"
-        title="Jede Fraktion hat ihre Lieblingswörter."
-        subtitle="Erkennst du, welches Wort die Partei Die Linke am meisten Verwendet (im Vergleich zu anderen?"
+        emoji={intro.emoji}
+        title={intro.title}
+        subtitle={intro.subtitle}
         slideId="intro-vocabulary"
       />
     );

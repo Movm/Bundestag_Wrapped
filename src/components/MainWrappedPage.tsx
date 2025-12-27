@@ -60,10 +60,8 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
     () => initialSection !== null && initialSection !== 'intro'
   );
 
-  // Get current theme for the section
-  const currentTheme = introStarted ? getThemeForSlide(currentSection) : null;
-
   // Switch background theme music based on current section
+  // Theme is automatically pushed to audioStore by themeMusic.playTheme()
   useEffect(() => {
     // Only switch themes after intro has started (user clicked start button)
     if (!introStarted) return;
@@ -71,6 +69,13 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
     const theme = getThemeForSlide(currentSection);
     themeMusic.playTheme(theme);
   }, [currentSection, introStarted]);
+
+  // Clean up theme music when leaving the page to free memory
+  useEffect(() => {
+    return () => {
+      themeMusic.cleanup();
+    };
+  }, []);
 
   // Restore scroll position on mount if we have saved progress
   const hasRestoredRef = useRef(false);
@@ -183,7 +188,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
       </AnimatePresence>
 
       <AnimatePresence>
-        {!showHeader && <FloatingAudioControls currentTheme={currentTheme} />}
+        {!showHeader && <FloatingAudioControls />}
       </AnimatePresence>
 
       <BackgroundSystem

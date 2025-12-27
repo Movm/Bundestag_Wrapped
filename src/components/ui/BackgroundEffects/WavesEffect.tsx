@@ -5,8 +5,8 @@
  * Creates a sound-wave visualization with flowing horizontal lines.
  */
 
-import { memo } from 'react';
-import { motion } from 'motion/react';
+import { memo, useRef } from 'react';
+import { motion, useInView } from 'motion/react';
 import type { ThemeColors } from '@/shared/theme-backgrounds/types';
 
 interface WaveConfig {
@@ -35,10 +35,14 @@ export const WavesEffect = memo(function WavesEffect({
   colors,
   intensity = 1,
 }: WavesEffectProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  // Only animate when visible - pauses infinite animations when off-screen
+  const isInView = useInView(containerRef, { amount: 0.1 });
+
   const baseOpacity = 0.25 * intensity;
 
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden">
       {WAVE_CONFIGS.map((wave, index) => (
         <motion.div
           key={`wave-${index}`}
@@ -65,7 +69,7 @@ export const WavesEffect = memo(function WavesEffect({
               boxShadow: `0 0 ${wave.thickness * 6}px rgba(${colors.primary}, ${baseOpacity * 0.4}),
                           0 0 ${wave.thickness * 12}px rgba(${colors.secondary}, ${baseOpacity * 0.2})`,
             }}
-            animate={{
+            animate={isInView ? {
               x: ['-50%', '0%'],
               y: [
                 0,
@@ -74,17 +78,17 @@ export const WavesEffect = memo(function WavesEffect({
                 -wave.amplitude,
                 0,
               ],
-            }}
+            } : { x: '-50%', y: 0 }}
             transition={{
               x: {
                 duration: wave.duration * 2,
-                repeat: Infinity,
+                repeat: isInView ? Infinity : 0,
                 ease: 'linear',
               },
               y: {
                 duration: wave.duration,
                 delay: wave.delay,
-                repeat: Infinity,
+                repeat: isInView ? Infinity : 0,
                 ease: 'easeInOut',
               },
             }}

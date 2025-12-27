@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import type { ToneAnalysis } from '@/data/wrapped';
+import { INTRO_SLIDES } from '@/data/intro-slides';
 import { SlideIntro, type SlidePhase } from '../shared';
 import { ResultView } from './ResultView';
 
@@ -13,11 +14,12 @@ export const ToneAnalysisSlide = memo(function ToneAnalysisSlide({
   phase = 'result',
 }: ToneAnalysisSlideProps) {
   if (phase === 'intro') {
+    const intro = INTRO_SLIDES['intro-tone'];
     return (
       <SlideIntro
-        emoji="🎭"
-        title="Jede Fraktion hat ihren eigenen Ton."
-        subtitle="Welches Emoji passt zur SPD?"
+        emoji={intro.emoji}
+        title={intro.title}
+        subtitle={intro.subtitle}
         slideId="intro-tone"
       />
     );

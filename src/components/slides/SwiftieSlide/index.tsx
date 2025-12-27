@@ -1,4 +1,5 @@
 import { memo, useMemo } from 'react';
+import { INTRO_SLIDES } from '@/data/intro-slides';
 import {
   SlideIntro,
   SlideQuiz,
@@ -45,11 +46,12 @@ export const SwiftieSlide = memo(function SwiftieSlide({
   }, []);
 
   if (phase === 'intro') {
+    const intro = INTRO_SLIDES['intro-swiftie'];
     return (
       <SlideIntro
-        emoji="💜"
-        title="Shake it off!"
-        subtitle="Ein Popstar hat es in den Bundestag geschafft."
+        emoji={intro.emoji}
+        title={intro.title}
+        subtitle={intro.subtitle}
         slideId="intro-swiftie"
       />
     );

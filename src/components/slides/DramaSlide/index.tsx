@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import type { DramaStats } from '@/data/wrapped';
 import { formatNumber } from '@/lib/utils';
+import { INTRO_SLIDES } from '@/data/intro-slides';
 import {
   SlideIntro,
   SlideQuiz,
@@ -31,11 +32,12 @@ export const DramaSlide = memo(function DramaSlide({
   });
 
   if (phase === 'intro') {
+    const intro = INTRO_SLIDES['intro-drama'];
     return (
       <SlideIntro
-        emoji="🎭"
-        title="Im Bundestag wird dazwischengerufen."
-        subtitle="Wer stört am meisten?"
+        emoji={intro.emoji}
+        title={intro.title}
+        subtitle={intro.subtitle}
         slideId="intro-drama"
       />
     );

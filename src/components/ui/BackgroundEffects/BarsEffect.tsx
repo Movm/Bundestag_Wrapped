@@ -5,8 +5,8 @@
  * Creates an audio visualizer effect with dancing bars.
  */
 
-import { memo, useMemo } from 'react';
-import { motion } from 'motion/react';
+import { memo, useMemo, useRef } from 'react';
+import { motion, useInView } from 'motion/react';
 import type { ThemeColors } from '@/shared/theme-backgrounds/types';
 
 interface BarConfig {
@@ -28,6 +28,10 @@ export const BarsEffect = memo(function BarsEffect({
   colors,
   intensity = 1,
 }: BarsEffectProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  // Only animate when visible - pauses infinite animations when off-screen
+  const isInView = useInView(containerRef, { amount: 0.1 });
+
   const baseOpacity = 0.25 * intensity;
 
   const bars = useMemo(() => {
@@ -46,7 +50,7 @@ export const BarsEffect = memo(function BarsEffect({
   }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden">
       {/* Base glow layer */}
       <div
         className="absolute bottom-0 left-0 right-0 h-1/3"
@@ -70,6 +74,8 @@ export const BarsEffect = memo(function BarsEffect({
           <motion.div
             style={{
               width: '100%',
+              height: bar.maxHeight,
+              transformOrigin: 'bottom',
               background: `linear-gradient(to top,
                 rgba(${colors.primary}, ${baseOpacity}) 0%,
                 rgba(${colors.glow}, ${baseOpacity * 1.2}) 50%,
@@ -79,13 +85,13 @@ export const BarsEffect = memo(function BarsEffect({
               boxShadow: `0 0 ${bar.width * 4}px rgba(${colors.glow}, ${baseOpacity * 0.5}),
                           0 0 ${bar.width * 8}px rgba(${colors.primary}, ${baseOpacity * 0.2})`,
             }}
-            animate={{
-              height: ['10%', bar.maxHeight, '15%', bar.maxHeight, '10%'],
-            }}
+            animate={isInView ? {
+              scaleY: [0.25, 1, 0.375, 1, 0.25],
+            } : { scaleY: 0.25 }}
             transition={{
               duration: bar.duration,
               delay: bar.delay,
-              repeat: Infinity,
+              repeat: isInView ? Infinity : 0,
               ease: 'easeInOut',
             }}
           />

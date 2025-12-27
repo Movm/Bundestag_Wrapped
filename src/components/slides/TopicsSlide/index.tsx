@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import type { TopicAnalysis } from '@/data/wrapped';
+import { INTRO_SLIDES } from '@/data/intro-slides';
 import { SlideIntro, type SlidePhase } from '../shared';
 import { ResultView } from './ResultView';
 
@@ -13,11 +14,12 @@ export const TopicsSlide = memo(function TopicsSlide({
   phase = 'result',
 }: TopicsSlidezProps) {
   if (phase === 'intro') {
+    const intro = INTRO_SLIDES['intro-topics'];
     return (
       <SlideIntro
-        emoji="📊"
-        title="Worüber spricht der Bundestag?"
-        subtitle="13 Themen im Fokus"
+        emoji={intro.emoji}
+        title={intro.title}
+        subtitle={intro.subtitle}
         slideId="intro-topics"
       />
     );

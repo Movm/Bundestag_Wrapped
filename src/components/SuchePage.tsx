@@ -32,14 +32,27 @@ import { SuchePageSkeleton } from './skeletons/SuchePageSkeleton';
 
 export function SuchePage() {
   const [state, updateState, resetFilters] = useSearchState();
-  const { data: speechesData, isLoading: speechesLoading, error: speechesError } = useSpeechesDb();
+
+  // Conditional fetching: only load data for the active tab (saves 20MB+ on initial load)
+  // Speaker index is always loaded (small, needed for party filter dropdown)
   const { data: speakerIndex, isLoading: speakersLoading, error: speakersError } = useSpeakerIndex();
-  const { data: wordsIndex, isLoading: wordsLoading, error: wordsError } = useWordsIndex();
+  const { data: speechesData, isLoading: speechesLoading, error: speechesError } = useSpeechesDb({
+    enabled: state.tab === 'speeches',
+  });
+  const { data: wordsIndex, isLoading: wordsLoading, error: wordsError } = useWordsIndex({
+    enabled: state.tab === 'words',
+  });
+
   const [selectedSpeech, setSelectedSpeech] = useState<Speech | null>(null);
   const [visibleCount, setVisibleCount] = useState(50);
 
-  const loading = speechesLoading || speakersLoading || wordsLoading;
-  const error = speechesError || speakersError || wordsError;
+  // Only show loading for the currently active tab
+  const loading = speakersLoading ||
+    (state.tab === 'speeches' && speechesLoading) ||
+    (state.tab === 'words' && wordsLoading);
+  const error = speakersError ||
+    (state.tab === 'speeches' && speechesError) ||
+    (state.tab === 'words' && wordsError);
 
   const debouncedQuery = useDebounce(state.q, 300);
 
