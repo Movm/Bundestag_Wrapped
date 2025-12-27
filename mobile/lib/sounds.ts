@@ -9,22 +9,20 @@
  *
  * Features:
  * - Preloads sounds on app start
- * - Mute preference persisted to AsyncStorage
- * - Uses expo-av for native audio playback
+ * - Mute state from Zustand store (single source of truth)
+ * - Uses expo-audio for native audio playback
  * - Shares types with web via @/shared/sounds
  */
 
-import { Audio } from 'expo-av';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { createAudioPlayer, setAudioModeAsync, type AudioPlayer } from 'expo-audio';
 import {
   type SoundType,
   SOUND_VOLUMES,
   createSlideTransitionSoundHook,
 } from '@/shared/sounds';
+import { useAppStore } from '~/stores/appStore';
 
 export type { SoundType };
-
-const STORAGE_KEY = 'bundestag-wrapped-sound-muted';
 
 // Sound file requires - must use require() for bundling
 // Uses public/sounds/ via Metro's watchFolders configuration
@@ -36,10 +34,9 @@ const SOUND_FILES: Partial<Record<SoundType, ReturnType<typeof require>>> = {
   // Note: 'start' is not used on mobile (no start button)
 };
 
-// Preloaded sound objects
-const soundObjects: Partial<Record<SoundType, Audio.Sound>> = {};
+// Preloaded audio players
+const audioPlayers: Partial<Record<SoundType, AudioPlayer>> = {};
 let isInitialized = false;
-let cachedMuteState: boolean | null = null;
 
 /**
  * Initialize and preload all sounds.
@@ -50,76 +47,38 @@ export async function initSounds(): Promise<void> {
 
   try {
     // Configure audio mode for mixing with other audio
-    await Audio.setAudioModeAsync({
-      playsInSilentModeIOS: true,
-      staysActiveInBackground: false,
-      shouldDuckAndroid: true,
-    });
+    try {
+      await setAudioModeAsync({
+        playsInSilentMode: true,
+        shouldPlayInBackground: false,
+        interruptionMode: 'mixWithOthers',
+      });
+    } catch (audioModeError) {
+      console.warn('Failed to set audio mode:', audioModeError);
+      // Continue anyway - sounds might still work
+    }
 
     // Preload all sounds
-    await Promise.all(
+    await Promise.allSettled(
       (Object.keys(SOUND_FILES) as SoundType[]).map(async (type) => {
         const file = SOUND_FILES[type];
         if (!file) return;
 
-        const { sound } = await Audio.Sound.createAsync(file, {
-          shouldPlay: false,
-          volume: SOUND_VOLUMES[type],
-        });
-        soundObjects[type] = sound;
+        try {
+          const player = createAudioPlayer(file);
+          player.volume = SOUND_VOLUMES[type];
+          audioPlayers[type] = player;
+        } catch (error) {
+          console.warn(`Failed to load sound ${type}:`, error);
+        }
       })
     );
 
-    // Load mute state
-    cachedMuteState = await isMuted();
     isInitialized = true;
   } catch (error) {
     console.warn('Failed to initialize sounds:', error);
+    isInitialized = true; // Mark as initialized to prevent retry loops
   }
-}
-
-/**
- * Check if sounds are muted
- */
-export async function isMuted(): Promise<boolean> {
-  if (cachedMuteState !== null) return cachedMuteState;
-
-  try {
-    const value = await AsyncStorage.getItem(STORAGE_KEY);
-    cachedMuteState = value === 'true';
-    return cachedMuteState;
-  } catch {
-    return false;
-  }
-}
-
-/**
- * Check mute state synchronously (uses cached value)
- */
-export function isMutedSync(): boolean {
-  return cachedMuteState ?? false;
-}
-
-/**
- * Set mute state
- */
-export async function setMuted(muted: boolean): Promise<void> {
-  cachedMuteState = muted;
-  try {
-    await AsyncStorage.setItem(STORAGE_KEY, String(muted));
-  } catch (error) {
-    console.warn('Failed to save mute state:', error);
-  }
-}
-
-/**
- * Toggle mute state and return new state
- */
-export async function toggleMuted(): Promise<boolean> {
-  const current = await isMuted();
-  const newState = !current;
-  await setMuted(newState);
-  return newState;
 }
 
 /**
@@ -127,20 +86,21 @@ export async function toggleMuted(): Promise<boolean> {
  * @param type - The type of sound to play
  */
 export async function playSound(type: SoundType): Promise<void> {
-  if (isMutedSync()) return;
+  // Read mute state from Zustand store (single source of truth)
+  if (useAppStore.getState().isMuted) return;
 
   // Initialize on first play if not already done
   if (!isInitialized) {
     await initSounds();
   }
 
-  const sound = soundObjects[type];
-  if (!sound) return;
+  const player = audioPlayers[type];
+  if (!player) return;
 
   try {
     // Rewind to start and play
-    await sound.setPositionAsync(0);
-    await sound.playAsync();
+    player.seekTo(0);
+    player.play();
   } catch (error) {
     // Silently fail - audio might not be available
   }
@@ -151,9 +111,13 @@ export async function playSound(type: SoundType): Promise<void> {
  */
 export async function unloadSounds(): Promise<void> {
   await Promise.all(
-    Object.values(soundObjects).map(async (sound) => {
-      if (sound) {
-        await sound.unloadAsync();
+    Object.values(audioPlayers).map(async (player) => {
+      if (player) {
+        try {
+          player.release();
+        } catch {
+          // Ignore errors
+        }
       }
     })
   );

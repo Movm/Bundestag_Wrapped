@@ -1,108 +1,203 @@
 /**
  * Theme Music Manager for Bundestag Wrapped (Mobile/Expo)
  *
- * Mobile-specific implementation using expo-av.
+ * Mobile-specific implementation using expo-audio.
  * Uses shared types from @/shared/theme-music.
  *
  * Features:
- * - Crossfade between themes using expo-av
+ * - LAZY LOADING: Only loads tracks when needed (not all 13 at startup)
+ * - Preloads next section's theme for seamless transitions
+ * - Crossfade between themes using expo-audio
  * - Continuous looping within sections
  * - Respects mute state from AsyncStorage
- * - Preloads tracks for smooth playback
  */
 
 import React from 'react';
-import { Audio } from 'expo-av';
+import { createAudioPlayer, setAudioModeAsync, type AudioPlayer } from 'expo-audio';
 import {
   type ThemeType,
   THEME_TRACK_INFO,
   THEME_VOLUME,
   CROSSFADE_DURATION,
   getThemeForSlide,
+  SECTION_THEMES,
 } from '@/shared/theme-music';
-import { isMutedSync } from '~/lib/sounds';
+import { useAppStore } from '~/stores/appStore';
 
 // Re-export shared types and functions
 export { type ThemeType, THEME_TRACK_INFO, getThemeForSlide } from '@/shared/theme-music';
 
-// Sound file requires - must use require() for Metro bundling
-const THEME_FILES: Partial<Record<ThemeType, ReturnType<typeof require>>> = {
-  night: require('../../public/sounds/Broke For Free - Night Owl.mp3'),
-  mutant: require('../../public/sounds/HoliznaCC0 - Mutant Club.mp3'),
-  starling: require('../../public/sounds/Podington Bear - Starling.mp3'),
-  industrial: require('../../public/sounds/IKILLYA - Godsize.mp3'),
-  spacey: require('../../public/sounds/Chromix - I Know You\'re Out There.mp3'),
-  playful: require('../../public/sounds/Kidkanevil & DZA - Nuff Stickers.mp3'),
-  chiptune: require('../../public/sounds/Kevin MacLeod - Hyperfun.mp3'),
-  loveice: require('../../public/sounds/Lopkerjo - Love Others ICE.mp3'),
-  popular: require('../../public/sounds/sarah rasines - canción popular.mp3'),
-  reverse: require('../../public/sounds/Broke For Free - Living In Reverse.mp3'),
-  reflections: require('../../public/sounds/jonas the plugexpert - APC - reflections - gobot rmx.mp3'),
-  hustle: require('../../public/sounds/Kevin MacLeod - Hustle.mp3'),
-  rhodes: require('../../public/sounds/Kevin MacLeod - Dirt Rhodes.mp3'),
-};
+// Lazy-loaded theme sources - require() is evaluated when getThemeSource() is called
+// This defers the audio file loading until actually needed
+function getThemeSource(theme: ThemeType): ReturnType<typeof require> | null {
+  switch (theme) {
+    case 'night':
+      return require('../../public/sounds/broke-for-free-night-owl.mp3');
+    case 'mutant':
+      return require('../../public/sounds/holiznacc0-mutant-club.mp3');
+    case 'starling':
+      return require('../../public/sounds/podington-bear-starling.mp3');
+    case 'industrial':
+      return require('../../public/sounds/ikillya-godsize.mp3');
+    case 'spacey':
+      return require('../../public/sounds/chromix-i-know-youre-out-there.mp3');
+    case 'playful':
+      return require('../../public/sounds/kidkanevil-dza-nuff-stickers.mp3');
+    case 'chiptune':
+      return require('../../public/sounds/kevin-macleod-hyperfun.mp3');
+    case 'loveice':
+      return require('../../public/sounds/lopkerjo-love-others-ice.mp3');
+    case 'popular':
+      return require('../../public/sounds/sarah-rasines-cancion-popular.mp3');
+    case 'reverse':
+      return require('../../public/sounds/broke-for-free-living-in-reverse.mp3');
+    case 'reflections':
+      return require('../../public/sounds/jonas-the-plugexpert-apc-reflections-gobot-rmx.mp3');
+    case 'hustle':
+      return require('../../public/sounds/kevin-macleod-hustle.mp3');
+    case 'rhodes':
+      return require('../../public/sounds/kevin-macleod-dirt-rhodes.mp3');
+    default:
+      return null;
+  }
+}
+
+// Section order for next-theme prediction
+const SECTION_ORDER: string[] = [
+  'topics',
+  'vocabulary',
+  'speeches',
+  'drama',
+  'discriminatory',
+  'common-words',
+  'moin',
+  'swiftie',
+  'tone',
+  'gender',
+  'share',
+  'finale',
+];
+
+/**
+ * Get the next theme to preload based on current slide
+ */
+function getNextTheme(currentSlide: string): ThemeType | null {
+  // Extract section from slide ID
+  const section = currentSlide.replace(/^(intro|quiz|info|reveal|chart)-/, '');
+  const currentIndex = SECTION_ORDER.indexOf(section);
+
+  if (currentIndex === -1 || currentIndex >= SECTION_ORDER.length - 1) {
+    return null; // No next section or unknown
+  }
+
+  const nextSection = SECTION_ORDER[currentIndex + 1];
+  return SECTION_THEMES[nextSection] || null;
+}
 
 const FADE_STEPS = 20;
 const STEP_DURATION = CROSSFADE_DURATION / FADE_STEPS;
 
 /**
- * Theme Music Manager class for mobile
+ * Theme Music Manager class for mobile - with LAZY LOADING
  */
 class ThemeMusicManager {
   private currentTheme: ThemeType | null = null;
-  private soundObjects: Map<ThemeType, Audio.Sound> = new Map();
-  private isInitialized = false;
+  private currentSlide: string | null = null;
+  private audioPlayers: Map<ThemeType, AudioPlayer> = new Map();
+  private loadingThemes: Set<ThemeType> = new Set();
+  private audioModeSet = false;
   private isTransitioning = false;
   private fadeTimeouts: ReturnType<typeof setTimeout>[] = [];
+  private fadeGeneration = 0; // Cancellation token for in-flight fades
 
   /**
-   * Initialize and preload theme tracks
+   * Ensure audio mode is configured (only once)
    */
-  async init(): Promise<void> {
-    if (this.isInitialized) return;
+  private async ensureAudioMode(): Promise<void> {
+    if (this.audioModeSet) return;
 
     try {
-      // Configure audio mode
-      await Audio.setAudioModeAsync({
-        playsInSilentModeIOS: true,
-        staysActiveInBackground: false,
-        shouldDuckAndroid: true,
+      await setAudioModeAsync({
+        playsInSilentMode: true,
+        shouldPlayInBackground: false,
+        interruptionMode: 'mixWithOthers',
       });
-
-      // Preload all theme sounds
-      await Promise.all(
-        (Object.keys(THEME_FILES) as ThemeType[]).map(async (theme) => {
-          const file = THEME_FILES[theme];
-          if (!file) return;
-
-          try {
-            const { sound } = await Audio.Sound.createAsync(file, {
-              shouldPlay: false,
-              isLooping: true,
-              volume: 0,
-            });
-            this.soundObjects.set(theme, sound);
-          } catch (error) {
-            console.warn(`Failed to load theme ${theme}:`, error);
-          }
-        })
-      );
-
-      this.isInitialized = true;
+      this.audioModeSet = true;
     } catch (error) {
-      console.warn('Failed to initialize theme music:', error);
+      console.warn('Failed to set audio mode:', error);
+      this.audioModeSet = true; // Prevent retry loops
+    }
+  }
+
+  /**
+   * Load a single theme track on-demand
+   * Returns cached player if already loaded
+   */
+  private async loadTheme(theme: ThemeType): Promise<AudioPlayer | null> {
+    // Return cached player
+    if (this.audioPlayers.has(theme)) {
+      return this.audioPlayers.get(theme)!;
+    }
+
+    // Prevent duplicate loading
+    if (this.loadingThemes.has(theme)) {
+      // Wait for existing load to complete
+      while (this.loadingThemes.has(theme)) {
+        await new Promise(resolve => setTimeout(resolve, 50));
+      }
+      return this.audioPlayers.get(theme) || null;
+    }
+
+    this.loadingThemes.add(theme);
+
+    try {
+      await this.ensureAudioMode();
+
+      const source = getThemeSource(theme);
+      if (!source) {
+        this.loadingThemes.delete(theme);
+        return null;
+      }
+
+      const player = createAudioPlayer(source);
+      player.loop = true;
+      player.volume = 0;
+
+      this.audioPlayers.set(theme, player);
+      this.loadingThemes.delete(theme);
+
+      return player;
+    } catch (error) {
+      console.warn(`Failed to load theme ${theme}:`, error);
+      this.loadingThemes.delete(theme);
+      return null;
+    }
+  }
+
+  /**
+   * Preload next theme in background (non-blocking)
+   */
+  private preloadNextTheme(currentSlide: string): void {
+    const nextTheme = getNextTheme(currentSlide);
+    if (nextTheme && !this.audioPlayers.has(nextTheme)) {
+      // Fire and forget - don't await
+      this.loadTheme(nextTheme).catch(() => {
+        // Silently fail preloading
+      });
     }
   }
 
   /**
    * Play a theme (crossfade from current if different)
+   * Now with lazy loading - only loads the needed track
    */
-  async playTheme(theme: ThemeType): Promise<void> {
-    if (isMutedSync()) return;
+  async playTheme(theme: ThemeType, slideId?: string): Promise<void> {
+    // Read mute state from Zustand store (single source of truth)
+    if (useAppStore.getState().isMuted) return;
 
-    // Initialize on first play if needed
-    if (!this.isInitialized) {
-      await this.init();
+    // Store current slide for preloading logic
+    if (slideId) {
+      this.currentSlide = slideId;
     }
 
     // Skip if already playing this theme
@@ -114,29 +209,44 @@ class ThemeMusicManager {
     }
 
     this.isTransitioning = true;
+
+    // Load the theme on-demand (lazy loading!)
+    const player = await this.loadTheme(theme);
+    if (!player) {
+      this.isTransitioning = false;
+      return;
+    }
+
     await this.crossfadeTo(theme);
+
+    // Preload next theme in background after starting current
+    if (this.currentSlide) {
+      this.preloadNextTheme(this.currentSlide);
+    }
   }
 
   /**
    * Force stop all audio immediately
+   * Uses generation counter to invalidate any in-flight fade callbacks
    */
   private async forceStopAll(): Promise<void> {
-    // Clear all pending fade timeouts
-    this.fadeTimeouts.forEach(clearTimeout);
-    this.fadeTimeouts = [];
+    // Increment generation to invalidate in-flight fades
+    this.fadeGeneration++;
 
-    // Stop all sounds
-    await Promise.all(
-      Array.from(this.soundObjects.values()).map(async (sound) => {
-        try {
-          await sound.stopAsync();
-          await sound.setVolumeAsync(0);
-          await sound.setPositionAsync(0);
-        } catch {
-          // Ignore errors
-        }
-      })
-    );
+    // Clear all pending fade timeouts (mutate, don't replace array)
+    this.fadeTimeouts.forEach(clearTimeout);
+    this.fadeTimeouts.length = 0;
+
+    // Stop all players
+    this.audioPlayers.forEach((player) => {
+      try {
+        player.pause();
+        player.volume = 0;
+        player.seekTo(0);
+      } catch {
+        // Ignore errors
+      }
+    });
   }
 
   /**
@@ -144,9 +254,9 @@ class ThemeMusicManager {
    */
   private async crossfadeTo(newTheme: ThemeType): Promise<void> {
     const oldTheme = this.currentTheme;
-    const newSound = this.soundObjects.get(newTheme);
+    const newPlayer = this.audioPlayers.get(newTheme);
 
-    if (!newSound) {
+    if (!newPlayer) {
       this.isTransitioning = false;
       return;
     }
@@ -154,19 +264,17 @@ class ThemeMusicManager {
     // Set current theme first to prevent race conditions
     this.currentTheme = newTheme;
 
-    // Stop all sounds except old and new
-    await Promise.all(
-      Array.from(this.soundObjects.entries()).map(async ([theme, sound]) => {
-        if (theme !== newTheme && theme !== oldTheme) {
-          try {
-            await sound.stopAsync();
-            await sound.setVolumeAsync(0);
-          } catch {
-            // Ignore errors
-          }
+    // Stop all players except old and new
+    this.audioPlayers.forEach((player, theme) => {
+      if (theme !== newTheme && theme !== oldTheme) {
+        try {
+          player.pause();
+          player.volume = 0;
+        } catch {
+          // Ignore errors
         }
-      })
-    );
+      }
+    });
 
     // Fade out old theme
     if (oldTheme && oldTheme !== newTheme) {
@@ -175,9 +283,9 @@ class ThemeMusicManager {
 
     // Start new theme and fade in
     try {
-      await newSound.setVolumeAsync(0);
-      await newSound.setPositionAsync(0);
-      await newSound.playAsync();
+      newPlayer.volume = 0;
+      newPlayer.seekTo(0);
+      newPlayer.play();
       this.fadeIn(newTheme);
     } catch (error) {
       console.debug('Theme music failed to start:', error);
@@ -187,24 +295,35 @@ class ThemeMusicManager {
 
   /**
    * Fade in a theme to target volume
+   * Uses generation counter to abort if forceStopAll was called
    */
   private fadeIn(theme: ThemeType): void {
-    const sound = this.soundObjects.get(theme);
-    if (!sound) return;
+    const player = this.audioPlayers.get(theme);
+    if (!player) return;
 
+    const fadeGen = this.fadeGeneration; // Capture current generation
     let currentStep = 0;
     const volumeStep = THEME_VOLUME / FADE_STEPS;
 
     const fade = () => {
+      // Abort if this fade has been invalidated by forceStopAll
+      if (fadeGen !== this.fadeGeneration) return;
+
       currentStep++;
       const newVolume = Math.min(volumeStep * currentStep, THEME_VOLUME);
 
-      sound.setVolumeAsync(newVolume).catch(() => {});
+      try {
+        player.volume = newVolume;
+      } catch {
+        return; // Player error, abort fade
+      }
 
       if (currentStep >= FADE_STEPS) {
         // Fade complete - ensure only this theme is playing
-        this.stopAllExcept(theme);
-        this.isTransitioning = false;
+        if (fadeGen === this.fadeGeneration) {
+          this.stopAllExcept(theme);
+          this.isTransitioning = false;
+        }
       } else {
         const timeout = setTimeout(fade, STEP_DURATION);
         this.fadeTimeouts.push(timeout);
@@ -217,24 +336,39 @@ class ThemeMusicManager {
 
   /**
    * Fade out a theme to silence
+   * Uses generation counter to abort if forceStopAll was called
    */
   private fadeOut(theme: ThemeType): void {
-    const sound = this.soundObjects.get(theme);
-    if (!sound) return;
+    const player = this.audioPlayers.get(theme);
+    if (!player) return;
 
+    const fadeGen = this.fadeGeneration; // Capture current generation
     let currentStep = 0;
     const startVolume = THEME_VOLUME;
     const volumeStep = startVolume / FADE_STEPS;
 
     const fade = () => {
+      // Abort if this fade has been invalidated by forceStopAll
+      if (fadeGen !== this.fadeGeneration) return;
+
       currentStep++;
       const newVolume = Math.max(startVolume - volumeStep * currentStep, 0);
 
-      sound.setVolumeAsync(newVolume).catch(() => {});
+      try {
+        player.volume = newVolume;
+      } catch {
+        return; // Player error, abort fade
+      }
 
       if (currentStep >= FADE_STEPS) {
-        sound.stopAsync().catch(() => {});
-        sound.setPositionAsync(0).catch(() => {});
+        if (fadeGen === this.fadeGeneration) {
+          try {
+            player.pause();
+            player.seekTo(0);
+          } catch {
+            // Ignore errors
+          }
+        }
       } else {
         const timeout = setTimeout(fade, STEP_DURATION);
         this.fadeTimeouts.push(timeout);
@@ -248,33 +382,30 @@ class ThemeMusicManager {
   /**
    * Stop all tracks except the specified one
    */
-  private async stopAllExcept(theme: ThemeType): Promise<void> {
-    await Promise.all(
-      Array.from(this.soundObjects.entries()).map(async ([t, sound]) => {
-        if (t !== theme) {
-          try {
-            const status = await sound.getStatusAsync();
-            if (status.isLoaded && status.isPlaying) {
-              await sound.stopAsync();
-              await sound.setVolumeAsync(0);
-            }
-          } catch {
-            // Ignore errors
+  private stopAllExcept(theme: ThemeType): void {
+    this.audioPlayers.forEach((player, t) => {
+      if (t !== theme) {
+        try {
+          if (!player.paused) {
+            player.pause();
+            player.volume = 0;
           }
+        } catch {
+          // Ignore errors
         }
-      })
-    );
+      }
+    });
   }
 
   /**
    * Pause current theme
    */
-  async pause(): Promise<void> {
+  pause(): void {
     if (this.currentTheme) {
-      const sound = this.soundObjects.get(this.currentTheme);
-      if (sound) {
+      const player = this.audioPlayers.get(this.currentTheme);
+      if (player) {
         try {
-          await sound.pauseAsync();
+          player.pause();
         } catch {
           // Ignore errors
         }
@@ -285,15 +416,16 @@ class ThemeMusicManager {
   /**
    * Resume current theme
    */
-  async resume(): Promise<void> {
-    if (isMutedSync()) return;
+  resume(): void {
+    // Read mute state from Zustand store (single source of truth)
+    if (useAppStore.getState().isMuted) return;
 
     if (this.currentTheme) {
-      const sound = this.soundObjects.get(this.currentTheme);
-      if (sound) {
+      const player = this.audioPlayers.get(this.currentTheme);
+      if (player) {
         try {
-          await sound.setVolumeAsync(THEME_VOLUME);
-          await sound.playAsync();
+          player.volume = THEME_VOLUME;
+          player.play();
         } catch {
           // Ignore errors
         }
@@ -304,23 +436,23 @@ class ThemeMusicManager {
   /**
    * Stop all themes
    */
-  async stop(): Promise<void> {
+  stop(): void {
+    this.fadeGeneration++; // Invalidate any in-flight fades
     this.fadeTimeouts.forEach(clearTimeout);
-    this.fadeTimeouts = [];
+    this.fadeTimeouts.length = 0; // Mutate, don't replace
 
-    await Promise.all(
-      Array.from(this.soundObjects.values()).map(async (sound) => {
-        try {
-          await sound.stopAsync();
-          await sound.setVolumeAsync(0);
-          await sound.setPositionAsync(0);
-        } catch {
-          // Ignore errors
-        }
-      })
-    );
+    this.audioPlayers.forEach((player) => {
+      try {
+        player.pause();
+        player.volume = 0;
+        player.seekTo(0);
+      } catch {
+        // Ignore errors
+      }
+    });
 
     this.currentTheme = null;
+    this.currentSlide = null;
   }
 
   /**
@@ -331,23 +463,29 @@ class ThemeMusicManager {
   }
 
   /**
-   * Cleanup sounds
+   * Cleanup sounds - release all loaded players
    */
-  async unload(): Promise<void> {
-    await this.stop();
+  unload(): void {
+    this.stop();
 
-    await Promise.all(
-      Array.from(this.soundObjects.values()).map(async (sound) => {
-        try {
-          await sound.unloadAsync();
-        } catch {
-          // Ignore errors
-        }
-      })
-    );
+    this.audioPlayers.forEach((player) => {
+      try {
+        player.release();
+      } catch {
+        // Ignore errors
+      }
+    });
 
-    this.soundObjects.clear();
-    this.isInitialized = false;
+    this.audioPlayers.clear();
+    this.loadingThemes.clear();
+    this.audioModeSet = false;
+  }
+
+  /**
+   * Get number of loaded themes (for debugging)
+   */
+  getLoadedThemeCount(): number {
+    return this.audioPlayers.size;
   }
 }
 
@@ -359,19 +497,22 @@ export const themeMusic = new ThemeMusicManager();
  *
  * Uses useEffect to trigger music on slide transitions.
  * Handles cleanup when component unmounts.
+ * Also updates the ThemeMusicContext for UI display.
  */
-export function useThemeMusic(currentSlide: string | null): void {
+export function useThemeMusic(
+  currentSlide: string | null,
+  setCurrentTheme?: (theme: ThemeType | null) => void
+): void {
   React.useEffect(() => {
     if (!currentSlide) return;
 
     const theme = getThemeForSlide(currentSlide);
-    themeMusic.playTheme(theme);
-  }, [currentSlide]);
+    // Pass slideId for preloading logic
+    themeMusic.playTheme(theme, currentSlide);
+    setCurrentTheme?.(theme);
+  }, [currentSlide, setCurrentTheme]);
 
-  // Cleanup on unmount
-  React.useEffect(() => {
-    return () => {
-      themeMusic.stop();
-    };
-  }, []);
+  // Note: No cleanup on unmount - audio lifecycle is managed at the provider level.
+  // Stopping audio here would cause music to stop when switching tabs,
+  // since expo-router unmounts inactive tab screens by default.
 }
