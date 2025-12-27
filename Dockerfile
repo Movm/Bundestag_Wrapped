@@ -3,6 +3,14 @@ FROM node:22-alpine AS builder
 
 WORKDIR /app
 
+# Build arguments for Vite environment variables
+ARG VITE_UMAMI_URL
+ARG VITE_UMAMI_WEBSITE_ID
+
+# Make build args available as env vars during build
+ENV VITE_UMAMI_URL=$VITE_UMAMI_URL
+ENV VITE_UMAMI_WEBSITE_ID=$VITE_UMAMI_WEBSITE_ID
+
 # Copy package files
 COPY package*.json ./
 

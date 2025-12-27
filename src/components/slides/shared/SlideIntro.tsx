@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { DecorativeAccents, AbstractParticles } from './DecorativeAccents';
 import { SLIDE_INTRO } from '@/shared/animations/animation-config';
+import { INTRO_ICONS, INTRO_ICON_ANIMATIONS } from '@/components/icons/intro-icons';
 
 interface SlideIntroProps {
   emoji: string;
@@ -23,6 +24,10 @@ export function SlideIntro({ emoji, title, subtitle, showAccents = true, slideId
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { amount: 0.3 });
 
+  // Check if we have a custom icon for this slide
+  const IconComponent = slideId ? INTRO_ICONS[slideId as keyof typeof INTRO_ICONS] : undefined;
+  const animationClass = slideId ? INTRO_ICON_ANIMATIONS[slideId as keyof typeof INTRO_ICON_ANIMATIONS] : undefined;
+
   return (
     <div ref={ref} className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">
       {/* Layer 1: Abstract floating particles - themed by slideId */}
@@ -31,19 +36,34 @@ export function SlideIntro({ emoji, title, subtitle, showAccents = true, slideId
       {/* Layer 2: Decorative accents - themed by slideId */}
       {showAccents && <DecorativeAccents slideId={slideId} />}
       <div className="text-center">
-        {/* Emoji with scale-pop effect */}
-        <motion.span
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{
-            delay: SLIDE_INTRO.emoji.delay / 1000,
-            type: 'spring',
-          }}
-          className="text-6xl md:text-7xl mb-4 block"
-        >
-          {emoji}
-        </motion.span>
+        {/* Icon or Emoji with scale-pop effect */}
+        {IconComponent ? (
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              delay: SLIDE_INTRO.emoji.delay / 1000,
+              type: 'spring',
+            }}
+            className="mb-4 flex justify-center"
+          >
+            <IconComponent className={`w-20 h-20 md:w-28 md:h-28 ${animationClass ?? ''}`} />
+          </motion.div>
+        ) : (
+          <motion.span
+            initial={{ opacity: 0, scale: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              delay: SLIDE_INTRO.emoji.delay / 1000,
+              type: 'spring',
+            }}
+            className="text-6xl md:text-7xl mb-4 block"
+          >
+            {emoji}
+          </motion.span>
+        )}
 
         {/* Title with slide-up spring animation */}
         {title && (

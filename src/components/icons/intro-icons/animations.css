@@ -1,0 +1,162 @@
+/**
+ * Intro Icon Animations
+ * GPU-accelerated CSS animations using only transform & opacity
+ * Respects prefers-reduced-motion for accessibility
+ */
+
+/* Base animation class - all animated icons should include this */
+.icon-animated {
+  will-change: transform, opacity;
+}
+
+/* Topics: Gentle pulse/breathe effect */
+@keyframes icon-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+.animate-icon-pulse {
+  animation: icon-pulse 3s ease-in-out infinite;
+  animation-delay: 0.6s; /* After pop-in completes */
+}
+
+/* Vocabulary: Horizontal wave oscillation */
+@keyframes icon-wave {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+}
+
+.animate-icon-wave {
+  animation: icon-wave 4s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+/* Speeches: Bar pulse (for use on individual bars via CSS vars) */
+@keyframes icon-bars {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.1);
+  }
+}
+
+.animate-icon-bars {
+  animation: icon-bars 2s ease-in-out infinite;
+  animation-delay: 0.6s;
+  transform-origin: bottom;
+}
+
+/* Drama: Quick flash/glow effect */
+@keyframes icon-flash {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-icon-flash {
+  animation: icon-flash 0.8s linear infinite;
+  animation-delay: 0.6s;
+}
+
+/* Common Words: Gentle floating */
+@keyframes icon-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-icon-float {
+  animation: icon-float 4s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+/* Moin: Gentle sway/rotation */
+@keyframes icon-sway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  75% {
+    transform: rotate(-3deg);
+  }
+}
+
+.animate-icon-sway {
+  animation: icon-sway 3s ease-in-out infinite;
+  animation-delay: 0.6s;
+  transform-origin: center;
+}
+
+/* Swiftie: Twinkle/shimmer effect */
+@keyframes icon-twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.03);
+  }
+}
+
+.animate-icon-twinkle {
+  animation: icon-twinkle 1.5s ease infinite;
+  animation-delay: 0.6s;
+}
+
+/* Tone: Glow pulse */
+@keyframes icon-glow {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  50% {
+    opacity: 0.95;
+    filter: drop-shadow(0 0 8px currentColor);
+  }
+}
+
+.animate-icon-glow {
+  animation: icon-glow 3s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+/* Discriminatory & Gender: No animation (static) */
+.animate-icon-none {
+  animation: none;
+}
+
+/* Accessibility: Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .icon-animated,
+  .animate-icon-pulse,
+  .animate-icon-wave,
+  .animate-icon-bars,
+  .animate-icon-flash,
+  .animate-icon-float,
+  .animate-icon-sway,
+  .animate-icon-twinkle,
+  .animate-icon-glow {
+    animation: none !important;
+  }
+}
