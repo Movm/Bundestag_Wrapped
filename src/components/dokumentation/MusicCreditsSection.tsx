@@ -92,6 +92,94 @@ export function MusicCreditsSection() {
             Quelle: Free Music Archive (freemusicarchive.org) | Lizenz: Creative Commons
             Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)
           </p>
+
+          <h3 className="text-2xl font-serif text-stone-900 mt-12 mb-6">
+            Soundeffekte
+          </h3>
+
+          <div className="bg-stone-100 rounded-lg p-4 mb-6">
+            <p className="text-sm text-stone-600 leading-relaxed">
+              Die Soundeffekte stammen von{' '}
+              <a
+                href="https://freesound.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-600 hover:text-pink-700 underline"
+              >
+                Freesound.org
+              </a>
+              .
+            </p>
+          </div>
+
+          <ul className="space-y-3 text-sm">
+            <li className="flex items-start gap-3">
+              <span className="text-pink-400">•</span>
+              <div>
+                <a
+                  href="https://freesound.org/people/nckn/sounds/256112/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-pink-600 hover:text-pink-700 underline"
+                >
+                  pleasant-done-notification.wav
+                </a>{' '}
+                <span className="text-stone-600">
+                  von{' '}
+                  <a
+                    href="https://freesound.org/people/nckn/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-pink-600 hover:text-pink-700 underline"
+                  >
+                    nckn
+                  </a>{' '}
+                  – Lizenz:{' '}
+                  <a
+                    href="https://creativecommons.org/licenses/by-nc/4.0/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-pink-600 hover:text-pink-700 underline"
+                  >
+                    CC BY-NC 4.0
+                  </a>
+                </span>
+              </div>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-pink-400">•</span>
+              <div>
+                <a
+                  href="https://freesound.org/people/The-Sacha-Rush/sounds/472506/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-pink-600 hover:text-pink-700 underline"
+                >
+                  appearance-effect.wav
+                </a>{' '}
+                <span className="text-stone-600">
+                  von{' '}
+                  <a
+                    href="https://freesound.org/people/The-Sacha-Rush/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-pink-600 hover:text-pink-700 underline"
+                  >
+                    The-Sacha-Rush
+                  </a>{' '}
+                  – Lizenz:{' '}
+                  <a
+                    href="https://creativecommons.org/publicdomain/zero/1.0/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-pink-600 hover:text-pink-700 underline"
+                  >
+                    CC0 1.0
+                  </a>
+                </span>
+              </div>
+            </li>
+          </ul>
         </motion.div>
       </div>
     </section>

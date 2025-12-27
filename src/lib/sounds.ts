@@ -20,13 +20,12 @@ import {
   SOUND_VOLUMES,
   createSlideTransitionSoundHook,
 } from '@/shared/sounds';
+import { useAudioStore } from '@/stores/audioStore';
 
 export type { SoundType };
 
 const BACKGROUND_MUSIC_PATH = '/sounds/background.mp3';
 const BACKGROUND_VOLUME = 0.08;
-
-const STORAGE_KEY = 'bundestag-wrapped-sound-muted';
 
 // Background music instance
 let backgroundMusic: HTMLAudioElement | null = null;
@@ -72,36 +71,12 @@ export function initSounds(): void {
 }
 
 /**
- * Check if sounds are muted
- */
-export function isMuted(): boolean {
-  if (typeof window === 'undefined') return false;
-  return localStorage.getItem(STORAGE_KEY) === 'true';
-}
-
-/**
- * Set mute state
- */
-export function setMuted(muted: boolean): void {
-  if (typeof window === 'undefined') return;
-  localStorage.setItem(STORAGE_KEY, String(muted));
-}
-
-/**
- * Toggle mute state and return new state
- */
-export function toggleMuted(): boolean {
-  const newState = !isMuted();
-  setMuted(newState);
-  return newState;
-}
-
-/**
  * Play a sound effect
+ * Uses cached audio elements for efficiency - no new allocations per play
  * @param type - The type of sound to play
  */
 export function playSound(type: SoundType): void {
-  if (isMuted()) return;
+  if (useAudioStore.getState().isMuted) return;
   if (typeof window === 'undefined') return;
 
   // Initialize on first play if not already done
@@ -109,18 +84,15 @@ export function playSound(type: SoundType): void {
     initSounds();
   }
 
-  // Create a fresh audio element each time for reliability
-  const audio = new Audio(SOUND_PATHS[type]);
-  audio.volume = SOUND_VOLUMES[type];
+  // Use cached audio element - reset position and play
+  const audio = audioCache[type];
+  if (!audio) return;
 
-  // Play with promise handling
-  const playPromise = audio.play();
-  if (playPromise !== undefined) {
-    playPromise.catch((error) => {
-      // Log for debugging but don't break the app
-      console.debug('Sound playback failed:', error.message);
-    });
-  }
+  audio.currentTime = 0;
+  audio.volume = SOUND_VOLUMES[type];
+  audio.play().catch((error) => {
+    console.debug('Sound playback failed:', error.message);
+  });
 }
 
 /**
@@ -140,7 +112,7 @@ function initBackgroundMusic(): HTMLAudioElement {
  * Start playing background music
  */
 export function playBackgroundMusic(): void {
-  if (isMuted()) return;
+  if (useAudioStore.getState().isMuted) return;
   if (typeof window === 'undefined') return;
 
   const music = initBackgroundMusic();
