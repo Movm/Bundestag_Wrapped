@@ -1,4 +1,5 @@
 import { useRef, useCallback, useMemo, useState, useEffect } from 'react';
+import { useDebugRender } from '@/hooks/useDebugRender';
 import { motion, AnimatePresence } from 'motion/react';
 import { useWrappedData } from '@/hooks/useDataQueries';
 import { Header } from '@/components/ui/Header';
@@ -10,6 +11,7 @@ import { BackgroundSystem } from '@/components/ui/BackgroundSystem';
 import { getSlideIntensity } from '@/lib/background-config';
 import { themeMusic, getThemeForSlide } from '@/lib/theme-music';
 import { clearWrappedProgress } from '@/lib/wrapped-storage';
+import { useIsQuizAnswered, useQuizStore } from '@/stores/quizStore';
 import {
   ScrollContainer,
   SlideSection,
@@ -19,14 +21,11 @@ import {
   SlideRenderer,
   SLIDES,
   SHAREABLE_SLIDES,
-  getSlideShareData,
+  useSlideShareData,
   type ScrollContainerRef,
   type SlideType,
 } from './main-wrapped';
 import { SlideShareFAB } from './slides/shared';
-
-// Stable no-op function to avoid recreating on each render
-const noop = () => {};
 
 interface MainWrappedPageProps {
   isMenuOpen: boolean;
@@ -34,19 +33,17 @@ interface MainWrappedPageProps {
 }
 
 export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPageProps) {
-  const { data, isLoading: loading, error } = useWrappedData();
+  // React Query fetches data and syncs to wrappedStore
+  // Slides use store selectors directly, not data prop
+  const { isLoading: loading, error, data } = useWrappedData();
   const scrollContainerRef = useRef<ScrollContainerRef>(null);
 
-  const {
-    correctCount,
-    quizNumber,
-    currentSection,
-    initialSection,
-    handleQuizAnswer,
-    setCurrentSection,
-    isQuizAnswered,
-    quizAnsweredMap,
-  } = useScrollWrapped();
+  // Simplified: quiz state is in quizStore, not passed as props
+  const { currentSection, initialSection, setCurrentSection } = useScrollWrapped();
+
+  // For scroll lock: check if current quiz is answered (only subscribes when on quiz slide)
+  const isCurrentQuizAnswered = useIsQuizAnswered(currentSection as SlideType);
+  const resetQuiz = useQuizStore((state) => state.reset);
 
   // Auto-scroll on intro slides after 4 seconds
   useAutoScroll(currentSection, scrollContainerRef);
@@ -101,32 +98,30 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
   // Restart handler - clears progress and reloads page
   const handleRestart = useCallback(() => {
     clearWrappedProgress();
+    resetQuiz();
     window.location.reload();
-  }, []);
+  }, [resetQuiz]);
 
   // Stable section change handler
   const handleSectionChange = useCallback((id: string) => {
     setCurrentSection(id as SlideType);
   }, [setCurrentSection]);
 
-  // Pre-compute slide callbacks to avoid inline arrow functions
+  // Pre-compute slide callbacks (simplified - quiz answers handled by store)
   const slideCallbacks = useMemo(() => {
     return Object.fromEntries(
       SLIDES.map((slideId) => [
         slideId,
-        {
-          onQuizAnswer: (isCorrect: boolean) => handleQuizAnswer(slideId, isCorrect),
-          onQuizComplete: () => handleQuizComplete(slideId),
-        },
+        { onComplete: () => handleQuizComplete(slideId) },
       ])
-    ) as Record<SlideType, { onQuizAnswer: (isCorrect: boolean) => void; onQuizComplete: () => void }>;
-  }, [handleQuizAnswer, handleQuizComplete]);
+    ) as Record<SlideType, { onComplete: () => void }>;
+  }, [handleQuizComplete]);
 
   // Lock scroll on intro (until started) and unanswered quiz slides
   const [scrollLocked, setScrollLocked] = useState(true); // Start locked for intro
   const shouldLock =
     (currentSection === 'intro' && !introStarted) ||
-    (currentSection.startsWith('quiz-') && !isQuizAnswered(currentSection));
+    (currentSection.startsWith('quiz-') && !isCurrentQuizAnswered);
 
   useEffect(() => {
     if (shouldLock) {
@@ -138,6 +133,19 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
       setScrollLocked(false);
     }
   }, [shouldLock]);
+
+  // Debug: Track re-renders and prop changes
+  useDebugRender('MainWrappedPage', {
+    currentSection,
+    introStarted,
+    scrollLocked,
+    dataLoaded: !!data,
+    handleQuizComplete,
+  });
+
+  // Share data from store (only subscribes when on shareable slide)
+  const isShareable = SHAREABLE_SLIDES.has(currentSection);
+  const shareData = useSlideShareData(isShareable ? currentSection : 'intro');
 
   if (loading) {
     return null;
@@ -208,13 +216,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
             <SlideSection key={slideId} id={slideId}>
               <SlideRenderer
                 slide={slideId}
-                data={data}
-                quizNumber={quizNumber}
-                correctCount={correctCount}
-                isQuizAnswered={quizAnsweredMap[slideId] ?? false}
-                onQuizAnswer={slideCallbacks[slideId].onQuizAnswer}
-                onQuizEnter={noop}
-                onQuizComplete={slideCallbacks[slideId].onQuizComplete}
+                onComplete={slideCallbacks[slideId].onComplete}
                 onRestart={handleRestart}
               />
             </SlideSection>
@@ -222,10 +224,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
         </ScrollContainer>
 
         {/* Single FAB instance - only show on shareable slides */}
-        {SHAREABLE_SLIDES.has(currentSection) && (() => {
-          const shareData = getSlideShareData(currentSection, data);
-          return shareData ? <SlideShareFAB slideData={shareData} /> : null;
-        })()}
+        {isShareable && shareData && <SlideShareFAB slideData={shareData} />}
 
         <AnimatePresence>
           {showFooter && (

@@ -1,5 +1,5 @@
 import { AnimatePresence } from 'motion/react';
-import type { ScoredSpeech, ScoredSpeaker, ScoredWord, ParsedQuery, Speech } from '@/lib/search-utils';
+import type { ScoredSpeech, ScoredSpeaker, ScoredWord, ParsedQuery, Speech, WordRankingsData } from '@/lib/search-utils';
 import type { SearchState } from '@/hooks/useSearchState';
 import { SpeechCard } from './SpeechCard';
 import { SpeakerCard } from './SpeakerCard';
@@ -10,6 +10,7 @@ interface SearchResultsProps {
   filteredSpeeches: ScoredSpeech[];
   filteredSpeakers: ScoredSpeaker[];
   filteredWords: ScoredWord[];
+  wordRankings?: WordRankingsData;
   parsedQuery: ParsedQuery;
   visibleCount: number;
   hasActiveFilters: boolean;
@@ -25,6 +26,7 @@ export function SearchResults({
   filteredSpeeches,
   filteredSpeakers,
   filteredWords,
+  wordRankings,
   parsedQuery,
   visibleCount,
   hasActiveFilters,
@@ -119,6 +121,7 @@ export function SearchResults({
               <WordCard
                 key={word.word}
                 word={word}
+                ranking={wordRankings?.words[word.word]}
                 query={parsedQuery}
                 index={index}
                 onSearchInSpeeches={onSearchWordInSpeeches}

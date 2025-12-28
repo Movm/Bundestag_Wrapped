@@ -1,10 +1,11 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PARTY_BG_CLASSES, PARTY_BG_COLORS } from '@/lib/party-colors';
-import { highlightTerms, type ScoredWord, type ParsedQuery } from '@/lib/search-utils';
+import { highlightTerms, type ScoredWord, type ParsedQuery, type WordRanking } from '@/lib/search-utils';
 
 interface WordCardProps {
   word: ScoredWord;
+  ranking?: WordRanking;
   query: ParsedQuery;
   index: number;
   onSearchInSpeeches?: (word: string) => void;
@@ -12,7 +13,7 @@ interface WordCardProps {
 
 const PARTY_ORDER = ['CDU/CSU', 'SPD', 'GRÜNE', 'AfD', 'DIE LINKE', 'fraktionslos'];
 
-export function WordCard({ word, query, index, onSearchInSpeeches }: WordCardProps) {
+export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: WordCardProps) {
   const [expanded, setExpanded] = useState(false);
 
   const highlightedWord = useMemo(
@@ -112,27 +113,98 @@ export function WordCard({ word, query, index, onSearchInSpeeches }: WordCardPro
             className="overflow-hidden"
           >
             <div className="px-4 pb-4 pt-2 border-t border-white/10">
-              {/* Top speakers */}
-              {word.topSpeakers && word.topSpeakers.length > 0 && (
+              {/* Top speakers from ranking data */}
+              {ranking?.top && ranking.top.length > 0 && (
+                <div className="mb-4">
+                  <h4 className="text-white/60 text-xs uppercase tracking-wider mb-2">
+                    Top Sprecher ({ranking.speakers} Abgeordnete gesamt)
+                  </h4>
+                  <div className="space-y-1 max-h-72 overflow-y-auto">
+                    {ranking.top.map((speaker, idx) => (
+                      <div
+                        key={`${speaker.speaker}-${idx}`}
+                        className="flex items-center gap-2 text-sm hover:bg-white/5 rounded px-2 py-1.5 -mx-2 transition-colors"
+                      >
+                        <span className="text-white/40 w-6 text-right shrink-0">
+                          {idx + 1}.
+                        </span>
+                        <span
+                          className={`px-1.5 py-0.5 rounded text-xs text-white shrink-0 ${
+                            PARTY_BG_CLASSES[speaker.party] || 'bg-gray-500'
+                          }`}
+                        >
+                          {speaker.party}
+                        </span>
+                        <span className="text-white/80 truncate">
+                          {speaker.speaker}
+                        </span>
+                        <span className={`text-xs shrink-0 ${speaker.gender === 'female' ? 'text-pink-400' : 'text-blue-400'}`}>
+                          {speaker.gender === 'female' ? '♀' : '♂'}
+                        </span>
+                        <span className="text-white/40 ml-auto shrink-0">
+                          {speaker.count}×
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Fallback: Top speakers from word index (if no ranking data) */}
+              {!ranking?.top && word.topSpeakers && word.topSpeakers.length > 0 && (
                 <div className="mb-4">
                   <h4 className="text-white/60 text-xs uppercase tracking-wider mb-2">
                     Top Sprecher
                   </h4>
                   <div className="space-y-1">
-                    {word.topSpeakers.map((speaker) => (
+                    {word.topSpeakers.map((speaker, idx) => (
                       <a
                         key={speaker.slug}
                         href={`/abgeordnete/${speaker.slug}`}
-                        className="flex items-center justify-between text-sm hover:bg-white/5 rounded px-2 py-1 -mx-2 transition-colors"
+                        className="flex items-center gap-2 text-sm hover:bg-white/5 rounded px-2 py-1 -mx-2 transition-colors"
                       >
-                        <span className="text-white/80 hover:text-pink-300">
+                        <span className="text-white/40 w-6 text-right shrink-0">
+                          {idx + 1}.
+                        </span>
+                        <span className="text-white/80 hover:text-pink-300 truncate">
                           {speaker.name}
                         </span>
-                        <span className="text-white/40">
-                          {speaker.count}x
+                        <span className="text-white/40 ml-auto shrink-0">
+                          {speaker.count}×
                         </span>
                       </a>
                     ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Gender breakdown */}
+              {ranking?.byGender && (
+                <div className="mb-4">
+                  <h4 className="text-white/60 text-xs uppercase tracking-wider mb-2">
+                    Nach Geschlecht
+                  </h4>
+                  <div className="flex items-center gap-2">
+                    <div className="flex-1 h-3 bg-white/10 rounded-full overflow-hidden flex">
+                      <div
+                        className="h-full bg-blue-400"
+                        style={{
+                          width: `${(ranking.byGender.male / ranking.total) * 100}%`,
+                        }}
+                        title={`Männlich: ${ranking.byGender.male.toLocaleString('de-DE')}`}
+                      />
+                      <div
+                        className="h-full bg-pink-400"
+                        style={{
+                          width: `${(ranking.byGender.female / ranking.total) * 100}%`,
+                        }}
+                        title={`Weiblich: ${ranking.byGender.female.toLocaleString('de-DE')}`}
+                      />
+                    </div>
+                  </div>
+                  <div className="flex justify-between text-xs text-white/50 mt-1">
+                    <span>♂ {Math.round((ranking.byGender.male / ranking.total) * 100)}%</span>
+                    <span>♀ {Math.round((ranking.byGender.female / ranking.total) * 100)}%</span>
                   </div>
                 </div>
               )}

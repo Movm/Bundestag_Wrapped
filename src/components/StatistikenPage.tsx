@@ -51,7 +51,7 @@ export function StatistikenPage() {
         </section>
 
         <section id="parties">
-          <PartySection parties={data.parties} />
+          <PartySection parties={data.parties} topicAnalysis={data.topicAnalysis} />
         </section>
 
         <section id="speakers">

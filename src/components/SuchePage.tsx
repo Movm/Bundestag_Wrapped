@@ -21,7 +21,7 @@ import {
   type WordSortOption,
 } from '@/lib/search-utils';
 import { useSearchState, useDebounce } from '@/hooks/useSearchState';
-import { useSpeakerIndex, useSpeechesDb, useWordsIndex } from '@/hooks/useDataQueries';
+import { useSpeakerIndex, useSpeechesDb, useWordsIndex, useWordRankings } from '@/hooks/useDataQueries';
 import {
   SearchHero,
   SearchHeader,
@@ -40,6 +40,9 @@ export function SuchePage() {
     enabled: state.tab === 'speeches',
   });
   const { data: wordsIndex, isLoading: wordsLoading, error: wordsError } = useWordsIndex({
+    enabled: state.tab === 'words',
+  });
+  const { data: wordRankings } = useWordRankings({
     enabled: state.tab === 'words',
   });
 
@@ -156,6 +159,7 @@ export function SuchePage() {
             filteredSpeeches={filteredSpeeches}
             filteredSpeakers={filteredSpeakers}
             filteredWords={filteredWords}
+            wordRankings={wordRankings}
             parsedQuery={parsedQuery}
             visibleCount={visibleCount}
             hasActiveFilters={!!hasActiveFilters}

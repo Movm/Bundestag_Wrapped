@@ -22,9 +22,8 @@ import {
   type ScrollContainerRef,
   type SlideType,
 } from '@/components/main-wrapped';
-
-// Stable no-op function
-const noop = () => {};
+import { useIsQuizAnswered, useQuizStore } from '@/stores/quizStore';
+import { useWrappedStore } from '@/stores/wrappedStore';
 
 interface MobileWrappedPageProps {
   /** DOM prop required by Expo's 'use dom' directive */
@@ -38,16 +37,20 @@ interface MobileWrappedPageProps {
 export function MobileWrappedPage({ data, onComplete }: MobileWrappedPageProps) {
   const scrollContainerRef = useRef<ScrollContainerRef>(null);
 
-  const {
-    correctCount,
-    quizNumber,
-    currentSection,
-    initialSection,
-    handleQuizAnswer,
-    setCurrentSection,
-    isQuizAnswered,
-    quizAnsweredMap,
-  } = useScrollWrapped();
+  // Sync bundled data prop to wrappedStore (slides use store selectors)
+  const setData = useWrappedStore((s) => s.setData);
+  useEffect(() => {
+    if (data) {
+      setData(data);
+    }
+  }, [data, setData]);
+
+  // Simplified: quiz state is in quizStore, not passed as props
+  const { currentSection, initialSection, setCurrentSection } = useScrollWrapped();
+
+  // For scroll lock: check if current quiz is answered
+  const isCurrentQuizAnswered = useIsQuizAnswered(currentSection as SlideType);
+  const resetQuiz = useQuizStore((state) => state.reset);
 
   // Auto-scroll on intro slides
   useAutoScroll(currentSection, scrollContainerRef);
@@ -75,36 +78,34 @@ export function MobileWrappedPage({ data, onComplete }: MobileWrappedPageProps) 
     if (slideId === 'intro') {
       setIntroStarted(true);
     }
-    if (slideId === 'finale' && onComplete) {
-      onComplete();
+    if (slideId === 'finale') {
+      resetQuiz();
+      onComplete?.();
     }
     setTimeout(() => {
       scrollContainerRef.current?.scrollToNextSlide(slideId);
     }, 100);
-  }, [onComplete]);
+  }, [onComplete, resetQuiz]);
 
   const handleSectionChange = useCallback((id: string) => {
     setCurrentSection(id as SlideType);
   }, [setCurrentSection]);
 
-  // Pre-compute callbacks
+  // Pre-compute slide callbacks (simplified - quiz answers handled by store)
   const slideCallbacks = useMemo(() => {
     return Object.fromEntries(
       SLIDES.map((slideId) => [
         slideId,
-        {
-          onQuizAnswer: (isCorrect: boolean) => handleQuizAnswer(slideId, isCorrect),
-          onQuizComplete: () => handleQuizComplete(slideId),
-        },
+        { onComplete: () => handleQuizComplete(slideId) },
       ])
-    ) as Record<SlideType, { onQuizAnswer: (isCorrect: boolean) => void; onQuizComplete: () => void }>;
-  }, [handleQuizAnswer, handleQuizComplete]);
+    ) as Record<SlideType, { onComplete: () => void }>;
+  }, [handleQuizComplete]);
 
   // Scroll lock logic
   const [scrollLocked, setScrollLocked] = useState(true);
   const shouldLock =
     (currentSection === 'intro' && !introStarted) ||
-    (currentSection.startsWith('quiz-') && !isQuizAnswered(currentSection));
+    (currentSection.startsWith('quiz-') && !isCurrentQuizAnswered);
 
   useEffect(() => {
     if (shouldLock) {
@@ -135,13 +136,7 @@ export function MobileWrappedPage({ data, onComplete }: MobileWrappedPageProps) 
           <SlideSection key={slideId} id={slideId}>
             <SlideRenderer
               slide={slideId}
-              data={data}
-              quizNumber={quizNumber}
-              correctCount={correctCount}
-              isQuizAnswered={quizAnsweredMap[slideId] ?? false}
-              onQuizAnswer={slideCallbacks[slideId].onQuizAnswer}
-              onQuizEnter={noop}
-              onQuizComplete={slideCallbacks[slideId].onQuizComplete}
+              onComplete={slideCallbacks[slideId].onComplete}
             />
           </SlideSection>
         ))}

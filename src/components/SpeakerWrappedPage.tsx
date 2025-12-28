@@ -1,42 +1,103 @@
-import { useState, useCallback } from 'react';
+import { useRef, useEffect, useCallback, useState } from 'react';
 import { useParams } from 'react-router';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { useSpeakerData } from '@/hooks/useDataQueries';
-import { getPartyColor } from '@/lib/party-colors';
 import { SpeakerSEO } from '@/components/seo/SpeakerSEO';
+import { BackgroundSystem } from '@/components/ui/BackgroundSystem';
+import { ScrollContainer, type ScrollContainerRef } from '@/components/main-wrapped/ScrollContainer';
+import { SlideSection } from '@/components/main-wrapped/SlideSection';
+import { playSound } from '@/lib/sounds';
+import { getPartyColor } from './speaker-wrapped/party-colors';
 import {
-  IntroSection,
-  AnimalSection,
-  QuizSection,
-  WordsSection,
-  TopicsSection,
-  ShareSocialSection,
-  EndSection,
-} from './speaker-wrapped';
-
-type Section = 'intro' | 'animal' | 'quiz' | 'words' | 'topics' | 'share' | 'end';
-
-const SECTIONS: Section[] = ['intro', 'animal', 'quiz', 'words', 'topics', 'share', 'end'];
+  SPEAKER_SLIDES,
+  SPEAKER_HIDE_PROGRESS_SLIDES,
+  type SpeakerSlideType,
+} from './speaker-wrapped/constants';
+import { useSpeakerScrollWrapped } from './speaker-wrapped/useSpeakerScrollWrapped';
+import {
+  useSpeakerQuizAnswered,
+  useSpeakerQuizStore,
+} from '@/stores/speakerQuizStore';
+import { SpeakerSlideRenderer } from './speaker-wrapped/SpeakerSlideRenderer';
 
 export function SpeakerWrappedPage() {
   const { slug = '' } = useParams<{ slug: string }>();
   const { data, isLoading: loading, error } = useSpeakerData(slug);
-  const [currentSection, setCurrentSection] = useState<Section>('intro');
+  const scrollContainerRef = useRef<ScrollContainerRef>(null);
 
-  const sectionIndex = SECTIONS.indexOf(currentSection);
-  const progress = ((sectionIndex + 1) / SECTIONS.length) * 100;
+  // Scroll state with persistence
+  const { currentSection, initialSection, setCurrentSection } = useSpeakerScrollWrapped(slug);
 
-  const goToNext = useCallback(() => {
-    const idx = SECTIONS.indexOf(currentSection);
-    if (idx < SECTIONS.length - 1) {
-      setCurrentSection(SECTIONS[idx + 1]);
+  // Track if intro has started (user clicked "Los geht's")
+  const [introStarted, setIntroStarted] = useState(false);
+
+  // Quiz state from store (like main wrapped)
+  const isQuizAnswered = useSpeakerQuizAnswered(slug);
+  const answerQuiz = useSpeakerQuizStore((state) => state.answerQuiz);
+
+  // Scroll lock logic (like main wrapped)
+  const scrollLocked =
+    (currentSection === 'speaker-intro' && !introStarted) ||
+    (currentSection === 'speaker-quiz' && !isQuizAnswered);
+
+  // Progress calculation
+  const sectionIndex = SPEAKER_SLIDES.indexOf(currentSection);
+  const progress = ((sectionIndex + 1) / SPEAKER_SLIDES.length) * 100;
+  const hideProgressBar = SPEAKER_HIDE_PROGRESS_SLIDES.has(currentSection);
+
+  // Play sound on section change
+  const prevSectionRef = useRef(currentSection);
+  useEffect(() => {
+    if (prevSectionRef.current !== currentSection) {
+      playSound('whoosh');
+      prevSectionRef.current = currentSection;
     }
   }, [currentSection]);
 
-  const restart = useCallback(() => {
-    setCurrentSection('intro');
+  // Restore scroll position on mount (if resuming)
+  useEffect(() => {
+    if (initialSection && data && initialSection !== 'speaker-intro') {
+      setIntroStarted(true); // Skip intro lock if resuming
+      const timer = setTimeout(() => {
+        scrollContainerRef.current?.scrollToSlide(initialSection);
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [initialSection, data]);
+
+  // Handle intro start (unlock scroll)
+  const handleIntroStart = useCallback(() => {
+    setIntroStarted(true);
+    setTimeout(() => {
+      scrollContainerRef.current?.scrollToNextSlide('speaker-intro');
+    }, 100);
   }, []);
 
+  // Handle quiz answer (store in Zustand, like main wrapped)
+  const handleQuizAnswer = useCallback((isCorrect: boolean) => {
+    answerQuiz(slug, isCorrect);
+  }, [slug, answerQuiz]);
+
+  // Handle quiz complete (scroll to next after animation)
+  const handleQuizComplete = useCallback(() => {
+    setTimeout(() => {
+      scrollContainerRef.current?.scrollToNextSlide('speaker-quiz');
+    }, 100);
+  }, []);
+
+  // Handle restart
+  const handleRestart = useCallback(() => {
+    setIntroStarted(false);
+    setCurrentSection('speaker-intro');
+    scrollContainerRef.current?.scrollToSlide('speaker-intro');
+  }, [setCurrentSection]);
+
+  // Handle section change from scroll
+  const handleSectionChange = useCallback((sectionId: string) => {
+    setCurrentSection(sectionId as SpeakerSlideType);
+  }, [setCurrentSection]);
+
+  // Loading state
   if (loading) {
     return (
       <div className="min-h-screen page-bg flex items-center justify-center pt-14">
@@ -48,6 +109,7 @@ export function SpeakerWrappedPage() {
     );
   }
 
+  // Error state
   if (error || !data) {
     return (
       <div className="min-h-screen page-bg flex items-center justify-center pt-14">
@@ -63,54 +125,64 @@ export function SpeakerWrappedPage() {
   }
 
   const partyColor = getPartyColor(data.party);
-  const hideProgressBar = currentSection === 'intro' || currentSection === 'share' || currentSection === 'end';
 
   return (
     <>
       <SpeakerSEO speaker={data} />
-      <div className="min-h-screen page-bg pt-14">
-        {!hideProgressBar && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="fixed top-14 left-0 right-0 z-50 p-4"
-        >
-          <div
-            className="max-w-md mx-auto h-1 bg-white/10 rounded-full overflow-hidden"
-            role="progressbar"
-            aria-valuenow={Math.round(progress)}
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-label="Fortschritt durch das Wrapped"
-          >
-            <motion.div
-              className="h-full rounded-full"
-              style={{ backgroundColor: partyColor }}
-              initial={{ width: 0 }}
-              animate={{ width: `${progress}%` }}
-              transition={{ duration: 0.3 }}
-            />
-          </div>
-        </motion.div>
-      )}
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentSection}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
+      {/* Background system with themed effects */}
+      <BackgroundSystem
+        slideId={currentSection}
+        scrollContainer={scrollContainerRef.current?.containerRef}
+        sparkles
+      />
+
+      <div className="min-h-screen page-bg pt-14">
+        {/* Progress bar */}
+        {!hideProgressBar && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="fixed top-14 left-0 right-0 z-50 p-4"
+          >
+            <div
+              className="max-w-md mx-auto h-1 bg-white/10 rounded-full overflow-hidden"
+              role="progressbar"
+              aria-valuenow={Math.round(progress)}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-label="Fortschritt durch das Wrapped"
+            >
+              <motion.div
+                className="h-full rounded-full"
+                style={{ backgroundColor: partyColor }}
+                initial={{ width: 0 }}
+                animate={{ width: `${progress}%` }}
+                transition={{ duration: 0.3 }}
+              />
+            </div>
+          </motion.div>
+        )}
+
+        {/* Scroll container with slides */}
+        <ScrollContainer
+          ref={scrollContainerRef}
+          onSectionChange={handleSectionChange}
+          locked={scrollLocked}
         >
-          {currentSection === 'intro' && <IntroSection data={data} onNext={goToNext} />}
-          {currentSection === 'animal' && <AnimalSection data={data} onNext={goToNext} />}
-          {currentSection === 'quiz' && <QuizSection data={data} onNext={goToNext} />}
-          {currentSection === 'words' && <WordsSection data={data} onNext={goToNext} />}
-          {currentSection === 'topics' && <TopicsSection data={data} onNext={goToNext} />}
-          {currentSection === 'share' && <ShareSocialSection data={data} onRestart={restart} />}
-          {currentSection === 'end' && <EndSection data={data} onRestart={restart} />}
-        </motion.div>
-        </AnimatePresence>
+          {SPEAKER_SLIDES.map((slideId) => (
+            <SlideSection key={slideId} id={slideId}>
+              <SpeakerSlideRenderer
+                slide={slideId}
+                speaker={data}
+                onStart={handleIntroStart}
+                onQuizAnswer={handleQuizAnswer}
+                onQuizComplete={handleQuizComplete}
+                onRestart={handleRestart}
+              />
+            </SlideSection>
+          ))}
+        </ScrollContainer>
       </div>
     </>
   );

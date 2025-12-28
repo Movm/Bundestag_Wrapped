@@ -1,4 +1,5 @@
 import { useRef, Suspense, lazy } from 'react';
+import { useDebugRender } from '@/hooks/useDebugRender';
 import { useReducedMotion, useScroll, useTransform, AnimatePresence, motion, type MotionValue } from 'motion/react';
 import { BackgroundContrails, ContrailGradients } from './Contrails';
 import { FloatingParticles } from '@/components/slides/shared/FloatingParticles';
@@ -54,6 +55,14 @@ export function BackgroundSystem({
   sparkles,
 }: BackgroundSystemProps) {
   const prefersReducedMotion = useReducedMotion();
+
+  // Debug: Track re-renders from animation/scroll triggers
+  useDebugRender('BackgroundSystem', {
+    slideId,
+    intensity,
+    scrollContainer,
+    sparkles,
+  });
 
   // Create a ref wrapper for the scroll container
   const containerRef = useRef<HTMLDivElement | null>(null);

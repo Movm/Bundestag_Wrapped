@@ -12,10 +12,18 @@ import { SpeakerWrappedPage } from '@/components/SpeakerWrappedPage';
 // Lazy-loaded routes for smaller initial bundle
 const DatenschutzPage = lazy(() => import('@/components/DatenschutzPage').then(m => ({ default: m.DatenschutzPage })));
 const DokumentationPage = lazy(() => import('@/components/DokumentationPage').then(m => ({ default: m.DokumentationPage })));
-// TODO: Re-enable when statistiken is ready
-// const StatistikenPage = lazy(() => import('@/components/StatistikenPage').then(m => ({ default: m.StatistikenPage })));
 const SuchePage = lazy(() => import('@/components/SuchePage').then(m => ({ default: m.SuchePage })));
 const AbgeordnetePage = lazy(() => import('@/components/AbgeordnetePage').then(m => ({ default: m.AbgeordnetePage })));
+
+// Statistiken pages (overview + subpages) - TEMPORARILY DISABLED
+// const StatistikenLayout = lazy(() => import('@/components/statistiken/StatistikenLayout').then(m => ({ default: m.StatistikenLayout })));
+// const StatistikenOverviewPage = lazy(() => import('@/components/statistiken/StatistikenOverviewPage').then(m => ({ default: m.StatistikenOverviewPage })));
+// const ParteienPage = lazy(() => import('@/components/statistiken/pages/ParteienPage'));
+// const RednerInnenPage = lazy(() => import('@/components/statistiken/pages/RednerInnenPage'));
+// const TonalitaetPage = lazy(() => import('@/components/statistiken/pages/TonalitaetPage'));
+// const ZwischenrufePage = lazy(() => import('@/components/statistiken/pages/ZwischenrufePage'));
+// const GeschlechtPage = lazy(() => import('@/components/statistiken/pages/GeschlechtPage'));
+// const ThemenPage = lazy(() => import('@/components/statistiken/pages/ThemenPage'));
 
 function PageLoader() {
   return (
@@ -55,9 +63,19 @@ export default function App() {
             <Route path="/suche" element={<SuchePage />} />
             <Route path="/reden" element={<SuchePage />} />
             <Route path="/abgeordnete" element={<AbgeordnetePage />} />
-            {/* TODO: Re-enable when statistiken is ready */}
-            {/* <Route path="/statistiken" element={<StatistikenPage />} /> */}
           </Route>
+
+          {/* Statistiken routes - TEMPORARILY DISABLED
+          <Route path="/statistiken" element={<StatistikenLayout />}>
+            <Route index element={<StatistikenOverviewPage />} />
+            <Route path="parteien" element={<ParteienPage />} />
+            <Route path="redner_innen" element={<RednerInnenPage />} />
+            <Route path="tonalitaet" element={<TonalitaetPage />} />
+            <Route path="zwischenrufe" element={<ZwischenrufePage />} />
+            <Route path="geschlecht" element={<GeschlechtPage />} />
+            <Route path="themen" element={<ThemenPage />} />
+          </Route>
+          */}
 
           {/* Light theme routes */}
           <Route element={<LightLayout />}>
