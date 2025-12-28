@@ -42,35 +42,6 @@ export function ZwischenrufeSection() {
           </CodeBlock>
         </motion.div>
 
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.875, duration: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-12"
-        >
-          <div className="bg-white border border-stone-200 rounded-lg p-4 text-center">
-            <div className="text-xl font-mono text-stone-900 mb-1">8.004</div>
-            <div className="text-xs text-stone-500">Zwischenrufe</div>
-          </div>
-          <div className="bg-white border border-stone-200 rounded-lg p-4 text-center">
-            <div className="text-xl font-mono text-pink-600 mb-1">342</div>
-            <div className="text-xs text-stone-500">Zwischenrufer</div>
-          </div>
-          <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 text-center">
-            <div className="text-xl font-mono text-emerald-600 mb-1">17,9%</div>
-            <div className="text-xs text-emerald-700">Zustimmung</div>
-          </div>
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
-            <div className="text-xl font-mono text-red-600 mb-1">11,1%</div>
-            <div className="text-xs text-red-700">Kritik</div>
-          </div>
-          <div className="bg-stone-50 border border-stone-200 rounded-lg p-4 text-center col-span-2 md:col-span-1">
-            <div className="text-xl font-mono text-stone-600 mb-1">71,0%</div>
-            <div className="text-xs text-stone-500">Neutral</div>
-          </div>
-        </motion.div>
-
         {/* Regex Pattern */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -202,37 +173,12 @@ export function ZwischenrufeSection() {
           </div>
         </motion.div>
 
-        {/* Data Flow */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.91, duration: 0.6 }}
-        >
-          <h4 className="font-medium text-stone-900 mb-4">Datenfluss</h4>
-          <div className="bg-stone-900 rounded-xl p-6 text-white font-mono text-sm">
-            <div className="flex flex-wrap items-center gap-2 text-xs md:text-sm">
-              <span className="px-2 py-1 bg-stone-700 rounded">Protokoll-Text</span>
-              <span className="text-stone-500">→</span>
-              <span className="px-2 py-1 bg-stone-700 rounded">Regex-Matching</span>
-              <span className="text-stone-500">→</span>
-              <span className="px-2 py-1 bg-stone-700 rounded">Counter-Aggregation</span>
-              <span className="text-stone-500">→</span>
-              <span className="px-2 py-1 bg-stone-700 rounded">Rankings</span>
-            </div>
-            <div className="mt-4 pt-4 border-t border-stone-700 text-stone-400 text-xs">
-              <strong className="text-stone-300">Speicherung:</strong> Pro Abgeordnetem werden beide Werte
-              (<code className="text-pink-400">interruptions_made</code> und <code className="text-blue-400">interruptions_received</code>)
-              im SpeakerProfile gespeichert.
-            </div>
-          </div>
-        </motion.div>
-
         {/* Sentiment Classification */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.915, duration: 0.6 }}
-          className="mt-12"
+          transition={{ delay: 0.91, duration: 0.6 }}
+          className="mb-12"
         >
           <h4 className="font-medium text-stone-900 mb-4">Sentiment-Klassifikation</h4>
           <p className="text-sm text-stone-600 mb-6">
@@ -243,7 +189,7 @@ export function ZwischenrufeSection() {
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
               <div className="text-xs font-mono text-emerald-600 uppercase tracking-wider mb-3">
-                Zustimmung (17,9%)
+                Zustimmung (~18%)
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {sentimentKeywordsPositive.map(word => (
@@ -256,7 +202,7 @@ export function ZwischenrufeSection() {
             </div>
             <div className="bg-red-50 border border-red-200 rounded-lg p-4">
               <div className="text-xs font-mono text-red-600 uppercase tracking-wider mb-3">
-                Kritik (11,1%)
+                Kritik (~12%)
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {sentimentKeywordsNegative.map(word => (
@@ -271,7 +217,7 @@ export function ZwischenrufeSection() {
 
           <div className="bg-stone-50 border border-stone-200 rounded-lg p-4 mb-6">
             <div className="text-xs font-mono text-stone-500 uppercase tracking-wider mb-2">
-              Neutral (71,0%)
+              Neutral (~70%)
             </div>
             <p className="text-sm text-stone-600">
               Fragen ("Was?", "Wie bitte?"), Kommentare, thematische Einwürfe ("Infrastruktur!")
@@ -300,7 +246,6 @@ export function ZwischenrufeSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.92, duration: 0.6 }}
-          className="mt-12"
         >
           <h4 className="font-medium text-stone-900 mb-4">Daten herunterladen</h4>
           <p className="text-sm text-stone-600 mb-4">
@@ -313,7 +258,7 @@ export function ZwischenrufeSection() {
             <DownloadLink
               href="/zwischenrufer.json"
               title="Top Zwischenrufer"
-              description="342 Personen mit Sentiment-Klassifikation (pos/neg/neutral)"
+              description="Personen mit Sentiment-Klassifikation (pos/neg/neutral)"
               color="pink"
             />
             <DownloadLink

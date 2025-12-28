@@ -21,13 +21,6 @@ export interface Category {
   pattern: string;
 }
 
-export interface SpiritAnimal {
-  emoji: string;
-  name: string;
-  title: string;
-  criteria: string;
-}
-
 export const quizQuestions: QuizQuestion[] = [
   {
     id: 'speaking',
@@ -123,7 +116,7 @@ export const categories: Category[] = [
   {
     id: 'befragung',
     name: 'Regierungsbefragung',
-    count: 1031,
+    count: 1135,
     color: '#0ea5e9',
     description: 'Antworten von Regierungsmitgliedern (Minister, Staatssekretäre) während der Befragung der Bundesregierung.',
     examples: [
@@ -136,7 +129,7 @@ export const categories: Category[] = [
   {
     id: 'fragestunde',
     name: 'Fragestunde',
-    count: 177,
+    count: 831,
     color: '#06b6d4',
     description: 'Fragen und Nachfragen während der Fragestunde oder Regierungsbefragung.',
     examples: [
@@ -149,7 +142,7 @@ export const categories: Category[] = [
   {
     id: 'zwischenfrage',
     name: 'Zwischenfrage',
-    count: 71,
+    count: 64,
     color: '#f59e0b',
     description: 'Antworten auf Zwischenfragen anderer Abgeordneter während einer Rede.',
     examples: [
@@ -158,6 +151,18 @@ export const categories: Category[] = [
       'Also, mit Ihrer Frage entlarven Sie das Ganze...',
     ],
     pattern: 'Direkte Antwort oder Kolleg/in-Anrede',
+  },
+  {
+    id: 'fragestunde_antwort',
+    name: 'Fragestunde-Antwort',
+    count: 48,
+    color: '#14b8a6',
+    description: 'Antworten der Regierung auf schriftlich eingereichte Fragen in der Fragestunde.',
+    examples: [
+      'Die Bundesregierung antwortet wie folgt...',
+      'Zu Ihrer Frage kann ich mitteilen...',
+    ],
+    pattern: 'Antwort innerhalb Fragestunde-Session',
   },
   {
     id: 'ortskraefte',
@@ -208,45 +213,28 @@ export const categories: Category[] = [
     ],
     pattern: 'Programmatische Aussage ohne formelle Einleitung',
   },
-];
-
-export const spiritAnimalsTier1: SpiritAnimal[] = [
-  { emoji: '🐘', name: 'Elefant', title: 'Wortgewaltige:r Redner:in', criteria: 'Top 10 Gesamtwörter' },
-  { emoji: '🦅', name: 'Adler', title: 'Parlamentarische:r Überflieger:in', criteria: 'Top 10 Reden + Top 20 Wörter' },
-  { emoji: '🦁', name: 'Löwe', title: 'Fraktionsstimme', criteria: 'Top 3 in der Fraktion' },
-];
-
-export const spiritAnimalsTier2: SpiritAnimal[] = [
-  { emoji: '🦉', name: 'Eule', title: 'Themenexpert:in', criteria: 'Signature Word 50×' },
-  { emoji: '🐺', name: 'Wolf', title: 'Mutige:r Einwerfer:in', criteria: 'Top 20 Zwischenrufer:innen' },
-  { emoji: '🐻', name: 'Bär', title: 'Standhafte:r Debattierer:in', criteria: 'Top 20 unterbrochen' },
-  { emoji: '🦚', name: 'Pfau', title: 'Eloquente:r Redner:in', criteria: 'Top 20 Wortreich' },
-];
-
-export const spiritAnimalsTier3: SpiritAnimal[] = [
-  { emoji: '🐴', name: 'Pferd', title: 'Fleißige:r Debattierer:in', criteria: 'Top 30 Reden' },
-  { emoji: '🐦', name: 'Kolibri', title: 'Präzise:r Wortführer:in', criteria: 'Viel + kurz' },
-  { emoji: '🐬', name: 'Delfin', title: 'Diplomatische:r Redner:in', criteria: 'Aktiv, wenig Zwischenrufe' },
-  { emoji: '🦢', name: 'Schwan', title: 'Bedächtige:r Redner:in', criteria: 'Wenig, aber lang' },
-  { emoji: '🦊', name: 'Fuchs', title: 'Clevere:r Strateg:in', criteria: '3+ Signature Words' },
-];
-
-export const spiritAnimalsTier4: SpiritAnimal[] = [
-  { emoji: '🦔', name: 'Igel', title: 'Beharrliche:r Redner:in', criteria: 'Oft unterbrochen, redet weiter' },
-  { emoji: '🐢', name: 'Schildkröte', title: 'Gründliche:r Analyst:in', criteria: 'Wenige, ausführliche Reden' },
-  { emoji: '🐿️', name: 'Eichhörnchen', title: 'Themenhüter:in', criteria: '2+ Signature Words' },
-  { emoji: '🐝', name: 'Biene', title: 'Fleißige:r Abgeordnete:r', criteria: 'Default' },
+  {
+    id: 'sonstiges',
+    name: 'Sonstiges',
+    count: 1,
+    color: '#a1a1aa',
+    description: 'Beiträge, die keiner anderen Kategorie zugeordnet werden können.',
+    examples: [
+      'Nicht klassifizierbare Beiträge...',
+    ],
+    pattern: 'Fallback-Kategorie',
+  },
 ];
 
 export const spiritAnimalDistribution = [
-  { emoji: '🦉', name: 'Eule', count: 400, pct: '70%' },
-  { emoji: '🐬', name: 'Delfin', count: 28, pct: '5%' },
-  { emoji: '🦊', name: 'Fuchs', count: 27, pct: '5%' },
-  { emoji: '🐝', name: 'Biene', count: 19, pct: '3%' },
-  { emoji: '🐘', name: 'Elefant', count: 10, pct: '2%' },
-  { emoji: '🦁', name: 'Löwe', count: 9, pct: '2%' },
-  { emoji: '🐢', name: 'Schildkröte', count: 8, pct: '1%' },
-  { emoji: '🦚', name: 'Pfau', count: 2, pct: '<1%' },
+  { emoji: '🐿️', name: 'Eichhörnchen', count: 153, pct: '33%' },
+  { emoji: '🐝', name: 'Biene', count: 75, pct: '16%' },
+  { emoji: '🦫', name: 'Biber', count: 55, pct: '12%' },
+  { emoji: '🐰', name: 'Hase', count: 44, pct: '10%' },
+  { emoji: '🦦', name: 'Otter', count: 36, pct: '8%' },
+  { emoji: '🦊', name: 'Fuchs', count: 21, pct: '5%' },
+  { emoji: '🐺', name: 'Wolf', count: 15, pct: '3%' },
+  { emoji: '🦔', name: 'Igel', count: 14, pct: '3%' },
 ];
 
 export const slidesOverview = [
@@ -279,7 +267,7 @@ export const limitations = [
 
 export const statsData = [
   { label: 'Beiträge analysiert', value: '6.340' },
-  { label: 'Kategorien', value: '8' },
+  { label: 'Kategorien', value: '10' },
   { label: 'Klassifikationsrate', value: '100%' },
   { label: 'Protokolle', value: '50' },
 ];

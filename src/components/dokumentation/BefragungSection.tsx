@@ -34,8 +34,8 @@ export function BefragungSection() {
           <h4 className="font-medium text-stone-900 mb-4">Das Problem</h4>
           <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-4">
             <p className="text-sm text-amber-900">
-              <strong>Beispiel:</strong> Friedrich Merz hatte ursprünglich 108 "Reden" – aber nur
-              13 davon waren tatsächliche Plenarvorträge. Die restlichen 95 waren Antworten auf
+              <strong>Beispiel:</strong> Friedrich Merz hatte ursprünglich 98 "Reden" – aber nur
+              12 davon waren tatsächliche Plenarvorträge. Die restlichen 86 waren Antworten auf
               Abgeordnetenfragen in der Regierungsbefragung.
             </p>
           </div>
@@ -121,9 +121,9 @@ export function BefragungSection() {
             <div className="p-4 font-mono text-sm">
               <p className="text-stone-600">{'{'}</p>
               <p className="pl-4 text-stone-700">"name": <span className="text-emerald-600">"Friedrich Merz"</span>,</p>
-              <p className="pl-4 text-stone-700">"speeches": <span className="text-sky-600">13</span>, <span className="text-stone-400">// Formelle Reden</span></p>
+              <p className="pl-4 text-stone-700">"speeches": <span className="text-sky-600">12</span>, <span className="text-stone-400">// Formelle Reden</span></p>
               <p className="pl-4 text-stone-700">"befragungResponses": <span className="text-sky-600">86</span>, <span className="text-stone-400">// Q&A-Antworten</span></p>
-              <p className="pl-4 text-stone-700">"totalWords": <span className="text-sky-600">37822</span></p>
+              <p className="pl-4 text-stone-700">"totalWords": <span className="text-sky-600">37752</span></p>
               <p className="text-stone-600">{'}'}</p>
             </div>
           </div>

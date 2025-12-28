@@ -15,7 +15,7 @@ export function CategoriesSection() {
             Kategorien
           </h2>
           <h3 className="text-2xl font-serif text-stone-900 mb-8">
-            Die 8 Redetypen im Detail
+            Die 10 Redetypen im Detail
           </h3>
         </motion.div>
 
