@@ -4,7 +4,10 @@ import { getPartyColor } from '@/shared';
 import { SPEAKER_CONTENT, getAnimalAlternatives } from '@/shared/speaker-wrapped';
 import type { SpeakerWrapped, SpiritAnimalAlternative } from '~/types/wrapped';
 
-const { height: SCREEN_HEIGHT } = Dimensions.get('window');
+const { height: SCREEN_HEIGHT, width: SCREEN_WIDTH } = Dimensions.get('window');
+
+// Responsive scale: podium needs ~320px, scale down on narrower screens
+const getScale = () => Math.min((SCREEN_WIDTH - 32) / 320, 1);
 
 interface AnimalSectionProps {
   data: SpeakerWrapped;
@@ -15,21 +18,22 @@ interface AlternativeAnimalProps {
   position: 'left' | 'right';
   rank: number;
   delay: number;
+  scale: number;
 }
 
-function AlternativeAnimal({ animal, position, rank, delay }: AlternativeAnimalProps) {
+function AlternativeAnimal({ animal, position, rank, delay, scale }: AlternativeAnimalProps) {
   const entering = position === 'left'
     ? SlideInLeft.delay(delay).springify()
     : SlideInRight.delay(delay).springify();
 
   return (
-    <Animated.View entering={entering} style={styles.altAnimal}>
+    <Animated.View entering={entering} style={[styles.altAnimal, { width: 90 * scale }]}>
       <View style={styles.altRankBadge}>
         <Text style={styles.altRankText}>{rank}</Text>
       </View>
-      <Text style={styles.altEmoji}>{animal.emoji}</Text>
-      <Text style={styles.altName}>{animal.name}</Text>
-      <Text style={styles.altTitle} numberOfLines={2}>{animal.title}</Text>
+      <Text style={[styles.altEmoji, { fontSize: Math.max(44 * scale, 36) }]}>{animal.emoji}</Text>
+      <Text style={[styles.altName, { fontSize: Math.max(13 * scale, 11) }]}>{animal.name}</Text>
+      <Text style={[styles.altTitle, { fontSize: Math.max(10 * scale, 9) }]} numberOfLines={2}>{animal.title}</Text>
     </Animated.View>
   );
 }
@@ -41,6 +45,7 @@ export function AnimalSection({ data }: AnimalSectionProps) {
   const partyColor = getPartyColor(data.party);
   const content = SPEAKER_CONTENT.animal;
   const { spiritAnimal } = data;
+  const scale = getScale();
 
   if (!spiritAnimal) {
     return null;
@@ -57,7 +62,7 @@ export function AnimalSection({ data }: AnimalSectionProps) {
         </Animated.Text>
 
         {/* Podium Layout */}
-        <View style={styles.podium}>
+        <View style={[styles.podium, { gap: Math.max(10 * scale, 6) }]}>
           {/* 2nd Place (Left) */}
           {alternatives[0] && (
             <AlternativeAnimal
@@ -65,6 +70,7 @@ export function AnimalSection({ data }: AnimalSectionProps) {
               position="left"
               rank={2}
               delay={1000}
+              scale={scale}
             />
           )}
 
@@ -76,11 +82,13 @@ export function AnimalSection({ data }: AnimalSectionProps) {
             <View style={styles.primaryRankBadge}>
               <Text style={styles.primaryRankText}>1</Text>
             </View>
-            <Text style={styles.primaryEmoji}>{spiritAnimal.emoji}</Text>
+            <Text style={[styles.primaryEmoji, { fontSize: Math.max(80 * scale, 64) }]}>
+              {spiritAnimal.emoji}
+            </Text>
 
             <Animated.Text
               entering={FadeInUp.delay(500).springify()}
-              style={styles.primaryName}
+              style={[styles.primaryName, { fontSize: Math.max(24 * scale, 20) }]}
             >
               {spiritAnimal.name}
             </Animated.Text>
@@ -89,7 +97,9 @@ export function AnimalSection({ data }: AnimalSectionProps) {
               entering={FadeIn.delay(700)}
               style={[styles.primaryTitleBadge, { backgroundColor: `${partyColor}40` }]}
             >
-              <Text style={styles.primaryTitleText}>{spiritAnimal.title}</Text>
+              <Text style={[styles.primaryTitleText, { fontSize: Math.max(13 * scale, 11) }]}>
+                {spiritAnimal.title}
+              </Text>
             </Animated.View>
           </Animated.View>
 
@@ -100,6 +110,7 @@ export function AnimalSection({ data }: AnimalSectionProps) {
               position="right"
               rank={3}
               delay={1200}
+              scale={scale}
             />
           )}
         </View>
