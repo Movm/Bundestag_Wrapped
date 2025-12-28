@@ -21,6 +21,8 @@ interface SpeakerSectionProps {
     speeches: number;
   }>;
   topBefragungResponders?: BefragungResponder[];
+  /** Show expanded by default (for standalone subpages) */
+  defaultExpanded?: boolean;
 }
 
 const config = SECTION_CONFIG.speakers;
@@ -30,6 +32,7 @@ export function SpeakerSection({
   topSpeakersByWords,
   topSpeakersByAvgWords,
   topBefragungResponders,
+  defaultExpanded = false,
 }: SpeakerSectionProps) {
   // Find the speaker with most words
   const topSpeakerByWords = topSpeakersByWords?.[0];
@@ -82,6 +85,7 @@ export function SpeakerSection({
         <ExpandableDetails
           expandLabel="Rankings anzeigen"
           collapseLabel="Details ausblenden"
+          defaultExpanded={defaultExpanded}
         >
           <motion.p
             initial={{ opacity: 0 }}

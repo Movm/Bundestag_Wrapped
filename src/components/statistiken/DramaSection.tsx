@@ -7,11 +7,13 @@ import { SectionHeader, SectionWrapper, HeroStat, ExpandableDetails, SECTION_CON
 
 interface DramaSectionProps {
   drama: DramaStats;
+  /** Show expanded by default (for standalone subpages) */
+  defaultExpanded?: boolean;
 }
 
 const config = SECTION_CONFIG.drama;
 
-export function DramaSection({ drama }: DramaSectionProps) {
+export function DramaSection({ drama, defaultExpanded = false }: DramaSectionProps) {
   const stats = drama.zwischenrufStats;
   const totalZwischenrufe = stats ? stats.positive + stats.negative + stats.neutral : 0;
 
@@ -66,6 +68,7 @@ export function DramaSection({ drama }: DramaSectionProps) {
         <ExpandableDetails
           expandLabel="Wer unterbricht wen?"
           collapseLabel="Details ausblenden"
+          defaultExpanded={defaultExpanded}
         >
           <motion.p
             initial={{ opacity: 0 }}

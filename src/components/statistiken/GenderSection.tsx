@@ -7,11 +7,13 @@ import { SectionHeader, SectionWrapper, HeroStat, ExpandableDetails, SECTION_CON
 
 interface GenderSectionProps {
   genderAnalysis: GenderAnalysis;
+  /** Show expanded by default (for standalone subpages) */
+  defaultExpanded?: boolean;
 }
 
 const config = SECTION_CONFIG.gender;
 
-export function GenderSection({ genderAnalysis }: GenderSectionProps) {
+export function GenderSection({ genderAnalysis, defaultExpanded = false }: GenderSectionProps) {
   const { distribution, byParty, interruptionPatterns } = genderAnalysis;
   const totalKnown = distribution.male + distribution.female;
 
@@ -67,6 +69,7 @@ export function GenderSection({ genderAnalysis }: GenderSectionProps) {
         <ExpandableDetails
           expandLabel="Geschlechter-Analyse anzeigen"
           collapseLabel="Details ausblenden"
+          defaultExpanded={defaultExpanded}
         >
           <motion.p
             initial={{ opacity: 0 }}

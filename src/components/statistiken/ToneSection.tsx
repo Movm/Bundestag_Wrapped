@@ -5,6 +5,8 @@ import { SectionHeader, SectionWrapper, HeroStat, ExpandableDetails, SECTION_CON
 
 interface ToneSectionProps {
   toneAnalysis: ToneAnalysis;
+  /** Show expanded by default (for standalone subpages) */
+  defaultExpanded?: boolean;
 }
 
 // Only include keys that have ToneRanking[] values (not discriminatoryCounts)
@@ -72,7 +74,7 @@ const toneMetrics: ToneMetric[] = [
 
 const config = SECTION_CONFIG.tone;
 
-export function ToneSection({ toneAnalysis }: ToneSectionProps) {
+export function ToneSection({ toneAnalysis, defaultExpanded = false }: ToneSectionProps) {
   // Find the most aggressive party for hero stat
   const aggressionRankings = toneAnalysis.rankings.aggression || [];
   const topAggressive = aggressionRankings[0];
@@ -123,6 +125,7 @@ export function ToneSection({ toneAnalysis }: ToneSectionProps) {
         <ExpandableDetails
           expandLabel="Tonalitäts-Analyse anzeigen"
           collapseLabel="Details ausblenden"
+          defaultExpanded={defaultExpanded}
         >
           <motion.p
             initial={{ opacity: 0 }}

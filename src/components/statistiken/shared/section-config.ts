@@ -8,6 +8,8 @@ export interface SectionConfig {
   accent: string;
   gradient: string;
   icon: string;
+  path: string;      // URL path for routing
+  pathLabel: string; // Navigation label
 }
 
 export const SECTION_CONFIG: Record<string, SectionConfig> = {
@@ -21,6 +23,8 @@ export const SECTION_CONFIG: Record<string, SectionConfig> = {
     accent: '#db2777',
     gradient: 'from-pink-600/10 via-transparent to-transparent',
     icon: 'BarChart3',
+    path: '/statistiken',
+    pathLabel: 'Übersicht',
   },
   parties: {
     id: 'parties',
@@ -32,6 +36,8 @@ export const SECTION_CONFIG: Record<string, SectionConfig> = {
     accent: '#8b5cf6',
     gradient: 'from-violet-600/10 via-transparent to-transparent',
     icon: 'Building2',
+    path: '/statistiken/parteien',
+    pathLabel: 'Parteien',
   },
   speakers: {
     id: 'speakers',
@@ -43,6 +49,8 @@ export const SECTION_CONFIG: Record<string, SectionConfig> = {
     accent: '#f59e0b',
     gradient: 'from-amber-600/10 via-transparent to-transparent',
     icon: 'Mic2',
+    path: '/statistiken/redner_innen',
+    pathLabel: 'Redner:innen',
   },
   tone: {
     id: 'tone',
@@ -54,6 +62,8 @@ export const SECTION_CONFIG: Record<string, SectionConfig> = {
     accent: '#06b6d4',
     gradient: 'from-cyan-600/10 via-transparent to-transparent',
     icon: 'MessageSquare',
+    path: '/statistiken/tonalitaet',
+    pathLabel: 'Tonalität',
   },
   drama: {
     id: 'drama',
@@ -65,6 +75,8 @@ export const SECTION_CONFIG: Record<string, SectionConfig> = {
     accent: '#ef4444',
     gradient: 'from-red-600/10 via-transparent to-transparent',
     icon: 'Drama',
+    path: '/statistiken/zwischenrufe',
+    pathLabel: 'Zwischenrufe',
   },
   gender: {
     id: 'gender',
@@ -76,6 +88,8 @@ export const SECTION_CONFIG: Record<string, SectionConfig> = {
     accent: '#ec4899',
     gradient: 'from-fuchsia-600/10 via-transparent to-transparent',
     icon: 'Users',
+    path: '/statistiken/geschlecht',
+    pathLabel: 'Geschlecht',
   },
   topics: {
     id: 'topics',
@@ -87,9 +101,14 @@ export const SECTION_CONFIG: Record<string, SectionConfig> = {
     accent: '#10b981',
     gradient: 'from-emerald-600/10 via-transparent to-transparent',
     icon: 'Type',
+    path: '/statistiken/themen',
+    pathLabel: 'Themen',
   },
 };
 
 export const SECTION_ORDER = ['overview', 'parties', 'speakers', 'tone', 'drama', 'gender', 'topics'] as const;
 
+export const SUBPAGE_ORDER = ['parties', 'speakers', 'tone', 'drama', 'gender', 'topics'] as const;
+
 export type SectionId = typeof SECTION_ORDER[number];
+export type SubpageId = typeof SUBPAGE_ORDER[number];

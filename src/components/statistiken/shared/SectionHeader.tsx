@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import { cn } from '@/lib/utils';
 
 interface SectionHeaderProps {
-  sectionNumber: string;
+  sectionNumber?: string;
   emoji: string;
   title: string;
   subtitle: string;
@@ -10,6 +10,8 @@ interface SectionHeaderProps {
   accentColor?: string;
   size?: 'default' | 'large';
   className?: string;
+  /** Hide the section number */
+  hideNumber?: boolean;
 }
 
 const containerVariants = {
@@ -58,6 +60,7 @@ export function SectionHeader({
   accentColor = '#db2777',
   size = 'default',
   className,
+  hideNumber = false,
 }: SectionHeaderProps) {
   const isLarge = size === 'large';
 
@@ -69,22 +72,24 @@ export function SectionHeader({
       viewport={{ once: true, margin: '-50px' }}
       className={cn('text-center mb-16', className)}
     >
-      {/* Section Number */}
-      <motion.div
-        variants={numberVariants}
-        className="mb-6"
-      >
-        <span
-          className="font-mono text-sm md:text-base tracking-[0.3em] font-bold"
-          style={{ color: accentColor }}
+      {/* Section Number - optional */}
+      {!hideNumber && sectionNumber && (
+        <motion.div
+          variants={numberVariants}
+          className="mb-6"
         >
-          {sectionNumber}
-        </span>
-        <div
-          className="w-12 h-0.5 mx-auto mt-3 rounded-full"
-          style={{ backgroundColor: accentColor, opacity: 0.5 }}
-        />
-      </motion.div>
+          <span
+            className="font-mono text-sm md:text-base tracking-[0.3em] font-bold"
+            style={{ color: accentColor }}
+          >
+            {sectionNumber}
+          </span>
+          <div
+            className="w-12 h-0.5 mx-auto mt-3 rounded-full"
+            style={{ backgroundColor: accentColor, opacity: 0.5 }}
+          />
+        </motion.div>
+      )}
 
       {/* Emoji */}
       <motion.span
