@@ -19,7 +19,8 @@
       "backgroundColor": "#0a0a0f",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
-      }
+      },
+      "buildNumber": "3"
     },
     "android": {
       "package": "de.bundestag.wrapped",
@@ -33,7 +34,8 @@
     "plugins": [
       "expo-router",
       "expo-notifications",
-      "expo-audio"
+      "expo-audio",
+      "expo-asset"
     ],
     "experiments": {
       "typedRoutes": true

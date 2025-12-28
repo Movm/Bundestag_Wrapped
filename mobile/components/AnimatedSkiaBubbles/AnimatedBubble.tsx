@@ -3,6 +3,8 @@
  *
  * Uses phase-offset staggering from a shared progress value.
  * Pattern proven in Confetti.tsx for 60fps performance.
+ *
+ * Note: Uses Paragraph API for text rendering as matchFont() fails on iOS
  */
 
 import { memo, useMemo } from 'react';
@@ -10,24 +12,45 @@ import { Platform } from 'react-native';
 import {
   Circle,
   Group,
-  Text,
-  matchFont,
   Skia,
   Paragraph,
-  type SkFont,
   type SkFontMgr,
+  type SkParagraph,
 } from '@shopify/react-native-skia';
 import { useDerivedValue } from 'react-native-reanimated';
 import type { AnimatedBubbleProps } from './types';
 
 const fontFamily = Platform.select({ ios: 'System', default: 'sans-serif' });
 
+/**
+ * Create a paragraph for text rendering (works on iOS unlike matchFont)
+ */
+function createParagraph(
+  fontMgr: SkFontMgr,
+  text: string,
+  fontSize: number,
+  fontWeight: number,
+  color: string
+): SkParagraph {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const para = Skia.ParagraphBuilder.Make({}, fontMgr as any);
+  para.pushStyle({
+    color: Skia.Color(color),
+    fontFamilies: [fontFamily!],
+    fontSize,
+    fontStyle: { weight: fontWeight },
+  });
+  para.addText(text);
+  para.pop();
+  const p = para.build();
+  p.layout(9999);
+  return p;
+}
+
 interface AnimatedBubbleInternalProps extends AnimatedBubbleProps {
-  fonts: {
-    main: SkFont;
-    subtext: SkFont;
-  };
-  fontMgr: SkFontMgr | null;
+  fontMgr: SkFontMgr;
+  fontSize: number;
+  subtextFontSize: number;
 }
 
 export const AnimatedBubble = memo(function AnimatedBubble({
@@ -37,8 +60,9 @@ export const AnimatedBubble = memo(function AnimatedBubble({
   progress,
   phaseOffset,
   flipProgress,
-  fonts,
   fontMgr,
+  fontSize,
+  subtextFontSize,
 }: AnimatedBubbleInternalProps) {
   // Phase-adjusted progress for staggered entrance
   // Each bubble starts animating at different progress values
@@ -75,51 +99,40 @@ export const AnimatedBubble = memo(function AnimatedBubble({
     return (config.size / 2) * scale.value;
   }, [config.size]);
 
-  // Pre-calculate text widths for centering (memoized to avoid recalc on re-render)
-  const textMeasurements = useMemo(() => ({
-    mainTextWidth: fonts.main.measureText(config.frontText).width,
-    subtextWidth: config.frontSubtext
-      ? fonts.subtext.measureText(config.frontSubtext).width
-      : 0,
-  }), [fonts, config.frontText, config.frontSubtext]);
-  const { mainTextWidth, subtextWidth } = textMeasurements;
+  // Create all text paragraphs (memoized)
+  const paragraphs = useMemo(() => {
+    const mainText = createParagraph(fontMgr, config.frontText, fontSize, 900, '#ffffff');
+    const subtext = config.frontSubtext
+      ? createParagraph(fontMgr, config.frontSubtext, subtextFontSize, 700, '#ffffff')
+      : null;
+    const emoji = config.emoji
+      ? createParagraph(fontMgr, config.emoji, 32, 400, '#ffffff')
+      : null;
 
-  // Build emoji paragraph if needed (uses system font fallback for emoji)
-  const emojiParagraph = useMemo(() => {
-    if (!config.emoji || !fontMgr) return null;
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const para = Skia.ParagraphBuilder.Make({}, fontMgr as any);
-    para.pushStyle({
-      color: Skia.Color('#ffffff'),
-      fontFamilies: [fontFamily!],
-      fontSize: 32,
-      fontStyle: { weight: 400 },
-    });
-    para.addText(config.emoji);
-    para.pop();
-    const p = para.build();
-    p.layout(config.size);
-    return p;
-  }, [fontMgr, config.emoji, config.size]);
-
-  // Calculate emoji width for centering
-  const emojiWidth = emojiParagraph?.getMaxIntrinsicWidth() ?? 0;
+    return {
+      mainText,
+      mainTextWidth: mainText.getMaxIntrinsicWidth(),
+      subtext,
+      subtextWidth: subtext?.getMaxIntrinsicWidth() ?? 0,
+      emoji,
+      emojiWidth: emoji?.getMaxIntrinsicWidth() ?? 0,
+    };
+  }, [fontMgr, config.frontText, config.frontSubtext, config.emoji, fontSize, subtextFontSize]);
 
   // Vertical positioning based on content
   const hasEmoji = Boolean(config.emoji);
   const hasSubtext = Boolean(config.frontSubtext);
 
-  // Calculate Y positions for text elements
-  const emojiY = config.y - 28;
+  // Calculate Y positions for text elements (adjusted for Paragraph vs Text baseline)
+  const emojiY = config.y - 44;
   const mainTextY = hasEmoji
-    ? config.y + 12
+    ? config.y - 4
     : hasSubtext
-      ? config.y - 2
-      : config.y + 10;
+      ? config.y - 16
+      : config.y - 6;
   const subtextY = hasEmoji
-    ? config.y + 28
-    : config.y + 16;
+    ? config.y + 14
+    : config.y + 4;
 
   return (
     <Group>
@@ -133,55 +146,35 @@ export const AnimatedBubble = memo(function AnimatedBubble({
       />
 
       {/* Emoji (if present) */}
-      {emojiParagraph && (
+      {paragraphs.emoji && (
         <Group opacity={opacity}>
           <Paragraph
-            paragraph={emojiParagraph}
-            x={config.x - emojiWidth / 2}
+            paragraph={paragraphs.emoji}
+            x={config.x - paragraphs.emojiWidth / 2}
             y={emojiY}
             width={config.size}
           />
         </Group>
       )}
 
-      {/* Main text with shadow */}
+      {/* Main text */}
       <Group opacity={opacity}>
-        {/* Shadow */}
-        <Text
-          x={config.x - mainTextWidth / 2 + 0.5}
-          y={mainTextY + 1}
-          text={config.frontText}
-          font={fonts.main}
-          color="rgba(0,0,0,0.25)"
-        />
-        {/* Text */}
-        <Text
-          x={config.x - mainTextWidth / 2}
+        <Paragraph
+          paragraph={paragraphs.mainText}
+          x={config.x - paragraphs.mainTextWidth / 2}
           y={mainTextY}
-          text={config.frontText}
-          font={fonts.main}
-          color="#ffffff"
+          width={config.size}
         />
       </Group>
 
       {/* Subtext (if present) */}
-      {config.frontSubtext && (
+      {paragraphs.subtext && (
         <Group opacity={opacity}>
-          {/* Shadow */}
-          <Text
-            x={config.x - subtextWidth / 2 + 0.5}
-            y={subtextY + 1}
-            text={config.frontSubtext}
-            font={fonts.subtext}
-            color="rgba(0,0,0,0.25)"
-          />
-          {/* Text */}
-          <Text
-            x={config.x - subtextWidth / 2}
+          <Paragraph
+            paragraph={paragraphs.subtext}
+            x={config.x - paragraphs.subtextWidth / 2}
             y={subtextY}
-            text={config.frontSubtext}
-            font={fonts.subtext}
-            color="#ffffff"
+            width={config.size}
           />
         </Group>
       )}

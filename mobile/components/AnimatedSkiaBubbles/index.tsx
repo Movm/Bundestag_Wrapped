@@ -8,17 +8,17 @@
  * - 1 Canvas for all bubbles (single GPU draw call)
  * - 1 SharedValue drives all animations (no per-element timers)
  * - All calculations run on UI thread via useDerivedValue
+ *
+ * Note: Uses Paragraph API for text rendering as matchFont() fails on iOS
  */
 
-import { memo, useMemo } from 'react';
-import { StyleSheet, Platform } from 'react-native';
-import { Canvas, matchFont, useFonts } from '@shopify/react-native-skia';
+import { memo } from 'react';
+import { StyleSheet } from 'react-native';
+import { Canvas, useFonts } from '@shopify/react-native-skia';
 import { AnimatedBubble } from './AnimatedBubble';
 import type { AnimatedSkiaBubblesProps, AnimatedBubbleConfig } from './types';
 
 export type { AnimatedBubbleConfig, AnimatedSkiaBubblesProps };
-
-const fontFamily = Platform.select({ ios: 'System', default: 'sans-serif' });
 
 export const AnimatedSkiaBubbles = memo(function AnimatedSkiaBubbles({
   bubbles,
@@ -28,17 +28,13 @@ export const AnimatedSkiaBubbles = memo(function AnimatedSkiaBubbles({
   subtextFontSize = 13,
   flipProgresses,
 }: AnimatedSkiaBubblesProps) {
-  // Create fonts once (memoized)
-  const fonts = useMemo(
-    () => ({
-      main: matchFont({ fontFamily, fontSize, fontWeight: '900' }),
-      subtext: matchFont({ fontFamily, fontSize: subtextFontSize, fontWeight: '700' }),
-    }),
-    [fontSize, subtextFontSize]
-  );
-
-  // Font manager for emoji support (Paragraph API)
+  // Font manager for Paragraph API (works on iOS unlike matchFont)
   const fontMgr = useFonts({});
+
+  // Don't render until font manager is ready
+  if (!fontMgr) {
+    return null;
+  }
 
   return (
     <Canvas style={styles.canvas} pointerEvents="none">
@@ -51,8 +47,9 @@ export const AnimatedSkiaBubbles = memo(function AnimatedSkiaBubbles({
           progress={progress}
           phaseOffset={phaseOffset}
           flipProgress={flipProgresses?.[i]}
-          fonts={fonts}
           fontMgr={fontMgr}
+          fontSize={fontSize}
+          subtextFontSize={subtextFontSize}
         />
       ))}
     </Canvas>

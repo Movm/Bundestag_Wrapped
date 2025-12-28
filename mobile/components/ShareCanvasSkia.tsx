@@ -9,8 +9,6 @@ import { memo, useMemo } from 'react';
 import {
   Canvas,
   Rect,
-  Text,
-  matchFont,
   LinearGradient,
   vec,
   RadialGradient,
@@ -21,6 +19,8 @@ import {
   Skia,
   Paragraph,
   useFonts,
+  type SkFontMgr,
+  type SkParagraph,
 } from '@shopify/react-native-skia';
 import { StyleSheet, Platform } from 'react-native';
 import {
@@ -46,6 +46,32 @@ interface ShareCanvasSkiaProps {
 // Font family for system fonts
 const fontFamily = Platform.select({ ios: 'System', default: 'sans-serif' });
 
+/**
+ * Create a paragraph for text rendering (works on iOS unlike matchFont)
+ * iOS System font doesn't work with matchFont(), but Paragraph API handles it correctly
+ */
+function createParagraph(
+  fontMgr: SkFontMgr,
+  text: string,
+  fontSize: number,
+  fontWeight: number,
+  color: string
+): SkParagraph {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const para = Skia.ParagraphBuilder.Make({}, fontMgr as any);
+  para.pushStyle({
+    color: Skia.Color(color),
+    fontFamilies: [fontFamily!],
+    fontSize,
+    fontStyle: { weight: fontWeight },
+  });
+  para.addText(text);
+  para.pop();
+  const p = para.build();
+  p.layout(9999); // Wide layout for single-line measurement
+  return p;
+}
+
 export const ShareCanvasSkia = memo(function ShareCanvasSkia({
   correctCount,
   totalQuestions,
@@ -55,19 +81,8 @@ export const ShareCanvasSkia = memo(function ShareCanvasSkia({
   // Load logo image
   const logo = useImage(require('../assets/logo.png'));
 
-  // Font manager for Paragraph API (enables emoji support via system font fallback)
+  // Font manager for Paragraph API (works on iOS unlike matchFont)
   const fontMgr = useFonts({});
-
-  // Create fonts inside component to ensure Skia is initialized
-  const fonts = useMemo(() => ({
-    header: matchFont({ fontFamily, fontSize: 13, fontWeight: '600' }),
-    heroBold: matchFont({ fontFamily, fontSize: 40, fontWeight: '700' }),
-    score: matchFont({ fontFamily, fontSize: 70, fontWeight: '900' }),
-    scoreLarge: matchFont({ fontFamily, fontSize: 110, fontWeight: '900' }), // larger for 'title' variant
-    tagline: matchFont({ fontFamily, fontSize: 18, fontWeight: '400' }),
-    footerSmall: matchFont({ fontFamily, fontSize: 13, fontWeight: '600' }),
-    footerUrl: matchFont({ fontFamily, fontSize: 17, fontWeight: '700' }),
-  }), []);
 
   // Get result message based on score
   const result = useMemo(
@@ -83,40 +98,41 @@ export const ShareCanvasSkia = memo(function ShareCanvasSkia({
     [userName, result, variant]
   );
 
-  // For 'title' variant, line2 has no emoji - track this for rendering
-  const line2HasEmoji = variant === 'score';
-
-  // Build paragraph for line2 only when it has emoji (requires Paragraph API for proper rendering)
-  const line2Paragraph = useMemo(() => {
-    if (!line2HasEmoji || !fontMgr) return null;
-    const para = Skia.ParagraphBuilder.Make({}, fontMgr);
-    para.pushStyle({
-      color: Skia.Color(BRAND_COLORS.light),
-      fontFamilies: [fontFamily!],
-      fontSize: 40,
-      fontStyle: { weight: 700 },
-    });
-    para.addText(line2);
-    para.pop();
-    const p = para.build();
-    p.layout(SIZE);
-    return p;
-  }, [fontMgr, line2, line2HasEmoji]);
-
+  const scoreText = `${correctCount}/${totalQuestions}`;
   const centerX = SIZE / 2;
 
-  // Measure text widths for centering
-  const line1Width = fonts.heroBold.measureText(line1).width;
-  // line2 width: use paragraph for emoji variant, font measurement for title variant
-  const line2Width = line2HasEmoji
-    ? (line2Paragraph?.getMaxIntrinsicWidth() ?? 0)
-    : fonts.heroBold.measureText(line2).width;
-  const scoreText = `${correctCount}/${totalQuestions}`;
-  const scoreFont = variant === 'title' ? fonts.scoreLarge : fonts.score;
-  const scoreWidth = scoreFont.measureText(scoreText).width;
-  const taglineWidth = fonts.tagline.measureText(result.tagline).width;
-  const footer1Width = fonts.footerSmall.measureText('Wie gut kennst du den Bundestag? Teste dein Wissen auf').width;
-  const footer2Width = fonts.footerUrl.measureText('bundestag-wrapped.de').width;
+  // Create all text paragraphs (memoized for performance)
+  const paragraphs = useMemo(() => {
+    if (!fontMgr) return null;
+
+    const header = createParagraph(fontMgr, 'BUNDESTAG WRAPPED 2025', 13, 600, 'rgba(255, 255, 255, 0.5)');
+    const heroLine1 = createParagraph(fontMgr, line1, 40, 700, BRAND_COLORS.primary);
+    const heroLine2 = line2 ? createParagraph(fontMgr, line2, 40, 700, BRAND_COLORS.light) : null;
+    const score = createParagraph(fontMgr, scoreText, variant === 'title' ? 110 : 70, 900, '#ffffff');
+    const tagline = createParagraph(fontMgr, result.tagline, 18, 400, 'rgba(255, 255, 255, 0.7)');
+    const footer1 = createParagraph(fontMgr, 'Wie gut kennst du den Bundestag? Teste dein Wissen auf', 13, 600, 'rgba(255, 255, 255, 0.45)');
+    const footer2 = createParagraph(fontMgr, 'bundestag-wrapped.de', 17, 700, BRAND_COLORS.light);
+
+    return { header, heroLine1, heroLine2, score, tagline, footer1, footer2 };
+  }, [fontMgr, line1, line2, scoreText, result.tagline, variant]);
+
+  // Calculate widths for centering
+  const widths = useMemo(() => {
+    if (!paragraphs) return { line1: 0, line2: 0, score: 0, tagline: 0, footer1: 0, footer2: 0 };
+    return {
+      line1: paragraphs.heroLine1.getMaxIntrinsicWidth(),
+      line2: paragraphs.heroLine2?.getMaxIntrinsicWidth() ?? 0,
+      score: paragraphs.score.getMaxIntrinsicWidth(),
+      tagline: paragraphs.tagline.getMaxIntrinsicWidth(),
+      footer1: paragraphs.footer1.getMaxIntrinsicWidth(),
+      footer2: paragraphs.footer2.getMaxIntrinsicWidth(),
+    };
+  }, [paragraphs]);
+
+  // Don't render until paragraphs are ready
+  if (!paragraphs) {
+    return <Canvas style={styles.canvas} />;
+  }
 
   return (
     <Canvas style={styles.canvas}>
@@ -143,74 +159,60 @@ export const ShareCanvasSkia = memo(function ShareCanvasSkia({
             height={20}
           />
         )}
-        <Text
+        <Paragraph
+          paragraph={paragraphs.header}
           x={60}
-          y={45}
-          text="BUNDESTAG WRAPPED 2025"
-          font={fonts.header}
-          color="rgba(255, 255, 255, 0.5)"
+          y={32}
+          width={SIZE}
         />
       </Group>
 
       {/* Hero Line 1 - centered */}
-      <Text
-        x={centerX - line1Width / 2}
-        y={160}
-        text={line1}
-        font={fonts.heroBold}
-        color={BRAND_COLORS.primary}
+      <Paragraph
+        paragraph={paragraphs.heroLine1}
+        x={centerX - widths.line1 / 2}
+        y={130}
+        width={SIZE}
       />
 
       {/* Hero Line 2 - centered (only if line2 has content) */}
-      {line2 && (line2HasEmoji && line2Paragraph ? (
+      {paragraphs.heroLine2 && (
         <Paragraph
-          paragraph={line2Paragraph}
-          x={centerX - line2Width / 2}
+          paragraph={paragraphs.heroLine2}
+          x={centerX - widths.line2 / 2}
           y={175}
           width={SIZE}
         />
-      ) : (
-        <Text
-          x={centerX - line2Width / 2}
-          y={215}
-          text={line2}
-          font={fonts.heroBold}
-          color={BRAND_COLORS.light}
-        />
-      ))}
+      )}
 
       {/* Score - centered */}
-      <Text
-        x={centerX - scoreWidth / 2}
-        y={variant === 'title' ? 303 : 330}
-        text={scoreText}
-        font={scoreFont}
-        color="#ffffff"
+      <Paragraph
+        paragraph={paragraphs.score}
+        x={centerX - widths.score / 2}
+        y={variant === 'title' ? 240 : 260}
+        width={SIZE}
       />
 
       {/* Tagline - centered */}
-      <Text
-        x={centerX - taglineWidth / 2}
-        y={variant === 'title' ? 358 : 385}
-        text={result.tagline}
-        font={fonts.tagline}
-        color="rgba(255, 255, 255, 0.7)"
+      <Paragraph
+        paragraph={paragraphs.tagline}
+        x={centerX - widths.tagline / 2}
+        y={variant === 'title' ? 360 : 380}
+        width={SIZE}
       />
 
       {/* Footer - centered */}
-      <Text
-        x={centerX - footer1Width / 2}
-        y={SIZE - 70}
-        text="Wie gut kennst du den Bundestag? Teste dein Wissen auf"
-        font={fonts.footerSmall}
-        color="rgba(255, 255, 255, 0.45)"
+      <Paragraph
+        paragraph={paragraphs.footer1}
+        x={centerX - widths.footer1 / 2}
+        y={SIZE - 80}
+        width={SIZE}
       />
-      <Text
-        x={centerX - footer2Width / 2}
-        y={SIZE - 45}
-        text="bundestag-wrapped.de"
-        font={fonts.footerUrl}
-        color={BRAND_COLORS.light}
+      <Paragraph
+        paragraph={paragraphs.footer2}
+        x={centerX - widths.footer2 / 2}
+        y={SIZE - 60}
+        width={SIZE}
       />
     </Canvas>
   );
