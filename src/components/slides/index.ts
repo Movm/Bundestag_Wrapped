@@ -9,6 +9,7 @@ export { VocabularySlide } from './VocabularySlide';
 export { SpeechesSlide } from './SpeechesSlide';
 export { DramaSlide } from './DramaSlide';
 export { TopicsSlide } from './TopicsSlide';
+export { PartyTopicsSlide } from './PartyTopicsSlide';
 export { CommonWordsSlide } from './CommonWordsSlide';
 export { ToneAnalysisSlide } from './ToneAnalysisSlide';
 export { DiscriminatorySlide } from './DiscriminatorySlide';

@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { DecorativeAccents, AbstractParticles } from './DecorativeAccents';
 import { SLIDE_INTRO } from '@/shared/animations/animation-config';
-import { INTRO_ICONS, INTRO_ICON_ANIMATIONS } from '@/components/icons/intro-icons';
+import { getSlideIconConfig } from '@/shared/slide-icons';
 
 interface SlideIntroProps {
   emoji: string;
@@ -24,9 +24,10 @@ export function SlideIntro({ emoji, title, subtitle, showAccents = true, slideId
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { amount: 0.3 });
 
-  // Check if we have a custom icon for this slide
-  const IconComponent = slideId ? INTRO_ICONS[slideId as keyof typeof INTRO_ICONS] : undefined;
-  const animationClass = slideId ? INTRO_ICON_ANIMATIONS[slideId as keyof typeof INTRO_ICON_ANIMATIONS] : undefined;
+  // Get icon config from centralized source
+  const iconConfig = slideId ? getSlideIconConfig(slideId) : undefined;
+  const IconComponent = iconConfig?.Icon;
+  const animationClass = iconConfig?.animation;
 
   return (
     <div ref={ref} className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">

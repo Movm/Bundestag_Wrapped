@@ -1,4 +1,4 @@
-import { useRef, useImperativeHandle, forwardRef, useEffect, type ReactNode } from 'react';
+import { useRef, useImperativeHandle, forwardRef, useEffect, useCallback, type ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
 interface ScrollContainerProps {
@@ -14,6 +14,11 @@ export interface ScrollContainerRef {
   containerRef: HTMLDivElement | null;
 }
 
+// Wheel scroll constants (tunable)
+const SCROLL_THRESHOLD = 50;   // Accumulated delta needed to trigger scroll
+const SCROLL_COOLDOWN = 600;   // ms to wait after scrolling before allowing another
+const DELTA_RESET_DELAY = 150; // ms of no wheel events before resetting accumulator
+
 export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerProps>(
   function ScrollContainer({ children, onSectionChange, locked, className }, ref) {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -21,6 +26,12 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
     // Store callback in ref to avoid recreating IntersectionObserver
     const onSectionChangeRef = useRef(onSectionChange);
     onSectionChangeRef.current = onSectionChange;
+
+    // Wheel scroll state
+    const currentSectionRef = useRef<string | null>(null);
+    const isScrollingRef = useRef(false);
+    const accumulatedDeltaRef = useRef(0);
+    const deltaResetTimeoutRef = useRef<number>();
 
     useEffect(() => {
       if (!containerRef.current) return;

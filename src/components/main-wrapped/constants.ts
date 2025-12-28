@@ -12,11 +12,16 @@
 export const SLIDES = [
   'intro',
 
+  // Disclaimer (experimental project notice)
+  'info-disclaimer',
+
   // Topics (first section - what does the Bundestag talk about?)
   'intro-topics',
   'quiz-topics',
   'info-topics',
   'reveal-topics',
+  'info-party-topics',
+  'reveal-party-topics',
 
   // Vocabulary
   'intro-vocabulary',
@@ -82,8 +87,10 @@ export const TOTAL_QUIZ_QUESTIONS = 10;
 
 // Slides that auto-scroll to next after a delay (section intros and info slides)
 export const AUTO_SCROLL_SLIDES = new Set<SlideType>([
+  'info-disclaimer',
   'intro-topics',
   'info-topics',
+  'info-party-topics',
   'intro-vocabulary',
   'intro-speeches',
   'intro-drama',

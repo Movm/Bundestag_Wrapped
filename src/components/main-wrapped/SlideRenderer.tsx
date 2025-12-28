@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import type { WrappedData } from '@/data/wrapped';
+import { useDebugRender } from '@/hooks/useDebugRender';
 import { QUIZZES } from '@/data/quizzes';
 import { INFO_SLIDES } from '@/data/info-slides';
 import { TOTAL_QUIZ_QUESTIONS, type SlideType } from './constants';
@@ -10,6 +10,7 @@ import {
   SpeechesSlide,
   DramaSlide,
   TopicsSlide,
+  PartyTopicsSlide,
   CommonWordsSlide,
   MoinSlide,
   SwiftieSlide,
@@ -21,9 +22,26 @@ import {
 } from '@/components/slides';
 import { SlideInfo } from '@/components/slides/shared';
 import type { SlideData } from '@/lib/slide-sharepics';
+import { useIsQuizAnswered, useAnswerQuiz } from '@/stores/quizStore';
+import {
+  useParties,
+  useDrama,
+  useTopicAnalysis,
+  useToneAnalysis,
+  useHotTopics,
+  useMoinSpeakers,
+  useGenderAnalysis,
+  useFullWrappedData,
+} from '@/stores/wrappedStore';
 
-// Map slide types to their share data (exported for MainWrappedPage)
-export function getSlideShareData(slide: SlideType, data: WrappedData): SlideData | null {
+/**
+ * Hook to get share data for the current slide.
+ * Uses Zustand store so only re-renders when relevant data changes.
+ */
+export function useSlideShareData(slide: SlideType): SlideData | null {
+  const data = useFullWrappedData();
+  if (!data) return null;
+
   switch (slide) {
     case 'reveal-signature':
       return { type: 'vocabulary', data: { parties: data.parties } };
@@ -59,89 +77,191 @@ export function getSlideShareData(slide: SlideType, data: WrappedData): SlideDat
   }
 }
 
+/**
+ * SlideRenderer - renders the appropriate slide component.
+ *
+ * Data is fetched via Zustand store selectors, not props.
+ * Each slide subscribes only to the data it needs, preventing cascade re-renders.
+ *
+ * Quiz state also uses quizStore for the same reason.
+ */
 interface SlideRendererProps {
   slide: SlideType;
-  data: WrappedData;
-  quizNumber: number;
-  correctCount: number;
-  isQuizAnswered: boolean;
-  onQuizAnswer: (isCorrect: boolean) => void;
-  onQuizEnter: () => void;
-  onQuizComplete: () => void;
+  onComplete: () => void;
   onRestart?: () => void;
 }
 
+// Pre-compute quiz slides and their numbers at module level
+const QUIZ_SLIDES = [
+  'quiz-topics', 'quiz-signature', 'quiz-speeches', 'quiz-drama',
+  'quiz-discriminatory', 'quiz-common-words', 'quiz-moin', 'quiz-swiftie',
+  'quiz-tone', 'quiz-gender',
+] as const;
+
+function getQuizNumber(slideId: string): number {
+  const index = QUIZ_SLIDES.indexOf(slideId as typeof QUIZ_SLIDES[number]);
+  return index >= 0 ? index + 1 : 0;
+}
+
+// ============================================================================
+// Wrapper components - each subscribes to only the data it needs
+// ============================================================================
+
+function TopicsSlideWrapper({ phase }: { phase: 'intro' | 'result' }) {
+  const topicAnalysis = useTopicAnalysis();
+  if (!topicAnalysis) return null;
+  return <TopicsSlide topicAnalysis={topicAnalysis} phase={phase} />;
+}
+
+function PartyTopicsSlideWrapper() {
+  const topicAnalysis = useTopicAnalysis();
+  if (!topicAnalysis) return null;
+  return <PartyTopicsSlide topicAnalysis={topicAnalysis} />;
+}
+
+function VocabularySlideWrapper({ phase }: { phase: 'intro' | 'result' }) {
+  const parties = useParties();
+  if (!parties) return null;
+  return <VocabularySlide parties={parties} phase={phase} />;
+}
+
+function SpeechesSlideWrapper({ phase }: { phase: 'intro' | 'result' }) {
+  const parties = useParties();
+  if (!parties) return null;
+  return <SpeechesSlide parties={parties} phase={phase} />;
+}
+
+function DramaSlideWrapper({ phase }: { phase: 'intro' | 'result' }) {
+  const drama = useDrama();
+  if (!drama) return null;
+  return <DramaSlide drama={drama} phase={phase} />;
+}
+
+function DiscriminatorySlideWrapper({ phase }: { phase: 'intro' | 'result' }) {
+  const toneAnalysis = useToneAnalysis();
+  return <DiscriminatorySlide toneAnalysis={toneAnalysis} phase={phase} />;
+}
+
+function CommonWordsSlideWrapper({ phase }: { phase: 'intro' | 'result' }) {
+  const hotTopics = useHotTopics();
+  if (!hotTopics) return null;
+  return <CommonWordsSlide topics={hotTopics} phase={phase} />;
+}
+
+function MoinSlideWrapper({
+  phase,
+  onQuizAnswer,
+  onComplete,
+}: {
+  phase: 'intro' | 'quiz' | 'result';
+  onQuizAnswer?: (isCorrect: boolean) => void;
+  onComplete?: () => void;
+}) {
+  const moinSpeakers = useMoinSpeakers();
+  return (
+    <MoinSlide
+      moinSpeakers={moinSpeakers ?? []}
+      phase={phase}
+      onQuizAnswer={onQuizAnswer}
+      onComplete={onComplete}
+    />
+  );
+}
+
+function ToneSlideWrapper({ phase }: { phase: 'intro' | 'result' }) {
+  const toneAnalysis = useToneAnalysis();
+  if (!toneAnalysis) return null;
+  return <ToneAnalysisSlide toneAnalysis={toneAnalysis} phase={phase} />;
+}
+
+function GenderSlideWrapper() {
+  const genderAnalysis = useGenderAnalysis();
+  if (!genderAnalysis) return null;
+  return <GenderSlide genderAnalysis={genderAnalysis} phase="result" />;
+}
+
+// ============================================================================
+// Main SlideRenderer
+// ============================================================================
+
 export const SlideRenderer = memo(function SlideRenderer({
   slide,
-  data,
-  quizNumber,
-  correctCount,
-  isQuizAnswered,
-  onQuizAnswer,
-  onQuizEnter,
-  onQuizComplete,
+  onComplete,
   onRestart,
 }: SlideRendererProps) {
+  // Quiz state from store
+  const isQuizAnswered = useIsQuizAnswered(slide);
+  const answerQuiz = useAnswerQuiz();
+
+  // Quiz number computed from slide ID (static)
+  const quizNumber = getQuizNumber(slide);
+
+  // Handle quiz answer by updating store
+  const handleQuizAnswer = (isCorrect: boolean) => {
+    answerQuiz(slide, isCorrect);
+  };
+
+  // Debug: Verify memo is working correctly
+  useDebugRender('SlideRenderer', { slide });
+
   const renderSlideContent = () => {
     switch (slide) {
     case 'intro':
-      return <IntroSlide onStart={onQuizComplete} />;
+      return <IntroSlide onStart={onComplete} />;
 
     // Topics: intro -> result (first section)
     case 'intro-topics':
-      return data.topicAnalysis ? (
-        <TopicsSlide topicAnalysis={data.topicAnalysis} phase="intro" />
-      ) : null;
+      return <TopicsSlideWrapper phase="intro" />;
 
     case 'reveal-topics':
-      return data.topicAnalysis ? (
-        <TopicsSlide topicAnalysis={data.topicAnalysis} phase="result" />
-      ) : null;
+      return <TopicsSlideWrapper phase="result" />;
+
+    case 'reveal-party-topics':
+      return <PartyTopicsSlideWrapper />;
 
     // Vocabulary: intro -> quiz -> result
     case 'intro-vocabulary':
-      return <VocabularySlide parties={data.parties} phase="intro" />;
+      return <VocabularySlideWrapper phase="intro" />;
 
     case 'reveal-signature':
-      return <VocabularySlide parties={data.parties} phase="result" />;
+      return <VocabularySlideWrapper phase="result" />;
 
     // Speeches: intro -> result
     case 'intro-speeches':
-      return <SpeechesSlide parties={data.parties} phase="intro" />;
+      return <SpeechesSlideWrapper phase="intro" />;
 
     case 'chart-speeches':
-      return <SpeechesSlide parties={data.parties} phase="result" />;
+      return <SpeechesSlideWrapper phase="result" />;
 
     // Drama: intro -> result
     case 'intro-drama':
-      return <DramaSlide drama={data.drama} phase="intro" />;
+      return <DramaSlideWrapper phase="intro" />;
 
     // Discriminatory Language: intro -> quiz -> info -> result
     case 'intro-discriminatory':
-      return <DiscriminatorySlide toneAnalysis={data.toneAnalysis} phase="intro" />;
+      return <DiscriminatorySlideWrapper phase="intro" />;
 
     // Common Words: intro -> result
     case 'intro-common-words':
-      return <CommonWordsSlide topics={data.hotTopics} phase="intro" />;
+      return <CommonWordsSlideWrapper phase="intro" />;
 
     // Moin: intro -> quiz -> result
     case 'intro-moin':
-      return <MoinSlide moinSpeakers={data.moinSpeakers ?? []} phase="intro" />;
+      return <MoinSlideWrapper phase="intro" />;
 
     case 'quiz-moin':
       return (
-        <MoinSlide
-          moinSpeakers={data.moinSpeakers ?? []}
+        <MoinSlideWrapper
           phase="quiz"
-          onQuizAnswer={onQuizAnswer}
-          onComplete={onQuizComplete}
+          onQuizAnswer={handleQuizAnswer}
+          onComplete={onComplete}
         />
       );
 
     case 'reveal-moin':
-      return <MoinSlide moinSpeakers={data.moinSpeakers ?? []} phase="result" />;
+      return <MoinSlideWrapper phase="result" />;
 
-    // Swiftie Easter Egg: intro -> quiz -> result
+    // Swiftie Easter Egg: intro -> quiz -> result (no data needed)
     case 'intro-swiftie':
       return <SwiftieSlide phase="intro" />;
 
@@ -149,8 +269,8 @@ export const SlideRenderer = memo(function SlideRenderer({
       return (
         <SwiftieSlide
           phase="quiz"
-          onQuizAnswer={onQuizAnswer}
-          onComplete={onQuizComplete}
+          onQuizAnswer={handleQuizAnswer}
+          onComplete={onComplete}
         />
       );
 
@@ -159,11 +279,9 @@ export const SlideRenderer = memo(function SlideRenderer({
 
     // Tone: intro -> result
     case 'intro-tone':
-      return data.toneAnalysis ? (
-        <ToneAnalysisSlide toneAnalysis={data.toneAnalysis} phase="intro" />
-      ) : null;
+      return <ToneSlideWrapper phase="intro" />;
 
-    // All quiz slides use hardcoded QUIZZES
+    // All quiz slides use hardcoded QUIZZES (no data needed)
     case 'quiz-topics':
     case 'quiz-signature':
     case 'quiz-speeches':
@@ -179,16 +297,17 @@ export const SlideRenderer = memo(function SlideRenderer({
           questionNumber={quizNumber}
           totalQuestions={TOTAL_QUIZ_QUESTIONS}
           isAnswered={isQuizAnswered}
-          onAnswer={onQuizAnswer}
-          onEnterView={onQuizEnter}
-          onComplete={onQuizComplete}
+          onAnswer={handleQuizAnswer}
+          onComplete={onComplete}
           slideId={slide}
         />
       );
     }
 
-    // Info slides - educational context between quiz and reveal
+    // Info slides - educational context (no data needed, uses INFO_SLIDES constant)
+    case 'info-disclaimer':
     case 'info-topics':
+    case 'info-party-topics':
     case 'info-signature':
     case 'info-speeches':
     case 'info-drama':
@@ -196,34 +315,25 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'info-moin':
     case 'info-tone':
     case 'info-gender':
-      return <SlideInfo {...INFO_SLIDES[slide]} />;
+      return <SlideInfo {...INFO_SLIDES[slide]} slideId={slide} />;
 
     case 'reveal-drama':
-      return <DramaSlide drama={data.drama} phase="result" />;
+      return <DramaSlideWrapper phase="result" />;
 
     case 'reveal-discriminatory':
-      return <DiscriminatorySlide toneAnalysis={data.toneAnalysis} phase="result" />;
+      return <DiscriminatorySlideWrapper phase="result" />;
 
     case 'reveal-common-words':
-      return <CommonWordsSlide topics={data.hotTopics} phase="result" />;
+      return <CommonWordsSlideWrapper phase="result" />;
 
     case 'reveal-tone':
-      return data.toneAnalysis ? (
-        <ToneAnalysisSlide toneAnalysis={data.toneAnalysis} phase="result" />
-      ) : null;
+      return <ToneSlideWrapper phase="result" />;
 
     case 'reveal-gender':
-      return data.genderAnalysis ? (
-        <GenderSlide genderAnalysis={data.genderAnalysis} phase="result" />
-      ) : null;
+      return <GenderSlideWrapper />;
 
     case 'share':
-      return (
-        <ShareSlide
-          correctCount={correctCount}
-          totalQuestions={TOTAL_QUIZ_QUESTIONS}
-        />
-      );
+      return <ShareSlide totalQuestions={TOTAL_QUIZ_QUESTIONS} />;
 
     case 'finale':
       return <EndSlide onRestart={onRestart} />;
@@ -234,14 +344,4 @@ export const SlideRenderer = memo(function SlideRenderer({
   };
 
   return renderSlideContent();
-}, (prev, next) => {
-  // Only re-render if this specific slide's relevant data changed
-  if (prev.slide !== next.slide) return false;
-  if (prev.isQuizAnswered !== next.isQuizAnswered) return false;
-  if (prev.data !== next.data) return false;
-  // For share slide, also check correctCount
-  if (prev.slide === 'share' && prev.correctCount !== next.correctCount) return false;
-  // For quiz slides using old pattern, check quizNumber
-  if (prev.slide.startsWith('quiz-') && prev.quizNumber !== next.quizNumber) return false;
-  return true;
-})
+}, (prev, next) => prev.slide === next.slide);

@@ -1,5 +1,6 @@
 import { memo, useMemo } from 'react';
 import { INTRO_SLIDES } from '@/data/intro-slides';
+import { QUIZZES } from '@/data/quizzes';
 import {
   SlideIntro,
   SlideQuiz,
@@ -15,18 +16,10 @@ interface SwiftieSlideProps {
   onComplete?: () => void;
 }
 
-// The only person who mentioned Taylor Swift in the Bundestag
-const SWIFTIE = {
-  name: 'Daniel Baldy',
-  party: 'SPD',
-};
-
-// Decoys: young women who might plausibly be Swifties (but aren't!)
-const DECOYS = [
-  { name: 'Ricarda Lang', party: 'GRÜNE' },
-  { name: 'Nyke Slawik', party: 'GRÜNE' },
-  { name: 'Deborah Düring', party: 'GRÜNE' },
-];
+// Get swiftie quiz data from shared QUIZZES
+const SWIFTIE_QUIZ = QUIZZES['quiz-swiftie'];
+const SWIFTIE = SWIFTIE_QUIZ.swiftie!;
+const DECOYS = SWIFTIE_QUIZ.decoys!;
 
 export const SwiftieSlide = memo(function SwiftieSlide({
   phase,
@@ -38,10 +31,10 @@ export const SwiftieSlide = memo(function SwiftieSlide({
     const decoyOptions = DECOYS.map((d) => `${d.name} (${d.party})`);
 
     return {
-      question: 'Wer ist der einzige Swiftie im Bundestag?',
+      question: SWIFTIE_QUIZ.question,
       options: shuffle([correctOption, ...decoyOptions]),
       correctAnswer: correctOption,
-      explanation: `${SWIFTIE.name} ist der einzige, der "Taylor Swift" im Bundestag erwähnt hat – in einer Rede über Cybersicherheit!`,
+      explanation: SWIFTIE_QUIZ.explanation,
     };
   }, []);
 

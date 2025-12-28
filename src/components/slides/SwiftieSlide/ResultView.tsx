@@ -39,7 +39,7 @@ export function ResultView({ swiftie }: ResultViewProps) {
 
       <motion.div variants={itemVariants} className="text-center mb-4">
         <h2 className="text-2xl md:text-3xl font-black text-white mb-2">
-          Der einzige Swiftie
+          Swiftie
         </h2>
         <p className="text-white/60 text-lg">im Bundestag</p>
       </motion.div>

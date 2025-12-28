@@ -34,6 +34,7 @@ export function ResultView({ topics }: ResultViewProps) {
         subtitle="Die meistgenutzten Wörter im Bundestag"
         size="large"
         className="mb-10"
+        slideId="reveal-common-words"
       />
 
       <motion.div

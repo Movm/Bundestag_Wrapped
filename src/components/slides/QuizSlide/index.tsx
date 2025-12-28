@@ -1,4 +1,5 @@
 import { memo, useState, useEffect, useRef, useMemo } from 'react';
+import { useDebugRender } from '@/hooks/useDebugRender';
 import { motion, AnimatePresence, useInView } from 'motion/react';
 import type { QuizQuestion } from '@/data/wrapped';
 import { getPartyBgColor, PARTY_COLORS } from '@/lib/party-colors';
@@ -25,7 +26,6 @@ interface QuizSlideProps {
   totalQuestions: number;
   isAnswered: boolean;
   onAnswer: (isCorrect: boolean) => void;
-  onEnterView: () => void;
   onComplete: () => void;
   /** Current slide ID for themed confetti colors */
   slideId?: string;
@@ -175,7 +175,6 @@ export const QuizSlide = memo(function QuizSlide({
   totalQuestions,
   isAnswered,
   onAnswer,
-  onEnterView,
   onComplete,
   slideId,
 }: QuizSlideProps) {
@@ -183,8 +182,19 @@ export const QuizSlide = memo(function QuizSlide({
   const isInView = useInView(ref, { amount: 0.5 });
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
-  const [hasTriggeredEnter, setHasTriggeredEnter] = useState(false);
   const [showLockHint, setShowLockHint] = useState(false);
+
+  // Debug: Track complex local state
+  useDebugRender('QuizSlide', {
+    slideId,
+    questionNumber,
+    isAnswered,
+    selectedAnswer,
+    showResult,
+    isInView,
+    onAnswer,
+    onComplete,
+  });
 
   const isCorrect = selectedAnswer === question.correctAnswer;
 
@@ -200,13 +210,12 @@ export const QuizSlide = memo(function QuizSlide({
     ];
   }, [slideId]);
 
+  // Show lock hint when quiz comes into view and isn't answered
   useEffect(() => {
-    if (isInView && !isAnswered && !hasTriggeredEnter) {
-      setHasTriggeredEnter(true);
+    if (isInView && !isAnswered && !showLockHint) {
       setShowLockHint(true);
-      onEnterView();
     }
-  }, [isInView, isAnswered, hasTriggeredEnter, onEnterView]);
+  }, [isInView, isAnswered, showLockHint]);
 
   useEffect(() => {
     if (showLockHint) {

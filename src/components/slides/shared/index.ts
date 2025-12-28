@@ -44,3 +44,4 @@ export {
   type QuizOptionWithCorrect,
 } from './SlideQuiz';
 export { SlideShareFAB } from './SlideShareFAB';
+export { TopicsTicker } from './TopicsTicker';

@@ -2,6 +2,7 @@ import { memo, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { getPartyGradient } from '@/lib/party-colors';
 import { FlipCard } from '../shared';
+import { getSlideIconConfig } from '@/shared/slide-icons';
 
 interface PartyWithTotals {
   party: string;
@@ -32,6 +33,8 @@ const FLOAT_ANIMATIONS = [
 
 export const ResultView = memo(function ResultView({ parties }: ResultViewProps) {
   const top5 = parties.slice(0, 5);
+  const iconConfig = getSlideIconConfig('chart-speeches');
+  const IconComponent = iconConfig?.Icon;
 
   const { minSpeeches, speechRange, minWortbeitraege, wortbeitraegeRange } = useMemo(() => {
     const speeches = top5.map((p) => p.speeches);
@@ -54,7 +57,11 @@ export const ResultView = memo(function ResultView({ parties }: ResultViewProps)
         viewport={{ once: true }}
         className="absolute top-8 left-0 right-0 text-center z-20 px-4"
       >
-        <span className="text-4xl md:text-5xl mb-2 block">🎤</span>
+        {IconComponent ? (
+          <IconComponent className={`w-12 h-12 md:w-16 md:h-16 mb-2 mx-auto ${iconConfig?.animation ?? ''}`} />
+        ) : (
+          <span className="text-4xl md:text-5xl mb-2 block">🎤</span>
+        )}
         <p className="text-white/50 text-xs md:text-sm uppercase tracking-wide mb-1">
           Die Reden
         </p>

@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react';
 import { motion } from 'motion/react';
 import type { TopicAnalysis } from '@/data/wrapped';
-import { BUBBLE_POSITIONS, FLOAT_ANIMATIONS, FlipCard } from '../shared';
+import { BUBBLE_POSITIONS, FLOAT_ANIMATIONS, FlipCard, TopicsTicker } from '../shared';
 import { TOPIC_BY_ID, type TopicMeta } from './constants';
 import { getPartyBgColor } from '@/lib/party-colors';
 
@@ -120,6 +120,9 @@ export function ResultView({ topicAnalysis }: ResultViewProps) {
   // Get top 5 topics for the bubble layout
   const displayTopics = useMemo(() => topTopics.slice(0, 5), [topTopics]);
 
+  // Get topics 6-13 for the news ticker
+  const tickerTopics = useMemo(() => topTopics.slice(5, 13), [topTopics]);
+
   // Pre-compute party rankings for all displayed topics at once
   // This avoids recalculating rankings for each bubble on every render
   const allPartyRankings = useMemo(() => {
@@ -135,6 +138,25 @@ export function ResultView({ topicAnalysis }: ResultViewProps) {
     }
     return result;
   }, [displayTopics, byParty]);
+
+  // Prepare ticker data with topic names and top 3 parties
+  const tickerData = useMemo(() => {
+    return tickerTopics.map((topicScore) => {
+      const topic = TOPIC_BY_ID[topicScore.topic];
+      const rankings: PartyRanking[] = [];
+      for (const [party, topics] of Object.entries(byParty)) {
+        if (party === 'fraktionslos') continue;
+        const score = topics[topicScore.topic] || 0;
+        rankings.push({ party, score });
+      }
+      rankings.sort((a, b) => b.score - a.score);
+      return {
+        topic: topic?.name || topicScore.topic,
+        rank: topicScore.rank,
+        topParties: rankings.slice(0, 3),
+      };
+    });
+  }, [tickerTopics, byParty]);
 
   return (
     <div className="min-h-screen relative w-full">
@@ -170,6 +192,9 @@ export function ResultView({ topicAnalysis }: ResultViewProps) {
           );
         })}
       </div>
+
+      {/* News ticker for topics 6-13 */}
+      {tickerData.length > 0 && <TopicsTicker topics={tickerData} />}
     </div>
   );
 }
