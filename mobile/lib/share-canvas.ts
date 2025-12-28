@@ -41,15 +41,15 @@ export function getResultMessage(correctCount: number, totalQuestions: number): 
 
   switch (score) {
     case 10: return {
-      emoji: '🏆', title: 'Polit-Legende!',
+      emoji: '🏆', title: 'Legende!',
       tagline: 'Perfekt! Du könntest im Bundestag hospitieren.'
     };
     case 9: return {
-      emoji: '🏆', title: 'Polit-Legende!',
+      emoji: '🏆', title: 'Legende!',
       tagline: 'Deine Eltern wären so stolz auf dich.'
     };
     case 8: return {
-      emoji: '🏆', title: 'Polit-Legende!',
+      emoji: '🏆', title: 'Legende!',
       tagline: 'Fast makellos – da wackelt der Kanzlerstuhl.'
     };
     case 7: return {
@@ -88,7 +88,7 @@ export function getResultMessage(correctCount: number, totalQuestions: number): 
 }
 
 /**
- * Generate text lines for hero section
+ * Generate text lines for hero section (variant 1: with emoji)
  */
 export function getHeroLines(name: string | undefined, result: ResultMessage): { line1: string; line2: string } {
   const trimmedName = name?.trim();
@@ -97,5 +97,18 @@ export function getHeroLines(name: string | undefined, result: ResultMessage): {
     ? (trimmedName.length <= 14 ? `${trimmedName}, du bist` : `${trimmedName} ist`)
     : 'Du bist';
   const line2 = `${result.title} ${result.emoji}`;
+  return { line1, line2 };
+}
+
+/**
+ * Generate text lines for hero section (variant 2: simplified)
+ * Format: "Moritz, du bist eine:" or "Du bist eine:" (no second line)
+ */
+export function getHeroLinesVariant2(name: string | undefined, _result: ResultMessage): { line1: string; line2: string } {
+  const trimmedName = name?.trim();
+  const line1 = trimmedName
+    ? `${trimmedName}, du bist eine:`
+    : 'Du bist eine:';
+  const line2 = ''; // No second line in this variant
   return { line1, line2 };
 }

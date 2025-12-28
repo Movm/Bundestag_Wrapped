@@ -18,6 +18,9 @@ import {
   Group,
   Image,
   useImage,
+  Skia,
+  Paragraph,
+  useFonts,
 } from '@shopify/react-native-skia';
 import { StyleSheet, Platform } from 'react-native';
 import {
@@ -25,15 +28,19 @@ import {
   BG_COLORS,
   getResultMessage,
   getHeroLines,
+  getHeroLinesVariant2,
 } from '../lib/share-canvas';
 
 // Canvas dimensions (1:1 aspect ratio)
 const SIZE = 540; // Rendering size, will scale up for export
 
+type ShareCanvasVariant = 'score' | 'title';
+
 interface ShareCanvasSkiaProps {
   correctCount: number;
   totalQuestions: number;
   userName?: string;
+  variant?: ShareCanvasVariant;
 }
 
 // Font family for system fonts
@@ -43,15 +50,20 @@ export const ShareCanvasSkia = memo(function ShareCanvasSkia({
   correctCount,
   totalQuestions,
   userName,
+  variant = 'score',
 }: ShareCanvasSkiaProps) {
   // Load logo image
   const logo = useImage(require('../assets/logo.png'));
+
+  // Font manager for Paragraph API (enables emoji support via system font fallback)
+  const fontMgr = useFonts({});
 
   // Create fonts inside component to ensure Skia is initialized
   const fonts = useMemo(() => ({
     header: matchFont({ fontFamily, fontSize: 13, fontWeight: '600' }),
     heroBold: matchFont({ fontFamily, fontSize: 40, fontWeight: '700' }),
     score: matchFont({ fontFamily, fontSize: 70, fontWeight: '900' }),
+    scoreLarge: matchFont({ fontFamily, fontSize: 110, fontWeight: '900' }), // larger for 'title' variant
     tagline: matchFont({ fontFamily, fontSize: 18, fontWeight: '400' }),
     footerSmall: matchFont({ fontFamily, fontSize: 13, fontWeight: '600' }),
     footerUrl: matchFont({ fontFamily, fontSize: 17, fontWeight: '700' }),
@@ -63,21 +75,47 @@ export const ShareCanvasSkia = memo(function ShareCanvasSkia({
     [correctCount, totalQuestions]
   );
 
-  // Get hero text lines
+  // Get hero text lines based on variant
   const { line1, line2 } = useMemo(
-    () => getHeroLines(userName, result),
-    [userName, result]
+    () => variant === 'title'
+      ? getHeroLinesVariant2(userName, result)
+      : getHeroLines(userName, result),
+    [userName, result, variant]
   );
+
+  // For 'title' variant, line2 has no emoji - track this for rendering
+  const line2HasEmoji = variant === 'score';
+
+  // Build paragraph for line2 only when it has emoji (requires Paragraph API for proper rendering)
+  const line2Paragraph = useMemo(() => {
+    if (!line2HasEmoji || !fontMgr) return null;
+    const para = Skia.ParagraphBuilder.Make({}, fontMgr);
+    para.pushStyle({
+      color: Skia.Color(BRAND_COLORS.light),
+      fontFamilies: [fontFamily!],
+      fontSize: 40,
+      fontStyle: { weight: 700 },
+    });
+    para.addText(line2);
+    para.pop();
+    const p = para.build();
+    p.layout(SIZE);
+    return p;
+  }, [fontMgr, line2, line2HasEmoji]);
 
   const centerX = SIZE / 2;
 
   // Measure text widths for centering
   const line1Width = fonts.heroBold.measureText(line1).width;
-  const line2Width = fonts.heroBold.measureText(line2).width;
+  // line2 width: use paragraph for emoji variant, font measurement for title variant
+  const line2Width = line2HasEmoji
+    ? (line2Paragraph?.getMaxIntrinsicWidth() ?? 0)
+    : fonts.heroBold.measureText(line2).width;
   const scoreText = `${correctCount}/${totalQuestions}`;
-  const scoreWidth = fonts.score.measureText(scoreText).width;
+  const scoreFont = variant === 'title' ? fonts.scoreLarge : fonts.score;
+  const scoreWidth = scoreFont.measureText(scoreText).width;
   const taglineWidth = fonts.tagline.measureText(result.tagline).width;
-  const footer1Width = fonts.footerSmall.measureText('Teste dein Wissen auf').width;
+  const footer1Width = fonts.footerSmall.measureText('Wie gut kennst du den Bundestag? Teste dein Wissen auf').width;
   const footer2Width = fonts.footerUrl.measureText('bundestag-wrapped.de').width;
 
   return (
@@ -123,28 +161,37 @@ export const ShareCanvasSkia = memo(function ShareCanvasSkia({
         color={BRAND_COLORS.primary}
       />
 
-      {/* Hero Line 2 - centered */}
-      <Text
-        x={centerX - line2Width / 2}
-        y={215}
-        text={line2}
-        font={fonts.heroBold}
-        color={BRAND_COLORS.light}
-      />
+      {/* Hero Line 2 - centered (only if line2 has content) */}
+      {line2 && (line2HasEmoji && line2Paragraph ? (
+        <Paragraph
+          paragraph={line2Paragraph}
+          x={centerX - line2Width / 2}
+          y={175}
+          width={SIZE}
+        />
+      ) : (
+        <Text
+          x={centerX - line2Width / 2}
+          y={215}
+          text={line2}
+          font={fonts.heroBold}
+          color={BRAND_COLORS.light}
+        />
+      ))}
 
       {/* Score - centered */}
       <Text
         x={centerX - scoreWidth / 2}
-        y={330}
+        y={variant === 'title' ? 303 : 330}
         text={scoreText}
-        font={fonts.score}
+        font={scoreFont}
         color="#ffffff"
       />
 
       {/* Tagline - centered */}
       <Text
         x={centerX - taglineWidth / 2}
-        y={385}
+        y={variant === 'title' ? 358 : 385}
         text={result.tagline}
         font={fonts.tagline}
         color="rgba(255, 255, 255, 0.7)"
@@ -154,7 +201,7 @@ export const ShareCanvasSkia = memo(function ShareCanvasSkia({
       <Text
         x={centerX - footer1Width / 2}
         y={SIZE - 70}
-        text="Teste dein Wissen auf"
+        text="Wie gut kennst du den Bundestag? Teste dein Wissen auf"
         font={fonts.footerSmall}
         color="rgba(255, 255, 255, 0.45)"
       />

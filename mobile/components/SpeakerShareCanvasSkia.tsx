@@ -49,8 +49,9 @@ interface SpiritAnimal {
 
 interface SignatureWord {
   word: string;
-  ratioParty: number;
-  ratioBundestag: number;
+  count: number;
+  score: number;
+  ratio: number; // Usage ratio vs Bundestag average
 }
 
 interface SpeakerShareCanvasSkiaProps {
@@ -104,7 +105,7 @@ export const SpeakerShareCanvasSkia = memo(function SpeakerShareCanvasSkia({
     ? `Dein Signaturwort ist ${signatureWord!.word}.`
     : '';
   const signatureSubtitle = hasSignature
-    ? `${signatureWord!.ratioParty}× häufiger als deine Fraktion`
+    ? `${signatureWord!.count}× gesagt`
     : '';
 
   // Measure texts for layout
