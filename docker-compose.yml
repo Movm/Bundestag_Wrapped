@@ -5,6 +5,4 @@ services:
       args:
         VITE_UMAMI_URL: ${VITE_UMAMI_URL:-}
         VITE_UMAMI_WEBSITE_ID: ${VITE_UMAMI_WEBSITE_ID:-}
-    ports:
-      - "3000:3000"
     restart: unless-stopped
