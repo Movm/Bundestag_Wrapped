@@ -191,7 +191,7 @@ describe('share-canvas', () => {
       expect(hasScore).toBe(true);
     });
 
-    it('should show Polit-Legende for 80%+ score', () => {
+    it('should show Legende for 80%+ score', () => {
       const data: ShareImageData = {
         correctCount: 12,
         totalQuestions: 14,
@@ -201,7 +201,7 @@ describe('share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       const hasTitle = fillTextCalls.some(
-        (call: unknown[]) => typeof call[0] === 'string' && call[0].includes('Polit-Legende!')
+        (call: unknown[]) => typeof call[0] === 'string' && call[0].includes('Legende!')
       );
       expect(hasTitle).toBe(true);
     });
