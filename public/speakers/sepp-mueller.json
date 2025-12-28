@@ -68,39 +68,72 @@
         "count": 11
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "bringen",
+        "count": 19,
+        "score": 45.1,
+        "ratio": 9.7
+      },
+      {
+        "word": "gemeinsam",
+        "count": 18,
+        "score": 37.1,
+        "ratio": 6.8
+      },
+      {
+        "word": "gasspeicherumlage",
+        "count": 8,
+        "score": 32.8,
+        "ratio": 59.6
+      },
       {
         "word": "verantwortungskoalition",
         "count": 5,
-        "ratioParty": 226.1,
-        "ratioBundestag": 404.7
+        "score": 30.0,
+        "ratio": 404.7
+      },
+      {
+        "word": "unternehmer",
+        "count": 8,
+        "score": 29.4,
+        "ratio": 38.4
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "bringen",
+        "count": 19,
+        "score": 38.3,
+        "ratio": 6.5
+      },
+      {
+        "word": "gemeinsam",
+        "count": 18,
+        "score": 32.9,
+        "ratio": 5.2
       },
       {
         "word": "arbeiter",
         "count": 6,
-        "ratioParty": 217.0,
-        "ratioBundestag": 68.0
+        "score": 32.3,
+        "ratio": 217.0
       },
       {
-        "word": "unternehmerinnen",
-        "count": 5,
-        "ratioParty": 50.2,
-        "ratioBundestag": 88.5
+        "word": "gasspeicherumlage",
+        "count": 8,
+        "score": 28.0,
+        "ratio": 32.1
       },
       {
-        "word": "sozialismus",
-        "count": 6,
-        "ratioParty": 40.2,
-        "ratioBundestag": 39.5
-      },
-      {
-        "word": "diktatur",
-        "count": 5,
-        "ratioParty": 33.5,
-        "ratioBundestag": 46.4
+        "word": "unternehmer",
+        "count": 8,
+        "score": 27.7,
+        "ratio": 30.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 483,
@@ -127,27 +160,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Sepp Müller häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Sepp Müller häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bundesregierung",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Investitionen",
+        "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Verantwortungskoalition",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Bringen",
         "isCorrect": true
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verantwortungskoalition\" nutzt Sepp Müller 226.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "404.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bringen\" sagte Sepp Müller 19× (9.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -166,12 +198,12 @@
         "score": 0.993
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.933
+        "emoji": "🐺",
+        "name": "Wolf",
+        "title": "Mutiger Einwerfer",
+        "reason": "Mit 29 Zwischenrufen mischst du aktiv in Debatten mit.",
+        "id": "wolf",
+        "score": 0.75
       }
     ]
   },

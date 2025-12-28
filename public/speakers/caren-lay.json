@@ -72,50 +72,96 @@
         "count": 14
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "mietpreisbremse",
         "count": 32,
-        "ratioParty": 167.9,
-        "ratioBundestag": 65.7
+        "score": 134.4,
+        "ratio": 65.7
       },
       {
-        "word": "neubauten",
-        "count": 6,
-        "ratioParty": 141.6,
-        "ratioBundestag": 98.6
+        "word": "mieten",
+        "count": 31,
+        "score": 127.1,
+        "ratio": 59.4
       },
       {
-        "word": "gemeinnützigen",
-        "count": 9,
-        "ratioParty": 106.2,
-        "ratioBundestag": 345.0
+        "word": "mieter",
+        "count": 18,
+        "score": 76.2,
+        "ratio": 67.9
       },
       {
-        "word": "investitionsprogramm",
-        "count": 6,
-        "ratioParty": 94.4,
-        "ratioBundestag": 89.0
+        "word": "wohnungsbau",
+        "count": 19,
+        "score": 72.0,
+        "ratio": 43.3
       },
       {
-        "word": "bundesweiten",
-        "count": 7,
-        "ratioParty": 82.6,
-        "ratioBundestag": 178.9
+        "word": "mieterinnen",
+        "count": 16,
+        "score": 71.8,
+        "ratio": 87.6
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "schwach",
-        "count": 4,
-        "ratioParty": 94.4,
-        "ratioBundestag": 65.7
+        "word": "mietpreisbremse",
+        "count": 32,
+        "score": 164.1,
+        "ratio": 167.9
       },
+      {
+        "word": "mieten",
+        "count": 31,
+        "score": 106.9,
+        "ratio": 30.5
+      },
+      {
+        "word": "mieterinnen",
+        "count": 16,
+        "score": 67.9,
+        "ratio": 68.7
+      },
+      {
+        "word": "wohnungsbau",
+        "count": 19,
+        "score": 66.5,
+        "ratio": 32.0
+      },
+      {
+        "word": "mieter",
+        "count": 18,
+        "score": 65.5,
+        "ratio": 37.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "absurd",
         "count": 8,
-        "ratioParty": 10.2,
-        "ratioBundestag": 34.1
+        "score": 28.5,
+        "ratio": 34.1
+      },
+      {
+        "word": "schwach",
+        "count": 4,
+        "score": 16.8,
+        "ratio": 65.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "absurd",
+        "count": 8,
+        "score": 19.3,
+        "ratio": 10.2
+      },
+      {
+        "word": "schwach",
+        "count": 4,
+        "score": 18.2,
+        "ratio": 94.4
       }
     ]
   },
@@ -139,18 +185,18 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Caren Lay häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Caren Lay häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Arbeit",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Migration",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
@@ -158,22 +204,21 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Mietpreisbremse\" nutzt Caren Lay 167.9× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "65.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Mietpreisbremse\" sagte Caren Lay 32× (65.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Caren Lay häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Caren Lay häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Schwach",
+        "text": "Absurd",
         "isCorrect": true
       },
       {
-        "text": "Notwendig",
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
         "isCorrect": false
       },
       {
@@ -181,8 +226,7 @@
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schwach\" nutzt Caren Lay 94.4× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "65.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Absurd\" sagte Caren Lay 8× (34.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

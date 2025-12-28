@@ -44,39 +44,72 @@
         "count": 8
       }
     ],
-    "signatureWords": [
-      {
-        "word": "einschnitt",
-        "count": 7,
-        "ratioParty": 216.5,
-        "ratioBundestag": 362.0
-      },
-      {
-        "word": "coronapandemie",
-        "count": 6,
-        "ratioParty": 106.1,
-        "ratioBundestag": 95.5
-      },
+    "signatureWordsBundestag": [
       {
         "word": "bafög",
         "count": 32,
-        "ratioParty": 96.6,
-        "ratioBundestag": 121.1
+        "score": 153.8,
+        "ratio": 121.1
       },
       {
-        "word": "studierenden",
-        "count": 5,
-        "ratioParty": 68.7,
-        "ratioBundestag": 91.3
+        "word": "einschnitt",
+        "count": 7,
+        "score": 41.3,
+        "ratio": 362.0
       },
       {
         "word": "pandemie",
         "count": 7,
-        "ratioParty": 54.1,
-        "ratioBundestag": 56.4
+        "score": 28.4,
+        "ratio": 56.4
+      },
+      {
+        "word": "coronapandemie",
+        "count": 6,
+        "score": 27.4,
+        "ratio": 95.5
+      },
+      {
+        "word": "gesundheitssystem",
+        "count": 7,
+        "score": 25.1,
+        "ratio": 35.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bafög",
+        "count": 32,
+        "score": 146.6,
+        "ratio": 96.6
+      },
+      {
+        "word": "einschnitt",
+        "count": 7,
+        "score": 37.7,
+        "ratio": 216.5
+      },
+      {
+        "word": "pandemie",
+        "count": 7,
+        "score": 28.1,
+        "ratio": 54.1
+      },
+      {
+        "word": "coronapandemie",
+        "count": 6,
+        "score": 28.0,
+        "ratio": 106.1
+      },
+      {
+        "word": "gesundheitssystem",
+        "count": 7,
+        "score": 26.2,
+        "ratio": 41.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 415,
@@ -98,16 +131,8 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Lina Seitzl häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Lina Seitzl häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Einschnitt",
-        "isCorrect": true
-      },
-      {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
       {
         "text": "Bundesregierung",
         "isCorrect": false
@@ -115,10 +140,17 @@
       {
         "text": "Haushalt",
         "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Bafög",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Einschnitt\" nutzt Dr. Lina Seitzl 216.5× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "362.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bafög\" sagte Dr. Lina Seitzl 32× (121.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -137,12 +169,12 @@
         "score": 0.966
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.933
+        "emoji": "🐬",
+        "name": "Delfin",
+        "title": "Diplomatische Rednerin",
+        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
+        "id": "delfin",
+        "score": 0.9
       }
     ]
   },

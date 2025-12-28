@@ -72,33 +72,60 @@
         "count": 4
       }
     ],
-    "signatureWords": [
-      {
-        "word": "stimme",
-        "count": 5,
-        "ratioParty": 93.4,
-        "ratioBundestag": 86.2
-      },
+    "signatureWordsBundestag": [
       {
         "word": "risiken",
         "count": 6,
-        "ratioParty": 64.2,
-        "ratioBundestag": 88.4
+        "score": 27.0,
+        "ratio": 88.4
+      },
+      {
+        "word": "stimme",
+        "count": 5,
+        "score": 22.3,
+        "ratio": 86.2
       },
       {
         "word": "ausdrücklich",
         "count": 6,
-        "ratioParty": 25.7,
-        "ratioBundestag": 36.5
+        "score": 21.7,
+        "ratio": 36.5
       },
       {
         "word": "gesetzentwurf",
         "count": 6,
-        "ratioParty": 18.9,
-        "ratioBundestag": 20.0
+        "score": 18.3,
+        "ratio": 20.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "risiken",
+        "count": 6,
+        "score": 25.1,
+        "ratio": 64.2
+      },
+      {
+        "word": "stimme",
+        "count": 5,
+        "score": 22.7,
+        "ratio": 93.4
+      },
+      {
+        "word": "ausdrücklich",
+        "count": 6,
+        "score": 19.7,
+        "ratio": 25.7
+      },
+      {
+        "word": "gesetzentwurf",
+        "count": 6,
+        "score": 18.0,
+        "ratio": 18.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 902,
@@ -115,27 +142,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Albert Rupprecht häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Albert Rupprecht häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Stimme",
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Risiken",
         "isCorrect": true
       },
       {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Freiheit",
+        "text": "Klima",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Stimme\" nutzt Albert Rupprecht 93.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "86.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Risiken\" sagte Albert Rupprecht 6× (88.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

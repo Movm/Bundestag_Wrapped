@@ -64,44 +64,84 @@
         "count": 11
       }
     ],
-    "signatureWords": [
-      {
-        "word": "cybersicherheit",
-        "count": 9,
-        "ratioParty": 390.4,
-        "ratioBundestag": 48.8
-      },
-      {
-        "word": "bundesverwaltung",
-        "count": 5,
-        "ratioParty": 216.9,
-        "ratioBundestag": 51.6
-      },
-      {
-        "word": "anlasslose",
-        "count": 5,
-        "ratioParty": 216.9,
-        "ratioBundestag": 111.4
-      },
+    "signatureWordsBundestag": [
       {
         "word": "chatkontrolle",
         "count": 15,
-        "ratioParty": 162.7,
-        "ratioBundestag": 72.2
+        "score": 64.4,
+        "ratio": 72.2
       },
       {
-        "word": "abhängigkeiten",
-        "count": 5,
-        "ratioParty": 54.2,
-        "ratioBundestag": 22.8
+        "word": "sicherheit",
+        "count": 26,
+        "score": 48.3,
+        "ratio": 5.4
+      },
+      {
+        "word": "digitaler",
+        "count": 11,
+        "score": 41.4,
+        "ratio": 42.0
+      },
+      {
+        "word": "cybersicherheit",
+        "count": 9,
+        "score": 35.2,
+        "ratio": 48.8
+      },
+      {
+        "word": "digitale",
+        "count": 14,
+        "score": 35.1,
+        "ratio": 11.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "chatkontrolle",
+        "count": 15,
+        "score": 76.5,
+        "ratio": 162.7
+      },
+      {
+        "word": "sicherheit",
+        "count": 26,
+        "score": 55.9,
+        "ratio": 7.6
+      },
+      {
+        "word": "cybersicherheit",
+        "count": 9,
+        "score": 53.7,
+        "ratio": 390.4
+      },
+      {
+        "word": "digitaler",
+        "count": 11,
+        "score": 42.7,
+        "ratio": 47.7
+      },
+      {
+        "word": "digitale",
+        "count": 14,
+        "score": 36.6,
+        "ratio": 12.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "bedenklich",
         "count": 3,
-        "ratioParty": 7.6,
-        "ratioBundestag": 90.7
+        "score": 13.6,
+        "ratio": 90.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "bedenklich",
+        "count": 3,
+        "score": 6.5,
+        "ratio": 7.6
       }
     ]
   },
@@ -125,50 +165,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Donata Vogtschmidt häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Donata Vogtschmidt häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Cybersicherheit",
+        "text": "Chatkontrolle",
         "isCorrect": true
+      },
+      {
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Kinder",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Cybersicherheit\" nutzt Donata Vogtschmidt 390.4× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "48.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Chatkontrolle\" sagte Donata Vogtschmidt 15× (72.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Donata Vogtschmidt häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Donata Vogtschmidt häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Stark",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
-      },
       {
         "text": "Bedenklich",
         "isCorrect": true
+      },
+      {
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bedenklich\" nutzt Donata Vogtschmidt 7.6× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "90.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bedenklich\" sagte Donata Vogtschmidt 3× (90.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -186,12 +224,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.947
+        "emoji": "🐬",
+        "name": "Delfin",
+        "title": "Diplomatische Rednerin",
+        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
+        "id": "delfin",
+        "score": 0.772
       }
     ]
   },

@@ -72,39 +72,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
-      {
-        "word": "wehrpflicht",
-        "count": 7,
-        "ratioParty": 109.2,
-        "ratioBundestag": 30.4
-      },
-      {
-        "word": "kosovo",
-        "count": 5,
-        "ratioParty": 109.2,
-        "ratioBundestag": 42.4
-      },
+    "signatureWordsBundestag": [
       {
         "word": "ländlichen",
         "count": 11,
-        "ratioParty": 92.4,
-        "ratioBundestag": 30.7
+        "score": 38.0,
+        "ratio": 30.7
       },
       {
         "word": "räume",
         "count": 8,
-        "ratioParty": 67.2,
-        "ratioBundestag": 77.3
+        "score": 34.9,
+        "ratio": 77.3
+      },
+      {
+        "word": "wehrpflicht",
+        "count": 7,
+        "score": 24.1,
+        "ratio": 30.4
       },
       {
         "word": "wehrdienst",
         "count": 6,
-        "ratioParty": 54.6,
-        "ratioBundestag": 33.4
+        "score": 21.2,
+        "ratio": 33.4
+      },
+      {
+        "word": "kosovo",
+        "count": 5,
+        "score": 18.9,
+        "ratio": 42.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "ländlichen",
+        "count": 11,
+        "score": 49.9,
+        "ratio": 92.4
+      },
+      {
+        "word": "räume",
+        "count": 8,
+        "score": 33.8,
+        "ratio": 67.2
+      },
+      {
+        "word": "wehrpflicht",
+        "count": 7,
+        "score": 32.9,
+        "ratio": 109.2
+      },
+      {
+        "word": "wehrdienst",
+        "count": 6,
+        "score": 24.1,
+        "ratio": 54.6
+      },
+      {
+        "word": "kosovo",
+        "count": 5,
+        "score": 23.5,
+        "ratio": 109.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 328,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Niklas Wagener häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Niklas Wagener häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Kinder",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Wehrpflicht",
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Ländlichen",
         "isCorrect": true
       },
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wehrpflicht\" nutzt Niklas Wagener 109.2× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "30.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ländlichen\" sagte Niklas Wagener 11× (30.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

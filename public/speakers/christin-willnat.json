@@ -72,44 +72,84 @@
         "count": 7
       }
     ],
-    "signatureWords": [
-      {
-        "word": "schuldnerberatung",
-        "count": 10,
-        "ratioParty": 801.9,
-        "ratioBundestag": 176.2
-      },
+    "signatureWordsBundestag": [
       {
         "word": "verbraucherschutz",
         "count": 14,
-        "ratioParty": 160.4,
-        "ratioBundestag": 84.1
+        "score": 62.2,
+        "ratio": 84.1
       },
       {
-        "word": "beratung",
+        "word": "schuldnerberatung",
+        "count": 10,
+        "score": 51.8,
+        "ratio": 176.2
+      },
+      {
+        "word": "bundesanwaltschaft",
         "count": 5,
-        "ratioParty": 57.3,
-        "ratioBundestag": 27.5
-      },
-      {
-        "word": "schuldnerberatungsdienste",
-        "count": 7,
-        "ratioParty": 32.6,
-        "ratioBundestag": 32.6
+        "score": 37.9,
+        "ratio": 1938.4
       },
       {
         "word": "verbraucherkreditrichtlinie",
         "count": 6,
-        "ratioParty": 27.9,
-        "ratioBundestag": 357.9
+        "score": 35.3,
+        "ratio": 357.9
+      },
+      {
+        "word": "verbraucher",
+        "count": 9,
+        "score": 30.2,
+        "ratio": 27.6
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "verbraucherschutz",
+        "count": 14,
+        "score": 71.2,
+        "ratio": 160.4
+      },
+      {
+        "word": "schuldnerberatung",
+        "count": 10,
+        "score": 66.9,
+        "ratio": 801.9
+      },
+      {
+        "word": "verbraucher",
+        "count": 9,
+        "score": 29.3,
+        "ratio": 24.9
+      },
+      {
+        "word": "justiz",
+        "count": 8,
+        "score": 26.6,
+        "ratio": 26.7
+      },
+      {
+        "word": "schuldnerberatungsdienste",
+        "count": 7,
+        "score": 24.6,
+        "ratio": 32.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "geschützt",
         "count": 3,
-        "ratioParty": 12.0,
-        "ratioBundestag": 16.9
+        "score": 8.6,
+        "ratio": 16.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "geschützt",
+        "count": 3,
+        "score": 7.7,
+        "ratio": 12.0
       }
     ]
   },
@@ -133,50 +173,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Christin Willnat häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Christin Willnat häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Freiheit",
+        "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Schuldnerberatung",
+        "text": "Verbraucherschutz",
         "isCorrect": true
       },
       {
-        "text": "Familie",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Steuern",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schuldnerberatung\" nutzt Christin Willnat 801.9× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "176.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Verbraucherschutz\" sagte Christin Willnat 14× (84.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Christin Willnat häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Christin Willnat häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Alt",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Erfolgreich",
+        "text": "Sicher",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
         "isCorrect": false
       },
       {
         "text": "Geschützt",
         "isCorrect": true
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Geschützt\" nutzt Christin Willnat 12.0× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "16.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Geschützt\" sagte Christin Willnat 3× (16.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -186,20 +224,20 @@
     "id": "eichhoernchen",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.92
-      },
-      {
         "emoji": "🦦",
         "name": "Otter",
         "title": "Positive Teamplayerin",
         "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
         "id": "otter",
         "score": 0.918
+      },
+      {
+        "emoji": "🦫",
+        "name": "Biber",
+        "title": "Konstruktive Brückenbauerin",
+        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
+        "id": "biber",
+        "score": 0.898
       }
     ]
   },

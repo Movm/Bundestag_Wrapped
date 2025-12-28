@@ -64,39 +64,72 @@
         "count": 8
       }
     ],
-    "signatureWords": [
-      {
-        "word": "unifil",
-        "count": 8,
-        "ratioParty": 79.9,
-        "ratioBundestag": 88.6
-      },
-      {
-        "word": "mandats",
-        "count": 5,
-        "ratioParty": 53.2,
-        "ratioBundestag": 65.6
-      },
+    "signatureWordsBundestag": [
       {
         "word": "wehrpflicht",
         "count": 13,
-        "ratioParty": 40.7,
-        "ratioBundestag": 54.2
+        "score": 52.1,
+        "ratio": 54.2
       },
       {
-        "word": "region",
-        "count": 5,
-        "ratioParty": 26.6,
-        "ratioBundestag": 11.8
+        "word": "soldaten",
+        "count": 13,
+        "score": 36.5,
+        "ratio": 15.5
       },
       {
-        "word": "afghanistan",
-        "count": 7,
-        "ratioParty": 25.4,
-        "ratioBundestag": 21.5
+        "word": "unifil",
+        "count": 8,
+        "score": 36.0,
+        "ratio": 88.6
+      },
+      {
+        "word": "ukraine",
+        "count": 12,
+        "score": 25.8,
+        "ratio": 7.6
+      },
+      {
+        "word": "frieden",
+        "count": 10,
+        "score": 24.5,
+        "ratio": 10.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "wehrpflicht",
+        "count": 13,
+        "score": 48.5,
+        "ratio": 40.7
+      },
+      {
+        "word": "soldaten",
+        "count": 13,
+        "score": 35.3,
+        "ratio": 14.1
+      },
+      {
+        "word": "unifil",
+        "count": 8,
+        "score": 35.1,
+        "ratio": 79.9
+      },
+      {
+        "word": "ukraine",
+        "count": 12,
+        "score": 29.8,
+        "ratio": 11.0
+      },
+      {
+        "word": "frieden",
+        "count": 10,
+        "score": 29.5,
+        "ratio": 18.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 374,
@@ -118,27 +151,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Andreas Paul häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Andreas Paul häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bildung",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
-        "text": "Unifil",
+        "text": "Debatte",
+        "isCorrect": false
+      },
+      {
+        "text": "Wehrpflicht",
         "isCorrect": true
-      },
-      {
-        "text": "Haushalt",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unifil\" nutzt Andreas Paul 79.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "88.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wehrpflicht\" sagte Andreas Paul 13× (54.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

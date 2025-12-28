@@ -72,44 +72,84 @@
         "count": 10
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "deutschland",
+        "count": 35,
+        "score": 50.9,
+        "ratio": 3.3
+      },
       {
         "word": "standortfördergesetz",
         "count": 7,
-        "ratioParty": 151.5,
-        "ratioBundestag": 215.6
+        "score": 37.6,
+        "ratio": 215.6
+      },
+      {
+        "word": "wirtschaftliche",
+        "count": 11,
+        "score": 33.1,
+        "ratio": 19.3
+      },
+      {
+        "word": "wirtschaft",
+        "count": 16,
+        "score": 33.0,
+        "ratio": 6.9
+      },
+      {
+        "word": "haushalt",
+        "count": 18,
+        "score": 32.1,
+        "ratio": 4.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "deutschland",
+        "count": 35,
+        "score": 48.0,
+        "ratio": 2.9
+      },
+      {
+        "word": "standortfördergesetz",
+        "count": 7,
+        "score": 35.2,
+        "ratio": 151.5
+      },
+      {
+        "word": "haushalt",
+        "count": 18,
+        "score": 30.9,
+        "ratio": 4.6
       },
       {
         "word": "mehrwert",
         "count": 7,
-        "ratioParty": 75.8,
-        "ratioBundestag": 83.2
+        "score": 30.4,
+        "ratio": 75.8
       },
       {
-        "word": "kapital",
-        "count": 5,
-        "ratioParty": 24.6,
-        "ratioBundestag": 33.2
-      },
-      {
-        "word": "haushälter",
-        "count": 5,
-        "ratioParty": 23.5,
-        "ratioBundestag": 37.2
-      },
-      {
-        "word": "zugang",
-        "count": 5,
-        "ratioParty": 19.3,
-        "ratioBundestag": 13.8
+        "word": "wirtschaftliche",
+        "count": 11,
+        "score": 30.3,
+        "ratio": 14.7
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "wirksam",
         "count": 3,
-        "ratioParty": 10.6,
-        "ratioBundestag": 14.6
+        "score": 8.2,
+        "ratio": 14.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 7.4,
+        "ratio": 10.6
       }
     ]
   },
@@ -133,41 +173,40 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Philip M. A. Hoffmann häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Philip M. A. Hoffmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Bundesregierung",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Koalition",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
-        "text": "Standortfördergesetz",
+        "text": "Deutschland",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Standortfördergesetz\" nutzt Philip M. A. Hoffmann 151.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "215.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Deutschland\" sagte Philip M. A. Hoffmann 35× (3.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Philip M. A. Hoffmann häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Philip M. A. Hoffmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Falsch",
+        "isCorrect": false
+      },
       {
         "text": "Problematisch",
         "isCorrect": false
       },
       {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Sozial",
+        "text": "Neu",
         "isCorrect": false
       },
       {
@@ -175,8 +214,7 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Wirksam\" nutzt Philip M. A. Hoffmann 10.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "14.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wirksam\" sagte Philip M. A. Hoffmann 3× (14.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -194,12 +232,12 @@
         "score": 0.951
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.847
+        "emoji": "🐬",
+        "name": "Delfin",
+        "title": "Diplomatischer Redner",
+        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
+        "id": "delfin",
+        "score": 0.775
       }
     ]
   },

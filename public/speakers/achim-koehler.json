@@ -72,21 +72,36 @@
         "count": 2
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "menschenrechte",
         "count": 7,
-        "ratioParty": 183.3,
-        "ratioBundestag": 116.3
+        "score": 33.4,
+        "ratio": 116.3
       },
       {
         "word": "menschen",
         "count": 6,
-        "ratioParty": 5.3,
-        "ratioBundestag": 2.9
+        "score": 8.1,
+        "ratio": 2.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "menschenrechte",
+        "count": 7,
+        "score": 36.5,
+        "ratio": 183.3
+      },
+      {
+        "word": "menschen",
+        "count": 6,
+        "score": 11.1,
+        "ratio": 5.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 340,
@@ -103,14 +118,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Achim Köhler häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Achim Köhler häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
@@ -118,12 +129,15 @@
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Menschenrechte\" nutzt Achim Köhler 183.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "116.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Menschenrechte\" sagte Achim Köhler 7× (116.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

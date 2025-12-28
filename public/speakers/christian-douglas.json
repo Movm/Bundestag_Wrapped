@@ -68,56 +68,108 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "steuer",
+        "count": 13,
+        "score": 49.6,
+        "ratio": 44.5
+      },
+      {
+        "word": "steuern",
+        "count": 14,
+        "score": 39.9,
+        "ratio": 16.3
+      },
+      {
+        "word": "bürger",
+        "count": 20,
+        "score": 39.9,
+        "ratio": 6.4
+      },
+      {
+        "word": "jedoch",
+        "count": 9,
+        "score": 26.8,
+        "ratio": 18.6
+      },
       {
         "word": "gewerbesteuer",
         "count": 5,
-        "ratioParty": 623.6,
-        "ratioBundestag": 154.0
-      },
-      {
-        "word": "umsatzsteuer",
-        "count": 5,
-        "ratioParty": 62.4,
-        "ratioBundestag": 72.9
-      },
-      {
-        "word": "produkte",
-        "count": 5,
-        "ratioParty": 17.3,
-        "ratioBundestag": 16.2
-      },
-      {
-        "word": "höhere",
-        "count": 7,
-        "ratioParty": 15.9,
-        "ratioBundestag": 22.8
-      },
-      {
-        "word": "hingegen",
-        "count": 7,
-        "ratioParty": 15.6,
-        "ratioBundestag": 29.2
+        "score": 25.2,
+        "ratio": 154.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "wirtschaftlich",
-        "count": 3,
-        "ratioParty": 7.8,
-        "ratioBundestag": 7.3
+        "word": "steuer",
+        "count": 13,
+        "score": 36.3,
+        "ratio": 15.3
+      },
+      {
+        "word": "gewerbesteuer",
+        "count": 5,
+        "score": 32.2,
+        "ratio": 623.6
+      },
+      {
+        "word": "steuern",
+        "count": 14,
+        "score": 31.6,
+        "ratio": 8.6
+      },
+      {
+        "word": "bürger",
+        "count": 20,
+        "score": 26.1,
+        "ratio": 2.7
+      },
+      {
+        "word": "jedoch",
+        "count": 9,
+        "score": 22.3,
+        "ratio": 10.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 6,
+        "score": 10.2,
+        "ratio": 4.5
       },
       {
         "word": "teuer",
         "count": 4,
-        "ratioParty": 6.5,
-        "ratioBundestag": 10.2
+        "score": 9.7,
+        "ratio": 10.2
       },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 6.4,
+        "ratio": 7.3
+      }
+    ],
+    "signatureAdjectivesParty": [
       {
         "word": "sicher",
         "count": 6,
-        "ratioParty": 6.1,
-        "ratioBundestag": 4.5
+        "score": 11.8,
+        "ratio": 6.1
+      },
+      {
+        "word": "teuer",
+        "count": 4,
+        "score": 8.0,
+        "ratio": 6.5
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 6.5,
+        "ratio": 7.8
       }
     ]
   },
@@ -141,41 +193,40 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Christian Douglas häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Christian Douglas häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Steuer",
+        "isCorrect": true
+      },
+      {
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
       {
         "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Gewerbesteuer",
-        "isCorrect": true
-      },
-      {
-        "text": "Politik",
+        "text": "Arbeit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gewerbesteuer\" nutzt Christian Douglas 623.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "154.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Steuer\" sagte Christian Douglas 13× (44.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Christian Douglas häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Christian Douglas häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Sicher",
         "isCorrect": true
       },
       {
-        "text": "Erfolgreich",
+        "text": "National",
         "isCorrect": false
       },
       {
-        "text": "Neu",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
@@ -183,8 +234,7 @@
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wirtschaftlich\" nutzt Christian Douglas 7.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "7.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Christian Douglas 6× (4.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

@@ -64,44 +64,84 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "menschen",
+        "count": 28,
+        "score": 49.3,
+        "ratio": 4.8
+      },
       {
         "word": "petitionen",
         "count": 5,
-        "ratioParty": 619.0,
-        "ratioBundestag": 269.1
-      },
-      {
-        "word": "altersarmut",
-        "count": 5,
-        "ratioParty": 176.9,
-        "ratioBundestag": 75.5
+        "score": 28.0,
+        "ratio": 269.1
       },
       {
         "word": "anliegen",
         "count": 6,
-        "ratioParty": 34.6,
-        "ratioBundestag": 47.6
+        "score": 23.3,
+        "ratio": 47.6
+      },
+      {
+        "word": "altersarmut",
+        "count": 5,
+        "score": 21.7,
+        "ratio": 75.5
       },
       {
         "word": "bürgerinnen",
         "count": 7,
-        "ratioParty": 7.7,
-        "ratioBundestag": 11.5
-      },
-      {
-        "word": "politik",
-        "count": 7,
-        "ratioParty": 7.2,
-        "ratioBundestag": 4.5
+        "score": 17.7,
+        "ratio": 11.5
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "menschen",
+        "count": 28,
+        "score": 46.6,
+        "ratio": 4.3
+      },
+      {
+        "word": "petitionen",
+        "count": 5,
+        "score": 32.1,
+        "ratio": 619.0
+      },
+      {
+        "word": "altersarmut",
+        "count": 5,
+        "score": 25.9,
+        "ratio": 176.9
+      },
+      {
+        "word": "anliegen",
+        "count": 6,
+        "score": 21.4,
+        "ratio": 34.6
+      },
+      {
+        "word": "bürgerinnen",
+        "count": 7,
+        "score": 15.1,
+        "ratio": 7.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "sicher",
         "count": 3,
-        "ratioParty": 3.8,
-        "ratioBundestag": 5.0
+        "score": 5.4,
+        "ratio": 5.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 3,
+        "score": 4.7,
+        "ratio": 3.8
       }
     ]
   },
@@ -125,73 +165,71 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Daniela Rump häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Daniela Rump häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Kanzler",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
-        "text": "Petitionen",
+        "text": "Menschen",
         "isCorrect": true
       },
       {
-        "text": "Reform",
+        "text": "Arbeit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Petitionen\" nutzt Daniela Rump 619.0× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "269.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Menschen\" sagte Daniela Rump 28× (4.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Daniela Rump häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Daniela Rump häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
       {
         "text": "Sicher",
         "isCorrect": true
       },
       {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
+        "text": "Groß",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sicher\" nutzt Daniela Rump 3.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "5.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Daniela Rump 3× (5.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Clevere Strategin",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüterin",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
       {
-        "emoji": "🦉",
-        "name": "Eule",
-        "title": "Themenexpertin",
-        "reason": "Dein Fachwort \"Petitionen\" nutzt du 619.0× häufiger als deine Fraktion.",
-        "id": "eule",
-        "score": 0.86
+        "emoji": "🦫",
+        "name": "Biber",
+        "title": "Konstruktive Brückenbauerin",
+        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
+        "id": "biber",
+        "score": 0.784
       },
       {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 0.831
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positive Teamplayerin",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.745
       }
     ]
   },

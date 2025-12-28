@@ -72,56 +72,108 @@
         "count": 9
       }
     ],
-    "signatureWords": [
-      {
-        "word": "pflegende",
-        "count": 9,
-        "ratioParty": 451.9,
-        "ratioBundestag": 451.7
-      },
-      {
-        "word": "pflegekräfte",
-        "count": 6,
-        "ratioParty": 301.2,
-        "ratioBundestag": 50.8
-      },
+    "signatureWordsBundestag": [
       {
         "word": "pflege",
         "count": 48,
-        "ratioParty": 301.2,
-        "ratioBundestag": 93.4
-      },
-      {
-        "word": "angehörige",
-        "count": 11,
-        "ratioParty": 220.9,
-        "ratioBundestag": 151.5
+        "score": 218.3,
+        "ratio": 93.4
       },
       {
         "word": "pflegeversicherung",
         "count": 17,
-        "ratioParty": 131.3,
-        "ratioBundestag": 132.7
+        "score": 83.2,
+        "ratio": 132.7
+      },
+      {
+        "word": "angehörige",
+        "count": 11,
+        "score": 55.3,
+        "ratio": 151.5
+      },
+      {
+        "word": "pflegende",
+        "count": 9,
+        "score": 55.0,
+        "ratio": 451.7
+      },
+      {
+        "word": "pflegefachpersonen",
+        "count": 7,
+        "score": 41.1,
+        "ratio": 351.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "pflege",
+        "count": 48,
+        "score": 274.1,
+        "ratio": 301.2
+      },
+      {
+        "word": "pflegeversicherung",
+        "count": 17,
+        "score": 83.0,
+        "ratio": 131.3
+      },
+      {
+        "word": "angehörige",
+        "count": 11,
+        "score": 59.4,
+        "ratio": 220.9
+      },
+      {
+        "word": "pflegende",
+        "count": 9,
+        "score": 55.0,
+        "ratio": 451.9
+      },
+      {
+        "word": "warken",
+        "count": 9,
+        "score": 34.9,
+        "ratio": 47.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "stabil",
         "count": 3,
-        "ratioParty": 27.4,
-        "ratioBundestag": 25.7
+        "score": 9.9,
+        "ratio": 25.7
       },
       {
         "word": "solide",
         "count": 3,
-        "ratioParty": 27.4,
-        "ratioBundestag": 20.1
+        "score": 9.1,
+        "ratio": 20.1
       },
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 4.0,
-        "ratioBundestag": 5.0
+        "score": 5.4,
+        "ratio": 5.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "stabil",
+        "count": 3,
+        "score": 10.0,
+        "ratio": 27.4
+      },
+      {
+        "word": "solide",
+        "count": 3,
+        "score": 10.0,
+        "ratio": 27.4
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 4.8,
+        "ratio": 4.0
       }
     ]
   },
@@ -145,33 +197,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Simone Fischer häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Simone Fischer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Zukunft",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Pflegende",
+        "text": "Pflege",
         "isCorrect": true
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Pflegende\" nutzt Simone Fischer 451.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "451.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Pflege\" sagte Simone Fischer 48× (93.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Simone Fischer häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Simone Fischer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Schlecht",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
@@ -179,7 +230,7 @@
         "isCorrect": false
       },
       {
-        "text": "Falsch",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
@@ -187,24 +238,15 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Stabil\" nutzt Simone Fischer 27.4× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "25.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Stabil\" sagte Simone Fischer 3× (25.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Clevere Strategin",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüterin",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 0.94
-      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -212,6 +254,14 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 0.937
+      },
+      {
+        "emoji": "🦀",
+        "name": "Krabbe",
+        "title": "Hartnäckige Debattiererin",
+        "reason": "Du hältst an deinen Positionen fest und lässt nicht locker.",
+        "id": "krabbe",
+        "score": 0.805
       }
     ]
   },

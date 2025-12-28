@@ -64,50 +64,96 @@
         "count": 11
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "endlagersuche",
-        "count": 5,
-        "ratioParty": 98.7,
-        "ratioBundestag": 156.9
+        "word": "bundesrechnungshof",
+        "count": 16,
+        "score": 63.7,
+        "ratio": 52.4
       },
       {
-        "word": "umweltpolitik",
-        "count": 5,
-        "ratioParty": 70.5,
-        "ratioBundestag": 48.8
-      },
-      {
-        "word": "basiert",
-        "count": 5,
-        "ratioParty": 54.8,
-        "ratioBundestag": 45.8
+        "word": "einzelplan",
+        "count": 15,
+        "score": 38.1,
+        "ratio": 11.7
       },
       {
         "word": "umweltschutz",
         "count": 9,
-        "ratioParty": 38.6,
-        "ratioBundestag": 36.9
+        "score": 32.7,
+        "ratio": 36.9
       },
       {
-        "word": "klimafonds",
-        "count": 5,
-        "ratioParty": 30.8,
-        "ratioBundestag": 109.8
+        "word": "ideologische",
+        "count": 9,
+        "score": 32.6,
+        "ratio": 36.3
+      },
+      {
+        "word": "haushalt",
+        "count": 20,
+        "score": 30.3,
+        "ratio": 3.6
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "bundesrechnungshof",
+        "count": 16,
+        "score": 49.5,
+        "ratio": 21.1
+      },
+      {
+        "word": "haushalt",
+        "count": 20,
+        "score": 36.3,
+        "ratio": 5.1
+      },
+      {
+        "word": "einzelplan",
+        "count": 15,
+        "score": 35.3,
+        "ratio": 9.5
+      },
+      {
+        "word": "umweltschutz",
+        "count": 9,
+        "score": 33.1,
+        "ratio": 38.6
+      },
+      {
+        "word": "umwelt",
+        "count": 9,
+        "score": 27.7,
+        "ratio": 20.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "gescheitert",
         "count": 4,
-        "ratioParty": 8.8,
-        "ratioBundestag": 16.6
+        "score": 11.5,
+        "ratio": 16.6
       },
       {
         "word": "sicher",
         "count": 4,
-        "ratioParty": 3.2,
-        "ratioBundestag": 2.4
+        "score": 4.8,
+        "ratio": 2.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gescheitert",
+        "count": 4,
+        "score": 9.1,
+        "ratio": 8.8
+      },
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 5.7,
+        "ratio": 3.2
       }
     ]
   },
@@ -136,50 +182,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Georg Schroeter häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Georg Schroeter häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Reform",
-        "isCorrect": false
-      },
       {
         "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Kinder",
+        "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Endlagersuche",
+        "text": "Bundesrechnungshof",
         "isCorrect": true
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Endlagersuche\" nutzt Georg Schroeter 98.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "156.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bundesrechnungshof\" sagte Georg Schroeter 16× (52.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Georg Schroeter häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Georg Schroeter häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Falsch",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
         "text": "Gescheitert",
         "isCorrect": true
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gescheitert\" nutzt Georg Schroeter 8.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "16.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gescheitert\" sagte Georg Schroeter 4× (16.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

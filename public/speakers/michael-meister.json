@@ -72,39 +72,72 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "kollege",
+        "count": 16,
+        "score": 54.4,
+        "ratio": 28.9
+      },
       {
         "word": "folgt",
         "count": 8,
-        "ratioParty": 91.7,
-        "ratioBundestag": 88.5
+        "score": 36.0,
+        "ratio": 88.5
       },
       {
-        "word": "brandner",
-        "count": 5,
-        "ratioParty": 70.2,
-        "ratioBundestag": 80.1
+        "word": "bundesregierung",
+        "count": 16,
+        "score": 34.5,
+        "ratio": 7.7
       },
       {
         "word": "beantworten",
         "count": 7,
-        "ratioParty": 61.0,
-        "ratioBundestag": 87.4
+        "score": 31.4,
+        "ratio": 87.4
       },
       {
-        "word": "mitarbeiter",
-        "count": 6,
-        "ratioParty": 30.7,
-        "ratioBundestag": 36.6
-      },
+        "word": "brandner",
+        "count": 5,
+        "score": 22.0,
+        "ratio": 80.1
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "kollege",
         "count": 16,
-        "ratioParty": 19.5,
-        "ratioBundestag": 28.9
+        "score": 48.3,
+        "ratio": 19.5
+      },
+      {
+        "word": "folgt",
+        "count": 8,
+        "score": 36.2,
+        "ratio": 91.7
+      },
+      {
+        "word": "bundesregierung",
+        "count": 16,
+        "score": 34.0,
+        "ratio": 7.4
+      },
+      {
+        "word": "beantworten",
+        "count": 7,
+        "score": 28.9,
+        "ratio": 61.0
+      },
+      {
+        "word": "brandner",
+        "count": 5,
+        "score": 21.3,
+        "ratio": 70.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 68,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Michael Meister häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Michael Meister häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Energie",
+        "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
-        "text": "Koalition",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Folgt",
+        "text": "Kollege",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Folgt\" nutzt Dr. Michael Meister 91.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "88.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Kollege\" sagte Dr. Michael Meister 16× (28.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

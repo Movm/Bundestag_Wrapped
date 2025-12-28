@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "krieg",
+        "count": 11,
+        "score": 40.0,
+        "ratio": 37.0
+      },
       {
         "word": "fähigkeiten",
         "count": 6,
-        "ratioParty": 80.8,
-        "ratioBundestag": 130.5
+        "score": 29.3,
+        "ratio": 130.5
+      },
+      {
+        "word": "reden",
+        "count": 10,
+        "score": 28.6,
+        "ratio": 16.4
+      },
+      {
+        "word": "frieden",
+        "count": 8,
+        "score": 25.5,
+        "ratio": 23.1
       },
       {
         "word": "aufwuchs",
         "count": 5,
-        "ratioParty": 75.5,
-        "ratioBundestag": 94.0
-      },
+        "score": 22.8,
+        "ratio": 94.0
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "krieg",
         "count": 11,
-        "ratioParty": 38.7,
-        "ratioBundestag": 37.0
+        "score": 40.5,
+        "ratio": 38.7
       },
       {
-        "word": "antwort",
+        "word": "reden",
+        "count": 10,
+        "score": 30.6,
+        "ratio": 20.4
+      },
+      {
+        "word": "fähigkeiten",
         "count": 6,
-        "ratioParty": 27.9,
-        "ratioBundestag": 25.4
+        "score": 26.4,
+        "ratio": 80.8
       },
       {
-        "word": "putin",
+        "word": "frieden",
+        "count": 8,
+        "score": 24.6,
+        "ratio": 20.6
+      },
+      {
+        "word": "aufwuchs",
         "count": 5,
-        "ratioParty": 26.2,
-        "ratioBundestag": 31.7
+        "score": 21.7,
+        "ratio": 75.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 653,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Thomas Röwekamp häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Thomas Röwekamp häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Fähigkeiten",
+        "text": "Krieg",
         "isCorrect": true
       },
       {
-        "text": "Koalition",
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Kinder",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Fähigkeiten\" nutzt Thomas Röwekamp 80.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "130.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Krieg\" sagte Thomas Röwekamp 11× (37.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

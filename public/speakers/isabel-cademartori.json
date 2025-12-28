@@ -60,50 +60,96 @@
         "count": 10
       }
     ],
-    "signatureWords": [
-      {
-        "word": "ticket",
-        "count": 15,
-        "ratioParty": 451.4,
-        "ratioBundestag": 80.1
-      },
+    "signatureWordsBundestag": [
       {
         "word": "deutschlandticket",
         "count": 26,
-        "ratioParty": 335.3,
-        "ratioBundestag": 77.1
+        "score": 113.3,
+        "ratio": 77.1
       },
       {
-        "word": "ladeinfrastruktur",
-        "count": 5,
-        "ratioParty": 56.4,
-        "ratioBundestag": 103.2
+        "word": "ticket",
+        "count": 15,
+        "score": 65.9,
+        "ratio": 80.1
       },
       {
-        "word": "baden",
-        "count": 6,
-        "ratioParty": 30.1,
-        "ratioBundestag": 30.9
+        "word": "mobilität",
+        "count": 13,
+        "score": 40.9,
+        "ratio": 22.3
       },
       {
-        "word": "württemberg",
-        "count": 5,
-        "ratioParty": 30.1,
-        "ratioBundestag": 30.7
+        "word": "elektromobilität",
+        "count": 8,
+        "score": 30.0,
+        "ratio": 41.3
+      },
+      {
+        "word": "schiene",
+        "count": 8,
+        "score": 23.2,
+        "ratio": 17.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "deutschlandticket",
+        "count": 26,
+        "score": 151.3,
+        "ratio": 335.3
+      },
+      {
+        "word": "ticket",
+        "count": 15,
+        "score": 91.7,
+        "ratio": 451.4
+      },
+      {
+        "word": "mobilität",
+        "count": 13,
+        "score": 39.5,
+        "ratio": 19.9
+      },
+      {
+        "word": "elektromobilität",
+        "count": 8,
+        "score": 25.3,
+        "ratio": 22.6
+      },
+      {
+        "word": "schiene",
+        "count": 8,
+        "score": 24.4,
+        "ratio": 20.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sozial",
+        "count": 3,
+        "score": 6.2,
+        "ratio": 6.8
+      },
       {
         "word": "erfolgreich",
         "count": 3,
-        "ratioParty": 5.8,
-        "ratioBundestag": 6.1
+        "score": 5.9,
+        "ratio": 6.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 5.7,
+        "ratio": 5.8
       },
       {
         "word": "sozial",
         "count": 3,
-        "ratioParty": 5.4,
-        "ratioBundestag": 6.8
+        "score": 5.6,
+        "ratio": 5.4
       }
     ]
   },
@@ -127,50 +173,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Isabel Cademartori häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Isabel Cademartori häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Deutschlandticket",
+        "isCorrect": true
+      },
       {
         "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Koalition",
+        "text": "Steuern",
         "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Ticket",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Ticket\" nutzt Isabel Cademartori 451.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "80.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Deutschlandticket\" sagte Isabel Cademartori 26× (77.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Isabel Cademartori häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Isabel Cademartori häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Sozial",
+        "isCorrect": true
+      },
+      {
+        "text": "Sicher",
+        "isCorrect": false
+      },
       {
         "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
-        "isCorrect": true
-      },
-      {
-        "text": "Alt",
+        "text": "National",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Erfolgreich\" nutzt Isabel Cademartori 5.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "6.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sozial\" sagte Isabel Cademartori 3× (6.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -188,12 +232,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.933
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positive Teamplayerin",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.919
       }
     ]
   },

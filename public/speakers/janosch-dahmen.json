@@ -60,39 +60,72 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "strukturreformen",
-        "count": 5,
-        "ratioParty": 222.7,
-        "ratioBundestag": 32.5
-      },
-      {
-        "word": "notfallversorgung",
-        "count": 5,
-        "ratioParty": 222.7,
-        "ratioBundestag": 65.0
+        "word": "gesundheitswesen",
+        "count": 8,
+        "score": 34.7,
+        "ratio": 75.6
       },
       {
         "word": "fertig",
         "count": 7,
-        "ratioParty": 103.9,
-        "ratioBundestag": 75.3
+        "score": 30.3,
+        "ratio": 75.3
       },
+      {
+        "word": "notfallversorgung",
+        "count": 5,
+        "score": 20.9,
+        "ratio": 65.0
+      },
+      {
+        "word": "gesetz",
+        "count": 11,
+        "score": 20.3,
+        "ratio": 5.3
+      },
+      {
+        "word": "strukturreformen",
+        "count": 5,
+        "score": 17.6,
+        "ratio": 32.5
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "gesundheitswesen",
         "count": 8,
-        "ratioParty": 101.8,
-        "ratioBundestag": 75.6
+        "score": 37.1,
+        "ratio": 101.8
       },
       {
-        "word": "insofern",
+        "word": "fertig",
+        "count": 7,
+        "score": 32.6,
+        "ratio": 103.9
+      },
+      {
+        "word": "strukturreformen",
         "count": 5,
-        "ratioParty": 63.6,
-        "ratioBundestag": 17.1
+        "score": 27.1,
+        "ratio": 222.7
+      },
+      {
+        "word": "notfallversorgung",
+        "count": 5,
+        "score": 27.1,
+        "ratio": 222.7
+      },
+      {
+        "word": "gesetz",
+        "count": 11,
+        "score": 22.1,
+        "ratio": 6.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 197,
@@ -114,27 +147,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Janosch Dahmen häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Janosch Dahmen häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
-        "text": "Strukturreformen",
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesundheitswesen",
         "isCorrect": true
       },
       {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Familie",
+        "text": "Reform",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Strukturreformen\" nutzt Dr. Janosch Dahmen 222.7× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "32.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gesundheitswesen\" sagte Dr. Janosch Dahmen 8× (75.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -145,20 +177,20 @@
     "id": "delfin",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 1.0
-      },
-      {
         "emoji": "🐝",
         "name": "Biene",
         "title": "Fleißiger Abgeordneter",
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
+      },
+      {
+        "emoji": "🦫",
+        "name": "Biber",
+        "title": "Konstruktiver Brückenbauer",
+        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
+        "id": "biber",
+        "score": 0.977
       }
     ]
   },

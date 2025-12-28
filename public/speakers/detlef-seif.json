@@ -60,44 +60,84 @@
         "count": 9
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "personen",
+        "count": 16,
+        "score": 53.4,
+        "ratio": 27.1
+      },
+      {
+        "word": "verfahren",
+        "count": 15,
+        "score": 37.1,
+        "ratio": 10.9
+      },
       {
         "word": "visum",
         "count": 6,
-        "ratioParty": 934.9,
-        "ratioBundestag": 293.1
+        "score": 34.1,
+        "ratio": 293.1
       },
       {
-        "word": "aufschrei",
-        "count": 5,
-        "ratioParty": 779.0,
-        "ratioBundestag": 187.9
+        "word": "maßnahmen",
+        "count": 14,
+        "score": 28.4,
+        "ratio": 6.6
       },
       {
         "word": "aufnahmezusage",
         "count": 6,
-        "ratioParty": 311.6,
-        "ratioBundestag": 112.7
-      },
-      {
-        "word": "überlastung",
-        "count": 5,
-        "ratioParty": 97.4,
-        "ratioBundestag": 97.7
-      },
+        "score": 28.4,
+        "ratio": 112.7
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "personen",
         "count": 16,
-        "ratioParty": 27.7,
-        "ratioBundestag": 27.1
+        "score": 53.7,
+        "ratio": 27.7
+      },
+      {
+        "word": "visum",
+        "count": 6,
+        "score": 41.0,
+        "ratio": 934.9
+      },
+      {
+        "word": "menschen",
+        "count": 29,
+        "score": 36.7,
+        "ratio": 2.5
+      },
+      {
+        "word": "aufnahmezusage",
+        "count": 6,
+        "score": 34.5,
+        "ratio": 311.6
+      },
+      {
+        "word": "verfahren",
+        "count": 15,
+        "score": 33.5,
+        "ratio": 8.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "falsch",
         "count": 6,
-        "ratioParty": 10.5,
-        "ratioBundestag": 9.1
+        "score": 13.9,
+        "ratio": 9.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "falsch",
+        "count": 6,
+        "score": 14.7,
+        "ratio": 10.5
       }
     ]
   },
@@ -121,30 +161,29 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Detlef Seif häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Detlef Seif häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Visum",
+        "text": "Personen",
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Visum\" nutzt Detlef Seif 934.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "293.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Personen\" sagte Detlef Seif 16× (27.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Detlef Seif häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Detlef Seif häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Groß",
@@ -155,16 +194,15 @@
         "isCorrect": true
       },
       {
-        "text": "Sicher",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "Stark",
+        "text": "Neu",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Falsch\" nutzt Detlef Seif 10.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "9.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Falsch\" sagte Detlef Seif 6× (9.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

@@ -64,39 +64,72 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "frühstartrente",
-        "count": 5,
-        "ratioParty": 152.2,
-        "ratioBundestag": 63.7
+        "word": "koalition",
+        "count": 18,
+        "score": 39.4,
+        "ratio": 7.9
+      },
+      {
+        "word": "bürgergeld",
+        "count": 11,
+        "score": 35.5,
+        "ratio": 24.3
       },
       {
         "word": "tafeln",
         "count": 6,
-        "ratioParty": 114.1,
-        "ratioBundestag": 213.3
+        "score": 32.2,
+        "ratio": 213.3
       },
       {
-        "word": "grundsicherung",
-        "count": 5,
-        "ratioParty": 31.7,
-        "ratioBundestag": 27.5
+        "word": "ministerin",
+        "count": 14,
+        "score": 31.4,
+        "ratio": 8.4
       },
       {
-        "word": "rentenversicherung",
-        "count": 6,
-        "ratioParty": 27.7,
-        "ratioBundestag": 27.4
-      },
-      {
-        "word": "armut",
-        "count": 5,
-        "ratioParty": 25.4,
-        "ratioBundestag": 15.1
+        "word": "endlich",
+        "count": 12,
+        "score": 20.9,
+        "ratio": 4.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "koalition",
+        "count": 18,
+        "score": 52.6,
+        "ratio": 17.6
+      },
+      {
+        "word": "bürgergeld",
+        "count": 11,
+        "score": 31.8,
+        "ratio": 17.1
+      },
+      {
+        "word": "ministerin",
+        "count": 14,
+        "score": 29.3,
+        "ratio": 7.1
+      },
+      {
+        "word": "tafeln",
+        "count": 6,
+        "score": 28.5,
+        "ratio": 114.1
+      },
+      {
+        "word": "frühstartrente",
+        "count": 5,
+        "score": 25.2,
+        "ratio": 152.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 413,
@@ -123,27 +156,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Thomas Stephan häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Thomas Stephan häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Frühstartrente",
-        "isCorrect": true
-      },
       {
         "text": "Rente",
         "isCorrect": false
+      },
+      {
+        "text": "Koalition",
+        "isCorrect": true
+      },
+      {
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Frühstartrente\" nutzt Thomas Stephan 152.2× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "63.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Koalition\" sagte Thomas Stephan 18× (7.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

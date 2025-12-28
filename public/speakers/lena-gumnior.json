@@ -56,44 +56,84 @@
         "count": 11
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "kriminalität",
+        "count": 13,
+        "score": 51.2,
+        "ratio": 50.4
+      },
+      {
+        "word": "fahrschein",
+        "count": 7,
+        "score": 39.1,
+        "ratio": 265.3
+      },
+      {
+        "word": "union",
+        "count": 19,
+        "score": 37.4,
+        "ratio": 6.2
+      },
+      {
+        "word": "demokratinnen",
+        "count": 8,
+        "score": 33.5,
+        "ratio": 64.6
+      },
+      {
+        "word": "demokraten",
+        "count": 8,
+        "score": 29.9,
+        "ratio": 41.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "kriminalität",
+        "count": 13,
+        "score": 60.2,
+        "ratio": 101.3
+      },
+      {
+        "word": "union",
+        "count": 19,
+        "score": 32.7,
+        "ratio": 4.6
+      },
       {
         "word": "strafrecht",
         "count": 6,
-        "ratioParty": 140.3,
-        "ratioBundestag": 73.9
+        "score": 29.7,
+        "ratio": 140.3
       },
       {
         "word": "strafgesetzbuch",
         "count": 6,
-        "ratioParty": 140.3,
-        "ratioBundestag": 118.2
+        "score": 29.7,
+        "ratio": 140.3
       },
       {
-        "word": "kriminalität",
-        "count": 13,
-        "ratioParty": 101.3,
-        "ratioBundestag": 50.4
-      },
-      {
-        "word": "order",
-        "count": 5,
-        "ratioParty": 58.5,
-        "ratioBundestag": 129.6
-      },
-      {
-        "word": "ticket",
-        "count": 6,
-        "ratioParty": 24.8,
-        "ratioBundestag": 31.4
+        "word": "demokratinnen",
+        "count": 8,
+        "score": 24.6,
+        "ratio": 20.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "wirksam",
         "count": 3,
-        "ratioParty": 14.0,
-        "ratioBundestag": 10.6
+        "score": 7.4,
+        "ratio": 10.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 8.1,
+        "ratio": 14.0
       }
     ]
   },
@@ -117,50 +157,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Lena Gumnior häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Lena Gumnior häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Strafrecht",
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Kriminalität",
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
+        "text": "Verantwortung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Strafrecht\" nutzt Dr. Lena Gumnior 140.3× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "73.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Kriminalität\" sagte Dr. Lena Gumnior 13× (50.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Lena Gumnior häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Lena Gumnior häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Falsch",
-        "isCorrect": false
-      },
       {
         "text": "Sicher",
         "isCorrect": false
       },
       {
-        "text": "Wirksam",
-        "isCorrect": true
+        "text": "Sozial",
+        "isCorrect": false
       },
       {
-        "text": "Jung",
+        "text": "Wichtig",
         "isCorrect": false
+      },
+      {
+        "text": "Wirksam",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Wirksam\" nutzt Dr. Lena Gumnior 14.0× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "10.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wirksam\" sagte Dr. Lena Gumnior 3× (10.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

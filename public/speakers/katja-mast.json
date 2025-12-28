@@ -72,21 +72,36 @@
         "count": 3
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "sprache",
         "count": 5,
-        "ratioParty": 74.4,
-        "ratioBundestag": 94.0
+        "score": 22.8,
+        "ratio": 94.0
       },
       {
         "word": "regeln",
         "count": 5,
-        "ratioParty": 32.2,
-        "ratioBundestag": 33.6
+        "score": 17.7,
+        "ratio": 33.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "sprache",
+        "count": 5,
+        "score": 21.6,
+        "ratio": 74.4
+      },
+      {
+        "word": "regeln",
+        "count": 5,
+        "score": 17.5,
+        "ratio": 32.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 306,
@@ -103,14 +118,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Katja Mast häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Katja Mast häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Reform",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
@@ -118,12 +129,15 @@
         "isCorrect": true
       },
       {
-        "text": "Haushalt",
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sprache\" nutzt Katja Mast 74.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "94.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sprache\" sagte Katja Mast 5× (94.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

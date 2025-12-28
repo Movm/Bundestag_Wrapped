@@ -72,39 +72,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
-      {
-        "word": "infrago",
-        "count": 6,
-        "ratioParty": 239.1,
-        "ratioBundestag": 249.5
-      },
+    "signatureWordsBundestag": [
       {
         "word": "trassenpreise",
         "count": 10,
-        "ratioParty": 239.1,
-        "ratioBundestag": 258.1
+        "score": 55.6,
+        "ratio": 258.1
       },
       {
-        "word": "ticket",
-        "count": 6,
-        "ratioParty": 84.4,
-        "ratioBundestag": 47.8
-      },
-      {
-        "word": "schnieder",
-        "count": 6,
-        "ratioParty": 62.4,
-        "ratioBundestag": 49.4
+        "word": "schiene",
+        "count": 11,
+        "score": 40.7,
+        "ratio": 39.6
       },
       {
         "word": "deutschlandticket",
         "count": 9,
-        "ratioParty": 47.8,
-        "ratioBundestag": 39.6
+        "score": 33.3,
+        "ratio": 39.6
+      },
+      {
+        "word": "infrago",
+        "count": 6,
+        "score": 33.1,
+        "ratio": 249.5
+      },
+      {
+        "word": "änderung",
+        "count": 7,
+        "score": 25.1,
+        "ratio": 34.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "trassenpreise",
+        "count": 10,
+        "score": 54.8,
+        "ratio": 239.1
+      },
+      {
+        "word": "schiene",
+        "count": 11,
+        "score": 36.7,
+        "ratio": 27.1
+      },
+      {
+        "word": "deutschlandticket",
+        "count": 9,
+        "score": 35.0,
+        "ratio": 47.8
+      },
+      {
+        "word": "infrago",
+        "count": 6,
+        "score": 32.9,
+        "ratio": 239.1
+      },
+      {
+        "word": "ticket",
+        "count": 6,
+        "score": 26.7,
+        "ratio": 84.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 321,
@@ -131,27 +164,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Michael Donth häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Michael Donth häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Infrago",
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
+        "text": "Trassenpreise",
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Debatte",
+        "text": "Rente",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Infrago\" nutzt Michael Donth 239.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "249.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Trassenpreise\" sagte Michael Donth 10× (258.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

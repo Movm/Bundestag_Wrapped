@@ -68,44 +68,90 @@
         "count": 10
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "energiespeicher",
-        "count": 5,
-        "ratioParty": 336.6,
-        "ratioBundestag": 301.7
+        "word": "glück",
+        "count": 14,
+        "score": 49.3,
+        "ratio": 32.9
       },
       {
-        "word": "dresden",
-        "count": 5,
-        "ratioParty": 134.6,
-        "ratioBundestag": 58.7
+        "word": "einheit",
+        "count": 10,
+        "score": 34.1,
+        "ratio": 29.3
       },
       {
         "word": "arbeitskoalition",
         "count": 6,
-        "ratioParty": 73.4,
-        "ratioBundestag": 230.4
+        "score": 32.7,
+        "ratio": 230.4
       },
+      {
+        "word": "energiewende",
+        "count": 11,
+        "score": 31.4,
+        "ratio": 16.3
+      },
+      {
+        "word": "energiespeicher",
+        "count": 5,
+        "score": 28.6,
+        "ratio": 301.7
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "glück",
         "count": 14,
-        "ratioParty": 41.0,
-        "ratioBundestag": 32.9
+        "score": 52.3,
+        "ratio": 41.0
       },
       {
-        "word": "wiedervereinigung",
-        "count": 6,
-        "ratioParty": 36.7,
-        "ratioBundestag": 46.9
+        "word": "energiewende",
+        "count": 11,
+        "score": 37.0,
+        "ratio": 27.9
+      },
+      {
+        "word": "einheit",
+        "count": 10,
+        "score": 35.0,
+        "ratio": 32.1
+      },
+      {
+        "word": "energiespeicher",
+        "count": 5,
+        "score": 29.1,
+        "ratio": 336.6
+      },
+      {
+        "word": "grünen",
+        "count": 14,
+        "score": 27.7,
+        "ratio": 6.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "wirtschaftlich",
         "count": 3,
-        "ratioParty": 4.6,
-        "ratioBundestag": 5.6
+        "score": 5.7,
+        "ratio": 5.6
+      },
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 4.7,
+        "ratio": 2.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 5.2,
+        "ratio": 4.6
       }
     ]
   },
@@ -134,66 +180,56 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Lars Rohwer häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Lars Rohwer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Migration",
+        "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Energiespeicher",
+        "text": "Glück",
         "isCorrect": true
       },
       {
-        "text": "Europa",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Rente",
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Energiespeicher\" nutzt Lars Rohwer 336.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "301.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Glück\" sagte Lars Rohwer 14× (32.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Lars Rohwer häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Lars Rohwer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Europäisch",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
         "text": "Wirtschaftlich",
         "isCorrect": true
-      },
-      {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wirtschaftlich\" nutzt Lars Rohwer 4.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "5.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wirtschaftlich\" sagte Lars Rohwer 3× (5.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Cleverer Stratege",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüter",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüter",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 1.0
-      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -201,6 +237,14 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
+      },
+      {
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrlicher Redner",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.95
       }
     ]
   },

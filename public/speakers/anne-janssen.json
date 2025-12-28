@@ -72,33 +72,60 @@
         "count": 4
       }
     ],
-    "signatureWords": [
-      {
-        "word": "pflegekräfte",
-        "count": 5,
-        "ratioParty": 103.5,
-        "ratioBundestag": 96.3
-      },
+    "signatureWordsBundestag": [
       {
         "word": "pflege",
         "count": 11,
-        "ratioParty": 38.2,
-        "ratioBundestag": 44.7
+        "score": 42.0,
+        "ratio": 44.7
       },
       {
         "word": "versorgung",
         "count": 7,
-        "ratioParty": 29.7,
-        "ratioBundestag": 35.3
+        "score": 25.1,
+        "ratio": 35.3
+      },
+      {
+        "word": "pflegekräfte",
+        "count": 5,
+        "score": 22.9,
+        "ratio": 96.3
       },
       {
         "word": "verfahren",
         "count": 5,
-        "ratioParty": 8.9,
-        "ratioBundestag": 11.8
+        "score": 12.8,
+        "ratio": 11.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "pflege",
+        "count": 11,
+        "score": 40.4,
+        "ratio": 38.2
+      },
+      {
+        "word": "versorgung",
+        "count": 7,
+        "score": 24.0,
+        "ratio": 29.7
+      },
+      {
+        "word": "pflegekräfte",
+        "count": 5,
+        "score": 23.2,
+        "ratio": 103.5
+      },
+      {
+        "word": "verfahren",
+        "count": 5,
+        "score": 11.5,
+        "ratio": 8.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 400,
@@ -120,27 +147,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Anne Janssen häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Anne Janssen häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Migration",
+        "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Pflegekräfte",
+        "text": "Pflege",
         "isCorrect": true
+      },
+      {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Pflegekräfte\" nutzt Anne Janssen 103.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "96.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Pflege\" sagte Anne Janssen 11× (44.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

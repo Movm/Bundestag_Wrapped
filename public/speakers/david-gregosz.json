@@ -72,44 +72,84 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "syrien",
         "count": 10,
-        "ratioParty": 90.9,
-        "ratioBundestag": 71.8
-      },
-      {
-        "word": "russland",
-        "count": 5,
-        "ratioParty": 8.3,
-        "ratioBundestag": 10.6
+        "score": 42.9,
+        "ratio": 71.8
       },
       {
         "word": "europäischen",
         "count": 9,
-        "ratioParty": 6.3,
-        "ratioBundestag": 11.0
+        "score": 22.3,
+        "ratio": 11.0
+      },
+      {
+        "word": "russland",
+        "count": 5,
+        "score": 12.2,
+        "ratio": 10.6
       },
       {
         "word": "deutschen",
         "count": 6,
-        "ratioParty": 4.5,
-        "ratioBundestag": 4.1
+        "score": 9.8,
+        "ratio": 4.1
       },
       {
         "word": "europa",
         "count": 5,
-        "ratioParty": 2.9,
-        "ratioBundestag": 4.4
+        "score": 8.4,
+        "ratio": 4.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "syrien",
+        "count": 10,
+        "score": 45.2,
+        "ratio": 90.9
+      },
+      {
+        "word": "europäischen",
+        "count": 9,
+        "score": 17.8,
+        "ratio": 6.3
+      },
+      {
+        "word": "russland",
+        "count": 5,
+        "score": 11.2,
+        "ratio": 8.3
+      },
+      {
+        "word": "deutschen",
+        "count": 6,
+        "score": 10.3,
+        "ratio": 4.5
+      },
+      {
+        "word": "europa",
+        "count": 5,
+        "score": 6.8,
+        "ratio": 2.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "konstruktiv",
         "count": 3,
-        "ratioParty": 51.3,
-        "ratioBundestag": 52.0
+        "score": 11.9,
+        "ratio": 52.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "konstruktiv",
+        "count": 3,
+        "score": 11.9,
+        "ratio": 51.3
       }
     ]
   },
@@ -133,33 +173,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt David Gregosz häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt David Gregosz häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
         "text": "Syrien",
         "isCorrect": true
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Syrien\" nutzt David Gregosz 90.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "71.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Syrien\" sagte David Gregosz 10× (71.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt David Gregosz häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt David Gregosz häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Klar",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
@@ -167,16 +206,15 @@
         "isCorrect": true
       },
       {
-        "text": "Alt",
+        "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Jung",
+        "text": "Europäisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Konstruktiv\" nutzt David Gregosz 51.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "52.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Konstruktiv\" sagte David Gregosz 3× (52.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦫",

@@ -72,39 +72,72 @@
         "count": 9
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "sportler",
-        "count": 5,
-        "ratioParty": 178.0,
-        "ratioBundestag": 216.0
+        "word": "sport",
+        "count": 16,
+        "score": 59.1,
+        "ratio": 39.2
+      },
+      {
+        "word": "deutschland",
+        "count": 41,
+        "score": 53.6,
+        "ratio": 2.7
       },
       {
         "word": "olympische",
         "count": 9,
-        "ratioParty": 96.1,
-        "ratioBundestag": 115.6
-      },
-      {
-        "word": "lasst",
-        "count": 5,
-        "ratioParty": 89.0,
-        "ratioBundestag": 47.5
+        "score": 42.8,
+        "ratio": 115.6
       },
       {
         "word": "spiele",
         "count": 9,
-        "ratioParty": 80.1,
-        "ratioBundestag": 55.5
+        "score": 36.3,
+        "ratio": 55.5
       },
       {
-        "word": "sportstätten",
-        "count": 5,
-        "ratioParty": 53.4,
-        "ratioBundestag": 29.7
+        "word": "deutschen",
+        "count": 19,
+        "score": 32.8,
+        "ratio": 4.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "sport",
+        "count": 16,
+        "score": 63.0,
+        "ratio": 50.3
+      },
+      {
+        "word": "olympische",
+        "count": 9,
+        "score": 41.2,
+        "ratio": 96.1
+      },
+      {
+        "word": "spiele",
+        "count": 9,
+        "score": 39.6,
+        "ratio": 80.1
+      },
+      {
+        "word": "jahre",
+        "count": 17,
+        "score": 30.3,
+        "ratio": 4.9
+      },
+      {
+        "word": "sportler",
+        "count": 5,
+        "score": 25.9,
+        "ratio": 178.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 448,
@@ -131,27 +164,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jörn König häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Jörn König häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Sportler",
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
+        "text": "Sport",
         "isCorrect": true
       },
       {
-        "text": "Bildung",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
+        "text": "Energie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sportler\" nutzt Jörn König 178.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "216.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sport\" sagte Jörn König 16× (39.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

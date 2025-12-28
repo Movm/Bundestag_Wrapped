@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "bundeswehr",
+        "count": 13,
+        "score": 43.0,
+        "ratio": 26.3
+      },
       {
         "word": "irini",
         "count": 6,
-        "ratioParty": 155.6,
-        "ratioBundestag": 142.2
+        "score": 29.8,
+        "ratio": 142.2
       },
       {
         "word": "spiele",
         "count": 6,
-        "ratioParty": 128.5,
-        "ratioBundestag": 115.5
+        "score": 28.5,
+        "ratio": 115.5
       },
       {
         "word": "sport",
         "count": 5,
-        "ratioParty": 39.7,
-        "ratioBundestag": 37.6
+        "score": 18.3,
+        "ratio": 37.6
       },
+      {
+        "word": "gesellschaft",
+        "count": 7,
+        "score": 16.5,
+        "ratio": 9.5
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "bundeswehr",
         "count": 13,
-        "ratioParty": 28.1,
-        "ratioBundestag": 26.3
+        "score": 43.8,
+        "ratio": 28.1
       },
       {
-        "word": "soldatinnen",
+        "word": "irini",
+        "count": 6,
+        "score": 30.3,
+        "ratio": 155.6
+      },
+      {
+        "word": "spiele",
+        "count": 6,
+        "score": 29.2,
+        "ratio": 128.5
+      },
+      {
+        "word": "sport",
         "count": 5,
-        "ratioParty": 19.9,
-        "ratioBundestag": 21.7
+        "score": 18.5,
+        "ratio": 39.7
+      },
+      {
+        "word": "gesellschaft",
+        "count": 7,
+        "score": 15.8,
+        "ratio": 8.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 547,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jens Lehmann häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Jens Lehmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Politik",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Irini",
+        "text": "Bundeswehr",
         "isCorrect": true
       },
       {
-        "text": "Opposition",
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Irini\" nutzt Jens Lehmann 155.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "142.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bundeswehr\" sagte Jens Lehmann 13× (26.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

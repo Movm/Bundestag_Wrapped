@@ -60,56 +60,108 @@
         "count": 13
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "salzgitter",
         "count": 9,
-        "ratioParty": 606.0,
-        "ratioBundestag": 254.7
-      },
-      {
-        "word": "offshore",
-        "count": 5,
-        "ratioParty": 168.3,
-        "ratioBundestag": 99.9
-      },
-      {
-        "word": "meeresschutz",
-        "count": 5,
-        "ratioParty": 112.2,
-        "ratioBundestag": 242.5
-      },
-      {
-        "word": "windenergie",
-        "count": 5,
-        "ratioParty": 84.2,
-        "ratioBundestag": 43.5
+        "score": 49.9,
+        "ratio": 254.7
       },
       {
         "word": "meere",
         "count": 10,
-        "ratioParty": 67.3,
-        "ratioBundestag": 141.5
+        "score": 49.6,
+        "ratio": 141.5
+      },
+      {
+        "word": "transformation",
+        "count": 14,
+        "score": 46.1,
+        "ratio": 26.0
+      },
+      {
+        "word": "industrie",
+        "count": 17,
+        "score": 39.8,
+        "ratio": 9.4
+      },
+      {
+        "word": "elektromobilität",
+        "count": 10,
+        "score": 37.0,
+        "ratio": 39.5
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "salzgitter",
+        "count": 9,
+        "score": 57.7,
+        "ratio": 606.0
+      },
+      {
+        "word": "meere",
+        "count": 10,
+        "score": 42.2,
+        "ratio": 67.3
+      },
+      {
+        "word": "transformation",
+        "count": 14,
+        "score": 39.4,
+        "ratio": 15.7
+      },
+      {
+        "word": "industrie",
+        "count": 17,
+        "score": 37.2,
+        "ratio": 7.9
+      },
+      {
+        "word": "elektromobilität",
+        "count": 10,
+        "score": 31.5,
+        "ratio": 22.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "stark",
+        "count": 5,
+        "score": 8.2,
+        "ratio": 4.2
+      },
       {
         "word": "wirtschaftlich",
         "count": 3,
-        "ratioParty": 4.0,
-        "ratioBundestag": 4.5
+        "score": 5.1,
+        "ratio": 4.5
       },
       {
         "word": "falsch",
         "count": 3,
-        "ratioParty": 3.7,
-        "ratioBundestag": 3.1
-      },
+        "score": 4.3,
+        "ratio": 3.1
+      }
+    ],
+    "signatureAdjectivesParty": [
       {
         "word": "stark",
         "count": 5,
-        "ratioParty": 3.0,
-        "ratioBundestag": 4.2
+        "score": 7.0,
+        "ratio": 3.0
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 4.9,
+        "ratio": 4.0
+      },
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 4.6,
+        "ratio": 3.7
       }
     ]
   },
@@ -148,50 +200,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dunja Kreiser häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dunja Kreiser häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
-      },
       {
         "text": "Salzgitter",
         "isCorrect": true
       },
       {
-        "text": "Haushalt",
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Salzgitter\" nutzt Dunja Kreiser 606.0× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "254.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Salzgitter\" sagte Dunja Kreiser 9× (254.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dunja Kreiser häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dunja Kreiser häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
         "isCorrect": true
       },
       {
-        "text": "Gut",
+        "text": "Sicher",
         "isCorrect": false
       },
       {
         "text": "Politisch",
         "isCorrect": false
-      },
-      {
-        "text": "National",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wirtschaftlich\" nutzt Dunja Kreiser 4.0× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "4.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Stark\" sagte Dunja Kreiser 5× (4.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦊",

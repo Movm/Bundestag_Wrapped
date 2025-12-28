@@ -60,44 +60,84 @@
         "count": 18
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "landwirtinnen",
-        "count": 14,
-        "ratioParty": 1273.6,
-        "ratioBundestag": 62.6
-      },
-      {
-        "word": "höfen",
-        "count": 5,
-        "ratioParty": 454.8,
-        "ratioBundestag": 357.6
+        "word": "landwirtschaft",
+        "count": 46,
+        "score": 168.2,
+        "ratio": 37.7
       },
       {
         "word": "ernährungswirtschaft",
         "count": 18,
-        "ratioParty": 327.5,
-        "ratioBundestag": 1029.9
+        "score": 124.9,
+        "ratio": 1029.9
       },
       {
-        "word": "küstenschutz",
-        "count": 6,
-        "ratioParty": 272.9,
-        "ratioBundestag": 107.3
+        "word": "landwirtinnen",
+        "count": 14,
+        "score": 58.1,
+        "ratio": 62.6
       },
       {
-        "word": "kennzeichnung",
-        "count": 6,
-        "ratioParty": 181.9,
-        "ratioBundestag": 74.6
+        "word": "betriebe",
+        "count": 19,
+        "score": 57.8,
+        "ratio": 20.0
+      },
+      {
+        "word": "landwirte",
+        "count": 17,
+        "score": 53.8,
+        "ratio": 22.6
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "landwirtschaft",
+        "count": 46,
+        "score": 173.3,
+        "ratio": 42.3
+      },
+      {
+        "word": "ernährungswirtschaft",
+        "count": 18,
+        "score": 104.3,
+        "ratio": 327.5
+      },
+      {
+        "word": "landwirtinnen",
+        "count": 14,
+        "score": 100.1,
+        "ratio": 1273.6
+      },
+      {
+        "word": "landwirte",
+        "count": 17,
+        "score": 58.9,
+        "ratio": 30.9
+      },
+      {
+        "word": "tierhaltung",
+        "count": 12,
+        "score": 56.4,
+        "ratio": 109.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "zukunftsfähig",
         "count": 5,
-        "ratioParty": 23.9,
-        "ratioBundestag": 31.1
+        "score": 17.3,
+        "ratio": 31.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "zukunftsfähig",
+        "count": 5,
+        "score": 16.1,
+        "ratio": 23.9
       }
     ]
   },
@@ -121,33 +161,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Alois Rainer häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Alois Rainer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bildung",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Landwirtinnen",
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Landwirtschaft",
         "isCorrect": true
       },
       {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
+        "text": "Migration",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Landwirtinnen\" nutzt Alois Rainer 1273.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "62.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Landwirtschaft\" sagte Alois Rainer 46× (37.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Alois Rainer häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Alois Rainer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "National",
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
@@ -155,39 +198,34 @@
         "isCorrect": true
       },
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Zukunftsfähig\" nutzt Alois Rainer 23.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "31.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Zukunftsfähig\" sagte Alois Rainer 5× (31.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🦉",
-    "name": "Eule",
-    "title": "Themenexperte",
-    "reason": "Dein Fachwort \"Landwirtinnen\" nutzt du 1273.6× häufiger als deine Fraktion.",
-    "id": "eule",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüter",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißiger Abgeordneter",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
         "score": 1.0
       },
       {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüter",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 1.0
+        "emoji": "🐬",
+        "name": "Delfin",
+        "title": "Diplomatischer Redner",
+        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
+        "id": "delfin",
+        "score": 0.96
       }
     ]
   },

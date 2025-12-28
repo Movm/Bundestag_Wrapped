@@ -68,50 +68,96 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "klimaziel",
-        "count": 8,
-        "ratioParty": 302.2,
-        "ratioBundestag": 118.3
-      },
-      {
-        "word": "umweltpolitik",
-        "count": 8,
-        "ratioParty": 75.5,
-        "ratioBundestag": 112.7
-      },
-      {
-        "word": "bepreisung",
-        "count": 7,
-        "ratioParty": 42.6,
-        "ratioBundestag": 49.9
-      },
-      {
-        "word": "emissionshandel",
-        "count": 6,
-        "ratioParty": 30.6,
-        "ratioBundestag": 57.3
+        "word": "klimaschutz",
+        "count": 27,
+        "score": 79.1,
+        "ratio": 17.7
       },
       {
         "word": "akzeptanz",
         "count": 11,
-        "ratioParty": 27.3,
-        "ratioBundestag": 51.2
+        "score": 43.5,
+        "ratio": 51.2
+      },
+      {
+        "word": "klimaziel",
+        "count": 8,
+        "score": 38.3,
+        "ratio": 118.3
+      },
+      {
+        "word": "umweltpolitik",
+        "count": 8,
+        "score": 37.9,
+        "ratio": 112.7
+      },
+      {
+        "word": "bepreisung",
+        "count": 7,
+        "score": 27.5,
+        "ratio": 49.9
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "klimaschutz",
+        "count": 27,
+        "score": 82.7,
+        "ratio": 20.4
+      },
+      {
+        "word": "klimaziel",
+        "count": 8,
+        "score": 45.7,
+        "ratio": 302.2
+      },
+      {
+        "word": "akzeptanz",
+        "count": 11,
+        "score": 36.8,
+        "ratio": 27.3
+      },
+      {
+        "word": "umweltpolitik",
+        "count": 8,
+        "score": 34.7,
+        "ratio": 75.5
+      },
+      {
+        "word": "bepreisung",
+        "count": 7,
+        "score": 26.4,
+        "ratio": 42.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "wirtschaftlich",
         "count": 3,
-        "ratioParty": 6.5,
-        "ratioBundestag": 7.8
+        "score": 6.5,
+        "ratio": 7.8
       },
       {
         "word": "sicher",
         "count": 3,
-        "ratioParty": 2.1,
-        "ratioBundestag": 2.4
+        "score": 3.7,
+        "ratio": 2.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 6.0,
+        "ratio": 6.5
+      },
+      {
+        "word": "sicher",
+        "count": 3,
+        "score": 3.4,
+        "ratio": 2.1
       }
     ]
   },
@@ -135,50 +181,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Mark Helfrich häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Mark Helfrich häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Investitionen",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
-        "text": "Haushalt",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Klimaziel",
+        "text": "Klimaschutz",
         "isCorrect": true
       },
       {
-        "text": "Sicherheit",
+        "text": "Reform",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Klimaziel\" nutzt Mark Helfrich 302.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "118.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Klimaschutz\" sagte Mark Helfrich 27× (17.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Mark Helfrich häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Mark Helfrich häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
+        "isCorrect": false
+      },
       {
         "text": "Wirtschaftlich",
         "isCorrect": true
       },
       {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
+        "text": "Sozial",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wirtschaftlich\" nutzt Mark Helfrich 6.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "7.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wirtschaftlich\" sagte Mark Helfrich 3× (7.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -196,12 +240,12 @@
         "score": 0.975
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.933
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positiver Teamplayer",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.871
       }
     ]
   },

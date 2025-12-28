@@ -64,50 +64,102 @@
         "count": 24
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "schlange",
-        "count": 5,
-        "ratioParty": 453.7,
-        "ratioBundestag": 142.7
+        "word": "bauen",
+        "count": 46,
+        "score": 134.1,
+        "ratio": 17.5
       },
       {
-        "word": "mietendeckel",
-        "count": 6,
-        "ratioParty": 272.2,
-        "ratioBundestag": 48.9
+        "word": "mietpreisbremse",
+        "count": 29,
+        "score": 105.1,
+        "ratio": 36.5
       },
       {
-        "word": "wände",
-        "count": 5,
-        "ratioParty": 226.8,
-        "ratioBundestag": 79.3
+        "word": "wohnungen",
+        "count": 27,
+        "score": 86.4,
+        "ratio": 23.6
       },
       {
-        "word": "kostengünstiger",
-        "count": 7,
-        "ratioParty": 127.0,
-        "ratioBundestag": 142.7
+        "word": "bauturbo",
+        "count": 21,
+        "score": 74.5,
+        "ratio": 33.7
       },
       {
-        "word": "turbo",
-        "count": 5,
-        "ratioParty": 113.4,
-        "ratioBundestag": 57.1
+        "word": "gebaut",
+        "count": 17,
+        "score": 53.9,
+        "ratio": 22.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "bauen",
+        "count": 46,
+        "score": 131.7,
+        "ratio": 16.5
+      },
+      {
+        "word": "mietpreisbremse",
+        "count": 29,
+        "score": 127.3,
+        "ratio": 79.7
+      },
+      {
+        "word": "wohnungen",
+        "count": 27,
+        "score": 106.7,
+        "ratio": 51.0
+      },
+      {
+        "word": "bauturbo",
+        "count": 21,
+        "score": 73.3,
+        "ratio": 31.8
+      },
+      {
+        "word": "gebaut",
+        "count": 17,
+        "score": 55.8,
+        "ratio": 25.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "zentral",
+        "count": 5,
+        "score": 12.8,
+        "ratio": 11.9
+      },
       {
         "word": "kontraproduktiv",
         "count": 3,
-        "ratioParty": 272.2,
-        "ratioBundestag": 71.3
+        "score": 12.8,
+        "ratio": 71.3
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 3.4,
+        "ratio": 2.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "kontraproduktiv",
+        "count": 3,
+        "score": 16.8,
+        "ratio": 272.2
       },
       {
         "word": "zentral",
         "count": 5,
-        "ratioParty": 12.3,
-        "ratioBundestag": 11.9
+        "score": 12.9,
+        "ratio": 12.3
       }
     ]
   },
@@ -136,50 +188,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Jan-Marco Luczak häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Jan-Marco Luczak häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Steuern",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
-        "text": "Zukunft",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
-        "text": "Minister",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Schlange",
+        "text": "Bauen",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Schlange\" nutzt Dr. Jan-Marco Luczak 453.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "142.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bauen\" sagte Dr. Jan-Marco Luczak 46× (17.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Jan-Marco Luczak häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Jan-Marco Luczak häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Kontraproduktiv",
+        "text": "Sicher",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Zentral",
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
+        "text": "Falsch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kontraproduktiv\" nutzt Dr. Jan-Marco Luczak 272.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "71.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Zentral\" sagte Dr. Jan-Marco Luczak 5× (11.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐴",
@@ -189,19 +239,19 @@
     "id": "pferd",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 1.0
-      },
-      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüter",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
+        "score": 1.0
+      },
+      {
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißiger Abgeordneter",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
         "score": 1.0
       }
     ]

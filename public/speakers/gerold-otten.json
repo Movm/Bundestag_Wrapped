@@ -72,50 +72,96 @@
         "count": 11
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "irini",
+        "count": 16,
+        "score": 77.5,
+        "ratio": 125.8
+      },
+      {
+        "word": "unifil",
+        "count": 16,
+        "score": 77.2,
+        "ratio": 123.5
+      },
+      {
+        "word": "nationalen",
+        "count": 18,
+        "score": 63.0,
+        "ratio": 32.2
+      },
+      {
+        "word": "mission",
+        "count": 16,
+        "score": 60.2,
+        "ratio": 42.2
+      },
+      {
+        "word": "sicherheitsrat",
+        "count": 13,
+        "score": 58.7,
+        "ratio": 90.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "irini",
+        "count": 16,
+        "score": 84.4,
+        "ratio": 194.2
+      },
+      {
+        "word": "unifil",
+        "count": 16,
+        "score": 84.4,
+        "ratio": 194.2
+      },
       {
         "word": "unmiss",
         "count": 11,
-        "ratioParty": 1068.3,
-        "ratioBundestag": 169.9
+        "score": 76.7,
+        "ratio": 1068.3
       },
       {
-        "word": "maritime",
-        "count": 9,
-        "ratioParty": 874.1,
-        "ratioBundestag": 162.1
+        "word": "nationalen",
+        "count": 18,
+        "score": 66.7,
+        "ratio": 39.7
       },
       {
-        "word": "sicherheitsrats",
-        "count": 8,
-        "ratioParty": 777.0,
-        "ratioBundestag": 691.8
-      },
-      {
-        "word": "force",
-        "count": 10,
-        "ratioParty": 323.7,
-        "ratioBundestag": 308.8
-      },
-      {
-        "word": "hisbollah",
-        "count": 6,
-        "ratioParty": 291.4,
-        "ratioBundestag": 51.9
+        "word": "sicherheitsrat",
+        "count": 13,
+        "score": 64.4,
+        "ratio": 140.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "unfähig",
         "count": 3,
-        "ratioParty": 58.3,
-        "ratioBundestag": 216.2
+        "score": 16.1,
+        "ratio": 216.2
       },
       {
         "word": "wirkungslos",
         "count": 3,
-        "ratioParty": 16.2,
-        "ratioBundestag": 40.5
+        "score": 11.2,
+        "ratio": 40.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "unfähig",
+        "count": 3,
+        "score": 12.2,
+        "ratio": 58.3
+      },
+      {
+        "word": "wirkungslos",
+        "count": 3,
+        "score": 8.5,
+        "ratio": 16.2
       }
     ]
   },
@@ -144,33 +190,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Gerold Otten häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Gerold Otten häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Irini",
+        "isCorrect": true
+      },
       {
         "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Unmiss",
-        "isCorrect": true
-      },
-      {
-        "text": "Haushalt",
+        "text": "Koalition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unmiss\" nutzt Gerold Otten 1068.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "169.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Irini\" sagte Gerold Otten 16× (125.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Gerold Otten häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Gerold Otten häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Groß",
+        "text": "Alt",
         "isCorrect": false
       },
       {
@@ -178,16 +223,15 @@
         "isCorrect": true
       },
       {
-        "text": "Sicher",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Falsch",
+        "text": "Europäisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unfähig\" nutzt Gerold Otten 58.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "216.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Unfähig\" sagte Gerold Otten 3× (216.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

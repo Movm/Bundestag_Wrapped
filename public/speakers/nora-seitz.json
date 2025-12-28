@@ -68,44 +68,84 @@
         "count": 7
       }
     ],
-    "signatureWords": [
-      {
-        "word": "aufträge",
-        "count": 5,
-        "ratioParty": 87.7,
-        "ratioBundestag": 52.1
-      },
+    "signatureWordsBundestag": [
       {
         "word": "erkrankungen",
         "count": 7,
-        "ratioParty": 79.4,
-        "ratioBundestag": 68.2
+        "score": 29.7,
+        "ratio": 68.2
       },
       {
         "word": "arbeitswelt",
         "count": 5,
-        "ratioParty": 74.2,
-        "ratioBundestag": 116.2
+        "score": 23.8,
+        "ratio": 116.2
       },
       {
-        "word": "ernährung",
+        "word": "arbeitnehmer",
+        "count": 7,
+        "score": 22.2,
+        "ratio": 22.7
+      },
+      {
+        "word": "aufträge",
         "count": 5,
-        "ratioParty": 53.6,
-        "ratioBundestag": 31.8
+        "score": 19.9,
+        "ratio": 52.1
+      },
+      {
+        "word": "dürfen",
+        "count": 10,
+        "score": 19.8,
+        "ratio": 6.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "erkrankungen",
+        "count": 7,
+        "score": 30.7,
+        "ratio": 79.4
+      },
+      {
+        "word": "aufträge",
+        "count": 5,
+        "score": 22.4,
+        "ratio": 87.7
       },
       {
         "word": "kleinen",
         "count": 7,
-        "ratioParty": 20.8,
-        "ratioBundestag": 13.5
+        "score": 21.6,
+        "ratio": 20.8
+      },
+      {
+        "word": "arbeitswelt",
+        "count": 5,
+        "score": 21.6,
+        "ratio": 74.2
+      },
+      {
+        "word": "arbeitnehmer",
+        "count": 7,
+        "score": 20.4,
+        "ratio": 17.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "entscheidend",
         "count": 3,
-        "ratioParty": 4.1,
-        "ratioBundestag": 6.7
+        "score": 6.1,
+        "ratio": 6.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 4.9,
+        "ratio": 4.1
       }
     ]
   },
@@ -129,50 +169,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Nora Seitz häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Nora Seitz häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Klima",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
-        "text": "Fraktion",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Aufträge",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Erkrankungen",
         "isCorrect": true
-      },
-      {
-        "text": "Energie",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Aufträge\" nutzt Nora Seitz 87.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "52.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Erkrankungen\" sagte Nora Seitz 7× (68.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Nora Seitz häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Nora Seitz häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
         "isCorrect": false
       },
       {
         "text": "Entscheidend",
         "isCorrect": true
-      },
-      {
-        "text": "Europäisch",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Nora Seitz 4.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "6.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Entscheidend\" sagte Nora Seitz 3× (6.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",

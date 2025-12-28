@@ -56,39 +56,72 @@
         "count": 10
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "thyssenkrupp",
-        "count": 5,
-        "ratioParty": 548.9,
-        "ratioBundestag": 88.9
+        "word": "menschen",
+        "count": 32,
+        "score": 39.7,
+        "ratio": 2.5
       },
       {
-        "word": "reichtum",
-        "count": 5,
-        "ratioParty": 183.0,
-        "ratioBundestag": 67.2
+        "word": "abgeordnete",
+        "count": 12,
+        "score": 32.3,
+        "ratio": 13.8
+      },
+      {
+        "word": "arbeit",
+        "count": 15,
+        "score": 28.9,
+        "ratio": 5.9
       },
       {
         "word": "dortmund",
         "count": 5,
-        "ratioParty": 109.8,
-        "ratioBundestag": 196.8
+        "score": 26.4,
+        "ratio": 196.8
+      },
+      {
+        "word": "beschäftigten",
+        "count": 9,
+        "score": 26.4,
+        "ratio": 17.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "menschen",
+        "count": 32,
+        "score": 37.0,
+        "ratio": 2.2
+      },
+      {
+        "word": "thyssenkrupp",
+        "count": 5,
+        "score": 31.5,
+        "ratio": 548.9
       },
       {
         "word": "bürgergeld",
         "count": 8,
-        "ratioParty": 48.8,
-        "ratioBundestag": 14.3
+        "score": 31.3,
+        "ratio": 48.8
       },
       {
-        "word": "wirtschaftspolitik",
-        "count": 5,
-        "ratioParty": 42.2,
-        "ratioBundestag": 18.9
+        "word": "abgeordnete",
+        "count": 12,
+        "score": 29.7,
+        "ratio": 10.9
+      },
+      {
+        "word": "armut",
+        "count": 8,
+        "score": 28.1,
+        "ratio": 32.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 545,
@@ -110,27 +143,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jens Peick häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Jens Peick häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Arbeit",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Thyssenkrupp",
+        "text": "Menschen",
         "isCorrect": true
+      },
+      {
+        "text": "Haushalt",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Thyssenkrupp\" nutzt Jens Peick 548.9× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "88.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Menschen\" sagte Jens Peick 32× (2.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -149,12 +181,12 @@
         "score": 0.996
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.92
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positiver Teamplayer",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.832
       }
     ]
   },

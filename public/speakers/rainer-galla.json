@@ -72,39 +72,72 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "mieter",
         "count": 9,
-        "ratioParty": 87.9,
-        "ratioBundestag": 44.7
-      },
-      {
-        "word": "vermieter",
-        "count": 6,
-        "ratioParty": 46.2,
-        "ratioBundestag": 50.7
+        "score": 34.4,
+        "ratio": 44.7
       },
       {
         "word": "mietpreisbremse",
         "count": 10,
-        "ratioParty": 43.1,
-        "ratioBundestag": 26.4
+        "score": 33.1,
+        "ratio": 26.4
       },
       {
         "word": "wohnraum",
         "count": 9,
-        "ratioParty": 25.3,
-        "ratioBundestag": 20.7
+        "score": 27.7,
+        "ratio": 20.7
       },
       {
         "word": "landsleute",
         "count": 6,
-        "ratioParty": 21.4,
-        "ratioBundestag": 84.8
+        "score": 26.7,
+        "ratio": 84.8
+      },
+      {
+        "word": "vermieter",
+        "count": 6,
+        "score": 23.7,
+        "ratio": 50.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "mieter",
+        "count": 9,
+        "score": 40.4,
+        "ratio": 87.9
+      },
+      {
+        "word": "mietpreisbremse",
+        "count": 10,
+        "score": 37.9,
+        "ratio": 43.1
+      },
+      {
+        "word": "wohnraum",
+        "count": 9,
+        "score": 29.4,
+        "ratio": 25.3
+      },
+      {
+        "word": "vermieter",
+        "count": 6,
+        "score": 23.1,
+        "ratio": 46.2
+      },
+      {
+        "word": "landsleute",
+        "count": 6,
+        "score": 18.7,
+        "ratio": 21.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 388,
@@ -126,14 +159,14 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Rainer Galla häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Rainer Galla häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Migration",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
@@ -145,8 +178,7 @@
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Mieter\" nutzt Rainer Galla 87.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "44.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Mieter\" sagte Rainer Galla 9× (44.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

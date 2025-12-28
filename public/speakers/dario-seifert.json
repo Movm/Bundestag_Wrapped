@@ -72,21 +72,30 @@
         "count": 3
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "zukunft",
         "count": 5,
-        "ratioParty": 10.6,
-        "ratioBundestag": 7.5
+        "score": 10.7,
+        "ratio": 7.5
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "zukunft",
+        "count": 5,
+        "score": 12.3,
+        "ratio": 10.6
       },
       {
         "word": "menschen",
         "count": 5,
-        "ratioParty": 3.3,
-        "ratioBundestag": 1.8
+        "score": 7.3,
+        "ratio": 3.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 232,
@@ -103,12 +112,8 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dario Seifert häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dario Seifert häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
       {
         "text": "Wirtschaft",
         "isCorrect": false
@@ -118,12 +123,15 @@
         "isCorrect": true
       },
       {
-        "text": "Ausschuss",
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Zukunft\" nutzt Dario Seifert 10.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "7.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Zukunft\" sagte Dario Seifert 5× (7.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

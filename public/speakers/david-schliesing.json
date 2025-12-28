@@ -72,44 +72,84 @@
         "count": 5
       }
     ],
-    "signatureWords": [
-      {
-        "word": "kolonialismus",
-        "count": 7,
-        "ratioParty": 180.2,
-        "ratioBundestag": 326.9
-      },
+    "signatureWordsBundestag": [
       {
         "word": "weimer",
         "count": 11,
-        "ratioParty": 85.0,
-        "ratioBundestag": 54.1
+        "score": 44.1,
+        "ratio": 54.1
       },
       {
-        "word": "kunst",
+        "word": "kolonialismus",
         "count": 7,
-        "ratioParty": 77.2,
-        "ratioBundestag": 90.2
-      },
-      {
-        "word": "staatsminister",
-        "count": 5,
-        "ratioParty": 55.2,
-        "ratioBundestag": 39.3
+        "score": 40.5,
+        "ratio": 326.9
       },
       {
         "word": "kultur",
         "count": 10,
-        "ratioParty": 38.6,
-        "ratioBundestag": 26.7
+        "score": 33.2,
+        "ratio": 26.7
+      },
+      {
+        "word": "kunst",
+        "count": 7,
+        "score": 31.6,
+        "ratio": 90.2
+      },
+      {
+        "word": "verlage",
+        "count": 6,
+        "score": 30.1,
+        "ratio": 149.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "weimer",
+        "count": 11,
+        "score": 49.0,
+        "ratio": 85.0
+      },
+      {
+        "word": "kultur",
+        "count": 10,
+        "score": 36.8,
+        "ratio": 38.6
+      },
+      {
+        "word": "kolonialismus",
+        "count": 7,
+        "score": 36.4,
+        "ratio": 180.2
+      },
+      {
+        "word": "kunst",
+        "count": 7,
+        "score": 30.5,
+        "ratio": 77.2
+      },
+      {
+        "word": "deutschen",
+        "count": 11,
+        "score": 22.0,
+        "ratio": 6.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "sicher",
         "count": 3,
-        "ratioParty": 4.1,
-        "ratioBundestag": 3.0
+        "score": 4.2,
+        "ratio": 3.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 3,
+        "score": 4.9,
+        "ratio": 4.1
       }
     ]
   },
@@ -133,37 +173,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt David Schliesing häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt David Schliesing häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Verantwortung",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Kolonialismus",
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Weimer",
         "isCorrect": true
-      },
-      {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kolonialismus\" nutzt David Schliesing 180.2× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "326.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Weimer\" sagte David Schliesing 11× (54.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt David Schliesing häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt David Schliesing häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Falsch",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
@@ -171,12 +210,11 @@
         "isCorrect": true
       },
       {
-        "text": "Schlecht",
+        "text": "Notwendig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sicher\" nutzt David Schliesing 4.1× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "3.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte David Schliesing 3× (3.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐬",

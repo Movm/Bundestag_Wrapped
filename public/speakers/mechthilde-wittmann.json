@@ -56,39 +56,79 @@
         "count": 26
       }
     ],
-    "signatureWords": [
-      {
-        "word": "stüwe",
-        "count": 7,
-        "ratioParty": 493.5,
-        "ratioBundestag": 311.1
-      },
-      {
-        "word": "steuerhinterziehung",
-        "count": 5,
-        "ratioParty": 58.8,
-        "ratioBundestag": 34.7
-      },
-      {
-        "word": "aufschlag",
-        "count": 5,
-        "ratioParty": 32.0,
-        "ratioBundestag": 61.7
-      },
+    "signatureWordsBundestag": [
       {
         "word": "wohnen",
         "count": 26,
-        "ratioParty": 31.6,
-        "ratioBundestag": 19.4
+        "score": 78.4,
+        "ratio": 19.4
       },
       {
-        "word": "geliefert",
+        "word": "glaube",
+        "count": 31,
+        "score": 69.1,
+        "ratio": 8.3
+      },
+      {
+        "word": "haushalt",
+        "count": 31,
+        "score": 41.4,
+        "ratio": 2.8
+      },
+      {
+        "word": "stüwe",
         "count": 7,
-        "ratioParty": 24.7,
-        "ratioBundestag": 21.6
+        "score": 40.2,
+        "ratio": 311.1
+      },
+      {
+        "word": "lassen",
+        "count": 27,
+        "score": 38.1,
+        "ratio": 3.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "wohnen",
+        "count": 26,
+        "score": 90.6,
+        "ratio": 31.6
+      },
+      {
+        "word": "glaube",
+        "count": 31,
+        "score": 60.3,
+        "ratio": 6.0
+      },
+      {
+        "word": "stüwe",
+        "count": 7,
+        "score": 43.4,
+        "ratio": 493.5
+      },
+      {
+        "word": "haushalt",
+        "count": 31,
+        "score": 39.7,
+        "ratio": 2.6
+      },
+      {
+        "word": "lassen",
+        "count": 27,
+        "score": 38.7,
+        "ratio": 3.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 7,
+        "score": 7.9,
+        "ratio": 2.1
+      }
+    ],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 701,
@@ -115,44 +155,56 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Mechthilde Wittmann häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Mechthilde Wittmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Freiheit",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Ausschuss",
+        "text": "Wohnen",
+        "isCorrect": true
+      },
+      {
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Europa",
+        "text": "Reform",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "\"Wohnen\" sagte Mechthilde Wittmann 26× (19.4× häufiger als der Bundestag-Durchschnitt)."
+  },
+  "signatureAdjectiveQuiz": {
+    "question": "Welches Adjektiv nutzt Mechthilde Wittmann häufiger als der Bundestag-Durchschnitt?",
+    "options": [
+      {
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Stüwe",
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Stüwe\" nutzt Mechthilde Wittmann 493.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "311.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Mechthilde Wittmann 7× (2.1× häufiger als der Bundestag-Durchschnitt)."
   },
-  "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Clevere Strategin",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüterin",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 1.0
-      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -160,6 +212,14 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
+      },
+      {
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrliche Rednerin",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.971
       }
     ]
   },

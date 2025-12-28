@@ -56,68 +56,132 @@
         "count": 11
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "klimaschutz",
+        "count": 35,
+        "score": 98.8,
+        "ratio": 15.8
+      },
       {
         "word": "rückbau",
         "count": 7,
-        "ratioParty": 561.6,
-        "ratioBundestag": 88.3
+        "score": 31.4,
+        "ratio": 88.3
+      },
+      {
+        "word": "reaktoren",
+        "count": 5,
+        "score": 25.3,
+        "ratio": 155.3
+      },
+      {
+        "word": "verantwortung",
+        "count": 16,
+        "score": 24.1,
+        "ratio": 3.5
       },
       {
         "word": "vorsorge",
         "count": 6,
-        "ratioParty": 48.1,
-        "ratioBundestag": 47.5
-      },
-      {
-        "word": "teuer",
-        "count": 5,
-        "ratioParty": 23.6,
-        "ratioBundestag": 9.3
-      },
-      {
-        "word": "sozialer",
-        "count": 6,
-        "ratioParty": 18.5,
-        "ratioBundestag": 22.0
-      },
+        "score": 23.3,
+        "ratio": 47.5
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "klimaschutz",
         "count": 35,
-        "ratioParty": 14.3,
-        "ratioBundestag": 15.8
+        "score": 95.4,
+        "ratio": 14.3
+      },
+      {
+        "word": "rückbau",
+        "count": 7,
+        "score": 44.3,
+        "ratio": 561.6
+      },
+      {
+        "word": "vorsorge",
+        "count": 6,
+        "score": 23.4,
+        "ratio": 48.1
+      },
+      {
+        "word": "verantwortung",
+        "count": 16,
+        "score": 22.3,
+        "ratio": 3.0
+      },
+      {
+        "word": "schützt",
+        "count": 8,
+        "score": 20.7,
+        "ratio": 12.3
       }
     ],
-    "signatureAdjectives": [
-      {
-        "word": "teuer",
-        "count": 5,
-        "ratioParty": 23.6,
-        "ratioBundestag": 9.3
-      },
+    "signatureAdjectivesBundestag": [
       {
         "word": "sozial",
         "count": 6,
-        "ratioParty": 10.2,
-        "ratioBundestag": 12.2
+        "score": 15.5,
+        "ratio": 12.2
+      },
+      {
+        "word": "teuer",
+        "count": 5,
+        "score": 11.7,
+        "ratio": 9.3
       },
       {
         "word": "wirtschaftlich",
         "count": 5,
-        "ratioParty": 8.4,
-        "ratioBundestag": 9.0
-      },
-      {
-        "word": "stark",
-        "count": 3,
-        "ratioParty": 2.1,
-        "ratioBundestag": 3.0
+        "score": 11.5,
+        "ratio": 9.0
       },
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 2.0,
-        "ratioBundestag": 2.9
+        "score": 4.1,
+        "ratio": 2.9
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 4.1,
+        "ratio": 3.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "teuer",
+        "count": 5,
+        "score": 16.0,
+        "ratio": 23.6
+      },
+      {
+        "word": "sozial",
+        "count": 6,
+        "score": 14.5,
+        "ratio": 10.2
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 5,
+        "score": 11.2,
+        "ratio": 8.4
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 3.4,
+        "ratio": 2.1
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 3.3,
+        "ratio": 2.0
       }
     ]
   },
@@ -146,50 +210,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jakob Blankenburg häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Jakob Blankenburg häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Kinder",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Gesellschaft",
+        "text": "Europa",
         "isCorrect": false
       },
       {
-        "text": "Rückbau",
+        "text": "Klimaschutz",
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rückbau\" nutzt Jakob Blankenburg 561.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "88.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Klimaschutz\" sagte Jakob Blankenburg 35× (15.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Jakob Blankenburg häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Jakob Blankenburg häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
       {
         "text": "Erfolgreich",
         "isCorrect": false
       },
       {
-        "text": "Teuer",
+        "text": "Sozial",
         "isCorrect": true
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Teuer\" nutzt Jakob Blankenburg 23.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "9.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sozial\" sagte Jakob Blankenburg 6× (12.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -207,12 +269,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.987
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrlicher Redner",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.971
       }
     ]
   },

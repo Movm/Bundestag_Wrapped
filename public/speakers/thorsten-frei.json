@@ -72,56 +72,108 @@
         "count": 12
       }
     ],
-    "signatureWords": [
-      {
-        "word": "exakt",
-        "count": 5,
-        "ratioParty": 68.0,
-        "ratioBundestag": 53.3
-      },
-      {
-        "word": "auswirkungen",
-        "count": 6,
-        "ratioParty": 14.8,
-        "ratioBundestag": 18.4
-      },
-      {
-        "word": "grenzkontrollen",
-        "count": 6,
-        "ratioParty": 11.8,
-        "ratioBundestag": 15.8
-      },
+    "signatureWordsBundestag": [
       {
         "word": "kollege",
         "count": 29,
-        "ratioParty": 11.4,
-        "ratioBundestag": 16.7
+        "score": 83.3,
+        "ratio": 16.7
       },
       {
-        "word": "überzeugt",
-        "count": 7,
-        "ratioParty": 11.3,
-        "ratioBundestag": 15.7
+        "word": "maßnahmen",
+        "count": 18,
+        "score": 38.4,
+        "ratio": 7.4
+      },
+      {
+        "word": "herausforderungen",
+        "count": 14,
+        "score": 34.7,
+        "ratio": 11.0
+      },
+      {
+        "word": "kollegin",
+        "count": 12,
+        "score": 29.6,
+        "ratio": 10.8
+      },
+      {
+        "word": "gesellschaft",
+        "count": 15,
+        "score": 28.5,
+        "ratio": 5.7
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "rechts",
-        "count": 4,
-        "ratioParty": 6.1,
-        "ratioBundestag": 5.4
+        "word": "kollege",
+        "count": 29,
+        "score": 73.1,
+        "ratio": 11.4
       },
+      {
+        "word": "maßnahmen",
+        "count": 18,
+        "score": 33.3,
+        "ratio": 5.4
+      },
+      {
+        "word": "herausforderungen",
+        "count": 14,
+        "score": 30.5,
+        "ratio": 7.9
+      },
+      {
+        "word": "gesellschaft",
+        "count": 15,
+        "score": 27.3,
+        "ratio": 5.2
+      },
+      {
+        "word": "bundesregierung",
+        "count": 20,
+        "score": 27.1,
+        "ratio": 2.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "entscheidend",
         "count": 4,
-        "ratioParty": 3.9,
-        "ratioBundestag": 6.3
+        "score": 8.0,
+        "ratio": 6.3
+      },
+      {
+        "word": "rechts",
+        "count": 4,
+        "score": 7.4,
+        "ratio": 5.4
       },
       {
         "word": "erfolgreich",
         "count": 3,
-        "ratioParty": 3.8,
-        "ratioBundestag": 5.7
+        "score": 5.7,
+        "ratio": 5.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "rechts",
+        "count": 4,
+        "score": 7.8,
+        "ratio": 6.1
+      },
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 6.3,
+        "ratio": 3.9
+      },
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 4.7,
+        "ratio": 3.8
       }
     ]
   },
@@ -145,50 +197,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Thorsten Frei häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Thorsten Frei häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Rente",
+        "text": "Europa",
         "isCorrect": false
       },
       {
-        "text": "Fraktion",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
-        "text": "Exakt",
+        "text": "Kollege",
         "isCorrect": true
       },
       {
-        "text": "Gesellschaft",
+        "text": "Energie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Exakt\" nutzt Thorsten Frei 68.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "53.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Kollege\" sagte Thorsten Frei 29× (16.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Thorsten Frei häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Thorsten Frei häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Rechts",
-        "isCorrect": true
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
+        "isCorrect": false
       },
       {
         "text": "National",
         "isCorrect": false
       },
       {
-        "text": "Stark",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
+        "text": "Entscheidend",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Rechts\" nutzt Thorsten Frei 6.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "5.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Entscheidend\" sagte Thorsten Frei 4× (6.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

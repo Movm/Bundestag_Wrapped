@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "vietnam",
         "count": 8,
-        "ratioParty": 1017.4,
-        "ratioBundestag": 1125.7
-      },
-      {
-        "word": "bundesministerin",
-        "count": 5,
-        "ratioParty": 212.0,
-        "ratioBundestag": 79.6
+        "score": 56.2,
+        "ratio": 1125.7
       },
       {
         "word": "steuerreformen",
         "count": 5,
-        "ratioParty": 50.7,
-        "ratioBundestag": 2814.3
-      },
-      {
-        "word": "agenda",
-        "count": 6,
-        "ratioParty": 30.9,
-        "ratioBundestag": 24.2
+        "score": 39.7,
+        "ratio": 2814.3
       },
       {
         "word": "projekte",
         "count": 8,
-        "ratioParty": 23.8,
-        "ratioBundestag": 33.5
+        "score": 28.3,
+        "ratio": 33.5
+      },
+      {
+        "word": "bundesministerin",
+        "count": 5,
+        "score": 22.0,
+        "ratio": 79.6
+      },
+      {
+        "word": "deutschen",
+        "count": 9,
+        "score": 19.5,
+        "ratio": 7.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "vietnam",
+        "count": 8,
+        "score": 55.4,
+        "ratio": 1017.4
+      },
+      {
+        "word": "bundesministerin",
+        "count": 5,
+        "score": 26.8,
+        "ratio": 212.0
+      },
+      {
+        "word": "projekte",
+        "count": 8,
+        "score": 25.7,
+        "ratio": 23.8
+      },
+      {
+        "word": "agenda",
+        "count": 6,
+        "score": 20.8,
+        "ratio": 30.9
+      },
+      {
+        "word": "steuerreformen",
+        "count": 5,
+        "score": 19.7,
+        "ratio": 50.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 291,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Johann Martel häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Johann Martel häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
       {
         "text": "Vietnam",
         "isCorrect": true
       },
       {
-        "text": "Verantwortung",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Familie",
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Vietnam\" nutzt Johann Martel 1017.4× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "1125.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Vietnam\" sagte Johann Martel 8× (1125.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

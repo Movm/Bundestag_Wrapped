@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "steuern",
+        "count": 8,
+        "score": 23.9,
+        "ratio": 18.9
+      },
+      {
+        "word": "bürger",
+        "count": 11,
+        "score": 23.1,
+        "ratio": 7.2
+      },
       {
         "word": "umverteilung",
         "count": 5,
-        "ratioParty": 41.5,
-        "ratioBundestag": 95.0
+        "score": 22.8,
+        "ratio": 95.0
+      },
+      {
+        "word": "staat",
+        "count": 9,
+        "score": 19.9,
+        "ratio": 8.1
       },
       {
         "word": "preise",
         "count": 5,
-        "ratioParty": 27.4,
-        "ratioBundestag": 30.6
+        "score": 17.3,
+        "ratio": 30.6
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "steuern",
+        "count": 8,
+        "score": 19.0,
+        "ratio": 9.8
+      },
+      {
+        "word": "umverteilung",
+        "count": 5,
+        "score": 18.7,
+        "ratio": 41.5
+      },
+      {
+        "word": "staat",
+        "count": 9,
+        "score": 16.8,
+        "ratio": 5.4
+      },
+      {
+        "word": "preise",
+        "count": 5,
+        "score": 16.7,
+        "ratio": 27.4
       },
       {
         "word": "entsteht",
         "count": 5,
-        "ratioParty": 25.2,
-        "ratioBundestag": 23.1
-      },
-      {
-        "word": "zusätzliche",
-        "count": 5,
-        "ratioParty": 23.8,
-        "ratioBundestag": 19.3
-      },
-      {
-        "word": "möglich",
-        "count": 5,
-        "ratioParty": 12.1,
-        "ratioBundestag": 7.4
+        "score": 16.3,
+        "ratio": 25.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 433,
@@ -131,27 +164,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Reinhard Mixl häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Reinhard Mixl häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Investitionen",
+        "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Umverteilung",
+        "text": "Steuern",
         "isCorrect": true
       },
       {
-        "text": "Demokratie",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Ausschuss",
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Umverteilung\" nutzt Reinhard Mixl 41.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "95.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Steuern\" sagte Reinhard Mixl 8× (18.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

@@ -72,21 +72,36 @@
         "count": 2
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "wohnungen",
         "count": 5,
-        "ratioParty": 37.0,
-        "ratioBundestag": 50.1
+        "score": 19.7,
+        "ratio": 50.1
       },
       {
         "word": "deutschland",
         "count": 6,
-        "ratioParty": 4.2,
-        "ratioBundestag": 2.9
+        "score": 8.2,
+        "ratio": 2.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "wohnungen",
+        "count": 5,
+        "score": 18.2,
+        "ratio": 37.0
+      },
+      {
+        "word": "deutschland",
+        "count": 6,
+        "score": 9.9,
+        "ratio": 4.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 177,
@@ -103,27 +118,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Mayra Vriesema häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Mayra Vriesema häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
+      },
       {
         "text": "Wohnungen",
         "isCorrect": true
-      },
-      {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wohnungen\" nutzt Mayra Vriesema 37.0× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "50.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wohnungen\" sagte Mayra Vriesema 5× (50.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

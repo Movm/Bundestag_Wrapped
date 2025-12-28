@@ -68,50 +68,96 @@
         "count": 11
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "mehrwertsteuer",
-        "count": 11,
-        "ratioParty": 879.4,
-        "ratioBundestag": 70.3
+        "word": "bundespolizei",
+        "count": 22,
+        "score": 80.2,
+        "ratio": 37.4
       },
       {
         "word": "messer",
         "count": 10,
-        "ratioParty": 266.5,
-        "ratioBundestag": 115.0
+        "score": 47.5,
+        "ratio": 115.0
       },
       {
-        "word": "gastronomie",
-        "count": 6,
-        "ratioParty": 159.9,
-        "ratioBundestag": 38.3
+        "word": "mehrwertsteuer",
+        "count": 11,
+        "score": 46.9,
+        "ratio": 70.3
       },
       {
-        "word": "beamtinnen",
-        "count": 6,
-        "ratioParty": 95.9,
-        "ratioBundestag": 63.5
+        "word": "polizei",
+        "count": 14,
+        "score": 43.7,
+        "ratio": 21.7
       },
+      {
+        "word": "versammlungen",
+        "count": 5,
+        "score": 38.0,
+        "ratio": 2011.9
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "bundespolizei",
         "count": 22,
-        "ratioParty": 46.3,
-        "ratioBundestag": 37.4
+        "score": 84.8,
+        "ratio": 46.3
+      },
+      {
+        "word": "mehrwertsteuer",
+        "count": 11,
+        "score": 74.6,
+        "ratio": 879.4
+      },
+      {
+        "word": "messer",
+        "count": 10,
+        "score": 55.9,
+        "ratio": 266.5
+      },
+      {
+        "word": "polizei",
+        "count": 14,
+        "score": 47.1,
+        "ratio": 28.0
+      },
+      {
+        "word": "maßnahme",
+        "count": 11,
+        "score": 38.7,
+        "ratio": 32.6
       }
     ],
-    "signatureAdjectives": [
-      {
-        "word": "angemessen",
-        "count": 3,
-        "ratioParty": 14.1,
-        "ratioBundestag": 11.2
-      },
+    "signatureAdjectivesBundestag": [
       {
         "word": "geschützt",
         "count": 5,
-        "ratioParty": 11.1,
-        "ratioBundestag": 14.8
+        "score": 13.8,
+        "ratio": 14.8
+      },
+      {
+        "word": "angemessen",
+        "count": 3,
+        "score": 7.5,
+        "ratio": 11.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "geschützt",
+        "count": 5,
+        "score": 12.5,
+        "ratio": 11.1
+      },
+      {
+        "word": "angemessen",
+        "count": 3,
+        "score": 8.1,
+        "ratio": 14.1
       }
     ]
   },
@@ -135,50 +181,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Ingo Vogel häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Ingo Vogel häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Investitionen",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Haushalt",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Minister",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
-        "text": "Mehrwertsteuer",
+        "text": "Bundespolizei",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Mehrwertsteuer\" nutzt Ingo Vogel 879.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "70.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bundespolizei\" sagte Ingo Vogel 22× (37.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Ingo Vogel häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Ingo Vogel häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Angemessen",
-        "isCorrect": true
-      },
       {
         "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "Alt",
+        "text": "Falsch",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Geschützt",
+        "isCorrect": true
+      },
+      {
+        "text": "National",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Angemessen\" nutzt Ingo Vogel 14.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "11.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Geschützt\" sagte Ingo Vogel 5× (14.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -196,12 +240,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.947
+        "emoji": "🐬",
+        "name": "Delfin",
+        "title": "Diplomatischer Redner",
+        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
+        "id": "delfin",
+        "score": 0.854
       }
     ]
   },

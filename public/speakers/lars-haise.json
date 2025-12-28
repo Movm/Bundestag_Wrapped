@@ -72,27 +72,48 @@
         "count": 4
       }
     ],
-    "signatureWords": [
-      {
-        "word": "gesetzentwurf",
-        "count": 5,
-        "ratioParty": 11.7,
-        "ratioBundestag": 9.6
-      },
+    "signatureWordsBundestag": [
       {
         "word": "steuerzahler",
         "count": 5,
-        "ratioParty": 7.5,
-        "ratioBundestag": 25.6
+        "score": 16.4,
+        "ratio": 25.6
+      },
+      {
+        "word": "gesetzentwurf",
+        "count": 5,
+        "score": 11.8,
+        "ratio": 9.6
       },
       {
         "word": "sicherheit",
         "count": 6,
-        "ratioParty": 7.5,
-        "ratioBundestag": 4.6
+        "score": 10.4,
+        "ratio": 4.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "sicherheit",
+        "count": 6,
+        "score": 12.8,
+        "ratio": 7.5
+      },
+      {
+        "word": "gesetzentwurf",
+        "count": 5,
+        "score": 12.7,
+        "ratio": 11.7
+      },
+      {
+        "word": "steuerzahler",
+        "count": 5,
+        "score": 10.7,
+        "ratio": 7.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 317,
@@ -114,27 +135,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Lars Haise häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Lars Haise häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuerzahler",
         "isCorrect": true
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gesetzentwurf\" nutzt Lars Haise 11.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "9.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Steuerzahler\" sagte Lars Haise 5× (25.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

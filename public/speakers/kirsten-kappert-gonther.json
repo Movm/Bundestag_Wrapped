@@ -72,39 +72,72 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "ministerin",
+        "count": 7,
+        "score": 19.1,
+        "ratio": 14.4
+      },
       {
         "word": "versorgung",
         "count": 5,
-        "ratioParty": 50.6,
-        "ratioBundestag": 36.0
+        "score": 18.1,
+        "ratio": 36.0
       },
       {
         "word": "finanzierung",
         "count": 5,
-        "ratioParty": 22.9,
-        "ratioBundestag": 28.4
+        "score": 16.9,
+        "ratio": 28.4
       },
       {
         "word": "dringend",
         "count": 5,
-        "ratioParty": 12.8,
-        "ratioBundestag": 18.4
-      },
-      {
-        "word": "ministerin",
-        "count": 7,
-        "ratioParty": 9.8,
-        "ratioBundestag": 14.4
+        "score": 14.8,
+        "ratio": 18.4
       },
       {
         "word": "zukunft",
         "count": 6,
-        "ratioParty": 6.8,
-        "ratioBundestag": 8.0
+        "score": 13.2,
+        "ratio": 8.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "versorgung",
+        "count": 5,
+        "score": 19.7,
+        "ratio": 50.6
+      },
+      {
+        "word": "ministerin",
+        "count": 7,
+        "score": 16.7,
+        "ratio": 9.8
+      },
+      {
+        "word": "finanzierung",
+        "count": 5,
+        "score": 15.9,
+        "ratio": 22.9
+      },
+      {
+        "word": "dringend",
+        "count": 5,
+        "score": 13.1,
+        "ratio": 12.8
+      },
+      {
+        "word": "zukunft",
+        "count": 6,
+        "score": 12.4,
+        "ratio": 6.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 180,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Kirsten Kappert-Gonther häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Kirsten Kappert-Gonther häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Versorgung",
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Ministerin",
         "isCorrect": true
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Versorgung\" nutzt Dr. Kirsten Kappert-Gonther 50.6× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "36.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ministerin\" sagte Dr. Kirsten Kappert-Gonther 7× (14.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -170,7 +202,7 @@
         "title": "Clevere Strategin",
         "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
         "id": "fuchs",
-        "score": 0.656
+        "score": 0.602
       }
     ]
   },

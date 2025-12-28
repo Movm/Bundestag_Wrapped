@@ -60,44 +60,84 @@
         "count": 12
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "agenda",
+        "count": 20,
+        "score": 58.6,
+        "ratio": 17.8
+      },
+      {
+        "word": "forschung",
+        "count": 17,
+        "score": 42.5,
+        "ratio": 11.2
+      },
       {
         "word": "verlage",
         "count": 7,
-        "ratioParty": 249.3,
-        "ratioBundestag": 86.6
+        "score": 31.3,
+        "ratio": 86.6
+      },
+      {
+        "word": "hightech",
+        "count": 11,
+        "score": 30.5,
+        "ratio": 15.0
       },
       {
         "word": "vorwürfe",
         "count": 7,
-        "ratioParty": 99.7,
-        "ratioBundestag": 51.3
-      },
-      {
-        "word": "unrecht",
-        "count": 5,
-        "ratioParty": 71.2,
-        "ratioBundestag": 41.7
-      },
-      {
-        "word": "wissenschaftlerinnen",
-        "count": 5,
-        "ratioParty": 39.6,
-        "ratioBundestag": 66.5
-      },
-      {
-        "word": "transfer",
-        "count": 5,
-        "ratioParty": 35.6,
-        "ratioBundestag": 46.0
+        "score": 27.7,
+        "ratio": 51.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "agenda",
+        "count": 20,
+        "score": 66.9,
+        "ratio": 27.4
+      },
+      {
+        "word": "forschung",
+        "count": 17,
+        "score": 41.0,
+        "ratio": 10.2
+      },
+      {
+        "word": "verlage",
+        "count": 7,
+        "score": 38.7,
+        "ratio": 249.3
+      },
+      {
+        "word": "hightech",
+        "count": 11,
+        "score": 35.3,
+        "ratio": 23.7
+      },
+      {
+        "word": "vorwürfe",
+        "count": 7,
+        "score": 32.3,
+        "ratio": 99.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "ideologisch",
         "count": 3,
-        "ratioParty": 71.2,
-        "ratioBundestag": 12.0
+        "score": 7.7,
+        "ratio": 12.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "ideologisch",
+        "count": 3,
+        "score": 12.8,
+        "ratio": 71.2
       }
     ]
   },
@@ -126,30 +166,29 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Holger Mann häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Holger Mann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
-      },
-      {
-        "text": "Verlage",
+        "text": "Agenda",
         "isCorrect": true
       },
       {
-        "text": "Freiheit",
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Familie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verlage\" nutzt Holger Mann 249.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "86.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Agenda\" sagte Holger Mann 20× (17.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Holger Mann häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Holger Mann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Klar",
@@ -160,7 +199,7 @@
         "isCorrect": true
       },
       {
-        "text": "Gefährlich",
+        "text": "Alt",
         "isCorrect": false
       },
       {
@@ -168,8 +207,7 @@
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ideologisch\" nutzt Holger Mann 71.2× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "12.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ideologisch\" sagte Holger Mann 3× (12.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -187,12 +225,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.987
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrlicher Redner",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.943
       }
     ]
   },

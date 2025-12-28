@@ -60,39 +60,72 @@
         "count": 16
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "jesiden",
-        "count": 6,
-        "ratioParty": 401.6,
-        "ratioBundestag": 40.5
+        "word": "menschen",
+        "count": 65,
+        "score": 91.2,
+        "ratio": 3.1
       },
       {
-        "word": "kanada",
-        "count": 5,
-        "ratioParty": 334.7,
-        "ratioBundestag": 88.8
+        "word": "mietpreisbremse",
+        "count": 16,
+        "score": 50.5,
+        "ratio": 22.5
+      },
+      {
+        "word": "angucken",
+        "count": 8,
+        "score": 37.5,
+        "ratio": 108.0
       },
       {
         "word": "völkisch",
         "count": 6,
-        "ratioParty": 133.9,
-        "ratioBundestag": 225.0
+        "score": 32.5,
+        "ratio": 225.0
+      },
+      {
+        "word": "leben",
+        "count": 20,
+        "score": 30.8,
+        "ratio": 3.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "menschen",
+        "count": 65,
+        "score": 85.9,
+        "ratio": 2.8
+      },
+      {
+        "word": "mietpreisbremse",
+        "count": 16,
+        "score": 46.7,
+        "ratio": 17.6
       },
       {
         "word": "staatsbürgerschaft",
         "count": 8,
-        "ratioParty": 133.9,
-        "ratioBundestag": 45.0
+        "score": 39.2,
+        "ratio": 133.9
       },
       {
-        "word": "linkspartei",
-        "count": 5,
-        "ratioParty": 83.7,
-        "ratioBundestag": 39.2
+        "word": "jesiden",
+        "count": 6,
+        "score": 36.0,
+        "ratio": 401.6
+      },
+      {
+        "word": "angucken",
+        "count": 8,
+        "score": 33.7,
+        "ratio": 66.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 414,
@@ -124,10 +157,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Hakan Demir häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Hakan Demir häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Freiheit",
+        "text": "Sicherheit",
         "isCorrect": false
       },
       {
@@ -135,33 +168,24 @@
         "isCorrect": false
       },
       {
-        "text": "Bildung",
-        "isCorrect": false
+        "text": "Menschen",
+        "isCorrect": true
       },
       {
-        "text": "Jesiden",
-        "isCorrect": true
+        "text": "Kinder",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Jesiden\" nutzt Hakan Demir 401.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "40.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Menschen\" sagte Hakan Demir 65× (3.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Cleverer Stratege",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüter",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüter",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 1.0
-      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -169,6 +193,14 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
+      },
+      {
+        "emoji": "🐻",
+        "name": "Bär",
+        "title": "Standhafter Debattierer",
+        "reason": "Trotz 24× unterbrochen zu werden, bleibst du standhaft.",
+        "id": "baer",
+        "score": 0.951
       }
     ]
   },

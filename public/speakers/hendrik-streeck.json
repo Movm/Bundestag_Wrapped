@@ -72,39 +72,72 @@
         "count": 3
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "patienten",
         "count": 6,
-        "ratioParty": 73.2,
-        "ratioBundestag": 111.0
+        "score": 28.3,
+        "ratio": 111.0
       },
       {
         "word": "moment",
         "count": 5,
-        "ratioParty": 53.8,
-        "ratioBundestag": 58.3
+        "score": 20.4,
+        "ratio": 58.3
       },
       {
         "word": "reformen",
         "count": 5,
-        "ratioParty": 21.3,
-        "ratioBundestag": 31.0
+        "score": 17.3,
+        "ratio": 31.0
       },
       {
         "word": "einfach",
         "count": 5,
-        "ratioParty": 9.8,
-        "ratioBundestag": 7.7
+        "score": 10.8,
+        "ratio": 7.7
       },
       {
         "word": "menschen",
         "count": 6,
-        "ratioParty": 2.7,
-        "ratioBundestag": 2.1
+        "score": 6.8,
+        "ratio": 2.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "patienten",
+        "count": 6,
+        "score": 25.8,
+        "ratio": 73.2
+      },
+      {
+        "word": "moment",
+        "count": 5,
+        "score": 20.0,
+        "ratio": 53.8
+      },
+      {
+        "word": "reformen",
+        "count": 5,
+        "score": 15.5,
+        "ratio": 21.3
+      },
+      {
+        "word": "einfach",
+        "count": 5,
+        "score": 11.9,
+        "ratio": 9.8
+      },
+      {
+        "word": "menschen",
+        "count": 6,
+        "score": 7.9,
+        "ratio": 2.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 494,
@@ -121,27 +154,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Hendrik Streeck häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Hendrik Streeck häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
+        "text": "Minister",
         "isCorrect": false
       },
       {
         "text": "Patienten",
         "isCorrect": true
+      },
+      {
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaft",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Patienten\" nutzt Dr. Hendrik Streeck 73.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "111.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Patienten\" sagte Dr. Hendrik Streeck 6× (111.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

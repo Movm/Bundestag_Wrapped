@@ -64,44 +64,84 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "heizungsgesetz",
         "count": 5,
-        "ratioParty": 121.4,
-        "ratioBundestag": 90.1
+        "score": 22.6,
+        "ratio": 90.1
       },
       {
         "word": "schiene",
         "count": 6,
-        "ratioParty": 20.0,
-        "ratioBundestag": 29.9
+        "score": 20.6,
+        "ratio": 29.9
+      },
+      {
+        "word": "stehen",
+        "count": 7,
+        "score": 11.5,
+        "ratio": 4.1
       },
       {
         "word": "grünen",
         "count": 6,
-        "ratioParty": 6.6,
-        "ratioBundestag": 5.1
-      },
-      {
-        "word": "neuen",
-        "count": 5,
-        "ratioParty": 4.0,
-        "ratioBundestag": 4.9
+        "score": 10.8,
+        "ratio": 5.1
       },
       {
         "word": "vertrauen",
         "count": 5,
-        "ratioParty": 3.9,
-        "ratioBundestag": 5.6
+        "score": 9.4,
+        "ratio": 5.6
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "heizungsgesetz",
+        "count": 5,
+        "score": 24.0,
+        "ratio": 121.4
+      },
+      {
+        "word": "schiene",
+        "count": 6,
+        "score": 18.3,
+        "ratio": 20.0
+      },
+      {
+        "word": "grünen",
+        "count": 6,
+        "score": 12.1,
+        "ratio": 6.6
+      },
+      {
+        "word": "stehen",
+        "count": 7,
+        "score": 10.9,
+        "ratio": 3.7
+      },
+      {
+        "word": "neuen",
+        "count": 5,
+        "score": 8.0,
+        "ratio": 4.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "schlecht",
         "count": 4,
-        "ratioParty": 34.9,
-        "ratioBundestag": 20.3
+        "score": 12.2,
+        "ratio": 20.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "schlecht",
+        "count": 4,
+        "score": 14.3,
+        "ratio": 34.9
       }
     ]
   },
@@ -125,14 +165,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Günter Baumgartner häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Günter Baumgartner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Heizungsgesetz",
-        "isCorrect": true
-      },
-      {
-        "text": "Minister",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
@@ -140,35 +176,37 @@
         "isCorrect": false
       },
       {
-        "text": "Antrag",
+        "text": "Heizungsgesetz",
+        "isCorrect": true
+      },
+      {
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Heizungsgesetz\" nutzt Günter Baumgartner 121.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "90.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Heizungsgesetz\" sagte Günter Baumgartner 5× (90.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Günter Baumgartner häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Günter Baumgartner häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Gut",
+        "isCorrect": false
+      },
       {
         "text": "Schlecht",
         "isCorrect": true
       },
       {
-        "text": "Erfolgreich",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
+        "text": "National",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schlecht\" nutzt Günter Baumgartner 34.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "20.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Schlecht\" sagte Günter Baumgartner 4× (20.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦫",

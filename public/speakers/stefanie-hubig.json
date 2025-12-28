@@ -60,44 +60,90 @@
         "count": 15
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "strafbar",
-        "count": 5,
-        "ratioParty": 123.2,
-        "ratioBundestag": 124.2
+        "word": "justiz",
+        "count": 21,
+        "score": 67.0,
+        "ratio": 23.3
       },
       {
-        "word": "schuldnerberatung",
-        "count": 6,
-        "ratioParty": 55.5,
-        "ratioBundestag": 46.6
+        "word": "rechtsstaat",
+        "count": 22,
+        "score": 65.7,
+        "ratio": 18.8
+      },
+      {
+        "word": "gewalt",
+        "count": 24,
+        "score": 63.8,
+        "ratio": 13.3
       },
       {
         "word": "verbraucherschutz",
         "count": 15,
-        "ratioParty": 42.7,
-        "ratioBundestag": 43.7
+        "score": 57.0,
+        "ratio": 43.7
       },
       {
-        "word": "speicherung",
-        "count": 5,
-        "ratioParty": 41.1,
-        "ratioBundestag": 28.2
-      },
-      {
-        "word": "richterinnen",
-        "count": 7,
-        "ratioParty": 34.5,
-        "ratioBundestag": 70.5
+        "word": "mietpreisbremse",
+        "count": 16,
+        "score": 52.0,
+        "ratio": 24.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "justiz",
+        "count": 21,
+        "score": 64.6,
+        "ratio": 20.7
+      },
+      {
+        "word": "rechtsstaat",
+        "count": 22,
+        "score": 61.7,
+        "ratio": 15.5
+      },
+      {
+        "word": "gewalt",
+        "count": 24,
+        "score": 57.9,
+        "ratio": 10.1
+      },
+      {
+        "word": "verbraucherschutz",
+        "count": 15,
+        "score": 56.6,
+        "ratio": 42.7
+      },
+      {
+        "word": "mietpreisbremse",
+        "count": 16,
+        "score": 48.2,
+        "ratio": 19.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "geschützt",
         "count": 5,
-        "ratioParty": 10.3,
-        "ratioBundestag": 13.7
+        "score": 13.4,
+        "ratio": 13.7
+      },
+      {
+        "word": "sicher",
+        "count": 5,
+        "score": 6.3,
+        "ratio": 2.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "geschützt",
+        "count": 5,
+        "score": 12.1,
+        "ratio": 10.3
       }
     ]
   },
@@ -121,50 +167,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Stefanie Hubig häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Stefanie Hubig häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Strafbar",
+        "text": "Justiz",
         "isCorrect": true
+      },
+      {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Haushalt",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Strafbar\" nutzt Dr. Stefanie Hubig 123.2× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "124.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Justiz\" sagte Dr. Stefanie Hubig 21× (23.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Stefanie Hubig häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Stefanie Hubig häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
         "text": "Geschützt",
         "isCorrect": true
+      },
+      {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "National",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Geschützt\" nutzt Dr. Stefanie Hubig 10.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "13.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Geschützt\" sagte Dr. Stefanie Hubig 5× (13.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

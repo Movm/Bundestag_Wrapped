@@ -56,44 +56,84 @@
         "count": 12
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "schutz",
+        "count": 18,
+        "score": 39.6,
+        "ratio": 8.0
+      },
+      {
+        "word": "sicherheit",
+        "count": 21,
+        "score": 34.7,
+        "ratio": 4.2
+      },
+      {
+        "word": "recht",
+        "count": 18,
+        "score": 31.8,
+        "ratio": 4.9
+      },
       {
         "word": "fußfessel",
         "count": 7,
-        "ratioParty": 70.3,
-        "ratioBundestag": 84.3
+        "score": 31.1,
+        "ratio": 84.3
       },
       {
         "word": "rechtspolitik",
         "count": 7,
-        "ratioParty": 65.3,
-        "ratioBundestag": 69.9
+        "score": 29.8,
+        "ratio": 69.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "schutz",
+        "count": 18,
+        "score": 39.5,
+        "ratio": 8.0
+      },
+      {
+        "word": "recht",
+        "count": 18,
+        "score": 34.6,
+        "ratio": 5.8
       },
       {
         "word": "mietpreisbremse",
         "count": 10,
-        "ratioParty": 25.1,
-        "ratioBundestag": 16.7
+        "score": 32.6,
+        "ratio": 25.1
       },
       {
-        "word": "gerichte",
-        "count": 5,
-        "ratioParty": 20.4,
-        "ratioBundestag": 16.1
+        "word": "sicherheit",
+        "count": 21,
+        "score": 32.2,
+        "ratio": 3.6
       },
       {
-        "word": "sicherheitsbehörden",
-        "count": 8,
-        "ratioParty": 20.1,
-        "ratioBundestag": 25.2
+        "word": "fußfessel",
+        "count": 7,
+        "score": 29.9,
+        "ratio": 70.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "rechts",
         "count": 6,
-        "ratioParty": 9.0,
-        "ratioBundestag": 7.8
+        "score": 13.1,
+        "ratio": 7.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "rechts",
+        "count": 6,
+        "score": 13.8,
+        "ratio": 9.0
       }
     ]
   },
@@ -122,33 +162,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Günter Krings häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Günter Krings häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Fraktion",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Fußfessel",
+        "text": "Schutz",
         "isCorrect": true
+      },
+      {
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Fußfessel\" nutzt Dr. Günter Krings 70.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "84.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Schutz\" sagte Dr. Günter Krings 18× (8.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Günter Krings häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Günter Krings häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Klar",
+        "text": "Rechts",
+        "isCorrect": true
+      },
+      {
+        "text": "Gut",
         "isCorrect": false
       },
       {
@@ -156,16 +199,11 @@
         "isCorrect": false
       },
       {
-        "text": "Sozial",
+        "text": "Sicher",
         "isCorrect": false
-      },
-      {
-        "text": "Rechts",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Rechts\" nutzt Dr. Günter Krings 9.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "7.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Rechts\" sagte Dr. Günter Krings 6× (7.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

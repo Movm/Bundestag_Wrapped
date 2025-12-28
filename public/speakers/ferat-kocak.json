@@ -72,39 +72,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "neukölln",
+        "count": 9,
+        "score": 57.7,
+        "ratio": 606.7
+      },
+      {
+        "word": "menschen",
+        "count": 28,
+        "score": 43.2,
+        "ratio": 3.7
+      },
       {
         "word": "hanau",
         "count": 6,
-        "ratioParty": 586.9,
-        "ratioBundestag": 1132.6
+        "score": 42.2,
+        "ratio": 1132.6
       },
       {
-        "word": "einbürgerung",
+        "word": "leben",
+        "count": 15,
+        "score": 32.4,
+        "ratio": 7.7
+      },
+      {
+        "word": "leyla",
+        "count": 8,
+        "score": 30.7,
+        "ratio": 45.3
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "hanau",
         "count": 6,
-        "ratioParty": 195.6,
-        "ratioBundestag": 67.4
-      },
-      {
-        "word": "verfehlten",
-        "count": 5,
-        "ratioParty": 163.0,
-        "ratioBundestag": 236.0
-      },
-      {
-        "word": "antifaschismus",
-        "count": 5,
-        "ratioParty": 97.8,
-        "ratioBundestag": 277.6
+        "score": 38.3,
+        "ratio": 586.9
       },
       {
         "word": "neukölln",
         "count": 9,
-        "ratioParty": 51.0,
-        "ratioBundestag": 606.7
+        "score": 35.6,
+        "ratio": 51.0
+      },
+      {
+        "word": "einbürgerung",
+        "count": 6,
+        "score": 31.7,
+        "ratio": 195.6
+      },
+      {
+        "word": "menschen",
+        "count": 28,
+        "score": 31.6,
+        "ratio": 2.1
+      },
+      {
+        "word": "leyla",
+        "count": 8,
+        "score": 30.7,
+        "ratio": 45.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 399,
@@ -126,44 +159,35 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Ferat Koçak häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Ferat Koçak häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Politik",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Investitionen",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
-        "text": "Hanau",
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Neukölln",
         "isCorrect": true
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Hanau\" nutzt Ferat Koçak 586.9× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "1132.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Neukölln\" sagte Ferat Koçak 9× (606.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Cleverer Stratege",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🦀",
+    "name": "Krabbe",
+    "title": "Hartnäckiger Debattierer",
+    "reason": "Du hältst an deinen Positionen fest und lässt nicht locker.",
+    "id": "krabbe",
     "alternatives": [
-      {
-        "emoji": "🦀",
-        "name": "Krabbe",
-        "title": "Hartnäckiger Debattierer",
-        "reason": "Du hältst an deinen Positionen fest und lässt nicht locker.",
-        "id": "krabbe",
-        "score": 0.888
-      },
       {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
@@ -171,6 +195,14 @@
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.874
+      },
+      {
+        "emoji": "🦉",
+        "name": "Eule",
+        "title": "Themenexperte",
+        "reason": "Dein Fachwort \"Neukölln\" nutzt du 606.7× häufiger als deine Fraktion.",
+        "id": "eule",
+        "score": 0.81
       }
     ]
   },

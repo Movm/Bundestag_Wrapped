@@ -68,39 +68,79 @@
         "count": 12
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "arbeiten",
+        "count": 32,
+        "score": 84.0,
+        "ratio": 12.8
+      },
+      {
+        "word": "sackkarre",
+        "count": 9,
+        "score": 69.4,
+        "ratio": 2222.3
+      },
+      {
+        "word": "beschäftigten",
+        "count": 19,
+        "score": 68.0,
+        "ratio": 34.9
+      },
+      {
+        "word": "abgeordnete",
+        "count": 20,
+        "score": 61.8,
+        "ratio": 21.0
+      },
       {
         "word": "arbeitszeit",
         "count": 12,
-        "ratioParty": 393.2,
-        "ratioBundestag": 109.7
+        "score": 56.5,
+        "ratio": 109.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "arbeiten",
+        "count": 32,
+        "score": 76.5,
+        "ratio": 9.9
       },
       {
-        "word": "arbeitszeiten",
-        "count": 6,
-        "ratioParty": 196.6,
-        "ratioBundestag": 128.8
+        "word": "arbeitszeit",
+        "count": 12,
+        "score": 71.7,
+        "ratio": 393.2
+      },
+      {
+        "word": "beschäftigten",
+        "count": 19,
+        "score": 62.1,
+        "ratio": 25.2
+      },
+      {
+        "word": "abgeordnete",
+        "count": 20,
+        "score": 58.2,
+        "ratio": 17.4
       },
       {
         "word": "tarifverträge",
         "count": 11,
-        "ratioParty": 120.1,
-        "ratioBundestag": 146.8
-      },
-      {
-        "word": "bundestagsabgeordnete",
-        "count": 5,
-        "ratioParty": 98.3,
-        "ratioBundestag": 82.3
-      },
-      {
-        "word": "hinten",
-        "count": 5,
-        "ratioParty": 98.3,
-        "ratioBundestag": 44.1
+        "score": 52.8,
+        "ratio": 120.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 5.2,
+        "ratio": 2.7
+      }
+    ],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 514,
@@ -122,29 +162,49 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jan Dieren häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Jan Dieren häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Fraktion",
+        "text": "Klima",
         "isCorrect": false
       },
       {
-        "text": "Politik",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Arbeitszeit",
+        "text": "Arbeiten",
         "isCorrect": true
       },
       {
-        "text": "Abstimmung",
+        "text": "Reform",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Arbeitszeit\" nutzt Jan Dieren 393.2× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "109.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Arbeiten\" sagte Jan Dieren 32× (12.8× häufiger als der Bundestag-Durchschnitt)."
   },
-  "signatureAdjectiveQuiz": null,
+  "signatureAdjectiveQuiz": {
+    "question": "Welches Adjektiv nutzt Jan Dieren häufiger als der Bundestag-Durchschnitt?",
+    "options": [
+      {
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "\"Sicher\" sagte Jan Dieren 4× (2.7× häufiger als der Bundestag-Durchschnitt)."
+  },
   "spiritAnimal": {
     "emoji": "🐿️",
     "name": "Eichhörnchen",

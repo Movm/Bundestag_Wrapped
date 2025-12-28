@@ -72,56 +72,108 @@
         "count": 24
       }
     ],
-    "signatureWords": [
-      {
-        "word": "haßelmann",
-        "count": 6,
-        "ratioParty": 85.6,
-        "ratioBundestag": 50.2
-      },
-      {
-        "word": "verhandlungen",
-        "count": 6,
-        "ratioParty": 15.1,
-        "ratioBundestag": 5.1
-      },
-      {
-        "word": "glaubwürdigkeit",
-        "count": 7,
-        "ratioParty": 14.3,
-        "ratioBundestag": 14.5
-      },
-      {
-        "word": "stahl",
-        "count": 6,
-        "ratioParty": 13.5,
-        "ratioBundestag": 10.7
-      },
+    "signatureWordsBundestag": [
       {
         "word": "bundeskanzler",
         "count": 31,
-        "ratioParty": 12.4,
-        "ratioBundestag": 10.5
+        "score": 75.7,
+        "ratio": 10.5
+      },
+      {
+        "word": "deutschen",
+        "count": 37,
+        "score": 57.2,
+        "ratio": 3.7
+      },
+      {
+        "word": "sonderschulden",
+        "count": 11,
+        "score": 42.8,
+        "ratio": 48.1
+      },
+      {
+        "word": "bürger",
+        "count": 28,
+        "score": 39.6,
+        "ratio": 3.1
+      },
+      {
+        "word": "endlich",
+        "count": 27,
+        "score": 37.8,
+        "ratio": 3.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "maßgeblich",
-        "count": 3,
-        "ratioParty": 11.7,
-        "ratioBundestag": 7.0
+        "word": "bundeskanzler",
+        "count": 31,
+        "score": 80.5,
+        "ratio": 12.4
       },
+      {
+        "word": "ukraine",
+        "count": 23,
+        "score": 44.9,
+        "ratio": 6.0
+      },
+      {
+        "word": "deutschen",
+        "count": 37,
+        "score": 44.6,
+        "ratio": 2.3
+      },
+      {
+        "word": "lassen",
+        "count": 25,
+        "score": 33.3,
+        "ratio": 2.8
+      },
+      {
+        "word": "osten",
+        "count": 13,
+        "score": 33.2,
+        "ratio": 11.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "sicher",
         "count": 8,
-        "ratioParty": 2.9,
-        "ratioBundestag": 2.1
+        "score": 9.0,
+        "ratio": 2.1
+      },
+      {
+        "word": "maßgeblich",
+        "count": 3,
+        "score": 6.3,
+        "ratio": 7.0
       },
       {
         "word": "wirtschaftlich",
         "count": 3,
-        "ratioParty": 2.7,
-        "ratioBundestag": 2.5
+        "score": 3.8,
+        "ratio": 2.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 8,
+        "score": 10.8,
+        "ratio": 2.9
+      },
+      {
+        "word": "maßgeblich",
+        "count": 3,
+        "score": 7.6,
+        "ratio": 11.7
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 3.9,
+        "ratio": 2.7
       }
     ]
   },
@@ -160,50 +212,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Tino Chrupalla häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Tino Chrupalla häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Debatte",
-        "isCorrect": false
+        "text": "Bundeskanzler",
+        "isCorrect": true
       },
       {
         "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Haßelmann",
-        "isCorrect": true
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Haßelmann\" nutzt Tino Chrupalla 85.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "50.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bundeskanzler\" sagte Tino Chrupalla 31× (10.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Tino Chrupalla häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Tino Chrupalla häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Maßgeblich",
+        "text": "Sicher",
         "isCorrect": true
       },
       {
-        "text": "Europäisch",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
-        "text": "Stark",
+        "text": "Gut",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "National",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Maßgeblich\" nutzt Tino Chrupalla 11.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "7.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Tino Chrupalla 8× (2.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

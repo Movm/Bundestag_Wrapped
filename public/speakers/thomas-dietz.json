@@ -72,39 +72,72 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "krankenhäuser",
         "count": 5,
-        "ratioParty": 39.1,
-        "ratioBundestag": 46.7
+        "score": 19.3,
+        "ratio": 46.7
       },
       {
         "word": "daten",
         "count": 5,
-        "ratioParty": 39.1,
-        "ratioBundestag": 33.6
-      },
-      {
-        "word": "forschung",
-        "count": 5,
-        "ratioParty": 15.9,
-        "ratioBundestag": 14.9
+        "score": 17.7,
+        "ratio": 33.6
       },
       {
         "word": "ausgaben",
         "count": 5,
-        "ratioParty": 14.1,
-        "ratioBundestag": 22.3
+        "score": 15.7,
+        "ratio": 22.3
+      },
+      {
+        "word": "forschung",
+        "count": 5,
+        "score": 13.8,
+        "ratio": 14.9
+      },
+      {
+        "word": "ministerin",
+        "count": 5,
+        "score": 10.6,
+        "ratio": 7.3
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "krankenhäuser",
+        "count": 5,
+        "score": 18.5,
+        "ratio": 39.1
+      },
+      {
+        "word": "daten",
+        "count": 5,
+        "score": 18.5,
+        "ratio": 39.1
+      },
+      {
+        "word": "forschung",
+        "count": 5,
+        "score": 14.1,
+        "ratio": 15.9
+      },
+      {
+        "word": "ausgaben",
+        "count": 5,
+        "score": 13.6,
+        "ratio": 14.1
       },
       {
         "word": "zukunft",
         "count": 5,
-        "ratioParty": 6.7,
-        "ratioBundestag": 4.8
+        "score": 10.2,
+        "ratio": 6.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 532,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Thomas Dietz häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Thomas Dietz häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Energie",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
-      },
       {
         "text": "Krankenhäuser",
         "isCorrect": true
       },
       {
-        "text": "Freiheit",
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Krankenhäuser\" nutzt Thomas Dietz 39.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "46.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Krankenhäuser\" sagte Thomas Dietz 5× (46.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

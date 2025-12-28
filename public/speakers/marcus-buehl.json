@@ -72,50 +72,96 @@
         "count": 10
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "brücken",
+        "count": 14,
+        "score": 48.0,
+        "ratio": 29.7
+      },
+      {
+        "word": "straße",
+        "count": 14,
+        "score": 46.6,
+        "ratio": 26.9
+      },
+      {
+        "word": "straßen",
+        "count": 13,
+        "score": 40.7,
+        "ratio": 21.8
+      },
       {
         "word": "gefälschte",
         "count": 6,
-        "ratioParty": 329.4,
-        "ratioBundestag": 418.6
+        "score": 36.2,
+        "ratio": 418.6
       },
       {
-        "word": "brückensanierungen",
-        "count": 5,
-        "ratioParty": 274.5,
-        "ratioBundestag": 488.3
-      },
-      {
-        "word": "überstunden",
-        "count": 5,
-        "ratioParty": 137.2,
-        "ratioBundestag": 54.3
-      },
-      {
-        "word": "teilnehmer",
-        "count": 5,
-        "ratioParty": 109.8,
-        "ratioBundestag": 143.6
-      },
-      {
-        "word": "verkehrspolitik",
-        "count": 7,
-        "ratioParty": 64.0,
-        "ratioBundestag": 57.0
+        "word": "drohnen",
+        "count": 10,
+        "score": 32.7,
+        "ratio": 25.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "straße",
+        "count": 14,
+        "score": 49.5,
+        "ratio": 33.4
+      },
+      {
+        "word": "brücken",
+        "count": 14,
+        "score": 49.2,
+        "ratio": 32.7
+      },
+      {
+        "word": "straßen",
+        "count": 13,
+        "score": 37.6,
+        "ratio": 17.0
+      },
+      {
+        "word": "gefälschte",
+        "count": 6,
+        "score": 34.8,
+        "ratio": 329.4
+      },
+      {
+        "word": "drohnen",
+        "count": 10,
+        "score": 33.5,
+        "ratio": 27.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "unzureichend",
         "count": 3,
-        "ratioParty": 32.9,
-        "ratioBundestag": 45.8
+        "score": 11.5,
+        "ratio": 45.8
       },
       {
         "word": "grundlegend",
         "count": 3,
-        "ratioParty": 29.9,
-        "ratioBundestag": 21.2
+        "score": 9.3,
+        "ratio": 21.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "unzureichend",
+        "count": 3,
+        "score": 10.6,
+        "ratio": 32.9
+      },
+      {
+        "word": "grundlegend",
+        "count": 3,
+        "score": 10.3,
+        "ratio": 29.9
       }
     ]
   },
@@ -139,50 +185,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Marcus Bühl häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Marcus Bühl häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Arbeit",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefälschte",
+        "text": "Brücken",
         "isCorrect": true
       },
       {
-        "text": "Reform",
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gefälschte\" nutzt Marcus Bühl 329.4× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "418.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Brücken\" sagte Marcus Bühl 14× (29.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Marcus Bühl häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Marcus Bühl häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
+      },
       {
         "text": "Unzureichend",
         "isCorrect": true
-      },
-      {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unzureichend\" nutzt Marcus Bühl 32.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "45.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Unzureichend\" sagte Marcus Bühl 3× (45.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

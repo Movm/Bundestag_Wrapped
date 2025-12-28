@@ -72,62 +72,120 @@
         "count": 16
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "zielgenau",
-        "count": 7,
-        "ratioParty": 71.2,
-        "ratioBundestag": 134.0
+        "word": "investitionen",
+        "count": 37,
+        "score": 94.8,
+        "ratio": 12.0
       },
       {
-        "word": "wirtschaftliches",
-        "count": 9,
-        "ratioParty": 61.0,
-        "ratioBundestag": 76.6
+        "word": "kommunen",
+        "count": 26,
+        "score": 55.9,
+        "ratio": 7.6
       },
       {
-        "word": "energiepreisen",
-        "count": 6,
-        "ratioParty": 52.3,
-        "ratioBundestag": 60.5
+        "word": "länder",
+        "count": 23,
+        "score": 53.7,
+        "ratio": 9.3
       },
       {
-        "word": "absenkung",
-        "count": 10,
-        "ratioParty": 45.2,
-        "ratioBundestag": 51.1
+        "word": "wachstum",
+        "count": 18,
+        "score": 51.2,
+        "ratio": 16.2
       },
       {
-        "word": "stillstand",
-        "count": 5,
-        "ratioParty": 33.9,
-        "ratioBundestag": 25.2
+        "word": "deutschland",
+        "count": 42,
+        "score": 49.2,
+        "ratio": 2.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "investitionen",
+        "count": 37,
+        "score": 91.5,
+        "ratio": 10.8
+      },
+      {
+        "word": "kommunen",
+        "count": 26,
+        "score": 50.4,
+        "ratio": 6.0
+      },
+      {
+        "word": "länder",
+        "count": 23,
+        "score": 49.0,
+        "ratio": 7.4
+      },
+      {
+        "word": "wichtig",
+        "count": 26,
+        "score": 43.6,
+        "ratio": 4.3
+      },
+      {
+        "word": "wachstum",
+        "count": 18,
+        "score": 42.0,
+        "ratio": 9.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "entscheidend",
+        "count": 7,
+        "score": 16.8,
+        "ratio": 10.0
+      },
       {
         "word": "kritisch",
         "count": 4,
-        "ratioParty": 14.8,
-        "ratioBundestag": 13.8
+        "score": 10.8,
+        "ratio": 13.8
       },
       {
         "word": "konstruktiv",
         "count": 3,
-        "ratioParty": 14.6,
-        "ratioBundestag": 14.9
+        "score": 8.3,
+        "ratio": 14.9
       },
       {
         "word": "wettbewerbsfähig",
         "count": 3,
-        "ratioParty": 7.2,
-        "ratioBundestag": 14.0
-      },
+        "score": 8.1,
+        "ratio": 14.0
+      }
+    ],
+    "signatureAdjectivesParty": [
       {
         "word": "entscheidend",
         "count": 7,
-        "ratioParty": 6.2,
-        "ratioBundestag": 10.0
+        "score": 13.8,
+        "ratio": 6.2
+      },
+      {
+        "word": "kritisch",
+        "count": 4,
+        "score": 11.0,
+        "ratio": 14.8
+      },
+      {
+        "word": "konstruktiv",
+        "count": 3,
+        "score": 8.2,
+        "ratio": 14.6
+      },
+      {
+        "word": "wettbewerbsfähig",
+        "count": 3,
+        "score": 6.3,
+        "ratio": 7.2
       }
     ]
   },
@@ -156,50 +214,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Mathias Middelberg häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Mathias Middelberg häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Klima",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Kinder",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Zielgenau",
+        "text": "Investitionen",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Zielgenau\" nutzt Dr. Mathias Middelberg 71.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "134.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Investitionen\" sagte Dr. Mathias Middelberg 37× (12.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Mathias Middelberg häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Mathias Middelberg häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Alt",
+        "text": "Gut",
         "isCorrect": false
       },
       {
-        "text": "Neu",
+        "text": "Stark",
         "isCorrect": false
       },
       {
-        "text": "Kritisch",
+        "text": "Entscheidend",
         "isCorrect": true
       },
       {
-        "text": "Politisch",
+        "text": "Klar",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kritisch\" nutzt Dr. Mathias Middelberg 14.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "13.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Entscheidend\" sagte Dr. Mathias Middelberg 7× (10.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

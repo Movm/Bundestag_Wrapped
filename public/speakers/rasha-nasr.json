@@ -56,44 +56,96 @@
         "count": 19
       }
     ],
-    "signatureWords": [
-      {
-        "word": "syrien",
-        "count": 6,
-        "ratioParty": 85.2,
-        "ratioBundestag": 9.1
-      },
-      {
-        "word": "unterrichtung",
-        "count": 5,
-        "ratioParty": 56.8,
-        "ratioBundestag": 239.3
-      },
+    "signatureWordsBundestag": [
       {
         "word": "drucksache",
         "count": 27,
-        "ratioParty": 46.7,
-        "ratioBundestag": 250.1
-      },
-      {
-        "word": "verurteilt",
-        "count": 6,
-        "ratioParty": 37.9,
-        "ratioBundestag": 26.5
+        "score": 149.2,
+        "ratio": 250.1
       },
       {
         "word": "ratsdokument",
         "count": 16,
-        "ratioParty": 27.6,
-        "ratioBundestag": 306.3
+        "score": 91.6,
+        "ratio": 306.3
+      },
+      {
+        "word": "integration",
+        "count": 19,
+        "score": 62.3,
+        "ratio": 25.6
+      },
+      {
+        "word": "sicherheit",
+        "count": 29,
+        "score": 47.3,
+        "ratio": 4.1
+      },
+      {
+        "word": "werte",
+        "count": 16,
+        "score": 33.5,
+        "ratio": 7.1
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "drucksache",
+        "count": 27,
+        "score": 104.3,
+        "ratio": 46.7
+      },
+      {
+        "word": "integration",
+        "count": 19,
+        "score": 58.5,
+        "ratio": 20.8
+      },
+      {
+        "word": "ratsdokument",
+        "count": 16,
+        "score": 53.7,
+        "ratio": 27.6
+      },
+      {
+        "word": "sicherheit",
+        "count": 29,
+        "score": 39.5,
+        "ratio": 2.9
+      },
+      {
+        "word": "werte",
+        "count": 16,
+        "score": 33.3,
+        "ratio": 7.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "peinlich",
         "count": 3,
-        "ratioParty": 34.1,
-        "ratioBundestag": 16.0
+        "score": 8.5,
+        "ratio": 16.0
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 3.4,
+        "ratio": 2.1
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 3.3,
+        "ratio": 2.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "peinlich",
+        "count": 3,
+        "score": 10.7,
+        "ratio": 34.1
       }
     ]
   },
@@ -127,33 +179,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Rasha Nasr häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Rasha Nasr häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Syrien",
+        "text": "Drucksache",
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Rente",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Syrien\" nutzt Rasha Nasr 85.2× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "9.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Drucksache\" sagte Rasha Nasr 27× (250.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Rasha Nasr häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Rasha Nasr häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Erfolgreich",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
@@ -161,7 +212,7 @@
         "isCorrect": true
       },
       {
-        "text": "Sozial",
+        "text": "Sicher",
         "isCorrect": false
       },
       {
@@ -169,8 +220,7 @@
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Peinlich\" nutzt Rasha Nasr 34.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "16.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Peinlich\" sagte Rasha Nasr 3× (16.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐴",

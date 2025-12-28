@@ -72,44 +72,84 @@
         "count": 5
       }
     ],
-    "signatureWords": [
-      {
-        "word": "queeren",
-        "count": 5,
-        "ratioParty": 190.2,
-        "ratioBundestag": 274.9
-      },
-      {
-        "word": "artikel",
-        "count": 7,
-        "ratioParty": 66.6,
-        "ratioBundestag": 32.5
-      },
+    "signatureWordsBundestag": [
       {
         "word": "queere",
         "count": 11,
-        "ratioParty": 62.8,
-        "ratioBundestag": 155.1
+        "score": 55.6,
+        "ratio": 155.1
       },
       {
         "word": "selbstbestimmungsgesetz",
         "count": 7,
-        "ratioParty": 46.2,
-        "ratioBundestag": 219.9
+        "score": 37.8,
+        "ratio": 219.9
+      },
+      {
+        "word": "queeren",
+        "count": 5,
+        "score": 28.1,
+        "ratio": 274.9
+      },
+      {
+        "word": "menschen",
+        "count": 20,
+        "score": 28.0,
+        "ratio": 3.1
+      },
+      {
+        "word": "artikel",
+        "count": 7,
+        "score": 24.6,
+        "ratio": 32.5
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "queere",
+        "count": 11,
+        "score": 45.7,
+        "ratio": 62.8
+      },
+      {
+        "word": "artikel",
+        "count": 7,
+        "score": 29.5,
+        "ratio": 66.6
+      },
+      {
+        "word": "selbstbestimmungsgesetz",
+        "count": 7,
+        "score": 27.0,
+        "ratio": 46.2
+      },
+      {
+        "word": "queeren",
+        "count": 5,
+        "score": 26.3,
+        "ratio": 190.2
       },
       {
         "word": "grundgesetz",
         "count": 6,
-        "ratioParty": 20.1,
-        "ratioBundestag": 19.6
+        "score": 18.3,
+        "ratio": 20.1
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "sicher",
         "count": 3,
-        "ratioParty": 6.0,
-        "ratioBundestag": 4.4
+        "score": 5.1,
+        "ratio": 4.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 3,
+        "score": 5.8,
+        "ratio": 6.0
       }
     ]
   },
@@ -133,18 +173,18 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Maik Brückner häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Maik Brückner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Queeren",
+        "text": "Queere",
         "isCorrect": true
       },
       {
-        "text": "Steuern",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Migration",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
@@ -152,47 +192,37 @@
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Queeren\" nutzt Maik Brückner 190.2× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "274.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Queere\" sagte Maik Brückner 11× (155.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Maik Brückner häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Maik Brückner häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Neu",
+        "isCorrect": false
+      },
       {
         "text": "Sicher",
         "isCorrect": true
       },
       {
-        "text": "Wichtig",
+        "text": "Alt",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Falsch",
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sicher\" nutzt Maik Brückner 6.0× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "4.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Maik Brückner 3× (4.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Cleverer Stratege",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüter",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüter",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 0.892
-      },
       {
         "emoji": "🐬",
         "name": "Delfin",
@@ -200,6 +230,14 @@
         "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
         "id": "delfin",
         "score": 0.842
+      },
+      {
+        "emoji": "🦜",
+        "name": "Papagei",
+        "title": "Neugieriger Fragesteller",
+        "reason": "Mit vielen Fragen bringst du wichtige Themen auf den Tisch.",
+        "id": "papagei",
+        "score": 0.809
       }
     ]
   },

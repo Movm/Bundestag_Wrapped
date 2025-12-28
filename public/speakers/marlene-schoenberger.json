@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "jüdinnen",
-        "count": 5,
-        "ratioParty": 275.4,
-        "ratioBundestag": 115.2
-      },
-      {
-        "word": "juden",
-        "count": 6,
-        "ratioParty": 247.8,
-        "ratioBundestag": 74.3
+        "word": "antisemitismus",
+        "count": 18,
+        "score": 90.6,
+        "ratio": 152.5
       },
       {
         "word": "erschossen",
         "count": 6,
-        "ratioParty": 247.8,
-        "ratioBundestag": 363.9
+        "score": 35.4,
+        "ratio": 363.9
       },
       {
-        "word": "antisemitismus",
-        "count": 18,
-        "ratioParty": 156.5,
-        "ratioBundestag": 152.5
+        "word": "juden",
+        "count": 6,
+        "score": 25.9,
+        "ratio": 74.3
+      },
+      {
+        "word": "jüdinnen",
+        "count": 5,
+        "score": 23.8,
+        "ratio": 115.2
       },
       {
         "word": "queere",
         "count": 5,
-        "ratioParty": 28.5,
-        "ratioBundestag": 68.6
+        "score": 21.2,
+        "ratio": 68.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "antisemitismus",
+        "count": 18,
+        "score": 91.1,
+        "ratio": 156.5
+      },
+      {
+        "word": "juden",
+        "count": 6,
+        "score": 33.1,
+        "ratio": 247.8
+      },
+      {
+        "word": "erschossen",
+        "count": 6,
+        "score": 33.1,
+        "ratio": 247.8
+      },
+      {
+        "word": "jüdinnen",
+        "count": 5,
+        "score": 28.1,
+        "ratio": 275.4
+      },
+      {
+        "word": "queere",
+        "count": 5,
+        "score": 16.9,
+        "ratio": 28.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 365,
@@ -126,43 +159,42 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Marlene Schönberger häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Marlene Schönberger häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Familie",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Debatte",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Jüdinnen",
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Antisemitismus",
         "isCorrect": true
-      },
-      {
-        "text": "Abstimmung",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Jüdinnen\" nutzt Marlene Schönberger 275.4× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "115.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Antisemitismus\" sagte Marlene Schönberger 18× (152.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Clevere Strategin",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüterin",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
       {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 0.813
+        "emoji": "🦊",
+        "name": "Fuchs",
+        "title": "Clevere Strategin",
+        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+        "id": "fuchs",
+        "score": 0.809
       },
       {
         "emoji": "🦫",

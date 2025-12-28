@@ -72,39 +72,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
-      {
-        "word": "verteidigung",
-        "count": 7,
-        "ratioParty": 40.4,
-        "ratioBundestag": 24.1
-      },
+    "signatureWordsBundestag": [
       {
         "word": "unifil",
         "count": 6,
-        "ratioParty": 30.1,
-        "ratioBundestag": 76.0
-      },
-      {
-        "word": "angriffe",
-        "count": 7,
-        "ratioParty": 24.2,
-        "ratioBundestag": 26.4
+        "score": 26.1,
+        "ratio": 76.0
       },
       {
         "word": "whatever",
         "count": 5,
-        "ratioParty": 24.0,
-        "ratioBundestag": 174.1
+        "score": 25.8,
+        "ratio": 174.1
+      },
+      {
+        "word": "linke",
+        "count": 10,
+        "score": 25.6,
+        "ratio": 11.9
       },
       {
         "word": "takes",
         "count": 5,
-        "ratioParty": 24.0,
-        "ratioBundestag": 167.1
+        "score": 25.6,
+        "ratio": 167.1
+      },
+      {
+        "word": "angriffe",
+        "count": 7,
+        "score": 23.2,
+        "ratio": 26.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "verteidigung",
+        "count": 7,
+        "score": 26.1,
+        "ratio": 40.4
+      },
+      {
+        "word": "angriffe",
+        "count": 7,
+        "score": 22.6,
+        "ratio": 24.2
+      },
+      {
+        "word": "unifil",
+        "count": 6,
+        "score": 20.6,
+        "ratio": 30.1
+      },
+      {
+        "word": "bundesregierung",
+        "count": 14,
+        "score": 20.2,
+        "ratio": 3.2
+      },
+      {
+        "word": "bundeswehr",
+        "count": 8,
+        "score": 18.7,
+        "ratio": 9.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 332,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Ulrich Thoden häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Ulrich Thoden häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Verteidigung",
+        "text": "Unifil",
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Arbeit",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Haushalt",
+        "text": "Bundesregierung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verteidigung\" nutzt Ulrich Thoden 40.4× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "24.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Unifil\" sagte Ulrich Thoden 6× (76.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

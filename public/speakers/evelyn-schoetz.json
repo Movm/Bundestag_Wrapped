@@ -72,39 +72,72 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "pflege",
+        "count": 20,
+        "score": 86.5,
+        "ratio": 74.5
+      },
       {
         "word": "pflegekräfte",
         "count": 7,
-        "ratioParty": 150.7,
-        "ratioBundestag": 123.7
+        "score": 33.8,
+        "ratio": 123.7
       },
       {
         "word": "pflegeversicherung",
         "count": 6,
-        "ratioParty": 150.7,
-        "ratioBundestag": 86.1
-      },
-      {
-        "word": "pflege",
-        "count": 20,
-        "ratioParty": 79.3,
-        "ratioBundestag": 74.5
+        "score": 26.8,
+        "ratio": 86.1
       },
       {
         "word": "kosten",
         "count": 6,
-        "ratioParty": 7.3,
-        "ratioBundestag": 9.9
+        "score": 14.4,
+        "ratio": 9.9
       },
       {
         "word": "braucht",
         "count": 6,
-        "ratioParty": 5.0,
-        "ratioBundestag": 5.3
+        "score": 11.1,
+        "ratio": 5.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "pflege",
+        "count": 20,
+        "score": 87.7,
+        "ratio": 79.3
+      },
+      {
+        "word": "pflegekräfte",
+        "count": 7,
+        "score": 35.2,
+        "ratio": 150.7
+      },
+      {
+        "word": "pflegeversicherung",
+        "count": 6,
+        "score": 30.1,
+        "ratio": 150.7
+      },
+      {
+        "word": "kosten",
+        "count": 6,
+        "score": 12.7,
+        "ratio": 7.3
+      },
+      {
+        "word": "braucht",
+        "count": 6,
+        "score": 10.7,
+        "ratio": 5.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 288,
@@ -126,14 +159,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Evelyn Schötz häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Evelyn Schötz häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
+        "text": "Klima",
         "isCorrect": false
       },
       {
@@ -141,29 +170,24 @@
         "isCorrect": false
       },
       {
-        "text": "Pflegekräfte",
+        "text": "Pflege",
         "isCorrect": true
+      },
+      {
+        "text": "Gesellschaft",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Pflegekräfte\" nutzt Evelyn Schötz 150.7× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "123.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Pflege\" sagte Evelyn Schötz 20× (74.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Clevere Strategin",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüterin",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 0.794
-      },
       {
         "emoji": "🦫",
         "name": "Biber",
@@ -171,6 +195,14 @@
         "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
         "id": "biber",
         "score": 0.75
+      },
+      {
+        "emoji": "🦜",
+        "name": "Papagei",
+        "title": "Neugierige Fragestellerin",
+        "reason": "Mit vielen Fragen bringst du wichtige Themen auf den Tisch.",
+        "id": "papagei",
+        "score": 0.709
       }
     ]
   },

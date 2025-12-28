@@ -72,44 +72,84 @@
         "count": 5
       }
     ],
-    "signatureWords": [
-      {
-        "word": "sportmilliarde",
-        "count": 5,
-        "ratioParty": 443.7,
-        "ratioBundestag": 98.3
-      },
+    "signatureWordsBundestag": [
       {
         "word": "olympia",
         "count": 7,
-        "ratioParty": 155.3,
-        "ratioBundestag": 330.2
+        "score": 40.6,
+        "ratio": 330.2
+      },
+      {
+        "word": "sport",
+        "count": 7,
+        "score": 26.1,
+        "ratio": 40.7
       },
       {
         "word": "schwimmbäder",
         "count": 5,
-        "ratioParty": 147.9,
-        "ratioBundestag": 122.8
+        "score": 24.1,
+        "ratio": 122.8
+      },
+      {
+        "word": "sportmilliarde",
+        "count": 5,
+        "score": 23.0,
+        "ratio": 98.3
       },
       {
         "word": "vereine",
         "count": 5,
-        "ratioParty": 83.2,
-        "ratioBundestag": 68.6
-      },
-      {
-        "word": "solide",
-        "count": 5,
-        "ratioParty": 55.5,
-        "ratioBundestag": 57.2
+        "score": 21.2,
+        "ratio": 68.6
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "olympia",
+        "count": 7,
+        "score": 35.4,
+        "ratio": 155.3
+      },
+      {
+        "word": "sportmilliarde",
+        "count": 5,
+        "score": 30.5,
+        "ratio": 443.7
+      },
+      {
+        "word": "sport",
+        "count": 7,
+        "score": 26.5,
+        "ratio": 43.3
+      },
+      {
+        "word": "schwimmbäder",
+        "count": 5,
+        "score": 25.0,
+        "ratio": 147.9
+      },
+      {
+        "word": "vereine",
+        "count": 5,
+        "score": 22.2,
+        "ratio": 83.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "solide",
         "count": 5,
-        "ratioParty": 55.5,
-        "ratioBundestag": 57.2
+        "score": 20.3,
+        "ratio": 57.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "solide",
+        "count": 5,
+        "score": 20.2,
+        "ratio": 55.5
       }
     ]
   },
@@ -133,50 +173,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Thomas Korell häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Thomas Korell häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Sportmilliarde",
-        "isCorrect": true
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
       },
       {
         "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Bildung",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
-        "isCorrect": false
+        "text": "Olympia",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Sportmilliarde\" nutzt Thomas Korell 443.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "98.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Olympia\" sagte Thomas Korell 7× (330.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Thomas Korell häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Thomas Korell häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Richtig",
+        "isCorrect": false
+      },
       {
         "text": "Solide",
         "isCorrect": true
       },
       {
-        "text": "Gefährlich",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
+        "text": "Europäisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Solide\" nutzt Thomas Korell 55.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "57.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Solide\" sagte Thomas Korell 5× (57.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

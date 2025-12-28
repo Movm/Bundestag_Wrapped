@@ -64,44 +64,84 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "rettungsassistenten",
         "count": 7,
-        "ratioParty": 897.8,
-        "ratioBundestag": 3989.3
+        "score": 58.0,
+        "ratio": 3989.3
       },
       {
         "word": "einheit",
         "count": 11,
-        "ratioParty": 56.4,
-        "ratioBundestag": 43.8
+        "score": 41.8,
+        "ratio": 43.8
       },
       {
         "word": "minuten",
         "count": 7,
-        "ratioParty": 26.4,
-        "ratioBundestag": 32.4
+        "score": 24.6,
+        "ratio": 32.4
       },
       {
         "word": "pflege",
         "count": 8,
-        "ratioParty": 19.7,
-        "ratioBundestag": 11.4
+        "score": 20.1,
+        "ratio": 11.4
       },
       {
         "word": "herzlichen",
         "count": 9,
-        "ratioParty": 14.1,
-        "ratioBundestag": 5.5
+        "score": 16.8,
+        "ratio": 5.5
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "rettungsassistenten",
+        "count": 7,
+        "score": 47.6,
+        "ratio": 897.8
+      },
+      {
+        "word": "einheit",
+        "count": 11,
+        "score": 44.6,
+        "ratio": 56.4
+      },
+      {
+        "word": "herzlichen",
+        "count": 9,
+        "score": 24.4,
+        "ratio": 14.1
+      },
+      {
+        "word": "pflege",
+        "count": 8,
+        "score": 24.3,
+        "ratio": 19.7
+      },
+      {
+        "word": "minuten",
+        "count": 7,
+        "score": 23.2,
+        "ratio": 26.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "wirksam",
         "count": 3,
-        "ratioParty": 20.3,
-        "ratioBundestag": 12.3
+        "score": 7.8,
+        "ratio": 12.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 9.2,
+        "ratio": 20.3
       }
     ]
   },
@@ -125,37 +165,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Nicole Hess häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Nicole Hess häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
-        "isCorrect": false
-      },
       {
         "text": "Rettungsassistenten",
         "isCorrect": true
       },
       {
-        "text": "Opposition",
-        "isCorrect": false
-      }
-    ],
-    "explanationParty": "\"Rettungsassistenten\" nutzt Nicole Hess 897.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "3989.3× häufiger als der Bundestag-Durchschnitt."
-  },
-  "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Nicole Hess häufiger als der Rest der AfD-Fraktion?",
-    "options": [
-      {
-        "text": "Europäisch",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
-        "text": "Klar",
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "\"Rettungsassistenten\" sagte Nicole Hess 7× (3989.3× häufiger als der Bundestag-Durchschnitt)."
+  },
+  "signatureAdjectiveQuiz": {
+    "question": "Welches Adjektiv nutzt Nicole Hess häufiger als der Bundestag-Durchschnitt?",
+    "options": [
+      {
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
         "isCorrect": false
       },
       {
@@ -163,12 +202,11 @@
         "isCorrect": true
       },
       {
-        "text": "Groß",
+        "text": "Jung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wirksam\" nutzt Nicole Hess 20.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "12.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wirksam\" sagte Nicole Hess 3× (12.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

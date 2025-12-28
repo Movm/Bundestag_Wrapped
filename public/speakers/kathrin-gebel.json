@@ -72,44 +72,84 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "gewaltschutz",
-        "count": 6,
-        "ratioParty": 641.5,
-        "ratioBundestag": 343.6
+        "word": "frauen",
+        "count": 27,
+        "score": 93.0,
+        "ratio": 30.3
       },
       {
-        "word": "fortbildungen",
-        "count": 5,
-        "ratioParty": 534.6,
-        "ratioBundestag": 1288.7
-      },
-      {
-        "word": "istanbul",
-        "count": 5,
-        "ratioParty": 267.3,
-        "ratioBundestag": 171.8
+        "word": "gewalt",
+        "count": 14,
+        "score": 43.4,
+        "ratio": 21.1
       },
       {
         "word": "konvention",
         "count": 7,
-        "ratioParty": 249.5,
-        "ratioBundestag": 267.3
+        "score": 39.1,
+        "ratio": 267.3
       },
       {
-        "word": "plant",
+        "word": "fortbildungen",
         "count": 5,
-        "ratioParty": 53.5,
-        "ratioBundestag": 47.3
+        "score": 35.8,
+        "ratio": 1288.7
+      },
+      {
+        "word": "gewaltschutz",
+        "count": 6,
+        "score": 35.1,
+        "ratio": 343.6
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "frauen",
+        "count": 27,
+        "score": 81.7,
+        "ratio": 19.6
+      },
+      {
+        "word": "gewalt",
+        "count": 14,
+        "score": 38.8,
+        "ratio": 15.0
+      },
+      {
+        "word": "gewaltschutz",
+        "count": 6,
+        "score": 38.8,
+        "ratio": 641.5
+      },
+      {
+        "word": "konvention",
+        "count": 7,
+        "score": 38.7,
+        "ratio": 249.5
+      },
+      {
+        "word": "fortbildungen",
+        "count": 5,
+        "score": 31.4,
+        "ratio": 534.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "angemessen",
         "count": 3,
-        "ratioParty": 35.6,
-        "ratioBundestag": 28.6
+        "score": 10.2,
+        "ratio": 28.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "angemessen",
+        "count": 3,
+        "score": 10.8,
+        "ratio": 35.6
       }
     ]
   },
@@ -133,50 +173,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Kathrin Gebel häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Kathrin Gebel häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Antrag",
+        "text": "Minister",
         "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Frauen",
+        "isCorrect": true
       },
       {
         "text": "Politik",
         "isCorrect": false
-      },
-      {
-        "text": "Gewaltschutz",
-        "isCorrect": true
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gewaltschutz\" nutzt Kathrin Gebel 641.5× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "343.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Frauen\" sagte Kathrin Gebel 27× (30.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Kathrin Gebel häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Kathrin Gebel häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
       {
         "text": "Angemessen",
         "isCorrect": true
       },
       {
-        "text": "Gefährlich",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
+        "text": "Politisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Angemessen\" nutzt Kathrin Gebel 35.6× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "28.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Angemessen\" sagte Kathrin Gebel 3× (28.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐬",
@@ -194,12 +232,12 @@
         "score": 0.95
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.947
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüterin",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 0.899
       }
     ]
   },

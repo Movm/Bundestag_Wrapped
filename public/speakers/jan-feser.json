@@ -52,44 +52,84 @@
         "count": 8
       }
     ],
-    "signatureWords": [
-      {
-        "word": "behinderung",
-        "count": 8,
-        "ratioParty": 557.6,
-        "ratioBundestag": 137.6
-      },
+    "signatureWordsBundestag": [
       {
         "word": "puncto",
         "count": 6,
-        "ratioParty": 418.2,
-        "ratioBundestag": 743.0
+        "score": 39.7,
+        "ratio": 743.0
+      },
+      {
+        "word": "behinderung",
+        "count": 8,
+        "score": 39.5,
+        "ratio": 137.6
       },
       {
         "word": "jähriger",
         "count": 6,
-        "ratioParty": 139.4,
-        "ratioBundestag": 285.8
+        "score": 34.0,
+        "ratio": 285.8
       },
       {
         "word": "jobcenter",
         "count": 8,
-        "ratioParty": 111.5,
-        "ratioBundestag": 64.3
+        "score": 33.4,
+        "ratio": 64.3
       },
       {
-        "word": "vorhanden",
-        "count": 5,
-        "ratioParty": 29.0,
-        "ratioBundestag": 34.8
+        "word": "bürgergeld",
+        "count": 10,
+        "score": 30.5,
+        "ratio": 20.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "behinderung",
+        "count": 8,
+        "score": 50.6,
+        "ratio": 557.6
+      },
+      {
+        "word": "jobcenter",
+        "count": 8,
+        "score": 37.8,
+        "ratio": 111.5
+      },
+      {
+        "word": "puncto",
+        "count": 6,
+        "score": 36.2,
+        "ratio": 418.2
+      },
+      {
+        "word": "jähriger",
+        "count": 6,
+        "score": 29.7,
+        "ratio": 139.4
+      },
+      {
+        "word": "worden",
+        "count": 11,
+        "score": 28.2,
+        "ratio": 12.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "effektiv",
         "count": 4,
-        "ratioParty": 39.8,
-        "ratioBundestag": 31.0
+        "score": 13.9,
+        "ratio": 31.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "effektiv",
+        "count": 4,
+        "score": 14.8,
+        "ratio": 39.8
       }
     ]
   },
@@ -118,33 +158,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jan Feser häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Jan Feser häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Behinderung",
+        "text": "Puncto",
         "isCorrect": true
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Behinderung\" nutzt Jan Feser 557.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "137.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Puncto\" sagte Jan Feser 6× (743.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Jan Feser häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Jan Feser häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Stark",
+        "text": "Sicher",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
@@ -152,16 +195,11 @@
         "isCorrect": true
       },
       {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
+        "text": "Europäisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Effektiv\" nutzt Jan Feser 39.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "31.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Effektiv\" sagte Jan Feser 4× (31.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

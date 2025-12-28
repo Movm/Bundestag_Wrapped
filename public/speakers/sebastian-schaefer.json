@@ -72,50 +72,96 @@
         "count": 13
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "verschuldung",
-        "count": 7,
-        "ratioParty": 198.1,
-        "ratioBundestag": 64.9
+        "word": "bereichsausnahme",
+        "count": 12,
+        "score": 52.9,
+        "ratio": 81.1
       },
       {
-        "word": "bundesbank",
+        "word": "esslingen",
         "count": 5,
-        "ratioParty": 94.3,
-        "ratioBundestag": 153.3
+        "score": 38.0,
+        "ratio": 1993.1
       },
       {
         "word": "bundesrechnungshof",
         "count": 10,
-        "ratioParty": 70.7,
-        "ratioBundestag": 28.5
+        "score": 33.8,
+        "ratio": 28.5
       },
       {
-        "word": "bereichsausnahme",
-        "count": 12,
-        "ratioParty": 40.0,
-        "ratioBundestag": 81.1
+        "word": "haushalt",
+        "count": 21,
+        "score": 31.1,
+        "ratio": 3.4
       },
       {
         "word": "wachstum",
         "count": 12,
-        "ratioParty": 27.2,
-        "ratioBundestag": 11.1
+        "score": 29.9,
+        "ratio": 11.1
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "bereichsausnahme",
+        "count": 12,
+        "score": 44.5,
+        "ratio": 40.0
+      },
+      {
+        "word": "bundesrechnungshof",
+        "count": 10,
+        "score": 42.7,
+        "ratio": 70.7
+      },
+      {
+        "word": "wachstum",
+        "count": 12,
+        "score": 40.1,
+        "ratio": 27.2
+      },
+      {
+        "word": "verschuldung",
+        "count": 7,
+        "score": 37.1,
+        "ratio": 198.1
+      },
+      {
+        "word": "haushalt",
+        "count": 21,
+        "score": 33.7,
+        "ratio": 4.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "wesentlich",
         "count": 3,
-        "ratioParty": 18.9,
-        "ratioBundestag": 16.4
+        "score": 8.6,
+        "ratio": 16.4
       },
       {
         "word": "entscheidend",
         "count": 3,
-        "ratioParty": 6.3,
-        "ratioBundestag": 4.4
+        "score": 5.1,
+        "ratio": 4.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wesentlich",
+        "count": 3,
+        "score": 9.0,
+        "ratio": 18.9
+      },
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 6.0,
+        "ratio": 6.3
       }
     ]
   },
@@ -144,39 +190,30 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Sebastian Schäfer häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Sebastian Schäfer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Verschuldung",
+        "text": "Bereichsausnahme",
         "isCorrect": true
+      },
+      {
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Politik",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verschuldung\" nutzt Dr. Sebastian Schäfer 198.1× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "64.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bereichsausnahme\" sagte Dr. Sebastian Schäfer 12× (81.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Sebastian Schäfer häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Sebastian Schäfer häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
       {
         "text": "Sicher",
         "isCorrect": false
@@ -184,10 +221,17 @@
       {
         "text": "Wesentlich",
         "isCorrect": true
+      },
+      {
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wesentlich\" nutzt Dr. Sebastian Schäfer 18.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "16.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wesentlich\" sagte Dr. Sebastian Schäfer 3× (16.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -205,12 +249,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.984
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrlicher Redner",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.904
       }
     ]
   },

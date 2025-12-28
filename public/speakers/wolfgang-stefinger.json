@@ -72,39 +72,72 @@
         "count": 10
       }
     ],
-    "signatureWords": [
-      {
-        "word": "afrikanischen",
-        "count": 6,
-        "ratioParty": 135.5,
-        "ratioBundestag": 192.8
-      },
+    "signatureWordsBundestag": [
       {
         "word": "afrika",
         "count": 19,
-        "ratioParty": 134.1,
-        "ratioBundestag": 149.3
+        "score": 95.2,
+        "ratio": 149.3
       },
       {
-        "word": "rohstoffe",
-        "count": 5,
-        "ratioParty": 62.7,
-        "ratioBundestag": 52.8
+        "word": "zusammenarbeit",
+        "count": 17,
+        "score": 52.3,
+        "ratio": 20.6
       },
       {
-        "word": "partnerschaften",
-        "count": 8,
-        "ratioParty": 45.2,
-        "ratioBundestag": 69.0
+        "word": "ländern",
+        "count": 15,
+        "score": 42.0,
+        "ratio": 15.4
       },
       {
         "word": "entwicklungszusammenarbeit",
         "count": 10,
-        "ratioParty": 37.0,
-        "ratioBundestag": 35.2
+        "score": 35.9,
+        "ratio": 35.2
+      },
+      {
+        "word": "partnerschaften",
+        "count": 8,
+        "score": 34.0,
+        "ratio": 69.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "afrika",
+        "count": 19,
+        "score": 93.2,
+        "ratio": 134.1
+      },
+      {
+        "word": "zusammenarbeit",
+        "count": 17,
+        "score": 47.4,
+        "ratio": 15.2
+      },
+      {
+        "word": "ländern",
+        "count": 15,
+        "score": 37.5,
+        "ratio": 11.2
+      },
+      {
+        "word": "entwicklungszusammenarbeit",
+        "count": 10,
+        "score": 36.4,
+        "ratio": 37.0
+      },
+      {
+        "word": "partnerschaften",
+        "count": 8,
+        "score": 30.7,
+        "ratio": 45.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 608,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Wolfgang Stefinger häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Wolfgang Stefinger häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Zukunft",
+        "isCorrect": false
+      },
       {
         "text": "Koalition",
         "isCorrect": false
       },
       {
-        "text": "Afrikanischen",
+        "text": "Afrika",
         "isCorrect": true
       },
       {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Afrikanischen\" nutzt Dr. Wolfgang Stefinger 135.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "192.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Afrika\" sagte Dr. Wolfgang Stefinger 19× (149.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -170,7 +202,7 @@
         "title": "Cleverer Stratege",
         "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
         "id": "fuchs",
-        "score": 0.783
+        "score": 0.804
       }
     ]
   },

@@ -48,50 +48,96 @@
         "count": 23
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "leben",
+        "count": 32,
+        "score": 51.7,
+        "ratio": 4.0
+      },
+      {
+        "word": "meinungsfreiheit",
+        "count": 14,
+        "score": 50.0,
+        "ratio": 34.7
+      },
+      {
+        "word": "siegmund",
+        "count": 7,
+        "score": 46.9,
+        "ratio": 806.2
+      },
+      {
+        "word": "betreiben",
+        "count": 13,
+        "score": 36.8,
+        "ratio": 15.9
+      },
+      {
+        "word": "wuppertal",
+        "count": 5,
+        "score": 35.2,
+        "ratio": 1151.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "meinungsfreiheit",
+        "count": 14,
+        "score": 57.0,
+        "ratio": 57.8
+      },
+      {
+        "word": "leben",
+        "count": 32,
+        "score": 47.6,
+        "ratio": 3.4
+      },
       {
         "word": "herrschaft",
         "count": 8,
-        "ratioParty": 363.4,
-        "ratioBundestag": 76.8
+        "score": 47.2,
+        "ratio": 363.4
       },
       {
-        "word": "unrechts",
-        "count": 6,
-        "ratioParty": 272.6,
-        "ratioBundestag": 86.4
+        "word": "betreiben",
+        "count": 13,
+        "score": 39.0,
+        "ratio": 19.0
       },
       {
-        "word": "szene",
-        "count": 5,
-        "ratioParty": 113.6,
-        "ratioBundestag": 37.2
-      },
-      {
-        "word": "gewiss",
-        "count": 7,
-        "ratioParty": 106.0,
-        "ratioBundestag": 107.5
-      },
-      {
-        "word": "sicherheitskräfte",
-        "count": 7,
-        "ratioParty": 79.5,
-        "ratioBundestag": 48.9
+        "word": "kriminalität",
+        "count": 11,
+        "score": 35.3,
+        "ratio": 23.8
       }
     ],
-    "signatureAdjectives": [
-      {
-        "word": "geschützt",
-        "count": 3,
-        "ratioParty": 3.6,
-        "ratioBundestag": 5.0
-      },
+    "signatureAdjectivesBundestag": [
       {
         "word": "sicher",
         "count": 9,
-        "ratioParty": 2.1,
-        "ratioBundestag": 2.8
+        "score": 12.0,
+        "ratio": 2.8
+      },
+      {
+        "word": "geschützt",
+        "count": 3,
+        "score": 5.4,
+        "ratio": 5.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 9,
+        "score": 10.3,
+        "ratio": 2.1
+      },
+      {
+        "word": "geschützt",
+        "count": 3,
+        "score": 4.6,
+        "ratio": 3.6
       }
     ]
   },
@@ -130,50 +176,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Helge Lindh häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Helge Lindh häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Antrag",
+        "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Haushalt",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Herrschaft",
+        "text": "Leben",
         "isCorrect": true
       },
       {
-        "text": "Migration",
+        "text": "Kanzler",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Herrschaft\" nutzt Helge Lindh 363.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "76.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Leben\" sagte Helge Lindh 32× (4.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Helge Lindh häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Helge Lindh häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Schlecht",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Jung",
+        "text": "Falsch",
         "isCorrect": false
       },
       {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Geschützt",
+        "text": "Sicher",
         "isCorrect": true
+      },
+      {
+        "text": "National",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Geschützt\" nutzt Helge Lindh 3.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "5.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Helge Lindh 9× (2.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦅",
@@ -183,19 +227,19 @@
     "id": "adler",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 1.0
-      },
-      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüter",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
+        "score": 1.0
+      },
+      {
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißiger Abgeordneter",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
         "score": 1.0
       }
     ]

@@ -72,39 +72,72 @@
         "count": 9
       }
     ],
-    "signatureWords": [
-      {
-        "word": "überhöhte",
-        "count": 10,
-        "ratioParty": 948.7,
-        "ratioBundestag": 1328.4
-      },
+    "signatureWordsBundestag": [
       {
         "word": "mietpreisbremse",
         "count": 19,
-        "ratioParty": 138.7,
-        "ratioBundestag": 53.2
+        "score": 75.9,
+        "ratio": 53.2
       },
       {
-        "word": "gemeinnützige",
-        "count": 5,
-        "ratioParty": 118.6,
-        "ratioBundestag": 255.5
+        "word": "überhöhte",
+        "count": 10,
+        "score": 71.9,
+        "ratio": 1328.4
       },
       {
-        "word": "österreich",
-        "count": 6,
-        "ratioParty": 71.2,
-        "ratioBundestag": 68.7
+        "word": "mieten",
+        "count": 18,
+        "score": 69.8,
+        "ratio": 47.3
       },
       {
-        "word": "mietrecht",
-        "count": 5,
-        "ratioParty": 59.3,
-        "ratioBundestag": 94.9
+        "word": "wohnungen",
+        "count": 18,
+        "score": 64.8,
+        "ratio": 35.6
+      },
+      {
+        "word": "bauen",
+        "count": 19,
+        "score": 54.1,
+        "ratio": 16.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "mietpreisbremse",
+        "count": 19,
+        "score": 93.8,
+        "ratio": 138.7
+      },
+      {
+        "word": "mieten",
+        "count": 18,
+        "score": 71.9,
+        "ratio": 53.4
+      },
+      {
+        "word": "überhöhte",
+        "count": 10,
+        "score": 68.6,
+        "ratio": 948.7
+      },
+      {
+        "word": "wohnungen",
+        "count": 18,
+        "score": 62.4,
+        "ratio": 31.0
+      },
+      {
+        "word": "wohnen",
+        "count": 15,
+        "score": 60.3,
+        "ratio": 54.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 322,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Hanna Steinmüller häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Hanna Steinmüller häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
       {
         "text": "Demokratie",
         "isCorrect": false
       },
       {
-        "text": "Überhöhte",
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Mietpreisbremse",
         "isCorrect": true
       },
       {
-        "text": "Minister",
+        "text": "Arbeit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Überhöhte\" nutzt Hanna Steinmüller 948.7× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "1328.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Mietpreisbremse\" sagte Hanna Steinmüller 19× (53.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -157,20 +189,20 @@
     "id": "biene",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.96
-      },
-      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüterin",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.954
+      },
+      {
+        "emoji": "🦫",
+        "name": "Biber",
+        "title": "Konstruktive Brückenbauerin",
+        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
+        "id": "biber",
+        "score": 0.84
       }
     ]
   },

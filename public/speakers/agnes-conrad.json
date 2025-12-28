@@ -72,56 +72,108 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "transformation",
+        "count": 7,
+        "score": 24.8,
+        "ratio": 33.6
+      },
       {
         "word": "verbrenner",
         "count": 6,
-        "ratioParty": 62.9,
-        "ratioBundestag": 55.8
+        "score": 24.2,
+        "ratio": 55.8
+      },
+      {
+        "word": "beschäftigten",
+        "count": 6,
+        "score": 18.1,
+        "ratio": 19.4
       },
       {
         "word": "automobilindustrie",
         "count": 5,
-        "ratioParty": 52.4,
-        "ratioBundestag": 31.2
+        "score": 17.4,
+        "ratio": 31.2
       },
+      {
+        "word": "soziale",
+        "count": 6,
+        "score": 14.8,
+        "ratio": 10.8
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "transformation",
         "count": 7,
-        "ratioParty": 41.3,
-        "ratioBundestag": 33.6
+        "score": 26.2,
+        "ratio": 41.3
+      },
+      {
+        "word": "verbrenner",
+        "count": 6,
+        "score": 24.9,
+        "ratio": 62.9
+      },
+      {
+        "word": "automobilindustrie",
+        "count": 5,
+        "score": 19.9,
+        "ratio": 52.4
+      },
+      {
+        "word": "beschäftigten",
+        "count": 6,
+        "score": 13.7,
+        "ratio": 8.9
       },
       {
         "word": "mobilität",
         "count": 5,
-        "ratioParty": 14.3,
-        "ratioBundestag": 16.7
-      },
-      {
-        "word": "industrie",
-        "count": 5,
-        "ratioParty": 9.6,
-        "ratioBundestag": 7.3
+        "score": 13.6,
+        "ratio": 14.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "nachhaltig",
         "count": 4,
-        "ratioParty": 21.0,
-        "ratioBundestag": 21.4
-      },
-      {
-        "word": "schlecht",
-        "count": 3,
-        "ratioParty": 14.9,
-        "ratioBundestag": 13.0
+        "score": 12.4,
+        "ratio": 21.4
       },
       {
         "word": "gerecht",
         "count": 4,
-        "ratioParty": 6.6,
-        "ratioBundestag": 8.6
+        "score": 9.1,
+        "ratio": 8.6
+      },
+      {
+        "word": "schlecht",
+        "count": 3,
+        "score": 7.9,
+        "ratio": 13.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "nachhaltig",
+        "count": 4,
+        "score": 12.4,
+        "ratio": 21.0
+      },
+      {
+        "word": "schlecht",
+        "count": 3,
+        "score": 8.3,
+        "ratio": 14.9
+      },
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 8.1,
+        "ratio": 6.6
       }
     ]
   },
@@ -145,50 +197,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Agnes Conrad häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Agnes Conrad häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Verbrenner",
+        "text": "Transformation",
         "isCorrect": true
       },
       {
-        "text": "Bildung",
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Minister",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verbrenner\" nutzt Agnes Conrad 62.9× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "55.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Transformation\" sagte Agnes Conrad 7× (33.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Agnes Conrad häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Agnes Conrad häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
+      },
       {
         "text": "Nachhaltig",
         "isCorrect": true
       },
       {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
+        "text": "Groß",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Nachhaltig\" nutzt Agnes Conrad 21.0× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "21.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Nachhaltig\" sagte Agnes Conrad 4× (21.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦔",

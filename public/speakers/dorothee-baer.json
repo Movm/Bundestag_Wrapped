@@ -60,56 +60,108 @@
         "count": 22
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "gender",
-        "count": 5,
-        "ratioParty": 365.7,
-        "ratioBundestag": 30.3
+        "word": "raumfahrt",
+        "count": 25,
+        "score": 98.1,
+        "ratio": 49.7
       },
       {
-        "word": "gesundheitsforschung",
-        "count": 8,
-        "ratioParty": 292.6,
-        "ratioBundestag": 167.6
+        "word": "forschung",
+        "count": 35,
+        "score": 97.8,
+        "ratio": 15.3
+      },
+      {
+        "word": "agenda",
+        "count": 31,
+        "score": 91.6,
+        "ratio": 18.2
+      },
+      {
+        "word": "hightech",
+        "count": 23,
+        "score": 71.1,
+        "ratio": 21.0
       },
       {
         "word": "bmftr",
         "count": 14,
-        "ratioParty": 113.8,
-        "ratioBundestag": 146.7
-      },
-      {
-        "word": "frauengesundheit",
-        "count": 10,
-        "ratioParty": 91.4,
-        "ratioBundestag": 115.2
-      },
-      {
-        "word": "grundlagenforschung",
-        "count": 5,
-        "ratioParty": 52.2,
-        "ratioBundestag": 57.6
+        "score": 69.9,
+        "ratio": 146.7
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "forschung",
+        "count": 35,
+        "score": 97.0,
+        "ratio": 15.0
+      },
+      {
+        "word": "raumfahrt",
+        "count": 25,
+        "score": 92.7,
+        "ratio": 39.8
+      },
+      {
+        "word": "agenda",
+        "count": 31,
+        "score": 86.6,
+        "ratio": 15.3
+      },
+      {
+        "word": "bmftr",
+        "count": 14,
+        "score": 66.4,
+        "ratio": 113.8
+      },
+      {
+        "word": "hightech",
+        "count": 23,
+        "score": 64.4,
+        "ratio": 15.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "stark",
+        "count": 9,
+        "score": 16.4,
+        "ratio": 5.2
+      },
       {
         "word": "hervorragend",
         "count": 3,
-        "ratioParty": 27.4,
-        "ratioBundestag": 40.7
+        "score": 11.2,
+        "ratio": 40.7
       },
       {
         "word": "wesentlich",
         "count": 3,
-        "ratioParty": 8.1,
-        "ratioBundestag": 9.5
-      },
+        "score": 7.0,
+        "ratio": 9.5
+      }
+    ],
+    "signatureAdjectivesParty": [
       {
         "word": "stark",
         "count": 9,
-        "ratioParty": 4.6,
-        "ratioBundestag": 5.2
+        "score": 15.5,
+        "ratio": 4.6
+      },
+      {
+        "word": "hervorragend",
+        "count": 3,
+        "score": 10.0,
+        "ratio": 27.4
+      },
+      {
+        "word": "wesentlich",
+        "count": 3,
+        "score": 6.6,
+        "ratio": 8.1
       }
     ]
   },
@@ -133,66 +185,56 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dorothee Bär häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dorothee Bär häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Opposition",
+        "isCorrect": false
+      },
       {
         "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Gender",
+        "text": "Raumfahrt",
         "isCorrect": true
+      },
+      {
+        "text": "Wirtschaft",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gender\" nutzt Dorothee Bär 365.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "30.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Raumfahrt\" sagte Dorothee Bär 25× (49.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dorothee Bär häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dorothee Bär häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gefährlich",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Jung",
+        "text": "Gut",
         "isCorrect": false
       },
       {
-        "text": "Hervorragend",
+        "text": "Stark",
         "isCorrect": true
       },
       {
-        "text": "National",
+        "text": "Sicher",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Hervorragend\" nutzt Dorothee Bär 27.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "40.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Stark\" sagte Dorothee Bär 9× (5.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Clevere Strategin",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüterin",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 1.0
-      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -200,6 +242,14 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
+      },
+      {
+        "emoji": "🦫",
+        "name": "Biber",
+        "title": "Konstruktive Brückenbauerin",
+        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
+        "id": "biber",
+        "score": 0.96
       }
     ]
   },

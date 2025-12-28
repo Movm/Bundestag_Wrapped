@@ -72,33 +72,60 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "jüdische",
         "count": 5,
-        "ratioParty": 321.3,
-        "ratioBundestag": 358.6
-      },
-      {
-        "word": "wissenschaft",
-        "count": 6,
-        "ratioParty": 60.3,
-        "ratioBundestag": 47.1
+        "score": 29.4,
+        "ratio": 358.6
       },
       {
         "word": "forschung",
         "count": 8,
-        "ratioParty": 26.0,
-        "ratioBundestag": 29.1
+        "score": 27.2,
+        "ratio": 29.1
+      },
+      {
+        "word": "wissenschaft",
+        "count": 6,
+        "score": 23.2,
+        "ratio": 47.1
       },
       {
         "word": "deutschland",
         "count": 10,
-        "ratioParty": 2.5,
-        "ratioBundestag": 2.8
+        "score": 13.3,
+        "ratio": 2.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "jüdische",
+        "count": 5,
+        "score": 28.9,
+        "ratio": 321.3
+      },
+      {
+        "word": "forschung",
+        "count": 8,
+        "score": 26.4,
+        "ratio": 26.0
+      },
+      {
+        "word": "wissenschaft",
+        "count": 6,
+        "score": 24.7,
+        "ratio": 60.3
+      },
+      {
+        "word": "deutschland",
+        "count": 10,
+        "score": 12.4,
+        "ratio": 2.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 319,
@@ -120,27 +147,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Adrian Grasse häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Adrian Grasse häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Migration",
+        "isCorrect": false
+      },
       {
         "text": "Jüdische",
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Jüdische\" nutzt Adrian Grasse 321.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "358.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Jüdische\" sagte Adrian Grasse 5× (358.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

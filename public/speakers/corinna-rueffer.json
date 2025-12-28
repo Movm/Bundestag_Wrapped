@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "eingliederungshilfe",
-        "count": 5,
-        "ratioParty": 746.6,
-        "ratioBundestag": 434.1
+        "word": "barrierefreiheit",
+        "count": 7,
+        "score": 39.8,
+        "ratio": 291.7
       },
       {
         "word": "petitionsausschuss",
         "count": 7,
-        "ratioParty": 522.6,
-        "ratioBundestag": 208.4
+        "score": 37.4,
+        "ratio": 208.4
       },
       {
-        "word": "barrierefreiheit",
-        "count": 7,
-        "ratioParty": 87.1,
-        "ratioBundestag": 291.7
+        "word": "eingliederungshilfe",
+        "count": 5,
+        "score": 30.4,
+        "ratio": 434.1
+      },
+      {
+        "word": "menschen",
+        "count": 21,
+        "score": 29.3,
+        "ratio": 3.0
       },
       {
         "word": "demokratinnen",
         "count": 5,
-        "ratioParty": 24.9,
-        "ratioBundestag": 81.4
-      },
-      {
-        "word": "demokraten",
-        "count": 5,
-        "ratioParty": 22.6,
-        "ratioBundestag": 52.6
+        "score": 22.1,
+        "ratio": 81.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "petitionsausschuss",
+        "count": 7,
+        "score": 43.8,
+        "ratio": 522.6
+      },
+      {
+        "word": "eingliederungshilfe",
+        "count": 5,
+        "score": 33.1,
+        "ratio": 746.6
+      },
+      {
+        "word": "barrierefreiheit",
+        "count": 7,
+        "score": 31.3,
+        "ratio": 87.1
+      },
+      {
+        "word": "menschen",
+        "count": 21,
+        "score": 23.8,
+        "ratio": 2.1
+      },
+      {
+        "word": "angewiesen",
+        "count": 6,
+        "score": 18.5,
+        "ratio": 20.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 520,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Corinna Rüffer häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Corinna Rüffer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Opposition",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Gesellschaft",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Eingliederungshilfe",
+        "text": "Barrierefreiheit",
         "isCorrect": true
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Eingliederungshilfe\" nutzt Corinna Rüffer 746.6× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "434.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Barrierefreiheit\" sagte Corinna Rüffer 7× (291.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -165,12 +197,12 @@
         "score": 0.875
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.867
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positive Teamplayerin",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.8
       }
     ]
   },

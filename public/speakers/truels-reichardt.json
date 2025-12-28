@@ -68,44 +68,84 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "geburt",
         "count": 12,
-        "ratioParty": 670.7,
-        "ratioBundestag": 134.7
-      },
-      {
-        "word": "jugendhilfe",
-        "count": 7,
-        "ratioParty": 111.8,
-        "ratioBundestag": 95.8
+        "score": 58.9,
+        "ratio": 134.7
       },
       {
         "word": "marschbahn",
         "count": 9,
-        "ratioParty": 30.3,
-        "ratioBundestag": 459.0
+        "score": 55.2,
+        "ratio": 459.0
       },
       {
-        "word": "eltern",
-        "count": 10,
-        "ratioParty": 18.3,
-        "ratioBundestag": 19.0
+        "word": "besonders",
+        "count": 15,
+        "score": 36.1,
+        "ratio": 10.1
       },
       {
-        "word": "familienstartzeit",
-        "count": 5,
-        "ratioParty": 16.9,
-        "ratioBundestag": 400.8
+        "word": "jugendhilfe",
+        "count": 7,
+        "score": 32.0,
+        "ratio": 95.8
+      },
+      {
+        "word": "kinder",
+        "count": 15,
+        "score": 31.1,
+        "ratio": 6.9
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "geburt",
+        "count": 12,
+        "score": 78.1,
+        "ratio": 670.7
+      },
+      {
+        "word": "jugendhilfe",
+        "count": 7,
+        "score": 33.1,
+        "ratio": 111.8
+      },
+      {
+        "word": "besonders",
+        "count": 15,
+        "score": 32.4,
+        "ratio": 7.7
+      },
+      {
+        "word": "marschbahn",
+        "count": 9,
+        "score": 31.0,
+        "ratio": 30.3
+      },
+      {
+        "word": "kinder",
+        "count": 15,
+        "score": 30.2,
+        "ratio": 6.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "schlecht",
         "count": 3,
-        "ratioParty": 16.0,
-        "ratioBundestag": 8.0
+        "score": 6.6,
+        "ratio": 8.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "schlecht",
+        "count": 3,
+        "score": 8.5,
+        "ratio": 16.0
       }
     ]
   },
@@ -129,50 +169,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Truels Reichardt häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Truels Reichardt häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
         "text": "Geburt",
         "isCorrect": true
-      }
-    ],
-    "explanationParty": "\"Geburt\" nutzt Truels Reichardt 670.7× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "134.7× häufiger als der Bundestag-Durchschnitt."
-  },
-  "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Truels Reichardt häufiger als der Rest der SPD-Fraktion?",
-    "options": [
+      },
       {
-        "text": "Stark",
+        "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Schlecht",
-        "isCorrect": true
+        "text": "Gesellschaft",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "\"Geburt\" sagte Truels Reichardt 12× (134.7× häufiger als der Bundestag-Durchschnitt)."
+  },
+  "signatureAdjectiveQuiz": {
+    "question": "Welches Adjektiv nutzt Truels Reichardt häufiger als der Bundestag-Durchschnitt?",
+    "options": [
+      {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
       },
       {
         "text": "Alt",
         "isCorrect": false
       },
       {
-        "text": "Gefährlich",
-        "isCorrect": false
+        "text": "Schlecht",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Schlecht\" nutzt Truels Reichardt 16.0× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "8.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Schlecht\" sagte Truels Reichardt 3× (8.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",

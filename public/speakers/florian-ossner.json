@@ -72,50 +72,96 @@
         "count": 16
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "wasserwege",
-        "count": 7,
-        "ratioParty": 706.1,
-        "ratioBundestag": 2219.0
+        "word": "infrastruktur",
+        "count": 35,
+        "score": 83.4,
+        "ratio": 9.8
+      },
+      {
+        "word": "straße",
+        "count": 22,
+        "score": 74.3,
+        "ratio": 28.3
+      },
+      {
+        "word": "investitionen",
+        "count": 30,
+        "score": 65.9,
+        "ratio": 8.0
+      },
+      {
+        "word": "herzliches",
+        "count": 14,
+        "score": 59.8,
+        "ratio": 70.4
       },
       {
         "word": "vergelts",
         "count": 9,
-        "ratioParty": 181.6,
-        "ratioBundestag": 570.6
-      },
-      {
-        "word": "luftfahrt",
-        "count": 7,
-        "ratioParty": 117.7,
-        "ratioBundestag": 147.9
-      },
-      {
-        "word": "verkehrsträger",
-        "count": 11,
-        "ratioParty": 65.3,
-        "ratioBundestag": 91.8
-      },
-      {
-        "word": "patrick",
-        "count": 7,
-        "ratioParty": 50.4,
-        "ratioBundestag": 85.3
+        "score": 57.1,
+        "ratio": 570.6
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "infrastruktur",
+        "count": 35,
+        "score": 84.4,
+        "ratio": 10.1
+      },
+      {
+        "word": "straße",
+        "count": 22,
+        "score": 75.0,
+        "ratio": 29.2
+      },
+      {
+        "word": "investitionen",
+        "count": 30,
+        "score": 63.0,
+        "ratio": 7.2
+      },
+      {
+        "word": "kommunen",
+        "count": 27,
+        "score": 48.9,
+        "ratio": 5.1
+      },
+      {
+        "word": "herzliches",
+        "count": 14,
+        "score": 47.3,
+        "ratio": 28.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "solide",
         "count": 3,
-        "ratioParty": 7.4,
-        "ratioBundestag": 9.1
+        "score": 6.9,
+        "ratio": 9.1
       },
       {
         "word": "wirtschaftlich",
         "count": 3,
-        "ratioParty": 3.5,
-        "ratioBundestag": 4.2
+        "score": 4.9,
+        "ratio": 4.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "solide",
+        "count": 3,
+        "score": 6.4,
+        "ratio": 7.4
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 4.5,
+        "ratio": 3.5
       }
     ]
   },
@@ -149,50 +195,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Florian Oßner häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Florian Oßner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wasserwege",
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Infrastruktur",
         "isCorrect": true
       },
       {
-        "text": "Abstimmung",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaft",
+        "text": "Zukunft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wasserwege\" nutzt Florian Oßner 706.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "2219.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Infrastruktur\" sagte Florian Oßner 35× (9.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Florian Oßner häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Florian Oßner häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Sicher",
+        "isCorrect": false
+      },
       {
         "text": "Solide",
         "isCorrect": true
       },
       {
-        "text": "Richtig",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
+        "text": "Jung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Solide\" nutzt Florian Oßner 7.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "9.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Solide\" sagte Florian Oßner 3× (9.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -210,12 +254,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.973
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positiver Teamplayer",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.95
       }
     ]
   },

@@ -68,33 +68,60 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "cybersicherheit",
         "count": 8,
-        "ratioParty": 109.1,
-        "ratioBundestag": 138.2
-      },
-      {
-        "word": "recht",
-        "count": 6,
-        "ratioParty": 6.3,
-        "ratioBundestag": 5.4
+        "score": 39.5,
+        "ratio": 138.2
       },
       {
         "word": "gesetz",
         "count": 6,
-        "ratioParty": 5.7,
-        "ratioBundestag": 6.3
+        "score": 11.9,
+        "ratio": 6.3
+      },
+      {
+        "word": "recht",
+        "count": 6,
+        "score": 11.1,
+        "ratio": 5.4
       },
       {
         "word": "sicherheit",
         "count": 5,
-        "ratioParty": 2.8,
-        "ratioBundestag": 3.3
+        "score": 7.3,
+        "ratio": 3.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "cybersicherheit",
+        "count": 8,
+        "score": 37.6,
+        "ratio": 109.1
+      },
+      {
+        "word": "recht",
+        "count": 6,
+        "score": 11.9,
+        "ratio": 6.3
+      },
+      {
+        "word": "gesetz",
+        "count": 6,
+        "score": 11.4,
+        "ratio": 5.7
+      },
+      {
+        "word": "sicherheit",
+        "count": 5,
+        "score": 6.7,
+        "ratio": 2.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 458,
@@ -116,10 +143,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Henri Schmidt häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Henri Schmidt häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Reform",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
@@ -127,16 +154,15 @@
         "isCorrect": true
       },
       {
-        "text": "Bildung",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
-        "text": "Debatte",
+        "text": "Gesellschaft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Cybersicherheit\" nutzt Henri Schmidt 109.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "138.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Cybersicherheit\" sagte Henri Schmidt 8× (138.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

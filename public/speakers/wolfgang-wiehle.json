@@ -72,56 +72,108 @@
         "count": 20
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "geschätzte",
+        "count": 19,
+        "score": 82.5,
+        "ratio": 76.1
+      },
+      {
+        "word": "sonderschulden",
+        "count": 13,
+        "score": 55.8,
+        "ratio": 71.9
+      },
       {
         "word": "verbrennungsmotors",
         "count": 7,
-        "ratioParty": 362.5,
-        "ratioBundestag": 1625.2
-      },
-      {
-        "word": "infrago",
-        "count": 7,
-        "ratioParty": 362.5,
-        "ratioBundestag": 95.6
-      },
-      {
-        "word": "aktiengesellschaft",
-        "count": 5,
-        "ratioParty": 259.0,
-        "ratioBundestag": 386.9
-      },
-      {
-        "word": "bahnstrecken",
-        "count": 7,
-        "ratioParty": 181.3,
-        "ratioBundestag": 70.7
+        "score": 51.8,
+        "ratio": 1625.2
       },
       {
         "word": "deutschlandticket",
         "count": 16,
-        "ratioParty": 165.7,
-        "ratioBundestag": 22.8
+        "score": 50.7,
+        "ratio": 22.8
+      },
+      {
+        "word": "regierung",
+        "count": 31,
+        "score": 49.5,
+        "ratio": 3.9
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "wettbewerbsfähig",
-        "count": 3,
-        "ratioParty": 12.9,
-        "ratioBundestag": 8.5
+        "word": "deutschlandticket",
+        "count": 16,
+        "score": 81.9,
+        "ratio": 165.7
       },
+      {
+        "word": "geschätzte",
+        "count": 19,
+        "score": 79.8,
+        "ratio": 65.6
+      },
+      {
+        "word": "verbrennungsmotors",
+        "count": 7,
+        "score": 41.3,
+        "ratio": 362.5
+      },
+      {
+        "word": "infrago",
+        "count": 7,
+        "score": 41.3,
+        "ratio": 362.5
+      },
+      {
+        "word": "sonderschulden",
+        "count": 13,
+        "score": 38.1,
+        "ratio": 17.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "teuer",
         "count": 6,
-        "ratioParty": 4.1,
-        "ratioBundestag": 6.4
+        "score": 12.0,
+        "ratio": 6.4
+      },
+      {
+        "word": "wettbewerbsfähig",
+        "count": 3,
+        "score": 6.8,
+        "ratio": 8.5
       },
       {
         "word": "falsch",
         "count": 4,
-        "ratioParty": 2.8,
-        "ratioBundestag": 2.9
+        "score": 5.4,
+        "ratio": 2.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "teuer",
+        "count": 6,
+        "score": 9.8,
+        "ratio": 4.1
+      },
+      {
+        "word": "wettbewerbsfähig",
+        "count": 3,
+        "score": 7.9,
+        "ratio": 12.9
+      },
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 5.4,
+        "ratio": 2.8
       }
     ]
   },
@@ -155,50 +207,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Wolfgang Wiehle häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Wolfgang Wiehle häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Verbrennungsmotors",
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Geschätzte",
         "isCorrect": true
       },
       {
-        "text": "Familie",
+        "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verbrennungsmotors\" nutzt Wolfgang Wiehle 362.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "1625.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Geschätzte\" sagte Wolfgang Wiehle 19× (76.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Wolfgang Wiehle häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Wolfgang Wiehle häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Groß",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Wettbewerbsfähig",
+        "text": "Teuer",
         "isCorrect": true
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wettbewerbsfähig\" nutzt Wolfgang Wiehle 12.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "8.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Teuer\" sagte Wolfgang Wiehle 6× (6.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

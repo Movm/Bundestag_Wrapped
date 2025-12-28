@@ -72,44 +72,84 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "wohnungslosigkeit",
-        "count": 6,
-        "ratioParty": 661.3,
-        "ratioBundestag": 579.6
+        "word": "kommunen",
+        "count": 17,
+        "score": 45.6,
+        "ratio": 13.6
       },
       {
         "word": "sozialwohnungen",
         "count": 8,
-        "ratioParty": 67.8,
-        "ratioBundestag": 283.3
+        "score": 45.2,
+        "ratio": 283.3
       },
       {
-        "word": "wohnraum",
+        "word": "wohnungslosigkeit",
         "count": 6,
-        "ratioParty": 22.8,
-        "ratioBundestag": 22.4
+        "score": 38.2,
+        "ratio": 579.6
       },
       {
-        "word": "kommunen",
-        "count": 17,
-        "ratioParty": 10.8,
-        "ratioBundestag": 13.6
+        "word": "linke",
+        "count": 12,
+        "score": 35.5,
+        "ratio": 18.3
       },
       {
         "word": "sozialen",
         "count": 9,
-        "ratioParty": 10.2,
-        "ratioBundestag": 16.8
+        "score": 25.9,
+        "ratio": 16.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "kommunen",
+        "count": 17,
+        "score": 42.0,
+        "ratio": 10.8
+      },
+      {
+        "word": "wohnungslosigkeit",
+        "count": 6,
+        "score": 39.0,
+        "ratio": 661.3
+      },
+      {
+        "word": "sozialwohnungen",
+        "count": 8,
+        "score": 33.9,
+        "ratio": 67.8
+      },
+      {
+        "word": "sozialen",
+        "count": 9,
+        "score": 21.8,
+        "ratio": 10.2
+      },
+      {
+        "word": "linke",
+        "count": 12,
+        "score": 21.1,
+        "ratio": 4.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 5.7,
-        "ratioBundestag": 7.5
+        "score": 6.4,
+        "ratio": 7.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 5.7,
+        "ratio": 5.7
       }
     ]
   },
@@ -133,50 +173,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Sahra Mirow häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Sahra Mirow häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Minister",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Wohnungslosigkeit",
+        "text": "Kommunen",
         "isCorrect": true
       },
       {
-        "text": "Migration",
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wohnungslosigkeit\" nutzt Sahra Mirow 661.3× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "579.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Kommunen\" sagte Sahra Mirow 17× (13.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Sahra Mirow häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Sahra Mirow häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Alt",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
         "text": "Gerecht",
         "isCorrect": true
+      },
+      {
+        "text": "Erfolgreich",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gerecht\" nutzt Sahra Mirow 5.7× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "7.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gerecht\" sagte Sahra Mirow 3× (7.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦫",

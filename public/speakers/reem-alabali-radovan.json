@@ -72,39 +72,72 @@
         "count": 8
       }
     ],
-    "signatureWords": [
-      {
-        "word": "entwicklungsfinanzierung",
-        "count": 5,
-        "ratioParty": 1010.9,
-        "ratioBundestag": 2528.8
-      },
-      {
-        "word": "conference",
-        "count": 5,
-        "ratioParty": 252.7,
-        "ratioBundestag": 842.9
-      },
+    "signatureWordsBundestag": [
       {
         "word": "entwicklungspolitik",
         "count": 16,
-        "ratioParty": 248.8,
-        "ratioBundestag": 161.8
+        "score": 81.5,
+        "ratio": 161.8
       },
       {
-        "word": "entwicklungszusammenarbeit",
+        "word": "weiterhin",
+        "count": 14,
+        "score": 44.5,
+        "ratio": 23.0
+      },
+      {
+        "word": "entwicklungsfinanzierung",
         "count": 5,
-        "ratioParty": 24.7,
-        "ratioBundestag": 24.6
+        "score": 39.2,
+        "ratio": 2528.8
       },
       {
-        "word": "krisen",
-        "count": 6,
-        "ratioParty": 22.9,
-        "ratioBundestag": 28.9
+        "word": "zusammenarbeit",
+        "count": 12,
+        "score": 36.9,
+        "ratio": 20.6
+      },
+      {
+        "word": "gemeinsam",
+        "count": 15,
+        "score": 36.2,
+        "ratio": 10.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "entwicklungspolitik",
+        "count": 16,
+        "score": 88.3,
+        "ratio": 248.8
+      },
+      {
+        "word": "weiterhin",
+        "count": 14,
+        "score": 42.9,
+        "ratio": 20.4
+      },
+      {
+        "word": "entwicklungsfinanzierung",
+        "count": 5,
+        "score": 34.6,
+        "ratio": 1010.9
+      },
+      {
+        "word": "zusammenarbeit",
+        "count": 12,
+        "score": 31.7,
+        "ratio": 13.0
+      },
+      {
+        "word": "gemeinsam",
+        "count": 15,
+        "score": 29.6,
+        "ratio": 6.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 152,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Reem Alabali-Radovan häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Reem Alabali-Radovan häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Entwicklungsfinanzierung",
+        "text": "Entwicklungspolitik",
         "isCorrect": true
       },
       {
-        "text": "Minister",
+        "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Haushalt",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entwicklungsfinanzierung\" nutzt Reem Alabali-Radovan 1010.9× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "2528.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Entwicklungspolitik\" sagte Reem Alabali-Radovan 16× (161.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -157,20 +189,20 @@
     "id": "fuchs",
     "alternatives": [
       {
-        "emoji": "🦉",
-        "name": "Eule",
-        "title": "Themenexpertin",
-        "reason": "Dein Fachwort \"Entwicklungsfinanzierung\" nutzt du 1010.9× häufiger als deine Fraktion.",
-        "id": "eule",
-        "score": 0.97
-      },
-      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüterin",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.903
+      },
+      {
+        "emoji": "🦜",
+        "name": "Papagei",
+        "title": "Neugierige Fragestellerin",
+        "reason": "Mit vielen Fragen bringst du wichtige Themen auf den Tisch.",
+        "id": "papagei",
+        "score": 0.886
       }
     ]
   },

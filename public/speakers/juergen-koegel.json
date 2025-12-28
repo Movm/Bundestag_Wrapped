@@ -52,44 +52,84 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "banker",
         "count": 7,
-        "ratioParty": 1113.8,
-        "ratioBundestag": 1647.8
-      },
-      {
-        "word": "auswärtige",
-        "count": 5,
-        "ratioParty": 24.9,
-        "ratioBundestag": 41.5
+        "score": 51.9,
+        "ratio": 1647.8
       },
       {
         "word": "familie",
         "count": 10,
-        "ratioParty": 12.9,
-        "ratioBundestag": 17.0
+        "score": 28.9,
+        "ratio": 17.0
       },
       {
         "word": "familien",
         "count": 9,
-        "ratioParty": 7.6,
-        "ratioBundestag": 8.9
+        "score": 20.6,
+        "ratio": 8.9
       },
       {
-        "word": "ausgaben",
-        "count": 6,
-        "ratioParty": 7.2,
-        "ratioBundestag": 11.4
+        "word": "auswärtige",
+        "count": 5,
+        "score": 18.8,
+        "ratio": 41.5
+      },
+      {
+        "word": "haushalt",
+        "count": 11,
+        "score": 15.6,
+        "ratio": 3.1
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "banker",
+        "count": 7,
+        "score": 49.1,
+        "ratio": 1113.8
+      },
+      {
+        "word": "familie",
+        "count": 10,
+        "score": 26.3,
+        "ratio": 12.9
+      },
+      {
+        "word": "familien",
+        "count": 9,
+        "score": 19.3,
+        "ratio": 7.6
+      },
+      {
+        "word": "haushalt",
+        "count": 11,
+        "score": 18.6,
+        "ratio": 4.4
+      },
+      {
+        "word": "auswärtige",
+        "count": 5,
+        "score": 16.3,
+        "ratio": 24.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "erfolgreich",
         "count": 3,
-        "ratioParty": 23.9,
-        "ratioBundestag": 9.5
+        "score": 7.0,
+        "ratio": 9.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 9.6,
+        "ratio": 23.9
       }
     ]
   },
@@ -113,14 +153,14 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jürgen Koegel häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Jürgen Koegel häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Verantwortung",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
@@ -128,18 +168,21 @@
         "isCorrect": true
       },
       {
-        "text": "Fraktion",
+        "text": "Arbeit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Banker\" nutzt Jürgen Koegel 1113.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "1647.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Banker\" sagte Jürgen Koegel 7× (1647.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Jürgen Koegel häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Jürgen Koegel häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Jung",
+        "text": "Gut",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
@@ -147,16 +190,11 @@
         "isCorrect": true
       },
       {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Erfolgreich\" nutzt Jürgen Koegel 23.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "9.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Erfolgreich\" sagte Jürgen Koegel 3× (9.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

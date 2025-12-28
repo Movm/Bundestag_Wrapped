@@ -72,50 +72,96 @@
         "count": 13
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "regierungsentwurf",
+        "count": 14,
+        "score": 58.0,
+        "ratio": 61.8
+      },
+      {
+        "word": "investitionen",
+        "count": 24,
+        "score": 53.8,
+        "ratio": 8.4
+      },
       {
         "word": "bevölkerungsschutz",
         "count": 12,
-        "ratioParty": 111.2,
-        "ratioBundestag": 77.5
+        "score": 52.4,
+        "ratio": 77.5
+      },
+      {
+        "word": "minister",
+        "count": 21,
+        "score": 47.1,
+        "ratio": 8.4
       },
       {
         "word": "wildberger",
         "count": 11,
-        "ratioParty": 83.4,
-        "ratioBundestag": 40.1
-      },
-      {
-        "word": "bereichsausnahme",
-        "count": 6,
-        "ratioParty": 71.5,
-        "ratioBundestag": 38.7
-      },
-      {
-        "word": "alexander",
-        "count": 6,
-        "ratioParty": 38.5,
-        "ratioBundestag": 22.3
-      },
-      {
-        "word": "cybersicherheit",
-        "count": 5,
-        "ratioParty": 37.9,
-        "ratioBundestag": 25.6
+        "score": 40.9,
+        "ratio": 40.1
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "bevölkerungsschutz",
+        "count": 12,
+        "score": 56.6,
+        "ratio": 111.2
+      },
+      {
+        "word": "regierungsentwurf",
+        "count": 14,
+        "score": 50.7,
+        "ratio": 36.5
+      },
+      {
+        "word": "minister",
+        "count": 21,
+        "score": 50.2,
+        "ratio": 9.9
+      },
+      {
+        "word": "wildberger",
+        "count": 11,
+        "score": 48.8,
+        "ratio": 83.4
+      },
+      {
+        "word": "investitionen",
+        "count": 24,
+        "score": 47.0,
+        "ratio": 6.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "entscheidend",
         "count": 6,
-        "ratioParty": 7.8,
-        "ratioBundestag": 9.4
+        "score": 14.0,
+        "ratio": 9.4
       },
       {
         "word": "sicher",
         "count": 6,
-        "ratioParty": 2.6,
-        "ratioBundestag": 3.4
+        "score": 8.9,
+        "ratio": 3.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 6,
+        "score": 13.1,
+        "ratio": 7.8
+      },
+      {
+        "word": "sicher",
+        "count": 6,
+        "score": 7.6,
+        "ratio": 2.6
       }
     ]
   },
@@ -139,41 +185,40 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Martin Gerster häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Martin Gerster häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesellschaft",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
+        "text": "Klima",
         "isCorrect": false
       },
       {
-        "text": "Bevölkerungsschutz",
+        "text": "Regierungsentwurf",
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
+        "text": "Steuern",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bevölkerungsschutz\" nutzt Martin Gerster 111.2× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "77.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Regierungsentwurf\" sagte Martin Gerster 14× (61.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Martin Gerster häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Martin Gerster häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gefährlich",
+        "text": "Klar",
         "isCorrect": false
       },
       {
-        "text": "Politisch",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Jung",
         "isCorrect": false
       },
       {
@@ -181,8 +226,7 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Martin Gerster 7.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "9.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Entscheidend\" sagte Martin Gerster 6× (9.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

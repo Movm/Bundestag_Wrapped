@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "putin",
+        "count": 15,
+        "score": 61.2,
+        "ratio": 58.1
+      },
       {
         "word": "denkmal",
         "count": 8,
-        "ratioParty": 730.9,
-        "ratioBundestag": 703.2
+        "score": 52.5,
+        "ratio": 703.2
       },
       {
         "word": "diplomatie",
         "count": 6,
-        "ratioParty": 66.4,
-        "ratioBundestag": 48.3
-      },
-      {
-        "word": "putin",
-        "count": 15,
-        "ratioParty": 50.8,
-        "ratioBundestag": 58.1
-      },
-      {
-        "word": "europas",
-        "count": 6,
-        "ratioParty": 13.9,
-        "ratioBundestag": 23.8
+        "score": 23.4,
+        "ratio": 48.3
       },
       {
         "word": "russland",
         "count": 8,
-        "ratioParty": 11.6,
-        "ratioBundestag": 14.5
+        "score": 21.9,
+        "ratio": 14.5
+      },
+      {
+        "word": "ukraine",
+        "count": 9,
+        "score": 20.9,
+        "ratio": 9.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "putin",
+        "count": 15,
+        "score": 59.2,
+        "ratio": 50.8
+      },
+      {
+        "word": "denkmal",
+        "count": 8,
+        "score": 52.8,
+        "ratio": 730.9
+      },
+      {
+        "word": "diplomatie",
+        "count": 6,
+        "score": 25.3,
+        "ratio": 66.4
+      },
+      {
+        "word": "russland",
+        "count": 8,
+        "score": 20.2,
+        "ratio": 11.6
+      },
+      {
+        "word": "ukraine",
+        "count": 9,
+        "score": 19.7,
+        "ratio": 8.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 389,
@@ -131,51 +164,50 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Knut Abraham häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Knut Abraham häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Denkmal",
-        "isCorrect": true
-      },
       {
         "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Freiheit",
+        "text": "Putin",
+        "isCorrect": true
+      },
+      {
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Energie",
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Denkmal\" nutzt Knut Abraham 730.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "703.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Putin\" sagte Knut Abraham 15× (58.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Cleverer Stratege",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🦔",
+    "name": "Igel",
+    "title": "Beharrlicher Redner",
+    "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+    "id": "igel",
     "alternatives": [
       {
-        "emoji": "🦔",
-        "name": "Igel",
-        "title": "Beharrlicher Redner",
-        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
-        "id": "igel",
-        "score": 0.875
+        "emoji": "🐻",
+        "name": "Bär",
+        "title": "Standhafter Debattierer",
+        "reason": "Trotz 24× unterbrochen zu werden, bleibst du standhaft.",
+        "id": "baer",
+        "score": 0.845
       },
       {
-        "emoji": "🦉",
-        "name": "Eule",
-        "title": "Themenexperte",
-        "reason": "Dein Fachwort \"Denkmal\" nutzt du 730.9× häufiger als deine Fraktion.",
-        "id": "eule",
-        "score": 0.86
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 0.818
       }
     ]
   },

@@ -72,44 +72,84 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "karin",
         "count": 6,
-        "ratioParty": 244.2,
-        "ratioBundestag": 321.6
-      },
-      {
-        "word": "prien",
-        "count": 6,
-        "ratioParty": 114.9,
-        "ratioBundestag": 59.9
-      },
-      {
-        "word": "zusätzlichen",
-        "count": 5,
-        "ratioParty": 31.3,
-        "ratioBundestag": 36.1
-      },
-      {
-        "word": "partei",
-        "count": 5,
-        "ratioParty": 18.9,
-        "ratioBundestag": 10.8
+        "score": 34.7,
+        "ratio": 321.6
       },
       {
         "word": "bundeshaushalt",
         "count": 8,
-        "ratioParty": 17.6,
-        "ratioBundestag": 22.7
+        "score": 25.3,
+        "ratio": 22.7
+      },
+      {
+        "word": "bildung",
+        "count": 9,
+        "score": 25.2,
+        "ratio": 15.5
+      },
+      {
+        "word": "prien",
+        "count": 6,
+        "score": 24.7,
+        "ratio": 59.9
+      },
+      {
+        "word": "kinder",
+        "count": 9,
+        "score": 19.3,
+        "ratio": 7.5
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "karin",
+        "count": 6,
+        "score": 33.0,
+        "ratio": 244.2
+      },
+      {
+        "word": "prien",
+        "count": 6,
+        "score": 28.5,
+        "ratio": 114.9
+      },
+      {
+        "word": "bildung",
+        "count": 9,
+        "score": 25.9,
+        "ratio": 16.7
+      },
+      {
+        "word": "bundeshaushalt",
+        "count": 8,
+        "score": 23.4,
+        "ratio": 17.6
+      },
+      {
+        "word": "kinder",
+        "count": 9,
+        "score": 21.5,
+        "ratio": 9.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "sachlich",
         "count": 4,
-        "ratioParty": 56.6,
-        "ratioBundestag": 104.4
+        "score": 18.6,
+        "ratio": 104.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sachlich",
+        "count": 4,
+        "score": 16.2,
+        "ratio": 56.6
       }
     ]
   },
@@ -133,33 +173,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Melanie Bernstein häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Melanie Bernstein häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Rente",
+        "isCorrect": false
+      },
       {
         "text": "Karin",
         "isCorrect": true
       },
       {
-        "text": "Abstimmung",
+        "text": "Sicherheit",
         "isCorrect": false
       },
       {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
-        "text": "Debatte",
+        "text": "Europa",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Karin\" nutzt Melanie Bernstein 244.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "321.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Karin\" sagte Melanie Bernstein 6× (321.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Melanie Bernstein häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Melanie Bernstein häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
@@ -167,16 +206,15 @@
         "isCorrect": true
       },
       {
-        "text": "Alt",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Neu",
+        "text": "National",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sachlich\" nutzt Melanie Bernstein 56.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "104.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sachlich\" sagte Melanie Bernstein 4× (104.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦦",

@@ -60,44 +60,90 @@
         "count": 21
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "rechtskreiswechsel",
-        "count": 6,
-        "ratioParty": 319.3,
-        "ratioBundestag": 95.0
+        "word": "rente",
+        "count": 38,
+        "score": 117.7,
+        "ratio": 21.1
       },
       {
-        "word": "arbeitszeitgesetz",
-        "count": 8,
-        "ratioParty": 212.9,
-        "ratioBundestag": 119.6
+        "word": "arbeitsmarkt",
+        "count": 29,
+        "score": 115.9,
+        "ratio": 53.5
       },
       {
-        "word": "sozialpartnerschaft",
-        "count": 5,
-        "ratioParty": 133.0,
-        "ratioBundestag": 84.1
+        "word": "menschen",
+        "count": 64,
+        "score": 78.5,
+        "ratio": 2.4
+      },
+      {
+        "word": "arbeit",
+        "count": 34,
+        "score": 68.9,
+        "ratio": 6.6
       },
       {
         "word": "grundsicherung",
         "count": 17,
-        "ratioParty": 100.5,
-        "ratioBundestag": 41.2
-      },
-      {
-        "word": "mütterrente",
-        "count": 8,
-        "ratioParty": 71.0,
-        "ratioBundestag": 38.5
+        "score": 63.6,
+        "ratio": 41.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "rente",
+        "count": 38,
+        "score": 111.4,
+        "ratio": 17.7
+      },
+      {
+        "word": "arbeitsmarkt",
+        "count": 29,
+        "score": 105.3,
+        "ratio": 36.7
+      },
+      {
+        "word": "grundsicherung",
+        "count": 17,
+        "score": 78.5,
+        "ratio": 100.5
+      },
+      {
+        "word": "menschen",
+        "count": 64,
+        "score": 73.5,
+        "ratio": 2.2
+      },
+      {
+        "word": "arbeit",
+        "count": 34,
+        "score": 61.1,
+        "ratio": 5.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "gerecht",
         "count": 7,
-        "ratioParty": 3.2,
-        "ratioBundestag": 4.5
+        "score": 11.9,
+        "ratio": 4.5
+      },
+      {
+        "word": "sicher",
+        "count": 7,
+        "score": 8.9,
+        "ratio": 2.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 7,
+        "score": 10.1,
+        "ratio": 3.2
       }
     ]
   },
@@ -121,30 +167,29 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Bärbel Bas häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Bärbel Bas häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Rechtskreiswechsel",
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Rente",
         "isCorrect": true
       },
       {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
-        "isCorrect": false
-      },
-      {
-        "text": "Haushalt",
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rechtskreiswechsel\" nutzt Bärbel Bas 319.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "95.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Rente\" sagte Bärbel Bas 38× (21.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Bärbel Bas häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Bärbel Bas häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Alt",
@@ -155,32 +200,23 @@
         "isCorrect": true
       },
       {
-        "text": "Problematisch",
+        "text": "Falsch",
         "isCorrect": false
       },
       {
-        "text": "Notwendig",
+        "text": "Wichtig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gerecht\" nutzt Bärbel Bas 3.2× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "4.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gerecht\" sagte Bärbel Bas 7× (4.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Clevere Strategin",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüterin",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 1.0
-      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -188,6 +224,14 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
+      },
+      {
+        "emoji": "🐬",
+        "name": "Delfin",
+        "title": "Diplomatische Rednerin",
+        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
+        "id": "delfin",
+        "score": 0.889
       }
     ]
   },

@@ -72,39 +72,72 @@
         "count": 3
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "sicherheit",
+        "count": 11,
+        "score": 30.5,
+        "ratio": 15.1
+      },
       {
         "word": "militärische",
         "count": 6,
-        "ratioParty": 85.6,
-        "ratioBundestag": 93.5
+        "score": 27.3,
+        "ratio": 93.5
       },
       {
         "word": "zukünftig",
         "count": 5,
-        "ratioParty": 59.9,
-        "ratioBundestag": 81.6
-      },
-      {
-        "word": "sicherheit",
-        "count": 11,
-        "ratioParty": 12.9,
-        "ratioBundestag": 15.1
+        "score": 22.1,
+        "ratio": 81.6
       },
       {
         "word": "schaffen",
         "count": 7,
-        "ratioParty": 9.2,
-        "ratioBundestag": 12.3
+        "score": 18.1,
+        "ratio": 12.3
       },
       {
         "word": "diesen",
         "count": 5,
-        "ratioParty": 4.5,
-        "ratioBundestag": 5.3
+        "score": 9.2,
+        "ratio": 5.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "sicherheit",
+        "count": 11,
+        "score": 29.0,
+        "ratio": 12.9
+      },
+      {
+        "word": "militärische",
+        "count": 6,
+        "score": 26.8,
+        "ratio": 85.6
+      },
+      {
+        "word": "zukünftig",
+        "count": 5,
+        "score": 20.5,
+        "ratio": 59.9
+      },
+      {
+        "word": "schaffen",
+        "count": 7,
+        "score": 16.2,
+        "ratio": 9.2
+      },
+      {
+        "word": "diesen",
+        "count": 5,
+        "score": 8.5,
+        "ratio": 4.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 315,
@@ -121,27 +154,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jan-Wilhelm Pohlmann häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Jan-Wilhelm Pohlmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
       {
         "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Militärische",
+        "text": "Sicherheit",
         "isCorrect": true
-      },
-      {
-        "text": "Politik",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Militärische\" nutzt Jan-Wilhelm Pohlmann 85.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "93.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicherheit\" sagte Jan-Wilhelm Pohlmann 11× (15.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

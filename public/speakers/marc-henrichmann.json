@@ -40,44 +40,84 @@
         "count": 13
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "bundesverwaltung",
+        "count": 8,
+        "score": 35.0,
+        "ratio": 78.7
+      },
       {
         "word": "waffenrecht",
         "count": 5,
-        "ratioParty": 595.7,
-        "ratioBundestag": 467.5
-      },
-      {
-        "word": "komponenten",
-        "count": 5,
-        "ratioParty": 198.6,
-        "ratioBundestag": 116.9
+        "score": 30.7,
+        "ratio": 467.5
       },
       {
         "word": "offenbar",
         "count": 9,
-        "ratioParty": 119.1,
-        "ratioBundestag": 22.7
+        "score": 28.5,
+        "ratio": 22.7
       },
       {
-        "word": "nachrichtendienste",
+        "word": "komponenten",
         "count": 5,
-        "ratioParty": 85.1,
-        "ratioBundestag": 56.7
+        "score": 23.8,
+        "ratio": 116.9
+      },
+      {
+        "word": "worden",
+        "count": 13,
+        "score": 23.5,
+        "ratio": 5.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "offenbar",
+        "count": 9,
+        "score": 43.1,
+        "ratio": 119.1
       },
       {
         "word": "bundesverwaltung",
         "count": 8,
-        "ratioParty": 68.1,
-        "ratioBundestag": 78.7
+        "score": 33.9,
+        "ratio": 68.1
+      },
+      {
+        "word": "waffenrecht",
+        "count": 5,
+        "score": 32.0,
+        "ratio": 595.7
+      },
+      {
+        "word": "komponenten",
+        "count": 5,
+        "score": 26.5,
+        "ratio": 198.6
+      },
+      {
+        "word": "nachrichtendienste",
+        "count": 5,
+        "score": 22.3,
+        "ratio": 85.1
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "teuer",
         "count": 4,
-        "ratioParty": 9.7,
-        "ratioBundestag": 6.9
+        "score": 8.2,
+        "ratio": 6.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "teuer",
+        "count": 4,
+        "score": 9.5,
+        "ratio": 9.7
       }
     ]
   },
@@ -106,50 +146,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Marc Henrichmann häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Marc Henrichmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Bundesverwaltung",
+        "isCorrect": true
+      },
+      {
+        "text": "Reform",
+        "isCorrect": false
+      },
       {
         "text": "Investitionen",
         "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Waffenrecht",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Waffenrecht\" nutzt Marc Henrichmann 595.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "467.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bundesverwaltung\" sagte Marc Henrichmann 8× (78.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Marc Henrichmann häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Marc Henrichmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
-        "isCorrect": false
-      },
       {
         "text": "Teuer",
         "isCorrect": true
+      },
+      {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Teuer\" nutzt Marc Henrichmann 9.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "6.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Teuer\" sagte Marc Henrichmann 4× (6.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

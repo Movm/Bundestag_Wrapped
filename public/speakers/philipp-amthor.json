@@ -72,15 +72,24 @@
         "count": 1
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "bismarck",
         "count": 5,
-        "ratioParty": 423.7,
-        "ratioBundestag": 6423.3
+        "score": 43.8,
+        "ratio": 6423.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bismarck",
+        "count": 5,
+        "score": 30.3,
+        "ratio": 423.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 171,
@@ -97,10 +106,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Philipp Amthor häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Philipp Amthor häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Arbeit",
+        "text": "Reform",
         "isCorrect": false
       },
       {
@@ -108,16 +117,15 @@
         "isCorrect": true
       },
       {
-        "text": "Haushalt",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Koalition",
+        "text": "Fraktion",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bismarck\" nutzt Philipp Amthor 423.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "6423.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bismarck\" sagte Philipp Amthor 5× (6423.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

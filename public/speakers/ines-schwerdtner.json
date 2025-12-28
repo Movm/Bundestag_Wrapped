@@ -64,44 +64,84 @@
         "count": 19
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "sozialsprechstunde",
-        "count": 5,
-        "ratioParty": 122.6,
-        "ratioBundestag": 1214.9
+        "word": "menschen",
+        "count": 95,
+        "score": 137.2,
+        "ratio": 3.2
       },
       {
-        "word": "haushaltsausschuss",
-        "count": 5,
-        "ratioParty": 40.9,
-        "ratioBundestag": 8.0
+        "word": "klingbeil",
+        "count": 16,
+        "score": 40.8,
+        "ratio": 11.8
       },
       {
-        "word": "besucher",
-        "count": 5,
-        "ratioParty": 24.5,
-        "ratioBundestag": 29.6
+        "word": "vermögensteuer",
+        "count": 9,
+        "score": 40.0,
+        "ratio": 84.1
       },
       {
-        "word": "lobbyisten",
-        "count": 5,
-        "ratioParty": 24.5,
-        "ratioBundestag": 71.5
+        "word": "wissen",
+        "count": 26,
+        "score": 38.7,
+        "ratio": 3.4
       },
       {
-        "word": "mütter",
-        "count": 6,
-        "ratioParty": 18.4,
-        "ratioBundestag": 19.2
+        "word": "bericht",
+        "count": 13,
+        "score": 35.8,
+        "ratio": 14.7
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "wissen",
+        "count": 26,
+        "score": 39.8,
+        "ratio": 3.6
+      },
+      {
+        "word": "klingbeil",
+        "count": 16,
+        "score": 38.1,
+        "ratio": 9.8
+      },
+      {
+        "word": "bericht",
+        "count": 13,
+        "score": 30.4,
+        "ratio": 9.4
+      },
+      {
+        "word": "haushalt",
+        "count": 25,
+        "score": 29.2,
+        "ratio": 2.2
+      },
+      {
+        "word": "spahn",
+        "count": 13,
+        "score": 24.5,
+        "ratio": 5.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "peinlich",
         "count": 3,
-        "ratioParty": 7.4,
-        "ratioBundestag": 13.5
+        "score": 8.0,
+        "ratio": 13.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "peinlich",
+        "count": 3,
+        "score": 6.4,
+        "ratio": 7.4
       }
     ]
   },
@@ -135,37 +175,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Ines Schwerdtner häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Ines Schwerdtner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Sozialsprechstunde",
+        "text": "Menschen",
         "isCorrect": true
       },
       {
-        "text": "Koalition",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
-        "text": "Rente",
+        "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
+        "text": "Reform",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sozialsprechstunde\" nutzt Ines Schwerdtner 122.6× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "1214.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Menschen\" sagte Ines Schwerdtner 95× (3.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Ines Schwerdtner häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Ines Schwerdtner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
@@ -173,12 +208,15 @@
         "isCorrect": true
       },
       {
-        "text": "Problematisch",
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Peinlich\" nutzt Ines Schwerdtner 7.4× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "13.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Peinlich\" sagte Ines Schwerdtner 3× (13.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

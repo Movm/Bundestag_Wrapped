@@ -52,39 +52,72 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "tourismus",
         "count": 34,
-        "ratioParty": 1005.9,
-        "ratioBundestag": 219.4
-      },
-      {
-        "word": "transparenz",
-        "count": 6,
-        "ratioParty": 18.7,
-        "ratioBundestag": 16.3
-      },
-      {
-        "word": "entwicklungszusammenarbeit",
-        "count": 5,
-        "ratioParty": 14.4,
-        "ratioBundestag": 14.4
-      },
-      {
-        "word": "israel",
-        "count": 5,
-        "ratioParty": 10.2,
-        "ratioBundestag": 6.8
+        "score": 183.4,
+        "ratio": 219.4
       },
       {
         "word": "junge",
         "count": 8,
-        "ratioParty": 10.1,
-        "ratioBundestag": 10.5
+        "score": 19.5,
+        "ratio": 10.5
+      },
+      {
+        "word": "transparenz",
+        "count": 6,
+        "score": 17.1,
+        "ratio": 16.3
+      },
+      {
+        "word": "entwicklungszusammenarbeit",
+        "count": 5,
+        "score": 13.7,
+        "ratio": 14.4
+      },
+      {
+        "word": "sollten",
+        "count": 7,
+        "score": 11.9,
+        "ratio": 4.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "tourismus",
+        "count": 34,
+        "score": 235.1,
+        "ratio": 1005.9
+      },
+      {
+        "word": "junge",
+        "count": 8,
+        "score": 19.2,
+        "ratio": 10.1
+      },
+      {
+        "word": "transparenz",
+        "count": 6,
+        "score": 17.9,
+        "ratio": 18.7
+      },
+      {
+        "word": "entwicklungszusammenarbeit",
+        "count": 5,
+        "score": 13.7,
+        "ratio": 14.4
+      },
+      {
+        "word": "israel",
+        "count": 5,
+        "score": 12.1,
+        "ratio": 10.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 493,
@@ -106,27 +139,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Christoph Schmid häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Christoph Schmid häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesellschaft",
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
         "text": "Tourismus",
         "isCorrect": true
-      },
-      {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Tourismus\" nutzt Christoph Schmid 1005.9× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "219.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Tourismus\" sagte Christoph Schmid 34× (219.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -150,7 +182,7 @@
         "title": "Cleverer Stratege",
         "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
         "id": "fuchs",
-        "score": 0.933
+        "score": 0.833
       }
     ]
   },

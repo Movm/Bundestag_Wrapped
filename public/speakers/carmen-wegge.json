@@ -72,44 +72,84 @@
         "count": 10
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "drucksachen",
-        "count": 5,
-        "ratioParty": 432.8,
-        "ratioBundestag": 362.8
+        "word": "aussetzung",
+        "count": 10,
+        "score": 41.2,
+        "ratio": 60.5
       },
       {
-        "word": "erteilung",
-        "count": 5,
-        "ratioParty": 216.4,
-        "ratioBundestag": 241.8
+        "word": "innen",
+        "count": 15,
+        "score": 40.6,
+        "ratio": 14.0
       },
       {
-        "word": "selbstbestimmungsgesetz",
-        "count": 5,
-        "ratioParty": 108.2,
-        "ratioBundestag": 58.8
+        "word": "mietpreisbremse",
+        "count": 12,
+        "score": 37.3,
+        "ratio": 21.4
+      },
+      {
+        "word": "schutz",
+        "count": 16,
+        "score": 34.3,
+        "ratio": 7.5
       },
       {
         "word": "unterrichtung",
         "count": 5,
-        "ratioParty": 86.6,
-        "ratioBundestag": 362.8
-      },
-      {
-        "word": "queere",
-        "count": 5,
-        "ratioParty": 61.8,
-        "ratioBundestag": 25.9
+        "score": 29.5,
+        "ratio": 362.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "innen",
+        "count": 15,
+        "score": 50.3,
+        "ratio": 27.6
+      },
+      {
+        "word": "aussetzung",
+        "count": 10,
+        "score": 35.3,
+        "ratio": 33.3
+      },
+      {
+        "word": "mietpreisbremse",
+        "count": 12,
+        "score": 34.0,
+        "ratio": 16.0
+      },
+      {
+        "word": "schutz",
+        "count": 16,
+        "score": 33.7,
+        "ratio": 7.2
+      },
+      {
+        "word": "drucksachen",
+        "count": 5,
+        "score": 30.4,
+        "ratio": 432.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "verlässlich",
         "count": 3,
-        "ratioParty": 10.8,
-        "ratioBundestag": 11.1
+        "score": 7.5,
+        "ratio": 11.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "verlässlich",
+        "count": 3,
+        "score": 7.4,
+        "ratio": 10.8
       }
     ]
   },
@@ -133,41 +173,40 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Carmen Wegge häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Carmen Wegge häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Drucksachen",
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Aussetzung",
         "isCorrect": true
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Drucksachen\" nutzt Carmen Wegge 432.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "362.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Aussetzung\" sagte Carmen Wegge 10× (60.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Carmen Wegge häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Carmen Wegge häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Verlässlich",
-        "isCorrect": true
-      },
       {
         "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Neu",
+        "text": "Verlässlich",
+        "isCorrect": true
+      },
+      {
+        "text": "Stark",
         "isCorrect": false
       },
       {
@@ -175,24 +214,15 @@
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verlässlich\" nutzt Carmen Wegge 10.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "11.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Verlässlich\" sagte Carmen Wegge 3× (11.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Clevere Strategin",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüterin",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 1.0
-      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -200,6 +230,14 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
+      },
+      {
+        "emoji": "🐴",
+        "name": "Pferd",
+        "title": "Fleißige Debattiererin",
+        "reason": "Mit 15 Reden gehörst du zu den aktivsten Abgeordneten.",
+        "id": "pferd",
+        "score": 0.817
       }
     ]
   },

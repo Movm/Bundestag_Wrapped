@@ -48,39 +48,72 @@
         "count": 7
       }
     ],
-    "signatureWords": [
-      {
-        "word": "schuldnerberatung",
-        "count": 7,
-        "ratioParty": 544.6,
-        "ratioBundestag": 102.9
-      },
+    "signatureWordsBundestag": [
       {
         "word": "verbraucher",
         "count": 11,
-        "ratioParty": 45.0,
-        "ratioBundestag": 30.3
+        "score": 37.9,
+        "ratio": 30.3
+      },
+      {
+        "word": "schuldnerberatung",
+        "count": 7,
+        "score": 32.5,
+        "ratio": 102.9
+      },
+      {
+        "word": "bundestag",
+        "count": 11,
+        "score": 24.8,
+        "ratio": 8.5
+      },
+      {
+        "word": "opposition",
+        "count": 6,
+        "score": 17.1,
+        "ratio": 16.2
       },
       {
         "word": "richtlinie",
         "count": 5,
-        "ratioParty": 25.9,
-        "ratioBundestag": 21.4
-      },
-      {
-        "word": "mietpreisbremse",
-        "count": 5,
-        "ratioParty": 19.9,
-        "ratioBundestag": 13.8
-      },
-      {
-        "word": "schreiben",
-        "count": 5,
-        "ratioParty": 13.9,
-        "ratioBundestag": 16.2
+        "score": 15.6,
+        "ratio": 21.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "schuldnerberatung",
+        "count": 7,
+        "score": 44.1,
+        "ratio": 544.6
+      },
+      {
+        "word": "verbraucher",
+        "count": 11,
+        "score": 42.1,
+        "ratio": 45.0
+      },
+      {
+        "word": "bundestag",
+        "count": 11,
+        "score": 26.9,
+        "ratio": 10.6
+      },
+      {
+        "word": "richtlinie",
+        "count": 5,
+        "score": 16.5,
+        "ratio": 25.9
+      },
+      {
+        "word": "opposition",
+        "count": 6,
+        "score": 15.4,
+        "ratio": 12.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 615,
@@ -102,10 +135,14 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Stefan Möller häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Stefan Möller häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bildung",
+        "text": "Verbraucher",
+        "isCorrect": true
+      },
+      {
+        "text": "Reform",
         "isCorrect": false
       },
       {
@@ -115,14 +152,9 @@
       {
         "text": "Bürger",
         "isCorrect": false
-      },
-      {
-        "text": "Schuldnerberatung",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Schuldnerberatung\" nutzt Stefan Möller 544.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "102.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Verbraucher\" sagte Stefan Möller 11× (30.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

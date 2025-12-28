@@ -72,44 +72,84 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "operation",
-        "count": 5,
-        "ratioParty": 60.2,
-        "ratioBundestag": 69.3
-      },
-      {
-        "word": "sicherheitsrat",
-        "count": 5,
-        "ratioParty": 58.1,
-        "ratioBundestag": 75.3
-      },
-      {
-        "word": "regime",
-        "count": 5,
-        "ratioParty": 54.3,
-        "ratioBundestag": 53.8
-      },
-      {
-        "word": "außenminister",
-        "count": 5,
-        "ratioParty": 31.2,
-        "ratioBundestag": 23.5
+        "word": "russland",
+        "count": 14,
+        "score": 44.9,
+        "ratio": 23.7
       },
       {
         "word": "nationalen",
         "count": 7,
-        "ratioParty": 23.8,
-        "ratioBundestag": 29.2
+        "score": 23.8,
+        "ratio": 29.2
+      },
+      {
+        "word": "sicherheitsrat",
+        "count": 5,
+        "score": 21.7,
+        "ratio": 75.3
+      },
+      {
+        "word": "operation",
+        "count": 5,
+        "score": 21.3,
+        "ratio": 69.3
+      },
+      {
+        "word": "regime",
+        "count": 5,
+        "score": 20.0,
+        "ratio": 53.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "russland",
+        "count": 14,
+        "score": 42.0,
+        "ratio": 19.1
+      },
+      {
+        "word": "nationalen",
+        "count": 7,
+        "score": 22.5,
+        "ratio": 23.8
+      },
+      {
+        "word": "operation",
+        "count": 5,
+        "score": 20.6,
+        "ratio": 60.2
+      },
+      {
+        "word": "sicherheitsrat",
+        "count": 5,
+        "score": 20.4,
+        "ratio": 58.1
+      },
+      {
+        "word": "regime",
+        "count": 5,
+        "score": 20.1,
+        "ratio": 54.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "wirksam",
         "count": 3,
-        "ratioParty": 16.6,
-        "ratioBundestag": 22.7
+        "score": 9.5,
+        "ratio": 22.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 8.6,
+        "ratio": 16.6
       }
     ]
   },
@@ -133,50 +173,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Roderich Kiesewetter häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Roderich Kiesewetter häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Ausschuss",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Operation",
+        "text": "Russland",
         "isCorrect": true
       },
       {
-        "text": "Wirtschaft",
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Haushalt",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Operation\" nutzt Roderich Kiesewetter 60.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "69.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Russland\" sagte Roderich Kiesewetter 14× (23.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Roderich Kiesewetter häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Roderich Kiesewetter häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Richtig",
+        "isCorrect": false
+      },
       {
         "text": "Wirksam",
         "isCorrect": true
       },
       {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
         "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wirksam\" nutzt Roderich Kiesewetter 16.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "22.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wirksam\" sagte Roderich Kiesewetter 3× (22.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦫",

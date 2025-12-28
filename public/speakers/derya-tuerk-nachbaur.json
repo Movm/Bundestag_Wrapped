@@ -72,44 +72,84 @@
         "count": 11
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "libanon",
-        "count": 5,
-        "ratioParty": 62.0,
-        "ratioBundestag": 27.6
+        "word": "frauen",
+        "count": 24,
+        "score": 60.4,
+        "ratio": 11.4
+      },
+      {
+        "word": "frieden",
+        "count": 19,
+        "score": 49.6,
+        "ratio": 12.6
       },
       {
         "word": "sudan",
         "count": 11,
-        "ratioParty": 47.7,
-        "ratioBundestag": 26.1
+        "score": 36.3,
+        "ratio": 26.1
+      },
+      {
+        "word": "internationalen",
+        "count": 12,
+        "score": 30.5,
+        "ratio": 11.7
+      },
+      {
+        "word": "stabilität",
+        "count": 11,
+        "score": 29.2,
+        "ratio": 13.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "frauen",
+        "count": 24,
+        "score": 55.2,
+        "ratio": 9.0
+      },
+      {
+        "word": "frieden",
+        "count": 19,
+        "score": 44.9,
+        "ratio": 9.6
+      },
+      {
+        "word": "sudan",
+        "count": 11,
+        "score": 42.8,
+        "ratio": 47.7
       },
       {
         "word": "hoffnung",
         "count": 9,
-        "ratioParty": 43.4,
-        "ratioBundestag": 22.1
+        "score": 34.1,
+        "ratio": 43.4
       },
       {
-        "word": "regime",
-        "count": 7,
-        "ratioParty": 38.0,
-        "ratioBundestag": 31.8
-      },
-      {
-        "word": "hamas",
-        "count": 9,
-        "ratioParty": 32.6,
-        "ratioBundestag": 18.2
+        "word": "israel",
+        "count": 11,
+        "score": 32.6,
+        "ratio": 18.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "entscheidend",
         "count": 3,
-        "ratioParty": 3.9,
-        "ratioBundestag": 4.8
+        "score": 5.3,
+        "ratio": 4.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 4.8,
+        "ratio": 3.9
       }
     ]
   },
@@ -138,33 +178,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Derya Türk-Nachbaur häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Derya Türk-Nachbaur häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Libanon",
-        "isCorrect": true
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
       {
         "text": "Investitionen",
         "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Frauen",
+        "isCorrect": true
+      },
+      {
+        "text": "Ausschuss",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Libanon\" nutzt Derya Türk-Nachbaur 62.0× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "27.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Frauen\" sagte Derya Türk-Nachbaur 24× (11.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Derya Türk-Nachbaur häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Derya Türk-Nachbaur häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Problematisch",
+        "text": "Entscheidend",
+        "isCorrect": true
+      },
+      {
+        "text": "Richtig",
         "isCorrect": false
       },
       {
@@ -172,16 +215,11 @@
         "isCorrect": false
       },
       {
-        "text": "Entscheidend",
-        "isCorrect": true
-      },
-      {
-        "text": "Jung",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Derya Türk-Nachbaur 3.9× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "4.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Entscheidend\" sagte Derya Türk-Nachbaur 3× (4.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

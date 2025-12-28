@@ -56,39 +56,72 @@
         "count": 9
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "wasserstoff",
+        "count": 15,
+        "score": 64.1,
+        "ratio": 70.8
+      },
+      {
+        "word": "reden",
+        "count": 18,
+        "score": 41.4,
+        "ratio": 9.0
+      },
       {
         "word": "carbon",
         "count": 6,
-        "ratioParty": 560.4,
-        "ratioBundestag": 702.2
+        "score": 39.3,
+        "ratio": 702.2
       },
       {
         "word": "hochlauf",
         "count": 8,
-        "ratioParty": 166.0,
-        "ratioBundestag": 120.0
+        "score": 38.4,
+        "ratio": 120.0
       },
+      {
+        "word": "technologie",
+        "count": 9,
+        "score": 30.4,
+        "ratio": 28.3
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "wasserstoff",
         "count": 15,
-        "ratioParty": 96.6,
-        "ratioBundestag": 70.8
+        "score": 68.7,
+        "ratio": 96.6
+      },
+      {
+        "word": "reden",
+        "count": 18,
+        "score": 45.3,
+        "ratio": 11.4
+      },
+      {
+        "word": "hochlauf",
+        "count": 8,
+        "score": 40.9,
+        "ratio": 166.0
+      },
+      {
+        "word": "carbon",
+        "count": 6,
+        "score": 38.0,
+        "ratio": 560.4
       },
       {
         "word": "stahlindustrie",
         "count": 7,
-        "ratioParty": 93.4,
-        "ratioBundestag": 69.4
-      },
-      {
-        "word": "zukunftstechnologien",
-        "count": 6,
-        "ratioParty": 86.2,
-        "ratioBundestag": 78.0
+        "score": 31.8,
+        "ratio": 93.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 547,
@@ -110,27 +143,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Nicklas Kappe häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Nicklas Kappe häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Ausschuss",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Carbon",
+        "text": "Wasserstoff",
         "isCorrect": true
       },
       {
-        "text": "Abstimmung",
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Carbon\" nutzt Nicklas Kappe 560.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "702.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wasserstoff\" sagte Nicklas Kappe 15× (70.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

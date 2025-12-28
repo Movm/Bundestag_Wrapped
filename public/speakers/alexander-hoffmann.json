@@ -60,68 +60,132 @@
         "count": 18
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "chrupalla",
-        "count": 6,
-        "ratioParty": 64.6,
-        "ratioBundestag": 59.0
+        "word": "europa",
+        "count": 32,
+        "score": 64.8,
+        "ratio": 6.6
       },
       {
-        "word": "geschäftsordnung",
-        "count": 5,
-        "ratioParty": 48.5,
-        "ratioBundestag": 20.6
+        "word": "interessen",
+        "count": 16,
+        "score": 39.4,
+        "ratio": 10.7
       },
       {
         "word": "weidel",
         "count": 10,
-        "ratioParty": 46.2,
-        "ratioBundestag": 49.2
+        "score": 39.2,
+        "ratio": 49.2
       },
       {
-        "word": "kreml",
-        "count": 5,
-        "ratioParty": 44.1,
-        "ratioBundestag": 50.8
+        "word": "putin",
+        "count": 14,
+        "score": 38.3,
+        "ratio": 14.4
       },
       {
-        "word": "handschrift",
-        "count": 5,
-        "ratioParty": 44.1,
-        "ratioBundestag": 63.5
+        "word": "ukraine",
+        "count": 20,
+        "score": 37.4,
+        "ratio": 5.5
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "europa",
+        "count": 32,
+        "score": 54.0,
+        "ratio": 4.4
+      },
+      {
+        "word": "interessen",
+        "count": 16,
+        "score": 44.3,
+        "ratio": 14.9
+      },
+      {
+        "word": "menschen",
+        "count": 37,
+        "score": 41.0,
+        "ratio": 2.0
+      },
+      {
+        "word": "weidel",
+        "count": 10,
+        "score": 38.5,
+        "ratio": 46.2
+      },
+      {
+        "word": "putin",
+        "count": 14,
+        "score": 36.4,
+        "ratio": 12.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "beschämend",
         "count": 4,
-        "ratioParty": 129.3,
-        "ratioBundestag": 33.0
-      },
-      {
-        "word": "links",
-        "count": 4,
-        "ratioParty": 6.4,
-        "ratioBundestag": 4.0
+        "score": 14.1,
+        "ratio": 33.0
       },
       {
         "word": "wirtschaftlich",
         "count": 4,
-        "ratioParty": 4.5,
-        "ratioBundestag": 5.4
+        "score": 7.4,
+        "ratio": 5.4
+      },
+      {
+        "word": "links",
+        "count": 4,
+        "score": 6.4,
+        "ratio": 4.0
       },
       {
         "word": "rechts",
         "count": 4,
-        "ratioParty": 4.4,
-        "ratioBundestag": 3.8
+        "score": 6.3,
+        "ratio": 3.8
       },
       {
         "word": "erfolgreich",
         "count": 3,
-        "ratioParty": 2.7,
-        "ratioBundestag": 4.1
+        "score": 4.9,
+        "ratio": 4.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "beschämend",
+        "count": 4,
+        "score": 19.5,
+        "ratio": 129.3
+      },
+      {
+        "word": "links",
+        "count": 4,
+        "score": 8.0,
+        "ratio": 6.4
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 4,
+        "score": 6.8,
+        "ratio": 4.5
+      },
+      {
+        "word": "rechts",
+        "count": 4,
+        "score": 6.7,
+        "ratio": 4.4
+      },
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 3.9,
+        "ratio": 2.7
       }
     ]
   },
@@ -150,50 +214,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Alexander Hoffmann häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Alexander Hoffmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesellschaft",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Chrupalla",
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
         "isCorrect": true
-      },
-      {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Chrupalla\" nutzt Alexander Hoffmann 64.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "59.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Europa\" sagte Alexander Hoffmann 32× (6.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Alexander Hoffmann häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Alexander Hoffmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
+      },
       {
         "text": "Beschämend",
         "isCorrect": true
       },
       {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Beschämend\" nutzt Alexander Hoffmann 129.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "33.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Beschämend\" sagte Alexander Hoffmann 4× (33.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐺",

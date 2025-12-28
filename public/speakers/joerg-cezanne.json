@@ -72,44 +72,84 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "ausbau",
+        "count": 15,
+        "score": 45.8,
+        "ratio": 20.2
+      },
+      {
+        "word": "erneuerbaren",
+        "count": 11,
+        "score": 35.7,
+        "ratio": 24.7
+      },
+      {
+        "word": "strom",
+        "count": 10,
+        "score": 29.8,
+        "ratio": 18.7
+      },
       {
         "word": "renditen",
         "count": 5,
-        "ratioParty": 129.9,
-        "ratioBundestag": 280.7
+        "score": 28.2,
+        "ratio": 280.7
       },
       {
         "word": "wasserstoff",
         "count": 8,
-        "ratioParty": 83.1,
-        "ratioBundestag": 30.9
+        "score": 27.7,
+        "ratio": 30.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "ausbau",
+        "count": 15,
+        "score": 43.3,
+        "ratio": 16.9
+      },
+      {
+        "word": "wasserstoff",
+        "count": 8,
+        "score": 35.5,
+        "ratio": 83.1
+      },
+      {
+        "word": "erneuerbaren",
+        "count": 11,
+        "score": 34.9,
+        "ratio": 22.9
+      },
+      {
+        "word": "strom",
+        "count": 10,
+        "score": 30.4,
+        "ratio": 20.0
       },
       {
         "word": "stahl",
         "count": 6,
-        "ratioParty": 62.3,
-        "ratioBundestag": 28.1
-      },
-      {
-        "word": "industriestrompreis",
-        "count": 5,
-        "ratioParty": 51.9,
-        "ratioBundestag": 27.5
-      },
-      {
-        "word": "netzausbau",
-        "count": 5,
-        "ratioParty": 51.9,
-        "ratioBundestag": 45.1
+        "score": 24.9,
+        "ratio": 62.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "falsch",
         "count": 3,
-        "ratioParty": 4.9,
-        "ratioBundestag": 4.7
+        "score": 5.2,
+        "ratio": 4.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 5.3,
+        "ratio": 4.9
       }
     ]
   },
@@ -138,50 +178,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jörg Cezanne häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Jörg Cezanne häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Demokratie",
         "isCorrect": false
       },
       {
-        "text": "Opposition",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Renditen",
+        "text": "Ausbau",
         "isCorrect": true
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Renditen\" nutzt Jörg Cezanne 129.9× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "280.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ausbau\" sagte Jörg Cezanne 15× (20.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Jörg Cezanne häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Jörg Cezanne häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
       {
         "text": "Falsch",
         "isCorrect": true
       },
       {
-        "text": "Sicher",
+        "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "National",
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Falsch\" nutzt Jörg Cezanne 4.9× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "4.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Falsch\" sagte Jörg Cezanne 3× (4.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -199,12 +237,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.882
+        "emoji": "🐬",
+        "name": "Delfin",
+        "title": "Diplomatischer Redner",
+        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
+        "id": "delfin",
+        "score": 0.8
       }
     ]
   },

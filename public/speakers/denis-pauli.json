@@ -72,50 +72,96 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "entwicklungspolitik",
         "count": 12,
-        "ratioParty": 123.7,
-        "ratioBundestag": 121.2
+        "score": 57.7,
+        "ratio": 121.2
       },
       {
         "word": "entwicklungshilfe",
         "count": 7,
-        "ratioParty": 33.9,
-        "ratioBundestag": 86.5
+        "score": 31.3,
+        "ratio": 86.5
+      },
+      {
+        "word": "deutschland",
+        "count": 20,
+        "score": 27.2,
+        "ratio": 2.9
+      },
+      {
+        "word": "bürger",
+        "count": 11,
+        "score": 22.3,
+        "ratio": 6.6
       },
       {
         "word": "fließen",
         "count": 5,
-        "ratioParty": 17.7,
-        "ratioBundestag": 23.2
-      },
-      {
-        "word": "länder",
-        "count": 5,
-        "ratioParty": 7.5,
-        "ratioBundestag": 5.5
-      },
-      {
-        "word": "interessen",
-        "count": 5,
-        "ratioParty": 6.5,
-        "ratioBundestag": 11.3
+        "score": 15.9,
+        "ratio": 23.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "entwicklungspolitik",
+        "count": 12,
+        "score": 57.9,
+        "ratio": 123.7
+      },
+      {
+        "word": "entwicklungshilfe",
+        "count": 7,
+        "score": 24.9,
+        "ratio": 33.9
+      },
+      {
+        "word": "deutschland",
+        "count": 20,
+        "score": 22.6,
+        "ratio": 2.1
+      },
+      {
+        "word": "menschen",
+        "count": 11,
+        "score": 15.1,
+        "ratio": 3.0
+      },
+      {
+        "word": "fließen",
+        "count": 5,
+        "score": 14.6,
+        "ratio": 17.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "ideologisch",
+        "count": 3,
+        "score": 10.8,
+        "ratio": 35.0
+      },
       {
         "word": "wirtschaftlich",
         "count": 3,
-        "ratioParty": 14.8,
-        "ratioBundestag": 13.9
+        "score": 8.1,
+        "ratio": 13.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 8.3,
+        "ratio": 14.8
       },
       {
         "word": "ideologisch",
         "count": 3,
-        "ratioParty": 13.2,
-        "ratioBundestag": 35.0
+        "score": 8.0,
+        "ratio": 13.2
       }
     ]
   },
@@ -144,14 +190,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Denis Pauli häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Denis Pauli häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Politik",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
@@ -159,35 +201,37 @@
         "isCorrect": true
       },
       {
-        "text": "Rente",
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entwicklungspolitik\" nutzt Denis Pauli 123.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "121.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Entwicklungspolitik\" sagte Denis Pauli 12× (121.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Denis Pauli häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Denis Pauli häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Richtig",
+        "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Erfolgreich",
+        "text": "Sicher",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Ideologisch",
         "isCorrect": true
       },
       {
-        "text": "Falsch",
+        "text": "Klar",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wirtschaftlich\" nutzt Denis Pauli 14.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "13.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ideologisch\" sagte Denis Pauli 3× (35.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

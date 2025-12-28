@@ -48,32 +48,60 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "masken",
         "count": 6,
-        "ratioParty": 84.1,
-        "ratioBundestag": 118.6
-      },
-      {
-        "word": "warum",
-        "count": 6,
-        "ratioParty": 7.5,
-        "ratioBundestag": 5.4
+        "score": 28.7,
+        "ratio": 118.6
       },
       {
         "word": "gehört",
         "count": 7,
-        "ratioParty": 4.3,
-        "ratioBundestag": 4.9
+        "score": 12.4,
+        "ratio": 4.9
+      },
+      {
+        "word": "warum",
+        "count": 6,
+        "score": 11.1,
+        "ratio": 5.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "masken",
+        "count": 6,
+        "score": 26.7,
+        "ratio": 84.1
+      },
+      {
+        "word": "warum",
+        "count": 6,
+        "score": 12.8,
+        "ratio": 7.5
+      },
+      {
+        "word": "gehört",
+        "count": 7,
+        "score": 11.7,
+        "ratio": 4.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "entscheidend",
         "count": 4,
-        "ratioParty": 9.1,
-        "ratioBundestag": 14.9
+        "score": 11.1,
+        "ratio": 14.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 9.3,
+        "ratio": 9.1
       }
     ]
   },
@@ -97,37 +125,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Sascha van Beek häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Sascha van Beek häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Masken",
         "isCorrect": true
       },
       {
-        "text": "Demokratie",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Steuern",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
-        "text": "Arbeit",
+        "text": "Verantwortung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Masken\" nutzt Sascha van Beek 84.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "118.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Masken\" sagte Sascha van Beek 6× (118.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Sascha van Beek häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Sascha van Beek häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "National",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Groß",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
@@ -135,12 +162,11 @@
         "isCorrect": true
       },
       {
-        "text": "Politisch",
+        "text": "Stark",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Sascha van Beek 9.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "14.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Entscheidend\" sagte Sascha van Beek 4× (14.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐇",

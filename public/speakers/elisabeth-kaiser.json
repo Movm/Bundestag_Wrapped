@@ -72,39 +72,72 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "ostdeutschland",
         "count": 16,
-        "ratioParty": 332.6,
-        "ratioBundestag": 344.1
-      },
-      {
-        "word": "ostdeutschen",
-        "count": 5,
-        "ratioParty": 207.9,
-        "ratioBundestag": 155.9
-      },
-      {
-        "word": "westen",
-        "count": 5,
-        "ratioParty": 155.9,
-        "ratioBundestag": 73.4
+        "score": 93.5,
+        "ratio": 344.1
       },
       {
         "word": "einheit",
         "count": 9,
-        "ratioParty": 89.8,
-        "ratioBundestag": 77.4
+        "score": 39.3,
+        "ratio": 77.4
+      },
+      {
+        "word": "wandel",
+        "count": 7,
+        "score": 29.1,
+        "ratio": 62.8
+      },
+      {
+        "word": "menschen",
+        "count": 19,
+        "score": 27.7,
+        "ratio": 3.3
       },
       {
         "word": "osten",
         "count": 7,
-        "ratioParty": 54.6,
-        "ratioBundestag": 42.2
+        "score": 26.4,
+        "ratio": 42.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "ostdeutschland",
+        "count": 16,
+        "score": 93.0,
+        "ratio": 332.6
+      },
+      {
+        "word": "einheit",
+        "count": 9,
+        "score": 40.6,
+        "ratio": 89.8
+      },
+      {
+        "word": "osten",
+        "count": 7,
+        "score": 28.1,
+        "ratio": 54.6
+      },
+      {
+        "word": "ostdeutschen",
+        "count": 5,
+        "score": 26.7,
+        "ratio": 207.9
+      },
+      {
+        "word": "wandel",
+        "count": 7,
+        "score": 26.3,
+        "ratio": 41.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 424,
@@ -126,14 +159,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Elisabeth Kaiser häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Elisabeth Kaiser häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
@@ -143,27 +172,22 @@
       {
         "text": "Antrag",
         "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ostdeutschland\" nutzt Elisabeth Kaiser 332.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "344.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ostdeutschland\" sagte Elisabeth Kaiser 16× (344.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Clevere Strategin",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐇",
+    "name": "Hase",
+    "title": "Wendige Optimistin",
+    "reason": "Mit positivem Blick reagierst du schnell auf neue Themen.",
+    "id": "hase",
     "alternatives": [
-      {
-        "emoji": "🐇",
-        "name": "Hase",
-        "title": "Wendige Optimistin",
-        "reason": "Mit positivem Blick reagierst du schnell auf neue Themen.",
-        "id": "hase",
-        "score": 0.813
-      },
       {
         "emoji": "🦫",
         "name": "Biber",
@@ -171,6 +195,14 @@
         "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
         "id": "biber",
         "score": 0.8
+      },
+      {
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positive Teamplayerin",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.788
       }
     ]
   },

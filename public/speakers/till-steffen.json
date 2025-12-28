@@ -56,62 +56,120 @@
         "count": 13
       }
     ],
-    "signatureWords": [
-      {
-        "word": "verbraucherschutzministerin",
-        "count": 5,
-        "ratioParty": 299.9,
-        "ratioBundestag": 2110.2
-      },
+    "signatureWordsBundestag": [
       {
         "word": "mieterinnen",
         "count": 18,
-        "ratioParty": 134.9,
-        "ratioBundestag": 92.6
-      },
-      {
-        "word": "mietern",
-        "count": 5,
-        "ratioParty": 100.0,
-        "ratioBundestag": 78.2
-      },
-      {
-        "word": "mieter",
-        "count": 13,
-        "ratioParty": 97.5,
-        "ratioBundestag": 43.2
+        "score": 81.7,
+        "ratio": 92.6
       },
       {
         "word": "verbraucherinnen",
         "count": 16,
-        "ratioParty": 96.0,
-        "ratioBundestag": 58.7
+        "score": 65.4,
+        "ratio": 58.7
+      },
+      {
+        "word": "wohnung",
+        "count": 16,
+        "score": 56.9,
+        "ratio": 34.1
+      },
+      {
+        "word": "mieter",
+        "count": 13,
+        "score": 49.3,
+        "ratio": 43.2
+      },
+      {
+        "word": "verbraucher",
+        "count": 14,
+        "score": 45.0,
+        "ratio": 23.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "mieterinnen",
+        "count": 18,
+        "score": 88.4,
+        "ratio": 134.9
+      },
+      {
+        "word": "verbraucherinnen",
+        "count": 16,
+        "score": 73.2,
+        "ratio": 96.0
+      },
+      {
+        "word": "mieter",
+        "count": 13,
+        "score": 59.7,
+        "ratio": 97.5
+      },
+      {
+        "word": "wohnung",
+        "count": 16,
+        "score": 55.9,
+        "ratio": 32.0
+      },
+      {
+        "word": "verbraucher",
+        "count": 14,
+        "score": 53.4,
+        "ratio": 44.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "geschützt",
         "count": 5,
-        "ratioParty": 18.7,
-        "ratioBundestag": 15.5
+        "score": 14.0,
+        "ratio": 15.5
       },
       {
         "word": "wirksam",
         "count": 3,
-        "ratioParty": 12.0,
-        "ratioBundestag": 9.1
+        "score": 6.9,
+        "ratio": 9.1
       },
       {
         "word": "nachhaltig",
         "count": 3,
-        "ratioParty": 7.5,
-        "ratioBundestag": 7.4
+        "score": 6.4,
+        "ratio": 7.4
       },
       {
         "word": "stark",
         "count": 3,
-        "ratioParty": 3.8,
-        "ratioBundestag": 3.1
+        "score": 4.2,
+        "ratio": 3.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "geschützt",
+        "count": 5,
+        "score": 14.9,
+        "ratio": 18.7
+      },
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 7.7,
+        "ratio": 12.0
+      },
+      {
+        "word": "nachhaltig",
+        "count": 3,
+        "score": 6.4,
+        "ratio": 7.5
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 4.7,
+        "ratio": 3.8
       }
     ]
   },
@@ -135,37 +193,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Till Steffen häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Till Steffen häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Antrag",
+        "text": "Europa",
         "isCorrect": false
       },
       {
-        "text": "Verbraucherschutzministerin",
+        "text": "Mieterinnen",
         "isCorrect": true
       },
       {
-        "text": "Gesellschaft",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
-        "text": "Politik",
+        "text": "Rente",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verbraucherschutzministerin\" nutzt Dr. Till Steffen 299.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "2110.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Mieterinnen\" sagte Dr. Till Steffen 18× (92.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Till Steffen häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Till Steffen häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Jung",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Problematisch",
+        "text": "Alt",
         "isCorrect": false
       },
       {
@@ -173,12 +230,11 @@
         "isCorrect": true
       },
       {
-        "text": "Sozial",
+        "text": "Jung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Geschützt\" nutzt Dr. Till Steffen 18.7× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "15.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Geschützt\" sagte Dr. Till Steffen 5× (15.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -196,12 +252,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.947
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrlicher Redner",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.946
       }
     ]
   },

@@ -60,44 +60,84 @@
         "count": 9
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "justiz",
+        "count": 19,
+        "score": 65.3,
+        "ratio": 30.1
+      },
       {
         "word": "onlineverfahren",
         "count": 10,
-        "ratioParty": 427.7,
-        "ratioBundestag": 243.7
+        "score": 55.0,
+        "ratio": 243.7
       },
       {
-        "word": "blaupause",
-        "count": 5,
-        "ratioParty": 427.7,
-        "ratioBundestag": 297.8
+        "word": "rechtsstaat",
+        "count": 17,
+        "score": 52.3,
+        "ratio": 20.7
       },
       {
-        "word": "sexuelle",
-        "count": 6,
-        "ratioParty": 73.3,
-        "ratioBundestag": 71.5
+        "word": "koalition",
+        "count": 18,
+        "score": 35.7,
+        "ratio": 6.3
       },
       {
         "word": "rechtsstaats",
         "count": 7,
-        "ratioParty": 66.5,
-        "ratioBundestag": 73.6
-      },
-      {
-        "word": "bürokratierückbau",
-        "count": 5,
-        "ratioParty": 53.5,
-        "ratioBundestag": 141.1
+        "score": 30.2,
+        "ratio": 73.6
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "justiz",
+        "count": 19,
+        "score": 66.2,
+        "ratio": 31.6
+      },
+      {
+        "word": "onlineverfahren",
+        "count": 10,
+        "score": 60.6,
+        "ratio": 427.7
+      },
+      {
+        "word": "rechtsstaat",
+        "count": 17,
+        "score": 51.0,
+        "ratio": 19.1
+      },
+      {
+        "word": "koalition",
+        "count": 18,
+        "score": 32.7,
+        "ratio": 5.2
+      },
+      {
+        "word": "blaupause",
+        "count": 5,
+        "score": 30.3,
+        "ratio": 427.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "rechts",
         "count": 3,
-        "ratioParty": 5.7,
-        "ratioBundestag": 5.1
+        "score": 5.4,
+        "ratio": 5.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 5.7,
+        "ratio": 5.7
       }
     ]
   },
@@ -126,37 +166,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Martin Plum häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Martin Plum häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetz",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Energie",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Koalition",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Onlineverfahren",
+        "text": "Justiz",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Onlineverfahren\" nutzt Dr. Martin Plum 427.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "243.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Justiz\" sagte Dr. Martin Plum 19× (30.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Martin Plum häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Martin Plum häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Alt",
+        "text": "National",
         "isCorrect": false
       },
       {
-        "text": "Jung",
+        "text": "Groß",
         "isCorrect": false
       },
       {
@@ -164,12 +203,11 @@
         "isCorrect": true
       },
       {
-        "text": "National",
+        "text": "Sicher",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rechts\" nutzt Dr. Martin Plum 5.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "5.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Rechts\" sagte Dr. Martin Plum 3× (5.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -187,12 +225,12 @@
         "score": 0.988
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.933
+        "emoji": "🐺",
+        "name": "Wolf",
+        "title": "Mutiger Einwerfer",
+        "reason": "Mit 25 Zwischenrufen mischst du aktiv in Debatten mit.",
+        "id": "wolf",
+        "score": 0.881
       }
     ]
   },

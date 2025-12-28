@@ -72,33 +72,60 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "sudan",
         "count": 14,
-        "ratioParty": 227.4,
-        "ratioBundestag": 176.6
+        "score": 72.5,
+        "ratio": 176.6
       },
       {
         "word": "waffenstillstand",
         "count": 5,
-        "ratioParty": 101.5,
-        "ratioBundestag": 158.6
+        "score": 25.4,
+        "ratio": 158.6
       },
       {
         "word": "region",
         "count": 6,
-        "ratioParty": 33.5,
-        "ratioBundestag": 45.7
+        "score": 23.1,
+        "ratio": 45.7
       },
       {
         "word": "deutlich",
         "count": 5,
-        "ratioParty": 6.4,
-        "ratioBundestag": 7.7
+        "score": 10.8,
+        "ratio": 7.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "sudan",
+        "count": 14,
+        "score": 76.0,
+        "ratio": 227.4
+      },
+      {
+        "word": "waffenstillstand",
+        "count": 5,
+        "score": 23.1,
+        "ratio": 101.5
+      },
+      {
+        "word": "region",
+        "count": 6,
+        "score": 21.2,
+        "ratio": 33.5
+      },
+      {
+        "word": "deutlich",
+        "count": 5,
+        "score": 10.0,
+        "ratio": 6.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 1102,
@@ -120,10 +147,14 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Serap Güler häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Serap Güler häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Zukunft",
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
         "isCorrect": false
       },
       {
@@ -131,16 +162,11 @@
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
+        "text": "Kinder",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sudan\" nutzt Serap Güler 227.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "176.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sudan\" sagte Serap Güler 14× (176.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

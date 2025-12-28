@@ -48,44 +48,90 @@
         "count": 9
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "gedenkstätten",
-        "count": 5,
-        "ratioParty": 198.2,
-        "ratioBundestag": 125.9
+        "word": "damals",
+        "count": 13,
+        "score": 34.3,
+        "ratio": 12.9
       },
       {
-        "word": "helmut",
-        "count": 5,
-        "ratioParty": 35.0,
-        "ratioBundestag": 75.5
+        "word": "antifa",
+        "count": 8,
+        "score": 30.3,
+        "ratio": 43.2
+      },
+      {
+        "word": "weimer",
+        "count": 8,
+        "score": 26.7,
+        "ratio": 27.3
       },
       {
         "word": "staatsminister",
         "count": 7,
-        "ratioParty": 20.3,
-        "ratioBundestag": 39.8
+        "score": 26.0,
+        "ratio": 39.8
       },
+      {
+        "word": "gedenkstätten",
+        "count": 5,
+        "score": 24.2,
+        "ratio": 125.9
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "damals",
         "count": 13,
-        "ratioParty": 14.6,
-        "ratioBundestag": 12.9
+        "score": 35.7,
+        "ratio": 14.6
       },
       {
-        "word": "unterstützt",
+        "word": "gedenkstätten",
         "count": 5,
-        "ratioParty": 13.8,
-        "ratioBundestag": 8.9
+        "score": 26.5,
+        "ratio": 198.2
+      },
+      {
+        "word": "staatsminister",
+        "count": 7,
+        "score": 21.4,
+        "ratio": 20.3
+      },
+      {
+        "word": "weimer",
+        "count": 8,
+        "score": 21.4,
+        "ratio": 13.6
+      },
+      {
+        "word": "leute",
+        "count": 9,
+        "score": 20.7,
+        "ratio": 9.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "rechts",
         "count": 5,
-        "ratioParty": 8.9,
-        "ratioBundestag": 8.4
+        "score": 11.2,
+        "ratio": 8.4
+      },
+      {
+        "word": "links",
+        "count": 3,
+        "score": 5.5,
+        "ratio": 5.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "rechts",
+        "count": 5,
+        "score": 11.5,
+        "ratio": 8.9
       }
     ]
   },
@@ -109,50 +155,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Ronald Gläser häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Ronald Gläser häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bürger",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Gedenkstätten",
+        "text": "Damals",
         "isCorrect": true
       },
       {
-        "text": "Abstimmung",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Investitionen",
+        "text": "Koalition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gedenkstätten\" nutzt Ronald Gläser 198.2× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "125.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Damals\" sagte Ronald Gläser 13× (12.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Ronald Gläser häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Ronald Gläser häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
       {
         "text": "Rechts",
         "isCorrect": true
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rechts\" nutzt Ronald Gläser 8.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "8.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Rechts\" sagte Ronald Gläser 5× (8.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

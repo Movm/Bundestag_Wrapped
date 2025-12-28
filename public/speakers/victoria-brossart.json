@@ -72,39 +72,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
-      {
-        "word": "ticket",
-        "count": 13,
-        "ratioParty": 224.0,
-        "ratioBundestag": 179.5
-      },
+    "signatureWordsBundestag": [
       {
         "word": "deutschlandticket",
         "count": 17,
-        "ratioParty": 133.1,
-        "ratioBundestag": 126.1
+        "score": 82.4,
+        "ratio": 126.1
+      },
+      {
+        "word": "ticket",
+        "count": 13,
+        "score": 67.5,
+        "ratio": 179.5
       },
       {
         "word": "verboten",
         "count": 5,
-        "ratioParty": 50.7,
-        "ratioBundestag": 55.1
+        "score": 20.1,
+        "ratio": 55.1
+      },
+      {
+        "word": "finanzierung",
+        "count": 6,
+        "score": 17.6,
+        "ratio": 17.7
       },
       {
         "word": "finanziert",
         "count": 5,
-        "ratioParty": 19.1,
-        "ratioBundestag": 23.2
-      },
-      {
-        "word": "preis",
-        "count": 5,
-        "ratioParty": 17.2,
-        "ratioBundestag": 22.2
+        "score": 15.9,
+        "ratio": 23.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "deutschlandticket",
+        "count": 17,
+        "score": 83.3,
+        "ratio": 133.1
+      },
+      {
+        "word": "ticket",
+        "count": 13,
+        "score": 70.4,
+        "ratio": 224.0
+      },
+      {
+        "word": "verboten",
+        "count": 5,
+        "score": 19.7,
+        "ratio": 50.7
+      },
+      {
+        "word": "finanzierung",
+        "count": 6,
+        "score": 16.4,
+        "ratio": 14.4
+      },
+      {
+        "word": "finanziert",
+        "count": 5,
+        "score": 15.0,
+        "ratio": 19.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 453,
@@ -126,10 +159,14 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Victoria Broßart häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Victoria Broßart häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Kinder",
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
         "isCorrect": false
       },
       {
@@ -137,32 +174,27 @@
         "isCorrect": false
       },
       {
-        "text": "Ticket",
+        "text": "Deutschlandticket",
         "isCorrect": true
-      },
-      {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ticket\" nutzt Victoria Broßart 224.0× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "179.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Deutschlandticket\" sagte Victoria Broßart 17× (126.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Clevere Strategin",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüterin",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
       {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 0.778
+        "emoji": "🦊",
+        "name": "Fuchs",
+        "title": "Clevere Strategin",
+        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+        "id": "fuchs",
+        "score": 0.756
       },
       {
         "emoji": "🦫",

@@ -68,39 +68,72 @@
         "count": 10
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "deutschland",
+        "count": 49,
+        "score": 73.9,
+        "ratio": 3.5
+      },
       {
         "word": "bitcoin",
         "count": 10,
-        "ratioParty": 1164.4,
-        "ratioBundestag": 235.3
-      },
-      {
-        "word": "bepreisung",
-        "count": 5,
-        "ratioParty": 22.4,
-        "ratioBundestag": 30.5
+        "score": 54.7,
+        "ratio": 235.3
       },
       {
         "word": "sozialismus",
         "count": 8,
-        "ratioParty": 19.8,
-        "ratioBundestag": 49.3
+        "score": 31.3,
+        "ratio": 49.3
       },
       {
-        "word": "aufmerksamkeit",
-        "count": 5,
-        "ratioParty": 10.6,
-        "ratioBundestag": 8.7
+        "word": "politik",
+        "count": 16,
+        "score": 26.6,
+        "ratio": 4.3
       },
       {
-        "word": "zahlt",
-        "count": 5,
-        "ratioParty": 9.0,
-        "ratioBundestag": 18.8
+        "word": "bürokratie",
+        "count": 11,
+        "score": 25.2,
+        "ratio": 8.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bitcoin",
+        "count": 10,
+        "score": 70.6,
+        "ratio": 1164.4
+      },
+      {
+        "word": "deutschland",
+        "count": 49,
+        "score": 62.1,
+        "ratio": 2.6
+      },
+      {
+        "word": "sozialismus",
+        "count": 8,
+        "score": 24.3,
+        "ratio": 19.8
+      },
+      {
+        "word": "politik",
+        "count": 16,
+        "score": 21.4,
+        "ratio": 2.8
+      },
+      {
+        "word": "bürokratie",
+        "count": 11,
+        "score": 21.1,
+        "ratio": 5.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 403,
@@ -122,27 +155,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dirk Brandes häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dirk Brandes häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Deutschland",
+        "isCorrect": true
+      },
+      {
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
       {
         "text": "Kinder",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Bitcoin",
-        "isCorrect": true
-      },
-      {
-        "text": "Familie",
+        "text": "Zukunft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bitcoin\" nutzt Dirk Brandes 1164.4× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "235.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Deutschland\" sagte Dirk Brandes 49× (3.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

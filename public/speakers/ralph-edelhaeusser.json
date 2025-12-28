@@ -72,39 +72,72 @@
         "count": 9
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "verantwortung",
+        "count": 22,
+        "score": 48.3,
+        "ratio": 8.0
+      },
+      {
+        "word": "stabilität",
+        "count": 12,
+        "score": 37.7,
+        "ratio": 22.1
+      },
       {
         "word": "familienpolitik",
         "count": 8,
-        "ratioParty": 100.3,
-        "ratioBundestag": 104.7
+        "score": 37.3,
+        "ratio": 104.7
       },
       {
-        "word": "präsenz",
-        "count": 5,
-        "ratioParty": 88.8,
-        "ratioBundestag": 66.7
-      },
-      {
-        "word": "kosovo",
-        "count": 6,
-        "ratioParty": 58.1,
-        "ratioBundestag": 45.0
+        "word": "sicherheit",
+        "count": 18,
+        "score": 34.7,
+        "ratio": 5.9
       },
       {
         "word": "wehrpflicht",
         "count": 9,
-        "ratioParty": 44.6,
-        "ratioBundestag": 34.5
-      },
-      {
-        "word": "mission",
-        "count": 7,
-        "ratioParty": 30.4,
-        "ratioBundestag": 27.0
+        "score": 32.1,
+        "ratio": 34.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "verantwortung",
+        "count": 22,
+        "score": 45.5,
+        "ratio": 6.9
+      },
+      {
+        "word": "familienpolitik",
+        "count": 8,
+        "score": 36.9,
+        "ratio": 100.3
+      },
+      {
+        "word": "stabilität",
+        "count": 12,
+        "score": 35.1,
+        "ratio": 17.6
+      },
+      {
+        "word": "wehrpflicht",
+        "count": 9,
+        "score": 34.4,
+        "ratio": 44.6
+      },
+      {
+        "word": "sicherheit",
+        "count": 18,
+        "score": 32.5,
+        "ratio": 5.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 484,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Ralph Edelhäußer häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Ralph Edelhäußer häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
       {
         "text": "Freiheit",
         "isCorrect": false
       },
       {
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
         "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Familienpolitik",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Familienpolitik\" nutzt Ralph Edelhäußer 100.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "104.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Verantwortung\" sagte Ralph Edelhäußer 22× (8.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -165,12 +197,12 @@
         "score": 0.955
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.757
+        "emoji": "🦫",
+        "name": "Biber",
+        "title": "Konstruktiver Brückenbauer",
+        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
+        "id": "biber",
+        "score": 0.725
       }
     ]
   },

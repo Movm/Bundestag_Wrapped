@@ -72,44 +72,84 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "bundeswasserstraßen",
         "count": 13,
-        "ratioParty": 607.2,
-        "ratioBundestag": 897.7
+        "score": 88.4,
+        "ratio": 897.7
+      },
+      {
+        "word": "mosel",
+        "count": 11,
+        "score": 65.4,
+        "ratio": 379.8
       },
       {
         "word": "wasserstraßen",
         "count": 12,
-        "ratioParty": 560.5,
-        "ratioBundestag": 226.0
-      },
-      {
-        "word": "binnenschifffahrt",
-        "count": 5,
-        "ratioParty": 467.1,
-        "ratioBundestag": 207.2
+        "score": 65.1,
+        "ratio": 226.0
       },
       {
         "word": "schleusen",
         "count": 8,
-        "ratioParty": 373.7,
-        "ratioBundestag": 414.3
+        "score": 48.2,
+        "ratio": 414.3
       },
       {
-        "word": "meter",
+        "word": "moselschleusen",
         "count": 6,
-        "ratioParty": 70.1,
-        "ratioBundestag": 150.7
+        "score": 40.3,
+        "ratio": 828.7
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "bundeswasserstraßen",
+        "count": 13,
+        "score": 83.3,
+        "ratio": 607.2
+      },
+      {
+        "word": "wasserstraßen",
+        "count": 12,
+        "score": 76.0,
+        "ratio": 560.5
+      },
+      {
+        "word": "schleusen",
+        "count": 8,
+        "score": 47.4,
+        "ratio": 373.7
+      },
+      {
+        "word": "mosel",
+        "count": 11,
+        "score": 44.2,
+        "ratio": 54.7
+      },
+      {
+        "word": "binnenschifffahrt",
+        "count": 5,
+        "score": 30.7,
+        "ratio": 467.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "wettbewerbsfähig",
         "count": 3,
-        "ratioParty": 46.7,
-        "ratioBundestag": 30.3
+        "score": 10.3,
+        "ratio": 30.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wettbewerbsfähig",
+        "count": 3,
+        "score": 11.6,
+        "ratio": 46.7
       }
     ]
   },
@@ -133,18 +173,18 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt René Bochmann häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt René Bochmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetz",
+        "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Arbeit",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Rente",
+        "text": "Familie",
         "isCorrect": false
       },
       {
@@ -152,22 +192,21 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Bundeswasserstraßen\" nutzt René Bochmann 607.2× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "897.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bundeswasserstraßen\" sagte René Bochmann 13× (897.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt René Bochmann häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt René Bochmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
         "text": "Falsch",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
         "isCorrect": false
       },
       {
@@ -175,8 +214,7 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Wettbewerbsfähig\" nutzt René Bochmann 46.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "30.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wettbewerbsfähig\" sagte René Bochmann 3× (30.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

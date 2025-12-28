@@ -72,21 +72,36 @@
         "count": 2
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "freiheit",
         "count": 8,
-        "ratioParty": 35.8,
-        "ratioBundestag": 44.5
+        "score": 30.5,
+        "ratio": 44.5
       },
       {
         "word": "kinder",
         "count": 5,
-        "ratioParty": 28.2,
-        "ratioBundestag": 21.6
+        "score": 15.6,
+        "ratio": 21.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "freiheit",
+        "count": 8,
+        "score": 28.8,
+        "ratio": 35.8
+      },
+      {
+        "word": "kinder",
+        "count": 5,
+        "score": 16.9,
+        "ratio": 28.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 248,
@@ -103,27 +118,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Johannes Rothenberger häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Johannes Rothenberger häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
       {
         "text": "Freiheit",
         "isCorrect": true
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Freiheit\" nutzt Johannes Rothenberger 35.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "44.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Freiheit\" sagte Johannes Rothenberger 8× (44.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

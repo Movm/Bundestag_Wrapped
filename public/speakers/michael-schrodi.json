@@ -72,15 +72,24 @@
         "count": 3
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "bundesregierung",
         "count": 9,
-        "ratioParty": 16.6,
-        "ratioBundestag": 10.8
+        "score": 22.2,
+        "ratio": 10.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bundesregierung",
+        "count": 9,
+        "score": 25.8,
+        "ratio": 16.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 192,
@@ -97,14 +106,14 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Michael Schrodi häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Michael Schrodi häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bildung",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
-        "text": "Klima",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
@@ -112,12 +121,11 @@
         "isCorrect": true
       },
       {
-        "text": "Politik",
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bundesregierung\" nutzt Michael Schrodi 16.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "10.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bundesregierung\" sagte Michael Schrodi 9× (10.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

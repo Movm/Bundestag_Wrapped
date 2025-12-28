@@ -72,44 +72,84 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "dayton",
         "count": 10,
-        "ratioParty": 347.9,
-        "ratioBundestag": 116.6
+        "score": 47.7,
+        "ratio": 116.6
       },
       {
         "word": "unrwa",
         "count": 8,
-        "ratioParty": 123.7,
-        "ratioBundestag": 353.1
+        "score": 47.0,
+        "ratio": 353.1
       },
       {
-        "word": "serben",
+        "word": "guterres",
         "count": 5,
-        "ratioParty": 116.0,
-        "ratioBundestag": 257.5
+        "score": 36.7,
+        "ratio": 1545.0
+      },
+      {
+        "word": "trump",
+        "count": 11,
+        "score": 35.2,
+        "ratio": 23.6
+      },
+      {
+        "word": "bosnien",
+        "count": 9,
+        "score": 34.4,
+        "ratio": 44.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "dayton",
+        "count": 10,
+        "score": 58.5,
+        "ratio": 347.9
+      },
+      {
+        "word": "unrwa",
+        "count": 8,
+        "score": 38.6,
+        "ratio": 123.7
+      },
+      {
+        "word": "bosnien",
+        "count": 9,
+        "score": 38.3,
+        "ratio": 69.6
       },
       {
         "word": "herzegowina",
         "count": 8,
-        "ratioParty": 111.3,
-        "ratioBundestag": 47.5
+        "score": 37.8,
+        "ratio": 111.3
       },
       {
-        "word": "präsidium",
-        "count": 6,
-        "ratioParty": 69.6,
-        "ratioBundestag": 218.1
+        "word": "trump",
+        "count": 11,
+        "score": 32.3,
+        "ratio": 17.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "links",
         "count": 3,
-        "ratioParty": 2.1,
-        "ratioBundestag": 6.1
+        "score": 5.9,
+        "ratio": 6.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "links",
+        "count": 3,
+        "score": 3.4,
+        "ratio": 2.1
       }
     ]
   },
@@ -133,50 +173,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Alexander Wolf häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Alexander Wolf häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Dayton",
         "isCorrect": true
       },
       {
-        "text": "Kinder",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Haushalt",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Politik",
+        "text": "Bürger",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Dayton\" nutzt Dr. Alexander Wolf 347.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "116.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Dayton\" sagte Dr. Alexander Wolf 10× (116.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Alexander Wolf häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Alexander Wolf häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
+        "isCorrect": false
+      },
       {
         "text": "Links",
         "isCorrect": true
       },
       {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
+        "text": "Notwendig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Links\" nutzt Dr. Alexander Wolf 2.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "6.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Links\" sagte Dr. Alexander Wolf 3× (6.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

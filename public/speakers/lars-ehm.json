@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "produktsicherheit",
         "count": 5,
-        "ratioParty": 482.7,
-        "ratioBundestag": 402.5
+        "score": 30.0,
+        "ratio": 402.5
       },
       {
-        "word": "produkte",
-        "count": 6,
-        "ratioParty": 45.4,
-        "ratioBundestag": 42.6
-      },
-      {
-        "word": "branche",
-        "count": 5,
-        "ratioParty": 37.9,
-        "ratioBundestag": 50.7
+        "word": "vertrauen",
+        "count": 11,
+        "score": 29.8,
+        "ratio": 14.0
       },
       {
         "word": "verlässlichkeit",
         "count": 7,
-        "ratioParty": 22.3,
-        "ratioBundestag": 37.4
+        "score": 25.5,
+        "ratio": 37.4
       },
       {
-        "word": "verbraucher",
+        "word": "produkte",
+        "count": 6,
+        "score": 22.7,
+        "ratio": 42.6
+      },
+      {
+        "word": "branche",
         "count": 5,
-        "ratioParty": 21.7,
-        "ratioBundestag": 23.5
+        "score": 19.7,
+        "ratio": 50.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "produktsicherheit",
+        "count": 5,
+        "score": 30.9,
+        "ratio": 482.7
+      },
+      {
+        "word": "vertrauen",
+        "count": 11,
+        "score": 26.2,
+        "ratio": 9.8
+      },
+      {
+        "word": "produkte",
+        "count": 6,
+        "score": 23.0,
+        "ratio": 45.4
+      },
+      {
+        "word": "verlässlichkeit",
+        "count": 7,
+        "score": 22.1,
+        "ratio": 22.3
+      },
+      {
+        "word": "branche",
+        "count": 5,
+        "score": 18.3,
+        "ratio": 37.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 426,
@@ -126,10 +159,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Lars Ehm häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Lars Ehm häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Fraktion",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
@@ -137,16 +170,15 @@
         "isCorrect": true
       },
       {
-        "text": "Sicherheit",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Bildung",
+        "text": "Arbeit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Produktsicherheit\" nutzt Lars Ehm 482.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "402.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Produktsicherheit\" sagte Lars Ehm 5× (402.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

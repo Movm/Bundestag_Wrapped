@@ -68,50 +68,96 @@
         "count": 7
       }
     ],
-    "signatureWords": [
-      {
-        "word": "steuergerechtigkeit",
-        "count": 5,
-        "ratioParty": 214.6,
-        "ratioBundestag": 88.6
-      },
+    "signatureWordsBundestag": [
       {
         "word": "steuerbetrug",
         "count": 6,
-        "ratioParty": 27.4,
-        "ratioBundestag": 254.0
+        "score": 33.2,
+        "ratio": 254.0
       },
       {
         "word": "linke",
         "count": 12,
-        "ratioParty": 8.8,
-        "ratioBundestag": 13.1
+        "score": 31.8,
+        "ratio": 13.1
+      },
+      {
+        "word": "staat",
+        "count": 13,
+        "score": 28.4,
+        "ratio": 7.9
+      },
+      {
+        "word": "steuergerechtigkeit",
+        "count": 5,
+        "score": 22.5,
+        "ratio": 88.6
       },
       {
         "word": "ausgaben",
         "count": 5,
-        "ratioParty": 6.5,
-        "ratioBundestag": 10.2
+        "score": 12.1,
+        "ratio": 10.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "linke",
+        "count": 12,
+        "score": 27.4,
+        "ratio": 8.8
+      },
+      {
+        "word": "steuergerechtigkeit",
+        "count": 5,
+        "score": 26.9,
+        "ratio": 214.6
+      },
+      {
+        "word": "staat",
+        "count": 13,
+        "score": 23.9,
+        "ratio": 5.3
+      },
+      {
+        "word": "steuerbetrug",
+        "count": 6,
+        "score": 20.1,
+        "ratio": 27.4
       },
       {
         "word": "schaffen",
         "count": 7,
-        "ratioParty": 5.3,
-        "ratioBundestag": 3.3
+        "score": 12.9,
+        "ratio": 5.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "schlecht",
+        "count": 3,
+        "score": 7.4,
+        "ratio": 10.9
+      },
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 12.6,
-        "ratioBundestag": 5.4
+        "score": 5.6,
+        "ratio": 5.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 7.8,
+        "ratio": 12.6
       },
       {
         "word": "schlecht",
         "count": 3,
-        "ratioParty": 8.2,
-        "ratioBundestag": 10.9
+        "score": 6.7,
+        "ratio": 8.2
       }
     ]
   },
@@ -135,50 +181,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Diana Zimmer häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Diana Zimmer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuergerechtigkeit",
+        "text": "Steuerbetrug",
         "isCorrect": true
       },
       {
-        "text": "Wirtschaft",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
-        "text": "Freiheit",
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Steuergerechtigkeit\" nutzt Diana Zimmer 214.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "88.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Steuerbetrug\" sagte Diana Zimmer 6× (254.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Diana Zimmer häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Diana Zimmer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Gerecht",
+        "text": "Schlecht",
         "isCorrect": true
       },
       {
-        "text": "National",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gerecht\" nutzt Diana Zimmer 12.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "5.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Schlecht\" sagte Diana Zimmer 3× (10.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

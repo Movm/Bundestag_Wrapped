@@ -56,50 +56,96 @@
         "count": 18
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "exportstrategie",
-        "count": 5,
-        "ratioParty": 171.8,
-        "ratioBundestag": 135.7
-      },
-      {
-        "word": "schwimmen",
-        "count": 5,
-        "ratioParty": 57.3,
-        "ratioBundestag": 40.7
+        "word": "bundesminister",
+        "count": 16,
+        "score": 49.1,
+        "ratio": 20.5
       },
       {
         "word": "zivilschutz",
         "count": 9,
-        "ratioParty": 51.5,
-        "ratioBundestag": 95.6
+        "score": 41.1,
+        "ratio": 95.6
       },
       {
-        "word": "ehrenamt",
-        "count": 8,
-        "ratioParty": 22.9,
-        "ratioBundestag": 15.4
+        "word": "titel",
+        "count": 14,
+        "score": 39.3,
+        "ratio": 15.5
       },
       {
-        "word": "ehrenamtlichen",
-        "count": 5,
-        "ratioParty": 21.5,
-        "ratioBundestag": 22.2
+        "word": "bürgerinnen",
+        "count": 19,
+        "score": 37.6,
+        "ratio": 6.2
+      },
+      {
+        "word": "haushalt",
+        "count": 25,
+        "score": 31.2,
+        "ratio": 2.5
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "erfolgreich",
-        "count": 3,
-        "ratioParty": 4.9,
-        "ratioBundestag": 3.3
+        "word": "bundesminister",
+        "count": 16,
+        "score": 46.4,
+        "ratio": 17.2
       },
+      {
+        "word": "titel",
+        "count": 14,
+        "score": 38.1,
+        "ratio": 14.1
+      },
+      {
+        "word": "zivilschutz",
+        "count": 9,
+        "score": 35.7,
+        "ratio": 51.5
+      },
+      {
+        "word": "bürgerinnen",
+        "count": 19,
+        "score": 34.4,
+        "ratio": 5.1
+      },
+      {
+        "word": "haushalt",
+        "count": 25,
+        "score": 34.2,
+        "ratio": 2.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "gerecht",
         "count": 6,
-        "ratioParty": 2.9,
-        "ratioBundestag": 3.5
+        "score": 9.0,
+        "ratio": 3.5
+      },
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 4.4,
+        "ratio": 3.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 6,
+        "score": 8.1,
+        "ratio": 2.9
+      },
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 5.3,
+        "ratio": 4.9
       }
     ]
   },
@@ -133,50 +179,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Leon Eckert häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Leon Eckert häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Bundesminister",
+        "isCorrect": true
+      },
       {
         "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Exportstrategie",
-        "isCorrect": true
-      },
-      {
-        "text": "Rente",
+        "text": "Klima",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Exportstrategie\" nutzt Leon Eckert 171.8× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "135.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bundesminister\" sagte Leon Eckert 16× (20.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Leon Eckert häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Leon Eckert häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Erfolgreich",
-        "isCorrect": true
-      },
-      {
-        "text": "Jung",
-        "isCorrect": false
-      },
       {
         "text": "Schlecht",
         "isCorrect": false
       },
       {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
         "text": "Notwendig",
         "isCorrect": false
+      },
+      {
+        "text": "Gerecht",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Erfolgreich\" nutzt Leon Eckert 4.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "3.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gerecht\" sagte Leon Eckert 6× (3.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦁",

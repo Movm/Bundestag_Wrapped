@@ -64,50 +64,96 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "jesidinnen",
         "count": 7,
-        "ratioParty": 1516.3,
-        "ratioBundestag": 296.7
-      },
-      {
-        "word": "sprachen",
-        "count": 6,
-        "ratioParty": 324.9,
-        "ratioBundestag": 116.3
-      },
-      {
-        "word": "ministerinnen",
-        "count": 6,
-        "ratioParty": 324.9,
-        "ratioBundestag": 169.6
-      },
-      {
-        "word": "resolution",
-        "count": 6,
-        "ratioParty": 162.5,
-        "ratioBundestag": 90.4
+        "score": 39.9,
+        "ratio": 296.7
       },
       {
         "word": "jesiden",
         "count": 7,
-        "ratioParty": 151.6,
-        "ratioBundestag": 96.9
+        "score": 32.1,
+        "ratio": 96.9
+      },
+      {
+        "word": "ministerinnen",
+        "count": 6,
+        "score": 30.8,
+        "ratio": 169.6
+      },
+      {
+        "word": "sprachen",
+        "count": 6,
+        "score": 28.6,
+        "ratio": 116.3
+      },
+      {
+        "word": "resolution",
+        "count": 6,
+        "score": 27.1,
+        "ratio": 90.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "jesidinnen",
+        "count": 7,
+        "score": 51.3,
+        "ratio": 1516.3
+      },
+      {
+        "word": "jesiden",
+        "count": 7,
+        "score": 35.2,
+        "ratio": 151.6
+      },
+      {
+        "word": "sprachen",
+        "count": 6,
+        "score": 34.7,
+        "ratio": 324.9
+      },
+      {
+        "word": "ministerinnen",
+        "count": 6,
+        "score": 34.7,
+        "ratio": 324.9
+      },
+      {
+        "word": "resolution",
+        "count": 6,
+        "score": 30.6,
+        "ratio": 162.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "fair",
         "count": 3,
-        "ratioParty": 24.1,
-        "ratioBundestag": 25.1
+        "score": 9.8,
+        "ratio": 25.1
       },
       {
         "word": "sicher",
         "count": 4,
-        "ratioParty": 3.2,
-        "ratioBundestag": 3.6
+        "score": 6.1,
+        "ratio": 3.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "fair",
+        "count": 3,
+        "score": 9.7,
+        "ratio": 24.1
+      },
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 5.7,
+        "ratio": 3.2
       }
     ]
   },
@@ -131,50 +177,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Ellen Demuth häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Ellen Demuth häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
-        "isCorrect": false
-      },
       {
         "text": "Jesidinnen",
         "isCorrect": true
       },
       {
-        "text": "Bundesregierung",
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
+        "text": "Rente",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Jesidinnen\" nutzt Ellen Demuth 1516.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "296.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Jesidinnen\" sagte Ellen Demuth 7× (296.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Ellen Demuth häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Ellen Demuth häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
+        "isCorrect": false
+      },
       {
         "text": "Fair",
         "isCorrect": true
       },
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
+        "text": "Alt",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Fair\" nutzt Ellen Demuth 24.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "25.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Fair\" sagte Ellen Demuth 3× (25.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",

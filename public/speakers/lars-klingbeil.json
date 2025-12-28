@@ -60,62 +60,126 @@
         "count": 72
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "standortfördergesetz",
-        "count": 7,
-        "ratioParty": 52.0,
-        "ratioBundestag": 24.8
+        "word": "investitionen",
+        "count": 100,
+        "score": 207.5,
+        "ratio": 7.0
       },
       {
-        "word": "wachstumskurs",
-        "count": 6,
-        "ratioParty": 44.6,
-        "ratioBundestag": 36.0
+        "word": "investieren",
+        "count": 85,
+        "score": 171.4,
+        "ratio": 6.5
       },
       {
-        "word": "feste",
-        "count": 14,
-        "ratioParty": 41.6,
-        "ratioBundestag": 33.1
+        "word": "parlament",
+        "count": 69,
+        "score": 155.8,
+        "ratio": 8.6
       },
       {
-        "word": "schlechtreden",
-        "count": 5,
-        "ratioParty": 37.2,
-        "ratioBundestag": 13.9
+        "word": "arbeitsplätze",
+        "count": 60,
+        "score": 139.2,
+        "ratio": 9.2
       },
       {
-        "word": "errichtung",
-        "count": 5,
-        "ratioParty": 37.2,
-        "ratioBundestag": 17.7
+        "word": "sorgen",
+        "count": 68,
+        "score": 113.4,
+        "ratio": 4.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "wettbewerbsfähig",
-        "count": 5,
-        "ratioParty": 12.4,
-        "ratioBundestag": 4.9
+        "word": "investitionen",
+        "count": 100,
+        "score": 192.8,
+        "ratio": 5.9
       },
       {
-        "word": "vernünftig",
-        "count": 3,
-        "ratioParty": 3.7,
-        "ratioBundestag": 3.0
+        "word": "deutschland",
+        "count": 149,
+        "score": 166.9,
+        "ratio": 2.1
+      },
+      {
+        "word": "regierung",
+        "count": 75,
+        "score": 163.1,
+        "ratio": 7.8
+      },
+      {
+        "word": "parlament",
+        "count": 69,
+        "score": 137.8,
+        "ratio": 6.4
+      },
+      {
+        "word": "investieren",
+        "count": 85,
+        "score": 122.1,
+        "ratio": 3.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 22,
+        "score": 26.7,
+        "ratio": 2.4
+      },
+      {
+        "word": "stark",
+        "count": 12,
+        "score": 14.5,
+        "ratio": 2.3
+      },
+      {
+        "word": "gerecht",
+        "count": 11,
+        "score": 12.3,
+        "ratio": 2.1
       },
       {
         "word": "konstruktiv",
         "count": 5,
-        "ratioParty": 3.1,
-        "ratioBundestag": 5.2
+        "score": 9.1,
+        "ratio": 5.2
+      },
+      {
+        "word": "wettbewerbsfähig",
+        "count": 5,
+        "score": 8.9,
+        "ratio": 4.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wettbewerbsfähig",
+        "count": 5,
+        "score": 13.0,
+        "ratio": 12.4
+      },
+      {
+        "word": "konstruktiv",
+        "count": 5,
+        "score": 7.1,
+        "ratio": 3.1
+      },
+      {
+        "word": "vernünftig",
+        "count": 3,
+        "score": 4.7,
+        "ratio": 3.7
       },
       {
         "word": "fair",
         "count": 3,
-        "ratioParty": 2.1,
-        "ratioBundestag": 2.9
+        "score": 3.4,
+        "ratio": 2.1
       }
     ]
   },
@@ -149,50 +213,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Lars Klingbeil häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Lars Klingbeil häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Demokratie",
+        "text": "Bürger",
         "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": true
       },
       {
         "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Kinder",
+        "text": "Reform",
         "isCorrect": false
-      },
-      {
-        "text": "Standortfördergesetz",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Standortfördergesetz\" nutzt Lars Klingbeil 52.0× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "24.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Investitionen\" sagte Lars Klingbeil 100× (7.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Lars Klingbeil häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Lars Klingbeil häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wettbewerbsfähig",
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
         "isCorrect": true
-      },
-      {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wettbewerbsfähig\" nutzt Lars Klingbeil 12.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "4.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Lars Klingbeil 22× (2.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐘",

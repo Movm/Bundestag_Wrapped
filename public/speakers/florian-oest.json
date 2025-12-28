@@ -72,44 +72,84 @@
         "count": 7
       }
     ],
-    "signatureWords": [
-      {
-        "word": "demonstrationen",
-        "count": 5,
-        "ratioParty": 118.4,
-        "ratioBundestag": 131.5
-      },
+    "signatureWordsBundestag": [
       {
         "word": "polizei",
         "count": 16,
-        "ratioParty": 47.9,
-        "ratioBundestag": 50.6
+        "score": 63.1,
+        "ratio": 50.6
       },
       {
-        "word": "polizistinnen",
-        "count": 7,
-        "ratioParty": 30.9,
-        "ratioBundestag": 67.1
+        "word": "miteinander",
+        "count": 12,
+        "score": 39.6,
+        "ratio": 26.0
       },
       {
-        "word": "taten",
-        "count": 6,
-        "ratioParty": 30.1,
-        "ratioBundestag": 32.4
+        "word": "görlitz",
+        "count": 5,
+        "score": 38.1,
+        "ratio": 2038.1
       },
       {
         "word": "polizisten",
         "count": 10,
-        "ratioParty": 26.6,
-        "ratioBundestag": 42.9
+        "score": 37.8,
+        "ratio": 42.9
+      },
+      {
+        "word": "migration",
+        "count": 11,
+        "score": 34.3,
+        "ratio": 21.5
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "polizei",
+        "count": 16,
+        "score": 62.2,
+        "ratio": 47.9
+      },
+      {
+        "word": "miteinander",
+        "count": 12,
+        "score": 35.9,
+        "ratio": 18.9
+      },
+      {
+        "word": "polizisten",
+        "count": 10,
+        "score": 33.2,
+        "ratio": 26.6
+      },
+      {
+        "word": "migration",
+        "count": 11,
+        "score": 29.8,
+        "ratio": 14.0
+      },
+      {
+        "word": "polizistinnen",
+        "count": 7,
+        "score": 24.2,
+        "ratio": 30.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "sicher",
         "count": 4,
-        "ratioParty": 3.9,
-        "ratioBundestag": 4.4
+        "score": 6.7,
+        "ratio": 4.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 6.3,
+        "ratio": 3.9
       }
     ]
   },
@@ -133,41 +173,40 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Florian Oest häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Florian Oest häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Demonstrationen",
+        "text": "Polizei",
         "isCorrect": true
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
       },
       {
         "text": "Antrag",
         "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Demonstrationen\" nutzt Florian Oest 118.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "131.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Polizei\" sagte Florian Oest 16× (50.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Florian Oest häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Florian Oest häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Sicher",
         "isCorrect": true
       },
       {
-        "text": "Erfolgreich",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "Gefährlich",
+        "text": "Gut",
         "isCorrect": false
       },
       {
@@ -175,8 +214,7 @@
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sicher\" nutzt Florian Oest 3.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "4.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Florian Oest 4× (4.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -194,12 +232,12 @@
         "score": 0.873
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.798
+        "emoji": "🦀",
+        "name": "Krabbe",
+        "title": "Hartnäckiger Debattierer",
+        "reason": "Du hältst an deinen Positionen fest und lässt nicht locker.",
+        "id": "krabbe",
+        "score": 0.761
       }
     ]
   },

@@ -72,21 +72,36 @@
         "count": 2
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "gespalten",
         "count": 6,
-        "ratioParty": 2465.7,
-        "ratioBundestag": 2514.8
+        "score": 47.0,
+        "ratio": 2514.8
       },
       {
         "word": "menschen",
         "count": 7,
-        "ratioParty": 9.7,
-        "ratioBundestag": 5.3
+        "score": 12.9,
+        "ratio": 5.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "gespalten",
+        "count": 6,
+        "score": 46.9,
+        "ratio": 2465.7
+      },
+      {
+        "word": "menschen",
+        "count": 7,
+        "score": 16.6,
+        "ratio": 9.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 250,
@@ -103,27 +118,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Alexis L. Giersch häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Alexis L. Giersch häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Steuern",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Energie",
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
         "text": "Gespalten",
         "isCorrect": true
-      },
-      {
-        "text": "Migration",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gespalten\" nutzt Alexis L. Giersch 2465.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "2514.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gespalten\" sagte Alexis L. Giersch 6× (2514.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

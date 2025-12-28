@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "frauen",
+        "count": 21,
+        "score": 76.6,
+        "ratio": 37.4
+      },
       {
         "word": "prien",
         "count": 12,
-        "ratioParty": 235.0,
-        "ratioBundestag": 205.9
+        "score": 64.0,
+        "ratio": 205.9
       },
       {
         "word": "mädchen",
         "count": 9,
-        "ratioParty": 223.3,
-        "ratioBundestag": 187.6
-      },
-      {
-        "word": "frauen",
-        "count": 21,
-        "ratioParty": 59.2,
-        "ratioBundestag": 37.4
+        "score": 47.2,
+        "ratio": 187.6
       },
       {
         "word": "grundgesetz",
         "count": 7,
-        "ratioParty": 30.6,
-        "ratioBundestag": 34.4
+        "score": 25.0,
+        "ratio": 34.4
       },
       {
-        "word": "kindern",
-        "count": 5,
-        "ratioParty": 26.6,
-        "ratioBundestag": 22.6
+        "word": "ministerin",
+        "count": 9,
+        "score": 23.8,
+        "ratio": 13.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "frauen",
+        "count": 21,
+        "score": 86.0,
+        "ratio": 59.2
+      },
+      {
+        "word": "prien",
+        "count": 12,
+        "score": 65.6,
+        "ratio": 235.0
+      },
+      {
+        "word": "mädchen",
+        "count": 9,
+        "score": 48.7,
+        "ratio": 223.3
+      },
+      {
+        "word": "grundgesetz",
+        "count": 7,
+        "score": 24.2,
+        "ratio": 30.6
+      },
+      {
+        "word": "ministerin",
+        "count": 9,
+        "score": 22.4,
+        "ratio": 11.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 384,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Kerstin Przygodda häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Kerstin Przygodda häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
       {
         "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Prien",
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Frauen",
         "isCorrect": true
       },
       {
-        "text": "Abstimmung",
+        "text": "Kinder",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Prien\" nutzt Kerstin Przygodda 235.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "205.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Frauen\" sagte Kerstin Przygodda 21× (37.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

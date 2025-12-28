@@ -64,44 +64,84 @@
         "count": 8
       }
     ],
-    "signatureWords": [
-      {
-        "word": "unteren",
-        "count": 6,
-        "ratioParty": 166.2,
-        "ratioBundestag": 153.8
-      },
-      {
-        "word": "besteuert",
-        "count": 5,
-        "ratioParty": 46.2,
-        "ratioBundestag": 86.8
-      },
+    "signatureWordsBundestag": [
       {
         "word": "mehrwertsteuer",
         "count": 9,
-        "ratioParty": 45.3,
-        "ratioBundestag": 74.5
+        "score": 38.9,
+        "ratio": 74.5
       },
       {
-        "word": "einnahmen",
+        "word": "einkommen",
+        "count": 12,
+        "score": 37.1,
+        "ratio": 21.1
+      },
+      {
+        "word": "unteren",
         "count": 6,
-        "ratioParty": 25.6,
-        "ratioBundestag": 16.6
+        "score": 30.3,
+        "ratio": 153.8
       },
       {
-        "word": "verteilen",
-        "count": 5,
-        "ratioParty": 25.2,
-        "ratioBundestag": 36.4
+        "word": "vermögensteuer",
+        "count": 6,
+        "score": 28.3,
+        "ratio": 111.3
+      },
+      {
+        "word": "kommunen",
+        "count": 13,
+        "score": 23.9,
+        "ratio": 5.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "mehrwertsteuer",
+        "count": 9,
+        "score": 34.5,
+        "ratio": 45.3
+      },
+      {
+        "word": "unteren",
+        "count": 6,
+        "score": 30.7,
+        "ratio": 166.2
+      },
+      {
+        "word": "einkommen",
+        "count": 12,
+        "score": 30.5,
+        "ratio": 11.7
+      },
+      {
+        "word": "steuern",
+        "count": 9,
+        "score": 21.9,
+        "ratio": 10.4
+      },
+      {
+        "word": "kommunen",
+        "count": 13,
+        "score": 21.1,
+        "ratio": 4.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "gerecht",
         "count": 4,
-        "ratioParty": 3.9,
-        "ratioBundestag": 5.1
+        "score": 7.2,
+        "ratio": 5.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 6.3,
+        "ratio": 3.9
       }
     ]
   },
@@ -125,33 +165,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Doris Achelwilm häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Doris Achelwilm häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Unteren",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Mehrwertsteuer",
         "isCorrect": true
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unteren\" nutzt Doris Achelwilm 166.2× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "153.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Mehrwertsteuer\" sagte Doris Achelwilm 9× (74.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Doris Achelwilm häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Doris Achelwilm häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Falsch",
+        "text": "Jung",
         "isCorrect": false
       },
       {
@@ -159,16 +198,15 @@
         "isCorrect": true
       },
       {
-        "text": "Klar",
+        "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gerecht\" nutzt Doris Achelwilm 3.9× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "5.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gerecht\" sagte Doris Achelwilm 4× (5.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐬",

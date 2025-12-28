@@ -72,39 +72,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
-      {
-        "word": "verbraucherkreditrichtlinie",
-        "count": 5,
-        "ratioParty": 1506.7,
-        "ratioBundestag": 336.7
-      },
+    "signatureWordsBundestag": [
       {
         "word": "schuldnerberatung",
         "count": 9,
-        "ratioParty": 339.0,
-        "ratioBundestag": 188.5
-      },
-      {
-        "word": "verbraucherinnen",
-        "count": 7,
-        "ratioParty": 57.0,
-        "ratioBundestag": 53.2
-      },
-      {
-        "word": "verbraucherschutz",
-        "count": 8,
-        "ratioParty": 56.1,
-        "ratioBundestag": 55.9
+        "score": 47.2,
+        "ratio": 188.5
       },
       {
         "word": "verbraucher",
         "count": 12,
-        "ratioParty": 44.1,
-        "ratioBundestag": 45.3
+        "score": 46.0,
+        "ratio": 45.3
+      },
+      {
+        "word": "verbraucherschutz",
+        "count": 8,
+        "score": 32.3,
+        "ratio": 55.9
+      },
+      {
+        "word": "verbraucherkreditrichtlinie",
+        "count": 5,
+        "score": 29.1,
+        "ratio": 336.7
+      },
+      {
+        "word": "verbraucherinnen",
+        "count": 7,
+        "score": 28.0,
+        "ratio": 53.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "schuldnerberatung",
+        "count": 9,
+        "score": 52.5,
+        "ratio": 339.0
+      },
+      {
+        "word": "verbraucher",
+        "count": 12,
+        "score": 45.7,
+        "ratio": 44.1
+      },
+      {
+        "word": "verbraucherkreditrichtlinie",
+        "count": 5,
+        "score": 36.6,
+        "ratio": 1506.7
+      },
+      {
+        "word": "verbraucherschutz",
+        "count": 8,
+        "score": 32.4,
+        "ratio": 56.1
+      },
+      {
+        "word": "verbraucherinnen",
+        "count": 7,
+        "score": 28.4,
+        "ratio": 57.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 567,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Sebastian Steineke häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Sebastian Steineke häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Verbraucherkreditrichtlinie",
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Schuldnerberatung",
         "isCorrect": true
       },
       {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
+        "text": "Bildung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verbraucherkreditrichtlinie\" nutzt Sebastian Steineke 1506.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "336.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Schuldnerberatung\" sagte Sebastian Steineke 9× (188.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -165,12 +197,12 @@
         "score": 0.922
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.867
+        "emoji": "🐇",
+        "name": "Hase",
+        "title": "Wendiger Optimist",
+        "reason": "Mit positivem Blick reagierst du schnell auf neue Themen.",
+        "id": "hase",
+        "score": 0.851
       }
     ]
   },

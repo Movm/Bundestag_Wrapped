@@ -40,50 +40,96 @@
         "count": 20
       }
     ],
-    "signatureWords": [
-      {
-        "word": "wahlfreiheit",
-        "count": 6,
-        "ratioParty": 60.7,
-        "ratioBundestag": 53.5
-      },
+    "signatureWordsBundestag": [
       {
         "word": "elterngeld",
         "count": 13,
-        "ratioParty": 43.8,
-        "ratioBundestag": 39.2
+        "score": 48.0,
+        "ratio": 39.2
       },
       {
-        "word": "schuldnerberatung",
-        "count": 5,
-        "ratioParty": 29.5,
-        "ratioBundestag": 22.8
+        "word": "eltern",
+        "count": 14,
+        "score": 34.4,
+        "ratio": 10.7
       },
       {
-        "word": "erzählen",
-        "count": 5,
-        "ratioParty": 27.2,
-        "ratioBundestag": 8.1
+        "word": "daten",
+        "count": 13,
+        "score": 33.5,
+        "ratio": 12.1
+      },
+      {
+        "word": "fordern",
+        "count": 15,
+        "score": 27.0,
+        "ratio": 5.0
+      },
+      {
+        "word": "schaffen",
+        "count": 20,
+        "score": 26.7,
+        "ratio": 2.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "elterngeld",
+        "count": 13,
+        "score": 49.4,
+        "ratio": 43.8
+      },
+      {
+        "word": "eltern",
+        "count": 14,
+        "score": 40.5,
+        "ratio": 17.1
+      },
+      {
+        "word": "daten",
+        "count": 13,
+        "score": 36.9,
+        "ratio": 16.1
+      },
+      {
+        "word": "fordern",
+        "count": 15,
+        "score": 33.3,
+        "ratio": 8.2
       },
       {
         "word": "vermieter",
         "count": 8,
-        "ratioParty": 25.7,
-        "ratioBundestag": 23.8
+        "score": 26.3,
+        "ratio": 25.7
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "links",
         "count": 4,
-        "ratioParty": 4.6,
-        "ratioBundestag": 2.9
+        "score": 5.5,
+        "ratio": 2.9
       },
       {
         "word": "rechts",
         "count": 3,
-        "ratioParty": 2.4,
-        "ratioBundestag": 2.1
+        "score": 3.4,
+        "ratio": 2.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "links",
+        "count": 4,
+        "score": 6.9,
+        "ratio": 4.6
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 3.6,
+        "ratio": 2.4
       }
     ]
   },
@@ -122,50 +168,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Konrad Körner häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Konrad Körner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Wahlfreiheit",
+        "text": "Elterngeld",
         "isCorrect": true
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wahlfreiheit\" nutzt Dr. Konrad Körner 60.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "53.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Elterngeld\" sagte Dr. Konrad Körner 13× (39.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Konrad Körner häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Konrad Körner häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
-        "isCorrect": false
-      },
       {
         "text": "Links",
         "isCorrect": true
       },
       {
-        "text": "Richtig",
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Links\" nutzt Dr. Konrad Körner 4.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "2.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Links\" sagte Dr. Konrad Körner 4× (2.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦁",

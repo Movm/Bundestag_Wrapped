@@ -68,39 +68,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "strafverfolgung",
         "count": 8,
-        "ratioParty": 109.2,
-        "ratioBundestag": 136.7
+        "score": 39.4,
+        "ratio": 136.7
       },
       {
         "word": "kassen",
         "count": 6,
-        "ratioParty": 72.8,
-        "ratioBundestag": 63.1
-      },
-      {
-        "word": "gesetzlichen",
-        "count": 7,
-        "ratioParty": 28.3,
-        "ratioBundestag": 25.1
+        "score": 25.0,
+        "ratio": 63.1
       },
       {
         "word": "jedoch",
         "count": 8,
-        "ratioParty": 25.7,
-        "ratioBundestag": 20.3
+        "score": 24.5,
+        "ratio": 20.3
+      },
+      {
+        "word": "gesetzlichen",
+        "count": 7,
+        "score": 22.8,
+        "ratio": 25.1
       },
       {
         "word": "taten",
         "count": 6,
-        "ratioParty": 25.2,
-        "ratioBundestag": 27.2
+        "score": 20.0,
+        "ratio": 27.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "strafverfolgung",
+        "count": 8,
+        "score": 37.6,
+        "ratio": 109.2
+      },
+      {
+        "word": "jedoch",
+        "count": 8,
+        "score": 26.3,
+        "ratio": 25.7
+      },
+      {
+        "word": "kassen",
+        "count": 6,
+        "score": 25.8,
+        "ratio": 72.8
+      },
+      {
+        "word": "gesetzlichen",
+        "count": 7,
+        "score": 23.6,
+        "ratio": 28.3
+      },
+      {
+        "word": "taten",
+        "count": 6,
+        "score": 19.6,
+        "ratio": 25.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 480,
@@ -127,27 +160,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Axel Müller häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Axel Müller häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
       {
         "text": "Strafverfolgung",
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
+        "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
+        "text": "Migration",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Strafverfolgung\" nutzt Axel Müller 109.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "136.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Strafverfolgung\" sagte Axel Müller 8× (136.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

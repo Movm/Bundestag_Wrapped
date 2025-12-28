@@ -64,56 +64,108 @@
         "count": 12
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "ausnahmen",
+        "count": 14,
+        "score": 63.4,
+        "ratio": 91.5
+      },
       {
         "word": "belege",
         "count": 11,
-        "ratioParty": 231.7,
-        "ratioBundestag": 232.8
+        "score": 60.0,
+        "ratio": 232.8
       },
       {
-        "word": "aufbewahrungsfristen",
-        "count": 5,
-        "ratioParty": 158.0,
-        "ratioBundestag": 130.7
+        "word": "glattziehen",
+        "count": 7,
+        "score": 56.3,
+        "ratio": 3110.9
       },
       {
-        "word": "steuererhöhungen",
-        "count": 5,
-        "ratioParty": 158.0,
-        "ratioBundestag": 85.5
+        "word": "start",
+        "count": 15,
+        "score": 51.9,
+        "ratio": 30.9
       },
-      {
-        "word": "booster",
-        "count": 5,
-        "ratioParty": 158.0,
-        "ratioBundestag": 92.6
-      },
-      {
-        "word": "steuersystem",
-        "count": 6,
-        "ratioParty": 75.8,
-        "ratioBundestag": 91.9
-      }
-    ],
-    "signatureAdjectives": [
       {
         "word": "unfassbar",
         "count": 8,
-        "ratioParty": 50.6,
-        "ratioBundestag": 77.3
+        "score": 34.9,
+        "ratio": 77.3
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "belege",
+        "count": 11,
+        "score": 59.9,
+        "ratio": 231.7
+      },
+      {
+        "word": "ausnahmen",
+        "count": 14,
+        "score": 55.6,
+        "ratio": 52.0
+      },
+      {
+        "word": "start",
+        "count": 15,
+        "score": 50.0,
+        "ratio": 27.1
+      },
+      {
+        "word": "unfassbar",
+        "count": 8,
+        "score": 31.5,
+        "ratio": 50.6
+      },
+      {
+        "word": "steuern",
+        "count": 9,
+        "score": 26.9,
+        "ratio": 19.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "unfassbar",
+        "count": 8,
+        "score": 34.9,
+        "ratio": 77.3
       },
       {
         "word": "ungerecht",
         "count": 4,
-        "ratioParty": 21.1,
-        "ratioBundestag": 29.6
+        "score": 13.7,
+        "ratio": 29.6
       },
       {
         "word": "stark",
         "count": 5,
-        "ratioParty": 7.0,
-        "ratioBundestag": 5.5
+        "score": 9.3,
+        "ratio": 5.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "unfassbar",
+        "count": 8,
+        "score": 31.5,
+        "ratio": 50.6
+      },
+      {
+        "word": "ungerecht",
+        "count": 4,
+        "score": 12.4,
+        "ratio": 21.1
+      },
+      {
+        "word": "stark",
+        "count": 5,
+        "score": 10.4,
+        "ratio": 7.0
       }
     ]
   },
@@ -137,50 +189,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Katharina Beck häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Katharina Beck häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Steuern",
+        "isCorrect": false
+      },
       {
         "text": "Demokratie",
         "isCorrect": false
       },
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Belege",
+        "text": "Ausnahmen",
         "isCorrect": true
       },
       {
-        "text": "Minister",
+        "text": "Investitionen",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Belege\" nutzt Katharina Beck 231.7× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "232.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ausnahmen\" sagte Katharina Beck 14× (91.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Katharina Beck häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Katharina Beck häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
+        "isCorrect": false
+      },
       {
         "text": "Unfassbar",
         "isCorrect": true
       },
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
+        "text": "Gut",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unfassbar\" nutzt Katharina Beck 50.6× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "77.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Unfassbar\" sagte Katharina Beck 8× (77.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

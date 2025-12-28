@@ -60,44 +60,84 @@
         "count": 10
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "armee",
-        "count": 5,
-        "ratioParty": 51.3,
-        "ratioBundestag": 27.7
+        "word": "soldaten",
+        "count": 15,
+        "score": 39.7,
+        "ratio": 13.1
+      },
+      {
+        "word": "bundeswehr",
+        "count": 16,
+        "score": 39.6,
+        "ratio": 10.9
+      },
+      {
+        "word": "soldatinnen",
+        "count": 11,
+        "score": 31.3,
+        "ratio": 16.2
       },
       {
         "word": "israel",
         "count": 10,
-        "ratioParty": 19.4,
-        "ratioBundestag": 12.0
+        "score": 25.6,
+        "ratio": 12.0
       },
       {
-        "word": "militärische",
-        "count": 7,
-        "ratioParty": 18.0,
-        "ratioBundestag": 20.2
-      },
+        "word": "schützen",
+        "count": 10,
+        "score": 21.4,
+        "ratio": 7.5
+      }
+    ],
+    "signatureWordsParty": [
       {
-        "word": "männer",
-        "count": 5,
-        "ratioParty": 11.4,
-        "ratioBundestag": 12.1
+        "word": "bundeswehr",
+        "count": 16,
+        "score": 38.4,
+        "ratio": 10.0
       },
       {
         "word": "soldaten",
         "count": 15,
-        "ratioParty": 10.0,
-        "ratioBundestag": 13.1
+        "score": 36.0,
+        "ratio": 10.0
+      },
+      {
+        "word": "israel",
+        "count": 10,
+        "score": 30.1,
+        "ratio": 19.4
+      },
+      {
+        "word": "soldatinnen",
+        "count": 11,
+        "score": 24.4,
+        "ratio": 8.2
+      },
+      {
+        "word": "militärische",
+        "count": 7,
+        "score": 20.6,
+        "ratio": 18.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "falsch",
         "count": 5,
-        "ratioParty": 9.7,
-        "ratioBundestag": 8.0
+        "score": 11.0,
+        "ratio": 8.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "falsch",
+        "count": 5,
+        "score": 11.8,
+        "ratio": 9.7
       }
     ]
   },
@@ -126,33 +166,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Falko Droßmann häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Falko Droßmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetz",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Reform",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
-        "text": "Armee",
+        "text": "Soldaten",
         "isCorrect": true
       },
       {
-        "text": "Debatte",
+        "text": "Energie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Armee\" nutzt Falko Droßmann 51.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "27.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Soldaten\" sagte Falko Droßmann 15× (13.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Falko Droßmann häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Falko Droßmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gut",
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
@@ -160,16 +203,11 @@
         "isCorrect": true
       },
       {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Sozial",
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Falsch\" nutzt Falko Droßmann 9.7× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "8.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Falsch\" sagte Falko Droßmann 5× (8.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

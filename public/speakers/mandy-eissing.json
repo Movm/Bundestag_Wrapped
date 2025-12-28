@@ -72,39 +72,72 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "familien",
+        "count": 17,
+        "score": 50.4,
+        "ratio": 18.4
+      },
       {
         "word": "geburt",
         "count": 7,
-        "ratioParty": 556.1,
-        "ratioBundestag": 97.8
+        "score": 32.1,
+        "ratio": 97.8
       },
       {
         "word": "freistellung",
         "count": 5,
-        "ratioParty": 397.2,
-        "ratioBundestag": 320.1
+        "score": 28.9,
+        "ratio": 320.1
       },
       {
         "word": "elternteil",
         "count": 5,
-        "ratioParty": 397.2,
-        "ratioBundestag": 320.1
+        "score": 28.9,
+        "ratio": 320.1
       },
       {
-        "word": "bezahlte",
-        "count": 5,
-        "ratioParty": 198.6,
-        "ratioBundestag": 120.0
-      },
-      {
-        "word": "elterngeld",
-        "count": 6,
-        "ratioParty": 53.0,
-        "ratioBundestag": 56.9
+        "word": "osten",
+        "count": 8,
+        "score": 27.4,
+        "ratio": 29.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "familien",
+        "count": 17,
+        "score": 48.6,
+        "ratio": 16.5
+      },
+      {
+        "word": "geburt",
+        "count": 7,
+        "score": 44.3,
+        "ratio": 556.1
+      },
+      {
+        "word": "freistellung",
+        "count": 5,
+        "score": 29.9,
+        "ratio": 397.2
+      },
+      {
+        "word": "elternteil",
+        "count": 5,
+        "score": 29.9,
+        "ratio": 397.2
+      },
+      {
+        "word": "osten",
+        "count": 8,
+        "score": 26.8,
+        "ratio": 27.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 330,
@@ -126,44 +159,35 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Mandy Eißing häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Mandy Eißing häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Reform",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Geburt",
+        "text": "Familien",
         "isCorrect": true
       },
       {
-        "text": "Ausschuss",
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Geburt\" nutzt Mandy Eißing 556.1× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "97.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Familien\" sagte Mandy Eißing 17× (18.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Clevere Strategin",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüterin",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 0.932
-      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -171,6 +195,14 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 0.913
+      },
+      {
+        "emoji": "🦀",
+        "name": "Krabbe",
+        "title": "Hartnäckige Debattiererin",
+        "reason": "Du hältst an deinen Positionen fest und lässt nicht locker.",
+        "id": "krabbe",
+        "score": 0.857
       }
     ]
   },

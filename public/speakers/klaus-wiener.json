@@ -52,56 +52,108 @@
         "count": 20
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "energieangebot",
         "count": 7,
-        "ratioParty": 574.3,
-        "ratioBundestag": 602.5
+        "score": 44.8,
+        "ratio": 602.5
       },
       {
         "word": "klang",
         "count": 7,
-        "ratioParty": 143.6,
-        "ratioBundestag": 164.3
+        "score": 35.8,
+        "ratio": 164.3
       },
       {
-        "word": "kernenergie",
-        "count": 5,
-        "ratioParty": 58.6,
-        "ratioBundestag": 15.9
+        "word": "erneuerbaren",
+        "count": 12,
+        "score": 32.4,
+        "ratio": 13.8
       },
       {
-        "word": "kernkraftwerke",
-        "count": 6,
-        "ratioParty": 35.2,
-        "ratioBundestag": 17.2
+        "word": "würde",
+        "count": 20,
+        "score": 30.5,
+        "ratio": 3.6
       },
       {
-        "word": "lieferkettengesetz",
-        "count": 5,
-        "ratioParty": 34.2,
-        "ratioBundestag": 25.3
+        "word": "deutlich",
+        "count": 20,
+        "score": 30.1,
+        "ratio": 3.5
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "links",
-        "count": 3,
-        "ratioParty": 4.0,
-        "ratioBundestag": 2.5
+        "word": "energieangebot",
+        "count": 7,
+        "score": 44.5,
+        "ratio": 574.3
+      },
+      {
+        "word": "erneuerbaren",
+        "count": 12,
+        "score": 35.5,
+        "ratio": 18.2
+      },
+      {
+        "word": "klang",
+        "count": 7,
+        "score": 34.8,
+        "ratio": 143.6
+      },
+      {
+        "word": "würde",
+        "count": 20,
+        "score": 30.8,
+        "ratio": 3.7
+      },
+      {
+        "word": "deutlich",
+        "count": 20,
+        "score": 27.5,
+        "ratio": 3.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 10,
+        "score": 15.0,
+        "ratio": 3.5
       },
       {
         "word": "wirtschaftlich",
         "count": 4,
-        "ratioParty": 3.8,
-        "ratioBundestag": 4.6
+        "score": 6.9,
+        "ratio": 4.6
       },
+      {
+        "word": "links",
+        "count": 3,
+        "score": 3.8,
+        "ratio": 2.5
+      }
+    ],
+    "signatureAdjectivesParty": [
       {
         "word": "sicher",
         "count": 10,
-        "ratioParty": 3.1,
-        "ratioBundestag": 3.5
+        "score": 14.1,
+        "ratio": 3.1
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 4,
+        "score": 6.3,
+        "ratio": 3.8
+      },
+      {
+        "word": "links",
+        "count": 3,
+        "score": 4.8,
+        "ratio": 4.0
       }
     ]
   },
@@ -140,14 +192,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Klaus Wiener häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Klaus Wiener häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
@@ -155,57 +203,59 @@
         "isCorrect": true
       },
       {
-        "text": "Steuern",
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesellschaft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Energieangebot\" nutzt Dr. Klaus Wiener 574.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "602.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Energieangebot\" sagte Dr. Klaus Wiener 7× (602.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Klaus Wiener häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Klaus Wiener häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Links",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
         "isCorrect": true
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Links\" nutzt Dr. Klaus Wiener 4.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "2.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Dr. Klaus Wiener 10× (3.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🦉",
-    "name": "Eule",
-    "title": "Themenexperte",
-    "reason": "Dein Fachwort \"Energieangebot\" nutzt du 574.3× häufiger als deine Fraktion.",
-    "id": "eule",
+    "emoji": "🐴",
+    "name": "Pferd",
+    "title": "Fleißiger Debattierer",
+    "reason": "Mit 21 Reden gehörst du zu den aktivsten Abgeordneten.",
+    "id": "pferd",
     "alternatives": [
       {
-        "emoji": "🐴",
-        "name": "Pferd",
-        "title": "Fleißiger Debattierer",
-        "reason": "Mit 21 Reden gehörst du zu den aktivsten Abgeordneten.",
-        "id": "pferd",
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißiger Abgeordneter",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
         "score": 1.0
       }
     ]

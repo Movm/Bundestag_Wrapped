@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
-      {
-        "word": "mandat",
-        "count": 5,
-        "ratioParty": 31.8,
-        "ratioBundestag": 33.7
-      },
-      {
-        "word": "wehrpflicht",
-        "count": 5,
-        "ratioParty": 22.1,
-        "ratioBundestag": 32.4
-      },
+    "signatureWordsBundestag": [
       {
         "word": "soldaten",
         "count": 12,
-        "ratioParty": 21.1,
-        "ratioBundestag": 23.3
+        "score": 38.3,
+        "ratio": 23.3
+      },
+      {
+        "word": "bundeswehr",
+        "count": 11,
+        "score": 31.6,
+        "ratio": 16.6
+      },
+      {
+        "word": "bürger",
+        "count": 12,
+        "score": 26.2,
+        "ratio": 7.9
       },
       {
         "word": "einsatz",
         "count": 7,
-        "ratioParty": 20.7,
-        "ratioBundestag": 15.2
+        "score": 19.5,
+        "ratio": 15.2
       },
       {
-        "word": "entwurf",
+        "word": "mandat",
         "count": 5,
-        "ratioParty": 16.3,
-        "ratioBundestag": 17.5
+        "score": 17.7,
+        "ratio": 33.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "soldaten",
+        "count": 12,
+        "score": 37.2,
+        "ratio": 21.1
+      },
+      {
+        "word": "bundeswehr",
+        "count": 11,
+        "score": 31.2,
+        "ratio": 16.1
+      },
+      {
+        "word": "einsatz",
+        "count": 7,
+        "score": 21.5,
+        "ratio": 20.7
+      },
+      {
+        "word": "vertrauen",
+        "count": 7,
+        "score": 18.3,
+        "ratio": 12.7
+      },
+      {
+        "word": "bürger",
+        "count": 12,
+        "score": 17.6,
+        "ratio": 3.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 346,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Heinrich Koch häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Heinrich Koch häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Mandat",
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Soldaten",
         "isCorrect": true
       },
       {
-        "text": "Europa",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
+        "text": "Freiheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Mandat\" nutzt Heinrich Koch 31.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "33.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Soldaten\" sagte Heinrich Koch 12× (23.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

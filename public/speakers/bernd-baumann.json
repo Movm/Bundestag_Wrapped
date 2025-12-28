@@ -72,56 +72,108 @@
         "count": 16
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "orient",
-        "count": 6,
-        "ratioParty": 490.0,
-        "ratioBundestag": 2184.9
+        "word": "migranten",
+        "count": 22,
+        "score": 100.0,
+        "ratio": 93.2
+      },
+      {
+        "word": "wähler",
+        "count": 20,
+        "score": 86.8,
+        "ratio": 75.9
+      },
+      {
+        "word": "regierung",
+        "count": 35,
+        "score": 72.8,
+        "ratio": 7.0
+      },
+      {
+        "word": "dobrindt",
+        "count": 22,
+        "score": 71.7,
+        "ratio": 25.0
       },
       {
         "word": "asylanten",
         "count": 10,
-        "ratioParty": 272.2,
-        "ratioBundestag": 1213.8
-      },
-      {
-        "word": "familiennachzugs",
-        "count": 8,
-        "ratioParty": 163.3,
-        "ratioBundestag": 56.0
-      },
-      {
-        "word": "zurückgewiesen",
-        "count": 11,
-        "ratioParty": 89.8,
-        "ratioBundestag": 166.9
-      },
-      {
-        "word": "asylmigranten",
-        "count": 8,
-        "ratioParty": 72.6,
-        "ratioBundestag": 323.7
+        "score": 71.0,
+        "ratio": 1213.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "unfassbar",
-        "count": 3,
-        "ratioParty": 35.0,
-        "ratioBundestag": 21.4
+        "word": "dobrindt",
+        "count": 22,
+        "score": 92.7,
+        "ratio": 66.5
+      },
+      {
+        "word": "migranten",
+        "count": 22,
+        "score": 77.0,
+        "ratio": 32.1
+      },
+      {
+        "word": "union",
+        "count": 32,
+        "score": 65.9,
+        "ratio": 6.8
+      },
+      {
+        "word": "wähler",
+        "count": 20,
+        "score": 62.0,
+        "ratio": 21.2
+      },
+      {
+        "word": "regierung",
+        "count": 35,
+        "score": 56.6,
+        "ratio": 4.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "links",
+        "count": 18,
+        "score": 56.8,
+        "ratio": 22.5
       },
       {
         "word": "wirkungslos",
         "count": 4,
-        "ratioParty": 19.2,
-        "ratioBundestag": 47.0
+        "score": 15.5,
+        "ratio": 47.0
       },
+      {
+        "word": "unfassbar",
+        "count": 3,
+        "score": 9.3,
+        "ratio": 21.4
+      }
+    ],
+    "signatureAdjectivesParty": [
       {
         "word": "links",
         "count": 18,
-        "ratioParty": 8.1,
-        "ratioBundestag": 22.5
+        "score": 39.8,
+        "ratio": 8.1
+      },
+      {
+        "word": "wirkungslos",
+        "count": 4,
+        "score": 12.0,
+        "ratio": 19.2
+      },
+      {
+        "word": "unfassbar",
+        "count": 3,
+        "score": 10.8,
+        "ratio": 35.0
       }
     ]
   },
@@ -150,50 +202,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Bernd Baumann häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Bernd Baumann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Orient",
+        "text": "Migranten",
         "isCorrect": true
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Orient\" nutzt Dr. Bernd Baumann 490.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "2184.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Migranten\" sagte Dr. Bernd Baumann 22× (93.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Bernd Baumann häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Bernd Baumann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Schlecht",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
-        "text": "Unfassbar",
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Links",
         "isCorrect": true
       },
       {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unfassbar\" nutzt Dr. Bernd Baumann 35.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "21.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Links\" sagte Dr. Bernd Baumann 18× (22.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

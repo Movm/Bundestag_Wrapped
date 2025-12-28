@@ -72,39 +72,72 @@
         "count": 14
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "völkermord",
-        "count": 8,
-        "ratioParty": 101.2,
-        "ratioBundestag": 77.2
+        "word": "nationen",
+        "count": 18,
+        "score": 60.6,
+        "ratio": 27.9
       },
       {
-        "word": "resolution",
-        "count": 7,
-        "ratioParty": 88.5,
-        "ratioBundestag": 56.8
+        "word": "vereinten",
+        "count": 17,
+        "score": 58.7,
+        "ratio": 30.7
       },
       {
-        "word": "botschafter",
-        "count": 5,
-        "ratioParty": 63.2,
-        "ratioBundestag": 40.6
+        "word": "herzegowina",
+        "count": 14,
+        "score": 55.3,
+        "ratio": 51.0
       },
       {
-        "word": "leugnen",
-        "count": 5,
-        "ratioParty": 50.6,
-        "ratioBundestag": 44.6
+        "word": "bosnien",
+        "count": 14,
+        "score": 52.7,
+        "ratio": 42.0
       },
       {
-        "word": "massaker",
-        "count": 5,
-        "ratioParty": 50.6,
-        "ratioBundestag": 39.7
+        "word": "verbrechen",
+        "count": 13,
+        "score": 47.0,
+        "ratio": 36.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "nationen",
+        "count": 18,
+        "score": 65.9,
+        "ratio": 37.9
+      },
+      {
+        "word": "vereinten",
+        "count": 17,
+        "score": 63.5,
+        "ratio": 41.0
+      },
+      {
+        "word": "bosnien",
+        "count": 14,
+        "score": 48.1,
+        "ratio": 30.1
+      },
+      {
+        "word": "herzegowina",
+        "count": 14,
+        "score": 48.1,
+        "ratio": 30.1
+      },
+      {
+        "word": "verbrechen",
+        "count": 13,
+        "score": 47.1,
+        "ratio": 36.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 530,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Boris Mijatović häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Boris Mijatović häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Völkermord",
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Nationen",
         "isCorrect": true
       },
       {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
+        "text": "Familie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Völkermord\" nutzt Boris Mijatović 101.2× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "77.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Nationen\" sagte Boris Mijatović 18× (27.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -165,12 +197,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.838
+        "emoji": "🦚",
+        "name": "Pfau",
+        "title": "Eloquenter Redner",
+        "reason": "Mit Ø 530 Wörtern pro Rede gehörst du zu den ausführlichsten Rednern.",
+        "id": "pfau",
+        "score": 0.77
       }
     ]
   },

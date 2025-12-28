@@ -60,39 +60,79 @@
         "count": 13
       }
     ],
-    "signatureWords": [
-      {
-        "word": "dachgesetz",
-        "count": 6,
-        "ratioParty": 191.9,
-        "ratioBundestag": 52.4
-      },
-      {
-        "word": "rettungsdienst",
-        "count": 5,
-        "ratioParty": 159.9,
-        "ratioBundestag": 52.4
-      },
+    "signatureWordsBundestag": [
       {
         "word": "notfallversorgung",
         "count": 11,
-        "ratioParty": 117.3,
-        "ratioBundestag": 82.3
+        "score": 48.7,
+        "ratio": 82.3
+      },
+      {
+        "word": "drohnen",
+        "count": 12,
+        "score": 36.5,
+        "ratio": 19.9
+      },
+      {
+        "word": "sicherheit",
+        "count": 22,
+        "score": 32.6,
+        "ratio": 3.4
+      },
+      {
+        "word": "gewalt",
+        "count": 13,
+        "score": 25.3,
+        "ratio": 6.0
       },
       {
         "word": "kritis",
         "count": 7,
-        "ratioParty": 112.0,
-        "ratioBundestag": 35.5
-      },
-      {
-        "word": "bedrohungslage",
-        "count": 5,
-        "ratioParty": 80.0,
-        "ratioBundestag": 16.5
+        "score": 25.2,
+        "ratio": 35.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "notfallversorgung",
+        "count": 11,
+        "score": 52.5,
+        "ratio": 117.3
+      },
+      {
+        "word": "drohnen",
+        "count": 12,
+        "score": 50.1,
+        "ratio": 64.0
+      },
+      {
+        "word": "sicherheit",
+        "count": 22,
+        "score": 37.9,
+        "ratio": 4.6
+      },
+      {
+        "word": "kritis",
+        "count": 7,
+        "score": 33.1,
+        "ratio": 112.0
+      },
+      {
+        "word": "dachgesetz",
+        "count": 6,
+        "score": 31.6,
+        "ratio": 191.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 3.5,
+        "ratio": 2.2
+      }
+    ],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 449,
@@ -124,29 +164,49 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jan Köstering häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Jan Köstering häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Dachgesetz",
+        "text": "Notfallversorgung",
         "isCorrect": true
       },
       {
-        "text": "Kinder",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Gesellschaft",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Haushalt",
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Dachgesetz\" nutzt Jan Köstering 191.9× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "52.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Notfallversorgung\" sagte Jan Köstering 11× (82.3× häufiger als der Bundestag-Durchschnitt)."
   },
-  "signatureAdjectiveQuiz": null,
+  "signatureAdjectiveQuiz": {
+    "question": "Welches Adjektiv nutzt Jan Köstering häufiger als der Bundestag-Durchschnitt?",
+    "options": [
+      {
+        "text": "Gerecht",
+        "isCorrect": true
+      },
+      {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Richtig",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "\"Gerecht\" sagte Jan Köstering 3× (2.2× häufiger als der Bundestag-Durchschnitt)."
+  },
   "spiritAnimal": {
     "emoji": "🐿️",
     "name": "Eichhörnchen",
@@ -163,12 +223,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.988
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrlicher Redner",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.944
       }
     ]
   },

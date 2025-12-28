@@ -72,33 +72,60 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "ziemlich",
         "count": 5,
-        "ratioParty": 60.7,
-        "ratioBundestag": 57.1
+        "score": 20.3,
+        "ratio": 57.1
       },
       {
         "word": "erklären",
         "count": 5,
-        "ratioParty": 44.0,
-        "ratioBundestag": 34.1
-      },
-      {
-        "word": "beispiel",
-        "count": 6,
-        "ratioParty": 5.3,
-        "ratioBundestag": 6.2
+        "score": 17.8,
+        "ratio": 34.1
       },
       {
         "word": "gemeinsam",
         "count": 7,
-        "ratioParty": 4.9,
-        "ratioBundestag": 8.2
+        "score": 15.5,
+        "ratio": 8.2
+      },
+      {
+        "word": "beispiel",
+        "count": 6,
+        "score": 11.8,
+        "ratio": 6.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "ziemlich",
+        "count": 5,
+        "score": 20.6,
+        "ratio": 60.7
+      },
+      {
+        "word": "erklären",
+        "count": 5,
+        "score": 19.0,
+        "ratio": 44.0
+      },
+      {
+        "word": "gemeinsam",
+        "count": 7,
+        "score": 12.5,
+        "ratio": 4.9
+      },
+      {
+        "word": "beispiel",
+        "count": 6,
+        "score": 11.1,
+        "ratio": 5.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 508,
@@ -120,27 +147,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Martin Kröber häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Martin Kröber häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Klima",
+        "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Gesellschaft",
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
         "isCorrect": false
       },
       {
         "text": "Ziemlich",
         "isCorrect": true
-      },
-      {
-        "text": "Freiheit",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ziemlich\" nutzt Martin Kröber 60.7× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "57.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ziemlich\" sagte Martin Kröber 5× (57.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

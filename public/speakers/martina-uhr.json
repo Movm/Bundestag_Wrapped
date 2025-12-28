@@ -72,33 +72,60 @@
         "count": 3
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "umwelt",
         "count": 5,
-        "ratioParty": 48.5,
-        "ratioBundestag": 34.7
+        "score": 17.9,
+        "ratio": 34.7
       },
       {
         "word": "bürokratie",
         "count": 5,
-        "ratioParty": 10.1,
-        "ratioBundestag": 15.5
+        "score": 14.0,
+        "ratio": 15.5
       },
       {
         "word": "wirtschaft",
         "count": 6,
-        "ratioParty": 8.2,
-        "ratioBundestag": 7.6
+        "score": 12.9,
+        "ratio": 7.6
       },
       {
         "word": "unternehmen",
         "count": 5,
-        "ratioParty": 7.2,
-        "ratioBundestag": 5.8
+        "score": 9.6,
+        "ratio": 5.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "umwelt",
+        "count": 5,
+        "score": 19.5,
+        "ratio": 48.5
+      },
+      {
+        "word": "wirtschaft",
+        "count": 6,
+        "score": 13.3,
+        "ratio": 8.2
+      },
+      {
+        "word": "bürokratie",
+        "count": 5,
+        "score": 12.0,
+        "ratio": 10.1
+      },
+      {
+        "word": "unternehmen",
+        "count": 5,
+        "score": 10.5,
+        "ratio": 7.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 406,
@@ -120,27 +147,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Martina Uhr häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Martina Uhr häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Reform",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Haushalt",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
         "text": "Umwelt",
         "isCorrect": true
+      },
+      {
+        "text": "Zukunft",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Umwelt\" nutzt Martina Uhr 48.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "34.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Umwelt\" sagte Martina Uhr 5× (34.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

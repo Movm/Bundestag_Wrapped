@@ -72,56 +72,108 @@
         "count": 12
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "menschen",
+        "count": 59,
+        "score": 96.7,
+        "ratio": 4.2
+      },
+      {
+        "word": "bürgergeld",
+        "count": 21,
+        "score": 75.7,
+        "ratio": 35.8
+      },
+      {
+        "word": "armut",
+        "count": 15,
+        "score": 54.0,
+        "ratio": 35.5
+      },
+      {
+        "word": "rechtsextremen",
+        "count": 11,
+        "score": 49.0,
+        "ratio": 85.3
+      },
+      {
+        "word": "chaos",
+        "count": 10,
+        "score": 41.6,
+        "ratio": 63.0
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "menschen",
+        "count": 59,
+        "score": 80.6,
+        "ratio": 2.9
+      },
+      {
+        "word": "bürgergeld",
+        "count": 21,
+        "score": 77.3,
+        "ratio": 38.7
+      },
+      {
+        "word": "armut",
+        "count": 15,
+        "score": 54.1,
+        "ratio": 35.9
+      },
       {
         "word": "wohngeld",
         "count": 7,
-        "ratioParty": 502.5,
-        "ratioBundestag": 110.3
+        "score": 43.6,
+        "ratio": 502.5
       },
       {
         "word": "haftbefehl",
         "count": 8,
-        "ratioParty": 191.4,
-        "ratioBundestag": 130.1
-      },
-      {
-        "word": "asylbewerberleistungsgesetz",
-        "count": 5,
-        "ratioParty": 179.5,
-        "ratioBundestag": 157.5
-      },
-      {
-        "word": "gesucht",
-        "count": 5,
-        "ratioParty": 89.7,
-        "ratioBundestag": 72.0
-      },
-      {
-        "word": "unsinn",
-        "count": 7,
-        "ratioParty": 71.8,
-        "ratioBundestag": 51.1
+        "score": 42.1,
+        "ratio": 191.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "peinlich",
         "count": 3,
-        "ratioParty": 17.9,
-        "ratioBundestag": 28.0
+        "score": 10.1,
+        "ratio": 28.0
       },
       {
         "word": "schlecht",
         "count": 4,
-        "ratioParty": 5.3,
-        "ratioBundestag": 9.6
+        "score": 9.5,
+        "ratio": 9.6
       },
       {
         "word": "sicher",
         "count": 4,
-        "ratioParty": 3.5,
-        "ratioBundestag": 2.7
+        "score": 5.2,
+        "ratio": 2.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "peinlich",
+        "count": 3,
+        "score": 8.8,
+        "ratio": 17.9
+      },
+      {
+        "word": "schlecht",
+        "count": 4,
+        "score": 7.4,
+        "ratio": 5.3
+      },
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 6.1,
+        "ratio": 3.5
       }
     ]
   },
@@ -145,33 +197,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Timon Dzienus häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Timon Dzienus häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Verantwortung",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Wohngeld",
+        "text": "Menschen",
         "isCorrect": true
       },
       {
-        "text": "Haushalt",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wohngeld\" nutzt Timon Dzienus 502.5× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "110.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Menschen\" sagte Timon Dzienus 59× (4.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Timon Dzienus häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Timon Dzienus häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Politisch",
+        "text": "Groß",
         "isCorrect": false
       },
       {
@@ -179,16 +230,15 @@
         "isCorrect": true
       },
       {
-        "text": "Neu",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Gefährlich",
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Peinlich\" nutzt Timon Dzienus 17.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "28.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Peinlich\" sagte Timon Dzienus 3× (28.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

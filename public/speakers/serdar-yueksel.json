@@ -64,39 +64,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
-      {
-        "word": "petitionsrecht",
-        "count": 5,
-        "ratioParty": 901.9,
-        "ratioBundestag": 564.3
-      },
-      {
-        "word": "grundgesetzes",
-        "count": 6,
-        "ratioParty": 63.7,
-        "ratioBundestag": 39.3
-      },
+    "signatureWordsBundestag": [
       {
         "word": "gesundheit",
         "count": 14,
-        "ratioParty": 43.5,
-        "ratioBundestag": 45.8
+        "score": 53.8,
+        "ratio": 45.8
+      },
+      {
+        "word": "petitionsrecht",
+        "count": 5,
+        "score": 31.7,
+        "ratio": 564.3
       },
       {
         "word": "globale",
         "count": 7,
-        "ratioParty": 38.3,
-        "ratioBundestag": 41.9
+        "score": 26.3,
+        "ratio": 41.9
       },
       {
-        "word": "bundestag",
-        "count": 5,
-        "ratioParty": 4.5,
-        "ratioBundestag": 5.0
+        "word": "grundgesetzes",
+        "count": 6,
+        "score": 22.2,
+        "ratio": 39.3
+      },
+      {
+        "word": "menschen",
+        "count": 16,
+        "score": 17.6,
+        "ratio": 2.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "gesundheit",
+        "count": 14,
+        "score": 53.1,
+        "ratio": 43.5
+      },
+      {
+        "word": "petitionsrecht",
+        "count": 5,
+        "score": 34.0,
+        "ratio": 901.9
+      },
+      {
+        "word": "globale",
+        "count": 7,
+        "score": 25.7,
+        "ratio": 38.3
+      },
+      {
+        "word": "grundgesetzes",
+        "count": 6,
+        "score": 25.0,
+        "ratio": 63.7
+      },
+      {
+        "word": "verantwortung",
+        "count": 9,
+        "score": 14.1,
+        "ratio": 3.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 423,
@@ -118,27 +151,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Serdar Yüksel häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Serdar Yüksel häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Petitionsrecht",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesundheit",
         "isCorrect": true
       },
       {
-        "text": "Antrag",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
+        "text": "Demokratie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Petitionsrecht\" nutzt Serdar Yüksel 901.9× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "564.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gesundheit\" sagte Serdar Yüksel 14× (45.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -157,12 +189,12 @@
         "score": 0.859
       },
       {
-        "emoji": "🦉",
-        "name": "Eule",
-        "title": "Themenexperte",
-        "reason": "Dein Fachwort \"Petitionsrecht\" nutzt du 901.9× häufiger als deine Fraktion.",
-        "id": "eule",
-        "score": 0.81
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißiger Abgeordneter",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
+        "score": 0.808
       }
     ]
   },

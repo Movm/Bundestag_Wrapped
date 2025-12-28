@@ -72,39 +72,72 @@
         "count": 9
       }
     ],
-    "signatureWords": [
-      {
-        "word": "bezahlbares",
-        "count": 7,
-        "ratioParty": 88.6,
-        "ratioBundestag": 99.9
-      },
-      {
-        "word": "städtebauförderung",
-        "count": 6,
-        "ratioParty": 71.5,
-        "ratioBundestag": 112.6
-      },
-      {
-        "word": "studierende",
-        "count": 5,
-        "ratioParty": 67.5,
-        "ratioBundestag": 95.6
-      },
+    "signatureWordsBundestag": [
       {
         "word": "wohnen",
         "count": 22,
-        "ratioParty": 49.5,
-        "ratioBundestag": 73.8
+        "score": 94.9,
+        "ratio": 73.8
+      },
+      {
+        "word": "bauen",
+        "count": 19,
+        "score": 61.7,
+        "ratio": 24.7
       },
       {
         "word": "wohnungsbau",
         "count": 13,
-        "ratioParty": 47.9,
-        "ratioBundestag": 63.3
+        "score": 54.1,
+        "ratio": 63.3
+      },
+      {
+        "word": "zusammenhalt",
+        "count": 10,
+        "score": 34.1,
+        "ratio": 29.4
+      },
+      {
+        "word": "sozialen",
+        "count": 11,
+        "score": 33.3,
+        "ratio": 19.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "wohnen",
+        "count": 22,
+        "score": 86.3,
+        "ratio": 49.5
+      },
+      {
+        "word": "bauen",
+        "count": 19,
+        "score": 60.2,
+        "ratio": 22.8
+      },
+      {
+        "word": "wohnungsbau",
+        "count": 13,
+        "score": 50.6,
+        "ratio": 47.9
+      },
+      {
+        "word": "bezahlbares",
+        "count": 7,
+        "score": 31.5,
+        "ratio": 88.6
+      },
+      {
+        "word": "sozialen",
+        "count": 11,
+        "score": 31.3,
+        "ratio": 16.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 428,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Ruppert Stüwe häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Ruppert Stüwe häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bezahlbares",
+        "text": "Wohnen",
         "isCorrect": true
       },
       {
-        "text": "Reform",
+        "text": "Europa",
         "isCorrect": false
       },
       {
-        "text": "Steuern",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
-        "text": "Klima",
+        "text": "Antrag",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bezahlbares\" nutzt Ruppert Stüwe 88.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "99.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wohnen\" sagte Ruppert Stüwe 22× (73.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

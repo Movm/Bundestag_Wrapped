@@ -72,44 +72,84 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "verliert",
-        "count": 5,
-        "ratioParty": 67.8,
-        "ratioBundestag": 41.1
+        "word": "sicherheit",
+        "count": 22,
+        "score": 48.9,
+        "ratio": 8.2
       },
       {
         "word": "innere",
         "count": 7,
-        "ratioParty": 56.9,
-        "ratioBundestag": 48.6
+        "score": 27.3,
+        "ratio": 48.6
+      },
+      {
+        "word": "klare",
+        "count": 9,
+        "score": 21.1,
+        "ratio": 9.4
+      },
+      {
+        "word": "verliert",
+        "count": 5,
+        "score": 18.7,
+        "ratio": 41.1
+      },
+      {
+        "word": "migration",
+        "count": 7,
+        "score": 18.3,
+        "ratio": 12.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "sicherheit",
+        "count": 22,
+        "score": 46.1,
+        "ratio": 7.1
+      },
+      {
+        "word": "innere",
+        "count": 7,
+        "score": 28.4,
+        "ratio": 56.9
+      },
+      {
+        "word": "verliert",
+        "count": 5,
+        "score": 21.2,
+        "ratio": 67.8
+      },
+      {
+        "word": "klare",
+        "count": 9,
+        "score": 19.7,
+        "ratio": 7.9
       },
       {
         "word": "migrationspolitik",
         "count": 5,
-        "ratioParty": 22.2,
-        "ratioBundestag": 26.9
-      },
-      {
-        "word": "kontrolle",
-        "count": 5,
-        "ratioParty": 18.5,
-        "ratioBundestag": 13.7
-      },
-      {
-        "word": "dobrindt",
-        "count": 5,
-        "ratioParty": 17.2,
-        "ratioBundestag": 11.3
+        "score": 15.7,
+        "ratio": 22.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "sicher",
         "count": 3,
-        "ratioParty": 2.7,
-        "ratioBundestag": 3.1
+        "score": 4.2,
+        "ratio": 3.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 3,
+        "score": 3.9,
+        "ratio": 2.7
       }
     ]
   },
@@ -133,50 +173,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Klaus-Peter Willsch häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Klaus-Peter Willsch häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Opposition",
         "isCorrect": false
       },
       {
         "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Verliert",
         "isCorrect": true
       },
       {
-        "text": "Steuern",
+        "text": "Freiheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verliert\" nutzt Klaus-Peter Willsch 67.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "41.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicherheit\" sagte Klaus-Peter Willsch 22× (8.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Klaus-Peter Willsch häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Klaus-Peter Willsch häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Stark",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
         "text": "Sicher",
         "isCorrect": true
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sicher\" nutzt Klaus-Peter Willsch 2.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "3.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Klaus-Peter Willsch 3× (3.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦦",

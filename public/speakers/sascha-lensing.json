@@ -72,39 +72,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
-      {
-        "word": "polizei",
-        "count": 7,
-        "ratioParty": 23.1,
-        "ratioBundestag": 20.4
-      },
-      {
-        "word": "täter",
-        "count": 5,
-        "ratioParty": 23.1,
-        "ratioBundestag": 21.7
-      },
-      {
-        "word": "daten",
-        "count": 5,
-        "ratioParty": 18.2,
-        "ratioBundestag": 15.7
-      },
+    "signatureWordsBundestag": [
       {
         "word": "sicherheit",
         "count": 22,
-        "ratioParty": 14.2,
-        "ratioBundestag": 8.4
+        "score": 49.3,
+        "ratio": 8.4
+      },
+      {
+        "word": "bürger",
+        "count": 16,
+        "score": 33.5,
+        "ratio": 7.1
       },
       {
         "word": "gesetzentwurf",
         "count": 10,
-        "ratioParty": 11.8,
-        "ratioBundestag": 9.5
+        "score": 23.5,
+        "ratio": 9.5
+      },
+      {
+        "word": "polizei",
+        "count": 7,
+        "score": 21.4,
+        "ratio": 20.4
+      },
+      {
+        "word": "täter",
+        "count": 5,
+        "score": 15.6,
+        "ratio": 21.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "sicherheit",
+        "count": 22,
+        "score": 59.8,
+        "ratio": 14.2
+      },
+      {
+        "word": "gesetzentwurf",
+        "count": 10,
+        "score": 25.5,
+        "ratio": 11.8
+      },
+      {
+        "word": "polizei",
+        "count": 7,
+        "score": 22.3,
+        "ratio": 23.1
+      },
+      {
+        "word": "bürger",
+        "count": 16,
+        "score": 22.2,
+        "ratio": 3.0
+      },
+      {
+        "word": "verantwortung",
+        "count": 9,
+        "score": 17.5,
+        "ratio": 6.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 454,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Sascha Lensing häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Sascha Lensing häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Debatte",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Polizei",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
         "isCorrect": true
       },
       {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
+        "text": "Steuern",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Polizei\" nutzt Sascha Lensing 23.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "20.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicherheit\" sagte Sascha Lensing 22× (8.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

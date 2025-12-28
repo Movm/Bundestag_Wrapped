@@ -72,44 +72,84 @@
         "count": 10
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "ferien",
-        "count": 5,
-        "ratioParty": 228.3,
-        "ratioBundestag": 110.0
+        "word": "kinder",
+        "count": 23,
+        "score": 57.0,
+        "ratio": 10.9
       },
       {
-        "word": "rechtsanspruch",
-        "count": 7,
-        "ratioParty": 79.9,
-        "ratioBundestag": 81.8
+        "word": "gesellschaft",
+        "count": 21,
+        "score": 51.7,
+        "ratio": 10.7
       },
       {
         "word": "freiwilligendienste",
         "count": 10,
-        "ratioParty": 63.0,
-        "ratioBundestag": 106.0
+        "score": 46.7,
+        "ratio": 106.0
       },
       {
-        "word": "ganztagsbetreuung",
+        "word": "nachmittagsbetreuung",
         "count": 5,
-        "ratioParty": 48.1,
-        "ratioBundestag": 63.6
+        "score": 36.3,
+        "ratio": 1430.6
       },
       {
-        "word": "jugendliche",
-        "count": 6,
-        "ratioParty": 28.8,
-        "ratioBundestag": 27.3
+        "word": "stärken",
+        "count": 15,
+        "score": 31.8,
+        "ratio": 7.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "kinder",
+        "count": 23,
+        "score": 63.5,
+        "ratio": 14.8
+      },
+      {
+        "word": "gesellschaft",
+        "count": 21,
+        "score": 50.1,
+        "ratio": 9.9
+      },
+      {
+        "word": "freiwilligendienste",
+        "count": 10,
+        "score": 41.6,
+        "ratio": 63.0
+      },
+      {
+        "word": "kultur",
+        "count": 10,
+        "score": 32.5,
+        "ratio": 24.7
+      },
+      {
+        "word": "familien",
+        "count": 12,
+        "score": 30.8,
+        "ratio": 12.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "sicher",
         "count": 4,
-        "ratioParty": 2.7,
-        "ratioBundestag": 3.1
+        "score": 5.6,
+        "ratio": 3.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 5.2,
+        "ratio": 2.7
       }
     ]
   },
@@ -138,50 +178,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Anja Weisgerber häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Anja Weisgerber häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
       {
         "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Ferien",
-        "isCorrect": true
+        "text": "Bürger",
+        "isCorrect": false
       },
       {
-        "text": "Bildung",
+        "text": "Investitionen",
         "isCorrect": false
+      },
+      {
+        "text": "Kinder",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Ferien\" nutzt Dr. Anja Weisgerber 228.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "110.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Kinder\" sagte Dr. Anja Weisgerber 23× (10.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Anja Weisgerber häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Anja Weisgerber häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Jung",
+        "isCorrect": false
+      },
       {
         "text": "Sicher",
         "isCorrect": true
       },
       {
-        "text": "Klar",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Stark",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
+        "text": "Europäisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sicher\" nutzt Dr. Anja Weisgerber 2.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "3.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Dr. Anja Weisgerber 4× (3.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -199,12 +237,12 @@
         "score": 0.982
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.947
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positive Teamplayerin",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.917
       }
     ]
   },

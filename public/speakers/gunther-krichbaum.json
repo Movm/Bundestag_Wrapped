@@ -72,33 +72,60 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "herzegowina",
         "count": 5,
-        "ratioParty": 80.6,
-        "ratioBundestag": 87.1
+        "score": 22.4,
+        "ratio": 87.1
       },
       {
         "word": "bosnien",
         "count": 5,
-        "ratioParty": 72.8,
-        "ratioBundestag": 72.8
+        "score": 21.5,
+        "ratio": 72.8
       },
       {
         "word": "augen",
         "count": 5,
-        "ratioParty": 31.4,
-        "ratioBundestag": 34.7
+        "score": 17.9,
+        "ratio": 34.7
       },
       {
         "word": "eines",
         "count": 6,
-        "ratioParty": 5.6,
-        "ratioBundestag": 6.7
+        "score": 12.3,
+        "ratio": 6.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "herzegowina",
+        "count": 5,
+        "score": 22.0,
+        "ratio": 80.6
+      },
+      {
+        "word": "bosnien",
+        "count": 5,
+        "score": 21.5,
+        "ratio": 72.8
+      },
+      {
+        "word": "augen",
+        "count": 5,
+        "score": 17.4,
+        "ratio": 31.4
+      },
+      {
+        "word": "eines",
+        "count": 6,
+        "score": 11.3,
+        "ratio": 5.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 343,
@@ -120,10 +147,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Gunther Krichbaum häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Gunther Krichbaum häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Kanzler",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
@@ -131,16 +158,15 @@
         "isCorrect": true
       },
       {
-        "text": "Europa",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Bildung",
+        "text": "Antrag",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Herzegowina\" nutzt Gunther Krichbaum 80.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "87.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Herzegowina\" sagte Gunther Krichbaum 5× (87.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

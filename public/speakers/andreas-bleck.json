@@ -72,39 +72,72 @@
         "count": 4
       }
     ],
-    "signatureWords": [
-      {
-        "word": "ausstieg",
-        "count": 5,
-        "ratioParty": 149.7,
-        "ratioBundestag": 125.1
-      },
-      {
-        "word": "kernenergie",
-        "count": 5,
-        "ratioParty": 24.9,
-        "ratioBundestag": 81.8
-      },
+    "signatureWordsBundestag": [
       {
         "word": "werte",
         "count": 16,
-        "ratioParty": 20.2,
-        "ratioBundestag": 32.8
+        "score": 56.3,
+        "ratio": 32.8
       },
       {
         "word": "bundesregierung",
         "count": 15,
-        "ratioParty": 7.6,
-        "ratioBundestag": 7.0
+        "score": 31.2,
+        "ratio": 7.0
+      },
+      {
+        "word": "ausstieg",
+        "count": 5,
+        "score": 24.2,
+        "ratio": 125.1
+      },
+      {
+        "word": "kernenergie",
+        "count": 5,
+        "score": 22.1,
+        "ratio": 81.8
       },
       {
         "word": "politik",
         "count": 9,
-        "ratioParty": 4.0,
-        "ratioBundestag": 6.1
+        "score": 17.7,
+        "ratio": 6.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "werte",
+        "count": 16,
+        "score": 48.9,
+        "ratio": 20.2
+      },
+      {
+        "word": "bundesregierung",
+        "count": 15,
+        "score": 32.3,
+        "ratio": 7.6
+      },
+      {
+        "word": "ausstieg",
+        "count": 5,
+        "score": 25.1,
+        "ratio": 149.7
+      },
+      {
+        "word": "kernenergie",
+        "count": 5,
+        "score": 16.3,
+        "ratio": 24.9
+      },
+      {
+        "word": "politik",
+        "count": 9,
+        "score": 14.5,
+        "ratio": 4.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 388,
@@ -131,27 +164,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Andreas Bleck häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Andreas Bleck häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Zukunft",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Ausstieg",
+        "text": "Werte",
         "isCorrect": true
       },
       {
-        "text": "Familie",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ausstieg\" nutzt Andreas Bleck 149.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "125.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Werte\" sagte Andreas Bleck 16× (32.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

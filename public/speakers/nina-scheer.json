@@ -56,44 +56,84 @@
         "count": 12
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "flexibilitäten",
-        "count": 5,
-        "ratioParty": 455.1,
-        "ratioBundestag": 457.5
-      },
-      {
-        "word": "heizungen",
-        "count": 6,
-        "ratioParty": 273.0,
-        "ratioBundestag": 119.4
-      },
-      {
-        "word": "wärmewende",
-        "count": 12,
-        "ratioParty": 109.2,
-        "ratioBundestag": 148.4
-      },
-      {
-        "word": "atomenergie",
-        "count": 8,
-        "ratioParty": 66.2,
-        "ratioBundestag": 146.4
+        "word": "energien",
+        "count": 28,
+        "score": 110.7,
+        "ratio": 51.0
       },
       {
         "word": "erneuerbaren",
         "count": 22,
-        "ratioParty": 45.5,
-        "ratioBundestag": 47.0
+        "score": 85.2,
+        "ratio": 47.0
+      },
+      {
+        "word": "wärmewende",
+        "count": 12,
+        "score": 60.1,
+        "ratio": 148.4
+      },
+      {
+        "word": "erneuerbare",
+        "count": 12,
+        "score": 46.9,
+        "ratio": 49.0
+      },
+      {
+        "word": "atomenergie",
+        "count": 8,
+        "score": 39.9,
+        "ratio": 146.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "energien",
+        "count": 28,
+        "score": 104.3,
+        "ratio": 40.4
+      },
+      {
+        "word": "erneuerbaren",
+        "count": 22,
+        "score": 84.5,
+        "ratio": 45.5
+      },
+      {
+        "word": "wärmewende",
+        "count": 12,
+        "score": 56.4,
+        "ratio": 109.2
+      },
+      {
+        "word": "erneuerbare",
+        "count": 12,
+        "score": 44.7,
+        "ratio": 40.4
+      },
+      {
+        "word": "atomenergie",
+        "count": 8,
+        "score": 33.7,
+        "ratio": 66.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "stark",
         "count": 3,
-        "ratioParty": 2.4,
-        "ratioBundestag": 3.4
+        "score": 4.4,
+        "ratio": 3.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 3.7,
+        "ratio": 2.4
       }
     ]
   },
@@ -117,50 +157,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Nina Scheer häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Nina Scheer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Politik",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Flexibilitäten",
+        "text": "Energien",
         "isCorrect": true
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Flexibilitäten\" nutzt Dr. Nina Scheer 455.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "457.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Energien\" sagte Dr. Nina Scheer 28× (51.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Nina Scheer häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Nina Scheer häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Gut",
-        "isCorrect": false
-      },
       {
         "text": "Stark",
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Stark\" nutzt Dr. Nina Scheer 2.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "3.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Stark\" sagte Dr. Nina Scheer 3× (3.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

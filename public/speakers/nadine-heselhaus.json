@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
-      {
-        "word": "schuldnerberatung",
-        "count": 5,
-        "ratioParty": 111.4,
-        "ratioBundestag": 102.4
-      },
+    "signatureWordsBundestag": [
       {
         "word": "verbraucherinnen",
         "count": 6,
-        "ratioParty": 33.4,
-        "ratioBundestag": 48.2
+        "score": 23.4,
+        "ratio": 48.2
+      },
+      {
+        "word": "schuldnerberatung",
+        "count": 5,
+        "score": 23.2,
+        "ratio": 102.4
       },
       {
         "word": "verbraucher",
         "count": 6,
-        "ratioParty": 28.7,
-        "ratioBundestag": 23.5
+        "score": 19.2,
+        "ratio": 23.5
       },
       {
         "word": "verbraucherschutz",
         "count": 5,
-        "ratioParty": 27.9,
-        "ratioBundestag": 36.4
+        "score": 18.1,
+        "ratio": 36.4
+      },
+      {
+        "word": "wichtig",
+        "count": 8,
+        "score": 13.4,
+        "ratio": 4.4
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "schuldnerberatung",
+        "count": 5,
+        "score": 23.6,
+        "ratio": 111.4
+      },
+      {
+        "word": "verbraucherinnen",
+        "count": 6,
+        "score": 21.2,
+        "ratio": 33.4
+      },
+      {
+        "word": "verbraucher",
+        "count": 6,
+        "score": 20.3,
+        "ratio": 28.7
+      },
+      {
+        "word": "verbraucherschutz",
+        "count": 5,
+        "score": 16.8,
+        "ratio": 27.9
       },
       {
         "word": "digitale",
         "count": 5,
-        "ratioParty": 7.0,
-        "ratioBundestag": 9.4
+        "score": 10.4,
+        "ratio": 7.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 421,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Nadine Heselhaus häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Nadine Heselhaus häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Opposition",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Schuldnerberatung",
+        "text": "Verbraucherinnen",
         "isCorrect": true
       },
       {
-        "text": "Bundesregierung",
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Minister",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schuldnerberatung\" nutzt Nadine Heselhaus 111.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "102.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Verbraucherinnen\" sagte Nadine Heselhaus 6× (48.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

@@ -72,44 +72,84 @@
         "count": 13
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "arbeitszeit",
-        "count": 5,
-        "ratioParty": 176.9,
-        "ratioBundestag": 38.7
+        "word": "regierung",
+        "count": 24,
+        "score": 47.3,
+        "ratio": 6.2
       },
       {
-        "word": "beschäftigten",
-        "count": 12,
-        "ratioParty": 74.9,
-        "ratioBundestag": 20.5
-      },
-      {
-        "word": "zwang",
-        "count": 5,
-        "ratioParty": 27.9,
-        "ratioBundestag": 44.5
+        "word": "linken",
+        "count": 17,
+        "score": 46.4,
+        "ratio": 14.4
       },
       {
         "word": "betriebe",
         "count": 14,
-        "ratioParty": 23.2,
-        "ratioBundestag": 23.9
+        "score": 45.0,
+        "ratio": 23.9
       },
       {
-        "word": "bürgerinnen",
-        "count": 6,
-        "ratioParty": 22.7,
-        "ratioBundestag": 3.7
+        "word": "beschäftigten",
+        "count": 12,
+        "score": 36.8,
+        "ratio": 20.5
+      },
+      {
+        "word": "unternehmen",
+        "count": 18,
+        "score": 31.9,
+        "ratio": 4.9
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "beschäftigten",
+        "count": 12,
+        "score": 52.0,
+        "ratio": 74.9
+      },
+      {
+        "word": "betriebe",
+        "count": 14,
+        "score": 44.6,
+        "ratio": 23.2
+      },
+      {
+        "word": "regierung",
+        "count": 24,
+        "score": 36.4,
+        "ratio": 3.5
+      },
+      {
+        "word": "unternehmen",
+        "count": 18,
+        "score": 35.8,
+        "ratio": 6.3
+      },
+      {
+        "word": "linken",
+        "count": 17,
+        "score": 35.5,
+        "ratio": 7.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "links",
         "count": 5,
-        "ratioParty": 2.7,
-        "ratioBundestag": 7.8
+        "score": 10.9,
+        "ratio": 7.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "links",
+        "count": 5,
+        "score": 6.6,
+        "ratio": 2.7
       }
     ]
   },
@@ -138,50 +178,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Peter Bohnhof häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Peter Bohnhof häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Arbeit",
+        "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Politik",
+        "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Zukunft",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Arbeitszeit",
+        "text": "Regierung",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Arbeitszeit\" nutzt Peter Bohnhof 176.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "38.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Regierung\" sagte Peter Bohnhof 24× (6.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Peter Bohnhof häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Peter Bohnhof häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
       {
         "text": "Links",
         "isCorrect": true
       },
       {
-        "text": "National",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Links\" nutzt Peter Bohnhof 2.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "7.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Links\" sagte Peter Bohnhof 5× (7.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

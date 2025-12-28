@@ -72,39 +72,72 @@
         "count": 4
       }
     ],
-    "signatureWords": [
-      {
-        "word": "bauer",
-        "count": 5,
-        "ratioParty": 472.1,
-        "ratioBundestag": 835.8
-      },
+    "signatureWordsBundestag": [
       {
         "word": "bauern",
         "count": 9,
-        "ratioParty": 54.0,
-        "ratioBundestag": 127.5
+        "score": 43.7,
+        "ratio": 127.5
+      },
+      {
+        "word": "bauer",
+        "count": 5,
+        "score": 33.6,
+        "ratio": 835.8
       },
       {
         "word": "arbeit",
         "count": 9,
-        "ratioParty": 19.0,
-        "ratioBundestag": 10.6
+        "score": 22.1,
+        "ratio": 10.6
       },
       {
         "word": "seine",
         "count": 5,
-        "ratioParty": 7.0,
-        "ratioBundestag": 10.2
+        "score": 12.1,
+        "ratio": 10.2
       },
       {
         "word": "leben",
         "count": 6,
-        "ratioParty": 6.8,
-        "ratioBundestag": 5.4
+        "score": 11.2,
+        "ratio": 5.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bauern",
+        "count": 9,
+        "score": 36.1,
+        "ratio": 54.0
+      },
+      {
+        "word": "bauer",
+        "count": 5,
+        "score": 30.8,
+        "ratio": 472.1
+      },
+      {
+        "word": "arbeit",
+        "count": 9,
+        "score": 27.0,
+        "ratio": 19.0
+      },
+      {
+        "word": "leben",
+        "count": 6,
+        "score": 12.3,
+        "ratio": 6.8
+      },
+      {
+        "word": "seine",
+        "count": 5,
+        "score": 10.4,
+        "ratio": 7.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 387,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Bernd Schuhmann häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Bernd Schuhmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Bauer",
+        "text": "Bauern",
         "isCorrect": true
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Zukunft",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bauer\" nutzt Bernd Schuhmann 472.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "835.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bauern\" sagte Bernd Schuhmann 9× (127.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

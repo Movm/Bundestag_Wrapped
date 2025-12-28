@@ -60,44 +60,84 @@
         "count": 11
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "maskenbeschaffung",
-        "count": 5,
-        "ratioParty": 212.9,
-        "ratioBundestag": 159.9
-      },
-      {
-        "word": "beitragsbemessungsgrenze",
-        "count": 6,
-        "ratioParty": 127.7,
-        "ratioBundestag": 131.3
+        "word": "spahn",
+        "count": 17,
+        "score": 58.9,
+        "ratio": 31.0
       },
       {
         "word": "warken",
         "count": 13,
-        "ratioParty": 69.2,
-        "ratioBundestag": 65.9
+        "score": 54.6,
+        "ratio": 65.9
       },
       {
-        "word": "krankenversicherung",
-        "count": 5,
-        "ratioParty": 53.2,
-        "ratioBundestag": 17.3
+        "word": "kliniken",
+        "count": 9,
+        "score": 36.5,
+        "ratio": 56.7
+      },
+      {
+        "word": "kommission",
+        "count": 14,
+        "score": 36.3,
+        "ratio": 12.4
       },
       {
         "word": "sudhof",
         "count": 7,
-        "ratioParty": 49.7,
-        "ratioBundestag": 88.2
+        "score": 31.4,
+        "ratio": 88.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "warken",
+        "count": 13,
+        "score": 55.3,
+        "ratio": 69.2
+      },
+      {
+        "word": "spahn",
+        "count": 17,
+        "score": 45.6,
+        "ratio": 13.7
+      },
+      {
+        "word": "kommission",
+        "count": 14,
+        "score": 45.5,
+        "ratio": 24.8
+      },
+      {
+        "word": "versorgung",
+        "count": 11,
+        "score": 33.2,
+        "ratio": 19.5
+      },
+      {
+        "word": "kliniken",
+        "count": 9,
+        "score": 32.2,
+        "ratio": 34.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "absurd",
         "count": 4,
-        "ratioParty": 4.2,
-        "ratioBundestag": 14.8
+        "score": 11.1,
+        "ratio": 14.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "absurd",
+        "count": 4,
+        "score": 6.6,
+        "ratio": 4.2
       }
     ]
   },
@@ -126,66 +166,56 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Ates Gürpinar häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Ates Gürpinar häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bildung",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Maskenbeschaffung",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Spahn",
         "isCorrect": true
       },
       {
         "text": "Steuern",
         "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Maskenbeschaffung\" nutzt Ates Gürpinar 212.9× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "159.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Spahn\" sagte Ates Gürpinar 17× (31.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Ates Gürpinar häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Ates Gürpinar häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
       {
         "text": "Absurd",
         "isCorrect": true
       },
       {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Absurd\" nutzt Ates Gürpinar 4.2× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "14.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Absurd\" sagte Ates Gürpinar 4× (14.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Cleverer Stratege",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüter",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüter",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 1.0
-      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -193,6 +223,14 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
+      },
+      {
+        "emoji": "🐬",
+        "name": "Delfin",
+        "title": "Diplomatischer Redner",
+        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
+        "id": "delfin",
+        "score": 0.867
       }
     ]
   },

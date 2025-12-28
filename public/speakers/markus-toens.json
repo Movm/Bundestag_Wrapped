@@ -72,39 +72,72 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "handelspolitik",
         "count": 5,
-        "ratioParty": 683.4,
-        "ratioBundestag": 440.0
+        "score": 30.4,
+        "ratio": 440.0
       },
       {
         "word": "abkommen",
         "count": 5,
-        "ratioParty": 143.9,
-        "ratioBundestag": 104.9
-      },
-      {
-        "word": "ausdrücklich",
-        "count": 5,
-        "ratioParty": 24.2,
-        "ratioBundestag": 30.2
-      },
-      {
-        "word": "union",
-        "count": 5,
-        "ratioParty": 21.0,
-        "ratioBundestag": 8.9
+        "score": 23.3,
+        "ratio": 104.9
       },
       {
         "word": "europäische",
         "count": 6,
-        "ratioParty": 20.1,
-        "ratioBundestag": 22.2
+        "score": 18.9,
+        "ratio": 22.2
+      },
+      {
+        "word": "ausdrücklich",
+        "count": 5,
+        "score": 17.2,
+        "ratio": 30.2
+      },
+      {
+        "word": "europäischen",
+        "count": 5,
+        "score": 13.0,
+        "ratio": 12.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "handelspolitik",
+        "count": 5,
+        "score": 32.6,
+        "ratio": 683.4
+      },
+      {
+        "word": "abkommen",
+        "count": 5,
+        "score": 24.9,
+        "ratio": 143.9
+      },
+      {
+        "word": "europäische",
+        "count": 6,
+        "score": 18.3,
+        "ratio": 20.1
+      },
+      {
+        "word": "ausdrücklich",
+        "count": 5,
+        "score": 16.1,
+        "ratio": 24.2
+      },
+      {
+        "word": "union",
+        "count": 5,
+        "score": 15.5,
+        "ratio": 21.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 492,
@@ -121,27 +154,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Markus Töns häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Markus Töns häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
       {
         "text": "Handelspolitik",
         "isCorrect": true
       },
       {
-        "text": "Fraktion",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Migration",
+        "text": "Haushalt",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Handelspolitik\" nutzt Markus Töns 683.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "440.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Handelspolitik\" sagte Markus Töns 5× (440.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

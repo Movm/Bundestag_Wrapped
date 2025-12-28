@@ -68,39 +68,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "mindestlohnkommission",
-        "count": 7,
-        "ratioParty": 232.1,
-        "ratioBundestag": 326.8
+        "word": "arbeitnehmer",
+        "count": 13,
+        "score": 54.9,
+        "ratio": 67.4
+      },
+      {
+        "word": "arbeitsschutzgesetz",
+        "count": 5,
+        "score": 42.2,
+        "ratio": 4668.8
       },
       {
         "word": "mindestlohn",
         "count": 10,
-        "ratioParty": 129.8,
-        "ratioBundestag": 64.0
+        "score": 41.7,
+        "ratio": 64.0
       },
+      {
+        "word": "mindestlohnkommission",
+        "count": 7,
+        "score": 40.5,
+        "ratio": 326.8
+      },
+      {
+        "word": "leistungen",
+        "count": 8,
+        "score": 25.8,
+        "ratio": 24.1
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "arbeitnehmer",
         "count": 13,
-        "ratioParty": 53.9,
-        "ratioBundestag": 67.4
+        "score": 52.1,
+        "ratio": 53.9
+      },
+      {
+        "word": "mindestlohn",
+        "count": 10,
+        "score": 48.7,
+        "ratio": 129.8
+      },
+      {
+        "word": "mindestlohnkommission",
+        "count": 7,
+        "score": 38.2,
+        "ratio": 232.1
+      },
+      {
+        "word": "leistungen",
+        "count": 8,
+        "score": 26.0,
+        "ratio": 24.9
       },
       {
         "word": "arbeitgeber",
         "count": 6,
-        "ratioParty": 43.7,
-        "ratioBundestag": 55.5
-      },
-      {
-        "word": "arbeitnehmerinnen",
-        "count": 5,
-        "ratioParty": 40.3,
-        "ratioBundestag": 56.9
+        "score": 22.8,
+        "ratio": 43.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 401,
@@ -122,44 +155,35 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Wilfried Oellers häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Wilfried Oellers häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Mindestlohnkommission",
+        "text": "Arbeitnehmer",
         "isCorrect": true
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
-        "isCorrect": false
       },
       {
         "text": "Bürger",
         "isCorrect": false
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Mindestlohnkommission\" nutzt Wilfried Oellers 232.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "326.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Arbeitnehmer\" sagte Wilfried Oellers 13× (67.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Cleverer Stratege",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüter",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüter",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 0.875
-      },
       {
         "emoji": "🦦",
         "name": "Otter",
@@ -167,6 +191,14 @@
         "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
         "id": "otter",
         "score": 0.794
+      },
+      {
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißiger Abgeordneter",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
+        "score": 0.788
       }
     ]
   },

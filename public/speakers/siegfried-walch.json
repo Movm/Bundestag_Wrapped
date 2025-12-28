@@ -64,56 +64,108 @@
         "count": 12
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "linksextreme",
-        "count": 5,
-        "ratioParty": 152.3,
-        "ratioBundestag": 132.6
-      },
-      {
-        "word": "klipp",
-        "count": 6,
-        "ratioParty": 130.5,
-        "ratioBundestag": 98.8
-      },
-      {
-        "word": "einsatzkräfte",
-        "count": 7,
-        "ratioParty": 88.8,
-        "ratioBundestag": 77.7
+        "word": "ordnung",
+        "count": 15,
+        "score": 47.4,
+        "ratio": 22.5
       },
       {
         "word": "extremisten",
         "count": 7,
-        "ratioParty": 62.7,
-        "ratioBundestag": 79.6
+        "score": 30.7,
+        "ratio": 79.6
+      },
+      {
+        "word": "einsatzkräfte",
+        "count": 7,
+        "score": 30.6,
+        "ratio": 77.7
+      },
+      {
+        "word": "klipp",
+        "count": 6,
+        "score": 27.6,
+        "ratio": 98.8
       },
       {
         "word": "niemals",
         "count": 9,
-        "ratioParty": 26.4,
-        "ratioBundestag": 19.7
+        "score": 27.3,
+        "ratio": 19.7
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "ordnung",
+        "count": 15,
+        "score": 44.7,
+        "ratio": 18.7
+      },
+      {
+        "word": "einsatzkräfte",
+        "count": 7,
+        "score": 31.5,
+        "ratio": 88.8
+      },
+      {
+        "word": "niemals",
+        "count": 9,
+        "score": 29.8,
+        "ratio": 26.4
+      },
+      {
+        "word": "klipp",
+        "count": 6,
+        "score": 29.3,
+        "ratio": 130.5
+      },
+      {
+        "word": "extremisten",
+        "count": 7,
+        "score": 29.1,
+        "ratio": 62.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "extremistisch",
         "count": 3,
-        "ratioParty": 8.6,
-        "ratioBundestag": 179.1
+        "score": 15.6,
+        "ratio": 179.1
       },
       {
         "word": "falsch",
         "count": 4,
-        "ratioParty": 6.7,
-        "ratioBundestag": 5.9
+        "score": 7.7,
+        "ratio": 5.9
       },
       {
         "word": "rechts",
         "count": 3,
-        "ratioParty": 5.1,
-        "ratioBundestag": 4.5
+        "score": 5.1,
+        "ratio": 4.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 8.2,
+        "ratio": 6.7
+      },
+      {
+        "word": "extremistisch",
+        "count": 3,
+        "score": 6.8,
+        "ratio": 8.6
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 5.4,
+        "ratio": 5.1
       }
     ]
   },
@@ -142,8 +194,16 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Siegfried Walch häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Siegfried Walch häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Ordnung",
+        "isCorrect": true
+      },
       {
         "text": "Kanzler",
         "isCorrect": false
@@ -151,41 +211,31 @@
       {
         "text": "Bundesregierung",
         "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Linksextreme",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Linksextreme\" nutzt Siegfried Walch 152.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "132.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ordnung\" sagte Siegfried Walch 15× (22.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Siegfried Walch häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Siegfried Walch häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
+        "text": "Neu",
         "isCorrect": false
       },
       {
         "text": "Extremistisch",
         "isCorrect": true
+      },
+      {
+        "text": "Gut",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Extremistisch\" nutzt Siegfried Walch 8.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "179.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Extremistisch\" sagte Siegfried Walch 3× (179.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -203,12 +253,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.888
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrlicher Redner",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.743
       }
     ]
   },

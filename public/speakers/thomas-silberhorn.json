@@ -72,50 +72,96 @@
         "count": 9
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "altersentschädigung",
-        "count": 5,
-        "ratioParty": 821.8,
-        "ratioBundestag": 643.9
+        "word": "einsprüche",
+        "count": 10,
+        "score": 69.4,
+        "ratio": 1030.3
+      },
+      {
+        "word": "abgeordneten",
+        "count": 14,
+        "score": 50.0,
+        "ratio": 34.5
       },
       {
         "word": "jesiden",
         "count": 10,
-        "ratioParty": 234.8,
-        "ratioBundestag": 112.0
+        "score": 47.3,
+        "ratio": 112.0
       },
       {
-        "word": "diäten",
+        "word": "wahlfehler",
         "count": 6,
-        "ratioParty": 109.6,
-        "ratioBundestag": 114.5
+        "score": 37.5,
+        "ratio": 515.1
       },
       {
-        "word": "europol",
-        "count": 7,
-        "ratioParty": 76.7,
-        "ratioBundestag": 83.9
-      },
-      {
-        "word": "entschädigung",
-        "count": 6,
-        "ratioParty": 70.4,
-        "ratioBundestag": 103.0
+        "word": "abgeordnete",
+        "count": 13,
+        "score": 35.2,
+        "ratio": 14.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "jesiden",
+        "count": 10,
+        "score": 54.6,
+        "ratio": 234.8
+      },
+      {
+        "word": "abgeordneten",
+        "count": 14,
+        "score": 54.2,
+        "ratio": 47.0
+      },
+      {
+        "word": "abgeordnete",
+        "count": 13,
+        "score": 39.2,
+        "ratio": 19.4
+      },
+      {
+        "word": "rentenversicherung",
+        "count": 9,
+        "score": 34.7,
+        "ratio": 46.2
+      },
+      {
+        "word": "einsprüche",
+        "count": 10,
+        "score": 34.6,
+        "ratio": 31.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "angemessen",
         "count": 4,
-        "ratioParty": 19.3,
-        "ratioBundestag": 19.3
+        "score": 12.0,
+        "ratio": 19.3
       },
       {
         "word": "sicher",
         "count": 4,
-        "ratioParty": 2.4,
-        "ratioBundestag": 2.8
+        "score": 5.3,
+        "ratio": 2.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "angemessen",
+        "count": 4,
+        "score": 12.0,
+        "ratio": 19.3
+      },
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 4.9,
+        "ratio": 2.4
       }
     ]
   },
@@ -139,37 +185,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Thomas Silberhorn häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Thomas Silberhorn häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Altersentschädigung",
+        "text": "Einsprüche",
         "isCorrect": true
       },
       {
-        "text": "Bundesregierung",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
         "text": "Europa",
         "isCorrect": false
-      }
-    ],
-    "explanationParty": "\"Altersentschädigung\" nutzt Thomas Silberhorn 821.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "643.9× häufiger als der Bundestag-Durchschnitt."
-  },
-  "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Thomas Silberhorn häufiger als der Rest der CDU/CSU-Fraktion?",
-    "options": [
-      {
-        "text": "Stark",
-        "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Antrag",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "\"Einsprüche\" sagte Thomas Silberhorn 10× (1030.3× häufiger als der Bundestag-Durchschnitt)."
+  },
+  "signatureAdjectiveQuiz": {
+    "question": "Welches Adjektiv nutzt Thomas Silberhorn häufiger als der Bundestag-Durchschnitt?",
+    "options": [
+      {
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
@@ -179,10 +220,13 @@
       {
         "text": "Wirtschaftlich",
         "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Angemessen\" nutzt Thomas Silberhorn 19.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "19.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Angemessen\" sagte Thomas Silberhorn 4× (19.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",

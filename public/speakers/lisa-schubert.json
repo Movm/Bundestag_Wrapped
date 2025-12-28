@@ -72,39 +72,72 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "bargeld",
         "count": 10,
-        "ratioParty": 625.1,
-        "ratioBundestag": 281.5
-      },
-      {
-        "word": "banken",
-        "count": 5,
-        "ratioParty": 117.2,
-        "ratioBundestag": 140.8
-      },
-      {
-        "word": "rechtsextreme",
-        "count": 5,
-        "ratioParty": 40.8,
-        "ratioBundestag": 102.4
-      },
-      {
-        "word": "partei",
-        "count": 5,
-        "ratioParty": 19.5,
-        "ratioBundestag": 19.2
+        "score": 56.4,
+        "ratio": 281.5
       },
       {
         "word": "gesetz",
         "count": 10,
-        "ratioParty": 13.7,
-        "ratioBundestag": 13.9
+        "score": 27.0,
+        "ratio": 13.9
+      },
+      {
+        "word": "banken",
+        "count": 5,
+        "score": 24.8,
+        "ratio": 140.8
+      },
+      {
+        "word": "rechtsextreme",
+        "count": 5,
+        "score": 23.2,
+        "ratio": 102.4
+      },
+      {
+        "word": "partei",
+        "count": 5,
+        "score": 15.0,
+        "ratio": 19.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bargeld",
+        "count": 10,
+        "score": 64.4,
+        "ratio": 625.1
+      },
+      {
+        "word": "gesetz",
+        "count": 10,
+        "score": 26.9,
+        "ratio": 13.7
+      },
+      {
+        "word": "banken",
+        "count": 5,
+        "score": 23.9,
+        "ratio": 117.2
+      },
+      {
+        "word": "rechtsextreme",
+        "count": 5,
+        "score": 18.7,
+        "ratio": 40.8
+      },
+      {
+        "word": "partei",
+        "count": 5,
+        "score": 15.1,
+        "ratio": 19.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 455,
@@ -126,14 +159,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Lisa Schubert häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Lisa Schubert häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
@@ -141,12 +170,15 @@
         "isCorrect": true
       },
       {
-        "text": "Bildung",
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bargeld\" nutzt Lisa Schubert 625.1× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "281.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bargeld\" sagte Lisa Schubert 10× (281.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

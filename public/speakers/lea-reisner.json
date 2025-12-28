@@ -72,39 +72,72 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "irini",
-        "count": 5,
-        "ratioParty": 135.1,
-        "ratioBundestag": 59.3
+        "word": "menschen",
+        "count": 27,
+        "score": 37.0,
+        "ratio": 2.9
       },
       {
-        "word": "unabhängige",
-        "count": 5,
-        "ratioParty": 23.8,
-        "ratioBundestag": 53.7
+        "word": "menschenrechte",
+        "count": 7,
+        "score": 23.1,
+        "ratio": 26.2
       },
       {
         "word": "hunger",
         "count": 6,
-        "ratioParty": 23.2,
-        "ratioBundestag": 46.1
-      },
-      {
-        "word": "völkerrecht",
-        "count": 5,
-        "ratioParty": 20.3,
-        "ratioBundestag": 37.7
+        "score": 23.1,
+        "ratio": 46.1
       },
       {
         "word": "außenpolitik",
         "count": 7,
-        "ratioParty": 18.3,
-        "ratioBundestag": 20.1
+        "score": 21.3,
+        "ratio": 20.1
+      },
+      {
+        "word": "irini",
+        "count": 5,
+        "score": 20.5,
+        "ratio": 59.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "irini",
+        "count": 5,
+        "score": 24.6,
+        "ratio": 135.1
+      },
+      {
+        "word": "außenpolitik",
+        "count": 7,
+        "score": 20.7,
+        "ratio": 18.3
+      },
+      {
+        "word": "hunger",
+        "count": 6,
+        "score": 19.1,
+        "ratio": 23.2
+      },
+      {
+        "word": "menschenrechte",
+        "count": 7,
+        "score": 19.0,
+        "ratio": 14.2
+      },
+      {
+        "word": "bundesregierung",
+        "count": 13,
+        "score": 17.4,
+        "ratio": 2.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 449,
@@ -126,12 +159,8 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Lea Reisner häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Lea Reisner häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Irini",
-        "isCorrect": true
-      },
       {
         "text": "Bürger",
         "isCorrect": false
@@ -141,12 +170,15 @@
         "isCorrect": false
       },
       {
-        "text": "Ausschuss",
+        "text": "Abstimmung",
         "isCorrect": false
+      },
+      {
+        "text": "Menschen",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Irini\" nutzt Lea Reisner 135.1× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "59.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Menschen\" sagte Lea Reisner 27× (2.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

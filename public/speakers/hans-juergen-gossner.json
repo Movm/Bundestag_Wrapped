@@ -72,44 +72,84 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "schwarzarbeit",
-        "count": 5,
-        "ratioParty": 66.2,
-        "ratioBundestag": 34.9
+        "word": "schluss",
+        "count": 9,
+        "score": 23.6,
+        "ratio": 12.8
       },
       {
         "word": "eigenverantwortung",
         "count": 5,
-        "ratioParty": 46.8,
-        "ratioBundestag": 64.1
-      },
-      {
-        "word": "betriebe",
-        "count": 7,
-        "ratioParty": 15.7,
-        "ratioBundestag": 17.4
+        "score": 20.9,
+        "ratio": 64.1
       },
       {
         "word": "kontrolle",
         "count": 7,
-        "ratioParty": 12.9,
-        "ratioBundestag": 17.9
+        "score": 20.6,
+        "ratio": 17.9
       },
       {
-        "word": "genug",
+        "word": "betriebe",
         "count": 7,
-        "ratioParty": 8.8,
-        "ratioBundestag": 10.7
+        "score": 20.4,
+        "ratio": 17.4
+      },
+      {
+        "word": "linken",
+        "count": 8,
+        "score": 19.1,
+        "ratio": 9.9
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "schwarzarbeit",
+        "count": 5,
+        "score": 21.0,
+        "ratio": 66.2
+      },
+      {
+        "word": "schluss",
+        "count": 9,
+        "score": 20.1,
+        "ratio": 8.4
+      },
+      {
+        "word": "betriebe",
+        "count": 7,
+        "score": 19.7,
+        "ratio": 15.7
+      },
+      {
+        "word": "eigenverantwortung",
+        "count": 5,
+        "score": 19.3,
+        "ratio": 46.8
+      },
+      {
+        "word": "kontrolle",
+        "count": 7,
+        "score": 18.4,
+        "ratio": 12.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "ideologisch",
         "count": 3,
-        "ratioParty": 8.8,
-        "ratioBundestag": 23.5
+        "score": 9.6,
+        "ratio": 23.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "ideologisch",
+        "count": 3,
+        "score": 6.9,
+        "ratio": 8.8
       }
     ]
   },
@@ -133,33 +173,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Hans-Jürgen Goßner häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Hans-Jürgen Goßner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Schwarzarbeit",
+        "text": "Schluss",
         "isCorrect": true
       },
       {
-        "text": "Haushalt",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schwarzarbeit\" nutzt Hans-Jürgen Goßner 66.2× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "34.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Schluss\" sagte Hans-Jürgen Goßner 9× (12.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Hans-Jürgen Goßner häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Hans-Jürgen Goßner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
@@ -167,16 +206,15 @@
         "isCorrect": true
       },
       {
-        "text": "Gefährlich",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
+        "text": "Politisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ideologisch\" nutzt Hans-Jürgen Goßner 8.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "23.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ideologisch\" sagte Hans-Jürgen Goßner 3× (23.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

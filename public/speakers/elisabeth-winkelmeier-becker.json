@@ -72,33 +72,60 @@
         "count": 4
       }
     ],
-    "signatureWords": [
-      {
-        "word": "menschenwürde",
-        "count": 6,
-        "ratioParty": 290.6,
-        "ratioBundestag": 127.7
-      },
+    "signatureWordsBundestag": [
       {
         "word": "menschenrechte",
         "count": 8,
-        "ratioParty": 116.2,
-        "ratioBundestag": 52.4
+        "score": 31.8,
+        "ratio": 52.4
+      },
+      {
+        "word": "menschenwürde",
+        "count": 6,
+        "score": 29.1,
+        "ratio": 127.7
       },
       {
         "word": "rechtsstaat",
         "count": 7,
-        "ratioParty": 18.8,
-        "ratioBundestag": 21.2
+        "score": 21.7,
+        "ratio": 21.2
       },
       {
         "word": "unternehmen",
         "count": 10,
-        "ratioParty": 6.4,
-        "ratioBundestag": 7.8
+        "score": 21.7,
+        "ratio": 7.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "menschenrechte",
+        "count": 8,
+        "score": 38.1,
+        "ratio": 116.2
+      },
+      {
+        "word": "menschenwürde",
+        "count": 6,
+        "score": 34.1,
+        "ratio": 290.6
+      },
+      {
+        "word": "rechtsstaat",
+        "count": 7,
+        "score": 20.9,
+        "ratio": 18.8
+      },
+      {
+        "word": "unternehmen",
+        "count": 10,
+        "score": 20.1,
+        "ratio": 6.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 464,
@@ -120,27 +147,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Elisabeth Winkelmeier-Becker häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Elisabeth Winkelmeier-Becker häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Steuern",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Menschenwürde",
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Menschenrechte",
         "isCorrect": true
       },
       {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Menschenwürde\" nutzt Elisabeth Winkelmeier-Becker 290.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "127.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Menschenrechte\" sagte Elisabeth Winkelmeier-Becker 8× (52.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

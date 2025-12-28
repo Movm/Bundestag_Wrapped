@@ -72,39 +72,72 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "linke",
+        "count": 7,
+        "score": 23.3,
+        "ratio": 26.7
+      },
       {
         "word": "bündnis",
         "count": 5,
-        "ratioParty": 116.7,
-        "ratioBundestag": 79.0
+        "score": 21.9,
+        "ratio": 79.0
       },
       {
         "word": "wollten",
         "count": 5,
-        "ratioParty": 49.8,
-        "ratioBundestag": 63.6
+        "score": 20.8,
+        "ratio": 63.6
       },
       {
         "word": "seiner",
         "count": 5,
-        "ratioParty": 19.6,
-        "ratioBundestag": 24.6
-      },
-      {
-        "word": "linke",
-        "count": 7,
-        "ratioParty": 17.9,
-        "ratioBundestag": 26.7
+        "score": 16.2,
+        "ratio": 24.6
       },
       {
         "word": "menschen",
         "count": 10,
-        "ratioParty": 6.9,
-        "ratioBundestag": 3.7
+        "score": 15.5,
+        "ratio": 3.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bündnis",
+        "count": 5,
+        "score": 23.8,
+        "ratio": 116.7
+      },
+      {
+        "word": "menschen",
+        "count": 10,
+        "score": 20.6,
+        "ratio": 6.9
+      },
+      {
+        "word": "linke",
+        "count": 7,
+        "score": 20.6,
+        "ratio": 17.9
+      },
+      {
+        "word": "wollten",
+        "count": 5,
+        "score": 19.6,
+        "ratio": 49.8
+      },
+      {
+        "word": "seiner",
+        "count": 5,
+        "score": 15.1,
+        "ratio": 19.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 474,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Sven Wendorf häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Sven Wendorf häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Koalition",
+        "isCorrect": false
+      },
       {
         "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Bündnis",
+        "text": "Linke",
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Haushalt",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bündnis\" nutzt Sven Wendorf 116.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "79.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Linke\" sagte Sven Wendorf 7× (26.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

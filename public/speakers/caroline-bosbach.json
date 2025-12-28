@@ -64,44 +64,84 @@
         "count": 5
       }
     ],
-    "signatureWords": [
-      {
-        "word": "sollten",
-        "count": 5,
-        "ratioParty": 6.4,
-        "ratioBundestag": 5.7
-      },
+    "signatureWordsBundestag": [
       {
         "word": "sprechen",
         "count": 7,
-        "ratioParty": 5.9,
-        "ratioBundestag": 6.3
+        "score": 13.9,
+        "ratio": 6.3
       },
       {
         "word": "freiheit",
         "count": 6,
-        "ratioParty": 5.4,
-        "ratioBundestag": 6.8
+        "score": 12.3,
+        "ratio": 6.8
       },
       {
         "word": "gehört",
         "count": 6,
-        "ratioParty": 4.0,
-        "ratioBundestag": 4.5
+        "score": 10.2,
+        "ratio": 4.5
+      },
+      {
+        "word": "sollten",
+        "count": 5,
+        "score": 9.5,
+        "ratio": 5.7
       },
       {
         "word": "richtig",
         "count": 5,
-        "ratioParty": 3.4,
-        "ratioBundestag": 3.7
+        "score": 7.8,
+        "ratio": 3.7
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "sprechen",
+        "count": 7,
+        "score": 13.6,
+        "ratio": 5.9
+      },
+      {
+        "word": "freiheit",
+        "count": 6,
+        "score": 11.2,
+        "ratio": 5.4
+      },
+      {
+        "word": "sollten",
+        "count": 5,
+        "score": 10.0,
+        "ratio": 6.4
+      },
+      {
+        "word": "gehört",
+        "count": 6,
+        "score": 9.6,
+        "ratio": 4.0
+      },
+      {
+        "word": "richtig",
+        "count": 5,
+        "score": 7.4,
+        "ratio": 3.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 9.1,
-        "ratioBundestag": 7.6
+        "score": 6.5,
+        "ratio": 7.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 6.9,
+        "ratio": 9.1
       }
     ]
   },
@@ -125,50 +165,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Caroline Bosbach häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Caroline Bosbach häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wirtschaft",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
-        "text": "Sollten",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
+        "text": "Sprechen",
         "isCorrect": true
-      },
-      {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sollten\" nutzt Caroline Bosbach 6.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "5.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sprechen\" sagte Caroline Bosbach 7× (6.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Caroline Bosbach häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Caroline Bosbach häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Klar",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
         "text": "Gerecht",
         "isCorrect": true
+      },
+      {
+        "text": "Schlecht",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gerecht\" nutzt Caroline Bosbach 9.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "7.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gerecht\" sagte Caroline Bosbach 3× (7.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦫",

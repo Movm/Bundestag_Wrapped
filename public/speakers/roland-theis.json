@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "vereinten",
         "count": 8,
-        "ratioParty": 53.4,
-        "ratioBundestag": 66.1
+        "score": 33.7,
+        "ratio": 66.1
       },
       {
         "word": "nationen",
         "count": 8,
-        "ratioParty": 52.1,
-        "ratioBundestag": 57.0
-      },
-      {
-        "word": "stärke",
-        "count": 5,
-        "ratioParty": 20.6,
-        "ratioBundestag": 31.3
+        "score": 32.5,
+        "ratio": 57.0
       },
       {
         "word": "frieden",
         "count": 8,
-        "ratioParty": 18.2,
-        "ratioBundestag": 20.5
+        "score": 24.5,
+        "ratio": 20.5
+      },
+      {
+        "word": "stärke",
+        "count": 5,
+        "score": 17.4,
+        "ratio": 31.3
+      },
+      {
+        "word": "europa",
+        "count": 7,
+        "score": 15.3,
+        "ratio": 7.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "vereinten",
+        "count": 8,
+        "score": 32.0,
+        "ratio": 53.4
+      },
+      {
+        "word": "nationen",
+        "count": 8,
+        "score": 31.8,
+        "ratio": 52.1
+      },
+      {
+        "word": "frieden",
+        "count": 8,
+        "score": 23.6,
+        "ratio": 18.2
+      },
+      {
+        "word": "stärke",
+        "count": 5,
+        "score": 15.4,
+        "ratio": 20.6
       },
       {
         "word": "soldaten",
         "count": 5,
-        "ratioParty": 16.6,
-        "ratioBundestag": 14.2
+        "score": 14.3,
+        "ratio": 16.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 301,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Roland Theis häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Roland Theis häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Opposition",
-        "isCorrect": false
+        "text": "Vereinten",
+        "isCorrect": true
       },
       {
         "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Vereinten",
-        "isCorrect": true
+        "text": "Minister",
+        "isCorrect": false
       },
       {
-        "text": "Kinder",
+        "text": "Freiheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Vereinten\" nutzt Roland Theis 53.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "66.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Vereinten\" sagte Roland Theis 8× (66.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

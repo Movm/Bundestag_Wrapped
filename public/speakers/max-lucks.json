@@ -72,39 +72,72 @@
         "count": 11
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "unmiss",
-        "count": 5,
-        "ratioParty": 335.7,
-        "ratioBundestag": 69.4
+        "word": "hilfe",
+        "count": 21,
+        "score": 59.9,
+        "ratio": 16.3
       },
       {
-        "word": "jesiden",
-        "count": 7,
-        "ratioParty": 235.0,
-        "ratioBundestag": 67.4
-      },
-      {
-        "word": "prägt",
-        "count": 5,
-        "ratioParty": 167.9,
-        "ratioBundestag": 124.2
+        "word": "humanitären",
+        "count": 14,
+        "score": 52.6,
+        "ratio": 41.8
       },
       {
         "word": "südsudan",
         "count": 11,
-        "ratioParty": 105.5,
-        "ratioBundestag": 79.8
+        "score": 48.3,
+        "ratio": 79.8
       },
       {
-        "word": "europarat",
-        "count": 8,
-        "ratioParty": 67.1,
-        "ratioBundestag": 48.4
+        "word": "humanitäre",
+        "count": 14,
+        "score": 41.4,
+        "ratio": 18.3
+      },
+      {
+        "word": "außenminister",
+        "count": 12,
+        "score": 39.6,
+        "ratio": 26.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "hilfe",
+        "count": 21,
+        "score": 53.3,
+        "ratio": 11.7
+      },
+      {
+        "word": "südsudan",
+        "count": 11,
+        "score": 51.4,
+        "ratio": 105.5
+      },
+      {
+        "word": "humanitären",
+        "count": 14,
+        "score": 44.5,
+        "ratio": 22.9
+      },
+      {
+        "word": "jesiden",
+        "count": 7,
+        "score": 38.2,
+        "ratio": 235.0
+      },
+      {
+        "word": "israel",
+        "count": 12,
+        "score": 36.1,
+        "ratio": 19.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 375,
@@ -131,44 +164,35 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Max Lucks häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Max Lucks häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetz",
+        "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Unmiss",
+        "text": "Hilfe",
         "isCorrect": true
       },
       {
-        "text": "Ausschuss",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unmiss\" nutzt Max Lucks 335.7× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "69.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Hilfe\" sagte Max Lucks 21× (16.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Cleverer Stratege",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüter",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüter",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 1.0
-      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -176,6 +200,14 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
+      },
+      {
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrlicher Redner",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.925
       }
     ]
   },

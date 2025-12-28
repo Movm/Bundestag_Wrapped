@@ -72,44 +72,84 @@
         "count": 14
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "aktivitäten",
-        "count": 5,
-        "ratioParty": 176.3,
-        "ratioBundestag": 66.5
+        "word": "ukraine",
+        "count": 44,
+        "score": 117.5,
+        "ratio": 13.5
       },
       {
-        "word": "kosovo",
-        "count": 9,
-        "ratioParty": 50.1,
-        "ratioBundestag": 34.8
+        "word": "russland",
+        "count": 36,
+        "score": 109.4,
+        "ratio": 19.9
       },
       {
-        "word": "mittelmeer",
-        "count": 6,
-        "ratioParty": 37.3,
-        "ratioBundestag": 19.7
+        "word": "bundesregierung",
+        "count": 32,
+        "score": 49.9,
+        "ratio": 3.8
       },
       {
-        "word": "westbalkan",
-        "count": 5,
-        "ratioParty": 25.2,
-        "ratioBundestag": 48.9
+        "word": "kollege",
+        "count": 20,
+        "score": 45.8,
+        "ratio": 8.9
       },
       {
-        "word": "brandner",
-        "count": 6,
-        "ratioParty": 21.2,
-        "ratioBundestag": 23.7
+        "word": "russische",
+        "count": 12,
+        "score": 39.0,
+        "ratio": 24.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "ukraine",
+        "count": 44,
+        "score": 113.9,
+        "ratio": 12.3
+      },
+      {
+        "word": "russland",
+        "count": 36,
+        "score": 103.9,
+        "ratio": 16.9
+      },
+      {
+        "word": "bundesregierung",
+        "count": 32,
+        "score": 49.1,
+        "ratio": 3.6
+      },
+      {
+        "word": "kollege",
+        "count": 20,
+        "score": 38.9,
+        "ratio": 6.0
+      },
+      {
+        "word": "russische",
+        "count": 12,
+        "score": 37.0,
+        "ratio": 20.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "zentral",
         "count": 3,
-        "ratioParty": 8.1,
-        "ratioBundestag": 8.2
+        "score": 6.6,
+        "ratio": 8.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "zentral",
+        "count": 3,
+        "score": 6.6,
+        "ratio": 8.1
       }
     ]
   },
@@ -133,33 +173,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Florian Hahn häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Florian Hahn häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Aktivitäten",
+        "text": "Ukraine",
         "isCorrect": true
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
       },
       {
         "text": "Reform",
         "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Aktivitäten\" nutzt Florian Hahn 176.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "66.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ukraine\" sagte Florian Hahn 44× (13.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Florian Hahn häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Florian Hahn häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Richtig",
+        "text": "Zentral",
+        "isCorrect": true
+      },
+      {
+        "text": "Politisch",
         "isCorrect": false
       },
       {
@@ -167,16 +210,11 @@
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
+        "text": "Schlecht",
         "isCorrect": false
-      },
-      {
-        "text": "Zentral",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Zentral\" nutzt Florian Hahn 8.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "8.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Zentral\" sagte Florian Hahn 3× (8.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -194,12 +232,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.964
+        "emoji": "🦜",
+        "name": "Papagei",
+        "title": "Neugieriger Fragesteller",
+        "reason": "Mit vielen Fragen bringst du wichtige Themen auf den Tisch.",
+        "id": "papagei",
+        "score": 0.864
       }
     ]
   },

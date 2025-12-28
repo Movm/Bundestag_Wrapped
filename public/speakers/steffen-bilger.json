@@ -72,39 +72,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
-      {
-        "word": "ältestenrat",
-        "count": 5,
-        "ratioParty": 1939.1,
-        "ratioBundestag": 757.9
-      },
+    "signatureWordsBundestag": [
       {
         "word": "ausschüsse",
         "count": 8,
-        "ratioParty": 1551.3,
-        "ratioBundestag": 359.3
+        "score": 47.1,
+        "ratio": 359.3
       },
       {
         "word": "sitzungswochen",
         "count": 7,
-        "ratioParty": 904.9,
-        "ratioBundestag": 606.3
+        "score": 44.9,
+        "ratio": 606.3
+      },
+      {
+        "word": "woche",
+        "count": 12,
+        "score": 34.6,
+        "ratio": 16.8
+      },
+      {
+        "word": "ältestenrat",
+        "count": 5,
+        "score": 33.2,
+        "ratio": 757.9
       },
       {
         "word": "zeitplan",
         "count": 6,
-        "ratioParty": 166.2,
-        "ratioBundestag": 181.9
-      },
-      {
-        "word": "september",
-        "count": 6,
-        "ratioParty": 56.8,
-        "ratioBundestag": 64.4
+        "score": 31.3,
+        "ratio": 181.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "ausschüsse",
+        "count": 8,
+        "score": 58.8,
+        "ratio": 1551.3
+      },
+      {
+        "word": "sitzungswochen",
+        "count": 7,
+        "score": 47.7,
+        "ratio": 904.9
+      },
+      {
+        "word": "ältestenrat",
+        "count": 5,
+        "score": 37.9,
+        "ratio": 1939.1
+      },
+      {
+        "word": "woche",
+        "count": 12,
+        "score": 33.6,
+        "ratio": 15.5
+      },
+      {
+        "word": "zeitplan",
+        "count": 6,
+        "score": 30.7,
+        "ratio": 166.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 358,
@@ -131,27 +164,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Steffen Bilger häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Steffen Bilger häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Zukunft",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Ältestenrat",
+        "text": "Ausschüsse",
         "isCorrect": true
       },
       {
-        "text": "Migration",
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ältestenrat\" nutzt Steffen Bilger 1939.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "757.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ausschüsse\" sagte Steffen Bilger 8× (359.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -170,12 +202,12 @@
         "score": 0.88
       },
       {
-        "emoji": "🦉",
-        "name": "Eule",
-        "title": "Themenexperte",
-        "reason": "Dein Fachwort \"Ältestenrat\" nutzt du 1939.1× häufiger als deine Fraktion.",
-        "id": "eule",
-        "score": 0.86
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 0.811
       }
     ]
   },

@@ -64,50 +64,102 @@
         "count": 13
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "lufthansa",
-        "count": 6,
-        "ratioParty": 206.3,
-        "ratioBundestag": 119.1
+        "word": "reiche",
+        "count": 24,
+        "score": 81.6,
+        "ratio": 29.0
       },
       {
-        "word": "karenzzeit",
-        "count": 5,
-        "ratioParty": 86.0,
-        "ratioBundestag": 421.7
+        "word": "menschen",
+        "count": 46,
+        "score": 53.0,
+        "ratio": 2.2
       },
       {
-        "word": "steuergeld",
-        "count": 5,
-        "ratioParty": 57.3,
-        "ratioBundestag": 7.4
+        "word": "ministerin",
+        "count": 22,
+        "score": 44.7,
+        "ratio": 6.6
       },
       {
         "word": "wirtschaftsministerin",
         "count": 10,
-        "ratioParty": 31.3,
-        "ratioBundestag": 53.5
+        "score": 40.0,
+        "ratio": 53.5
       },
       {
-        "word": "höhere",
-        "count": 8,
-        "ratioParty": 17.2,
-        "ratioBundestag": 16.0
+        "word": "beschäftigten",
+        "count": 12,
+        "score": 33.0,
+        "ratio": 14.7
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "reiche",
+        "count": 24,
+        "score": 64.2,
+        "ratio": 13.5
+      },
+      {
+        "word": "ministerin",
+        "count": 22,
+        "score": 45.1,
+        "ratio": 6.8
+      },
+      {
+        "word": "wirtschaftsministerin",
+        "count": 10,
+        "score": 34.7,
+        "ratio": 31.3
+      },
+      {
+        "word": "lufthansa",
+        "count": 6,
+        "score": 32.0,
+        "ratio": 206.3
+      },
+      {
+        "word": "klimaschutz",
+        "count": 16,
+        "score": 31.9,
+        "ratio": 6.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "teuer",
         "count": 6,
-        "ratioParty": 9.0,
-        "ratioBundestag": 9.4
+        "score": 14.0,
+        "ratio": 9.4
       },
       {
         "word": "absurd",
         "count": 4,
-        "ratioParty": 3.4,
-        "ratioBundestag": 12.0
+        "score": 10.3,
+        "ratio": 12.0
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 4.3,
+        "ratio": 3.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "teuer",
+        "count": 6,
+        "score": 13.8,
+        "ratio": 9.0
+      },
+      {
+        "word": "absurd",
+        "count": 4,
+        "score": 5.9,
+        "ratio": 3.4
       }
     ]
   },
@@ -131,50 +183,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Janine Wissler häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Janine Wissler häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Lufthansa",
+        "text": "Reiche",
         "isCorrect": true
       },
       {
-        "text": "Europa",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
-        "text": "Investitionen",
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Lufthansa\" nutzt Janine Wissler 206.3× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "119.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Reiche\" sagte Janine Wissler 24× (29.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Janine Wissler häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Janine Wissler häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
       {
         "text": "Teuer",
         "isCorrect": true
+      },
+      {
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
+        "isCorrect": false
       },
       {
         "text": "Politisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Teuer\" nutzt Janine Wissler 9.0× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "9.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Teuer\" sagte Janine Wissler 6× (9.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -192,12 +242,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.987
+        "emoji": "🐻",
+        "name": "Bär",
+        "title": "Standhafte Debattiererin",
+        "reason": "Trotz 29× unterbrochen zu werden, bleibst du standhaft.",
+        "id": "baer",
+        "score": 0.985
       }
     ]
   },

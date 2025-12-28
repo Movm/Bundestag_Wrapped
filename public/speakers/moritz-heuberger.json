@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "bargeld",
         "count": 9,
-        "ratioParty": 64.1,
-        "ratioBundestag": 164.3
+        "score": 46.0,
+        "ratio": 164.3
       },
       {
         "word": "digitalen",
         "count": 10,
-        "ratioParty": 50.1,
-        "ratioBundestag": 33.6
-      },
-      {
-        "word": "behörden",
-        "count": 5,
-        "ratioParty": 22.4,
-        "ratioBundestag": 25.8
-      },
-      {
-        "word": "digitale",
-        "count": 5,
-        "ratioParty": 21.3,
-        "ratioBundestag": 11.1
+        "score": 35.4,
+        "ratio": 33.6
       },
       {
         "word": "staat",
         "count": 10,
-        "ratioParty": 15.5,
-        "ratioBundestag": 9.4
+        "score": 23.4,
+        "ratio": 9.4
+      },
+      {
+        "word": "behörden",
+        "count": 5,
+        "score": 16.4,
+        "ratio": 25.8
+      },
+      {
+        "word": "bürgerinnen",
+        "count": 6,
+        "score": 14.1,
+        "ratio": 9.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "digitalen",
+        "count": 10,
+        "score": 39.3,
+        "ratio": 50.1
+      },
+      {
+        "word": "bargeld",
+        "count": 9,
+        "score": 37.6,
+        "ratio": 64.1
+      },
+      {
+        "word": "staat",
+        "count": 10,
+        "score": 28.0,
+        "ratio": 15.5
+      },
+      {
+        "word": "behörden",
+        "count": 5,
+        "score": 15.8,
+        "ratio": 22.4
+      },
+      {
+        "word": "digitale",
+        "count": 5,
+        "score": 15.5,
+        "ratio": 21.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 426,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Moritz Heuberger häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Moritz Heuberger häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Bargeld",
+        "isCorrect": true
+      },
       {
         "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Minister",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
+        "text": "Migration",
         "isCorrect": false
-      },
-      {
-        "text": "Bargeld",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Bargeld\" nutzt Dr. Moritz Heuberger 64.1× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "164.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bargeld\" sagte Dr. Moritz Heuberger 9× (164.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -165,12 +197,12 @@
         "score": 0.871
       },
       {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüter",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 0.773
+        "emoji": "🦊",
+        "name": "Fuchs",
+        "title": "Cleverer Stratege",
+        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+        "id": "fuchs",
+        "score": 0.813
       }
     ]
   },

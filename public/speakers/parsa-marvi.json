@@ -64,44 +64,84 @@
         "count": 11
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "verwaltungsdigitalisierung",
-        "count": 5,
-        "ratioParty": 89.2,
-        "ratioBundestag": 131.8
+        "word": "staat",
+        "count": 30,
+        "score": 74.2,
+        "ratio": 10.9
       },
       {
         "word": "modernisierungsagenda",
         "count": 8,
-        "ratioParty": 54.9,
-        "ratioBundestag": 55.2
+        "score": 32.2,
+        "ratio": 55.2
+      },
+      {
+        "word": "noots",
+        "count": 6,
+        "score": 26.7,
+        "ratio": 84.0
       },
       {
         "word": "erbschaftsteuer",
         "count": 7,
-        "ratioParty": 41.6,
-        "ratioBundestag": 42.4
+        "score": 26.4,
+        "ratio": 42.4
+      },
+      {
+        "word": "bürgerinnen",
+        "count": 12,
+        "score": 25.2,
+        "ratio": 7.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "staat",
+        "count": 30,
+        "score": 79.7,
+        "ratio": 13.2
+      },
+      {
+        "word": "modernisierungsagenda",
+        "count": 8,
+        "score": 32.2,
+        "ratio": 54.9
+      },
+      {
+        "word": "erbschaftsteuer",
+        "count": 7,
+        "score": 26.3,
+        "ratio": 41.6
       },
       {
         "word": "staatsmodernisierung",
         "count": 7,
-        "ratioParty": 32.8,
-        "ratioBundestag": 22.1
+        "score": 24.7,
+        "ratio": 32.8
       },
       {
-        "word": "steuergerechtigkeit",
-        "count": 6,
-        "ratioParty": 28.2,
-        "ratioBundestag": 64.0
+        "word": "verwaltungsdigitalisierung",
+        "count": 5,
+        "score": 22.5,
+        "ratio": 89.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "entscheidend",
         "count": 3,
-        "ratioParty": 4.0,
-        "ratioBundestag": 5.0
+        "score": 5.4,
+        "ratio": 5.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 4.8,
+        "ratio": 4.0
       }
     ]
   },
@@ -125,50 +165,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Parsa Marvi häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Parsa Marvi häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Verwaltungsdigitalisierung",
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Staat",
         "isCorrect": true
-      },
-      {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verwaltungsdigitalisierung\" nutzt Parsa Marvi 89.2× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "131.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Staat\" sagte Parsa Marvi 30× (10.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Parsa Marvi häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Parsa Marvi häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Entscheidend",
         "isCorrect": true
       },
       {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
         "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Parsa Marvi 4.0× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "5.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Entscheidend\" sagte Parsa Marvi 3× (5.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

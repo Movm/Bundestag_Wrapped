@@ -72,44 +72,84 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "arbeit",
+        "count": 15,
+        "score": 38.9,
+        "ratio": 12.4
+      },
+      {
+        "word": "menschen",
+        "count": 23,
+        "score": 35.7,
+        "ratio": 3.7
+      },
       {
         "word": "sozialpolitik",
         "count": 5,
-        "ratioParty": 80.8,
-        "ratioBundestag": 86.8
+        "score": 22.4,
+        "ratio": 86.8
+      },
+      {
+        "word": "koalition",
+        "count": 10,
+        "score": 21.4,
+        "ratio": 7.5
       },
       {
         "word": "rentenpaket",
         "count": 5,
-        "ratioParty": 42.3,
-        "ratioBundestag": 68.4
+        "score": 21.2,
+        "ratio": 68.4
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "menschen",
+        "count": 23,
+        "score": 40.4,
+        "ratio": 4.8
       },
       {
-        "word": "grundsicherung",
-        "count": 5,
-        "ratioParty": 37.9,
-        "ratioBundestag": 47.3
-      },
-      {
-        "word": "alter",
-        "count": 5,
-        "ratioParty": 31.0,
-        "ratioBundestag": 29.4
+        "word": "arbeit",
+        "count": 15,
+        "score": 37.9,
+        "ratio": 11.5
       },
       {
         "word": "rente",
         "count": 7,
-        "ratioParty": 28.6,
-        "ratioBundestag": 15.8
+        "score": 23.7,
+        "ratio": 28.6
+      },
+      {
+        "word": "sozialpolitik",
+        "count": 5,
+        "score": 22.0,
+        "ratio": 80.8
+      },
+      {
+        "word": "koalition",
+        "count": 10,
+        "score": 19.7,
+        "ratio": 6.1
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "entscheidend",
         "count": 3,
-        "ratioParty": 7.9,
-        "ratioBundestag": 12.9
+        "score": 7.9,
+        "ratio": 12.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 6.5,
+        "ratio": 7.9
       }
     ]
   },
@@ -138,50 +178,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Marc Biadacz häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Marc Biadacz häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Sozialpolitik",
+        "text": "Arbeit",
         "isCorrect": true
       },
       {
-        "text": "Minister",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
         "text": "Freiheit",
         "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sozialpolitik\" nutzt Marc Biadacz 80.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "86.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Arbeit\" sagte Marc Biadacz 15× (12.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Marc Biadacz häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Marc Biadacz häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
       {
         "text": "Entscheidend",
         "isCorrect": true
       },
       {
-        "text": "Erfolgreich",
+        "text": "Falsch",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Marc Biadacz 7.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "12.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Entscheidend\" sagte Marc Biadacz 3× (12.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦦",

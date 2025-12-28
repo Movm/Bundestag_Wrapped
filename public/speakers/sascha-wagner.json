@@ -64,68 +64,132 @@
         "count": 19
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "satte",
-        "count": 5,
-        "ratioParty": 115.0,
-        "ratioBundestag": 76.2
+        "word": "kommunen",
+        "count": 36,
+        "score": 71.6,
+        "ratio": 6.3
       },
       {
-        "word": "ländliche",
-        "count": 5,
-        "ratioParty": 57.5,
-        "ratioBundestag": 32.6
+        "word": "mittel",
+        "count": 29,
+        "score": 54.6,
+        "ratio": 5.6
       },
       {
-        "word": "gleichwertige",
-        "count": 6,
-        "ratioParty": 46.0,
-        "ratioBundestag": 45.7
+        "word": "ländlichen",
+        "count": 18,
+        "score": 50.4,
+        "ratio": 15.4
       },
       {
-        "word": "räume",
-        "count": 9,
-        "ratioParty": 34.5,
-        "ratioBundestag": 26.4
+        "word": "endlich",
+        "count": 25,
+        "score": 36.7,
+        "ratio": 3.3
       },
       {
         "word": "lebensverhältnisse",
         "count": 9,
-        "ratioParty": 25.9,
-        "ratioBundestag": 38.1
+        "score": 33.0,
+        "ratio": 38.1
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "solide",
-        "count": 3,
-        "ratioParty": 23.0,
-        "ratioBundestag": 6.5
+        "word": "kommunen",
+        "count": 36,
+        "score": 66.7,
+        "ratio": 5.4
       },
       {
-        "word": "stark",
-        "count": 4,
-        "ratioParty": 4.8,
-        "ratioBundestag": 2.2
+        "word": "ländlichen",
+        "count": 18,
+        "score": 58.2,
+        "ratio": 24.4
+      },
+      {
+        "word": "mittel",
+        "count": 29,
+        "score": 56.9,
+        "ratio": 6.1
+      },
+      {
+        "word": "bürgerinnen",
+        "count": 17,
+        "score": 38.6,
+        "ratio": 8.7
+      },
+      {
+        "word": "werte",
+        "count": 16,
+        "score": 36.8,
+        "ratio": 9.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sozial",
+        "count": 6,
+        "score": 12.4,
+        "ratio": 6.9
       },
       {
         "word": "leistungsfähig",
         "count": 3,
-        "ratioParty": 4.1,
-        "ratioBundestag": 57.1
+        "score": 12.2,
+        "ratio": 57.1
       },
       {
         "word": "gerecht",
         "count": 7,
-        "ratioParty": 3.0,
-        "ratioBundestag": 3.8
+        "score": 11.0,
+        "ratio": 3.8
+      },
+      {
+        "word": "solide",
+        "count": 3,
+        "score": 6.1,
+        "ratio": 6.5
+      },
+      {
+        "word": "stark",
+        "count": 4,
+        "score": 4.7,
+        "ratio": 2.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 7,
+        "score": 9.7,
+        "ratio": 3.0
+      },
+      {
+        "word": "solide",
+        "count": 3,
+        "score": 9.5,
+        "ratio": 23.0
       },
       {
         "word": "sozial",
         "count": 6,
-        "ratioParty": 2.7,
-        "ratioBundestag": 6.9
+        "score": 7.8,
+        "ratio": 2.7
+      },
+      {
+        "word": "stark",
+        "count": 4,
+        "score": 7.1,
+        "ratio": 4.8
+      },
+      {
+        "word": "leistungsfähig",
+        "count": 3,
+        "score": 4.9,
+        "ratio": 4.1
       }
     ]
   },
@@ -159,50 +223,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Sascha Wagner häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Sascha Wagner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Migration",
+        "text": "Sicherheit",
         "isCorrect": false
       },
       {
-        "text": "Satte",
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Kommunen",
         "isCorrect": true
       },
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Haushalt",
+        "text": "Klima",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Satte\" nutzt Sascha Wagner 115.0× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "76.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Kommunen\" sagte Sascha Wagner 36× (6.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Sascha Wagner häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Sascha Wagner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Solide",
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
         "isCorrect": true
-      },
-      {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Solide\" nutzt Sascha Wagner 23.0× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "6.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sozial\" sagte Sascha Wagner 6× (6.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦁",

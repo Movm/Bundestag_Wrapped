@@ -56,39 +56,72 @@
         "count": 10
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "kunst",
-        "count": 9,
-        "ratioParty": 187.2,
-        "ratioBundestag": 93.7
-      },
-      {
-        "word": "freundschaft",
-        "count": 5,
-        "ratioParty": 138.7,
-        "ratioBundestag": 153.5
-      },
-      {
-        "word": "feiern",
-        "count": 12,
-        "ratioParty": 55.5,
-        "ratioBundestag": 77.8
-      },
-      {
-        "word": "erinnerung",
-        "count": 7,
-        "ratioParty": 48.5,
-        "ratioBundestag": 39.3
+        "word": "freiheit",
+        "count": 23,
+        "score": 62.8,
+        "ratio": 14.3
       },
       {
         "word": "kultur",
         "count": 17,
-        "ratioParty": 36.3,
-        "ratioBundestag": 36.3
+        "score": 61.5,
+        "ratio": 36.3
+      },
+      {
+        "word": "erinnern",
+        "count": 16,
+        "score": 54.6,
+        "ratio": 29.3
+      },
+      {
+        "word": "feiern",
+        "count": 12,
+        "score": 52.4,
+        "ratio": 77.8
+      },
+      {
+        "word": "kunst",
+        "count": 9,
+        "score": 41.0,
+        "ratio": 93.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "freiheit",
+        "count": 23,
+        "score": 62.7,
+        "ratio": 14.3
+      },
+      {
+        "word": "kultur",
+        "count": 17,
+        "score": 61.5,
+        "ratio": 36.3
+      },
+      {
+        "word": "erinnern",
+        "count": 16,
+        "score": 53.1,
+        "ratio": 26.6
+      },
+      {
+        "word": "feiern",
+        "count": 12,
+        "score": 48.4,
+        "ratio": 55.5
+      },
+      {
+        "word": "kunst",
+        "count": 9,
+        "score": 47.1,
+        "ratio": 187.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 497,
@@ -110,27 +143,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Katrin Göring-Eckardt häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Katrin Göring-Eckardt häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Kunst",
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
         "isCorrect": true
-      },
-      {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Haushalt",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kunst\" nutzt Katrin Göring-Eckardt 187.2× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "93.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Freiheit\" sagte Katrin Göring-Eckardt 23× (14.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -149,12 +181,12 @@
         "score": 0.979
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.901
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrliche Rednerin",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.825
       }
     ]
   },

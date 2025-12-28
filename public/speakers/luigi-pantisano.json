@@ -72,44 +72,84 @@
         "count": 15
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "menschen",
+        "count": 64,
+        "score": 106.6,
+        "ratio": 4.3
+      },
       {
         "word": "stuttgart",
         "count": 15,
-        "ratioParty": 738.7,
-        "ratioBundestag": 211.5
-      },
-      {
-        "word": "staus",
-        "count": 7,
-        "ratioParty": 114.9,
-        "ratioBundestag": 139.8
-      },
-      {
-        "word": "schnieder",
-        "count": 13,
-        "ratioParty": 106.7,
-        "ratioBundestag": 74.2
-      },
-      {
-        "word": "verkehrspolitik",
-        "count": 6,
-        "ratioParty": 42.2,
-        "ratioBundestag": 47.2
+        "score": 80.4,
+        "ratio": 211.5
       },
       {
         "word": "ticket",
         "count": 15,
-        "ratioParty": 41.0,
-        "ratioBundestag": 84.6
+        "score": 66.7,
+        "ratio": 84.6
+      },
+      {
+        "word": "politik",
+        "count": 29,
+        "score": 61.1,
+        "ratio": 7.2
+      },
+      {
+        "word": "schnieder",
+        "count": 13,
+        "score": 56.2,
+        "ratio": 74.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "stuttgart",
+        "count": 15,
+        "score": 99.1,
+        "ratio": 738.7
+      },
+      {
+        "word": "menschen",
+        "count": 64,
+        "score": 79.7,
+        "ratio": 2.5
+      },
+      {
+        "word": "schnieder",
+        "count": 13,
+        "score": 60.8,
+        "ratio": 106.7
+      },
+      {
+        "word": "ticket",
+        "count": 15,
+        "score": 56.1,
+        "ratio": 41.0
+      },
+      {
+        "word": "fahren",
+        "count": 16,
+        "score": 55.7,
+        "ratio": 31.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "sicher",
         "count": 8,
-        "ratioParty": 7.6,
-        "ratioBundestag": 5.2
+        "score": 14.6,
+        "ratio": 5.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 8,
+        "score": 17.2,
+        "ratio": 7.6
       }
     ]
   },
@@ -133,37 +173,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Luigi Pantisano häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Luigi Pantisano häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Sicherheit",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Investitionen",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Stuttgart",
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Menschen",
         "isCorrect": true
-      },
-      {
-        "text": "Wirtschaft",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Stuttgart\" nutzt Luigi Pantisano 738.7× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "211.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Menschen\" sagte Luigi Pantisano 64× (4.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Luigi Pantisano häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Luigi Pantisano häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
+        "text": "Groß",
         "isCorrect": false
       },
       {
@@ -171,12 +206,15 @@
         "isCorrect": true
       },
       {
-        "text": "Notwendig",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sicher\" nutzt Luigi Pantisano 7.6× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "5.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Luigi Pantisano 8× (5.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -194,12 +232,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.973
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrlicher Redner",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.97
       }
     ]
   },

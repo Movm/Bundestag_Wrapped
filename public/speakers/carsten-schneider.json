@@ -68,68 +68,132 @@
         "count": 20
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "treibhausgasemissionen",
-        "count": 5,
-        "ratioParty": 111.5,
-        "ratioBundestag": 161.6
+        "word": "umwelt",
+        "count": 36,
+        "score": 125.1,
+        "ratio": 31.3
       },
       {
-        "word": "mooren",
-        "count": 5,
-        "ratioParty": 111.5,
-        "ratioBundestag": 141.4
+        "word": "natur",
+        "count": 26,
+        "score": 92.7,
+        "ratio": 34.4
       },
       {
-        "word": "klimaschutzpolitik",
-        "count": 6,
-        "ratioParty": 66.9,
-        "ratioBundestag": 50.3
+        "word": "klimaschutz",
+        "count": 38,
+        "score": 89.9,
+        "ratio": 9.6
+      },
+      {
+        "word": "kollege",
+        "count": 27,
+        "score": 60.0,
+        "ratio": 8.2
       },
       {
         "word": "naturschutz",
         "count": 15,
-        "ratioParty": 47.8,
-        "ratioBundestag": 29.3
-      },
-      {
-        "word": "brasilien",
-        "count": 6,
-        "ratioParty": 44.6,
-        "ratioBundestag": 33.9
+        "score": 51.1,
+        "ratio": 29.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "umwelt",
+        "count": 36,
+        "score": 133.8,
+        "ratio": 40.1
+      },
+      {
+        "word": "natur",
+        "count": 26,
+        "score": 98.4,
+        "ratio": 42.9
+      },
+      {
+        "word": "klimaschutz",
+        "count": 38,
+        "score": 86.5,
+        "ratio": 8.7
+      },
+      {
+        "word": "kollege",
+        "count": 27,
+        "score": 60.2,
+        "ratio": 8.3
+      },
+      {
+        "word": "naturschutz",
+        "count": 15,
+        "score": 58.3,
+        "ratio": 47.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "zentral",
         "count": 4,
-        "ratioParty": 4.1,
-        "ratioBundestag": 7.5
+        "score": 8.6,
+        "ratio": 7.5
       },
       {
         "word": "geschützt",
         "count": 3,
-        "ratioParty": 3.5,
-        "ratioBundestag": 4.9
+        "score": 5.3,
+        "ratio": 4.9
       },
       {
         "word": "nachhaltig",
         "count": 3,
-        "ratioParty": 3.4,
-        "ratioBundestag": 4.0
+        "score": 4.8,
+        "ratio": 4.0
+      },
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 4.6,
+        "ratio": 2.1
       },
       {
         "word": "erfolgreich",
         "count": 3,
-        "ratioParty": 2.8,
-        "ratioBundestag": 3.0
+        "score": 4.2,
+        "ratio": 3.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "zentral",
+        "count": 4,
+        "score": 6.5,
+        "ratio": 4.1
+      },
+      {
+        "word": "nachhaltig",
+        "count": 3,
+        "score": 4.5,
+        "ratio": 3.4
+      },
+      {
+        "word": "geschützt",
+        "count": 3,
+        "score": 4.5,
+        "ratio": 3.5
+      },
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 4.0,
+        "ratio": 2.8
       },
       {
         "word": "wirtschaftlich",
         "count": 3,
-        "ratioParty": 2.7,
-        "ratioBundestag": 3.0
+        "score": 3.9,
+        "ratio": 2.7
       }
     ]
   },
@@ -153,50 +217,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Carsten Schneider häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Carsten Schneider häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Treibhausgasemissionen",
+        "text": "Umwelt",
         "isCorrect": true
       },
       {
-        "text": "Koalition",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
-        "text": "Kinder",
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Treibhausgasemissionen\" nutzt Carsten Schneider 111.5× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "161.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Umwelt\" sagte Carsten Schneider 36× (31.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Carsten Schneider häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Carsten Schneider häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
-        "isCorrect": false
-      },
       {
         "text": "Zentral",
         "isCorrect": true
       },
       {
-        "text": "Schlecht",
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Zentral\" nutzt Carsten Schneider 4.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "7.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Zentral\" sagte Carsten Schneider 4× (7.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

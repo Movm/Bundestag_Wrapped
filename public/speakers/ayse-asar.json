@@ -72,39 +72,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "forschende",
-        "count": 6,
-        "ratioParty": 432.2,
-        "ratioBundestag": 377.0
+        "word": "bafög",
+        "count": 14,
+        "score": 61.1,
+        "ratio": 77.3
       },
       {
         "word": "hochschulen",
         "count": 10,
-        "ratioParty": 144.1,
-        "ratioBundestag": 104.7
+        "score": 46.6,
+        "ratio": 104.7
       },
       {
-        "word": "bafög",
-        "count": 14,
-        "ratioParty": 77.6,
-        "ratioBundestag": 77.3
+        "word": "forschende",
+        "count": 6,
+        "score": 35.6,
+        "ratio": 377.0
       },
       {
-        "word": "hightech",
-        "count": 8,
-        "ratioParty": 44.3,
-        "ratioBundestag": 30.1
+        "word": "innovation",
+        "count": 9,
+        "score": 31.9,
+        "ratio": 33.6
       },
       {
         "word": "wissenschaft",
         "count": 8,
-        "ratioParty": 44.3,
-        "ratioBundestag": 31.7
+        "score": 27.9,
+        "ratio": 31.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bafög",
+        "count": 14,
+        "score": 61.1,
+        "ratio": 77.6
+      },
+      {
+        "word": "hochschulen",
+        "count": 10,
+        "score": 49.8,
+        "ratio": 144.1
+      },
+      {
+        "word": "forschende",
+        "count": 6,
+        "score": 36.4,
+        "ratio": 432.2
+      },
+      {
+        "word": "innovation",
+        "count": 9,
+        "score": 33.5,
+        "ratio": 40.5
+      },
+      {
+        "word": "hightech",
+        "count": 8,
+        "score": 30.5,
+        "ratio": 44.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 211,
@@ -126,51 +159,50 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Ayse Asar häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Ayse Asar häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Forschende",
+        "text": "Bafög",
         "isCorrect": true
       },
       {
-        "text": "Bildung",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
-        "text": "Gesellschaft",
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Kinder",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Forschende\" nutzt Ayse Asar 432.2× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "377.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bafög\" sagte Ayse Asar 14× (77.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Clevere Strategin",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüterin",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
       {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 0.901
+        "emoji": "🦜",
+        "name": "Papagei",
+        "title": "Neugierige Fragestellerin",
+        "reason": "Mit vielen Fragen bringst du wichtige Themen auf den Tisch.",
+        "id": "papagei",
+        "score": 0.842
       },
       {
-        "emoji": "🦉",
-        "name": "Eule",
-        "title": "Themenexpertin",
-        "reason": "Dein Fachwort \"Forschende\" nutzt du 432.2× häufiger als deine Fraktion.",
-        "id": "eule",
-        "score": 0.852
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißige Abgeordnete",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
+        "score": 0.817
       }
     ]
   },

@@ -64,44 +64,84 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "beamten",
-        "count": 6,
-        "ratioParty": 37.5,
-        "ratioBundestag": 54.1
+        "word": "grenzen",
+        "count": 12,
+        "score": 36.4,
+        "ratio": 19.7
       },
       {
         "word": "bundespolizei",
         "count": 10,
-        "ratioParty": 36.1,
-        "ratioBundestag": 29.0
-      },
-      {
-        "word": "polizisten",
-        "count": 5,
-        "ratioParty": 20.3,
-        "ratioBundestag": 18.5
-      },
-      {
-        "word": "grenzen",
-        "count": 12,
-        "ratioParty": 15.2,
-        "ratioBundestag": 19.7
+        "score": 34.0,
+        "ratio": 29.0
       },
       {
         "word": "gesellschaft",
         "count": 12,
-        "ratioParty": 14.5,
-        "ratioBundestag": 7.7
+        "score": 25.9,
+        "ratio": 7.7
+      },
+      {
+        "word": "beamten",
+        "count": 6,
+        "score": 24.1,
+        "ratio": 54.1
+      },
+      {
+        "word": "linken",
+        "count": 9,
+        "score": 22.7,
+        "ratio": 11.5
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "bundespolizei",
+        "count": 10,
+        "score": 36.1,
+        "ratio": 36.1
+      },
+      {
+        "word": "grenzen",
+        "count": 12,
+        "score": 33.5,
+        "ratio": 15.2
+      },
+      {
+        "word": "gesellschaft",
+        "count": 12,
+        "score": 32.9,
+        "ratio": 14.5
+      },
+      {
+        "word": "beamten",
+        "count": 6,
+        "score": 21.9,
+        "ratio": 37.5
+      },
+      {
+        "word": "linken",
+        "count": 9,
+        "score": 16.9,
+        "ratio": 5.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "links",
         "count": 4,
-        "ratioParty": 3.3,
-        "ratioBundestag": 9.5
+        "score": 9.4,
+        "ratio": 9.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "links",
+        "count": 4,
+        "score": 5.9,
+        "ratio": 3.3
       }
     ]
   },
@@ -125,50 +165,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Christopher Drößler häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Christopher Drößler häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Beamten",
-        "isCorrect": true
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
-      },
       {
         "text": "Koalition",
         "isCorrect": false
       },
       {
-        "text": "Sicherheit",
+        "text": "Grenzen",
+        "isCorrect": true
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Beamten\" nutzt Christopher Drößler 37.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "54.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Grenzen\" sagte Christopher Drößler 12× (19.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Christopher Drößler häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Christopher Drößler häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Sozial",
-        "isCorrect": false
-      },
       {
         "text": "Links",
         "isCorrect": true
       },
       {
-        "text": "Jung",
+        "text": "National",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Gut",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Links\" nutzt Christopher Drößler 3.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "9.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Links\" sagte Christopher Drößler 4× (9.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

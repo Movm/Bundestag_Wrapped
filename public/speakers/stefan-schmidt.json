@@ -72,50 +72,96 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "umsatzsteuer",
-        "count": 6,
-        "ratioParty": 562.4,
-        "ratioBundestag": 106.4
+        "word": "menschen",
+        "count": 41,
+        "score": 63.9,
+        "ratio": 3.7
+      },
+      {
+        "word": "schuldnerberatungen",
+        "count": 8,
+        "score": 53.0,
+        "ratio": 750.1
       },
       {
         "word": "steuersenkung",
         "count": 8,
-        "ratioParty": 374.9,
-        "ratioBundestag": 328.2
+        "score": 46.4,
+        "ratio": 328.2
       },
       {
         "word": "bürgerfonds",
         "count": 6,
-        "ratioParty": 187.5,
-        "ratioBundestag": 1312.6
-      },
-      {
-        "word": "pendlerpauschale",
-        "count": 5,
-        "ratioParty": 93.7,
-        "ratioBundestag": 56.6
+        "score": 43.1,
+        "ratio": 1312.6
       },
       {
         "word": "altersvorsorge",
         "count": 10,
-        "ratioParty": 46.9,
-        "ratioBundestag": 65.0
+        "score": 41.9,
+        "ratio": 65.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "menschen",
+        "count": 41,
+        "score": 52.7,
+        "ratio": 2.6
+      },
+      {
+        "word": "steuersenkung",
+        "count": 8,
+        "score": 47.4,
+        "ratio": 374.9
+      },
+      {
+        "word": "altersvorsorge",
+        "count": 10,
+        "score": 38.7,
+        "ratio": 46.9
+      },
+      {
+        "word": "umsatzsteuer",
+        "count": 6,
+        "score": 38.0,
+        "ratio": 562.4
+      },
+      {
+        "word": "tourismus",
+        "count": 10,
+        "score": 37.0,
+        "ratio": 39.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "sozial",
         "count": 3,
-        "ratioParty": 11.2,
-        "ratioBundestag": 9.8
+        "score": 7.1,
+        "ratio": 9.8
       },
       {
         "word": "sicher",
         "count": 4,
-        "ratioParty": 4.6,
-        "ratioBundestag": 3.5
+        "score": 6.0,
+        "ratio": 3.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sozial",
+        "count": 3,
+        "score": 7.5,
+        "ratio": 11.2
+      },
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 6.9,
+        "ratio": 4.6
       }
     ]
   },
@@ -139,50 +185,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Stefan Schmidt häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Stefan Schmidt häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Familie",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Umsatzsteuer",
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
+        "text": "Menschen",
         "isCorrect": true
       },
       {
-        "text": "Bildung",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
+        "text": "Rente",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Umsatzsteuer\" nutzt Stefan Schmidt 562.4× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "106.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Menschen\" sagte Stefan Schmidt 41× (3.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Stefan Schmidt häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Stefan Schmidt häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wichtig",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Sozial",
-        "isCorrect": true
-      },
-      {
-        "text": "Gut",
+        "text": "National",
         "isCorrect": false
       },
       {
         "text": "Alt",
         "isCorrect": false
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Sozial\" nutzt Stefan Schmidt 11.2× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "9.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sozial\" sagte Stefan Schmidt 3× (9.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -200,12 +244,12 @@
         "score": 0.955
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.933
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrlicher Redner",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.914
       }
     ]
   },

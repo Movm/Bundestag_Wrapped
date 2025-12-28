@@ -56,56 +56,114 @@
         "count": 30
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "jugendarbeit",
-        "count": 5,
-        "ratioParty": 96.4,
-        "ratioBundestag": 35.7
+        "word": "menschen",
+        "count": 84,
+        "score": 99.6,
+        "ratio": 2.3
       },
       {
-        "word": "abschluss",
-        "count": 5,
-        "ratioParty": 32.1,
-        "ratioBundestag": 10.3
+        "word": "union",
+        "count": 37,
+        "score": 64.7,
+        "ratio": 4.7
       },
       {
-        "word": "armutsfesten",
-        "count": 5,
-        "ratioParty": 32.1,
-        "ratioBundestag": 241.2
+        "word": "einfach",
+        "count": 36,
+        "score": 59.7,
+        "ratio": 4.2
+      },
+      {
+        "word": "endlich",
+        "count": 30,
+        "score": 44.5,
+        "ratio": 3.4
       },
       {
         "word": "monats",
         "count": 10,
-        "ratioParty": 27.6,
-        "ratioBundestag": 55.1
-      },
-      {
-        "word": "generationengerechtigkeit",
-        "count": 5,
-        "ratioParty": 24.1,
-        "ratioBundestag": 12.9
+        "score": 40.3,
+        "ratio": 55.1
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "union",
+        "count": 37,
+        "score": 58.6,
+        "ratio": 3.9
+      },
+      {
+        "word": "einfach",
+        "count": 36,
+        "score": 54.1,
+        "ratio": 3.5
+      },
+      {
+        "word": "haushalt",
+        "count": 31,
+        "score": 36.1,
+        "ratio": 2.2
+      },
+      {
+        "word": "monats",
+        "count": 10,
+        "score": 33.5,
+        "ratio": 27.6
+      },
+      {
+        "word": "bürgergeld",
+        "count": 15,
+        "score": 32.0,
+        "ratio": 7.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "unfassbar",
+        "count": 5,
+        "score": 15.1,
+        "ratio": 19.7
+      },
       {
         "word": "scheinheilig",
         "count": 3,
-        "ratioParty": 14.5,
-        "ratioBundestag": 44.5
+        "score": 11.5,
+        "ratio": 44.5
       },
       {
         "word": "schlimm",
         "count": 3,
-        "ratioParty": 14.5,
-        "ratioBundestag": 13.2
+        "score": 8.0,
+        "ratio": 13.2
       },
+      {
+        "word": "absurd",
+        "count": 3,
+        "score": 5.4,
+        "ratio": 5.1
+      }
+    ],
+    "signatureAdjectivesParty": [
       {
         "word": "unfassbar",
         "count": 5,
-        "ratioParty": 8.8,
-        "ratioBundestag": 19.7
+        "score": 11.4,
+        "ratio": 8.8
+      },
+      {
+        "word": "scheinheilig",
+        "count": 3,
+        "score": 8.2,
+        "ratio": 14.5
+      },
+      {
+        "word": "schlimm",
+        "count": 3,
+        "score": 8.2,
+        "ratio": 14.5
       }
     ]
   },
@@ -139,50 +197,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Heidi Reichinnek häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Heidi Reichinnek häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Steuern",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
-        "text": "Jugendarbeit",
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Haushalt",
+        "isCorrect": false
+      },
+      {
+        "text": "Menschen",
         "isCorrect": true
-      },
-      {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Jugendarbeit\" nutzt Heidi Reichinnek 96.4× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "35.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Menschen\" sagte Heidi Reichinnek 84× (2.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Heidi Reichinnek häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Heidi Reichinnek häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Sicher",
+        "text": "Wirtschaftlich",
         "isCorrect": false
-      },
-      {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Scheinheilig",
-        "isCorrect": true
       },
       {
         "text": "Richtig",
         "isCorrect": false
+      },
+      {
+        "text": "Unfassbar",
+        "isCorrect": true
+      },
+      {
+        "text": "National",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Scheinheilig\" nutzt Heidi Reichinnek 14.5× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "44.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Unfassbar\" sagte Heidi Reichinnek 5× (19.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐅",
@@ -192,20 +248,20 @@
     "id": "tiger",
     "alternatives": [
       {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 1.0
-      },
-      {
         "emoji": "🐝",
         "name": "Biene",
         "title": "Fleißige Abgeordnete",
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
+      },
+      {
+        "emoji": "🦚",
+        "name": "Pfau",
+        "title": "Eloquente Rednerin",
+        "reason": "Mit Ø 1024 Wörtern pro Rede gehörst du zu den ausführlichsten Rednern.",
+        "id": "pfau",
+        "score": 0.925
       }
     ]
   },

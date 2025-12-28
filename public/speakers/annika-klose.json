@@ -72,44 +72,84 @@
         "count": 6
       }
     ],
-    "signatureWords": [
-      {
-        "word": "rentenniveau",
-        "count": 7,
-        "ratioParty": 41.8,
-        "ratioBundestag": 49.6
-      },
+    "signatureWordsBundestag": [
       {
         "word": "rente",
         "count": 13,
-        "ratioParty": 15.6,
-        "ratioBundestag": 21.4
+        "score": 40.4,
+        "ratio": 21.4
       },
       {
-        "word": "jungen",
-        "count": 6,
-        "ratioParty": 15.0,
-        "ratioBundestag": 14.5
+        "word": "menschen",
+        "count": 25,
+        "score": 34.1,
+        "ratio": 2.9
+      },
+      {
+        "word": "rentenniveau",
+        "count": 7,
+        "score": 27.5,
+        "ratio": 49.6
       },
       {
         "word": "würden",
         "count": 10,
-        "ratioParty": 12.9,
-        "ratioBundestag": 10.2
+        "score": 24.2,
+        "ratio": 10.2
       },
       {
-        "word": "könnte",
-        "count": 6,
-        "ratioParty": 10.8,
-        "ratioBundestag": 7.6
+        "word": "leben",
+        "count": 10,
+        "score": 17.1,
+        "ratio": 4.5
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "rente",
+        "count": 13,
+        "score": 36.5,
+        "ratio": 15.6
+      },
+      {
+        "word": "menschen",
+        "count": 25,
+        "score": 31.9,
+        "ratio": 2.6
+      },
+      {
+        "word": "würden",
+        "count": 10,
+        "score": 26.3,
+        "ratio": 12.9
+      },
+      {
+        "word": "rentenniveau",
+        "count": 7,
+        "score": 26.3,
+        "ratio": 41.8
+      },
+      {
+        "word": "jungen",
+        "count": 6,
+        "score": 16.6,
+        "ratio": 15.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "stabil",
         "count": 3,
-        "ratioParty": 17.9,
-        "ratioBundestag": 30.6
+        "score": 10.4,
+        "ratio": 30.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "stabil",
+        "count": 3,
+        "score": 8.8,
+        "ratio": 17.9
       }
     ]
   },
@@ -133,50 +173,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Annika Klose häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Annika Klose häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Rentenniveau",
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Rente",
         "isCorrect": true
       },
       {
-        "text": "Gesetz",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
+        "text": "Koalition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rentenniveau\" nutzt Annika Klose 41.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "49.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Rente\" sagte Annika Klose 13× (21.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Annika Klose häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Annika Klose häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Schlecht",
+        "text": "Sicher",
         "isCorrect": false
       },
       {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
+        "text": "Klar",
         "isCorrect": false
       },
       {
         "text": "Stabil",
         "isCorrect": true
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Stabil\" nutzt Annika Klose 17.9× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "30.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Stabil\" sagte Annika Klose 3× (30.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦦",

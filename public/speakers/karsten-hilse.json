@@ -72,39 +72,79 @@
         "count": 13
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "klimasekte",
         "count": 12,
-        "ratioParty": 1010.3,
-        "ratioBundestag": 4503.2
+        "score": 101.0,
+        "ratio": 4503.2
       },
       {
-        "word": "führungsrolle",
-        "count": 6,
-        "ratioParty": 505.1,
-        "ratioBundestag": 86.6
+        "word": "klimawandel",
+        "count": 23,
+        "score": 87.8,
+        "ratio": 44.5
       },
       {
-        "word": "kipppunkte",
-        "count": 5,
-        "ratioParty": 210.5,
-        "ratioBundestag": 125.1
-      },
-      {
-        "word": "kategorien",
-        "count": 5,
-        "ratioParty": 105.2,
-        "ratioBundestag": 156.4
-      },
-      {
-        "word": "menschengemachten",
+        "word": "zweifler",
         "count": 7,
-        "ratioParty": 98.2,
-        "ratioBundestag": 87.6
+        "score": 55.1,
+        "ratio": 2626.9
+      },
+      {
+        "word": "natürlichen",
+        "count": 13,
+        "score": 53.8,
+        "ratio": 61.8
+      },
+      {
+        "word": "heuchelei",
+        "count": 10,
+        "score": 48.4,
+        "ratio": 125.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "klimawandel",
+        "count": 23,
+        "score": 94.0,
+        "ratio": 58.7
+      },
+      {
+        "word": "klimasekte",
+        "count": 12,
+        "score": 83.0,
+        "ratio": 1010.3
+      },
+      {
+        "word": "natürlichen",
+        "count": 13,
+        "score": 58.8,
+        "ratio": 91.2
+      },
+      {
+        "word": "menschen",
+        "count": 37,
+        "score": 56.7,
+        "ratio": 3.6
+      },
+      {
+        "word": "selbstverständlich",
+        "count": 15,
+        "score": 44.8,
+        "ratio": 18.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "links",
+        "count": 3,
+        "score": 4.6,
+        "ratio": 3.7
+      }
+    ],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 457,
@@ -136,10 +176,14 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Karsten Hilse häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Karsten Hilse häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Kinder",
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
@@ -147,18 +191,34 @@
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Klimasekte\" nutzt Karsten Hilse 1010.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "4503.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Klimasekte\" sagte Karsten Hilse 12× (4503.2× häufiger als der Bundestag-Durchschnitt)."
   },
-  "signatureAdjectiveQuiz": null,
+  "signatureAdjectiveQuiz": {
+    "question": "Welches Adjektiv nutzt Karsten Hilse häufiger als der Bundestag-Durchschnitt?",
+    "options": [
+      {
+        "text": "Links",
+        "isCorrect": true
+      },
+      {
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "\"Links\" sagte Karsten Hilse 3× (3.7× häufiger als der Bundestag-Durchschnitt)."
+  },
   "spiritAnimal": null,
   "toneProfile": {
     "scores": {

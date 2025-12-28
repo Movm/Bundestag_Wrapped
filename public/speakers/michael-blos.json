@@ -72,44 +72,84 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "wasser",
         "count": 5,
-        "ratioParty": 48.3,
-        "ratioBundestag": 37.6
-      },
-      {
-        "word": "großen",
-        "count": 5,
-        "ratioParty": 8.8,
-        "ratioBundestag": 8.0
+        "score": 18.3,
+        "ratio": 37.6
       },
       {
         "word": "links",
         "count": 5,
-        "ratioParty": 8.0,
-        "ratioBundestag": 22.5
+        "score": 15.8,
+        "ratio": 22.5
       },
       {
         "word": "werte",
         "count": 5,
-        "ratioParty": 6.2,
-        "ratioBundestag": 10.4
+        "score": 12.2,
+        "ratio": 10.4
       },
       {
         "word": "grünen",
         "count": 6,
-        "ratioParty": 3.1,
-        "ratioBundestag": 6.5
+        "score": 12.1,
+        "ratio": 6.5
+      },
+      {
+        "word": "großen",
+        "count": 5,
+        "score": 11.0,
+        "ratio": 8.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "wasser",
+        "count": 5,
+        "score": 19.5,
+        "ratio": 48.3
+      },
+      {
+        "word": "großen",
+        "count": 5,
+        "score": 11.4,
+        "ratio": 8.8
+      },
       {
         "word": "links",
         "count": 5,
-        "ratioParty": 8.0,
-        "ratioBundestag": 22.5
+        "score": 11.0,
+        "ratio": 8.0
+      },
+      {
+        "word": "werte",
+        "count": 5,
+        "score": 9.9,
+        "ratio": 6.2
+      },
+      {
+        "word": "grünen",
+        "count": 6,
+        "score": 8.5,
+        "ratio": 3.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "links",
+        "count": 5,
+        "score": 15.8,
+        "ratio": 22.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "links",
+        "count": 5,
+        "score": 11.0,
+        "ratio": 8.0
       }
     ]
   },
@@ -138,35 +178,30 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Michael Blos häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Michael Blos häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
       {
         "text": "Investitionen",
         "isCorrect": false
       },
       {
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
         "text": "Wasser",
         "isCorrect": true
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wasser\" nutzt Dr. Michael Blos 48.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "37.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wasser\" sagte Dr. Michael Blos 5× (37.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Michael Blos häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Michael Blos häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
       {
         "text": "Gut",
         "isCorrect": false
@@ -176,12 +211,15 @@
         "isCorrect": true
       },
       {
-        "text": "Schlecht",
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Links\" nutzt Dr. Michael Blos 8.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "22.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Links\" sagte Dr. Michael Blos 5× (22.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

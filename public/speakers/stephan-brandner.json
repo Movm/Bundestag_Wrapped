@@ -52,62 +52,120 @@
         "count": 25
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "scheuer",
-        "count": 6,
-        "ratioParty": 237.8,
-        "ratioBundestag": 153.0
+        "word": "alternative",
+        "count": 39,
+        "score": 128.9,
+        "ratio": 26.3
+      },
+      {
+        "word": "deutschland",
+        "count": 99,
+        "score": 123.1,
+        "ratio": 2.5
+      },
+      {
+        "word": "antifa",
+        "count": 20,
+        "score": 75.0,
+        "ratio": 41.5
       },
       {
         "word": "kartellparteien",
         "count": 10,
-        "ratioParty": 198.1,
-        "ratioBundestag": 594.8
+        "score": 63.9,
+        "ratio": 594.8
       },
       {
         "word": "regierenden",
         "count": 10,
-        "ratioParty": 79.3,
-        "ratioBundestag": 254.9
-      },
-      {
-        "word": "geschäftsordnung",
-        "count": 7,
-        "ratioParty": 39.6,
-        "ratioBundestag": 17.3
-      },
-      {
-        "word": "ansatzweise",
-        "count": 7,
-        "ratioParty": 34.7,
-        "ratioBundestag": 59.5
+        "score": 55.4,
+        "ratio": 254.9
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "geschützt",
-        "count": 3,
-        "ratioParty": 5.9,
-        "ratioBundestag": 3.9
+        "word": "alternative",
+        "count": 39,
+        "score": 86.6,
+        "ratio": 8.2
       },
       {
-        "word": "wirtschaftlich",
-        "count": 4,
-        "ratioParty": 3.4,
-        "ratioBundestag": 3.2
+        "word": "debatte",
+        "count": 25,
+        "score": 63.2,
+        "ratio": 11.5
+      },
+      {
+        "word": "kartellparteien",
+        "count": 10,
+        "score": 52.9,
+        "ratio": 198.1
+      },
+      {
+        "word": "antifa",
+        "count": 20,
+        "score": 50.8,
+        "ratio": 11.7
+      },
+      {
+        "word": "bisschen",
+        "count": 19,
+        "score": 45.9,
+        "ratio": 10.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "links",
+        "count": 13,
+        "score": 28.3,
+        "ratio": 7.8
       },
       {
         "word": "rechts",
         "count": 5,
-        "ratioParty": 3.0,
-        "ratioBundestag": 2.8
+        "score": 6.7,
+        "ratio": 2.8
       },
+      {
+        "word": "wirtschaftlich",
+        "count": 4,
+        "score": 5.7,
+        "ratio": 3.2
+      },
+      {
+        "word": "geschützt",
+        "count": 3,
+        "score": 4.8,
+        "ratio": 3.9
+      }
+    ],
+    "signatureAdjectivesParty": [
       {
         "word": "links",
         "count": 13,
-        "ratioParty": 2.8,
-        "ratioBundestag": 7.8
+        "score": 17.3,
+        "ratio": 2.8
+      },
+      {
+        "word": "rechts",
+        "count": 5,
+        "score": 6.9,
+        "ratio": 3.0
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 4,
+        "score": 5.9,
+        "ratio": 3.4
+      },
+      {
+        "word": "geschützt",
+        "count": 3,
+        "score": 5.8,
+        "ratio": 5.9
       }
     ]
   },
@@ -146,50 +204,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Stephan Brandner häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Stephan Brandner häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Alternative",
+        "isCorrect": true
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
+      },
       {
         "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
+        "text": "Demokratie",
         "isCorrect": false
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Scheuer",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Scheuer\" nutzt Stephan Brandner 237.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "153.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Alternative\" sagte Stephan Brandner 39× (26.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Stephan Brandner häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Stephan Brandner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Geschützt",
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Links",
         "isCorrect": true
       },
       {
-        "text": "Sicher",
+        "text": "National",
         "isCorrect": false
       },
       {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
+        "text": "Klar",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Geschützt\" nutzt Stephan Brandner 5.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "3.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Links\" sagte Stephan Brandner 13× (7.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

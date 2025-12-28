@@ -60,39 +60,72 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "sorgearbeit",
-        "count": 5,
-        "ratioParty": 447.6,
-        "ratioBundestag": 285.0
-      },
-      {
-        "word": "väter",
-        "count": 5,
-        "ratioParty": 149.2,
-        "ratioBundestag": 61.5
-      },
-      {
-        "word": "geburt",
-        "count": 7,
-        "ratioParty": 104.4,
-        "ratioBundestag": 79.8
-      },
-      {
-        "word": "faktisch",
-        "count": 6,
-        "ratioParty": 67.1,
-        "ratioBundestag": 64.9
+        "word": "eltern",
+        "count": 13,
+        "score": 43.7,
+        "ratio": 27.8
       },
       {
         "word": "gleichstellung",
         "count": 9,
-        "ratioParty": 57.6,
-        "ratioBundestag": 104.5
+        "score": 41.9,
+        "ratio": 104.5
+      },
+      {
+        "word": "geburt",
+        "count": 7,
+        "score": 30.7,
+        "ratio": 79.8
+      },
+      {
+        "word": "zivilgesellschaft",
+        "count": 9,
+        "score": 30.3,
+        "ratio": 28.1
+      },
+      {
+        "word": "sorgearbeit",
+        "count": 5,
+        "score": 28.3,
+        "ratio": 285.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "eltern",
+        "count": 13,
+        "score": 41.5,
+        "ratio": 23.3
+      },
+      {
+        "word": "gleichstellung",
+        "count": 9,
+        "score": 36.6,
+        "ratio": 57.6
+      },
+      {
+        "word": "geburt",
+        "count": 7,
+        "score": 32.6,
+        "ratio": 104.4
+      },
+      {
+        "word": "sorgearbeit",
+        "count": 5,
+        "score": 30.5,
+        "ratio": 447.6
+      },
+      {
+        "word": "stiftung",
+        "count": 7,
+        "score": 25.9,
+        "ratio": 39.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 589,
@@ -114,27 +147,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Misbah Khan häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Misbah Khan häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Demokratie",
+        "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Zukunft",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Familie",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Sorgearbeit",
+        "text": "Eltern",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Sorgearbeit\" nutzt Misbah Khan 447.6× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "285.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Eltern\" sagte Misbah Khan 13× (27.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -153,12 +185,12 @@
         "score": 0.927
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.893
+        "emoji": "🦚",
+        "name": "Pfau",
+        "title": "Eloquente Rednerin",
+        "reason": "Mit Ø 589 Wörtern pro Rede gehörst du zu den ausführlichsten Rednern.",
+        "id": "pfau",
+        "score": 0.707
       }
     ]
   },

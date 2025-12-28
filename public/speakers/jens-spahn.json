@@ -60,62 +60,120 @@
         "count": 33
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "volksparteien",
-        "count": 6,
-        "ratioParty": 280.9,
-        "ratioBundestag": 296.5
+        "word": "deutschland",
+        "count": 126,
+        "score": 162.1,
+        "ratio": 2.6
       },
       {
-        "word": "miersch",
-        "count": 7,
-        "ratioParty": 109.2,
-        "ratioBundestag": 41.5
+        "word": "unterschied",
+        "count": 33,
+        "score": 105.6,
+        "ratio": 23.5
       },
       {
-        "word": "dröge",
-        "count": 11,
-        "ratioParty": 64.4,
-        "ratioBundestag": 60.4
+        "word": "wachstum",
+        "count": 33,
+        "score": 84.5,
+        "ratio": 11.9
       },
       {
-        "word": "extreme",
-        "count": 8,
-        "ratioParty": 53.5,
-        "ratioBundestag": 37.1
+        "word": "europa",
+        "count": 47,
+        "score": 82.1,
+        "ratio": 4.7
       },
       {
-        "word": "skepsis",
-        "count": 5,
-        "ratioParty": 46.8,
-        "ratioBundestag": 46.3
+        "word": "koalition",
+        "count": 38,
+        "score": 58.9,
+        "ratio": 3.7
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "gescheitert",
-        "count": 3,
-        "ratioParty": 7.4,
-        "ratioBundestag": 4.2
+        "word": "deutschland",
+        "count": 126,
+        "score": 153.1,
+        "ratio": 2.4
+      },
+      {
+        "word": "unterschied",
+        "count": 33,
+        "score": 96.0,
+        "ratio": 17.4
+      },
+      {
+        "word": "wachstum",
+        "count": 33,
+        "score": 68.6,
+        "ratio": 7.0
+      },
+      {
+        "word": "europa",
+        "count": 47,
+        "score": 67.4,
+        "ratio": 3.2
+      },
+      {
+        "word": "koalition",
+        "count": 38,
+        "score": 53.5,
+        "ratio": 3.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "stark",
+        "count": 10,
+        "score": 15.5,
+        "ratio": 3.7
       },
       {
         "word": "maßgeblich",
         "count": 3,
-        "ratioParty": 5.2,
-        "ratioBundestag": 5.4
+        "score": 5.6,
+        "ratio": 5.4
       },
       {
         "word": "fair",
         "count": 3,
-        "ratioParty": 5.2,
-        "ratioBundestag": 5.5
+        "score": 5.6,
+        "ratio": 5.5
       },
+      {
+        "word": "gescheitert",
+        "count": 3,
+        "score": 4.9,
+        "ratio": 4.2
+      }
+    ],
+    "signatureAdjectivesParty": [
       {
         "word": "stark",
         "count": 10,
-        "ratioParty": 3.3,
-        "ratioBundestag": 3.7
+        "score": 14.5,
+        "ratio": 3.3
+      },
+      {
+        "word": "gescheitert",
+        "count": 3,
+        "score": 6.4,
+        "ratio": 7.4
+      },
+      {
+        "word": "maßgeblich",
+        "count": 3,
+        "score": 5.5,
+        "ratio": 5.2
+      },
+      {
+        "word": "fair",
+        "count": 3,
+        "score": 5.5,
+        "ratio": 5.2
       }
     ]
   },
@@ -154,50 +212,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jens Spahn häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Jens Spahn häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Migration",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Kinder",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
-        "text": "Volksparteien",
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Deutschland",
         "isCorrect": true
-      },
-      {
-        "text": "Demokratie",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Volksparteien\" nutzt Jens Spahn 280.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "296.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Deutschland\" sagte Jens Spahn 126× (2.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Jens Spahn häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Jens Spahn häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gefährlich",
+        "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Gescheitert",
+        "text": "Stark",
         "isCorrect": true
+      },
+      {
+        "text": "National",
+        "isCorrect": false
       },
       {
         "text": "Alt",
         "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gescheitert\" nutzt Jens Spahn 7.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "4.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Stark\" sagte Jens Spahn 10× (3.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐘",
@@ -207,20 +263,20 @@
     "id": "elefant",
     "alternatives": [
       {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüter",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 1.0
-      },
-      {
         "emoji": "🐝",
         "name": "Biene",
         "title": "Fleißiger Abgeordneter",
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
+      },
+      {
+        "emoji": "🐻",
+        "name": "Bär",
+        "title": "Standhafter Debattierer",
+        "reason": "Trotz 114× unterbrochen zu werden, bleibst du standhaft.",
+        "id": "baer",
+        "score": 0.976
       }
     ]
   },

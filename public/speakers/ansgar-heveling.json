@@ -72,44 +72,84 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "materiell",
-        "count": 5,
-        "ratioParty": 450.6,
-        "ratioBundestag": 352.3
+        "word": "unabhängigkeit",
+        "count": 10,
+        "score": 49.1,
+        "ratio": 134.2
       },
       {
         "word": "entschädigung",
         "count": 7,
-        "ratioParty": 194.1,
-        "ratioBundestag": 272.1
+        "score": 39.3,
+        "ratio": 272.1
       },
       {
-        "word": "angaben",
-        "count": 5,
-        "ratioParty": 163.8,
-        "ratioBundestag": 161.0
+        "word": "grundgesetz",
+        "count": 10,
+        "score": 35.5,
+        "ratio": 34.0
       },
+      {
+        "word": "grundgesetzes",
+        "count": 8,
+        "score": 33.7,
+        "ratio": 66.3
+      },
+      {
+        "word": "schutz",
+        "count": 12,
+        "score": 33.0,
+        "ratio": 14.6
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "unabhängigkeit",
         "count": 10,
-        "ratioParty": 156.7,
-        "ratioBundestag": 134.2
+        "score": 50.6,
+        "ratio": 156.7
       },
       {
-        "word": "diskriminierung",
-        "count": 5,
-        "ratioParty": 106.0,
-        "ratioBundestag": 97.2
+        "word": "grundgesetz",
+        "count": 10,
+        "score": 38.5,
+        "ratio": 46.2
+      },
+      {
+        "word": "entschädigung",
+        "count": 7,
+        "score": 36.9,
+        "ratio": 194.1
+      },
+      {
+        "word": "grundgesetzes",
+        "count": 8,
+        "score": 33.2,
+        "ratio": 62.7
+      },
+      {
+        "word": "schutz",
+        "count": 12,
+        "score": 32.8,
+        "ratio": 14.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "geschützt",
         "count": 4,
-        "ratioParty": 53.4,
-        "ratioBundestag": 32.9
+        "score": 14.1,
+        "ratio": 32.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "geschützt",
+        "count": 4,
+        "score": 16.0,
+        "ratio": 53.4
       }
     ]
   },
@@ -133,41 +173,40 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Ansgar Heveling häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Ansgar Heveling häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Materiell",
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Unabhängigkeit",
         "isCorrect": true
       },
       {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
-        "isCorrect": false
-      },
-      {
-        "text": "Debatte",
+        "text": "Minister",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Materiell\" nutzt Ansgar Heveling 450.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "352.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Unabhängigkeit\" sagte Ansgar Heveling 10× (134.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Ansgar Heveling häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Ansgar Heveling häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Richtig",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
-        "text": "Notwendig",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
-        "text": "Jung",
+        "text": "Neu",
         "isCorrect": false
       },
       {
@@ -175,8 +214,7 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Geschützt\" nutzt Ansgar Heveling 53.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "32.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Geschützt\" sagte Ansgar Heveling 4× (32.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦦",
@@ -186,20 +224,20 @@
     "id": "otter",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.867
-      },
-      {
         "emoji": "🦫",
         "name": "Biber",
         "title": "Konstruktiver Brückenbauer",
         "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
         "id": "biber",
         "score": 0.86
+      },
+      {
+        "emoji": "🐇",
+        "name": "Hase",
+        "title": "Wendiger Optimist",
+        "reason": "Mit positivem Blick reagierst du schnell auf neue Themen.",
+        "id": "hase",
+        "score": 0.795
       }
     ]
   },

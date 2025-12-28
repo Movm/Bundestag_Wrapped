@@ -60,44 +60,84 @@
         "count": 7
       }
     ],
-    "signatureWords": [
-      {
-        "word": "verbrenner",
-        "count": 5,
-        "ratioParty": 56.1,
-        "ratioBundestag": 37.7
-      },
-      {
-        "word": "autos",
-        "count": 6,
-        "ratioParty": 48.1,
-        "ratioBundestag": 49.2
-      },
+    "signatureWordsBundestag": [
       {
         "word": "verbrennerverbot",
         "count": 6,
-        "ratioParty": 28.8,
-        "ratioBundestag": 86.1
+        "score": 26.8,
+        "ratio": 86.1
       },
       {
         "word": "fahren",
         "count": 8,
-        "ratioParty": 19.5,
-        "ratioBundestag": 23.6
+        "score": 25.6,
+        "ratio": 23.6
       },
       {
-        "word": "finden",
+        "word": "autos",
+        "count": 6,
+        "score": 23.5,
+        "ratio": 49.2
+      },
+      {
+        "word": "grünen",
+        "count": 11,
+        "score": 22.2,
+        "ratio": 6.5
+      },
+      {
+        "word": "verbrenner",
         "count": 5,
-        "ratioParty": 7.6,
-        "ratioBundestag": 5.7
+        "score": 18.3,
+        "ratio": 37.7
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "fahren",
+        "count": 8,
+        "score": 24.2,
+        "ratio": 19.5
+      },
+      {
+        "word": "autos",
+        "count": 6,
+        "score": 23.4,
+        "ratio": 48.1
+      },
+      {
+        "word": "verbrennerverbot",
+        "count": 6,
+        "score": 20.4,
+        "ratio": 28.8
+      },
+      {
+        "word": "verbrenner",
+        "count": 5,
+        "score": 20.2,
+        "ratio": 56.1
+      },
+      {
+        "word": "grünen",
+        "count": 11,
+        "score": 15.7,
+        "ratio": 3.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "sicher",
         "count": 3,
-        "ratioParty": 4.0,
-        "ratioBundestag": 3.0
+        "score": 4.2,
+        "ratio": 3.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 3,
+        "score": 4.9,
+        "ratio": 4.0
       }
     ]
   },
@@ -126,50 +166,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Maximilian Kneller häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Maximilian Kneller häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Verbrenner",
+        "text": "Verbrennerverbot",
         "isCorrect": true
       },
       {
-        "text": "Reform",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Arbeit",
+        "text": "Familie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verbrenner\" nutzt Maximilian Kneller 56.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "37.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Verbrennerverbot\" sagte Maximilian Kneller 6× (86.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Maximilian Kneller häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Maximilian Kneller häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Sozial",
+        "isCorrect": false
+      },
       {
         "text": "Sicher",
         "isCorrect": true
       },
       {
-        "text": "Europäisch",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Sozial",
+        "text": "Notwendig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sicher\" nutzt Maximilian Kneller 4.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "3.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Maximilian Kneller 3× (3.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

@@ -72,44 +72,84 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "schlecht",
         "count": 9,
-        "ratioParty": 44.9,
-        "ratioBundestag": 75.1
+        "score": 39.0,
+        "ratio": 75.1
       },
       {
         "word": "china",
         "count": 9,
-        "ratioParty": 33.9,
-        "ratioBundestag": 48.0
-      },
-      {
-        "word": "vorschläge",
-        "count": 5,
-        "ratioParty": 22.2,
-        "ratioBundestag": 26.0
+        "score": 35.0,
+        "ratio": 48.0
       },
       {
         "word": "unternehmen",
         "count": 13,
-        "ratioParty": 13.7,
-        "ratioBundestag": 12.7
+        "score": 34.0,
+        "ratio": 12.7
+      },
+      {
+        "word": "vorschläge",
+        "count": 5,
+        "score": 16.5,
+        "ratio": 26.0
+      },
+      {
+        "word": "wissen",
+        "count": 7,
+        "score": 14.0,
+        "ratio": 6.4
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "unternehmen",
+        "count": 13,
+        "score": 34.9,
+        "ratio": 13.7
+      },
+      {
+        "word": "schlecht",
+        "count": 9,
+        "score": 34.4,
+        "ratio": 44.9
+      },
+      {
+        "word": "china",
+        "count": 9,
+        "score": 32.0,
+        "ratio": 33.9
       },
       {
         "word": "staat",
         "count": 6,
-        "ratioParty": 12.9,
-        "ratioBundestag": 8.1
+        "score": 15.8,
+        "ratio": 12.9
+      },
+      {
+        "word": "vorschläge",
+        "count": 5,
+        "score": 15.7,
+        "ratio": 22.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "schlecht",
         "count": 9,
-        "ratioParty": 44.9,
-        "ratioBundestag": 75.1
+        "score": 39.0,
+        "ratio": 75.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "schlecht",
+        "count": 9,
+        "score": 34.4,
+        "ratio": 44.9
       }
     ]
   },
@@ -133,37 +173,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Franziska Brantner häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Franziska Brantner häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
       {
         "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Minister",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
         "text": "Schlecht",
         "isCorrect": true
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schlecht\" nutzt Dr. Franziska Brantner 44.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "75.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Schlecht\" sagte Dr. Franziska Brantner 9× (75.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Franziska Brantner häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Franziska Brantner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
+        "text": "National",
         "isCorrect": false
       },
       {
@@ -171,12 +206,15 @@
         "isCorrect": true
       },
       {
-        "text": "Richtig",
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schlecht\" nutzt Dr. Franziska Brantner 44.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "75.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Schlecht\" sagte Dr. Franziska Brantner 9× (75.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦫",

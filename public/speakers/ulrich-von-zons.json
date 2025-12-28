@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "grünen",
+        "count": 13,
+        "score": 32.3,
+        "ratio": 11.0
+      },
       {
         "word": "schreien",
         "count": 5,
-        "ratioParty": 54.3,
-        "ratioBundestag": 135.7
+        "score": 24.6,
+        "ratio": 135.7
       },
       {
-        "word": "gerechtigkeit",
-        "count": 5,
-        "ratioParty": 31.4,
-        "ratioBundestag": 14.2
-      },
-      {
-        "word": "fordern",
-        "count": 6,
-        "ratioParty": 6.1,
-        "ratioBundestag": 9.4
+        "word": "deutschland",
+        "count": 14,
+        "score": 15.6,
+        "ratio": 2.0
       },
       {
         "word": "alternative",
         "count": 5,
-        "ratioParty": 5.4,
-        "ratioBundestag": 17.7
+        "score": 14.6,
+        "ratio": 17.7
       },
+      {
+        "word": "fordern",
+        "count": 6,
+        "score": 14.1,
+        "ratio": 9.4
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "grünen",
         "count": 13,
-        "ratioParty": 5.3,
-        "ratioBundestag": 11.0
+        "score": 24.0,
+        "ratio": 5.3
+      },
+      {
+        "word": "schreien",
+        "count": 5,
+        "score": 20.1,
+        "ratio": 54.3
+      },
+      {
+        "word": "gerechtigkeit",
+        "count": 5,
+        "score": 17.4,
+        "ratio": 31.4
+      },
+      {
+        "word": "fordern",
+        "count": 6,
+        "score": 11.8,
+        "ratio": 6.1
+      },
+      {
+        "word": "alternative",
+        "count": 5,
+        "score": 9.3,
+        "ratio": 5.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 303,
@@ -126,10 +159,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Ulrich von Zons häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Ulrich von Zons häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Investitionen",
+        "text": "Rente",
         "isCorrect": false
       },
       {
@@ -137,16 +170,15 @@
         "isCorrect": false
       },
       {
-        "text": "Bundesregierung",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Schreien",
+        "text": "Grünen",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Schreien\" nutzt Ulrich von Zons 54.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "135.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Grünen\" sagte Ulrich von Zons 13× (11.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

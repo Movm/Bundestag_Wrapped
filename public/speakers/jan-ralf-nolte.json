@@ -72,44 +72,84 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "bundeswehr",
+        "count": 14,
+        "score": 40.1,
+        "ratio": 16.6
+      },
       {
         "word": "extremismus",
         "count": 8,
-        "ratioParty": 162.6,
-        "ratioBundestag": 112.6
+        "score": 37.9,
+        "ratio": 112.6
       },
       {
         "word": "soldat",
         "count": 7,
-        "ratioParty": 83.7,
-        "ratioBundestag": 203.4
+        "score": 37.2,
+        "ratio": 203.4
+      },
+      {
+        "word": "soldaten",
+        "count": 11,
+        "score": 31.6,
+        "ratio": 16.7
       },
       {
         "word": "verteidigen",
         "count": 7,
-        "ratioParty": 47.4,
-        "ratioBundestag": 21.1
+        "score": 21.7,
+        "ratio": 21.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "extremismus",
+        "count": 8,
+        "score": 40.8,
+        "ratio": 162.6
       },
       {
         "word": "bundeswehr",
         "count": 14,
-        "ratioParty": 16.3,
-        "ratioBundestag": 16.6
+        "score": 39.9,
+        "ratio": 16.3
       },
       {
-        "word": "offenbar",
-        "count": 5,
-        "ratioParty": 16.1,
-        "ratioBundestag": 29.6
+        "word": "soldat",
+        "count": 7,
+        "score": 31.1,
+        "ratio": 83.7
+      },
+      {
+        "word": "soldaten",
+        "count": 11,
+        "score": 30.5,
+        "ratio": 15.0
+      },
+      {
+        "word": "verteidigen",
+        "count": 7,
+        "score": 27.2,
+        "ratio": 47.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "freiheitlich",
         "count": 3,
-        "ratioParty": 30.5,
-        "ratioBundestag": 42.2
+        "score": 11.3,
+        "ratio": 42.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "freiheitlich",
+        "count": 3,
+        "score": 10.3,
+        "ratio": 30.5
       }
     ]
   },
@@ -133,50 +173,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jan Ralf Nolte häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Jan Ralf Nolte häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bürger",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Extremismus",
+        "text": "Bundeswehr",
         "isCorrect": true
       },
       {
-        "text": "Gesellschaft",
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Extremismus\" nutzt Jan Ralf Nolte 162.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "112.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bundeswehr\" sagte Jan Ralf Nolte 14× (16.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Jan Ralf Nolte häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Jan Ralf Nolte häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
-        "isCorrect": false
-      },
       {
         "text": "Freiheitlich",
         "isCorrect": true
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Freiheitlich\" nutzt Jan Ralf Nolte 30.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "42.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Freiheitlich\" sagte Jan Ralf Nolte 3× (42.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

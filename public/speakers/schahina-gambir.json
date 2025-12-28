@@ -72,62 +72,120 @@
         "count": 9
       }
     ],
-    "signatureWords": [
-      {
-        "word": "bundesaufnahmeprogramm",
-        "count": 5,
-        "ratioParty": 212.9,
-        "ratioBundestag": 186.5
-      },
-      {
-        "word": "aussetzung",
-        "count": 5,
-        "ratioParty": 47.3,
-        "ratioBundestag": 38.7
-      },
+    "signatureWordsBundestag": [
       {
         "word": "afghanistan",
         "count": 18,
-        "ratioParty": 40.3,
-        "ratioBundestag": 48.8
+        "score": 70.4,
+        "ratio": 48.8
       },
       {
-        "word": "taliban",
-        "count": 6,
-        "ratioParty": 20.4,
-        "ratioBundestag": 39.3
+        "word": "menschen",
+        "count": 43,
+        "score": 65.4,
+        "ratio": 3.6
       },
       {
         "word": "familie",
         "count": 12,
-        "ratioParty": 17.9,
-        "ratioBundestag": 17.3
+        "score": 34.9,
+        "ratio": 17.3
+      },
+      {
+        "word": "entwicklungszusammenarbeit",
+        "count": 9,
+        "score": 29.9,
+        "ratio": 26.6
+      },
+      {
+        "word": "bundesaufnahmeprogramm",
+        "count": 5,
+        "score": 26.2,
+        "ratio": 186.5
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "verlässlich",
-        "count": 3,
-        "ratioParty": 11.1,
-        "ratioBundestag": 15.2
+        "word": "afghanistan",
+        "count": 18,
+        "score": 67.0,
+        "ratio": 40.3
       },
+      {
+        "word": "menschen",
+        "count": 43,
+        "score": 53.8,
+        "ratio": 2.5
+      },
+      {
+        "word": "familie",
+        "count": 12,
+        "score": 35.3,
+        "ratio": 17.9
+      },
+      {
+        "word": "familien",
+        "count": 11,
+        "score": 27.7,
+        "ratio": 11.4
+      },
+      {
+        "word": "bundesaufnahmeprogramm",
+        "count": 5,
+        "score": 26.8,
+        "ratio": 212.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "falsch",
         "count": 4,
-        "ratioParty": 5.8,
-        "ratioBundestag": 7.4
+        "score": 8.5,
+        "ratio": 7.4
+      },
+      {
+        "word": "verlässlich",
+        "count": 3,
+        "score": 8.3,
+        "ratio": 15.2
       },
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 3.4,
-        "ratioBundestag": 4.2
+        "score": 5.0,
+        "ratio": 4.2
       },
       {
         "word": "sicher",
         "count": 3,
-        "ratioParty": 3.1,
-        "ratioBundestag": 2.4
+        "score": 3.7,
+        "ratio": 2.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 7.7,
+        "ratio": 5.8
+      },
+      {
+        "word": "verlässlich",
+        "count": 3,
+        "score": 7.5,
+        "ratio": 11.1
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 4.4,
+        "ratio": 3.4
+      },
+      {
+        "word": "sicher",
+        "count": 3,
+        "score": 4.2,
+        "ratio": 3.1
       }
     ]
   },
@@ -151,50 +209,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Schahina Gambir häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Schahina Gambir häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesaufnahmeprogramm",
+        "text": "Afghanistan",
         "isCorrect": true
       },
       {
-        "text": "Koalition",
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bundesaufnahmeprogramm\" nutzt Schahina Gambir 212.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "186.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Afghanistan\" sagte Schahina Gambir 18× (48.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Schahina Gambir häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Schahina Gambir häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
+        "isCorrect": true
+      },
       {
         "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
         "text": "Schlecht",
         "isCorrect": false
-      },
-      {
-        "text": "Verlässlich",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Verlässlich\" nutzt Schahina Gambir 11.1× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "15.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Falsch\" sagte Schahina Gambir 4× (7.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -212,12 +268,12 @@
         "score": 0.968
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.96
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrliche Rednerin",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.937
       }
     ]
   },

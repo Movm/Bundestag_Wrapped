@@ -72,50 +72,108 @@
         "count": 23
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "friedensplan",
-        "count": 7,
-        "ratioParty": 317.6,
-        "ratioBundestag": 76.7
+        "word": "ukraine",
+        "count": 59,
+        "score": 154.3,
+        "ratio": 12.7
       },
       {
-        "word": "verknappung",
-        "count": 5,
-        "ratioParty": 226.9,
-        "ratioBundestag": 230.1
+        "word": "russland",
+        "count": 33,
+        "score": 86.1,
+        "ratio": 12.6
       },
       {
-        "word": "friedensordnung",
-        "count": 6,
-        "ratioParty": 136.1,
-        "ratioBundestag": 65.7
+        "word": "frieden",
+        "count": 31,
+        "score": 77.1,
+        "ratio": 11.0
       },
       {
-        "word": "jüdinnen",
-        "count": 7,
-        "ratioParty": 63.5,
-        "ratioBundestag": 33.6
+        "word": "europa",
+        "count": 33,
+        "score": 59.8,
+        "ratio": 5.1
       },
       {
-        "word": "aggression",
-        "count": 5,
-        "ratioParty": 56.7,
-        "ratioBundestag": 26.8
+        "word": "krieg",
+        "count": 23,
+        "score": 53.8,
+        "ratio": 9.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "ukraine",
+        "count": 59,
+        "score": 153.9,
+        "ratio": 12.6
+      },
+      {
+        "word": "russland",
+        "count": 33,
+        "score": 88.5,
+        "ratio": 13.6
+      },
+      {
+        "word": "frieden",
+        "count": 31,
+        "score": 70.9,
+        "ratio": 8.8
+      },
+      {
+        "word": "krieg",
+        "count": 23,
+        "score": 55.0,
+        "ratio": 9.9
+      },
+      {
+        "word": "europa",
+        "count": 33,
+        "score": 54.9,
+        "ratio": 4.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 7,
+        "score": 8.1,
+        "ratio": 2.2
+      },
       {
         "word": "wirtschaftlich",
         "count": 4,
-        "ratioParty": 3.7,
-        "ratioBundestag": 4.1
+        "score": 6.5,
+        "ratio": 4.1
+      },
+      {
+        "word": "stark",
+        "count": 4,
+        "score": 4.7,
+        "ratio": 2.3
       },
       {
         "word": "entscheidend",
         "count": 3,
-        "ratioParty": 2.0,
-        "ratioBundestag": 2.5
+        "score": 3.8,
+        "ratio": 2.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirtschaftlich",
+        "count": 4,
+        "score": 6.2,
+        "ratio": 3.7
+      },
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 3.3,
+        "ratio": 2.0
       }
     ]
   },
@@ -154,50 +212,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Siemtje Möller häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Siemtje Möller häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Friedensplan",
+        "text": "Ukraine",
         "isCorrect": true
       },
       {
-        "text": "Wirtschaft",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Migration",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Friedensplan\" nutzt Siemtje Möller 317.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "76.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ukraine\" sagte Siemtje Möller 59× (12.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Siemtje Möller häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Siemtje Möller häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
+        "text": "Sicher",
         "isCorrect": true
-      },
-      {
-        "text": "Schlecht",
-        "isCorrect": false
       },
       {
         "text": "Wichtig",
         "isCorrect": false
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wirtschaftlich\" nutzt Siemtje Möller 3.7× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "4.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Siemtje Möller 7× (2.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦁",
@@ -215,11 +271,11 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüterin",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
         "score": 1.0
       }
     ]

@@ -72,50 +72,96 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "supermarkt",
         "count": 6,
-        "ratioParty": 243.4,
-        "ratioBundestag": 156.2
-      },
-      {
-        "word": "gerechtigkeit",
-        "count": 6,
-        "ratioParty": 28.6,
-        "ratioBundestag": 16.4
+        "score": 30.3,
+        "ratio": 156.2
       },
       {
         "word": "linke",
         "count": 8,
-        "ratioParty": 22.8,
-        "ratioBundestag": 11.6
+        "score": 20.3,
+        "ratio": 11.6
       },
       {
         "word": "entlastung",
         "count": 6,
-        "ratioParty": 13.2,
-        "ratioBundestag": 16.9
+        "score": 17.3,
+        "ratio": 16.9
+      },
+      {
+        "word": "gerechtigkeit",
+        "count": 6,
+        "score": 17.1,
+        "ratio": 16.4
+      },
+      {
+        "word": "wettbewerbsfähigkeit",
+        "count": 5,
+        "score": 13.1,
+        "ratio": 12.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "supermarkt",
+        "count": 6,
+        "score": 33.0,
+        "ratio": 243.4
+      },
+      {
+        "word": "linke",
+        "count": 8,
+        "score": 25.3,
+        "ratio": 22.8
+      },
+      {
+        "word": "gerechtigkeit",
+        "count": 6,
+        "score": 20.3,
+        "ratio": 28.6
+      },
+      {
+        "word": "entlastung",
+        "count": 6,
+        "score": 15.9,
+        "ratio": 13.2
       },
       {
         "word": "soziale",
         "count": 5,
-        "ratioParty": 11.7,
-        "ratioBundestag": 10.0
+        "score": 12.7,
+        "ratio": 11.7
       }
     ],
-    "signatureAdjectives": [
-      {
-        "word": "rechts",
-        "count": 3,
-        "ratioParty": 10.8,
-        "ratioBundestag": 9.6
-      },
+    "signatureAdjectivesBundestag": [
       {
         "word": "sicher",
         "count": 5,
-        "ratioParty": 6.0,
-        "ratioBundestag": 6.8
+        "score": 10.3,
+        "ratio": 6.8
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 7.1,
+        "ratio": 9.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 5,
+        "score": 9.8,
+        "ratio": 6.0
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 7.4,
+        "ratio": 10.8
       }
     ]
   },
@@ -139,14 +185,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Stefan Korbach häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Stefan Korbach häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Freiheit",
+        "text": "Reform",
         "isCorrect": false
       },
       {
@@ -154,35 +196,37 @@
         "isCorrect": false
       },
       {
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
         "text": "Supermarkt",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Supermarkt\" nutzt Dr. Stefan Korbach 243.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "156.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Supermarkt\" sagte Dr. Stefan Korbach 6× (156.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Stefan Korbach häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Stefan Korbach häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "National",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
+        "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Rechts",
+        "text": "Sicher",
         "isCorrect": true
       },
       {
-        "text": "Falsch",
+        "text": "Politisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rechts\" nutzt Dr. Stefan Korbach 10.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "9.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Dr. Stefan Korbach 5× (6.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦫",
@@ -200,12 +244,12 @@
         "score": 0.9
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.88
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positiver Teamplayer",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.852
       }
     ]
   },

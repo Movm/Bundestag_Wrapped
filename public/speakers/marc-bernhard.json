@@ -72,50 +72,96 @@
         "count": 22
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "steuer",
+        "count": 36,
+        "score": 153.2,
+        "ratio": 69.4
+      },
+      {
+        "word": "deutschland",
+        "count": 75,
+        "score": 100.1,
+        "ratio": 2.8
+      },
+      {
+        "word": "baukosten",
+        "count": 20,
+        "score": 86.8,
+        "ratio": 75.5
+      },
       {
         "word": "dämmwahn",
         "count": 10,
-        "ratioParty": 299.6,
-        "ratioBundestag": 1340.5
+        "score": 72.0,
+        "ratio": 1340.5
       },
       {
-        "word": "geothermie",
-        "count": 6,
-        "ratioParty": 119.9,
-        "ratioBundestag": 59.6
-      },
-      {
-        "word": "weltdümmste",
-        "count": 5,
-        "ratioParty": 99.9,
-        "ratioBundestag": 446.8
-      },
-      {
-        "word": "grundsteuer",
-        "count": 8,
-        "ratioParty": 95.9,
-        "ratioBundestag": 93.3
-      },
-      {
-        "word": "vierköpfige",
-        "count": 5,
-        "ratioParty": 74.9,
-        "ratioBundestag": 191.5
+        "word": "regierung",
+        "count": 38,
+        "score": 71.7,
+        "ratio": 5.6
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "steuer",
+        "count": 36,
+        "score": 118.6,
+        "ratio": 26.0
+      },
+      {
+        "word": "menschen",
+        "count": 60,
+        "score": 100.2,
+        "ratio": 4.3
+      },
+      {
+        "word": "deutschland",
+        "count": 75,
+        "score": 83.3,
+        "ratio": 2.0
+      },
+      {
+        "word": "baukosten",
+        "count": 20,
+        "score": 68.2,
+        "ratio": 29.2
+      },
+      {
+        "word": "wohnungen",
+        "count": 22,
+        "score": 66.0,
+        "ratio": 19.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "unbezahlbar",
         "count": 6,
-        "ratioParty": 22.5,
-        "ratioBundestag": 53.6
+        "score": 24.0,
+        "ratio": 53.6
       },
       {
         "word": "teuer",
         "count": 7,
-        "ratioParty": 5.7,
-        "ratioBundestag": 8.7
+        "score": 15.9,
+        "ratio": 8.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "unbezahlbar",
+        "count": 6,
+        "score": 18.9,
+        "ratio": 22.5
+      },
+      {
+        "word": "teuer",
+        "count": 7,
+        "score": 13.3,
+        "ratio": 5.7
       }
     ]
   },
@@ -154,30 +200,29 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Marc Bernhard häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Marc Bernhard häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Antrag",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
-        "text": "Steuern",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Dämmwahn",
+        "text": "Steuer",
         "isCorrect": true
+      },
+      {
+        "text": "Debatte",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Dämmwahn\" nutzt Marc Bernhard 299.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "1340.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Steuer\" sagte Marc Bernhard 36× (69.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Marc Bernhard häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Marc Bernhard häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Unbezahlbar",
@@ -188,16 +233,15 @@
         "isCorrect": false
       },
       {
-        "text": "Gut",
+        "text": "Klar",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unbezahlbar\" nutzt Marc Bernhard 22.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "53.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Unbezahlbar\" sagte Marc Bernhard 6× (53.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

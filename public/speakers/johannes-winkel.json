@@ -68,39 +68,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "nachhaltigkeitsfaktor",
         "count": 6,
-        "ratioParty": 1119.4,
-        "ratioBundestag": 1400.1
+        "score": 43.5,
+        "ratio": 1400.1
       },
       {
         "word": "haftbefehl",
         "count": 7,
-        "ratioParty": 653.0,
-        "ratioBundestag": 255.2
-      },
-      {
-        "word": "rentensystem",
-        "count": 5,
-        "ratioParty": 186.6,
-        "ratioBundestag": 92.6
+        "score": 38.8,
+        "ratio": 255.2
       },
       {
         "word": "generation",
         "count": 7,
-        "ratioParty": 31.9,
-        "ratioBundestag": 36.1
+        "score": 25.3,
+        "ratio": 36.1
       },
       {
-        "word": "krisen",
+        "word": "rentensystem",
         "count": 5,
-        "ratioParty": 28.7,
-        "ratioBundestag": 27.6
+        "score": 22.7,
+        "ratio": 92.6
+      },
+      {
+        "word": "junge",
+        "count": 7,
+        "score": 20.6,
+        "ratio": 18.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "haftbefehl",
+        "count": 7,
+        "score": 45.4,
+        "ratio": 653.0
+      },
+      {
+        "word": "nachhaltigkeitsfaktor",
+        "count": 6,
+        "score": 42.1,
+        "ratio": 1119.4
+      },
+      {
+        "word": "rentensystem",
+        "count": 5,
+        "score": 26.2,
+        "ratio": 186.6
+      },
+      {
+        "word": "generation",
+        "count": 7,
+        "score": 24.4,
+        "ratio": 31.9
+      },
+      {
+        "word": "junge",
+        "count": 7,
+        "score": 21.7,
+        "ratio": 21.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 436,
@@ -127,27 +160,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Johannes Winkel häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Johannes Winkel häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
-      },
       {
         "text": "Nachhaltigkeitsfaktor",
         "isCorrect": true
+      },
+      {
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Nachhaltigkeitsfaktor\" nutzt Johannes Winkel 1119.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "1400.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Nachhaltigkeitsfaktor\" sagte Johannes Winkel 6× (1400.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -161,7 +193,7 @@
         "emoji": "🦉",
         "name": "Eule",
         "title": "Themenexperte",
-        "reason": "Dein Fachwort \"Nachhaltigkeitsfaktor\" nutzt du 1119.4× häufiger als deine Fraktion.",
+        "reason": "Dein Fachwort \"Nachhaltigkeitsfaktor\" nutzt du 1400.1× häufiger als deine Fraktion.",
         "id": "eule",
         "score": 0.85
       },

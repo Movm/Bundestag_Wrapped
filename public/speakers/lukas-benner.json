@@ -56,44 +56,84 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "dublin",
         "count": 5,
-        "ratioParty": 26.3,
-        "ratioBundestag": 102.0
-      },
-      {
-        "word": "schreiben",
-        "count": 5,
-        "ratioParty": 19.6,
-        "ratioBundestag": 20.6
+        "score": 23.2,
+        "ratio": 102.0
       },
       {
         "word": "entwurf",
         "count": 6,
-        "ratioParty": 13.5,
-        "ratioBundestag": 16.0
+        "score": 17.0,
+        "ratio": 16.0
       },
       {
         "word": "dobrindt",
         "count": 6,
-        "ratioParty": 9.1,
-        "ratioBundestag": 15.7
+        "score": 16.9,
+        "ratio": 15.7
+      },
+      {
+        "word": "schreiben",
+        "count": 5,
+        "score": 15.4,
+        "ratio": 20.6
       },
       {
         "word": "schauen",
         "count": 5,
-        "ratioParty": 5.8,
-        "ratioBundestag": 7.3
+        "score": 10.6,
+        "ratio": 7.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "dublin",
+        "count": 5,
+        "score": 16.5,
+        "ratio": 26.3
+      },
+      {
+        "word": "entwurf",
+        "count": 6,
+        "score": 16.0,
+        "ratio": 13.5
+      },
+      {
+        "word": "schreiben",
+        "count": 5,
+        "score": 15.1,
+        "ratio": 19.6
+      },
+      {
+        "word": "dobrindt",
+        "count": 6,
+        "score": 13.9,
+        "ratio": 9.1
+      },
+      {
+        "word": "schauen",
+        "count": 5,
+        "score": 9.6,
+        "ratio": 5.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "kritisch",
         "count": 3,
-        "ratioParty": 26.9,
-        "ratioBundestag": 23.5
+        "score": 9.6,
+        "ratio": 23.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "kritisch",
+        "count": 3,
+        "score": 10.0,
+        "ratio": 26.9
       }
     ]
   },
@@ -117,33 +157,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Lukas Benner häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Lukas Benner häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
       {
         "text": "Dublin",
         "isCorrect": true
+      },
+      {
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
       },
       {
         "text": "Zukunft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Dublin\" nutzt Lukas Benner 26.3× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "102.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Dublin\" sagte Lukas Benner 5× (102.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Lukas Benner häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Lukas Benner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "National",
+        "text": "Gut",
         "isCorrect": false
       },
       {
@@ -151,16 +190,15 @@
         "isCorrect": true
       },
       {
-        "text": "Stark",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
-        "text": "Jung",
+        "text": "National",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kritisch\" nutzt Lukas Benner 26.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "23.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Kritisch\" sagte Lukas Benner 3× (23.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

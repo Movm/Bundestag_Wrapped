@@ -68,39 +68,72 @@
         "count": 9
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "aktivrente",
+        "count": 11,
+        "score": 42.4,
+        "ratio": 46.3
+      },
+      {
+        "word": "steuerlichen",
+        "count": 8,
+        "score": 36.4,
+        "ratio": 93.8
+      },
+      {
+        "word": "geltender",
+        "count": 5,
+        "score": 34.1,
+        "ratio": 918.6
+      },
+      {
+        "word": "steuerpolitik",
+        "count": 7,
+        "score": 32.1,
+        "ratio": 96.5
+      },
       {
         "word": "grundfreibetrag",
         "count": 5,
-        "ratioParty": 293.2,
-        "ratioBundestag": 459.3
-      },
+        "score": 30.7,
+        "ratio": 459.3
+      }
+    ],
+    "signatureWordsParty": [
       {
-        "word": "transaktionen",
-        "count": 5,
-        "ratioParty": 293.2,
-        "ratioBundestag": 275.6
+        "word": "aktivrente",
+        "count": 11,
+        "score": 37.2,
+        "ratio": 28.5
       },
       {
         "word": "grundsteuer",
         "count": 6,
-        "ratioParty": 263.9,
-        "ratioBundestag": 132.3
+        "score": 33.5,
+        "ratio": 263.9
       },
       {
         "word": "steuersystem",
         "count": 6,
-        "ratioParty": 175.9,
-        "ratioBundestag": 114.0
+        "score": 31.1,
+        "ratio": 175.9
       },
       {
-        "word": "steuerhinterziehung",
-        "count": 5,
-        "ratioParty": 146.6,
-        "ratioBundestag": 86.1
+        "word": "steuerlichen",
+        "count": 8,
+        "score": 30.7,
+        "ratio": 45.4
+      },
+      {
+        "word": "steuerpolitik",
+        "count": 7,
+        "score": 29.3,
+        "ratio": 64.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 466,
@@ -122,27 +155,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Matthias Hiller häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Matthias Hiller häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Grundfreibetrag",
+        "text": "Aktivrente",
         "isCorrect": true
+      },
+      {
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Grundfreibetrag\" nutzt Dr. Matthias Hiller 293.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "459.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Aktivrente\" sagte Dr. Matthias Hiller 11× (46.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -161,12 +193,12 @@
         "score": 0.987
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.933
+        "emoji": "🦫",
+        "name": "Biber",
+        "title": "Konstruktiver Brückenbauer",
+        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
+        "id": "biber",
+        "score": 0.904
       }
     ]
   },

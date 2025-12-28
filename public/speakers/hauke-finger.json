@@ -56,38 +56,72 @@
         "count": 4
       }
     ],
-    "signatureWords": [
-      {
-        "word": "erbschaftsteuer",
-        "count": 6,
-        "ratioParty": 197.0,
-        "ratioBundestag": 93.1
-      },
-      {
-        "word": "kommunen",
-        "count": 8,
-        "ratioParty": 14.1,
-        "ratioBundestag": 7.0
-      },
+    "signatureWordsBundestag": [
       {
         "word": "schulden",
         "count": 9,
-        "ratioParty": 9.5,
-        "ratioBundestag": 24.1
+        "score": 29.0,
+        "ratio": 24.1
+      },
+      {
+        "word": "erbschaftsteuer",
+        "count": 6,
+        "score": 27.3,
+        "ratio": 93.1
       },
       {
         "word": "bürger",
         "count": 9,
-        "ratioParty": 2.5,
-        "ratioBundestag": 6.0
+        "score": 17.5,
+        "ratio": 6.0
+      },
+      {
+        "word": "kommunen",
+        "count": 8,
+        "score": 16.6,
+        "ratio": 7.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "erbschaftsteuer",
+        "count": 6,
+        "score": 31.7,
+        "ratio": 197.0
+      },
+      {
+        "word": "kommunen",
+        "count": 8,
+        "score": 21.7,
+        "ratio": 14.1
+      },
+      {
+        "word": "schulden",
+        "count": 9,
+        "score": 21.2,
+        "ratio": 9.5
+      },
+      {
+        "word": "bürger",
+        "count": 9,
+        "score": 11.3,
+        "ratio": 2.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "gerecht",
         "count": 4,
-        "ratioParty": 26.3,
-        "ratioBundestag": 11.0
+        "score": 9.9,
+        "ratio": 11.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 13.2,
+        "ratio": 26.3
       }
     ]
   },
@@ -111,50 +145,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Hauke Finger häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Hauke Finger häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Schulden",
+        "isCorrect": true
+      },
       {
         "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Erbschaftsteuer",
-        "isCorrect": true
-      },
-      {
-        "text": "Klima",
+        "text": "Minister",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Erbschaftsteuer\" nutzt Hauke Finger 197.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "93.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Schulden\" sagte Hauke Finger 9× (24.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Hauke Finger häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Hauke Finger häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
+      },
       {
         "text": "Gerecht",
         "isCorrect": true
-      },
-      {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Europäisch",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gerecht\" nutzt Hauke Finger 26.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "11.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gerecht\" sagte Hauke Finger 4× (11.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

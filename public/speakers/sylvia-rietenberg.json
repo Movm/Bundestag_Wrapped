@@ -56,50 +56,96 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "jobcentern",
         "count": 6,
-        "ratioParty": 612.4,
-        "ratioBundestag": 153.0
+        "score": 30.2,
+        "ratio": 153.0
+      },
+      {
+        "word": "menschen",
+        "count": 24,
+        "score": 29.2,
+        "ratio": 2.4
       },
       {
         "word": "beschäftigte",
         "count": 6,
-        "ratioParty": 102.1,
-        "ratioBundestag": 46.1
+        "score": 23.1,
+        "ratio": 46.1
       },
       {
         "word": "jobcenter",
         "count": 5,
-        "ratioParty": 85.1,
-        "ratioBundestag": 44.6
+        "score": 19.1,
+        "ratio": 44.6
       },
       {
-        "word": "gebaut",
+        "word": "wohnungen",
+        "count": 7,
+        "score": 19.1,
+        "ratio": 14.4
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "jobcentern",
+        "count": 6,
+        "score": 38.5,
+        "ratio": 612.4
+      },
+      {
+        "word": "beschäftigte",
+        "count": 6,
+        "score": 27.8,
+        "ratio": 102.1
+      },
+      {
+        "word": "kommunen",
+        "count": 10,
+        "score": 22.4,
+        "ratio": 8.4
+      },
+      {
+        "word": "jobcenter",
         "count": 5,
-        "ratioParty": 22.2,
-        "ratioBundestag": 15.9
+        "score": 22.3,
+        "ratio": 85.1
       },
       {
         "word": "wohnraum",
         "count": 6,
-        "ratioParty": 21.9,
-        "ratioBundestag": 15.0
+        "score": 18.8,
+        "ratio": 21.9
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "sozial",
         "count": 3,
-        "ratioParty": 12.2,
-        "ratioBundestag": 10.7
+        "score": 7.4,
+        "ratio": 10.7
       },
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 4.1,
-        "ratioBundestag": 5.1
+        "score": 5.4,
+        "ratio": 5.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sozial",
+        "count": 3,
+        "score": 7.8,
+        "ratio": 12.2
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 4.9,
+        "ratio": 4.1
       }
     ]
   },
@@ -123,50 +169,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Sylvia Rietenberg häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Sylvia Rietenberg häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
       {
         "text": "Jobcentern",
         "isCorrect": true
       },
       {
-        "text": "Kinder",
+        "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Sicherheit",
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Jobcentern\" nutzt Sylvia Rietenberg 612.4× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "153.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Jobcentern\" sagte Sylvia Rietenberg 6× (153.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Sylvia Rietenberg häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Sylvia Rietenberg häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Sozial",
         "isCorrect": true
       },
       {
-        "text": "National",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Neu",
+        "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Politisch",
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sozial\" nutzt Sylvia Rietenberg 12.2× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "10.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sozial\" sagte Sylvia Rietenberg 3× (10.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -189,7 +233,7 @@
         "title": "Clevere Strategin",
         "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
         "id": "fuchs",
-        "score": 0.933
+        "score": 0.763
       }
     ]
   },

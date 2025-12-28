@@ -72,39 +72,72 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "zahlungen",
         "count": 12,
-        "ratioParty": 314.6,
-        "ratioBundestag": 288.3
+        "score": 68.0,
+        "ratio": 288.3
       },
       {
         "word": "organisationen",
         "count": 6,
-        "ratioParty": 55.7,
-        "ratioBundestag": 41.2
+        "score": 22.5,
+        "ratio": 41.2
       },
       {
         "word": "bosnien",
         "count": 5,
-        "ratioParty": 54.4,
-        "ratioBundestag": 54.4
+        "score": 20.1,
+        "ratio": 54.4
       },
       {
         "word": "internationale",
         "count": 6,
-        "ratioParty": 20.3,
-        "ratioBundestag": 18.5
+        "score": 17.8,
+        "ratio": 18.5
       },
       {
         "word": "sehen",
         "count": 6,
-        "ratioParty": 5.9,
-        "ratioBundestag": 5.8
+        "score": 11.5,
+        "ratio": 5.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "zahlungen",
+        "count": 12,
+        "score": 69.1,
+        "ratio": 314.6
+      },
+      {
+        "word": "organisationen",
+        "count": 6,
+        "score": 24.2,
+        "ratio": 55.7
+      },
+      {
+        "word": "bosnien",
+        "count": 5,
+        "score": 20.1,
+        "ratio": 54.4
+      },
+      {
+        "word": "internationale",
+        "count": 6,
+        "score": 18.3,
+        "ratio": 20.3
+      },
+      {
+        "word": "sehen",
+        "count": 6,
+        "score": 11.6,
+        "ratio": 5.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 460,
@@ -131,27 +164,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Peter Beyer häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Peter Beyer häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
       {
         "text": "Zahlungen",
         "isCorrect": true
+      },
+      {
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Zahlungen\" nutzt Peter Beyer 314.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "288.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Zahlungen\" sagte Peter Beyer 12× (288.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

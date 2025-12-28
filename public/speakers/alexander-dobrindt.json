@@ -72,44 +72,77 @@
         "count": 32
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "vereinigung",
-        "count": 6,
-        "ratioParty": 288.6,
-        "ratioBundestag": 70.3
+        "word": "migration",
+        "count": 64,
+        "score": 212.7,
+        "ratio": 26.8
       },
       {
-        "word": "return",
-        "count": 6,
-        "ratioParty": 288.6,
-        "ratioBundestag": 182.7
+        "word": "deutschland",
+        "count": 114,
+        "score": 140.5,
+        "ratio": 2.4
       },
       {
-        "word": "abschiebeflug",
-        "count": 5,
-        "ratioParty": 240.5,
-        "ratioBundestag": 761.3
+        "word": "schlichtweg",
+        "count": 33,
+        "score": 135.6,
+        "ratio": 59.8
       },
       {
-        "word": "eichwede",
-        "count": 5,
-        "ratioParty": 240.5,
-        "ratioBundestag": 108.8
+        "word": "polizistinnen",
+        "count": 30,
+        "score": 129.4,
+        "ratio": 73.7
       },
       {
-        "word": "pullfaktoren",
-        "count": 7,
-        "ratioParty": 168.3,
-        "ratioBundestag": 532.9
+        "word": "polizisten",
+        "count": 34,
+        "score": 118.0,
+        "ratio": 31.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "migration",
+        "count": 64,
+        "score": 196.0,
+        "ratio": 20.4
+      },
+      {
+        "word": "deutschland",
+        "count": 114,
+        "score": 132.4,
+        "ratio": 2.2
+      },
+      {
+        "word": "schlichtweg",
+        "count": 33,
+        "score": 127.5,
+        "ratio": 46.7
+      },
+      {
+        "word": "polizistinnen",
+        "count": 30,
+        "score": 111.5,
+        "ratio": 40.1
+      },
+      {
+        "word": "polizisten",
+        "count": 34,
+        "score": 106.8,
+        "ratio": 22.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": [
       {
         "word": "falsch",
         "count": 4,
-        "ratioParty": 2.1,
-        "ratioBundestag": 1.9
+        "score": 4.5,
+        "ratio": 2.1
       }
     ]
   },
@@ -138,51 +171,28 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Alexander Dobrindt häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Alexander Dobrindt häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Sicherheit",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Minister",
-        "isCorrect": false
-      },
-      {
-        "text": "Vereinigung",
+        "text": "Migration",
         "isCorrect": true
       },
       {
-        "text": "Europa",
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Vereinigung\" nutzt Alexander Dobrindt 288.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "70.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Migration\" sagte Alexander Dobrindt 64× (26.8× häufiger als der Bundestag-Durchschnitt)."
   },
-  "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Alexander Dobrindt häufiger als der Rest der CDU/CSU-Fraktion?",
-    "options": [
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Falsch",
-        "isCorrect": true
-      },
-      {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
-        "isCorrect": false
-      }
-    ],
-    "explanationParty": "\"Falsch\" nutzt Alexander Dobrindt 2.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "1.9× häufiger als der Bundestag-Durchschnitt."
-  },
+  "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
     "emoji": "🐘",
     "name": "Elefant",
@@ -191,19 +201,19 @@
     "id": "elefant",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 1.0
-      },
-      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüter",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
+        "score": 1.0
+      },
+      {
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißiger Abgeordneter",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
         "score": 1.0
       }
     ]

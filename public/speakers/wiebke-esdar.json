@@ -72,44 +72,84 @@
         "count": 17
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "hendrik",
-        "count": 6,
-        "ratioParty": 183.8,
-        "ratioBundestag": 206.2
+        "word": "forschung",
+        "count": 25,
+        "score": 68.4,
+        "ratio": 14.4
       },
       {
-        "word": "schlüsseltechnologien",
-        "count": 5,
-        "ratioParty": 51.1,
-        "ratioBundestag": 30.3
+        "word": "wissenschaft",
+        "count": 17,
+        "score": 52.9,
+        "ratio": 21.5
       },
       {
-        "word": "technologische",
-        "count": 8,
-        "ratioParty": 44.6,
-        "ratioBundestag": 45.8
+        "word": "investieren",
+        "count": 23,
+        "score": 46.6,
+        "ratio": 6.6
       },
       {
-        "word": "hochschulen",
-        "count": 6,
-        "ratioParty": 30.6,
-        "ratioBundestag": 18.6
+        "word": "haushalt",
+        "count": 26,
+        "score": 37.7,
+        "ratio": 3.3
+      },
+      {
+        "word": "stärken",
+        "count": 20,
+        "score": 36.8,
+        "ratio": 5.3
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "forschung",
+        "count": 25,
+        "score": 67.4,
+        "ratio": 13.8
+      },
+      {
+        "word": "wissenschaft",
+        "count": 17,
+        "score": 51.8,
+        "ratio": 20.0
       },
       {
         "word": "hightech",
         "count": 13,
-        "ratioParty": 25.7,
-        "ratioBundestag": 15.4
+        "score": 42.7,
+        "ratio": 25.7
+      },
+      {
+        "word": "haushalt",
+        "count": 26,
+        "score": 35.3,
+        "ratio": 2.9
+      },
+      {
+        "word": "investieren",
+        "count": 23,
+        "score": 32.4,
+        "ratio": 3.1
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "stark",
         "count": 4,
-        "ratioParty": 2.2,
-        "ratioBundestag": 3.0
+        "score": 5.6,
+        "ratio": 3.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "stark",
+        "count": 4,
+        "score": 4.6,
+        "ratio": 2.2
       }
     ]
   },
@@ -138,50 +178,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Wiebke Esdar häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Wiebke Esdar häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Hendrik",
-        "isCorrect": true
+        "text": "Investitionen",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
       },
       {
         "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
+        "text": "Forschung",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Hendrik\" nutzt Dr. Wiebke Esdar 183.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "206.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Forschung\" sagte Dr. Wiebke Esdar 25× (14.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Wiebke Esdar häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Wiebke Esdar häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Alt",
+        "text": "Sicher",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
         "text": "Stark",
         "isCorrect": true
+      },
+      {
+        "text": "Problematisch",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Stark\" nutzt Dr. Wiebke Esdar 2.2× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "3.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Stark\" sagte Dr. Wiebke Esdar 4× (3.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

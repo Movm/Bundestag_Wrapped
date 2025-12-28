@@ -72,39 +72,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "menschen",
+        "count": 22,
+        "score": 29.7,
+        "ratio": 2.8
+      },
       {
         "word": "verkehrspolitik",
         "count": 6,
-        "ratioParty": 82.8,
-        "ratioBundestag": 91.7
-      },
-      {
-        "word": "fährt",
-        "count": 5,
-        "ratioParty": 34.5,
-        "ratioBundestag": 50.7
+        "score": 27.2,
+        "ratio": 91.7
       },
       {
         "word": "deutschlandticket",
         "count": 7,
-        "ratioParty": 27.0,
-        "ratioBundestag": 37.9
+        "score": 25.6,
+        "ratio": 37.9
       },
       {
         "word": "draußen",
         "count": 7,
-        "ratioParty": 19.9,
-        "ratioBundestag": 34.7
+        "score": 25.0,
+        "ratio": 34.7
+      },
+      {
+        "word": "fährt",
+        "count": 5,
+        "score": 19.7,
+        "ratio": 50.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "verkehrspolitik",
+        "count": 6,
+        "score": 26.6,
+        "ratio": 82.8
+      },
+      {
+        "word": "deutschlandticket",
+        "count": 7,
+        "score": 23.3,
+        "ratio": 27.0
+      },
+      {
+        "word": "draußen",
+        "count": 7,
+        "score": 21.3,
+        "ratio": 19.9
+      },
+      {
+        "word": "fährt",
+        "count": 5,
+        "score": 17.8,
+        "ratio": 34.5
       },
       {
         "word": "mobilität",
         "count": 6,
-        "ratioParty": 18.1,
-        "ratioBundestag": 20.6
+        "score": 17.7,
+        "ratio": 18.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 684,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jorrit Bosch häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Jorrit Bosch häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Freiheit",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Verkehrspolitik",
+        "text": "Menschen",
         "isCorrect": true
       },
       {
-        "text": "Bildung",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Zukunft",
+        "text": "Energie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verkehrspolitik\" nutzt Jorrit Bosch 82.8× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "91.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Menschen\" sagte Jorrit Bosch 22× (2.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -165,12 +197,12 @@
         "score": 0.688
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.678
+        "emoji": "🐬",
+        "name": "Delfin",
+        "title": "Diplomatischer Redner",
+        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
+        "id": "delfin",
+        "score": 0.65
       }
     ]
   },

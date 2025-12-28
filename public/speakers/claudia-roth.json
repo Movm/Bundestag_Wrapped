@@ -72,44 +72,84 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "rückzug",
         "count": 5,
-        "ratioParty": 71.7,
-        "ratioBundestag": 170.0
+        "score": 25.7,
+        "ratio": 170.0
       },
       {
         "word": "gekürzt",
         "count": 6,
-        "ratioParty": 27.5,
-        "ratioBundestag": 69.5
+        "score": 25.5,
+        "ratio": 69.5
       },
       {
         "word": "klimakrise",
         "count": 6,
-        "ratioParty": 18.6,
-        "ratioBundestag": 67.0
+        "score": 25.3,
+        "ratio": 67.0
       },
       {
         "word": "ukraine",
         "count": 6,
-        "ratioParty": 7.4,
-        "ratioBundestag": 8.5
+        "score": 13.5,
+        "ratio": 8.5
       },
       {
         "word": "haushalt",
         "count": 7,
-        "ratioParty": 5.1,
-        "ratioBundestag": 4.5
+        "score": 11.9,
+        "ratio": 4.5
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "rückzug",
+        "count": 5,
+        "score": 21.4,
+        "ratio": 71.7
+      },
+      {
+        "word": "gekürzt",
+        "count": 6,
+        "score": 20.1,
+        "ratio": 27.5
+      },
+      {
+        "word": "klimakrise",
+        "count": 6,
+        "score": 17.9,
+        "ratio": 18.6
+      },
+      {
+        "word": "haushalt",
+        "count": 7,
+        "score": 12.7,
+        "ratio": 5.1
+      },
+      {
+        "word": "ukraine",
+        "count": 6,
+        "score": 12.7,
+        "ratio": 7.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "falsch",
         "count": 3,
-        "ratioParty": 11.5,
-        "ratioBundestag": 14.7
+        "score": 8.3,
+        "ratio": 14.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 7.6,
+        "ratio": 11.5
       }
     ]
   },
@@ -133,41 +173,40 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Claudia Roth häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Claudia Roth häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Politik",
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
         "isCorrect": false
       },
       {
         "text": "Rückzug",
         "isCorrect": true
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rückzug\" nutzt Claudia Roth 71.7× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "170.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Rückzug\" sagte Claudia Roth 5× (170.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Claudia Roth häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Claudia Roth häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Stark",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Jung",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
@@ -175,8 +214,7 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Falsch\" nutzt Claudia Roth 11.5× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "14.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Falsch\" sagte Claudia Roth 3× (14.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -191,7 +229,7 @@
         "title": "Clevere Strategin",
         "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
         "id": "fuchs",
-        "score": 0.661
+        "score": 0.708
       },
       {
         "emoji": "🐇",

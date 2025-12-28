@@ -72,39 +72,72 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "sport",
         "count": 16,
-        "ratioParty": 170.7,
-        "ratioBundestag": 140.3
+        "score": 79.2,
+        "ratio": 140.3
       },
       {
         "word": "ehrenamt",
         "count": 8,
-        "ratioParty": 69.1,
-        "ratioBundestag": 107.1
+        "score": 37.5,
+        "ratio": 107.1
       },
       {
         "word": "kultur",
         "count": 5,
-        "ratioParty": 34.4,
-        "ratioBundestag": 29.8
+        "score": 17.1,
+        "ratio": 29.8
       },
       {
         "word": "einzelplan",
         "count": 5,
-        "ratioParty": 12.9,
-        "ratioBundestag": 14.8
+        "score": 13.8,
+        "ratio": 14.8
       },
       {
         "word": "haushalt",
         "count": 5,
-        "ratioParty": 3.1,
-        "ratioBundestag": 3.4
+        "score": 7.4,
+        "ratio": 3.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "sport",
+        "count": 16,
+        "score": 82.3,
+        "ratio": 170.7
+      },
+      {
+        "word": "ehrenamt",
+        "count": 8,
+        "score": 34.0,
+        "ratio": 69.1
+      },
+      {
+        "word": "kultur",
+        "count": 5,
+        "score": 17.8,
+        "ratio": 34.4
+      },
+      {
+        "word": "einzelplan",
+        "count": 5,
+        "score": 13.2,
+        "ratio": 12.9
+      },
+      {
+        "word": "haushalt",
+        "count": 5,
+        "score": 7.1,
+        "ratio": 3.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 528,
@@ -126,14 +159,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Kerstin Radomski häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Kerstin Radomski häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Politik",
+        "text": "Europa",
         "isCorrect": false
       },
       {
@@ -141,12 +170,15 @@
         "isCorrect": true
       },
       {
-        "text": "Demokratie",
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sport\" nutzt Kerstin Radomski 170.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "140.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sport\" sagte Kerstin Radomski 16× (140.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

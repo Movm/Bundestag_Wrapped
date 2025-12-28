@@ -60,39 +60,72 @@
         "count": 9
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "faschir",
-        "count": 5,
-        "ratioParty": 107.6,
-        "ratioBundestag": 99.1
+        "word": "menschen",
+        "count": 35,
+        "score": 50.9,
+        "ratio": 3.3
       },
       {
         "word": "deutschlandticket",
         "count": 10,
-        "ratioParty": 48.9,
-        "ratioBundestag": 39.9
+        "score": 37.1,
+        "ratio": 39.9
       },
       {
         "word": "sudan",
         "count": 8,
-        "ratioParty": 33.8,
-        "ratioBundestag": 28.8
+        "score": 27.2,
+        "ratio": 28.8
       },
       {
-        "word": "obwohl",
+        "word": "faschir",
         "count": 5,
-        "ratioParty": 17.9,
-        "ratioBundestag": 9.2
+        "score": 23.0,
+        "ratio": 99.1
       },
       {
         "word": "vereinten",
         "count": 6,
-        "ratioParty": 15.4,
-        "ratioBundestag": 19.3
+        "score": 18.1,
+        "ratio": 19.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "menschen",
+        "count": 35,
+        "score": 58.1,
+        "ratio": 4.3
+      },
+      {
+        "word": "deutschlandticket",
+        "count": 10,
+        "score": 39.1,
+        "ratio": 48.9
+      },
+      {
+        "word": "sudan",
+        "count": 8,
+        "score": 28.4,
+        "ratio": 33.8
+      },
+      {
+        "word": "faschir",
+        "count": 5,
+        "score": 23.4,
+        "ratio": 107.6
+      },
+      {
+        "word": "vereinten",
+        "count": 6,
+        "score": 16.8,
+        "ratio": 15.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 560,
@@ -114,27 +147,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Jonas Geissler häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Jonas Geissler häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Menschen",
+        "isCorrect": true
+      },
+      {
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
         "text": "Zukunft",
         "isCorrect": false
-      },
-      {
-        "text": "Bildung",
-        "isCorrect": false
-      },
-      {
-        "text": "Faschir",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Faschir\" nutzt Dr. Jonas Geissler 107.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "99.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Menschen\" sagte Dr. Jonas Geissler 35× (3.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

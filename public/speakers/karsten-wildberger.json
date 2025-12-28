@@ -72,56 +72,108 @@
         "count": 17
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "bürgerinnen",
+        "count": 34,
+        "score": 96.6,
+        "ratio": 16.1
+      },
+      {
+        "word": "digitale",
+        "count": 31,
+        "score": 95.8,
+        "ratio": 21.0
+      },
       {
         "word": "noots",
         "count": 16,
-        "ratioParty": 220.0,
-        "ratioBundestag": 251.3
+        "score": 88.5,
+        "ratio": 251.3
       },
       {
-        "word": "staatsvertrag",
-        "count": 9,
-        "ratioParty": 165.0,
-        "ratioBundestag": 239.2
+        "word": "unternehmen",
+        "count": 35,
+        "score": 72.9,
+        "ratio": 7.0
       },
       {
-        "word": "glasfaser",
-        "count": 7,
-        "ratioParty": 55.0,
-        "ratioBundestag": 89.6
-      },
-      {
-        "word": "wallet",
-        "count": 8,
-        "ratioParty": 51.8,
-        "ratioBundestag": 95.3
-      },
-      {
-        "word": "datenschutz",
-        "count": 6,
-        "ratioParty": 50.8,
-        "ratioBundestag": 37.7
+        "word": "bürger",
+        "count": 28,
+        "score": 52.8,
+        "ratio": 5.6
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "effektiv",
-        "count": 3,
-        "ratioParty": 10.0,
-        "ratioBundestag": 12.8
+        "word": "digitale",
+        "count": 31,
+        "score": 95.7,
+        "ratio": 20.9
+      },
+      {
+        "word": "bürgerinnen",
+        "count": 34,
+        "score": 93.8,
+        "ratio": 14.8
+      },
+      {
+        "word": "noots",
+        "count": 16,
+        "score": 86.4,
+        "ratio": 220.0
+      },
+      {
+        "word": "unternehmen",
+        "count": 35,
+        "score": 67.6,
+        "ratio": 5.9
+      },
+      {
+        "word": "bürger",
+        "count": 28,
+        "score": 65.7,
+        "ratio": 9.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 8,
+        "score": 12.4,
+        "ratio": 3.7
       },
       {
         "word": "stark",
         "count": 5,
-        "ratioParty": 3.7,
-        "ratioBundestag": 4.3
+        "score": 8.3,
+        "ratio": 4.3
       },
+      {
+        "word": "effektiv",
+        "count": 3,
+        "score": 7.9,
+        "ratio": 12.8
+      }
+    ],
+    "signatureAdjectivesParty": [
       {
         "word": "sicher",
         "count": 8,
-        "ratioParty": 3.3,
-        "ratioBundestag": 3.7
+        "score": 11.7,
+        "ratio": 3.3
+      },
+      {
+        "word": "stark",
+        "count": 5,
+        "score": 7.8,
+        "ratio": 3.7
+      },
+      {
+        "word": "effektiv",
+        "count": 3,
+        "score": 7.2,
+        "ratio": 10.0
       }
     ]
   },
@@ -145,50 +197,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Karsten Wildberger häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Karsten Wildberger häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesellschaft",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Noots",
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürgerinnen",
         "isCorrect": true
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Noots\" nutzt Dr. Karsten Wildberger 220.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "251.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bürgerinnen\" sagte Dr. Karsten Wildberger 34× (16.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Karsten Wildberger häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Karsten Wildberger häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Falsch",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Effektiv",
+        "text": "Sicher",
         "isCorrect": true
       },
       {
-        "text": "Alt",
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Erfolgreich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Effektiv\" nutzt Dr. Karsten Wildberger 10.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "12.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Dr. Karsten Wildberger 8× (3.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐬",
@@ -198,19 +248,19 @@
     "id": "delfin",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 1.0
-      },
-      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüter",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
+        "score": 1.0
+      },
+      {
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißiger Abgeordneter",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
         "score": 1.0
       }
     ]

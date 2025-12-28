@@ -56,50 +56,96 @@
         "count": 12
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "nahen",
-        "count": 5,
-        "ratioParty": 22.3,
-        "ratioBundestag": 23.6
+        "word": "ukraine",
+        "count": 25,
+        "score": 59.8,
+        "ratio": 9.9
       },
       {
-        "word": "ankündigungen",
-        "count": 5,
-        "ratioParty": 22.3,
-        "ratioBundestag": 41.5
-      },
-      {
-        "word": "gemeinden",
-        "count": 6,
-        "ratioParty": 12.1,
-        "ratioBundestag": 15.3
+        "word": "europa",
+        "count": 17,
+        "score": 30.4,
+        "ratio": 5.0
       },
       {
         "word": "notwendig",
         "count": 11,
-        "ratioParty": 10.1,
-        "ratioBundestag": 8.7
+        "score": 25.0,
+        "ratio": 8.7
       },
       {
-        "word": "israel",
-        "count": 7,
-        "ratioParty": 9.3,
-        "ratioBundestag": 7.1
+        "word": "kanzler",
+        "count": 9,
+        "score": 23.0,
+        "ratio": 11.8
+      },
+      {
+        "word": "parlament",
+        "count": 11,
+        "score": 22.9,
+        "ratio": 7.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "ukraine",
+        "count": 25,
+        "score": 58.3,
+        "ratio": 9.3
+      },
+      {
+        "word": "europa",
+        "count": 17,
+        "score": 32.5,
+        "ratio": 5.8
+      },
+      {
+        "word": "notwendig",
+        "count": 11,
+        "score": 26.5,
+        "ratio": 10.1
+      },
+      {
+        "word": "parlament",
+        "count": 11,
+        "score": 19.9,
+        "ratio": 5.1
+      },
+      {
+        "word": "frieden",
+        "count": 9,
+        "score": 19.5,
+        "ratio": 7.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "gescheitert",
+        "count": 3,
+        "score": 7.8,
+        "ratio": 12.3
+      },
       {
         "word": "zentral",
         "count": 3,
-        "ratioParty": 17.0,
-        "ratioBundestag": 10.8
+        "score": 7.4,
+        "ratio": 10.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "zentral",
+        "count": 3,
+        "score": 8.7,
+        "ratio": 17.0
       },
       {
         "word": "gescheitert",
         "count": 3,
-        "ratioParty": 11.7,
-        "ratioBundestag": 12.3
+        "score": 7.6,
+        "ratio": 11.7
       }
     ]
   },
@@ -128,50 +174,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Britta Haßelmann häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Britta Haßelmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesellschaft",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
-        "text": "Europa",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
-        "text": "Nahen",
+        "text": "Ukraine",
         "isCorrect": true
       },
       {
-        "text": "Antrag",
+        "text": "Migration",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Nahen\" nutzt Britta Haßelmann 22.3× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "23.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ukraine\" sagte Britta Haßelmann 25× (9.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Britta Haßelmann häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Britta Haßelmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Sicher",
+        "text": "Gut",
         "isCorrect": false
       },
       {
-        "text": "Schlecht",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Zentral",
+        "text": "Gescheitert",
         "isCorrect": true
       },
       {
-        "text": "Sozial",
+        "text": "National",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Zentral\" nutzt Britta Haßelmann 17.0× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "10.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gescheitert\" sagte Britta Haßelmann 3× (12.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

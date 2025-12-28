@@ -60,44 +60,84 @@
         "count": 12
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "europa",
+        "count": 40,
+        "score": 111.6,
+        "ratio": 15.3
+      },
+      {
+        "word": "sorgen",
+        "count": 17,
+        "score": 36.3,
+        "ratio": 7.5
+      },
+      {
+        "word": "europäischen",
+        "count": 15,
+        "score": 32.6,
+        "ratio": 7.8
+      },
       {
         "word": "versenkt",
         "count": 5,
-        "ratioParty": 450.1,
-        "ratioBundestag": 141.0
-      },
-      {
-        "word": "habeck",
-        "count": 5,
-        "ratioParty": 25.0,
-        "ratioBundestag": 19.9
+        "score": 24.8,
+        "ratio": 141.0
       },
       {
         "word": "stolz",
         "count": 7,
-        "ratioParty": 21.4,
-        "ratioBundestag": 22.1
-      },
-      {
-        "word": "kontinent",
-        "count": 5,
-        "ratioParty": 21.4,
-        "ratioBundestag": 37.1
-      },
+        "score": 22.0,
+        "ratio": 22.1
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "europa",
         "count": 40,
-        "ratioParty": 10.4,
-        "ratioBundestag": 15.3
+        "score": 97.2,
+        "ratio": 10.4
+      },
+      {
+        "word": "sorgen",
+        "count": 17,
+        "score": 35.8,
+        "ratio": 7.2
+      },
+      {
+        "word": "versenkt",
+        "count": 5,
+        "score": 30.6,
+        "ratio": 450.1
+      },
+      {
+        "word": "europäischen",
+        "count": 15,
+        "score": 25.4,
+        "ratio": 4.4
+      },
+      {
+        "word": "stolz",
+        "count": 7,
+        "score": 21.8,
+        "ratio": 21.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "rechts",
         "count": 4,
-        "ratioParty": 8.1,
-        "ratioBundestag": 7.1
+        "score": 8.4,
+        "ratio": 7.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "rechts",
+        "count": 4,
+        "score": 8.8,
+        "ratio": 8.1
       }
     ]
   },
@@ -126,33 +166,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Tilman Kuban häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Tilman Kuban häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Versenkt",
+        "text": "Europa",
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Versenkt\" nutzt Tilman Kuban 450.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "141.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Europa\" sagte Tilman Kuban 40× (15.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Tilman Kuban häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Tilman Kuban häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Falsch",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
@@ -160,16 +199,15 @@
         "isCorrect": true
       },
       {
-        "text": "Europäisch",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Stark",
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rechts\" nutzt Tilman Kuban 8.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "7.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Rechts\" sagte Tilman Kuban 4× (7.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -187,12 +225,12 @@
         "score": 0.979
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.947
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positiver Teamplayer",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.911
       }
     ]
   },

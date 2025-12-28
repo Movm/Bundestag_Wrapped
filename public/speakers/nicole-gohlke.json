@@ -72,44 +72,84 @@
         "count": 12
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "wissenschaftsfreiheit",
-        "count": 7,
-        "ratioParty": 310.2,
-        "ratioBundestag": 77.6
-      },
-      {
-        "word": "studierenden",
-        "count": 13,
-        "ratioParty": 288.0,
-        "ratioBundestag": 216.1
+        "word": "bildung",
+        "count": 26,
+        "score": 78.5,
+        "ratio": 19.5
       },
       {
         "word": "bafög",
         "count": 19,
-        "ratioParty": 140.3,
-        "ratioBundestag": 46.4
+        "score": 73.3,
+        "ratio": 46.4
       },
       {
-        "word": "ganztag",
-        "count": 8,
-        "ratioParty": 118.2,
-        "ratioBundestag": 78.6
+        "word": "studierenden",
+        "count": 13,
+        "score": 69.9,
+        "ratio": 216.1
       },
       {
         "word": "studium",
         "count": 11,
-        "ratioParty": 97.5,
-        "ratioBundestag": 116.0
+        "score": 52.4,
+        "ratio": 116.0
+      },
+      {
+        "word": "ganztag",
+        "count": 8,
+        "score": 35.0,
+        "ratio": 78.6
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "bafög",
+        "count": 19,
+        "score": 94.1,
+        "ratio": 140.3
+      },
+      {
+        "word": "bildung",
+        "count": 26,
+        "score": 74.4,
+        "ratio": 16.5
+      },
+      {
+        "word": "studierenden",
+        "count": 13,
+        "score": 73.7,
+        "ratio": 288.0
+      },
+      {
+        "word": "studium",
+        "count": 11,
+        "score": 50.5,
+        "ratio": 97.5
+      },
+      {
+        "word": "wissenschaftsfreiheit",
+        "count": 7,
+        "score": 40.2,
+        "ratio": 310.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "rechts",
         "count": 3,
-        "ratioParty": 2.5,
-        "ratioBundestag": 4.1
+        "score": 4.9,
+        "ratio": 4.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 3.7,
+        "ratio": 2.5
       }
     ]
   },
@@ -133,66 +173,56 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Nicole Gohlke häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Nicole Gohlke häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Wissenschaftsfreiheit",
+        "text": "Bildung",
         "isCorrect": true
       },
       {
-        "text": "Rente",
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wissenschaftsfreiheit\" nutzt Nicole Gohlke 310.2× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "77.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bildung\" sagte Nicole Gohlke 26× (19.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Nicole Gohlke häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Nicole Gohlke häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Falsch",
         "isCorrect": false
       },
       {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
+        "text": "Neu",
         "isCorrect": false
       },
       {
         "text": "Rechts",
         "isCorrect": true
+      },
+      {
+        "text": "Europäisch",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rechts\" nutzt Nicole Gohlke 2.5× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "4.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Rechts\" sagte Nicole Gohlke 3× (4.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Clevere Strategin",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüterin",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 1.0
-      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -200,6 +230,14 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
+      },
+      {
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrliche Rednerin",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.954
       }
     ]
   },

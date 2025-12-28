@@ -72,39 +72,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "gebäudeenergiegesetz",
         "count": 7,
-        "ratioParty": 134.5,
-        "ratioBundestag": 208.5
+        "score": 37.4,
+        "ratio": 208.5
+      },
+      {
+        "word": "ministerin",
+        "count": 11,
+        "score": 26.8,
+        "ratio": 10.4
       },
       {
         "word": "regel",
         "count": 6,
-        "ratioParty": 83.8,
-        "ratioBundestag": 54.1
+        "score": 24.1,
+        "ratio": 54.1
       },
       {
         "word": "bauen",
         "count": 9,
-        "ratioParty": 14.9,
-        "ratioBundestag": 12.2
+        "score": 23.2,
+        "ratio": 12.2
       },
       {
         "word": "wohnungen",
         "count": 6,
-        "ratioParty": 13.8,
-        "ratioBundestag": 18.5
-      },
-      {
-        "word": "probleme",
-        "count": 6,
-        "ratioParty": 10.0,
-        "ratioBundestag": 10.7
+        "score": 17.8,
+        "ratio": 18.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "gebäudeenergiegesetz",
+        "count": 7,
+        "score": 34.4,
+        "ratio": 134.5
+      },
+      {
+        "word": "regel",
+        "count": 6,
+        "score": 26.6,
+        "ratio": 83.8
+      },
+      {
+        "word": "bauen",
+        "count": 9,
+        "score": 24.9,
+        "ratio": 14.9
+      },
+      {
+        "word": "ministerin",
+        "count": 11,
+        "score": 23.2,
+        "ratio": 7.2
+      },
+      {
+        "word": "wohnungen",
+        "count": 6,
+        "score": 16.2,
+        "ratio": 13.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 268,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Kassem Taher Saleh häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Kassem Taher Saleh häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Minister",
         "isCorrect": false
       },
       {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Haushalt",
+        "isCorrect": false
+      },
+      {
         "text": "Gebäudeenergiegesetz",
         "isCorrect": true
-      },
-      {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gebäudeenergiegesetz\" nutzt Kassem Taher Saleh 134.5× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "208.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gebäudeenergiegesetz\" sagte Kassem Taher Saleh 7× (208.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -165,12 +197,12 @@
         "score": 0.975
       },
       {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüter",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 0.896
+        "emoji": "🦊",
+        "name": "Fuchs",
+        "title": "Cleverer Stratege",
+        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+        "id": "fuchs",
+        "score": 0.92
       }
     ]
   },

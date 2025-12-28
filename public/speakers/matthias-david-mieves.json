@@ -72,50 +72,96 @@
         "count": 6
       }
     ],
-    "signatureWords": [
-      {
-        "word": "therapie",
-        "count": 5,
-        "ratioParty": 995.1,
-        "ratioBundestag": 414.9
-      },
-      {
-        "word": "passenden",
-        "count": 5,
-        "ratioParty": 497.6,
-        "ratioBundestag": 553.2
-      },
+    "signatureWordsBundestag": [
       {
         "word": "mosel",
         "count": 9,
-        "ratioParty": 53.8,
-        "ratioBundestag": 344.7
+        "score": 52.6,
+        "ratio": 344.7
       },
       {
         "word": "moselschleusen",
         "count": 6,
-        "ratioParty": 35.9,
-        "ratioBundestag": 995.8
+        "score": 41.4,
+        "ratio": 995.8
+      },
+      {
+        "word": "deutschland",
+        "count": 23,
+        "score": 32.8,
+        "ratio": 3.2
       },
       {
         "word": "pflege",
         "count": 10,
-        "ratioParty": 35.5,
-        "ratioBundestag": 25.0
+        "score": 32.6,
+        "ratio": 25.0
+      },
+      {
+        "word": "passenden",
+        "count": 5,
+        "score": 31.6,
+        "ratio": 553.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "deutschland",
+        "count": 23,
+        "score": 36.2,
+        "ratio": 3.8
+      },
+      {
+        "word": "pflege",
+        "count": 10,
+        "score": 36.0,
+        "ratio": 35.5
+      },
+      {
+        "word": "mosel",
+        "count": 9,
+        "score": 36.0,
+        "ratio": 53.8
+      },
+      {
+        "word": "therapie",
+        "count": 5,
+        "score": 34.5,
+        "ratio": 995.1
+      },
+      {
+        "word": "passenden",
+        "count": 5,
+        "score": 31.1,
+        "ratio": 497.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 5,
+        "score": 10.2,
+        "ratio": 6.7
+      },
       {
         "word": "teuer",
         "count": 3,
-        "ratioParty": 31.4,
-        "ratioBundestag": 13.6
+        "score": 8.1,
+        "ratio": 13.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "teuer",
+        "count": 3,
+        "score": 10.4,
+        "ratio": 31.4
       },
       {
         "word": "sicher",
         "count": 5,
-        "ratioParty": 5.1,
-        "ratioBundestag": 6.7
+        "score": 9.0,
+        "ratio": 5.1
       }
     ]
   },
@@ -139,65 +185,63 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Matthias David Mieves häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Matthias David Mieves häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Therapie",
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Mosel",
         "isCorrect": true
-      },
-      {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Therapie\" nutzt Matthias David Mieves 995.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "414.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Mosel\" sagte Matthias David Mieves 9× (344.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Matthias David Mieves häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Matthias David Mieves häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Groß",
+        "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Teuer",
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
         "isCorrect": true
       },
       {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
+        "text": "Politisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Teuer\" nutzt Matthias David Mieves 31.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "13.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Matthias David Mieves 5× (6.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Cleverer Stratege",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüter",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
       {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüter",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 0.754
+        "emoji": "🦊",
+        "name": "Fuchs",
+        "title": "Cleverer Stratege",
+        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+        "id": "fuchs",
+        "score": 0.753
       },
       {
         "emoji": "🦫",

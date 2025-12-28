@@ -72,44 +72,90 @@
         "count": 15
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "zusätzlichkeit",
-        "count": 5,
-        "ratioParty": 80.4,
-        "ratioBundestag": 116.0
+        "word": "infrastruktur",
+        "count": 29,
+        "score": 64.7,
+        "ratio": 8.3
       },
       {
-        "word": "günstige",
-        "count": 7,
-        "ratioParty": 64.4,
-        "ratioBundestag": 36.1
+        "word": "haushalt",
+        "count": 35,
+        "score": 60.5,
+        "ratio": 4.6
       },
       {
-        "word": "saubere",
-        "count": 7,
-        "ratioParty": 41.0,
-        "ratioBundestag": 45.5
+        "word": "sondervermögen",
+        "count": 21,
+        "score": 47.6,
+        "ratio": 8.7
       },
       {
-        "word": "schuldenbremse",
-        "count": 10,
-        "ratioParty": 24.8,
-        "ratioBundestag": 15.6
+        "word": "sicherheit",
+        "count": 27,
+        "score": 45.1,
+        "ratio": 4.3
       },
       {
-        "word": "investitionsbooster",
-        "count": 6,
-        "ratioParty": 24.1,
-        "ratioBundestag": 30.9
+        "word": "investitionen",
+        "count": 22,
+        "score": 42.7,
+        "ratio": 6.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "infrastruktur",
+        "count": 29,
+        "score": 58.1,
+        "ratio": 6.4
+      },
+      {
+        "word": "haushalt",
+        "count": 35,
+        "score": 57.4,
+        "ratio": 4.2
+      },
+      {
+        "word": "sondervermögen",
+        "count": 21,
+        "score": 43.6,
+        "ratio": 7.0
+      },
+      {
+        "word": "sicherheit",
+        "count": 27,
+        "score": 37.8,
+        "ratio": 3.1
+      },
+      {
+        "word": "investitionen",
+        "count": 22,
+        "score": 36.6,
+        "ratio": 4.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "entscheidend",
         "count": 3,
-        "ratioParty": 2.9,
-        "ratioBundestag": 3.6
+        "score": 4.6,
+        "ratio": 3.6
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 3.6,
+        "ratio": 2.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 4.1,
+        "ratio": 2.9
       }
     ]
   },
@@ -138,50 +184,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Thorsten Rudolph häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Thorsten Rudolph häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Freiheit",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Familie",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Zusätzlichkeit",
+        "text": "Infrastruktur",
         "isCorrect": true
+      },
+      {
+        "text": "Kanzler",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Zusätzlichkeit\" nutzt Dr. Thorsten Rudolph 80.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "116.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Infrastruktur\" sagte Dr. Thorsten Rudolph 29× (8.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Thorsten Rudolph häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Thorsten Rudolph häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
-      },
       {
         "text": "Entscheidend",
         "isCorrect": true
+      },
+      {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Dr. Thorsten Rudolph 2.9× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "3.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Entscheidend\" sagte Dr. Thorsten Rudolph 3× (3.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

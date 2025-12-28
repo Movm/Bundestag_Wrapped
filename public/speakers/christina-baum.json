@@ -72,33 +72,60 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "masken",
         "count": 7,
-        "ratioParty": 366.7,
-        "ratioBundestag": 162.4
+        "score": 35.7,
+        "ratio": 162.4
       },
       {
         "word": "somit",
         "count": 6,
-        "ratioParty": 60.4,
-        "ratioBundestag": 62.2
+        "score": 24.9,
+        "ratio": 62.2
       },
       {
         "word": "system",
         "count": 5,
-        "ratioParty": 12.5,
-        "ratioBundestag": 12.6
+        "score": 13.1,
+        "ratio": 12.6
       },
       {
         "word": "leben",
         "count": 6,
-        "ratioParty": 4.7,
-        "ratioBundestag": 3.8
+        "score": 9.4,
+        "ratio": 3.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "masken",
+        "count": 7,
+        "score": 41.4,
+        "ratio": 366.7
+      },
+      {
+        "word": "somit",
+        "count": 6,
+        "score": 24.7,
+        "ratio": 60.4
+      },
+      {
+        "word": "system",
+        "count": 5,
+        "score": 13.0,
+        "ratio": 12.5
+      },
+      {
+        "word": "leben",
+        "count": 6,
+        "score": 10.4,
+        "ratio": 4.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 426,
@@ -125,14 +152,14 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Christina Baum häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Christina Baum häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Zukunft",
+        "text": "Klima",
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
@@ -140,12 +167,11 @@
         "isCorrect": true
       },
       {
-        "text": "Haushalt",
+        "text": "Verantwortung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Masken\" nutzt Dr. Christina Baum 366.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "162.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Masken\" sagte Dr. Christina Baum 7× (162.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

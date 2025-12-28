@@ -72,21 +72,42 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "problem",
         "count": 7,
-        "ratioParty": 9.9,
-        "ratioBundestag": 15.4
+        "score": 19.6,
+        "ratio": 15.4
+      },
+      {
+        "word": "menschen",
+        "count": 10,
+        "score": 13.1,
+        "ratio": 2.7
       },
       {
         "word": "sicherheit",
         "count": 6,
-        "ratioParty": 8.0,
-        "ratioBundestag": 5.7
+        "score": 11.4,
+        "ratio": 5.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "problem",
+        "count": 7,
+        "score": 16.7,
+        "ratio": 9.9
+      },
+      {
+        "word": "sicherheit",
+        "count": 6,
+        "score": 13.2,
+        "ratio": 8.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 445,
@@ -108,10 +129,14 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Omid Nouripour häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Omid Nouripour häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Haushalt",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
@@ -119,16 +144,11 @@
         "isCorrect": true
       },
       {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Minister",
+        "text": "Energie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Problem\" nutzt Omid Nouripour 9.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "15.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Problem\" sagte Omid Nouripour 7× (15.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

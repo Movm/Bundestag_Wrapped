@@ -72,15 +72,24 @@
         "count": 3
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "beide",
         "count": 5,
-        "ratioParty": 76.7,
-        "ratioBundestag": 83.9
+        "score": 22.2,
+        "ratio": 83.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "beide",
+        "count": 5,
+        "score": 21.8,
+        "ratio": 76.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 392,
@@ -97,18 +106,18 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Andreas Mayer häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Andreas Mayer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Haushalt",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
@@ -116,8 +125,7 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Beide\" nutzt Andreas Mayer 76.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "83.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Beide\" sagte Andreas Mayer 5× (83.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

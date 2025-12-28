@@ -72,50 +72,96 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "häfen",
         "count": 16,
-        "ratioParty": 595.2,
-        "ratioBundestag": 331.3
+        "score": 92.9,
+        "ratio": 331.3
       },
       {
         "word": "florian",
         "count": 9,
-        "ratioParty": 446.4,
-        "ratioBundestag": 291.7
+        "score": 51.1,
+        "ratio": 291.7
+      },
+      {
+        "word": "oßner",
+        "count": 8,
+        "score": 49.7,
+        "ratio": 497.0
+      },
+      {
+        "word": "minister",
+        "count": 18,
+        "score": 47.2,
+        "ratio": 12.8
+      },
+      {
+        "word": "infrastruktur",
+        "count": 16,
+        "score": 38.9,
+        "ratio": 10.4
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "häfen",
+        "count": 16,
+        "score": 102.2,
+        "ratio": 595.2
+      },
+      {
+        "word": "florian",
+        "count": 9,
+        "score": 54.9,
+        "ratio": 446.4
+      },
+      {
+        "word": "minister",
+        "count": 18,
+        "score": 49.8,
+        "ratio": 14.9
       },
       {
         "word": "wasserstraße",
         "count": 6,
-        "ratioParty": 446.4,
-        "ratioBundestag": 186.4
+        "score": 36.6,
+        "ratio": 446.4
       },
       {
-        "word": "bremerhaven",
-        "count": 5,
-        "ratioParty": 372.0,
-        "ratioBundestag": 532.5
-      },
-      {
-        "word": "verkehrsträger",
-        "count": 6,
-        "ratioParty": 148.8,
-        "ratioBundestag": 104.0
+        "word": "infrastruktur",
+        "count": 16,
+        "score": 34.9,
+        "ratio": 7.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "zuverlässig",
         "count": 5,
-        "ratioParty": 49.6,
-        "ratioBundestag": 61.1
+        "score": 20.6,
+        "ratio": 61.1
       },
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 3.8,
-        "ratioBundestag": 5.3
+        "score": 5.5,
+        "ratio": 5.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "zuverlässig",
+        "count": 5,
+        "score": 19.6,
+        "ratio": 49.6
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 4.7,
+        "ratio": 3.8
       }
     ]
   },
@@ -139,50 +185,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Uwe Schmidt häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Uwe Schmidt häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
       {
         "text": "Häfen",
         "isCorrect": true
+      },
+      {
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Klima",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Häfen\" nutzt Uwe Schmidt 595.2× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "331.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Häfen\" sagte Uwe Schmidt 16× (331.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Uwe Schmidt häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Uwe Schmidt häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
-        "text": "Stark",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
         "text": "Zuverlässig",
         "isCorrect": true
+      },
+      {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Zuverlässig\" nutzt Uwe Schmidt 49.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "61.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Zuverlässig\" sagte Uwe Schmidt 5× (61.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦦",

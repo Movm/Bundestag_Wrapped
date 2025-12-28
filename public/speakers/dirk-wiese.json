@@ -64,39 +64,72 @@
         "count": 9
       }
     ],
-    "signatureWords": [
-      {
-        "word": "vorsitz",
-        "count": 5,
-        "ratioParty": 648.9,
-        "ratioBundestag": 813.3
-      },
-      {
-        "word": "volksbund",
-        "count": 5,
-        "ratioParty": 216.3,
-        "ratioBundestag": 203.3
-      },
+    "signatureWordsBundestag": [
       {
         "word": "baumann",
         "count": 8,
-        "ratioParty": 207.6,
-        "ratioBundestag": 144.6
+        "score": 39.8,
+        "ratio": 144.6
       },
       {
-        "word": "ausschüsse",
+        "word": "arbeit",
+        "count": 17,
+        "score": 37.1,
+        "ratio": 7.9
+      },
+      {
+        "word": "vorsitz",
         "count": 5,
-        "ratioParty": 129.8,
-        "ratioBundestag": 108.4
+        "score": 33.5,
+        "ratio": 813.3
       },
       {
-        "word": "geschäftsordnung",
-        "count": 6,
-        "ratioParty": 48.7,
-        "ratioBundestag": 53.5
+        "word": "westfalen",
+        "count": 8,
+        "score": 33.1,
+        "ratio": 62.0
+      },
+      {
+        "word": "nordrhein",
+        "count": 8,
+        "score": 32.4,
+        "ratio": 56.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "baumann",
+        "count": 8,
+        "score": 42.7,
+        "ratio": 207.6
+      },
+      {
+        "word": "arbeit",
+        "count": 17,
+        "score": 32.7,
+        "ratio": 5.9
+      },
+      {
+        "word": "vorsitz",
+        "count": 5,
+        "score": 32.4,
+        "ratio": 648.9
+      },
+      {
+        "word": "tagesordnung",
+        "count": 8,
+        "score": 30.3,
+        "ratio": 43.3
+      },
+      {
+        "word": "westfalen",
+        "count": 8,
+        "score": 30.3,
+        "ratio": 43.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 455,
@@ -123,27 +156,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dirk Wiese häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dirk Wiese häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Opposition",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Vorsitz",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Baumann",
         "isCorrect": true
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Debatte",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Vorsitz\" nutzt Dirk Wiese 648.9× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "813.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Baumann\" sagte Dirk Wiese 8× (144.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

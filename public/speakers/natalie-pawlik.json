@@ -72,39 +72,72 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "integration",
         "count": 13,
-        "ratioParty": 75.5,
-        "ratioBundestag": 99.9
+        "score": 60.0,
+        "ratio": 99.9
       },
       {
         "word": "familie",
         "count": 7,
-        "ratioParty": 31.5,
-        "ratioBundestag": 28.2
+        "score": 23.6,
+        "ratio": 28.2
       },
       {
         "word": "punkte",
         "count": 5,
-        "ratioParty": 20.1,
-        "ratioBundestag": 23.9
+        "score": 16.1,
+        "ratio": 23.9
       },
       {
         "word": "besonders",
         "count": 6,
-        "ratioParty": 8.9,
-        "ratioBundestag": 12.0
+        "score": 15.4,
+        "ratio": 12.0
       },
       {
-        "word": "arbeit",
-        "count": 6,
-        "ratioParty": 5.2,
-        "ratioBundestag": 7.1
+        "word": "menschen",
+        "count": 11,
+        "score": 14.0,
+        "ratio": 2.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "integration",
+        "count": 13,
+        "score": 56.4,
+        "ratio": 75.5
+      },
+      {
+        "word": "familie",
+        "count": 7,
+        "score": 24.4,
+        "ratio": 31.5
+      },
+      {
+        "word": "punkte",
+        "count": 5,
+        "score": 15.2,
+        "ratio": 20.1
+      },
+      {
+        "word": "besonders",
+        "count": 6,
+        "score": 13.7,
+        "ratio": 8.9
+      },
+      {
+        "word": "menschen",
+        "count": 11,
+        "score": 13.0,
+        "ratio": 2.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 379,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Natalie Pawlik häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Natalie Pawlik häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
       {
         "text": "Integration",
         "isCorrect": true
       },
       {
-        "text": "Freiheit",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Bildung",
-        "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
+        "text": "Gesellschaft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Integration\" nutzt Natalie Pawlik 75.5× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "99.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Integration\" sagte Natalie Pawlik 13× (99.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

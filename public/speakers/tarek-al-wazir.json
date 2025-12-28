@@ -72,39 +72,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "mosel",
         "count": 5,
-        "ratioParty": 32.3,
-        "ratioBundestag": 179.5
-      },
-      {
-        "word": "mobilität",
-        "count": 5,
-        "ratioParty": 27.6,
-        "ratioBundestag": 19.7
+        "score": 26.0,
+        "ratio": 179.5
       },
       {
         "word": "ausdrücklich",
         "count": 8,
-        "ratioParty": 25.2,
-        "ratioBundestag": 19.2
-      },
-      {
-        "word": "rolle",
-        "count": 5,
-        "ratioParty": 15.8,
-        "ratioBundestag": 15.3
+        "score": 24.0,
+        "ratio": 19.2
       },
       {
         "word": "infrastruktur",
         "count": 8,
-        "ratioParty": 7.8,
-        "ratioBundestag": 7.5
+        "score": 17.1,
+        "ratio": 7.5
+      },
+      {
+        "word": "mobilität",
+        "count": 5,
+        "score": 15.2,
+        "ratio": 19.7
+      },
+      {
+        "word": "rolle",
+        "count": 5,
+        "score": 14.0,
+        "ratio": 15.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "ausdrücklich",
+        "count": 8,
+        "score": 26.1,
+        "ratio": 25.2
+      },
+      {
+        "word": "mosel",
+        "count": 5,
+        "score": 17.5,
+        "ratio": 32.3
+      },
+      {
+        "word": "infrastruktur",
+        "count": 8,
+        "score": 17.4,
+        "ratio": 7.8
+      },
+      {
+        "word": "mobilität",
+        "count": 5,
+        "score": 16.8,
+        "ratio": 27.6
+      },
+      {
+        "word": "rolle",
+        "count": 5,
+        "score": 14.1,
+        "ratio": 15.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 354,
@@ -126,14 +159,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Tarek Al-Wazir häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Tarek Al-Wazir häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
+        "text": "Minister",
         "isCorrect": false
       },
       {
@@ -141,21 +170,32 @@
         "isCorrect": true
       },
       {
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
         "text": "Rente",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Mosel\" nutzt Tarek Al-Wazir 32.3× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "179.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Mosel\" sagte Tarek Al-Wazir 5× (179.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🐿️",
-    "name": "Eichhörnchen",
-    "title": "Themenhüter",
-    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-    "id": "eichhoernchen",
+    "emoji": "🦊",
+    "name": "Fuchs",
+    "title": "Cleverer Stratege",
+    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+    "id": "fuchs",
     "alternatives": [
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 0.862
+      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -163,14 +203,6 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 0.747
-      },
-      {
-        "emoji": "🦫",
-        "name": "Biber",
-        "title": "Konstruktiver Brückenbauer",
-        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
-        "id": "biber",
-        "score": 0.74
       }
     ]
   },

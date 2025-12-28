@@ -72,44 +72,84 @@
         "count": 11
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "binnenmarkt",
-        "count": 6,
-        "ratioParty": 465.1,
-        "ratioBundestag": 59.3
+        "word": "unternehmen",
+        "count": 29,
+        "score": 67.1,
+        "ratio": 9.1
       },
       {
-        "word": "rohstoffen",
-        "count": 5,
-        "ratioParty": 129.2,
-        "ratioBundestag": 55.5
+        "word": "herzlichen",
+        "count": 21,
+        "score": 54.5,
+        "ratio": 12.4
+      },
+      {
+        "word": "habeck",
+        "count": 10,
+        "score": 37.1,
+        "ratio": 39.7
       },
       {
         "word": "momentan",
         "count": 9,
-        "ratioParty": 63.4,
-        "ratioBundestag": 52.6
-      },
-      {
-        "word": "analyse",
-        "count": 5,
-        "ratioParty": 43.1,
-        "ratioBundestag": 51.3
+        "score": 35.8,
+        "ratio": 52.6
       },
       {
         "word": "wirtschaftspolitik",
         "count": 9,
-        "ratioParty": 41.0,
-        "ratioBundestag": 34.5
+        "score": 32.1,
+        "ratio": 34.5
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "unternehmen",
+        "count": 29,
+        "score": 70.6,
+        "ratio": 10.4
+      },
+      {
+        "word": "herzlichen",
+        "count": 21,
+        "score": 57.4,
+        "ratio": 14.4
+      },
+      {
+        "word": "momentan",
+        "count": 9,
+        "score": 37.5,
+        "ratio": 63.4
+      },
+      {
+        "word": "binnenmarkt",
+        "count": 6,
+        "score": 36.9,
+        "ratio": 465.1
+      },
+      {
+        "word": "wirtschaftspolitik",
+        "count": 9,
+        "score": 33.6,
+        "ratio": 41.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "erfolgreich",
         "count": 3,
-        "ratioParty": 11.1,
-        "ratioBundestag": 7.3
+        "score": 6.3,
+        "ratio": 7.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 7.5,
+        "ratio": 11.1
       }
     ]
   },
@@ -133,50 +173,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Sandra Detzer häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Sandra Detzer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Binnenmarkt",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Unternehmen",
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
+        "text": "Klima",
         "isCorrect": false
       },
       {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
+        "text": "Bürger",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Binnenmarkt\" nutzt Dr. Sandra Detzer 465.1× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "59.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Unternehmen\" sagte Dr. Sandra Detzer 29× (9.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Sandra Detzer häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Sandra Detzer häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
+      },
       {
         "text": "Erfolgreich",
         "isCorrect": true
-      },
-      {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Erfolgreich\" nutzt Dr. Sandra Detzer 11.1× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "7.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Erfolgreich\" sagte Dr. Sandra Detzer 3× (7.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐬",
@@ -186,20 +224,20 @@
     "id": "delfin",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 1.0
-      },
-      {
         "emoji": "🐝",
         "name": "Biene",
         "title": "Fleißige Abgeordnete",
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
+      },
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüterin",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 0.996
       }
     ]
   },

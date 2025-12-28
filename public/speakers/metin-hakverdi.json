@@ -72,27 +72,48 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "washington",
         "count": 5,
-        "ratioParty": 239.5,
-        "ratioBundestag": 167.5
+        "score": 25.6,
+        "ratio": 167.5
       },
       {
         "word": "investieren",
         "count": 6,
-        "ratioParty": 4.3,
-        "ratioBundestag": 9.2
+        "score": 13.9,
+        "ratio": 9.2
       },
       {
         "word": "sicherheit",
         "count": 5,
-        "ratioParty": 2.8,
-        "ratioBundestag": 4.1
+        "score": 8.1,
+        "ratio": 4.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "washington",
+        "count": 5,
+        "score": 27.4,
+        "ratio": 239.5
+      },
+      {
+        "word": "investieren",
+        "count": 6,
+        "score": 10.0,
+        "ratio": 4.3
+      },
+      {
+        "word": "sicherheit",
+        "count": 5,
+        "score": 6.7,
+        "ratio": 2.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 514,
@@ -114,27 +135,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Metin Hakverdi häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Metin Hakverdi häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Zukunft",
+        "isCorrect": false
+      },
       {
         "text": "Washington",
         "isCorrect": true
-      },
-      {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Washington\" nutzt Metin Hakverdi 239.5× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "167.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Washington\" sagte Metin Hakverdi 5× (167.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

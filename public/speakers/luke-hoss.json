@@ -72,44 +72,84 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "knast",
         "count": 7,
-        "ratioParty": 659.0,
-        "ratioBundestag": 2120.5
+        "score": 53.6,
+        "ratio": 2120.5
       },
       {
-        "word": "strafrecht",
-        "count": 5,
-        "ratioParty": 94.1,
-        "ratioBundestag": 110.8
+        "word": "menschen",
+        "count": 24,
+        "score": 33.5,
+        "ratio": 3.0
       },
       {
         "word": "strafe",
         "count": 6,
-        "ratioParty": 80.7,
-        "ratioBundestag": 175.9
+        "score": 31.1,
+        "ratio": 175.9
       },
       {
         "word": "rechtsstaat",
         "count": 9,
-        "ratioParty": 26.5,
-        "ratioBundestag": 18.3
+        "score": 26.6,
+        "ratio": 18.3
       },
       {
-        "word": "jemand",
-        "count": 5,
-        "ratioParty": 14.7,
-        "ratioBundestag": 18.2
+        "word": "innen",
+        "count": 9,
+        "score": 26.2,
+        "ratio": 17.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "knast",
+        "count": 7,
+        "score": 45.4,
+        "ratio": 659.0
+      },
+      {
+        "word": "rechtsstaat",
+        "count": 9,
+        "score": 29.8,
+        "ratio": 26.5
+      },
+      {
+        "word": "strafe",
+        "count": 6,
+        "score": 26.4,
+        "ratio": 80.7
+      },
+      {
+        "word": "strafrecht",
+        "count": 5,
+        "score": 22.8,
+        "ratio": 94.1
+      },
+      {
+        "word": "staat",
+        "count": 8,
+        "score": 17.3,
+        "ratio": 7.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "sicher",
         "count": 3,
-        "ratioParty": 5.0,
-        "ratioBundestag": 3.7
+        "score": 4.6,
+        "ratio": 3.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 3,
+        "score": 5.4,
+        "ratio": 5.0
       }
     ]
   },
@@ -133,50 +173,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Luke Hoß häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Luke Hoß häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
         "text": "Knast",
         "isCorrect": true
-      },
-      {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Knast\" nutzt Luke Hoß 659.0× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "2120.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Knast\" sagte Luke Hoß 7× (2120.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Luke Hoß häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Luke Hoß häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Politisch",
+        "text": "Sicher",
+        "isCorrect": true
+      },
+      {
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
         "isCorrect": false
       },
       {
         "text": "Klar",
         "isCorrect": false
-      },
-      {
-        "text": "Stark",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Sicher\" nutzt Luke Hoß 5.0× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "3.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Luke Hoß 3× (3.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -186,20 +224,20 @@
     "id": "eichhoernchen",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.907
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißiger Abgeordneter",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
+        "score": 0.855
       },
       {
-        "emoji": "🦉",
-        "name": "Eule",
-        "title": "Themenexperte",
-        "reason": "Dein Fachwort \"Knast\" nutzt du 659.0× häufiger als deine Fraktion.",
-        "id": "eule",
-        "score": 0.88
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrlicher Redner",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.84
       }
     ]
   },

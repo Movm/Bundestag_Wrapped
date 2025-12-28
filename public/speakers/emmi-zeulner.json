@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "pflege",
         "count": 21,
-        "ratioParty": 58.7,
-        "ratioBundestag": 65.8
+        "score": 88.2,
+        "ratio": 65.8
+      },
+      {
+        "word": "menschen",
+        "count": 17,
+        "score": 23.0,
+        "ratio": 2.9
       },
       {
         "word": "ausbildung",
         "count": 6,
-        "ratioParty": 28.8,
-        "ratioBundestag": 34.4
+        "score": 21.4,
+        "ratio": 34.4
+      },
+      {
+        "word": "gesetz",
+        "count": 9,
+        "score": 20.2,
+        "ratio": 8.4
       },
       {
         "word": "selbstverständlich",
         "count": 6,
-        "ratioParty": 14.9,
-        "ratioBundestag": 18.8
-      },
-      {
-        "word": "kommission",
-        "count": 5,
-        "ratioParty": 11.0,
-        "ratioBundestag": 12.7
-      },
-      {
-        "word": "situation",
-        "count": 5,
-        "ratioParty": 10.6,
-        "ratioBundestag": 11.6
+        "score": 17.9,
+        "ratio": 18.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "pflege",
+        "count": 21,
+        "score": 85.9,
+        "ratio": 58.7
+      },
+      {
+        "word": "menschen",
+        "count": 17,
+        "score": 26.3,
+        "ratio": 3.7
+      },
+      {
+        "word": "ausbildung",
+        "count": 6,
+        "score": 20.4,
+        "ratio": 28.8
+      },
+      {
+        "word": "gesetz",
+        "count": 9,
+        "score": 19.4,
+        "ratio": 7.6
+      },
+      {
+        "word": "selbstverständlich",
+        "count": 6,
+        "score": 16.6,
+        "ratio": 14.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 442,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Emmi Zeulner häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Emmi Zeulner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bildung",
+        "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
+        "text": "Minister",
         "isCorrect": false
       },
       {
         "text": "Pflege",
         "isCorrect": true
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Pflege\" nutzt Emmi Zeulner 58.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "65.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Pflege\" sagte Emmi Zeulner 21× (65.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -157,20 +189,20 @@
     "id": "eichhoernchen",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.655
-      },
-      {
         "emoji": "🐝",
         "name": "Biene",
         "title": "Fleißige Abgeordnete",
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 0.589
+      },
+      {
+        "emoji": "🦜",
+        "name": "Papagei",
+        "title": "Neugierige Fragestellerin",
+        "reason": "Mit vielen Fragen bringst du wichtige Themen auf den Tisch.",
+        "id": "papagei",
+        "score": 0.588
       }
     ]
   },

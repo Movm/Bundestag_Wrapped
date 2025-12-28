@@ -72,39 +72,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "petitionsrecht",
         "count": 6,
-        "ratioParty": 1252.0,
-        "ratioBundestag": 560.1
+        "score": 38.0,
+        "ratio": 560.1
+      },
+      {
+        "word": "rechtsstaat",
+        "count": 10,
+        "score": 27.5,
+        "ratio": 14.6
       },
       {
         "word": "anmerkung",
         "count": 5,
-        "ratioParty": 104.3,
-        "ratioBundestag": 172.0
+        "score": 25.8,
+        "ratio": 172.0
       },
       {
-        "word": "müsse",
-        "count": 5,
-        "ratioParty": 80.3,
-        "ratioBundestag": 43.0
+        "word": "gesetzentwurf",
+        "count": 11,
+        "score": 25.1,
+        "ratio": 8.8
       },
       {
-        "word": "rechtspolitik",
-        "count": 5,
-        "ratioParty": 65.2,
-        "ratioBundestag": 76.0
+        "word": "system",
+        "count": 9,
+        "score": 23.7,
+        "ratio": 12.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "petitionsrecht",
+        "count": 6,
+        "score": 42.8,
+        "ratio": 1252.0
+      },
+      {
+        "word": "bürger",
+        "count": 13,
+        "score": 28.5,
+        "ratio": 8.0
+      },
+      {
+        "word": "rechtsstaat",
+        "count": 10,
+        "score": 26.5,
+        "ratio": 13.1
       },
       {
         "word": "zitat",
         "count": 7,
-        "ratioParty": 39.5,
-        "ratioBundestag": 15.7
+        "score": 25.9,
+        "ratio": 39.5
+      },
+      {
+        "word": "gesetzentwurf",
+        "count": 11,
+        "score": 24.7,
+        "ratio": 8.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 643,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Johannes Wiegelmann häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Johannes Wiegelmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
+      },
       {
         "text": "Petitionsrecht",
         "isCorrect": true
-      },
-      {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaft",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Petitionsrecht\" nutzt Johannes Wiegelmann 1252.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "560.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Petitionsrecht\" sagte Johannes Wiegelmann 6× (560.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -168,7 +200,7 @@
         "emoji": "🦉",
         "name": "Eule",
         "title": "Themenexperte",
-        "reason": "Dein Fachwort \"Petitionsrecht\" nutzt du 1252.0× häufiger als deine Fraktion.",
+        "reason": "Dein Fachwort \"Petitionsrecht\" nutzt du 560.1× häufiger als deine Fraktion.",
         "id": "eule",
         "score": 0.86
       }

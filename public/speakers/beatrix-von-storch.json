@@ -64,39 +64,79 @@
         "count": 11
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "neukölln",
-        "count": 7,
-        "ratioParty": 207.7,
-        "ratioBundestag": 173.5
-      },
-      {
-        "word": "digitalpolitik",
-        "count": 5,
-        "ratioParty": 111.3,
-        "ratioBundestag": 94.4
+        "word": "afghanen",
+        "count": 18,
+        "score": 81.0,
+        "ratio": 89.2
       },
       {
         "word": "westen",
         "count": 12,
-        "ratioParty": 41.1,
-        "ratioBundestag": 61.0
+        "score": 49.5,
+        "ratio": 61.0
       },
       {
-        "word": "zensur",
-        "count": 5,
-        "ratioParty": 40.5,
-        "ratioBundestag": 116.6
+        "word": "neukölln",
+        "count": 7,
+        "score": 36.1,
+        "ratio": 173.5
       },
       {
-        "word": "bewegung",
-        "count": 5,
-        "ratioParty": 40.5,
-        "ratioBundestag": 23.3
+        "word": "linken",
+        "count": 14,
+        "score": 33.4,
+        "ratio": 9.9
+      },
+      {
+        "word": "trump",
+        "count": 11,
+        "score": 30.6,
+        "ratio": 15.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "afghanen",
+        "count": 18,
+        "score": 60.4,
+        "ratio": 27.6
+      },
+      {
+        "word": "westen",
+        "count": 12,
+        "score": 44.9,
+        "ratio": 41.1
+      },
+      {
+        "word": "neukölln",
+        "count": 7,
+        "score": 37.4,
+        "ratio": 207.7
+      },
+      {
+        "word": "israel",
+        "count": 11,
+        "score": 31.2,
+        "ratio": 16.0
+      },
+      {
+        "word": "trump",
+        "count": 11,
+        "score": 27.7,
+        "ratio": 11.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "links",
+        "count": 3,
+        "score": 4.8,
+        "ratio": 3.9
+      }
+    ],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 346,
@@ -128,29 +168,49 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Beatrix von Storch häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Beatrix von Storch häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Neukölln",
-        "isCorrect": true
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
       },
       {
         "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Europa",
+        "text": "Afghanen",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "\"Afghanen\" sagte Beatrix von Storch 18× (89.2× häufiger als der Bundestag-Durchschnitt)."
+  },
+  "signatureAdjectiveQuiz": {
+    "question": "Welches Adjektiv nutzt Beatrix von Storch häufiger als der Bundestag-Durchschnitt?",
+    "options": [
+      {
+        "text": "Falsch",
         "isCorrect": false
       },
       {
-        "text": "Ausschuss",
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Links",
+        "isCorrect": true
+      },
+      {
+        "text": "Erfolgreich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Neukölln\" nutzt Beatrix von Storch 207.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "173.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Links\" sagte Beatrix von Storch 3× (3.9× häufiger als der Bundestag-Durchschnitt)."
   },
-  "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
   "toneProfile": {
     "scores": {

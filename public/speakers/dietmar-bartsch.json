@@ -60,68 +60,132 @@
         "count": 21
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "verteidigungsetat",
-        "count": 5,
-        "ratioParty": 54.8,
-        "ratioBundestag": 57.4
+        "word": "whatever",
+        "count": 13,
+        "score": 67.4,
+        "ratio": 177.2
+      },
+      {
+        "word": "takes",
+        "count": 13,
+        "score": 66.6,
+        "ratio": 166.8
+      },
+      {
+        "word": "wahrheit",
+        "count": 27,
+        "score": 65.7,
+        "ratio": 10.4
+      },
+      {
+        "word": "aufrüstung",
+        "count": 13,
+        "score": 49.0,
+        "ratio": 42.3
+      },
+      {
+        "word": "haushalt",
+        "count": 31,
+        "score": 41.0,
+        "ratio": 2.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "wahrheit",
+        "count": 27,
+        "score": 58.4,
+        "ratio": 7.7
       },
       {
         "word": "wachstum",
         "count": 12,
-        "ratioParty": 52.6,
-        "ratioBundestag": 6.1
-      },
-      {
-        "word": "veränderungen",
-        "count": 5,
-        "ratioParty": 36.5,
-        "ratioBundestag": 7.5
-      },
-      {
-        "word": "bundesrechnungshof",
-        "count": 8,
-        "ratioParty": 35.1,
-        "ratioBundestag": 12.3
+        "score": 47.8,
+        "ratio": 52.6
       },
       {
         "word": "whatever",
         "count": 13,
-        "ratioParty": 28.5,
-        "ratioBundestag": 177.2
+        "score": 44.0,
+        "ratio": 28.5
+      },
+      {
+        "word": "takes",
+        "count": 13,
+        "score": 44.0,
+        "ratio": 28.5
+      },
+      {
+        "word": "übrigen",
+        "count": 15,
+        "score": 42.9,
+        "ratio": 16.4
       }
     ],
-    "signatureAdjectives": [
-      {
-        "word": "problematisch",
-        "count": 3,
-        "ratioParty": 32.9,
-        "ratioBundestag": 19.2
-      },
+    "signatureAdjectivesBundestag": [
       {
         "word": "inakzeptabel",
         "count": 8,
-        "ratioParty": 21.9,
-        "ratioBundestag": 37.9
-      },
-      {
-        "word": "vernünftig",
-        "count": 3,
-        "ratioParty": 7.3,
-        "ratioBundestag": 8.4
+        "score": 29.3,
+        "ratio": 37.9
       },
       {
         "word": "geschützt",
         "count": 5,
-        "ratioParty": 6.1,
-        "ratioBundestag": 8.0
+        "score": 11.0,
+        "ratio": 8.0
+      },
+      {
+        "word": "problematisch",
+        "count": 3,
+        "score": 9.0,
+        "ratio": 19.2
       },
       {
         "word": "unverantwortlich",
         "count": 3,
-        "ratioParty": 5.5,
-        "ratioBundestag": 13.6
+        "score": 8.0,
+        "ratio": 13.6
+      },
+      {
+        "word": "vernünftig",
+        "count": 3,
+        "score": 6.7,
+        "ratio": 8.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "inakzeptabel",
+        "count": 8,
+        "score": 25.1,
+        "ratio": 21.9
+      },
+      {
+        "word": "problematisch",
+        "count": 3,
+        "score": 10.6,
+        "ratio": 32.9
+      },
+      {
+        "word": "geschützt",
+        "count": 5,
+        "score": 9.8,
+        "ratio": 6.1
+      },
+      {
+        "word": "vernünftig",
+        "count": 3,
+        "score": 6.4,
+        "ratio": 7.3
+      },
+      {
+        "word": "unverantwortlich",
+        "count": 3,
+        "score": 5.6,
+        "ratio": 5.5
       }
     ]
   },
@@ -150,50 +214,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Dietmar Bartsch häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Dietmar Bartsch häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bildung",
+        "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
+        "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Ausschuss",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Verteidigungsetat",
+        "text": "Whatever",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Verteidigungsetat\" nutzt Dr. Dietmar Bartsch 54.8× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "57.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Whatever\" sagte Dr. Dietmar Bartsch 13× (177.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Dietmar Bartsch häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Dietmar Bartsch häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
+        "text": "Inakzeptabel",
         "isCorrect": true
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Problematisch\" nutzt Dr. Dietmar Bartsch 32.9× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "19.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Inakzeptabel\" sagte Dr. Dietmar Bartsch 8× (37.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

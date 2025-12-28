@@ -72,21 +72,36 @@
         "count": 3
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "saarland",
         "count": 9,
-        "ratioParty": 2303.9,
-        "ratioBundestag": 1909.9
+        "score": 68.0,
+        "ratio": 1909.9
       },
       {
         "word": "deutschland",
         "count": 6,
-        "ratioParty": 2.0,
-        "ratioBundestag": 2.8
+        "score": 8.0,
+        "ratio": 2.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "saarland",
+        "count": 9,
+        "score": 69.7,
+        "ratio": 2303.9
+      },
+      {
+        "word": "deutschland",
+        "count": 6,
+        "score": 6.6,
+        "ratio": 2.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 396,
@@ -103,27 +118,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Carsten Becker häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Carsten Becker häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
       {
         "text": "Saarland",
         "isCorrect": true
       },
       {
-        "text": "Debatte",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
+        "text": "Demokratie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Saarland\" nutzt Carsten Becker 2303.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "1909.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Saarland\" sagte Carsten Becker 9× (1909.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

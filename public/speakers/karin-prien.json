@@ -72,50 +72,96 @@
         "count": 20
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "föderalismus",
-        "count": 5,
-        "ratioParty": 91.5,
-        "ratioBundestag": 96.0
+        "word": "bildung",
+        "count": 45,
+        "score": 143.5,
+        "ratio": 23.3
       },
       {
-        "word": "startchancen",
-        "count": 5,
-        "ratioParty": 57.2,
-        "ratioBundestag": 65.4
+        "word": "kinder",
+        "count": 49,
+        "score": 125.5,
+        "ratio": 11.9
       },
       {
-        "word": "sprachförderung",
-        "count": 5,
-        "ratioParty": 57.2,
-        "ratioBundestag": 102.8
+        "word": "länder",
+        "count": 28,
+        "score": 63.3,
+        "ratio": 8.6
       },
       {
-        "word": "senioren",
-        "count": 7,
-        "ratioParty": 53.4,
-        "ratioBundestag": 32.5
+        "word": "kommunen",
+        "count": 30,
+        "score": 60.8,
+        "ratio": 6.6
       },
       {
-        "word": "ganztag",
-        "count": 5,
-        "ratioParty": 41.6,
-        "ratioBundestag": 30.6
+        "word": "gesellschaft",
+        "count": 28,
+        "score": 59.0,
+        "ratio": 7.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "bildung",
+        "count": 45,
+        "score": 154.0,
+        "ratio": 29.6
+      },
+      {
+        "word": "kinder",
+        "count": 49,
+        "score": 142.8,
+        "ratio": 17.5
+      },
+      {
+        "word": "länder",
+        "count": 28,
+        "score": 57.7,
+        "ratio": 6.9
+      },
+      {
+        "word": "gesellschaft",
+        "count": 28,
+        "score": 57.2,
+        "ratio": 6.7
+      },
+      {
+        "word": "kommunen",
+        "count": 30,
+        "score": 54.7,
+        "ratio": 5.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "entscheidend",
         "count": 6,
-        "ratioParty": 4.0,
-        "ratioBundestag": 6.4
+        "score": 12.0,
+        "ratio": 6.4
       },
       {
         "word": "stark",
         "count": 4,
-        "ratioParty": 2.5,
-        "ratioBundestag": 2.8
+        "score": 5.4,
+        "ratio": 2.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 6,
+        "score": 9.6,
+        "ratio": 4.0
+      },
+      {
+        "word": "stark",
+        "count": 4,
+        "score": 5.0,
+        "ratio": 2.5
       }
     ]
   },
@@ -139,33 +185,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Karin Prien häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Karin Prien häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
-        "text": "Föderalismus",
+        "text": "Bildung",
         "isCorrect": true
       },
       {
-        "text": "Kinder",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Europa",
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Föderalismus\" nutzt Karin Prien 91.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "96.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bildung\" sagte Karin Prien 45× (23.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Karin Prien häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Karin Prien häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Neu",
+        "text": "Alt",
         "isCorrect": false
       },
       {
@@ -173,16 +218,15 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Sicher",
         "isCorrect": false
       },
       {
-        "text": "National",
+        "text": "Politisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Karin Prien 4.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "6.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Entscheidend\" sagte Karin Prien 6× (6.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

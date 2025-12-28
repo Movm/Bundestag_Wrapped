@@ -68,44 +68,84 @@
         "count": 13
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "kabul",
-        "count": 7,
-        "ratioParty": 138.1,
-        "ratioBundestag": 144.9
-      },
-      {
-        "word": "ortskraft",
-        "count": 5,
-        "ratioParty": 131.5,
-        "ratioBundestag": 351.9
-      },
-      {
-        "word": "kosovo",
-        "count": 10,
-        "ratioParty": 56.4,
-        "ratioBundestag": 41.4
+        "word": "deutschen",
+        "count": 27,
+        "score": 47.9,
+        "ratio": 4.9
       },
       {
         "word": "auswärtige",
         "count": 11,
-        "ratioParty": 33.4,
-        "ratioBundestag": 49.0
+        "score": 43.0,
+        "ratio": 49.0
       },
       {
-        "word": "schiffe",
-        "count": 6,
-        "ratioParty": 23.7,
-        "ratioBundestag": 31.5
+        "word": "kosovo",
+        "count": 10,
+        "score": 37.5,
+        "ratio": 41.4
+      },
+      {
+        "word": "kabul",
+        "count": 7,
+        "score": 34.9,
+        "ratio": 144.9
+      },
+      {
+        "word": "interessen",
+        "count": 13,
+        "score": 31.2,
+        "ratio": 10.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "kosovo",
+        "count": 10,
+        "score": 40.5,
+        "ratio": 56.4
+      },
+      {
+        "word": "auswärtige",
+        "count": 11,
+        "score": 38.9,
+        "ratio": 33.4
+      },
+      {
+        "word": "deutschen",
+        "count": 27,
+        "score": 38.1,
+        "ratio": 3.1
+      },
+      {
+        "word": "kabul",
+        "count": 7,
+        "score": 34.5,
+        "ratio": 138.1
+      },
+      {
+        "word": "ukraine",
+        "count": 14,
+        "score": 28.1,
+        "ratio": 6.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "gefährlich",
         "count": 3,
-        "ratioParty": 14.8,
-        "ratioBundestag": 10.8
+        "score": 7.4,
+        "ratio": 10.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gefährlich",
+        "count": 3,
+        "score": 8.3,
+        "ratio": 14.8
       }
     ]
   },
@@ -134,50 +174,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Stefan Keuter häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Stefan Keuter häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Kabul",
+        "text": "Deutschen",
         "isCorrect": true
+      },
+      {
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kabul\" nutzt Stefan Keuter 138.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "144.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Deutschen\" sagte Stefan Keuter 27× (4.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Stefan Keuter häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Stefan Keuter häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Gefährlich",
         "isCorrect": true
       },
       {
-        "text": "Problematisch",
+        "text": "Stark",
         "isCorrect": false
       },
       {
-        "text": "Alt",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Groß",
+        "text": "Gut",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gefährlich\" nutzt Stefan Keuter 14.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "10.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gefährlich\" sagte Stefan Keuter 3× (10.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

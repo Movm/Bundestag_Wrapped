@@ -72,39 +72,72 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "europarat",
         "count": 14,
-        "ratioParty": 590.0,
-        "ratioBundestag": 358.5
+        "score": 82.4,
+        "ratio": 358.5
       },
       {
-        "word": "plötzlich",
-        "count": 5,
-        "ratioParty": 163.9,
-        "ratioBundestag": 63.6
+        "word": "europäische",
+        "count": 11,
+        "score": 36.9,
+        "ratio": 27.7
+      },
+      {
+        "word": "israel",
+        "count": 8,
+        "score": 28.5,
+        "ratio": 34.1
       },
       {
         "word": "hisbollah",
         "count": 5,
-        "ratioParty": 101.7,
-        "ratioBundestag": 180.8
+        "score": 26.0,
+        "ratio": 180.8
       },
       {
         "word": "mitglied",
         "count": 5,
-        "ratioParty": 75.6,
-        "ratioBundestag": 82.3
-      },
-      {
-        "word": "hamas",
-        "count": 5,
-        "ratioParty": 34.3,
-        "ratioBundestag": 41.9
+        "score": 22.1,
+        "ratio": 82.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "europarat",
+        "count": 14,
+        "score": 89.3,
+        "ratio": 590.0
+      },
+      {
+        "word": "europäische",
+        "count": 11,
+        "score": 32.7,
+        "ratio": 18.5
+      },
+      {
+        "word": "israel",
+        "count": 8,
+        "score": 26.0,
+        "ratio": 24.8
+      },
+      {
+        "word": "plötzlich",
+        "count": 5,
+        "score": 25.5,
+        "ratio": 163.9
+      },
+      {
+        "word": "hisbollah",
+        "count": 5,
+        "score": 23.2,
+        "ratio": 101.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 730,
@@ -126,10 +159,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Armin Laschet häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Armin Laschet häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Rente",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
@@ -137,16 +170,15 @@
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Ausschuss",
+        "text": "Gesetz",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Europarat\" nutzt Armin Laschet 590.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "358.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Europarat\" sagte Armin Laschet 14× (358.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

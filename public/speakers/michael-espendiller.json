@@ -64,44 +64,84 @@
         "count": 25
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "schulden",
+        "count": 34,
+        "score": 95.6,
+        "ratio": 15.7
+      },
+      {
+        "word": "einfach",
+        "count": 41,
+        "score": 71.7,
+        "ratio": 4.7
+      },
       {
         "word": "bildschirmen",
         "count": 12,
-        "ratioParty": 251.9,
-        "ratioBundestag": 188.9
+        "score": 63.0,
+        "ratio": 188.9
       },
       {
-        "word": "dieter",
-        "count": 5,
-        "ratioParty": 209.9,
-        "ratioBundestag": 157.4
+        "word": "zuschauer",
+        "count": 14,
+        "score": 46.0,
+        "ratio": 25.7
       },
       {
-        "word": "patriot",
-        "count": 5,
-        "ratioParty": 42.0,
-        "ratioBundestag": 47.2
-      },
-      {
-        "word": "wirtschaftswunder",
-        "count": 5,
-        "ratioParty": 30.0,
-        "ratioBundestag": 118.0
-      },
-      {
-        "word": "zinszahlungen",
-        "count": 5,
-        "ratioParty": 26.2,
-        "ratioBundestag": 72.6
+        "word": "regierung",
+        "count": 29,
+        "score": 40.2,
+        "ratio": 3.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "einfach",
+        "count": 41,
+        "score": 68.6,
+        "ratio": 4.3
+      },
+      {
+        "word": "schulden",
+        "count": 34,
+        "score": 68.1,
+        "ratio": 6.4
+      },
+      {
+        "word": "bildschirmen",
+        "count": 12,
+        "score": 66.4,
+        "ratio": 251.9
+      },
+      {
+        "word": "bundeshaushalt",
+        "count": 16,
+        "score": 39.5,
+        "ratio": 10.8
+      },
+      {
+        "word": "länder",
+        "count": 19,
+        "score": 35.6,
+        "ratio": 5.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "schlecht",
         "count": 4,
-        "ratioParty": 2.7,
-        "ratioBundestag": 3.6
+        "score": 6.1,
+        "ratio": 3.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "schlecht",
+        "count": 4,
+        "score": 5.2,
+        "ratio": 2.7
       }
     ]
   },
@@ -145,50 +185,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Michael Espendiller häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Michael Espendiller häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Bildschirmen",
+        "text": "Schulden",
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
+        "text": "Gesetz",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bildschirmen\" nutzt Dr. Michael Espendiller 251.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "188.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Schulden\" sagte Dr. Michael Espendiller 34× (15.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Michael Espendiller häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Michael Espendiller häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
-        "isCorrect": false
-      },
       {
         "text": "Schlecht",
         "isCorrect": true
       },
       {
-        "text": "National",
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schlecht\" nutzt Dr. Michael Espendiller 2.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "3.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Schlecht\" sagte Dr. Michael Espendiller 4× (3.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

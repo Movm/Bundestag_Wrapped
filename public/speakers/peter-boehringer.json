@@ -68,50 +68,96 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "gemeinschaftsschulden",
         "count": 5,
-        "ratioParty": 845.0,
-        "ratioBundestag": 3749.2
+        "score": 41.1,
+        "ratio": 3749.2
       },
       {
         "word": "brüssel",
         "count": 10,
-        "ratioParty": 25.2,
-        "ratioBundestag": 34.2
-      },
-      {
-        "word": "finanzminister",
-        "count": 5,
-        "ratioParty": 20.1,
-        "ratioBundestag": 20.9
-      },
-      {
-        "word": "ernsthaft",
-        "count": 5,
-        "ratioParty": 18.8,
-        "ratioBundestag": 20.4
+        "score": 35.6,
+        "ratio": 34.2
       },
       {
         "word": "planwirtschaft",
         "count": 6,
-        "ratioParty": 15.1,
-        "ratioBundestag": 50.6
+        "score": 23.7,
+        "ratio": 50.6
+      },
+      {
+        "word": "deutschen",
+        "count": 13,
+        "score": 23.3,
+        "ratio": 5.0
+      },
+      {
+        "word": "inzwischen",
+        "count": 6,
+        "score": 16.6,
+        "ratio": 14.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "stark",
-        "count": 3,
-        "ratioParty": 7.7,
-        "ratioBundestag": 5.5
+        "word": "gemeinschaftsschulden",
+        "count": 5,
+        "score": 33.7,
+        "ratio": 845.0
       },
+      {
+        "word": "brüssel",
+        "count": 10,
+        "score": 32.7,
+        "ratio": 25.2
+      },
+      {
+        "word": "deutschen",
+        "count": 13,
+        "score": 18.4,
+        "ratio": 3.1
+      },
+      {
+        "word": "planwirtschaft",
+        "count": 6,
+        "score": 16.7,
+        "ratio": 15.1
+      },
+      {
+        "word": "kommission",
+        "count": 6,
+        "score": 16.4,
+        "ratio": 14.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "sicher",
         "count": 5,
-        "ratioParty": 6.9,
-        "ratioBundestag": 5.0
+        "score": 9.0,
+        "ratio": 5.0
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 5.6,
+        "ratio": 5.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 5,
+        "score": 10.3,
+        "ratio": 6.9
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 6.5,
+        "ratio": 7.7
       }
     ]
   },
@@ -140,50 +186,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Peter Boehringer häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Peter Boehringer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Gemeinschaftsschulden",
         "isCorrect": true
       },
       {
-        "text": "Wirtschaft",
+        "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Rente",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gemeinschaftsschulden\" nutzt Peter Boehringer 845.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "3749.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gemeinschaftsschulden\" sagte Peter Boehringer 5× (3749.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Peter Boehringer häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Peter Boehringer häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Sicher",
+        "isCorrect": true
+      },
       {
         "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Politisch",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Europäisch",
         "isCorrect": false
-      },
-      {
-        "text": "Stark",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Stark\" nutzt Peter Boehringer 7.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "5.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Peter Boehringer 5× (5.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

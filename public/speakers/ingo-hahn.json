@@ -68,39 +68,72 @@
         "count": 10
       }
     ],
-    "signatureWords": [
-      {
-        "word": "dürre",
-        "count": 8,
-        "ratioParty": 207.2,
-        "ratioBundestag": 70.9
-      },
-      {
-        "word": "naturschutz",
-        "count": 5,
-        "ratioParty": 19.9,
-        "ratioBundestag": 18.3
-      },
+    "signatureWordsBundestag": [
       {
         "word": "müllkippe",
         "count": 6,
-        "ratioParty": 16.6,
-        "ratioBundestag": 1382.8
+        "score": 43.4,
+        "ratio": 1382.8
+      },
+      {
+        "word": "klima",
+        "count": 15,
+        "score": 41.7,
+        "ratio": 15.1
+      },
+      {
+        "word": "grüne",
+        "count": 14,
+        "score": 35.9,
+        "ratio": 12.0
+      },
+      {
+        "word": "dürre",
+        "count": 8,
+        "score": 34.2,
+        "ratio": 70.9
+      },
+      {
+        "word": "angst",
+        "count": 10,
+        "score": 25.1,
+        "ratio": 11.3
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "dürre",
+        "count": 8,
+        "score": 42.7,
+        "ratio": 207.2
+      },
+      {
+        "word": "klima",
+        "count": 15,
+        "score": 38.6,
+        "ratio": 12.1
+      },
+      {
+        "word": "grüne",
+        "count": 14,
+        "score": 27.7,
+        "ratio": 6.3
+      },
+      {
+        "word": "angst",
+        "count": 10,
+        "score": 23.8,
+        "ratio": 9.8
       },
       {
         "word": "stunde",
         "count": 8,
-        "ratioParty": 14.5,
-        "ratioBundestag": 16.3
-      },
-      {
-        "word": "klimaschutz",
-        "count": 8,
-        "ratioParty": 14.3,
-        "ratioBundestag": 4.0
+        "score": 21.9,
+        "ratio": 14.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 320,
@@ -127,27 +160,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Ingo Hahn häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Ingo Hahn häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
-        "text": "Dürre",
+        "text": "Müllkippe",
         "isCorrect": true
       },
       {
-        "text": "Ausschuss",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Dürre\" nutzt Dr. Ingo Hahn 207.2× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "70.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Müllkippe\" sagte Dr. Ingo Hahn 6× (1382.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

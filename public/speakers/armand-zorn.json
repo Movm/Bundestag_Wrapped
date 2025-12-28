@@ -72,62 +72,120 @@
         "count": 18
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "automobilbranche",
-        "count": 5,
-        "ratioParty": 51.4,
-        "ratioBundestag": 97.2
+        "word": "sorgen",
+        "count": 43,
+        "score": 105.5,
+        "ratio": 10.6
       },
       {
-        "word": "hinkriegen",
-        "count": 5,
-        "ratioParty": 44.0,
-        "ratioBundestag": 77.8
+        "word": "infrastruktur",
+        "count": 28,
+        "score": 60.5,
+        "ratio": 7.7
       },
       {
-        "word": "germany",
-        "count": 5,
-        "ratioParty": 34.2,
-        "ratioBundestag": 25.5
+        "word": "grundlage",
+        "count": 20,
+        "score": 53.3,
+        "ratio": 13.4
       },
       {
-        "word": "wirtschaftspolitik",
-        "count": 5,
-        "ratioParty": 23.7,
-        "ratioBundestag": 10.7
+        "word": "souveränität",
+        "count": 18,
+        "score": 53.0,
+        "ratio": 18.0
       },
       {
-        "word": "staatsmodernisierung",
-        "count": 7,
-        "ratioParty": 22.7,
-        "ratioBundestag": 15.3
+        "word": "digitale",
+        "count": 18,
+        "score": 44.3,
+        "ratio": 10.7
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "sorgen",
+        "count": 43,
+        "score": 92.3,
+        "ratio": 7.6
+      },
+      {
+        "word": "infrastruktur",
+        "count": 28,
+        "score": 54.1,
+        "ratio": 5.9
+      },
+      {
+        "word": "grundlage",
+        "count": 20,
+        "score": 51.6,
+        "ratio": 12.2
+      },
+      {
+        "word": "souveränität",
+        "count": 18,
+        "score": 50.6,
+        "ratio": 15.6
+      },
+      {
+        "word": "staat",
+        "count": 21,
+        "score": 41.3,
+        "ratio": 6.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "stark",
+        "count": 7,
+        "score": 13.0,
+        "ratio": 5.4
+      },
       {
         "word": "zuverlässig",
         "count": 3,
-        "ratioParty": 10.9,
-        "ratioBundestag": 14.8
+        "score": 8.3,
+        "ratio": 14.8
       },
       {
         "word": "konstruktiv",
         "count": 3,
-        "ratioParty": 7.1,
-        "ratioBundestag": 12.1
-      },
-      {
-        "word": "stark",
-        "count": 7,
-        "ratioParty": 4.0,
-        "ratioBundestag": 5.4
+        "score": 7.7,
+        "ratio": 12.1
       },
       {
         "word": "entscheidend",
         "count": 3,
-        "ratioParty": 2.8,
-        "ratioBundestag": 3.4
+        "score": 4.5,
+        "ratio": 3.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "stark",
+        "count": 7,
+        "score": 11.2,
+        "ratio": 4.0
+      },
+      {
+        "word": "zuverlässig",
+        "count": 3,
+        "score": 7.4,
+        "ratio": 10.9
+      },
+      {
+        "word": "konstruktiv",
+        "count": 3,
+        "score": 6.3,
+        "ratio": 7.1
+      },
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 4.0,
+        "ratio": 2.8
       }
     ]
   },
@@ -161,50 +219,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Armand Zorn häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Armand Zorn häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Rente",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Automobilbranche",
+        "text": "Sorgen",
         "isCorrect": true
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Automobilbranche\" nutzt Armand Zorn 51.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "97.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sorgen\" sagte Armand Zorn 43× (10.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Armand Zorn häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Armand Zorn häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gut",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
-        "text": "Zuverlässig",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
         "isCorrect": true
       },
       {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Zuverlässig\" nutzt Armand Zorn 10.9× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "14.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Stark\" sagte Armand Zorn 7× (5.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

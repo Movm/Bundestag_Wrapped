@@ -56,33 +56,60 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "steuerzuschuss",
         "count": 5,
-        "ratioParty": 886.5,
-        "ratioBundestag": 2060.2
-      },
-      {
-        "word": "beiträge",
-        "count": 5,
-        "ratioParty": 42.2,
-        "ratioBundestag": 36.1
+        "score": 38.2,
+        "ratio": 2060.2
       },
       {
         "word": "ausschuss",
         "count": 6,
-        "ratioParty": 33.2,
-        "ratioBundestag": 33.9
+        "score": 21.3,
+        "ratio": 33.9
+      },
+      {
+        "word": "beiträge",
+        "count": 5,
+        "score": 18.1,
+        "ratio": 36.1
       },
       {
         "word": "maßnahmen",
         "count": 5,
-        "ratioParty": 7.1,
-        "ratioBundestag": 5.9
+        "score": 9.7,
+        "ratio": 5.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "steuerzuschuss",
+        "count": 5,
+        "score": 33.9,
+        "ratio": 886.5
+      },
+      {
+        "word": "ausschuss",
+        "count": 6,
+        "score": 21.2,
+        "ratio": 33.2
+      },
+      {
+        "word": "beiträge",
+        "count": 5,
+        "score": 18.8,
+        "ratio": 42.2
+      },
+      {
+        "word": "maßnahmen",
+        "count": 5,
+        "score": 10.5,
+        "ratio": 7.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 341,
@@ -104,27 +131,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Linda Heitmann häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Linda Heitmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
+        "isCorrect": false
+      },
       {
         "text": "Steuerzuschuss",
         "isCorrect": true
-      },
-      {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Steuerzuschuss\" nutzt Linda Heitmann 886.5× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "2060.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Steuerzuschuss\" sagte Linda Heitmann 5× (2060.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -146,7 +172,7 @@
         "emoji": "🦉",
         "name": "Eule",
         "title": "Themenexpertin",
-        "reason": "Dein Fachwort \"Steuerzuschuss\" nutzt du 886.5× häufiger als deine Fraktion.",
+        "reason": "Dein Fachwort \"Steuerzuschuss\" nutzt du 2060.2× häufiger als deine Fraktion.",
         "id": "eule",
         "score": 0.8
       }

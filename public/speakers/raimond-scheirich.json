@@ -72,39 +72,72 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "strom",
         "count": 10,
-        "ratioParty": 26.2,
-        "ratioBundestag": 51.0
+        "score": 39.5,
+        "ratio": 51.0
       },
       {
         "word": "energiewende",
         "count": 5,
-        "ratioParty": 12.8,
-        "ratioBundestag": 23.7
+        "score": 16.0,
+        "ratio": 23.7
       },
       {
         "word": "kosten",
         "count": 5,
-        "ratioParty": 4.5,
-        "ratioBundestag": 7.9
+        "score": 10.9,
+        "ratio": 7.9
       },
       {
-        "word": "diesen",
+        "word": "regierung",
         "count": 6,
-        "ratioParty": 3.7,
-        "ratioBundestag": 3.1
+        "score": 10.2,
+        "ratio": 4.5
       },
       {
         "word": "deutsche",
         "count": 5,
-        "ratioParty": 2.8,
-        "ratioBundestag": 4.9
+        "score": 8.9,
+        "ratio": 4.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "strom",
+        "count": 10,
+        "score": 33.0,
+        "ratio": 26.2
+      },
+      {
+        "word": "energiewende",
+        "count": 5,
+        "score": 13.1,
+        "ratio": 12.8
+      },
+      {
+        "word": "diesen",
+        "count": 6,
+        "score": 9.3,
+        "ratio": 3.7
+      },
+      {
+        "word": "kosten",
+        "count": 5,
+        "score": 8.5,
+        "ratio": 4.5
+      },
+      {
+        "word": "regierung",
+        "count": 6,
+        "score": 7.6,
+        "ratio": 2.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 479,
@@ -131,27 +164,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Raimond Scheirich häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Raimond Scheirich häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
       {
         "text": "Strom",
         "isCorrect": true
       },
       {
-        "text": "Haushalt",
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Strom\" nutzt Raimond Scheirich 26.2× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "51.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Strom\" sagte Raimond Scheirich 10× (51.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

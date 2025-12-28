@@ -72,44 +72,84 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "kameraden",
         "count": 21,
-        "ratioParty": 1582.3,
-        "ratioBundestag": 669.0
+        "score": 136.7,
+        "ratio": 669.0
       },
       {
         "word": "kosovo",
         "count": 11,
-        "ratioParty": 127.5,
-        "ratioBundestag": 87.6
+        "score": 49.3,
+        "ratio": 87.6
+      },
+      {
+        "word": "eloka",
+        "count": 5,
+        "score": 40.6,
+        "ratio": 3345.0
+      },
+      {
+        "word": "bundeswehr",
+        "count": 14,
+        "score": 36.2,
+        "ratio": 12.3
+      },
+      {
+        "word": "irini",
+        "count": 8,
+        "score": 35.6,
+        "ratio": 85.0
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "kameraden",
+        "count": 21,
+        "score": 154.7,
+        "ratio": 1582.3
+      },
+      {
+        "word": "kosovo",
+        "count": 11,
+        "score": 53.4,
+        "ratio": 127.5
       },
       {
         "word": "operation",
         "count": 8,
-        "ratioParty": 120.6,
-        "ratioBundestag": 73.3
-      },
-      {
-        "word": "libyen",
-        "count": 7,
-        "ratioParty": 95.9,
-        "ratioBundestag": 73.2
+        "score": 38.4,
+        "ratio": 120.6
       },
       {
         "word": "guardian",
         "count": 8,
-        "ratioParty": 92.7,
-        "ratioBundestag": 85.0
+        "score": 36.3,
+        "ratio": 92.7
+      },
+      {
+        "word": "bundeswehr",
+        "count": 14,
+        "score": 36.0,
+        "ratio": 12.1
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "links",
         "count": 3,
-        "ratioParty": 2.3,
-        "ratioBundestag": 6.6
+        "score": 6.1,
+        "ratio": 6.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "links",
+        "count": 3,
+        "score": 3.6,
+        "ratio": 2.3
       }
     ]
   },
@@ -133,50 +173,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Kurt Kleinschmidt häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Kurt Kleinschmidt häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Opposition",
+        "isCorrect": false
+      },
       {
         "text": "Kameraden",
         "isCorrect": true
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kameraden\" nutzt Kurt Kleinschmidt 1582.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "669.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Kameraden\" sagte Kurt Kleinschmidt 21× (669.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Kurt Kleinschmidt häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Kurt Kleinschmidt häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
         "text": "Links",
         "isCorrect": true
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Links\" nutzt Kurt Kleinschmidt 2.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "6.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Links\" sagte Kurt Kleinschmidt 3× (6.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

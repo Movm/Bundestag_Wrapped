@@ -64,44 +64,84 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "arzneimittel",
         "count": 7,
-        "ratioParty": 243.8,
-        "ratioBundestag": 254.4
+        "score": 38.8,
+        "ratio": 254.4
       },
       {
         "word": "masken",
         "count": 8,
-        "ratioParty": 92.9,
-        "ratioBundestag": 124.6
+        "score": 38.7,
+        "ratio": 124.6
+      },
+      {
+        "word": "leistungen",
+        "count": 9,
+        "score": 28.3,
+        "ratio": 22.2
       },
       {
         "word": "erkrankungen",
         "count": 6,
-        "ratioParty": 81.3,
-        "ratioBundestag": 72.7
+        "score": 25.8,
+        "ratio": 72.7
       },
       {
-        "word": "gesundheitssystem",
-        "count": 6,
-        "ratioParty": 37.5,
-        "ratioBundestag": 36.6
-      },
-      {
-        "word": "zulassen",
-        "count": 5,
-        "ratioParty": 35.9,
-        "ratioBundestag": 23.3
+        "word": "damals",
+        "count": 9,
+        "score": 23.6,
+        "ratio": 12.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "arzneimittel",
+        "count": 7,
+        "score": 38.5,
+        "ratio": 243.8
+      },
+      {
+        "word": "masken",
+        "count": 8,
+        "score": 36.3,
+        "ratio": 92.9
+      },
+      {
+        "word": "leistungen",
+        "count": 9,
+        "score": 28.6,
+        "ratio": 23.1
+      },
+      {
+        "word": "erkrankungen",
+        "count": 6,
+        "score": 26.5,
+        "ratio": 81.3
+      },
+      {
+        "word": "schreiben",
+        "count": 7,
+        "score": 23.8,
+        "ratio": 28.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "lächerlich",
         "count": 3,
-        "ratioParty": 104.5,
-        "ratioBundestag": 45.8
+        "score": 11.5,
+        "ratio": 45.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "lächerlich",
+        "count": 3,
+        "score": 14.0,
+        "ratio": 104.5
       }
     ]
   },
@@ -125,50 +165,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Stephan Pilsinger häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Stephan Pilsinger häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Arbeit",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
         "text": "Arzneimittel",
         "isCorrect": true
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Arzneimittel\" nutzt Dr. Stephan Pilsinger 243.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "254.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Arzneimittel\" sagte Dr. Stephan Pilsinger 7× (254.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Stephan Pilsinger häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Stephan Pilsinger häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
-      },
       {
         "text": "Lächerlich",
         "isCorrect": true
+      },
+      {
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
+        "isCorrect": false
       },
       {
         "text": "Europäisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Lächerlich\" nutzt Dr. Stephan Pilsinger 104.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "45.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Lächerlich\" sagte Dr. Stephan Pilsinger 3× (45.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

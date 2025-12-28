@@ -60,39 +60,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "arten",
         "count": 5,
-        "ratioParty": 156.0,
-        "ratioBundestag": 122.1
-      },
-      {
-        "word": "kosovo",
-        "count": 5,
-        "ratioParty": 54.3,
-        "ratioBundestag": 43.4
-      },
-      {
-        "word": "mandat",
-        "count": 5,
-        "ratioParty": 36.7,
-        "ratioBundestag": 22.8
+        "score": 24.1,
+        "ratio": 122.1
       },
       {
         "word": "einsatz",
         "count": 8,
-        "ratioParty": 11.0,
-        "ratioBundestag": 11.7
+        "score": 20.4,
+        "ratio": 11.7
       },
       {
-        "word": "politische",
+        "word": "kosovo",
         "count": 5,
-        "ratioParty": 7.2,
-        "ratioBundestag": 6.0
+        "score": 19.0,
+        "ratio": 43.4
+      },
+      {
+        "word": "mandat",
+        "count": 5,
+        "score": 15.9,
+        "ratio": 22.8
+      },
+      {
+        "word": "verantwortung",
+        "count": 9,
+        "score": 14.1,
+        "ratio": 3.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "arten",
+        "count": 5,
+        "score": 25.3,
+        "ratio": 156.0
+      },
+      {
+        "word": "kosovo",
+        "count": 5,
+        "score": 20.1,
+        "ratio": 54.3
+      },
+      {
+        "word": "einsatz",
+        "count": 8,
+        "score": 19.9,
+        "ratio": 11.0
+      },
+      {
+        "word": "mandat",
+        "count": 5,
+        "score": 18.1,
+        "ratio": 36.7
+      },
+      {
+        "word": "verantwortung",
+        "count": 9,
+        "score": 13.0,
+        "ratio": 3.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 457,
@@ -114,27 +147,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Volker Mayer-Lay häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Volker Mayer-Lay häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
       {
         "text": "Arten",
         "isCorrect": true
       },
       {
-        "text": "Fraktion",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
-        "text": "Demokratie",
+        "text": "Reform",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Arten\" nutzt Volker Mayer-Lay 156.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "122.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Arten\" sagte Volker Mayer-Lay 5× (122.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -153,12 +185,12 @@
         "score": 0.837
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.827
+        "emoji": "🦫",
+        "name": "Biber",
+        "title": "Konstruktiver Brückenbauer",
+        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
+        "id": "biber",
+        "score": 0.785
       }
     ]
   },

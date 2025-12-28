@@ -72,62 +72,120 @@
         "count": 9
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "rente",
+        "count": 23,
+        "score": 77.4,
+        "ratio": 27.9
+      },
+      {
+        "word": "altersarmut",
+        "count": 13,
+        "score": 60.8,
+        "ratio": 106.3
+      },
+      {
+        "word": "innen",
+        "count": 15,
+        "score": 45.3,
+        "ratio": 19.5
+      },
+      {
+        "word": "rentner",
+        "count": 12,
+        "score": 44.2,
+        "ratio": 38.8
+      },
+      {
+        "word": "renten",
+        "count": 8,
+        "score": 30.7,
+        "ratio": 45.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "rente",
+        "count": 23,
+        "score": 68.5,
+        "ratio": 18.6
+      },
+      {
+        "word": "altersarmut",
+        "count": 13,
+        "score": 43.3,
+        "ratio": 27.0
+      },
       {
         "word": "aktivrente",
         "count": 7,
-        "ratioParty": 218.4,
-        "ratioBundestag": 31.4
+        "score": 37.7,
+        "ratio": 218.4
       },
       {
-        "word": "rentenniveaus",
-        "count": 5,
-        "ratioParty": 104.0,
-        "ratioBundestag": 100.9
+        "word": "rentner",
+        "count": 12,
+        "score": 33.3,
+        "ratio": 15.0
       },
       {
-        "word": "armutsgefährdet",
-        "count": 5,
-        "ratioParty": 78.0,
-        "ratioBundestag": 302.6
-      },
-      {
-        "word": "rentenversicherung",
-        "count": 5,
-        "ratioParty": 62.4,
-        "ratioBundestag": 20.3
-      },
-      {
-        "word": "rentensystem",
-        "count": 7,
-        "ratioParty": 43.7,
-        "ratioBundestag": 69.4
+        "word": "alter",
+        "count": 9,
+        "score": 30.3,
+        "ratio": 28.1
       }
     ],
-    "signatureAdjectives": [
-      {
-        "word": "solidarisch",
-        "count": 3,
-        "ratioParty": 13.4,
-        "ratioBundestag": 36.3
-      },
+    "signatureAdjectivesBundestag": [
       {
         "word": "falsch",
         "count": 5,
-        "ratioParty": 10.4,
-        "ratioBundestag": 9.4
+        "score": 11.7,
+        "ratio": 9.4
+      },
+      {
+        "word": "solidarisch",
+        "count": 3,
+        "score": 10.9,
+        "ratio": 36.3
       },
       {
         "word": "teuer",
         "count": 3,
-        "ratioParty": 7.2,
-        "ratioBundestag": 8.3
+        "score": 6.7,
+        "ratio": 8.3
       },
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 3.2,
-        "ratioBundestag": 4.3
+        "score": 5.0,
+        "ratio": 4.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "falsch",
+        "count": 5,
+        "score": 12.2,
+        "ratio": 10.4
+      },
+      {
+        "word": "solidarisch",
+        "count": 3,
+        "score": 8.0,
+        "ratio": 13.4
+      },
+      {
+        "word": "teuer",
+        "count": 3,
+        "score": 6.3,
+        "ratio": 7.2
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 4.3,
+        "ratio": 3.2
       }
     ]
   },
@@ -151,50 +209,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Sarah Vollath häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Sarah Vollath häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetz",
+        "text": "Sicherheit",
         "isCorrect": false
       },
       {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
-        "text": "Aktivrente",
+        "text": "Rente",
         "isCorrect": true
+      },
+      {
+        "text": "Familie",
+        "isCorrect": false
       },
       {
         "text": "Antrag",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Aktivrente\" nutzt Sarah Vollath 218.4× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "31.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Rente\" sagte Sarah Vollath 23× (27.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Sarah Vollath häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Sarah Vollath häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Klar",
-        "isCorrect": false
-      },
       {
         "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Solidarisch",
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
         "isCorrect": true
       },
       {
-        "text": "Schlecht",
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Solidarisch\" nutzt Sarah Vollath 13.4× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "36.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Falsch\" sagte Sarah Vollath 5× (9.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",

@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
-      {
-        "word": "programm",
-        "count": 7,
-        "ratioParty": 25.0,
-        "ratioBundestag": 30.2
-      },
-      {
-        "word": "schulen",
-        "count": 5,
-        "ratioParty": 18.5,
-        "ratioBundestag": 18.9
-      },
-      {
-        "word": "junge",
-        "count": 5,
-        "ratioParty": 16.4,
-        "ratioBundestag": 17.4
-      },
+    "signatureWordsBundestag": [
       {
         "word": "kinder",
         "count": 12,
-        "ratioParty": 14.6,
-        "ratioBundestag": 15.6
+        "score": 33.7,
+        "ratio": 15.6
       },
       {
         "word": "frauen",
         "count": 11,
-        "ratioParty": 14.3,
-        "ratioBundestag": 18.7
+        "score": 32.8,
+        "ratio": 18.7
+      },
+      {
+        "word": "programm",
+        "count": 7,
+        "score": 24.1,
+        "ratio": 30.2
+      },
+      {
+        "word": "leben",
+        "count": 8,
+        "score": 16.5,
+        "ratio": 6.9
+      },
+      {
+        "word": "schulen",
+        "count": 5,
+        "score": 15.0,
+        "ratio": 18.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "kinder",
+        "count": 12,
+        "score": 33.0,
+        "ratio": 14.6
+      },
+      {
+        "word": "frauen",
+        "count": 11,
+        "score": 30.0,
+        "ratio": 14.3
+      },
+      {
+        "word": "programm",
+        "count": 7,
+        "score": 22.8,
+        "ratio": 25.0
+      },
+      {
+        "word": "leben",
+        "count": 8,
+        "score": 15.2,
+        "ratio": 5.7
+      },
+      {
+        "word": "schulen",
+        "count": 5,
+        "score": 14.8,
+        "ratio": 18.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 544,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Saskia Esken häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Saskia Esken häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Programm",
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Kinder",
         "isCorrect": true
       },
       {
-        "text": "Klima",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Programm\" nutzt Saskia Esken 25.0× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "30.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Kinder\" sagte Saskia Esken 12× (15.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

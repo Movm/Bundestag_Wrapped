@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "pflegekräfte",
-        "count": 5,
-        "ratioParty": 65.0,
-        "ratioBundestag": 65.2
-      },
-      {
-        "word": "senkung",
-        "count": 5,
-        "ratioParty": 41.2,
-        "ratioBundestag": 32.0
+        "word": "deutschland",
+        "count": 18,
+        "score": 23.7,
+        "ratio": 2.7
       },
       {
         "word": "circa",
         "count": 6,
-        "ratioParty": 25.6,
-        "ratioBundestag": 46.9
+        "score": 23.2,
+        "ratio": 46.9
+      },
+      {
+        "word": "pflegekräfte",
+        "count": 5,
+        "score": 21.0,
+        "ratio": 65.2
+      },
+      {
+        "word": "senkung",
+        "count": 5,
+        "score": 17.5,
+        "ratio": 32.0
       },
       {
         "word": "abschaffen",
         "count": 5,
-        "ratioParty": 19.0,
-        "ratioBundestag": 25.8
+        "score": 16.4,
+        "ratio": 25.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "pflegekräfte",
+        "count": 5,
+        "score": 20.9,
+        "ratio": 65.0
+      },
+      {
+        "word": "circa",
+        "count": 6,
+        "score": 19.7,
+        "ratio": 25.6
+      },
+      {
+        "word": "senkung",
+        "count": 5,
+        "score": 18.7,
+        "ratio": 41.2
       },
       {
         "word": "herzlichen",
         "count": 6,
-        "ratioParty": 17.4,
-        "ratioBundestag": 7.0
+        "score": 17.5,
+        "ratio": 17.4
+      },
+      {
+        "word": "abschaffen",
+        "count": 5,
+        "score": 15.0,
+        "ratio": 19.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 325,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Joachim Bloch häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Joachim Bloch häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Pflegekräfte",
+        "text": "Deutschland",
         "isCorrect": true
       },
       {
-        "text": "Abstimmung",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
+        "text": "Koalition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Pflegekräfte\" nutzt Joachim Bloch 65.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "65.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Deutschland\" sagte Joachim Bloch 18× (2.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

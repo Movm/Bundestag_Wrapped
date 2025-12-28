@@ -68,44 +68,84 @@
         "count": 19
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "tariftreuegesetz",
-        "count": 6,
-        "ratioParty": 233.2,
-        "ratioBundestag": 45.9
-      },
-      {
-        "word": "tarif",
-        "count": 9,
-        "ratioParty": 174.9,
-        "ratioBundestag": 137.8
+        "word": "paketboten",
+        "count": 11,
+        "score": 62.9,
+        "ratio": 303.1
       },
       {
         "word": "mindestlohn",
         "count": 16,
-        "ratioParty": 77.7,
-        "ratioBundestag": 31.5
+        "score": 55.7,
+        "ratio": 31.5
       },
       {
-        "word": "vollzeit",
-        "count": 6,
-        "ratioParty": 58.3,
-        "ratioBundestag": 97.3
+        "word": "kampf",
+        "count": 15,
+        "score": 45.2,
+        "ratio": 19.3
       },
       {
-        "word": "staatsmodernisierung",
-        "count": 6,
-        "ratioParty": 58.3,
-        "ratioBundestag": 11.6
+        "word": "tarif",
+        "count": 9,
+        "score": 44.4,
+        "ratio": 137.8
+      },
+      {
+        "word": "tarifbindung",
+        "count": 11,
+        "score": 42.3,
+        "ratio": 45.9
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "mindestlohn",
+        "count": 16,
+        "score": 69.9,
+        "ratio": 77.7
+      },
+      {
+        "word": "kampf",
+        "count": 15,
+        "score": 46.8,
+        "ratio": 21.6
+      },
+      {
+        "word": "tarif",
+        "count": 9,
+        "score": 46.5,
+        "ratio": 174.9
+      },
+      {
+        "word": "arbeiten",
+        "count": 20,
+        "score": 39.5,
+        "ratio": 6.2
+      },
+      {
+        "word": "freiheit",
+        "count": 20,
+        "score": 38.0,
+        "ratio": 5.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "gerecht",
         "count": 4,
-        "ratioParty": 2.1,
-        "ratioBundestag": 2.6
+        "score": 5.1,
+        "ratio": 2.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 4.5,
+        "ratio": 2.1
       }
     ]
   },
@@ -134,50 +174,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Ricarda Lang häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Ricarda Lang häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Tariftreuegesetz",
+        "text": "Paketboten",
         "isCorrect": true
       },
       {
-        "text": "Freiheit",
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Tariftreuegesetz\" nutzt Ricarda Lang 233.2× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "45.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Paketboten\" sagte Ricarda Lang 11× (303.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Ricarda Lang häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Ricarda Lang häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
-        "isCorrect": false
-      },
       {
         "text": "Gerecht",
         "isCorrect": true
+      },
+      {
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Richtig",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gerecht\" nutzt Ricarda Lang 2.1× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "2.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gerecht\" sagte Ricarda Lang 4× (2.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐬",

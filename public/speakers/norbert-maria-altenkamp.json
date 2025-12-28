@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "repression",
-        "count": 6,
-        "ratioParty": 647.9,
-        "ratioBundestag": 578.7
+        "word": "hilfe",
+        "count": 24,
+        "score": 96.1,
+        "ratio": 53.7
       },
       {
         "word": "humanitäre",
         "count": 21,
-        "ratioParty": 117.8,
-        "ratioBundestag": 80.1
+        "score": 92.3,
+        "ratio": 80.1
       },
       {
-        "word": "hilfe",
-        "count": 24,
-        "ratioParty": 72.0,
-        "ratioBundestag": 53.7
-      },
-      {
-        "word": "menschenrechte",
-        "count": 5,
-        "ratioParty": 65.4,
-        "ratioBundestag": 32.0
+        "word": "repression",
+        "count": 6,
+        "score": 38.2,
+        "ratio": 578.7
       },
       {
         "word": "israels",
         "count": 5,
-        "ratioParty": 48.0,
-        "ratioBundestag": 69.6
+        "score": 21.3,
+        "ratio": 69.6
+      },
+      {
+        "word": "humanitären",
+        "count": 5,
+        "score": 18.6,
+        "ratio": 40.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "hilfe",
+        "count": 24,
+        "score": 103.0,
+        "ratio": 72.0
+      },
+      {
+        "word": "humanitäre",
+        "count": 21,
+        "score": 100.3,
+        "ratio": 117.8
+      },
+      {
+        "word": "repression",
+        "count": 6,
+        "score": 38.9,
+        "ratio": 647.9
+      },
+      {
+        "word": "menschenrechte",
+        "count": 5,
+        "score": 21.0,
+        "ratio": 65.4
+      },
+      {
+        "word": "menschen",
+        "count": 14,
+        "score": 20.7,
+        "ratio": 3.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 459,
@@ -126,44 +159,35 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Norbert Maria Altenkamp häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Norbert Maria Altenkamp häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Repression",
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Hilfe",
         "isCorrect": true
       },
       {
-        "text": "Koalition",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaft",
+        "text": "Reform",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Repression\" nutzt Norbert Maria Altenkamp 647.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "578.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Hilfe\" sagte Norbert Maria Altenkamp 24× (53.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Cleverer Stratege",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐇",
+    "name": "Hase",
+    "title": "Wendiger Optimist",
+    "reason": "Mit positivem Blick reagierst du schnell auf neue Themen.",
+    "id": "hase",
     "alternatives": [
-      {
-        "emoji": "🐇",
-        "name": "Hase",
-        "title": "Wendiger Optimist",
-        "reason": "Mit positivem Blick reagierst du schnell auf neue Themen.",
-        "id": "hase",
-        "score": 0.82
-      },
       {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
@@ -171,6 +195,14 @@
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.723
+      },
+      {
+        "emoji": "🦊",
+        "name": "Fuchs",
+        "title": "Cleverer Stratege",
+        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+        "id": "fuchs",
+        "score": 0.634
       }
     ]
   },

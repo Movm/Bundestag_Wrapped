@@ -64,39 +64,72 @@
         "count": 11
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "hightech",
+        "count": 24,
+        "score": 94.7,
+        "ratio": 50.8
+      },
+      {
+        "word": "deutschland",
+        "count": 38,
+        "score": 50.7,
+        "ratio": 2.8
+      },
+      {
+        "word": "agenda",
+        "count": 16,
+        "score": 49.3,
+        "ratio": 20.8
+      },
+      {
+        "word": "forschung",
+        "count": 17,
+        "score": 48.7,
+        "ratio": 16.6
+      },
+      {
+        "word": "wissenschaft",
+        "count": 14,
+        "score": 48.1,
+        "ratio": 30.0
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "hightech",
+        "count": 24,
+        "score": 87.7,
+        "ratio": 37.6
+      },
+      {
+        "word": "wissenschaft",
+        "count": 14,
+        "score": 52.8,
+        "ratio": 42.4
+      },
       {
         "word": "forschungs",
         "count": 9,
-        "ratioParty": 254.1,
-        "ratioBundestag": 183.8
+        "score": 49.9,
+        "ratio": 254.1
       },
       {
-        "word": "weltspitze",
-        "count": 6,
-        "ratioParty": 145.2,
-        "ratioBundestag": 187.4
+        "word": "deutschland",
+        "count": 38,
+        "score": 47.6,
+        "ratio": 2.5
       },
       {
-        "word": "forschungsförderung",
-        "count": 5,
-        "ratioParty": 141.2,
-        "ratioBundestag": 98.3
-      },
-      {
-        "word": "spiele",
-        "count": 10,
-        "ratioParty": 89.2,
-        "ratioBundestag": 69.9
-      },
-      {
-        "word": "forscher",
-        "count": 5,
-        "ratioParty": 56.5,
-        "ratioBundestag": 75.8
+        "word": "forschung",
+        "count": 17,
+        "score": 47.4,
+        "ratio": 15.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 539,
@@ -123,27 +156,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Florian Müller häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Florian Müller häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Minister",
+        "isCorrect": false
+      },
       {
         "text": "Arbeit",
         "isCorrect": false
       },
       {
-        "text": "Forschungs",
+        "text": "Hightech",
         "isCorrect": true
-      },
-      {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Haushalt",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Forschungs\" nutzt Florian Müller 254.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "183.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Hightech\" sagte Florian Müller 24× (50.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -162,12 +194,12 @@
         "score": 0.994
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.92
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positiver Teamplayer",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.753
       }
     ]
   },

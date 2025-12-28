@@ -64,44 +64,90 @@
         "count": 14
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "vertrag",
-        "count": 7,
-        "ratioParty": 113.0,
-        "ratioBundestag": 41.9
+        "word": "rüstung",
+        "count": 15,
+        "score": 65.5,
+        "ratio": 78.0
       },
       {
-        "word": "verhandlungen",
-        "count": 8,
-        "ratioParty": 43.1,
-        "ratioBundestag": 11.2
+        "word": "linke",
+        "count": 20,
+        "score": 46.4,
+        "ratio": 9.2
       },
       {
-        "word": "ersparen",
-        "count": 5,
-        "ratioParty": 32.3,
-        "ratioBundestag": 40.7
+        "word": "rente",
+        "count": 18,
+        "score": 45.2,
+        "ratio": 11.3
       },
       {
-        "word": "abrüstung",
-        "count": 5,
-        "ratioParty": 13.5,
-        "ratioBundestag": 105.8
+        "word": "aufrüstung",
+        "count": 10,
+        "score": 38.4,
+        "ratio": 45.3
       },
       {
         "word": "ukraine",
         "count": 17,
-        "ratioParty": 13.4,
-        "ratioBundestag": 4.8
+        "score": 30.0,
+        "ratio": 4.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "ukraine",
+        "count": 17,
+        "score": 45.3,
+        "ratio": 13.4
+      },
+      {
+        "word": "rente",
+        "count": 18,
+        "score": 37.6,
+        "ratio": 7.1
+      },
+      {
+        "word": "rüstung",
+        "count": 15,
+        "score": 37.3,
+        "ratio": 11.0
+      },
+      {
+        "word": "vertrag",
+        "count": 7,
+        "score": 33.2,
+        "ratio": 113.0
+      },
+      {
+        "word": "verhandlungen",
+        "count": 8,
+        "score": 30.3,
+        "ratio": 43.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "gescheitert",
         "count": 3,
-        "ratioParty": 13.8,
-        "ratioBundestag": 8.9
+        "score": 6.9,
+        "ratio": 8.9
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 4.2,
+        "ratio": 3.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gescheitert",
+        "count": 3,
+        "score": 8.1,
+        "ratio": 13.8
       }
     ]
   },
@@ -125,50 +171,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Sören Pellmann häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Sören Pellmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Vertrag",
+        "text": "Rüstung",
         "isCorrect": true
       },
       {
-        "text": "Politik",
+        "text": "Europa",
         "isCorrect": false
       },
       {
-        "text": "Koalition",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
-        "text": "Gesetz",
+        "text": "Sicherheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Vertrag\" nutzt Sören Pellmann 113.0× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "41.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Rüstung\" sagte Sören Pellmann 15× (78.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Sören Pellmann häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Sören Pellmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Notwendig",
         "isCorrect": false
       },
       {
+        "text": "Gescheitert",
+        "isCorrect": true
+      },
+      {
         "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Erfolgreich",
+        "text": "Neu",
         "isCorrect": false
-      },
-      {
-        "text": "Gescheitert",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Gescheitert\" nutzt Sören Pellmann 13.8× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "8.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gescheitert\" sagte Sören Pellmann 3× (8.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

@@ -64,39 +64,72 @@
         "count": 8
       }
     ],
-    "signatureWords": [
-      {
-        "word": "justiz",
-        "count": 10,
-        "ratioParty": 29.9,
-        "ratioBundestag": 18.7
-      },
+    "signatureWordsBundestag": [
       {
         "word": "umwelt",
         "count": 10,
-        "ratioParty": 15.4,
-        "ratioBundestag": 22.7
+        "score": 31.6,
+        "ratio": 22.7
+      },
+      {
+        "word": "justiz",
+        "count": 10,
+        "score": 29.8,
+        "ratio": 18.7
+      },
+      {
+        "word": "demokratie",
+        "count": 12,
+        "score": 23.4,
+        "ratio": 6.0
       },
       {
         "word": "berlin",
         "count": 9,
-        "ratioParty": 11.6,
-        "ratioBundestag": 11.7
+        "score": 22.9,
+        "ratio": 11.7
+      },
+      {
+        "word": "klimaschutz",
+        "count": 10,
+        "score": 20.9,
+        "ratio": 7.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "justiz",
+        "count": 10,
+        "score": 34.3,
+        "ratio": 29.9
+      },
+      {
+        "word": "umwelt",
+        "count": 10,
+        "score": 28.0,
+        "ratio": 15.4
+      },
+      {
+        "word": "berlin",
+        "count": 9,
+        "score": 22.8,
+        "ratio": 11.6
+      },
+      {
+        "word": "demokratie",
+        "count": 12,
+        "score": 21.6,
+        "ratio": 5.0
       },
       {
         "word": "bauen",
         "count": 8,
-        "ratioParty": 7.9,
-        "ratioBundestag": 6.6
-      },
-      {
-        "word": "denken",
-        "count": 5,
-        "ratioParty": 7.7,
-        "ratioBundestag": 7.9
+        "score": 17.5,
+        "ratio": 7.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 456,
@@ -118,27 +151,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Julia Schneider häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Julia Schneider häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Debatte",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
-        "text": "Justiz",
+        "text": "Umwelt",
         "isCorrect": true
       },
       {
-        "text": "Bürger",
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Justiz\" nutzt Julia Schneider 29.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "18.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Umwelt\" sagte Julia Schneider 10× (22.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

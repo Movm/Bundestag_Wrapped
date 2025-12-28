@@ -72,15 +72,24 @@
         "count": 3
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "ampel",
         "count": 6,
-        "ratioParty": 60.4,
-        "ratioBundestag": 53.1
+        "score": 23.9,
+        "ratio": 53.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "ampel",
+        "count": 6,
+        "score": 24.7,
+        "ratio": 60.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 306,
@@ -102,18 +111,18 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Henning Rehbaum häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Henning Rehbaum häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Energie",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Klima",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Migration",
         "isCorrect": false
       },
       {
@@ -121,8 +130,7 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Ampel\" nutzt Henning Rehbaum 60.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "53.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ampel\" sagte Henning Rehbaum 6× (53.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

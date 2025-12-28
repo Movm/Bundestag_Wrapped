@@ -60,39 +60,72 @@
         "count": 10
       }
     ],
-    "signatureWords": [
-      {
-        "word": "feministische",
-        "count": 7,
-        "ratioParty": 52.9,
-        "ratioBundestag": 131.8
-      },
-      {
-        "word": "srebrenica",
-        "count": 5,
-        "ratioParty": 48.1,
-        "ratioBundestag": 32.2
-      },
+    "signatureWordsBundestag": [
       {
         "word": "außenpolitik",
         "count": 22,
-        "ratioParty": 32.8,
-        "ratioBundestag": 40.1
+        "score": 81.8,
+        "ratio": 40.1
+      },
+      {
+        "word": "feministische",
+        "count": 7,
+        "score": 34.2,
+        "ratio": 131.8
+      },
+      {
+        "word": "krieg",
+        "count": 10,
+        "score": 22.1,
+        "ratio": 8.2
+      },
+      {
+        "word": "interessen",
+        "count": 9,
+        "score": 20.9,
+        "ratio": 9.2
       },
       {
         "word": "sudan",
         "count": 7,
-        "ratioParty": 27.4,
-        "ratioBundestag": 17.5
+        "score": 20.4,
+        "ratio": 17.5
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "außenpolitik",
+        "count": 22,
+        "score": 77.4,
+        "ratio": 32.8
+      },
+      {
+        "word": "feministische",
+        "count": 7,
+        "score": 27.9,
+        "ratio": 52.9
+      },
+      {
+        "word": "krieg",
+        "count": 10,
+        "score": 24.7,
+        "ratio": 10.8
+      },
+      {
+        "word": "sudan",
+        "count": 7,
+        "score": 23.4,
+        "ratio": 27.4
       },
       {
         "word": "menschenrechte",
         "count": 7,
-        "ratioParty": 24.7,
-        "ratioBundestag": 15.8
+        "score": 22.7,
+        "ratio": 24.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 404,
@@ -114,27 +147,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Anna Rathert häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Anna Rathert häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Feministische",
+        "text": "Außenpolitik",
         "isCorrect": true
       },
       {
-        "text": "Freiheit",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Reform",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Familie",
+        "text": "Gesetz",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Feministische\" nutzt Dr. Anna Rathert 52.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "131.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Außenpolitik\" sagte Dr. Anna Rathert 22× (40.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

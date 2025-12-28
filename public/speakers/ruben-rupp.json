@@ -72,50 +72,96 @@
         "count": 14
       }
     ],
-    "signatureWords": [
-      {
-        "word": "digitalminister",
-        "count": 9,
-        "ratioParty": 289.8,
-        "ratioBundestag": 203.7
-      },
-      {
-        "word": "massenüberwachung",
-        "count": 7,
-        "ratioParty": 225.4,
-        "ratioBundestag": 376.3
-      },
+    "signatureWordsBundestag": [
       {
         "word": "wildberger",
         "count": 16,
-        "ratioParty": 103.0,
-        "ratioBundestag": 62.5
+        "score": 66.4,
+        "ratio": 62.5
       },
       {
-        "word": "digitalministerium",
-        "count": 8,
-        "ratioParty": 96.6,
-        "ratioBundestag": 93.0
+        "word": "einzelplan",
+        "count": 20,
+        "score": 55.9,
+        "ratio": 15.4
       },
       {
-        "word": "digitales",
-        "count": 7,
-        "ratioParty": 48.3,
-        "ratioBundestag": 35.0
+        "word": "digitale",
+        "count": 18,
+        "score": 49.7,
+        "ratio": 14.8
+      },
+      {
+        "word": "regierung",
+        "count": 25,
+        "score": 48.2,
+        "ratio": 5.9
+      },
+      {
+        "word": "digitalminister",
+        "count": 9,
+        "score": 47.9,
+        "ratio": 203.7
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "wildberger",
+        "count": 16,
+        "score": 74.3,
+        "ratio": 103.0
+      },
+      {
+        "word": "digitale",
+        "count": 18,
+        "score": 57.6,
+        "ratio": 23.5
+      },
+      {
+        "word": "einzelplan",
+        "count": 20,
+        "score": 52.5,
+        "ratio": 12.8
+      },
+      {
+        "word": "digitalminister",
+        "count": 9,
+        "score": 51.1,
+        "ratio": 289.8
+      },
+      {
+        "word": "souveränität",
+        "count": 14,
+        "score": 45.6,
+        "ratio": 25.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "dreist",
         "count": 3,
-        "ratioParty": 48.3,
-        "ratioBundestag": 86.0
+        "score": 13.4,
+        "ratio": 86.0
       },
       {
         "word": "maßgeblich",
         "count": 3,
-        "ratioParty": 26.3,
-        "ratioBundestag": 15.7
+        "score": 8.5,
+        "ratio": 15.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "dreist",
+        "count": 3,
+        "score": 11.7,
+        "ratio": 48.3
+      },
+      {
+        "word": "maßgeblich",
+        "count": 3,
+        "score": 9.9,
+        "ratio": 26.3
       }
     ]
   },
@@ -144,41 +190,40 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Ruben Rupp häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Ruben Rupp häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Sicherheit",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
-        "text": "Digitalminister",
+        "text": "Wildberger",
         "isCorrect": true
       },
       {
-        "text": "Haushalt",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Energie",
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Digitalminister\" nutzt Ruben Rupp 289.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "203.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wildberger\" sagte Ruben Rupp 16× (62.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Ruben Rupp häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Ruben Rupp häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "National",
+        "text": "Gut",
         "isCorrect": false
       },
       {
-        "text": "Sozial",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
@@ -186,8 +231,7 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Dreist\" nutzt Ruben Rupp 48.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "86.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Dreist\" sagte Ruben Rupp 3× (86.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

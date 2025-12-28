@@ -72,39 +72,72 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "europol",
         "count": 15,
-        "ratioParty": 840.3,
-        "ratioBundestag": 525.5
+        "score": 94.0,
+        "ratio": 525.5
       },
       {
         "word": "bundespolizei",
         "count": 7,
-        "ratioParty": 31.5,
-        "ratioBundestag": 34.1
-      },
-      {
-        "word": "gesetzentwurf",
-        "count": 5,
-        "ratioParty": 7.0,
-        "ratioBundestag": 7.5
+        "score": 24.9,
+        "ratio": 34.1
       },
       {
         "word": "worden",
         "count": 6,
-        "ratioParty": 6.2,
-        "ratioBundestag": 7.7
+        "score": 13.0,
+        "ratio": 7.7
+      },
+      {
+        "word": "gesetzentwurf",
+        "count": 5,
+        "score": 10.7,
+        "ratio": 7.5
       },
       {
         "word": "staat",
         "count": 5,
-        "ratioParty": 5.3,
-        "ratioBundestag": 4.9
+        "score": 8.8,
+        "ratio": 4.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "europol",
+        "count": 15,
+        "score": 101.0,
+        "ratio": 840.3
+      },
+      {
+        "word": "bundespolizei",
+        "count": 7,
+        "score": 24.4,
+        "ratio": 31.5
+      },
+      {
+        "word": "worden",
+        "count": 6,
+        "score": 11.9,
+        "ratio": 6.2
+      },
+      {
+        "word": "gesetzentwurf",
+        "count": 5,
+        "score": 10.4,
+        "ratio": 7.0
+      },
+      {
+        "word": "staat",
+        "count": 5,
+        "score": 9.2,
+        "ratio": 5.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 260,
@@ -126,10 +159,14 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Christoph de Vries häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Christoph de Vries häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesellschaft",
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
         "isCorrect": false
       },
       {
@@ -137,16 +174,11 @@
         "isCorrect": true
       },
       {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaft",
+        "text": "Verantwortung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Europol\" nutzt Christoph de Vries 840.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "525.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Europol\" sagte Christoph de Vries 15× (525.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

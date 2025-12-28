@@ -72,56 +72,108 @@
         "count": 13
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "messerkriminalität",
-        "count": 6,
-        "ratioParty": 275.6,
-        "ratioBundestag": 613.9
+        "word": "antifa",
+        "count": 20,
+        "score": 91.3,
+        "ratio": 95.2
+      },
+      {
+        "word": "deutschland",
+        "count": 47,
+        "score": 61.1,
+        "ratio": 2.7
+      },
+      {
+        "word": "endlich",
+        "count": 29,
+        "score": 60.2,
+        "ratio": 7.0
+      },
+      {
+        "word": "bürger",
+        "count": 29,
+        "score": 59.7,
+        "ratio": 6.8
       },
       {
         "word": "linksextremismus",
         "count": 8,
-        "ratioParty": 73.5,
-        "ratioBundestag": 148.8
-      },
-      {
-        "word": "sicherheitslage",
-        "count": 6,
-        "ratioParty": 61.3,
-        "ratioBundestag": 39.6
-      },
-      {
-        "word": "islamismus",
-        "count": 5,
-        "ratioParty": 51.0,
-        "ratioBundestag": 66.0
-      },
-      {
-        "word": "gewaltkriminalität",
-        "count": 5,
-        "ratioParty": 51.0,
-        "ratioBundestag": 102.3
+        "score": 40.1,
+        "ratio": 148.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "antifa",
+        "count": 20,
+        "score": 66.7,
+        "ratio": 27.0
+      },
+      {
+        "word": "endlich",
+        "count": 29,
+        "score": 54.3,
+        "ratio": 5.5
+      },
+      {
+        "word": "bürger",
+        "count": 29,
+        "score": 39.5,
+        "ratio": 2.9
+      },
+      {
+        "word": "linksextremismus",
+        "count": 8,
+        "score": 34.5,
+        "ratio": 73.5
+      },
+      {
+        "word": "messerkriminalität",
+        "count": 6,
+        "score": 33.7,
+        "ratio": 275.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "links",
+        "count": 12,
+        "score": 34.4,
+        "ratio": 16.5
+      },
       {
         "word": "rechts",
         "count": 7,
-        "ratioParty": 9.9,
-        "ratioBundestag": 9.1
+        "score": 16.2,
+        "ratio": 9.1
       },
       {
         "word": "sicher",
         "count": 8,
-        "ratioParty": 6.1,
-        "ratioBundestag": 4.4
-      },
+        "score": 13.5,
+        "ratio": 4.4
+      }
+    ],
+    "signatureAdjectivesParty": [
       {
         "word": "links",
         "count": 12,
-        "ratioParty": 5.9,
-        "ratioBundestag": 16.5
+        "score": 23.2,
+        "ratio": 5.9
+      },
+      {
+        "word": "rechts",
+        "count": 7,
+        "score": 16.7,
+        "ratio": 9.9
+      },
+      {
+        "word": "sicher",
+        "count": 8,
+        "score": 15.7,
+        "ratio": 6.1
       }
     ]
   },
@@ -150,50 +202,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Martin Hess häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Martin Hess häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Freiheit",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Sicherheit",
+        "text": "Klima",
         "isCorrect": false
       },
       {
-        "text": "Messerkriminalität",
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Antifa",
         "isCorrect": true
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Messerkriminalität\" nutzt Martin Hess 275.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "613.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Antifa\" sagte Martin Hess 20× (95.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Martin Hess häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Martin Hess häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Jung",
+        "isCorrect": false
+      },
       {
         "text": "Erfolgreich",
         "isCorrect": false
       },
       {
-        "text": "Rechts",
+        "text": "Links",
         "isCorrect": true
       },
       {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rechts\" nutzt Martin Hess 9.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "9.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Links\" sagte Martin Hess 12× (16.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

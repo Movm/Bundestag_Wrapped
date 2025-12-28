@@ -68,15 +68,24 @@
         "count": 3
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "eines",
         "count": 5,
-        "ratioParty": 6.9,
-        "ratioBundestag": 6.7
+        "score": 10.2,
+        "ratio": 6.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "eines",
+        "count": 5,
+        "score": 10.3,
+        "ratio": 6.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 299,
@@ -98,27 +107,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Knuth Meyer-Soltau häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Knuth Meyer-Soltau häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Eines",
         "isCorrect": true
       },
       {
-        "text": "Freiheit",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Gesetz",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
+        "text": "Haushalt",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Eines\" nutzt Knuth Meyer-Soltau 6.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "6.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Eines\" sagte Knuth Meyer-Soltau 5× (6.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

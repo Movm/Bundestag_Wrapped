@@ -60,39 +60,72 @@
         "count": 10
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "kunst",
-        "count": 6,
-        "ratioParty": 192.5,
-        "ratioBundestag": 49.2
+        "word": "bildung",
+        "count": 25,
+        "score": 77.2,
+        "ratio": 21.0
       },
       {
-        "word": "staatsminister",
-        "count": 5,
-        "ratioParty": 120.3,
-        "ratioBundestag": 25.5
+        "word": "kultur",
+        "count": 13,
+        "score": 41.1,
+        "ratio": 22.7
+      },
+      {
+        "word": "worden",
+        "count": 14,
+        "score": 29.3,
+        "ratio": 7.1
       },
       {
         "word": "berufliche",
         "count": 6,
-        "ratioParty": 115.5,
-        "ratioBundestag": 82.9
-      },
-      {
-        "word": "ändert",
-        "count": 5,
-        "ratioParty": 68.8,
-        "ratioBundestag": 29.1
+        "score": 26.6,
+        "ratio": 82.9
       },
       {
         "word": "weiterbildung",
         "count": 6,
-        "ratioParty": 57.8,
-        "ratioBundestag": 63.1
+        "score": 25.0,
+        "ratio": 63.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bildung",
+        "count": 25,
+        "score": 77.8,
+        "ratio": 21.5
+      },
+      {
+        "word": "kultur",
+        "count": 13,
+        "score": 48.4,
+        "ratio": 40.4
+      },
+      {
+        "word": "kunst",
+        "count": 6,
+        "score": 31.6,
+        "ratio": 192.5
+      },
+      {
+        "word": "worden",
+        "count": 14,
+        "score": 28.6,
+        "ratio": 6.7
+      },
+      {
+        "word": "berufliche",
+        "count": 6,
+        "score": 28.5,
+        "ratio": 115.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 417,
@@ -114,27 +147,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Martin Rabanus häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Martin Rabanus häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Kunst",
+        "text": "Bildung",
         "isCorrect": true
       },
       {
-        "text": "Fraktion",
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kunst\" nutzt Martin Rabanus 192.5× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "49.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bildung\" sagte Martin Rabanus 25× (21.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -153,12 +185,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.962
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrlicher Redner",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.871
       }
     ]
   },

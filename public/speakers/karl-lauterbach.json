@@ -72,15 +72,24 @@
         "count": 3
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "jahren",
         "count": 5,
-        "ratioParty": 5.6,
-        "ratioBundestag": 5.0
+        "score": 9.0,
+        "ratio": 5.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "jahren",
+        "count": 5,
+        "score": 9.4,
+        "ratio": 5.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 482,
@@ -97,27 +106,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Karl Lauterbach häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Karl Lauterbach häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Demokratie",
+        "text": "Klima",
         "isCorrect": false
       },
       {
-        "text": "Investitionen",
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
         "text": "Jahren",
         "isCorrect": true
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Jahren\" nutzt Dr. Karl Lauterbach 5.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "5.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Jahren\" sagte Dr. Karl Lauterbach 5× (5.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

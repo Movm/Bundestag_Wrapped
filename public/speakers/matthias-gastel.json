@@ -72,39 +72,72 @@
         "count": 8
       }
     ],
-    "signatureWords": [
-      {
-        "word": "fernverkehr",
-        "count": 10,
-        "ratioParty": 1221.9,
-        "ratioBundestag": 569.2
-      },
-      {
-        "word": "schieneninfrastruktur",
-        "count": 5,
-        "ratioParty": 611.0,
-        "ratioBundestag": 284.6
-      },
-      {
-        "word": "verzinsung",
-        "count": 5,
-        "ratioParty": 611.0,
-        "ratioBundestag": 1067.2
-      },
-      {
-        "word": "stuttgart",
-        "count": 5,
-        "ratioParty": 305.5,
-        "ratioBundestag": 97.0
-      },
+    "signatureWordsBundestag": [
       {
         "word": "schiene",
         "count": 18,
-        "ratioParty": 104.7,
-        "ratioBundestag": 76.5
+        "score": 78.3,
+        "ratio": 76.5
+      },
+      {
+        "word": "trassenpreisen",
+        "count": 8,
+        "score": 65.1,
+        "ratio": 3415.0
+      },
+      {
+        "word": "fernverkehr",
+        "count": 10,
+        "score": 63.5,
+        "ratio": 569.2
+      },
+      {
+        "word": "sondervermögen",
+        "count": 15,
+        "score": 42.6,
+        "ratio": 16.1
+      },
+      {
+        "word": "koalition",
+        "count": 16,
+        "score": 36.6,
+        "ratio": 8.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "schiene",
+        "count": 18,
+        "score": 83.9,
+        "ratio": 104.7
+      },
+      {
+        "word": "fernverkehr",
+        "count": 10,
+        "score": 71.1,
+        "ratio": 1221.9
+      },
+      {
+        "word": "möglichkeiten",
+        "count": 10,
+        "score": 36.7,
+        "ratio": 38.2
+      },
+      {
+        "word": "sondervermögen",
+        "count": 15,
+        "score": 35.9,
+        "ratio": 10.0
+      },
+      {
+        "word": "koalition",
+        "count": 16,
+        "score": 32.5,
+        "ratio": 6.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 385,
@@ -126,10 +159,14 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Matthias Gastel häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Matthias Gastel häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Kinder",
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
@@ -137,16 +174,11 @@
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Fernverkehr",
+        "text": "Schiene",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Fernverkehr\" nutzt Matthias Gastel 1221.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "569.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Schiene\" sagte Matthias Gastel 18× (76.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

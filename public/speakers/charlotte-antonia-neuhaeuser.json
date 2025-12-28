@@ -72,39 +72,66 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "menschen",
+        "count": 20,
+        "score": 34.9,
+        "ratio": 4.7
+      },
       {
         "word": "sudan",
         "count": 7,
-        "ratioParty": 47.7,
-        "ratioBundestag": 63.4
+        "score": 29.2,
+        "ratio": 63.4
       },
       {
         "word": "globalen",
         "count": 7,
-        "ratioParty": 27.0,
-        "ratioBundestag": 57.6
+        "score": 28.5,
+        "ratio": 57.6
       },
       {
         "word": "leben",
         "count": 6,
-        "ratioParty": 3.8,
-        "ratioBundestag": 5.5
+        "score": 11.2,
+        "ratio": 5.5
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "sudan",
+        "count": 7,
+        "score": 27.2,
+        "ratio": 47.7
       },
       {
         "word": "menschen",
         "count": 20,
-        "ratioParty": 2.7,
-        "ratioBundestag": 4.7
+        "score": 26.1,
+        "ratio": 2.7
+      },
+      {
+        "word": "globalen",
+        "count": 7,
+        "score": 23.3,
+        "ratio": 27.0
+      },
+      {
+        "word": "leben",
+        "count": 6,
+        "score": 9.4,
+        "ratio": 3.8
       },
       {
         "word": "deutschland",
         "count": 5,
-        "ratioParty": 2.2,
-        "ratioBundestag": 1.2
+        "score": 5.8,
+        "ratio": 2.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 260,
@@ -126,36 +153,43 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Charlotte Antonia Neuhäuser häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Charlotte Antonia Neuhäuser häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wirtschaft",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
-        "text": "Kinder",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Migration",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Sudan",
+        "text": "Menschen",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Sudan\" nutzt Charlotte Antonia Neuhäuser 47.7× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "63.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Menschen\" sagte Charlotte Antonia Neuhäuser 20× (4.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🐇",
-    "name": "Hase",
-    "title": "Wendige Optimistin",
-    "reason": "Mit positivem Blick reagierst du schnell auf neue Themen.",
-    "id": "hase",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüterin",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
+      {
+        "emoji": "🐇",
+        "name": "Hase",
+        "title": "Wendige Optimistin",
+        "reason": "Mit positivem Blick reagierst du schnell auf neue Themen.",
+        "id": "hase",
+        "score": 0.758
+      },
       {
         "emoji": "🦦",
         "name": "Otter",
@@ -163,14 +197,6 @@
         "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
         "id": "otter",
         "score": 0.731
-      },
-      {
-        "emoji": "🦫",
-        "name": "Biber",
-        "title": "Konstruktive Brückenbauerin",
-        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
-        "id": "biber",
-        "score": 0.664
       }
     ]
   },

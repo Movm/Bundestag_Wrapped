@@ -72,39 +72,72 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "langjähriger",
-        "count": 5,
-        "ratioParty": 908.6,
-        "ratioBundestag": 474.4
-      },
-      {
-        "word": "stadtentwicklung",
-        "count": 5,
-        "ratioParty": 129.8,
-        "ratioBundestag": 98.2
+        "word": "kommunen",
+        "count": 60,
+        "score": 199.2,
+        "ratio": 26.7
       },
       {
         "word": "bürgermeister",
         "count": 9,
-        "ratioParty": 71.1,
-        "ratioBundestag": 72.2
-      },
-      {
-        "word": "bestellt",
-        "count": 5,
-        "ratioParty": 64.9,
-        "ratioBundestag": 63.3
+        "score": 38.6,
+        "ratio": 72.2
       },
       {
         "word": "kommunalen",
         "count": 8,
-        "ratioParty": 37.3,
-        "ratioBundestag": 47.0
+        "score": 31.0,
+        "ratio": 47.0
+      },
+      {
+        "word": "langjähriger",
+        "count": 5,
+        "score": 30.8,
+        "ratio": 474.4
+      },
+      {
+        "word": "stadtentwicklung",
+        "count": 5,
+        "score": 23.0,
+        "ratio": 98.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "kommunen",
+        "count": 60,
+        "score": 187.7,
+        "ratio": 21.8
+      },
+      {
+        "word": "bürgermeister",
+        "count": 9,
+        "score": 38.5,
+        "ratio": 71.1
+      },
+      {
+        "word": "langjähriger",
+        "count": 5,
+        "score": 34.1,
+        "ratio": 908.6
+      },
+      {
+        "word": "kommunalen",
+        "count": 8,
+        "score": 29.2,
+        "ratio": 37.3
+      },
+      {
+        "word": "stadtentwicklung",
+        "count": 5,
+        "score": 24.4,
+        "ratio": 129.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 500,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Wilhelm Gebhard häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Wilhelm Gebhard häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Europa",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Kinder",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Langjähriger",
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Kommunen",
         "isCorrect": true
-      },
-      {
-        "text": "Antrag",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Langjähriger\" nutzt Wilhelm Gebhard 908.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "474.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Kommunen\" sagte Wilhelm Gebhard 60× (26.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -165,12 +197,12 @@
         "score": 0.98
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.92
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrlicher Redner",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.783
       }
     ]
   },

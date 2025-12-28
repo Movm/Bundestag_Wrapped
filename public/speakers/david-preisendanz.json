@@ -64,39 +64,72 @@
         "count": 7
       }
     ],
-    "signatureWords": [
-      {
-        "word": "mietpreisbremse",
-        "count": 8,
-        "ratioParty": 36.8,
-        "ratioBundestag": 25.1
-      },
+    "signatureWordsBundestag": [
       {
         "word": "justiz",
         "count": 10,
-        "ratioParty": 22.2,
-        "ratioBundestag": 22.4
-      },
-      {
-        "word": "rechtsstaat",
-        "count": 7,
-        "ratioParty": 10.7,
-        "ratioBundestag": 12.1
+        "score": 31.5,
+        "ratio": 22.4
       },
       {
         "word": "sprechen",
         "count": 12,
-        "ratioParty": 7.5,
-        "ratioBundestag": 7.9
+        "score": 26.2,
+        "ratio": 7.9
+      },
+      {
+        "word": "mietpreisbremse",
+        "count": 8,
+        "score": 26.1,
+        "ratio": 25.1
+      },
+      {
+        "word": "rechtsstaat",
+        "count": 7,
+        "score": 18.0,
+        "ratio": 12.1
       },
       {
         "word": "gesetzentwurf",
         "count": 8,
-        "ratioParty": 7.2,
-        "ratioBundestag": 7.6
+        "score": 17.2,
+        "ratio": 7.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "justiz",
+        "count": 10,
+        "score": 31.4,
+        "ratio": 22.2
+      },
+      {
+        "word": "mietpreisbremse",
+        "count": 8,
+        "score": 29.1,
+        "ratio": 36.8
+      },
+      {
+        "word": "sprechen",
+        "count": 12,
+        "score": 25.6,
+        "ratio": 7.5
+      },
+      {
+        "word": "rechtsstaat",
+        "count": 7,
+        "score": 17.2,
+        "ratio": 10.7
+      },
+      {
+        "word": "gesetzentwurf",
+        "count": 8,
+        "score": 16.8,
+        "ratio": 7.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 534,
@@ -118,27 +151,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. David Preisendanz häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. David Preisendanz häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Arbeit",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
+        "text": "Klima",
         "isCorrect": false
       },
       {
-        "text": "Mietpreisbremse",
+        "text": "Justiz",
         "isCorrect": true
       },
       {
-        "text": "Reform",
+        "text": "Steuern",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Mietpreisbremse\" nutzt Dr. David Preisendanz 36.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "25.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Justiz\" sagte Dr. David Preisendanz 10× (22.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

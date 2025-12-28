@@ -72,39 +72,72 @@
         "count": 10
       }
     ],
-    "signatureWords": [
-      {
-        "word": "ehrgeizig",
-        "count": 5,
-        "ratioParty": 1045.8,
-        "ratioBundestag": 1637.6
-      },
+    "signatureWordsBundestag": [
       {
         "word": "partnerschaft",
         "count": 10,
-        "ratioParty": 139.4,
-        "ratioBundestag": 142.4
+        "score": 49.7,
+        "ratio": 142.4
+      },
+      {
+        "word": "ziele",
+        "count": 14,
+        "score": 49.5,
+        "ratio": 33.2
+      },
+      {
+        "word": "klimaschutz",
+        "count": 17,
+        "score": 43.9,
+        "ratio": 12.2
+      },
+      {
+        "word": "ehrgeizig",
+        "count": 5,
+        "score": 37.0,
+        "ratio": 1637.6
+      },
+      {
+        "word": "technologien",
+        "count": 10,
+        "score": 33.5,
+        "ratio": 27.5
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "partnerschaft",
+        "count": 10,
+        "score": 49.4,
+        "ratio": 139.4
+      },
+      {
+        "word": "klimaschutz",
+        "count": 17,
+        "score": 45.7,
+        "ratio": 13.7
+      },
+      {
+        "word": "ziele",
+        "count": 14,
+        "score": 45.6,
+        "ratio": 25.0
+      },
+      {
+        "word": "ehrgeizig",
+        "count": 5,
+        "score": 34.8,
+        "ratio": 1045.8
       },
       {
         "word": "carsten",
         "count": 7,
-        "ratioParty": 133.1,
-        "ratioBundestag": 70.5
-      },
-      {
-        "word": "überwunden",
-        "count": 5,
-        "ratioParty": 104.6,
-        "ratioBundestag": 148.9
-      },
-      {
-        "word": "kreislaufwirtschaft",
-        "count": 5,
-        "ratioParty": 87.2,
-        "ratioBundestag": 65.5
+        "score": 34.3,
+        "ratio": 133.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 697,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Andreas Jung häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Andreas Jung häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Ausschuss",
+        "text": "Haushalt",
         "isCorrect": false
+      },
+      {
+        "text": "Partnerschaft",
+        "isCorrect": true
       },
       {
         "text": "Arbeit",
         "isCorrect": false
       },
       {
-        "text": "Ehrgeizig",
-        "isCorrect": true
-      },
-      {
-        "text": "Gesellschaft",
+        "text": "Sicherheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ehrgeizig\" nutzt Andreas Jung 1045.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "1637.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Partnerschaft\" sagte Andreas Jung 10× (142.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -165,12 +197,12 @@
         "score": 0.892
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.88
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißiger Abgeordneter",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
+        "score": 0.875
       }
     ]
   },

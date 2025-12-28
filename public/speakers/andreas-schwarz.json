@@ -72,39 +72,72 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "soldatinnen",
+        "count": 10,
+        "score": 32.6,
+        "ratio": 25.0
+      },
+      {
+        "word": "soldaten",
+        "count": 11,
+        "score": 31.3,
+        "ratio": 16.2
+      },
       {
         "word": "verteidigungshaushalt",
         "count": 6,
-        "ratioParty": 209.7,
-        "ratioBundestag": 128.0
+        "score": 29.2,
+        "ratio": 128.0
       },
       {
-        "word": "zeitenwende",
-        "count": 5,
-        "ratioParty": 72.8,
-        "ratioBundestag": 45.1
+        "word": "bundeswehr",
+        "count": 11,
+        "score": 28.7,
+        "ratio": 12.6
       },
       {
-        "word": "truppe",
-        "count": 6,
-        "ratioParty": 43.7,
-        "ratioBundestag": 48.2
-      },
-      {
-        "word": "verteidigung",
-        "count": 5,
-        "ratioParty": 14.3,
-        "ratioBundestag": 17.9
-      },
-      {
-        "word": "moderne",
-        "count": 5,
-        "ratioParty": 13.0,
-        "ratioBundestag": 20.3
+        "word": "sicherheit",
+        "count": 14,
+        "score": 27.2,
+        "ratio": 6.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "verteidigungshaushalt",
+        "count": 6,
+        "score": 32.1,
+        "ratio": 209.7
+      },
+      {
+        "word": "soldaten",
+        "count": 11,
+        "score": 28.4,
+        "ratio": 12.2
+      },
+      {
+        "word": "bundeswehr",
+        "count": 11,
+        "score": 27.7,
+        "ratio": 11.4
+      },
+      {
+        "word": "soldatinnen",
+        "count": 10,
+        "score": 26.1,
+        "ratio": 12.6
+      },
+      {
+        "word": "haushalt",
+        "count": 14,
+        "score": 23.5,
+        "ratio": 4.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 744,
@@ -131,44 +164,35 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Andreas Schwarz häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Andreas Schwarz häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Verteidigungshaushalt",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Soldatinnen",
         "isCorrect": true
       },
       {
-        "text": "Ausschuss",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
         "text": "Wirtschaft",
         "isCorrect": false
-      },
-      {
-        "text": "Bildung",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verteidigungshaushalt\" nutzt Andreas Schwarz 209.7× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "128.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Soldatinnen\" sagte Andreas Schwarz 10× (25.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Cleverer Stratege",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🦫",
+    "name": "Biber",
+    "title": "Konstruktiver Brückenbauer",
+    "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
+    "id": "biber",
     "alternatives": [
-      {
-        "emoji": "🦫",
-        "name": "Biber",
-        "title": "Konstruktiver Brückenbauer",
-        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
-        "id": "biber",
-        "score": 0.78
-      },
       {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
@@ -176,6 +200,14 @@
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.769
+      },
+      {
+        "emoji": "🐢",
+        "name": "Schildkröte",
+        "title": "Gründlicher Analyst",
+        "reason": "Wenige Reden, aber wenn, dann richtig ausführlich.",
+        "id": "schildkroete",
+        "score": 0.665
       }
     ]
   },

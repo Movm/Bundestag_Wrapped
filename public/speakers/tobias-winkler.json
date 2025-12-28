@@ -72,62 +72,120 @@
         "count": 10
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "ukraine",
+        "count": 19,
+        "score": 42.2,
+        "ratio": 8.2
+      },
       {
         "word": "europarat",
         "count": 9,
-        "ratioParty": 72.7,
-        "ratioBundestag": 56.2
+        "score": 36.4,
+        "ratio": 56.2
       },
       {
-        "word": "prinzipien",
-        "count": 5,
-        "ratioParty": 48.0,
-        "ratioBundestag": 34.4
+        "word": "krieg",
+        "count": 13,
+        "score": 32.2,
+        "ratio": 10.9
       },
       {
         "word": "geschätzte",
         "count": 6,
-        "ratioParty": 31.7,
-        "ratioBundestag": 40.7
+        "score": 22.4,
+        "ratio": 40.7
       },
       {
-        "word": "israelischen",
-        "count": 6,
-        "ratioParty": 26.3,
-        "ratioBundestag": 32.4
-      },
-      {
-        "word": "herzegowina",
-        "count": 6,
-        "ratioParty": 25.6,
-        "ratioBundestag": 27.2
+        "word": "unterstützung",
+        "count": 11,
+        "score": 21.8,
+        "ratio": 6.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "links",
-        "count": 3,
-        "ratioParty": 7.4,
-        "ratioBundestag": 4.7
+        "word": "ukraine",
+        "count": 19,
+        "score": 40.1,
+        "ratio": 7.2
       },
+      {
+        "word": "europarat",
+        "count": 9,
+        "score": 38.7,
+        "ratio": 72.7
+      },
+      {
+        "word": "krieg",
+        "count": 13,
+        "score": 32.8,
+        "ratio": 11.5
+      },
+      {
+        "word": "außenpolitik",
+        "count": 8,
+        "score": 23.8,
+        "ratio": 18.6
+      },
+      {
+        "word": "geschätzte",
+        "count": 6,
+        "score": 20.9,
+        "ratio": 31.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "wirtschaftlich",
         "count": 4,
-        "ratioParty": 7.1,
-        "ratioBundestag": 8.5
+        "score": 9.0,
+        "ratio": 8.5
+      },
+      {
+        "word": "links",
+        "count": 3,
+        "score": 5.2,
+        "ratio": 4.7
       },
       {
         "word": "rechts",
         "count": 3,
-        "ratioParty": 5.1,
-        "ratioBundestag": 4.5
+        "score": 5.1,
+        "ratio": 4.5
       },
       {
         "word": "stark",
         "count": 3,
-        "ratioParty": 3.1,
-        "ratioBundestag": 3.5
+        "score": 4.5,
+        "ratio": 3.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirtschaftlich",
+        "count": 4,
+        "score": 8.4,
+        "ratio": 7.1
+      },
+      {
+        "word": "links",
+        "count": 3,
+        "score": 6.4,
+        "ratio": 7.4
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 5.4,
+        "ratio": 5.1
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 4.2,
+        "ratio": 3.1
       }
     ]
   },
@@ -151,50 +209,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Tobias Winkler häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Tobias Winkler häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Investitionen",
+        "text": "Europa",
         "isCorrect": false
       },
       {
-        "text": "Arbeit",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Europarat",
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Ukraine",
         "isCorrect": true
-      },
-      {
-        "text": "Gesetz",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Europarat\" nutzt Tobias Winkler 72.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "56.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ukraine\" sagte Tobias Winkler 19× (8.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Tobias Winkler häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Tobias Winkler häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Klar",
+        "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Sozial",
+        "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Sicher",
+        "text": "National",
         "isCorrect": false
       },
       {
-        "text": "Links",
+        "text": "Wirtschaftlich",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Links\" nutzt Tobias Winkler 7.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "4.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wirtschaftlich\" sagte Tobias Winkler 4× (8.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

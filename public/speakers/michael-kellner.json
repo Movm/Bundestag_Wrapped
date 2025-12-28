@@ -68,56 +68,108 @@
         "count": 13
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "energieintensiven",
-        "count": 7,
-        "ratioParty": 208.0,
-        "ratioBundestag": 139.4
-      },
-      {
-        "word": "kraftwerksstrategie",
-        "count": 6,
-        "ratioParty": 118.8,
-        "ratioBundestag": 114.1
+        "word": "habeck",
+        "count": 13,
+        "score": 48.5,
+        "ratio": 40.6
       },
       {
         "word": "gaskraftwerken",
         "count": 9,
-        "ratioParty": 107.0,
-        "ratioBundestag": 163.6
-      },
-      {
-        "word": "emissionen",
-        "count": 6,
-        "ratioParty": 89.1,
-        "ratioBundestag": 25.6
+        "score": 45.9,
+        "ratio": 163.6
       },
       {
         "word": "stromsteuersenkung",
         "count": 9,
-        "ratioParty": 59.4,
-        "ratioBundestag": 114.1
+        "score": 42.7,
+        "ratio": 114.1
+      },
+      {
+        "word": "robert",
+        "count": 10,
+        "score": 40.5,
+        "ratio": 56.5
+      },
+      {
+        "word": "energien",
+        "count": 13,
+        "score": 39.8,
+        "ratio": 20.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "habeck",
+        "count": 13,
+        "score": 43.1,
+        "ratio": 26.6
+      },
+      {
+        "word": "gaskraftwerken",
+        "count": 9,
+        "score": 42.1,
+        "ratio": 107.0
+      },
+      {
+        "word": "energieintensiven",
+        "count": 7,
+        "score": 37.4,
+        "ratio": 208.0
+      },
+      {
+        "word": "energien",
+        "count": 13,
+        "score": 37.2,
+        "ratio": 16.4
+      },
+      {
+        "word": "stromsteuersenkung",
+        "count": 9,
+        "score": 36.9,
+        "ratio": 59.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "teuer",
         "count": 7,
-        "ratioParty": 13.9,
-        "ratioBundestag": 13.6
-      },
-      {
-        "word": "entscheidend",
-        "count": 4,
-        "ratioParty": 9.1,
-        "ratioBundestag": 6.2
+        "score": 18.8,
+        "ratio": 13.6
       },
       {
         "word": "falsch",
         "count": 7,
-        "ratioParty": 7.4,
-        "ratioBundestag": 9.1
+        "score": 16.2,
+        "ratio": 9.1
+      },
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 7.9,
+        "ratio": 6.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "teuer",
+        "count": 7,
+        "score": 18.9,
+        "ratio": 13.9
+      },
+      {
+        "word": "falsch",
+        "count": 7,
+        "score": 14.9,
+        "ratio": 7.4
+      },
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 9.3,
+        "ratio": 9.1
       }
     ]
   },
@@ -141,18 +193,18 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Michael Kellner häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Michael Kellner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Arbeit",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
-        "text": "Energieintensiven",
+        "text": "Habeck",
         "isCorrect": true
       },
       {
@@ -160,22 +212,21 @@
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Energieintensiven\" nutzt Michael Kellner 208.0× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "139.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Habeck\" sagte Michael Kellner 13× (40.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Michael Kellner häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Michael Kellner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gefährlich",
+        "text": "Alt",
         "isCorrect": false
       },
       {
-        "text": "Groß",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
-        "text": "Schlecht",
+        "text": "National",
         "isCorrect": false
       },
       {
@@ -183,24 +234,15 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Teuer\" nutzt Michael Kellner 13.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "13.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Teuer\" sagte Michael Kellner 7× (13.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Cleverer Stratege",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüter",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüter",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 1.0
-      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -208,6 +250,14 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
+      },
+      {
+        "emoji": "🐻",
+        "name": "Bär",
+        "title": "Standhafter Debattierer",
+        "reason": "Trotz 25× unterbrochen zu werden, bleibst du standhaft.",
+        "id": "baer",
+        "score": 0.98
       }
     ]
   },

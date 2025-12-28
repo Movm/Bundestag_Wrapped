@@ -72,27 +72,48 @@
         "count": 3
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "schiene",
         "count": 5,
-        "ratioParty": 46.6,
-        "ratioBundestag": 70.1
+        "score": 21.3,
+        "ratio": 70.1
       },
       {
         "word": "investieren",
         "count": 5,
-        "ratioParty": 12.9,
-        "ratioBundestag": 13.6
+        "score": 13.4,
+        "ratio": 13.6
       },
       {
         "word": "deutschen",
         "count": 5,
-        "ratioParty": 8.5,
-        "ratioBundestag": 7.6
+        "score": 10.8,
+        "ratio": 7.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "schiene",
+        "count": 5,
+        "score": 19.3,
+        "ratio": 46.6
+      },
+      {
+        "word": "investieren",
+        "count": 5,
+        "score": 13.2,
+        "ratio": 12.9
+      },
+      {
+        "word": "deutschen",
+        "count": 5,
+        "score": 11.2,
+        "ratio": 8.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 218,
@@ -109,27 +130,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Daniel Kölbl häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Daniel Kölbl häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
       {
         "text": "Schiene",
         "isCorrect": true
       },
       {
-        "text": "Opposition",
+        "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Europa",
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schiene\" nutzt Daniel Kölbl 46.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "70.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Schiene\" sagte Daniel Kölbl 5× (70.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

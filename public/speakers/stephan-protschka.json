@@ -72,44 +72,90 @@
         "count": 10
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "schnitzel",
-        "count": 5,
-        "ratioParty": 539.5,
-        "ratioBundestag": 85.7
+        "word": "landwirte",
+        "count": 22,
+        "score": 86.6,
+        "ratio": 50.3
+      },
+      {
+        "word": "landwirtschaft",
+        "count": 19,
+        "score": 61.4,
+        "ratio": 24.3
+      },
+      {
+        "word": "bauern",
+        "count": 14,
+        "score": 57.4,
+        "ratio": 59.5
+      },
+      {
+        "word": "vertrauen",
+        "count": 20,
+        "score": 48.4,
+        "ratio": 10.2
       },
       {
         "word": "wurst",
         "count": 6,
-        "ratioParty": 323.7,
-        "ratioBundestag": 125.2
-      },
-      {
-        "word": "agrarpolitik",
-        "count": 5,
-        "ratioParty": 89.9,
-        "ratioBundestag": 57.1
-      },
-      {
-        "word": "fleisch",
-        "count": 6,
-        "ratioParty": 58.9,
-        "ratioBundestag": 73.8
-      },
+        "score": 29.0,
+        "ratio": 125.2
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "landwirte",
         "count": 22,
-        "ratioParty": 39.6,
-        "ratioBundestag": 50.3
+        "score": 81.5,
+        "ratio": 39.6
+      },
+      {
+        "word": "landwirtschaft",
+        "count": 19,
+        "score": 68.6,
+        "ratio": 36.0
+      },
+      {
+        "word": "vertrauen",
+        "count": 20,
+        "score": 57.2,
+        "ratio": 16.5
+      },
+      {
+        "word": "bauern",
+        "count": 14,
+        "score": 46.2,
+        "ratio": 26.0
+      },
+      {
+        "word": "wurst",
+        "count": 6,
+        "score": 34.7,
+        "ratio": 323.7
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "verlässlich",
         "count": 3,
-        "ratioParty": 46.2,
-        "ratioBundestag": 12.2
+        "score": 7.7,
+        "ratio": 12.2
+      },
+      {
+        "word": "links",
+        "count": 3,
+        "score": 5.2,
+        "ratio": 4.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "verlässlich",
+        "count": 3,
+        "score": 11.6,
+        "ratio": 46.2
       }
     ]
   },
@@ -138,37 +184,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Stephan Protschka häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Stephan Protschka häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
       {
         "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Fraktion",
+        "text": "Europa",
         "isCorrect": false
       },
       {
-        "text": "Schnitzel",
+        "text": "Landwirte",
         "isCorrect": true
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schnitzel\" nutzt Stephan Protschka 539.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "85.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Landwirte\" sagte Stephan Protschka 22× (50.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Stephan Protschka häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Stephan Protschka häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wichtig",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Notwendig",
+        "text": "Stark",
         "isCorrect": false
       },
       {
@@ -176,12 +221,11 @@
         "isCorrect": true
       },
       {
-        "text": "Sozial",
+        "text": "Neu",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verlässlich\" nutzt Stephan Protschka 46.2× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "12.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Verlässlich\" sagte Stephan Protschka 3× (12.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

@@ -60,39 +60,79 @@
         "count": 9
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "agrarpolitik",
-        "count": 6,
-        "ratioParty": 553.9,
-        "ratioBundestag": 67.9
+        "word": "landwirtschaft",
+        "count": 17,
+        "score": 52.4,
+        "ratio": 20.9
+      },
+      {
+        "word": "ländlichen",
+        "count": 12,
+        "score": 36.8,
+        "ratio": 20.4
       },
       {
         "word": "tierschutz",
         "count": 8,
-        "ratioParty": 123.1,
-        "ratioBundestag": 75.8
+        "score": 34.7,
+        "ratio": 75.8
+      },
+      {
+        "word": "aufarbeitung",
+        "count": 7,
+        "score": 27.0,
+        "ratio": 46.4
       },
       {
         "word": "biodiversität",
         "count": 6,
-        "ratioParty": 69.2,
-        "ratioBundestag": 67.9
-      },
-      {
-        "word": "ländliche",
-        "count": 5,
-        "ratioParty": 65.9,
-        "ratioBundestag": 66.3
-      },
-      {
-        "word": "tiere",
-        "count": 5,
-        "ratioParty": 65.9,
-        "ratioBundestag": 35.2
+        "score": 25.4,
+        "ratio": 67.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "landwirtschaft",
+        "count": 17,
+        "score": 52.7,
+        "ratio": 21.2
+      },
+      {
+        "word": "tierschutz",
+        "count": 8,
+        "score": 38.6,
+        "ratio": 123.1
+      },
+      {
+        "word": "agrarpolitik",
+        "count": 6,
+        "score": 37.9,
+        "ratio": 553.9
+      },
+      {
+        "word": "ländlichen",
+        "count": 12,
+        "score": 36.0,
+        "ratio": 19.1
+      },
+      {
+        "word": "aufarbeitung",
+        "count": 7,
+        "score": 29.3,
+        "ratio": 64.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 5.0,
+        "ratio": 2.5
+      }
+    ],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 461,
@@ -114,29 +154,49 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Franziska Kersten häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Franziska Kersten häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bürger",
+        "text": "Landwirtschaft",
+        "isCorrect": true
+      },
+      {
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Agrarpolitik",
-        "isCorrect": true
+        "text": "Reform",
+        "isCorrect": false
       },
       {
         "text": "Demokratie",
         "isCorrect": false
+      }
+    ],
+    "explanation": "\"Landwirtschaft\" sagte Dr. Franziska Kersten 17× (20.9× häufiger als der Bundestag-Durchschnitt)."
+  },
+  "signatureAdjectiveQuiz": {
+    "question": "Welches Adjektiv nutzt Dr. Franziska Kersten häufiger als der Bundestag-Durchschnitt?",
+    "options": [
+      {
+        "text": "Neu",
+        "isCorrect": false
       },
       {
-        "text": "Opposition",
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
+        "isCorrect": true
+      },
+      {
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Agrarpolitik\" nutzt Dr. Franziska Kersten 553.9× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "67.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Dr. Franziska Kersten 4× (2.5× häufiger als der Bundestag-Durchschnitt)."
   },
-  "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
     "emoji": "🐿️",
     "name": "Eichhörnchen",

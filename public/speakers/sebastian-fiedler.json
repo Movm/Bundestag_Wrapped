@@ -56,50 +56,96 @@
         "count": 21
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "befugnissen",
-        "count": 5,
-        "ratioParty": 237.9,
-        "ratioBundestag": 60.3
+        "word": "bundespolizei",
+        "count": 17,
+        "score": 49.1,
+        "ratio": 16.9
+      },
+      {
+        "word": "wichtig",
+        "count": 30,
+        "score": 48.1,
+        "ratio": 4.0
+      },
+      {
+        "word": "europol",
+        "count": 11,
+        "score": 46.6,
+        "ratio": 68.0
+      },
+      {
+        "word": "sicherheit",
+        "count": 29,
+        "score": 43.3,
+        "ratio": 3.4
+      },
+      {
+        "word": "koalition",
+        "count": 26,
+        "score": 42.3,
+        "ratio": 4.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "bundespolizei",
+        "count": 17,
+        "score": 50.8,
+        "ratio": 18.8
+      },
+      {
+        "word": "koalition",
+        "count": 26,
+        "score": 40.5,
+        "ratio": 3.7
       },
       {
         "word": "insoweit",
         "count": 9,
-        "ratioParty": 85.6,
-        "ratioBundestag": 72.3
+        "score": 40.2,
+        "ratio": 85.6
       },
       {
-        "word": "innenausschuss",
-        "count": 5,
-        "ratioParty": 79.3,
-        "ratioBundestag": 75.3
+        "word": "worden",
+        "count": 21,
+        "score": 38.1,
+        "ratio": 5.1
       },
       {
-        "word": "erläutern",
-        "count": 5,
-        "ratioParty": 34.0,
-        "ratioBundestag": 33.5
-      },
-      {
-        "word": "terrorismus",
-        "count": 5,
-        "ratioParty": 34.0,
-        "ratioBundestag": 26.8
+        "word": "fraktion",
+        "count": 21,
+        "score": 37.5,
+        "ratio": 5.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "rechts",
         "count": 6,
-        "ratioParty": 5.3,
-        "ratioBundestag": 4.6
+        "score": 10.3,
+        "ratio": 4.6
       },
       {
         "word": "falsch",
         "count": 4,
-        "ratioParty": 3.5,
-        "ratioBundestag": 3.0
+        "score": 5.5,
+        "ratio": 3.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "rechts",
+        "count": 6,
+        "score": 11.0,
+        "ratio": 5.3
+      },
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 6.0,
+        "ratio": 3.5
       }
     ]
   },
@@ -133,73 +179,71 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Sebastian Fiedler häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Sebastian Fiedler häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Ausschuss",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Befugnissen",
+        "text": "Bundespolizei",
         "isCorrect": true
       },
       {
-        "text": "Haushalt",
+        "text": "Bildung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Befugnissen\" nutzt Sebastian Fiedler 237.9× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "60.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bundespolizei\" sagte Sebastian Fiedler 17× (16.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Sebastian Fiedler häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Sebastian Fiedler häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Stark",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
       {
         "text": "Rechts",
         "isCorrect": true
       },
       {
-        "text": "Wichtig",
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rechts\" nutzt Sebastian Fiedler 5.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "4.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Rechts\" sagte Sebastian Fiedler 6× (4.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Cleverer Stratege",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐝",
+    "name": "Biene",
+    "title": "Fleißiger Abgeordneter",
+    "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+    "id": "biene",
     "alternatives": [
       {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüter",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 1.0
+        "emoji": "🐴",
+        "name": "Pferd",
+        "title": "Fleißiger Debattierer",
+        "reason": "Mit 18 Reden gehörst du zu den aktivsten Abgeordneten.",
+        "id": "pferd",
+        "score": 0.99
       },
       {
-        "emoji": "🐝",
-        "name": "Biene",
-        "title": "Fleißiger Abgeordneter",
-        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-        "id": "biene",
-        "score": 1.0
+        "emoji": "🐻",
+        "name": "Bär",
+        "title": "Standhafter Debattierer",
+        "reason": "Trotz 55× unterbrochen zu werden, bleibst du standhaft.",
+        "id": "baer",
+        "score": 0.979
       }
     ]
   },

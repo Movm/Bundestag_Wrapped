@@ -68,44 +68,84 @@
         "count": 10
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "pistorius",
-        "count": 5,
-        "ratioParty": 62.4,
-        "ratioBundestag": 36.3
+        "word": "minister",
+        "count": 20,
+        "score": 47.4,
+        "ratio": 9.7
       },
       {
-        "word": "beschaffung",
-        "count": 7,
-        "ratioParty": 29.9,
-        "ratioBundestag": 34.2
+        "word": "deutlich",
+        "count": 22,
+        "score": 47.3,
+        "ratio": 7.6
+      },
+      {
+        "word": "bundeswehr",
+        "count": 17,
+        "score": 42.8,
+        "ratio": 11.4
+      },
+      {
+        "word": "industrie",
+        "count": 15,
+        "score": 38.9,
+        "ratio": 12.4
       },
       {
         "word": "schlichtweg",
         "count": 8,
-        "ratioParty": 22.0,
-        "ratioBundestag": 37.3
-      },
-      {
-        "word": "haushälter",
-        "count": 6,
-        "ratioParty": 21.6,
-        "ratioBundestag": 33.9
-      },
-      {
-        "word": "fähigkeiten",
-        "count": 6,
-        "ratioParty": 21.1,
-        "ratioBundestag": 34.3
+        "score": 29.2,
+        "ratio": 37.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "minister",
+        "count": 20,
+        "score": 53.6,
+        "ratio": 13.6
+      },
+      {
+        "word": "deutlich",
+        "count": 22,
+        "score": 44.2,
+        "ratio": 6.5
+      },
+      {
+        "word": "bundeswehr",
+        "count": 17,
+        "score": 44.0,
+        "ratio": 12.3
+      },
+      {
+        "word": "industrie",
+        "count": 15,
+        "score": 39.3,
+        "ratio": 12.7
+      },
+      {
+        "word": "schlichtweg",
+        "count": 8,
+        "score": 25.1,
+        "ratio": 22.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "entscheidend",
         "count": 3,
-        "ratioParty": 3.4,
-        "ratioBundestag": 5.6
+        "score": 5.7,
+        "ratio": 5.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 4.5,
+        "ratio": 3.4
       }
     ]
   },
@@ -134,50 +174,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Andreas Mattfeldt häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Andreas Mattfeldt häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wirtschaft",
+        "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Koalition",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
-        "text": "Pistorius",
+        "text": "Minister",
         "isCorrect": true
       },
       {
-        "text": "Sicherheit",
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Pistorius\" nutzt Andreas Mattfeldt 62.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "36.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Minister\" sagte Andreas Mattfeldt 20× (9.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Andreas Mattfeldt häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Andreas Mattfeldt häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
+        "isCorrect": false
+      },
       {
         "text": "Entscheidend",
         "isCorrect": true
-      },
-      {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
-        "isCorrect": false
       },
       {
         "text": "Jung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Andreas Mattfeldt 3.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "5.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Entscheidend\" sagte Andreas Mattfeldt 3× (5.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

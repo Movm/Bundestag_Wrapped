@@ -72,39 +72,72 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "srebrenica",
-        "count": 7,
-        "ratioParty": 484.9,
-        "ratioBundestag": 66.1
-      },
-      {
-        "word": "bosnien",
-        "count": 9,
-        "ratioParty": 311.7,
-        "ratioBundestag": 48.7
-      },
-      {
-        "word": "herzegowina",
-        "count": 7,
-        "ratioParty": 242.4,
-        "ratioBundestag": 44.7
+        "word": "kriegsverbrechen",
+        "count": 12,
+        "score": 62.3,
+        "ratio": 178.9
       },
       {
         "word": "kosovo",
         "count": 9,
-        "ratioParty": 207.8,
-        "ratioBundestag": 70.2
+        "score": 38.4,
+        "ratio": 70.2
+      },
+      {
+        "word": "bosnien",
+        "count": 9,
+        "score": 35.2,
+        "ratio": 48.7
+      },
+      {
+        "word": "bundesregierung",
+        "count": 18,
+        "score": 29.8,
+        "ratio": 4.2
+      },
+      {
+        "word": "srebrenica",
+        "count": 7,
+        "score": 29.4,
+        "ratio": 66.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "bosnien",
+        "count": 9,
+        "score": 51.7,
+        "ratio": 311.7
       },
       {
         "word": "kriegsverbrechen",
         "count": 12,
-        "ratioParty": 55.4,
-        "ratioBundestag": 178.9
+        "score": 48.4,
+        "ratio": 55.4
+      },
+      {
+        "word": "kosovo",
+        "count": 9,
+        "score": 48.1,
+        "ratio": 207.8
+      },
+      {
+        "word": "srebrenica",
+        "count": 7,
+        "score": 43.3,
+        "ratio": 484.9
+      },
+      {
+        "word": "herzegowina",
+        "count": 7,
+        "score": 38.5,
+        "ratio": 242.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 410,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Gökay Akbulut häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Gökay Akbulut häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Srebrenica",
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Kriegsverbrechen",
         "isCorrect": true
       },
       {
-        "text": "Gesellschaft",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
+        "text": "Bildung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Srebrenica\" nutzt Gökay Akbulut 484.9× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "66.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Kriegsverbrechen\" sagte Gökay Akbulut 12× (178.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -165,12 +197,12 @@
         "score": 0.948
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.92
+        "emoji": "🦀",
+        "name": "Krabbe",
+        "title": "Hartnäckige Debattiererin",
+        "reason": "Du hältst an deinen Positionen fest und lässt nicht locker.",
+        "id": "krabbe",
+        "score": 0.798
       }
     ]
   },

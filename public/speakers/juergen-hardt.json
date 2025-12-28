@@ -72,50 +72,96 @@
         "count": 20
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "iranpolitik",
-        "count": 5,
-        "ratioParty": 354.6,
-        "ratioBundestag": 1117.5
-      },
-      {
-        "word": "palästinensische",
-        "count": 6,
-        "ratioParty": 212.8,
-        "ratioBundestag": 58.3
-      },
-      {
-        "word": "sowjetunion",
-        "count": 5,
-        "ratioParty": 118.2,
-        "ratioBundestag": 93.1
+        "word": "israel",
+        "count": 40,
+        "score": 126.0,
+        "ratio": 22.4
       },
       {
         "word": "gazastreifen",
         "count": 23,
-        "ratioParty": 74.1,
-        "ratioBundestag": 90.2
+        "score": 103.8,
+        "ratio": 90.2
       },
       {
-        "word": "diplomaten",
-        "count": 6,
-        "ratioParty": 70.9,
-        "ratioBundestag": 134.1
+        "word": "hamas",
+        "count": 20,
+        "score": 62.5,
+        "ratio": 21.8
+      },
+      {
+        "word": "region",
+        "count": 19,
+        "score": 52.4,
+        "ratio": 14.8
+      },
+      {
+        "word": "staaten",
+        "count": 21,
+        "score": 51.0,
+        "ratio": 10.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "israel",
+        "count": 40,
+        "score": 117.7,
+        "ratio": 18.0
+      },
+      {
+        "word": "gazastreifen",
+        "count": 23,
+        "score": 99.3,
+        "ratio": 74.1
+      },
+      {
+        "word": "hamas",
+        "count": 20,
+        "score": 60.9,
+        "ratio": 20.0
+      },
+      {
+        "word": "region",
+        "count": 19,
+        "score": 47.9,
+        "ratio": 11.4
+      },
+      {
+        "word": "staaten",
+        "count": 21,
+        "score": 47.7,
+        "ratio": 8.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "rechts",
         "count": 3,
-        "ratioParty": 2.4,
-        "ratioBundestag": 2.1
+        "score": 3.4,
+        "ratio": 2.1
       },
       {
         "word": "falsch",
         "count": 3,
-        "ratioParty": 2.3,
-        "ratioBundestag": 2.1
+        "score": 3.4,
+        "ratio": 2.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 3.6,
+        "ratio": 2.4
+      },
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 3.6,
+        "ratio": 2.3
       }
     ]
   },
@@ -154,33 +200,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jürgen Hardt häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Jürgen Hardt häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesellschaft",
+        "text": "Europa",
         "isCorrect": false
       },
       {
-        "text": "Ausschuss",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
-        "text": "Iranpolitik",
+        "text": "Israel",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Iranpolitik\" nutzt Jürgen Hardt 354.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "1117.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Israel\" sagte Jürgen Hardt 40× (22.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Jürgen Hardt häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Jürgen Hardt häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Klar",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
@@ -188,16 +233,15 @@
         "isCorrect": true
       },
       {
-        "text": "Jung",
+        "text": "Klar",
         "isCorrect": false
       },
       {
-        "text": "Sozial",
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rechts\" nutzt Jürgen Hardt 2.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "2.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Rechts\" sagte Jürgen Hardt 3× (2.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦁",
@@ -207,19 +251,19 @@
     "id": "loewe",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 1.0
-      },
-      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüter",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
+        "score": 1.0
+      },
+      {
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißiger Abgeordneter",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
         "score": 1.0
       }
     ]

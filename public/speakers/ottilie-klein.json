@@ -72,50 +72,96 @@
         "count": 11
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "verlagspreis",
-        "count": 6,
-        "ratioParty": 137.9,
-        "ratioBundestag": 144.2
-      },
-      {
-        "word": "nationalsozialismus",
-        "count": 5,
-        "ratioParty": 98.5,
-        "ratioBundestag": 54.1
+        "word": "kultur",
+        "count": 12,
+        "score": 35.8,
+        "ratio": 18.7
       },
       {
         "word": "gedenken",
         "count": 8,
-        "ratioParty": 84.9,
-        "ratioBundestag": 54.9
+        "score": 32.2,
+        "ratio": 54.9
       },
       {
-        "word": "kulturpolitik",
+        "word": "opfer",
+        "count": 11,
+        "score": 31.3,
+        "ratio": 16.2
+      },
+      {
+        "word": "verlagspreis",
         "count": 6,
-        "ratioParty": 46.0,
-        "ratioBundestag": 66.6
+        "score": 29.9,
+        "ratio": 144.2
       },
       {
         "word": "diktatur",
         "count": 7,
-        "ratioParty": 38.6,
-        "ratioBundestag": 51.3
+        "score": 27.7,
+        "ratio": 51.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "kultur",
+        "count": 12,
+        "score": 38.1,
+        "ratio": 23.0
+      },
+      {
+        "word": "gedenken",
+        "count": 8,
+        "score": 35.6,
+        "ratio": 84.9
+      },
+      {
+        "word": "opfer",
+        "count": 11,
+        "score": 30.4,
+        "ratio": 14.9
+      },
+      {
+        "word": "verlagspreis",
+        "count": 6,
+        "score": 29.6,
+        "ratio": 137.9
+      },
+      {
+        "word": "geschichte",
+        "count": 10,
+        "score": 26.0,
+        "ratio": 12.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "wirtschaftlich",
         "count": 3,
-        "ratioParty": 4.8,
-        "ratioBundestag": 5.7
+        "score": 5.7,
+        "ratio": 5.7
       },
       {
         "word": "sicher",
         "count": 4,
-        "ratioParty": 2.0,
-        "ratioBundestag": 2.3
+        "score": 4.8,
+        "ratio": 2.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 5.3,
+        "ratio": 4.8
+      },
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 4.5,
+        "ratio": 2.0
       }
     ]
   },
@@ -144,31 +190,34 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Ottilie Klein häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Ottilie Klein häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Rente",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
-        "text": "Verlagspreis",
+        "text": "Kultur",
         "isCorrect": true
       },
       {
-        "text": "Bürger",
+        "text": "Fraktion",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verlagspreis\" nutzt Dr. Ottilie Klein 137.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "144.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Kultur\" sagte Dr. Ottilie Klein 12× (18.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Ottilie Klein häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Ottilie Klein häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Richtig",
+        "isCorrect": false
+      },
       {
         "text": "Wirtschaftlich",
         "isCorrect": true
@@ -178,16 +227,11 @@
         "isCorrect": false
       },
       {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
+        "text": "Erfolgreich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wirtschaftlich\" nutzt Dr. Ottilie Klein 4.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "5.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wirtschaftlich\" sagte Dr. Ottilie Klein 3× (5.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

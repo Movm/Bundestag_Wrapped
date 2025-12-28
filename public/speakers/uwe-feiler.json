@@ -72,44 +72,84 @@
         "count": 10
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "rechtsstaat",
+        "count": 22,
+        "score": 71.7,
+        "ratio": 25.1
+      },
+      {
+        "word": "einzelplan",
+        "count": 20,
+        "score": 58.6,
+        "ratio": 17.7
+      },
       {
         "word": "munitionsaltlasten",
         "count": 9,
-        "ratioParty": 474.4,
-        "ratioBundestag": 495.8
-      },
-      {
-        "word": "altlasten",
-        "count": 5,
-        "ratioParty": 263.6,
-        "ratioBundestag": 275.4
+        "score": 55.9,
+        "ratio": 495.8
       },
       {
         "word": "verbraucherschutz",
         "count": 13,
-        "ratioParty": 54.1,
-        "ratioBundestag": 49.6
+        "score": 51.0,
+        "ratio": 49.6
       },
       {
-        "word": "stiftung",
-        "count": 7,
-        "ratioParty": 36.9,
-        "ratioBundestag": 20.7
-      },
-      {
-        "word": "gerichte",
-        "count": 6,
-        "ratioParty": 30.6,
-        "ratioBundestag": 23.6
+        "word": "haushalt",
+        "count": 21,
+        "score": 34.7,
+        "ratio": 4.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "rechtsstaat",
+        "count": 22,
+        "score": 70.5,
+        "ratio": 23.7
+      },
+      {
+        "word": "einzelplan",
+        "count": 20,
+        "score": 56.8,
+        "ratio": 16.1
+      },
+      {
+        "word": "munitionsaltlasten",
+        "count": 9,
+        "score": 55.5,
+        "ratio": 474.4
+      },
+      {
+        "word": "verbraucherschutz",
+        "count": 13,
+        "score": 52.1,
+        "ratio": 54.1
+      },
+      {
+        "word": "haushalt",
+        "count": 21,
+        "score": 33.4,
+        "ratio": 3.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "entscheidend",
         "count": 4,
-        "ratioParty": 4.5,
-        "ratioBundestag": 7.3
+        "score": 8.5,
+        "ratio": 7.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 6.8,
+        "ratio": 4.5
       }
     ]
   },
@@ -133,50 +173,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Uwe Feiler häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Uwe Feiler häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Munitionsaltlasten",
+        "text": "Rechtsstaat",
         "isCorrect": true
       },
       {
-        "text": "Haushalt",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Sicherheit",
+        "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
+        "text": "Gesellschaft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Munitionsaltlasten\" nutzt Uwe Feiler 474.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "495.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Rechtsstaat\" sagte Uwe Feiler 22× (25.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Uwe Feiler häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Uwe Feiler häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Schlecht",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
         "text": "Entscheidend",
         "isCorrect": true
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Uwe Feiler 4.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "7.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Entscheidend\" sagte Uwe Feiler 4× (7.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

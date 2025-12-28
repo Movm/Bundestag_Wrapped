@@ -68,44 +68,84 @@
         "count": 14
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "dayton",
-        "count": 9,
-        "ratioParty": 101.3,
-        "ratioBundestag": 66.1
+        "word": "bosnien",
+        "count": 15,
+        "score": 59.1,
+        "ratio": 50.4
       },
       {
-        "word": "freilassung",
-        "count": 5,
-        "ratioParty": 98.5,
-        "ratioBundestag": 90.2
-      },
-      {
-        "word": "völkerrechts",
-        "count": 6,
-        "ratioParty": 78.8,
-        "ratioBundestag": 85.0
+        "word": "völkerrecht",
+        "count": 13,
+        "score": 52.0,
+        "ratio": 53.7
       },
       {
         "word": "herzegowina",
         "count": 13,
-        "ratioParty": 64.0,
-        "ratioBundestag": 52.1
+        "score": 51.6,
+        "ratio": 52.1
       },
+      {
+        "word": "srebrenica",
+        "count": 11,
+        "score": 46.1,
+        "ratio": 65.1
+      },
+      {
+        "word": "europa",
+        "count": 23,
+        "score": 45.1,
+        "ratio": 6.1
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "bosnien",
         "count": 15,
-        "ratioParty": 59.1,
-        "ratioBundestag": 50.4
+        "score": 61.4,
+        "ratio": 59.1
+      },
+      {
+        "word": "herzegowina",
+        "count": 13,
+        "score": 54.3,
+        "ratio": 64.0
+      },
+      {
+        "word": "völkerrecht",
+        "count": 13,
+        "score": 49.1,
+        "ratio": 42.7
+      },
+      {
+        "word": "srebrenica",
+        "count": 11,
+        "score": 44.1,
+        "ratio": 54.2
+      },
+      {
+        "word": "krieg",
+        "count": 17,
+        "score": 43.7,
+        "ratio": 12.1
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "rechts",
         "count": 4,
-        "ratioParty": 5.6,
-        "ratioBundestag": 5.0
+        "score": 7.2,
+        "ratio": 5.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "rechts",
+        "count": 4,
+        "score": 7.6,
+        "ratio": 5.6
       }
     ]
   },
@@ -134,33 +174,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Adis Ahmetovic häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Adis Ahmetovic häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Dayton",
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Bosnien",
         "isCorrect": true
-      },
-      {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Dayton\" nutzt Adis Ahmetovic 101.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "66.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bosnien\" sagte Adis Ahmetovic 15× (50.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Adis Ahmetovic häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Adis Ahmetovic häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Klar",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
@@ -172,12 +211,11 @@
         "isCorrect": false
       },
       {
-        "text": "Falsch",
+        "text": "Jung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rechts\" nutzt Adis Ahmetovic 5.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "5.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Rechts\" sagte Adis Ahmetovic 4× (5.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

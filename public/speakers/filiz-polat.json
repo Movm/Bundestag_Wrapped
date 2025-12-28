@@ -68,39 +68,72 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "staatsangehörigkeitsrecht",
-        "count": 5,
-        "ratioParty": 443.4,
-        "ratioBundestag": 345.1
-      },
-      {
-        "word": "voraussetzungen",
-        "count": 5,
-        "ratioParty": 88.7,
-        "ratioBundestag": 18.9
+        "word": "dobrindt",
+        "count": 13,
+        "score": 42.1,
+        "ratio": 24.5
       },
       {
         "word": "einbürgerung",
         "count": 8,
-        "ratioParty": 29.9,
-        "ratioBundestag": 60.6
+        "score": 33.0,
+        "ratio": 60.6
+      },
+      {
+        "word": "staatsangehörigkeitsrecht",
+        "count": 5,
+        "score": 29.2,
+        "ratio": 345.1
+      },
+      {
+        "word": "innen",
+        "count": 10,
+        "score": 26.5,
+        "ratio": 13.2
       },
       {
         "word": "bundespolizei",
         "count": 7,
-        "ratioParty": 27.0,
-        "ratioBundestag": 17.3
-      },
-      {
-        "word": "zitieren",
-        "count": 5,
-        "ratioParty": 26.1,
-        "ratioBundestag": 36.1
+        "score": 20.3,
+        "ratio": 17.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "dobrindt",
+        "count": 13,
+        "score": 36.2,
+        "ratio": 15.2
+      },
+      {
+        "word": "staatsangehörigkeitsrecht",
+        "count": 5,
+        "score": 30.5,
+        "ratio": 443.4
+      },
+      {
+        "word": "einbürgerung",
+        "count": 8,
+        "score": 27.4,
+        "ratio": 29.9
+      },
+      {
+        "word": "bundespolizei",
+        "count": 7,
+        "score": 23.3,
+        "ratio": 27.0
+      },
+      {
+        "word": "voraussetzungen",
+        "count": 5,
+        "score": 22.5,
+        "ratio": 88.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 293,
@@ -122,27 +155,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Filiz Polat häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Filiz Polat häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Staatsangehörigkeitsrecht",
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Dobrindt",
         "isCorrect": true
       },
       {
-        "text": "Europa",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Haushalt",
+        "text": "Fraktion",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Staatsangehörigkeitsrecht\" nutzt Filiz Polat 443.4× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "345.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Dobrindt\" sagte Filiz Polat 13× (24.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -153,20 +185,20 @@
     "id": "biene",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.987
-      },
-      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüterin",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.964
+      },
+      {
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrliche Rednerin",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.787
       }
     ]
   },

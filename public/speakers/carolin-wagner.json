@@ -52,44 +52,84 @@
         "count": 12
       }
     ],
-    "signatureWords": [
-      {
-        "word": "bnetza",
-        "count": 6,
-        "ratioParty": 232.8,
-        "ratioBundestag": 781.5
-      },
-      {
-        "word": "source",
-        "count": 5,
-        "ratioParty": 194.0,
-        "ratioBundestag": 88.8
-      },
+    "signatureWordsBundestag": [
       {
         "word": "zendis",
         "count": 14,
-        "ratioParty": 181.1,
-        "ratioBundestag": 390.7
+        "score": 83.6,
+        "ratio": 390.7
       },
       {
-        "word": "reallabore",
-        "count": 5,
-        "ratioParty": 129.3,
-        "ratioBundestag": 72.4
+        "word": "werte",
+        "count": 19,
+        "score": 48.0,
+        "ratio": 11.5
       },
       {
-        "word": "netzausbau",
-        "count": 5,
-        "ratioParty": 129.3,
-        "ratioBundestag": 34.9
+        "word": "digitale",
+        "count": 17,
+        "score": 44.5,
+        "ratio": 12.7
+      },
+      {
+        "word": "bnetza",
+        "count": 6,
+        "score": 40.0,
+        "ratio": 781.5
+      },
+      {
+        "word": "souveränität",
+        "count": 12,
+        "score": 33.1,
+        "ratio": 14.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "zendis",
+        "count": 14,
+        "score": 72.9,
+        "ratio": 181.1
+      },
+      {
+        "word": "werte",
+        "count": 19,
+        "score": 48.2,
+        "ratio": 11.6
+      },
+      {
+        "word": "digitale",
+        "count": 17,
+        "score": 40.9,
+        "ratio": 10.1
+      },
+      {
+        "word": "chatkontrolle",
+        "count": 8,
+        "score": 37.2,
+        "ratio": 103.5
+      },
+      {
+        "word": "bnetza",
+        "count": 6,
+        "score": 32.7,
+        "ratio": 232.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "jämmerlich",
         "count": 3,
-        "ratioParty": 232.8,
-        "ratioBundestag": 586.1
+        "score": 19.1,
+        "ratio": 586.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "jämmerlich",
+        "count": 3,
+        "score": 16.4,
+        "ratio": 232.8
       }
     ]
   },
@@ -118,50 +158,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Carolin Wagner häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Carolin Wagner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Bnetza",
+        "text": "Zendis",
         "isCorrect": true
       },
       {
-        "text": "Minister",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bnetza\" nutzt Dr. Carolin Wagner 232.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "781.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Zendis\" sagte Dr. Carolin Wagner 14× (390.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Carolin Wagner häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Carolin Wagner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Sozial",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "Jämmerlich",
-        "isCorrect": true
+        "text": "Problematisch",
+        "isCorrect": false
       },
       {
         "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Jung",
-        "isCorrect": false
+        "text": "Jämmerlich",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Jämmerlich\" nutzt Dr. Carolin Wagner 232.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "586.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Jämmerlich\" sagte Dr. Carolin Wagner 3× (586.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐺",

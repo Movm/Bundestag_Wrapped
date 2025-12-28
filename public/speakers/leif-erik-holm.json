@@ -64,39 +64,79 @@
         "count": 11
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "vorpommern",
-        "count": 5,
-        "ratioParty": 107.6,
-        "ratioBundestag": 92.0
+        "word": "bürger",
+        "count": 23,
+        "score": 45.8,
+        "ratio": 6.3
       },
       {
-        "word": "mecklenburg",
-        "count": 5,
-        "ratioParty": 89.7,
-        "ratioBundestag": 92.0
+        "word": "habeck",
+        "count": 11,
+        "score": 40.5,
+        "ratio": 38.7
       },
       {
-        "word": "verbrenner",
-        "count": 5,
-        "ratioParty": 35.9,
-        "ratioBundestag": 24.2
+        "word": "tasche",
+        "count": 9,
+        "score": 35.8,
+        "ratio": 52.5
       },
       {
-        "word": "fleißigen",
-        "count": 5,
-        "ratioParty": 29.9,
-        "ratioBundestag": 88.6
+        "word": "verbrennerverbot",
+        "count": 8,
+        "score": 34.8,
+        "ratio": 76.6
       },
       {
-        "word": "technologieoffenheit",
-        "count": 5,
-        "ratioParty": 28.3,
-        "ratioBundestag": 32.3
+        "word": "unternehmen",
+        "count": 18,
+        "score": 32.1,
+        "ratio": 5.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "habeck",
+        "count": 11,
+        "score": 36.6,
+        "ratio": 26.9
+      },
+      {
+        "word": "unternehmen",
+        "count": 18,
+        "score": 36.1,
+        "ratio": 6.4
+      },
+      {
+        "word": "bürger",
+        "count": 23,
+        "score": 29.9,
+        "ratio": 2.7
+      },
+      {
+        "word": "tasche",
+        "count": 9,
+        "score": 28.0,
+        "ratio": 21.5
+      },
+      {
+        "word": "weiter",
+        "count": 18,
+        "score": 26.5,
+        "ratio": 3.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "links",
+        "count": 3,
+        "score": 5.2,
+        "ratio": 4.7
+      }
+    ],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 491,
@@ -123,29 +163,49 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Leif-Erik Holm häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Leif-Erik Holm häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetz",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Vorpommern",
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
         "isCorrect": true
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaft",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Vorpommern\" nutzt Leif-Erik Holm 107.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "92.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bürger\" sagte Leif-Erik Holm 23× (6.3× häufiger als der Bundestag-Durchschnitt)."
   },
-  "signatureAdjectiveQuiz": null,
+  "signatureAdjectiveQuiz": {
+    "question": "Welches Adjektiv nutzt Leif-Erik Holm häufiger als der Bundestag-Durchschnitt?",
+    "options": [
+      {
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
+        "isCorrect": false
+      },
+      {
+        "text": "Links",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "\"Links\" sagte Leif-Erik Holm 3× (4.7× häufiger als der Bundestag-Durchschnitt)."
+  },
   "spiritAnimal": null,
   "toneProfile": {
     "scores": {

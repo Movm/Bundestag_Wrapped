@@ -72,44 +72,84 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "klimaschutz",
+        "count": 20,
+        "score": 55.9,
+        "ratio": 15.3
+      },
       {
         "word": "landwirte",
         "count": 9,
-        "ratioParty": 34.6,
-        "ratioBundestag": 28.1
-      },
-      {
-        "word": "rainer",
-        "count": 5,
-        "ratioParty": 32.8,
-        "ratioBundestag": 25.4
+        "score": 30.4,
+        "ratio": 28.1
       },
       {
         "word": "umwelt",
         "count": 8,
-        "ratioParty": 28.3,
-        "ratioBundestag": 19.4
+        "score": 24.1,
+        "ratio": 19.4
       },
+      {
+        "word": "rainer",
+        "count": 5,
+        "score": 16.4,
+        "ratio": 25.4
+      },
+      {
+        "word": "zeigt",
+        "count": 8,
+        "score": 14.3,
+        "ratio": 4.9
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "klimaschutz",
         "count": 20,
-        "ratioParty": 17.3,
-        "ratioBundestag": 15.3
+        "score": 58.2,
+        "ratio": 17.3
       },
       {
-        "word": "arbeitsplätze",
-        "count": 6,
-        "ratioParty": 8.3,
-        "ratioBundestag": 7.4
+        "word": "landwirte",
+        "count": 9,
+        "score": 32.1,
+        "ratio": 34.6
+      },
+      {
+        "word": "umwelt",
+        "count": 8,
+        "score": 27.0,
+        "ratio": 28.3
+      },
+      {
+        "word": "rainer",
+        "count": 5,
+        "score": 17.6,
+        "ratio": 32.8
+      },
+      {
+        "word": "zeigt",
+        "count": 8,
+        "score": 13.6,
+        "ratio": 4.5
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "sicher",
         "count": 4,
-        "ratioParty": 3.3,
-        "ratioBundestag": 3.7
+        "score": 6.2,
+        "ratio": 3.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 5.8,
+        "ratio": 3.3
       }
     ]
   },
@@ -133,50 +173,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Benedikt Büdenbender häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Benedikt Büdenbender häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
       {
         "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Landwirte",
+        "text": "Klimaschutz",
         "isCorrect": true
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Landwirte\" nutzt Benedikt Büdenbender 34.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "28.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Klimaschutz\" sagte Benedikt Büdenbender 20× (15.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Benedikt Büdenbender häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Benedikt Büdenbender häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "National",
+        "isCorrect": false
+      },
       {
         "text": "Sicher",
         "isCorrect": true
-      },
-      {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sicher\" nutzt Benedikt Büdenbender 3.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "3.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Benedikt Büdenbender 4× (3.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦫",

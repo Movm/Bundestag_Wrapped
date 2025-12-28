@@ -68,56 +68,108 @@
         "count": 12
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "mütterrente",
-        "count": 6,
-        "ratioParty": 52.9,
-        "ratioBundestag": 42.9
-      },
-      {
-        "word": "gesundheitspolitik",
-        "count": 6,
-        "ratioParty": 49.6,
-        "ratioBundestag": 67.3
-      },
-      {
-        "word": "wesentlicher",
-        "count": 6,
-        "ratioParty": 25.6,
-        "ratioBundestag": 48.8
+        "word": "verantwortung",
+        "count": 30,
+        "score": 61.6,
+        "ratio": 6.8
       },
       {
         "word": "antworten",
         "count": 13,
-        "ratioParty": 24.6,
-        "ratioBundestag": 24.7
+        "score": 42.2,
+        "ratio": 24.7
       },
       {
-        "word": "vorher",
-        "count": 7,
-        "ratioParty": 16.0,
-        "ratioBundestag": 16.8
+        "word": "angesprochen",
+        "count": 15,
+        "score": 38.6,
+        "ratio": 12.1
+      },
+      {
+        "word": "arbeit",
+        "count": 17,
+        "score": 30.5,
+        "ratio": 5.0
+      },
+      {
+        "word": "leistung",
+        "count": 10,
+        "score": 29.2,
+        "ratio": 17.6
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "verantwortung",
+        "count": 30,
+        "score": 58.0,
+        "ratio": 5.9
+      },
+      {
+        "word": "antworten",
+        "count": 13,
+        "score": 42.1,
+        "ratio": 24.6
+      },
+      {
+        "word": "angesprochen",
+        "count": 15,
+        "score": 35.3,
+        "ratio": 9.5
+      },
+      {
+        "word": "arbeit",
+        "count": 17,
+        "score": 29.5,
+        "ratio": 4.7
+      },
+      {
+        "word": "leistung",
+        "count": 10,
+        "score": 27.0,
+        "ratio": 13.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "verantwortungsvoll",
         "count": 3,
-        "ratioParty": 10.7,
-        "ratioBundestag": 14.8
+        "score": 8.3,
+        "ratio": 14.8
       },
       {
         "word": "solide",
         "count": 3,
-        "ratioParty": 9.7,
-        "ratioBundestag": 11.9
+        "score": 7.7,
+        "ratio": 11.9
       },
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 3.5,
-        "ratioBundestag": 2.9
+        "score": 4.1,
+        "ratio": 2.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "verantwortungsvoll",
+        "count": 3,
+        "score": 7.4,
+        "ratio": 10.7
+      },
+      {
+        "word": "solide",
+        "count": 3,
+        "score": 7.1,
+        "ratio": 9.7
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 4.5,
+        "ratio": 3.5
       }
     ]
   },
@@ -146,50 +198,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Peter Aumer häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Peter Aumer häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Mütterrente",
-        "isCorrect": true
-      },
-      {
-        "text": "Politik",
-        "isCorrect": false
-      },
       {
         "text": "Gesetz",
         "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": true
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Mütterrente\" nutzt Peter Aumer 52.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "42.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Verantwortung\" sagte Peter Aumer 30× (6.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Peter Aumer häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Peter Aumer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Verantwortungsvoll",
         "isCorrect": true
       },
       {
-        "text": "Sozial",
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
         "isCorrect": false
       },
       {
         "text": "Gut",
         "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verantwortungsvoll\" nutzt Peter Aumer 10.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "14.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Verantwortungsvoll\" sagte Peter Aumer 3× (14.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

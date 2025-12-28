@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
-      {
-        "word": "superreiche",
-        "count": 5,
-        "ratioParty": 206.7,
-        "ratioBundestag": 240.2
-      },
+    "signatureWordsBundestag": [
       {
         "word": "enquete",
         "count": 6,
-        "ratioParty": 76.3,
-        "ratioBundestag": 104.8
+        "score": 28.0,
+        "ratio": 104.8
       },
       {
-        "word": "schützt",
+        "word": "superreiche",
         "count": 5,
-        "ratioParty": 30.6,
-        "ratioBundestag": 25.7
+        "score": 27.4,
+        "ratio": 240.2
       },
       {
         "word": "kommission",
         "count": 8,
-        "ratioParty": 19.2,
-        "ratioBundestag": 19.4
+        "score": 24.1,
+        "ratio": 19.4
       },
       {
-        "word": "indem",
+        "word": "worden",
+        "count": 9,
+        "score": 22.3,
+        "ratio": 10.9
+      },
+      {
+        "word": "schützt",
         "count": 5,
-        "ratioParty": 12.0,
-        "ratioBundestag": 11.3
+        "score": 16.4,
+        "ratio": 25.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "superreiche",
+        "count": 5,
+        "score": 26.7,
+        "ratio": 206.7
+      },
+      {
+        "word": "enquete",
+        "count": 6,
+        "score": 26.1,
+        "ratio": 76.3
+      },
+      {
+        "word": "kommission",
+        "count": 8,
+        "score": 24.0,
+        "ratio": 19.2
+      },
+      {
+        "word": "worden",
+        "count": 9,
+        "score": 22.2,
+        "ratio": 10.8
+      },
+      {
+        "word": "schützt",
+        "count": 5,
+        "score": 17.3,
+        "ratio": 30.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 167,
@@ -126,44 +159,35 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Johannes Wagner häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Johannes Wagner häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Koalition",
-        "isCorrect": false
-      },
       {
         "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
-        "text": "Superreiche",
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Enquete",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Superreiche\" nutzt Johannes Wagner 206.7× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "240.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Enquete\" sagte Johannes Wagner 6× (104.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Cleverer Stratege",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüter",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüter",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 0.887
-      },
       {
         "emoji": "🦜",
         "name": "Papagei",
@@ -171,6 +195,14 @@
         "reason": "Mit vielen Fragen bringst du wichtige Themen auf den Tisch.",
         "id": "papagei",
         "score": 0.875
+      },
+      {
+        "emoji": "🦊",
+        "name": "Fuchs",
+        "title": "Cleverer Stratege",
+        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+        "id": "fuchs",
+        "score": 0.831
       }
     ]
   },

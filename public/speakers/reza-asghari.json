@@ -72,44 +72,84 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "salzgitter",
-        "count": 5,
-        "ratioParty": 783.2,
-        "ratioBundestag": 306.2
-      },
-      {
-        "word": "exzellente",
-        "count": 5,
-        "ratioParty": 195.8,
-        "ratioBundestag": 233.3
+        "word": "hightech",
+        "count": 12,
+        "score": 45.9,
+        "ratio": 44.7
       },
       {
         "word": "umweltschutz",
         "count": 10,
-        "ratioParty": 108.0,
-        "ratioBundestag": 92.4
+        "score": 45.4,
+        "ratio": 92.4
       },
       {
-        "word": "fonds",
+        "word": "agenda",
+        "count": 12,
+        "score": 40.6,
+        "ratio": 28.5
+      },
+      {
+        "word": "forschungsergebnisse",
         "count": 5,
-        "ratioParty": 55.9,
-        "ratioBundestag": 45.0
+        "score": 35.6,
+        "ratio": 1224.9
+      },
+      {
+        "word": "forschung",
+        "count": 10,
+        "score": 29.3,
+        "ratio": 17.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "umweltschutz",
+        "count": 10,
+        "score": 46.9,
+        "ratio": 108.0
       },
       {
         "word": "hightech",
         "count": 12,
-        "ratioParty": 31.3,
-        "ratioBundestag": 44.7
+        "score": 41.7,
+        "ratio": 31.3
+      },
+      {
+        "word": "agenda",
+        "count": 12,
+        "score": 37.9,
+        "ratio": 22.5
+      },
+      {
+        "word": "salzgitter",
+        "count": 5,
+        "score": 33.3,
+        "ratio": 783.2
+      },
+      {
+        "word": "forschung",
+        "count": 10,
+        "score": 28.3,
+        "ratio": 16.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "solide",
         "count": 3,
-        "ratioParty": 22.9,
-        "ratioBundestag": 28.0
+        "score": 10.1,
+        "ratio": 28.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "solide",
+        "count": 3,
+        "score": 9.5,
+        "ratio": 22.9
       }
     ]
   },
@@ -133,33 +173,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Reza Asghari häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Reza Asghari häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Salzgitter",
+        "text": "Hightech",
         "isCorrect": true
       },
       {
-        "text": "Demokratie",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Rente",
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Salzgitter\" nutzt Dr. Reza Asghari 783.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "306.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Hightech\" sagte Dr. Reza Asghari 12× (44.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Reza Asghari häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Reza Asghari häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Europäisch",
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
         "isCorrect": false
       },
       {
@@ -167,39 +210,34 @@
         "isCorrect": true
       },
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
+        "text": "Groß",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Solide\" nutzt Dr. Reza Asghari 22.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "28.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Solide\" sagte Dr. Reza Asghari 3× (28.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Cleverer Stratege",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüter",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
       {
-        "emoji": "🦉",
-        "name": "Eule",
-        "title": "Themenexperte",
-        "reason": "Dein Fachwort \"Salzgitter\" nutzt du 783.2× häufiger als deine Fraktion.",
-        "id": "eule",
-        "score": 0.86
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positiver Teamplayer",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.787
       },
       {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüter",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 0.828
+        "emoji": "🦫",
+        "name": "Biber",
+        "title": "Konstruktiver Brückenbauer",
+        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
+        "id": "biber",
+        "score": 0.781
       }
     ]
   },

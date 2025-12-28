@@ -52,44 +52,84 @@
         "count": 22
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "baugb",
-        "count": 6,
-        "ratioParty": 286.6,
-        "ratioBundestag": 103.7
+        "word": "bauen",
+        "count": 55,
+        "score": 161.7,
+        "ratio": 17.9
       },
       {
-        "word": "vorkaufsrecht",
-        "count": 5,
-        "ratioParty": 119.4,
-        "ratioBundestag": 110.0
+        "word": "wohnen",
+        "count": 27,
+        "score": 84.7,
+        "ratio": 22.0
       },
       {
-        "word": "gebäudetyp",
-        "count": 9,
-        "ratioParty": 107.5,
-        "ratioBundestag": 103.7
+        "word": "miteinander",
+        "count": 28,
+        "score": 83.6,
+        "ratio": 18.8
       },
       {
-        "word": "gelsenkirchen",
-        "count": 6,
-        "ratioParty": 95.5,
-        "ratioBundestag": 58.1
+        "word": "bauturbo",
+        "count": 19,
+        "score": 62.3,
+        "ratio": 25.6
       },
       {
-        "word": "turbo",
-        "count": 5,
-        "ratioParty": 79.6,
-        "ratioBundestag": 48.4
+        "word": "wohnraum",
+        "count": 20,
+        "score": 58.7,
+        "ratio": 17.9
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "bauen",
+        "count": 55,
+        "score": 166.8,
+        "ratio": 19.8
+      },
+      {
+        "word": "wohnen",
+        "count": 27,
+        "score": 75.2,
+        "ratio": 15.2
+      },
+      {
+        "word": "miteinander",
+        "count": 28,
+        "score": 72.2,
+        "ratio": 12.2
+      },
+      {
+        "word": "bauturbo",
+        "count": 19,
+        "score": 62.1,
+        "ratio": 25.2
+      },
+      {
+        "word": "wohnraum",
+        "count": 20,
+        "score": 55.1,
+        "ratio": 14.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "konstruktiv",
         "count": 3,
-        "ratioParty": 5.5,
-        "ratioBundestag": 9.4
+        "score": 7.0,
+        "ratio": 9.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "konstruktiv",
+        "count": 3,
+        "score": 5.6,
+        "ratio": 5.5
       }
     ]
   },
@@ -113,66 +153,56 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Verena Hubertz häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Verena Hubertz häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Baugb",
+        "text": "Bauen",
         "isCorrect": true
       },
       {
-        "text": "Abstimmung",
+        "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Ausschuss",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
+        "text": "Familie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Baugb\" nutzt Verena Hubertz 286.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "103.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bauen\" sagte Verena Hubertz 55× (17.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Verena Hubertz häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Verena Hubertz häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
-        "isCorrect": false
-      },
       {
         "text": "Konstruktiv",
         "isCorrect": true
       },
       {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
         "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Konstruktiv\" nutzt Verena Hubertz 5.5× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "9.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Konstruktiv\" sagte Verena Hubertz 3× (9.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Clevere Strategin",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüterin",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 1.0
-      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -180,6 +210,14 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
+      },
+      {
+        "emoji": "🐬",
+        "name": "Delfin",
+        "title": "Diplomatische Rednerin",
+        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
+        "id": "delfin",
+        "score": 0.956
       }
     ]
   },

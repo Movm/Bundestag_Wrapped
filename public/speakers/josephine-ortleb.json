@@ -72,21 +72,36 @@
         "count": 3
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "frauen",
+        "count": 14,
+        "score": 52.0,
+        "ratio": 40.2
+      },
       {
         "word": "gleichstellung",
         "count": 8,
-        "ratioParty": 475.8,
-        "ratioBundestag": 388.6
+        "score": 47.7,
+        "ratio": 388.6
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "gleichstellung",
+        "count": 8,
+        "score": 49.3,
+        "ratio": 475.8
       },
       {
         "word": "frauen",
         "count": 14,
-        "ratioParty": 31.0,
-        "ratioBundestag": 40.2
+        "score": 48.5,
+        "ratio": 31.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 488,
@@ -103,27 +118,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Josephine Ortleb häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Josephine Ortleb häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Opposition",
+        "isCorrect": false
+      },
       {
         "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Haushalt",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Gleichstellung",
+        "text": "Frauen",
         "isCorrect": true
-      },
-      {
-        "text": "Opposition",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gleichstellung\" nutzt Josephine Ortleb 475.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "388.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Frauen\" sagte Josephine Ortleb 14× (40.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

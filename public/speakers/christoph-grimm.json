@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "vermieter",
         "count": 9,
-        "ratioParty": 238.1,
-        "ratioBundestag": 227.8
-      },
-      {
-        "word": "miete",
-        "count": 5,
-        "ratioParty": 105.8,
-        "ratioBundestag": 71.5
+        "score": 48.9,
+        "ratio": 227.8
       },
       {
         "word": "masseneinwanderung",
         "count": 6,
-        "ratioParty": 90.7,
-        "ratioBundestag": 401.3
+        "score": 36.0,
+        "ratio": 401.3
       },
       {
         "word": "mieten",
         "count": 8,
-        "ratioParty": 72.0,
-        "ratioBundestag": 57.0
+        "score": 32.5,
+        "ratio": 57.0
       },
       {
         "word": "wohnungsmarkt",
         "count": 5,
-        "ratioParty": 70.5,
-        "ratioBundestag": 118.5
+        "score": 23.9,
+        "ratio": 118.5
+      },
+      {
+        "word": "miete",
+        "count": 5,
+        "score": 21.4,
+        "ratio": 71.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "vermieter",
+        "count": 9,
+        "score": 49.3,
+        "ratio": 238.1
+      },
+      {
+        "word": "mieten",
+        "count": 8,
+        "score": 34.3,
+        "ratio": 72.0
+      },
+      {
+        "word": "masseneinwanderung",
+        "count": 6,
+        "score": 27.1,
+        "ratio": 90.7
+      },
+      {
+        "word": "miete",
+        "count": 5,
+        "score": 23.4,
+        "ratio": 105.8
+      },
+      {
+        "word": "wohnungsmarkt",
+        "count": 5,
+        "score": 21.4,
+        "ratio": 70.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 439,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Christoph Grimm häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Christoph Grimm häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
       {
         "text": "Vermieter",
         "isCorrect": true
       },
       {
-        "text": "Klima",
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Vermieter\" nutzt Christoph Grimm 238.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "227.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Vermieter\" sagte Christoph Grimm 9× (227.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

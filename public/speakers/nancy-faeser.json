@@ -68,33 +68,60 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "geschichte",
+        "count": 8,
+        "score": 27.0,
+        "ratio": 28.2
+      },
       {
         "word": "kosovo",
         "count": 5,
-        "ratioParty": 87.8,
-        "ratioBundestag": 78.0
+        "score": 21.8,
+        "ratio": 78.0
       },
       {
         "word": "polen",
         "count": 5,
-        "ratioParty": 41.3,
-        "ratioBundestag": 41.0
-      },
-      {
-        "word": "geschichte",
-        "count": 8,
-        "ratioParty": 27.1,
-        "ratioBundestag": 28.2
+        "score": 18.7,
+        "ratio": 41.0
       },
       {
         "word": "deutschen",
         "count": 6,
-        "ratioParty": 6.2,
-        "ratioBundestag": 4.3
+        "score": 10.0,
+        "ratio": 4.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "geschichte",
+        "count": 8,
+        "score": 26.7,
+        "ratio": 27.1
+      },
+      {
+        "word": "kosovo",
+        "count": 5,
+        "score": 22.4,
+        "ratio": 87.8
+      },
+      {
+        "word": "polen",
+        "count": 5,
+        "score": 18.7,
+        "ratio": 41.3
+      },
+      {
+        "word": "deutschen",
+        "count": 6,
+        "score": 11.8,
+        "ratio": 6.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 337,
@@ -116,27 +143,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Nancy Faeser häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Nancy Faeser häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Energie",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Kosovo",
+        "text": "Geschichte",
         "isCorrect": true
       },
       {
-        "text": "Zukunft",
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kosovo\" nutzt Nancy Faeser 87.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "78.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Geschichte\" sagte Nancy Faeser 8× (28.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

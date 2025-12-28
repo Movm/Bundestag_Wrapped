@@ -72,44 +72,84 @@
         "count": 15
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "bundesfinanzen",
-        "count": 7,
-        "ratioParty": 1151.9,
-        "ratioBundestag": 1805.2
-      },
-      {
-        "word": "leistungsausgaben",
-        "count": 5,
-        "ratioParty": 822.8,
-        "ratioBundestag": 1289.4
-      },
-      {
-        "word": "sozialversicherungssysteme",
-        "count": 6,
-        "ratioParty": 329.1,
-        "ratioBundestag": 386.8
-      },
-      {
-        "word": "sozialversicherungen",
-        "count": 6,
-        "ratioParty": 164.6,
-        "ratioBundestag": 171.9
+        "word": "bundeshaushalt",
+        "count": 22,
+        "score": 77.5,
+        "ratio": 32.9
       },
       {
         "word": "status",
         "count": 15,
-        "ratioParty": 164.6,
-        "ratioBundestag": 138.2
+        "score": 74.0,
+        "ratio": 138.2
+      },
+      {
+        "word": "arbeitsmarkt",
+        "count": 15,
+        "score": 58.5,
+        "ratio": 48.4
+      },
+      {
+        "word": "einzelplan",
+        "count": 19,
+        "score": 55.4,
+        "ratio": 17.5
+      },
+      {
+        "word": "bundesfinanzen",
+        "count": 7,
+        "score": 52.5,
+        "ratio": 1805.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "status",
+        "count": 15,
+        "score": 76.6,
+        "ratio": 164.6
+      },
+      {
+        "word": "bundeshaushalt",
+        "count": 22,
+        "score": 73.3,
+        "ratio": 27.0
+      },
+      {
+        "word": "arbeitsmarkt",
+        "count": 15,
+        "score": 58.5,
+        "ratio": 48.4
+      },
+      {
+        "word": "einzelplan",
+        "count": 19,
+        "score": 53.7,
+        "ratio": 15.9
+      },
+      {
+        "word": "bundesfinanzen",
+        "count": 7,
+        "score": 49.4,
+        "ratio": 1151.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "wettbewerbsfähig",
         "count": 3,
-        "ratioParty": 9.7,
-        "ratioBundestag": 18.9
+        "score": 9.0,
+        "ratio": 18.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wettbewerbsfähig",
+        "count": 3,
+        "score": 7.1,
+        "ratio": 9.7
       }
     ]
   },
@@ -138,14 +178,14 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Yannick Bury häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Yannick Bury häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bundesfinanzen",
+        "text": "Bundeshaushalt",
         "isCorrect": true
       },
       {
-        "text": "Fraktion",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
@@ -157,31 +197,29 @@
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bundesfinanzen\" nutzt Dr. Yannick Bury 1151.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "1805.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bundeshaushalt\" sagte Dr. Yannick Bury 22× (32.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Yannick Bury häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Yannick Bury häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
+        "isCorrect": false
+      },
       {
         "text": "Wettbewerbsfähig",
         "isCorrect": true
-      },
-      {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wettbewerbsfähig\" nutzt Dr. Yannick Bury 9.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "18.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wettbewerbsfähig\" sagte Dr. Yannick Bury 3× (18.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -199,12 +237,12 @@
         "score": 0.938
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.893
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positiver Teamplayer",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.887
       }
     ]
   },

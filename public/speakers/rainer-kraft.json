@@ -56,50 +56,96 @@
         "count": 14
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "endlager",
-        "count": 6,
-        "ratioParty": 51.3,
-        "ratioBundestag": 91.7
+        "word": "kernkraft",
+        "count": 16,
+        "score": 67.3,
+        "ratio": 66.1
+      },
+      {
+        "word": "kernkraftwerke",
+        "count": 13,
+        "score": 50.6,
+        "ratio": 47.9
+      },
+      {
+        "word": "energiepolitik",
+        "count": 13,
+        "score": 42.3,
+        "ratio": 24.8
       },
       {
         "word": "thyssenkrupp",
         "count": 9,
-        "ratioParty": 51.3,
-        "ratioBundestag": 101.9
+        "score": 41.7,
+        "ratio": 101.9
       },
       {
-        "word": "unzureichend",
-        "count": 5,
-        "ratioParty": 42.8,
-        "ratioBundestag": 50.9
-      },
-      {
-        "word": "entsorgung",
-        "count": 6,
-        "ratioParty": 37.3,
-        "ratioBundestag": 76.4
-      },
-      {
-        "word": "gaskraftwerke",
-        "count": 7,
-        "ratioParty": 36.8,
-        "ratioBundestag": 26.1
+        "word": "minister",
+        "count": 19,
+        "score": 35.6,
+        "ratio": 5.5
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "kernkraft",
+        "count": 16,
+        "score": 47.8,
+        "ratio": 18.9
+      },
+      {
+        "word": "kernkraftwerke",
+        "count": 13,
+        "score": 36.5,
+        "ratio": 15.6
+      },
+      {
+        "word": "thyssenkrupp",
+        "count": 9,
+        "score": 35.6,
+        "ratio": 51.3
+      },
+      {
+        "word": "energiepolitik",
+        "count": 13,
+        "score": 34.0,
+        "ratio": 12.7
+      },
+      {
+        "word": "minister",
+        "count": 19,
+        "score": 32.5,
+        "ratio": 4.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "unzureichend",
         "count": 5,
-        "ratioParty": 42.8,
-        "ratioBundestag": 50.9
+        "score": 19.7,
+        "ratio": 50.9
       },
       {
         "word": "teuer",
         "count": 4,
-        "ratioParty": 3.6,
-        "ratioBundestag": 5.6
+        "score": 7.6,
+        "ratio": 5.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "unzureichend",
+        "count": 5,
+        "score": 18.9,
+        "ratio": 42.8
+      },
+      {
+        "word": "teuer",
+        "count": 4,
+        "score": 6.1,
+        "ratio": 3.6
       }
     ]
   },
@@ -128,50 +174,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Rainer Kraft häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Rainer Kraft häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Kernkraft",
+        "isCorrect": true
+      },
       {
         "text": "Europa",
         "isCorrect": false
       },
       {
-        "text": "Gesetz",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Bildung",
+        "text": "Wirtschaft",
         "isCorrect": false
-      },
-      {
-        "text": "Endlager",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Endlager\" nutzt Dr. Rainer Kraft 51.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "91.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Kernkraft\" sagte Dr. Rainer Kraft 16× (66.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Rainer Kraft häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Rainer Kraft häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Politisch",
+        "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
         "text": "Unzureichend",
         "isCorrect": true
+      },
+      {
+        "text": "Groß",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unzureichend\" nutzt Dr. Rainer Kraft 42.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "50.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Unzureichend\" sagte Dr. Rainer Kraft 5× (50.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

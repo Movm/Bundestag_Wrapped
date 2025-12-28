@@ -60,50 +60,96 @@
         "count": 12
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "dublin",
         "count": 12,
-        "ratioParty": 176.2,
-        "ratioBundestag": 153.5
+        "score": 60.5,
+        "ratio": 153.5
+      },
+      {
+        "word": "deutschland",
+        "count": 44,
+        "score": 58.8,
+        "ratio": 2.8
+      },
+      {
+        "word": "grenzkontrollen",
+        "count": 14,
+        "score": 52.6,
+        "ratio": 41.9
       },
       {
         "word": "schutzberechtigten",
         "count": 7,
-        "ratioParty": 146.9,
-        "ratioBundestag": 230.3
+        "score": 38.1,
+        "ratio": 230.3
+      },
+      {
+        "word": "innern",
+        "count": 8,
+        "score": 35.9,
+        "ratio": 87.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "dublin",
+        "count": 12,
+        "score": 62.1,
+        "ratio": 176.2
+      },
+      {
+        "word": "deutschland",
+        "count": 44,
+        "score": 55.3,
+        "ratio": 2.5
+      },
+      {
+        "word": "grenzkontrollen",
+        "count": 14,
+        "score": 49.7,
+        "ratio": 33.7
       },
       {
         "word": "familiennachzug",
         "count": 9,
-        "ratioParty": 73.4,
-        "ratioBundestag": 49.9
+        "score": 38.8,
+        "ratio": 73.4
       },
       {
-        "word": "subsidiär",
+        "word": "schutzberechtigten",
         "count": 7,
-        "ratioParty": 68.5,
-        "ratioBundestag": 71.6
-      },
-      {
-        "word": "flüchtlingen",
-        "count": 5,
-        "ratioParty": 66.8,
-        "ratioBundestag": 127.9
+        "score": 35.0,
+        "ratio": 146.9
       }
     ],
-    "signatureAdjectives": [
-      {
-        "word": "effektiv",
-        "count": 3,
-        "ratioParty": 13.4,
-        "ratioBundestag": 17.1
-      },
+    "signatureAdjectivesBundestag": [
       {
         "word": "falsch",
         "count": 5,
-        "ratioParty": 8.2,
-        "ratioBundestag": 7.1
+        "score": 10.5,
+        "ratio": 7.1
+      },
+      {
+        "word": "effektiv",
+        "count": 3,
+        "score": 8.7,
+        "ratio": 17.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "falsch",
+        "count": 5,
+        "score": 11.1,
+        "ratio": 8.2
+      },
+      {
+        "word": "effektiv",
+        "count": 3,
+        "score": 8.0,
+        "ratio": 13.4
       }
     ]
   },
@@ -132,14 +178,14 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Alexander Throm häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Alexander Throm häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Reform",
+        "text": "Migration",
         "isCorrect": false
       },
       {
@@ -147,35 +193,33 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaft",
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Dublin\" nutzt Alexander Throm 176.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "153.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Dublin\" sagte Alexander Throm 12× (153.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Alexander Throm häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Alexander Throm häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Problematisch",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Effektiv",
+        "text": "Falsch",
         "isCorrect": true
       },
       {
-        "text": "Neu",
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Effektiv\" nutzt Alexander Throm 13.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "17.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Falsch\" sagte Alexander Throm 5× (7.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -193,12 +237,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.964
+        "emoji": "🐴",
+        "name": "Pferd",
+        "title": "Fleißiger Debattierer",
+        "reason": "Mit 15 Reden gehörst du zu den aktivsten Abgeordneten.",
+        "id": "pferd",
+        "score": 0.887
       }
     ]
   },

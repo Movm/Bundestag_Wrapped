@@ -64,44 +64,84 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "bundeswehr",
+        "count": 13,
+        "score": 35.6,
+        "ratio": 14.4
+      },
       {
         "word": "wehrpflicht",
         "count": 9,
-        "ratioParty": 56.5,
-        "ratioBundestag": 43.7
+        "score": 34.2,
+        "ratio": 43.7
       },
       {
         "word": "wehrdienst",
         "count": 7,
-        "ratioParty": 42.9,
-        "ratioBundestag": 43.5
-      },
-      {
-        "word": "sudan",
-        "count": 6,
-        "ratioParty": 30.6,
-        "ratioBundestag": 26.8
-      },
-      {
-        "word": "verteidigungsfähigkeit",
-        "count": 5,
-        "ratioParty": 17.8,
-        "ratioBundestag": 28.7
+        "score": 26.6,
+        "ratio": 43.5
       },
       {
         "word": "soldatinnen",
         "count": 7,
-        "ratioParty": 15.5,
-        "ratioBundestag": 16.7
+        "score": 20.1,
+        "ratio": 16.7
+      },
+      {
+        "word": "sudan",
+        "count": 6,
+        "score": 20.0,
+        "ratio": 26.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "wehrpflicht",
+        "count": 9,
+        "score": 36.5,
+        "ratio": 56.5
+      },
+      {
+        "word": "bundeswehr",
+        "count": 13,
+        "score": 36.4,
+        "ratio": 15.4
+      },
+      {
+        "word": "wehrdienst",
+        "count": 7,
+        "score": 26.5,
+        "ratio": 42.9
+      },
+      {
+        "word": "sudan",
+        "count": 6,
+        "score": 20.7,
+        "ratio": 30.6
+      },
+      {
+        "word": "soldatinnen",
+        "count": 7,
+        "score": 19.6,
+        "ratio": 15.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "wirksam",
         "count": 3,
-        "ratioParty": 13.3,
-        "ratioBundestag": 18.2
+        "score": 8.9,
+        "ratio": 18.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 8.0,
+        "ratio": 13.3
       }
     ]
   },
@@ -125,41 +165,40 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Diana Herbstreuth häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Diana Herbstreuth häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wehrpflicht",
+        "text": "Bundeswehr",
         "isCorrect": true
       },
       {
-        "text": "Migration",
+        "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Fraktion",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Steuern",
+        "text": "Zukunft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wehrpflicht\" nutzt Diana Herbstreuth 56.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "43.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bundeswehr\" sagte Diana Herbstreuth 13× (14.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Diana Herbstreuth häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Diana Herbstreuth häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Alt",
+        "text": "Sicher",
         "isCorrect": false
       },
       {
-        "text": "Gefährlich",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
-        "text": "Erfolgreich",
+        "text": "Stark",
         "isCorrect": false
       },
       {
@@ -167,8 +206,7 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Wirksam\" nutzt Diana Herbstreuth 13.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "18.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wirksam\" sagte Diana Herbstreuth 3× (18.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

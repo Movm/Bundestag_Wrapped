@@ -72,44 +72,84 @@
         "count": 7
       }
     ],
-    "signatureWords": [
-      {
-        "word": "umweltministerium",
-        "count": 5,
-        "ratioParty": 360.6,
-        "ratioBundestag": 124.7
-      },
+    "signatureWordsBundestag": [
       {
         "word": "klimakatastrophe",
         "count": 9,
-        "ratioParty": 64.9,
-        "ratioBundestag": 369.6
+        "score": 53.2,
+        "ratio": 369.6
       },
       {
         "word": "widerstand",
         "count": 6,
-        "ratioParty": 28.8,
-        "ratioBundestag": 62.5
+        "score": 24.9,
+        "ratio": 62.5
+      },
+      {
+        "word": "umweltministerium",
+        "count": 5,
+        "score": 24.2,
+        "ratio": 124.7
+      },
+      {
+        "word": "sozial",
+        "count": 7,
+        "score": 22.8,
+        "ratio": 24.8
+      },
+      {
+        "word": "politik",
+        "count": 11,
+        "score": 17.6,
+        "ratio": 4.0
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "klimakatastrophe",
+        "count": 9,
+        "score": 37.7,
+        "ratio": 64.9
+      },
+      {
+        "word": "umweltministerium",
+        "count": 5,
+        "score": 29.5,
+        "ratio": 360.6
+      },
+      {
+        "word": "widerstand",
+        "count": 6,
+        "score": 20.4,
+        "ratio": 28.8
       },
       {
         "word": "klima",
         "count": 7,
-        "ratioParty": 12.6,
-        "ratioBundestag": 10.5
+        "score": 18.3,
+        "ratio": 12.6
       },
       {
         "word": "sozial",
         "count": 7,
-        "ratioParty": 9.9,
-        "ratioBundestag": 24.8
+        "score": 16.7,
+        "ratio": 9.9
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "sozial",
         "count": 7,
-        "ratioParty": 9.9,
-        "ratioBundestag": 24.8
+        "score": 22.8,
+        "ratio": 24.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sozial",
+        "count": 7,
+        "score": 16.7,
+        "ratio": 9.9
       }
     ]
   },
@@ -133,50 +173,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Violetta Bock häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Violetta Bock häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Umweltministerium",
+        "text": "Klimakatastrophe",
         "isCorrect": true
+      },
+      {
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Umweltministerium\" nutzt Violetta Bock 360.6× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "124.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Klimakatastrophe\" sagte Violetta Bock 9× (369.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Violetta Bock häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Violetta Bock häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Sozial",
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Klar",
         "isCorrect": false
       },
       {
-        "text": "Neu",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Politisch",
+        "text": "Sicher",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sozial\" nutzt Violetta Bock 9.9× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "24.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sozial\" sagte Violetta Bock 7× (24.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐬",

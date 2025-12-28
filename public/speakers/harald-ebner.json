@@ -72,39 +72,72 @@
         "count": 3
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "atomkraft",
         "count": 7,
-        "ratioParty": 94.3,
-        "ratioBundestag": 301.7
+        "score": 40.0,
+        "ratio": 301.7
       },
       {
         "word": "jülich",
         "count": 7,
-        "ratioParty": 67.0,
-        "ratioBundestag": 232.6
-      },
-      {
-        "word": "werte",
-        "count": 5,
-        "ratioParty": 20.8,
-        "ratioBundestag": 12.1
+        "score": 38.2,
+        "ratio": 232.6
       },
       {
         "word": "minister",
         "count": 6,
-        "ratioParty": 7.1,
-        "ratioBundestag": 9.0
+        "score": 13.8,
+        "ratio": 9.0
+      },
+      {
+        "word": "werte",
+        "count": 5,
+        "score": 12.9,
+        "ratio": 12.1
       },
       {
         "word": "deutschen",
         "count": 5,
-        "ratioParty": 4.6,
-        "ratioBundestag": 4.1
+        "score": 8.1,
+        "ratio": 4.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "atomkraft",
+        "count": 7,
+        "score": 31.9,
+        "ratio": 94.3
+      },
+      {
+        "word": "jülich",
+        "count": 7,
+        "score": 29.5,
+        "ratio": 67.0
+      },
+      {
+        "word": "werte",
+        "count": 5,
+        "score": 15.4,
+        "ratio": 20.8
+      },
+      {
+        "word": "minister",
+        "count": 6,
+        "score": 12.6,
+        "ratio": 7.1
+      },
+      {
+        "word": "deutschen",
+        "count": 5,
+        "score": 8.6,
+        "ratio": 4.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 263,
@@ -126,14 +159,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Harald Ebner häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Harald Ebner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
+        "text": "Rente",
         "isCorrect": false
       },
       {
@@ -141,12 +170,15 @@
         "isCorrect": true
       },
       {
-        "text": "Opposition",
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Atomkraft\" nutzt Harald Ebner 94.3× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "301.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Atomkraft\" sagte Harald Ebner 7× (301.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -157,20 +189,20 @@
     "id": "eichhoernchen",
     "alternatives": [
       {
+        "emoji": "🦊",
+        "name": "Fuchs",
+        "title": "Cleverer Stratege",
+        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+        "id": "fuchs",
+        "score": 0.78
+      },
+      {
         "emoji": "🦜",
         "name": "Papagei",
         "title": "Neugieriger Fragesteller",
         "reason": "Mit vielen Fragen bringst du wichtige Themen auf den Tisch.",
         "id": "papagei",
         "score": 0.728
-      },
-      {
-        "emoji": "🦫",
-        "name": "Biber",
-        "title": "Konstruktiver Brückenbauer",
-        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
-        "id": "biber",
-        "score": 0.7
       }
     ]
   },

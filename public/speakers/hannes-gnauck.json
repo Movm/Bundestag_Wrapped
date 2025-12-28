@@ -72,39 +72,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
-      {
-        "word": "krieges",
-        "count": 5,
-        "ratioParty": 75.7,
-        "ratioBundestag": 44.9
-      },
+    "signatureWordsBundestag": [
       {
         "word": "soldaten",
         "count": 28,
-        "ratioParty": 54.6,
-        "ratioBundestag": 55.2
-      },
-      {
-        "word": "dienst",
-        "count": 8,
-        "ratioParty": 50.2,
-        "ratioBundestag": 39.7
+        "score": 112.8,
+        "ratio": 55.2
       },
       {
         "word": "bundeswehr",
         "count": 23,
-        "ratioParty": 35.7,
-        "ratioBundestag": 34.9
+        "score": 82.3,
+        "ratio": 34.9
+      },
+      {
+        "word": "dienst",
+        "count": 8,
+        "score": 29.6,
+        "ratio": 39.7
       },
       {
         "word": "einsatz",
         "count": 7,
-        "ratioParty": 20.5,
-        "ratioBundestag": 15.0
+        "score": 19.4,
+        "ratio": 15.0
+      },
+      {
+        "word": "krieges",
+        "count": 5,
+        "score": 19.1,
+        "ratio": 44.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "soldaten",
+        "count": 28,
+        "score": 112.5,
+        "ratio": 54.6
+      },
+      {
+        "word": "bundeswehr",
+        "count": 23,
+        "score": 82.8,
+        "ratio": 35.7
+      },
+      {
+        "word": "dienst",
+        "count": 8,
+        "score": 31.5,
+        "ratio": 50.2
+      },
+      {
+        "word": "krieges",
+        "count": 5,
+        "score": 21.7,
+        "ratio": 75.7
+      },
+      {
+        "word": "einsatz",
+        "count": 7,
+        "score": 21.5,
+        "ratio": 20.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 733,
@@ -131,27 +164,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Hannes Gnauck häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Hannes Gnauck häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Krieges",
+        "text": "Soldaten",
         "isCorrect": true
+      },
+      {
+        "text": "Bundesregierung",
+        "isCorrect": false
       },
       {
         "text": "Klima",
         "isCorrect": false
+      },
+      {
+        "text": "Familie",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Krieges\" nutzt Hannes Gnauck 75.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "44.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Soldaten\" sagte Hannes Gnauck 28× (55.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

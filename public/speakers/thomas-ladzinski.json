@@ -72,44 +72,84 @@
         "count": 14
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "bundesregierung",
+        "count": 41,
+        "score": 73.6,
+        "ratio": 5.0
+      },
+      {
+        "word": "selbstgenutztem",
+        "count": 8,
+        "score": 63.4,
+        "ratio": 2765.6
+      },
       {
         "word": "beschaffungsamt",
         "count": 8,
-        "ratioParty": 620.0,
-        "ratioBundestag": 691.4
+        "score": 52.3,
+        "ratio": 691.4
       },
       {
         "word": "wehrmaterial",
         "count": 6,
-        "ratioParty": 465.0,
-        "ratioBundestag": 2074.2
-      },
-      {
-        "word": "bezweifelt",
-        "count": 5,
-        "ratioParty": 193.7,
-        "ratioBundestag": 345.7
-      },
-      {
-        "word": "verteidigungsausgaben",
-        "count": 8,
-        "ratioParty": 155.0,
-        "ratioBundestag": 60.1
+        "score": 45.8,
+        "ratio": 2074.2
       },
       {
         "word": "wohneigentum",
         "count": 9,
-        "ratioParty": 139.5,
-        "ratioBundestag": 135.3
+        "score": 44.2,
+        "ratio": 135.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "bundesregierung",
+        "count": 41,
+        "score": 77.6,
+        "ratio": 5.6
+      },
+      {
+        "word": "beschaffungsamt",
+        "count": 8,
+        "score": 51.5,
+        "ratio": 620.0
+      },
+      {
+        "word": "wohneigentum",
+        "count": 9,
+        "score": 44.5,
+        "ratio": 139.5
+      },
+      {
+        "word": "bundeswehr",
+        "count": 19,
+        "score": 43.1,
+        "ratio": 8.7
+      },
+      {
+        "word": "verteidigungsausgaben",
+        "count": 8,
+        "score": 40.4,
+        "ratio": 155.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "unverantwortlich",
         "count": 4,
-        "ratioParty": 28.2,
-        "ratioBundestag": 29.4
+        "score": 13.7,
+        "ratio": 29.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "unverantwortlich",
+        "count": 4,
+        "score": 13.5,
+        "ratio": 28.2
       }
     ]
   },
@@ -138,37 +178,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Thomas Ladzinski häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Thomas Ladzinski häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Verantwortung",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Beschaffungsamt",
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Bundesregierung",
         "isCorrect": true
-      },
-      {
-        "text": "Freiheit",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Beschaffungsamt\" nutzt Thomas Ladzinski 620.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "691.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bundesregierung\" sagte Thomas Ladzinski 41× (5.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Thomas Ladzinski häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Thomas Ladzinski häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Problematisch",
+        "text": "Stark",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
@@ -176,12 +215,11 @@
         "isCorrect": true
       },
       {
-        "text": "Richtig",
+        "text": "Gut",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unverantwortlich\" nutzt Thomas Ladzinski 28.2× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "29.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Unverantwortlich\" sagte Thomas Ladzinski 4× (29.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

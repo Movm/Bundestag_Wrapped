@@ -72,50 +72,96 @@
         "count": 14
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "strafgesetzbuch",
-        "count": 9,
-        "ratioParty": 200.1,
-        "ratioBundestag": 137.6
+        "word": "abgeordneter",
+        "count": 34,
+        "score": 137.8,
+        "ratio": 56.6
       },
       {
-        "word": "richter",
-        "count": 12,
-        "ratioParty": 61.6,
-        "ratioBundestag": 37.7
+        "word": "justiz",
+        "count": 26,
+        "score": 86.1,
+        "ratio": 26.4
       },
       {
-        "word": "kampagne",
-        "count": 5,
-        "ratioParty": 55.6,
-        "ratioBundestag": 54.2
+        "word": "abgeordnete",
+        "count": 27,
+        "score": 81.6,
+        "ratio": 19.6
       },
       {
-        "word": "nummer",
-        "count": 6,
-        "ratioParty": 50.0,
-        "ratioBundestag": 36.0
+        "word": "gewalt",
+        "count": 25,
+        "score": 65.1,
+        "ratio": 12.5
       },
       {
-        "word": "absatz",
-        "count": 11,
-        "ratioParty": 45.8,
-        "ratioBundestag": 25.3
+        "word": "rechtsstaat",
+        "count": 20,
+        "score": 55.9,
+        "ratio": 15.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "demokratisch",
-        "count": 4,
-        "ratioParty": 14.8,
-        "ratioBundestag": 17.2
+        "word": "abgeordneter",
+        "count": 34,
+        "score": 120.7,
+        "ratio": 33.8
       },
+      {
+        "word": "justiz",
+        "count": 26,
+        "score": 84.5,
+        "ratio": 24.8
+      },
+      {
+        "word": "abgeordnete",
+        "count": 27,
+        "score": 78.0,
+        "ratio": 17.0
+      },
+      {
+        "word": "gewalt",
+        "count": 25,
+        "score": 59.0,
+        "ratio": 9.6
+      },
+      {
+        "word": "rechtsstaat",
+        "count": 20,
+        "score": 52.0,
+        "ratio": 12.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "geschützt",
         "count": 5,
-        "ratioParty": 9.3,
-        "ratioBundestag": 12.4
+        "score": 13.0,
+        "ratio": 12.4
+      },
+      {
+        "word": "demokratisch",
+        "count": 4,
+        "score": 11.6,
+        "ratio": 17.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "geschützt",
+        "count": 5,
+        "score": 11.6,
+        "ratio": 9.3
+      },
+      {
+        "word": "demokratisch",
+        "count": 4,
+        "score": 11.0,
+        "ratio": 14.8
       }
     ]
   },
@@ -139,66 +185,56 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Frank Schwabe häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Frank Schwabe häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Strafgesetzbuch",
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Abgeordneter",
         "isCorrect": true
       },
       {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
+        "text": "Wirtschaft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Strafgesetzbuch\" nutzt Frank Schwabe 200.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "137.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Abgeordneter\" sagte Frank Schwabe 34× (56.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Frank Schwabe häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Frank Schwabe häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Groß",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Demokratisch",
+        "text": "Geschützt",
         "isCorrect": true
       },
       {
-        "text": "Sicher",
+        "text": "Jung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Demokratisch\" nutzt Frank Schwabe 14.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "17.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Geschützt\" sagte Frank Schwabe 5× (12.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Cleverer Stratege",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüter",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüter",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 1.0
-      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -206,6 +242,14 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
+      },
+      {
+        "emoji": "🐬",
+        "name": "Delfin",
+        "title": "Diplomatischer Redner",
+        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
+        "id": "delfin",
+        "score": 0.956
       }
     ]
   },

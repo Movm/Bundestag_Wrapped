@@ -64,44 +64,84 @@
         "count": 11
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "verfassungsgericht",
         "count": 22,
-        "ratioParty": 242.4,
-        "ratioBundestag": 490.1
-      },
-      {
-        "word": "verfassungsgerichts",
-        "count": 6,
-        "ratioParty": 165.3,
-        "ratioBundestag": 490.1
-      },
-      {
-        "word": "anlasslosen",
-        "count": 5,
-        "ratioParty": 137.7,
-        "ratioBundestag": 222.8
+        "score": 136.3,
+        "ratio": 490.1
       },
       {
         "word": "verfassung",
         "count": 15,
-        "ratioParty": 87.0,
-        "ratioBundestag": 61.3
+        "score": 62.0,
+        "ratio": 61.3
       },
       {
-        "word": "kommunikation",
+        "word": "verfassungsgerichts",
         "count": 6,
-        "ratioParty": 33.1,
-        "ratioBundestag": 30.0
+        "score": 37.2,
+        "ratio": 490.1
+      },
+      {
+        "word": "grünen",
+        "count": 15,
+        "score": 28.9,
+        "ratio": 5.9
+      },
+      {
+        "word": "anlasslosen",
+        "count": 5,
+        "score": 27.1,
+        "ratio": 222.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "verfassungsgericht",
+        "count": 22,
+        "score": 120.9,
+        "ratio": 242.4
+      },
+      {
+        "word": "verfassung",
+        "count": 15,
+        "score": 67.2,
+        "ratio": 87.0
+      },
+      {
+        "word": "verfassungsgerichts",
+        "count": 6,
+        "score": 30.7,
+        "ratio": 165.3
+      },
+      {
+        "word": "anlasslosen",
+        "count": 5,
+        "score": 24.7,
+        "ratio": 137.7
+      },
+      {
+        "word": "bundestag",
+        "count": 11,
+        "score": 23.5,
+        "ratio": 7.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 8.1,
-        "ratioBundestag": 3.5
+        "score": 4.5,
+        "ratio": 3.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 6.6,
+        "ratio": 8.1
       }
     ]
   },
@@ -130,18 +170,18 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Fabian Jacobi häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Fabian Jacobi häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Haushalt",
+        "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Familie",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
@@ -149,31 +189,29 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Verfassungsgericht\" nutzt Fabian Jacobi 242.4× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "490.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Verfassungsgericht\" sagte Fabian Jacobi 22× (490.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Fabian Jacobi häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Fabian Jacobi häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
+        "isCorrect": false
+      },
       {
         "text": "Gerecht",
         "isCorrect": true
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
-        "text": "Falsch",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gerecht\" nutzt Fabian Jacobi 8.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "3.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gerecht\" sagte Fabian Jacobi 3× (3.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

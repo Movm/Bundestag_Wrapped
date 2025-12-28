@@ -72,44 +72,84 @@
         "count": 9
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "lagebild",
-        "count": 5,
-        "ratioParty": 174.4,
-        "ratioBundestag": 97.3
+        "word": "louvre",
+        "count": 9,
+        "score": 76.2,
+        "ratio": 4730.0
+      },
+      {
+        "word": "drohnen",
+        "count": 16,
+        "score": 61.3,
+        "ratio": 45.2
       },
       {
         "word": "kritischer",
         "count": 9,
-        "ratioParty": 104.7,
-        "ratioBundestag": 112.6
-      },
-      {
-        "word": "kritis",
-        "count": 6,
-        "ratioParty": 78.5,
-        "ratioBundestag": 50.1
-      },
-      {
-        "word": "schiffe",
-        "count": 5,
-        "ratioParty": 74.8,
-        "ratioBundestag": 38.6
+        "score": 42.6,
+        "ratio": 112.6
       },
       {
         "word": "hybride",
         "count": 9,
-        "ratioParty": 49.6,
-        "ratioBundestag": 75.1
+        "score": 39.0,
+        "ratio": 75.1
+      },
+      {
+        "word": "bedrohungen",
+        "count": 10,
+        "score": 36.1,
+        "ratio": 36.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "drohnen",
+        "count": 16,
+        "score": 62.2,
+        "ratio": 47.8
+      },
+      {
+        "word": "kritischer",
+        "count": 9,
+        "score": 41.9,
+        "ratio": 104.7
+      },
+      {
+        "word": "hybride",
+        "count": 9,
+        "score": 35.3,
+        "ratio": 49.6
+      },
+      {
+        "word": "bedrohungen",
+        "count": 10,
+        "score": 33.3,
+        "ratio": 26.8
+      },
+      {
+        "word": "russland",
+        "count": 13,
+        "score": 31.7,
+        "ratio": 10.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "sicher",
         "count": 4,
-        "ratioParty": 2.1,
-        "ratioBundestag": 2.8
+        "score": 5.4,
+        "ratio": 2.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 4.6,
+        "ratio": 2.1
       }
     ]
   },
@@ -138,33 +178,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Daniel Baldy häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Daniel Baldy häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bürger",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Lagebild",
+        "text": "Louvre",
         "isCorrect": true
+      },
+      {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Lagebild\" nutzt Daniel Baldy 174.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "97.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Louvre\" sagte Daniel Baldy 9× (4730.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Daniel Baldy häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Daniel Baldy häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Sozial",
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
@@ -172,16 +215,11 @@
         "isCorrect": true
       },
       {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
+        "text": "Groß",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sicher\" nutzt Daniel Baldy 2.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "2.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Daniel Baldy 4× (2.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -204,7 +242,7 @@
         "title": "Cleverer Stratege",
         "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
         "id": "fuchs",
-        "score": 0.882
+        "score": 0.92
       }
     ]
   },

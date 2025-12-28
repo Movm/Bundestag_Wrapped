@@ -68,50 +68,96 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "pflegekräfte",
-        "count": 5,
-        "ratioParty": 85.3,
-        "ratioBundestag": 40.7
+        "word": "soldatinnen",
+        "count": 18,
+        "score": 65.0,
+        "ratio": 36.0
       },
       {
-        "word": "arbeitsgruppe",
-        "count": 5,
-        "ratioParty": 85.3,
-        "ratioBundestag": 90.0
+        "word": "pflege",
+        "count": 17,
+        "score": 58.2,
+        "ratio": 29.7
       },
       {
-        "word": "präsenz",
-        "count": 5,
-        "ratioParty": 85.3,
-        "ratioBundestag": 68.4
+        "word": "soldaten",
+        "count": 18,
+        "score": 55.6,
+        "ratio": 20.9
       },
       {
-        "word": "fortsetzung",
-        "count": 5,
-        "ratioParty": 62.0,
-        "ratioBundestag": 68.4
+        "word": "frieden",
+        "count": 13,
+        "score": 34.7,
+        "ratio": 13.4
       },
       {
-        "word": "mittelmeer",
-        "count": 5,
-        "ratioParty": 56.9,
-        "ratioBundestag": 33.5
+        "word": "verantwortung",
+        "count": 15,
+        "score": 28.2,
+        "ratio": 5.6
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "pflege",
+        "count": 17,
+        "score": 65.9,
+        "ratio": 47.4
+      },
+      {
+        "word": "soldatinnen",
+        "count": 18,
+        "score": 53.7,
+        "ratio": 18.8
+      },
+      {
+        "word": "soldaten",
+        "count": 18,
+        "score": 51.3,
+        "ratio": 16.3
+      },
+      {
+        "word": "frieden",
+        "count": 13,
+        "score": 31.2,
+        "ratio": 10.0
+      },
+      {
+        "word": "verantwortung",
+        "count": 15,
+        "score": 26.4,
+        "ratio": 4.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "verantwortungsvoll",
         "count": 3,
-        "ratioParty": 17.1,
-        "ratioBundestag": 24.4
+        "score": 9.7,
+        "ratio": 24.4
       },
       {
         "word": "sicher",
         "count": 3,
-        "ratioParty": 2.1,
-        "ratioBundestag": 2.8
+        "score": 4.0,
+        "ratio": 2.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "verantwortungsvoll",
+        "count": 3,
+        "score": 8.7,
+        "ratio": 17.1
+      },
+      {
+        "word": "sicher",
+        "count": 3,
+        "score": 3.4,
+        "ratio": 2.1
       }
     ]
   },
@@ -140,50 +186,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Claudia Moll häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Claudia Moll häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Pflegekräfte",
+        "text": "Soldatinnen",
         "isCorrect": true
       },
       {
-        "text": "Koalition",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
-        "text": "Politik",
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Klima",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Pflegekräfte\" nutzt Claudia Moll 85.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "40.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Soldatinnen\" sagte Claudia Moll 18× (36.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Claudia Moll häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Claudia Moll häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Jung",
-        "isCorrect": false
-      },
       {
         "text": "Verantwortungsvoll",
         "isCorrect": true
       },
       {
-        "text": "Stark",
+        "text": "National",
         "isCorrect": false
       },
       {
         "text": "Wichtig",
         "isCorrect": false
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verantwortungsvoll\" nutzt Claudia Moll 17.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "24.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Verantwortungsvoll\" sagte Claudia Moll 3× (24.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",

@@ -64,39 +64,72 @@
         "count": 7
       }
     ],
-    "signatureWords": [
-      {
-        "word": "einkommen",
-        "count": 10,
-        "ratioParty": 31.7,
-        "ratioBundestag": 23.0
-      },
-      {
-        "word": "aufmerksamkeit",
-        "count": 7,
-        "ratioParty": 30.8,
-        "ratioBundestag": 16.8
-      },
+    "signatureWordsBundestag": [
       {
         "word": "solidaritätszuschlag",
         "count": 7,
-        "ratioParty": 29.8,
-        "ratioBundestag": 198.5
+        "score": 37.1,
+        "ratio": 198.5
       },
       {
-        "word": "reichen",
-        "count": 5,
-        "ratioParty": 19.5,
-        "ratioBundestag": 15.1
+        "word": "einkommen",
+        "count": 10,
+        "score": 31.8,
+        "ratio": 23.0
       },
       {
         "word": "profitieren",
         "count": 9,
-        "ratioParty": 17.5,
-        "ratioBundestag": 21.1
+        "score": 27.8,
+        "ratio": 21.1
+      },
+      {
+        "word": "anders",
+        "count": 9,
+        "score": 23.7,
+        "ratio": 12.9
+      },
+      {
+        "word": "aufmerksamkeit",
+        "count": 7,
+        "score": 20.2,
+        "ratio": 16.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "einkommen",
+        "count": 10,
+        "score": 34.9,
+        "ratio": 31.7
+      },
+      {
+        "word": "profitieren",
+        "count": 9,
+        "score": 26.3,
+        "ratio": 17.5
+      },
+      {
+        "word": "aufmerksamkeit",
+        "count": 7,
+        "score": 24.2,
+        "ratio": 30.8
+      },
+      {
+        "word": "solidaritätszuschlag",
+        "count": 7,
+        "score": 24.0,
+        "ratio": 29.8
+      },
+      {
+        "word": "anders",
+        "count": 9,
+        "score": 22.9,
+        "ratio": 11.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 517,
@@ -118,27 +151,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Sascha Müller häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Sascha Müller häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Kanzler",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Einkommen",
+        "text": "Debatte",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Solidaritätszuschlag",
         "isCorrect": true
-      },
-      {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Demokratie",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Einkommen\" nutzt Sascha Müller 31.7× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "23.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Solidaritätszuschlag\" sagte Sascha Müller 7× (198.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -149,20 +181,20 @@
     "id": "eichhoernchen",
     "alternatives": [
       {
+        "emoji": "🦊",
+        "name": "Fuchs",
+        "title": "Cleverer Stratege",
+        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+        "id": "fuchs",
+        "score": 0.891
+      },
+      {
         "emoji": "🐝",
         "name": "Biene",
         "title": "Fleißiger Abgeordneter",
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 0.89
-      },
-      {
-        "emoji": "🦫",
-        "name": "Biber",
-        "title": "Konstruktiver Brückenbauer",
-        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
-        "id": "biber",
-        "score": 0.877
       }
     ]
   },

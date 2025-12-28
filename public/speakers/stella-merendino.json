@@ -72,15 +72,24 @@
         "count": 2
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "ministerin",
         "count": 5,
-        "ratioParty": 13.3,
-        "ratioBundestag": 14.4
+        "score": 13.7,
+        "ratio": 14.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "ministerin",
+        "count": 5,
+        "score": 13.3,
+        "ratio": 13.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 376,
@@ -97,10 +106,14 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Stella Merendino häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Stella Merendino häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wirtschaft",
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
         "isCorrect": false
       },
       {
@@ -108,16 +121,11 @@
         "isCorrect": true
       },
       {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
+        "text": "Gesellschaft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ministerin\" nutzt Stella Merendino 13.3× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "14.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ministerin\" sagte Stella Merendino 5× (14.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

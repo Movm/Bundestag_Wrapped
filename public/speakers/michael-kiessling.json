@@ -72,44 +72,84 @@
         "count": 17
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "tourismus",
         "count": 58,
-        "ratioParty": 602.6,
-        "ratioBundestag": 278.4
+        "score": 326.7,
+        "ratio": 278.4
       },
       {
-        "word": "baurecht",
-        "count": 10,
-        "ratioParty": 259.7,
-        "ratioBundestag": 296.8
+        "word": "bauen",
+        "count": 45,
+        "score": 135.9,
+        "ratio": 19.5
       },
       {
-        "word": "nachverdichtung",
-        "count": 5,
-        "ratioParty": 259.7,
-        "ratioBundestag": 408.0
+        "word": "kommunen",
+        "count": 40,
+        "score": 96.0,
+        "ratio": 10.0
       },
       {
-        "word": "gastronomen",
-        "count": 5,
-        "ratioParty": 129.9,
-        "ratioBundestag": 204.0
+        "word": "bauturbo",
+        "count": 22,
+        "score": 82.0,
+        "ratio": 40.6
       },
       {
-        "word": "kommune",
-        "count": 11,
-        "ratioParty": 87.9,
-        "ratioBundestag": 74.8
+        "word": "gastronomie",
+        "count": 15,
+        "score": 67.8,
+        "ratio": 90.7
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "tourismus",
+        "count": 58,
+        "score": 371.4,
+        "ratio": 602.6
+      },
+      {
+        "word": "bauen",
+        "count": 45,
+        "score": 133.5,
+        "ratio": 18.4
+      },
+      {
+        "word": "kommunen",
+        "count": 40,
+        "score": 87.9,
+        "ratio": 8.0
+      },
+      {
+        "word": "bauturbo",
+        "count": 22,
+        "score": 81.0,
+        "ratio": 38.7
+      },
+      {
+        "word": "gastronomie",
+        "count": 15,
+        "score": 64.1,
+        "ratio": 70.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "wettbewerbsfähig",
         "count": 3,
-        "ratioParty": 6.1,
-        "ratioBundestag": 11.9
+        "score": 7.7,
+        "ratio": 11.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wettbewerbsfähig",
+        "count": 3,
+        "score": 5.9,
+        "ratio": 6.1
       }
     ]
   },
@@ -133,14 +173,14 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Michael Kießling häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Michael Kießling häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Tourismus",
-        "isCorrect": true
+        "text": "Sicherheit",
+        "isCorrect": false
       },
       {
-        "text": "Demokratie",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
@@ -148,35 +188,33 @@
         "isCorrect": false
       },
       {
-        "text": "Energie",
-        "isCorrect": false
+        "text": "Tourismus",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Tourismus\" nutzt Michael Kießling 602.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "278.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Tourismus\" sagte Michael Kießling 58× (278.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Michael Kießling häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Michael Kießling häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
+      },
       {
         "text": "Wettbewerbsfähig",
         "isCorrect": true
-      },
-      {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
-        "text": "Stark",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wettbewerbsfähig\" nutzt Michael Kießling 6.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "11.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wettbewerbsfähig\" sagte Michael Kießling 3× (11.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦊",

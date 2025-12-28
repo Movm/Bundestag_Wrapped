@@ -72,33 +72,54 @@
         "count": 4
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "haushalt",
-        "count": 5,
-        "ratioParty": 5.8,
-        "ratioBundestag": 4.1
+        "word": "bürger",
+        "count": 10,
+        "score": 25.4,
+        "ratio": 11.6
       },
       {
         "word": "regierung",
         "count": 8,
-        "ratioParty": 5.0,
-        "ratioBundestag": 8.8
+        "score": 18.3,
+        "ratio": 8.8
       },
+      {
+        "word": "haushalt",
+        "count": 5,
+        "score": 8.2,
+        "ratio": 4.1
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "bürger",
         "count": 10,
-        "ratioParty": 4.9,
-        "ratioBundestag": 11.6
+        "score": 17.8,
+        "ratio": 4.9
+      },
+      {
+        "word": "regierung",
+        "count": 8,
+        "score": 14.4,
+        "ratio": 5.0
+      },
+      {
+        "word": "haushalt",
+        "count": 5,
+        "score": 9.6,
+        "ratio": 5.8
       },
       {
         "word": "menschen",
         "count": 6,
-        "ratioParty": 3.1,
-        "ratioBundestag": 1.7
+        "score": 8.5,
+        "ratio": 3.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 424,
@@ -120,27 +141,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Stefan Henze häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Stefan Henze häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetz",
+        "text": "Europa",
         "isCorrect": false
       },
       {
-        "text": "Kinder",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
-        "text": "Haushalt",
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
         "isCorrect": true
-      },
-      {
-        "text": "Demokratie",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Haushalt\" nutzt Stefan Henze 5.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "4.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bürger\" sagte Stefan Henze 10× (11.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

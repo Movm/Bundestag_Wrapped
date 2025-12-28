@@ -56,50 +56,96 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "menschen",
+        "count": 35,
+        "score": 51.6,
+        "ratio": 3.4
+      },
       {
         "word": "arbeitsschutz",
         "count": 6,
-        "ratioParty": 275.8,
-        "ratioBundestag": 118.5
+        "score": 28.7,
+        "ratio": 118.5
       },
       {
         "word": "behinderungen",
         "count": 5,
-        "ratioParty": 114.9,
-        "ratioBundestag": 111.5
-      },
-      {
-        "word": "wohnraum",
-        "count": 6,
-        "ratioParty": 10.5,
-        "ratioBundestag": 14.6
+        "score": 23.6,
+        "ratio": 111.5
       },
       {
         "word": "werte",
         "count": 9,
-        "ratioParty": 9.1,
-        "ratioBundestag": 9.5
+        "score": 21.2,
+        "ratio": 9.5
       },
       {
-        "word": "helfen",
-        "count": 5,
-        "ratioParty": 7.3,
-        "ratioBundestag": 8.6
+        "word": "wohnraum",
+        "count": 6,
+        "score": 16.5,
+        "ratio": 14.6
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "menschen",
+        "count": 35,
+        "score": 48.5,
+        "ratio": 3.0
+      },
+      {
+        "word": "arbeitsschutz",
+        "count": 6,
+        "score": 33.7,
+        "ratio": 275.8
+      },
+      {
+        "word": "behinderungen",
+        "count": 5,
+        "score": 23.8,
+        "ratio": 114.9
+      },
+      {
+        "word": "werte",
+        "count": 9,
+        "score": 20.8,
+        "ratio": 9.1
+      },
+      {
+        "word": "wohnraum",
+        "count": 6,
+        "score": 14.6,
+        "ratio": 10.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "rechts",
         "count": 3,
-        "ratioParty": 7.3,
-        "ratioBundestag": 6.5
+        "score": 6.1,
+        "ratio": 6.5
       },
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 3.5,
-        "ratioBundestag": 4.9
+        "score": 5.3,
+        "ratio": 4.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 6.3,
+        "ratio": 7.3
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 4.5,
+        "ratio": 3.5
       }
     ]
   },
@@ -123,37 +169,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Angelika Glöckner häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Angelika Glöckner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Koalition",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Sicherheit",
+        "text": "Europa",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeitsschutz",
+        "text": "Menschen",
         "isCorrect": true
+      },
+      {
+        "text": "Haushalt",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Arbeitsschutz\" nutzt Angelika Glöckner 275.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "118.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Menschen\" sagte Angelika Glöckner 35× (3.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Angelika Glöckner häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Angelika Glöckner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
@@ -161,12 +202,15 @@
         "isCorrect": true
       },
       {
-        "text": "Wichtig",
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rechts\" nutzt Angelika Glöckner 7.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "6.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Rechts\" sagte Angelika Glöckner 3× (6.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -184,11 +228,11 @@
         "score": 0.952
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrliche Rednerin",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
         "score": 0.947
       }
     ]

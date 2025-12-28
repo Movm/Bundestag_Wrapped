@@ -72,39 +72,72 @@
         "count": 3
       }
     ],
-    "signatureWords": [
-      {
-        "word": "pflegebedürftigen",
-        "count": 6,
-        "ratioParty": 677.1,
-        "ratioBundestag": 783.2
-      },
+    "signatureWordsBundestag": [
       {
         "word": "pflege",
         "count": 15,
-        "ratioParty": 116.7,
-        "ratioBundestag": 134.2
+        "score": 73.6,
+        "ratio": 134.2
       },
       {
-        "word": "braucht",
-        "count": 5,
-        "ratioParty": 11.0,
-        "ratioBundestag": 10.8
+        "word": "pflegebedürftigen",
+        "count": 6,
+        "score": 40.0,
+        "ratio": 783.2
       },
       {
         "word": "menschen",
         "count": 9,
-        "ratioParty": 5.7,
-        "ratioBundestag": 4.4
+        "score": 15.2,
+        "ratio": 4.4
+      },
+      {
+        "word": "braucht",
+        "count": 5,
+        "score": 12.3,
+        "ratio": 10.8
       },
       {
         "word": "deutschland",
         "count": 5,
-        "ratioParty": 2.2,
-        "ratioBundestag": 2.4
+        "score": 6.2,
+        "ratio": 2.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "pflege",
+        "count": 15,
+        "score": 71.5,
+        "ratio": 116.7
+      },
+      {
+        "word": "pflegebedürftigen",
+        "count": 6,
+        "score": 39.1,
+        "ratio": 677.1
+      },
+      {
+        "word": "menschen",
+        "count": 9,
+        "score": 17.1,
+        "ratio": 5.7
+      },
+      {
+        "word": "braucht",
+        "count": 5,
+        "score": 12.4,
+        "ratio": 11.0
+      },
+      {
+        "word": "deutschland",
+        "count": 5,
+        "score": 5.8,
+        "ratio": 2.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 386,
@@ -121,27 +154,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Katrin Staffler häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Katrin Staffler häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
       {
         "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Minister",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Pflegebedürftigen",
+        "text": "Pflege",
         "isCorrect": true
-      },
-      {
-        "text": "Debatte",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Pflegebedürftigen\" nutzt Katrin Staffler 677.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "783.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Pflege\" sagte Katrin Staffler 15× (134.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

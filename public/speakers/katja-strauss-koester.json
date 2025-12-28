@@ -68,44 +68,84 @@
         "count": 6
       }
     ],
-    "signatureWords": [
-      {
-        "word": "kommunikation",
-        "count": 6,
-        "ratioParty": 66.9,
-        "ratioBundestag": 57.7
-      },
+    "signatureWordsBundestag": [
       {
         "word": "freiwillige",
         "count": 6,
-        "ratioParty": 56.4,
-        "ratioBundestag": 102.7
+        "score": 27.9,
+        "ratio": 102.7
       },
       {
-        "word": "städte",
-        "count": 5,
-        "ratioParty": 31.4,
-        "ratioBundestag": 23.7
+        "word": "kommunikation",
+        "count": 6,
+        "score": 24.4,
+        "ratio": 57.7
+      },
+      {
+        "word": "kinder",
+        "count": 10,
+        "score": 21.7,
+        "ratio": 7.7
       },
       {
         "word": "täter",
         "count": 6,
-        "ratioParty": 27.4,
-        "ratioBundestag": 31.7
+        "score": 20.9,
+        "ratio": 31.7
       },
       {
-        "word": "opfer",
-        "count": 5,
-        "ratioParty": 13.9,
-        "ratioBundestag": 15.7
+        "word": "maßnahmen",
+        "count": 8,
+        "score": 16.9,
+        "ratio": 7.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "kommunikation",
+        "count": 6,
+        "score": 25.3,
+        "ratio": 66.9
+      },
+      {
+        "word": "freiwillige",
+        "count": 6,
+        "score": 24.3,
+        "ratio": 56.4
+      },
+      {
+        "word": "kinder",
+        "count": 10,
+        "score": 24.1,
+        "ratio": 10.2
+      },
+      {
+        "word": "täter",
+        "count": 6,
+        "score": 20.1,
+        "ratio": 27.4
+      },
+      {
+        "word": "städte",
+        "count": 5,
+        "score": 17.4,
+        "ratio": 31.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "sicher",
         "count": 3,
-        "ratioParty": 3.3,
-        "ratioBundestag": 3.8
+        "score": 4.7,
+        "ratio": 3.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 3,
+        "score": 4.4,
+        "ratio": 3.3
       }
     ]
   },
@@ -129,50 +169,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Katja Strauss-Köster häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Katja Strauss-Köster häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Migration",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
-        "text": "Minister",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Kommunikation",
+        "text": "Freiwillige",
         "isCorrect": true
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kommunikation\" nutzt Dr. Katja Strauss-Köster 66.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "57.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Freiwillige\" sagte Dr. Katja Strauss-Köster 6× (102.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Katja Strauss-Köster häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Katja Strauss-Köster häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Klar",
+        "text": "Sicher",
+        "isCorrect": true
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
         "text": "Problematisch",
         "isCorrect": false
-      },
-      {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Sicher\" nutzt Dr. Katja Strauss-Köster 3.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "3.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Dr. Katja Strauss-Köster 3× (3.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦫",

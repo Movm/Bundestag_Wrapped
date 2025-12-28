@@ -72,44 +72,84 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "staat",
+        "count": 20,
+        "score": 49.8,
+        "ratio": 11.1
+      },
       {
         "word": "modernen",
         "count": 10,
-        "ratioParty": 172.7,
-        "ratioBundestag": 76.7
-      },
-      {
-        "word": "moderner",
-        "count": 5,
-        "ratioParty": 129.6,
-        "ratioBundestag": 43.7
-      },
-      {
-        "word": "kreuzkröten",
-        "count": 6,
-        "ratioParty": 24.9,
-        "ratioBundestag": 24.9
+        "score": 43.5,
+        "ratio": 76.7
       },
       {
         "word": "telekommunikationsnetzen",
         "count": 5,
-        "ratioParty": 20.7,
-        "ratioBundestag": 3450.5
+        "score": 40.7,
+        "ratio": 3450.5
+      },
+      {
+        "word": "deutschland",
+        "count": 26,
+        "score": 32.4,
+        "ratio": 2.5
       },
       {
         "word": "öffentlichen",
         "count": 9,
-        "ratioParty": 18.4,
-        "ratioBundestag": 15.4
+        "score": 25.2,
+        "ratio": 15.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "modernen",
+        "count": 10,
+        "score": 51.6,
+        "ratio": 172.7
+      },
+      {
+        "word": "staat",
+        "count": 20,
+        "score": 42.8,
+        "ratio": 7.5
+      },
+      {
+        "word": "öffentlichen",
+        "count": 9,
+        "score": 26.7,
+        "ratio": 18.4
+      },
+      {
+        "word": "moderner",
+        "count": 5,
+        "score": 24.4,
+        "ratio": 129.6
+      },
+      {
+        "word": "gerne",
+        "count": 9,
+        "score": 20.0,
+        "ratio": 8.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "schlecht",
         "count": 3,
-        "ratioParty": 7.4,
-        "ratioBundestag": 9.9
+        "score": 7.2,
+        "ratio": 9.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "schlecht",
+        "count": 3,
+        "score": 6.4,
+        "ratio": 7.4
       }
     ]
   },
@@ -138,50 +178,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Alexander Arpaschi häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Alexander Arpaschi häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Modernen",
+        "text": "Staat",
         "isCorrect": true
+      },
+      {
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Minister",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Modernen\" nutzt Alexander Arpaschi 172.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "76.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Staat\" sagte Alexander Arpaschi 20× (11.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Alexander Arpaschi häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Alexander Arpaschi häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
       {
         "text": "Schlecht",
         "isCorrect": true
-      },
-      {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schlecht\" nutzt Alexander Arpaschi 7.4× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "9.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Schlecht\" sagte Alexander Arpaschi 3× (9.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

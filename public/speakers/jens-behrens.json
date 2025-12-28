@@ -68,39 +68,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
-      {
-        "word": "nutztierhaltung",
-        "count": 5,
-        "ratioParty": 434.1,
-        "ratioBundestag": 289.8
-      },
+    "signatureWordsBundestag": [
       {
         "word": "tierwohl",
         "count": 7,
-        "ratioParty": 151.9,
-        "ratioBundestag": 148.4
+        "score": 35.0,
+        "ratio": 148.4
+      },
+      {
+        "word": "nutztierhaltung",
+        "count": 5,
+        "score": 28.4,
+        "ratio": 289.8
       },
       {
         "word": "tierschutz",
         "count": 6,
-        "ratioParty": 130.2,
-        "ratioBundestag": 102.3
+        "score": 27.8,
+        "ratio": 102.3
       },
       {
         "word": "gewerkschaften",
         "count": 5,
-        "ratioParty": 41.3,
-        "ratioBundestag": 53.0
+        "score": 19.9,
+        "ratio": 53.0
       },
       {
-        "word": "neben",
-        "count": 5,
-        "ratioParty": 11.9,
-        "ratioBundestag": 14.3
+        "word": "koalition",
+        "count": 9,
+        "score": 16.2,
+        "ratio": 5.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "tierwohl",
+        "count": 7,
+        "score": 35.2,
+        "ratio": 151.9
+      },
+      {
+        "word": "nutztierhaltung",
+        "count": 5,
+        "score": 30.4,
+        "ratio": 434.1
+      },
+      {
+        "word": "tierschutz",
+        "count": 6,
+        "score": 29.3,
+        "ratio": 130.2
+      },
+      {
+        "word": "gewerkschaften",
+        "count": 5,
+        "score": 18.7,
+        "ratio": 41.3
+      },
+      {
+        "word": "koalition",
+        "count": 9,
+        "score": 15.3,
+        "ratio": 4.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 482,
@@ -127,27 +160,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jens Behrens häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Jens Behrens häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Energie",
+        "text": "Europa",
         "isCorrect": false
       },
       {
-        "text": "Nutztierhaltung",
+        "text": "Tierwohl",
         "isCorrect": true
       },
       {
-        "text": "Reform",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
-        "text": "Migration",
+        "text": "Demokratie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Nutztierhaltung\" nutzt Jens Behrens 434.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "289.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Tierwohl\" sagte Jens Behrens 7× (148.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -158,20 +190,20 @@
     "id": "otter",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.88
-      },
-      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüter",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.841
+      },
+      {
+        "emoji": "🦊",
+        "name": "Fuchs",
+        "title": "Cleverer Stratege",
+        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+        "id": "fuchs",
+        "score": 0.803
       }
     ]
   },

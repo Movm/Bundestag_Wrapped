@@ -72,39 +72,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
-      {
-        "word": "kryptowährungen",
-        "count": 7,
-        "ratioParty": 898.5,
-        "ratioBundestag": 703.0
-      },
+    "signatureWordsBundestag": [
       {
         "word": "bitcoin",
         "count": 9,
-        "ratioParty": 385.1,
-        "ratioBundestag": 314.4
+        "score": 51.8,
+        "ratio": 314.4
+      },
+      {
+        "word": "kryptowährungen",
+        "count": 7,
+        "score": 45.9,
+        "ratio": 703.0
       },
       {
         "word": "januar",
         "count": 6,
-        "ratioParty": 44.0,
-        "ratioBundestag": 53.6
-      },
-      {
-        "word": "einkommen",
-        "count": 5,
-        "ratioParty": 19.4,
-        "ratioBundestag": 12.8
+        "score": 24.0,
+        "ratio": 53.6
       },
       {
         "word": "wachstum",
         "count": 6,
-        "ratioParty": 6.2,
-        "ratioBundestag": 11.0
+        "score": 14.9,
+        "ratio": 11.0
+      },
+      {
+        "word": "investitionen",
+        "count": 8,
+        "score": 14.7,
+        "ratio": 5.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bitcoin",
+        "count": 9,
+        "score": 53.6,
+        "ratio": 385.1
+      },
+      {
+        "word": "kryptowährungen",
+        "count": 7,
+        "score": 47.6,
+        "ratio": 898.5
+      },
+      {
+        "word": "januar",
+        "count": 6,
+        "score": 22.8,
+        "ratio": 44.0
+      },
+      {
+        "word": "einkommen",
+        "count": 5,
+        "score": 15.1,
+        "ratio": 19.4
+      },
+      {
+        "word": "investitionen",
+        "count": 8,
+        "score": 13.8,
+        "ratio": 4.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 644,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Georg Günther häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Georg Günther häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Sicherheit",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Kryptowährungen",
+        "text": "Bitcoin",
         "isCorrect": true
       },
       {
-        "text": "Bürger",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
-        "text": "Koalition",
+        "text": "Gesellschaft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kryptowährungen\" nutzt Georg Günther 898.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "703.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bitcoin\" sagte Georg Günther 9× (314.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -157,20 +189,20 @@
     "id": "fuchs",
     "alternatives": [
       {
-        "emoji": "🦉",
-        "name": "Eule",
-        "title": "Themenexperte",
-        "reason": "Dein Fachwort \"Kryptowährungen\" nutzt du 898.5× häufiger als deine Fraktion.",
-        "id": "eule",
-        "score": 0.85
-      },
-      {
         "emoji": "🦫",
         "name": "Biber",
         "title": "Konstruktiver Brückenbauer",
         "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
         "id": "biber",
         "score": 0.84
+      },
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 0.816
       }
     ]
   },

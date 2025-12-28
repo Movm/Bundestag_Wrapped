@@ -72,39 +72,72 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "südsudan",
-        "count": 7,
-        "ratioParty": 113.1,
-        "ratioBundestag": 92.3
+        "word": "entwicklungszusammenarbeit",
+        "count": 11,
+        "score": 43.3,
+        "ratio": 50.0
       },
       {
-        "word": "hunger",
-        "count": 8,
-        "ratioParty": 110.8,
-        "ratioBundestag": 72.8
-      },
-      {
-        "word": "entwicklungspolitik",
-        "count": 8,
-        "ratioParty": 93.0,
-        "ratioBundestag": 67.4
+        "word": "menschen",
+        "count": 28,
+        "score": 42.4,
+        "ratio": 3.5
       },
       {
         "word": "sudan",
         "count": 10,
-        "ratioParty": 59.3,
-        "ratioBundestag": 49.2
+        "score": 39.2,
+        "ratio": 49.2
       },
       {
-        "word": "armut",
-        "count": 5,
-        "ratioParty": 53.8,
-        "ratioBundestag": 20.4
+        "word": "hunger",
+        "count": 8,
+        "score": 34.4,
+        "ratio": 72.8
+      },
+      {
+        "word": "entwicklungspolitik",
+        "count": 8,
+        "score": 33.8,
+        "ratio": 67.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "menschen",
+        "count": 28,
+        "score": 48.2,
+        "ratio": 4.6
+      },
+      {
+        "word": "entwicklungszusammenarbeit",
+        "count": 11,
+        "score": 43.9,
+        "ratio": 53.3
+      },
+      {
+        "word": "sudan",
+        "count": 10,
+        "score": 41.0,
+        "ratio": 59.3
+      },
+      {
+        "word": "hunger",
+        "count": 8,
+        "score": 37.7,
+        "ratio": 110.8
+      },
+      {
+        "word": "entwicklungspolitik",
+        "count": 8,
+        "score": 36.4,
+        "ratio": 93.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 463,
@@ -131,27 +164,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Thomas Rachel häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Thomas Rachel häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Südsudan",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Entwicklungszusammenarbeit",
         "isCorrect": true
       },
       {
-        "text": "Fraktion",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
+        "text": "Politik",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Südsudan\" nutzt Thomas Rachel 113.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "92.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Entwicklungszusammenarbeit\" sagte Thomas Rachel 11× (50.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -162,20 +194,20 @@
     "id": "eichhoernchen",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.75
-      },
-      {
         "emoji": "🐝",
         "name": "Biene",
         "title": "Fleißiger Abgeordneter",
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 0.722
+      },
+      {
+        "emoji": "🐺",
+        "name": "Wolf",
+        "title": "Mutiger Einwerfer",
+        "reason": "Mit 35 Zwischenrufen mischst du aktiv in Debatten mit.",
+        "id": "wolf",
+        "score": 0.69
       }
     ]
   },

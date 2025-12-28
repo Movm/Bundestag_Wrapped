@@ -72,44 +72,84 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "kritis",
-        "count": 6,
-        "ratioParty": 773.8,
-        "ratioBundestag": 54.6
+        "word": "drohnen",
+        "count": 14,
+        "score": 52.9,
+        "ratio": 42.7
       },
       {
         "word": "beschuldigten",
         "count": 6,
-        "ratioParty": 386.9,
-        "ratioBundestag": 312.6
+        "score": 34.5,
+        "ratio": 312.6
+      },
+      {
+        "word": "gesetz",
+        "count": 14,
+        "score": 27.7,
+        "ratio": 6.2
       },
       {
         "word": "innenausschuss",
         "count": 5,
-        "ratioParty": 322.4,
-        "ratioBundestag": 179.1
+        "score": 26.0,
+        "ratio": 179.1
       },
       {
-        "word": "person",
-        "count": 5,
-        "ratioParty": 58.6,
-        "ratioBundestag": 23.7
-      },
+        "word": "angriffe",
+        "count": 8,
+        "score": 24.6,
+        "ratio": 20.7
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "drohnen",
         "count": 14,
-        "ratioParty": 50.2,
-        "ratioBundestag": 42.7
+        "score": 55.1,
+        "ratio": 50.2
+      },
+      {
+        "word": "kritis",
+        "count": 6,
+        "score": 39.9,
+        "ratio": 773.8
+      },
+      {
+        "word": "beschuldigten",
+        "count": 6,
+        "score": 35.8,
+        "ratio": 386.9
+      },
+      {
+        "word": "angriffe",
+        "count": 8,
+        "score": 31.3,
+        "ratio": 49.1
+      },
+      {
+        "word": "gesetz",
+        "count": 14,
+        "score": 30.3,
+        "ratio": 7.7
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "freiheitlich",
         "count": 3,
-        "ratioParty": 19.3,
-        "ratioBundestag": 26.9
+        "score": 10.0,
+        "ratio": 26.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "freiheitlich",
+        "count": 3,
+        "score": 9.0,
+        "ratio": 19.3
       }
     ]
   },
@@ -138,33 +178,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Steffen Janich häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Steffen Janich häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Kritis",
+        "text": "Investitionen",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Drohnen",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "\"Drohnen\" sagte Steffen Janich 14× (42.7× häufiger als der Bundestag-Durchschnitt)."
+  },
+  "signatureAdjectiveQuiz": {
+    "question": "Welches Adjektiv nutzt Steffen Janich häufiger als der Bundestag-Durchschnitt?",
+    "options": [
+      {
+        "text": "Freiheitlich",
         "isCorrect": true
       },
       {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
-        "isCorrect": false
-      }
-    ],
-    "explanationParty": "\"Kritis\" nutzt Steffen Janich 773.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "54.6× häufiger als der Bundestag-Durchschnitt."
-  },
-  "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Steffen Janich häufiger als der Rest der AfD-Fraktion?",
-    "options": [
-      {
-        "text": "Neu",
+        "text": "Stark",
         "isCorrect": false
       },
       {
@@ -172,16 +215,11 @@
         "isCorrect": false
       },
       {
-        "text": "Freiheitlich",
-        "isCorrect": true
-      },
-      {
-        "text": "Problematisch",
+        "text": "Sicher",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Freiheitlich\" nutzt Steffen Janich 19.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "26.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Freiheitlich\" sagte Steffen Janich 3× (26.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

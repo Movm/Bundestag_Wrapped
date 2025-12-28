@@ -72,33 +72,60 @@
         "count": 3
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "familien",
         "count": 7,
-        "ratioParty": 40.7,
-        "ratioBundestag": 33.1
+        "score": 24.7,
+        "ratio": 33.1
       },
       {
         "word": "bildung",
         "count": 6,
-        "ratioParty": 36.6,
-        "ratioBundestag": 34.2
+        "score": 21.4,
+        "ratio": 34.2
       },
       {
         "word": "stärken",
         "count": 5,
-        "ratioParty": 10.2,
-        "ratioBundestag": 14.4
+        "score": 13.7,
+        "ratio": 14.4
       },
       {
         "word": "haushalt",
         "count": 5,
-        "ratioParty": 6.3,
-        "ratioBundestag": 6.8
+        "score": 10.3,
+        "ratio": 6.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "familien",
+        "count": 7,
+        "score": 26.1,
+        "ratio": 40.7
+      },
+      {
+        "word": "bildung",
+        "count": 6,
+        "score": 21.8,
+        "ratio": 36.6
+      },
+      {
+        "word": "stärken",
+        "count": 5,
+        "score": 12.1,
+        "ratio": 10.2
+      },
+      {
+        "word": "haushalt",
+        "count": 5,
+        "score": 9.9,
+        "ratio": 6.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 751,
@@ -115,27 +142,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Michael Brand häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Michael Brand häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
       {
         "text": "Familien",
         "isCorrect": true
       },
       {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
+        "text": "Antrag",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Familien\" nutzt Michael Brand 40.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "33.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Familien\" sagte Michael Brand 7× (33.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

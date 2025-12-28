@@ -60,56 +60,108 @@
         "count": 9
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "klimaschutz",
+        "count": 17,
+        "score": 40.5,
+        "ratio": 9.8
+      },
+      {
+        "word": "klimaziele",
+        "count": 9,
+        "score": 35.3,
+        "ratio": 49.5
+      },
       {
         "word": "faseln",
         "count": 5,
-        "ratioParty": 376.3,
-        "ratioBundestag": 880.1
-      },
-      {
-        "word": "abgabe",
-        "count": 5,
-        "ratioParty": 188.1,
-        "ratioBundestag": 57.4
-      },
-      {
-        "word": "klimakonferenz",
-        "count": 5,
-        "ratioParty": 125.4,
-        "ratioBundestag": 94.3
+        "score": 33.9,
+        "ratio": 880.1
       },
       {
         "word": "kohle",
         "count": 6,
-        "ratioParty": 90.3,
-        "ratioBundestag": 70.4
+        "score": 25.6,
+        "ratio": 70.4
+      },
+      {
+        "word": "schneider",
+        "count": 7,
+        "score": 25.3,
+        "ratio": 36.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "klimaschutz",
+        "count": 17,
+        "score": 31.8,
+        "ratio": 5.5
       },
       {
         "word": "einnahmen",
         "count": 8,
-        "ratioParty": 46.3,
-        "ratioBundestag": 22.0
+        "score": 30.9,
+        "ratio": 46.3
+      },
+      {
+        "word": "faseln",
+        "count": 5,
+        "score": 29.7,
+        "ratio": 376.3
+      },
+      {
+        "word": "klimaziele",
+        "count": 9,
+        "score": 28.4,
+        "ratio": 22.6
+      },
+      {
+        "word": "kohle",
+        "count": 6,
+        "score": 27.1,
+        "ratio": 90.3
       }
     ],
-    "signatureAdjectives": [
-      {
-        "word": "schwach",
-        "count": 3,
-        "ratioParty": 32.3,
-        "ratioBundestag": 54.6
-      },
+    "signatureAdjectivesBundestag": [
       {
         "word": "dreist",
         "count": 3,
-        "ratioParty": 9.5,
-        "ratioBundestag": 105.6
+        "score": 14.0,
+        "ratio": 105.6
+      },
+      {
+        "word": "schwach",
+        "count": 3,
+        "score": 12.1,
+        "ratio": 54.6
       },
       {
         "word": "sozial",
         "count": 3,
-        "ratioParty": 9.0,
-        "ratioBundestag": 7.9
+        "score": 6.6,
+        "ratio": 7.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "schwach",
+        "count": 3,
+        "score": 10.5,
+        "ratio": 32.3
+      },
+      {
+        "word": "dreist",
+        "count": 3,
+        "score": 7.1,
+        "ratio": 9.5
+      },
+      {
+        "word": "sozial",
+        "count": 3,
+        "score": 6.9,
+        "ratio": 9.0
       }
     ]
   },
@@ -133,66 +185,56 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Lisa Badum häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Lisa Badum häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Antrag",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Haushalt",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Faseln",
+        "text": "Klimaschutz",
         "isCorrect": true
       },
       {
-        "text": "Wirtschaft",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Faseln\" nutzt Lisa Badum 376.3× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "880.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Klimaschutz\" sagte Lisa Badum 17× (9.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Lisa Badum häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Lisa Badum häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Neu",
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Dreist",
+        "isCorrect": true
+      },
+      {
+        "text": "Klar",
         "isCorrect": false
       },
       {
         "text": "Erfolgreich",
         "isCorrect": false
-      },
-      {
-        "text": "Schwach",
-        "isCorrect": true
-      },
-      {
-        "text": "Sicher",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schwach\" nutzt Lisa Badum 32.3× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "54.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Dreist\" sagte Lisa Badum 3× (105.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Clevere Strategin",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüterin",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 1.0
-      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -200,6 +242,14 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
+      },
+      {
+        "emoji": "🐻",
+        "name": "Bär",
+        "title": "Standhafte Debattiererin",
+        "reason": "Trotz 35× unterbrochen zu werden, bleibst du standhaft.",
+        "id": "baer",
+        "score": 0.985
       }
     ]
   },

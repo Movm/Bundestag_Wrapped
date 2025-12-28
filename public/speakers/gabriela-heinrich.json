@@ -72,39 +72,72 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "resolution",
-        "count": 7,
-        "ratioParty": 291.1,
-        "ratioBundestag": 132.5
+        "word": "hilfe",
+        "count": 19,
+        "score": 62.6,
+        "ratio": 26.0
       },
       {
-        "word": "europarat",
-        "count": 5,
-        "ratioParty": 83.2,
-        "ratioBundestag": 51.4
-      },
-      {
-        "word": "verbrechen",
-        "count": 5,
-        "ratioParty": 46.2,
-        "ratioBundestag": 30.6
+        "word": "humanitäre",
+        "count": 14,
+        "score": 49.1,
+        "ratio": 32.3
       },
       {
         "word": "vereinten",
         "count": 11,
-        "ratioParty": 39.8,
-        "ratioBundestag": 44.9
+        "score": 42.1,
+        "ratio": 44.9
       },
       {
         "word": "nationen",
         "count": 11,
-        "ratioParty": 37.3,
-        "ratioBundestag": 38.7
+        "score": 40.5,
+        "ratio": 38.7
+      },
+      {
+        "word": "resolution",
+        "count": 7,
+        "score": 34.3,
+        "ratio": 132.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "hilfe",
+        "count": 19,
+        "score": 63.3,
+        "ratio": 27.0
+      },
+      {
+        "word": "humanitäre",
+        "count": 14,
+        "score": 48.2,
+        "ratio": 30.2
+      },
+      {
+        "word": "vereinten",
+        "count": 11,
+        "score": 40.8,
+        "ratio": 39.8
+      },
+      {
+        "word": "nationen",
+        "count": 11,
+        "score": 40.1,
+        "ratio": 37.3
+      },
+      {
+        "word": "resolution",
+        "count": 7,
+        "score": 39.7,
+        "ratio": 291.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 417,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Gabriela Heinrich häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Gabriela Heinrich häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
       {
         "text": "Sicherheit",
         "isCorrect": false
       },
       {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Resolution",
+        "text": "Hilfe",
         "isCorrect": true
       },
       {
-        "text": "Minister",
+        "text": "Rente",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Resolution\" nutzt Gabriela Heinrich 291.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "132.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Hilfe\" sagte Gabriela Heinrich 19× (26.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -157,20 +189,20 @@
     "id": "biber",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.893
-      },
-      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüterin",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.879
+      },
+      {
+        "emoji": "🐬",
+        "name": "Delfin",
+        "title": "Diplomatische Rednerin",
+        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
+        "id": "delfin",
+        "score": 0.855
       }
     ]
   },

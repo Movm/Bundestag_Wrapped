@@ -72,56 +72,108 @@
         "count": 10
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "tonnen",
-        "count": 6,
-        "ratioParty": 148.3,
-        "ratioBundestag": 64.1
-      },
-      {
-        "word": "bepreisung",
-        "count": 5,
-        "ratioParty": 123.5,
-        "ratioBundestag": 28.3
-      },
-      {
-        "word": "natürlicher",
-        "count": 6,
-        "ratioParty": 98.8,
-        "ratioBundestag": 70.4
+        "word": "klimaschutz",
+        "count": 33,
+        "score": 96.7,
+        "ratio": 17.7
       },
       {
         "word": "klimageld",
         "count": 10,
-        "ratioParty": 54.9,
-        "ratioBundestag": 150.3
+        "score": 50.2,
+        "ratio": 150.3
       },
       {
-        "word": "fossile",
-        "count": 5,
-        "ratioParty": 49.4,
-        "ratioBundestag": 32.5
+        "word": "klimakrise",
+        "count": 12,
+        "score": 45.2,
+        "ratio": 42.1
+      },
+      {
+        "word": "klimapolitik",
+        "count": 9,
+        "score": 30.7,
+        "ratio": 29.3
+      },
+      {
+        "word": "natürlicher",
+        "count": 6,
+        "score": 25.6,
+        "ratio": 70.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "radikal",
-        "count": 3,
-        "ratioParty": 29.7,
-        "ratioBundestag": 57.7
+        "word": "klimaschutz",
+        "count": 33,
+        "score": 105.3,
+        "ratio": 23.3
       },
+      {
+        "word": "klimageld",
+        "count": 10,
+        "score": 40.2,
+        "ratio": 54.9
+      },
+      {
+        "word": "klimakrise",
+        "count": 12,
+        "score": 35.3,
+        "ratio": 18.0
+      },
+      {
+        "word": "klimapolitik",
+        "count": 9,
+        "score": 30.2,
+        "ratio": 27.8
+      },
+      {
+        "word": "tonnen",
+        "count": 6,
+        "score": 30.0,
+        "ratio": 148.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "sozial",
         "count": 8,
-        "ratioParty": 7.9,
-        "ratioBundestag": 19.6
+        "score": 24.2,
+        "ratio": 19.6
+      },
+      {
+        "word": "radikal",
+        "count": 3,
+        "score": 12.2,
+        "ratio": 57.7
       },
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 2.6,
-        "ratioBundestag": 3.4
+        "score": 4.5,
+        "ratio": 3.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sozial",
+        "count": 8,
+        "score": 17.5,
+        "ratio": 7.9
+      },
+      {
+        "word": "radikal",
+        "count": 3,
+        "score": 10.3,
+        "ratio": 29.7
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 3.8,
+        "ratio": 2.6
       }
     ]
   },
@@ -145,50 +197,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Fabian Fahl häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Fabian Fahl häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
-        "isCorrect": false
+        "text": "Klimaschutz",
+        "isCorrect": true
       },
       {
         "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Tonnen",
-        "isCorrect": true
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Tonnen\" nutzt Dr. Fabian Fahl 148.3× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "64.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Klimaschutz\" sagte Dr. Fabian Fahl 33× (17.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Fabian Fahl häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Fabian Fahl häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Politisch",
+        "isCorrect": false
+      },
       {
         "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Radikal",
+        "text": "Sozial",
         "isCorrect": true
       },
       {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Stark",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Radikal\" nutzt Dr. Fabian Fahl 29.7× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "57.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sozial\" sagte Dr. Fabian Fahl 8× (19.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

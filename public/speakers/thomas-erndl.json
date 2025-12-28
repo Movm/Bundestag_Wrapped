@@ -72,56 +72,108 @@
         "count": 13
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "wehrbeauftragte",
-        "count": 5,
-        "ratioParty": 118.2,
-        "ratioBundestag": 84.3
+        "word": "bundeswehr",
+        "count": 31,
+        "score": 86.8,
+        "ratio": 15.5
       },
       {
         "word": "wehrdienst",
         "count": 20,
-        "ratioParty": 76.3,
-        "ratioBundestag": 60.3
+        "score": 82.3,
+        "ratio": 60.3
       },
       {
-        "word": "wehrbeauftragter",
-        "count": 6,
-        "ratioParty": 59.1,
-        "ratioBundestag": 44.5
+        "word": "normalfall",
+        "count": 9,
+        "score": 66.8,
+        "ratio": 1669.8
       },
       {
-        "word": "kehren",
-        "count": 5,
-        "ratioParty": 49.2,
-        "ratioBundestag": 38.7
+        "word": "sicherheit",
+        "count": 33,
+        "score": 64.4,
+        "ratio": 6.0
       },
       {
-        "word": "truppe",
-        "count": 7,
-        "ratioParty": 31.8,
-        "ratioBundestag": 24.1
+        "word": "soldaten",
+        "count": 18,
+        "score": 45.3,
+        "ratio": 11.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "bundeswehr",
+        "count": 31,
+        "score": 90.4,
+        "ratio": 17.4
+      },
+      {
+        "word": "wehrdienst",
+        "count": 20,
+        "score": 86.9,
+        "ratio": 76.3
+      },
+      {
+        "word": "sicherheit",
+        "count": 33,
+        "score": 60.5,
+        "ratio": 5.3
+      },
+      {
+        "word": "soldaten",
+        "count": 18,
+        "score": 48.7,
+        "ratio": 14.0
+      },
+      {
+        "word": "neuen",
+        "count": 21,
+        "score": 41.0,
+        "ratio": 6.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 6,
+        "score": 8.3,
+        "ratio": 3.0
+      },
       {
         "word": "konstruktiv",
         "count": 3,
-        "ratioParty": 14.2,
-        "ratioBundestag": 14.5
+        "score": 8.2,
+        "ratio": 14.5
       },
       {
         "word": "entscheidend",
         "count": 4,
-        "ratioParty": 3.4,
-        "ratioBundestag": 5.5
+        "score": 7.5,
+        "ratio": 5.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "konstruktiv",
+        "count": 3,
+        "score": 8.2,
+        "ratio": 14.2
       },
       {
         "word": "sicher",
         "count": 6,
-        "ratioParty": 2.6,
-        "ratioBundestag": 3.0
+        "score": 7.8,
+        "ratio": 2.6
+      },
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 5.9,
+        "ratio": 3.4
       }
     ]
   },
@@ -155,50 +207,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Thomas Erndl häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Thomas Erndl häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Energie",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Reform",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
-        "text": "Wehrbeauftragte",
+        "text": "Bundeswehr",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Wehrbeauftragte\" nutzt Thomas Erndl 118.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "84.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bundeswehr\" sagte Thomas Erndl 31× (15.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Thomas Erndl häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Thomas Erndl häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Konstruktiv",
+        "text": "Sicher",
         "isCorrect": true
       },
       {
-        "text": "Sozial",
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Konstruktiv\" nutzt Thomas Erndl 14.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "14.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Thomas Erndl 6× (3.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

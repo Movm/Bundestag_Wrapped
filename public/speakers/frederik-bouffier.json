@@ -56,39 +56,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "richtige",
         "count": 7,
-        "ratioParty": 13.1,
-        "ratioBundestag": 19.8
-      },
-      {
-        "word": "vergangenen",
-        "count": 5,
-        "ratioParty": 7.5,
-        "ratioBundestag": 10.9
+        "score": 21.2,
+        "ratio": 19.8
       },
       {
         "word": "worden",
         "count": 7,
-        "ratioParty": 6.5,
-        "ratioBundestag": 8.0
+        "score": 15.4,
+        "ratio": 8.0
+      },
+      {
+        "word": "vergangenen",
+        "count": 5,
+        "score": 12.4,
+        "ratio": 10.9
       },
       {
         "word": "wissen",
         "count": 7,
-        "ratioParty": 4.4,
-        "ratioBundestag": 4.1
+        "score": 11.4,
+        "ratio": 4.1
       },
       {
         "word": "sicherheit",
         "count": 5,
-        "ratioParty": 2.3,
-        "ratioBundestag": 2.7
+        "score": 6.5,
+        "ratio": 2.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "richtige",
+        "count": 7,
+        "score": 18.5,
+        "ratio": 13.1
+      },
+      {
+        "word": "worden",
+        "count": 7,
+        "score": 14.1,
+        "ratio": 6.5
+      },
+      {
+        "word": "menschen",
+        "count": 11,
+        "score": 12.6,
+        "ratio": 2.1
+      },
+      {
+        "word": "wissen",
+        "count": 7,
+        "score": 11.8,
+        "ratio": 4.4
+      },
+      {
+        "word": "vergangenen",
+        "count": 5,
+        "score": 10.7,
+        "ratio": 7.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 484,
@@ -110,27 +143,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Frederik Bouffier häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Frederik Bouffier häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Richtige",
         "isCorrect": true
       },
       {
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
         "text": "Arbeit",
         "isCorrect": false
       },
       {
-        "text": "Bildung",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
+        "text": "Freiheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Richtige\" nutzt Frederik Bouffier 13.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "19.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Richtige\" sagte Frederik Bouffier 7× (19.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

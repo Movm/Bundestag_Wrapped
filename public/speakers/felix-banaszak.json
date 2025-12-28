@@ -72,50 +72,96 @@
         "count": 6
       }
     ],
-    "signatureWords": [
-      {
-        "word": "herausforderungen",
-        "count": 5,
-        "ratioParty": 8.6,
-        "ratioBundestag": 8.0
-      },
-      {
-        "word": "wenig",
-        "count": 5,
-        "ratioParty": 4.4,
-        "ratioBundestag": 6.3
-      },
+    "signatureWordsBundestag": [
       {
         "word": "verantwortung",
         "count": 9,
-        "ratioParty": 4.2,
-        "ratioBundestag": 4.3
-      },
-      {
-        "word": "sorgen",
-        "count": 6,
-        "ratioParty": 4.2,
-        "ratioBundestag": 4.1
+        "score": 15.0,
+        "ratio": 4.3
       },
       {
         "word": "klimaschutz",
         "count": 6,
-        "ratioParty": 3.1,
-        "ratioBundestag": 5.7
+        "score": 11.4,
+        "ratio": 5.7
+      },
+      {
+        "word": "herausforderungen",
+        "count": 5,
+        "score": 11.0,
+        "ratio": 8.0
+      },
+      {
+        "word": "zukunft",
+        "count": 7,
+        "score": 10.6,
+        "ratio": 3.5
+      },
+      {
+        "word": "wenig",
+        "count": 5,
+        "score": 9.9,
+        "ratio": 6.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "verantwortung",
+        "count": 9,
+        "score": 14.8,
+        "ratio": 4.2
+      },
+      {
+        "word": "herausforderungen",
+        "count": 5,
+        "score": 11.3,
+        "ratio": 8.6
+      },
+      {
+        "word": "sorgen",
+        "count": 6,
+        "score": 9.9,
+        "ratio": 4.2
+      },
+      {
+        "word": "zukunft",
+        "count": 7,
+        "score": 9.7,
+        "ratio": 3.0
+      },
+      {
+        "word": "klimaschutz",
+        "count": 6,
+        "score": 8.5,
+        "ratio": 3.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "gerecht",
         "count": 4,
-        "ratioParty": 6.8,
-        "ratioBundestag": 8.3
+        "score": 8.9,
+        "ratio": 8.3
       },
       {
         "word": "sicher",
         "count": 4,
-        "ratioParty": 6.2,
-        "ratioBundestag": 4.7
+        "score": 7.0,
+        "ratio": 4.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 8.2,
+        "ratio": 6.8
+      },
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 7.9,
+        "ratio": 6.2
       }
     ]
   },
@@ -144,50 +190,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Felix Banaszak häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Felix Banaszak häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Politik",
+        "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Herausforderungen",
+        "text": "Verantwortung",
         "isCorrect": true
       },
       {
-        "text": "Bundesregierung",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
-        "text": "Minister",
+        "text": "Reform",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Herausforderungen\" nutzt Felix Banaszak 8.6× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "8.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Verantwortung\" sagte Felix Banaszak 9× (4.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Felix Banaszak häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Felix Banaszak häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Alt",
-        "isCorrect": false
-      },
       {
         "text": "Gerecht",
         "isCorrect": true
       },
       {
-        "text": "Gut",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gerecht\" nutzt Felix Banaszak 6.8× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "8.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gerecht\" sagte Felix Banaszak 4× (8.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦫",

@@ -72,44 +72,84 @@
         "count": 5
       }
     ],
-    "signatureWords": [
-      {
-        "word": "hallen",
-        "count": 7,
-        "ratioParty": 1880.8,
-        "ratioBundestag": 925.7
-      },
-      {
-        "word": "ehrenamt",
-        "count": 5,
-        "ratioParty": 671.7,
-        "ratioBundestag": 45.8
-      },
+    "signatureWordsBundestag": [
       {
         "word": "sport",
         "count": 18,
-        "ratioParty": 151.1,
-        "ratioBundestag": 111.6
+        "score": 85.0,
+        "ratio": 111.6
       },
       {
-        "word": "sportstätten",
-        "count": 5,
-        "ratioParty": 134.3,
-        "ratioBundestag": 74.4
+        "word": "hallen",
+        "count": 7,
+        "score": 47.8,
+        "ratio": 925.7
+      },
+      {
+        "word": "cottbus",
+        "count": 6,
+        "score": 43.6,
+        "ratio": 1428.2
       },
       {
         "word": "olympia",
         "count": 5,
-        "ratioParty": 96.0,
-        "ratioBundestag": 220.4
+        "score": 27.0,
+        "ratio": 220.4
+      },
+      {
+        "word": "sportstätten",
+        "count": 5,
+        "score": 21.6,
+        "ratio": 74.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "sport",
+        "count": 18,
+        "score": 90.4,
+        "ratio": 151.1
+      },
+      {
+        "word": "hallen",
+        "count": 7,
+        "score": 52.8,
+        "ratio": 1880.8
+      },
+      {
+        "word": "ehrenamt",
+        "count": 5,
+        "score": 32.6,
+        "ratio": 671.7
+      },
+      {
+        "word": "sportstätten",
+        "count": 5,
+        "score": 24.5,
+        "ratio": 134.3
+      },
+      {
+        "word": "olympia",
+        "count": 5,
+        "score": 22.9,
+        "ratio": 96.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "rechts",
         "count": 3,
-        "ratioParty": 11.7,
-        "ratioBundestag": 11.2
+        "score": 7.5,
+        "ratio": 11.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 7.6,
+        "ratio": 11.7
       }
     ]
   },
@@ -133,39 +173,30 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Lars Schieske häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Lars Schieske häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Demokratie",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Bundesregierung",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Hallen",
+        "text": "Sport",
         "isCorrect": true
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Hallen\" nutzt Lars Schieske 1880.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "925.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sport\" sagte Lars Schieske 18× (111.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Lars Schieske häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Lars Schieske häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
       {
         "text": "Rechts",
         "isCorrect": true
@@ -173,10 +204,17 @@
       {
         "text": "Erfolgreich",
         "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rechts\" nutzt Lars Schieske 11.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "11.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Rechts\" sagte Lars Schieske 3× (11.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

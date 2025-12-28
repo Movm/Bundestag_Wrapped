@@ -52,44 +52,84 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "potsdam",
         "count": 5,
-        "ratioParty": 151.5,
-        "ratioBundestag": 293.9
+        "score": 28.4,
+        "ratio": 293.9
       },
       {
         "word": "vollkommen",
         "count": 8,
-        "ratioParty": 28.5,
-        "ratioBundestag": 28.2
+        "score": 27.0,
+        "ratio": 28.2
+      },
+      {
+        "word": "reichtum",
+        "count": 6,
+        "score": 26.9,
+        "ratio": 88.2
       },
       {
         "word": "landwirtinnen",
         "count": 6,
-        "ratioParty": 26.0,
-        "ratioBundestag": 49.0
+        "score": 23.5,
+        "ratio": 49.0
       },
       {
-        "word": "umverteilung",
-        "count": 5,
-        "ratioParty": 25.2,
-        "ratioBundestag": 49.0
-      },
-      {
-        "word": "landwirte",
-        "count": 5,
-        "ratioParty": 18.9,
-        "ratioBundestag": 12.9
+        "word": "abgeordnete",
+        "count": 9,
+        "score": 22.3,
+        "ratio": 11.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "vollkommen",
+        "count": 8,
+        "score": 27.1,
+        "ratio": 28.5
+      },
+      {
+        "word": "potsdam",
+        "count": 5,
+        "score": 25.1,
+        "ratio": 151.5
+      },
+      {
+        "word": "landwirtinnen",
+        "count": 6,
+        "score": 19.8,
+        "ratio": 26.0
+      },
+      {
+        "word": "abgeordnete",
+        "count": 9,
+        "score": 19.7,
+        "ratio": 7.9
+      },
+      {
+        "word": "reichtum",
+        "count": 6,
+        "score": 17.4,
+        "ratio": 17.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "beschämend",
         "count": 3,
-        "ratioParty": 12.1,
-        "ratioBundestag": 46.4
+        "score": 11.6,
+        "ratio": 46.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "beschämend",
+        "count": 3,
+        "score": 7.7,
+        "ratio": 12.1
       }
     ]
   },
@@ -113,18 +153,18 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Isabelle Vandre häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Isabelle Vandre häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bundesregierung",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
-        "text": "Gesetz",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
@@ -132,31 +172,29 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Potsdam\" nutzt Isabelle Vandre 151.5× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "293.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Potsdam\" sagte Isabelle Vandre 5× (293.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Isabelle Vandre häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Isabelle Vandre häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Falsch",
-        "isCorrect": false
-      },
       {
         "text": "Beschämend",
         "isCorrect": true
+      },
+      {
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Beschämend\" nutzt Isabelle Vandre 12.1× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "46.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Beschämend\" sagte Isabelle Vandre 3× (46.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐬",

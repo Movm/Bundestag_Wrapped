@@ -44,56 +44,108 @@
         "count": 13
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "bürger",
+        "count": 23,
+        "score": 41.8,
+        "ratio": 5.2
+      },
+      {
+        "word": "demokratie",
+        "count": 19,
+        "score": 36.4,
+        "ratio": 5.8
+      },
       {
         "word": "bestrafung",
         "count": 5,
-        "ratioParty": 218.5,
-        "ratioBundestag": 324.5
+        "score": 28.9,
+        "ratio": 324.5
       },
       {
         "word": "hubig",
         "count": 7,
-        "ratioParty": 68.0,
-        "ratioBundestag": 41.9
-      },
-      {
-        "word": "nachher",
-        "count": 5,
-        "ratioParty": 48.6,
-        "ratioBundestag": 59.0
-      },
-      {
-        "word": "vorfeld",
-        "count": 5,
-        "ratioParty": 36.4,
-        "ratioBundestag": 60.9
+        "score": 26.3,
+        "ratio": 41.9
       },
       {
         "word": "bekanntlich",
         "count": 6,
-        "ratioParty": 32.8,
-        "ratioBundestag": 45.8
+        "score": 23.1,
+        "ratio": 45.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "demokratie",
+        "count": 19,
+        "score": 39.6,
+        "ratio": 7.0
+      },
+      {
+        "word": "hubig",
+        "count": 7,
+        "score": 29.6,
+        "ratio": 68.0
+      },
+      {
+        "word": "bestrafung",
+        "count": 5,
+        "score": 27.0,
+        "ratio": 218.5
+      },
+      {
+        "word": "bürger",
+        "count": 23,
+        "score": 26.6,
+        "ratio": 2.2
+      },
+      {
+        "word": "bekanntlich",
+        "count": 6,
+        "score": 21.1,
+        "ratio": 32.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "links",
+        "count": 5,
+        "score": 10.0,
+        "ratio": 6.4
+      },
       {
         "word": "falsch",
         "count": 4,
-        "ratioParty": 4.8,
-        "ratioBundestag": 4.8
+        "score": 7.0,
+        "ratio": 4.8
       },
       {
         "word": "sicher",
         "count": 5,
-        "ratioParty": 3.6,
-        "ratioBundestag": 2.6
+        "score": 6.4,
+        "ratio": 2.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 5,
+        "score": 7.6,
+        "ratio": 3.6
+      },
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 7.0,
+        "ratio": 4.8
       },
       {
         "word": "links",
         "count": 5,
-        "ratioParty": 2.3,
-        "ratioBundestag": 6.4
+        "score": 5.9,
+        "ratio": 2.3
       }
     ]
   },
@@ -122,50 +174,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Tobias Matthias Peterka häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Tobias Matthias Peterka häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bestrafung",
+        "text": "Bürger",
         "isCorrect": true
       },
       {
-        "text": "Bundesregierung",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
-        "text": "Freiheit",
+        "text": "Europa",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
+        "text": "Verantwortung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bestrafung\" nutzt Tobias Matthias Peterka 218.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "324.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bürger\" sagte Tobias Matthias Peterka 23× (5.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Tobias Matthias Peterka häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Tobias Matthias Peterka häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Falsch",
+        "text": "Links",
         "isCorrect": true
       },
       {
-        "text": "Sozial",
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Falsch\" nutzt Tobias Matthias Peterka 4.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "4.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Links\" sagte Tobias Matthias Peterka 5× (6.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

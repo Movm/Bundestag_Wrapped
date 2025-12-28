@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "elterngeld",
         "count": 15,
-        "ratioParty": 355.7,
-        "ratioBundestag": 293.5
-      },
-      {
-        "word": "ganztag",
-        "count": 5,
-        "ratioParty": 204.8,
-        "ratioBundestag": 149.9
-      },
-      {
-        "word": "beruf",
-        "count": 5,
-        "ratioParty": 50.1,
-        "ratioBundestag": 54.2
-      },
-      {
-        "word": "eltern",
-        "count": 7,
-        "ratioParty": 48.5,
-        "ratioBundestag": 33.0
+        "score": 85.3,
+        "ratio": 293.5
       },
       {
         "word": "familien",
         "count": 12,
-        "ratioParty": 29.7,
-        "ratioBundestag": 23.7
+        "score": 38.5,
+        "ratio": 23.7
+      },
+      {
+        "word": "ganztag",
+        "count": 5,
+        "score": 25.1,
+        "ratio": 149.9
+      },
+      {
+        "word": "eltern",
+        "count": 7,
+        "score": 24.7,
+        "ratio": 33.0
+      },
+      {
+        "word": "beruf",
+        "count": 5,
+        "score": 20.1,
+        "ratio": 54.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "elterngeld",
+        "count": 15,
+        "score": 88.2,
+        "ratio": 355.7
+      },
+      {
+        "word": "familien",
+        "count": 12,
+        "score": 41.1,
+        "ratio": 29.7
+      },
+      {
+        "word": "eltern",
+        "count": 7,
+        "score": 27.3,
+        "ratio": 48.5
+      },
+      {
+        "word": "ganztag",
+        "count": 5,
+        "score": 26.6,
+        "ratio": 204.8
+      },
+      {
+        "word": "beruf",
+        "count": 5,
+        "score": 19.7,
+        "ratio": 50.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 444,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Wolfgang Dahler häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Wolfgang Dahler häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
       {
         "text": "Elterngeld",
         "isCorrect": true
-      },
-      {
-        "text": "Politik",
-        "isCorrect": false
       },
       {
         "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
+        "text": "Sicherheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Elterngeld\" nutzt Wolfgang Dahler 355.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "293.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Elterngeld\" sagte Wolfgang Dahler 15× (293.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

@@ -52,44 +52,84 @@
         "count": 11
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "jemen",
-        "count": 5,
-        "ratioParty": 174.3,
-        "ratioBundestag": 102.0
+        "word": "syrien",
+        "count": 12,
+        "score": 41.9,
+        "ratio": 31.9
+      },
+      {
+        "word": "menschen",
+        "count": 31,
+        "score": 35.2,
+        "ratio": 2.1
       },
       {
         "word": "migrationshintergrund",
         "count": 8,
-        "ratioParty": 111.5,
-        "ratioBundestag": 78.3
+        "score": 35.0,
+        "ratio": 78.3
       },
       {
-        "word": "syrien",
-        "count": 12,
-        "ratioParty": 31.0,
-        "ratioBundestag": 31.9
+        "word": "jemen",
+        "count": 5,
+        "score": 23.2,
+        "ratio": 102.0
       },
       {
         "word": "stadtbild",
         "count": 5,
-        "ratioParty": 17.4,
-        "ratioBundestag": 43.7
+        "score": 19.0,
+        "ratio": 43.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "syrien",
+        "count": 12,
+        "score": 41.6,
+        "ratio": 31.0
+      },
+      {
+        "word": "migrationshintergrund",
+        "count": 8,
+        "score": 37.8,
+        "ratio": 111.5
+      },
+      {
+        "word": "jemen",
+        "count": 5,
+        "score": 25.8,
+        "ratio": 174.3
       },
       {
         "word": "sogenannten",
         "count": 7,
-        "ratioParty": 15.2,
-        "ratioBundestag": 8.7
+        "score": 19.5,
+        "ratio": 15.2
+      },
+      {
+        "word": "zitat",
+        "count": 7,
+        "score": 19.3,
+        "ratio": 14.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 2.8,
-        "ratioBundestag": 3.5
+        "score": 4.5,
+        "ratio": 3.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 4.0,
+        "ratio": 2.8
       }
     ]
   },
@@ -113,33 +153,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Lamya Kaddor häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Lamya Kaddor häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Jemen",
+        "text": "Syrien",
         "isCorrect": true
       },
       {
-        "text": "Bundesregierung",
+        "text": "Investitionen",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Jemen\" nutzt Lamya Kaddor 174.3× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "102.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Syrien\" sagte Lamya Kaddor 12× (31.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Lamya Kaddor häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Lamya Kaddor häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gefährlich",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
@@ -147,16 +186,15 @@
         "isCorrect": true
       },
       {
-        "text": "Gut",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
+        "text": "Gut",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gerecht\" nutzt Lamya Kaddor 2.8× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "3.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gerecht\" sagte Lamya Kaddor 3× (3.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

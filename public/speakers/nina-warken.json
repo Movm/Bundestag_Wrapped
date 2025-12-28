@@ -64,39 +64,72 @@
         "count": 23
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "leistungsgruppen",
-        "count": 6,
-        "ratioParty": 428.8,
-        "ratioBundestag": 122.8
+        "word": "versorgung",
+        "count": 32,
+        "score": 103.4,
+        "ratio": 24.3
       },
       {
-        "word": "sensibilisieren",
-        "count": 5,
-        "ratioParty": 178.7,
-        "ratioBundestag": 187.7
+        "word": "pflege",
+        "count": 29,
+        "score": 84.1,
+        "ratio": 17.2
       },
       {
-        "word": "tiefgreifenden",
-        "count": 6,
-        "ratioParty": 142.9,
-        "ratioBundestag": 112.6
+        "word": "patienten",
+        "count": 20,
+        "score": 72.4,
+        "ratio": 36.3
       },
       {
-        "word": "spezialisierung",
-        "count": 5,
-        "ratioParty": 119.1,
-        "ratioBundestag": 187.7
+        "word": "patientinnen",
+        "count": 16,
+        "score": 68.3,
+        "ratio": 70.7
       },
       {
-        "word": "apotheken",
-        "count": 5,
-        "ratioParty": 89.3,
-        "ratioBundestag": 80.4
+        "word": "reform",
+        "count": 23,
+        "score": 57.6,
+        "ratio": 11.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "versorgung",
+        "count": 32,
+        "score": 102.5,
+        "ratio": 23.6
+      },
+      {
+        "word": "pflege",
+        "count": 29,
+        "score": 81.9,
+        "ratio": 15.8
+      },
+      {
+        "word": "patientinnen",
+        "count": 16,
+        "score": 66.7,
+        "ratio": 63.5
+      },
+      {
+        "word": "patienten",
+        "count": 20,
+        "score": 66.6,
+        "ratio": 27.0
+      },
+      {
+        "word": "gesundheitsversorgung",
+        "count": 14,
+        "score": 62.1,
+        "ratio": 83.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 199,
@@ -118,44 +151,35 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Nina Warken häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Nina Warken häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Leistungsgruppen",
+        "text": "Versorgung",
         "isCorrect": true
       },
       {
-        "text": "Freiheit",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Kinder",
+        "text": "Europa",
         "isCorrect": false
       },
       {
-        "text": "Klima",
+        "text": "Rente",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Leistungsgruppen\" nutzt Nina Warken 428.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "122.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Versorgung\" sagte Nina Warken 32× (24.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Clevere Strategin",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüterin",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 1.0
-      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -163,6 +187,14 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
+      },
+      {
+        "emoji": "🐬",
+        "name": "Delfin",
+        "title": "Diplomatische Rednerin",
+        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
+        "id": "delfin",
+        "score": 0.9
       }
     ]
   },

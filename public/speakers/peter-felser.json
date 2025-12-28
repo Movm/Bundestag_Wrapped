@@ -72,27 +72,48 @@
         "count": 3
       }
     ],
-    "signatureWords": [
-      {
-        "word": "wünsche",
-        "count": 5,
-        "ratioParty": 70.2,
-        "ratioBundestag": 57.0
-      },
+    "signatureWordsBundestag": [
       {
         "word": "minister",
         "count": 10,
-        "ratioParty": 21.4,
-        "ratioBundestag": 26.3
+        "score": 33.1,
+        "ratio": 26.3
+      },
+      {
+        "word": "wünsche",
+        "count": 5,
+        "score": 20.3,
+        "ratio": 57.0
       },
       {
         "word": "lassen",
         "count": 6,
-        "ratioParty": 9.4,
-        "ratioBundestag": 8.6
+        "score": 13.5,
+        "ratio": 8.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "minister",
+        "count": 10,
+        "score": 31.1,
+        "ratio": 21.4
+      },
+      {
+        "word": "wünsche",
+        "count": 5,
+        "score": 21.3,
+        "ratio": 70.2
+      },
+      {
+        "word": "lassen",
+        "count": 6,
+        "score": 14.1,
+        "ratio": 9.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 460,
@@ -109,27 +130,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Peter Felser häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Peter Felser häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Wünsche",
+        "text": "Minister",
         "isCorrect": true
       },
       {
-        "text": "Steuern",
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wünsche\" nutzt Peter Felser 70.2× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "57.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Minister\" sagte Peter Felser 10× (26.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

@@ -72,8 +72,54 @@
         "count": 17
       }
     ],
-    "signatureWords": [],
-    "signatureAdjectives": []
+    "signatureWordsBundestag": [
+      {
+        "word": "minderheiten",
+        "count": 35,
+        "score": 190.9,
+        "ratio": 232.8
+      },
+      {
+        "word": "norden",
+        "count": 18,
+        "score": 83.7,
+        "ratio": 103.8
+      },
+      {
+        "word": "marschbahn",
+        "count": 10,
+        "score": 55.6,
+        "ratio": 259.4
+      },
+      {
+        "word": "schleswig",
+        "count": 13,
+        "score": 54.7,
+        "ratio": 66.1
+      },
+      {
+        "word": "küsten",
+        "count": 9,
+        "score": 45.5,
+        "ratio": 155.6
+      }
+    ],
+    "signatureWordsParty": [],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "verlässlich",
+        "count": 3,
+        "score": 6.1,
+        "ratio": 6.6
+      },
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 5.0,
+        "ratio": 2.5
+      }
+    ],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 300,
@@ -99,30 +145,72 @@
       "value": "#1 von 609"
     }
   ],
-  "signatureQuiz": null,
-  "signatureAdjectiveQuiz": null,
-  "spiritAnimal": {
-    "emoji": "🐝",
-    "name": "Biene",
-    "title": "Fleißiger Abgeordneter",
-    "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-    "id": "biene",
-    "alternatives": [
+  "signatureQuiz": {
+    "question": "Welches Wort nutzt Stefan Seidler häufiger als der Bundestag-Durchschnitt?",
+    "options": [
       {
-        "emoji": "🐬",
-        "name": "Delfin",
-        "title": "Diplomatischer Redner",
-        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-        "id": "delfin",
-        "score": 0.867
+        "text": "Investitionen",
+        "isCorrect": false
       },
       {
-        "emoji": "🦫",
-        "name": "Biber",
-        "title": "Konstruktiver Brückenbauer",
-        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
-        "id": "biber",
-        "score": 0.823
+        "text": "Minderheiten",
+        "isCorrect": true
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Opposition",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "\"Minderheiten\" sagte Stefan Seidler 35× (232.8× häufiger als der Bundestag-Durchschnitt)."
+  },
+  "signatureAdjectiveQuiz": {
+    "question": "Welches Adjektiv nutzt Stefan Seidler häufiger als der Bundestag-Durchschnitt?",
+    "options": [
+      {
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Verlässlich",
+        "isCorrect": true
+      },
+      {
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "\"Verlässlich\" sagte Stefan Seidler 3× (6.6× häufiger als der Bundestag-Durchschnitt)."
+  },
+  "spiritAnimal": {
+    "emoji": "🦊",
+    "name": "Fuchs",
+    "title": "Cleverer Stratege",
+    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+    "id": "fuchs",
+    "alternatives": [
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 1.0
+      },
+      {
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißiger Abgeordneter",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
+        "score": 1.0
       }
     ]
   },

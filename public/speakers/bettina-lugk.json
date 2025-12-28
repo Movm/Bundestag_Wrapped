@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "spiele",
         "count": 10,
-        "ratioParty": 648.6,
-        "ratioBundestag": 170.6
-      },
-      {
-        "word": "bewerbung",
-        "count": 5,
-        "ratioParty": 432.4,
-        "ratioBundestag": 209.2
+        "score": 51.5,
+        "ratio": 170.6
       },
       {
         "word": "sportstätten",
         "count": 7,
-        "ratioParty": 113.5,
-        "ratioBundestag": 116.4
+        "score": 33.4,
+        "ratio": 116.4
+      },
+      {
+        "word": "bewerbung",
+        "count": 5,
+        "score": 26.7,
+        "ratio": 209.2
       },
       {
         "word": "sport",
         "count": 6,
-        "ratioParty": 45.8,
-        "ratioBundestag": 38.1
+        "score": 22.0,
+        "ratio": 38.1
       },
       {
         "word": "vergangenen",
         "count": 7,
-        "ratioParty": 21.6,
-        "ratioBundestag": 18.1
+        "score": 20.7,
+        "ratio": 18.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "spiele",
+        "count": 10,
+        "score": 64.8,
+        "ratio": 648.6
+      },
+      {
+        "word": "sportstätten",
+        "count": 7,
+        "score": 33.2,
+        "ratio": 113.5
+      },
+      {
+        "word": "bewerbung",
+        "count": 5,
+        "score": 30.4,
+        "ratio": 432.4
+      },
+      {
+        "word": "sport",
+        "count": 6,
+        "score": 23.1,
+        "ratio": 45.8
+      },
+      {
+        "word": "vergangenen",
+        "count": 7,
+        "score": 21.8,
+        "ratio": 21.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 510,
@@ -126,43 +159,42 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Bettina Lugk häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Bettina Lugk häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Migration",
+        "text": "Debatte",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
         "text": "Spiele",
         "isCorrect": true
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Spiele\" nutzt Bettina Lugk 648.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "170.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Spiele\" sagte Bettina Lugk 10× (170.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Clevere Strategin",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐇",
+    "name": "Hase",
+    "title": "Wendige Optimistin",
+    "reason": "Mit positivem Blick reagierst du schnell auf neue Themen.",
+    "id": "hase",
     "alternatives": [
       {
-        "emoji": "🐇",
-        "name": "Hase",
-        "title": "Wendige Optimistin",
-        "reason": "Mit positivem Blick reagierst du schnell auf neue Themen.",
-        "id": "hase",
-        "score": 0.833
+        "emoji": "🦊",
+        "name": "Fuchs",
+        "title": "Clevere Strategin",
+        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+        "id": "fuchs",
+        "score": 0.809
       },
       {
         "emoji": "🦦",

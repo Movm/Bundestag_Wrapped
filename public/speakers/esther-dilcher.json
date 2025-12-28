@@ -72,44 +72,84 @@
         "count": 11
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "landwirtschaft",
+        "count": 16,
+        "score": 47.3,
+        "ratio": 18.2
+      },
+      {
+        "word": "mittel",
+        "count": 21,
+        "score": 45.1,
+        "ratio": 7.6
+      },
       {
         "word": "auswärtige",
         "count": 10,
-        "ratioParty": 285.8,
-        "ratioBundestag": 53.9
-      },
-      {
-        "word": "stallumbau",
-        "count": 6,
-        "ratioParty": 257.2,
-        "ratioBundestag": 323.4
-      },
-      {
-        "word": "kürzung",
-        "count": 5,
-        "ratioParty": 85.7,
-        "ratioBundestag": 29.1
+        "score": 40.1,
+        "ratio": 53.9
       },
       {
         "word": "auswärtigen",
         "count": 11,
-        "ratioParty": 78.6,
-        "ratioBundestag": 34.4
+        "score": 39.2,
+        "ratio": 34.4
       },
       {
-        "word": "fischerei",
+        "word": "stallumbau",
         "count": 6,
-        "ratioParty": 64.3,
-        "ratioBundestag": 99.5
+        "score": 34.7,
+        "ratio": 323.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "auswärtige",
+        "count": 10,
+        "score": 56.6,
+        "ratio": 285.8
+      },
+      {
+        "word": "auswärtigen",
+        "count": 11,
+        "score": 48.1,
+        "ratio": 78.6
+      },
+      {
+        "word": "landwirtschaft",
+        "count": 16,
+        "score": 47.4,
+        "ratio": 18.3
+      },
+      {
+        "word": "mittel",
+        "count": 21,
+        "score": 44.3,
+        "ratio": 7.3
+      },
+      {
+        "word": "landwirte",
+        "count": 10,
+        "score": 36.0,
+        "ratio": 35.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "zentral",
         "count": 3,
-        "ratioParty": 5.7,
-        "ratioBundestag": 10.6
+        "score": 7.4,
+        "ratio": 10.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "zentral",
+        "count": 3,
+        "score": 5.7,
+        "ratio": 5.7
       }
     ]
   },
@@ -138,41 +178,40 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Esther Dilcher häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Esther Dilcher häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Freiheit",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Auswärtige",
+        "text": "Landwirtschaft",
         "isCorrect": true
       },
       {
-        "text": "Verantwortung",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
-        "text": "Minister",
+        "text": "Migration",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Auswärtige\" nutzt Esther Dilcher 285.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "53.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Landwirtschaft\" sagte Esther Dilcher 16× (18.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Esther Dilcher häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Esther Dilcher häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Politisch",
+        "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "Groß",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
@@ -180,8 +219,7 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Zentral\" nutzt Esther Dilcher 5.7× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "10.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Zentral\" sagte Esther Dilcher 3× (10.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -199,12 +237,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.92
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positive Teamplayerin",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.919
       }
     ]
   },

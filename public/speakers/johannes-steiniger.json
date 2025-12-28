@@ -72,39 +72,72 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "bauern",
-        "count": 6,
-        "ratioParty": 105.1,
-        "ratioBundestag": 40.8
-      },
-      {
-        "word": "bundesländer",
-        "count": 6,
-        "ratioParty": 65.7,
-        "ratioBundestag": 64.1
+        "word": "landwirtschaft",
+        "count": 12,
+        "score": 39.4,
+        "ratio": 25.8
       },
       {
         "word": "versprochen",
         "count": 9,
-        "ratioParty": 57.7,
-        "ratioBundestag": 26.8
+        "score": 29.9,
+        "ratio": 26.8
       },
       {
-        "word": "landwirtschaft",
-        "count": 12,
-        "ratioParty": 23.7,
-        "ratioBundestag": 25.8
+        "word": "letzten",
+        "count": 14,
+        "score": 27.3,
+        "ratio": 6.0
+      },
+      {
+        "word": "bundesländer",
+        "count": 6,
+        "score": 25.1,
+        "ratio": 64.1
       },
       {
         "word": "regelungen",
         "count": 7,
-        "ratioParty": 22.4,
-        "ratioBundestag": 25.3
+        "score": 22.9,
+        "ratio": 25.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "landwirtschaft",
+        "count": 12,
+        "score": 38.5,
+        "ratio": 23.7
+      },
+      {
+        "word": "versprochen",
+        "count": 9,
+        "score": 36.7,
+        "ratio": 57.7
+      },
+      {
+        "word": "bauern",
+        "count": 6,
+        "score": 28.0,
+        "ratio": 105.1
+      },
+      {
+        "word": "letzten",
+        "count": 14,
+        "score": 26.4,
+        "ratio": 5.6
+      },
+      {
+        "word": "bundesländer",
+        "count": 6,
+        "score": 25.2,
+        "ratio": 65.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 454,
@@ -131,27 +164,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Johannes Steiniger häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Johannes Steiniger häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bildung",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
-        "text": "Bauern",
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Landwirtschaft",
         "isCorrect": true
-      },
-      {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bauern\" nutzt Johannes Steiniger 105.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "40.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Landwirtschaft\" sagte Johannes Steiniger 12× (25.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

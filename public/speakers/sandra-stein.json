@@ -72,44 +72,84 @@
         "count": 8
       }
     ],
-    "signatureWords": [
-      {
-        "word": "betriebe",
-        "count": 11,
-        "ratioParty": 78.0,
-        "ratioBundestag": 29.2
-      },
+    "signatureWordsBundestag": [
       {
         "word": "mittelstand",
         "count": 13,
-        "ratioParty": 55.3,
-        "ratioBundestag": 38.8
+        "score": 47.9,
+        "ratio": 38.8
       },
       {
-        "word": "wirtschaftspolitik",
-        "count": 6,
-        "ratioParty": 31.9,
-        "ratioBundestag": 30.8
+        "word": "betriebe",
+        "count": 11,
+        "score": 37.5,
+        "ratio": 29.2
+      },
+      {
+        "word": "wirtschaft",
+        "count": 17,
+        "score": 37.4,
+        "ratio": 8.0
+      },
+      {
+        "word": "sauerland",
+        "count": 5,
+        "score": 30.1,
+        "ratio": 413.0
       },
       {
         "word": "handwerk",
         "count": 7,
-        "ratioParty": 31.0,
-        "ratioBundestag": 45.3
-      },
-      {
-        "word": "ideen",
-        "count": 7,
-        "ratioParty": 28.6,
-        "ratioBundestag": 26.3
+        "score": 26.8,
+        "ratio": 45.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "mittelstand",
+        "count": 13,
+        "score": 52.4,
+        "ratio": 55.3
+      },
+      {
+        "word": "betriebe",
+        "count": 11,
+        "score": 48.1,
+        "ratio": 78.0
+      },
+      {
+        "word": "wirtschaft",
+        "count": 17,
+        "score": 40.4,
+        "ratio": 9.8
+      },
+      {
+        "word": "unternehmen",
+        "count": 13,
+        "score": 25.2,
+        "ratio": 6.0
+      },
+      {
+        "word": "handwerk",
+        "count": 7,
+        "score": 24.3,
+        "ratio": 31.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "wesentlich",
         "count": 3,
-        "ratioParty": 35.4,
-        "ratioBundestag": 30.6
+        "score": 10.4,
+        "ratio": 30.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wesentlich",
+        "count": 3,
+        "score": 10.8,
+        "ratio": 35.4
       }
     ]
   },
@@ -133,33 +173,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Sandra Stein häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Sandra Stein häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bildung",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
-        "text": "Betriebe",
+        "text": "Mittelstand",
         "isCorrect": true
       },
       {
-        "text": "Migration",
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Betriebe\" nutzt Sandra Stein 78.0× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "29.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Mittelstand\" sagte Sandra Stein 13× (38.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Sandra Stein häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Sandra Stein häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Politisch",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
@@ -167,16 +206,15 @@
         "isCorrect": true
       },
       {
-        "text": "Klar",
+        "text": "Gut",
         "isCorrect": false
       },
       {
-        "text": "Alt",
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wesentlich\" nutzt Sandra Stein 35.4× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "30.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wesentlich\" sagte Sandra Stein 3× (30.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦫",

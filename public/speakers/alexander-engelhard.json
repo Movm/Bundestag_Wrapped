@@ -64,44 +64,84 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "genomischen",
-        "count": 5,
-        "ratioParty": 174.7,
-        "ratioBundestag": 319.0
+        "word": "landwirtschaft",
+        "count": 12,
+        "score": 38.6,
+        "ratio": 24.0
       },
       {
         "word": "alois",
         "count": 6,
-        "ratioParty": 63.8,
-        "ratioBundestag": 124.2
+        "score": 29.0,
+        "ratio": 124.2
+      },
+      {
+        "word": "genomischen",
+        "count": 5,
+        "score": 28.8,
+        "ratio": 319.0
       },
       {
         "word": "rainer",
         "count": 7,
-        "ratioParty": 53.5,
-        "ratioBundestag": 39.7
+        "score": 25.9,
+        "ratio": 39.7
       },
+      {
+        "word": "gleichzeitig",
+        "count": 9,
+        "score": 19.7,
+        "ratio": 8.0
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "landwirtschaft",
         "count": 12,
-        "ratioParty": 22.1,
-        "ratioBundestag": 24.0
+        "score": 37.7,
+        "ratio": 22.1
       },
       {
-        "word": "schließlich",
+        "word": "rainer",
+        "count": 7,
+        "score": 28.0,
+        "ratio": 53.5
+      },
+      {
+        "word": "genomischen",
         "count": 5,
-        "ratioParty": 20.4,
-        "ratioBundestag": 25.4
+        "score": 25.8,
+        "ratio": 174.7
+      },
+      {
+        "word": "alois",
+        "count": 6,
+        "score": 25.0,
+        "ratio": 63.8
+      },
+      {
+        "word": "gleichzeitig",
+        "count": 9,
+        "score": 19.0,
+        "ratio": 7.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "entscheidend",
         "count": 3,
-        "ratioParty": 5.2,
-        "ratioBundestag": 8.5
+        "score": 6.7,
+        "ratio": 8.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 5.5,
+        "ratio": 5.2
       }
     ]
   },
@@ -125,37 +165,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Alexander Engelhard häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Alexander Engelhard häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Kinder",
-        "isCorrect": false
-      },
       {
         "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Genomischen",
+        "text": "Landwirtschaft",
         "isCorrect": true
       },
       {
-        "text": "Koalition",
-        "isCorrect": false
-      }
-    ],
-    "explanationParty": "\"Genomischen\" nutzt Alexander Engelhard 174.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "319.0× häufiger als der Bundestag-Durchschnitt."
-  },
-  "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Alexander Engelhard häufiger als der Rest der CDU/CSU-Fraktion?",
-    "options": [
-      {
-        "text": "National",
+        "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Neu",
+        "text": "Fraktion",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "\"Landwirtschaft\" sagte Alexander Engelhard 12× (24.0× häufiger als der Bundestag-Durchschnitt)."
+  },
+  "signatureAdjectiveQuiz": {
+    "question": "Welches Adjektiv nutzt Alexander Engelhard häufiger als der Bundestag-Durchschnitt?",
+    "options": [
+      {
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
@@ -163,12 +202,11 @@
         "isCorrect": true
       },
       {
-        "text": "Erfolgreich",
+        "text": "Sicher",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Alexander Engelhard 5.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "8.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Entscheidend\" sagte Alexander Engelhard 3× (8.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -186,12 +224,12 @@
         "score": 0.901
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.882
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrlicher Redner",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.768
       }
     ]
   },

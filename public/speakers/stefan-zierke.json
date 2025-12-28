@@ -72,15 +72,24 @@
         "count": 2
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "radverkehr",
         "count": 5,
-        "ratioParty": 187.3,
-        "ratioBundestag": 5203.9
+        "score": 42.8,
+        "ratio": 5203.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "radverkehr",
+        "count": 5,
+        "score": 26.2,
+        "ratio": 187.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 461,
@@ -97,10 +106,14 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Stefan Zierke häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Stefan Zierke häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Freiheit",
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
@@ -108,16 +121,11 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Politik",
+        "text": "Bildung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Radverkehr\" nutzt Stefan Zierke 187.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "5203.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Radverkehr\" sagte Stefan Zierke 5× (5203.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

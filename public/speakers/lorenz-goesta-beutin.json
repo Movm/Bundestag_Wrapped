@@ -72,39 +72,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "klimaschutz",
+        "count": 12,
+        "score": 36.4,
+        "ratio": 19.7
+      },
       {
         "word": "dänemark",
         "count": 6,
-        "ratioParty": 313.1,
-        "ratioBundestag": 200.7
+        "score": 31.8,
+        "ratio": 200.7
       },
       {
         "word": "gerechte",
         "count": 6,
-        "ratioParty": 55.2,
-        "ratioBundestag": 120.4
+        "score": 28.8,
+        "ratio": 120.4
       },
       {
         "word": "klimapolitik",
         "count": 6,
-        "ratioParty": 49.4,
-        "ratioBundestag": 59.8
+        "score": 24.6,
+        "ratio": 59.8
       },
       {
         "word": "energiewende",
         "count": 6,
-        "ratioParty": 34.8,
-        "ratioBundestag": 31.1
-      },
+        "score": 20.8,
+        "ratio": 31.1
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "klimaschutz",
         "count": 12,
-        "ratioParty": 20.6,
-        "ratioBundestag": 19.7
+        "score": 36.9,
+        "ratio": 20.6
+      },
+      {
+        "word": "dänemark",
+        "count": 6,
+        "score": 34.5,
+        "ratio": 313.1
+      },
+      {
+        "word": "gerechte",
+        "count": 6,
+        "score": 24.2,
+        "ratio": 55.2
+      },
+      {
+        "word": "klimapolitik",
+        "count": 6,
+        "score": 23.5,
+        "ratio": 49.4
+      },
+      {
+        "word": "energiewende",
+        "count": 6,
+        "score": 21.5,
+        "ratio": 34.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 348,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Lorenz Gösta Beutin häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Lorenz Gösta Beutin häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Dänemark",
+        "text": "Klimaschutz",
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
-        "text": "Debatte",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
-        "text": "Fraktion",
+        "text": "Arbeit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Dänemark\" nutzt Lorenz Gösta Beutin 313.1× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "200.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Klimaschutz\" sagte Lorenz Gösta Beutin 12× (19.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -165,12 +197,12 @@
         "score": 0.875
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.867
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positiver Teamplayer",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.817
       }
     ]
   },

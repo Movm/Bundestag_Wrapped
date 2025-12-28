@@ -60,50 +60,96 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "speicherung",
+        "count": 6,
+        "score": 25.4,
+        "ratio": 68.3
+      },
+      {
+        "word": "klimaschutz",
+        "count": 11,
+        "score": 25.2,
+        "ratio": 8.9
+      },
+      {
+        "word": "gesetz",
+        "count": 12,
+        "score": 24.8,
+        "ratio": 6.9
+      },
       {
         "word": "geothermie",
         "count": 5,
-        "ratioParty": 98.5,
-        "ratioBundestag": 132.2
+        "score": 24.5,
+        "ratio": 132.2
+      },
+      {
+        "word": "vorschläge",
+        "count": 6,
+        "score": 16.1,
+        "ratio": 13.6
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "klimaschutz",
+        "count": 11,
+        "score": 26.2,
+        "ratio": 9.8
+      },
+      {
+        "word": "gesetz",
+        "count": 12,
+        "score": 23.7,
+        "ratio": 6.2
+      },
+      {
+        "word": "geothermie",
+        "count": 5,
+        "score": 23.0,
+        "ratio": 98.5
       },
       {
         "word": "speicherung",
         "count": 6,
-        "ratioParty": 35.5,
-        "ratioBundestag": 68.3
+        "score": 21.6,
+        "ratio": 35.5
       },
       {
         "word": "energiepolitik",
         "count": 5,
-        "ratioParty": 24.6,
-        "ratioBundestag": 22.0
-      },
-      {
-        "word": "abwasserwärme",
-        "count": 5,
-        "ratioParty": 22.2,
-        "ratioBundestag": 22.2
-      },
-      {
-        "word": "technologie",
-        "count": 5,
-        "ratioParty": 14.2,
-        "ratioBundestag": 19.5
+        "score": 16.2,
+        "ratio": 24.6
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "verantwortungsvoll",
         "count": 3,
-        "ratioParty": 19.2,
-        "ratioBundestag": 26.4
+        "score": 9.9,
+        "ratio": 26.4
       },
       {
         "word": "sicher",
         "count": 5,
-        "ratioParty": 4.4,
-        "ratioBundestag": 5.0
+        "score": 8.9,
+        "ratio": 5.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "verantwortungsvoll",
+        "count": 3,
+        "score": 9.0,
+        "ratio": 19.2
+      },
+      {
+        "word": "sicher",
+        "count": 5,
+        "score": 8.4,
+        "ratio": 4.4
       }
     ]
   },
@@ -127,50 +173,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Maria-Lena Weiss häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Maria-Lena Weiss häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Politik",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Investitionen",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
-        "text": "Minister",
+        "text": "Klima",
         "isCorrect": false
       },
       {
-        "text": "Geothermie",
+        "text": "Speicherung",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Geothermie\" nutzt Dr. Maria-Lena Weiss 98.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "132.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Speicherung\" sagte Dr. Maria-Lena Weiss 6× (68.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Maria-Lena Weiss häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Maria-Lena Weiss häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
       {
         "text": "Verantwortungsvoll",
         "isCorrect": true
       },
       {
-        "text": "Europäisch",
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verantwortungsvoll\" nutzt Dr. Maria-Lena Weiss 19.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "26.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Verantwortungsvoll\" sagte Dr. Maria-Lena Weiss 3× (26.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦔",

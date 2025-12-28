@@ -72,44 +72,84 @@
         "count": 8
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "arabien",
-        "count": 7,
-        "ratioParty": 226.8,
-        "ratioBundestag": 209.4
-      },
-      {
-        "word": "saudi",
-        "count": 7,
-        "ratioParty": 151.2,
-        "ratioBundestag": 199.9
-      },
-      {
-        "word": "guardian",
-        "count": 6,
-        "ratioParty": 97.2,
-        "ratioBundestag": 58.0
-      },
-      {
-        "word": "regime",
-        "count": 7,
-        "ratioParty": 90.7,
-        "ratioBundestag": 45.8
+        "word": "frauen",
+        "count": 23,
+        "score": 64.7,
+        "ratio": 15.7
       },
       {
         "word": "taliban",
         "count": 13,
-        "ratioParty": 36.6,
-        "ratioBundestag": 97.2
+        "score": 59.6,
+        "ratio": 97.2
+      },
+      {
+        "word": "arabien",
+        "count": 7,
+        "score": 37.4,
+        "ratio": 209.4
+      },
+      {
+        "word": "saudi",
+        "count": 7,
+        "score": 37.1,
+        "ratio": 199.9
+      },
+      {
+        "word": "kurdischen",
+        "count": 5,
+        "score": 34.8,
+        "ratio": 1047.1
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "frauen",
+        "count": 23,
+        "score": 54.9,
+        "ratio": 9.9
+      },
+      {
+        "word": "taliban",
+        "count": 13,
+        "score": 47.2,
+        "ratio": 36.6
+      },
+      {
+        "word": "arabien",
+        "count": 7,
+        "score": 38.0,
+        "ratio": 226.8
+      },
+      {
+        "word": "saudi",
+        "count": 7,
+        "score": 35.2,
+        "ratio": 151.2
+      },
+      {
+        "word": "regime",
+        "count": 7,
+        "score": 31.6,
+        "ratio": 90.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "zynisch",
         "count": 3,
-        "ratioParty": 19.4,
-        "ratioBundestag": 69.8
+        "score": 12.8,
+        "ratio": 69.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "zynisch",
+        "count": 3,
+        "score": 9.1,
+        "ratio": 19.4
       }
     ]
   },
@@ -133,37 +173,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Cansu Özdemir häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Cansu Özdemir häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Arabien",
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Frauen",
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
+        "text": "Freiheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Arabien\" nutzt Cansu Özdemir 226.8× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "209.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Frauen\" sagte Cansu Özdemir 23× (15.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Cansu Özdemir häufiger als der Rest der DIE LINKE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Cansu Özdemir häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Europäisch",
-        "isCorrect": false
+        "text": "Zynisch",
+        "isCorrect": true
       },
       {
-        "text": "Politisch",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
@@ -171,12 +210,11 @@
         "isCorrect": false
       },
       {
-        "text": "Zynisch",
-        "isCorrect": true
+        "text": "Schlecht",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Zynisch\" nutzt Cansu Özdemir 19.4× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "69.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Zynisch\" sagte Cansu Özdemir 3× (69.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -194,12 +232,12 @@
         "score": 0.962
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.933
+        "emoji": "🦜",
+        "name": "Papagei",
+        "title": "Neugierige Fragestellerin",
+        "reason": "Mit vielen Fragen bringst du wichtige Themen auf den Tisch.",
+        "id": "papagei",
+        "score": 0.7
       }
     ]
   },

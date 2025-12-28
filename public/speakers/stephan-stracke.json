@@ -72,44 +72,84 @@
         "count": 10
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "highlight",
-        "count": 5,
-        "ratioParty": 517.4,
-        "ratioBundestag": 405.1
+        "word": "bauen",
+        "count": 25,
+        "score": 77.2,
+        "ratio": 21.0
+      },
+      {
+        "word": "verlässlichkeit",
+        "count": 11,
+        "score": 38.5,
+        "ratio": 32.1
       },
       {
         "word": "bundesverkehrsminister",
         "count": 6,
-        "ratioParty": 248.4,
-        "ratioBundestag": 324.1
+        "score": 34.7,
+        "ratio": 324.1
       },
       {
-        "word": "verkehrspolitik",
-        "count": 5,
-        "ratioParty": 64.7,
-        "ratioBundestag": 52.3
+        "word": "schneller",
+        "count": 11,
+        "score": 32.6,
+        "ratio": 18.3
       },
       {
-        "word": "kunden",
-        "count": 5,
-        "ratioParty": 43.1,
-        "ratioBundestag": 41.0
-      },
-      {
-        "word": "verkehrsinfrastruktur",
-        "count": 5,
-        "ratioParty": 37.0,
-        "ratioBundestag": 42.6
+        "word": "bauturbo",
+        "count": 9,
+        "score": 31.1,
+        "ratio": 30.7
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "bauen",
+        "count": 25,
+        "score": 74.7,
+        "ratio": 18.9
+      },
+      {
+        "word": "verlässlichkeit",
+        "count": 11,
+        "score": 33.2,
+        "ratio": 19.5
+      },
+      {
+        "word": "bundesverkehrsminister",
+        "count": 6,
+        "score": 33.1,
+        "ratio": 248.4
+      },
+      {
+        "word": "wohnungsbau",
+        "count": 9,
+        "score": 32.0,
+        "ratio": 33.9
+      },
+      {
+        "word": "highlight",
+        "count": 5,
+        "score": 31.3,
+        "ratio": 517.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "solide",
         "count": 6,
-        "ratioParty": 32.7,
-        "ratioBundestag": 38.1
+        "score": 22.0,
+        "ratio": 38.1
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "solide",
+        "count": 6,
+        "score": 21.1,
+        "ratio": 32.7
       }
     ]
   },
@@ -138,50 +178,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Stephan Stracke häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Stephan Stracke häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Highlight",
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Bauen",
         "isCorrect": true
-      },
-      {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Highlight\" nutzt Stephan Stracke 517.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "405.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Bauen\" sagte Stephan Stracke 25× (21.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Stephan Stracke häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Stephan Stracke häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Jung",
+        "text": "Falsch",
         "isCorrect": false
       },
       {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
+        "text": "Groß",
         "isCorrect": false
       },
       {
         "text": "Solide",
         "isCorrect": true
+      },
+      {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Solide\" nutzt Stephan Stracke 32.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "38.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Solide\" sagte Stephan Stracke 6× (38.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -199,12 +237,12 @@
         "score": 0.961
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.947
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positiver Teamplayer",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.937
       }
     ]
   },

@@ -72,50 +72,96 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "natur",
         "count": 13,
-        "ratioParty": 76.9,
-        "ratioBundestag": 64.8
+        "score": 54.4,
+        "ratio": 64.8
       },
       {
         "word": "naturschutz",
         "count": 8,
-        "ratioParty": 72.0,
-        "ratioBundestag": 59.7
-      },
-      {
-        "word": "umweltschutz",
-        "count": 5,
-        "ratioParty": 38.3,
-        "ratioBundestag": 41.3
-      },
-      {
-        "word": "umwelt",
-        "count": 7,
-        "ratioParty": 32.2,
-        "ratioBundestag": 22.2
+        "score": 32.8,
+        "ratio": 59.7
       },
       {
         "word": "symbolpolitik",
         "count": 6,
-        "ratioParty": 27.0,
-        "ratioBundestag": 46.3
+        "score": 23.1,
+        "ratio": 46.3
+      },
+      {
+        "word": "umwelt",
+        "count": 7,
+        "score": 22.0,
+        "ratio": 22.2
+      },
+      {
+        "word": "politische",
+        "count": 8,
+        "score": 20.1,
+        "ratio": 11.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "natur",
+        "count": 13,
+        "score": 56.6,
+        "ratio": 76.9
+      },
+      {
+        "word": "naturschutz",
+        "count": 8,
+        "score": 34.3,
+        "ratio": 72.0
+      },
+      {
+        "word": "umwelt",
+        "count": 7,
+        "score": 24.5,
+        "ratio": 32.2
+      },
+      {
+        "word": "symbolpolitik",
+        "count": 6,
+        "score": 20.0,
+        "ratio": 27.0
+      },
+      {
+        "word": "umweltschutz",
+        "count": 5,
+        "score": 18.4,
+        "ratio": 38.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "nachhaltig",
         "count": 3,
-        "ratioParty": 27.0,
-        "ratioBundestag": 16.1
+        "score": 8.5,
+        "ratio": 16.1
       },
       {
         "word": "links",
         "count": 3,
-        "ratioParty": 3.2,
-        "ratioBundestag": 9.0
+        "score": 6.9,
+        "ratio": 9.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "nachhaltig",
+        "count": 3,
+        "score": 10.0,
+        "ratio": 27.0
+      },
+      {
+        "word": "links",
+        "count": 3,
+        "score": 4.3,
+        "ratio": 3.2
       }
     ]
   },
@@ -144,37 +190,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Marcel Queckemeyer häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Marcel Queckemeyer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesellschaft",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
+        "text": "Familie",
         "isCorrect": false
       },
       {
         "text": "Natur",
         "isCorrect": true
+      },
+      {
+        "text": "Reform",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Natur\" nutzt Marcel Queckemeyer 76.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "64.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Natur\" sagte Marcel Queckemeyer 13× (64.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Marcel Queckemeyer häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Marcel Queckemeyer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wichtig",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
-        "text": "Notwendig",
+        "text": "Groß",
         "isCorrect": false
       },
       {
@@ -182,12 +227,11 @@
         "isCorrect": true
       },
       {
-        "text": "Klar",
+        "text": "Stark",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Nachhaltig\" nutzt Marcel Queckemeyer 27.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "16.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Nachhaltig\" sagte Marcel Queckemeyer 3× (16.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

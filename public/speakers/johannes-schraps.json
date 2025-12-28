@@ -72,39 +72,72 @@
         "count": 9
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "ukraine",
+        "count": 30,
+        "score": 89.1,
+        "ratio": 18.5
+      },
       {
         "word": "belgien",
         "count": 9,
-        "ratioParty": 1218.8,
-        "ratioBundestag": 321.5
+        "score": 52.0,
+        "ratio": 321.5
       },
       {
         "word": "eingefrorenen",
         "count": 9,
-        "ratioParty": 304.7,
-        "ratioBundestag": 190.9
-      },
-      {
-        "word": "vermögenswerte",
-        "count": 7,
-        "ratioParty": 237.0,
-        "ratioBundestag": 158.4
-      },
-      {
-        "word": "banken",
-        "count": 7,
-        "ratioParty": 86.2,
-        "ratioBundestag": 76.6
+        "score": 47.3,
+        "ratio": 190.9
       },
       {
         "word": "nutzung",
         "count": 10,
-        "ratioParty": 67.7,
-        "ratioBundestag": 52.2
+        "score": 39.7,
+        "ratio": 52.2
+      },
+      {
+        "word": "russischen",
+        "count": 11,
+        "score": 37.7,
+        "ratio": 29.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "ukraine",
+        "count": 30,
+        "score": 86.4,
+        "ratio": 16.8
+      },
+      {
+        "word": "belgien",
+        "count": 9,
+        "score": 64.0,
+        "ratio": 1218.8
+      },
+      {
+        "word": "eingefrorenen",
+        "count": 9,
+        "score": 51.5,
+        "ratio": 304.7
+      },
+      {
+        "word": "nutzung",
+        "count": 10,
+        "score": 42.3,
+        "ratio": 67.7
+      },
+      {
+        "word": "vermögenswerte",
+        "count": 7,
+        "score": 38.3,
+        "ratio": 237.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 459,
@@ -131,27 +164,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Johannes Schraps häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Johannes Schraps häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Zukunft",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Belgien",
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Ukraine",
         "isCorrect": true
       },
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
+        "text": "Gesetz",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Belgien\" nutzt Johannes Schraps 1218.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "321.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ukraine\" sagte Johannes Schraps 30× (18.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -170,12 +202,12 @@
         "score": 0.965
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.92
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrlicher Redner",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.733
       }
     ]
   },

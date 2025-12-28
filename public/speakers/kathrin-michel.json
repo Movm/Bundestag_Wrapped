@@ -72,56 +72,108 @@
         "count": 9
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "jobcenter",
-        "count": 6,
-        "ratioParty": 67.0,
-        "ratioBundestag": 55.2
+        "word": "investieren",
+        "count": 15,
+        "score": 36.0,
+        "ratio": 10.0
+      },
+      {
+        "word": "haushalt",
+        "count": 18,
+        "score": 33.1,
+        "ratio": 5.3
       },
       {
         "word": "glück",
         "count": 8,
-        "ratioParty": 31.4,
-        "ratioBundestag": 31.3
+        "score": 27.8,
+        "ratio": 31.3
       },
       {
-        "word": "brücken",
-        "count": 7,
-        "ratioParty": 23.1,
-        "ratioBundestag": 21.5
+        "word": "investitionen",
+        "count": 12,
+        "score": 25.3,
+        "ratio": 7.2
       },
       {
-        "word": "sozialstaat",
-        "count": 7,
-        "ratioParty": 19.9,
-        "ratioBundestag": 17.6
-      },
-      {
-        "word": "schwarzarbeit",
-        "count": 6,
-        "ratioParty": 18.5,
-        "ratioBundestag": 43.6
+        "word": "chancen",
+        "count": 8,
+        "score": 24.6,
+        "ratio": 20.6
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "fair",
-        "count": 3,
-        "ratioParty": 20.7,
-        "ratioBundestag": 26.9
+        "word": "haushalt",
+        "count": 18,
+        "score": 31.2,
+        "ratio": 4.7
       },
+      {
+        "word": "glück",
+        "count": 8,
+        "score": 27.8,
+        "ratio": 31.4
+      },
+      {
+        "word": "investieren",
+        "count": 15,
+        "score": 26.1,
+        "ratio": 4.7
+      },
+      {
+        "word": "jobcenter",
+        "count": 6,
+        "score": 25.3,
+        "ratio": 67.0
+      },
+      {
+        "word": "chancen",
+        "count": 8,
+        "score": 23.6,
+        "ratio": 18.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "nachhaltig",
         "count": 4,
-        "ratioParty": 15.3,
-        "ratioBundestag": 17.1
+        "score": 11.6,
+        "ratio": 17.1
+      },
+      {
+        "word": "fair",
+        "count": 3,
+        "score": 10.0,
+        "ratio": 26.9
       },
       {
         "word": "sicher",
         "count": 3,
-        "ratioParty": 2.2,
-        "ratioBundestag": 2.9
+        "score": 4.1,
+        "ratio": 2.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "nachhaltig",
+        "count": 4,
+        "score": 11.2,
+        "ratio": 15.3
+      },
+      {
+        "word": "fair",
+        "count": 3,
+        "score": 9.2,
+        "ratio": 20.7
+      },
+      {
+        "word": "sicher",
+        "count": 3,
+        "score": 3.5,
+        "ratio": 2.2
       }
     ]
   },
@@ -145,50 +197,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Kathrin Michel häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Kathrin Michel häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Antrag",
+        "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Jobcenter",
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Investieren",
         "isCorrect": true
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Jobcenter\" nutzt Kathrin Michel 67.0× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "55.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Investieren\" sagte Kathrin Michel 15× (10.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Kathrin Michel häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Kathrin Michel häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Fair",
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
+        "text": "Nachhaltig",
         "isCorrect": true
-      },
-      {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Europäisch",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Fair\" nutzt Kathrin Michel 20.7× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "26.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Nachhaltig\" sagte Kathrin Michel 4× (17.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦔",

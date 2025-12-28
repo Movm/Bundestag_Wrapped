@@ -72,27 +72,48 @@
         "count": 3
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "religion",
         "count": 5,
-        "ratioParty": 1381.6,
-        "ratioBundestag": 778.4
+        "score": 33.3,
+        "ratio": 778.4
       },
       {
         "word": "leben",
         "count": 5,
-        "ratioParty": 9.8,
-        "ratioBundestag": 14.3
+        "score": 13.6,
+        "ratio": 14.3
       },
       {
         "word": "menschen",
         "count": 5,
-        "ratioParty": 2.1,
-        "ratioBundestag": 3.7
+        "score": 7.7,
+        "ratio": 3.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "religion",
+        "count": 5,
+        "score": 36.2,
+        "ratio": 1381.6
+      },
+      {
+        "word": "leben",
+        "count": 5,
+        "score": 11.9,
+        "ratio": 9.8
+      },
+      {
+        "word": "menschen",
+        "count": 5,
+        "score": 5.6,
+        "ratio": 2.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 256,
@@ -109,8 +130,12 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Bodo Ramelow häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Bodo Ramelow häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
       {
         "text": "Religion",
         "isCorrect": true
@@ -120,16 +145,11 @@
         "isCorrect": false
       },
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Politik",
+        "text": "Gesetz",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Religion\" nutzt Bodo Ramelow 1381.6× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "778.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Religion\" sagte Bodo Ramelow 5× (778.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

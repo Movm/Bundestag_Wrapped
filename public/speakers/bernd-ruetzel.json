@@ -52,39 +52,72 @@
         "count": 10
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "rente",
+        "count": 27,
+        "score": 92.2,
+        "ratio": 29.4
+      },
+      {
+        "word": "arbeit",
+        "count": 21,
+        "score": 46.3,
+        "ratio": 8.1
+      },
       {
         "word": "überstanden",
         "count": 6,
-        "ratioParty": 321.8,
-        "ratioBundestag": 461.6
-      },
-      {
-        "word": "selber",
-        "count": 9,
-        "ratioParty": 56.8,
-        "ratioBundestag": 23.0
-      },
-      {
-        "word": "rentenversicherung",
-        "count": 9,
-        "ratioParty": 33.3,
-        "ratioBundestag": 33.4
-      },
-      {
-        "word": "rentenniveau",
-        "count": 8,
-        "ratioParty": 31.8,
-        "ratioBundestag": 36.8
+        "score": 36.8,
+        "ratio": 461.6
       },
       {
         "word": "stunden",
         "count": 10,
-        "ratioParty": 29.8,
-        "ratioBundestag": 26.4
+        "score": 33.1,
+        "ratio": 26.4
+      },
+      {
+        "word": "unschlagbar",
+        "count": 5,
+        "score": 32.6,
+        "ratio": 673.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "rente",
+        "count": 27,
+        "score": 86.0,
+        "ratio": 23.2
+      },
+      {
+        "word": "arbeit",
+        "count": 21,
+        "score": 41.0,
+        "ratio": 6.0
+      },
+      {
+        "word": "selber",
+        "count": 9,
+        "score": 36.5,
+        "ratio": 56.8
+      },
+      {
+        "word": "überstanden",
+        "count": 6,
+        "score": 34.7,
+        "ratio": 321.8
+      },
+      {
+        "word": "stunden",
+        "count": 10,
+        "score": 34.3,
+        "ratio": 29.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 379,
@@ -111,27 +144,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Bernd Rützel häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Bernd Rützel häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Reform",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Überstanden",
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Rente",
         "isCorrect": true
-      },
-      {
-        "text": "Haushalt",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Überstanden\" nutzt Bernd Rützel 321.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "461.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Rente\" sagte Bernd Rützel 27× (29.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -150,12 +182,12 @@
         "score": 0.997
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.973
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positiver Teamplayer",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.918
       }
     ]
   },

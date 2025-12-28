@@ -72,33 +72,60 @@
         "count": 3
       }
     ],
-    "signatureWords": [
-      {
-        "word": "wehrpflicht",
-        "count": 6,
-        "ratioParty": 167.8,
-        "ratioBundestag": 71.0
-      },
+    "signatureWordsBundestag": [
       {
         "word": "ausbildung",
         "count": 7,
-        "ratioParty": 52.4,
-        "ratioBundestag": 69.5
+        "score": 29.8,
+        "ratio": 69.5
       },
       {
-        "word": "pflege",
+        "word": "wehrpflicht",
         "count": 6,
-        "ratioParty": 41.9,
-        "ratioBundestag": 31.2
+        "score": 25.7,
+        "ratio": 71.0
       },
       {
         "word": "künftig",
         "count": 6,
-        "ratioParty": 27.4,
-        "ratioBundestag": 34.8
+        "score": 21.5,
+        "ratio": 34.8
+      },
+      {
+        "word": "pflege",
+        "count": 6,
+        "score": 20.8,
+        "ratio": 31.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "wehrpflicht",
+        "count": 6,
+        "score": 30.8,
+        "ratio": 167.8
+      },
+      {
+        "word": "ausbildung",
+        "count": 7,
+        "score": 27.8,
+        "ratio": 52.4
+      },
+      {
+        "word": "pflege",
+        "count": 6,
+        "score": 22.6,
+        "ratio": 41.9
+      },
+      {
+        "word": "künftig",
+        "count": 6,
+        "score": 20.1,
+        "ratio": 27.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 435,
@@ -120,27 +147,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Sabine Dittmar häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Sabine Dittmar häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Ausschuss",
+        "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
+        "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Wehrpflicht",
+        "text": "Ausbildung",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Wehrpflicht\" nutzt Sabine Dittmar 167.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "71.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ausbildung\" sagte Sabine Dittmar 7× (69.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

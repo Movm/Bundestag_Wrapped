@@ -64,50 +64,96 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "springer",
         "count": 10,
-        "ratioParty": 544.4,
-        "ratioBundestag": 426.2
+        "score": 60.6,
+        "ratio": 426.2
       },
       {
-        "word": "ausländer",
-        "count": 6,
-        "ratioParty": 217.8,
-        "ratioBundestag": 50.5
-      },
-      {
-        "word": "jobcenter",
-        "count": 5,
-        "ratioParty": 60.5,
-        "ratioBundestag": 42.6
-      },
-      {
-        "word": "sozialpolitik",
-        "count": 5,
-        "ratioParty": 47.3,
-        "ratioBundestag": 50.9
+        "word": "sozialstaat",
+        "count": 10,
+        "score": 32.1,
+        "ratio": 23.8
       },
       {
         "word": "straftaten",
         "count": 7,
-        "ratioParty": 31.1,
-        "ratioBundestag": 41.1
+        "score": 26.2,
+        "ratio": 41.1
+      },
+      {
+        "word": "ausländer",
+        "count": 6,
+        "score": 23.7,
+        "ratio": 50.5
+      },
+      {
+        "word": "unterschied",
+        "count": 7,
+        "score": 21.4,
+        "ratio": 20.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "springer",
+        "count": 10,
+        "score": 63.0,
+        "ratio": 544.4
+      },
+      {
+        "word": "ausländer",
+        "count": 6,
+        "score": 32.3,
+        "ratio": 217.8
+      },
+      {
+        "word": "sozialstaat",
+        "count": 10,
+        "score": 30.5,
+        "ratio": 20.2
+      },
+      {
+        "word": "straftaten",
+        "count": 7,
+        "score": 24.3,
+        "ratio": 31.1
+      },
+      {
+        "word": "jobcenter",
+        "count": 5,
+        "score": 20.6,
+        "ratio": 60.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "falsch",
         "count": 4,
-        "ratioParty": 9.6,
-        "ratioBundestag": 8.4
+        "score": 9.0,
+        "ratio": 8.4
       },
       {
         "word": "sicher",
         "count": 3,
-        "ratioParty": 2.4,
-        "ratioBundestag": 2.7
+        "score": 4.0,
+        "ratio": 2.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 9.4,
+        "ratio": 9.6
+      },
+      {
+        "word": "sicher",
+        "count": 3,
+        "score": 3.7,
+        "ratio": 2.4
       }
     ]
   },
@@ -136,41 +182,40 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Kai Whittaker häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Kai Whittaker häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
       {
         "text": "Springer",
         "isCorrect": true
       },
       {
-        "text": "Steuern",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Springer\" nutzt Kai Whittaker 544.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "426.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Springer\" sagte Kai Whittaker 10× (426.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Kai Whittaker häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Kai Whittaker häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Jung",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
-        "text": "Neu",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
@@ -178,8 +223,7 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Falsch\" nutzt Kai Whittaker 9.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "8.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Falsch\" sagte Kai Whittaker 4× (8.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",

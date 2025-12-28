@@ -60,44 +60,84 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "atomkraft",
         "count": 9,
-        "ratioParty": 72.1,
-        "ratioBundestag": 215.9
-      },
-      {
-        "word": "klimawandel",
-        "count": 5,
-        "ratioParty": 60.1,
-        "ratioBundestag": 19.8
+        "score": 48.4,
+        "ratio": 215.9
       },
       {
         "word": "energiewende",
         "count": 8,
-        "ratioParty": 53.4,
-        "ratioBundestag": 23.3
+        "score": 25.5,
+        "ratio": 23.3
+      },
+      {
+        "word": "fossile",
+        "count": 6,
+        "score": 25.5,
+        "ratio": 69.0
+      },
+      {
+        "word": "erneuerbaren",
+        "count": 6,
+        "score": 18.8,
+        "ratio": 21.9
       },
       {
         "word": "branche",
         "count": 5,
-        "ratioParty": 28.6,
-        "ratioBundestag": 35.3
-      },
-      {
-        "word": "wasserstoff",
-        "count": 5,
-        "ratioParty": 22.2,
-        "ratioBundestag": 31.3
+        "score": 18.0,
+        "ratio": 35.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "atomkraft",
+        "count": 9,
+        "score": 38.6,
+        "ratio": 72.1
+      },
+      {
+        "word": "energiewende",
+        "count": 8,
+        "score": 32.0,
+        "ratio": 53.4
+      },
+      {
+        "word": "klimawandel",
+        "count": 5,
+        "score": 20.6,
+        "ratio": 60.1
+      },
+      {
+        "word": "fossile",
+        "count": 6,
+        "score": 17.8,
+        "ratio": 18.5
+      },
+      {
+        "word": "branche",
+        "count": 5,
+        "score": 16.9,
+        "ratio": 28.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "falsch",
         "count": 3,
-        "ratioParty": 6.0,
-        "ratioBundestag": 7.7
+        "score": 6.5,
+        "ratio": 7.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 5.8,
+        "ratio": 6.0
       }
     ]
   },
@@ -121,58 +161,64 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Alaa Alhamwi häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Alaa Alhamwi häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Rente",
+        "isCorrect": false
+      },
       {
         "text": "Atomkraft",
         "isCorrect": true
       },
       {
-        "text": "Haushalt",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaft",
+        "text": "Koalition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Atomkraft\" nutzt Dr. Alaa Alhamwi 72.1× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "215.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Atomkraft\" sagte Dr. Alaa Alhamwi 9× (215.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Alaa Alhamwi häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Dr. Alaa Alhamwi häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Sicher",
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
         "text": "Falsch",
         "isCorrect": true
-      },
-      {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Falsch\" nutzt Dr. Alaa Alhamwi 6.0× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "7.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Falsch\" sagte Dr. Alaa Alhamwi 3× (7.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐻",
-    "name": "Bär",
-    "title": "Standhafter Debattierer",
-    "reason": "Trotz 24× unterbrochen zu werden, bleibst du standhaft.",
-    "id": "baer",
+    "emoji": "🦊",
+    "name": "Fuchs",
+    "title": "Cleverer Stratege",
+    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+    "id": "fuchs",
     "alternatives": [
+      {
+        "emoji": "🐻",
+        "name": "Bär",
+        "title": "Standhafter Debattierer",
+        "reason": "Trotz 24× unterbrochen zu werden, bleibst du standhaft.",
+        "id": "baer",
+        "score": 0.953
+      },
       {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
@@ -180,14 +226,6 @@
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.922
-      },
-      {
-        "emoji": "🐝",
-        "name": "Biene",
-        "title": "Fleißiger Abgeordneter",
-        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-        "id": "biene",
-        "score": 0.882
       }
     ]
   },

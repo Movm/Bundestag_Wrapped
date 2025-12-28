@@ -52,44 +52,84 @@
         "count": 9
       }
     ],
-    "signatureWords": [
-      {
-        "word": "huthis",
-        "count": 6,
-        "ratioParty": 138.3,
-        "ratioBundestag": 159.7
-      },
+    "signatureWordsBundestag": [
       {
         "word": "kulturstaatsminister",
         "count": 10,
-        "ratioParty": 100.8,
-        "ratioBundestag": 72.2
+        "score": 42.9,
+        "ratio": 72.2
+      },
+      {
+        "word": "huthis",
+        "count": 6,
+        "score": 30.5,
+        "ratio": 159.7
+      },
+      {
+        "word": "debatte",
+        "count": 14,
+        "score": 28.7,
+        "ratio": 6.7
+      },
+      {
+        "word": "politischen",
+        "count": 9,
+        "score": 19.5,
+        "ratio": 7.7
       },
       {
         "word": "mandats",
         "count": 5,
-        "ratioParty": 53.8,
-        "ratioBundestag": 46.8
-      },
-      {
-        "word": "konflikt",
-        "count": 5,
-        "ratioParty": 19.7,
-        "ratioBundestag": 21.2
-      },
-      {
-        "word": "bündnis",
-        "count": 6,
-        "ratioParty": 18.3,
-        "ratioBundestag": 18.0
+        "score": 19.3,
+        "ratio": 46.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "kulturstaatsminister",
+        "count": 10,
+        "score": 46.2,
+        "ratio": 100.8
+      },
+      {
+        "word": "huthis",
+        "count": 6,
+        "score": 29.6,
+        "ratio": 138.3
+      },
+      {
+        "word": "debatte",
+        "count": 14,
+        "score": 26.1,
+        "ratio": 5.5
+      },
+      {
+        "word": "mandats",
+        "count": 5,
+        "score": 20.0,
+        "ratio": 53.8
+      },
+      {
+        "word": "politischen",
+        "count": 9,
+        "score": 19.1,
+        "ratio": 7.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "sicher",
         "count": 5,
-        "ratioParty": 3.0,
-        "ratioBundestag": 3.4
+        "score": 7.4,
+        "ratio": 3.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 5,
+        "score": 6.9,
+        "ratio": 3.0
       }
     ]
   },
@@ -113,50 +153,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Johannes Volkmann häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Johannes Volkmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
+        "text": "Sicherheit",
         "isCorrect": false
       },
       {
-        "text": "Huthis",
+        "text": "Investitionen",
+        "isCorrect": false
+      },
+      {
+        "text": "Kulturstaatsminister",
         "isCorrect": true
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Huthis\" nutzt Johannes Volkmann 138.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "159.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Kulturstaatsminister\" sagte Johannes Volkmann 10× (72.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Johannes Volkmann häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Johannes Volkmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Sicher",
         "isCorrect": true
       },
       {
-        "text": "Gut",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Klar",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "National",
+        "text": "Alt",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sicher\" nutzt Johannes Volkmann 3.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "3.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Johannes Volkmann 5× (3.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

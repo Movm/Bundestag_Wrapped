@@ -68,21 +68,36 @@
         "count": 3
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "taliban",
         "count": 5,
-        "ratioParty": 337.6,
-        "ratioBundestag": 109.9
+        "score": 23.5,
+        "ratio": 109.9
       },
       {
         "word": "kommunen",
         "count": 5,
-        "ratioParty": 6.9,
-        "ratioBundestag": 7.6
+        "score": 10.7,
+        "ratio": 7.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "taliban",
+        "count": 5,
+        "score": 29.1,
+        "ratio": 337.6
+      },
+      {
+        "word": "kommunen",
+        "count": 5,
+        "score": 10.4,
+        "ratio": 6.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 455,
@@ -104,27 +119,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Aydan Özoğuz häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Aydan Özoğuz häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
+      },
       {
         "text": "Taliban",
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
+        "text": "Familie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Taliban\" nutzt Aydan Özoğuz 337.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "109.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Taliban\" sagte Aydan Özoğuz 5× (109.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

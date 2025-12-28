@@ -72,56 +72,114 @@
         "count": 20
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "antiziganismus",
-        "count": 5,
-        "ratioParty": 170.1,
-        "ratioBundestag": 242.0
-      },
-      {
-        "word": "partnerschaften",
-        "count": 6,
-        "ratioParty": 68.1,
-        "ratioBundestag": 17.3
-      },
-      {
-        "word": "krisenprävention",
-        "count": 8,
-        "ratioParty": 45.4,
-        "ratioBundestag": 60.5
-      },
-      {
-        "word": "multilateralismus",
-        "count": 5,
-        "ratioParty": 34.0,
-        "ratioBundestag": 57.6
+        "word": "hilfe",
+        "count": 35,
+        "score": 95.5,
+        "ratio": 14.3
       },
       {
         "word": "entwicklungszusammenarbeit",
         "count": 25,
-        "ratioParty": 28.4,
-        "ratioBundestag": 32.5
+        "score": 87.8,
+        "ratio": 32.5
+      },
+      {
+        "word": "mittel",
+        "count": 29,
+        "score": 56.0,
+        "ratio": 5.9
+      },
+      {
+        "word": "kürzungen",
+        "count": 17,
+        "score": 53.6,
+        "ratio": 22.4
+      },
+      {
+        "word": "gekürzt",
+        "count": 15,
+        "score": 50.6,
+        "ratio": 28.1
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
       {
-        "word": "solide",
-        "count": 3,
-        "ratioParty": 9.3,
-        "ratioBundestag": 6.9
+        "word": "hilfe",
+        "count": 35,
+        "score": 87.3,
+        "ratio": 11.1
       },
+      {
+        "word": "entwicklungszusammenarbeit",
+        "count": 25,
+        "score": 84.5,
+        "ratio": 28.4
+      },
+      {
+        "word": "mittel",
+        "count": 29,
+        "score": 52.4,
+        "ratio": 5.1
+      },
+      {
+        "word": "kürzungen",
+        "count": 17,
+        "score": 43.7,
+        "ratio": 12.1
+      },
+      {
+        "word": "humanitäre",
+        "count": 19,
+        "score": 43.7,
+        "ratio": 9.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "angemessen",
         "count": 4,
-        "ratioParty": 7.6,
-        "ratioBundestag": 9.0
+        "score": 9.2,
+        "ratio": 9.0
+      },
+      {
+        "word": "solide",
+        "count": 3,
+        "score": 6.2,
+        "ratio": 6.9
       },
       {
         "word": "rechts",
         "count": 4,
-        "ratioParty": 3.9,
-        "ratioBundestag": 3.1
+        "score": 5.6,
+        "ratio": 3.1
+      },
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 4.8,
+        "ratio": 2.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "angemessen",
+        "count": 4,
+        "score": 8.6,
+        "ratio": 7.6
+      },
+      {
+        "word": "solide",
+        "count": 3,
+        "score": 7.0,
+        "ratio": 9.3
+      },
+      {
+        "word": "rechts",
+        "count": 4,
+        "score": 6.3,
+        "ratio": 3.9
       }
     ]
   },
@@ -150,50 +208,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jamila Schäfer häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Jamila Schäfer häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Antiziganismus",
-        "isCorrect": true
-      },
       {
         "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Klima",
-        "isCorrect": false
-      }
-    ],
-    "explanationParty": "\"Antiziganismus\" nutzt Jamila Schäfer 170.1× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "242.0× häufiger als der Bundestag-Durchschnitt."
-  },
-  "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Jamila Schäfer häufiger als der Rest der GRÜNE-Fraktion?",
-    "options": [
-      {
-        "text": "Solide",
+        "text": "Hilfe",
         "isCorrect": true
       },
       {
-        "text": "Neu",
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "\"Hilfe\" sagte Jamila Schäfer 35× (14.3× häufiger als der Bundestag-Durchschnitt)."
+  },
+  "signatureAdjectiveQuiz": {
+    "question": "Welches Adjektiv nutzt Jamila Schäfer häufiger als der Bundestag-Durchschnitt?",
+    "options": [
+      {
+        "text": "Angemessen",
+        "isCorrect": true
+      },
+      {
+        "text": "Sicher",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
         "text": "Problematisch",
         "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Solide\" nutzt Jamila Schäfer 9.3× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "6.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Angemessen\" sagte Jamila Schäfer 4× (9.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -211,12 +267,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.955
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrliche Rednerin",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.951
       }
     ]
   },

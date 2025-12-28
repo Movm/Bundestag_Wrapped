@@ -72,44 +72,84 @@
         "count": 9
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "wasserstoffhochlauf",
         "count": 7,
-        "ratioParty": 662.4,
-        "ratioBundestag": 518.8
+        "score": 43.8,
+        "ratio": 518.8
       },
       {
         "word": "kernfusion",
         "count": 8,
-        "ratioParty": 137.6,
-        "ratioBundestag": 206.2
+        "score": 42.7,
+        "ratio": 206.2
+      },
+      {
+        "word": "wirtschaft",
+        "count": 17,
+        "score": 34.0,
+        "ratio": 6.4
+      },
+      {
+        "word": "deutschland",
+        "count": 25,
+        "score": 27.9,
+        "ratio": 2.0
       },
       {
         "word": "partnerschaften",
         "count": 7,
-        "ratioParty": 32.3,
-        "ratioBundestag": 50.0
-      },
-      {
-        "word": "wasserstoff",
-        "count": 6,
-        "ratioParty": 29.9,
-        "ratioBundestag": 26.7
-      },
-      {
-        "word": "absolut",
-        "count": 6,
-        "ratioParty": 23.7,
-        "ratioBundestag": 18.6
+        "score": 27.5,
+        "ratio": 50.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "wasserstoffhochlauf",
+        "count": 7,
+        "score": 45.5,
+        "ratio": 662.4
+      },
+      {
+        "word": "kernfusion",
+        "count": 8,
+        "score": 39.5,
+        "ratio": 137.6
+      },
+      {
+        "word": "wirtschaft",
+        "count": 17,
+        "score": 30.0,
+        "ratio": 4.8
+      },
+      {
+        "word": "partnerschaften",
+        "count": 7,
+        "score": 24.5,
+        "ratio": 32.3
+      },
+      {
+        "word": "china",
+        "count": 8,
+        "score": 23.4,
+        "ratio": 17.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "entscheidend",
         "count": 3,
-        "ratioParty": 4.0,
-        "ratioBundestag": 6.6
+        "score": 6.1,
+        "ratio": 6.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 4.8,
+        "ratio": 4.0
       }
     ]
   },
@@ -133,37 +173,36 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Fabian Gramling häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Fabian Gramling häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
-        "isCorrect": false
-      },
       {
         "text": "Wasserstoffhochlauf",
         "isCorrect": true
       },
       {
-        "text": "Koalition",
-        "isCorrect": false
-      }
-    ],
-    "explanationParty": "\"Wasserstoffhochlauf\" nutzt Fabian Gramling 662.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "518.8× häufiger als der Bundestag-Durchschnitt."
-  },
-  "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Fabian Gramling häufiger als der Rest der CDU/CSU-Fraktion?",
-    "options": [
-      {
-        "text": "Schlecht",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
-        "text": "Stark",
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "\"Wasserstoffhochlauf\" sagte Fabian Gramling 7× (518.8× häufiger als der Bundestag-Durchschnitt)."
+  },
+  "signatureAdjectiveQuiz": {
+    "question": "Welches Adjektiv nutzt Fabian Gramling häufiger als der Bundestag-Durchschnitt?",
+    "options": [
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
         "isCorrect": false
       },
       {
@@ -171,12 +210,11 @@
         "isCorrect": true
       },
       {
-        "text": "Problematisch",
+        "text": "Politisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Fabian Gramling 4.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "6.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Entscheidend\" sagte Fabian Gramling 3× (6.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -194,12 +232,12 @@
         "score": 0.977
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.92
+        "emoji": "🦉",
+        "name": "Eule",
+        "title": "Themenexperte",
+        "reason": "Dein Fachwort \"Wasserstoffhochlauf\" nutzt du 518.8× häufiger als deine Fraktion.",
+        "id": "eule",
+        "score": 0.83
       }
     ]
   },

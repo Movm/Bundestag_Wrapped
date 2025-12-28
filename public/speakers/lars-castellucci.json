@@ -68,39 +68,72 @@
         "count": 7
       }
     ],
-    "signatureWords": [
-      {
-        "word": "nationen",
-        "count": 8,
-        "ratioParty": 25.6,
-        "ratioBundestag": 27.7
-      },
+    "signatureWordsBundestag": [
       {
         "word": "vereinte",
         "count": 5,
-        "ratioParty": 25.0,
-        "ratioBundestag": 1387.3
+        "score": 36.2,
+        "ratio": 1387.3
       },
       {
-        "word": "damals",
-        "count": 7,
-        "ratioParty": 15.1,
-        "ratioBundestag": 10.9
+        "word": "menschen",
+        "count": 26,
+        "score": 36.1,
+        "ratio": 3.0
       },
       {
         "word": "besser",
         "count": 12,
-        "ratioParty": 7.8,
-        "ratioBundestag": 9.4
+        "score": 28.1,
+        "ratio": 9.4
       },
       {
-        "word": "schützen",
-        "count": 6,
-        "ratioParty": 5.3,
-        "ratioBundestag": 7.3
+        "word": "nationen",
+        "count": 8,
+        "score": 26.9,
+        "ratio": 27.7
+      },
+      {
+        "word": "damals",
+        "count": 7,
+        "score": 17.3,
+        "ratio": 10.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "menschen",
+        "count": 26,
+        "score": 33.8,
+        "ratio": 2.7
+      },
+      {
+        "word": "nationen",
+        "count": 8,
+        "score": 26.2,
+        "ratio": 25.6
+      },
+      {
+        "word": "besser",
+        "count": 12,
+        "score": 26.1,
+        "ratio": 7.8
+      },
+      {
+        "word": "damals",
+        "count": 7,
+        "score": 19.5,
+        "ratio": 15.1
+      },
+      {
+        "word": "vereinte",
+        "count": 5,
+        "score": 16.3,
+        "ratio": 25.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 537,
@@ -122,27 +155,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Lars Castellucci häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Lars Castellucci häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Politik",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
-        "text": "Klima",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Nationen",
+        "text": "Vereinte",
         "isCorrect": true
       },
       {
-        "text": "Energie",
+        "text": "Familie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Nationen\" nutzt Dr. Lars Castellucci 25.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "27.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Vereinte\" sagte Dr. Lars Castellucci 5× (1387.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -153,20 +185,20 @@
     "id": "eichhoernchen",
     "alternatives": [
       {
-        "emoji": "🐝",
-        "name": "Biene",
-        "title": "Fleißiger Abgeordneter",
-        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-        "id": "biene",
-        "score": 0.778
+        "emoji": "🦉",
+        "name": "Eule",
+        "title": "Themenexperte",
+        "reason": "Dein Fachwort \"Vereinte\" nutzt du 1387.3× häufiger als deine Fraktion.",
+        "id": "eule",
+        "score": 0.8
       },
       {
-        "emoji": "🐇",
-        "name": "Hase",
-        "title": "Wendiger Optimist",
-        "reason": "Mit positivem Blick reagierst du schnell auf neue Themen.",
-        "id": "hase",
-        "score": 0.667
+        "emoji": "🦊",
+        "name": "Fuchs",
+        "title": "Cleverer Stratege",
+        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+        "id": "fuchs",
+        "score": 0.78
       }
     ]
   },

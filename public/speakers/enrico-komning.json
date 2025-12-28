@@ -72,44 +72,84 @@
         "count": 9
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "politik",
+        "count": 17,
+        "score": 31.8,
+        "ratio": 5.5
+      },
+      {
+        "word": "links",
+        "count": 10,
+        "score": 30.8,
+        "ratio": 20.9
+      },
+      {
+        "word": "grüne",
+        "count": 11,
+        "score": 28.8,
+        "ratio": 12.7
+      },
       {
         "word": "wiener",
         "count": 5,
-        "ratioParty": 234.0,
-        "ratioBundestag": 222.7
-      },
-      {
-        "word": "beschleunigung",
-        "count": 6,
-        "ratioParty": 84.2,
-        "ratioBundestag": 45.1
-      },
-      {
-        "word": "verteidigt",
-        "count": 5,
-        "ratioParty": 43.9,
-        "ratioBundestag": 35.0
-      },
-      {
-        "word": "wirtschaftspolitik",
-        "count": 5,
-        "ratioParty": 24.2,
-        "ratioBundestag": 21.4
+        "score": 27.1,
+        "ratio": 222.7
       },
       {
         "word": "reiche",
         "count": 9,
-        "ratioParty": 23.0,
-        "ratioBundestag": 19.1
+        "score": 27.0,
+        "ratio": 19.1
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "reiche",
+        "count": 9,
+        "score": 28.6,
+        "ratio": 23.0
+      },
+      {
+        "word": "wiener",
+        "count": 5,
+        "score": 27.3,
+        "ratio": 234.0
+      },
+      {
+        "word": "beschleunigung",
+        "count": 6,
+        "score": 26.7,
+        "ratio": 84.2
+      },
+      {
+        "word": "freiheit",
+        "count": 12,
+        "score": 26.1,
+        "ratio": 7.8
+      },
+      {
+        "word": "politik",
+        "count": 17,
+        "score": 25.9,
+        "ratio": 3.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "links",
         "count": 10,
-        "ratioParty": 7.4,
-        "ratioBundestag": 20.9
+        "score": 30.8,
+        "ratio": 20.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "links",
+        "count": 10,
+        "score": 21.3,
+        "ratio": 7.4
       }
     ]
   },
@@ -138,18 +178,18 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Enrico Komning häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Enrico Komning häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Investitionen",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Wiener",
+        "text": "Politik",
         "isCorrect": true
       },
       {
-        "text": "Kinder",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
@@ -157,14 +197,13 @@
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wiener\" nutzt Enrico Komning 234.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "222.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Politik\" sagte Enrico Komning 17× (5.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Enrico Komning häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Enrico Komning häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "National",
         "isCorrect": false
       },
       {
@@ -172,7 +211,7 @@
         "isCorrect": true
       },
       {
-        "text": "Erfolgreich",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
@@ -180,8 +219,7 @@
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Links\" nutzt Enrico Komning 7.4× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "20.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Links\" sagte Enrico Komning 10× (20.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

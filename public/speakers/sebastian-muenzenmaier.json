@@ -72,44 +72,84 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "hubertz",
         "count": 19,
-        "ratioParty": 182.1,
-        "ratioBundestag": 194.5
-      },
-      {
-        "word": "wohnen",
-        "count": 7,
-        "ratioParty": 39.5,
-        "ratioBundestag": 18.8
-      },
-      {
-        "word": "draußen",
-        "count": 8,
-        "ratioParty": 18.7,
-        "ratioBundestag": 36.4
-      },
-      {
-        "word": "bauen",
-        "count": 10,
-        "ratioParty": 15.7,
-        "ratioBundestag": 10.8
+        "score": 100.2,
+        "ratio": 194.5
       },
       {
         "word": "ministerin",
         "count": 17,
-        "ratioParty": 11.0,
-        "ratioBundestag": 12.9
+        "score": 44.7,
+        "ratio": 12.9
+      },
+      {
+        "word": "draußen",
+        "count": 8,
+        "score": 29.0,
+        "ratio": 36.4
+      },
+      {
+        "word": "bauen",
+        "count": 10,
+        "score": 24.7,
+        "ratio": 10.8
+      },
+      {
+        "word": "wohnen",
+        "count": 7,
+        "score": 20.9,
+        "ratio": 18.8
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "hubertz",
+        "count": 19,
+        "score": 99.0,
+        "ratio": 182.1
+      },
+      {
+        "word": "ministerin",
+        "count": 17,
+        "score": 42.3,
+        "ratio": 11.0
+      },
+      {
+        "word": "bauen",
+        "count": 10,
+        "score": 28.2,
+        "ratio": 15.7
+      },
+      {
+        "word": "wohnen",
+        "count": 7,
+        "score": 25.9,
+        "ratio": 39.5
+      },
+      {
+        "word": "draußen",
+        "count": 8,
+        "score": 23.8,
+        "ratio": 18.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "weltfremd",
         "count": 3,
-        "ratioParty": 574.9,
-        "ratioBundestag": 849.8
+        "score": 20.2,
+        "ratio": 849.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "weltfremd",
+        "count": 3,
+        "score": 19.1,
+        "ratio": 574.9
       }
     ]
   },
@@ -138,10 +178,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Sebastian Münzenmaier häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Sebastian Münzenmaier häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Opposition",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
@@ -149,26 +189,25 @@
         "isCorrect": true
       },
       {
-        "text": "Europa",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Koalition",
+        "text": "Zukunft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Hubertz\" nutzt Sebastian Münzenmaier 182.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "194.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Hubertz\" sagte Sebastian Münzenmaier 19× (194.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Sebastian Münzenmaier häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Sebastian Münzenmaier häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Alt",
+        "text": "Stark",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
@@ -176,12 +215,11 @@
         "isCorrect": true
       },
       {
-        "text": "Schlecht",
+        "text": "Notwendig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Weltfremd\" nutzt Sebastian Münzenmaier 574.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "849.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Weltfremd\" sagte Sebastian Münzenmaier 3× (849.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

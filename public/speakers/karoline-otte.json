@@ -72,50 +72,96 @@
         "count": 8
       }
     ],
-    "signatureWords": [
-      {
-        "word": "kommunale",
-        "count": 7,
-        "ratioParty": 211.6,
-        "ratioBundestag": 39.0
-      },
-      {
-        "word": "kommunalen",
-        "count": 5,
-        "ratioParty": 151.1,
-        "ratioBundestag": 31.8
-      },
-      {
-        "word": "kassen",
-        "count": 7,
-        "ratioParty": 63.5,
-        "ratioBundestag": 69.5
-      },
+    "signatureWordsBundestag": [
       {
         "word": "gemeinden",
         "count": 13,
-        "ratioParty": 49.1,
-        "ratioBundestag": 50.0
+        "score": 51.1,
+        "ratio": 50.0
+      },
+      {
+        "word": "kommunen",
+        "count": 16,
+        "score": 34.6,
+        "ratio": 7.7
       },
       {
         "word": "reichsten",
         "count": 7,
-        "ratioParty": 42.3,
-        "ratioBundestag": 70.6
+        "score": 29.9,
+        "ratio": 70.6
+      },
+      {
+        "word": "kassen",
+        "count": 7,
+        "score": 29.8,
+        "ratio": 69.5
+      },
+      {
+        "word": "alltag",
+        "count": 9,
+        "score": 28.2,
+        "ratio": 22.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "gemeinden",
+        "count": 13,
+        "score": 50.9,
+        "ratio": 49.1
+      },
+      {
+        "word": "kommunen",
+        "count": 16,
+        "score": 41.6,
+        "ratio": 12.5
+      },
+      {
+        "word": "kommunale",
+        "count": 7,
+        "score": 37.5,
+        "ratio": 211.6
+      },
+      {
+        "word": "kassen",
+        "count": 7,
+        "score": 29.2,
+        "ratio": 63.5
+      },
+      {
+        "word": "alltag",
+        "count": 9,
+        "score": 27.8,
+        "ratio": 20.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "teuer",
         "count": 3,
-        "ratioParty": 8.0,
-        "ratioBundestag": 8.7
+        "score": 6.8,
+        "ratio": 8.7
       },
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 3.6,
-        "ratioBundestag": 4.5
+        "score": 5.1,
+        "ratio": 4.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "teuer",
+        "count": 3,
+        "score": 6.6,
+        "ratio": 8.0
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 4.6,
+        "ratio": 3.6
       }
     ]
   },
@@ -139,50 +185,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Karoline Otte häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Karoline Otte häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bildung",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Investitionen",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Kommunale",
+        "text": "Gemeinden",
         "isCorrect": true
+      },
+      {
+        "text": "Kanzler",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kommunale\" nutzt Karoline Otte 211.6× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "39.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Gemeinden\" sagte Karoline Otte 13× (50.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Karoline Otte häufiger als der Rest der GRÜNE-Fraktion?",
+    "question": "Welches Adjektiv nutzt Karoline Otte häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
         "text": "Falsch",
         "isCorrect": false
       },
       {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
         "text": "Teuer",
         "isCorrect": true
+      },
+      {
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Teuer\" nutzt Karoline Otte 8.0× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "8.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Teuer\" sagte Karoline Otte 3× (8.7× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -200,12 +244,12 @@
         "score": 0.961
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.947
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrliche Rednerin",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.833
       }
     ]
   },

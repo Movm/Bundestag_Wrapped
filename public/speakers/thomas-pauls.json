@@ -72,39 +72,72 @@
         "count": 5
       }
     ],
-    "signatureWords": [
-      {
-        "word": "medikamente",
-        "count": 5,
-        "ratioParty": 607.4,
-        "ratioBundestag": 111.7
-      },
+    "signatureWordsBundestag": [
       {
         "word": "souveränität",
         "count": 8,
-        "ratioParty": 28.9,
-        "ratioBundestag": 28.4
+        "score": 27.0,
+        "ratio": 28.4
+      },
+      {
+        "word": "medikamente",
+        "count": 5,
+        "score": 23.6,
+        "ratio": 111.7
       },
       {
         "word": "übrigens",
         "count": 8,
-        "ratioParty": 11.6,
-        "ratioBundestag": 12.5
+        "score": 20.8,
+        "ratio": 12.5
+      },
+      {
+        "word": "deutschland",
+        "count": 13,
+        "score": 14.5,
+        "ratio": 2.0
       },
       {
         "word": "digitale",
         "count": 5,
-        "ratioParty": 9.6,
-        "ratioBundestag": 10.6
-      },
-      {
-        "word": "investieren",
-        "count": 5,
-        "ratioParty": 4.9,
-        "ratioBundestag": 5.2
+        "score": 12.3,
+        "ratio": 10.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "medikamente",
+        "count": 5,
+        "score": 32.1,
+        "ratio": 607.4
+      },
+      {
+        "word": "souveränität",
+        "count": 8,
+        "score": 27.2,
+        "ratio": 28.9
+      },
+      {
+        "word": "übrigens",
+        "count": 8,
+        "score": 20.2,
+        "ratio": 11.6
+      },
+      {
+        "word": "digitale",
+        "count": 5,
+        "score": 11.8,
+        "ratio": 9.6
+      },
+      {
+        "word": "jahren",
+        "count": 8,
+        "score": 11.6,
+        "ratio": 3.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 572,
@@ -126,14 +159,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Thomas Pauls häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Thomas Pauls häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Energie",
-        "isCorrect": false
-      },
-      {
-        "text": "Medikamente",
+        "text": "Souveränität",
         "isCorrect": true
       },
       {
@@ -141,12 +170,15 @@
         "isCorrect": false
       },
       {
-        "text": "Steuern",
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Medikamente\" nutzt Dr. Thomas Pauls 607.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "111.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Souveränität\" sagte Dr. Thomas Pauls 8× (28.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -165,12 +197,12 @@
         "score": 0.786
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.753
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 0.742
       }
     ]
   },

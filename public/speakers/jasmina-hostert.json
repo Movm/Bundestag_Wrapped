@@ -72,39 +72,72 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "ferien",
-        "count": 5,
-        "ratioParty": 424.3,
-        "ratioBundestag": 163.4
+        "word": "frauen",
+        "count": 19,
+        "score": 55.4,
+        "ratio": 17.4
       },
       {
-        "word": "ganztag",
-        "count": 5,
-        "ratioParty": 169.7,
-        "ratioBundestag": 90.4
-      },
-      {
-        "word": "männern",
-        "count": 5,
-        "ratioParty": 77.2,
-        "ratioBundestag": 70.8
-      },
-      {
-        "word": "dayton",
-        "count": 5,
-        "ratioParty": 77.2,
-        "ratioBundestag": 73.3
+        "word": "kitas",
+        "count": 11,
+        "score": 44.5,
+        "ratio": 56.0
       },
       {
         "word": "herzegowina",
         "count": 8,
-        "ratioParty": 64.7,
-        "ratioBundestag": 65.4
+        "score": 33.6,
+        "ratio": 65.4
+      },
+      {
+        "word": "kinder",
+        "count": 14,
+        "score": 33.3,
+        "ratio": 9.8
+      },
+      {
+        "word": "bosnien",
+        "count": 8,
+        "score": 32.1,
+        "ratio": 54.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "frauen",
+        "count": 19,
+        "score": 50.9,
+        "ratio": 13.6
+      },
+      {
+        "word": "kitas",
+        "count": 11,
+        "score": 40.1,
+        "ratio": 37.3
+      },
+      {
+        "word": "herzegowina",
+        "count": 8,
+        "score": 33.5,
+        "ratio": 64.7
+      },
+      {
+        "word": "kinder",
+        "count": 14,
+        "score": 32.5,
+        "ratio": 9.2
+      },
+      {
+        "word": "bosnien",
+        "count": 8,
+        "score": 31.5,
+        "ratio": 50.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 343,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jasmina Hostert häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Jasmina Hostert häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Ferien",
+        "text": "Frauen",
         "isCorrect": true
+      },
+      {
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ferien\" nutzt Jasmina Hostert 424.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "163.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Frauen\" sagte Jasmina Hostert 19× (17.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -157,20 +189,20 @@
     "id": "eichhoernchen",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.92
-      },
-      {
         "emoji": "🐝",
         "name": "Biene",
         "title": "Fleißige Abgeordnete",
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 0.885
+      },
+      {
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positive Teamplayerin",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.835
       }
     ]
   },

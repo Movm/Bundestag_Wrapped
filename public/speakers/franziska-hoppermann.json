@@ -72,50 +72,96 @@
         "count": 9
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "bereinigungssitzung",
-        "count": 5,
-        "ratioParty": 73.8,
-        "ratioBundestag": 60.3
+        "word": "ministerium",
+        "count": 24,
+        "score": 79.4,
+        "ratio": 26.3
       },
       {
         "word": "staatsmodernisierung",
         "count": 18,
-        "ratioParty": 49.0,
-        "ratioBundestag": 76.2
+        "score": 78.2,
+        "ratio": 76.2
+      },
+      {
+        "word": "einzelplan",
+        "count": 18,
+        "score": 52.8,
+        "ratio": 17.8
+      },
+      {
+        "word": "digitalisierung",
+        "count": 16,
+        "score": 45.6,
+        "ratio": 16.3
       },
       {
         "word": "digitales",
         "count": 8,
-        "ratioParty": 44.3,
-        "ratioBundestag": 52.2
-      },
-      {
-        "word": "wildberger",
-        "count": 6,
-        "ratioParty": 37.9,
-        "ratioBundestag": 27.7
-      },
+        "score": 31.8,
+        "ratio": 52.2
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "ministerium",
         "count": 24,
-        "ratioParty": 32.4,
-        "ratioBundestag": 26.3
+        "score": 84.2,
+        "ratio": 32.4
+      },
+      {
+        "word": "staatsmodernisierung",
+        "count": 18,
+        "score": 70.4,
+        "ratio": 49.0
+      },
+      {
+        "word": "einzelplan",
+        "count": 18,
+        "score": 51.1,
+        "ratio": 16.1
+      },
+      {
+        "word": "digitalisierung",
+        "count": 16,
+        "score": 42.6,
+        "ratio": 13.4
+      },
+      {
+        "word": "digitales",
+        "count": 8,
+        "score": 30.5,
+        "ratio": 44.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "entscheidend",
         "count": 3,
-        "ratioParty": 3.7,
-        "ratioBundestag": 6.1
+        "score": 5.9,
+        "ratio": 6.1
       },
       {
         "word": "sicher",
         "count": 4,
-        "ratioParty": 2.6,
-        "ratioBundestag": 3.0
+        "score": 5.5,
+        "ratio": 3.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 5.1,
+        "ratio": 2.6
+      },
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 4.7,
+        "ratio": 3.7
       }
     ]
   },
@@ -149,50 +195,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Franziska Hoppermann häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Franziska Hoppermann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Fraktion",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Bereinigungssitzung",
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Ministerium",
         "isCorrect": true
-      },
-      {
-        "text": "Energie",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bereinigungssitzung\" nutzt Franziska Hoppermann 73.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "60.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ministerium\" sagte Franziska Hoppermann 24× (26.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Franziska Hoppermann häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Franziska Hoppermann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Notwendig",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Erfolgreich",
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
         "text": "Entscheidend",
         "isCorrect": true
-      },
-      {
-        "text": "Jung",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Franziska Hoppermann 3.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "6.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Entscheidend\" sagte Franziska Hoppermann 3× (6.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦦",

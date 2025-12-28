@@ -68,50 +68,96 @@
         "count": 9
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "investitionen",
+        "count": 19,
+        "score": 42.2,
+        "ratio": 8.2
+      },
       {
         "word": "bitcoin",
         "count": 6,
-        "ratioParty": 110.6,
-        "ratioBundestag": 120.0
-      },
-      {
-        "word": "gezielte",
-        "count": 5,
-        "ratioParty": 22.4,
-        "ratioBundestag": 25.7
+        "score": 28.8,
+        "ratio": 120.0
       },
       {
         "word": "reformieren",
         "count": 7,
-        "ratioParty": 17.1,
-        "ratioBundestag": 30.6
+        "score": 24.2,
+        "ratio": 30.6
       },
       {
-        "word": "regulierung",
-        "count": 5,
-        "ratioParty": 16.0,
-        "ratioBundestag": 24.1
+        "word": "wachstum",
+        "count": 9,
+        "score": 22.2,
+        "ratio": 10.8
+      },
+      {
+        "word": "investieren",
+        "count": 11,
+        "score": 20.1,
+        "ratio": 5.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "investitionen",
+        "count": 19,
+        "score": 40.1,
+        "ratio": 7.3
+      },
+      {
+        "word": "bitcoin",
+        "count": 6,
+        "score": 28.3,
+        "ratio": 110.6
+      },
+      {
+        "word": "reformieren",
+        "count": 7,
+        "score": 20.3,
+        "ratio": 17.1
       },
       {
         "word": "ausgaben",
         "count": 8,
-        "ratioParty": 11.3,
-        "ratioBundestag": 11.3
+        "score": 20.0,
+        "ratio": 11.3
+      },
+      {
+        "word": "investieren",
+        "count": 11,
+        "score": 19.7,
+        "ratio": 5.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "wirksam",
         "count": 3,
-        "ratioParty": 8.2,
-        "ratioBundestag": 11.2
+        "score": 7.5,
+        "ratio": 11.2
       },
       {
         "word": "sicher",
         "count": 4,
-        "ratioParty": 2.5,
-        "ratioBundestag": 2.8
+        "score": 5.3,
+        "ratio": 2.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 6.6,
+        "ratio": 8.2
+      },
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 5.0,
+        "ratio": 2.5
       }
     ]
   },
@@ -135,50 +181,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Lukas Krieger häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Lukas Krieger häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
-        "text": "Debatte",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Bitcoin",
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
         "isCorrect": true
-      },
-      {
-        "text": "Antrag",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bitcoin\" nutzt Lukas Krieger 110.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "120.0× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Investitionen\" sagte Lukas Krieger 19× (8.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Lukas Krieger häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Lukas Krieger häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
       {
         "text": "Wirksam",
         "isCorrect": true
       },
       {
-        "text": "Stark",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wirksam\" nutzt Lukas Krieger 8.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "11.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wirksam\" sagte Lukas Krieger 3× (11.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",

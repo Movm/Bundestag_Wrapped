@@ -72,56 +72,108 @@
         "count": 7
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "mandat",
-        "count": 5,
-        "ratioParty": 19.7,
-        "ratioBundestag": 23.1
+        "word": "europa",
+        "count": 16,
+        "score": 35.9,
+        "ratio": 8.4
+      },
+      {
+        "word": "kommunen",
+        "count": 15,
+        "score": 34.5,
+        "ratio": 9.0
       },
       {
         "word": "soldaten",
         "count": 12,
-        "ratioParty": 12.1,
-        "ratioBundestag": 16.0
+        "score": 34.0,
+        "ratio": 16.0
+      },
+      {
+        "word": "reden",
+        "count": 13,
+        "score": 29.6,
+        "ratio": 8.7
       },
       {
         "word": "soldatinnen",
         "count": 9,
-        "ratioParty": 10.2,
-        "ratioBundestag": 20.3
-      },
-      {
-        "word": "interesse",
-        "count": 5,
-        "ratioParty": 8.9,
-        "ratioBundestag": 7.9
-      },
-      {
-        "word": "führt",
-        "count": 5,
-        "ratioParty": 8.8,
-        "ratioBundestag": 7.9
+        "score": 27.5,
+        "ratio": 20.3
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "kommunen",
+        "count": 15,
+        "score": 33.6,
+        "ratio": 8.4
+      },
+      {
+        "word": "europa",
+        "count": 16,
+        "score": 33.0,
+        "ratio": 6.9
+      },
+      {
+        "word": "soldaten",
+        "count": 12,
+        "score": 30.8,
+        "ratio": 12.1
+      },
+      {
+        "word": "reden",
+        "count": 13,
+        "score": 28.1,
+        "ratio": 7.7
+      },
+      {
+        "word": "soldatinnen",
+        "count": 9,
+        "score": 21.7,
+        "ratio": 10.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 6.6,
+        "ratio": 4.3
+      },
       {
         "word": "rechts",
         "count": 3,
-        "ratioParty": 8.3,
-        "ratioBundestag": 7.5
+        "score": 6.4,
+        "ratio": 7.5
       },
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 4.0,
-        "ratioBundestag": 5.6
+        "score": 5.7,
+        "ratio": 5.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 6.7,
+        "ratio": 8.3
       },
       {
         "word": "sicher",
         "count": 4,
-        "ratioParty": 3.2,
-        "ratioBundestag": 4.3
+        "score": 5.7,
+        "ratio": 3.2
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 4.8,
+        "ratio": 4.0
       }
     ]
   },
@@ -150,50 +202,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jürgen Coße häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Jürgen Coße häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Mandat",
-        "isCorrect": true
+        "text": "Reform",
+        "isCorrect": false
       },
       {
         "text": "Europa",
+        "isCorrect": true
+      },
+      {
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
+        "text": "Koalition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Mandat\" nutzt Jürgen Coße 19.7× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "23.1× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Europa\" sagte Jürgen Coße 16× (8.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Jürgen Coße häufiger als der Rest der SPD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Jürgen Coße häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Sicher",
+        "isCorrect": true
+      },
       {
         "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Rechts",
-        "isCorrect": true
-      },
-      {
-        "text": "Problematisch",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Gut",
+        "text": "Klar",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rechts\" nutzt Jürgen Coße 8.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "7.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Sicher\" sagte Jürgen Coße 4× (4.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦦",

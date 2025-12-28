@@ -72,21 +72,36 @@
         "count": 2
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "kommunale",
         "count": 5,
-        "ratioParty": 118.0,
-        "ratioBundestag": 139.8
+        "score": 24.7,
+        "ratio": 139.8
       },
       {
         "word": "schiene",
         "count": 5,
-        "ratioParty": 50.4,
-        "ratioBundestag": 75.8
+        "score": 21.7,
+        "ratio": 75.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "kommunale",
+        "count": 5,
+        "score": 23.9,
+        "ratio": 118.0
+      },
+      {
+        "word": "schiene",
+        "count": 5,
+        "score": 19.7,
+        "ratio": 50.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 398,
@@ -103,27 +118,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Ulrich Lange häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Ulrich Lange häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
       {
         "text": "Kommunale",
         "isCorrect": true
       },
       {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
+        "text": "Arbeit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kommunale\" nutzt Ulrich Lange 118.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "139.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Kommunale\" sagte Ulrich Lange 5× (139.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

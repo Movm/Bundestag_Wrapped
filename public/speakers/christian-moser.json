@@ -64,44 +64,96 @@
         "count": 18
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "klimaschutz",
+        "count": 31,
+        "score": 67.1,
+        "ratio": 7.7
+      },
+      {
+        "word": "preis",
+        "count": 20,
+        "score": 58.3,
+        "ratio": 17.5
+      },
       {
         "word": "hochwasserschutz",
         "count": 11,
-        "ratioParty": 260.2,
-        "ratioBundestag": 144.7
+        "score": 54.8,
+        "ratio": 144.7
       },
       {
-        "word": "umweltminister",
-        "count": 7,
-        "ratioParty": 82.8,
-        "ratioBundestag": 46.0
+        "word": "gesetzentwurf",
+        "count": 22,
+        "score": 43.2,
+        "ratio": 6.1
       },
       {
-        "word": "klimaanpassung",
-        "count": 7,
-        "ratioParty": 82.8,
-        "ratioBundestag": 34.0
-      },
-      {
-        "word": "chemischen",
-        "count": 8,
-        "ratioParty": 56.8,
-        "ratioBundestag": 94.2
-      },
-      {
-        "word": "klimaschutzpolitik",
-        "count": 5,
-        "ratioParty": 50.7,
-        "ratioBundestag": 39.9
+        "word": "vermieter",
+        "count": 11,
+        "score": 39.2,
+        "ratio": 34.2
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "klimaschutz",
+        "count": 31,
+        "score": 71.2,
+        "ratio": 8.9
+      },
+      {
+        "word": "preis",
+        "count": 20,
+        "score": 65.1,
+        "ratio": 24.9
+      },
+      {
+        "word": "hochwasserschutz",
+        "count": 11,
+        "score": 61.2,
+        "ratio": 260.2
+      },
+      {
+        "word": "gesetzentwurf",
+        "count": 22,
+        "score": 42.7,
+        "ratio": 6.0
+      },
+      {
+        "word": "vermieter",
+        "count": 11,
+        "score": 41.1,
+        "ratio": 41.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "stark",
+        "count": 4,
+        "score": 4.7,
+        "ratio": 2.2
+      },
       {
         "word": "schlecht",
         "count": 3,
-        "ratioParty": 5.3,
-        "ratioBundestag": 3.2
+        "score": 4.3,
+        "ratio": 3.2
+      },
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 3.7,
+        "ratio": 2.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "schlecht",
+        "count": 3,
+        "score": 5.5,
+        "ratio": 5.3
       }
     ]
   },
@@ -135,50 +187,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Christian Moser häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Christian Moser häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Hochwasserschutz",
-        "isCorrect": true
+        "text": "Rente",
+        "isCorrect": false
       },
       {
         "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
-      }
-    ],
-    "explanationParty": "\"Hochwasserschutz\" nutzt Christian Moser 260.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "144.7× häufiger als der Bundestag-Durchschnitt."
-  },
-  "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Christian Moser häufiger als der Rest der CDU/CSU-Fraktion?",
-    "options": [
-      {
-        "text": "Schlecht",
+        "text": "Klimaschutz",
         "isCorrect": true
       },
       {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schlecht\" nutzt Christian Moser 5.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "3.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Klimaschutz\" sagte Christian Moser 31× (7.7× häufiger als der Bundestag-Durchschnitt)."
+  },
+  "signatureAdjectiveQuiz": {
+    "question": "Welches Adjektiv nutzt Christian Moser häufiger als der Bundestag-Durchschnitt?",
+    "options": [
+      {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
+        "isCorrect": true
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "\"Stark\" sagte Christian Moser 4× (2.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🦁",
@@ -188,19 +238,19 @@
     "id": "loewe",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 1.0
-      },
-      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüter",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
+        "score": 1.0
+      },
+      {
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißiger Abgeordneter",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
         "score": 1.0
       }
     ]

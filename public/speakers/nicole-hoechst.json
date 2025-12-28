@@ -72,39 +72,72 @@
         "count": 10
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "forschung",
+        "count": 20,
+        "score": 61.6,
+        "ratio": 20.8
+      },
       {
         "word": "europarat",
         "count": 11,
-        "ratioParty": 154.5,
-        "ratioBundestag": 82.4
+        "score": 48.7,
+        "ratio": 82.4
+      },
+      {
+        "word": "deutschland",
+        "count": 33,
+        "score": 42.0,
+        "ratio": 2.6
       },
       {
         "word": "wissenschaft",
         "count": 11,
-        "ratioParty": 36.6,
-        "ratioBundestag": 24.6
+        "score": 35.7,
+        "ratio": 24.6
       },
       {
-        "word": "raumfahrt",
-        "count": 6,
-        "ratioParty": 28.1,
-        "ratioBundestag": 25.0
-      },
-      {
-        "word": "hightech",
-        "count": 7,
-        "ratioParty": 27.6,
-        "ratioBundestag": 14.7
-      },
+        "word": "ministerin",
+        "count": 15,
+        "score": 32.1,
+        "ratio": 7.5
+      }
+    ],
+    "signatureWordsParty": [
       {
         "word": "forschung",
         "count": 20,
-        "ratioParty": 24.5,
-        "ratioBundestag": 20.8
+        "score": 64.8,
+        "ratio": 24.5
+      },
+      {
+        "word": "europarat",
+        "count": 11,
+        "score": 55.5,
+        "ratio": 154.5
+      },
+      {
+        "word": "wissenschaft",
+        "count": 11,
+        "score": 39.9,
+        "ratio": 36.6
+      },
+      {
+        "word": "bildung",
+        "count": 12,
+        "score": 36.2,
+        "ratio": 19.4
+      },
+      {
+        "word": "ministerin",
+        "count": 15,
+        "score": 29.9,
+        "ratio": 6.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 543,
@@ -131,27 +164,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Nicole Höchst häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Nicole Höchst häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Migration",
+        "isCorrect": false
+      },
       {
         "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Europarat",
+        "text": "Forschung",
         "isCorrect": true
+      },
+      {
+        "text": "Opposition",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Europarat\" nutzt Nicole Höchst 154.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "82.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Forschung\" sagte Nicole Höchst 20× (20.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

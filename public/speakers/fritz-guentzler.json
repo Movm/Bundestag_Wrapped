@@ -72,44 +72,84 @@
         "count": 16
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "maßnahmenpaket",
-        "count": 7,
-        "ratioParty": 174.8,
-        "ratioBundestag": 219.8
-      },
-      {
-        "word": "entfernungspauschale",
-        "count": 6,
-        "ratioParty": 99.9,
-        "ratioBundestag": 110.8
+        "word": "unternehmen",
+        "count": 32,
+        "score": 61.4,
+        "ratio": 5.8
       },
       {
         "word": "sportstätten",
         "count": 14,
-        "ratioParty": 99.9,
-        "ratioBundestag": 61.9
+        "score": 58.0,
+        "ratio": 61.9
       },
       {
-        "word": "steueränderungsgesetz",
-        "count": 6,
-        "ratioParty": 85.6,
-        "ratioBundestag": 89.7
+        "word": "sport",
+        "count": 16,
+        "score": 52.7,
+        "ratio": 25.9
       },
       {
-        "word": "abschreibung",
-        "count": 7,
-        "ratioParty": 77.7,
-        "ratioBundestag": 115.7
+        "word": "worden",
+        "count": 22,
+        "score": 46.7,
+        "ratio": 7.3
+      },
+      {
+        "word": "vorne",
+        "count": 15,
+        "score": 44.3,
+        "ratio": 18.1
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "sportstätten",
+        "count": 14,
+        "score": 64.6,
+        "ratio": 99.9
+      },
+      {
+        "word": "unternehmen",
+        "count": 32,
+        "score": 56.7,
+        "ratio": 4.9
+      },
+      {
+        "word": "sport",
+        "count": 16,
+        "score": 55.6,
+        "ratio": 31.3
+      },
+      {
+        "word": "worden",
+        "count": 22,
+        "score": 43.0,
+        "ratio": 6.1
+      },
+      {
+        "word": "vorne",
+        "count": 15,
+        "score": 40.9,
+        "ratio": 14.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "wettbewerbsfähig",
         "count": 5,
-        "ratioParty": 10.2,
-        "ratioBundestag": 19.6
+        "score": 15.1,
+        "ratio": 19.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wettbewerbsfähig",
+        "count": 5,
+        "score": 12.1,
+        "ratio": 10.2
       }
     ]
   },
@@ -138,41 +178,40 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Fritz Güntzler häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Fritz Güntzler häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Maßnahmenpaket",
+        "text": "Unternehmen",
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Arbeit",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Sicherheit",
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Maßnahmenpaket\" nutzt Fritz Güntzler 174.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "219.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Unternehmen\" sagte Fritz Güntzler 32× (5.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Fritz Güntzler häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Fritz Güntzler häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Richtig",
+        "isCorrect": false
+      },
       {
         "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
+        "text": "Klar",
         "isCorrect": false
       },
       {
@@ -180,8 +219,7 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Wettbewerbsfähig\" nutzt Fritz Güntzler 10.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "19.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Wettbewerbsfähig\" sagte Fritz Güntzler 5× (19.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐿️",

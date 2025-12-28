@@ -72,27 +72,48 @@
         "count": 3
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "abtreibung",
         "count": 5,
-        "ratioParty": 512.4,
-        "ratioBundestag": 1942.4
+        "score": 37.9,
+        "ratio": 1942.4
       },
       {
         "word": "studie",
         "count": 5,
-        "ratioParty": 118.3,
-        "ratioBundestag": 103.8
+        "score": 23.3,
+        "ratio": 103.8
       },
       {
         "word": "frauen",
         "count": 6,
-        "ratioParty": 25.1,
-        "ratioBundestag": 17.4
+        "score": 17.5,
+        "ratio": 17.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "abtreibung",
+        "count": 5,
+        "score": 31.2,
+        "ratio": 512.4
+      },
+      {
+        "word": "studie",
+        "count": 5,
+        "score": 23.9,
+        "ratio": 118.3
+      },
+      {
+        "word": "frauen",
+        "count": 6,
+        "score": 19.6,
+        "ratio": 25.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 442,
@@ -109,14 +130,14 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Martina Kempf häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Martina Kempf häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Debatte",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
@@ -128,8 +149,7 @@
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Abtreibung\" nutzt Martina Kempf 512.4× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "1942.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Abtreibung\" sagte Martina Kempf 5× (1942.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

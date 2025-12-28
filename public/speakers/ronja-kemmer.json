@@ -72,50 +72,96 @@
         "count": 9
       }
     ],
-    "signatureWords": [
-      {
-        "word": "geist",
-        "count": 5,
-        "ratioParty": 53.3,
-        "ratioBundestag": 64.7
-      },
-      {
-        "word": "wildberger",
-        "count": 7,
-        "ratioParty": 52.5,
-        "ratioBundestag": 37.3
-      },
+    "signatureWordsBundestag": [
       {
         "word": "hightech",
         "count": 12,
-        "ratioParty": 20.2,
-        "ratioBundestag": 28.9
+        "score": 40.8,
+        "ratio": 28.9
       },
       {
         "word": "agenda",
         "count": 12,
-        "ratioParty": 14.5,
-        "ratioBundestag": 18.5
+        "score": 35.6,
+        "ratio": 18.5
       },
       {
-        "word": "souveränität",
+        "word": "unternehmen",
+        "count": 15,
+        "score": 28.0,
+        "ratio": 5.5
+      },
+      {
+        "word": "wildberger",
         "count": 7,
-        "ratioParty": 13.9,
-        "ratioBundestag": 13.8
+        "score": 25.5,
+        "ratio": 37.3
+      },
+      {
+        "word": "vertrauen",
+        "count": 11,
+        "score": 23.4,
+        "ratio": 7.4
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "hightech",
+        "count": 12,
+        "score": 36.7,
+        "ratio": 20.2
+      },
+      {
+        "word": "agenda",
+        "count": 12,
+        "score": 32.9,
+        "ratio": 14.5
+      },
+      {
+        "word": "wildberger",
+        "count": 7,
+        "score": 27.9,
+        "ratio": 52.5
+      },
+      {
+        "word": "unternehmen",
+        "count": 15,
+        "score": 25.6,
+        "ratio": 4.5
+      },
+      {
+        "word": "setzt",
+        "count": 9,
+        "score": 22.2,
+        "ratio": 10.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "entscheidend",
         "count": 6,
-        "ratioParty": 8.7,
-        "ratioBundestag": 14.2
+        "score": 16.3,
+        "ratio": 14.2
       },
       {
         "word": "wirtschaftlich",
         "count": 3,
-        "ratioParty": 7.0,
-        "ratioBundestag": 8.4
+        "score": 6.7,
+        "ratio": 8.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 6,
+        "score": 13.7,
+        "ratio": 8.7
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 6.2,
+        "ratio": 7.0
       }
     ]
   },
@@ -144,50 +190,48 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Ronja Kemmer häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Ronja Kemmer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesellschaft",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Energie",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Minister",
-        "isCorrect": false
-      },
-      {
-        "text": "Geist",
+        "text": "Hightech",
         "isCorrect": true
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Geist\" nutzt Ronja Kemmer 53.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "64.7× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Hightech\" sagte Ronja Kemmer 12× (28.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Ronja Kemmer häufiger als der Rest der CDU/CSU-Fraktion?",
+    "question": "Welches Adjektiv nutzt Ronja Kemmer häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
+      },
       {
         "text": "Entscheidend",
         "isCorrect": true
       },
       {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
+        "text": "Neu",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Ronja Kemmer 8.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "14.2× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Entscheidend\" sagte Ronja Kemmer 6× (14.2× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
     "emoji": "🐝",

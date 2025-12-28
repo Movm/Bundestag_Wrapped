@@ -72,39 +72,72 @@
         "count": 6
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "fusion",
+        "word": "tritium",
         "count": 5,
-        "ratioParty": 808.0,
-        "ratioBundestag": 149.4
-      },
-      {
-        "word": "staatssekretärin",
-        "count": 6,
-        "ratioParty": 42.2,
-        "ratioBundestag": 49.5
+        "score": 37.5,
+        "ratio": 1792.9
       },
       {
         "word": "staatssekretär",
         "count": 7,
-        "ratioParty": 25.1,
-        "ratioBundestag": 35.4
+        "score": 25.2,
+        "ratio": 35.4
+      },
+      {
+        "word": "fusion",
+        "count": 5,
+        "score": 25.1,
+        "ratio": 149.4
+      },
+      {
+        "word": "staatssekretärin",
+        "count": 6,
+        "score": 23.5,
+        "ratio": 49.5
+      },
+      {
+        "word": "deutsche",
+        "count": 10,
+        "score": 18.1,
+        "ratio": 5.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "fusion",
+        "count": 5,
+        "score": 33.5,
+        "ratio": 808.0
+      },
+      {
+        "word": "staatssekretär",
+        "count": 7,
+        "score": 22.8,
+        "ratio": 25.1
+      },
+      {
+        "word": "staatssekretärin",
+        "count": 6,
+        "score": 22.6,
+        "ratio": 42.2
       },
       {
         "word": "tritium",
         "count": 5,
-        "ratioParty": 21.5,
-        "ratioBundestag": 1792.9
+        "score": 15.6,
+        "ratio": 21.5
       },
       {
         "word": "ländern",
         "count": 6,
-        "ratioParty": 10.9,
-        "ratioBundestag": 6.2
+        "score": 14.9,
+        "ratio": 10.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 186,
@@ -126,27 +159,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Stefan Schröder häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Stefan Schröder häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Arbeit",
+        "text": "Tritium",
+        "isCorrect": true
+      },
+      {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Rente",
         "isCorrect": false
       },
       {
         "text": "Kanzler",
         "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Fusion",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Fusion\" nutzt Stefan Schröder 808.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "149.4× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Tritium\" sagte Stefan Schröder 5× (1792.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

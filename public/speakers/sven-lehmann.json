@@ -72,21 +72,36 @@
         "count": 3
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
         "word": "kultur",
         "count": 8,
-        "ratioParty": 55.4,
-        "ratioBundestag": 65.6
+        "score": 33.6,
+        "ratio": 65.6
       },
       {
         "word": "freiheit",
         "count": 6,
-        "ratioParty": 13.2,
-        "ratioBundestag": 14.6
+        "score": 16.5,
+        "ratio": 14.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "kultur",
+        "count": 8,
+        "score": 32.3,
+        "ratio": 55.4
+      },
+      {
+        "word": "freiheit",
+        "count": 6,
+        "score": 15.9,
+        "ratio": 13.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 569,
@@ -108,27 +123,26 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Sven Lehmann häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Sven Lehmann häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
         "isCorrect": false
       },
       {
         "text": "Kultur",
         "isCorrect": true
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
-        "text": "Debatte",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kultur\" nutzt Sven Lehmann 55.4× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "65.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Kultur\" sagte Sven Lehmann 8× (65.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

@@ -72,56 +72,114 @@
         "count": 15
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
+      {
+        "word": "jesiden",
+        "count": 19,
+        "score": 96.8,
+        "ratio": 162.6
+      },
+      {
+        "word": "krankenhäuser",
+        "count": 22,
+        "score": 83.4,
+        "ratio": 43.3
+      },
+      {
+        "word": "ausländer",
+        "count": 18,
+        "score": 79.7,
+        "ratio": 82.6
+      },
+      {
+        "word": "zuzahlungen",
+        "count": 9,
+        "score": 71.6,
+        "ratio": 2849.2
+      },
+      {
+        "word": "facharzt",
+        "count": 9,
+        "score": 61.7,
+        "ratio": 949.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "krankenhäuser",
+        "count": 22,
+        "score": 86.6,
+        "ratio": 50.3
+      },
+      {
+        "word": "jesiden",
+        "count": 19,
+        "score": 68.7,
+        "ratio": 36.2
+      },
       {
         "word": "gesundheitspolitik",
         "count": 11,
-        "ratioParty": 390.0,
-        "ratioBundestag": 108.8
+        "score": 65.7,
+        "ratio": 390.0
       },
       {
-        "word": "zuzahlung",
-        "count": 5,
-        "ratioParty": 354.5,
-        "ratioBundestag": 1582.9
+        "word": "ausländer",
+        "count": 18,
+        "score": 60.8,
+        "ratio": 28.4
       },
       {
-        "word": "wartezeiten",
-        "count": 7,
-        "ratioParty": 124.1,
-        "ratioBundestag": 92.3
-      },
-      {
-        "word": "multikulti",
-        "count": 5,
-        "ratioParty": 118.2,
-        "ratioBundestag": 527.6
-      },
-      {
-        "word": "gesundheitswesen",
-        "count": 9,
-        "ratioParty": 106.4,
-        "ratioBundestag": 43.8
+        "word": "gesundheit",
+        "count": 15,
+        "score": 54.9,
+        "ratio": 38.0
       }
     ],
-    "signatureAdjectives": [
+    "signatureAdjectivesBundestag": [
       {
         "word": "ungerecht",
         "count": 3,
-        "ratioParty": 14.2,
-        "ratioBundestag": 15.6
+        "score": 8.4,
+        "ratio": 15.6
       },
       {
         "word": "gefährlich",
         "count": 3,
-        "ratioParty": 13.3,
-        "ratioBundestag": 9.7
+        "score": 7.1,
+        "ratio": 9.7
+      },
+      {
+        "word": "links",
+        "count": 4,
+        "score": 6.6,
+        "ratio": 4.2
       },
       {
         "word": "rechts",
         "count": 3,
-        "ratioParty": 3.1,
-        "ratioBundestag": 3.0
+        "score": 4.1,
+        "ratio": 3.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "ungerecht",
+        "count": 3,
+        "score": 8.2,
+        "ratio": 14.2
+      },
+      {
+        "word": "gefährlich",
+        "count": 3,
+        "score": 8.0,
+        "ratio": 13.3
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 4.2,
+        "ratio": 3.1
       }
     ]
   },
@@ -145,14 +203,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Martin Sichert häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Martin Sichert häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
@@ -160,35 +214,37 @@
         "isCorrect": false
       },
       {
-        "text": "Gesundheitspolitik",
+        "text": "Jesiden",
         "isCorrect": true
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gesundheitspolitik\" nutzt Martin Sichert 390.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "108.8× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Jesiden\" sagte Martin Sichert 19× (162.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Martin Sichert häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Martin Sichert häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Alt",
-        "isCorrect": false
-      },
       {
         "text": "Ungerecht",
         "isCorrect": true
       },
       {
-        "text": "Stark",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ungerecht\" nutzt Martin Sichert 14.2× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "15.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Ungerecht\" sagte Martin Sichert 3× (15.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

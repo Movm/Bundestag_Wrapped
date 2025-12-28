@@ -72,39 +72,72 @@
         "count": 4
       }
     ],
-    "signatureWords": [
-      {
-        "word": "brüssel",
-        "count": 5,
-        "ratioParty": 364.4,
-        "ratioBundestag": 46.9
-      },
+    "signatureWordsBundestag": [
       {
         "word": "europa",
         "count": 8,
-        "ratioParty": 40.7,
-        "ratioBundestag": 11.1
+        "score": 20.0,
+        "ratio": 11.1
+      },
+      {
+        "word": "brüssel",
+        "count": 5,
+        "score": 19.3,
+        "ratio": 46.9
       },
       {
         "word": "regionen",
         "count": 5,
-        "ratioParty": 36.4,
-        "ratioBundestag": 46.9
-      },
-      {
-        "word": "europäische",
-        "count": 6,
-        "ratioParty": 36.4,
-        "ratioBundestag": 17.1
+        "score": 19.3,
+        "ratio": 46.9
       },
       {
         "word": "europäischen",
         "count": 7,
-        "ratioParty": 32.6,
-        "ratioBundestag": 13.4
+        "score": 18.7,
+        "ratio": 13.4
+      },
+      {
+        "word": "verhindern",
+        "count": 5,
+        "score": 17.4,
+        "ratio": 31.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "europa",
+        "count": 8,
+        "score": 29.8,
+        "ratio": 40.7
+      },
+      {
+        "word": "brüssel",
+        "count": 5,
+        "score": 29.5,
+        "ratio": 364.4
+      },
+      {
+        "word": "europäischen",
+        "count": 7,
+        "score": 24.6,
+        "ratio": 32.6
+      },
+      {
+        "word": "europäische",
+        "count": 6,
+        "score": 21.7,
+        "ratio": 36.4
+      },
+      {
+        "word": "regionen",
+        "count": 5,
+        "score": 18.1,
+        "ratio": 36.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [],
+    "signatureAdjectivesParty": []
   },
   "comparison": {
     "speakerAvgWords": 208,
@@ -126,44 +159,35 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Janina Böttger häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Janina Böttger häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
       {
         "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Bildung",
+        "text": "Europa",
+        "isCorrect": true
+      },
+      {
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Brüssel",
-        "isCorrect": true
+        "text": "Demokratie",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Brüssel\" nutzt Janina Böttger 364.4× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "46.9× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Europa\" sagte Janina Böttger 8× (11.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Clevere Strategin",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüterin",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 0.775
-      },
       {
         "emoji": "🦜",
         "name": "Papagei",
@@ -171,6 +195,14 @@
         "reason": "Mit vielen Fragen bringst du wichtige Themen auf den Tisch.",
         "id": "papagei",
         "score": 0.769
+      },
+      {
+        "emoji": "🐬",
+        "name": "Delfin",
+        "title": "Diplomatische Rednerin",
+        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
+        "id": "delfin",
+        "score": 0.7
       }
     ]
   },

@@ -72,44 +72,90 @@
         "count": 12
       }
     ],
-    "signatureWords": [
-      {
-        "word": "herkunftsstaaten",
-        "count": 6,
-        "ratioParty": 452.8,
-        "ratioBundestag": 59.4
-      },
+    "signatureWordsBundestag": [
       {
         "word": "asylrecht",
         "count": 12,
-        "ratioParty": 452.8,
-        "ratioBundestag": 310.8
-      },
-      {
-        "word": "binnengrenzen",
-        "count": 5,
-        "ratioParty": 377.3,
-        "ratioBundestag": 112.2
+        "score": 68.9,
+        "ratio": 310.8
       },
       {
         "word": "notlage",
         "count": 13,
-        "ratioParty": 245.2,
-        "ratioBundestag": 109.4
+        "score": 61.2,
+        "ratio": 109.4
+      },
+      {
+        "word": "artikel",
+        "count": 15,
+        "score": 47.1,
+        "ratio": 22.1
       },
       {
         "word": "dublin",
         "count": 9,
-        "ratioParty": 135.8,
-        "ratioBundestag": 77.7
+        "score": 39.3,
+        "ratio": 77.7
+      },
+      {
+        "word": "außengrenzen",
+        "count": 9,
+        "score": 37.8,
+        "ratio": 65.9
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "asylrecht",
+        "count": 12,
+        "score": 73.4,
+        "ratio": 452.8
+      },
+      {
+        "word": "notlage",
+        "count": 13,
+        "score": 71.6,
+        "ratio": 245.2
+      },
+      {
+        "word": "artikel",
+        "count": 15,
+        "score": 46.9,
+        "ratio": 21.8
+      },
+      {
+        "word": "dublin",
+        "count": 9,
+        "score": 44.3,
+        "ratio": 135.8
+      },
+      {
+        "word": "außengrenzen",
+        "count": 9,
+        "score": 38.1,
+        "ratio": 67.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "links",
+        "count": 4,
+        "score": 6.8,
+        "ratio": 4.4
+      },
       {
         "word": "sicher",
         "count": 5,
-        "ratioParty": 3.1,
-        "ratioBundestag": 2.3
+        "score": 5.9,
+        "ratio": 2.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 5,
+        "score": 7.0,
+        "ratio": 3.1
       }
     ]
   },
@@ -138,37 +184,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Christian Wirth häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Dr. Christian Wirth häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Herkunftsstaaten",
+        "text": "Asylrecht",
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
-        "isCorrect": false
-      }
-    ],
-    "explanationParty": "\"Herkunftsstaaten\" nutzt Dr. Christian Wirth 452.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "59.4× häufiger als der Bundestag-Durchschnitt."
-  },
-  "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Dr. Christian Wirth häufiger als der Rest der AfD-Fraktion?",
-    "options": [
-      {
-        "text": "Notwendig",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Gut",
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "\"Asylrecht\" sagte Dr. Christian Wirth 12× (310.8× häufiger als der Bundestag-Durchschnitt)."
+  },
+  "signatureAdjectiveQuiz": {
+    "question": "Welches Adjektiv nutzt Dr. Christian Wirth häufiger als der Bundestag-Durchschnitt?",
+    "options": [
+      {
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
@@ -176,12 +217,15 @@
         "isCorrect": false
       },
       {
-        "text": "Sicher",
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Links",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Sicher\" nutzt Dr. Christian Wirth 3.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "2.3× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Links\" sagte Dr. Christian Wirth 4× (4.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {

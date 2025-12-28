@@ -60,50 +60,96 @@
         "count": 10
       }
     ],
-    "signatureWords": [
+    "signatureWordsBundestag": [
       {
-        "word": "optimieren",
-        "count": 5,
-        "ratioParty": 269.2,
-        "ratioBundestag": 239.5
-      },
-      {
-        "word": "noots",
-        "count": 5,
-        "ratioParty": 269.2,
-        "ratioBundestag": 72.6
-      },
-      {
-        "word": "digitalisieren",
-        "count": 5,
-        "ratioParty": 134.6,
-        "ratioBundestag": 57.0
-      },
-      {
-        "word": "familienpolitik",
-        "count": 7,
-        "ratioParty": 47.1,
-        "ratioBundestag": 64.5
+        "word": "familie",
+        "count": 12,
+        "score": 32.4,
+        "ratio": 13.9
       },
       {
         "word": "identität",
         "count": 9,
-        "ratioParty": 20.6,
-        "ratioBundestag": 29.9
+        "score": 30.9,
+        "ratio": 29.9
+      },
+      {
+        "word": "familienpolitik",
+        "count": 7,
+        "score": 29.3,
+        "ratio": 64.5
+      },
+      {
+        "word": "optimieren",
+        "count": 5,
+        "score": 27.4,
+        "ratio": 239.5
+      },
+      {
+        "word": "projekte",
+        "count": 10,
+        "score": 25.6,
+        "ratio": 11.9
       }
     ],
-    "signatureAdjectives": [
+    "signatureWordsParty": [
+      {
+        "word": "familie",
+        "count": 12,
+        "score": 29.5,
+        "ratio": 10.7
+      },
+      {
+        "word": "gesellschaft",
+        "count": 12,
+        "score": 28.3,
+        "ratio": 9.6
+      },
+      {
+        "word": "optimieren",
+        "count": 5,
+        "score": 28.0,
+        "ratio": 269.2
+      },
+      {
+        "word": "noots",
+        "count": 5,
+        "score": 28.0,
+        "ratio": 269.2
+      },
+      {
+        "word": "identität",
+        "count": 9,
+        "score": 27.7,
+        "ratio": 20.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
       {
         "word": "demokratisch",
         "count": 4,
-        "ratioParty": 15.4,
-        "ratioBundestag": 24.6
+        "score": 13.0,
+        "ratio": 24.6
       },
       {
         "word": "gescheitert",
         "count": 3,
-        "ratioParty": 7.0,
-        "ratioBundestag": 13.4
+        "score": 8.0,
+        "ratio": 13.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "demokratisch",
+        "count": 4,
+        "score": 11.2,
+        "ratio": 15.4
+      },
+      {
+        "word": "gescheitert",
+        "count": 3,
+        "score": 6.2,
+        "ratio": 7.0
       }
     ]
   },
@@ -127,33 +173,32 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Sebastian Maack häufiger als der Rest der Fraktion?",
+    "question": "Welches Wort nutzt Sebastian Maack häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Rente",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Optimieren",
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Familie",
         "isCorrect": true
       },
       {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
+        "text": "Europa",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Optimieren\" nutzt Sebastian Maack 269.2× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "239.5× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Familie\" sagte Sebastian Maack 12× (13.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Sebastian Maack häufiger als der Rest der AfD-Fraktion?",
+    "question": "Welches Adjektiv nutzt Sebastian Maack häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gefährlich",
+        "text": "Jung",
         "isCorrect": false
       },
       {
@@ -161,16 +206,15 @@
         "isCorrect": true
       },
       {
-        "text": "Alt",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Klar",
+        "text": "Gut",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Demokratisch\" nutzt Sebastian Maack 15.4× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "24.6× häufiger als der Bundestag-Durchschnitt."
+    "explanation": "\"Demokratisch\" sagte Sebastian Maack 4× (24.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": null,
   "toneProfile": {
