@@ -2,8 +2,7 @@ import { useRef, useCallback, useMemo, useState, useEffect } from 'react';
 import { useDebugRender } from '@/hooks/useDebugRender';
 import { motion, AnimatePresence } from 'motion/react';
 import { useWrappedData } from '@/hooks/useDataQueries';
-import { Header } from '@/components/ui/Header';
-import { FloatingAudioControls } from '@/components/ui/FloatingAudioControls';
+import { WrappedToolbar } from '@/components/ui/WrappedToolbar';
 import { Footer } from '@/components/ui/Footer';
 import { SEO } from '@/components/seo/SEO';
 import { SITE_CONFIG } from '@/components/seo/constants';
@@ -163,7 +162,6 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
     );
   }
 
-  const showHeader = currentSection === 'intro';
   const showFooter = currentSection === 'finale';
 
   const websiteSchema = {
@@ -183,21 +181,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
   return (
     <>
       <SEO canonicalUrl="/" structuredData={websiteSchema} />
-      <AnimatePresence>
-        {showHeader && (
-          <motion.div
-            initial={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-          >
-            <Header variant="dark" isMenuOpen={isMenuOpen} onMenuToggle={onMenuToggle} />
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <AnimatePresence>
-        {!showHeader && <FloatingAudioControls />}
-      </AnimatePresence>
+      <WrappedToolbar isMenuOpen={isMenuOpen} onMenuToggle={onMenuToggle} />
 
       <BackgroundSystem
         slideId={currentSection}

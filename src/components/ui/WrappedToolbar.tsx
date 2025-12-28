@@ -1,10 +1,15 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { Volume2, VolumeX, Music } from 'lucide-react';
+import { Volume2, VolumeX, Music, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useAudioStore, useTrackInfo } from '@/stores/audioStore';
 import { themeMusic } from '@/lib/theme-music';
 
-export function FloatingAudioControls() {
+interface WrappedToolbarProps {
+  isMenuOpen: boolean;
+  onMenuToggle: () => void;
+}
+
+export function WrappedToolbar({ isMenuOpen, onMenuToggle }: WrappedToolbarProps) {
   const muted = useAudioStore((s) => s.isMuted);
   const toggleMute = useAudioStore((s) => s.toggleMute);
   const currentTheme = useAudioStore((s) => s.currentTheme);
@@ -32,13 +37,7 @@ export function FloatingAudioControls() {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -10 }}
-      transition={{ duration: 0.2 }}
-      className="fixed top-4 right-4 z-50 flex items-center gap-2"
-    >
+    <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
       {/* Track info (shows on theme change) */}
       <AnimatePresence>
         {showTrackInfo && trackInfo && !muted && (
@@ -67,6 +66,22 @@ export function FloatingAudioControls() {
       >
         {muted ? <VolumeX size={20} aria-hidden="true" /> : <Volume2 size={20} aria-hidden="true" />}
       </button>
-    </motion.div>
+
+      {/* Menu toggle */}
+      <button
+        onClick={onMenuToggle}
+        className="p-2 rounded-lg transition-colors text-white/70 hover:text-white hover:bg-white/10"
+        aria-expanded={isMenuOpen}
+        aria-label={isMenuOpen ? 'Menü schließen' : 'Menü öffnen'}
+      >
+        <motion.div
+          initial={false}
+          animate={{ rotate: isMenuOpen ? 90 : 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          {isMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+        </motion.div>
+      </button>
+    </div>
   );
 }
