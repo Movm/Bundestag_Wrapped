@@ -87,16 +87,18 @@ export function WrappedExperience({ data, onComplete }: WrappedExperienceProps) 
   // Quiz handlers - STABLE callbacks using refs (no scrollState dependency!)
   const handleQuizAnswer = useCallback((isCorrect: boolean) => {
     const slide = currentSlideRef.current;
-    useQuizStore.getState().answerQuiz(slide, isCorrect);
+    const { answeredQuizzes, answerQuiz, incrementQuizNumber } = useQuizStore.getState();
+
+    // Increment counter BEFORE marking as answered (only for quiz-* slides)
+    if (slide.startsWith('quiz-') && !answeredQuizzes.has(slide)) {
+      incrementQuizNumber();
+    }
+
+    answerQuiz(slide, isCorrect);
     scrollStateRef.current.handleQuizAnswer(isCorrect);
   }, []);
 
   const handleQuizComplete = useCallback(() => {
-    const slide = currentSlideRef.current;
-    const { answeredQuizzes, incrementQuizNumber } = useQuizStore.getState();
-    if (slide.startsWith('quiz-') && !answeredQuizzes.has(slide)) {
-      incrementQuizNumber();
-    }
     scrollStateRef.current.handleItemComplete();
   }, []);
 

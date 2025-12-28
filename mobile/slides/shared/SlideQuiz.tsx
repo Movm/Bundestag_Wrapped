@@ -129,16 +129,7 @@ function SuccessOverlay({
   return (
     <Modal transparent animationType="none">
       <Animated.View entering={FadeIn.duration(50)} exiting={FadeOut} style={styles.overlay}>
-        {/* Confetti celebration effect - full screen */}
         <Confetti count={20} colors={colors} />
-
-        <Animated.View
-          entering={ZoomIn.duration(100)}
-          style={styles.overlayContent}
-        >
-          <Text style={styles.overlayEmoji}>🎉</Text>
-          <Text style={styles.successText}>Richtig!</Text>
-        </Animated.View>
       </Animated.View>
     </Modal>
   );
@@ -455,11 +446,6 @@ const styles = StyleSheet.create({
   overlayEmoji: {
     fontSize: 80,
     marginBottom: 16,
-  },
-  successText: {
-    fontSize: 28,
-    fontWeight: '900',
-    color: '#4ade80',
   },
   wrongText: {
     fontSize: 24,

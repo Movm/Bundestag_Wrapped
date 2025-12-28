@@ -20,6 +20,7 @@ import type {
   ToneAnalysis,
   ExtendedToneScores,
 } from '@/data/wrapped';
+import { TOPIC_BY_ID } from '@/shared';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -32,9 +33,23 @@ interface PartyRanking {
   score: number;
 }
 
+interface TopicScore {
+  topic: string;
+  score: number;
+}
+
+interface TickerTopic {
+  topic: string;
+  rank: number;
+  topParties: Array<{ party: string }>;
+}
+
 interface PrecomputedData {
   // TopicsRevealSlide - O(n×m) calculation done ONCE
   topicPartyRankings: Record<string, PartyRanking[]>;
+
+  // PartyTopicsRevealSlide - top 3 topics per party
+  partyTopTopics: Record<string, TopicScore[]>;
 
   // SpeechesChartSlide - bubble sizes precomputed
   speechBubbleSizes: number[];
@@ -49,6 +64,9 @@ interface PrecomputedData {
 
   // Top 5 topics for TopicsRevealSlide
   displayTopics: { topic: string; rank: number }[];
+
+  // News ticker topics (6-13) with top 3 parties each
+  tickerTopics: TickerTopic[];
 
   // Status
   isReady: boolean;
@@ -89,10 +107,15 @@ function computeBubbleSizes(top5: PartyStats[]): { sizes: number[]; total: numbe
 }
 
 function computeTopicPartyRankings(
-  topicAnalysis: TopicAnalysis | null | undefined
-): { rankings: Record<string, PartyRanking[]>; displayTopics: { topic: string; rank: number }[] } {
+  topicAnalysis: TopicAnalysis | null | undefined,
+  topicById: Record<string, { name: string }>
+): {
+  rankings: Record<string, PartyRanking[]>;
+  displayTopics: { topic: string; rank: number }[];
+  tickerTopics: TickerTopic[];
+} {
   if (!topicAnalysis) {
-    return { rankings: {}, displayTopics: [] };
+    return { rankings: {}, displayTopics: [], tickerTopics: [] };
   }
 
   const { topTopics, byParty } = topicAnalysis;
@@ -109,7 +132,46 @@ function computeTopicPartyRankings(
     rankings[topicScore.topic] = partyRankings.sort((a, b) => b.score - a.score);
   }
 
-  return { rankings, displayTopics };
+  // Compute ticker topics (ranks 6-13) with top 3 parties each
+  const tickerTopics: TickerTopic[] = topTopics.slice(5, 13).map((t) => {
+    const partyRankings: PartyRanking[] = [];
+    for (const [party, topics] of Object.entries(byParty)) {
+      if (party === 'fraktionslos') continue;
+      const score = topics[t.topic] || 0;
+      partyRankings.push({ party, score });
+    }
+    partyRankings.sort((a, b) => b.score - a.score);
+
+    return {
+      topic: topicById[t.topic]?.name || t.topic,
+      rank: t.rank,
+      topParties: partyRankings.slice(0, 3).map((p) => ({ party: p.party })),
+    };
+  });
+
+  return { rankings, displayTopics, tickerTopics };
+}
+
+const DISPLAY_PARTIES = ['AfD', 'CDU/CSU', 'DIE LINKE', 'GRÜNE', 'SPD'];
+
+function computePartyTopTopics(
+  topicAnalysis: TopicAnalysis | null | undefined
+): Record<string, TopicScore[]> {
+  if (!topicAnalysis) return {};
+
+  const result: Record<string, TopicScore[]> = {};
+  for (const party of DISPLAY_PARTIES) {
+    const partyData = topicAnalysis.byParty[party];
+    if (!partyData) continue;
+
+    const sorted = Object.entries(partyData)
+      .map(([topic, score]) => ({ topic, score }))
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 5);
+
+    result[party] = sorted;
+  }
+  return result;
 }
 
 function getHolisticSummary(scores: ExtendedToneScores): string {
@@ -178,12 +240,14 @@ function computeToneSummaries(
 
 const initialState: PrecomputedData = {
   topicPartyRankings: {},
+  partyTopTopics: {},
   speechBubbleSizes: [],
   totalSpeeches: 0,
   partyToneSummaries: {},
   top5Parties: [],
   sortedToneProfiles: [],
   displayTopics: [],
+  tickerTopics: [],
   isReady: false,
 };
 
@@ -202,9 +266,16 @@ export const usePrecomputedStore = create<PrecomputedStore>((set) => ({
     const { sizes, total } = computeBubbleSizes(top5Parties);
     console.log(`[PrecomputedStore] bubbleSizes: ${Date.now() - startTime}ms`);
 
-    // TopicsRevealSlide rankings
-    const { rankings, displayTopics } = computeTopicPartyRankings(data.topicAnalysis);
+    // TopicsRevealSlide rankings + ticker topics
+    const { rankings, displayTopics, tickerTopics } = computeTopicPartyRankings(
+      data.topicAnalysis,
+      TOPIC_BY_ID
+    );
     console.log(`[PrecomputedStore] topicRankings: ${Date.now() - startTime}ms`);
+
+    // PartyTopicsRevealSlide - top 3 topics per party
+    const partyTopTopics = computePartyTopTopics(data.topicAnalysis);
+    console.log(`[PrecomputedStore] partyTopTopics: ${Date.now() - startTime}ms`);
 
     // ToneRevealSlide summaries
     const partyToneSummaries = computeToneSummaries(data.toneAnalysis);
@@ -216,12 +287,14 @@ export const usePrecomputedStore = create<PrecomputedStore>((set) => ({
 
     set({
       topicPartyRankings: rankings,
+      partyTopTopics,
       speechBubbleSizes: sizes,
       totalSpeeches: total,
       partyToneSummaries,
       top5Parties,
       sortedToneProfiles,
       displayTopics,
+      tickerTopics,
       isReady: true,
     });
   },
@@ -275,6 +348,20 @@ export function useAllTopicRankings(): Record<string, PartyRanking[]> {
  */
 export function useDisplayTopics(): { topic: string; rank: number }[] {
   return usePrecomputedStore((state) => state.displayTopics);
+}
+
+/**
+ * Get ticker topics (6-13) for the news ticker
+ */
+export function useTickerTopics(): TickerTopic[] {
+  return usePrecomputedStore((state) => state.tickerTopics);
+}
+
+/**
+ * Get top 3 topics for each party (for PartyTopicsRevealSlide)
+ */
+export function usePartyTopTopics(): Record<string, { topic: string; score: number }[]> {
+  return usePrecomputedStore((state) => state.partyTopTopics);
 }
 
 /**

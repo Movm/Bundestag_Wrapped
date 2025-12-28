@@ -12,6 +12,7 @@ import {
   SlideContainer,
 } from '../slides/shared';
 import { TopicsRevealSlide } from '../slides/TopicsRevealSlide';
+import { PartyTopicsRevealSlide } from '../slides/PartyTopicsRevealSlide';
 import { VocabularyRevealSlide } from '../slides/VocabularyRevealSlide';
 import { SpeechesChartSlide } from '../slides/SpeechesChartSlide';
 import { DramaRevealSlide } from '../slides/DramaRevealSlide';
@@ -28,10 +29,13 @@ import { ShareSlide } from '../slides/ShareSlide';
 // ─────────────────────────────────────────────────────────────
 
 export const SLIDES = [
+  'info-disclaimer',
   'intro-topics',
   'quiz-topics',
   'info-topics',
   'reveal-topics',
+  'info-party-topics',
+  'reveal-party-topics',
   'intro-vocabulary',
   'quiz-signature',
   'info-signature',
@@ -74,8 +78,10 @@ export type SlideType = (typeof SLIDES)[number];
 export const TOTAL_QUIZ_QUESTIONS = 10;
 
 export const AUTO_SCROLL_SLIDES = new Set<SlideType>([
+  'info-disclaimer',
   'intro-topics',
   'info-topics',
+  'info-party-topics',
   'intro-vocabulary',
   'intro-speeches',
   'intro-drama',
@@ -226,6 +232,9 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'reveal-topics':
       return <TopicsRevealSlide slideIndex={slideIndex} />;
 
+    case 'reveal-party-topics':
+      return <PartyTopicsRevealSlide slideIndex={slideIndex} />;
+
     case 'reveal-signature':
       return <VocabularyRevealSlide slideIndex={slideIndex} />;
 
@@ -316,7 +325,9 @@ export const SlideRenderer = memo(function SlideRenderer({
     // ─────────────────────────────────────────────────────────
     // Info Slides (use shared INFO_SLIDES data)
     // ─────────────────────────────────────────────────────────
+    case 'info-disclaimer':
     case 'info-topics':
+    case 'info-party-topics':
     case 'info-signature':
     case 'info-speeches':
     case 'info-drama':

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { useAvailableHeight, useTopInset } from '../../stores/appStore';
+import { useAvailableHeight, useTopInset, useBottomInset } from '../../stores/appStore';
 import { BackgroundSystem } from '../../components/backgrounds';
 
 interface SlideContainerProps {
@@ -35,7 +35,13 @@ export function SlideContainer({
 }: SlideContainerProps) {
   const availableHeight = useAvailableHeight();
   const topInset = useTopInset();
+  const bottomInset = useBottomInset();
   const hasThemedBackground = slideId && showBackground;
+
+  // Reserve space for floating tab bar
+  // FloatingTabBar: 44px button + 32px padding = 76px
+  // Plus bottom offset: Math.max(bottomInset, 16) + 8
+  const bottomPadding = 76 + Math.max(bottomInset, 16) + 8;
 
   // If we have a slideId, render with themed background
   // Note: No BackgroundProvider needed - BackgroundSystem uses Zustand directly
@@ -47,7 +53,7 @@ export function SlideContainer({
 
         {/* Content layer - transparent to show background */}
         <View style={[styles.container, styles.transparentContainer, { minHeight: availableHeight }, style]}>
-          <View style={[styles.content, { paddingTop: topInset }]}>{children}</View>
+          <View style={[styles.content, { paddingTop: topInset, paddingBottom: bottomPadding }]}>{children}</View>
         </View>
       </View>
     );
@@ -57,7 +63,7 @@ export function SlideContainer({
   return (
     <View style={[styles.wrapper, { minHeight: availableHeight }]}>
       <View style={[styles.container, { backgroundColor, minHeight: availableHeight }, style]}>
-        <View style={[styles.content, { paddingTop: topInset }]}>{children}</View>
+        <View style={[styles.content, { paddingTop: topInset, paddingBottom: bottomPadding }]}>{children}</View>
       </View>
     </View>
   );

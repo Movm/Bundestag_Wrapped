@@ -1,8 +1,8 @@
 /**
- * Confetti Component for React Native (Skia Canvas)
+ * Fine Glitter Confetti Component for React Native (Skia Canvas)
  *
- * Simple colored rectangle particles with German flag colors.
- * Performance: Single Canvas (vs 25 individual Views)
+ * GPU-accelerated falling particles with drift and spin.
+ * Performance: Single Canvas + Single SharedValue drives all particles.
  */
 
 import { memo, useEffect, useMemo } from 'react';
@@ -10,6 +10,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 import {
   Canvas,
   RoundedRect,
+  vec,
 } from '@shopify/react-native-skia';
 import {
   useSharedValue,
@@ -26,13 +27,14 @@ const DEFAULT_COLORS = ['#000000', '#DD0000', '#FFCC00'];
 
 interface ParticleConfig {
   id: number;
-  x: number;
-  y: number;
-  rotation: number;
-  color: string;
-  width: number;
-  height: number;
+  startX: number;
+  startY: number;
+  endY: number;
+  driftX: number;
+  rotateEnd: number;
   delay: number;
+  color: string;
+  size: number;
 }
 
 interface ConfettiProps {
@@ -40,66 +42,97 @@ interface ConfettiProps {
   colors?: string[];
 }
 
-// Generate particle configs once
+// Pre-compute all particle configs (no Math.random during animation)
 const generateParticles = (count: number, colors: string[]): ParticleConfig[] => {
   return Array.from({ length: count }, (_, i) => {
-    const size = 10 + Math.random() * 8; // 10-18px
+    const size = 4 + Math.random() * 4; // Fine glitter: 4-8px
+    const startX = Math.random() * SCREEN_WIDTH;
+    const startY = Math.random() * SCREEN_HEIGHT; // Spread across ENTIRE screen
+
     return {
       id: i,
-      x: Math.random() * (SCREEN_WIDTH - 20),
-      y: Math.random() * (SCREEN_HEIGHT - 20),
-      rotation: Math.random() * 45 - 22.5, // -22.5 to 22.5 degrees
+      startX,
+      startY,
+      endY: startY + 30 + Math.random() * 50, // Gentle fall: 30-80px only
+      driftX: (Math.random() - 0.5) * 120, // Drift ±60px
+      rotateEnd: (Math.random() - 0.5) * 720, // Spin ±360°
+      delay: Math.random() * 0.25, // Stagger 0-0.25s
       color: colors[i % colors.length],
-      width: size,
-      height: size * 0.7,
-      delay: (i / count) * 0.2, // Stagger 0-0.2 for cascade effect
+      size,
     };
   });
 };
 
 /**
- * Single confetti particle drawn with Skia
+ * Single glitter particle with falling, drifting, spinning animation
  */
-const ConfettiPiece = memo(function ConfettiPiece({
+const GlitterPiece = memo(function GlitterPiece({
   config,
   progress,
 }: {
   config: ParticleConfig;
   progress: { value: number };
 }) {
-  // Derive opacity and scale from progress with staggered delay
-  const opacity = useDerivedValue(() => {
-    const adjustedProgress = Math.max(0, progress.value - config.delay) / (1 - config.delay);
-    if (adjustedProgress <= 0) return 0;
-    if (adjustedProgress < 0.3) {
-      // Fade in with slight overshoot
-      return Math.min(1, adjustedProgress / 0.2);
-    }
-    return 1;
-  }, [progress, config.delay]);
+  // Adjusted progress accounts for stagger delay
+  const adjustedProgress = useDerivedValue(() => {
+    const p = progress.value;
+    if (p <= config.delay) return 0;
+    return (p - config.delay) / (1 - config.delay);
+  }, []);
 
+  // X position: startX + drift over time
+  const x = useDerivedValue(() => {
+    const p = adjustedProgress.value;
+    return config.startX + config.driftX * p;
+  }, []);
+
+  // Y position: fall from startY to endY
+  const y = useDerivedValue(() => {
+    const p = adjustedProgress.value;
+    // Ease out for natural gravity feel
+    const easedP = 1 - Math.pow(1 - p, 2);
+    return config.startY + (config.endY - config.startY) * easedP;
+  }, []);
+
+  // Rotation: spin throughout animation
+  const rotation = useDerivedValue(() => {
+    const p = adjustedProgress.value;
+    return (config.rotateEnd * p * Math.PI) / 180;
+  }, []);
+
+  // Scale: [0 → 1 → 0.5] three-stage animation
   const scale = useDerivedValue(() => {
-    const adjustedProgress = Math.max(0, progress.value - config.delay) / (1 - config.delay);
-    if (adjustedProgress <= 0) return 0.3;
-    if (adjustedProgress < 0.2) {
-      // Pop in effect
-      return 0.3 + 0.7 * (adjustedProgress / 0.2);
+    const p = adjustedProgress.value;
+    if (p < 0.15) {
+      // Pop in: 0 → 1
+      return p / 0.15;
+    } else if (p < 0.7) {
+      // Stay full size
+      return 1;
+    } else {
+      // Shrink: 1 → 0.5
+      const shrinkP = (p - 0.7) / 0.3;
+      return 1 - shrinkP * 0.5;
     }
-    return 1;
-  }, [progress, config.delay]);
+  }, []);
 
-  const width = useDerivedValue(() => config.width * scale.value, [scale]);
-  const height = useDerivedValue(() => config.height * scale.value, [scale]);
+  // Opacity: [1, 1, 0] - visible then fade at end
+  const opacity = useDerivedValue(() => {
+    const p = adjustedProgress.value;
+    if (p < 0.7) {
+      return 1;
+    } else {
+      // Fade out in last 30%
+      return 1 - (p - 0.7) / 0.3;
+    }
+  }, []);
 
-  // Center the scaled rectangle
-  const x = useDerivedValue(
-    () => config.x + (config.width - width.value) / 2,
-    [width]
-  );
-  const y = useDerivedValue(
-    () => config.y + (config.height - height.value) / 2,
-    [height]
-  );
+  // Animated size
+  const width = useDerivedValue(() => config.size * scale.value, []);
+  const height = useDerivedValue(() => config.size * scale.value, []);
+
+  // Origin for rotation (center of particle)
+  const origin = useDerivedValue(() => vec(x.value, y.value), []);
 
   return (
     <RoundedRect
@@ -107,37 +140,36 @@ const ConfettiPiece = memo(function ConfettiPiece({
       y={y}
       width={width}
       height={height}
-      r={2}
+      r={1}
       color={config.color}
       opacity={opacity}
-      transform={[{ rotate: config.rotation * (Math.PI / 180) }]}
-      origin={{ x: config.x + config.width / 2, y: config.y + config.height / 2 }}
+      origin={origin}
+      transform={[{ rotate: rotation.value }]}
     />
   );
 });
 
 /**
- * Confetti container - static particles spread across screen
+ * Fine glitter confetti - falling particles with drift and spin
  */
 export const Confetti = memo(function Confetti({
-  count = 25,
+  count = 150,
   colors = DEFAULT_COLORS,
 }: ConfettiProps) {
-  // Animation progress (0 → 1)
+  // Single animation progress drives all particles
   const progress = useSharedValue(0);
 
-  // Pre-compute particle configurations
+  // Pre-compute all particle configs once
   const particles = useMemo<ParticleConfig[]>(
     () => generateParticles(count, colors),
     [count, colors]
   );
 
   useEffect(() => {
-    // Start animation
     progress.value = 0;
     progress.value = withTiming(1, {
-      duration: 400,
-      easing: Easing.out(Easing.ease),
+      duration: 1500,
+      easing: Easing.out(Easing.quad),
     });
 
     return () => {
@@ -148,7 +180,7 @@ export const Confetti = memo(function Confetti({
   return (
     <Canvas style={styles.canvas} pointerEvents="none">
       {particles.map((p) => (
-        <ConfettiPiece key={p.id} config={p} progress={progress} />
+        <GlitterPiece key={p.id} config={p} progress={progress} />
       ))}
     </Canvas>
   );

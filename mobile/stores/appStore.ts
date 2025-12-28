@@ -29,6 +29,9 @@ import {
 /** Tab bar height - floating tab bar is transparent overlay, no reserved space needed */
 export const TAB_BAR_HEIGHT = 0;
 
+/** Floating tab bar height for bottom safe zone calculations (44px button + 32px padding) */
+export const FLOATING_TAB_BAR_HEIGHT = 76;
+
 /** Header height - set to 0 as header is hidden */
 export const HEADER_HEIGHT = 0;
 
@@ -236,6 +239,16 @@ export function useTopInset(): number {
 
 export function useBottomInset(): number {
   return useAppStore((s) => s.bottomInset);
+}
+
+/**
+ * Returns the bottom safe zone height for absolute positioning.
+ * Use this when positioning elements at the bottom of slides
+ * to avoid overlap with the floating tab bar.
+ */
+export function useBottomSafeZone(): number {
+  const bottomInset = useAppStore((s) => s.bottomInset);
+  return FLOATING_TAB_BAR_HEIGHT + Math.max(bottomInset, 16) + 8;
 }
 
 /**

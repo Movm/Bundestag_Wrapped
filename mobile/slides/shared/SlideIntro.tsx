@@ -4,6 +4,8 @@ import Animated from 'react-native-reanimated';
 import { SlideContainer } from './SlideContainer';
 import { introAnimations } from './animations';
 import { useDeferredRender } from '../../hooks/useDeferredRender';
+import { getSlideIconConfig } from '../../lib/slide-icons';
+import { DecorativeAccents } from '../../components/decorations';
 
 interface SlideIntroProps {
   emoji: string;
@@ -25,18 +27,31 @@ export function SlideIntro({ emoji, title, subtitle, slideId, slideIndex }: Slid
   // Wait for slide to be visible before mounting animated content
   const showContent = useDeferredRender(slideIndex, 0);
 
+  // Get icon config from centralized source
+  const iconConfig = slideId ? getSlideIconConfig(slideId) : undefined;
+  const IconComponent = iconConfig?.Icon;
+
   return (
     <SlideContainer slideId={slideId}>
+      {/* Decorative side accents - themed by slideId */}
+      {showContent && <DecorativeAccents slideId={slideId} isInView={showContent} />}
+
       <View style={styles.content}>
         {showContent && (
           <>
-            {/* Emoji with zoom pop effect */}
-            <Animated.Text
-              entering={introAnimations.emoji()}
-              style={styles.emoji}
-            >
-              {emoji}
-            </Animated.Text>
+            {/* Icon or Emoji with zoom pop effect */}
+            {IconComponent ? (
+              <Animated.View entering={introAnimations.emoji()} style={styles.iconContainer}>
+                <IconComponent width={80} height={80} />
+              </Animated.View>
+            ) : (
+              <Animated.Text
+                entering={introAnimations.emoji()}
+                style={styles.emoji}
+              >
+                {emoji}
+              </Animated.Text>
+            )}
 
             {/* Title with slide-up animation (matches web) */}
             {title && (
@@ -66,6 +81,11 @@ export function SlideIntro({ emoji, title, subtitle, slideId, slideIndex }: Slid
 
 const styles = StyleSheet.create({
   content: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  iconContainer: {
+    marginBottom: 16,
     alignItems: 'center',
     justifyContent: 'center',
   },
