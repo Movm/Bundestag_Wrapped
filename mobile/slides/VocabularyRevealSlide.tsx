@@ -1,19 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { View, Text, StyleSheet, Dimensions, Pressable } from 'react-native';
-import Animated from 'react-native-reanimated';
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  Easing,
+  runOnJS,
+  interpolate,
+  type SharedValue,
+} from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import type { PartyStats } from '@/data/wrapped';
 import { getPartyColor, BUBBLE_POSITIONS } from '@/shared';
-import {
-  SlideContainer,
-  SlideHeader,
-  bubbleAnimations,
-  rotateInStaggerEntering,
-} from './shared';
+import { SlideContainer, SlideHeader, bubbleAnimations, fadeInEntering } from './shared';
 import { useAvailableHeight, useTopInset } from '../stores/appStore';
 import { useDeferredRender } from '../hooks/useDeferredRender';
 import { useTop5Parties } from '../stores/precomputedDataStore';
-import { SkiaBubbles, BubbleConfig } from '../components/SkiaBubbles';
+import {
+  AnimatedSkiaBubbles,
+  type AnimatedBubbleConfig,
+} from '../components/AnimatedSkiaBubbles';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -26,7 +32,7 @@ interface VocabularyRevealSlideProps {
 }
 
 // ─────────────────────────────────────────────────────────────
-// Party Bubble Overlay Component (text + tap handling only)
+// Party Bubble Overlay Component (tap handling + back content)
 // ─────────────────────────────────────────────────────────────
 
 interface PartyBubbleOverlayProps {
@@ -34,6 +40,10 @@ interface PartyBubbleOverlayProps {
   index: number;
   position: { top: number; left: number };
   availableHeight: number;
+  entranceProgress: SharedValue<number>;
+  entranceComplete: boolean;
+  flipProgress: SharedValue<number>;
+  bubbleColor: string;
 }
 
 const BUBBLE_SIZE = Math.min(SCREEN_WIDTH * 0.35, 160);
@@ -43,49 +53,121 @@ const PartyBubbleOverlay = React.memo(function PartyBubbleOverlay({
   index,
   position,
   availableHeight,
+  entranceProgress,
+  entranceComplete,
+  flipProgress,
+  bubbleColor,
 }: PartyBubbleOverlayProps) {
-  const [isFlipped, setIsFlipped] = React.useState(false);
+  const isFlippedRef = React.useRef(false);
 
   const handlePress = () => {
+    if (!entranceComplete) return;
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    setIsFlipped((prev) => !prev);
+    const newFlipped = !isFlippedRef.current;
+    isFlippedRef.current = newFlipped;
+    flipProgress.value = withTiming(newFlipped ? 1 : 0, {
+      duration: 400,
+      easing: Easing.inOut(Easing.ease),
+    });
   };
 
-  const signatureWord = party.signatureWords[0];
   const backWords = party.signatureWords.slice(0, 5);
+  const signatureWord = party.signatureWords[0]?.word ?? '–';
+
+  // Sync overlay scale with Skia entrance animation
+  const overlayStyle = useAnimatedStyle(() => {
+    const phaseOffset = 0.12;
+    const totalBubbles = 5;
+    const delay = index * phaseOffset;
+    const animationWindow = 1 - (totalBubbles - 1) * phaseOffset;
+
+    let adjustedProgress = 0;
+    if (entranceProgress.value > delay) {
+      adjustedProgress = Math.min(
+        (entranceProgress.value - delay) / animationWindow,
+        1
+      );
+    }
+
+    const scale = 1 - Math.pow(1 - adjustedProgress, 3);
+    const opacity = Math.min(adjustedProgress * 2, 1);
+
+    return {
+      transform: [{ scale }],
+      opacity,
+    };
+  }, [index]);
+
+  // Front content: becomes visible as Skia fades, then flips away
+  const frontStyle = useAnimatedStyle(() => {
+    // Visible when flipping starts (Skia fades out, native fades in)
+    const frontOpacity = flipProgress.value > 0 ? 1 : 0;
+    // ScaleX flip: 1 -> 0 in first half
+    const scaleX = interpolate(flipProgress.value, [0, 0.5], [1, 0], 'clamp');
+
+    return {
+      opacity: frontOpacity,
+      transform: [{ scaleX }],
+    };
+  });
+
+  // Back content: flips in during second half
+  const backStyle = useAnimatedStyle(() => {
+    // Only visible in second half of flip
+    const backOpacity = flipProgress.value >= 0.5 ? 1 : 0;
+    // ScaleX flip: 0 -> 1 in second half
+    const scaleX = interpolate(flipProgress.value, [0.5, 1], [0, 1], 'clamp');
+
+    return {
+      opacity: backOpacity,
+      transform: [{ scaleX }],
+    };
+  });
 
   return (
     <Animated.View
-      entering={rotateInStaggerEntering(index, 200)}
       style={[
         styles.bubbleOverlay,
         {
           top: availableHeight * (position.top / 100),
           left: SCREEN_WIDTH * (position.left / 100),
         },
+        overlayStyle,
       ]}
     >
       <Pressable onPress={handlePress} style={styles.bubblePressable}>
-        {!isFlipped ? (
-          <View style={styles.bubbleContent}>
-            <Text style={styles.signatureWord}>{signatureWord?.word ?? '–'}</Text>
+        {/* Front - colored circle with signature word (mirrors Skia content) */}
+        <Animated.View
+          style={[
+            styles.bubbleFront,
+            { backgroundColor: bubbleColor },
+            frontStyle,
+          ]}
+        >
+          <Text style={styles.frontWord}>{signatureWord}</Text>
+        </Animated.View>
+
+        {/* Back - party name + word list */}
+        <Animated.View
+          style={[
+            styles.bubbleBack,
+            { backgroundColor: bubbleColor },
+            backStyle,
+          ]}
+        >
+          <Text style={styles.partyTitle}>{party.party}</Text>
+          <View style={styles.wordList}>
+            {backWords.map((w, i) => (
+              <Text
+                key={w.word}
+                style={[styles.wordItem, i === 0 && styles.wordItemFirst]}
+                numberOfLines={1}
+              >
+                {w.word}
+              </Text>
+            ))}
           </View>
-        ) : (
-          <View style={styles.bubbleBackContent}>
-            <Text style={styles.partyTitle}>{party.party}</Text>
-            <View style={styles.wordList}>
-              {backWords.map((w, i) => (
-                <Text
-                  key={w.word}
-                  style={[styles.wordItem, i === 0 && styles.wordItemFirst]}
-                  numberOfLines={1}
-                >
-                  {w.word}
-                </Text>
-              ))}
-            </View>
-          </View>
-        )}
+        </Animated.View>
       </Pressable>
     </Animated.View>
   );
@@ -100,21 +182,59 @@ export function VocabularyRevealSlide({ slideIndex }: VocabularyRevealSlideProps
   const topInset = useTopInset();
 
   // Defer bubble rendering until 300ms after slide becomes visible
-  // This allows header to appear first for faster perceived start
   const showBubbles = useDeferredRender(slideIndex, 300);
+
+  // Single SharedValue drives all bubble animations
+  const entranceProgress = useSharedValue(0);
+  const [entranceComplete, setEntranceComplete] = useState(false);
+
+  // Flip progress for each bubble (stable refs)
+  const flipProgress0 = useSharedValue(0);
+  const flipProgress1 = useSharedValue(0);
+  const flipProgress2 = useSharedValue(0);
+  const flipProgress3 = useSharedValue(0);
+  const flipProgress4 = useSharedValue(0);
+  const flipProgresses = useRef([
+    flipProgress0,
+    flipProgress1,
+    flipProgress2,
+    flipProgress3,
+    flipProgress4,
+  ]).current;
 
   // Use precomputed top 5 parties from store (computed once on mount)
   const topParties = useTop5Parties();
 
-  // Create bubble configs for Skia Canvas
-  const bubbleConfigs = React.useMemo<BubbleConfig[]>(() => {
+  // Trigger entrance animation when bubbles become visible
+  useEffect(() => {
+    if (showBubbles) {
+      entranceProgress.value = withTiming(
+        1,
+        {
+          duration: 800,
+          easing: Easing.out(Easing.quad),
+        },
+        (finished) => {
+          if (finished) {
+            runOnJS(setEntranceComplete)(true);
+          }
+        }
+      );
+    }
+  }, [showBubbles, entranceProgress]);
+
+  // Create animated bubble configs for Skia Canvas
+  const bubbleConfigs = React.useMemo<AnimatedBubbleConfig[]>(() => {
     return topParties.map((party, i) => {
       const pos = BUBBLE_POSITIONS.fiveItems[i];
+      const signatureWord = party.signatureWords[0]?.word ?? '–';
       return {
+        id: party.party,
         x: SCREEN_WIDTH * (pos.left / 100) + BUBBLE_SIZE / 2,
         y: availableHeight * (pos.top / 100) + BUBBLE_SIZE / 2,
         size: BUBBLE_SIZE,
         color: getPartyColor(party.party),
+        frontText: signatureWord,
       };
     });
   }, [topParties, availableHeight]);
@@ -127,24 +247,36 @@ export function VocabularyRevealSlide({ slideIndex }: VocabularyRevealSlideProps
           emoji="📚"
           title="Partei-Vokabular"
           subtitle="Diese Wörter zeichnen die Parteien aus."
+          slideId="reveal-vocabulary"
         />
       </View>
 
-      {/* Skia Canvas - static gradient backgrounds */}
+      {/* Animated Skia Canvas - circles + text animate together, fade when flipping */}
       {showBubbles && (
-        <SkiaBubbles bubbles={bubbleConfigs} />
+        <AnimatedSkiaBubbles
+          bubbles={bubbleConfigs}
+          progress={entranceProgress}
+          phaseOffset={0.12}
+          fontSize={16}
+          flipProgresses={flipProgresses}
+        />
       )}
 
-      {/* Native overlays - text + tap handling */}
-      {showBubbles && topParties.map((party, i) => (
-        <PartyBubbleOverlay
-          key={party.party}
-          party={party}
-          index={i}
-          position={BUBBLE_POSITIONS.fiveItems[i]}
-          availableHeight={availableHeight}
-        />
-      ))}
+      {/* Native overlays - tap handling + flip animation */}
+      {showBubbles &&
+        topParties.map((party, i) => (
+          <PartyBubbleOverlay
+            key={party.party}
+            party={party}
+            index={i}
+            position={BUBBLE_POSITIONS.fiveItems[i]}
+            availableHeight={availableHeight}
+            entranceProgress={entranceProgress}
+            entranceComplete={entranceComplete}
+            flipProgress={flipProgresses[i]}
+            bubbleColor={getPartyColor(party.party)}
+          />
+        ))}
 
       {/* Hint - deferred with bubbles */}
       {showBubbles && (
@@ -176,14 +308,17 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: BUBBLE_SIZE / 2,
   },
-  bubbleContent: {
+  bubbleFront: {
+    position: 'absolute',
+    width: BUBBLE_SIZE,
+    height: BUBBLE_SIZE,
+    borderRadius: BUBBLE_SIZE / 2,
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 12,
+    padding: 8,
   },
-  signatureWord: {
+  frontWord: {
     fontSize: 16,
     fontWeight: '700',
     color: '#ffffff',
@@ -192,7 +327,11 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 2,
   },
-  bubbleBackContent: {
+  bubbleBack: {
+    position: 'absolute',
+    width: BUBBLE_SIZE,
+    height: BUBBLE_SIZE,
+    borderRadius: BUBBLE_SIZE / 2,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 8,

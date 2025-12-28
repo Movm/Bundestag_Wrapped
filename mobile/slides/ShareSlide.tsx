@@ -27,7 +27,7 @@ import { captureRef } from 'react-native-view-shot';
 import { useSlideVisible } from '../stores/slideStore';
 import { useCorrectCount } from '../stores/quizStore';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Download, Share2 } from 'lucide-react-native';
+import { Share2 } from 'lucide-react-native';
 import {
   SlideContainer,
   emojiPopEntering,
@@ -205,13 +205,18 @@ export const ShareSlide = memo(function ShareSlide({
   const correctCount = useCorrectCount();
   const [userName, setUserName] = useState('');
   const [debouncedName, setDebouncedName] = useState('');
+  // Score variant (with emoji title)
   const [imageUri, setImageUri] = useState<string | null>(null);
   const [isCapturing, setIsCapturing] = useState(false);
   const [isSharing, setIsSharing] = useState(false);
-  const [isSaving, setIsSaving] = useState(false);
+  // Title variant ("Du bist eine:")
+  const [imageUriTitle, setImageUriTitle] = useState<string | null>(null);
+  const [isCapturingTitle, setIsCapturingTitle] = useState(false);
+  const [isSharingTitle, setIsSharingTitle] = useState(false);
 
-  // Ref for capturing the Skia canvas
+  // Refs for capturing both Skia canvases
   const canvasRef = useRef<View>(null);
+  const canvasRefTitle = useRef<View>(null);
 
   // Debounce name input
   useEffect(() => {
@@ -221,44 +226,68 @@ export const ShareSlide = memo(function ShareSlide({
     return () => clearTimeout(timer);
   }, [userName]);
 
-  // Capture the canvas when name changes or on first render
+  // Capture both canvases when name changes or on first render
   useEffect(() => {
-    if (!isVisible || !canvasRef.current) return;
+    if (!isVisible) return;
 
     let cancelled = false;
 
-    const captureCanvas = async () => {
-      // Small delay to ensure Skia canvas is fully rendered
+    const captureCanvases = async () => {
+      // Small delay to ensure Skia canvases are fully rendered
       await new Promise((resolve) => setTimeout(resolve, 100));
 
-      if (cancelled || !canvasRef.current) return;
+      if (cancelled) return;
 
-      setIsCapturing(true);
-      try {
-        const uri = await captureRef(canvasRef, {
-          format: 'png',
-          quality: 1,
-          result: 'tmpfile',
-        });
-        if (!cancelled) {
-          setImageUri(uri);
+      // Capture score variant
+      if (canvasRef.current) {
+        setIsCapturing(true);
+        try {
+          const uri = await captureRef(canvasRef, {
+            format: 'png',
+            quality: 1,
+            result: 'tmpfile',
+          });
+          if (!cancelled) {
+            setImageUri(uri);
+          }
+        } catch (error) {
+          console.error('Failed to capture score share image:', error);
+        } finally {
+          if (!cancelled) {
+            setIsCapturing(false);
+          }
         }
-      } catch (error) {
-        console.error('Failed to capture share image:', error);
-      } finally {
-        if (!cancelled) {
-          setIsCapturing(false);
+      }
+
+      // Capture title variant
+      if (canvasRefTitle.current) {
+        setIsCapturingTitle(true);
+        try {
+          const uri = await captureRef(canvasRefTitle, {
+            format: 'png',
+            quality: 1,
+            result: 'tmpfile',
+          });
+          if (!cancelled) {
+            setImageUriTitle(uri);
+          }
+        } catch (error) {
+          console.error('Failed to capture title share image:', error);
+        } finally {
+          if (!cancelled) {
+            setIsCapturingTitle(false);
+          }
         }
       }
     };
 
-    captureCanvas();
+    captureCanvases();
     return () => {
       cancelled = true;
     };
   }, [isVisible, debouncedName, correctCount, totalQuestions]);
 
-  // Handle share button
+  // Handle share button (score variant)
   const handleShare = useCallback(async () => {
     if (!imageUri || isSharing) return;
     setIsSharing(true);
@@ -269,18 +298,31 @@ export const ShareSlide = memo(function ShareSlide({
     }
   }, [imageUri, isSharing]);
 
-  // Handle download/save button
-  const handleSave = useCallback(async () => {
-    if (!imageUri || isSaving) return;
-    setIsSaving(true);
+  // Handle share button (title variant)
+  const handleShareTitle = useCallback(async () => {
+    if (!imageUriTitle || isSharingTitle) return;
+    setIsSharingTitle(true);
     try {
-      await saveToGallery(imageUri);
+      await shareImage(imageUriTitle, 'Teile dein Bundestag Wrapped Ergebnis');
     } finally {
-      setIsSaving(false);
+      setIsSharingTitle(false);
     }
-  }, [imageUri, isSaving]);
+  }, [imageUriTitle, isSharingTitle]);
+
+  // Handle long-press to save (score variant)
+  const handleSave = useCallback(async () => {
+    if (!imageUri) return;
+    await saveToGallery(imageUri);
+  }, [imageUri]);
+
+  // Handle long-press to save (title variant)
+  const handleSaveTitle = useCallback(async () => {
+    if (!imageUriTitle) return;
+    await saveToGallery(imageUriTitle);
+  }, [imageUriTitle]);
 
   const isLoading = isCapturing || !imageUri;
+  const isLoadingTitle = isCapturingTitle || !imageUriTitle;
 
   return (
     <SlideContainer slideId="share">
@@ -321,57 +363,75 @@ export const ShareSlide = memo(function ShareSlide({
           />
         </Animated.View>
 
-        {/* Image Preview - Skia canvas with view capture */}
-        <Animated.View entering={scaleInEntering(500)} style={styles.previewContainer}>
-          <View ref={canvasRef} collapsable={false} style={styles.canvasWrapper}>
-            <ShareCanvasSkia
-              correctCount={correctCount}
-              totalQuestions={totalQuestions}
-              userName={debouncedName || undefined}
-            />
-          </View>
-          {isCapturing && (
-            <View style={styles.capturingOverlay}>
-              <ActivityIndicator size="small" color="#ec4899" />
-            </View>
-          )}
-        </Animated.View>
+        {/* Dual Image Previews - Side by side */}
+        <View style={styles.dualPreviewContainer}>
+          {/* Score variant (with emoji title) */}
+          <Animated.View entering={scaleInEntering(500)} style={styles.previewCard}>
+            <Pressable onLongPress={handleSave} delayLongPress={400} style={styles.previewContainer}>
+              <View ref={canvasRef} collapsable={false} style={styles.canvasWrapper}>
+                <ShareCanvasSkia
+                  correctCount={correctCount}
+                  totalQuestions={totalQuestions}
+                  userName={debouncedName || undefined}
+                  variant="score"
+                />
+              </View>
+              {isCapturing && (
+                <View style={styles.capturingOverlay}>
+                  <ActivityIndicator size="small" color="#ec4899" />
+                </View>
+              )}
+            </Pressable>
+            <AnimatedPressable
+              entering={snappyEntering(600)}
+              style={[styles.shareButtonSmall, (isSharing || isLoading) && styles.buttonDisabled]}
+              onPress={handleShare}
+              disabled={isSharing || isLoading}
+            >
+              {isSharing ? (
+                <ActivityIndicator color="#ffffff" size="small" />
+              ) : (
+                <>
+                  <Share2 size={16} color="#ffffff" />
+                  <Text style={styles.buttonTextSmall}>Teilen</Text>
+                </>
+              )}
+            </AnimatedPressable>
+          </Animated.View>
 
-        {/* Action Buttons */}
-        <View style={styles.buttonsContainer}>
-          {/* Save Button */}
-          <AnimatedPressable
-            entering={snappyEntering(600)}
-            style={[styles.saveButton, (isSaving || isLoading) && styles.buttonDisabled]}
-            onPress={handleSave}
-            disabled={isSaving || isLoading}
-          >
-            {isSaving ? (
-              <ActivityIndicator color="#ffffff" size="small" />
-            ) : (
-              <>
-                <Download size={20} color="#ffffff" />
-                <Text style={styles.buttonText}>Speichern</Text>
-              </>
-            )}
-          </AnimatedPressable>
-
-          {/* Share Button */}
-          <AnimatedPressable
-            entering={snappyEntering(700)}
-            style={[styles.shareButton, (isSharing || isLoading) && styles.buttonDisabled]}
-            onPress={handleShare}
-            disabled={isSharing || isLoading}
-          >
-            {isSharing ? (
-              <ActivityIndicator color="#ffffff" size="small" />
-            ) : (
-              <>
-                <Share2 size={20} color="#ffffff" />
-                <Text style={styles.buttonText}>Teilen</Text>
-              </>
-            )}
-          </AnimatedPressable>
+          {/* Title variant ("Du bist eine:") */}
+          <Animated.View entering={scaleInEntering(550)} style={styles.previewCard}>
+            <Pressable onLongPress={handleSaveTitle} delayLongPress={400} style={styles.previewContainer}>
+              <View ref={canvasRefTitle} collapsable={false} style={styles.canvasWrapper}>
+                <ShareCanvasSkia
+                  correctCount={correctCount}
+                  totalQuestions={totalQuestions}
+                  userName={debouncedName || undefined}
+                  variant="title"
+                />
+              </View>
+              {isCapturingTitle && (
+                <View style={styles.capturingOverlay}>
+                  <ActivityIndicator size="small" color="#ec4899" />
+                </View>
+              )}
+            </Pressable>
+            <AnimatedPressable
+              entering={snappyEntering(650)}
+              style={[styles.shareButtonSmall, (isSharingTitle || isLoadingTitle) && styles.buttonDisabled]}
+              onPress={handleShareTitle}
+              disabled={isSharingTitle || isLoadingTitle}
+            >
+              {isSharingTitle ? (
+                <ActivityIndicator color="#ffffff" size="small" />
+              ) : (
+                <>
+                  <Share2 size={16} color="#ffffff" />
+                  <Text style={styles.buttonTextSmall}>Teilen</Text>
+                </>
+              )}
+            </AnimatedPressable>
+          </Animated.View>
         </View>
       </View>
     </SlideContainer>
@@ -382,7 +442,8 @@ export const ShareSlide = memo(function ShareSlide({
 // Styles
 // ─────────────────────────────────────────────────────────────
 
-const PREVIEW_SIZE = Math.min(280, SHARE_CANVAS_SIZE);
+// Smaller preview for side-by-side layout
+const PREVIEW_SIZE = Math.min(150, SHARE_CANVAS_SIZE);
 const SCALE = PREVIEW_SIZE / SHARE_CANVAS_SIZE;
 
 const styles = StyleSheet.create({
@@ -443,11 +504,19 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
   },
+  dualPreviewContainer: {
+    flexDirection: 'row',
+    gap: 16,
+    marginBottom: 20,
+  },
+  previewCard: {
+    alignItems: 'center',
+    gap: 10,
+  },
   previewContainer: {
     width: PREVIEW_SIZE,
     height: PREVIEW_SIZE,
-    marginBottom: 20,
-    borderRadius: 16,
+    borderRadius: 12,
     overflow: 'hidden',
     backgroundColor: 'rgba(0, 0, 0, 0.3)',
     borderWidth: 1,
@@ -465,39 +534,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  buttonsContainer: {
-    flexDirection: 'row',
-    gap: 12,
-    width: '100%',
-  },
-  saveButton: {
-    flex: 1,
+  shareButtonSmall: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 8,
-    paddingVertical: 14,
-    borderRadius: 12,
+    gap: 6,
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 10,
     backgroundColor: '#ec4899',
-  },
-  shareButton: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 8,
-    paddingVertical: 14,
-    borderRadius: 12,
-    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-    borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.2)',
   },
   buttonDisabled: {
     opacity: 0.5,
   },
-  buttonText: {
+  buttonTextSmall: {
     color: '#ffffff',
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: '600',
   },
 });

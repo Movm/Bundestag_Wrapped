@@ -11,7 +11,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
-import { getPartyColor } from '@/shared';
+import { getPartyColor, QUIZZES } from '@/shared';
 import {
   SlideContainer,
   SlideQuiz,
@@ -25,21 +25,12 @@ import {
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 // ─────────────────────────────────────────────────────────────
-// Constants
+// Constants (from shared QUIZZES)
 // ─────────────────────────────────────────────────────────────
 
-// The only person who mentioned Taylor Swift in the Bundestag
-const SWIFTIE = {
-  name: 'Daniel Baldy',
-  party: 'SPD',
-};
-
-// Decoys: young women who might plausibly be Swifties (but aren't!)
-const DECOYS = [
-  { name: 'Ricarda Lang', party: 'GRÜNE' },
-  { name: 'Nyke Slawik', party: 'GRÜNE' },
-  { name: 'Deborah Düring', party: 'GRÜNE' },
-];
+const SWIFTIE_QUIZ = QUIZZES['quiz-swiftie'];
+const SWIFTIE = SWIFTIE_QUIZ.swiftie!;
+const DECOYS = SWIFTIE_QUIZ.decoys!;
 
 // ─────────────────────────────────────────────────────────────
 // Types
@@ -121,7 +112,7 @@ function ResultView() {
 
         {/* Title */}
         <Animated.Text entering={fadeUpEntering(100)} style={styles.resultTitle}>
-          Der einzige Swiftie
+          Swiftie
         </Animated.Text>
         <Animated.Text entering={fadeUpEntering(200)} style={styles.resultSubtitle}>
           im Bundestag
@@ -197,10 +188,10 @@ export function SwiftieSlide({
     const decoyOptions = DECOYS.map((d) => `${d.name} (${d.party})`);
 
     return {
-      question: 'Wer ist der einzige Swiftie im Bundestag?',
+      question: SWIFTIE_QUIZ.question,
       options: shuffle([correctOption, ...decoyOptions]),
       correctAnswer: correctOption,
-      explanation: `${SWIFTIE.name} ist der einzige, der "Taylor Swift" im Bundestag erwähnt hat – in einer Rede über Cybersicherheit!`,
+      explanation: SWIFTIE_QUIZ.explanation,
     };
   }, []);
 

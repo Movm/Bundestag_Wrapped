@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { View, Text, StyleSheet, Dimensions, Pressable } from 'react-native';
-import Animated from 'react-native-reanimated';
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  Easing,
+  runOnJS,
+  interpolate,
+  type SharedValue,
+} from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 import type { PartyStats } from '@/data/wrapped';
 import { getPartyColor, BUBBLE_POSITIONS } from '@/shared';
@@ -10,12 +18,14 @@ import {
   emojiPopEntering,
   fadeUpEntering,
   fadeInEntering,
-  bouncyStaggerEntering,
 } from './shared';
 import { useAppStore, useTopInset } from '../stores/appStore';
 import { useDeferredRender } from '../hooks/useDeferredRender';
 import { useTop5Parties, useSpeechBubbleSizes, useTotalSpeeches } from '../stores/precomputedDataStore';
-import { SkiaBubbles, BubbleConfig } from '../components/SkiaBubbles';
+import {
+  AnimatedSkiaBubbles,
+  type AnimatedBubbleConfig,
+} from '../components/AnimatedSkiaBubbles';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -28,7 +38,7 @@ interface SpeechesChartSlideProps {
 }
 
 // ─────────────────────────────────────────────────────────────
-// Bubble Overlay Component (text + tap handling only)
+// Bubble Overlay Component (tap handling + back content)
 // ─────────────────────────────────────────────────────────────
 
 interface BubbleOverlayProps {
@@ -37,6 +47,10 @@ interface BubbleOverlayProps {
   position: { top: number; left: number };
   bubbleSize: number;
   availableHeight: number;
+  entranceProgress: SharedValue<number>;
+  entranceComplete: boolean;
+  flipProgress: SharedValue<number>;
+  bubbleColor: string;
 }
 
 const BubbleOverlay = React.memo(function BubbleOverlay({
@@ -45,17 +59,76 @@ const BubbleOverlay = React.memo(function BubbleOverlay({
   position,
   bubbleSize,
   availableHeight,
+  entranceProgress,
+  entranceComplete,
+  flipProgress,
+  bubbleColor,
 }: BubbleOverlayProps) {
-  const [isFlipped, setIsFlipped] = React.useState(false);
+  const isFlippedRef = React.useRef(false);
 
   const handlePress = () => {
+    if (!entranceComplete) return;
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    setIsFlipped((prev) => !prev);
+    const newFlipped = !isFlippedRef.current;
+    isFlippedRef.current = newFlipped;
+    flipProgress.value = withTiming(newFlipped ? 1 : 0, {
+      duration: 400,
+      easing: Easing.inOut(Easing.ease),
+    });
   };
+
+  // Sync overlay scale with Skia entrance animation
+  const overlayStyle = useAnimatedStyle(() => {
+    const phaseOffset = 0.12;
+    const totalBubbles = 5;
+    const delay = index * phaseOffset;
+    const animationWindow = 1 - (totalBubbles - 1) * phaseOffset;
+
+    let adjustedProgress = 0;
+    if (entranceProgress.value > delay) {
+      adjustedProgress = Math.min(
+        (entranceProgress.value - delay) / animationWindow,
+        1
+      );
+    }
+
+    const scale = 1 - Math.pow(1 - adjustedProgress, 3);
+    const opacity = Math.min(adjustedProgress * 2, 1);
+
+    return {
+      transform: [{ scale }],
+      opacity,
+    };
+  }, [index]);
+
+  // Front content: becomes visible as Skia fades, then flips away
+  const frontStyle = useAnimatedStyle(() => {
+    // Visible when flipping starts (Skia fades out, native fades in)
+    const frontOpacity = flipProgress.value > 0 ? 1 : 0;
+    // ScaleX flip: 1 -> 0 in first half
+    const scaleX = interpolate(flipProgress.value, [0, 0.5], [1, 0], 'clamp');
+
+    return {
+      opacity: frontOpacity,
+      transform: [{ scaleX }],
+    };
+  });
+
+  // Back content: flips in during second half
+  const backStyle = useAnimatedStyle(() => {
+    // Only visible in second half of flip
+    const backOpacity = flipProgress.value >= 0.5 ? 1 : 0;
+    // ScaleX flip: 0 -> 1 in second half
+    const scaleX = interpolate(flipProgress.value, [0.5, 1], [0, 1], 'clamp');
+
+    return {
+      opacity: backOpacity,
+      transform: [{ scaleX }],
+    };
+  });
 
   return (
     <Animated.View
-      entering={bouncyStaggerEntering(index, 200)}
       style={[
         styles.bubbleOverlay,
         {
@@ -64,28 +137,48 @@ const BubbleOverlay = React.memo(function BubbleOverlay({
           width: bubbleSize,
           height: bubbleSize,
         },
+        overlayStyle,
       ]}
     >
-      <Pressable
-        onPress={handlePress}
-        style={[styles.bubblePressable, { borderRadius: bubbleSize / 2 }]}
-      >
-        {!isFlipped ? (
-          <View style={styles.bubbleContent}>
-            <Text style={styles.speechCount}>
-              {party.speeches.toLocaleString('de-DE')}
-            </Text>
-            <Text style={styles.speechLabel}>Reden</Text>
-          </View>
-        ) : (
-          <View style={styles.bubbleBackContent}>
-            <Text style={styles.partyTitle}>{party.party}</Text>
-            <Text style={styles.wortCount}>
-              {party.wortbeitraege.toLocaleString('de-DE')}
-            </Text>
-            <Text style={styles.wortLabel}>Wortbeiträge</Text>
-          </View>
-        )}
+      <Pressable onPress={handlePress} style={styles.bubblePressable}>
+        {/* Front - colored circle with speech count (mirrors Skia content) */}
+        <Animated.View
+          style={[
+            styles.bubbleFront,
+            {
+              backgroundColor: bubbleColor,
+              borderRadius: bubbleSize / 2,
+              width: bubbleSize,
+              height: bubbleSize,
+            },
+            frontStyle,
+          ]}
+        >
+          <Text style={styles.frontCount}>
+            {party.speeches.toLocaleString('de-DE')}
+          </Text>
+          <Text style={styles.frontLabel}>Reden</Text>
+        </Animated.View>
+
+        {/* Back - party name + wortbeiträge */}
+        <Animated.View
+          style={[
+            styles.bubbleBack,
+            {
+              backgroundColor: bubbleColor,
+              borderRadius: bubbleSize / 2,
+              width: bubbleSize,
+              height: bubbleSize,
+            },
+            backStyle,
+          ]}
+        >
+          <Text style={styles.partyTitle}>{party.party}</Text>
+          <Text style={styles.wortCount}>
+            {party.wortbeitraege.toLocaleString('de-DE')}
+          </Text>
+          <Text style={styles.wortLabel}>Wortbeiträge</Text>
+        </Animated.View>
       </Pressable>
     </Animated.View>
   );
@@ -101,25 +194,62 @@ export function SpeechesChartSlide({ slideIndex }: SpeechesChartSlideProps) {
   const topInset = useTopInset();
 
   // Defer bubble rendering until 300ms after slide becomes visible
-  // This allows header to appear first for faster perceived start
   const showBubbles = useDeferredRender(slideIndex, 300);
 
+  // Single SharedValue drives all bubble animations
+  const entranceProgress = useSharedValue(0);
+  const [entranceComplete, setEntranceComplete] = useState(false);
+
+  // Flip progress for each bubble (stable refs)
+  const flipProgress0 = useSharedValue(0);
+  const flipProgress1 = useSharedValue(0);
+  const flipProgress2 = useSharedValue(0);
+  const flipProgress3 = useSharedValue(0);
+  const flipProgress4 = useSharedValue(0);
+  const flipProgresses = useRef([
+    flipProgress0,
+    flipProgress1,
+    flipProgress2,
+    flipProgress3,
+    flipProgress4,
+  ]).current;
+
   // Use precomputed data from store (computed once on mount, O(1) access)
-  // Separate selectors prevent object creation that can cause re-render loops
   const top5 = useTop5Parties();
   const bubbleSizes = useSpeechBubbleSizes();
   const totalReden = useTotalSpeeches();
 
-  // Create bubble configs for Skia Canvas
-  const bubbleConfigs = React.useMemo<BubbleConfig[]>(() => {
+  // Trigger entrance animation when bubbles become visible
+  useEffect(() => {
+    if (showBubbles) {
+      entranceProgress.value = withTiming(
+        1,
+        {
+          duration: 800,
+          easing: Easing.out(Easing.quad),
+        },
+        (finished) => {
+          if (finished) {
+            runOnJS(setEntranceComplete)(true);
+          }
+        }
+      );
+    }
+  }, [showBubbles, entranceProgress]);
+
+  // Create animated bubble configs for Skia Canvas
+  const bubbleConfigs = React.useMemo<AnimatedBubbleConfig[]>(() => {
     return top5.map((party, i) => {
       const pos = BUBBLE_POSITIONS.fiveItems[i];
       const size = bubbleSizes[i];
       return {
+        id: party.party,
         x: SCREEN_WIDTH * (pos.left / 100) + size / 2,
         y: availableHeight * (pos.top / 100) + size / 2,
         size,
         color: getPartyColor(party.party),
+        frontText: party.speeches.toLocaleString('de-DE'),
+        frontSubtext: 'Reden',
       };
     });
   }, [top5, bubbleSizes, availableHeight]);
@@ -142,20 +272,32 @@ export function SpeechesChartSlide({ slideIndex }: SpeechesChartSlideProps) {
         </Animated.Text>
       </View>
 
-      {/* Skia Canvas - static gradient backgrounds */}
-      {showBubbles && <SkiaBubbles bubbles={bubbleConfigs} />}
-
-      {/* Native overlays - text + tap handling */}
-      {showBubbles && top5.map((party, i) => (
-        <BubbleOverlay
-          key={party.party}
-          party={party}
-          index={i}
-          position={BUBBLE_POSITIONS.fiveItems[i]}
-          bubbleSize={bubbleSizes[i]}
-          availableHeight={availableHeight}
+      {/* Animated Skia Canvas - circles + text animate together, fade when flipping */}
+      {showBubbles && (
+        <AnimatedSkiaBubbles
+          bubbles={bubbleConfigs}
+          progress={entranceProgress}
+          phaseOffset={0.12}
+          flipProgresses={flipProgresses}
         />
-      ))}
+      )}
+
+      {/* Native overlays - tap handling + flip animation */}
+      {showBubbles &&
+        top5.map((party, i) => (
+          <BubbleOverlay
+            key={party.party}
+            party={party}
+            index={i}
+            position={BUBBLE_POSITIONS.fiveItems[i]}
+            bubbleSize={bubbleSizes[i]}
+            availableHeight={availableHeight}
+            entranceProgress={entranceProgress}
+            entranceComplete={entranceComplete}
+            flipProgress={flipProgresses[i]}
+            bubbleColor={getPartyColor(party.party)}
+          />
+        ))}
 
       {/* Hint - deferred with bubbles */}
       {showBubbles && (
@@ -213,26 +355,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  bubbleContent: {
+  bubbleFront: {
+    position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 12,
   },
-  speechCount: {
-    fontSize: 28,
+  frontCount: {
+    fontSize: 24,
     fontWeight: '900',
     color: '#ffffff',
     textShadowColor: 'rgba(0,0,0,0.3)',
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 2,
   },
-  speechLabel: {
+  frontLabel: {
     fontSize: 12,
-    fontWeight: '500',
-    color: 'rgba(255, 255, 255, 0.7)',
+    fontWeight: '600',
+    color: 'rgba(255, 255, 255, 0.8)',
     marginTop: 2,
   },
-  bubbleBackContent: {
+  bubbleBack: {
+    position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 8,

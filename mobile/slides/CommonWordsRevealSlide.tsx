@@ -45,6 +45,7 @@ export function CommonWordsRevealSlide({ hotTopics }: CommonWordsRevealSlideProp
           emoji="📊"
           title="Häufigste Wörter"
           subtitle="Die meistgenutzten Wörter im Bundestag"
+          slideId="reveal-common-words"
         />
       </View>
 

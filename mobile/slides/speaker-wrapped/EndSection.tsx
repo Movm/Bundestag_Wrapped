@@ -31,8 +31,8 @@ export function EndSection({ data, onRestart }: EndSectionProps) {
   const [imageUri, setImageUri] = useState<string | null>(null);
   const canvasRef = useRef<View>(null);
 
-  // Get signature word for the share image
-  const signatureWord = data.words.signatureWords[0] || null;
+  // Get signature word for the share image (use Bundestag comparison)
+  const signatureWord = data.words.signatureWordsBundestag[0] || null;
 
   // Capture canvas on mount for faster sharing
   useEffect(() => {
