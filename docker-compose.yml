@@ -6,3 +6,5 @@ services:
         VITE_UMAMI_URL: ${VITE_UMAMI_URL:-}
         VITE_UMAMI_WEBSITE_ID: ${VITE_UMAMI_WEBSITE_ID:-}
     restart: unless-stopped
+    expose:
+      - "80"
