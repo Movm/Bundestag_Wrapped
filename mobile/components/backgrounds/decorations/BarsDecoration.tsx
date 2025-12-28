@@ -1,15 +1,15 @@
 /**
- * BarsDecoration - Vertical equalizer bars SVG decoration
+ * BarsDecoration - Vertical equalizer bars decoration (Skia)
  *
  * Used for: speeches section
  */
 
-import React, { memo, useEffect, useMemo } from 'react';
+import React, { memo, useEffect } from 'react';
 import { View, StyleSheet } from 'react-native';
-import Svg, { Rect, Defs, LinearGradient, Stop } from 'react-native-svg';
+import { Canvas, RoundedRect, LinearGradient, vec } from '@shopify/react-native-skia';
 import Animated, {
   useSharedValue,
-  useAnimatedProps,
+  useAnimatedStyle,
   withTiming,
   withDelay,
   Easing,
@@ -18,11 +18,107 @@ import {
   BAR_CONFIGS,
   DECORATION_VIEWBOX,
   DECORATION_TIMINGS,
-  createGradientStops,
   type DecorationProps,
 } from '../../../../src/shared/decorations/paths';
 
-const AnimatedRect = Animated.createAnimatedComponent(Rect);
+/**
+ * Convert RGB string "r, g, b" to hex "#rrggbb"
+ */
+function rgbToHex(rgb: string): string {
+  const parts = rgb.split(',').map((n) => parseInt(n.trim(), 10));
+  if (parts.length !== 3 || parts.some(isNaN)) {
+    return '#888888';
+  }
+  const [r, g, b] = parts;
+  return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+}
+
+/**
+ * Single animated bar
+ */
+const AnimatedBar = memo(function AnimatedBar({
+  bar,
+  index,
+  glowHex,
+  primaryHex,
+  secondaryHex,
+  delay,
+  animate,
+  viewHeight,
+}: {
+  bar: { x: number; height: number; width?: number };
+  index: number;
+  glowHex: string;
+  primaryHex: string;
+  secondaryHex: string;
+  delay: number;
+  animate: boolean;
+  viewHeight: number;
+}) {
+  const scaleY = useSharedValue(0);
+  const opacity = useSharedValue(0);
+
+  useEffect(() => {
+    if (animate) {
+      const staggerDelay = delay * 1000 + index * DECORATION_TIMINGS.staggerDelay * 800;
+
+      scaleY.value = withDelay(
+        staggerDelay,
+        withTiming(1, {
+          duration: 400,
+          easing: Easing.out(Easing.ease),
+        })
+      );
+
+      opacity.value = withDelay(
+        staggerDelay,
+        withTiming(1, { duration: 350 })
+      );
+    } else {
+      scaleY.value = withTiming(0, { duration: 200 });
+      opacity.value = withTiming(0, { duration: 200 });
+    }
+  }, [animate, delay, index, scaleY, opacity]);
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    opacity: opacity.value,
+    transform: [{ scaleY: scaleY.value }],
+  }));
+
+  const barWidth = bar.width || 16;
+
+  return (
+    <Animated.View
+      style={[
+        {
+          position: 'absolute',
+          left: bar.x - barWidth / 2,
+          bottom: 0,
+          width: barWidth,
+          height: bar.height,
+          transformOrigin: 'bottom',
+        },
+        animatedStyle,
+      ]}
+    >
+      <Canvas style={{ width: barWidth, height: bar.height }}>
+        <RoundedRect
+          x={0}
+          y={0}
+          width={barWidth}
+          height={bar.height}
+          r={barWidth / 2}
+        >
+          <LinearGradient
+            start={vec(0, bar.height)}
+            end={vec(0, 0)}
+            colors={[secondaryHex, primaryHex, glowHex]}
+          />
+        </RoundedRect>
+      </Canvas>
+    </Animated.View>
+  );
+});
 
 export const BarsDecoration = memo(function BarsDecoration({
   colors,
@@ -32,108 +128,35 @@ export const BarsDecoration = memo(function BarsDecoration({
   scale = 1,
 }: DecorationProps) {
   const { width, height } = DECORATION_VIEWBOX.bars;
-  const gradientStops = useMemo(() => createGradientStops(colors), [colors]);
-  const gradientId = `bars-gradient-${side}`;
+
+  // Convert theme colors to hex
+  const glowHex = rgbToHex(colors.glow);
+  const primaryHex = rgbToHex(colors.primary);
+  const secondaryHex = rgbToHex(colors.secondary);
 
   return (
-    <View style={[styles.container, { transform: [{ scale }] }]}>
-      <Svg
-        width={width}
-        height={height}
-        viewBox={`0 0 ${width} ${height}`}
-        fill="none"
-      >
-        <Defs>
-          <LinearGradient id={gradientId} x1="0%" y1="0%" x2="0%" y2="100%">
-            {gradientStops.map((stop, i) => (
-              <Stop key={i} offset={stop.offset} stopColor={stop.color} />
-            ))}
-          </LinearGradient>
-        </Defs>
-
-        {BAR_CONFIGS.map((bar, index) => (
-          <AnimatedBar
-            key={index}
-            index={index}
-            bar={bar}
-            gradientId={gradientId}
-            delay={delay}
-            animate={animate}
-            viewHeight={height}
-          />
-        ))}
-      </Svg>
+    <View style={[styles.container, { width, height, transform: [{ scale }] }]}>
+      {BAR_CONFIGS.map((bar, index) => (
+        <AnimatedBar
+          key={index}
+          bar={bar}
+          index={index}
+          glowHex={glowHex}
+          primaryHex={primaryHex}
+          secondaryHex={secondaryHex}
+          delay={delay}
+          animate={animate}
+          viewHeight={height}
+        />
+      ))}
     </View>
-  );
-});
-
-interface AnimatedBarProps {
-  index: number;
-  bar: { x: number; height: number; width?: number };
-  gradientId: string;
-  delay: number;
-  animate: boolean;
-  viewHeight: number;
-}
-
-const AnimatedBar = memo(function AnimatedBar({
-  index,
-  bar,
-  gradientId,
-  delay,
-  animate,
-  viewHeight,
-}: AnimatedBarProps) {
-  const scaleY = useSharedValue(0);
-  const opacity = useSharedValue(0);
-
-  useEffect(() => {
-    if (animate) {
-      const staggerDelay = delay * 1000 + index * DECORATION_TIMINGS.staggerDelay * 1200;
-
-      scaleY.value = withDelay(
-        staggerDelay,
-        withTiming(1, {
-          duration: DECORATION_TIMINGS.drawDuration * 800,
-          easing: Easing.out(Easing.back(1.2)),
-        })
-      );
-
-      opacity.value = withDelay(
-        staggerDelay,
-        withTiming(1, {
-          duration: DECORATION_TIMINGS.fadeInDuration * 1000,
-        })
-      );
-    } else {
-      scaleY.value = withTiming(0, { duration: 300 });
-      opacity.value = withTiming(0, { duration: 300 });
-    }
-  }, [animate, delay, index, scaleY, opacity]);
-
-  const barWidth = bar.width || 16;
-  const y = viewHeight - bar.height;
-
-  const animatedProps = useAnimatedProps(() => ({
-    height: bar.height * scaleY.value,
-    y: viewHeight - bar.height * scaleY.value,
-    opacity: opacity.value,
-  }));
-
-  return (
-    <AnimatedRect
-      x={bar.x}
-      width={barWidth}
-      rx={barWidth / 2}
-      fill={`url(#${gradientId})`}
-      animatedProps={animatedProps}
-    />
   );
 });
 
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
+    position: 'relative',
   },
 });

@@ -1,15 +1,15 @@
 /**
- * LightningDecoration - Zigzag bolt SVG decoration
+ * LightningDecoration - Zigzag bolt decoration (Skia)
  *
  * Used for: drama section
  */
 
 import React, { memo, useEffect, useMemo } from 'react';
 import { View, StyleSheet } from 'react-native';
-import Svg, { Path, Defs, LinearGradient, Stop } from 'react-native-svg';
+import { Canvas, Path, Skia, LinearGradient, vec } from '@shopify/react-native-skia';
 import Animated, {
   useSharedValue,
-  useAnimatedProps,
+  useAnimatedStyle,
   withTiming,
   withDelay,
   Easing,
@@ -18,11 +18,20 @@ import {
   LIGHTNING_PATH,
   DECORATION_VIEWBOX,
   DECORATION_TIMINGS,
-  createGradientStops,
   type DecorationProps,
 } from '../../../../src/shared/decorations/paths';
 
-const AnimatedPath = Animated.createAnimatedComponent(Path);
+/**
+ * Convert RGB string "r, g, b" to hex "#rrggbb"
+ */
+function rgbToHex(rgb: string): string {
+  const parts = rgb.split(',').map((n) => parseInt(n.trim(), 10));
+  if (parts.length !== 3 || parts.some(isNaN)) {
+    return '#888888';
+  }
+  const [r, g, b] = parts;
+  return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+}
 
 export const LightningDecoration = memo(function LightningDecoration({
   colors,
@@ -32,67 +41,50 @@ export const LightningDecoration = memo(function LightningDecoration({
   scale = 1,
 }: DecorationProps) {
   const { width, height } = DECORATION_VIEWBOX.lightning;
-  const pathLength = useSharedValue(0);
-  const pathOpacity = useSharedValue(0);
+  const opacity = useSharedValue(0);
 
   useEffect(() => {
     if (animate) {
       const delayMs = delay * 1000;
-
-      pathLength.value = withDelay(
-        delayMs,
-        withTiming(1, {
-          duration: DECORATION_TIMINGS.drawDuration * 600,
-          easing: Easing.out(Easing.ease),
-        })
-      );
-
-      pathOpacity.value = withDelay(
-        delayMs,
-        withTiming(1, {
-          duration: DECORATION_TIMINGS.fadeInDuration * 800,
-        })
-      );
+      opacity.value = withDelay(delayMs, withTiming(1, { duration: 400 }));
     } else {
-      pathLength.value = withTiming(0, { duration: 300 });
-      pathOpacity.value = withTiming(0, { duration: 300 });
+      opacity.value = withTiming(0, { duration: 200 });
     }
-  }, [animate, delay, pathLength, pathOpacity]);
+  }, [animate, delay, opacity]);
 
-  const animatedProps = useAnimatedProps(() => ({
-    strokeDashoffset: 400 * (1 - pathLength.value),
-    opacity: pathOpacity.value,
+  const animatedStyle = useAnimatedStyle(() => ({
+    opacity: opacity.value,
   }));
 
-  const gradientStops = useMemo(() => createGradientStops(colors), [colors]);
-  const gradientId = `lightning-gradient-${side}`;
+  // Pre-compute path
+  const path = useMemo(() => Skia.Path.MakeFromSVGString(LIGHTNING_PATH), []);
+
+  // Convert theme colors to hex
+  const glowHex = rgbToHex(colors.glow);
+  const primaryHex = rgbToHex(colors.primary);
+  const secondaryHex = rgbToHex(colors.secondary);
 
   return (
     <View style={[styles.container, { transform: [{ scale }] }]}>
-      <Svg
-        width={width}
-        height={height}
-        viewBox={`0 0 ${width} ${height}`}
-        fill="none"
-      >
-        <Defs>
-          <LinearGradient id={gradientId} x1="0%" y1="0%" x2="0%" y2="100%">
-            {gradientStops.map((stop, i) => (
-              <Stop key={i} offset={stop.offset} stopColor={stop.color} />
-            ))}
-          </LinearGradient>
-        </Defs>
-        <AnimatedPath
-          d={LIGHTNING_PATH}
-          stroke={`url(#${gradientId})`}
-          strokeWidth={12}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeDasharray={400}
-          fill="none"
-          animatedProps={animatedProps}
-        />
-      </Svg>
+      <Animated.View style={animatedStyle}>
+        <Canvas style={{ width, height }}>
+          {path && (
+            <Path
+              path={path}
+              style="stroke"
+              strokeWidth={12}
+              strokeCap="round"
+              strokeJoin="round"
+            >
+              <LinearGradient
+                start={vec(0, 0)}
+                end={vec(0, height)}
+                colors={[glowHex, primaryHex, secondaryHex]}
+              />
+            </Path>
+          )}
+        </Canvas>
+      </Animated.View>
     </View>
   );
 });
