@@ -3,16 +3,32 @@
  * Each icon matches its section's color scheme and background effect
  */
 
-export { TopicsIcon } from './TopicsIcon';
-export { VocabularyIcon } from './VocabularyIcon';
-export { SpeechesIcon } from './SpeechesIcon';
-export { DramaIcon } from './DramaIcon';
-export { DiscriminatoryIcon } from './DiscriminatoryIcon';
-export { CommonWordsIcon } from './CommonWordsIcon';
-export { MoinIcon } from './MoinIcon';
-export { SwiftieIcon } from './SwiftieIcon';
-export { ToneIcon } from './ToneIcon';
-export { GenderIcon } from './GenderIcon';
+import { TopicsIcon } from './TopicsIcon';
+import { VocabularyIcon } from './VocabularyIcon';
+import { SpeechesIcon } from './SpeechesIcon';
+import { DramaIcon } from './DramaIcon';
+import { DiscriminatoryIcon } from './DiscriminatoryIcon';
+import { CommonWordsIcon } from './CommonWordsIcon';
+import { MoinIcon } from './MoinIcon';
+import { SwiftieIcon } from './SwiftieIcon';
+import { ToneIcon } from './ToneIcon';
+import { GenderIcon } from './GenderIcon';
+import { DisclaimerIcon } from './DisclaimerIcon';
+
+// Re-export all icons
+export {
+  TopicsIcon,
+  VocabularyIcon,
+  SpeechesIcon,
+  DramaIcon,
+  DiscriminatoryIcon,
+  CommonWordsIcon,
+  MoinIcon,
+  SwiftieIcon,
+  ToneIcon,
+  GenderIcon,
+  DisclaimerIcon,
+};
 
 export type { IntroIconProps } from './types';
 

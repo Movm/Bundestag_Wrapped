@@ -1,14 +1,14 @@
 import type { IntroIconProps } from './types';
 
 /**
- * Moin Icon - Curved Wave Arc
- * Friendly flowing arcs representing a wave gesture
- * Matches the "waves" background effect
+ * Moin Icon - Minimalistic Horizontal Waves
+ * Clean, flowing sine waves representing water/ocean
+ * Light blue color scheme for a fresh, water-ish feel
  */
 export function MoinIcon({
   className = 'w-24 h-24',
-  primaryColor = '#22C55E',
-  secondaryColor = '#16A34A',
+  primaryColor = '#38BDF8',
+  secondaryColor = '#0EA5E9',
 }: IntroIconProps) {
   const gradientId = 'moin-gradient';
 
@@ -26,69 +26,31 @@ export function MoinIcon({
         </linearGradient>
       </defs>
 
-      {/* Main wave arc - largest, filled */}
+      {/* Top wave - full opacity */}
       <path
-        d="M12 60 Q48 20 84 60"
-        stroke={`url(#${gradientId})`}
-        strokeWidth="8"
-        strokeLinecap="round"
-        fill="none"
-      />
-
-      {/* Second arc - medium */}
-      <path
-        d="M20 72 Q48 40 76 72"
+        d="M8 36 C24 24, 40 48, 56 36 S88 24, 88 36"
         stroke={`url(#${gradientId})`}
         strokeWidth="5"
-        strokeOpacity="0.7"
         strokeLinecap="round"
         fill="none"
       />
 
-      {/* Third arc - smallest */}
+      {/* Middle wave - medium opacity */}
       <path
-        d="M28 82 Q48 58 68 82"
+        d="M8 52 C24 40, 40 64, 56 52 S88 40, 88 52"
+        stroke={`url(#${gradientId})`}
+        strokeWidth="4"
+        strokeOpacity="0.6"
+        strokeLinecap="round"
+        fill="none"
+      />
+
+      {/* Bottom wave - lighter opacity */}
+      <path
+        d="M8 68 C24 56, 40 80, 56 68 S88 56, 88 68"
         stroke={`url(#${gradientId})`}
         strokeWidth="3"
-        strokeOpacity="0.5"
-        strokeLinecap="round"
-        fill="none"
-      />
-
-      {/* Accent dot at peak */}
-      <circle cx="48" cy="32" r="6" fill={`url(#${gradientId})`} />
-      <circle cx="48" cy="32" r="3" fill="white" fillOpacity="0.9" />
-
-      {/* Motion lines - accent strokes */}
-      <path
-        d="M32 24 Q28 20 24 24"
-        stroke={`url(#${gradientId})`}
-        strokeWidth="2"
-        strokeOpacity="0.5"
-        strokeLinecap="round"
-        fill="none"
-      />
-      <path
-        d="M72 24 Q68 20 64 24"
-        stroke={`url(#${gradientId})`}
-        strokeWidth="2"
-        strokeOpacity="0.5"
-        strokeLinecap="round"
-        fill="none"
-      />
-      <path
-        d="M24 40 Q20 36 16 40"
-        stroke={`url(#${gradientId})`}
-        strokeWidth="2"
-        strokeOpacity="0.4"
-        strokeLinecap="round"
-        fill="none"
-      />
-      <path
-        d="M80 40 Q76 36 72 40"
-        stroke={`url(#${gradientId})`}
-        strokeWidth="2"
-        strokeOpacity="0.4"
+        strokeOpacity="0.35"
         strokeLinecap="round"
         fill="none"
       />
