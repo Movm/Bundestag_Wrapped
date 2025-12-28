@@ -151,4 +151,19 @@ export const QUIZZES: Record<string, QuizQuestion> = {
     explanation:
       'Die AfD verwendet deutlich mehr Begriffe wie "Remigration", "Genderideologie" oder "Überfremdung".',
   },
+  'quiz-swiftie': {
+    id: 'quiz-swiftie',
+    type: 'prediction',
+    question: 'Wer ist Swiftie im Bundestag?',
+    options: [], // Generated at runtime from swiftie + decoys
+    correctAnswer: 'Daniel Baldy (SPD)',
+    explanation:
+      'Daniel Baldy hat als einzige Person "Taylor Swift" im Bundestag erwähnt – in einer Rede über Cybersicherheit!',
+    swiftie: { name: 'Daniel Baldy', party: 'SPD' },
+    decoys: [
+      { name: 'Ricarda Lang', party: 'GRÜNE' },
+      { name: 'Kai Whittaker', party: 'CDU/CSU' },
+      { name: 'Zada Salihović', party: 'DIE LINKE' },
+    ],
+  },
 };

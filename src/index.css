@@ -361,6 +361,20 @@ h1, h2, h3, h4, h5, h6 {
   animation: shimmer 1.5s ease-in-out infinite;
 }
 
+/* News ticker scrolling animation */
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker-scroll 25s linear infinite;
+}
+
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .scroll-container {
@@ -376,6 +390,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .animate-shimmer {
+    animation: none;
+  }
+
+  .animate-ticker {
     animation: none;
   }
 

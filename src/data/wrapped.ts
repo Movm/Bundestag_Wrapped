@@ -51,6 +51,9 @@ export interface QuizQuestion {
   correctAnswer: string;
   explanation: string;
   ratio?: number;
+  // For swiftie quiz: structured data for runtime option generation
+  swiftie?: { name: string; party: string };
+  decoys?: Array<{ name: string; party: string }>;
 }
 
 export interface FunFact {

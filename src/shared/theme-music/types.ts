@@ -72,6 +72,7 @@ export const SECTION_THEMES: Record<string, ThemeType> = {
 
   // Topics section - electronic club
   topics: 'mutant',
+  'party-topics': 'mutant',
 
   // Vocabulary & Signature section - soft hiphop
   vocabulary: 'reflections',

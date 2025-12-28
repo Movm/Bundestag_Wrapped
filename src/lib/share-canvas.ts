@@ -6,6 +6,8 @@ export interface ShareImageData {
   userName?: string;
 }
 
+export type ShareCanvasVariant = 'score' | 'title';
+
 // Logo preloading
 let logoImage: HTMLImageElement | null = null;
 let logoLoadPromise: Promise<HTMLImageElement> | null = null;
@@ -38,15 +40,15 @@ function getResultMessage(correctCount: number, totalQuestions: number): { emoji
 
   switch (score) {
     case 10: return {
-      emoji: '🏆', title: 'Polit-Legende!',
+      emoji: '🏆', title: 'Legende!',
       tagline: 'Perfekt! Du könntest im Bundestag hospitieren.'
     };
     case 9: return {
-      emoji: '🏆', title: 'Polit-Legende!',
+      emoji: '🏆', title: 'Legende!',
       tagline: 'Deine Eltern wären so stolz auf dich.'
     };
     case 8: return {
-      emoji: '🏆', title: 'Polit-Legende!',
+      emoji: '🏆', title: 'Legende!',
       tagline: 'Fast makellos – da wackelt der Kanzlerstuhl.'
     };
     case 7: return {
@@ -138,7 +140,8 @@ function drawDecorativeOrbs(ctx: CanvasRenderingContext2D, size: number): void {
 
 export function renderShareImage(
   canvas: HTMLCanvasElement,
-  data: ShareImageData
+  data: ShareImageData,
+  variant: ShareCanvasVariant = 'score'
 ): void {
   const { correctCount, totalQuestions, userName } = data;
   const result = getResultMessage(correctCount, totalQuestions);
@@ -194,34 +197,42 @@ export function renderShareImage(
   ctx.fillStyle = heroGradient;
 
   // Calculate left X position (centered block)
-  // Short names (≤14 chars): "Moritz, du bist" | Long names: "Moritz ist"
-  const line1Text = name
-    ? (name.length <= 14 ? `${name}, du bist` : `${name} ist`)
-    : 'Du bist';
-  const line2Text = `${result.title} ${result.emoji}`;
-  const maxWidth = Math.max(ctx.measureText(line1Text).width, ctx.measureText(line2Text).width);
+  // Variant 'score': "Moritz, du bist" + "Polit-Legende! 🏆"
+  // Variant 'title': "Moritz, du bist eine:" only (no second line)
+  const line1Text = variant === 'title'
+    ? (name ? `${name}, du bist eine:` : 'Du bist eine:')
+    : (name ? (name.length <= 14 ? `${name}, du bist` : `${name} ist`) : 'Du bist');
+  const line2Text = variant === 'title'
+    ? '' // No second line in title variant
+    : `${result.title} ${result.emoji}`;
+  const maxWidth = line2Text
+    ? Math.max(ctx.measureText(line1Text).width, ctx.measureText(line2Text).width)
+    : ctx.measureText(line1Text).width;
   const heroX = centerX - maxWidth / 2;
 
-  // Line 1: "Du bist" or "Moritz ist"
+  // Line 1: "Du bist" or "Moritz ist" or "Du bist eine:"
   const line1Y = 320;
   ctx.shadowColor = `${BRAND_COLORS.primary}60`;
   ctx.shadowBlur = 50;
   ctx.fillText(line1Text, heroX, line1Y);
 
-  // Line 2: title + emoji
-  const line2Y = 420;
-  ctx.fillText(line2Text, heroX, line2Y);
+  // Line 2: title + emoji (only for 'score' variant)
+  if (line2Text) {
+    const line2Y = 420;
+    ctx.fillText(line2Text, heroX, line2Y);
+  }
   ctx.shadowBlur = 0;
 
   // === SCORE (bold text, centered) ===
   ctx.textAlign = 'center';
-  const scoreY = 600;
-  ctx.font = '900 140px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+  const scoreY = variant === 'title' ? 546 : 600; // 5% higher for 'title' variant
+  const scoreFontSize = variant === 'title' ? 220 : 140; // larger for 'title' variant
+  ctx.font = `900 ${scoreFontSize}px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`;
   ctx.fillStyle = '#ffffff';
   ctx.fillText(`${correctCount}/${totalQuestions}`, centerX, scoreY);
 
   // === TAGLINE ===
-  const taglineY = 740;
+  const taglineY = variant === 'title' ? 686 : 740; // 5% higher for 'title' variant
   ctx.font = 'italic 36px Georgia, "Times New Roman", serif';
   ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
   ctx.fillText(result.tagline, centerX, taglineY);
@@ -231,7 +242,7 @@ export function renderShareImage(
 
   ctx.font = '26px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
   ctx.fillStyle = 'rgba(255, 255, 255, 0.45)';
-  ctx.fillText('Teste dein Wissen auf', centerX, footerY);
+  ctx.fillText('Wie gut kennst du den Bundestag? Teste dein Wissen auf', centerX, footerY);
 
   ctx.font = 'bold 34px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
   const urlGradient = ctx.createLinearGradient(centerX - 200, 0, centerX + 200, 0);

@@ -227,7 +227,7 @@ describe('speaker-share-canvas', () => {
         name: 'Lars Klingbeil',
         party: 'SPD',
         spiritAnimal: null,
-        signatureWord: { word: 'Standortfördergesetz', ratioParty: 5, ratioBundestag: 8 },
+        signatureWord: { word: 'Standortfördergesetz', count: 12, ratio: 8 },
       };
 
       renderSpeakerShareImage(mockCanvas, data);
@@ -244,7 +244,7 @@ describe('speaker-share-canvas', () => {
         name: 'Lars Klingbeil',
         party: 'SPD',
         spiritAnimal: null,
-        signatureWord: { word: 'Standortfördergesetz', ratioParty: 5, ratioBundestag: 8 },
+        signatureWord: { word: 'Standortfördergesetz', count: 12, ratio: 8 },
       };
 
       renderSpeakerShareImage(mockCanvas, data);
@@ -254,21 +254,21 @@ describe('speaker-share-canvas', () => {
       expect(fillTextCalls.some((c: unknown[]) => c[0] === 'Dein Signaturwort ist ')).toBe(true);
     });
 
-    it('should render signature word ratio stats', () => {
+    it('should render signature word count stats', () => {
       const data: SpeakerShareData = {
         name: 'Lars Klingbeil',
         party: 'SPD',
         spiritAnimal: null,
-        signatureWord: { word: 'Standortfördergesetz', ratioParty: 5, ratioBundestag: 8 },
+        signatureWord: { word: 'Standortfördergesetz', count: 12, ratio: 8 },
       };
 
       renderSpeakerShareImage(mockCanvas, data);
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
-      const hasRatioText = fillTextCalls.some(
-        (call: unknown[]) => call[0] === '5× häufiger als deine Fraktion'
+      const hasCountText = fillTextCalls.some(
+        (call: unknown[]) => call[0] === '12× gesagt'
       );
-      expect(hasRatioText).toBe(true);
+      expect(hasCountText).toBe(true);
     });
 
     it('should not render signature section when no signature word', () => {
@@ -323,7 +323,7 @@ describe('speaker-share-canvas', () => {
           title: 'Wortgewaltige:r Redner:in',
           reason: 'Mit 45.000 Wörtern eine:r der redefreudigsten Abgeordneten.',
         },
-        signatureWord: { word: 'Standortfördergesetz', ratioParty: 5, ratioBundestag: 8 },
+        signatureWord: { word: 'Standortfördergesetz', count: 12, ratio: 8 },
       };
 
       renderSpeakerShareImage(mockCanvas, data);

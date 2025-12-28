@@ -55,22 +55,22 @@ export interface DisplayWords {
 
 /**
  * Get display-ready words from speaker data
+ * Uses Bundestag comparison - shows what makes this speaker unique nationally
  * @param words - SpeakerWords from speaker wrapped data
  * @param topLimit - Max number of top words to return (default: 6)
  */
 export function getDisplayWords(words: SpeakerWords, topLimit = 6): DisplayWords {
   return {
     topWords: words.topWords.slice(0, topLimit),
-    signatureWords: words.signatureWords || [],
+    signatureWords: words.signatureWordsBundestag || [],
   };
 }
 
 /**
  * Get ratio display value for a signature word
- * Handles different data formats
  */
 export function getSignatureWordRatio(word: SignatureWord): number {
-  return word.ratioBundestag ?? word.ratioParty ?? (word as any).ratio ?? 0;
+  return word.ratio;
 }
 
 // ─────────────────────────────────────────────────────────────

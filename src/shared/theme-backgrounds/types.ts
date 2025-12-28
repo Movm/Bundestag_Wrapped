@@ -142,13 +142,13 @@ export const THEME_BACKGROUNDS: Record<BackgroundTheme, ThemeConfig> = {
     intensity: 0.8,
   },
 
-  // Regional, friendly - green/lime wave lines (like northern sea waves)
+  // Regional, friendly - light blue water waves (North Sea vibes)
   moin: {
     colors: {
-      primary: '34, 197, 94',     // green-500
-      secondary: '22, 163, 74',   // green-600
+      primary: '56, 189, 248',    // sky-400
+      secondary: '14, 165, 233',  // sky-500
       accent: '255, 255, 255',
-      glow: '74, 222, 128',       // green-400
+      glow: '125, 211, 252',      // sky-300
     },
     effectType: 'waves',
     intensity: 0.8,
@@ -248,6 +248,15 @@ export const SECTION_BACKGROUNDS: Record<string, BackgroundTheme> = {
 
   // Finale
   finale: 'finale',
+
+  // Speaker Wrapped slides
+  'speaker-intro': 'intro',
+  'speaker-animal': 'swiftie',      // Sparkles for spirit animal (playful)
+  'speaker-quiz': 'vocabulary',     // Quiz uses vocabulary theme
+  'speaker-words': 'common-words',  // Words display
+  'speaker-topics': 'topics',       // Topics section
+  'speaker-share': 'speeches',      // Share uses energetic theme
+  'speaker-end': 'finale',          // Celebration rays for end
 };
 
 // Transition settings
@@ -261,6 +270,11 @@ export function getBackgroundTheme(slideId: string): BackgroundTheme {
   // Handle main intro slide
   if (slideId === 'intro') {
     return 'intro';
+  }
+
+  // Handle speaker wrapped slides directly (they have full key in SECTION_BACKGROUNDS)
+  if (slideId.startsWith('speaker-')) {
+    return SECTION_BACKGROUNDS[slideId] || 'intro';
   }
 
   // Extract section from slide ID (e.g., 'quiz-topics' → 'topics')

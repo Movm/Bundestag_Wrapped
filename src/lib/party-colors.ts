@@ -60,3 +60,16 @@ export function getPartyGradient(party: string): string {
 export function getPartyBgClass(party: string): string {
   return PARTY_BG_CLASSES[party] || PARTY_BG_CLASSES.fraktionslos;
 }
+
+/**
+ * Text colors visible on dark backgrounds
+ * CDU is black (#000000) which is invisible on dark backgrounds,
+ * so we use white text for CDU content instead.
+ */
+const PARTY_TEXT_COLORS: Record<string, string> = {
+  'CDU/CSU': '#FFFFFF',  // White text - black invisible on dark bg
+};
+
+export function getPartyTextColor(party: string): string {
+  return PARTY_TEXT_COLORS[party] || getPartyColor(party);
+}

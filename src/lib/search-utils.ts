@@ -78,6 +78,55 @@ export interface WordsIndex {
   words: WordFrequency[];
 }
 
+// Word rankings types (from word_rankings.json)
+export interface WordRankingSpeaker {
+  speaker: string;
+  party: string;
+  count: number;
+  gender: 'male' | 'female' | 'unknown';
+}
+
+export interface WordGenderStats {
+  male: number;
+  female: number;
+  unknown: number;
+}
+
+export interface WordRanking {
+  total: number;
+  speakers: number;
+  byGender: WordGenderStats;
+  top: WordRankingSpeaker[];
+}
+
+export interface WordRankingsData {
+  count: number;
+  words: Record<string, WordRanking>;
+}
+
+// Topic rankings types (from topic_rankings.json)
+export interface TopicRankingSpeaker {
+  speaker: string;
+  party: string;
+  count: number;
+  gender: 'male' | 'female' | 'unknown';
+}
+
+export interface TopicRanking {
+  name: string;
+  description: string;
+  emoji: string;
+  total: number;
+  speakers: number;
+  byGender: WordGenderStats;
+  top: TopicRankingSpeaker[];
+}
+
+export interface TopicRankingsData {
+  count: number;
+  topics: Record<string, TopicRanking>;
+}
+
 export interface SearchFilters {
   party: string;
   minWords?: number;

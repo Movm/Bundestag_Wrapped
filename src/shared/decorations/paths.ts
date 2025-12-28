@@ -40,6 +40,13 @@ export interface SparkleConfig {
   rotation: number;
 }
 
+export interface AuroraBandConfig {
+  y: number;
+  height: number;
+  curve: number;
+  opacity: number;
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 // SVG Viewbox Dimensions
 // ─────────────────────────────────────────────────────────────────────────────
@@ -53,6 +60,7 @@ export const DECORATION_VIEWBOX = {
   orbs: { width: 120, height: 160 },
   sparkle: { width: 120, height: 160 },
   gradient: { width: 100, height: 160 },
+  aurora: { width: 100, height: 140 },
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -161,6 +169,38 @@ export const GRADIENT_LINES = [
   { y: 80, width: 60, opacity: 0.3 },
   { y: 110, width: 70, opacity: 0.25 },
 ];
+
+/**
+ * Aurora: Curved horizontal bands for tone/intro sections
+ * Soft flowing bands like northern lights
+ */
+export const AURORA_BANDS: AuroraBandConfig[] = [
+  { y: 25, height: 22, curve: 12, opacity: 0.75 },   // Top band
+  { y: 55, height: 28, curve: 18, opacity: 0.55 },   // Middle band (largest)
+  { y: 95, height: 20, curve: 10, opacity: 0.35 },   // Bottom band
+];
+
+/**
+ * Generate a curved band path for aurora effect
+ * Creates a closed shape with curved top and bottom edges
+ */
+export function createAuroraBandPath(
+  y: number,
+  height: number,
+  curve: number,
+  width: number
+): string {
+  const topY = y - curve;
+  const bottomY = y + height - curve * 0.5;
+
+  return `
+    M 0,${y}
+    Q ${width / 2},${topY} ${width},${y}
+    L ${width},${y + height}
+    Q ${width / 2},${bottomY} 0,${y + height}
+    Z
+  `.trim();
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Animation Timing Constants

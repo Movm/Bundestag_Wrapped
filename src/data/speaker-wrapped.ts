@@ -43,24 +43,27 @@ export interface SpeakerWord {
   count: number;
 }
 
+/**
+ * Signature word with score-based ranking.
+ * score = count × log(ratio + 1) balances frequency with uniqueness.
+ */
 export interface SignatureWord {
   word: string;
   count: number;
-  ratioParty: number; // How much more than party average (e.g., 3.2 = 3.2x party avg)
-  ratioBundestag: number; // How much more than Bundestag average
-}
-
-export interface SignatureAdjective {
-  word: string;
-  count: number;
-  ratioParty: number; // How much more than party average
-  ratioBundestag: number; // How much more than Bundestag average
+  score: number; // Balanced ranking: count × log(ratio + 1)
+  ratio: number; // Usage ratio vs comparison group (Bundestag or Party)
 }
 
 export interface SpeakerWords {
   topWords: SpeakerWord[];
-  signatureWords: SignatureWord[];
-  signatureAdjectives: SignatureAdjective[];
+  // Signature words compared to Bundestag average (national uniqueness)
+  signatureWordsBundestag: SignatureWord[];
+  // Signature words compared to party average (faction uniqueness)
+  signatureWordsParty: SignatureWord[];
+  // Signature adjectives compared to Bundestag average
+  signatureAdjectivesBundestag: SignatureWord[];
+  // Signature adjectives compared to party average
+  signatureAdjectivesParty: SignatureWord[];
 }
 
 export interface SpeakerComparison {

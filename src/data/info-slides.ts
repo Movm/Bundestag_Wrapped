@@ -9,10 +9,20 @@ export interface InfoSlideContent {
 }
 
 export const INFO_SLIDES: Record<string, InfoSlideContent> = {
+  'info-disclaimer': {
+    emoji: '⚠️',
+    title: 'Hinweis',
+    body: 'Dies ist ein Experiment. Die Daten wurden mit Natural Language Processing analysiert und können fehlerhaft sein.',
+  },
   'info-topics': {
     emoji: '📊',
-    title: 'Top-Themen der Fraktionen',
-    body: 'Neben Finanzen (Platz 1) setzen die Parteien unterschiedliche Schwerpunkte: Die GRÜNEN fokussieren auf Klima, CDU/CSU auf Europa und Wirtschaft, SPD auf Soziales und Sicherheit, die AfD auf Justiz und Migration.',
+    title: 'Themen-Analyse',
+    body: 'Wir haben alle Bundestagsreden mit KI analysiert und 12 Themenbereiche identifiziert – von Finanzen über Klima bis Justiz. Tippe auf ein Thema, um zu sehen, welche Parteien es am meisten diskutieren.',
+  },
+  'info-party-topics': {
+    emoji: '',
+    title: 'Und die Parteien?',
+    body: 'Jede Fraktion hat ihre eigenen Schwerpunkte. Manche Ergebnisse sind erwartbar – andere vielleicht nicht.',
   },
   'info-signature': {
     emoji: '📊',

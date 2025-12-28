@@ -16,8 +16,8 @@ export interface SpeakerShareData {
   } | null;
   signatureWord: {
     word: string;
-    ratioParty: number;
-    ratioBundestag: number;
+    count: number;
+    ratio: number; // Usage ratio vs Bundestag average
   } | null;
 }
 
@@ -334,7 +334,7 @@ export function renderSpeakerShareImage(
     // Subtitle with ratio stats (same style as animal subtitle)
     ctx.font = '30px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
     ctx.fillStyle = '#ffffff';
-    const ratioText = `${signatureWord.ratioParty}× häufiger als deine Fraktion`;
+    const ratioText = `${signatureWord.count}× gesagt`;
     const ratioLines = wrapText(ctx, ratioText, maxWidth);
     for (const line of ratioLines) {
       ctx.fillText(line, leftX, subtitleY);
