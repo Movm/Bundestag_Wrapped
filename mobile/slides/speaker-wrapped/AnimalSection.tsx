@@ -1,16 +1,9 @@
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import Animated, { FadeIn, FadeInUp, ZoomIn, SlideInLeft, SlideInRight } from 'react-native-reanimated';
 import { getPartyColor } from '@/shared';
 import { SPEAKER_CONTENT, getAnimalAlternatives } from '@/shared/speaker-wrapped';
+import { useScreenWidth, useScreenHeight } from '~/stores/appStore';
 import type { SpeakerWrapped, SpiritAnimalAlternative } from '~/types/wrapped';
-
-const { height: SCREEN_HEIGHT, width: SCREEN_WIDTH } = Dimensions.get('window');
-
-// iPhone SE 1st gen is 320pt - switch to column layout on small screens
-const IS_SMALL_SCREEN = SCREEN_WIDTH < 375;
-
-// Responsive scale: podium needs ~320px, scale down on narrower screens
-const getScale = () => Math.min((SCREEN_WIDTH - 32) / 320, 1);
 
 interface AnimalSectionProps {
   data: SpeakerWrapped;
@@ -49,10 +42,19 @@ function AlternativeAnimal({ animal, position, rank, delay, scale, isColumn }: A
  * AnimalSection - Shows spirit animal podium (1st, 2nd, 3rd)
  */
 export function AnimalSection({ data }: AnimalSectionProps) {
+  const screenWidth = useScreenWidth();
+  const screenHeight = useScreenHeight();
+
+  // iPhone SE 2nd/3rd gen is exactly 375pt - use < 380 to include it
+  // Matches breakpoint used in app/index.tsx for consistency
+  const isSmallScreen = screenWidth < 380;
+
+  // Responsive scale: podium needs ~320px, scale down on narrower screens
+  const scale = Math.min((screenWidth - 32) / 320, 1);
+
   const partyColor = getPartyColor(data.party);
   const content = SPEAKER_CONTENT.animal;
   const { spiritAnimal } = data;
-  const scale = getScale();
 
   if (!spiritAnimal) {
     return null;
@@ -61,7 +63,7 @@ export function AnimalSection({ data }: AnimalSectionProps) {
   const alternatives = getAnimalAlternatives(spiritAnimal);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { height: screenHeight }]}>
       <View style={styles.content}>
         {/* Subtitle */}
         <Animated.Text entering={FadeIn.delay(100)} style={styles.subtitle}>
@@ -71,11 +73,11 @@ export function AnimalSection({ data }: AnimalSectionProps) {
         {/* Podium Layout */}
         <View style={[
           styles.podium,
-          IS_SMALL_SCREEN && styles.podiumColumn,
-          { gap: IS_SMALL_SCREEN ? 12 : Math.max(10 * scale, 6) }
+          isSmallScreen && styles.podiumColumn,
+          { gap: isSmallScreen ? 12 : Math.max(10 * scale, 6) }
         ]}>
           {/* Row mode: 2nd, 1st, 3rd | Column mode: 1st, 2nd, 3rd */}
-          {!IS_SMALL_SCREEN && alternatives[0] && (
+          {!isSmallScreen && alternatives[0] && (
             <AlternativeAnimal
               animal={alternatives[0]}
               position="left"
@@ -93,13 +95,13 @@ export function AnimalSection({ data }: AnimalSectionProps) {
             <View style={styles.primaryRankBadge}>
               <Text style={styles.primaryRankText}>1</Text>
             </View>
-            <Text style={[styles.primaryEmoji, { fontSize: IS_SMALL_SCREEN ? 56 : Math.max(80 * scale, 64) }]}>
+            <Text style={[styles.primaryEmoji, { fontSize: isSmallScreen ? 56 : Math.max(80 * scale, 64) }]}>
               {spiritAnimal.emoji}
             </Text>
 
             <Animated.Text
               entering={FadeInUp.delay(500).springify()}
-              style={[styles.primaryName, { fontSize: IS_SMALL_SCREEN ? 20 : Math.max(24 * scale, 20) }]}
+              style={[styles.primaryName, { fontSize: isSmallScreen ? 20 : Math.max(24 * scale, 20) }]}
             >
               {spiritAnimal.name}
             </Animated.Text>
@@ -115,7 +117,7 @@ export function AnimalSection({ data }: AnimalSectionProps) {
           </Animated.View>
 
           {/* 2nd Place - in column mode, render after 1st */}
-          {IS_SMALL_SCREEN && alternatives[0] && (
+          {isSmallScreen && alternatives[0] && (
             <AlternativeAnimal
               animal={alternatives[0]}
               position="left"
@@ -132,9 +134,9 @@ export function AnimalSection({ data }: AnimalSectionProps) {
               animal={alternatives[1]}
               position="right"
               rank={3}
-              delay={IS_SMALL_SCREEN ? 1000 : 1200}
+              delay={isSmallScreen ? 1000 : 1200}
               scale={scale}
-              isColumn={IS_SMALL_SCREEN}
+              isColumn={isSmallScreen}
             />
           )}
         </View>
@@ -153,7 +155,6 @@ export function AnimalSection({ data }: AnimalSectionProps) {
 
 const styles = StyleSheet.create({
   container: {
-    height: SCREEN_HEIGHT,
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 16,
