@@ -19,18 +19,22 @@ interface ScrollState {
   currentIndex: number;
   hasStarted: boolean;
   answeredItems: Set<number>;
+  triggerReset: boolean;
 
   // Actions (accessed via getState() for stability)
   setCurrentIndex: (index: number) => void;
   setHasStarted: (started: boolean) => void;
   addAnsweredItem: (index: number) => void;
   reset: () => void;
+  requestReset: () => void;
+  clearResetTrigger: () => void;
 }
 
 export const useScrollStore = create<ScrollState>((set, get) => ({
   currentIndex: 0,
   hasStarted: false,
   answeredItems: new Set(),
+  triggerReset: false,
 
   setCurrentIndex: (index) =>
     set((state) => {
@@ -64,6 +68,15 @@ export const useScrollStore = create<ScrollState>((set, get) => ({
       hasStarted: false,
       answeredItems: new Set(),
     });
+  },
+
+  requestReset: () => {
+    console.log(`[ScrollStore] requestReset()`);
+    set({ triggerReset: true });
+  },
+
+  clearResetTrigger: () => {
+    set({ triggerReset: false });
   },
 }));
 

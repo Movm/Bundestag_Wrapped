@@ -97,6 +97,7 @@ export function useWrappedScroll<T>({
   const currentIndex = useScrollStore((s) => s.currentIndex);
   const hasStarted = useScrollStore((s) => s.hasStarted);
   const answeredItems = useScrollStore((s) => s.answeredItems);
+  const triggerReset = useScrollStore((s) => s.triggerReset);
 
   // Derived values
   const currentItem = items[currentIndex];
@@ -114,6 +115,19 @@ export function useWrappedScroll<T>({
       prevIndexRef.current = currentIndex;
     }
   }, [currentIndex, currentItem, isCurrentQuiz, isScrollLocked]);
+
+  // Handle reset trigger from FloatingTabBar (double-tap home to restart)
+  useEffect(() => {
+    if (triggerReset) {
+      console.log(`[Scroll] triggerReset received - resetting to start`);
+      // Reset scroll state
+      useScrollStore.getState().reset();
+      // Clear trigger
+      useScrollStore.getState().clearResetTrigger();
+      // Scroll to top
+      flatListRef.current?.scrollToOffset({ offset: 0, animated: false });
+    }
+  }, [triggerReset]);
 
   // ─────────────────────────────────────────────────────────────
   // Navigation Methods (STABLE - use refs and getState())
