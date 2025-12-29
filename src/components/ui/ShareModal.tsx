@@ -114,7 +114,7 @@ export function ShareModal({ isOpen, onClose, correctCount, totalQuestions }: Sh
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-sm md:max-w-md lg:max-w-lg bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 shadow-2xl backdrop-blur-md"
+            className="relative w-full max-w-[320px] sm:max-w-sm md:max-w-md lg:max-w-lg bg-white/5 rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 shadow-2xl backdrop-blur-md"
           >
             {/* Close button */}
             <button
@@ -125,9 +125,9 @@ export function ShareModal({ isOpen, onClose, correctCount, totalQuestions }: Sh
             </button>
 
             {/* Emoji Header */}
-            <motion.div className="text-center mb-4">
+            <motion.div className="text-center mb-2 sm:mb-4">
               <motion.span
-                className="text-5xl md:text-6xl block"
+                className="text-4xl sm:text-5xl md:text-6xl block"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ type: 'spring', bounce: 0.5, delay: 0.1 }}
@@ -136,10 +136,10 @@ export function ShareModal({ isOpen, onClose, correctCount, totalQuestions }: Sh
               </motion.span>
             </motion.div>
 
-            <h2 className="text-2xl md:text-3xl font-black gradient-text mb-2 text-center">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-black gradient-text mb-1 sm:mb-2 text-center">
               Teile dein Ergebnis!
             </h2>
-            <p className="text-white/60 text-sm md:text-base mb-6 text-center">
+            <p className="text-white/60 text-xs sm:text-sm md:text-base mb-4 sm:mb-6 text-center">
               Erstelle ein Bild für Social Media
             </p>
 
@@ -150,11 +150,11 @@ export function ShareModal({ isOpen, onClose, correctCount, totalQuestions }: Sh
               onChange={(e) => setUserName(e.target.value)}
               placeholder="Dein Name (optional)"
               maxLength={30}
-              className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 text-center focus:outline-none focus:border-pink-500/50 focus:bg-white/10 transition-all mb-6"
+              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 text-center text-sm sm:text-base focus:outline-none focus:border-pink-500/50 focus:bg-white/10 transition-all mb-4 sm:mb-6"
             />
 
             {/* Canvas Preview */}
-            <div className="rounded-2xl overflow-hidden border border-white/10 mb-8 bg-black/20">
+            <div className="rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 mb-4 sm:mb-8 bg-black/20 max-w-[200px] sm:max-w-[280px] md:max-w-none mx-auto">
               <canvas
                 ref={canvasRef}
                 className="w-full h-auto block"
@@ -163,25 +163,25 @@ export function ShareModal({ isOpen, onClose, correctCount, totalQuestions }: Sh
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
               <motion.button
                 onClick={handleDownload}
-                className="flex-1 min-w-[140px] flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-600 to-pink-500 rounded-full text-white font-bold shadow-lg shadow-pink-500/25"
+                className="flex-1 min-w-[120px] sm:min-w-[140px] flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-pink-600 to-pink-500 rounded-full text-white text-sm sm:text-base font-bold shadow-lg shadow-pink-500/25"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Download size={20} />
+                <Download size={18} className="sm:w-5 sm:h-5" />
                 Speichern
               </motion.button>
 
               {canShare && (
                 <motion.button
                   onClick={handleShare}
-                  className="flex items-center justify-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/15 border border-white/20 rounded-full text-white font-bold transition-colors"
+                  className="flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-white/10 hover:bg-white/15 border border-white/20 rounded-full text-white text-sm sm:text-base font-bold transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Share2 size={20} />
+                  <Share2 size={18} className="sm:w-5 sm:h-5" />
                   Teilen
                 </motion.button>
               )}
