@@ -11,7 +11,7 @@ export const END_SLIDE_CONTENT = {
 
   message: {
     primary:
-      'Mir ist es wichtig zu betonen: Alle demokratischen Politiker:innen leisten harte Arbeit für unser Land – unabhängig von ihrer Partei.',
+      'Die meisten demokratischen Politiker:innen leisten harte Arbeit für unser Land – unabhängig von ihrer Partei. Danke dafür!',
     secondary:
       'Dies ist ein Spaßprojekt und keine wissenschaftliche Analyse. Mehr zur Methodik findest du in der Dokumentation oder auf GitHub.',
   },
