@@ -65,7 +65,7 @@ export function ResultView({ toneAnalysis }: ResultViewProps) {
               >
                 {index + 1}.
               </span>
-              <PartyBadge party={ranking.party} size={isLeader ? 'lg' : 'md'} />
+              <PartyBadge party={ranking.party} size={isLeader ? 'lg' : 'md'} variant="filled" />
               <span
                 className={`font-mono font-bold ${
                   isLeader ? 'text-2xl' : 'text-lg'
