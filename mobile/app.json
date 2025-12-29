@@ -8,11 +8,6 @@
     "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "scheme": "bundestag-wrapped",
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#0a0a0f"
-    },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "de.bundestag.wrapped",
@@ -38,7 +33,15 @@
       "expo-router",
       "expo-notifications",
       "expo-audio",
-      "expo-asset"
+      "expo-asset",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "backgroundColor": "#0a0a0f"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
