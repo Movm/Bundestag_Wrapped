@@ -2,19 +2,7 @@ import {
   HeroSection,
   StatsBar,
   OverviewSection,
-  CategoriesSection,
-  BefragungSection,
-  DistributionChart,
-  TechnicalSection,
-  ToneMethodologySection,
-  GenderAnalysisSection,
-  ZwischenrufeSection,
-  SignatureWordsSection,
-  TopicsSection,
-  DataDownloadSection,
-  SpeakerWrappedSection,
-  LimitationsSection,
-  MusicCreditsSection,
+  ComingSoonSection,
   DocFooter,
 } from './dokumentation';
 import { SEO } from '@/components/seo/SEO';
@@ -46,23 +34,11 @@ export function DokumentationPage() {
         structuredData={articleSchema}
       />
       <div className="min-h-screen bg-[#fafaf9] pt-14">
-      <HeroSection />
-      <StatsBar />
-      <OverviewSection />
-      <CategoriesSection />
-      <BefragungSection />
-      <DistributionChart />
-      <TechnicalSection />
-      <ToneMethodologySection />
-      <GenderAnalysisSection />
-      <ZwischenrufeSection />
-      <SignatureWordsSection />
-      <TopicsSection />
-      <DataDownloadSection />
-      <SpeakerWrappedSection />
-      <LimitationsSection />
-      <MusicCreditsSection />
-      <DocFooter />
+        <HeroSection />
+        <StatsBar />
+        <OverviewSection />
+        <ComingSoonSection />
+        <DocFooter />
       </div>
     </>
   );

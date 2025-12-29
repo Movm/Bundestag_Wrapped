@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
-import { Home, Search, BookOpen, Shield, FileText, ExternalLink, Users, X } from 'lucide-react';
+import { Home, BookOpen, Shield, FileText, ExternalLink, Users, X } from 'lucide-react';
 
 interface NavItem {
   href: string;
@@ -13,7 +13,6 @@ interface NavItem {
 const NAV_ITEMS: NavItem[] = [
   { href: '/', label: 'Bundestag Wrapped', icon: <Home size={20} /> },
   { href: '/abgeordnete', label: 'Abgeordnete-Wrapped', icon: <Users size={20} /> },
-  { href: '/suche', label: 'Suche', icon: <Search size={20} /> },
   { href: '/dokumentation', label: 'Dokumentation', icon: <BookOpen size={20} /> },
 ];
 

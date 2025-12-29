@@ -16,3 +16,4 @@ export { LimitationsSection } from './LimitationsSection';
 export { MusicCreditsSection } from './MusicCreditsSection';
 export { DocFooter } from './DocFooter';
 export { SpiritAnimalQuiz } from './SpiritAnimalQuiz';
+export { ComingSoonSection } from './ComingSoonSection';
