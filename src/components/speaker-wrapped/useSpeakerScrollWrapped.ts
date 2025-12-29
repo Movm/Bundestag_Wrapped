@@ -99,7 +99,7 @@ export function useSpeakerScrollWrapped(slug: string): SpeakerScrollWrappedState
     }
 
     // Clear all progress when user completes the experience
-    if (currentSection === 'speaker-end') {
+    if (currentSection === 'speaker-share') {
       clearProgress(slug);
       // Note: Don't clear quiz progress here - user might restart
       return;

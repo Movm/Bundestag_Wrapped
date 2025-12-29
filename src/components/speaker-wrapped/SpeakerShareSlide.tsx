@@ -143,7 +143,7 @@ export const SpeakerShareSlide = memo(function SpeakerShareSlide({
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="w-full max-w-md mx-auto lg:mx-0 lg:flex-shrink-0 rounded-2xl overflow-hidden border border-white/10 bg-black/20 shadow-2xl mb-6 lg:mb-0"
+          className="w-full max-w-[200px] sm:max-w-[280px] lg:max-w-md mx-auto lg:mx-0 lg:flex-shrink-0 rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 bg-black/20 shadow-2xl mb-4 sm:mb-6 lg:mb-0"
         >
           <canvas
             ref={canvasRef}
@@ -156,7 +156,7 @@ export const SpeakerShareSlide = memo(function SpeakerShareSlide({
         {/* Right: Controls */}
         <div className="flex-1 text-center lg:text-left">
           <motion.span
-            className="text-6xl block mb-4"
+            className="text-4xl sm:text-5xl lg:text-6xl block mb-2 sm:mb-4"
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
@@ -165,22 +165,22 @@ export const SpeakerShareSlide = memo(function SpeakerShareSlide({
             📸
           </motion.span>
 
-          <h2 className="text-3xl font-black text-white mb-2">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-1 sm:mb-2">
             Teile dein Ergebnis!
           </h2>
-          <p className="text-white/60 mb-6">
+          <p className="text-white/60 text-sm sm:text-base mb-4 sm:mb-6">
             Erstelle dein persönliches Sharepic
           </p>
 
           {signatureWords.length > 1 && (
-            <div className="mb-6">
-              <p className="text-white/50 text-sm mb-2">Wähle dein Signaturwort:</p>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-2">
+            <div className="mb-4 sm:mb-6">
+              <p className="text-white/50 text-xs sm:text-sm mb-2">Wähle dein Signaturwort:</p>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-1.5 sm:gap-2">
                 {signatureWords.map((word, index) => (
                   <button
                     key={word.word}
                     onClick={() => setSelectedWordIndex(index)}
-                    className="px-3 py-1.5 rounded-full text-sm font-medium transition-all"
+                    className="px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all"
                     style={{
                       backgroundColor: index === selectedWordIndex ? partyColor : 'rgba(255,255,255,0.1)',
                       color: index === selectedWordIndex ? 'white' : 'rgba(255,255,255,0.7)',
@@ -194,25 +194,25 @@ export const SpeakerShareSlide = memo(function SpeakerShareSlide({
             </div>
           )}
 
-          <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 mb-4 sm:mb-6">
             <motion.button
               onClick={handleDownload}
-              className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-600 to-pink-500 rounded-full text-white font-bold shadow-lg shadow-pink-500/25"
+              className="flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-pink-600 to-pink-500 rounded-full text-white text-sm sm:text-base font-bold shadow-lg shadow-pink-500/25"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Download size={20} aria-hidden="true" />
+              <Download size={18} className="sm:w-5 sm:h-5" aria-hidden="true" />
               Speichern
             </motion.button>
 
             {canShare && (
               <motion.button
                 onClick={handleShare}
-                className="flex items-center justify-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/15 border border-white/20 rounded-full text-white font-bold transition-colors"
+                className="flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-white/10 hover:bg-white/15 border border-white/20 rounded-full text-white text-sm sm:text-base font-bold transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Share2 size={20} aria-hidden="true" />
+                <Share2 size={18} className="sm:w-5 sm:h-5" aria-hidden="true" />
                 Teilen
               </motion.button>
             )}

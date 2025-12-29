@@ -1,14 +1,13 @@
 /**
  * Speaker Wrapped slide configuration
  *
- * 7 slides for individual speaker wrapped experience:
+ * 6 slides for individual speaker wrapped experience:
  * - intro: Welcome with speaker name/party
  * - animal: Spirit animal reveal
  * - quiz: Signature word quiz (one question)
  * - words: Favorite and signature words
  * - topics: Top topics they speak about
- * - share: Generate sharepic
- * - end: Summary and navigation
+ * - share: Generate sharepic and navigation
  */
 
 export const SPEAKER_SLIDES = [
@@ -18,7 +17,6 @@ export const SPEAKER_SLIDES = [
   'speaker-words',
   'speaker-topics',
   'speaker-share',
-  'speaker-end',
 ] as const;
 
 export type SpeakerSlideType = (typeof SPEAKER_SLIDES)[number];
@@ -33,5 +31,4 @@ export const SPEAKER_AUTO_SCROLL_SLIDES = new Set<SpeakerSlideType>([]);
 export const SPEAKER_HIDE_PROGRESS_SLIDES = new Set<SpeakerSlideType>([
   'speaker-intro',
   'speaker-share',
-  'speaker-end',
 ]);

@@ -7,7 +7,6 @@ import { SpeakerQuizSlide } from './SpeakerQuizSlide';
 import { SpeakerWordsSlide } from './SpeakerWordsSlide';
 import { SpeakerTopicsSlide } from './SpeakerTopicsSlide';
 import { SpeakerShareSlide } from './SpeakerShareSlide';
-import { SpeakerEndSlide } from './SpeakerEndSlide';
 
 interface SpeakerSlideRendererProps {
   slide: SpeakerSlideType;
@@ -55,9 +54,6 @@ export const SpeakerSlideRenderer = memo(function SpeakerSlideRenderer({
 
     case 'speaker-share':
       return <SpeakerShareSlide speaker={speaker} onRestart={onRestart} />;
-
-    case 'speaker-end':
-      return <SpeakerEndSlide speaker={speaker} onRestart={onRestart} />;
 
     default:
       return null;

@@ -5,7 +5,6 @@ export { SpeakerQuizSlide } from './SpeakerQuizSlide';
 export { SpeakerWordsSlide } from './SpeakerWordsSlide';
 export { SpeakerTopicsSlide } from './SpeakerTopicsSlide';
 export { SpeakerShareSlide } from './SpeakerShareSlide';
-export { SpeakerEndSlide } from './SpeakerEndSlide';
 
 // Slide renderer
 export { SpeakerSlideRenderer } from './SpeakerSlideRenderer';
