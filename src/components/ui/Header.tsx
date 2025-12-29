@@ -38,7 +38,7 @@ export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderPro
           className="transition-opacity hover:opacity-80"
           aria-label="Bundestag Wrapped - Zur Startseite"
         >
-          <img src="/logo.png" alt="Bundestag Wrapped" className="h-8 w-8" />
+          <img src="/logo.png" alt="Bundestag Wrapped" className="h-8 w-auto" />
         </Link>
 
         <div className="flex items-center gap-1">

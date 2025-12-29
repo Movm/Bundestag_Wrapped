@@ -71,7 +71,7 @@ export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps)
           <motion.img
             src="/logo.png"
             alt=""
-            className="w-24 h-24 md:w-36 md:h-36"
+            className="h-24 w-auto md:h-36"
             initial={{ y: -100, opacity: 0, scale: 0.8 }}
             whileInView={{ y: 0, opacity: 1, scale: 1 }}
             viewport={{ once: true }}

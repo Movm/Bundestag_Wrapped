@@ -16,7 +16,8 @@
     },
     "production": {
       "android": {
-        "buildType": "apk"
+        "buildType": "app-bundle",
+        "autoIncrement": "versionCode"
       },
       "ios": {
         "distribution": "store",
@@ -28,6 +29,11 @@
     "production": {
       "ios": {
         "ascAppId": "6757131770"
+      },
+      "android": {
+        "serviceAccountKeyPath": "./google-service-account.json",
+        "track": "production",
+        "releaseStatus": "completed"
       }
     }
   }
