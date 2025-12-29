@@ -727,9 +727,13 @@
         }
       ],
       "byParty": {
-        "fraktionslos": {
-          "interrupting": 0,
-          "interrupted": 8
+        "SPD": {
+          "interrupting": 1057,
+          "interrupted": 1777
+        },
+        "CDU/CSU": {
+          "interrupting": 1616,
+          "interrupted": 3100
         },
         "DIE LINKE": {
           "interrupting": 815,
@@ -739,17 +743,13 @@
           "interrupting": 4516,
           "interrupted": 3040
         },
-        "CDU/CSU": {
-          "interrupting": 1616,
-          "interrupted": 3100
+        "fraktionslos": {
+          "interrupting": 0,
+          "interrupted": 8
         },
         "GRÜNE": {
           "interrupting": 2534,
           "interrupted": 1647
-        },
-        "SPD": {
-          "interrupting": 1057,
-          "interrupted": 1777
         }
       }
     }
@@ -1244,13 +1244,18 @@
       {
         "party": "CDU/CSU",
         "scores": {
-          "affirmative": 91.1,
+          "affirmative": 91.4,
           "aggression": 0.7,
-          "labeling": 4.6,
-          "solution_focus": 87.0,
-          "collaboration": 61.2,
-          "demand_intensity": 6.6,
-          "acknowledgment": 8.9
+          "labeling": 4.3,
+          "solution_focus": 87.6,
+          "collaboration": 61.3,
+          "demand_intensity": 7.2,
+          "acknowledgment": 8.5,
+          "authority": 76.0,
+          "future_orientation": 100.0,
+          "emotional_intensity": 47.8,
+          "inclusivity": 75.2,
+          "discriminatory": 0.03
         },
         "topAffirmative": [
           {
@@ -1350,26 +1355,22 @@
             "count": 567
           },
           {
-            "word": "investieren",
-            "count": 374
-          },
-          {
             "word": "unterstützen",
             "count": 327
           },
           {
             "word": "erreichen",
             "count": 310
+          },
+          {
+            "word": "schützen",
+            "count": 251
           }
         ],
         "topProblem": [
           {
             "word": "verhindern",
             "count": 115
-          },
-          {
-            "word": "reduzieren",
-            "count": 96
           },
           {
             "word": "gefährden",
@@ -1382,6 +1383,10 @@
           {
             "word": "bedrohen",
             "count": 63
+          },
+          {
+            "word": "belasten",
+            "count": 59
           }
         ],
         "topCollaborative": [
@@ -1464,25 +1469,30 @@
             "count": 84
           },
           {
-            "word": "betonen",
-            "count": 71
-          },
-          {
             "word": "achten",
             "count": 53
+          },
+          {
+            "word": "anerkennen",
+            "count": 47
           }
         ]
       },
       {
         "party": "AfD",
         "scores": {
-          "affirmative": 73.5,
+          "affirmative": 74.3,
           "aggression": 6.8,
-          "labeling": 15.8,
-          "solution_focus": 70.9,
-          "collaboration": 38.2,
-          "demand_intensity": 12.9,
-          "acknowledgment": 5.8
+          "labeling": 15.6,
+          "solution_focus": 69.2,
+          "collaboration": 38.8,
+          "demand_intensity": 14.4,
+          "acknowledgment": 5.9,
+          "authority": 75.7,
+          "future_orientation": 100.0,
+          "emotional_intensity": 53.2,
+          "inclusivity": 52.7,
+          "discriminatory": 0.24
         },
         "topAffirmative": [
           {
@@ -1578,10 +1588,6 @@
             "count": 400
           },
           {
-            "word": "finanzieren",
-            "count": 174
-          },
-          {
             "word": "schützen",
             "count": 160
           },
@@ -1591,6 +1597,10 @@
           },
           {
             "word": "fördern",
+            "count": 115
+          },
+          {
+            "word": "unterstützen",
             "count": 115
           }
         ],
@@ -1708,13 +1718,18 @@
       {
         "party": "SPD",
         "scores": {
-          "affirmative": 90.7,
-          "aggression": 1.0,
-          "labeling": 3.7,
-          "solution_focus": 88.5,
+          "affirmative": 91.5,
+          "aggression": 1.1,
+          "labeling": 3.6,
+          "solution_focus": 87.7,
           "collaboration": 62.7,
-          "demand_intensity": 5.2,
-          "acknowledgment": 10.7
+          "demand_intensity": 5.9,
+          "acknowledgment": 10.4,
+          "authority": 75.7,
+          "future_orientation": 99.9,
+          "emotional_intensity": 47.2,
+          "inclusivity": 74.5,
+          "discriminatory": 0.01
         },
         "topAffirmative": [
           {
@@ -1748,16 +1763,16 @@
             "count": 32
           },
           {
-            "word": "dramatisch",
-            "count": 18
-          },
-          {
             "word": "schwach",
             "count": 10
           },
           {
             "word": "teuer",
             "count": 10
+          },
+          {
+            "word": "verheerend",
+            "count": 8
           }
         ],
         "topAggressive": [
@@ -1810,10 +1825,6 @@
             "count": 510
           },
           {
-            "word": "investieren",
-            "count": 504
-          },
-          {
             "word": "stärken",
             "count": 405
           },
@@ -1824,6 +1835,10 @@
           {
             "word": "schützen",
             "count": 230
+          },
+          {
+            "word": "sichern",
+            "count": 200
           }
         ],
         "topProblem": [
@@ -1924,29 +1939,34 @@
             "count": 140
           },
           {
-            "word": "betonen",
-            "count": 81
-          },
-          {
             "word": "bedanken",
             "count": 67
           },
           {
             "word": "begrüßen",
             "count": 46
+          },
+          {
+            "word": "anerkennen",
+            "count": 42
           }
         ]
       },
       {
         "party": "GRÜNE",
         "scores": {
-          "affirmative": 81.2,
-          "aggression": 3.7,
-          "labeling": 7.8,
-          "solution_focus": 75.3,
-          "collaboration": 45.6,
-          "demand_intensity": 8.7,
-          "acknowledgment": 7.6
+          "affirmative": 81.7,
+          "aggression": 4.0,
+          "labeling": 7.7,
+          "solution_focus": 73.9,
+          "collaboration": 45.4,
+          "demand_intensity": 9.6,
+          "acknowledgment": 7.6,
+          "authority": 77.2,
+          "future_orientation": 100.0,
+          "emotional_intensity": 52.2,
+          "inclusivity": 51.4,
+          "discriminatory": 0.03
         },
         "topAffirmative": [
           {
@@ -2010,7 +2030,7 @@
             "count": 4
           },
           {
-            "word": "dreist",
+            "word": "zynisch",
             "count": 4
           }
         ],
@@ -2050,12 +2070,12 @@
             "count": 154
           },
           {
-            "word": "investieren",
-            "count": 146
-          },
-          {
             "word": "stärken",
             "count": 126
+          },
+          {
+            "word": "helfen",
+            "count": 114
           }
         ],
         "topProblem": [
@@ -2160,25 +2180,30 @@
             "count": 36
           },
           {
-            "word": "betonen",
-            "count": 30
-          },
-          {
             "word": "anerkennen",
             "count": 29
+          },
+          {
+            "word": "begrüßen",
+            "count": 27
           }
         ]
       },
       {
         "party": "DIE LINKE",
         "scores": {
-          "affirmative": 82.0,
-          "aggression": 5.1,
-          "labeling": 7.1,
-          "solution_focus": 69.6,
-          "collaboration": 39.7,
-          "demand_intensity": 13.3,
-          "acknowledgment": 5.5
+          "affirmative": 82.5,
+          "aggression": 5.5,
+          "labeling": 7.0,
+          "solution_focus": 68.0,
+          "collaboration": 39.9,
+          "demand_intensity": 14.4,
+          "acknowledgment": 5.4,
+          "authority": 76.8,
+          "future_orientation": 100.0,
+          "emotional_intensity": 54.4,
+          "inclusivity": 43.8,
+          "discriminatory": 0.03
         },
         "topAffirmative": [
           {
@@ -2242,7 +2267,7 @@
             "count": 4
           },
           {
-            "word": "skandalös",
+            "word": "zynisch",
             "count": 4
           }
         ],
@@ -2396,8 +2421,8 @@
             "count": 17
           },
           {
-            "word": "betonen",
-            "count": 16
+            "word": "begrüßen",
+            "count": 15
           }
         ]
       }
@@ -2409,84 +2434,84 @@
         "categoryName": "Positiv",
         "emoji": "🏛️",
         "description": "Höchster Positivitätswert (Adjektive)",
-        "rank": 1,
+        "rank": 2,
         "totalParties": 5,
-        "score": 91.1,
+        "score": 91.4,
         "traits": [
-          "Positiv",
+          "Inklusiv",
           "Kooperativ",
           "Lösungsorientiert"
         ],
         "scores": {
-          "affirmative": 91.1,
+          "affirmative": 91.4,
           "aggression": 0.7,
-          "labeling": 4.6,
-          "solution_focus": 87.0,
-          "collaboration": 61.2,
-          "demand_intensity": 6.6,
-          "acknowledgment": 8.9,
-          "authority": 50.0,
-          "future_orientation": 50.0,
-          "emotional_intensity": 50.0,
-          "inclusivity": 50.0,
-          "discriminatory": 0.0
+          "labeling": 4.3,
+          "solution_focus": 87.6,
+          "collaboration": 61.3,
+          "demand_intensity": 7.2,
+          "acknowledgment": 8.5,
+          "authority": 76.0,
+          "future_orientation": 100.0,
+          "emotional_intensity": 47.8,
+          "inclusivity": 75.2,
+          "discriminatory": 0.03
         }
       },
       "AfD": {
         "party": "AfD",
-        "category": "aggression",
-        "categoryName": "Aggressiv",
+        "category": "demand_intensity",
+        "categoryName": "Fordernd",
         "emoji": "😤",
-        "description": "Höchster Aggressionsindex (Adjektive)",
+        "description": "Höchste Forderungsintensität (Verben)",
         "rank": 1,
         "totalParties": 5,
-        "score": 6.8,
+        "score": 14.4,
         "traits": [
           "Aggressiv",
           "Fordernd"
         ],
         "scores": {
-          "affirmative": 73.5,
+          "affirmative": 74.3,
           "aggression": 6.8,
-          "labeling": 15.8,
-          "solution_focus": 70.9,
-          "collaboration": 38.2,
-          "demand_intensity": 12.9,
-          "acknowledgment": 5.8,
-          "authority": 50.0,
-          "future_orientation": 50.0,
-          "emotional_intensity": 50.0,
-          "inclusivity": 50.0,
-          "discriminatory": 0.0
+          "labeling": 15.6,
+          "solution_focus": 69.2,
+          "collaboration": 38.8,
+          "demand_intensity": 14.4,
+          "acknowledgment": 5.9,
+          "authority": 75.7,
+          "future_orientation": 100.0,
+          "emotional_intensity": 53.2,
+          "inclusivity": 52.7,
+          "discriminatory": 0.24
         }
       },
       "SPD": {
         "party": "SPD",
-        "category": "solution_focus",
-        "categoryName": "Lösungsorientiert",
+        "category": "affirmative",
+        "categoryName": "Positiv",
         "emoji": "🛠️",
-        "description": "Höchste Lösungsorientierung (Verben)",
+        "description": "Höchster Positivitätswert (Adjektive)",
         "rank": 1,
         "totalParties": 5,
-        "score": 88.5,
+        "score": 91.5,
         "traits": [
           "Kooperativ",
           "Lösungsorientiert",
           "Positiv"
         ],
         "scores": {
-          "affirmative": 90.7,
-          "aggression": 1.0,
-          "labeling": 3.7,
-          "solution_focus": 88.5,
+          "affirmative": 91.5,
+          "aggression": 1.1,
+          "labeling": 3.6,
+          "solution_focus": 87.7,
           "collaboration": 62.7,
-          "demand_intensity": 5.2,
-          "acknowledgment": 10.7,
-          "authority": 50.0,
-          "future_orientation": 50.0,
-          "emotional_intensity": 50.0,
-          "inclusivity": 50.0,
-          "discriminatory": 0.0
+          "demand_intensity": 5.9,
+          "acknowledgment": 10.4,
+          "authority": 75.7,
+          "future_orientation": 99.9,
+          "emotional_intensity": 47.2,
+          "inclusivity": 74.5,
+          "discriminatory": 0.01
         }
       },
       "GRÜNE": {
@@ -2497,21 +2522,21 @@
         "description": "Höchste Lösungsorientierung (Verben)",
         "rank": 3,
         "totalParties": 5,
-        "score": 75.3,
+        "score": 73.9,
         "traits": [],
         "scores": {
-          "affirmative": 81.2,
-          "aggression": 3.7,
-          "labeling": 7.8,
-          "solution_focus": 75.3,
-          "collaboration": 45.6,
-          "demand_intensity": 8.7,
+          "affirmative": 81.7,
+          "aggression": 4.0,
+          "labeling": 7.7,
+          "solution_focus": 73.9,
+          "collaboration": 45.4,
+          "demand_intensity": 9.6,
           "acknowledgment": 7.6,
-          "authority": 50.0,
-          "future_orientation": 50.0,
-          "emotional_intensity": 50.0,
-          "inclusivity": 50.0,
-          "discriminatory": 0.0
+          "authority": 77.2,
+          "future_orientation": 100.0,
+          "emotional_intensity": 52.2,
+          "inclusivity": 51.4,
+          "discriminatory": 0.03
         }
       },
       "DIE LINKE": {
@@ -2520,50 +2545,50 @@
         "categoryName": "Fordernd",
         "emoji": "✊",
         "description": "Höchste Forderungsintensität (Verben)",
-        "rank": 1,
+        "rank": 2,
         "totalParties": 5,
-        "score": 13.3,
+        "score": 14.4,
         "traits": [
-          "Fordernd",
-          "Aggressiv"
+          "Aggressiv",
+          "Fordernd"
         ],
         "scores": {
-          "affirmative": 82.0,
-          "aggression": 5.1,
-          "labeling": 7.1,
-          "solution_focus": 69.6,
-          "collaboration": 39.7,
-          "demand_intensity": 13.3,
-          "acknowledgment": 5.5,
-          "authority": 50.0,
-          "future_orientation": 50.0,
-          "emotional_intensity": 50.0,
-          "inclusivity": 50.0,
-          "discriminatory": 0.0
+          "affirmative": 82.5,
+          "aggression": 5.5,
+          "labeling": 7.0,
+          "solution_focus": 68.0,
+          "collaboration": 39.9,
+          "demand_intensity": 14.4,
+          "acknowledgment": 5.4,
+          "authority": 76.8,
+          "future_orientation": 100.0,
+          "emotional_intensity": 54.4,
+          "inclusivity": 43.8,
+          "discriminatory": 0.03
         }
       }
     },
     "rankings": {
       "affirmative": [
         {
-          "party": "CDU/CSU",
-          "score": 91.1
+          "party": "SPD",
+          "score": 91.5
         },
         {
-          "party": "SPD",
-          "score": 90.7
+          "party": "CDU/CSU",
+          "score": 91.4
         },
         {
           "party": "DIE LINKE",
-          "score": 82.0
+          "score": 82.5
         },
         {
           "party": "GRÜNE",
-          "score": 81.2
+          "score": 81.7
         },
         {
           "party": "AfD",
-          "score": 73.5
+          "score": 74.3
         }
       ],
       "aggression": [
@@ -2573,15 +2598,15 @@
         },
         {
           "party": "DIE LINKE",
-          "score": 5.1
+          "score": 5.5
         },
         {
           "party": "GRÜNE",
-          "score": 3.7
+          "score": 4.0
         },
         {
           "party": "SPD",
-          "score": 1.0
+          "score": 1.1
         },
         {
           "party": "CDU/CSU",
@@ -2591,45 +2616,45 @@
       "labeling": [
         {
           "party": "AfD",
-          "score": 15.8
+          "score": 15.6
         },
         {
           "party": "GRÜNE",
-          "score": 7.8
+          "score": 7.7
         },
         {
           "party": "DIE LINKE",
-          "score": 7.1
+          "score": 7.0
         },
         {
           "party": "CDU/CSU",
-          "score": 4.6
+          "score": 4.3
         },
         {
           "party": "SPD",
-          "score": 3.7
+          "score": 3.6
         }
       ],
       "solutionFocus": [
         {
           "party": "SPD",
-          "score": 88.5
+          "score": 87.7
         },
         {
           "party": "CDU/CSU",
-          "score": 87.0
+          "score": 87.6
         },
         {
           "party": "GRÜNE",
-          "score": 75.3
+          "score": 73.9
         },
         {
           "party": "AfD",
-          "score": 70.9
+          "score": 69.2
         },
         {
           "party": "DIE LINKE",
-          "score": 69.6
+          "score": 68.0
         }
       ],
       "collaboration": [
@@ -2639,51 +2664,51 @@
         },
         {
           "party": "CDU/CSU",
-          "score": 61.2
+          "score": 61.3
         },
         {
           "party": "GRÜNE",
-          "score": 45.6
+          "score": 45.4
         },
         {
           "party": "DIE LINKE",
-          "score": 39.7
+          "score": 39.9
         },
         {
           "party": "AfD",
-          "score": 38.2
+          "score": 38.8
         }
       ],
       "demandIntensity": [
         {
-          "party": "DIE LINKE",
-          "score": 13.3
+          "party": "AfD",
+          "score": 14.4
         },
         {
-          "party": "AfD",
-          "score": 12.9
+          "party": "DIE LINKE",
+          "score": 14.4
         },
         {
           "party": "GRÜNE",
-          "score": 8.7
+          "score": 9.6
         },
         {
           "party": "CDU/CSU",
-          "score": 6.6
+          "score": 7.2
         },
         {
           "party": "SPD",
-          "score": 5.2
+          "score": 5.9
         }
       ],
       "acknowledgment": [
         {
           "party": "SPD",
-          "score": 10.7
+          "score": 10.4
         },
         {
           "party": "CDU/CSU",
-          "score": 8.9
+          "score": 8.5
         },
         {
           "party": "GRÜNE",
@@ -2691,143 +2716,143 @@
         },
         {
           "party": "AfD",
-          "score": 5.8
+          "score": 5.9
         },
         {
           "party": "DIE LINKE",
-          "score": 5.5
+          "score": 5.4
         }
       ],
       "authority": [
         {
-          "party": "CDU/CSU",
-          "score": 50
-        },
-        {
-          "party": "AfD",
-          "score": 50
-        },
-        {
-          "party": "SPD",
-          "score": 50
-        },
-        {
           "party": "GRÜNE",
-          "score": 50
+          "score": 77.2
         },
         {
           "party": "DIE LINKE",
-          "score": 50
+          "score": 76.8
+        },
+        {
+          "party": "CDU/CSU",
+          "score": 76.0
+        },
+        {
+          "party": "AfD",
+          "score": 75.7
+        },
+        {
+          "party": "SPD",
+          "score": 75.7
         }
       ],
       "futureOrientation": [
         {
           "party": "CDU/CSU",
-          "score": 50
+          "score": 100.0
         },
         {
           "party": "AfD",
-          "score": 50
-        },
-        {
-          "party": "SPD",
-          "score": 50
+          "score": 100.0
         },
         {
           "party": "GRÜNE",
-          "score": 50
+          "score": 100.0
         },
         {
           "party": "DIE LINKE",
-          "score": 50
+          "score": 100.0
+        },
+        {
+          "party": "SPD",
+          "score": 99.9
         }
       ],
       "emotionalIntensity": [
         {
-          "party": "CDU/CSU",
-          "score": 50
+          "party": "DIE LINKE",
+          "score": 54.4
         },
         {
           "party": "AfD",
-          "score": 50
-        },
-        {
-          "party": "SPD",
-          "score": 50
+          "score": 53.2
         },
         {
           "party": "GRÜNE",
-          "score": 50
+          "score": 52.2
         },
         {
-          "party": "DIE LINKE",
-          "score": 50
+          "party": "CDU/CSU",
+          "score": 47.8
+        },
+        {
+          "party": "SPD",
+          "score": 47.2
         }
       ],
       "inclusivity": [
         {
           "party": "CDU/CSU",
-          "score": 50
-        },
-        {
-          "party": "AfD",
-          "score": 50
+          "score": 75.2
         },
         {
           "party": "SPD",
-          "score": 50
+          "score": 74.5
+        },
+        {
+          "party": "AfD",
+          "score": 52.7
         },
         {
           "party": "GRÜNE",
-          "score": 50
+          "score": 51.4
         },
         {
           "party": "DIE LINKE",
-          "score": 50
+          "score": 43.8
         }
       ],
       "discriminatory": [
         {
-          "party": "CDU/CSU",
-          "score": 0
-        },
-        {
           "party": "AfD",
-          "score": 0
+          "score": 0.24
         },
         {
-          "party": "SPD",
-          "score": 0
+          "party": "CDU/CSU",
+          "score": 0.03
         },
         {
           "party": "GRÜNE",
-          "score": 0
+          "score": 0.03
         },
         {
           "party": "DIE LINKE",
-          "score": 0
+          "score": 0.03
+        },
+        {
+          "party": "SPD",
+          "score": 0.01
         }
       ],
       "discriminatoryCounts": [
         {
-          "party": "CDU/CSU",
-          "count": 0
-        },
-        {
           "party": "AfD",
-          "count": 0
+          "count": 120
         },
         {
-          "party": "SPD",
-          "count": 0
+          "party": "CDU/CSU",
+          "count": 19
         },
         {
           "party": "GRÜNE",
-          "count": 0
+          "count": 9
         },
         {
           "party": "DIE LINKE",
-          "count": 0
+          "count": 6
+        },
+        {
+          "party": "SPD",
+          "count": 5
         }
       ]
     }
@@ -3064,9 +3089,9 @@
     },
     {
       "emoji": "📊",
-      "value": "18%",
+      "value": "17%",
       "label": "Positivitäts-Spread",
-      "sublabel": "CDU/CSU vs AfD",
+      "sublabel": "SPD vs AfD",
       "category": "tone"
     },
     {
