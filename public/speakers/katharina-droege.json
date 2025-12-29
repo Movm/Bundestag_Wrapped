@@ -24,10 +24,10 @@
     "longestSpeechRank": 3
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 47,
-    "interrupterRank": null,
-    "interruptedRank": 23
+    "interruptionsGiven": 49,
+    "interruptionsReceived": 50,
+    "interrupterRank": 51,
+    "interruptedRank": 38
   },
   "words": {
     "topWords": [
@@ -204,26 +204,31 @@
       "emoji": "📏",
       "label": "Längste Rede",
       "value": "#3 (2.693 Wörter)"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "49"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Katharina Dröge häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Freiheit",
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
         "isCorrect": false
       },
       {
         "text": "Kanzler",
         "isCorrect": true
-      },
-      {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
-        "isCorrect": false
       }
     ],
     "explanation": "\"Kanzler\" sagte Katharina Dröge 27× (20.5× häufiger als der Bundestag-Durchschnitt)."
@@ -231,6 +236,10 @@
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Katharina Dröge häufiger als der Bundestag-Durchschnitt?",
     "options": [
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
       {
         "text": "Schlecht",
         "isCorrect": true
@@ -240,11 +249,7 @@
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
+        "text": "Stark",
         "isCorrect": false
       }
     ],
@@ -269,7 +274,7 @@
         "emoji": "🐻",
         "name": "Bär",
         "title": "Standhafte Debattiererin",
-        "reason": "Trotz 47× unterbrochen zu werden, bleibst du standhaft.",
+        "reason": "Trotz 50× unterbrochen zu werden, bleibst du standhaft.",
         "id": "baer",
         "score": 0.899
       }

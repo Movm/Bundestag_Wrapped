@@ -24,10 +24,10 @@
     "longestSpeechRank": 330
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 13,
-    "interrupterRank": null,
-    "interruptedRank": 211
+    "interruptionsGiven": 33,
+    "interruptionsReceived": 18,
+    "interrupterRank": 79,
+    "interruptedRank": 206
   },
   "words": {
     "topWords": [
@@ -140,21 +140,26 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "3.858"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "33"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Konstantin von Notz häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Ausschuss",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Reform",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Arbeit",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
@@ -166,20 +171,12 @@
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🐬",
-    "name": "Delfin",
-    "title": "Diplomatischer Redner",
-    "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-    "id": "delfin",
+    "emoji": "🐝",
+    "name": "Biene",
+    "title": "Fleißiger Abgeordneter",
+    "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+    "id": "biene",
     "alternatives": [
-      {
-        "emoji": "🐝",
-        "name": "Biene",
-        "title": "Fleißiger Abgeordneter",
-        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-        "id": "biene",
-        "score": 0.982
-      },
       {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
@@ -187,6 +184,14 @@
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.954
+      },
+      {
+        "emoji": "🐺",
+        "name": "Wolf",
+        "title": "Mutiger Einwerfer",
+        "reason": "Mit 33 Zwischenrufen mischst du aktiv in Debatten mit.",
+        "id": "wolf",
+        "score": 0.864
       }
     ]
   },

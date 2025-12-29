@@ -24,10 +24,10 @@
     "longestSpeechRank": 573
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 36,
     "interruptionsReceived": 24,
-    "interrupterRank": null,
-    "interruptedRank": 86
+    "interrupterRank": 70,
+    "interruptedRank": 140
   },
   "words": {
     "topWords": [
@@ -158,26 +158,31 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "3.059"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "36"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Alaa Alhamwi häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Rente",
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
         "text": "Atomkraft",
         "isCorrect": true
-      },
-      {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
       }
     ],
     "explanation": "\"Atomkraft\" sagte Dr. Alaa Alhamwi 9× (215.9× häufiger als der Bundestag-Durchschnitt)."
@@ -190,16 +195,16 @@
         "isCorrect": false
       },
       {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
         "text": "Falsch",
         "isCorrect": true
+      },
+      {
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Falsch\" sagte Dr. Alaa Alhamwi 3× (7.7× häufiger als der Bundestag-Durchschnitt)."

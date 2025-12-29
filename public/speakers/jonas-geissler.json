@@ -25,9 +25,9 @@
   },
   "drama": {
     "interruptionsGiven": 4,
-    "interruptionsReceived": 11,
-    "interrupterRank": 244,
-    "interruptedRank": 266
+    "interruptionsReceived": 20,
+    "interrupterRank": 310,
+    "interruptedRank": 187
   },
   "words": {
     "topWords": [
@@ -150,19 +150,19 @@
     "question": "Welches Wort nutzt Dr. Jonas Geissler häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
         "text": "Menschen",
         "isCorrect": true
       },
       {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
+        "text": "Freiheit",
         "isCorrect": false
       }
     ],
@@ -170,12 +170,20 @@
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🐝",
-    "name": "Biene",
-    "title": "Fleißiger Abgeordneter",
-    "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-    "id": "biene",
+    "emoji": "🦔",
+    "name": "Igel",
+    "title": "Beharrlicher Redner",
+    "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+    "id": "igel",
     "alternatives": [
+      {
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißiger Abgeordneter",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
+        "score": 0.927
+      },
       {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
@@ -183,14 +191,6 @@
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.919
-      },
-      {
-        "emoji": "🦦",
-        "name": "Otter",
-        "title": "Positiver Teamplayer",
-        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
-        "id": "otter",
-        "score": 0.775
       }
     ]
   },

@@ -24,10 +24,10 @@
     "longestSpeechRank": 242
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 32,
-    "interrupterRank": null,
-    "interruptedRank": 48
+    "interruptionsGiven": 25,
+    "interruptionsReceived": 36,
+    "interrupterRank": 114,
+    "interruptedRank": 66
   },
   "words": {
     "topWords": [
@@ -160,6 +160,11 @@
       "value": "7.456"
     },
     {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "25"
+    },
+    {
       "emoji": "📊",
       "label": "Top-Redner",
       "value": "Top 6%"
@@ -169,11 +174,7 @@
     "question": "Welches Wort nutzt Marcel Emmerich häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
@@ -183,6 +184,10 @@
       {
         "text": "Taliban",
         "isCorrect": true
+      },
+      {
+        "text": "Wirtschaft",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Taliban\" sagte Marcel Emmerich 13× (53.0× häufiger als der Bundestag-Durchschnitt)."
@@ -191,11 +196,11 @@
     "question": "Welches Adjektiv nutzt Marcel Emmerich häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wichtig",
-        "isCorrect": false
+        "text": "Verantwortungslos",
+        "isCorrect": true
       },
       {
-        "text": "Notwendig",
+        "text": "Gut",
         "isCorrect": false
       },
       {
@@ -203,19 +208,27 @@
         "isCorrect": false
       },
       {
-        "text": "Verantwortungslos",
-        "isCorrect": true
+        "text": "Erfolgreich",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Verantwortungslos\" sagte Marcel Emmerich 3× (16.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐿️",
-    "name": "Eichhörnchen",
-    "title": "Themenhüter",
-    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-    "id": "eichhoernchen",
+    "emoji": "🐺",
+    "name": "Wolf",
+    "title": "Mutiger Einwerfer",
+    "reason": "Mit 25 Zwischenrufen mischst du aktiv in Debatten mit.",
+    "id": "wolf",
     "alternatives": [
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 1.0
+      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -223,14 +236,6 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
-      },
-      {
-        "emoji": "🐻",
-        "name": "Bär",
-        "title": "Standhafter Debattierer",
-        "reason": "Trotz 32× unterbrochen zu werden, bleibst du standhaft.",
-        "id": "baer",
-        "score": 0.981
       }
     ]
   },

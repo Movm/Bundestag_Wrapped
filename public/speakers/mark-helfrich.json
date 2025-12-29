@@ -25,9 +25,9 @@
   },
   "drama": {
     "interruptionsGiven": 6,
-    "interruptionsReceived": 13,
-    "interrupterRank": 195,
-    "interruptedRank": 226
+    "interruptionsReceived": 26,
+    "interrupterRank": 251,
+    "interruptedRank": 125
   },
   "words": {
     "topWords": [
@@ -184,11 +184,7 @@
     "question": "Welches Wort nutzt Mark Helfrich häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
@@ -196,7 +192,11 @@
         "isCorrect": true
       },
       {
-        "text": "Reform",
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
         "isCorrect": false
       }
     ],
@@ -206,20 +206,20 @@
     "question": "Welches Adjektiv nutzt Mark Helfrich häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Problematisch",
+        "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Stark",
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
         "text": "Wirtschaftlich",
         "isCorrect": true
-      },
-      {
-        "text": "Sozial",
-        "isCorrect": false
       }
     ],
     "explanation": "\"Wirtschaftlich\" sagte Mark Helfrich 3× (7.8× häufiger als der Bundestag-Durchschnitt)."
@@ -232,20 +232,20 @@
     "id": "biene",
     "alternatives": [
       {
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrlicher Redner",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.98
+      },
+      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüter",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.975
-      },
-      {
-        "emoji": "🦦",
-        "name": "Otter",
-        "title": "Positiver Teamplayer",
-        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
-        "id": "otter",
-        "score": 0.871
       }
     ]
   },

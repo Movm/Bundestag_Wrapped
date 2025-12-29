@@ -24,10 +24,10 @@
     "longestSpeechRank": 462
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 9,
-    "interrupterRank": null,
-    "interruptedRank": 312
+    "interruptionsGiven": 1,
+    "interruptionsReceived": 13,
+    "interrupterRank": 379,
+    "interruptedRank": 290
   },
   "words": {
     "topWords": [
@@ -162,20 +162,20 @@
     "question": "Welches Wort nutzt Dr. Armin Grau häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetz",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
-        "text": "Bundesregierung",
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Minister",
         "isCorrect": false
       },
       {
         "text": "Rente",
         "isCorrect": true
-      },
-      {
-        "text": "Energie",
-        "isCorrect": false
       }
     ],
     "explanation": "\"Rente\" sagte Dr. Armin Grau 25× (26.1× häufiger als der Bundestag-Durchschnitt)."
@@ -202,7 +202,7 @@
         "title": "Diplomatischer Redner",
         "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
         "id": "delfin",
-        "score": 0.886
+        "score": 0.816
       }
     ]
   },

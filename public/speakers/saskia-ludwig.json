@@ -25,9 +25,9 @@
   },
   "drama": {
     "interruptionsGiven": 4,
-    "interruptionsReceived": 16,
-    "interrupterRank": 226,
-    "interruptedRank": 170
+    "interruptionsReceived": 35,
+    "interrupterRank": 288,
+    "interruptedRank": 70
   },
   "words": {
     "topWords": [
@@ -146,19 +146,19 @@
     "question": "Welches Wort nutzt Dr. Saskia Ludwig häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Erden",
-        "isCorrect": true
-      },
-      {
         "text": "Ausschuss",
         "isCorrect": false
       },
       {
-        "text": "Migration",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Rente",
+        "text": "Erden",
+        "isCorrect": true
+      },
+      {
+        "text": "Bundesregierung",
         "isCorrect": false
       }
     ],
@@ -173,20 +173,20 @@
     "id": "biene",
     "alternatives": [
       {
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrliche Rednerin",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.934
+      },
+      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüterin",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.925
-      },
-      {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Clevere Strategin",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.893
       }
     ]
   },

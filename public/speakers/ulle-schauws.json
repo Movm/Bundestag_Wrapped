@@ -24,10 +24,10 @@
     "longestSpeechRank": 512
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 19,
-    "interrupterRank": null,
-    "interruptedRank": 139
+    "interruptionsGiven": 70,
+    "interruptionsReceived": 21,
+    "interrupterRank": 34,
+    "interruptedRank": 179
   },
   "words": {
     "topWords": [
@@ -144,53 +144,58 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "3.356"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "70"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Ulle Schauws häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
         "text": "Frauen",
         "isCorrect": true
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Frauen\" sagte Ulle Schauws 26× (22.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦀",
-    "name": "Krabbe",
-    "title": "Hartnäckige Debattiererin",
-    "reason": "Du hältst an deinen Positionen fest und lässt nicht locker.",
-    "id": "krabbe",
+    "emoji": "🐺",
+    "name": "Wolf",
+    "title": "Mutige Einwerferin",
+    "reason": "Mit 70 Zwischenrufen mischst du aktiv in Debatten mit.",
+    "id": "wolf",
     "alternatives": [
       {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 0.934
+        "emoji": "🦀",
+        "name": "Krabbe",
+        "title": "Hartnäckige Debattiererin",
+        "reason": "Du hältst an deinen Positionen fest und lässt nicht locker.",
+        "id": "krabbe",
+        "score": 0.973
       },
       {
-        "emoji": "🐝",
-        "name": "Biene",
-        "title": "Fleißige Abgeordnete",
-        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-        "id": "biene",
-        "score": 0.919
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrliche Rednerin",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.943
       }
     ]
   },

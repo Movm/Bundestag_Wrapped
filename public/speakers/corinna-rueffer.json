@@ -24,10 +24,10 @@
     "longestSpeechRank": 410
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 5,
     "interruptionsReceived": 5,
-    "interrupterRank": null,
-    "interruptedRank": 403
+    "interrupterRank": 276,
+    "interruptedRank": 452
   },
   "words": {
     "topWords": [
@@ -162,11 +162,11 @@
     "question": "Welches Wort nutzt Corinna Rüffer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Politik",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
@@ -174,7 +174,7 @@
         "isCorrect": true
       },
       {
-        "text": "Verantwortung",
+        "text": "Kanzler",
         "isCorrect": false
       }
     ],
@@ -189,20 +189,20 @@
     "id": "biber",
     "alternatives": [
       {
-        "emoji": "🐬",
-        "name": "Delfin",
-        "title": "Diplomatische Rednerin",
-        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-        "id": "delfin",
-        "score": 0.875
-      },
-      {
         "emoji": "🦦",
         "name": "Otter",
         "title": "Positive Teamplayerin",
         "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
         "id": "otter",
         "score": 0.8
+      },
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüterin",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 0.791
       }
     ]
   },

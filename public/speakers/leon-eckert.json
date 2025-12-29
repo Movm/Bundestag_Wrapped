@@ -24,10 +24,10 @@
     "longestSpeechRank": 114
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 16,
-    "interrupterRank": null,
-    "interruptedRank": 177
+    "interruptionsGiven": 38,
+    "interruptionsReceived": 22,
+    "interrupterRank": 66,
+    "interruptedRank": 171
   },
   "words": {
     "topWords": [
@@ -173,6 +173,11 @@
       "value": "#19 von 609"
     },
     {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "38"
+    },
+    {
       "emoji": "🥇",
       "label": "Rang in GRÜNE",
       "value": "#3 von 85"
@@ -182,20 +187,20 @@
     "question": "Welches Wort nutzt Leon Eckert häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
         "text": "Bundesminister",
         "isCorrect": true
-      },
-      {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
-        "isCorrect": false
       }
     ],
     "explanation": "\"Bundesminister\" sagte Leon Eckert 16× (20.5× häufiger als der Bundestag-Durchschnitt)."
@@ -204,20 +209,20 @@
     "question": "Welches Adjektiv nutzt Leon Eckert häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
         "text": "Gerecht",
         "isCorrect": true
+      },
+      {
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Gerecht\" sagte Leon Eckert 6× (3.5× häufiger als der Bundestag-Durchschnitt)."
@@ -230,19 +235,19 @@
     "id": "loewe",
     "alternatives": [
       {
+        "emoji": "🐴",
+        "name": "Pferd",
+        "title": "Fleißiger Debattierer",
+        "reason": "Mit 23 Reden gehörst du zu den aktivsten Abgeordneten.",
+        "id": "pferd",
+        "score": 1.0
+      },
+      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüter",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
-        "score": 1.0
-      },
-      {
-        "emoji": "🐝",
-        "name": "Biene",
-        "title": "Fleißiger Abgeordneter",
-        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-        "id": "biene",
         "score": 1.0
       }
     ]

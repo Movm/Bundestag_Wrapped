@@ -24,10 +24,10 @@
     "longestSpeechRank": 79
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 34,
     "interruptionsReceived": 29,
-    "interrupterRank": 53,
-    "interruptedRank": 58
+    "interrupterRank": 78,
+    "interruptedRank": 99
   },
   "words": {
     "topWords": [
@@ -174,25 +174,30 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "3.677"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "34"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Katalin Gennburg häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
         "text": "Bauen",
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Minister",
+        "text": "Freiheit",
         "isCorrect": false
       }
     ],
@@ -202,7 +207,11 @@
     "question": "Welches Adjektiv nutzt Katalin Gennburg häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Richtig",
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
@@ -210,11 +219,7 @@
         "isCorrect": true
       },
       {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       }
     ],

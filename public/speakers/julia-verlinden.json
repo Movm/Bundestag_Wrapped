@@ -24,10 +24,10 @@
     "longestSpeechRank": 222
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 15,
-    "interrupterRank": null,
-    "interruptedRank": 190
+    "interruptionsGiven": 58,
+    "interruptionsReceived": 18,
+    "interrupterRank": 40,
+    "interruptedRank": 210
   },
   "words": {
     "topWords": [
@@ -200,26 +200,31 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "6.028"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "58"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Julia Verlinden häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
-      },
-      {
         "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
         "text": "Bundesregierung",
         "isCorrect": true
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Bundesregierung\" sagte Dr. Julia Verlinden 44× (6.7× häufiger als der Bundestag-Durchschnitt)."
@@ -228,11 +233,7 @@
     "question": "Welches Adjektiv nutzt Dr. Julia Verlinden häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
@@ -240,7 +241,11 @@
         "isCorrect": true
       },
       {
-        "text": "National",
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
@@ -262,12 +267,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦔",
-        "name": "Igel",
-        "title": "Beharrliche Rednerin",
-        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
-        "id": "igel",
-        "score": 0.801
+        "emoji": "🐴",
+        "name": "Pferd",
+        "title": "Fleißige Debattiererin",
+        "reason": "Mit 15 Reden gehörst du zu den aktivsten Abgeordneten.",
+        "id": "pferd",
+        "score": 0.926
       }
     ]
   },

@@ -24,10 +24,10 @@
     "longestSpeechRank": 22
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 11,
-    "interrupterRank": null,
-    "interruptedRank": 245
+    "interruptionsGiven": 26,
+    "interruptionsReceived": 12,
+    "interrupterRank": 113,
+    "interruptedRank": 296
   },
   "words": {
     "topWords": [
@@ -158,6 +158,11 @@
       "value": "8.958"
     },
     {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "26"
+    },
+    {
       "emoji": "🥇",
       "label": "Rang in GRÜNE",
       "value": "#5 von 85"
@@ -172,19 +177,19 @@
     "question": "Welches Wort nutzt Luise Amtsberg häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
         "text": "Menschen",
         "isCorrect": true
       },
       {
-        "text": "Familie",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Politik",
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
         "isCorrect": false
       }
     ],
@@ -194,15 +199,15 @@
     "question": "Welches Adjektiv nutzt Luise Amtsberg häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Falsch",
+        "text": "Klar",
         "isCorrect": false
       },
       {
-        "text": "Jung",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Sicher",
+        "text": "Neu",
         "isCorrect": false
       },
       {
@@ -213,12 +218,20 @@
     "explanation": "\"Geschützt\" sagte Luise Amtsberg 3× (6.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐿️",
-    "name": "Eichhörnchen",
-    "title": "Themenhüterin",
-    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-    "id": "eichhoernchen",
+    "emoji": "🐴",
+    "name": "Pferd",
+    "title": "Fleißige Debattiererin",
+    "reason": "Mit 15 Reden gehörst du zu den aktivsten Abgeordneten.",
+    "id": "pferd",
     "alternatives": [
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüterin",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 1.0
+      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -226,14 +239,6 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
-      },
-      {
-        "emoji": "🦚",
-        "name": "Pfau",
-        "title": "Eloquente Rednerin",
-        "reason": "Mit Ø 597 Wörtern pro Rede gehörst du zu den ausführlichsten Rednern.",
-        "id": "pfau",
-        "score": 0.812
       }
     ]
   },

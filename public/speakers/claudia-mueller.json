@@ -24,10 +24,10 @@
     "longestSpeechRank": 284
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 8,
-    "interrupterRank": null,
-    "interruptedRank": 319
+    "interruptionsGiven": 23,
+    "interruptionsReceived": 13,
+    "interrupterRank": 127,
+    "interruptedRank": 277
   },
   "words": {
     "topWords": [
@@ -170,13 +170,22 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "5.219"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "23"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Claudia Müller häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bürger",
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
         "isCorrect": false
       },
       {
@@ -184,11 +193,7 @@
         "isCorrect": true
       },
       {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
+        "text": "Gesetz",
         "isCorrect": false
       }
     ],
@@ -198,19 +203,19 @@
     "question": "Welches Adjektiv nutzt Claudia Müller häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
         "text": "Gerecht",
         "isCorrect": true
       },
       {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Europäisch",
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
@@ -232,12 +237,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦚",
-        "name": "Pfau",
-        "title": "Eloquente Rednerin",
-        "reason": "Mit Ø 580 Wörtern pro Rede gehörst du zu den ausführlichsten Rednern.",
-        "id": "pfau",
-        "score": 0.737
+        "emoji": "🐺",
+        "name": "Wolf",
+        "title": "Mutige Einwerferin",
+        "reason": "Mit 23 Zwischenrufen mischst du aktiv in Debatten mit.",
+        "id": "wolf",
+        "score": 0.776
       }
     ]
   },

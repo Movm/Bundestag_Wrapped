@@ -25,9 +25,9 @@
   },
   "drama": {
     "interruptionsGiven": 3,
-    "interruptionsReceived": 12,
-    "interrupterRank": 258,
-    "interruptedRank": 236
+    "interruptionsReceived": 25,
+    "interrupterRank": 328,
+    "interruptedRank": 135
   },
   "words": {
     "topWords": [
@@ -187,7 +187,11 @@
     "question": "Welches Wort nutzt Dr. Norbert Röttgen häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wirtschaft",
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
         "isCorrect": false
       },
       {
@@ -195,11 +199,7 @@
         "isCorrect": true
       },
       {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
+        "text": "Bürger",
         "isCorrect": false
       }
     ],
@@ -209,11 +209,7 @@
     "question": "Welches Adjektiv nutzt Dr. Norbert Röttgen häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
+        "text": "Groß",
         "isCorrect": false
       },
       {
@@ -221,7 +217,11 @@
         "isCorrect": true
       },
       {
-        "text": "Stark",
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
         "isCorrect": false
       }
     ],
@@ -243,12 +243,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦚",
-        "name": "Pfau",
-        "title": "Eloquenter Redner",
-        "reason": "Mit Ø 671 Wörtern pro Rede gehörst du zu den ausführlichsten Rednern.",
-        "id": "pfau",
-        "score": 0.866
+        "emoji": "🐻",
+        "name": "Bär",
+        "title": "Standhafter Debattierer",
+        "reason": "Trotz 25× unterbrochen zu werden, bleibst du standhaft.",
+        "id": "baer",
+        "score": 0.98
       }
     ]
   },

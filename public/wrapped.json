@@ -494,36 +494,36 @@
         "count": 217
       },
       {
-        "name": "Marc Bernhard",
-        "party": "AfD",
-        "count": 181
+        "name": "Britta Haßelmann",
+        "party": "GRÜNE",
+        "count": 217
       }
     ],
     "mostInterrupted": [
       {
         "name": "Friedrich Merz",
         "party": "CDU/CSU",
-        "count": 166
+        "count": 190
       },
       {
         "name": "Jens Spahn",
         "party": "CDU/CSU",
-        "count": 114
+        "count": 148
       },
       {
         "name": "Stephan Brandner",
         "party": "AfD",
-        "count": 96
+        "count": 139
       },
       {
-        "name": "Dr. Paula Piechotta",
-        "party": "GRÜNE",
-        "count": 94
+        "name": "Clara Bünger",
+        "party": "DIE LINKE",
+        "count": 102
       },
       {
         "name": "Lars Klingbeil",
         "party": "SPD",
-        "count": 93
+        "count": 101
       }
     ],
     "applauseChampions": [
@@ -554,6 +554,10 @@
         "count": 4516
       },
       {
+        "party": "GRÜNE",
+        "count": 2534
+      },
+      {
         "party": "CDU/CSU",
         "count": 1616
       },
@@ -562,22 +566,191 @@
         "count": 1057
       },
       {
-        "party": "Die Linke",
+        "party": "DIE LINKE",
         "count": 815
       }
     ],
     "zwischenrufStats": {
-      "total": 8004,
-      "positive": 1430,
-      "negative": 891,
-      "neutral": 5683,
-      "positivePercent": 17.9,
-      "negativePercent": 11.1,
-      "neutralPercent": 71.0,
+      "total": 10538,
+      "positive": 1860,
+      "negative": 1229,
+      "neutral": 7449,
+      "positivePercent": 17.7,
+      "negativePercent": 11.7,
+      "neutralPercent": 70.7,
       "classification": {
         "positive": "Zustimmung (genau, richtig, bravo, stimmt, ...)",
         "negative": "Kritik (unsinn, quatsch, falsch, lüge, ...)",
         "neutral": "Nicht klar zuordnenbar (Fragen, Kommentare, ...)"
+      }
+    },
+    "crossParty": {
+      "matrix": {
+        "AfD": {
+          "AfD": 239,
+          "SPD": 1347,
+          "CDU/CSU": 1575,
+          "DIE LINKE": 459,
+          "GRÜNE": 889,
+          "fraktionslos": 7
+        },
+        "DIE LINKE": {
+          "CDU/CSU": 329,
+          "AfD": 369,
+          "SPD": 69,
+          "GRÜNE": 22,
+          "DIE LINKE": 25,
+          "fraktionslos": 1
+        },
+        "CDU/CSU": {
+          "DIE LINKE": 347,
+          "GRÜNE": 488,
+          "AfD": 560,
+          "SPD": 64,
+          "CDU/CSU": 157
+        },
+        "GRÜNE": {
+          "CDU/CSU": 965,
+          "GRÜNE": 186,
+          "AfD": 1086,
+          "SPD": 226,
+          "DIE LINKE": 71
+        },
+        "SPD": {
+          "AfD": 786,
+          "DIE LINKE": 64,
+          "GRÜNE": 62,
+          "SPD": 71,
+          "CDU/CSU": 74
+        }
+      },
+      "topRelationships": [
+        {
+          "from": "AfD",
+          "to": "CDU/CSU",
+          "count": 1575
+        },
+        {
+          "from": "AfD",
+          "to": "SPD",
+          "count": 1347
+        },
+        {
+          "from": "GRÜNE",
+          "to": "AfD",
+          "count": 1086
+        },
+        {
+          "from": "GRÜNE",
+          "to": "CDU/CSU",
+          "count": 965
+        },
+        {
+          "from": "AfD",
+          "to": "GRÜNE",
+          "count": 889
+        },
+        {
+          "from": "SPD",
+          "to": "AfD",
+          "count": 786
+        },
+        {
+          "from": "CDU/CSU",
+          "to": "AfD",
+          "count": 560
+        },
+        {
+          "from": "CDU/CSU",
+          "to": "GRÜNE",
+          "count": 488
+        },
+        {
+          "from": "AfD",
+          "to": "DIE LINKE",
+          "count": 459
+        },
+        {
+          "from": "DIE LINKE",
+          "to": "AfD",
+          "count": 369
+        },
+        {
+          "from": "CDU/CSU",
+          "to": "DIE LINKE",
+          "count": 347
+        },
+        {
+          "from": "DIE LINKE",
+          "to": "CDU/CSU",
+          "count": 329
+        },
+        {
+          "from": "AfD",
+          "to": "AfD",
+          "count": 239
+        },
+        {
+          "from": "GRÜNE",
+          "to": "SPD",
+          "count": 226
+        },
+        {
+          "from": "GRÜNE",
+          "to": "GRÜNE",
+          "count": 186
+        },
+        {
+          "from": "CDU/CSU",
+          "to": "CDU/CSU",
+          "count": 157
+        },
+        {
+          "from": "SPD",
+          "to": "CDU/CSU",
+          "count": 74
+        },
+        {
+          "from": "SPD",
+          "to": "SPD",
+          "count": 71
+        },
+        {
+          "from": "GRÜNE",
+          "to": "DIE LINKE",
+          "count": 71
+        },
+        {
+          "from": "DIE LINKE",
+          "to": "SPD",
+          "count": 69
+        }
+      ],
+      "byParty": {
+        "fraktionslos": {
+          "interrupting": 0,
+          "interrupted": 8
+        },
+        "DIE LINKE": {
+          "interrupting": 815,
+          "interrupted": 966
+        },
+        "AfD": {
+          "interrupting": 4516,
+          "interrupted": 3040
+        },
+        "CDU/CSU": {
+          "interrupting": 1616,
+          "interrupted": 3100
+        },
+        "GRÜNE": {
+          "interrupting": 2534,
+          "interrupted": 1647
+        },
+        "SPD": {
+          "interrupting": 1057,
+          "interrupted": 1777
+        }
       }
     }
   },
@@ -2919,9 +3092,9 @@
     },
     {
       "emoji": "🗣️",
-      "value": "4.5x",
+      "value": "2.3x",
       "label": "Männer unterbrechen mehr",
-      "sublabel": "6,551 vs 1,440",
+      "sublabel": "7,334 vs 3,188",
       "category": "gender"
     }
   ],
@@ -3173,10 +3346,10 @@
       }
     ],
     "interruptionPatterns": {
-      "maleInterruptions": 6551,
-      "femaleInterruptions": 1440,
-      "maleInterrupted": 5280,
-      "femaleInterrupted": 2724
+      "maleInterruptions": 7334,
+      "femaleInterruptions": 3188,
+      "maleInterrupted": 7275,
+      "femaleInterrupted": 3263
     },
     "speechLength": {
       "male": 415.7587844254511,

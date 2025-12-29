@@ -24,10 +24,10 @@
     "longestSpeechRank": 50
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 94,
-    "interrupterRank": null,
-    "interruptedRank": 4
+    "interruptionsGiven": 141,
+    "interruptionsReceived": 99,
+    "interrupterRank": 13,
+    "interruptedRank": 6
   },
   "words": {
     "topWords": [
@@ -163,6 +163,11 @@
       "value": "#7 von 609"
     },
     {
+      "emoji": "⚡",
+      "label": "Zwischenrufer",
+      "value": "#13 (141x)"
+    },
+    {
       "emoji": "🥇",
       "label": "Rang in GRÜNE",
       "value": "#1 von 85"
@@ -172,20 +177,20 @@
     "question": "Welches Wort nutzt Dr. Paula Piechotta häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Ausschuss",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
+        "text": "Energie",
         "isCorrect": false
       },
       {
         "text": "Sondervermögen",
         "isCorrect": true
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Sondervermögen\" sagte Dr. Paula Piechotta 34× (7.2× häufiger als der Bundestag-Durchschnitt)."
@@ -194,11 +199,7 @@
     "question": "Welches Adjektiv nutzt Dr. Paula Piechotta häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
@@ -206,7 +207,11 @@
         "isCorrect": true
       },
       {
-        "text": "Erfolgreich",
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
         "isCorrect": false
       }
     ],
@@ -220,19 +225,19 @@
     "id": "tiger",
     "alternatives": [
       {
+        "emoji": "🐴",
+        "name": "Pferd",
+        "title": "Fleißige Debattiererin",
+        "reason": "Mit 23 Reden gehörst du zu den aktivsten Abgeordneten.",
+        "id": "pferd",
+        "score": 1.0
+      },
+      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüterin",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
-        "score": 1.0
-      },
-      {
-        "emoji": "🐝",
-        "name": "Biene",
-        "title": "Fleißige Abgeordnete",
-        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-        "id": "biene",
         "score": 1.0
       }
     ]

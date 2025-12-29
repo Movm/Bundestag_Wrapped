@@ -24,10 +24,10 @@
     "longestSpeechRank": 106
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 14,
-    "interrupterRank": null,
-    "interruptedRank": 207
+    "interruptionsGiven": 12,
+    "interruptionsReceived": 15,
+    "interrupterRank": 195,
+    "interruptedRank": 256
   },
   "words": {
     "topWords": [
@@ -187,25 +187,30 @@
       "emoji": "📚",
       "label": "Wortreichster",
       "value": "#17 von 521"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "12"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Felix Banaszak häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
         "text": "Verantwortung",
         "isCorrect": true
       },
       {
-        "text": "Kinder",
+        "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Reform",
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
         "isCorrect": false
       }
     ],
@@ -215,16 +220,16 @@
     "question": "Welches Adjektiv nutzt Felix Banaszak häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
         "text": "Gerecht",
         "isCorrect": true
-      },
-      {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
       },
       {
         "text": "Gut",
@@ -234,27 +239,27 @@
     "explanation": "\"Gerecht\" sagte Felix Banaszak 4× (8.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🦫",
-    "name": "Biber",
-    "title": "Konstruktiver Brückenbauer",
-    "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
-    "id": "biber",
+    "emoji": "🦦",
+    "name": "Otter",
+    "title": "Positiver Teamplayer",
+    "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+    "id": "otter",
     "alternatives": [
       {
-        "emoji": "🦦",
-        "name": "Otter",
-        "title": "Positiver Teamplayer",
-        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
-        "id": "otter",
-        "score": 0.887
+        "emoji": "🐇",
+        "name": "Hase",
+        "title": "Wendiger Optimist",
+        "reason": "Mit positivem Blick reagierst du schnell auf neue Themen.",
+        "id": "hase",
+        "score": 0.776
       },
       {
-        "emoji": "🐬",
-        "name": "Delfin",
-        "title": "Diplomatischer Redner",
-        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-        "id": "delfin",
-        "score": 0.85
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 0.77
       }
     ]
   },

@@ -24,10 +24,10 @@
     "longestSpeechRank": 301
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 13,
-    "interrupterRank": null,
-    "interruptedRank": 216
+    "interruptionsGiven": 41,
+    "interruptionsReceived": 14,
+    "interrupterRank": 62,
+    "interruptedRank": 261
   },
   "words": {
     "topWords": [
@@ -166,26 +166,31 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "3.205"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "41"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Deborah Düring häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Steuern",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
         "text": "Hilfe",
         "isCorrect": true
-      },
-      {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
       }
     ],
     "explanation": "\"Hilfe\" sagte Deborah Düring 14× (18.1× häufiger als der Bundestag-Durchschnitt)."
@@ -198,27 +203,35 @@
         "isCorrect": true
       },
       {
-        "text": "Groß",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Erfolgreich",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
     "explanation": "\"Angemessen\" sagte Deborah Düring 3× (22.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐿️",
-    "name": "Eichhörnchen",
-    "title": "Themenhüterin",
-    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-    "id": "eichhoernchen",
+    "emoji": "🐺",
+    "name": "Wolf",
+    "title": "Mutige Einwerferin",
+    "reason": "Mit 41 Zwischenrufen mischst du aktiv in Debatten mit.",
+    "id": "wolf",
     "alternatives": [
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüterin",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 0.928
+      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -226,14 +239,6 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 0.901
-      },
-      {
-        "emoji": "🦫",
-        "name": "Biber",
-        "title": "Konstruktive Brückenbauerin",
-        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
-        "id": "biber",
-        "score": 0.762
       }
     ]
   },

@@ -24,10 +24,10 @@
     "longestSpeechRank": 324
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 43,
-    "interrupterRank": 41,
-    "interruptedRank": 27
+    "interruptionsGiven": 44,
+    "interruptionsReceived": 45,
+    "interrupterRank": 57,
+    "interruptedRank": 43
   },
   "words": {
     "topWords": [
@@ -163,6 +163,11 @@
       "value": "#12 von 609"
     },
     {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "44"
+    },
+    {
       "emoji": "🥇",
       "label": "Rang in DIE LINKE",
       "value": "#3 von 63"
@@ -172,20 +177,20 @@
     "question": "Welches Wort nutzt Christian Görke häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Migration",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
+        "text": "Minister",
         "isCorrect": false
       },
       {
         "text": "Steuermindereinnahmen",
         "isCorrect": true
+      },
+      {
+        "text": "Rente",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Steuermindereinnahmen\" sagte Christian Görke 9× (571.0× häufiger als der Bundestag-Durchschnitt)."
@@ -199,19 +204,19 @@
     "id": "loewe",
     "alternatives": [
       {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüter",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
+        "emoji": "🐺",
+        "name": "Wolf",
+        "title": "Mutiger Einwerfer",
+        "reason": "Mit 44 Zwischenrufen mischst du aktiv in Debatten mit.",
+        "id": "wolf",
         "score": 1.0
       },
       {
-        "emoji": "🐝",
-        "name": "Biene",
-        "title": "Fleißiger Abgeordneter",
-        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-        "id": "biene",
+        "emoji": "🐴",
+        "name": "Pferd",
+        "title": "Fleißiger Debattierer",
+        "reason": "Mit 21 Reden gehörst du zu den aktivsten Abgeordneten.",
+        "id": "pferd",
         "score": 1.0
       }
     ]

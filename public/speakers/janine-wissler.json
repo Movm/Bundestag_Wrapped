@@ -24,10 +24,10 @@
     "longestSpeechRank": 82
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 29,
-    "interrupterRank": 97,
-    "interruptedRank": 57
+    "interruptionsGiven": 22,
+    "interruptionsReceived": 30,
+    "interrupterRank": 135,
+    "interruptedRank": 91
   },
   "words": {
     "topWords": [
@@ -180,26 +180,31 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "7.735"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "22"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Janine Wissler häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Haushalt",
+        "isCorrect": false
+      },
+      {
         "text": "Reiche",
         "isCorrect": true
-      },
-      {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
       }
     ],
     "explanation": "\"Reiche\" sagte Janine Wissler 24× (29.0× häufiger als der Bundestag-Durchschnitt)."
@@ -208,20 +213,20 @@
     "question": "Welches Adjektiv nutzt Janine Wissler häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
         "text": "Teuer",
         "isCorrect": true
-      },
-      {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
       }
     ],
     "explanation": "\"Teuer\" sagte Janine Wissler 6× (9.4× häufiger als der Bundestag-Durchschnitt)."
@@ -245,7 +250,7 @@
         "emoji": "🐻",
         "name": "Bär",
         "title": "Standhafte Debattiererin",
-        "reason": "Trotz 29× unterbrochen zu werden, bleibst du standhaft.",
+        "reason": "Trotz 30× unterbrochen zu werden, bleibst du standhaft.",
         "id": "baer",
         "score": 0.985
       }

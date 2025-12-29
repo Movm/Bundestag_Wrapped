@@ -24,10 +24,10 @@
     "longestSpeechRank": 415
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 24,
-    "interrupterRank": 199,
-    "interruptedRank": 92
+    "interruptionsGiven": 6,
+    "interruptionsReceived": 27,
+    "interrupterRank": 255,
+    "interruptedRank": 117
   },
   "words": {
     "topWords": [
@@ -176,20 +176,20 @@
     "question": "Welches Wort nutzt Violetta Bock häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
         "text": "Klimakatastrophe",
         "isCorrect": true
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Debatte",
-        "isCorrect": false
       }
     ],
     "explanation": "\"Klimakatastrophe\" sagte Violetta Bock 9× (369.6× häufiger als der Bundestag-Durchschnitt)."
@@ -198,39 +198,31 @@
     "question": "Welches Adjektiv nutzt Violetta Bock häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
         "text": "Sozial",
         "isCorrect": true
       },
       {
-        "text": "Klar",
+        "text": "Alt",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
+        "text": "Gut",
         "isCorrect": false
       }
     ],
     "explanation": "\"Sozial\" sagte Violetta Bock 7× (24.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐬",
-    "name": "Delfin",
-    "title": "Diplomatische Rednerin",
-    "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-    "id": "delfin",
+    "emoji": "🐝",
+    "name": "Biene",
+    "title": "Fleißige Abgeordnete",
+    "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+    "id": "biene",
     "alternatives": [
-      {
-        "emoji": "🐝",
-        "name": "Biene",
-        "title": "Fleißige Abgeordnete",
-        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-        "id": "biene",
-        "score": 0.983
-      },
       {
         "emoji": "🦔",
         "name": "Igel",
@@ -238,6 +230,14 @@
         "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
         "id": "igel",
         "score": 0.973
+      },
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüterin",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 0.955
       }
     ]
   },

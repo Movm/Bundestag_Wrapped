@@ -24,10 +24,10 @@
     "longestSpeechRank": 488
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 15,
     "interruptionsReceived": 11,
-    "interrupterRank": 121,
-    "interruptedRank": 258
+    "interrupterRank": 164,
+    "interruptedRank": 325
   },
   "words": {
     "topWords": [
@@ -156,17 +156,22 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "1.930"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "15"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Cansin Köktürk häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Rente",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Europa",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
@@ -174,7 +179,7 @@
         "isCorrect": true
       },
       {
-        "text": "Energie",
+        "text": "Fraktion",
         "isCorrect": false
       }
     ],
@@ -189,20 +194,20 @@
     "id": "eichhoernchen",
     "alternatives": [
       {
+        "emoji": "🐺",
+        "name": "Wolf",
+        "title": "Mutige Einwerferin",
+        "reason": "Mit 15 Zwischenrufen mischst du aktiv in Debatten mit.",
+        "id": "wolf",
+        "score": 0.685
+      },
+      {
         "emoji": "🦜",
         "name": "Papagei",
         "title": "Neugierige Fragestellerin",
         "reason": "Mit vielen Fragen bringst du wichtige Themen auf den Tisch.",
         "id": "papagei",
         "score": 0.598
-      },
-      {
-        "emoji": "🐇",
-        "name": "Hase",
-        "title": "Wendige Optimistin",
-        "reason": "Mit positivem Blick reagierst du schnell auf neue Themen.",
-        "id": "hase",
-        "score": 0.589
       }
     ]
   },

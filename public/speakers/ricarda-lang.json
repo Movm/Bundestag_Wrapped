@@ -24,10 +24,10 @@
     "longestSpeechRank": 34
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 25,
-    "interrupterRank": null,
-    "interruptedRank": 78
+    "interruptionsGiven": 4,
+    "interruptionsReceived": 27,
+    "interrupterRank": 296,
+    "interruptedRank": 109
   },
   "words": {
     "topWords": [
@@ -177,7 +177,7 @@
     "question": "Welches Wort nutzt Ricarda Lang häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Rente",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
@@ -185,11 +185,11 @@
         "isCorrect": true
       },
       {
-        "text": "Zukunft",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
-        "text": "Bildung",
+        "text": "Steuern",
         "isCorrect": false
       }
     ],
@@ -199,39 +199,31 @@
     "question": "Welches Adjektiv nutzt Ricarda Lang häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
         "text": "Gerecht",
         "isCorrect": true
-      },
-      {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
-        "isCorrect": false
       }
     ],
     "explanation": "\"Gerecht\" sagte Ricarda Lang 4× (2.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐬",
-    "name": "Delfin",
-    "title": "Diplomatische Rednerin",
-    "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-    "id": "delfin",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüterin",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 1.0
-      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -239,6 +231,14 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
+      },
+      {
+        "emoji": "🦊",
+        "name": "Fuchs",
+        "title": "Clevere Strategin",
+        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+        "id": "fuchs",
+        "score": 0.987
       }
     ]
   },

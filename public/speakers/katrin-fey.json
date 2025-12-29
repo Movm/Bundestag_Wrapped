@@ -24,10 +24,10 @@
     "longestSpeechRank": 590
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 10,
     "interruptionsReceived": 11,
-    "interrupterRank": 155,
-    "interruptedRank": 253
+    "interrupterRank": 204,
+    "interruptedRank": 321
   },
   "words": {
     "topWords": [
@@ -182,26 +182,31 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "2.375"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "10"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Katrin Fey häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
         "text": "Politik",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
         "isCorrect": false
       },
       {
         "text": "Taser",
         "isCorrect": true
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Taser\" sagte Katrin Fey 14× (436.7× häufiger als der Bundestag-Durchschnitt)."
@@ -210,20 +215,20 @@
     "question": "Welches Adjektiv nutzt Katrin Fey häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Stark",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
         "text": "Gefährlich",
         "isCorrect": true
-      },
-      {
-        "text": "Sicher",
-        "isCorrect": false
       }
     ],
     "explanation": "\"Gefährlich\" sagte Katrin Fey 3× (32.5× häufiger als der Bundestag-Durchschnitt)."

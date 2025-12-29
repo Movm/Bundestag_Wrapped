@@ -24,10 +24,10 @@
     "longestSpeechRank": 262
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 18,
-    "interrupterRank": null,
-    "interruptedRank": 154
+    "interruptionsGiven": 95,
+    "interruptionsReceived": 19,
+    "interrupterRank": 23,
+    "interruptedRank": 203
   },
   "words": {
     "topWords": [
@@ -163,6 +163,11 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "5.968"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "95"
     }
   ],
   "signatureQuiz": {
@@ -173,15 +178,15 @@
         "isCorrect": true
       },
       {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
         "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
         "isCorrect": false
       }
     ],
@@ -196,19 +201,19 @@
     "id": "otter",
     "alternatives": [
       {
-        "emoji": "🐬",
-        "name": "Delfin",
-        "title": "Diplomatische Rednerin",
-        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-        "id": "delfin",
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüterin",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
         "score": 1.0
       },
       {
-        "emoji": "🦫",
-        "name": "Biber",
-        "title": "Konstruktive Brückenbauerin",
-        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
-        "id": "biber",
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißige Abgeordnete",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
         "score": 1.0
       }
     ]

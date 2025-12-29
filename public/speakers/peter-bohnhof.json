@@ -25,9 +25,9 @@
   },
   "drama": {
     "interruptionsGiven": 10,
-    "interruptionsReceived": 24,
-    "interrupterRank": 159,
-    "interruptedRank": 85
+    "interruptionsReceived": 29,
+    "interrupterRank": 209,
+    "interruptedRank": 97
   },
   "words": {
     "topWords": [
@@ -181,20 +181,20 @@
     "question": "Welches Wort nutzt Peter Bohnhof häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Regierung",
+        "isCorrect": true
+      },
+      {
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
         "text": "Energie",
         "isCorrect": false
-      },
-      {
-        "text": "Bildung",
-        "isCorrect": false
-      },
-      {
-        "text": "Regierung",
-        "isCorrect": true
       }
     ],
     "explanation": "\"Regierung\" sagte Peter Bohnhof 24× (6.2× häufiger als der Bundestag-Durchschnitt)."
@@ -203,7 +203,11 @@
     "question": "Welches Adjektiv nutzt Peter Bohnhof häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gefährlich",
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
         "isCorrect": false
       },
       {
@@ -211,11 +215,7 @@
         "isCorrect": true
       },
       {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
+        "text": "Sozial",
         "isCorrect": false
       }
     ],

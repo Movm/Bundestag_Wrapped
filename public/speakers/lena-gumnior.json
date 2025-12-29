@@ -24,10 +24,10 @@
     "longestSpeechRank": 375
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 32,
-    "interrupterRank": null,
-    "interruptedRank": 49
+    "interruptionsGiven": 10,
+    "interruptionsReceived": 37,
+    "interrupterRank": 210,
+    "interruptedRank": 63
   },
   "words": {
     "topWords": [
@@ -154,25 +154,30 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "5.120"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "10"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Lena Gumnior häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
         "text": "Kriminalität",
         "isCorrect": true
       },
       {
-        "text": "Verantwortung",
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
         "isCorrect": false
       }
     ],
@@ -182,20 +187,20 @@
     "question": "Welches Adjektiv nutzt Dr. Lena Gumnior häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
         "text": "Sozial",
-        "isCorrect": false
-      },
-      {
-        "text": "Wichtig",
         "isCorrect": false
       },
       {
         "text": "Wirksam",
         "isCorrect": true
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "National",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Wirksam\" sagte Dr. Lena Gumnior 3× (10.6× häufiger als der Bundestag-Durchschnitt)."
@@ -219,7 +224,7 @@
         "emoji": "🐻",
         "name": "Bär",
         "title": "Standhafte Debattiererin",
-        "reason": "Trotz 32× unterbrochen zu werden, bleibst du standhaft.",
+        "reason": "Trotz 37× unterbrochen zu werden, bleibst du standhaft.",
         "id": "baer",
         "score": 0.973
       }

@@ -24,10 +24,10 @@
     "longestSpeechRank": 540
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 36,
     "interruptionsReceived": 10,
-    "interrupterRank": null,
-    "interruptedRank": 274
+    "interrupterRank": 72,
+    "interruptedRank": 335
   },
   "words": {
     "topWords": [
@@ -156,25 +156,30 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "1.577"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "36"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Harald Ebner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
         "text": "Atomkraft",
         "isCorrect": true
       },
       {
-        "text": "Bürger",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
         "isCorrect": false
       }
     ],
@@ -182,12 +187,20 @@
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🐿️",
-    "name": "Eichhörnchen",
-    "title": "Themenhüter",
-    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-    "id": "eichhoernchen",
+    "emoji": "🐺",
+    "name": "Wolf",
+    "title": "Mutiger Einwerfer",
+    "reason": "Mit 36 Zwischenrufen mischst du aktiv in Debatten mit.",
+    "id": "wolf",
     "alternatives": [
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 0.788
+      },
       {
         "emoji": "🦊",
         "name": "Fuchs",
@@ -195,14 +208,6 @@
         "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
         "id": "fuchs",
         "score": 0.78
-      },
-      {
-        "emoji": "🦜",
-        "name": "Papagei",
-        "title": "Neugieriger Fragesteller",
-        "reason": "Mit vielen Fragen bringst du wichtige Themen auf den Tisch.",
-        "id": "papagei",
-        "score": 0.728
       }
     ]
   },

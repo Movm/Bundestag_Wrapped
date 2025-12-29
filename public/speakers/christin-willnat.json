@@ -24,10 +24,10 @@
     "longestSpeechRank": 355
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 3,
     "interruptionsReceived": 3,
-    "interrupterRank": 252,
-    "interruptedRank": 456
+    "interrupterRank": 319,
+    "interruptedRank": 500
   },
   "words": {
     "topWords": [
@@ -176,7 +176,11 @@
     "question": "Welches Wort nutzt Christin Willnat häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
         "isCorrect": false
       },
       {
@@ -184,11 +188,7 @@
         "isCorrect": true
       },
       {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
+        "text": "Klima",
         "isCorrect": false
       }
     ],
@@ -198,20 +198,20 @@
     "question": "Welches Adjektiv nutzt Christin Willnat häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Falsch",
+        "text": "Jung",
         "isCorrect": false
       },
       {
         "text": "Geschützt",
         "isCorrect": true
+      },
+      {
+        "text": "Europäisch",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Geschützt\" sagte Christin Willnat 3× (16.9× häufiger als der Bundestag-Durchschnitt)."
@@ -232,12 +232,12 @@
         "score": 0.918
       },
       {
-        "emoji": "🦫",
-        "name": "Biber",
-        "title": "Konstruktive Brückenbauerin",
-        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
-        "id": "biber",
-        "score": 0.898
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißige Abgeordnete",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
+        "score": 0.891
       }
     ]
   },

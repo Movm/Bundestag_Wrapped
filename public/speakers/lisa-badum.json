@@ -24,10 +24,10 @@
     "longestSpeechRank": 319
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 177,
     "interruptionsReceived": 35,
-    "interrupterRank": null,
-    "interruptedRank": 41
+    "interrupterRank": 7,
+    "interruptedRank": 69
   },
   "words": {
     "topWords": [
@@ -182,17 +182,18 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "5.081"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufer",
+      "value": "#7 (177x)"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Lisa Badum häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
@@ -200,7 +201,11 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
@@ -210,7 +215,11 @@
     "question": "Welches Adjektiv nutzt Lisa Badum häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gefährlich",
+        "text": "Sicher",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
@@ -218,23 +227,27 @@
         "isCorrect": true
       },
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
+        "text": "Gut",
         "isCorrect": false
       }
     ],
     "explanation": "\"Dreist\" sagte Lisa Badum 3× (105.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐿️",
-    "name": "Eichhörnchen",
-    "title": "Themenhüterin",
-    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-    "id": "eichhoernchen",
+    "emoji": "🐺",
+    "name": "Wolf",
+    "title": "Mutige Einwerferin",
+    "reason": "Mit 177 Zwischenrufen mischst du aktiv in Debatten mit.",
+    "id": "wolf",
     "alternatives": [
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüterin",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 1.0
+      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -242,14 +255,6 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
-      },
-      {
-        "emoji": "🐻",
-        "name": "Bär",
-        "title": "Standhafte Debattiererin",
-        "reason": "Trotz 35× unterbrochen zu werden, bleibst du standhaft.",
-        "id": "baer",
-        "score": 0.985
       }
     ]
   },

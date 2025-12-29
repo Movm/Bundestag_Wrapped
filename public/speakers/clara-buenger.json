@@ -24,10 +24,10 @@
     "longestSpeechRank": 187
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 89,
-    "interrupterRank": 28,
-    "interruptedRank": 6
+    "interruptionsGiven": 58,
+    "interruptionsReceived": 102,
+    "interrupterRank": 39,
+    "interruptedRank": 4
   },
   "words": {
     "topWords": [
@@ -183,6 +183,11 @@
       "value": "#6 von 609"
     },
     {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "58"
+    },
+    {
       "emoji": "🥇",
       "label": "Rang in DIE LINKE",
       "value": "#2 von 63"
@@ -192,19 +197,19 @@
     "question": "Welches Wort nutzt Clara Bünger häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
         "text": "Dobrindt",
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
@@ -214,19 +219,19 @@
     "question": "Welches Adjektiv nutzt Clara Bünger häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
         "text": "Rechts",
         "isCorrect": true
       },
       {
-        "text": "Stark",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
+        "text": "Erfolgreich",
         "isCorrect": false
       }
     ],
@@ -240,19 +245,19 @@
     "id": "adler",
     "alternatives": [
       {
+        "emoji": "🐴",
+        "name": "Pferd",
+        "title": "Fleißige Debattiererin",
+        "reason": "Mit 28 Reden gehörst du zu den aktivsten Abgeordneten.",
+        "id": "pferd",
+        "score": 1.0
+      },
+      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüterin",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
-        "score": 1.0
-      },
-      {
-        "emoji": "🐝",
-        "name": "Biene",
-        "title": "Fleißige Abgeordnete",
-        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-        "id": "biene",
         "score": 1.0
       }
     ]

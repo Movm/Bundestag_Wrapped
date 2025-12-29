@@ -24,10 +24,10 @@
     "longestSpeechRank": 118
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 12,
     "interruptionsReceived": 13,
-    "interrupterRank": 143,
-    "interruptedRank": 227
+    "interrupterRank": 189,
+    "interruptedRank": 289
   },
   "words": {
     "topWords": [
@@ -150,25 +150,30 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "4.299"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "12"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Ina Latendorf häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
         "text": "Ernährung",
         "isCorrect": true
       },
       {
-        "text": "Bundesregierung",
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
@@ -178,15 +183,15 @@
     "question": "Welches Adjektiv nutzt Ina Latendorf häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
         "text": "Rechts",
         "isCorrect": true
       },
       {
         "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
         "isCorrect": false
       },
       {
@@ -212,12 +217,12 @@
         "score": 0.972
       },
       {
-        "emoji": "🐬",
-        "name": "Delfin",
-        "title": "Diplomatische Rednerin",
-        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-        "id": "delfin",
-        "score": 0.92
+        "emoji": "🦀",
+        "name": "Krabbe",
+        "title": "Hartnäckige Debattiererin",
+        "reason": "Du hältst an deinen Positionen fest und lässt nicht locker.",
+        "id": "krabbe",
+        "score": 0.883
       }
     ]
   },

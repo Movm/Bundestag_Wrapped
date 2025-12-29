@@ -24,10 +24,10 @@
     "longestSpeechRank": 174
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 20,
-    "interrupterRank": null,
-    "interruptedRank": 123
+    "interruptionsGiven": 33,
+    "interruptionsReceived": 24,
+    "interrupterRank": 80,
+    "interruptedRank": 141
   },
   "words": {
     "topWords": [
@@ -158,6 +158,11 @@
       "value": "5.627"
     },
     {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "33"
+    },
+    {
       "emoji": "📊",
       "label": "Top-Redner",
       "value": "Top 9%"
@@ -167,7 +172,11 @@
     "question": "Welches Wort nutzt Max Lucks häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Politik",
         "isCorrect": false
       },
       {
@@ -175,11 +184,7 @@
         "isCorrect": true
       },
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Demokratie",
+        "text": "Klima",
         "isCorrect": false
       }
     ],
@@ -202,12 +207,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦔",
-        "name": "Igel",
-        "title": "Beharrlicher Redner",
-        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
-        "id": "igel",
-        "score": 0.925
+        "emoji": "🐺",
+        "name": "Wolf",
+        "title": "Mutiger Einwerfer",
+        "reason": "Mit 33 Zwischenrufen mischst du aktiv in Debatten mit.",
+        "id": "wolf",
+        "score": 0.977
       }
     ]
   },

@@ -24,10 +24,10 @@
     "longestSpeechRank": 566
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 14,
     "interruptionsReceived": 3,
-    "interrupterRank": null,
-    "interruptedRank": 470
+    "interrupterRank": 171,
+    "interruptedRank": 512
   },
   "words": {
     "topWords": [
@@ -115,26 +115,31 @@
       "emoji": "🎤",
       "label": "Reden gehalten",
       "value": "3"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "14"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Mayra Vriesema häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
+        "text": "Energie",
         "isCorrect": false
       },
       {
         "text": "Wohnungen",
         "isCorrect": true
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Wohnungen\" sagte Mayra Vriesema 5× (50.1× häufiger als der Bundestag-Durchschnitt)."
@@ -156,12 +161,12 @@
         "score": 0.7
       },
       {
-        "emoji": "🦫",
-        "name": "Biber",
-        "title": "Konstruktive Brückenbauerin",
-        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
-        "id": "biber",
-        "score": 0.6
+        "emoji": "🦜",
+        "name": "Papagei",
+        "title": "Neugierige Fragestellerin",
+        "reason": "Mit vielen Fragen bringst du wichtige Themen auf den Tisch.",
+        "id": "papagei",
+        "score": 0.451
       }
     ]
   },

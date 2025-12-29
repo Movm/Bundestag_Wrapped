@@ -24,10 +24,10 @@
     "longestSpeechRank": 237
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 10,
     "interruptionsReceived": 52,
-    "interrupterRank": null,
-    "interruptedRank": 16
+    "interrupterRank": 211,
+    "interruptedRank": 34
   },
   "words": {
     "topWords": [
@@ -184,6 +184,11 @@
       "value": "7.593"
     },
     {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "10"
+    },
+    {
       "emoji": "📊",
       "label": "Top-Redner",
       "value": "Top 10%"
@@ -193,20 +198,20 @@
     "question": "Welches Wort nutzt Andreas Audretsch häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Reform",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
         "text": "Spahn",
         "isCorrect": true
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Spahn\" sagte Andreas Audretsch 23× (36.6× häufiger als der Bundestag-Durchschnitt)."
@@ -223,11 +228,11 @@
         "isCorrect": false
       },
       {
-        "text": "Sozial",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Notwendig",
+        "text": "Sicher",
         "isCorrect": false
       }
     ],

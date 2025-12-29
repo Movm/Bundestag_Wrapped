@@ -24,10 +24,10 @@
     "longestSpeechRank": 215
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 15,
-    "interrupterRank": 42,
-    "interruptedRank": 191
+    "interruptionsGiven": 43,
+    "interruptionsReceived": 21,
+    "interrupterRank": 58,
+    "interruptedRank": 180
   },
   "words": {
     "topWords": [
@@ -160,6 +160,11 @@
       "value": "6.193"
     },
     {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "43"
+    },
+    {
       "emoji": "📊",
       "label": "Top-Redner",
       "value": "Top 10%"
@@ -169,11 +174,11 @@
     "question": "Welches Wort nutzt Ates Gürpinar häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Abstimmung",
+        "text": "Klima",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
@@ -181,7 +186,7 @@
         "isCorrect": true
       },
       {
-        "text": "Steuern",
+        "text": "Wirtschaft",
         "isCorrect": false
       }
     ],
@@ -191,7 +196,7 @@
     "question": "Welches Adjektiv nutzt Ates Gürpinar häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Richtig",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
@@ -203,19 +208,27 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Sicher",
         "isCorrect": false
       }
     ],
     "explanation": "\"Absurd\" sagte Ates Gürpinar 4× (14.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐿️",
-    "name": "Eichhörnchen",
-    "title": "Themenhüter",
-    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-    "id": "eichhoernchen",
+    "emoji": "🐺",
+    "name": "Wolf",
+    "title": "Mutiger Einwerfer",
+    "reason": "Mit 43 Zwischenrufen mischst du aktiv in Debatten mit.",
+    "id": "wolf",
     "alternatives": [
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 1.0
+      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -223,14 +236,6 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
-      },
-      {
-        "emoji": "🐬",
-        "name": "Delfin",
-        "title": "Diplomatischer Redner",
-        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-        "id": "delfin",
-        "score": 0.867
       }
     ]
   },

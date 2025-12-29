@@ -24,10 +24,10 @@
     "longestSpeechRank": 143
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 21,
-    "interrupterRank": null,
-    "interruptedRank": 117
+    "interruptionsGiven": 32,
+    "interruptionsReceived": 31,
+    "interrupterRank": 88,
+    "interruptedRank": 85
   },
   "words": {
     "topWords": [
@@ -202,6 +202,11 @@
       "value": "10.461"
     },
     {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "32"
+    },
+    {
       "emoji": "📊",
       "label": "Top-Redner",
       "value": "Top 5%"
@@ -211,7 +216,7 @@
     "question": "Welches Wort nutzt Jamila Schäfer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Familie",
         "isCorrect": false
       },
       {
@@ -219,11 +224,11 @@
         "isCorrect": true
       },
       {
-        "text": "Sicherheit",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
-        "text": "Europa",
+        "text": "Migration",
         "isCorrect": false
       }
     ],
@@ -237,27 +242,35 @@
         "isCorrect": true
       },
       {
-        "text": "Sicher",
+        "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Problematisch",
+        "text": "Politisch",
         "isCorrect": false
       }
     ],
     "explanation": "\"Angemessen\" sagte Jamila Schäfer 4× (9.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐿️",
-    "name": "Eichhörnchen",
-    "title": "Themenhüterin",
-    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-    "id": "eichhoernchen",
+    "emoji": "🐴",
+    "name": "Pferd",
+    "title": "Fleißige Debattiererin",
+    "reason": "Mit 16 Reden gehörst du zu den aktivsten Abgeordneten.",
+    "id": "pferd",
     "alternatives": [
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüterin",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 1.0
+      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -265,14 +278,6 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
-      },
-      {
-        "emoji": "🦔",
-        "name": "Igel",
-        "title": "Beharrliche Rednerin",
-        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
-        "id": "igel",
-        "score": 0.951
       }
     ]
   },

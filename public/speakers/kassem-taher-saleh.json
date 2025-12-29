@@ -24,10 +24,10 @@
     "longestSpeechRank": 541
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 8,
-    "interrupterRank": null,
-    "interruptedRank": 330
+    "interruptionsGiven": 29,
+    "interruptionsReceived": 9,
+    "interrupterRank": 105,
+    "interruptedRank": 365
   },
   "words": {
     "topWords": [
@@ -156,53 +156,58 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "2.411"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "29"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Kassem Taher Saleh häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Haushalt",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
         "text": "Gebäudeenergiegesetz",
         "isCorrect": true
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Gebäudeenergiegesetz\" sagte Kassem Taher Saleh 7× (208.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦫",
-    "name": "Biber",
-    "title": "Konstruktiver Brückenbauer",
-    "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
-    "id": "biber",
+    "emoji": "🦊",
+    "name": "Fuchs",
+    "title": "Cleverer Stratege",
+    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+    "id": "fuchs",
     "alternatives": [
       {
-        "emoji": "🐬",
-        "name": "Delfin",
-        "title": "Diplomatischer Redner",
-        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-        "id": "delfin",
-        "score": 0.975
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 0.896
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.92
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positiver Teamplayer",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.879
       }
     ]
   },

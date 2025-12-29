@@ -24,10 +24,10 @@
     "longestSpeechRank": 180
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 25,
-    "interrupterRank": null,
-    "interruptedRank": 82
+    "interruptionsGiven": 50,
+    "interruptionsReceived": 28,
+    "interrupterRank": 49,
+    "interruptedRank": 104
   },
   "words": {
     "topWords": [
@@ -190,13 +190,22 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "6.516"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "50"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Michael Kellner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Arbeit",
+        "text": "Habeck",
+        "isCorrect": true
+      },
+      {
+        "text": "Familie",
         "isCorrect": false
       },
       {
@@ -204,11 +213,7 @@
         "isCorrect": false
       },
       {
-        "text": "Habeck",
-        "isCorrect": true
-      },
-      {
-        "text": "Steuern",
+        "text": "Zukunft",
         "isCorrect": false
       }
     ],
@@ -218,20 +223,20 @@
     "question": "Welches Adjektiv nutzt Michael Kellner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Alt",
+        "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
         "text": "Teuer",
         "isCorrect": true
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Teuer\" sagte Michael Kellner 7× (13.6× häufiger als der Bundestag-Durchschnitt)."
@@ -255,7 +260,7 @@
         "emoji": "🐻",
         "name": "Bär",
         "title": "Standhafter Debattierer",
-        "reason": "Trotz 25× unterbrochen zu werden, bleibst du standhaft.",
+        "reason": "Trotz 28× unterbrochen zu werden, bleibst du standhaft.",
         "id": "baer",
         "score": 0.98
       }

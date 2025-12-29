@@ -24,10 +24,10 @@
     "longestSpeechRank": 447
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 3,
     "interruptionsReceived": 6,
-    "interrupterRank": 254,
-    "interruptedRank": 368
+    "interrupterRank": 322,
+    "interruptedRank": 416
   },
   "words": {
     "topWords": [
@@ -176,11 +176,7 @@
     "question": "Welches Wort nutzt Kathrin Gebel häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Minister",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
+        "text": "Politik",
         "isCorrect": false
       },
       {
@@ -188,7 +184,11 @@
         "isCorrect": true
       },
       {
-        "text": "Politik",
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
         "isCorrect": false
       }
     ],
@@ -198,7 +198,11 @@
     "question": "Welches Adjektiv nutzt Kathrin Gebel häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Groß",
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
@@ -206,22 +210,18 @@
         "isCorrect": true
       },
       {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
+        "text": "Notwendig",
         "isCorrect": false
       }
     ],
     "explanation": "\"Angemessen\" sagte Kathrin Gebel 3× (28.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐬",
-    "name": "Delfin",
-    "title": "Diplomatische Rednerin",
-    "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-    "id": "delfin",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüterin",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
       {
         "emoji": "🦫",
@@ -229,15 +229,15 @@
         "title": "Konstruktive Brückenbauerin",
         "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
         "id": "biber",
-        "score": 0.95
+        "score": 0.89
       },
       {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüterin",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 0.899
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positive Teamplayerin",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.841
       }
     ]
   },

@@ -24,10 +24,10 @@
     "longestSpeechRank": 17
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 25,
     "interruptionsReceived": 46,
-    "interrupterRank": 82,
-    "interruptedRank": 25
+    "interrupterRank": 117,
+    "interruptedRank": 42
   },
   "words": {
     "topWords": [
@@ -169,6 +169,11 @@
       "value": "#13 von 521"
     },
     {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "25"
+    },
+    {
       "emoji": "📊",
       "label": "Top-Redner",
       "value": "Top 8%"
@@ -182,7 +187,7 @@
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
+        "text": "Minister",
         "isCorrect": false
       },
       {
@@ -190,7 +195,7 @@
         "isCorrect": false
       },
       {
-        "text": "Reform",
+        "text": "Steuern",
         "isCorrect": false
       }
     ],
@@ -200,31 +205,39 @@
     "question": "Welches Adjektiv nutzt Ines Schwerdtner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Europäisch",
+        "text": "Richtig",
         "isCorrect": false
-      },
-      {
-        "text": "Peinlich",
-        "isCorrect": true
       },
       {
         "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Sicher",
+        "text": "Politisch",
         "isCorrect": false
+      },
+      {
+        "text": "Peinlich",
+        "isCorrect": true
       }
     ],
     "explanation": "\"Peinlich\" sagte Ines Schwerdtner 3× (13.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐿️",
-    "name": "Eichhörnchen",
-    "title": "Themenhüterin",
-    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-    "id": "eichhoernchen",
+    "emoji": "🐺",
+    "name": "Wolf",
+    "title": "Mutige Einwerferin",
+    "reason": "Mit 25 Zwischenrufen mischst du aktiv in Debatten mit.",
+    "id": "wolf",
     "alternatives": [
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüterin",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 1.0
+      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -232,14 +245,6 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
-      },
-      {
-        "emoji": "🐻",
-        "name": "Bär",
-        "title": "Standhafte Debattiererin",
-        "reason": "Trotz 46× unterbrochen zu werden, bleibst du standhaft.",
-        "id": "baer",
-        "score": 0.977
       }
     ]
   },

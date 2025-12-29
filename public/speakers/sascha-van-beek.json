@@ -25,9 +25,9 @@
   },
   "drama": {
     "interruptionsGiven": 5,
-    "interruptionsReceived": 12,
-    "interrupterRank": 213,
-    "interruptedRank": 239
+    "interruptionsReceived": 20,
+    "interrupterRank": 270,
+    "interruptedRank": 189
   },
   "words": {
     "topWords": [
@@ -128,19 +128,19 @@
     "question": "Welches Wort nutzt Sascha van Beek häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
         "text": "Masken",
         "isCorrect": true
       },
       {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
+        "text": "Fraktion",
         "isCorrect": false
       }
     ],
@@ -150,20 +150,20 @@
     "question": "Welches Adjektiv nutzt Sascha van Beek häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
         "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
         "text": "Entscheidend",
         "isCorrect": true
-      },
-      {
-        "text": "Stark",
-        "isCorrect": false
       }
     ],
     "explanation": "\"Entscheidend\" sagte Sascha van Beek 4× (14.9× häufiger als der Bundestag-Durchschnitt)."
@@ -176,20 +176,20 @@
     "id": "hase",
     "alternatives": [
       {
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrlicher Redner",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.83
+      },
+      {
         "emoji": "🦦",
         "name": "Otter",
         "title": "Positiver Teamplayer",
         "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
         "id": "otter",
         "score": 0.81
-      },
-      {
-        "emoji": "🦫",
-        "name": "Biber",
-        "title": "Konstruktiver Brückenbauer",
-        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
-        "id": "biber",
-        "score": 0.7
       }
     ]
   },

@@ -24,10 +24,10 @@
     "longestSpeechRank": 154
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 13,
-    "interrupterRank": null,
-    "interruptedRank": 209
+    "interruptionsGiven": 12,
+    "interruptionsReceived": 14,
+    "interrupterRank": 193,
+    "interruptedRank": 258
   },
   "words": {
     "topWords": [
@@ -148,26 +148,31 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "4.103"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "12"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Julia Schneider häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Verantwortung",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
         "text": "Umwelt",
         "isCorrect": true
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Freiheit",
-        "isCorrect": false
       }
     ],
     "explanation": "\"Umwelt\" sagte Julia Schneider 10× (22.7× häufiger als der Bundestag-Durchschnitt)."
@@ -181,20 +186,20 @@
     "id": "biene",
     "alternatives": [
       {
-        "emoji": "🐬",
-        "name": "Delfin",
-        "title": "Diplomatische Rednerin",
-        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-        "id": "delfin",
-        "score": 0.975
-      },
-      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüterin",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.964
+      },
+      {
+        "emoji": "🦦",
+        "name": "Otter",
+        "title": "Positive Teamplayerin",
+        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
+        "id": "otter",
+        "score": 0.837
       }
     ]
   },

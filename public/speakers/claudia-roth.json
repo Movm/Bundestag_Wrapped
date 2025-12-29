@@ -24,10 +24,10 @@
     "longestSpeechRank": 338
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 102,
     "interruptionsReceived": 7,
-    "interrupterRank": null,
-    "interruptedRank": 358
+    "interrupterRank": 20,
+    "interruptedRank": 404
   },
   "words": {
     "topWords": [
@@ -170,26 +170,31 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "1.625"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufer",
+      "value": "#20 (102x)"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Claudia Roth häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
         "text": "Rückzug",
         "isCorrect": true
+      },
+      {
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Rückzug\" sagte Claudia Roth 5× (170.0× häufiger als der Bundestag-Durchschnitt)."
@@ -198,15 +203,15 @@
     "question": "Welches Adjektiv nutzt Claudia Roth häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Notwendig",
+        "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Gefährlich",
+        "text": "Sicher",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "National",
         "isCorrect": false
       },
       {
@@ -232,12 +237,12 @@
         "score": 0.708
       },
       {
-        "emoji": "🐇",
-        "name": "Hase",
-        "title": "Wendige Optimistin",
-        "reason": "Mit positivem Blick reagierst du schnell auf neue Themen.",
-        "id": "hase",
-        "score": 0.599
+        "emoji": "🐺",
+        "name": "Wolf",
+        "title": "Mutige Einwerferin",
+        "reason": "Mit 102 Zwischenrufen mischst du aktiv in Debatten mit.",
+        "id": "wolf",
+        "score": 0.66
       }
     ]
   },

@@ -24,10 +24,10 @@
     "longestSpeechRank": 548
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 3,
     "interruptionsReceived": 10,
-    "interrupterRank": 251,
-    "interruptedRank": 279
+    "interrupterRank": 318,
+    "interruptedRank": 336
   },
   "words": {
     "topWords": [
@@ -176,20 +176,20 @@
     "question": "Welches Wort nutzt David Schliesing häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
-        "isCorrect": false
-      },
-      {
         "text": "Weimer",
         "isCorrect": true
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
+        "isCorrect": false
+      },
+      {
+        "text": "Minister",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Weimer\" sagte David Schliesing 11× (54.1× häufiger als der Bundestag-Durchschnitt)."
@@ -198,11 +198,11 @@
     "question": "Welches Adjektiv nutzt David Schliesing häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gefährlich",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Erfolgreich",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
@@ -210,26 +210,26 @@
         "isCorrect": true
       },
       {
-        "text": "Notwendig",
+        "text": "National",
         "isCorrect": false
       }
     ],
     "explanation": "\"Sicher\" sagte David Schliesing 3× (3.0× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐬",
-    "name": "Delfin",
-    "title": "Diplomatischer Redner",
-    "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-    "id": "delfin",
+    "emoji": "🐿️",
+    "name": "Eichhörnchen",
+    "title": "Themenhüter",
+    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+    "id": "eichhoernchen",
     "alternatives": [
       {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüter",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 0.935
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißiger Abgeordneter",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
+        "score": 0.921
       },
       {
         "emoji": "🦫",
@@ -237,7 +237,7 @@
         "title": "Konstruktiver Brückenbauer",
         "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
         "id": "biber",
-        "score": 0.925
+        "score": 0.865
       }
     ]
   },

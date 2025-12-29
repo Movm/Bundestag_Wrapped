@@ -25,9 +25,9 @@
   },
   "drama": {
     "interruptionsGiven": 0,
-    "interruptionsReceived": 4,
+    "interruptionsReceived": 15,
     "interrupterRank": null,
-    "interruptedRank": 416
+    "interruptedRank": 248
   },
   "words": {
     "topWords": [
@@ -126,20 +126,20 @@
     "question": "Welches Wort nutzt Rita Schwarzelühr-Sutter häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Opposition",
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
         "text": "Einigung",
         "isCorrect": true
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
-        "isCorrect": false
       }
     ],
     "explanation": "\"Einigung\" sagte Rita Schwarzelühr-Sutter 5× (145.9× häufiger als der Bundestag-Durchschnitt)."
@@ -153,20 +153,20 @@
     "id": "biber",
     "alternatives": [
       {
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrliche Rednerin",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.696
+      },
+      {
         "emoji": "🐬",
         "name": "Delfin",
         "title": "Diplomatische Rednerin",
         "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
         "id": "delfin",
         "score": 0.675
-      },
-      {
-        "emoji": "🐇",
-        "name": "Hase",
-        "title": "Wendige Optimistin",
-        "reason": "Mit positivem Blick reagierst du schnell auf neue Themen.",
-        "id": "hase",
-        "score": 0.642
       }
     ]
   },

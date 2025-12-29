@@ -24,10 +24,10 @@
     "longestSpeechRank": 369
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 8,
-    "interrupterRank": null,
-    "interruptedRank": 342
+    "interruptionsGiven": 21,
+    "interruptionsReceived": 11,
+    "interrupterRank": 143,
+    "interruptedRank": 324
   },
   "words": {
     "topWords": [
@@ -156,13 +156,22 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "2.476"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "21"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Tarek Al-Wazir häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
@@ -170,11 +179,7 @@
         "isCorrect": true
       },
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
+        "text": "Klima",
         "isCorrect": false
       }
     ],

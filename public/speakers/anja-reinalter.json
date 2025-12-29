@@ -24,10 +24,10 @@
     "longestSpeechRank": 517
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 11,
-    "interrupterRank": null,
-    "interruptedRank": 261
+    "interruptionsGiven": 28,
+    "interruptionsReceived": 14,
+    "interrupterRank": 108,
+    "interruptedRank": 266
   },
   "words": {
     "topWords": [
@@ -156,25 +156,30 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "4.177"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "28"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Anja Reinalter häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
         "text": "Bildung",
         "isCorrect": true
       },
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
+        "text": "Minister",
         "isCorrect": false
       }
     ],
@@ -197,12 +202,12 @@
         "score": 0.967
       },
       {
-        "emoji": "🐬",
-        "name": "Delfin",
-        "title": "Diplomatische Rednerin",
-        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-        "id": "delfin",
-        "score": 0.8
+        "emoji": "🐴",
+        "name": "Pferd",
+        "title": "Fleißige Debattiererin",
+        "reason": "Mit 14 Reden gehörst du zu den aktivsten Abgeordneten.",
+        "id": "pferd",
+        "score": 0.823
       }
     ]
   },

@@ -24,10 +24,10 @@
     "longestSpeechRank": 392
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 23,
     "interruptionsReceived": 3,
-    "interrupterRank": 93,
-    "interruptedRank": 492
+    "interrupterRank": 131,
+    "interruptedRank": 527
   },
   "words": {
     "topWords": [
@@ -156,15 +156,16 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "2.450"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "23"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Vinzenz Glaser häufiger als der Bundestag-Durchschnitt?",
     "options": [
-      {
-        "text": "Emirate",
-        "isCorrect": true
-      },
       {
         "text": "Zukunft",
         "isCorrect": false
@@ -174,8 +175,12 @@
         "isCorrect": false
       },
       {
-        "text": "Freiheit",
+        "text": "Minister",
         "isCorrect": false
+      },
+      {
+        "text": "Emirate",
+        "isCorrect": true
       }
     ],
     "explanation": "\"Emirate\" sagte Vinzenz Glaser 5× (210.5× häufiger als der Bundestag-Durchschnitt)."

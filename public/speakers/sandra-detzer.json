@@ -24,10 +24,10 @@
     "longestSpeechRank": 310
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 15,
-    "interrupterRank": null,
-    "interruptedRank": 187
+    "interruptionsGiven": 43,
+    "interruptionsReceived": 17,
+    "interrupterRank": 59,
+    "interruptedRank": 219
   },
   "words": {
     "topWords": [
@@ -170,13 +170,18 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "4.895"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "43"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Sandra Detzer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Europa",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
@@ -184,11 +189,11 @@
         "isCorrect": true
       },
       {
-        "text": "Klima",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
+        "text": "Familie",
         "isCorrect": false
       }
     ],
@@ -198,39 +203,31 @@
     "question": "Welches Adjektiv nutzt Dr. Sandra Detzer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Stark",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
+        "text": "Jung",
         "isCorrect": false
       },
       {
         "text": "Erfolgreich",
         "isCorrect": true
+      },
+      {
+        "text": "Problematisch",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Erfolgreich\" sagte Dr. Sandra Detzer 3× (7.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐬",
-    "name": "Delfin",
-    "title": "Diplomatische Rednerin",
-    "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-    "id": "delfin",
+    "emoji": "🐝",
+    "name": "Biene",
+    "title": "Fleißige Abgeordnete",
+    "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+    "id": "biene",
     "alternatives": [
-      {
-        "emoji": "🐝",
-        "name": "Biene",
-        "title": "Fleißige Abgeordnete",
-        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-        "id": "biene",
-        "score": 1.0
-      },
       {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
@@ -238,6 +235,14 @@
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.996
+      },
+      {
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrliche Rednerin",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.892
       }
     ]
   },

@@ -24,10 +24,10 @@
     "longestSpeechRank": 181
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 26,
-    "interrupterRank": null,
-    "interruptedRank": 72
+    "interruptionsGiven": 11,
+    "interruptionsReceived": 36,
+    "interrupterRank": 201,
+    "interruptedRank": 67
   },
   "words": {
     "topWords": [
@@ -170,17 +170,18 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "5.900"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "11"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Katrin Uhlig häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
@@ -188,7 +189,11 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetz",
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
@@ -198,20 +203,20 @@
     "question": "Welches Adjektiv nutzt Katrin Uhlig häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Groß",
+        "text": "Alt",
         "isCorrect": false
       },
       {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
         "text": "Unfassbar",
         "isCorrect": true
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Unfassbar\" sagte Katrin Uhlig 5× (45.1× häufiger als der Bundestag-Durchschnitt)."
@@ -235,7 +240,7 @@
         "emoji": "🐻",
         "name": "Bär",
         "title": "Standhafte Debattiererin",
-        "reason": "Trotz 26× unterbrochen zu werden, bleibst du standhaft.",
+        "reason": "Trotz 36× unterbrochen zu werden, bleibst du standhaft.",
         "id": "baer",
         "score": 0.991
       }

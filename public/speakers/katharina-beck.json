@@ -24,10 +24,10 @@
     "longestSpeechRank": 177
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 25,
-    "interrupterRank": null,
-    "interruptedRank": 80
+    "interruptionsGiven": 36,
+    "interruptionsReceived": 27,
+    "interrupterRank": 71,
+    "interruptedRank": 110
   },
   "words": {
     "topWords": [
@@ -186,17 +186,22 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "5.916"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "36"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Katharina Beck häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Steuern",
+        "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
@@ -204,7 +209,7 @@
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
+        "text": "Wirtschaft",
         "isCorrect": false
       }
     ],
@@ -214,10 +219,6 @@
     "question": "Welches Adjektiv nutzt Katharina Beck häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
         "text": "Neu",
         "isCorrect": false
       },
@@ -226,19 +227,31 @@
         "isCorrect": true
       },
       {
-        "text": "Gut",
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
         "isCorrect": false
       }
     ],
     "explanation": "\"Unfassbar\" sagte Katharina Beck 8× (77.3× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐿️",
-    "name": "Eichhörnchen",
-    "title": "Themenhüterin",
-    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-    "id": "eichhoernchen",
+    "emoji": "🐺",
+    "name": "Wolf",
+    "title": "Mutige Einwerferin",
+    "reason": "Mit 36 Zwischenrufen mischst du aktiv in Debatten mit.",
+    "id": "wolf",
     "alternatives": [
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüterin",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 1.0
+      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -246,14 +259,6 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
-      },
-      {
-        "emoji": "🐻",
-        "name": "Bär",
-        "title": "Standhafte Debattiererin",
-        "reason": "Trotz 25× unterbrochen zu werden, bleibst du standhaft.",
-        "id": "baer",
-        "score": 0.961
       }
     ]
   },

@@ -24,10 +24,10 @@
     "longestSpeechRank": 405
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 24,
     "interruptionsReceived": 10,
-    "interrupterRank": null,
-    "interruptedRank": 270
+    "interrupterRank": 122,
+    "interruptedRank": 332
   },
   "words": {
     "topWords": [
@@ -156,46 +156,43 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "3.847"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "24"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Julian Joswig häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Europarat",
-        "isCorrect": true
+        "text": "Bildung",
+        "isCorrect": false
       },
       {
         "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
-        "text": "Reform",
-        "isCorrect": false
+        "text": "Europarat",
+        "isCorrect": true
       }
     ],
     "explanation": "\"Europarat\" sagte Julian Joswig 8× (68.8× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🐬",
-    "name": "Delfin",
-    "title": "Diplomatischer Redner",
-    "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-    "id": "delfin",
+    "emoji": "🐝",
+    "name": "Biene",
+    "title": "Fleißiger Abgeordneter",
+    "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+    "id": "biene",
     "alternatives": [
-      {
-        "emoji": "🐝",
-        "name": "Biene",
-        "title": "Fleißiger Abgeordneter",
-        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-        "id": "biene",
-        "score": 0.981
-      },
       {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
@@ -203,6 +200,14 @@
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.954
+      },
+      {
+        "emoji": "🐴",
+        "name": "Pferd",
+        "title": "Fleißiger Debattierer",
+        "reason": "Mit 14 Reden gehörst du zu den aktivsten Abgeordneten.",
+        "id": "pferd",
+        "score": 0.811
       }
     ]
   },

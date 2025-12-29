@@ -24,10 +24,10 @@
     "longestSpeechRank": 391
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 26,
-    "interrupterRank": null,
-    "interruptedRank": 75
+    "interruptionsGiven": 31,
+    "interruptionsReceived": 27,
+    "interrupterRank": 94,
+    "interruptedRank": 111
   },
   "words": {
     "topWords": [
@@ -156,38 +156,51 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "3.079"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "31"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Matthias Gastel häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wirtschaft",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
         "text": "Schiene",
         "isCorrect": true
+      },
+      {
+        "text": "Kanzler",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Schiene\" sagte Matthias Gastel 18× (76.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🐿️",
-    "name": "Eichhörnchen",
-    "title": "Themenhüter",
-    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-    "id": "eichhoernchen",
+    "emoji": "🐺",
+    "name": "Wolf",
+    "title": "Mutiger Einwerfer",
+    "reason": "Mit 31 Zwischenrufen mischst du aktiv in Debatten mit.",
+    "id": "wolf",
     "alternatives": [
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 0.923
+      },
       {
         "emoji": "🦔",
         "name": "Igel",
@@ -195,14 +208,6 @@
         "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
         "id": "igel",
         "score": 0.92
-      },
-      {
-        "emoji": "🐻",
-        "name": "Bär",
-        "title": "Standhafter Debattierer",
-        "reason": "Trotz 26× unterbrochen zu werden, bleibst du standhaft.",
-        "id": "baer",
-        "score": 0.916
       }
     ]
   },

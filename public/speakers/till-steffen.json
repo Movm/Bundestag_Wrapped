@@ -24,10 +24,10 @@
     "longestSpeechRank": 240
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 19,
-    "interrupterRank": null,
-    "interruptedRank": 142
+    "interruptionsGiven": 21,
+    "interruptionsReceived": 20,
+    "interrupterRank": 142,
+    "interruptedRank": 192
   },
   "words": {
     "topWords": [
@@ -190,25 +190,30 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "6.196"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "21"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Till Steffen häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
         "text": "Mieterinnen",
         "isCorrect": true
       },
       {
-        "text": "Kinder",
+        "text": "Sicherheit",
         "isCorrect": false
       },
       {
-        "text": "Rente",
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
@@ -218,20 +223,20 @@
     "question": "Welches Adjektiv nutzt Dr. Till Steffen häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Europäisch",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
-        "text": "Alt",
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
         "text": "Geschützt",
         "isCorrect": true
-      },
-      {
-        "text": "Jung",
-        "isCorrect": false
       }
     ],
     "explanation": "\"Geschützt\" sagte Dr. Till Steffen 5× (15.5× häufiger als der Bundestag-Durchschnitt)."
@@ -257,7 +262,7 @@
         "title": "Beharrlicher Redner",
         "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
         "id": "igel",
-        "score": 0.946
+        "score": 0.971
       }
     ]
   },

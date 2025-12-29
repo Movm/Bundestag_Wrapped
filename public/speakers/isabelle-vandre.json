@@ -24,10 +24,10 @@
     "longestSpeechRank": 528
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 14,
     "interruptionsReceived": 9,
-    "interrupterRank": 125,
-    "interruptedRank": 297
+    "interrupterRank": 169,
+    "interruptedRank": 362
   },
   "words": {
     "topWords": [
@@ -150,21 +150,26 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "4.364"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "14"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Isabelle Vandre häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Zukunft",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
-        "text": "Rente",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
-        "text": "Steuern",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
@@ -178,39 +183,31 @@
     "question": "Welches Adjektiv nutzt Isabelle Vandre häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
         "text": "Beschämend",
         "isCorrect": true
       },
       {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
+        "text": "Erfolgreich",
         "isCorrect": false
       }
     ],
     "explanation": "\"Beschämend\" sagte Isabelle Vandre 3× (46.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐬",
-    "name": "Delfin",
-    "title": "Diplomatische Rednerin",
-    "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-    "id": "delfin",
+    "emoji": "🐝",
+    "name": "Biene",
+    "title": "Fleißige Abgeordnete",
+    "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+    "id": "biene",
     "alternatives": [
-      {
-        "emoji": "🐝",
-        "name": "Biene",
-        "title": "Fleißige Abgeordnete",
-        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-        "id": "biene",
-        "score": 1.0
-      },
       {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
@@ -218,6 +215,14 @@
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.975
+      },
+      {
+        "emoji": "🦊",
+        "name": "Fuchs",
+        "title": "Clevere Strategin",
+        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+        "id": "fuchs",
+        "score": 0.947
       }
     ]
   },

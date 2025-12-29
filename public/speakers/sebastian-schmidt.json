@@ -25,9 +25,9 @@
   },
   "drama": {
     "interruptionsGiven": 0,
-    "interruptionsReceived": 0,
+    "interruptionsReceived": 7,
     "interrupterRank": null,
-    "interruptedRank": null
+    "interruptedRank": 408
   },
   "words": {
     "topWords": [
@@ -176,7 +176,11 @@
     "question": "Welches Wort nutzt Sebastian Schmidt häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Antrag",
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
@@ -184,11 +188,7 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
+        "text": "Energie",
         "isCorrect": false
       }
     ],
@@ -198,20 +198,20 @@
     "question": "Welches Adjektiv nutzt Sebastian Schmidt häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
+        "text": "Sicher",
+        "isCorrect": true
       },
       {
         "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Sicher",
-        "isCorrect": true
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Sicher\" sagte Sebastian Schmidt 5× (5.3× häufiger als der Bundestag-Durchschnitt)."

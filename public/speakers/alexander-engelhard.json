@@ -25,9 +25,9 @@
   },
   "drama": {
     "interruptionsGiven": 1,
-    "interruptionsReceived": 13,
-    "interrupterRank": 299,
-    "interruptedRank": 224
+    "interruptionsReceived": 37,
+    "interrupterRank": 374,
+    "interruptedRank": 64
   },
   "words": {
     "topWords": [
@@ -168,7 +168,11 @@
     "question": "Welches Wort nutzt Alexander Engelhard häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Opposition",
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
@@ -176,11 +180,7 @@
         "isCorrect": true
       },
       {
-        "text": "Energie",
-        "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
+        "text": "Bundesregierung",
         "isCorrect": false
       }
     ],
@@ -194,7 +194,7 @@
         "isCorrect": false
       },
       {
-        "text": "Notwendig",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
@@ -202,34 +202,34 @@
         "isCorrect": true
       },
       {
-        "text": "Sicher",
+        "text": "Gut",
         "isCorrect": false
       }
     ],
     "explanation": "\"Entscheidend\" sagte Alexander Engelhard 3× (8.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐿️",
-    "name": "Eichhörnchen",
-    "title": "Themenhüter",
-    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-    "id": "eichhoernchen",
+    "emoji": "🦔",
+    "name": "Igel",
+    "title": "Beharrlicher Redner",
+    "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+    "id": "igel",
     "alternatives": [
       {
-        "emoji": "🐝",
-        "name": "Biene",
-        "title": "Fleißiger Abgeordneter",
-        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-        "id": "biene",
-        "score": 0.901
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 0.928
       },
       {
-        "emoji": "🦔",
-        "name": "Igel",
-        "title": "Beharrlicher Redner",
-        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
-        "id": "igel",
-        "score": 0.768
+        "emoji": "🐻",
+        "name": "Bär",
+        "title": "Standhafter Debattierer",
+        "reason": "Trotz 37× unterbrochen zu werden, bleibst du standhaft.",
+        "id": "baer",
+        "score": 0.923
       }
     ]
   },

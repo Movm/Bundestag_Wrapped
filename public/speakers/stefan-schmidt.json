@@ -24,10 +24,10 @@
     "longestSpeechRank": 472
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 18,
-    "interrupterRank": null,
-    "interruptedRank": 146
+    "interruptionsGiven": 60,
+    "interruptionsReceived": 19,
+    "interrupterRank": 38,
+    "interruptedRank": 195
   },
   "words": {
     "topWords": [
@@ -182,17 +182,22 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "3.878"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "60"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Stefan Schmidt häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wirtschaft",
+        "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Arbeit",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
@@ -210,20 +215,20 @@
     "question": "Welches Adjektiv nutzt Stefan Schmidt häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Europäisch",
+        "text": "Gut",
         "isCorrect": false
       },
       {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
         "text": "Sozial",
         "isCorrect": true
+      },
+      {
+        "text": "Schlecht",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Sozial\" sagte Stefan Schmidt 3× (9.8× häufiger als der Bundestag-Durchschnitt)."
@@ -249,7 +254,7 @@
         "title": "Beharrlicher Redner",
         "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
         "id": "igel",
-        "score": 0.914
+        "score": 0.939
       }
     ]
   },

@@ -24,10 +24,10 @@
     "longestSpeechRank": 123
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 13,
-    "interrupterRank": null,
-    "interruptedRank": 213
+    "interruptionsGiven": 30,
+    "interruptionsReceived": 14,
+    "interrupterRank": 98,
+    "interruptedRank": 263
   },
   "words": {
     "topWords": [
@@ -194,13 +194,22 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "5.155"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "30"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Timon Dzienus häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Ausschuss",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
         "isCorrect": false
       },
       {
@@ -208,11 +217,7 @@
         "isCorrect": true
       },
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
+        "text": "Arbeit",
         "isCorrect": false
       }
     ],
@@ -222,20 +227,20 @@
     "question": "Welches Adjektiv nutzt Timon Dzienus häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Groß",
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
         "text": "Peinlich",
         "isCorrect": true
-      },
-      {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
-        "isCorrect": false
       }
     ],
     "explanation": "\"Peinlich\" sagte Timon Dzienus 3× (28.0× häufiger als der Bundestag-Durchschnitt)."
@@ -256,12 +261,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🐬",
-        "name": "Delfin",
-        "title": "Diplomatischer Redner",
-        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-        "id": "delfin",
-        "score": 0.975
+        "emoji": "🐺",
+        "name": "Wolf",
+        "title": "Mutiger Einwerfer",
+        "reason": "Mit 30 Zwischenrufen mischst du aktiv in Debatten mit.",
+        "id": "wolf",
+        "score": 0.985
       }
     ]
   },

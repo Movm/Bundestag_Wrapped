@@ -24,10 +24,10 @@
     "longestSpeechRank": 501
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 4,
     "interruptionsReceived": 4,
-    "interrupterRank": 232,
-    "interruptedRank": 423
+    "interrupterRank": 295,
+    "interruptedRank": 476
   },
   "words": {
     "topWords": [
@@ -162,19 +162,19 @@
     "question": "Welches Wort nutzt Lorenz Gösta Beutin häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
         "text": "Klimaschutz",
         "isCorrect": true
       },
       {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
+        "text": "Migration",
         "isCorrect": false
       }
     ],
@@ -189,20 +189,20 @@
     "id": "biber",
     "alternatives": [
       {
-        "emoji": "🐬",
-        "name": "Delfin",
-        "title": "Diplomatischer Redner",
-        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-        "id": "delfin",
-        "score": 0.875
-      },
-      {
         "emoji": "🦦",
         "name": "Otter",
         "title": "Positiver Teamplayer",
         "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
         "id": "otter",
         "score": 0.817
+      },
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 0.757
       }
     ]
   },

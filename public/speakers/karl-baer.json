@@ -24,10 +24,10 @@
     "longestSpeechRank": 314
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 11,
-    "interrupterRank": null,
-    "interruptedRank": 247
+    "interruptionsGiven": 15,
+    "interruptionsReceived": 14,
+    "interrupterRank": 165,
+    "interruptedRank": 262
   },
   "words": {
     "topWords": [
@@ -156,46 +156,43 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "3.138"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "15"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Karl Bär häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
         "text": "Kennzeichnungspflicht",
         "isCorrect": true
+      },
+      {
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Zukunft",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Kennzeichnungspflicht\" sagte Karl Bär 9× (401.9× häufiger als der Bundestag-Durchschnitt)."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🐬",
-    "name": "Delfin",
-    "title": "Diplomatischer Redner",
-    "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-    "id": "delfin",
+    "emoji": "🦊",
+    "name": "Fuchs",
+    "title": "Cleverer Stratege",
+    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+    "id": "fuchs",
     "alternatives": [
-      {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.947
-      },
       {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
@@ -203,6 +200,14 @@
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.926
+      },
+      {
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißiger Abgeordneter",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
+        "score": 0.892
       }
     ]
   },

@@ -24,10 +24,10 @@
     "longestSpeechRank": 459
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 23,
     "interruptionsReceived": 11,
-    "interrupterRank": 91,
-    "interruptedRank": 252
+    "interrupterRank": 129,
+    "interruptedRank": 318
   },
   "words": {
     "topWords": [
@@ -170,26 +170,31 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "2.292"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "23"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Maik Brückner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Haushalt",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
         "text": "Queere",
         "isCorrect": true
-      },
-      {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
-        "isCorrect": false
       }
     ],
     "explanation": "\"Queere\" sagte Maik Brückner 11× (155.1× häufiger als der Bundestag-Durchschnitt)."
@@ -198,7 +203,11 @@
     "question": "Welches Adjektiv nutzt Maik Brückner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Neu",
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
@@ -206,30 +215,26 @@
         "isCorrect": true
       },
       {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
+        "text": "Falsch",
         "isCorrect": false
       }
     ],
     "explanation": "\"Sicher\" sagte Maik Brückner 3× (4.4× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐿️",
-    "name": "Eichhörnchen",
-    "title": "Themenhüter",
-    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-    "id": "eichhoernchen",
+    "emoji": "🐺",
+    "name": "Wolf",
+    "title": "Mutiger Einwerfer",
+    "reason": "Mit 23 Zwischenrufen mischst du aktiv in Debatten mit.",
+    "id": "wolf",
     "alternatives": [
       {
-        "emoji": "🐬",
-        "name": "Delfin",
-        "title": "Diplomatischer Redner",
-        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-        "id": "delfin",
-        "score": 0.842
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 0.892
       },
       {
         "emoji": "🦜",

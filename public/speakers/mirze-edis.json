@@ -24,10 +24,10 @@
     "longestSpeechRank": 188
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 15,
-    "interrupterRank": 35,
-    "interruptedRank": 184
+    "interruptionsGiven": 51,
+    "interruptionsReceived": 17,
+    "interrupterRank": 47,
+    "interruptedRank": 217
   },
   "words": {
     "topWords": [
@@ -162,6 +162,11 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "4.001"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "51"
     }
   ],
   "signatureQuiz": {
@@ -172,15 +177,15 @@
         "isCorrect": true
       },
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
         "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
         "isCorrect": false
       }
     ],
@@ -190,11 +195,11 @@
     "question": "Welches Adjektiv nutzt Mirze Edis häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Gefährlich",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Schlecht",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
@@ -202,7 +207,7 @@
         "isCorrect": true
       },
       {
-        "text": "Politisch",
+        "text": "Erfolgreich",
         "isCorrect": false
       }
     ],
@@ -216,20 +221,20 @@
     "id": "biene",
     "alternatives": [
       {
+        "emoji": "🐺",
+        "name": "Wolf",
+        "title": "Mutiger Einwerfer",
+        "reason": "Mit 51 Zwischenrufen mischst du aktiv in Debatten mit.",
+        "id": "wolf",
+        "score": 0.97
+      },
+      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüter",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.96
-      },
-      {
-        "emoji": "🦔",
-        "name": "Igel",
-        "title": "Beharrlicher Redner",
-        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
-        "id": "igel",
-        "score": 0.802
       }
     ]
   },

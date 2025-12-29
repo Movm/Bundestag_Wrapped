@@ -24,10 +24,10 @@
     "longestSpeechRank": 121
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 22,
-    "interrupterRank": null,
-    "interruptedRank": 109
+    "interruptionsGiven": 36,
+    "interruptionsReceived": 27,
+    "interrupterRank": 69,
+    "interruptedRank": 107
   },
   "words": {
     "topWords": [
@@ -182,25 +182,30 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "5.812"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "36"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Lisa Paus häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
         "text": "Wohnungen",
         "isCorrect": true
       },
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
         "text": "Politik",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
         "isCorrect": false
       }
     ],
@@ -210,7 +215,7 @@
     "question": "Welches Adjektiv nutzt Lisa Paus häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Klar",
+        "text": "Neu",
         "isCorrect": false
       },
       {
@@ -218,23 +223,31 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "National",
         "isCorrect": false
       },
       {
-        "text": "Erfolgreich",
+        "text": "Jung",
         "isCorrect": false
       }
     ],
     "explanation": "\"Schlecht\" sagte Lisa Paus 5× (10.6× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐿️",
-    "name": "Eichhörnchen",
-    "title": "Themenhüterin",
-    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-    "id": "eichhoernchen",
+    "emoji": "🐺",
+    "name": "Wolf",
+    "title": "Mutige Einwerferin",
+    "reason": "Mit 36 Zwischenrufen mischst du aktiv in Debatten mit.",
+    "id": "wolf",
     "alternatives": [
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüterin",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 1.0
+      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -242,14 +255,6 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
-      },
-      {
-        "emoji": "🦔",
-        "name": "Igel",
-        "title": "Beharrliche Rednerin",
-        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
-        "id": "igel",
-        "score": 0.911
       }
     ]
   },

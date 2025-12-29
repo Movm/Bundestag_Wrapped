@@ -24,10 +24,10 @@
     "longestSpeechRank": 210
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 51,
-    "interrupterRank": null,
-    "interruptedRank": 19
+    "interruptionsGiven": 82,
+    "interruptionsReceived": 52,
+    "interrupterRank": 27,
+    "interruptedRank": 35
   },
   "words": {
     "topWords": [
@@ -150,25 +150,30 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "5.103"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "82"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Lamya Kaddor häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
         "text": "Syrien",
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
+        "text": "Wirtschaft",
         "isCorrect": false
       }
     ],
@@ -178,7 +183,11 @@
     "question": "Welches Adjektiv nutzt Lamya Kaddor häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Schlecht",
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
         "isCorrect": false
       },
       {
@@ -186,11 +195,7 @@
         "isCorrect": true
       },
       {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
+        "text": "Sicher",
         "isCorrect": false
       }
     ],

@@ -24,10 +24,10 @@
     "longestSpeechRank": 269
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 28,
-    "interrupterRank": 43,
-    "interruptedRank": 60
+    "interruptionsGiven": 42,
+    "interruptionsReceived": 31,
+    "interrupterRank": 60,
+    "interruptedRank": 84
   },
   "words": {
     "topWords": [
@@ -194,26 +194,31 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "5.467"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "42"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Fabian Fahl häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
         "text": "Klimaschutz",
         "isCorrect": true
-      },
-      {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
       }
     ],
     "explanation": "\"Klimaschutz\" sagte Dr. Fabian Fahl 33× (17.7× häufiger als der Bundestag-Durchschnitt)."
@@ -222,11 +227,7 @@
     "question": "Welches Adjektiv nutzt Dr. Fabian Fahl häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
@@ -234,7 +235,11 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
         "isCorrect": false
       }
     ],
@@ -259,7 +264,7 @@
         "emoji": "🐻",
         "name": "Bär",
         "title": "Standhafter Debattierer",
-        "reason": "Trotz 28× unterbrochen zu werden, bleibst du standhaft.",
+        "reason": "Trotz 31× unterbrochen zu werden, bleibst du standhaft.",
         "id": "baer",
         "score": 0.955
       }

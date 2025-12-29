@@ -24,10 +24,10 @@
     "longestSpeechRank": 424
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 5,
     "interruptionsReceived": 11,
-    "interrupterRank": 216,
-    "interruptedRank": 263
+    "interrupterRank": 274,
+    "interruptedRank": 327
   },
   "words": {
     "topWords": [
@@ -168,20 +168,20 @@
     "question": "Welches Wort nutzt Doris Achelwilm häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Europa",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
+        "text": "Energie",
         "isCorrect": false
       },
       {
         "text": "Mehrwertsteuer",
         "isCorrect": true
+      },
+      {
+        "text": "Reform",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Mehrwertsteuer\" sagte Doris Achelwilm 9× (74.5× häufiger als der Bundestag-Durchschnitt)."
@@ -190,7 +190,11 @@
     "question": "Welches Adjektiv nutzt Doris Achelwilm häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Jung",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
@@ -198,31 +202,19 @@
         "isCorrect": true
       },
       {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
+        "text": "Wichtig",
         "isCorrect": false
       }
     ],
     "explanation": "\"Gerecht\" sagte Doris Achelwilm 4× (5.1× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐬",
-    "name": "Delfin",
-    "title": "Diplomatische Rednerin",
-    "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-    "id": "delfin",
+    "emoji": "🐝",
+    "name": "Biene",
+    "title": "Fleißige Abgeordnete",
+    "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+    "id": "biene",
     "alternatives": [
-      {
-        "emoji": "🐝",
-        "name": "Biene",
-        "title": "Fleißige Abgeordnete",
-        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-        "id": "biene",
-        "score": 1.0
-      },
       {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
@@ -230,6 +222,14 @@
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.989
+      },
+      {
+        "emoji": "🦫",
+        "name": "Biber",
+        "title": "Konstruktive Brückenbauerin",
+        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
+        "id": "biber",
+        "score": 0.818
       }
     ]
   },

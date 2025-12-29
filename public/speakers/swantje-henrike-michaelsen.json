@@ -24,10 +24,10 @@
     "longestSpeechRank": 527
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 7,
-    "interrupterRank": null,
-    "interruptedRank": 357
+    "interruptionsGiven": 19,
+    "interruptionsReceived": 8,
+    "interrupterRank": 149,
+    "interruptedRank": 394
   },
   "words": {
     "topWords": [
@@ -170,26 +170,31 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "1.716"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "19"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Swantje Henrike Michaelsen häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
         "text": "Autobahnen",
         "isCorrect": true
+      },
+      {
+        "text": "Haushalt",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Autobahnen\" sagte Swantje Henrike Michaelsen 8× (269.6× häufiger als der Bundestag-Durchschnitt)."
@@ -198,20 +203,20 @@
     "question": "Welches Adjektiv nutzt Swantje Henrike Michaelsen häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
         "text": "Verantwortungslos",
         "isCorrect": true
+      },
+      {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Verantwortungslos\" sagte Swantje Henrike Michaelsen 3× (74.6× häufiger als der Bundestag-Durchschnitt)."
@@ -224,20 +229,20 @@
     "id": "fuchs",
     "alternatives": [
       {
+        "emoji": "🐺",
+        "name": "Wolf",
+        "title": "Mutige Einwerferin",
+        "reason": "Mit 19 Zwischenrufen mischst du aktiv in Debatten mit.",
+        "id": "wolf",
+        "score": 0.781
+      },
+      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüterin",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.756
-      },
-      {
-        "emoji": "🦀",
-        "name": "Krabbe",
-        "title": "Hartnäckige Debattiererin",
-        "reason": "Du hältst an deinen Positionen fest und lässt nicht locker.",
-        "id": "krabbe",
-        "score": 0.71
       }
     ]
   },

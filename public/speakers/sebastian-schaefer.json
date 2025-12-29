@@ -24,10 +24,10 @@
     "longestSpeechRank": 326
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 18,
-    "interrupterRank": null,
-    "interruptedRank": 144
+    "interruptionsGiven": 24,
+    "interruptionsReceived": 22,
+    "interrupterRank": 119,
+    "interruptedRank": 160
   },
   "words": {
     "topWords": [
@@ -184,6 +184,11 @@
       "value": "6.434"
     },
     {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "24"
+    },
+    {
       "emoji": "📊",
       "label": "Top-Redner",
       "value": "Top 8%"
@@ -193,19 +198,19 @@
     "question": "Welches Wort nutzt Dr. Sebastian Schäfer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
         "text": "Bereichsausnahme",
         "isCorrect": true
       },
       {
-        "text": "Energie",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Politik",
+        "text": "Europa",
         "isCorrect": false
       }
     ],
@@ -215,19 +220,19 @@
     "question": "Welches Adjektiv nutzt Dr. Sebastian Schäfer häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
         "text": "Wesentlich",
         "isCorrect": true
       },
       {
-        "text": "Stark",
+        "text": "Gut",
         "isCorrect": false
       },
       {
-        "text": "Politisch",
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
         "isCorrect": false
       }
     ],
@@ -254,7 +259,7 @@
         "title": "Beharrlicher Redner",
         "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
         "id": "igel",
-        "score": 0.904
+        "score": 0.954
       }
     ]
   },

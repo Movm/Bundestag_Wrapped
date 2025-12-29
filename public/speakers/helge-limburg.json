@@ -24,10 +24,10 @@
     "longestSpeechRank": 151
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 41,
-    "interrupterRank": null,
-    "interruptedRank": 29
+    "interruptionsGiven": 85,
+    "interruptionsReceived": 44,
+    "interrupterRank": 25,
+    "interruptedRank": 44
   },
   "words": {
     "topWords": [
@@ -172,6 +172,11 @@
       "value": "9.402"
     },
     {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "85"
+    },
+    {
       "emoji": "🥇",
       "label": "Rang in GRÜNE",
       "value": "#4 von 85"
@@ -186,19 +191,19 @@
     "question": "Welches Wort nutzt Helge Limburg häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
         "text": "Rechtsstaat",
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
         "isCorrect": false
       }
     ],
@@ -208,16 +213,16 @@
     "question": "Welches Adjektiv nutzt Helge Limburg häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
         "text": "Sicher",
         "isCorrect": true
+      },
+      {
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Richtig",
+        "isCorrect": false
       },
       {
         "text": "Gefährlich",
@@ -227,12 +232,20 @@
     "explanation": "\"Sicher\" sagte Helge Limburg 7× (2.5× häufiger als der Bundestag-Durchschnitt)."
   },
   "spiritAnimal": {
-    "emoji": "🐿️",
-    "name": "Eichhörnchen",
-    "title": "Themenhüter",
-    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-    "id": "eichhoernchen",
+    "emoji": "🐴",
+    "name": "Pferd",
+    "title": "Fleißiger Debattierer",
+    "reason": "Mit 26 Reden gehörst du zu den aktivsten Abgeordneten.",
+    "id": "pferd",
     "alternatives": [
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 1.0
+      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -240,14 +253,6 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
-      },
-      {
-        "emoji": "🐻",
-        "name": "Bär",
-        "title": "Standhafter Debattierer",
-        "reason": "Trotz 41× unterbrochen zu werden, bleibst du standhaft.",
-        "id": "baer",
-        "score": 0.974
       }
     ]
   },

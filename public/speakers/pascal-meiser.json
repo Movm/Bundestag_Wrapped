@@ -24,10 +24,10 @@
     "longestSpeechRank": 71
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 40,
     "interruptionsReceived": 9,
-    "interrupterRank": 46,
-    "interruptedRank": 309
+    "interrupterRank": 64,
+    "interruptedRank": 374
   },
   "words": {
     "topWords": [
@@ -132,25 +132,30 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "4.914"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "40"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Pascal Meiser häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
         "text": "Subunternehmen",
         "isCorrect": true
       },
       {
-        "text": "Zukunft",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
         "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
         "isCorrect": false
       }
     ],
@@ -158,12 +163,20 @@
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦊",
-    "name": "Fuchs",
-    "title": "Cleverer Stratege",
-    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-    "id": "fuchs",
+    "emoji": "🐺",
+    "name": "Wolf",
+    "title": "Mutiger Einwerfer",
+    "reason": "Mit 40 Zwischenrufen mischst du aktiv in Debatten mit.",
+    "id": "wolf",
     "alternatives": [
+      {
+        "emoji": "🦊",
+        "name": "Fuchs",
+        "title": "Cleverer Stratege",
+        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+        "id": "fuchs",
+        "score": 1.0
+      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -171,14 +184,6 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
-      },
-      {
-        "emoji": "🐿️",
-        "name": "Eichhörnchen",
-        "title": "Themenhüter",
-        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-        "id": "eichhoernchen",
-        "score": 0.997
       }
     ]
   },

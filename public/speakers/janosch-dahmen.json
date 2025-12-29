@@ -24,10 +24,10 @@
     "longestSpeechRank": 279
   },
   "drama": {
-    "interruptionsGiven": 0,
-    "interruptionsReceived": 4,
-    "interrupterRank": null,
-    "interruptedRank": 418
+    "interruptionsGiven": 46,
+    "interruptionsReceived": 5,
+    "interrupterRank": 55,
+    "interruptedRank": 438
   },
   "words": {
     "topWords": [
@@ -144,17 +144,18 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "4.144"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "46"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Janosch Dahmen häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
@@ -162,7 +163,11 @@
         "isCorrect": true
       },
       {
-        "text": "Reform",
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
         "isCorrect": false
       }
     ],
@@ -170,27 +175,27 @@
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🐬",
-    "name": "Delfin",
-    "title": "Diplomatischer Redner",
-    "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-    "id": "delfin",
+    "emoji": "🐝",
+    "name": "Biene",
+    "title": "Fleißiger Abgeordneter",
+    "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+    "id": "biene",
     "alternatives": [
       {
-        "emoji": "🐝",
-        "name": "Biene",
-        "title": "Fleißiger Abgeordneter",
-        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-        "id": "biene",
-        "score": 1.0
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 0.966
       },
       {
-        "emoji": "🦫",
-        "name": "Biber",
-        "title": "Konstruktiver Brückenbauer",
-        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
-        "id": "biber",
-        "score": 0.977
+        "emoji": "🐴",
+        "name": "Pferd",
+        "title": "Fleißiger Debattierer",
+        "reason": "Mit 21 Reden gehörst du zu den aktivsten Abgeordneten.",
+        "id": "pferd",
+        "score": 0.855
       }
     ]
   },

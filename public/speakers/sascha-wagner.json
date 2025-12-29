@@ -24,10 +24,10 @@
     "longestSpeechRank": 149
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 11,
     "interruptionsReceived": 20,
-    "interrupterRank": 152,
-    "interruptedRank": 127
+    "interrupterRank": 200,
+    "interruptedRank": 186
   },
   "words": {
     "topWords": [
@@ -217,6 +217,11 @@
       "value": "#3 von 609"
     },
     {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "11"
+    },
+    {
       "emoji": "🥇",
       "label": "Rang in DIE LINKE",
       "value": "#1 von 63"
@@ -226,11 +231,7 @@
     "question": "Welches Wort nutzt Sascha Wagner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
@@ -238,7 +239,11 @@
         "isCorrect": true
       },
       {
-        "text": "Klima",
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
         "isCorrect": false
       }
     ],
@@ -248,20 +253,20 @@
     "question": "Welches Adjektiv nutzt Sascha Wagner häufiger als der Bundestag-Durchschnitt?",
     "options": [
       {
-        "text": "Neu",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
         "text": "Sozial",
         "isCorrect": true
+      },
+      {
+        "text": "National",
+        "isCorrect": false
       }
     ],
     "explanation": "\"Sozial\" sagte Sascha Wagner 6× (6.9× häufiger als der Bundestag-Durchschnitt)."
