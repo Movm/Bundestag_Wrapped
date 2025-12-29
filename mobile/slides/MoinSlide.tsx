@@ -104,13 +104,6 @@ function SpeakerCard({ speaker, rank, delay, isChampion }: SpeakerCardProps) {
         end={{ x: 1, y: 1 }}
         style={[styles.cardGradient, isChampion && styles.cardGradientChampion]}
       >
-        {/* Rank badge */}
-        <View style={[styles.rankBadge, isChampion && styles.rankBadgeChampion]}>
-          <Text style={[styles.rankText, isChampion && styles.rankTextChampion]}>
-            {rank}
-          </Text>
-        </View>
-
         {/* Name */}
         <Text style={[styles.speakerName, isChampion && styles.speakerNameChampion]}>
           {isChampion ? speaker.name : lastName}
@@ -296,37 +289,6 @@ const styles = StyleSheet.create({
   cardGradientChampion: {
     padding: 20,
     borderRadius: 20,
-  },
-  rankBadge: {
-    position: 'absolute',
-    top: -10,
-    left: -10,
-    width: 28,
-    height: 28,
-    borderRadius: 14,
-    backgroundColor: '#fbbf24',
-    alignItems: 'center',
-    justifyContent: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 4,
-    elevation: 3,
-  },
-  rankBadgeChampion: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    top: -14,
-    left: -14,
-  },
-  rankText: {
-    fontSize: 14,
-    fontWeight: '900',
-    color: '#000',
-  },
-  rankTextChampion: {
-    fontSize: 18,
   },
   speakerName: {
     fontSize: 14,
