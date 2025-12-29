@@ -118,15 +118,16 @@ export const AnimatedBubble = memo(function AnimatedBubble({
   const hasSubtext = Boolean(config.frontSubtext);
 
   // Calculate Y positions for text elements (adjusted for Paragraph vs Text baseline)
+  // Gap between mainText and subtext needs to be ~28px for fontSize=28 + subtextFontSize=13
   const emojiY = config.y - 44;
   const mainTextY = hasEmoji
     ? config.y - 4
     : hasSubtext
-      ? config.y - 16
+      ? config.y - 20
       : config.y - 6;
   const subtextY = hasEmoji
     ? config.y + 14
-    : config.y + 4;
+    : config.y + 8;
 
   return (
     <Group>
