@@ -14,7 +14,6 @@ import {
 } from '../slides/shared';
 import { TopicsRevealSlide } from '../slides/TopicsRevealSlide';
 import { TopicsDetailsSlide } from '../slides/TopicsDetailsSlide';
-import { PartyTopicsRevealSlide } from '../slides/PartyTopicsRevealSlide';
 import { PartyTopicsDetailsSlide } from '../slides/PartyTopicsDetailsSlide';
 import { VocabularyRevealSlide } from '../slides/VocabularyRevealSlide';
 import { VocabularyDetailsSlide } from '../slides/VocabularyDetailsSlide';
@@ -42,7 +41,6 @@ export const SLIDES = [
   'reveal-topics',
   'details-topics',
   'info-party-topics',
-  'reveal-party-topics',
   'details-party-topics',
   'intro-vocabulary',
   'quiz-signature',
@@ -261,9 +259,6 @@ export const SlideRenderer = memo(function SlideRenderer({
 
     case 'details-topics':
       return <TopicsDetailsSlide slideIndex={slideIndex} />;
-
-    case 'reveal-party-topics':
-      return <PartyTopicsRevealSlide slideIndex={slideIndex} />;
 
     case 'details-party-topics':
       return <PartyTopicsDetailsSlide slideIndex={slideIndex} />;
