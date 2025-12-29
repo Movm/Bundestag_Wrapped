@@ -6,6 +6,9 @@ import type { SpeakerWrapped, SpiritAnimalAlternative } from '~/types/wrapped';
 
 const { height: SCREEN_HEIGHT, width: SCREEN_WIDTH } = Dimensions.get('window');
 
+// iPhone SE 1st gen is 320pt - switch to column layout on small screens
+const IS_SMALL_SCREEN = SCREEN_WIDTH < 375;
+
 // Responsive scale: podium needs ~320px, scale down on narrower screens
 const getScale = () => Math.min((SCREEN_WIDTH - 32) / 320, 1);
 
@@ -19,12 +22,16 @@ interface AlternativeAnimalProps {
   rank: number;
   delay: number;
   scale: number;
+  isColumn?: boolean;
 }
 
-function AlternativeAnimal({ animal, position, rank, delay, scale }: AlternativeAnimalProps) {
-  const entering = position === 'left'
-    ? SlideInLeft.delay(delay).springify()
-    : SlideInRight.delay(delay).springify();
+function AlternativeAnimal({ animal, position, rank, delay, scale, isColumn }: AlternativeAnimalProps) {
+  // Use vertical animation in column mode, horizontal in row mode
+  const entering = isColumn
+    ? FadeInUp.delay(delay).springify()
+    : position === 'left'
+      ? SlideInLeft.delay(delay).springify()
+      : SlideInRight.delay(delay).springify();
 
   return (
     <Animated.View entering={entering} style={[styles.altAnimal, { width: 90 * scale }]}>
@@ -62,9 +69,13 @@ export function AnimalSection({ data }: AnimalSectionProps) {
         </Animated.Text>
 
         {/* Podium Layout */}
-        <View style={[styles.podium, { gap: Math.max(10 * scale, 6) }]}>
-          {/* 2nd Place (Left) */}
-          {alternatives[0] && (
+        <View style={[
+          styles.podium,
+          IS_SMALL_SCREEN && styles.podiumColumn,
+          { gap: IS_SMALL_SCREEN ? 12 : Math.max(10 * scale, 6) }
+        ]}>
+          {/* Row mode: 2nd, 1st, 3rd | Column mode: 1st, 2nd, 3rd */}
+          {!IS_SMALL_SCREEN && alternatives[0] && (
             <AlternativeAnimal
               animal={alternatives[0]}
               position="left"
@@ -74,7 +85,7 @@ export function AnimalSection({ data }: AnimalSectionProps) {
             />
           )}
 
-          {/* 1st Place (Center - Primary) */}
+          {/* 1st Place (Primary) */}
           <Animated.View
             entering={ZoomIn.delay(300).springify().stiffness(200)}
             style={styles.primaryAnimal}
@@ -82,13 +93,13 @@ export function AnimalSection({ data }: AnimalSectionProps) {
             <View style={styles.primaryRankBadge}>
               <Text style={styles.primaryRankText}>1</Text>
             </View>
-            <Text style={[styles.primaryEmoji, { fontSize: Math.max(80 * scale, 64) }]}>
+            <Text style={[styles.primaryEmoji, { fontSize: IS_SMALL_SCREEN ? 56 : Math.max(80 * scale, 64) }]}>
               {spiritAnimal.emoji}
             </Text>
 
             <Animated.Text
               entering={FadeInUp.delay(500).springify()}
-              style={[styles.primaryName, { fontSize: Math.max(24 * scale, 20) }]}
+              style={[styles.primaryName, { fontSize: IS_SMALL_SCREEN ? 20 : Math.max(24 * scale, 20) }]}
             >
               {spiritAnimal.name}
             </Animated.Text>
@@ -103,14 +114,27 @@ export function AnimalSection({ data }: AnimalSectionProps) {
             </Animated.View>
           </Animated.View>
 
-          {/* 3rd Place (Right) */}
+          {/* 2nd Place - in column mode, render after 1st */}
+          {IS_SMALL_SCREEN && alternatives[0] && (
+            <AlternativeAnimal
+              animal={alternatives[0]}
+              position="left"
+              rank={2}
+              delay={800}
+              scale={scale}
+              isColumn
+            />
+          )}
+
+          {/* 3rd Place */}
           {alternatives[1] && (
             <AlternativeAnimal
               animal={alternatives[1]}
               position="right"
               rank={3}
-              delay={1200}
+              delay={IS_SMALL_SCREEN ? 1000 : 1200}
               scale={scale}
+              isColumn={IS_SMALL_SCREEN}
             />
           )}
         </View>
@@ -151,6 +175,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 12,
     marginBottom: 24,
+  },
+  podiumColumn: {
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   // Primary Animal (1st place)
   primaryAnimal: {
