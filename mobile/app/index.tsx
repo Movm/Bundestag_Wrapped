@@ -59,6 +59,10 @@ export default function IntroScreen() {
     router.push('/(tabs)');
   };
 
+  const handleAbgeordnete = () => {
+    router.push('/(tabs)/abgeordnete');
+  };
+
   return (
     <View className="flex-1 bg-[#0a0a0f] items-center justify-center">
       {/* Floating particles background */}
@@ -147,12 +151,14 @@ export default function IntroScreen() {
           </Text>
         </MotiView>
 
-        {/* Starten Button */}
+        {/* Buttons */}
         <MotiView
           from={{ opacity: 0, scale: 0.9, translateY: 20 }}
           animate={{ opacity: 1, scale: 1, translateY: 0 }}
           transition={{ type: 'spring', damping: 15, stiffness: 100, delay: 1000 }}
+          style={{ gap: 12, width: '100%', alignItems: 'center' }}
         >
+          {/* Starten Button */}
           <Pressable
             onPress={handleStart}
             style={({ pressed }) => ({
@@ -185,6 +191,36 @@ export default function IntroScreen() {
                 Starten
               </Text>
             </LinearGradient>
+          </Pressable>
+
+          {/* Abgeordnete Button */}
+          <Pressable
+            onPress={handleAbgeordnete}
+            style={({ pressed }) => ({
+              transform: [{ scale: pressed ? 0.95 : 1 }],
+            })}
+          >
+            <View
+              style={{
+                paddingHorizontal: 32,
+                paddingVertical: 14,
+                borderRadius: 9999,
+                borderWidth: 2,
+                borderColor: 'rgba(236, 72, 153, 0.5)',
+                backgroundColor: 'rgba(236, 72, 153, 0.1)',
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: 16,
+                  fontWeight: '600',
+                  color: '#f472b6',
+                  textAlign: 'center',
+                }}
+              >
+                Abgeordnete
+              </Text>
+            </View>
           </Pressable>
         </MotiView>
       </View>
