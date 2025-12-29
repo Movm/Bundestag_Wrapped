@@ -37,7 +37,7 @@ export function RestartConfirmationModal({
       >
         <Pressable style={styles.backdrop} onPress={onCancel} />
         <Animated.View
-          entering={SlideInDown.springify().damping(20)}
+          entering={SlideInDown.duration(200)}
           style={styles.dialog}
         >
           <Text style={styles.emoji}>🔄</Text>

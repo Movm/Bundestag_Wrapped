@@ -17,6 +17,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { runOnJS } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
+import { useRouter } from 'expo-router';
 import type { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { Home, Users } from 'lucide-react-native';
 import { useAccentColor, useAppStore } from '../../stores/appStore';
@@ -118,6 +119,7 @@ export function FloatingTabBar({
 }: BottomTabBarProps) {
   const insets = useSafeAreaInsets();
   const accentColor = useAccentColor();
+  const router = useRouter();
   const [showRestartModal, setShowRestartModal] = useState(false);
 
   // Position above safe area with some margin
@@ -139,7 +141,10 @@ export function FloatingTabBar({
 
     // 4. Trigger scroll reset (WrappedExperience will handle FlatList scroll)
     useScrollStore.getState().requestReset();
-  }, []);
+
+    // 5. Navigate to IntroScreen
+    router.replace('/');
+  }, [router]);
 
   const handleShowRestartModal = useCallback(() => {
     setShowRestartModal(true);
