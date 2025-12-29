@@ -24,11 +24,11 @@ export function SpeakerWordsSlide({ speaker }: SpeakerWordsSlideProps) {
       >
         {/* Left: Lieblingswörter */}
         <div className="flex-1 text-center lg:text-left mb-8 lg:mb-0">
-          <div className="text-5xl mb-4">💬</div>
-          <h2 className="text-2xl font-bold text-white mb-2">Deine Lieblingswörter</h2>
-          <p className="text-white/60 mb-6">Die häufigsten Begriffe in deinen Reden</p>
+          <div className="text-4xl sm:text-5xl mb-3 sm:mb-4">💬</div>
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-1.5 sm:mb-2">Deine Lieblingswörter</h2>
+          <p className="text-white/60 text-sm sm:text-base mb-4 sm:mb-6">Die häufigsten Begriffe in deinen Reden</p>
 
-          <div className="flex flex-wrap justify-center lg:justify-start gap-3">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3">
             {topWords.map((word, i) => (
               <motion.div
                 key={word.word}
@@ -36,10 +36,10 @@ export function SpeakerWordsSlide({ speaker }: SpeakerWordsSlideProps) {
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 + i * 0.1, type: 'spring' }}
-                className="px-4 py-2 bg-white/10 border border-white/20 rounded-full"
+                className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 border border-white/20 rounded-full"
               >
-                <span className="text-white font-medium">{word.word}</span>
-                <span className="text-white/40 ml-2 text-sm">{word.count}×</span>
+                <span className="text-white font-medium text-sm sm:text-base">{word.word}</span>
+                <span className="text-white/40 ml-1.5 sm:ml-2 text-xs sm:text-sm">{word.count}×</span>
               </motion.div>
             ))}
           </div>
@@ -48,13 +48,13 @@ export function SpeakerWordsSlide({ speaker }: SpeakerWordsSlideProps) {
         {/* Right: Signature Words */}
         {signatureWords.length > 0 && (
           <div className="flex-1 text-center lg:text-left">
-            <div className="text-5xl mb-4">✨</div>
-            <h2 className="text-2xl font-bold text-white mb-2">Deine Signature Words</h2>
-            <p className="text-white/60 mb-6">
+            <div className="text-4xl sm:text-5xl mb-3 sm:mb-4">✨</div>
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-1.5 sm:mb-2">Deine Signature Words</h2>
+            <p className="text-white/60 text-sm sm:text-base mb-4 sm:mb-6">
               Wörter die du häufiger nutzt als der Bundestag-Durchschnitt
             </p>
 
-            <div className="flex flex-wrap justify-center lg:justify-start gap-3">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3">
               {signatureWords.map((word, i) => (
                 <motion.div
                   key={word.word}
@@ -62,10 +62,10 @@ export function SpeakerWordsSlide({ speaker }: SpeakerWordsSlideProps) {
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.8 + i * 0.1, type: 'spring' }}
-                  className="px-4 py-2 bg-white/10 border border-white/20 rounded-full"
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 border border-white/20 rounded-full"
                 >
-                  <span className="text-white font-medium">{word.word}</span>
-                  <span className="text-white/40 ml-2 text-sm">
+                  <span className="text-white font-medium text-sm sm:text-base">{word.word}</span>
+                  <span className="text-white/40 ml-1.5 sm:ml-2 text-xs sm:text-sm">
                     {word.ratio.toFixed(1)}×
                   </span>
                 </motion.div>

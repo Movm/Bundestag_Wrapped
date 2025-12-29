@@ -7,6 +7,7 @@ import { getPartyColor } from '@/shared';
 import { SPEAKER_CONTENT } from '@/shared/speaker-wrapped';
 import { shareImage } from '../../lib/share-utils';
 import { SpeakerShareCanvasSkia } from '../../components/SpeakerShareCanvasSkia';
+import { useScreenWidth } from '~/stores/appStore';
 import type { SpeakerWrapped } from '~/types/wrapped';
 import { SpeakerSlideContainer } from './shared';
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
@@ -22,9 +23,14 @@ interface EndSectionProps {
  */
 export function EndSection({ data, onRestart }: EndSectionProps) {
   const router = useRouter();
+  const screenWidth = useScreenWidth();
   const partyColor = getPartyColor(data.party);
   const content = SPEAKER_CONTENT.end;
   const funFacts = data.funFacts.slice(0, 4);
+
+  // Responsive scaling for small screens (iPhone SE ~375px)
+  const isSmallScreen = screenWidth < 380;
+  const scale = Math.min(screenWidth / 400, 1);
 
   const [isSharing, setIsSharing] = useState(false);
   const [imageUri, setImageUri] = useState<string | null>(null);
@@ -99,47 +105,47 @@ export function EndSection({ data, onRestart }: EndSectionProps) {
 
       <Animated.View entering={ZoomIn.delay(100).springify()} style={styles.content}>
         {/* Emoji */}
-        <Text style={styles.emoji}>{content.emoji}</Text>
+        <Text style={[styles.emoji, { fontSize: isSmallScreen ? 44 : 56 }]}>{content.emoji}</Text>
 
         {/* Title */}
-        <Animated.Text entering={FadeInUp.delay(200)} style={styles.title}>
+        <Animated.Text entering={FadeInUp.delay(200)} style={[styles.title, { fontSize: isSmallScreen ? 22 : 28 }]}>
           {content.title}
         </Animated.Text>
 
-        <Animated.Text entering={FadeIn.delay(300)} style={styles.subtitle}>
+        <Animated.Text entering={FadeIn.delay(300)} style={[styles.subtitle, { fontSize: isSmallScreen ? 14 : 16 }]}>
           {content.subtitle}
         </Animated.Text>
 
         {/* Fun Facts Grid */}
-        <Animated.View entering={FadeIn.delay(400)} style={styles.funFactsCard}>
+        <Animated.View entering={FadeIn.delay(400)} style={[styles.funFactsCard, { padding: isSmallScreen ? 14 : 20 }]}>
           <View style={styles.funFactsGrid}>
             {funFacts.map((fact, i) => (
               <Animated.View
                 key={i}
                 entering={FadeInUp.delay(500 + i * 100)}
-                style={styles.funFact}
+                style={[styles.funFact, { marginBottom: isSmallScreen ? 10 : 16 }]}
               >
-                <Text style={styles.funFactEmoji}>{fact.emoji}</Text>
-                <Text style={styles.funFactValue}>{fact.value}</Text>
-                <Text style={styles.funFactLabel}>{fact.label}</Text>
+                <Text style={[styles.funFactEmoji, { fontSize: isSmallScreen ? 20 : 24 }]}>{fact.emoji}</Text>
+                <Text style={[styles.funFactValue, { fontSize: isSmallScreen ? 15 : 18 }]}>{fact.value}</Text>
+                <Text style={[styles.funFactLabel, { fontSize: isSmallScreen ? 10 : 11 }]}>{fact.label}</Text>
               </Animated.View>
             ))}
           </View>
         </Animated.View>
 
         {/* Buttons */}
-        <View style={styles.buttonsContainer}>
+        <View style={[styles.buttonsContainer, { gap: isSmallScreen ? 8 : 12 }]}>
           {/* Share Button */}
           <AnimatedPressable
             entering={FadeInUp.delay(800)}
-            style={[styles.shareButton, isSharing && styles.shareButtonDisabled]}
+            style={[styles.shareButton, { paddingVertical: isSmallScreen ? 12 : 14 }, isSharing && styles.shareButtonDisabled]}
             onPress={handleShare}
             disabled={isSharing}
           >
             {isSharing ? (
               <ActivityIndicator color="#ffffff" size="small" />
             ) : (
-              <Text style={styles.shareButtonText}>{content.shareButton}</Text>
+              <Text style={[styles.shareButtonText, { fontSize: isSmallScreen ? 14 : 16 }]}>{content.shareButton}</Text>
             )}
           </AnimatedPressable>
 
@@ -147,27 +153,27 @@ export function EndSection({ data, onRestart }: EndSectionProps) {
           <AnimatedPressable
             entering={FadeInUp.delay(900)}
             onPress={onRestart}
-            style={[styles.restartButton, { backgroundColor: partyColor }]}
+            style={[styles.restartButton, { backgroundColor: partyColor, paddingVertical: isSmallScreen ? 12 : 14 }]}
           >
-            <Text style={styles.restartButtonText}>{content.restartButton}</Text>
+            <Text style={[styles.restartButtonText, { fontSize: isSmallScreen ? 14 : 16 }]}>{content.restartButton}</Text>
           </AnimatedPressable>
 
           {/* Other Speakers */}
           <AnimatedPressable
             entering={FadeInUp.delay(1000)}
             onPress={() => router.push('/')}
-            style={styles.secondaryButton}
+            style={[styles.secondaryButton, { paddingVertical: isSmallScreen ? 12 : 14 }]}
           >
-            <Text style={styles.secondaryButtonText}>{content.otherSpeakersButton}</Text>
+            <Text style={[styles.secondaryButtonText, { fontSize: isSmallScreen ? 14 : 16 }]}>{content.otherSpeakersButton}</Text>
           </AnimatedPressable>
 
           {/* Home */}
           <AnimatedPressable
             entering={FadeIn.delay(1100)}
             onPress={() => router.push('/')}
-            style={styles.tertiaryButton}
+            style={[styles.tertiaryButton, { paddingVertical: isSmallScreen ? 12 : 14 }]}
           >
-            <Text style={styles.tertiaryButtonText}>{content.homeButton}</Text>
+            <Text style={[styles.tertiaryButtonText, { fontSize: isSmallScreen ? 14 : 16 }]}>{content.homeButton}</Text>
           </AnimatedPressable>
         </View>
       </Animated.View>
