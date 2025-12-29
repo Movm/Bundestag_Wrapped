@@ -83,7 +83,7 @@ const SECTION_ORDER: string[] = [
  */
 function getNextTheme(currentSlide: string): ThemeType | null {
   // Extract section from slide ID
-  const section = currentSlide.replace(/^(intro|quiz|info|reveal|chart)-/, '');
+  const section = currentSlide.replace(/^(intro|quiz|info|reveal|chart|details)-/, '');
   const currentIndex = SECTION_ORDER.indexOf(section);
 
   if (currentIndex === -1 || currentIndex >= SECTION_ORDER.length - 1) {

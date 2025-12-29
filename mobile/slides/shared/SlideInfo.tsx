@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import Animated from 'react-native-reanimated';
 import { SlideContainer } from './SlideContainer';
+import { ScrollIndicator } from './ScrollIndicator';
 import { infoAnimations } from './animations';
 import { useDeferredRender } from '../../hooks/useDeferredRender';
 import { getSlideIconConfig } from '../../lib/slide-icons';
@@ -14,6 +15,8 @@ interface SlideInfoProps {
   slideId?: string;
   /** Slide index for visibility-based animation trigger */
   slideIndex: number;
+  /** Show animated scroll indicator (for first slide only) */
+  showScrollIndicator?: boolean;
 }
 
 /**
@@ -23,13 +26,16 @@ interface SlideInfoProps {
  * Shows emoji, title, and 1-2 sentences explaining the topic.
  * Animations: emoji pops in, title slides up, body fades in later.
  */
-export function SlideInfo({ emoji, title, body, slideId, slideIndex }: SlideInfoProps) {
+export function SlideInfo({ emoji, title, body, slideId, slideIndex, showScrollIndicator }: SlideInfoProps) {
   // Wait for slide to be visible before mounting animated content
   const showContent = useDeferredRender(slideIndex, 0);
 
   // Get icon config from centralized source
   const iconConfig = slideId ? getSlideIconConfig(slideId) : undefined;
   const IconComponent = iconConfig?.Icon;
+
+  // Scroll indicator visible when on first slide (slideIndex === 0)
+  const isFirstSlideVisible = slideIndex === 0;
 
   return (
     <SlideContainer slideId={slideId}>
@@ -68,6 +74,9 @@ export function SlideInfo({ emoji, title, body, slideId, slideIndex }: SlideInfo
           </>
         )}
       </View>
+
+      {/* Scroll indicator on first slide */}
+      {showScrollIndicator && <ScrollIndicator visible={isFirstSlideVisible} />}
     </SlideContainer>
   );
 }

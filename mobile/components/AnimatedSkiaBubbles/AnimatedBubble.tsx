@@ -59,7 +59,6 @@ export const AnimatedBubble = memo(function AnimatedBubble({
   totalBubbles,
   progress,
   phaseOffset,
-  flipProgress,
   fontMgr,
   fontSize,
   subtextFontSize,
@@ -85,13 +84,8 @@ export const AnimatedBubble = memo(function AnimatedBubble({
   }, []);
 
   // Opacity: quick fade-in (fully visible by 50% of animation)
-  // Fades out FAST when flipping (first 20% of flip) so native can take over
   const opacity = useDerivedValue(() => {
-    const entranceOpacity = Math.min(adjustedProgress.value * 2, 1);
-    const flipValue = flipProgress?.value ?? 0;
-    // Fade out quickly in first 20% of flip animation
-    const flipFade = Math.min(flipValue * 5, 1);
-    return entranceOpacity * (1 - flipFade);
+    return Math.min(adjustedProgress.value * 2, 1);
   }, []);
 
   // Animated radius

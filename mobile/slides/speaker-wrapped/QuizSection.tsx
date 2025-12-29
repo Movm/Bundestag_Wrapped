@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, StyleSheet, Dimensions, Pressable } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 import Animated, {
   FadeIn,
   FadeInUp,
@@ -8,8 +8,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { SPEAKER_CONTENT, buildQuizConfig } from '@/shared/speaker-wrapped';
 import type { SpeakerWrapped } from '~/types/wrapped';
-
-const { height: SCREEN_HEIGHT } = Dimensions.get('window');
+import { SpeakerSlideContainer } from './shared';
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
 interface QuizSectionProps {
@@ -31,13 +30,13 @@ export function QuizSection({ data, onAnswer, onNext }: QuizSectionProps) {
   // If no quiz, show fallback
   if (!quizConfig) {
     return (
-      <View style={styles.container}>
+      <SpeakerSlideContainer>
         <View style={styles.content}>
           <Text style={styles.emoji}>{content.fallbackEmoji}</Text>
           <Text style={styles.title}>{content.fallbackTitle}</Text>
           <Text style={styles.subtitle}>{content.fallbackSubtitle}</Text>
         </View>
-      </View>
+      </SpeakerSlideContainer>
     );
   }
 
@@ -58,7 +57,7 @@ export function QuizSection({ data, onAnswer, onNext }: QuizSectionProps) {
   };
 
   return (
-    <View style={styles.container}>
+    <SpeakerSlideContainer>
       {/* Result Overlay */}
       {showResult && (
         <Animated.View
@@ -154,19 +153,11 @@ export function QuizSection({ data, onAnswer, onNext }: QuizSectionProps) {
           })}
         </View>
       </View>
-    </View>
+    </SpeakerSlideContainer>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    height: SCREEN_HEIGHT,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 24,
-    paddingTop: 100,
-    backgroundColor: '#0a0a0a',
-  },
   content: {
     alignItems: 'center',
     width: '100%',

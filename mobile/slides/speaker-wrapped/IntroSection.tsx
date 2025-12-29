@@ -1,16 +1,15 @@
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import Animated from 'react-native-reanimated';
 import { PARTY_BG_COLORS } from '@/shared';
 import { SPEAKER_CONTENT, formatSpeakerName } from '@/shared/speaker-wrapped';
 import type { SpeakerWrapped } from '~/types/wrapped';
+import { SpeakerSlideContainer } from './shared';
 import {
   emojiPopEntering,
   fadeUpEntering,
   bouncyScaleEntering,
   fadeInEntering,
 } from '../shared';
-
-const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 
 interface IntroSectionProps {
   data: SpeakerWrapped;
@@ -25,7 +24,7 @@ export function IntroSection({ data }: IntroSectionProps) {
   const content = SPEAKER_CONTENT.intro;
 
   return (
-    <View style={styles.container}>
+    <SpeakerSlideContainer>
       <View style={styles.content}>
         {/* Emoji */}
         <Animated.Text entering={emojiPopEntering(200)} style={styles.emoji}>
@@ -50,19 +49,11 @@ export function IntroSection({ data }: IntroSectionProps) {
           {content.subtitle}
         </Animated.Text>
       </View>
-    </View>
+    </SpeakerSlideContainer>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    height: SCREEN_HEIGHT,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 24,
-    paddingTop: 100,
-    backgroundColor: '#0a0a0a',
-  },
   content: {
     alignItems: 'center',
   },

@@ -22,7 +22,7 @@ export const INTRO_SLIDES: Record<string, IntroSlideContent> = {
   'intro-speeches': {
     emoji: '🎤',
     title: 'Manche reden mehr als andere.',
-    subtitle: 'Weißt du, wer am meisten am Rednerpult stand?',
+    subtitle: 'Weißt du, wer am längsten am Rednerpult stand?',
   },
   'intro-drama': {
     emoji: '🎭',
@@ -31,8 +31,8 @@ export const INTRO_SLIDES: Record<string, IntroSlideContent> = {
   },
   'intro-discriminatory': {
     emoji: '⚠️',
-    title: 'Manche Begriffe sind nicht neutral.',
-    subtitle: 'Welche Fraktion fällt auf?',
+    title: 'Die Atmosphäre im Bundestag wird rauer?.',
+    subtitle: 'Welche Fraktion fällt besonders negativ auf?',
   },
   'intro-common-words': {
     emoji: '📊',
@@ -42,7 +42,7 @@ export const INTRO_SLIDES: Record<string, IntroSlideContent> = {
   'intro-moin': {
     emoji: '👋',
     title: 'Moin!',
-    subtitle: 'Ein norddeutsches Grußwort hat es in den Bundestag geschafft.',
+    subtitle: 'Ein wenig Norddeutschland in Berlin.',
   },
   'intro-swiftie': {
     emoji: '💜',

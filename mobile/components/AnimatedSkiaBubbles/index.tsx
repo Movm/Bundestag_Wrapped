@@ -26,7 +26,6 @@ export const AnimatedSkiaBubbles = memo(function AnimatedSkiaBubbles({
   phaseOffset = 0.12,
   fontSize = 28,
   subtextFontSize = 13,
-  flipProgresses,
 }: AnimatedSkiaBubblesProps) {
   // Font manager for Paragraph API (works on iOS unlike matchFont)
   const fontMgr = useFonts({});
@@ -46,7 +45,6 @@ export const AnimatedSkiaBubbles = memo(function AnimatedSkiaBubbles({
           totalBubbles={bubbles.length}
           progress={progress}
           phaseOffset={phaseOffset}
-          flipProgress={flipProgresses?.[i]}
           fontMgr={fontMgr}
           fontSize={fontSize}
           subtextFontSize={subtextFontSize}

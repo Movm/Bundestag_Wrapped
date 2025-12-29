@@ -54,6 +54,7 @@ interface PrecomputedData {
   // SpeechesChartSlide - bubble sizes precomputed
   speechBubbleSizes: number[];
   totalSpeeches: number;
+  totalWortbeitraege: number;
 
   // ToneRevealSlide - holistic summaries precomputed per party
   partyToneSummaries: Record<string, string>;
@@ -87,7 +88,7 @@ function getTop5Parties(parties: PartyStats[]): PartyStats[] {
   return parties.filter((p) => p.party !== 'fraktionslos').slice(0, 5);
 }
 
-function computeBubbleSizes(top5: PartyStats[]): { sizes: number[]; total: number } {
+function computeBubbleSizes(top5: PartyStats[]): { sizes: number[]; totalSpeeches: number; totalWortbeitraege: number } {
   const speeches = top5.map((p) => p.speeches);
   const minSpeeches = Math.min(...speeches);
   const speechRange = Math.max(...speeches) - minSpeeches || 1;
@@ -102,7 +103,8 @@ function computeBubbleSizes(top5: PartyStats[]): { sizes: number[]; total: numbe
 
   return {
     sizes,
-    total: top5.reduce((sum, p) => sum + p.speeches, 0),
+    totalSpeeches: top5.reduce((sum, p) => sum + p.speeches, 0),
+    totalWortbeitraege: top5.reduce((sum, p) => sum + p.wortbeitraege, 0),
   };
 }
 
@@ -243,6 +245,7 @@ const initialState: PrecomputedData = {
   partyTopTopics: {},
   speechBubbleSizes: [],
   totalSpeeches: 0,
+  totalWortbeitraege: 0,
   partyToneSummaries: {},
   top5Parties: [],
   sortedToneProfiles: [],
@@ -263,7 +266,7 @@ export const usePrecomputedStore = create<PrecomputedStore>((set) => ({
     console.log(`[PrecomputedStore] top5Parties: ${Date.now() - startTime}ms`);
 
     // SpeechesChartSlide bubble sizes
-    const { sizes, total } = computeBubbleSizes(top5Parties);
+    const { sizes, totalSpeeches, totalWortbeitraege } = computeBubbleSizes(top5Parties);
     console.log(`[PrecomputedStore] bubbleSizes: ${Date.now() - startTime}ms`);
 
     // TopicsRevealSlide rankings + ticker topics
@@ -289,7 +292,8 @@ export const usePrecomputedStore = create<PrecomputedStore>((set) => ({
       topicPartyRankings: rankings,
       partyTopTopics,
       speechBubbleSizes: sizes,
-      totalSpeeches: total,
+      totalSpeeches,
+      totalWortbeitraege,
       partyToneSummaries,
       top5Parties,
       sortedToneProfiles,
@@ -327,6 +331,14 @@ export function useSpeechBubbleSizes(): number[] {
  */
 export function useTotalSpeeches(): number {
   return usePrecomputedStore((state) => state.totalSpeeches);
+}
+
+/**
+ * Get total wortbeitraege count
+ * Returns primitive for optimal re-render performance
+ */
+export function useTotalWortbeitraege(): number {
+  return usePrecomputedStore((state) => state.totalWortbeitraege);
 }
 
 /**

@@ -2,8 +2,9 @@ import { View, Text, StyleSheet } from 'react-native';
 import Animated, { FadeIn, FadeInUp, ZoomIn, SlideInLeft, SlideInRight } from 'react-native-reanimated';
 import { getPartyColor } from '@/shared';
 import { SPEAKER_CONTENT, getAnimalAlternatives } from '@/shared/speaker-wrapped';
-import { useScreenWidth, useScreenHeight } from '~/stores/appStore';
+import { useScreenWidth } from '~/stores/appStore';
 import type { SpeakerWrapped, SpiritAnimalAlternative } from '~/types/wrapped';
+import { SpeakerSlideContainer } from './shared';
 
 interface AnimalSectionProps {
   data: SpeakerWrapped;
@@ -43,7 +44,6 @@ function AlternativeAnimal({ animal, position, rank, delay, scale, isColumn }: A
  */
 export function AnimalSection({ data }: AnimalSectionProps) {
   const screenWidth = useScreenWidth();
-  const screenHeight = useScreenHeight();
 
   // iPhone SE 2nd/3rd gen is exactly 375pt - use < 380 to include it
   // Matches breakpoint used in app/index.tsx for consistency
@@ -63,7 +63,7 @@ export function AnimalSection({ data }: AnimalSectionProps) {
   const alternatives = getAnimalAlternatives(spiritAnimal);
 
   return (
-    <View style={[styles.container, { height: screenHeight }]}>
+    <SpeakerSlideContainer style={styles.container}>
       <View style={styles.content}>
         {/* Subtitle */}
         <Animated.Text entering={FadeIn.delay(100)} style={styles.subtitle}>
@@ -149,17 +149,13 @@ export function AnimalSection({ data }: AnimalSectionProps) {
           {spiritAnimal.reason}
         </Animated.Text>
       </View>
-    </View>
+    </SpeakerSlideContainer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
-    justifyContent: 'center',
     paddingHorizontal: 16,
-    paddingTop: 100,
-    backgroundColor: '#0a0a0a',
   },
   content: {
     alignItems: 'center',

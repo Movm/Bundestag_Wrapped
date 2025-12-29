@@ -2,8 +2,7 @@ import { memo } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { SlideContainer, itemVariants } from '../shared';
-
-const GITHUB_REPO_URL = 'https://github.com/Movm/bundestag-wrapped';
+import { END_SLIDE_CONTENT } from '@/shared/end-slide';
 
 function GitHubIcon() {
   return (
@@ -45,28 +44,12 @@ interface EndSlideProps {
   onRestart?: () => void;
 }
 
-const socialLinks = [
-  {
-    href: 'https://github.com/Movm/bundestag-wrapped',
-    icon: GitHubIcon,
-    label: 'GitHub',
-  },
-  {
-    href: 'https://www.linkedin.com/in/moritz-w%C3%A4chter-6ab033210/',
-    icon: LinkedInIcon,
-    label: 'LinkedIn',
-  },
-  {
-    href: 'https://x.com/MoritzWaech',
-    icon: XIcon,
-    label: 'X (Twitter)',
-  },
-  {
-    href: 'https://www.instagram.com/moritz_waechter/',
-    icon: InstagramIcon,
-    label: 'Instagram',
-  },
-];
+const SOCIAL_ICONS: Record<string, React.FC> = {
+  GitHub: GitHubIcon,
+  LinkedIn: LinkedInIcon,
+  X: XIcon,
+  Instagram: InstagramIcon,
+};
 
 export const EndSlide = memo(function EndSlide({ onRestart }: EndSlideProps) {
   return (
@@ -74,107 +57,89 @@ export const EndSlide = memo(function EndSlide({ onRestart }: EndSlideProps) {
       innerClassName="max-w-md md:max-w-4xl lg:max-w-5xl"
       className="relative overflow-hidden"
     >
-      {/* Desktop: side-by-side | Mobile: stacked */}
-      <div className="flex flex-col md:flex-row md:items-center md:gap-12 lg:gap-16">
-        {/* Author Photo - Left on desktop */}
-        <motion.div
-          variants={itemVariants}
-          className="mb-6 md:mb-0 md:flex-shrink-0 flex justify-center md:justify-start"
-        >
-          <motion.img
-            src="/author.jpg"
-            alt="Moritz Wächter"
-            className="w-24 h-24 md:w-40 md:h-52 lg:w-44 lg:h-56 rounded-2xl md:rounded-3xl object-cover shadow-2xl"
-            initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ type: 'spring', bounce: 0.3 }}
-          />
-        </motion.div>
-
-        {/* Content - Right on desktop */}
-        <div className="flex-1 text-center md:text-left">
+      {/* Content - Centered */}
+      <div className="text-center">
           {/* Das war Bundestag Wrapped - End indicator */}
           <motion.p
             variants={itemVariants}
             className="text-white/50 text-sm md:text-base uppercase tracking-widest mb-2"
           >
-            Das war
+            {END_SLIDE_CONTENT.header.label}
           </motion.p>
           <motion.h2
             variants={itemVariants}
             className="text-2xl md:text-4xl lg:text-5xl font-black gradient-text mb-4"
           >
-            Bundestag Wrapped
+            {END_SLIDE_CONTENT.header.title}
           </motion.h2>
 
           {/* Personal Message */}
           <motion.div variants={itemVariants} className="mb-6">
             <p className="text-white/80 text-sm md:text-lg leading-relaxed mb-3">
-              Mir ist es wichtig zu betonen: Alle demokratischen Politiker:innen
-              leisten harte Arbeit für unser Land – unabhängig von ihrer Partei.
+              {END_SLIDE_CONTENT.message.primary}
             </p>
             <p className="hidden md:block text-white/60 text-sm md:text-base">
-              Dies ist ein Spaßprojekt und keine wissenschaftliche Analyse. Mehr
-              zur Methodik findest du in der Dokumentation oder auf GitHub.
+              {END_SLIDE_CONTENT.message.secondary}
             </p>
           </motion.div>
 
           {/* Social Icons */}
           <motion.div
             variants={itemVariants}
-            className="flex justify-center md:justify-start gap-3 mb-6"
+            className="flex justify-center gap-3 mb-6"
           >
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-all hover:scale-110"
-                aria-label={link.label}
-              >
-                <link.icon />
-              </a>
-            ))}
+            {END_SLIDE_CONTENT.socialLinks.map((link) => {
+              const Icon = SOCIAL_ICONS[link.label];
+              return (
+                <a
+                  key={link.label}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-all hover:scale-110"
+                  aria-label={link.label}
+                >
+                  {Icon && <Icon />}
+                </a>
+              );
+            })}
           </motion.div>
 
           {/* Action Buttons */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap justify-center md:justify-start gap-3"
+            className="flex flex-wrap justify-center gap-3"
           >
             <Link
               to="/dokumentation"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/15 border border-white/20 rounded-full text-white font-semibold transition-all hover:scale-105 text-sm"
             >
               <span className="hidden md:inline">📖</span>
-              Dokumentation
+              {END_SLIDE_CONTENT.buttons.documentation}
             </Link>
             <a
-              href={GITHUB_REPO_URL}
+              href={END_SLIDE_CONTENT.socialLinks[0].url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/15 border border-white/20 rounded-full text-white font-semibold transition-all hover:scale-105 text-sm"
             >
               <GitHubIcon />
-              GitHub
+              {END_SLIDE_CONTENT.buttons.github}
             </a>
             <button
               onClick={onRestart}
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-pink-500 hover:bg-pink-600 rounded-full text-white font-semibold transition-all hover:scale-105 text-sm"
             >
-              Nochmal starten
+              {END_SLIDE_CONTENT.buttons.restart}
             </button>
             <Link
               to="/abgeordnete"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/15 border border-white/20 rounded-full text-white font-semibold transition-all hover:scale-105 text-sm"
             >
-              Abgeordnete
+              {END_SLIDE_CONTENT.buttons.speakers}
             </Link>
           </motion.div>
         </div>
-      </div>
     </SlideContainer>
   );
 });

@@ -36,8 +36,6 @@ export interface AnimatedSkiaBubblesProps {
   fontSize?: number;
   /** Font size for subtext (default: 13) */
   subtextFontSize?: number;
-  /** Array of flip progress values - when provided, bubbles fade out as they flip */
-  flipProgresses?: SharedValue<number>[];
 }
 
 export interface AnimatedBubbleProps {
@@ -46,5 +44,4 @@ export interface AnimatedBubbleProps {
   totalBubbles: number;
   progress: SharedValue<number>;
   phaseOffset: number;
-  flipProgress?: SharedValue<number>;
 }

@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import Animated from 'react-native-reanimated';
 import { getPartyColor, TOPIC_BY_ID } from '@/shared';
 import {
@@ -7,15 +7,13 @@ import {
   getTopicWords,
 } from '@/shared/speaker-wrapped';
 import type { SpeakerWrapped } from '~/types/wrapped';
-import { WordChip } from './shared';
+import { WordChip, SpeakerSlideContainer } from './shared';
 import {
   fadeInEntering,
   fadeUpEntering,
   bubbleAnimations,
   scaleInEntering,
 } from '../shared';
-
-const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 
 interface TopicsSectionProps {
   data: SpeakerWrapped;
@@ -38,7 +36,7 @@ export function TopicsSection({ data }: TopicsSectionProps) {
   const topicWords = getTopicWords(data, primaryTopic.topic, 6);
 
   return (
-    <View style={styles.container}>
+    <SpeakerSlideContainer>
       <View style={styles.content}>
         {/* Header */}
         <Animated.Text entering={fadeInEntering(100)} style={styles.subtitle}>
@@ -115,19 +113,11 @@ export function TopicsSection({ data }: TopicsSectionProps) {
           </Animated.View>
         )}
       </View>
-    </View>
+    </SpeakerSlideContainer>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    height: SCREEN_HEIGHT,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 24,
-    paddingTop: 100,
-    backgroundColor: '#0a0a0a',
-  },
   content: {
     alignItems: 'center',
     width: '100%',

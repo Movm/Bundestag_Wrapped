@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Dimensions, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import Animated from 'react-native-reanimated';
 import {
   SPEAKER_CONTENT,
@@ -6,10 +6,8 @@ import {
   getSignatureWordRatio,
 } from '@/shared/speaker-wrapped';
 import type { SpeakerWrapped } from '~/types/wrapped';
-import { WordChip } from './shared';
+import { WordChip, SpeakerSlideContainer } from './shared';
 import { fadeUpEntering, fadeInEntering } from '../shared';
-
-const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 
 interface WordsSectionProps {
   data: SpeakerWrapped;
@@ -23,7 +21,7 @@ export function WordsSection({ data }: WordsSectionProps) {
   const { topWords, signatureWords } = getDisplayWords(data.words);
 
   return (
-    <View style={styles.container}>
+    <SpeakerSlideContainer style={styles.scrollableContainer}>
       <ScrollView
         style={styles.scrollView}
         contentContainerStyle={styles.scrollContent}
@@ -68,22 +66,22 @@ export function WordsSection({ data }: WordsSectionProps) {
           </Animated.View>
         )}
       </ScrollView>
-    </View>
+    </SpeakerSlideContainer>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    height: SCREEN_HEIGHT,
-    backgroundColor: '#0a0a0a',
+  scrollableContainer: {
+    justifyContent: 'flex-start',
+    paddingHorizontal: 0,
   },
   scrollView: {
     flex: 1,
+    width: '100%',
   },
   scrollContent: {
     paddingHorizontal: 24,
-    paddingTop: 100,
-    paddingBottom: 120,
+    paddingBottom: 24,
   },
   section: {
     marginBottom: 40,

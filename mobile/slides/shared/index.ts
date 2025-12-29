@@ -15,6 +15,7 @@ export { SlideQuiz, type QuizConfig, type QuizConfigAlt } from './SlideQuiz';
 export { SlideHeader } from './SlideHeader';
 export { FlipCard } from './FlipCard';
 export { Confetti } from './Confetti';
+export { ScrollIndicator } from './ScrollIndicator';
 
 // Animation helpers
 export * from './animations';

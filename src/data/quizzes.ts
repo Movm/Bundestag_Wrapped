@@ -28,7 +28,7 @@ export const QUIZZES: Record<string, QuizQuestion> = {
       'Alexander Dobrindt (CDU/CSU)',
     ],
     correctAnswer: 'Friedrich Merz (CDU/CSU)',
-    explanation: 'Friedrich Merz mit 37.752 Wörtern aus 98 Beiträgen!',
+    explanation: 'Friedrich Merz mit 37.752 Wörtern!',
   },
   'quiz-interrupter': {
     id: 'quiz-interrupter',
@@ -62,7 +62,7 @@ export const QUIZZES: Record<string, QuizQuestion> = {
     question: 'Welche Partei ruft am lautesten dazwischen?',
     options: ['CDU/CSU', 'Die Linke', 'SPD', 'AfD'],
     correctAnswer: 'AfD',
-    explanation: 'AfD mit 4.516 Zwischenrufen!',
+    explanation: 'Die AfD dominiert überdeutlich!',
   },
   'quiz-words-total': {
     id: 'quiz-words-total',
@@ -75,7 +75,7 @@ export const QUIZZES: Record<string, QuizQuestion> = {
       'Lars Klingbeil (SPD)',
     ],
     correctAnswer: 'Friedrich Merz (CDU/CSU)',
-    explanation: 'Friedrich Merz mit 37.752 Wörtern aus 98 Reden!',
+    explanation: 'Friedrich Merz mit 37.752 Wörtern!',
   },
   'quiz-common-words': {
     id: 'quiz-common-words',
@@ -83,7 +83,7 @@ export const QUIZZES: Record<string, QuizQuestion> = {
     question: 'Was war das meistgenutzte Wort?',
     options: ['Deutschland', 'Mensch', 'Euro', 'Land'],
     correctAnswer: 'Mensch',
-    explanation: '"Mensch" wurde von allen Fraktionen am häufigsten verwendet!',
+    explanation: '"Mensch" wurde insgesamt am häufigsten verwendet!',
   },
   'quiz-tone': {
     id: 'quiz-tone',
@@ -145,7 +145,7 @@ export const QUIZZES: Record<string, QuizQuestion> = {
   'quiz-discriminatory': {
     id: 'quiz-discriminatory',
     type: 'prediction',
-    question: 'Welche Partei nutzt am häufigsten diskriminierende Sprache?',
+    question: 'Welche Partei nutzt am häufigsten diskriminierende und abwertende Sprache?',
     options: ['CDU/CSU', 'SPD', 'GRÜNE', 'AfD'],
     correctAnswer: 'AfD',
     explanation:
@@ -158,7 +158,7 @@ export const QUIZZES: Record<string, QuizQuestion> = {
     options: [], // Generated at runtime from swiftie + decoys
     correctAnswer: 'Daniel Baldy (SPD)',
     explanation:
-      'Daniel Baldy hat als einzige Person "Taylor Swift" im Bundestag erwähnt – in einer Rede über Cybersicherheit!',
+      'Daniel Baldy hat als einzige Person "Taylor Swift" im Bundestag erwähnt!',
     swiftie: { name: 'Daniel Baldy', party: 'SPD' },
     decoys: [
       { name: 'Ricarda Lang', party: 'GRÜNE' },

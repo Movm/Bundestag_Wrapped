@@ -17,7 +17,7 @@ export const INFO_SLIDES: Record<string, InfoSlideContent> = {
   'info-topics': {
     emoji: '📊',
     title: 'Themen-Analyse',
-    body: 'Wir haben alle Bundestagsreden mit KI analysiert und 12 Themenbereiche identifiziert – von Finanzen über Klima bis Justiz. Tippe auf ein Thema, um zu sehen, welche Parteien es am meisten diskutieren.',
+    body: 'Wir haben alle Bundestagsreden analysiert und 13 Themenbereiche identifiziert – von Finanzen über Klima bis Justiz. Aber worüber spricht Berlin?',
   },
   'info-party-topics': {
     emoji: '',
@@ -26,18 +26,18 @@ export const INFO_SLIDES: Record<string, InfoSlideContent> = {
   },
   'info-signature': {
     emoji: '📊',
-    title: 'Was sind Signature Words?',
-    body: 'Signature Words sind Wörter, die eine Partei im Vergleich zu anderen besonders häufig verwendet. Ein hoher Ratio zeigt, dass diese Partei das Wort viel öfter nutzt als der Durchschnitt.',
+    title: 'Was macht die Parteien aus?',
+    body: 'Signature Words sind Wörter, die eine Partei im Vergleich zu anderen besonders häufig verwendet.',
   },
   'info-speeches': {
     emoji: '🎤',
     title: 'Wer redet am meisten?',
-    body: 'Friedrich Merz führt die Redezeit-Statistik an – als Kanzler beantwortet er viele Fragen in der Fragestunde. Die längste Einzelrede hielt jedoch Lars Klingbeil mit 5.977 Wörtern (knapp vor Merz). Die CDU/CSU hat die meisten Redner:innen, weil sie die größte Fraktion stellt.',
+    body: 'Friedrich Merz führt die Redezeit-Statistik an – als Kanzler beantwortet er viele Fragen in der Fragestunde. Die längste Einzelrede hielt jedoch Lars Klingbeil mit 5.977 Wörtern (knapp vor Merz).',
   },
   'info-drama': {
     emoji: '🎭',
     title: 'Zwischenrufe im Bundestag',
-    body: 'Zwischenrufe sind spontane Reaktionen während Reden. Oppositionsparteien rufen häufiger dazwischen – die AfD als größte Oppositionsfraktion führt diese Statistik überdeutlich an.',
+    body: 'Zwischenrufe sind spontane Reaktionen während Reden - Positiv oder Negativ. Oppositionsparteien rufen häufiger dazwischen – die AfD als größte Oppositionsfraktion führt diese Statistik an. Überdeutlich.',
   },
   'info-moin': {
     emoji: '🌊',
@@ -57,6 +57,6 @@ export const INFO_SLIDES: Record<string, InfoSlideContent> = {
   'info-discriminatory': {
     emoji: '⚠️',
     title: 'Diskriminierende Sprache',
-    body: 'Wir tracken vier Kategorien: fremdenfeindlich (z.B. "Überfremdung"), homophob (z.B. "Genderideologie"), islamophob (z.B. "Islamisierung") und Dog Whistles (z.B. "Remigration"). Der Score zeigt Begriffe pro 1.000 Wörter.',
+    body: 'Wir tracken vier Kategorien: fremdenfeindlich (z.B. "Überfremdung"), homophob (z.B. "Genderideologie"), islamophob (z.B. "Islamisierung") und Dog Whistles (z.B. "Remigration"). Aber wie oft verwenden die Parteien diskriminierende oder herablassende Sprache pro 1000 Wörter?',
   },
 };

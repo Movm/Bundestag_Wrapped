@@ -278,7 +278,7 @@ export function getBackgroundTheme(slideId: string): BackgroundTheme {
   }
 
   // Extract section from slide ID (e.g., 'quiz-topics' → 'topics')
-  const section = slideId.replace(/^(intro|quiz|info|reveal|chart)-/, '');
+  const section = slideId.replace(/^(intro|quiz|info|reveal|chart|details)-/, '');
   return SECTION_BACKGROUNDS[section] || 'intro';
 }
 

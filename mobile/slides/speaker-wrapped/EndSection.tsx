@@ -1,5 +1,5 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { View, Text, StyleSheet, Dimensions, Pressable, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, Pressable, ActivityIndicator } from 'react-native';
 import Animated, { FadeIn, FadeInUp, ZoomIn } from 'react-native-reanimated';
 import { useRouter } from 'expo-router';
 import { captureRef } from 'react-native-view-shot';
@@ -8,8 +8,7 @@ import { SPEAKER_CONTENT } from '@/shared/speaker-wrapped';
 import { shareImage } from '../../lib/share-utils';
 import { SpeakerShareCanvasSkia } from '../../components/SpeakerShareCanvasSkia';
 import type { SpeakerWrapped } from '~/types/wrapped';
-
-const { height: SCREEN_HEIGHT } = Dimensions.get('window');
+import { SpeakerSlideContainer } from './shared';
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
 interface EndSectionProps {
@@ -85,7 +84,7 @@ export function EndSection({ data, onRestart }: EndSectionProps) {
   }, [imageUri, isSharing]);
 
   return (
-    <View style={styles.container}>
+    <SpeakerSlideContainer>
       {/* Hidden canvas for share image capture */}
       <View style={styles.hiddenCanvas}>
         <View ref={canvasRef} collapsable={false}>
@@ -172,19 +171,11 @@ export function EndSection({ data, onRestart }: EndSectionProps) {
           </AnimatedPressable>
         </View>
       </Animated.View>
-    </View>
+    </SpeakerSlideContainer>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    height: SCREEN_HEIGHT,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 24,
-    paddingTop: 100,
-    backgroundColor: '#0a0a0a',
-  },
   hiddenCanvas: {
     position: 'absolute',
     top: -9999,

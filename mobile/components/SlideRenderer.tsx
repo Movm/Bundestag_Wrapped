@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
-import { View, Text, StyleSheet, Pressable } from 'react-native';
+import { View, Text, StyleSheet, Pressable, Linking } from 'react-native';
+import { END_SLIDE_CONTENT } from '@/shared/end-slide';
 import { useRouter } from 'expo-router';
 import type { WrappedData } from '@/data/wrapped';
 import { QUIZZES } from '@/data/quizzes';
@@ -12,15 +13,20 @@ import {
   SlideContainer,
 } from '../slides/shared';
 import { TopicsRevealSlide } from '../slides/TopicsRevealSlide';
+import { TopicsDetailsSlide } from '../slides/TopicsDetailsSlide';
 import { PartyTopicsRevealSlide } from '../slides/PartyTopicsRevealSlide';
+import { PartyTopicsDetailsSlide } from '../slides/PartyTopicsDetailsSlide';
 import { VocabularyRevealSlide } from '../slides/VocabularyRevealSlide';
+import { VocabularyDetailsSlide } from '../slides/VocabularyDetailsSlide';
 import { SpeechesChartSlide } from '../slides/SpeechesChartSlide';
+import { SpeechesDetailsSlide } from '../slides/SpeechesDetailsSlide';
 import { DramaRevealSlide } from '../slides/DramaRevealSlide';
 import { DiscriminatoryRevealSlide } from '../slides/DiscriminatoryRevealSlide';
 import { CommonWordsRevealSlide } from '../slides/CommonWordsRevealSlide';
 import { MoinSlide } from '../slides/MoinSlide';
 import { SwiftieSlide } from '../slides/SwiftieSlide';
 import { ToneRevealSlide } from '../slides/ToneRevealSlide';
+import { ToneDetailsSlide } from '../slides/ToneDetailsSlide';
 import { GenderRevealSlide } from '../slides/GenderRevealSlide';
 import { ShareSlide } from '../slides/ShareSlide';
 
@@ -34,16 +40,20 @@ export const SLIDES = [
   'quiz-topics',
   'info-topics',
   'reveal-topics',
+  'details-topics',
   'info-party-topics',
   'reveal-party-topics',
+  'details-party-topics',
   'intro-vocabulary',
   'quiz-signature',
   'info-signature',
   'reveal-signature',
+  'details-signature',
   'intro-speeches',
   'quiz-speeches',
   'info-speeches',
   'chart-speeches',
+  'details-speeches',
   'intro-drama',
   'quiz-drama',
   'info-drama',
@@ -66,6 +76,7 @@ export const SLIDES = [
   'quiz-tone',
   'info-tone',
   'reveal-tone',
+  'details-tone',
   'quiz-gender',
   'info-gender',
   'reveal-gender',
@@ -131,26 +142,42 @@ function EndSlide({ onRestart }: { onRestart?: () => void }) {
   return (
     <SlideContainer>
       <View style={styles.endContent}>
-        <Text style={styles.endEmoji}>🎉</Text>
-        <Text style={styles.endTitle}>Das war's!</Text>
-        <Text style={styles.endSubtitle}>Bundestag Wrapped 2025</Text>
+        {/* Header */}
+        <Text style={styles.endLabel}>{END_SLIDE_CONTENT.header.label}</Text>
+        <Text style={styles.endTitle}>{END_SLIDE_CONTENT.header.title}</Text>
 
+        {/* Personal Message */}
+        <View style={styles.endMessage}>
+          <Text style={styles.endMessageText}>
+            {END_SLIDE_CONTENT.message.primary}
+          </Text>
+        </View>
+
+        {/* Social Links */}
+        <View style={styles.socialRow}>
+          {END_SLIDE_CONTENT.socialLinks.map((link) => (
+            <Pressable
+              key={link.label}
+              style={styles.socialButton}
+              onPress={() => Linking.openURL(link.url)}
+            >
+              <Text style={styles.socialButtonText}>{link.label}</Text>
+            </Pressable>
+          ))}
+        </View>
+
+        {/* Action Buttons */}
         <View style={styles.endButtons}>
           <Pressable style={styles.restartButton} onPress={onRestart}>
-            <Text style={styles.restartButtonText}>Nochmal starten</Text>
+            <Text style={styles.restartButtonText}>{END_SLIDE_CONTENT.buttons.restart}</Text>
           </Pressable>
           <Pressable
             style={styles.speakerButton}
             onPress={() => router.push('/')}
           >
-            <Text style={styles.speakerButtonText}>Abgeordnete ansehen</Text>
+            <Text style={styles.speakerButtonText}>{END_SLIDE_CONTENT.buttons.speakers}</Text>
           </Pressable>
         </View>
-
-        <Text style={styles.endCredits}>
-          Daten: Offene Parlamentsdaten{'\n'}
-          Made with ❤️ in Berlin
-        </Text>
       </View>
     </SlideContainer>
   );
@@ -232,14 +259,26 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'reveal-topics':
       return <TopicsRevealSlide slideIndex={slideIndex} />;
 
+    case 'details-topics':
+      return <TopicsDetailsSlide slideIndex={slideIndex} />;
+
     case 'reveal-party-topics':
       return <PartyTopicsRevealSlide slideIndex={slideIndex} />;
+
+    case 'details-party-topics':
+      return <PartyTopicsDetailsSlide slideIndex={slideIndex} />;
 
     case 'reveal-signature':
       return <VocabularyRevealSlide slideIndex={slideIndex} />;
 
+    case 'details-signature':
+      return <VocabularyDetailsSlide slideIndex={slideIndex} />;
+
     case 'chart-speeches':
       return <SpeechesChartSlide slideIndex={slideIndex} />;
+
+    case 'details-speeches':
+      return <SpeechesDetailsSlide slideIndex={slideIndex} />;
 
     case 'reveal-drama':
       return <DramaRevealSlide drama={data.drama} />;
@@ -293,6 +332,9 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'reveal-tone':
       return <ToneRevealSlide slideIndex={slideIndex} />;
 
+    case 'details-tone':
+      return <ToneDetailsSlide slideIndex={slideIndex} />;
+
     case 'reveal-gender':
       return <GenderRevealSlide genderAnalysis={data.genderAnalysis} />;
 
@@ -325,7 +367,22 @@ export const SlideRenderer = memo(function SlideRenderer({
     // ─────────────────────────────────────────────────────────
     // Info Slides (use shared INFO_SLIDES data)
     // ─────────────────────────────────────────────────────────
-    case 'info-disclaimer':
+    case 'info-disclaimer': {
+      const info = INFO_SLIDES[slide];
+      if (!info) return <PlaceholderSlide slideType={slide} />;
+
+      return (
+        <SlideInfo
+          slideId={slide}
+          slideIndex={slideIndex}
+          emoji={info.emoji}
+          title={info.title}
+          body={info.body}
+          showScrollIndicator
+        />
+      );
+    }
+
     case 'info-topics':
     case 'info-party-topics':
     case 'info-signature':
@@ -390,26 +447,50 @@ const styles = StyleSheet.create({
   },
   endContent: {
     alignItems: 'center',
+    paddingHorizontal: 24,
   },
-  endEmoji: {
-    fontSize: 64,
-    marginBottom: 16,
+  endLabel: {
+    fontSize: 14,
+    color: 'rgba(255, 255, 255, 0.5)',
+    textTransform: 'uppercase',
+    letterSpacing: 2,
+    marginBottom: 4,
   },
   endTitle: {
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: '900',
-    color: '#ffffff',
-    marginBottom: 8,
+    color: '#ec4899',
+    marginBottom: 16,
   },
-  endSubtitle: {
-    fontSize: 18,
-    color: 'rgba(255, 255, 255, 0.6)',
+  endMessage: {
+    marginBottom: 20,
+  },
+  endMessageText: {
+    fontSize: 15,
+    color: 'rgba(255, 255, 255, 0.8)',
+    textAlign: 'center',
+    lineHeight: 22,
+  },
+  socialRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: 8,
     marginBottom: 24,
+  },
+  socialButton: {
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+    borderRadius: 20,
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+  },
+  socialButtonText: {
+    color: 'rgba(255, 255, 255, 0.7)',
+    fontSize: 13,
   },
   endButtons: {
     width: '100%',
     gap: 12,
-    marginBottom: 24,
   },
   restartButton: {
     width: '100%',
@@ -428,16 +509,12 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     borderRadius: 12,
     backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.2)',
   },
   speakerButtonText: {
     color: '#ffffff',
     fontSize: 16,
     textAlign: 'center',
-  },
-  endCredits: {
-    fontSize: 14,
-    color: 'rgba(255, 255, 255, 0.4)',
-    textAlign: 'center',
-    lineHeight: 22,
   },
 });
