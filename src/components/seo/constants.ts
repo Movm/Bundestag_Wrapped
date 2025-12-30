@@ -4,7 +4,7 @@ export const SITE_CONFIG = {
   defaultTitle: 'Bundestag Wrapped 2025 - Deine Bundestagsstatistiken',
   defaultDescription:
     'Entdecke die Sprache des Bundestags: 2,5 Millionen Worter, 4.200 Reden, 600 Abgeordnete. Interaktive Statistiken zur 21. Wahlperiode.',
-  defaultOgImage: '/logo.png', // TODO: Replace with custom 1200x630 og-default.png
+  defaultOgImage: '/og-image.png',
 } as const;
 
 export const PAGE_META = {
