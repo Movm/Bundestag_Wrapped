@@ -82,12 +82,12 @@ export default function SpeakerWrappedScreen() {
         >
           <View className="flex-row flex-wrap">
             <StatItem
-              label="Reden"
-              value={speaker.speeches.toString()}
+              label="Wortbeiträge"
+              value={(speaker.speeches + speaker.wortbeitraege).toString()}
             />
             <StatItem
-              label="Wortbeiträge"
-              value={speaker.wortbeitraege.toString()}
+              label="davon Reden"
+              value={speaker.speeches.toString()}
             />
             <StatItem
               label="Wörter gesamt"

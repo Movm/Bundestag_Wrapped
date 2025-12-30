@@ -91,7 +91,7 @@ export default function AbgeordneteTab() {
             <Text style={styles.partyText}>{item.party}</Text>
           </View>
         </View>
-        <Text style={styles.speechCount}>{item.speeches} Reden</Text>
+        <Text style={styles.speechCount}>{item.speeches + (item.wortbeitraege || 0)} Wortbeiträge</Text>
       </AnimatedPressable>
     );
   }, [handleSpeakerPress]);
