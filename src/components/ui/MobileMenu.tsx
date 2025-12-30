@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
-import { Home, BookOpen, Shield, FileText, ExternalLink, Users, X } from 'lucide-react';
+import { Home, BookOpen, Shield, FileText, ExternalLink, Users, X, RotateCcw } from 'lucide-react';
+import { clearWrappedProgress } from '@/lib/wrapped-storage';
+import { useQuizStore } from '@/stores/quizStore';
 
 interface NavItem {
   href: string;
@@ -37,6 +39,15 @@ export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProp
   const isDark = variant === 'dark';
   const location = useLocation();
   const currentPath = location.pathname;
+  const isMainPage = currentPath === '/';
+  const resetQuiz = useQuizStore((state) => state.reset);
+
+  const handleRestart = () => {
+    onClose();
+    clearWrappedProgress();
+    resetQuiz();
+    window.location.reload();
+  };
 
   // Focus trap and focus management
   useEffect(() => {
@@ -219,6 +230,30 @@ export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProp
                     </li>
                   );
                 })}
+
+                {/* Restart option - only on main wrapped page */}
+                {isMainPage && (
+                  <li>
+                    <button
+                      onClick={handleRestart}
+                      className={`group relative flex items-center gap-3 px-4 py-3.5 rounded-xl transition-colors w-full text-left
+                        ${isDark
+                          ? 'text-white/70 hover:text-white hover:bg-white/5'
+                          : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                        }`}
+                    >
+                      <span className={`flex items-center justify-center w-9 h-9 rounded-lg transition-colors
+                        ${isDark
+                          ? 'bg-white/5 text-white/50 group-hover:bg-pink-500/10 group-hover:text-pink-400'
+                          : 'bg-gray-100 text-gray-400 group-hover:text-pink-500'
+                        }`}
+                      >
+                        <RotateCcw size={20} />
+                      </span>
+                      <span className="font-medium">Neu starten</span>
+                    </button>
+                  </li>
+                )}
               </ul>
 
               {/* Pink separator line */}
