@@ -50,6 +50,10 @@ const PROJECTION_FIELDS = {
 // Full-text endpoints carry the entire document text per row — replace with a snippet.
 const TEXT_SNIPPET_CHARS = 600;
 
+// Below this hit count, a title-substring search likely under-covered the topic,
+// so we surface a hint pointing at semantic search.
+const LOW_RECALL_THRESHOLD = 5;
+
 function pickFields(obj, fields) {
   const out = {};
   for (const key of fields) {
@@ -147,7 +151,15 @@ To find a phrase inside document text, use bundestag_search_document_sections (s
     try {
       const result = await api.searchDrucksachen(params, { useCache: params.useCache });
 
-      return buildListResponse('drucksache', params, result);
+      const response = buildListResponse('drucksache', params, result);
+      // `query` is a literal DIP title-substring match, so a topical term
+      // ("Klimaschutz") only finds documents with that exact word in the title
+      // and silently misses the rest. When the hit count is low, nudge the
+      // caller toward semantic search for full topic coverage.
+      if (params.query && response.totalResults < LOW_RECALL_THRESHOLD) {
+        response.hint = `'query' matches the document TITLE literally, so this found only ${response.totalResults} document(s) with "${params.query}" in the title — not all documents about the topic. For full concept coverage use bundestag_semantic_search; to search inside document text use bundestag_search_drucksachen_text.`;
+      }
+      return response;
     } catch (err) {
       return {
         error: true,
