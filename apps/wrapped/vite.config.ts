@@ -111,11 +111,13 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vendor-react': ['react', 'react-dom', 'react-router'],
-          'vendor-query': ['@tanstack/react-query'],
-          'vendor-motion': ['motion'],
-          'vendor-icons': ['lucide-react'],
+        // Vite 8's bundler only accepts the function form of manualChunks.
+        manualChunks: (id) => {
+          if (!id.includes('node_modules')) return
+          if (/[\\/](react|react-dom|react-router)[\\/]/.test(id)) return 'vendor-react'
+          if (id.includes('@tanstack')) return 'vendor-query'
+          if (/[\\/]motion[\\/]/.test(id)) return 'vendor-motion'
+          if (id.includes('lucide-react')) return 'vendor-icons'
         },
       },
     },
