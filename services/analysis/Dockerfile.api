@@ -44,6 +44,12 @@ COPY src/ /app/src/
 ENV PYTHONPATH=/app/src
 ENV PYTHONUNBUFFERED=1
 
+# Drop root: run as an unprivileged user. Deps + the spaCy model live in the
+# world-readable site-packages, so the service needs no runtime writes.
+RUN useradd --system --uid 10001 --create-home appuser \
+    && chown -R appuser:appuser /app/src
+USER appuser
+
 # Expose API port
 EXPOSE 8000
 

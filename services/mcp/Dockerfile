@@ -37,11 +37,16 @@ LABEL mcp.endpoint="/mcp"
 
 WORKDIR /app
 ENV NODE_ENV=production
-# Copy the already-built dependency tree + source from the build stage
-COPY --from=build /app/node_modules ./node_modules
-COPY --from=build /app/package.json ./package.json
-COPY --from=build /app/src ./src
-RUN mkdir -p /app/data
+# Copy the already-built dependency tree + source, owned by the unprivileged
+# "node" user (uid 1000) that ships with node:22-slim.
+COPY --from=build --chown=node:node /app/node_modules ./node_modules
+COPY --from=build --chown=node:node /app/package.json ./package.json
+COPY --from=build --chown=node:node /app/src ./src
+# Writable SQLite cache dir owned by the runtime user
+RUN mkdir -p /app/data && chown -R node:node /app/data
+
+# Drop root for the running process
+USER node
 
 EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
