@@ -1,0 +1,57 @@
+{
+  "expo": {
+    "name": "Bundestag Wrapped",
+    "slug": "bundestag-wrapped",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "scheme": "bundestag-wrapped",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "de.bundestag.wrapped",
+      "backgroundColor": "#0a0a0f",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "buildNumber": "8"
+    },
+    "android": {
+      "package": "de.bundestag.wrapped",
+      "icon": "./assets/icon.png",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "monochromeImage": "./assets/monochrome-icon.png",
+        "backgroundColor": "#0a0a0f"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "versionCode": 2
+    },
+    "plugins": [
+      "expo-router",
+      "expo-notifications",
+      "expo-audio",
+      "expo-asset",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "backgroundColor": "#0a0a0f"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "e90065cb-b810-4f0a-9323-ba6a6253d841"
+      }
+    },
+    "owner": "moritzius"
+  }
+}
