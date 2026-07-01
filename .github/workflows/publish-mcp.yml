@@ -1,0 +1,86 @@
+name: Publish MCP image
+
+# Build the Bundestag MCP container in CI and push it to GHCR, so Coolify pulls a
+# prebuilt image instead of building on the (resource-constrained) deploy host.
+# The host's flaky SSH made in-place `docker build` + rolling healthchecks
+# unreliable; "pull + swap" is faster and takes build load off the box.
+#
+# Coolify side (one-time, in the UI): set the `bundestag-mcp` app's build pack to
+# "Docker Image" = ghcr.io/<owner>/bundestag-mcp:main, and either make the GHCR
+# package public or add a registry pull credential. Then merges here build the
+# image in Actions and (optionally) trigger a redeploy via the step below.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'services/mcp/**'
+      - '.github/workflows/publish-mcp.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: publish-mcp-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  # Lowercase, matching the existing ghcr.io/movm/bundestag-analysis image.
+  # (github.repository_owner is "Movm" — mixed case — which GHCR/Docker reject.)
+  IMAGE: ghcr.io/movm/bundestag-mcp
+
+jobs:
+  build-push:
+    name: Build & push services/mcp → GHCR
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Image metadata (tags + labels)
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.IMAGE }}
+          tags: |
+            type=raw,value=main,enable={{is_default_branch}}
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=sha,format=long
+
+      - name: Build & push
+        uses: docker/build-push-action@v6
+        with:
+          context: services/mcp
+          file: services/mcp/Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          provenance: false
+
+      # Optional: kick a Coolify redeploy so the app re-pulls the new :main image.
+      # Skips cleanly until COOLIFY_API_TOKEN (secret) and COOLIFY_MCP_APP_UUID
+      # (variable) are configured in the repo settings.
+      - name: Trigger Coolify redeploy
+        env:
+          COOLIFY_API_TOKEN: ${{ secrets.COOLIFY_API_TOKEN }}
+          APP_UUID: ${{ vars.COOLIFY_MCP_APP_UUID }}
+        run: |
+          if [ -z "$COOLIFY_API_TOKEN" ] || [ -z "$APP_UUID" ]; then
+            echo "COOLIFY_API_TOKEN or COOLIFY_MCP_APP_UUID not set — image pushed, skipping auto-redeploy."
+            exit 0
+          fi
+          echo "Triggering Coolify redeploy for app $APP_UUID"
+          curl -fsS "https://app.coolify.io/api/v1/deploy?uuid=${APP_UUID}&force=false" \
+            -H "Authorization: Bearer ${COOLIFY_API_TOKEN}"
