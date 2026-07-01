@@ -58,16 +58,51 @@ function pickFields(obj, fields) {
   return out;
 }
 
-function projectRow(endpoint, row) {
+/**
+ * Build a snippet centred on the first occurrence of the search term, so the
+ * caller sees the actual matching passage instead of the document's opening
+ * (which for Plenarprotokolle is just the table-of-contents front matter).
+ * Falls back to the document head when the term can't be located in the raw
+ * text (e.g. the DIP match came from normalised/hyphenated text).
+ */
+function buildTextSnippet(text, query, maxChars) {
+  if (text.length <= maxChars) return text;
+
+  let idx = -1;
+  if (query && typeof query === 'string') {
+    const haystack = text.toLowerCase();
+    // Try the whole phrase first, then the longest individual tokens.
+    const terms = [query, ...query.split(/\s+/)]
+      .map((t) => t.trim().toLowerCase())
+      .filter((t) => t.length >= 3)
+      .sort((a, b) => b.length - a.length);
+    for (const term of terms) {
+      idx = haystack.indexOf(term);
+      if (idx !== -1) break;
+    }
+  }
+
+  if (idx === -1) {
+    return text.slice(0, maxChars) + '…';
+  }
+
+  const lead = Math.floor(maxChars * 0.3);
+  const start = Math.max(0, idx - lead);
+  const end = Math.min(text.length, start + maxChars);
+  let snippet = text.slice(start, end);
+  if (start > 0) snippet = '…' + snippet;
+  if (end < text.length) snippet = snippet + '…';
+  return snippet;
+}
+
+function projectRow(endpoint, row, query) {
   if (endpoint === 'drucksache-text' || endpoint === 'plenarprotokoll-text') {
     const base = endpoint === 'drucksache-text' ? PROJECTION_FIELDS.drucksache : PROJECTION_FIELDS.plenarprotokoll;
     const projected = pickFields(row, base);
     const text = typeof row.text === 'string' ? row.text : (row.text?.text || '');
     if (text) {
       projected.textLength = text.length;
-      projected.textSnippet = text.length > TEXT_SNIPPET_CHARS
-        ? text.slice(0, TEXT_SNIPPET_CHARS) + '…'
-        : text;
+      projected.textSnippet = buildTextSnippet(text, query, TEXT_SNIPPET_CHARS);
     }
     return projected;
   }
@@ -86,7 +121,7 @@ function buildListResponse(endpoint, params, result) {
   const limit = params.limit || config.dipApi.defaultLimit;
   const capped = raw.slice(0, limit);
   const useFull = params.fields === 'full';
-  const results = useFull ? capped : capped.map((row) => projectRow(endpoint, row));
+  const results = useFull ? capped : capped.map((row) => projectRow(endpoint, row, params.query));
 
   const sizeAnalysis = analyzeSize(JSON.stringify(results), { language: 'german' });
 
