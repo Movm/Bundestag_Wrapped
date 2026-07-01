@@ -20,7 +20,7 @@ import { analysisTools } from './tools/analysis.js';
 import { clientConfigTool } from './tools/clientConfig.js';
 import { getCacheStats } from './utils/cache.js';
 import { debug, info, error, getStats } from './utils/logger.js';
-import { allResources } from './resources/info.js';
+import { allResources, SERVER_INSTRUCTIONS } from './resources/info.js';
 import { allResourceTemplates, registerResourceTemplates } from './resources/templates.js';
 import { allPrompts, registerPrompts } from './prompts/index.js';
 import {
@@ -78,6 +78,10 @@ function createMcpServer(baseUrl) {
   const server = new McpServer({
     name: 'bundestag-mcp',
     version: '1.0.0'
+  }, {
+    // Injected into the client's system prompt via the initialize result, so the
+    // model gets tool-selection guidance without having to read a resource first.
+    instructions: SERVER_INSTRUCTIONS
   });
 
   // === MCP RESOURCES ===
@@ -113,6 +117,11 @@ function createMcpServer(baseUrl) {
     'bundestag_trigger_protocol_indexing'
   ]);
 
+  // Destructive mutations (data loss) — clients should gate these behind confirmation.
+  const DESTRUCTIVE_TOOLS = new Set([
+    'bundestag_reindex_protocols' // deletes all protocol chunks before rebuilding
+  ]);
+
   // Register all search/entity tools + analysis tools
   const allToolsCombined = [...allTools, ...semanticSearchTools, ...analysisTools];
   for (const tool of allToolsCombined) {
@@ -122,7 +131,7 @@ function createMcpServer(baseUrl) {
       tool.name,
       tool.description,
       tool.inputSchema,
-      { readOnlyHint: readOnly, openWorldHint: true },
+      { readOnlyHint: readOnly, destructiveHint: DESTRUCTIVE_TOOLS.has(tool.name), openWorldHint: true },
       async (params) => {
         const startedAt = Date.now();
         try {

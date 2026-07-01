@@ -115,9 +115,11 @@ function buildListResponse(endpoint, params, result) {
 
 export const searchDrucksachenTool = {
   name: 'bundestag_search_drucksachen',
-  description: `Search Bundestag Drucksachen (printed parliamentary documents).
+  description: `Search Bundestag Drucksachen (printed parliamentary documents) by metadata (title, type, date, author).
 Includes: Gesetzentwürfe (bills), Anträge (motions), Anfragen (inquiries), and more.
-Use this to find legislative documents, government proposals, and parliamentary inquiries.`,
+Use this to find legislative documents, government proposals, and parliamentary inquiries.
+For a concept/topic when you don't know exact wording, prefer bundestag_semantic_search.
+To find a phrase inside document text, use bundestag_search_document_sections (semantic) or bundestag_search_drucksachen_text (raw).`,
 
   inputSchema: {
     query: z.string().optional()
@@ -590,10 +592,12 @@ progress of bills through parliament.`,
 
 export const searchDrucksachenTextTool = {
   name: 'bundestag_search_drucksachen_text',
-  description: `Full-text search within Drucksachen content.
+  description: `Raw full-text search within Drucksachen content (DIP API).
 Unlike bundestag_search_drucksachen which searches metadata/titles,
 this searches the actual document text. Use this to find specific
-phrases, legal references, or content within parliamentary documents.`,
+phrases, legal references, or exact wording within parliamentary documents.
+For conceptual/semantic matching (related terms, not exact phrases), prefer
+bundestag_search_document_sections, which searches vectorized document chunks.`,
 
   inputSchema: {
     query: z.string()
@@ -625,10 +629,12 @@ phrases, legal references, or content within parliamentary documents.`,
 
 export const searchPlenarprotokolleTextTool = {
   name: 'bundestag_search_plenarprotokolle_text',
-  description: `Full-text search within Plenarprotokoll transcripts.
+  description: `Raw full-text search within Plenarprotokoll transcripts (DIP API).
 Unlike bundestag_search_plenarprotokolle which searches metadata,
 this searches actual speech transcripts. Use this to find specific
-quotes, debates on topics, or MP statements in plenary sessions.`,
+quotes or exact wording in plenary sessions.
+For semantic search of what someone said about a topic (related terms, per-speech
+results with speaker/party), prefer bundestag_search_speeches.`,
 
   inputSchema: {
     query: z.string()
