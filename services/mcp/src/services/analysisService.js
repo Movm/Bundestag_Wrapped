@@ -10,6 +10,36 @@ import * as logger from '../utils/logger.js';
 const ANALYSIS_URL = config.analysis?.url || 'http://localhost:8000';
 
 /**
+ * Format a FastAPI error body into a readable message.
+ * FastAPI returns `detail` as a string for raised HTTPExceptions, but as an
+ * array of {loc, msg, type} objects for 422 validation errors. Passing that
+ * array/object straight to `new Error()` produced the useless "[object Object]"
+ * surfaced to MCP clients. Normalise every shape into a plain string.
+ * @param {unknown} detail - The `detail` field from a FastAPI error response
+ * @param {string} fallback - Message to use when detail is empty/unusable
+ * @returns {string}
+ */
+function formatErrorDetail(detail, fallback) {
+  if (!detail) return fallback;
+  if (typeof detail === 'string') return detail;
+  if (Array.isArray(detail)) {
+    const msgs = detail
+      .map((d) => {
+        if (typeof d === 'string') return d;
+        const loc = Array.isArray(d?.loc) ? d.loc.join('.') : d?.loc;
+        return [loc, d?.msg].filter(Boolean).join(': ');
+      })
+      .filter(Boolean);
+    if (msgs.length > 0) return msgs.join('; ');
+  }
+  try {
+    return JSON.stringify(detail);
+  } catch {
+    return fallback;
+  }
+}
+
+/**
  * Check if analysis service is available
  * @returns {Promise<boolean>}
  */
@@ -55,7 +85,7 @@ export async function extractSpeeches(text) {
 
   if (!response.ok) {
     const error = await response.json().catch(() => ({}));
-    throw new Error(error.detail || `Extract failed: ${response.status}`);
+    throw new Error(formatErrorDetail(error.detail, `Extract failed: ${response.status}`));
   }
 
   const result = await response.json();
@@ -97,7 +127,7 @@ export async function analyzeText(text, options = {}) {
 
   if (!response.ok) {
     const error = await response.json().catch(() => ({}));
-    throw new Error(error.detail || `Analysis failed: ${response.status}`);
+    throw new Error(formatErrorDetail(error.detail, `Analysis failed: ${response.status}`));
   }
 
   const result = await response.json();
@@ -125,7 +155,7 @@ export async function analyzeTone(text) {
 
   if (!response.ok) {
     const error = await response.json().catch(() => ({}));
-    throw new Error(error.detail || `Tone analysis failed: ${response.status}`);
+    throw new Error(formatErrorDetail(error.detail, `Tone analysis failed: ${response.status}`));
   }
 
   const result = await response.json();
@@ -153,7 +183,7 @@ export async function classifyTopics(text) {
 
   if (!response.ok) {
     const error = await response.json().catch(() => ({}));
-    throw new Error(error.detail || `Topic classification failed: ${response.status}`);
+    throw new Error(formatErrorDetail(error.detail, `Topic classification failed: ${response.status}`));
   }
 
   const result = await response.json();
@@ -182,7 +212,7 @@ export async function getSpeakerProfile(speakerName, speeches) {
 
   if (!response.ok) {
     const error = await response.json().catch(() => ({}));
-    throw new Error(error.detail || `Speaker profile failed: ${response.status}`);
+    throw new Error(formatErrorDetail(error.detail, `Speaker profile failed: ${response.status}`));
   }
 
   const result = await response.json();
@@ -225,7 +255,7 @@ export async function compareParties(speeches, options = {}) {
 
   if (!response.ok) {
     const error = await response.json().catch(() => ({}));
-    throw new Error(error.detail || `Party comparison failed: ${response.status}`);
+    throw new Error(formatErrorDetail(error.detail, `Party comparison failed: ${response.status}`));
   }
 
   const result = await response.json();

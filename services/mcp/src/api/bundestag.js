@@ -359,7 +359,10 @@ export async function searchVorgangspositionen(params = {}, options = {}) {
 export async function searchPersonen(params = {}, options = {}) {
   const apiParams = {};
 
-  if (params.query) apiParams['f.name'] = params.query;
+  // DIP's /person endpoint has no `f.name` filter — the correct filter is
+  // `f.person` (matches a name token, e.g. "Habeck"). Sending `f.name` was
+  // silently ignored, so every query returned all persons (newest first).
+  if (params.query) apiParams['f.person'] = params.query;
   if (params.wahlperiode) apiParams['f.wahlperiode'] = params.wahlperiode;
   if (params.fraktion) apiParams['f.fraktion'] = params.fraktion;
   if (params.cursor) apiParams['cursor'] = params.cursor;
