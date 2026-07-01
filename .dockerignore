@@ -1,0 +1,21 @@
+# Root .dockerignore — build context is the monorepo root.
+# Keep the context small; Dockerfiles copy manifests + the one package they need.
+**/node_modules
+**/dist
+**/build
+**/.git
+.git
+**/.venv
+**/__pycache__
+**/*.pyc
+**/data
+**/web-output
+**/exports
+**/results
+**/.turbo
+**/coverage
+**/.expo
+**/*.log
+.DS_Store
+**/screenshots
+**/.pnpm-store

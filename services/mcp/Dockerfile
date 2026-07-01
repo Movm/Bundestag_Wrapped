@@ -1,46 +1,39 @@
-FROM node:20-slim
+# Bundestag MCP Server — container image (self-contained)
+#
+# Build context is THIS directory (services/mcp). The package has no
+# workspace-internal dependencies, so it builds standalone.
+#
+#   docker build -t bundestag-mcp services/mcp
+#
+# Coolify: build pack = Dockerfile, "Base Directory" = /services/mcp
 
-# Install curl for healthcheck and build tools for native modules (better-sqlite3)
+FROM node:22-slim
+# curl for the healthcheck; build toolchain for native modules (better-sqlite3)
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    python3 \
-    make \
-    g++ \
+    curl python3 make g++ ca-certificates \
     && rm -rf /var/lib/apt/lists/*
+# Pin pnpm to match the repo (honors package.json pnpm.onlyBuiltDependencies)
+RUN corepack enable && corepack prepare pnpm@10.0.0 --activate
 
-# OCI Image Labels
 LABEL org.opencontainers.image.title="Bundestag MCP Server"
 LABEL org.opencontainers.image.description="MCP Server for German Bundestag parliamentary documentation (DIP API)"
-LABEL org.opencontainers.image.source="https://github.com/Movm/bundestag-mcp"
-LABEL org.opencontainers.image.documentation="https://github.com/Movm/bundestag-mcp#readme"
-LABEL org.opencontainers.image.vendor="bundestag-mcp"
+LABEL org.opencontainers.image.source="https://github.com/Movm/bundestag"
 LABEL org.opencontainers.image.licenses="MIT"
-
-# MCP Discovery Labels
 LABEL mcp.discoverable="true"
 LABEL mcp.transport="streamable-http"
 LABEL mcp.endpoint="/mcp"
 
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
+# Install prod deps (better-sqlite3 native build approved via package.json pnpm config)
+COPY package.json ./
+RUN pnpm install --prod --no-frozen-lockfile
 
-# Install dependencies
-RUN npm ci --only=production
-
-# Copy source code
+# App source
 COPY src/ ./src/
-
-# Create data directory for SQLite state
 RUN mkdir -p /app/data
 
-# Expose port
 EXPOSE 3000
-
-# Health Check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
   CMD curl -f http://localhost:3000/health || exit 1
-
-# Start server
 CMD ["node", "src/index.js"]

@@ -1,0 +1,77 @@
+# Full-stack local bring-up for the Bundestag monorepo.
+#
+#   docker compose up --build
+#
+# Services:
+#   - qdrant    : vector DB for semantic search
+#   - analysis  : Python NLP + Wrapped API (spaCy)          :8000
+#   - mcp       : Node MCP server + HTTP API (DIP + Qdrant) :3000
+#   - wrapped   : React web app (static via nginx)          :8080 -> 80
+#
+# For Coolify you would typically deploy each app as its own Application
+# (see README "Deployment"); this compose file is for local dev / a single-box
+# Coolify "Docker Compose" resource.
+
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    volumes:
+      - qdrant_data:/qdrant/storage
+    environment:
+      - QDRANT__SERVICE__API_KEY=${QDRANT_API_KEY:-}
+    healthcheck:
+      test: ["CMD-SHELL", "timeout 5 bash -c '</dev/tcp/localhost/6333' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      start_period: 10s
+      retries: 3
+    restart: unless-stopped
+
+  analysis:
+    build:
+      context: ./services/analysis
+      dockerfile: Dockerfile.api
+    expose:
+      - "8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8000/health').raise_for_status()"]
+      interval: 30s
+      timeout: 10s
+      start_period: 60s # spaCy model load
+      retries: 3
+    restart: unless-stopped
+
+  mcp:
+    build:
+      context: ./services/mcp
+    ports:
+      - "3000:3000"
+    environment:
+      - DIP_API_KEY=${DIP_API_KEY:-OSOegLs.PR2lwJ1dwCeje9vTj7FPOt3hvpYKtwKkhw}
+      - PORT=3000
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - QDRANT_ENABLED=${QDRANT_ENABLED:-true}
+      - QDRANT_URL=http://qdrant:6333
+      - QDRANT_API_KEY=${QDRANT_API_KEY:-}
+      - MISTRAL_API_KEY=${MISTRAL_API_KEY:-}
+      - ANALYSIS_SERVICE_URL=http://analysis:8000
+      - INDEXER_STATE_PATH=/app/data/indexer-state.db
+    volumes:
+      - indexer_data:/app/data
+    depends_on:
+      qdrant:
+        condition: service_healthy
+      analysis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  wrapped:
+    build:
+      context: ./apps/wrapped
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+volumes:
+  qdrant_data:
+  indexer_data:

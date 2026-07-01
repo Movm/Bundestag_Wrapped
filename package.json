@@ -19,7 +19,7 @@
   "scripts": {
     "dev:web": "pnpm --filter bundestag-wrapped dev",
     "dev:mcp": "pnpm --filter bundestag-mcp dev",
-    "build": "pnpm --filter bundestag-wrapped --filter bundestag-mcp -r build",
+    "build": "pnpm --filter bundestag-wrapped build",
     "test": "pnpm -r test",
     "lint": "pnpm -r lint",
     "analysis:serve": "cd services/analysis && bundestag-analysis serve",
