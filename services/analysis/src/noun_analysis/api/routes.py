@@ -1,7 +1,7 @@
 """API route handlers for analysis endpoints."""
 
 from collections import Counter
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Query
 
 from ..analyzer import WordAnalyzer, AnalysisResult
 from ..parser import parse_speeches_from_protocol
@@ -366,9 +366,14 @@ async def get_speaker_profile(
 @router.post("/analysis/party-comparison", response_model=PartyComparisonResponse)
 async def compare_parties(
     speeches_input: SpeechesInput,
-    parties: list[str] | None = None,
-    wahlperiode: int = 21,
-    top_n: int = 20,
+    # Without an explicit Query() marker FastAPI treats `parties: list[str]` as a
+    # second *body* field, which flips the request into "embed" mode and makes it
+    # expect {"speeches_input": {...}, "parties": [...]}. The MCP client (like the
+    # speaker-profile call) posts the speeches object directly, so that mismatch
+    # 422'd every request ("body.speeches_input: Field required"). Force query.
+    parties: list[str] | None = Query(default=None),
+    wahlperiode: int = Query(default=21),
+    top_n: int = Query(default=20),
 ):
     """Compare parties based on their speeches.
 
