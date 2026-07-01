@@ -40,7 +40,18 @@ Access to the German Bundestag's official documentation (DIP API) plus a semanti
 | A bill's lifecycle | \`bundestag_search_vorgaenge\` → \`bundestag_get_vorgang\` → \`bundestag_search_vorgangspositionen\` |
 | A person and their activities | \`bundestag_search_personen\` → \`bundestag_search_aktivitaeten\` |
 | One document by ID | \`bundestag_get_*\` (run \`bundestag_estimate_size\` first for full text) |
-| Rhetoric / tone / topics | \`bundestag_speaker_profile\`, \`bundestag_analyze_tone\`, \`bundestag_classify_topics\`, \`bundestag_compare_parties\` (need the NLP service — check \`bundestag_analysis_health\`) |
+| Rhetoric / tone / topics | \`bundestag_speaker_profile\`, \`bundestag_compare_parties\` (two-step — see below), \`bundestag_analyze_tone\`, \`bundestag_classify_topics\` (need the NLP service — check \`bundestag_analysis_health\`) |
+
+## Analysis tools are two-step — do both steps yourself
+\`bundestag_speaker_profile\` and \`bundestag_compare_parties\` do **not** fetch data; they
+analyse speeches you supply. Never ask the user for speeches — fetch them first:
+- **Compare parties on a topic:** \`bundestag_search_speeches(query, limit: 100-200)\`, then
+  pass its \`results\` straight into \`bundestag_compare_parties(speeches: results)\`.
+- **Profile a speaker:** \`bundestag_search_speeches(speaker, limit: 50-100)\`, then pass its
+  \`results\` into \`bundestag_speaker_profile(speaker_name, speeches: results)\`.
+
+Search fields (\`speakerParty\`, \`speechType\`, \`firstName\`) are accepted and mapped
+automatically — forward the \`results\` array verbatim, no reshaping needed.
 
 Rule of thumb: **semantic** tools for meaning, **\`_text\`** tools for exact phrases,
 **metadata** search for structured filters. Read the \`bundestag://system-prompt\`
@@ -234,13 +245,13 @@ This returns:
 
 ## Efficient Tool Chaining
 
-**Get a speaker's rhetoric on a topic:**
-1. \`bundestag_semantic_search\` (speaker + topic, entityTypes: ["speech"])
-2. \`bundestag_speaker_profile\` (with results)
+**Get a speaker's rhetoric (do both steps automatically):**
+1. \`bundestag_search_speeches\` (speaker=<name>, limit 50-100)
+2. \`bundestag_speaker_profile\` (speaker_name=<name>, speeches = step 1's \`results\`)
 
-**Compare parties on a topic:**
-1. \`bundestag_semantic_search\` (topic, limit 100+)
-2. \`bundestag_compare_parties\` (with results)
+**Compare parties on a topic (do both steps automatically):**
+1. \`bundestag_search_speeches\` (query=<topic>, limit 100-200)
+2. \`bundestag_compare_parties\` (speeches = step 1's \`results\`; speakerParty is mapped automatically)
 
 **Track a bill completely:**
 1. \`bundestag_search_vorgaenge\` (find the Vorgang)

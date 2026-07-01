@@ -9,6 +9,61 @@ import { z } from 'zod';
 import * as analysisService from '../services/analysisService.js';
 
 // =============================================================================
+// Speech normalisation
+// =============================================================================
+
+/**
+ * Normalise speech objects so the output of bundestag_search_speeches (and
+ * bundestag_semantic_search) can be passed straight into the analysis tools.
+ *
+ * search_speeches returns `speakerParty` / `speechType` / `firstName` /
+ * `lastName` / `acadTitle`, but the analysis service groups on `party` and reads
+ * `speaker` / `type` / snake_case name fields. Without this mapping, a caller
+ * that forwards search results verbatim would lose the party (so party grouping
+ * silently produces nothing) — the friction that made the two-step workflow feel
+ * broken. Accept every shape and fill the canonical fields.
+ */
+function normalizeSpeeches(speeches) {
+  if (!Array.isArray(speeches)) return speeches;
+  return speeches.map((s) => {
+    const speaker = s.speaker
+      || [s.firstName || s.first_name, s.lastName || s.last_name].filter(Boolean).join(' ')
+      || undefined;
+    return {
+      ...s,
+      text: s.text,
+      party: s.party || s.speakerParty || s.fraktion || undefined,
+      speaker,
+      type: s.type || s.speechType || undefined,
+      category: s.category || undefined,
+      first_name: s.first_name || s.firstName || undefined,
+      last_name: s.last_name || s.lastName || undefined,
+      acad_title: s.acad_title || s.acadTitle || undefined
+    };
+  });
+}
+
+// A speech object as it arrives from the search tools. Kept permissive
+// (`.passthrough()`) so any field the search tools emit survives into
+// normalizeSpeeches; `party` is optional here and resolved from aliases at
+// runtime rather than hard-required by the schema.
+const incomingSpeechSchema = z.object({
+  text: z.string().describe('Speech text'),
+  party: z.string().optional().describe('Party affiliation — or `speakerParty` straight from bundestag_search_speeches'),
+  speaker: z.string().optional().describe('Speaker name'),
+  speakerParty: z.string().optional().describe('Alias accepted from bundestag_search_speeches output'),
+  speechType: z.string().optional(),
+  type: z.string().optional(),
+  category: z.string().optional(),
+  firstName: z.string().optional(),
+  lastName: z.string().optional(),
+  first_name: z.string().optional(),
+  last_name: z.string().optional(),
+  acadTitle: z.string().optional(),
+  acad_title: z.string().optional()
+}).passthrough();
+
+// =============================================================================
 // Speech Extraction Tool
 // =============================================================================
 
@@ -272,34 +327,28 @@ Analyzes all speeches from a specific speaker to create a detailed profile inclu
 - Tone scores (aggression, collaboration, solution-focus, etc.)
 - Topic focus (which policy areas they speak about most)
 
-IMPORTANT: This tool requires speeches as input. First use bundestag_search_speeches
-to retrieve speeches for a specific speaker, then pass them to this tool.
+TWO-STEP TOOL — do both steps yourself, automatically, without asking the user for
+speeches. When the user asks to profile/analyse a speaker's rhetoric:
+1. Call bundestag_search_speeches(speaker="<name>", query="<topic or the name>", limit=50-100) first.
+2. Pass that call's \`results\` array straight into this tool's \`speeches\` (the search
+   fields speakerParty/speechType/firstName are accepted and mapped automatically).
 
-Example workflow:
-1. Search: bundestag_search_speeches(query="*", speaker="Friedrich Merz", limit=100)
-2. Profile: bundestag_speaker_profile(speaker_name="Friedrich Merz", speeches=[...results])`,
+Example:
+1. const r = bundestag_search_speeches(speaker="Friedrich Merz", query="Friedrich Merz", limit=100)
+2. bundestag_speaker_profile(speaker_name="Friedrich Merz", speeches=r.results)`,
 
   inputSchema: {
     speaker_name: z.string().min(2)
       .describe('Full name of the speaker to profile'),
-    speeches: z.array(z.object({
-      text: z.string().describe('Speech text'),
-      speaker: z.string().optional().describe('Speaker name'),
-      party: z.string().optional().describe('Party affiliation'),
-      type: z.string().optional().describe('Speech type (rede, befragung, etc.)'),
-      category: z.string().optional().describe('Category (rede, wortbeitrag)'),
-      first_name: z.string().optional(),
-      last_name: z.string().optional(),
-      acad_title: z.string().optional()
-    })).min(1)
-      .describe('Array of speech objects from bundestag_search_speeches')
+    speeches: z.array(incomingSpeechSchema).min(1)
+      .describe('Array of speech objects — pass the `results` from bundestag_search_speeches straight through (speakerParty/speechType/firstName are accepted)')
   },
 
   async handler(params) {
     try {
       const result = await analysisService.getSpeakerProfile(
         params.speaker_name,
-        params.speeches
+        normalizeSpeeches(params.speeches)
       );
 
       return {
@@ -361,22 +410,21 @@ Analyzes speeches from multiple parties and creates a comparative profile includ
 - Which policy areas each party emphasizes
 - Comparative topic scores across parties
 
-IMPORTANT: This tool requires speeches as input. First use bundestag_search_speeches
-to retrieve speeches (optionally filtered by topic/date), then pass them to this tool.
+TWO-STEP TOOL — do both steps yourself, automatically, without asking the user for
+speeches. When the user asks to compare parties on a topic:
+1. Call bundestag_search_speeches(query="<topic>", limit=100-200) first (optionally
+   filtered by date). Use a high limit so several parties are represented.
+2. Pass that call's \`results\` array straight into this tool's \`speeches\` — the search
+   field speakerParty is accepted and mapped to party, and speeches are grouped by party
+   automatically.
 
-Example workflow:
-1. Search: bundestag_search_speeches(query="Klimaschutz", limit=200)
-2. Compare: bundestag_compare_parties(speeches=[...results])
-
-The tool will automatically group speeches by party and compare them.`,
+Example:
+1. const r = bundestag_search_speeches(query="Klimaschutz", limit=150)
+2. bundestag_compare_parties(speeches=r.results)`,
 
   inputSchema: {
-    speeches: z.array(z.object({
-      text: z.string().describe('Speech text'),
-      speaker: z.string().optional().describe('Speaker name'),
-      party: z.string().describe('Party affiliation (required for grouping)')
-    })).min(1)
-      .describe('Array of speech objects from bundestag_search_speeches'),
+    speeches: z.array(incomingSpeechSchema).min(1)
+      .describe('Array of speech objects — pass the `results` from bundestag_search_speeches straight through (speakerParty is accepted and mapped to party)'),
     parties: z.array(z.string()).optional()
       .describe('Filter to specific parties (e.g., ["CDU/CSU", "SPD", "GRÜNE"])'),
     wahlperiode: z.number().int().default(21)
@@ -387,7 +435,16 @@ The tool will automatically group speeches by party and compare them.`,
 
   async handler(params) {
     try {
-      const result = await analysisService.compareParties(params.speeches, {
+      const speeches = normalizeSpeeches(params.speeches);
+      if (!speeches.some((s) => s.party)) {
+        return {
+          error: true,
+          message: 'None of the supplied speeches has a party. Pass results from bundestag_search_speeches (which include speakerParty), or set a `party` on each speech.',
+          tool: 'bundestag_compare_parties'
+        };
+      }
+
+      const result = await analysisService.compareParties(speeches, {
         parties: params.parties,
         wahlperiode: params.wahlperiode,
         topN: params.top_n
