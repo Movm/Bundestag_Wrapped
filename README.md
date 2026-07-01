@@ -105,7 +105,7 @@ subfolder.
 
 | App | Coolify Base Directory | Dockerfile | Port |
 |-----|------------------------|------------|------|
-| **wrapped** (website) | `/apps/wrapped` | `Dockerfile` | 80 |
+| **wrapped** (website) | `/apps/wrapped` | `Dockerfile` | 8080 |
 | **mcp** (API) | `/services/mcp` | `Dockerfile` | 3000 |
 | **analysis** (API) | `/services/analysis` | `Dockerfile.api` | 8000 |
 
