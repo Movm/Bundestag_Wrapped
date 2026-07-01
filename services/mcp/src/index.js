@@ -727,6 +727,8 @@ httpServer = app.listen(PORT, () => {
   // Start background indexer if enabled
   if (config.qdrant.enabled && config.indexer.enabled) {
     console.log('[Boot] Starting background indexer...');
+    console.log(`[Boot]   Document chunk indexing: ${config.indexer.documentIndexingEnabled ? 'enabled' : 'disabled'}`);
+    console.log(`[Boot]   Protocol chunk indexing: ${config.indexer.protocolIndexingEnabled ? 'enabled' : 'disabled'}`);
     indexer.start().then(() => {
       console.log('[Boot] Background indexer started');
     }).catch(err => {
