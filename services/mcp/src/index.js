@@ -17,6 +17,7 @@ import { config, validateConfig } from './config.js';
 import { allTools } from './tools/search.js';
 import { semanticSearchTools } from './tools/semanticSearch.js';
 import { analysisTools } from './tools/analysis.js';
+import { aggregateTools } from './tools/aggregate.js';
 import { clientConfigTool } from './tools/clientConfig.js';
 import { getCacheStats } from './utils/cache.js';
 import { debug, info, error, getStats } from './utils/logger.js';
@@ -123,7 +124,7 @@ function createMcpServer(baseUrl) {
   ]);
 
   // Register all search/entity tools + analysis tools
-  const allToolsCombined = [...allTools, ...semanticSearchTools, ...analysisTools];
+  const allToolsCombined = [...allTools, ...semanticSearchTools, ...analysisTools, ...aggregateTools];
   for (const tool of allToolsCombined) {
     // Most tools only read from the DIP API; the indexing tools mutate server state.
     const readOnly = !MUTATING_TOOLS.has(tool.name);
@@ -505,7 +506,7 @@ app.get('/info', (req, res) => {
       config: `${baseUrl}/config/:client`,
       info: `${baseUrl}/info`
     },
-    tools: [...allTools, ...semanticSearchTools].map(t => ({
+    tools: [...allTools, ...semanticSearchTools, ...aggregateTools].map(t => ({
       name: t.name,
       description: t.description,
       annotations: { readOnlyHint: true, idempotentHint: true }
@@ -722,7 +723,7 @@ httpServer = app.listen(PORT, () => {
   });
   console.log('='.repeat(50));
   console.log('Tools:');
-  [...allTools, ...semanticSearchTools].forEach(t => {
+  [...allTools, ...semanticSearchTools, ...aggregateTools].forEach(t => {
     console.log(`  ${t.name}`);
   });
   console.log('  get_client_config');
