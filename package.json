@@ -1,0 +1,21 @@
+{
+  "name": "bundestag",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bundestag Wrapped monorepo — MCP/API backend, Python NLP analysis, and the Wrapped web + mobile frontend",
+  "type": "module",
+  "packageManager": "pnpm@10.0.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev:web": "pnpm --filter bundestag-wrapped dev",
+    "dev:mcp": "pnpm --filter bundestag-mcp dev",
+    "build": "pnpm --filter bundestag-wrapped --filter bundestag-mcp -r build",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "analysis:serve": "cd services/analysis && bundestag-analysis serve",
+    "analysis:serve-wrapped": "cd services/analysis && bundestag-analysis serve-wrapped"
+  },
+  "license": "MIT"
+}

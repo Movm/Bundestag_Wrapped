@@ -1,0 +1,7 @@
+packages:
+  - apps/wrapped
+  - apps/wrapped/mobile
+  - services/mcp
+  - packages/*
+# NOTE: services/analysis is a Python project (pyproject.toml) — intentionally
+# NOT a pnpm workspace member. See README / CLAUDE.md.
