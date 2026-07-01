@@ -46,21 +46,23 @@ function normalizeSpeeches(speeches) {
 // A speech object as it arrives from the search tools. Kept permissive
 // (`.passthrough()`) so any field the search tools emit survives into
 // normalizeSpeeches; `party` is optional here and resolved from aliases at
-// runtime rather than hard-required by the schema.
+// runtime rather than hard-required by the schema. All optional fields are
+// `.nullish()` because search_speeches emits explicit `null` (not absent) for
+// e.g. acadTitle — `.optional()` alone would reject verbatim rows.
 const incomingSpeechSchema = z.object({
   text: z.string().describe('Speech text'),
-  party: z.string().optional().describe('Party affiliation — or `speakerParty` straight from bundestag_search_speeches'),
-  speaker: z.string().optional().describe('Speaker name'),
-  speakerParty: z.string().optional().describe('Alias accepted from bundestag_search_speeches output'),
-  speechType: z.string().optional(),
-  type: z.string().optional(),
-  category: z.string().optional(),
-  firstName: z.string().optional(),
-  lastName: z.string().optional(),
-  first_name: z.string().optional(),
-  last_name: z.string().optional(),
-  acadTitle: z.string().optional(),
-  acad_title: z.string().optional()
+  party: z.string().nullish().describe('Party affiliation — or `speakerParty` straight from bundestag_search_speeches'),
+  speaker: z.string().nullish().describe('Speaker name'),
+  speakerParty: z.string().nullish().describe('Alias accepted from bundestag_search_speeches output'),
+  speechType: z.string().nullish(),
+  type: z.string().nullish(),
+  category: z.string().nullish(),
+  firstName: z.string().nullish(),
+  lastName: z.string().nullish(),
+  first_name: z.string().nullish(),
+  last_name: z.string().nullish(),
+  acadTitle: z.string().nullish(),
+  acad_title: z.string().nullish()
 }).passthrough();
 
 // =============================================================================
