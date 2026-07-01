@@ -97,7 +97,7 @@ export function validateConfig() {
   if (!config.dipApi.apiKey) {
     throw new Error(
       'DIP_API_KEY environment variable is required.\n' +
-      'Public test key (valid until 05/2026): OSOegLs.PR2lwJ1dwCeje9vTj7FPOt3hvpYKtwKkhw\n' +
+      'Public test key (valid until 05/2027): R2BZaee.DjdCyihKZMf8AOjtScubP2EVydegzjmBIQ\n' +
       'Or request your own key: parlamentsdokumentation@bundestag.de'
     );
   }
