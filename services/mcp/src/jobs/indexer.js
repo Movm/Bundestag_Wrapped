@@ -19,10 +19,17 @@ import * as analysisService from '../services/analysisService.js';
 import * as indexerState from '../services/indexerState.js';
 
 let indexerInterval = null;
+let protocolInterval = null;
+let documentChunkInterval = null;
 // Separate running flags for each indexer type (allows parallel operation)
 let isMainRunning = false;
 let isProtocolRunning = false;
 let isDocumentRunning = false;
+
+// Stagger the chunk indexers so their first (heavy: full-text fetch + Mistral
+// embeds) pass doesn't collide with the metadata pass or with each other on boot.
+const DOCUMENT_CHUNK_START_DELAY_MS = 2 * 60 * 1000;  // 2 min after boot
+const PROTOCOL_CHUNK_START_DELAY_MS = 5 * 60 * 1000;   // 5 min after boot
 let lastIndexTime = null;
 let lastSuccessfulIndexTime = null; // For incremental updates
 let stats = {
@@ -353,15 +360,54 @@ export async function start() {
   // Schedule periodic runs
   const intervalMs = config.indexer.intervalMinutes * 60 * 1000;
   indexerInterval = setInterval(runIndexingPass, intervalMs);
+
+  // Schedule the full-text chunk indexers (Drucksachen sections + protocol
+  // speeches). These were previously manual-trigger only, which is why the
+  // bundestag-document-chunks / bundestag-protocol-chunks collections stayed
+  // empty. They run on a longer interval and are staggered after boot.
+  const chunkIntervalMs = config.indexer.chunkIntervalMinutes * 60 * 1000;
+
+  if (config.indexer.documentIndexingEnabled) {
+    logger.info('INDEXER', 'Scheduling document chunk indexer', {
+      startDelayMinutes: DOCUMENT_CHUNK_START_DELAY_MS / 60000,
+      intervalMinutes: config.indexer.chunkIntervalMinutes
+    });
+    setTimeout(() => {
+      runDocumentChunkIndexing();
+      documentChunkInterval = setInterval(runDocumentChunkIndexing, chunkIntervalMs);
+    }, DOCUMENT_CHUNK_START_DELAY_MS);
+  }
+
+  if (config.indexer.protocolIndexingEnabled) {
+    logger.info('INDEXER', 'Scheduling protocol chunk indexer', {
+      startDelayMinutes: PROTOCOL_CHUNK_START_DELAY_MS / 60000,
+      intervalMinutes: config.indexer.chunkIntervalMinutes
+    });
+    setTimeout(() => {
+      runProtocolIndexing();
+      protocolInterval = setInterval(runProtocolIndexing, chunkIntervalMs);
+    }, PROTOCOL_CHUNK_START_DELAY_MS);
+  }
 }
 
 /**
  * Stop the background indexer
  */
 export function stop() {
+  const wasRunning = indexerInterval || protocolInterval || documentChunkInterval;
   if (indexerInterval) {
     clearInterval(indexerInterval);
     indexerInterval = null;
+  }
+  if (protocolInterval) {
+    clearInterval(protocolInterval);
+    protocolInterval = null;
+  }
+  if (documentChunkInterval) {
+    clearInterval(documentChunkInterval);
+    documentChunkInterval = null;
+  }
+  if (wasRunning) {
     logger.info('INDEXER', 'Background indexer stopped');
   }
 }
