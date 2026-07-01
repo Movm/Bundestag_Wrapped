@@ -6,6 +6,7 @@ import { z } from 'zod';
 import * as api from '../api/bundestag.js';
 import { getCacheStats } from '../utils/cache.js';
 import { config } from '../config.js';
+import { analyzeSize } from '../utils/tokenEstimator.js';
 
 // Common parameter schemas
 const wahlperiodeSchema = z.number().int().min(1).max(30).optional()
@@ -25,6 +26,88 @@ const cursorSchema = z.string().optional()
 
 const useCacheSchema = z.boolean().default(true)
   .describe('Whether to use cached results');
+
+const fieldsSchema = z.enum(['compact', 'full']).default('compact')
+  .describe('Response detail: "compact" (default — key fields only, safe for context) or "full" (raw DIP records, can be very large)');
+
+// ============================================================================
+// List-response helpers
+// ============================================================================
+
+// Compact field projections per endpoint. Without this, list search handlers
+// return the full raw DIP object per row; a single unbounded search can exceed
+// 150k characters and overflow the caller's context window. These field sets
+// keep the identifying/metadata fields and drop deep nested payloads.
+const PROJECTION_FIELDS = {
+  drucksache: ['id', 'typ', 'titel', 'dokumentnummer', 'drucksachetyp', 'dokumentart', 'wahlperiode', 'datum', 'herausgeber', 'urheber', 'fundstelle'],
+  plenarprotokoll: ['id', 'typ', 'titel', 'dokumentnummer', 'wahlperiode', 'datum', 'herausgeber', 'fundstelle'],
+  vorgang: ['id', 'typ', 'titel', 'vorgangstyp', 'sachgebiet', 'wahlperiode', 'datum', 'beratungsstand', 'initiative', 'abstract'],
+  person: ['id', 'typ', 'titel', 'nachname', 'vorname', 'namenszusatz', 'fraktion', 'funktion', 'person_roles', 'wahlperiode', 'datum'],
+  aktivitaet: ['id', 'typ', 'titel', 'aktivitaetsart', 'dokumentart', 'wahlperiode', 'datum', 'vorgangsbezug'],
+  vorgangsposition: ['id', 'typ', 'titel', 'vorgangstyp', 'wahlperiode', 'datum', 'zuordnung', 'fundstelle']
+};
+
+// Full-text endpoints carry the entire document text per row — replace with a snippet.
+const TEXT_SNIPPET_CHARS = 600;
+
+function pickFields(obj, fields) {
+  const out = {};
+  for (const key of fields) {
+    if (obj[key] !== undefined && obj[key] !== null) out[key] = obj[key];
+  }
+  return out;
+}
+
+function projectRow(endpoint, row) {
+  if (endpoint === 'drucksache-text' || endpoint === 'plenarprotokoll-text') {
+    const base = endpoint === 'drucksache-text' ? PROJECTION_FIELDS.drucksache : PROJECTION_FIELDS.plenarprotokoll;
+    const projected = pickFields(row, base);
+    const text = typeof row.text === 'string' ? row.text : (row.text?.text || '');
+    if (text) {
+      projected.textLength = text.length;
+      projected.textSnippet = text.length > TEXT_SNIPPET_CHARS
+        ? text.slice(0, TEXT_SNIPPET_CHARS) + '…'
+        : text;
+    }
+    return projected;
+  }
+  const fields = PROJECTION_FIELDS[endpoint];
+  return fields ? pickFields(row, fields) : row;
+}
+
+/**
+ * Build a size-bounded list response for the search tools.
+ * - Enforces `limit` (DIP may return a full page regardless of requested rows).
+ * - Projects a compact field set by default (opt out with fields: 'full').
+ * - Attaches a response-size estimate so callers can gauge context impact.
+ */
+function buildListResponse(endpoint, params, result) {
+  const raw = result.documents || [];
+  const limit = params.limit || config.dipApi.defaultLimit;
+  const capped = raw.slice(0, limit);
+  const useFull = params.fields === 'full';
+  const results = useFull ? capped : capped.map((row) => projectRow(endpoint, row));
+
+  const sizeAnalysis = analyzeSize(JSON.stringify(results), { language: 'german' });
+
+  return {
+    success: true,
+    endpoint,
+    query: params,
+    totalResults: result.numFound || 0,
+    returnedResults: results.length,
+    apiReturned: raw.length,
+    fields: useFull ? 'full' : 'compact',
+    responseSize: {
+      estimatedTokens: sizeAnalysis.estimatedTokens,
+      category: sizeAnalysis.category
+    },
+    cursor: result.cursor || null,
+    hasMore: !!(result.cursor),
+    cached: result.cached,
+    results
+  };
+}
 
 // ============================================================================
 // Drucksachen Tools
@@ -54,6 +137,7 @@ Use this to find legislative documents, government proposals, and parliamentary 
       .describe('Author/initiator of the document'),
     limit: limitSchema,
     cursor: cursorSchema,
+    fields: fieldsSchema,
     useCache: useCacheSchema
   },
 
@@ -61,17 +145,7 @@ Use this to find legislative documents, government proposals, and parliamentary 
     try {
       const result = await api.searchDrucksachen(params, { useCache: params.useCache });
 
-      return {
-        success: true,
-        endpoint: 'drucksache',
-        query: params,
-        totalResults: result.numFound || 0,
-        returnedResults: result.documents?.length || 0,
-        cursor: result.cursor || null,
-        hasMore: !!(result.cursor),
-        cached: result.cached,
-        results: result.documents || []
-      };
+      return buildListResponse('drucksache', params, result);
     } catch (err) {
       return {
         error: true,
@@ -157,6 +231,7 @@ Use this to find speeches, debates, and parliamentary proceedings.`,
     datum_end: datumEndSchema,
     limit: limitSchema,
     cursor: cursorSchema,
+    fields: fieldsSchema,
     useCache: useCacheSchema
   },
 
@@ -164,17 +239,7 @@ Use this to find speeches, debates, and parliamentary proceedings.`,
     try {
       const result = await api.searchPlenarprotokolle(params, { useCache: params.useCache });
 
-      return {
-        success: true,
-        endpoint: 'plenarprotokoll',
-        query: params,
-        totalResults: result.numFound || 0,
-        returnedResults: result.documents?.length || 0,
-        cursor: result.cursor || null,
-        hasMore: !!(result.cursor),
-        cached: result.cached,
-        results: result.documents || []
-      };
+      return buildListResponse('plenarprotokoll', params, result);
     } catch (err) {
       return {
         error: true,
@@ -266,6 +331,7 @@ votes, and decisions. Use this to track bills through parliament.`,
     datum_end: datumEndSchema,
     limit: limitSchema,
     cursor: cursorSchema,
+    fields: fieldsSchema,
     useCache: useCacheSchema
   },
 
@@ -273,17 +339,7 @@ votes, and decisions. Use this to track bills through parliament.`,
     try {
       const result = await api.searchVorgaenge(params, { useCache: params.useCache });
 
-      return {
-        success: true,
-        endpoint: 'vorgang',
-        query: params,
-        totalResults: result.numFound || 0,
-        returnedResults: result.documents?.length || 0,
-        cursor: result.cursor || null,
-        hasMore: !!(result.cursor),
-        cached: result.cached,
-        results: result.documents || []
-      };
+      return buildListResponse('vorgang', params, result);
     } catch (err) {
       return {
         error: true,
@@ -351,6 +407,7 @@ Use this to find information about members of parliament and their affiliations.
       .describe('Parliamentary group/faction (e.g., SPD, CDU/CSU, GRÜNE)'),
     limit: limitSchema,
     cursor: cursorSchema,
+    fields: fieldsSchema,
     useCache: useCacheSchema
   },
 
@@ -358,17 +415,7 @@ Use this to find information about members of parliament and their affiliations.
     try {
       const result = await api.searchPersonen(params, { useCache: params.useCache });
 
-      return {
-        success: true,
-        endpoint: 'person',
-        query: params,
-        totalResults: result.numFound || 0,
-        returnedResults: result.documents?.length || 0,
-        cursor: result.cursor || null,
-        hasMore: !!(result.cursor),
-        cached: result.cached,
-        results: result.documents || []
-      };
+      return buildListResponse('person', params, result);
     } catch (err) {
       return {
         error: true,
@@ -440,6 +487,7 @@ Use this to find specific contributions by MPs in parliament.`,
     datum_end: datumEndSchema,
     limit: limitSchema,
     cursor: cursorSchema,
+    fields: fieldsSchema,
     useCache: useCacheSchema
   },
 
@@ -447,17 +495,7 @@ Use this to find specific contributions by MPs in parliament.`,
     try {
       const result = await api.searchAktivitaeten(params, { useCache: params.useCache });
 
-      return {
-        success: true,
-        endpoint: 'aktivitaet',
-        query: params,
-        totalResults: result.numFound || 0,
-        returnedResults: result.documents?.length || 0,
-        cursor: result.cursor || null,
-        hasMore: !!(result.cursor),
-        cached: result.cached,
-        results: result.documents || []
-      };
+      return buildListResponse('aktivitaet', params, result);
     } catch (err) {
       return {
         error: true,
@@ -527,6 +565,7 @@ progress of bills through parliament.`,
     datum_end: datumEndSchema,
     limit: limitSchema,
     cursor: cursorSchema,
+    fields: fieldsSchema,
     useCache: useCacheSchema
   },
 
@@ -534,17 +573,7 @@ progress of bills through parliament.`,
     try {
       const result = await api.searchVorgangspositionen(params, { useCache: params.useCache });
 
-      return {
-        success: true,
-        endpoint: 'vorgangsposition',
-        query: params,
-        totalResults: result.numFound || 0,
-        returnedResults: result.documents?.length || 0,
-        cursor: result.cursor || null,
-        hasMore: !!(result.cursor),
-        cached: result.cached,
-        results: result.documents || []
-      };
+      return buildListResponse('vorgangsposition', params, result);
     } catch (err) {
       return {
         error: true,
@@ -575,6 +604,7 @@ phrases, legal references, or content within parliamentary documents.`,
     limit: z.number().int().min(1).max(50).default(10)
       .describe('Maximum results (1-50, lower limit than metadata search)'),
     cursor: cursorSchema,
+    fields: fieldsSchema,
     useCache: useCacheSchema
   },
 
@@ -582,17 +612,7 @@ phrases, legal references, or content within parliamentary documents.`,
     try {
       const result = await api.searchDrucksachenText(params, { useCache: params.useCache });
 
-      return {
-        success: true,
-        endpoint: 'drucksache-text',
-        query: params,
-        totalResults: result.numFound || 0,
-        returnedResults: result.documents?.length || 0,
-        cursor: result.cursor || null,
-        hasMore: !!(result.cursor),
-        cached: result.cached,
-        results: result.documents || []
-      };
+      return buildListResponse('drucksache-text', params, result);
     } catch (err) {
       return {
         error: true,
@@ -619,6 +639,7 @@ quotes, debates on topics, or MP statements in plenary sessions.`,
     limit: z.number().int().min(1).max(50).default(10)
       .describe('Maximum results (1-50, lower limit than metadata search)'),
     cursor: cursorSchema,
+    fields: fieldsSchema,
     useCache: useCacheSchema
   },
 
@@ -626,17 +647,7 @@ quotes, debates on topics, or MP statements in plenary sessions.`,
     try {
       const result = await api.searchPlenarprotokolleText(params, { useCache: params.useCache });
 
-      return {
-        success: true,
-        endpoint: 'plenarprotokoll-text',
-        query: params,
-        totalResults: result.numFound || 0,
-        returnedResults: result.documents?.length || 0,
-        cursor: result.cursor || null,
-        hasMore: !!(result.cursor),
-        cached: result.cached,
-        results: result.documents || []
-      };
+      return buildListResponse('plenarprotokoll-text', params, result);
     } catch (err) {
       return {
         error: true,
@@ -664,8 +675,6 @@ export const cacheStatsTool = {
     };
   }
 };
-
-import { analyzeSize, CONTEXT_WINDOWS } from '../utils/tokenEstimator.js';
 
 export const estimateSizeTool = {
   name: 'bundestag_estimate_size',
