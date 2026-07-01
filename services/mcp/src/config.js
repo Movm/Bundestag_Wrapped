@@ -95,4 +95,32 @@ export function validateConfig() {
       'Or request your own key: parlamentsdokumentation@bundestag.de'
     );
   }
+
+  // Semantic search needs Mistral embeddings — fail fast rather than crashing
+  // the indexer / search tools at runtime with cryptic errors.
+  if (config.qdrant.enabled && !config.mistral.apiKey) {
+    throw new Error(
+      'MISTRAL_API_KEY is required when QDRANT_ENABLED=true (semantic search uses Mistral embeddings).\n' +
+      'Set MISTRAL_API_KEY, or disable semantic search with QDRANT_ENABLED=false.'
+    );
+  }
+
+  // The background indexer writes to Qdrant — it cannot run without it.
+  if (config.indexer.enabled && !config.qdrant.enabled) {
+    throw new Error('INDEXER_ENABLED=true requires QDRANT_ENABLED=true.');
+  }
+
+  // A malformed ANALYSIS_SERVICE_URL would only surface on the first NLP call.
+  if (config.analysis.url && !isValidHttpUrl(config.analysis.url)) {
+    throw new Error(`ANALYSIS_SERVICE_URL is not a valid http(s) URL: ${config.analysis.url}`);
+  }
+}
+
+function isValidHttpUrl(value) {
+  try {
+    const u = new URL(value);
+    return u.protocol === 'http:' || u.protocol === 'https:';
+  } catch {
+    return false;
+  }
 }

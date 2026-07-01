@@ -19,7 +19,7 @@ import { semanticSearchTools } from './tools/semanticSearch.js';
 import { analysisTools } from './tools/analysis.js';
 import { clientConfigTool } from './tools/clientConfig.js';
 import { getCacheStats } from './utils/cache.js';
-import { info, error, getStats } from './utils/logger.js';
+import { debug, info, error, getStats } from './utils/logger.js';
 import { allResources } from './resources/info.js';
 import { allResourceTemplates, registerResourceTemplates } from './resources/templates.js';
 import { allPrompts, registerPrompts } from './prompts/index.js';
@@ -105,15 +105,32 @@ function createMcpServer(baseUrl) {
 
   // === MCP TOOLS ===
 
+  // Tools that mutate server state (indexing jobs) — everything else is read-only.
+  const MUTATING_TOOLS = new Set([
+    'bundestag_reindex_protocols',
+    'bundestag_trigger_indexing',
+    'bundestag_trigger_document_indexing',
+    'bundestag_trigger_protocol_indexing'
+  ]);
+
   // Register all search/entity tools + analysis tools
   const allToolsCombined = [...allTools, ...semanticSearchTools, ...analysisTools];
   for (const tool of allToolsCombined) {
+    // Most tools only read from the DIP API; the indexing tools mutate server state.
+    const readOnly = !MUTATING_TOOLS.has(tool.name);
     server.tool(
       tool.name,
+      tool.description,
       tool.inputSchema,
+      { readOnlyHint: readOnly, openWorldHint: true },
       async (params) => {
+        const startedAt = Date.now();
         try {
           const result = await tool.handler(params);
+          debug('Tool', `${tool.name} completed`, {
+            ms: Date.now() - startedAt,
+            isError: !!result.error
+          });
           return {
             content: [{
               type: 'text',
@@ -122,11 +139,11 @@ function createMcpServer(baseUrl) {
             isError: !!result.error
           };
         } catch (err) {
-          error('Tool', `${tool.name} failed: ${err.message}`);
+          error('Tool', `${tool.name} failed: ${err.message}`, { ms: Date.now() - startedAt });
           return {
             content: [{
               type: 'text',
-              text: JSON.stringify({ error: true, message: err.message })
+              text: JSON.stringify({ error: true, message: err.message, tool: tool.name })
             }],
             isError: true
           };
@@ -138,7 +155,9 @@ function createMcpServer(baseUrl) {
   // Client Config Tool
   server.tool(
     clientConfigTool.name,
+    clientConfigTool.description,
     clientConfigTool.inputSchema,
+    { readOnlyHint: true },
     async ({ client }) => {
       const result = clientConfigTool.handler({ client }, baseUrl);
       return {
