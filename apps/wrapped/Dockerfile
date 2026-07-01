@@ -8,7 +8,7 @@
 # Coolify: build pack = Dockerfile, "Base Directory" = /apps/wrapped
 
 # ----- Build stage -----
-FROM node:22-slim AS build
+FROM node:26-slim AS build
 # Pin pnpm to match the repo (honors package.json pnpm.onlyBuiltDependencies)
 RUN corepack enable && corepack prepare pnpm@10.0.0 --activate
 WORKDIR /app
