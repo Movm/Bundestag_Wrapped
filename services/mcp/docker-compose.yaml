@@ -37,8 +37,9 @@ services:
   analysis:
     image: ghcr.io/movm/bundestag-analysis:latest
     # For local development, comment out 'image' and uncomment:
+    # (monorepo: services/analysis is a sibling of services/mcp)
     # build:
-    #   context: ../bundestag-analysis
+    #   context: ../analysis
     #   dockerfile: Dockerfile.api
     expose:
       - "8000"
