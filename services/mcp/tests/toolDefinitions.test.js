@@ -3,9 +3,10 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { allTools } from '../src/tools/search.js';
 import { semanticSearchTools } from '../src/tools/semanticSearch.js';
 import { analysisTools } from '../src/tools/analysis.js';
+import { aggregateTools } from '../src/tools/aggregate.js';
 import { clientConfigTool } from '../src/tools/clientConfig.js';
 
-const everyTool = [...allTools, ...semanticSearchTools, ...analysisTools, clientConfigTool];
+const everyTool = [...allTools, ...semanticSearchTools, ...analysisTools, ...aggregateTools, clientConfigTool];
 
 describe('tool definitions', () => {
   it('registers a non-trivial number of tools', () => {
