@@ -1,0 +1,77 @@
+services:
+  bundestag-mcp:
+    build: .
+    expose:
+      - "3000"
+    environment:
+      - DIP_API_KEY=${DIP_API_KEY:-OSOegLs.PR2lwJ1dwCeje9vTj7FPOt3hvpYKtwKkhw}
+      - PORT=3000
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - PUBLIC_URL=${PUBLIC_URL:-}
+      - QDRANT_ENABLED=${QDRANT_ENABLED:-true}
+      - QDRANT_URL=http://qdrant:6333
+      - QDRANT_API_KEY=${QDRANT_API_KEY:-}
+      - MISTRAL_API_KEY=${MISTRAL_API_KEY:-}
+      - INDEXER_ENABLED=${INDEXER_ENABLED:-false}
+      - INDEXER_INTERVAL_MINUTES=${INDEXER_INTERVAL_MINUTES:-15}
+      - INDEXER_WAHLPERIODEN=${INDEXER_WAHLPERIODEN:-19,20}
+      - ANALYSIS_SERVICE_URL=http://analysis:8000
+      - INDEXER_STATE_PATH=/app/data/indexer-state.db
+    volumes:
+      - indexer_data:/app/data
+    depends_on:
+      qdrant:
+        condition: service_healthy
+      analysis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      start_period: 5s
+      retries: 3
+    restart: unless-stopped
+
+  # Python NLP analysis service (spaCy-based)
+  # Uses published image from ghcr.io. For local development, uncomment build section below.
+  analysis:
+    image: ghcr.io/movm/bundestag-analysis:latest
+    # For local development, comment out 'image' and uncomment:
+    # build:
+    #   context: ../bundestag-analysis
+    #   dockerfile: Dockerfile.api
+    expose:
+      - "8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8000/health').raise_for_status()"]
+      interval: 30s
+      timeout: 10s
+      start_period: 60s  # spaCy model takes ~30s to load
+      retries: 3
+    restart: unless-stopped
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    expose:
+      - "6333"
+    ports:
+      # QDRANT_EXTERNAL=true exposes on 0.0.0.0, false/unset binds to localhost only
+      - "${QDRANT_BIND:-127.0.0.1}:16333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    environment:
+      - QDRANT__SERVICE__GRPC_PORT=6334
+      - QDRANT__SERVICE__API_KEY=${QDRANT_API_KEY:-}
+      # Set to 0.0.0.0 to expose externally, 127.0.0.1 (default) for localhost only
+      - QDRANT_BIND=${QDRANT_BIND:-127.0.0.1}
+    healthcheck:
+      test: ["CMD-SHELL", "timeout 5 bash -c '</dev/tcp/localhost/6333' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      start_period: 10s
+      retries: 3
+    restart: unless-stopped
+
+volumes:
+  qdrant_data:
+  indexer_data:

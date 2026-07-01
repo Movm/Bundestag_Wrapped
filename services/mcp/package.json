@@ -1,0 +1,56 @@
+{
+  "name": "bundestag-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for German Bundestag parliamentary documentation (DIP API)",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "bundestag-mcp": "./src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "bundestag",
+    "parliament",
+    "germany",
+    "dip-api",
+    "drucksache",
+    "plenarprotokoll"
+  ],
+  "author": "Moritz Waechter",
+  "license": "MIT",
+  "dependencies": {
+    "@mistralai/mistralai": "^1.3.0",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@qdrant/js-client-rest": "^1.12.0",
+    "better-sqlite3": "^12.5.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "zod": "^4.2.1"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^4.0.16",
+    "vitest": "^4.0.16"
+  },
+  "optionalDependencies": {
+    "prom-client": "^15.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Movm/bundestag-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Movm/bundestag-mcp/issues"
+  },
+  "homepage": "https://github.com/Movm/bundestag-mcp#readme"
+}
