@@ -437,14 +437,17 @@ async def compare_parties(
         party_profiles.append(profile)
 
     # Build rankings based on tone scores
+    # ToneScores dataclass fields are `aggression_index` / `collaboration_score`
+    # (the short `aggression` / `collaboration` names only exist in to_dict()).
+    # Accessing the short names here raised AttributeError -> 500 on every call.
     aggression_ranking = sorted(
         tone_scores_by_party.keys(),
-        key=lambda p: tone_scores_by_party[p].aggression,
+        key=lambda p: tone_scores_by_party[p].aggression_index,
         reverse=True,
     )
     collaboration_ranking = sorted(
         tone_scores_by_party.keys(),
-        key=lambda p: tone_scores_by_party[p].collaboration,
+        key=lambda p: tone_scores_by_party[p].collaboration_score,
         reverse=True,
     )
     solution_ranking = sorted(
