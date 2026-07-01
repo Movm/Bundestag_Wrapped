@@ -16,7 +16,16 @@ A public instance is available at:
 https://bundestagapi.moritz-waechter.de/mcp
 ```
 
-You can use this directly in your MCP client configuration without running your own server.
+It speaks MCP over **streamable HTTP** and needs no API key from you (the DIP key lives
+server-side). Point any MCP client at that URL — no local server required. The fastest
+path (Claude Code):
+
+```bash
+claude mcp add --transport http bundestag https://bundestagapi.moritz-waechter.de/mcp
+```
+
+See [Client Configuration](#client-configuration) for Claude Desktop, Cursor, VS Code and
+ChatGPT, or [Quick Start](#quick-start) to self-host.
 
 ## Table of Contents
 
@@ -249,6 +258,18 @@ Guided workflows for common parliamentary research tasks:
 ## Client Configuration
 
 > **Tip:** Use the public instance `https://bundestagapi.moritz-waechter.de/mcp` or run your own with `http://localhost:3000/mcp`
+
+### Claude Code (CLI)
+
+Register the HTTP server in one command:
+
+```bash
+claude mcp add --transport http bundestag https://bundestagapi.moritz-waechter.de/mcp
+```
+
+Add `--scope user` to make it available across all projects (default scope is the current
+project). Verify with `claude mcp list`, then use it in a session — e.g. *"Wie hat die AfD
+über Migration geredet?"*. To remove it: `claude mcp remove bundestag`.
 
 ### Claude Desktop
 
