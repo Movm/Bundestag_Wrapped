@@ -1,10 +1,12 @@
 # Bundestag MCP Server
 
-[![CI](https://github.com/Movm/bundestag-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Movm/bundestag-mcp/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CI](https://github.com/Movm/Bundestag_Wrapped/actions/workflows/ci.yml/badge.svg)](https://github.com/Movm/Bundestag_Wrapped/actions/workflows/ci.yml)
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](../../LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18-brightgreen)](https://nodejs.org)
 
-A production-ready [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server that provides access to the German Bundestag's parliamentary documentation system (DIP API).
+> Part of the **[Bundestag Wrapped](../../README.md)** monorepo · siblings: [`apps/wrapped`](../../apps/wrapped/README.md) (front-end) · [`services/analysis`](../analysis/README.md) (NLP pipeline)
+
+A production-ready [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server that provides access to the German Bundestag's parliamentary documentation system (DIP API). It powers the AI-assistant integration for [Bundestag Wrapped](https://bundestag-wrapped.de).
 
 ## Public Instance
 
@@ -75,8 +77,8 @@ You can use this directly in your MCP client configuration without running your 
 ### Installation
 
 ```bash
-git clone https://github.com/Movm/bundestag-mcp.git
-cd bundestag-mcp
+git clone https://github.com/Movm/Bundestag_Wrapped.git
+cd Bundestag_Wrapped/services/mcp
 npm install
 ```
 
@@ -85,8 +87,8 @@ npm install
 Create a `.env` file (or copy `.env.example`):
 
 ```bash
-# Public test key valid until 05/2026
-DIP_API_KEY=OSOegLs.PR2lwJ1dwCeje9vTj7FPOt3hvpYKtwKkhw
+# Grab the current free public DIP key from bundestag.de/services/opendata
+DIP_API_KEY=your-dip-api-key
 
 # Optional
 PORT=3000
@@ -94,7 +96,10 @@ PUBLIC_URL=
 LOG_LEVEL=INFO
 ```
 
-> **Note:** For production, request your own API key from: `parlamentsdokumentation@bundestag.de`
+> **Note:** A free public key is published at
+> [bundestag.de/services/opendata](https://www.bundestag.de/services/opendata) (it rotates
+> periodically). For a long-lived production key, request one from
+> `parlamentsdokumentation@bundestag.de`.
 
 ### Run
 
@@ -625,4 +630,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **GNU AGPL-3.0** - see the [LICENSE](LICENSE) file for details.

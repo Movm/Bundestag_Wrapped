@@ -1,6 +1,13 @@
 # Bundestag Analysis
 
-Python NLP library for analyzing German Bundestag speeches. Extracts nouns, adjectives, verbs, and performs tone/topic analysis.
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](../../LICENSE)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue)](https://www.python.org/)
+
+> Part of the **[Bundestag Wrapped](../../README.md)** monorepo · siblings: [`apps/wrapped`](../../apps/wrapped/README.md) (front-end) · [`services/mcp`](../mcp/README.md) (AI/MCP API)
+
+Python NLP library for analyzing German Bundestag speeches. Extracts nouns, adjectives, verbs, and
+performs tone/topic analysis — and generates the static JSON that powers
+[bundestag-wrapped.de](https://bundestag-wrapped.de).
 
 ## Features
 
@@ -213,10 +220,10 @@ docker run -p 8001:8001 -v ./web-output:/data bundestag-analysis \
   bundestag-analysis serve-wrapped --data-dir /data
 ```
 
-## Related Repositories
+## Related packages
 
-- [bundestag-wrapped](https://github.com/movm/bundestag-wrapped) - React visualization app
-- [bundestag-mcp](https://github.com/movm/bundestag-mcp) - MCP server for Bundestag data
+- [`apps/wrapped`](../../apps/wrapped/README.md) — React web + native app that renders this data
+- [`services/mcp`](../mcp/README.md) — MCP server for AI assistants (Claude, ChatGPT, Grünerator)
 
 ## Requirements
 
@@ -226,4 +233,4 @@ docker run -p 8001:8001 -v ./web-output:/data bundestag-analysis \
 
 ## License
 
-MIT
+[GNU AGPL-3.0](../../LICENSE) © 2026 Moritz Wächter
