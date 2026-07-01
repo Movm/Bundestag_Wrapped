@@ -204,6 +204,7 @@ export const searchSpeechesTool = {
 Searches through chunked Plenarprotokolle to find specific statements, arguments, or topics.
 Example: "Was sagt die CDU zur Schuldenbremse?" or "Argumente gegen das Heizungsgesetz"
 Use this to find what specific politicians or parties said about topics.
+For an exact quote/wording (not concept matching), use bundestag_search_plenarprotokolle_text instead.
 Requires QDRANT_ENABLED=true and protocol indexing to have been run.
 
 Enhanced filters available for speech types:
@@ -531,6 +532,7 @@ export const searchDocumentSectionsTool = {
 Searches through chunked Drucksachen to find specific paragraphs, questions, or article texts.
 Example: "Regelungen zur Energiewende" or "Fragen zur Migrationspolitik"
 Use this to find specific sections within parliamentary documents.
+For an exact phrase/legal reference (not concept matching), use bundestag_search_drucksachen_text instead.
 Requires QDRANT_ENABLED=true and document indexing to have been run.`,
 
   inputSchema: {

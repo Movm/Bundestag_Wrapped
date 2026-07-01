@@ -5,6 +5,48 @@
 import { config } from '../config.js';
 
 /**
+ * Server-level instructions.
+ *
+ * Unlike the `bundestag://system-prompt` resource (which a client must explicitly
+ * read), this string is returned in the MCP `initialize` result and injected into
+ * the model's system prompt by the client. Keep it concise and high-signal — it is
+ * present in every context. Detailed workflows live in the system-prompt resource.
+ */
+export const SERVER_INSTRUCTIONS = `# Bundestag MCP — how to use these tools
+
+Access to the German Bundestag's official documentation (DIP API) plus a semantic
+(vector) search layer over document and speech full text.
+
+## Golden rules
+- **Current electoral period is Wahlperiode 21** (21st Bundestag, since 2025). Pass
+  \`wahlperiode: 21\` for "current" questions; omit it to search across all periods
+  (20 = 2021–2025, 19 = 2017–2021, … remain searchable).
+- **Check size before fetching full text.** Plenarprotokolle run 50k–200k tokens.
+  Call \`bundestag_estimate_size\` first, or use a \`*_text\` / \`*_sections\` search to
+  pull only the passages you need.
+- **List results are compact by default** (key fields + a \`responseSize\` estimate).
+  Request \`fields: "full"\` only when you truly need raw DIP records. Page with \`cursor\`.
+- **Faction filter needs the official name**: \`CDU/CSU\`, \`SPD\`, \`AfD\`,
+  \`BÜNDNIS 90/DIE GRÜNEN\`, \`DIE LINKE\`. FDP and BSW are **not** in the 21st Bundestag.
+- **Empty results?** Try umlaut-free spelling (ä→ae, ö→oe, ü→ue, ß→ss) and partial names.
+
+## Which tool
+| Goal | Use |
+|------|-----|
+| Concept/topic, exact wording unknown | \`bundestag_semantic_search\` |
+| Passage inside document full text | \`bundestag_search_document_sections\` (vector) or \`bundestag_search_drucksachen_text\` (raw) |
+| What an MP/party said | \`bundestag_search_speeches\` (vector) or \`bundestag_search_plenarprotokolle_text\` (raw) |
+| Documents by title / type / date / author | \`bundestag_search_drucksachen\` |
+| A bill's lifecycle | \`bundestag_search_vorgaenge\` → \`bundestag_get_vorgang\` → \`bundestag_search_vorgangspositionen\` |
+| A person and their activities | \`bundestag_search_personen\` → \`bundestag_search_aktivitaeten\` |
+| One document by ID | \`bundestag_get_*\` (run \`bundestag_estimate_size\` first for full text) |
+| Rhetoric / tone / topics | \`bundestag_speaker_profile\`, \`bundestag_analyze_tone\`, \`bundestag_classify_topics\`, \`bundestag_compare_parties\` (need the NLP service — check \`bundestag_analysis_health\`) |
+
+Rule of thumb: **semantic** tools for meaning, **\`_text\`** tools for exact phrases,
+**metadata** search for structured filters. Read the \`bundestag://system-prompt\`
+resource for detailed workflows, chaining recipes, and pitfalls.`;
+
+/**
  * System prompt resource with usage instructions
  */
 export const systemPromptResource = {
@@ -34,8 +76,9 @@ bundestag_search_drucksachen({ query: "Klimaschutz", wahlperiode: 20 })
 \`\`\`
 
 ### 2. Use Wahlperiode Filter
-The current electoral period (20th Bundestag, 2021-) is \`wahlperiode: 20\`.
-Always filter by Wahlperiode to get relevant, recent results.
+The current electoral period (21st Bundestag, 2025-) is \`wahlperiode: 21\`.
+Filter by Wahlperiode for "current" questions; omit it to search across all periods
+(20 = 2021-2025, 19 = 2017-2021, and earlier remain searchable).
 
 ### 3. Pagination
 Results are paginated. Use the \`cursor\` from the response to fetch more:
@@ -86,10 +129,14 @@ Use Vorgänge to understand how documents relate:
 ## Response Format
 All search results include:
 - \`totalResults\`: Total matching documents
-- \`returnedResults\`: Documents in this response
+- \`returnedResults\`: Documents in this response (respects \`limit\`)
+- \`apiReturned\`: How many the DIP API returned before capping to \`limit\`
+- \`fields\`: \`"compact"\` (default) or \`"full"\`
+- \`responseSize\`: \`{ estimatedTokens, category }\` for this response
 - \`cursor\`: Pagination cursor (if more results available)
 - \`cached\`: Whether result was from cache
-- \`results\`: Array of documents
+- \`results\`: Array of documents (compact projection by default; pass
+  \`fields: "full"\` for the raw DIP records — can be very large)
 
 ## Caching
 Results are cached for 5 minutes. Use \`useCache: false\` for fresh data.
@@ -143,9 +190,9 @@ europa, digital, bildung, finanzen, justiz, arbeit, mobilitaet
 |------|--------------|----------|
 | Find legislation by topic | \`bundestag_search_vorgaenge\` | \`bundestag_semantic_search\` |
 | Find specific document by ID | \`bundestag_get_drucksache\` | - |
-| Find what someone said | \`bundestag_semantic_search\` (entityTypes: ["speech"]) | \`bundestag_search_plenarprotokolle_text\` |
+| Find what someone said | \`bundestag_search_speeches\` (vector) | \`bundestag_search_plenarprotokolle_text\` |
 | Exploratory/broad search | \`bundestag_semantic_search\` | \`bundestag_search_drucksachen\` |
-| Find specific paragraphs | \`bundestag_search_drucksachen_text\` | - |
+| Find a passage inside a document | \`bundestag_search_document_sections\` (vector) | \`bundestag_search_drucksachen_text\` (raw) |
 | Analyze speaker rhetoric | \`bundestag_speaker_profile\` | \`bundestag_analyze_tone\` |
 | Compare party positions | \`bundestag_compare_parties\` | multiple \`bundestag_analyze_tone\` |
 | Track bill lifecycle | \`bundestag_search_vorgangspositionen\` | - |
@@ -181,8 +228,9 @@ This returns:
 2. **Person search fails:** Use partial name, check for academic titles (Dr., Prof.)
 3. **Semantic search unavailable:** Fall back to keyword search tools
 4. **NLP tools fail:** Check \`bundestag_analysis_health\` first
-5. **Faction names:** Use official names: "CDU/CSU", "BÜNDNIS 90/DIE GRÜNEN", "DIE LINKE"
+5. **Faction names:** Use official names: "CDU/CSU", "BÜNDNIS 90/DIE GRÜNEN", "DIE LINKE". FDP and BSW are not in the 21st Bundestag (below 5% in 2025) — filtering by them only returns older periods.
 6. **Context overflow:** Always use \`bundestag_estimate_size\` before fetching full protocol text
+7. **Wrong period:** WP 21 is current (since 2025). Querying "current" data with \`wahlperiode: 20\` returns the previous Bundestag.
 
 ## Efficient Tool Chaining
 
@@ -271,8 +319,15 @@ export const infoResource = {
         'bundestag_search_aktivitaeten',
         'bundestag_get_aktivitaet',
         'bundestag_semantic_search',
+        'bundestag_search_speeches',
+        'bundestag_search_document_sections',
         'bundestag_semantic_search_status',
+        'bundestag_protocol_search_status',
+        'bundestag_document_search_status',
         'bundestag_trigger_indexing',
+        'bundestag_trigger_protocol_indexing',
+        'bundestag_trigger_document_indexing',
+        'bundestag_reindex_protocols',
         'bundestag_extract_speeches',
         'bundestag_analyze_text',
         'bundestag_analyze_tone',
@@ -309,10 +364,11 @@ export const wahlperiodenResource = {
 
   async handler() {
     return {
-      current: 20,
+      current: 21,
       periods: [
-        { number: 20, years: '2021-2025', description: 'Current electoral period' },
-        { number: 19, years: '2017-2021', description: 'Previous electoral period' },
+        { number: 21, years: '2025-', description: 'Current electoral period' },
+        { number: 20, years: '2021-2025', description: 'Previous electoral period' },
+        { number: 19, years: '2017-2021', description: '' },
         { number: 18, years: '2013-2017', description: '' },
         { number: 17, years: '2009-2013', description: '' },
         { number: 16, years: '2005-2009', description: '' },
@@ -365,7 +421,8 @@ export const factionenResource = {
 
   async handler() {
     return {
-      current_wahlperiode: 20,
+      current_wahlperiode: 21,
+      factions_in_current_wahlperiode: ['CDU/CSU', 'AfD', 'SPD', 'BÜNDNIS 90/DIE GRÜNEN', 'DIE LINKE'],
       factions: [
         {
           official: 'SPD',
@@ -393,7 +450,8 @@ export const factionenResource = {
           full_name: 'Freie Demokratische Partei',
           aliases: ['Liberale', 'Freie Demokraten'],
           color: '#FFEF00',
-          position: 'center'
+          position: 'center',
+          note: 'Not in the 21st Bundestag (below 5% in 2025); present in WP 19-20'
         },
         {
           official: 'AfD',
@@ -408,7 +466,7 @@ export const factionenResource = {
           aliases: ['Linke', 'Linkspartei'],
           color: '#BE3075',
           position: 'left',
-          note: 'Lost faction status in 2024 due to split'
+          note: 'Lost faction status in WP 20 (2024 split); regained full faction status in the 21st Bundestag (2025)'
         },
         {
           official: 'BSW',
@@ -416,7 +474,7 @@ export const factionenResource = {
           aliases: ['Bündnis Sahra Wagenknecht', 'Wagenknecht'],
           color: '#731930',
           position: 'left-populist',
-          note: 'Split from DIE LINKE in 2024'
+          note: 'Split from DIE LINKE in 2024; not in the 21st Bundestag (below 5% in 2025)'
         },
         {
           official: 'fraktionslos',
