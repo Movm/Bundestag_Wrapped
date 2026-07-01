@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main]
 
+# Least privilege: CI only reads the repo (no write scopes on GITHUB_TOKEN).
+permissions:
+  contents: read
+
 jobs:
   js:
     name: JS/TS workspace (lint · test · build)

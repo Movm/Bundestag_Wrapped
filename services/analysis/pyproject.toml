@@ -3,26 +3,27 @@ name = "bundestag-analysis"
 version = "1.0.0"
 description = "NLP analysis library for German Bundestag speeches"
 readme = "README.md"
-requires-python = ">=3.10"
+# pandas 3.x requires Python >=3.11
+requires-python = ">=3.11"
 dependencies = [
-    "mcp>=1.0.0",
-    "httpx>=0.27.0",
-    "httpx-sse>=0.4.0",
-    "spacy>=3.7.0",
-    "rich>=13.0.0",
-    "click>=8.1.0",
-    "pandas>=2.0.0",
-    "orjson>=3.9.0",
-    "fastapi>=0.115.0",
-    "uvicorn[standard]>=0.32.0",
+    "mcp>=1.28.0",
+    "httpx>=0.28.0",
+    "httpx-sse>=0.4.3",
+    "spacy>=3.8.0",
+    "rich>=15.0.0",
+    "click>=8.2.0",
+    "pandas>=3.0.0",
+    "orjson>=3.11.0",
+    "fastapi>=0.139.0",
+    "uvicorn[standard]>=0.49.0",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=8.0.0",
-    "pytest-asyncio>=0.23.0",
-    "commitizen>=4.1.0",
-    "pre-commit>=4.0.0",
+    "pytest>=9.0.0",
+    "pytest-asyncio>=1.0.0",
+    "commitizen>=4.16.0",
+    "pre-commit>=4.6.0",
 ]
 
 [project.scripts]

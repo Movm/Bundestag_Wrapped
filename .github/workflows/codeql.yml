@@ -1,0 +1,46 @@
+# CodeQL static analysis (GitHub code scanning)
+# Scans the JS/TS workspace and the Python analysis service for security issues.
+name: CodeQL
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Weekly full scan (Mondays 06:00 UTC) to catch newly-published query updates.
+    - cron: '0 6 * * 1'
+
+# Least privilege: only what code scanning needs.
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    name: Analyze (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write # upload results to the Security tab
+      actions: read
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ['javascript-typescript', 'python']
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          # Both ecosystems are interpreted — no compiled build step required.
+          build-mode: none
+          queries: security-and-quality
+
+      - name: Perform CodeQL analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: '/language:${{ matrix.language }}'

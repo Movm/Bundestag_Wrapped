@@ -1,0 +1,212 @@
+# Dependabot configuration — Bundestag Wrapped monorepo
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+#
+# pnpm workspace with ONE root lockfile: each nested npm entry updates its own
+# package.json and the shared root pnpm-lock.yaml. The Expo mobile app is treated
+# specially — its React / React Native deps are pinned to the exact versions the
+# Expo SDK ships and must move only via `npx expo install` (see CLAUDE.md), so
+# Dependabot must never drift them.
+
+version: 2
+
+updates:
+  # ---------------------------------------------------------------------------
+  # WEB — React + Vite app (apps/wrapped)
+  # ---------------------------------------------------------------------------
+  - package-ecosystem: 'npm'
+    directory: '/apps/wrapped'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '05:00'
+      timezone: 'Europe/Berlin'
+    open-pull-requests-limit: 10
+    labels:
+      - 'dependencies'
+      - 'web'
+    groups:
+      react-ecosystem:
+        patterns:
+          - 'react'
+          - 'react-dom'
+          - 'react-router*'
+          - '@types/react*'
+      build-tools:
+        dependency-type: 'development'
+        patterns:
+          - 'vite*'
+          - '@vitejs/*'
+          - 'eslint*'
+          - '@eslint/*'
+          - 'typescript-eslint'
+          - 'globals'
+          - 'tailwindcss'
+          - '@tailwindcss/*'
+      testing:
+        dependency-type: 'development'
+        patterns:
+          - 'vitest'
+          - '@vitest/*'
+          - 'jsdom'
+          - 'playwright'
+      minor-patch:
+        update-types:
+          - 'minor'
+          - 'patch'
+        exclude-patterns:
+          - 'react'
+          - 'react-dom'
+          - 'react-router*'
+          - '@types/react*'
+          - 'vite*'
+          - '@vitejs/*'
+          - 'eslint*'
+          - '@eslint/*'
+          - 'typescript-eslint'
+          - 'tailwindcss'
+          - '@tailwindcss/*'
+          - 'vitest'
+          - '@vitest/*'
+          - 'jsdom'
+          - 'playwright'
+    ignore:
+      # React is decoupled from mobile and bumped deliberately (major only).
+      - dependency-name: 'react'
+        update-types: ['version-update:semver-major']
+      - dependency-name: 'react-dom'
+        update-types: ['version-update:semver-major']
+
+  # ---------------------------------------------------------------------------
+  # MOBILE — Expo / React Native app (apps/wrapped/mobile)
+  # ---------------------------------------------------------------------------
+  - package-ecosystem: 'npm'
+    directory: '/apps/wrapped/mobile'
+    schedule:
+      interval: 'weekly'
+      day: 'thursday'
+      time: '05:00'
+      timezone: 'Europe/Berlin'
+    open-pull-requests-limit: 10
+    labels:
+      - 'dependencies'
+      - 'mobile'
+    groups:
+      expo:
+        patterns:
+          - 'expo'
+          - 'expo-*'
+          - '@expo/*'
+      react-native-core:
+        patterns:
+          - 'react-native'
+          - 'react-native-gesture-handler'
+          - 'react-native-reanimated'
+          - 'react-native-screens'
+          - 'react-native-safe-area-context'
+          - 'react-native-worklets'
+      react-native-ui:
+        patterns:
+          - 'react-native-*'
+          - '@shopify/*'
+          - 'moti'
+          - 'nativewind'
+        exclude-patterns:
+          - 'react-native'
+          - 'react-native-gesture-handler'
+          - 'react-native-reanimated'
+          - 'react-native-screens'
+          - 'react-native-safe-area-context'
+          - 'react-native-worklets'
+    ignore:
+      # Expo / RN move only via `npx expo install` during an SDK upgrade.
+      - dependency-name: 'expo'
+        update-types: ['version-update:semver-major']
+      - dependency-name: 'react-native'
+        update-types: ['version-update:semver-major']
+      # react/react-dom are pinned to the EXACT version the Expo SDK ships (RN's
+      # bundled renderer requires an exact match). Never let Dependabot drift them.
+      - dependency-name: 'react'
+      - dependency-name: 'react-dom'
+
+  # ---------------------------------------------------------------------------
+  # MCP SERVER — Node ESM (services/mcp)
+  # ---------------------------------------------------------------------------
+  - package-ecosystem: 'npm'
+    directory: '/services/mcp'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '05:00'
+      timezone: 'Europe/Berlin'
+    open-pull-requests-limit: 10
+    labels:
+      - 'dependencies'
+      - 'mcp'
+    groups:
+      mcp-sdk:
+        patterns:
+          - '@modelcontextprotocol/*'
+      dev-dependencies:
+        dependency-type: 'development'
+      minor-patch:
+        dependency-type: 'production'
+        update-types:
+          - 'minor'
+          - 'patch'
+
+  # ---------------------------------------------------------------------------
+  # PYTHON — NLP analysis service (services/analysis)
+  # ---------------------------------------------------------------------------
+  - package-ecosystem: 'pip'
+    directory: '/services/analysis'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '05:00'
+      timezone: 'Europe/Berlin'
+    open-pull-requests-limit: 10
+    labels:
+      - 'dependencies'
+      - 'python'
+    groups:
+      python-minor-patch:
+        update-types:
+          - 'minor'
+          - 'patch'
+
+  # ---------------------------------------------------------------------------
+  # DOCKER — base image tags in each deployable's Dockerfile
+  # ---------------------------------------------------------------------------
+  - package-ecosystem: 'docker'
+    directories:
+      - '/apps/wrapped'
+      - '/services/mcp'
+      - '/services/analysis'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '05:00'
+      timezone: 'Europe/Berlin'
+    open-pull-requests-limit: 5
+    labels:
+      - 'dependencies'
+      - 'docker'
+
+  # ---------------------------------------------------------------------------
+  # GITHUB ACTIONS — keep workflow actions current (and let SHA pins auto-bump)
+  # ---------------------------------------------------------------------------
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '05:00'
+      timezone: 'Europe/Berlin'
+    open-pull-requests-limit: 5
+    labels:
+      - 'dependencies'
+      - 'github-actions'
+    groups:
+      github-actions:
+        patterns:
+          - '*'
