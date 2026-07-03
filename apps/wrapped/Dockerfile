@@ -10,7 +10,8 @@
 # ----- Build stage -----
 FROM node:26-slim AS build
 # Pin pnpm to match the repo (honors package.json pnpm.onlyBuiltDependencies)
-RUN corepack enable && corepack prepare pnpm@10.0.0 --activate
+# Node >=25 no longer bundles corepack — install pnpm directly via npm
+RUN npm install -g pnpm@10.0.0
 WORKDIR /app
 
 # Vite build-time env (Umami analytics) — optional
