@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
-import { Home, BookOpen, Shield, FileText, ExternalLink, Users, X, RotateCcw } from 'lucide-react';
+import { Home, BookOpen, Shield, FileText, ExternalLink, Users, X, RotateCcw, Plug } from 'lucide-react';
 import { clearWrappedProgress } from '@/lib/wrapped-storage';
 import { useQuizStore } from '@/stores/quizStore';
 
@@ -16,6 +16,7 @@ const NAV_ITEMS: NavItem[] = [
   { href: '/', label: 'Bundestag Wrapped', icon: <Home size={20} /> },
   { href: '/abgeordnete', label: 'Abgeordnete-Wrapped', icon: <Users size={20} /> },
   { href: '/dokumentation', label: 'Dokumentation', icon: <BookOpen size={20} /> },
+  { href: '/mcp', label: 'MCP-Server', icon: <Plug size={20} /> },
 ];
 
 const FOOTER_LINKS: NavItem[] = [
