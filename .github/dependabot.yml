@@ -79,6 +79,12 @@ updates:
   # ---------------------------------------------------------------------------
   # MOBILE — Expo / React Native app (apps/wrapped/mobile)
   # ---------------------------------------------------------------------------
+  # SECURITY-ONLY. The entire mobile dependency tree is governed by the Expo SDK
+  # and must move ONLY via `npx expo install` during a deliberate SDK upgrade
+  # (see CLAUDE.md — RN's bundled renderer needs exact React/native version
+  # matches; routine bumps break the native/JS contract). `open-pull-requests-limit: 0`
+  # disables ROUTINE version-update PRs while STILL allowing Dependabot to open
+  # security-vulnerability PRs. Do not raise this limit; do SDK bumps by hand.
   - package-ecosystem: 'npm'
     directory: '/apps/wrapped/mobile'
     schedule:
@@ -86,52 +92,10 @@ updates:
       day: 'thursday'
       time: '05:00'
       timezone: 'Europe/Berlin'
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 0
     labels:
       - 'dependencies'
       - 'mobile'
-    groups:
-      expo:
-        patterns:
-          - 'expo'
-          - 'expo-*'
-          - '@expo/*'
-      react-native-core:
-        patterns:
-          - 'react-native'
-          - 'react-native-gesture-handler'
-          - 'react-native-reanimated'
-          - 'react-native-screens'
-          - 'react-native-safe-area-context'
-          - 'react-native-worklets'
-      react-native-ui:
-        patterns:
-          - 'react-native-*'
-          - '@shopify/*'
-          - 'moti'
-          - 'nativewind'
-        exclude-patterns:
-          - 'react-native'
-          - 'react-native-gesture-handler'
-          - 'react-native-reanimated'
-          - 'react-native-screens'
-          - 'react-native-safe-area-context'
-          - 'react-native-worklets'
-    ignore:
-      # react/react-dom are pinned to the EXACT version the Expo SDK ships (RN's
-      # bundled renderer requires an exact match). Never let Dependabot drift them.
-      - dependency-name: 'react'
-      - dependency-name: 'react-dom'
-      # nativewind requires tailwind 3.x — tailwind 4 breaks the mobile build.
-      - dependency-name: 'tailwindcss'
-      # TypeScript is pinned by the Expo SDK's typescript peer range.
-      - dependency-name: 'typescript'
-        update-types: ['version-update:semver-major']
-      # EVERYTHING else major-bumps only via a deliberate `npx expo install`
-      # SDK upgrade — Dependabot majors here break the native/JS contract
-      # (expo-* / babel-preset-expo / RN ecosystem all track the SDK).
-      - dependency-name: '*'
-        update-types: ['version-update:semver-major']
 
   # ---------------------------------------------------------------------------
   # MCP SERVER — Node ESM (services/mcp)
