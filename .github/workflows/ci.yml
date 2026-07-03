@@ -71,23 +71,44 @@ jobs:
         run: pytest -q
 
   docker:
-    name: Docker images build (no push)
+    name: Docker image build (no push)
     runs-on: ubuntu-latest
+    # Build the three images in parallel — the analysis image (build-essential
+    # compile + 610 MB spaCy download) dominates wall time, so a matrix runs it
+    # concurrently with the two fast node builds instead of serially after them.
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: wrapped
+            context: ./apps/wrapped
+            file: ./apps/wrapped/Dockerfile
+          - name: mcp
+            context: ./services/mcp
+            file: ./services/mcp/Dockerfile
+          - name: analysis
+            context: ./services/analysis
+            file: ./services/analysis/Dockerfile.api
     steps:
       - uses: actions/checkout@v7
 
       # Coolify builds each image from its OWN directory as the build context
-      # (base_directory), so mirror that here. This job catches breakage that the
-      # unit tests can't: a bad base-image bump, a removed build tool (corepack),
-      # a stale hardcoded path (python3.<minor>/site-packages), a Dockerfile syntax
-      # error — all of which otherwise only fail at deploy, leaving main un-deployable.
-      # --no-cache on the analysis image would re-download the 610 MB spaCy model
-      # every run, so we let Buildx cache layers by default.
-      - name: Build apps/wrapped
-        run: docker build -t ci/bundestag-wrapped:pr ./apps/wrapped
+      # (base_directory), so `context`/`file` mirror that here. This job catches
+      # breakage the unit tests can't: a bad base-image bump, a removed build tool
+      # (corepack), a stale hardcoded path (python3.<minor>/site-packages), a
+      # Dockerfile syntax error — all of which otherwise only fail at deploy,
+      # leaving main un-deployable.
+      - uses: docker/setup-buildx-action@v3
 
-      - name: Build services/mcp
-        run: docker build -t ci/bundestag-mcp:pr ./services/mcp
-
-      - name: Build services/analysis
-        run: docker build -f ./services/analysis/Dockerfile.api -t ci/bundestag-analysis:pr ./services/analysis
+      # A plain `docker build` on a fresh runner has NO cross-run cache, so the
+      # analysis image would re-download the 610 MB spaCy model every run. The gha
+      # cache backend persists layers between runs (per-image scope so they don't
+      # collide); only a changed layer rebuilds.
+      - uses: docker/build-push-action@v6
+        with:
+          context: ${{ matrix.context }}
+          file: ${{ matrix.file }}
+          push: false
+          tags: ci/bundestag-${{ matrix.name }}:pr
+          cache-from: type=gha,scope=${{ matrix.name }}
+          cache-to: type=gha,mode=max,scope=${{ matrix.name }}

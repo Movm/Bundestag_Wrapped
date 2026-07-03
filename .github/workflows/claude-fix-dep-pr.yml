@@ -33,9 +33,13 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - name: Check out the PR branch
-        run: gh pr checkout ${{ inputs.pr }}
+        # Pass the dispatch input via env and quote it — never interpolate
+        # ${{ inputs.pr }} straight into a run line (shell-injection vector, even
+        # though only a repo-write user can dispatch this).
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ inputs.pr }}
+        run: gh pr checkout "$PR"
 
       - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v6
