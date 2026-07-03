@@ -8,7 +8,7 @@
 # Coolify: build pack = Dockerfile, "Base Directory" = /services/mcp
 
 # ----- Build stage: has the C++ toolchain to compile better-sqlite3 -----
-FROM node:22-slim AS build
+FROM node:26-slim AS build
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 make g++ ca-certificates \
     && rm -rf /var/lib/apt/lists/*
@@ -22,7 +22,7 @@ RUN pnpm install --prod --no-frozen-lockfile
 COPY src/ ./src/
 
 # ----- Runtime stage: clean base, no compilers/pnpm — just node + the app -----
-FROM node:22-slim AS runtime
+FROM node:26-slim AS runtime
 # curl only, for the healthcheck
 RUN apt-get update && apt-get install -y --no-install-recommends curl \
     && rm -rf /var/lib/apt/lists/*
