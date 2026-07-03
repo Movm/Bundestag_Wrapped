@@ -14,6 +14,7 @@ const STATIC_PAGES = [
   { path: '/suche', priority: '0.8', changefreq: 'weekly' },
   { path: '/abgeordnete', priority: '0.8', changefreq: 'weekly' },
   { path: '/dokumentation', priority: '0.6', changefreq: 'monthly' },
+  { path: '/mcp', priority: '0.6', changefreq: 'monthly' },
   { path: '/datenschutz', priority: '0.3', changefreq: 'yearly' },
 ];
 

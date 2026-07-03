@@ -27,6 +27,11 @@ export const PAGE_META = {
     description:
       'Datenschutzerklarung fur Bundestag Wrapped 2025. Keine Cookies, kein Tracking, keine Datenerhebung.',
   },
+  mcp: {
+    title: 'MCP-Server',
+    description:
+      'Offener MCP-Server fur den Deutschen Bundestag: Drucksachen, Reden und Gesetzgebung als Werkzeug fur KI-Assistenten wie Claude. 35 Tools, keine Anmeldung.',
+  },
   documentation: {
     title: 'Dokumentation',
     description:
