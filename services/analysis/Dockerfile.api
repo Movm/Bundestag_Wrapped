@@ -30,8 +30,12 @@ FROM python:3.13-slim
 
 WORKDIR /app
 
-# Copy installed packages from builder
-COPY --from=builder /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
+# Copy installed packages from builder.
+# NOTE: this path is tied to the Python minor version in the FROM lines above —
+# packages install to /usr/local/lib/python3.<minor>/site-packages. When bumping
+# the base image (e.g. 3.13 -> 3.14), update this path too, or the runtime stage
+# copies an empty/nonexistent dir and every import fails at container start.
+COPY --from=builder /usr/local/lib/python3.13/site-packages /usr/local/lib/python3.13/site-packages
 COPY --from=builder /usr/local/bin /usr/local/bin
 
 # Copy spaCy model data

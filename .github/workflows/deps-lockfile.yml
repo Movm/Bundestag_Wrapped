@@ -1,0 +1,55 @@
+name: Dependabot lockfile sync
+
+# WHY THIS EXISTS
+# Dependabot edits a workspace package's package.json but does NOT regenerate the
+# shared root pnpm-lock.yaml, so every npm Dependabot PR fails CI with
+# ERR_PNPM_OUTDATED_LOCKFILE (the specifiers in the lockfile no longer match
+# package.json). This workflow runs on Dependabot's own branches, regenerates the
+# lockfile with a non-frozen install, and commits it back — turning red, unmergeable
+# Dependabot PRs into green ones with no human lockfile surgery.
+
+on:
+  push:
+    branches:
+      - 'dependabot/npm_and_yarn/**'
+
+permissions:
+  contents: write
+
+jobs:
+  sync-lockfile:
+    # Only Dependabot's branches; ignore human pushes that happen to match.
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      # Push with a PAT if provided so the commit re-triggers CI automatically
+      # (pushes made with the default GITHUB_TOKEN do NOT start new workflow runs).
+      # Without the PAT it still fixes the lockfile; the maintainer just re-runs
+      # the checks once. Add repo secret DEPENDABOT_LOCKFILE_PAT (a fine-grained
+      # PAT with contents:write) to make this fully hands-off.
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.ref }}
+          token: ${{ secrets.DEPENDABOT_LOCKFILE_PAT || secrets.GITHUB_TOKEN }}
+
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Regenerate lockfile
+        run: pnpm install --no-frozen-lockfile --lockfile-only
+
+      - name: Commit if the lockfile changed
+        run: |
+          if git diff --quiet -- pnpm-lock.yaml; then
+            echo "pnpm-lock.yaml already in sync — nothing to do."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add pnpm-lock.yaml
+          git commit -m "chore(deps): sync pnpm-lock.yaml [dependabot-skip]"
+          git push

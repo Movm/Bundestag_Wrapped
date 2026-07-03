@@ -1,0 +1,68 @@
+name: Claude fix dependency PR
+
+# STUFE 2 — on-demand repair bot. Point it at a red Dependabot PR and Claude
+# diagnoses why CI failed and fixes it: regenerate the stale root pnpm-lock.yaml,
+# repair a corepack-style Dockerfile break, correct a hardcoded site-packages path.
+# For a Python image bump with no compatible wheels it closes the PR with a reason
+# instead of forcing it. Manual trigger only — a human decides when to run it.
+#
+# PREREQUISITES (see PR description):
+#   - repo secret ANTHROPIC_API_KEY
+#   - confirm the CLAUDE_MODEL id below is the exact current Sonnet 5 model string
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: 'PR number to diagnose and fix'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  # ⚠️ VERIFY THIS ID — see the note in claude-deps-maintainer.yml.
+  CLAUDE_MODEL: claude-sonnet-5
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - name: Check out the PR branch
+        run: gh pr checkout ${{ inputs.pr }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Dependabot PR #${{ inputs.pr }} is failing CI. You are checked out on its
+            branch. Diagnose the failure and fix it. Allowed fixes:
+            - Regenerate the shared root pnpm-lock.yaml via
+              `pnpm install --no-frozen-lockfile --lockfile-only` (the usual
+              ERR_PNPM_OUTDATED_LOCKFILE cause).
+            - Repair corepack-style Dockerfile breaks (node >=25 dropped corepack —
+              use `npm install -g pnpm@<version>` instead).
+            - Fix a hardcoded python3.<minor>/site-packages COPY path after a base bump.
+            For a Python image bump where PyPI has no compatible wheels for the target
+            (check via curl to https://pypi.org), do NOT force it — close the PR with
+            `gh pr close` and a one-line reason. Do NOT touch apps/wrapped/mobile
+            (Expo-managed). When you have a fix: run the relevant tests/build, commit,
+            and push to the PR branch. Do not merge or deploy.
+          claude_args: >
+            --bare
+            --model ${{ env.CLAUDE_MODEL }}
+            --permission-mode dontAsk
+            --max-turns 25
+            --allowedTools "Read,Edit,Bash(pnpm *),Bash(git *),Bash(gh pr *),Bash(gh api *),Bash(curl https://pypi.org/*),Bash(docker build *)"
