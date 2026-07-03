@@ -1,0 +1,75 @@
+name: Claude dependency maintainer
+
+# STUFE 1 — a weekly, AI-driven maintenance pass that does the judgement work a
+# plain version bump can't: check PyPI for compatible wheels before a Python base
+# bump, respect the Expo-SDK "expo install only" rule, skim changelogs for breaking
+# changes, regenerate the shared pnpm-lock.yaml correctly, run the build, and open
+# ONE consolidated PR with a written risk summary. A human reviews and merges — this
+# never merges or deploys anything itself.
+#
+# PREREQUISITES (see PR description):
+#   - repo secret ANTHROPIC_API_KEY
+#   - confirm the CLAUDE_MODEL id below is the exact current Sonnet 5 model string
+
+on:
+  schedule:
+    - cron: '0 6 * * 1' # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  # ⚠️ VERIFY THIS ID. Set at 2026-07 as the best inference from the
+  # `claude-fable-5` naming convention; this environment had no API access to
+  # confirm the exact Sonnet 5 string against the live Models API. If a scheduled
+  # run 404s on the model, this is the first thing to fix.
+  CLAUDE_MODEL: claude-sonnet-5
+
+jobs:
+  maintain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            You are the dependency maintainer for this pnpm monorepo (web + Python
+            NLP service + Docker images + an Expo mobile app). Produce ONE consolidated
+            dependency-update PR. Rules:
+
+            1. WEB (apps/wrapped) and MCP (services/mcp): run `pnpm --filter <pkg> update`
+               within semver, then regenerate the shared root pnpm-lock.yaml so
+               `pnpm install --frozen-lockfile` passes. Never leave the lockfile stale.
+            2. PYTHON (services/analysis): before any base-image or pinned bump, check
+               PyPI that compatible wheels exist for the target (e.g. spaCy has no
+               cp314 wheels yet). If not, skip that bump and say why in the summary.
+               When bumping the python base image, also update the hardcoded
+               python3.<minor>/site-packages COPY path in Dockerfile.api.
+            3. MOBILE (apps/wrapped/mobile): DO NOT touch. Its deps track the Expo SDK
+               and move only via `npx expo install` during a deliberate SDK upgrade.
+            4. Validate: run `pnpm -r test` and `pnpm --filter bundestag-wrapped build`
+               before opening the PR. If something fails, fix it or drop that update.
+            5. Open a single PR titled "chore(deps): weekly maintenance" with a summary
+               grouping each change by risk (safe patch/minor vs. anything needing a
+               human look) and listing what you deliberately skipped and why.
+            6. Do not merge, deploy, or touch Coolify. Open the PR and stop.
+          claude_args: >
+            --bare
+            --model ${{ env.CLAUDE_MODEL }}
+            --permission-mode dontAsk
+            --max-turns 40
+            --allowedTools "Read,Edit,Bash(pnpm *),Bash(git *),Bash(gh pr *),Bash(gh api *),Bash(curl https://pypi.org/*),Bash(python -m *),Bash(pip *)"

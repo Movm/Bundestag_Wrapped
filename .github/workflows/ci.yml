@@ -14,6 +14,14 @@ jobs:
   js:
     name: JS/TS workspace (lint · test · build)
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # 22 = local/dev floor; 26 = the version the Dockerfiles ship (node:26-slim).
+        # Testing both keeps CI honest about what actually runs in production — a
+        # node-version-specific break (e.g. corepack removed in node >=25) surfaces
+        # here instead of only at the Coolify deploy.
+        node-version: [22, 26]
     steps:
       - uses: actions/checkout@v7
 
@@ -22,7 +30,7 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: ${{ matrix.node-version }}
           cache: pnpm
 
       - name: Install
@@ -43,12 +51,17 @@ jobs:
     defaults:
       run:
         working-directory: services/analysis
+    strategy:
+      fail-fast: false
+      matrix:
+        # 3.11 = the requires-python floor; 3.13 = the version Dockerfile.api ships.
+        python-version: ["3.11", "3.13"]
     steps:
       - uses: actions/checkout@v7
 
       - uses: actions/setup-python@v6
         with:
-          python-version: "3.12"
+          python-version: ${{ matrix.python-version }}
 
       - name: Install (dev)
         run: pip install -e ".[dev]"
@@ -56,3 +69,25 @@ jobs:
       - name: Test
         # Parser/aggregation tests don't require the spaCy model download.
         run: pytest -q
+
+  docker:
+    name: Docker images build (no push)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      # Coolify builds each image from its OWN directory as the build context
+      # (base_directory), so mirror that here. This job catches breakage that the
+      # unit tests can't: a bad base-image bump, a removed build tool (corepack),
+      # a stale hardcoded path (python3.<minor>/site-packages), a Dockerfile syntax
+      # error — all of which otherwise only fail at deploy, leaving main un-deployable.
+      # --no-cache on the analysis image would re-download the 610 MB spaCy model
+      # every run, so we let Buildx cache layers by default.
+      - name: Build apps/wrapped
+        run: docker build -t ci/bundestag-wrapped:pr ./apps/wrapped
+
+      - name: Build services/mcp
+        run: docker build -t ci/bundestag-mcp:pr ./services/mcp
+
+      - name: Build services/analysis
+        run: docker build -f ./services/analysis/Dockerfile.api -t ci/bundestag-analysis:pr ./services/analysis
