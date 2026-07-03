@@ -5,8 +5,16 @@ name: Dependabot lockfile sync
 # shared root pnpm-lock.yaml, so every npm Dependabot PR fails CI with
 # ERR_PNPM_OUTDATED_LOCKFILE (the specifiers in the lockfile no longer match
 # package.json). This workflow runs on Dependabot's own branches, regenerates the
-# lockfile with a non-frozen install, and commits it back — turning red, unmergeable
-# Dependabot PRs into green ones with no human lockfile surgery.
+# lockfile with a non-frozen install, and commits it back.
+#
+# ⚠️ CI RE-TRIGGER / AUTO-MERGE: a push made with the default GITHUB_TOKEN does NOT
+# start a new workflow run, so ci.yml would not re-run on the fixed commit and the
+# required check would stay pending forever — auto-merge (dependabot-automerge.yml)
+# would then wait indefinitely. To make the pipeline fully hands-off you MUST add a
+# repo secret DEPENDABOT_LOCKFILE_PAT (a fine-grained PAT with contents:write): the
+# push is then PAT-authored and re-triggers CI. Without it this still fixes the
+# lockfile, but a maintainer has to re-run the checks once — and the job posts a PR
+# comment saying so, rather than leaving the PR silently stuck.
 
 on:
   push:
@@ -15,18 +23,24 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write # to post the "re-run CI" comment on the fallback path
 
 jobs:
   sync-lockfile:
-    # Only Dependabot's branches; ignore human pushes that happen to match.
+    # Only Dependabot's branches; ignore human pushes that happen to match. The
+    # PAT-authored re-push is NOT dependabot[bot], so this guard also stops the
+    # workflow from re-triggering itself into a loop.
     if: github.actor == 'dependabot[bot]'
     runs-on: ubuntu-latest
     steps:
-      # Push with a PAT if provided so the commit re-triggers CI automatically
-      # (pushes made with the default GITHUB_TOKEN do NOT start new workflow runs).
-      # Without the PAT it still fixes the lockfile; the maintainer just re-runs
-      # the checks once. Add repo secret DEPENDABOT_LOCKFILE_PAT (a fine-grained
-      # PAT with contents:write) to make this fully hands-off.
+      - name: Detect whether a re-trigger PAT is configured
+        id: pat
+        env:
+          PAT: ${{ secrets.DEPENDABOT_LOCKFILE_PAT }}
+        # `${PAT:+yes}` prints "yes" only when the secret is non-empty; the secret
+        # value itself is never echoed.
+        run: echo "present=${PAT:+yes}" >> "$GITHUB_OUTPUT"
+
       - uses: actions/checkout@v7
         with:
           ref: ${{ github.ref }}
@@ -43,13 +57,27 @@ jobs:
         run: pnpm install --no-frozen-lockfile --lockfile-only
 
       - name: Commit if the lockfile changed
+        id: commit
         run: |
           if git diff --quiet -- pnpm-lock.yaml; then
             echo "pnpm-lock.yaml already in sync — nothing to do."
+            echo "pushed=no" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add pnpm-lock.yaml
-          git commit -m "chore(deps): sync pnpm-lock.yaml [dependabot-skip]"
+          git commit -m "chore(deps): sync pnpm-lock.yaml"
           git push
+          echo "pushed=yes" >> "$GITHUB_OUTPUT"
+
+      # GITHUB_TOKEN-authored pushes don't re-trigger CI, so on the no-PAT path the
+      # required check stays pending and auto-merge can't fire. Surface that instead
+      # of leaving the PR silently stuck.
+      - name: Flag that CI needs a manual re-run (no PAT)
+        if: steps.commit.outputs.pushed == 'yes' && steps.pat.outputs.present != 'yes'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr comment "$GITHUB_REF_NAME" --body \
+            "🔒 Synced \`pnpm-lock.yaml\`. This commit was pushed with GITHUB_TOKEN, which does **not** re-trigger CI — please re-run the checks (or add a \`DEPENDABOT_LOCKFILE_PAT\` secret to automate this). Auto-merge stays blocked until the checks re-run green."
