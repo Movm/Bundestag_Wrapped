@@ -118,15 +118,20 @@ updates:
           - 'react-native-safe-area-context'
           - 'react-native-worklets'
     ignore:
-      # Expo / RN move only via `npx expo install` during an SDK upgrade.
-      - dependency-name: 'expo'
-        update-types: ['version-update:semver-major']
-      - dependency-name: 'react-native'
-        update-types: ['version-update:semver-major']
       # react/react-dom are pinned to the EXACT version the Expo SDK ships (RN's
       # bundled renderer requires an exact match). Never let Dependabot drift them.
       - dependency-name: 'react'
       - dependency-name: 'react-dom'
+      # nativewind requires tailwind 3.x — tailwind 4 breaks the mobile build.
+      - dependency-name: 'tailwindcss'
+      # TypeScript is pinned by the Expo SDK's typescript peer range.
+      - dependency-name: 'typescript'
+        update-types: ['version-update:semver-major']
+      # EVERYTHING else major-bumps only via a deliberate `npx expo install`
+      # SDK upgrade — Dependabot majors here break the native/JS contract
+      # (expo-* / babel-preset-expo / RN ecosystem all track the SDK).
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']
 
   # ---------------------------------------------------------------------------
   # MCP SERVER — Node ESM (services/mcp)

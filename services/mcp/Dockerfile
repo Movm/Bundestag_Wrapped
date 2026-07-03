@@ -13,7 +13,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 make g++ ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 # Pin pnpm to match the repo (honors package.json pnpm.onlyBuiltDependencies)
-RUN corepack enable && corepack prepare pnpm@10.0.0 --activate
+# Node >=25 no longer bundles corepack — install pnpm directly via npm
+RUN npm install -g pnpm@10.0.0
 
 WORKDIR /app
 # Install prod deps (better-sqlite3 native build approved via package.json pnpm config)
