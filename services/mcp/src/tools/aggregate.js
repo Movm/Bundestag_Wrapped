@@ -379,7 +379,7 @@ Fetches the proceeding and all its Vorgangspositionen and returns, in chronologi
 Get a Vorgang ID first via bundestag_search_vorgaenge or bundestag_semantic_search.`,
 
   inputSchema: {
-    vorgang_id: z.number().int().positive()
+    vorgang_id: z.coerce.number().int().positive()
       .describe('Vorgang ID to digest'),
     useCache: z.boolean().default(true)
       .describe('Whether to use cached results')

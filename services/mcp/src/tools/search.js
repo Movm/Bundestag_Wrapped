@@ -210,7 +210,7 @@ export const getDrucksacheTool = {
   description: 'Get a specific Drucksache (printed document) by its ID. Returns full metadata.',
 
   inputSchema: {
-    id: z.number().int().positive()
+    id: z.coerce.number().int().positive()
       .describe('Drucksache ID'),
     includeFullText: z.boolean().default(false)
       .describe('Also fetch the full text content'),
@@ -304,7 +304,7 @@ export const getPlenarprotokollTool = {
   description: 'Get a specific Plenarprotokoll (plenary protocol) by its ID.',
 
   inputSchema: {
-    id: z.number().int().positive()
+    id: z.coerce.number().int().positive()
       .describe('Plenarprotokoll ID'),
     includeFullText: z.boolean().default(false)
       .describe('Also fetch the full transcript text'),
@@ -404,7 +404,7 @@ export const getVorgangTool = {
   description: 'Get a specific Vorgang (proceeding) by its ID with all related documents.',
 
   inputSchema: {
-    id: z.number().int().positive()
+    id: z.coerce.number().int().positive()
       .describe('Vorgang ID'),
     useCache: useCacheSchema
   },
@@ -482,7 +482,7 @@ export const getPersonTool = {
   description: 'Get detailed information about a specific person by their ID.',
 
   inputSchema: {
-    id: z.number().int().positive()
+    id: z.coerce.number().int().positive()
       .describe('Person ID'),
     useCache: useCacheSchema
   },
@@ -547,7 +547,7 @@ dense with matches; still raise \`limit\` or page with \`cursor\` to scan more.`
       .describe('Activity type, e.g. "Rede", "Frage", "Schriftliche Frage". Filtered client-side on the fetched page (DIP has no server-side type filter); plenary types auto-narrow to dokumentart "Plenarprotokoll" first.'),
     dokumentart: z.enum(['Plenarprotokoll', 'Drucksache']).optional()
       .describe('Filter by document source (real DIP filter): "Plenarprotokoll" (speeches, questions) or "Drucksache" (written activities).'),
-    person_id: z.number().int().positive().optional()
+    person_id: z.coerce.number().int().positive().optional()
       .describe('Filter by person ID'),
     datum_start: datumStartSchema,
     datum_end: datumEndSchema,
@@ -606,7 +606,7 @@ export const getAktivitaetTool = {
   description: 'Get a specific parliamentary activity by its ID.',
 
   inputSchema: {
-    id: z.number().int().positive()
+    id: z.coerce.number().int().positive()
       .describe('Aktivitaet ID'),
     useCache: useCacheSchema
   },
@@ -653,7 +653,7 @@ such as a committee referral, vote, or decision. Use this to track detailed
 progress of bills through parliament.`,
 
   inputSchema: {
-    vorgang_id: z.number().int().positive().optional()
+    vorgang_id: z.coerce.number().int().positive().optional()
       .describe('Filter by Vorgang ID to get all positions of a specific proceeding'),
     wahlperiode: wahlperiodeSchema,
     datum_start: datumStartSchema,
@@ -693,7 +693,7 @@ their body. For content/phrase search of Drucksachen use bundestag_search_docume
 you scope via drucksache_id / wahlperiode / date range.`,
 
   inputSchema: {
-    drucksache_id: z.number().int().positive().optional()
+    drucksache_id: z.coerce.number().int().positive().optional()
       .describe('Return the full text of this specific Drucksache ID'),
     wahlperiode: wahlperiodeSchema,
     datum_start: datumStartSchema,
@@ -739,7 +739,7 @@ bundestag_search_speeches (semantic). This tool only *returns the full transcrip
 protocols you scope via plenarprotokoll_id / wahlperiode / date range.`,
 
   inputSchema: {
-    plenarprotokoll_id: z.number().int().positive().optional()
+    plenarprotokoll_id: z.coerce.number().int().positive().optional()
       .describe('Return the full text of this specific Plenarprotokoll ID'),
     wahlperiode: wahlperiodeSchema,
     datum_start: datumStartSchema,
@@ -809,7 +809,7 @@ Categories:
   inputSchema: {
     type: z.enum(['drucksache', 'plenarprotokoll'])
       .describe('Type of document to check'),
-    id: z.number().int().positive()
+    id: z.coerce.number().int().positive()
       .describe('Document or protocol ID'),
     model: z.string().optional()
       .describe('Optional: specific model to check context usage for (e.g., "gpt-4o", "claude-3-sonnet")')

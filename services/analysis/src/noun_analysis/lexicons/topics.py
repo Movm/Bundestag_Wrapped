@@ -230,6 +230,9 @@ TOPIC_LEXICONS: dict[TopicCategory, set[str]] = {
         # Youth
         "jugend", "jugendliche", "jugendarbeit", "jugendhilfe",
         "jugendamt", "kita", "kindergarten", "kinderkrippe",
+        # Social justice
+        "gerechtigkeit", "soziale-gerechtigkeit", "verteilungsgerechtigkeit",
+        "chancengleichheit", "chancengerechtigkeit",
     },
 
     TopicCategory.SICHERHEIT: {
