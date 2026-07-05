@@ -18,6 +18,7 @@ import { allTools } from './tools/search.js';
 import { semanticSearchTools } from './tools/semanticSearch.js';
 import { analysisTools } from './tools/analysis.js';
 import { aggregateTools } from './tools/aggregate.js';
+import { abgeordnetenwatchTools } from './tools/abgeordnetenwatch.js';
 import { clientConfigTool } from './tools/clientConfig.js';
 import { getCacheStats } from './utils/cache.js';
 import { debug, info, error, errDetail, getStats } from './utils/logger.js';
@@ -101,7 +102,7 @@ function isExposedTool(name) {
 
 // Every registered tool, in registration order. clientConfigTool is local-only
 // (generates config text, no external calls) — the rest hit the DIP/Qdrant APIs.
-const ALL_TOOLS = [...allTools, ...semanticSearchTools, ...analysisTools, ...aggregateTools, clientConfigTool]
+const ALL_TOOLS = [...allTools, ...semanticSearchTools, ...analysisTools, ...aggregateTools, ...abgeordnetenwatchTools, clientConfigTool]
   .filter((tool) => isExposedTool(tool.name));
 
 // Derive the Directory-required `title` annotation from the tool name so it
@@ -174,7 +175,7 @@ function createMcpServer(baseUrl) {
 
   // Register all search/entity/analysis/aggregate tools (clientConfigTool below).
   // Indexing/reindex tools are excluded unless EXPOSE_INDEXING_TOOLS is set.
-  const allToolsCombined = [...allTools, ...semanticSearchTools, ...analysisTools, ...aggregateTools]
+  const allToolsCombined = [...allTools, ...semanticSearchTools, ...analysisTools, ...aggregateTools, ...abgeordnetenwatchTools]
     .filter((tool) => isExposedTool(tool.name));
   for (const tool of allToolsCombined) {
     server.tool(

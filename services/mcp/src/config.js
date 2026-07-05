@@ -23,6 +23,16 @@ export const config = {
     timeout: 30000
   },
 
+  // Abgeordnetenwatch — public transparency API (CC0, no key). Adds MP voting
+  // behaviour, side-jobs and roll-call tallies on top of the official DIP record.
+  // Fair-use limit is 30 req/min, so it gets its own limiter and a longer TTL.
+  abgeordnetenwatch: {
+    baseUrl: 'https://www.abgeordnetenwatch.de/api/v2',
+    rateLimitPerMinute: 30,
+    burstSize: 5,
+    timeout: 15000
+  },
+
   cache: {
     apiResponseTTL: 5 * 60 * 1000,      // 5 minutes for API responses
     entityTTL: 15 * 60 * 1000,          // 15 minutes for single entities
