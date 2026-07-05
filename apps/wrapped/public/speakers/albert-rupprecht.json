@@ -11,17 +11,17 @@
   "minWords": 902,
   "maxWords": 902,
   "rankings": {
-    "speechRank": 603,
-    "wordsRank": 565,
-    "partySpeechRank": 198,
-    "partyWordsRank": 185,
-    "partySize": 203,
-    "totalSpeakers": 609,
-    "percentile": 1.0,
+    "speechRank": 624,
+    "wordsRank": 606,
+    "partySpeechRank": 208,
+    "partyWordsRank": 202,
+    "partySize": 211,
+    "totalSpeakers": 627,
+    "percentile": 0.5,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 104
+    "longestSpeechRank": 135
   },
   "drama": {
     "interruptionsGiven": 0,
@@ -72,67 +72,40 @@
         "count": 4
       }
     ],
-    "signatureWordsBundestag": [
-      {
-        "word": "risiken",
-        "count": 6,
-        "score": 27.0,
-        "ratio": 88.4
-      },
+    "signatureWords": [
       {
         "word": "stimme",
         "count": 5,
-        "score": 22.3,
-        "ratio": 86.2
+        "ratioParty": 96.5,
+        "ratioBundestag": 93.6
+      },
+      {
+        "word": "risiken",
+        "count": 6,
+        "ratioParty": 61.8,
+        "ratioBundestag": 75.1
       },
       {
         "word": "ausdrücklich",
         "count": 6,
-        "score": 21.7,
-        "ratio": 36.5
+        "ratioParty": 23.5,
+        "ratioBundestag": 33.8
       },
       {
         "word": "gesetzentwurf",
         "count": 6,
-        "score": 18.3,
-        "ratio": 20.0
+        "ratioParty": 15.8,
+        "ratioBundestag": 15.6
       }
     ],
-    "signatureWordsParty": [
-      {
-        "word": "risiken",
-        "count": 6,
-        "score": 25.1,
-        "ratio": 64.2
-      },
-      {
-        "word": "stimme",
-        "count": 5,
-        "score": 22.7,
-        "ratio": 93.4
-      },
-      {
-        "word": "ausdrücklich",
-        "count": 6,
-        "score": 19.7,
-        "ratio": 25.7
-      },
-      {
-        "word": "gesetzentwurf",
-        "count": 6,
-        "score": 18.0,
-        "ratio": 18.9
-      }
-    ],
-    "signatureAdjectivesBundestag": [],
-    "signatureAdjectivesParty": []
+    "signatureAdjectives": []
   },
   "comparison": {
     "speakerAvgWords": 902,
-    "partyAvgWords": 688,
-    "parliamentAvgWords": 613,
-    "vsParty": 1.31,
-    "vsParliament": 1.47
+    "partyAvgWords": 645,
+    "parliamentAvgWords": 585,
+    "vsParty": 1.4,
+    "vsParliament": 1.54
   },
   "funFacts": [
     {
@@ -142,26 +115,27 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Albert Rupprecht häufiger als der Bundestag-Durchschnitt?",
+    "question": "Welches Wort nutzt Albert Rupprecht häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Risiken",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Stimme",
         "isCorrect": true
-      },
-      {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
       }
     ],
-    "explanation": "\"Risiken\" sagte Albert Rupprecht 6× (88.4× häufiger als der Bundestag-Durchschnitt)."
+    "explanationParty": "\"Stimme\" nutzt Albert Rupprecht 96.5× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "93.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

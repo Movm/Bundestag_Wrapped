@@ -11,36 +11,28 @@
   "minWords": 559,
   "maxWords": 593,
   "rankings": {
-    "speechRank": 567,
-    "wordsRank": 540,
-    "partySpeechRank": 83,
-    "partyWordsRank": 80,
-    "partySize": 85,
-    "totalSpeakers": 609,
-    "percentile": 6.9,
+    "speechRank": 605,
+    "wordsRank": 596,
+    "partySpeechRank": 85,
+    "partyWordsRank": 86,
+    "partySize": 87,
+    "totalSpeakers": 627,
+    "percentile": 3.5,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 429
+    "longestSpeechRank": 505
   },
   "drama": {
-    "interruptionsGiven": 1,
+    "interruptionsGiven": 3,
     "interruptionsReceived": 11,
-    "interrupterRank": 376,
-    "interruptedRank": 316
+    "interrupterRank": 395,
+    "interruptedRank": 454
   },
   "words": {
     "topWords": [
       {
         "word": "land",
-        "count": 4
-      },
-      {
-        "word": "bewältigung",
-        "count": 4
-      },
-      {
-        "word": "finanzieren",
         "count": 4
       },
       {
@@ -56,33 +48,39 @@
         "count": 4
       },
       {
+        "word": "bewältigung",
+        "count": 4
+      },
+      {
+        "word": "finanzieren",
+        "count": 4
+      },
+      {
         "word": "haus",
         "count": 3
       },
       {
-        "word": "klimaschutz",
+        "word": "bitte",
         "count": 3
       },
       {
-        "word": "umwelthaushalt",
+        "word": "deutschland",
         "count": 3
       },
       {
-        "word": "etat",
+        "word": "wasser",
         "count": 3
       }
     ],
-    "signatureWordsBundestag": [],
-    "signatureWordsParty": [],
-    "signatureAdjectivesBundestag": [],
-    "signatureAdjectivesParty": []
+    "signatureWords": [],
+    "signatureAdjectives": []
   },
   "comparison": {
     "speakerAvgWords": 576,
-    "partyAvgWords": 567,
-    "parliamentAvgWords": 613,
-    "vsParty": 1.02,
-    "vsParliament": 0.94
+    "partyAvgWords": 543,
+    "parliamentAvgWords": 585,
+    "vsParty": 1.06,
+    "vsParliament": 0.98
   },
   "funFacts": [
     {
@@ -99,19 +97,19 @@
   "signatureQuiz": null,
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦫",
-    "name": "Biber",
-    "title": "Konstruktive Brückenbauerin",
-    "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
-    "id": "biber",
+    "emoji": "🐢",
+    "name": "Schildkröte",
+    "title": "Gründliche Analystin",
+    "reason": "Wenige Reden, aber wenn, dann richtig ausführlich.",
+    "id": "schildkroete",
     "alternatives": [
       {
-        "emoji": "🐢",
-        "name": "Schildkröte",
-        "title": "Gründliche Analystin",
-        "reason": "Wenige Reden, aber wenn, dann richtig ausführlich.",
-        "id": "schildkroete",
-        "score": 0.618
+        "emoji": "🦫",
+        "name": "Biber",
+        "title": "Konstruktive Brückenbauerin",
+        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
+        "id": "biber",
+        "score": 0.59
       },
       {
         "emoji": "🐇",
@@ -150,7 +148,7 @@
     "scores": {
       "migration": 0.0,
       "klima": 8.15,
-      "wirtschaft": 1.36,
+      "wirtschaft": 2.72,
       "soziales": 1.36,
       "sicherheit": 1.36,
       "gesundheit": 1.36,
@@ -180,7 +178,7 @@
       },
       {
         "topic": "wirtschaft",
-        "score": 1.36,
+        "score": 2.72,
         "rank": 4
       },
       {
@@ -205,6 +203,10 @@
         }
       ],
       "wirtschaft": [
+        {
+          "word": "wirtschaft",
+          "count": 1
+        },
         {
           "word": "industrie",
           "count": 1
@@ -244,15 +246,15 @@
       ],
       "mobilitaet": [
         {
-          "word": "verkehr",
-          "count": 1
-        },
-        {
           "word": "verkehrsminister",
           "count": 1
         },
         {
           "word": "schifffahrt",
+          "count": 1
+        },
+        {
+          "word": "verkehr",
           "count": 1
         }
       ]

@@ -11,23 +11,23 @@
   "minWords": 385,
   "maxWords": 921,
   "rankings": {
-    "speechRank": 430,
-    "wordsRank": 285,
-    "partySpeechRank": 103,
-    "partyWordsRank": 62,
-    "partySize": 148,
-    "totalSpeakers": 609,
-    "percentile": 29.4,
-    "verbosityRank": 56,
-    "verbosityTotal": 521,
-    "partyVerbosityRank": 15,
-    "longestSpeechRank": 97
+    "speechRank": 532,
+    "wordsRank": 465,
+    "partySpeechRank": 131,
+    "partyWordsRank": 106,
+    "partySize": 151,
+    "totalSpeakers": 627,
+    "percentile": 15.2,
+    "verbosityRank": 46,
+    "verbosityTotal": 579,
+    "partyVerbosityRank": 12,
+    "longestSpeechRank": 125
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 11,
-    "interrupterRank": 422,
-    "interruptedRank": 319
+    "interrupterRank": 482,
+    "interruptedRank": 440
   },
   "words": {
     "topWords": [
@@ -44,101 +44,57 @@
         "count": 9
       },
       {
-        "word": "wäre",
-        "count": 7
-      },
-      {
         "word": "banker",
         "count": 7
       }
     ],
-    "signatureWordsBundestag": [
+    "signatureWords": [
       {
         "word": "banker",
         "count": 7,
-        "score": 51.9,
-        "ratio": 1647.8
-      },
-      {
-        "word": "familie",
-        "count": 10,
-        "score": 28.9,
-        "ratio": 17.0
-      },
-      {
-        "word": "familien",
-        "count": 9,
-        "score": 20.6,
-        "ratio": 8.9
+        "ratioParty": 1915.8,
+        "ratioBundestag": 2143.6
       },
       {
         "word": "auswärtige",
         "count": 5,
-        "score": 18.8,
-        "ratio": 41.5
-      },
-      {
-        "word": "haushalt",
-        "count": 11,
-        "score": 15.6,
-        "ratio": 3.1
-      }
-    ],
-    "signatureWordsParty": [
-      {
-        "word": "banker",
-        "count": 7,
-        "score": 49.1,
-        "ratio": 1113.8
+        "ratioParty": 41.5,
+        "ratioBundestag": 61.2
       },
       {
         "word": "familie",
         "count": 10,
-        "score": 26.3,
-        "ratio": 12.9
+        "ratioParty": 13.8,
+        "ratioBundestag": 16.6
       },
       {
-        "word": "familien",
-        "count": 9,
-        "score": 19.3,
-        "ratio": 7.6
+        "word": "ausgaben",
+        "count": 6,
+        "ratioParty": 10.2,
+        "ratioBundestag": 15.0
       },
       {
-        "word": "haushalt",
-        "count": 11,
-        "score": 18.6,
-        "ratio": 4.4
-      },
-      {
-        "word": "auswärtige",
-        "count": 5,
-        "score": 16.3,
-        "ratio": 24.9
+        "word": "mittel",
+        "count": 6,
+        "ratioParty": 8.2,
+        "ratioBundestag": 4.6
       }
     ],
-    "signatureAdjectivesBundestag": [
+    "signatureAdjectives": [
       {
         "word": "erfolgreich",
         "count": 3,
-        "score": 7.0,
-        "ratio": 9.5
-      }
-    ],
-    "signatureAdjectivesParty": [
-      {
-        "word": "erfolgreich",
-        "count": 3,
-        "score": 9.6,
-        "ratio": 23.9
+        "ratioParty": 18.7,
+        "ratioBundestag": 9.7
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 616,
-    "partyAvgWords": 587,
-    "parliamentAvgWords": 613,
-    "vsParty": 1.05,
-    "vsParliament": 1.0
+    "partyAvgWords": 561,
+    "parliamentAvgWords": 585,
+    "vsParty": 1.1,
+    "vsParliament": 1.05
   },
   "funFacts": [
     {
@@ -153,10 +109,14 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jürgen Koegel häufiger als der Bundestag-Durchschnitt?",
+    "question": "Welches Wort nutzt Jürgen Koegel häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesellschaft",
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
@@ -164,37 +124,35 @@
         "isCorrect": true
       },
       {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
+        "text": "Reform",
         "isCorrect": false
       }
     ],
-    "explanation": "\"Banker\" sagte Jürgen Koegel 7× (1647.8× häufiger als der Bundestag-Durchschnitt)."
+    "explanationParty": "\"Banker\" nutzt Jürgen Koegel 1915.8× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "2143.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Jürgen Koegel häufiger als der Bundestag-Durchschnitt?",
+    "question": "Welches Adjektiv nutzt Jürgen Koegel häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Gut",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Wichtig",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
         "text": "Erfolgreich",
         "isCorrect": true
+      },
+      {
+        "text": "Sicher",
+        "isCorrect": false
       }
     ],
-    "explanation": "\"Erfolgreich\" sagte Jürgen Koegel 3× (9.5× häufiger als der Bundestag-Durchschnitt)."
+    "explanationParty": "\"Erfolgreich\" nutzt Jürgen Koegel 18.7× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "9.7× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -224,7 +182,7 @@
     "scores": {
       "migration": 0.0,
       "klima": 1.27,
-      "wirtschaft": 1.27,
+      "wirtschaft": 1.7,
       "soziales": 16.12,
       "sicherheit": 0.42,
       "gesundheit": 0.42,
@@ -258,23 +216,23 @@
         "rank": 4
       },
       {
-        "topic": "klima",
-        "score": 1.27,
+        "topic": "wirtschaft",
+        "score": 1.7,
         "rank": 5
       }
     ],
     "topicWords": {
       "klima": [
         {
+          "word": "nachhaltigkeit",
+          "count": 1
+        },
+        {
           "word": "nachhaltig",
           "count": 1
         },
         {
           "word": "energie",
-          "count": 1
-        },
-        {
-          "word": "nachhaltigkeit",
           "count": 1
         }
       ],
@@ -289,6 +247,10 @@
         },
         {
           "word": "konkurrenz",
+          "count": 1
+        },
+        {
+          "word": "wirtschaft",
           "count": 1
         }
       ],
@@ -368,7 +330,7 @@
           "count": 4
         },
         {
-          "word": "bundeshaushalt",
+          "word": "entlastung",
           "count": 2
         }
       ],

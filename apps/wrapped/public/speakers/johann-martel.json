@@ -11,23 +11,23 @@
   "minWords": 283,
   "maxWords": 296,
   "rankings": {
-    "speechRank": 431,
-    "wordsRank": 516,
-    "partySpeechRank": 104,
-    "partyWordsRank": 121,
-    "partySize": 148,
-    "totalSpeakers": 609,
-    "percentile": 29.2,
-    "verbosityRank": 470,
-    "verbosityTotal": 521,
-    "partyVerbosityRank": 117,
-    "longestSpeechRank": 599
+    "speechRank": 539,
+    "wordsRank": 583,
+    "partySpeechRank": 132,
+    "partyWordsRank": 140,
+    "partySize": 151,
+    "totalSpeakers": 627,
+    "percentile": 14.0,
+    "verbosityRank": 512,
+    "verbosityTotal": 579,
+    "partyVerbosityRank": 131,
+    "longestSpeechRank": 621
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 15,
-    "interrupterRank": 388,
-    "interruptedRank": 251
+    "interrupterRank": 447,
+    "interruptedRank": 391
   },
   "words": {
     "topWords": [
@@ -72,79 +72,46 @@
         "count": 5
       }
     ],
-    "signatureWordsBundestag": [
+    "signatureWords": [
       {
         "word": "vietnam",
         "count": 8,
-        "score": 56.2,
-        "ratio": 1125.7
+        "ratioParty": 1048.4,
+        "ratioBundestag": 1463.9
+      },
+      {
+        "word": "bundesministerin",
+        "count": 5,
+        "ratioParty": 126.0,
+        "ratioBundestag": 87.7
       },
       {
         "word": "steuerreformen",
         "count": 5,
-        "score": 39.7,
-        "ratio": 2814.3
-      },
-      {
-        "word": "projekte",
-        "count": 8,
-        "score": 28.3,
-        "ratio": 33.5
-      },
-      {
-        "word": "bundesministerin",
-        "count": 5,
-        "score": 22.0,
-        "ratio": 79.6
-      },
-      {
-        "word": "deutschen",
-        "count": 9,
-        "score": 19.5,
-        "ratio": 7.8
-      }
-    ],
-    "signatureWordsParty": [
-      {
-        "word": "vietnam",
-        "count": 8,
-        "score": 55.4,
-        "ratio": 1017.4
-      },
-      {
-        "word": "bundesministerin",
-        "count": 5,
-        "score": 26.8,
-        "ratio": 212.0
-      },
-      {
-        "word": "projekte",
-        "count": 8,
-        "score": 25.7,
-        "ratio": 23.8
+        "ratioParty": 50.7,
+        "ratioBundestag": 4879.7
       },
       {
         "word": "agenda",
         "count": 6,
-        "score": 20.8,
-        "ratio": 30.9
+        "ratioParty": 35.4,
+        "ratioBundestag": 29.1
       },
       {
-        "word": "steuerreformen",
-        "count": 5,
-        "score": 19.7,
-        "ratio": 50.7
+        "word": "projekte",
+        "count": 8,
+        "ratioParty": 30.5,
+        "ratioBundestag": 37.5
       }
     ],
-    "signatureAdjectivesBundestag": [],
-    "signatureAdjectivesParty": []
+    "signatureAdjectives": []
   },
   "comparison": {
     "speakerAvgWords": 291,
-    "partyAvgWords": 587,
-    "parliamentAvgWords": 613,
-    "vsParty": 0.5,
-    "vsParliament": 0.47
+    "partyAvgWords": 561,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.52,
+    "vsParliament": 0.5
   },
   "funFacts": [
     {
@@ -159,26 +126,27 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Johann Martel häufiger als der Bundestag-Durchschnitt?",
+    "question": "Welches Wort nutzt Johann Martel häufiger als der Rest der Fraktion?",
     "options": [
+      {
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
+        "isCorrect": false
+      },
       {
         "text": "Vietnam",
         "isCorrect": true
       },
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
+        "text": "Energie",
         "isCorrect": false
       }
     ],
-    "explanation": "\"Vietnam\" sagte Johann Martel 8× (1125.7× häufiger als der Bundestag-Durchschnitt)."
+    "explanationParty": "\"Vietnam\" nutzt Johann Martel 1048.4× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "1463.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -303,11 +271,11 @@
           "count": 2
         },
         {
-          "word": "israel",
+          "word": "afrika",
           "count": 1
         },
         {
-          "word": "afrika",
+          "word": "israel",
           "count": 1
         }
       ],

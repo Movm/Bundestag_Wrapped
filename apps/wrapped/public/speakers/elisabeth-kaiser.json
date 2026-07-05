@@ -11,23 +11,23 @@
   "minWords": 24,
   "maxWords": 683,
   "rankings": {
-    "speechRank": 397,
-    "wordsRank": 451,
-    "partySpeechRank": 75,
-    "partyWordsRank": 87,
-    "partySize": 109,
-    "totalSpeakers": 609,
-    "percentile": 34.8,
-    "verbosityRank": 296,
-    "verbosityTotal": 521,
-    "partyVerbosityRank": 65,
-    "longestSpeechRank": 322
+    "speechRank": 523,
+    "wordsRank": 553,
+    "partySpeechRank": 87,
+    "partyWordsRank": 99,
+    "partySize": 114,
+    "totalSpeakers": 627,
+    "percentile": 16.6,
+    "verbosityRank": 313,
+    "verbosityTotal": 579,
+    "partyVerbosityRank": 73,
+    "longestSpeechRank": 395
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 5,
     "interrupterRank": null,
-    "interruptedRank": 458
+    "interruptedRank": 548
   },
   "words": {
     "topWords": [
@@ -52,11 +52,11 @@
         "count": 9
       },
       {
-        "word": "gemeinsam",
+        "word": "demokratie",
         "count": 8
       },
       {
-        "word": "demokratie",
+        "word": "gemeinsam",
         "count": 8
       },
       {
@@ -72,79 +72,46 @@
         "count": 7
       }
     ],
-    "signatureWordsBundestag": [
+    "signatureWords": [
       {
         "word": "ostdeutschland",
         "count": 16,
-        "score": 93.5,
-        "ratio": 344.1
+        "ratioParty": 314.2,
+        "ratioBundestag": 353.1
       },
       {
-        "word": "einheit",
-        "count": 9,
-        "score": 39.3,
-        "ratio": 77.4
-      },
-      {
-        "word": "wandel",
-        "count": 7,
-        "score": 29.1,
-        "ratio": 62.8
-      },
-      {
-        "word": "menschen",
-        "count": 19,
-        "score": 27.7,
-        "ratio": 3.3
-      },
-      {
-        "word": "osten",
-        "count": 7,
-        "score": 26.4,
-        "ratio": 42.2
-      }
-    ],
-    "signatureWordsParty": [
-      {
-        "word": "ostdeutschland",
-        "count": 16,
-        "score": 93.0,
-        "ratio": 332.6
-      },
-      {
-        "word": "einheit",
-        "count": 9,
-        "score": 40.6,
-        "ratio": 89.8
-      },
-      {
-        "word": "osten",
-        "count": 7,
-        "score": 28.1,
-        "ratio": 54.6
+        "word": "westen",
+        "count": 5,
+        "ratioParty": 270.1,
+        "ratioBundestag": 96.6
       },
       {
         "word": "ostdeutschen",
         "count": 5,
-        "score": 26.7,
-        "ratio": 207.9
+        "ratioParty": 216.0,
+        "ratioBundestag": 193.1
       },
       {
-        "word": "wandel",
+        "word": "einheit",
+        "count": 9,
+        "ratioParty": 134.1,
+        "ratioBundestag": 112.5
+      },
+      {
+        "word": "osten",
         "count": 7,
-        "score": 26.3,
-        "ratio": 41.6
+        "ratioParty": 52.1,
+        "ratioBundestag": 43.1
       }
     ],
-    "signatureAdjectivesBundestag": [],
-    "signatureAdjectivesParty": []
+    "signatureAdjectives": []
   },
   "comparison": {
     "speakerAvgWords": 424,
-    "partyAvgWords": 637,
-    "parliamentAvgWords": 613,
-    "vsParty": 0.67,
-    "vsParliament": 0.69
+    "partyAvgWords": 618,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.69,
+    "vsParliament": 0.72
   },
   "funFacts": [
     {
@@ -159,35 +126,44 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Elisabeth Kaiser häufiger als der Bundestag-Durchschnitt?",
+    "question": "Welches Wort nutzt Elisabeth Kaiser häufiger als der Rest der Fraktion?",
     "options": [
-      {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
-        "isCorrect": false
-      },
       {
         "text": "Ostdeutschland",
         "isCorrect": true
+      },
+      {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
+        "isCorrect": false
       }
     ],
-    "explanation": "\"Ostdeutschland\" sagte Elisabeth Kaiser 16× (344.1× häufiger als der Bundestag-Durchschnitt)."
+    "explanationParty": "\"Ostdeutschland\" nutzt Elisabeth Kaiser 314.2× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "353.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🐇",
-    "name": "Hase",
-    "title": "Wendige Optimistin",
-    "reason": "Mit positivem Blick reagierst du schnell auf neue Themen.",
-    "id": "hase",
+    "emoji": "🦊",
+    "name": "Fuchs",
+    "title": "Clevere Strategin",
+    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+    "id": "fuchs",
     "alternatives": [
+      {
+        "emoji": "🐇",
+        "name": "Hase",
+        "title": "Wendige Optimistin",
+        "reason": "Mit positivem Blick reagierst du schnell auf neue Themen.",
+        "id": "hase",
+        "score": 0.813
+      },
       {
         "emoji": "🦫",
         "name": "Biber",
@@ -195,14 +171,6 @@
         "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
         "id": "biber",
         "score": 0.8
-      },
-      {
-        "emoji": "🦦",
-        "name": "Otter",
-        "title": "Positive Teamplayerin",
-        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
-        "id": "otter",
-        "score": 0.788
       }
     ]
   },
@@ -233,7 +201,7 @@
     "scores": {
       "migration": 0.75,
       "klima": 2.25,
-      "wirtschaft": 2.25,
+      "wirtschaft": 3.74,
       "soziales": 2.25,
       "sicherheit": 0.0,
       "gesundheit": 0.0,
@@ -247,22 +215,22 @@
     },
     "topTopics": [
       {
-        "topic": "europa",
-        "score": 2.99,
+        "topic": "wirtschaft",
+        "score": 3.74,
         "rank": 1
       },
       {
-        "topic": "finanzen",
+        "topic": "europa",
         "score": 2.99,
         "rank": 2
       },
       {
-        "topic": "klima",
-        "score": 2.25,
+        "topic": "finanzen",
+        "score": 2.99,
         "rank": 3
       },
       {
-        "topic": "wirtschaft",
+        "topic": "klima",
         "score": 2.25,
         "rank": 4
       },
@@ -281,19 +249,23 @@
       ],
       "klima": [
         {
+          "word": "erneuerbare",
+          "count": 1
+        },
+        {
           "word": "braunkohle",
           "count": 1
         },
         {
           "word": "klimawandel",
           "count": 1
-        },
-        {
-          "word": "erneuerbare",
-          "count": 1
         }
       ],
       "wirtschaft": [
+        {
+          "word": "wirtschaft",
+          "count": 2
+        },
         {
           "word": "unternehmen",
           "count": 2
@@ -305,11 +277,11 @@
       ],
       "soziales": [
         {
-          "word": "familie",
+          "word": "sozialleistungen",
           "count": 1
         },
         {
-          "word": "sozialleistungen",
+          "word": "familie",
           "count": 1
         },
         {
@@ -323,21 +295,21 @@
           "count": 2
         },
         {
-          "word": "angriffskrieg",
+          "word": "vertrag",
           "count": 1
         },
         {
-          "word": "vertrag",
+          "word": "angriffskrieg",
           "count": 1
         }
       ],
       "bildung": [
         {
-          "word": "forschung",
+          "word": "bildung",
           "count": 1
         },
         {
-          "word": "bildung",
+          "word": "forschung",
           "count": 1
         }
       ],
@@ -347,11 +319,11 @@
           "count": 2
         },
         {
-          "word": "haushalt",
+          "word": "erbschaftsteuer",
           "count": 1
         },
         {
-          "word": "erbschaftsteuer",
+          "word": "haushalt",
           "count": 1
         }
       ],

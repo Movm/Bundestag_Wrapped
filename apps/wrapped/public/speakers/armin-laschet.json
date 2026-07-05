@@ -11,23 +11,23 @@
   "minWords": 726,
   "maxWords": 735,
   "rankings": {
-    "speechRank": 562,
-    "wordsRank": 515,
-    "partySpeechRank": 182,
-    "partyWordsRank": 167,
-    "partySize": 203,
-    "totalSpeakers": 609,
-    "percentile": 7.7,
+    "speechRank": 592,
+    "wordsRank": 582,
+    "partySpeechRank": 192,
+    "partyWordsRank": 191,
+    "partySize": 211,
+    "totalSpeakers": 627,
+    "percentile": 5.6,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 259
+    "longestSpeechRank": 328
   },
   "drama": {
     "interruptionsGiven": 4,
     "interruptionsReceived": 4,
-    "interrupterRank": 281,
-    "interruptedRank": 492
+    "interrupterRank": 367,
+    "interruptedRank": 556
   },
   "words": {
     "topWords": [
@@ -40,24 +40,12 @@
         "count": 11
       },
       {
-        "word": "europäischen",
-        "count": 8
-      },
-      {
         "word": "israel",
         "count": 8
       },
       {
-        "word": "union",
-        "count": 5
-      },
-      {
-        "word": "plötzlich",
-        "count": 5
-      },
-      {
-        "word": "mitglied",
-        "count": 5
+        "word": "europäischen",
+        "count": 8
       },
       {
         "word": "hamas",
@@ -68,83 +56,62 @@
         "count": 5
       },
       {
-        "word": "gemeinschaft",
-        "count": 4
-      }
-    ],
-    "signatureWordsBundestag": [
-      {
-        "word": "europarat",
-        "count": 14,
-        "score": 82.4,
-        "ratio": 358.5
+        "word": "plötzlich",
+        "count": 5
       },
       {
-        "word": "europäische",
-        "count": 11,
-        "score": 36.9,
-        "ratio": 27.7
-      },
-      {
-        "word": "israel",
-        "count": 8,
-        "score": 28.5,
-        "ratio": 34.1
-      },
-      {
-        "word": "hisbollah",
-        "count": 5,
-        "score": 26.0,
-        "ratio": 180.8
+        "word": "union",
+        "count": 5
       },
       {
         "word": "mitglied",
-        "count": 5,
-        "score": 22.1,
-        "ratio": 82.3
+        "count": 5
+      },
+      {
+        "word": "anders",
+        "count": 4
       }
     ],
-    "signatureWordsParty": [
+    "signatureWords": [
       {
         "word": "europarat",
         "count": 14,
-        "score": 89.3,
-        "ratio": 590.0
-      },
-      {
-        "word": "europäische",
-        "count": 11,
-        "score": 32.7,
-        "ratio": 18.5
-      },
-      {
-        "word": "israel",
-        "count": 8,
-        "score": 26.0,
-        "ratio": 24.8
+        "ratioParty": 968.8,
+        "ratioBundestag": 596.7
       },
       {
         "word": "plötzlich",
         "count": 5,
-        "score": 25.5,
-        "ratio": 163.9
+        "ratioParty": 112.8,
+        "ratioBundestag": 59.4
+      },
+      {
+        "word": "mitglied",
+        "count": 5,
+        "ratioParty": 92.7,
+        "ratioBundestag": 91.3
       },
       {
         "word": "hisbollah",
         "count": 5,
-        "score": 23.2,
-        "ratio": 101.7
+        "ratioParty": 64.1,
+        "ratioBundestag": 86.4
+      },
+      {
+        "word": "hamas",
+        "count": 5,
+        "ratioParty": 55.8,
+        "ratioBundestag": 65.2
       }
     ],
-    "signatureAdjectivesBundestag": [],
-    "signatureAdjectivesParty": []
+    "signatureAdjectives": []
   },
   "comparison": {
     "speakerAvgWords": 730,
-    "partyAvgWords": 688,
-    "parliamentAvgWords": 613,
-    "vsParty": 1.06,
-    "vsParliament": 1.19
+    "partyAvgWords": 645,
+    "parliamentAvgWords": 585,
+    "vsParty": 1.13,
+    "vsParliament": 1.25
   },
   "funFacts": [
     {
@@ -159,14 +126,10 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Armin Laschet häufiger als der Bundestag-Durchschnitt?",
+    "question": "Welches Wort nutzt Armin Laschet häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Europarat",
-        "isCorrect": true
-      },
-      {
-        "text": "Opposition",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
@@ -174,11 +137,16 @@
         "isCorrect": false
       },
       {
-        "text": "Debatte",
+        "text": "Europarat",
+        "isCorrect": true
+      },
+      {
+        "text": "Antrag",
         "isCorrect": false
       }
     ],
-    "explanation": "\"Europarat\" sagte Armin Laschet 14× (358.5× häufiger als der Bundestag-Durchschnitt)."
+    "explanationParty": "\"Europarat\" nutzt Armin Laschet 968.8× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "596.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -294,11 +262,11 @@
           "count": 8
         },
         {
-          "word": "europa",
+          "word": "iran",
           "count": 3
         },
         {
-          "word": "iran",
+          "word": "europa",
           "count": 3
         },
         {

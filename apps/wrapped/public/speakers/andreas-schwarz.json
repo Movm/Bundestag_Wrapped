@@ -11,22 +11,22 @@
   "minWords": 692,
   "maxWords": 824,
   "rankings": {
-    "speechRank": 490,
-    "wordsRank": 368,
-    "partySpeechRank": 85,
-    "partyWordsRank": 74,
-    "partySize": 109,
-    "totalSpeakers": 609,
-    "percentile": 19.5,
-    "verbosityRank": 19,
-    "verbosityTotal": 521,
-    "partyVerbosityRank": 2,
-    "longestSpeechRank": 170
+    "speechRank": 567,
+    "wordsRank": 511,
+    "partySpeechRank": 99,
+    "partyWordsRank": 94,
+    "partySize": 114,
+    "totalSpeakers": 627,
+    "percentile": 9.6,
+    "verbosityRank": 15,
+    "verbosityTotal": 579,
+    "partyVerbosityRank": 3,
+    "longestSpeechRank": 219
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 0,
-    "interrupterRank": 384,
+    "interrupterRank": 444,
     "interruptedRank": null
   },
   "words": {
@@ -36,11 +36,11 @@
         "count": 16
       },
       {
-        "word": "sicherheit",
+        "word": "haushalt",
         "count": 14
       },
       {
-        "word": "haushalt",
+        "word": "sicherheit",
         "count": 14
       },
       {
@@ -64,87 +64,54 @@
         "count": 8
       },
       {
-        "word": "signal",
-        "count": 8
-      },
-      {
         "word": "land",
         "count": 8
+      },
+      {
+        "word": "signal",
+        "count": 8
       }
     ],
-    "signatureWordsBundestag": [
-      {
-        "word": "soldatinnen",
-        "count": 10,
-        "score": 32.6,
-        "ratio": 25.0
-      },
-      {
-        "word": "soldaten",
-        "count": 11,
-        "score": 31.3,
-        "ratio": 16.2
-      },
+    "signatureWords": [
       {
         "word": "verteidigungshaushalt",
         "count": 6,
-        "score": 29.2,
-        "ratio": 128.0
+        "ratioParty": 363.5,
+        "ratioBundestag": 202.3
       },
       {
-        "word": "bundeswehr",
-        "count": 11,
-        "score": 28.7,
-        "ratio": 12.6
+        "word": "zeitenwende",
+        "count": 5,
+        "ratioParty": 79.7,
+        "ratioBundestag": 55.4
       },
       {
-        "word": "sicherheit",
-        "count": 14,
-        "score": 27.2,
-        "ratio": 6.0
-      }
-    ],
-    "signatureWordsParty": [
-      {
-        "word": "verteidigungshaushalt",
+        "word": "truppe",
         "count": 6,
-        "score": 32.1,
-        "ratio": 209.7
+        "ratioParty": 41.3,
+        "ratioBundestag": 54.2
       },
       {
-        "word": "soldaten",
-        "count": 11,
-        "score": 28.4,
-        "ratio": 12.2
+        "word": "moderne",
+        "count": 5,
+        "ratioParty": 15.3,
+        "ratioBundestag": 22.2
       },
       {
-        "word": "bundeswehr",
-        "count": 11,
-        "score": 27.7,
-        "ratio": 11.4
-      },
-      {
-        "word": "soldatinnen",
-        "count": 10,
-        "score": 26.1,
-        "ratio": 12.6
-      },
-      {
-        "word": "haushalt",
-        "count": 14,
-        "score": 23.5,
-        "ratio": 4.3
+        "word": "planungssicherheit",
+        "count": 5,
+        "ratioParty": 15.3,
+        "ratioBundestag": 17.9
       }
     ],
-    "signatureAdjectivesBundestag": [],
-    "signatureAdjectivesParty": []
+    "signatureAdjectives": []
   },
   "comparison": {
     "speakerAvgWords": 744,
-    "partyAvgWords": 637,
-    "parliamentAvgWords": 613,
-    "vsParty": 1.17,
-    "vsParliament": 1.21
+    "partyAvgWords": 618,
+    "parliamentAvgWords": 585,
+    "vsParty": 1.2,
+    "vsParliament": 1.27
   },
   "funFacts": [
     {
@@ -160,39 +127,48 @@
     {
       "emoji": "📚",
       "label": "Wortreichster",
-      "value": "#19 von 521"
+      "value": "#15 von 579"
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Andreas Schwarz häufiger als der Bundestag-Durchschnitt?",
+    "question": "Welches Wort nutzt Andreas Schwarz häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Soldatinnen",
+        "text": "Verteidigungshaushalt",
         "isCorrect": true
       },
       {
-        "text": "Energie",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
-    "explanation": "\"Soldatinnen\" sagte Andreas Schwarz 10× (25.0× häufiger als der Bundestag-Durchschnitt)."
+    "explanationParty": "\"Verteidigungshaushalt\" nutzt Andreas Schwarz 363.5× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "202.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🦫",
-    "name": "Biber",
-    "title": "Konstruktiver Brückenbauer",
-    "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
-    "id": "biber",
+    "emoji": "🦊",
+    "name": "Fuchs",
+    "title": "Cleverer Stratege",
+    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+    "id": "fuchs",
     "alternatives": [
+      {
+        "emoji": "🦫",
+        "name": "Biber",
+        "title": "Konstruktiver Brückenbauer",
+        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
+        "id": "biber",
+        "score": 0.78
+      },
       {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
@@ -200,14 +176,6 @@
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.769
-      },
-      {
-        "emoji": "🐢",
-        "name": "Schildkröte",
-        "title": "Gründlicher Analyst",
-        "reason": "Wenige Reden, aber wenn, dann richtig ausführlich.",
-        "id": "schildkroete",
-        "score": 0.665
       }
     ]
   },
@@ -238,7 +206,7 @@
     "scores": {
       "migration": 0.53,
       "klima": 0.0,
-      "wirtschaft": 3.15,
+      "wirtschaft": 3.68,
       "soziales": 1.05,
       "sicherheit": 19.96,
       "gesundheit": 1.05,
@@ -273,7 +241,7 @@
       },
       {
         "topic": "wirtschaft",
-        "score": 3.15,
+        "score": 3.68,
         "rank": 5
       }
     ],
@@ -288,6 +256,10 @@
         {
           "word": "industrie",
           "count": 6
+        },
+        {
+          "word": "wirtschaft",
+          "count": 1
         }
       ],
       "soziales": [
@@ -310,7 +282,7 @@
           "count": 5
         },
         {
-          "word": "verteidigungsfähigkeit",
+          "word": "armee",
           "count": 2
         },
         {
@@ -356,11 +328,11 @@
           "count": 3
         },
         {
-          "word": "desinformation",
+          "word": "server",
           "count": 1
         },
         {
-          "word": "server",
+          "word": "desinformation",
           "count": 1
         }
       ],
@@ -412,11 +384,11 @@
           "count": 10
         },
         {
-          "word": "schiff",
+          "word": "fahrzeuge",
           "count": 1
         },
         {
-          "word": "fahrzeuge",
+          "word": "schiff",
           "count": 1
         }
       ]

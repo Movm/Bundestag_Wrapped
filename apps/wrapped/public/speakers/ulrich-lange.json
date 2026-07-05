@@ -11,23 +11,23 @@
   "minWords": 324,
   "maxWords": 471,
   "rankings": {
-    "speechRank": 546,
-    "wordsRank": 570,
-    "partySpeechRank": 175,
-    "partyWordsRank": 188,
-    "partySize": 203,
-    "totalSpeakers": 609,
-    "percentile": 10.3,
+    "speechRank": 587,
+    "wordsRank": 610,
+    "partySpeechRank": 191,
+    "partyWordsRank": 203,
+    "partySize": 211,
+    "totalSpeakers": 627,
+    "percentile": 6.4,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 545
+    "longestSpeechRank": 590
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 2,
     "interrupterRank": null,
-    "interruptedRank": 537
+    "interruptedRank": 578
   },
   "words": {
     "topWords": [
@@ -72,43 +72,28 @@
         "count": 2
       }
     ],
-    "signatureWordsBundestag": [
+    "signatureWords": [
       {
         "word": "kommunale",
         "count": 5,
-        "score": 24.7,
-        "ratio": 139.8
+        "ratioParty": 112.7,
+        "ratioBundestag": 139.2
       },
       {
         "word": "schiene",
         "count": 5,
-        "score": 21.7,
-        "ratio": 75.8
+        "ratioParty": 67.6,
+        "ratioBundestag": 94.3
       }
     ],
-    "signatureWordsParty": [
-      {
-        "word": "kommunale",
-        "count": 5,
-        "score": 23.9,
-        "ratio": 118.0
-      },
-      {
-        "word": "schiene",
-        "count": 5,
-        "score": 19.7,
-        "ratio": 50.4
-      }
-    ],
-    "signatureAdjectivesBundestag": [],
-    "signatureAdjectivesParty": []
+    "signatureAdjectives": []
   },
   "comparison": {
     "speakerAvgWords": 398,
-    "partyAvgWords": 688,
-    "parliamentAvgWords": 613,
-    "vsParty": 0.58,
-    "vsParliament": 0.65
+    "partyAvgWords": 645,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.62,
+    "vsParliament": 0.68
   },
   "funFacts": [
     {
@@ -118,10 +103,14 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Ulrich Lange häufiger als der Bundestag-Durchschnitt?",
+    "question": "Welches Wort nutzt Ulrich Lange häufiger als der Rest der Fraktion?",
     "options": [
       {
         "text": "Debatte",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
@@ -129,15 +118,12 @@
         "isCorrect": true
       },
       {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
+        "text": "Bildung",
         "isCorrect": false
       }
     ],
-    "explanation": "\"Kommunale\" sagte Ulrich Lange 5× (139.8× häufiger als der Bundestag-Durchschnitt)."
+    "explanationParty": "\"Kommunale\" nutzt Ulrich Lange 112.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "139.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -192,7 +178,7 @@
     "scores": {
       "migration": 0.0,
       "klima": 0.0,
-      "wirtschaft": 1.95,
+      "wirtschaft": 3.89,
       "soziales": 0.0,
       "sicherheit": 3.89,
       "gesundheit": 0.0,
@@ -216,13 +202,13 @@
         "rank": 2
       },
       {
-        "topic": "sicherheit",
+        "topic": "wirtschaft",
         "score": 3.89,
         "rank": 3
       },
       {
-        "topic": "wirtschaft",
-        "score": 1.95,
+        "topic": "sicherheit",
+        "score": 3.89,
         "rank": 4
       },
       {
@@ -233,6 +219,10 @@
     ],
     "topicWords": {
       "wirtschaft": [
+        {
+          "word": "wirtschaft",
+          "count": 1
+        },
         {
           "word": "konjunktur",
           "count": 1

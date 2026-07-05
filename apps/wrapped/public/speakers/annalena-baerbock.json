@@ -11,23 +11,23 @@
   "minWords": 442,
   "maxWords": 510,
   "rankings": {
-    "speechRank": 576,
-    "wordsRank": 556,
-    "partySpeechRank": 84,
-    "partyWordsRank": 83,
-    "partySize": 85,
-    "totalSpeakers": 609,
-    "percentile": 5.4,
+    "speechRank": 610,
+    "wordsRank": 602,
+    "partySpeechRank": 86,
+    "partyWordsRank": 87,
+    "partySize": 87,
+    "totalSpeakers": 627,
+    "percentile": 2.7,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 519
+    "longestSpeechRank": 571
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 17,
     "interrupterRank": null,
-    "interruptedRank": 228
+    "interruptedRank": 365
   },
   "words": {
     "topWords": [
@@ -72,79 +72,46 @@
         "count": 4
       }
     ],
-    "signatureWordsBundestag": [
+    "signatureWords": [
       {
         "word": "parteien",
         "count": 9,
-        "score": 41.3,
-        "ratio": 97.1
-      },
-      {
-        "word": "demokratischen",
-        "count": 7,
-        "score": 28.5,
-        "ratio": 58.0
+        "ratioParty": 165.5,
+        "ratioBundestag": 104.0
       },
       {
         "word": "artikel",
         "count": 5,
-        "score": 20.4,
-        "ratio": 58.0
-      },
-      {
-        "word": "schutz",
-        "count": 5,
-        "score": 13.8,
-        "ratio": 14.8
-      },
-      {
-        "word": "demokratie",
-        "count": 5,
-        "score": 12.3,
-        "ratio": 10.7
-      }
-    ],
-    "signatureWordsParty": [
-      {
-        "word": "parteien",
-        "count": 9,
-        "score": 43.8,
-        "ratio": 128.2
+        "ratioParty": 62.4,
+        "ratioBundestag": 58.8
       },
       {
         "word": "demokratischen",
         "count": 7,
-        "score": 27.6,
-        "ratio": 50.8
-      },
-      {
-        "word": "artikel",
-        "count": 5,
-        "score": 19.8,
-        "ratio": 51.1
+        "ratioParty": 51.5,
+        "ratioBundestag": 59.9
       },
       {
         "word": "schutz",
         "count": 5,
-        "score": 13.3,
-        "ratio": 13.3
+        "ratioParty": 12.8,
+        "ratioBundestag": 13.7
       },
       {
         "word": "demokratie",
         "count": 5,
-        "score": 11.4,
-        "ratio": 8.7
+        "ratioParty": 8.8,
+        "ratioBundestag": 10.5
       }
     ],
-    "signatureAdjectivesBundestag": [],
-    "signatureAdjectivesParty": []
+    "signatureAdjectives": []
   },
   "comparison": {
     "speakerAvgWords": 476,
-    "partyAvgWords": 567,
-    "parliamentAvgWords": 613,
-    "vsParty": 0.84,
-    "vsParliament": 0.78
+    "partyAvgWords": 543,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.88,
+    "vsParliament": 0.81
   },
   "funFacts": [
     {
@@ -154,26 +121,27 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Annalena Baerbock häufiger als der Bundestag-Durchschnitt?",
+    "question": "Welches Wort nutzt Annalena Baerbock häufiger als der Rest der Fraktion?",
     "options": [
-      {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
       {
         "text": "Parteien",
         "isCorrect": true
+      },
+      {
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
       }
     ],
-    "explanation": "\"Parteien\" sagte Annalena Baerbock 9× (97.1× häufiger als der Bundestag-Durchschnitt)."
+    "explanationParty": "\"Parteien\" nutzt Annalena Baerbock 165.5× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "104.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

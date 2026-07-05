@@ -11,23 +11,23 @@
   "minWords": 9,
   "maxWords": 942,
   "rankings": {
-    "speechRank": 601,
-    "wordsRank": 402,
-    "partySpeechRank": 107,
-    "partyWordsRank": 82,
-    "partySize": 109,
-    "totalSpeakers": 609,
-    "percentile": 1.3,
+    "speechRank": 620,
+    "wordsRank": 532,
+    "partySpeechRank": 113,
+    "partyWordsRank": 95,
+    "partySize": 114,
+    "totalSpeakers": 627,
+    "percentile": 1.1,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 87
+    "longestSpeechRank": 111
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 1,
     "interrupterRank": null,
-    "interruptedRank": 553
+    "interruptedRank": 592
   },
   "words": {
     "topWords": [
@@ -72,79 +72,46 @@
         "count": 8
       }
     ],
-    "signatureWordsBundestag": [
-      {
-        "word": "entwicklungspolitik",
-        "count": 16,
-        "score": 81.5,
-        "ratio": 161.8
-      },
-      {
-        "word": "weiterhin",
-        "count": 14,
-        "score": 44.5,
-        "ratio": 23.0
-      },
+    "signatureWords": [
       {
         "word": "entwicklungsfinanzierung",
         "count": 5,
-        "score": 39.2,
-        "ratio": 2528.8
+        "ratioParty": 1751.5,
+        "ratioBundestag": 4385.4
       },
       {
-        "word": "zusammenarbeit",
-        "count": 12,
-        "score": 36.9,
-        "ratio": 20.6
+        "word": "conference",
+        "count": 5,
+        "ratioParty": 437.9,
+        "ratioBundestag": 1461.8
       },
-      {
-        "word": "gemeinsam",
-        "count": 15,
-        "score": 36.2,
-        "ratio": 10.2
-      }
-    ],
-    "signatureWordsParty": [
       {
         "word": "entwicklungspolitik",
         "count": 16,
-        "score": 88.3,
-        "ratio": 248.8
+        "ratioParty": 233.5,
+        "ratioBundestag": 233.9
       },
       {
-        "word": "weiterhin",
-        "count": 14,
-        "score": 42.9,
-        "ratio": 20.4
-      },
-      {
-        "word": "entwicklungsfinanzierung",
+        "word": "entwicklungszusammenarbeit",
         "count": 5,
-        "score": 34.6,
-        "ratio": 1010.9
+        "ratioParty": 30.2,
+        "ratioBundestag": 35.5
       },
       {
-        "word": "zusammenarbeit",
-        "count": 12,
-        "score": 31.7,
-        "ratio": 13.0
-      },
-      {
-        "word": "gemeinsam",
-        "count": 15,
-        "score": 29.6,
-        "ratio": 6.2
+        "word": "krisen",
+        "count": 6,
+        "ratioParty": 20.8,
+        "ratioBundestag": 29.0
       }
     ],
-    "signatureAdjectivesBundestag": [],
-    "signatureAdjectivesParty": []
+    "signatureAdjectives": []
   },
   "comparison": {
     "speakerAvgWords": 152,
-    "partyAvgWords": 637,
-    "parliamentAvgWords": 613,
-    "vsParty": 0.24,
-    "vsParliament": 0.25
+    "partyAvgWords": 618,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.25,
+    "vsParliament": 0.26
   },
   "funFacts": [
     {
@@ -159,26 +126,27 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Reem Alabali-Radovan häufiger als der Bundestag-Durchschnitt?",
+    "question": "Welches Wort nutzt Reem Alabali-Radovan häufiger als der Rest der Fraktion?",
     "options": [
+      {
+        "text": "Entwicklungsfinanzierung",
+        "isCorrect": true
+      },
+      {
+        "text": "Kanzler",
+        "isCorrect": false
+      },
       {
         "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
+        "text": "Rente",
         "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Entwicklungspolitik",
-        "isCorrect": true
       }
     ],
-    "explanation": "\"Entwicklungspolitik\" sagte Reem Alabali-Radovan 16× (161.8× häufiger als der Bundestag-Durchschnitt)."
+    "explanationParty": "\"Entwicklungsfinanzierung\" nutzt Reem Alabali-Radovan 1751.5× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "4385.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -189,20 +157,20 @@
     "id": "fuchs",
     "alternatives": [
       {
+        "emoji": "🦉",
+        "name": "Eule",
+        "title": "Themenexpertin",
+        "reason": "Dein Fachwort \"Entwicklungsfinanzierung\" nutzt du 1751.5× häufiger als deine Fraktion.",
+        "id": "eule",
+        "score": 0.97
+      },
+      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüterin",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.903
-      },
-      {
-        "emoji": "🦜",
-        "name": "Papagei",
-        "title": "Neugierige Fragestellerin",
-        "reason": "Mit vielen Fragen bringst du wichtige Themen auf den Tisch.",
-        "id": "papagei",
-        "score": 0.886
       }
     ]
   },
@@ -233,7 +201,7 @@
     "scores": {
       "migration": 1.21,
       "klima": 1.21,
-      "wirtschaft": 2.43,
+      "wirtschaft": 3.04,
       "soziales": 2.43,
       "sicherheit": 0.0,
       "gesundheit": 0.0,
@@ -253,7 +221,7 @@
       },
       {
         "topic": "wirtschaft",
-        "score": 2.43,
+        "score": 3.04,
         "rank": 2
       },
       {
@@ -293,6 +261,10 @@
         {
           "word": "unternehmen",
           "count": 4
+        },
+        {
+          "word": "wirtschaft",
+          "count": 1
         }
       ],
       "soziales": [

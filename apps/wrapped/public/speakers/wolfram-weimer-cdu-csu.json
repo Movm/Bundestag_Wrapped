@@ -11,23 +11,23 @@
   "minWords": 925,
   "maxWords": 925,
   "rankings": {
-    "speechRank": 607,
-    "wordsRank": 560,
-    "partySpeechRank": 201,
-    "partyWordsRank": 183,
-    "partySize": 203,
-    "totalSpeakers": 609,
+    "speechRank": 625,
+    "wordsRank": 604,
+    "partySpeechRank": 209,
+    "partyWordsRank": 201,
+    "partySize": 211,
+    "totalSpeakers": 627,
     "percentile": 0.3,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 96
+    "longestSpeechRank": 124
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 2,
     "interrupterRank": null,
-    "interruptedRank": 552
+    "interruptedRank": 586
   },
   "words": {
     "topWords": [
@@ -72,55 +72,34 @@
         "count": 3
       }
     ],
-    "signatureWordsBundestag": [
+    "signatureWords": [
       {
         "word": "kulturpolitik",
         "count": 5,
-        "score": 29.3,
-        "ratio": 352.6
+        "ratioParty": 378.2,
+        "ratioBundestag": 555.7
       },
       {
         "word": "kultur",
         "count": 5,
-        "score": 19.6,
-        "ratio": 49.5
+        "ratioParty": 71.5,
+        "ratioBundestag": 61.0
       },
       {
         "word": "politischen",
         "count": 5,
-        "score": 16.0,
-        "ratio": 23.7
+        "ratioParty": 23.5,
+        "ratioBundestag": 23.5
       }
     ],
-    "signatureWordsParty": [
-      {
-        "word": "kulturpolitik",
-        "count": 5,
-        "score": 27.4,
-        "ratio": 237.6
-      },
-      {
-        "word": "kultur",
-        "count": 5,
-        "score": 20.3,
-        "ratio": 57.2
-      },
-      {
-        "word": "politischen",
-        "count": 5,
-        "score": 15.8,
-        "ratio": 22.4
-      }
-    ],
-    "signatureAdjectivesBundestag": [],
-    "signatureAdjectivesParty": []
+    "signatureAdjectives": []
   },
   "comparison": {
     "speakerAvgWords": 925,
-    "partyAvgWords": 688,
-    "parliamentAvgWords": 613,
-    "vsParty": 1.34,
-    "vsParliament": 1.51
+    "partyAvgWords": 645,
+    "parliamentAvgWords": 585,
+    "vsParty": 1.43,
+    "vsParliament": 1.58
   },
   "funFacts": [
     {
@@ -130,26 +109,27 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Wolfram Weimer häufiger als der Bundestag-Durchschnitt?",
+    "question": "Welches Wort nutzt Wolfram Weimer häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bildung",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
+        "text": "Energie",
         "isCorrect": false
       },
       {
         "text": "Kulturpolitik",
         "isCorrect": true
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
       }
     ],
-    "explanation": "\"Kulturpolitik\" sagte Wolfram Weimer 5× (352.6× häufiger als der Bundestag-Durchschnitt)."
+    "explanationParty": "\"Kulturpolitik\" nutzt Wolfram Weimer 378.2× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "555.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
