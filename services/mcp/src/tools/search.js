@@ -175,7 +175,7 @@ To find a phrase inside document text, use bundestag_search_document_sections (s
     datum_start: datumStartSchema,
     datum_end: datumEndSchema,
     urheber: z.string().optional()
-      .describe('Author/initiator of the document'),
+      .describe('Author/initiator of the document — LONG official names, e.g. "Bundesregierung", "CDU/CSU", "BÜNDNIS 90/DIE GRÜNEN". Call bundestag_get_filters for examples.'),
     limit: limitSchema,
     cursor: cursorSchema,
     fields: fieldsSchema,
@@ -369,13 +369,13 @@ votes, and decisions. Use this to track bills through parliament.`,
       .describe('Search text in proceeding title'),
     wahlperiode: wahlperiodeSchema,
     vorgangstyp: z.string().optional()
-      .describe('Type of proceeding (e.g., Gesetzgebung, Antrag)'),
+      .describe('Type of proceeding — open set, e.g. "Gesetzgebung", "Antrag", "Kleine Anfrage", "Selbständiger Antrag".'),
     sachgebiet: z.string().optional()
-      .describe('Subject area'),
+      .describe('Subject area (Sachgebiet) — open set, e.g. "Umwelt", "Recht", "Wirtschaft". Call bundestag_get_filters for examples.'),
     deskriptor: z.string().optional()
-      .describe('Thesaurus keyword/descriptor'),
+      .describe('Thesaurus keyword/descriptor, e.g. "Klimaschutz", "Digitalisierung".'),
     initiative: z.string().optional()
-      .describe('Initiating party or faction'),
+      .describe('Initiating party or faction — LONG official names, e.g. "Bundesregierung", "CDU/CSU", "BÜNDNIS 90/DIE GRÜNEN".'),
     datum_start: datumStartSchema,
     datum_end: datumEndSchema,
     limit: limitSchema,
@@ -455,7 +455,7 @@ automatically (the DIP API matches a single name token).`,
       .describe('Search by name. Matched on surname — "Katharina Dröge" and "Dröge" both work.'),
     wahlperiode: wahlperiodeSchema,
     fraktion: z.string().optional()
-      .describe('Parliamentary group/faction (e.g., SPD, CDU/CSU, GRÜNE)'),
+      .describe('Parliamentary group/faction — DIP LONG official names, e.g. "SPD", "CDU/CSU", "BÜNDNIS 90/DIE GRÜNEN", "DIE LINKE". Note: the speeches collection (bundestag_search_speeches → speakerParty) uses SHORT names (e.g. "GRÜNE"). Call bundestag_get_filters for the full list.'),
     limit: limitSchema,
     cursor: cursorSchema,
     fields: fieldsSchema,

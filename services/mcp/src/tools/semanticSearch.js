@@ -88,11 +88,11 @@ Falls back gracefully if vector search is unavailable.`,
     wahlperiode: z.number().int().min(1).max(30).optional()
       .describe('Filter by electoral period (Wahlperiode)'),
     sachgebiet: z.string().optional()
-      .describe('Filter by subject area (Sachgebiet), e.g., "Arbeit und Beschäftigung", "Umwelt"'),
+      .describe('Filter by subject area (Sachgebiet), e.g., "Arbeit und Beschäftigung", "Umwelt". Open value set — call bundestag_get_filters for examples.'),
     initiative: z.string().optional()
-      .describe('Filter by initiating faction, e.g., "CDU/CSU", "SPD", "Bundesregierung"'),
+      .describe('Filter by initiating faction/body — LONG official names, e.g., "Bundesregierung", "CDU/CSU", "BÜNDNIS 90/DIE GRÜNEN".'),
     fraktion: z.string().optional()
-      .describe('Filter by parliamentary group (Fraktion)'),
+      .describe('Filter by parliamentary group (Fraktion) — LONG official names, e.g., "BÜNDNIS 90/DIE GRÜNEN", "CDU/CSU", "DIE LINKE". Note: the speeches collection (bundestag_search_speeches → speakerParty) uses SHORT names instead (e.g. "GRÜNE"). Call bundestag_get_filters for the full list.'),
     dateFrom: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional()
       .describe('Filter from date (YYYY-MM-DD)'),
     dateTo: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional()
@@ -283,7 +283,7 @@ Enhanced filters available for speech types:
     speaker: z.string().optional()
       .describe('Filter by speaker name, e.g., "Friedrich Merz", "Olaf Scholz"'),
     speakerParty: z.string().optional()
-      .describe('Filter by party/faction, e.g., "CDU/CSU", "SPD", "BÜNDNIS 90/DIE GRÜNEN"'),
+      .describe('Filter by party — SHORT names as stored in the speeches collection: "CDU/CSU", "SPD", "GRÜNE" (NOT "BÜNDNIS 90/DIE GRÜNEN"), "AfD", "DIE LINKE", "FDP", "BSW". This differs from the DIP/semantic_search fraktion filter, which uses the LONG names. Call bundestag_get_filters for the full list.'),
     speakerState: z.string().optional()
       .describe('Filter by state (for Bundesrat), e.g., "Bayern", "Baden-Württemberg"'),
     top: z.string().optional()
@@ -649,7 +649,7 @@ Requires QDRANT_ENABLED=true and document indexing to have been run.`,
     wahlperiode: z.number().int().min(1).max(30).optional()
       .describe('Filter by electoral period (Wahlperiode)'),
     urheber: z.string().optional()
-      .describe('Filter by author/initiator, e.g., "Bundesregierung", "CDU/CSU"'),
+      .describe('Filter by author/initiator — LONG official names, e.g., "Bundesregierung", "CDU/CSU", "BÜNDNIS 90/DIE GRÜNEN". Open set — call bundestag_get_filters for examples.'),
     dateFrom: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional()
       .describe('Filter from date (YYYY-MM-DD)'),
     dateTo: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional()
