@@ -90,11 +90,11 @@ Returns per speech: speaker (+ academic title), party, speech type
 default (fields:"compact"); use fields:"full" for the complete speech text.`,
 
   inputSchema: {
-    plenarprotokoll_id: z.number().int().positive().optional()
+    plenarprotokoll_id: z.coerce.number().int().positive().optional()
       .describe('Plenarprotokoll ID — its full transcript is fetched and parsed server-side (preferred over pasting text). Get an id from bundestag_search_plenarprotokolle.'),
     text: z.string().min(100).optional()
       .describe('Full Plenarprotokoll text (alternative to plenarprotokoll_id). Must be a COMPLETE protocol, not an excerpt.'),
-    limit: z.number().int().min(1).max(500).default(50)
+    limit: z.coerce.number().int().min(1).max(500).default(50)
       .describe('Max speeches to return (default 50). speech_count reports the total found.'),
     fields: z.enum(['compact', 'full']).default('compact')
       .describe('Response detail: "compact" (default — speech text truncated to a snippet) or "full" (complete speech text).')

@@ -406,8 +406,10 @@ export async function searchAktivitaeten(params = {}, options = {}) {
   if (params.query) apiParams['f.titel'] = params.query;
   if (params.wahlperiode) apiParams['f.wahlperiode'] = params.wahlperiode;
   // NOTE: the DIP /aktivitaet endpoint has NO activity-type filter (f.aktivitaetsart
-  // does not exist and is silently ignored). Type filtering is applied client-side
-  // on the fetched page in the tool handler instead.
+  // does not exist and is silently ignored). It DOES filter by dokumentart, though —
+  // plenary types (Rede, Frage, …) live under "Plenarprotokoll" — which the tool
+  // handler uses to narrow before the client-side aktivitaetsart refine.
+  if (params.dokumentart) apiParams['f.dokumentart'] = params.dokumentart;
   if (params.person_id) apiParams['f.person'] = params.person_id;
   if (params.datum_start) apiParams['f.datum.start'] = params.datum_start;
   if (params.datum_end) apiParams['f.datum.end'] = params.datum_end;
