@@ -53,6 +53,31 @@ const GROUP_FIELDS = {
 
 const MAX_BUCKETS = 240;
 
+// DIP stores faction initiatives as exact strings like "Fraktion der AfD" /
+// "Fraktion BÜNDNIS 90/DIE GRÜNEN". Passing a short name ("AfD", "GRÜNE") matches
+// nothing and returns a silent 0, so expand the common short forms to the exact
+// DIP value. Unknown values (Bundesregierung, a Bundesland, …) pass through.
+const INITIATIVE_ALIASES = {
+  'afd': 'Fraktion der AfD',
+  'spd': 'Fraktion der SPD',
+  'cdu': 'Fraktion der CDU/CSU',
+  'csu': 'Fraktion der CDU/CSU',
+  'cdu/csu': 'Fraktion der CDU/CSU',
+  'union': 'Fraktion der CDU/CSU',
+  'grüne': 'Fraktion BÜNDNIS 90/DIE GRÜNEN',
+  'gruene': 'Fraktion BÜNDNIS 90/DIE GRÜNEN',
+  'grünen': 'Fraktion BÜNDNIS 90/DIE GRÜNEN',
+  'die grünen': 'Fraktion BÜNDNIS 90/DIE GRÜNEN',
+  'bündnis 90/die grünen': 'Fraktion BÜNDNIS 90/DIE GRÜNEN',
+  'linke': 'Fraktion DIE LINKE',
+  'die linke': 'Fraktion DIE LINKE'
+};
+
+function normalizeInitiative(value) {
+  if (typeof value !== 'string') return value;
+  return INITIATIVE_ALIASES[value.trim().toLowerCase()] || value;
+}
+
 // Count is just the numFound from a single-row search — no rows paged into context.
 async function countFor(entity, params, useCache) {
   const fn = ENTITY_SEARCH[entity];
@@ -106,7 +131,7 @@ groupBy:
 - "none" (default): single total.
 - "month" / "year": a time series — REQUIRES datum_start and datum_end (max 240 buckets).
 - "drucksachetyp" (entity drucksache) / "vorgangstyp" (entity vorgang): one count per type.
-- "initiative" (entity vorgang): one count per faction/author — REQUIRES groupValues.`,
+- "initiative" (entity vorgang): one count per faction/author — REQUIRES groupValues. Short faction names ("AfD", "GRÜNE", "SPD", "CDU/CSU", "LINKE") are expanded to the exact DIP string automatically.`,
 
   inputSchema: {
     entity: z.enum(['drucksache', 'vorgang', 'plenarprotokoll', 'aktivitaet', 'person'])
@@ -124,7 +149,7 @@ groupBy:
     vorgangstyp: z.string().optional()
       .describe('Filter: proceeding type (entity vorgang), e.g., "Gesetzgebung"'),
     initiative: z.string().optional()
-      .describe('Filter: initiating faction/author (entity vorgang), e.g., "BÜNDNIS 90/DIE GRÜNEN"'),
+      .describe('Filter: initiating faction/author (entity vorgang). DIP uses exact strings like "Fraktion der AfD" or "Fraktion BÜNDNIS 90/DIE GRÜNEN"; common short names ("AfD", "GRÜNE", "SPD", "CDU/CSU", "LINKE") are expanded automatically. Also: "Bundesregierung", a Bundesland, "Europäische Kommission".'),
     aktivitaetsart: z.string().optional()
       .describe('Filter: activity type (entity aktivitaet), e.g., "Rede"'),
     groupBy: z.enum(['none', 'month', 'year', 'drucksachetyp', 'vorgangstyp', 'initiative']).default('none')
@@ -147,7 +172,7 @@ groupBy:
       if (params.datum_end) base.datum_end = params.datum_end;
       if (params.drucksachetyp) base.drucksachetyp = params.drucksachetyp;
       if (params.vorgangstyp) base.vorgangstyp = params.vorgangstyp;
-      if (params.initiative) base.initiative = params.initiative;
+      if (params.initiative) base.initiative = normalizeInitiative(params.initiative);
       if (params.aktivitaetsart) base.aktivitaetsart = params.aktivitaetsart;
 
       // --- Ungrouped: single total -----------------------------------------
@@ -205,8 +230,10 @@ groupBy:
 
       const groups = [];
       for (const value of values) {
-        // The group field replaces any same-named base filter.
-        const count = await countFor(entity, { ...base, [groupBy]: value }, useCache);
+        // The group field replaces any same-named base filter. Faction short
+        // names are normalized to their exact DIP string so they don't count 0.
+        const filterValue = groupBy === 'initiative' ? normalizeInitiative(value) : value;
+        const count = await countFor(entity, { ...base, [groupBy]: filterValue }, useCache);
         groups.push({ label: value, count });
       }
       groups.sort((a, b) => b.count - a.count);

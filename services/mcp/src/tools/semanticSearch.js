@@ -161,7 +161,10 @@ and background indexer statistics.`,
         collection: config.qdrant.collection,
         ...(qdrantInfo || { status: 'unavailable' })
       },
-      indexer: indexerStats
+      indexer: {
+        ...indexerStats,
+        note: 'total* counts reflect indexing runs since the current process (re)started and reset on restart; the authoritative number of indexed points is qdrant.pointsCount above.'
+      }
     };
   }
 };
@@ -517,7 +520,10 @@ Shows statistics about indexed protocols and chunks.`,
         collection: config.qdrant.protocolCollection,
         ...(protocolCollectionInfo || { status: 'unavailable' })
       },
-      indexer: protocolStats
+      indexer: {
+        ...protocolStats,
+        note: 'total* counts reflect indexing runs since the current process (re)started and reset on restart; the authoritative number of indexed chunks is protocolCollection.pointsCount above.'
+      }
     };
   }
 };
@@ -710,7 +716,10 @@ Shows statistics about indexed documents and chunks.`,
         collection: config.qdrant.documentCollection,
         ...(documentCollectionInfo || { status: 'unavailable' })
       },
-      indexer: documentStats
+      indexer: {
+        ...documentStats,
+        note: 'total* counts reflect indexing runs since the current process (re)started and reset on restart; the authoritative number of indexed chunks is documentCollection.pointsCount above.'
+      }
     };
   }
 };
