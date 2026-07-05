@@ -9,7 +9,7 @@ const MCP_ENDPOINT = 'https://mcp.bundestag-wrapped.de/mcp';
 const FACTS: { label: string; value: string; sub?: string }[] = [
   { label: 'Transport', value: 'Streamable HTTP' },
   { label: 'Zugang', value: 'keine Anmeldung' },
-  { label: 'Werkzeuge', value: '37', sub: 'nur lesend' },
+  { label: 'Werkzeuge', value: '38', sub: 'nur lesend' },
   { label: 'Such-Index', value: '~101.700', sub: 'Vektoren' },
   { label: 'Wahlperiode', value: '21', sub: 'zurück bis WP19' },
 ];
@@ -56,7 +56,7 @@ const CAPABILITIES: {
     title: 'Semantische Suche',
     badge: '4 Tools · KI-Embeddings',
     purpose:
-      'Vektorsuche über Reden und Dokumentabschnitte (Qdrant + Mistral-Embeddings): findet Inhalte nach Bedeutung, auch wenn der genaue Wortlaut unbekannt ist — die DIP-API selbst kann keine Volltextsuche. Einzelne Reden lassen sich strukturiert extrahieren.',
+      'Vektorsuche über Reden und Dokumentabschnitte (Qdrant + Mistral-Embeddings): findet Inhalte nach Bedeutung, auch wenn der genaue Wortlaut unbekannt ist — die DIP-API selbst kann keine Volltextsuche. Ergebnisse lassen sich nach Relevanz oder Aktualität sortieren und auf einen Zeitraum eingrenzen; einzelne Reden strukturiert extrahieren.',
     tools: ['semantic_search', 'search_speeches', 'search_document_sections', 'extract_speeches'],
     example: 'Finde Redepassagen zum Windkraft-Ausbau an Land — auch ohne exakten Wortlaut.',
   },
@@ -94,6 +94,7 @@ const CAPABILITIES: {
 ];
 
 const META_TOOLS = [
+  'get_filters',
   'estimate_size',
   'cache_stats',
   'semantic_search_status',
@@ -173,7 +174,7 @@ export function McpPage() {
               Ein offener <strong className="text-white font-semibold">Model-Context-Protocol-Server</strong>,
               der die amtliche Parlamentsdokumentation des Deutschen Bundestages, einen semantischen
               KI-Suchindex, eine NLP-Sprachanalyse und Transparenzdaten von Abgeordnetenwatch als{' '}
-              <strong className="text-white font-semibold">37 Werkzeuge</strong> für KI-Assistenten
+              <strong className="text-white font-semibold">38 Werkzeuge</strong> für KI-Assistenten
               bereitstellt. Statt zu raten, sucht der Assistent die passende Drucksache, liest die Rede
               und zitiert mit Quelle.
             </p>
@@ -327,9 +328,10 @@ export function McpPage() {
                 aktualisiert sich alle 15&nbsp;Minuten, die Wrapped-Auswertungen wöchentlich.
               </p>
               <p className="mb-3">
-                <strong className="text-white/90">Sieben Meta-Werkzeuge</strong> für Betrieb &amp; Diagnose —
-                Größencheck vor dem Volltextabruf, Status- und Health-Endpunkte, Cache-Statistik und fertige
-                Client-Konfiguration:
+                <strong className="text-white/90">Acht Meta-Werkzeuge</strong> für Filter-Discovery, Betrieb &amp;
+                Diagnose — <code className="font-mono text-xs text-white/70">get_filters</code> listet der KI die
+                gültigen Filterwerte, dazu Größencheck vor dem Volltextabruf, Status- und Health-Endpunkte,
+                Cache-Statistik und fertige Client-Konfiguration:
               </p>
               <div className="flex flex-wrap gap-2">
                 {META_TOOLS.map(t => (

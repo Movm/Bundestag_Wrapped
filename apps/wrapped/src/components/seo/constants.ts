@@ -30,7 +30,7 @@ export const PAGE_META = {
   mcp: {
     title: 'MCP-Server',
     description:
-      'Offener MCP-Server fur den Deutschen Bundestag: Drucksachen, Reden und Gesetzgebung als Werkzeug fur KI-Assistenten wie Claude. 37 Tools, keine Anmeldung.',
+      'Offener MCP-Server fur den Deutschen Bundestag: Drucksachen, Reden und Gesetzgebung als Werkzeug fur KI-Assistenten wie Claude. 38 Tools, keine Anmeldung.',
   },
   documentation: {
     title: 'Dokumentation',
