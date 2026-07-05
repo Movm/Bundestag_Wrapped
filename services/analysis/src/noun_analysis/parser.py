@@ -69,8 +69,10 @@ def parse_speeches_from_protocol(text: str) -> list[dict]:
     # Regular speakers with party: "Name (Party):"
     for m in SPEAKER_PATTERN.finditer(text):
         speaker_name = m.group(1).strip()
-        # Skip question headers like "Frage des Abgeordneten X"
-        if speaker_name.lower().startswith(('frage ', 'frage\xa0', 'anfrage ')):
+        # Skip question headers like "Frage(n) des Abgeordneten X"
+        if speaker_name.lower().startswith(
+            ('frage ', 'frage\xa0', 'fragen ', 'fragen\xa0', 'anfrage ')
+        ):
             continue
         boundaries.append({
             'start': m.start(),

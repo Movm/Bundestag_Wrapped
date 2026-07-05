@@ -3,31 +3,31 @@
   "party": "CDU/CSU",
   "slug": "michael-brand",
   "academicTitle": null,
-  "speeches": 1,
+  "speeches": 2,
   "wortbeitraege": 0,
   "befragungResponses": 0,
-  "totalWords": 751,
-  "avgWords": 751,
-  "minWords": 751,
+  "totalWords": 1063,
+  "avgWords": 532,
+  "minWords": 312,
   "maxWords": 751,
   "rankings": {
-    "speechRank": 568,
-    "wordsRank": 576,
-    "partySpeechRank": 184,
-    "partyWordsRank": 190,
-    "partySize": 203,
-    "totalSpeakers": 609,
-    "percentile": 6.7,
+    "speechRank": 595,
+    "wordsRank": 599,
+    "partySpeechRank": 194,
+    "partyWordsRank": 199,
+    "partySize": 211,
+    "totalSpeakers": 627,
+    "percentile": 5.1,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 249
+    "longestSpeechRank": 313
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 1,
     "interrupterRank": null,
-    "interruptedRank": 554
+    "interruptedRank": 604
   },
   "words": {
     "topWords": [
@@ -48,6 +48,14 @@
         "count": 5
       },
       {
+        "word": "bundesregierung",
+        "count": 4
+      },
+      {
+        "word": "neuen",
+        "count": 4
+      },
+      {
         "word": "starke",
         "count": 4
       },
@@ -60,108 +68,79 @@
         "count": 4
       },
       {
-        "word": "mittel",
-        "count": 3
-      },
-      {
-        "word": "neuen",
-        "count": 3
-      },
-      {
-        "word": "landes",
+        "word": "diskriminierung",
         "count": 3
       }
     ],
-    "signatureWordsBundestag": [
-      {
-        "word": "familien",
-        "count": 7,
-        "score": 24.7,
-        "ratio": 33.1
-      },
+    "signatureWords": [
       {
         "word": "bildung",
         "count": 6,
-        "score": 21.4,
-        "ratio": 34.2
+        "ratioParty": 30.7,
+        "ratioBundestag": 31.0
+      },
+      {
+        "word": "familien",
+        "count": 7,
+        "ratioParty": 26.9,
+        "ratioBundestag": 22.2
       },
       {
         "word": "stärken",
         "count": 5,
-        "score": 13.7,
-        "ratio": 14.4
+        "ratioParty": 7.9,
+        "ratioBundestag": 10.6
       },
       {
         "word": "haushalt",
         "count": 5,
-        "score": 10.3,
-        "ratio": 6.8
+        "ratioParty": 7.0,
+        "ratioBundestag": 7.7
       }
     ],
-    "signatureWordsParty": [
-      {
-        "word": "familien",
-        "count": 7,
-        "score": 26.1,
-        "ratio": 40.7
-      },
-      {
-        "word": "bildung",
-        "count": 6,
-        "score": 21.8,
-        "ratio": 36.6
-      },
-      {
-        "word": "stärken",
-        "count": 5,
-        "score": 12.1,
-        "ratio": 10.2
-      },
-      {
-        "word": "haushalt",
-        "count": 5,
-        "score": 9.9,
-        "ratio": 6.3
-      }
-    ],
-    "signatureAdjectivesBundestag": [],
-    "signatureAdjectivesParty": []
+    "signatureAdjectives": []
   },
   "comparison": {
-    "speakerAvgWords": 751,
-    "partyAvgWords": 688,
-    "parliamentAvgWords": 613,
-    "vsParty": 1.09,
-    "vsParliament": 1.23
+    "speakerAvgWords": 532,
+    "partyAvgWords": 645,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.82,
+    "vsParliament": 0.91
   },
   "funFacts": [
     {
       "emoji": "🎤",
       "label": "Reden gehalten",
-      "value": "1"
+      "value": "2"
+    },
+    {
+      "emoji": "📝",
+      "label": "Wörter gesprochen",
+      "value": "1.063"
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Michael Brand häufiger als der Bundestag-Durchschnitt?",
+    "question": "Welches Wort nutzt Michael Brand häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Politik",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
-        "text": "Zukunft",
+        "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Familien",
+        "text": "Bildung",
         "isCorrect": true
       }
     ],
-    "explanation": "\"Familien\" sagte Michael Brand 7× (33.1× häufiger als der Bundestag-Durchschnitt)."
+    "explanationParty": "\"Bildung\" nutzt Michael Brand 30.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "31.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -172,20 +151,20 @@
     "id": "hase",
     "alternatives": [
       {
-        "emoji": "🐢",
-        "name": "Schildkröte",
-        "title": "Gründlicher Analyst",
-        "reason": "Wenige Reden, aber wenn, dann richtig ausführlich.",
-        "id": "schildkroete",
-        "score": 0.915
-      },
-      {
         "emoji": "🦦",
         "name": "Otter",
         "title": "Positiver Teamplayer",
         "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
         "id": "otter",
         "score": 0.85
+      },
+      {
+        "emoji": "🦫",
+        "name": "Biber",
+        "title": "Konstruktiver Brückenbauer",
+        "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
+        "id": "biber",
+        "score": 0.8
       }
     ]
   },
@@ -193,70 +172,74 @@
     "scores": {
       "affirmative": 100.0,
       "aggression": 0.0,
-      "labeling": 0.0,
+      "labeling": 16.7,
       "solution_focus": 100.0,
       "collaboration": 50.0,
       "demand_intensity": 0.0,
       "acknowledgment": 0.0,
-      "authority": 50.0,
-      "future_orientation": 66.7,
+      "authority": 60.0,
+      "future_orientation": 76.9,
       "emotional_intensity": 100.0,
-      "inclusivity": 63.6,
+      "inclusivity": 73.3,
       "discriminatory": 0.0
     },
     "confidence": "low",
     "sampleSize": {
-      "speeches": 1,
-      "words": 491,
-      "adjectives": 3,
-      "verbs": 13
+      "speeches": 2,
+      "words": 705,
+      "adjectives": 6,
+      "verbs": 15
     }
   },
   "topics": {
     "scores": {
       "migration": 0.0,
       "klima": 0.0,
-      "wirtschaft": 4.07,
-      "soziales": 28.51,
-      "sicherheit": 8.15,
+      "wirtschaft": 4.26,
+      "soziales": 19.86,
+      "sicherheit": 5.67,
       "gesundheit": 0.0,
       "europa": 0.0,
       "digital": 0.0,
-      "bildung": 14.26,
-      "finanzen": 18.33,
-      "justiz": 2.04,
-      "arbeit": 0.0,
-      "mobilitaet": 2.04
+      "bildung": 12.77,
+      "finanzen": 14.18,
+      "justiz": 9.93,
+      "arbeit": 1.42,
+      "mobilitaet": 1.42
     },
     "topTopics": [
       {
         "topic": "soziales",
-        "score": 28.51,
+        "score": 19.86,
         "rank": 1
       },
       {
         "topic": "finanzen",
-        "score": 18.33,
+        "score": 14.18,
         "rank": 2
       },
       {
         "topic": "bildung",
-        "score": 14.26,
+        "score": 12.77,
         "rank": 3
       },
       {
-        "topic": "sicherheit",
-        "score": 8.15,
+        "topic": "justiz",
+        "score": 9.93,
         "rank": 4
       },
       {
-        "topic": "wirtschaft",
-        "score": 4.07,
+        "topic": "sicherheit",
+        "score": 5.67,
         "rank": 5
       }
     ],
     "topicWords": {
       "wirtschaft": [
+        {
+          "word": "unternehmen",
+          "count": 1
+        },
         {
           "word": "wettbewerbsfähigkeit",
           "count": 1
@@ -304,6 +287,14 @@
           "count": 6
         },
         {
+          "word": "schule",
+          "count": 1
+        },
+        {
+          "word": "ausbildung",
+          "count": 1
+        },
+        {
           "word": "lehrkräfte",
           "count": 1
         }
@@ -312,6 +303,10 @@
         {
           "word": "haushalt",
           "count": 5
+        },
+        {
+          "word": "kosten",
+          "count": 1
         },
         {
           "word": "bundeshaushalt",
@@ -324,15 +319,29 @@
         {
           "word": "investition",
           "count": 1
-        },
-        {
-          "word": "sondervermögen",
-          "count": 1
         }
       ],
       "justiz": [
         {
+          "word": "diskriminierung",
+          "count": 3
+        },
+        {
+          "word": "rechtsstaat",
+          "count": 2
+        },
+        {
+          "word": "rechtsprechung",
+          "count": 1
+        },
+        {
           "word": "verfassungsrecht",
+          "count": 1
+        }
+      ],
+      "arbeit": [
+        {
+          "word": "arbeitsplatz",
           "count": 1
         }
       ],

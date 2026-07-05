@@ -11,23 +11,23 @@
   "minWords": 407,
   "maxWords": 846,
   "rankings": {
-    "speechRank": 30,
-    "wordsRank": 34,
-    "partySpeechRank": 6,
-    "partyWordsRank": 4,
-    "partySize": 85,
-    "totalSpeakers": 609,
-    "percentile": 95.1,
-    "verbosityRank": 41,
-    "verbosityTotal": 521,
-    "partyVerbosityRank": 6,
-    "longestSpeechRank": 143
+    "speechRank": 200,
+    "wordsRank": 125,
+    "partySpeechRank": 38,
+    "partyWordsRank": 19,
+    "partySize": 87,
+    "totalSpeakers": 627,
+    "percentile": 68.1,
+    "verbosityRank": 28,
+    "verbosityTotal": 579,
+    "partyVerbosityRank": 3,
+    "longestSpeechRank": 186
   },
   "drama": {
     "interruptionsGiven": 32,
     "interruptionsReceived": 31,
-    "interrupterRank": 88,
-    "interruptedRank": 85
+    "interrupterRank": 158,
+    "interruptedRank": 227
   },
   "words": {
     "topWords": [
@@ -64,131 +64,79 @@
         "count": 21
       },
       {
-        "word": "leben",
-        "count": 20
-      },
-      {
         "word": "finde",
         "count": 20
+      },
+      {
+        "word": "leben",
+        "count": 20
       }
     ],
-    "signatureWordsBundestag": [
+    "signatureWords": [
       {
-        "word": "hilfe",
-        "count": 35,
-        "score": 95.5,
-        "ratio": 14.3
+        "word": "antiziganismus",
+        "count": 5,
+        "ratioParty": 301.4,
+        "ratioBundestag": 420.3
+      },
+      {
+        "word": "krisenprävention",
+        "count": 8,
+        "ratioParty": 68.9,
+        "ratioBundestag": 88.5
+      },
+      {
+        "word": "multilateralismus",
+        "count": 5,
+        "ratioParty": 60.3,
+        "ratioBundestag": 75.0
       },
       {
         "word": "entwicklungszusammenarbeit",
         "count": 25,
-        "score": 87.8,
-        "ratio": 32.5
+        "ratioParty": 43.1,
+        "ratioBundestag": 46.3
       },
       {
-        "word": "mittel",
-        "count": 29,
-        "score": 56.0,
-        "ratio": 5.9
-      },
-      {
-        "word": "kürzungen",
-        "count": 17,
-        "score": 53.6,
-        "ratio": 22.4
-      },
-      {
-        "word": "gekürzt",
-        "count": 15,
-        "score": 50.6,
-        "ratio": 28.1
+        "word": "auswärtigen",
+        "count": 5,
+        "ratioParty": 30.1,
+        "ratioBundestag": 13.1
       }
     ],
-    "signatureWordsParty": [
-      {
-        "word": "hilfe",
-        "count": 35,
-        "score": 87.3,
-        "ratio": 11.1
-      },
-      {
-        "word": "entwicklungszusammenarbeit",
-        "count": 25,
-        "score": 84.5,
-        "ratio": 28.4
-      },
-      {
-        "word": "mittel",
-        "count": 29,
-        "score": 52.4,
-        "ratio": 5.1
-      },
-      {
-        "word": "kürzungen",
-        "count": 17,
-        "score": 43.7,
-        "ratio": 12.1
-      },
-      {
-        "word": "humanitäre",
-        "count": 19,
-        "score": 43.7,
-        "ratio": 9.0
-      }
-    ],
-    "signatureAdjectivesBundestag": [
-      {
-        "word": "angemessen",
-        "count": 4,
-        "score": 9.2,
-        "ratio": 9.0
-      },
+    "signatureAdjectives": [
       {
         "word": "solide",
         "count": 3,
-        "score": 6.2,
-        "ratio": 6.9
+        "ratioParty": 13.9,
+        "ratioBundestag": 9.1
+      },
+      {
+        "word": "angemessen",
+        "count": 4,
+        "ratioParty": 8.9,
+        "ratioBundestag": 9.5
       },
       {
         "word": "rechts",
         "count": 4,
-        "score": 5.6,
-        "ratio": 3.1
+        "ratioParty": 3.8,
+        "ratioBundestag": 3.4
       },
       {
         "word": "gerecht",
         "count": 4,
-        "score": 4.8,
-        "ratio": 2.3
-      }
-    ],
-    "signatureAdjectivesParty": [
-      {
-        "word": "angemessen",
-        "count": 4,
-        "score": 8.6,
-        "ratio": 7.6
-      },
-      {
-        "word": "solide",
-        "count": 3,
-        "score": 7.0,
-        "ratio": 9.3
-      },
-      {
-        "word": "rechts",
-        "count": 4,
-        "score": 6.3,
-        "ratio": 3.9
+        "ratioParty": 2.1,
+        "ratioBundestag": 2.5
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 654,
-    "partyAvgWords": 567,
-    "parliamentAvgWords": 613,
-    "vsParty": 1.15,
-    "vsParliament": 1.07
+    "partyAvgWords": 543,
+    "parliamentAvgWords": 585,
+    "vsParty": 1.2,
+    "vsParliament": 1.12
   },
   "funFacts": [
     {
@@ -205,56 +153,53 @@
       "emoji": "⚡",
       "label": "Zwischenrufe",
       "value": "32"
-    },
-    {
-      "emoji": "📊",
-      "label": "Top-Redner",
-      "value": "Top 5%"
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jamila Schäfer häufiger als der Bundestag-Durchschnitt?",
+    "question": "Welches Wort nutzt Jamila Schäfer häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Familie",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Hilfe",
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Antiziganismus",
         "isCorrect": true
       },
       {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
+        "text": "Sicherheit",
         "isCorrect": false
       }
     ],
-    "explanation": "\"Hilfe\" sagte Jamila Schäfer 35× (14.3× häufiger als der Bundestag-Durchschnitt)."
+    "explanationParty": "\"Antiziganismus\" nutzt Jamila Schäfer 301.4× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "420.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Jamila Schäfer häufiger als der Bundestag-Durchschnitt?",
+    "question": "Welches Adjektiv nutzt Jamila Schäfer häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Angemessen",
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Solide",
         "isCorrect": true
       },
       {
-        "text": "Jung",
+        "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
+        "text": "Neu",
         "isCorrect": false
       }
     ],
-    "explanation": "\"Angemessen\" sagte Jamila Schäfer 4× (9.0× häufiger als der Bundestag-Durchschnitt)."
+    "explanationParty": "\"Solide\" nutzt Jamila Schäfer 13.9× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "9.1× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐴",
@@ -264,19 +209,19 @@
     "id": "pferd",
     "alternatives": [
       {
+        "emoji": "🦊",
+        "name": "Fuchs",
+        "title": "Clevere Strategin",
+        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+        "id": "fuchs",
+        "score": 1.0
+      },
+      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüterin",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
-        "score": 1.0
-      },
-      {
-        "emoji": "🐝",
-        "name": "Biene",
-        "title": "Fleißige Abgeordnete",
-        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-        "id": "biene",
         "score": 1.0
       }
     ]
@@ -358,15 +303,15 @@
           "count": 2
         },
         {
+          "word": "migration",
+          "count": 1
+        },
+        {
           "word": "mittelmeer",
           "count": 1
         },
         {
           "word": "grenzkontrollen",
-          "count": 1
-        },
-        {
-          "word": "migration",
           "count": 1
         }
       ],
@@ -384,19 +329,15 @@
           "count": 2
         },
         {
-          "word": "klimawandel",
+          "word": "nachhaltigkeit",
           "count": 1
         },
         {
-          "word": "nachhaltigkeit",
+          "word": "klimawandel",
           "count": 1
         }
       ],
       "wirtschaft": [
-        {
-          "word": "fachkräfte",
-          "count": 3
-        },
         {
           "word": "wachstum",
           "count": 3
@@ -406,11 +347,15 @@
           "count": 3
         },
         {
+          "word": "fachkräfte",
+          "count": 3
+        },
+        {
           "word": "kredite",
           "count": 2
         },
         {
-          "word": "industriestandort",
+          "word": "märkte",
           "count": 1
         }
       ],
@@ -424,15 +369,15 @@
           "count": 3
         },
         {
-          "word": "eltern",
-          "count": 3
-        },
-        {
           "word": "kind",
           "count": 3
         },
         {
-          "word": "familien",
+          "word": "eltern",
+          "count": 3
+        },
+        {
+          "word": "kindergeld",
           "count": 2
         }
       ],
@@ -446,15 +391,15 @@
           "count": 2
         },
         {
+          "word": "extremismus",
+          "count": 1
+        },
+        {
+          "word": "verfassungsschutz",
+          "count": 1
+        },
+        {
           "word": "soldaten",
-          "count": 1
-        },
-        {
-          "word": "terroristen",
-          "count": 1
-        },
-        {
-          "word": "waffen",
           "count": 1
         }
       ],
@@ -486,17 +431,17 @@
           "count": 5
         },
         {
-          "word": "china",
+          "word": "russland",
           "count": 4
         }
       ],
       "digital": [
         {
-          "word": "desinformation",
+          "word": "netz",
           "count": 2
         },
         {
-          "word": "netz",
+          "word": "desinformation",
           "count": 2
         },
         {
@@ -510,11 +455,11 @@
       ],
       "bildung": [
         {
-          "word": "bildungspolitik",
+          "word": "schulen",
           "count": 4
         },
         {
-          "word": "schulen",
+          "word": "bildungspolitik",
           "count": 4
         },
         {
@@ -522,11 +467,11 @@
           "count": 3
         },
         {
-          "word": "hochschule",
+          "word": "professor",
           "count": 1
         },
         {
-          "word": "bildungssystem",
+          "word": "wissenschaft",
           "count": 1
         }
       ],
@@ -574,11 +519,11 @@
       ],
       "mobilitaet": [
         {
-          "word": "infrastruktur",
+          "word": "deutschlandticket",
           "count": 3
         },
         {
-          "word": "deutschlandticket",
+          "word": "infrastruktur",
           "count": 3
         },
         {
@@ -586,11 +531,11 @@
           "count": 2
         },
         {
-          "word": "fliegen",
+          "word": "bahn",
           "count": 1
         },
         {
-          "word": "bahn",
+          "word": "auto",
           "count": 1
         }
       ]

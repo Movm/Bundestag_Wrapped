@@ -11,23 +11,23 @@
   "minWords": 317,
   "maxWords": 617,
   "rankings": {
-    "speechRank": 305,
-    "wordsRank": 407,
-    "partySpeechRank": 73,
-    "partyWordsRank": 93,
-    "partySize": 148,
-    "totalSpeakers": 609,
-    "percentile": 49.9,
-    "verbosityRank": 292,
-    "verbosityTotal": 521,
-    "partyVerbosityRank": 68,
-    "longestSpeechRank": 399
+    "speechRank": 493,
+    "wordsRank": 534,
+    "partySpeechRank": 121,
+    "partyWordsRank": 126,
+    "partySize": 151,
+    "totalSpeakers": 627,
+    "percentile": 21.4,
+    "verbosityRank": 311,
+    "verbosityTotal": 579,
+    "partyVerbosityRank": 81,
+    "longestSpeechRank": 482
   },
   "drama": {
     "interruptionsGiven": 7,
     "interruptionsReceived": 9,
-    "interrupterRank": 238,
-    "interruptedRank": 358
+    "interrupterRank": 313,
+    "interruptedRank": 485
   },
   "words": {
     "topWords": [
@@ -72,93 +72,53 @@
         "count": 6
       }
     ],
-    "signatureWordsBundestag": [
-      {
-        "word": "steuern",
-        "count": 11,
-        "score": 34.9,
-        "ratio": 22.9
-      },
-      {
-        "word": "staat",
-        "count": 10,
-        "score": 21.9,
-        "ratio": 7.9
-      },
+    "signatureWords": [
       {
         "word": "schwarzarbeit",
         "count": 5,
-        "score": 19.6,
-        "ratio": 49.5
+        "ratioParty": 129.3,
+        "ratioBundestag": 68.3
       },
-      {
-        "word": "wirtschaft",
-        "count": 9,
-        "score": 17.1,
-        "ratio": 5.7
-      },
-      {
-        "word": "bürger",
-        "count": 9,
-        "score": 16.3,
-        "ratio": 5.1
-      }
-    ],
-    "signatureWordsParty": [
       {
         "word": "steuern",
         "count": 11,
-        "score": 28.2,
-        "ratio": 12.0
-      },
-      {
-        "word": "schwarzarbeit",
-        "count": 5,
-        "score": 22.8,
-        "ratio": 94.0
-      },
-      {
-        "word": "staat",
-        "count": 10,
-        "score": 18.4,
-        "ratio": 5.3
-      },
-      {
-        "word": "wirtschaft",
-        "count": 9,
-        "score": 17.7,
-        "ratio": 6.1
+        "ratioParty": 11.2,
+        "ratioBundestag": 22.3
       },
       {
         "word": "arbeit",
         "count": 7,
-        "score": 15.9,
-        "ratio": 8.7
+        "ratioParty": 9.1,
+        "ratioBundestag": 5.0
+      },
+      {
+        "word": "wirtschaft",
+        "count": 9,
+        "ratioParty": 5.9,
+        "ratioBundestag": 6.3
+      },
+      {
+        "word": "weniger",
+        "count": 8,
+        "ratioParty": 5.8,
+        "ratioBundestag": 6.4
       }
     ],
-    "signatureAdjectivesBundestag": [
+    "signatureAdjectives": [
       {
         "word": "gerecht",
         "count": 3,
-        "score": 6.3,
-        "ratio": 7.1
-      }
-    ],
-    "signatureAdjectivesParty": [
-      {
-        "word": "gerecht",
-        "count": 3,
-        "score": 8.6,
-        "ratio": 16.5
+        "ratioParty": 15.5,
+        "ratioBundestag": 7.8
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 425,
-    "partyAvgWords": 587,
-    "parliamentAvgWords": 613,
-    "vsParty": 0.72,
-    "vsParliament": 0.69
+    "partyAvgWords": 561,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.76,
+    "vsParliament": 0.73
   },
   "funFacts": [
     {
@@ -173,48 +133,50 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Jan Wenzel Schmidt häufiger als der Bundestag-Durchschnitt?",
+    "question": "Welches Wort nutzt Jan Wenzel Schmidt häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Steuern",
+        "text": "Schwarzarbeit",
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
+        "text": "Gesetz",
         "isCorrect": false
       }
     ],
-    "explanation": "\"Steuern\" sagte Jan Wenzel Schmidt 11× (22.9× häufiger als der Bundestag-Durchschnitt)."
+    "explanationParty": "\"Schwarzarbeit\" nutzt Jan Wenzel Schmidt 129.3× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "68.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Jan Wenzel Schmidt häufiger als der Bundestag-Durchschnitt?",
+    "question": "Welches Adjektiv nutzt Jan Wenzel Schmidt häufiger als der Rest der AfD-Fraktion?",
     "options": [
-      {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
       {
         "text": "Gerecht",
         "isCorrect": true
+      },
+      {
+        "text": "Neu",
+        "isCorrect": false
       },
       {
         "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Stark",
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
-    "explanation": "\"Gerecht\" sagte Jan Wenzel Schmidt 3× (7.1× häufiger als der Bundestag-Durchschnitt)."
+    "explanationParty": "\"Gerecht\" nutzt Jan Wenzel Schmidt 15.5× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "7.8× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -244,7 +206,7 @@
     "scores": {
       "migration": 1.2,
       "klima": 2.4,
-      "wirtschaft": 4.2,
+      "wirtschaft": 9.6,
       "soziales": 4.2,
       "sicherheit": 1.8,
       "gesundheit": 0.6,
@@ -263,13 +225,13 @@
         "rank": 1
       },
       {
-        "topic": "europa",
-        "score": 5.4,
+        "topic": "wirtschaft",
+        "score": 9.6,
         "rank": 2
       },
       {
-        "topic": "wirtschaft",
-        "score": 4.2,
+        "topic": "europa",
+        "score": 5.4,
         "rank": 3
       },
       {
@@ -310,6 +272,10 @@
       ],
       "wirtschaft": [
         {
+          "word": "wirtschaft",
+          "count": 9
+        },
+        {
           "word": "mittelstand",
           "count": 3
         },
@@ -332,10 +298,6 @@
           "count": 3
         },
         {
-          "word": "rentnerin",
-          "count": 1
-        },
-        {
           "word": "umverteilung",
           "count": 1
         },
@@ -345,6 +307,10 @@
         },
         {
           "word": "sozialhilfe",
+          "count": 1
+        },
+        {
+          "word": "rentnerin",
           "count": 1
         }
       ],
@@ -374,19 +340,19 @@
           "count": 4
         },
         {
-          "word": "sanktionen",
-          "count": 1
-        },
-        {
-          "word": "russland",
-          "count": 1
-        },
-        {
           "word": "diplomatie",
           "count": 1
         },
         {
           "word": "frieden",
+          "count": 1
+        },
+        {
+          "word": "außenpolitik",
+          "count": 1
+        },
+        {
+          "word": "sanktionen",
           "count": 1
         }
       ],
@@ -424,7 +390,7 @@
           "count": 2
         },
         {
-          "word": "steuerpolitik",
+          "word": "investitionen",
           "count": 1
         }
       ],

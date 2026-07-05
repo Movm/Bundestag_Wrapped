@@ -11,23 +11,23 @@
   "minWords": 10,
   "maxWords": 174,
   "rankings": {
-    "speechRank": 609,
-    "wordsRank": 471,
-    "partySpeechRank": 203,
-    "partyWordsRank": 149,
-    "partySize": 203,
-    "totalSpeakers": 609,
+    "speechRank": 627,
+    "wordsRank": 568,
+    "partySpeechRank": 211,
+    "partyWordsRank": 185,
+    "partySize": 211,
+    "totalSpeakers": 627,
     "percentile": 0.0,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 606
+    "longestSpeechRank": 626
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 1,
     "interrupterRank": null,
-    "interruptedRank": 577
+    "interruptedRank": 603
   },
   "words": {
     "topWords": [
@@ -72,79 +72,46 @@
         "count": 7
       }
     ],
-    "signatureWordsBundestag": [
-      {
-        "word": "kollege",
-        "count": 16,
-        "score": 54.4,
-        "ratio": 28.9
-      },
+    "signatureWords": [
       {
         "word": "folgt",
         "count": 8,
-        "score": 36.0,
-        "ratio": 88.5
-      },
-      {
-        "word": "bundesregierung",
-        "count": 16,
-        "score": 34.5,
-        "ratio": 7.7
-      },
-      {
-        "word": "beantworten",
-        "count": 7,
-        "score": 31.4,
-        "ratio": 87.4
+        "ratioParty": 78.6,
+        "ratioBundestag": 80.0
       },
       {
         "word": "brandner",
         "count": 5,
-        "score": 22.0,
-        "ratio": 80.1
-      }
-    ],
-    "signatureWordsParty": [
-      {
-        "word": "kollege",
-        "count": 16,
-        "score": 48.3,
-        "ratio": 19.5
-      },
-      {
-        "word": "folgt",
-        "count": 8,
-        "score": 36.2,
-        "ratio": 91.7
-      },
-      {
-        "word": "bundesregierung",
-        "count": 16,
-        "score": 34.0,
-        "ratio": 7.4
+        "ratioParty": 69.7,
+        "ratioBundestag": 85.5
       },
       {
         "word": "beantworten",
         "count": 7,
-        "score": 28.9,
-        "ratio": 61.0
+        "ratioParty": 68.8,
+        "ratioBundestag": 82.6
       },
       {
-        "word": "brandner",
-        "count": 5,
-        "score": 21.3,
-        "ratio": 70.2
+        "word": "mitarbeiter",
+        "count": 6,
+        "ratioParty": 37.1,
+        "ratioBundestag": 44.3
+      },
+      {
+        "word": "bundeskanzler",
+        "count": 7,
+        "ratioParty": 20.0,
+        "ratioBundestag": 18.7
       }
     ],
-    "signatureAdjectivesBundestag": [],
-    "signatureAdjectivesParty": []
+    "signatureAdjectives": []
   },
   "comparison": {
     "speakerAvgWords": 68,
-    "partyAvgWords": 688,
-    "parliamentAvgWords": 613,
-    "vsParty": 0.1,
-    "vsParliament": 0.11
+    "partyAvgWords": 645,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.11,
+    "vsParliament": 0.12
   },
   "funFacts": [
     {
@@ -159,26 +126,27 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Dr. Michael Meister häufiger als der Bundestag-Durchschnitt?",
+    "question": "Welches Wort nutzt Dr. Michael Meister häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kollege",
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Folgt",
         "isCorrect": true
-      },
-      {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Politik",
-        "isCorrect": false
       }
     ],
-    "explanation": "\"Kollege\" sagte Dr. Michael Meister 16× (28.9× häufiger als der Bundestag-Durchschnitt)."
+    "explanationParty": "\"Folgt\" nutzt Dr. Michael Meister 78.6× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "80.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -233,7 +201,7 @@
     "scores": {
       "migration": 2.45,
       "klima": 0.0,
-      "wirtschaft": 2.45,
+      "wirtschaft": 4.08,
       "soziales": 0.0,
       "sicherheit": 0.82,
       "gesundheit": 0.82,
@@ -252,17 +220,17 @@
         "rank": 1
       },
       {
-        "topic": "europa",
-        "score": 3.27,
+        "topic": "wirtschaft",
+        "score": 4.08,
         "rank": 2
       },
       {
-        "topic": "migration",
-        "score": 2.45,
+        "topic": "europa",
+        "score": 3.27,
         "rank": 3
       },
       {
-        "topic": "wirtschaft",
+        "topic": "migration",
         "score": 2.45,
         "rank": 4
       },
@@ -289,7 +257,15 @@
           "count": 2
         },
         {
+          "word": "volkswirtschaft",
+          "count": 1
+        },
+        {
           "word": "unternehmen",
+          "count": 1
+        },
+        {
+          "word": "wirtschaft",
           "count": 1
         }
       ],

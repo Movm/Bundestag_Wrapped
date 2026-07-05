@@ -11,23 +11,23 @@
   "minWords": 779,
   "maxWords": 808,
   "rankings": {
-    "speechRank": 536,
-    "wordsRank": 499,
-    "partySpeechRank": 96,
-    "partyWordsRank": 92,
-    "partySize": 109,
-    "totalSpeakers": 609,
-    "percentile": 12.0,
+    "speechRank": 589,
+    "wordsRank": 578,
+    "partySpeechRank": 106,
+    "partyWordsRank": 105,
+    "partySize": 114,
+    "totalSpeakers": 627,
+    "percentile": 6.1,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 191
+    "longestSpeechRank": 244
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 6,
     "interrupterRank": null,
-    "interruptedRank": 417
+    "interruptedRank": 529
   },
   "words": {
     "topWords": [
@@ -54,59 +54,41 @@
       {
         "word": "richtig",
         "count": 4
+      },
+      {
+        "word": "regierung",
+        "count": 4
       }
     ],
-    "signatureWordsBundestag": [
+    "signatureWords": [
       {
         "word": "endlich",
         "count": 7,
-        "score": 14.3,
-        "ratio": 6.7
+        "ratioParty": 13.5,
+        "ratioBundestag": 6.8
       },
       {
         "word": "gemeinsam",
         "count": 6,
-        "score": 12.2,
-        "ratio": 6.6
+        "ratioParty": 4.5,
+        "ratioBundestag": 7.2
       }
     ],
-    "signatureWordsParty": [
-      {
-        "word": "endlich",
-        "count": 7,
-        "score": 18.1,
-        "ratio": 12.2
-      },
-      {
-        "word": "gemeinsam",
-        "count": 6,
-        "score": 9.6,
-        "ratio": 4.0
-      }
-    ],
-    "signatureAdjectivesBundestag": [
+    "signatureAdjectives": [
       {
         "word": "stark",
         "count": 3,
-        "score": 7.7,
-        "ratio": 12.1
-      }
-    ],
-    "signatureAdjectivesParty": [
-      {
-        "word": "stark",
-        "count": 3,
-        "score": 6.8,
-        "ratio": 8.8
+        "ratioParty": 9.9,
+        "ratioBundestag": 11.9
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 794,
-    "partyAvgWords": 637,
-    "parliamentAvgWords": 613,
-    "vsParty": 1.25,
-    "vsParliament": 1.3
+    "partyAvgWords": 618,
+    "parliamentAvgWords": 585,
+    "vsParty": 1.28,
+    "vsParliament": 1.36
   },
   "funFacts": [
     {
@@ -121,32 +103,33 @@
     }
   ],
   "signatureQuiz": {
-    "question": "Welches Wort nutzt Tim Klüssendorf häufiger als der Bundestag-Durchschnitt?",
+    "question": "Welches Wort nutzt Tim Klüssendorf häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Debatte",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
         "text": "Endlich",
         "isCorrect": true
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
       }
     ],
-    "explanation": "\"Endlich\" sagte Tim Klüssendorf 7× (6.7× häufiger als der Bundestag-Durchschnitt)."
+    "explanationParty": "\"Endlich\" nutzt Tim Klüssendorf 13.5× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "6.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
-    "question": "Welches Adjektiv nutzt Tim Klüssendorf häufiger als der Bundestag-Durchschnitt?",
+    "question": "Welches Adjektiv nutzt Tim Klüssendorf häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Politisch",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
@@ -154,15 +137,16 @@
         "isCorrect": true
       },
       {
-        "text": "Wichtig",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Erfolgreich",
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
-    "explanation": "\"Stark\" sagte Tim Klüssendorf 3× (12.1× häufiger als der Bundestag-Durchschnitt)."
+    "explanationParty": "\"Stark\" nutzt Tim Klüssendorf 9.9× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "11.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦫",
@@ -286,15 +270,15 @@
           "count": 4
         },
         {
-          "word": "bürgergeld",
-          "count": 1
-        },
-        {
           "word": "rente",
           "count": 1
         },
         {
           "word": "renten",
+          "count": 1
+        },
+        {
+          "word": "bürgergeld",
           "count": 1
         }
       ],
@@ -306,12 +290,16 @@
       ],
       "finanzen": [
         {
+          "word": "haushalt",
+          "count": 2
+        },
+        {
           "word": "sondervermögen",
           "count": 2
         },
         {
-          "word": "haushalt",
-          "count": 2
+          "word": "entlastung",
+          "count": 1
         },
         {
           "word": "investitionen",
@@ -319,10 +307,6 @@
         },
         {
           "word": "kosten",
-          "count": 1
-        },
-        {
-          "word": "finanzierung",
           "count": 1
         }
       ],
@@ -334,15 +318,15 @@
       ],
       "arbeit": [
         {
+          "word": "arbeitsplatz",
+          "count": 1
+        },
+        {
           "word": "lohn",
           "count": 1
         },
         {
           "word": "tarifbindung",
-          "count": 1
-        },
-        {
-          "word": "arbeitsplatz",
           "count": 1
         }
       ]

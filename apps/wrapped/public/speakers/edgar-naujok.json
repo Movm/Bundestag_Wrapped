@@ -11,22 +11,22 @@
   "minWords": 557,
   "maxWords": 557,
   "rankings": {
-    "speechRank": 589,
-    "wordsRank": 588,
-    "partySpeechRank": 147,
-    "partyWordsRank": 142,
-    "partySize": 148,
-    "totalSpeakers": 609,
-    "percentile": 3.3,
+    "speechRank": 597,
+    "wordsRank": 618,
+    "partySpeechRank": 148,
+    "partyWordsRank": 150,
+    "partySize": 151,
+    "totalSpeakers": 627,
+    "percentile": 4.8,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 477
+    "longestSpeechRank": 544
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 1,
     "interruptionsReceived": 0,
-    "interrupterRank": null,
+    "interrupterRank": 442,
     "interruptedRank": null
   },
   "words": {
@@ -72,17 +72,15 @@
         "count": 2
       }
     ],
-    "signatureWordsBundestag": [],
-    "signatureWordsParty": [],
-    "signatureAdjectivesBundestag": [],
-    "signatureAdjectivesParty": []
+    "signatureWords": [],
+    "signatureAdjectives": []
   },
   "comparison": {
     "speakerAvgWords": 557,
-    "partyAvgWords": 587,
-    "parliamentAvgWords": 613,
-    "vsParty": 0.95,
-    "vsParliament": 0.91
+    "partyAvgWords": 561,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.99,
+    "vsParliament": 0.95
   },
   "funFacts": [
     {
@@ -121,7 +119,7 @@
     "scores": {
       "migration": 0.0,
       "klima": 4.9,
-      "wirtschaft": 9.8,
+      "wirtschaft": 12.25,
       "soziales": 0.0,
       "sicherheit": 2.45,
       "gesundheit": 2.45,
@@ -135,13 +133,13 @@
     },
     "topTopics": [
       {
-        "topic": "digital",
+        "topic": "wirtschaft",
         "score": 12.25,
         "rank": 1
       },
       {
-        "topic": "wirtschaft",
-        "score": 9.8,
+        "topic": "digital",
+        "score": 12.25,
         "rank": 2
       },
       {
@@ -175,6 +173,10 @@
         {
           "word": "wettbewerb",
           "count": 2
+        },
+        {
+          "word": "wirtschaft",
+          "count": 1
         },
         {
           "word": "wettbewerbsfähigkeit",
