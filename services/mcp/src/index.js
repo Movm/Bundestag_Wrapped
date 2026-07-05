@@ -20,7 +20,7 @@ import { analysisTools } from './tools/analysis.js';
 import { aggregateTools } from './tools/aggregate.js';
 import { clientConfigTool } from './tools/clientConfig.js';
 import { getCacheStats } from './utils/cache.js';
-import { debug, info, error, getStats } from './utils/logger.js';
+import { debug, info, error, errDetail, getStats } from './utils/logger.js';
 import { allResources, SERVER_INSTRUCTIONS } from './resources/info.js';
 import { allResourceTemplates, registerResourceTemplates } from './resources/templates.js';
 import { allPrompts, registerPrompts } from './prompts/index.js';
@@ -74,6 +74,57 @@ function getBaseUrl(req) {
 // Session management
 const transports = {};
 
+// === TOOL METADATA (single source of truth) ===
+
+// Tools that mutate server state (indexing jobs) — everything else is read-only.
+const MUTATING_TOOLS = new Set([
+  'bundestag_reindex_protocols',
+  'bundestag_trigger_indexing',
+  'bundestag_trigger_document_indexing',
+  'bundestag_trigger_protocol_indexing'
+]);
+
+// Destructive mutations (data loss) — clients should gate these behind confirmation.
+const DESTRUCTIVE_TOOLS = new Set([
+  'bundestag_reindex_protocols' // deletes all protocol chunks before rebuilding
+]);
+
+// Every registered tool, in registration order. clientConfigTool is local-only
+// (generates config text, no external calls) — the rest hit the DIP/Qdrant APIs.
+const ALL_TOOLS = [...allTools, ...semanticSearchTools, ...analysisTools, ...aggregateTools, clientConfigTool];
+
+// Derive the Directory-required `title` annotation from the tool name so it
+// stays in sync automatically (e.g. bundestag_search_drucksachen → "Search Drucksachen").
+function humanizeTitle(name) {
+  return name
+    .replace(/^bundestag_/, '')
+    .split('_')
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ');
+}
+
+// Standard MCP annotations for a tool, derived from the mutation sets above.
+function annotationsFor(name) {
+  const readOnly = !MUTATING_TOOLS.has(name);
+  return {
+    title: humanizeTitle(name),
+    readOnlyHint: readOnly,
+    destructiveHint: DESTRUCTIVE_TOOLS.has(name),
+    idempotentHint: readOnly,
+    openWorldHint: name !== 'get_client_config'
+  };
+}
+
+// Compact tool catalog for the discovery/info endpoints — generated from the
+// live registry so it can never drift from the actually-registered tools.
+function toolCatalog() {
+  return ALL_TOOLS.map((tool) => ({
+    name: tool.name,
+    description: tool.description.split('\n')[0].trim(),
+    annotations: annotationsFor(tool.name)
+  }));
+}
+
 // MCP Server Factory
 function createMcpServer(baseUrl) {
   const server = new McpServer({
@@ -110,29 +161,14 @@ function createMcpServer(baseUrl) {
 
   // === MCP TOOLS ===
 
-  // Tools that mutate server state (indexing jobs) — everything else is read-only.
-  const MUTATING_TOOLS = new Set([
-    'bundestag_reindex_protocols',
-    'bundestag_trigger_indexing',
-    'bundestag_trigger_document_indexing',
-    'bundestag_trigger_protocol_indexing'
-  ]);
-
-  // Destructive mutations (data loss) — clients should gate these behind confirmation.
-  const DESTRUCTIVE_TOOLS = new Set([
-    'bundestag_reindex_protocols' // deletes all protocol chunks before rebuilding
-  ]);
-
-  // Register all search/entity tools + analysis tools
+  // Register all search/entity/analysis/aggregate tools (clientConfigTool below).
   const allToolsCombined = [...allTools, ...semanticSearchTools, ...analysisTools, ...aggregateTools];
   for (const tool of allToolsCombined) {
-    // Most tools only read from the DIP API; the indexing tools mutate server state.
-    const readOnly = !MUTATING_TOOLS.has(tool.name);
     server.tool(
       tool.name,
       tool.description,
       tool.inputSchema,
-      { readOnlyHint: readOnly, destructiveHint: DESTRUCTIVE_TOOLS.has(tool.name), openWorldHint: true },
+      annotationsFor(tool.name),
       async (params) => {
         const startedAt = Date.now();
         try {
@@ -149,11 +185,11 @@ function createMcpServer(baseUrl) {
             isError: !!result.error
           };
         } catch (err) {
-          error('Tool', `${tool.name} failed: ${err.message}`, { ms: Date.now() - startedAt });
+          error('Tool', `${tool.name} failed: ${errDetail(err)}`, { ms: Date.now() - startedAt });
           return {
             content: [{
               type: 'text',
-              text: JSON.stringify({ error: true, message: err.message, tool: tool.name })
+              text: JSON.stringify({ error: true, message: errDetail(err), tool: tool.name })
             }],
             isError: true
           };
@@ -167,7 +203,7 @@ function createMcpServer(baseUrl) {
     clientConfigTool.name,
     clientConfigTool.description,
     clientConfigTool.inputSchema,
-    { readOnlyHint: true },
+    annotationsFor(clientConfigTool.name),
     async ({ client }) => {
       const result = clientConfigTool.handler({ client }, baseUrl);
       return {
@@ -349,98 +385,7 @@ app.get('/.well-known/mcp.json', (req, res) => {
     homepage: 'https://github.com/Movm/bundestag-mcp',
     mcp_endpoint: `${baseUrl}/mcp`,
     transport: 'streamable-http',
-    tools: [
-      {
-        name: 'bundestag_search_drucksachen',
-        description: 'Search Bundestag printed documents (bills, motions, inquiries)',
-        annotations: { readOnlyHint: true, idempotentHint: true }
-      },
-      {
-        name: 'bundestag_get_drucksache',
-        description: 'Get a specific document by ID',
-        annotations: { readOnlyHint: true, idempotentHint: true }
-      },
-      {
-        name: 'bundestag_search_drucksachen_text',
-        description: 'Full-text search within document content',
-        annotations: { readOnlyHint: true, idempotentHint: true }
-      },
-      {
-        name: 'bundestag_search_plenarprotokolle',
-        description: 'Search plenary session transcripts',
-        annotations: { readOnlyHint: true, idempotentHint: true }
-      },
-      {
-        name: 'bundestag_get_plenarprotokoll',
-        description: 'Get a specific plenary protocol by ID',
-        annotations: { readOnlyHint: true, idempotentHint: true }
-      },
-      {
-        name: 'bundestag_search_plenarprotokolle_text',
-        description: 'Full-text search within plenary transcripts',
-        annotations: { readOnlyHint: true, idempotentHint: true }
-      },
-      {
-        name: 'bundestag_search_vorgaenge',
-        description: 'Search parliamentary proceedings',
-        annotations: { readOnlyHint: true, idempotentHint: true }
-      },
-      {
-        name: 'bundestag_get_vorgang',
-        description: 'Get a specific proceeding by ID',
-        annotations: { readOnlyHint: true, idempotentHint: true }
-      },
-      {
-        name: 'bundestag_search_vorgangspositionen',
-        description: 'Search proceeding positions/steps',
-        annotations: { readOnlyHint: true, idempotentHint: true }
-      },
-      {
-        name: 'bundestag_search_personen',
-        description: 'Search for MPs and other persons',
-        annotations: { readOnlyHint: true, idempotentHint: true }
-      },
-      {
-        name: 'bundestag_get_person',
-        description: 'Get person details by ID',
-        annotations: { readOnlyHint: true, idempotentHint: true }
-      },
-      {
-        name: 'bundestag_search_aktivitaeten',
-        description: 'Search parliamentary activities',
-        annotations: { readOnlyHint: true, idempotentHint: true }
-      },
-      {
-        name: 'bundestag_get_aktivitaet',
-        description: 'Get a specific activity by ID',
-        annotations: { readOnlyHint: true, idempotentHint: true }
-      },
-      {
-        name: 'bundestag_cache_stats',
-        description: 'Show API cache statistics',
-        annotations: { readOnlyHint: true, idempotentHint: true }
-      },
-      {
-        name: 'bundestag_semantic_search',
-        description: 'Semantic search using AI embeddings',
-        annotations: { readOnlyHint: true, idempotentHint: true }
-      },
-      {
-        name: 'bundestag_semantic_search_status',
-        description: 'Get semantic search system status',
-        annotations: { readOnlyHint: true, idempotentHint: true }
-      },
-      {
-        name: 'bundestag_trigger_indexing',
-        description: 'Trigger document indexing',
-        annotations: { readOnlyHint: false, idempotentHint: false }
-      },
-      {
-        name: 'get_client_config',
-        description: 'Generate MCP client configurations',
-        annotations: { readOnlyHint: true, idempotentHint: true }
-      }
-    ],
+    tools: toolCatalog(),
     resources: [
       { uri: 'bundestag://system-prompt', name: 'AI Usage Guide', priority: 'high' },
       { uri: 'bundestag://info', name: 'Server Info' },
@@ -506,15 +451,7 @@ app.get('/info', (req, res) => {
       config: `${baseUrl}/config/:client`,
       info: `${baseUrl}/info`
     },
-    tools: [...allTools, ...semanticSearchTools, ...aggregateTools].map(t => ({
-      name: t.name,
-      description: t.description,
-      annotations: { readOnlyHint: true, idempotentHint: true }
-    })).concat([{
-      name: 'get_client_config',
-      description: 'Generate MCP client configurations',
-      annotations: { readOnlyHint: true, idempotentHint: true }
-    }]),
+    tools: toolCatalog(),
     resources: allResources.map(r => ({
       uri: r.uri,
       name: r.name,

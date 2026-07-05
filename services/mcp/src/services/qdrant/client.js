@@ -50,7 +50,7 @@ export async function healthCheck() {
     await qdrant.getCollections();
     return true;
   } catch (err) {
-    logger.warn('QDRANT', `Health check failed: ${err.message}`);
+    logger.warn('QDRANT', `Health check failed: ${logger.errDetail(err)}`);
     return false;
   }
 }

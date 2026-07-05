@@ -108,7 +108,7 @@ export function createCollectionInfo(collectionName, logPrefix) {
         optimizerStatus: info.optimizer_status
       };
     } catch (err) {
-      logger.warn(logPrefix, `Failed to get collection info: ${err.message}`);
+      logger.warn(logPrefix, `Failed to get collection info: ${logger.errDetail(err)}`);
       return null;
     }
   };
@@ -187,7 +187,7 @@ export async function ensureCollectionExists(collectionName, indexes, logPrefix)
 
     return true;
   } catch (err) {
-    logger.error(logPrefix, `Failed to ensure collection: ${err.message}`);
+    logger.error(logPrefix, `Failed to ensure collection: ${logger.errDetail(err)}`);
     return false;
   }
 }
