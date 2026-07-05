@@ -190,6 +190,7 @@ TOPIC_LEXICONS: dict[TopicCategory, set[str]] = {
         "handel", "handelsabkommen", "freihandel", "zoll", "zölle",
         "handelspartner", "handelsbeziehungen", "lieferkette",
         # Economy
+        "wirtschaft", "volkswirtschaft", "betriebswirtschaft",
         "konjunktur", "rezession", "wachstum", "wirtschaftswachstum",
         "bruttoinlandsprodukt", "bip", "inflation", "deflation",
         "wirtschaftskrise", "wirtschaftspolitik", "standort",
