@@ -30,7 +30,12 @@ export const PAGE_META = {
   mcp: {
     title: 'MCP-Server',
     description:
-      'Offener MCP-Server fur den Deutschen Bundestag: Drucksachen, Reden und Gesetzgebung als Werkzeug fur KI-Assistenten wie Claude. 38 Tools, keine Anmeldung.',
+      'Verbinde Claude, ChatGPT oder Mistral mit dem echten Bundestag: Drucksachen, Reden, Gesetzgebung und Abstimmungen. Kostenlos, ohne Anmeldung.',
+  },
+  mcpTechnik: {
+    title: 'MCP-Server — Technische Details',
+    description:
+      'Technische Referenz des Bundestag-MCP-Servers: 38 nur-lesende Tools, Filter, Sortierung, Endpoint und Datenquellen fur Entwickler:innen.',
   },
   documentation: {
     title: 'Dokumentation',

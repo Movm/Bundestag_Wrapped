@@ -13,6 +13,7 @@ import { SpeakerWrappedPage } from '@/components/SpeakerWrappedPage';
 const DatenschutzPage = lazy(() => import('@/components/DatenschutzPage').then(m => ({ default: m.DatenschutzPage })));
 const DokumentationPage = lazy(() => import('@/components/DokumentationPage').then(m => ({ default: m.DokumentationPage })));
 const McpPage = lazy(() => import('@/components/McpPage').then(m => ({ default: m.McpPage })));
+const McpTechnikPage = lazy(() => import('@/components/McpTechnikPage').then(m => ({ default: m.McpTechnikPage })));
 const SuchePage = lazy(() => import('@/components/SuchePage').then(m => ({ default: m.SuchePage })));
 const AbgeordnetePage = lazy(() => import('@/components/AbgeordnetePage').then(m => ({ default: m.AbgeordnetePage })));
 
@@ -83,6 +84,7 @@ export default function App() {
             <Route path="/datenschutz" element={<DatenschutzPage />} />
             <Route path="/dokumentation" element={<DokumentationPage />} />
             <Route path="/mcp" element={<McpPage />} />
+            <Route path="/mcp/technik" element={<McpTechnikPage />} />
           </Route>
         </Routes>
       </Suspense>
