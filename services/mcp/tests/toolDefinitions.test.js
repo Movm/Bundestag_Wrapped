@@ -5,9 +5,10 @@ import { semanticSearchTools } from '../src/tools/semanticSearch.js';
 import { analysisTools } from '../src/tools/analysis.js';
 import { aggregateTools } from '../src/tools/aggregate.js';
 import { abgeordnetenwatchTools } from '../src/tools/abgeordnetenwatch.js';
+import { filterCatalogTools } from '../src/tools/filterCatalog.js';
 import { clientConfigTool } from '../src/tools/clientConfig.js';
 
-const everyTool = [...allTools, ...semanticSearchTools, ...analysisTools, ...aggregateTools, ...abgeordnetenwatchTools, clientConfigTool];
+const everyTool = [...allTools, ...semanticSearchTools, ...analysisTools, ...aggregateTools, ...abgeordnetenwatchTools, ...filterCatalogTools, clientConfigTool];
 
 describe('tool definitions', () => {
   it('registers a non-trivial number of tools', () => {

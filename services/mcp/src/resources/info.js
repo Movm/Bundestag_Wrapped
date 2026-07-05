@@ -47,6 +47,27 @@ Access to the German Bundestag's official documentation (DIP API) plus a semanti
 | **Result of a named vote, by faction** | \`abgeordnetenwatch_search_polls\` → \`abgeordnetenwatch_poll_tally\` |
 | **Combined MP transparency profile** | \`abgeordnetenwatch_politician_profile\` (bridge from DIP via \`bundestagPersonId\`) |
 
+## Filters & sorting
+Unsure which value a filter accepts? Call \`bundestag_get_filters\` first (read-only) — it
+lists every filter field + valid values per search surface. Key filters:
+
+| Filter | Tool(s) | Values |
+|--------|---------|--------|
+| \`fraktion\` / \`initiative\` / \`urheber\` | semantic_search, DIP search, document_sections | **LONG** names: \`CDU/CSU\`, \`SPD\`, \`BÜNDNIS 90/DIE GRÜNEN\`, \`AfD\`, \`DIE LINKE\` |
+| \`speakerParty\` | search_speeches | **SHORT** names: \`CDU/CSU\`, \`SPD\`, \`GRÜNE\`, \`AfD\`, \`DIE LINKE\` |
+| \`drucksachetyp\` | search_drucksachen, document_sections | \`Gesetzentwurf\`, \`Antrag\`, \`Kleine Anfrage\`, \`Große Anfrage\`, … (closed) |
+| \`speechType\` / \`category\` | search_speeches | \`rede\`, \`befragung\`, \`fragestunde_antwort\`, … / \`rede\`, \`wortbeitrag\` (closed) |
+| \`herausgeber\` | search_speeches | \`BT\`, \`BR\` (closed) |
+| \`chunkType\` | document_sections | \`artikel\`, \`question\`, \`problem\`, … (closed) |
+| \`sachgebiet\` / \`vorgangstyp\` / \`entityTypes\` | semantic/DIP | open or long enum — call \`bundestag_get_filters\` |
+| \`wahlperiode\` | all | 21 = current; 20, 19, … |
+
+- **Party naming differs by layer:** the speeches collection stores SHORT names (\`GRÜNE\`),
+  while DIP tools + \`semantic_search\` \`fraktion\` use LONG names (\`BÜNDNIS 90/DIE GRÜNEN\`).
+  \`CDU/CSU\`, \`SPD\`, \`AfD\`, \`DIE LINKE\` are identical in both.
+- **Recent-first in a window:** pass \`sort:"newest"\` plus \`dateFrom\`/\`dateTo\` on the semantic
+  search tools (\`sort\` also takes \`oldest\`/\`relevance\`; default is relevance).
+
 ## Analysis tools are two-step — do both steps yourself
 \`bundestag_speaker_profile\` and \`bundestag_compare_parties\` do **not** fetch data; they
 analyse speeches you supply. Never ask the user for speeches — fetch them first:
@@ -371,6 +392,7 @@ export const infoResource = {
         'bundestag_analysis_health',
         'bundestag_estimate_size',
         'bundestag_cache_stats',
+        'bundestag_get_filters',
         'get_client_config'
       ],
       prompts: [

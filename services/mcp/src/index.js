@@ -19,6 +19,7 @@ import { semanticSearchTools } from './tools/semanticSearch.js';
 import { analysisTools } from './tools/analysis.js';
 import { aggregateTools } from './tools/aggregate.js';
 import { abgeordnetenwatchTools } from './tools/abgeordnetenwatch.js';
+import { filterCatalogTools } from './tools/filterCatalog.js';
 import { clientConfigTool } from './tools/clientConfig.js';
 import { getCacheStats } from './utils/cache.js';
 import { debug, info, error, errDetail, getStats } from './utils/logger.js';
@@ -102,7 +103,7 @@ function isExposedTool(name) {
 
 // Every registered tool, in registration order. clientConfigTool is local-only
 // (generates config text, no external calls) — the rest hit the DIP/Qdrant APIs.
-const ALL_TOOLS = [...allTools, ...semanticSearchTools, ...analysisTools, ...aggregateTools, ...abgeordnetenwatchTools, clientConfigTool]
+const ALL_TOOLS = [...allTools, ...semanticSearchTools, ...analysisTools, ...aggregateTools, ...abgeordnetenwatchTools, ...filterCatalogTools, clientConfigTool]
   .filter((tool) => isExposedTool(tool.name));
 
 // Derive the Directory-required `title` annotation from the tool name so it
@@ -123,7 +124,8 @@ function annotationsFor(name) {
     readOnlyHint: readOnly,
     destructiveHint: DESTRUCTIVE_TOOLS.has(name),
     idempotentHint: readOnly,
-    openWorldHint: name !== 'get_client_config'
+    // get_client_config and get_filters are local/static (no external calls).
+    openWorldHint: name !== 'get_client_config' && name !== 'bundestag_get_filters'
   };
 }
 
@@ -175,7 +177,7 @@ function createMcpServer(baseUrl) {
 
   // Register all search/entity/analysis/aggregate tools (clientConfigTool below).
   // Indexing/reindex tools are excluded unless EXPOSE_INDEXING_TOOLS is set.
-  const allToolsCombined = [...allTools, ...semanticSearchTools, ...analysisTools, ...aggregateTools, ...abgeordnetenwatchTools]
+  const allToolsCombined = [...allTools, ...semanticSearchTools, ...analysisTools, ...aggregateTools, ...abgeordnetenwatchTools, ...filterCatalogTools]
     .filter((tool) => isExposedTool(tool.name));
   for (const tool of allToolsCombined) {
     server.tool(
