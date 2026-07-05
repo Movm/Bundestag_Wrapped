@@ -8,6 +8,25 @@ import * as embedding from '../services/embeddingService.js';
 import * as qdrant from '../services/qdrant/index.js';
 import * as indexer from '../jobs/indexer.js';
 import { config } from '../config.js';
+import { analyzeSize } from '../utils/tokenEstimator.js';
+
+// Semantic result rows carry the full chunk/speech text. A single page of hits
+// (e.g. 15 speeches) can exceed 50k characters and overflow the caller's context
+// window. Return a snippet by default and only emit full text on explicit
+// opt-in (fields:'full'); every response also carries a responseSize estimate so
+// the tool self-reports when a result set is large.
+const TEXT_SNIPPET_CHARS = 600;
+
+function capText(text, useFull) {
+  if (typeof text !== 'string') return { text, textTruncated: false };
+  if (useFull || text.length <= TEXT_SNIPPET_CHARS) {
+    return { text, textTruncated: false };
+  }
+  return { text: text.slice(0, TEXT_SNIPPET_CHARS) + '…', textTruncated: true };
+}
+
+const fieldsSchema = z.enum(['compact', 'full']).default('compact')
+  .describe('Response detail: "compact" (default — text truncated to a snippet, safe for context) or "full" (complete text; use before feeding results into the analysis tools).');
 
 export const semanticSearchTool = {
   name: 'bundestag_semantic_search',
@@ -256,7 +275,8 @@ Enhanced filters available for speech types:
     requiredKeywords: z.array(z.string()).optional()
       .describe('Keywords that MUST appear in the text (hard filter, applied post-search)'),
     excludeKeywords: z.array(z.string()).optional()
-      .describe('Keywords that must NOT appear in the text (exclusion filter)')
+      .describe('Keywords that must NOT appear in the text (exclusion filter)'),
+    fields: fieldsSchema
   },
 
   async handler(params) {
@@ -345,6 +365,39 @@ Enhanced filters available for speech types:
         });
       }
 
+      const useFull = params.fields === 'full';
+      const mappedResults = results.map(r => {
+        const capped = capText(r.payload.text, useFull);
+        return {
+          score: (r.boostedScore || r.score).toFixed(3),
+          originalScore: r.originalScore ? r.originalScore.toFixed(3) : undefined,
+          keywordMatches: r.keywordMatches || [],
+          speaker: r.payload.speaker,
+          speakerParty: r.payload.speaker_party,
+          speakerState: r.payload.speaker_state,
+          speakerRole: r.payload.speaker_role,
+          top: r.payload.top,
+          topTitle: r.payload.top_title,
+          text: capped.text,
+          textLength: r.payload.text_length,
+          textTruncated: capped.textTruncated,
+          protokollId: r.payload.protokoll_id,
+          dokumentnummer: r.payload.dokumentnummer,
+          datum: r.payload.datum,
+          wahlperiode: r.payload.wahlperiode,
+          herausgeber: r.payload.herausgeber,
+          // Enhanced fields from Python parser
+          speechType: r.payload.speech_type,
+          category: r.payload.category,
+          isGovernment: r.payload.is_government,
+          firstName: r.payload.first_name,
+          lastName: r.payload.last_name,
+          acadTitle: r.payload.acad_title
+        };
+      });
+      const speechSize = analyzeSize(JSON.stringify(mappedResults), { language: 'german' });
+      const speechesTruncated = mappedResults.some(r => r.textTruncated);
+
       return {
         success: true,
         endpoint: 'search_speeches',
@@ -372,32 +425,16 @@ Enhanced filters available for speech types:
           excludeKeywords: params.excludeKeywords || [],
           requiredKeywords: params.requiredKeywords || []
         } : null,
-        totalResults: results.length,
-        results: results.map(r => ({
-          score: (r.boostedScore || r.score).toFixed(3),
-          originalScore: r.originalScore ? r.originalScore.toFixed(3) : undefined,
-          keywordMatches: r.keywordMatches || [],
-          speaker: r.payload.speaker,
-          speakerParty: r.payload.speaker_party,
-          speakerState: r.payload.speaker_state,
-          speakerRole: r.payload.speaker_role,
-          top: r.payload.top,
-          topTitle: r.payload.top_title,
-          text: r.payload.text,
-          textLength: r.payload.text_length,
-          protokollId: r.payload.protokoll_id,
-          dokumentnummer: r.payload.dokumentnummer,
-          datum: r.payload.datum,
-          wahlperiode: r.payload.wahlperiode,
-          herausgeber: r.payload.herausgeber,
-          // Enhanced fields from Python parser
-          speechType: r.payload.speech_type,
-          category: r.payload.category,
-          isGovernment: r.payload.is_government,
-          firstName: r.payload.first_name,
-          lastName: r.payload.last_name,
-          acadTitle: r.payload.acad_title
-        }))
+        totalResults: mappedResults.length,
+        fields: useFull ? 'full' : 'compact',
+        responseSize: {
+          estimatedTokens: speechSize.estimatedTokens,
+          category: speechSize.category
+        },
+        ...(speechesTruncated
+          ? { note: `Speech text truncated to ${TEXT_SNIPPET_CHARS} chars to keep the response small (textLength shows the full size). Call again with fields:"full" for complete text — do that before passing speeches into bundestag_speaker_profile / bundestag_compare_parties.` }
+          : {}),
+        results: mappedResults
       };
 
     } catch (err) {
@@ -568,7 +605,8 @@ Requires QDRANT_ENABLED=true and document indexing to have been run.`,
     dateTo: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional()
       .describe('Filter to date (YYYY-MM-DD)'),
     scoreThreshold: z.number().min(0).max(1).default(0.3)
-      .describe('Minimum similarity score (0-1, higher = more similar)')
+      .describe('Minimum similarity score (0-1, higher = more similar)'),
+    fields: fieldsSchema
   },
 
   async handler(params) {
@@ -614,6 +652,29 @@ Requires QDRANT_ENABLED=true and document indexing to have been run.`,
         scoreThreshold: params.scoreThreshold
       });
 
+      const useFull = params.fields === 'full';
+      const mappedResults = results.map(r => {
+        const capped = capText(r.payload.text, useFull);
+        return {
+          score: r.score.toFixed(3),
+          drucksachetyp: r.payload.drucksachetyp,
+          dokumentnummer: r.payload.dokumentnummer,
+          titel: r.payload.titel,
+          chunkType: r.payload.chunk_type,
+          sectionTitle: r.payload.section_title,
+          artikel: r.payload.artikel,
+          questionNumber: r.payload.question_number,
+          text: capped.text,
+          textLength: r.payload.text_length,
+          textTruncated: capped.textTruncated,
+          datum: r.payload.datum,
+          wahlperiode: r.payload.wahlperiode,
+          urheber: r.payload.urheber
+        };
+      });
+      const docSize = analyzeSize(JSON.stringify(mappedResults), { language: 'german' });
+      const docsTruncated = mappedResults.some(r => r.textTruncated);
+
       return {
         success: true,
         endpoint: 'search_document_sections',
@@ -627,22 +688,16 @@ Requires QDRANT_ENABLED=true and document indexing to have been run.`,
             ? `${params.dateFrom || '*'} to ${params.dateTo || '*'}`
             : 'all'
         },
-        totalResults: results.length,
-        results: results.map(r => ({
-          score: r.score.toFixed(3),
-          drucksachetyp: r.payload.drucksachetyp,
-          dokumentnummer: r.payload.dokumentnummer,
-          titel: r.payload.titel,
-          chunkType: r.payload.chunk_type,
-          sectionTitle: r.payload.section_title,
-          artikel: r.payload.artikel,
-          questionNumber: r.payload.question_number,
-          text: r.payload.text,
-          textLength: r.payload.text_length,
-          datum: r.payload.datum,
-          wahlperiode: r.payload.wahlperiode,
-          urheber: r.payload.urheber
-        }))
+        totalResults: mappedResults.length,
+        fields: useFull ? 'full' : 'compact',
+        responseSize: {
+          estimatedTokens: docSize.estimatedTokens,
+          category: docSize.category
+        },
+        ...(docsTruncated
+          ? { note: `Section text truncated to ${TEXT_SNIPPET_CHARS} chars to keep the response small (textLength shows the full size). Call again with fields:"full" for complete text.` }
+          : {}),
+        results: mappedResults
       };
 
     } catch (err) {

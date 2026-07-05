@@ -46,10 +46,13 @@ Access to the German Bundestag's official documentation (DIP API) plus a semanti
 ## Analysis tools are two-step — do both steps yourself
 \`bundestag_speaker_profile\` and \`bundestag_compare_parties\` do **not** fetch data; they
 analyse speeches you supply. Never ask the user for speeches — fetch them first:
-- **Compare parties on a topic:** \`bundestag_search_speeches(query, limit: 100-200)\`, then
-  pass its \`results\` straight into \`bundestag_compare_parties(speeches: results)\`.
-- **Profile a speaker:** \`bundestag_search_speeches(speaker, limit: 50-100)\`, then pass its
-  \`results\` into \`bundestag_speaker_profile(speaker_name, speeches: results)\`.
+- **Compare parties on a topic:** \`bundestag_search_speeches(query, limit: 100-200, fields: "full")\`,
+  then pass its \`results\` straight into \`bundestag_compare_parties(speeches: results)\`.
+- **Profile a speaker:** \`bundestag_search_speeches(speaker, limit: 50-100, fields: "full")\`, then
+  pass its \`results\` into \`bundestag_speaker_profile(speaker_name, speeches: results)\`.
+
+Pass \`fields: "full"\` for the analysis two-step — search tools truncate speech/section text to
+a snippet by default (safe for browsing), but the analysis needs the complete text.
 
 Search fields (\`speakerParty\`, \`speechType\`, \`firstName\`) are accepted and mapped
 automatically — forward the \`results\` array verbatim, no reshaping needed.

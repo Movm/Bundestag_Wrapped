@@ -331,12 +331,14 @@ Analyzes all speeches from a specific speaker to create a detailed profile inclu
 
 TWO-STEP TOOL — do both steps yourself, automatically, without asking the user for
 speeches. When the user asks to profile/analyse a speaker's rhetoric:
-1. Call bundestag_search_speeches(speaker="<name>", query="<topic or the name>", limit=50-100) first.
+1. Call bundestag_search_speeches(speaker="<name>", query="<topic or the name>", limit=50-100,
+   fields="full") first. fields:"full" is REQUIRED — the default response truncates speech text
+   to a snippet, and the analysis needs the complete text.
 2. Pass that call's \`results\` array straight into this tool's \`speeches\` (the search
    fields speakerParty/speechType/firstName are accepted and mapped automatically).
 
 Example:
-1. const r = bundestag_search_speeches(speaker="Friedrich Merz", query="Friedrich Merz", limit=100)
+1. const r = bundestag_search_speeches(speaker="Friedrich Merz", query="Friedrich Merz", limit=100, fields="full")
 2. bundestag_speaker_profile(speaker_name="Friedrich Merz", speeches=r.results)`,
 
   inputSchema: {
@@ -414,14 +416,15 @@ Analyzes speeches from multiple parties and creates a comparative profile includ
 
 TWO-STEP TOOL — do both steps yourself, automatically, without asking the user for
 speeches. When the user asks to compare parties on a topic:
-1. Call bundestag_search_speeches(query="<topic>", limit=100-200) first (optionally
-   filtered by date). Use a high limit so several parties are represented.
+1. Call bundestag_search_speeches(query="<topic>", limit=100-200, fields="full") first
+   (optionally filtered by date). Use a high limit so several parties are represented, and
+   fields:"full" so the analysis sees complete speech text, not the truncated snippet.
 2. Pass that call's \`results\` array straight into this tool's \`speeches\` — the search
    field speakerParty is accepted and mapped to party, and speeches are grouped by party
    automatically.
 
 Example:
-1. const r = bundestag_search_speeches(query="Klimaschutz", limit=150)
+1. const r = bundestag_search_speeches(query="Klimaschutz", limit=150, fields="full")
 2. bundestag_compare_parties(speeches=r.results)`,
 
   inputSchema: {
