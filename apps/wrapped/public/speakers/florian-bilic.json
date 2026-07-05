@@ -11,23 +11,23 @@
   "minWords": 45,
   "maxWords": 631,
   "rankings": {
-    "speechRank": 440,
-    "wordsRank": 519,
-    "partySpeechRank": 129,
+    "speechRank": 441,
+    "wordsRank": 517,
+    "partySpeechRank": 131,
     "partyWordsRank": 172,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 29.8,
-    "verbosityRank": 345,
+    "totalSpeakers": 625,
+    "percentile": 29.4,
+    "verbosityRank": 344,
     "verbosityTotal": 579,
     "partyVerbosityRank": 120,
-    "longestSpeechRank": 465
+    "longestSpeechRank": 463
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 5,
     "interrupterRank": null,
-    "interruptedRank": 536
+    "interruptedRank": 547
   },
   "words": {
     "topWords": [
@@ -53,13 +53,13 @@
         "word": "pirmasens",
         "count": 7,
         "ratioParty": 3473.6,
-        "ratioBundestag": 2141.0
+        "ratioBundestag": 2135.9
       },
       {
         "word": "rentner",
         "count": 5,
         "ratioParty": 85.6,
-        "ratioBundestag": 29.4
+        "ratioBundestag": 29.3
       },
       {
         "word": "gerechtigkeit",
@@ -71,13 +71,13 @@
         "word": "sozialstaat",
         "count": 5,
         "ratioParty": 12.3,
-        "ratioBundestag": 15.3
+        "ratioBundestag": 15.2
       },
       {
         "word": "liegen",
         "count": 5,
         "ratioParty": 11.7,
-        "ratioBundestag": 10.0
+        "ratioBundestag": 10.2
       }
     ],
     "signatureAdjectives": [
@@ -92,7 +92,7 @@
   "comparison": {
     "speakerAvgWords": 409,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.63,
     "vsParliament": 0.7
   },
@@ -112,15 +112,15 @@
     "question": "Welches Wort nutzt Florian Bilic häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
-        "text": "Energie",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
@@ -129,25 +129,25 @@
       }
     ],
     "explanationParty": "\"Pirmasens\" nutzt Florian Bilic 3473.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "2141.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "2135.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Florian Bilic häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
-      {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
-      },
       {
         "text": "Gerecht",
         "isCorrect": true
       },
       {
         "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
         "isCorrect": false
       }
     ],
@@ -276,19 +276,19 @@
           "count": 4
         },
         {
-          "word": "wirtschaft",
-          "count": 3
-        },
-        {
           "word": "unternehmen",
           "count": 3
         },
         {
-          "word": "betrieb",
+          "word": "wirtschaft",
+          "count": 3
+        },
+        {
+          "word": "wettbewerb",
           "count": 1
         },
         {
-          "word": "wirtschaftswachstum",
+          "word": "marktwirtschaft",
           "count": 1
         }
       ],
@@ -302,11 +302,11 @@
           "count": 5
         },
         {
-          "word": "familie",
+          "word": "grundsicherung",
           "count": 4
         },
         {
-          "word": "grundsicherung",
+          "word": "familie",
           "count": 4
         },
         {
@@ -322,11 +322,11 @@
       ],
       "europa": [
         {
-          "word": "sanktionen",
+          "word": "binnenmarkt",
           "count": 1
         },
         {
-          "word": "binnenmarkt",
+          "word": "sanktionen",
           "count": 1
         }
       ],
@@ -338,7 +338,11 @@
       ],
       "bildung": [
         {
-          "word": "azubi",
+          "word": "ausbildung",
+          "count": 1
+        },
+        {
+          "word": "bildung",
           "count": 1
         },
         {
@@ -346,11 +350,7 @@
           "count": 1
         },
         {
-          "word": "ausbildung",
-          "count": 1
-        },
-        {
-          "word": "bildung",
+          "word": "azubi",
           "count": 1
         }
       ],
@@ -358,6 +358,10 @@
         {
           "word": "haushalt",
           "count": 2
+        },
+        {
+          "word": "kosten",
+          "count": 1
         },
         {
           "word": "finanzierung",
@@ -370,23 +374,19 @@
         {
           "word": "zuschuss",
           "count": 1
-        },
-        {
-          "word": "schulden",
-          "count": 1
         }
       ],
       "justiz": [
-        {
-          "word": "beschluss",
-          "count": 1
-        },
         {
           "word": "gesetzgebung",
           "count": 1
         },
         {
           "word": "verordnung",
+          "count": 1
+        },
+        {
+          "word": "beschluss",
           "count": 1
         }
       ],
@@ -396,11 +396,11 @@
           "count": 2
         },
         {
-          "word": "vollzeit",
+          "word": "gesundheitsschutz",
           "count": 1
         },
         {
-          "word": "arbeitsplätze",
+          "word": "arbeitnehmer",
           "count": 1
         },
         {

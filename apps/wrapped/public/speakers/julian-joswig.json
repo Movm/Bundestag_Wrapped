@@ -11,23 +11,23 @@
   "minWords": 66,
   "maxWords": 818,
   "rankings": {
-    "speechRank": 111,
+    "speechRank": 98,
     "wordsRank": 108,
-    "partySpeechRank": 20,
+    "partySpeechRank": 16,
     "partyWordsRank": 15,
-    "partySize": 87,
-    "totalSpeakers": 627,
-    "percentile": 82.3,
-    "verbosityRank": 406,
+    "partySize": 86,
+    "totalSpeakers": 625,
+    "percentile": 84.3,
+    "verbosityRank": 405,
     "verbosityTotal": 579,
     "partyVerbosityRank": 42,
-    "longestSpeechRank": 228
+    "longestSpeechRank": 226
   },
   "drama": {
     "interruptionsGiven": 66,
     "interruptionsReceived": 26,
     "interrupterRank": 75,
-    "interruptedRank": 281
+    "interruptedRank": 278
   },
   "words": {
     "topWords": [
@@ -48,11 +48,11 @@
         "count": 22
       },
       {
-        "word": "reiche",
+        "word": "beim",
         "count": 21
       },
       {
-        "word": "beim",
+        "word": "reiche",
         "count": 21
       },
       {
@@ -64,46 +64,46 @@
       {
         "word": "heidelberg",
         "count": 5,
-        "ratioParty": 289.5,
-        "ratioBundestag": 336.6
+        "ratioParty": 287.1,
+        "ratioBundestag": 335.8
       },
       {
         "word": "ökodesign",
         "count": 10,
-        "ratioParty": 289.5,
-        "ratioBundestag": 80.8
+        "ratioParty": 287.1,
+        "ratioBundestag": 80.6
       },
       {
         "word": "schengen",
         "count": 8,
-        "ratioParty": 231.6,
-        "ratioBundestag": 323.1
+        "ratioParty": 229.7,
+        "ratioBundestag": 322.3
       },
       {
         "word": "materials",
         "count": 6,
-        "ratioParty": 173.7,
-        "ratioBundestag": 269.2
+        "ratioParty": 172.2,
+        "ratioBundestag": 268.6
       },
       {
         "word": "reparatur",
         "count": 7,
-        "ratioParty": 101.3,
-        "ratioBundestag": 47.1
+        "ratioParty": 100.5,
+        "ratioBundestag": 47.0
       }
     ],
     "signatureAdjectives": [
       {
         "word": "peinlich",
         "count": 3,
-        "ratioParty": 7.6,
+        "ratioParty": 7.5,
         "ratioBundestag": 11.9
       },
       {
         "word": "nachhaltig",
         "count": 4,
-        "ratioParty": 5.8,
-        "ratioBundestag": 5.9
+        "ratioParty": 5.9,
+        "ratioBundestag": 6.0
       },
       {
         "word": "schlecht",
@@ -115,8 +115,8 @@
   },
   "comparison": {
     "speakerAvgWords": 379,
-    "partyAvgWords": 543,
-    "parliamentAvgWords": 585,
+    "partyAvgWords": 538,
+    "parliamentAvgWords": 584,
     "vsParty": 0.7,
     "vsParliament": 0.65
   },
@@ -141,30 +141,34 @@
     "question": "Welches Wort nutzt Julian Joswig häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kinder",
-        "isCorrect": false
+        "text": "Heidelberg",
+        "isCorrect": true
       },
       {
         "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Heidelberg",
-        "isCorrect": true
+        "text": "Demokratie",
+        "isCorrect": false
       },
       {
-        "text": "Minister",
+        "text": "Energie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Heidelberg\" nutzt Julian Joswig 289.5× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "336.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Heidelberg\" nutzt Julian Joswig 287.1× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "335.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Julian Joswig häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "National",
         "isCorrect": false
       },
       {
@@ -172,15 +176,11 @@
         "isCorrect": true
       },
       {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Sozial",
+        "text": "Jung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Peinlich\" nutzt Julian Joswig 7.6× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationParty": "\"Peinlich\" nutzt Julian Joswig 7.5× häufiger als der GRÜNE-Durchschnitt.",
     "explanationBundestag": "11.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -281,11 +281,11 @@
           "count": 9
         },
         {
-          "word": "drittstaaten",
+          "word": "grenze",
           "count": 1
         },
         {
-          "word": "grenze",
+          "word": "drittstaaten",
           "count": 1
         }
       ],
@@ -335,7 +335,11 @@
       ],
       "soziales": [
         {
-          "word": "umverteilung",
+          "word": "kinder",
+          "count": 1
+        },
+        {
+          "word": "kind",
           "count": 1
         },
         {
@@ -347,11 +351,7 @@
           "count": 1
         },
         {
-          "word": "kind",
-          "count": 1
-        },
-        {
-          "word": "kinder",
+          "word": "umverteilung",
           "count": 1
         }
       ],
@@ -389,11 +389,11 @@
           "count": 17
         },
         {
-          "word": "europarat",
+          "word": "schengen",
           "count": 8
         },
         {
-          "word": "schengen",
+          "word": "europarat",
           "count": 8
         },
         {
@@ -415,15 +415,15 @@
           "count": 2
         },
         {
-          "word": "rechenzentrum",
+          "word": "netzausbau",
+          "count": 1
+        },
+        {
+          "word": "digital",
           "count": 1
         },
         {
           "word": "software",
-          "count": 1
-        },
-        {
-          "word": "technologie",
           "count": 1
         }
       ],
@@ -485,11 +485,11 @@
           "count": 2
         },
         {
-          "word": "novelle",
+          "word": "strafverfolgung",
           "count": 1
         },
         {
-          "word": "verteidiger",
+          "word": "gericht",
           "count": 1
         }
       ],
@@ -499,11 +499,11 @@
           "count": 2
         },
         {
-          "word": "arbeitszeit",
+          "word": "einkommen",
           "count": 1
         },
         {
-          "word": "einkommen",
+          "word": "arbeitszeit",
           "count": 1
         }
       ],

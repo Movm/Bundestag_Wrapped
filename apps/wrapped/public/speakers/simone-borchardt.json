@@ -11,23 +11,23 @@
   "minWords": 30,
   "maxWords": 814,
   "rankings": {
-    "speechRank": 202,
+    "speechRank": 213,
     "wordsRank": 205,
-    "partySpeechRank": 47,
+    "partySpeechRank": 51,
     "partyWordsRank": 58,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 67.8,
+    "totalSpeakers": 625,
+    "percentile": 65.9,
     "verbosityRank": 349,
     "verbosityTotal": 579,
     "partyVerbosityRank": 122,
-    "longestSpeechRank": 234
+    "longestSpeechRank": 232
   },
   "drama": {
     "interruptionsGiven": 45,
     "interruptionsReceived": 36,
-    "interrupterRank": 114,
-    "interruptedRank": 189
+    "interrupterRank": 116,
+    "interruptedRank": 192
   },
   "words": {
     "topWords": [
@@ -52,19 +52,11 @@
         "count": 15
       },
       {
-        "word": "geld",
+        "word": "wichtig",
         "count": 14
       },
       {
         "word": "reformen",
-        "count": 14
-      },
-      {
-        "word": "ressourcen",
-        "count": 14
-      },
-      {
-        "word": "digitalisierung",
         "count": 14
       }
     ],
@@ -73,31 +65,31 @@
         "word": "pflegeeinrichtungen",
         "count": 5,
         "ratioParty": 97.8,
-        "ratioBundestag": 104.6
+        "ratioBundestag": 104.3
       },
       {
         "word": "rettungsdienst",
         "count": 5,
         "ratioParty": 80.0,
-        "ratioBundestag": 73.5
+        "ratioBundestag": 73.3
       },
       {
         "word": "fehlanreize",
         "count": 5,
         "ratioParty": 48.9,
-        "ratioBundestag": 75.5
+        "ratioBundestag": 75.3
       },
       {
         "word": "apotheken",
         "count": 9,
         "ratioParty": 46.6,
-        "ratioBundestag": 61.9
+        "ratioBundestag": 61.8
       },
       {
         "word": "masken",
         "count": 6,
         "ratioParty": 45.9,
-        "ratioBundestag": 58.3
+        "ratioBundestag": 58.1
       }
     ],
     "signatureAdjectives": [
@@ -112,7 +104,7 @@
   "comparison": {
     "speakerAvgWords": 407,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.63,
     "vsParliament": 0.7
   },
@@ -137,7 +129,11 @@
     "question": "Welches Wort nutzt Simone Borchardt häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Debatte",
+        "text": "Pflegeeinrichtungen",
+        "isCorrect": true
+      },
+      {
+        "text": "Bildung",
         "isCorrect": false
       },
       {
@@ -145,35 +141,31 @@
         "isCorrect": false
       },
       {
-        "text": "Pflegeeinrichtungen",
-        "isCorrect": true
-      },
-      {
-        "text": "Klima",
+        "text": "Demokratie",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Pflegeeinrichtungen\" nutzt Simone Borchardt 97.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "104.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "104.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Simone Borchardt häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Politisch",
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
         "text": "Vernünftig",
         "isCorrect": true
-      },
-      {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Vernünftig\" nutzt Simone Borchardt 11.2× häufiger als der CDU/CSU-Durchschnitt.",
@@ -299,7 +291,7 @@
           "count": 2
         },
         {
-          "word": "wachstum",
+          "word": "markt",
           "count": 1
         }
       ],
@@ -351,11 +343,11 @@
       ],
       "europa": [
         {
-          "word": "europa",
+          "word": "vertrag",
           "count": 2
         },
         {
-          "word": "vertrag",
+          "word": "europa",
           "count": 2
         }
       ],
@@ -379,11 +371,11 @@
           "count": 2
         },
         {
-          "word": "bildung",
+          "word": "bildungspolitik",
           "count": 1
         },
         {
-          "word": "bildungspolitik",
+          "word": "bildung",
           "count": 1
         }
       ],
@@ -401,11 +393,11 @@
           "count": 4
         },
         {
-          "word": "bundeshaushalt",
+          "word": "steuern",
           "count": 3
         },
         {
-          "word": "finanzierung",
+          "word": "bundeshaushalt",
           "count": 3
         }
       ],
@@ -415,7 +407,7 @@
           "count": 2
         },
         {
-          "word": "rechtsprechung",
+          "word": "verordnung",
           "count": 1
         },
         {
@@ -423,7 +415,7 @@
           "count": 1
         },
         {
-          "word": "verordnung",
+          "word": "rechtsprechung",
           "count": 1
         }
       ],
@@ -433,15 +425,15 @@
           "count": 2
         },
         {
-          "word": "arbeitsplätze",
-          "count": 1
-        },
-        {
           "word": "arbeitnehmer",
           "count": 1
         },
         {
           "word": "beschäftigung",
+          "count": 1
+        },
+        {
+          "word": "arbeitsplätze",
           "count": 1
         }
       ],

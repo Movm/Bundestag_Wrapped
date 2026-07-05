@@ -11,23 +11,23 @@
   "minWords": 45,
   "maxWords": 611,
   "rankings": {
-    "speechRank": 466,
-    "wordsRank": 427,
-    "partySpeechRank": 146,
+    "speechRank": 446,
+    "wordsRank": 425,
+    "partySpeechRank": 134,
     "partyWordsRank": 134,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 25.7,
+    "totalSpeakers": 625,
+    "percentile": 28.6,
     "verbosityRank": 187,
     "verbosityTotal": 579,
     "partyVerbosityRank": 69,
-    "longestSpeechRank": 485
+    "longestSpeechRank": 483
   },
   "drama": {
     "interruptionsGiven": 45,
     "interruptionsReceived": 11,
-    "interrupterRank": 116,
-    "interruptedRank": 450
+    "interrupterRank": 114,
+    "interruptedRank": 440
   },
   "words": {
     "topWords": [
@@ -44,15 +44,15 @@
         "count": 16
       },
       {
-        "word": "entwicklungszusammenarbeit",
-        "count": 11
-      },
-      {
         "word": "würde",
         "count": 11
       },
       {
         "word": "mercosur",
+        "count": 11
+      },
+      {
+        "word": "entwicklungszusammenarbeit",
         "count": 11
       },
       {
@@ -77,31 +77,31 @@
         "word": "drusen",
         "count": 5,
         "ratioParty": 816.0,
-        "ratioBundestag": 314.6
+        "ratioBundestag": 313.8
       },
       {
         "word": "religiösen",
         "count": 5,
         "ratioParty": 408.0,
-        "ratioBundestag": 279.6
+        "ratioBundestag": 278.9
       },
       {
         "word": "christlichen",
         "count": 6,
         "ratioParty": 279.8,
-        "ratioBundestag": 183.0
+        "ratioBundestag": 182.6
       },
       {
         "word": "südsudan",
         "count": 7,
         "ratioParty": 126.9,
-        "ratioBundestag": 100.7
+        "ratioBundestag": 100.4
       },
       {
         "word": "hunger",
         "count": 8,
         "ratioParty": 113.5,
-        "ratioBundestag": 69.4
+        "ratioBundestag": 69.3
       }
     ],
     "signatureAdjectives": [
@@ -116,7 +116,7 @@
   "comparison": {
     "speakerAvgWords": 481,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.75,
     "vsParliament": 0.82
   },
@@ -141,11 +141,7 @@
     "question": "Welches Wort nutzt Thomas Rachel häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
@@ -153,31 +149,35 @@
         "isCorrect": true
       },
       {
-        "text": "Zukunft",
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
+        "text": "Klima",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Drusen\" nutzt Thomas Rachel 816.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "314.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "313.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Thomas Rachel häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
         "text": "Wirtschaftlich",
         "isCorrect": true
+      },
+      {
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Wirtschaftlich\" nutzt Thomas Rachel 6.4× häufiger als der CDU/CSU-Durchschnitt.",
@@ -277,11 +277,7 @@
     "topicWords": {
       "migration": [
         {
-          "word": "flüchtlinge",
-          "count": 1
-        },
-        {
-          "word": "geflüchtete",
+          "word": "grenze",
           "count": 1
         },
         {
@@ -289,17 +285,21 @@
           "count": 1
         },
         {
-          "word": "grenze",
+          "word": "geflüchtete",
+          "count": 1
+        },
+        {
+          "word": "flüchtlinge",
           "count": 1
         }
       ],
       "klima": [
         {
-          "word": "klimawandel",
+          "word": "nachhaltigkeit",
           "count": 1
         },
         {
-          "word": "nachhaltigkeit",
+          "word": "klimawandel",
           "count": 1
         }
       ],
@@ -309,19 +309,19 @@
           "count": 5
         },
         {
-          "word": "wirtschaft",
-          "count": 3
-        },
-        {
           "word": "märkte",
           "count": 3
         },
         {
-          "word": "wettbewerb",
-          "count": 2
+          "word": "wirtschaft",
+          "count": 3
         },
         {
           "word": "handelsbeziehungen",
+          "count": 2
+        },
+        {
+          "word": "betriebe",
           "count": 2
         }
       ],
@@ -349,11 +349,11 @@
           "count": 2
         },
         {
-          "word": "extremismus",
+          "word": "täter",
           "count": 1
         },
         {
-          "word": "polizisten",
+          "word": "waffen",
           "count": 1
         }
       ],
@@ -363,19 +363,19 @@
           "count": 1
         },
         {
-          "word": "gesundheitssystem",
-          "count": 1
-        },
-        {
-          "word": "epidemie",
-          "count": 1
-        },
-        {
           "word": "kranke",
           "count": 1
         },
         {
           "word": "krankenhäuser",
+          "count": 1
+        },
+        {
+          "word": "gesundheitssystem",
+          "count": 1
+        },
+        {
+          "word": "epidemie",
           "count": 1
         }
       ],
@@ -389,11 +389,11 @@
           "count": 6
         },
         {
-          "word": "wiederaufbau",
+          "word": "krieg",
           "count": 3
         },
         {
-          "word": "krieg",
+          "word": "wiederaufbau",
           "count": 3
         },
         {
@@ -449,11 +449,11 @@
       ],
       "mobilitaet": [
         {
-          "word": "infrastruktur",
+          "word": "autos",
           "count": 1
         },
         {
-          "word": "autos",
+          "word": "infrastruktur",
           "count": 1
         }
       ]

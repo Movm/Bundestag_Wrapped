@@ -11,17 +11,17 @@
   "minWords": 11,
   "maxWords": 949,
   "rankings": {
-    "speechRank": 24,
+    "speechRank": 25,
     "wordsRank": 55,
     "partySpeechRank": 7,
     "partyWordsRank": 14,
     "partySize": 114,
-    "totalSpeakers": 627,
-    "percentile": 96.2,
+    "totalSpeakers": 625,
+    "percentile": 96.0,
     "verbosityRank": 260,
     "verbosityTotal": 579,
-    "partyVerbosityRank": 61,
-    "longestSpeechRank": 107
+    "partyVerbosityRank": 62,
+    "longestSpeechRank": 105
   },
   "drama": {
     "interruptionsGiven": 135,
@@ -65,25 +65,25 @@
         "word": "first",
         "count": 12,
         "ratioParty": 126.6,
-        "ratioBundestag": 116.5
+        "ratioBundestag": 116.2
       },
       {
         "word": "transatlantische",
         "count": 5,
         "ratioParty": 105.5,
-        "ratioBundestag": 44.5
+        "ratioBundestag": 45.6
       },
       {
         "word": "vortragen",
         "count": 5,
         "ratioParty": 63.3,
-        "ratioBundestag": 51.7
+        "ratioBundestag": 51.5
       },
       {
         "word": "genfer",
         "count": 6,
         "ratioParty": 54.3,
-        "ratioBundestag": 31.5
+        "ratioBundestag": 31.4
       },
       {
         "word": "flüchtlingskonvention",
@@ -110,7 +110,7 @@
   "comparison": {
     "speakerAvgWords": 444,
     "partyAvgWords": 618,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.72,
     "vsParliament": 0.76
   },
@@ -140,7 +140,7 @@
     "question": "Welches Wort nutzt Dr. Ralf Stegner häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bildung",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
@@ -148,22 +148,26 @@
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"First\" nutzt Dr. Ralf Stegner 126.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "116.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "116.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Ralf Stegner häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Sozial",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
@@ -171,11 +175,7 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
@@ -308,11 +308,11 @@
           "count": 2
         },
         {
-          "word": "unternehmen",
+          "word": "volkswirtschaft",
           "count": 1
         },
         {
-          "word": "volkswirtschaft",
+          "word": "unternehmen",
           "count": 1
         }
       ],
@@ -344,11 +344,11 @@
           "count": 10
         },
         {
-          "word": "waffen",
+          "word": "korruption",
           "count": 6
         },
         {
-          "word": "korruption",
+          "word": "waffen",
           "count": 6
         },
         {
@@ -356,25 +356,25 @@
           "count": 5
         },
         {
-          "word": "rüstung",
+          "word": "terrorismus",
           "count": 3
         }
       ],
       "gesundheit": [
-        {
-          "word": "krankenhäuser",
-          "count": 1
-        },
-        {
-          "word": "krankenhaus",
-          "count": 1
-        },
         {
           "word": "sucht",
           "count": 1
         },
         {
           "word": "operation",
+          "count": 1
+        },
+        {
+          "word": "krankenhäuser",
+          "count": 1
+        },
+        {
+          "word": "krankenhaus",
           "count": 1
         }
       ],
@@ -396,7 +396,7 @@
           "count": 11
         },
         {
-          "word": "außenminister",
+          "word": "völkerrecht",
           "count": 9
         }
       ],
@@ -412,6 +412,10 @@
       ],
       "bildung": [
         {
+          "word": "universitäten",
+          "count": 1
+        },
+        {
           "word": "studenten",
           "count": 1
         },
@@ -422,10 +426,6 @@
         {
           "word": "wissenschaftsfreiheit",
           "count": 1
-        },
-        {
-          "word": "universitäten",
-          "count": 1
         }
       ],
       "finanzen": [
@@ -434,7 +434,7 @@
           "count": 6
         },
         {
-          "word": "währung",
+          "word": "investitionen",
           "count": 1
         },
         {
@@ -442,7 +442,7 @@
           "count": 1
         },
         {
-          "word": "investitionen",
+          "word": "haushalt",
           "count": 1
         },
         {
@@ -478,11 +478,11 @@
           "count": 2
         },
         {
-          "word": "einkommen",
+          "word": "arbeitnehmerinnen",
           "count": 1
         },
         {
-          "word": "arbeitnehmerinnen",
+          "word": "einkommen",
           "count": 1
         }
       ],

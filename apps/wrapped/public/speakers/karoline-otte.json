@@ -11,23 +11,23 @@
   "minWords": 51,
   "maxWords": 593,
   "rankings": {
-    "speechRank": 160,
+    "speechRank": 150,
     "wordsRank": 232,
-    "partySpeechRank": 31,
+    "partySpeechRank": 30,
     "partyWordsRank": 38,
-    "partySize": 87,
-    "totalSpeakers": 627,
-    "percentile": 74.5,
-    "verbosityRank": 421,
+    "partySize": 86,
+    "totalSpeakers": 625,
+    "percentile": 76.0,
+    "verbosityRank": 419,
     "verbosityTotal": 579,
-    "partyVerbosityRank": 47,
-    "longestSpeechRank": 503
+    "partyVerbosityRank": 46,
+    "longestSpeechRank": 500
   },
   "drama": {
     "interruptionsGiven": 8,
     "interruptionsReceived": 42,
-    "interrupterRank": 299,
-    "interruptedRank": 148
+    "interrupterRank": 291,
+    "interruptedRank": 144
   },
   "words": {
     "topWords": [
@@ -44,11 +44,11 @@
         "count": 37
       },
       {
-        "word": "geld",
+        "word": "bundesregierung",
         "count": 29
       },
       {
-        "word": "bundesregierung",
+        "word": "geld",
         "count": 29
       },
       {
@@ -66,58 +66,62 @@
       {
         "word": "deutschland",
         "count": 15
+      },
+      {
+        "word": "gemeinsam",
+        "count": 15
       }
     ],
     "signatureWords": [
       {
         "word": "milliardärinnen",
         "count": 5,
-        "ratioParty": 214.7,
-        "ratioBundestag": 425.8
+        "ratioParty": 212.9,
+        "ratioBundestag": 424.8
       },
       {
         "word": "allerreichsten",
         "count": 6,
-        "ratioParty": 171.7,
-        "ratioBundestag": 1192.3
+        "ratioParty": 170.3,
+        "ratioBundestag": 1189.4
       },
       {
         "word": "finanzkrise",
         "count": 9,
-        "ratioParty": 154.6,
-        "ratioBundestag": 198.7
-      },
-      {
-        "word": "überreiche",
-        "count": 5,
-        "ratioParty": 143.1,
-        "ratioBundestag": 331.2
+        "ratioParty": 153.3,
+        "ratioBundestag": 198.2
       },
       {
         "word": "kommunale",
         "count": 10,
-        "ratioParty": 143.1,
-        "ratioBundestag": 30.3
+        "ratioParty": 141.9,
+        "ratioBundestag": 30.2
+      },
+      {
+        "word": "überreiche",
+        "count": 5,
+        "ratioParty": 141.9,
+        "ratioBundestag": 330.4
       }
     ],
     "signatureAdjectives": [
       {
         "word": "ungerecht",
         "count": 5,
-        "ratioParty": 14.8,
+        "ratioParty": 14.7,
         "ratioBundestag": 24.2
       },
       {
         "word": "unfassbar",
         "count": 3,
-        "ratioParty": 11.2,
+        "ratioParty": 11.1,
         "ratioBundestag": 23.5
       },
       {
         "word": "absurd",
         "count": 5,
         "ratioParty": 9.5,
-        "ratioBundestag": 14.1
+        "ratioBundestag": 14.0
       },
       {
         "word": "gerecht",
@@ -128,15 +132,15 @@
       {
         "word": "teuer",
         "count": 3,
-        "ratioParty": 2.9,
+        "ratioParty": 2.8,
         "ratioBundestag": 4.5
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 372,
-    "partyAvgWords": 543,
-    "parliamentAvgWords": 585,
+    "partyAvgWords": 538,
+    "parliamentAvgWords": 584,
     "vsParty": 0.69,
     "vsParliament": 0.64
   },
@@ -156,46 +160,46 @@
     "question": "Welches Wort nutzt Karoline Otte häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesellschaft",
+        "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Politik",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
         "text": "Milliardärinnen",
         "isCorrect": true
+      },
+      {
+        "text": "Gesetz",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Milliardärinnen\" nutzt Karoline Otte 214.7× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "425.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Milliardärinnen\" nutzt Karoline Otte 212.9× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "424.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Karoline Otte häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
         "isCorrect": false
       },
       {
         "text": "Ungerecht",
         "isCorrect": true
-      },
-      {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ungerecht\" nutzt Karoline Otte 14.8× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationParty": "\"Ungerecht\" nutzt Karoline Otte 14.7× häufiger als der GRÜNE-Durchschnitt.",
     "explanationBundestag": "24.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -304,11 +308,11 @@
           "count": 2
         },
         {
-          "word": "aufenthaltsstatus",
+          "word": "mittelmeer",
           "count": 1
         },
         {
-          "word": "integrationskurs",
+          "word": "aufenthaltsstatus",
           "count": 1
         }
       ],
@@ -326,11 +330,11 @@
           "count": 2
         },
         {
-          "word": "wirtschaft",
+          "word": "wirtschaftswachstum",
           "count": 1
         },
         {
-          "word": "wirtschaftswachstum",
+          "word": "konzern",
           "count": 1
         }
       ],
@@ -352,7 +356,7 @@
           "count": 2
         },
         {
-          "word": "familie",
+          "word": "kind",
           "count": 1
         }
       ],
@@ -362,17 +366,17 @@
           "count": 1
         },
         {
-          "word": "angriff",
+          "word": "gewalt",
           "count": 1
         },
         {
-          "word": "gewalt",
+          "word": "angriff",
           "count": 1
         }
       ],
       "gesundheit": [
         {
-          "word": "sucht",
+          "word": "pflegekraft",
           "count": 1
         },
         {
@@ -380,7 +384,7 @@
           "count": 1
         },
         {
-          "word": "pflegekraft",
+          "word": "sucht",
           "count": 1
         }
       ],
@@ -418,19 +422,19 @@
           "count": 6
         },
         {
-          "word": "lehrer",
-          "count": 2
-        },
-        {
           "word": "schulen",
           "count": 2
         },
         {
-          "word": "kinderbetreuung",
-          "count": 1
+          "word": "lehrer",
+          "count": 2
         },
         {
           "word": "volkshochschule",
+          "count": 1
+        },
+        {
+          "word": "schule",
           "count": 1
         }
       ],
@@ -448,7 +452,7 @@
           "count": 4
         },
         {
-          "word": "steuergerechtigkeit",
+          "word": "sondervermögen",
           "count": 3
         },
         {
@@ -472,15 +476,15 @@
           "count": 1
         },
         {
+          "word": "angestellte",
+          "count": 1
+        },
+        {
           "word": "sozialabgaben",
           "count": 1
         },
         {
           "word": "einkommen",
-          "count": 1
-        },
-        {
-          "word": "angestellte",
           "count": 1
         }
       ],
@@ -494,7 +498,7 @@
           "count": 1
         },
         {
-          "word": "häfen",
+          "word": "straße",
           "count": 1
         },
         {
@@ -502,7 +506,7 @@
           "count": 1
         },
         {
-          "word": "straße",
+          "word": "häfen",
           "count": 1
         }
       ]

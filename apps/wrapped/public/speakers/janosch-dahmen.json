@@ -11,23 +11,23 @@
   "minWords": 31,
   "maxWords": 793,
   "rankings": {
-    "speechRank": 122,
+    "speechRank": 135,
     "wordsRank": 230,
-    "partySpeechRank": 24,
+    "partySpeechRank": 28,
     "partyWordsRank": 37,
-    "partySize": 87,
-    "totalSpeakers": 627,
-    "percentile": 80.5,
+    "partySize": 86,
+    "totalSpeakers": 625,
+    "percentile": 78.4,
     "verbosityRank": 555,
     "verbosityTotal": 579,
     "partyVerbosityRank": 83,
-    "longestSpeechRank": 256
+    "longestSpeechRank": 254
   },
   "drama": {
     "interruptionsGiven": 98,
     "interruptionsReceived": 23,
     "interrupterRank": 47,
-    "interruptedRank": 297
+    "interruptedRank": 305
   },
   "words": {
     "topWords": [
@@ -60,32 +60,32 @@
       {
         "word": "notfallversorgung",
         "count": 5,
-        "ratioParty": 215.8,
-        "ratioBundestag": 56.5
+        "ratioParty": 214.0,
+        "ratioBundestag": 56.4
       },
       {
         "word": "beitragssteigerungen",
         "count": 5,
-        "ratioParty": 143.8,
-        "ratioBundestag": 149.8
+        "ratioParty": 142.6,
+        "ratioBundestag": 149.4
       },
       {
         "word": "lohnnebenkosten",
         "count": 6,
-        "ratioParty": 86.3,
-        "ratioBundestag": 76.5
+        "ratioParty": 85.6,
+        "ratioBundestag": 76.3
       },
       {
         "word": "strukturreformen",
         "count": 5,
-        "ratioParty": 61.6,
+        "ratioParty": 61.1,
         "ratioBundestag": 20.5
       },
       {
         "word": "gesundheitswesen",
         "count": 12,
-        "ratioParty": 57.5,
-        "ratioBundestag": 44.9
+        "ratioParty": 57.1,
+        "ratioBundestag": 44.8
       }
     ],
     "signatureAdjectives": [
@@ -93,7 +93,7 @@
         "word": "schlecht",
         "count": 5,
         "ratioParty": 4.3,
-        "ratioBundestag": 8.2
+        "ratioBundestag": 8.1
       },
       {
         "word": "stark",
@@ -105,9 +105,9 @@
   },
   "comparison": {
     "speakerAvgWords": 214,
-    "partyAvgWords": 543,
-    "parliamentAvgWords": 585,
-    "vsParty": 0.39,
+    "partyAvgWords": 538,
+    "parliamentAvgWords": 584,
+    "vsParty": 0.4,
     "vsParliament": 0.37
   },
   "funFacts": [
@@ -131,28 +131,32 @@
     "question": "Welches Wort nutzt Dr. Janosch Dahmen häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
         "text": "Notfallversorgung",
         "isCorrect": true
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Notfallversorgung\" nutzt Dr. Janosch Dahmen 215.8× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "56.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Notfallversorgung\" nutzt Dr. Janosch Dahmen 214.0× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "56.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Janosch Dahmen häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
+      {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
       {
         "text": "Europäisch",
         "isCorrect": false
@@ -164,14 +168,10 @@
       {
         "text": "Schlecht",
         "isCorrect": true
-      },
-      {
-        "text": "Problematisch",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Schlecht\" nutzt Dr. Janosch Dahmen 4.3× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "8.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "8.1× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -271,7 +271,7 @@
           "count": 3
         },
         {
-          "word": "wirtschaft",
+          "word": "wettbewerbsfähigkeit",
           "count": 1
         },
         {
@@ -279,11 +279,11 @@
           "count": 1
         },
         {
-          "word": "wettbewerbsfähigkeit",
+          "word": "insolvenzen",
           "count": 1
         },
         {
-          "word": "insolvenzen",
+          "word": "wirtschaft",
           "count": 1
         }
       ],
@@ -337,11 +337,11 @@
           "count": 8
         },
         {
-          "word": "krankenhäuser",
+          "word": "krankenkassen",
           "count": 5
         },
         {
-          "word": "krankenkassen",
+          "word": "krankenhäuser",
           "count": 5
         }
       ],
@@ -349,10 +349,6 @@
         {
           "word": "ukraine",
           "count": 5
-        },
-        {
-          "word": "europa",
-          "count": 2
         },
         {
           "word": "putin",
@@ -363,7 +359,11 @@
           "count": 2
         },
         {
-          "word": "angriffskrieg",
+          "word": "europa",
+          "count": 2
+        },
+        {
+          "word": "bündnis",
           "count": 1
         }
       ],
@@ -401,19 +401,15 @@
           "count": 3
         },
         {
-          "word": "bundeshaushalt",
+          "word": "zuschuss",
           "count": 1
         },
         {
-          "word": "entlastung",
+          "word": "finanzierung",
           "count": 1
         }
       ],
       "justiz": [
-        {
-          "word": "gesetzgebung",
-          "count": 1
-        },
         {
           "word": "vorschrift",
           "count": 1
@@ -421,9 +417,17 @@
         {
           "word": "beschluss",
           "count": 1
+        },
+        {
+          "word": "gesetzgebung",
+          "count": 1
         }
       ],
       "arbeit": [
+        {
+          "word": "sozialabgaben",
+          "count": 1
+        },
         {
           "word": "teilzeit",
           "count": 1
@@ -435,15 +439,11 @@
         {
           "word": "arbeiter",
           "count": 1
-        },
-        {
-          "word": "sozialabgaben",
-          "count": 1
         }
       ],
       "mobilitaet": [
         {
-          "word": "infrastruktur",
+          "word": "bahn",
           "count": 1
         },
         {
@@ -451,7 +451,7 @@
           "count": 1
         },
         {
-          "word": "bahn",
+          "word": "infrastruktur",
           "count": 1
         }
       ]

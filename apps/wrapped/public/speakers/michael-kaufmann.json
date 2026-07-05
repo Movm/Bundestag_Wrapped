@@ -11,23 +11,23 @@
   "minWords": 35,
   "maxWords": 987,
   "rankings": {
-    "speechRank": 452,
+    "speechRank": 447,
     "wordsRank": 218,
-    "partySpeechRank": 105,
+    "partySpeechRank": 103,
     "partyWordsRank": 49,
-    "partySize": 151,
-    "totalSpeakers": 627,
-    "percentile": 27.9,
+    "partySize": 150,
+    "totalSpeakers": 625,
+    "percentile": 28.5,
     "verbosityRank": 390,
     "verbosityTotal": 579,
     "partyVerbosityRank": 102,
-    "longestSpeechRank": 89
+    "longestSpeechRank": 86
   },
   "drama": {
     "interruptionsGiven": 12,
     "interruptionsReceived": 40,
-    "interrupterRank": 262,
-    "interruptedRank": 161
+    "interrupterRank": 255,
+    "interruptedRank": 158
   },
   "words": {
     "topWords": [
@@ -44,27 +44,27 @@
         "count": 18
       },
       {
-        "word": "ministerin",
-        "count": 17
-      },
-      {
         "word": "neue",
         "count": 17
       },
       {
-        "word": "data",
-        "count": 14
+        "word": "ministerin",
+        "count": 17
       },
       {
         "word": "daten",
         "count": 14
       },
       {
-        "word": "innovation",
+        "word": "data",
+        "count": 14
+      },
+      {
+        "word": "jahren",
         "count": 13
       },
       {
-        "word": "wirtschaft",
+        "word": "braucht",
         "count": 13
       }
     ],
@@ -72,31 +72,31 @@
       {
         "word": "governance",
         "count": 6,
-        "ratioParty": 718.9,
-        "ratioBundestag": 82.8
+        "ratioParty": 715.1,
+        "ratioBundestag": 82.6
       },
       {
         "word": "reallabore",
         "count": 6,
-        "ratioParty": 359.5,
-        "ratioBundestag": 80.7
+        "ratioParty": 357.6,
+        "ratioBundestag": 80.5
       },
       {
         "word": "hightech",
         "count": 13,
-        "ratioParty": 53.7,
-        "ratioBundestag": 20.3
+        "ratioParty": 53.4,
+        "ratioBundestag": 20.2
       },
       {
         "word": "aufbruch",
         "count": 6,
-        "ratioParty": 44.9,
-        "ratioBundestag": 34.4
+        "ratioParty": 44.7,
+        "ratioBundestag": 34.3
       },
       {
         "word": "forschung",
         "count": 42,
-        "ratioParty": 39.3,
+        "ratioParty": 39.1,
         "ratioBundestag": 29.2
       }
     ],
@@ -104,15 +104,15 @@
       {
         "word": "stark",
         "count": 8,
-        "ratioParty": 8.6,
+        "ratioParty": 8.5,
         "ratioBundestag": 6.0
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 390,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
     "vsParty": 0.7,
     "vsParliament": 0.67
   },
@@ -137,11 +137,7 @@
     "question": "Welches Wort nutzt Dr. Michael Kaufmann häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
@@ -149,12 +145,16 @@
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Governance\" nutzt Dr. Michael Kaufmann 718.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "82.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Governance\" nutzt Dr. Michael Kaufmann 715.1× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "82.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Michael Kaufmann häufiger als der Rest der AfD-Fraktion?",
@@ -164,19 +164,19 @@
         "isCorrect": true
       },
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
         "text": "Problematisch",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Erfolgreich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Stark\" nutzt Dr. Michael Kaufmann 8.6× häufiger als der AfD-Durchschnitt.",
+    "explanationParty": "\"Stark\" nutzt Dr. Michael Kaufmann 8.5× häufiger als der AfD-Durchschnitt.",
     "explanationBundestag": "6.0× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
@@ -255,11 +255,11 @@
       ],
       "klima": [
         {
-          "word": "wasserstoff",
+          "word": "nachhaltig",
           "count": 1
         },
         {
-          "word": "nachhaltig",
+          "word": "wasserstoff",
           "count": 1
         }
       ],
@@ -361,11 +361,11 @@
           "count": 4
         },
         {
-          "word": "forschungsförderung",
+          "word": "wissenschaft",
           "count": 3
         },
         {
-          "word": "wissenschaft",
+          "word": "forschungsförderung",
           "count": 3
         }
       ],
@@ -387,7 +387,7 @@
           "count": 3
         },
         {
-          "word": "steuern",
+          "word": "entlastung",
           "count": 2
         }
       ],
@@ -397,7 +397,7 @@
           "count": 2
         },
         {
-          "word": "anwalt",
+          "word": "gesetzgebung",
           "count": 1
         },
         {
@@ -405,7 +405,7 @@
           "count": 1
         },
         {
-          "word": "gesetzgebung",
+          "word": "anwalt",
           "count": 1
         }
       ],
@@ -421,15 +421,15 @@
           "count": 3
         },
         {
-          "word": "auto",
-          "count": 1
-        },
-        {
           "word": "autos",
           "count": 1
         },
         {
           "word": "straße",
+          "count": 1
+        },
+        {
+          "word": "auto",
           "count": 1
         }
       ]

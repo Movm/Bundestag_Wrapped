@@ -11,17 +11,17 @@
   "minWords": 87,
   "maxWords": 836,
   "rankings": {
-    "speechRank": 33,
+    "speechRank": 38,
     "wordsRank": 39,
-    "partySpeechRank": 3,
+    "partySpeechRank": 7,
     "partyWordsRank": 5,
-    "partySize": 87,
-    "totalSpeakers": 627,
-    "percentile": 94.7,
+    "partySize": 86,
+    "totalSpeakers": 625,
+    "percentile": 93.9,
     "verbosityRank": 385,
     "verbosityTotal": 579,
     "partyVerbosityRank": 38,
-    "longestSpeechRank": 195
+    "longestSpeechRank": 194
   },
   "drama": {
     "interruptionsGiven": 123,
@@ -64,32 +64,32 @@
       {
         "word": "anwaltschaft",
         "count": 5,
-        "ratioParty": 203.4,
-        "ratioBundestag": 142.8
-      },
-      {
-        "word": "stadien",
-        "count": 5,
-        "ratioParty": 203.4,
-        "ratioBundestag": 142.8
+        "ratioParty": 201.7,
+        "ratioBundestag": 142.4
       },
       {
         "word": "hausdurchsuchung",
         "count": 5,
-        "ratioParty": 203.4,
-        "ratioBundestag": 62.1
+        "ratioParty": 201.7,
+        "ratioBundestag": 61.9
+      },
+      {
+        "word": "stadien",
+        "count": 5,
+        "ratioParty": 201.7,
+        "ratioBundestag": 142.4
       },
       {
         "word": "anwältinnen",
         "count": 6,
-        "ratioParty": 122.0,
-        "ratioBundestag": 171.3
+        "ratioParty": 121.0,
+        "ratioBundestag": 170.9
       },
       {
         "word": "beistand",
         "count": 8,
-        "ratioParty": 108.5,
-        "ratioBundestag": 228.4
+        "ratioParty": 107.6,
+        "ratioBundestag": 227.9
       }
     ],
     "signatureAdjectives": [
@@ -97,18 +97,18 @@
         "word": "inakzeptabel",
         "count": 4,
         "ratioParty": 10.8,
-        "ratioBundestag": 13.8
+        "ratioBundestag": 13.9
       },
       {
         "word": "kritisch",
         "count": 3,
         "ratioParty": 5.8,
-        "ratioBundestag": 4.1
+        "ratioBundestag": 4.0
       },
       {
         "word": "angemessen",
         "count": 3,
-        "ratioParty": 4.4,
+        "ratioParty": 4.3,
         "ratioBundestag": 4.8
       },
       {
@@ -121,9 +121,9 @@
   },
   "comparison": {
     "speakerAvgWords": 393,
-    "partyAvgWords": 543,
-    "parliamentAvgWords": 585,
-    "vsParty": 0.72,
+    "partyAvgWords": 538,
+    "parliamentAvgWords": 584,
+    "vsParty": 0.73,
     "vsParliament": 0.67
   },
   "funFacts": [
@@ -143,53 +143,48 @@
       "value": "123"
     },
     {
-      "emoji": "🥇",
-      "label": "Rang in GRÜNE",
-      "value": "#3 von 87"
-    },
-    {
       "emoji": "📊",
       "label": "Top-Redner",
-      "value": "Top 6%"
+      "value": "Top 7%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Helge Limburg häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
         "text": "Anwaltschaft",
         "isCorrect": true
       },
       {
-        "text": "Opposition",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
-        "text": "Europa",
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesellschaft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Anwaltschaft\" nutzt Helge Limburg 203.4× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "142.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Anwaltschaft\" nutzt Helge Limburg 201.7× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "142.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Helge Limburg häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
         "text": "Inakzeptabel",
         "isCorrect": true
-      },
-      {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
-        "isCorrect": false
       },
       {
         "text": "Falsch",
@@ -197,29 +192,29 @@
       }
     ],
     "explanationParty": "\"Inakzeptabel\" nutzt Helge Limburg 10.8× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "13.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "13.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
-    "emoji": "🦁",
-    "name": "Löwe",
-    "title": "Fraktionsstimme",
-    "reason": "Als #3 in der GRÜNE-Fraktion bist du eine führende Stimme.",
-    "id": "loewe",
+    "emoji": "🐴",
+    "name": "Pferd",
+    "title": "Fleißiger Debattierer",
+    "reason": "Mit 39 Reden gehörst du zu den aktivsten Abgeordneten.",
+    "id": "pferd",
     "alternatives": [
-      {
-        "emoji": "🐴",
-        "name": "Pferd",
-        "title": "Fleißiger Debattierer",
-        "reason": "Mit 39 Reden gehörst du zu den aktivsten Abgeordneten.",
-        "id": "pferd",
-        "score": 1.0
-      },
       {
         "emoji": "🦊",
         "name": "Fuchs",
         "title": "Cleverer Stratege",
         "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
         "id": "fuchs",
+        "score": 1.0
+      },
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
         "score": 1.0
       }
     ]
@@ -309,13 +304,17 @@
           "count": 3
         },
         {
-          "word": "abschiebung",
+          "word": "migration",
           "count": 2
         }
       ],
       "klima": [
         {
-          "word": "klimakrise",
+          "word": "solarenergie",
+          "count": 1
+        },
+        {
+          "word": "windenergie",
           "count": 1
         },
         {
@@ -327,11 +326,7 @@
           "count": 1
         },
         {
-          "word": "solarenergie",
-          "count": 1
-        },
-        {
-          "word": "windenergie",
+          "word": "klimakrise",
           "count": 1
         }
       ],
@@ -345,11 +340,11 @@
           "count": 2
         },
         {
-          "word": "handwerk",
+          "word": "qualifikation",
           "count": 1
         },
         {
-          "word": "qualifikation",
+          "word": "handwerk",
           "count": 1
         }
       ],
@@ -363,11 +358,11 @@
           "count": 3
         },
         {
-          "word": "renten",
+          "word": "familien",
           "count": 3
         },
         {
-          "word": "familien",
+          "word": "renten",
           "count": 3
         },
         {
@@ -429,11 +424,11 @@
           "count": 2
         },
         {
-          "word": "völkerrecht",
+          "word": "putin",
           "count": 1
         },
         {
-          "word": "bündnis",
+          "word": "partnerschaft",
           "count": 1
         }
       ],
@@ -447,15 +442,15 @@
           "count": 5
         },
         {
-          "word": "digitalisierung",
-          "count": 2
-        },
-        {
           "word": "software",
           "count": 2
         },
         {
           "word": "digital",
+          "count": 2
+        },
+        {
+          "word": "netz",
           "count": 2
         }
       ],
@@ -471,11 +466,11 @@
       ],
       "finanzen": [
         {
-          "word": "finanzierung",
+          "word": "kosten",
           "count": 2
         },
         {
-          "word": "kosten",
+          "word": "finanzierung",
           "count": 2
         },
         {
@@ -519,15 +514,15 @@
           "count": 3
         },
         {
-          "word": "gesundheitsschutz",
-          "count": 2
-        },
-        {
           "word": "gehälter",
           "count": 2
         },
         {
           "word": "mindestlohn",
+          "count": 2
+        },
+        {
+          "word": "gesundheitsschutz",
           "count": 2
         }
       ]

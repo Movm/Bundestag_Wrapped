@@ -11,23 +11,23 @@
   "minWords": 269,
   "maxWords": 683,
   "rankings": {
-    "speechRank": 489,
-    "wordsRank": 526,
-    "partySpeechRank": 120,
-    "partyWordsRank": 122,
-    "partySize": 151,
-    "totalSpeakers": 627,
-    "percentile": 22.0,
-    "verbosityRank": 278,
+    "speechRank": 477,
+    "wordsRank": 524,
+    "partySpeechRank": 113,
+    "partyWordsRank": 121,
+    "partySize": 150,
+    "totalSpeakers": 625,
+    "percentile": 23.7,
+    "verbosityRank": 280,
     "verbosityTotal": 579,
     "partyVerbosityRank": 69,
-    "longestSpeechRank": 394
+    "longestSpeechRank": 392
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 12,
-    "interrupterRank": 410,
-    "interruptedRank": 431
+    "interrupterRank": 401,
+    "interruptedRank": 429
   },
   "words": {
     "topWords": [
@@ -48,11 +48,7 @@
         "count": 7
       },
       {
-        "word": "endlich",
-        "count": 6
-      },
-      {
-        "word": "realität",
+        "word": "linke",
         "count": 6
       },
       {
@@ -60,7 +56,7 @@
         "count": 6
       },
       {
-        "word": "linke",
+        "word": "endlich",
         "count": 6
       },
       {
@@ -68,7 +64,11 @@
         "count": 6
       },
       {
-        "word": "politik",
+        "word": "realität",
+        "count": 6
+      },
+      {
+        "word": "sportstätten",
         "count": 5
       }
     ],
@@ -76,32 +76,32 @@
       {
         "word": "hallen",
         "count": 7,
-        "ratioParty": 851.5,
-        "ratioBundestag": 672.1
+        "ratioParty": 847.0,
+        "ratioBundestag": 670.5
       },
       {
         "word": "cottbus",
         "count": 6,
-        "ratioParty": 437.9,
-        "ratioBundestag": 816.1
+        "ratioParty": 435.6,
+        "ratioBundestag": 814.2
       },
       {
         "word": "sport",
         "count": 21,
-        "ratioParty": 134.5,
-        "ratioBundestag": 106.4
+        "ratioParty": 136.1,
+        "ratioBundestag": 106.5
       },
       {
         "word": "olympia",
         "count": 5,
-        "ratioParty": 107.3,
-        "ratioBundestag": 272.0
+        "ratioParty": 106.8,
+        "ratioBundestag": 271.4
       },
       {
         "word": "sportstätten",
         "count": 5,
-        "ratioParty": 73.0,
-        "ratioBundestag": 73.5
+        "ratioParty": 72.6,
+        "ratioBundestag": 73.3
       }
     ],
     "signatureAdjectives": [
@@ -109,15 +109,15 @@
         "word": "rechts",
         "count": 3,
         "ratioParty": 10.8,
-        "ratioBundestag": 9.8
+        "ratioBundestag": 9.7
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 439,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
-    "vsParty": 0.78,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
+    "vsParty": 0.79,
     "vsParliament": 0.75
   },
   "funFacts": [
@@ -136,7 +136,11 @@
     "question": "Welches Wort nutzt Lars Schieske häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetz",
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
         "isCorrect": false
       },
       {
@@ -144,39 +148,35 @@
         "isCorrect": true
       },
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Hallen\" nutzt Lars Schieske 851.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "672.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Hallen\" nutzt Lars Schieske 847.0× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "670.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Lars Schieske häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
+        "text": "Rechts",
+        "isCorrect": true
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
         "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "National",
+        "text": "Erfolgreich",
         "isCorrect": false
-      },
-      {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Rechts",
-        "isCorrect": true
       }
     ],
     "explanationParty": "\"Rechts\" nutzt Lars Schieske 10.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "9.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "9.7× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -262,11 +262,11 @@
       ],
       "klima": [
         {
-          "word": "energie",
+          "word": "klimaschutz",
           "count": 1
         },
         {
-          "word": "klimaschutz",
+          "word": "energie",
           "count": 1
         }
       ],
@@ -314,15 +314,15 @@
           "count": 3
         },
         {
+          "word": "kosten",
+          "count": 1
+        },
+        {
           "word": "finanzierung",
           "count": 1
         },
         {
           "word": "steuerzahler",
-          "count": 1
-        },
-        {
-          "word": "kosten",
           "count": 1
         },
         {
@@ -332,15 +332,15 @@
       ],
       "justiz": [
         {
+          "word": "strafe",
+          "count": 1
+        },
+        {
           "word": "anwalt",
           "count": 1
         },
         {
           "word": "straftaten",
-          "count": 1
-        },
-        {
-          "word": "strafe",
           "count": 1
         }
       ],

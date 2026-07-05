@@ -11,23 +11,23 @@
   "minWords": 86,
   "maxWords": 609,
   "rankings": {
-    "speechRank": 297,
+    "speechRank": 319,
     "wordsRank": 338,
-    "partySpeechRank": 81,
+    "partySpeechRank": 87,
     "partyWordsRank": 102,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 52.6,
-    "verbosityRank": 293,
+    "totalSpeakers": 625,
+    "percentile": 49.0,
+    "verbosityRank": 294,
     "verbosityTotal": 579,
     "partyVerbosityRank": 104,
-    "longestSpeechRank": 488
+    "longestSpeechRank": 486
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 12,
     "interrupterRank": null,
-    "interruptedRank": 425
+    "interruptedRank": 431
   },
   "words": {
     "topWords": [
@@ -48,27 +48,27 @@
         "count": 14
       },
       {
-        "word": "haushalt",
-        "count": 13
-      },
-      {
         "word": "insofern",
         "count": 13
       },
       {
-        "word": "eines",
-        "count": 11
+        "word": "haushalt",
+        "count": 13
       },
       {
         "word": "schwerpunkte",
         "count": 11
       },
       {
-        "word": "künstlicher",
-        "count": 10
+        "word": "eines",
+        "count": 11
       },
       {
         "word": "leben",
+        "count": 10
+      },
+      {
+        "word": "debatte",
         "count": 10
       }
     ],
@@ -77,31 +77,31 @@
         "word": "künstlicher",
         "count": 10,
         "ratioParty": 90.6,
-        "ratioBundestag": 142.3
+        "ratioBundestag": 141.9
       },
       {
         "word": "rechenzentrumsstrategie",
         "count": 5,
         "ratioParty": 84.5,
-        "ratioBundestag": 111.8
+        "ratioBundestag": 111.5
       },
       {
         "word": "künstliche",
         "count": 23,
         "ratioParty": 82.1,
-        "ratioBundestag": 116.1
+        "ratioBundestag": 116.6
       },
       {
         "word": "intelligenz",
         "count": 33,
         "ratioParty": 78.2,
-        "ratioBundestag": 117.4
+        "ratioBundestag": 117.1
       },
       {
         "word": "liter",
         "count": 5,
         "ratioParty": 66.7,
-        "ratioBundestag": 39.5
+        "ratioBundestag": 39.4
       }
     ],
     "signatureAdjectives": []
@@ -109,7 +109,7 @@
   "comparison": {
     "speakerAvgWords": 433,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.67,
     "vsParliament": 0.74
   },
@@ -129,24 +129,24 @@
     "question": "Welches Wort nutzt Marvin Schulz häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Opposition",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
         "text": "Künstlicher",
         "isCorrect": true
+      },
+      {
+        "text": "Minister",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Künstlicher\" nutzt Marvin Schulz 90.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "142.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "141.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -243,11 +243,11 @@
     "topicWords": {
       "klima": [
         {
-          "word": "klimakrise",
+          "word": "energie",
           "count": 1
         },
         {
-          "word": "energie",
+          "word": "klimakrise",
           "count": 1
         }
       ],
@@ -265,11 +265,11 @@
           "count": 2
         },
         {
-          "word": "wachstum",
+          "word": "unternehmen",
           "count": 1
         },
         {
-          "word": "unternehmen",
+          "word": "standort",
           "count": 1
         }
       ],
@@ -289,21 +289,21 @@
           "count": 2
         },
         {
-          "word": "verteidigung",
+          "word": "extremismus",
           "count": 1
         },
         {
-          "word": "extremismus",
+          "word": "verteidigung",
           "count": 1
         }
       ],
       "gesundheit": [
         {
-          "word": "ärztin",
+          "word": "pflege",
           "count": 1
         },
         {
-          "word": "pflege",
+          "word": "sucht",
           "count": 1
         },
         {
@@ -311,7 +311,7 @@
           "count": 1
         },
         {
-          "word": "sucht",
+          "word": "ärztin",
           "count": 1
         }
       ],
@@ -321,7 +321,11 @@
           "count": 2
         },
         {
-          "word": "europa",
+          "word": "putin",
+          "count": 1
+        },
+        {
+          "word": "china",
           "count": 1
         },
         {
@@ -329,11 +333,7 @@
           "count": 1
         },
         {
-          "word": "putin",
-          "count": 1
-        },
-        {
-          "word": "china",
+          "word": "europa",
           "count": 1
         }
       ],
@@ -401,11 +401,11 @@
       ],
       "justiz": [
         {
-          "word": "verordnung",
+          "word": "rechtsstaat",
           "count": 2
         },
         {
-          "word": "rechtsstaat",
+          "word": "verordnung",
           "count": 2
         },
         {
@@ -421,15 +421,15 @@
       ],
       "mobilitaet": [
         {
-          "word": "stau",
-          "count": 1
-        },
-        {
           "word": "infrastruktur",
           "count": 1
         },
         {
           "word": "straßen",
+          "count": 1
+        },
+        {
+          "word": "stau",
           "count": 1
         }
       ]

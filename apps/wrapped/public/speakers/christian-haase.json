@@ -11,23 +11,23 @@
   "minWords": 40,
   "maxWords": 1058,
   "rankings": {
-    "speechRank": 301,
+    "speechRank": 312,
     "wordsRank": 239,
-    "partySpeechRank": 83,
+    "partySpeechRank": 85,
     "partyWordsRank": 68,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 52.0,
-    "verbosityRank": 52,
+    "totalSpeakers": 625,
+    "percentile": 50.1,
+    "verbosityRank": 54,
     "verbosityTotal": 579,
-    "partyVerbosityRank": 21,
-    "longestSpeechRank": 61
+    "partyVerbosityRank": 22,
+    "longestSpeechRank": 59
   },
   "drama": {
     "interruptionsGiven": 4,
     "interruptionsReceived": 28,
-    "interrupterRank": 373,
-    "interruptedRank": 258
+    "interrupterRank": 376,
+    "interruptedRank": 256
   },
   "words": {
     "topWords": [
@@ -52,10 +52,6 @@
         "count": 16
       },
       {
-        "word": "nächsten",
-        "count": 13
-      },
-      {
         "word": "arbeit",
         "count": 13
       }
@@ -65,13 +61,13 @@
         "word": "ausgangslage",
         "count": 5,
         "ratioParty": 92.5,
-        "ratioBundestag": 131.0
+        "ratioBundestag": 130.7
       },
       {
         "word": "konsolidieren",
         "count": 7,
         "ratioParty": 38.5,
-        "ratioBundestag": 71.0
+        "ratioBundestag": 70.8
       },
       {
         "word": "finanzminister",
@@ -83,13 +79,13 @@
         "word": "kommunalen",
         "count": 11,
         "ratioParty": 27.6,
-        "ratioBundestag": 37.2
+        "ratioBundestag": 37.5
       },
       {
         "word": "gucken",
         "count": 5,
         "ratioParty": 24.8,
-        "ratioBundestag": 14.6
+        "ratioBundestag": 14.5
       }
     ],
     "signatureAdjectives": []
@@ -97,7 +93,7 @@
   "comparison": {
     "speakerAvgWords": 610,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.95,
     "vsParliament": 1.04
   },
@@ -117,24 +113,24 @@
     "question": "Welches Wort nutzt Christian Haase häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
         "text": "Ausgangslage",
         "isCorrect": true
       },
       {
-        "text": "Wirtschaft",
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Ausgangslage\" nutzt Christian Haase 92.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "131.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "130.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -275,7 +271,7 @@
           "count": 3
         },
         {
-          "word": "betrieb",
+          "word": "rezession",
           "count": 2
         }
       ],
@@ -303,11 +299,11 @@
       ],
       "sicherheit": [
         {
-          "word": "verteidigung",
+          "word": "bundeswehr",
           "count": 2
         },
         {
-          "word": "bundeswehr",
+          "word": "verteidigung",
           "count": 2
         },
         {
@@ -325,10 +321,6 @@
       ],
       "gesundheit": [
         {
-          "word": "krankenstand",
-          "count": 1
-        },
-        {
           "word": "krankenhäuser",
           "count": 1
         },
@@ -338,6 +330,10 @@
         },
         {
           "word": "krankenhaus",
+          "count": 1
+        },
+        {
+          "word": "krankenstand",
           "count": 1
         }
       ],
@@ -409,19 +405,19 @@
       ],
       "arbeit": [
         {
-          "word": "arbeitsplätze",
-          "count": 1
-        },
-        {
-          "word": "arbeitnehmer",
-          "count": 1
-        },
-        {
           "word": "sozialversicherung",
           "count": 1
         },
         {
           "word": "arbeitslosenquote",
+          "count": 1
+        },
+        {
+          "word": "arbeitsplätze",
+          "count": 1
+        },
+        {
+          "word": "arbeitnehmer",
           "count": 1
         }
       ],
@@ -431,11 +427,11 @@
           "count": 5
         },
         {
-          "word": "straße",
+          "word": "straßen",
           "count": 4
         },
         {
-          "word": "straßen",
+          "word": "straße",
           "count": 4
         },
         {
@@ -443,7 +439,7 @@
           "count": 3
         },
         {
-          "word": "verkehrsinfrastruktur",
+          "word": "bahn",
           "count": 2
         }
       ]

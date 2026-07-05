@@ -11,23 +11,23 @@
   "minWords": 356,
   "maxWords": 735,
   "rankings": {
-    "speechRank": 268,
+    "speechRank": 266,
     "wordsRank": 251,
-    "partySpeechRank": 73,
+    "partySpeechRank": 72,
     "partyWordsRank": 71,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 57.3,
+    "totalSpeakers": 625,
+    "percentile": 57.4,
     "verbosityRank": 98,
     "verbosityTotal": 579,
     "partyVerbosityRank": 37,
-    "longestSpeechRank": 329
+    "longestSpeechRank": 326
   },
   "drama": {
     "interruptionsGiven": 7,
     "interruptionsReceived": 38,
-    "interrupterRank": 316,
-    "interruptedRank": 177
+    "interrupterRank": 311,
+    "interruptedRank": 176
   },
   "words": {
     "topWords": [
@@ -52,28 +52,28 @@
         "count": 15
       },
       {
-        "word": "verantwortung",
+        "word": "leid",
         "count": 13
       }
     ],
     "signatureWords": [
       {
-        "word": "flüchtlingskonvention",
-        "count": 6,
-        "ratioParty": 105.2,
-        "ratioBundestag": 70.9
-      },
-      {
         "word": "faschir",
         "count": 5,
         "ratioParty": 105.2,
-        "ratioBundestag": 90.2
+        "ratioBundestag": 90.0
+      },
+      {
+        "word": "flüchtlingskonvention",
+        "count": 6,
+        "ratioParty": 105.2,
+        "ratioBundestag": 70.7
       },
       {
         "word": "genfer",
         "count": 6,
         "ratioParty": 97.1,
-        "ratioBundestag": 63.9
+        "ratioBundestag": 63.7
       },
       {
         "word": "deutschlandticket",
@@ -85,7 +85,7 @@
         "word": "sudan",
         "count": 8,
         "ratioParty": 30.1,
-        "ratioBundestag": 23.4
+        "ratioBundestag": 23.3
       }
     ],
     "signatureAdjectives": [
@@ -100,7 +100,7 @@
   "comparison": {
     "speakerAvgWords": 543,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.84,
     "vsParliament": 0.93
   },
@@ -120,42 +120,42 @@
     "question": "Welches Wort nutzt Dr. Jonas Geissler häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesellschaft",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Migration",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Flüchtlingskonvention",
+        "text": "Faschir",
         "isCorrect": true
       },
       {
-        "text": "Steuern",
+        "text": "Reform",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Flüchtlingskonvention\" nutzt Dr. Jonas Geissler 105.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "70.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Faschir\" nutzt Dr. Jonas Geissler 105.2× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "90.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Jonas Geissler häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
         "text": "Falsch",
         "isCorrect": true
       },
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
+        "text": "Jung",
         "isCorrect": false
       }
     ],
@@ -292,10 +292,6 @@
       ],
       "sicherheit": [
         {
-          "word": "bundeswehr",
-          "count": 1
-        },
-        {
           "word": "terror",
           "count": 1
         },
@@ -305,6 +301,10 @@
         },
         {
           "word": "armee",
+          "count": 1
+        },
+        {
+          "word": "bundeswehr",
           "count": 1
         }
       ],
@@ -344,7 +344,7 @@
           "count": 3
         },
         {
-          "word": "außenpolitik",
+          "word": "afrika",
           "count": 2
         }
       ],
@@ -374,11 +374,11 @@
           "count": 3
         },
         {
-          "word": "haushaltsentwurf",
+          "word": "kosten",
           "count": 2
         },
         {
-          "word": "kosten",
+          "word": "haushaltsentwurf",
           "count": 2
         },
         {
@@ -396,11 +396,11 @@
           "count": 3
         },
         {
-          "word": "rechtsstaatlichkeit",
+          "word": "gefängnis",
           "count": 1
         },
         {
-          "word": "gefängnis",
+          "word": "rechtsstaatlichkeit",
           "count": 1
         }
       ],
@@ -410,19 +410,19 @@
           "count": 10
         },
         {
-          "word": "bahn",
-          "count": 3
-        },
-        {
           "word": "öpnv",
           "count": 3
         },
         {
-          "word": "verkehrsinfrastruktur",
+          "word": "bahn",
+          "count": 3
+        },
+        {
+          "word": "straße",
           "count": 1
         },
         {
-          "word": "stau",
+          "word": "fahrräder",
           "count": 1
         }
       ]

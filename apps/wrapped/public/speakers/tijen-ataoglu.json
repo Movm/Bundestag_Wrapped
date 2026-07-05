@@ -11,23 +11,23 @@
   "minWords": 67,
   "maxWords": 853,
   "rankings": {
-    "speechRank": 52,
+    "speechRank": 54,
     "wordsRank": 56,
     "partySpeechRank": 13,
     "partyWordsRank": 22,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 91.7,
+    "totalSpeakers": 625,
+    "percentile": 91.4,
     "verbosityRank": 75,
     "verbosityTotal": 579,
     "partyVerbosityRank": 29,
-    "longestSpeechRank": 181
+    "longestSpeechRank": 179
   },
   "drama": {
     "interruptionsGiven": 9,
     "interruptionsReceived": 53,
-    "interrupterRank": 280,
-    "interruptedRank": 105
+    "interrupterRank": 285,
+    "interruptedRank": 104
   },
   "words": {
     "topWords": [
@@ -49,31 +49,31 @@
         "word": "zwangsvollstreckung",
         "count": 8,
         "ratioParty": 198.7,
-        "ratioBundestag": 246.3
+        "ratioBundestag": 245.7
       },
       {
         "word": "staatsanwälte",
         "count": 9,
         "ratioParty": 89.4,
-        "ratioBundestag": 79.2
+        "ratioBundestag": 79.0
       },
       {
         "word": "rechtspflege",
         "count": 5,
         "ratioParty": 82.8,
-        "ratioBundestag": 81.0
+        "ratioBundestag": 80.8
       },
       {
         "word": "jugendorganisation",
         "count": 6,
         "ratioParty": 59.6,
-        "ratioBundestag": 49.9
+        "ratioBundestag": 49.8
       },
       {
         "word": "richter",
         "count": 19,
         "ratioParty": 48.4,
-        "ratioBundestag": 35.5
+        "ratioBundestag": 35.4
       }
     ],
     "signatureAdjectives": [
@@ -94,7 +94,7 @@
   "comparison": {
     "speakerAvgWords": 567,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.88,
     "vsParliament": 0.97
   },
@@ -119,42 +119,42 @@
     "question": "Welches Wort nutzt Tijen Ataoğlu häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
         "text": "Zwangsvollstreckung",
         "isCorrect": true
       },
       {
-        "text": "Bundesregierung",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Opposition",
+        "text": "Haushalt",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Zwangsvollstreckung\" nutzt Tijen Ataoğlu 198.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "246.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "245.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Tijen Ataoğlu häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Sozial",
-        "isCorrect": false
+        "text": "Geschützt",
+        "isCorrect": true
       },
       {
         "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Geschützt",
-        "isCorrect": true
+        "text": "Politisch",
+        "isCorrect": false
       },
       {
-        "text": "Sicher",
+        "text": "Stark",
         "isCorrect": false
       }
     ],
@@ -259,19 +259,19 @@
           "count": 2
         },
         {
-          "word": "staatsangehörigkeit",
-          "count": 2
-        },
-        {
-          "word": "ausländerbehörde",
-          "count": 2
-        },
-        {
           "word": "migration",
           "count": 2
         },
         {
           "word": "grenzkontrollen",
+          "count": 2
+        },
+        {
+          "word": "staatsangehörigkeit",
+          "count": 2
+        },
+        {
+          "word": "ausländerbehörde",
           "count": 2
         }
       ],
@@ -281,15 +281,15 @@
           "count": 2
         },
         {
+          "word": "zoll",
+          "count": 1
+        },
+        {
           "word": "standort",
           "count": 1
         },
         {
           "word": "wettbewerb",
-          "count": 1
-        },
-        {
-          "word": "zoll",
           "count": 1
         }
       ],
@@ -365,7 +365,7 @@
           "count": 2
         },
         {
-          "word": "europa",
+          "word": "brüssel",
           "count": 1
         }
       ],
@@ -387,7 +387,7 @@
           "count": 2
         },
         {
-          "word": "netz",
+          "word": "netzwerk",
           "count": 1
         }
       ],
@@ -457,11 +457,11 @@
           "count": 2
         },
         {
-          "word": "verkehr",
+          "word": "bahnhof",
           "count": 1
         },
         {
-          "word": "bahnhof",
+          "word": "verkehr",
           "count": 1
         }
       ]

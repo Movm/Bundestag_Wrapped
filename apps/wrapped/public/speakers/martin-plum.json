@@ -11,23 +11,23 @@
   "minWords": 68,
   "maxWords": 795,
   "rankings": {
-    "speechRank": 53,
+    "speechRank": 50,
     "wordsRank": 84,
-    "partySpeechRank": 14,
+    "partySpeechRank": 12,
     "partyWordsRank": 28,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 91.5,
+    "totalSpeakers": 625,
+    "percentile": 92.0,
     "verbosityRank": 239,
     "verbosityTotal": 579,
     "partyVerbosityRank": 85,
-    "longestSpeechRank": 254
+    "longestSpeechRank": 251
   },
   "drama": {
     "interruptionsGiven": 38,
     "interruptionsReceived": 54,
-    "interrupterRank": 137,
-    "interruptedRank": 99
+    "interrupterRank": 134,
+    "interruptedRank": 94
   },
   "words": {
     "topWords": [
@@ -65,31 +65,31 @@
         "word": "bundeserprobungsgesetz",
         "count": 9,
         "ratioParty": 1018.5,
-        "ratioBundestag": 630.7
+        "ratioBundestag": 629.2
       },
       {
         "word": "boykott",
         "count": 5,
         "ratioParty": 282.9,
-        "ratioBundestag": 350.4
-      },
-      {
-        "word": "parteipolitischen",
-        "count": 5,
-        "ratioParty": 141.5,
-        "ratioBundestag": 103.1
+        "ratioBundestag": 349.5
       },
       {
         "word": "ehefrau",
         "count": 5,
         "ratioParty": 141.5,
-        "ratioBundestag": 76.2
+        "ratioBundestag": 76.0
+      },
+      {
+        "word": "parteipolitischen",
+        "count": 5,
+        "ratioParty": 141.5,
+        "ratioBundestag": 102.8
       },
       {
         "word": "blaupause",
         "count": 5,
         "ratioParty": 94.3,
-        "ratioBundestag": 87.6
+        "ratioBundestag": 87.4
       }
     ],
     "signatureAdjectives": [
@@ -110,7 +110,7 @@
   "comparison": {
     "speakerAvgWords": 456,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.71,
     "vsParliament": 0.78
   },
@@ -133,37 +133,37 @@
     {
       "emoji": "📊",
       "label": "Top-Redner",
-      "value": "Top 9%"
+      "value": "Top 8%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Martin Plum häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
         "text": "Bundeserprobungsgesetz",
         "isCorrect": true
       },
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
+        "text": "Wirtschaft",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Bundeserprobungsgesetz\" nutzt Dr. Martin Plum 1018.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "630.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "629.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Martin Plum häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Neu",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
@@ -171,11 +171,11 @@
         "isCorrect": true
       },
       {
-        "text": "Groß",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
-        "text": "Gefährlich",
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
@@ -284,25 +284,25 @@
           "count": 8
         },
         {
-          "word": "betrieb",
-          "count": 2
-        },
-        {
           "word": "wachstum",
           "count": 2
         },
         {
-          "word": "wettbewerb",
+          "word": "betrieb",
+          "count": 2
+        },
+        {
+          "word": "qualifikation",
           "count": 1
         }
       ],
       "soziales": [
         {
-          "word": "eltern",
+          "word": "mieten",
           "count": 4
         },
         {
-          "word": "mieten",
+          "word": "eltern",
           "count": 4
         },
         {
@@ -310,11 +310,11 @@
           "count": 3
         },
         {
-          "word": "kind",
+          "word": "wohnungen",
           "count": 3
         },
         {
-          "word": "wohnungen",
+          "word": "kind",
           "count": 3
         }
       ],
@@ -346,7 +346,7 @@
           "count": 3
         },
         {
-          "word": "krankenhäuser",
+          "word": "prävention",
           "count": 1
         },
         {
@@ -358,7 +358,7 @@
           "count": 1
         },
         {
-          "word": "prävention",
+          "word": "krankenhäuser",
           "count": 1
         }
       ],
@@ -368,15 +368,15 @@
           "count": 6
         },
         {
-          "word": "moskau",
-          "count": 1
-        },
-        {
-          "word": "putin",
+          "word": "china",
           "count": 1
         },
         {
           "word": "europa",
+          "count": 1
+        },
+        {
+          "word": "moskau",
           "count": 1
         },
         {
@@ -390,11 +390,11 @@
           "count": 6
         },
         {
-          "word": "cloud",
+          "word": "daten",
           "count": 2
         },
         {
-          "word": "daten",
+          "word": "cloud",
           "count": 2
         },
         {
@@ -402,13 +402,13 @@
           "count": 2
         },
         {
-          "word": "technologie",
+          "word": "plattformen",
           "count": 1
         }
       ],
       "bildung": [
         {
-          "word": "schulen",
+          "word": "forschung",
           "count": 1
         },
         {
@@ -416,7 +416,7 @@
           "count": 1
         },
         {
-          "word": "forschung",
+          "word": "schulen",
           "count": 1
         }
       ],
@@ -426,19 +426,19 @@
           "count": 7
         },
         {
-          "word": "bundeshaushalt",
-          "count": 3
-        },
-        {
           "word": "investitionen",
           "count": 3
         },
         {
-          "word": "sondervermögen",
-          "count": 2
+          "word": "bundeshaushalt",
+          "count": 3
         },
         {
           "word": "entlastung",
+          "count": 2
+        },
+        {
+          "word": "sondervermögen",
           "count": 2
         }
       ],
@@ -460,7 +460,7 @@
           "count": 4
         },
         {
-          "word": "urteile",
+          "word": "verbraucherschutz",
           "count": 2
         }
       ],
@@ -478,11 +478,11 @@
           "count": 2
         },
         {
-          "word": "arbeiter",
+          "word": "beschäftigung",
           "count": 1
         },
         {
-          "word": "kündigungsschutz",
+          "word": "arbeiter",
           "count": 1
         }
       ],
@@ -492,11 +492,11 @@
           "count": 2
         },
         {
-          "word": "straßen",
+          "word": "auto",
           "count": 1
         },
         {
-          "word": "auto",
+          "word": "straßen",
           "count": 1
         }
       ]

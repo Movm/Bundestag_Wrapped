@@ -11,23 +11,23 @@
   "minWords": 75,
   "maxWords": 641,
   "rankings": {
-    "speechRank": 153,
+    "speechRank": 151,
     "wordsRank": 301,
-    "partySpeechRank": 38,
+    "partySpeechRank": 37,
     "partyWordsRank": 63,
     "partySize": 114,
-    "totalSpeakers": 627,
-    "percentile": 75.6,
+    "totalSpeakers": 625,
+    "percentile": 75.8,
     "verbosityRank": 467,
     "verbosityTotal": 579,
     "partyVerbosityRank": 90,
-    "longestSpeechRank": 446
+    "longestSpeechRank": 444
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 17,
     "interrupterRank": null,
-    "interruptedRank": 357
+    "interruptedRank": 353
   },
   "words": {
     "topWords": [
@@ -40,11 +40,11 @@
         "count": 27
       },
       {
-        "word": "menschen",
+        "word": "familien",
         "count": 22
       },
       {
-        "word": "familien",
+        "word": "menschen",
         "count": 22
       },
       {
@@ -65,31 +65,31 @@
         "word": "ferien",
         "count": 8,
         "ratioParty": 283.9,
-        "ratioBundestag": 118.9
+        "ratioBundestag": 118.6
       },
       {
         "word": "ganztag",
         "count": 6,
         "ratioParty": 121.7,
-        "ratioBundestag": 65.8
+        "ratioBundestag": 70.0
       },
       {
         "word": "mutterschutz",
         "count": 7,
         "ratioParty": 110.4,
-        "ratioBundestag": 89.2
+        "ratioBundestag": 88.9
       },
       {
         "word": "ganztagsbetreuung",
         "count": 5,
         "ratioParty": 88.7,
-        "ratioBundestag": 54.9
+        "ratioBundestag": 57.4
       },
       {
         "word": "herzegowina",
         "count": 15,
         "ratioParty": 66.5,
-        "ratioBundestag": 69.9
+        "ratioBundestag": 69.8
       }
     ],
     "signatureAdjectives": []
@@ -97,7 +97,7 @@
   "comparison": {
     "speakerAvgWords": 347,
     "partyAvgWords": 618,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.56,
     "vsParliament": 0.59
   },
@@ -117,7 +117,11 @@
     "question": "Welches Wort nutzt Jasmina Hostert häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Freiheit",
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
@@ -125,16 +129,12 @@
         "isCorrect": true
       },
       {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaft",
+        "text": "Bildung",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Ferien\" nutzt Jasmina Hostert 283.9× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "118.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "118.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -237,16 +237,12 @@
       ],
       "wirtschaft": [
         {
-          "word": "selbstständige",
-          "count": 2
-        },
-        {
           "word": "industrie",
           "count": 2
         },
         {
-          "word": "unternehmen",
-          "count": 1
+          "word": "selbstständige",
+          "count": 2
         },
         {
           "word": "markt",
@@ -254,6 +250,10 @@
         },
         {
           "word": "fachkräfte",
+          "count": 1
+        },
+        {
+          "word": "handwerk",
           "count": 1
         }
       ],
@@ -303,15 +303,15 @@
       ],
       "gesundheit": [
         {
+          "word": "prävention",
+          "count": 1
+        },
+        {
           "word": "krankenhaus",
           "count": 1
         },
         {
           "word": "pflege",
-          "count": 1
-        },
-        {
-          "word": "prävention",
           "count": 1
         }
       ],
@@ -333,17 +333,17 @@
           "count": 3
         },
         {
-          "word": "europäisch",
+          "word": "abkommen",
           "count": 2
         }
       ],
       "digital": [
         {
-          "word": "plattformen",
+          "word": "netz",
           "count": 3
         },
         {
-          "word": "netz",
+          "word": "plattformen",
           "count": 3
         },
         {
@@ -409,15 +409,15 @@
           "count": 2
         },
         {
+          "word": "strafrecht",
+          "count": 1
+        },
+        {
+          "word": "menschenrechte",
+          "count": 1
+        },
+        {
           "word": "urteile",
-          "count": 1
-        },
-        {
-          "word": "verteidiger",
-          "count": 1
-        },
-        {
-          "word": "diskriminierung",
           "count": 1
         }
       ],

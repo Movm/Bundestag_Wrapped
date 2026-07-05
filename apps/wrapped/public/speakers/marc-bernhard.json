@@ -11,17 +11,17 @@
   "minWords": 93,
   "maxWords": 626,
   "rankings": {
-    "speechRank": 20,
+    "speechRank": 21,
     "wordsRank": 34,
     "partySpeechRank": 4,
     "partyWordsRank": 6,
-    "partySize": 151,
-    "totalSpeakers": 627,
-    "percentile": 96.8,
+    "partySize": 150,
+    "totalSpeakers": 625,
+    "percentile": 96.6,
     "verbosityRank": 376,
     "verbosityTotal": 579,
     "partyVerbosityRank": 99,
-    "longestSpeechRank": 468
+    "longestSpeechRank": 466
   },
   "drama": {
     "interruptionsGiven": 266,
@@ -52,11 +52,11 @@
         "count": 46
       },
       {
-        "word": "land",
+        "word": "jahren",
         "count": 38
       },
       {
-        "word": "jahren",
+        "word": "land",
         "count": 38
       },
       {
@@ -64,71 +64,71 @@
         "count": 38
       },
       {
-        "word": "welt",
+        "word": "politik",
         "count": 37
       },
       {
-        "word": "politik",
+        "word": "welt",
         "count": 37
       }
     ],
     "signatureWords": [
       {
-        "word": "dämmwahn",
-        "count": 12,
-        "ratioParty": 367.4,
-        "ratioBundestag": 1660.6
-      },
-      {
         "word": "normaler",
         "count": 6,
-        "ratioParty": 367.4,
-        "ratioBundestag": 66.4
+        "ratioParty": 365.5,
+        "ratioBundestag": 66.3
+      },
+      {
+        "word": "dämmwahn",
+        "count": 12,
+        "ratioParty": 365.5,
+        "ratioBundestag": 1656.7
       },
       {
         "word": "bartol",
         "count": 5,
-        "ratioParty": 306.2,
-        "ratioBundestag": 691.9
+        "ratioParty": 304.6,
+        "ratioBundestag": 690.3
       },
       {
         "word": "gasheizungen",
         "count": 12,
-        "ratioParty": 147.0,
-        "ratioBundestag": 52.7
+        "ratioParty": 146.2,
+        "ratioBundestag": 52.6
       },
       {
         "word": "heizungshammer",
         "count": 21,
-        "ratioParty": 116.9,
-        "ratioBundestag": 415.2
+        "ratioParty": 116.3,
+        "ratioBundestag": 414.2
       }
     ],
     "signatureAdjectives": [
       {
         "word": "unbezahlbar",
         "count": 7,
-        "ratioParty": 16.5,
-        "ratioBundestag": 34.0
+        "ratioParty": 16.4,
+        "ratioBundestag": 33.9
       },
       {
         "word": "wirkungslos",
         "count": 5,
-        "ratioParty": 12.8,
+        "ratioParty": 12.7,
         "ratioBundestag": 29.4
       },
       {
         "word": "teuer",
         "count": 13,
-        "ratioParty": 6.2,
+        "ratioParty": 6.1,
         "ratioBundestag": 9.3
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 396,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
     "vsParty": 0.71,
     "vsParliament": 0.68
   },
@@ -144,11 +144,6 @@
       "value": "15.835"
     },
     {
-      "emoji": "🏆",
-      "label": "Rang (Reden)",
-      "value": "#20 von 627"
-    },
-    {
       "emoji": "⚡",
       "label": "Zwischenrufer",
       "value": "#11 (266x)"
@@ -156,31 +151,36 @@
     {
       "emoji": "🥇",
       "label": "Rang in AfD",
-      "value": "#4 von 151"
+      "value": "#4 von 150"
+    },
+    {
+      "emoji": "📊",
+      "label": "Top-Redner",
+      "value": "Top 4%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Marc Bernhard häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Sicherheit",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Dämmwahn",
+        "text": "Normaler",
         "isCorrect": true
       },
       {
-        "text": "Gesetz",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
-        "text": "Steuern",
+        "text": "Zukunft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Dämmwahn\" nutzt Marc Bernhard 367.4× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "1660.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Normaler\" nutzt Marc Bernhard 365.5× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "66.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Marc Bernhard häufiger als der Rest der AfD-Fraktion?",
@@ -190,20 +190,20 @@
         "isCorrect": true
       },
       {
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
         "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unbezahlbar\" nutzt Marc Bernhard 16.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "34.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Unbezahlbar\" nutzt Marc Bernhard 16.4× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "33.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -283,11 +283,11 @@
           "count": 5
         },
         {
-          "word": "zuwanderung",
+          "word": "zuwanderer",
           "count": 3
         },
         {
-          "word": "zuwanderer",
+          "word": "zuwanderung",
           "count": 3
         },
         {
@@ -389,15 +389,15 @@
           "count": 3
         },
         {
+          "word": "kliniken",
+          "count": 1
+        },
+        {
           "word": "krankenkassen",
           "count": 1
         },
         {
           "word": "krankenversicherung",
-          "count": 1
-        },
-        {
-          "word": "kliniken",
           "count": 1
         },
         {
@@ -415,15 +415,15 @@
           "count": 2
         },
         {
-          "word": "amerika",
+          "word": "frieden",
+          "count": 1
+        },
+        {
+          "word": "brüssel",
           "count": 1
         },
         {
           "word": "krieg",
-          "count": 1
-        },
-        {
-          "word": "außenminister",
           "count": 1
         }
       ],
@@ -447,11 +447,11 @@
           "count": 6
         },
         {
-          "word": "auszubildende",
+          "word": "forschung",
           "count": 1
         },
         {
-          "word": "forschung",
+          "word": "auszubildende",
           "count": 1
         }
       ],
@@ -473,17 +473,13 @@
           "count": 3
         },
         {
-          "word": "inflation",
+          "word": "haushalt",
           "count": 2
         }
       ],
       "justiz": [
         {
-          "word": "straftaten",
-          "count": 1
-        },
-        {
-          "word": "gefängnis",
+          "word": "novelle",
           "count": 1
         },
         {
@@ -491,7 +487,11 @@
           "count": 1
         },
         {
-          "word": "novelle",
+          "word": "straftaten",
+          "count": 1
+        },
+        {
+          "word": "gefängnis",
           "count": 1
         }
       ],
@@ -509,11 +509,11 @@
           "count": 2
         },
         {
-          "word": "vollzeit",
+          "word": "sozialabgaben",
           "count": 1
         },
         {
-          "word": "sozialabgaben",
+          "word": "arbeitslose",
           "count": 1
         }
       ],
@@ -523,11 +523,11 @@
           "count": 5
         },
         {
-          "word": "straße",
+          "word": "auto",
           "count": 2
         },
         {
-          "word": "auto",
+          "word": "straße",
           "count": 2
         },
         {

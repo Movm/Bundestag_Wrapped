@@ -11,23 +11,23 @@
   "minWords": 312,
   "maxWords": 751,
   "rankings": {
-    "speechRank": 595,
-    "wordsRank": 599,
-    "partySpeechRank": 194,
+    "speechRank": 591,
+    "wordsRank": 597,
+    "partySpeechRank": 193,
     "partyWordsRank": 199,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 5.1,
+    "totalSpeakers": 625,
+    "percentile": 5.4,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 313
+    "longestSpeechRank": 311
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 1,
     "interrupterRank": null,
-    "interruptedRank": 604
+    "interruptedRank": 593
   },
   "words": {
     "topWords": [
@@ -48,14 +48,6 @@
         "count": 5
       },
       {
-        "word": "bundesregierung",
-        "count": 4
-      },
-      {
-        "word": "neuen",
-        "count": 4
-      },
-      {
         "word": "starke",
         "count": 4
       },
@@ -68,7 +60,15 @@
         "count": 4
       },
       {
-        "word": "diskriminierung",
+        "word": "bundesregierung",
+        "count": 4
+      },
+      {
+        "word": "neuen",
+        "count": 4
+      },
+      {
+        "word": "mittel",
         "count": 3
       }
     ],
@@ -77,7 +77,7 @@
         "word": "bildung",
         "count": 6,
         "ratioParty": 30.7,
-        "ratioBundestag": 31.0
+        "ratioBundestag": 31.3
       },
       {
         "word": "familien",
@@ -103,7 +103,7 @@
   "comparison": {
     "speakerAvgWords": 532,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.82,
     "vsParliament": 0.91
   },
@@ -123,24 +123,24 @@
     "question": "Welches Wort nutzt Michael Brand häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Fraktion",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
+        "text": "Reform",
         "isCorrect": false
       },
       {
         "text": "Bildung",
         "isCorrect": true
+      },
+      {
+        "text": "Minister",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Bildung\" nutzt Michael Brand 30.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "31.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "31.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -237,15 +237,15 @@
     "topicWords": {
       "wirtschaft": [
         {
-          "word": "unternehmen",
-          "count": 1
-        },
-        {
           "word": "wettbewerbsfähigkeit",
           "count": 1
         },
         {
           "word": "standort",
+          "count": 1
+        },
+        {
+          "word": "unternehmen",
           "count": 1
         }
       ],
@@ -287,15 +287,15 @@
           "count": 6
         },
         {
+          "word": "lehrkräfte",
+          "count": 1
+        },
+        {
           "word": "schule",
           "count": 1
         },
         {
           "word": "ausbildung",
-          "count": 1
-        },
-        {
-          "word": "lehrkräfte",
           "count": 1
         }
       ],
@@ -303,10 +303,6 @@
         {
           "word": "haushalt",
           "count": 5
-        },
-        {
-          "word": "kosten",
-          "count": 1
         },
         {
           "word": "bundeshaushalt",
@@ -318,6 +314,10 @@
         },
         {
           "word": "investition",
+          "count": 1
+        },
+        {
+          "word": "sondervermögen",
           "count": 1
         }
       ],
@@ -331,11 +331,11 @@
           "count": 2
         },
         {
-          "word": "rechtsprechung",
+          "word": "verfassungsrecht",
           "count": 1
         },
         {
-          "word": "verfassungsrecht",
+          "word": "rechtsprechung",
           "count": 1
         }
       ],

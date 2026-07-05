@@ -11,23 +11,23 @@
   "minWords": 51,
   "maxWords": 667,
   "rankings": {
-    "speechRank": 260,
+    "speechRank": 243,
     "wordsRank": 283,
-    "partySpeechRank": 68,
+    "partySpeechRank": 65,
     "partyWordsRank": 83,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 58.5,
-    "verbosityRank": 359,
+    "totalSpeakers": 625,
+    "percentile": 61.1,
+    "verbosityRank": 358,
     "verbosityTotal": 579,
     "partyVerbosityRank": 127,
-    "longestSpeechRank": 413
+    "longestSpeechRank": 411
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 64,
     "interrupterRank": null,
-    "interruptedRank": 63
+    "interruptedRank": 65
   },
   "words": {
     "topWords": [
@@ -40,11 +40,11 @@
         "count": 16
       },
       {
-        "word": "deutschland",
+        "word": "debatte",
         "count": 14
       },
       {
-        "word": "debatte",
+        "word": "deutschland",
         "count": 14
       },
       {
@@ -57,7 +57,7 @@
         "word": "geothermie",
         "count": 5,
         "ratioParty": 65.9,
-        "ratioBundestag": 91.0
+        "ratioBundestag": 90.8
       },
       {
         "word": "organspende",
@@ -69,7 +69,7 @@
         "word": "speicherung",
         "count": 6,
         "ratioParty": 17.7,
-        "ratioBundestag": 35.5
+        "ratioBundestag": 35.4
       },
       {
         "word": "warten",
@@ -81,7 +81,7 @@
         "word": "energiepolitik",
         "count": 6,
         "ratioParty": 15.1,
-        "ratioBundestag": 13.5
+        "ratioBundestag": 13.4
       }
     ],
     "signatureAdjectives": [
@@ -102,7 +102,7 @@
   "comparison": {
     "speakerAvgWords": 405,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.63,
     "vsParliament": 0.69
   },
@@ -126,38 +126,38 @@
         "isCorrect": false
       },
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
         "text": "Geothermie",
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Geothermie\" nutzt Dr. Maria-Lena Weiss 65.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "91.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "90.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Maria-Lena Weiss häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
         "text": "Verantwortungsvoll",
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
@@ -290,11 +290,11 @@
           "count": 6
         },
         {
-          "word": "unternehmen",
+          "word": "wettbewerbsfähigkeit",
           "count": 3
         },
         {
-          "word": "wettbewerbsfähigkeit",
+          "word": "unternehmen",
           "count": 3
         },
         {
@@ -302,7 +302,7 @@
           "count": 2
         },
         {
-          "word": "mittelstand",
+          "word": "kapital",
           "count": 1
         }
       ],
@@ -348,15 +348,15 @@
           "count": 2
         },
         {
+          "word": "europa",
+          "count": 1
+        },
+        {
           "word": "kooperation",
           "count": 1
         },
         {
           "word": "putin",
-          "count": 1
-        },
-        {
-          "word": "europa",
           "count": 1
         }
       ],
@@ -380,6 +380,10 @@
       ],
       "bildung": [
         {
+          "word": "schule",
+          "count": 1
+        },
+        {
           "word": "ausbildung",
           "count": 1
         },
@@ -390,10 +394,6 @@
         {
           "word": "forschung",
           "count": 1
-        },
-        {
-          "word": "schule",
-          "count": 1
         }
       ],
       "finanzen": [
@@ -402,15 +402,15 @@
           "count": 5
         },
         {
+          "word": "entlastung",
+          "count": 1
+        },
+        {
           "word": "kosten",
           "count": 1
         },
         {
           "word": "defizit",
-          "count": 1
-        },
-        {
-          "word": "entlastung",
           "count": 1
         }
       ],
@@ -424,11 +424,11 @@
           "count": 1
         },
         {
-          "word": "gesetzgebung",
+          "word": "anwälte",
           "count": 1
         },
         {
-          "word": "anwälte",
+          "word": "gesetzgebung",
           "count": 1
         }
       ],

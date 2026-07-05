@@ -11,17 +11,17 @@
   "minWords": 643,
   "maxWords": 759,
   "rankings": {
-    "speechRank": 593,
-    "wordsRank": 585,
-    "partySpeechRank": 193,
+    "speechRank": 592,
+    "wordsRank": 583,
+    "partySpeechRank": 194,
     "partyWordsRank": 192,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 5.4,
+    "totalSpeakers": 625,
+    "percentile": 5.3,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 301
+    "longestSpeechRank": 299
   },
   "drama": {
     "interruptionsGiven": 0,
@@ -48,6 +48,14 @@
         "count": 5
       },
       {
+        "word": "reden",
+        "count": 4
+      },
+      {
+        "word": "internationalen",
+        "count": 4
+      },
+      {
         "word": "wahl",
         "count": 4
       },
@@ -56,15 +64,7 @@
         "count": 4
       },
       {
-        "word": "internationalen",
-        "count": 4
-      },
-      {
         "word": "globalen",
-        "count": 4
-      },
-      {
-        "word": "reden",
         "count": 4
       },
       {
@@ -77,13 +77,13 @@
         "word": "sudan",
         "count": 5,
         "ratioParty": 84.6,
-        "ratioBundestag": 68.3
+        "ratioBundestag": 68.2
       },
       {
         "word": "einfluss",
         "count": 6,
         "ratioParty": 82.0,
-        "ratioBundestag": 69.6
+        "ratioBundestag": 69.4
       }
     ],
     "signatureAdjectives": []
@@ -91,7 +91,7 @@
   "comparison": {
     "speakerAvgWords": 701,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 1.09,
     "vsParliament": 1.2
   },
@@ -111,24 +111,24 @@
     "question": "Welches Wort nutzt Markus Koob häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
         "text": "Sudan",
         "isCorrect": true
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Sudan\" nutzt Markus Koob 84.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "68.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "68.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -255,10 +255,6 @@
       ],
       "europa": [
         {
-          "word": "außenpolitik",
-          "count": 2
-        },
-        {
           "word": "außenminister",
           "count": 2
         },
@@ -267,11 +263,15 @@
           "count": 2
         },
         {
-          "word": "europa",
-          "count": 1
+          "word": "außenpolitik",
+          "count": 2
         },
         {
           "word": "waffenstillstand",
+          "count": 1
+        },
+        {
+          "word": "europa",
           "count": 1
         }
       ],

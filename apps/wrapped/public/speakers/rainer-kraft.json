@@ -11,23 +11,23 @@
   "minWords": 24,
   "maxWords": 727,
   "rankings": {
-    "speechRank": 110,
+    "speechRank": 106,
     "wordsRank": 64,
-    "partySpeechRank": 22,
+    "partySpeechRank": 21,
     "partyWordsRank": 13,
-    "partySize": 151,
-    "totalSpeakers": 627,
-    "percentile": 82.5,
+    "partySize": 150,
+    "totalSpeakers": 625,
+    "percentile": 83.0,
     "verbosityRank": 557,
     "verbosityTotal": 579,
     "partyVerbosityRank": 141,
-    "longestSpeechRank": 344
+    "longestSpeechRank": 342
   },
   "drama": {
     "interruptionsGiven": 200,
     "interruptionsReceived": 28,
     "interrupterRank": 18,
-    "interruptedRank": 267
+    "interruptedRank": 259
   },
   "words": {
     "topWords": [
@@ -48,65 +48,65 @@
       {
         "word": "augsburg",
         "count": 10,
-        "ratioParty": 118.3,
-        "ratioBundestag": 139.3
+        "ratioParty": 117.7,
+        "ratioBundestag": 138.9
       },
       {
         "word": "fördergelder",
         "count": 6,
-        "ratioParty": 60.9,
-        "ratioBundestag": 80.1
+        "ratioParty": 60.5,
+        "ratioBundestag": 79.9
       },
       {
         "word": "thyssenkrupp",
         "count": 11,
-        "ratioParty": 60.1,
-        "ratioBundestag": 100.7
+        "ratioParty": 59.8,
+        "ratioBundestag": 100.4
       },
       {
         "word": "endlager",
         "count": 6,
-        "ratioParty": 53.3,
-        "ratioBundestag": 64.1
+        "ratioParty": 53.0,
+        "ratioBundestag": 63.9
       },
       {
         "word": "strompreis",
         "count": 5,
-        "ratioParty": 29.6,
-        "ratioBundestag": 28.1
+        "ratioParty": 29.4,
+        "ratioBundestag": 28.0
       }
     ],
     "signatureAdjectives": [
       {
         "word": "unzureichend",
         "count": 5,
-        "ratioParty": 25.4,
-        "ratioBundestag": 30.2
+        "ratioParty": 25.2,
+        "ratioBundestag": 30.7
       },
       {
         "word": "zuverlässig",
         "count": 3,
-        "ratioParty": 8.9,
-        "ratioBundestag": 9.2
+        "ratioParty": 8.8,
+        "ratioBundestag": 9.1
       },
       {
         "word": "absurd",
         "count": 4,
-        "ratioParty": 5.5,
+        "ratioParty": 5.4,
         "ratioBundestag": 6.0
       },
       {
         "word": "teuer",
         "count": 4,
-        "ratioParty": 2.1,
+        "ratioParty": 2.0,
         "ratioBundestag": 3.2
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 208,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
     "vsParty": 0.37,
     "vsParliament": 0.36
   },
@@ -135,11 +135,11 @@
         "isCorrect": false
       },
       {
-        "text": "Gesetz",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
-        "text": "Haushalt",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
@@ -147,22 +147,22 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Augsburg\" nutzt Dr. Rainer Kraft 118.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "139.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Augsburg\" nutzt Dr. Rainer Kraft 117.7× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "138.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Rainer Kraft häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
         "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
         "isCorrect": false
       },
       {
@@ -170,8 +170,8 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Unzureichend\" nutzt Dr. Rainer Kraft 25.4× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "30.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Unzureichend\" nutzt Dr. Rainer Kraft 25.2× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "30.7× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -297,11 +297,11 @@
       ],
       "soziales": [
         {
-          "word": "jugend",
+          "word": "kinder",
           "count": 4
         },
         {
-          "word": "kinder",
+          "word": "jugend",
           "count": 4
         },
         {
@@ -309,11 +309,11 @@
           "count": 2
         },
         {
-          "word": "wohnungen",
+          "word": "familien",
           "count": 1
         },
         {
-          "word": "renten",
+          "word": "wohnungen",
           "count": 1
         }
       ],
@@ -335,7 +335,7 @@
           "count": 2
         },
         {
-          "word": "polizei",
+          "word": "täter",
           "count": 1
         }
       ],
@@ -371,11 +371,11 @@
           "count": 3
         },
         {
-          "word": "israel",
+          "word": "moskau",
           "count": 3
         },
         {
-          "word": "moskau",
+          "word": "israel",
           "count": 3
         }
       ],
@@ -411,15 +411,15 @@
           "count": 4
         },
         {
+          "word": "forschung",
+          "count": 1
+        },
+        {
           "word": "schule",
           "count": 1
         },
         {
           "word": "schulabschluss",
-          "count": 1
-        },
-        {
-          "word": "forschung",
           "count": 1
         }
       ],
@@ -451,11 +451,11 @@
           "count": 2
         },
         {
-          "word": "straftat",
+          "word": "staatsanwaltschaft",
           "count": 1
         },
         {
-          "word": "staatsanwaltschaft",
+          "word": "straftat",
           "count": 1
         },
         {
@@ -473,11 +473,11 @@
           "count": 6
         },
         {
-          "word": "löhne",
+          "word": "einkommen",
           "count": 2
         },
         {
-          "word": "einkommen",
+          "word": "löhne",
           "count": 2
         },
         {
@@ -485,21 +485,21 @@
           "count": 1
         },
         {
-          "word": "tarifvertrag",
+          "word": "arbeitskräfte",
           "count": 1
         }
       ],
       "mobilitaet": [
+        {
+          "word": "fahrzeuge",
+          "count": 2
+        },
         {
           "word": "schienenverkehr",
           "count": 2
         },
         {
           "word": "bahn",
-          "count": 2
-        },
-        {
-          "word": "fahrzeuge",
           "count": 2
         },
         {

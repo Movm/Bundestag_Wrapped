@@ -11,23 +11,23 @@
   "minWords": 591,
   "maxWords": 717,
   "rankings": {
-    "speechRank": 502,
-    "wordsRank": 495,
-    "partySpeechRank": 160,
+    "speechRank": 522,
+    "wordsRank": 493,
+    "partySpeechRank": 169,
     "partyWordsRank": 160,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 19.9,
+    "totalSpeakers": 625,
+    "percentile": 16.5,
     "verbosityRank": 32,
     "verbosityTotal": 579,
     "partyVerbosityRank": 11,
-    "longestSpeechRank": 354
+    "longestSpeechRank": 352
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 12,
     "interrupterRank": 460,
-    "interruptedRank": 426
+    "interruptedRank": 434
   },
   "words": {
     "topWords": [
@@ -44,16 +44,24 @@
         "count": 15
       },
       {
-        "word": "neue",
+        "word": "forschung",
         "count": 13
       },
       {
-        "word": "forschung",
+        "word": "neue",
         "count": 13
       },
       {
         "word": "investieren",
         "count": 11
+      },
+      {
+        "word": "technologie",
+        "count": 10
+      },
+      {
+        "word": "zukunft",
+        "count": 10
       },
       {
         "word": "jahr",
@@ -62,14 +70,6 @@
       {
         "word": "nächsten",
         "count": 10
-      },
-      {
-        "word": "zukunft",
-        "count": 10
-      },
-      {
-        "word": "morgen",
-        "count": 10
       }
     ],
     "signatureWords": [
@@ -77,25 +77,25 @@
         "word": "raumfahrt",
         "count": 19,
         "ratioParty": 80.8,
-        "ratioBundestag": 114.7
+        "ratioBundestag": 114.4
       },
       {
         "word": "haushälter",
         "count": 6,
         "ratioParty": 57.0,
-        "ratioBundestag": 87.8
+        "ratioBundestag": 87.6
       },
       {
         "word": "schulden",
         "count": 7,
         "ratioParty": 34.7,
-        "ratioBundestag": 17.5
+        "ratioBundestag": 17.4
       },
       {
         "word": "technologie",
         "count": 10,
         "ratioParty": 34.1,
-        "ratioBundestag": 45.3
+        "ratioBundestag": 45.2
       },
       {
         "word": "forschung",
@@ -116,7 +116,7 @@
   "comparison": {
     "speakerAvgWords": 647,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 1.0,
     "vsParliament": 1.11
   },
@@ -136,43 +136,43 @@
     "question": "Welches Wort nutzt Carsten Körber häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
         "text": "Raumfahrt",
         "isCorrect": true
       },
       {
-        "text": "Opposition",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Raumfahrt\" nutzt Carsten Körber 80.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "114.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "114.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Carsten Körber häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Neu",
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
         "text": "Entscheidend",
         "isCorrect": true
-      },
-      {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Entscheidend\" nutzt Carsten Körber 5.5× häufiger als der CDU/CSU-Durchschnitt.",
@@ -326,11 +326,11 @@
           "count": 10
         },
         {
-          "word": "digitalisierung",
+          "word": "daten",
           "count": 1
         },
         {
-          "word": "daten",
+          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -340,15 +340,15 @@
           "count": 13
         },
         {
-          "word": "bildung",
-          "count": 1
-        },
-        {
           "word": "wissenschaftler",
           "count": 1
         },
         {
           "word": "schule",
+          "count": 1
+        },
+        {
+          "word": "bildung",
           "count": 1
         }
       ],
@@ -370,7 +370,7 @@
           "count": 7
         },
         {
-          "word": "etat",
+          "word": "haushaltsausschuss",
           "count": 2
         }
       ],

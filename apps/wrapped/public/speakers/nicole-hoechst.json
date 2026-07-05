@@ -11,23 +11,23 @@
   "minWords": 42,
   "maxWords": 814,
   "rankings": {
-    "speechRank": 384,
+    "speechRank": 385,
     "wordsRank": 227,
-    "partySpeechRank": 89,
+    "partySpeechRank": 92,
     "partyWordsRank": 52,
-    "partySize": 151,
-    "totalSpeakers": 627,
-    "percentile": 38.8,
+    "partySize": 150,
+    "totalSpeakers": 625,
+    "percentile": 38.4,
     "verbosityRank": 211,
     "verbosityTotal": 579,
     "partyVerbosityRank": 56,
-    "longestSpeechRank": 233
+    "longestSpeechRank": 231
   },
   "drama": {
     "interruptionsGiven": 58,
     "interruptionsReceived": 67,
     "interrupterRank": 87,
-    "interruptedRank": 56
+    "interruptedRank": 55
   },
   "words": {
     "topWords": [
@@ -52,11 +52,11 @@
         "count": 15
       },
       {
-        "word": "land",
+        "word": "darf",
         "count": 13
       },
       {
-        "word": "darf",
+        "word": "land",
         "count": 13
       },
       {
@@ -72,31 +72,31 @@
       {
         "word": "europarat",
         "count": 11,
-        "ratioParty": 152.6,
-        "ratioBundestag": 79.0
-      },
-      {
-        "word": "hightech",
-        "count": 7,
-        "ratioParty": 25.0,
-        "ratioBundestag": 11.2
+        "ratioParty": 151.7,
+        "ratioBundestag": 78.9
       },
       {
         "word": "unabhängigkeit",
         "count": 5,
-        "ratioParty": 25.0,
+        "ratioParty": 24.8,
         "ratioBundestag": 12.7
+      },
+      {
+        "word": "hightech",
+        "count": 7,
+        "ratioParty": 24.8,
+        "ratioBundestag": 11.2
       },
       {
         "word": "wissenschaft",
         "count": 15,
-        "ratioParty": 23.4,
+        "ratioParty": 23.3,
         "ratioBundestag": 16.8
       },
       {
         "word": "raumfahrt",
         "count": 7,
-        "ratioParty": 22.4,
+        "ratioParty": 22.3,
         "ratioBundestag": 16.3
       }
     ],
@@ -105,14 +105,14 @@
         "word": "ideologisch",
         "count": 3,
         "ratioParty": 4.7,
-        "ratioBundestag": 11.4
+        "ratioBundestag": 11.3
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 470,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
     "vsParty": 0.84,
     "vsParliament": 0.8
   },
@@ -137,10 +137,6 @@
     "question": "Welches Wort nutzt Nicole Höchst häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Minister",
-        "isCorrect": false
-      },
-      {
         "text": "Reform",
         "isCorrect": false
       },
@@ -149,35 +145,39 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetz",
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Europarat\" nutzt Nicole Höchst 152.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "79.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Europarat\" nutzt Nicole Höchst 151.7× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "78.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Nicole Höchst häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
         "text": "Ideologisch",
         "isCorrect": true
       },
       {
-        "text": "Wichtig",
+        "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Stark",
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Ideologisch\" nutzt Nicole Höchst 4.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "11.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "11.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -249,16 +249,12 @@
     "topicWords": {
       "migration": [
         {
-          "word": "einwanderung",
-          "count": 2
-        },
-        {
           "word": "integration",
           "count": 2
         },
         {
-          "word": "migration",
-          "count": 1
+          "word": "einwanderung",
+          "count": 2
         },
         {
           "word": "grenze",
@@ -266,6 +262,10 @@
         },
         {
           "word": "asyl",
+          "count": 1
+        },
+        {
+          "word": "migration",
           "count": 1
         }
       ],
@@ -275,19 +275,19 @@
           "count": 4
         },
         {
+          "word": "offshore",
+          "count": 1
+        },
+        {
+          "word": "nachhaltigkeit",
+          "count": 1
+        },
+        {
           "word": "klimaneutralität",
           "count": 1
         },
         {
           "word": "klimawandel",
-          "count": 1
-        },
-        {
-          "word": "energiewende",
-          "count": 1
-        },
-        {
-          "word": "offshore",
           "count": 1
         }
       ],
@@ -305,11 +305,11 @@
           "count": 2
         },
         {
-          "word": "konkurrenz",
+          "word": "unternehmen",
           "count": 1
         },
         {
-          "word": "unternehmen",
+          "word": "unternehmertum",
           "count": 1
         }
       ],
@@ -323,11 +323,11 @@
           "count": 4
         },
         {
-          "word": "familie",
+          "word": "familien",
           "count": 4
         },
         {
-          "word": "familien",
+          "word": "familie",
           "count": 4
         },
         {
@@ -341,15 +341,15 @@
           "count": 3
         },
         {
-          "word": "einbruch",
-          "count": 1
-        },
-        {
           "word": "verfassungsschutz",
           "count": 1
         },
         {
           "word": "angriff",
+          "count": 1
+        },
+        {
+          "word": "einbruch",
           "count": 1
         }
       ],
@@ -373,15 +373,15 @@
           "count": 3
         },
         {
-          "word": "vertrag",
-          "count": 2
-        },
-        {
-          "word": "abkommen",
-          "count": 2
-        },
-        {
           "word": "china",
+          "count": 2
+        },
+        {
+          "word": "europa",
+          "count": 2
+        },
+        {
+          "word": "vertrag",
           "count": 2
         }
       ],
@@ -395,15 +395,15 @@
           "count": 3
         },
         {
-          "word": "digitalisierung",
-          "count": 1
-        },
-        {
           "word": "plattformen",
           "count": 1
         },
         {
           "word": "netz",
+          "count": 1
+        },
+        {
+          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -425,7 +425,7 @@
           "count": 4
         },
         {
-          "word": "schulen",
+          "word": "schüler",
           "count": 3
         }
       ],
@@ -439,25 +439,25 @@
           "count": 3
         },
         {
-          "word": "investitionen",
-          "count": 2
-        },
-        {
           "word": "sondervermögen",
           "count": 2
         },
         {
-          "word": "steuerzahler",
+          "word": "steuern",
+          "count": 2
+        },
+        {
+          "word": "subventionen",
           "count": 2
         }
       ],
       "justiz": [
         {
-          "word": "grundrechte",
+          "word": "grundgesetz",
           "count": 3
         },
         {
-          "word": "grundgesetz",
+          "word": "grundrechte",
           "count": 3
         },
         {
@@ -465,17 +465,17 @@
           "count": 2
         },
         {
-          "word": "gleichberechtigung",
+          "word": "urteil",
           "count": 1
         },
         {
-          "word": "rechtsstaatlichkeit",
+          "word": "verwaltungsgericht",
           "count": 1
         }
       ],
       "arbeit": [
         {
-          "word": "vereinbarkeit",
+          "word": "arbeitskraft",
           "count": 1
         },
         {
@@ -483,7 +483,7 @@
           "count": 1
         },
         {
-          "word": "arbeitskraft",
+          "word": "vereinbarkeit",
           "count": 1
         }
       ],
@@ -493,19 +493,19 @@
           "count": 1
         },
         {
-          "word": "schiff",
-          "count": 1
-        },
-        {
-          "word": "elektromobilität",
-          "count": 1
-        },
-        {
           "word": "infrastruktur",
           "count": 1
         },
         {
           "word": "flughafen",
+          "count": 1
+        },
+        {
+          "word": "nahverkehr",
+          "count": 1
+        },
+        {
+          "word": "schiff",
           "count": 1
         }
       ]

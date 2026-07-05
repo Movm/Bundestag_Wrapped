@@ -11,17 +11,17 @@
   "minWords": 68,
   "maxWords": 1085,
   "rankings": {
-    "speechRank": 438,
-    "wordsRank": 423,
-    "partySpeechRank": 127,
+    "speechRank": 439,
+    "wordsRank": 422,
+    "partySpeechRank": 130,
     "partyWordsRank": 132,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 30.1,
+    "totalSpeakers": 625,
+    "percentile": 29.8,
     "verbosityRank": 180,
     "verbosityTotal": 579,
     "partyVerbosityRank": 67,
-    "longestSpeechRank": 57
+    "longestSpeechRank": 55
   },
   "drama": {
     "interruptionsGiven": 46,
@@ -57,19 +57,19 @@
         "word": "bauer",
         "count": 5,
         "ratioParty": 557.8,
-        "ratioBundestag": 286.7
+        "ratioBundestag": 286.0
       },
       {
         "word": "ernährungswirtschaft",
         "count": 6,
         "ratioParty": 71.7,
-        "ratioBundestag": 206.4
+        "ratioBundestag": 205.9
       },
       {
         "word": "forstwirtschaft",
         "count": 6,
         "ratioParty": 66.9,
-        "ratioBundestag": 114.7
+        "ratioBundestag": 116.6
       },
       {
         "word": "vernünftige",
@@ -89,7 +89,7 @@
   "comparison": {
     "speakerAvgWords": 484,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.75,
     "vsParliament": 0.83
   },
@@ -114,11 +114,7 @@
     "question": "Welches Wort nutzt Albert Stegemann häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Demokratie",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
@@ -126,12 +122,16 @@
         "isCorrect": true
       },
       {
-        "text": "Bundesregierung",
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Bauer\" nutzt Albert Stegemann 557.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "286.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "286.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -250,15 +250,15 @@
           "count": 6
         },
         {
-          "word": "rezession",
-          "count": 3
-        },
-        {
           "word": "handel",
           "count": 3
         },
         {
           "word": "produktion",
+          "count": 3
+        },
+        {
+          "word": "rezession",
           "count": 3
         }
       ],
@@ -332,11 +332,11 @@
       ],
       "finanzen": [
         {
-          "word": "bundeshaushalt",
+          "word": "haushalt",
           "count": 2
         },
         {
-          "word": "haushalt",
+          "word": "bundeshaushalt",
           "count": 2
         },
         {
@@ -344,11 +344,11 @@
           "count": 2
         },
         {
-          "word": "kosten",
+          "word": "inflation",
           "count": 1
         },
         {
-          "word": "inflation",
+          "word": "vermögensteuer",
           "count": 1
         }
       ],

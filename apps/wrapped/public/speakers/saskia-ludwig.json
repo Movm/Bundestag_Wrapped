@@ -11,23 +11,23 @@
   "minWords": 83,
   "maxWords": 896,
   "rankings": {
-    "speechRank": 172,
+    "speechRank": 164,
     "wordsRank": 143,
-    "partySpeechRank": 39,
+    "partySpeechRank": 35,
     "partyWordsRank": 37,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 72.6,
+    "totalSpeakers": 625,
+    "percentile": 73.8,
     "verbosityRank": 70,
     "verbosityTotal": 579,
     "partyVerbosityRank": 26,
-    "longestSpeechRank": 139
+    "longestSpeechRank": 137
   },
   "drama": {
     "interruptionsGiven": 5,
     "interruptionsReceived": 59,
-    "interrupterRank": 349,
-    "interruptedRank": 78
+    "interrupterRank": 351,
+    "interruptedRank": 76
   },
   "words": {
     "topWords": [
@@ -40,11 +40,11 @@
         "count": 23
       },
       {
-        "word": "wissen",
+        "word": "reden",
         "count": 21
       },
       {
-        "word": "reden",
+        "word": "wissen",
         "count": 21
       },
       {
@@ -57,31 +57,31 @@
         "word": "terawattstunden",
         "count": 6,
         "ratioParty": 98.8,
-        "ratioBundestag": 110.0
+        "ratioBundestag": 109.7
       },
       {
         "word": "solar",
         "count": 5,
         "ratioParty": 82.4,
-        "ratioBundestag": 47.7
+        "ratioBundestag": 47.6
       },
       {
         "word": "erden",
         "count": 8,
         "ratioParty": 69.8,
-        "ratioBundestag": 94.0
+        "ratioBundestag": 93.8
       },
       {
         "word": "ökodesign",
         "count": 6,
         "ratioParty": 59.3,
-        "ratioBundestag": 50.9
+        "ratioBundestag": 50.8
       },
       {
         "word": "aufpassen",
         "count": 6,
         "ratioParty": 42.4,
-        "ratioBundestag": 49.1
+        "ratioBundestag": 49.0
       }
     ],
     "signatureAdjectives": [
@@ -96,7 +96,7 @@
   "comparison": {
     "speakerAvgWords": 573,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.89,
     "vsParliament": 0.98
   },
@@ -116,10 +116,6 @@
     "question": "Welches Wort nutzt Dr. Saskia Ludwig häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
         "text": "Terawattstunden",
         "isCorrect": true
       },
@@ -128,30 +124,34 @@
         "isCorrect": false
       },
       {
-        "text": "Bildung",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Terawattstunden\" nutzt Dr. Saskia Ludwig 98.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "110.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "109.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Saskia Ludwig häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
         "text": "Sicher",
         "isCorrect": true
       },
       {
-        "text": "Erfolgreich",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
@@ -258,11 +258,11 @@
       ],
       "klima": [
         {
-          "word": "energie",
+          "word": "erneuerbare",
           "count": 7
         },
         {
-          "word": "erneuerbare",
+          "word": "energie",
           "count": 7
         },
         {
@@ -274,7 +274,7 @@
           "count": 4
         },
         {
-          "word": "atomkraft",
+          "word": "energiewende",
           "count": 4
         }
       ],
@@ -306,15 +306,15 @@
           "count": 3
         },
         {
+          "word": "umverteilung",
+          "count": 1
+        },
+        {
           "word": "rentner",
           "count": 1
         },
         {
           "word": "familie",
-          "count": 1
-        },
-        {
-          "word": "umverteilung",
           "count": 1
         }
       ],
@@ -340,19 +340,19 @@
           "count": 6
         },
         {
-          "word": "iran",
-          "count": 2
-        },
-        {
           "word": "europa",
           "count": 2
         },
         {
-          "word": "binnenmarkt",
+          "word": "iran",
+          "count": 2
+        },
+        {
+          "word": "bündnis",
           "count": 1
         },
         {
-          "word": "abkommen",
+          "word": "binnenmarkt",
           "count": 1
         }
       ],
@@ -406,11 +406,11 @@
           "count": 4
         },
         {
-          "word": "entlastung",
+          "word": "haushalt",
           "count": 3
         },
         {
-          "word": "haushalt",
+          "word": "entlastung",
           "count": 3
         },
         {
@@ -428,11 +428,11 @@
           "count": 3
         },
         {
-          "word": "arbeitnehmer",
+          "word": "arbeitslosigkeit",
           "count": 2
         },
         {
-          "word": "arbeitslosigkeit",
+          "word": "arbeitnehmer",
           "count": 2
         },
         {

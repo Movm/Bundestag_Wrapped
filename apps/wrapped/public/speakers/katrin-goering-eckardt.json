@@ -11,23 +11,23 @@
   "minWords": 22,
   "maxWords": 791,
   "rankings": {
-    "speechRank": 323,
+    "speechRank": 320,
     "wordsRank": 297,
     "partySpeechRank": 57,
     "partyWordsRank": 50,
-    "partySize": 87,
-    "totalSpeakers": 627,
-    "percentile": 48.5,
-    "verbosityRank": 124,
+    "partySize": 86,
+    "totalSpeakers": 625,
+    "percentile": 48.8,
+    "verbosityRank": 122,
     "verbosityTotal": 579,
     "partyVerbosityRank": 11,
-    "longestSpeechRank": 260
+    "longestSpeechRank": 258
   },
   "drama": {
     "interruptionsGiven": 4,
     "interruptionsReceived": 18,
-    "interrupterRank": 358,
-    "interruptedRank": 349
+    "interrupterRank": 370,
+    "interruptedRank": 346
   },
   "words": {
     "topWords": [
@@ -40,11 +40,11 @@
         "count": 18
       },
       {
-        "word": "erinnern",
+        "word": "land",
         "count": 16
       },
       {
-        "word": "land",
+        "word": "erinnern",
         "count": 16
       },
       {
@@ -56,40 +56,40 @@
       {
         "word": "kunst",
         "count": 10,
-        "ratioParty": 209.3,
-        "ratioBundestag": 74.0
+        "ratioParty": 207.6,
+        "ratioBundestag": 73.8
       },
       {
         "word": "freundschaft",
         "count": 10,
-        "ratioParty": 174.4,
-        "ratioBundestag": 105.1
+        "ratioParty": 173.0,
+        "ratioBundestag": 104.9
       },
       {
         "word": "polnischen",
         "count": 5,
-        "ratioParty": 130.8,
-        "ratioBundestag": 44.2
+        "ratioParty": 129.7,
+        "ratioBundestag": 44.1
       },
       {
         "word": "einheit",
         "count": 5,
-        "ratioParty": 52.3,
-        "ratioBundestag": 20.5
+        "ratioParty": 51.9,
+        "ratioBundestag": 20.4
       },
       {
         "word": "feiern",
         "count": 14,
-        "ratioParty": 41.9,
-        "ratioBundestag": 60.8
+        "ratioParty": 41.5,
+        "ratioBundestag": 60.7
       }
     ],
     "signatureAdjectives": []
   },
   "comparison": {
     "speakerAvgWords": 524,
-    "partyAvgWords": 543,
-    "parliamentAvgWords": 585,
+    "partyAvgWords": 538,
+    "parliamentAvgWords": 584,
     "vsParty": 0.97,
     "vsParliament": 0.9
   },
@@ -109,24 +109,24 @@
     "question": "Welches Wort nutzt Katrin Göring-Eckardt häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Verantwortung",
+        "text": "Kunst",
+        "isCorrect": true
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
         "isCorrect": false
       },
       {
         "text": "Fraktion",
         "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Kunst",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Kunst\" nutzt Katrin Göring-Eckardt 209.3× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "74.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Kunst\" nutzt Katrin Göring-Eckardt 207.6× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "73.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -243,15 +243,15 @@
           "count": 2
         },
         {
+          "word": "handwerk",
+          "count": 1
+        },
+        {
           "word": "mittelstand",
           "count": 1
         },
         {
           "word": "konzerne",
-          "count": 1
-        },
-        {
-          "word": "firmen",
           "count": 1
         }
       ],
@@ -259,10 +259,6 @@
         {
           "word": "eltern",
           "count": 2
-        },
-        {
-          "word": "kinder",
-          "count": 1
         },
         {
           "word": "wohnung",
@@ -275,6 +271,10 @@
         {
           "word": "jugendliche",
           "count": 1
+        },
+        {
+          "word": "kinder",
+          "count": 1
         }
       ],
       "sicherheit": [
@@ -283,19 +283,19 @@
           "count": 3
         },
         {
-          "word": "angriff",
-          "count": 1
-        },
-        {
-          "word": "spionage",
-          "count": 1
-        },
-        {
           "word": "gewalt",
           "count": 1
         },
         {
           "word": "soldaten",
+          "count": 1
+        },
+        {
+          "word": "täter",
+          "count": 1
+        },
+        {
+          "word": "angriff",
           "count": 1
         }
       ],
@@ -333,21 +333,21 @@
           "count": 2
         },
         {
-          "word": "universitäten",
+          "word": "bildung",
           "count": 1
         },
         {
-          "word": "bildung",
+          "word": "universitäten",
           "count": 1
         }
       ],
       "finanzen": [
         {
-          "word": "erbschaftsteuer",
+          "word": "bundesrechnungshof",
           "count": 2
         },
         {
-          "word": "bundesrechnungshof",
+          "word": "erbschaftsteuer",
           "count": 2
         },
         {
@@ -355,11 +355,11 @@
           "count": 1
         },
         {
-          "word": "haushaltsentwurf",
+          "word": "entlastung",
           "count": 1
         },
         {
-          "word": "steuer",
+          "word": "haushalt",
           "count": 1
         }
       ],
@@ -375,15 +375,15 @@
       ],
       "mobilitaet": [
         {
-          "word": "verkehr",
-          "count": 1
-        },
-        {
           "word": "fliegen",
           "count": 1
         },
         {
           "word": "straßen",
+          "count": 1
+        },
+        {
+          "word": "verkehr",
           "count": 1
         }
       ]

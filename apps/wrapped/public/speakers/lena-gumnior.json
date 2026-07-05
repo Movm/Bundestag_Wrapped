@@ -11,23 +11,23 @@
   "minWords": 16,
   "maxWords": 720,
   "rankings": {
-    "speechRank": 115,
+    "speechRank": 127,
     "wordsRank": 126,
-    "partySpeechRank": 22,
+    "partySpeechRank": 24,
     "partyWordsRank": 20,
-    "partySize": 87,
-    "totalSpeakers": 627,
-    "percentile": 81.7,
-    "verbosityRank": 286,
+    "partySize": 86,
+    "totalSpeakers": 625,
+    "percentile": 79.7,
+    "verbosityRank": 287,
     "verbosityTotal": 579,
     "partyVerbosityRank": 30,
-    "longestSpeechRank": 351
+    "longestSpeechRank": 349
   },
   "drama": {
     "interruptionsGiven": 50,
     "interruptionsReceived": 47,
-    "interrupterRank": 102,
-    "interruptedRank": 124
+    "interrupterRank": 103,
+    "interruptedRank": 125
   },
   "words": {
     "topWords": [
@@ -54,54 +54,58 @@
       {
         "word": "geld",
         "count": 21
+      },
+      {
+        "word": "schutz",
+        "count": 19
       }
     ],
     "signatureWords": [
       {
         "word": "kommunalpolitiker",
         "count": 15,
-        "ratioParty": 296.3,
-        "ratioBundestag": 124.0
+        "ratioParty": 293.9,
+        "ratioBundestag": 123.7
       },
       {
         "word": "kommunalpolitikerinnen",
         "count": 5,
-        "ratioParty": 296.3,
-        "ratioBundestag": 129.1
-      },
-      {
-        "word": "strafbarkeit",
-        "count": 5,
-        "ratioParty": 148.2,
-        "ratioBundestag": 59.0
-      },
-      {
-        "word": "sozialpolitik",
-        "count": 7,
-        "ratioParty": 103.7,
-        "ratioBundestag": 34.4
+        "ratioParty": 293.9,
+        "ratioBundestag": 128.8
       },
       {
         "word": "strafbar",
         "count": 7,
-        "ratioParty": 103.7,
-        "ratioBundestag": 49.9
+        "ratioParty": 205.7,
+        "ratioBundestag": 52.5
+      },
+      {
+        "word": "strafbarkeit",
+        "count": 5,
+        "ratioParty": 146.9,
+        "ratioBundestag": 58.9
+      },
+      {
+        "word": "sozialpolitik",
+        "count": 7,
+        "ratioParty": 102.9,
+        "ratioBundestag": 34.4
       }
     ],
     "signatureAdjectives": [
       {
         "word": "wirksam",
         "count": 5,
-        "ratioParty": 8.7,
+        "ratioParty": 8.6,
         "ratioBundestag": 7.4
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 436,
-    "partyAvgWords": 543,
-    "parliamentAvgWords": 585,
-    "vsParty": 0.8,
+    "partyAvgWords": 538,
+    "parliamentAvgWords": 584,
+    "vsParty": 0.81,
     "vsParliament": 0.75
   },
   "funFacts": [
@@ -125,34 +129,30 @@
     "question": "Welches Wort nutzt Dr. Lena Gumnior häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
         "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
+        "text": "Rente",
         "isCorrect": false
       },
       {
         "text": "Kommunalpolitiker",
         "isCorrect": true
+      },
+      {
+        "text": "Klima",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kommunalpolitiker\" nutzt Dr. Lena Gumnior 296.3× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "124.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Kommunalpolitiker\" nutzt Dr. Lena Gumnior 293.9× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "123.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Lena Gumnior häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Wirksam",
-        "isCorrect": true
-      },
-      {
-        "text": "Sozial",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
@@ -160,11 +160,15 @@
         "isCorrect": false
       },
       {
-        "text": "Sicher",
+        "text": "Wirksam",
+        "isCorrect": true
+      },
+      {
+        "text": "Neu",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wirksam\" nutzt Dr. Lena Gumnior 8.7× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationParty": "\"Wirksam\" nutzt Dr. Lena Gumnior 8.6× häufiger als der GRÜNE-Durchschnitt.",
     "explanationBundestag": "7.4× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -267,11 +271,11 @@
       ],
       "klima": [
         {
-          "word": "klimaschutz",
+          "word": "nachhaltig",
           "count": 1
         },
         {
-          "word": "nachhaltig",
+          "word": "klimaschutz",
           "count": 1
         }
       ],
@@ -377,15 +381,15 @@
           "count": 3
         },
         {
-          "word": "bildung",
-          "count": 2
-        },
-        {
           "word": "ausbildung",
           "count": 2
         },
         {
-          "word": "forschung",
+          "word": "bildung",
+          "count": 2
+        },
+        {
+          "word": "schule",
           "count": 1
         }
       ],
@@ -399,11 +403,11 @@
           "count": 3
         },
         {
-          "word": "subventionen",
+          "word": "investitionen",
           "count": 2
         },
         {
-          "word": "investitionen",
+          "word": "subventionen",
           "count": 2
         },
         {
@@ -445,19 +449,19 @@
           "count": 1
         },
         {
-          "word": "nahverkehr",
+          "word": "infrastruktur",
           "count": 1
         },
         {
-          "word": "straßen",
-          "count": 1
-        },
-        {
-          "word": "straße",
+          "word": "flughafen",
           "count": 1
         },
         {
           "word": "autos",
+          "count": 1
+        },
+        {
+          "word": "nahverkehr",
           "count": 1
         }
       ]

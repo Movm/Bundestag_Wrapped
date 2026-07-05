@@ -11,23 +11,23 @@
   "minWords": 52,
   "maxWords": 765,
   "rankings": {
-    "speechRank": 382,
-    "wordsRank": 412,
-    "partySpeechRank": 71,
+    "speechRank": 377,
+    "wordsRank": 410,
+    "partySpeechRank": 70,
     "partyWordsRank": 81,
     "partySize": 114,
-    "totalSpeakers": 627,
-    "percentile": 39.1,
+    "totalSpeakers": 625,
+    "percentile": 39.7,
     "verbosityRank": 235,
     "verbosityTotal": 579,
     "partyVerbosityRank": 52,
-    "longestSpeechRank": 290
+    "longestSpeechRank": 288
   },
   "drama": {
     "interruptionsGiven": 19,
     "interruptionsReceived": 3,
-    "interrupterRank": 213,
-    "interruptedRank": 567
+    "interrupterRank": 209,
+    "interruptedRank": 570
   },
   "words": {
     "topWords": [
@@ -52,11 +52,11 @@
         "count": 9
       },
       {
-        "word": "klar",
+        "word": "soll",
         "count": 8
       },
       {
-        "word": "soll",
+        "word": "klar",
         "count": 8
       },
       {
@@ -69,31 +69,31 @@
         "word": "nutztierhaltung",
         "count": 7,
         "ratioParty": 657.4,
-        "ratioBundestag": 412.3
+        "ratioBundestag": 411.3
       },
       {
         "word": "tierhaltungskennzeichnung",
         "count": 5,
         "ratioParty": 234.8,
-        "ratioBundestag": 235.6
+        "ratioBundestag": 235.1
       },
       {
         "word": "tierwohl",
         "count": 14,
         "ratioParty": 219.1,
-        "ratioBundestag": 209.4
+        "ratioBundestag": 208.9
       },
       {
         "word": "kennzeichnung",
         "count": 6,
         "ratioParty": 187.8,
-        "ratioBundestag": 108.7
+        "ratioBundestag": 108.5
       },
       {
         "word": "tierschutz",
         "count": 9,
         "ratioParty": 130.0,
-        "ratioBundestag": 92.2
+        "ratioBundestag": 92.0
       }
     ],
     "signatureAdjectives": []
@@ -101,9 +101,9 @@
   "comparison": {
     "speakerAvgWords": 459,
     "partyAvgWords": 618,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.74,
-    "vsParliament": 0.78
+    "vsParliament": 0.79
   },
   "funFacts": [
     {
@@ -126,11 +126,7 @@
     "question": "Welches Wort nutzt Jens Behrens häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
@@ -138,12 +134,16 @@
         "isCorrect": true
       },
       {
-        "text": "Minister",
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesellschaft",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Nutztierhaltung\" nutzt Jens Behrens 657.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "412.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "411.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -254,11 +254,11 @@
           "count": 2
         },
         {
-          "word": "betrieb",
+          "word": "produktion",
           "count": 1
         },
         {
-          "word": "produktion",
+          "word": "kapital",
           "count": 1
         },
         {
@@ -268,11 +268,11 @@
       ],
       "soziales": [
         {
-          "word": "familie",
+          "word": "familien",
           "count": 1
         },
         {
-          "word": "familien",
+          "word": "familie",
           "count": 1
         }
       ],
@@ -298,15 +298,15 @@
           "count": 3
         },
         {
+          "word": "onlinehandel",
+          "count": 1
+        },
+        {
           "word": "digital",
           "count": 1
         },
         {
           "word": "digitalisierung",
-          "count": 1
-        },
-        {
-          "word": "onlinehandel",
           "count": 1
         }
       ],
@@ -342,15 +342,23 @@
           "count": 2
         },
         {
-          "word": "haushalt",
+          "word": "gewerbesteuer",
           "count": 1
         },
         {
-          "word": "finanzierung",
+          "word": "steuer",
           "count": 1
         }
       ],
       "justiz": [
+        {
+          "word": "grundgesetz",
+          "count": 1
+        },
+        {
+          "word": "gesetzgebung",
+          "count": 1
+        },
         {
           "word": "novelle",
           "count": 1
@@ -361,14 +369,6 @@
         },
         {
           "word": "bundesverfassungsgericht",
-          "count": 1
-        },
-        {
-          "word": "rechtsprechung",
-          "count": 1
-        },
-        {
-          "word": "grundgesetz",
           "count": 1
         }
       ],

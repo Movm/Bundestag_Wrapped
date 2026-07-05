@@ -11,23 +11,23 @@
   "minWords": 95,
   "maxWords": 823,
   "rankings": {
-    "speechRank": 348,
+    "speechRank": 350,
     "wordsRank": 267,
-    "partySpeechRank": 94,
+    "partySpeechRank": 96,
     "partyWordsRank": 76,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 44.5,
+    "totalSpeakers": 625,
+    "percentile": 44.0,
     "verbosityRank": 47,
     "verbosityTotal": 579,
     "partyVerbosityRank": 19,
-    "longestSpeechRank": 220
+    "longestSpeechRank": 218
   },
   "drama": {
     "interruptionsGiven": 42,
     "interruptionsReceived": 7,
     "interrupterRank": 127,
-    "interruptedRank": 503
+    "interruptedRank": 505
   },
   "words": {
     "topWords": [
@@ -40,16 +40,20 @@
         "count": 16
       },
       {
-        "word": "digitale",
+        "word": "vertrauen",
         "count": 15
       },
       {
-        "word": "vertrauen",
+        "word": "digitale",
         "count": 15
       },
       {
         "word": "diesen",
         "count": 14
+      },
+      {
+        "word": "menschen",
+        "count": 13
       }
     ],
     "signatureWords": [
@@ -69,13 +73,13 @@
         "word": "wallet",
         "count": 6,
         "ratioParty": 30.6,
-        "ratioBundestag": 60.6
+        "ratioBundestag": 62.4
       },
       {
         "word": "schlüsseltechnologien",
         "count": 5,
         "ratioParty": 20.5,
-        "ratioBundestag": 37.6
+        "ratioBundestag": 37.5
       },
       {
         "word": "hightech",
@@ -89,7 +93,7 @@
         "word": "entscheidend",
         "count": 8,
         "ratioParty": 7.0,
-        "ratioBundestag": 10.2
+        "ratioBundestag": 10.3
       },
       {
         "word": "wirtschaftlich",
@@ -102,7 +106,7 @@
   "comparison": {
     "speakerAvgWords": 614,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.95,
     "vsParliament": 1.05
   },
@@ -127,20 +131,20 @@
     "question": "Welches Wort nutzt Ronja Kemmer häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Fraktion",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Familie",
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
         "text": "Wildberger",
         "isCorrect": true
-      },
-      {
-        "text": "Migration",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Wildberger\" nutzt Ronja Kemmer 41.9× häufiger als der CDU/CSU-Durchschnitt.",
@@ -150,11 +154,7 @@
     "question": "Welches Adjektiv nutzt Ronja Kemmer häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Stark",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
+        "text": "Alt",
         "isCorrect": false
       },
       {
@@ -162,12 +162,16 @@
         "isCorrect": true
       },
       {
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
         "text": "Schlecht",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Entscheidend\" nutzt Ronja Kemmer 7.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "10.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "10.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -315,19 +319,19 @@
       ],
       "gesundheit": [
         {
-          "word": "covid",
-          "count": 1
-        },
-        {
-          "word": "kliniken",
-          "count": 1
-        },
-        {
           "word": "gesundheitswesen",
           "count": 1
         },
         {
           "word": "medizin",
+          "count": 1
+        },
+        {
+          "word": "covid",
+          "count": 1
+        },
+        {
+          "word": "kliniken",
           "count": 1
         }
       ],
@@ -341,15 +345,15 @@
           "count": 3
         },
         {
+          "word": "gipfel",
+          "count": 2
+        },
+        {
           "word": "iran",
           "count": 2
         },
         {
           "word": "putin",
-          "count": 2
-        },
-        {
-          "word": "russland",
           "count": 2
         }
       ],
@@ -363,15 +367,15 @@
           "count": 8
         },
         {
-          "word": "netz",
-          "count": 6
-        },
-        {
           "word": "digital",
           "count": 6
         },
         {
-          "word": "internet",
+          "word": "netz",
+          "count": 6
+        },
+        {
+          "word": "glasfaser",
           "count": 4
         }
       ],
@@ -389,11 +393,11 @@
           "count": 1
         },
         {
-          "word": "hochschulen",
+          "word": "universitäten",
           "count": 1
         },
         {
-          "word": "schule",
+          "word": "hochschulen",
           "count": 1
         }
       ],
@@ -415,17 +419,17 @@
           "count": 1
         },
         {
-          "word": "etat",
+          "word": "sondervermögen",
           "count": 1
         }
       ],
       "justiz": [
         {
-          "word": "verordnung",
+          "word": "datenschutz",
           "count": 2
         },
         {
-          "word": "datenschutz",
+          "word": "verordnung",
           "count": 2
         },
         {

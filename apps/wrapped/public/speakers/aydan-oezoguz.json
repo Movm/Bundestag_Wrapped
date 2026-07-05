@@ -11,34 +11,26 @@
   "minWords": 379,
   "maxWords": 529,
   "rankings": {
-    "speechRank": 534,
-    "wordsRank": 548,
+    "speechRank": 529,
+    "wordsRank": 546,
     "partySpeechRank": 88,
     "partyWordsRank": 98,
     "partySize": 114,
-    "totalSpeakers": 627,
-    "percentile": 14.8,
-    "verbosityRank": 276,
+    "totalSpeakers": 625,
+    "percentile": 15.4,
+    "verbosityRank": 275,
     "verbosityTotal": 579,
     "partyVerbosityRank": 65,
-    "longestSpeechRank": 561
+    "longestSpeechRank": 557
   },
   "drama": {
     "interruptionsGiven": 10,
     "interruptionsReceived": 5,
-    "interrupterRank": 276,
-    "interruptedRank": 539
+    "interrupterRank": 272,
+    "interruptedRank": 537
   },
   "words": {
     "topWords": [
-      {
-        "word": "taliban",
-        "count": 5
-      },
-      {
-        "word": "deutschland",
-        "count": 5
-      },
       {
         "word": "wichtig",
         "count": 5
@@ -48,7 +40,15 @@
         "count": 5
       },
       {
-        "word": "afghanistan",
+        "word": "taliban",
+        "count": 5
+      },
+      {
+        "word": "deutschland",
+        "count": 5
+      },
+      {
+        "word": "irak",
         "count": 4
       },
       {
@@ -56,11 +56,15 @@
         "count": 4
       },
       {
-        "word": "frauen",
+        "word": "soldaten",
         "count": 4
       },
       {
-        "word": "soldaten",
+        "word": "afghanistan",
+        "count": 4
+      },
+      {
+        "word": "frauen",
         "count": 4
       }
     ],
@@ -69,7 +73,7 @@
         "word": "taliban",
         "count": 5,
         "ratioParty": 338.9,
-        "ratioBundestag": 119.0
+        "ratioBundestag": 120.8
       },
       {
         "word": "kommunen",
@@ -89,7 +93,7 @@
   "comparison": {
     "speakerAvgWords": 440,
     "partyAvgWords": 618,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.71,
     "vsParliament": 0.75
   },
@@ -114,24 +118,24 @@
     "question": "Welches Wort nutzt Aydan Özoğuz häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
         "text": "Taliban",
         "isCorrect": true
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
-      },
-      {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Taliban\" nutzt Aydan Özoğuz 338.9× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "119.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "120.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -254,11 +258,11 @@
           "count": 3
         },
         {
-          "word": "bundespolizei",
+          "word": "armee",
           "count": 1
         },
         {
-          "word": "armee",
+          "word": "bundespolizei",
           "count": 1
         }
       ],
@@ -304,15 +308,15 @@
       ],
       "justiz": [
         {
+          "word": "gefängnis",
+          "count": 1
+        },
+        {
           "word": "menschenrechte",
           "count": 1
         },
         {
           "word": "gleichberechtigung",
-          "count": 1
-        },
-        {
-          "word": "gefängnis",
           "count": 1
         }
       ],

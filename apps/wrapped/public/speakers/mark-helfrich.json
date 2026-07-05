@@ -11,23 +11,23 @@
   "minWords": 14,
   "maxWords": 662,
   "rankings": {
-    "speechRank": 376,
-    "wordsRank": 409,
-    "partySpeechRank": 107,
+    "speechRank": 400,
+    "wordsRank": 407,
+    "partySpeechRank": 115,
     "partyWordsRank": 127,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 40.0,
-    "verbosityRank": 387,
+    "totalSpeakers": 625,
+    "percentile": 36.0,
+    "verbosityRank": 388,
     "verbosityTotal": 579,
-    "partyVerbosityRank": 135,
-    "longestSpeechRank": 421
+    "partyVerbosityRank": 136,
+    "longestSpeechRank": 419
   },
   "drama": {
     "interruptionsGiven": 8,
     "interruptionsReceived": 32,
-    "interrupterRank": 289,
-    "interruptedRank": 216
+    "interrupterRank": 290,
+    "interruptedRank": 221
   },
   "words": {
     "topWords": [
@@ -69,31 +69,31 @@
         "word": "klimaziel",
         "count": 8,
         "ratioParty": 354.0,
-        "ratioBundestag": 177.7
+        "ratioBundestag": 177.3
       },
       {
         "word": "pariser",
         "count": 5,
         "ratioParty": 110.6,
-        "ratioBundestag": 93.7
+        "ratioBundestag": 93.4
       },
       {
         "word": "umweltpolitik",
         "count": 8,
         "ratioParty": 107.7,
-        "ratioBundestag": 141.5
+        "ratioBundestag": 141.2
       },
       {
         "word": "bepreisung",
         "count": 7,
         "ratioParty": 58.6,
-        "ratioBundestag": 50.7
+        "ratioBundestag": 50.5
       },
       {
         "word": "emissionshandel",
         "count": 6,
         "ratioParty": 35.7,
-        "ratioBundestag": 59.1
+        "ratioBundestag": 58.9
       }
     ],
     "signatureAdjectives": [
@@ -114,7 +114,7 @@
   "comparison": {
     "speakerAvgWords": 392,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.61,
     "vsParliament": 0.67
   },
@@ -134,30 +134,34 @@
     "question": "Welches Wort nutzt Mark Helfrich häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
         "text": "Klimaziel",
         "isCorrect": true
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Klimaziel\" nutzt Mark Helfrich 354.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "177.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "177.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Mark Helfrich häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Gefährlich",
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
         "isCorrect": false
       },
       {
@@ -165,11 +169,7 @@
         "isCorrect": true
       },
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
+        "text": "Wichtig",
         "isCorrect": false
       }
     ],
@@ -352,11 +352,11 @@
       ],
       "digital": [
         {
-          "word": "technologie",
+          "word": "netzausbau",
           "count": 1
         },
         {
-          "word": "netzausbau",
+          "word": "technologie",
           "count": 1
         }
       ],

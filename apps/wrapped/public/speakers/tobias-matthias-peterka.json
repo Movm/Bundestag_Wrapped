@@ -11,23 +11,23 @@
   "minWords": 65,
   "maxWords": 1005,
   "rankings": {
-    "speechRank": 185,
+    "speechRank": 199,
     "wordsRank": 153,
-    "partySpeechRank": 40,
+    "partySpeechRank": 44,
     "partyWordsRank": 33,
-    "partySize": 151,
-    "totalSpeakers": 627,
-    "percentile": 70.5,
-    "verbosityRank": 379,
+    "partySize": 150,
+    "totalSpeakers": 625,
+    "percentile": 68.2,
+    "verbosityRank": 380,
     "verbosityTotal": 579,
     "partyVerbosityRank": 100,
-    "longestSpeechRank": 81
+    "longestSpeechRank": 79
   },
   "drama": {
     "interruptionsGiven": 53,
     "interruptionsReceived": 32,
-    "interrupterRank": 94,
-    "interruptedRank": 215
+    "interrupterRank": 95,
+    "interruptedRank": 216
   },
   "words": {
     "topWords": [
@@ -48,32 +48,32 @@
       {
         "word": "bestrafung",
         "count": 6,
-        "ratioParty": 122.5,
-        "ratioBundestag": 162.1
+        "ratioParty": 121.9,
+        "ratioBundestag": 161.7
       },
       {
         "word": "hubig",
         "count": 8,
-        "ratioParty": 54.5,
-        "ratioBundestag": 28.7
+        "ratioParty": 54.2,
+        "ratioBundestag": 28.6
       },
       {
         "word": "nachher",
         "count": 5,
-        "ratioParty": 46.4,
-        "ratioBundestag": 47.8
+        "ratioParty": 46.2,
+        "ratioBundestag": 47.7
       },
       {
         "word": "vorfeld",
         "count": 5,
-        "ratioParty": 24.3,
-        "ratioBundestag": 33.8
+        "ratioParty": 24.2,
+        "ratioBundestag": 34.2
       },
       {
         "word": "bekanntlich",
         "count": 6,
-        "ratioParty": 19.8,
-        "ratioBundestag": 31.7
+        "ratioParty": 19.7,
+        "ratioBundestag": 31.6
       }
     ],
     "signatureAdjectives": [
@@ -99,9 +99,9 @@
   },
   "comparison": {
     "speakerAvgWords": 395,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
-    "vsParty": 0.7,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
+    "vsParty": 0.71,
     "vsParliament": 0.68
   },
   "funFacts": [
@@ -125,34 +125,30 @@
     "question": "Welches Wort nutzt Tobias Matthias Peterka häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Migration",
-        "isCorrect": false
+        "text": "Bestrafung",
+        "isCorrect": true
       },
       {
         "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Bestrafung",
-        "isCorrect": true
+        "text": "Demokratie",
+        "isCorrect": false
       },
       {
-        "text": "Familie",
+        "text": "Sicherheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bestrafung\" nutzt Tobias Matthias Peterka 122.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "162.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bestrafung\" nutzt Tobias Matthias Peterka 121.9× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "161.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Tobias Matthias Peterka häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
+        "text": "Alt",
         "isCorrect": false
       },
       {
@@ -160,7 +156,11 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
         "isCorrect": false
       }
     ],
@@ -237,7 +237,7 @@
     "topicWords": {
       "migration": [
         {
-          "word": "asylverfahren",
+          "word": "asylgesetz",
           "count": 1
         },
         {
@@ -245,29 +245,29 @@
           "count": 1
         },
         {
-          "word": "asylgesetz",
-          "count": 1
-        },
-        {
-          "word": "migranten",
-          "count": 1
-        },
-        {
           "word": "grenze",
+          "count": 1
+        },
+        {
+          "word": "asyl",
+          "count": 1
+        },
+        {
+          "word": "asylverfahren",
           "count": 1
         }
       ],
       "klima": [
-        {
-          "word": "nachhaltig",
-          "count": 1
-        },
         {
           "word": "nachhaltigkeit",
           "count": 1
         },
         {
           "word": "kreislaufwirtschaft",
+          "count": 1
+        },
+        {
+          "word": "nachhaltig",
           "count": 1
         }
       ],
@@ -285,11 +285,11 @@
           "count": 2
         },
         {
-          "word": "kredit",
+          "word": "mittelstand",
           "count": 1
         },
         {
-          "word": "konkurrenz",
+          "word": "handel",
           "count": 1
         }
       ],
@@ -311,7 +311,7 @@
           "count": 3
         },
         {
-          "word": "wohnung",
+          "word": "kind",
           "count": 2
         }
       ],
@@ -319,10 +319,6 @@
         {
           "word": "gewalt",
           "count": 3
-        },
-        {
-          "word": "korruption",
-          "count": 2
         },
         {
           "word": "kriminalität",
@@ -333,7 +329,11 @@
           "count": 2
         },
         {
-          "word": "terror",
+          "word": "korruption",
+          "count": 2
+        },
+        {
+          "word": "landespolizei",
           "count": 1
         }
       ],
@@ -345,6 +345,14 @@
       ],
       "europa": [
         {
+          "word": "allianz",
+          "count": 1
+        },
+        {
+          "word": "brüssel",
+          "count": 1
+        },
+        {
           "word": "israel",
           "count": 1
         },
@@ -355,28 +363,16 @@
         {
           "word": "außenminister",
           "count": 1
-        },
-        {
-          "word": "nato",
-          "count": 1
-        },
-        {
-          "word": "china",
-          "count": 1
         }
       ],
       "digital": [
-        {
-          "word": "internet",
-          "count": 3
-        },
         {
           "word": "digitalisierung",
           "count": 3
         },
         {
-          "word": "daten",
-          "count": 1
+          "word": "internet",
+          "count": 3
         },
         {
           "word": "digital",
@@ -384,6 +380,10 @@
         },
         {
           "word": "datensicherheit",
+          "count": 1
+        },
+        {
+          "word": "daten",
           "count": 1
         }
       ],
@@ -411,11 +411,11 @@
       ],
       "finanzen": [
         {
-          "word": "haushalt",
+          "word": "schulden",
           "count": 2
         },
         {
-          "word": "schulden",
+          "word": "haushalt",
           "count": 2
         },
         {
@@ -449,7 +449,7 @@
           "count": 3
         },
         {
-          "word": "justizministerium",
+          "word": "richter",
           "count": 2
         }
       ],
@@ -461,6 +461,10 @@
       ],
       "mobilitaet": [
         {
+          "word": "infrastruktur",
+          "count": 1
+        },
+        {
           "word": "bahnhof",
           "count": 1
         },
@@ -470,10 +474,6 @@
         },
         {
           "word": "straßen",
-          "count": 1
-        },
-        {
-          "word": "infrastruktur",
           "count": 1
         }
       ]

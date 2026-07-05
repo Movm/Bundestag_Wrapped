@@ -11,23 +11,23 @@
   "minWords": 32,
   "maxWords": 864,
   "rankings": {
-    "speechRank": 418,
+    "speechRank": 427,
     "wordsRank": 275,
-    "partySpeechRank": 121,
+    "partySpeechRank": 125,
     "partyWordsRank": 80,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 33.3,
-    "verbosityRank": 201,
+    "totalSpeakers": 625,
+    "percentile": 31.7,
+    "verbosityRank": 202,
     "verbosityTotal": 579,
     "partyVerbosityRank": 72,
-    "longestSpeechRank": 172
+    "longestSpeechRank": 171
   },
   "drama": {
     "interruptionsGiven": 141,
     "interruptionsReceived": 18,
     "interrupterRank": 28,
-    "interruptedRank": 345
+    "interruptedRank": 347
   },
   "words": {
     "topWords": [
@@ -73,31 +73,31 @@
         "word": "forschungs",
         "count": 11,
         "ratioParty": 300.3,
-        "ratioBundestag": 231.8
+        "ratioBundestag": 231.2
       },
       {
         "word": "forschungsförderung",
         "count": 5,
         "ratioParty": 109.2,
-        "ratioBundestag": 102.2
+        "ratioBundestag": 101.9
       },
       {
         "word": "forscherinnen",
         "count": 5,
         "ratioParty": 78.0,
-        "ratioBundestag": 116.3
+        "ratioBundestag": 116.0
       },
       {
         "word": "innovationsfreiheitsgesetz",
         "count": 6,
         "ratioParty": 77.1,
-        "ratioBundestag": 202.3
+        "ratioBundestag": 201.8
       },
       {
         "word": "weltspitze",
         "count": 6,
         "ratioParty": 72.8,
-        "ratioBundestag": 101.1
+        "ratioBundestag": 100.9
       }
     ],
     "signatureAdjectives": [
@@ -112,7 +112,7 @@
   "comparison": {
     "speakerAvgWords": 473,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.73,
     "vsParliament": 0.81
   },
@@ -137,34 +137,30 @@
     "question": "Welches Wort nutzt Florian Müller häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetz",
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
         "isCorrect": false
       },
       {
         "text": "Forschungs",
         "isCorrect": true
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Forschungs\" nutzt Florian Müller 300.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "231.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "231.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Florian Müller häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
+        "text": "Gut",
         "isCorrect": false
       },
       {
@@ -172,7 +168,11 @@
         "isCorrect": true
       },
       {
-        "text": "Wichtig",
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
@@ -359,11 +359,11 @@
           "count": 1
         },
         {
-          "word": "dsgvo",
+          "word": "computer",
           "count": 1
         },
         {
-          "word": "computer",
+          "word": "dsgvo",
           "count": 1
         }
       ],

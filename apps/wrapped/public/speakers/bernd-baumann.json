@@ -11,17 +11,17 @@
   "minWords": 10,
   "maxWords": 1546,
   "rankings": {
-    "speechRank": 188,
+    "speechRank": 191,
     "wordsRank": 130,
     "partySpeechRank": 42,
     "partyWordsRank": 28,
-    "partySize": 151,
-    "totalSpeakers": 627,
-    "percentile": 70.0,
+    "partySize": 150,
+    "totalSpeakers": 625,
+    "percentile": 69.4,
     "verbosityRank": 58,
     "verbosityTotal": 579,
     "partyVerbosityRank": 14,
-    "longestSpeechRank": 18
+    "longestSpeechRank": 16
   },
   "drama": {
     "interruptionsGiven": 428,
@@ -40,19 +40,19 @@
         "count": 47
       },
       {
-        "word": "union",
-        "count": 41
-      },
-      {
         "word": "regierung",
         "count": 41
       },
       {
-        "word": "wähler",
-        "count": 23
+        "word": "union",
+        "count": 41
       },
       {
         "word": "dobrindt",
+        "count": 23
+      },
+      {
+        "word": "wähler",
         "count": 23
       },
       {
@@ -76,59 +76,59 @@
       {
         "word": "orient",
         "count": 6,
-        "ratioParty": 585.3,
-        "ratioBundestag": 2632.7
+        "ratioParty": 582.1,
+        "ratioBundestag": 2626.5
       },
       {
         "word": "asylanten",
         "count": 10,
-        "ratioParty": 243.9,
-        "ratioBundestag": 1097.0
+        "ratioParty": 242.6,
+        "ratioBundestag": 1094.4
       },
       {
         "word": "familiennachzugs",
         "count": 8,
-        "ratioParty": 195.1,
-        "ratioBundestag": 61.6
+        "ratioParty": 194.0,
+        "ratioBundestag": 61.4
       },
       {
         "word": "clans",
         "count": 19,
-        "ratioParty": 185.3,
-        "ratioBundestag": 347.4
+        "ratioParty": 184.3,
+        "ratioBundestag": 346.6
       },
       {
         "word": "asylmigranten",
         "count": 9,
-        "ratioParty": 97.5,
-        "ratioBundestag": 438.8
+        "ratioParty": 97.0,
+        "ratioBundestag": 437.7
       }
     ],
     "signatureAdjectives": [
       {
         "word": "unfassbar",
         "count": 5,
-        "ratioParty": 37.5,
+        "ratioParty": 37.3,
         "ratioBundestag": 29.6
       },
       {
         "word": "wirkungslos",
         "count": 5,
-        "ratioParty": 20.3,
-        "ratioBundestag": 46.7
+        "ratioParty": 20.2,
+        "ratioBundestag": 46.6
       },
       {
         "word": "links",
         "count": 22,
-        "ratioParty": 7.2,
-        "ratioBundestag": 19.3
+        "ratioParty": 7.1,
+        "ratioBundestag": 19.2
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 604,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
     "vsParty": 1.08,
     "vsParliament": 1.03
   },
@@ -153,7 +153,11 @@
     "question": "Welches Wort nutzt Dr. Bernd Baumann häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bürger",
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
         "isCorrect": false
       },
       {
@@ -163,36 +167,32 @@
       {
         "text": "Bildung",
         "isCorrect": false
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Orient\" nutzt Dr. Bernd Baumann 585.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "2632.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Orient\" nutzt Dr. Bernd Baumann 582.1× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "2626.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Bernd Baumann häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
+        "text": "Falsch",
         "isCorrect": false
       },
       {
         "text": "Unfassbar",
         "isCorrect": true
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unfassbar\" nutzt Dr. Bernd Baumann 37.5× häufiger als der AfD-Durchschnitt.",
+    "explanationParty": "\"Unfassbar\" nutzt Dr. Bernd Baumann 37.3× häufiger als der AfD-Durchschnitt.",
     "explanationBundestag": "29.6× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
@@ -291,7 +291,7 @@
           "count": 2
         },
         {
-          "word": "klimapolitik",
+          "word": "müll",
           "count": 1
         },
         {
@@ -299,17 +299,17 @@
           "count": 1
         },
         {
-          "word": "müll",
+          "word": "klimapolitik",
           "count": 1
         }
       ],
       "wirtschaft": [
         {
-          "word": "unternehmen",
+          "word": "industrie",
           "count": 2
         },
         {
-          "word": "industrie",
+          "word": "unternehmen",
           "count": 2
         },
         {
@@ -317,11 +317,11 @@
           "count": 2
         },
         {
-          "word": "maschinenbau",
+          "word": "wirtschaft",
           "count": 1
         },
         {
-          "word": "qualifikation",
+          "word": "wettbewerb",
           "count": 1
         }
       ],
@@ -421,21 +421,21 @@
           "count": 2
         },
         {
-          "word": "steuern",
-          "count": 1
-        },
-        {
-          "word": "zinsen",
-          "count": 1
-        },
-        {
           "word": "neuverschuldung",
+          "count": 1
+        },
+        {
+          "word": "banken",
+          "count": 1
+        },
+        {
+          "word": "konjunkturprogramm",
           "count": 1
         }
       ],
       "justiz": [
         {
-          "word": "richter",
+          "word": "richterin",
           "count": 2
         },
         {
@@ -447,11 +447,11 @@
           "count": 2
         },
         {
-          "word": "richterin",
+          "word": "richter",
           "count": 2
         },
         {
-          "word": "straftaten",
+          "word": "strafen",
           "count": 1
         }
       ],

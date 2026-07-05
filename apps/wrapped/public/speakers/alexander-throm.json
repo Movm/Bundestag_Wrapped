@@ -11,23 +11,23 @@
   "minWords": 17,
   "maxWords": 743,
   "rankings": {
-    "speechRank": 163,
+    "speechRank": 173,
     "wordsRank": 223,
-    "partySpeechRank": 35,
+    "partySpeechRank": 39,
     "partyWordsRank": 62,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 74.0,
+    "totalSpeakers": 625,
+    "percentile": 72.3,
     "verbosityRank": 442,
     "verbosityTotal": 579,
     "partyVerbosityRank": 153,
-    "longestSpeechRank": 321
+    "longestSpeechRank": 319
   },
   "drama": {
     "interruptionsGiven": 27,
     "interruptionsReceived": 62,
     "interrupterRank": 177,
-    "interruptedRank": 68
+    "interruptedRank": 70
   },
   "words": {
     "topWords": [
@@ -57,31 +57,31 @@
         "word": "schutzberechtigten",
         "count": 7,
         "ratioParty": 165.2,
-        "ratioBundestag": 272.1
+        "ratioBundestag": 271.5
       },
       {
         "word": "dublin",
         "count": 14,
         "ratioParty": 125.9,
-        "ratioBundestag": 116.6
+        "ratioBundestag": 116.3
       },
       {
         "word": "bünger",
         "count": 7,
         "ratioParty": 120.1,
-        "ratioBundestag": 163.3
+        "ratioBundestag": 193.9
       },
       {
         "word": "baumann",
         "count": 8,
         "ratioParty": 94.4,
-        "ratioBundestag": 88.0
+        "ratioBundestag": 87.8
       },
       {
         "word": "familiennachzug",
         "count": 10,
         "ratioParty": 75.5,
-        "ratioBundestag": 57.7
+        "ratioBundestag": 57.6
       }
     ],
     "signatureAdjectives": [
@@ -89,13 +89,13 @@
         "word": "dreist",
         "count": 3,
         "ratioParty": 188.8,
-        "ratioBundestag": 62.5
+        "ratioBundestag": 62.3
       },
       {
         "word": "effektiv",
         "count": 3,
         "ratioParty": 11.6,
-        "ratioBundestag": 13.2
+        "ratioBundestag": 13.1
       },
       {
         "word": "falsch",
@@ -108,7 +108,7 @@
   "comparison": {
     "speakerAvgWords": 363,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.56,
     "vsParliament": 0.62
   },
@@ -133,47 +133,47 @@
     "question": "Welches Wort nutzt Alexander Throm häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetz",
+        "text": "Fraktion",
         "isCorrect": false
-      },
-      {
-        "text": "Schutzberechtigten",
-        "isCorrect": true
       },
       {
         "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Kinder",
+        "text": "Investitionen",
         "isCorrect": false
+      },
+      {
+        "text": "Schutzberechtigten",
+        "isCorrect": true
       }
     ],
     "explanationParty": "\"Schutzberechtigten\" nutzt Alexander Throm 165.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "272.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "271.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Alexander Throm häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
+        "text": "National",
         "isCorrect": false
       },
       {
         "text": "Dreist",
         "isCorrect": true
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Dreist\" nutzt Alexander Throm 188.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "62.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "62.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -291,23 +291,15 @@
       ],
       "wirtschaft": [
         {
-          "word": "wirtschaft",
+          "word": "fachkräfte",
           "count": 1
         },
         {
-          "word": "fachkräfte",
+          "word": "wirtschaft",
           "count": 1
         }
       ],
       "soziales": [
-        {
-          "word": "fürsorge",
-          "count": 2
-        },
-        {
-          "word": "jugend",
-          "count": 2
-        },
         {
           "word": "sozialleistungen",
           "count": 2
@@ -317,7 +309,15 @@
           "count": 2
         },
         {
-          "word": "kinder",
+          "word": "fürsorge",
+          "count": 2
+        },
+        {
+          "word": "jugend",
+          "count": 2
+        },
+        {
+          "word": "familien",
           "count": 1
         }
       ],
@@ -345,11 +345,11 @@
       ],
       "gesundheit": [
         {
-          "word": "arzt",
+          "word": "ärzte",
           "count": 1
         },
         {
-          "word": "ärzte",
+          "word": "arzt",
           "count": 1
         }
       ],
@@ -363,15 +363,15 @@
           "count": 2
         },
         {
-          "word": "ukrainer",
-          "count": 1
-        },
-        {
           "word": "freizügigkeit",
           "count": 1
         },
         {
           "word": "nato",
+          "count": 1
+        },
+        {
+          "word": "ukrainer",
           "count": 1
         }
       ],
@@ -413,11 +413,11 @@
           "count": 2
         },
         {
-          "word": "beschluss",
+          "word": "gerichte",
           "count": 1
         },
         {
-          "word": "gerichte",
+          "word": "beschluss",
           "count": 1
         }
       ],

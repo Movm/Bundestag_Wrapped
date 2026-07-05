@@ -11,23 +11,23 @@
   "minWords": 43,
   "maxWords": 730,
   "rankings": {
-    "speechRank": 75,
+    "speechRank": 71,
     "wordsRank": 152,
-    "partySpeechRank": 21,
+    "partySpeechRank": 19,
     "partyWordsRank": 43,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 88.0,
-    "verbosityRank": 405,
+    "totalSpeakers": 625,
+    "percentile": 88.6,
+    "verbosityRank": 406,
     "verbosityTotal": 579,
     "partyVerbosityRank": 141,
-    "longestSpeechRank": 339
+    "longestSpeechRank": 337
   },
   "drama": {
     "interruptionsGiven": 56,
     "interruptionsReceived": 59,
     "interrupterRank": 92,
-    "interruptedRank": 77
+    "interruptedRank": 78
   },
   "words": {
     "topWords": [
@@ -56,11 +56,11 @@
         "count": 22
       },
       {
-        "word": "letzten",
+        "word": "welt",
         "count": 20
       },
       {
-        "word": "welt",
+        "word": "letzten",
         "count": 20
       },
       {
@@ -73,7 +73,7 @@
         "word": "versenkt",
         "count": 6,
         "ratioParty": 449.0,
-        "ratioBundestag": 126.2
+        "ratioBundestag": 125.9
       },
       {
         "word": "tankrabatt",
@@ -85,13 +85,13 @@
         "word": "stets",
         "count": 7,
         "ratioParty": 34.9,
-        "ratioBundestag": 32.7
+        "ratioBundestag": 33.0
       },
       {
         "word": "willkommen",
         "count": 5,
         "ratioParty": 32.5,
-        "ratioBundestag": 26.0
+        "ratioBundestag": 25.9
       },
       {
         "word": "autos",
@@ -118,7 +118,7 @@
   "comparison": {
     "speakerAvgWords": 379,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.59,
     "vsParliament": 0.65
   },
@@ -143,11 +143,7 @@
     "question": "Welches Wort nutzt Tilman Kuban häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
@@ -155,26 +151,30 @@
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Rente",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Versenkt\" nutzt Tilman Kuban 449.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "126.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "125.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Tilman Kuban häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Stark",
-        "isCorrect": false
-      },
-      {
         "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "Notwendig",
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
         "isCorrect": false
       },
       {
@@ -297,11 +297,11 @@
           "count": 2
         },
         {
-          "word": "klimapolitik",
+          "word": "emissionen",
           "count": 1
         },
         {
-          "word": "umwelt",
+          "word": "klimawandel",
           "count": 1
         }
       ],
@@ -319,11 +319,11 @@
           "count": 7
         },
         {
-          "word": "wettbewerbsfähigkeit",
+          "word": "handelsabkommen",
           "count": 6
         },
         {
-          "word": "handelsabkommen",
+          "word": "wettbewerbsfähigkeit",
           "count": 6
         }
       ],
@@ -337,7 +337,7 @@
           "count": 3
         },
         {
-          "word": "rentenniveau",
+          "word": "jugendliche",
           "count": 1
         },
         {
@@ -363,21 +363,21 @@
           "count": 2
         },
         {
-          "word": "abschreckung",
+          "word": "militär",
           "count": 1
         },
         {
-          "word": "soldat",
+          "word": "abschreckung",
           "count": 1
         }
       ],
       "gesundheit": [
         {
-          "word": "pflegeheim",
+          "word": "krankenhäuser",
           "count": 2
         },
         {
-          "word": "krankenhäuser",
+          "word": "pflegeheim",
           "count": 2
         },
         {
@@ -441,7 +441,7 @@
       ],
       "finanzen": [
         {
-          "word": "währung",
+          "word": "haushalt",
           "count": 3
         },
         {
@@ -449,7 +449,7 @@
           "count": 3
         },
         {
-          "word": "haushalt",
+          "word": "währung",
           "count": 3
         },
         {
@@ -463,15 +463,15 @@
       ],
       "justiz": [
         {
-          "word": "datenschutz",
-          "count": 2
-        },
-        {
           "word": "menschenrechte",
           "count": 2
         },
         {
           "word": "rechtsstaatlichkeit",
+          "count": 2
+        },
+        {
+          "word": "datenschutz",
           "count": 2
         },
         {
@@ -485,10 +485,6 @@
           "count": 3
         },
         {
-          "word": "arbeitsplatz",
-          "count": 2
-        },
-        {
           "word": "beschäftigte",
           "count": 2
         },
@@ -497,7 +493,11 @@
           "count": 2
         },
         {
-          "word": "lohn",
+          "word": "arbeitsplatz",
+          "count": 2
+        },
+        {
+          "word": "arbeiter",
           "count": 1
         }
       ],

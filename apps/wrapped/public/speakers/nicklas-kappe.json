@@ -16,18 +16,18 @@
     "partySpeechRank": 32,
     "partyWordsRank": 33,
     "partySize": 211,
-    "totalSpeakers": 627,
+    "totalSpeakers": 625,
     "percentile": 75.4,
-    "verbosityRank": 41,
+    "verbosityRank": 42,
     "verbosityTotal": 579,
     "partyVerbosityRank": 18,
-    "longestSpeechRank": 88
+    "longestSpeechRank": 87
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 40,
-    "interrupterRank": 403,
-    "interruptedRank": 157
+    "interrupterRank": 419,
+    "interruptedRank": 160
   },
   "words": {
     "topWords": [
@@ -57,31 +57,31 @@
         "word": "chemiepark",
         "count": 6,
         "ratioParty": 815.0,
-        "ratioBundestag": 1260.4
+        "ratioBundestag": 1257.4
       },
       {
         "word": "ökodesign",
         "count": 14,
         "ratioParty": 271.7,
-        "ratioBundestag": 127.9
+        "ratioBundestag": 127.6
       },
       {
         "word": "carbon",
         "count": 6,
         "ratioParty": 135.8,
-        "ratioBundestag": 280.1
+        "ratioBundestag": 279.4
       },
       {
         "word": "vorgabe",
         "count": 6,
         "ratioParty": 62.7,
-        "ratioBundestag": 53.6
+        "ratioBundestag": 53.5
       },
       {
         "word": "stahlindustrie",
         "count": 7,
         "ratioParty": 55.9,
-        "ratioBundestag": 37.2
+        "ratioBundestag": 37.6
       }
     ],
     "signatureAdjectives": [
@@ -114,7 +114,7 @@
   "comparison": {
     "speakerAvgWords": 629,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.98,
     "vsParliament": 1.08
   },
@@ -134,7 +134,11 @@
     "question": "Welches Wort nutzt Nicklas Kappe häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bildung",
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
         "isCorrect": false
       },
       {
@@ -142,35 +146,31 @@
         "isCorrect": true
       },
       {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
+        "text": "Energie",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Chemiepark\" nutzt Nicklas Kappe 815.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "1260.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "1257.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Nicklas Kappe häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
         "text": "Stark",
         "isCorrect": false
       },
       {
-        "text": "Klar",
+        "text": "Groß",
         "isCorrect": false
       },
       {
         "text": "Vernünftig",
         "isCorrect": true
+      },
+      {
+        "text": "Richtig",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Vernünftig\" nutzt Nicklas Kappe 8.7× häufiger als der CDU/CSU-Durchschnitt.",
@@ -296,15 +296,15 @@
           "count": 5
         },
         {
-          "word": "kernenergie",
-          "count": 4
-        },
-        {
           "word": "erneuerbare",
           "count": 4
         },
         {
-          "word": "emissionen",
+          "word": "kernenergie",
+          "count": 4
+        },
+        {
+          "word": "klimaneutralität",
           "count": 3
         }
       ],
@@ -322,11 +322,11 @@
           "count": 10
         },
         {
-          "word": "mittelstand",
+          "word": "stahlindustrie",
           "count": 7
         },
         {
-          "word": "stahlindustrie",
+          "word": "mittelstand",
           "count": 7
         }
       ],
@@ -376,7 +376,7 @@
           "count": 2
         },
         {
-          "word": "china",
+          "word": "frieden",
           "count": 1
         }
       ],
@@ -386,11 +386,11 @@
           "count": 15
         },
         {
-          "word": "computer",
+          "word": "netz",
           "count": 2
         },
         {
-          "word": "netz",
+          "word": "computer",
           "count": 2
         },
         {
@@ -412,11 +412,11 @@
           "count": 3
         },
         {
-          "word": "entlastung",
+          "word": "finanzierung",
           "count": 1
         },
         {
-          "word": "finanzierung",
+          "word": "entlastung",
           "count": 1
         }
       ],
@@ -430,15 +430,15 @@
           "count": 1
         },
         {
-          "word": "gleichberechtigung",
-          "count": 1
-        },
-        {
           "word": "grundgesetz",
           "count": 1
         },
         {
           "word": "gericht",
+          "count": 1
+        },
+        {
+          "word": "gleichberechtigung",
           "count": 1
         }
       ],
@@ -466,11 +466,11 @@
           "count": 1
         },
         {
-          "word": "autos",
+          "word": "fliegen",
           "count": 1
         },
         {
-          "word": "ladeinfrastruktur",
+          "word": "autos",
           "count": 1
         }
       ]

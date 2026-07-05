@@ -11,17 +11,17 @@
   "minWords": 41,
   "maxWords": 455,
   "rankings": {
-    "speechRank": 569,
-    "wordsRank": 595,
-    "partySpeechRank": 186,
+    "speechRank": 556,
+    "wordsRank": 593,
+    "partySpeechRank": 179,
     "partyWordsRank": 198,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 9.3,
+    "totalSpeakers": 625,
+    "percentile": 11.0,
     "verbosityRank": 549,
     "verbosityTotal": 579,
     "partyVerbosityRank": 173,
-    "longestSpeechRank": 596
+    "longestSpeechRank": 594
   },
   "drama": {
     "interruptionsGiven": 0,
@@ -32,11 +32,11 @@
   "words": {
     "topWords": [
       {
-        "word": "menschen",
+        "word": "freiheit",
         "count": 8
       },
       {
-        "word": "freiheit",
+        "word": "menschen",
         "count": 8
       },
       {
@@ -44,19 +44,15 @@
         "count": 7
       },
       {
-        "word": "geschützt",
-        "count": 6
-      },
-      {
         "word": "schutz",
         "count": 6
       },
       {
-        "word": "eines",
-        "count": 5
+        "word": "geschützt",
+        "count": 6
       },
       {
-        "word": "stärken",
+        "word": "kinder",
         "count": 5
       },
       {
@@ -64,7 +60,11 @@
         "count": 5
       },
       {
-        "word": "kinder",
+        "word": "eines",
+        "count": 5
+      },
+      {
+        "word": "stärken",
         "count": 5
       },
       {
@@ -77,13 +77,13 @@
         "word": "geschützt",
         "count": 6,
         "ratioParty": 121.1,
-        "ratioBundestag": 82.0
+        "ratioBundestag": 81.8
       },
       {
         "word": "opfer",
         "count": 7,
         "ratioParty": 36.2,
-        "ratioBundestag": 39.7
+        "ratioBundestag": 39.6
       },
       {
         "word": "freiheit",
@@ -109,14 +109,14 @@
         "word": "geschützt",
         "count": 6,
         "ratioParty": 121.1,
-        "ratioBundestag": 82.0
+        "ratioBundestag": 81.8
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 232,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.36,
     "vsParliament": 0.4
   },
@@ -136,10 +136,6 @@
     "question": "Welches Wort nutzt Johannes Rothenberger häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
         "text": "Reform",
         "isCorrect": false
       },
@@ -148,35 +144,39 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaft",
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Geschützt\" nutzt Johannes Rothenberger 121.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "82.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "81.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Johannes Rothenberger häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
         "text": "Geschützt",
         "isCorrect": true
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Geschützt\" nutzt Johannes Rothenberger 121.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "82.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "81.8× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦫",
@@ -298,11 +298,11 @@
       ],
       "europa": [
         {
-          "word": "binnenmarkt",
+          "word": "europa",
           "count": 1
         },
         {
-          "word": "europa",
+          "word": "binnenmarkt",
           "count": 1
         }
       ],

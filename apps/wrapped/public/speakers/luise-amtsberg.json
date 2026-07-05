@@ -11,23 +11,23 @@
   "minWords": 45,
   "maxWords": 1339,
   "rankings": {
-    "speechRank": 78,
+    "speechRank": 75,
     "wordsRank": 79,
     "partySpeechRank": 11,
     "partyWordsRank": 9,
-    "partySize": 87,
-    "totalSpeakers": 627,
-    "percentile": 87.6,
+    "partySize": 86,
+    "totalSpeakers": 625,
+    "percentile": 88.0,
     "verbosityRank": 53,
     "verbosityTotal": 579,
     "partyVerbosityRank": 5,
-    "longestSpeechRank": 26
+    "longestSpeechRank": 24
   },
   "drama": {
     "interruptionsGiven": 38,
     "interruptionsReceived": 18,
-    "interrupterRank": 139,
-    "interruptedRank": 344
+    "interrupterRank": 135,
+    "interruptedRank": 343
   },
   "words": {
     "topWords": [
@@ -40,11 +40,11 @@
         "count": 25
       },
       {
-        "word": "bundesregierung",
+        "word": "mission",
         "count": 24
       },
       {
-        "word": "mission",
+        "word": "bundesregierung",
         "count": 24
       },
       {
@@ -56,48 +56,48 @@
       {
         "word": "assad",
         "count": 10,
-        "ratioParty": 246.2,
-        "ratioBundestag": 98.4
+        "ratioParty": 244.2,
+        "ratioBundestag": 98.2
       },
       {
         "word": "mandates",
         "count": 5,
-        "ratioParty": 246.2,
-        "ratioBundestag": 71.8
+        "ratioParty": 244.2,
+        "ratioBundestag": 71.6
       },
       {
         "word": "libanesischen",
         "count": 9,
-        "ratioParty": 221.6,
-        "ratioBundestag": 47.7
+        "ratioParty": 219.8,
+        "ratioBundestag": 47.6
       },
       {
         "word": "palästinensische",
         "count": 7,
-        "ratioParty": 172.4,
-        "ratioBundestag": 96.4
+        "ratioParty": 170.9,
+        "ratioBundestag": 96.2
       },
       {
-        "word": "zivilistinnen",
+        "word": "gazastreifen",
         "count": 5,
-        "ratioParty": 123.1,
-        "ratioBundestag": 61.5
+        "ratioParty": 122.1,
+        "ratioBundestag": 20.0
       }
     ],
     "signatureAdjectives": [
       {
         "word": "geschützt",
         "count": 3,
-        "ratioParty": 3.4,
+        "ratioParty": 3.3,
         "ratioBundestag": 3.6
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 610,
-    "partyAvgWords": 543,
-    "parliamentAvgWords": 585,
-    "vsParty": 1.12,
+    "partyAvgWords": 538,
+    "parliamentAvgWords": 584,
+    "vsParty": 1.13,
     "vsParliament": 1.04
   },
   "funFacts": [
@@ -121,34 +121,30 @@
     "question": "Welches Wort nutzt Luise Amtsberg häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Debatte",
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
         "isCorrect": false
       },
       {
         "text": "Assad",
         "isCorrect": true
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
-      },
-      {
-        "text": "Demokratie",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Assad\" nutzt Luise Amtsberg 246.2× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "98.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Assad\" nutzt Luise Amtsberg 244.2× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "98.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Luise Amtsberg häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
+        "text": "Jung",
         "isCorrect": false
       },
       {
@@ -156,11 +152,15 @@
         "isCorrect": true
       },
       {
-        "text": "Wichtig",
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Geschützt\" nutzt Luise Amtsberg 3.4× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationParty": "\"Geschützt\" nutzt Luise Amtsberg 3.3× häufiger als der GRÜNE-Durchschnitt.",
     "explanationBundestag": "3.6× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -269,11 +269,11 @@
           "count": 2
         },
         {
-          "word": "abschiebung",
+          "word": "integration",
           "count": 1
         },
         {
-          "word": "grenze",
+          "word": "abschiebung",
           "count": 1
         }
       ],
@@ -293,29 +293,29 @@
       ],
       "wirtschaft": [
         {
+          "word": "zoll",
+          "count": 2
+        },
+        {
           "word": "unternehmen",
           "count": 2
         },
         {
           "word": "handel",
           "count": 2
-        },
-        {
-          "word": "zoll",
-          "count": 2
         }
       ],
       "soziales": [
+        {
+          "word": "kinder",
+          "count": 2
+        },
         {
           "word": "familie",
           "count": 2
         },
         {
           "word": "armut",
-          "count": 2
-        },
-        {
-          "word": "kinder",
           "count": 2
         },
         {
@@ -337,21 +337,17 @@
           "count": 7
         },
         {
-          "word": "waffen",
+          "word": "streitkräfte",
           "count": 5
         },
         {
-          "word": "streitkräfte",
+          "word": "waffen",
           "count": 5
         }
       ],
       "gesundheit": [
         {
           "word": "gesundheitssystem",
-          "count": 1
-        },
-        {
-          "word": "krankenhäuser",
           "count": 1
         },
         {
@@ -364,6 +360,10 @@
         },
         {
           "word": "pflegekräfte",
+          "count": 1
+        },
+        {
+          "word": "krankenhäuser",
           "count": 1
         }
       ],
@@ -397,11 +397,11 @@
       ],
       "bildung": [
         {
-          "word": "ausbildung",
+          "word": "universität",
           "count": 1
         },
         {
-          "word": "universität",
+          "word": "ausbildung",
           "count": 1
         },
         {
@@ -419,15 +419,15 @@
           "count": 2
         },
         {
-          "word": "sondervermögen",
-          "count": 1
-        },
-        {
           "word": "schuldenbremse",
           "count": 1
         },
         {
-          "word": "bundeshaushalt",
+          "word": "sondervermögen",
+          "count": 1
+        },
+        {
+          "word": "haushaltsausschuss",
           "count": 1
         },
         {
@@ -445,11 +445,11 @@
           "count": 2
         },
         {
-          "word": "rechtsstaatlichkeit",
+          "word": "gerichte",
           "count": 1
         },
         {
-          "word": "gerichte",
+          "word": "rechtsstaatlichkeit",
           "count": 1
         }
       ],
@@ -463,15 +463,15 @@
           "count": 3
         },
         {
-          "word": "schiff",
-          "count": 2
-        },
-        {
           "word": "hafen",
           "count": 2
         },
         {
-          "word": "bahn",
+          "word": "schiff",
+          "count": 2
+        },
+        {
+          "word": "straßen",
           "count": 1
         }
       ]

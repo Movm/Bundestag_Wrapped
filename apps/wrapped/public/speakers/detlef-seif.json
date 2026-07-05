@@ -11,22 +11,22 @@
   "minWords": 57,
   "maxWords": 710,
   "rankings": {
-    "speechRank": 226,
+    "speechRank": 225,
     "wordsRank": 255,
     "partySpeechRank": 58,
     "partyWordsRank": 72,
     "partySize": 211,
-    "totalSpeakers": 627,
+    "totalSpeakers": 625,
     "percentile": 64.0,
     "verbosityRank": 341,
     "verbosityTotal": 579,
     "partyVerbosityRank": 118,
-    "longestSpeechRank": 365
+    "longestSpeechRank": 363
   },
   "drama": {
     "interruptionsGiven": 18,
     "interruptionsReceived": 104,
-    "interrupterRank": 216,
+    "interrupterRank": 215,
     "interruptedRank": 25
   },
   "words": {
@@ -48,16 +48,20 @@
         "count": 19
       },
       {
-        "word": "verfahren",
+        "word": "deutschland",
         "count": 17
       },
       {
-        "word": "deutschland",
+        "word": "verfahren",
         "count": 17
       },
       {
         "word": "union",
         "count": 14
+      },
+      {
+        "word": "schutz",
+        "count": 12
       }
     ],
     "signatureWords": [
@@ -65,31 +69,31 @@
         "word": "visum",
         "count": 6,
         "ratioParty": 630.8,
-        "ratioBundestag": 259.7
+        "ratioBundestag": 277.6
       },
       {
         "word": "aufnahmezusage",
         "count": 6,
         "ratioParty": 315.4,
-        "ratioBundestag": 114.6
+        "ratioBundestag": 138.8
       },
       {
         "word": "aufschrei",
         "count": 5,
         "ratioParty": 262.8,
-        "ratioBundestag": 135.2
+        "ratioBundestag": 134.9
       },
       {
         "word": "überlastung",
         "count": 5,
         "ratioParty": 131.4,
-        "ratioBundestag": 79.2
+        "ratioBundestag": 79.0
       },
       {
         "word": "asylsystem",
         "count": 7,
         "ratioParty": 58.9,
-        "ratioBundestag": 81.1
+        "ratioBundestag": 81.0
       }
     ],
     "signatureAdjectives": [
@@ -104,7 +108,7 @@
   "comparison": {
     "speakerAvgWords": 411,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.64,
     "vsParliament": 0.7
   },
@@ -129,30 +133,34 @@
     "question": "Welches Wort nutzt Detlef Seif häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
         "text": "Visum",
         "isCorrect": true
+      },
+      {
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Visum\" nutzt Detlef Seif 630.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "259.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "277.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Detlef Seif häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Wichtig",
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
         "isCorrect": false
       },
       {
@@ -160,11 +168,7 @@
         "isCorrect": true
       },
       {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
@@ -281,7 +285,7 @@
           "count": 4
         },
         {
-          "word": "abschiebehaft",
+          "word": "subsidiär",
           "count": 3
         }
       ],
@@ -313,11 +317,11 @@
           "count": 2
         },
         {
-          "word": "kind",
+          "word": "familie",
           "count": 1
         },
         {
-          "word": "wohnungsmarkt",
+          "word": "kind",
           "count": 1
         }
       ],
@@ -355,19 +359,19 @@
           "count": 2
         },
         {
-          "word": "ukraine",
-          "count": 1
-        },
-        {
           "word": "türkei",
           "count": 1
         },
         {
-          "word": "europäisch",
+          "word": "außenminister",
           "count": 1
         },
         {
-          "word": "außenminister",
+          "word": "bündnis",
+          "count": 1
+        },
+        {
+          "word": "europäisch",
           "count": 1
         }
       ],
@@ -403,11 +407,11 @@
           "count": 6
         },
         {
-          "word": "gericht",
+          "word": "rechtsstaat",
           "count": 2
         },
         {
-          "word": "rechtsstaatlichkeit",
+          "word": "gericht",
           "count": 2
         },
         {

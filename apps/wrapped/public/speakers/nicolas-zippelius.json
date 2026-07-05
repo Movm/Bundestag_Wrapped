@@ -11,23 +11,23 @@
   "minWords": 13,
   "maxWords": 2457,
   "rankings": {
-    "speechRank": 261,
+    "speechRank": 267,
     "wordsRank": 144,
-    "partySpeechRank": 69,
+    "partySpeechRank": 73,
     "partyWordsRank": 38,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 58.4,
+    "totalSpeakers": 625,
+    "percentile": 57.3,
     "verbosityRank": 101,
     "verbosityTotal": 579,
     "partyVerbosityRank": 38,
-    "longestSpeechRank": 8
+    "longestSpeechRank": 6
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 19,
-    "interrupterRank": 415,
-    "interruptedRank": 341
+    "interrupterRank": 408,
+    "interruptedRank": 340
   },
   "words": {
     "topWords": [
@@ -69,31 +69,31 @@
         "word": "notfallverfahren",
         "count": 7,
         "ratioParty": 520.5,
-        "ratioBundestag": 536.4
+        "ratioBundestag": 535.1
       },
       {
         "word": "drucksache",
         "count": 17,
         "ratioParty": 505.6,
-        "ratioBundestag": 142.1
+        "ratioBundestag": 141.8
       },
       {
         "word": "marktüberwachungsbehörden",
         "count": 5,
         "ratioParty": 371.8,
-        "ratioBundestag": 287.3
+        "ratioBundestag": 286.7
       },
       {
         "word": "wirtschaftspartnerschaftsabkommen",
         "count": 7,
         "ratioParty": 347.0,
-        "ratioBundestag": 536.4
+        "ratioBundestag": 535.1
       },
       {
         "word": "kabel",
         "count": 5,
         "ratioParty": 185.9,
-        "ratioBundestag": 143.7
+        "ratioBundestag": 143.3
       }
     ],
     "signatureAdjectives": [
@@ -108,9 +108,9 @@
   "comparison": {
     "speakerAvgWords": 541,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.84,
-    "vsParliament": 0.92
+    "vsParliament": 0.93
   },
   "funFacts": [
     {
@@ -126,18 +126,14 @@
     {
       "emoji": "📏",
       "label": "Längste Rede",
-      "value": "#8 (2.457 Wörter)"
+      "value": "#6 (2.457 Wörter)"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Nicolas Zippelius häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
@@ -145,31 +141,35 @@
         "isCorrect": true
       },
       {
-        "text": "Kinder",
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Haushalt",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Notfallverfahren\" nutzt Nicolas Zippelius 520.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "536.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "535.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Nicolas Zippelius häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Stark",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
-        "text": "Neu",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
         "text": "Zentral",
         "isCorrect": true
-      },
-      {
-        "text": "Europäisch",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Zentral\" nutzt Nicolas Zippelius 9.8× häufiger als der CDU/CSU-Durchschnitt.",
@@ -287,6 +287,10 @@
       ],
       "klima": [
         {
+          "word": "nachhaltig",
+          "count": 1
+        },
+        {
           "word": "energiewende",
           "count": 1
         },
@@ -296,10 +300,6 @@
         },
         {
           "word": "erdgas",
-          "count": 1
-        },
-        {
-          "word": "nachhaltig",
           "count": 1
         }
       ],
@@ -349,10 +349,6 @@
       ],
       "gesundheit": [
         {
-          "word": "gesundheitswesen",
-          "count": 1
-        },
-        {
           "word": "notfall",
           "count": 1
         },
@@ -367,6 +363,10 @@
         {
           "word": "covid",
           "count": 1
+        },
+        {
+          "word": "gesundheitswesen",
+          "count": 1
         }
       ],
       "europa": [
@@ -379,15 +379,15 @@
           "count": 9
         },
         {
+          "word": "außenpolitik",
+          "count": 5
+        },
+        {
           "word": "russland",
           "count": 5
         },
         {
           "word": "krieg",
-          "count": 5
-        },
-        {
-          "word": "außenpolitik",
           "count": 5
         }
       ],
@@ -403,11 +403,11 @@
           "count": 1
         },
         {
-          "word": "wissenschaftler",
+          "word": "forschung",
           "count": 1
         },
         {
-          "word": "forschung",
+          "word": "wissenschaftler",
           "count": 1
         }
       ],
@@ -425,11 +425,11 @@
           "count": 3
         },
         {
-          "word": "steuerzahler",
+          "word": "investitionen",
           "count": 2
         },
         {
-          "word": "etat",
+          "word": "steuerzahler",
           "count": 2
         }
       ],
@@ -445,11 +445,11 @@
           "count": 2
         },
         {
-          "word": "angestellte",
+          "word": "arbeitsplätze",
           "count": 1
         },
         {
-          "word": "arbeitsplätze",
+          "word": "angestellte",
           "count": 1
         }
       ],
@@ -459,11 +459,11 @@
           "count": 6
         },
         {
-          "word": "straße",
+          "word": "schiene",
           "count": 3
         },
         {
-          "word": "schiene",
+          "word": "straße",
           "count": 3
         },
         {

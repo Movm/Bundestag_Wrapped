@@ -11,23 +11,23 @@
   "minWords": 473,
   "maxWords": 996,
   "rankings": {
-    "speechRank": 514,
-    "wordsRank": 414,
-    "partySpeechRank": 166,
+    "speechRank": 503,
+    "wordsRank": 412,
+    "partySpeechRank": 162,
     "partyWordsRank": 128,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 18.0,
+    "totalSpeakers": 625,
+    "percentile": 19.5,
     "verbosityRank": 14,
     "verbosityTotal": 579,
     "partyVerbosityRank": 3,
-    "longestSpeechRank": 83
+    "longestSpeechRank": 81
   },
   "drama": {
     "interruptionsGiven": 16,
     "interruptionsReceived": 6,
     "interrupterRank": 224,
-    "interruptedRank": 526
+    "interruptedRank": 524
   },
   "words": {
     "topWords": [
@@ -68,7 +68,7 @@
         "count": 12
       },
       {
-        "word": "ministerin",
+        "word": "glaube",
         "count": 10
       }
     ],
@@ -83,13 +83,13 @@
         "word": "innovationskraft",
         "count": 5,
         "ratioParty": 35.7,
-        "ratioBundestag": 59.6
+        "ratioBundestag": 59.5
       },
       {
         "word": "schwerpunkt",
         "count": 6,
         "ratioParty": 22.9,
-        "ratioBundestag": 32.3
+        "ratioBundestag": 32.4
       },
       {
         "word": "mittelstand",
@@ -116,7 +116,7 @@
   "comparison": {
     "speakerAvgWords": 746,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 1.16,
     "vsParliament": 1.28
   },
@@ -146,7 +146,11 @@
     "question": "Welches Wort nutzt Thomas Bareiß häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Investitionen",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
         "isCorrect": false
       },
       {
@@ -154,11 +158,7 @@
         "isCorrect": true
       },
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
+        "text": "Wirtschaft",
         "isCorrect": false
       }
     ],
@@ -169,20 +169,20 @@
     "question": "Welches Adjektiv nutzt Thomas Bareiß häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
         "text": "Stark",
         "isCorrect": true
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Stark\" nutzt Thomas Bareiß 4.4× häufiger als der CDU/CSU-Durchschnitt.",
@@ -394,11 +394,11 @@
           "count": 20
         },
         {
-          "word": "investitionen",
+          "word": "bundeshaushalt",
           "count": 3
         },
         {
-          "word": "bundeshaushalt",
+          "word": "investitionen",
           "count": 3
         },
         {
@@ -406,7 +406,7 @@
           "count": 1
         },
         {
-          "word": "kosten",
+          "word": "steuern",
           "count": 1
         }
       ],

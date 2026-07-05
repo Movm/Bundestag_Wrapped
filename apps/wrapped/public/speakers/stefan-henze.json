@@ -11,23 +11,23 @@
   "minWords": 359,
   "maxWords": 482,
   "rankings": {
-    "speechRank": 525,
-    "wordsRank": 572,
-    "partySpeechRank": 128,
-    "partyWordsRank": 139,
-    "partySize": 151,
-    "totalSpeakers": 627,
-    "percentile": 16.3,
-    "verbosityRank": 301,
+    "speechRank": 542,
+    "wordsRank": 570,
+    "partySpeechRank": 134,
+    "partyWordsRank": 138,
+    "partySize": 150,
+    "totalSpeakers": 625,
+    "percentile": 13.3,
+    "verbosityRank": 303,
     "verbosityTotal": 579,
-    "partyVerbosityRank": 76,
-    "longestSpeechRank": 586
+    "partyVerbosityRank": 77,
+    "longestSpeechRank": 584
   },
   "drama": {
     "interruptionsGiven": 6,
     "interruptionsReceived": 11,
     "interrupterRank": 336,
-    "interruptedRank": 435
+    "interruptedRank": 448
   },
   "words": {
     "topWords": [
@@ -52,10 +52,6 @@
         "count": 6
       },
       {
-        "word": "haushalt",
-        "count": 5
-      },
-      {
         "word": "fordern",
         "count": 5
       },
@@ -64,11 +60,15 @@
         "count": 5
       },
       {
-        "word": "autobahnen",
+        "word": "haushalt",
+        "count": 5
+      },
+      {
+        "word": "tempolimit",
         "count": 4
       },
       {
-        "word": "geld",
+        "word": "autobahnen",
         "count": 4
       }
     ],
@@ -76,8 +76,8 @@
       {
         "word": "fahren",
         "count": 5,
-        "ratioParty": 21.5,
-        "ratioBundestag": 27.4
+        "ratioParty": 21.4,
+        "ratioBundestag": 27.3
       },
       {
         "word": "haushalt",
@@ -108,8 +108,8 @@
   },
   "comparison": {
     "speakerAvgWords": 430,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
     "vsParty": 0.77,
     "vsParliament": 0.74
   },
@@ -129,7 +129,7 @@
     "question": "Welches Wort nutzt Stefan Henze häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetz",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
@@ -137,16 +137,16 @@
         "isCorrect": false
       },
       {
-        "text": "Fahren",
-        "isCorrect": true
+        "text": "Migration",
+        "isCorrect": false
       },
       {
-        "text": "Europa",
-        "isCorrect": false
+        "text": "Fahren",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Fahren\" nutzt Stefan Henze 21.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "27.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Fahren\" nutzt Stefan Henze 21.4× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "27.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -251,11 +251,11 @@
           "count": 3
         },
         {
-          "word": "kosten",
+          "word": "finanzminister",
           "count": 2
         },
         {
-          "word": "finanzminister",
+          "word": "kosten",
           "count": 2
         }
       ],
@@ -267,11 +267,15 @@
       ],
       "mobilitaet": [
         {
-          "word": "infrastruktur",
+          "word": "tempolimit",
           "count": 4
         },
         {
           "word": "autobahn",
+          "count": 4
+        },
+        {
+          "word": "infrastruktur",
           "count": 4
         },
         {
@@ -280,10 +284,6 @@
         },
         {
           "word": "fahrzeuge",
-          "count": 4
-        },
-        {
-          "word": "tempolimit",
           "count": 4
         }
       ]

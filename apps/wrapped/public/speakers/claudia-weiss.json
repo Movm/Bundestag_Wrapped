@@ -11,23 +11,23 @@
   "minWords": 240,
   "maxWords": 573,
   "rankings": {
-    "speechRank": 358,
-    "wordsRank": 447,
-    "partySpeechRank": 84,
-    "partyWordsRank": 99,
-    "partySize": 151,
-    "totalSpeakers": 627,
-    "percentile": 42.9,
-    "verbosityRank": 358,
+    "speechRank": 347,
+    "wordsRank": 445,
+    "partySpeechRank": 80,
+    "partyWordsRank": 98,
+    "partySize": 150,
+    "totalSpeakers": 625,
+    "percentile": 44.5,
+    "verbosityRank": 359,
     "verbosityTotal": 579,
     "partyVerbosityRank": 92,
-    "longestSpeechRank": 526
+    "longestSpeechRank": 525
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 11,
     "interrupterRank": null,
-    "interruptedRank": 452
+    "interruptedRank": 455
   },
   "words": {
     "topWords": [
@@ -64,11 +64,11 @@
         "count": 11
       },
       {
-        "word": "braucht",
+        "word": "bürger",
         "count": 10
       },
       {
-        "word": "bürger",
+        "word": "darf",
         "count": 10
       }
     ],
@@ -76,31 +76,31 @@
       {
         "word": "pflegebedürftige",
         "count": 5,
-        "ratioParty": 161.3,
-        "ratioBundestag": 126.4
+        "ratioParty": 160.4,
+        "ratioBundestag": 126.1
       },
       {
         "word": "angehörige",
         "count": 11,
-        "ratioParty": 146.1,
-        "ratioBundestag": 89.0
+        "ratioParty": 145.3,
+        "ratioBundestag": 88.8
       },
       {
         "word": "pflege",
         "count": 29,
-        "ratioParty": 119.1,
-        "ratioBundestag": 52.6
+        "ratioParty": 118.4,
+        "ratioBundestag": 52.5
       },
       {
         "word": "pflegekräfte",
         "count": 9,
-        "ratioParty": 96.8,
-        "ratioBundestag": 74.6
+        "ratioParty": 96.3,
+        "ratioBundestag": 74.4
       },
       {
         "word": "angehörigen",
         "count": 6,
-        "ratioParty": 54.2,
+        "ratioParty": 53.9,
         "ratioBundestag": 29.0
       }
     ],
@@ -115,9 +115,9 @@
   },
   "comparison": {
     "speakerAvgWords": 405,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
-    "vsParty": 0.72,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
+    "vsParty": 0.73,
     "vsParliament": 0.69
   },
   "funFacts": [
@@ -136,24 +136,24 @@
     "question": "Welches Wort nutzt Claudia Weiss häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Sicherheit",
-        "isCorrect": false
+        "text": "Pflegebedürftige",
+        "isCorrect": true
       },
       {
         "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Pflegebedürftige",
-        "isCorrect": true
+        "text": "Gesetzentwurf",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Pflegebedürftige\" nutzt Claudia Weiss 161.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "126.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Pflegebedürftige\" nutzt Claudia Weiss 160.4× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "126.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Claudia Weiss häufiger als der Rest der AfD-Fraktion?",
@@ -163,15 +163,15 @@
         "isCorrect": true
       },
       {
-        "text": "Gut",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
-        "text": "National",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "Notwendig",
+        "text": "Erfolgreich",
         "isCorrect": false
       }
     ],
@@ -248,15 +248,15 @@
     "topicWords": {
       "migration": [
         {
+          "word": "asyl",
+          "count": 1
+        },
+        {
           "word": "migration",
           "count": 1
         },
         {
           "word": "asylbewerber",
-          "count": 1
-        },
-        {
-          "word": "asyl",
           "count": 1
         }
       ],
@@ -294,15 +294,15 @@
           "count": 6
         },
         {
-          "word": "altersarmut",
-          "count": 2
-        },
-        {
           "word": "sozialhilfe",
           "count": 2
         },
         {
           "word": "kind",
+          "count": 2
+        },
+        {
+          "word": "altersarmut",
           "count": 2
         }
       ],
@@ -374,11 +374,15 @@
       ],
       "arbeit": [
         {
+          "word": "arbeitnehmer",
+          "count": 1
+        },
+        {
           "word": "beitragssatz",
           "count": 1
         },
         {
-          "word": "arbeitnehmer",
+          "word": "überstunden",
           "count": 1
         },
         {
@@ -387,10 +391,6 @@
         },
         {
           "word": "arbeitszeit",
-          "count": 1
-        },
-        {
-          "word": "überstunden",
           "count": 1
         }
       ],

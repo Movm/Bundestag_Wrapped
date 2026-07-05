@@ -11,22 +11,22 @@
   "minWords": 7,
   "maxWords": 1478,
   "rankings": {
-    "speechRank": 108,
+    "speechRank": 113,
     "wordsRank": 16,
     "partySpeechRank": 26,
     "partyWordsRank": 9,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 82.8,
+    "totalSpeakers": 625,
+    "percentile": 81.9,
     "verbosityRank": 556,
     "verbosityTotal": 579,
     "partyVerbosityRank": 175,
-    "longestSpeechRank": 21
+    "longestSpeechRank": 19
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 25,
-    "interrupterRank": 450,
+    "interrupterRank": 468,
     "interruptedRank": 286
   },
   "words": {
@@ -61,31 +61,31 @@
         "word": "menopause",
         "count": 6,
         "ratioParty": 452.8,
-        "ratioBundestag": 234.3
+        "ratioBundestag": 233.8
       },
       {
         "word": "gesundheitsforschung",
         "count": 11,
         "ratioParty": 415.0,
-        "ratioBundestag": 198.3
+        "ratioBundestag": 197.8
       },
       {
         "word": "endometriose",
         "count": 6,
         "ratioParty": 226.4,
-        "ratioBundestag": 100.4
+        "ratioBundestag": 100.2
       },
       {
         "word": "artemis",
         "count": 5,
         "ratioParty": 188.7,
-        "ratioBundestag": 83.7
+        "ratioBundestag": 83.5
       },
       {
         "word": "weltall",
         "count": 5,
         "ratioParty": 188.7,
-        "ratioBundestag": 146.5
+        "ratioBundestag": 146.1
       }
     ],
     "signatureAdjectives": [
@@ -93,7 +93,7 @@
         "word": "hervorragend",
         "count": 7,
         "ratioParty": 31.1,
-        "ratioBundestag": 41.0
+        "ratioBundestag": 40.9
       },
       {
         "word": "wesentlich",
@@ -112,7 +112,7 @@
   "comparison": {
     "speakerAvgWords": 211,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.33,
     "vsParliament": 0.36
   },
@@ -132,47 +132,47 @@
     "question": "Welches Wort nutzt Dorothee Bär häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
         "text": "Menopause",
         "isCorrect": true
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Reform",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Menopause\" nutzt Dorothee Bär 452.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "234.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "233.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dorothee Bär häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Klar",
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
         "isCorrect": false
       },
       {
         "text": "Hervorragend",
         "isCorrect": true
-      },
-      {
-        "text": "Falsch",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Hervorragend\" nutzt Dorothee Bär 31.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "41.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "40.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -272,10 +272,6 @@
           "count": 9
         },
         {
-          "word": "wasserstoff",
-          "count": 1
-        },
-        {
           "word": "emissionen",
           "count": 1
         },
@@ -285,6 +281,10 @@
         },
         {
           "word": "klimaneutralität",
+          "count": 1
+        },
+        {
+          "word": "wasserstoff",
           "count": 1
         }
       ],
@@ -326,11 +326,11 @@
       ],
       "sicherheit": [
         {
-          "word": "verteidigung",
+          "word": "angriff",
           "count": 2
         },
         {
-          "word": "angriff",
+          "word": "verteidigung",
           "count": 2
         },
         {
@@ -374,11 +374,11 @@
           "count": 1
         },
         {
-          "word": "nato",
+          "word": "krieg",
           "count": 1
         },
         {
-          "word": "krieg",
+          "word": "ukraine",
           "count": 1
         }
       ],
@@ -460,11 +460,11 @@
       ],
       "arbeit": [
         {
-          "word": "arbeitsplätze",
+          "word": "gewerkschaften",
           "count": 1
         },
         {
-          "word": "gewerkschaften",
+          "word": "arbeitsplätze",
           "count": 1
         },
         {
@@ -482,7 +482,7 @@
           "count": 6
         },
         {
-          "word": "hafen",
+          "word": "verkehr",
           "count": 2
         },
         {
@@ -490,7 +490,7 @@
           "count": 2
         },
         {
-          "word": "verkehr",
+          "word": "hafen",
           "count": 2
         }
       ]

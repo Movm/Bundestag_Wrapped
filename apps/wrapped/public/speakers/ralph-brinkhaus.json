@@ -11,23 +11,23 @@
   "minWords": 251,
   "maxWords": 1033,
   "rankings": {
-    "speechRank": 329,
+    "speechRank": 326,
     "wordsRank": 257,
-    "partySpeechRank": 90,
+    "partySpeechRank": 89,
     "partyWordsRank": 73,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 47.5,
+    "totalSpeakers": 625,
+    "percentile": 47.8,
     "verbosityRank": 39,
     "verbosityTotal": 579,
     "partyVerbosityRank": 17,
-    "longestSpeechRank": 72
+    "longestSpeechRank": 70
   },
   "drama": {
     "interruptionsGiven": 9,
     "interruptionsReceived": 11,
-    "interrupterRank": 282,
-    "interruptedRank": 448
+    "interrupterRank": 279,
+    "interruptedRank": 436
   },
   "words": {
     "topWords": [
@@ -40,10 +40,6 @@
         "count": 22
       },
       {
-        "word": "staatsmodernisierung",
-        "count": 19
-      },
-      {
         "word": "land",
         "count": 19
       },
@@ -52,19 +48,23 @@
         "count": 19
       },
       {
-        "word": "wichtig",
-        "count": 17
+        "word": "staatsmodernisierung",
+        "count": 19
       },
       {
         "word": "glaube",
         "count": 17
       },
       {
-        "word": "minister",
-        "count": 16
+        "word": "wichtig",
+        "count": 17
       },
       {
         "word": "ehrlich",
+        "count": 16
+      },
+      {
+        "word": "minister",
         "count": 16
       }
     ],
@@ -73,31 +73,31 @@
         "word": "menschliche",
         "count": 7,
         "ratioParty": 139.1,
-        "ratioBundestag": 100.5
+        "ratioBundestag": 100.2
       },
       {
         "word": "check",
         "count": 5,
         "ratioParty": 136.6,
-        "ratioBundestag": 259.4
+        "ratioBundestag": 258.8
       },
       {
         "word": "reallabore",
         "count": 6,
         "ratioParty": 109.3,
-        "ratioBundestag": 101.2
+        "ratioBundestag": 100.9
       },
       {
         "word": "experimentierklauseln",
         "count": 5,
         "ratioParty": 84.0,
-        "ratioBundestag": 160.6
+        "ratioBundestag": 160.2
       },
       {
         "word": "wildberger",
         "count": 13,
         "ratioParty": 60.4,
-        "ratioBundestag": 45.7
+        "ratioBundestag": 45.6
       }
     ],
     "signatureAdjectives": [
@@ -111,7 +111,7 @@
         "word": "vernünftig",
         "count": 3,
         "ratioParty": 13.9,
-        "ratioBundestag": 14.2
+        "ratioBundestag": 14.1
       },
       {
         "word": "falsch",
@@ -124,9 +124,9 @@
   "comparison": {
     "speakerAvgWords": 634,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.98,
-    "vsParliament": 1.08
+    "vsParliament": 1.09
   },
   "funFacts": [
     {
@@ -144,7 +144,11 @@
     "question": "Welches Wort nutzt Ralph Brinkhaus häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Freiheit",
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
         "isCorrect": false
       },
       {
@@ -152,16 +156,12 @@
         "isCorrect": true
       },
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
+        "text": "Haushalt",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Menschliche\" nutzt Ralph Brinkhaus 139.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "100.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "100.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Ralph Brinkhaus häufiger als der Rest der CDU/CSU-Fraktion?",
@@ -171,11 +171,11 @@
         "isCorrect": false
       },
       {
-        "text": "Richtig",
+        "text": "Klar",
         "isCorrect": false
       },
       {
-        "text": "Problematisch",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
@@ -304,11 +304,11 @@
           "count": 6
         },
         {
-          "word": "wirtschaft",
+          "word": "marktwirtschaft",
           "count": 2
         },
         {
-          "word": "marktwirtschaft",
+          "word": "wirtschaft",
           "count": 2
         },
         {
@@ -316,7 +316,7 @@
           "count": 2
         },
         {
-          "word": "wettbewerbsfähigkeit",
+          "word": "volkswirtschaft",
           "count": 1
         }
       ],
@@ -356,6 +356,10 @@
       ],
       "europa": [
         {
+          "word": "europa",
+          "count": 1
+        },
+        {
           "word": "russland",
           "count": 1
         },
@@ -365,10 +369,6 @@
         },
         {
           "word": "europäisch",
-          "count": 1
-        },
-        {
-          "word": "europa",
           "count": 1
         }
       ],
@@ -386,11 +386,11 @@
           "count": 3
         },
         {
-          "word": "digital",
+          "word": "software",
           "count": 2
         },
         {
-          "word": "software",
+          "word": "digital",
           "count": 2
         }
       ],
@@ -400,7 +400,7 @@
           "count": 3
         },
         {
-          "word": "kita",
+          "word": "universitäten",
           "count": 1
         },
         {
@@ -408,7 +408,7 @@
           "count": 1
         },
         {
-          "word": "universitäten",
+          "word": "kita",
           "count": 1
         }
       ],
@@ -418,11 +418,11 @@
           "count": 2
         },
         {
-          "word": "steuern",
+          "word": "steuer",
           "count": 1
         },
         {
-          "word": "steuer",
+          "word": "steuern",
           "count": 1
         }
       ],

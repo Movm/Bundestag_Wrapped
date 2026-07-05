@@ -11,23 +11,23 @@
   "minWords": 34,
   "maxWords": 1154,
   "rankings": {
-    "speechRank": 270,
+    "speechRank": 277,
     "wordsRank": 23,
-    "partySpeechRank": 52,
+    "partySpeechRank": 53,
     "partyWordsRank": 6,
     "partySize": 114,
-    "totalSpeakers": 627,
-    "percentile": 56.9,
+    "totalSpeakers": 625,
+    "percentile": 55.7,
     "verbosityRank": 558,
     "verbosityTotal": 579,
     "partyVerbosityRank": 98,
-    "longestSpeechRank": 46
+    "longestSpeechRank": 44
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 14,
     "interrupterRank": null,
-    "interruptedRank": 411
+    "interruptedRank": 410
   },
   "words": {
     "topWords": [
@@ -61,7 +61,7 @@
         "word": "gewaltschutz",
         "count": 6,
         "ratioParty": 149.7,
-        "ratioBundestag": 35.4
+        "ratioBundestag": 35.3
       },
       {
         "word": "adressen",
@@ -73,19 +73,19 @@
         "word": "slapp",
         "count": 6,
         "ratioParty": 74.9,
-        "ratioBundestag": 56.3
+        "ratioBundestag": 56.2
       },
       {
         "word": "umgangsrecht",
         "count": 8,
         "ratioParty": 66.6,
-        "ratioBundestag": 119.2
+        "ratioBundestag": 119.0
       },
       {
         "word": "accounts",
         "count": 5,
         "ratioParty": 62.4,
-        "ratioBundestag": 97.5
+        "ratioBundestag": 97.2
       }
     ],
     "signatureAdjectives": [
@@ -111,14 +111,14 @@
         "word": "sicher",
         "count": 17,
         "ratioParty": 3.0,
-        "ratioBundestag": 3.6
+        "ratioBundestag": 3.5
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 204,
     "partyAvgWords": 618,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.33,
     "vsParliament": 0.35
   },
@@ -138,30 +138,34 @@
     "question": "Welches Wort nutzt Dr. Stefanie Hubig häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
         "text": "Gewaltschutz",
         "isCorrect": true
       },
       {
-        "text": "Gesetz",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
+        "text": "Demokratie",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Gewaltschutz\" nutzt Dr. Stefanie Hubig 149.7× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "35.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "35.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Stefanie Hubig häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
         "isCorrect": false
       },
       {
@@ -169,11 +173,7 @@
         "isCorrect": true
       },
       {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
+        "text": "Wichtig",
         "isCorrect": false
       }
     ],
@@ -274,21 +274,21 @@
     "topicWords": {
       "migration": [
         {
-          "word": "migration",
+          "word": "grenzkontrollen",
           "count": 1
         },
         {
-          "word": "grenzkontrollen",
+          "word": "migration",
           "count": 1
         }
       ],
       "klima": [
         {
-          "word": "nachhaltig",
+          "word": "erneuerbare",
           "count": 2
         },
         {
-          "word": "erneuerbare",
+          "word": "nachhaltig",
           "count": 2
         },
         {
@@ -318,11 +318,11 @@
           "count": 3
         },
         {
-          "word": "fachkräfte",
+          "word": "industrie",
           "count": 2
         },
         {
-          "word": "industrie",
+          "word": "fachkräfte",
           "count": 2
         }
       ],
@@ -366,7 +366,7 @@
           "count": 3
         },
         {
-          "word": "polizisten",
+          "word": "terrorismus",
           "count": 2
         }
       ],
@@ -386,7 +386,7 @@
           "count": 3
         },
         {
-          "word": "europa",
+          "word": "iran",
           "count": 2
         },
         {
@@ -394,7 +394,7 @@
           "count": 2
         },
         {
-          "word": "iran",
+          "word": "europa",
           "count": 2
         },
         {
@@ -496,11 +496,11 @@
           "count": 1
         },
         {
-          "word": "einkommen",
+          "word": "arbeitsplätze",
           "count": 1
         },
         {
-          "word": "arbeitsplätze",
+          "word": "einkommen",
           "count": 1
         }
       ],
@@ -518,11 +518,11 @@
           "count": 2
         },
         {
-          "word": "straßenverkehr",
+          "word": "nahverkehr",
           "count": 1
         },
         {
-          "word": "autos",
+          "word": "straßenverkehr",
           "count": 1
         }
       ]

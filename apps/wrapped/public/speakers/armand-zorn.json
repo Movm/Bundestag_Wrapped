@@ -11,23 +11,23 @@
   "minWords": 354,
   "maxWords": 824,
   "rankings": {
-    "speechRank": 70,
+    "speechRank": 77,
     "wordsRank": 77,
-    "partySpeechRank": 18,
+    "partySpeechRank": 20,
     "partyWordsRank": 21,
     "partySize": 114,
-    "totalSpeakers": 627,
-    "percentile": 88.8,
-    "verbosityRank": 49,
+    "totalSpeakers": 625,
+    "percentile": 87.7,
+    "verbosityRank": 50,
     "verbosityTotal": 579,
     "partyVerbosityRank": 11,
-    "longestSpeechRank": 217
+    "longestSpeechRank": 216
   },
   "drama": {
     "interruptionsGiven": 20,
     "interruptionsReceived": 17,
-    "interrupterRank": 203,
-    "interruptedRank": 355
+    "interrupterRank": 205,
+    "interruptedRank": 357
   },
   "words": {
     "topWords": [
@@ -69,31 +69,31 @@
         "word": "zeitgleich",
         "count": 6,
         "ratioParty": 59.3,
-        "ratioBundestag": 55.2
+        "ratioBundestag": 55.0
       },
       {
         "word": "hinkriegen",
         "count": 8,
         "ratioParty": 50.3,
-        "ratioBundestag": 96.4
+        "ratioBundestag": 96.2
       },
       {
         "word": "industriellen",
         "count": 6,
         "ratioParty": 46.1,
-        "ratioBundestag": 38.8
+        "ratioBundestag": 38.7
       },
       {
         "word": "automobilbranche",
         "count": 5,
         "ratioParty": 43.2,
-        "ratioBundestag": 87.4
+        "ratioBundestag": 87.2
       },
       {
         "word": "französische",
         "count": 5,
         "ratioParty": 38.4,
-        "ratioBundestag": 33.6
+        "ratioBundestag": 33.5
       }
     ],
     "signatureAdjectives": [
@@ -125,14 +125,14 @@
         "word": "entscheidend",
         "count": 5,
         "ratioParty": 2.6,
-        "ratioBundestag": 3.4
+        "ratioBundestag": 3.5
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 612,
     "partyAvgWords": 618,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.99,
     "vsParliament": 1.05
   },
@@ -161,39 +161,39 @@
         "isCorrect": true
       },
       {
-        "text": "Freiheit",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Energie",
+        "text": "Europa",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Zeitgleich\" nutzt Armand Zorn 59.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "55.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "55.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Armand Zorn häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "National",
+        "text": "Wettbewerbsfähig",
+        "isCorrect": true
+      },
+      {
+        "text": "Gut",
         "isCorrect": false
       },
       {
-        "text": "Falsch",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
         "text": "Schlecht",
         "isCorrect": false
-      },
-      {
-        "text": "Wettbewerbsfähig",
-        "isCorrect": true
       }
     ],
     "explanationParty": "\"Wettbewerbsfähig\" nutzt Armand Zorn 13.8× häufiger als der SPD-Durchschnitt.",
@@ -307,15 +307,15 @@
           "count": 3
         },
         {
-          "word": "energie",
-          "count": 2
-        },
-        {
           "word": "nachhaltig",
           "count": 2
         },
         {
-          "word": "windenergie",
+          "word": "energie",
+          "count": 2
+        },
+        {
+          "word": "energiewende",
           "count": 1
         }
       ],
@@ -393,11 +393,11 @@
           "count": 3
         },
         {
-          "word": "vertrag",
+          "word": "europäisch",
           "count": 2
         },
         {
-          "word": "frieden",
+          "word": "abkommen",
           "count": 2
         }
       ],
@@ -407,11 +407,11 @@
           "count": 14
         },
         {
-          "word": "plattformen",
+          "word": "daten",
           "count": 6
         },
         {
-          "word": "daten",
+          "word": "plattformen",
           "count": 6
         },
         {
@@ -425,6 +425,10 @@
       ],
       "bildung": [
         {
+          "word": "schule",
+          "count": 2
+        },
+        {
           "word": "bildung",
           "count": 2
         },
@@ -437,11 +441,7 @@
           "count": 2
         },
         {
-          "word": "schule",
-          "count": 2
-        },
-        {
-          "word": "wissenschaft",
+          "word": "kita",
           "count": 1
         }
       ],
@@ -455,11 +455,11 @@
           "count": 11
         },
         {
-          "word": "haushaltsentwurf",
+          "word": "haushalt",
           "count": 8
         },
         {
-          "word": "haushalt",
+          "word": "haushaltsentwurf",
           "count": 8
         },
         {
@@ -469,7 +469,7 @@
       ],
       "justiz": [
         {
-          "word": "datenschutz",
+          "word": "gesetzesänderung",
           "count": 2
         },
         {
@@ -477,15 +477,15 @@
           "count": 2
         },
         {
-          "word": "gesetzesänderung",
+          "word": "datenschutz",
           "count": 2
         },
         {
-          "word": "strafen",
+          "word": "grundrechte",
           "count": 1
         },
         {
-          "word": "gesetzgebung",
+          "word": "strafen",
           "count": 1
         }
       ],
@@ -517,11 +517,11 @@
           "count": 7
         },
         {
-          "word": "straßen",
+          "word": "schiene",
           "count": 5
         },
         {
-          "word": "schiene",
+          "word": "straßen",
           "count": 5
         },
         {

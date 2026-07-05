@@ -11,23 +11,23 @@
   "minWords": 127,
   "maxWords": 623,
   "rankings": {
-    "speechRank": 312,
-    "wordsRank": 410,
-    "partySpeechRank": 70,
-    "partyWordsRank": 92,
-    "partySize": 151,
-    "totalSpeakers": 627,
-    "percentile": 50.2,
+    "speechRank": 325,
+    "wordsRank": 408,
+    "partySpeechRank": 75,
+    "partyWordsRank": 91,
+    "partySize": 150,
+    "totalSpeakers": 625,
+    "percentile": 48.0,
     "verbosityRank": 446,
     "verbosityTotal": 579,
     "partyVerbosityRank": 115,
-    "longestSpeechRank": 473
+    "longestSpeechRank": 471
   },
   "drama": {
     "interruptionsGiven": 10,
     "interruptionsReceived": 23,
-    "interrupterRank": 278,
-    "interruptedRank": 294
+    "interrupterRank": 277,
+    "interruptedRank": 300
   },
   "words": {
     "topWords": [
@@ -44,11 +44,11 @@
         "count": 10
       },
       {
-        "word": "land",
+        "word": "deutschland",
         "count": 10
       },
       {
-        "word": "deutschland",
+        "word": "land",
         "count": 10
       },
       {
@@ -58,51 +58,47 @@
       {
         "word": "bürger",
         "count": 9
-      },
-      {
-        "word": "eines",
-        "count": 8
       }
     ],
     "signatureWords": [
       {
         "word": "ticket",
         "count": 6,
-        "ratioParty": 207.3,
-        "ratioBundestag": 31.5
+        "ratioParty": 206.2,
+        "ratioBundestag": 31.4
       },
       {
         "word": "stuttgart",
         "count": 8,
-        "ratioParty": 63.8,
-        "ratioBundestag": 81.7
+        "ratioParty": 63.5,
+        "ratioBundestag": 81.5
       },
       {
         "word": "herzlich",
         "count": 6,
-        "ratioParty": 59.2,
-        "ratioBundestag": 20.0
+        "ratioParty": 58.9,
+        "ratioBundestag": 19.9
       },
       {
         "word": "schiene",
         "count": 5,
-        "ratioParty": 51.8,
-        "ratioBundestag": 15.6
+        "ratioParty": 51.6,
+        "ratioBundestag": 15.5
       },
       {
         "word": "zustände",
         "count": 5,
-        "ratioParty": 31.4,
-        "ratioBundestag": 63.6
+        "ratioParty": 31.2,
+        "ratioBundestag": 63.5
       }
     ],
     "signatureAdjectives": []
   },
   "comparison": {
     "speakerAvgWords": 361,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
-    "vsParty": 0.64,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
+    "vsParty": 0.65,
     "vsParliament": 0.62
   },
   "funFacts": [
@@ -126,24 +122,24 @@
     "question": "Welches Wort nutzt Lars Haise häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Migration",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Europa",
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
         "isCorrect": false
       },
       {
         "text": "Ticket",
         "isCorrect": true
-      },
-      {
-        "text": "Demokratie",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ticket\" nutzt Lars Haise 207.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "31.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Ticket\" nutzt Lars Haise 206.2× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "31.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -216,11 +212,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "einwanderer",
+          "word": "migranten",
           "count": 1
         },
         {
-          "word": "migranten",
+          "word": "einwanderer",
           "count": 1
         }
       ],
@@ -230,19 +226,23 @@
           "count": 2
         },
         {
-          "word": "klimawandel",
-          "count": 1
-        },
-        {
           "word": "energieeffizienz",
           "count": 1
         },
         {
           "word": "kohleausstieg",
           "count": 1
+        },
+        {
+          "word": "klimawandel",
+          "count": 1
         }
       ],
       "wirtschaft": [
+        {
+          "word": "unternehmen",
+          "count": 2
+        },
         {
           "word": "wirtschaft",
           "count": 2
@@ -252,15 +252,11 @@
           "count": 2
         },
         {
-          "word": "unternehmen",
-          "count": 2
-        },
-        {
-          "word": "wettbewerb",
+          "word": "marktwirtschaft",
           "count": 1
         },
         {
-          "word": "marktwirtschaft",
+          "word": "automobilindustrie",
           "count": 1
         }
       ],
@@ -272,15 +268,15 @@
       ],
       "sicherheit": [
         {
+          "word": "kriminalität",
+          "count": 1
+        },
+        {
           "word": "bundeswehr",
           "count": 1
         },
         {
           "word": "gewalt",
-          "count": 1
-        },
-        {
-          "word": "kriminalität",
           "count": 1
         },
         {
@@ -304,30 +300,26 @@
           "count": 3
         },
         {
-          "word": "nato",
-          "count": 1
-        },
-        {
           "word": "krieg",
           "count": 1
         },
         {
           "word": "brüssel",
           "count": 1
+        },
+        {
+          "word": "nato",
+          "count": 1
         }
       ],
       "digital": [
-        {
-          "word": "netz",
-          "count": 2
-        },
         {
           "word": "daten",
           "count": 2
         },
         {
-          "word": "glasfaser",
-          "count": 1
+          "word": "netz",
+          "count": 2
         },
         {
           "word": "digitalwirtschaft",
@@ -336,16 +328,16 @@
         {
           "word": "digital",
           "count": 1
+        },
+        {
+          "word": "rechenzentrum",
+          "count": 1
         }
       ],
       "finanzen": [
         {
           "word": "steuerzahler",
           "count": 8
-        },
-        {
-          "word": "schulden",
-          "count": 2
         },
         {
           "word": "finanzierung",
@@ -356,7 +348,11 @@
           "count": 2
         },
         {
-          "word": "steuern",
+          "word": "schulden",
+          "count": 2
+        },
+        {
+          "word": "kosten",
           "count": 1
         }
       ],
@@ -366,11 +362,11 @@
           "count": 3
         },
         {
-          "word": "urteil",
+          "word": "novelle",
           "count": 1
         },
         {
-          "word": "novelle",
+          "word": "urteil",
           "count": 1
         }
       ],

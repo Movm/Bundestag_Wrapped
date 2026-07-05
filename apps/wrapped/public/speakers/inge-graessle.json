@@ -11,23 +11,23 @@
   "minWords": 80,
   "maxWords": 1065,
   "rankings": {
-    "speechRank": 457,
+    "speechRank": 463,
     "wordsRank": 183,
-    "partySpeechRank": 140,
+    "partySpeechRank": 143,
     "partyWordsRank": 55,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 27.1,
+    "totalSpeakers": 625,
+    "percentile": 25.9,
     "verbosityRank": 67,
     "verbosityTotal": 579,
     "partyVerbosityRank": 24,
-    "longestSpeechRank": 59
+    "longestSpeechRank": 57
   },
   "drama": {
     "interruptionsGiven": 24,
     "interruptionsReceived": 70,
-    "interrupterRank": 189,
-    "interruptedRank": 53
+    "interrupterRank": 187,
+    "interruptedRank": 52
   },
   "words": {
     "topWords": [
@@ -53,19 +53,19 @@
         "word": "entwicklungshilfe",
         "count": 14,
         "ratioParty": 345.1,
-        "ratioBundestag": 76.9
+        "ratioBundestag": 76.8
       },
       {
         "word": "amtes",
         "count": 6,
         "ratioParty": 69.0,
-        "ratioBundestag": 66.6
+        "ratioBundestag": 66.5
       },
       {
         "word": "dollar",
         "count": 5,
         "ratioParty": 27.8,
-        "ratioBundestag": 23.2
+        "ratioBundestag": 23.1
       },
       {
         "word": "entwicklungspolitik",
@@ -77,7 +77,7 @@
         "word": "auswärtigen",
         "count": 10,
         "ratioParty": 27.0,
-        "ratioBundestag": 34.2
+        "ratioBundestag": 34.5
       }
     ],
     "signatureAdjectives": [
@@ -92,7 +92,7 @@
   "comparison": {
     "speakerAvgWords": 585,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.91,
     "vsParliament": 1.0
   },
@@ -117,34 +117,30 @@
     "question": "Welches Wort nutzt Dr. Inge Gräßle häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
         "text": "Entwicklungshilfe",
         "isCorrect": true
+      },
+      {
+        "text": "Debatte",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Entwicklungshilfe\" nutzt Dr. Inge Gräßle 345.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "76.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "76.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Inge Gräßle häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
@@ -152,7 +148,11 @@
         "isCorrect": true
       },
       {
-        "text": "Klar",
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
@@ -265,11 +265,11 @@
           "count": 1
         },
         {
-          "word": "grenze",
+          "word": "flüchtlinge",
           "count": 1
         },
         {
-          "word": "flüchtlinge",
+          "word": "grenze",
           "count": 1
         }
       ],
@@ -373,11 +373,11 @@
           "count": 2
         },
         {
-          "word": "studenten",
+          "word": "schulen",
           "count": 1
         },
         {
-          "word": "schulen",
+          "word": "studenten",
           "count": 1
         }
       ],
@@ -395,11 +395,11 @@
           "count": 3
         },
         {
-          "word": "finanzminister",
+          "word": "banken",
           "count": 2
         },
         {
-          "word": "investitionen",
+          "word": "zuschuss",
           "count": 2
         }
       ],

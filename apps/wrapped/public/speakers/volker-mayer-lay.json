@@ -11,23 +11,23 @@
   "minWords": 51,
   "maxWords": 727,
   "rankings": {
-    "speechRank": 262,
+    "speechRank": 244,
     "wordsRank": 310,
-    "partySpeechRank": 70,
+    "partySpeechRank": 66,
     "partyWordsRank": 93,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 58.2,
+    "totalSpeakers": 625,
+    "percentile": 61.0,
     "verbosityRank": 408,
     "verbosityTotal": 579,
     "partyVerbosityRank": 142,
-    "longestSpeechRank": 343
+    "longestSpeechRank": 340
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 15,
     "interrupterRank": null,
-    "interruptedRank": 386
+    "interruptedRank": 391
   },
   "words": {
     "topWords": [
@@ -44,7 +44,7 @@
         "count": 12
       },
       {
-        "word": "klimaschutz",
+        "word": "minister",
         "count": 11
       }
     ],
@@ -53,25 +53,25 @@
         "word": "arten",
         "count": 5,
         "ratioParty": 81.9,
-        "ratioBundestag": 73.7
+        "ratioBundestag": 73.5
       },
       {
         "word": "nachhaltigkeit",
         "count": 7,
         "ratioParty": 23.9,
-        "ratioBundestag": 24.2
+        "ratioBundestag": 24.1
       },
       {
         "word": "mandat",
         "count": 6,
         "ratioParty": 23.7,
-        "ratioBundestag": 15.4
+        "ratioBundestag": 15.3
       },
       {
         "word": "kosovo",
         "count": 5,
         "ratioParty": 22.9,
-        "ratioBundestag": 20.7
+        "ratioBundestag": 20.6
       },
       {
         "word": "einsatz",
@@ -85,7 +85,7 @@
         "word": "sozial",
         "count": 3,
         "ratioParty": 10.4,
-        "ratioBundestag": 5.9
+        "ratioBundestag": 5.8
       },
       {
         "word": "falsch",
@@ -116,9 +116,9 @@
   "comparison": {
     "speakerAvgWords": 377,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.58,
-    "vsParliament": 0.64
+    "vsParliament": 0.65
   },
   "funFacts": [
     {
@@ -136,34 +136,30 @@
     "question": "Welches Wort nutzt Volker Mayer-Lay häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Demokratie",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
         "text": "Arten",
         "isCorrect": true
+      },
+      {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Arten\" nutzt Volker Mayer-Lay 81.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "73.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "73.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Volker Mayer-Lay häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
@@ -171,12 +167,16 @@
         "isCorrect": true
       },
       {
-        "text": "Gefährlich",
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Sozial\" nutzt Volker Mayer-Lay 10.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "5.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "5.8× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -286,11 +286,11 @@
           "count": 7
         },
         {
-          "word": "umwelt",
+          "word": "klimapolitik",
           "count": 4
         },
         {
-          "word": "klimapolitik",
+          "word": "umwelt",
           "count": 4
         },
         {
@@ -340,11 +340,11 @@
           "count": 2
         },
         {
-          "word": "verteidigung",
+          "word": "terrorismus",
           "count": 1
         },
         {
-          "word": "anschlag",
+          "word": "streitkräfte",
           "count": 1
         }
       ],
@@ -362,19 +362,15 @@
           "count": 5
         },
         {
-          "word": "ukraine",
+          "word": "frieden",
           "count": 3
         },
         {
-          "word": "frieden",
+          "word": "ukraine",
           "count": 3
         }
       ],
       "digital": [
-        {
-          "word": "digitalisierung",
-          "count": 1
-        },
         {
           "word": "desinformation",
           "count": 1
@@ -382,19 +378,23 @@
         {
           "word": "netz",
           "count": 1
+        },
+        {
+          "word": "digitalisierung",
+          "count": 1
         }
       ],
       "bildung": [
-        {
-          "word": "forschung",
-          "count": 2
-        },
         {
           "word": "ausbildung",
           "count": 2
         },
         {
-          "word": "bildung",
+          "word": "forschung",
+          "count": 2
+        },
+        {
+          "word": "schule",
           "count": 1
         },
         {
@@ -402,7 +402,7 @@
           "count": 1
         },
         {
-          "word": "schule",
+          "word": "bildung",
           "count": 1
         }
       ],
@@ -412,11 +412,7 @@
           "count": 3
         },
         {
-          "word": "investitionen",
-          "count": 1
-        },
-        {
-          "word": "bundeshaushalt",
+          "word": "investition",
           "count": 1
         },
         {
@@ -424,7 +420,11 @@
           "count": 1
         },
         {
-          "word": "investition",
+          "word": "investitionen",
+          "count": 1
+        },
+        {
+          "word": "bundeshaushalt",
           "count": 1
         }
       ],
@@ -444,37 +444,37 @@
           "count": 2
         },
         {
+          "word": "kündigung",
+          "count": 1
+        },
+        {
           "word": "arbeitsschutz",
           "count": 1
         },
         {
           "word": "beschäftigte",
           "count": 1
-        },
-        {
-          "word": "kündigung",
-          "count": 1
         }
       ],
       "mobilitaet": [
-        {
-          "word": "fahrzeuge",
-          "count": 2
-        },
         {
           "word": "flugzeug",
           "count": 2
         },
         {
-          "word": "infrastruktur",
-          "count": 1
+          "word": "fahrzeuge",
+          "count": 2
         },
         {
-          "word": "radwege",
+          "word": "flughafen",
           "count": 1
         },
         {
           "word": "straßen",
+          "count": 1
+        },
+        {
+          "word": "radwege",
           "count": 1
         }
       ]

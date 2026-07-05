@@ -11,23 +11,23 @@
   "minWords": 244,
   "maxWords": 491,
   "rankings": {
-    "speechRank": 591,
-    "wordsRank": 598,
-    "partySpeechRank": 62,
+    "speechRank": 580,
+    "wordsRank": 596,
+    "partySpeechRank": 61,
     "partyWordsRank": 61,
     "partySize": 63,
-    "totalSpeakers": 627,
-    "percentile": 5.7,
+    "totalSpeakers": 625,
+    "percentile": 7.2,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 582
+    "longestSpeechRank": 580
   },
   "drama": {
     "interruptionsGiven": 7,
     "interruptionsReceived": 5,
-    "interrupterRank": 304,
-    "interruptedRank": 546
+    "interrupterRank": 310,
+    "interruptedRank": 544
   },
   "words": {
     "topWords": [
@@ -36,7 +36,7 @@
         "count": 10
       },
       {
-        "word": "menschen",
+        "word": "soldatinnen",
         "count": 6
       },
       {
@@ -44,7 +44,7 @@
         "count": 6
       },
       {
-        "word": "soldatinnen",
+        "word": "menschen",
         "count": 6
       },
       {
@@ -52,11 +52,7 @@
         "count": 5
       },
       {
-        "word": "problem",
-        "count": 4
-      },
-      {
-        "word": "haltung",
+        "word": "gesetz",
         "count": 4
       },
       {
@@ -68,7 +64,11 @@
         "count": 4
       },
       {
-        "word": "gesetz",
+        "word": "problem",
+        "count": 4
+      },
+      {
+        "word": "haltung",
         "count": 4
       }
     ],
@@ -77,19 +77,19 @@
         "word": "soldatinnen",
         "count": 6,
         "ratioParty": 99.7,
-        "ratioBundestag": 42.3
+        "ratioBundestag": 42.2
       },
       {
         "word": "soldaten",
         "count": 6,
         "ratioParty": 69.2,
-        "ratioBundestag": 25.4
+        "ratioBundestag": 25.3
       },
       {
         "word": "bundeswehr",
         "count": 10,
         "ratioParty": 34.3,
-        "ratioBundestag": 35.4
+        "ratioBundestag": 35.7
       },
       {
         "word": "schutz",
@@ -103,14 +103,14 @@
         "word": "rechtsextrem",
         "count": 3,
         "ratioParty": 311.4,
-        "ratioBundestag": 381.1
+        "ratioBundestag": 380.2
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 360,
     "partyAvgWords": 500,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.72,
     "vsParliament": 0.62
   },
@@ -130,7 +130,11 @@
     "question": "Welches Wort nutzt Zada Salihović häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bildung",
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
@@ -138,39 +142,35 @@
         "isCorrect": true
       },
       {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Politik",
+        "text": "Antrag",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Soldatinnen\" nutzt Zada Salihović 99.7× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "42.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "42.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Zada Salihović häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Europäisch",
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
         "isCorrect": false
       },
       {
         "text": "Rechtsextrem",
         "isCorrect": true
-      },
-      {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Rechtsextrem\" nutzt Zada Salihović 311.4× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "381.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "380.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐇",
@@ -280,15 +280,15 @@
           "count": 6
         },
         {
-          "word": "polizei",
-          "count": 2
-        },
-        {
           "word": "überwachung",
           "count": 2
         },
         {
-          "word": "verfassungsschutz",
+          "word": "polizei",
+          "count": 2
+        },
+        {
+          "word": "spionage",
           "count": 1
         }
       ],
@@ -304,11 +304,11 @@
       ],
       "digital": [
         {
-          "word": "internet",
+          "word": "daten",
           "count": 1
         },
         {
-          "word": "daten",
+          "word": "internet",
           "count": 1
         }
       ],
@@ -318,15 +318,15 @@
           "count": 2
         },
         {
+          "word": "schulen",
+          "count": 1
+        },
+        {
           "word": "ausbildung",
           "count": 1
         },
         {
           "word": "forschung",
-          "count": 1
-        },
-        {
-          "word": "schulen",
           "count": 1
         }
       ],

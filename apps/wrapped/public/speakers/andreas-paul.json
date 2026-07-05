@@ -11,23 +11,23 @@
   "minWords": 50,
   "maxWords": 742,
   "rankings": {
-    "speechRank": 259,
+    "speechRank": 245,
     "wordsRank": 285,
-    "partySpeechRank": 57,
+    "partySpeechRank": 50,
     "partyWordsRank": 62,
-    "partySize": 151,
-    "totalSpeakers": 627,
-    "percentile": 58.7,
+    "partySize": 150,
+    "totalSpeakers": 625,
+    "percentile": 60.8,
     "verbosityRank": 305,
     "verbosityTotal": 579,
     "partyVerbosityRank": 79,
-    "longestSpeechRank": 322
+    "longestSpeechRank": 320
   },
   "drama": {
     "interruptionsGiven": 8,
     "interruptionsReceived": 47,
-    "interrupterRank": 301,
-    "interruptedRank": 127
+    "interrupterRank": 298,
+    "interruptedRank": 124
   },
   "words": {
     "topWords": [
@@ -52,6 +52,14 @@
         "count": 13
       },
       {
+        "word": "diesen",
+        "count": 12
+      },
+      {
+        "word": "minister",
+        "count": 12
+      },
+      {
         "word": "zeit",
         "count": 12
       },
@@ -60,15 +68,7 @@
         "count": 12
       },
       {
-        "word": "minister",
-        "count": 12
-      },
-      {
-        "word": "diesen",
-        "count": 12
-      },
-      {
-        "word": "frauen",
+        "word": "unifil",
         "count": 11
       }
     ],
@@ -76,41 +76,41 @@
       {
         "word": "truppe",
         "count": 8,
-        "ratioParty": 46.7,
-        "ratioBundestag": 34.1
+        "ratioParty": 46.5,
+        "ratioBundestag": 34.0
       },
       {
         "word": "unifil",
         "count": 11,
-        "ratioParty": 45.7,
-        "ratioBundestag": 51.9
+        "ratioParty": 45.4,
+        "ratioBundestag": 51.7
       },
       {
         "word": "mandats",
         "count": 7,
-        "ratioParty": 42.5,
-        "ratioBundestag": 52.7
+        "ratioParty": 42.2,
+        "ratioBundestag": 52.5
       },
       {
         "word": "wehrpflicht",
         "count": 13,
-        "ratioParty": 39.4,
-        "ratioBundestag": 50.0
+        "ratioParty": 39.2,
+        "ratioBundestag": 49.9
       },
       {
         "word": "teils",
         "count": 6,
-        "ratioParty": 33.8,
-        "ratioBundestag": 43.3
+        "ratioParty": 33.6,
+        "ratioBundestag": 43.2
       }
     ],
     "signatureAdjectives": []
   },
   "comparison": {
     "speakerAvgWords": 429,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
-    "vsParty": 0.76,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
+    "vsParty": 0.77,
     "vsParliament": 0.73
   },
   "funFacts": [
@@ -129,11 +129,11 @@
     "question": "Welches Wort nutzt Andreas Paul häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetz",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
@@ -141,12 +141,12 @@
         "isCorrect": true
       },
       {
-        "text": "Opposition",
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Truppe\" nutzt Andreas Paul 46.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "34.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Truppe\" nutzt Andreas Paul 46.5× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "34.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -231,12 +231,16 @@
       ],
       "wirtschaft": [
         {
+          "word": "anlage",
+          "count": 2
+        },
+        {
           "word": "unternehmen",
           "count": 2
         },
         {
-          "word": "anlage",
-          "count": 2
+          "word": "betrieb",
+          "count": 1
         },
         {
           "word": "konkurrenz",
@@ -244,10 +248,6 @@
         },
         {
           "word": "firma",
-          "count": 1
-        },
-        {
-          "word": "betrieb",
           "count": 1
         }
       ],
@@ -275,15 +275,15 @@
           "count": 23
         },
         {
-          "word": "streitkräfte",
-          "count": 3
-        },
-        {
           "word": "armee",
           "count": 3
         },
         {
           "word": "verteidigung",
+          "count": 3
+        },
+        {
+          "word": "streitkräfte",
           "count": 3
         }
       ],
@@ -335,19 +335,19 @@
           "count": 2
         },
         {
-          "word": "sondervermögen",
-          "count": 1
-        },
-        {
-          "word": "steuern",
-          "count": 1
-        },
-        {
-          "word": "haushalt",
-          "count": 1
-        },
-        {
           "word": "finanzminister",
+          "count": 1
+        },
+        {
+          "word": "inflation",
+          "count": 1
+        },
+        {
+          "word": "finanzierung",
+          "count": 1
+        },
+        {
+          "word": "kosten",
           "count": 1
         }
       ],

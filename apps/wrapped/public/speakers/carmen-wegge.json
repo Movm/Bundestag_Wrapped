@@ -16,18 +16,18 @@
     "partySpeechRank": 3,
     "partyWordsRank": 7,
     "partySize": 114,
-    "totalSpeakers": 627,
+    "totalSpeakers": 625,
     "percentile": 98.2,
     "verbosityRank": 297,
     "verbosityTotal": 579,
     "partyVerbosityRank": 70,
-    "longestSpeechRank": 151
+    "longestSpeechRank": 150
   },
   "drama": {
     "interruptionsGiven": 22,
     "interruptionsReceived": 60,
-    "interrupterRank": 194,
-    "interruptedRank": 74
+    "interrupterRank": 196,
+    "interruptedRank": 75
   },
   "words": {
     "topWords": [
@@ -65,25 +65,25 @@
         "word": "drucksachen",
         "count": 5,
         "ratioParty": 256.1,
-        "ratioBundestag": 185.7
+        "ratioBundestag": 185.2
       },
       {
         "word": "kriminalisiert",
         "count": 5,
         "ratioParty": 128.1,
-        "ratioBundestag": 61.9
+        "ratioBundestag": 61.7
       },
       {
         "word": "erteilung",
         "count": 5,
         "ratioParty": 85.4,
-        "ratioBundestag": 92.8
+        "ratioBundestag": 99.7
       },
       {
         "word": "anwaltliche",
         "count": 5,
         "ratioParty": 85.4,
-        "ratioBundestag": 118.2
+        "ratioBundestag": 117.9
       },
       {
         "word": "selbstbestimmungsgesetz",
@@ -97,7 +97,7 @@
         "word": "inakzeptabel",
         "count": 4,
         "ratioParty": 20.5,
-        "ratioBundestag": 12.5
+        "ratioBundestag": 12.7
       },
       {
         "word": "angemessen",
@@ -128,7 +128,7 @@
   "comparison": {
     "speakerAvgWords": 431,
     "partyAvgWords": 618,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.7,
     "vsParliament": 0.74
   },
@@ -146,7 +146,7 @@
     {
       "emoji": "🏆",
       "label": "Rang (Reden)",
-      "value": "#11 von 627"
+      "value": "#11 von 625"
     },
     {
       "emoji": "⚡",
@@ -163,7 +163,11 @@
     "question": "Welches Wort nutzt Carmen Wegge häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Debatte",
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Kinder",
         "isCorrect": false
       },
       {
@@ -171,22 +175,18 @@
         "isCorrect": true
       },
       {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
+        "text": "Europa",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Drucksachen\" nutzt Carmen Wegge 256.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "185.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "185.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Carmen Wegge häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "National",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
@@ -194,16 +194,16 @@
         "isCorrect": true
       },
       {
-        "text": "Richtig",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Klar",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Inakzeptabel\" nutzt Carmen Wegge 20.5× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "12.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "12.7× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦁",
@@ -299,10 +299,6 @@
     "topicWords": {
       "migration": [
         {
-          "word": "ausländerbehörde",
-          "count": 3
-        },
-        {
           "word": "subsidiär",
           "count": 3
         },
@@ -315,15 +311,15 @@
           "count": 3
         },
         {
+          "word": "ausländerbehörde",
+          "count": 3
+        },
+        {
           "word": "aufenthaltsgesetz",
           "count": 2
         }
       ],
       "klima": [
-        {
-          "word": "windrad",
-          "count": 1
-        },
         {
           "word": "energieeffizienz",
           "count": 1
@@ -334,6 +330,10 @@
         },
         {
           "word": "nachhaltigkeit",
+          "count": 1
+        },
+        {
+          "word": "windrad",
           "count": 1
         }
       ],
@@ -377,7 +377,7 @@
           "count": 6
         },
         {
-          "word": "familie",
+          "word": "jugendliche",
           "count": 3
         }
       ],
@@ -431,11 +431,11 @@
           "count": 1
         },
         {
-          "word": "vertrag",
+          "word": "sanktion",
           "count": 1
         },
         {
-          "word": "sanktion",
+          "word": "vertrag",
           "count": 1
         },
         {
@@ -449,10 +449,6 @@
           "count": 7
         },
         {
-          "word": "internet",
-          "count": 3
-        },
-        {
           "word": "netz",
           "count": 3
         },
@@ -463,23 +459,27 @@
         {
           "word": "plattformen",
           "count": 3
+        },
+        {
+          "word": "netzwerk",
+          "count": 3
         }
       ],
       "bildung": [
-        {
-          "word": "wissenschaft",
-          "count": 1
-        },
-        {
-          "word": "erzieher",
-          "count": 1
-        },
         {
           "word": "schulen",
           "count": 1
         },
         {
           "word": "schüler",
+          "count": 1
+        },
+        {
+          "word": "wissenschaft",
+          "count": 1
+        },
+        {
+          "word": "erzieher",
           "count": 1
         }
       ],
@@ -493,15 +493,15 @@
           "count": 2
         },
         {
-          "word": "verschuldung",
-          "count": 1
-        },
-        {
-          "word": "banken",
-          "count": 1
-        },
-        {
           "word": "bank",
+          "count": 1
+        },
+        {
+          "word": "bundesrechnungshof",
+          "count": 1
+        },
+        {
+          "word": "haushaltsausschuss",
           "count": 1
         }
       ],
@@ -515,15 +515,15 @@
           "count": 13
         },
         {
-          "word": "diskriminierung",
-          "count": 12
-        },
-        {
           "word": "grundgesetz",
           "count": 12
         },
         {
-          "word": "gleichberechtigung",
+          "word": "diskriminierung",
+          "count": 12
+        },
+        {
+          "word": "gerichte",
           "count": 6
         }
       ],
@@ -537,7 +537,7 @@
           "count": 2
         },
         {
-          "word": "arbeitsvertrag",
+          "word": "kündigung",
           "count": 1
         },
         {
@@ -559,15 +559,15 @@
           "count": 3
         },
         {
+          "word": "nahverkehr",
+          "count": 1
+        },
+        {
           "word": "auto",
           "count": 1
         },
         {
           "word": "flugzeug",
-          "count": 1
-        },
-        {
-          "word": "nahverkehr",
           "count": 1
         }
       ]

@@ -15,13 +15,13 @@
     "wordsRank": 4,
     "partySpeechRank": 2,
     "partyWordsRank": 1,
-    "partySize": 151,
-    "totalSpeakers": 627,
+    "partySize": 150,
+    "totalSpeakers": 625,
     "percentile": 99.5,
-    "verbosityRank": 61,
+    "verbosityRank": 60,
     "verbosityTotal": 579,
     "partyVerbosityRank": 15,
-    "longestSpeechRank": 33
+    "longestSpeechRank": 31
   },
   "drama": {
     "interruptionsGiven": 267,
@@ -42,51 +42,55 @@
       {
         "word": "jahren",
         "count": 68
+      },
+      {
+        "word": "letzten",
+        "count": 43
       }
     ],
     "signatureWords": [
       {
         "word": "solidaritätszuschlag",
         "count": 13,
-        "ratioParty": 169.4,
-        "ratioBundestag": 82.6
-      },
-      {
-        "word": "pendlerpauschale",
-        "count": 12,
-        "ratioParty": 78.2,
-        "ratioBundestag": 25.7
+        "ratioParty": 168.5,
+        "ratioBundestag": 82.4
       },
       {
         "word": "nachhilfe",
         "count": 6,
-        "ratioParty": 78.2,
-        "ratioBundestag": 82.1
+        "ratioParty": 77.8,
+        "ratioBundestag": 81.9
+      },
+      {
+        "word": "pendlerpauschale",
+        "count": 12,
+        "ratioParty": 77.8,
+        "ratioBundestag": 25.7
       },
       {
         "word": "fremdwort",
         "count": 5,
-        "ratioParty": 65.1,
-        "ratioBundestag": 98.8
+        "ratioParty": 64.8,
+        "ratioBundestag": 98.6
       },
       {
         "word": "umstellen",
         "count": 5,
-        "ratioParty": 65.1,
-        "ratioBundestag": 44.5
+        "ratioParty": 64.8,
+        "ratioBundestag": 44.4
       }
     ],
     "signatureAdjectives": [
       {
         "word": "unverschämt",
         "count": 3,
-        "ratioParty": 58.6,
-        "ratioBundestag": 38.1
+        "ratioParty": 58.3,
+        "ratioBundestag": 38.0
       },
       {
         "word": "sozial",
         "count": 5,
-        "ratioParty": 4.2,
+        "ratioParty": 4.1,
         "ratioBundestag": 2.5
       },
       {
@@ -99,9 +103,9 @@
   },
   "comparison": {
     "speakerAvgWords": 602,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
-    "vsParty": 1.07,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
+    "vsParty": 1.08,
     "vsParliament": 1.03
   },
   "funFacts": [
@@ -118,7 +122,7 @@
     {
       "emoji": "🏆",
       "label": "Rang (Reden)",
-      "value": "#3 von 627"
+      "value": "#3 von 625"
     },
     {
       "emoji": "⚡",
@@ -128,41 +132,37 @@
     {
       "emoji": "🥇",
       "label": "Rang in AfD",
-      "value": "#2 von 151"
+      "value": "#2 von 150"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Kay Gottschalk häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Ausschuss",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Bundesregierung",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
         "text": "Solidaritätszuschlag",
         "isCorrect": true
-      },
-      {
-        "text": "Demokratie",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Solidaritätszuschlag\" nutzt Kay Gottschalk 169.4× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "82.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Solidaritätszuschlag\" nutzt Kay Gottschalk 168.5× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "82.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Kay Gottschalk häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
+        "text": "Alt",
         "isCorrect": false
       },
       {
@@ -170,12 +170,16 @@
         "isCorrect": true
       },
       {
-        "text": "Notwendig",
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unverschämt\" nutzt Kay Gottschalk 58.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "38.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Unverschämt\" nutzt Kay Gottschalk 58.3× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "38.0× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -247,15 +251,15 @@
     "topicWords": {
       "migration": [
         {
-          "word": "einwanderung",
-          "count": 2
-        },
-        {
           "word": "migration",
           "count": 2
         },
         {
-          "word": "obergrenze",
+          "word": "einwanderung",
+          "count": 2
+        },
+        {
+          "word": "flüchtlinge",
           "count": 1
         },
         {
@@ -273,10 +277,6 @@
           "count": 4
         },
         {
-          "word": "klimaschutz",
-          "count": 2
-        },
-        {
           "word": "kohle",
           "count": 2
         },
@@ -285,7 +285,11 @@
           "count": 2
         },
         {
-          "word": "emissionen",
+          "word": "klimaschutz",
+          "count": 2
+        },
+        {
+          "word": "umwelt",
           "count": 1
         }
       ],
@@ -299,11 +303,11 @@
           "count": 21
         },
         {
-          "word": "handel",
+          "word": "betriebe",
           "count": 8
         },
         {
-          "word": "betriebe",
+          "word": "handel",
           "count": 8
         },
         {
@@ -347,11 +351,11 @@
           "count": 2
         },
         {
-          "word": "attentat",
+          "word": "verbrechen",
           "count": 1
         },
         {
-          "word": "gewalt",
+          "word": "attentat",
           "count": 1
         }
       ],
@@ -361,19 +365,19 @@
           "count": 4
         },
         {
+          "word": "krankenkassen",
+          "count": 1
+        },
+        {
+          "word": "operation",
+          "count": 1
+        },
+        {
           "word": "kranke",
           "count": 1
         },
         {
           "word": "sucht",
-          "count": 1
-        },
-        {
-          "word": "corona",
-          "count": 1
-        },
-        {
-          "word": "krankenkassen",
           "count": 1
         }
       ],
@@ -405,19 +409,19 @@
           "count": 3
         },
         {
-          "word": "netzwerk",
-          "count": 1
-        },
-        {
-          "word": "desinformation",
-          "count": 1
-        },
-        {
-          "word": "technologie",
+          "word": "rundfunk",
           "count": 1
         },
         {
           "word": "plattformen",
+          "count": 1
+        },
+        {
+          "word": "plattform",
+          "count": 1
+        },
+        {
+          "word": "netzwerk",
           "count": 1
         }
       ],
@@ -449,11 +453,11 @@
           "count": 20
         },
         {
-          "word": "steuer",
+          "word": "schulden",
           "count": 17
         },
         {
-          "word": "schulden",
+          "word": "steuer",
           "count": 17
         },
         {
@@ -471,15 +475,15 @@
           "count": 3
         },
         {
+          "word": "klage",
+          "count": 2
+        },
+        {
           "word": "diskriminierung",
           "count": 2
         },
         {
           "word": "rechtsprechung",
-          "count": 2
-        },
-        {
-          "word": "klage",
           "count": 2
         },
         {

@@ -11,23 +11,23 @@
   "minWords": 13,
   "maxWords": 1056,
   "rankings": {
-    "speechRank": 450,
-    "wordsRank": 420,
-    "partySpeechRank": 135,
+    "speechRank": 445,
+    "wordsRank": 418,
+    "partySpeechRank": 133,
     "partyWordsRank": 130,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 28.2,
+    "totalSpeakers": 625,
+    "percentile": 28.8,
     "verbosityRank": 89,
     "verbosityTotal": 579,
     "partyVerbosityRank": 32,
-    "longestSpeechRank": 62
+    "longestSpeechRank": 61
   },
   "drama": {
     "interruptionsGiven": 5,
     "interruptionsReceived": 10,
-    "interrupterRank": 339,
-    "interruptedRank": 463
+    "interrupterRank": 348,
+    "interruptedRank": 460
   },
   "words": {
     "topWords": [
@@ -44,19 +44,19 @@
         "count": 11
       },
       {
-        "word": "haushalt",
-        "count": 10
-      },
-      {
         "word": "land",
         "count": 10
       },
       {
-        "word": "setzen",
-        "count": 9
+        "word": "haushalt",
+        "count": 10
       },
       {
         "word": "klare",
+        "count": 9
+      },
+      {
+        "word": "setzen",
         "count": 9
       },
       {
@@ -64,11 +64,11 @@
         "count": 8
       },
       {
-        "word": "mein",
+        "word": "diesen",
         "count": 7
       },
       {
-        "word": "innere",
+        "word": "mein",
         "count": 7
       }
     ],
@@ -77,13 +77,13 @@
         "word": "vertreibung",
         "count": 5,
         "ratioParty": 182.5,
-        "ratioBundestag": 70.4
+        "ratioBundestag": 70.2
       },
       {
         "word": "innere",
         "count": 7,
         "ratioParty": 56.1,
-        "ratioBundestag": 49.3
+        "ratioBundestag": 49.5
       },
       {
         "word": "verliert",
@@ -101,7 +101,7 @@
         "word": "migrationspolitik",
         "count": 5,
         "ratioParty": 19.6,
-        "ratioBundestag": 24.7
+        "ratioBundestag": 25.0
       }
     ],
     "signatureAdjectives": [
@@ -122,7 +122,7 @@
   "comparison": {
     "speakerAvgWords": 551,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.85,
     "vsParliament": 0.94
   },
@@ -142,43 +142,43 @@
     "question": "Welches Wort nutzt Klaus-Peter Willsch häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
         "text": "Vertreibung",
         "isCorrect": true
       },
       {
-        "text": "Bildung",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
         "text": "Koalition",
         "isCorrect": false
-      },
-      {
-        "text": "Antrag",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Vertreibung\" nutzt Klaus-Peter Willsch 182.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "70.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "70.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Klaus-Peter Willsch häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Groß",
+        "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Jung",
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
         "isCorrect": false
       },
       {
         "text": "Links",
         "isCorrect": true
-      },
-      {
-        "text": "Gefährlich",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Links\" nutzt Klaus-Peter Willsch 7.8× häufiger als der CDU/CSU-Durchschnitt.",
@@ -286,15 +286,15 @@
           "count": 2
         },
         {
-          "word": "bleiberecht",
+          "word": "integration",
           "count": 1
         },
         {
-          "word": "grenzkontrollen",
+          "word": "grenze",
           "count": 1
         },
         {
-          "word": "familiennachzug",
+          "word": "flüchtlinge",
           "count": 1
         }
       ],
@@ -334,15 +334,15 @@
           "count": 2
         },
         {
-          "word": "extremismus",
-          "count": 2
-        },
-        {
           "word": "armee",
           "count": 2
         },
         {
-          "word": "terror",
+          "word": "extremismus",
+          "count": 2
+        },
+        {
+          "word": "verbrechen",
           "count": 1
         }
       ],
@@ -358,11 +358,11 @@
           "count": 3
         },
         {
-          "word": "israel",
+          "word": "krieg",
           "count": 2
         },
         {
-          "word": "krieg",
+          "word": "israel",
           "count": 2
         },
         {
@@ -380,15 +380,15 @@
           "count": 2
         },
         {
-          "word": "investitionen",
+          "word": "etat",
+          "count": 1
+        },
+        {
+          "word": "bundesrechnungshof",
           "count": 1
         },
         {
           "word": "steuerzahler",
-          "count": 1
-        },
-        {
-          "word": "etat",
           "count": 1
         }
       ],

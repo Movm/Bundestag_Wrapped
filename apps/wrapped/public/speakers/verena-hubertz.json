@@ -11,17 +11,17 @@
   "minWords": 9,
   "maxWords": 984,
   "rankings": {
-    "speechRank": 302,
+    "speechRank": 303,
     "wordsRank": 48,
     "partySpeechRank": 61,
     "partyWordsRank": 10,
     "partySize": 114,
-    "totalSpeakers": 627,
-    "percentile": 51.8,
+    "totalSpeakers": 625,
+    "percentile": 51.5,
     "verbosityRank": 570,
     "verbosityTotal": 579,
     "partyVerbosityRank": 100,
-    "longestSpeechRank": 91
+    "longestSpeechRank": 89
   },
   "drama": {
     "interruptionsGiven": 0,
@@ -48,11 +48,11 @@
         "count": 31
       },
       {
-        "word": "wohnen",
+        "word": "wohnraum",
         "count": 30
       },
       {
-        "word": "wohnraum",
+        "word": "wohnen",
         "count": 30
       },
       {
@@ -66,34 +66,34 @@
     ],
     "signatureWords": [
       {
-        "word": "baugb",
-        "count": 6,
-        "ratioParty": 369.6,
-        "ratioBundestag": 74.8
-      },
-      {
         "word": "baugesetzbuchnovelle",
         "count": 6,
         "ratioParty": 369.6,
-        "ratioBundestag": 110.0
+        "ratioBundestag": 109.8
+      },
+      {
+        "word": "baugb",
+        "count": 6,
+        "ratioParty": 369.6,
+        "ratioBundestag": 74.7
       },
       {
         "word": "normen",
         "count": 5,
         "ratioParty": 102.7,
-        "ratioBundestag": 45.9
+        "ratioBundestag": 45.7
       },
       {
         "word": "gebäudetyp",
         "count": 12,
         "ratioParty": 92.4,
-        "ratioBundestag": 133.6
+        "ratioBundestag": 133.3
       },
       {
         "word": "baugesetzbuch",
         "count": 10,
         "ratioParty": 88.0,
-        "ratioBundestag": 58.8
+        "ratioBundestag": 58.7
       }
     ],
     "signatureAdjectives": [
@@ -108,7 +108,7 @@
   "comparison": {
     "speakerAvgWords": 151,
     "partyAvgWords": 618,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.24,
     "vsParliament": 0.26
   },
@@ -128,43 +128,43 @@
     "question": "Welches Wort nutzt Verena Hubertz häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Baugb",
+        "text": "Baugesetzbuchnovelle",
         "isCorrect": true
       },
       {
-        "text": "Haushalt",
+        "text": "Sicherheit",
         "isCorrect": false
       },
       {
         "text": "Gesetzentwurf",
         "isCorrect": false
+      },
+      {
+        "text": "Minister",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Baugb\" nutzt Verena Hubertz 369.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "74.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Baugesetzbuchnovelle\" nutzt Verena Hubertz 369.6× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "109.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Verena Hubertz häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Europäisch",
+        "text": "Gut",
         "isCorrect": false
       },
       {
-        "text": "Klar",
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
         "isCorrect": false
       },
       {
         "text": "Konstruktiv",
         "isCorrect": true
-      },
-      {
-        "text": "Richtig",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Konstruktiv\" nutzt Verena Hubertz 5.4× häufiger als der SPD-Durchschnitt.",
@@ -274,7 +274,7 @@
           "count": 3
         },
         {
-          "word": "dämmung",
+          "word": "klimawandel",
           "count": 2
         },
         {
@@ -286,7 +286,7 @@
           "count": 2
         },
         {
-          "word": "klimawandel",
+          "word": "dämmung",
           "count": 2
         }
       ],
@@ -300,15 +300,15 @@
           "count": 6
         },
         {
-          "word": "unternehmen",
-          "count": 3
-        },
-        {
           "word": "betrieb",
           "count": 3
         },
         {
-          "word": "volkswirtschaft",
+          "word": "unternehmen",
+          "count": 3
+        },
+        {
+          "word": "betriebe",
           "count": 1
         }
       ],
@@ -410,15 +410,15 @@
           "count": 3
         },
         {
-          "word": "mietrecht",
-          "count": 1
-        },
-        {
           "word": "anwalt",
           "count": 1
         },
         {
           "word": "beschluss",
+          "count": 1
+        },
+        {
+          "word": "mietrecht",
           "count": 1
         }
       ],

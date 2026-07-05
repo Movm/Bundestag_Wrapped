@@ -11,23 +11,23 @@
   "minWords": 383,
   "maxWords": 581,
   "rankings": {
-    "speechRank": 557,
-    "wordsRank": 560,
-    "partySpeechRank": 97,
+    "speechRank": 554,
+    "wordsRank": 558,
+    "partySpeechRank": 96,
     "partyWordsRank": 101,
     "partySize": 114,
-    "totalSpeakers": 627,
-    "percentile": 11.2,
+    "totalSpeakers": 625,
+    "percentile": 11.4,
     "verbosityRank": 170,
     "verbosityTotal": 579,
     "partyVerbosityRank": 39,
-    "longestSpeechRank": 515
+    "longestSpeechRank": 513
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 6,
     "interrupterRank": null,
-    "interruptedRank": 523
+    "interruptedRank": 519
   },
   "words": {
     "topWords": [
@@ -44,7 +44,7 @@
         "count": 7
       },
       {
-        "word": "damals",
+        "word": "warteliste",
         "count": 6
       },
       {
@@ -56,15 +56,15 @@
         "count": 6
       },
       {
-        "word": "warteliste",
+        "word": "damals",
         "count": 6
       },
       {
-        "word": "großen",
+        "word": "widerspruchslösung",
         "count": 5
       },
       {
-        "word": "lassen",
+        "word": "menschen",
         "count": 5
       },
       {
@@ -77,31 +77,31 @@
         "word": "warteliste",
         "count": 6,
         "ratioParty": 698.4,
-        "ratioBundestag": 873.8
+        "ratioBundestag": 871.8
       },
       {
         "word": "widerspruchslösung",
         "count": 5,
         "ratioParty": 211.6,
-        "ratioBundestag": 211.8
+        "ratioBundestag": 211.3
       },
       {
         "word": "bafög",
         "count": 9,
         "ratioParty": 42.3,
-        "ratioBundestag": 69.0
+        "ratioBundestag": 68.8
       },
       {
         "word": "damals",
         "count": 6,
         "ratioParty": 19.1,
-        "ratioBundestag": 15.6
+        "ratioBundestag": 15.5
       },
       {
         "word": "entscheidung",
         "count": 5,
         "ratioParty": 13.2,
-        "ratioBundestag": 16.0
+        "ratioBundestag": 15.9
       }
     ],
     "signatureAdjectives": [
@@ -116,7 +116,7 @@
   "comparison": {
     "speakerAvgWords": 490,
     "partyAvgWords": 618,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.79,
     "vsParliament": 0.84
   },
@@ -136,15 +136,15 @@
     "question": "Welches Wort nutzt Dr. Karl Lauterbach häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Abstimmung",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Freiheit",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Debatte",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
@@ -153,26 +153,26 @@
       }
     ],
     "explanationParty": "\"Warteliste\" nutzt Dr. Karl Lauterbach 698.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "873.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "871.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Karl Lauterbach häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
         "text": "Sicher",
         "isCorrect": true
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Sicher\" nutzt Dr. Karl Lauterbach 4.7× häufiger als der SPD-Durchschnitt.",
@@ -272,15 +272,15 @@
     "topicWords": {
       "klima": [
         {
+          "word": "klimawandel",
+          "count": 1
+        },
+        {
           "word": "klimaneutral",
           "count": 1
         },
         {
           "word": "erneuerbare",
-          "count": 1
-        },
-        {
-          "word": "klimawandel",
           "count": 1
         }
       ],
@@ -300,6 +300,10 @@
           "count": 6
         },
         {
+          "word": "kind",
+          "count": 1
+        },
+        {
           "word": "familien",
           "count": 1
         },
@@ -310,13 +314,17 @@
         {
           "word": "familie",
           "count": 1
-        },
-        {
-          "word": "kind",
-          "count": 1
         }
       ],
       "gesundheit": [
+        {
+          "word": "ärzte",
+          "count": 1
+        },
+        {
+          "word": "pflegekräfte",
+          "count": 1
+        },
         {
           "word": "pandemie",
           "count": 1
@@ -327,14 +335,6 @@
         },
         {
           "word": "medizin",
-          "count": 1
-        },
-        {
-          "word": "ärzte",
-          "count": 1
-        },
-        {
-          "word": "pflegekräfte",
           "count": 1
         }
       ],
@@ -358,11 +358,11 @@
           "count": 2
         },
         {
-          "word": "forschung",
+          "word": "bildungssystem",
           "count": 1
         },
         {
-          "word": "bildungssystem",
+          "word": "forschung",
           "count": 1
         }
       ],
@@ -372,11 +372,7 @@
           "count": 4
         },
         {
-          "word": "sondervermögen",
-          "count": 1
-        },
-        {
-          "word": "investitionen",
+          "word": "kosten",
           "count": 1
         },
         {
@@ -384,7 +380,11 @@
           "count": 1
         },
         {
-          "word": "kosten",
+          "word": "sondervermögen",
+          "count": 1
+        },
+        {
+          "word": "investitionen",
           "count": 1
         }
       ],

@@ -11,23 +11,23 @@
   "minWords": 9,
   "maxWords": 817,
   "rankings": {
-    "speechRank": 66,
+    "speechRank": 68,
     "wordsRank": 98,
     "partySpeechRank": 17,
     "partyWordsRank": 25,
     "partySize": 114,
-    "totalSpeakers": 627,
-    "percentile": 89.5,
-    "verbosityRank": 249,
+    "totalSpeakers": 625,
+    "percentile": 89.1,
+    "verbosityRank": 250,
     "verbosityTotal": 579,
     "partyVerbosityRank": 57,
-    "longestSpeechRank": 229
+    "longestSpeechRank": 228
   },
   "drama": {
     "interruptionsGiven": 18,
     "interruptionsReceived": 6,
-    "interrupterRank": 215,
-    "interruptedRank": 530
+    "interrupterRank": 216,
+    "interruptedRank": 527
   },
   "words": {
     "topWords": [
@@ -73,31 +73,31 @@
         "word": "legitimieren",
         "count": 5,
         "ratioParty": 202.0,
-        "ratioBundestag": 113.3
+        "ratioBundestag": 113.0
       },
       {
         "word": "freilassung",
         "count": 5,
         "ratioParty": 101.0,
-        "ratioBundestag": 88.6
-      },
-      {
-        "word": "dayton",
-        "count": 9,
-        "ratioParty": 80.8,
-        "ratioBundestag": 54.8
+        "ratioBundestag": 88.4
       },
       {
         "word": "narrativ",
         "count": 6,
         "ratioParty": 80.8,
-        "ratioBundestag": 52.0
+        "ratioBundestag": 51.9
+      },
+      {
+        "word": "dayton",
+        "count": 9,
+        "ratioParty": 80.8,
+        "ratioBundestag": 54.6
       },
       {
         "word": "bruch",
         "count": 6,
         "ratioParty": 69.3,
-        "ratioBundestag": 47.0
+        "ratioBundestag": 47.9
       }
     ],
     "signatureAdjectives": [
@@ -118,9 +118,9 @@
   "comparison": {
     "speakerAvgWords": 453,
     "partyAvgWords": 618,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.73,
-    "vsParliament": 0.77
+    "vsParliament": 0.78
   },
   "funFacts": [
     {
@@ -143,34 +143,30 @@
     "question": "Welches Wort nutzt Adis Ahmetovic häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
         "text": "Legitimieren",
         "isCorrect": true
-      },
-      {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Legitimieren\" nutzt Adis Ahmetovic 202.0× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "113.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "113.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Adis Ahmetovic häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Menschlich",
-        "isCorrect": true
-      },
-      {
-        "text": "Richtig",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
@@ -178,7 +174,11 @@
         "isCorrect": false
       },
       {
-        "text": "Problematisch",
+        "text": "Menschlich",
+        "isCorrect": true
+      },
+      {
+        "text": "Stark",
         "isCorrect": false
       }
     ],
@@ -307,15 +307,15 @@
       ],
       "wirtschaft": [
         {
+          "word": "wirtschaftspolitik",
+          "count": 1
+        },
+        {
           "word": "volkswirtschaft",
           "count": 1
         },
         {
           "word": "kredit",
-          "count": 1
-        },
-        {
-          "word": "wirtschaftspolitik",
           "count": 1
         }
       ],
@@ -359,7 +359,7 @@
           "count": 2
         },
         {
-          "word": "terrorismus",
+          "word": "korruption",
           "count": 1
         }
       ],
@@ -369,15 +369,15 @@
           "count": 2
         },
         {
+          "word": "medizin",
+          "count": 1
+        },
+        {
           "word": "medikamente",
           "count": 1
         },
         {
           "word": "krankenhäuser",
-          "count": 1
-        },
-        {
-          "word": "medizin",
           "count": 1
         },
         {
@@ -435,11 +435,11 @@
           "count": 3
         },
         {
-          "word": "haushaltsplan",
+          "word": "inflation",
           "count": 1
         },
         {
-          "word": "inflation",
+          "word": "haushaltsplan",
           "count": 1
         }
       ],
@@ -453,15 +453,15 @@
           "count": 4
         },
         {
-          "word": "beschluss",
-          "count": 1
-        },
-        {
           "word": "urteil",
           "count": 1
         },
         {
-          "word": "verfassungsrecht",
+          "word": "beschluss",
+          "count": 1
+        },
+        {
+          "word": "gleichberechtigung",
           "count": 1
         }
       ],

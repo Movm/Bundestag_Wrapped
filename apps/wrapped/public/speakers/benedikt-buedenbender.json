@@ -11,23 +11,23 @@
   "minWords": 86,
   "maxWords": 1073,
   "rankings": {
-    "speechRank": 380,
+    "speechRank": 378,
     "wordsRank": 334,
-    "partySpeechRank": 110,
+    "partySpeechRank": 107,
     "partyWordsRank": 100,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 39.4,
+    "totalSpeakers": 625,
+    "percentile": 39.5,
     "verbosityRank": 139,
     "verbosityTotal": 579,
     "partyVerbosityRank": 48,
-    "longestSpeechRank": 58
+    "longestSpeechRank": 56
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 24,
     "interrupterRank": null,
-    "interruptedRank": 287
+    "interruptedRank": 290
   },
   "words": {
     "topWords": [
@@ -48,11 +48,7 @@
         "count": 16
       },
       {
-        "word": "zeigt",
-        "count": 11
-      },
-      {
-        "word": "land",
+        "word": "beispiel",
         "count": 11
       },
       {
@@ -64,7 +60,11 @@
         "count": 11
       },
       {
-        "word": "beispiel",
+        "word": "zeigt",
+        "count": 11
+      },
+      {
+        "word": "land",
         "count": 11
       }
     ],
@@ -73,13 +73,13 @@
         "word": "biokraftstoffe",
         "count": 6,
         "ratioParty": 510.6,
-        "ratioBundestag": 525.2
+        "ratioBundestag": 523.9
       },
       {
         "word": "quote",
         "count": 5,
         "ratioParty": 141.8,
-        "ratioBundestag": 49.9
+        "ratioBundestag": 49.7
       },
       {
         "word": "landwirte",
@@ -91,13 +91,13 @@
         "word": "kraftstoffe",
         "count": 5,
         "ratioParty": 38.7,
-        "ratioBundestag": 66.8
+        "ratioBundestag": 66.6
       },
       {
         "word": "rainer",
         "count": 6,
         "ratioParty": 33.3,
-        "ratioBundestag": 26.3
+        "ratioBundestag": 26.6
       }
     ],
     "signatureAdjectives": [
@@ -118,7 +118,7 @@
   "comparison": {
     "speakerAvgWords": 516,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.8,
     "vsParliament": 0.88
   },
@@ -138,42 +138,42 @@
     "question": "Welches Wort nutzt Benedikt Büdenbender häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
         "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Investitionen",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
         "text": "Biokraftstoffe",
         "isCorrect": true
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Biokraftstoffe\" nutzt Benedikt Büdenbender 510.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "525.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "523.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Benedikt Büdenbender häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
         "text": "Falsch",
         "isCorrect": true
       },
       {
-        "text": "Gefährlich",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
+        "text": "National",
         "isCorrect": false
       }
     ],
@@ -296,7 +296,7 @@
           "count": 3
         },
         {
-          "word": "wald",
+          "word": "erneuerbare",
           "count": 2
         }
       ],
@@ -310,15 +310,15 @@
           "count": 6
         },
         {
-          "word": "betriebe",
-          "count": 4
-        },
-        {
           "word": "markt",
           "count": 4
         },
         {
-          "word": "wirtschaftswachstum",
+          "word": "betriebe",
+          "count": 4
+        },
+        {
+          "word": "industrie",
           "count": 3
         }
       ],
@@ -338,11 +338,11 @@
           "count": 3
         },
         {
-          "word": "brüssel",
+          "word": "ukraine",
           "count": 1
         },
         {
-          "word": "ukraine",
+          "word": "brüssel",
           "count": 1
         }
       ],
@@ -384,7 +384,7 @@
           "count": 3
         },
         {
-          "word": "bundeshaushalt",
+          "word": "haushaltsentwurf",
           "count": 2
         }
       ],
@@ -404,11 +404,11 @@
           "count": 2
         },
         {
-          "word": "beschäftigung",
+          "word": "arbeitsplatz",
           "count": 1
         },
         {
-          "word": "arbeitsplatz",
+          "word": "beschäftigung",
           "count": 1
         }
       ],

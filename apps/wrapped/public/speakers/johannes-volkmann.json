@@ -11,23 +11,23 @@
   "minWords": 33,
   "maxWords": 700,
   "rankings": {
-    "speechRank": 54,
+    "speechRank": 56,
     "wordsRank": 111,
-    "partySpeechRank": 15,
+    "partySpeechRank": 14,
     "partyWordsRank": 32,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 91.4,
+    "totalSpeakers": 625,
+    "percentile": 91.0,
     "verbosityRank": 320,
     "verbosityTotal": 579,
     "partyVerbosityRank": 112,
-    "longestSpeechRank": 373
+    "longestSpeechRank": 371
   },
   "drama": {
     "interruptionsGiven": 21,
     "interruptionsReceived": 70,
-    "interrupterRank": 201,
-    "interruptedRank": 52
+    "interrupterRank": 202,
+    "interruptedRank": 51
   },
   "words": {
     "topWords": [
@@ -36,11 +36,11 @@
         "count": 33
       },
       {
-        "word": "debatte",
+        "word": "deutschen",
         "count": 21
       },
       {
-        "word": "deutschen",
+        "word": "debatte",
         "count": 21
       },
       {
@@ -53,25 +53,25 @@
         "word": "huthis",
         "count": 6,
         "ratioParty": 88.1,
-        "ratioBundestag": 111.5
+        "ratioBundestag": 111.3
       },
       {
         "word": "kulturstaatsminister",
         "count": 11,
         "ratioParty": 85.5,
-        "ratioBundestag": 52.3
+        "ratioBundestag": 52.2
       },
       {
         "word": "epstein",
         "count": 6,
         "ratioParty": 72.1,
-        "ratioBundestag": 29.6
+        "ratioBundestag": 29.5
       },
       {
         "word": "gegenwart",
         "count": 5,
         "ratioParty": 41.3,
-        "ratioBundestag": 36.5
+        "ratioBundestag": 36.4
       },
       {
         "word": "deutschem",
@@ -98,7 +98,7 @@
   "comparison": {
     "speakerAvgWords": 420,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.65,
     "vsParliament": 0.72
   },
@@ -128,11 +128,7 @@
     "question": "Welches Wort nutzt Johannes Volkmann häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
+        "text": "Minister",
         "isCorrect": false
       },
       {
@@ -140,31 +136,35 @@
         "isCorrect": true
       },
       {
+        "text": "Haushalt",
+        "isCorrect": false
+      },
+      {
         "text": "Koalition",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Huthis\" nutzt Johannes Volkmann 88.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "111.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "111.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Johannes Volkmann häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Notwendig",
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
+        "text": "Richtig",
         "isCorrect": false
       },
       {
         "text": "Peinlich",
         "isCorrect": true
-      },
-      {
-        "text": "Schlecht",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Peinlich\" nutzt Johannes Volkmann 66.1× häufiger als der CDU/CSU-Durchschnitt.",
@@ -272,11 +272,11 @@
           "count": 2
         },
         {
-          "word": "drittstaaten",
+          "word": "integration",
           "count": 1
         },
         {
-          "word": "integration",
+          "word": "drittstaaten",
           "count": 1
         },
         {
@@ -308,11 +308,11 @@
           "count": 3
         },
         {
-          "word": "industrie",
+          "word": "wettbewerbsfähigkeit",
           "count": 2
         },
         {
-          "word": "volkswirtschaft",
+          "word": "industrie",
           "count": 2
         },
         {
@@ -330,15 +330,15 @@
           "count": 2
         },
         {
+          "word": "familie",
+          "count": 1
+        },
+        {
           "word": "jugend",
           "count": 1
         },
         {
           "word": "familien",
-          "count": 1
-        },
-        {
-          "word": "familie",
           "count": 1
         }
       ],
@@ -352,15 +352,15 @@
           "count": 6
         },
         {
-          "word": "soldaten",
-          "count": 5
-        },
-        {
           "word": "gewalt",
           "count": 5
         },
         {
-          "word": "terror",
+          "word": "soldaten",
+          "count": 5
+        },
+        {
+          "word": "täter",
           "count": 3
         }
       ],
@@ -396,7 +396,7 @@
           "count": 7
         },
         {
-          "word": "bündnis",
+          "word": "china",
           "count": 6
         }
       ],
@@ -408,21 +408,21 @@
       ],
       "bildung": [
         {
-          "word": "grundschule",
+          "word": "bildung",
           "count": 1
         },
         {
-          "word": "bildung",
+          "word": "grundschule",
           "count": 1
         }
       ],
       "finanzen": [
         {
-          "word": "kosten",
+          "word": "investitionen",
           "count": 3
         },
         {
-          "word": "investitionen",
+          "word": "kosten",
           "count": 3
         },
         {
@@ -430,25 +430,25 @@
           "count": 2
         },
         {
-          "word": "steuern",
+          "word": "entlastung",
           "count": 1
         },
         {
-          "word": "entlastung",
+          "word": "steuern",
           "count": 1
         }
       ],
       "justiz": [
+        {
+          "word": "gesetzgebung",
+          "count": 2
+        },
         {
           "word": "staatsanwaltschaft",
           "count": 2
         },
         {
           "word": "rechtsstaat",
-          "count": 2
-        },
-        {
-          "word": "gesetzgebung",
           "count": 2
         },
         {
@@ -466,11 +466,11 @@
           "count": 2
         },
         {
-          "word": "arbeitsplatz",
+          "word": "arbeiter",
           "count": 1
         },
         {
-          "word": "arbeiter",
+          "word": "arbeitsplatz",
           "count": 1
         }
       ],
@@ -488,11 +488,11 @@
           "count": 2
         },
         {
-          "word": "straßen",
+          "word": "schiffe",
           "count": 1
         },
         {
-          "word": "schiffe",
+          "word": "schiff",
           "count": 1
         }
       ]

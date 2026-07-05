@@ -11,23 +11,23 @@
   "minWords": 60,
   "maxWords": 570,
   "rankings": {
-    "speechRank": 252,
-    "wordsRank": 421,
-    "partySpeechRank": 48,
-    "partyWordsRank": 70,
-    "partySize": 87,
-    "totalSpeakers": 627,
-    "percentile": 59.8,
+    "speechRank": 260,
+    "wordsRank": 420,
+    "partySpeechRank": 49,
+    "partyWordsRank": 69,
+    "partySize": 86,
+    "totalSpeakers": 625,
+    "percentile": 58.4,
     "verbosityRank": 510,
     "verbosityTotal": 579,
     "partyVerbosityRank": 68,
-    "longestSpeechRank": 531
+    "longestSpeechRank": 529
   },
   "drama": {
     "interruptionsGiven": 6,
     "interruptionsReceived": 32,
-    "interrupterRank": 322,
-    "interruptedRank": 219
+    "interrupterRank": 334,
+    "interruptedRank": 222
   },
   "words": {
     "topWords": [
@@ -52,10 +52,6 @@
         "count": 9
       },
       {
-        "word": "queere",
-        "count": 9
-      },
-      {
         "word": "juden",
         "count": 9
       },
@@ -64,11 +60,15 @@
         "count": 9
       },
       {
-        "word": "rechtsextreme",
-        "count": 8
+        "word": "queere",
+        "count": 9
       },
       {
         "word": "jüdinnen",
+        "count": 8
+      },
+      {
+        "word": "rechtsextreme",
         "count": 8
       }
     ],
@@ -76,53 +76,53 @@
       {
         "word": "jüdinnen",
         "count": 8,
-        "ratioParty": 229.6,
-        "ratioBundestag": 116.8
+        "ratioParty": 227.7,
+        "ratioBundestag": 116.5
       },
       {
         "word": "juden",
         "count": 9,
-        "ratioParty": 215.3,
-        "ratioBundestag": 75.1
+        "ratioParty": 213.5,
+        "ratioBundestag": 74.9
       },
       {
         "word": "antisemitismus",
         "count": 31,
-        "ratioParty": 193.4,
-        "ratioBundestag": 174.8
+        "ratioParty": 191.8,
+        "ratioBundestag": 174.4
       },
       {
         "word": "erschossen",
         "count": 6,
-        "ratioParty": 172.2,
-        "ratioBundestag": 165.4
+        "ratioParty": 170.8,
+        "ratioBundestag": 165.0
       },
       {
         "word": "erinnerungskultur",
         "count": 5,
-        "ratioParty": 119.6,
-        "ratioBundestag": 118.1
+        "ratioParty": 118.6,
+        "ratioBundestag": 117.9
       }
     ],
     "signatureAdjectives": [
       {
         "word": "links",
         "count": 3,
-        "ratioParty": 23.9,
+        "ratioParty": 23.7,
         "ratioBundestag": 5.7
       },
       {
         "word": "rechts",
         "count": 6,
-        "ratioParty": 13.9,
+        "ratioParty": 13.8,
         "ratioBundestag": 11.9
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 293,
-    "partyAvgWords": 543,
-    "parliamentAvgWords": 585,
+    "partyAvgWords": 538,
+    "parliamentAvgWords": 584,
     "vsParty": 0.54,
     "vsParliament": 0.5
   },
@@ -142,34 +142,34 @@
     "question": "Welches Wort nutzt Marlene Schönberger häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
         "text": "Jüdinnen",
         "isCorrect": true
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Jüdinnen\" nutzt Marlene Schönberger 229.6× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "116.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Jüdinnen\" nutzt Marlene Schönberger 227.7× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "116.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Marlene Schönberger häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Stark",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
@@ -177,11 +177,11 @@
         "isCorrect": true
       },
       {
-        "text": "Notwendig",
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Links\" nutzt Marlene Schönberger 23.9× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationParty": "\"Links\" nutzt Marlene Schönberger 23.7× häufiger als der GRÜNE-Durchschnitt.",
     "explanationBundestag": "5.7× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -284,19 +284,19 @@
       ],
       "soziales": [
         {
-          "word": "obdachlose",
-          "count": 1
-        },
-        {
-          "word": "familien",
-          "count": 1
-        },
-        {
           "word": "familie",
           "count": 1
         },
         {
           "word": "jugend",
+          "count": 1
+        },
+        {
+          "word": "obdachlose",
+          "count": 1
+        },
+        {
+          "word": "familien",
           "count": 1
         }
       ],
@@ -324,11 +324,11 @@
       ],
       "gesundheit": [
         {
-          "word": "krankenhäuser",
+          "word": "rettungsdienst",
           "count": 1
         },
         {
-          "word": "prävention",
+          "word": "krankenhäuser",
           "count": 1
         },
         {
@@ -336,7 +336,7 @@
           "count": 1
         },
         {
-          "word": "rettungsdienst",
+          "word": "prävention",
           "count": 1
         }
       ],
@@ -346,19 +346,19 @@
           "count": 1
         },
         {
+          "word": "kriegsverbrechen",
+          "count": 1
+        },
+        {
           "word": "putin",
           "count": 1
         },
         {
-          "word": "kreml",
-          "count": 1
-        },
-        {
-          "word": "russland",
-          "count": 1
-        },
-        {
           "word": "sanktionen",
+          "count": 1
+        },
+        {
+          "word": "kreml",
           "count": 1
         }
       ],
@@ -368,19 +368,19 @@
           "count": 2
         },
         {
-          "word": "rundfunk",
-          "count": 1
-        },
-        {
           "word": "digitalisierung",
           "count": 1
         },
         {
-          "word": "daten",
+          "word": "rundfunk",
           "count": 1
         },
         {
           "word": "plattformen",
+          "count": 1
+        },
+        {
+          "word": "medienkompetenz",
           "count": 1
         }
       ],
@@ -412,15 +412,15 @@
           "count": 2
         },
         {
+          "word": "entlastung",
+          "count": 1
+        },
+        {
           "word": "schuldenbremse",
           "count": 1
         },
         {
           "word": "investition",
-          "count": 1
-        },
-        {
-          "word": "entlastung",
           "count": 1
         }
       ],
@@ -430,11 +430,7 @@
           "count": 3
         },
         {
-          "word": "haft",
-          "count": 2
-        },
-        {
-          "word": "richter",
+          "word": "rechtsstaatlichkeit",
           "count": 2
         },
         {
@@ -443,6 +439,10 @@
         },
         {
           "word": "rechtsstaat",
+          "count": 2
+        },
+        {
+          "word": "haft",
           "count": 2
         }
       ]

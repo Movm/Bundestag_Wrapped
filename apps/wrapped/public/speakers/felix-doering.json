@@ -11,22 +11,22 @@
   "minWords": 89,
   "maxWords": 867,
   "rankings": {
-    "speechRank": 90,
+    "speechRank": 91,
     "wordsRank": 91,
-    "partySpeechRank": 25,
+    "partySpeechRank": 26,
     "partyWordsRank": 23,
     "partySize": 114,
-    "totalSpeakers": 627,
-    "percentile": 85.6,
+    "totalSpeakers": 625,
+    "percentile": 85.4,
     "verbosityRank": 236,
     "verbosityTotal": 579,
     "partyVerbosityRank": 53,
-    "longestSpeechRank": 169
+    "longestSpeechRank": 167
   },
   "drama": {
     "interruptionsGiven": 33,
     "interruptionsReceived": 79,
-    "interrupterRank": 156,
+    "interrupterRank": 155,
     "interruptedRank": 42
   },
   "words": {
@@ -53,31 +53,31 @@
         "word": "gruppenbezogene",
         "count": 13,
         "ratioParty": 481.1,
-        "ratioBundestag": 971.9
+        "ratioBundestag": 969.5
       },
       {
         "word": "menschenfeindlichkeit",
         "count": 13,
         "ratioParty": 192.4,
-        "ratioBundestag": 194.4
+        "ratioBundestag": 193.9
       },
       {
         "word": "jugendplan",
         "count": 7,
         "ratioParty": 172.7,
-        "ratioBundestag": 174.4
+        "ratioBundestag": 174.0
       },
       {
         "word": "elterngeld",
         "count": 19,
         "ratioParty": 156.3,
-        "ratioBundestag": 77.2
+        "ratioBundestag": 77.0
       },
       {
         "word": "freiwilligendienste",
         "count": 8,
         "ratioParty": 84.6,
-        "ratioBundestag": 51.6
+        "ratioBundestag": 51.4
       }
     ],
     "signatureAdjectives": [
@@ -98,7 +98,7 @@
   "comparison": {
     "speakerAvgWords": 458,
     "partyAvgWords": 618,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.74,
     "vsParliament": 0.78
   },
@@ -123,38 +123,38 @@
     "question": "Welches Wort nutzt Felix Döring häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
         "text": "Gruppenbezogene",
         "isCorrect": true
       },
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
+        "text": "Verantwortung",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Gruppenbezogene\" nutzt Felix Döring 481.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "971.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "969.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Felix Döring häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
+        "text": "National",
         "isCorrect": false
       },
       {
-        "text": "Falsch",
+        "text": "Alt",
         "isCorrect": false
       },
       {
@@ -259,15 +259,15 @@
     "topicWords": {
       "migration": [
         {
+          "word": "migration",
+          "count": 1
+        },
+        {
           "word": "geflüchtete",
           "count": 1
         },
         {
           "word": "mittelmeer",
-          "count": 1
-        },
-        {
-          "word": "migration",
           "count": 1
         }
       ],
@@ -283,15 +283,7 @@
       ],
       "wirtschaft": [
         {
-          "word": "bruttoinlandsprodukt",
-          "count": 1
-        },
-        {
           "word": "werk",
-          "count": 1
-        },
-        {
-          "word": "wirtschaft",
           "count": 1
         },
         {
@@ -299,7 +291,15 @@
           "count": 1
         },
         {
+          "word": "wirtschaft",
+          "count": 1
+        },
+        {
           "word": "unternehmen",
+          "count": 1
+        },
+        {
+          "word": "bruttoinlandsprodukt",
           "count": 1
         }
       ],
@@ -317,11 +317,11 @@
           "count": 5
         },
         {
-          "word": "familien",
+          "word": "eltern",
           "count": 4
         },
         {
-          "word": "eltern",
+          "word": "familien",
           "count": 4
         }
       ],
@@ -335,15 +335,15 @@
           "count": 1
         },
         {
-          "word": "verteidigung",
-          "count": 1
-        },
-        {
           "word": "angriff",
           "count": 1
         },
         {
           "word": "verfassungsschutz",
+          "count": 1
+        },
+        {
+          "word": "extremismus",
           "count": 1
         }
       ],
@@ -363,29 +363,29 @@
           "count": 2
         },
         {
-          "word": "ukraine",
-          "count": 2
-        },
-        {
-          "word": "wiederaufbau",
-          "count": 2
-        },
-        {
           "word": "außenminister",
           "count": 2
         },
         {
           "word": "china",
           "count": 2
+        },
+        {
+          "word": "ukraine",
+          "count": 2
+        },
+        {
+          "word": "wiederaufbau",
+          "count": 2
         }
       ],
       "digital": [
         {
-          "word": "plattform",
+          "word": "rundfunk",
           "count": 2
         },
         {
-          "word": "rundfunk",
+          "word": "plattform",
           "count": 2
         },
         {
@@ -393,11 +393,11 @@
           "count": 1
         },
         {
-          "word": "plattformen",
+          "word": "medienkompetenz",
           "count": 1
         },
         {
-          "word": "medienkompetenz",
+          "word": "plattformen",
           "count": 1
         }
       ],
@@ -437,7 +437,7 @@
           "count": 3
         },
         {
-          "word": "investition",
+          "word": "kosten",
           "count": 2
         },
         {
@@ -451,11 +451,11 @@
           "count": 4
         },
         {
-          "word": "grundgesetz",
+          "word": "grundrechte",
           "count": 1
         },
         {
-          "word": "rechtsstaatlichkeit",
+          "word": "straftaten",
           "count": 1
         },
         {
@@ -463,21 +463,21 @@
           "count": 1
         },
         {
-          "word": "straftaten",
+          "word": "grundgesetz",
           "count": 1
         }
       ],
       "arbeit": [
+        {
+          "word": "löhne",
+          "count": 1
+        },
         {
           "word": "teilzeit",
           "count": 1
         },
         {
           "word": "einkommen",
-          "count": 1
-        },
-        {
-          "word": "löhne",
           "count": 1
         }
       ],

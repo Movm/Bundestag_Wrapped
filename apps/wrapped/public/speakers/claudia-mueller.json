@@ -11,23 +11,23 @@
   "minWords": 309,
   "maxWords": 1088,
   "rankings": {
-    "speechRank": 263,
+    "speechRank": 250,
     "wordsRank": 209,
-    "partySpeechRank": 49,
+    "partySpeechRank": 47,
     "partyWordsRank": 34,
-    "partySize": 87,
-    "totalSpeakers": 627,
-    "percentile": 58.1,
+    "partySize": 86,
+    "totalSpeakers": 625,
+    "percentile": 60.0,
     "verbosityRank": 44,
     "verbosityTotal": 579,
     "partyVerbosityRank": 4,
-    "longestSpeechRank": 55
+    "longestSpeechRank": 53
   },
   "drama": {
     "interruptionsGiven": 39,
     "interruptionsReceived": 23,
     "interrupterRank": 133,
-    "interruptedRank": 300
+    "interruptedRank": 295
   },
   "words": {
     "topWords": [
@@ -50,45 +50,49 @@
       {
         "word": "menschen",
         "count": 17
+      },
+      {
+        "word": "sehen",
+        "count": 13
       }
     ],
     "signatureWords": [
       {
         "word": "aufstockung",
         "count": 6,
-        "ratioParty": 52.7,
-        "ratioBundestag": 68.7
+        "ratioParty": 52.3,
+        "ratioBundestag": 68.5
       },
       {
         "word": "raumfahrt",
         "count": 8,
-        "ratioParty": 26.4,
+        "ratioParty": 26.1,
         "ratioBundestag": 18.4
       },
       {
         "word": "hightech",
         "count": 11,
-        "ratioParty": 25.6,
+        "ratioParty": 25.4,
         "ratioBundestag": 17.4
       },
       {
         "word": "kernhaushalt",
         "count": 7,
-        "ratioParty": 24.1,
-        "ratioBundestag": 30.1
+        "ratioParty": 23.9,
+        "ratioBundestag": 30.0
       },
       {
         "word": "umweltschutz",
         "count": 7,
-        "ratioParty": 24.1,
-        "ratioBundestag": 23.9
+        "ratioParty": 23.9,
+        "ratioBundestag": 23.8
       }
     ],
     "signatureAdjectives": [
       {
         "word": "stark",
         "count": 3,
-        "ratioParty": 2.7,
+        "ratioParty": 2.6,
         "ratioBundestag": 2.3
       },
       {
@@ -101,10 +105,10 @@
   },
   "comparison": {
     "speakerAvgWords": 623,
-    "partyAvgWords": 543,
-    "parliamentAvgWords": 585,
-    "vsParty": 1.15,
-    "vsParliament": 1.06
+    "partyAvgWords": 538,
+    "parliamentAvgWords": 584,
+    "vsParty": 1.16,
+    "vsParliament": 1.07
   },
   "funFacts": [
     {
@@ -127,46 +131,46 @@
     "question": "Welches Wort nutzt Claudia Müller häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Opposition",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
-        "text": "Arbeit",
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
         "text": "Aufstockung",
         "isCorrect": true
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Aufstockung\" nutzt Claudia Müller 52.7× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "68.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Aufstockung\" nutzt Claudia Müller 52.3× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "68.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Claudia Müller häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
         "text": "Stark",
         "isCorrect": true
+      },
+      {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Stark\" nutzt Claudia Müller 2.7× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationParty": "\"Stark\" nutzt Claudia Müller 2.6× häufiger als der GRÜNE-Durchschnitt.",
     "explanationBundestag": "2.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -311,11 +315,11 @@
           "count": 4
         },
         {
-          "word": "wettbewerb",
+          "word": "standort",
           "count": 2
         },
         {
-          "word": "standort",
+          "word": "wettbewerb",
           "count": 2
         }
       ],
@@ -435,15 +439,15 @@
           "count": 1
         },
         {
+          "word": "grundgesetz",
+          "count": 1
+        },
+        {
           "word": "rechtsstaatlichkeit",
           "count": 1
         },
         {
           "word": "gerichte",
-          "count": 1
-        },
-        {
-          "word": "grundgesetz",
           "count": 1
         }
       ],

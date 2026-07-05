@@ -11,23 +11,23 @@
   "minWords": 9,
   "maxWords": 1322,
   "rankings": {
-    "speechRank": 145,
+    "speechRank": 160,
     "wordsRank": 21,
-    "partySpeechRank": 30,
+    "partySpeechRank": 33,
     "partyWordsRank": 11,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 76.9,
+    "totalSpeakers": 625,
+    "percentile": 74.4,
     "verbosityRank": 562,
     "verbosityTotal": 579,
     "partyVerbosityRank": 179,
-    "longestSpeechRank": 27
+    "longestSpeechRank": 25
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 13,
     "interrupterRank": null,
-    "interruptedRank": 414
+    "interruptedRank": 423
   },
   "words": {
     "topWords": [
@@ -52,11 +52,11 @@
         "count": 33
       },
       {
-        "word": "pflege",
+        "word": "maßnahmen",
         "count": 32
       },
       {
-        "word": "maßnahmen",
+        "word": "pflege",
         "count": 32
       }
     ],
@@ -65,31 +65,31 @@
         "word": "leistungsgruppen",
         "count": 7,
         "ratioParty": 568.3,
-        "ratioBundestag": 80.2
+        "ratioBundestag": 80.0
       },
       {
         "word": "krankenhauslandschaft",
         "count": 6,
         "ratioParty": 487.1,
-        "ratioBundestag": 168.0
+        "ratioBundestag": 167.6
       },
       {
         "word": "transformationsprozess",
         "count": 5,
         "ratioParty": 203.0,
-        "ratioBundestag": 419.9
+        "ratioBundestag": 418.9
       },
       {
         "word": "krankenhausversorgung",
         "count": 5,
         "ratioParty": 135.3,
-        "ratioBundestag": 209.9
+        "ratioBundestag": 209.4
       },
       {
         "word": "apotheken",
         "count": 26,
         "ratioParty": 124.2,
-        "ratioBundestag": 105.6
+        "ratioBundestag": 105.4
       }
     ],
     "signatureAdjectives": [
@@ -110,7 +110,7 @@
   "comparison": {
     "speakerAvgWords": 180,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.28,
     "vsParliament": 0.31
   },
@@ -130,11 +130,11 @@
     "question": "Welches Wort nutzt Nina Warken häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Arbeit",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
+        "text": "Energie",
         "isCorrect": false
       },
       {
@@ -142,18 +142,22 @@
         "isCorrect": true
       },
       {
-        "text": "Koalition",
+        "text": "Freiheit",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Leistungsgruppen\" nutzt Nina Warken 568.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "80.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "80.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Nina Warken häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Sozial",
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
@@ -163,10 +167,6 @@
       {
         "text": "Wesentlich",
         "isCorrect": true
-      },
-      {
-        "text": "Notwendig",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Wesentlich\" nutzt Nina Warken 5.7× häufiger als der CDU/CSU-Durchschnitt.",
@@ -298,11 +298,11 @@
           "count": 3
         },
         {
-          "word": "qualifikation",
+          "word": "betrieb",
           "count": 1
         },
         {
-          "word": "wachstum",
+          "word": "fachkräftemangel",
           "count": 1
         }
       ],
@@ -320,7 +320,7 @@
           "count": 2
         },
         {
-          "word": "rente",
+          "word": "sozialstaat",
           "count": 1
         },
         {
@@ -344,11 +344,11 @@
           "count": 32
         },
         {
-          "word": "krankenversicherung",
+          "word": "krankenhäuser",
           "count": 17
         },
         {
-          "word": "krankenhäuser",
+          "word": "krankenversicherung",
           "count": 17
         },
         {
@@ -424,7 +424,7 @@
           "count": 6
         },
         {
-          "word": "steuern",
+          "word": "zuschuss",
           "count": 2
         }
       ],
@@ -444,7 +444,7 @@
       ],
       "arbeit": [
         {
-          "word": "löhne",
+          "word": "teilzeit",
           "count": 1
         },
         {
@@ -456,7 +456,7 @@
           "count": 1
         },
         {
-          "word": "teilzeit",
+          "word": "löhne",
           "count": 1
         }
       ],

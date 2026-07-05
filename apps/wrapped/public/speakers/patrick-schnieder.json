@@ -11,23 +11,23 @@
   "minWords": 9,
   "maxWords": 1543,
   "rankings": {
-    "speechRank": 378,
+    "speechRank": 396,
     "wordsRank": 54,
-    "partySpeechRank": 108,
+    "partySpeechRank": 114,
     "partyWordsRank": 21,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 39.7,
+    "totalSpeakers": 625,
+    "percentile": 36.6,
     "verbosityRank": 563,
     "verbosityTotal": 579,
     "partyVerbosityRank": 180,
-    "longestSpeechRank": 19
+    "longestSpeechRank": 17
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 34,
     "interrupterRank": null,
-    "interruptedRank": 199
+    "interruptedRank": 207
   },
   "words": {
     "topWords": [
@@ -65,31 +65,31 @@
         "word": "verkehrsinvestitionen",
         "count": 5,
         "ratioParty": 175.2,
-        "ratioBundestag": 325.5
+        "ratioBundestag": 324.8
       },
       {
         "word": "zügen",
         "count": 5,
         "ratioParty": 131.4,
-        "ratioBundestag": 42.8
+        "ratioBundestag": 42.7
       },
       {
         "word": "baureif",
         "count": 7,
         "ratioParty": 105.1,
-        "ratioBundestag": 142.4
-      },
-      {
-        "word": "pünktlichkeit",
-        "count": 5,
-        "ratioParty": 87.6,
-        "ratioBundestag": 60.3
+        "ratioBundestag": 142.1
       },
       {
         "word": "verkehrssicherheit",
         "count": 5,
         "ratioParty": 87.6,
-        "ratioBundestag": 101.7
+        "ratioBundestag": 101.5
+      },
+      {
+        "word": "pünktlichkeit",
+        "count": 5,
+        "ratioParty": 87.6,
+        "ratioBundestag": 60.1
       }
     ],
     "signatureAdjectives": [
@@ -104,7 +104,7 @@
   "comparison": {
     "speakerAvgWords": 178,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.28,
     "vsParliament": 0.3
   },
@@ -124,34 +124,30 @@
     "question": "Welches Wort nutzt Patrick Schnieder häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
         "text": "Verkehrsinvestitionen",
         "isCorrect": true
       },
       {
-        "text": "Koalition",
+        "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
+        "text": "Haushalt",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Verkehrsinvestitionen\" nutzt Patrick Schnieder 175.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "325.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "324.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Patrick Schnieder häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Falsch",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
@@ -159,7 +155,11 @@
         "isCorrect": true
       },
       {
-        "text": "Neu",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
         "isCorrect": false
       }
     ],
@@ -260,7 +260,7 @@
     "topicWords": {
       "klima": [
         {
-          "word": "klimaneutralität",
+          "word": "umweltschutz",
           "count": 4
         },
         {
@@ -268,15 +268,15 @@
           "count": 4
         },
         {
-          "word": "umweltschutz",
+          "word": "klimaneutralität",
           "count": 4
         },
         {
-          "word": "klimaschutz",
+          "word": "naturschutz",
           "count": 3
         },
         {
-          "word": "naturschutz",
+          "word": "klimaschutz",
           "count": 3
         }
       ],
@@ -322,21 +322,21 @@
           "count": 1
         },
         {
-          "word": "verteidigungsetat",
+          "word": "polizei",
           "count": 1
         },
         {
-          "word": "polizei",
+          "word": "verteidigungsetat",
           "count": 1
         }
       ],
       "gesundheit": [
         {
-          "word": "corona",
+          "word": "prävention",
           "count": 1
         },
         {
-          "word": "prävention",
+          "word": "corona",
           "count": 1
         }
       ],
@@ -374,11 +374,11 @@
       ],
       "bildung": [
         {
-          "word": "professor",
+          "word": "auszubildende",
           "count": 2
         },
         {
-          "word": "auszubildende",
+          "word": "professor",
           "count": 2
         },
         {

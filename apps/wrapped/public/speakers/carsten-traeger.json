@@ -11,37 +11,29 @@
   "minWords": 256,
   "maxWords": 1026,
   "rankings": {
-    "speechRank": 578,
-    "wordsRank": 576,
-    "partySpeechRank": 103,
+    "speechRank": 561,
+    "wordsRank": 574,
+    "partySpeechRank": 100,
     "partyWordsRank": 104,
     "partySize": 114,
-    "totalSpeakers": 627,
-    "percentile": 7.8,
-    "verbosityRank": 106,
+    "totalSpeakers": 625,
+    "percentile": 10.2,
+    "verbosityRank": 105,
     "verbosityTotal": 579,
     "partyVerbosityRank": 21,
-    "longestSpeechRank": 76
+    "longestSpeechRank": 74
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 16,
     "interrupterRank": null,
-    "interruptedRank": 376
+    "interruptedRank": 369
   },
   "words": {
     "topWords": [
       {
         "word": "maßnahmen",
         "count": 9
-      },
-      {
-        "word": "natur",
-        "count": 5
-      },
-      {
-        "word": "demokratie",
-        "count": 5
       },
       {
         "word": "diesen",
@@ -52,12 +44,12 @@
         "count": 5
       },
       {
-        "word": "recht",
-        "count": 4
+        "word": "natur",
+        "count": 5
       },
       {
-        "word": "klar",
-        "count": 4
+        "word": "demokratie",
+        "count": 5
       },
       {
         "word": "widerspreche",
@@ -68,7 +60,15 @@
         "count": 4
       },
       {
-        "word": "land",
+        "word": "klar",
+        "count": 4
+      },
+      {
+        "word": "recht",
+        "count": 4
+      },
+      {
+        "word": "entschieden",
         "count": 3
       }
     ],
@@ -77,13 +77,13 @@
         "word": "natur",
         "count": 5,
         "ratioParty": 34.0,
-        "ratioBundestag": 42.4
+        "ratioBundestag": 42.3
       },
       {
         "word": "maßnahmen",
         "count": 9,
         "ratioParty": 14.4,
-        "ratioBundestag": 13.6
+        "ratioBundestag": 13.7
       },
       {
         "word": "klimaschutz",
@@ -109,7 +109,7 @@
   "comparison": {
     "speakerAvgWords": 536,
     "partyAvgWords": 618,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.87,
     "vsParliament": 0.92
   },
@@ -129,24 +129,24 @@
     "question": "Welches Wort nutzt Carsten Träger häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
         "text": "Natur",
         "isCorrect": true
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Natur\" nutzt Carsten Träger 34.0× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "42.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "42.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -247,10 +247,6 @@
           "count": 5
         },
         {
-          "word": "naturschutz",
-          "count": 2
-        },
-        {
           "word": "klimaanpassung",
           "count": 2
         },
@@ -259,7 +255,11 @@
           "count": 2
         },
         {
-          "word": "kernenergie",
+          "word": "naturschutz",
+          "count": 2
+        },
+        {
+          "word": "erderwärmung",
           "count": 1
         }
       ],
@@ -293,12 +293,16 @@
       ],
       "justiz": [
         {
+          "word": "bundesverfassungsgericht",
+          "count": 2
+        },
+        {
           "word": "klage",
           "count": 2
         },
         {
-          "word": "bundesverfassungsgericht",
-          "count": 2
+          "word": "grundgesetz",
+          "count": 1
         },
         {
           "word": "gerichte",
@@ -306,10 +310,6 @@
         },
         {
           "word": "gesetzgebung",
-          "count": 1
-        },
-        {
-          "word": "rechtsstaat",
           "count": 1
         }
       ],

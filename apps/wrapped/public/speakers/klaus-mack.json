@@ -11,23 +11,23 @@
   "minWords": 74,
   "maxWords": 792,
   "rankings": {
-    "speechRank": 277,
+    "speechRank": 276,
     "wordsRank": 235,
     "partySpeechRank": 76,
     "partyWordsRank": 66,
     "partySize": 211,
-    "totalSpeakers": 627,
+    "totalSpeakers": 625,
     "percentile": 55.8,
-    "verbosityRank": 168,
+    "verbosityRank": 169,
     "verbosityTotal": 579,
-    "partyVerbosityRank": 59,
-    "longestSpeechRank": 257
+    "partyVerbosityRank": 60,
+    "longestSpeechRank": 255
   },
   "drama": {
     "interruptionsGiven": 3,
     "interruptionsReceived": 57,
-    "interrupterRank": 378,
-    "interruptedRank": 84
+    "interrupterRank": 387,
+    "interruptedRank": 86
   },
   "words": {
     "topWords": [
@@ -44,11 +44,11 @@
         "count": 17
       },
       {
-        "word": "verantwortung",
+        "word": "deutschland",
         "count": 16
       },
       {
-        "word": "deutschland",
+        "word": "verantwortung",
         "count": 16
       },
       {
@@ -69,13 +69,13 @@
         "word": "naturschutz",
         "count": 11,
         "ratioParty": 58.0,
-        "ratioBundestag": 32.5
+        "ratioBundestag": 32.6
       },
       {
         "word": "selbstverwaltung",
         "count": 5,
         "ratioParty": 39.0,
-        "ratioBundestag": 59.1
+        "ratioBundestag": 59.0
       },
       {
         "word": "natur",
@@ -87,13 +87,13 @@
         "word": "kommunale",
         "count": 10,
         "ratioParty": 25.7,
-        "ratioBundestag": 30.6
+        "ratioBundestag": 30.5
       },
       {
         "word": "förderprogramme",
         "count": 6,
         "ratioParty": 21.3,
-        "ratioBundestag": 28.5
+        "ratioBundestag": 28.4
       }
     ],
     "signatureAdjectives": [
@@ -114,7 +114,7 @@
   "comparison": {
     "speakerAvgWords": 491,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.76,
     "vsParliament": 0.84
   },
@@ -134,43 +134,43 @@
     "question": "Welches Wort nutzt Klaus Mack häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Freiheit",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
         "text": "Naturschutz",
         "isCorrect": true
-      },
-      {
-        "text": "Familie",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Naturschutz\" nutzt Klaus Mack 58.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "32.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "32.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Klaus Mack häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Jung",
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
         "text": "Ideologisch",
         "isCorrect": true
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Ideologisch\" nutzt Klaus Mack 13.3× häufiger als der CDU/CSU-Durchschnitt.",
@@ -308,17 +308,17 @@
           "count": 4
         },
         {
-          "word": "energiewende",
+          "word": "wälder",
           "count": 3
         }
       ],
       "wirtschaft": [
         {
-          "word": "wirtschaft",
+          "word": "kapital",
           "count": 1
         },
         {
-          "word": "kapital",
+          "word": "wirtschaft",
           "count": 1
         }
       ],
@@ -336,11 +336,11 @@
           "count": 2
         },
         {
-          "word": "rente",
+          "word": "mieten",
           "count": 1
         },
         {
-          "word": "bürgergeld",
+          "word": "wohnungsmarkt",
           "count": 1
         }
       ],
@@ -416,15 +416,15 @@
           "count": 4
         },
         {
-          "word": "bundeshaushalt",
-          "count": 3
-        },
-        {
           "word": "kosten",
           "count": 3
         },
         {
           "word": "sondervermögen",
+          "count": 3
+        },
+        {
+          "word": "bundeshaushalt",
           "count": 3
         }
       ],
@@ -434,7 +434,7 @@
           "count": 1
         },
         {
-          "word": "gesetzgebung",
+          "word": "bundesverfassungsgericht",
           "count": 1
         },
         {
@@ -446,7 +446,7 @@
           "count": 1
         },
         {
-          "word": "bundesverfassungsgericht",
+          "word": "gesetzgebung",
           "count": 1
         }
       ],
@@ -470,11 +470,11 @@
           "count": 2
         },
         {
-          "word": "öpnv",
+          "word": "straße",
           "count": 1
         },
         {
-          "word": "straße",
+          "word": "bahn",
           "count": 1
         }
       ]

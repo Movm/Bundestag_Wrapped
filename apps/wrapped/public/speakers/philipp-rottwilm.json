@@ -11,23 +11,23 @@
   "minWords": 22,
   "maxWords": 746,
   "rankings": {
-    "speechRank": 46,
+    "speechRank": 44,
     "wordsRank": 104,
-    "partySpeechRank": 13,
+    "partySpeechRank": 12,
     "partyWordsRank": 27,
     "partySize": 114,
-    "totalSpeakers": 627,
-    "percentile": 92.7,
-    "verbosityRank": 261,
+    "totalSpeakers": 625,
+    "percentile": 93.0,
+    "verbosityRank": 259,
     "verbosityTotal": 579,
-    "partyVerbosityRank": 62,
-    "longestSpeechRank": 319
+    "partyVerbosityRank": 61,
+    "longestSpeechRank": 317
   },
   "drama": {
     "interruptionsGiven": 9,
     "interruptionsReceived": 65,
-    "interrupterRank": 281,
-    "interruptedRank": 60
+    "interrupterRank": 282,
+    "interruptedRank": 59
   },
   "words": {
     "topWords": [
@@ -44,11 +44,11 @@
         "count": 23
       },
       {
-        "word": "drei",
+        "word": "koalition",
         "count": 22
       },
       {
-        "word": "koalition",
+        "word": "drei",
         "count": 22
       },
       {
@@ -61,25 +61,25 @@
         "word": "anleger",
         "count": 8,
         "ratioParty": 646.0,
-        "ratioBundestag": 125.4
+        "ratioBundestag": 125.1
       },
       {
         "word": "kopfkissen",
         "count": 5,
         "ratioParty": 403.7,
-        "ratioBundestag": 1018.5
+        "ratioBundestag": 1016.1
       },
       {
         "word": "kapitalmarkt",
         "count": 6,
         "ratioParty": 80.7,
-        "ratioBundestag": 49.9
+        "ratioBundestag": 49.8
       },
       {
         "word": "standortfördergesetz",
         "count": 8,
         "ratioParty": 46.1,
-        "ratioBundestag": 62.7
+        "ratioBundestag": 62.5
       },
       {
         "word": "fonds",
@@ -93,7 +93,7 @@
         "word": "links",
         "count": 3,
         "ratioParty": 17.3,
-        "ratioBundestag": 2.4
+        "ratioBundestag": 2.3
       },
       {
         "word": "teuer",
@@ -124,7 +124,7 @@
   "comparison": {
     "speakerAvgWords": 444,
     "partyAvgWords": 618,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.72,
     "vsParliament": 0.76
   },
@@ -142,41 +142,37 @@
     {
       "emoji": "📊",
       "label": "Top-Redner",
-      "value": "Top 8%"
+      "value": "Top 7%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Philipp Rottwilm häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bildung",
+        "text": "Anleger",
+        "isCorrect": true
+      },
+      {
+        "text": "Europa",
         "isCorrect": false
       },
       {
-        "text": "Migration",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
         "text": "Steuern",
         "isCorrect": false
-      },
-      {
-        "text": "Anleger",
-        "isCorrect": true
       }
     ],
     "explanationParty": "\"Anleger\" nutzt Dr. Philipp Rottwilm 646.0× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "125.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "125.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Philipp Rottwilm häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
+        "text": "Groß",
         "isCorrect": false
       },
       {
@@ -184,12 +180,16 @@
         "isCorrect": true
       },
       {
-        "text": "Wichtig",
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Links\" nutzt Dr. Philipp Rottwilm 17.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "2.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "2.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦉",
@@ -307,7 +307,7 @@
           "count": 4
         },
         {
-          "word": "wald",
+          "word": "nachhaltig",
           "count": 1
         },
         {
@@ -317,11 +317,11 @@
       ],
       "wirtschaft": [
         {
-          "word": "unternehmen",
+          "word": "wirtschaft",
           "count": 16
         },
         {
-          "word": "wirtschaft",
+          "word": "unternehmen",
           "count": 16
         },
         {
@@ -365,7 +365,7 @@
           "count": 2
         },
         {
-          "word": "angriff",
+          "word": "betrug",
           "count": 1
         },
         {
@@ -373,17 +373,17 @@
           "count": 1
         },
         {
-          "word": "betrug",
+          "word": "angriff",
           "count": 1
         }
       ],
       "gesundheit": [
         {
-          "word": "krankenhäuser",
+          "word": "pflegekräfte",
           "count": 1
         },
         {
-          "word": "pflegekräfte",
+          "word": "krankenhäuser",
           "count": 1
         }
       ],
@@ -397,11 +397,11 @@
           "count": 4
         },
         {
-          "word": "russland",
+          "word": "partnerschaft",
           "count": 1
         },
         {
-          "word": "partnerschaft",
+          "word": "russland",
           "count": 1
         }
       ],
@@ -411,19 +411,19 @@
           "count": 2
         },
         {
+          "word": "digital",
+          "count": 1
+        },
+        {
+          "word": "daten",
+          "count": 1
+        },
+        {
           "word": "digitalisierung",
           "count": 1
         },
         {
           "word": "mobilfunk",
-          "count": 1
-        },
-        {
-          "word": "glasfaser",
-          "count": 1
-        },
-        {
-          "word": "plattformen",
           "count": 1
         }
       ],
@@ -473,6 +473,10 @@
           "count": 2
         },
         {
+          "word": "rechtsstaatlichkeit",
+          "count": 1
+        },
+        {
           "word": "verfassungswidrig",
           "count": 1
         },
@@ -482,10 +486,6 @@
         },
         {
           "word": "beschluss",
-          "count": 1
-        },
-        {
-          "word": "rechtsstaatlichkeit",
           "count": 1
         }
       ],
@@ -503,11 +503,11 @@
           "count": 2
         },
         {
-          "word": "arbeitsplätze",
+          "word": "gehalt",
           "count": 1
         },
         {
-          "word": "arbeitnehmer",
+          "word": "arbeitsplätze",
           "count": 1
         }
       ],
@@ -525,11 +525,11 @@
           "count": 2
         },
         {
-          "word": "bahn",
+          "word": "hafen",
           "count": 1
         },
         {
-          "word": "flugverkehr",
+          "word": "bahn",
           "count": 1
         }
       ]

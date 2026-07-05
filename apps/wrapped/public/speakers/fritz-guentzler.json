@@ -11,23 +11,23 @@
   "minWords": 14,
   "maxWords": 1126,
   "rankings": {
-    "speechRank": 71,
+    "speechRank": 74,
     "wordsRank": 46,
-    "partySpeechRank": 19,
+    "partySpeechRank": 21,
     "partyWordsRank": 19,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 88.7,
+    "totalSpeakers": 625,
+    "percentile": 88.2,
     "verbosityRank": 37,
     "verbosityTotal": 579,
     "partyVerbosityRank": 16,
-    "longestSpeechRank": 49
+    "longestSpeechRank": 47
   },
   "drama": {
     "interruptionsGiven": 75,
     "interruptionsReceived": 58,
-    "interrupterRank": 58,
-    "interruptedRank": 79
+    "interrupterRank": 60,
+    "interruptedRank": 80
   },
   "words": {
     "topWords": [
@@ -73,31 +73,31 @@
         "word": "abschreibungsbedingungen",
         "count": 5,
         "ratioParty": 169.1,
-        "ratioBundestag": 314.3
+        "ratioBundestag": 313.6
       },
       {
         "word": "sports",
         "count": 8,
         "ratioParty": 135.3,
-        "ratioBundestag": 147.9
+        "ratioBundestag": 147.6
       },
       {
         "word": "steuersätze",
         "count": 5,
         "ratioParty": 126.8,
-        "ratioBundestag": 196.5
+        "ratioBundestag": 196.0
       },
       {
         "word": "grundsteuer",
         "count": 13,
         "ratioParty": 77.6,
-        "ratioBundestag": 47.5
+        "ratioBundestag": 47.4
       },
       {
         "word": "abschreibung",
         "count": 7,
         "ratioParty": 71.0,
-        "ratioBundestag": 100.0
+        "ratioBundestag": 99.8
       }
     ],
     "signatureAdjectives": [
@@ -105,13 +105,13 @@
         "word": "vernünftig",
         "count": 4,
         "ratioParty": 8.8,
-        "ratioBundestag": 8.9
+        "ratioBundestag": 8.8
       },
       {
         "word": "wettbewerbsfähig",
         "count": 6,
         "ratioParty": 8.1,
-        "ratioBundestag": 14.0
+        "ratioBundestag": 13.9
       },
       {
         "word": "erfolgreich",
@@ -124,7 +124,7 @@
   "comparison": {
     "speakerAvgWords": 637,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.99,
     "vsParliament": 1.09
   },
@@ -149,11 +149,7 @@
     "question": "Welches Wort nutzt Fritz Güntzler häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
@@ -161,16 +157,24 @@
         "isCorrect": true
       },
       {
-        "text": "Klima",
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Abschreibungsbedingungen\" nutzt Fritz Güntzler 169.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "314.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "313.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Fritz Güntzler häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
+      {
+        "text": "Sozial",
+        "isCorrect": false
+      },
       {
         "text": "Vernünftig",
         "isCorrect": true
@@ -180,16 +184,12 @@
         "isCorrect": false
       },
       {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Sozial",
+        "text": "Stark",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Vernünftig\" nutzt Fritz Güntzler 8.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "8.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "8.8× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐴",
@@ -337,13 +337,13 @@
           "count": 2
         },
         {
-          "word": "rentner",
+          "word": "umverteilung",
           "count": 1
         }
       ],
       "gesundheit": [
         {
-          "word": "pflegeversicherung",
+          "word": "gesundheitsreform",
           "count": 1
         },
         {
@@ -351,7 +351,7 @@
           "count": 1
         },
         {
-          "word": "gesundheitsreform",
+          "word": "pflegeversicherung",
           "count": 1
         }
       ],
@@ -383,11 +383,11 @@
           "count": 3
         },
         {
-          "word": "startup",
+          "word": "netz",
           "count": 1
         },
         {
-          "word": "netz",
+          "word": "startup",
           "count": 1
         }
       ],
@@ -423,7 +423,7 @@
           "count": 8
         },
         {
-          "word": "erbschaftsteuer",
+          "word": "körperschaftsteuer",
           "count": 7
         }
       ],
@@ -441,11 +441,11 @@
           "count": 1
         },
         {
-          "word": "urteile",
+          "word": "verfassungskonform",
           "count": 1
         },
         {
-          "word": "richter",
+          "word": "urteile",
           "count": 1
         }
       ],
@@ -477,15 +477,15 @@
           "count": 4
         },
         {
+          "word": "straßen",
+          "count": 1
+        },
+        {
           "word": "bahn",
           "count": 1
         },
         {
           "word": "straße",
-          "count": 1
-        },
-        {
-          "word": "straßen",
           "count": 1
         }
       ]

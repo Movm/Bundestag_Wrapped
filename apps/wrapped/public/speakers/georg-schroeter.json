@@ -11,23 +11,23 @@
   "minWords": 8,
   "maxWords": 799,
   "rankings": {
-    "speechRank": 245,
+    "speechRank": 248,
     "wordsRank": 306,
-    "partySpeechRank": 52,
+    "partySpeechRank": 51,
     "partyWordsRank": 66,
-    "partySize": 151,
-    "totalSpeakers": 627,
-    "percentile": 60.9,
+    "partySize": 150,
+    "totalSpeakers": 625,
+    "percentile": 60.3,
     "verbosityRank": 195,
     "verbosityTotal": 579,
     "partyVerbosityRank": 50,
-    "longestSpeechRank": 250
+    "longestSpeechRank": 248
   },
   "drama": {
     "interruptionsGiven": 60,
     "interruptionsReceived": 54,
     "interrupterRank": 84,
-    "interruptedRank": 96
+    "interruptedRank": 100
   },
   "words": {
     "topWords": [
@@ -52,15 +52,15 @@
         "count": 14
       },
       {
+        "word": "bürger",
+        "count": 13
+      },
+      {
         "word": "werte",
         "count": 13
       },
       {
         "word": "zahlen",
-        "count": 13
-      },
-      {
-        "word": "bürger",
         "count": 13
       }
     ],
@@ -68,40 +68,40 @@
       {
         "word": "endlagersuche",
         "count": 5,
-        "ratioParty": 158.0,
-        "ratioBundestag": 221.4
+        "ratioParty": 157.2,
+        "ratioBundestag": 220.9
       },
       {
         "word": "bundesrechnungshofes",
         "count": 7,
-        "ratioParty": 100.5,
-        "ratioBundestag": 145.9
+        "ratioParty": 100.0,
+        "ratioBundestag": 145.5
       },
       {
         "word": "umweltpolitik",
         "count": 5,
-        "ratioParty": 71.8,
-        "ratioBundestag": 62.2
+        "ratioParty": 71.4,
+        "ratioBundestag": 62.0
       },
       {
         "word": "basiert",
         "count": 5,
-        "ratioParty": 65.8,
-        "ratioBundestag": 41.7
+        "ratioParty": 65.5,
+        "ratioBundestag": 41.6
       },
       {
         "word": "klimafonds",
         "count": 5,
-        "ratioParty": 49.4,
-        "ratioBundestag": 168.7
+        "ratioParty": 49.1,
+        "ratioBundestag": 168.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "gescheitert",
         "count": 4,
-        "ratioParty": 9.6,
-        "ratioBundestag": 17.0
+        "ratioParty": 9.5,
+        "ratioBundestag": 16.9
       },
       {
         "word": "sicher",
@@ -113,8 +113,8 @@
   },
   "comparison": {
     "speakerAvgWords": 477,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
     "vsParty": 0.85,
     "vsParliament": 0.82
   },
@@ -139,47 +139,47 @@
     "question": "Welches Wort nutzt Georg Schroeter häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
         "text": "Endlagersuche",
         "isCorrect": true
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Endlagersuche\" nutzt Georg Schroeter 158.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "221.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Endlagersuche\" nutzt Georg Schroeter 157.2× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "220.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Georg Schroeter häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
         "text": "Gescheitert",
         "isCorrect": true
+      },
+      {
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gescheitert\" nutzt Georg Schroeter 9.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "17.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Gescheitert\" nutzt Georg Schroeter 9.5× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "16.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -281,15 +281,15 @@
           "count": 2
         },
         {
-          "word": "qualifikation",
-          "count": 1
-        },
-        {
           "word": "export",
           "count": 1
         },
         {
-          "word": "marktwirtschaft",
+          "word": "konzerne",
+          "count": 1
+        },
+        {
+          "word": "wettbewerbsfähigkeit",
           "count": 1
         }
       ],
@@ -303,25 +303,25 @@
           "count": 2
         },
         {
-          "word": "familien",
-          "count": 1
-        },
-        {
           "word": "armut",
           "count": 1
         },
         {
           "word": "eltern",
           "count": 1
+        },
+        {
+          "word": "familien",
+          "count": 1
         }
       ],
       "sicherheit": [
         {
-          "word": "bundeswehr",
+          "word": "überwachung",
           "count": 2
         },
         {
-          "word": "überwachung",
+          "word": "bundeswehr",
           "count": 2
         }
       ],
@@ -355,11 +355,11 @@
           "count": 2
         },
         {
-          "word": "netz",
+          "word": "netzwerk",
           "count": 1
         },
         {
-          "word": "netzwerk",
+          "word": "netz",
           "count": 1
         }
       ],
@@ -373,15 +373,15 @@
           "count": 2
         },
         {
-          "word": "ausbildung",
-          "count": 1
-        },
-        {
-          "word": "schulen",
-          "count": 1
-        },
-        {
           "word": "bildung",
+          "count": 1
+        },
+        {
+          "word": "auszubildende",
+          "count": 1
+        },
+        {
+          "word": "studierende",
           "count": 1
         }
       ],
@@ -415,15 +415,15 @@
       ],
       "mobilitaet": [
         {
-          "word": "straßen",
-          "count": 1
-        },
-        {
           "word": "bahn",
           "count": 1
         },
         {
           "word": "infrastruktur",
+          "count": 1
+        },
+        {
+          "word": "straßen",
           "count": 1
         }
       ]

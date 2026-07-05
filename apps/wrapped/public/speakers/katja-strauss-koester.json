@@ -11,23 +11,23 @@
   "minWords": 21,
   "maxWords": 691,
   "rankings": {
-    "speechRank": 225,
+    "speechRank": 228,
     "wordsRank": 212,
-    "partySpeechRank": 57,
+    "partySpeechRank": 60,
     "partyWordsRank": 59,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 64.1,
-    "verbosityRank": 335,
+    "totalSpeakers": 625,
+    "percentile": 63.5,
+    "verbosityRank": 334,
     "verbosityTotal": 579,
     "partyVerbosityRank": 116,
-    "longestSpeechRank": 385
+    "longestSpeechRank": 383
   },
   "drama": {
     "interruptionsGiven": 13,
     "interruptionsReceived": 20,
-    "interrupterRank": 246,
-    "interruptedRank": 333
+    "interrupterRank": 243,
+    "interruptedRank": 330
   },
   "words": {
     "topWords": [
@@ -44,11 +44,11 @@
         "count": 16
       },
       {
-        "word": "schutz",
+        "word": "kinder",
         "count": 15
       },
       {
-        "word": "kinder",
+        "word": "schutz",
         "count": 15
       },
       {
@@ -65,31 +65,31 @@
         "word": "bürgermeisterin",
         "count": 7,
         "ratioParty": 398.0,
-        "ratioBundestag": 922.2
+        "ratioBundestag": 920.0
       },
       {
         "word": "städtebauförderung",
         "count": 17,
         "ratioParty": 82.8,
-        "ratioBundestag": 77.2
+        "ratioBundestag": 77.0
       },
       {
         "word": "heimatstadt",
         "count": 6,
         "ratioParty": 46.5,
-        "ratioBundestag": 56.5
+        "ratioBundestag": 56.3
       },
       {
         "word": "dachgesetz",
         "count": 9,
         "ratioParty": 45.1,
-        "ratioBundestag": 59.3
+        "ratioBundestag": 59.1
       },
       {
         "word": "häusern",
         "count": 6,
         "ratioParty": 42.6,
-        "ratioBundestag": 59.7
+        "ratioBundestag": 59.5
       }
     ],
     "signatureAdjectives": [
@@ -103,14 +103,14 @@
         "word": "wirtschaftlich",
         "count": 3,
         "ratioParty": 3.3,
-        "ratioBundestag": 3.8
+        "ratioBundestag": 3.7
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 416,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.64,
     "vsParliament": 0.71
   },
@@ -135,30 +135,34 @@
     "question": "Welches Wort nutzt Dr. Katja Strauss-Köster häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Investitionen",
+        "isCorrect": false
+      },
+      {
         "text": "Bürgermeisterin",
         "isCorrect": true
       },
       {
-        "text": "Klima",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
+        "text": "Familie",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Bürgermeisterin\" nutzt Dr. Katja Strauss-Köster 398.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "922.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "920.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Katja Strauss-Köster häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
@@ -167,10 +171,6 @@
       },
       {
         "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
         "isCorrect": false
       }
     ],
@@ -289,15 +289,15 @@
           "count": 1
         },
         {
-          "word": "emissionen",
-          "count": 1
-        },
-        {
           "word": "nachhaltig",
           "count": 1
         },
         {
           "word": "klimaanpassung",
+          "count": 1
+        },
+        {
+          "word": "klimawandel",
           "count": 1
         }
       ],
@@ -325,11 +325,11 @@
           "count": 3
         },
         {
-          "word": "familie",
+          "word": "jugendliche",
           "count": 3
         },
         {
-          "word": "jugendliche",
+          "word": "familie",
           "count": 3
         },
         {
@@ -351,25 +351,25 @@
           "count": 5
         },
         {
-          "word": "angriff",
+          "word": "gewalt",
           "count": 2
         },
         {
-          "word": "gewalt",
+          "word": "bundespolizei",
           "count": 2
         }
       ],
       "gesundheit": [
-        {
-          "word": "krankenhäuser",
-          "count": 3
-        },
         {
           "word": "prävention",
           "count": 3
         },
         {
           "word": "vorsorge",
+          "count": 3
+        },
+        {
+          "word": "krankenhäuser",
           "count": 3
         },
         {
@@ -387,11 +387,11 @@
           "count": 5
         },
         {
-          "word": "krieg",
+          "word": "kooperation",
           "count": 2
         },
         {
-          "word": "kooperation",
+          "word": "krieg",
           "count": 2
         },
         {
@@ -409,11 +409,11 @@
           "count": 3
         },
         {
-          "word": "rechenzentrum",
+          "word": "daten",
           "count": 2
         },
         {
-          "word": "daten",
+          "word": "rechenzentrum",
           "count": 2
         },
         {
@@ -421,7 +421,7 @@
           "count": 1
         },
         {
-          "word": "online",
+          "word": "verschlüsselung",
           "count": 1
         }
       ],
@@ -431,19 +431,19 @@
           "count": 4
         },
         {
-          "word": "auszubildende",
-          "count": 1
-        },
-        {
-          "word": "studierende",
-          "count": 1
-        },
-        {
           "word": "studium",
           "count": 1
         },
         {
           "word": "universität",
+          "count": 1
+        },
+        {
+          "word": "auszubildende",
+          "count": 1
+        },
+        {
+          "word": "studierende",
           "count": 1
         }
       ],
@@ -465,7 +465,7 @@
           "count": 1
         },
         {
-          "word": "gewerbesteuer",
+          "word": "investition",
           "count": 1
         }
       ],
@@ -483,11 +483,11 @@
           "count": 3
         },
         {
-          "word": "novelle",
+          "word": "rechtsstaat",
           "count": 2
         },
         {
-          "word": "rechtsstaat",
+          "word": "novelle",
           "count": 2
         }
       ],
@@ -511,15 +511,15 @@
           "count": 7
         },
         {
-          "word": "bahnhof",
-          "count": 1
-        },
-        {
           "word": "straße",
           "count": 1
         },
         {
           "word": "verkehr",
+          "count": 1
+        },
+        {
+          "word": "nahverkehr",
           "count": 1
         }
       ]

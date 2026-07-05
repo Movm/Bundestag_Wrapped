@@ -11,23 +11,23 @@
   "minWords": 33,
   "maxWords": 874,
   "rankings": {
-    "speechRank": 141,
+    "speechRank": 148,
     "wordsRank": 189,
-    "partySpeechRank": 29,
+    "partySpeechRank": 32,
     "partyWordsRank": 40,
-    "partySize": 151,
-    "totalSpeakers": 627,
-    "percentile": 77.5,
-    "verbosityRank": 145,
+    "partySize": 150,
+    "totalSpeakers": 625,
+    "percentile": 76.3,
+    "verbosityRank": 146,
     "verbosityTotal": 579,
     "partyVerbosityRank": 37,
-    "longestSpeechRank": 158
+    "longestSpeechRank": 156
   },
   "drama": {
     "interruptionsGiven": 6,
     "interruptionsReceived": 50,
     "interrupterRank": 328,
-    "interruptedRank": 112
+    "interruptedRank": 114
   },
   "words": {
     "topWords": [
@@ -60,7 +60,7 @@
         "count": 16
       },
       {
-        "word": "steuer",
+        "word": "zitat",
         "count": 15
       }
     ],
@@ -68,32 +68,32 @@
       {
         "word": "gewerbesteuer",
         "count": 5,
-        "ratioParty": 46.8,
-        "ratioBundestag": 49.5
+        "ratioParty": 46.6,
+        "ratioBundestag": 49.4
       },
       {
         "word": "rundfunk",
         "count": 7,
-        "ratioParty": 41.4,
-        "ratioBundestag": 34.0
+        "ratioParty": 41.2,
+        "ratioBundestag": 33.9
       },
       {
         "word": "vermögensteuer",
         "count": 9,
-        "ratioParty": 38.9,
-        "ratioBundestag": 33.4
+        "ratioParty": 38.7,
+        "ratioBundestag": 33.3
       },
       {
         "word": "umsatzsteuer",
         "count": 6,
-        "ratioParty": 32.1,
-        "ratioBundestag": 48.9
+        "ratioParty": 31.9,
+        "ratioBundestag": 48.7
       },
       {
         "word": "steuerlich",
         "count": 5,
-        "ratioParty": 26.7,
-        "ratioBundestag": 38.8
+        "ratioParty": 26.6,
+        "ratioBundestag": 38.7
       }
     ],
     "signatureAdjectives": [
@@ -119,8 +119,8 @@
   },
   "comparison": {
     "speakerAvgWords": 510,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
     "vsParty": 0.91,
     "vsParliament": 0.87
   },
@@ -140,7 +140,11 @@
     "question": "Welches Wort nutzt Christian Douglas häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Freiheit",
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Politik",
         "isCorrect": false
       },
       {
@@ -148,22 +152,18 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
+        "text": "Sicherheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gewerbesteuer\" nutzt Christian Douglas 46.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "49.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Gewerbesteuer\" nutzt Christian Douglas 46.6× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "49.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Christian Douglas häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Gefährlich",
+        "text": "Stark",
         "isCorrect": false
       },
       {
@@ -171,11 +171,11 @@
         "isCorrect": true
       },
       {
-        "text": "Gut",
+        "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
+        "text": "National",
         "isCorrect": false
       }
     ],
@@ -274,15 +274,15 @@
           "count": 2
         },
         {
+          "word": "stromnetz",
+          "count": 1
+        },
+        {
           "word": "nachhaltigkeit",
           "count": 1
         },
         {
           "word": "fracking",
-          "count": 1
-        },
-        {
-          "word": "emissionen",
           "count": 1
         }
       ],
@@ -318,7 +318,7 @@
           "count": 4
         },
         {
-          "word": "bedürftige",
+          "word": "umverteilung",
           "count": 2
         },
         {
@@ -326,17 +326,13 @@
           "count": 2
         },
         {
-          "word": "umverteilung",
+          "word": "bedürftige",
           "count": 2
         }
       ],
       "gesundheit": [
         {
-          "word": "psychisch",
-          "count": 1
-        },
-        {
-          "word": "ärzte",
+          "word": "krankenversicherung",
           "count": 1
         },
         {
@@ -344,7 +340,11 @@
           "count": 1
         },
         {
-          "word": "krankenversicherung",
+          "word": "psychisch",
+          "count": 1
+        },
+        {
+          "word": "ärzte",
           "count": 1
         }
       ],
@@ -376,11 +376,11 @@
           "count": 7
         },
         {
-          "word": "desinformation",
+          "word": "technologie",
           "count": 2
         },
         {
-          "word": "technologie",
+          "word": "desinformation",
           "count": 2
         },
         {
@@ -456,11 +456,11 @@
           "count": 3
         },
         {
-          "word": "arbeitnehmer",
+          "word": "arbeitsplätze",
           "count": 2
         },
         {
-          "word": "arbeitsplätze",
+          "word": "arbeitnehmer",
           "count": 2
         },
         {
@@ -478,15 +478,15 @@
           "count": 2
         },
         {
+          "word": "fliegen",
+          "count": 1
+        },
+        {
+          "word": "fahrrad",
+          "count": 1
+        },
+        {
           "word": "straßen",
-          "count": 1
-        },
-        {
-          "word": "bahn",
-          "count": 1
-        },
-        {
-          "word": "autos",
           "count": 1
         }
       ]

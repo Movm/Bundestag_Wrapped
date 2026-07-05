@@ -11,23 +11,23 @@
   "minWords": 56,
   "maxWords": 369,
   "rankings": {
-    "speechRank": 558,
-    "wordsRank": 608,
-    "partySpeechRank": 138,
-    "partyWordsRank": 146,
-    "partySize": 151,
-    "totalSpeakers": 627,
-    "percentile": 11.0,
+    "speechRank": 579,
+    "wordsRank": 606,
+    "partySpeechRank": 143,
+    "partyWordsRank": 145,
+    "partySize": 150,
+    "totalSpeakers": 625,
+    "percentile": 7.4,
     "verbosityRank": 565,
     "verbosityTotal": 579,
     "partyVerbosityRank": 142,
-    "longestSpeechRank": 611
+    "longestSpeechRank": 610
   },
   "drama": {
     "interruptionsGiven": 3,
     "interruptionsReceived": 1,
-    "interrupterRank": 396,
-    "interruptedRank": 605
+    "interrupterRank": 385,
+    "interruptedRank": 601
   },
   "words": {
     "topWords": [
@@ -44,15 +44,7 @@
         "count": 3
       },
       {
-        "word": "klimaanlagen",
-        "count": 3
-      },
-      {
         "word": "lassen",
-        "count": 3
-      },
-      {
-        "word": "hitzeschutzplan",
         "count": 3
       },
       {
@@ -60,7 +52,15 @@
         "count": 3
       },
       {
-        "word": "jahr",
+        "word": "klimaanlagen",
+        "count": 3
+      },
+      {
+        "word": "hitzeschutzplan",
+        "count": 3
+      },
+      {
+        "word": "warken",
         "count": 2
       }
     ],
@@ -68,16 +68,16 @@
       {
         "word": "ministerin",
         "count": 5,
-        "ratioParty": 12.8,
-        "ratioBundestag": 15.0
+        "ratioParty": 12.7,
+        "ratioBundestag": 14.9
       }
     ],
     "signatureAdjectives": []
   },
   "comparison": {
     "speakerAvgWords": 170,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
     "vsParty": 0.3,
     "vsParliament": 0.29
   },
@@ -92,24 +92,24 @@
     "question": "Welches Wort nutzt Kay-Uwe Ziegler häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
         "text": "Ministerin",
         "isCorrect": true
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ministerin\" nutzt Kay-Uwe Ziegler 12.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "15.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Ministerin\" nutzt Kay-Uwe Ziegler 12.7× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "14.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -192,6 +192,10 @@
           "count": 2
         },
         {
+          "word": "gesundheitssystem",
+          "count": 1
+        },
+        {
           "word": "krankenversicherung",
           "count": 1
         },
@@ -201,10 +205,6 @@
         },
         {
           "word": "kranke",
-          "count": 1
-        },
-        {
-          "word": "krankenhaus",
           "count": 1
         }
       ],

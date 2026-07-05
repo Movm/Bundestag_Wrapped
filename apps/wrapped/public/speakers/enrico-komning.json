@@ -11,23 +11,23 @@
   "minWords": 275,
   "maxWords": 658,
   "rankings": {
-    "speechRank": 216,
-    "wordsRank": 171,
-    "partySpeechRank": 46,
+    "speechRank": 215,
+    "wordsRank": 170,
+    "partySpeechRank": 45,
     "partyWordsRank": 37,
-    "partySize": 151,
-    "totalSpeakers": 627,
+    "partySize": 150,
+    "totalSpeakers": 625,
     "percentile": 65.6,
     "verbosityRank": 191,
     "verbosityTotal": 579,
     "partyVerbosityRank": 49,
-    "longestSpeechRank": 424
+    "longestSpeechRank": 422
   },
   "drama": {
     "interruptionsGiven": 253,
     "interruptionsReceived": 49,
     "interrupterRank": 13,
-    "interruptedRank": 115
+    "interruptedRank": 116
   },
   "words": {
     "topWords": [
@@ -60,48 +60,48 @@
         "count": 16
       },
       {
-        "word": "bundesregierung",
-        "count": 16
-      },
-      {
         "word": "land",
         "count": 16
       },
       {
         "word": "weniger",
         "count": 16
+      },
+      {
+        "word": "bundesregierung",
+        "count": 16
       }
     ],
     "signatureWords": [
       {
-        "word": "leitmärkte",
-        "count": 5,
-        "ratioParty": 537.7,
-        "ratioBundestag": 105.1
-      },
-      {
         "word": "freihandel",
         "count": 8,
-        "ratioParty": 78.2,
-        "ratioBundestag": 74.4
+        "ratioParty": 77.8,
+        "ratioBundestag": 74.2
       },
       {
         "word": "wiener",
         "count": 6,
-        "ratioParty": 71.7,
-        "ratioBundestag": 100.0
+        "ratioParty": 71.3,
+        "ratioBundestag": 99.8
       },
       {
         "word": "beschleunigung",
         "count": 10,
-        "ratioParty": 53.8,
-        "ratioBundestag": 32.9
+        "ratioParty": 53.5,
+        "ratioBundestag": 32.8
       },
       {
         "word": "mecklenburg",
         "count": 8,
-        "ratioParty": 31.9,
-        "ratioBundestag": 51.6
+        "ratioParty": 32.9,
+        "ratioBundestag": 53.6
+      },
+      {
+        "word": "vorpommern",
+        "count": 7,
+        "ratioParty": 26.7,
+        "ratioBundestag": 44.4
       }
     ],
     "signatureAdjectives": [
@@ -114,8 +114,8 @@
       {
         "word": "links",
         "count": 12,
-        "ratioParty": 4.2,
-        "ratioBundestag": 11.4
+        "ratioParty": 4.1,
+        "ratioBundestag": 11.3
       },
       {
         "word": "falsch",
@@ -127,9 +127,9 @@
   },
   "comparison": {
     "speakerAvgWords": 479,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
-    "vsParty": 0.85,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
+    "vsParty": 0.86,
     "vsParliament": 0.82
   },
   "funFacts": [
@@ -153,30 +153,34 @@
     "question": "Welches Wort nutzt Enrico Komning häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Leitmärkte",
+        "text": "Freihandel",
         "isCorrect": true
       },
       {
-        "text": "Rente",
+        "text": "Haushalt",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Leitmärkte\" nutzt Enrico Komning 537.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "105.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Freihandel\" nutzt Enrico Komning 77.8× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "74.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Enrico Komning häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Notwendig",
+        "text": "Vernünftig",
+        "isCorrect": true
+      },
+      {
+        "text": "Stark",
         "isCorrect": false
       },
       {
@@ -184,12 +188,8 @@
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Notwendig",
         "isCorrect": false
-      },
-      {
-        "text": "Vernünftig",
-        "isCorrect": true
       }
     ],
     "explanationParty": "\"Vernünftig\" nutzt Enrico Komning 9.2× häufiger als der AfD-Durchschnitt.",
@@ -315,6 +315,14 @@
       ],
       "soziales": [
         {
+          "word": "behinderung",
+          "count": 1
+        },
+        {
+          "word": "fürsorge",
+          "count": 1
+        },
+        {
           "word": "familien",
           "count": 1
         },
@@ -324,14 +332,6 @@
         },
         {
           "word": "umverteilung",
-          "count": 1
-        },
-        {
-          "word": "behinderung",
-          "count": 1
-        },
-        {
-          "word": "fürsorge",
           "count": 1
         }
       ],
@@ -369,11 +369,11 @@
           "count": 3
         },
         {
-          "word": "china",
+          "word": "putin",
           "count": 2
         },
         {
-          "word": "putin",
+          "word": "china",
           "count": 2
         }
       ],
@@ -405,7 +405,7 @@
           "count": 6
         },
         {
-          "word": "steuerzahler",
+          "word": "steuern",
           "count": 4
         }
       ],
@@ -429,15 +429,15 @@
           "count": 2
         },
         {
+          "word": "arbeitslose",
+          "count": 1
+        },
+        {
           "word": "arbeiter",
           "count": 1
         },
         {
           "word": "arbeitslosigkeit",
-          "count": 1
-        },
-        {
-          "word": "arbeitslose",
           "count": 1
         }
       ],
@@ -451,15 +451,15 @@
           "count": 4
         },
         {
-          "word": "fahrzeuge",
-          "count": 1
-        },
-        {
           "word": "häfen",
           "count": 1
         },
         {
-          "word": "schiff",
+          "word": "straßen",
+          "count": 1
+        },
+        {
+          "word": "fahrzeuge",
           "count": 1
         }
       ]

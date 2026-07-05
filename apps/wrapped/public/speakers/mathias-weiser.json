@@ -11,23 +11,23 @@
   "minWords": 297,
   "maxWords": 1881,
   "rankings": {
-    "speechRank": 105,
+    "speechRank": 96,
     "wordsRank": 106,
-    "partySpeechRank": 20,
+    "partySpeechRank": 19,
     "partyWordsRank": 20,
-    "partySize": 151,
-    "totalSpeakers": 627,
-    "percentile": 83.3,
+    "partySize": 150,
+    "totalSpeakers": 625,
+    "percentile": 84.6,
     "verbosityRank": 88,
     "verbosityTotal": 579,
     "partyVerbosityRank": 24,
-    "longestSpeechRank": 15
+    "longestSpeechRank": 13
   },
   "drama": {
     "interruptionsGiven": 12,
     "interruptionsReceived": 34,
-    "interrupterRank": 263,
-    "interruptedRank": 201
+    "interrupterRank": 250,
+    "interruptedRank": 197
   },
   "words": {
     "topWords": [
@@ -48,10 +48,6 @@
         "count": 27
       },
       {
-        "word": "gesetz",
-        "count": 26
-      },
-      {
         "word": "politik",
         "count": 26
       },
@@ -60,15 +56,19 @@
         "count": 26
       },
       {
+        "word": "gesetz",
+        "count": 26
+      },
+      {
         "word": "deutschen",
         "count": 23
       },
       {
-        "word": "staat",
+        "word": "land",
         "count": 21
       },
       {
-        "word": "land",
+        "word": "staat",
         "count": 21
       }
     ],
@@ -76,52 +76,52 @@
       {
         "word": "johannes",
         "count": 9,
-        "ratioParty": 776.5,
-        "ratioBundestag": 218.6
+        "ratioParty": 772.4,
+        "ratioBundestag": 218.0
       },
       {
         "word": "grundbedürfnis",
         "count": 5,
-        "ratioParty": 431.4,
-        "ratioBundestag": 277.5
-      },
-      {
-        "word": "florian",
-        "count": 6,
-        "ratioParty": 172.6,
-        "ratioBundestag": 59.8
-      },
-      {
-        "word": "andreas",
-        "count": 8,
-        "ratioParty": 172.6,
-        "ratioBundestag": 148.0
+        "ratioParty": 429.1,
+        "ratioBundestag": 276.9
       },
       {
         "word": "sebastian",
         "count": 8,
-        "ratioParty": 172.6,
-        "ratioBundestag": 107.2
+        "ratioParty": 228.9,
+        "ratioBundestag": 110.7
+      },
+      {
+        "word": "matthias",
+        "count": 9,
+        "ratioParty": 193.1,
+        "ratioBundestag": 60.1
+      },
+      {
+        "word": "stefan",
+        "count": 11,
+        "ratioParty": 188.8,
+        "ratioBundestag": 99.2
       }
     ],
     "signatureAdjectives": [
       {
         "word": "wettbewerbsfähig",
         "count": 6,
-        "ratioParty": 19.2,
-        "ratioBundestag": 17.3
+        "ratioParty": 19.1,
+        "ratioBundestag": 17.2
       },
       {
         "word": "lächerlich",
         "count": 4,
-        "ratioParty": 15.0,
+        "ratioParty": 14.9,
         "ratioBundestag": 16.9
       },
       {
         "word": "unbezahlbar",
         "count": 4,
-        "ratioParty": 11.9,
-        "ratioBundestag": 25.9
+        "ratioParty": 11.8,
+        "ratioBundestag": 25.8
       },
       {
         "word": "verantwortungslos",
@@ -139,9 +139,9 @@
   },
   "comparison": {
     "speakerAvgWords": 551,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
-    "vsParty": 0.98,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
+    "vsParty": 0.99,
     "vsParliament": 0.94
   },
   "funFacts": [
@@ -165,15 +165,15 @@
     "question": "Welches Wort nutzt Mathias Weiser häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Klima",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Debatte",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
@@ -181,8 +181,8 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Johannes\" nutzt Mathias Weiser 776.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "218.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Johannes\" nutzt Mathias Weiser 772.4× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "218.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Mathias Weiser häufiger als der Rest der AfD-Fraktion?",
@@ -192,20 +192,20 @@
         "isCorrect": false
       },
       {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
         "text": "Wettbewerbsfähig",
         "isCorrect": true
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wettbewerbsfähig\" nutzt Mathias Weiser 19.2× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "17.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wettbewerbsfähig\" nutzt Mathias Weiser 19.1× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "17.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -277,11 +277,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "migration",
+          "word": "flüchtlinge",
           "count": 2
         },
         {
-          "word": "flüchtlinge",
+          "word": "migration",
           "count": 2
         }
       ],
@@ -303,7 +303,7 @@
           "count": 4
         },
         {
-          "word": "erdgas",
+          "word": "klimapolitik",
           "count": 3
         }
       ],
@@ -423,11 +423,11 @@
           "count": 3
         },
         {
-          "word": "investitionen",
+          "word": "steuerzahler",
           "count": 2
         },
         {
-          "word": "steuerzahler",
+          "word": "investitionen",
           "count": 2
         }
       ],
@@ -437,15 +437,15 @@
           "count": 2
         },
         {
-          "word": "datenschutz",
-          "count": 1
-        },
-        {
           "word": "strafen",
           "count": 1
         },
         {
           "word": "urteil",
+          "count": 1
+        },
+        {
+          "word": "datenschutz",
           "count": 1
         }
       ],
@@ -463,11 +463,11 @@
           "count": 2
         },
         {
-          "word": "beschäftigte",
+          "word": "tarifbindung",
           "count": 1
         },
         {
-          "word": "tarifbindung",
+          "word": "beschäftigte",
           "count": 1
         }
       ],

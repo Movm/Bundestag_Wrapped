@@ -11,40 +11,40 @@
   "minWords": 35,
   "maxWords": 801,
   "rankings": {
-    "speechRank": 428,
-    "wordsRank": 369,
-    "partySpeechRank": 123,
+    "speechRank": 432,
+    "wordsRank": 367,
+    "partySpeechRank": 126,
     "partyWordsRank": 112,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 31.7,
-    "verbosityRank": 298,
+    "totalSpeakers": 625,
+    "percentile": 30.9,
+    "verbosityRank": 299,
     "verbosityTotal": 579,
     "partyVerbosityRank": 105,
-    "longestSpeechRank": 249
+    "longestSpeechRank": 247
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 18,
-    "interrupterRank": 440,
+    "interrupterRank": 446,
     "interruptedRank": 348
   },
   "words": {
     "topWords": [
       {
-        "word": "afrika",
-        "count": 19
-      },
-      {
         "word": "deutschland",
         "count": 19
       },
       {
-        "word": "zusammenarbeit",
-        "count": 18
+        "word": "afrika",
+        "count": 19
       },
       {
         "word": "verantwortung",
+        "count": 18
+      },
+      {
+        "word": "zusammenarbeit",
         "count": 18
       },
       {
@@ -60,15 +60,15 @@
         "count": 14
       },
       {
-        "word": "heißt",
-        "count": 13
-      },
-      {
         "word": "entwicklungszusammenarbeit",
         "count": 13
       },
       {
-        "word": "leben",
+        "word": "heißt",
+        "count": 13
+      },
+      {
+        "word": "land",
         "count": 11
       }
     ],
@@ -77,31 +77,31 @@
         "word": "afrika",
         "count": 19,
         "ratioParty": 126.0,
-        "ratioBundestag": 139.5
+        "ratioBundestag": 139.2
       },
       {
         "word": "afrikanischen",
         "count": 6,
         "ratioParty": 111.4,
-        "ratioBundestag": 143.2
+        "ratioBundestag": 142.8
       },
       {
         "word": "entwicklungszusammenarbeit",
         "count": 13,
         "ratioParty": 47.6,
-        "ratioBundestag": 46.7
+        "ratioBundestag": 46.6
       },
       {
         "word": "partnerschaften",
         "count": 9,
         "ratioParty": 33.9,
-        "ratioBundestag": 51.9
+        "ratioBundestag": 52.5
       },
       {
         "word": "rohstoffe",
         "count": 5,
         "ratioParty": 30.3,
-        "ratioBundestag": 28.1
+        "ratioBundestag": 28.0
       }
     ],
     "signatureAdjectives": []
@@ -109,7 +109,7 @@
   "comparison": {
     "speakerAvgWords": 431,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.67,
     "vsParliament": 0.74
   },
@@ -129,7 +129,11 @@
     "question": "Welches Wort nutzt Dr. Wolfgang Stefinger häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Investitionen",
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
@@ -137,16 +141,12 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
         "text": "Sicherheit",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Afrika\" nutzt Dr. Wolfgang Stefinger 126.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "139.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "139.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -275,11 +275,11 @@
           "count": 3
         },
         {
-          "word": "industrie",
+          "word": "märkte",
           "count": 2
         },
         {
-          "word": "märkte",
+          "word": "industrie",
           "count": 2
         }
       ],
@@ -307,11 +307,11 @@
       ],
       "sicherheit": [
         {
-          "word": "gewalt",
+          "word": "korruption",
           "count": 1
         },
         {
-          "word": "korruption",
+          "word": "gewalt",
           "count": 1
         }
       ],
@@ -329,11 +329,11 @@
           "count": 3
         },
         {
-          "word": "china",
+          "word": "partnerschaft",
           "count": 2
         },
         {
-          "word": "partnerschaft",
+          "word": "china",
           "count": 2
         }
       ],
@@ -343,11 +343,11 @@
           "count": 2
         },
         {
-          "word": "digitalisierung",
+          "word": "pressefreiheit",
           "count": 1
         },
         {
-          "word": "pressefreiheit",
+          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -385,15 +385,15 @@
       ],
       "justiz": [
         {
-          "word": "rechtsstaatlichkeit",
-          "count": 1
-        },
-        {
           "word": "menschenrechte",
           "count": 1
         },
         {
           "word": "rechtsstaat",
+          "count": 1
+        },
+        {
+          "word": "rechtsstaatlichkeit",
           "count": 1
         }
       ],

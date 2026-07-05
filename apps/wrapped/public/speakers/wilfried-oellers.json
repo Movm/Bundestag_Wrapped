@@ -11,13 +11,13 @@
   "minWords": 54,
   "maxWords": 810,
   "rankings": {
-    "speechRank": 307,
+    "speechRank": 314,
     "wordsRank": 324,
-    "partySpeechRank": 84,
+    "partySpeechRank": 86,
     "partyWordsRank": 97,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 51.0,
+    "totalSpeakers": 625,
+    "percentile": 49.8,
     "verbosityRank": 253,
     "verbosityTotal": 579,
     "partyVerbosityRank": 89,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 13,
     "interruptionsReceived": 13,
     "interrupterRank": 244,
-    "interruptedRank": 416
+    "interruptedRank": 415
   },
   "words": {
     "topWords": [
@@ -48,19 +48,19 @@
         "count": 13
       },
       {
-        "word": "arbeit",
-        "count": 12
-      },
-      {
         "word": "leistungen",
         "count": 12
       },
       {
-        "word": "wichtig",
-        "count": 11
+        "word": "arbeit",
+        "count": 12
       },
       {
         "word": "ausdrücklich",
+        "count": 11
+      },
+      {
+        "word": "wichtig",
         "count": 11
       },
       {
@@ -73,31 +73,31 @@
         "word": "barrierefreiheit",
         "count": 11,
         "ratioParty": 303.5,
-        "ratioBundestag": 124.0
+        "ratioBundestag": 123.7
       },
       {
         "word": "mindestlohnkommission",
         "count": 7,
         "ratioParty": 193.2,
-        "ratioBundestag": 255.5
+        "ratioBundestag": 254.9
       },
       {
         "word": "arbeitszeitgesetz",
         "count": 5,
         "ratioParty": 177.4,
-        "ratioBundestag": 116.1
+        "ratioBundestag": 115.8
       },
       {
         "word": "wochenarbeitszeit",
         "count": 5,
         "ratioParty": 155.2,
-        "ratioBundestag": 273.7
+        "ratioBundestag": 273.1
       },
       {
         "word": "tariftreuegesetz",
         "count": 5,
         "ratioParty": 138.0,
-        "ratioBundestag": 56.4
+        "ratioBundestag": 56.2
       }
     ],
     "signatureAdjectives": []
@@ -105,7 +105,7 @@
   "comparison": {
     "speakerAvgWords": 448,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.69,
     "vsParliament": 0.77
   },
@@ -130,7 +130,11 @@
     "question": "Welches Wort nutzt Wilfried Oellers häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Koalition",
+        "text": "Debatte",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
         "isCorrect": false
       },
       {
@@ -138,16 +142,12 @@
         "isCorrect": true
       },
       {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
+        "text": "Antrag",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Barrierefreiheit\" nutzt Wilfried Oellers 303.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "124.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "123.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -266,7 +266,7 @@
           "count": 2
         },
         {
-          "word": "betriebe",
+          "word": "produktion",
           "count": 1
         }
       ],
@@ -276,11 +276,11 @@
           "count": 11
         },
         {
-          "word": "familie",
+          "word": "sozialstaat",
           "count": 4
         },
         {
-          "word": "sozialstaat",
+          "word": "familie",
           "count": 4
         },
         {
@@ -310,11 +310,11 @@
       ],
       "digital": [
         {
-          "word": "digitalisierung",
+          "word": "technologie",
           "count": 1
         },
         {
-          "word": "technologie",
+          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -344,19 +344,19 @@
       ],
       "justiz": [
         {
-          "word": "gleichstellung",
-          "count": 1
-        },
-        {
-          "word": "gesetzgebung",
-          "count": 1
-        },
-        {
           "word": "beschluss",
           "count": 1
         },
         {
           "word": "rechtsprechung",
+          "count": 1
+        },
+        {
+          "word": "gleichstellung",
+          "count": 1
+        },
+        {
+          "word": "gesetzgebung",
           "count": 1
         }
       ],

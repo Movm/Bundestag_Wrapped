@@ -11,23 +11,23 @@
   "minWords": 55,
   "maxWords": 859,
   "rankings": {
-    "speechRank": 258,
+    "speechRank": 246,
     "wordsRank": 213,
     "partySpeechRank": 67,
     "partyWordsRank": 60,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 58.9,
+    "totalSpeakers": 625,
+    "percentile": 60.6,
     "verbosityRank": 119,
     "verbosityTotal": 579,
     "partyVerbosityRank": 43,
-    "longestSpeechRank": 176
+    "longestSpeechRank": 174
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 37,
-    "interrupterRank": 424,
-    "interruptedRank": 181
+    "interrupterRank": 416,
+    "interruptedRank": 180
   },
   "words": {
     "topWords": [
@@ -54,10 +54,6 @@
       {
         "word": "koalition",
         "count": 13
-      },
-      {
-        "word": "sprechen",
-        "count": 12
       }
     ],
     "signatureWords": [
@@ -65,31 +61,31 @@
         "word": "langjähriger",
         "count": 5,
         "ratioParty": 229.5,
-        "ratioBundestag": 236.3
+        "ratioBundestag": 235.7
       },
       {
         "word": "stadtentwicklung",
         "count": 5,
         "ratioParty": 65.6,
-        "ratioBundestag": 64.4
+        "ratioBundestag": 64.3
       },
       {
         "word": "heizen",
         "count": 6,
         "ratioParty": 58.0,
-        "ratioBundestag": 22.1
+        "ratioBundestag": 22.0
       },
       {
         "word": "bürgermeister",
         "count": 11,
         "ratioParty": 45.9,
-        "ratioBundestag": 47.6
+        "ratioBundestag": 47.5
       },
       {
         "word": "bestellt",
         "count": 5,
         "ratioParty": 43.7,
-        "ratioBundestag": 35.4
+        "ratioBundestag": 36.7
       }
     ],
     "signatureAdjectives": [
@@ -104,7 +100,7 @@
   "comparison": {
     "speakerAvgWords": 526,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.82,
     "vsParliament": 0.9
   },
@@ -124,42 +120,42 @@
     "question": "Welches Wort nutzt Wilhelm Gebhard häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
         "text": "Langjähriger",
         "isCorrect": true
       },
       {
-        "text": "Bundesregierung",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
+        "text": "Arbeit",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Langjähriger\" nutzt Wilhelm Gebhard 229.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "236.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "235.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Wilhelm Gebhard häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
         "text": "Schlecht",
         "isCorrect": true
       },
       {
-        "text": "Europäisch",
+        "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
@@ -286,15 +282,15 @@
           "count": 6
         },
         {
+          "word": "erneuerbare",
+          "count": 2
+        },
+        {
           "word": "fernwärme",
           "count": 2
         },
         {
           "word": "wärmepumpe",
-          "count": 2
-        },
-        {
-          "word": "erneuerbare",
           "count": 2
         },
         {
@@ -312,15 +308,15 @@
           "count": 2
         },
         {
-          "word": "konjunktur",
-          "count": 1
-        },
-        {
           "word": "mittelstand",
           "count": 1
         },
         {
-          "word": "konzerne",
+          "word": "marktwirtschaft",
+          "count": 1
+        },
+        {
+          "word": "markt",
           "count": 1
         }
       ],
@@ -342,7 +338,7 @@
           "count": 1
         },
         {
-          "word": "wohnung",
+          "word": "grundsicherung",
           "count": 1
         }
       ],
@@ -354,7 +350,7 @@
       ],
       "europa": [
         {
-          "word": "europa",
+          "word": "frieden",
           "count": 1
         },
         {
@@ -362,7 +358,7 @@
           "count": 1
         },
         {
-          "word": "frieden",
+          "word": "europa",
           "count": 1
         },
         {
@@ -382,11 +378,11 @@
           "count": 3
         },
         {
-          "word": "kita",
+          "word": "schulen",
           "count": 1
         },
         {
-          "word": "schulen",
+          "word": "kita",
           "count": 1
         },
         {
@@ -408,11 +404,11 @@
           "count": 3
         },
         {
-          "word": "kosten",
+          "word": "sondervermögen",
           "count": 2
         },
         {
-          "word": "sondervermögen",
+          "word": "kosten",
           "count": 2
         }
       ],
@@ -458,11 +454,11 @@
           "count": 2
         },
         {
-          "word": "straßen",
+          "word": "straße",
           "count": 1
         },
         {
-          "word": "straße",
+          "word": "deutschlandticket",
           "count": 1
         }
       ]

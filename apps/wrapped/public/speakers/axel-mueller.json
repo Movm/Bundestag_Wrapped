@@ -11,23 +11,23 @@
   "minWords": 22,
   "maxWords": 770,
   "rankings": {
-    "speechRank": 94,
+    "speechRank": 89,
     "wordsRank": 136,
     "partySpeechRank": 23,
     "partyWordsRank": 35,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 85.0,
-    "verbosityRank": 269,
+    "totalSpeakers": 625,
+    "percentile": 85.8,
+    "verbosityRank": 268,
     "verbosityTotal": 579,
     "partyVerbosityRank": 93,
-    "longestSpeechRank": 280
+    "longestSpeechRank": 278
   },
   "drama": {
     "interruptionsGiven": 33,
     "interruptionsReceived": 40,
-    "interrupterRank": 153,
-    "interruptedRank": 160
+    "interrupterRank": 156,
+    "interruptedRank": 159
   },
   "words": {
     "topWords": [
@@ -50,6 +50,10 @@
       {
         "word": "jedoch",
         "count": 17
+      },
+      {
+        "word": "dies",
+        "count": 16
       }
     ],
     "signatureWords": [
@@ -57,31 +61,31 @@
         "word": "strafantrag",
         "count": 6,
         "ratioParty": 847.5,
-        "ratioBundestag": 1310.4
+        "ratioBundestag": 1307.3
       },
       {
         "word": "strafbarkeit",
         "count": 9,
         "ratioParty": 158.9,
-        "ratioBundestag": 126.8
+        "ratioBundestag": 126.5
       },
       {
         "word": "prozessbegleitung",
         "count": 9,
         "ratioParty": 141.2,
-        "ratioBundestag": 112.3
+        "ratioBundestag": 112.1
       },
       {
         "word": "strafprozessordnung",
         "count": 5,
         "ratioParty": 117.7,
-        "ratioBundestag": 109.2
+        "ratioBundestag": 121.0
       },
       {
         "word": "paralleljustiz",
         "count": 5,
         "ratioParty": 100.9,
-        "ratioBundestag": 114.9
+        "ratioBundestag": 114.7
       }
     ],
     "signatureAdjectives": [
@@ -102,7 +106,7 @@
   "comparison": {
     "speakerAvgWords": 442,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.69,
     "vsParliament": 0.76
   },
@@ -127,30 +131,34 @@
     "question": "Welches Wort nutzt Axel Müller häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
         "text": "Strafantrag",
         "isCorrect": true
       },
       {
-        "text": "Klima",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Freiheit",
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Strafantrag\" nutzt Axel Müller 847.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "1310.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "1307.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Axel Müller häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Richtig",
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
@@ -158,11 +166,7 @@
         "isCorrect": true
       },
       {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
@@ -299,10 +303,6 @@
           "count": 2
         },
         {
-          "word": "wohnung",
-          "count": 1
-        },
-        {
           "word": "jugendliche",
           "count": 1
         },
@@ -312,6 +312,10 @@
         },
         {
           "word": "behinderung",
+          "count": 1
+        },
+        {
+          "word": "wohnung",
           "count": 1
         }
       ],
@@ -325,11 +329,11 @@
           "count": 6
         },
         {
-          "word": "betrug",
+          "word": "terrorismus",
           "count": 2
         },
         {
-          "word": "terrorismus",
+          "word": "betrug",
           "count": 2
         },
         {
@@ -351,11 +355,11 @@
           "count": 3
         },
         {
-          "word": "krankenhäuser",
+          "word": "gesundheitswesen",
           "count": 2
         },
         {
-          "word": "gesundheitswesen",
+          "word": "krankenhäuser",
           "count": 2
         }
       ],
@@ -373,11 +377,11 @@
           "count": 2
         },
         {
-          "word": "waffenstillstand",
+          "word": "völkerrecht",
           "count": 1
         },
         {
-          "word": "völkerrecht",
+          "word": "waffenstillstand",
           "count": 1
         }
       ],
@@ -405,15 +409,15 @@
           "count": 2
         },
         {
+          "word": "bildung",
+          "count": 1
+        },
+        {
           "word": "studierende",
           "count": 1
         },
         {
           "word": "berufsausbildung",
-          "count": 1
-        },
-        {
-          "word": "bildung",
           "count": 1
         }
       ],
@@ -435,17 +439,17 @@
           "count": 1
         },
         {
-          "word": "etat",
+          "word": "steuern",
           "count": 1
         }
       ],
       "justiz": [
         {
-          "word": "strafverfolgung",
+          "word": "straftaten",
           "count": 13
         },
         {
-          "word": "straftaten",
+          "word": "strafverfolgung",
           "count": 13
         },
         {
@@ -453,25 +457,25 @@
           "count": 8
         },
         {
-          "word": "grundgesetz",
+          "word": "straftat",
           "count": 6
         },
         {
-          "word": "straftat",
+          "word": "grundgesetz",
           "count": 6
         }
       ],
       "arbeit": [
-        {
-          "word": "einkommen",
-          "count": 1
-        },
         {
           "word": "arbeitnehmer",
           "count": 1
         },
         {
           "word": "arbeitslosigkeit",
+          "count": 1
+        },
+        {
+          "word": "einkommen",
           "count": 1
         }
       ],

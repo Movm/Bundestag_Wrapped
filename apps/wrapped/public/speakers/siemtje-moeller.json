@@ -11,23 +11,23 @@
   "minWords": 225,
   "maxWords": 989,
   "rankings": {
-    "speechRank": 114,
+    "speechRank": 112,
     "wordsRank": 85,
     "partySpeechRank": 29,
     "partyWordsRank": 22,
     "partySize": 114,
-    "totalSpeakers": 627,
-    "percentile": 81.8,
+    "totalSpeakers": 625,
+    "percentile": 82.1,
     "verbosityRank": 48,
     "verbosityTotal": 579,
     "partyVerbosityRank": 10,
-    "longestSpeechRank": 87
+    "longestSpeechRank": 85
   },
   "drama": {
     "interruptionsGiven": 26,
     "interruptionsReceived": 23,
-    "interrupterRank": 183,
-    "interruptedRank": 302
+    "interrupterRank": 182,
+    "interruptedRank": 297
   },
   "words": {
     "topWords": [
@@ -77,31 +77,31 @@
         "word": "friedensplan",
         "count": 7,
         "ratioParty": 497.3,
-        "ratioBundestag": 109.2
+        "ratioBundestag": 109.0
       },
       {
         "word": "friedensordnung",
         "count": 6,
         "ratioParty": 142.1,
-        "ratioBundestag": 58.2
+        "ratioBundestag": 58.1
       },
       {
         "word": "verknappung",
         "count": 5,
         "ratioParty": 59.2,
-        "ratioBundestag": 119.6
+        "ratioBundestag": 119.4
       },
       {
         "word": "aggression",
         "count": 5,
         "ratioParty": 44.4,
-        "ratioBundestag": 24.6
+        "ratioBundestag": 24.5
       },
       {
         "word": "jüdinnen",
         "count": 7,
         "ratioParty": 41.4,
-        "ratioBundestag": 36.4
+        "ratioBundestag": 36.3
       }
     ],
     "signatureAdjectives": [
@@ -122,7 +122,7 @@
   "comparison": {
     "speakerAvgWords": 614,
     "partyAvgWords": 618,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.99,
     "vsParliament": 1.05
   },
@@ -147,43 +147,43 @@
     "question": "Welches Wort nutzt Siemtje Möller häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
         "text": "Friedensplan",
         "isCorrect": true
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Friedensplan\" nutzt Siemtje Möller 497.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "109.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "109.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Siemtje Möller häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
         "text": "Wirtschaftlich",
         "isCorrect": true
+      },
+      {
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Wirtschaftlich\" nutzt Siemtje Möller 2.9× häufiger als der SPD-Durchschnitt.",
@@ -303,11 +303,11 @@
       ],
       "wirtschaft": [
         {
-          "word": "betriebe",
+          "word": "unternehmen",
           "count": 5
         },
         {
-          "word": "unternehmen",
+          "word": "betriebe",
           "count": 5
         },
         {
@@ -319,7 +319,7 @@
           "count": 2
         },
         {
-          "word": "produktion",
+          "word": "zölle",
           "count": 1
         }
       ],
@@ -347,19 +347,19 @@
           "count": 13
         },
         {
-          "word": "angriff",
-          "count": 9
-        },
-        {
           "word": "verteidigung",
           "count": 9
         },
         {
-          "word": "soldaten",
-          "count": 7
+          "word": "angriff",
+          "count": 9
         },
         {
           "word": "gewalt",
+          "count": 7
+        },
+        {
+          "word": "soldaten",
           "count": 7
         }
       ],
@@ -393,10 +393,6 @@
       ],
       "digital": [
         {
-          "word": "netz",
-          "count": 1
-        },
-        {
           "word": "plattformen",
           "count": 1
         },
@@ -410,6 +406,10 @@
         },
         {
           "word": "cloud",
+          "count": 1
+        },
+        {
+          "word": "technologie",
           "count": 1
         }
       ],
@@ -463,10 +463,6 @@
           "count": 3
         },
         {
-          "word": "gerichte",
-          "count": 2
-        },
-        {
           "word": "gleichberechtigung",
           "count": 2
         },
@@ -475,7 +471,11 @@
           "count": 2
         },
         {
-          "word": "straftaten",
+          "word": "gerichte",
+          "count": 2
+        },
+        {
+          "word": "gericht",
           "count": 1
         }
       ],
@@ -499,11 +499,11 @@
           "count": 2
         },
         {
-          "word": "deutschlandticket",
+          "word": "führerschein",
           "count": 1
         },
         {
-          "word": "führerschein",
+          "word": "deutschlandticket",
           "count": 1
         }
       ]

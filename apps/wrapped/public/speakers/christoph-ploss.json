@@ -11,23 +11,23 @@
   "minWords": 266,
   "maxWords": 629,
   "rankings": {
-    "speechRank": 395,
-    "wordsRank": 444,
-    "partySpeechRank": 113,
+    "speechRank": 390,
+    "wordsRank": 442,
+    "partySpeechRank": 111,
     "partyWordsRank": 139,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 37.0,
+    "totalSpeakers": 625,
+    "percentile": 37.6,
     "verbosityRank": 240,
     "verbosityTotal": 579,
     "partyVerbosityRank": 86,
-    "longestSpeechRank": 466
+    "longestSpeechRank": 464
   },
   "drama": {
     "interruptionsGiven": 15,
     "interruptionsReceived": 30,
-    "interrupterRank": 228,
-    "interruptedRank": 244
+    "interrupterRank": 232,
+    "interruptedRank": 238
   },
   "words": {
     "topWords": [
@@ -54,6 +54,10 @@
       {
         "word": "legislaturperiode",
         "count": 11
+      },
+      {
+        "word": "bundesregierung",
+        "count": 10
       }
     ],
     "signatureWords": [
@@ -61,31 +65,31 @@
         "word": "infrastrukturprojekte",
         "count": 7,
         "ratioParty": 239.2,
-        "ratioBundestag": 263.4
-      },
-      {
-        "word": "airlines",
-        "count": 7,
-        "ratioParty": 239.2,
-        "ratioBundestag": 273.2
+        "ratioBundestag": 262.8
       },
       {
         "word": "stuttgart",
         "count": 7,
         "ratioParty": 239.2,
-        "ratioBundestag": 80.2
+        "ratioBundestag": 80.0
+      },
+      {
+        "word": "airlines",
+        "count": 7,
+        "ratioParty": 239.2,
+        "ratioBundestag": 272.5
       },
       {
         "word": "standortkosten",
         "count": 6,
         "ratioParty": 205.0,
-        "ratioBundestag": 395.1
+        "ratioBundestag": 394.2
       },
       {
         "word": "maritimen",
         "count": 5,
         "ratioParty": 155.3,
-        "ratioBundestag": 125.4
+        "ratioBundestag": 125.1
       }
     ],
     "signatureAdjectives": [
@@ -106,7 +110,7 @@
   "comparison": {
     "speakerAvgWords": 456,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.71,
     "vsParliament": 0.78
   },
@@ -131,34 +135,30 @@
     "question": "Welches Wort nutzt Dr. Christoph Ploß häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
         "text": "Infrastrukturprojekte",
         "isCorrect": true
+      },
+      {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Infrastrukturprojekte\" nutzt Dr. Christoph Ploß 239.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "263.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "262.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Christoph Ploß häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
@@ -166,7 +166,11 @@
         "isCorrect": true
       },
       {
-        "text": "Politisch",
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
         "isCorrect": false
       }
     ],
@@ -271,15 +275,15 @@
           "count": 7
         },
         {
+          "word": "industrie",
+          "count": 4
+        },
+        {
           "word": "unternehmen",
           "count": 4
         },
         {
           "word": "volkswirtschaft",
-          "count": 4
-        },
-        {
-          "word": "industrie",
           "count": 4
         },
         {
@@ -289,11 +293,11 @@
       ],
       "europa": [
         {
-          "word": "amerika",
+          "word": "europa",
           "count": 1
         },
         {
-          "word": "europa",
+          "word": "amerika",
           "count": 1
         }
       ],
@@ -337,11 +341,11 @@
           "count": 9
         },
         {
-          "word": "häfen",
+          "word": "infrastruktur",
           "count": 6
         },
         {
-          "word": "infrastruktur",
+          "word": "häfen",
           "count": 6
         },
         {

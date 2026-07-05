@@ -11,23 +11,23 @@
   "minWords": 13,
   "maxWords": 789,
   "rankings": {
-    "speechRank": 81,
+    "speechRank": 90,
     "wordsRank": 88,
-    "partySpeechRank": 15,
+    "partySpeechRank": 17,
     "partyWordsRank": 18,
-    "partySize": 151,
-    "totalSpeakers": 627,
-    "percentile": 87.1,
-    "verbosityRank": 154,
+    "partySize": 150,
+    "totalSpeakers": 625,
+    "percentile": 85.6,
+    "verbosityRank": 155,
     "verbosityTotal": 579,
-    "partyVerbosityRank": 40,
-    "longestSpeechRank": 264
+    "partyVerbosityRank": 41,
+    "longestSpeechRank": 262
   },
   "drama": {
     "interruptionsGiven": 110,
     "interruptionsReceived": 31,
     "interrupterRank": 38,
-    "interruptedRank": 223
+    "interruptedRank": 229
   },
   "words": {
     "topWords": [
@@ -68,31 +68,31 @@
       {
         "word": "schwesig",
         "count": 6,
-        "ratioParty": 98.4,
-        "ratioBundestag": 158.4
+        "ratioParty": 97.9,
+        "ratioBundestag": 158.0
       },
       {
         "word": "vorpommern",
         "count": 18,
-        "ratioParty": 82.0,
-        "ratioBundestag": 97.8
-      },
-      {
-        "word": "zölle",
-        "count": 6,
-        "ratioParty": 82.0,
-        "ratioBundestag": 35.2
+        "ratioParty": 86.4,
+        "ratioBundestag": 102.1
       },
       {
         "word": "mecklenburg",
         "count": 17,
-        "ratioParty": 77.5,
-        "ratioBundestag": 95.2
+        "ratioParty": 81.6,
+        "ratioBundestag": 99.5
+      },
+      {
+        "word": "zölle",
+        "count": 6,
+        "ratioParty": 81.6,
+        "ratioBundestag": 35.1
       },
       {
         "word": "entlastungen",
         "count": 10,
-        "ratioParty": 15.8,
+        "ratioParty": 15.7,
         "ratioBundestag": 12.9
       }
     ],
@@ -113,9 +113,9 @@
   },
   "comparison": {
     "speakerAvgWords": 502,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
-    "vsParty": 0.89,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
+    "vsParty": 0.9,
     "vsParliament": 0.86
   },
   "funFacts": [
@@ -139,7 +139,11 @@
     "question": "Welches Wort nutzt Leif-Erik Holm häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Demokratie",
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Kinder",
         "isCorrect": false
       },
       {
@@ -147,35 +151,31 @@
         "isCorrect": false
       },
       {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
         "text": "Schwesig",
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Schwesig\" nutzt Leif-Erik Holm 98.4× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "158.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Schwesig\" nutzt Leif-Erik Holm 97.9× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "158.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Leif-Erik Holm häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
         "text": "Links",
         "isCorrect": true
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Links\" nutzt Leif-Erik Holm 2.1× häufiger als der AfD-Durchschnitt.",
@@ -265,15 +265,15 @@
           "count": 10
         },
         {
-          "word": "atomausstieg",
-          "count": 1
-        },
-        {
           "word": "kohle",
           "count": 1
         },
         {
           "word": "klimaneutralität",
+          "count": 1
+        },
+        {
+          "word": "windenergie",
           "count": 1
         }
       ],
@@ -329,17 +329,21 @@
           "count": 1
         },
         {
-          "word": "krankenkasse",
+          "word": "pflege",
           "count": 1
         },
         {
-          "word": "pflege",
+          "word": "krankenkasse",
           "count": 1
         }
       ],
       "europa": [
         {
-          "word": "israel",
+          "word": "abkommen",
+          "count": 1
+        },
+        {
+          "word": "china",
           "count": 1
         },
         {
@@ -347,11 +351,7 @@
           "count": 1
         },
         {
-          "word": "abkommen",
-          "count": 1
-        },
-        {
-          "word": "china",
+          "word": "israel",
           "count": 1
         }
       ],
@@ -405,7 +405,7 @@
           "count": 7
         },
         {
-          "word": "mindestlohn",
+          "word": "arbeitsplatz",
           "count": 2
         },
         {
@@ -413,11 +413,11 @@
           "count": 2
         },
         {
-          "word": "arbeitsplatz",
+          "word": "löhne",
           "count": 2
         },
         {
-          "word": "löhne",
+          "word": "mindestlohn",
           "count": 2
         }
       ],

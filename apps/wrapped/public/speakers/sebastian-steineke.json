@@ -11,23 +11,23 @@
   "minWords": 401,
   "maxWords": 770,
   "rankings": {
-    "speechRank": 524,
-    "wordsRank": 352,
-    "partySpeechRank": 170,
+    "speechRank": 530,
+    "wordsRank": 351,
+    "partySpeechRank": 171,
     "partyWordsRank": 106,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 16.4,
+    "totalSpeakers": 625,
+    "percentile": 15.2,
     "verbosityRank": 97,
     "verbosityTotal": 579,
     "partyVerbosityRank": 36,
-    "longestSpeechRank": 279
+    "longestSpeechRank": 277
   },
   "drama": {
     "interruptionsGiven": 5,
     "interruptionsReceived": 9,
-    "interrupterRank": 340,
-    "interruptedRank": 474
+    "interrupterRank": 352,
+    "interruptedRank": 479
   },
   "words": {
     "topWords": [
@@ -52,10 +52,6 @@
         "count": 13
       },
       {
-        "word": "verbraucherinnen",
-        "count": 12
-      },
-      {
         "word": "gesetz",
         "count": 12
       },
@@ -64,12 +60,12 @@
         "count": 12
       },
       {
-        "word": "unternehmen",
-        "count": 11
+        "word": "verbraucherinnen",
+        "count": 12
       },
       {
-        "word": "besonders",
-        "count": 10
+        "word": "unternehmen",
+        "count": 11
       }
     ],
     "signatureWords": [
@@ -77,31 +73,31 @@
         "word": "verbraucherkreditrichtlinie",
         "count": 7,
         "ratioParty": 938.2,
-        "ratioBundestag": 304.7
+        "ratioBundestag": 304.0
       },
       {
         "word": "schuldnerberatung",
         "count": 9,
         "ratioParty": 301.6,
-        "ratioBundestag": 155.1
+        "ratioBundestag": 154.7
       },
       {
         "word": "reparatur",
         "count": 7,
         "ratioParty": 134.0,
-        "ratioBundestag": 96.5
+        "ratioBundestag": 96.3
       },
       {
         "word": "verbraucherschutz",
         "count": 16,
         "ratioParty": 71.5,
-        "ratioBundestag": 67.5
+        "ratioBundestag": 68.8
       },
       {
         "word": "verbraucherinnen",
         "count": 12,
         "ratioParty": 45.3,
-        "ratioBundestag": 39.2
+        "ratioBundestag": 39.1
       }
     ],
     "signatureAdjectives": [
@@ -109,7 +105,7 @@
         "word": "nachhaltig",
         "count": 4,
         "ratioParty": 12.6,
-        "ratioBundestag": 12.2
+        "ratioBundestag": 12.3
       },
       {
         "word": "entscheidend",
@@ -122,7 +118,7 @@
   "comparison": {
     "speakerAvgWords": 544,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.84,
     "vsParliament": 0.93
   },
@@ -142,7 +138,11 @@
     "question": "Welches Wort nutzt Sebastian Steineke häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Verantwortung",
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
@@ -152,14 +152,10 @@
       {
         "text": "Verbraucherkreditrichtlinie",
         "isCorrect": true
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Verbraucherkreditrichtlinie\" nutzt Sebastian Steineke 938.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "304.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "304.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Sebastian Steineke häufiger als der Rest der CDU/CSU-Fraktion?",
@@ -169,11 +165,11 @@
         "isCorrect": false
       },
       {
-        "text": "Politisch",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Sozial",
+        "text": "Groß",
         "isCorrect": false
       },
       {
@@ -182,7 +178,7 @@
       }
     ],
     "explanationParty": "\"Nachhaltig\" nutzt Sebastian Steineke 12.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "12.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "12.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -304,11 +300,11 @@
           "count": 11
         },
         {
-          "word": "wirtschaft",
+          "word": "wettbewerb",
           "count": 3
         },
         {
-          "word": "wettbewerb",
+          "word": "wirtschaft",
           "count": 3
         },
         {
@@ -356,11 +352,11 @@
           "count": 2
         },
         {
-          "word": "netz",
+          "word": "software",
           "count": 1
         },
         {
-          "word": "daten",
+          "word": "internet",
           "count": 1
         }
       ],
@@ -376,7 +372,7 @@
           "count": 3
         },
         {
-          "word": "finanzierung",
+          "word": "verschuldung",
           "count": 2
         },
         {
@@ -384,7 +380,7 @@
           "count": 2
         },
         {
-          "word": "verschuldung",
+          "word": "finanzierung",
           "count": 2
         },
         {
@@ -402,15 +398,15 @@
           "count": 2
         },
         {
-          "word": "rechtsprechung",
+          "word": "gesetzesänderung",
           "count": 1
         },
         {
-          "word": "justizministerium",
+          "word": "bundesgerichtshof",
           "count": 1
         },
         {
-          "word": "gerichte",
+          "word": "gericht",
           "count": 1
         }
       ],
@@ -426,15 +422,15 @@
       ],
       "mobilitaet": [
         {
-          "word": "flughafen",
-          "count": 1
-        },
-        {
           "word": "fahrzeuge",
           "count": 1
         },
         {
           "word": "verkehr",
+          "count": 1
+        },
+        {
+          "word": "flughafen",
           "count": 1
         }
       ]

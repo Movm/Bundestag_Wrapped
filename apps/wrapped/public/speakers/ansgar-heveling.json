@@ -11,23 +11,23 @@
   "minWords": 269,
   "maxWords": 747,
   "rankings": {
-    "speechRank": 271,
-    "wordsRank": 359,
-    "partySpeechRank": 74,
+    "speechRank": 275,
+    "wordsRank": 357,
+    "partySpeechRank": 75,
     "partyWordsRank": 108,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 56.8,
-    "verbosityRank": 259,
+    "totalSpeakers": 625,
+    "percentile": 56.0,
+    "verbosityRank": 261,
     "verbosityTotal": 579,
     "partyVerbosityRank": 91,
-    "longestSpeechRank": 318
+    "longestSpeechRank": 316
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 19,
     "interrupterRank": null,
-    "interruptedRank": 335
+    "interruptedRank": 336
   },
   "words": {
     "topWords": [
@@ -36,11 +36,11 @@
         "count": 17
       },
       {
-        "word": "bundestag",
+        "word": "schutz",
         "count": 15
       },
       {
-        "word": "schutz",
+        "word": "bundestag",
         "count": 15
       },
       {
@@ -56,7 +56,11 @@
         "count": 11
       },
       {
-        "word": "deutschen",
+        "word": "grundgesetzes",
+        "count": 10
+      },
+      {
+        "word": "gesetzentwurf",
         "count": 10
       },
       {
@@ -64,11 +68,7 @@
         "count": 10
       },
       {
-        "word": "unabhängigkeit",
-        "count": 10
-      },
-      {
-        "word": "grundgesetzes",
+        "word": "deutschen",
         "count": 10
       }
     ],
@@ -77,31 +77,31 @@
         "word": "verfassungsstaat",
         "count": 5,
         "ratioParty": 1332.2,
-        "ratioBundestag": 1027.6
+        "ratioBundestag": 1025.2
       },
       {
         "word": "materiell",
         "count": 5,
         "ratioParty": 190.3,
-        "ratioBundestag": 171.3
+        "ratioBundestag": 170.9
       },
       {
         "word": "privileg",
         "count": 5,
         "ratioParty": 166.5,
-        "ratioBundestag": 111.1
+        "ratioBundestag": 110.8
       },
       {
         "word": "bundesrechnungshofs",
         "count": 6,
         "ratioParty": 159.9,
-        "ratioBundestag": 197.3
+        "ratioBundestag": 196.8
       },
       {
-        "word": "entschädigung",
+        "word": "unterhaltsvorschuss",
         "count": 7,
         "ratioParty": 124.3,
-        "ratioBundestag": 122.4
+        "ratioBundestag": 104.4
       }
     ],
     "signatureAdjectives": [
@@ -128,7 +128,7 @@
   "comparison": {
     "speakerAvgWords": 444,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.69,
     "vsParliament": 0.76
   },
@@ -148,43 +148,43 @@
     "question": "Welches Wort nutzt Ansgar Heveling häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Arbeit",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
         "text": "Verfassungsstaat",
         "isCorrect": true
+      },
+      {
+        "text": "Kinder",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Verfassungsstaat\" nutzt Ansgar Heveling 1332.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "1027.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "1025.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Ansgar Heveling häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
         "text": "Geschützt",
         "isCorrect": true
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Geschützt\" nutzt Ansgar Heveling 16.7× häufiger als der CDU/CSU-Durchschnitt.",
@@ -332,6 +332,10 @@
       ],
       "europa": [
         {
+          "word": "bündnis",
+          "count": 1
+        },
+        {
           "word": "europa",
           "count": 1
         },
@@ -342,10 +346,6 @@
         {
           "word": "binnenmarkt",
           "count": 1
-        },
-        {
-          "word": "bündnis",
-          "count": 1
         }
       ],
       "digital": [
@@ -354,15 +354,15 @@
           "count": 3
         },
         {
-          "word": "onlinehandel",
-          "count": 1
-        },
-        {
           "word": "digital",
           "count": 1
         },
         {
           "word": "algorithmen",
+          "count": 1
+        },
+        {
+          "word": "onlinehandel",
           "count": 1
         }
       ],
@@ -376,25 +376,25 @@
           "count": 2
         },
         {
-          "word": "forschung",
-          "count": 1
-        },
-        {
           "word": "bildung",
           "count": 1
         },
         {
           "word": "lehrkraft",
           "count": 1
+        },
+        {
+          "word": "lehrkräfte",
+          "count": 1
         }
       ],
       "finanzen": [
         {
-          "word": "schulden",
+          "word": "bundeshaushalt",
           "count": 1
         },
         {
-          "word": "bundeshaushalt",
+          "word": "schulden",
           "count": 1
         }
       ],
@@ -416,7 +416,7 @@
           "count": 2
         },
         {
-          "word": "haft",
+          "word": "verfassungsrecht",
           "count": 1
         }
       ],

@@ -11,32 +11,32 @@
   "minWords": 79,
   "maxWords": 647,
   "rankings": {
-    "speechRank": 177,
+    "speechRank": 167,
     "wordsRank": 214,
-    "partySpeechRank": 42,
+    "partySpeechRank": 37,
     "partyWordsRank": 61,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 71.8,
+    "totalSpeakers": 625,
+    "percentile": 73.3,
     "verbosityRank": 226,
     "verbosityTotal": 579,
     "partyVerbosityRank": 80,
-    "longestSpeechRank": 439
+    "longestSpeechRank": 436
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 12,
     "interrupterRank": null,
-    "interruptedRank": 429
+    "interruptedRank": 425
   },
   "words": {
     "topWords": [
       {
-        "word": "sicherheit",
+        "word": "bevölkerungsschutz",
         "count": 30
       },
       {
-        "word": "bevölkerungsschutz",
+        "word": "sicherheit",
         "count": 30
       },
       {
@@ -68,7 +68,7 @@
         "count": 17
       },
       {
-        "word": "bevölkerung",
+        "word": "gesetz",
         "count": 14
       }
     ],
@@ -77,31 +77,31 @@
         "word": "krisenvorsorge",
         "count": 11,
         "ratioParty": 212.1,
-        "ratioBundestag": 453.7
+        "ratioBundestag": 452.6
       },
       {
         "word": "verdopplung",
         "count": 6,
         "ratioParty": 173.6,
-        "ratioBundestag": 139.9
+        "ratioBundestag": 139.5
       },
       {
         "word": "hilfsorganisationen",
         "count": 8,
         "ratioParty": 73.1,
-        "ratioBundestag": 72.7
+        "ratioBundestag": 72.5
       },
       {
         "word": "bevölkerungsschutz",
         "count": 30,
         "ratioParty": 63.5,
-        "ratioBundestag": 70.9
+        "ratioBundestag": 71.3
       },
       {
         "word": "betreiber",
         "count": 10,
         "ratioParty": 57.9,
-        "ratioBundestag": 53.1
+        "ratioBundestag": 53.0
       }
     ],
     "signatureAdjectives": [
@@ -122,7 +122,7 @@
   "comparison": {
     "speakerAvgWords": 464,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.72,
     "vsParliament": 0.79
   },
@@ -142,30 +142,30 @@
     "question": "Welches Wort nutzt Sebastian Schmidt häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bürger",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
         "text": "Krisenvorsorge",
         "isCorrect": true
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Krisenvorsorge\" nutzt Sebastian Schmidt 212.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "453.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "452.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Sebastian Schmidt häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Sozial",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
@@ -173,11 +173,11 @@
         "isCorrect": true
       },
       {
-        "text": "Neu",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
-        "text": "National",
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
@@ -330,6 +330,10 @@
           "count": 3
         },
         {
+          "word": "rettungsdienst",
+          "count": 2
+        },
+        {
           "word": "krankenversicherung",
           "count": 2
         },
@@ -339,10 +343,6 @@
         },
         {
           "word": "vorsorge",
-          "count": 2
-        },
-        {
-          "word": "rettungsdienst",
           "count": 2
         }
       ],
@@ -356,25 +356,25 @@
           "count": 2
         },
         {
-          "word": "ukraine",
-          "count": 1
-        },
-        {
           "word": "krieg",
           "count": 1
         },
         {
           "word": "frieden",
           "count": 1
+        },
+        {
+          "word": "ukraine",
+          "count": 1
         }
       ],
       "digital": [
         {
-          "word": "digitalisierung",
+          "word": "cybersicherheit",
           "count": 2
         },
         {
-          "word": "cybersicherheit",
+          "word": "digitalisierung",
           "count": 2
         },
         {
@@ -404,7 +404,7 @@
           "count": 2
         },
         {
-          "word": "fortbildung",
+          "word": "bildung",
           "count": 1
         }
       ],
@@ -460,11 +460,11 @@
           "count": 4
         },
         {
-          "word": "flugverkehr",
+          "word": "verkehr",
           "count": 1
         },
         {
-          "word": "verkehr",
+          "word": "flugverkehr",
           "count": 1
         }
       ]

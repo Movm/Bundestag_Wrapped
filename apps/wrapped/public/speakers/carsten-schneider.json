@@ -11,17 +11,17 @@
   "minWords": 8,
   "maxWords": 1279,
   "rankings": {
-    "speechRank": 56,
+    "speechRank": 51,
     "wordsRank": 13,
     "partySpeechRank": 15,
     "partyWordsRank": 3,
     "partySize": 114,
-    "totalSpeakers": 627,
-    "percentile": 91.1,
+    "totalSpeakers": 625,
+    "percentile": 91.8,
     "verbosityRank": 554,
     "verbosityTotal": 579,
     "partyVerbosityRank": 97,
-    "longestSpeechRank": 32
+    "longestSpeechRank": 30
   },
   "drama": {
     "interruptionsGiven": 0,
@@ -69,7 +69,13 @@
         "word": "flüssen",
         "count": 5,
         "ratioParty": 221.5,
-        "ratioBundestag": 112.6
+        "ratioBundestag": 112.4
+      },
+      {
+        "word": "flüsse",
+        "count": 9,
+        "ratioParty": 132.9,
+        "ratioBundestag": 101.1
       },
       {
         "word": "pariser",
@@ -78,16 +84,10 @@
         "ratioBundestag": 27.0
       },
       {
-        "word": "flüsse",
-        "count": 9,
-        "ratioParty": 132.9,
-        "ratioBundestag": 101.4
-      },
-      {
         "word": "vorige",
         "count": 5,
         "ratioParty": 110.7,
-        "ratioBundestag": 225.3
+        "ratioBundestag": 224.7
       },
       {
         "word": "lindner",
@@ -132,7 +132,7 @@
   "comparison": {
     "speakerAvgWords": 215,
     "partyAvgWords": 618,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.35,
     "vsParliament": 0.37
   },
@@ -157,11 +157,11 @@
     "question": "Welches Wort nutzt Carsten Schneider häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Zukunft",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
@@ -169,30 +169,30 @@
         "isCorrect": true
       },
       {
-        "text": "Steuern",
+        "text": "Klima",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Flüssen\" nutzt Carsten Schneider 221.5× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "112.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "112.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Carsten Schneider häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
         "text": "Zentral",
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
+        "text": "Notwendig",
         "isCorrect": false
       }
     ],
@@ -403,15 +403,15 @@
           "count": 8
         },
         {
-          "word": "netz",
-          "count": 2
-        },
-        {
           "word": "digitalisierung",
           "count": 2
         },
         {
           "word": "plattform",
+          "count": 2
+        },
+        {
+          "word": "netz",
           "count": 2
         }
       ],
@@ -425,15 +425,15 @@
           "count": 3
         },
         {
+          "word": "wissenschaftsfreiheit",
+          "count": 1
+        },
+        {
           "word": "bildung",
           "count": 1
         },
         {
           "word": "hochschulen",
-          "count": 1
-        },
-        {
-          "word": "wissenschaftler",
           "count": 1
         }
       ],
@@ -469,7 +469,7 @@
           "count": 4
         },
         {
-          "word": "gesetzgebung",
+          "word": "beschluss",
           "count": 1
         },
         {
@@ -477,7 +477,7 @@
           "count": 1
         },
         {
-          "word": "beschluss",
+          "word": "gesetzgebung",
           "count": 1
         }
       ],

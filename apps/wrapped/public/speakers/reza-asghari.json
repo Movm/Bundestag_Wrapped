@@ -11,23 +11,23 @@
   "minWords": 259,
   "maxWords": 549,
   "rankings": {
-    "speechRank": 364,
-    "wordsRank": 450,
-    "partySpeechRank": 101,
+    "speechRank": 356,
+    "wordsRank": 448,
+    "partySpeechRank": 98,
     "partyWordsRank": 141,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 41.9,
-    "verbosityRank": 382,
+    "totalSpeakers": 625,
+    "percentile": 43.0,
+    "verbosityRank": 381,
     "verbosityTotal": 579,
     "partyVerbosityRank": 134,
-    "longestSpeechRank": 550
+    "longestSpeechRank": 548
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 15,
     "interrupterRank": null,
-    "interruptedRank": 389
+    "interruptedRank": 384
   },
   "words": {
     "topWords": [
@@ -56,19 +56,19 @@
         "count": 10
       },
       {
-        "word": "menschen",
-        "count": 9
-      },
-      {
         "word": "haushalt",
         "count": 9
       },
       {
-        "word": "wirtschaft",
-        "count": 8
+        "word": "menschen",
+        "count": 9
       },
       {
         "word": "unternehmen",
+        "count": 8
+      },
+      {
+        "word": "wirtschaft",
         "count": 8
       }
     ],
@@ -77,31 +77,31 @@
         "word": "forschungsergebnisse",
         "count": 5,
         "ratioParty": 1776.6,
-        "ratioBundestag": 498.0
+        "ratioBundestag": 496.8
       },
       {
         "word": "salzgitter",
         "count": 5,
         "ratioParty": 592.2,
-        "ratioBundestag": 171.2
+        "ratioBundestag": 170.8
       },
       {
         "word": "exzellente",
         "count": 5,
         "ratioParty": 118.4,
-        "ratioBundestag": 140.5
+        "ratioBundestag": 140.1
       },
       {
         "word": "umweltschutz",
         "count": 10,
         "ratioParty": 80.8,
-        "ratioBundestag": 69.3
+        "ratioBundestag": 69.2
       },
       {
         "word": "hochschulen",
         "count": 7,
         "ratioParty": 71.1,
-        "ratioBundestag": 57.2
+        "ratioBundestag": 57.1
       }
     ],
     "signatureAdjectives": [
@@ -109,14 +109,14 @@
         "word": "solide",
         "count": 4,
         "ratioParty": 22.2,
-        "ratioBundestag": 31.8
+        "ratioBundestag": 31.7
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 395,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.61,
     "vsParliament": 0.68
   },
@@ -136,47 +136,47 @@
     "question": "Welches Wort nutzt Dr. Reza Asghari häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Familie",
+        "text": "Forschungsergebnisse",
+        "isCorrect": true
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
         "isCorrect": false
       },
       {
         "text": "Rente",
         "isCorrect": false
-      },
-      {
-        "text": "Forschungsergebnisse",
-        "isCorrect": true
-      },
-      {
-        "text": "Sicherheit",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Forschungsergebnisse\" nutzt Dr. Reza Asghari 1776.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "498.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "496.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Reza Asghari häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
         "text": "Solide",
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Neu",
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Solide\" nutzt Dr. Reza Asghari 22.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "31.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "31.7× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -294,11 +294,11 @@
       ],
       "wirtschaft": [
         {
-          "word": "wirtschaft",
+          "word": "unternehmen",
           "count": 8
         },
         {
-          "word": "unternehmen",
+          "word": "wirtschaft",
           "count": 8
         },
         {
@@ -306,11 +306,11 @@
           "count": 5
         },
         {
-          "word": "volkswirtschaft",
+          "word": "markt",
           "count": 3
         },
         {
-          "word": "markt",
+          "word": "volkswirtschaft",
           "count": 3
         }
       ],
@@ -338,11 +338,11 @@
           "count": 1
         },
         {
-          "word": "israel",
+          "word": "außenpolitik",
           "count": 1
         },
         {
-          "word": "sanktionen",
+          "word": "israel",
           "count": 1
         }
       ],
@@ -384,15 +384,15 @@
           "count": 3
         },
         {
+          "word": "investitionen",
+          "count": 1
+        },
+        {
+          "word": "etat",
+          "count": 1
+        },
+        {
           "word": "investition",
-          "count": 1
-        },
-        {
-          "word": "finanzierung",
-          "count": 1
-        },
-        {
-          "word": "steuerzahler",
           "count": 1
         }
       ],

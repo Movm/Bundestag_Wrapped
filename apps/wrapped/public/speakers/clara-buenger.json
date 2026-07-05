@@ -16,12 +16,12 @@
     "partySpeechRank": 1,
     "partyWordsRank": 1,
     "partySize": 63,
-    "totalSpeakers": 627,
+    "totalSpeakers": 625,
     "percentile": 99.0,
     "verbosityRank": 333,
     "verbosityTotal": 579,
     "partyVerbosityRank": 22,
-    "longestSpeechRank": 236
+    "longestSpeechRank": 234
   },
   "drama": {
     "interruptionsGiven": 104,
@@ -48,11 +48,11 @@
         "count": 49
       },
       {
-        "word": "land",
+        "word": "schutz",
         "count": 39
       },
       {
-        "word": "schutz",
+        "word": "land",
         "count": 39
       },
       {
@@ -62,34 +62,34 @@
     ],
     "signatureWords": [
       {
-        "word": "zurückgewiesen",
-        "count": 6,
-        "ratioParty": 136.2,
-        "ratioBundestag": 26.1
-      },
-      {
         "word": "familiennachzugs",
         "count": 6,
         "ratioParty": 136.2,
         "ratioBundestag": 23.4
       },
       {
+        "word": "zurückgewiesen",
+        "count": 6,
+        "ratioParty": 136.2,
+        "ratioBundestag": 32.8
+      },
+      {
         "word": "throm",
         "count": 5,
         "ratioParty": 113.5,
-        "ratioBundestag": 32.9
-      },
-      {
-        "word": "zurückweisungen",
-        "count": 12,
-        "ratioParty": 90.8,
-        "ratioBundestag": 19.1
+        "ratioBundestag": 32.8
       },
       {
         "word": "schutzsuchende",
         "count": 12,
         "ratioParty": 90.8,
-        "ratioBundestag": 106.4
+        "ratioBundestag": 106.1
+      },
+      {
+        "word": "zurückweisungen",
+        "count": 12,
+        "ratioParty": 90.8,
+        "ratioBundestag": 19.3
       }
     ],
     "signatureAdjectives": [
@@ -121,14 +121,14 @@
         "word": "absurd",
         "count": 6,
         "ratioParty": 2.0,
-        "ratioBundestag": 6.6
+        "ratioBundestag": 6.5
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 416,
     "partyAvgWords": 500,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.83,
     "vsParliament": 0.71
   },
@@ -146,7 +146,7 @@
     {
       "emoji": "🏆",
       "label": "Rang (Reden)",
-      "value": "#6 von 627"
+      "value": "#6 von 625"
     },
     {
       "emoji": "⚡",
@@ -163,43 +163,43 @@
     "question": "Welches Wort nutzt Clara Bünger häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Arbeit",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Zurückgewiesen",
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Familiennachzugs",
         "isCorrect": true
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Zurückgewiesen\" nutzt Clara Bünger 136.2× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "26.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Familiennachzugs\" nutzt Clara Bünger 136.2× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "23.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Clara Bünger häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
+        "text": "Neu",
         "isCorrect": false
       },
       {
         "text": "Gefährlich",
         "isCorrect": true
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Gefährlich\" nutzt Clara Bünger 6.1× häufiger als der DIE LINKE-Durchschnitt.",
@@ -343,15 +343,15 @@
           "count": 9
         },
         {
-          "word": "familie",
-          "count": 5
-        },
-        {
           "word": "mieten",
           "count": 5
         },
         {
-          "word": "existenzminimum",
+          "word": "familie",
+          "count": 5
+        },
+        {
+          "word": "wohnung",
           "count": 3
         }
       ],
@@ -383,19 +383,19 @@
           "count": 5
         },
         {
-          "word": "sucht",
-          "count": 3
-        },
-        {
           "word": "krankenhäuser",
           "count": 3
         },
         {
-          "word": "krankenhaus",
-          "count": 1
+          "word": "sucht",
+          "count": 3
         },
         {
           "word": "ärzte",
+          "count": 1
+        },
+        {
+          "word": "gesundheitssystem",
           "count": 1
         }
       ],
@@ -431,15 +431,15 @@
           "count": 1
         },
         {
+          "word": "plattformen",
+          "count": 1
+        },
+        {
           "word": "netz",
           "count": 1
         },
         {
           "word": "internet",
-          "count": 1
-        },
-        {
-          "word": "plattformen",
           "count": 1
         }
       ],
@@ -449,19 +449,19 @@
           "count": 3
         },
         {
-          "word": "studierende",
-          "count": 1
-        },
-        {
           "word": "meister",
           "count": 1
         },
         {
-          "word": "bildung",
+          "word": "wissenschaftler",
           "count": 1
         },
         {
           "word": "kita",
+          "count": 1
+        },
+        {
+          "word": "lehrkraft",
           "count": 1
         }
       ],
@@ -511,19 +511,19 @@
       ],
       "arbeit": [
         {
-          "word": "arbeiter",
-          "count": 1
-        },
-        {
           "word": "einkommen",
           "count": 1
         },
         {
-          "word": "löhne",
+          "word": "überstunden",
           "count": 1
         },
         {
-          "word": "überstunden",
+          "word": "arbeiter",
+          "count": 1
+        },
+        {
+          "word": "löhne",
           "count": 1
         }
       ],

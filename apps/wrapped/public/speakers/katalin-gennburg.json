@@ -11,23 +11,23 @@
   "minWords": 13,
   "maxWords": 1023,
   "rankings": {
-    "speechRank": 192,
+    "speechRank": 188,
     "wordsRank": 191,
     "partySpeechRank": 28,
     "partyWordsRank": 22,
     "partySize": 63,
-    "totalSpeakers": 627,
-    "percentile": 69.4,
+    "totalSpeakers": 625,
+    "percentile": 69.9,
     "verbosityRank": 342,
     "verbosityTotal": 579,
     "partyVerbosityRank": 24,
-    "longestSpeechRank": 77
+    "longestSpeechRank": 75
   },
   "drama": {
     "interruptionsGiven": 67,
     "interruptionsReceived": 53,
-    "interrupterRank": 74,
-    "interruptedRank": 104
+    "interrupterRank": 73,
+    "interruptedRank": 102
   },
   "words": {
     "topWords": [
@@ -61,25 +61,25 @@
         "word": "leerstand",
         "count": 12,
         "ratioParty": 646.7,
-        "ratioBundestag": 267.6
+        "ratioBundestag": 267.0
       },
       {
         "word": "bauwirtschaft",
         "count": 9,
         "ratioParty": 485.1,
-        "ratioBundestag": 146.0
+        "ratioBundestag": 145.6
       },
       {
         "word": "mietenkrise",
         "count": 8,
         "ratioParty": 431.2,
-        "ratioBundestag": 1070.4
+        "ratioBundestag": 1067.9
       },
       {
         "word": "bauindustrie",
         "count": 5,
         "ratioParty": 269.5,
-        "ratioBundestag": 267.6
+        "ratioBundestag": 267.0
       },
       {
         "word": "bauturbo",
@@ -112,7 +112,7 @@
   "comparison": {
     "speakerAvgWords": 410,
     "partyAvgWords": 500,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.82,
     "vsParliament": 0.7
   },
@@ -137,30 +137,34 @@
     "question": "Welches Wort nutzt Katalin Gennburg häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bildung",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
         "isCorrect": false
       },
       {
         "text": "Leerstand",
         "isCorrect": true
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Leerstand\" nutzt Katalin Gennburg 646.7× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "267.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "267.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Katalin Gennburg häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "National",
         "isCorrect": false
       },
       {
@@ -168,11 +172,7 @@
         "isCorrect": true
       },
       {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
+        "text": "Wichtig",
         "isCorrect": false
       }
     ],
@@ -285,11 +285,11 @@
           "count": 2
         },
         {
-          "word": "nachhaltig",
+          "word": "umweltschutz",
           "count": 1
         },
         {
-          "word": "naturschutz",
+          "word": "nachhaltig",
           "count": 1
         }
       ],
@@ -303,7 +303,7 @@
           "count": 2
         },
         {
-          "word": "wirtschaft",
+          "word": "pleite",
           "count": 1
         },
         {
@@ -311,7 +311,7 @@
           "count": 1
         },
         {
-          "word": "pleite",
+          "word": "wirtschaft",
           "count": 1
         }
       ],
@@ -345,11 +345,11 @@
       ],
       "gesundheit": [
         {
-          "word": "arzt",
+          "word": "hausarzt",
           "count": 1
         },
         {
-          "word": "hausarzt",
+          "word": "arzt",
           "count": 1
         }
       ],
@@ -375,7 +375,7 @@
       ],
       "bildung": [
         {
-          "word": "forschung",
+          "word": "schule",
           "count": 1
         },
         {
@@ -383,29 +383,29 @@
           "count": 1
         },
         {
-          "word": "schule",
+          "word": "forschung",
           "count": 1
         }
       ],
       "finanzen": [
         {
-          "word": "investitionen",
-          "count": 2
-        },
-        {
           "word": "vermögensteuer",
           "count": 2
         },
         {
-          "word": "haushaltsentwurf",
+          "word": "investitionen",
+          "count": 2
+        },
+        {
+          "word": "kosten",
           "count": 1
         },
         {
-          "word": "haushalt",
+          "word": "inflation",
           "count": 1
         },
         {
-          "word": "bundeshaushalt",
+          "word": "bank",
           "count": 1
         }
       ],

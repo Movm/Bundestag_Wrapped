@@ -11,23 +11,23 @@
   "minWords": 219,
   "maxWords": 962,
   "rankings": {
-    "speechRank": 300,
+    "speechRank": 318,
     "wordsRank": 60,
-    "partySpeechRank": 40,
+    "partySpeechRank": 39,
     "partyWordsRank": 6,
     "partySize": 63,
-    "totalSpeakers": 627,
-    "percentile": 52.2,
+    "totalSpeakers": 625,
+    "percentile": 49.1,
     "verbosityRank": 20,
     "verbosityTotal": 579,
     "partyVerbosityRank": 3,
-    "longestSpeechRank": 98
+    "longestSpeechRank": 96
   },
   "drama": {
     "interruptionsGiven": 8,
     "interruptionsReceived": 56,
-    "interrupterRank": 287,
-    "interruptedRank": 87
+    "interrupterRank": 296,
+    "interruptedRank": 89
   },
   "words": {
     "topWords": [
@@ -46,10 +46,6 @@
       {
         "word": "jahren",
         "count": 24
-      },
-      {
-        "word": "jahr",
-        "count": 22
       }
     ],
     "signatureWords": [
@@ -63,25 +59,25 @@
         "word": "konrad",
         "count": 6,
         "ratioParty": 98.8,
-        "ratioBundestag": 25.1
+        "ratioBundestag": 25.0
       },
       {
         "word": "verteidigungsetat",
         "count": 5,
         "ratioParty": 82.3,
-        "ratioBundestag": 82.6
+        "ratioBundestag": 82.4
       },
       {
         "word": "bundesrechnungshof",
         "count": 16,
         "ratioParty": 75.3,
-        "ratioBundestag": 26.0
+        "ratioBundestag": 26.1
       },
       {
         "word": "martin",
         "count": 5,
         "ratioParty": 54.9,
-        "ratioBundestag": 28.0
+        "ratioBundestag": 30.0
       }
     ],
     "signatureAdjectives": [
@@ -89,7 +85,7 @@
         "word": "inakzeptabel",
         "count": 9,
         "ratioParty": 26.9,
-        "ratioBundestag": 38.1
+        "ratioBundestag": 38.5
       },
       {
         "word": "problematisch",
@@ -107,7 +103,7 @@
         "word": "unverantwortlich",
         "count": 3,
         "ratioParty": 5.2,
-        "ratioBundestag": 14.0
+        "ratioBundestag": 13.9
       },
       {
         "word": "geschützt",
@@ -120,7 +116,7 @@
   "comparison": {
     "speakerAvgWords": 696,
     "partyAvgWords": 500,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 1.39,
     "vsParliament": 1.19
   },
@@ -145,19 +141,19 @@
     "question": "Welches Wort nutzt Dr. Dietmar Bartsch häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
-      },
-      {
         "text": "Adenauer",
         "isCorrect": true
       },
       {
-        "text": "Zukunft",
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
         "isCorrect": false
       }
     ],
@@ -168,24 +164,24 @@
     "question": "Welches Adjektiv nutzt Dr. Dietmar Bartsch häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
         "text": "Inakzeptabel",
         "isCorrect": true
       },
       {
-        "text": "Sicher",
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Inakzeptabel\" nutzt Dr. Dietmar Bartsch 26.9× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "38.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "38.5× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -297,7 +293,7 @@
           "count": 2
         },
         {
-          "word": "asylverfahren",
+          "word": "sprachkurs",
           "count": 1
         }
       ],
@@ -307,11 +303,11 @@
           "count": 1
         },
         {
-          "word": "extremwetter",
+          "word": "klimaneutralität",
           "count": 1
         },
         {
-          "word": "klimaneutralität",
+          "word": "extremwetter",
           "count": 1
         }
       ],
@@ -325,15 +321,15 @@
           "count": 6
         },
         {
-          "word": "unternehmen",
-          "count": 3
-        },
-        {
           "word": "volkswirtschaft",
           "count": 3
         },
         {
-          "word": "bruttoinlandsprodukt",
+          "word": "unternehmen",
+          "count": 3
+        },
+        {
+          "word": "industrie",
           "count": 2
         }
       ],
@@ -341,10 +337,6 @@
         {
           "word": "sozialstaat",
           "count": 8
-        },
-        {
-          "word": "rentner",
-          "count": 6
         },
         {
           "word": "kinder",
@@ -355,17 +347,21 @@
           "count": 6
         },
         {
+          "word": "rentner",
+          "count": 6
+        },
+        {
           "word": "rentenniveau",
           "count": 5
         }
       ],
       "sicherheit": [
         {
-          "word": "rüstung",
+          "word": "bundeswehr",
           "count": 11
         },
         {
-          "word": "bundeswehr",
+          "word": "rüstung",
           "count": 11
         },
         {
@@ -377,7 +373,7 @@
           "count": 6
         },
         {
-          "word": "verteidigungsetat",
+          "word": "panzer",
           "count": 5
         }
       ],
@@ -397,15 +393,15 @@
       ],
       "europa": [
         {
-          "word": "europa",
-          "count": 5
-        },
-        {
           "word": "putin",
           "count": 5
         },
         {
           "word": "ukraine",
+          "count": 5
+        },
+        {
+          "word": "europa",
           "count": 5
         },
         {
@@ -433,11 +429,7 @@
           "count": 7
         },
         {
-          "word": "fortbildung",
-          "count": 1
-        },
-        {
-          "word": "forschung",
+          "word": "grundschule",
           "count": 1
         },
         {
@@ -445,7 +437,11 @@
           "count": 1
         },
         {
-          "word": "grundschule",
+          "word": "forschung",
+          "count": 1
+        },
+        {
+          "word": "fortbildung",
           "count": 1
         }
       ],
@@ -485,11 +481,11 @@
           "count": 2
         },
         {
-          "word": "verfassungswidrig",
+          "word": "verfassung",
           "count": 1
         },
         {
-          "word": "klage",
+          "word": "strafe",
           "count": 1
         }
       ],
@@ -499,19 +495,19 @@
           "count": 3
         },
         {
-          "word": "mindestlohn",
-          "count": 2
-        },
-        {
           "word": "rentenversicherung",
           "count": 2
         },
         {
-          "word": "lohndumping",
+          "word": "mindestlohn",
+          "count": 2
+        },
+        {
+          "word": "beschäftigte",
           "count": 1
         },
         {
-          "word": "lohn",
+          "word": "gewerkschaften",
           "count": 1
         }
       ],
@@ -521,11 +517,11 @@
           "count": 5
         },
         {
-          "word": "deutschlandticket",
+          "word": "fahrzeuge",
           "count": 3
         },
         {
-          "word": "fahrzeuge",
+          "word": "deutschlandticket",
           "count": 3
         },
         {

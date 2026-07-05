@@ -11,23 +11,23 @@
   "minWords": 183,
   "maxWords": 656,
   "rankings": {
-    "speechRank": 459,
-    "wordsRank": 464,
-    "partySpeechRank": 141,
+    "speechRank": 458,
+    "wordsRank": 462,
+    "partySpeechRank": 140,
     "partyWordsRank": 147,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 26.8,
+    "totalSpeakers": 625,
+    "percentile": 26.7,
     "verbosityRank": 117,
     "verbosityTotal": 579,
     "partyVerbosityRank": 41,
-    "longestSpeechRank": 426
+    "longestSpeechRank": 425
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 18,
     "interrupterRank": null,
-    "interruptedRank": 350
+    "interruptedRank": 345
   },
   "words": {
     "topWords": [
@@ -48,24 +48,20 @@
         "count": 12
       },
       {
-        "word": "ukraine",
-        "count": 9
-      },
-      {
         "word": "deutschland",
         "count": 9
       },
       {
-        "word": "menschen",
-        "count": 8
+        "word": "ukraine",
+        "count": 9
       },
       {
         "word": "proxys",
         "count": 8
       },
       {
-        "word": "notwendig",
-        "count": 7
+        "word": "menschen",
+        "count": 8
       }
     ],
     "signatureWords": [
@@ -73,31 +69,31 @@
         "word": "proxys",
         "count": 8,
         "ratioParty": 1084.0,
-        "ratioBundestag": 1432.1
+        "ratioBundestag": 1428.7
       },
       {
         "word": "israels",
         "count": 7,
         "ratioParty": 42.5,
-        "ratioBundestag": 54.1
+        "ratioBundestag": 54.4
       },
       {
         "word": "region",
         "count": 18,
         "ratioParty": 29.7,
-        "ratioBundestag": 39.4
+        "ratioBundestag": 39.3
       },
       {
         "word": "nahen",
         "count": 5,
         "ratioParty": 26.7,
-        "ratioBundestag": 32.0
+        "ratioBundestag": 31.9
       },
       {
         "word": "hamas",
         "count": 6,
         "ratioParty": 26.5,
-        "ratioBundestag": 30.8
+        "ratioBundestag": 30.7
       }
     ],
     "signatureAdjectives": [
@@ -111,7 +107,7 @@
         "word": "stark",
         "count": 4,
         "ratioParty": 5.6,
-        "ratioBundestag": 7.0
+        "ratioBundestag": 6.9
       },
       {
         "word": "sicher",
@@ -124,7 +120,7 @@
   "comparison": {
     "speakerAvgWords": 528,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.82,
     "vsParliament": 0.9
   },
@@ -144,43 +140,43 @@
     "question": "Welches Wort nutzt Alexander Radwan häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Wirtschaft",
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Rente",
         "isCorrect": false
       },
       {
         "text": "Proxys",
         "isCorrect": true
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Proxys\" nutzt Alexander Radwan 1084.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "1432.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "1428.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Alexander Radwan häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Gut",
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
         "isCorrect": false
       },
       {
         "text": "Wirtschaftlich",
         "isCorrect": true
-      },
-      {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Wirtschaftlich\" nutzt Alexander Radwan 8.0× häufiger als der CDU/CSU-Durchschnitt.",
@@ -292,16 +288,12 @@
       ],
       "wirtschaft": [
         {
-          "word": "wirtschaft",
-          "count": 2
-        },
-        {
           "word": "freihandel",
           "count": 2
         },
         {
-          "word": "produktion",
-          "count": 1
+          "word": "wirtschaft",
+          "count": 2
         },
         {
           "word": "handel",
@@ -310,25 +302,29 @@
         {
           "word": "import",
           "count": 1
+        },
+        {
+          "word": "produktion",
+          "count": 1
         }
       ],
       "soziales": [
         {
-          "word": "mieten",
+          "word": "rente",
           "count": 1
         },
         {
-          "word": "rente",
+          "word": "mieten",
           "count": 1
         }
       ],
       "sicherheit": [
         {
-          "word": "terror",
+          "word": "waffen",
           "count": 4
         },
         {
-          "word": "waffen",
+          "word": "terror",
           "count": 4
         },
         {
@@ -336,11 +332,11 @@
           "count": 3
         },
         {
-          "word": "rüstung",
+          "word": "gewalt",
           "count": 1
         },
         {
-          "word": "gewalt",
+          "word": "rüstung",
           "count": 1
         }
       ],
@@ -368,11 +364,11 @@
       ],
       "justiz": [
         {
-          "word": "menschenrechte",
+          "word": "datenschutz",
           "count": 1
         },
         {
-          "word": "datenschutz",
+          "word": "menschenrechte",
           "count": 1
         }
       ],

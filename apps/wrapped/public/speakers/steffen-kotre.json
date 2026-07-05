@@ -11,17 +11,17 @@
   "minWords": 74,
   "maxWords": 738,
   "rankings": {
-    "speechRank": 45,
+    "speechRank": 48,
     "wordsRank": 86,
     "partySpeechRank": 9,
     "partyWordsRank": 17,
-    "partySize": 151,
-    "totalSpeakers": 627,
-    "percentile": 92.8,
-    "verbosityRank": 206,
+    "partySize": 150,
+    "totalSpeakers": 625,
+    "percentile": 92.3,
+    "verbosityRank": 209,
     "verbosityTotal": 579,
     "partyVerbosityRank": 54,
-    "longestSpeechRank": 324
+    "longestSpeechRank": 322
   },
   "drama": {
     "interruptionsGiven": 49,
@@ -60,15 +60,15 @@
         "count": 24
       },
       {
-        "word": "unternehmen",
-        "count": 23
-      },
-      {
         "word": "bürger",
         "count": 23
       },
       {
-        "word": "grünen",
+        "word": "unternehmen",
+        "count": 23
+      },
+      {
+        "word": "kosten",
         "count": 21
       }
     ],
@@ -76,31 +76,31 @@
       {
         "word": "gaspreise",
         "count": 6,
-        "ratioParty": 96.9,
-        "ratioBundestag": 80.8
+        "ratioParty": 96.4,
+        "ratioBundestag": 80.7
       },
       {
         "word": "russen",
         "count": 10,
-        "ratioParty": 67.3,
-        "ratioBundestag": 129.9
+        "ratioParty": 66.9,
+        "ratioBundestag": 129.6
       },
       {
         "word": "erbärmlich",
         "count": 5,
-        "ratioParty": 67.3,
-        "ratioBundestag": 101.1
+        "ratioParty": 66.9,
+        "ratioBundestag": 100.8
       },
       {
         "word": "preiswerte",
         "count": 5,
-        "ratioParty": 57.7,
-        "ratioBundestag": 181.9
+        "ratioParty": 57.4,
+        "ratioBundestag": 181.5
       },
       {
         "word": "fossilen",
         "count": 6,
-        "ratioParty": 53.8,
+        "ratioParty": 53.5,
         "ratioBundestag": 8.3
       }
     ],
@@ -108,14 +108,14 @@
       {
         "word": "erbärmlich",
         "count": 5,
-        "ratioParty": 67.3,
-        "ratioBundestag": 101.1
+        "ratioParty": 66.9,
+        "ratioBundestag": 100.8
       },
       {
         "word": "gescheitert",
         "count": 5,
         "ratioParty": 6.2,
-        "ratioBundestag": 11.0
+        "ratioBundestag": 10.9
       },
       {
         "word": "teuer",
@@ -139,8 +139,8 @@
   },
   "comparison": {
     "speakerAvgWords": 471,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
     "vsParty": 0.84,
     "vsParliament": 0.81
   },
@@ -170,7 +170,11 @@
     "question": "Welches Wort nutzt Steffen Kotré häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetz",
+        "text": "Debatte",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
         "isCorrect": false
       },
       {
@@ -178,39 +182,35 @@
         "isCorrect": true
       },
       {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
+        "text": "Energie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gaspreise\" nutzt Steffen Kotré 96.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "80.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Gaspreise\" nutzt Steffen Kotré 96.4× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "80.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Steffen Kotré häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
         "text": "Erbärmlich",
         "isCorrect": true
       },
       {
-        "text": "Groß",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
+        "text": "National",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Erbärmlich\" nutzt Steffen Kotré 67.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "101.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Erbärmlich\" nutzt Steffen Kotré 66.9× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "100.8× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -282,10 +282,6 @@
     "topicWords": {
       "migration": [
         {
-          "word": "zuwanderung",
-          "count": 1
-        },
-        {
           "word": "migration",
           "count": 1
         },
@@ -299,6 +295,10 @@
         },
         {
           "word": "asyl",
+          "count": 1
+        },
+        {
+          "word": "zuwanderung",
           "count": 1
         }
       ],
@@ -378,11 +378,11 @@
           "count": 2
         },
         {
-          "word": "diebstahl",
+          "word": "verteidigung",
           "count": 1
         },
         {
-          "word": "verteidigung",
+          "word": "täter",
           "count": 1
         }
       ],
@@ -400,11 +400,11 @@
           "count": 7
         },
         {
-          "word": "außenminister",
+          "word": "krieg",
           "count": 6
         },
         {
-          "word": "krieg",
+          "word": "außenminister",
           "count": 6
         }
       ],
@@ -418,15 +418,15 @@
           "count": 2
         },
         {
+          "word": "netzausbau",
+          "count": 1
+        },
+        {
           "word": "halbleiter",
           "count": 1
         },
         {
-          "word": "netz",
-          "count": 1
-        },
-        {
-          "word": "netzausbau",
+          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -436,15 +436,15 @@
           "count": 2
         },
         {
-          "word": "wissenschaftler",
-          "count": 1
-        },
-        {
           "word": "schulen",
           "count": 1
         },
         {
           "word": "bildung",
+          "count": 1
+        },
+        {
+          "word": "wissenschaftler",
           "count": 1
         }
       ],
@@ -458,11 +458,11 @@
           "count": 8
         },
         {
-          "word": "steuerzahler",
+          "word": "subventionen",
           "count": 6
         },
         {
-          "word": "subventionen",
+          "word": "steuerzahler",
           "count": 6
         },
         {
@@ -472,15 +472,15 @@
       ],
       "justiz": [
         {
-          "word": "grundgesetz",
-          "count": 1
-        },
-        {
           "word": "richter",
           "count": 1
         },
         {
           "word": "diskriminierung",
+          "count": 1
+        },
+        {
+          "word": "grundgesetz",
           "count": 1
         }
       ],
@@ -504,15 +504,15 @@
           "count": 2
         },
         {
-          "word": "straße",
-          "count": 1
-        },
-        {
-          "word": "autos",
+          "word": "schiff",
           "count": 1
         },
         {
           "word": "fliegen",
+          "count": 1
+        },
+        {
+          "word": "schiffe",
           "count": 1
         }
       ]

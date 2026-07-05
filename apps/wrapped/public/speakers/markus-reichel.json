@@ -11,23 +11,23 @@
   "minWords": 46,
   "maxWords": 728,
   "rankings": {
-    "speechRank": 370,
+    "speechRank": 337,
     "wordsRank": 313,
-    "partySpeechRank": 104,
+    "partySpeechRank": 92,
     "partyWordsRank": 94,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 41.0,
-    "verbosityRank": 234,
+    "totalSpeakers": 625,
+    "percentile": 46.1,
+    "verbosityRank": 233,
     "verbosityTotal": 579,
     "partyVerbosityRank": 83,
-    "longestSpeechRank": 341
+    "longestSpeechRank": 339
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 33,
-    "interrupterRank": 473,
-    "interruptedRank": 214
+    "interrupterRank": 478,
+    "interruptedRank": 210
   },
   "words": {
     "topWords": [
@@ -58,6 +58,10 @@
       {
         "word": "koalition",
         "count": 11
+      },
+      {
+        "word": "erstens",
+        "count": 11
       }
     ],
     "signatureWords": [
@@ -65,19 +69,19 @@
         "word": "dresden",
         "count": 8,
         "ratioParty": 111.8,
-        "ratioBundestag": 90.2
+        "ratioBundestag": 90.0
       },
       {
         "word": "noots",
         "count": 6,
         "ratioParty": 64.8,
-        "ratioBundestag": 110.0
+        "ratioBundestag": 109.7
       },
       {
         "word": "wallet",
         "count": 8,
         "ratioParty": 48.7,
-        "ratioBundestag": 94.6
+        "ratioBundestag": 97.5
       },
       {
         "word": "armut",
@@ -97,7 +101,7 @@
   "comparison": {
     "speakerAvgWords": 460,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.71,
     "vsParliament": 0.79
   },
@@ -117,7 +121,11 @@
     "question": "Welches Wort nutzt Dr. Markus Reichel häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Demokratie",
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
         "isCorrect": false
       },
       {
@@ -125,16 +133,12 @@
         "isCorrect": true
       },
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaft",
+        "text": "Rente",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Dresden\" nutzt Dr. Markus Reichel 111.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "90.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "90.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -231,11 +235,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "integration",
+          "word": "migration",
           "count": 2
         },
         {
-          "word": "migration",
+          "word": "integration",
           "count": 2
         },
         {
@@ -249,11 +253,11 @@
       ],
       "klima": [
         {
-          "word": "umweltschutz",
+          "word": "nachhaltigkeit",
           "count": 2
         },
         {
-          "word": "nachhaltigkeit",
+          "word": "umweltschutz",
           "count": 2
         },
         {
@@ -311,11 +315,11 @@
       ],
       "sicherheit": [
         {
-          "word": "gewalt",
+          "word": "überwachung",
           "count": 2
         },
         {
-          "word": "überwachung",
+          "word": "gewalt",
           "count": 2
         }
       ],
@@ -323,10 +327,6 @@
         {
           "word": "europa",
           "count": 2
-        },
-        {
-          "word": "sanktionen",
-          "count": 1
         },
         {
           "word": "binnenmarkt",
@@ -339,16 +339,16 @@
         {
           "word": "europäisch",
           "count": 1
+        },
+        {
+          "word": "sanktionen",
+          "count": 1
         }
       ],
       "digital": [
         {
           "word": "digital",
           "count": 4
-        },
-        {
-          "word": "plattformen",
-          "count": 2
         },
         {
           "word": "daten",
@@ -361,6 +361,10 @@
         {
           "word": "digitalisierung",
           "count": 2
+        },
+        {
+          "word": "plattformen",
+          "count": 2
         }
       ],
       "bildung": [
@@ -369,11 +373,11 @@
           "count": 2
         },
         {
-          "word": "bildung",
+          "word": "bafög",
           "count": 1
         },
         {
-          "word": "bafög",
+          "word": "bildung",
           "count": 1
         },
         {
@@ -409,7 +413,11 @@
       ],
       "justiz": [
         {
-          "word": "beschluss",
+          "word": "grundgesetz",
+          "count": 1
+        },
+        {
+          "word": "rechtsprechung",
           "count": 1
         },
         {
@@ -417,33 +425,29 @@
           "count": 1
         },
         {
+          "word": "beschluss",
+          "count": 1
+        },
+        {
           "word": "strafrecht",
-          "count": 1
-        },
-        {
-          "word": "grundgesetz",
-          "count": 1
-        },
-        {
-          "word": "rechtsprechung",
           "count": 1
         }
       ],
       "arbeit": [
         {
-          "word": "einkommen",
-          "count": 3
-        },
-        {
           "word": "arbeitszeit",
           "count": 3
         },
         {
-          "word": "jobcenter",
+          "word": "arbeitsplätze",
           "count": 3
         },
         {
-          "word": "arbeitsplätze",
+          "word": "einkommen",
+          "count": 3
+        },
+        {
+          "word": "jobcenter",
           "count": 3
         },
         {

@@ -11,17 +11,17 @@
   "minWords": 1102,
   "maxWords": 1156,
   "rankings": {
-    "speechRank": 603,
-    "wordsRank": 546,
-    "partySpeechRank": 197,
+    "speechRank": 608,
+    "wordsRank": 544,
+    "partySpeechRank": 199,
     "partyWordsRank": 176,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 3.8,
+    "totalSpeakers": 625,
+    "percentile": 2.7,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 44
+    "longestSpeechRank": 42
   },
   "drama": {
     "interruptionsGiven": 0,
@@ -56,6 +56,10 @@
         "count": 7
       },
       {
+        "word": "krise",
+        "count": 6
+      },
+      {
         "word": "welt",
         "count": 6
       },
@@ -64,11 +68,7 @@
         "count": 6
       },
       {
-        "word": "krise",
-        "count": 6
-      },
-      {
-        "word": "klar",
+        "word": "deutlich",
         "count": 5
       }
     ],
@@ -77,25 +77,25 @@
         "word": "sudan",
         "count": 14,
         "ratioParty": 177.9,
-        "ratioBundestag": 126.9
+        "ratioBundestag": 126.6
       },
       {
         "word": "waffenstillstand",
         "count": 5,
         "ratioParty": 75.6,
-        "ratioBundestag": 96.9
+        "ratioBundestag": 96.7
       },
       {
         "word": "region",
         "count": 18,
         "ratioParty": 46.5,
-        "ratioBundestag": 61.6
+        "ratioBundestag": 61.5
       },
       {
         "word": "krise",
         "count": 6,
         "ratioParty": 34.3,
-        "ratioBundestag": 24.1
+        "ratioBundestag": 24.0
       },
       {
         "word": "verhandlungen",
@@ -109,7 +109,7 @@
   "comparison": {
     "speakerAvgWords": 1129,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 1.75,
     "vsParliament": 1.93
   },
@@ -129,7 +129,11 @@
     "question": "Welches Wort nutzt Serap Güler häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Investitionen",
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Klima",
         "isCorrect": false
       },
       {
@@ -137,16 +141,12 @@
         "isCorrect": true
       },
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
+        "text": "Antrag",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Sudan\" nutzt Serap Güler 177.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "126.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "126.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -259,33 +259,33 @@
           "count": 2
         },
         {
-          "word": "terror",
-          "count": 1
-        },
-        {
-          "word": "waffen",
-          "count": 1
-        },
-        {
           "word": "verbrechen",
           "count": 1
         },
         {
           "word": "täter",
           "count": 1
+        },
+        {
+          "word": "terror",
+          "count": 1
+        },
+        {
+          "word": "waffen",
+          "count": 1
         }
       ],
       "gesundheit": [
-        {
-          "word": "kranke",
-          "count": 1
-        },
         {
           "word": "klinik",
           "count": 1
         },
         {
           "word": "arzt",
+          "count": 1
+        },
+        {
+          "word": "kranke",
           "count": 1
         }
       ],

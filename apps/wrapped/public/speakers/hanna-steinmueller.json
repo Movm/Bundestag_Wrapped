@@ -11,23 +11,23 @@
   "minWords": 67,
   "maxWords": 764,
   "rankings": {
-    "speechRank": 220,
+    "speechRank": 230,
     "wordsRank": 259,
     "partySpeechRank": 42,
     "partyWordsRank": 42,
-    "partySize": 87,
-    "totalSpeakers": 627,
-    "percentile": 64.9,
+    "partySize": 86,
+    "totalSpeakers": 625,
+    "percentile": 63.2,
     "verbosityRank": 495,
     "verbosityTotal": 579,
     "partyVerbosityRank": 62,
-    "longestSpeechRank": 291
+    "longestSpeechRank": 289
   },
   "drama": {
     "interruptionsGiven": 14,
     "interruptionsReceived": 32,
-    "interrupterRank": 242,
-    "interruptedRank": 218
+    "interrupterRank": 239,
+    "interruptedRank": 217
   },
   "words": {
     "topWords": [
@@ -72,45 +72,45 @@
       {
         "word": "überhöhte",
         "count": 14,
-        "ratioParty": 1314.7,
-        "ratioBundestag": 829.0
+        "ratioParty": 1303.8,
+        "ratioBundestag": 827.1
       },
       {
         "word": "mietpreisbremse",
         "count": 24,
-        "ratioParty": 140.9,
-        "ratioBundestag": 55.4
+        "ratioParty": 139.7,
+        "ratioBundestag": 55.3
       },
       {
         "word": "gemeinnützige",
         "count": 5,
-        "ratioParty": 117.4,
-        "ratioBundestag": 148.0
+        "ratioParty": 116.4,
+        "ratioBundestag": 147.7
       },
       {
         "word": "eigenbedarfskündigung",
         "count": 5,
-        "ratioParty": 117.4,
-        "ratioBundestag": 465.3
+        "ratioParty": 116.4,
+        "ratioBundestag": 464.2
       },
       {
         "word": "vermieter",
         "count": 15,
-        "ratioParty": 108.4,
-        "ratioBundestag": 63.9
+        "ratioParty": 107.5,
+        "ratioBundestag": 63.7
       }
     ],
     "signatureAdjectives": [
       {
         "word": "geschützt",
         "count": 5,
-        "ratioParty": 11.2,
+        "ratioParty": 11.1,
         "ratioBundestag": 11.5
       },
       {
         "word": "stark",
         "count": 3,
-        "ratioParty": 3.2,
+        "ratioParty": 3.1,
         "ratioBundestag": 2.7
       },
       {
@@ -123,8 +123,8 @@
   },
   "comparison": {
     "speakerAvgWords": 313,
-    "partyAvgWords": 543,
-    "parliamentAvgWords": 585,
+    "partyAvgWords": 538,
+    "parliamentAvgWords": 584,
     "vsParty": 0.58,
     "vsParliament": 0.54
   },
@@ -149,11 +149,7 @@
     "question": "Welches Wort nutzt Hanna Steinmüller häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Energie",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
@@ -161,41 +157,45 @@
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Überhöhte\" nutzt Hanna Steinmüller 1314.7× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "829.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Überhöhte\" nutzt Hanna Steinmüller 1303.8× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "827.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Hanna Steinmüller häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
         "text": "Geschützt",
         "isCorrect": true
       },
       {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
+        "text": "Notwendig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Geschützt\" nutzt Hanna Steinmüller 11.2× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationParty": "\"Geschützt\" nutzt Hanna Steinmüller 11.1× häufiger als der GRÜNE-Durchschnitt.",
     "explanationBundestag": "11.5× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦉",
     "name": "Eule",
     "title": "Themenexpertin",
-    "reason": "Dein Fachwort \"Überhöhte\" nutzt du 1314.7× häufiger als deine Fraktion.",
+    "reason": "Dein Fachwort \"Überhöhte\" nutzt du 1303.8× häufiger als deine Fraktion.",
     "id": "eule",
     "alternatives": [
       {
@@ -303,19 +303,19 @@
           "count": 1
         },
         {
-          "word": "erdgas",
-          "count": 1
-        },
-        {
-          "word": "energie",
-          "count": 1
-        },
-        {
           "word": "klimaschutzgesetz",
           "count": 1
         },
         {
           "word": "erneuerbare",
+          "count": 1
+        },
+        {
+          "word": "erdgas",
+          "count": 1
+        },
+        {
+          "word": "energie",
           "count": 1
         }
       ],
@@ -357,11 +357,11 @@
       ],
       "gesundheit": [
         {
-          "word": "arzt",
+          "word": "sucht",
           "count": 1
         },
         {
-          "word": "sucht",
+          "word": "arzt",
           "count": 1
         }
       ],
@@ -383,15 +383,15 @@
       ],
       "bildung": [
         {
+          "word": "wissenschaftler",
+          "count": 1
+        },
+        {
           "word": "studierende",
           "count": 1
         },
         {
           "word": "bafög",
-          "count": 1
-        },
-        {
-          "word": "wissenschaftler",
           "count": 1
         }
       ],
@@ -405,15 +405,15 @@
           "count": 3
         },
         {
-          "word": "zuschuss",
-          "count": 1
-        },
-        {
-          "word": "bundeshaushalt",
+          "word": "entlastung",
           "count": 1
         },
         {
           "word": "investitionen",
+          "count": 1
+        },
+        {
+          "word": "zuschuss",
           "count": 1
         }
       ],
@@ -427,11 +427,11 @@
           "count": 2
         },
         {
-          "word": "rechtsanwalt",
+          "word": "rechtsstaat",
           "count": 1
         },
         {
-          "word": "rechtsstaat",
+          "word": "rechtsanwalt",
           "count": 1
         }
       ],
@@ -445,21 +445,21 @@
           "count": 1
         },
         {
-          "word": "kündigung",
+          "word": "einkommen",
           "count": 1
         },
         {
-          "word": "einkommen",
+          "word": "kündigung",
           "count": 1
         }
       ],
       "mobilitaet": [
         {
-          "word": "fliegen",
+          "word": "straße",
           "count": 1
         },
         {
-          "word": "straße",
+          "word": "fliegen",
           "count": 1
         }
       ]

@@ -11,17 +11,17 @@
   "minWords": 17,
   "maxWords": 719,
   "rankings": {
-    "speechRank": 575,
-    "wordsRank": 403,
-    "partySpeechRank": 101,
+    "speechRank": 576,
+    "wordsRank": 401,
+    "partySpeechRank": 102,
     "partyWordsRank": 78,
     "partySize": 114,
-    "totalSpeakers": 627,
-    "percentile": 8.3,
+    "totalSpeakers": 625,
+    "percentile": 7.8,
     "verbosityRank": 579,
     "verbosityTotal": 579,
     "partyVerbosityRank": 103,
-    "longestSpeechRank": 353
+    "longestSpeechRank": 351
   },
   "drama": {
     "interruptionsGiven": 0,
@@ -66,6 +66,10 @@
       {
         "word": "jahr",
         "count": 8
+      },
+      {
+        "word": "beitrag",
+        "count": 8
       }
     ],
     "signatureWords": [
@@ -73,31 +77,31 @@
         "word": "fragestellung",
         "count": 5,
         "ratioParty": 235.5,
-        "ratioBundestag": 152.5
+        "ratioBundestag": 205.0
       },
       {
         "word": "litauen",
         "count": 13,
         "ratioParty": 98.0,
-        "ratioBundestag": 163.8
+        "ratioBundestag": 163.5
       },
       {
         "word": "operation",
         "count": 7,
         "ratioParty": 59.9,
-        "ratioBundestag": 64.9
+        "ratioBundestag": 64.7
       },
       {
         "word": "sichergestellt",
         "count": 6,
         "ratioParty": 40.4,
-        "ratioBundestag": 63.7
+        "ratioBundestag": 65.0
       },
       {
         "word": "verteidigungsfähigkeit",
         "count": 8,
         "ratioParty": 32.8,
-        "ratioBundestag": 40.2
+        "ratioBundestag": 40.1
       }
     ],
     "signatureAdjectives": []
@@ -105,7 +109,7 @@
   "comparison": {
     "speakerAvgWords": 96,
     "partyAvgWords": 618,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.16,
     "vsParliament": 0.16
   },
@@ -125,11 +129,7 @@
     "question": "Welches Wort nutzt Dr. Nils Schmid häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
@@ -137,12 +137,16 @@
         "isCorrect": true
       },
       {
-        "text": "Klima",
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Fragestellung\" nutzt Dr. Nils Schmid 235.5× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "152.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "205.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -317,11 +321,11 @@
           "count": 15
         },
         {
-          "word": "ukraine",
+          "word": "europa",
           "count": 5
         },
         {
-          "word": "europa",
+          "word": "ukraine",
           "count": 5
         },
         {

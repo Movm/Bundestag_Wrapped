@@ -11,17 +11,17 @@
   "minWords": 58,
   "maxWords": 1135,
   "rankings": {
-    "speechRank": 61,
+    "speechRank": 59,
     "wordsRank": 44,
-    "partySpeechRank": 12,
+    "partySpeechRank": 11,
     "partyWordsRank": 9,
-    "partySize": 151,
-    "totalSpeakers": 627,
-    "percentile": 90.3,
+    "partySize": 150,
+    "totalSpeakers": 625,
+    "percentile": 90.6,
     "verbosityRank": 140,
     "verbosityTotal": 579,
     "partyVerbosityRank": 35,
-    "longestSpeechRank": 48
+    "longestSpeechRank": 46
   },
   "drama": {
     "interruptionsGiven": 161,
@@ -56,57 +56,57 @@
       {
         "word": "verzug",
         "count": 5,
-        "ratioParty": 335.9,
-        "ratioBundestag": 216.6
+        "ratioParty": 334.1,
+        "ratioBundestag": 252.1
       },
       {
         "word": "digitalminister",
         "count": 13,
-        "ratioParty": 218.3,
-        "ratioBundestag": 157.7
+        "ratioParty": 217.2,
+        "ratioBundestag": 157.3
       },
       {
         "word": "massenüberwachung",
         "count": 10,
-        "ratioParty": 134.4,
-        "ratioBundestag": 216.6
+        "ratioParty": 133.6,
+        "ratioBundestag": 216.1
       },
       {
         "word": "grauen",
         "count": 5,
-        "ratioParty": 112.0,
-        "ratioBundestag": 84.2
+        "ratioParty": 111.4,
+        "ratioBundestag": 84.0
       },
       {
         "word": "digitalministerium",
         "count": 14,
-        "ratioParty": 78.4,
-        "ratioBundestag": 74.5
+        "ratioParty": 78.0,
+        "ratioBundestag": 74.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "dreist",
         "count": 4,
-        "ratioParty": 26.9,
-        "ratioBundestag": 44.9
+        "ratioParty": 26.7,
+        "ratioBundestag": 44.8
       },
       {
         "word": "maßgeblich",
         "count": 4,
-        "ratioParty": 9.6,
-        "ratioBundestag": 9.1
+        "ratioParty": 9.5,
+        "ratioBundestag": 9.2
       },
       {
         "word": "absurd",
         "count": 3,
         "ratioParty": 3.8,
-        "ratioBundestag": 4.3
+        "ratioBundestag": 4.2
       },
       {
         "word": "schlecht",
         "count": 4,
-        "ratioParty": 2.7,
+        "ratioParty": 2.6,
         "ratioBundestag": 3.3
       },
       {
@@ -119,8 +119,8 @@
   },
   "comparison": {
     "speakerAvgWords": 515,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
     "vsParty": 0.92,
     "vsParliament": 0.88
   },
@@ -150,38 +150,38 @@
     "question": "Welches Wort nutzt Ruben Rupp häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
         "text": "Verzug",
         "isCorrect": true
       },
       {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaft",
+        "text": "Haushalt",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verzug\" nutzt Ruben Rupp 335.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "216.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Verzug\" nutzt Ruben Rupp 334.1× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "252.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Ruben Rupp häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Wichtig",
+        "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Gefährlich",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Sozial",
+        "text": "Neu",
         "isCorrect": false
       },
       {
@@ -189,8 +189,8 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Dreist\" nutzt Ruben Rupp 26.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "44.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Dreist\" nutzt Ruben Rupp 26.7× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "44.8× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -276,11 +276,11 @@
       ],
       "klima": [
         {
-          "word": "energie",
+          "word": "energiewende",
           "count": 9
         },
         {
-          "word": "energiewende",
+          "word": "energie",
           "count": 9
         },
         {
@@ -324,19 +324,19 @@
           "count": 3
         },
         {
-          "word": "kind",
-          "count": 2
-        },
-        {
           "word": "kinder",
           "count": 2
         },
         {
-          "word": "jugendliche",
+          "word": "kind",
+          "count": 2
+        },
+        {
+          "word": "familien",
           "count": 1
         },
         {
-          "word": "armut",
+          "word": "wohnungsnot",
           "count": 1
         }
       ],
@@ -364,11 +364,11 @@
       ],
       "gesundheit": [
         {
-          "word": "medizin",
+          "word": "pflege",
           "count": 1
         },
         {
-          "word": "pflege",
+          "word": "medizin",
           "count": 1
         }
       ],
@@ -378,15 +378,15 @@
           "count": 3
         },
         {
-          "word": "china",
-          "count": 2
-        },
-        {
           "word": "ukraine",
           "count": 2
         },
         {
-          "word": "europäisch",
+          "word": "china",
+          "count": 2
+        },
+        {
+          "word": "brüssel",
           "count": 1
         },
         {
@@ -400,11 +400,11 @@
           "count": 14
         },
         {
-          "word": "plattformen",
+          "word": "digital",
           "count": 8
         },
         {
-          "word": "digital",
+          "word": "plattformen",
           "count": 8
         },
         {
@@ -426,11 +426,11 @@
           "count": 5
         },
         {
-          "word": "steuer",
+          "word": "schuldenbremse",
           "count": 3
         },
         {
-          "word": "schuldenbremse",
+          "word": "steuer",
           "count": 3
         },
         {

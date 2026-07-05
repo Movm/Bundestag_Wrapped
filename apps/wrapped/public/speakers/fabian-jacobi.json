@@ -11,17 +11,17 @@
   "minWords": 371,
   "maxWords": 709,
   "rankings": {
-    "speechRank": 164,
+    "speechRank": 168,
     "wordsRank": 182,
-    "partySpeechRank": 34,
+    "partySpeechRank": 35,
     "partyWordsRank": 39,
-    "partySize": 151,
-    "totalSpeakers": 627,
-    "percentile": 73.8,
+    "partySize": 150,
+    "totalSpeakers": 625,
+    "percentile": 73.1,
     "verbosityRank": 90,
     "verbosityTotal": 579,
     "partyVerbosityRank": 25,
-    "longestSpeechRank": 366
+    "longestSpeechRank": 364
   },
   "drama": {
     "interruptionsGiven": 63,
@@ -44,11 +44,11 @@
         "count": 22
       },
       {
-        "word": "staat",
+        "word": "gesetz",
         "count": 20
       },
       {
-        "word": "gesetz",
+        "word": "staat",
         "count": 20
       },
       {
@@ -56,11 +56,11 @@
         "count": 18
       },
       {
-        "word": "soll",
+        "word": "partei",
         "count": 17
       },
       {
-        "word": "partei",
+        "word": "soll",
         "count": 17
       },
       {
@@ -70,34 +70,34 @@
     ],
     "signatureWords": [
       {
-        "word": "notarielle",
-        "count": 5,
-        "ratioParty": 279.3,
-        "ratioBundestag": 209.2
-      },
-      {
         "word": "wahlprüfung",
         "count": 5,
-        "ratioParty": 279.3,
-        "ratioBundestag": 209.2
+        "ratioParty": 277.8,
+        "ratioBundestag": 208.7
+      },
+      {
+        "word": "notarielle",
+        "count": 5,
+        "ratioParty": 277.8,
+        "ratioBundestag": 208.7
       },
       {
         "word": "verfassungsgericht",
         "count": 23,
-        "ratioParty": 197.6,
-        "ratioBundestag": 349.9
+        "ratioParty": 196.6,
+        "ratioBundestag": 349.0
       },
       {
         "word": "einsprüche",
         "count": 8,
-        "ratioParty": 178.7,
-        "ratioBundestag": 121.7
+        "ratioParty": 177.8,
+        "ratioBundestag": 121.4
       },
       {
         "word": "anlasslosen",
         "count": 5,
-        "ratioParty": 139.6,
-        "ratioBundestag": 193.1
+        "ratioParty": 138.9,
+        "ratioBundestag": 192.6
       }
     ],
     "signatureAdjectives": [
@@ -111,8 +111,8 @@
   },
   "comparison": {
     "speakerAvgWords": 549,
-    "partyAvgWords": 561,
-    "parliamentAvgWords": 585,
+    "partyAvgWords": 558,
+    "parliamentAvgWords": 584,
     "vsParty": 0.98,
     "vsParliament": 0.94
   },
@@ -137,43 +137,43 @@
     "question": "Welches Wort nutzt Fabian Jacobi häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Notarielle",
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Wahlprüfung",
         "isCorrect": true
       },
       {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
+        "text": "Kinder",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Notarielle\" nutzt Fabian Jacobi 279.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "209.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wahlprüfung\" nutzt Fabian Jacobi 277.8× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "208.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Fabian Jacobi häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
         "text": "Gerecht",
         "isCorrect": true
-      },
-      {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Stark",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Gerecht\" nutzt Fabian Jacobi 6.0× häufiger als der AfD-Durchschnitt.",
@@ -263,7 +263,7 @@
           "count": 4
         },
         {
-          "word": "markt",
+          "word": "marktwirtschaft",
           "count": 1
         },
         {
@@ -291,11 +291,7 @@
           "count": 6
         },
         {
-          "word": "angriff",
-          "count": 1
-        },
-        {
-          "word": "anschlag",
+          "word": "verteidigung",
           "count": 1
         },
         {
@@ -303,7 +299,11 @@
           "count": 1
         },
         {
-          "word": "verteidigung",
+          "word": "anschlag",
+          "count": 1
+        },
+        {
+          "word": "gewalt",
           "count": 1
         }
       ],
@@ -323,11 +323,11 @@
           "count": 4
         },
         {
-          "word": "krieg",
+          "word": "europa",
           "count": 2
         },
         {
-          "word": "europa",
+          "word": "krieg",
           "count": 2
         },
         {
@@ -345,11 +345,11 @@
           "count": 2
         },
         {
-          "word": "technologie",
+          "word": "netzwerk",
           "count": 1
         },
         {
-          "word": "netzwerk",
+          "word": "technologie",
           "count": 1
         }
       ],
@@ -359,11 +359,11 @@
           "count": 3
         },
         {
-          "word": "etat",
+          "word": "bundeshaushalt",
           "count": 1
         },
         {
-          "word": "bundeshaushalt",
+          "word": "etat",
           "count": 1
         }
       ],

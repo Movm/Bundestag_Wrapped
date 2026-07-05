@@ -11,23 +11,23 @@
   "minWords": 11,
   "maxWords": 859,
   "rankings": {
-    "speechRank": 140,
+    "speechRank": 146,
     "wordsRank": 165,
-    "partySpeechRank": 28,
+    "partySpeechRank": 30,
     "partyWordsRank": 48,
     "partySize": 211,
-    "totalSpeakers": 627,
-    "percentile": 77.7,
+    "totalSpeakers": 625,
+    "percentile": 76.6,
     "verbosityRank": 222,
     "verbosityTotal": 579,
     "partyVerbosityRank": 78,
-    "longestSpeechRank": 175
+    "longestSpeechRank": 173
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 45,
-    "interrupterRank": 462,
-    "interruptedRank": 138
+    "interrupterRank": 456,
+    "interruptedRank": 137
   },
   "words": {
     "topWords": [
@@ -48,15 +48,15 @@
         "count": 18
       },
       {
+        "word": "steuern",
+        "count": 17
+      },
+      {
         "word": "diesen",
         "count": 17
       },
       {
         "word": "würde",
-        "count": 17
-      },
-      {
-        "word": "steuern",
         "count": 17
       }
     ],
@@ -65,31 +65,31 @@
         "word": "steuerberatung",
         "count": 6,
         "ratioParty": 459.5,
-        "ratioBundestag": 258.3
+        "ratioBundestag": 257.7
       },
       {
         "word": "prämie",
         "count": 9,
         "ratioParty": 275.7,
-        "ratioBundestag": 142.1
+        "ratioBundestag": 141.7
       },
       {
         "word": "grundfreibetrag",
         "count": 5,
         "ratioParty": 191.5,
-        "ratioBundestag": 169.1
-      },
-      {
-        "word": "rundfunks",
-        "count": 10,
-        "ratioParty": 127.7,
-        "ratioBundestag": 152.7
+        "ratioBundestag": 168.7
       },
       {
         "word": "transaktionen",
         "count": 5,
         "ratioParty": 127.7,
-        "ratioBundestag": 169.1
+        "ratioBundestag": 168.7
+      },
+      {
+        "word": "rundfunks",
+        "count": 10,
+        "ratioParty": 127.7,
+        "ratioBundestag": 152.4
       }
     ],
     "signatureAdjectives": [
@@ -110,9 +110,9 @@
   "comparison": {
     "speakerAvgWords": 465,
     "partyAvgWords": 645,
-    "parliamentAvgWords": 585,
+    "parliamentAvgWords": 584,
     "vsParty": 0.72,
-    "vsParliament": 0.79
+    "vsParliament": 0.8
   },
   "funFacts": [
     {
@@ -130,11 +130,11 @@
     "question": "Welches Wort nutzt Dr. Matthias Hiller häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kinder",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Reform",
         "isCorrect": false
       },
       {
@@ -142,18 +142,18 @@
         "isCorrect": true
       },
       {
-        "text": "Bürger",
+        "text": "Migration",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Steuerberatung\" nutzt Dr. Matthias Hiller 459.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "258.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "257.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Matthias Hiller häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Klar",
+        "text": "Alt",
         "isCorrect": false
       },
       {
@@ -161,12 +161,12 @@
         "isCorrect": false
       },
       {
-        "text": "Gerecht",
-        "isCorrect": true
-      },
-      {
         "text": "Notwendig",
         "isCorrect": false
+      },
+      {
+        "text": "Gerecht",
+        "isCorrect": true
       }
     ],
     "explanationParty": "\"Gerecht\" nutzt Dr. Matthias Hiller 3.9× häufiger als der CDU/CSU-Durchschnitt.",
@@ -284,11 +284,11 @@
           "count": 5
         },
         {
-          "word": "wettbewerb",
+          "word": "standort",
           "count": 4
         },
         {
-          "word": "standort",
+          "word": "wettbewerb",
           "count": 4
         }
       ],
@@ -302,15 +302,15 @@
           "count": 4
         },
         {
-          "word": "kinder",
-          "count": 2
-        },
-        {
           "word": "familien",
           "count": 2
         },
         {
-          "word": "familie",
+          "word": "kinder",
+          "count": 2
+        },
+        {
+          "word": "mietpreisbremse",
           "count": 1
         }
       ],
@@ -320,11 +320,11 @@
           "count": 2
         },
         {
-          "word": "verteidigung",
+          "word": "bundeswehr",
           "count": 1
         },
         {
-          "word": "bundeswehr",
+          "word": "verteidigung",
           "count": 1
         }
       ],
@@ -334,19 +334,19 @@
           "count": 3
         },
         {
+          "word": "krankenkasse",
+          "count": 1
+        },
+        {
+          "word": "krankenhäuser",
+          "count": 1
+        },
+        {
           "word": "pflege",
           "count": 1
         },
         {
           "word": "krankenversicherung",
-          "count": 1
-        },
-        {
-          "word": "pflegeversicherung",
-          "count": 1
-        },
-        {
-          "word": "pharma",
           "count": 1
         }
       ],
@@ -356,7 +356,11 @@
           "count": 2
         },
         {
-          "word": "china",
+          "word": "krieg",
+          "count": 1
+        },
+        {
+          "word": "europa",
           "count": 1
         },
         {
@@ -364,11 +368,7 @@
           "count": 1
         },
         {
-          "word": "krieg",
-          "count": 1
-        },
-        {
-          "word": "europa",
+          "word": "china",
           "count": 1
         }
       ],
@@ -400,15 +400,15 @@
           "count": 2
         },
         {
+          "word": "schulen",
+          "count": 1
+        },
+        {
           "word": "ausbildung",
           "count": 1
         },
         {
           "word": "studium",
-          "count": 1
-        },
-        {
-          "word": "schule",
           "count": 1
         }
       ],
@@ -448,11 +448,11 @@
           "count": 2
         },
         {
-          "word": "urteile",
+          "word": "beschluss",
           "count": 1
         },
         {
-          "word": "gericht",
+          "word": "urteile",
           "count": 1
         }
       ],
