@@ -220,17 +220,17 @@ export function McpPage() {
                     <h3 className="text-xl font-bold text-white tracking-tight">{cap.title}</h3>
                     <span className="font-mono text-xs text-white/40 whitespace-nowrap">{cap.badge}</span>
                   </div>
-                  <p className="text-sm text-white/60 leading-relaxed mb-4 max-w-2xl">{cap.purpose}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <p className="text-[15px] text-white/70 leading-relaxed mb-4 max-w-2xl">{cap.purpose}</p>
+                  <div className="flex flex-wrap gap-2 mb-5">
                     {cap.tools.map(t => (
                       <ToolChip key={t} name={t} />
                     ))}
                   </div>
-                  <div className="flex gap-3 items-start bg-pink-500/[0.07] border-l-2 border-pink-500 rounded-r-lg px-4 py-3">
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-pink-400 pt-0.5 shrink-0">
+                  <div className="bg-white/[0.04] rounded-xl px-4 py-3.5">
+                    <span className="block font-mono text-[10px] uppercase tracking-wider text-pink-400 mb-1.5">
                       Frag z.&nbsp;B.
                     </span>
-                    <em className="text-sm text-white/70 not-italic">„{cap.example}"</em>
+                    <p className="text-base text-white/85 leading-relaxed">„{cap.example}"</p>
                   </div>
                 </div>
               ))}
