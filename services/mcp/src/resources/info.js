@@ -42,6 +42,10 @@ Access to the German Bundestag's official documentation (DIP API) plus a semanti
 | A person and their activities | \`bundestag_search_personen\` → \`bundestag_search_aktivitaeten\` |
 | One document by ID | \`bundestag_get_*\` (run \`bundestag_estimate_size\` first for full text) |
 | Rhetoric / tone / topics | \`bundestag_speaker_profile\`, \`bundestag_compare_parties\` (two-step — see below), \`bundestag_analyze_tone\`, \`bundestag_classify_topics\` (need the NLP service — check \`bundestag_analysis_health\`) |
+| **How an MP voted** (roll-calls) | \`abgeordnetenwatch_voting_record\` (name or politicianId) — DIP has no vote data |
+| **An MP's side-jobs / outside income** | \`abgeordnetenwatch_sidejobs\` — income as level 1–10, not the DIP |
+| **Result of a named vote, by faction** | \`abgeordnetenwatch_search_polls\` → \`abgeordnetenwatch_poll_tally\` |
+| **Combined MP transparency profile** | \`abgeordnetenwatch_politician_profile\` (bridge from DIP via \`bundestagPersonId\`) |
 
 ## Analysis tools are two-step — do both steps yourself
 \`bundestag_speaker_profile\` and \`bundestag_compare_parties\` do **not** fetch data; they
@@ -60,7 +64,21 @@ automatically — forward the \`results\` array verbatim, no reshaping needed.
 Rule of thumb: **semantic** tools for any content/phrase/topic search (the DIP API has
 no full-text search), **\`_text\`** tools only to *retrieve* full text of a known document
 by id/wahlperiode/date, **metadata** search for structured filters. Read the \`bundestag://system-prompt\`
-resource for detailed workflows, chaining recipes, and pitfalls.`;
+resource for detailed workflows, chaining recipes, and pitfalls.
+
+## Transparency data (Abgeordnetenwatch) — \`abgeordnetenwatch_*\`
+A second live source (open CC0 data) covering what the official DIP record does **not**:
+how an MP **voted** in named roll-calls, their declared **side-jobs / outside income**, and
+per-faction **vote tallies**. Use these for "how did X vote on Y", "what Nebeneinkünfte does X
+have", "how did the vote on Y go".
+- **Germany only.** No Austrian Nationalrat, no EU. Say so if asked.
+- **DIP and Abgeordnetenwatch share no id — the join is by NAME.** \`abgeordnetenwatch_politician_profile\`
+  accepts a DIP \`bundestagPersonId\` and bridges by name; common names can mismatch, so read the
+  \`notes\` and confirm identity before attributing a vote.
+- **Income is a level 1–10, never an exact sum** (level 1 = up to 1.000 €, level 10 = over 250.000 €).
+  State the level and explain it; do not invent a euro figure.
+- **Report facts neutrally.** Votes and side-jobs are public record — cite the abgeordnetenwatch.de
+  link, state only what the data says, and never infer motives.`;
 
 /**
  * System prompt resource with usage instructions

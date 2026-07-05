@@ -57,6 +57,7 @@ ChatGPT, or [Quick Start](#quick-start) to self-host.
 - **Speech Search** - Find specific statements in debates with hybrid vector/keyword search
 - **Document Section Search** - Search within document sections (articles, questions, etc.)
 - **NLP Analysis** - Extract speeches, analyze tone, classify topics, and compare parties
+- **Transparency Data (Abgeordnetenwatch)** - A second live source (open CC0 data): MP roll-call voting behaviour, declared side-jobs / outside income (levels 1–10), per-faction vote tallies, and a combined profile that bridges from a DIP person by name. Germany only. `abgeordnetenwatch_*` tools.
 
 ### Production-Ready
 - **Graceful Shutdown** - Clean session termination on SIGTERM/SIGINT
@@ -71,7 +72,7 @@ ChatGPT, or [Quick Start](#quick-start) to self-host.
 - **Structured Logging** - JSON logs with categories and levels
 
 ### MCP Protocol
-- **33 Tools** - Search, retrieval, semantic search, speech search, and NLP analysis
+- **39 Tools** - Search, retrieval, semantic search, speech search, NLP analysis, and Abgeordnetenwatch transparency data
 - **8 Prompts** - Guided workflows for common research tasks
 - **12 Resources** - Static and dynamic resource templates
 - **Dual Mode** - Supports stateful (Claude, Cursor) and stateless (ChatGPT) clients
@@ -156,6 +157,19 @@ The server will start at `http://localhost:3000`.
 | `bundestag_get_person` | Get person details by ID |
 | `bundestag_search_aktivitaeten` | Search parliamentary activities |
 | `bundestag_get_aktivitaet` | Get specific activity by ID |
+
+### Transparency Tools (Abgeordnetenwatch)
+
+Open CC0 data — Germany only. What an MP voted, earned on the side, and how a named vote broke down by faction.
+
+| Tool | Description |
+|------|-------------|
+| `abgeordnetenwatch_search_politicians` | Resolve an MP name to Abgeordnetenwatch politician candidates |
+| `abgeordnetenwatch_voting_record` | An MP's roll-call voting behaviour (by name or politician id) |
+| `abgeordnetenwatch_sidejobs` | An MP's declared side-jobs / outside income (levels 1–10) |
+| `abgeordnetenwatch_search_polls` | Find named roll-call votes by keyword / topic |
+| `abgeordnetenwatch_poll_tally` | Aggregated result of a named vote, by faction |
+| `abgeordnetenwatch_politician_profile` | Combined MP profile; bridges from a DIP person id by name |
 
 ### Semantic Search Tools
 
