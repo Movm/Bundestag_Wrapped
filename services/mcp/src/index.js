@@ -315,6 +315,9 @@ app.get('/health/deep', async (req, res) => {
   };
 
   let overallHealthy = true;
+  // Newest document DIP currently has (results come back newest-first) — the
+  // reference point for judging whether our index has kept up.
+  let latestDipDocumentDate = null;
 
   // Check DIP API connectivity
   try {
@@ -335,6 +338,8 @@ app.get('/health/deep', async (req, res) => {
 
     if (response.ok) {
       checks.dipApi = 'healthy';
+      const body = await response.json().catch(() => null);
+      latestDipDocumentDate = body?.documents?.[0]?.datum || null;
     } else {
       checks.dipApi = `unhealthy (HTTP ${response.status})`;
       overallHealthy = false;
@@ -378,6 +383,44 @@ app.get('/health/deep', async (req, res) => {
 
   // Add indexer stats
   checks.indexer = indexer.getStats();
+
+  // Data freshness: is the semantic index keeping up with the source (DIP)?
+  // lastSuccessfulIndexTime advances on every successful indexer pass (~every
+  // intervalMinutes, even with 0 new docs). If it falls far behind, indexing is
+  // stuck and the searchable data silently goes stale — the failure mode this
+  // check exists to catch.
+  {
+    const idx = checks.indexer;
+    const uptimeMs = process.uptime() * 1000;
+    let status = 'fresh';
+    let minutesSinceIndex = null;
+
+    if (!config.qdrant.enabled || !idx.enabled) {
+      status = 'disabled';
+    } else if (!idx.lastSuccessfulIndexTime) {
+      // Timestamps reset on restart — allow a warm-up window before flagging stale.
+      status = uptimeMs < idx.intervalMinutes * 60000 * 2 ? 'initializing' : 'stale';
+    } else {
+      minutesSinceIndex = Math.round(
+        (Date.now() - Date.parse(idx.lastSuccessfulIndexTime)) / 60000
+      );
+      status = minutesSinceIndex > idx.intervalMinutes * 2 + 10 ? 'stale' : 'fresh';
+    }
+
+    checks.dataFreshness = {
+      status,
+      latestDipDocumentDate,
+      lastSuccessfulIndexTime: idx.lastSuccessfulIndexTime,
+      minutesSinceIndex,
+      intervalMinutes: idx.intervalMinutes,
+      indexedPoints: checks.qdrantInfo?.pointsCount ?? null,
+      indexerErrors: idx.errors
+    };
+
+    // A stuck indexer means stale search results — surface it as degraded so
+    // external monitors alert (a brief post-restart window stays 'initializing').
+    if (status === 'stale') overallHealthy = false;
+  }
 
   res.status(overallHealthy ? 200 : 503).json({
     status: overallHealthy ? 'healthy' : 'degraded',
