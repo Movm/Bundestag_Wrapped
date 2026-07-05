@@ -390,6 +390,13 @@ def load_wrapped_data(results_dir: Path, data_dir: Path, cls=None):
 
     metadata = full_data["metadata"]
 
+    # Derive the real session count from the downloaded protocols. The analyze
+    # step's metadata does not carry it, so export previously fell back to a
+    # hard-coded 50 regardless of how many Sitzungen were actually analyzed.
+    protocols_dir = data_dir / "protocols"
+    if protocols_dir.exists():
+        metadata["sitzungen"] = len(list(protocols_dir.glob("*.json")))
+
     # Filter fraktionslos from parties list (keep speaker data for personal wrappeds)
     if "parties" in metadata:
         metadata["parties"] = [p for p in metadata["parties"] if p != "fraktionslos"]
