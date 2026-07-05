@@ -67,27 +67,48 @@ export function McpPage() {
               <h2 className="text-lg font-semibold text-white mb-2">Verbinden</h2>
               <p className="mb-3">
                 Der Server läuft öffentlich, spricht Streamable HTTP und benötigt{' '}
-                <strong className="text-white">keine Anmeldung</strong>:
+                <strong className="text-white">keine Anmeldung</strong>. Überall dieselbe
+                URL eintragen:
               </p>
-              <pre className="bg-black/40 border border-white/10 rounded-lg p-4 text-xs text-white/90 font-mono overflow-x-auto mb-3">
+              <pre className="bg-black/40 border border-white/10 rounded-lg p-4 text-xs text-white/90 font-mono overflow-x-auto mb-5">
                 {MCP_ENDPOINT}
               </pre>
+
+              <h3 className="text-white font-semibold mt-4 mb-1">Claude</h3>
               <p className="mb-2">
-                In <strong className="text-white">Claude Code</strong>:
+                <strong className="text-white">claude.ai</strong> (Pro/Team/Enterprise):
+                Einstellungen → Connectors → „Custom Connector hinzufügen" → URL eintragen.
               </p>
-              <pre className="bg-black/40 border border-white/10 rounded-lg p-4 text-xs text-white/90 font-mono overflow-x-auto mb-3">
+              <p className="mb-1">
+                <strong className="text-white">Claude Code</strong> (CLI):
+              </p>
+              <pre className="bg-black/40 border border-white/10 rounded-lg p-4 text-xs text-white/90 font-mono overflow-x-auto mb-5">
                 claude mcp add --transport http bundestag {MCP_ENDPOINT}
               </pre>
-              <p>
-                Auf <strong className="text-white">claude.ai</strong>: Einstellungen →
-                Connectors → „Custom Connector" → URL eintragen. Jeder MCP-fähige Client
-                mit Streamable-HTTP-Unterstützung funktioniert.
+
+              <h3 className="text-white font-semibold mt-4 mb-1">ChatGPT</h3>
+              <p className="mb-5">
+                Einstellungen → Connectors (Plus/Pro/Business/Enterprise) → „Connector
+                hinzufügen" → obige URL als MCP-Server eintragen. Nutzbar in Deep Research
+                und im Chat; der Server unterstützt ChatGPTs verbindungslosen Modus.
+              </p>
+
+              <h3 className="text-white font-semibold mt-4 mb-1">Mistral / Le&nbsp;Chat</h3>
+              <p className="mb-5">
+                Le Chat → Connectors → „MCP-Connector hinzufügen" → URL eintragen.
+                Alternativ lässt sich der Server als MCP-Tool über die Mistral&nbsp;Agents&nbsp;API
+                einbinden.
+              </p>
+
+              <p className="text-white/50">
+                Grundsätzlich funktioniert jeder MCP-fähige Client mit
+                Streamable-HTTP-Unterstützung — auch Cursor, VS Code u.&nbsp;a.
               </p>
             </section>
 
             <section>
               <h2 className="text-lg font-semibold text-white mb-2">
-                Funktionen — 35 Tools
+                Funktionen — über 30 Tools
               </h2>
               <ul className="space-y-3">
                 {TOOL_GROUPS.map(group => (
@@ -105,6 +126,11 @@ export function McpPage() {
                 <li>„Zeig mir den Stand des Gesetzgebungsverfahrens zur Krankenhausreform."</li>
                 <li>„Wie unterscheiden sich SPD und CDU/CSU rhetorisch beim Thema Migration?"</li>
                 <li>„Welche Kleinen Anfragen gab es 2026 zum Thema Bahninfrastruktur?"</li>
+                <li>„Fasse zusammen, was Robert Habeck zuletzt zum Klimaschutz gesagt hat."</li>
+                <li>„Wer hat in der 87. Sitzung gesprochen — und worum ging es?"</li>
+                <li>„Wie viele Gesetzentwürfe hat die AfD in dieser Wahlperiode eingebracht?"</li>
+                <li>„Finde Passagen zum Ausbau der Windenergie an Land in aktuellen Gesetzentwürfen."</li>
+                <li>„Erstelle ein Sprachprofil von Katharina Dröge — Themen, Ton und Lieblingswörter."</li>
               </ul>
             </section>
 
