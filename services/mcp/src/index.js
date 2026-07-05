@@ -89,9 +89,20 @@ const DESTRUCTIVE_TOOLS = new Set([
   'bundestag_reindex_protocols' // deletes all protocol chunks before rebuilding
 ]);
 
+// The indexing/reindex tools kick off (and reindex_protocols wipes) server-side
+// jobs — operational actions that a public MCP client should not be able to
+// trigger. The background indexer runs on its own schedule, so these manual
+// triggers are hidden from the tool surface by default; set
+// EXPOSE_INDEXING_TOOLS=true on a local/admin instance to expose them.
+const EXPOSE_INDEXING_TOOLS = process.env.EXPOSE_INDEXING_TOOLS === 'true';
+function isExposedTool(name) {
+  return EXPOSE_INDEXING_TOOLS || !MUTATING_TOOLS.has(name);
+}
+
 // Every registered tool, in registration order. clientConfigTool is local-only
 // (generates config text, no external calls) — the rest hit the DIP/Qdrant APIs.
-const ALL_TOOLS = [...allTools, ...semanticSearchTools, ...analysisTools, ...aggregateTools, clientConfigTool];
+const ALL_TOOLS = [...allTools, ...semanticSearchTools, ...analysisTools, ...aggregateTools, clientConfigTool]
+  .filter((tool) => isExposedTool(tool.name));
 
 // Derive the Directory-required `title` annotation from the tool name so it
 // stays in sync automatically (e.g. bundestag_search_drucksachen → "Search Drucksachen").
@@ -162,7 +173,9 @@ function createMcpServer(baseUrl) {
   // === MCP TOOLS ===
 
   // Register all search/entity/analysis/aggregate tools (clientConfigTool below).
-  const allToolsCombined = [...allTools, ...semanticSearchTools, ...analysisTools, ...aggregateTools];
+  // Indexing/reindex tools are excluded unless EXPOSE_INDEXING_TOOLS is set.
+  const allToolsCombined = [...allTools, ...semanticSearchTools, ...analysisTools, ...aggregateTools]
+    .filter((tool) => isExposedTool(tool.name));
   for (const tool of allToolsCombined) {
     server.tool(
       tool.name,
@@ -660,10 +673,12 @@ httpServer = app.listen(PORT, () => {
   });
   console.log('='.repeat(50));
   console.log('Tools:');
-  [...allTools, ...semanticSearchTools, ...aggregateTools].forEach(t => {
+  ALL_TOOLS.forEach(t => {
     console.log(`  ${t.name}`);
   });
-  console.log('  get_client_config');
+  if (!EXPOSE_INDEXING_TOOLS) {
+    console.log(`  (${MUTATING_TOOLS.size} indexing tools hidden — set EXPOSE_INDEXING_TOOLS=true to expose)`);
+  }
   console.log('='.repeat(50));
   console.log('Prompts:');
   allPrompts.forEach(p => {
