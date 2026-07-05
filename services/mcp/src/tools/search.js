@@ -521,19 +521,32 @@ export const getPersonTool = {
 // Aktivitaeten Tools
 // ============================================================================
 
+// Plenary activity types (dokumentart "Plenarprotokoll"). DIP can't filter by
+// aktivitaetsart, but it CAN filter by dokumentart — so for these types we narrow
+// to Plenarprotokoll server-side, which makes the page dense enough for the
+// client-side aktivitaetsart refine to actually return matches.
+const PLENARY_AKTIVITAETSARTEN = new Set([
+  'rede', 'rede (zu protokoll gegeben)', 'frage', 'zwischenfrage',
+  'antwort', 'erwiderung', 'kurzintervention'
+]);
+
 export const searchAktivitaetenTool = {
   name: 'bundestag_search_aktivitaeten',
   description: `Search parliamentary activities (speeches, questions, etc.).
 Use this to find specific contributions by MPs in parliament.
-Note: the DIP API cannot filter by activity type server-side, so \`aktivitaetsart\`
-is applied to the fetched page only — raise \`limit\` or page with \`cursor\` to scan more.`,
+Note: the DIP API cannot filter by activity type (\`aktivitaetsart\`) server-side, so it
+is applied to the fetched page. For plenary types (Rede, Frage, Zwischenfrage, …) the
+search first narrows to dokumentart "Plenarprotokoll" (a real DIP filter) so the page is
+dense with matches; still raise \`limit\` or page with \`cursor\` to scan more.`,
 
   inputSchema: {
     query: z.string().optional()
       .describe('Search text in activity title'),
     wahlperiode: wahlperiodeSchema,
     aktivitaetsart: z.string().optional()
-      .describe('Activity type, e.g. "Rede", "Schriftliche Frage". Filtered client-side on the fetched page (DIP has no server-side type filter).'),
+      .describe('Activity type, e.g. "Rede", "Frage", "Schriftliche Frage". Filtered client-side on the fetched page (DIP has no server-side type filter); plenary types auto-narrow to dokumentart "Plenarprotokoll" first.'),
+    dokumentart: z.enum(['Plenarprotokoll', 'Drucksache']).optional()
+      .describe('Filter by document source (real DIP filter): "Plenarprotokoll" (speeches, questions) or "Drucksache" (written activities).'),
     person_id: z.number().int().positive().optional()
       .describe('Filter by person ID'),
     datum_start: datumStartSchema,
@@ -546,11 +559,19 @@ is applied to the fetched page only — raise \`limit\` or page with \`cursor\` 
 
   async handler(params) {
     try {
-      const result = await api.searchAktivitaeten(params, { useCache: params.useCache });
+      // For a plenary aktivitaetsart, narrow server-side by dokumentart first
+      // (unless the caller set dokumentart explicitly) so the page is match-dense.
+      const apiParams = { ...params };
+      if (params.aktivitaetsart && !params.dokumentart
+          && PLENARY_AKTIVITAETSARTEN.has(params.aktivitaetsart.trim().toLowerCase())) {
+        apiParams.dokumentart = 'Plenarprotokoll';
+      }
+
+      const result = await api.searchAktivitaeten(apiParams, { useCache: params.useCache });
 
       // DIP has no server-side activity-type filter, so a requested aktivitaetsart
-      // is applied here to the rows DIP returned for this page. Do it before
-      // buildListResponse so the projection/limit act on the matching rows.
+      // is applied here to the rows DIP returned. Do it before buildListResponse so
+      // the projection/limit act on the matching rows.
       if (params.aktivitaetsart) {
         const want = params.aktivitaetsart.trim().toLowerCase();
         const rawCount = (result.documents || []).length;
@@ -561,10 +582,11 @@ is applied to the fetched page only — raise \`limit\` or page with \`cursor\` 
         response.aktivitaetsartFilter = {
           value: params.aktivitaetsart,
           scope: 'page',
+          narrowedByDokumentart: apiParams.dokumentart || null,
           matchedOnPage: filtered.length,
           pageSize: rawCount
         };
-        response.note = `"aktivitaetsart" is filtered client-side (${filtered.length}/${rawCount} rows on this page matched) — the DIP API has no server-side activity-type filter, so totalResults reflects the UNFILTERED total. Raise limit or page with cursor to scan more.`;
+        response.note = `"aktivitaetsart" is filtered client-side (${filtered.length}/${rawCount} rows on this page matched)${apiParams.dokumentart ? `, after narrowing to dokumentart "${apiParams.dokumentart}"` : ''} — the DIP API has no server-side activity-type filter, so totalResults reflects the total for the (narrowed) query, not the type. Raise limit or page with cursor to scan more.`;
         return response;
       }
 
