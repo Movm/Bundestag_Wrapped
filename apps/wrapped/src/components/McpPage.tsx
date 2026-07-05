@@ -76,33 +76,97 @@ export function McpPage() {
 
               <h3 className="text-white font-semibold mt-4 mb-1">Claude</h3>
               <p className="mb-2">
-                <strong className="text-white">claude.ai</strong> (Pro/Team/Enterprise):
-                Einstellungen → Connectors → „Custom Connector hinzufügen" → URL eintragen.
+                <strong className="text-white">claude.ai &amp; Claude Desktop</strong>{' '}
+                (Free, Pro, Max, Team, Enterprise):{' '}
+                <strong className="text-white">Einstellungen → Connectors</strong> → „+" →{' '}
+                <strong className="text-white">„Eigenen Connector hinzufügen"</strong> → obige URL
+                eintragen → <strong className="text-white">Hinzufügen</strong>. Danach pro Chat über
+                das „+"-Menü aktivieren. Claude verbindet sich aus der Anthropic-Cloud, der Server
+                muss also öffentlich erreichbar sein — ist er.
               </p>
               <p className="mb-1">
                 <strong className="text-white">Claude Code</strong> (CLI):
               </p>
-              <pre className="bg-black/40 border border-white/10 rounded-lg p-4 text-xs text-white/90 font-mono overflow-x-auto mb-5">
+              <pre className="bg-black/40 border border-white/10 rounded-lg p-4 text-xs text-white/90 font-mono overflow-x-auto mb-2">
                 claude mcp add --transport http bundestag {MCP_ENDPOINT}
               </pre>
+              <p className="mb-5 text-white/50">
+                Ausführlich:{' '}
+                <a
+                  href="https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-pink-400 hover:text-pink-300 underline"
+                >
+                  Custom Connectors (Claude Help Center)
+                </a>{' '}
+                ·{' '}
+                <a
+                  href="https://code.claude.com/docs/en/mcp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-pink-400 hover:text-pink-300 underline"
+                >
+                  Claude Code MCP-Doku
+                </a>
+              </p>
 
               <h3 className="text-white font-semibold mt-4 mb-1">ChatGPT</h3>
-              <p className="mb-5">
-                Einstellungen → Connectors (Plus/Pro/Business/Enterprise) → „Connector
-                hinzufügen" → obige URL als MCP-Server eintragen. Nutzbar in Deep Research
-                und im Chat; der Server unterstützt ChatGPTs verbindungslosen Modus.
+              <p className="mb-2">
+                Zuerst den <strong className="text-white">Entwicklermodus</strong> einschalten:{' '}
+                <strong className="text-white">
+                  Einstellungen → Connectors → Erweiterte Einstellungen → Entwicklermodus
+                </strong>
+                . Dann <strong className="text-white">Einstellungen → Connectors → „Erstellen"</strong>{' '}
+                → Name und Beschreibung vergeben, obige URL als MCP-Server-URL eintragen →{' '}
+                <strong className="text-white">Erstellen</strong>. Verfügbar auf allen Plänen (Plus,
+                Pro, Business, Enterprise, Edu).
+              </p>
+              <p className="mb-5 text-white/50">
+                Ausführlich:{' '}
+                <a
+                  href="https://help.openai.com/en/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-pink-400 hover:text-pink-300 underline"
+                >
+                  Developer Mode &amp; MCP (OpenAI Help Center)
+                </a>
               </p>
 
               <h3 className="text-white font-semibold mt-4 mb-1">Mistral / Le&nbsp;Chat</h3>
-              <p className="mb-5">
-                Le Chat → Connectors → „MCP-Connector hinzufügen" → URL eintragen.
-                Alternativ lässt sich der Server als MCP-Tool über die Mistral&nbsp;Agents&nbsp;API
-                einbinden.
+              <p className="mb-2">
+                <strong className="text-white">Connectors</strong> →{' '}
+                <strong className="text-white">„+ Add Connector"</strong> → Reiter{' '}
+                <strong className="text-white">„Custom MCP Connector"</strong> → Name (ohne Leer- und
+                Sonderzeichen) und obige URL als Server-URL → <strong className="text-white">Connect</strong>.
+                Als Authentifizierung <strong className="text-white">„No authentication"</strong> wählen.
+                Das Anlegen ist Admin-Sache; auf Free-/Pro-Konten bist du automatisch Admin.
+              </p>
+              <p className="mb-5 text-white/50">
+                Ausführlich:{' '}
+                <a
+                  href="https://docs.mistral.ai/le-chat/knowledge-integrations/connectors/mcp-connectors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-pink-400 hover:text-pink-300 underline"
+                >
+                  MCP Connectors (Mistral Docs)
+                </a>
               </p>
 
               <p className="text-white/50">
                 Grundsätzlich funktioniert jeder MCP-fähige Client mit
-                Streamable-HTTP-Unterstützung — auch Cursor, VS Code u.&nbsp;a.
+                Streamable-HTTP-Unterstützung — auch Cursor, VS Code u.&nbsp;a. Mehr zum Standard:{' '}
+                <a
+                  href="https://modelcontextprotocol.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-pink-400 hover:text-pink-300 underline"
+                >
+                  modelcontextprotocol.io
+                </a>
+                .
               </p>
             </section>
 
