@@ -34,8 +34,9 @@ Access to the German Bundestag's official documentation (DIP API) plus a semanti
 | Goal | Use |
 |------|-----|
 | Concept/topic, exact wording unknown | \`bundestag_semantic_search\` |
-| Passage inside document full text | \`bundestag_search_document_sections\` (vector) or \`bundestag_search_drucksachen_text\` (raw) |
-| What an MP/party said | \`bundestag_search_speeches\` (vector) or \`bundestag_search_plenarprotokolle_text\` (raw) |
+| Passage inside document full text | \`bundestag_search_document_sections\` (semantic) — the DIP API has no full-text search |
+| What an MP/party said | \`bundestag_search_speeches\` (semantic) — the DIP API has no full-text search |
+| Full text of a *known* Drucksache/Protokoll | \`bundestag_search_drucksachen_text\` / \`bundestag_search_plenarprotokolle_text\` — retrieval by id/wahlperiode/date only, NOT text search |
 | Documents by title / type / date / author | \`bundestag_search_drucksachen\` |
 | A bill's lifecycle | \`bundestag_search_vorgaenge\` → \`bundestag_get_vorgang\` → \`bundestag_search_vorgangspositionen\` |
 | A person and their activities | \`bundestag_search_personen\` → \`bundestag_search_aktivitaeten\` |
@@ -53,8 +54,9 @@ analyse speeches you supply. Never ask the user for speeches — fetch them firs
 Search fields (\`speakerParty\`, \`speechType\`, \`firstName\`) are accepted and mapped
 automatically — forward the \`results\` array verbatim, no reshaping needed.
 
-Rule of thumb: **semantic** tools for meaning, **\`_text\`** tools for exact phrases,
-**metadata** search for structured filters. Read the \`bundestag://system-prompt\`
+Rule of thumb: **semantic** tools for any content/phrase/topic search (the DIP API has
+no full-text search), **\`_text\`** tools only to *retrieve* full text of a known document
+by id/wahlperiode/date, **metadata** search for structured filters. Read the \`bundestag://system-prompt\`
 resource for detailed workflows, chaining recipes, and pitfalls.`;
 
 /**

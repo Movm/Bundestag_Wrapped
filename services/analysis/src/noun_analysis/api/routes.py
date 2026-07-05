@@ -310,12 +310,26 @@ async def get_speaker_profile(
 
     analyzer = get_analyzer()
 
-    # Aggregate speech statistics
+    # Aggregate speech statistics.
+    # Speeches coming straight from bundestag_search_speeches carry `type`/
+    # `speechType` but no `category`, so counting on `category` alone left
+    # formal_speeches/wortbeitraege stuck at 0. Derive the category from the
+    # speech type the same way aggregate_speeches_by_type does.
+    def _category(s: dict) -> str:
+        cat = s.get("category")
+        if cat:
+            return cat
+        stype = s.get("type") or s.get("speechType")
+        return "rede" if stype == "rede" else "wortbeitrag"
+
     total_speeches = len(speeches)
-    formal_speeches = sum(1 for s in speeches if s.get("category") == "rede")
-    wortbeitraege = sum(1 for s in speeches if s.get("category") == "wortbeitrag")
+    formal_speeches = sum(1 for s in speeches if _category(s) == "rede")
+    wortbeitraege = sum(1 for s in speeches if _category(s) == "wortbeitrag")
     befragung = sum(
-        1 for s in speeches if s.get("type") in ("befragung", "fragestunde_antwort")
+        1
+        for s in speeches
+        if (s.get("type") or s.get("speechType"))
+        in ("befragung", "fragestunde_antwort")
     )
 
     # Get party from first speech

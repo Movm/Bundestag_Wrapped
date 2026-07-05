@@ -446,11 +446,13 @@ export const getVorgangTool = {
 export const searchPersonenTool = {
   name: 'bundestag_search_personen',
   description: `Search for persons in the Bundestag (MPs, ministers, etc.).
-Use this to find information about members of parliament and their affiliations.`,
+Use this to find information about members of parliament and their affiliations.
+Name matching is by surname — a full "Vorname Nachname" is reduced to the surname
+automatically (the DIP API matches a single name token).`,
 
   inputSchema: {
     query: z.string().optional()
-      .describe('Search by name'),
+      .describe('Search by name. Matched on surname — "Katharina Dröge" and "Dröge" both work.'),
     wahlperiode: wahlperiodeSchema,
     fraktion: z.string().optional()
       .describe('Parliamentary group/faction (e.g., SPD, CDU/CSU, GRÜNE)'),
@@ -639,19 +641,21 @@ progress of bills through parliament.`,
 
 export const searchDrucksachenTextTool = {
   name: 'bundestag_search_drucksachen_text',
-  description: `Raw full-text search within Drucksachen content (DIP API).
-Unlike bundestag_search_drucksachen which searches metadata/titles,
-this searches the actual document text. Use this to find specific
-phrases, legal references, or exact wording within parliamentary documents.
-For conceptual/semantic matching (related terms, not exact phrases), prefer
-bundestag_search_document_sections, which searches vectorized document chunks.`,
+  description: `Retrieve the full text of Drucksachen, scoped by ID, Wahlperiode or date (DIP API).
+
+IMPORTANT: the DIP API has NO full-text search — it cannot find documents by a phrase in
+their body. For content/phrase search of Drucksachen use bundestag_search_document_sections
+(semantic search over vectorized chunks). This tool only *returns the full text* of documents
+you scope via drucksache_id / wahlperiode / date range.`,
 
   inputSchema: {
-    query: z.string()
-      .describe('Full-text search query within document content'),
-    wahlperiode: wahlperiodeSchema,
     drucksache_id: z.number().int().positive().optional()
-      .describe('Filter to a specific Drucksache ID'),
+      .describe('Return the full text of this specific Drucksache ID'),
+    wahlperiode: wahlperiodeSchema,
+    datum_start: datumStartSchema,
+    datum_end: datumEndSchema,
+    query: z.string().optional()
+      .describe('NOT supported — the DIP API ignores free text here. For content search use bundestag_search_document_sections.'),
     limit: z.number().int().min(1).max(50).default(10)
       .describe('Maximum results (1-50, lower limit than metadata search)'),
     cursor: cursorSchema,
@@ -660,6 +664,13 @@ bundestag_search_document_sections, which searches vectorized document chunks.`,
   },
 
   async handler(params) {
+    if (params.query) {
+      return {
+        error: true,
+        endpoint: 'drucksache-text',
+        message: 'The DIP API does not support full-text search of Drucksachen — a `query` here is silently ignored and would return unfiltered recent documents. For content/phrase search use bundestag_search_document_sections (semantic). To retrieve full text, call this tool WITHOUT `query`, scoped by drucksache_id / wahlperiode / datum_start+datum_end.'
+      };
+    }
     try {
       const result = await api.searchDrucksachenText(params, { useCache: params.useCache });
 
@@ -676,19 +687,21 @@ bundestag_search_document_sections, which searches vectorized document chunks.`,
 
 export const searchPlenarprotokolleTextTool = {
   name: 'bundestag_search_plenarprotokolle_text',
-  description: `Raw full-text search within Plenarprotokoll transcripts (DIP API).
-Unlike bundestag_search_plenarprotokolle which searches metadata,
-this searches actual speech transcripts. Use this to find specific
-quotes or exact wording in plenary sessions.
-For semantic search of what someone said about a topic (related terms, per-speech
-results with speaker/party), prefer bundestag_search_speeches.`,
+  description: `Retrieve the full text of Plenarprotokolle, scoped by ID, Wahlperiode or date (DIP API).
+
+IMPORTANT: the DIP API has NO full-text search — it cannot find protocols by a phrase in
+their transcript. To search what was said (per-speech results with speaker/party) use
+bundestag_search_speeches (semantic). This tool only *returns the full transcript text* of
+protocols you scope via plenarprotokoll_id / wahlperiode / date range.`,
 
   inputSchema: {
-    query: z.string()
-      .describe('Full-text search query within transcript content'),
-    wahlperiode: wahlperiodeSchema,
     plenarprotokoll_id: z.number().int().positive().optional()
-      .describe('Filter to a specific Plenarprotokoll ID'),
+      .describe('Return the full text of this specific Plenarprotokoll ID'),
+    wahlperiode: wahlperiodeSchema,
+    datum_start: datumStartSchema,
+    datum_end: datumEndSchema,
+    query: z.string().optional()
+      .describe('NOT supported — the DIP API ignores free text here. To search speeches use bundestag_search_speeches.'),
     limit: z.number().int().min(1).max(50).default(10)
       .describe('Maximum results (1-50, lower limit than metadata search)'),
     cursor: cursorSchema,
@@ -697,6 +710,13 @@ results with speaker/party), prefer bundestag_search_speeches.`,
   },
 
   async handler(params) {
+    if (params.query) {
+      return {
+        error: true,
+        endpoint: 'plenarprotokoll-text',
+        message: 'The DIP API does not support full-text search of Plenarprotokolle — a `query` here is silently ignored and would return unfiltered recent protocols. To search what was said use bundestag_search_speeches (semantic). To retrieve full text, call this tool WITHOUT `query`, scoped by plenarprotokoll_id / wahlperiode / datum_start+datum_end.'
+      };
+    }
     try {
       const result = await api.searchPlenarprotokolleText(params, { useCache: params.useCache });
 

@@ -225,9 +225,14 @@ export async function getDrucksache(id, options = {}) {
 export async function searchDrucksachenText(params = {}, options = {}) {
   const apiParams = {};
 
-  if (params.query) apiParams['f.text'] = params.query;
+  // NOTE: the DIP API has no full-text filter — `/drucksache-text` accepts only
+  // metadata filters (id, wahlperiode, date, …). A free-text query is impossible
+  // server-side; callers are steered to the semantic layer instead. This function
+  // therefore only scopes retrieval by the DIP-supported filters.
   if (params.wahlperiode) apiParams['f.wahlperiode'] = params.wahlperiode;
   if (params.drucksache_id) apiParams['f.drucksache'] = params.drucksache_id;
+  if (params.datum_start) apiParams['f.datum.start'] = params.datum_start;
+  if (params.datum_end) apiParams['f.datum.end'] = params.datum_end;
   if (params.cursor) apiParams['cursor'] = params.cursor;
 
   // Text endpoints typically have lower limits
@@ -278,9 +283,13 @@ export async function getPlenarprotokoll(id, options = {}) {
 export async function searchPlenarprotokolleText(params = {}, options = {}) {
   const apiParams = {};
 
-  if (params.query) apiParams['f.text'] = params.query;
+  // NOTE: like /drucksache-text, DIP's /plenarprotokoll-text has no full-text
+  // filter — only metadata scoping. Free-text search goes through the semantic
+  // layer (bundestag_search_speeches); this only retrieves text by id/wp/date.
   if (params.wahlperiode) apiParams['f.wahlperiode'] = params.wahlperiode;
   if (params.plenarprotokoll_id) apiParams['f.plenarprotokoll'] = params.plenarprotokoll_id;
+  if (params.datum_start) apiParams['f.datum.start'] = params.datum_start;
+  if (params.datum_end) apiParams['f.datum.end'] = params.datum_end;
   if (params.cursor) apiParams['cursor'] = params.cursor;
 
   apiParams['rows'] = Math.min(params.limit || 10, 50);
@@ -360,9 +369,14 @@ export async function searchPersonen(params = {}, options = {}) {
   const apiParams = {};
 
   // DIP's /person endpoint has no `f.name` filter — the correct filter is
-  // `f.person` (matches a name token, e.g. "Habeck"). Sending `f.name` was
-  // silently ignored, so every query returned all persons (newest first).
-  if (params.query) apiParams['f.person'] = params.query;
+  // `f.person` (matches a single name token, e.g. "Habeck"). Sending `f.name`
+  // was silently ignored, so every query returned all persons (newest first).
+  // `f.person` also matches only ONE token, so a "Vorname Nachname" value finds
+  // nothing — fall back to the surname (last token) for multi-word queries.
+  if (params.query) {
+    const q = params.query.trim();
+    apiParams['f.person'] = q.includes(' ') ? q.split(/\s+/).pop() : q;
+  }
   if (params.wahlperiode) apiParams['f.wahlperiode'] = params.wahlperiode;
   if (params.fraktion) apiParams['f.fraktion'] = params.fraktion;
   if (params.cursor) apiParams['cursor'] = params.cursor;
