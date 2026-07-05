@@ -405,7 +405,9 @@ export async function searchAktivitaeten(params = {}, options = {}) {
 
   if (params.query) apiParams['f.titel'] = params.query;
   if (params.wahlperiode) apiParams['f.wahlperiode'] = params.wahlperiode;
-  if (params.aktivitaetsart) apiParams['f.aktivitaetsart'] = params.aktivitaetsart;
+  // NOTE: the DIP /aktivitaet endpoint has NO activity-type filter (f.aktivitaetsart
+  // does not exist and is silently ignored). Type filtering is applied client-side
+  // on the fetched page in the tool handler instead.
   if (params.person_id) apiParams['f.person'] = params.person_id;
   if (params.datum_start) apiParams['f.datum.start'] = params.datum_start;
   if (params.datum_end) apiParams['f.datum.end'] = params.datum_end;

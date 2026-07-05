@@ -7,6 +7,12 @@
 
 import { z } from 'zod';
 import * as analysisService from '../services/analysisService.js';
+import * as api from '../api/bundestag.js';
+import { analyzeSize } from '../utils/tokenEstimator.js';
+
+// Cap per-speech text in compact mode: a full protocol yields ~180 speeches, so
+// returning every full text would overflow the caller's context window.
+const SPEECH_SNIPPET_CHARS = 300;
 
 // =============================================================================
 // Speech normalisation
@@ -73,31 +79,91 @@ export const extractSpeechesTool = {
   name: 'bundestag_extract_speeches',
   description: `Extract individual speeches from a Plenarprotokoll (plenary session transcript).
 
-Parses the full protocol text and identifies speech boundaries using speaker patterns
-like "Name (Party):" for MPs and "Name, Role:" for government officials.
+Provide EITHER a plenarprotokoll_id (the full transcript is fetched and parsed
+server-side — the preferred path) OR raw protocol text. Parsing requires the COMPLETE
+protocol structure: each speaker must be introduced by the presiding officer, so
+snippets/excerpts return nothing. Always pass a whole protocol or its id.
 
-Returns structured speech data including:
-- Speaker name (with academic titles separated)
-- Party affiliation
-- Speech type (rede, befragung, fragestunde_antwort, etc.)
-- Word count
-- Full text (with parenthetical annotations like [Beifall] removed)
-
-Use this to break down a protocol into analyzable speech units.`,
+Identifies speech boundaries via "Name (Party):" (MPs) and "Name, Role:" (government).
+Returns per speech: speaker (+ academic title), party, speech type
+(rede/befragung/fragestunde_antwort/…), word count and text. Text is a snippet by
+default (fields:"compact"); use fields:"full" for the complete speech text.`,
 
   inputSchema: {
-    text: z.string().min(100)
-      .describe('Full Plenarprotokoll text to parse')
+    plenarprotokoll_id: z.number().int().positive().optional()
+      .describe('Plenarprotokoll ID — its full transcript is fetched and parsed server-side (preferred over pasting text). Get an id from bundestag_search_plenarprotokolle.'),
+    text: z.string().min(100).optional()
+      .describe('Full Plenarprotokoll text (alternative to plenarprotokoll_id). Must be a COMPLETE protocol, not an excerpt.'),
+    limit: z.number().int().min(1).max(500).default(50)
+      .describe('Max speeches to return (default 50). speech_count reports the total found.'),
+    fields: z.enum(['compact', 'full']).default('compact')
+      .describe('Response detail: "compact" (default — speech text truncated to a snippet) or "full" (complete speech text).')
   },
 
   async handler(params) {
     try {
-      const result = await analysisService.extractSpeeches(params.text);
+      let text = params.text;
+      if (params.plenarprotokoll_id) {
+        const tr = await api.getPlenarprotokollText(params.plenarprotokoll_id, { useCache: true });
+        text = typeof tr === 'string' ? tr : (tr?.text || '');
+      }
+
+      if (!text || text.trim().length < 100) {
+        return {
+          error: true,
+          tool: 'bundestag_extract_speeches',
+          message: params.plenarprotokoll_id
+            ? `No transcript text available for Plenarprotokoll ${params.plenarprotokoll_id}.`
+            : 'Provide a plenarprotokoll_id, or the full protocol text (>=100 chars). Excerpts do not parse — pass a complete protocol.'
+        };
+      }
+
+      const result = await analysisService.extractSpeeches(text);
+      const all = result.speeches || [];
+      const useFull = params.fields === 'full';
+      const limit = params.limit || 50;
+      const capped = all.slice(0, limit);
+
+      const speeches = capped.map((s) => {
+        const full = typeof s.text === 'string' ? s.text : '';
+        const truncated = !useFull && full.length > SPEECH_SNIPPET_CHARS;
+        return {
+          speaker: s.speaker,
+          party: s.party,
+          type: s.type,
+          category: s.category,
+          words: s.words,
+          isGovernment: s.is_government,
+          firstName: s.first_name,
+          lastName: s.last_name,
+          acadTitle: s.acad_title,
+          text: truncated ? full.slice(0, SPEECH_SNIPPET_CHARS) + '…' : full,
+          textLength: full.length,
+          textTruncated: truncated
+        };
+      });
+
+      const size = analyzeSize(JSON.stringify(speeches), { language: 'german' });
+      const notes = [];
+      if (all.length > capped.length) {
+        notes.push(`Showing ${capped.length} of ${all.length} speeches (limit) — raise limit for more.`);
+      }
+      if (!useFull && speeches.some((s) => s.textTruncated)) {
+        notes.push('Speech text truncated to a snippet; call with fields:"full" for complete text.');
+      }
 
       return {
         success: true,
-        speech_count: result.speech_count,
-        speeches: result.speeches
+        source: params.plenarprotokoll_id ? { plenarprotokoll_id: params.plenarprotokoll_id } : { text: 'inline' },
+        fields: useFull ? 'full' : 'compact',
+        speech_count: result.speech_count ?? all.length,
+        returned: speeches.length,
+        responseSize: {
+          estimatedTokens: size.estimatedTokens,
+          category: size.category
+        },
+        ...(notes.length ? { note: notes.join(' ') } : {}),
+        speeches
       };
     } catch (err) {
       return {
