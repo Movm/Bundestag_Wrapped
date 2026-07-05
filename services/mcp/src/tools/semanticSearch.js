@@ -28,12 +28,46 @@ function capText(text, useFull) {
 const fieldsSchema = z.enum(['compact', 'full']).default('compact')
   .describe('Response detail: "compact" (default — text truncated to a snippet, safe for context) or "full" (complete text; use before feeding results into the analysis tools).');
 
+const sortSchema = z.enum(['relevance', 'newest', 'oldest']).default('relevance')
+  .describe('Result ordering: "relevance" (default) = best semantic match first; "newest" = most recent first; "oldest" = earliest first. Combine newest/oldest with dateFrom/dateTo to restrict the time window.');
+
+// The date fields are indexed as `keyword` in Qdrant, so vector search has no
+// `order_by` — recency ordering is done client-side. For newest/oldest we
+// over-fetch a larger candidate pool (so recency isn't limited to the top-N by
+// score), then re-sort by ISO date and slice to the user's limit.
+const SORT_FETCH_MULTIPLIER = 5;
+const SORT_FETCH_MIN = 50;
+const SORT_FETCH_MAX = 200;
+
+export function resolveFetchLimit(userLimit, sort) {
+  if (sort !== 'newest' && sort !== 'oldest') return userLimit;
+  return Math.min(Math.max(userLimit * SORT_FETCH_MULTIPLIER, SORT_FETCH_MIN), SORT_FETCH_MAX);
+}
+
+// Stable re-sort by an ISO date string (YYYY-MM-DD compares correctly as a
+// string). Missing/empty dates sort to the END in both directions. `dateOf`
+// extracts the date from a result row.
+export function sortResultsByDate(results, sort, dateOf) {
+  if (sort !== 'newest' && sort !== 'oldest') return results;
+  const dir = sort === 'newest' ? -1 : 1;
+  return [...results].sort((a, b) => {
+    const da = dateOf(a) || '';
+    const db = dateOf(b) || '';
+    if (!da && !db) return 0;
+    if (!da) return 1;
+    if (!db) return -1;
+    const cmp = da < db ? -1 : (da > db ? 1 : 0);
+    return dir * cmp;
+  });
+}
+
 export const semanticSearchTool = {
   name: 'bundestag_semantic_search',
   description: `Semantic search across all Bundestag documents using AI embeddings.
 Finds conceptually related documents even with different terminology.
 Example: Searching "renewable energy" will find documents about "Energiewende", "Solarenergie", etc.
 Use this for exploratory searches when you don't know exact terms.
+Sortierung: pass sort:"newest" for the most recent matches (optionally with dateFrom/dateTo for a window); default is relevance.
 Falls back gracefully if vector search is unavailable.`,
 
   inputSchema: {
@@ -54,17 +88,18 @@ Falls back gracefully if vector search is unavailable.`,
     wahlperiode: z.number().int().min(1).max(30).optional()
       .describe('Filter by electoral period (Wahlperiode)'),
     sachgebiet: z.string().optional()
-      .describe('Filter by subject area (Sachgebiet), e.g., "Arbeit und Beschäftigung", "Umwelt"'),
+      .describe('Filter by subject area (Sachgebiet), e.g., "Arbeit und Beschäftigung", "Umwelt". Open value set — call bundestag_get_filters for examples.'),
     initiative: z.string().optional()
-      .describe('Filter by initiating faction, e.g., "CDU/CSU", "SPD", "Bundesregierung"'),
+      .describe('Filter by initiating faction/body — LONG official names, e.g., "Bundesregierung", "CDU/CSU", "BÜNDNIS 90/DIE GRÜNEN".'),
     fraktion: z.string().optional()
-      .describe('Filter by parliamentary group (Fraktion)'),
+      .describe('Filter by parliamentary group (Fraktion) — LONG official names, e.g., "BÜNDNIS 90/DIE GRÜNEN", "CDU/CSU", "DIE LINKE". Note: the speeches collection (bundestag_search_speeches → speakerParty) uses SHORT names instead (e.g. "GRÜNE"). Call bundestag_get_filters for the full list.'),
     dateFrom: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional()
       .describe('Filter from date (YYYY-MM-DD)'),
     dateTo: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional()
       .describe('Filter to date (YYYY-MM-DD)'),
     scoreThreshold: z.number().min(0).max(1).default(0.3)
-      .describe('Minimum similarity score (0-1, higher = more similar)')
+      .describe('Minimum similarity score (0-1, higher = more similar)'),
+    sort: sortSchema
   },
 
   async handler(params) {
@@ -106,11 +141,15 @@ Falls back gracefully if vector search is unavailable.`,
         dateTo: params.dateTo
       });
 
-      const results = await qdrant.search(queryVector, {
-        limit: params.limit,
+      const sort = params.sort || 'relevance';
+      const rawResults = await qdrant.search(queryVector, {
+        limit: resolveFetchLimit(params.limit, sort),
         filter,
         scoreThreshold: params.scoreThreshold
       });
+
+      const results = sortResultsByDate(rawResults, sort, r => r.payload.date)
+        .slice(0, params.limit);
 
       return {
         success: true,
@@ -125,7 +164,8 @@ Falls back gracefully if vector search is unavailable.`,
           fraktion: params.fraktion || 'all',
           dateRange: params.dateFrom || params.dateTo
             ? `${params.dateFrom || '*'} to ${params.dateTo || '*'}`
-            : 'all'
+            : 'all',
+          sort
         },
         totalResults: results.length,
         results: results.map(r => ({
@@ -227,6 +267,7 @@ Searches through chunked Plenarprotokolle to find specific statements, arguments
 Example: "Was sagt die CDU zur Schuldenbremse?" or "Argumente gegen das Heizungsgesetz"
 Use this to find what specific politicians or parties said about topics.
 For an exact quote/wording (not concept matching), use bundestag_search_plenarprotokolle_text instead.
+Sortierung: pass sort:"newest" for the most recent speeches (optionally with dateFrom/dateTo for a window); default is relevance.
 Requires QDRANT_ENABLED=true and protocol indexing to have been run.
 
 Enhanced filters available for speech types:
@@ -242,7 +283,7 @@ Enhanced filters available for speech types:
     speaker: z.string().optional()
       .describe('Filter by speaker name, e.g., "Friedrich Merz", "Olaf Scholz"'),
     speakerParty: z.string().optional()
-      .describe('Filter by party/faction, e.g., "CDU/CSU", "SPD", "BÜNDNIS 90/DIE GRÜNEN"'),
+      .describe('Filter by party — SHORT names as stored in the speeches collection: "CDU/CSU", "SPD", "GRÜNE" (NOT "BÜNDNIS 90/DIE GRÜNEN"), "AfD", "DIE LINKE", "FDP", "BSW". This differs from the DIP/semantic_search fraktion filter, which uses the LONG names. Call bundestag_get_filters for the full list.'),
     speakerState: z.string().optional()
       .describe('Filter by state (for Bundesrat), e.g., "Bayern", "Baden-Württemberg"'),
     top: z.string().optional()
@@ -276,6 +317,7 @@ Enhanced filters available for speech types:
       .describe('Keywords that MUST appear in the text (hard filter, applied post-search)'),
     excludeKeywords: z.array(z.string()).optional()
       .describe('Keywords that must NOT appear in the text (exclusion filter)'),
+    sort: sortSchema,
     fields: fieldsSchema
   },
 
@@ -337,11 +379,13 @@ Enhanced filters available for speech types:
 
       let results;
       const searchMode = params.searchMode || 'hybrid';
+      const sort = params.sort || 'relevance';
+      const fetchLimit = resolveFetchLimit(params.limit, sort);
 
       if (searchMode === 'hybrid') {
         // Use hybrid search with keyword boosting
         results = await qdrant.hybridSearchProtocolChunks(queryVector, {
-          limit: params.limit,
+          limit: fetchLimit,
           filter,
           scoreThreshold: params.scoreThreshold,
           keywords: allKeywords,
@@ -351,7 +395,7 @@ Enhanced filters available for speech types:
       } else {
         // Pure semantic search
         results = await qdrant.searchProtocolChunks(queryVector, {
-          limit: params.limit,
+          limit: fetchLimit,
           filter,
           scoreThreshold: params.scoreThreshold
         });
@@ -364,6 +408,10 @@ Enhanced filters available for speech types:
           return params.requiredKeywords.every(kw => text.includes(kw.toLowerCase()));
         });
       }
+
+      // Final ordering: apply the date re-sort AFTER hybrid scoring + keyword
+      // filtering, then slice to the user's limit.
+      results = sortResultsByDate(results, sort, r => r.payload.datum).slice(0, params.limit);
 
       const useFull = params.fields === 'full';
       const mappedResults = results.map(r => {
@@ -416,7 +464,8 @@ Enhanced filters available for speech types:
           // Enhanced filters
           speechType: params.speechType || params.speechTypes?.join(',') || 'all',
           isGovernment: params.isGovernment !== undefined ? params.isGovernment : 'all',
-          category: params.category || 'all'
+          category: params.category || 'all',
+          sort
         },
         // Hybrid search info
         hybridParams: searchMode === 'hybrid' ? {
@@ -576,6 +625,7 @@ Searches through chunked Drucksachen to find specific paragraphs, questions, or 
 Example: "Regelungen zur Energiewende" or "Fragen zur Migrationspolitik"
 Use this to find specific sections within parliamentary documents.
 For an exact phrase/legal reference (not concept matching), use bundestag_search_drucksachen_text instead.
+Sortierung: pass sort:"newest" for the most recent sections (optionally with dateFrom/dateTo for a window); default is relevance.
 Requires QDRANT_ENABLED=true and document indexing to have been run.`,
 
   inputSchema: {
@@ -599,13 +649,14 @@ Requires QDRANT_ENABLED=true and document indexing to have been run.`,
     wahlperiode: z.number().int().min(1).max(30).optional()
       .describe('Filter by electoral period (Wahlperiode)'),
     urheber: z.string().optional()
-      .describe('Filter by author/initiator, e.g., "Bundesregierung", "CDU/CSU"'),
+      .describe('Filter by author/initiator — LONG official names, e.g., "Bundesregierung", "CDU/CSU", "BÜNDNIS 90/DIE GRÜNEN". Open set — call bundestag_get_filters for examples.'),
     dateFrom: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional()
       .describe('Filter from date (YYYY-MM-DD)'),
     dateTo: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional()
       .describe('Filter to date (YYYY-MM-DD)'),
     scoreThreshold: z.number().min(0).max(1).default(0.3)
       .describe('Minimum similarity score (0-1, higher = more similar)'),
+    sort: sortSchema,
     fields: fieldsSchema
   },
 
@@ -646,11 +697,15 @@ Requires QDRANT_ENABLED=true and document indexing to have been run.`,
         dateTo: params.dateTo
       });
 
-      const results = await qdrant.searchDocumentChunks(queryVector, {
-        limit: params.limit,
+      const sort = params.sort || 'relevance';
+      const rawResults = await qdrant.searchDocumentChunks(queryVector, {
+        limit: resolveFetchLimit(params.limit, sort),
         filter,
         scoreThreshold: params.scoreThreshold
       });
+
+      const results = sortResultsByDate(rawResults, sort, r => r.payload.datum)
+        .slice(0, params.limit);
 
       const useFull = params.fields === 'full';
       const mappedResults = results.map(r => {
@@ -686,7 +741,8 @@ Requires QDRANT_ENABLED=true and document indexing to have been run.`,
           urheber: params.urheber || 'all',
           dateRange: params.dateFrom || params.dateTo
             ? `${params.dateFrom || '*'} to ${params.dateTo || '*'}`
-            : 'all'
+            : 'all',
+          sort
         },
         totalResults: mappedResults.length,
         fields: useFull ? 'full' : 'compact',
