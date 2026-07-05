@@ -16,7 +16,7 @@ import { debug } from '../utils/logger.js';
 const nameSchema = z.string().min(2)
   .describe('Full name of the MP, e.g. "Robert Habeck" (fuzzy CONTAINS match)');
 
-const politicianIdSchema = z.number().int().positive()
+const politicianIdSchema = z.coerce.number().int().positive()
   .describe('Abgeordnetenwatch politician ID (from abgeordnetenwatch_search_politicians)');
 
 const limitSchema = z.number().int().min(1).max(50).default(15)
@@ -139,7 +139,7 @@ export const searchPollsTool = {
 Returns poll id, label, date, accepted/rejected and a short intro. Feed a poll id into abgeordnetenwatch_poll_tally for the per-faction result. Germany only.`,
   inputSchema: {
     keyword: z.string().optional().describe('Search the poll label, e.g. "Heizungsgesetz"'),
-    topicId: z.number().int().positive().optional().describe('Abgeordnetenwatch policy-area topic id'),
+    topicId: z.coerce.number().int().positive().optional().describe('Abgeordnetenwatch policy-area topic id'),
     limit: z.number().int().min(1).max(30).default(8).describe('Max polls')
   },
   async handler(params) {
@@ -160,7 +160,7 @@ export const pollTallyTool = {
   description: `Aggregated result of a named Bundestag vote (Abstimmung): total yes/no/abstain/no_show plus a per-faction breakdown.
 Pass a poll id from abgeordnetenwatch_search_polls. The tally is computed over all cast votes. State whether the motion was accepted and cite the source. Germany only.`,
   inputSchema: {
-    pollId: z.number().int().positive().describe('Abgeordnetenwatch poll id')
+    pollId: z.coerce.number().int().positive().describe('Abgeordnetenwatch poll id')
   },
   async handler(params) {
     try {
@@ -178,7 +178,7 @@ export const politicianProfileTool = {
 Give \`name\`, OR \`bundestagPersonId\` (a DIP person id from bundestag_get_person / bundestag_search_personen) to bridge the official record to the transparency layer — the two systems share NO id, so this joins them by NAME. Watch the \`notes\` for ambiguous matches and confirm identity before attributing votes. Explain income levels 1–10; cite the source. Germany only.`,
   inputSchema: {
     name: nameSchema.optional(),
-    bundestagPersonId: z.number().int().positive().optional()
+    bundestagPersonId: z.coerce.number().int().positive().optional()
       .describe('DIP person id to bridge from the official record (joined by name)'),
     voteLimit: z.number().int().min(1).max(30).default(10).describe('Max recent votes'),
     sidejobLimit: z.number().int().min(1).max(30).default(10).describe('Max side-jobs')
