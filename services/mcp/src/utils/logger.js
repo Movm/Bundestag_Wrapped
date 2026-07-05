@@ -37,6 +37,20 @@ function getTimestamp() {
 }
 
 /**
+ * Render an error with its underlying cause code appended.
+ * Node's fetch reports transport failures as the generic "fetch failed" while
+ * the actionable detail hides in `err.cause.code` (e.g. UND_ERR_INVALID_ARG,
+ * ECONNREFUSED). Always log via this so the real failure is visible.
+ * @param {unknown} err
+ * @returns {string}
+ */
+export function errDetail(err) {
+  if (!err) return 'unknown error';
+  const code = err.cause?.code || err.code;
+  return code ? `${err.message} [${code}]` : err.message;
+}
+
+/**
  * Log at DEBUG level
  */
 export function debug(category, message, data = null) {
