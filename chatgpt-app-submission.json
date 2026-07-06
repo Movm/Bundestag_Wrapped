@@ -1,0 +1,536 @@
+{
+  "$schema": "https://developers.openai.com/apps-sdk/schemas/chatgpt-app-submission.v1.json",
+  "schema_version": 1,
+  "app_info": {
+    "display_name": "Bundestag Wrapped",
+    "subtitle": "Research parliament data",
+    "description": "Bundestag Wrapped helps users research German Bundestag documents, proceedings, plenary speeches, MP profiles, roll-call votes, and parliamentary rhetoric from official public data and Abgeordnetenwatch transparency data. Live app: https://bundestag-wrapped.de. Source code: https://github.com/Movm/Bundestag_Wrapped.",
+    "category": "NEWS"
+  },
+  "tools": {
+    "bundestag_search_drucksachen": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only searches public Bundestag printed-document metadata and returns matching records.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_get_drucksache": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves one public Bundestag printed document and optional text by ID.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_search_drucksachen_text": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves public printed-document text scoped by document ID or metadata filters.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_search_plenarprotokolle": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only searches public Bundestag plenary transcript metadata.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_get_plenarprotokoll": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves one public plenary transcript and optional full text by ID.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_search_plenarprotokolle_text": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves public plenary transcript text scoped by transcript ID or metadata filters.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_search_vorgaenge": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only searches public Bundestag proceeding metadata and lifecycle records.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_get_vorgang": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves one public Bundestag proceeding and its related data by ID.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_search_vorgangspositionen": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only searches public proceeding-step records from the Bundestag data source.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_search_personen": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only searches public Bundestag person metadata such as MPs and ministers.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_get_person": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves one public Bundestag person record by ID.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_search_aktivitaeten": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only searches public parliamentary activity records such as speeches and questions.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_get_aktivitaet": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves one public parliamentary activity record by ID.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_cache_stats": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only reports in-memory cache statistics from the MCP server.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_estimate_size": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only fetches public document text to estimate size and context impact.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_semantic_search": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only computes an embedding and searches the server's read-only vector index of public parliamentary records.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_semantic_search_status": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only reports semantic search service and index status.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_search_speeches": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only searches the read-only speech vector index and returns matching public speech snippets or text.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_protocol_search_status": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only reports protocol index availability and indexing statistics.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_search_document_sections": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only searches the read-only document-section vector index of public Bundestag documents.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_document_search_status": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only reports document-section index availability and indexing statistics.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_extract_speeches": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only parses supplied text or a public transcript into speech records.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_analyze_text": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only computes NLP statistics for supplied German text.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_analyze_tone": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only computes tone metrics for supplied German text.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_classify_topics": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only classifies supplied German text against local policy-topic lexicons.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_analysis_health": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only checks whether the analysis service is reachable and configured.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_speaker_profile": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only computes a profile from supplied public speech records.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_compare_parties": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only computes comparative statistics from supplied public speech records.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_count": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only counts matching public Bundestag records and returns aggregate totals.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_vorgang_timeline": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only composes public proceeding and proceeding-position records into a lifecycle digest.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "abgeordnetenwatch_search_politicians": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only searches public Abgeordnetenwatch politician profiles.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "abgeordnetenwatch_voting_record": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves public roll-call voting data for an MP or topic.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "abgeordnetenwatch_sidejobs": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only retrieves public declared side-job and income-level transparency data.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "abgeordnetenwatch_search_polls": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only searches public Abgeordnetenwatch roll-call vote records.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "abgeordnetenwatch_poll_tally": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only computes a tally from public Abgeordnetenwatch roll-call vote data.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "abgeordnetenwatch_politician_profile": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only combines public Abgeordnetenwatch profile, vote, and side-job data for one MP.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "bundestag_get_filters": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only returns a static catalog of accepted filter fields and values.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    },
+    "get_client_config": {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false,
+        "destructiveHint": false
+      },
+      "justifications": {
+        "read_only_justification": "Only generates local client configuration text for connecting to this MCP server.",
+        "open_world_justification": "Does not create, publish, submit, or modify any public internet state.",
+        "destructive_justification": "Does not delete, overwrite, revoke, or perform irreversible actions."
+      }
+    }
+  },
+  "test_cases": [
+    {
+      "description": "Find recent Bundestag material on a public policy topic.",
+      "user_prompt": "Was hat der Bundestag in Wahlperiode 21 zur Gebaeudesanierung gemacht? Bitte finde relevante Vorgänge und Dokumente.",
+      "file_attachment_urls": null,
+      "tools_triggered": "bundestag_semantic_search, bundestag_search_vorgaenge, bundestag_get_vorgang",
+      "expected_output": "Returns relevant public proceedings and documents with dates, titles, IDs, and enough context to cite the Bundestag source.",
+      "expected_output_url": "https://bundestag-wrapped.de"
+    },
+    {
+      "description": "Research what parties said in speeches about a topic.",
+      "user_prompt": "Vergleiche, wie CDU/CSU, SPD und GRÜNE in Bundestagsreden über die Schuldenbremse gesprochen haben.",
+      "file_attachment_urls": null,
+      "tools_triggered": "bundestag_get_filters, bundestag_search_speeches, bundestag_compare_parties",
+      "expected_output": "Returns speech-based party comparisons with neutral summaries, topic context, and caveats about indexed coverage.",
+      "expected_output_url": "https://github.com/Movm/Bundestag_Wrapped"
+    },
+    {
+      "description": "Inspect a legislative proceeding lifecycle.",
+      "user_prompt": "Erstelle mir eine Timeline zum Vorgang 308701 und nenne wichtige Dokumente und Beschluesse.",
+      "file_attachment_urls": null,
+      "tools_triggered": "bundestag_vorgang_timeline",
+      "expected_output": "Returns a chronological lifecycle digest with proceeding steps, decisions, linked documents, and available source URLs.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Look up public MP transparency data.",
+      "user_prompt": "Welche Nebentätigkeiten und letzten namentlichen Abstimmungen sind fuer Robert Habeck bei Abgeordnetenwatch dokumentiert?",
+      "file_attachment_urls": null,
+      "tools_triggered": "abgeordnetenwatch_politician_profile",
+      "expected_output": "Returns public profile, recent votes, declared side-jobs, income levels without invented euro amounts, and source links.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Analyze rhetoric from retrieved speeches.",
+      "user_prompt": "Analysiere den Ton von Friedrich Merz in Bundestagsreden zur Migration.",
+      "file_attachment_urls": null,
+      "tools_triggered": "bundestag_search_speeches, bundestag_speaker_profile",
+      "expected_output": "Returns a speaker profile based on complete retrieved speech text, including speech counts, vocabulary, tone, and topic scores.",
+      "expected_output_url": null
+    }
+  ],
+  "negative_test_cases": [
+    {
+      "description": "Do not trigger for private legal advice.",
+      "user_prompt": "Schreibe mir eine verbindliche Rechtsberatung fuer meine Klage gegen den Bundestag.",
+      "file_attachment_urls": null,
+      "tools_triggered": null,
+      "expected_output": "The app should not be invoked because the request asks for legal advice rather than public parliamentary research.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Do not trigger for private citizen or voter lookup.",
+      "user_prompt": "Finde heraus, wen meine Nachbarin bei der Bundestagswahl gewählt hat.",
+      "file_attachment_urls": null,
+      "tools_triggered": null,
+      "expected_output": "The app should not be invoked because private voting behavior is outside the public parliamentary datasets.",
+      "expected_output_url": null
+    },
+    {
+      "description": "Do not trigger for unrelated travel planning.",
+      "user_prompt": "Plane mir ein Wochenende in Berlin mit Restaurants und Hotels.",
+      "file_attachment_urls": null,
+      "tools_triggered": null,
+      "expected_output": "The app should not be invoked because travel planning is outside the app's Bundestag research workflows.",
+      "expected_output_url": null
+    }
+  ]
+}
