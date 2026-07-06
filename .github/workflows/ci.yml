@@ -98,13 +98,13 @@ jobs:
       # (corepack), a stale hardcoded path (python3.<minor>/site-packages), a
       # Dockerfile syntax error — all of which otherwise only fail at deploy,
       # leaving main un-deployable.
-      - uses: docker/setup-buildx-action@v3
+      - uses: docker/setup-buildx-action@v4
 
       # A plain `docker build` on a fresh runner has NO cross-run cache, so the
       # analysis image would re-download the 610 MB spaCy model every run. The gha
       # cache backend persists layers between runs (per-image scope so they don't
       # collide); only a changed layer rebuilds.
-      - uses: docker/build-push-action@v6
+      - uses: docker/build-push-action@v7
         with:
           context: ${{ matrix.context }}
           file: ${{ matrix.file }}
