@@ -136,7 +136,11 @@
     "question": "Welches Wort nutzt Christopher Drößler häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Wirtschaft",
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
@@ -144,11 +148,7 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
@@ -159,7 +159,7 @@
     "question": "Welches Adjektiv nutzt Christopher Drößler häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Stark",
+        "text": "Jung",
         "isCorrect": false
       },
       {
@@ -167,12 +167,12 @@
         "isCorrect": false
       },
       {
-        "text": "Effektiv",
-        "isCorrect": true
+        "text": "Gefährlich",
+        "isCorrect": false
       },
       {
-        "text": "Gut",
-        "isCorrect": false
+        "text": "Effektiv",
+        "isCorrect": true
       }
     ],
     "explanationParty": "\"Effektiv\" nutzt Christopher Drößler 22.7× häufiger als der AfD-Durchschnitt.",
@@ -207,7 +207,7 @@
       "migration": 6.14,
       "klima": 0.31,
       "wirtschaft": 0.0,
-      "soziales": 0.61,
+      "soziales": 0.92,
       "sicherheit": 13.52,
       "gesundheit": 0.0,
       "europa": 1.54,
@@ -275,6 +275,10 @@
         }
       ],
       "soziales": [
+        {
+          "word": "gerechtigkeit",
+          "count": 1
+        },
         {
           "word": "sozialstaat",
           "count": 1

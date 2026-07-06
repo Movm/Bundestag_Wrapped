@@ -163,7 +163,7 @@
     "question": "Welches Wort nutzt Jens Spahn häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kanzler",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
@@ -171,12 +171,12 @@
         "isCorrect": false
       },
       {
-        "text": "Schutzmacht",
-        "isCorrect": true
+        "text": "Rente",
+        "isCorrect": false
       },
       {
-        "text": "Migration",
-        "isCorrect": false
+        "text": "Schutzmacht",
+        "isCorrect": true
       }
     ],
     "explanationParty": "\"Schutzmacht\" nutzt Jens Spahn 508.9× häufiger als der CDU/CSU-Durchschnitt.",
@@ -186,19 +186,19 @@
     "question": "Welches Adjektiv nutzt Jens Spahn häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
         "text": "Schwach",
         "isCorrect": true
       },
       {
-        "text": "Falsch",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
         "isCorrect": false
       }
     ],
@@ -258,7 +258,7 @@
       "migration": 1.86,
       "klima": 1.03,
       "wirtschaft": 9.08,
-      "soziales": 3.37,
+      "soziales": 4.13,
       "sicherheit": 3.78,
       "gesundheit": 1.38,
       "europa": 17.95,
@@ -286,13 +286,13 @@
         "rank": 3
       },
       {
-        "topic": "sicherheit",
-        "score": 3.78,
+        "topic": "soziales",
+        "score": 4.13,
         "rank": 4
       },
       {
-        "topic": "soziales",
-        "score": 3.37,
+        "topic": "sicherheit",
+        "score": 3.78,
         "rank": 5
       }
     ],
@@ -365,6 +365,10 @@
       ],
       "soziales": [
         {
+          "word": "gerechtigkeit",
+          "count": 11
+        },
+        {
           "word": "rente",
           "count": 8
         },
@@ -378,10 +382,6 @@
         },
         {
           "word": "sozialstaat",
-          "count": 4
-        },
-        {
-          "word": "renten",
           "count": 4
         }
       ],

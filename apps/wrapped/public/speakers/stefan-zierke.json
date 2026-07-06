@@ -111,19 +111,19 @@
     "question": "Welches Wort nutzt Stefan Zierke häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
         "text": "Ostdeutsche",
         "isCorrect": true
       },
       {
-        "text": "Bildung",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Rente",
         "isCorrect": false
       }
     ],
@@ -184,7 +184,7 @@
       "migration": 1.48,
       "klima": 0.0,
       "wirtschaft": 2.96,
-      "soziales": 1.48,
+      "soziales": 2.96,
       "sicherheit": 0.0,
       "gesundheit": 0.0,
       "europa": 0.0,
@@ -207,18 +207,18 @@
         "rank": 2
       },
       {
-        "topic": "bildung",
+        "topic": "soziales",
         "score": 2.96,
         "rank": 3
       },
       {
-        "topic": "finanzen",
+        "topic": "bildung",
         "score": 2.96,
         "rank": 4
       },
       {
-        "topic": "migration",
-        "score": 1.48,
+        "topic": "finanzen",
+        "score": 2.96,
         "rank": 5
       }
     ],
@@ -240,6 +240,10 @@
         }
       ],
       "soziales": [
+        {
+          "word": "gerechtigkeit",
+          "count": 1
+        },
         {
           "word": "jugend",
           "count": 1

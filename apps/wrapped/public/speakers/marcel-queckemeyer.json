@@ -147,20 +147,20 @@
     "question": "Welches Wort nutzt Marcel Queckemeyer häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
         "text": "Artenvielfalt",
         "isCorrect": true
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Artenvielfalt\" nutzt Marcel Queckemeyer 1099.8× häufiger als der AfD-Durchschnitt.",
@@ -170,20 +170,20 @@
     "question": "Welches Adjektiv nutzt Marcel Queckemeyer häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Wichtig",
+        "text": "National",
         "isCorrect": false
       },
       {
-        "text": "Nachhaltig",
-        "isCorrect": true
+        "text": "Stark",
+        "isCorrect": false
       },
       {
         "text": "Sicher",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
-        "isCorrect": false
+        "text": "Nachhaltig",
+        "isCorrect": true
       }
     ],
     "explanationParty": "\"Nachhaltig\" nutzt Marcel Queckemeyer 25.1× häufiger als der AfD-Durchschnitt.",
@@ -218,7 +218,7 @@
       "migration": 0.0,
       "klima": 25.72,
       "wirtschaft": 2.74,
-      "soziales": 1.71,
+      "soziales": 3.09,
       "sicherheit": 1.37,
       "gesundheit": 0.34,
       "europa": 0.69,
@@ -246,13 +246,13 @@
         "rank": 3
       },
       {
-        "topic": "wirtschaft",
-        "score": 2.74,
+        "topic": "soziales",
+        "score": 3.09,
         "rank": 4
       },
       {
-        "topic": "mobilitaet",
-        "score": 2.06,
+        "topic": "wirtschaft",
+        "score": 2.74,
         "rank": 5
       }
     ],
@@ -303,6 +303,10 @@
       ],
       "soziales": [
         {
+          "word": "gerechtigkeit",
+          "count": 4
+        },
+        {
           "word": "familien",
           "count": 1
         },
@@ -316,10 +320,6 @@
         },
         {
           "word": "kinder",
-          "count": 1
-        },
-        {
-          "word": "familie",
           "count": 1
         }
       ],

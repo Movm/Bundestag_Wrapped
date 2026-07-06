@@ -111,19 +111,19 @@
     "question": "Welches Wort nutzt Erhard Brucker häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
         "text": "Luftverkehrsteuer",
         "isCorrect": true
       },
       {
         "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Rente",
         "isCorrect": false
       }
     ],
@@ -160,7 +160,7 @@
       "migration": 0.0,
       "klima": 1.2,
       "wirtschaft": 14.41,
-      "soziales": 0.0,
+      "soziales": 1.2,
       "sicherheit": 1.2,
       "gesundheit": 0.0,
       "europa": 0.0,
@@ -224,6 +224,12 @@
         },
         {
           "word": "markt",
+          "count": 1
+        }
+      ],
+      "soziales": [
+        {
+          "word": "chancengleichheit",
           "count": 1
         }
       ],

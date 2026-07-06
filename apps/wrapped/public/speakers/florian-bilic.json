@@ -112,20 +112,20 @@
     "question": "Welches Wort nutzt Florian Bilic häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Steuern",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
+        "text": "Rente",
         "isCorrect": false
       },
       {
         "text": "Pirmasens",
         "isCorrect": true
+      },
+      {
+        "text": "Gesetz",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Pirmasens\" nutzt Florian Bilic 3473.6× häufiger als der CDU/CSU-Durchschnitt.",
@@ -135,19 +135,19 @@
     "question": "Welches Adjektiv nutzt Florian Bilic häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
         "text": "Gerecht",
         "isCorrect": true
       },
       {
-        "text": "Groß",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
@@ -207,7 +207,7 @@
       "migration": 2.65,
       "klima": 0.53,
       "wirtschaft": 7.94,
-      "soziales": 16.41,
+      "soziales": 20.12,
       "sicherheit": 0.0,
       "gesundheit": 0.53,
       "europa": 1.06,
@@ -221,7 +221,7 @@
     "topTopics": [
       {
         "topic": "soziales",
-        "score": 16.41,
+        "score": 20.12,
         "rank": 1
       },
       {
@@ -294,6 +294,10 @@
       ],
       "soziales": [
         {
+          "word": "gerechtigkeit",
+          "count": 6
+        },
+        {
           "word": "sozialstaat",
           "count": 5
         },
@@ -308,10 +312,6 @@
         {
           "word": "familie",
           "count": 4
-        },
-        {
-          "word": "renten",
-          "count": 2
         }
       ],
       "gesundheit": [
