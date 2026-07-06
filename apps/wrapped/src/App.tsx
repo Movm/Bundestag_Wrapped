@@ -11,6 +11,7 @@ import { SpeakerWrappedPage } from '@/components/SpeakerWrappedPage';
 
 // Lazy-loaded routes for smaller initial bundle
 const DatenschutzPage = lazy(() => import('@/components/DatenschutzPage').then(m => ({ default: m.DatenschutzPage })));
+const TermsPage = lazy(() => import('@/components/TermsPage').then(m => ({ default: m.TermsPage })));
 const DokumentationPage = lazy(() => import('@/components/DokumentationPage').then(m => ({ default: m.DokumentationPage })));
 const McpPage = lazy(() => import('@/components/McpPage').then(m => ({ default: m.McpPage })));
 const McpTechnikPage = lazy(() => import('@/components/McpTechnikPage').then(m => ({ default: m.McpTechnikPage })));
@@ -82,6 +83,7 @@ export default function App() {
           {/* Light theme routes */}
           <Route element={<LightLayout />}>
             <Route path="/datenschutz" element={<DatenschutzPage />} />
+            <Route path="/terms" element={<TermsPage />} />
             <Route path="/dokumentation" element={<DokumentationPage />} />
             <Route path="/mcp" element={<McpPage />} />
             <Route path="/mcp/technik" element={<McpTechnikPage />} />

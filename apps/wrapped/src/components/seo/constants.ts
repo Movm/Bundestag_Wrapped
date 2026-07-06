@@ -27,6 +27,11 @@ export const PAGE_META = {
     description:
       'Datenschutzerklarung fur Bundestag Wrapped 2025. Keine Cookies, kein Tracking, keine Datenerhebung.',
   },
+  terms: {
+    title: 'Nutzungsbedingungen',
+    description:
+      'Nutzungsbedingungen fur Bundestag Wrapped 2025: Hinweise zu Datenquellen, Nutzung, MCP-Server, Lizenzen und Haftung.',
+  },
   mcp: {
     title: 'MCP-Server',
     description:
