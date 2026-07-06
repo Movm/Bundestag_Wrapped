@@ -14,6 +14,7 @@ const STATIC_PAGES = [
   { path: '/mcp', priority: '0.6', changefreq: 'monthly' },
   { path: '/mcp/technik', priority: '0.4', changefreq: 'monthly' },
   { path: '/datenschutz', priority: '0.3', changefreq: 'yearly' },
+  { path: '/terms', priority: '0.3', changefreq: 'yearly' },
 ];
 
 function readJson(file) {

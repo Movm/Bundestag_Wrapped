@@ -21,6 +21,7 @@ const NAV_ITEMS: NavItem[] = [
 
 const FOOTER_LINKS: NavItem[] = [
   { href: '/datenschutz', label: 'Datenschutz', icon: <Shield size={14} /> },
+  { href: '/terms', label: 'Nutzungsbedingungen', icon: <FileText size={14} /> },
   {
     href: 'https://www.moritz-waechter.de/impressum',
     label: 'Impressum',
