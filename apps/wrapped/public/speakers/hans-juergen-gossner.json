@@ -132,20 +132,20 @@
     "question": "Welches Wort nutzt Hans-Jürgen Goßner häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Familie",
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
         "text": "Schwarzarbeit",
         "isCorrect": true
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Schwarzarbeit\" nutzt Hans-Jürgen Goßner 61.2× häufiger als der AfD-Durchschnitt.",
@@ -155,20 +155,20 @@
     "question": "Welches Adjektiv nutzt Hans-Jürgen Goßner häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Stark",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
         "text": "Ideologisch",
         "isCorrect": true
-      },
-      {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Sozial",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Ideologisch\" nutzt Hans-Jürgen Goßner 7.0× häufiger als der AfD-Durchschnitt.",
@@ -203,7 +203,7 @@
       "migration": 1.43,
       "klima": 1.15,
       "wirtschaft": 10.61,
-      "soziales": 2.87,
+      "soziales": 3.73,
       "sicherheit": 2.58,
       "gesundheit": 1.15,
       "europa": 0.57,
@@ -231,13 +231,13 @@
         "rank": 3
       },
       {
-        "topic": "justiz",
-        "score": 3.44,
+        "topic": "soziales",
+        "score": 3.73,
         "rank": 4
       },
       {
-        "topic": "soziales",
-        "score": 2.87,
+        "topic": "justiz",
+        "score": 3.44,
         "rank": 5
       }
     ],
@@ -290,6 +290,10 @@
       ],
       "soziales": [
         {
+          "word": "gerechtigkeit",
+          "count": 2
+        },
+        {
           "word": "jugend",
           "count": 2
         },
@@ -303,10 +307,6 @@
         },
         {
           "word": "armut",
-          "count": 1
-        },
-        {
-          "word": "familie",
           "count": 1
         }
       ],

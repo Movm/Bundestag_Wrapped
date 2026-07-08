@@ -155,19 +155,19 @@
     "question": "Welches Wort nutzt Frauke Heiligenstadt häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
         "text": "Steuergerechtigkeit",
         "isCorrect": true
       },
       {
-        "text": "Klima",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Europa",
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
@@ -178,15 +178,15 @@
     "question": "Welches Adjektiv nutzt Frauke Heiligenstadt häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Gefährlich",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Groß",
+        "text": "Klar",
         "isCorrect": false
       },
       {
@@ -250,7 +250,7 @@
       "migration": 0.45,
       "klima": 1.46,
       "wirtschaft": 13.17,
-      "soziales": 3.6,
+      "soziales": 4.61,
       "sicherheit": 1.13,
       "gesundheit": 0.23,
       "europa": 0.79,
@@ -279,7 +279,7 @@
       },
       {
         "topic": "soziales",
-        "score": 3.6,
+        "score": 4.61,
         "rank": 4
       },
       {
@@ -353,6 +353,10 @@
       ],
       "soziales": [
         {
+          "word": "gerechtigkeit",
+          "count": 9
+        },
+        {
           "word": "altersvorsorge",
           "count": 8
         },
@@ -366,10 +370,6 @@
         },
         {
           "word": "familien",
-          "count": 2
-        },
-        {
-          "word": "betriebsrente",
           "count": 2
         }
       ],

@@ -129,11 +129,7 @@
     "question": "Welches Wort nutzt Serap Güler häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
+        "text": "Sicherheit",
         "isCorrect": false
       },
       {
@@ -141,7 +137,11 @@
         "isCorrect": true
       },
       {
-        "text": "Antrag",
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
@@ -202,7 +202,7 @@
       "migration": 0.68,
       "klima": 0.0,
       "wirtschaft": 0.0,
-      "soziales": 0.68,
+      "soziales": 1.36,
       "sicherheit": 4.07,
       "gesundheit": 2.03,
       "europa": 31.84,
@@ -235,8 +235,8 @@
         "rank": 4
       },
       {
-        "topic": "migration",
-        "score": 0.68,
+        "topic": "soziales",
+        "score": 1.36,
         "rank": 5
       }
     ],
@@ -248,6 +248,10 @@
         }
       ],
       "soziales": [
+        {
+          "word": "gerechtigkeit",
+          "count": 1
+        },
         {
           "word": "kinder",
           "count": 1

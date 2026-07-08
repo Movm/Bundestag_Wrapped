@@ -131,19 +131,19 @@
     "question": "Welches Wort nutzt Axel Müller häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
         "text": "Strafantrag",
         "isCorrect": true
       },
       {
-        "text": "Wirtschaft",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
@@ -154,19 +154,19 @@
     "question": "Welches Adjektiv nutzt Axel Müller häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
         "text": "Gerecht",
         "isCorrect": true
       },
       {
-        "text": "Richtig",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
         "isCorrect": false
       }
     ],
@@ -226,7 +226,7 @@
       "migration": 0.45,
       "klima": 0.0,
       "wirtschaft": 0.61,
-      "soziales": 0.91,
+      "soziales": 1.36,
       "sicherheit": 3.33,
       "gesundheit": 3.18,
       "europa": 1.51,
@@ -299,6 +299,10 @@
       ],
       "soziales": [
         {
+          "word": "gerechtigkeit",
+          "count": 3
+        },
+        {
           "word": "jugend",
           "count": 2
         },
@@ -312,10 +316,6 @@
         },
         {
           "word": "behinderung",
-          "count": 1
-        },
-        {
-          "word": "wohnung",
           "count": 1
         }
       ],

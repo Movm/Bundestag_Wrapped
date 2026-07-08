@@ -131,20 +131,20 @@
     "question": "Welches Wort nutzt Dr. Alaa Alhamwi häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
         "text": "Quatschantrag",
         "isCorrect": true
+      },
+      {
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Quatschantrag\" nutzt Dr. Alaa Alhamwi 1069.4× häufiger als der GRÜNE-Durchschnitt.",
@@ -154,7 +154,11 @@
     "question": "Welches Adjektiv nutzt Dr. Alaa Alhamwi häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Neu",
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
@@ -162,11 +166,7 @@
         "isCorrect": true
       },
       {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
+        "text": "Neu",
         "isCorrect": false
       }
     ],
@@ -226,7 +226,7 @@
       "migration": 0.26,
       "klima": 23.29,
       "wirtschaft": 3.88,
-      "soziales": 1.29,
+      "soziales": 1.81,
       "sicherheit": 0.0,
       "gesundheit": 0.0,
       "europa": 3.62,
@@ -259,7 +259,7 @@
         "rank": 4
       },
       {
-        "topic": "digital",
+        "topic": "soziales",
         "score": 1.81,
         "rank": 5
       }
@@ -316,6 +316,10 @@
         }
       ],
       "soziales": [
+        {
+          "word": "gerechtigkeit",
+          "count": 2
+        },
         {
           "word": "miete",
           "count": 2

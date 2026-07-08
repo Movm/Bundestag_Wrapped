@@ -130,20 +130,20 @@
     "question": "Welches Wort nutzt Peter Beyer häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Reform",
+        "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
-        "isCorrect": false
+        "text": "Repräsentanten",
+        "isCorrect": true
       },
       {
         "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Repräsentanten",
-        "isCorrect": true
+        "text": "Koalition",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Repräsentanten\" nutzt Peter Beyer 275.4× häufiger als der CDU/CSU-Durchschnitt.",
@@ -203,7 +203,7 @@
       "migration": 0.88,
       "klima": 0.0,
       "wirtschaft": 0.29,
-      "soziales": 0.29,
+      "soziales": 0.59,
       "sicherheit": 4.41,
       "gesundheit": 0.29,
       "europa": 12.07,
@@ -236,7 +236,7 @@
         "rank": 4
       },
       {
-        "topic": "finanzen",
+        "topic": "soziales",
         "score": 0.59,
         "rank": 5
       }
@@ -265,6 +265,10 @@
       "soziales": [
         {
           "word": "jugendliche",
+          "count": 1
+        },
+        {
+          "word": "gerechtigkeit",
           "count": 1
         }
       ],

@@ -129,7 +129,11 @@
     "question": "Welches Wort nutzt Dr. Wiebke Esdar häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Klima",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
@@ -137,11 +141,7 @@
         "isCorrect": true
       },
       {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
+        "text": "Arbeit",
         "isCorrect": false
       }
     ],
@@ -152,11 +152,11 @@
     "question": "Welches Adjektiv nutzt Dr. Wiebke Esdar häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Sozial",
+        "text": "Neu",
         "isCorrect": false
       },
       {
@@ -224,7 +224,7 @@
       "migration": 0.14,
       "klima": 1.14,
       "wirtschaft": 3.86,
-      "soziales": 3.58,
+      "soziales": 5.01,
       "sicherheit": 0.86,
       "gesundheit": 2.72,
       "europa": 1.86,
@@ -247,13 +247,13 @@
         "rank": 2
       },
       {
-        "topic": "wirtschaft",
-        "score": 3.86,
+        "topic": "soziales",
+        "score": 5.01,
         "rank": 3
       },
       {
-        "topic": "soziales",
-        "score": 3.58,
+        "topic": "wirtschaft",
+        "score": 3.86,
         "rank": 4
       },
       {
@@ -315,6 +315,10 @@
       ],
       "soziales": [
         {
+          "word": "gerechtigkeit",
+          "count": 9
+        },
+        {
           "word": "kinder",
           "count": 7
         },
@@ -328,10 +332,6 @@
         },
         {
           "word": "eltern",
-          "count": 2
-        },
-        {
-          "word": "familie",
           "count": 2
         }
       ],
