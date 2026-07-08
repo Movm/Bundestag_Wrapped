@@ -24,11 +24,6 @@ type BuildMdbSummaryInput = {
   fallbackDescription?: ProfileDescription | null;
 };
 
-type RankedFact = {
-  score: number;
-  text: string;
-};
-
 function normalizeSentence(text: string): string {
   const trimmed = text.replace(/\s+/g, ' ').trim();
   if (!trimmed) return '';
@@ -54,56 +49,81 @@ function firstSentence(text?: string | null): string {
   return normalizeSentence(compact);
 }
 
-function joinFacts(facts: string[]): string {
-  if (facts.length <= 1) return facts[0] ?? '';
-  if (facts.length === 2) return `${facts[0]} und ${facts[1]}`;
-  return `${facts.slice(0, -1).join(', ')} und ${facts[facts.length - 1]}`;
+function rolePrefix(intro: string): string {
+  if (/Bundeskanzler/.test(intro)) return `Als Bundeskanzler`;
+  if (/Bundesministerin/.test(intro)) return `Als Bundesministerin`;
+  if (/Bundesminister/.test(intro)) return `Als Bundesminister`;
+  if (/Fraktionsvorsitzende/.test(intro)) return `Als Fraktionsvorsitzende`;
+  if (/Fraktionsvorsitzender/.test(intro)) return `Als Fraktionsvorsitzender`;
+  return `In den Plenardaten`;
 }
 
-function strongestRankFacts(speaker: SpeakerWrapped): RankedFact[] {
-  const facts: RankedFact[] = [];
+function joinNarrativeClauses(clauses: string[]): string {
+  if (clauses.length <= 1) return clauses[0] ?? '';
+  if (clauses.length === 2) return `${clauses[0]} und ${clauses[1]}`;
+  return `${clauses.slice(0, -1).join(', ')} und ${clauses[clauses.length - 1]}`;
+}
 
-  if (speaker.rankings.wordsRank <= 10) {
-    facts.push({
-      score: 110 - speaker.rankings.wordsRank,
-      text: `#${speaker.rankings.wordsRank} nach ausgewerteten Wörtern`,
-    });
-  }
+function debateProfileSentence(speaker: SpeakerWrapped, displayName: string, intro: string): string {
+  const observations: string[] = [];
+
   if (speaker.drama.interruptedRank && speaker.drama.interruptedRank <= 10) {
-    facts.push({
-      score: 95 - speaker.drama.interruptedRank,
-      text: `#${speaker.drama.interruptedRank} bei erhaltenen Zwischenrufen`,
-    });
+    observations.push(`${displayName} wird im Plenum besonders häufig unterbrochen`);
+  }
+  if (speaker.rankings.wordsRank <= 10) {
+    observations.push('prägt die Debatte mit hoher Präsenz');
   }
   if (speaker.rankings.longestSpeechRank <= 10) {
-    facts.push({
-      score: 80 - speaker.rankings.longestSpeechRank,
-      text: `#${speaker.rankings.longestSpeechRank} bei der längsten Rede`,
-    });
+    observations.push('nimmt sich Raum für ausführliche Beiträge');
   }
 
-  return facts;
+  const prefix = rolePrefix(intro);
+  if (observations.length === 0) {
+    return normalizeSentence(`${prefix} zeigt ${displayName} ein eigenständiges parlamentarisches Profil`);
+  }
+
+  return normalizeSentence(`${prefix} entsteht ein Bild starker parlamentarischer Sichtbarkeit: ${joinNarrativeClauses(observations)}`);
 }
 
-function strongestTransparencyFact(profile?: AbgeordnetenwatchProfile | null): string | null {
+function transparencyPhrase(profile?: AbgeordnetenwatchProfile | null): string | null {
   if (!profile) return null;
 
   const sidejobs = profile.sidejobs ?? [];
-  const votesTotal = profile.votes?.total ?? profile.votes?.recent.length ?? 0;
-  const questions = profile.politician.questions ?? 0;
   const sidejobsWithIncome = sidejobs.filter(
     (sidejob) => typeof sidejob.income === 'number' || typeof sidejob.incomeLevel === 'number'
   ).length;
 
   if (sidejobs.length > 0) {
-    const incomePart = sidejobsWithIncome > 0
-      ? `${sidejobsWithIncome} mit Einkommensangabe`
-      : 'ohne hinterlegte Einkommensangaben';
-    return `${sidejobs.length} Nebentätigkeiten (${incomePart})`;
+    return sidejobsWithIncome > 0
+      ? 'das Transparenzprofil verweist auf gemeldete Nebentätigkeiten mit Einkommensangaben'
+      : 'das Transparenzprofil verweist auf gemeldete Nebentätigkeiten ohne hinterlegte Einkommensangaben';
   }
-  if (votesTotal > 0) return `${votesTotal} namentliche Abstimmungen`;
-  if (questions > 0) return `${questions} Bürgerfragen bei Abgeordnetenwatch`;
+  if ((profile.votes?.total ?? profile.votes?.recent.length ?? 0) > 0) {
+    return 'das Transparenzprofil macht sein Abstimmungsverhalten nachvollziehbar';
+  }
+  if ((profile.politician.questions ?? 0) > 0) {
+    return 'das Transparenzprofil zeigt öffentliche Bürgerfragen';
+  }
   return null;
+}
+
+function contextSentence({
+  topTopicName,
+  signatureWord,
+  spiritAnimal,
+  abgeordnetenwatch,
+}: Pick<BuildMdbSummaryInput, 'topTopicName' | 'signatureWord' | 'spiritAnimal' | 'abgeordnetenwatch'>): string | null {
+  const topicPart = topTopicName ? `Inhaltlich rückt ${topTopicName} in den Vordergrund` : null;
+  const transparency = transparencyPhrase(abgeordnetenwatch);
+  const languagePart = signatureWord?.word
+    ? `sprachlich wirkt das Profil markant und institutionell`
+    : spiritAnimal?.name
+      ? `sprachlich wirkt das Profil klar wiedererkennbar`
+      : null;
+
+  const parts = [topicPart, languagePart, transparency].filter(Boolean);
+  if (parts.length === 0) return null;
+  return normalizeSentence(parts.join('; '));
 }
 
 export function buildMdbLiveSummary({
@@ -117,40 +137,20 @@ export function buildMdbLiveSummary({
   fallbackDescription,
 }: BuildMdbSummaryInput): string {
   const sentences: string[] = [];
-  const intro = firstSentence(wikipediaIntro?.text ?? fallbackDescription?.longText ?? fallbackDescription?.text);
+  const sourceText = wikipediaIntro?.text ?? fallbackDescription?.longText ?? fallbackDescription?.text ?? '';
+  const intro = firstSentence(sourceText);
   if (intro) {
     sentences.push(intro);
   }
 
-  const rankFacts = strongestRankFacts(speaker)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 3)
-    .map((fact) => fact.text);
+  sentences.push(debateProfileSentence(speaker, displayName, sourceText));
 
-  if (rankFacts.length > 0) {
-    const topicPart = topTopicName ? `; inhaltlich führt ${topTopicName} das Themenprofil an` : '';
-    sentences.push(
-      normalizeSentence(`Im Bundestag-Wrapped fällt ${displayName} vor allem durch ${joinFacts(rankFacts)} auf${topicPart}`)
-    );
-  } else if (topTopicName) {
-    sentences.push(
-      normalizeSentence(`${displayName}s auffälligster inhaltlicher Schwerpunkt im Wrapped-Profil ist ${topTopicName}`)
-    );
-  }
-
-  const finalFacts: string[] = [];
-  const transparencyFact = strongestTransparencyFact(abgeordnetenwatch);
-  if (transparencyFact) finalFacts.push(transparencyFact);
-  if (signatureWord?.word) finalFacts.push(`das Signaturwort "${signatureWord.word}"`);
-  if (spiritAnimal?.name) finalFacts.push(`das Sprachbild "${spiritAnimal.name}"`);
-
-  if (finalFacts.length > 0) {
-    sentences.push(normalizeSentence(`Interessant daneben: ${joinFacts(finalFacts)}`));
-  }
+  const context = contextSentence({ topTopicName, signatureWord, spiritAnimal, abgeordnetenwatch });
+  if (context) sentences.push(context);
 
   if (sentences.length === 0) {
     sentences.push(
-      normalizeSentence(`${displayName} ist mit ${speaker.wortbeitraege.toLocaleString('de-DE')} Wortbeiträgen im Bundestag-Wrapped-Datensatz vertreten`)
+      normalizeSentence(`${displayName} ist im Bundestag-Wrapped-Datensatz mit einem eigenen parlamentarischen Profil vertreten`)
     );
   }
 

@@ -109,34 +109,6 @@ function formatMandateWon(value?: string | null): string | null {
   return MANDATE_WON_LABELS[value] ?? value;
 }
 
-function buildHeroSummary({
-  name,
-  party,
-  wortbeitraege,
-  totalWords,
-  topTopicName,
-  animalName,
-}: {
-  name: string;
-  party: string;
-  wortbeitraege: number;
-  totalWords: number;
-  topTopicName?: string;
-  animalName?: string;
-}) {
-  const activity = `${formatNumber(wortbeitraege)} Wortbeiträgen und ${formatNumber(totalWords)} ausgewerteten Wörtern`;
-
-  if (topTopicName && animalName) {
-    return `${name} (${party}) fällt in den Plenardaten mit Schwerpunkt ${topTopicName}, ${activity} und dem Sprachprofil "${animalName}" auf.`;
-  }
-
-  if (topTopicName) {
-    return `${name} (${party}) ist in den Plenardaten vor allem mit Schwerpunkt ${topTopicName} und ${activity} sichtbar.`;
-  }
-
-  return `${name} (${party}) ist im Bundestag-Wrapped-Datensatz mit ${activity} vertreten.`;
-}
-
 function StatTile({
   label,
   value,
@@ -431,49 +403,6 @@ function OverviewDigest({
           <InsightCard key={`${highlight.label}-${highlight.value}`} highlight={highlight} />
         ))}
       </div>
-    </div>
-  );
-}
-
-function LiveSummaryCard({
-  summary,
-  sourceUrl,
-  sourceLabel,
-  isLoading,
-}: {
-  summary: string;
-  sourceUrl?: string | null;
-  sourceLabel: string;
-  isLoading: boolean;
-}) {
-  return (
-    <div className="rounded-lg border border-pink-300/20 bg-pink-300/[0.07] p-4">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
-          <Sparkles size={17} className="text-pink-200" />
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-pink-200">
-            Live-Kurzprofil
-          </p>
-        </div>
-        {sourceUrl ? (
-          <a
-            href={sourceUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1 text-xs font-semibold text-white/50 hover:text-pink-100"
-          >
-            {sourceLabel} <ExternalLink size={13} />
-          </a>
-        ) : (
-          <span className="text-xs font-semibold text-white/38">{sourceLabel}</span>
-        )}
-      </div>
-      <p className="mt-3 text-base leading-8 text-white/78">{summary}</p>
-      <p className="mt-3 text-xs leading-5 text-white/38">
-        {isLoading
-          ? 'Wikimedia wird live abgefragt; bis dahin nutzt das Profil die importierte Beschreibung.'
-          : 'Maximal drei Sätze, kombiniert aus Wikimedia, Wrapped-Auswertung und Transparenzdaten.'}
-      </p>
     </div>
   );
 }
@@ -1008,16 +937,6 @@ export function MdbProfilePage() {
   const searchUrl = speaker
     ? `/suche?tab=speeches&q=${encodeURIComponent(`"${displayName}"`)}`
     : '/suche?tab=speeches';
-  const heroSummary = speaker
-    ? profileDescription?.text ?? buildHeroSummary({
-        name: displayName,
-        party: speaker.party,
-        wortbeitraege: speaker.wortbeitraege,
-        totalWords: speaker.totalWords,
-        topTopicName,
-        animalName: spiritAnimal?.name,
-      })
-    : '';
   const profileHighlights = speaker
     ? buildProfileHighlights({
         speaker,
@@ -1054,6 +973,9 @@ export function MdbProfilePage() {
     : profileDescription
       ? `${profileDescription.sourceLabel}${profileDescription.license ? `, ${profileDescription.license}` : ''}`
       : 'Wrapped-Daten';
+  const liveSummarySourceNote = isWikimediaSummaryLoading
+    ? 'Live-Kurzprofil: Wikimedia lädt, Fallback aus Profil- und Wrapped-Daten'
+    : `Live-Kurzprofil: ${liveSummarySourceLabel}, Wrapped-Daten`;
 
   if (isLoading) {
     return (
@@ -1131,19 +1053,20 @@ export function MdbProfilePage() {
                       </h1>
                     </div>
                   </div>
-                  <p className="mt-4 max-w-2xl text-lg leading-8 text-white/65">{heroSummary}</p>
-                  {profileDescription ? (
+                  <p className="mt-4 max-w-3xl text-lg leading-8 text-white/70">{liveSummary}</p>
+                  {liveSummarySourceUrl ? (
                     <a
-                      href={profileDescription.sourceUrl}
+                      href={liveSummarySourceUrl}
                       target="_blank"
                       rel="noreferrer"
                       className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-white/42 hover:text-pink-200"
                     >
-                      Kurzbeschreibung: {profileDescription.sourceLabel}
-                      {profileDescription.license ? `, ${profileDescription.license}` : ''}
+                      {liveSummarySourceNote}
                       <ExternalLink size={12} />
                     </a>
-                  ) : null}
+                  ) : (
+                    <p className="mt-2 text-xs font-semibold text-white/38">{liveSummarySourceNote}</p>
+                  )}
 
                   <div className="mt-6 flex flex-wrap gap-3">
                     <Link
@@ -1210,15 +1133,6 @@ export function MdbProfilePage() {
                 >
                   Zum Wrapped <Sparkles size={16} />
                 </Link>
-              </div>
-
-              <div className="mt-5">
-                <LiveSummaryCard
-                  summary={liveSummary}
-                  sourceUrl={liveSummarySourceUrl}
-                  sourceLabel={liveSummarySourceLabel}
-                  isLoading={isWikimediaSummaryLoading}
-                />
               </div>
 
               <div className="mt-5">
