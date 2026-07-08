@@ -52,7 +52,7 @@ function formatNumber(value: number): string {
 }
 
 function formatRatio(value: number): string {
-  return `${value.toFixed(1)}x`;
+  return `${value.toLocaleString('de-DE', { maximumFractionDigits: 1, minimumFractionDigits: 1 })}×`;
 }
 
 function formatEuro(value: number): string {
@@ -95,7 +95,7 @@ function formatIncome(sidejob: AbgeordnetenwatchSidejob): string {
   if (typeof sidejob.incomeLevel === 'number') {
     return `Stufe ${sidejob.incomeLevel}: ${INCOME_LEVEL_LABELS[sidejob.incomeLevel] ?? 'unbekannte Spanne'}`;
   }
-  return 'kein Einkommen gemeldet';
+  return 'keine Einkommensangabe';
 }
 
 function formatVote(value: string): string {
@@ -237,50 +237,14 @@ function buildProfileHighlights({
   topTopicWords,
   signatureWords,
   signatureAdjectives,
-  spiritAnimal,
-  abgeordnetenwatch,
 }: {
   speaker: SpeakerWrapped;
   topTopicName?: string;
   topTopicWords: string[];
   signatureWords: ReturnType<typeof signatureWordsForDisplay>;
   signatureAdjectives: ReturnType<typeof signatureAdjectivesForDisplay>;
-  spiritAnimal: SpiritAnimal | null;
-  abgeordnetenwatch?: AbgeordnetenwatchProfile | null;
 }): ProfileHighlight[] {
   const highlights: ProfileHighlight[] = [];
-
-  if (abgeordnetenwatch?.sidejobs?.length) {
-    const incomeJobs = abgeordnetenwatch.sidejobs.filter(
-      (sidejob) => typeof sidejob.income === 'number' || typeof sidejob.incomeLevel === 'number'
-    ).length;
-    highlights.push({
-      label: 'Transparenz',
-      value: `${abgeordnetenwatch.sidejobs.length} Nebentätigkeiten`,
-      detail: incomeJobs > 0
-        ? `${incomeJobs} davon mit veröffentlichter Einkommensangabe bei Abgeordnetenwatch.`
-        : 'Bei diesen Einträgen ist aktuell kein Einkommen hinterlegt.',
-      Icon: BriefcaseBusiness,
-    });
-  }
-
-  if (abgeordnetenwatch?.votes?.total) {
-    highlights.push({
-      label: 'Abstimmungen',
-      value: `${formatNumber(abgeordnetenwatch.votes.total)} namentliche Votes`,
-      detail: 'Abgeordnetenwatch verknüpft das aktuelle Mandat mit einzelnen namentlichen Abstimmungen.',
-      Icon: IdCard,
-    });
-  }
-
-  if (spiritAnimal) {
-    highlights.push({
-      label: 'Profilbild',
-      value: spiritAnimal.name,
-      detail: spiritAnimal.reason,
-      Icon: Sparkles,
-    });
-  }
 
   if (speaker.rankings.wordsRank <= 10) {
     highlights.push({
@@ -307,6 +271,11 @@ function buildProfileHighlights({
       detail: `Die längste erfasste Rede umfasst ${formatNumber(speaker.maxWords)} Wörter.`,
       Icon: BarChart3,
     });
+  }
+
+  const toneHighlight = buildToneHighlight(speaker);
+  if (toneHighlight) {
+    highlights.push(toneHighlight);
   }
 
   if (topTopicName) {
@@ -338,11 +307,6 @@ function buildProfileHighlights({
       detail: `${formatRatio(signatureAdjective.ratio ?? 0)} häufiger als der Bundestag-Durchschnitt.`,
       Icon: BookOpen,
     });
-  }
-
-  const toneHighlight = buildToneHighlight(speaker);
-  if (toneHighlight) {
-    highlights.push(toneHighlight);
   }
 
   return highlights.slice(0, 6);
@@ -449,37 +413,6 @@ function BiographyFact({
   );
 }
 
-function BiographySummary({ biography }: { biography: SpeakerBiography }) {
-  const hasFacts = biography.birthDate || biography.birthPlace || biography.constituency || biography.profession;
-  if (!hasFacts && !biography.roles?.length) return null;
-
-  return (
-    <div className="mt-6 rounded-lg border border-white/10 bg-white/[0.035] p-4">
-      <div className="flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-pink-300">Biografie</p>
-          <h3 className="mt-1 text-lg font-black text-white">Direktdaten zur Person</h3>
-        </div>
-      </div>
-      <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <BiographyFact icon={CalendarDays} label="Geboren" value={biography.birthDate} />
-        <BiographyFact icon={MapPin} label="Ort" value={biography.birthPlace} />
-        <BiographyFact icon={IdCard} label="Wahlkreis" value={biography.constituency} />
-        <BiographyFact icon={BriefcaseBusiness} label="Beruf" value={biography.profession} />
-      </div>
-      {biography.roles?.length ? (
-        <div className="mt-4 flex flex-wrap gap-2">
-          {biography.roles.map((role) => (
-            <span key={role} className="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white/70">
-              {role}
-            </span>
-          ))}
-        </div>
-      ) : null}
-    </div>
-  );
-}
-
 function ProfilePortrait({ image, name }: { image: ProfileImageMetadata | OfficialImageMetadata; name: string }) {
   const sourceLabel = image.sourceLabel === 'Wikimedia Commons' ? 'Wikimedia' : 'Bundestag';
 
@@ -493,15 +426,6 @@ function ProfilePortrait({ image, name }: { image: ProfileImageMetadata | Offici
         loading="eager"
       />
       </div>
-      <figcaption className="sr-only">
-        <a
-          href={image.sourceUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Foto: {sourceLabel} <ExternalLink size={11} />
-        </a>
-      </figcaption>
       <a
         href={image.sourceUrl}
         target="_blank"
@@ -662,34 +586,70 @@ function BiographyDetail({
   );
 }
 
-function TransparencySummary({ profile }: { profile: AbgeordnetenwatchProfile }) {
-  const sidejobCount = profile.sidejobs?.length ?? 0;
-  const incomeCount = profile.sidejobs?.filter(
-    (sidejob) => typeof sidejob.income === 'number' || typeof sidejob.incomeLevel === 'number'
-  ).length ?? 0;
+function OverviewBiographyPanel({ biography }: { biography?: SpeakerBiography | null }) {
+  if (!biography) return null;
+  const facts = [
+    biography.birthDate && biography.birthPlace ? `Geboren ${biography.birthDate} in ${biography.birthPlace}` : null,
+    biography.profession ? `Beruf: ${biography.profession}` : null,
+    biography.constituency ? `Wahlkreis: ${biography.constituency}` : null,
+  ].filter(Boolean);
 
   return (
-    <div className="mt-6 rounded-lg border border-white/10 bg-white/[0.035] p-4">
-      <div className="flex flex-wrap items-start justify-between gap-3">
+    <div className="rounded-lg border border-white/10 bg-white/[0.05] p-5">
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">Biografie</p>
+      <div className="mt-3 space-y-2 text-sm leading-6 text-white/70">
+        {facts.map((fact) => (
+          <p key={fact}>{fact}</p>
+        ))}
+      </div>
+      {biography.roles?.length ? (
+        <div className="mt-4 flex flex-wrap gap-2">
+          {biography.roles.slice(0, 3).map((role) => (
+            <span key={role} className="rounded-full bg-white/10 px-2.5 py-1 text-xs font-semibold text-white/65">
+              {role}
+            </span>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function OverviewTransparencyPanel({ profile }: { profile?: AbgeordnetenwatchProfile | null }) {
+  if (!profile) return null;
+  const sidejobs = profile.sidejobs ?? [];
+  const incomeCount = sidejobs.filter(
+    (sidejob) => typeof sidejob.income === 'number' || typeof sidejob.incomeLevel === 'number'
+  ).length;
+  const voteCount = profile.votes?.total ?? profile.votes?.recent.length ?? 0;
+
+  return (
+    <div className="rounded-lg border border-white/10 bg-white/[0.05] p-5">
+      <div className="flex items-start justify-between gap-3">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-pink-300">Transparenz</p>
-          <h3 className="mt-1 text-lg font-black text-white">Abgeordnetenwatch-Daten</h3>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">Abgeordnetenwatch</p>
+          <h3 className="mt-1 text-lg font-black text-white">Mandat & Transparenz</h3>
         </div>
         <a
           href={profile.sourceUrl}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-1 text-xs font-semibold text-white/50 hover:text-pink-200"
+          className="shrink-0 text-xs font-semibold text-pink-300 hover:text-pink-200"
         >
-          {profile.sourceLabel} <ExternalLink size={13} />
+          Quelle ↗
         </a>
       </div>
-      <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <StatTile label="Nebentätigkeiten" value={formatNumber(sidejobCount)} />
-        <StatTile label="mit Einkommen" value={formatNumber(incomeCount)} detail="gemeldete Beträge/Stufen" />
-        <StatTile label="Abstimmungen" value={formatNumber(profile.votes?.total ?? profile.votes?.recent.length ?? 0)} />
+      <div className="mt-4 grid grid-cols-2 gap-3">
+        <StatTile label="Nebentätigkeiten" value={formatNumber(sidejobs.length)} />
+        <StatTile label="mit Einkommen" value={formatNumber(incomeCount)} />
+        <StatTile label="Abstimmungen" value={formatNumber(voteCount)} />
         <StatTile label="Bürgerfragen" value={formatNumber(profile.politician.questions ?? 0)} />
       </div>
+      {sidejobs.length > 0 && incomeCount === 0 ? (
+        <p className="mt-3 text-xs leading-5 text-white/45">
+          Für die importierten Nebentätigkeiten ist im API-Eintrag keine Einkommensangabe hinterlegt.
+        </p>
+      ) : null}
     </div>
   );
 }
@@ -919,8 +879,6 @@ export function MdbProfilePage() {
         topTopicWords,
         signatureWords,
         signatureAdjectives,
-        spiritAnimal,
-        abgeordnetenwatch,
       })
     : [];
   const overviewLead = speaker
@@ -1039,11 +997,6 @@ export function MdbProfilePage() {
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-center gap-2">
                       <PartyBadge party={speaker.party} variant="filled" />
-                      {biography?.constituency ? (
-                        <span className="rounded-full border border-white/12 bg-white/[0.05] px-3 py-1 text-xs font-semibold text-white/60">
-                          {biography.constituency}
-                        </span>
-                      ) : null}
                     </div>
                     <h1 className="mt-3 max-w-4xl text-4xl font-black leading-[1.02] text-white md:text-[68px]">
                       {displayName}
@@ -1111,7 +1064,9 @@ export function MdbProfilePage() {
                 <div className="text-4xl font-black text-white">
                   {formatNumber(abgeordnetenwatch?.votes?.total ?? abgeordnetenwatch?.votes?.recent.length ?? 0)}
                 </div>
-                <div className="mt-1 text-[11px] uppercase tracking-wider text-white/50">Namentliche Votes</div>
+                <div className="mt-1 text-[11px] uppercase tracking-wider text-white/50">
+                  Namentliche Abstimmungen
+                </div>
               </div>
               <div className="px-5 py-6 md:px-8">
                 <div className="text-4xl font-black text-white">{formatNumber(speaker.maxWords)}</div>
@@ -1151,8 +1106,8 @@ export function MdbProfilePage() {
                         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">Kurzprofil</p>
                         <p className="mt-3 text-sm leading-7 text-white/68">{overviewLead}</p>
                       </div>
-                      {biography ? <BiographySummary biography={biography} /> : null}
-                      {abgeordnetenwatch ? <TransparencySummary profile={abgeordnetenwatch} /> : null}
+                      <OverviewBiographyPanel biography={biography} />
+                      <OverviewTransparencyPanel profile={abgeordnetenwatch} />
                     </div>
                   </div>
                 )}
@@ -1350,7 +1305,7 @@ export function MdbProfilePage() {
                           <h2 className="mt-2 text-2xl font-black text-white">Abstimmungsverhalten</h2>
                         </div>
                         <span className="text-sm text-white/50">
-                          {formatNumber(abgeordnetenwatch?.votes?.total ?? abgeordnetenwatch?.votes?.recent.length ?? 0)} Votes
+                          {formatNumber(abgeordnetenwatch?.votes?.total ?? abgeordnetenwatch?.votes?.recent.length ?? 0)} Abstimmungen
                         </span>
                       </div>
                       <div className="mt-6 space-y-3">
@@ -1387,7 +1342,7 @@ export function MdbProfilePage() {
                         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">Kennzahlen</p>
                         <div className="mt-4 grid grid-cols-2 gap-4">
                           <StatTile
-                            label="Votes"
+                            label="Abstimmungen"
                             value={formatNumber(abgeordnetenwatch?.votes?.total ?? abgeordnetenwatch?.votes?.recent.length ?? 0)}
                           />
                           <StatTile label="Fraktion" value={abgeordnetenwatch?.mandate?.fraction ?? speaker.party} />
