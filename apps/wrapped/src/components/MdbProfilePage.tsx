@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router';
+import { useQuery } from '@tanstack/react-query';
 import { motion } from 'motion/react';
 import {
   BarChart3,
@@ -22,6 +23,11 @@ import { SITE_CONFIG } from '@/components/seo/constants';
 import { PartyBadge } from '@/components/ui/PartyBadge';
 import { useSpeakerData, useSpeechesDb } from '@/hooks/useDataQueries';
 import { getPartyColor, getPartyTextColor } from '@/lib/party-colors';
+import {
+  buildMdbLiveSummary,
+  fetchWikimediaIntro,
+  wikipediaTitleFromDescription,
+} from '@/lib/mdb-live-summary';
 import {
   displaySpeakerName,
   signatureAdjectivesForDisplay,
@@ -425,6 +431,49 @@ function OverviewDigest({
           <InsightCard key={`${highlight.label}-${highlight.value}`} highlight={highlight} />
         ))}
       </div>
+    </div>
+  );
+}
+
+function LiveSummaryCard({
+  summary,
+  sourceUrl,
+  sourceLabel,
+  isLoading,
+}: {
+  summary: string;
+  sourceUrl?: string | null;
+  sourceLabel: string;
+  isLoading: boolean;
+}) {
+  return (
+    <div className="rounded-lg border border-pink-300/20 bg-pink-300/[0.07] p-4">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="flex items-center gap-2">
+          <Sparkles size={17} className="text-pink-200" />
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-pink-200">
+            Live-Kurzprofil
+          </p>
+        </div>
+        {sourceUrl ? (
+          <a
+            href={sourceUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1 text-xs font-semibold text-white/50 hover:text-pink-100"
+          >
+            {sourceLabel} <ExternalLink size={13} />
+          </a>
+        ) : (
+          <span className="text-xs font-semibold text-white/38">{sourceLabel}</span>
+        )}
+      </div>
+      <p className="mt-3 text-base leading-8 text-white/78">{summary}</p>
+      <p className="mt-3 text-xs leading-5 text-white/38">
+        {isLoading
+          ? 'Wikimedia wird live abgefragt; bis dahin nutzt das Profil die importierte Beschreibung.'
+          : 'Maximal drei Sätze, kombiniert aus Wikimedia, Wrapped-Auswertung und Transparenzdaten.'}
+      </p>
     </div>
   );
 }
@@ -943,6 +992,19 @@ export function MdbProfilePage() {
   const profileDescription = speaker?.profileDescription ?? null;
   const biography = speaker?.biography ?? null;
   const abgeordnetenwatch = speaker?.abgeordnetenwatch ?? null;
+  const wikipediaTitle = wikipediaTitleFromDescription(profileDescription);
+  const {
+    data: wikipediaIntro,
+    isLoading: isWikimediaSummaryLoading,
+  } = useQuery({
+    queryKey: ['wikimedia-intro', wikipediaTitle],
+    queryFn: () => fetchWikimediaIntro(wikipediaTitle ?? ''),
+    enabled: !!wikipediaTitle,
+    staleTime: 1000 * 60 * 60 * 24,
+    gcTime: 1000 * 60 * 60 * 24,
+    retry: 1,
+    refetchOnWindowFocus: false,
+  });
   const searchUrl = speaker
     ? `/suche?tab=speeches&q=${encodeURIComponent(`"${displayName}"`)}`
     : '/suche?tab=speeches';
@@ -974,6 +1036,24 @@ export function MdbProfilePage() {
         signatureWord: signatureWords[0]?.word,
       })
     : '';
+  const liveSummary = speaker
+    ? buildMdbLiveSummary({
+        speaker,
+        displayName,
+        topTopicName,
+        signatureWord: signatureWords[0],
+        spiritAnimal,
+        abgeordnetenwatch,
+        wikipediaIntro,
+        fallbackDescription: profileDescription,
+      })
+    : '';
+  const liveSummarySourceUrl = wikipediaIntro?.sourceUrl ?? profileDescription?.sourceUrl ?? null;
+  const liveSummarySourceLabel = wikipediaIntro
+    ? 'Wikimedia live'
+    : profileDescription
+      ? `${profileDescription.sourceLabel}${profileDescription.license ? `, ${profileDescription.license}` : ''}`
+      : 'Wrapped-Daten';
 
   if (isLoading) {
     return (
@@ -1130,6 +1210,15 @@ export function MdbProfilePage() {
                 >
                   Zum Wrapped <Sparkles size={16} />
                 </Link>
+              </div>
+
+              <div className="mt-5">
+                <LiveSummaryCard
+                  summary={liveSummary}
+                  sourceUrl={liveSummarySourceUrl}
+                  sourceLabel={liveSummarySourceLabel}
+                  isLoading={isWikimediaSummaryLoading}
+                />
               </div>
 
               <div className="mt-5">
