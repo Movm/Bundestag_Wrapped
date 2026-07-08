@@ -171,15 +171,17 @@ export function AbgeordnetePage() {
                 {filteredSpeakers.length > 0 ? (
                   <div className="py-2">
                     {filteredSpeakers.map((speaker, index) => (
-                      <motion.a
+                      <motion.div
                         key={speaker.slug}
-                        href={`/wrapped/${speaker.slug}`}
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.03 }}
-                        className="flex items-center justify-between px-4 py-3 hover:bg-white/5 transition-colors group"
+                        className="flex items-center justify-between gap-3 px-4 py-3 hover:bg-white/5 transition-colors group"
                       >
-                        <div className="flex items-center gap-3">
+                        <Link
+                          to={`/abgeordnete/${speaker.slug}`}
+                          className="flex min-w-0 flex-1 items-center gap-3"
+                        >
                           <span className="text-white font-medium group-hover:text-pink-300 transition-colors">
                             {speaker.name}
                           </span>
@@ -190,11 +192,19 @@ export function AbgeordnetePage() {
                           >
                             {speaker.party}
                           </span>
+                        </Link>
+                        <div className="flex flex-shrink-0 items-center gap-3">
+                          <span className="text-white/40 text-sm">
+                            {speaker.speeches} Reden
+                          </span>
+                          <Link
+                            to={`/wrapped/${speaker.slug}`}
+                            className="text-xs text-pink-300 hover:text-pink-200"
+                          >
+                            Wrapped
+                          </Link>
                         </div>
-                        <span className="text-white/40 text-sm">
-                          {speaker.speeches} Reden
-                        </span>
-                      </motion.a>
+                      </motion.div>
                     ))}
                   </div>
                 ) : (

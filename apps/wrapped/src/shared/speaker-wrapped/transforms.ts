@@ -12,6 +12,7 @@ import type {
   SignatureWord,
   SpeakerWord,
 } from '../../data/speaker-wrapped';
+import { displaySpeakerName, signatureWordsForDisplay } from '@/lib/speaker-profile-utils';
 
 // ─────────────────────────────────────────────────────────────
 // Quiz Config Types & Transforms
@@ -60,9 +61,10 @@ export interface DisplayWords {
  * @param topLimit - Max number of top words to return (default: 6)
  */
 export function getDisplayWords(words: SpeakerWords, topLimit = 6): DisplayWords {
+  const speakerLike = { words } as SpeakerWrapped;
   return {
     topWords: words.topWords.slice(0, topLimit),
-    signatureWords: words.signatureWordsBundestag || [],
+    signatureWords: signatureWordsForDisplay(speakerLike),
   };
 }
 
@@ -70,7 +72,7 @@ export function getDisplayWords(words: SpeakerWords, topLimit = 6): DisplayWords
  * Get ratio display value for a signature word
  */
 export function getSignatureWordRatio(word: SignatureWord): number {
-  return word.ratio;
+  return word.ratio ?? word.ratioBundestag ?? word.ratioParty ?? 0;
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -116,7 +118,7 @@ export function getTopicWords(data: SpeakerWrapped, topicId: string, limit = 6) 
  * Format speaker name with optional academic title
  */
 export function formatSpeakerName(data: SpeakerWrapped): string {
-  return data.academicTitle ? `${data.academicTitle} ${data.name}` : data.name;
+  return displaySpeakerName(data);
 }
 
 /**

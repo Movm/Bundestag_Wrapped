@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import type { SpeakerWrapped } from '@/data/speaker-wrapped';
 import { SlideContainer } from '@/components/slides/shared/SlideContainer';
 import { itemVariants } from '@/components/slides/shared/animations';
+import { signatureWordsForDisplay } from '@/lib/speaker-profile-utils';
 
 interface SpeakerWordsSlideProps {
   speaker: SpeakerWrapped;
@@ -14,7 +15,7 @@ interface SpeakerWordsSlideProps {
 export function SpeakerWordsSlide({ speaker }: SpeakerWordsSlideProps) {
   const topWords = speaker.words.topWords.slice(0, 6);
   // Use Bundestag comparison - shows what makes this speaker unique nationally
-  const signatureWords = speaker.words.signatureWordsBundestag || [];
+  const signatureWords = signatureWordsForDisplay(speaker);
 
   return (
     <SlideContainer sparkles={{ color: 'rgba(94, 234, 212, 0.5)' }}>
@@ -66,7 +67,7 @@ export function SpeakerWordsSlide({ speaker }: SpeakerWordsSlideProps) {
                 >
                   <span className="text-white font-medium text-sm sm:text-base">{word.word}</span>
                   <span className="text-white/40 ml-1.5 sm:ml-2 text-xs sm:text-sm">
-                    {word.ratio.toFixed(1)}×
+                    {(word.ratio ?? 0).toFixed(1)}×
                   </span>
                 </motion.div>
               ))}

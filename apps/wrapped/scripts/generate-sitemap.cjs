@@ -45,7 +45,18 @@ function generateSitemap() {
 `;
   }
 
-  // Speaker pages
+  // MdB profile pages
+  for (const slug of speakerSlugs) {
+    xml += `  <url>
+    <loc>${SITE_URL}/abgeordnete/${slug}</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+`;
+  }
+
+  // Speaker Wrapped quiz pages
   for (const slug of speakerSlugs) {
     xml += `  <url>
     <loc>${SITE_URL}/wrapped/${slug}</loc>
@@ -69,11 +80,12 @@ function main() {
   fs.writeFileSync(outputPath, sitemap);
 
   const speakerCount = getSpeakerSlugs().length;
-  const totalUrls = STATIC_PAGES.length + speakerCount;
+  const totalUrls = STATIC_PAGES.length + speakerCount * 2;
 
   console.log(`Sitemap generated: ${outputPath}`);
   console.log(`  - Static pages: ${STATIC_PAGES.length}`);
-  console.log(`  - Speaker pages: ${speakerCount}`);
+  console.log(`  - MdB profile pages: ${speakerCount}`);
+  console.log(`  - Speaker Wrapped pages: ${speakerCount}`);
   console.log(`  - Total URLs: ${totalUrls}`);
 }
 

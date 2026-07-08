@@ -4,6 +4,7 @@ import { SlideContainer } from '@/components/slides/shared/SlideContainer';
 import { itemVariants } from '@/components/slides/shared/animations';
 import { getPartyColor, PARTY_BG_CLASSES } from './party-colors';
 import { playSound } from '@/lib/sounds';
+import { displaySpeakerName } from '@/lib/speaker-profile-utils';
 
 interface SpeakerIntroSlideProps {
   speaker: SpeakerWrapped;
@@ -29,8 +30,7 @@ export function SpeakerIntroSlide({ speaker, onStart }: SpeakerIntroSlideProps) 
       <motion.div variants={itemVariants} className="text-center">
         <span className="text-6xl mb-6 block">🏛️</span>
         <h1 className="text-3xl md:text-4xl font-black text-white mb-4">
-          {speaker.academicTitle ? `${speaker.academicTitle} ` : ''}
-          {speaker.name}
+          {displaySpeakerName(speaker)}
         </h1>
         <span
           className={`inline-block px-4 py-1.5 rounded-full text-sm font-medium text-white mb-4 ${

@@ -12,6 +12,7 @@ import {
   shareSpeakerImage,
   type SpeakerShareData,
 } from '@/lib/speaker-share-canvas';
+import { signatureWordsForDisplay } from '@/lib/speaker-profile-utils';
 
 interface SpeakerShareSlideProps {
   speaker: SpeakerWrapped;
@@ -24,7 +25,7 @@ const MotionLink = motion.create(Link);
 
 function toShareData(data: SpeakerWrapped, wordIndex: number): SpeakerShareData {
   // Use Bundestag comparison - shows national uniqueness
-  const sigWord = data.words.signatureWordsBundestag[wordIndex];
+  const sigWord = signatureWordsForDisplay(data)[wordIndex];
   return {
     name: data.name,
     party: data.party,
@@ -40,7 +41,7 @@ function toShareData(data: SpeakerWrapped, wordIndex: number): SpeakerShareData 
       ? {
           word: sigWord.word,
           count: sigWord.count,
-          ratio: sigWord.ratio,
+          ratio: sigWord.ratio ?? 0,
         }
       : null,
   };
@@ -100,7 +101,7 @@ export const SpeakerShareSlide = memo(function SpeakerShareSlide({
   const [selectedWordIndex, setSelectedWordIndex] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const partyColor = getPartyColor(speaker.party);
-  const signatureWords = speaker.words.signatureWordsBundestag;
+  const signatureWords = signatureWordsForDisplay(speaker);
 
   useEffect(() => {
     setCanShare(typeof navigator !== 'undefined' && !!navigator.share && !!navigator.canShare);
@@ -187,7 +188,7 @@ export const SpeakerShareSlide = memo(function SpeakerShareSlide({
                       border: index === selectedWordIndex ? 'none' : '1px solid rgba(255,255,255,0.2)',
                     }}
                   >
-                    {word.word} {word.ratio.toFixed(1)}×
+                    {word.word} {(word.ratio ?? 0).toFixed(1)}×
                   </button>
                 ))}
               </div>

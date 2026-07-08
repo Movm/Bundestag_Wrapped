@@ -20,7 +20,7 @@ export function SpeakerCard({ speaker, query, index }: SpeakerCardProps) {
 
   return (
     <MotionLink
-      to="/abgeordnete"
+      to={`/abgeordnete/${speaker.slug}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
@@ -54,7 +54,7 @@ export function SpeakerCard({ speaker, query, index }: SpeakerCardProps) {
           {speaker.words.toLocaleString('de-DE')} Wörter
         </span>
         <span className="text-pink-400 opacity-0 group-hover:opacity-100 transition-opacity">
-          Zur Abgeordneten-Suche →
+          Profil öffnen →
         </span>
       </div>
     </MotionLink>
