@@ -361,26 +361,26 @@ function buildOverviewLead({
   topTopicName?: string;
   signatureWord?: string;
 }) {
-  const rankParts: string[] = [];
+  const observations: string[] = [];
 
   if (speaker.rankings.wordsRank <= 10) {
-    rankParts.push(`#${speaker.rankings.wordsRank} nach Wörtern`);
+    observations.push('sehr hohe Redepräsenz');
   }
   if (speaker.drama.interruptedRank && speaker.drama.interruptedRank <= 10) {
-    rankParts.push(`#${speaker.drama.interruptedRank} bei erhaltenen Zwischenrufen`);
+    observations.push('auffallend viele Zwischenrufe');
   }
   if (speaker.rankings.longestSpeechRank <= 10) {
-    rankParts.push(`#${speaker.rankings.longestSpeechRank} bei der längsten Rede`);
+    observations.push('besonders ausführliche Beiträge');
   }
 
-  const rankSentence = rankParts.length
-    ? `Auffällig sind ${rankParts.join(', ')}.`
-    : `Das Profil basiert auf ${formatNumber(speaker.wortbeitraege)} Wortbeiträgen.`;
+  const rankSentence = observations.length
+    ? `Das Profil fällt durch ${observations.join(', ')} auf.`
+    : `Das Profil bündelt die parlamentarischen Spuren aus ${formatNumber(speaker.wortbeitraege)} Wortbeiträgen.`;
   const topicSentence = topTopicName
-    ? `Inhaltlich führt ${topTopicName} das Themenprofil an.`
+    ? `Inhaltlich liegt der Schwerpunkt bei ${topTopicName}.`
     : 'Das Themenprofil ist noch nicht stark genug ausdifferenziert.';
   const wordSentence = signatureWord
-    ? `Sprachlich sticht "${signatureWord}" als Signaturwort heraus.`
+    ? `Sprachlich setzt "${signatureWord}" einen wiedererkennbaren Akzent.`
     : 'Für die Sprache liegen noch keine belastbaren Signaturwörter vor.';
 
   return `${rankSentence} ${topicSentence} ${wordSentence}`;
@@ -518,19 +518,18 @@ function ProfilePortrait({ image, name }: { image: ProfileImageMetadata | Offici
   const sourceLabel = image.sourceLabel === 'Wikimedia Commons' ? 'Wikimedia' : 'Bundestag';
 
   return (
-    <figure className="w-28 shrink-0 overflow-hidden rounded-lg border border-white/15 bg-white/[0.04] shadow-2xl md:w-32">
+    <figure className="w-28 shrink-0 overflow-hidden rounded-full border-4 border-pink-500 bg-white/[0.04] shadow-2xl shadow-pink-950/40 md:w-36">
       <img
         src={image.thumbnailUrl ?? image.url}
         alt={image.alt ?? `${name}, offizielles Bundestag-Foto`}
         className="aspect-square w-full object-cover"
         loading="eager"
       />
-      <figcaption className="p-2">
+      <figcaption className="sr-only">
         <a
           href={image.sourceUrl}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-1 text-[11px] font-semibold leading-4 text-white/55 hover:text-pink-200"
         >
           Foto: {sourceLabel} <ExternalLink size={11} />
         </a>
@@ -1029,31 +1028,52 @@ export function MdbProfilePage() {
       />
 
       <div className="min-h-screen page-bg pt-14">
-        <main>
-          <section className="relative overflow-hidden border-b border-white/10">
+        <main className="px-4 py-6 md:py-10">
+          <div className="mx-auto max-w-6xl">
+            <Link to="/abgeordnete" className="text-sm text-white/50 hover:text-white">
+              ← Alle Abgeordneten
+            </Link>
+          </div>
+
+          <section className="relative mx-auto mt-4 max-w-6xl overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a12]/90 shadow-2xl shadow-black/40">
+            <div className="h-2 w-full bg-pink-600" />
             <div
-              className="absolute inset-x-0 top-0 h-80 opacity-25 blur-3xl"
+              className="absolute inset-x-0 top-0 h-72 opacity-20 blur-3xl"
               style={{
                 background: `radial-gradient(circle at 50% 0%, ${partyColor}, transparent 65%)`,
               }}
             />
-            <div className="relative mx-auto max-w-6xl px-4 py-8 md:py-12">
-              <Link to="/abgeordnete" className="text-sm text-white/50 hover:text-white">
-                ← Alle Abgeordneten
-              </Link>
-
-              <div className="mt-5 grid gap-6 lg:grid-cols-[1fr_420px] lg:items-start">
+            <div className="relative px-5 py-6 md:px-9 md:py-8">
+              <div className="grid gap-8 lg:grid-cols-[1fr_360px] lg:items-start">
                 <div>
-                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
+                  <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
                     {profileImage ? <ProfilePortrait image={profileImage} name={displayName} /> : null}
                     <div className="min-w-0">
-                      <PartyBadge party={speaker.party} variant="filled" />
-                      <h1 className="mt-3 max-w-4xl text-4xl font-black text-white md:text-6xl">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <PartyBadge party={speaker.party} variant="filled" />
+                        {biography?.constituency ? (
+                          <span className="rounded-full border border-white/12 bg-white/[0.05] px-3 py-1 text-xs font-semibold text-white/60">
+                            {biography.constituency}
+                          </span>
+                        ) : null}
+                      </div>
+                      <h1 className="mt-3 max-w-4xl text-4xl font-black leading-none text-white md:text-6xl">
                         {displayName}
                       </h1>
+                      {profileImage ? (
+                        <a
+                          href={profileImage.sourceUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="mt-2 inline-flex items-center gap-1 text-[11px] font-semibold text-white/38 hover:text-pink-200"
+                        >
+                          Foto: {profileImage.sourceLabel === 'Wikimedia Commons' ? 'Wikimedia' : 'Bundestag'}
+                          <ExternalLink size={11} />
+                        </a>
+                      ) : null}
                     </div>
                   </div>
-                  <p className="mt-4 max-w-3xl text-lg leading-8 text-white/70">{liveSummary}</p>
+                  <p className="mt-5 max-w-3xl text-lg leading-8 text-white/72 md:text-xl">{liveSummary}</p>
                   {liveSummarySourceUrl ? (
                     <a
                       href={liveSummarySourceUrl}
@@ -1067,6 +1087,13 @@ export function MdbProfilePage() {
                   ) : (
                     <p className="mt-2 text-xs font-semibold text-white/38">{liveSummarySourceNote}</p>
                   )}
+
+                  <div className="mt-6 grid gap-3 sm:grid-cols-4">
+                    <StatTile label="Wortbeiträge" value={formatNumber(speaker.wortbeitraege)} />
+                    <StatTile label="Reden" value={formatNumber(speaker.speeches)} />
+                    <StatTile label="Wörter" value={formatNumber(speaker.totalWords)} />
+                    <StatTile label="Top-Thema" value={topTopicName ?? '—'} />
+                  </div>
 
                   <div className="mt-6 flex flex-wrap gap-3">
                     <Link
@@ -1115,60 +1142,35 @@ export function MdbProfilePage() {
                   )}
                 </motion.div>
               </div>
-            </div>
-          </section>
 
-          <div className="mx-auto max-w-6xl px-4 py-8 pb-20">
-            <section className="rounded-lg border border-white/10 bg-bg-card/70 p-4 md:p-5">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-pink-300">
-                    Profilübersicht
-                  </p>
-                  <h2 className="mt-1 text-2xl font-black text-white">Das Profil in 30 Sekunden</h2>
+              <div className="mt-8 border-t border-white/10 pt-5">
+                <div className="flex gap-2 overflow-x-auto pb-2">
+                  {PROFILE_TABS.map((tab) => (
+                    <TabButton
+                      key={tab.id}
+                      active={activeTab === tab.id}
+                      label={tab.label}
+                      onClick={() => setActiveTab(tab.id)}
+                    />
+                  ))}
                 </div>
-                <Link
-                  to={`/wrapped/${speaker.slug}`}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-white/75 hover:bg-white/10 hover:text-white"
-                >
-                  Zum Wrapped <Sparkles size={16} />
-                </Link>
               </div>
 
-              <div className="mt-5">
-                <OverviewDigest lead={overviewLead} highlights={profileHighlights} />
-              </div>
-
-              {biography ? <BiographySummary biography={biography} /> : null}
-              {abgeordnetenwatch ? <TransparencySummary profile={abgeordnetenwatch} /> : null}
-            </section>
-
-            <section className="mt-6">
-              <div className="flex gap-2 overflow-x-auto pb-2">
-                {PROFILE_TABS.map((tab) => (
-                  <TabButton
-                    key={tab.id}
-                    active={activeTab === tab.id}
-                    label={tab.label}
-                    onClick={() => setActiveTab(tab.id)}
-                  />
-                ))}
-              </div>
-
-              <div className="mt-4 rounded-lg border border-white/10 bg-white/[0.025] p-4 md:p-6">
+              <div className="mt-4 border-t border-white/10 pt-6">
                 {activeTab === 'overview' && (
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-pink-300">Überblick</p>
-                    <h2 className="mt-2 text-2xl font-black text-white">Was sofort auffällt</h2>
-                    <p className="mt-4 max-w-3xl text-sm leading-7 text-white/65">{overviewLead}</p>
-
-                    <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-                      {profileHighlights.map((highlight) => (
-                        <InsightCard key={`${highlight.label}-${highlight.value}-tab`} highlight={highlight} />
-                      ))}
+                    <h2 className="mt-2 text-2xl font-black text-white">Das Profil in 30 Sekunden</h2>
+                    <div className="mt-5">
+                      <OverviewDigest lead={overviewLead} highlights={profileHighlights} />
                     </div>
 
-                    <div className="mt-6 rounded-lg border border-white/10 bg-white/[0.035] p-4">
+                    <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+                      {biography ? <BiographySummary biography={biography} /> : null}
+                      {abgeordnetenwatch ? <TransparencySummary profile={abgeordnetenwatch} /> : null}
+                    </div>
+
+                    <div className="mt-6 rounded-lg border border-white/10 bg-white/[0.035] p-5">
                       <h3 className="font-bold text-white">Basis des Profils</h3>
                       <p className="mt-2 text-sm leading-7 text-white/60">
                         Die Details dahinter sind in die Tabs ausgelagert: Themen zeigt die inhaltlichen
@@ -1367,8 +1369,8 @@ export function MdbProfilePage() {
                   </div>
                 )}
               </div>
-            </section>
-          </div>
+            </div>
+          </section>
         </main>
       </div>
     </>

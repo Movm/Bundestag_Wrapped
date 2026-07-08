@@ -68,10 +68,10 @@ function debateProfileSentence(speaker: SpeakerWrapped, displayName: string, int
   const observations: string[] = [];
 
   if (speaker.drama.interruptedRank && speaker.drama.interruptedRank <= 10) {
-    observations.push(`${displayName} wird im Plenum besonders häufig unterbrochen`);
+    observations.push('er wird im Plenum auffallend oft unterbrochen');
   }
   if (speaker.rankings.wordsRank <= 10) {
-    observations.push('prägt die Debatte mit hoher Präsenz');
+    observations.push('prägt Debatten mit hoher Präsenz');
   }
   if (speaker.rankings.longestSpeechRank <= 10) {
     observations.push('nimmt sich Raum für ausführliche Beiträge');
@@ -82,7 +82,7 @@ function debateProfileSentence(speaker: SpeakerWrapped, displayName: string, int
     return normalizeSentence(`${prefix} zeigt ${displayName} ein eigenständiges parlamentarisches Profil`);
   }
 
-  return normalizeSentence(`${prefix} entsteht ein Bild starker parlamentarischer Sichtbarkeit: ${joinNarrativeClauses(observations)}`);
+  return normalizeSentence(`${prefix} steht ${displayName} sichtbar im Zentrum parlamentarischer Auseinandersetzung: ${joinNarrativeClauses(observations)}`);
 }
 
 function transparencyPhrase(profile?: AbgeordnetenwatchProfile | null): string | null {
@@ -95,14 +95,14 @@ function transparencyPhrase(profile?: AbgeordnetenwatchProfile | null): string |
 
   if (sidejobs.length > 0) {
     return sidejobsWithIncome > 0
-      ? 'das Transparenzprofil verweist auf gemeldete Nebentätigkeiten mit Einkommensangaben'
-      : 'das Transparenzprofil verweist auf gemeldete Nebentätigkeiten ohne hinterlegte Einkommensangaben';
+      ? 'daneben bleibt das Transparenzprofil durch gemeldete Nebentätigkeiten öffentlich nachprüfbar'
+      : 'daneben verweist das Transparenzprofil auf gemeldete Nebentätigkeiten, ohne daraus eine Einkommensbewertung abzuleiten';
   }
   if ((profile.votes?.total ?? profile.votes?.recent.length ?? 0) > 0) {
-    return 'das Transparenzprofil macht sein Abstimmungsverhalten nachvollziehbar';
+    return 'sein Abstimmungsverhalten ist über öffentliche Transparenzdaten nachvollziehbar';
   }
   if ((profile.politician.questions ?? 0) > 0) {
-    return 'das Transparenzprofil zeigt öffentliche Bürgerfragen';
+    return 'öffentliche Bürgerfragen ergänzen das Bild seiner parlamentarischen Rolle';
   }
   return null;
 }
@@ -116,7 +116,7 @@ function contextSentence({
   const topicPart = topTopicName ? `Inhaltlich rückt ${topTopicName} in den Vordergrund` : null;
   const transparency = transparencyPhrase(abgeordnetenwatch);
   const languagePart = signatureWord?.word
-    ? `sprachlich wirkt das Profil markant und institutionell`
+    ? `sprachlich wirkt das Profil markant und eher institutionell`
     : spiritAnimal?.name
       ? `sprachlich wirkt das Profil klar wiedererkennbar`
       : null;
