@@ -13,8 +13,6 @@ import {
   type LucideIcon,
   MapPin,
   MessageSquare,
-  Search,
-  Share2,
   Sparkles,
   Trophy,
 } from 'lucide-react';
@@ -150,7 +148,7 @@ function SpeechRow({ speech }: { speech: Speech }) {
 }
 
 type ToneCard = [label: string, value: number, Icon: LucideIcon];
-type ProfileTab = 'overview' | 'bio' | 'transparency' | 'topics' | 'language' | 'tone' | 'speeches';
+type ProfileTab = 'overview' | 'bio' | 'transparency' | 'topics' | 'language' | 'tone' | 'speeches' | 'votes';
 type ProfileHighlight = {
   label: string;
   value: string;
@@ -160,12 +158,10 @@ type ProfileHighlight = {
 
 const PROFILE_TABS: { id: ProfileTab; label: string }[] = [
   { id: 'overview', label: 'Überblick' },
-  { id: 'bio', label: 'Biografie' },
-  { id: 'transparency', label: 'Transparenz' },
   { id: 'topics', label: 'Themen' },
-  { id: 'language', label: 'Sprache' },
-  { id: 'tone', label: 'Tonalität' },
   { id: 'speeches', label: 'Reden' },
+  { id: 'votes', label: 'Abstimmungen' },
+  { id: 'transparency', label: 'Transparenz' },
 ];
 
 function TabButton({
@@ -415,47 +411,17 @@ function SpiritAnimalSpotlight({
   partyColor: string;
 }) {
   return (
-    <div className="relative overflow-hidden rounded-lg border border-white/10 bg-bg-card/85 p-5 shadow-2xl">
+    <div className="flex flex-col items-center gap-3 justify-self-end text-center">
       <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          background: `radial-gradient(circle at 70% 10%, ${partyColor}, transparent 55%)`,
-        }}
-      />
-      <div className="relative">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-pink-300">
-          Spirit Animal
-        </p>
-        <div className="mt-3 flex items-center gap-4">
-          <div className="text-7xl md:text-8xl" aria-hidden="true">
-            {animal.emoji}
-          </div>
-          <div>
-            <p className="text-3xl font-black text-white md:text-4xl">{animal.name}</p>
-            <p className="mt-1 text-sm font-semibold text-white/70">{animal.title}</p>
-          </div>
-        </div>
-        <p className="mt-4 text-sm leading-6 text-white/65">{animal.reason}</p>
-
-        {animal.alternatives?.length ? (
-          <div className="mt-5 border-t border-white/10 pt-4">
-            <p className="text-xs uppercase tracking-wide text-white/40">Fast auch</p>
-            <div className="mt-3 flex gap-2">
-              {animal.alternatives.slice(0, 2).map((alternative) => (
-                <div
-                  key={alternative.id}
-                  className="flex min-w-0 flex-1 items-center gap-2 rounded-lg bg-white/[0.055] px-3 py-2"
-                >
-                  <span className="text-2xl" aria-hidden="true">{alternative.emoji}</span>
-                  <div className="min-w-0">
-                    <p className="truncate text-sm font-semibold text-white/80">{alternative.name}</p>
-                    <p className="truncate text-xs text-white/40">{alternative.title}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ) : null}
+        className="flex h-[120px] w-[120px] items-center justify-center overflow-hidden rounded-full border-[3px] bg-white/[0.04] text-7xl shadow-2xl shadow-black/30"
+        style={{ borderColor: `${partyColor}99` }}
+        aria-hidden="true"
+      >
+        {animal.emoji}
+      </div>
+      <div>
+        <p className="text-lg font-black leading-tight text-white">{animal.name}</p>
+        <p className="mt-1 text-xs font-semibold leading-5 text-white/80">{animal.title}</p>
       </div>
     </div>
   );
@@ -518,13 +484,15 @@ function ProfilePortrait({ image, name }: { image: ProfileImageMetadata | Offici
   const sourceLabel = image.sourceLabel === 'Wikimedia Commons' ? 'Wikimedia' : 'Bundestag';
 
   return (
-    <figure className="w-28 shrink-0 overflow-hidden rounded-full border-4 border-pink-500 bg-white/[0.04] shadow-2xl shadow-pink-950/40 md:w-36">
+    <figure className="w-[150px] shrink-0 md:w-[210px]">
+      <div className="h-[187px] overflow-hidden rounded-2xl border-[3px] border-pink-600/55 bg-white/[0.04] shadow-2xl shadow-pink-950/30 md:h-[262px]">
       <img
         src={image.thumbnailUrl ?? image.url}
         alt={image.alt ?? `${name}, offizielles Bundestag-Foto`}
-        className="aspect-square w-full object-cover"
+        className="h-full w-full object-cover"
         loading="eager"
       />
+      </div>
       <figcaption className="sr-only">
         <a
           href={image.sourceUrl}
@@ -534,6 +502,14 @@ function ProfilePortrait({ image, name }: { image: ProfileImageMetadata | Offici
           Foto: {sourceLabel} <ExternalLink size={11} />
         </a>
       </figcaption>
+      <a
+        href={image.sourceUrl}
+        target="_blank"
+        rel="noreferrer"
+        className="mt-2 inline-flex items-center gap-1 text-[11px] font-semibold text-white/70 hover:text-pink-200"
+      >
+        Foto: {sourceLabel} <ExternalLink size={11} />
+      </a>
     </figure>
   );
 }
@@ -1028,52 +1004,61 @@ export function MdbProfilePage() {
       />
 
       <div className="min-h-screen page-bg pt-14">
-        <main className="px-4 py-6 md:py-10">
-          <div className="mx-auto max-w-6xl">
-            <Link to="/abgeordnete" className="text-sm text-white/50 hover:text-white">
-              ← Alle Abgeordneten
-            </Link>
-          </div>
-
-          <section className="relative mx-auto mt-4 max-w-6xl overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a12]/90 shadow-2xl shadow-black/40">
-            <div className="h-2 w-full bg-pink-600" />
+        <main className="px-4 py-8">
+          <section className="mx-auto w-full max-w-[1200px] overflow-hidden rounded-lg border border-white/10 bg-[#0a0a12] shadow-2xl shadow-black/40">
             <div
-              className="absolute inset-x-0 top-0 h-72 opacity-20 blur-3xl"
+              className="border-b-[3px] border-pink-600"
               style={{
-                background: `radial-gradient(circle at 50% 0%, ${partyColor}, transparent 65%)`,
+                background: `radial-gradient(1000px 420px at 82% -10%, ${partyColor}42, transparent 62%), #0a0a12`,
               }}
-            />
-            <div className="relative px-5 py-6 md:px-9 md:py-8">
-              <div className="grid gap-8 lg:grid-cols-[1fr_360px] lg:items-start">
+            >
+              <div className="flex flex-wrap items-center justify-between gap-3 px-5 py-5 md:px-11">
+                <Link to="/abgeordnete" className="text-sm text-white/55 hover:text-white">
+                  ← Alle Abgeordneten
+                </Link>
+                <div className="flex gap-2">
+                  <Link
+                    to={searchUrl}
+                    className="rounded-full border border-white/15 px-4 py-2 text-sm text-white/80 hover:bg-white/10"
+                  >
+                    Reden durchsuchen
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={() => navigator.share?.({ title: displayName, url: window.location.href })}
+                    className="rounded-full bg-pink-600 px-4 py-2 text-sm font-semibold text-white hover:bg-pink-500"
+                  >
+                    Teilen
+                  </button>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-[150px_1fr] gap-5 px-5 pb-10 pt-3 md:grid-cols-[210px_1fr] md:px-11 lg:grid-cols-[210px_1fr_150px] lg:gap-10 lg:items-start">
+                <div>{profileImage ? <ProfilePortrait image={profileImage} name={displayName} /> : null}</div>
                 <div>
-                  <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-                    {profileImage ? <ProfilePortrait image={profileImage} name={displayName} /> : null}
-                    <div className="min-w-0">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <PartyBadge party={speaker.party} variant="filled" />
-                        {biography?.constituency ? (
-                          <span className="rounded-full border border-white/12 bg-white/[0.05] px-3 py-1 text-xs font-semibold text-white/60">
-                            {biography.constituency}
-                          </span>
-                        ) : null}
-                      </div>
-                      <h1 className="mt-3 max-w-4xl text-4xl font-black leading-none text-white md:text-6xl">
-                        {displayName}
-                      </h1>
-                      {profileImage ? (
-                        <a
-                          href={profileImage.sourceUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="mt-2 inline-flex items-center gap-1 text-[11px] font-semibold text-white/38 hover:text-pink-200"
-                        >
-                          Foto: {profileImage.sourceLabel === 'Wikimedia Commons' ? 'Wikimedia' : 'Bundestag'}
-                          <ExternalLink size={11} />
-                        </a>
+                  <div className="min-w-0">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <PartyBadge party={speaker.party} variant="filled" />
+                      {biography?.constituency ? (
+                        <span className="rounded-full border border-white/12 bg-white/[0.05] px-3 py-1 text-xs font-semibold text-white/60">
+                          {biography.constituency}
+                        </span>
                       ) : null}
                     </div>
+                    <h1 className="mt-3 max-w-4xl text-4xl font-black leading-[1.02] text-white md:text-[68px]">
+                      {displayName}
+                    </h1>
+                    <div className="mt-3 text-sm text-white/60 md:text-[15px]">
+                      {[
+                        biography?.constituency ? `Wahlkreis ${biography.constituency}` : null,
+                        biography?.profession,
+                        biography?.birthDate && biography?.birthPlace
+                          ? `geb. ${biography.birthDate} in ${biography.birthPlace}`
+                          : biography?.birthDate ? `geb. ${biography.birthDate}` : null,
+                      ].filter(Boolean).join(' · ')}
+                    </div>
                   </div>
-                  <p className="mt-5 max-w-3xl text-lg leading-8 text-white/72 md:text-xl">{liveSummary}</p>
+                  <p className="mt-5 max-w-[600px] text-sm leading-7 text-white/85 md:text-[17px] md:leading-[1.7]">{liveSummary}</p>
                   {liveSummarySourceUrl ? (
                     <a
                       href={liveSummarySourceUrl}
@@ -1087,102 +1072,87 @@ export function MdbProfilePage() {
                   ) : (
                     <p className="mt-2 text-xs font-semibold text-white/38">{liveSummarySourceNote}</p>
                   )}
-
-                  <div className="mt-6 grid gap-3 sm:grid-cols-4">
-                    <StatTile label="Wortbeiträge" value={formatNumber(speaker.wortbeitraege)} />
-                    <StatTile label="Reden" value={formatNumber(speaker.speeches)} />
-                    <StatTile label="Wörter" value={formatNumber(speaker.totalWords)} />
-                    <StatTile label="Top-Thema" value={topTopicName ?? '—'} />
-                  </div>
-
-                  <div className="mt-6 flex flex-wrap gap-3">
-                    <Link
-                      to={`/wrapped/${speaker.slug}`}
-                      className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-white"
-                      style={{ backgroundColor: partyColor }}
-                    >
-                      <Sparkles size={18} /> Wrapped ansehen
-                    </Link>
-                    <Link
-                      to={searchUrl}
-                      className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10"
-                    >
-                      <Search size={18} /> Reden durchsuchen
-                    </Link>
-                    <button
-                      type="button"
-                      onClick={() => navigator.share?.({ title: displayName, url: window.location.href })}
-                      className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10"
-                    >
-                      <Share2 size={18} /> Teilen
-                    </button>
-                  </div>
                 </div>
 
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="space-y-4"
+                  className="hidden justify-self-start lg:block lg:justify-self-end"
                 >
                   {spiritAnimal ? (
                     <SpiritAnimalSpotlight animal={spiritAnimal} partyColor={partyColor} />
                   ) : (
-                    <div className="rounded-lg border border-white/10 bg-bg-card/80 p-5 shadow-2xl">
-                      <p className="text-sm font-semibold text-white/70">Profil-Snapshot</p>
-                      <div className="mt-4 grid grid-cols-2 gap-3">
-                        <StatTile label="Reden" value={formatNumber(speaker.speeches)} />
-                        <StatTile label="Wörter" value={formatNumber(speaker.totalWords)} />
-                        <StatTile label="Rang" value={`#${speaker.rankings.speechRank}`} detail="nach Reden" />
-                        <StatTile
-                          label="Top-Thema"
-                          value={topTopic ? TOPIC_BY_ID[topTopic.topic]?.name ?? topTopic.topic : '—'}
-                        />
-                      </div>
-                    </div>
+                    <div className="h-[120px] w-[120px] rounded-full border-[3px] border-pink-600/55 bg-white/[0.04]" />
                   )}
                 </motion.div>
               </div>
+            </div>
 
-              <div className="mt-8 border-t border-white/10 pt-5">
-                <div className="flex gap-2 overflow-x-auto pb-2">
-                  {PROFILE_TABS.map((tab) => (
-                    <TabButton
-                      key={tab.id}
-                      active={activeTab === tab.id}
-                      label={tab.label}
-                      onClick={() => setActiveTab(tab.id)}
-                    />
-                  ))}
+            <div className="grid border-b border-white/10 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="border-white/10 px-5 py-6 md:px-11 lg:border-r">
+                <div className="text-4xl font-black text-white">{formatNumber(speaker.totalWords)}</div>
+                <div className="mt-1 text-[11px] uppercase tracking-wider text-white/50">
+                  Wörter gesprochen
+                  {speaker.rankings.wordsRank <= 10 ? (
+                    <span className="font-bold text-pink-500"> · #{speaker.rankings.wordsRank}</span>
+                  ) : null}
                 </div>
               </div>
+              <div className="border-white/10 px-5 py-6 md:px-8 lg:border-r">
+                <div className="text-4xl font-black text-white">{formatNumber(speaker.wortbeitraege)}</div>
+                <div className="mt-1 text-[11px] uppercase tracking-wider text-white/50">
+                  Wortbeiträge
+                  {speaker.drama.interruptedRank && speaker.drama.interruptedRank <= 10 ? (
+                    <span className="font-bold text-pink-500"> · Drama #{speaker.drama.interruptedRank}</span>
+                  ) : null}
+                </div>
+              </div>
+              <div className="border-white/10 px-5 py-6 md:px-8 lg:border-r">
+                <div className="text-4xl font-black text-white">
+                  {formatNumber(abgeordnetenwatch?.votes?.total ?? abgeordnetenwatch?.votes?.recent.length ?? 0)}
+                </div>
+                <div className="mt-1 text-[11px] uppercase tracking-wider text-white/50">Namentliche Votes</div>
+              </div>
+              <div className="px-5 py-6 md:px-8">
+                <div className="text-4xl font-black text-white">{formatNumber(speaker.maxWords)}</div>
+                <div className="mt-1 text-[11px] uppercase tracking-wider text-white/50">
+                  Wörter, längste Rede
+                  {speaker.rankings.longestSpeechRank <= 10 ? (
+                    <span className="font-bold text-pink-500"> · #{speaker.rankings.longestSpeechRank}</span>
+                  ) : null}
+                </div>
+              </div>
+            </div>
 
-              <div className="mt-4 border-t border-white/10 pt-6">
+            <div className="sticky top-14 z-20 flex gap-2 overflow-x-auto border-b border-white/10 bg-[#0a0a12] px-5 py-[18px] md:px-11">
+              {PROFILE_TABS.map((tab) => (
+                <TabButton
+                  key={tab.id}
+                  active={activeTab === tab.id}
+                  label={tab.label}
+                  onClick={() => setActiveTab(tab.id)}
+                />
+              ))}
+            </div>
+
+            <div className="px-5 py-9 md:px-11 md:pb-12">
+              <div>
                 {activeTab === 'overview' && (
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-pink-300">Überblick</p>
-                    <h2 className="mt-2 text-2xl font-black text-white">Das Profil in 30 Sekunden</h2>
-                    <div className="mt-5">
-                      <OverviewDigest lead={overviewLead} highlights={profileHighlights} />
+                  <div className="grid gap-8 lg:grid-cols-[1fr_340px]">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-pink-300">Ranglisten</p>
+                      <h2 className="mt-2 text-2xl font-black text-white">Wo dieses Profil herausragt</h2>
+                      <div className="mt-5">
+                        <OverviewDigest lead={overviewLead} highlights={profileHighlights} />
+                      </div>
                     </div>
-
-                    <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+                    <div className="space-y-5">
+                      <div className="rounded-lg border border-white/10 bg-white/[0.05] p-5">
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">Kurzprofil</p>
+                        <p className="mt-3 text-sm leading-7 text-white/68">{overviewLead}</p>
+                      </div>
                       {biography ? <BiographySummary biography={biography} /> : null}
                       {abgeordnetenwatch ? <TransparencySummary profile={abgeordnetenwatch} /> : null}
-                    </div>
-
-                    <div className="mt-6 rounded-lg border border-white/10 bg-white/[0.035] p-5">
-                      <h3 className="font-bold text-white">Basis des Profils</h3>
-                      <p className="mt-2 text-sm leading-7 text-white/60">
-                        Die Details dahinter sind in die Tabs ausgelagert: Themen zeigt die inhaltlichen
-                        Schwerpunkte, Sprache die auffälligen Wörter, Tonalität den Kommunikationsstil und Reden
-                        die einzelnen Beiträge aus der Suchdatenbank.
-                      </p>
-                      <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                        <StatTile label="Wortbeiträge" value={formatNumber(speaker.wortbeitraege)} />
-                        <StatTile label="Reden" value={formatNumber(speaker.speeches)} />
-                        <StatTile label="Wörter" value={formatNumber(speaker.totalWords)} />
-                        <StatTile label="Ø Wörter" value={formatNumber(speaker.avgWords)} detail="pro Beitrag" />
-                      </div>
                     </div>
                   </div>
                 )}
@@ -1366,6 +1336,64 @@ export function MdbProfilePage() {
                     ) : (
                       <p className="text-white/55">Keine Reden in der statischen Suchdatenbank gefunden.</p>
                     )}
+                  </div>
+                )}
+
+                {activeTab === 'votes' && (
+                  <div className="grid gap-8 lg:grid-cols-[1fr_340px]">
+                    <div>
+                      <div className="flex flex-wrap items-baseline justify-between gap-3">
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-pink-300">
+                            Namentliche Abstimmungen
+                          </p>
+                          <h2 className="mt-2 text-2xl font-black text-white">Abstimmungsverhalten</h2>
+                        </div>
+                        <span className="text-sm text-white/50">
+                          {formatNumber(abgeordnetenwatch?.votes?.total ?? abgeordnetenwatch?.votes?.recent.length ?? 0)} Votes
+                        </span>
+                      </div>
+                      <div className="mt-6 space-y-3">
+                        {abgeordnetenwatch?.votes?.recent.length ? (
+                          abgeordnetenwatch.votes.recent.map((vote) => (
+                            <VoteRow key={vote.id} vote={vote} />
+                          ))
+                        ) : (
+                          <p className="rounded-lg border border-white/10 bg-white/[0.035] p-4 text-sm text-white/55">
+                            Keine namentlichen Abstimmungen im aktuellen Import.
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                    <div className="space-y-5">
+                      <div className="rounded-lg border border-white/10 bg-white/[0.05] p-5">
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">Quelle</p>
+                        <p className="mt-3 text-sm leading-7 text-white/68">
+                          Die Abstimmungsdaten kommen aus dem verknüpften Abgeordnetenwatch-Mandat und werden
+                          hier als neueste verfügbare API-Auszüge gezeigt.
+                        </p>
+                        {abgeordnetenwatch?.sourceUrl ? (
+                          <a
+                            href={abgeordnetenwatch.sourceUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-pink-300 hover:text-pink-200"
+                          >
+                            Abgeordnetenwatch öffnen <ExternalLink size={13} />
+                          </a>
+                        ) : null}
+                      </div>
+                      <div className="rounded-lg border border-white/10 bg-white/[0.05] p-5">
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">Kennzahlen</p>
+                        <div className="mt-4 grid grid-cols-2 gap-4">
+                          <StatTile
+                            label="Votes"
+                            value={formatNumber(abgeordnetenwatch?.votes?.total ?? abgeordnetenwatch?.votes?.recent.length ?? 0)}
+                          />
+                          <StatTile label="Fraktion" value={abgeordnetenwatch?.mandate?.fraction ?? speaker.party} />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>
