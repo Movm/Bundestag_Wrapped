@@ -11,16 +11,52 @@ if (!name || !slug) {
 }
 
 const BASE_URL = 'https://bilddatenbank.bundestag.de';
+const OUT_DIR = path.resolve(process.cwd(), 'public', 'speaker-enrichment');
+
+function validateSlug(value) {
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value)) {
+    throw new Error(`Invalid slug "${value}". Use lowercase letters, numbers and hyphens only.`);
+  }
+  return value;
+}
+
+function outputFileForSlug(value) {
+  const safeSlug = validateSlug(value);
+  const file = path.resolve(OUT_DIR, `${safeSlug}.json`);
+  if (!file.startsWith(`${OUT_DIR}${path.sep}`)) {
+    throw new Error(`Refusing to write outside ${OUT_DIR}.`);
+  }
+  return file;
+}
 
 function decodeEntities(value) {
+  const entities = {
+    quot: '"',
+    '#039': "'",
+    amp: '&',
+    lt: '<',
+    gt: '>',
+  };
   return value
-    .replace(/&quot;/g, '"')
-    .replace(/&#039;/g, "'")
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
+    .replace(/&(quot|#039|amp|lt|gt);/g, (_, entity) => entities[entity])
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+function cleanText(value, fallback) {
+  const text = String(value ?? fallback ?? '')
+    .replace(/[\u0000-\u001f\u007f]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return text.slice(0, 500);
+}
+
+function cleanBundestagUrl(value) {
+  const url = new URL(value, BASE_URL);
+  if (url.origin !== BASE_URL) {
+    throw new Error(`Unexpected Bilddatenbank URL origin: ${url.origin}`);
+  }
+  return url.toString();
 }
 
 function stripTags(value) {
@@ -75,16 +111,16 @@ function parseFirstImage(html) {
     matchText(snippet, /Datum[\s\S]*?<dd[^>]*>([\s\S]*?)<\/dd>/);
 
   return {
-    url: imageUrl,
-    thumbnailUrl,
-    sourceUrl: new URL(linkMatch[1], BASE_URL).toString(),
+    url: cleanBundestagUrl(imageUrl),
+    thumbnailUrl: thumbnailUrl ? cleanBundestagUrl(thumbnailUrl) : undefined,
+    sourceUrl: cleanBundestagUrl(linkMatch[1]),
     sourceLabel: 'Bundestag Bilddatenbank',
     imageNumber: linkMatch[2],
-    photographer: photographer || undefined,
-    credit: photographer ? `Deutscher Bundestag/${photographer}` : 'Deutscher Bundestag',
-    caption: caption || `${name}, offizielles Foto aus der Bilddatenbank des Deutschen Bundestages.`,
-    alt: `${name}, offizielles Foto aus der Bilddatenbank des Deutschen Bundestages.`,
-    takenAt: takenAt || undefined,
+    photographer: photographer ? cleanText(photographer) : undefined,
+    credit: photographer ? `Deutscher Bundestag/${cleanText(photographer)}` : 'Deutscher Bundestag',
+    caption: cleanText(caption, `${name}, offizielles Foto aus der Bilddatenbank des Deutschen Bundestages.`),
+    alt: cleanText(`${name}, offizielles Foto aus der Bilddatenbank des Deutschen Bundestages.`),
+    takenAt: takenAt ? cleanText(takenAt) : undefined,
   };
 }
 
@@ -99,10 +135,9 @@ async function main() {
 
   const html = await response.text();
   const officialImage = parseFirstImage(html);
-  const outDir = path.join(process.cwd(), 'public', 'speaker-enrichment');
-  const outFile = path.join(outDir, `${slug}.json`);
+  const outFile = outputFileForSlug(slug);
 
-  await fs.mkdir(outDir, { recursive: true });
+  await fs.mkdir(OUT_DIR, { recursive: true });
 
   let existing = {};
   try {

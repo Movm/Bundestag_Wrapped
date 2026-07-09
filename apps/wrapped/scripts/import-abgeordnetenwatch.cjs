@@ -47,6 +47,49 @@ function buildQuery(params) {
   return text ? `?${text}` : '';
 }
 
+function validateSlug(value) {
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value)) {
+    throw new Error(`Invalid --slug "${value}". Use lowercase letters, numbers and hyphens only.`);
+  }
+  return value;
+}
+
+function slugifyLabel(value) {
+  return String(value ?? '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+function outputFileForSlug(value) {
+  const safeSlug = validateSlug(value);
+  const file = path.resolve(OUT_DIR, `${safeSlug}.json`);
+  if (!file.startsWith(`${OUT_DIR}${path.sep}`)) {
+    throw new Error(`Refusing to write outside ${OUT_DIR}.`);
+  }
+  return file;
+}
+
+function cleanText(value, fallback = null) {
+  if (value == null) return fallback;
+  return String(value)
+    .replace(/[\u0000-\u001f\u007f]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 600);
+}
+
+function cleanUrl(value) {
+  if (!value) return null;
+  const url = new URL(value);
+  if (url.hostname !== 'www.abgeordnetenwatch.de') {
+    throw new Error(`Unexpected Abgeordnetenwatch URL origin: ${url.origin}`);
+  }
+  return url.toString();
+}
+
 async function getJson(endpoint, params = {}) {
   const response = await fetch(`${API_BASE}/${endpoint}${buildQuery(params)}`, {
     headers: {
@@ -95,12 +138,12 @@ async function getCurrentMandate(politicianId) {
 function mapPolitician(politician) {
   return {
     id: politician.id,
-    url: politician.abgeordnetenwatch_url,
-    party: politician.party?.label ?? null,
+    url: cleanUrl(politician.abgeordnetenwatch_url),
+    party: cleanText(politician.party?.label),
     yearOfBirth: politician.year_of_birth ?? null,
-    education: politician.education ?? null,
-    residence: politician.residence ?? null,
-    occupation: politician.occupation ?? null,
+    education: cleanText(politician.education),
+    residence: cleanText(politician.residence),
+    occupation: cleanText(politician.occupation),
     questions: politician.statistic_questions != null ? Number(politician.statistic_questions) : null,
     questionsAnswered: politician.statistic_questions_answered != null
       ? Number(politician.statistic_questions_answered)
@@ -114,34 +157,34 @@ function mapMandate(mandate) {
   if (!mandate) return null;
   return {
     id: mandate.id,
-    label: mandate.label,
-    parliamentPeriod: mandate.parliament_period?.label ?? null,
-    fraction: mandate.fraction_membership?.[0]?.fraction?.label ?? null,
-    constituency: mandate.electoral_data?.constituency?.label ?? null,
-    list: mandate.electoral_data?.electoral_list?.label ?? null,
+    label: cleanText(mandate.label),
+    parliamentPeriod: cleanText(mandate.parliament_period?.label),
+    fraction: cleanText(mandate.fraction_membership?.[0]?.fraction?.label),
+    constituency: cleanText(mandate.electoral_data?.constituency?.label),
+    list: cleanText(mandate.electoral_data?.electoral_list?.label),
     listPosition: mandate.electoral_data?.list_position ?? null,
     constituencyResult: mandate.electoral_data?.constituency_result ?? null,
     mandateWon: mandate.electoral_data?.mandate_won ?? null,
-    apiUrl: mandate.api_url ?? null,
+    apiUrl: cleanUrl(mandate.api_url),
   };
 }
 
 function mapSidejob(sidejob) {
   return {
     id: sidejob.id,
-    title: sidejob.label ?? '',
-    organization: sidejob.sidejob_organization?.label ?? null,
+    title: cleanText(sidejob.label, ''),
+    organization: cleanText(sidejob.sidejob_organization?.label),
     category: sidejob.category ?? null,
     categoryLabel: SIDEJOB_CATEGORIES[String(sidejob.category)] ?? null,
     income: sidejob.income != null ? Number(sidejob.income) : null,
     incomeLevel: sidejob.income_level != null ? Number(sidejob.income_level) : null,
     interval: sidejob.interval ?? null,
     intervalLabel: INTERVAL_LABELS[String(sidejob.interval)] ?? null,
-    city: sidejob.field_city?.label ?? null,
-    country: sidejob.field_country?.label ?? null,
-    topics: (sidejob.field_topics ?? []).map((topic) => topic.label).filter(Boolean),
-    dataChangeDate: sidejob.data_change_date ?? null,
-    apiUrl: sidejob.api_url ?? null,
+    city: cleanText(sidejob.field_city?.label),
+    country: cleanText(sidejob.field_country?.label),
+    topics: (sidejob.field_topics ?? []).map((topic) => cleanText(topic.label)).filter(Boolean),
+    dataChangeDate: cleanText(sidejob.data_change_date),
+    apiUrl: cleanUrl(sidejob.api_url),
   };
 }
 
@@ -149,16 +192,16 @@ function mapVote(vote) {
   return {
     id: vote.id,
     pollId: vote.poll?.id ?? 0,
-    pollLabel: vote.poll?.label ?? '',
-    vote: vote.vote ?? '',
-    reasonNoShow: vote.reason_no_show ?? vote.reason_no_show_other ?? null,
-    fraction: vote.fraction?.label ?? null,
-    url: vote.poll?.abgeordnetenwatch_url ?? null,
+    pollLabel: cleanText(vote.poll?.label, ''),
+    vote: cleanText(vote.vote, ''),
+    reasonNoShow: cleanText(vote.reason_no_show ?? vote.reason_no_show_other),
+    fraction: cleanText(vote.fraction?.label),
+    url: cleanUrl(vote.poll?.abgeordnetenwatch_url),
   };
 }
 
 async function readExisting(slug) {
-  const file = path.join(OUT_DIR, `${slug}.json`);
+  const file = outputFileForSlug(slug);
   try {
     return JSON.parse(await fs.readFile(file, 'utf8'));
   } catch (error) {
@@ -191,18 +234,14 @@ async function main() {
       ])
     : [{ data: [] }, { data: [], meta: { result: { total: 0 } } }];
 
-  const slug = args.slug ?? politician.label.toLowerCase()
-    .normalize('NFD')
-    .replace(/\p{Diacritic}/gu, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
+  const slug = validateSlug(args.slug ?? slugifyLabel(politician.label));
   const existing = await readExisting(slug);
 
   const enrichment = {
     ...existing,
     abgeordnetenwatch: {
       sourceLabel: 'Abgeordnetenwatch',
-      sourceUrl: politician.abgeordnetenwatch_url,
+      sourceUrl: cleanUrl(politician.abgeordnetenwatch_url),
       license: 'CC0 1.0',
       licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/deed.de',
       updatedAt: new Date().toISOString().slice(0, 10),
@@ -221,7 +260,7 @@ async function main() {
   };
 
   await fs.mkdir(OUT_DIR, { recursive: true });
-  await fs.writeFile(path.join(OUT_DIR, `${slug}.json`), `${JSON.stringify(enrichment, null, 2)}\n`);
+  await fs.writeFile(outputFileForSlug(slug), `${JSON.stringify(enrichment, null, 2)}\n`);
   console.log(`Imported Abgeordnetenwatch enrichment for ${politician.label} -> ${slug}.json`);
 }
 
