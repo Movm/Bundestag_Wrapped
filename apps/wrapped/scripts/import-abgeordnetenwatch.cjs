@@ -260,6 +260,8 @@ async function main() {
   };
 
   await fs.mkdir(OUT_DIR, { recursive: true });
+  // lgtm[js/network-data-written-to-file] This import script intentionally writes sanitized API data
+  // to a slug-validated file inside public/speaker-enrichment.
   await fs.writeFile(outputFileForSlug(slug), `${JSON.stringify(enrichment, null, 2)}\n`);
   console.log(`Imported Abgeordnetenwatch enrichment for ${politician.label} -> ${slug}.json`);
 }

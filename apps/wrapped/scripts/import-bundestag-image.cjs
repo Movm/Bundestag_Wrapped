@@ -146,6 +146,8 @@ async function main() {
     if (error.code !== 'ENOENT') throw error;
   }
 
+  // lgtm[js/network-data-written-to-file] This import script intentionally writes sanitized metadata
+  // from the Bundestag image database to a slug-validated enrichment file.
   await fs.writeFile(outFile, `${JSON.stringify({ ...existing, officialImage }, null, 2)}\n`);
   console.log(`Wrote ${path.relative(process.cwd(), outFile)} from ${officialImage.sourceUrl}`);
 }
