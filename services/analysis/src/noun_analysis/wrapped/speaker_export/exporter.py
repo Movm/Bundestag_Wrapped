@@ -2,6 +2,7 @@
 
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
+import math
 from pathlib import Path
 from typing import TYPE_CHECKING
 
@@ -34,6 +35,7 @@ class SpeakerExporter(
         self._speaker_index: dict[str, dict] = {}
         self._rankings: dict[str, dict] = {}
         self._speaker_speeches: dict[str, list] = {}  # Store actual speech data
+        self._speaker_aliases: dict[str, set[str]] = {}
 
         # Cached stopwords reference (avoid repeated property access)
         self._stopwords = WordAnalyzer.STOPWORD_GENERIC
@@ -69,24 +71,53 @@ class SpeakerExporter(
         self._compute_speaker_tone_scores()
         self._compute_speaker_topic_scores()
 
+    def _canonical_speaker_key(self, speaker: str, party: str) -> str:
+        """Return the internal identity key for a speaker within a party.
+
+        Protocols are not always consistent about academic titles. The same
+        person can appear as both "Dr. Name" and "Name"; slugs already strip
+        titles, so using the slug plus party here prevents split profiles and
+        file overwrites while keeping same-name speakers in different parties
+        separate.
+        """
+        return f"{generate_slug(speaker)}::{party}"
+
+    @staticmethod
+    def _prefer_display_name(
+        current_name: str,
+        current_title: str | None,
+        new_name: str,
+        new_title: str | None,
+    ) -> bool:
+        """Prefer the display variant that carries an academic title."""
+        if new_title and not current_title:
+            return True
+        if bool(new_title) == bool(current_title) and len(new_name) > len(current_name):
+            return True
+        return False
+
     def _build_speaker_index(self):
         """Build index of all speakers with aggregated stats."""
         speaker_words: dict[str, int] = {}
         speaker_speeches: dict[str, int] = {}  # Formal speeches only (category='rede')
         speaker_wortbeitraege: dict[str, int] = {}  # Non-formal speeches (category='wortbeitrag')
-        speaker_befragung: dict[str, int] = {}  # Q&A responses (type='befragung'/'fragestunde_antwort')
+        speaker_befragung: dict[str, int] = {}
         speaker_total_interventions: dict[str, int] = {}  # All entries
         speaker_party: dict[str, str] = {}
         speaker_titles: dict[str, str | None] = {}
         speaker_min_words: dict[str, int] = {}
         speaker_max_words: dict[str, int] = {}
 
+        speaker_names: dict[str, str] = {}
+
         for speech in self.data.all_speeches:
-            speaker = speech['speaker']
+            raw_speaker = speech['speaker']
             party = speech['party']
+            speaker = self._canonical_speaker_key(raw_speaker, party)
             words = speech.get('words', 0)
             speech_type = speech.get('type', 'other')
             category = speech.get('category', 'rede' if speech_type == 'rede' else 'wortbeitrag')
+            acad_title = speech.get('acad_title')
 
             if speaker not in speaker_words:
                 speaker_words[speaker] = 0
@@ -95,10 +126,20 @@ class SpeakerExporter(
                 speaker_befragung[speaker] = 0
                 speaker_total_interventions[speaker] = 0
                 speaker_party[speaker] = party
-                speaker_titles[speaker] = speech.get('acad_title')
+                speaker_titles[speaker] = acad_title
+                speaker_names[speaker] = raw_speaker
                 speaker_min_words[speaker] = words
                 speaker_max_words[speaker] = words
                 self._speaker_speeches[speaker] = []
+                self._speaker_aliases[speaker] = set()
+            elif self._prefer_display_name(
+                speaker_names[speaker],
+                speaker_titles[speaker],
+                raw_speaker,
+                acad_title,
+            ):
+                speaker_names[speaker] = raw_speaker
+                speaker_titles[speaker] = acad_title
 
             speaker_words[speaker] += words
             speaker_total_interventions[speaker] += 1
@@ -116,18 +157,21 @@ class SpeakerExporter(
             speaker_min_words[speaker] = min(speaker_min_words[speaker], words)
             speaker_max_words[speaker] = max(speaker_max_words[speaker], words)
             self._speaker_speeches[speaker].append(speech)
+            self._speaker_aliases[speaker].add(raw_speaker)
 
         # Build index
         for speaker in speaker_words:
-            slug = generate_slug(speaker)
+            name = speaker_names[speaker]
+            slug = generate_slug(name)
             total_count = speaker_speeches[speaker] + speaker_wortbeitraege[speaker]
             self._speaker_index[speaker] = {
-                'name': speaker,
+                '_key': speaker,
+                'name': name,
                 'slug': slug,
                 'party': speaker_party[speaker],
                 'speeches': speaker_speeches[speaker],  # Formal speeches (category='rede')
-                'wortbeitraege': speaker_wortbeitraege[speaker],  # Non-formal (category='wortbeitrag')
-                'befragungResponses': speaker_befragung[speaker],  # Q&A answers (subset of wortbeitraege)
+                'wortbeitraege': speaker_wortbeitraege[speaker],
+                'befragungResponses': speaker_befragung[speaker],
                 'totalInterventions': speaker_total_interventions[speaker],  # All entries
                 'totalWords': speaker_words[speaker],
                 'avgWords': round(speaker_words[speaker] / total_count) if total_count > 0 else 0,
@@ -334,8 +378,16 @@ class SpeakerExporter(
         interrupters = self.data.drama_stats.get("interrupters", Counter())
         interrupted = self.data.drama_stats.get("interrupted", Counter())
 
-        interruptions_given = interrupters.get((speaker, party), 0)
-        interruptions_received = interrupted.get((speaker, party), 0)
+        interruptions_given = sum(
+            count
+            for (name, raw_party), count in interrupters.items()
+            if raw_party == party and self._canonical_speaker_key(name, raw_party) == speaker
+        )
+        interruptions_received = sum(
+            count
+            for (name, raw_party), count in interrupted.items()
+            if raw_party == party and self._canonical_speaker_key(name, raw_party) == speaker
+        )
 
         rankings = self._rankings.get(speaker, {})
 
@@ -359,6 +411,22 @@ class SpeakerExporter(
         return {
             'topWords': top_words,
         }
+
+    @staticmethod
+    def _format_signature_words(words: list[dict], ratio_key: str) -> list[dict]:
+        """Convert internal signature rows to frontend-facing score/ratio rows."""
+        formatted = []
+        for item in words:
+            ratio = item.get(ratio_key, 0)
+            count = item.get('count', 0)
+            formatted.append({
+                'word': item.get('word', ''),
+                'count': count,
+                'score': round(count * math.log(ratio + 1), 2) if ratio > 0 else 0,
+                'ratio': ratio,
+            })
+        formatted.sort(key=lambda x: x['score'], reverse=True)
+        return formatted
 
     def _get_speaker_comparison(self, speaker: str, party: str) -> dict:
         """Get comparison vs party and parliament averages using pre-computed values."""
@@ -480,23 +548,52 @@ class SpeakerExporter(
         words_data = self._get_speaker_words(speaker)
         signature_words = self._get_speaker_signature_words(speaker, party)
         words_data['signatureWords'] = signature_words
+        words_data['signatureWordsParty'] = self._format_signature_words(
+            signature_words,
+            'ratioParty',
+        )
+        words_data['signatureWordsBundestag'] = self._format_signature_words(
+            signature_words,
+            'ratioBundestag',
+        )
 
         # Get signature adjectives
         signature_adjectives = self._get_speaker_signature_adjectives(speaker, party)
         words_data['signatureAdjectives'] = signature_adjectives
+        words_data['signatureAdjectivesParty'] = self._format_signature_words(
+            signature_adjectives,
+            'ratioParty',
+        )
+        words_data['signatureAdjectivesBundestag'] = self._format_signature_words(
+            signature_adjectives,
+            'ratioBundestag',
+        )
+
+        display_name = info['name']
 
         # Generate signature word quiz
-        signature_quiz = self._generate_signature_quiz(speaker, party, signature_words)
+        signature_quiz = self._generate_signature_quiz(display_name, party, signature_words)
 
         # Generate signature adjective quiz
-        signature_adjective_quiz = self._generate_signature_adjective_quiz(speaker, party, signature_adjectives)
+        signature_adjective_quiz = self._generate_signature_adjective_quiz(
+            display_name,
+            party,
+            signature_adjectives,
+        )
 
         # Get drama and comparison for spirit animal calculation
         drama = self._get_speaker_drama(speaker, party)
         comparison = self._get_speaker_comparison(speaker, party)
 
         # Get speaker gender for gendered spirit animal titles
-        profile = self.data.speaker_profiles.get(speaker)
+        profile = next(
+            (
+                self.data.speaker_profiles.get(alias)
+                for alias in self._speaker_aliases.get(speaker, {display_name})
+                if self.data.speaker_profiles.get(alias)
+            ),
+            None,
+        )
         gender = profile.gender if profile else "unknown"
 
         # Assign spirit animal based on speaker behavior

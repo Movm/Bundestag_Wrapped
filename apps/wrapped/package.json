@@ -8,6 +8,8 @@
     "dev": "vite",
     "prebuild": "node scripts/generate-sitemap.cjs",
     "build": "tsc -b && vite build",
+    "import:abgeordnetenwatch": "node scripts/import-abgeordnetenwatch.cjs",
+    "import:bundestag-image": "node scripts/import-bundestag-image.cjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",

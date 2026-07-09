@@ -24,6 +24,27 @@ class RankingsMixin:
     _party_avg_words: dict[str, int]
     _parliament_avg_words: int
 
+    def _ranking_key(self, info: dict) -> str:
+        """Return the internal key for a speaker info row."""
+        if info.get('_key'):
+            return info['_key']
+        for key, value in self._speaker_index.items():
+            if value is info:
+                return key
+        return info['name']
+
+    def _aggregate_drama_counter(self, counter: Counter) -> Counter:
+        """Aggregate raw drama stats by canonical speaker key when available."""
+        if not hasattr(self, "_canonical_speaker_key"):
+            return counter
+
+        aggregated = Counter()
+        for (name, party), count in counter.items():
+            key = self._canonical_speaker_key(name, party)
+            if key in self._speaker_index:
+                aggregated[(key, party)] += count
+        return aggregated
+
     def _compute_averages(self):
         """Pre-compute party and parliament average words per speech."""
         # Group by party
@@ -74,7 +95,7 @@ class RankingsMixin:
             reverse=True
         )
         by_avg_words = sorted(
-            [i for i in self._speaker_index.values() if i['speeches'] >= 3],  # Min 3 speeches for verbosity
+            [i for i in self._speaker_index.values() if i['speeches'] >= 3],
             key=lambda x: x['avgWords'],
             reverse=True
         )
@@ -88,43 +109,50 @@ class RankingsMixin:
 
         # Global rankings
         for rank, info in enumerate(by_speeches, 1):
-            speaker = info['name']
+            speaker = self._ranking_key(info)
             if speaker not in self._rankings:
                 self._rankings[speaker] = {}
             self._rankings[speaker]['speechRank'] = rank
-            self._rankings[speaker]['speechPercentile'] = round((1 - rank / total_speakers) * 100, 1)
+            self._rankings[speaker]['speechPercentile'] = round(
+                (1 - rank / total_speakers) * 100,
+                1,
+            )
 
         for rank, info in enumerate(by_words, 1):
-            speaker = info['name']
+            speaker = self._ranking_key(info)
             self._rankings[speaker]['wordsRank'] = rank
             self._rankings[speaker]['wordsPercentile'] = round((1 - rank / total_speakers) * 100, 1)
 
         # Verbosity ranking (avg words per speech, min 3 speeches)
         for rank, info in enumerate(by_avg_words, 1):
-            speaker = info['name']
+            speaker = self._ranking_key(info)
             self._rankings[speaker]['verbosityRank'] = rank
             self._rankings[speaker]['verbosityTotal'] = len(by_avg_words)
 
         # Longest speech ranking
         for rank, info in enumerate(by_longest, 1):
-            speaker = info['name']
+            speaker = self._ranking_key(info)
             self._rankings[speaker]['longestSpeechRank'] = rank
 
         # Interrupter ranking
-        interrupters = self.data.drama_stats.get("interrupters", Counter())
+        interrupters = self._aggregate_drama_counter(
+            self.data.drama_stats.get("interrupters", Counter())
+        )
         sorted_interrupters = interrupters.most_common()
-        for rank, ((name, party), count) in enumerate(sorted_interrupters, 1):
-            if name in self._rankings:
-                self._rankings[name]['interrupterRank'] = rank
-                self._rankings[name]['totalInterrupters'] = len(sorted_interrupters)
+        for rank, ((speaker, party), count) in enumerate(sorted_interrupters, 1):
+            if speaker in self._rankings:
+                self._rankings[speaker]['interrupterRank'] = rank
+                self._rankings[speaker]['totalInterrupters'] = len(sorted_interrupters)
 
         # Most interrupted ranking
-        interrupted = self.data.drama_stats.get("interrupted", Counter())
+        interrupted = self._aggregate_drama_counter(
+            self.data.drama_stats.get("interrupted", Counter())
+        )
         sorted_interrupted = interrupted.most_common()
-        for rank, ((name, party), count) in enumerate(sorted_interrupted, 1):
-            if name in self._rankings:
-                self._rankings[name]['interruptedRank'] = rank
-                self._rankings[name]['totalInterrupted'] = len(sorted_interrupted)
+        for rank, ((speaker, party), count) in enumerate(sorted_interrupted, 1):
+            if speaker in self._rankings:
+                self._rankings[speaker]['interruptedRank'] = rank
+                self._rankings[speaker]['totalInterrupted'] = len(sorted_interrupted)
 
         # Per-party rankings
         parties = set(info['party'] for info in self._speaker_index.values())
@@ -143,11 +171,12 @@ class RankingsMixin:
             )
 
             for rank, info in enumerate(party_by_speeches, 1):
-                self._rankings[info['name']]['partySpeechRank'] = rank
-                self._rankings[info['name']]['partySize'] = len(party_speakers)
+                speaker = self._ranking_key(info)
+                self._rankings[speaker]['partySpeechRank'] = rank
+                self._rankings[speaker]['partySize'] = len(party_speakers)
 
             for rank, info in enumerate(party_by_words, 1):
-                self._rankings[info['name']]['partyWordsRank'] = rank
+                self._rankings[self._ranking_key(info)]['partyWordsRank'] = rank
 
             for rank, info in enumerate(party_by_avg, 1):
-                self._rankings[info['name']]['partyVerbosityRank'] = rank
+                self._rankings[self._ranking_key(info)]['partyVerbosityRank'] = rank
