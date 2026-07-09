@@ -732,7 +732,6 @@ function TransparencyDetail({ profile }: { profile?: AbgeordnetenwatchProfile | 
 
   const mandate = profile.mandate;
   const sidejobs = profile.sidejobs ?? [];
-  const votes = profile.votes?.recent ?? [];
   const answered = profile.politician.questionsAnswered;
   const questions = profile.politician.questions;
   const answerDetail = typeof answered === 'number' && typeof questions === 'number'
@@ -746,7 +745,7 @@ function TransparencyDetail({ profile }: { profile?: AbgeordnetenwatchProfile | 
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-pink-300">Transparenz</p>
-          <h2 className="mt-2 text-2xl font-black text-white">Mandat, Nebentätigkeiten & Votes</h2>
+          <h2 className="mt-2 text-2xl font-black text-white">Mandat & Nebentätigkeiten</h2>
         </div>
         <a
           href={profile.sourceUrl}
@@ -758,9 +757,8 @@ function TransparencyDetail({ profile }: { profile?: AbgeordnetenwatchProfile | 
         </a>
       </div>
 
-      <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-6 grid gap-3 sm:grid-cols-3">
         <StatTile label="Nebentätigkeiten" value={formatNumber(sidejobs.length)} />
-        <StatTile label="Abstimmungen" value={formatNumber(profile.votes?.total ?? votes.length)} />
         <StatTile label="Bürgerfragen" value={formatNumber(questions ?? 0)} detail={answerDetail} />
         <StatTile label="Lizenz" value={profile.license} detail="Abgeordnetenwatch API" />
       </div>
@@ -782,38 +780,20 @@ function TransparencyDetail({ profile }: { profile?: AbgeordnetenwatchProfile | 
         </div>
       ) : null}
 
-      <div className="mt-5 grid gap-5 lg:grid-cols-[1fr_1fr]">
-        <div>
-          <h3 className="font-bold text-white">Nebentätigkeiten</h3>
-          <p className="mt-2 text-sm leading-6 text-white/55">
-            Abgeordnetenwatch bereitet Veröffentlichungen der Bundestagsverwaltung auf. Ein fehlender Betrag
-            bedeutet hier: In diesem API-Eintrag ist kein Einkommen hinterlegt.
-          </p>
-          <div className="mt-4 space-y-3">
-            {sidejobs.length ? sidejobs.map((sidejob) => (
-              <SidejobRow key={sidejob.id} sidejob={sidejob} />
-            )) : (
-              <p className="rounded-lg border border-white/10 bg-white/[0.035] p-4 text-sm text-white/55">
-                Keine Nebentätigkeiten im aktuellen Import.
-              </p>
-            )}
-          </div>
-        </div>
-
-        <div>
-          <h3 className="font-bold text-white">Neueste namentliche Abstimmungen</h3>
-          <p className="mt-2 text-sm leading-6 text-white/55">
-            Die Liste kommt aus dem aktuellen Abgeordnetenwatch-Mandat und ist nach API-Reihenfolge importiert.
-          </p>
-          <div className="mt-4 space-y-3">
-            {votes.length ? votes.map((vote) => (
-              <VoteRow key={vote.id} vote={vote} />
-            )) : (
-              <p className="rounded-lg border border-white/10 bg-white/[0.035] p-4 text-sm text-white/55">
-                Keine Abstimmungen im aktuellen Import.
-              </p>
-            )}
-          </div>
+      <div className="mt-5">
+        <h3 className="font-bold text-white">Nebentätigkeiten</h3>
+        <p className="mt-2 text-sm leading-6 text-white/55">
+          Abgeordnetenwatch bereitet Veröffentlichungen der Bundestagsverwaltung auf. Ein fehlender Betrag
+          bedeutet hier: In diesem API-Eintrag ist kein Einkommen hinterlegt.
+        </p>
+        <div className="mt-4 space-y-3">
+          {sidejobs.length ? sidejobs.map((sidejob) => (
+            <SidejobRow key={sidejob.id} sidejob={sidejob} />
+          )) : (
+            <p className="rounded-lg border border-white/10 bg-white/[0.035] p-4 text-sm text-white/55">
+              Keine Nebentätigkeiten im aktuellen Import.
+            </p>
+          )}
         </div>
       </div>
 
