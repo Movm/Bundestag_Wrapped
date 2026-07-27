@@ -204,6 +204,7 @@ export interface ToneAnalysis {
 
 export interface WrappedData {
   metadata: {
+    generatedAt: string;
     totalSpeeches: number;
     redenCount: number;
     wortbeitraegeCount: number;

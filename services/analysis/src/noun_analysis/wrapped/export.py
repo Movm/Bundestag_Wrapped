@@ -1,6 +1,12 @@
 """Web/JSON export methods for wrapped analysis (mixin class)."""
 
+from datetime import datetime, timezone
 import random
+
+
+def _generated_at() -> str:
+    """Return the export time as an ISO 8601 UTC timestamp."""
+    return datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
 
 
 class ExportMixin:
@@ -503,6 +509,7 @@ class ExportMixin:
 
         return {
             "metadata": {
+                "generatedAt": _generated_at(),
                 "totalSpeeches": self.metadata.get("total_speeches", 0),
                 "redenCount": total_reden,
                 "wortbeitraegeCount": total_wortbeitraege,
