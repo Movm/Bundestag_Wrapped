@@ -11,23 +11,23 @@
   "minWords": 20,
   "maxWords": 603,
   "rankings": {
-    "speechRank": 283,
-    "wordsRank": 389,
-    "partySpeechRank": 62,
-    "partyWordsRank": 85,
+    "speechRank": 293,
+    "wordsRank": 402,
+    "partySpeechRank": 63,
+    "partyWordsRank": 90,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 54.7,
-    "verbosityRank": 466,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 53.2,
+    "verbosityRank": 468,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 121,
-    "longestSpeechRank": 493
+    "longestSpeechRank": 496
   },
   "drama": {
     "interruptionsGiven": 3,
     "interruptionsReceived": 18,
-    "interrupterRank": 380,
-    "interruptedRank": 349
+    "interrupterRank": 386,
+    "interruptedRank": 359
   },
   "words": {
     "topWords": [
@@ -64,42 +64,108 @@
       {
         "word": "bargeld",
         "count": 9,
-        "ratioParty": 121.7,
-        "ratioBundestag": 120.7
+        "ratioParty": 126.2,
+        "ratioBundestag": 123.5
       },
       {
         "word": "energiesteuer",
         "count": 7,
-        "ratioParty": 61.8,
-        "ratioBundestag": 110.0
+        "ratioParty": 61.4,
+        "ratioBundestag": 112.3
       },
       {
         "word": "entlastungen",
         "count": 6,
-        "ratioParty": 21.7,
-        "ratioBundestag": 18.9
+        "ratioParty": 22.5,
+        "ratioBundestag": 19.3
       },
       {
         "word": "entlastet",
         "count": 5,
-        "ratioParty": 17.8,
-        "ratioBundestag": 13.6
+        "ratioParty": 18.5,
+        "ratioBundestag": 13.7
       },
       {
         "word": "senken",
         "count": 10,
-        "ratioParty": 13.6,
-        "ratioBundestag": 16.1
+        "ratioParty": 13.5,
+        "ratioBundestag": 16.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bargeld",
+        "count": 9,
+        "score": 43.61,
+        "ratio": 126.2
+      },
+      {
+        "word": "energiesteuer",
+        "count": 7,
+        "score": 28.93,
+        "ratio": 61.4
+      },
+      {
+        "word": "senken",
+        "count": 10,
+        "score": 26.74,
+        "ratio": 13.5
+      },
+      {
+        "word": "entlastungen",
+        "count": 6,
+        "score": 18.94,
+        "ratio": 22.5
+      },
+      {
+        "word": "entlastet",
+        "count": 5,
+        "score": 14.85,
+        "ratio": 18.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bargeld",
+        "count": 9,
+        "score": 43.42,
+        "ratio": 123.5
+      },
+      {
+        "word": "energiesteuer",
+        "count": 7,
+        "score": 33.11,
+        "ratio": 112.3
+      },
+      {
+        "word": "senken",
+        "count": 10,
+        "score": 28.33,
+        "ratio": 16.0
+      },
+      {
+        "word": "entlastungen",
+        "count": 6,
+        "score": 18.06,
+        "ratio": 19.3
+      },
+      {
+        "word": "entlastet",
+        "count": 5,
+        "score": 13.44,
+        "ratio": 13.7
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 348,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.62,
-    "vsParliament": 0.6
+    "vsParliament": 0.59
   },
   "funFacts": [
     {
@@ -121,20 +187,20 @@
         "isCorrect": true
       },
       {
-        "text": "Abstimmung",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
-        "text": "Bundesregierung",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
+        "text": "Politik",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bargeld\" nutzt Iris Nieland 121.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "120.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bargeld\" nutzt Iris Nieland 126.2× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "123.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -211,11 +277,11 @@
           "count": 3
         },
         {
-          "word": "kernenergie",
+          "word": "atomausstieg",
           "count": 1
         },
         {
-          "word": "atomausstieg",
+          "word": "kernenergie",
           "count": 1
         }
       ],
@@ -225,19 +291,19 @@
           "count": 3
         },
         {
-          "word": "markt",
-          "count": 3
-        },
-        {
           "word": "unternehmen",
           "count": 3
         },
         {
-          "word": "volkswirtschaft",
-          "count": 2
+          "word": "markt",
+          "count": 3
         },
         {
           "word": "wirtschaft",
+          "count": 2
+        },
+        {
+          "word": "volkswirtschaft",
           "count": 2
         }
       ],
@@ -255,11 +321,11 @@
           "count": 2
         },
         {
-          "word": "kind",
+          "word": "wohnung",
           "count": 1
         },
         {
-          "word": "umverteilung",
+          "word": "kind",
           "count": 1
         }
       ],
@@ -299,11 +365,11 @@
       ],
       "bildung": [
         {
-          "word": "professor",
+          "word": "schulen",
           "count": 1
         },
         {
-          "word": "schulen",
+          "word": "professor",
           "count": 1
         }
       ],
@@ -345,11 +411,11 @@
           "count": 2
         },
         {
-          "word": "arbeitsplätze",
+          "word": "homeoffice",
           "count": 1
         },
         {
-          "word": "homeoffice",
+          "word": "arbeitsplätze",
           "count": 1
         },
         {

@@ -11,23 +11,23 @@
   "minWords": 147,
   "maxWords": 458,
   "rankings": {
-    "speechRank": 155,
-    "wordsRank": 320,
-    "partySpeechRank": 22,
-    "partyWordsRank": 36,
+    "speechRank": 172,
+    "wordsRank": 334,
+    "partySpeechRank": 25,
+    "partyWordsRank": 38,
     "partySize": 63,
-    "totalSpeakers": 625,
-    "percentile": 75.2,
-    "verbosityRank": 470,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 45,
-    "longestSpeechRank": 592
+    "totalSpeakers": 626,
+    "percentile": 72.5,
+    "verbosityRank": 472,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 44,
+    "longestSpeechRank": 595
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 8,
     "interrupterRank": null,
-    "interruptedRank": 496
+    "interruptedRank": 503
   },
   "words": {
     "topWords": [
@@ -68,32 +68,96 @@
       {
         "word": "partnerinnen",
         "count": 5,
-        "ratioParty": 370.0,
-        "ratioBundestag": 202.7
+        "ratioParty": 383.8,
+        "ratioBundestag": 189.5
       },
       {
         "word": "fortbildungen",
         "count": 10,
-        "ratioParty": 105.7,
-        "ratioBundestag": 384.1
+        "ratioParty": 109.7,
+        "ratioBundestag": 398.8
       },
       {
         "word": "einschüchterung",
         "count": 5,
-        "ratioParty": 52.9,
-        "ratioBundestag": 68.9
+        "ratioParty": 54.8,
+        "ratioBundestag": 70.2
       },
       {
         "word": "entwurf",
         "count": 22,
-        "ratioParty": 36.2,
-        "ratioBundestag": 23.8
+        "ratioParty": 36.7,
+        "ratioBundestag": 23.5
       },
       {
         "word": "digitalisierung",
         "count": 19,
-        "ratioParty": 32.7,
-        "ratioBundestag": 17.6
+        "ratioParty": 33.1,
+        "ratioBundestag": 18.0
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "entwurf",
+        "count": 22,
+        "score": 79.85,
+        "ratio": 36.7
+      },
+      {
+        "word": "digitalisierung",
+        "count": 19,
+        "score": 67.06,
+        "ratio": 33.1
+      },
+      {
+        "word": "fortbildungen",
+        "count": 10,
+        "score": 47.07,
+        "ratio": 109.7
+      },
+      {
+        "word": "partnerinnen",
+        "count": 5,
+        "score": 29.76,
+        "ratio": 383.8
+      },
+      {
+        "word": "einschüchterung",
+        "count": 5,
+        "score": 20.11,
+        "ratio": 54.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "entwurf",
+        "count": 22,
+        "score": 70.37,
+        "ratio": 23.5
+      },
+      {
+        "word": "fortbildungen",
+        "count": 10,
+        "score": 59.91,
+        "ratio": 398.8
+      },
+      {
+        "word": "digitalisierung",
+        "count": 19,
+        "score": 55.94,
+        "ratio": 18.0
+      },
+      {
+        "word": "partnerinnen",
+        "count": 5,
+        "score": 26.25,
+        "ratio": 189.5
+      },
+      {
+        "word": "einschüchterung",
+        "count": 5,
+        "score": 21.33,
+        "ratio": 70.2
       }
     ],
     "signatureAdjectives": [
@@ -106,8 +170,8 @@
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 2.6,
-        "ratioBundestag": 3.3
+        "ratioParty": 2.7,
+        "ratioBundestag": 3.4
       },
       {
         "word": "rechts",
@@ -119,14 +183,66 @@
         "word": "sozial",
         "count": 3,
         "ratioParty": 2.3,
-        "ratioBundestag": 6.0
+        "ratioBundestag": 6.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 5.83,
+        "ratio": 3.3
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 3.92,
+        "ratio": 2.7
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 3.76,
+        "ratio": 2.5
+      },
+      {
+        "word": "sozial",
+        "count": 3,
+        "score": 3.58,
+        "ratio": 2.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sozial",
+        "count": 3,
+        "score": 5.92,
+        "ratio": 6.2
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 5.06,
+        "ratio": 4.4
+      },
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 4.9,
+        "ratio": 2.4
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 4.44,
+        "ratio": 3.4
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 344,
-    "partyAvgWords": 500,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 499,
+    "parliamentAvgWords": 585,
     "vsParty": 0.69,
     "vsParliament": 0.59
   },
@@ -146,7 +262,7 @@
     "question": "Welches Wort nutzt Aaron Valent häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Europa",
+        "text": "Migration",
         "isCorrect": false
       },
       {
@@ -154,35 +270,35 @@
         "isCorrect": true
       },
       {
-        "text": "Abstimmung",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Bildung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Partnerinnen\" nutzt Aaron Valent 370.0× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "202.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Partnerinnen\" nutzt Aaron Valent 383.8× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "189.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Aaron Valent häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
         "text": "Sicher",
         "isCorrect": true
+      },
+      {
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Sicher\" nutzt Aaron Valent 3.3× häufiger als der DIE LINKE-Durchschnitt.",
@@ -322,15 +438,15 @@
           "count": 3
         },
         {
+          "word": "gerechtigkeit",
+          "count": 2
+        },
+        {
           "word": "kinder",
           "count": 2
         },
         {
           "word": "eltern",
-          "count": 2
-        },
-        {
-          "word": "gerechtigkeit",
           "count": 2
         }
       ],
@@ -378,11 +494,11 @@
           "count": 2
         },
         {
-          "word": "universität",
+          "word": "bildung",
           "count": 1
         },
         {
-          "word": "bildung",
+          "word": "universität",
           "count": 1
         }
       ],
@@ -414,19 +530,19 @@
           "count": 15
         },
         {
+          "word": "datenschutz",
+          "count": 2
+        },
+        {
           "word": "grundgesetz",
           "count": 2
         },
         {
-          "word": "gerichte",
-          "count": 2
-        },
-        {
-          "word": "richter",
-          "count": 2
-        },
-        {
           "word": "haftung",
+          "count": 2
+        },
+        {
+          "word": "gerichte",
           "count": 2
         }
       ],

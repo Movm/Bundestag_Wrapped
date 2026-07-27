@@ -11,23 +11,23 @@
   "minWords": 379,
   "maxWords": 853,
   "rankings": {
-    "speechRank": 486,
-    "wordsRank": 511,
-    "partySpeechRank": 119,
+    "speechRank": 500,
+    "wordsRank": 514,
+    "partySpeechRank": 123,
     "partyWordsRank": 116,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 22.2,
+    "totalSpeakers": 626,
+    "percentile": 20.1,
     "verbosityRank": 167,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 44,
-    "longestSpeechRank": 180
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 41,
+    "longestSpeechRank": 183
   },
   "drama": {
     "interruptionsGiven": 10,
     "interruptionsReceived": 6,
-    "interrupterRank": 278,
-    "interruptedRank": 528
+    "interrupterRank": 281,
+    "interruptedRank": 531
   },
   "words": {
     "topWords": [
@@ -36,19 +36,19 @@
         "count": 13
       },
       {
-        "word": "deutschland",
-        "count": 12
-      },
-      {
         "word": "bürokratie",
         "count": 12
       },
       {
-        "word": "raumfahrt",
-        "count": 11
+        "word": "deutschland",
+        "count": 12
       },
       {
         "word": "endlich",
+        "count": 11
+      },
+      {
+        "word": "raumfahrt",
         "count": 11
       },
       {
@@ -68,7 +68,7 @@
         "count": 8
       },
       {
-        "word": "deutschen",
+        "word": "unternehmen",
         "count": 7
       }
     ],
@@ -76,41 +76,107 @@
       {
         "word": "marktüberwachung",
         "count": 6,
-        "ratioParty": 651.5,
-        "ratioBundestag": 626.3
+        "ratioParty": 675.4,
+        "ratioBundestag": 650.3
       },
       {
         "word": "raumfahrt",
         "count": 11,
-        "ratioParty": 102.4,
-        "ratioBundestag": 68.1
+        "ratioParty": 106.1,
+        "ratioBundestag": 70.4
       },
       {
         "word": "insolvenzen",
         "count": 5,
-        "ratioParty": 101.8,
-        "ratioBundestag": 214.9
+        "ratioParty": 88.9,
+        "ratioBundestag": 205.1
       },
       {
         "word": "nachhaltigkeit",
         "count": 6,
-        "ratioParty": 61.1,
-        "ratioBundestag": 42.6
+        "ratioParty": 63.3,
+        "ratioBundestag": 44.2
       },
       {
         "word": "automobilindustrie",
         "count": 6,
-        "ratioParty": 43.4,
-        "ratioBundestag": 43.2
+        "ratioParty": 36.8,
+        "ratioBundestag": 36.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "raumfahrt",
+        "count": 11,
+        "score": 51.41,
+        "ratio": 106.1
+      },
+      {
+        "word": "marktüberwachung",
+        "count": 6,
+        "score": 39.1,
+        "ratio": 675.4
+      },
+      {
+        "word": "nachhaltigkeit",
+        "count": 6,
+        "score": 24.98,
+        "ratio": 63.3
+      },
+      {
+        "word": "insolvenzen",
+        "count": 5,
+        "score": 22.49,
+        "ratio": 88.9
+      },
+      {
+        "word": "automobilindustrie",
+        "count": 6,
+        "score": 21.79,
+        "ratio": 36.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "raumfahrt",
+        "count": 11,
+        "score": 46.95,
+        "ratio": 70.4
+      },
+      {
+        "word": "marktüberwachung",
+        "count": 6,
+        "score": 38.87,
+        "ratio": 650.3
+      },
+      {
+        "word": "insolvenzen",
+        "count": 5,
+        "score": 26.64,
+        "ratio": 205.1
+      },
+      {
+        "word": "nachhaltigkeit",
+        "count": 6,
+        "score": 22.87,
+        "ratio": 44.2
+      },
+      {
+        "word": "automobilindustrie",
+        "count": 6,
+        "score": 21.76,
+        "ratio": 36.6
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 493,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.88,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.89,
     "vsParliament": 0.84
   },
   "funFacts": [
@@ -134,24 +200,24 @@
     "question": "Welches Wort nutzt Andreas Mayer häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
         "text": "Marktüberwachung",
         "isCorrect": true
       },
       {
-        "text": "Sicherheit",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Debatte",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Marktüberwachung\" nutzt Andreas Mayer 651.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "626.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Marktüberwachung\" nutzt Andreas Mayer 675.4× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "650.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -228,19 +294,19 @@
           "count": 6
         },
         {
-          "word": "klimaneutral",
-          "count": 2
-        },
-        {
-          "word": "energie",
-          "count": 2
-        },
-        {
           "word": "nachhaltig",
           "count": 2
         },
         {
           "word": "umwelt",
+          "count": 2
+        },
+        {
+          "word": "klimaneutral",
+          "count": 2
+        },
+        {
+          "word": "energie",
           "count": 2
         }
       ],
@@ -274,22 +340,26 @@
       ],
       "sicherheit": [
         {
-          "word": "verteidigungsfähigkeit",
+          "word": "betrug",
           "count": 1
         },
         {
-          "word": "betrug",
+          "word": "verteidigungsfähigkeit",
           "count": 1
         }
       ],
       "europa": [
         {
+          "word": "china",
+          "count": 2
+        },
+        {
           "word": "europa",
           "count": 2
         },
         {
-          "word": "china",
-          "count": 2
+          "word": "israel",
+          "count": 1
         },
         {
           "word": "krieg",
@@ -297,10 +367,6 @@
         },
         {
           "word": "ukraine",
-          "count": 1
-        },
-        {
-          "word": "israel",
           "count": 1
         }
       ],
@@ -322,11 +388,11 @@
           "count": 2
         },
         {
-          "word": "steuern",
+          "word": "subvention",
           "count": 1
         },
         {
-          "word": "subvention",
+          "word": "steuern",
           "count": 1
         }
       ],
@@ -342,15 +408,15 @@
           "count": 2
         },
         {
+          "word": "auto",
+          "count": 1
+        },
+        {
           "word": "flug",
           "count": 1
         },
         {
           "word": "fliegen",
-          "count": 1
-        },
-        {
-          "word": "auto",
           "count": 1
         }
       ]

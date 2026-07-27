@@ -11,23 +11,23 @@
   "minWords": 81,
   "maxWords": 624,
   "rankings": {
-    "speechRank": 354,
-    "wordsRank": 395,
-    "partySpeechRank": 83,
-    "partyWordsRank": 88,
+    "speechRank": 359,
+    "wordsRank": 404,
+    "partySpeechRank": 85,
+    "partyWordsRank": 92,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 43.4,
-    "verbosityRank": 364,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 94,
-    "longestSpeechRank": 470
+    "totalSpeakers": 626,
+    "percentile": 42.7,
+    "verbosityRank": 363,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 92,
+    "longestSpeechRank": 472
   },
   "drama": {
     "interruptionsGiven": 8,
     "interruptionsReceived": 38,
-    "interrupterRank": 301,
-    "interruptedRank": 175
+    "interrupterRank": 300,
+    "interruptedRank": 189
   },
   "words": {
     "topWords": [
@@ -76,14 +76,14 @@
       {
         "word": "bitcoin",
         "count": 10,
-        "ratioParty": 1994.1,
-        "ratioBundestag": 407.3
+        "ratioParty": 2067.6,
+        "ratioBundestag": 422.9
       },
       {
         "word": "bepreisung",
         "count": 5,
-        "ratioParty": 17.8,
-        "ratioBundestag": 33.4
+        "ratioParty": 18.1,
+        "ratioBundestag": 33.5
       },
       {
         "word": "sozialismus",
@@ -94,22 +94,88 @@
       {
         "word": "aufmerksamkeit",
         "count": 5,
-        "ratioParty": 10.7,
-        "ratioBundestag": 8.7
+        "ratioParty": 10.8,
+        "ratioBundestag": 8.6
       },
       {
-        "word": "vernunft",
+        "word": "planwirtschaft",
         "count": 5,
-        "ratioParty": 8.6,
-        "ratioBundestag": 19.3
+        "ratioParty": 8.9,
+        "ratioBundestag": 30.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bitcoin",
+        "count": 10,
+        "score": 76.35,
+        "ratio": 2067.6
+      },
+      {
+        "word": "sozialismus",
+        "count": 8,
+        "score": 22.71,
+        "ratio": 16.1
+      },
+      {
+        "word": "bepreisung",
+        "count": 5,
+        "score": 14.75,
+        "ratio": 18.1
+      },
+      {
+        "word": "aufmerksamkeit",
+        "count": 5,
+        "score": 12.34,
+        "ratio": 10.8
+      },
+      {
+        "word": "planwirtschaft",
+        "count": 5,
+        "score": 11.46,
+        "ratio": 8.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bitcoin",
+        "count": 10,
+        "score": 60.49,
+        "ratio": 422.9
+      },
+      {
+        "word": "sozialismus",
+        "count": 8,
+        "score": 30.45,
+        "ratio": 44.0
+      },
+      {
+        "word": "bepreisung",
+        "count": 5,
+        "score": 17.7,
+        "ratio": 33.5
+      },
+      {
+        "word": "planwirtschaft",
+        "count": 5,
+        "score": 17.27,
+        "ratio": 30.6
+      },
+      {
+        "word": "aufmerksamkeit",
+        "count": 5,
+        "score": 11.31,
+        "ratio": 8.6
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 403,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.72,
     "vsParliament": 0.69
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Dirk Brandes häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kanzler",
+        "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Migration",
-        "isCorrect": false
+        "text": "Bitcoin",
+        "isCorrect": true
       },
       {
         "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Bitcoin",
-        "isCorrect": true
+        "text": "Rente",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bitcoin\" nutzt Dirk Brandes 1994.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "407.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bitcoin\" nutzt Dirk Brandes 2067.6× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "422.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -227,15 +293,15 @@
           "count": 2
         },
         {
-          "word": "klimapolitik",
-          "count": 2
-        },
-        {
           "word": "kernenergie",
           "count": 2
         },
         {
-          "word": "klimawandel",
+          "word": "klimapolitik",
+          "count": 2
+        },
+        {
+          "word": "wärmepumpe",
           "count": 1
         }
       ],
@@ -245,11 +311,11 @@
           "count": 7
         },
         {
-          "word": "unternehmen",
+          "word": "industrie",
           "count": 4
         },
         {
-          "word": "industrie",
+          "word": "unternehmen",
           "count": 4
         },
         {
@@ -267,7 +333,7 @@
           "count": 2
         },
         {
-          "word": "familie",
+          "word": "familien",
           "count": 1
         },
         {
@@ -285,11 +351,15 @@
       ],
       "sicherheit": [
         {
-          "word": "betrug",
+          "word": "überwachung",
           "count": 1
         },
         {
-          "word": "überwachung",
+          "word": "angriff",
+          "count": 1
+        },
+        {
+          "word": "betrug",
           "count": 1
         },
         {
@@ -298,10 +368,6 @@
         },
         {
           "word": "korruption",
-          "count": 1
-        },
-        {
-          "word": "angriff",
           "count": 1
         }
       ],
@@ -329,7 +395,7 @@
           "count": 1
         },
         {
-          "word": "putin",
+          "word": "kooperation",
           "count": 1
         }
       ],
@@ -375,7 +441,7 @@
           "count": 3
         },
         {
-          "word": "etat",
+          "word": "haushaltsentwurf",
           "count": 2
         }
       ],

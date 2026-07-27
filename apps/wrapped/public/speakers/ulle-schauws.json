@@ -11,23 +11,23 @@
   "minWords": 59,
   "maxWords": 696,
   "rankings": {
-    "speechRank": 124,
-    "wordsRank": 265,
-    "partySpeechRank": 23,
-    "partyWordsRank": 44,
+    "speechRank": 149,
+    "wordsRank": 279,
+    "partySpeechRank": 27,
+    "partyWordsRank": 46,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 80.2,
-    "verbosityRank": 497,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 64,
-    "longestSpeechRank": 376
+    "totalSpeakers": 626,
+    "percentile": 76.2,
+    "verbosityRank": 500,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 63,
+    "longestSpeechRank": 380
   },
   "drama": {
-    "interruptionsGiven": 155,
+    "interruptionsGiven": 156,
     "interruptionsReceived": 31,
-    "interrupterRank": 24,
-    "interruptedRank": 224
+    "interrupterRank": 25,
+    "interruptedRank": 238
   },
   "words": {
     "topWords": [
@@ -60,11 +60,11 @@
         "count": 14
       },
       {
-        "word": "täter",
+        "word": "leben",
         "count": 13
       },
       {
-        "word": "leben",
+        "word": "täter",
         "count": 13
       }
     ],
@@ -72,40 +72,106 @@
       {
         "word": "pelicot",
         "count": 7,
-        "ratioParty": 662.0,
-        "ratioBundestag": 461.9
+        "ratioParty": 685.3,
+        "ratioBundestag": 479.6
       },
       {
         "word": "gewaltschutz",
         "count": 7,
-        "ratioParty": 165.5,
-        "ratioBundestag": 110.0
+        "ratioParty": 171.3,
+        "ratioBundestag": 114.2
       },
       {
         "word": "scham",
         "count": 7,
-        "ratioParty": 82.8,
-        "ratioBundestag": 115.5
-      },
-      {
-        "word": "spanien",
-        "count": 14,
-        "ratioParty": 82.8,
-        "ratioBundestag": 81.7
+        "ratioParty": 85.7,
+        "ratioBundestag": 119.9
       },
       {
         "word": "fußfessel",
         "count": 9,
-        "ratioParty": 77.4,
-        "ratioBundestag": 49.5
+        "ratioParty": 80.1,
+        "ratioBundestag": 51.0
+      },
+      {
+        "word": "spanien",
+        "count": 14,
+        "ratioParty": 76.1,
+        "ratioBundestag": 81.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "spanien",
+        "count": 14,
+        "score": 60.83,
+        "ratio": 76.1
+      },
+      {
+        "word": "pelicot",
+        "count": 7,
+        "score": 45.72,
+        "ratio": 685.3
+      },
+      {
+        "word": "fußfessel",
+        "count": 9,
+        "score": 39.56,
+        "ratio": 80.1
+      },
+      {
+        "word": "gewaltschutz",
+        "count": 7,
+        "score": 36.04,
+        "ratio": 171.3
+      },
+      {
+        "word": "scham",
+        "count": 7,
+        "score": 31.24,
+        "ratio": 85.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "spanien",
+        "count": 14,
+        "score": 61.75,
+        "ratio": 81.3
+      },
+      {
+        "word": "pelicot",
+        "count": 7,
+        "score": 43.23,
+        "ratio": 479.6
+      },
+      {
+        "word": "fußfessel",
+        "count": 9,
+        "score": 35.56,
+        "ratio": 51.0
+      },
+      {
+        "word": "scham",
+        "count": 7,
+        "score": 33.56,
+        "ratio": 119.9
+      },
+      {
+        "word": "gewaltschutz",
+        "count": 7,
+        "score": 33.23,
+        "ratio": 114.2
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 308,
     "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 585,
     "vsParty": 0.57,
     "vsParliament": 0.53
   },
@@ -123,14 +189,14 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "155"
+      "value": "156"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Ulle Schauws häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kanzler",
+        "text": "Familie",
         "isCorrect": false
       },
       {
@@ -138,7 +204,7 @@
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
@@ -146,15 +212,15 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Pelicot\" nutzt Ulle Schauws 662.0× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "461.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Pelicot\" nutzt Ulle Schauws 685.3× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "479.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
     "emoji": "🦉",
     "name": "Eule",
     "title": "Themenexpertin",
-    "reason": "Dein Fachwort \"Pelicot\" nutzt du 662.0× häufiger als deine Fraktion.",
+    "reason": "Dein Fachwort \"Pelicot\" nutzt du 685.3× häufiger als deine Fraktion.",
     "id": "eule",
     "alternatives": [
       {
@@ -294,11 +360,11 @@
           "count": 4
         },
         {
-          "word": "familien",
+          "word": "armut",
           "count": 4
         },
         {
-          "word": "kind",
+          "word": "familien",
           "count": 4
         }
       ],
@@ -350,11 +416,11 @@
       ],
       "bildung": [
         {
-          "word": "schule",
+          "word": "bildung",
           "count": 2
         },
         {
-          "word": "bildung",
+          "word": "schule",
           "count": 2
         },
         {
@@ -376,11 +442,11 @@
           "count": 1
         },
         {
-          "word": "steuern",
+          "word": "fördermittel",
           "count": 1
         },
         {
-          "word": "investitionen",
+          "word": "steuern",
           "count": 1
         }
       ],
@@ -398,11 +464,11 @@
           "count": 2
         },
         {
-          "word": "gesetzesänderung",
+          "word": "diskriminierung",
           "count": 1
         },
         {
-          "word": "angeklagte",
+          "word": "straftat",
           "count": 1
         }
       ],

@@ -11,26 +11,30 @@
   "minWords": 575,
   "maxWords": 841,
   "rankings": {
-    "speechRank": 505,
-    "wordsRank": 468,
-    "partySpeechRank": 164,
-    "partyWordsRank": 149,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 19.2,
+    "speechRank": 516,
+    "wordsRank": 476,
+    "partySpeechRank": 167,
+    "partyWordsRank": 155,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 17.6,
     "verbosityRank": 18,
-    "verbosityTotal": 579,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 6,
-    "longestSpeechRank": 189
+    "longestSpeechRank": 192
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 6,
     "interrupterRank": null,
-    "interruptedRank": 533
+    "interruptedRank": 535
   },
   "words": {
     "topWords": [
+      {
+        "word": "jahr",
+        "count": 13
+      },
       {
         "word": "wohnungen",
         "count": 13
@@ -40,8 +44,8 @@
         "count": 13
       },
       {
-        "word": "jahr",
-        "count": 13
+        "word": "kommunen",
+        "count": 11
       },
       {
         "word": "wichtig",
@@ -49,10 +53,6 @@
       },
       {
         "word": "menschen",
-        "count": 11
-      },
-      {
-        "word": "kommunen",
         "count": 11
       },
       {
@@ -76,47 +76,127 @@
       {
         "word": "bauhaushalt",
         "count": 7,
-        "ratioParty": 2836.8,
-        "ratioBundestag": 8724.5
+        "ratioParty": 2944.6,
+        "ratioBundestag": 9058.7
       },
       {
         "word": "wohnungslosigkeit",
         "count": 7,
-        "ratioParty": 709.2,
-        "ratioBundestag": 223.7
+        "ratioParty": 736.2,
+        "ratioBundestag": 232.3
       },
       {
         "word": "nächstes",
         "count": 6,
-        "ratioParty": 97.3,
-        "ratioBundestag": 66.8
+        "ratioParty": 101.0,
+        "ratioBundestag": 66.4
       },
       {
         "word": "städtebauförderung",
         "count": 7,
-        "ratioParty": 63.0,
-        "ratioBundestag": 69.2
+        "ratioParty": 65.4,
+        "ratioBundestag": 71.9
       },
       {
-        "word": "wohnung",
-        "count": 8,
-        "ratioParty": 55.0,
-        "ratioBundestag": 29.9
+        "word": "planung",
+        "count": 6,
+        "ratioParty": 53.7,
+        "ratioBundestag": 53.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "bauhaushalt",
+        "count": 7,
+        "score": 55.92,
+        "ratio": 2944.6
+      },
+      {
+        "word": "wohnungslosigkeit",
+        "count": 7,
+        "score": 46.22,
+        "ratio": 736.2
+      },
+      {
+        "word": "städtebauförderung",
+        "count": 7,
+        "score": 29.37,
+        "ratio": 65.4
+      },
+      {
+        "word": "nächstes",
+        "count": 6,
+        "score": 27.75,
+        "ratio": 101.0
+      },
+      {
+        "word": "planung",
+        "count": 6,
+        "score": 24.01,
+        "ratio": 53.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bauhaushalt",
+        "count": 7,
+        "score": 63.78,
+        "ratio": 9058.7
+      },
+      {
+        "word": "wohnungslosigkeit",
+        "count": 7,
+        "score": 38.17,
+        "ratio": 232.3
+      },
+      {
+        "word": "städtebauförderung",
+        "count": 7,
+        "score": 30.02,
+        "ratio": 71.9
+      },
+      {
+        "word": "nächstes",
+        "count": 6,
+        "score": 25.26,
+        "ratio": 66.4
+      },
+      {
+        "word": "planung",
+        "count": 6,
+        "score": 23.96,
+        "ratio": 53.2
       }
     ],
     "signatureAdjectives": [
       {
         "word": "entscheidend",
         "count": 3,
-        "ratioParty": 5.0,
+        "ratioParty": 4.9,
         "ratioBundestag": 7.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 5.32,
+        "ratio": 4.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 6.38,
+        "ratio": 7.4
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 724,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 1.12,
     "vsParliament": 1.24
   },
@@ -134,14 +214,18 @@
     {
       "emoji": "📚",
       "label": "Wortreichster",
-      "value": "#18 von 579"
+      "value": "#18 von 582"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Axel Knoerig häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Politik",
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
         "isCorrect": false
       },
       {
@@ -149,38 +233,34 @@
         "isCorrect": true
       },
       {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
+        "text": "Kinder",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bauhaushalt\" nutzt Axel Knoerig 2836.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "8724.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bauhaushalt\" nutzt Axel Knoerig 2944.6× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "9058.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Axel Knoerig häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
         "text": "Entscheidend",
         "isCorrect": true
       },
       {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Axel Knoerig 5.0× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationParty": "\"Entscheidend\" nutzt Axel Knoerig 4.9× häufiger als der CDU/CSU-Durchschnitt.",
     "explanationBundestag": "7.4× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -291,15 +371,15 @@
           "count": 4
         },
         {
+          "word": "markt",
+          "count": 1
+        },
+        {
           "word": "firmen",
           "count": 1
         },
         {
           "word": "industrie",
-          "count": 1
-        },
-        {
-          "word": "markt",
           "count": 1
         },
         {
@@ -357,11 +437,11 @@
           "count": 2
         },
         {
-          "word": "schule",
+          "word": "schulen",
           "count": 1
         },
         {
-          "word": "schulen",
+          "word": "schule",
           "count": 1
         },
         {

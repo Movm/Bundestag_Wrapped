@@ -11,23 +11,23 @@
   "minWords": 51,
   "maxWords": 360,
   "rankings": {
-    "speechRank": 323,
-    "wordsRank": 482,
-    "partySpeechRank": 41,
-    "partyWordsRank": 50,
+    "speechRank": 334,
+    "wordsRank": 491,
+    "partySpeechRank": 43,
+    "partyWordsRank": 52,
     "partySize": 63,
-    "totalSpeakers": 625,
-    "percentile": 48.3,
-    "verbosityRank": 534,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 58,
+    "totalSpeakers": 626,
+    "percentile": 46.6,
+    "verbosityRank": 535,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 57,
     "longestSpeechRank": 614
   },
   "drama": {
     "interruptionsGiven": 37,
     "interruptionsReceived": 14,
-    "interrupterRank": 141,
-    "interruptedRank": 405
+    "interrupterRank": 143,
+    "interruptedRank": 420
   },
   "words": {
     "topWords": [
@@ -40,11 +40,11 @@
         "count": 14
       },
       {
-        "word": "gesetzentwurf",
+        "word": "bundesregierung",
         "count": 13
       },
       {
-        "word": "bundesregierung",
+        "word": "gesetzentwurf",
         "count": 13
       },
       {
@@ -60,15 +60,15 @@
         "count": 9
       },
       {
+        "word": "menschenrechte",
+        "count": 7
+      },
+      {
         "word": "abgeordnete",
         "count": 7
       },
       {
         "word": "besonders",
-        "count": 7
-      },
-      {
-        "word": "menschenrechte",
         "count": 7
       }
     ],
@@ -76,53 +76,145 @@
       {
         "word": "taser",
         "count": 14,
-        "ratioParty": 1813.6,
-        "ratioBundestag": 508.4
+        "ratioParty": 1881.0,
+        "ratioBundestag": 527.9
       },
       {
         "word": "menschenrecht",
         "count": 6,
-        "ratioParty": 70.7,
-        "ratioBundestag": 246.0
+        "ratioParty": 73.3,
+        "ratioBundestag": 255.4
       },
       {
         "word": "sudan",
         "count": 9,
-        "ratioParty": 34.3,
-        "ratioBundestag": 51.8
+        "ratioParty": 35.6,
+        "ratioBundestag": 53.5
       },
       {
         "word": "europol",
         "count": 7,
         "ratioParty": 30.9,
-        "ratioBundestag": 164.8
+        "ratioBundestag": 171.1
       },
       {
         "word": "humanitäre",
         "count": 11,
-        "ratioParty": 26.9,
-        "ratioBundestag": 30.1
+        "ratioParty": 27.4,
+        "ratioBundestag": 31.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "taser",
+        "count": 14,
+        "score": 105.56,
+        "ratio": 1881.0
+      },
+      {
+        "word": "humanitäre",
+        "count": 11,
+        "score": 36.81,
+        "ratio": 27.4
+      },
+      {
+        "word": "sudan",
+        "count": 9,
+        "score": 32.4,
+        "ratio": 35.6
+      },
+      {
+        "word": "menschenrecht",
+        "count": 6,
+        "score": 25.85,
+        "ratio": 73.3
+      },
+      {
+        "word": "europol",
+        "count": 7,
+        "score": 24.24,
+        "ratio": 30.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "taser",
+        "count": 14,
+        "score": 87.79,
+        "ratio": 527.9
+      },
+      {
+        "word": "humanitäre",
+        "count": 11,
+        "score": 38.16,
+        "ratio": 31.1
+      },
+      {
+        "word": "europol",
+        "count": 7,
+        "score": 36.04,
+        "ratio": 171.1
+      },
+      {
+        "word": "sudan",
+        "count": 9,
+        "score": 35.98,
+        "ratio": 53.5
+      },
+      {
+        "word": "menschenrecht",
+        "count": 6,
+        "score": 33.28,
+        "ratio": 255.4
       }
     ],
     "signatureAdjectives": [
       {
         "word": "gefährlich",
         "count": 3,
-        "ratioParty": 13.0,
-        "ratioBundestag": 21.1
+        "ratioParty": 13.4,
+        "ratioBundestag": 21.5
       },
       {
         "word": "rechts",
         "count": 3,
-        "ratioParty": 4.3,
+        "ratioParty": 4.4,
         "ratioBundestag": 7.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gefährlich",
+        "count": 3,
+        "score": 8.0,
+        "ratio": 13.4
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 5.06,
+        "ratio": 4.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "gefährlich",
+        "count": 3,
+        "score": 9.34,
+        "ratio": 21.5
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 6.46,
+        "ratio": 7.6
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 263,
-    "partyAvgWords": 500,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 499,
+    "parliamentAvgWords": 585,
     "vsParty": 0.53,
     "vsParliament": 0.45
   },
@@ -151,43 +243,43 @@
         "isCorrect": true
       },
       {
-        "text": "Antrag",
+        "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Migration",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Reform",
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Taser\" nutzt Katrin Fey 1813.6× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "508.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Taser\" nutzt Katrin Fey 1881.0× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "527.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Katrin Fey häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
         "text": "Gefährlich",
         "isCorrect": true
       },
       {
-        "text": "Politisch",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
+        "text": "Klar",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gefährlich\" nutzt Katrin Fey 13.0× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "21.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Gefährlich\" nutzt Katrin Fey 13.4× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "21.5× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -208,7 +300,7 @@
         "emoji": "🦉",
         "name": "Eule",
         "title": "Themenexpertin",
-        "reason": "Dein Fachwort \"Taser\" nutzt du 1813.6× häufiger als deine Fraktion.",
+        "reason": "Dein Fachwort \"Taser\" nutzt du 1881.0× häufiger als deine Fraktion.",
         "id": "eule",
         "score": 0.93
       }
@@ -305,19 +397,19 @@
       ],
       "wirtschaft": [
         {
-          "word": "zoll",
-          "count": 2
-        },
-        {
           "word": "unternehmen",
           "count": 2
         },
         {
-          "word": "konzerne",
-          "count": 1
+          "word": "zoll",
+          "count": 2
         },
         {
           "word": "selbstständige",
+          "count": 1
+        },
+        {
+          "word": "konzerne",
           "count": 1
         }
       ],
@@ -335,11 +427,11 @@
           "count": 2
         },
         {
-          "word": "behinderung",
+          "word": "wohnungen",
           "count": 1
         },
         {
-          "word": "wohnungen",
+          "word": "chancengleichheit",
           "count": 1
         }
       ],
@@ -389,15 +481,15 @@
       ],
       "europa": [
         {
-          "word": "krieg",
-          "count": 5
-        },
-        {
           "word": "völkerrecht",
           "count": 5
         },
         {
-          "word": "waffenlieferungen",
+          "word": "krieg",
+          "count": 5
+        },
+        {
+          "word": "israel",
           "count": 2
         },
         {
@@ -405,7 +497,7 @@
           "count": 2
         },
         {
-          "word": "israel",
+          "word": "waffenlieferungen",
           "count": 2
         }
       ],
@@ -457,19 +549,19 @@
           "count": 7
         },
         {
-          "word": "strafrecht",
-          "count": 3
-        },
-        {
           "word": "grundrechte",
           "count": 3
         },
         {
-          "word": "strafen",
+          "word": "strafrecht",
+          "count": 3
+        },
+        {
+          "word": "rechtsstaatlichkeit",
           "count": 2
         },
         {
-          "word": "straftat",
+          "word": "strafen",
           "count": 2
         }
       ],

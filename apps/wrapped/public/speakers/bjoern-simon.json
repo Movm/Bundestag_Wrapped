@@ -11,23 +11,23 @@
   "minWords": 15,
   "maxWords": 682,
   "rankings": {
-    "speechRank": 324,
-    "wordsRank": 417,
-    "partySpeechRank": 88,
-    "partyWordsRank": 129,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 48.2,
-    "verbosityRank": 433,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 150,
-    "longestSpeechRank": 395
+    "speechRank": 338,
+    "wordsRank": 428,
+    "partySpeechRank": 90,
+    "partyWordsRank": 135,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 46.0,
+    "verbosityRank": 439,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 152,
+    "longestSpeechRank": 399
   },
   "drama": {
-    "interruptionsGiven": 14,
+    "interruptionsGiven": 17,
     "interruptionsReceived": 23,
-    "interrupterRank": 238,
-    "interruptedRank": 301
+    "interrupterRank": 223,
+    "interruptedRank": 312
   },
   "words": {
     "topWords": [
@@ -64,40 +64,106 @@
       {
         "word": "airlines",
         "count": 6,
-        "ratioParty": 182.4,
-        "ratioBundestag": 220.5
+        "ratioParty": 189.4,
+        "ratioBundestag": 228.9
       },
       {
         "word": "entschließungsantrag",
         "count": 6,
-        "ratioParty": 154.4,
-        "ratioBundestag": 73.5
+        "ratioParty": 138.9,
+        "ratioBundestag": 66.1
       },
       {
         "word": "luftverkehrsteuer",
         "count": 7,
-        "ratioParty": 111.5,
-        "ratioBundestag": 57.6
+        "ratioParty": 115.7,
+        "ratioBundestag": 59.8
       },
       {
         "word": "deutschlandtickets",
         "count": 5,
-        "ratioParty": 104.5,
-        "ratioBundestag": 135.4
+        "ratioParty": 108.5,
+        "ratioBundestag": 140.6
       },
       {
         "word": "verkehrsminister",
         "count": 6,
-        "ratioParty": 100.3,
-        "ratioBundestag": 93.5
+        "ratioParty": 99.2,
+        "ratioBundestag": 92.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "luftverkehrsteuer",
+        "count": 7,
+        "score": 33.32,
+        "ratio": 115.7
+      },
+      {
+        "word": "airlines",
+        "count": 6,
+        "score": 31.49,
+        "ratio": 189.4
+      },
+      {
+        "word": "entschließungsantrag",
+        "count": 6,
+        "score": 29.65,
+        "ratio": 138.9
+      },
+      {
+        "word": "verkehrsminister",
+        "count": 6,
+        "score": 27.64,
+        "ratio": 99.2
+      },
+      {
+        "word": "deutschlandtickets",
+        "count": 5,
+        "score": 23.48,
+        "ratio": 108.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "airlines",
+        "count": 6,
+        "score": 32.63,
+        "ratio": 228.9
+      },
+      {
+        "word": "luftverkehrsteuer",
+        "count": 7,
+        "score": 28.75,
+        "ratio": 59.8
+      },
+      {
+        "word": "verkehrsminister",
+        "count": 6,
+        "score": 27.25,
+        "ratio": 92.9
+      },
+      {
+        "word": "entschließungsantrag",
+        "count": 6,
+        "score": 25.24,
+        "ratio": 66.1
+      },
+      {
+        "word": "deutschlandtickets",
+        "count": 5,
+        "score": 24.77,
+        "ratio": 140.6
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 368,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.57,
     "vsParliament": 0.63
   },
@@ -115,31 +181,31 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "14"
+      "value": "17"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Björn Simon häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
         "text": "Airlines",
         "isCorrect": true
       },
       {
-        "text": "Klima",
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Airlines\" nutzt Björn Simon 182.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "220.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Airlines\" nutzt Björn Simon 189.4× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "228.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -158,12 +224,12 @@
         "score": 0.976
       },
       {
-        "emoji": "🦔",
-        "name": "Igel",
-        "title": "Beharrlicher Redner",
-        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
-        "id": "igel",
-        "score": 0.943
+        "emoji": "🦊",
+        "name": "Fuchs",
+        "title": "Cleverer Stratege",
+        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+        "id": "fuchs",
+        "score": 0.944
       }
     ]
   },
@@ -262,10 +328,6 @@
           "count": 8
         },
         {
-          "word": "wirtschaft",
-          "count": 2
-        },
-        {
           "word": "automobilindustrie",
           "count": 2
         },
@@ -275,6 +337,10 @@
         },
         {
           "word": "wettbewerbsfähigkeit",
+          "count": 2
+        },
+        {
+          "word": "markt",
           "count": 2
         }
       ],
@@ -312,7 +378,7 @@
           "count": 3
         },
         {
-          "word": "kosten",
+          "word": "sondervermögen",
           "count": 2
         }
       ],

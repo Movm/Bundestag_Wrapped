@@ -11,23 +11,23 @@
   "minWords": 16,
   "maxWords": 720,
   "rankings": {
-    "speechRank": 127,
-    "wordsRank": 126,
+    "speechRank": 130,
+    "wordsRank": 137,
     "partySpeechRank": 24,
     "partyWordsRank": 20,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 79.7,
-    "verbosityRank": 287,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 79.2,
+    "verbosityRank": 289,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 30,
-    "longestSpeechRank": 349
+    "longestSpeechRank": 353
   },
   "drama": {
     "interruptionsGiven": 50,
     "interruptionsReceived": 47,
-    "interrupterRank": 103,
-    "interruptedRank": 125
+    "interrupterRank": 108,
+    "interruptedRank": 132
   },
   "words": {
     "topWords": [
@@ -54,57 +54,133 @@
       {
         "word": "geld",
         "count": 21
-      },
-      {
-        "word": "schutz",
-        "count": 19
       }
     ],
     "signatureWords": [
       {
         "word": "kommunalpolitiker",
         "count": 15,
-        "ratioParty": 293.9,
-        "ratioBundestag": 123.7
+        "ratioParty": 304.3,
+        "ratioBundestag": 125.9
       },
       {
         "word": "kommunalpolitikerinnen",
         "count": 5,
-        "ratioParty": 293.9,
-        "ratioBundestag": 128.8
-      },
-      {
-        "word": "strafbar",
-        "count": 7,
-        "ratioParty": 205.7,
-        "ratioBundestag": 52.5
+        "ratioParty": 304.3,
+        "ratioBundestag": 133.8
       },
       {
         "word": "strafbarkeit",
         "count": 5,
-        "ratioParty": 146.9,
-        "ratioBundestag": 58.9
+        "ratioParty": 152.1,
+        "ratioBundestag": 61.2
+      },
+      {
+        "word": "strafbar",
+        "count": 7,
+        "ratioParty": 142.0,
+        "ratioBundestag": 53.5
       },
       {
         "word": "sozialpolitik",
         "count": 7,
-        "ratioParty": 102.9,
-        "ratioBundestag": 34.4
+        "ratioParty": 106.5,
+        "ratioBundestag": 35.3
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "kommunalpolitiker",
+        "count": 15,
+        "score": 85.82,
+        "ratio": 304.3
+      },
+      {
+        "word": "strafbar",
+        "count": 7,
+        "score": 34.74,
+        "ratio": 142.0
+      },
+      {
+        "word": "sozialpolitik",
+        "count": 7,
+        "score": 32.74,
+        "ratio": 106.5
+      },
+      {
+        "word": "kommunalpolitikerinnen",
+        "count": 5,
+        "score": 28.61,
+        "ratio": 304.3
+      },
+      {
+        "word": "strafbarkeit",
+        "count": 5,
+        "score": 25.16,
+        "ratio": 152.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "kommunalpolitiker",
+        "count": 15,
+        "score": 72.65,
+        "ratio": 125.9
+      },
+      {
+        "word": "strafbar",
+        "count": 7,
+        "score": 27.99,
+        "ratio": 53.5
+      },
+      {
+        "word": "sozialpolitik",
+        "count": 7,
+        "score": 25.14,
+        "ratio": 35.3
+      },
+      {
+        "word": "kommunalpolitikerinnen",
+        "count": 5,
+        "score": 24.52,
+        "ratio": 133.8
+      },
+      {
+        "word": "strafbarkeit",
+        "count": 5,
+        "score": 20.65,
+        "ratio": 61.2
       }
     ],
     "signatureAdjectives": [
       {
         "word": "wirksam",
         "count": 5,
-        "ratioParty": 8.6,
-        "ratioBundestag": 7.4
+        "ratioParty": 8.5,
+        "ratioBundestag": 7.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirksam",
+        "count": 5,
+        "score": 11.26,
+        "ratio": 8.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "wirksam",
+        "count": 5,
+        "score": 10.7,
+        "ratio": 7.5
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 436,
     "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 585,
     "vsParty": 0.81,
     "vsParliament": 0.75
   },
@@ -129,28 +205,36 @@
     "question": "Welches Wort nutzt Dr. Lena Gumnior häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
         "isCorrect": false
       },
       {
         "text": "Kommunalpolitiker",
         "isCorrect": true
-      },
-      {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kommunalpolitiker\" nutzt Dr. Lena Gumnior 293.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "123.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Kommunalpolitiker\" nutzt Dr. Lena Gumnior 304.3× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "125.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Lena Gumnior häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
+      {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
       {
         "text": "Stark",
         "isCorrect": false
@@ -158,18 +242,10 @@
       {
         "text": "Wirksam",
         "isCorrect": true
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wirksam\" nutzt Dr. Lena Gumnior 8.6× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "7.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wirksam\" nutzt Dr. Lena Gumnior 8.5× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "7.5× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐴",
@@ -271,11 +347,11 @@
       ],
       "klima": [
         {
-          "word": "nachhaltig",
+          "word": "klimaschutz",
           "count": 1
         },
         {
-          "word": "klimaschutz",
+          "word": "nachhaltig",
           "count": 1
         }
       ],
@@ -353,15 +429,15 @@
           "count": 2
         },
         {
-          "word": "vertrag",
-          "count": 1
-        },
-        {
           "word": "iran",
           "count": 1
         },
         {
           "word": "china",
+          "count": 1
+        },
+        {
+          "word": "vertrag",
           "count": 1
         }
       ],
@@ -389,7 +465,7 @@
           "count": 2
         },
         {
-          "word": "schule",
+          "word": "kinderbetreuung",
           "count": 1
         }
       ],
@@ -403,11 +479,11 @@
           "count": 3
         },
         {
-          "word": "investitionen",
+          "word": "subventionen",
           "count": 2
         },
         {
-          "word": "subventionen",
+          "word": "investitionen",
           "count": 2
         },
         {
@@ -445,23 +521,23 @@
       ],
       "mobilitaet": [
         {
-          "word": "fahrrad",
-          "count": 1
-        },
-        {
-          "word": "infrastruktur",
-          "count": 1
-        },
-        {
-          "word": "flughafen",
-          "count": 1
-        },
-        {
           "word": "autos",
           "count": 1
         },
         {
+          "word": "straßen",
+          "count": 1
+        },
+        {
+          "word": "fahrrad",
+          "count": 1
+        },
+        {
           "word": "nahverkehr",
+          "count": 1
+        },
+        {
+          "word": "infrastruktur",
           "count": 1
         }
       ]

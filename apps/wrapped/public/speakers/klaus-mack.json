@@ -11,23 +11,23 @@
   "minWords": 74,
   "maxWords": 792,
   "rankings": {
-    "speechRank": 276,
-    "wordsRank": 235,
-    "partySpeechRank": 76,
-    "partyWordsRank": 66,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 55.8,
-    "verbosityRank": 169,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 60,
-    "longestSpeechRank": 255
+    "speechRank": 308,
+    "wordsRank": 251,
+    "partySpeechRank": 86,
+    "partyWordsRank": 71,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 50.8,
+    "verbosityRank": 171,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 63,
+    "longestSpeechRank": 257
   },
   "drama": {
     "interruptionsGiven": 3,
     "interruptionsReceived": 57,
-    "interrupterRank": 387,
-    "interruptedRank": 86
+    "interrupterRank": 400,
+    "interruptedRank": 91
   },
   "words": {
     "topWords": [
@@ -56,11 +56,11 @@
         "count": 15
       },
       {
-        "word": "politik",
+        "word": "vertrauen",
         "count": 14
       },
       {
-        "word": "vertrauen",
+        "word": "politik",
         "count": 14
       }
     ],
@@ -68,53 +68,145 @@
       {
         "word": "naturschutz",
         "count": 11,
-        "ratioParty": 58.0,
-        "ratioBundestag": 32.6
+        "ratioParty": 60.2,
+        "ratioBundestag": 33.7
       },
       {
         "word": "selbstverwaltung",
         "count": 5,
         "ratioParty": 39.0,
-        "ratioBundestag": 59.0
+        "ratioBundestag": 60.0
       },
       {
         "word": "natur",
         "count": 9,
-        "ratioParty": 32.5,
-        "ratioBundestag": 16.5
+        "ratioParty": 32.0,
+        "ratioBundestag": 16.7
       },
       {
         "word": "kommunale",
         "count": 10,
-        "ratioParty": 25.7,
-        "ratioBundestag": 30.5
+        "ratioParty": 25.3,
+        "ratioBundestag": 30.8
       },
       {
         "word": "förderprogramme",
         "count": 6,
-        "ratioParty": 21.3,
-        "ratioBundestag": 28.4
+        "ratioParty": 22.1,
+        "ratioBundestag": 29.3
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "naturschutz",
+        "count": 11,
+        "score": 45.26,
+        "ratio": 60.2
+      },
+      {
+        "word": "kommunale",
+        "count": 10,
+        "score": 32.7,
+        "ratio": 25.3
+      },
+      {
+        "word": "natur",
+        "count": 9,
+        "score": 31.47,
+        "ratio": 32.0
+      },
+      {
+        "word": "förderprogramme",
+        "count": 6,
+        "score": 18.84,
+        "ratio": 22.1
+      },
+      {
+        "word": "selbstverwaltung",
+        "count": 5,
+        "score": 18.44,
+        "ratio": 39.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "naturschutz",
+        "count": 11,
+        "score": 39.01,
+        "ratio": 33.7
+      },
+      {
+        "word": "kommunale",
+        "count": 10,
+        "score": 34.59,
+        "ratio": 30.8
+      },
+      {
+        "word": "natur",
+        "count": 9,
+        "score": 25.86,
+        "ratio": 16.7
+      },
+      {
+        "word": "selbstverwaltung",
+        "count": 5,
+        "score": 20.55,
+        "ratio": 60.0
+      },
+      {
+        "word": "förderprogramme",
+        "count": 6,
+        "score": 20.47,
+        "ratio": 29.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "ideologisch",
         "count": 3,
-        "ratioParty": 13.3,
-        "ratioBundestag": 12.2
+        "ratioParty": 13.5,
+        "ratioBundestag": 11.9
       },
       {
         "word": "wirksam",
         "count": 3,
         "ratioParty": 4.7,
-        "ratioBundestag": 6.4
+        "ratioBundestag": 6.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "ideologisch",
+        "count": 3,
+        "score": 8.02,
+        "ratio": 13.5
+      },
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 5.22,
+        "ratio": 4.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "ideologisch",
+        "count": 3,
+        "score": 7.67,
+        "ratio": 11.9
+      },
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 6.04,
+        "ratio": 6.5
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 491,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.76,
     "vsParliament": 0.84
   },
@@ -134,7 +226,11 @@
     "question": "Welches Wort nutzt Klaus Mack häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Antrag",
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
         "isCorrect": false
       },
       {
@@ -142,39 +238,35 @@
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
+        "text": "Fraktion",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Naturschutz\" nutzt Klaus Mack 58.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "32.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Naturschutz\" nutzt Klaus Mack 60.2× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "33.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Klaus Mack häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
         "text": "Ideologisch",
         "isCorrect": true
       },
       {
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
         "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ideologisch\" nutzt Klaus Mack 13.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "12.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Ideologisch\" nutzt Klaus Mack 13.5× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "11.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -308,7 +400,7 @@
           "count": 4
         },
         {
-          "word": "wälder",
+          "word": "umwelt",
           "count": 3
         }
       ],
@@ -336,11 +428,11 @@
           "count": 2
         },
         {
-          "word": "mieten",
+          "word": "sozialstaat",
           "count": 1
         },
         {
-          "word": "wohnungsmarkt",
+          "word": "rente",
           "count": 1
         }
       ],
@@ -370,15 +462,15 @@
           "count": 3
         },
         {
-          "word": "brüssel",
-          "count": 1
-        },
-        {
           "word": "kooperation",
           "count": 1
         },
         {
           "word": "türkei",
+          "count": 1
+        },
+        {
+          "word": "brüssel",
           "count": 1
         }
       ],
@@ -394,15 +486,15 @@
           "count": 2
         },
         {
+          "word": "meister",
+          "count": 1
+        },
+        {
           "word": "schulen",
           "count": 1
         },
         {
           "word": "klassenzimmer",
-          "count": 1
-        },
-        {
-          "word": "meister",
           "count": 1
         }
       ],
@@ -416,7 +508,7 @@
           "count": 4
         },
         {
-          "word": "kosten",
+          "word": "bundeshaushalt",
           "count": 3
         },
         {
@@ -424,17 +516,21 @@
           "count": 3
         },
         {
-          "word": "bundeshaushalt",
+          "word": "kosten",
           "count": 3
         }
       ],
       "justiz": [
         {
-          "word": "beschluss",
+          "word": "bundesverfassungsgericht",
           "count": 1
         },
         {
-          "word": "bundesverfassungsgericht",
+          "word": "gesetzgebung",
+          "count": 1
+        },
+        {
+          "word": "beschluss",
           "count": 1
         },
         {
@@ -443,10 +539,6 @@
         },
         {
           "word": "rechtsstaat",
-          "count": 1
-        },
-        {
-          "word": "gesetzgebung",
           "count": 1
         }
       ],
@@ -470,11 +562,11 @@
           "count": 2
         },
         {
-          "word": "straße",
+          "word": "bahn",
           "count": 1
         },
         {
-          "word": "bahn",
+          "word": "öpnv",
           "count": 1
         }
       ]

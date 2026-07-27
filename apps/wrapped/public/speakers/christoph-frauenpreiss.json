@@ -11,23 +11,23 @@
   "minWords": 75,
   "maxWords": 878,
   "rankings": {
-    "speechRank": 524,
-    "wordsRank": 559,
-    "partySpeechRank": 170,
-    "partyWordsRank": 181,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 16.2,
-    "verbosityRank": 393,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 137,
-    "longestSpeechRank": 152
+    "speechRank": 530,
+    "wordsRank": 564,
+    "partySpeechRank": 172,
+    "partyWordsRank": 184,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 15.3,
+    "verbosityRank": 392,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 138,
+    "longestSpeechRank": 153
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 3,
     "interrupterRank": null,
-    "interruptedRank": 572
+    "interruptedRank": 577
   },
   "words": {
     "topWords": [
@@ -64,11 +64,7 @@
         "count": 5
       },
       {
-        "word": "land",
-        "count": 4
-      },
-      {
-        "word": "wissen",
+        "word": "würde",
         "count": 4
       }
     ],
@@ -76,47 +72,127 @@
       {
         "word": "tierwohl",
         "count": 6,
-        "ratioParty": 175.3,
-        "ratioBundestag": 189.7
+        "ratioParty": 182.0,
+        "ratioBundestag": 197.0
       },
       {
         "word": "landwirte",
         "count": 7,
-        "ratioParty": 49.6,
-        "ratioBundestag": 46.0
+        "ratioParty": 50.5,
+        "ratioBundestag": 46.8
       },
       {
         "word": "technologie",
         "count": 5,
-        "ratioParty": 26.9,
-        "ratioBundestag": 36.3
+        "ratioParty": 27.3,
+        "ratioBundestag": 36.7
       },
       {
         "word": "landwirtschaft",
         "count": 7,
-        "ratioParty": 18.7,
+        "ratioParty": 18.2,
         "ratioBundestag": 22.9
       },
       {
         "word": "neuen",
         "count": 5,
         "ratioParty": 5.4,
-        "ratioBundestag": 6.7
+        "ratioBundestag": 6.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "tierwohl",
+        "count": 6,
+        "score": 31.26,
+        "ratio": 182.0
+      },
+      {
+        "word": "landwirte",
+        "count": 7,
+        "score": 27.59,
+        "ratio": 50.5
+      },
+      {
+        "word": "landwirtschaft",
+        "count": 7,
+        "score": 20.68,
+        "ratio": 18.2
+      },
+      {
+        "word": "technologie",
+        "count": 5,
+        "score": 16.71,
+        "ratio": 27.3
+      },
+      {
+        "word": "neuen",
+        "count": 5,
+        "score": 9.28,
+        "ratio": 5.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "tierwohl",
+        "count": 6,
+        "score": 31.73,
+        "ratio": 197.0
+      },
+      {
+        "word": "landwirte",
+        "count": 7,
+        "score": 27.07,
+        "ratio": 46.8
+      },
+      {
+        "word": "landwirtschaft",
+        "count": 7,
+        "score": 22.22,
+        "ratio": 22.9
+      },
+      {
+        "word": "technologie",
+        "count": 5,
+        "score": 18.15,
+        "ratio": 36.7
+      },
+      {
+        "word": "neuen",
+        "count": 5,
+        "score": 10.27,
+        "ratio": 6.8
       }
     ],
     "signatureAdjectives": [
       {
         "word": "fair",
         "count": 3,
-        "ratioParty": 42.1,
-        "ratioBundestag": 39.4
+        "ratioParty": 42.9,
+        "ratioBundestag": 39.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "fair",
+        "count": 3,
+        "score": 11.35,
+        "ratio": 42.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "fair",
+        "count": 3,
+        "score": 11.12,
+        "ratio": 39.7
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 388,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.6,
     "vsParliament": 0.66
   },
@@ -136,7 +212,11 @@
     "question": "Welches Wort nutzt Christoph Frauenpreiß häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Rente",
+        "text": "Investitionen",
+        "isCorrect": false
+      },
+      {
+        "text": "Familie",
         "isCorrect": false
       },
       {
@@ -144,26 +224,18 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Familie",
+        "text": "Antrag",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Tierwohl\" nutzt Christoph Frauenpreiß 175.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "189.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Tierwohl\" nutzt Christoph Frauenpreiß 182.0× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "197.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Christoph Frauenpreiß häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
@@ -171,12 +243,16 @@
         "isCorrect": true
       },
       {
-        "text": "Groß",
+        "text": "Sicher",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Fair\" nutzt Christoph Frauenpreiß 42.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "39.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Fair\" nutzt Christoph Frauenpreiß 42.9× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "39.7× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦦",

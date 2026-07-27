@@ -11,23 +11,23 @@
   "minWords": 22,
   "maxWords": 790,
   "rankings": {
-    "speechRank": 519,
-    "wordsRank": 533,
-    "partySpeechRank": 81,
-    "partyWordsRank": 80,
+    "speechRank": 525,
+    "wordsRank": 543,
+    "partySpeechRank": 82,
+    "partyWordsRank": 83,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 17.0,
-    "verbosityRank": 163,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 16.1,
+    "verbosityRank": 165,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 17,
-    "longestSpeechRank": 261
+    "longestSpeechRank": 263
   },
   "drama": {
     "interruptionsGiven": 5,
     "interruptionsReceived": 2,
-    "interrupterRank": 350,
-    "interruptedRank": 579
+    "interrupterRank": 354,
+    "interruptedRank": 590
   },
   "words": {
     "topWords": [
@@ -68,7 +68,7 @@
         "count": 6
       },
       {
-        "word": "passiert",
+        "word": "unterdrückung",
         "count": 6
       }
     ],
@@ -76,40 +76,106 @@
       {
         "word": "teheran",
         "count": 5,
-        "ratioParty": 667.2,
-        "ratioBundestag": 264.5
+        "ratioParty": 690.5,
+        "ratioBundestag": 274.6
       },
       {
         "word": "unterdrückung",
         "count": 6,
-        "ratioParty": 533.8,
-        "ratioBundestag": 252.4
+        "ratioParty": 414.3,
+        "ratioBundestag": 250.7
       },
       {
         "word": "gefängnis",
         "count": 5,
-        "ratioParty": 121.3,
-        "ratioBundestag": 181.5
+        "ratioParty": 125.6,
+        "ratioBundestag": 188.4
       },
       {
         "word": "regime",
         "count": 12,
-        "ratioParty": 76.3,
-        "ratioBundestag": 77.7
+        "ratioParty": 75.3,
+        "ratioBundestag": 79.3
       },
       {
         "word": "terror",
         "count": 5,
-        "ratioParty": 53.4,
-        "ratioBundestag": 56.8
+        "ratioParty": 53.1,
+        "ratioBundestag": 56.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "regime",
+        "count": 12,
+        "score": 52.02,
+        "ratio": 75.3
+      },
+      {
+        "word": "unterdrückung",
+        "count": 6,
+        "score": 36.17,
+        "ratio": 414.3
+      },
+      {
+        "word": "teheran",
+        "count": 5,
+        "score": 32.69,
+        "ratio": 690.5
+      },
+      {
+        "word": "gefängnis",
+        "count": 5,
+        "score": 24.21,
+        "ratio": 125.6
+      },
+      {
+        "word": "terror",
+        "count": 5,
+        "score": 19.95,
+        "ratio": 53.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "regime",
+        "count": 12,
+        "score": 52.63,
+        "ratio": 79.3
+      },
+      {
+        "word": "unterdrückung",
+        "count": 6,
+        "score": 33.17,
+        "ratio": 250.7
+      },
+      {
+        "word": "teheran",
+        "count": 5,
+        "score": 28.09,
+        "ratio": 274.6
+      },
+      {
+        "word": "gefängnis",
+        "count": 5,
+        "score": 26.22,
+        "ratio": 188.4
+      },
+      {
+        "word": "terror",
+        "count": 5,
+        "score": 20.26,
+        "ratio": 56.5
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 496,
     "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 585,
     "vsParty": 0.92,
     "vsParliament": 0.85
   },
@@ -129,15 +195,15 @@
     "question": "Welches Wort nutzt Omid Nouripour häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Klima",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Europa",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
@@ -145,8 +211,8 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Teheran\" nutzt Omid Nouripour 667.2× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "264.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Teheran\" nutzt Omid Nouripour 690.5× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "274.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -160,7 +226,7 @@
         "emoji": "🦉",
         "name": "Eule",
         "title": "Themenexperte",
-        "reason": "Dein Fachwort \"Teheran\" nutzt du 667.2× häufiger als deine Fraktion.",
+        "reason": "Dein Fachwort \"Teheran\" nutzt du 690.5× häufiger als deine Fraktion.",
         "id": "eule",
         "score": 0.85
       },
@@ -283,7 +349,7 @@
           "count": 2
         },
         {
-          "word": "spionage",
+          "word": "waffen",
           "count": 1
         }
       ],
@@ -297,25 +363,25 @@
           "count": 3
         },
         {
-          "word": "frieden",
-          "count": 3
-        },
-        {
           "word": "außenminister",
           "count": 3
         },
         {
-          "word": "ukraine",
+          "word": "frieden",
+          "count": 3
+        },
+        {
+          "word": "krieg",
           "count": 2
         }
       ],
       "digital": [
         {
-          "word": "daten",
+          "word": "internet",
           "count": 1
         },
         {
-          "word": "internet",
+          "word": "daten",
           "count": 1
         }
       ],

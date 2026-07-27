@@ -11,23 +11,23 @@
   "minWords": 34,
   "maxWords": 406,
   "rankings": {
-    "speechRank": 573,
-    "wordsRank": 487,
-    "partySpeechRank": 186,
-    "partyWordsRank": 158,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 8.3,
-    "verbosityRank": 573,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 184,
-    "longestSpeechRank": 607
+    "speechRank": 571,
+    "wordsRank": 495,
+    "partySpeechRank": 185,
+    "partyWordsRank": 164,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 8.8,
+    "verbosityRank": 577,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 186,
+    "longestSpeechRank": 608
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 4,
     "interrupterRank": null,
-    "interruptedRank": 557
+    "interruptedRank": 568
   },
   "words": {
     "topWords": [
@@ -60,11 +60,11 @@
         "count": 8
       },
       {
-        "word": "leistungen",
+        "word": "mittel",
         "count": 7
       },
       {
-        "word": "mittel",
+        "word": "leistungen",
         "count": 7
       }
     ],
@@ -72,40 +72,106 @@
       {
         "word": "abgabe",
         "count": 10,
-        "ratioParty": 184.0,
-        "ratioBundestag": 110.3
+        "ratioParty": 175.7,
+        "ratioBundestag": 109.9
       },
       {
         "word": "augenblick",
         "count": 8,
-        "ratioParty": 125.4,
-        "ratioBundestag": 226.4
+        "ratioParty": 130.2,
+        "ratioBundestag": 235.0
       },
       {
         "word": "behandlung",
         "count": 5,
-        "ratioParty": 78.4,
-        "ratioBundestag": 81.3
+        "ratioParty": 78.5,
+        "ratioBundestag": 79.5
       },
       {
         "word": "veränderung",
         "count": 5,
-        "ratioParty": 57.2,
-        "ratioBundestag": 56.1
+        "ratioParty": 57.8,
+        "ratioBundestag": 57.3
       },
       {
         "word": "bewertung",
         "count": 5,
-        "ratioParty": 47.0,
-        "ratioBundestag": 67.8
+        "ratioParty": 48.8,
+        "ratioBundestag": 70.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "abgabe",
+        "count": 10,
+        "score": 51.74,
+        "ratio": 175.7
+      },
+      {
+        "word": "augenblick",
+        "count": 8,
+        "score": 39.01,
+        "ratio": 130.2
+      },
+      {
+        "word": "behandlung",
+        "count": 5,
+        "score": 21.88,
+        "ratio": 78.5
+      },
+      {
+        "word": "veränderung",
+        "count": 5,
+        "score": 20.37,
+        "ratio": 57.8
+      },
+      {
+        "word": "bewertung",
+        "count": 5,
+        "score": 19.54,
+        "ratio": 48.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "abgabe",
+        "count": 10,
+        "score": 47.09,
+        "ratio": 109.9
+      },
+      {
+        "word": "augenblick",
+        "count": 8,
+        "score": 43.71,
+        "ratio": 235.0
+      },
+      {
+        "word": "behandlung",
+        "count": 5,
+        "score": 21.94,
+        "ratio": 79.5
+      },
+      {
+        "word": "bewertung",
+        "count": 5,
+        "score": 21.34,
+        "ratio": 70.4
+      },
+      {
+        "word": "veränderung",
+        "count": 5,
+        "score": 20.33,
+        "ratio": 57.3
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 112,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.17,
     "vsParliament": 0.19
   },
@@ -125,7 +191,7 @@
     "question": "Welches Wort nutzt Dr. Georg Kippels häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Verantwortung",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
@@ -133,16 +199,16 @@
         "isCorrect": true
       },
       {
-        "text": "Bildung",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Zukunft",
+        "text": "Kanzler",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Abgabe\" nutzt Dr. Georg Kippels 184.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "110.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Abgabe\" nutzt Dr. Georg Kippels 175.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "109.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -153,20 +219,20 @@
     "id": "delfin",
     "alternatives": [
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.976
-      },
-      {
         "emoji": "🦫",
         "name": "Biber",
         "title": "Konstruktiver Brückenbauer",
         "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
         "id": "biber",
         "score": 0.967
+      },
+      {
+        "emoji": "🦊",
+        "name": "Fuchs",
+        "title": "Cleverer Stratege",
+        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+        "id": "fuchs",
+        "score": 0.964
       }
     ]
   },
@@ -257,11 +323,11 @@
           "count": 2
         },
         {
-          "word": "familien",
+          "word": "jugendliche",
           "count": 1
         },
         {
-          "word": "jugendliche",
+          "word": "familien",
           "count": 1
         }
       ],
@@ -279,11 +345,11 @@
           "count": 4
         },
         {
-          "word": "pflege",
+          "word": "krankenkassen",
           "count": 3
         },
         {
-          "word": "krankenkassen",
+          "word": "pflege",
           "count": 3
         }
       ],
@@ -311,15 +377,15 @@
       ],
       "finanzen": [
         {
-          "word": "finanzierung",
-          "count": 2
-        },
-        {
           "word": "kosten",
           "count": 2
         },
         {
           "word": "haushalt",
+          "count": 2
+        },
+        {
+          "word": "finanzierung",
           "count": 2
         },
         {

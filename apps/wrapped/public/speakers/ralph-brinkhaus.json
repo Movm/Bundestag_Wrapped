@@ -11,23 +11,23 @@
   "minWords": 251,
   "maxWords": 1033,
   "rankings": {
-    "speechRank": 326,
-    "wordsRank": 257,
-    "partySpeechRank": 89,
-    "partyWordsRank": 73,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 47.8,
+    "speechRank": 346,
+    "wordsRank": 271,
+    "partySpeechRank": 94,
+    "partyWordsRank": 75,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 44.7,
     "verbosityRank": 39,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 17,
-    "longestSpeechRank": 70
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 16,
+    "longestSpeechRank": 72
   },
   "drama": {
     "interruptionsGiven": 9,
     "interruptionsReceived": 11,
-    "interrupterRank": 279,
-    "interruptedRank": 436
+    "interrupterRank": 283,
+    "interruptedRank": 447
   },
   "words": {
     "topWords": [
@@ -72,61 +72,165 @@
       {
         "word": "menschliche",
         "count": 7,
-        "ratioParty": 139.1,
-        "ratioBundestag": 100.2
+        "ratioParty": 144.3,
+        "ratioBundestag": 101.9
       },
       {
         "word": "check",
         "count": 5,
-        "ratioParty": 136.6,
-        "ratioBundestag": 258.8
+        "ratioParty": 141.8,
+        "ratioBundestag": 268.8
       },
       {
         "word": "reallabore",
         "count": 6,
-        "ratioParty": 109.3,
-        "ratioBundestag": 100.9
+        "ratioParty": 113.4,
+        "ratioBundestag": 102.3
       },
       {
         "word": "experimentierklauseln",
         "count": 5,
-        "ratioParty": 84.0,
-        "ratioBundestag": 160.2
+        "ratioParty": 87.2,
+        "ratioBundestag": 166.4
       },
       {
         "word": "wildberger",
         "count": 13,
-        "ratioParty": 60.4,
-        "ratioBundestag": 45.6
+        "ratioParty": 61.4,
+        "ratioBundestag": 47.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "wildberger",
+        "count": 13,
+        "score": 53.74,
+        "ratio": 61.4
+      },
+      {
+        "word": "menschliche",
+        "count": 7,
+        "score": 34.85,
+        "ratio": 144.3
+      },
+      {
+        "word": "reallabore",
+        "count": 6,
+        "score": 28.44,
+        "ratio": 113.4
+      },
+      {
+        "word": "check",
+        "count": 5,
+        "score": 24.81,
+        "ratio": 141.8
+      },
+      {
+        "word": "experimentierklauseln",
+        "count": 5,
+        "score": 22.4,
+        "ratio": 87.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "wildberger",
+        "count": 13,
+        "score": 50.35,
+        "ratio": 47.1
+      },
+      {
+        "word": "menschliche",
+        "count": 7,
+        "score": 32.44,
+        "ratio": 101.9
+      },
+      {
+        "word": "check",
+        "count": 5,
+        "score": 27.99,
+        "ratio": 268.8
+      },
+      {
+        "word": "reallabore",
+        "count": 6,
+        "score": 27.83,
+        "ratio": 102.3
+      },
+      {
+        "word": "experimentierklauseln",
+        "count": 5,
+        "score": 25.6,
+        "ratio": 166.4
       }
     ],
     "signatureAdjectives": [
       {
         "word": "schlecht",
         "count": 7,
-        "ratioParty": 22.5,
-        "ratioBundestag": 12.9
+        "ratioParty": 22.7,
+        "ratioBundestag": 13.1
       },
       {
         "word": "vernünftig",
         "count": 3,
-        "ratioParty": 13.9,
-        "ratioBundestag": 14.1
+        "ratioParty": 14.5,
+        "ratioBundestag": 14.3
       },
       {
         "word": "falsch",
         "count": 5,
-        "ratioParty": 5.0,
-        "ratioBundestag": 4.9
+        "ratioParty": 4.8,
+        "ratioBundestag": 4.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "schlecht",
+        "count": 7,
+        "score": 22.16,
+        "ratio": 22.7
+      },
+      {
+        "word": "falsch",
+        "count": 5,
+        "score": 8.79,
+        "ratio": 4.8
+      },
+      {
+        "word": "vernünftig",
+        "count": 3,
+        "score": 8.22,
+        "ratio": 14.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "schlecht",
+        "count": 7,
+        "score": 18.52,
+        "ratio": 13.1
+      },
+      {
+        "word": "falsch",
+        "count": 5,
+        "score": 8.79,
+        "ratio": 4.8
+      },
+      {
+        "word": "vernünftig",
+        "count": 3,
+        "score": 8.18,
+        "ratio": 14.3
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 634,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.98,
-    "vsParliament": 1.09
+    "vsParliament": 1.08
   },
   "funFacts": [
     {
@@ -144,47 +248,47 @@
     "question": "Welches Wort nutzt Ralph Brinkhaus häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Antrag",
+        "text": "Europa",
         "isCorrect": false
       },
       {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Haushalt",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
         "text": "Menschliche",
         "isCorrect": true
+      },
+      {
+        "text": "Minister",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Menschliche\" nutzt Ralph Brinkhaus 139.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "100.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Menschliche\" nutzt Ralph Brinkhaus 144.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "101.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Ralph Brinkhaus häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Politisch",
+        "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
         "text": "Schlecht",
         "isCorrect": true
+      },
+      {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schlecht\" nutzt Ralph Brinkhaus 22.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "12.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Schlecht\" nutzt Ralph Brinkhaus 22.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "13.1× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -207,7 +311,7 @@
         "title": "Cleverer Stratege",
         "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
         "id": "fuchs",
-        "score": 0.855
+        "score": 0.863
       }
     ]
   },
@@ -308,11 +412,11 @@
           "count": 2
         },
         {
-          "word": "wirtschaft",
+          "word": "kapital",
           "count": 2
         },
         {
-          "word": "kapital",
+          "word": "wirtschaft",
           "count": 2
         },
         {
@@ -346,11 +450,11 @@
       ],
       "gesundheit": [
         {
-          "word": "krankheit",
+          "word": "pflege",
           "count": 1
         },
         {
-          "word": "pflege",
+          "word": "krankheit",
           "count": 1
         }
       ],
@@ -360,15 +464,15 @@
           "count": 1
         },
         {
-          "word": "russland",
-          "count": 1
-        },
-        {
           "word": "afrika",
           "count": 1
         },
         {
           "word": "europäisch",
+          "count": 1
+        },
+        {
+          "word": "russland",
           "count": 1
         }
       ],
@@ -400,11 +504,11 @@
           "count": 3
         },
         {
-          "word": "universitäten",
+          "word": "forschung",
           "count": 1
         },
         {
-          "word": "forschung",
+          "word": "universitäten",
           "count": 1
         },
         {

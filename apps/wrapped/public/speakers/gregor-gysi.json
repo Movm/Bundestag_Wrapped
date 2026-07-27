@@ -11,23 +11,23 @@
   "minWords": 37,
   "maxWords": 814,
   "rankings": {
-    "speechRank": 523,
-    "wordsRank": 541,
+    "speechRank": 524,
+    "wordsRank": 550,
     "partySpeechRank": 58,
     "partyWordsRank": 59,
     "partySize": 63,
-    "totalSpeakers": 625,
+    "totalSpeakers": 626,
     "percentile": 16.3,
-    "verbosityRank": 203,
-    "verbosityTotal": 579,
+    "verbosityRank": 204,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 12,
-    "longestSpeechRank": 233
+    "longestSpeechRank": 235
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 26,
     "interrupterRank": null,
-    "interruptedRank": 284
+    "interruptedRank": 294
   },
   "words": {
     "topWords": [
@@ -76,40 +76,106 @@
       {
         "word": "sicheres",
         "count": 5,
-        "ratioParty": 166.5,
-        "ratioBundestag": 168.6
+        "ratioParty": 172.6,
+        "ratioBundestag": 175.0
       },
       {
         "word": "palästinenserinnen",
         "count": 5,
-        "ratioParty": 166.5,
-        "ratioBundestag": 698.4
+        "ratioParty": 172.6,
+        "ratioBundestag": 725.1
       },
       {
         "word": "hamas",
         "count": 8,
-        "ratioParty": 159.8,
-        "ratioBundestag": 64.6
+        "ratioParty": 165.7,
+        "ratioBundestag": 67.1
       },
       {
         "word": "palästina",
         "count": 7,
-        "ratioParty": 87.4,
-        "ratioBundestag": 297.6
+        "ratioParty": 90.6,
+        "ratioBundestag": 309.0
       },
       {
         "word": "kunst",
         "count": 5,
-        "ratioParty": 71.3,
-        "ratioBundestag": 94.9
+        "ratioParty": 74.0,
+        "ratioBundestag": 95.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "hamas",
+        "count": 8,
+        "score": 40.93,
+        "ratio": 165.7
+      },
+      {
+        "word": "palästina",
+        "count": 7,
+        "score": 31.62,
+        "ratio": 90.6
+      },
+      {
+        "word": "sicheres",
+        "count": 5,
+        "score": 25.78,
+        "ratio": 172.6
+      },
+      {
+        "word": "palästinenserinnen",
+        "count": 5,
+        "score": 25.78,
+        "ratio": 172.6
+      },
+      {
+        "word": "kunst",
+        "count": 5,
+        "score": 21.59,
+        "ratio": 74.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "palästina",
+        "count": 7,
+        "score": 40.16,
+        "ratio": 309.0
+      },
+      {
+        "word": "hamas",
+        "count": 8,
+        "score": 33.77,
+        "ratio": 67.1
+      },
+      {
+        "word": "palästinenserinnen",
+        "count": 5,
+        "score": 32.94,
+        "ratio": 725.1
+      },
+      {
+        "word": "sicheres",
+        "count": 5,
+        "score": 25.85,
+        "ratio": 175.0
+      },
+      {
+        "word": "kunst",
+        "count": 5,
+        "score": 22.86,
+        "ratio": 95.8
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 473,
-    "partyAvgWords": 500,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 499,
+    "parliamentAvgWords": 585,
     "vsParty": 0.95,
     "vsParliament": 0.81
   },
@@ -129,7 +195,11 @@
     "question": "Welches Wort nutzt Dr. Gregor Gysi häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
         "isCorrect": false
       },
       {
@@ -137,16 +207,12 @@
         "isCorrect": true
       },
       {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
+        "text": "Reform",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sicheres\" nutzt Dr. Gregor Gysi 166.5× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "168.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Sicheres\" nutzt Dr. Gregor Gysi 172.6× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "175.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -170,7 +236,7 @@
         "title": "Cleverer Stratege",
         "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
         "id": "fuchs",
-        "score": 0.816
+        "score": 0.826
       }
     ]
   },

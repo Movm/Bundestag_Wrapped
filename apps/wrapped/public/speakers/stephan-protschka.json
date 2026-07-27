@@ -11,23 +11,23 @@
   "minWords": 59,
   "maxWords": 937,
   "rankings": {
-    "speechRank": 184,
-    "wordsRank": 215,
-    "partySpeechRank": 39,
-    "partyWordsRank": 47,
+    "speechRank": 199,
+    "wordsRank": 225,
+    "partySpeechRank": 42,
+    "partyWordsRank": 49,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 70.6,
-    "verbosityRank": 227,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 68.2,
+    "verbosityRank": 232,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 60,
-    "longestSpeechRank": 111
+    "longestSpeechRank": 113
   },
   "drama": {
     "interruptionsGiven": 25,
     "interruptionsReceived": 38,
-    "interrupterRank": 184,
-    "interruptedRank": 177
+    "interrupterRank": 187,
+    "interruptedRank": 187
   },
   "words": {
     "topWords": [
@@ -64,47 +64,127 @@
       {
         "word": "tierversuche",
         "count": 5,
-        "ratioParty": 613.6,
-        "ratioBundestag": 125.6
+        "ratioParty": 636.3,
+        "ratioBundestag": 130.4
       },
       {
         "word": "schnitzel",
         "count": 5,
-        "ratioParty": 613.6,
-        "ratioBundestag": 92.1
+        "ratioParty": 636.3,
+        "ratioBundestag": 95.7
       },
       {
         "word": "wurst",
         "count": 6,
-        "ratioParty": 184.1,
-        "ratioBundestag": 107.0
+        "ratioParty": 190.9,
+        "ratioBundestag": 111.1
       },
       {
         "word": "tierschutz",
         "count": 6,
-        "ratioParty": 92.0,
-        "ratioBundestag": 34.9
+        "ratioParty": 95.4,
+        "ratioBundestag": 34.1
       },
       {
         "word": "familienbetriebe",
         "count": 6,
-        "ratioParty": 81.8,
-        "ratioBundestag": 174.6
+        "ratioParty": 84.8,
+        "ratioBundestag": 172.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "tierversuche",
+        "count": 5,
+        "score": 32.29,
+        "ratio": 636.3
+      },
+      {
+        "word": "schnitzel",
+        "count": 5,
+        "score": 32.29,
+        "ratio": 636.3
+      },
+      {
+        "word": "wurst",
+        "count": 6,
+        "score": 31.54,
+        "ratio": 190.9
+      },
+      {
+        "word": "tierschutz",
+        "count": 6,
+        "score": 27.41,
+        "ratio": 95.4
+      },
+      {
+        "word": "familienbetriebe",
+        "count": 6,
+        "score": 26.71,
+        "ratio": 84.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "familienbetriebe",
+        "count": 6,
+        "score": 30.93,
+        "ratio": 172.2
+      },
+      {
+        "word": "wurst",
+        "count": 6,
+        "score": 28.32,
+        "ratio": 111.1
+      },
+      {
+        "word": "tierversuche",
+        "count": 5,
+        "score": 24.39,
+        "ratio": 130.4
+      },
+      {
+        "word": "schnitzel",
+        "count": 5,
+        "score": 22.86,
+        "ratio": 95.7
+      },
+      {
+        "word": "tierschutz",
+        "count": 6,
+        "score": 21.35,
+        "ratio": 34.1
       }
     ],
     "signatureAdjectives": [
       {
         "word": "verlässlich",
         "count": 3,
-        "ratioParty": 18.4,
-        "ratioBundestag": 7.4
+        "ratioParty": 19.1,
+        "ratioBundestag": 7.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "verlässlich",
+        "count": 3,
+        "score": 9.0,
+        "ratio": 19.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "verlässlich",
+        "count": 3,
+        "score": 6.35,
+        "ratio": 7.3
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 463,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.83,
     "vsParliament": 0.79
   },
@@ -133,34 +213,34 @@
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
+        "text": "Klima",
         "isCorrect": false
       },
       {
-        "text": "Investitionen",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Tierversuche\" nutzt Stephan Protschka 613.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "125.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Tierversuche\" nutzt Stephan Protschka 636.3× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "130.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Stephan Protschka häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Erfolgreich",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Groß",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Gefährlich",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
@@ -168,8 +248,8 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Verlässlich\" nutzt Stephan Protschka 18.4× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "7.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Verlässlich\" nutzt Stephan Protschka 19.1× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "7.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -297,11 +377,11 @@
       ],
       "gesundheit": [
         {
-          "word": "medikamente",
+          "word": "sucht",
           "count": 1
         },
         {
-          "word": "sucht",
+          "word": "medikamente",
           "count": 1
         }
       ],
@@ -329,7 +409,7 @@
           "count": 2
         },
         {
-          "word": "internet",
+          "word": "netzwerk",
           "count": 1
         },
         {
@@ -337,7 +417,7 @@
           "count": 1
         },
         {
-          "word": "netzwerk",
+          "word": "internet",
           "count": 1
         },
         {
@@ -401,21 +481,21 @@
           "count": 1
         },
         {
-          "word": "arbeitsplätze",
+          "word": "unfallversicherung",
           "count": 1
         },
         {
-          "word": "unfallversicherung",
+          "word": "arbeitsplätze",
           "count": 1
         }
       ],
       "mobilitaet": [
         {
-          "word": "autos",
+          "word": "straße",
           "count": 2
         },
         {
-          "word": "straße",
+          "word": "autos",
           "count": 2
         }
       ]

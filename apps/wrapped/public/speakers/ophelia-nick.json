@@ -11,23 +11,23 @@
   "minWords": 325,
   "maxWords": 545,
   "rankings": {
-    "speechRank": 357,
-    "wordsRank": 416,
-    "partySpeechRank": 63,
-    "partyWordsRank": 68,
+    "speechRank": 361,
+    "wordsRank": 426,
+    "partySpeechRank": 62,
+    "partyWordsRank": 70,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 42.9,
-    "verbosityRank": 270,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 42.3,
+    "verbosityRank": 271,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 29,
-    "longestSpeechRank": 550
+    "longestSpeechRank": 551
   },
   "drama": {
     "interruptionsGiven": 12,
     "interruptionsReceived": 11,
-    "interrupterRank": 264,
-    "interruptedRank": 443
+    "interrupterRank": 263,
+    "interruptedRank": 451
   },
   "words": {
     "topWords": [
@@ -60,47 +60,127 @@
       {
         "word": "breitensport",
         "count": 6,
-        "ratioParty": 426.6,
-        "ratioBundestag": 269.7
+        "ratioParty": 441.5,
+        "ratioBundestag": 267.9
       },
       {
         "word": "sportler",
         "count": 7,
-        "ratioParty": 199.1,
-        "ratioBundestag": 209.8
+        "ratioParty": 206.0,
+        "ratioBundestag": 189.2
       },
       {
         "word": "sportlerinnen",
         "count": 5,
-        "ratioParty": 177.7,
-        "ratioBundestag": 309.1
+        "ratioParty": 184.0,
+        "ratioBundestag": 244.5
       },
       {
         "word": "paralympischen",
         "count": 8,
-        "ratioParty": 162.5,
-        "ratioBundestag": 263.7
+        "ratioParty": 168.2,
+        "ratioBundestag": 265.0
       },
       {
         "word": "spiele",
         "count": 8,
-        "ratioParty": 142.2,
-        "ratioBundestag": 76.1
+        "ratioParty": 147.2,
+        "ratioBundestag": 77.5
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "paralympischen",
+        "count": 8,
+        "score": 41.05,
+        "ratio": 168.2
+      },
+      {
+        "word": "spiele",
+        "count": 8,
+        "score": 39.99,
+        "ratio": 147.2
+      },
+      {
+        "word": "sportler",
+        "count": 7,
+        "score": 37.33,
+        "ratio": 206.0
+      },
+      {
+        "word": "breitensport",
+        "count": 6,
+        "score": 36.55,
+        "ratio": 441.5
+      },
+      {
+        "word": "sportlerinnen",
+        "count": 5,
+        "score": 26.1,
+        "ratio": 184.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "paralympischen",
+        "count": 8,
+        "score": 44.67,
+        "ratio": 265.0
+      },
+      {
+        "word": "sportler",
+        "count": 7,
+        "score": 36.74,
+        "ratio": 189.2
+      },
+      {
+        "word": "spiele",
+        "count": 8,
+        "score": 34.9,
+        "ratio": 77.5
+      },
+      {
+        "word": "breitensport",
+        "count": 6,
+        "score": 33.57,
+        "ratio": 267.9
+      },
+      {
+        "word": "sportlerinnen",
+        "count": 5,
+        "score": 27.52,
+        "ratio": 244.5
       }
     ],
     "signatureAdjectives": [
       {
         "word": "stark",
         "count": 5,
-        "ratioParty": 8.2,
-        "ratioBundestag": 6.9
+        "ratioParty": 8.3,
+        "ratioBundestag": 6.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "stark",
+        "count": 5,
+        "score": 11.15,
+        "ratio": 8.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "stark",
+        "count": 5,
+        "score": 10.27,
+        "ratio": 6.8
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 442,
     "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 585,
     "vsParty": 0.82,
     "vsParliament": 0.76
   },
@@ -129,43 +209,43 @@
         "isCorrect": true
       },
       {
-        "text": "Opposition",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Bildung",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Sicherheit",
+        "text": "Zukunft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Breitensport\" nutzt Dr. Ophelia Nick 426.6× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "269.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Breitensport\" nutzt Dr. Ophelia Nick 441.5× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "267.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Ophelia Nick häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
         "text": "Stark",
         "isCorrect": true
       },
       {
-        "text": "Gut",
+        "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Schlecht",
+        "text": "Sicher",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Stark\" nutzt Dr. Ophelia Nick 8.2× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "6.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Stark\" nutzt Dr. Ophelia Nick 8.3× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "6.8× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -273,11 +353,11 @@
           "count": 3
         },
         {
-          "word": "nachhaltigkeit",
+          "word": "klimakrise",
           "count": 2
         },
         {
-          "word": "artenschutz",
+          "word": "nachhaltigkeit",
           "count": 2
         }
       ],
@@ -339,11 +419,11 @@
       ],
       "digital": [
         {
-          "word": "roboter",
+          "word": "computer",
           "count": 1
         },
         {
-          "word": "computer",
+          "word": "roboter",
           "count": 1
         }
       ],

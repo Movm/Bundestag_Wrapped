@@ -11,23 +11,23 @@
   "minWords": 83,
   "maxWords": 896,
   "rankings": {
-    "speechRank": 164,
-    "wordsRank": 143,
-    "partySpeechRank": 35,
-    "partyWordsRank": 37,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 73.8,
-    "verbosityRank": 70,
-    "verbosityTotal": 579,
+    "speechRank": 178,
+    "wordsRank": 156,
+    "partySpeechRank": 41,
+    "partyWordsRank": 43,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 71.6,
+    "verbosityRank": 73,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 26,
-    "longestSpeechRank": 137
+    "longestSpeechRank": 138
   },
   "drama": {
     "interruptionsGiven": 5,
     "interruptionsReceived": 59,
-    "interrupterRank": 351,
-    "interruptedRank": 76
+    "interrupterRank": 346,
+    "interruptedRank": 81
   },
   "words": {
     "topWords": [
@@ -40,11 +40,11 @@
         "count": 23
       },
       {
-        "word": "reden",
+        "word": "wissen",
         "count": 21
       },
       {
-        "word": "wissen",
+        "word": "reden",
         "count": 21
       },
       {
@@ -56,32 +56,96 @@
       {
         "word": "terawattstunden",
         "count": 6,
-        "ratioParty": 98.8,
-        "ratioBundestag": 109.7
+        "ratioParty": 102.6,
+        "ratioBundestag": 114.0
       },
       {
         "word": "solar",
         "count": 5,
-        "ratioParty": 82.4,
-        "ratioBundestag": 47.6
+        "ratioParty": 85.5,
+        "ratioBundestag": 48.5
       },
       {
         "word": "erden",
         "count": 8,
-        "ratioParty": 69.8,
-        "ratioBundestag": 93.8
+        "ratioParty": 68.4,
+        "ratioBundestag": 90.4
       },
       {
         "word": "ökodesign",
         "count": 6,
-        "ratioParty": 59.3,
-        "ratioBundestag": 50.8
+        "ratioParty": 61.6,
+        "ratioBundestag": 52.8
       },
       {
-        "word": "aufpassen",
+        "word": "bundeswirtschaftsministerin",
+        "count": 5,
+        "ratioParty": 42.8,
+        "ratioBundestag": 84.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "erden",
+        "count": 8,
+        "score": 33.92,
+        "ratio": 68.4
+      },
+      {
+        "word": "terawattstunden",
         "count": 6,
-        "ratioParty": 42.4,
-        "ratioBundestag": 49.0
+        "score": 27.84,
+        "ratio": 102.6
+      },
+      {
+        "word": "ökodesign",
+        "count": 6,
+        "score": 24.82,
+        "ratio": 61.6
+      },
+      {
+        "word": "solar",
+        "count": 5,
+        "score": 22.3,
+        "ratio": 85.5
+      },
+      {
+        "word": "bundeswirtschaftsministerin",
+        "count": 5,
+        "score": 18.9,
+        "ratio": 42.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "erden",
+        "count": 8,
+        "score": 36.12,
+        "ratio": 90.4
+      },
+      {
+        "word": "terawattstunden",
+        "count": 6,
+        "score": 28.47,
+        "ratio": 114.0
+      },
+      {
+        "word": "ökodesign",
+        "count": 6,
+        "score": 23.91,
+        "ratio": 52.8
+      },
+      {
+        "word": "bundeswirtschaftsministerin",
+        "count": 5,
+        "score": 22.26,
+        "ratio": 84.8
+      },
+      {
+        "word": "solar",
+        "count": 5,
+        "score": 19.51,
+        "ratio": 48.5
       }
     ],
     "signatureAdjectives": [
@@ -89,14 +153,30 @@
         "word": "sicher",
         "count": 6,
         "ratioParty": 2.0,
-        "ratioBundestag": 2.2
+        "ratioBundestag": 2.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 6,
+        "score": 6.59,
+        "ratio": 2.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 6,
+        "score": 7.16,
+        "ratio": 2.3
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 573,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.89,
     "vsParliament": 0.98
   },
@@ -116,39 +196,39 @@
     "question": "Welches Wort nutzt Dr. Saskia Ludwig häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
         "text": "Terawattstunden",
         "isCorrect": true
       },
       {
-        "text": "Debatte",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
-        "text": "Politik",
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Terawattstunden\" nutzt Dr. Saskia Ludwig 98.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "109.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Terawattstunden\" nutzt Dr. Saskia Ludwig 102.6× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "114.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Saskia Ludwig häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
         "text": "Sicher",
         "isCorrect": true
+      },
+      {
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
       },
       {
         "text": "Notwendig",
@@ -156,7 +236,7 @@
       }
     ],
     "explanationParty": "\"Sicher\" nutzt Dr. Saskia Ludwig 2.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "2.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "2.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -270,11 +350,11 @@
           "count": 6
         },
         {
-          "word": "atomausstieg",
+          "word": "energiewende",
           "count": 4
         },
         {
-          "word": "energiewende",
+          "word": "atomausstieg",
           "count": 4
         }
       ],
@@ -356,7 +436,7 @@
           "count": 1
         },
         {
-          "word": "binnenmarkt",
+          "word": "ukraine",
           "count": 1
         }
       ],
@@ -432,11 +512,11 @@
           "count": 3
         },
         {
-          "word": "arbeitslosigkeit",
+          "word": "arbeitnehmer",
           "count": 2
         },
         {
-          "word": "arbeitnehmer",
+          "word": "arbeitslosigkeit",
           "count": 2
         },
         {

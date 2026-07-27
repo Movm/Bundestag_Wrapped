@@ -11,23 +11,23 @@
   "minWords": 37,
   "maxWords": 887,
   "rankings": {
-    "speechRank": 35,
-    "wordsRank": 30,
-    "partySpeechRank": 4,
-    "partyWordsRank": 2,
+    "speechRank": 41,
+    "wordsRank": 35,
+    "partySpeechRank": 7,
+    "partyWordsRank": 3,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 94.4,
-    "verbosityRank": 192,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 93.5,
+    "verbosityRank": 194,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 20,
-    "longestSpeechRank": 145
+    "longestSpeechRank": 146
   },
   "drama": {
     "interruptionsGiven": 74,
     "interruptionsReceived": 31,
-    "interrupterRank": 61,
-    "interruptedRank": 223
+    "interrupterRank": 66,
+    "interruptedRank": 235
   },
   "words": {
     "topWords": [
@@ -48,71 +48,199 @@
       {
         "word": "exportstrategie",
         "count": 5,
-        "ratioParty": 195.3,
-        "ratioBundestag": 153.3
+        "ratioParty": 202.3,
+        "ratioBundestag": 159.2
       },
       {
         "word": "ausrüstung",
         "count": 8,
-        "ratioParty": 104.2,
-        "ratioBundestag": 22.3
+        "ratioParty": 107.9,
+        "ratioBundestag": 23.2
       },
       {
         "word": "bevölkerungsschutz",
         "count": 24,
-        "ratioParty": 67.0,
-        "ratioBundestag": 28.7
+        "ratioParty": 69.4,
+        "ratioBundestag": 29.8
       },
       {
         "word": "katastrophenschutz",
         "count": 5,
-        "ratioParty": 65.1,
-        "ratioBundestag": 12.8
+        "ratioParty": 67.4,
+        "ratioBundestag": 13.3
       },
       {
         "word": "schwimmen",
         "count": 5,
-        "ratioParty": 65.1,
-        "ratioBundestag": 39.4
+        "ratioParty": 67.4,
+        "ratioBundestag": 40.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "bevölkerungsschutz",
+        "count": 24,
+        "score": 102.1,
+        "ratio": 69.4
+      },
+      {
+        "word": "ausrüstung",
+        "count": 8,
+        "score": 37.52,
+        "ratio": 107.9
+      },
+      {
+        "word": "exportstrategie",
+        "count": 5,
+        "score": 26.57,
+        "ratio": 202.3
+      },
+      {
+        "word": "katastrophenschutz",
+        "count": 5,
+        "score": 21.13,
+        "ratio": 67.4
+      },
+      {
+        "word": "schwimmen",
+        "count": 5,
+        "score": 21.13,
+        "ratio": 67.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bevölkerungsschutz",
+        "count": 24,
+        "score": 82.26,
+        "ratio": 29.8
+      },
+      {
+        "word": "ausrüstung",
+        "count": 8,
+        "score": 25.49,
+        "ratio": 23.2
+      },
+      {
+        "word": "exportstrategie",
+        "count": 5,
+        "score": 25.38,
+        "ratio": 159.2
+      },
+      {
+        "word": "schwimmen",
+        "count": 5,
+        "score": 18.68,
+        "ratio": 40.9
+      },
+      {
+        "word": "katastrophenschutz",
+        "count": 5,
+        "score": 13.3,
+        "ratio": 13.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "solidarisch",
         "count": 5,
-        "ratioParty": 24.4,
-        "ratioBundestag": 17.7
+        "ratioParty": 25.3,
+        "ratioBundestag": 17.9
       },
       {
         "word": "kritisch",
         "count": 3,
-        "ratioParty": 5.6,
+        "ratioParty": 5.5,
         "ratioBundestag": 3.9
       },
       {
         "word": "zentral",
         "count": 3,
-        "ratioParty": 4.9,
-        "ratioBundestag": 4.6
-      },
-      {
-        "word": "erfolgreich",
-        "count": 3,
-        "ratioParty": 2.8,
-        "ratioBundestag": 2.2
+        "ratioParty": 5.1,
+        "ratioBundestag": 4.8
       },
       {
         "word": "gerecht",
         "count": 7,
-        "ratioParty": 2.5,
-        "ratioBundestag": 2.9
+        "ratioParty": 2.6,
+        "ratioBundestag": 3.0
+      },
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "ratioParty": 2.6,
+        "ratioBundestag": 2.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "solidarisch",
+        "count": 5,
+        "score": 16.35,
+        "ratio": 25.3
+      },
+      {
+        "word": "gerecht",
+        "count": 7,
+        "score": 8.97,
+        "ratio": 2.6
+      },
+      {
+        "word": "kritisch",
+        "count": 3,
+        "score": 5.62,
+        "ratio": 5.5
+      },
+      {
+        "word": "zentral",
+        "count": 3,
+        "score": 5.42,
+        "ratio": 5.1
+      },
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 3.84,
+        "ratio": 2.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "solidarisch",
+        "count": 5,
+        "score": 14.7,
+        "ratio": 17.9
+      },
+      {
+        "word": "gerecht",
+        "count": 7,
+        "score": 9.7,
+        "ratio": 3.0
+      },
+      {
+        "word": "zentral",
+        "count": 3,
+        "score": 5.27,
+        "ratio": 4.8
+      },
+      {
+        "word": "kritisch",
+        "count": 3,
+        "score": 4.77,
+        "ratio": 3.9
+      },
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 3.49,
+        "ratio": 2.2
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 479,
     "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 585,
     "vsParty": 0.89,
     "vsParliament": 0.82
   },
@@ -133,25 +261,16 @@
       "value": "74"
     },
     {
-      "emoji": "🥇",
-      "label": "Rang in GRÜNE",
-      "value": "#4 von 86"
-    },
-    {
       "emoji": "📊",
       "label": "Top-Redner",
-      "value": "Top 6%"
+      "value": "Top 7%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Leon Eckert häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Exportstrategie",
-        "isCorrect": true
-      },
-      {
-        "text": "Demokratie",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
@@ -159,22 +278,22 @@
         "isCorrect": false
       },
       {
-        "text": "Koalition",
+        "text": "Exportstrategie",
+        "isCorrect": true
+      },
+      {
+        "text": "Bildung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Exportstrategie\" nutzt Leon Eckert 195.3× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "153.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Exportstrategie\" nutzt Leon Eckert 202.3× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "159.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Leon Eckert häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Sozial",
+        "text": "Jung",
         "isCorrect": false
       },
       {
@@ -182,12 +301,16 @@
         "isCorrect": true
       },
       {
-        "text": "Neu",
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Solidarisch\" nutzt Leon Eckert 24.4× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "17.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Solidarisch\" nutzt Leon Eckert 25.3× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "17.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐴",
@@ -197,19 +320,19 @@
     "id": "pferd",
     "alternatives": [
       {
+        "emoji": "🦊",
+        "name": "Fuchs",
+        "title": "Cleverer Stratege",
+        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+        "id": "fuchs",
+        "score": 1.0
+      },
+      {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüter",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
-        "score": 1.0
-      },
-      {
-        "emoji": "🐝",
-        "name": "Biene",
-        "title": "Fleißiger Abgeordneter",
-        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-        "id": "biene",
         "score": 1.0
       }
     ]
@@ -295,21 +418,21 @@
           "count": 2
         },
         {
-          "word": "geflüchtete",
+          "word": "grenzkontrollen",
           "count": 1
         },
         {
-          "word": "grenzkontrollen",
+          "word": "grenze",
           "count": 1
         }
       ],
       "klima": [
         {
-          "word": "klimakrise",
+          "word": "klimaschutz",
           "count": 4
         },
         {
-          "word": "klimaschutz",
+          "word": "klimakrise",
           "count": 4
         },
         {
@@ -331,11 +454,11 @@
           "count": 3
         },
         {
-          "word": "selbstständige",
+          "word": "kredit",
           "count": 3
         },
         {
-          "word": "kredit",
+          "word": "selbstständige",
           "count": 3
         },
         {
@@ -349,11 +472,11 @@
       ],
       "soziales": [
         {
-          "word": "rente",
+          "word": "bürgergeld",
           "count": 8
         },
         {
-          "word": "bürgergeld",
+          "word": "rente",
           "count": 8
         },
         {
@@ -379,15 +502,15 @@
           "count": 4
         },
         {
+          "word": "soldaten",
+          "count": 1
+        },
+        {
           "word": "gefährder",
           "count": 1
         },
         {
           "word": "täter",
-          "count": 1
-        },
-        {
-          "word": "soldaten",
           "count": 1
         }
       ],
@@ -407,37 +530,37 @@
           "count": 4
         },
         {
-          "word": "angriffskrieg",
-          "count": 1
-        },
-        {
-          "word": "ukraine",
-          "count": 1
-        },
-        {
           "word": "krieg",
           "count": 1
         },
         {
           "word": "russland",
           "count": 1
+        },
+        {
+          "word": "angriffskrieg",
+          "count": 1
+        },
+        {
+          "word": "ukraine",
+          "count": 1
         }
       ],
       "digital": [
-        {
-          "word": "desinformation",
-          "count": 2
-        },
         {
           "word": "netz",
           "count": 2
         },
         {
-          "word": "digitalisierung",
-          "count": 1
+          "word": "desinformation",
+          "count": 2
         },
         {
           "word": "technologie",
+          "count": 1
+        },
+        {
+          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -447,19 +570,19 @@
           "count": 4
         },
         {
-          "word": "bildung",
-          "count": 2
-        },
-        {
           "word": "ausbildung",
           "count": 2
         },
         {
-          "word": "lehrkräfte",
+          "word": "bildung",
+          "count": 2
+        },
+        {
+          "word": "qualifizierung",
           "count": 1
         },
         {
-          "word": "schülerinnen",
+          "word": "weiterbildung",
           "count": 1
         }
       ],
@@ -495,15 +618,15 @@
           "count": 1
         },
         {
+          "word": "verteidiger",
+          "count": 1
+        },
+        {
           "word": "rechtsstaatlichkeit",
           "count": 1
         },
         {
           "word": "beschluss",
-          "count": 1
-        },
-        {
-          "word": "verteidiger",
           "count": 1
         }
       ],
@@ -513,15 +636,15 @@
           "count": 2
         },
         {
+          "word": "überstunden",
+          "count": 1
+        },
+        {
           "word": "beschäftigung",
           "count": 1
         },
         {
           "word": "einkommen",
-          "count": 1
-        },
-        {
-          "word": "überstunden",
           "count": 1
         },
         {

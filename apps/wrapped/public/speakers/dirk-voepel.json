@@ -11,23 +11,23 @@
   "minWords": 429,
   "maxWords": 488,
   "rankings": {
-    "speechRank": 584,
-    "wordsRank": 603,
-    "partySpeechRank": 105,
+    "speechRank": 596,
+    "wordsRank": 604,
+    "partySpeechRank": 108,
     "partyWordsRank": 111,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 6.6,
+    "totalSpeakers": 626,
+    "percentile": 4.8,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 581
+    "longestSpeechRank": 584
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 5,
-    "interrupterRank": 458,
-    "interruptedRank": 543
+    "interrupterRank": 465,
+    "interruptedRank": 551
   },
   "words": {
     "topWords": [
@@ -40,15 +40,15 @@
         "count": 5
       },
       {
-        "word": "weniger",
-        "count": 5
-      },
-      {
         "word": "brücken",
         "count": 5
       },
       {
         "word": "kostet",
+        "count": 5
+      },
+      {
+        "word": "weniger",
         "count": 5
       },
       {
@@ -60,15 +60,15 @@
         "count": 4
       },
       {
-        "word": "beschleunigung",
-        "count": 4
-      },
-      {
         "word": "gesetz",
         "count": 4
       },
       {
-        "word": "zukunftsgesetz",
+        "word": "beschleunigung",
+        "count": 4
+      },
+      {
+        "word": "lesung",
         "count": 3
       }
     ],
@@ -76,20 +76,20 @@
       {
         "word": "kostet",
         "count": 5,
-        "ratioParty": 78.5,
-        "ratioBundestag": 63.0
+        "ratioParty": 75.4,
+        "ratioBundestag": 62.8
       },
       {
         "word": "brücken",
         "count": 5,
-        "ratioParty": 60.5,
-        "ratioBundestag": 67.2
+        "ratioParty": 62.3,
+        "ratioBundestag": 67.6
       },
       {
         "word": "verfahren",
         "count": 7,
-        "ratioParty": 18.7,
-        "ratioBundestag": 23.9
+        "ratioParty": 17.7,
+        "ratioBundestag": 23.4
       },
       {
         "word": "weniger",
@@ -100,16 +100,82 @@
       {
         "word": "infrastruktur",
         "count": 5,
-        "ratioParty": 8.6,
-        "ratioBundestag": 11.1
+        "ratioParty": 8.8,
+        "ratioBundestag": 11.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "kostet",
+        "count": 5,
+        "score": 21.68,
+        "ratio": 75.4
+      },
+      {
+        "word": "brücken",
+        "count": 5,
+        "score": 20.74,
+        "ratio": 62.3
+      },
+      {
+        "word": "verfahren",
+        "count": 7,
+        "score": 20.5,
+        "ratio": 17.7
+      },
+      {
+        "word": "weniger",
+        "count": 5,
+        "score": 12.17,
+        "ratio": 10.4
+      },
+      {
+        "word": "infrastruktur",
+        "count": 5,
+        "score": 11.41,
+        "ratio": 8.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "verfahren",
+        "count": 7,
+        "score": 22.36,
+        "ratio": 23.4
+      },
+      {
+        "word": "brücken",
+        "count": 5,
+        "score": 21.14,
+        "ratio": 67.6
+      },
+      {
+        "word": "kostet",
+        "count": 5,
+        "score": 20.78,
+        "ratio": 62.8
+      },
+      {
+        "word": "infrastruktur",
+        "count": 5,
+        "score": 12.55,
+        "ratio": 11.3
+      },
+      {
+        "word": "weniger",
+        "count": 5,
+        "score": 12.08,
+        "ratio": 10.2
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 458,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
     "vsParty": 0.74,
     "vsParliament": 0.78
   },
@@ -124,24 +190,24 @@
     "question": "Welches Wort nutzt Dirk Vöpel häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
         "text": "Kostet",
         "isCorrect": true
       },
       {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Minister",
+        "text": "Sicherheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kostet\" nutzt Dirk Vöpel 78.5× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "63.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Kostet\" nutzt Dirk Vöpel 75.4× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "62.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -244,6 +310,10 @@
       ],
       "klima": [
         {
+          "word": "umwelt",
+          "count": 1
+        },
+        {
           "word": "klimaschutz",
           "count": 1
         },
@@ -254,13 +324,13 @@
         {
           "word": "energiewende",
           "count": 1
-        },
-        {
-          "word": "umwelt",
-          "count": 1
         }
       ],
       "wirtschaft": [
+        {
+          "word": "unternehmen",
+          "count": 1
+        },
         {
           "word": "volkswirtschaft",
           "count": 1
@@ -271,10 +341,6 @@
         },
         {
           "word": "wettbewerbsfähigkeit",
-          "count": 1
-        },
-        {
-          "word": "unternehmen",
           "count": 1
         }
       ],

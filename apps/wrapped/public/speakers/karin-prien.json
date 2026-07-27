@@ -11,23 +11,23 @@
   "minWords": 7,
   "maxWords": 1289,
   "rankings": {
-    "speechRank": 211,
-    "wordsRank": 19,
-    "partySpeechRank": 49,
-    "partyWordsRank": 10,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 66.2,
-    "verbosityRank": 566,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 182,
-    "longestSpeechRank": 28
+    "speechRank": 217,
+    "wordsRank": 24,
+    "partySpeechRank": 52,
+    "partyWordsRank": 11,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 65.3,
+    "verbosityRank": 570,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 184,
+    "longestSpeechRank": 30
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 28,
     "interrupterRank": null,
-    "interruptedRank": 264
+    "interruptedRank": 276
   },
   "words": {
     "topWords": [
@@ -76,47 +76,127 @@
       {
         "word": "jungs",
         "count": 9,
-        "ratioParty": 716.0,
-        "ratioBundestag": 221.7
-      },
-      {
-        "word": "förderrichtlinie",
-        "count": 6,
-        "ratioParty": 119.3,
-        "ratioBundestag": 123.2
+        "ratioParty": 743.5,
+        "ratioBundestag": 230.2
       },
       {
         "word": "beruflichen",
         "count": 12,
-        "ratioParty": 95.5,
-        "ratioBundestag": 92.4
+        "ratioParty": 99.1,
+        "ratioBundestag": 95.9
       },
       {
         "word": "jugendoffiziere",
         "count": 6,
-        "ratioParty": 95.5,
-        "ratioBundestag": 77.8
+        "ratioParty": 99.1,
+        "ratioBundestag": 80.8
       },
       {
         "word": "startchancen",
         "count": 11,
-        "ratioParty": 87.5,
-        "ratioBundestag": 87.4
+        "ratioParty": 90.9,
+        "ratioBundestag": 90.8
+      },
+      {
+        "word": "förderrichtlinie",
+        "count": 6,
+        "ratioParty": 82.6,
+        "ratioBundestag": 109.6
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "jungs",
+        "count": 9,
+        "score": 59.51,
+        "ratio": 743.5
+      },
+      {
+        "word": "beruflichen",
+        "count": 12,
+        "score": 55.27,
+        "ratio": 99.1
+      },
+      {
+        "word": "startchancen",
+        "count": 11,
+        "score": 49.73,
+        "ratio": 90.9
+      },
+      {
+        "word": "jugendoffiziere",
+        "count": 6,
+        "score": 27.64,
+        "ratio": 99.1
+      },
+      {
+        "word": "förderrichtlinie",
+        "count": 6,
+        "score": 26.56,
+        "ratio": 82.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "beruflichen",
+        "count": 12,
+        "score": 54.88,
+        "ratio": 95.9
+      },
+      {
+        "word": "startchancen",
+        "count": 11,
+        "score": 49.72,
+        "ratio": 90.8
+      },
+      {
+        "word": "jungs",
+        "count": 9,
+        "score": 48.99,
+        "ratio": 230.2
+      },
+      {
+        "word": "förderrichtlinie",
+        "count": 6,
+        "score": 28.24,
+        "ratio": 109.6
+      },
+      {
+        "word": "jugendoffiziere",
+        "count": 6,
+        "score": 26.43,
+        "ratio": 80.8
       }
     ],
     "signatureAdjectives": [
       {
         "word": "entscheidend",
         "count": 8,
-        "ratioParty": 2.7,
+        "ratioParty": 2.6,
         "ratioBundestag": 3.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 8,
+        "score": 10.25,
+        "ratio": 2.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "entscheidend",
+        "count": 8,
+        "score": 12.71,
+        "ratio": 3.9
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 162,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.25,
     "vsParliament": 0.28
   },
@@ -136,24 +216,24 @@
     "question": "Welches Wort nutzt Karin Prien häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bürger",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
         "text": "Jungs",
         "isCorrect": true
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Jungs\" nutzt Karin Prien 716.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "221.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Jungs\" nutzt Karin Prien 743.5× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "230.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Karin Prien häufiger als der Rest der CDU/CSU-Fraktion?",
@@ -163,11 +243,11 @@
         "isCorrect": false
       },
       {
-        "text": "Groß",
+        "text": "Falsch",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
@@ -175,14 +255,14 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Karin Prien 2.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationParty": "\"Entscheidend\" nutzt Karin Prien 2.6× häufiger als der CDU/CSU-Durchschnitt.",
     "explanationBundestag": "3.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦉",
     "name": "Eule",
     "title": "Themenexpertin",
-    "reason": "Dein Fachwort \"Jungs\" nutzt du 716.0× häufiger als deine Fraktion.",
+    "reason": "Dein Fachwort \"Jungs\" nutzt du 743.5× häufiger als deine Fraktion.",
     "id": "eule",
     "alternatives": [
       {
@@ -296,19 +376,19 @@
           "count": 3
         },
         {
-          "word": "marktwirtschaft",
-          "count": 2
-        },
-        {
           "word": "unternehmen",
           "count": 2
         },
         {
-          "word": "wirtschaftspolitik",
+          "word": "marktwirtschaft",
+          "count": 2
+        },
+        {
+          "word": "volkswirtschaft",
           "count": 1
         },
         {
-          "word": "fachkräfte",
+          "word": "wachstum",
           "count": 1
         }
       ],
@@ -370,11 +450,11 @@
           "count": 1
         },
         {
-          "word": "sucht",
+          "word": "prävention",
           "count": 1
         },
         {
-          "word": "prävention",
+          "word": "sucht",
           "count": 1
         }
       ],
@@ -392,11 +472,11 @@
           "count": 2
         },
         {
-          "word": "allianz",
+          "word": "sanktionen",
           "count": 1
         },
         {
-          "word": "sanktionen",
+          "word": "angriffskrieg",
           "count": 1
         }
       ],
@@ -414,11 +494,11 @@
           "count": 2
         },
         {
-          "word": "plattformen",
+          "word": "digital",
           "count": 1
         },
         {
-          "word": "netzwerk",
+          "word": "algorithmen",
           "count": 1
         }
       ],
@@ -480,11 +560,11 @@
           "count": 3
         },
         {
-          "word": "grundrechte",
+          "word": "straftaten",
           "count": 2
         },
         {
-          "word": "straftaten",
+          "word": "gleichstellung",
           "count": 2
         }
       ],
@@ -498,7 +578,7 @@
           "count": 2
         },
         {
-          "word": "gesundheitsschutz",
+          "word": "einkommen",
           "count": 1
         },
         {

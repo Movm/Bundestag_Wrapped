@@ -11,23 +11,23 @@
   "minWords": 47,
   "maxWords": 410,
   "rankings": {
-    "speechRank": 80,
-    "wordsRank": 315,
-    "partySpeechRank": 12,
-    "partyWordsRank": 54,
+    "speechRank": 95,
+    "wordsRank": 330,
+    "partySpeechRank": 15,
+    "partyWordsRank": 55,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 87.2,
-    "verbosityRank": 541,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 84.8,
+    "verbosityRank": 542,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 78,
-    "longestSpeechRank": 606
+    "longestSpeechRank": 607
   },
   "drama": {
-    "interruptionsGiven": 93,
+    "interruptionsGiven": 96,
     "interruptionsReceived": 62,
     "interrupterRank": 49,
-    "interruptedRank": 68
+    "interruptedRank": 73
   },
   "words": {
     "topWords": [
@@ -44,11 +44,11 @@
         "count": 13
       },
       {
-        "word": "einfach",
+        "word": "neue",
         "count": 12
       },
       {
-        "word": "neue",
+        "word": "einfach",
         "count": 12
       },
       {
@@ -60,40 +60,104 @@
       {
         "word": "quatschantrag",
         "count": 10,
-        "ratioParty": 1069.4,
-        "ratioBundestag": 7453.5
+        "ratioParty": 1107.0,
+        "ratioBundestag": 7739.2
       },
       {
         "word": "atomenergie",
         "count": 5,
-        "ratioParty": 133.7,
-        "ratioBundestag": 49.0
+        "ratioParty": 138.4,
+        "ratioBundestag": 50.3
       },
       {
         "word": "einbauen",
         "count": 6,
-        "ratioParty": 128.3,
-        "ratioBundestag": 144.3
+        "ratioParty": 132.8,
+        "ratioBundestag": 136.6
       },
       {
         "word": "gebäudemodernisierungsgesetz",
         "count": 8,
-        "ratioParty": 95.1,
-        "ratioBundestag": 90.3
+        "ratioParty": 63.3,
+        "ratioBundestag": 71.2
       },
       {
         "word": "wärmepumpe",
         "count": 8,
-        "ratioParty": 42.8,
-        "ratioBundestag": 56.8
+        "ratioParty": 44.3,
+        "ratioBundestag": 51.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "quatschantrag",
+        "count": 10,
+        "score": 70.1,
+        "ratio": 1107.0
+      },
+      {
+        "word": "gebäudemodernisierungsgesetz",
+        "count": 8,
+        "score": 33.31,
+        "ratio": 63.3
+      },
+      {
+        "word": "wärmepumpe",
+        "count": 8,
+        "score": 30.51,
+        "ratio": 44.3
+      },
+      {
+        "word": "einbauen",
+        "count": 6,
+        "score": 29.38,
+        "ratio": 132.8
+      },
+      {
+        "word": "atomenergie",
+        "count": 5,
+        "score": 24.69,
+        "ratio": 138.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "quatschantrag",
+        "count": 10,
+        "score": 89.54,
+        "ratio": 7739.2
+      },
+      {
+        "word": "gebäudemodernisierungsgesetz",
+        "count": 8,
+        "score": 34.24,
+        "ratio": 71.2
+      },
+      {
+        "word": "wärmepumpe",
+        "count": 8,
+        "score": 31.64,
+        "ratio": 51.2
+      },
+      {
+        "word": "einbauen",
+        "count": 6,
+        "score": 29.55,
+        "ratio": 136.6
+      },
+      {
+        "word": "atomenergie",
+        "count": 5,
+        "score": 19.69,
+        "ratio": 50.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "teuer",
         "count": 6,
-        "ratioParty": 7.4,
-        "ratioBundestag": 11.3
+        "ratioParty": 7.5,
+        "ratioBundestag": 11.4
       },
       {
         "word": "falsch",
@@ -101,12 +165,40 @@
         "ratioParty": 2.8,
         "ratioBundestag": 3.2
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "teuer",
+        "count": 6,
+        "score": 12.84,
+        "ratio": 7.5
+      },
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 4.01,
+        "ratio": 2.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "teuer",
+        "count": 6,
+        "score": 15.11,
+        "ratio": 11.4
+      },
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 4.31,
+        "ratio": 3.2
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 247,
     "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 585,
     "vsParty": 0.46,
     "vsParliament": 0.42
   },
@@ -124,41 +216,41 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "93"
+      "value": "96"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Alaa Alhamwi häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
         "text": "Quatschantrag",
         "isCorrect": true
       },
       {
-        "text": "Zukunft",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Steuern",
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Quatschantrag\" nutzt Dr. Alaa Alhamwi 1069.4× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "7453.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Quatschantrag\" nutzt Dr. Alaa Alhamwi 1107.0× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "7739.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Alaa Alhamwi häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Jung",
+        "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Sicher",
         "isCorrect": false
       },
       {
@@ -170,14 +262,14 @@
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Teuer\" nutzt Dr. Alaa Alhamwi 7.4× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "11.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Teuer\" nutzt Dr. Alaa Alhamwi 7.5× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "11.4× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦉",
     "name": "Eule",
     "title": "Themenexperte",
-    "reason": "Dein Fachwort \"Quatschantrag\" nutzt du 1069.4× häufiger als deine Fraktion.",
+    "reason": "Dein Fachwort \"Quatschantrag\" nutzt du 1107.0× häufiger als deine Fraktion.",
     "id": "eule",
     "alternatives": [
       {
@@ -281,11 +373,11 @@
           "count": 8
         },
         {
-          "word": "klimaschutz",
+          "word": "energiewende",
           "count": 8
         },
         {
-          "word": "energiewende",
+          "word": "klimaschutz",
           "count": 8
         },
         {
@@ -295,11 +387,11 @@
       ],
       "wirtschaft": [
         {
-          "word": "industrie",
+          "word": "betrieb",
           "count": 3
         },
         {
-          "word": "betrieb",
+          "word": "industrie",
           "count": 3
         },
         {
@@ -355,17 +447,17 @@
           "count": 1
         },
         {
-          "word": "angriffskrieg",
+          "word": "abkommen",
           "count": 1
         }
       ],
       "digital": [
         {
-          "word": "netz",
+          "word": "netzausbau",
           "count": 2
         },
         {
-          "word": "netzausbau",
+          "word": "netz",
           "count": 2
         },
         {

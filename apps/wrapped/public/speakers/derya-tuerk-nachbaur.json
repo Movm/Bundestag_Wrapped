@@ -11,23 +11,23 @@
   "minWords": 21,
   "maxWords": 761,
   "rankings": {
-    "speechRank": 85,
-    "wordsRank": 129,
-    "partySpeechRank": 24,
-    "partyWordsRank": 33,
+    "speechRank": 103,
+    "wordsRank": 141,
+    "partySpeechRank": 28,
+    "partyWordsRank": 36,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 86.4,
-    "verbosityRank": 217,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 50,
-    "longestSpeechRank": 294
+    "totalSpeakers": 626,
+    "percentile": 83.5,
+    "verbosityRank": 222,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 51,
+    "longestSpeechRank": 296
   },
   "drama": {
-    "interruptionsGiven": 103,
+    "interruptionsGiven": 105,
     "interruptionsReceived": 34,
     "interrupterRank": 43,
-    "interruptedRank": 200
+    "interruptedRank": 214
   },
   "words": {
     "topWords": [
@@ -68,48 +68,128 @@
       {
         "word": "darfur",
         "count": 5,
-        "ratioParty": 421.6,
-        "ratioBundestag": 235.7
+        "ratioParty": 440.6,
+        "ratioBundestag": 244.8
       },
       {
         "word": "sudan",
         "count": 17,
-        "ratioParty": 65.2,
-        "ratioBundestag": 33.9
+        "ratioParty": 68.1,
+        "ratioBundestag": 35.0
       },
       {
         "word": "unifil",
         "count": 13,
-        "ratioParty": 42.2,
-        "ratioBundestag": 37.3
+        "ratioParty": 44.1,
+        "ratioBundestag": 38.7
       },
       {
         "word": "diplomatischen",
         "count": 5,
-        "ratioParty": 38.3,
-        "ratioBundestag": 43.3
+        "ratioParty": 36.7,
+        "ratioBundestag": 44.1
       },
       {
         "word": "waffenstillstand",
         "count": 7,
-        "ratioParty": 32.8,
-        "ratioBundestag": 30.0
+        "ratioParty": 34.3,
+        "ratioBundestag": 31.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "sudan",
+        "count": 17,
+        "score": 72.0,
+        "ratio": 68.1
+      },
+      {
+        "word": "unifil",
+        "count": 13,
+        "score": 49.52,
+        "ratio": 44.1
+      },
+      {
+        "word": "darfur",
+        "count": 5,
+        "score": 30.45,
+        "ratio": 440.6
+      },
+      {
+        "word": "waffenstillstand",
+        "count": 7,
+        "score": 24.95,
+        "ratio": 34.3
+      },
+      {
+        "word": "diplomatischen",
+        "count": 5,
+        "score": 18.15,
+        "ratio": 36.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "sudan",
+        "count": 17,
+        "score": 60.92,
+        "ratio": 35.0
+      },
+      {
+        "word": "unifil",
+        "count": 13,
+        "score": 47.86,
+        "ratio": 38.7
+      },
+      {
+        "word": "darfur",
+        "count": 5,
+        "score": 27.52,
+        "ratio": 244.8
+      },
+      {
+        "word": "waffenstillstand",
+        "count": 7,
+        "score": 24.3,
+        "ratio": 31.2
+      },
+      {
+        "word": "diplomatischen",
+        "count": 5,
+        "score": 19.04,
+        "ratio": 44.1
       }
     ],
     "signatureAdjectives": [
       {
         "word": "verlässlich",
         "count": 6,
-        "ratioParty": 8.0,
-        "ratioBundestag": 11.5
+        "ratioParty": 7.8,
+        "ratioBundestag": 11.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "verlässlich",
+        "count": 6,
+        "score": 13.05,
+        "ratio": 7.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "verlässlich",
+        "count": 6,
+        "score": 15.06,
+        "ratio": 11.3
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 467,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.76,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.75,
     "vsParliament": 0.8
   },
   "funFacts": [
@@ -126,14 +206,14 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "103"
+      "value": "105"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Derya Türk-Nachbaur häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Zukunft",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
@@ -141,7 +221,7 @@
         "isCorrect": false
       },
       {
-        "text": "Bürger",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
@@ -149,18 +229,18 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Darfur\" nutzt Derya Türk-Nachbaur 421.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "235.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Darfur\" nutzt Derya Türk-Nachbaur 440.6× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "244.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Derya Türk-Nachbaur häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
+        "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Neu",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
@@ -168,12 +248,12 @@
         "isCorrect": true
       },
       {
-        "text": "Gut",
+        "text": "Alt",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verlässlich\" nutzt Derya Türk-Nachbaur 8.0× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "11.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Verlässlich\" nutzt Derya Türk-Nachbaur 7.8× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "11.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐴",
@@ -281,19 +361,19 @@
       ],
       "wirtschaft": [
         {
-          "word": "wirtschaft",
-          "count": 1
-        },
-        {
           "word": "märkte",
           "count": 1
         },
         {
-          "word": "rezession",
+          "word": "handel",
           "count": 1
         },
         {
-          "word": "handel",
+          "word": "wirtschaft",
+          "count": 1
+        },
+        {
+          "word": "rezession",
           "count": 1
         }
       ],
@@ -311,11 +391,11 @@
           "count": 2
         },
         {
-          "word": "wohnungen",
+          "word": "kind",
           "count": 1
         },
         {
-          "word": "kind",
+          "word": "wohnungen",
           "count": 1
         }
       ],
@@ -379,11 +459,11 @@
       ],
       "digital": [
         {
-          "word": "digitalisierung",
+          "word": "plattformen",
           "count": 1
         },
         {
-          "word": "plattformen",
+          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -401,11 +481,11 @@
           "count": 1
         },
         {
-          "word": "lehrerin",
+          "word": "schülerin",
           "count": 1
         },
         {
-          "word": "bildung",
+          "word": "lehrerin",
           "count": 1
         }
       ],
@@ -419,15 +499,15 @@
           "count": 3
         },
         {
+          "word": "inflation",
+          "count": 1
+        },
+        {
           "word": "etat",
           "count": 1
         },
         {
           "word": "haushalt",
-          "count": 1
-        },
-        {
-          "word": "inflation",
           "count": 1
         }
       ],
@@ -441,11 +521,11 @@
           "count": 5
         },
         {
-          "word": "gleichstellung",
+          "word": "strafverfolgung",
           "count": 2
         },
         {
-          "word": "strafverfolgung",
+          "word": "gleichstellung",
           "count": 2
         },
         {
@@ -459,11 +539,11 @@
           "count": 2
         },
         {
-          "word": "infrastruktur",
+          "word": "schifffahrt",
           "count": 1
         },
         {
-          "word": "schifffahrt",
+          "word": "infrastruktur",
           "count": 1
         }
       ]

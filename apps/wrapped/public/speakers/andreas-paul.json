@@ -11,23 +11,23 @@
   "minWords": 50,
   "maxWords": 742,
   "rankings": {
-    "speechRank": 245,
-    "wordsRank": 285,
-    "partySpeechRank": 50,
-    "partyWordsRank": 62,
+    "speechRank": 280,
+    "wordsRank": 299,
+    "partySpeechRank": 59,
+    "partyWordsRank": 63,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 60.8,
+    "totalSpeakers": 626,
+    "percentile": 55.3,
     "verbosityRank": 305,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 79,
-    "longestSpeechRank": 320
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 76,
+    "longestSpeechRank": 323
   },
   "drama": {
     "interruptionsGiven": 8,
     "interruptionsReceived": 47,
-    "interrupterRank": 298,
-    "interruptedRank": 124
+    "interrupterRank": 301,
+    "interruptedRank": 136
   },
   "words": {
     "topWords": [
@@ -76,40 +76,106 @@
       {
         "word": "truppe",
         "count": 8,
-        "ratioParty": 46.5,
-        "ratioBundestag": 34.0
+        "ratioParty": 48.2,
+        "ratioBundestag": 35.3
       },
       {
         "word": "unifil",
         "count": 11,
-        "ratioParty": 45.4,
-        "ratioBundestag": 51.7
+        "ratioParty": 47.1,
+        "ratioBundestag": 53.7
       },
       {
         "word": "mandats",
         "count": 7,
-        "ratioParty": 42.2,
-        "ratioBundestag": 52.5
+        "ratioParty": 43.8,
+        "ratioBundestag": 54.0
       },
       {
         "word": "wehrpflicht",
         "count": 13,
-        "ratioParty": 39.2,
-        "ratioBundestag": 49.9
+        "ratioParty": 40.7,
+        "ratioBundestag": 51.8
       },
       {
         "word": "teils",
         "count": 6,
-        "ratioParty": 33.6,
-        "ratioBundestag": 43.2
+        "ratioParty": 33.7,
+        "ratioBundestag": 43.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "wehrpflicht",
+        "count": 13,
+        "score": 48.5,
+        "ratio": 40.7
+      },
+      {
+        "word": "unifil",
+        "count": 11,
+        "score": 42.61,
+        "ratio": 47.1
+      },
+      {
+        "word": "truppe",
+        "count": 8,
+        "score": 31.17,
+        "ratio": 48.2
+      },
+      {
+        "word": "mandats",
+        "count": 7,
+        "score": 26.62,
+        "ratio": 43.8
+      },
+      {
+        "word": "teils",
+        "count": 6,
+        "score": 21.28,
+        "ratio": 33.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "wehrpflicht",
+        "count": 13,
+        "score": 51.56,
+        "ratio": 51.8
+      },
+      {
+        "word": "unifil",
+        "count": 11,
+        "score": 44.02,
+        "ratio": 53.7
+      },
+      {
+        "word": "truppe",
+        "count": 8,
+        "score": 28.73,
+        "ratio": 35.3
+      },
+      {
+        "word": "mandats",
+        "count": 7,
+        "score": 28.05,
+        "ratio": 54.0
+      },
+      {
+        "word": "teils",
+        "count": 6,
+        "score": 22.77,
+        "ratio": 43.5
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 429,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.77,
     "vsParliament": 0.73
   },
@@ -133,20 +199,20 @@
         "isCorrect": true
       },
       {
-        "text": "Minister",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Debatte",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
-        "text": "Arbeit",
+        "text": "Bürger",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Truppe\" nutzt Andreas Paul 46.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "34.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Truppe\" nutzt Andreas Paul 48.2× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "35.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -335,11 +401,7 @@
           "count": 2
         },
         {
-          "word": "finanzminister",
-          "count": 1
-        },
-        {
-          "word": "inflation",
+          "word": "investition",
           "count": 1
         },
         {
@@ -348,6 +410,10 @@
         },
         {
           "word": "kosten",
+          "count": 1
+        },
+        {
+          "word": "investitionen",
           "count": 1
         }
       ],

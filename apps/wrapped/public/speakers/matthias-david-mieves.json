@@ -11,23 +11,23 @@
   "minWords": 74,
   "maxWords": 731,
   "rankings": {
-    "speechRank": 435,
-    "wordsRank": 424,
+    "speechRank": 439,
+    "wordsRank": 433,
     "partySpeechRank": 80,
-    "partyWordsRank": 82,
+    "partyWordsRank": 84,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 30.4,
-    "verbosityRank": 185,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 42,
-    "longestSpeechRank": 336
+    "totalSpeakers": 626,
+    "percentile": 29.9,
+    "verbosityRank": 190,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 45,
+    "longestSpeechRank": 341
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 15,
-    "interrupterRank": 417,
-    "interruptedRank": 395
+    "interrupterRank": 427,
+    "interruptedRank": 400
   },
   "words": {
     "topWords": [
@@ -64,55 +64,147 @@
       {
         "word": "therapie",
         "count": 5,
-        "ratioParty": 517.8,
-        "ratioBundestag": 167.2
+        "ratioParty": 540.9,
+        "ratioBundestag": 163.0
       },
       {
         "word": "arzneimittel",
         "count": 5,
-        "ratioParty": 258.9,
-        "ratioBundestag": 136.4
+        "ratioParty": 270.5,
+        "ratioBundestag": 141.6
       },
       {
         "word": "passenden",
         "count": 5,
-        "ratioParty": 207.1,
-        "ratioBundestag": 199.3
+        "ratioParty": 216.4,
+        "ratioBundestag": 206.9
       },
       {
         "word": "mosel",
         "count": 9,
         "ratioParty": 32.4,
-        "ratioBundestag": 333.1
+        "ratioBundestag": 345.9
       },
       {
         "word": "pflege",
         "count": 10,
-        "ratioParty": 21.8,
-        "ratioBundestag": 18.0
+        "ratioParty": 22.3,
+        "ratioBundestag": 18.3
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "mosel",
+        "count": 9,
+        "score": 31.58,
+        "ratio": 32.4
+      },
+      {
+        "word": "therapie",
+        "count": 5,
+        "score": 31.48,
+        "ratio": 540.9
+      },
+      {
+        "word": "pflege",
+        "count": 10,
+        "score": 31.48,
+        "ratio": 22.3
+      },
+      {
+        "word": "arzneimittel",
+        "count": 5,
+        "score": 28.02,
+        "ratio": 270.5
+      },
+      {
+        "word": "passenden",
+        "count": 5,
+        "score": 26.91,
+        "ratio": 216.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "mosel",
+        "count": 9,
+        "score": 52.64,
+        "ratio": 345.9
+      },
+      {
+        "word": "pflege",
+        "count": 10,
+        "score": 29.6,
+        "ratio": 18.3
+      },
+      {
+        "word": "passenden",
+        "count": 5,
+        "score": 26.69,
+        "ratio": 206.9
+      },
+      {
+        "word": "therapie",
+        "count": 5,
+        "score": 25.5,
+        "ratio": 163.0
+      },
+      {
+        "word": "arzneimittel",
+        "count": 5,
+        "score": 24.8,
+        "ratio": 141.6
       }
     ],
     "signatureAdjectives": [
       {
         "word": "teuer",
         "count": 3,
-        "ratioParty": 15.2,
-        "ratioBundestag": 7.8
+        "ratioParty": 15.8,
+        "ratioBundestag": 7.9
       },
       {
         "word": "sicher",
         "count": 5,
-        "ratioParty": 3.5,
-        "ratioBundestag": 4.2
+        "ratioParty": 3.6,
+        "ratioBundestag": 4.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "teuer",
+        "count": 3,
+        "score": 8.46,
+        "ratio": 15.8
+      },
+      {
+        "word": "sicher",
+        "count": 5,
+        "score": 7.63,
+        "ratio": 3.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 5,
+        "score": 8.34,
+        "ratio": 4.3
+      },
+      {
+        "word": "teuer",
+        "count": 3,
+        "score": 6.56,
+        "ratio": 7.9
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 482,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
     "vsParty": 0.78,
-    "vsParliament": 0.83
+    "vsParliament": 0.82
   },
   "funFacts": [
     {
@@ -130,15 +222,15 @@
     "question": "Welches Wort nutzt Matthias David Mieves häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
         "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Bildung",
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
         "isCorrect": false
       },
       {
@@ -146,31 +238,31 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Therapie\" nutzt Matthias David Mieves 517.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "167.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Therapie\" nutzt Matthias David Mieves 540.9× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "163.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Matthias David Mieves häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
         "text": "Teuer",
         "isCorrect": true
+      },
+      {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Teuer\" nutzt Matthias David Mieves 15.2× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "7.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Teuer\" nutzt Matthias David Mieves 15.8× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "7.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -312,11 +404,11 @@
           "count": 10
         },
         {
-          "word": "therapie",
+          "word": "arzneimittel",
           "count": 5
         },
         {
-          "word": "arzneimittel",
+          "word": "therapie",
           "count": 5
         },
         {
@@ -352,11 +444,11 @@
           "count": 2
         },
         {
-          "word": "hackerangriff",
+          "word": "cloud",
           "count": 1
         },
         {
-          "word": "cybersicherheit",
+          "word": "digital",
           "count": 1
         }
       ],
@@ -372,11 +464,11 @@
           "count": 4
         },
         {
-          "word": "steuern",
+          "word": "investitionen",
           "count": 2
         },
         {
-          "word": "investitionen",
+          "word": "steuern",
           "count": 2
         },
         {

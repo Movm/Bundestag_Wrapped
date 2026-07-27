@@ -11,23 +11,23 @@
   "minWords": 76,
   "maxWords": 1296,
   "rankings": {
-    "speechRank": 52,
-    "wordsRank": 59,
-    "partySpeechRank": 8,
-    "partyWordsRank": 5,
+    "speechRank": 61,
+    "wordsRank": 65,
+    "partySpeechRank": 9,
+    "partyWordsRank": 6,
     "partySize": 63,
-    "totalSpeakers": 625,
-    "percentile": 91.7,
-    "verbosityRank": 80,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 90.3,
+    "verbosityRank": 82,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 7,
-    "longestSpeechRank": 27
+    "longestSpeechRank": 29
   },
   "drama": {
     "interruptionsGiven": 58,
     "interruptionsReceived": 26,
-    "interrupterRank": 85,
-    "interruptedRank": 275
+    "interrupterRank": 92,
+    "interruptedRank": 285
   },
   "words": {
     "topWords": [
@@ -46,61 +46,165 @@
     ],
     "signatureWords": [
       {
-        "word": "gegenstand",
-        "count": 5,
-        "ratioParty": 79.3,
-        "ratioBundestag": 18.3
-      },
-      {
         "word": "petition",
         "count": 6,
-        "ratioParty": 63.4,
-        "ratioBundestag": 19.9
+        "ratioParty": 65.9,
+        "ratioBundestag": 20.2
+      },
+      {
+        "word": "gegenstand",
+        "count": 5,
+        "ratioParty": 54.9,
+        "ratioBundestag": 18.5
       },
       {
         "word": "barrierefreiheit",
         "count": 9,
-        "ratioParty": 40.8,
-        "ratioBundestag": 40.9
+        "ratioParty": 42.3,
+        "ratioBundestag": 42.4
       },
       {
         "word": "inklusion",
         "count": 5,
-        "ratioParty": 31.7,
-        "ratioBundestag": 28.9
+        "ratioParty": 32.9,
+        "ratioBundestag": 30.0
       },
       {
         "word": "kuchen",
         "count": 5,
-        "ratioParty": 31.7,
-        "ratioBundestag": 61.1
+        "ratioParty": 27.4,
+        "ratioBundestag": 58.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "barrierefreiheit",
+        "count": 9,
+        "score": 33.91,
+        "ratio": 42.3
+      },
+      {
+        "word": "petition",
+        "count": 6,
+        "score": 25.22,
+        "ratio": 65.9
+      },
+      {
+        "word": "gegenstand",
+        "count": 5,
+        "score": 20.12,
+        "ratio": 54.9
+      },
+      {
+        "word": "inklusion",
+        "count": 5,
+        "score": 17.62,
+        "ratio": 32.9
+      },
+      {
+        "word": "kuchen",
+        "count": 5,
+        "score": 16.73,
+        "ratio": 27.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "barrierefreiheit",
+        "count": 9,
+        "score": 33.93,
+        "ratio": 42.4
+      },
+      {
+        "word": "kuchen",
+        "count": 5,
+        "score": 20.46,
+        "ratio": 58.9
+      },
+      {
+        "word": "petition",
+        "count": 6,
+        "score": 18.32,
+        "ratio": 20.2
+      },
+      {
+        "word": "inklusion",
+        "count": 5,
+        "score": 17.17,
+        "ratio": 30.0
+      },
+      {
+        "word": "gegenstand",
+        "count": 5,
+        "score": 14.85,
+        "ratio": 18.5
       }
     ],
     "signatureAdjectives": [
       {
         "word": "gescheitert",
         "count": 3,
-        "ratioParty": 7.3,
-        "ratioBundestag": 5.7
+        "ratioParty": 7.1,
+        "ratioBundestag": 5.8
       },
       {
         "word": "unbezahlbar",
         "count": 3,
-        "ratioParty": 6.3,
-        "ratioBundestag": 15.6
+        "ratioParty": 6.2,
+        "ratioBundestag": 15.7
       },
       {
         "word": "wirtschaftlich",
         "count": 3,
-        "ratioParty": 3.8,
+        "ratioParty": 4.0,
         "ratioBundestag": 2.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gescheitert",
+        "count": 3,
+        "score": 6.28,
+        "ratio": 7.1
+      },
+      {
+        "word": "unbezahlbar",
+        "count": 3,
+        "score": 5.92,
+        "ratio": 6.2
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 4.83,
+        "ratio": 4.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "unbezahlbar",
+        "count": 3,
+        "score": 8.45,
+        "ratio": 15.7
+      },
+      {
+        "word": "gescheitert",
+        "count": 3,
+        "score": 5.75,
+        "ratio": 5.8
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 3.58,
+        "ratio": 2.3
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 561,
-    "partyAvgWords": 500,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 499,
+    "parliamentAvgWords": 585,
     "vsParty": 1.12,
     "vsParliament": 0.96
   },
@@ -123,54 +227,54 @@
     {
       "emoji": "📊",
       "label": "Top-Redner",
-      "value": "Top 9%"
+      "value": "Top 10%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Sören Pellmann häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gegenstand",
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
+        "text": "Petition",
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Demokratie",
+        "text": "Europa",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gegenstand\" nutzt Sören Pellmann 79.3× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "18.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Petition\" nutzt Sören Pellmann 65.9× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "20.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Sören Pellmann häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Wichtig",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
-        "text": "Stark",
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Richtig",
         "isCorrect": false
       },
       {
         "text": "Gescheitert",
         "isCorrect": true
-      },
-      {
-        "text": "Falsch",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gescheitert\" nutzt Sören Pellmann 7.3× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "5.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Gescheitert\" nutzt Sören Pellmann 7.1× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "5.8× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐴",
@@ -272,15 +376,15 @@
       ],
       "klima": [
         {
+          "word": "kohle",
+          "count": 1
+        },
+        {
           "word": "umwelt",
           "count": 1
         },
         {
           "word": "umweltschutz",
-          "count": 1
-        },
-        {
-          "word": "kohle",
           "count": 1
         }
       ],
@@ -290,11 +394,11 @@
           "count": 11
         },
         {
-          "word": "unternehmen",
+          "word": "konjunktur",
           "count": 4
         },
         {
-          "word": "konjunktur",
+          "word": "unternehmen",
           "count": 4
         },
         {
@@ -302,7 +406,7 @@
           "count": 2
         },
         {
-          "word": "industrie",
+          "word": "marktwirtschaft",
           "count": 2
         }
       ],
@@ -360,15 +464,15 @@
           "count": 1
         },
         {
-          "word": "pflegekräfte",
-          "count": 1
-        },
-        {
           "word": "krankenversicherung",
           "count": 1
         },
         {
           "word": "rezept",
+          "count": 1
+        },
+        {
+          "word": "pflegekräfte",
           "count": 1
         }
       ],
@@ -390,7 +494,7 @@
           "count": 8
         },
         {
-          "word": "diplomatie",
+          "word": "außenpolitik",
           "count": 7
         }
       ],
@@ -406,19 +510,19 @@
           "count": 3
         },
         {
-          "word": "lehrer",
-          "count": 1
-        },
-        {
           "word": "studierende",
           "count": 1
         },
         {
-          "word": "weiterbildung",
+          "word": "schulen",
           "count": 1
         },
         {
-          "word": "schulen",
+          "word": "grundschule",
+          "count": 1
+        },
+        {
+          "word": "wissenschaft",
           "count": 1
         }
       ],
@@ -440,17 +544,17 @@
           "count": 3
         },
         {
-          "word": "schuldenbremse",
+          "word": "kosten",
           "count": 3
         }
       ],
       "justiz": [
         {
-          "word": "menschenrechte",
+          "word": "grundgesetz",
           "count": 4
         },
         {
-          "word": "grundgesetz",
+          "word": "menschenrechte",
           "count": 4
         },
         {
@@ -480,7 +584,7 @@
           "count": 2
         },
         {
-          "word": "arbeitslose",
+          "word": "rentenversicherung",
           "count": 1
         },
         {

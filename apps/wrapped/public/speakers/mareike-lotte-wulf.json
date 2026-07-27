@@ -11,23 +11,23 @@
   "minWords": 10,
   "maxWords": 179,
   "rankings": {
-    "speechRank": 624,
-    "wordsRank": 501,
-    "partySpeechRank": 210,
-    "partyWordsRank": 163,
-    "partySize": 211,
-    "totalSpeakers": 625,
+    "speechRank": 625,
+    "wordsRank": 508,
+    "partySpeechRank": 212,
+    "partyWordsRank": 168,
+    "partySize": 212,
+    "totalSpeakers": 626,
     "percentile": 0.2,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 623
+    "longestSpeechRank": 624
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 10,
-    "interrupterRank": 426,
-    "interruptedRank": 470
+    "interrupterRank": 428,
+    "interruptedRank": 481
   },
   "words": {
     "topWords": [
@@ -76,40 +76,106 @@
       {
         "word": "lehrkräfte",
         "count": 8,
-        "ratioParty": 163.7,
-        "ratioBundestag": 128.6
+        "ratioParty": 169.9,
+        "ratioBundestag": 133.5
       },
       {
         "word": "weiterbildung",
         "count": 6,
-        "ratioParty": 156.8,
-        "ratioBundestag": 96.4
+        "ratioParty": 162.8,
+        "ratioBundestag": 100.1
       },
       {
         "word": "zuständigkeit",
         "count": 8,
-        "ratioParty": 89.6,
-        "ratioBundestag": 111.3
+        "ratioParty": 84.9,
+        "ratioBundestag": 110.2
       },
       {
         "word": "nachfrage",
         "count": 11,
-        "ratioParty": 58.2,
-        "ratioBundestag": 44.7
+        "ratioParty": 54.8,
+        "ratioBundestag": 44.1
       },
       {
         "word": "abgeordneter",
         "count": 18,
-        "ratioParty": 43.7,
-        "ratioBundestag": 62.3
+        "ratioParty": 45.1,
+        "ratioBundestag": 58.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "abgeordneter",
+        "count": 18,
+        "score": 68.95,
+        "ratio": 45.1
+      },
+      {
+        "word": "nachfrage",
+        "count": 11,
+        "score": 44.24,
+        "ratio": 54.8
+      },
+      {
+        "word": "lehrkräfte",
+        "count": 8,
+        "score": 41.13,
+        "ratio": 169.9
+      },
+      {
+        "word": "zuständigkeit",
+        "count": 8,
+        "score": 35.63,
+        "ratio": 84.9
+      },
+      {
+        "word": "weiterbildung",
+        "count": 6,
+        "score": 30.59,
+        "ratio": 162.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "abgeordneter",
+        "count": 18,
+        "score": 73.67,
+        "ratio": 58.9
+      },
+      {
+        "word": "nachfrage",
+        "count": 11,
+        "score": 41.9,
+        "ratio": 44.1
+      },
+      {
+        "word": "lehrkräfte",
+        "count": 8,
+        "score": 39.21,
+        "ratio": 133.5
+      },
+      {
+        "word": "zuständigkeit",
+        "count": 8,
+        "score": 37.69,
+        "ratio": 110.2
+      },
+      {
+        "word": "weiterbildung",
+        "count": 6,
+        "score": 27.7,
+        "ratio": 100.1
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 84,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.13,
     "vsParliament": 0.14
   },
@@ -129,7 +195,7 @@
     "question": "Welches Wort nutzt Mareike Lotte Wulf häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Migration",
+        "text": "Energie",
         "isCorrect": false
       },
       {
@@ -141,12 +207,12 @@
         "isCorrect": true
       },
       {
-        "text": "Familie",
+        "text": "Zukunft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Lehrkräfte\" nutzt Mareike Lotte Wulf 163.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "128.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Lehrkräfte\" nutzt Mareike Lotte Wulf 169.9× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "133.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

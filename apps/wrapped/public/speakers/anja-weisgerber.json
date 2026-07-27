@@ -11,23 +11,23 @@
   "minWords": 62,
   "maxWords": 727,
   "rankings": {
-    "speechRank": 258,
-    "wordsRank": 279,
-    "partySpeechRank": 69,
-    "partyWordsRank": 81,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 58.7,
-    "verbosityRank": 354,
-    "verbosityTotal": 579,
+    "speechRank": 273,
+    "wordsRank": 291,
+    "partySpeechRank": 74,
+    "partyWordsRank": 84,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 56.4,
+    "verbosityRank": 353,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 125,
-    "longestSpeechRank": 343
+    "longestSpeechRank": 347
   },
   "drama": {
     "interruptionsGiven": 42,
     "interruptionsReceived": 2,
-    "interrupterRank": 125,
-    "interruptedRank": 583
+    "interrupterRank": 127,
+    "interruptedRank": 587
   },
   "words": {
     "topWords": [
@@ -76,32 +76,96 @@
       {
         "word": "ferien",
         "count": 5,
-        "ratioParty": 101.0,
-        "ratioBundestag": 67.1
+        "ratioParty": 104.8,
+        "ratioBundestag": 69.6
       },
       {
         "word": "freiwilligendienste",
         "count": 11,
-        "ratioParty": 84.2,
-        "ratioBundestag": 136.8
+        "ratioParty": 87.5,
+        "ratioBundestag": 139.5
       },
       {
         "word": "rechtsanspruch",
         "count": 7,
-        "ratioParty": 55.5,
-        "ratioBundestag": 57.0
+        "ratioParty": 55.7,
+        "ratioBundestag": 57.1
       },
       {
         "word": "ganztagsbetreuung",
         "count": 5,
-        "ratioParty": 50.5,
-        "ratioBundestag": 55.2
+        "ratioParty": 52.4,
+        "ratioBundestag": 56.4
       },
       {
         "word": "prien",
         "count": 5,
-        "ratioParty": 33.7,
-        "ratioBundestag": 21.0
+        "ratioParty": 33.9,
+        "ratioBundestag": 21.5
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "freiwilligendienste",
+        "count": 11,
+        "score": 49.31,
+        "ratio": 87.5
+      },
+      {
+        "word": "rechtsanspruch",
+        "count": 7,
+        "score": 28.26,
+        "ratio": 55.7
+      },
+      {
+        "word": "ferien",
+        "count": 5,
+        "score": 23.31,
+        "ratio": 104.8
+      },
+      {
+        "word": "ganztagsbetreuung",
+        "count": 5,
+        "score": 19.89,
+        "ratio": 52.4
+      },
+      {
+        "word": "prien",
+        "count": 5,
+        "score": 17.76,
+        "ratio": 33.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "freiwilligendienste",
+        "count": 11,
+        "score": 54.4,
+        "ratio": 139.5
+      },
+      {
+        "word": "rechtsanspruch",
+        "count": 7,
+        "score": 28.44,
+        "ratio": 57.1
+      },
+      {
+        "word": "ferien",
+        "count": 5,
+        "score": 21.29,
+        "ratio": 69.6
+      },
+      {
+        "word": "ganztagsbetreuung",
+        "count": 5,
+        "score": 20.25,
+        "ratio": 56.4
+      },
+      {
+        "word": "prien",
+        "count": 5,
+        "score": 15.57,
+        "ratio": 21.5
       }
     ],
     "signatureAdjectives": [
@@ -109,16 +173,32 @@
         "word": "sicher",
         "count": 4,
         "ratioParty": 2.0,
-        "ratioBundestag": 2.2
+        "ratioBundestag": 2.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 4.39,
+        "ratio": 2.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 4.78,
+        "ratio": 2.3
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 406,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.63,
-    "vsParliament": 0.7
+    "vsParliament": 0.69
   },
   "funFacts": [
     {
@@ -141,7 +221,11 @@
     "question": "Welches Wort nutzt Dr. Anja Weisgerber häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Klima",
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
         "isCorrect": false
       },
       {
@@ -149,22 +233,18 @@
         "isCorrect": true
       },
       {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
+        "text": "Kanzler",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ferien\" nutzt Dr. Anja Weisgerber 101.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "67.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Ferien\" nutzt Dr. Anja Weisgerber 104.8× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "69.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Anja Weisgerber häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Notwendig",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
@@ -172,16 +252,16 @@
         "isCorrect": true
       },
       {
-        "text": "Gut",
+        "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Alt",
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Sicher\" nutzt Dr. Anja Weisgerber 2.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "2.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "2.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -391,10 +471,6 @@
           "count": 1
         },
         {
-          "word": "plattformen",
-          "count": 1
-        },
-        {
           "word": "digital",
           "count": 1
         },
@@ -404,6 +480,10 @@
         },
         {
           "word": "desinformation",
+          "count": 1
+        },
+        {
+          "word": "plattformen",
           "count": 1
         }
       ],
@@ -469,7 +549,7 @@
           "count": 1
         },
         {
-          "word": "verfassungsrecht",
+          "word": "verbraucherschutz",
           "count": 1
         }
       ],
@@ -479,11 +559,11 @@
           "count": 1
         },
         {
-          "word": "teilzeit",
+          "word": "vereinbarkeit",
           "count": 1
         },
         {
-          "word": "vereinbarkeit",
+          "word": "teilzeit",
           "count": 1
         }
       ],

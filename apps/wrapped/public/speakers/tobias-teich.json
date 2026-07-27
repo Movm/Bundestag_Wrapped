@@ -11,23 +11,23 @@
   "minWords": 340,
   "maxWords": 576,
   "rankings": {
-    "speechRank": 480,
-    "wordsRank": 529,
-    "partySpeechRank": 116,
-    "partyWordsRank": 124,
+    "speechRank": 486,
+    "wordsRank": 540,
+    "partySpeechRank": 117,
+    "partyWordsRank": 125,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 23.2,
-    "verbosityRank": 296,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 22.4,
+    "verbosityRank": 299,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 75,
-    "longestSpeechRank": 517
+    "longestSpeechRank": 520
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 4,
     "interrupterRank": null,
-    "interruptedRank": 552
+    "interruptedRank": 555
   },
   "words": {
     "topWords": [
@@ -76,41 +76,107 @@
       {
         "word": "althea",
         "count": 6,
-        "ratioParty": 301.3,
-        "ratioBundestag": 147.8
+        "ratioParty": 312.3,
+        "ratioBundestag": 153.5
       },
       {
         "word": "eufor",
         "count": 6,
-        "ratioParty": 263.6,
-        "ratioBundestag": 150.2
+        "ratioParty": 273.3,
+        "ratioBundestag": 155.9
       },
       {
         "word": "stabilität",
         "count": 13,
-        "ratioParty": 80.2,
-        "ratioBundestag": 34.2
+        "ratioParty": 81.7,
+        "ratioBundestag": 34.9
       },
       {
         "word": "mission",
         "count": 7,
-        "ratioParty": 37.3,
-        "ratioBundestag": 37.7
+        "ratioParty": 37.0,
+        "ratioBundestag": 38.7
       },
       {
         "word": "libanon",
         "count": 5,
-        "ratioParty": 32.5,
-        "ratioBundestag": 26.4
+        "ratioParty": 33.7,
+        "ratioBundestag": 27.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "stabilität",
+        "count": 13,
+        "score": 57.4,
+        "ratio": 81.7
+      },
+      {
+        "word": "althea",
+        "count": 6,
+        "score": 34.48,
+        "ratio": 312.3
+      },
+      {
+        "word": "eufor",
+        "count": 6,
+        "score": 33.69,
+        "ratio": 273.3
+      },
+      {
+        "word": "mission",
+        "count": 7,
+        "score": 25.46,
+        "ratio": 37.0
+      },
+      {
+        "word": "libanon",
+        "count": 5,
+        "score": 17.73,
+        "ratio": 33.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "stabilität",
+        "count": 13,
+        "score": 46.55,
+        "ratio": 34.9
+      },
+      {
+        "word": "eufor",
+        "count": 6,
+        "score": 30.33,
+        "ratio": 155.9
+      },
+      {
+        "word": "althea",
+        "count": 6,
+        "score": 30.24,
+        "ratio": 153.5
+      },
+      {
+        "word": "mission",
+        "count": 7,
+        "score": 25.77,
+        "ratio": 38.7
+      },
+      {
+        "word": "libanon",
+        "count": 5,
+        "score": 16.73,
+        "ratio": 27.4
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 432,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.77,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.78,
     "vsParliament": 0.74
   },
   "funFacts": [
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Tobias Teich häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
         "text": "Althea",
         "isCorrect": true
+      },
+      {
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Althea\" nutzt Tobias Teich 301.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "147.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Althea\" nutzt Tobias Teich 312.3× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "153.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -265,11 +331,11 @@
           "count": 1
         },
         {
-          "word": "soldaten",
+          "word": "korruption",
           "count": 1
         },
         {
-          "word": "korruption",
+          "word": "soldaten",
           "count": 1
         }
       ],
@@ -297,7 +363,7 @@
           "count": 2
         },
         {
-          "word": "partnerschaft",
+          "word": "außenpolitik",
           "count": 1
         }
       ],

@@ -11,23 +11,23 @@
   "minWords": 230,
   "maxWords": 716,
   "rankings": {
-    "speechRank": 29,
-    "wordsRank": 81,
+    "speechRank": 34,
+    "wordsRank": 87,
     "partySpeechRank": 8,
     "partyWordsRank": 27,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 95.4,
-    "verbosityRank": 213,
-    "verbosityTotal": 579,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 94.6,
+    "verbosityRank": 216,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 75,
-    "longestSpeechRank": 354
+    "longestSpeechRank": 358
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 55,
-    "interrupterRank": 399,
-    "interruptedRank": 90
+    "interrupterRank": 407,
+    "interruptedRank": 97
   },
   "words": {
     "topWords": [
@@ -56,46 +56,110 @@
       {
         "word": "einsprüche",
         "count": 12,
-        "ratioParty": 1327.1,
-        "ratioBundestag": 141.4
+        "ratioParty": 1377.9,
+        "ratioBundestag": 146.8
       },
       {
         "word": "altersentschädigung",
         "count": 5,
-        "ratioParty": 553.0,
-        "ratioBundestag": 427.0
+        "ratioParty": 574.1,
+        "ratioBundestag": 354.7
       },
       {
         "word": "krisenlagen",
         "count": 6,
-        "ratioParty": 331.8,
-        "ratioBundestag": 256.2
+        "ratioParty": 344.5,
+        "ratioBundestag": 266.1
       },
       {
         "word": "abgeordnetengesetz",
         "count": 8,
-        "ratioParty": 294.9,
-        "ratioBundestag": 227.8
+        "ratioParty": 229.6,
+        "ratioBundestag": 218.3
       },
       {
-        "word": "organisierter",
+        "word": "pipelines",
+        "count": 6,
+        "ratioParty": 172.2,
+        "ratioBundestag": 49.5
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "einsprüche",
+        "count": 12,
+        "score": 86.75,
+        "ratio": 1377.9
+      },
+      {
+        "word": "abgeordnetengesetz",
         "count": 8,
-        "ratioParty": 176.9,
-        "ratioBundestag": 97.6
+        "score": 43.53,
+        "ratio": 229.6
+      },
+      {
+        "word": "krisenlagen",
+        "count": 6,
+        "score": 35.07,
+        "ratio": 344.5
+      },
+      {
+        "word": "altersentschädigung",
+        "count": 5,
+        "score": 31.77,
+        "ratio": 574.1
+      },
+      {
+        "word": "pipelines",
+        "count": 6,
+        "score": 30.93,
+        "ratio": 172.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "einsprüche",
+        "count": 12,
+        "score": 59.95,
+        "ratio": 146.8
+      },
+      {
+        "word": "abgeordnetengesetz",
+        "count": 8,
+        "score": 43.12,
+        "ratio": 218.3
+      },
+      {
+        "word": "krisenlagen",
+        "count": 6,
+        "score": 33.53,
+        "ratio": 266.1
+      },
+      {
+        "word": "altersentschädigung",
+        "count": 5,
+        "score": 29.37,
+        "ratio": 354.7
+      },
+      {
+        "word": "pipelines",
+        "count": 6,
+        "score": 23.53,
+        "ratio": 49.5
       }
     ],
     "signatureAdjectives": [
       {
         "word": "angemessen",
         "count": 7,
-        "ratioParty": 13.8,
-        "ratioBundestag": 13.7
+        "ratioParty": 14.4,
+        "ratioBundestag": 14.0
       },
       {
         "word": "zuverlässig",
         "count": 3,
         "ratioParty": 12.3,
-        "ratioBundestag": 9.8
+        "ratioBundestag": 10.0
       },
       {
         "word": "wirksam",
@@ -112,15 +176,79 @@
       {
         "word": "rechts",
         "count": 3,
-        "ratioParty": 2.2,
+        "ratioParty": 2.1,
         "ratioBundestag": 2.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "angemessen",
+        "count": 7,
+        "score": 19.14,
+        "ratio": 14.4
+      },
+      {
+        "word": "wirksam",
+        "count": 6,
+        "score": 11.23,
+        "ratio": 5.5
+      },
+      {
+        "word": "zuverlässig",
+        "count": 3,
+        "score": 7.76,
+        "ratio": 12.3
+      },
+      {
+        "word": "entscheidend",
+        "count": 5,
+        "score": 5.97,
+        "ratio": 2.3
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 3.39,
+        "ratio": 2.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "angemessen",
+        "count": 7,
+        "score": 18.96,
+        "ratio": 14.0
+      },
+      {
+        "word": "wirksam",
+        "count": 6,
+        "score": 12.77,
+        "ratio": 7.4
+      },
+      {
+        "word": "entscheidend",
+        "count": 5,
+        "score": 7.41,
+        "ratio": 3.4
+      },
+      {
+        "word": "zuverlässig",
+        "count": 3,
+        "score": 7.19,
+        "ratio": 10.0
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 3.3,
+        "ratio": 2.0
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 469,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.73,
     "vsParliament": 0.8
   },
@@ -138,60 +266,60 @@
     {
       "emoji": "📊",
       "label": "Top-Redner",
-      "value": "Top 5%"
+      "value": "Top 6%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Thomas Silberhorn häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
         "text": "Einsprüche",
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Bundesregierung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Einsprüche\" nutzt Thomas Silberhorn 1327.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "141.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Einsprüche\" nutzt Thomas Silberhorn 1377.9× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "146.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Thomas Silberhorn häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Angemessen",
-        "isCorrect": true
+        "text": "Neu",
+        "isCorrect": false
       },
       {
-        "text": "Groß",
-        "isCorrect": false
+        "text": "Angemessen",
+        "isCorrect": true
       },
       {
         "text": "Stark",
         "isCorrect": false
       },
       {
-        "text": "Alt",
+        "text": "Sicher",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Angemessen\" nutzt Thomas Silberhorn 13.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "13.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Angemessen\" nutzt Thomas Silberhorn 14.4× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "14.0× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦉",
     "name": "Eule",
     "title": "Themenexperte",
-    "reason": "Dein Fachwort \"Einsprüche\" nutzt du 1327.1× häufiger als deine Fraktion.",
+    "reason": "Dein Fachwort \"Einsprüche\" nutzt du 1377.9× häufiger als deine Fraktion.",
     "id": "eule",
     "alternatives": [
       {
@@ -329,11 +457,11 @@
           "count": 2
         },
         {
-          "word": "qualifikation",
+          "word": "selbstständige",
           "count": 1
         },
         {
-          "word": "selbstständige",
+          "word": "freiberufler",
           "count": 1
         }
       ],
@@ -355,7 +483,7 @@
           "count": 1
         },
         {
-          "word": "eltern",
+          "word": "rentner",
           "count": 1
         }
       ],
@@ -455,15 +583,15 @@
           "count": 3
         },
         {
-          "word": "kosten",
-          "count": 2
-        },
-        {
-          "word": "steuerzahler",
-          "count": 2
-        },
-        {
           "word": "schulden",
+          "count": 2
+        },
+        {
+          "word": "investitionen",
+          "count": 2
+        },
+        {
+          "word": "kosten",
           "count": 2
         }
       ],
@@ -477,11 +605,11 @@
           "count": 5
         },
         {
-          "word": "rechtsstaat",
+          "word": "verordnung",
           "count": 4
         },
         {
-          "word": "verordnung",
+          "word": "rechtsstaat",
           "count": 4
         },
         {

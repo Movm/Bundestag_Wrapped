@@ -11,23 +11,23 @@
   "minWords": 9,
   "maxWords": 1440,
   "rankings": {
-    "speechRank": 344,
-    "wordsRank": 15,
-    "partySpeechRank": 66,
-    "partyWordsRank": 4,
+    "speechRank": 365,
+    "wordsRank": 19,
+    "partySpeechRank": 69,
+    "partyWordsRank": 6,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 45.0,
-    "verbosityRank": 550,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 95,
-    "longestSpeechRank": 22
+    "totalSpeakers": 626,
+    "percentile": 41.7,
+    "verbosityRank": 551,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 96,
+    "longestSpeechRank": 23
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 10,
     "interrupterRank": null,
-    "interruptedRank": 462
+    "interruptedRank": 476
   },
   "words": {
     "topWords": [
@@ -62,71 +62,191 @@
       {
         "word": "soldatinnen",
         "count": 39
+      },
+      {
+        "word": "europa",
+        "count": 35
       }
     ],
     "signatureWords": [
       {
         "word": "fähigkeitsziele",
         "count": 8,
-        "ratioParty": 360.9,
-        "ratioBundestag": 203.4
+        "ratioParty": 377.3,
+        "ratioBundestag": 211.2
       },
       {
         "word": "beschaffungsbeschleunigungsgesetz",
         "count": 5,
-        "ratioParty": 225.6,
-        "ratioBundestag": 228.8
-      },
-      {
-        "word": "luftverteidigung",
-        "count": 6,
-        "ratioParty": 135.3,
-        "ratioBundestag": 124.8
+        "ratioParty": 235.8,
+        "ratioBundestag": 237.6
       },
       {
         "word": "artikelgesetz",
         "count": 5,
-        "ratioParty": 112.8,
-        "ratioBundestag": 190.7
+        "ratioParty": 117.9,
+        "ratioBundestag": 198.0
       },
       {
         "word": "brigade",
         "count": 14,
-        "ratioParty": 70.2,
-        "ratioBundestag": 89.0
+        "ratioParty": 73.4,
+        "ratioBundestag": 92.4
+      },
+      {
+        "word": "luftverteidigung",
+        "count": 6,
+        "ratioParty": 70.7,
+        "ratioBundestag": 101.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "brigade",
+        "count": 14,
+        "score": 60.33,
+        "ratio": 73.4
+      },
+      {
+        "word": "fähigkeitsziele",
+        "count": 8,
+        "score": 47.49,
+        "ratio": 377.3
+      },
+      {
+        "word": "beschaffungsbeschleunigungsgesetz",
+        "count": 5,
+        "score": 27.34,
+        "ratio": 235.8
+      },
+      {
+        "word": "luftverteidigung",
+        "count": 6,
+        "score": 25.63,
+        "ratio": 70.7
+      },
+      {
+        "word": "artikelgesetz",
+        "count": 5,
+        "score": 23.89,
+        "ratio": 117.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "brigade",
+        "count": 14,
+        "score": 63.52,
+        "ratio": 92.4
+      },
+      {
+        "word": "fähigkeitsziele",
+        "count": 8,
+        "score": 42.86,
+        "ratio": 211.2
+      },
+      {
+        "word": "luftverteidigung",
+        "count": 6,
+        "score": 27.8,
+        "ratio": 101.8
+      },
+      {
+        "word": "beschaffungsbeschleunigungsgesetz",
+        "count": 5,
+        "score": 27.37,
+        "ratio": 237.6
+      },
+      {
+        "word": "artikelgesetz",
+        "count": 5,
+        "score": 26.47,
+        "ratio": 198.0
       }
     ],
     "signatureAdjectives": [
       {
         "word": "fatal",
         "count": 3,
-        "ratioParty": 12.3,
+        "ratioParty": 12.9,
         "ratioBundestag": 7.9
       },
       {
         "word": "einseitig",
         "count": 3,
-        "ratioParty": 10.4,
-        "ratioBundestag": 7.0
+        "ratioParty": 8.8,
+        "ratioBundestag": 6.7
       },
       {
         "word": "verlässlich",
         "count": 5,
-        "ratioParty": 3.5,
-        "ratioBundestag": 5.2
+        "ratioParty": 3.4,
+        "ratioBundestag": 5.1
       },
       {
         "word": "zentral",
         "count": 4,
-        "ratioParty": 3.2,
-        "ratioBundestag": 5.1
+        "ratioParty": 3.3,
+        "ratioBundestag": 5.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "fatal",
+        "count": 3,
+        "score": 7.9,
+        "ratio": 12.9
+      },
+      {
+        "word": "verlässlich",
+        "count": 5,
+        "score": 7.41,
+        "ratio": 3.4
+      },
+      {
+        "word": "einseitig",
+        "count": 3,
+        "score": 6.85,
+        "ratio": 8.8
+      },
+      {
+        "word": "zentral",
+        "count": 4,
+        "score": 5.83,
+        "ratio": 3.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "verlässlich",
+        "count": 5,
+        "score": 9.04,
+        "ratio": 5.1
+      },
+      {
+        "word": "zentral",
+        "count": 4,
+        "score": 7.36,
+        "ratio": 5.3
+      },
+      {
+        "word": "fatal",
+        "count": 3,
+        "score": 6.56,
+        "ratio": 7.9
+      },
+      {
+        "word": "einseitig",
+        "count": 3,
+        "score": 6.12,
+        "ratio": 6.7
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 229,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
     "vsParty": 0.37,
     "vsParliament": 0.39
   },
@@ -146,30 +266,34 @@
     "question": "Welches Wort nutzt Boris Pistorius häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
         "text": "Fähigkeitsziele",
         "isCorrect": true
-      },
-      {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Reform",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Fähigkeitsziele\" nutzt Boris Pistorius 360.9× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "203.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Fähigkeitsziele\" nutzt Boris Pistorius 377.3× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "211.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Boris Pistorius häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Sozial",
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
@@ -177,15 +301,11 @@
         "isCorrect": true
       },
       {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
+        "text": "Europäisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Fatal\" nutzt Boris Pistorius 12.3× häufiger als der SPD-Durchschnitt.",
+    "explanationParty": "\"Fatal\" nutzt Boris Pistorius 12.9× häufiger als der SPD-Durchschnitt.",
     "explanationBundestag": "7.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -360,11 +480,11 @@
           "count": 3
         },
         {
-          "word": "krankenhäuser",
+          "word": "vorsorge",
           "count": 1
         },
         {
-          "word": "vorsorge",
+          "word": "krankenhäuser",
           "count": 1
         }
       ],
@@ -396,15 +516,15 @@
           "count": 2
         },
         {
-          "word": "digitalisierung",
-          "count": 1
-        },
-        {
           "word": "software",
           "count": 1
         },
         {
           "word": "daten",
+          "count": 1
+        },
+        {
+          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -414,19 +534,19 @@
           "count": 5
         },
         {
-          "word": "forschung",
-          "count": 1
-        },
-        {
-          "word": "wissenschaft",
-          "count": 1
-        },
-        {
           "word": "schüler",
           "count": 1
         },
         {
+          "word": "forschung",
+          "count": 1
+        },
+        {
           "word": "schule",
+          "count": 1
+        },
+        {
+          "word": "wissenschaft",
           "count": 1
         }
       ],
@@ -436,11 +556,11 @@
           "count": 5
         },
         {
-          "word": "haushaltsentwurf",
+          "word": "haushalt",
           "count": 4
         },
         {
-          "word": "haushalt",
+          "word": "haushaltsentwurf",
           "count": 4
         },
         {
@@ -448,7 +568,7 @@
           "count": 3
         },
         {
-          "word": "investitionen",
+          "word": "bundeshaushalt",
           "count": 1
         }
       ],
@@ -462,7 +582,7 @@
           "count": 2
         },
         {
-          "word": "amtsgericht",
+          "word": "klage",
           "count": 1
         },
         {
@@ -470,7 +590,7 @@
           "count": 1
         },
         {
-          "word": "klage",
+          "word": "amtsgericht",
           "count": 1
         }
       ],
@@ -492,7 +612,7 @@
           "count": 2
         },
         {
-          "word": "stau",
+          "word": "straßen",
           "count": 1
         }
       ]

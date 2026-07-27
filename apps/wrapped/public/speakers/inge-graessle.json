@@ -11,23 +11,23 @@
   "minWords": 80,
   "maxWords": 1065,
   "rankings": {
-    "speechRank": 463,
-    "wordsRank": 183,
-    "partySpeechRank": 143,
-    "partyWordsRank": 55,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 25.9,
+    "speechRank": 476,
+    "wordsRank": 195,
+    "partySpeechRank": 151,
+    "partyWordsRank": 57,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 24.0,
     "verbosityRank": 67,
-    "verbosityTotal": 579,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 24,
-    "longestSpeechRank": 57
+    "longestSpeechRank": 59
   },
   "drama": {
     "interruptionsGiven": 24,
     "interruptionsReceived": 70,
-    "interrupterRank": 187,
-    "interruptedRank": 52
+    "interrupterRank": 196,
+    "interruptedRank": 56
   },
   "words": {
     "topWords": [
@@ -52,47 +52,127 @@
       {
         "word": "entwicklungshilfe",
         "count": 14,
-        "ratioParty": 345.1,
-        "ratioBundestag": 76.8
+        "ratioParty": 358.3,
+        "ratioBundestag": 75.1
       },
       {
         "word": "amtes",
         "count": 6,
-        "ratioParty": 69.0,
-        "ratioBundestag": 66.5
-      },
-      {
-        "word": "dollar",
-        "count": 5,
-        "ratioParty": 27.8,
-        "ratioBundestag": 23.1
-      },
-      {
-        "word": "entwicklungspolitik",
-        "count": 5,
-        "ratioParty": 27.0,
-        "ratioBundestag": 20.3
+        "ratioParty": 67.2,
+        "ratioBundestag": 66.3
       },
       {
         "word": "auswärtigen",
         "count": 10,
-        "ratioParty": 27.0,
-        "ratioBundestag": 34.5
+        "ratioParty": 27.6,
+        "ratioBundestag": 35.0
+      },
+      {
+        "word": "dollar",
+        "count": 5,
+        "ratioParty": 27.1,
+        "ratioBundestag": 23.6
+      },
+      {
+        "word": "entwicklungspolitik",
+        "count": 5,
+        "ratioParty": 23.6,
+        "ratioBundestag": 19.6
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "entwicklungshilfe",
+        "count": 14,
+        "score": 82.38,
+        "ratio": 358.3
+      },
+      {
+        "word": "auswärtigen",
+        "count": 10,
+        "score": 33.53,
+        "ratio": 27.6
+      },
+      {
+        "word": "amtes",
+        "count": 6,
+        "score": 25.33,
+        "ratio": 67.2
+      },
+      {
+        "word": "dollar",
+        "count": 5,
+        "score": 16.68,
+        "ratio": 27.1
+      },
+      {
+        "word": "entwicklungspolitik",
+        "count": 5,
+        "score": 16.01,
+        "ratio": 23.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "entwicklungshilfe",
+        "count": 14,
+        "score": 60.65,
+        "ratio": 75.1
+      },
+      {
+        "word": "auswärtigen",
+        "count": 10,
+        "score": 35.84,
+        "ratio": 35.0
+      },
+      {
+        "word": "amtes",
+        "count": 6,
+        "score": 25.25,
+        "ratio": 66.3
+      },
+      {
+        "word": "dollar",
+        "count": 5,
+        "score": 16.01,
+        "ratio": 23.6
+      },
+      {
+        "word": "entwicklungspolitik",
+        "count": 5,
+        "score": 15.13,
+        "ratio": 19.6
       }
     ],
     "signatureAdjectives": [
       {
         "word": "schlecht",
         "count": 6,
-        "ratioParty": 15.0,
-        "ratioBundestag": 8.7
+        "ratioParty": 15.1,
+        "ratioBundestag": 8.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "schlecht",
+        "count": 6,
+        "score": 16.67,
+        "ratio": 15.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "schlecht",
+        "count": 6,
+        "score": 13.69,
+        "ratio": 8.8
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 585,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.91,
     "vsParliament": 1.0
   },
@@ -117,11 +197,11 @@
     "question": "Welches Wort nutzt Dr. Inge Gräßle häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Freiheit",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Reform",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
@@ -129,35 +209,35 @@
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
+        "text": "Europa",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entwicklungshilfe\" nutzt Dr. Inge Gräßle 345.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "76.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Entwicklungshilfe\" nutzt Dr. Inge Gräßle 358.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "75.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Inge Gräßle häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Groß",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Gut",
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
         "isCorrect": false
       },
       {
         "text": "Schlecht",
         "isCorrect": true
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schlecht\" nutzt Dr. Inge Gräßle 15.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "8.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Schlecht\" nutzt Dr. Inge Gräßle 15.1× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "8.8× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐴",
@@ -265,11 +345,11 @@
           "count": 1
         },
         {
-          "word": "flüchtlinge",
+          "word": "grenze",
           "count": 1
         },
         {
-          "word": "grenze",
+          "word": "flüchtlinge",
           "count": 1
         }
       ],

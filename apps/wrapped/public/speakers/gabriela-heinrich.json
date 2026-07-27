@@ -11,23 +11,23 @@
   "minWords": 312,
   "maxWords": 555,
   "rankings": {
-    "speechRank": 293,
-    "wordsRank": 404,
-    "partySpeechRank": 59,
-    "partyWordsRank": 79,
+    "speechRank": 284,
+    "wordsRank": 413,
+    "partySpeechRank": 55,
+    "partyWordsRank": 80,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 53.1,
-    "verbosityRank": 382,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 54.6,
+    "verbosityRank": 376,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 82,
-    "longestSpeechRank": 544
+    "longestSpeechRank": 545
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 7,
-    "interrupterRank": 412,
-    "interruptedRank": 514
+    "interrupterRank": 403,
+    "interruptedRank": 505
   },
   "words": {
     "topWords": [
@@ -64,11 +64,11 @@
         "count": 11
       },
       {
-        "word": "menschenrechte",
+        "word": "schutz",
         "count": 10
       },
       {
-        "word": "schutz",
+        "word": "menschenrechte",
         "count": 10
       }
     ],
@@ -76,40 +76,106 @@
       {
         "word": "resolution",
         "count": 7,
-        "ratioParty": 315.1,
-        "ratioBundestag": 100.1
+        "ratioParty": 329.1,
+        "ratioBundestag": 104.0
       },
       {
         "word": "geber",
         "count": 5,
-        "ratioParty": 225.0,
-        "ratioBundestag": 195.9
+        "ratioParty": 235.1,
+        "ratioBundestag": 195.0
       },
       {
         "word": "europarat",
         "count": 5,
-        "ratioParty": 81.8,
-        "ratioBundestag": 53.7
+        "ratioParty": 85.5,
+        "ratioBundestag": 55.7
       },
       {
         "word": "humanitären",
         "count": 7,
-        "ratioParty": 39.4,
-        "ratioBundestag": 30.8
+        "ratioParty": 41.1,
+        "ratioBundestag": 31.8
       },
       {
         "word": "vereinten",
         "count": 12,
-        "ratioParty": 39.3,
-        "ratioBundestag": 36.8
+        "ratioParty": 41.0,
+        "ratioBundestag": 37.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "vereinten",
+        "count": 12,
+        "score": 44.85,
+        "ratio": 41.0
+      },
+      {
+        "word": "resolution",
+        "count": 7,
+        "score": 40.6,
+        "ratio": 329.1
+      },
+      {
+        "word": "geber",
+        "count": 5,
+        "score": 27.32,
+        "ratio": 235.1
+      },
+      {
+        "word": "humanitären",
+        "count": 7,
+        "score": 26.18,
+        "ratio": 41.1
+      },
+      {
+        "word": "europarat",
+        "count": 5,
+        "score": 22.3,
+        "ratio": 85.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "vereinten",
+        "count": 12,
+        "score": 43.93,
+        "ratio": 37.9
+      },
+      {
+        "word": "resolution",
+        "count": 7,
+        "score": 32.58,
+        "ratio": 104.0
+      },
+      {
+        "word": "geber",
+        "count": 5,
+        "score": 26.39,
+        "ratio": 195.0
+      },
+      {
+        "word": "humanitären",
+        "count": 7,
+        "score": 24.43,
+        "ratio": 31.8
+      },
+      {
+        "word": "europarat",
+        "count": 5,
+        "score": 20.19,
+        "ratio": 55.7
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 395,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
     "vsParty": 0.64,
     "vsParliament": 0.68
   },
@@ -129,7 +195,7 @@
     "question": "Welches Wort nutzt Gabriela Heinrich häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Abstimmung",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
@@ -137,16 +203,16 @@
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Gesellschaft",
+        "text": "Energie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Resolution\" nutzt Gabriela Heinrich 315.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "100.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Resolution\" nutzt Gabriela Heinrich 329.1× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "104.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -257,7 +323,7 @@
           "count": 4
         },
         {
-          "word": "betrieb",
+          "word": "wirtschaft",
           "count": 1
         },
         {
@@ -265,7 +331,7 @@
           "count": 1
         },
         {
-          "word": "wirtschaft",
+          "word": "betrieb",
           "count": 1
         },
         {
@@ -311,11 +377,11 @@
       ],
       "gesundheit": [
         {
-          "word": "prävention",
+          "word": "ärzte",
           "count": 2
         },
         {
-          "word": "ärzte",
+          "word": "prävention",
           "count": 2
         },
         {
@@ -333,33 +399,33 @@
           "count": 11
         },
         {
-          "word": "krieg",
-          "count": 6
-        },
-        {
           "word": "außenminister",
           "count": 6
         },
         {
-          "word": "europarat",
-          "count": 5
+          "word": "krieg",
+          "count": 6
         },
         {
           "word": "iran",
           "count": 5
+        },
+        {
+          "word": "europarat",
+          "count": 5
         }
       ],
       "digital": [
-        {
-          "word": "pressefreiheit",
-          "count": 1
-        },
         {
           "word": "plattform",
           "count": 1
         },
         {
           "word": "netz",
+          "count": 1
+        },
+        {
+          "word": "pressefreiheit",
           "count": 1
         }
       ],
@@ -397,15 +463,15 @@
           "count": 5
         },
         {
+          "word": "gericht",
+          "count": 1
+        },
+        {
           "word": "urteile",
           "count": 1
         },
         {
           "word": "verteidiger",
-          "count": 1
-        },
-        {
-          "word": "gericht",
           "count": 1
         }
       ],

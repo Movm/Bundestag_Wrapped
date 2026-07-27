@@ -11,23 +11,23 @@
   "minWords": 366,
   "maxWords": 756,
   "rankings": {
-    "speechRank": 443,
-    "wordsRank": 428,
-    "partySpeechRank": 132,
-    "partyWordsRank": 136,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 29.1,
-    "verbosityRank": 52,
-    "verbosityTotal": 579,
+    "speechRank": 453,
+    "wordsRank": 435,
+    "partySpeechRank": 140,
+    "partyWordsRank": 138,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 27.6,
+    "verbosityRank": 54,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 21,
-    "longestSpeechRank": 301
+    "longestSpeechRank": 303
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 21,
     "interrupterRank": null,
-    "interruptedRank": 315
+    "interruptedRank": 329
   },
   "words": {
     "topWords": [
@@ -68,41 +68,107 @@
       {
         "word": "kryptowährungen",
         "count": 7,
-        "ratioParty": 1179.5,
-        "ratioBundestag": 907.2
+        "ratioParty": 1224.3,
+        "ratioBundestag": 941.9
       },
       {
         "word": "bitcoin",
         "count": 9,
-        "ratioParty": 505.5,
-        "ratioBundestag": 405.7
+        "ratioParty": 524.7,
+        "ratioBundestag": 421.2
       },
       {
         "word": "steuerlichen",
         "count": 5,
-        "ratioParty": 37.4,
-        "ratioBundestag": 61.7
+        "ratioParty": 38.9,
+        "ratioBundestag": 61.9
       },
       {
         "word": "pendlerpauschale",
         "count": 5,
-        "ratioParty": 35.8,
-        "ratioBundestag": 57.6
+        "ratioParty": 37.2,
+        "ratioBundestag": 59.8
       },
       {
         "word": "januar",
         "count": 7,
-        "ratioParty": 26.8,
-        "ratioBundestag": 32.7
+        "ratioParty": 27.2,
+        "ratioBundestag": 33.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bitcoin",
+        "count": 9,
+        "score": 56.38,
+        "ratio": 524.7
+      },
+      {
+        "word": "kryptowährungen",
+        "count": 7,
+        "score": 49.78,
+        "ratio": 1224.3
+      },
+      {
+        "word": "januar",
+        "count": 7,
+        "score": 23.38,
+        "ratio": 27.2
+      },
+      {
+        "word": "steuerlichen",
+        "count": 5,
+        "score": 18.43,
+        "ratio": 38.9
+      },
+      {
+        "word": "pendlerpauschale",
+        "count": 5,
+        "score": 18.21,
+        "ratio": 37.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bitcoin",
+        "count": 9,
+        "score": 54.41,
+        "ratio": 421.2
+      },
+      {
+        "word": "kryptowährungen",
+        "count": 7,
+        "score": 47.94,
+        "ratio": 941.9
+      },
+      {
+        "word": "januar",
+        "count": 7,
+        "score": 24.73,
+        "ratio": 33.2
+      },
+      {
+        "word": "steuerlichen",
+        "count": 5,
+        "score": 20.71,
+        "ratio": 61.9
+      },
+      {
+        "word": "pendlerpauschale",
+        "count": 5,
+        "score": 20.54,
+        "ratio": 59.8
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 610,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.95,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.94,
     "vsParliament": 1.04
   },
   "funFacts": [
@@ -121,24 +187,24 @@
     "question": "Welches Wort nutzt Georg Günther häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
         "text": "Kryptowährungen",
         "isCorrect": true
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
       },
       {
         "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Freiheit",
+        "text": "Kanzler",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kryptowährungen\" nutzt Georg Günther 1179.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "907.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Kryptowährungen\" nutzt Georg Günther 1224.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "941.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -273,15 +339,15 @@
           "count": 3
         },
         {
-          "word": "familie",
-          "count": 1
-        },
-        {
           "word": "gerechtigkeit",
           "count": 1
         },
         {
           "word": "rentner",
+          "count": 1
+        },
+        {
+          "word": "familie",
           "count": 1
         },
         {
@@ -291,11 +357,11 @@
       ],
       "sicherheit": [
         {
-          "word": "geldwäsche",
+          "word": "verteidigung",
           "count": 1
         },
         {
-          "word": "verteidigung",
+          "word": "geldwäsche",
           "count": 1
         }
       ],
@@ -325,15 +391,15 @@
           "count": 2
         },
         {
-          "word": "plattformen",
-          "count": 1
-        },
-        {
           "word": "hacker",
           "count": 1
         },
         {
           "word": "cybersicherheit",
+          "count": 1
+        },
+        {
+          "word": "plattformen",
           "count": 1
         }
       ],
@@ -361,11 +427,11 @@
           "count": 8
         },
         {
-          "word": "einkommensteuer",
+          "word": "kosten",
           "count": 3
         },
         {
-          "word": "kosten",
+          "word": "einkommensteuer",
           "count": 3
         }
       ],

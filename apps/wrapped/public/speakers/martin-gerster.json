@@ -11,23 +11,23 @@
   "minWords": 31,
   "maxWords": 835,
   "rankings": {
-    "speechRank": 284,
-    "wordsRank": 281,
-    "partySpeechRank": 57,
-    "partyWordsRank": 59,
+    "speechRank": 299,
+    "wordsRank": 294,
+    "partySpeechRank": 58,
+    "partyWordsRank": 63,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 54.6,
-    "verbosityRank": 160,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 37,
-    "longestSpeechRank": 196
+    "totalSpeakers": 626,
+    "percentile": 52.2,
+    "verbosityRank": 162,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 38,
+    "longestSpeechRank": 199
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 10,
     "interrupterRank": null,
-    "interruptedRank": 466
+    "interruptedRank": 475
   },
   "words": {
     "topWords": [
@@ -56,15 +56,15 @@
         "count": 15
       },
       {
-        "word": "finde",
-        "count": 14
-      },
-      {
         "word": "regierungsentwurf",
         "count": 14
       },
       {
         "word": "verwaltung",
+        "count": 14
+      },
+      {
+        "word": "finde",
         "count": 14
       },
       {
@@ -76,54 +76,146 @@
       {
         "word": "wildberger",
         "count": 11,
-        "ratioParty": 66.0,
-        "ratioBundestag": 39.2
+        "ratioParty": 68.9,
+        "ratioBundestag": 40.5
       },
       {
         "word": "bereichsausnahme",
         "count": 6,
-        "ratioParty": 55.2,
-        "ratioBundestag": 48.8
+        "ratioParty": 57.6,
+        "ratioBundestag": 50.7
       },
       {
         "word": "regierungsentwurf",
         "count": 14,
-        "ratioParty": 53.6,
-        "ratioBundestag": 79.4
+        "ratioParty": 54.5,
+        "ratioBundestag": 79.8
       },
       {
         "word": "bundesrechnungshof",
         "count": 5,
-        "ratioParty": 46.0,
-        "ratioBundestag": 16.2
+        "ratioParty": 48.0,
+        "ratioBundestag": 16.9
       },
       {
-        "word": "ministerien",
-        "count": 7,
-        "ratioParty": 42.0,
-        "ratioBundestag": 27.5
+        "word": "schuldenbremse",
+        "count": 9,
+        "ratioParty": 43.2,
+        "ratioBundestag": 27.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "regierungsentwurf",
+        "count": 14,
+        "score": 56.23,
+        "ratio": 54.5
+      },
+      {
+        "word": "wildberger",
+        "count": 11,
+        "score": 46.72,
+        "ratio": 68.9
+      },
+      {
+        "word": "schuldenbremse",
+        "count": 9,
+        "score": 34.1,
+        "ratio": 43.2
+      },
+      {
+        "word": "bereichsausnahme",
+        "count": 6,
+        "score": 24.42,
+        "ratio": 57.6
+      },
+      {
+        "word": "bundesrechnungshof",
+        "count": 5,
+        "score": 19.46,
+        "ratio": 48.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "regierungsentwurf",
+        "count": 14,
+        "score": 61.49,
+        "ratio": 79.8
+      },
+      {
+        "word": "wildberger",
+        "count": 11,
+        "score": 40.98,
+        "ratio": 40.5
+      },
+      {
+        "word": "schuldenbremse",
+        "count": 9,
+        "score": 30.05,
+        "ratio": 27.2
+      },
+      {
+        "word": "bereichsausnahme",
+        "count": 6,
+        "score": 23.67,
+        "ratio": 50.7
+      },
+      {
+        "word": "bundesrechnungshof",
+        "count": 5,
+        "score": 14.42,
+        "ratio": 16.9
       }
     ],
     "signatureAdjectives": [
       {
         "word": "entscheidend",
         "count": 6,
-        "ratioParty": 6.2,
-        "ratioBundestag": 8.2
+        "ratioParty": 6.3,
+        "ratioBundestag": 8.3
       },
       {
         "word": "sicher",
         "count": 6,
-        "ratioParty": 2.8,
+        "ratioParty": 2.9,
         "ratioBundestag": 3.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 6,
+        "score": 11.93,
+        "ratio": 6.3
+      },
+      {
+        "word": "sicher",
+        "count": 6,
+        "score": 8.17,
+        "ratio": 2.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "entscheidend",
+        "count": 6,
+        "score": 13.38,
+        "ratio": 8.3
+      },
+      {
+        "word": "sicher",
+        "count": 6,
+        "score": 8.89,
+        "ratio": 3.4
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 499,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.81,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.8,
     "vsParliament": 0.85
   },
   "funFacts": [
@@ -142,11 +234,7 @@
     "question": "Welches Wort nutzt Martin Gerster häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
@@ -154,35 +242,39 @@
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wildberger\" nutzt Martin Gerster 66.0× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "39.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wildberger\" nutzt Martin Gerster 68.9× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "40.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Martin Gerster häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Wichtig",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "Notwendig",
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
         "isCorrect": false
       },
       {
         "text": "Entscheidend",
         "isCorrect": true
-      },
-      {
-        "text": "Richtig",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Martin Gerster 6.2× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "8.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Entscheidend\" nutzt Martin Gerster 6.3× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "8.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -292,11 +384,11 @@
           "count": 3
         },
         {
-          "word": "umweltschutz",
+          "word": "nachhaltig",
           "count": 1
         },
         {
-          "word": "nachhaltig",
+          "word": "umweltschutz",
           "count": 1
         }
       ],
@@ -324,17 +416,17 @@
           "count": 2
         },
         {
-          "word": "extremismus",
+          "word": "verteidigung",
           "count": 2
         },
         {
-          "word": "angriff",
+          "word": "extremismus",
           "count": 2
         }
       ],
       "europa": [
         {
-          "word": "weltbank",
+          "word": "china",
           "count": 1
         },
         {
@@ -342,11 +434,11 @@
           "count": 1
         },
         {
-          "word": "europa",
+          "word": "weltbank",
           "count": 1
         },
         {
-          "word": "china",
+          "word": "europa",
           "count": 1
         },
         {
@@ -428,11 +520,11 @@
           "count": 3
         },
         {
-          "word": "mindestlohn",
+          "word": "gewerkschaft",
           "count": 1
         },
         {
-          "word": "gewerkschaft",
+          "word": "mindestlohn",
           "count": 1
         }
       ],

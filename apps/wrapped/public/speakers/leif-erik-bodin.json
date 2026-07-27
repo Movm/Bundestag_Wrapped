@@ -11,23 +11,23 @@
   "minWords": 53,
   "maxWords": 593,
   "rankings": {
-    "speechRank": 534,
-    "wordsRank": 526,
+    "speechRank": 533,
+    "wordsRank": 536,
     "partySpeechRank": 173,
-    "partyWordsRank": 173,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 14.6,
-    "verbosityRank": 288,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 102,
-    "longestSpeechRank": 502
+    "partyWordsRank": 177,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 14.9,
+    "verbosityRank": 291,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 106,
+    "longestSpeechRank": 506
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 12,
-    "interrupterRank": 423,
-    "interruptedRank": 430
+    "interrupterRank": 421,
+    "interruptedRank": 437
   },
   "words": {
     "topWords": [
@@ -60,15 +60,15 @@
         "count": 6
       },
       {
-        "word": "klar",
+        "word": "sylt",
         "count": 6
       },
       {
-        "word": "ausbau",
+        "word": "marschbahn",
         "count": 6
       },
       {
-        "word": "umsetzung",
+        "word": "mein",
         "count": 6
       }
     ],
@@ -76,40 +76,104 @@
       {
         "word": "westküste",
         "count": 6,
-        "ratioParty": 3320.8,
-        "ratioBundestag": 850.7
+        "ratioParty": 3446.9,
+        "ratioBundestag": 883.3
       },
       {
         "word": "insel",
         "count": 10,
-        "ratioParty": 2767.4,
-        "ratioBundestag": 654.4
+        "ratioParty": 2872.4,
+        "ratioBundestag": 679.5
       },
       {
         "word": "marschbahn",
         "count": 6,
-        "ratioParty": 664.2,
-        "ratioBundestag": 179.1
+        "ratioParty": 689.4,
+        "ratioBundestag": 186.0
       },
       {
         "word": "wasser",
         "count": 9,
-        "ratioParty": 67.3,
-        "ratioBundestag": 48.9
+        "ratioParty": 66.3,
+        "ratioBundestag": 48.2
       },
       {
         "word": "nordfriesland",
         "count": 10,
         "ratioParty": 59.0,
-        "ratioBundestag": 810.2
+        "ratioBundestag": 803.0
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "insel",
+        "count": 10,
+        "score": 79.63,
+        "ratio": 2872.4
+      },
+      {
+        "word": "westküste",
+        "count": 6,
+        "score": 48.87,
+        "ratio": 3446.9
+      },
+      {
+        "word": "nordfriesland",
+        "count": 10,
+        "score": 40.94,
+        "ratio": 59.0
+      },
+      {
+        "word": "marschbahn",
+        "count": 6,
+        "score": 39.22,
+        "ratio": 689.4
+      },
+      {
+        "word": "wasser",
+        "count": 9,
+        "score": 37.88,
+        "ratio": 66.3
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "nordfriesland",
+        "count": 10,
+        "score": 66.9,
+        "ratio": 803.0
+      },
+      {
+        "word": "insel",
+        "count": 10,
+        "score": 65.23,
+        "ratio": 679.5
+      },
+      {
+        "word": "westküste",
+        "count": 6,
+        "score": 40.71,
+        "ratio": 883.3
+      },
+      {
+        "word": "wasser",
+        "count": 9,
+        "score": 35.06,
+        "ratio": 48.2
+      },
+      {
+        "word": "marschbahn",
+        "count": 6,
+        "score": 31.39,
+        "ratio": 186.0
       }
     ],
     "signatureAdjectives": [
       {
         "word": "wirtschaftlich",
         "count": 3,
-        "ratioParty": 10.9,
-        "ratioBundestag": 12.1
+        "ratioParty": 10.7,
+        "ratioBundestag": 12.2
       },
       {
         "word": "entscheidend",
@@ -120,16 +184,56 @@
       {
         "word": "stark",
         "count": 3,
-        "ratioParty": 5.7,
-        "ratioBundestag": 7.1
+        "ratioParty": 5.6,
+        "ratioBundestag": 7.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 7.38,
+        "ratio": 10.7
+      },
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 6.16,
+        "ratio": 6.8
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 5.66,
+        "ratio": 5.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 7.74,
+        "ratio": 12.2
+      },
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 7.22,
+        "ratio": 10.1
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 6.24,
+        "ratio": 7.0
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 436,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.68,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.67,
     "vsParliament": 0.75
   },
   "funFacts": [
@@ -148,7 +252,7 @@
     "question": "Welches Wort nutzt Leif Erik Bodin häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Sicherheit",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
@@ -156,16 +260,16 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Zukunft",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Westküste\" nutzt Leif Erik Bodin 3320.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "850.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Westküste\" nutzt Leif Erik Bodin 3446.9× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "883.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Leif Erik Bodin häufiger als der Rest der CDU/CSU-Fraktion?",
@@ -175,11 +279,11 @@
         "isCorrect": true
       },
       {
-        "text": "Problematisch",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
-        "text": "Falsch",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
@@ -187,8 +291,8 @@
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wirtschaftlich\" nutzt Leif Erik Bodin 10.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "12.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wirtschaftlich\" nutzt Leif Erik Bodin 10.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "12.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦦",
@@ -209,7 +313,7 @@
         "emoji": "🦉",
         "name": "Eule",
         "title": "Themenexperte",
-        "reason": "Dein Fachwort \"Westküste\" nutzt du 3320.8× häufiger als deine Fraktion.",
+        "reason": "Dein Fachwort \"Westküste\" nutzt du 3446.9× häufiger als deine Fraktion.",
         "id": "eule",
         "score": 0.86
       }
@@ -334,15 +438,15 @@
       ],
       "europa": [
         {
-          "word": "kooperation",
-          "count": 1
-        },
-        {
           "word": "sanktionen",
           "count": 1
         },
         {
           "word": "europa",
+          "count": 1
+        },
+        {
+          "word": "kooperation",
           "count": 1
         }
       ],

@@ -11,23 +11,23 @@
   "minWords": 8,
   "maxWords": 1158,
   "rankings": {
-    "speechRank": 237,
-    "wordsRank": 28,
-    "partySpeechRank": 48,
-    "partyWordsRank": 8,
+    "speechRank": 257,
+    "wordsRank": 33,
+    "partySpeechRank": 52,
+    "partyWordsRank": 9,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 62.1,
-    "verbosityRank": 568,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 99,
-    "longestSpeechRank": 41
+    "totalSpeakers": 626,
+    "percentile": 58.9,
+    "verbosityRank": 572,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 100,
+    "longestSpeechRank": 43
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 9,
     "interrupterRank": null,
-    "interruptedRank": 488
+    "interruptedRank": 486
   },
   "words": {
     "topWords": [
@@ -64,55 +64,147 @@
       {
         "word": "tarif",
         "count": 6,
-        "ratioParty": 326.8,
-        "ratioBundestag": 47.2
-      },
-      {
-        "word": "arbeitsministerin",
-        "count": 5,
-        "ratioParty": 272.3,
-        "ratioBundestag": 65.6
+        "ratioParty": 341.5,
+        "ratioBundestag": 49.0
       },
       {
         "word": "entgelt",
         "count": 5,
-        "ratioParty": 272.3,
-        "ratioBundestag": 172.1
+        "ratioParty": 284.6,
+        "ratioBundestag": 178.8
+      },
+      {
+        "word": "arbeitsministerin",
+        "count": 5,
+        "ratioParty": 284.6,
+        "ratioBundestag": 65.0
       },
       {
         "word": "arbeitszeitgesetz",
         "count": 9,
-        "ratioParty": 245.1,
-        "ratioBundestag": 85.5
+        "ratioParty": 256.1,
+        "ratioBundestag": 85.8
       },
       {
-        "word": "sozialpartnerschaft",
+        "word": "agenturen",
         "count": 6,
-        "ratioParty": 108.9,
-        "ratioBundestag": 61.2
+        "ratioParty": 113.8,
+        "ratioBundestag": 190.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "arbeitszeitgesetz",
+        "count": 9,
+        "score": 49.95,
+        "ratio": 256.1
+      },
+      {
+        "word": "tarif",
+        "count": 6,
+        "score": 35.02,
+        "ratio": 341.5
+      },
+      {
+        "word": "agenturen",
+        "count": 6,
+        "score": 28.46,
+        "ratio": 113.8
+      },
+      {
+        "word": "entgelt",
+        "count": 5,
+        "score": 28.27,
+        "ratio": 284.6
+      },
+      {
+        "word": "arbeitsministerin",
+        "count": 5,
+        "score": 28.27,
+        "ratio": 284.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "arbeitszeitgesetz",
+        "count": 9,
+        "score": 40.17,
+        "ratio": 85.8
+      },
+      {
+        "word": "agenturen",
+        "count": 6,
+        "score": 31.54,
+        "ratio": 190.7
+      },
+      {
+        "word": "entgelt",
+        "count": 5,
+        "score": 25.96,
+        "ratio": 178.8
+      },
+      {
+        "word": "tarif",
+        "count": 6,
+        "score": 23.47,
+        "ratio": 49.0
+      },
+      {
+        "word": "arbeitsministerin",
+        "count": 5,
+        "score": 20.95,
+        "ratio": 65.0
       }
     ],
     "signatureAdjectives": [
       {
         "word": "qualifiziert",
         "count": 4,
-        "ratioParty": 36.3,
-        "ratioBundestag": 55.1
+        "ratioParty": 37.9,
+        "ratioBundestag": 57.2
       },
       {
         "word": "gerecht",
         "count": 8,
-        "ratioParty": 2.5,
-        "ratioBundestag": 3.3
+        "ratioParty": 2.6,
+        "ratioBundestag": 3.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "qualifiziert",
+        "count": 4,
+        "score": 14.64,
+        "ratio": 37.9
+      },
+      {
+        "word": "gerecht",
+        "count": 8,
+        "score": 10.25,
+        "ratio": 2.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "qualifiziert",
+        "count": 4,
+        "score": 16.26,
+        "ratio": 57.2
+      },
+      {
+        "word": "gerecht",
+        "count": 8,
+        "score": 11.85,
+        "ratio": 3.4
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 155,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
     "vsParty": 0.25,
-    "vsParliament": 0.27
+    "vsParliament": 0.26
   },
   "funFacts": [
     {
@@ -130,7 +222,11 @@
     "question": "Welches Wort nutzt Bärbel Bas häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Fraktion",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
@@ -138,39 +234,35 @@
         "isCorrect": true
       },
       {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
+        "text": "Zukunft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Tarif\" nutzt Bärbel Bas 326.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "47.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Tarif\" nutzt Bärbel Bas 341.5× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "49.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Bärbel Bas häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
         "text": "Qualifiziert",
         "isCorrect": true
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Qualifiziert\" nutzt Bärbel Bas 36.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "55.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Qualifiziert\" nutzt Bärbel Bas 37.9× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "57.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -330,25 +422,25 @@
       ],
       "sicherheit": [
         {
-          "word": "gewalt",
+          "word": "angriff",
           "count": 1
         },
         {
-          "word": "angriff",
+          "word": "gewalt",
           "count": 1
         }
       ],
       "gesundheit": [
-        {
-          "word": "psychisch",
-          "count": 2
-        },
         {
           "word": "pflege",
           "count": 2
         },
         {
           "word": "vorsorge",
+          "count": 2
+        },
+        {
+          "word": "psychisch",
           "count": 2
         },
         {
@@ -370,25 +462,25 @@
           "count": 1
         },
         {
-          "word": "bündnis",
-          "count": 1
-        },
-        {
           "word": "ukrainer",
           "count": 1
         },
         {
           "word": "sanktionen",
           "count": 1
+        },
+        {
+          "word": "allianz",
+          "count": 1
         }
       ],
       "digital": [
         {
-          "word": "digitalisierung",
+          "word": "plattform",
           "count": 4
         },
         {
-          "word": "plattform",
+          "word": "digitalisierung",
           "count": 4
         },
         {
@@ -406,15 +498,15 @@
           "count": 6
         },
         {
-          "word": "weiterbildung",
-          "count": 3
-        },
-        {
           "word": "schulen",
           "count": 3
         },
         {
-          "word": "kita",
+          "word": "weiterbildung",
+          "count": 3
+        },
+        {
+          "word": "forschung",
           "count": 1
         },
         {
@@ -440,7 +532,7 @@
           "count": 3
         },
         {
-          "word": "finanzminister",
+          "word": "entlastung",
           "count": 2
         }
       ],
@@ -450,19 +542,19 @@
           "count": 3
         },
         {
-          "word": "gleichstellung",
-          "count": 1
-        },
-        {
-          "word": "grundgesetz",
-          "count": 1
-        },
-        {
           "word": "verfassungskonform",
           "count": 1
         },
         {
           "word": "gericht",
+          "count": 1
+        },
+        {
+          "word": "gesetzgebung",
+          "count": 1
+        },
+        {
+          "word": "menschenrechte",
           "count": 1
         }
       ],

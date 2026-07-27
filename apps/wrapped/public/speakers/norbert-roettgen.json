@@ -11,23 +11,23 @@
   "minWords": 310,
   "maxWords": 928,
   "rankings": {
-    "speechRank": 222,
-    "wordsRank": 105,
-    "partySpeechRank": 56,
-    "partyWordsRank": 31,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 64.5,
+    "speechRank": 244,
+    "wordsRank": 112,
+    "partySpeechRank": 65,
+    "partyWordsRank": 32,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 61.0,
     "verbosityRank": 30,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 9,
-    "longestSpeechRank": 119
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 8,
+    "longestSpeechRank": 120
   },
   "drama": {
     "interruptionsGiven": 3,
     "interruptionsReceived": 29,
-    "interrupterRank": 393,
-    "interruptedRank": 247
+    "interrupterRank": 387,
+    "interruptedRank": 260
   },
   "words": {
     "topWords": [
@@ -76,40 +76,104 @@
       {
         "word": "friedenspolitik",
         "count": 12,
-        "ratioParty": 1625.1,
-        "ratioBundestag": 313.4
+        "ratioParty": 1687.1,
+        "ratioBundestag": 325.4
       },
       {
         "word": "selbstbehauptung",
         "count": 6,
-        "ratioParty": 812.5,
-        "ratioBundestag": 417.9
+        "ratioParty": 843.6,
+        "ratioBundestag": 433.9
       },
       {
         "word": "rechtfertigung",
         "count": 8,
-        "ratioParty": 541.7,
-        "ratioBundestag": 196.6
+        "ratioParty": 281.2,
+        "ratioBundestag": 173.6
       },
       {
         "word": "amerikanische",
         "count": 9,
-        "ratioParty": 55.4,
-        "ratioBundestag": 40.0
+        "ratioParty": 50.6,
+        "ratioBundestag": 37.9
       },
       {
         "word": "kalten",
         "count": 5,
-        "ratioParty": 30.8,
-        "ratioBundestag": 32.6
+        "ratioParty": 32.0,
+        "ratioBundestag": 33.4
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "friedenspolitik",
+        "count": 12,
+        "score": 89.18,
+        "ratio": 1687.1
+      },
+      {
+        "word": "rechtfertigung",
+        "count": 8,
+        "score": 45.14,
+        "ratio": 281.2
+      },
+      {
+        "word": "selbstbehauptung",
+        "count": 6,
+        "score": 40.43,
+        "ratio": 843.6
+      },
+      {
+        "word": "amerikanische",
+        "count": 9,
+        "score": 35.49,
+        "ratio": 50.6
+      },
+      {
+        "word": "kalten",
+        "count": 5,
+        "score": 17.48,
+        "ratio": 32.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "friedenspolitik",
+        "count": 12,
+        "score": 69.46,
+        "ratio": 325.4
+      },
+      {
+        "word": "rechtfertigung",
+        "count": 8,
+        "score": 41.3,
+        "ratio": 173.6
+      },
+      {
+        "word": "selbstbehauptung",
+        "count": 6,
+        "score": 36.45,
+        "ratio": 433.9
+      },
+      {
+        "word": "amerikanische",
+        "count": 9,
+        "score": 32.95,
+        "ratio": 37.9
+      },
+      {
+        "word": "kalten",
+        "count": 5,
+        "score": 17.69,
+        "ratio": 33.4
       }
     ],
     "signatureAdjectives": [
       {
         "word": "übel",
         "count": 3,
-        "ratioParty": 58.0,
-        "ratioBundestag": 62.7
+        "ratioParty": 60.3,
+        "ratioBundestag": 62.0
       },
       {
         "word": "erfolgreich",
@@ -117,12 +181,40 @@
         "ratioParty": 2.4,
         "ratioBundestag": 3.3
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "übel",
+        "count": 3,
+        "score": 12.35,
+        "ratio": 60.3
+      },
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 3.67,
+        "ratio": 2.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "übel",
+        "count": 3,
+        "score": 12.43,
+        "ratio": 62.0
+      },
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 4.38,
+        "ratio": 3.3
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 650,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 1.01,
     "vsParliament": 1.11
   },
@@ -142,34 +234,34 @@
     "question": "Welches Wort nutzt Dr. Norbert Röttgen häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
         "text": "Friedenspolitik",
         "isCorrect": true
       },
       {
-        "text": "Koalition",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Bundesregierung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Friedenspolitik\" nutzt Dr. Norbert Röttgen 1625.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "313.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Friedenspolitik\" nutzt Dr. Norbert Röttgen 1687.1× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "325.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Norbert Röttgen häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Politisch",
+        "text": "Klar",
         "isCorrect": false
       },
       {
-        "text": "Neu",
+        "text": "Gut",
         "isCorrect": false
       },
       {
@@ -177,12 +269,12 @@
         "isCorrect": true
       },
       {
-        "text": "Falsch",
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Übel\" nutzt Dr. Norbert Röttgen 58.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "62.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Übel\" nutzt Dr. Norbert Röttgen 60.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "62.0× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -306,11 +398,11 @@
           "count": 2
         },
         {
-          "word": "marktwirtschaft",
+          "word": "handel",
           "count": 1
         },
         {
-          "word": "kredit",
+          "word": "zölle",
           "count": 1
         }
       ],
@@ -398,11 +490,11 @@
       ],
       "justiz": [
         {
-          "word": "rechtsstaat",
+          "word": "gesetzgebung",
           "count": 1
         },
         {
-          "word": "gesetzgebung",
+          "word": "rechtsstaat",
           "count": 1
         }
       ]

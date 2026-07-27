@@ -11,23 +11,23 @@
   "minWords": 241,
   "maxWords": 306,
   "rankings": {
-    "speechRank": 590,
+    "speechRank": 594,
     "wordsRank": 617,
-    "partySpeechRank": 192,
+    "partySpeechRank": 195,
     "partyWordsRank": 208,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 5.6,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 5.1,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 618
+    "longestSpeechRank": 619
   },
   "drama": {
-    "interruptionsGiven": 87,
+    "interruptionsGiven": 90,
     "interruptionsReceived": 10,
-    "interrupterRank": 55,
-    "interruptedRank": 473
+    "interrupterRank": 53,
+    "interruptedRank": 479
   },
   "words": {
     "topWords": [
@@ -76,16 +76,34 @@
       {
         "word": "wissen",
         "count": 5,
-        "ratioParty": 14.1,
+        "ratioParty": 14.2,
         "ratioBundestag": 12.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "wissen",
+        "count": 5,
+        "score": 13.61,
+        "ratio": 14.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "wissen",
+        "count": 5,
+        "score": 13.16,
+        "ratio": 12.9
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 274,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.42,
     "vsParliament": 0.47
   },
@@ -98,30 +116,30 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "87"
+      "value": "90"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Felix Schreiner häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Sicherheit",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
+        "text": "Reform",
         "isCorrect": false
       },
       {
         "text": "Wissen",
         "isCorrect": true
+      },
+      {
+        "text": "Debatte",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wissen\" nutzt Felix Schreiner 14.1× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationParty": "\"Wissen\" nutzt Felix Schreiner 14.2× häufiger als der CDU/CSU-Durchschnitt.",
     "explanationBundestag": "12.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
@@ -144,7 +162,7 @@
         "emoji": "🐺",
         "name": "Wolf",
         "title": "Mutiger Einwerfer",
-        "reason": "Mit 87 Zwischenrufen mischst du aktiv in Debatten mit.",
+        "reason": "Mit 90 Zwischenrufen mischst du aktiv in Debatten mit.",
         "id": "wolf",
         "score": 0.63
       }

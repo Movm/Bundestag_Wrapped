@@ -11,23 +11,23 @@
   "minWords": 464,
   "maxWords": 956,
   "rankings": {
-    "speechRank": 183,
-    "wordsRank": 120,
-    "partySpeechRank": 41,
-    "partyWordsRank": 30,
+    "speechRank": 196,
+    "wordsRank": 131,
+    "partySpeechRank": 42,
+    "partyWordsRank": 34,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 70.7,
-    "verbosityRank": 26,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 5,
+    "totalSpeakers": 626,
+    "percentile": 68.7,
+    "verbosityRank": 27,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 6,
     "longestSpeechRank": 101
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 38,
-    "interrupterRank": 439,
-    "interruptedRank": 171
+    "interrupterRank": 474,
+    "interruptedRank": 185
   },
   "words": {
     "topWords": [
@@ -44,11 +44,11 @@
         "count": 25
       },
       {
-        "word": "land",
+        "word": "deutschland",
         "count": 19
       },
       {
-        "word": "deutschland",
+        "word": "land",
         "count": 19
       },
       {
@@ -64,67 +64,183 @@
       {
         "word": "kassel",
         "count": 14,
-        "ratioParty": 380.6,
-        "ratioBundestag": 820.9
+        "ratioParty": 397.7,
+        "ratioBundestag": 852.4
       },
       {
         "word": "handwerk",
         "count": 25,
-        "ratioParty": 56.6,
-        "ratioBundestag": 35.5
+        "ratioParty": 57.6,
+        "ratioBundestag": 36.4
       },
       {
         "word": "rechenzentren",
         "count": 9,
-        "ratioParty": 43.2,
-        "ratioBundestag": 25.5
+        "ratioParty": 45.1,
+        "ratioBundestag": 25.9
       },
       {
         "word": "handwerksbetriebe",
         "count": 5,
-        "ratioParty": 34.0,
-        "ratioBundestag": 38.0
+        "ratioParty": 35.5,
+        "ratioBundestag": 39.5
       },
       {
         "word": "energiekosten",
         "count": 8,
-        "ratioParty": 25.1,
-        "ratioBundestag": 17.2
+        "ratioParty": 24.3,
+        "ratioBundestag": 17.0
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "handwerk",
+        "count": 25,
+        "score": 101.77,
+        "ratio": 57.6
+      },
+      {
+        "word": "kassel",
+        "count": 14,
+        "score": 83.83,
+        "ratio": 397.7
+      },
+      {
+        "word": "rechenzentren",
+        "count": 9,
+        "score": 34.48,
+        "ratio": 45.1
+      },
+      {
+        "word": "energiekosten",
+        "count": 8,
+        "score": 25.85,
+        "ratio": 24.3
+      },
+      {
+        "word": "handwerksbetriebe",
+        "count": 5,
+        "score": 17.99,
+        "ratio": 35.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "kassel",
+        "count": 14,
+        "score": 94.49,
+        "ratio": 852.4
+      },
+      {
+        "word": "handwerk",
+        "count": 25,
+        "score": 90.54,
+        "ratio": 36.4
+      },
+      {
+        "word": "rechenzentren",
+        "count": 9,
+        "score": 29.63,
+        "ratio": 25.9
+      },
+      {
+        "word": "energiekosten",
+        "count": 8,
+        "score": 23.12,
+        "ratio": 17.0
+      },
+      {
+        "word": "handwerksbetriebe",
+        "count": 5,
+        "score": 18.51,
+        "ratio": 39.5
       }
     ],
     "signatureAdjectives": [
       {
         "word": "grundlegend",
         "count": 3,
-        "ratioParty": 10.2,
+        "ratioParty": 9.8,
         "ratioBundestag": 9.6
       },
       {
         "word": "wirksam",
         "count": 3,
-        "ratioParty": 5.6,
+        "ratioParty": 5.7,
         "ratioBundestag": 4.4
       },
       {
         "word": "erfolgreich",
         "count": 4,
         "ratioParty": 3.9,
-        "ratioBundestag": 4.4
+        "ratioBundestag": 4.3
       },
       {
         "word": "wirtschaftlich",
         "count": 3,
-        "ratioParty": 2.5,
-        "ratioBundestag": 2.9
+        "ratioParty": 2.6,
+        "ratioBundestag": 3.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "grundlegend",
+        "count": 3,
+        "score": 7.14,
+        "ratio": 9.8
+      },
+      {
+        "word": "erfolgreich",
+        "count": 4,
+        "score": 6.36,
+        "ratio": 3.9
+      },
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 5.71,
+        "ratio": 5.7
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 3.84,
+        "ratio": 2.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "grundlegend",
+        "count": 3,
+        "score": 7.08,
+        "ratio": 9.6
+      },
+      {
+        "word": "erfolgreich",
+        "count": 4,
+        "score": 6.67,
+        "ratio": 4.3
+      },
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 5.06,
+        "ratio": 4.4
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 4.16,
+        "ratio": 3.0
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 663,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
     "vsParty": 1.07,
-    "vsParliament": 1.14
+    "vsParliament": 1.13
   },
   "funFacts": [
     {
@@ -142,30 +258,30 @@
     "question": "Welches Wort nutzt Daniel Bettermann häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Abstimmung",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Minister",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
         "text": "Kassel",
         "isCorrect": true
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kassel\" nutzt Daniel Bettermann 380.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "820.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Kassel\" nutzt Daniel Bettermann 397.7× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "852.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Daniel Bettermann häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Europäisch",
+        "text": "Neu",
         "isCorrect": false
       },
       {
@@ -177,11 +293,11 @@
         "isCorrect": false
       },
       {
-        "text": "Neu",
+        "text": "Falsch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Grundlegend\" nutzt Daniel Bettermann 10.2× häufiger als der SPD-Durchschnitt.",
+    "explanationParty": "\"Grundlegend\" nutzt Daniel Bettermann 9.8× häufiger als der SPD-Durchschnitt.",
     "explanationBundestag": "9.6× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -300,7 +416,7 @@
           "count": 2
         },
         {
-          "word": "stromnetz",
+          "word": "ökosystem",
           "count": 1
         }
       ],
@@ -336,15 +452,15 @@
           "count": 2
         },
         {
-          "word": "chancengleichheit",
-          "count": 1
-        },
-        {
           "word": "wohnung",
           "count": 1
         },
         {
           "word": "jugendarbeit",
+          "count": 1
+        },
+        {
+          "word": "chancengleichheit",
           "count": 1
         }
       ],
@@ -382,11 +498,11 @@
           "count": 2
         },
         {
-          "word": "putin",
+          "word": "ukraine",
           "count": 1
         },
         {
-          "word": "ukraine",
+          "word": "putin",
           "count": 1
         }
       ],
@@ -408,7 +524,7 @@
           "count": 4
         },
         {
-          "word": "netz",
+          "word": "technologie",
           "count": 2
         }
       ],
@@ -452,7 +568,7 @@
           "count": 3
         },
         {
-          "word": "finanzierung",
+          "word": "steuern",
           "count": 2
         }
       ],
@@ -488,11 +604,11 @@
           "count": 3
         },
         {
-          "word": "belegschaft",
+          "word": "arbeitskraft",
           "count": 1
         },
         {
-          "word": "arbeitskraft",
+          "word": "belegschaft",
           "count": 1
         }
       ],

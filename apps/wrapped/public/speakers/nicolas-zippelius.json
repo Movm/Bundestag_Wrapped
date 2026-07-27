@@ -11,23 +11,23 @@
   "minWords": 13,
   "maxWords": 2457,
   "rankings": {
-    "speechRank": 267,
-    "wordsRank": 144,
-    "partySpeechRank": 73,
-    "partyWordsRank": 38,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 57.3,
-    "verbosityRank": 101,
-    "verbosityTotal": 579,
+    "speechRank": 274,
+    "wordsRank": 159,
+    "partySpeechRank": 75,
+    "partyWordsRank": 46,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 56.2,
+    "verbosityRank": 104,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 38,
     "longestSpeechRank": 6
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 19,
-    "interrupterRank": 408,
-    "interruptedRank": 340
+    "interrupterRank": 430,
+    "interruptedRank": 356
   },
   "words": {
     "topWords": [
@@ -68,49 +68,129 @@
       {
         "word": "notfallverfahren",
         "count": 7,
-        "ratioParty": 520.5,
-        "ratioBundestag": 535.1
-      },
-      {
-        "word": "drucksache",
-        "count": 17,
-        "ratioParty": 505.6,
-        "ratioBundestag": 141.8
+        "ratioParty": 540.3,
+        "ratioBundestag": 555.6
       },
       {
         "word": "marktüberwachungsbehörden",
         "count": 5,
-        "ratioParty": 371.8,
-        "ratioBundestag": 286.7
+        "ratioParty": 386.0,
+        "ratioBundestag": 297.7
+      },
+      {
+        "word": "drucksache",
+        "count": 17,
+        "ratioParty": 374.9,
+        "ratioBundestag": 98.7
       },
       {
         "word": "wirtschaftspartnerschaftsabkommen",
         "count": 7,
-        "ratioParty": 347.0,
-        "ratioBundestag": 535.1
+        "ratioParty": 360.2,
+        "ratioBundestag": 555.6
       },
       {
         "word": "kabel",
         "count": 5,
-        "ratioParty": 185.9,
-        "ratioBundestag": 143.3
+        "ratioParty": 193.0,
+        "ratioBundestag": 148.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "drucksache",
+        "count": 17,
+        "score": 100.8,
+        "ratio": 374.9
+      },
+      {
+        "word": "notfallverfahren",
+        "count": 7,
+        "score": 44.06,
+        "ratio": 540.3
+      },
+      {
+        "word": "wirtschaftspartnerschaftsabkommen",
+        "count": 7,
+        "score": 41.23,
+        "ratio": 360.2
+      },
+      {
+        "word": "marktüberwachungsbehörden",
+        "count": 5,
+        "score": 29.79,
+        "ratio": 386.0
+      },
+      {
+        "word": "kabel",
+        "count": 5,
+        "score": 26.34,
+        "ratio": 193.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "drucksache",
+        "count": 17,
+        "score": 78.24,
+        "ratio": 98.7
+      },
+      {
+        "word": "notfallverfahren",
+        "count": 7,
+        "score": 44.25,
+        "ratio": 555.6
+      },
+      {
+        "word": "wirtschaftspartnerschaftsabkommen",
+        "count": 7,
+        "score": 44.25,
+        "ratio": 555.6
+      },
+      {
+        "word": "marktüberwachungsbehörden",
+        "count": 5,
+        "score": 28.5,
+        "ratio": 297.7
+      },
+      {
+        "word": "kabel",
+        "count": 5,
+        "score": 25.05,
+        "ratio": 148.8
       }
     ],
     "signatureAdjectives": [
       {
         "word": "zentral",
         "count": 4,
-        "ratioParty": 9.8,
-        "ratioBundestag": 10.3
+        "ratioParty": 10.0,
+        "ratioBundestag": 10.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "zentral",
+        "count": 4,
+        "score": 9.59,
+        "ratio": 10.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "zentral",
+        "count": 4,
+        "score": 9.8,
+        "ratio": 10.6
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 541,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.84,
-    "vsParliament": 0.93
+    "vsParliament": 0.92
   },
   "funFacts": [
     {
@@ -133,47 +213,47 @@
     "question": "Welches Wort nutzt Nicolas Zippelius häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
         "text": "Notfallverfahren",
         "isCorrect": true
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
       },
       {
         "text": "Kinder",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Notfallverfahren\" nutzt Nicolas Zippelius 520.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "535.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Notfallverfahren\" nutzt Nicolas Zippelius 540.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "555.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Nicolas Zippelius häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Alt",
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
         "text": "Zentral",
         "isCorrect": true
-      },
-      {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Zentral\" nutzt Nicolas Zippelius 9.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "10.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Zentral\" nutzt Nicolas Zippelius 10.0× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "10.6× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -277,11 +357,11 @@
           "count": 2
         },
         {
-          "word": "drittstaaten",
+          "word": "integration",
           "count": 1
         },
         {
-          "word": "integration",
+          "word": "drittstaaten",
           "count": 1
         }
       ],
@@ -291,15 +371,15 @@
           "count": 1
         },
         {
-          "word": "energiewende",
-          "count": 1
-        },
-        {
           "word": "energie",
           "count": 1
         },
         {
           "word": "erdgas",
+          "count": 1
+        },
+        {
+          "word": "energiewende",
           "count": 1
         }
       ],
@@ -335,19 +415,23 @@
           "count": 2
         },
         {
-          "word": "gewalt",
-          "count": 1
-        },
-        {
           "word": "korruption",
           "count": 1
         },
         {
           "word": "terror",
           "count": 1
+        },
+        {
+          "word": "panzer",
+          "count": 1
         }
       ],
       "gesundheit": [
+        {
+          "word": "gesundheitswesen",
+          "count": 1
+        },
         {
           "word": "notfall",
           "count": 1
@@ -362,10 +446,6 @@
         },
         {
           "word": "covid",
-          "count": 1
-        },
-        {
-          "word": "gesundheitswesen",
           "count": 1
         }
       ],
@@ -383,11 +463,11 @@
           "count": 5
         },
         {
-          "word": "russland",
+          "word": "krieg",
           "count": 5
         },
         {
-          "word": "krieg",
+          "word": "russland",
           "count": 5
         }
       ],
@@ -399,7 +479,7 @@
       ],
       "bildung": [
         {
-          "word": "studenten",
+          "word": "wissenschaftler",
           "count": 1
         },
         {
@@ -407,7 +487,7 @@
           "count": 1
         },
         {
-          "word": "wissenschaftler",
+          "word": "studenten",
           "count": 1
         }
       ],

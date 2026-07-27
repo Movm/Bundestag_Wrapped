@@ -11,23 +11,23 @@
   "minWords": 26,
   "maxWords": 594,
   "rankings": {
-    "speechRank": 147,
-    "wordsRank": 137,
-    "partySpeechRank": 31,
+    "speechRank": 158,
+    "wordsRank": 146,
+    "partySpeechRank": 34,
     "partyWordsRank": 32,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 76.5,
-    "verbosityRank": 551,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 140,
-    "longestSpeechRank": 499
+    "totalSpeakers": 626,
+    "percentile": 74.8,
+    "verbosityRank": 552,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 141,
+    "longestSpeechRank": 503
   },
   "drama": {
-    "interruptionsGiven": 333,
+    "interruptionsGiven": 352,
     "interruptionsReceived": 51,
     "interrupterRank": 8,
-    "interruptedRank": 110
+    "interruptedRank": 116
   },
   "words": {
     "topWords": [
@@ -40,11 +40,11 @@
         "count": 35
       },
       {
-        "word": "familien",
+        "word": "ministerin",
         "count": 23
       },
       {
-        "word": "ministerin",
+        "word": "familien",
         "count": 23
       },
       {
@@ -56,11 +56,11 @@
         "count": 17
       },
       {
-        "word": "diesen",
+        "word": "deutschen",
         "count": 17
       },
       {
-        "word": "deutschen",
+        "word": "diesen",
         "count": 17
       },
       {
@@ -72,53 +72,145 @@
       {
         "word": "brigade",
         "count": 5,
-        "ratioParty": 159.0,
-        "ratioBundestag": 47.8
+        "ratioParty": 164.9,
+        "ratioBundestag": 49.7
       },
       {
         "word": "anwesende",
         "count": 17,
-        "ratioParty": 135.2,
-        "ratioBundestag": 281.5
+        "ratioParty": 120.2,
+        "ratioBundestag": 262.1
       },
       {
         "word": "demografischen",
         "count": 11,
-        "ratioParty": 58.3,
-        "ratioBundestag": 49.3
+        "ratioParty": 60.5,
+        "ratioBundestag": 50.7
       },
       {
         "word": "prien",
         "count": 13,
-        "ratioParty": 44.3,
-        "ratioBundestag": 36.1
+        "ratioParty": 45.9,
+        "ratioBundestag": 37.0
       },
       {
         "word": "demografische",
         "count": 8,
-        "ratioParty": 42.4,
-        "ratioBundestag": 45.9
+        "ratioParty": 44.0,
+        "ratioBundestag": 47.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "anwesende",
+        "count": 17,
+        "score": 81.56,
+        "ratio": 120.2
+      },
+      {
+        "word": "prien",
+        "count": 13,
+        "score": 50.02,
+        "ratio": 45.9
+      },
+      {
+        "word": "demografischen",
+        "count": 11,
+        "score": 45.31,
+        "ratio": 60.5
+      },
+      {
+        "word": "demografische",
+        "count": 8,
+        "score": 30.45,
+        "ratio": 44.0
+      },
+      {
+        "word": "brigade",
+        "count": 5,
+        "score": 25.56,
+        "ratio": 164.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "anwesende",
+        "count": 17,
+        "score": 94.73,
+        "ratio": 262.1
+      },
+      {
+        "word": "prien",
+        "count": 13,
+        "score": 47.29,
+        "ratio": 37.0
+      },
+      {
+        "word": "demografischen",
+        "count": 11,
+        "score": 43.4,
+        "ratio": 50.7
+      },
+      {
+        "word": "demografische",
+        "count": 8,
+        "score": 30.99,
+        "ratio": 47.1
+      },
+      {
+        "word": "brigade",
+        "count": 5,
+        "score": 19.63,
+        "ratio": 49.7
       }
     ],
     "signatureAdjectives": [
       {
         "word": "demokratisch",
         "count": 3,
-        "ratioParty": 6.2,
-        "ratioBundestag": 9.6
+        "ratioParty": 6.5,
+        "ratioBundestag": 9.5
       },
       {
         "word": "stark",
         "count": 3,
-        "ratioParty": 2.4,
+        "ratioParty": 2.5,
         "ratioBundestag": 1.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "demokratisch",
+        "count": 3,
+        "score": 6.04,
+        "ratio": 6.5
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 3.76,
+        "ratio": 2.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "demokratisch",
+        "count": 3,
+        "score": 7.05,
+        "ratio": 9.5
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 3.09,
+        "ratio": 1.8
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 224,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.4,
     "vsParliament": 0.38
   },
@@ -136,54 +228,54 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufer",
-      "value": "#8 (333x)"
+      "value": "#8 (352x)"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Martin Reichardt häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Koalition",
+        "text": "Sicherheit",
         "isCorrect": false
       },
       {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
-        "text": "Freiheit",
+        "text": "Politik",
         "isCorrect": false
       },
       {
         "text": "Brigade",
         "isCorrect": true
+      },
+      {
+        "text": "Minister",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Brigade\" nutzt Martin Reichardt 159.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "47.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Brigade\" nutzt Martin Reichardt 164.9× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "49.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Martin Reichardt häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
         "text": "Demokratisch",
         "isCorrect": true
       },
       {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
         "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Demokratisch\" nutzt Martin Reichardt 6.2× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "9.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Demokratisch\" nutzt Martin Reichardt 6.5× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "9.5× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -259,6 +351,10 @@
           "count": 4
         },
         {
+          "word": "integration",
+          "count": 2
+        },
+        {
           "word": "asyl",
           "count": 2
         },
@@ -267,11 +363,7 @@
           "count": 2
         },
         {
-          "word": "integration",
-          "count": 2
-        },
-        {
-          "word": "duldung",
+          "word": "migration",
           "count": 1
         }
       ],
@@ -349,15 +441,15 @@
           "count": 2
         },
         {
-          "word": "gesundheitswesen",
-          "count": 1
-        },
-        {
           "word": "pflege",
           "count": 1
         },
         {
           "word": "sucht",
+          "count": 1
+        },
+        {
+          "word": "gesundheitswesen",
           "count": 1
         }
       ],
@@ -447,7 +539,7 @@
           "count": 2
         },
         {
-          "word": "straftaten",
+          "word": "beklagte",
           "count": 1
         },
         {

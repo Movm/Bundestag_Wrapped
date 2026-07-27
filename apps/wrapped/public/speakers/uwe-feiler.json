@@ -11,23 +11,23 @@
   "minWords": 34,
   "maxWords": 936,
   "rankings": {
-    "speechRank": 455,
-    "wordsRank": 374,
-    "partySpeechRank": 137,
-    "partyWordsRank": 116,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 27.2,
-    "verbosityRank": 35,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 14,
+    "speechRank": 459,
+    "wordsRank": 387,
+    "partySpeechRank": 144,
+    "partyWordsRank": 120,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 26.7,
+    "verbosityRank": 34,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 12,
     "longestSpeechRank": 115
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 14,
-    "interrupterRank": 448,
-    "interruptedRank": 403
+    "interrupterRank": 449,
+    "interruptedRank": 412
   },
   "words": {
     "topWords": [
@@ -76,32 +76,96 @@
       {
         "word": "munitionsaltlasten",
         "count": 9,
-        "ratioParty": 836.4,
-        "ratioBundestag": 858.1
+        "ratioParty": 868.2,
+        "ratioBundestag": 891.0
       },
       {
         "word": "altlasten",
         "count": 5,
-        "ratioParty": 348.5,
-        "ratioBundestag": 286.0
+        "ratioParty": 361.8,
+        "ratioBundestag": 297.0
       },
       {
         "word": "verbraucherschutz",
         "count": 13,
-        "ratioParty": 57.5,
-        "ratioBundestag": 57.2
+        "ratioParty": 59.7,
+        "ratioBundestag": 58.8
       },
       {
         "word": "gerichte",
         "count": 6,
-        "ratioParty": 33.5,
-        "ratioBundestag": 23.8
+        "ratioParty": 34.7,
+        "ratioBundestag": 24.5
       },
       {
         "word": "stiftung",
         "count": 7,
-        "ratioParty": 33.1,
-        "ratioBundestag": 23.7
+        "ratioParty": 34.3,
+        "ratioBundestag": 24.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "munitionsaltlasten",
+        "count": 9,
+        "score": 60.91,
+        "ratio": 868.2
+      },
+      {
+        "word": "verbraucherschutz",
+        "count": 13,
+        "score": 53.38,
+        "ratio": 59.7
+      },
+      {
+        "word": "altlasten",
+        "count": 5,
+        "score": 29.47,
+        "ratio": 361.8
+      },
+      {
+        "word": "stiftung",
+        "count": 7,
+        "score": 24.95,
+        "ratio": 34.3
+      },
+      {
+        "word": "gerichte",
+        "count": 6,
+        "score": 21.45,
+        "ratio": 34.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "munitionsaltlasten",
+        "count": 9,
+        "score": 61.14,
+        "ratio": 891.0
+      },
+      {
+        "word": "verbraucherschutz",
+        "count": 13,
+        "score": 53.18,
+        "ratio": 58.8
+      },
+      {
+        "word": "altlasten",
+        "count": 5,
+        "score": 28.49,
+        "ratio": 297.0
+      },
+      {
+        "word": "stiftung",
+        "count": 7,
+        "score": 22.56,
+        "ratio": 24.1
+      },
+      {
+        "word": "gerichte",
+        "count": 6,
+        "score": 19.43,
+        "ratio": 24.5
       }
     ],
     "signatureAdjectives": [
@@ -111,12 +175,28 @@
         "ratioParty": 4.6,
         "ratioBundestag": 6.8
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 6.89,
+        "ratio": 4.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 8.22,
+        "ratio": 6.8
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 641,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.99,
     "vsParliament": 1.1
   },
@@ -136,7 +216,7 @@
     "question": "Welches Wort nutzt Uwe Feiler häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Migration",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
@@ -144,22 +224,22 @@
         "isCorrect": true
       },
       {
-        "text": "Demokratie",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
-        "text": "Klima",
+        "text": "Kinder",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Munitionsaltlasten\" nutzt Uwe Feiler 836.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "858.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Munitionsaltlasten\" nutzt Uwe Feiler 868.2× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "891.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Uwe Feiler häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Falsch",
+        "text": "Alt",
         "isCorrect": false
       },
       {
@@ -167,11 +247,11 @@
         "isCorrect": true
       },
       {
-        "text": "Erfolgreich",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Stark",
+        "text": "National",
         "isCorrect": false
       }
     ],

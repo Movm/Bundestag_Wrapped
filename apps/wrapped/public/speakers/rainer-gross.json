@@ -11,23 +11,23 @@
   "minWords": 32,
   "maxWords": 569,
   "rankings": {
-    "speechRank": 307,
-    "wordsRank": 368,
-    "partySpeechRank": 70,
-    "partyWordsRank": 78,
+    "speechRank": 311,
+    "wordsRank": 381,
+    "partySpeechRank": 69,
+    "partyWordsRank": 83,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 50.9,
-    "verbosityRank": 374,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 50.3,
+    "verbosityRank": 372,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 97,
-    "longestSpeechRank": 532
+    "longestSpeechRank": 534
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 15,
-    "interrupterRank": 406,
-    "interruptedRank": 382
+    "interrupterRank": 402,
+    "interruptedRank": 399
   },
   "words": {
     "topWords": [
@@ -60,40 +60,106 @@
       {
         "word": "kreditwirtschaft",
         "count": 5,
-        "ratioParty": 960.7,
-        "ratioBundestag": 616.8
+        "ratioParty": 996.1,
+        "ratioBundestag": 640.4
       },
       {
         "word": "banken",
         "count": 8,
-        "ratioParty": 53.0,
-        "ratioBundestag": 46.7
+        "ratioParty": 53.1,
+        "ratioBundestag": 48.1
       },
       {
         "word": "bargeld",
         "count": 5,
-        "ratioParty": 50.6,
-        "ratioBundestag": 60.0
+        "ratioParty": 52.4,
+        "ratioBundestag": 61.4
       },
       {
         "word": "fonds",
         "count": 8,
-        "ratioParty": 43.9,
-        "ratioBundestag": 37.7
+        "ratioParty": 43.1,
+        "ratioBundestag": 38.4
       },
       {
         "word": "nachhaltigkeit",
         "count": 5,
-        "ratioParty": 29.1,
-        "ratioBundestag": 20.9
+        "ratioParty": 30.2,
+        "ratioBundestag": 21.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "kreditwirtschaft",
+        "count": 5,
+        "score": 34.52,
+        "ratio": 996.1
+      },
+      {
+        "word": "banken",
+        "count": 8,
+        "score": 31.93,
+        "ratio": 53.1
+      },
+      {
+        "word": "fonds",
+        "count": 8,
+        "score": 30.29,
+        "ratio": 43.1
+      },
+      {
+        "word": "bargeld",
+        "count": 5,
+        "score": 19.89,
+        "ratio": 52.4
+      },
+      {
+        "word": "nachhaltigkeit",
+        "count": 5,
+        "score": 17.2,
+        "ratio": 30.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "kreditwirtschaft",
+        "count": 5,
+        "score": 32.32,
+        "ratio": 640.4
+      },
+      {
+        "word": "banken",
+        "count": 8,
+        "score": 31.15,
+        "ratio": 48.1
+      },
+      {
+        "word": "fonds",
+        "count": 8,
+        "score": 29.39,
+        "ratio": 38.4
+      },
+      {
+        "word": "bargeld",
+        "count": 5,
+        "score": 20.67,
+        "ratio": 61.4
+      },
+      {
+        "word": "nachhaltigkeit",
+        "count": 5,
+        "score": 15.61,
+        "ratio": 21.7
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 397,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.71,
     "vsParliament": 0.68
   },
@@ -113,7 +179,11 @@
     "question": "Welches Wort nutzt Rainer Groß häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Abstimmung",
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Klima",
         "isCorrect": false
       },
       {
@@ -121,16 +191,12 @@
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
+        "text": "Kinder",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kreditwirtschaft\" nutzt Rainer Groß 960.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "616.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Kreditwirtschaft\" nutzt Rainer Groß 996.1× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "640.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -229,7 +295,7 @@
           "count": 1
         },
         {
-          "word": "kernenergie",
+          "word": "energiewende",
           "count": 1
         }
       ],
@@ -239,11 +305,11 @@
           "count": 10
         },
         {
-          "word": "marktwirtschaft",
+          "word": "unternehmen",
           "count": 8
         },
         {
-          "word": "unternehmen",
+          "word": "marktwirtschaft",
           "count": 8
         },
         {
@@ -261,7 +327,11 @@
           "count": 2
         },
         {
-          "word": "armut",
+          "word": "altersarmut",
+          "count": 1
+        },
+        {
+          "word": "bürgergeld",
           "count": 1
         },
         {
@@ -270,10 +340,6 @@
         },
         {
           "word": "familien",
-          "count": 1
-        },
-        {
-          "word": "altersarmut",
           "count": 1
         }
       ],
@@ -333,7 +399,7 @@
           "count": 5
         },
         {
-          "word": "steuern",
+          "word": "zinsen",
           "count": 4
         }
       ],
@@ -363,15 +429,15 @@
           "count": 1
         },
         {
-          "word": "flugzeug",
-          "count": 1
-        },
-        {
           "word": "schiff",
           "count": 1
         },
         {
           "word": "fahrzeuge",
+          "count": 1
+        },
+        {
+          "word": "flugzeug",
           "count": 1
         }
       ]

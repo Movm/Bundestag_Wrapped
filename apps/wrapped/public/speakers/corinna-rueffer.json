@@ -11,23 +11,23 @@
   "minWords": 25,
   "maxWords": 733,
   "rankings": {
-    "speechRank": 413,
-    "wordsRank": 398,
-    "partySpeechRank": 70,
-    "partyWordsRank": 66,
+    "speechRank": 435,
+    "wordsRank": 408,
+    "partySpeechRank": 74,
+    "partyWordsRank": 67,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 33.9,
-    "verbosityRank": 190,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 30.5,
+    "verbosityRank": 192,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 19,
-    "longestSpeechRank": 330
+    "longestSpeechRank": 335
   },
   "drama": {
     "interruptionsGiven": 26,
     "interruptionsReceived": 14,
-    "interrupterRank": 183,
-    "interruptedRank": 408
+    "interrupterRank": 186,
+    "interruptedRank": 415
   },
   "words": {
     "topWords": [
@@ -62,46 +62,116 @@
       {
         "word": "diesen",
         "count": 11
+      },
+      {
+        "word": "gesetz",
+        "count": 9
       }
     ],
     "signatureWords": [
       {
         "word": "petitionsausschuss",
         "count": 12,
-        "ratioParty": 277.0,
-        "ratioBundestag": 144.5
+        "ratioParty": 286.7,
+        "ratioBundestag": 150.1
       },
       {
         "word": "eingliederungshilfe",
         "count": 7,
-        "ratioParty": 193.9,
-        "ratioBundestag": 249.8
+        "ratioParty": 200.7,
+        "ratioBundestag": 259.4
       },
       {
         "word": "barrierefreiheit",
         "count": 11,
-        "ratioParty": 108.8,
-        "ratioBundestag": 155.9
+        "ratioParty": 112.6,
+        "ratioBundestag": 161.8
       },
       {
         "word": "demokratinnen",
         "count": 8,
-        "ratioParty": 22.2,
-        "ratioBundestag": 75.6
+        "ratioParty": 22.1,
+        "ratioBundestag": 76.2
       },
       {
         "word": "angewiesen",
         "count": 8,
-        "ratioParty": 21.3,
-        "ratioBundestag": 21.4
+        "ratioParty": 21.2,
+        "ratioBundestag": 21.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "petitionsausschuss",
+        "count": 12,
+        "score": 67.94,
+        "ratio": 286.7
+      },
+      {
+        "word": "barrierefreiheit",
+        "count": 11,
+        "score": 52.06,
+        "ratio": 112.6
+      },
+      {
+        "word": "eingliederungshilfe",
+        "count": 7,
+        "score": 37.15,
+        "ratio": 200.7
+      },
+      {
+        "word": "demokratinnen",
+        "count": 8,
+        "score": 25.12,
+        "ratio": 22.1
+      },
+      {
+        "word": "angewiesen",
+        "count": 8,
+        "score": 24.8,
+        "ratio": 21.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "petitionsausschuss",
+        "count": 12,
+        "score": 60.22,
+        "ratio": 150.1
+      },
+      {
+        "word": "barrierefreiheit",
+        "count": 11,
+        "score": 56.02,
+        "ratio": 161.8
+      },
+      {
+        "word": "eingliederungshilfe",
+        "count": 7,
+        "score": 38.94,
+        "ratio": 259.4
+      },
+      {
+        "word": "demokratinnen",
+        "count": 8,
+        "score": 34.77,
+        "ratio": 76.2
+      },
+      {
+        "word": "angewiesen",
+        "count": 8,
+        "score": 24.98,
+        "ratio": 21.7
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 480,
     "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 585,
     "vsParty": 0.89,
     "vsParliament": 0.82
   },
@@ -126,24 +196,24 @@
     "question": "Welches Wort nutzt Corinna Rüffer häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bürger",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
         "text": "Petitionsausschuss",
         "isCorrect": true
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Petitionsausschuss\" nutzt Corinna Rüffer 277.0× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "144.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Petitionsausschuss\" nutzt Corinna Rüffer 286.7× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "150.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -258,19 +328,19 @@
           "count": 11
         },
         {
-          "word": "behinderte",
-          "count": 4
-        },
-        {
           "word": "behinderung",
           "count": 4
         },
         {
-          "word": "bürgergeld",
-          "count": 3
+          "word": "behinderte",
+          "count": 4
         },
         {
           "word": "sozialhilfe",
+          "count": 3
+        },
+        {
+          "word": "bürgergeld",
           "count": 3
         }
       ],
@@ -288,11 +358,11 @@
       ],
       "europa": [
         {
-          "word": "sanktionen",
+          "word": "kooperation",
           "count": 1
         },
         {
-          "word": "kooperation",
+          "word": "sanktionen",
           "count": 1
         }
       ],

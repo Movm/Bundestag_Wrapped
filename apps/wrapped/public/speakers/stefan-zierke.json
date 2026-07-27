@@ -11,23 +11,23 @@
   "minWords": 213,
   "maxWords": 465,
   "rankings": {
-    "speechRank": 578,
-    "wordsRank": 595,
-    "partySpeechRank": 103,
+    "speechRank": 562,
+    "wordsRank": 598,
+    "partySpeechRank": 99,
     "partyWordsRank": 109,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 7.5,
-    "verbosityRank": 404,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 86,
-    "longestSpeechRank": 590
+    "totalSpeakers": 626,
+    "percentile": 10.2,
+    "verbosityRank": 405,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 87,
+    "longestSpeechRank": 592
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 1,
-    "interrupterRank": 466,
-    "interruptedRank": 600
+    "interrupterRank": 441,
+    "interruptedRank": 595
   },
   "words": {
     "topWords": [
@@ -40,10 +40,6 @@
         "count": 5
       },
       {
-        "word": "anträge",
-        "count": 4
-      },
-      {
         "word": "habe",
         "count": 4
       },
@@ -52,12 +48,8 @@
         "count": 4
       },
       {
-        "word": "reden",
-        "count": 3
-      },
-      {
-        "word": "gehört",
-        "count": 3
+        "word": "anträge",
+        "count": 4
       },
       {
         "word": "ostdeutsch",
@@ -70,28 +62,66 @@
       {
         "word": "polo",
         "count": 3
+      },
+      {
+        "word": "simson",
+        "count": 3
+      },
+      {
+        "word": "drei",
+        "count": 3
       }
     ],
     "signatureWords": [
       {
         "word": "ostdeutsche",
         "count": 6,
-        "ratioParty": 466.3,
-        "ratioBundestag": 882.4
+        "ratioParty": 446.5,
+        "ratioBundestag": 885.7
       },
       {
         "word": "radverkehr",
         "count": 5,
         "ratioParty": 74.0,
-        "ratioBundestag": 3554.3
+        "ratioBundestag": 3690.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "ostdeutsche",
+        "count": 6,
+        "score": 36.62,
+        "ratio": 446.5
+      },
+      {
+        "word": "radverkehr",
+        "count": 5,
+        "score": 21.59,
+        "ratio": 74.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "radverkehr",
+        "count": 5,
+        "score": 41.07,
+        "ratio": 3690.3
+      },
+      {
+        "word": "ostdeutsche",
+        "count": 6,
+        "score": 40.73,
+        "ratio": 885.7
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 380,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
     "vsParty": 0.61,
     "vsParliament": 0.65
   },
@@ -111,11 +141,7 @@
     "question": "Welches Wort nutzt Stefan Zierke häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Ostdeutsche",
-        "isCorrect": true
-      },
-      {
-        "text": "Abstimmung",
+        "text": "Minister",
         "isCorrect": false
       },
       {
@@ -123,12 +149,16 @@
         "isCorrect": false
       },
       {
-        "text": "Rente",
+        "text": "Antrag",
         "isCorrect": false
+      },
+      {
+        "text": "Ostdeutsche",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Ostdeutsche\" nutzt Stefan Zierke 466.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "882.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Ostdeutsche\" nutzt Stefan Zierke 446.5× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "885.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -241,11 +271,11 @@
       ],
       "soziales": [
         {
-          "word": "gerechtigkeit",
+          "word": "jugend",
           "count": 1
         },
         {
-          "word": "jugend",
+          "word": "gerechtigkeit",
           "count": 1
         }
       ],

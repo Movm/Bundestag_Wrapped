@@ -11,17 +11,17 @@
   "minWords": 31,
   "maxWords": 482,
   "rankings": {
-    "speechRank": 595,
-    "wordsRank": 620,
+    "speechRank": 597,
+    "wordsRank": 622,
     "partySpeechRank": 62,
     "partyWordsRank": 62,
     "partySize": 63,
-    "totalSpeakers": 625,
-    "percentile": 4.8,
+    "totalSpeakers": 626,
+    "percentile": 4.6,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 585
+    "longestSpeechRank": 588
   },
   "drama": {
     "interruptionsGiven": 0,
@@ -76,8 +76,8 @@
       {
         "word": "religion",
         "count": 5,
-        "ratioParty": 1564.1,
-        "ratioBundestag": 934.1
+        "ratioParty": 973.1,
+        "ratioBundestag": 864.1
       },
       {
         "word": "leben",
@@ -92,12 +92,54 @@
         "ratioBundestag": 3.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "religion",
+        "count": 5,
+        "score": 34.41,
+        "ratio": 973.1
+      },
+      {
+        "word": "leben",
+        "count": 5,
+        "score": 11.99,
+        "ratio": 10.0
+      },
+      {
+        "word": "menschen",
+        "count": 5,
+        "score": 5.82,
+        "ratio": 2.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "religion",
+        "count": 5,
+        "score": 33.81,
+        "ratio": 864.1
+      },
+      {
+        "word": "leben",
+        "count": 5,
+        "score": 13.77,
+        "ratio": 14.7
+      },
+      {
+        "word": "menschen",
+        "count": 5,
+        "score": 7.74,
+        "ratio": 3.7
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 256,
-    "partyAvgWords": 500,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 499,
+    "parliamentAvgWords": 585,
     "vsParty": 0.51,
     "vsParliament": 0.44
   },
@@ -112,24 +154,24 @@
     "question": "Welches Wort nutzt Bodo Ramelow häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
-        "isCorrect": false
-      },
-      {
         "text": "Religion",
         "isCorrect": true
       },
       {
-        "text": "Antrag",
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Religion\" nutzt Bodo Ramelow 1564.1× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "934.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Religion\" nutzt Bodo Ramelow 973.1× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "864.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

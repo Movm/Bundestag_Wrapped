@@ -11,22 +11,22 @@
   "minWords": 56,
   "maxWords": 369,
   "rankings": {
-    "speechRank": 579,
-    "wordsRank": 606,
-    "partySpeechRank": 143,
-    "partyWordsRank": 145,
+    "speechRank": 570,
+    "wordsRank": 607,
+    "partySpeechRank": 141,
+    "partyWordsRank": 146,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 7.4,
-    "verbosityRank": 565,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 142,
-    "longestSpeechRank": 610
+    "totalSpeakers": 626,
+    "percentile": 8.9,
+    "verbosityRank": 568,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 143,
+    "longestSpeechRank": 611
   },
   "drama": {
     "interruptionsGiven": 3,
     "interruptionsReceived": 1,
-    "interrupterRank": 385,
+    "interrupterRank": 390,
     "interruptedRank": 601
   },
   "words": {
@@ -44,15 +44,11 @@
         "count": 3
       },
       {
-        "word": "lassen",
-        "count": 3
-      },
-      {
-        "word": "warum",
-        "count": 3
-      },
-      {
         "word": "klimaanlagen",
+        "count": 3
+      },
+      {
+        "word": "lassen",
         "count": 3
       },
       {
@@ -60,7 +56,11 @@
         "count": 3
       },
       {
-        "word": "warken",
+        "word": "warum",
+        "count": 3
+      },
+      {
+        "word": "jahr",
         "count": 2
       }
     ],
@@ -68,17 +68,35 @@
       {
         "word": "ministerin",
         "count": 5,
-        "ratioParty": 12.7,
-        "ratioBundestag": 14.9
+        "ratioParty": 12.9,
+        "ratioBundestag": 15.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "ministerin",
+        "count": 5,
+        "score": 13.16,
+        "ratio": 12.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "ministerin",
+        "count": 5,
+        "score": 13.86,
+        "ratio": 15.0
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 170,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.3,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.31,
     "vsParliament": 0.29
   },
   "funFacts": [
@@ -96,20 +114,20 @@
         "isCorrect": true
       },
       {
-        "text": "Sicherheit",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Familie",
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ministerin\" nutzt Kay-Uwe Ziegler 12.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "14.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Ministerin\" nutzt Kay-Uwe Ziegler 12.9× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "15.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -192,10 +210,6 @@
           "count": 2
         },
         {
-          "word": "gesundheitssystem",
-          "count": 1
-        },
-        {
           "word": "krankenversicherung",
           "count": 1
         },
@@ -205,6 +219,10 @@
         },
         {
           "word": "kranke",
+          "count": 1
+        },
+        {
+          "word": "krankenhaus",
           "count": 1
         }
       ],

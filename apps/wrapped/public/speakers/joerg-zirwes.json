@@ -12,22 +12,22 @@
   "maxWords": 458,
   "rankings": {
     "speechRank": 433,
-    "wordsRank": 499,
-    "partySpeechRank": 101,
+    "wordsRank": 506,
+    "partySpeechRank": 102,
     "partyWordsRank": 113,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 30.7,
-    "verbosityRank": 391,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 30.8,
+    "verbosityRank": 390,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 103,
-    "longestSpeechRank": 593
+    "longestSpeechRank": 594
   },
   "drama": {
     "interruptionsGiven": 3,
     "interruptionsReceived": 14,
-    "interrupterRank": 381,
-    "interruptedRank": 411
+    "interrupterRank": 391,
+    "interruptedRank": 414
   },
   "words": {
     "topWords": [
@@ -52,11 +52,7 @@
         "count": 8
       },
       {
-        "word": "wehrpflicht",
-        "count": 8
-      },
-      {
-        "word": "sicherheit",
+        "word": "bosnien",
         "count": 8
       },
       {
@@ -64,11 +60,15 @@
         "count": 8
       },
       {
-        "word": "bosnien",
+        "word": "sicherheit",
         "count": 8
       },
       {
-        "word": "streitkräfte",
+        "word": "wehrpflicht",
+        "count": 8
+      },
+      {
+        "word": "verlängerung",
         "count": 7
       }
     ],
@@ -76,40 +76,106 @@
       {
         "word": "herzegowina",
         "count": 7,
-        "ratioParty": 111.3,
-        "ratioBundestag": 59.0
+        "ratioParty": 115.4,
+        "ratioBundestag": 61.2
       },
       {
         "word": "bosnien",
         "count": 8,
-        "ratioParty": 89.5,
-        "ratioBundestag": 57.7
+        "ratioParty": 92.8,
+        "ratioBundestag": 59.9
       },
       {
         "word": "streitkräfte",
         "count": 7,
-        "ratioParty": 58.8,
-        "ratioBundestag": 68.3
+        "ratioParty": 59.3,
+        "ratioBundestag": 70.4
       },
       {
         "word": "militärische",
         "count": 6,
-        "ratioParty": 45.3,
-        "ratioBundestag": 24.7
+        "ratioParty": 47.0,
+        "ratioBundestag": 25.4
       },
       {
         "word": "wehrpflicht",
         "count": 8,
-        "ratioParty": 42.4,
-        "ratioBundestag": 57.4
+        "ratioParty": 44.0,
+        "ratioBundestag": 59.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bosnien",
+        "count": 8,
+        "score": 36.33,
+        "ratio": 92.8
+      },
+      {
+        "word": "herzegowina",
+        "count": 7,
+        "score": 33.3,
+        "ratio": 115.4
+      },
+      {
+        "word": "wehrpflicht",
+        "count": 8,
+        "score": 30.45,
+        "ratio": 44.0
+      },
+      {
+        "word": "streitkräfte",
+        "count": 7,
+        "score": 28.7,
+        "ratio": 59.3
+      },
+      {
+        "word": "militärische",
+        "count": 6,
+        "score": 23.23,
+        "ratio": 47.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bosnien",
+        "count": 8,
+        "score": 32.87,
+        "ratio": 59.9
+      },
+      {
+        "word": "wehrpflicht",
+        "count": 8,
+        "score": 32.83,
+        "ratio": 59.6
+      },
+      {
+        "word": "streitkräfte",
+        "count": 7,
+        "score": 29.88,
+        "ratio": 70.4
+      },
+      {
+        "word": "herzegowina",
+        "count": 7,
+        "score": 28.91,
+        "ratio": 61.2
+      },
+      {
+        "word": "militärische",
+        "count": 6,
+        "score": 19.64,
+        "ratio": 25.4
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 390,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.7,
     "vsParliament": 0.67
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Jörg Zirwes häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
         "text": "Herzegowina",
         "isCorrect": true
+      },
+      {
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Rente",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Herzegowina\" nutzt Jörg Zirwes 111.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "59.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Herzegowina\" nutzt Jörg Zirwes 115.4× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "61.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -235,7 +301,7 @@
       ],
       "wirtschaft": [
         {
-          "word": "unternehmen",
+          "word": "handwerk",
           "count": 1
         },
         {
@@ -243,17 +309,17 @@
           "count": 1
         },
         {
-          "word": "handwerk",
+          "word": "unternehmen",
           "count": 1
         }
       ],
       "soziales": [
         {
-          "word": "familie",
+          "word": "fürsorge",
           "count": 1
         },
         {
-          "word": "fürsorge",
+          "word": "familie",
           "count": 1
         }
       ],
@@ -267,11 +333,11 @@
           "count": 7
         },
         {
-          "word": "bundeswehr",
+          "word": "verteidigung",
           "count": 6
         },
         {
-          "word": "verteidigung",
+          "word": "bundeswehr",
           "count": 6
         },
         {
@@ -287,11 +353,11 @@
       ],
       "europa": [
         {
-          "word": "europa",
+          "word": "frieden",
           "count": 2
         },
         {
-          "word": "frieden",
+          "word": "europa",
           "count": 2
         },
         {
@@ -315,15 +381,15 @@
           "count": 2
         },
         {
+          "word": "haushalt",
+          "count": 1
+        },
+        {
           "word": "währung",
           "count": 1
         },
         {
           "word": "sondervermögen",
-          "count": 1
-        },
-        {
-          "word": "haushalt",
           "count": 1
         }
       ],
@@ -357,11 +423,11 @@
           "count": 2
         },
         {
-          "word": "infrastruktur",
+          "word": "fahrzeuge",
           "count": 1
         },
         {
-          "word": "fahrzeuge",
+          "word": "infrastruktur",
           "count": 1
         }
       ]

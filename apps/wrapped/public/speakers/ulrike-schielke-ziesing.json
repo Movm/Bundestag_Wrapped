@@ -11,23 +11,23 @@
   "minWords": 473,
   "maxWords": 1102,
   "rankings": {
-    "speechRank": 263,
-    "wordsRank": 52,
-    "partySpeechRank": 57,
-    "partyWordsRank": 11,
+    "speechRank": 282,
+    "wordsRank": 59,
+    "partySpeechRank": 60,
+    "partyWordsRank": 12,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 57.9,
+    "totalSpeakers": 626,
+    "percentile": 55.0,
     "verbosityRank": 8,
-    "verbosityTotal": 579,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 3,
-    "longestSpeechRank": 52
+    "longestSpeechRank": 54
   },
   "drama": {
     "interruptionsGiven": 63,
     "interruptionsReceived": 36,
-    "interrupterRank": 81,
-    "interruptedRank": 193
+    "interrupterRank": 84,
+    "interruptedRank": 201
   },
   "words": {
     "topWords": [
@@ -56,53 +56,127 @@
       {
         "word": "haltelinie",
         "count": 12,
-        "ratioParty": 844.0,
-        "ratioBundestag": 109.1
+        "ratioParty": 875.4,
+        "ratioBundestag": 113.3
       },
       {
         "word": "rentenpaket",
         "count": 9,
-        "ratioParty": 316.5,
-        "ratioBundestag": 32.6
+        "ratioParty": 328.3,
+        "ratioBundestag": 33.8
       },
       {
         "word": "krediten",
         "count": 7,
-        "ratioParty": 123.1,
-        "ratioBundestag": 92.8
-      },
-      {
-        "word": "rentenbeiträge",
-        "count": 5,
-        "ratioParty": 70.3,
-        "ratioBundestag": 159.1
+        "ratioParty": 102.1,
+        "ratioBundestag": 92.5
       },
       {
         "word": "mütterrente",
         "count": 6,
-        "ratioParty": 60.3,
-        "ratioBundestag": 31.3
+        "ratioParty": 62.5,
+        "ratioBundestag": 32.5
+      },
+      {
+        "word": "rentenniveau",
+        "count": 15,
+        "ratioParty": 60.8,
+        "ratioBundestag": 35.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "haltelinie",
+        "count": 12,
+        "score": 81.31,
+        "ratio": 875.4
+      },
+      {
+        "word": "rentenniveau",
+        "count": 15,
+        "score": 61.86,
+        "ratio": 60.8
+      },
+      {
+        "word": "rentenpaket",
+        "count": 9,
+        "score": 52.17,
+        "ratio": 328.3
+      },
+      {
+        "word": "krediten",
+        "count": 7,
+        "score": 32.45,
+        "ratio": 102.1
+      },
+      {
+        "word": "mütterrente",
+        "count": 6,
+        "score": 24.91,
+        "ratio": 62.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "haltelinie",
+        "count": 12,
+        "score": 56.87,
+        "ratio": 113.3
+      },
+      {
+        "word": "rentenniveau",
+        "count": 15,
+        "score": 54.12,
+        "ratio": 35.9
+      },
+      {
+        "word": "rentenpaket",
+        "count": 9,
+        "score": 31.95,
+        "ratio": 33.8
+      },
+      {
+        "word": "krediten",
+        "count": 7,
+        "score": 31.77,
+        "ratio": 92.5
+      },
+      {
+        "word": "mütterrente",
+        "count": 6,
+        "score": 21.07,
+        "ratio": 32.5
       }
     ],
     "signatureAdjectives": [
       {
         "word": "fair",
         "count": 3,
-        "ratioParty": 7.3,
+        "ratioParty": 7.5,
         "ratioBundestag": 5.6
-      },
+      }
+    ],
+    "signatureAdjectivesParty": [
       {
-        "word": "teuer",
-        "count": 4,
-        "ratioParty": 2.0,
-        "ratioBundestag": 3.2
+        "word": "fair",
+        "count": 3,
+        "score": 6.42,
+        "ratio": 7.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "fair",
+        "count": 3,
+        "score": 5.66,
+        "ratio": 5.6
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 842,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 1.51,
     "vsParliament": 1.44
   },
@@ -120,7 +194,7 @@
     {
       "emoji": "📚",
       "label": "Wortreichster",
-      "value": "#8 von 579"
+      "value": "#8 von 582"
     },
     {
       "emoji": "⚡",
@@ -132,34 +206,34 @@
     "question": "Welches Wort nutzt Ulrike Schielke-Ziesing häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
         "text": "Haltelinie",
         "isCorrect": true
       },
       {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
+        "text": "Gesellschaft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Haltelinie\" nutzt Ulrike Schielke-Ziesing 844.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "109.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Haltelinie\" nutzt Ulrike Schielke-Ziesing 875.4× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "113.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Ulrike Schielke-Ziesing häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Notwendig",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
-        "text": "Falsch",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
@@ -167,11 +241,11 @@
         "isCorrect": true
       },
       {
-        "text": "Europäisch",
+        "text": "Falsch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Fair\" nutzt Ulrike Schielke-Ziesing 7.3× häufiger als der AfD-Durchschnitt.",
+    "explanationParty": "\"Fair\" nutzt Ulrike Schielke-Ziesing 7.5× häufiger als der AfD-Durchschnitt.",
     "explanationBundestag": "5.6× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
@@ -248,11 +322,11 @@
           "count": 2
         },
         {
-          "word": "rückführung",
+          "word": "migration",
           "count": 1
         },
         {
-          "word": "migration",
+          "word": "staatsangehörigkeit",
           "count": 1
         },
         {
@@ -260,17 +334,17 @@
           "count": 1
         },
         {
-          "word": "staatsangehörigkeit",
+          "word": "rückführung",
           "count": 1
         }
       ],
       "klima": [
         {
-          "word": "energie",
+          "word": "nachhaltig",
           "count": 1
         },
         {
-          "word": "nachhaltig",
+          "word": "energie",
           "count": 1
         }
       ],
@@ -284,15 +358,15 @@
           "count": 4
         },
         {
-          "word": "kapital",
-          "count": 2
-        },
-        {
-          "word": "betriebe",
-          "count": 2
-        },
-        {
           "word": "wirtschaftspolitik",
+          "count": 2
+        },
+        {
+          "word": "fachkräfte",
+          "count": 2
+        },
+        {
+          "word": "kredite",
           "count": 2
         }
       ],
@@ -314,7 +388,7 @@
           "count": 11
         },
         {
-          "word": "kinder",
+          "word": "bürgergeld",
           "count": 10
         }
       ],
@@ -342,11 +416,11 @@
           "count": 3
         },
         {
-          "word": "prävention",
+          "word": "vorsorge",
           "count": 2
         },
         {
-          "word": "vorsorge",
+          "word": "prävention",
           "count": 2
         }
       ],
@@ -372,11 +446,11 @@
           "count": 2
         },
         {
-          "word": "schulen",
+          "word": "bafög",
           "count": 1
         },
         {
-          "word": "bafög",
+          "word": "schulen",
           "count": 1
         },
         {
@@ -398,11 +472,11 @@
           "count": 8
         },
         {
-          "word": "steuern",
+          "word": "bundeshaushalt",
           "count": 7
         },
         {
-          "word": "bundeshaushalt",
+          "word": "steuern",
           "count": 7
         }
       ],
@@ -416,15 +490,15 @@
           "count": 7
         },
         {
-          "word": "arbeitslosigkeit",
-          "count": 2
-        },
-        {
-          "word": "arbeitslose",
-          "count": 2
-        },
-        {
           "word": "sozialversicherung",
+          "count": 2
+        },
+        {
+          "word": "beschäftigung",
+          "count": 2
+        },
+        {
+          "word": "arbeitslosigkeit",
           "count": 2
         }
       ],

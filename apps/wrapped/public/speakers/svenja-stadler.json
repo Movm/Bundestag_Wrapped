@@ -11,23 +11,23 @@
   "minWords": 55,
   "maxWords": 768,
   "rankings": {
-    "speechRank": 285,
-    "wordsRank": 246,
-    "partySpeechRank": 58,
-    "partyWordsRank": 54,
+    "speechRank": 301,
+    "wordsRank": 262,
+    "partySpeechRank": 59,
+    "partyWordsRank": 57,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 54.4,
+    "totalSpeakers": 626,
+    "percentile": 51.9,
     "verbosityRank": 148,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 35,
-    "longestSpeechRank": 280
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 36,
+    "longestSpeechRank": 282
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 30,
-    "interrupterRank": 480,
-    "interruptedRank": 241
+    "interrupterRank": 478,
+    "interruptedRank": 249
   },
   "words": {
     "topWords": [
@@ -52,11 +52,11 @@
         "count": 18
       },
       {
-        "word": "ernährung",
+        "word": "jugendliche",
         "count": 18
       },
       {
-        "word": "jugendliche",
+        "word": "ernährung",
         "count": 18
       },
       {
@@ -72,32 +72,96 @@
       {
         "word": "kostenfreies",
         "count": 6,
-        "ratioParty": 739.1,
-        "ratioBundestag": 370.8
+        "ratioParty": 772.2,
+        "ratioBundestag": 385.0
       },
       {
         "word": "verpflegung",
         "count": 8,
-        "ratioParty": 123.2,
-        "ratioBundestag": 247.2
+        "ratioParty": 128.7,
+        "ratioBundestag": 256.7
       },
       {
         "word": "ernährung",
         "count": 18,
-        "ratioParty": 73.9,
-        "ratioBundestag": 66.2
+        "ratioParty": 74.7,
+        "ratioBundestag": 67.9
+      },
+      {
+        "word": "tribünen",
+        "count": 7,
+        "ratioParty": 69.3,
+        "ratioBundestag": 77.4
       },
       {
         "word": "gesunde",
         "count": 10,
-        "ratioParty": 72.5,
-        "ratioBundestag": 63.7
+        "ratioParty": 67.7,
+        "ratioBundestag": 62.3
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "ernährung",
+        "count": 18,
+        "score": 77.88,
+        "ratio": 74.7
       },
       {
-        "word": "gesunden",
-        "count": 5,
-        "ratioParty": 68.4,
-        "ratioBundestag": 43.5
+        "word": "gesunde",
+        "count": 10,
+        "score": 42.3,
+        "ratio": 67.7
+      },
+      {
+        "word": "kostenfreies",
+        "count": 6,
+        "score": 39.9,
+        "ratio": 772.2
+      },
+      {
+        "word": "verpflegung",
+        "count": 8,
+        "score": 38.92,
+        "ratio": 128.7
+      },
+      {
+        "word": "tribünen",
+        "count": 7,
+        "score": 29.77,
+        "ratio": 69.3
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "ernährung",
+        "count": 18,
+        "score": 76.19,
+        "ratio": 67.9
+      },
+      {
+        "word": "verpflegung",
+        "count": 8,
+        "score": 44.41,
+        "ratio": 256.7
+      },
+      {
+        "word": "gesunde",
+        "count": 10,
+        "score": 41.48,
+        "ratio": 62.3
+      },
+      {
+        "word": "kostenfreies",
+        "count": 6,
+        "score": 35.74,
+        "ratio": 385.0
+      },
+      {
+        "word": "tribünen",
+        "count": 7,
+        "score": 30.53,
+        "ratio": 77.4
       }
     ],
     "signatureAdjectives": [
@@ -110,15 +174,43 @@
       {
         "word": "stark",
         "count": 4,
-        "ratioParty": 2.9,
+        "ratioParty": 2.8,
         "ratioBundestag": 3.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 6.19,
+        "ratio": 3.7
+      },
+      {
+        "word": "stark",
+        "count": 4,
+        "score": 5.34,
+        "ratio": 2.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 7.1,
+        "ratio": 4.9
+      },
+      {
+        "word": "stark",
+        "count": 4,
+        "score": 5.93,
+        "ratio": 3.4
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 509,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
     "vsParty": 0.82,
     "vsParliament": 0.87
   },
@@ -138,11 +230,11 @@
     "question": "Welches Wort nutzt Svenja Stadler häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Abstimmung",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Opposition",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
@@ -150,31 +242,31 @@
         "isCorrect": true
       },
       {
-        "text": "Debatte",
+        "text": "Haushalt",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kostenfreies\" nutzt Svenja Stadler 739.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "370.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Kostenfreies\" nutzt Svenja Stadler 772.2× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "385.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Svenja Stadler häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Erfolgreich",
+        "text": "Klar",
         "isCorrect": false
       },
       {
-        "text": "Sicher",
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
         "text": "Entscheidend",
         "isCorrect": true
-      },
-      {
-        "text": "Klar",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Entscheidend\" nutzt Svenja Stadler 3.7× häufiger als der SPD-Durchschnitt.",
@@ -284,19 +376,19 @@
           "count": 3
         },
         {
-          "word": "unternehmen",
-          "count": 2
-        },
-        {
           "word": "wirtschaft",
           "count": 2
         },
         {
-          "word": "fachkräfte",
-          "count": 1
+          "word": "unternehmen",
+          "count": 2
         },
         {
           "word": "fachkräftemangel",
+          "count": 1
+        },
+        {
+          "word": "konzerne",
           "count": 1
         }
       ],
@@ -338,11 +430,11 @@
           "count": 5
         },
         {
-          "word": "krankenhäuser",
+          "word": "gesundheitssystem",
           "count": 3
         },
         {
-          "word": "gesundheitssystem",
+          "word": "krankenhäuser",
           "count": 3
         },
         {
@@ -352,15 +444,15 @@
       ],
       "europa": [
         {
+          "word": "frieden",
+          "count": 1
+        },
+        {
           "word": "russland",
           "count": 1
         },
         {
           "word": "putin",
-          "count": 1
-        },
-        {
-          "word": "frieden",
           "count": 1
         }
       ],
@@ -414,7 +506,7 @@
           "count": 2
         },
         {
-          "word": "investitionen",
+          "word": "kosten",
           "count": 2
         }
       ],
@@ -430,11 +522,11 @@
       ],
       "arbeit": [
         {
-          "word": "arbeitsplätze",
+          "word": "einkommen",
           "count": 2
         },
         {
-          "word": "einkommen",
+          "word": "arbeitsplätze",
           "count": 2
         },
         {

@@ -11,23 +11,23 @@
   "minWords": 8,
   "maxWords": 518,
   "rankings": {
-    "speechRank": 563,
-    "wordsRank": 148,
+    "speechRank": 560,
+    "wordsRank": 164,
     "partySpeechRank": 181,
-    "partyWordsRank": 40,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 9.9,
-    "verbosityRank": 576,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 187,
-    "longestSpeechRank": 563
+    "partyWordsRank": 47,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 10.5,
+    "verbosityRank": 579,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 188,
+    "longestSpeechRank": 565
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 11,
-    "interrupterRank": 469,
-    "interruptedRank": 445
+    "interrupterRank": 476,
+    "interruptedRank": 453
   },
   "words": {
     "topWords": [
@@ -68,45 +68,109 @@
       {
         "word": "meiser",
         "count": 7,
-        "ratioParty": 359.9,
-        "ratioBundestag": 302.7
+        "ratioParty": 373.7,
+        "ratioBundestag": 288.1
       },
       {
         "word": "exakt",
         "count": 6,
-        "ratioParty": 61.7,
-        "ratioBundestag": 37.1
+        "ratioParty": 60.1,
+        "ratioBundestag": 36.1
       },
       {
         "word": "jugendhilfe",
         "count": 5,
-        "ratioParty": 48.2,
-        "ratioBundestag": 28.3
+        "ratioParty": 50.0,
+        "ratioBundestag": 28.4
       },
       {
         "word": "reihe",
         "count": 8,
-        "ratioParty": 19.9,
-        "ratioBundestag": 24.1
+        "ratioParty": 20.0,
+        "ratioBundestag": 23.9
       },
       {
         "word": "grunde",
         "count": 6,
-        "ratioParty": 18.1,
-        "ratioBundestag": 24.8
+        "ratioParty": 17.8,
+        "ratioBundestag": 24.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "meiser",
+        "count": 7,
+        "score": 41.48,
+        "ratio": 373.7
+      },
+      {
+        "word": "exakt",
+        "count": 6,
+        "score": 24.68,
+        "ratio": 60.1
+      },
+      {
+        "word": "reihe",
+        "count": 8,
+        "score": 24.36,
+        "ratio": 20.0
+      },
+      {
+        "word": "jugendhilfe",
+        "count": 5,
+        "score": 19.66,
+        "ratio": 50.0
+      },
+      {
+        "word": "grunde",
+        "count": 6,
+        "score": 17.6,
+        "ratio": 17.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "meiser",
+        "count": 7,
+        "score": 39.67,
+        "ratio": 288.1
+      },
+      {
+        "word": "reihe",
+        "count": 8,
+        "score": 25.72,
+        "ratio": 23.9
+      },
+      {
+        "word": "exakt",
+        "count": 6,
+        "score": 21.68,
+        "ratio": 36.1
+      },
+      {
+        "word": "grunde",
+        "count": 6,
+        "score": 19.34,
+        "ratio": 24.1
+      },
+      {
+        "word": "jugendhilfe",
+        "count": 5,
+        "score": 16.9,
+        "ratio": 28.4
       }
     ],
     "signatureAdjectives": [
       {
         "word": "maßgeblich",
         "count": 3,
-        "ratioParty": 10.3,
-        "ratioBundestag": 10.7
+        "ratioParty": 10.2,
+        "ratioBundestag": 10.6
       },
       {
         "word": "rechts",
         "count": 4,
-        "ratioParty": 4.1,
+        "ratioParty": 4.0,
         "ratioBundestag": 3.8
       },
       {
@@ -121,12 +185,64 @@
         "ratioParty": 2.8,
         "ratioBundestag": 3.8
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "maßgeblich",
+        "count": 3,
+        "score": 7.25,
+        "ratio": 10.2
+      },
+      {
+        "word": "entscheidend",
+        "count": 5,
+        "score": 7.18,
+        "ratio": 3.2
+      },
+      {
+        "word": "rechts",
+        "count": 4,
+        "score": 6.44,
+        "ratio": 4.0
+      },
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 4.01,
+        "ratio": 2.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "entscheidend",
+        "count": 5,
+        "score": 8.7,
+        "ratio": 4.7
+      },
+      {
+        "word": "maßgeblich",
+        "count": 3,
+        "score": 7.35,
+        "ratio": 10.6
+      },
+      {
+        "word": "rechts",
+        "count": 4,
+        "score": 6.27,
+        "ratio": 3.8
+      },
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 4.71,
+        "ratio": 3.8
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 99,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.15,
     "vsParliament": 0.17
   },
@@ -150,43 +266,43 @@
         "isCorrect": true
       },
       {
-        "text": "Verantwortung",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Sicherheit",
+        "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Antrag",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Meiser\" nutzt Thorsten Frei 359.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "302.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Meiser\" nutzt Thorsten Frei 373.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "288.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Thorsten Frei häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
         "text": "Maßgeblich",
         "isCorrect": true
+      },
+      {
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Maßgeblich\" nutzt Thorsten Frei 10.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "10.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Maßgeblich\" nutzt Thorsten Frei 10.2× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "10.6× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -314,15 +430,15 @@
           "count": 10
         },
         {
-          "word": "wirtschaft",
-          "count": 3
-        },
-        {
           "word": "volkswirtschaft",
           "count": 3
         },
         {
           "word": "wirtschaftspolitik",
+          "count": 3
+        },
+        {
+          "word": "wirtschaft",
           "count": 3
         }
       ],
@@ -336,15 +452,15 @@
           "count": 5
         },
         {
-          "word": "rentner",
-          "count": 1
-        },
-        {
-          "word": "altersvorsorge",
-          "count": 1
-        },
-        {
           "word": "familie",
+          "count": 1
+        },
+        {
+          "word": "renten",
+          "count": 1
+        },
+        {
+          "word": "gerechtigkeit",
           "count": 1
         }
       ],
@@ -358,15 +474,15 @@
           "count": 3
         },
         {
-          "word": "spionage",
-          "count": 1
-        },
-        {
-          "word": "gewalt",
+          "word": "verteidigungsfähigkeit",
           "count": 1
         },
         {
           "word": "armee",
+          "count": 1
+        },
+        {
+          "word": "spionage",
           "count": 1
         }
       ],
@@ -390,11 +506,11 @@
           "count": 2
         },
         {
-          "word": "kooperation",
+          "word": "krieg",
           "count": 1
         },
         {
-          "word": "frieden",
+          "word": "botschafter",
           "count": 1
         }
       ],
@@ -404,25 +520,25 @@
           "count": 2
         },
         {
-          "word": "desinformation",
+          "word": "technologie",
           "count": 1
         },
         {
-          "word": "technologie",
+          "word": "desinformation",
           "count": 1
         }
       ],
       "bildung": [
         {
-          "word": "professor",
-          "count": 2
-        },
-        {
           "word": "schulen",
           "count": 2
         },
         {
-          "word": "bildung",
+          "word": "professor",
+          "count": 2
+        },
+        {
+          "word": "lehrer",
           "count": 1
         },
         {
@@ -430,11 +546,15 @@
           "count": 1
         },
         {
-          "word": "lehrer",
+          "word": "bildung",
           "count": 1
         }
       ],
       "finanzen": [
+        {
+          "word": "steuerpolitik",
+          "count": 2
+        },
         {
           "word": "körperschaftsteuer",
           "count": 2
@@ -444,15 +564,11 @@
           "count": 2
         },
         {
-          "word": "steuerpolitik",
-          "count": 2
-        },
-        {
           "word": "entlastung",
           "count": 2
         },
         {
-          "word": "defizit",
+          "word": "steuern",
           "count": 1
         }
       ],
@@ -466,11 +582,11 @@
           "count": 2
         },
         {
-          "word": "rechtsstaatlichkeit",
+          "word": "vorschrift",
           "count": 1
         },
         {
-          "word": "vorschrift",
+          "word": "rechtsstaatlichkeit",
           "count": 1
         }
       ],

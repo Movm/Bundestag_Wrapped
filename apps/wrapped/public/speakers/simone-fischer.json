@@ -11,23 +11,23 @@
   "minWords": 16,
   "maxWords": 558,
   "rankings": {
-    "speechRank": 247,
-    "wordsRank": 356,
-    "partySpeechRank": 46,
-    "partyWordsRank": 59,
+    "speechRank": 277,
+    "wordsRank": 370,
+    "partySpeechRank": 52,
+    "partyWordsRank": 63,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 60.5,
-    "verbosityRank": 454,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 55,
-    "longestSpeechRank": 541
+    "totalSpeakers": 626,
+    "percentile": 55.8,
+    "verbosityRank": 455,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 54,
+    "longestSpeechRank": 542
   },
   "drama": {
     "interruptionsGiven": 10,
     "interruptionsReceived": 12,
-    "interrupterRank": 271,
-    "interruptedRank": 428
+    "interrupterRank": 278,
+    "interruptedRank": 442
   },
   "words": {
     "topWords": [
@@ -48,11 +48,11 @@
         "count": 22
       },
       {
-        "word": "bundesregierung",
+        "word": "verantwortung",
         "count": 21
       },
       {
-        "word": "verantwortung",
+        "word": "bundesregierung",
         "count": 21
       },
       {
@@ -60,11 +60,11 @@
         "count": 16
       },
       {
-        "word": "darf",
+        "word": "angehörige",
         "count": 13
       },
       {
-        "word": "angehörige",
+        "word": "darf",
         "count": 13
       },
       {
@@ -76,52 +76,116 @@
       {
         "word": "pflegende",
         "count": 11,
-        "ratioParty": 314.8,
-        "ratioBundestag": 337.4
+        "ratioParty": 325.9,
+        "ratioBundestag": 350.3
       },
       {
         "word": "pflegebedürftige",
         "count": 5,
-        "ratioParty": 286.2,
-        "ratioBundestag": 99.7
-      },
-      {
-        "word": "pflege",
-        "count": 55,
-        "ratioParty": 185.2,
-        "ratioBundestag": 82.6
+        "ratioParty": 296.2,
+        "ratioBundestag": 103.5
       },
       {
         "word": "pflegeversicherung",
         "count": 23,
-        "ratioParty": 175.5,
-        "ratioBundestag": 144.4
+        "ratioParty": 181.7,
+        "ratioBundestag": 148.8
+      },
+      {
+        "word": "pflege",
+        "count": 55,
+        "ratioParty": 181.0,
+        "ratioBundestag": 83.7
       },
       {
         "word": "pflegekräfte",
         "count": 6,
-        "ratioParty": 137.4,
-        "ratioBundestag": 38.3
+        "ratioParty": 142.2,
+        "ratioBundestag": 38.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "pflege",
+        "count": 55,
+        "score": 286.22,
+        "ratio": 181.0
+      },
+      {
+        "word": "pflegeversicherung",
+        "count": 23,
+        "score": 119.78,
+        "ratio": 181.7
+      },
+      {
+        "word": "pflegende",
+        "count": 11,
+        "score": 63.69,
+        "ratio": 325.9
+      },
+      {
+        "word": "pflegekräfte",
+        "count": 6,
+        "score": 29.79,
+        "ratio": 142.2
+      },
+      {
+        "word": "pflegebedürftige",
+        "count": 5,
+        "score": 28.47,
+        "ratio": 296.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "pflege",
+        "count": 55,
+        "score": 244.15,
+        "ratio": 83.7
+      },
+      {
+        "word": "pflegeversicherung",
+        "count": 23,
+        "score": 115.21,
+        "ratio": 148.8
+      },
+      {
+        "word": "pflegende",
+        "count": 11,
+        "score": 64.48,
+        "ratio": 350.3
+      },
+      {
+        "word": "pflegebedürftige",
+        "count": 5,
+        "score": 23.25,
+        "ratio": 103.5
+      },
+      {
+        "word": "pflegekräfte",
+        "count": 6,
+        "score": 22.1,
+        "ratio": 38.8
       }
     ],
     "signatureAdjectives": [
       {
         "word": "solide",
         "count": 3,
-        "ratioParty": 26.4,
-        "ratioBundestag": 17.2
+        "ratioParty": 25.4,
+        "ratioBundestag": 17.1
       },
       {
         "word": "stabil",
         "count": 3,
-        "ratioParty": 15.6,
-        "ratioBundestag": 16.4
+        "ratioParty": 16.2,
+        "ratioBundestag": 16.3
       },
       {
         "word": "gerecht",
         "count": 4,
-        "ratioParty": 4.1,
-        "ratioBundestag": 4.8
+        "ratioParty": 4.2,
+        "ratioBundestag": 4.9
       },
       {
         "word": "stark",
@@ -129,12 +193,64 @@
         "ratioParty": 3.9,
         "ratioBundestag": 3.3
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "solide",
+        "count": 3,
+        "score": 9.82,
+        "ratio": 25.4
+      },
+      {
+        "word": "stabil",
+        "count": 3,
+        "score": 8.53,
+        "ratio": 16.2
+      },
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 6.59,
+        "ratio": 4.2
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 4.77,
+        "ratio": 3.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "solide",
+        "count": 3,
+        "score": 8.69,
+        "ratio": 17.1
+      },
+      {
+        "word": "stabil",
+        "count": 3,
+        "score": 8.55,
+        "ratio": 16.3
+      },
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 7.1,
+        "ratio": 4.9
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 4.38,
+        "ratio": 3.3
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 356,
     "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 585,
     "vsParty": 0.66,
     "vsParliament": 0.61
   },
@@ -159,47 +275,47 @@
     "question": "Welches Wort nutzt Simone Fischer häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
         "text": "Pflegende",
         "isCorrect": true
-      },
-      {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Pflegende\" nutzt Simone Fischer 314.8× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "337.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Pflegende\" nutzt Simone Fischer 325.9× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "350.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Simone Fischer häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
         "text": "Solide",
         "isCorrect": true
       },
       {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Solide\" nutzt Simone Fischer 26.4× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "17.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Solide\" nutzt Simone Fischer 25.4× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "17.1× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -301,11 +417,11 @@
       ],
       "wirtschaft": [
         {
-          "word": "kredite",
+          "word": "kredit",
           "count": 1
         },
         {
-          "word": "kredit",
+          "word": "kredite",
           "count": 1
         }
       ],
@@ -327,7 +443,7 @@
           "count": 2
         },
         {
-          "word": "armut",
+          "word": "alleinerziehende",
           "count": 1
         }
       ],
@@ -349,7 +465,7 @@
           "count": 3
         },
         {
-          "word": "krankenpflege",
+          "word": "gesundheitssystem",
           "count": 1
         }
       ],
@@ -395,11 +511,11 @@
           "count": 5
         },
         {
-          "word": "bundeshaushalt",
+          "word": "defizit",
           "count": 3
         },
         {
-          "word": "defizit",
+          "word": "bundeshaushalt",
           "count": 3
         }
       ],
@@ -411,7 +527,7 @@
       ],
       "arbeit": [
         {
-          "word": "arbeitsplätze",
+          "word": "beitragssatz",
           "count": 1
         },
         {
@@ -419,7 +535,7 @@
           "count": 1
         },
         {
-          "word": "beitragssatz",
+          "word": "arbeitsplätze",
           "count": 1
         }
       ]

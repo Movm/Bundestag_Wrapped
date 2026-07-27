@@ -11,23 +11,23 @@
   "minWords": 76,
   "maxWords": 827,
   "rankings": {
-    "speechRank": 165,
-    "wordsRank": 371,
-    "partySpeechRank": 34,
-    "partyWordsRank": 80,
+    "speechRank": 180,
+    "wordsRank": 383,
+    "partySpeechRank": 38,
+    "partyWordsRank": 84,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 73.6,
-    "verbosityRank": 503,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 129,
-    "longestSpeechRank": 210
+    "totalSpeakers": 626,
+    "percentile": 71.2,
+    "verbosityRank": 506,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 130,
+    "longestSpeechRank": 213
   },
   "drama": {
     "interruptionsGiven": 5,
     "interruptionsReceived": 20,
-    "interrupterRank": 345,
-    "interruptedRank": 325
+    "interrupterRank": 361,
+    "interruptedRank": 341
   },
   "words": {
     "topWords": [
@@ -64,53 +64,145 @@
       {
         "word": "bundeswasserstraßen",
         "count": 13,
-        "ratioParty": 610.1,
-        "ratioBundestag": 914.0
+        "ratioParty": 632.6,
+        "ratioBundestag": 949.1
       },
       {
         "word": "wasserstraßen",
         "count": 12,
-        "ratioParty": 563.2,
-        "ratioBundestag": 153.4
+        "ratioParty": 583.9,
+        "ratioBundestag": 159.3
       },
       {
         "word": "binnenschifffahrt",
         "count": 5,
-        "ratioParty": 469.3,
-        "ratioBundestag": 162.3
+        "ratioParty": 486.6,
+        "ratioBundestag": 168.5
       },
       {
         "word": "schleusen",
         "count": 8,
-        "ratioParty": 250.3,
-        "ratioBundestag": 270.0
+        "ratioParty": 259.5,
+        "ratioBundestag": 280.3
       },
       {
         "word": "wohle",
         "count": 9,
-        "ratioParty": 76.8,
-        "ratioBundestag": 124.5
+        "ratioParty": 79.6,
+        "ratioBundestag": 127.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "bundeswasserstraßen",
+        "count": 13,
+        "score": 83.87,
+        "ratio": 632.6
+      },
+      {
+        "word": "wasserstraßen",
+        "count": 12,
+        "score": 76.46,
+        "ratio": 583.9
+      },
+      {
+        "word": "schleusen",
+        "count": 8,
+        "score": 44.5,
+        "ratio": 259.5
+      },
+      {
+        "word": "wohle",
+        "count": 9,
+        "score": 39.51,
+        "ratio": 79.6
+      },
+      {
+        "word": "binnenschifffahrt",
+        "count": 5,
+        "score": 30.95,
+        "ratio": 486.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bundeswasserstraßen",
+        "count": 13,
+        "score": 89.14,
+        "ratio": 949.1
+      },
+      {
+        "word": "wasserstraßen",
+        "count": 12,
+        "score": 60.92,
+        "ratio": 159.3
+      },
+      {
+        "word": "schleusen",
+        "count": 8,
+        "score": 45.12,
+        "ratio": 280.3
+      },
+      {
+        "word": "wohle",
+        "count": 9,
+        "score": 43.68,
+        "ratio": 127.2
+      },
+      {
+        "word": "binnenschifffahrt",
+        "count": 5,
+        "score": 25.66,
+        "ratio": 168.5
       }
     ],
     "signatureAdjectives": [
       {
         "word": "beispielhaft",
         "count": 3,
-        "ratioParty": 29.6,
-        "ratioBundestag": 40.2
+        "ratioParty": 30.7,
+        "ratioBundestag": 40.4
       },
       {
         "word": "wettbewerbsfähig",
         "count": 3,
         "ratioParty": 18.8,
-        "ratioBundestag": 18.3
+        "ratioBundestag": 18.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "beispielhaft",
+        "count": 3,
+        "score": 10.37,
+        "ratio": 30.7
+      },
+      {
+        "word": "wettbewerbsfähig",
+        "count": 3,
+        "score": 8.96,
+        "ratio": 18.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "beispielhaft",
+        "count": 3,
+        "score": 11.17,
+        "ratio": 40.4
+      },
+      {
+        "word": "wettbewerbsfähig",
+        "count": 3,
+        "score": 8.91,
+        "ratio": 18.5
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 303,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.54,
     "vsParliament": 0.52
   },
@@ -130,24 +222,24 @@
     "question": "Welches Wort nutzt René Bochmann häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
         "text": "Bundeswasserstraßen",
         "isCorrect": true
       },
       {
-        "text": "Familie",
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Kinder",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bundeswasserstraßen\" nutzt René Bochmann 610.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "914.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bundeswasserstraßen\" nutzt René Bochmann 632.6× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "949.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt René Bochmann häufiger als der Rest der AfD-Fraktion?",
@@ -157,20 +249,20 @@
         "isCorrect": true
       },
       {
-        "text": "Richtig",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Gut",
+        "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Problematisch",
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Beispielhaft\" nutzt René Bochmann 29.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "40.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Beispielhaft\" nutzt René Bochmann 30.7× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "40.4× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -256,7 +348,7 @@
           "count": 1
         },
         {
-          "word": "emissionen",
+          "word": "nachhaltigkeit",
           "count": 1
         },
         {
@@ -338,15 +430,15 @@
           "count": 2
         },
         {
+          "word": "bündnis",
+          "count": 1
+        },
+        {
           "word": "schengen",
           "count": 1
         },
         {
           "word": "vertrag",
-          "count": 1
-        },
-        {
-          "word": "bündnis",
           "count": 1
         }
       ],

@@ -11,15 +11,15 @@
   "minWords": 221,
   "maxWords": 927,
   "rankings": {
-    "speechRank": 518,
-    "wordsRank": 520,
+    "speechRank": 521,
+    "wordsRank": 528,
     "partySpeechRank": 57,
     "partyWordsRank": 56,
     "partySize": 63,
-    "totalSpeakers": 625,
-    "percentile": 17.1,
-    "verbosityRank": 82,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 16.8,
+    "verbosityRank": 84,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 8,
     "longestSpeechRank": 121
   },
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 2,
     "interrupterRank": null,
-    "interruptedRank": 581
+    "interruptedRank": 585
   },
   "words": {
     "topWords": [
@@ -76,40 +76,106 @@
       {
         "word": "steuertricks",
         "count": 6,
-        "ratioParty": 328.7,
-        "ratioBundestag": 1207.6
+        "ratioParty": 340.9,
+        "ratioBundestag": 1253.8
       },
       {
         "word": "oktober",
         "count": 13,
-        "ratioParty": 142.4,
-        "ratioBundestag": 80.8
+        "ratioParty": 147.7,
+        "ratioBundestag": 82.0
       },
       {
         "word": "juden",
         "count": 6,
-        "ratioParty": 75.8,
-        "ratioBundestag": 79.2
+        "ratioParty": 78.7,
+        "ratioBundestag": 82.2
       },
       {
         "word": "jüdinnen",
         "count": 5,
-        "ratioParty": 74.7,
-        "ratioBundestag": 113.4
+        "ratioParty": 77.5,
+        "ratioBundestag": 117.7
       },
       {
         "word": "israel",
         "count": 16,
-        "ratioParty": 55.9,
-        "ratioBundestag": 46.3
+        "ratioParty": 58.0,
+        "ratioBundestag": 47.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "israel",
+        "count": 16,
+        "score": 65.24,
+        "ratio": 58.0
+      },
+      {
+        "word": "oktober",
+        "count": 13,
+        "score": 65.03,
+        "ratio": 147.7
+      },
+      {
+        "word": "steuertricks",
+        "count": 6,
+        "score": 35.01,
+        "ratio": 340.9
+      },
+      {
+        "word": "juden",
+        "count": 6,
+        "score": 26.27,
+        "ratio": 78.7
+      },
+      {
+        "word": "jüdinnen",
+        "count": 5,
+        "score": 21.82,
+        "ratio": 77.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "israel",
+        "count": 16,
+        "score": 62.24,
+        "ratio": 47.9
+      },
+      {
+        "word": "oktober",
+        "count": 13,
+        "score": 57.44,
+        "ratio": 82.0
+      },
+      {
+        "word": "steuertricks",
+        "count": 6,
+        "score": 42.81,
+        "ratio": 1253.8
+      },
+      {
+        "word": "juden",
+        "count": 6,
+        "score": 26.53,
+        "ratio": 82.2
+      },
+      {
+        "word": "jüdinnen",
+        "count": 5,
+        "score": 23.88,
+        "ratio": 117.7
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 559,
-    "partyAvgWords": 500,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 499,
+    "parliamentAvgWords": 585,
     "vsParty": 1.12,
     "vsParliament": 0.96
   },
@@ -133,20 +199,20 @@
         "isCorrect": true
       },
       {
-        "text": "Familie",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Gesetz",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Fraktion",
+        "text": "Koalition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Steuertricks\" nutzt Jan van Aken 328.7× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "1207.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Steuertricks\" nutzt Jan van Aken 340.9× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "1253.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

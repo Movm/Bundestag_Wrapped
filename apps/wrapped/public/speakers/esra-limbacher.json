@@ -11,23 +11,23 @@
   "minWords": 116,
   "maxWords": 811,
   "rankings": {
-    "speechRank": 84,
-    "wordsRank": 164,
-    "partySpeechRank": 23,
-    "partyWordsRank": 41,
+    "speechRank": 99,
+    "wordsRank": 175,
+    "partySpeechRank": 26,
+    "partyWordsRank": 43,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 86.6,
-    "verbosityRank": 264,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 84.2,
+    "verbosityRank": 265,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 63,
-    "longestSpeechRank": 236
+    "longestSpeechRank": 238
   },
   "drama": {
     "interruptionsGiven": 73,
     "interruptionsReceived": 110,
-    "interrupterRank": 63,
-    "interruptedRank": 23
+    "interrupterRank": 68,
+    "interruptedRank": 26
   },
   "words": {
     "topWords": [
@@ -60,66 +60,182 @@
       {
         "word": "schnitzel",
         "count": 12,
-        "ratioParty": 291.5,
-        "ratioBundestag": 254.7
+        "ratioParty": 304.5,
+        "ratioBundestag": 264.5
       },
       {
         "word": "saarland",
         "count": 5,
-        "ratioParty": 121.4,
-        "ratioBundestag": 67.8
+        "ratioParty": 126.9,
+        "ratioBundestag": 66.7
       },
       {
         "word": "stahlindustrie",
         "count": 11,
-        "ratioParty": 62.9,
-        "ratioBundestag": 72.6
+        "ratioParty": 62.0,
+        "ratioBundestag": 73.4
       },
       {
         "word": "zukunftsfest",
         "count": 5,
-        "ratioParty": 25.6,
-        "ratioBundestag": 37.0
+        "ratioParty": 23.1,
+        "ratioBundestag": 36.2
       },
       {
         "word": "lebensmittel",
         "count": 7,
-        "ratioParty": 19.4,
-        "ratioBundestag": 21.2
+        "ratioParty": 19.7,
+        "ratioBundestag": 21.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "schnitzel",
+        "count": 12,
+        "score": 68.66,
+        "ratio": 304.5
+      },
+      {
+        "word": "stahlindustrie",
+        "count": 11,
+        "score": 45.57,
+        "ratio": 62.0
+      },
+      {
+        "word": "saarland",
+        "count": 5,
+        "score": 24.26,
+        "ratio": 126.9
+      },
+      {
+        "word": "lebensmittel",
+        "count": 7,
+        "score": 21.21,
+        "ratio": 19.7
+      },
+      {
+        "word": "zukunftsfest",
+        "count": 5,
+        "score": 15.91,
+        "ratio": 23.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "schnitzel",
+        "count": 12,
+        "score": 66.98,
+        "ratio": 264.5
+      },
+      {
+        "word": "stahlindustrie",
+        "count": 11,
+        "score": 47.4,
+        "ratio": 73.4
+      },
+      {
+        "word": "lebensmittel",
+        "count": 7,
+        "score": 21.92,
+        "ratio": 21.9
+      },
+      {
+        "word": "saarland",
+        "count": 5,
+        "score": 21.08,
+        "ratio": 66.7
+      },
+      {
+        "word": "zukunftsfest",
+        "count": 5,
+        "score": 18.08,
+        "ratio": 36.2
       }
     ],
     "signatureAdjectives": [
       {
         "word": "schädlich",
         "count": 4,
-        "ratioParty": 129.5,
-        "ratioBundestag": 52.8
+        "ratioParty": 135.3,
+        "ratioBundestag": 52.0
       },
       {
         "word": "falsch",
         "count": 8,
-        "ratioParty": 6.9,
-        "ratioBundestag": 5.7
+        "ratioParty": 6.7,
+        "ratioBundestag": 5.6
       },
       {
         "word": "sozial",
         "count": 4,
-        "ratioParty": 4.1,
-        "ratioBundestag": 5.4
+        "ratioParty": 4.2,
+        "ratioBundestag": 5.5
       },
       {
         "word": "wirtschaftlich",
         "count": 3,
-        "ratioParty": 3.0,
+        "ratioParty": 3.1,
         "ratioBundestag": 3.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "schädlich",
+        "count": 4,
+        "score": 19.66,
+        "ratio": 135.3
+      },
+      {
+        "word": "falsch",
+        "count": 8,
+        "score": 16.33,
+        "ratio": 6.7
+      },
+      {
+        "word": "sozial",
+        "count": 4,
+        "score": 6.59,
+        "ratio": 4.2
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 4.23,
+        "ratio": 3.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "schädlich",
+        "count": 4,
+        "score": 15.88,
+        "ratio": 52.0
+      },
+      {
+        "word": "falsch",
+        "count": 8,
+        "score": 15.1,
+        "ratio": 5.6
+      },
+      {
+        "word": "sozial",
+        "count": 4,
+        "score": 7.49,
+        "ratio": 5.5
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 4.51,
+        "ratio": 3.5
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 443,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.72,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.71,
     "vsParliament": 0.76
   },
   "funFacts": [
@@ -143,47 +259,47 @@
     "question": "Welches Wort nutzt Esra Limbacher häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bundesregierung",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Familie",
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
         "isCorrect": false
       },
       {
         "text": "Schnitzel",
         "isCorrect": true
-      },
-      {
-        "text": "Freiheit",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schnitzel\" nutzt Esra Limbacher 291.5× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "254.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Schnitzel\" nutzt Esra Limbacher 304.5× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "264.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Esra Limbacher häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Gefährlich",
+        "text": "Alt",
         "isCorrect": false
+      },
+      {
+        "text": "Schädlich",
+        "isCorrect": true
       },
       {
         "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "Groß",
+        "text": "Gut",
         "isCorrect": false
-      },
-      {
-        "text": "Schädlich",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Schädlich\" nutzt Esra Limbacher 129.5× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "52.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Schädlich\" nutzt Esra Limbacher 135.3× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "52.0× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐴",
@@ -341,19 +457,19 @@
           "count": 5
         },
         {
-          "word": "kinder",
-          "count": 3
-        },
-        {
           "word": "familien",
           "count": 3
         },
         {
-          "word": "wohnung",
-          "count": 1
+          "word": "kinder",
+          "count": 3
         },
         {
           "word": "eltern",
+          "count": 1
+        },
+        {
+          "word": "mieten",
           "count": 1
         }
       ],
@@ -397,19 +513,19 @@
       ],
       "bildung": [
         {
-          "word": "schulabschluss",
-          "count": 1
-        },
-        {
-          "word": "ausbildung",
-          "count": 1
-        },
-        {
           "word": "wissenschaft",
           "count": 1
         },
         {
           "word": "studierende",
+          "count": 1
+        },
+        {
+          "word": "schulabschluss",
+          "count": 1
+        },
+        {
+          "word": "ausbildung",
           "count": 1
         }
       ],
@@ -431,21 +547,21 @@
           "count": 2
         },
         {
-          "word": "subvention",
+          "word": "steuer",
           "count": 1
         }
       ],
       "justiz": [
+        {
+          "word": "gesetzesänderung",
+          "count": 1
+        },
         {
           "word": "novelle",
           "count": 1
         },
         {
           "word": "gerichte",
-          "count": 1
-        },
-        {
-          "word": "gesetzesänderung",
           "count": 1
         }
       ],
@@ -461,15 +577,15 @@
       ],
       "mobilitaet": [
         {
-          "word": "straße",
-          "count": 1
-        },
-        {
           "word": "infrastruktur",
           "count": 1
         },
         {
           "word": "schienennetz",
+          "count": 1
+        },
+        {
+          "word": "straße",
           "count": 1
         }
       ]

@@ -11,17 +11,17 @@
   "minWords": 688,
   "maxWords": 688,
   "rankings": {
-    "speechRank": 612,
-    "wordsRank": 613,
-    "partySpeechRank": 203,
-    "partyWordsRank": 206,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 2.1,
+    "speechRank": 603,
+    "wordsRank": 612,
+    "partySpeechRank": 199,
+    "partyWordsRank": 205,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 3.7,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 387
+    "longestSpeechRank": 391
   },
   "drama": {
     "interruptionsGiven": 0,
@@ -76,8 +76,8 @@
       {
         "word": "pflege",
         "count": 6,
-        "ratioParty": 55.0,
-        "ratioBundestag": 61.8
+        "ratioParty": 55.8,
+        "ratioBundestag": 62.7
       },
       {
         "word": "menschen",
@@ -86,12 +86,42 @@
         "ratioBundestag": 3.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "pflege",
+        "count": 6,
+        "score": 24.24,
+        "ratio": 55.8
+      },
+      {
+        "word": "menschen",
+        "count": 7,
+        "score": 11.67,
+        "ratio": 4.3
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "pflege",
+        "count": 6,
+        "score": 24.93,
+        "ratio": 62.7
+      },
+      {
+        "word": "menschen",
+        "count": 7,
+        "score": 10.37,
+        "ratio": 3.4
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 688,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 1.07,
     "vsParliament": 1.18
   },
@@ -106,24 +136,24 @@
     "question": "Welches Wort nutzt Christoph Naser häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
-      },
-      {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
         "text": "Pflege",
         "isCorrect": true
+      },
+      {
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Rente",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Pflege\" nutzt Christoph Naser 55.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "61.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Pflege\" nutzt Christoph Naser 55.8× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "62.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

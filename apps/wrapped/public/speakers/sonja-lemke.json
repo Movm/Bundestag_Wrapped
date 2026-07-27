@@ -11,23 +11,23 @@
   "minWords": 95,
   "maxWords": 928,
   "rankings": {
-    "speechRank": 46,
-    "wordsRank": 58,
-    "partySpeechRank": 7,
-    "partyWordsRank": 4,
+    "speechRank": 50,
+    "wordsRank": 64,
+    "partySpeechRank": 8,
+    "partyWordsRank": 5,
     "partySize": 63,
-    "totalSpeakers": 625,
-    "percentile": 92.6,
-    "verbosityRank": 78,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 92.0,
+    "verbosityRank": 80,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 6,
-    "longestSpeechRank": 120
+    "longestSpeechRank": 119
   },
   "drama": {
     "interruptionsGiven": 75,
     "interruptionsReceived": 55,
-    "interrupterRank": 58,
-    "interruptedRank": 91
+    "interrupterRank": 62,
+    "interruptedRank": 95
   },
   "words": {
     "topWords": [
@@ -50,42 +50,102 @@
       {
         "word": "geld",
         "count": 28
-      },
-      {
-        "word": "wissenschaft",
-        "count": 25
       }
     ],
     "signatureWords": [
       {
         "word": "governance",
         "count": 9,
-        "ratioParty": 277.8,
-        "ratioBundestag": 77.4
+        "ratioParty": 288.4,
+        "ratioBundestag": 80.4
       },
       {
         "word": "rechenzentren",
         "count": 12,
-        "ratioParty": 123.5,
-        "ratioBundestag": 26.2
+        "ratioParty": 128.2,
+        "ratioBundestag": 26.6
       },
       {
         "word": "hightech",
         "count": 21,
-        "ratioParty": 81.0,
-        "ratioBundestag": 19.3
+        "ratioParty": 84.1,
+        "ratioBundestag": 20.0
       },
       {
         "word": "raumfahrt",
         "count": 7,
-        "ratioParty": 54.0,
-        "ratioBundestag": 9.0
+        "ratioParty": 56.1,
+        "ratioBundestag": 9.3
       },
       {
-        "word": "behörde",
+        "word": "vorurteile",
         "count": 5,
-        "ratioParty": 51.4,
-        "ratioBundestag": 12.1
+        "ratioParty": 53.4,
+        "ratioBundestag": 80.4
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "hightech",
+        "count": 21,
+        "score": 93.32,
+        "ratio": 84.1
+      },
+      {
+        "word": "rechenzentren",
+        "count": 12,
+        "score": 58.34,
+        "ratio": 128.2
+      },
+      {
+        "word": "governance",
+        "count": 9,
+        "score": 51.01,
+        "ratio": 288.4
+      },
+      {
+        "word": "raumfahrt",
+        "count": 7,
+        "score": 28.31,
+        "ratio": 56.1
+      },
+      {
+        "word": "vorurteile",
+        "count": 5,
+        "score": 19.98,
+        "ratio": 53.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "hightech",
+        "count": 21,
+        "score": 63.93,
+        "ratio": 20.0
+      },
+      {
+        "word": "rechenzentren",
+        "count": 12,
+        "score": 39.81,
+        "ratio": 26.6
+      },
+      {
+        "word": "governance",
+        "count": 9,
+        "score": 39.59,
+        "ratio": 80.4
+      },
+      {
+        "word": "vorurteile",
+        "count": 5,
+        "score": 22.0,
+        "ratio": 80.4
+      },
+      {
+        "word": "raumfahrt",
+        "count": 7,
+        "score": 16.33,
+        "ratio": 9.3
       }
     ],
     "signatureAdjectives": [
@@ -98,17 +158,45 @@
       {
         "word": "wirksam",
         "count": 3,
-        "ratioParty": 3.4,
+        "ratioParty": 3.6,
         "ratioBundestag": 3.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "fatal",
+        "count": 3,
+        "score": 5.17,
+        "ratio": 4.6
+      },
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 4.58,
+        "ratio": 3.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "fatal",
+        "count": 3,
+        "score": 7.38,
+        "ratio": 10.7
+      },
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 4.38,
+        "ratio": 3.3
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 564,
-    "partyAvgWords": 500,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 499,
+    "parliamentAvgWords": 585,
     "vsParty": 1.13,
-    "vsParliament": 0.97
+    "vsParliament": 0.96
   },
   "funFacts": [
     {
@@ -136,42 +224,42 @@
     "question": "Welches Wort nutzt Sonja Lemke häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
         "text": "Governance",
         "isCorrect": true
       },
       {
-        "text": "Wirtschaft",
+        "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
+        "text": "Politik",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Governance\" nutzt Sonja Lemke 277.8× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "77.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Governance\" nutzt Sonja Lemke 288.4× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "80.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Sonja Lemke häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
         "text": "Fatal",
         "isCorrect": true
       },
       {
-        "text": "Neu",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
@@ -272,11 +360,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "staatsangehörigkeit",
+          "word": "grenzkontrollen",
           "count": 1
         },
         {
-          "word": "grenzkontrollen",
+          "word": "staatsangehörigkeit",
           "count": 1
         }
       ],
@@ -284,10 +372,6 @@
         {
           "word": "umwelt",
           "count": 2
-        },
-        {
-          "word": "müll",
-          "count": 1
         },
         {
           "word": "nachhaltig",
@@ -299,6 +383,10 @@
         },
         {
           "word": "windrad",
+          "count": 1
+        },
+        {
+          "word": "müll",
           "count": 1
         }
       ],
@@ -320,7 +408,7 @@
           "count": 4
         },
         {
-          "word": "firmen",
+          "word": "wettbewerb",
           "count": 1
         }
       ],
@@ -342,7 +430,7 @@
           "count": 1
         },
         {
-          "word": "mieten",
+          "word": "umverteilung",
           "count": 1
         }
       ],
@@ -396,19 +484,19 @@
           "count": 3
         },
         {
+          "word": "russland",
+          "count": 1
+        },
+        {
+          "word": "brüssel",
+          "count": 1
+        },
+        {
           "word": "krieg",
           "count": 1
         },
         {
           "word": "frieden",
-          "count": 1
-        },
-        {
-          "word": "vertrag",
-          "count": 1
-        },
-        {
-          "word": "brüssel",
           "count": 1
         }
       ],
@@ -426,11 +514,11 @@
           "count": 6
         },
         {
-          "word": "software",
+          "word": "plattformen",
           "count": 6
         },
         {
-          "word": "plattformen",
+          "word": "software",
           "count": 6
         }
       ],
@@ -462,11 +550,11 @@
           "count": 21
         },
         {
-          "word": "sondervermögen",
+          "word": "kosten",
           "count": 6
         },
         {
-          "word": "kosten",
+          "word": "sondervermögen",
           "count": 6
         },
         {
@@ -510,15 +598,15 @@
           "count": 2
         },
         {
-          "word": "mitbestimmung",
-          "count": 1
-        },
-        {
           "word": "arbeitsplätze",
           "count": 1
         },
         {
           "word": "arbeitnehmer",
+          "count": 1
+        },
+        {
+          "word": "beschäftigte",
           "count": 1
         }
       ],
@@ -536,11 +624,11 @@
           "count": 2
         },
         {
-          "word": "fliegen",
+          "word": "bahn",
           "count": 2
         },
         {
-          "word": "bahn",
+          "word": "fliegen",
           "count": 2
         }
       ]

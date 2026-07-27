@@ -11,23 +11,23 @@
   "minWords": 360,
   "maxWords": 635,
   "rankings": {
-    "speechRank": 389,
-    "wordsRank": 391,
-    "partySpeechRank": 94,
-    "partyWordsRank": 86,
+    "speechRank": 401,
+    "wordsRank": 403,
+    "partySpeechRank": 95,
+    "partyWordsRank": 91,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 37.8,
-    "verbosityRank": 177,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 35.9,
+    "verbosityRank": 181,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 45,
-    "longestSpeechRank": 454
+    "longestSpeechRank": 455
   },
   "drama": {
     "interruptionsGiven": 7,
     "interruptionsReceived": 54,
-    "interrupterRank": 314,
-    "interruptedRank": 99
+    "interrupterRank": 315,
+    "interruptedRank": 106
   },
   "words": {
     "topWords": [
@@ -76,40 +76,106 @@
       {
         "word": "soldatenglück",
         "count": 6,
-        "ratioParty": 607.3,
-        "ratioBundestag": 2728.8
+        "ratioParty": 629.7,
+        "ratioBundestag": 2833.4
       },
       {
         "word": "kameraden",
         "count": 25,
-        "ratioParty": 421.8,
-        "ratioBundestag": 528.8
+        "ratioParty": 437.3,
+        "ratioBundestag": 549.1
       },
       {
         "word": "hurra",
         "count": 6,
-        "ratioParty": 404.9,
-        "ratioBundestag": 909.6
+        "ratioParty": 419.8,
+        "ratioBundestag": 944.5
       },
       {
         "word": "kosovo",
         "count": 16,
-        "ratioParty": 129.6,
-        "ratioBundestag": 91.0
+        "ratioParty": 134.3,
+        "ratioBundestag": 94.4
       },
       {
         "word": "operation",
         "count": 8,
-        "ratioParty": 124.6,
-        "ratioBundestag": 72.0
+        "ratioParty": 129.2,
+        "ratioBundestag": 74.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "kameraden",
+        "count": 25,
+        "score": 152.07,
+        "ratio": 437.3
+      },
+      {
+        "word": "kosovo",
+        "count": 16,
+        "score": 78.52,
+        "ratio": 134.3
+      },
+      {
+        "word": "operation",
+        "count": 8,
+        "score": 38.95,
+        "ratio": 129.2
+      },
+      {
+        "word": "soldatenglück",
+        "count": 6,
+        "score": 38.68,
+        "ratio": 629.7
+      },
+      {
+        "word": "hurra",
+        "count": 6,
+        "score": 36.25,
+        "ratio": 419.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "kameraden",
+        "count": 25,
+        "score": 157.75,
+        "ratio": 549.1
+      },
+      {
+        "word": "kosovo",
+        "count": 16,
+        "score": 72.93,
+        "ratio": 94.4
+      },
+      {
+        "word": "soldatenglück",
+        "count": 6,
+        "score": 47.7,
+        "ratio": 2833.4
+      },
+      {
+        "word": "hurra",
+        "count": 6,
+        "score": 41.11,
+        "ratio": 944.5
+      },
+      {
+        "word": "operation",
+        "count": 8,
+        "score": 34.62,
+        "ratio": 74.8
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 486,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.87,
     "vsParliament": 0.83
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Kurt Kleinschmidt häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
         "text": "Soldatenglück",
         "isCorrect": true
       },
       {
-        "text": "Familie",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Soldatenglück\" nutzt Kurt Kleinschmidt 607.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "2728.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Soldatenglück\" nutzt Kurt Kleinschmidt 629.7× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "2833.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -255,11 +321,11 @@
           "count": 6
         },
         {
-          "word": "verteidigungsfähigkeit",
+          "word": "militär",
           "count": 2
         },
         {
-          "word": "militär",
+          "word": "verteidigungsfähigkeit",
           "count": 2
         }
       ],
@@ -271,15 +337,15 @@
       ],
       "europa": [
         {
-          "word": "außenpolitik",
-          "count": 3
-        },
-        {
           "word": "botschafter",
           "count": 3
         },
         {
-          "word": "russland",
+          "word": "außenpolitik",
+          "count": 3
+        },
+        {
+          "word": "außenminister",
           "count": 2
         },
         {
@@ -287,7 +353,7 @@
           "count": 2
         },
         {
-          "word": "nato",
+          "word": "europa",
           "count": 2
         }
       ],

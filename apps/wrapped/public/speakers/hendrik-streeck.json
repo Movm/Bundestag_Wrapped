@@ -11,23 +11,23 @@
   "minWords": 92,
   "maxWords": 610,
   "rankings": {
-    "speechRank": 462,
-    "wordsRank": 513,
-    "partySpeechRank": 142,
-    "partyWordsRank": 170,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 26.1,
-    "verbosityRank": 440,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 152,
-    "longestSpeechRank": 485
+    "speechRank": 465,
+    "wordsRank": 519,
+    "partySpeechRank": 148,
+    "partyWordsRank": 173,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 25.7,
+    "verbosityRank": 445,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 155,
+    "longestSpeechRank": 490
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 17,
-    "interrupterRank": 476,
-    "interruptedRank": 360
+    "interrupterRank": 448,
+    "interruptedRank": 368
   },
   "words": {
     "topWords": [
@@ -48,10 +48,6 @@
         "count": 8
       },
       {
-        "word": "patientinnen",
-        "count": 7
-      },
-      {
         "word": "ministerin",
         "count": 7
       },
@@ -64,7 +60,11 @@
         "count": 7
       },
       {
-        "word": "eines",
+        "word": "patientinnen",
+        "count": 7
+      },
+      {
+        "word": "beiträge",
         "count": 6
       }
     ],
@@ -72,40 +72,106 @@
       {
         "word": "notaufnahme",
         "count": 6,
-        "ratioParty": 572.1,
-        "ratioBundestag": 462.9
+        "ratioParty": 593.8,
+        "ratioBundestag": 456.6
       },
       {
         "word": "lebendnierenspende",
         "count": 5,
-        "ratioParty": 476.8,
-        "ratioBundestag": 488.6
+        "ratioParty": 494.9,
+        "ratioBundestag": 507.3
       },
       {
         "word": "vergütung",
         "count": 5,
-        "ratioParty": 140.2,
-        "ratioBundestag": 170.5
-      },
-      {
-        "word": "medizinisch",
-        "count": 5,
-        "ratioParty": 125.5,
-        "ratioBundestag": 198.1
+        "ratioParty": 137.5,
+        "ratioBundestag": 155.3
       },
       {
         "word": "notfall",
         "count": 5,
-        "ratioParty": 108.4,
-        "ratioBundestag": 149.6
+        "ratioParty": 112.5,
+        "ratioBundestag": 155.3
+      },
+      {
+        "word": "medizinisch",
+        "count": 5,
+        "ratioParty": 112.5,
+        "ratioBundestag": 185.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "notaufnahme",
+        "count": 6,
+        "score": 38.33,
+        "ratio": 593.8
+      },
+      {
+        "word": "lebendnierenspende",
+        "count": 5,
+        "score": 31.03,
+        "ratio": 494.9
+      },
+      {
+        "word": "vergütung",
+        "count": 5,
+        "score": 24.65,
+        "ratio": 137.5
+      },
+      {
+        "word": "notfall",
+        "count": 5,
+        "score": 23.66,
+        "ratio": 112.5
+      },
+      {
+        "word": "medizinisch",
+        "count": 5,
+        "score": 23.66,
+        "ratio": 112.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "notaufnahme",
+        "count": 6,
+        "score": 36.76,
+        "ratio": 456.6
+      },
+      {
+        "word": "lebendnierenspende",
+        "count": 5,
+        "score": 31.16,
+        "ratio": 507.3
+      },
+      {
+        "word": "medizinisch",
+        "count": 5,
+        "score": 26.14,
+        "ratio": 185.6
+      },
+      {
+        "word": "vergütung",
+        "count": 5,
+        "score": 25.26,
+        "ratio": 155.3
+      },
+      {
+        "word": "notfall",
+        "count": 5,
+        "score": 25.26,
+        "ratio": 155.3
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 364,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.56,
     "vsParliament": 0.62
   },
@@ -125,24 +191,24 @@
     "question": "Welches Wort nutzt Dr. Hendrik Streeck häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
         "text": "Notaufnahme",
         "isCorrect": true
-      },
-      {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Notaufnahme\" nutzt Dr. Hendrik Streeck 572.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "462.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Notaufnahme\" nutzt Dr. Hendrik Streeck 593.8× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "456.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

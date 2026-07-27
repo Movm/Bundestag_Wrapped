@@ -11,23 +11,23 @@
   "minWords": 49,
   "maxWords": 651,
   "rankings": {
-    "speechRank": 194,
-    "wordsRank": 270,
-    "partySpeechRank": 43,
-    "partyWordsRank": 78,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 69.0,
-    "verbosityRank": 379,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 133,
-    "longestSpeechRank": 432
+    "speechRank": 201,
+    "wordsRank": 283,
+    "partySpeechRank": 48,
+    "partyWordsRank": 81,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 67.9,
+    "verbosityRank": 377,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 132,
+    "longestSpeechRank": 438
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 7,
     "interrupterRank": null,
-    "interruptedRank": 503
+    "interruptedRank": 507
   },
   "words": {
     "topWords": [
@@ -56,46 +56,110 @@
       {
         "word": "chemnitz",
         "count": 5,
-        "ratioParty": 1026.3,
-        "ratioBundestag": 451.6
+        "ratioParty": 355.1,
+        "ratioBundestag": 298.4
       },
       {
         "word": "arbeitswelt",
         "count": 6,
-        "ratioParty": 58.6,
-        "ratioBundestag": 90.3
+        "ratioParty": 60.9,
+        "ratioBundestag": 89.5
       },
       {
         "word": "erkrankungen",
         "count": 7,
-        "ratioParty": 47.9,
-        "ratioBundestag": 45.6
+        "ratioParty": 48.1,
+        "ratioBundestag": 46.4
       },
       {
         "word": "aufträge",
         "count": 6,
-        "ratioParty": 47.4,
-        "ratioBundestag": 30.3
+        "ratioParty": 47.3,
+        "ratioBundestag": 31.3
       },
       {
         "word": "ernährung",
         "count": 5,
-        "ratioParty": 20.9,
-        "ratioBundestag": 17.5
+        "ratioParty": 21.3,
+        "ratioBundestag": 17.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "chemnitz",
+        "count": 5,
+        "score": 29.38,
+        "ratio": 355.1
+      },
+      {
+        "word": "erkrankungen",
+        "count": 7,
+        "score": 27.26,
+        "ratio": 48.1
+      },
+      {
+        "word": "arbeitswelt",
+        "count": 6,
+        "score": 24.75,
+        "ratio": 60.9
+      },
+      {
+        "word": "aufträge",
+        "count": 6,
+        "score": 23.26,
+        "ratio": 47.3
+      },
+      {
+        "word": "ernährung",
+        "count": 5,
+        "score": 15.52,
+        "ratio": 21.3
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "chemnitz",
+        "count": 5,
+        "score": 28.51,
+        "ratio": 298.4
+      },
+      {
+        "word": "arbeitswelt",
+        "count": 6,
+        "score": 27.03,
+        "ratio": 89.5
+      },
+      {
+        "word": "erkrankungen",
+        "count": 7,
+        "score": 27.01,
+        "ratio": 46.4
+      },
+      {
+        "word": "aufträge",
+        "count": 6,
+        "score": 20.85,
+        "ratio": 31.3
+      },
+      {
+        "word": "ernährung",
+        "count": 5,
+        "score": 14.7,
+        "ratio": 17.9
       }
     ],
     "signatureAdjectives": [
       {
         "word": "grundlegend",
         "count": 4,
-        "ratioParty": 17.8,
+        "ratioParty": 18.1,
         "ratioBundestag": 19.9
       },
       {
         "word": "wirtschaftlich",
         "count": 4,
-        "ratioParty": 5.4,
-        "ratioBundestag": 6.0
+        "ratioParty": 5.3,
+        "ratioBundestag": 6.1
       },
       {
         "word": "entscheidend",
@@ -103,12 +167,52 @@
         "ratioParty": 3.4,
         "ratioBundestag": 5.0
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "grundlegend",
+        "count": 4,
+        "score": 11.8,
+        "ratio": 18.1
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 4,
+        "score": 7.36,
+        "ratio": 5.3
+      },
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 5.93,
+        "ratio": 3.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "grundlegend",
+        "count": 4,
+        "score": 12.16,
+        "ratio": 19.9
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 4,
+        "score": 7.84,
+        "ratio": 6.1
+      },
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 7.17,
+        "ratio": 5.0
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 395,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.61,
     "vsParliament": 0.68
   },
@@ -128,30 +232,30 @@
     "question": "Welches Wort nutzt Nora Seitz häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
         "text": "Chemnitz",
         "isCorrect": true
       },
       {
-        "text": "Verantwortung",
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Chemnitz\" nutzt Nora Seitz 1026.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "451.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Chemnitz\" nutzt Nora Seitz 355.1× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "298.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Nora Seitz häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "National",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
@@ -159,15 +263,15 @@
         "isCorrect": true
       },
       {
-        "text": "Schlecht",
+        "text": "Klar",
         "isCorrect": false
       },
       {
-        "text": "Notwendig",
+        "text": "Gut",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Grundlegend\" nutzt Nora Seitz 17.8× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationParty": "\"Grundlegend\" nutzt Nora Seitz 18.1× häufiger als der CDU/CSU-Durchschnitt.",
     "explanationBundestag": "19.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -268,11 +372,11 @@
           "count": 2
         },
         {
-          "word": "einwanderung",
+          "word": "grenze",
           "count": 1
         },
         {
-          "word": "grenze",
+          "word": "einwanderung",
           "count": 1
         }
       ],
@@ -304,10 +408,6 @@
           "count": 7
         },
         {
-          "word": "bürgergeld",
-          "count": 3
-        },
-        {
           "word": "rente",
           "count": 3
         },
@@ -316,7 +416,11 @@
           "count": 3
         },
         {
-          "word": "sozialstaat",
+          "word": "bürgergeld",
+          "count": 3
+        },
+        {
+          "word": "familien",
           "count": 2
         }
       ],
@@ -368,15 +472,15 @@
           "count": 3
         },
         {
-          "word": "lehrer",
-          "count": 1
-        },
-        {
           "word": "studium",
           "count": 1
         },
         {
           "word": "wissenschaft",
+          "count": 1
+        },
+        {
+          "word": "bildung",
           "count": 1
         }
       ],
@@ -386,19 +490,19 @@
           "count": 6
         },
         {
-          "word": "entlastung",
-          "count": 2
-        },
-        {
           "word": "finanzierung",
           "count": 2
         },
         {
-          "word": "währung",
-          "count": 1
+          "word": "entlastung",
+          "count": 2
         },
         {
           "word": "haushalt",
+          "count": 1
+        },
+        {
+          "word": "bundeshaushalt",
           "count": 1
         }
       ],
@@ -426,7 +530,7 @@
           "count": 3
         },
         {
-          "word": "löhne",
+          "word": "vereinbarkeit",
           "count": 2
         }
       ],

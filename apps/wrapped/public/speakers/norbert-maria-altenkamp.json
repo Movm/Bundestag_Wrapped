@@ -11,23 +11,23 @@
   "minWords": 97,
   "maxWords": 651,
   "rankings": {
-    "speechRank": 570,
-    "wordsRank": 561,
-    "partySpeechRank": 184,
-    "partyWordsRank": 182,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 8.8,
-    "verbosityRank": 396,
-    "verbosityTotal": 579,
+    "speechRank": 553,
+    "wordsRank": 566,
+    "partySpeechRank": 179,
+    "partyWordsRank": 185,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 11.7,
+    "verbosityRank": 393,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 139,
-    "longestSpeechRank": 434
+    "longestSpeechRank": 436
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 2,
     "interrupterRank": null,
-    "interruptedRank": 578
+    "interruptedRank": 579
   },
   "words": {
     "topWords": [
@@ -60,7 +60,7 @@
         "count": 6
       },
       {
-        "word": "humanitären",
+        "word": "deutschland",
         "count": 5
       },
       {
@@ -68,7 +68,7 @@
         "count": 5
       },
       {
-        "word": "deutschland",
+        "word": "humanitären",
         "count": 5
       }
     ],
@@ -76,40 +76,106 @@
       {
         "word": "repression",
         "count": 6,
-        "ratioParty": 539.9,
-        "ratioBundestag": 358.7
+        "ratioParty": 560.4,
+        "ratioBundestag": 372.5
       },
       {
         "word": "humanitäre",
         "count": 21,
-        "ratioParty": 138.7,
-        "ratioBundestag": 102.3
+        "ratioParty": 142.6,
+        "ratioBundestag": 105.6
       },
       {
         "word": "menschenrechte",
         "count": 5,
-        "ratioParty": 75.0,
-        "ratioBundestag": 38.5
+        "ratioParty": 77.8,
+        "ratioBundestag": 39.2
       },
       {
         "word": "hilfe",
         "count": 24,
-        "ratioParty": 64.5,
-        "ratioBundestag": 58.0
+        "ratioParty": 65.2,
+        "ratioBundestag": 59.3
       },
       {
         "word": "humanitären",
         "count": 5,
-        "ratioParty": 57.1,
-        "ratioBundestag": 53.4
+        "ratioParty": 58.4,
+        "ratioBundestag": 55.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "humanitäre",
+        "count": 21,
+        "score": 104.31,
+        "ratio": 142.6
+      },
+      {
+        "word": "hilfe",
+        "count": 24,
+        "score": 100.62,
+        "ratio": 65.2
+      },
+      {
+        "word": "repression",
+        "count": 6,
+        "score": 37.98,
+        "ratio": 560.4
+      },
+      {
+        "word": "menschenrechte",
+        "count": 5,
+        "score": 21.83,
+        "ratio": 77.8
+      },
+      {
+        "word": "humanitären",
+        "count": 5,
+        "score": 20.42,
+        "ratio": 58.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "hilfe",
+        "count": 24,
+        "score": 98.38,
+        "ratio": 59.3
+      },
+      {
+        "word": "humanitäre",
+        "count": 21,
+        "score": 98.05,
+        "ratio": 105.6
+      },
+      {
+        "word": "repression",
+        "count": 6,
+        "score": 35.54,
+        "ratio": 372.5
+      },
+      {
+        "word": "humanitären",
+        "count": 5,
+        "score": 20.14,
+        "ratio": 55.2
+      },
+      {
+        "word": "menschenrechte",
+        "count": 5,
+        "score": 18.47,
+        "ratio": 39.2
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 387,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.6,
     "vsParliament": 0.66
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Norbert Maria Altenkamp häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
         "text": "Repression",
         "isCorrect": true
       },
       {
-        "text": "Freiheit",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Repression\" nutzt Norbert Maria Altenkamp 539.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "358.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Repression\" nutzt Norbert Maria Altenkamp 560.4× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "372.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -160,7 +226,7 @@
         "emoji": "🦉",
         "name": "Eule",
         "title": "Themenexperte",
-        "reason": "Dein Fachwort \"Repression\" nutzt du 539.9× häufiger als deine Fraktion.",
+        "reason": "Dein Fachwort \"Repression\" nutzt du 560.4× häufiger als deine Fraktion.",
         "id": "eule",
         "score": 0.85
       },
@@ -269,14 +335,6 @@
       ],
       "sicherheit": [
         {
-          "word": "extremismus",
-          "count": 1
-        },
-        {
-          "word": "terrorismus",
-          "count": 1
-        },
-        {
           "word": "terroristen",
           "count": 1
         },
@@ -286,6 +344,14 @@
         },
         {
           "word": "angriff",
+          "count": 1
+        },
+        {
+          "word": "extremismus",
+          "count": 1
+        },
+        {
+          "word": "terrorismus",
           "count": 1
         }
       ],
@@ -305,15 +371,15 @@
           "count": 2
         },
         {
-          "word": "völkerrecht",
-          "count": 1
-        },
-        {
-          "word": "wiederaufbau",
+          "word": "außenminister",
           "count": 1
         },
         {
           "word": "china",
+          "count": 1
+        },
+        {
+          "word": "russland",
           "count": 1
         }
       ],

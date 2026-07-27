@@ -11,23 +11,23 @@
   "minWords": 13,
   "maxWords": 1023,
   "rankings": {
-    "speechRank": 188,
-    "wordsRank": 191,
-    "partySpeechRank": 28,
+    "speechRank": 205,
+    "wordsRank": 201,
+    "partySpeechRank": 31,
     "partyWordsRank": 22,
     "partySize": 63,
-    "totalSpeakers": 625,
-    "percentile": 69.9,
-    "verbosityRank": 342,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 24,
-    "longestSpeechRank": 75
+    "totalSpeakers": 626,
+    "percentile": 67.3,
+    "verbosityRank": 341,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 23,
+    "longestSpeechRank": 77
   },
   "drama": {
-    "interruptionsGiven": 67,
+    "interruptionsGiven": 68,
     "interruptionsReceived": 53,
-    "interrupterRank": 73,
-    "interruptedRank": 102
+    "interrupterRank": 76,
+    "interruptedRank": 107
   },
   "words": {
     "topWords": [
@@ -48,11 +48,11 @@
         "count": 21
       },
       {
-        "word": "reden",
+        "word": "wohnungen",
         "count": 20
       },
       {
-        "word": "wohnungen",
+        "word": "reden",
         "count": 20
       }
     ],
@@ -60,46 +60,110 @@
       {
         "word": "leerstand",
         "count": 12,
-        "ratioParty": 646.7,
-        "ratioBundestag": 267.0
+        "ratioParty": 671.0,
+        "ratioBundestag": 277.2
       },
       {
         "word": "bauwirtschaft",
         "count": 9,
-        "ratioParty": 485.1,
-        "ratioBundestag": 145.6
+        "ratioParty": 503.3,
+        "ratioBundestag": 151.2
       },
       {
         "word": "mietenkrise",
         "count": 8,
-        "ratioParty": 431.2,
-        "ratioBundestag": 1067.9
+        "ratioParty": 447.4,
+        "ratioBundestag": 1108.8
       },
       {
         "word": "bauindustrie",
         "count": 5,
-        "ratioParty": 269.5,
-        "ratioBundestag": 267.0
+        "ratioParty": 279.6,
+        "ratioBundestag": 277.2
       },
       {
         "word": "bauturbo",
         "count": 11,
-        "ratioParty": 197.6,
-        "ratioBundestag": 22.6
+        "ratioParty": 205.0,
+        "ratioBundestag": 23.3
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "leerstand",
+        "count": 12,
+        "score": 78.12,
+        "ratio": 671.0
+      },
+      {
+        "word": "bauturbo",
+        "count": 11,
+        "score": 58.61,
+        "ratio": 205.0
+      },
+      {
+        "word": "bauwirtschaft",
+        "count": 9,
+        "score": 56.01,
+        "ratio": 503.3
+      },
+      {
+        "word": "mietenkrise",
+        "count": 8,
+        "score": 48.85,
+        "ratio": 447.4
+      },
+      {
+        "word": "bauindustrie",
+        "count": 5,
+        "score": 28.18,
+        "ratio": 279.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "leerstand",
+        "count": 12,
+        "score": 67.54,
+        "ratio": 277.2
+      },
+      {
+        "word": "mietenkrise",
+        "count": 8,
+        "score": 56.1,
+        "ratio": 1108.8
+      },
+      {
+        "word": "bauwirtschaft",
+        "count": 9,
+        "score": 45.23,
+        "ratio": 151.2
+      },
+      {
+        "word": "bauturbo",
+        "count": 11,
+        "score": 35.1,
+        "ratio": 23.3
+      },
+      {
+        "word": "bauindustrie",
+        "count": 5,
+        "score": 28.14,
+        "ratio": 277.2
       }
     ],
     "signatureAdjectives": [
       {
         "word": "links",
         "count": 6,
-        "ratioParty": 12.0,
+        "ratioParty": 12.4,
         "ratioBundestag": 6.2
       },
       {
         "word": "sozial",
         "count": 4,
         "ratioParty": 2.3,
-        "ratioBundestag": 5.9
+        "ratioBundestag": 6.0
       },
       {
         "word": "falsch",
@@ -107,12 +171,52 @@
         "ratioParty": 2.2,
         "ratioBundestag": 2.3
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "links",
+        "count": 6,
+        "score": 15.57,
+        "ratio": 12.4
+      },
+      {
+        "word": "sozial",
+        "count": 4,
+        "score": 4.78,
+        "ratio": 2.3
+      },
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 3.49,
+        "ratio": 2.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "links",
+        "count": 6,
+        "score": 11.84,
+        "ratio": 6.2
+      },
+      {
+        "word": "sozial",
+        "count": 4,
+        "score": 7.78,
+        "ratio": 6.0
+      },
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 3.58,
+        "ratio": 2.3
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 410,
-    "partyAvgWords": 500,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 499,
+    "parliamentAvgWords": 585,
     "vsParty": 0.82,
     "vsParliament": 0.7
   },
@@ -130,22 +234,22 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "67"
+      "value": "68"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Katalin Gennburg häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
         "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Gesetz",
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
@@ -153,37 +257,37 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Leerstand\" nutzt Katalin Gennburg 646.7× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "267.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Leerstand\" nutzt Katalin Gennburg 671.0× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "277.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Katalin Gennburg häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Links",
-        "isCorrect": true
+        "text": "Gut",
+        "isCorrect": false
       },
       {
-        "text": "Gefährlich",
-        "isCorrect": false
+        "text": "Links",
+        "isCorrect": true
       },
       {
         "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "National",
+        "text": "Europäisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Links\" nutzt Katalin Gennburg 12.0× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationParty": "\"Links\" nutzt Katalin Gennburg 12.4× häufiger als der DIE LINKE-Durchschnitt.",
     "explanationBundestag": "6.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦉",
     "name": "Eule",
     "title": "Themenexpertin",
-    "reason": "Dein Fachwort \"Leerstand\" nutzt du 646.7× häufiger als deine Fraktion.",
+    "reason": "Dein Fachwort \"Leerstand\" nutzt du 671.0× häufiger als deine Fraktion.",
     "id": "eule",
     "alternatives": [
       {
@@ -289,7 +393,7 @@
           "count": 1
         },
         {
-          "word": "nachhaltig",
+          "word": "naturschutz",
           "count": 1
         }
       ],
@@ -307,11 +411,11 @@
           "count": 1
         },
         {
-          "word": "konzerne",
+          "word": "wirtschaft",
           "count": 1
         },
         {
-          "word": "wirtschaft",
+          "word": "konzerne",
           "count": 1
         }
       ],
@@ -375,7 +479,7 @@
       ],
       "bildung": [
         {
-          "word": "schule",
+          "word": "forschung",
           "count": 1
         },
         {
@@ -383,7 +487,7 @@
           "count": 1
         },
         {
-          "word": "forschung",
+          "word": "schule",
           "count": 1
         }
       ],
@@ -397,15 +501,15 @@
           "count": 2
         },
         {
-          "word": "kosten",
-          "count": 1
-        },
-        {
           "word": "inflation",
           "count": 1
         },
         {
-          "word": "bank",
+          "word": "haushaltsentwurf",
+          "count": 1
+        },
+        {
+          "word": "haushalt",
           "count": 1
         }
       ],
@@ -415,15 +519,15 @@
           "count": 2
         },
         {
+          "word": "novelle",
+          "count": 1
+        },
+        {
           "word": "datenschutz",
           "count": 1
         },
         {
           "word": "mietrecht",
-          "count": 1
-        },
-        {
-          "word": "novelle",
           "count": 1
         }
       ],

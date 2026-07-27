@@ -11,23 +11,23 @@
   "minWords": 47,
   "maxWords": 540,
   "rankings": {
-    "speechRank": 397,
-    "wordsRank": 327,
+    "speechRank": 389,
+    "wordsRank": 340,
     "partySpeechRank": 66,
-    "partyWordsRank": 55,
+    "partyWordsRank": 58,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 36.5,
-    "verbosityRank": 567,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 37.9,
+    "verbosityRank": 571,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 84,
-    "longestSpeechRank": 552
+    "longestSpeechRank": 553
   },
   "drama": {
-    "interruptionsGiven": 43,
+    "interruptionsGiven": 50,
     "interruptionsReceived": 20,
-    "interrupterRank": 124,
-    "interruptedRank": 331
+    "interrupterRank": 107,
+    "interruptedRank": 344
   },
   "words": {
     "topWords": [
@@ -76,32 +76,96 @@
       {
         "word": "tabak",
         "count": 6,
-        "ratioParty": 652.9,
-        "ratioBundestag": 505.5
+        "ratioParty": 675.9,
+        "ratioBundestag": 472.4
       },
       {
         "word": "alkohol",
         "count": 10,
-        "ratioParty": 362.7,
-        "ratioBundestag": 303.3
+        "ratioParty": 375.5,
+        "ratioBundestag": 262.5
       },
       {
         "word": "indikatoren",
         "count": 5,
-        "ratioParty": 272.0,
-        "ratioBundestag": 541.7
+        "ratioParty": 281.6,
+        "ratioBundestag": 562.4
       },
       {
         "word": "menschliches",
         "count": 5,
-        "ratioParty": 108.8,
-        "ratioBundestag": 158.0
+        "ratioParty": 112.6,
+        "ratioBundestag": 157.5
       },
       {
         "word": "superreiche",
         "count": 5,
-        "ratioParty": 108.8,
-        "ratioBundestag": 118.5
+        "ratioParty": 93.9,
+        "ratioBundestag": 119.3
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "alkohol",
+        "count": 10,
+        "score": 59.31,
+        "ratio": 375.5
+      },
+      {
+        "word": "tabak",
+        "count": 6,
+        "score": 39.11,
+        "ratio": 675.9
+      },
+      {
+        "word": "indikatoren",
+        "count": 5,
+        "score": 28.22,
+        "ratio": 281.6
+      },
+      {
+        "word": "menschliches",
+        "count": 5,
+        "score": 23.66,
+        "ratio": 112.6
+      },
+      {
+        "word": "superreiche",
+        "count": 5,
+        "score": 22.76,
+        "ratio": 93.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "alkohol",
+        "count": 10,
+        "score": 55.74,
+        "ratio": 262.5
+      },
+      {
+        "word": "tabak",
+        "count": 6,
+        "score": 36.96,
+        "ratio": 472.4
+      },
+      {
+        "word": "indikatoren",
+        "count": 5,
+        "score": 31.67,
+        "ratio": 562.4
+      },
+      {
+        "word": "menschliches",
+        "count": 5,
+        "score": 25.33,
+        "ratio": 157.5
+      },
+      {
+        "word": "superreiche",
+        "count": 5,
+        "score": 23.95,
+        "ratio": 119.3
       }
     ],
     "signatureAdjectives": [
@@ -109,14 +173,30 @@
         "word": "nachhaltig",
         "count": 3,
         "ratioParty": 8.2,
-        "ratioBundestag": 8.4
+        "ratioBundestag": 8.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "nachhaltig",
+        "count": 3,
+        "score": 6.66,
+        "ratio": 8.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "nachhaltig",
+        "count": 3,
+        "score": 6.79,
+        "ratio": 8.6
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 156,
     "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 585,
     "vsParty": 0.29,
     "vsParliament": 0.27
   },
@@ -134,14 +214,14 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "43"
+      "value": "50"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Johannes Wagner häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetz",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
@@ -149,22 +229,22 @@
         "isCorrect": true
       },
       {
-        "text": "Debatte",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Europa",
+        "text": "Migration",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Tabak\" nutzt Johannes Wagner 652.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "505.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Tabak\" nutzt Johannes Wagner 675.9× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "472.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Johannes Wagner häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Klar",
+        "text": "Alt",
         "isCorrect": false
       },
       {
@@ -172,22 +252,22 @@
         "isCorrect": true
       },
       {
-        "text": "Sozial",
+        "text": "Klar",
         "isCorrect": false
       },
       {
-        "text": "Alt",
+        "text": "Falsch",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Nachhaltig\" nutzt Johannes Wagner 8.2× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "8.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "8.6× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦉",
     "name": "Eule",
     "title": "Themenexperte",
-    "reason": "Dein Fachwort \"Tabak\" nutzt du 652.9× häufiger als deine Fraktion.",
+    "reason": "Dein Fachwort \"Tabak\" nutzt du 675.9× häufiger als deine Fraktion.",
     "id": "eule",
     "alternatives": [
       {
@@ -281,11 +361,11 @@
           "count": 11
         },
         {
-          "word": "nachhaltigkeit",
+          "word": "nachhaltig",
           "count": 3
         },
         {
-          "word": "nachhaltig",
+          "word": "nachhaltigkeit",
           "count": 3
         },
         {
@@ -337,17 +417,17 @@
           "count": 3
         },
         {
-          "word": "bürgergeld",
+          "word": "grundsicherung",
           "count": 2
         }
       ],
       "sicherheit": [
         {
-          "word": "verfassungsschutz",
+          "word": "gewalt",
           "count": 1
         },
         {
-          "word": "gewalt",
+          "word": "verfassungsschutz",
           "count": 1
         }
       ],
@@ -413,15 +493,15 @@
           "count": 3
         },
         {
+          "word": "sondervermögen",
+          "count": 2
+        },
+        {
           "word": "banken",
           "count": 2
         },
         {
           "word": "steuergerechtigkeit",
-          "count": 2
-        },
-        {
-          "word": "sondervermögen",
           "count": 2
         }
       ],

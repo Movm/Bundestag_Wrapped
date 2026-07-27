@@ -11,23 +11,23 @@
   "minWords": 300,
   "maxWords": 965,
   "rankings": {
-    "speechRank": 310,
-    "wordsRank": 289,
-    "partySpeechRank": 72,
-    "partyWordsRank": 63,
+    "speechRank": 312,
+    "wordsRank": 302,
+    "partySpeechRank": 70,
+    "partyWordsRank": 65,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 50.4,
-    "verbosityRank": 68,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 50.2,
+    "verbosityRank": 69,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 18,
     "longestSpeechRank": 94
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 27,
-    "interrupterRank": 404,
-    "interruptedRank": 273
+    "interrupterRank": 434,
+    "interruptedRank": 277
   },
   "words": {
     "topWords": [
@@ -48,40 +48,106 @@
       {
         "word": "schuldnerberatung",
         "count": 7,
-        "ratioParty": 534.4,
-        "ratioBundestag": 96.2
+        "ratioParty": 554.2,
+        "ratioBundestag": 99.9
       },
       {
         "word": "überschuldung",
         "count": 6,
-        "ratioParty": 229.0,
-        "ratioBundestag": 152.7
+        "ratioParty": 237.5,
+        "ratioBundestag": 158.5
       },
       {
         "word": "entschließung",
         "count": 5,
-        "ratioParty": 190.9,
-        "ratioBundestag": 58.2
+        "ratioParty": 158.3,
+        "ratioBundestag": 56.6
       },
       {
         "word": "darlehen",
         "count": 5,
-        "ratioParty": 69.4,
-        "ratioBundestag": 59.2
+        "ratioParty": 72.0,
+        "ratioBundestag": 61.5
       },
       {
         "word": "verbraucher",
         "count": 15,
-        "ratioParty": 36.9,
-        "ratioBundestag": 21.6
+        "ratioParty": 37.1,
+        "ratioBundestag": 22.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "verbraucher",
+        "count": 15,
+        "score": 54.6,
+        "ratio": 37.1
+      },
+      {
+        "word": "schuldnerberatung",
+        "count": 7,
+        "score": 44.24,
+        "ratio": 554.2
+      },
+      {
+        "word": "überschuldung",
+        "count": 6,
+        "score": 32.85,
+        "ratio": 237.5
+      },
+      {
+        "word": "entschließung",
+        "count": 5,
+        "score": 25.35,
+        "ratio": 158.3
+      },
+      {
+        "word": "darlehen",
+        "count": 5,
+        "score": 21.45,
+        "ratio": 72.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "verbraucher",
+        "count": 15,
+        "score": 47.16,
+        "ratio": 22.2
+      },
+      {
+        "word": "schuldnerberatung",
+        "count": 7,
+        "score": 32.3,
+        "ratio": 99.9
+      },
+      {
+        "word": "überschuldung",
+        "count": 6,
+        "score": 30.43,
+        "ratio": 158.5
+      },
+      {
+        "word": "darlehen",
+        "count": 5,
+        "score": 20.68,
+        "ratio": 61.5
+      },
+      {
+        "word": "entschließung",
+        "count": 5,
+        "score": 20.27,
+        "ratio": 56.6
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 580,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 1.04,
     "vsParliament": 0.99
   },
@@ -101,24 +167,24 @@
     "question": "Welches Wort nutzt Stefan Möller häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
         "text": "Schuldnerberatung",
         "isCorrect": true
       },
       {
-        "text": "Gesellschaft",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
+        "text": "Arbeit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schuldnerberatung\" nutzt Stefan Möller 534.4× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "96.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Schuldnerberatung\" nutzt Stefan Möller 554.2× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "99.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -215,11 +281,11 @@
           "count": 4
         },
         {
-          "word": "marktwirtschaft",
+          "word": "qualifikation",
           "count": 1
         },
         {
-          "word": "qualifikation",
+          "word": "marktwirtschaft",
           "count": 1
         }
       ],
@@ -241,7 +307,7 @@
           "count": 2
         },
         {
-          "word": "eltern",
+          "word": "gerechtigkeit",
           "count": 1
         }
       ],
@@ -255,15 +321,15 @@
           "count": 2
         },
         {
-          "word": "bundespolizei",
-          "count": 1
-        },
-        {
           "word": "kriminalität",
           "count": 1
         },
         {
           "word": "angriff",
+          "count": 1
+        },
+        {
+          "word": "polizei",
           "count": 1
         }
       ],
@@ -283,7 +349,7 @@
           "count": 2
         },
         {
-          "word": "kooperation",
+          "word": "ukraine",
           "count": 1
         },
         {
@@ -291,17 +357,17 @@
           "count": 1
         },
         {
-          "word": "ukraine",
+          "word": "kooperation",
           "count": 1
         }
       ],
       "digital": [
         {
-          "word": "digitalisierung",
+          "word": "daten",
           "count": 1
         },
         {
-          "word": "daten",
+          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -311,19 +377,19 @@
           "count": 2
         },
         {
-          "word": "bildungsplan",
-          "count": 1
-        },
-        {
-          "word": "bildung",
-          "count": 1
-        },
-        {
-          "word": "wissenschaftler",
-          "count": 1
-        },
-        {
           "word": "studium",
+          "count": 1
+        },
+        {
+          "word": "schüler",
+          "count": 1
+        },
+        {
+          "word": "lehrermangel",
+          "count": 1
+        },
+        {
+          "word": "ausbildung",
           "count": 1
         }
       ],
@@ -341,11 +407,11 @@
           "count": 2
         },
         {
-          "word": "investitionen",
+          "word": "finanzierung",
           "count": 1
         },
         {
-          "word": "finanzierung",
+          "word": "sparkasse",
           "count": 1
         }
       ],
@@ -359,15 +425,15 @@
           "count": 3
         },
         {
+          "word": "gesetzgebung",
+          "count": 2
+        },
+        {
           "word": "zivilrecht",
           "count": 2
         },
         {
           "word": "straftaten",
-          "count": 2
-        },
-        {
-          "word": "gesetzgebung",
           "count": 2
         }
       ],

@@ -11,23 +11,23 @@
   "minWords": 334,
   "maxWords": 572,
   "rankings": {
-    "speechRank": 360,
-    "wordsRank": 366,
-    "partySpeechRank": 85,
-    "partyWordsRank": 77,
+    "speechRank": 364,
+    "wordsRank": 380,
+    "partySpeechRank": 88,
+    "partyWordsRank": 82,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 42.4,
-    "verbosityRank": 138,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 41.9,
+    "verbosityRank": 136,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 34,
-    "longestSpeechRank": 527
+    "longestSpeechRank": 528
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 10,
     "interrupterRank": null,
-    "interruptedRank": 464
+    "interruptedRank": 474
   },
   "words": {
     "topWords": [
@@ -36,11 +36,11 @@
         "count": 19
       },
       {
-        "word": "jahren",
+        "word": "weiter",
         "count": 15
       },
       {
-        "word": "weiter",
+        "word": "jahren",
         "count": 15
       },
       {
@@ -76,55 +76,147 @@
       {
         "word": "brückensanierungen",
         "count": 5,
-        "ratioParty": 470.0,
-        "ratioBundestag": 845.0
+        "ratioParty": 487.3,
+        "ratioBundestag": 877.3
       },
       {
         "word": "gefälschte",
         "count": 6,
-        "ratioParty": 376.0,
-        "ratioBundestag": 390.0
+        "ratioParty": 292.4,
+        "ratioBundestag": 376.0
       },
       {
         "word": "überstunden",
         "count": 5,
-        "ratioParty": 235.0,
-        "ratioBundestag": 72.8
+        "ratioParty": 243.7,
+        "ratioBundestag": 70.8
       },
       {
         "word": "verkehrspolitik",
         "count": 7,
-        "ratioParty": 94.0,
-        "ratioBundestag": 75.8
+        "ratioParty": 80.3,
+        "ratioBundestag": 71.4
       },
       {
         "word": "teilnehmer",
         "count": 5,
-        "ratioParty": 67.1,
-        "ratioBundestag": 145.7
+        "ratioParty": 69.6,
+        "ratioBundestag": 151.3
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "gefälschte",
+        "count": 6,
+        "score": 34.09,
+        "ratio": 292.4
+      },
+      {
+        "word": "brückensanierungen",
+        "count": 5,
+        "score": 30.95,
+        "ratio": 487.3
+      },
+      {
+        "word": "verkehrspolitik",
+        "count": 7,
+        "score": 30.79,
+        "ratio": 80.3
+      },
+      {
+        "word": "überstunden",
+        "count": 5,
+        "score": 27.5,
+        "ratio": 243.7
+      },
+      {
+        "word": "teilnehmer",
+        "count": 5,
+        "score": 21.29,
+        "ratio": 69.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "gefälschte",
+        "count": 6,
+        "score": 35.59,
+        "ratio": 376.0
+      },
+      {
+        "word": "brückensanierungen",
+        "count": 5,
+        "score": 33.89,
+        "ratio": 877.3
+      },
+      {
+        "word": "verkehrspolitik",
+        "count": 7,
+        "score": 29.98,
+        "ratio": 71.4
+      },
+      {
+        "word": "teilnehmer",
+        "count": 5,
+        "score": 25.13,
+        "ratio": 151.3
+      },
+      {
+        "word": "überstunden",
+        "count": 5,
+        "score": 21.37,
+        "ratio": 70.8
       }
     ],
     "signatureAdjectives": [
       {
         "word": "unzureichend",
         "count": 3,
-        "ratioParty": 35.3,
-        "ratioBundestag": 46.9
+        "ratioParty": 36.6,
+        "ratioBundestag": 46.2
       },
       {
         "word": "grundlegend",
         "count": 3,
-        "ratioParty": 26.9,
+        "ratioParty": 26.6,
         "ratioBundestag": 19.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "unzureichend",
+        "count": 3,
+        "score": 10.88,
+        "ratio": 36.6
+      },
+      {
+        "word": "grundlegend",
+        "count": 3,
+        "score": 9.95,
+        "ratio": 26.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "unzureichend",
+        "count": 3,
+        "score": 11.56,
+        "ratio": 46.2
+      },
+      {
+        "word": "grundlegend",
+        "count": 3,
+        "score": 9.1,
+        "ratio": 19.8
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 517,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.93,
-    "vsParliament": 0.89
+    "vsParliament": 0.88
   },
   "funFacts": [
     {
@@ -142,47 +234,47 @@
     "question": "Welches Wort nutzt Marcus Bühl häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
         "text": "Brückensanierungen",
         "isCorrect": true
+      },
+      {
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Minister",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Brückensanierungen\" nutzt Marcus Bühl 470.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "845.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Brückensanierungen\" nutzt Marcus Bühl 487.3× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "877.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Marcus Bühl häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
+        "text": "Klar",
         "isCorrect": false
       },
       {
         "text": "Unzureichend",
         "isCorrect": true
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unzureichend\" nutzt Marcus Bühl 35.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "46.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Unzureichend\" nutzt Marcus Bühl 36.6× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "46.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -258,11 +350,7 @@
           "count": 4
         },
         {
-          "word": "bamf",
-          "count": 3
-        },
-        {
-          "word": "schleuser",
+          "word": "grenze",
           "count": 3
         },
         {
@@ -270,7 +358,11 @@
           "count": 3
         },
         {
-          "word": "asylbewerber",
+          "word": "schleuser",
+          "count": 3
+        },
+        {
+          "word": "bamf",
           "count": 3
         }
       ],
@@ -294,11 +386,11 @@
       ],
       "soziales": [
         {
-          "word": "sozialstaat",
+          "word": "sozialleistungen",
           "count": 2
         },
         {
-          "word": "sozialleistungen",
+          "word": "sozialstaat",
           "count": 2
         }
       ],
@@ -320,7 +412,7 @@
           "count": 2
         },
         {
-          "word": "betrug",
+          "word": "grenzschutz",
           "count": 1
         }
       ],
@@ -374,11 +466,11 @@
           "count": 5
         },
         {
-          "word": "gewerkschaft",
+          "word": "arbeitsplätze",
           "count": 1
         },
         {
-          "word": "arbeitsplätze",
+          "word": "gewerkschaft",
           "count": 1
         }
       ],

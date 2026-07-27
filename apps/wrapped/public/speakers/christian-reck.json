@@ -11,23 +11,23 @@
   "minWords": 88,
   "maxWords": 638,
   "rankings": {
-    "speechRank": 331,
-    "wordsRank": 435,
-    "partySpeechRank": 77,
-    "partyWordsRank": 95,
+    "speechRank": 350,
+    "wordsRank": 442,
+    "partySpeechRank": 83,
+    "partyWordsRank": 97,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 47.0,
-    "verbosityRank": 322,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 44.1,
+    "verbosityRank": 325,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 83,
-    "longestSpeechRank": 448
+    "longestSpeechRank": 449
   },
   "drama": {
     "interruptionsGiven": 6,
     "interruptionsReceived": 8,
-    "interrupterRank": 317,
-    "interruptedRank": 490
+    "interrupterRank": 330,
+    "interruptedRank": 499
   },
   "words": {
     "topWords": [
@@ -76,40 +76,106 @@
       {
         "word": "fischerei",
         "count": 6,
-        "ratioParty": 227.6,
-        "ratioBundestag": 211.5
+        "ratioParty": 235.9,
+        "ratioBundestag": 219.6
       },
       {
         "word": "ernährungssicherheit",
         "count": 5,
-        "ratioParty": 189.6,
-        "ratioBundestag": 113.6
+        "ratioParty": 196.6,
+        "ratioBundestag": 117.9
       },
       {
         "word": "fischer",
         "count": 5,
-        "ratioParty": 94.8,
-        "ratioBundestag": 212.9
+        "ratioParty": 98.3,
+        "ratioBundestag": 212.2
       },
       {
         "word": "bauern",
         "count": 20,
-        "ratioParty": 46.0,
-        "ratioBundestag": 108.2
+        "ratioParty": 47.7,
+        "ratioBundestag": 112.3
       },
       {
         "word": "luftverkehrsteuer",
         "count": 7,
-        "ratioParty": 34.6,
-        "ratioBundestag": 57.2
+        "ratioParty": 35.9,
+        "ratioBundestag": 59.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bauern",
+        "count": 20,
+        "score": 77.71,
+        "ratio": 47.7
+      },
+      {
+        "word": "fischerei",
+        "count": 6,
+        "score": 32.81,
+        "ratio": 235.9
+      },
+      {
+        "word": "ernährungssicherheit",
+        "count": 5,
+        "score": 26.43,
+        "ratio": 196.6
+      },
+      {
+        "word": "luftverkehrsteuer",
+        "count": 7,
+        "score": 25.26,
+        "ratio": 35.9
+      },
+      {
+        "word": "fischer",
+        "count": 5,
+        "score": 22.99,
+        "ratio": 98.3
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bauern",
+        "count": 20,
+        "score": 94.6,
+        "ratio": 112.3
+      },
+      {
+        "word": "fischerei",
+        "count": 6,
+        "score": 32.38,
+        "ratio": 219.6
+      },
+      {
+        "word": "luftverkehrsteuer",
+        "count": 7,
+        "score": 28.71,
+        "ratio": 59.4
+      },
+      {
+        "word": "fischer",
+        "count": 5,
+        "score": 26.81,
+        "ratio": 212.2
+      },
+      {
+        "word": "ernährungssicherheit",
+        "count": 5,
+        "score": 23.89,
+        "ratio": 117.9
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 419,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.75,
     "vsParliament": 0.72
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Christian Reck häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
         "text": "Fischerei",
         "isCorrect": true
       },
       {
-        "text": "Steuern",
+        "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Fischerei\" nutzt Christian Reck 227.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "211.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Fischerei\" nutzt Christian Reck 235.9× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "219.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

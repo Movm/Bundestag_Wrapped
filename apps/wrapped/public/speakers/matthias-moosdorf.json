@@ -11,23 +11,23 @@
   "minWords": 695,
   "maxWords": 695,
   "rankings": {
-    "speechRank": 602,
+    "speechRank": 612,
     "wordsRank": 610,
     "partySpeechRank": 148,
     "partyWordsRank": 147,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 3.7,
+    "totalSpeakers": 626,
+    "percentile": 2.2,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 378
+    "longestSpeechRank": 382
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 4,
     "interrupterRank": null,
-    "interruptedRank": 555
+    "interruptedRank": 569
   },
   "words": {
     "topWords": [
@@ -76,28 +76,70 @@
       {
         "word": "europäer",
         "count": 5,
-        "ratioParty": 687.9,
-        "ratioBundestag": 220.0
+        "ratioParty": 713.1,
+        "ratioBundestag": 222.1
       },
       {
         "word": "europarat",
         "count": 5,
-        "ratioParty": 458.6,
-        "ratioBundestag": 366.7
+        "ratioParty": 475.4,
+        "ratioBundestag": 380.8
       },
       {
         "word": "europa",
         "count": 8,
-        "ratioParty": 43.7,
-        "ratioBundestag": 19.1
+        "ratioParty": 44.6,
+        "ratioBundestag": 19.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "europäer",
+        "count": 5,
+        "score": 32.86,
+        "ratio": 713.1
+      },
+      {
+        "word": "europarat",
+        "count": 5,
+        "score": 30.83,
+        "ratio": 475.4
+      },
+      {
+        "word": "europa",
+        "count": 8,
+        "score": 30.56,
+        "ratio": 44.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "europarat",
+        "count": 5,
+        "score": 29.72,
+        "ratio": 380.8
+      },
+      {
+        "word": "europäer",
+        "count": 5,
+        "score": 27.04,
+        "ratio": 222.1
+      },
+      {
+        "word": "europa",
+        "count": 8,
+        "score": 24.12,
+        "ratio": 19.4
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 695,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 1.25,
     "vsParliament": 1.19
   },
@@ -112,24 +154,24 @@
     "question": "Welches Wort nutzt Matthias Moosdorf häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Europäer",
-        "isCorrect": true
-      },
-      {
         "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
+        "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Europäer",
+        "isCorrect": true
+      },
+      {
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Europäer\" nutzt Matthias Moosdorf 687.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "220.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Europäer\" nutzt Matthias Moosdorf 713.1× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "222.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

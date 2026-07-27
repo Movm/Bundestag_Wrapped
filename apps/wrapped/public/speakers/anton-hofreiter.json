@@ -11,23 +11,23 @@
   "minWords": 133,
   "maxWords": 575,
   "rankings": {
-    "speechRank": 552,
-    "wordsRank": 578,
+    "speechRank": 563,
+    "wordsRank": 579,
     "partySpeechRank": 84,
     "partyWordsRank": 84,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 11.7,
-    "verbosityRank": 402,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 10.1,
+    "verbosityRank": 404,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 41,
-    "longestSpeechRank": 518
+    "longestSpeechRank": 522
   },
   "drama": {
     "interruptionsGiven": 4,
     "interruptionsReceived": 2,
-    "interrupterRank": 374,
-    "interruptedRank": 574
+    "interrupterRank": 370,
+    "interruptedRank": 582
   },
   "words": {
     "topWords": [
@@ -76,47 +76,127 @@
       {
         "word": "adenauer",
         "count": 6,
-        "ratioParty": 435.3,
-        "ratioBundestag": 160.1
+        "ratioParty": 450.5,
+        "ratioBundestag": 162.0
       },
       {
         "word": "konrad",
         "count": 5,
-        "ratioParty": 310.9,
-        "ratioBundestag": 188.5
-      },
-      {
-        "word": "bundesrepublik",
-        "count": 5,
-        "ratioParty": 41.1,
-        "ratioBundestag": 31.2
+        "ratioParty": 321.8,
+        "ratioBundestag": 184.2
       },
       {
         "word": "putin",
         "count": 13,
-        "ratioParty": 40.4,
-        "ratioBundestag": 73.0
+        "ratioParty": 40.7,
+        "ratioBundestag": 74.5
+      },
+      {
+        "word": "bundesrepublik",
+        "count": 5,
+        "ratioParty": 40.2,
+        "ratioBundestag": 31.0
       },
       {
         "word": "krieg",
         "count": 11,
-        "ratioParty": 35.0,
-        "ratioBundestag": 31.2
+        "ratioParty": 35.7,
+        "ratioBundestag": 31.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "putin",
+        "count": 13,
+        "score": 48.5,
+        "ratio": 40.7
+      },
+      {
+        "word": "krieg",
+        "count": 11,
+        "score": 39.63,
+        "ratio": 35.7
+      },
+      {
+        "word": "adenauer",
+        "count": 6,
+        "score": 36.68,
+        "ratio": 450.5
+      },
+      {
+        "word": "konrad",
+        "count": 5,
+        "score": 28.89,
+        "ratio": 321.8
+      },
+      {
+        "word": "bundesrepublik",
+        "count": 5,
+        "score": 18.59,
+        "ratio": 40.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "putin",
+        "count": 13,
+        "score": 56.21,
+        "ratio": 74.5
+      },
+      {
+        "word": "krieg",
+        "count": 11,
+        "score": 38.43,
+        "ratio": 31.9
+      },
+      {
+        "word": "adenauer",
+        "count": 6,
+        "score": 30.56,
+        "ratio": 162.0
+      },
+      {
+        "word": "konrad",
+        "count": 5,
+        "score": 26.11,
+        "ratio": 184.2
+      },
+      {
+        "word": "bundesrepublik",
+        "count": 5,
+        "score": 17.33,
+        "ratio": 31.0
       }
     ],
     "signatureAdjectives": [
       {
         "word": "stark",
         "count": 5,
-        "ratioParty": 25.0,
-        "ratioBundestag": 21.0
+        "ratioParty": 25.3,
+        "ratioBundestag": 20.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "stark",
+        "count": 5,
+        "score": 16.35,
+        "ratio": 25.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "stark",
+        "count": 5,
+        "score": 15.39,
+        "ratio": 20.7
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 381,
     "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 585,
     "vsParty": 0.71,
     "vsParliament": 0.65
   },
@@ -136,34 +216,30 @@
     "question": "Welches Wort nutzt Dr. Anton Hofreiter häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
+        "isCorrect": false
+      },
+      {
         "text": "Adenauer",
         "isCorrect": true
       },
       {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
+        "text": "Haushalt",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Adenauer\" nutzt Dr. Anton Hofreiter 435.3× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "160.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Adenauer\" nutzt Dr. Anton Hofreiter 450.5× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "162.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Anton Hofreiter häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
@@ -173,10 +249,14 @@
       {
         "text": "Stark",
         "isCorrect": true
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Stark\" nutzt Dr. Anton Hofreiter 25.0× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "21.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Stark\" nutzt Dr. Anton Hofreiter 25.3× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "20.7× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",

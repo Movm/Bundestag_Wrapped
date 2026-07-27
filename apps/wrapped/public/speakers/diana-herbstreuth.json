@@ -11,23 +11,23 @@
   "minWords": 16,
   "maxWords": 656,
   "rankings": {
-    "speechRank": 363,
-    "wordsRank": 387,
-    "partySpeechRank": 100,
-    "partyWordsRank": 121,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 41.9,
-    "verbosityRank": 355,
-    "verbosityTotal": 579,
+    "speechRank": 370,
+    "wordsRank": 399,
+    "partySpeechRank": 103,
+    "partyWordsRank": 125,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 40.9,
+    "verbosityRank": 354,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 126,
-    "longestSpeechRank": 424
+    "longestSpeechRank": 430
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 11,
     "interrupterRank": null,
-    "interruptedRank": 451
+    "interruptedRank": 460
   },
   "words": {
     "topWords": [
@@ -54,59 +54,135 @@
       {
         "word": "verantwortung",
         "count": 10
-      },
-      {
-        "word": "klar",
-        "count": 9
       }
     ],
     "signatureWords": [
       {
         "word": "verteidigungsminister",
         "count": 5,
-        "ratioParty": 179.8,
-        "ratioBundestag": 60.7
+        "ratioParty": 149.3,
+        "ratioBundestag": 60.5
       },
       {
         "word": "wehrpflicht",
         "count": 9,
-        "ratioParty": 52.9,
-        "ratioBundestag": 42.4
+        "ratioParty": 54.9,
+        "ratioBundestag": 44.0
       },
       {
         "word": "wehrdienst",
         "count": 8,
-        "ratioParty": 44.3,
-        "ratioBundestag": 46.0
+        "ratioParty": 46.0,
+        "ratioBundestag": 46.9
       },
       {
         "word": "wehrbeauftragter",
         "count": 5,
-        "ratioParty": 35.1,
-        "ratioBundestag": 37.2
+        "ratioParty": 36.4,
+        "ratioBundestag": 38.6
       },
       {
         "word": "sudan",
         "count": 6,
-        "ratioParty": 29.8,
-        "ratioBundestag": 23.7
+        "ratioParty": 30.9,
+        "ratioBundestag": 24.5
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "wehrpflicht",
+        "count": 9,
+        "score": 36.21,
+        "ratio": 54.9
+      },
+      {
+        "word": "wehrdienst",
+        "count": 8,
+        "score": 30.8,
+        "ratio": 46.0
+      },
+      {
+        "word": "verteidigungsminister",
+        "count": 5,
+        "score": 25.06,
+        "ratio": 149.3
+      },
+      {
+        "word": "sudan",
+        "count": 6,
+        "score": 20.78,
+        "ratio": 30.9
+      },
+      {
+        "word": "wehrbeauftragter",
+        "count": 5,
+        "score": 18.11,
+        "ratio": 36.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "wehrpflicht",
+        "count": 9,
+        "score": 34.26,
+        "ratio": 44.0
+      },
+      {
+        "word": "wehrdienst",
+        "count": 8,
+        "score": 30.95,
+        "ratio": 46.9
+      },
+      {
+        "word": "verteidigungsminister",
+        "count": 5,
+        "score": 20.6,
+        "ratio": 60.5
+      },
+      {
+        "word": "sudan",
+        "count": 6,
+        "score": 19.43,
+        "ratio": 24.5
+      },
+      {
+        "word": "wehrbeauftragter",
+        "count": 5,
+        "score": 18.39,
+        "ratio": 38.6
       }
     ],
     "signatureAdjectives": [
       {
         "word": "wirksam",
         "count": 7,
-        "ratioParty": 16.8,
-        "ratioBundestag": 22.4
+        "ratioParty": 16.9,
+        "ratioBundestag": 22.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirksam",
+        "count": 7,
+        "score": 20.19,
+        "ratio": 16.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "wirksam",
+        "count": 7,
+        "score": 22.13,
+        "ratio": 22.6
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 406,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.63,
-    "vsParliament": 0.7
+    "vsParliament": 0.69
   },
   "funFacts": [
     {
@@ -124,24 +200,24 @@
     "question": "Welches Wort nutzt Diana Herbstreuth häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Klima",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Investitionen",
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
         "text": "Verteidigungsminister",
         "isCorrect": true
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verteidigungsminister\" nutzt Diana Herbstreuth 179.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "60.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Verteidigungsminister\" nutzt Diana Herbstreuth 149.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "60.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Diana Herbstreuth häufiger als der Rest der CDU/CSU-Fraktion?",
@@ -151,20 +227,20 @@
         "isCorrect": true
       },
       {
-        "text": "Politisch",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Klar",
+        "text": "Sozial",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wirksam\" nutzt Diana Herbstreuth 16.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "22.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wirksam\" nutzt Diana Herbstreuth 16.9× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "22.6× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -187,7 +263,7 @@
         "title": "Clevere Strategin",
         "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
         "id": "fuchs",
-        "score": 0.93
+        "score": 0.884
       }
     ]
   },
@@ -308,7 +384,7 @@
           "count": 3
         },
         {
-          "word": "gewalt",
+          "word": "soldatin",
           "count": 2
         }
       ],
@@ -374,7 +450,7 @@
           "count": 2
         },
         {
-          "word": "etat",
+          "word": "schuldenbremse",
           "count": 1
         },
         {
@@ -382,7 +458,7 @@
           "count": 1
         },
         {
-          "word": "schuldenbremse",
+          "word": "etat",
           "count": 1
         }
       ],
@@ -392,11 +468,11 @@
           "count": 2
         },
         {
-          "word": "menschenrechte",
+          "word": "rechtsstaatlichkeit",
           "count": 1
         },
         {
-          "word": "rechtsstaatlichkeit",
+          "word": "menschenrechte",
           "count": 1
         }
       ],

@@ -11,23 +11,23 @@
   "minWords": 37,
   "maxWords": 779,
   "rankings": {
-    "speechRank": 216,
-    "wordsRank": 178,
-    "partySpeechRank": 53,
-    "partyWordsRank": 54,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 65.4,
-    "verbosityRank": 215,
-    "verbosityTotal": 579,
+    "speechRank": 223,
+    "wordsRank": 189,
+    "partySpeechRank": 55,
+    "partyWordsRank": 55,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 64.4,
+    "verbosityRank": 219,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 77,
-    "longestSpeechRank": 269
+    "longestSpeechRank": 271
   },
   "drama": {
     "interruptionsGiven": 8,
     "interruptionsReceived": 14,
     "interrupterRank": 292,
-    "interruptedRank": 397
+    "interruptedRank": 407
   },
   "words": {
     "topWords": [
@@ -52,57 +52,119 @@
         "count": 18
       },
       {
-        "word": "forschung",
-        "count": 16
-      },
-      {
         "word": "digitale",
         "count": 16
       },
       {
-        "word": "land",
-        "count": 15
+        "word": "forschung",
+        "count": 16
       }
     ],
     "signatureWords": [
       {
+        "word": "gigabyte",
+        "count": 5,
+        "ratioParty": 829.2,
+        "ratioBundestag": 2557.3
+      },
+      {
         "word": "mobilfunk",
         "count": 6,
-        "ratioParty": 87.1,
-        "ratioBundestag": 118.2
+        "ratioParty": 90.5,
+        "ratioBundestag": 122.7
       },
       {
         "word": "bafög",
         "count": 19,
-        "ratioParty": 57.3,
-        "ratioBundestag": 31.8
-      },
-      {
-        "word": "meinungsfreiheit",
-        "count": 8,
-        "ratioParty": 22.0,
-        "ratioBundestag": 16.1
+        "ratioParty": 59.5,
+        "ratioBundestag": 32.5
       },
       {
         "word": "werbung",
         "count": 5,
-        "ratioParty": 21.6,
-        "ratioBundestag": 19.2
+        "ratioParty": 22.4,
+        "ratioBundestag": 19.8
       },
       {
-        "word": "internet",
+        "word": "meinungsfreiheit",
         "count": 8,
-        "ratioParty": 18.5,
-        "ratioBundestag": 17.1
+        "ratioParty": 20.4,
+        "ratioBundestag": 15.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bafög",
+        "count": 19,
+        "score": 77.95,
+        "ratio": 59.5
+      },
+      {
+        "word": "gigabyte",
+        "count": 5,
+        "score": 33.61,
+        "ratio": 829.2
+      },
+      {
+        "word": "mobilfunk",
+        "count": 6,
+        "score": 27.1,
+        "ratio": 90.5
+      },
+      {
+        "word": "meinungsfreiheit",
+        "count": 8,
+        "score": 24.51,
+        "ratio": 20.4
+      },
+      {
+        "word": "werbung",
+        "count": 5,
+        "score": 15.76,
+        "ratio": 22.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bafög",
+        "count": 19,
+        "score": 66.72,
+        "ratio": 32.5
+      },
+      {
+        "word": "gigabyte",
+        "count": 5,
+        "score": 39.24,
+        "ratio": 2557.3
+      },
+      {
+        "word": "mobilfunk",
+        "count": 6,
+        "score": 28.91,
+        "ratio": 122.7
+      },
+      {
+        "word": "meinungsfreiheit",
+        "count": 8,
+        "score": 22.48,
+        "ratio": 15.6
+      },
+      {
+        "word": "werbung",
+        "count": 5,
+        "score": 15.17,
+        "ratio": 19.8
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 468,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.73,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.72,
     "vsParliament": 0.8
   },
   "funFacts": [
@@ -121,33 +183,41 @@
     "question": "Welches Wort nutzt Joachim Ebmeyer häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Mobilfunk",
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Gigabyte",
         "isCorrect": true
-      },
-      {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Mobilfunk\" nutzt Joachim Ebmeyer 87.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "118.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Gigabyte\" nutzt Joachim Ebmeyer 829.2× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "2557.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
-    "emoji": "🐿️",
-    "name": "Eichhörnchen",
-    "title": "Themenhüter",
-    "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
-    "id": "eichhoernchen",
+    "emoji": "🦊",
+    "name": "Fuchs",
+    "title": "Cleverer Stratege",
+    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+    "id": "fuchs",
     "alternatives": [
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüter",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
+        "score": 1.0
+      },
       {
         "emoji": "🐝",
         "name": "Biene",
@@ -155,14 +225,6 @@
         "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
         "id": "biene",
         "score": 1.0
-      },
-      {
-        "emoji": "🦦",
-        "name": "Otter",
-        "title": "Positiver Teamplayer",
-        "reason": "Du bringst gute Stimmung und konstruktive Beiträge ins Plenum.",
-        "id": "otter",
-        "score": 0.892
       }
     ]
   },
@@ -239,15 +301,15 @@
           "count": 3
         },
         {
+          "word": "nachhaltig",
+          "count": 2
+        },
+        {
           "word": "energiewende",
           "count": 2
         },
         {
           "word": "klimaschutz",
-          "count": 2
-        },
-        {
-          "word": "nachhaltig",
           "count": 2
         },
         {
@@ -279,11 +341,11 @@
       ],
       "soziales": [
         {
-          "word": "chancengleichheit",
+          "word": "eltern",
           "count": 3
         },
         {
-          "word": "eltern",
+          "word": "chancengleichheit",
           "count": 3
         },
         {
@@ -291,7 +353,7 @@
           "count": 2
         },
         {
-          "word": "kinder",
+          "word": "wohnungen",
           "count": 1
         },
         {
@@ -369,15 +431,15 @@
           "count": 16
         },
         {
+          "word": "schule",
+          "count": 4
+        },
+        {
           "word": "bildung",
           "count": 4
         },
         {
           "word": "studenten",
-          "count": 4
-        },
-        {
-          "word": "schule",
           "count": 4
         }
       ],
@@ -399,7 +461,7 @@
           "count": 2
         },
         {
-          "word": "sondervermögen",
+          "word": "bundeshaushalt",
           "count": 2
         }
       ],
@@ -413,15 +475,15 @@
           "count": 3
         },
         {
-          "word": "gesetzesänderung",
+          "word": "grundgesetz",
+          "count": 1
+        },
+        {
+          "word": "grundrechte",
           "count": 1
         },
         {
           "word": "beschluss",
-          "count": 1
-        },
-        {
-          "word": "grundgesetz",
           "count": 1
         }
       ],
@@ -431,7 +493,7 @@
           "count": 2
         },
         {
-          "word": "homeoffice",
+          "word": "arbeitnehmerinnen",
           "count": 1
         },
         {
@@ -439,7 +501,7 @@
           "count": 1
         },
         {
-          "word": "arbeitnehmerinnen",
+          "word": "homeoffice",
           "count": 1
         }
       ],
@@ -449,19 +511,19 @@
           "count": 7
         },
         {
-          "word": "straßen",
-          "count": 1
-        },
-        {
-          "word": "bahn",
-          "count": 1
-        },
-        {
-          "word": "fahrzeuge",
+          "word": "straße",
           "count": 1
         },
         {
           "word": "auto",
+          "count": 1
+        },
+        {
+          "word": "flugzeug",
+          "count": 1
+        },
+        {
+          "word": "elektromobilität",
           "count": 1
         }
       ]

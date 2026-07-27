@@ -11,23 +11,23 @@
   "minWords": 14,
   "maxWords": 845,
   "rankings": {
-    "speechRank": 466,
-    "wordsRank": 478,
-    "partySpeechRank": 109,
-    "partyWordsRank": 109,
+    "speechRank": 472,
+    "wordsRank": 485,
+    "partySpeechRank": 108,
+    "partyWordsRank": 110,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 25.4,
+    "totalSpeakers": 626,
+    "percentile": 24.6,
     "verbosityRank": 282,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 71,
-    "longestSpeechRank": 185
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 68,
+    "longestSpeechRank": 188
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 16,
-    "interrupterRank": 422,
-    "interruptedRank": 372
+    "interrupterRank": 425,
+    "interruptedRank": 386
   },
   "words": {
     "topWords": [
@@ -76,53 +76,145 @@
       {
         "word": "amtes",
         "count": 5,
-        "ratioParty": 126.0,
-        "ratioBundestag": 127.0
+        "ratioParty": 119.8,
+        "ratioBundestag": 126.7
       },
       {
         "word": "auswärtigen",
         "count": 5,
-        "ratioParty": 40.8,
-        "ratioBundestag": 39.1
+        "ratioParty": 39.9,
+        "ratioBundestag": 39.6
       },
       {
         "word": "waffen",
         "count": 5,
-        "ratioParty": 19.2,
-        "ratioBundestag": 20.8
+        "ratioParty": 19.4,
+        "ratioBundestag": 21.2
       },
       {
         "word": "israel",
         "count": 6,
-        "ratioParty": 17.5,
-        "ratioBundestag": 13.2
+        "ratioParty": 18.2,
+        "ratioBundestag": 13.6
       },
       {
         "word": "außenpolitik",
         "count": 8,
-        "ratioParty": 15.3,
-        "ratioBundestag": 25.1
+        "ratioParty": 15.9,
+        "ratioBundestag": 26.0
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "amtes",
+        "count": 5,
+        "score": 23.97,
+        "ratio": 119.8
+      },
+      {
+        "word": "außenpolitik",
+        "count": 8,
+        "score": 22.62,
+        "ratio": 15.9
+      },
+      {
+        "word": "auswärtigen",
+        "count": 5,
+        "score": 18.56,
+        "ratio": 39.9
+      },
+      {
+        "word": "israel",
+        "count": 6,
+        "score": 17.73,
+        "ratio": 18.2
+      },
+      {
+        "word": "waffen",
+        "count": 5,
+        "score": 15.08,
+        "ratio": 19.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "außenpolitik",
+        "count": 8,
+        "score": 26.37,
+        "ratio": 26.0
+      },
+      {
+        "word": "amtes",
+        "count": 5,
+        "score": 24.25,
+        "ratio": 126.7
+      },
+      {
+        "word": "auswärtigen",
+        "count": 5,
+        "score": 18.52,
+        "ratio": 39.6
+      },
+      {
+        "word": "israel",
+        "count": 6,
+        "score": 16.09,
+        "ratio": 13.6
+      },
+      {
+        "word": "waffen",
+        "count": 5,
+        "score": 15.5,
+        "ratio": 21.2
       }
     ],
     "signatureAdjectives": [
       {
         "word": "verantwortungslos",
         "count": 3,
-        "ratioParty": 24.5,
+        "ratioParty": 24.0,
         "ratioBundestag": 36.6
       },
       {
         "word": "falsch",
         "count": 4,
-        "ratioParty": 7.2,
-        "ratioBundestag": 7.2
+        "ratioParty": 7.1,
+        "ratioBundestag": 7.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "verantwortungslos",
+        "count": 3,
+        "score": 9.66,
+        "ratio": 24.0
+      },
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 8.37,
+        "ratio": 7.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "verantwortungslos",
+        "count": 3,
+        "score": 10.88,
+        "ratio": 36.6
+      },
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 8.32,
+        "ratio": 7.0
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 439,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.79,
     "vsParliament": 0.75
   },
@@ -142,34 +234,30 @@
     "question": "Welches Wort nutzt Torben Braga häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
         "text": "Amtes",
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Minister",
+        "text": "Europa",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Amtes\" nutzt Torben Braga 126.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "127.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Amtes\" nutzt Torben Braga 119.8× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "126.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Torben Braga häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
+        "text": "Neu",
         "isCorrect": false
       },
       {
@@ -177,11 +265,15 @@
         "isCorrect": true
       },
       {
-        "text": "Politisch",
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verantwortungslos\" nutzt Torben Braga 24.5× häufiger als der AfD-Durchschnitt.",
+    "explanationParty": "\"Verantwortungslos\" nutzt Torben Braga 24.0× häufiger als der AfD-Durchschnitt.",
     "explanationBundestag": "36.6× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
@@ -282,11 +374,11 @@
           "count": 2
         },
         {
-          "word": "wirtschaft",
+          "word": "kapital",
           "count": 1
         },
         {
-          "word": "kapital",
+          "word": "wirtschaft",
           "count": 1
         },
         {
@@ -300,11 +392,11 @@
       ],
       "soziales": [
         {
-          "word": "inklusion",
+          "word": "familie",
           "count": 1
         },
         {
-          "word": "familie",
+          "word": "inklusion",
           "count": 1
         },
         {

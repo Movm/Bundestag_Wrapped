@@ -11,23 +11,23 @@
   "minWords": 144,
   "maxWords": 658,
   "rankings": {
-    "speechRank": 512,
-    "wordsRank": 565,
-    "partySpeechRank": 166,
-    "partyWordsRank": 184,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 18.1,
-    "verbosityRank": 421,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 146,
-    "longestSpeechRank": 423
+    "speechRank": 526,
+    "wordsRank": 570,
+    "partySpeechRank": 169,
+    "partyWordsRank": 187,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 16.0,
+    "verbosityRank": 427,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 149,
+    "longestSpeechRank": 428
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 5,
-    "interrupterRank": 443,
-    "interruptedRank": 541
+    "interrupterRank": 461,
+    "interruptedRank": 552
   },
   "words": {
     "topWords": [
@@ -48,27 +48,27 @@
         "count": 9
       },
       {
-        "word": "land",
-        "count": 8
-      },
-      {
         "word": "deutsche",
         "count": 8
       },
       {
-        "word": "polnische",
-        "count": 7
+        "word": "land",
+        "count": 8
       },
       {
         "word": "geschichte",
         "count": 7
       },
       {
-        "word": "deutsch",
-        "count": 5
+        "word": "polnische",
+        "count": 7
       },
       {
         "word": "sehen",
+        "count": 5
+      },
+      {
+        "word": "deutsch",
         "count": 5
       }
     ],
@@ -76,40 +76,106 @@
       {
         "word": "polnische",
         "count": 7,
-        "ratioParty": 235.6,
-        "ratioBundestag": 272.9
+        "ratioParty": 244.5,
+        "ratioBundestag": 270.1
       },
       {
         "word": "polen",
         "count": 11,
-        "ratioParty": 110.6,
-        "ratioBundestag": 87.8
+        "ratioParty": 114.8,
+        "ratioBundestag": 89.9
       },
       {
         "word": "libanon",
         "count": 14,
-        "ratioParty": 108.4,
-        "ratioBundestag": 114.8
+        "ratioParty": 112.5,
+        "ratioBundestag": 119.2
       },
       {
         "word": "deutsch",
         "count": 5,
-        "ratioParty": 40.3,
-        "ratioBundestag": 37.5
+        "ratioParty": 41.0,
+        "ratioBundestag": 38.1
       },
       {
         "word": "geschichte",
         "count": 7,
-        "ratioParty": 29.3,
-        "ratioBundestag": 24.8
+        "ratioParty": 28.7,
+        "ratioBundestag": 24.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "libanon",
+        "count": 14,
+        "score": 66.25,
+        "ratio": 112.5
+      },
+      {
+        "word": "polen",
+        "count": 11,
+        "score": 52.27,
+        "ratio": 114.8
+      },
+      {
+        "word": "polnische",
+        "count": 7,
+        "score": 38.52,
+        "ratio": 244.5
+      },
+      {
+        "word": "geschichte",
+        "count": 7,
+        "score": 23.74,
+        "ratio": 28.7
+      },
+      {
+        "word": "deutsch",
+        "count": 5,
+        "score": 18.69,
+        "ratio": 41.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "libanon",
+        "count": 14,
+        "score": 67.05,
+        "ratio": 119.2
+      },
+      {
+        "word": "polen",
+        "count": 11,
+        "score": 49.61,
+        "ratio": 89.9
+      },
+      {
+        "word": "polnische",
+        "count": 7,
+        "score": 39.22,
+        "ratio": 270.1
+      },
+      {
+        "word": "geschichte",
+        "count": 7,
+        "score": 22.62,
+        "ratio": 24.3
+      },
+      {
+        "word": "deutsch",
+        "count": 5,
+        "score": 18.33,
+        "ratio": 38.1
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 372,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.58,
     "vsParliament": 0.64
   },
@@ -129,11 +195,11 @@
     "question": "Welches Wort nutzt Paul Ziemiak häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kinder",
-        "isCorrect": false
+        "text": "Polnische",
+        "isCorrect": true
       },
       {
-        "text": "Migration",
+        "text": "Politik",
         "isCorrect": false
       },
       {
@@ -141,12 +207,12 @@
         "isCorrect": false
       },
       {
-        "text": "Polnische",
-        "isCorrect": true
+        "text": "Debatte",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Polnische\" nutzt Paul Ziemiak 235.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "272.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Polnische\" nutzt Paul Ziemiak 244.5× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "270.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -251,11 +317,11 @@
           "count": 2
         },
         {
-          "word": "flüchtlinge",
+          "word": "grenze",
           "count": 1
         },
         {
-          "word": "grenze",
+          "word": "flüchtlinge",
           "count": 1
         }
       ],
@@ -303,29 +369,29 @@
           "count": 4
         },
         {
-          "word": "israel",
-          "count": 2
-        },
-        {
           "word": "nato",
           "count": 2
         },
         {
-          "word": "putin",
+          "word": "israel",
+          "count": 2
+        },
+        {
+          "word": "botschafter",
           "count": 1
         },
         {
-          "word": "kreml",
+          "word": "sanktionen",
           "count": 1
         }
       ],
       "finanzen": [
         {
-          "word": "investitionen",
+          "word": "kosten",
           "count": 1
         },
         {
-          "word": "kosten",
+          "word": "investitionen",
           "count": 1
         }
       ],

@@ -11,15 +11,15 @@
   "minWords": 95,
   "maxWords": 989,
   "rankings": {
-    "speechRank": 115,
-    "wordsRank": 118,
-    "partySpeechRank": 23,
-    "partyWordsRank": 24,
+    "speechRank": 135,
+    "wordsRank": 128,
+    "partySpeechRank": 29,
+    "partyWordsRank": 28,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 81.6,
-    "verbosityRank": 109,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 78.4,
+    "verbosityRank": 114,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 32,
     "longestSpeechRank": 84
   },
@@ -27,16 +27,16 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 46,
     "interrupterRank": null,
-    "interruptedRank": 129
+    "interruptedRank": 139
   },
   "words": {
     "topWords": [
       {
-        "word": "bürgergeld",
+        "word": "menschen",
         "count": 28
       },
       {
-        "word": "menschen",
+        "word": "bürgergeld",
         "count": 28
       },
       {
@@ -52,7 +52,7 @@
         "count": 21
       },
       {
-        "word": "kosten",
+        "word": "union",
         "count": 20
       }
     ],
@@ -60,32 +60,96 @@
       {
         "word": "betriebsrentenstärkungsgesetz",
         "count": 5,
-        "ratioParty": 448.9,
-        "ratioBundestag": 184.2
+        "ratioParty": 465.5,
+        "ratioBundestag": 191.3
       },
       {
         "word": "asylbewerberleistungen",
         "count": 5,
-        "ratioParty": 224.4,
-        "ratioBundestag": 675.5
-      },
-      {
-        "word": "jüngeren",
-        "count": 6,
-        "ratioParty": 59.8,
-        "ratioBundestag": 52.9
+        "ratioParty": 232.8,
+        "ratioBundestag": 701.4
       },
       {
         "word": "pflichtaufgaben",
         "count": 5,
-        "ratioParty": 56.1,
-        "ratioBundestag": 135.1
+        "ratioParty": 58.2,
+        "ratioBundestag": 140.3
+      },
+      {
+        "word": "jüngeren",
+        "count": 6,
+        "ratioParty": 55.9,
+        "ratioBundestag": 52.6
       },
       {
         "word": "arbeitslosen",
         "count": 5,
-        "ratioParty": 37.4,
-        "ratioBundestag": 72.4
+        "ratioParty": 38.8,
+        "ratioBundestag": 75.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "betriebsrentenstärkungsgesetz",
+        "count": 5,
+        "score": 30.73,
+        "ratio": 465.5
+      },
+      {
+        "word": "asylbewerberleistungen",
+        "count": 5,
+        "score": 27.27,
+        "ratio": 232.8
+      },
+      {
+        "word": "jüngeren",
+        "count": 6,
+        "score": 24.25,
+        "ratio": 55.9
+      },
+      {
+        "word": "pflichtaufgaben",
+        "count": 5,
+        "score": 20.4,
+        "ratio": 58.2
+      },
+      {
+        "word": "arbeitslosen",
+        "count": 5,
+        "score": 18.42,
+        "ratio": 38.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "asylbewerberleistungen",
+        "count": 5,
+        "score": 32.77,
+        "ratio": 701.4
+      },
+      {
+        "word": "betriebsrentenstärkungsgesetz",
+        "count": 5,
+        "score": 26.3,
+        "ratio": 191.3
+      },
+      {
+        "word": "pflichtaufgaben",
+        "count": 5,
+        "score": 24.75,
+        "ratio": 140.3
+      },
+      {
+        "word": "jüngeren",
+        "count": 6,
+        "score": 23.89,
+        "ratio": 52.6
+      },
+      {
+        "word": "arbeitslosen",
+        "count": 5,
+        "score": 21.67,
+        "ratio": 75.2
       }
     ],
     "signatureAdjectives": [
@@ -93,14 +157,30 @@
         "word": "stark",
         "count": 7,
         "ratioParty": 5.6,
-        "ratioBundestag": 4.0
+        "ratioBundestag": 3.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "stark",
+        "count": 7,
+        "score": 13.21,
+        "ratio": 5.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "stark",
+        "count": 7,
+        "score": 11.12,
+        "ratio": 3.9
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 533,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.96,
     "vsParliament": 0.91
   },
@@ -120,47 +200,47 @@
     "question": "Welches Wort nutzt Gerrit Huy häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Abstimmung",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
-        "text": "Minister",
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
         "text": "Betriebsrentenstärkungsgesetz",
         "isCorrect": true
-      },
-      {
-        "text": "Arbeit",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Betriebsrentenstärkungsgesetz\" nutzt Gerrit Huy 448.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "184.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Betriebsrentenstärkungsgesetz\" nutzt Gerrit Huy 465.5× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "191.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Gerrit Huy häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
+        "text": "Gut",
         "isCorrect": false
       },
       {
         "text": "Stark",
         "isCorrect": true
+      },
+      {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Stark\" nutzt Gerrit Huy 5.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "4.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "3.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -266,11 +346,11 @@
           "count": 2
         },
         {
-          "word": "klimaziel",
+          "word": "atomausstieg",
           "count": 1
         },
         {
-          "word": "atomausstieg",
+          "word": "klimaziel",
           "count": 1
         }
       ],
@@ -288,11 +368,11 @@
           "count": 3
         },
         {
-          "word": "kapital",
+          "word": "wirtschaftspolitik",
           "count": 2
         },
         {
-          "word": "fachkräfte",
+          "word": "kapital",
           "count": 2
         }
       ],
@@ -324,6 +404,10 @@
           "count": 1
         },
         {
+          "word": "bundeswehr",
+          "count": 1
+        },
+        {
           "word": "verteidigungsfähigkeit",
           "count": 1
         },
@@ -333,10 +417,6 @@
         },
         {
           "word": "polizisten",
-          "count": 1
-        },
-        {
-          "word": "verteidigung",
           "count": 1
         }
       ],
@@ -372,7 +452,7 @@
           "count": 2
         },
         {
-          "word": "europa",
+          "word": "wiederaufbau",
           "count": 1
         }
       ],
@@ -422,7 +502,7 @@
           "count": 2
         },
         {
-          "word": "zinsen",
+          "word": "bundeshaushalt",
           "count": 2
         }
       ],
@@ -432,19 +512,19 @@
           "count": 3
         },
         {
+          "word": "bundesverfassungsgericht",
+          "count": 1
+        },
+        {
+          "word": "gericht",
+          "count": 1
+        },
+        {
           "word": "haftung",
           "count": 1
         },
         {
-          "word": "straftat",
-          "count": 1
-        },
-        {
           "word": "gerichte",
-          "count": 1
-        },
-        {
-          "word": "verfassungswidrig",
           "count": 1
         }
       ],
@@ -462,11 +542,11 @@
           "count": 4
         },
         {
-          "word": "tarifvertrag",
+          "word": "teilzeit",
           "count": 3
         },
         {
-          "word": "arbeitsplätze",
+          "word": "einkommen",
           "count": 3
         }
       ],
@@ -476,11 +556,11 @@
           "count": 1
         },
         {
-          "word": "auto",
+          "word": "infrastruktur",
           "count": 1
         },
         {
-          "word": "infrastruktur",
+          "word": "auto",
           "count": 1
         }
       ]

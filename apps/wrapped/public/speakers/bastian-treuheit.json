@@ -11,23 +11,23 @@
   "minWords": 336,
   "maxWords": 491,
   "rankings": {
-    "speechRank": 386,
-    "wordsRank": 472,
-    "partySpeechRank": 93,
-    "partyWordsRank": 107,
+    "speechRank": 392,
+    "wordsRank": 478,
+    "partySpeechRank": 92,
+    "partyWordsRank": 108,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 38.2,
-    "verbosityRank": 375,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 37.4,
+    "verbosityRank": 374,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 98,
-    "longestSpeechRank": 579
+    "longestSpeechRank": 582
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 13,
     "interrupterRank": null,
-    "interruptedRank": 414
+    "interruptedRank": 426
   },
   "words": {
     "topWords": [
@@ -48,11 +48,11 @@
         "count": 14
       },
       {
-        "word": "deutschland",
+        "word": "endlich",
         "count": 12
       },
       {
-        "word": "endlich",
+        "word": "deutschland",
         "count": 12
       },
       {
@@ -76,40 +76,106 @@
       {
         "word": "athletinnen",
         "count": 14,
-        "ratioParty": 1825.7,
-        "ratioBundestag": 210.2
+        "ratioParty": 1892.9,
+        "ratioBundestag": 187.0
       },
       {
         "word": "leistungssport",
         "count": 6,
-        "ratioParty": 521.6,
-        "ratioBundestag": 234.2
+        "ratioParty": 540.8,
+        "ratioBundestag": 243.1
       },
       {
         "word": "mutterschutz",
         "count": 12,
-        "ratioParty": 447.1,
-        "ratioBundestag": 275.5
+        "ratioParty": 463.6,
+        "ratioBundestag": 275.3
       },
       {
         "word": "selbstverwaltung",
         "count": 6,
-        "ratioParty": 313.0,
-        "ratioBundestag": 140.5
+        "ratioParty": 324.5,
+        "ratioBundestag": 143.0
       },
       {
         "word": "schwangerschaft",
         "count": 14,
-        "ratioParty": 260.8,
-        "ratioBundestag": 390.3
+        "ratioParty": 270.4,
+        "ratioBundestag": 386.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "athletinnen",
+        "count": 14,
+        "score": 105.65,
+        "ratio": 1892.9
+      },
+      {
+        "word": "schwangerschaft",
+        "count": 14,
+        "score": 78.45,
+        "ratio": 270.4
+      },
+      {
+        "word": "mutterschutz",
+        "count": 12,
+        "score": 73.69,
+        "ratio": 463.6
+      },
+      {
+        "word": "leistungssport",
+        "count": 6,
+        "score": 37.77,
+        "ratio": 540.8
+      },
+      {
+        "word": "selbstverwaltung",
+        "count": 6,
+        "score": 34.71,
+        "ratio": 324.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "schwangerschaft",
+        "count": 14,
+        "score": 83.45,
+        "ratio": 386.8
+      },
+      {
+        "word": "athletinnen",
+        "count": 14,
+        "score": 73.31,
+        "ratio": 187.0
+      },
+      {
+        "word": "mutterschutz",
+        "count": 12,
+        "score": 67.46,
+        "ratio": 275.3
+      },
+      {
+        "word": "leistungssport",
+        "count": 6,
+        "score": 32.99,
+        "ratio": 243.1
+      },
+      {
+        "word": "selbstverwaltung",
+        "count": 6,
+        "score": 29.82,
+        "ratio": 143.0
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 397,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.71,
     "vsParliament": 0.68
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Bastian Treuheit häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
         "text": "Athletinnen",
         "isCorrect": true
       },
       {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Debatte",
+        "text": "Familie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Athletinnen\" nutzt Bastian Treuheit 1825.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "210.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Athletinnen\" nutzt Bastian Treuheit 1892.9× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "187.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -227,25 +293,25 @@
           "count": 2
         },
         {
+          "word": "migrant",
+          "count": 1
+        },
+        {
+          "word": "staatsangehörigkeit",
+          "count": 1
+        },
+        {
           "word": "asylbewerber",
-          "count": 1
-        },
-        {
-          "word": "flüchtlinge",
-          "count": 1
-        },
-        {
-          "word": "migration",
           "count": 1
         }
       ],
       "klima": [
         {
-          "word": "klimaneutralität",
+          "word": "energie",
           "count": 1
         },
         {
-          "word": "energie",
+          "word": "klimaneutralität",
           "count": 1
         }
       ],
@@ -255,11 +321,11 @@
           "count": 4
         },
         {
-          "word": "mittelstand",
+          "word": "unternehmen",
           "count": 1
         },
         {
-          "word": "unternehmen",
+          "word": "mittelstand",
           "count": 1
         }
       ],
@@ -281,7 +347,7 @@
           "count": 3
         },
         {
-          "word": "wohnungsmarkt",
+          "word": "kind",
           "count": 2
         }
       ],
@@ -297,11 +363,11 @@
           "count": 1
         },
         {
-          "word": "bildung",
+          "word": "schulen",
           "count": 1
         },
         {
-          "word": "schulen",
+          "word": "bildung",
           "count": 1
         }
       ],
@@ -311,11 +377,11 @@
           "count": 6
         },
         {
-          "word": "steuerzahler",
+          "word": "schulden",
           "count": 3
         },
         {
-          "word": "schulden",
+          "word": "steuerzahler",
           "count": 3
         },
         {

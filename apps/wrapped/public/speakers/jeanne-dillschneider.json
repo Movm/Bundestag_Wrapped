@@ -11,23 +11,23 @@
   "minWords": 52,
   "maxWords": 735,
   "rankings": {
-    "speechRank": 120,
-    "wordsRank": 150,
-    "partySpeechRank": 22,
-    "partyWordsRank": 23,
+    "speechRank": 137,
+    "wordsRank": 166,
+    "partySpeechRank": 26,
+    "partyWordsRank": 25,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 80.8,
-    "verbosityRank": 248,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 78.1,
+    "verbosityRank": 251,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 27,
-    "longestSpeechRank": 325
+    "longestSpeechRank": 329
   },
   "drama": {
     "interruptionsGiven": 7,
     "interruptionsReceived": 23,
-    "interrupterRank": 308,
-    "interruptedRank": 294
+    "interrupterRank": 320,
+    "interruptedRank": 308
   },
   "words": {
     "topWords": [
@@ -50,71 +50,171 @@
       {
         "word": "schutz",
         "count": 17
-      },
-      {
-        "word": "chatkontrolle",
-        "count": 16
       }
     ],
     "signatureWords": [
       {
         "word": "cyberabwehr",
         "count": 5,
-        "ratioParty": 325.6,
-        "ratioBundestag": 81.5
+        "ratioParty": 337.1,
+        "ratioBundestag": 81.7
       },
       {
         "word": "saarland",
         "count": 6,
-        "ratioParty": 195.4,
-        "ratioBundestag": 78.2
+        "ratioParty": 202.3,
+        "ratioBundestag": 76.8
       },
       {
         "word": "chats",
         "count": 6,
-        "ratioParty": 195.4,
-        "ratioBundestag": 161.0
-      },
-      {
-        "word": "datenschutz",
-        "count": 15,
-        "ratioParty": 195.4,
-        "ratioBundestag": 67.7
+        "ratioParty": 202.3,
+        "ratioBundestag": 157.9
       },
       {
         "word": "ansprechpartner",
         "count": 6,
-        "ratioParty": 195.4,
-        "ratioBundestag": 74.0
+        "ratioParty": 202.3,
+        "ratioBundestag": 76.8
+      },
+      {
+        "word": "chatkontrolle",
+        "count": 16,
+        "ratioParty": 179.8,
+        "ratioBundestag": 78.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "chatkontrolle",
+        "count": 16,
+        "score": 83.16,
+        "ratio": 179.8
+      },
+      {
+        "word": "saarland",
+        "count": 6,
+        "score": 31.89,
+        "ratio": 202.3
+      },
+      {
+        "word": "chats",
+        "count": 6,
+        "score": 31.89,
+        "ratio": 202.3
+      },
+      {
+        "word": "ansprechpartner",
+        "count": 6,
+        "score": 31.89,
+        "ratio": 202.3
+      },
+      {
+        "word": "cyberabwehr",
+        "count": 5,
+        "score": 29.12,
+        "ratio": 337.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "chatkontrolle",
+        "count": 16,
+        "score": 70.09,
+        "ratio": 78.9
+      },
+      {
+        "word": "chats",
+        "count": 6,
+        "score": 30.41,
+        "ratio": 157.9
+      },
+      {
+        "word": "saarland",
+        "count": 6,
+        "score": 26.12,
+        "ratio": 76.8
+      },
+      {
+        "word": "ansprechpartner",
+        "count": 6,
+        "score": 26.12,
+        "ratio": 76.8
+      },
+      {
+        "word": "cyberabwehr",
+        "count": 5,
+        "score": 22.08,
+        "ratio": 81.7
       }
     ],
     "signatureAdjectives": [
       {
         "word": "zentral",
         "count": 3,
-        "ratioParty": 8.1,
-        "ratioBundestag": 7.6
+        "ratioParty": 8.4,
+        "ratioBundestag": 7.9
       },
       {
         "word": "wirksam",
         "count": 3,
-        "ratioParty": 5.4,
+        "ratioParty": 5.3,
         "ratioBundestag": 4.9
       },
       {
         "word": "gerecht",
         "count": 4,
-        "ratioParty": 2.3,
+        "ratioParty": 2.4,
         "ratioBundestag": 2.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "zentral",
+        "count": 3,
+        "score": 6.72,
+        "ratio": 8.4
+      },
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 5.52,
+        "ratio": 5.3
+      },
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 4.9,
+        "ratio": 2.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "zentral",
+        "count": 3,
+        "score": 6.56,
+        "ratio": 7.9
+      },
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 5.34,
+        "ratio": 2.8
+      },
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 5.32,
+        "ratio": 4.9
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 453,
     "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 585,
     "vsParty": 0.84,
-    "vsParliament": 0.78
+    "vsParliament": 0.77
   },
   "funFacts": [
     {
@@ -132,6 +232,10 @@
     "question": "Welches Wort nutzt Jeanne Dillschneider häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
         "text": "Migration",
         "isCorrect": false
       },
@@ -142,37 +246,33 @@
       {
         "text": "Bildung",
         "isCorrect": false
-      },
-      {
-        "text": "Freiheit",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Cyberabwehr\" nutzt Jeanne Dillschneider 325.6× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "81.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Cyberabwehr\" nutzt Jeanne Dillschneider 337.1× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "81.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Jeanne Dillschneider häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Zentral",
-        "isCorrect": true
-      },
-      {
         "text": "Alt",
         "isCorrect": false
       },
       {
-        "text": "Falsch",
+        "text": "National",
         "isCorrect": false
       },
       {
-        "text": "Stark",
+        "text": "Notwendig",
         "isCorrect": false
+      },
+      {
+        "text": "Zentral",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Zentral\" nutzt Jeanne Dillschneider 8.1× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "7.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Zentral\" nutzt Jeanne Dillschneider 8.4× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "7.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -318,6 +418,14 @@
       ],
       "soziales": [
         {
+          "word": "eltern",
+          "count": 1
+        },
+        {
+          "word": "familien",
+          "count": 1
+        },
+        {
           "word": "kinder",
           "count": 1
         },
@@ -326,15 +434,7 @@
           "count": 1
         },
         {
-          "word": "familien",
-          "count": 1
-        },
-        {
           "word": "behinderung",
-          "count": 1
-        },
-        {
-          "word": "eltern",
           "count": 1
         }
       ],
@@ -352,11 +452,11 @@
           "count": 3
         },
         {
-          "word": "bundespolizei",
+          "word": "soldaten",
           "count": 2
         },
         {
-          "word": "verbrechen",
+          "word": "bundespolizei",
           "count": 2
         }
       ],
@@ -384,11 +484,11 @@
           "count": 10
         },
         {
-          "word": "putin",
+          "word": "ukraine",
           "count": 6
         },
         {
-          "word": "ukraine",
+          "word": "putin",
           "count": 6
         },
         {
@@ -500,11 +600,11 @@
           "count": 1
         },
         {
-          "word": "autos",
+          "word": "schifffahrt",
           "count": 1
         },
         {
-          "word": "schifffahrt",
+          "word": "autos",
           "count": 1
         }
       ]

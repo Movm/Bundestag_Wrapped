@@ -11,23 +11,23 @@
   "minWords": 96,
   "maxWords": 466,
   "rankings": {
-    "speechRank": 508,
-    "wordsRank": 563,
-    "partySpeechRank": 125,
-    "partyWordsRank": 136,
+    "speechRank": 520,
+    "wordsRank": 568,
+    "partySpeechRank": 128,
+    "partyWordsRank": 137,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 18.7,
-    "verbosityRank": 488,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 127,
-    "longestSpeechRank": 589
+    "totalSpeakers": 626,
+    "percentile": 16.9,
+    "verbosityRank": 491,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 128,
+    "longestSpeechRank": 591
   },
   "drama": {
     "interruptionsGiven": 6,
     "interruptionsReceived": 7,
-    "interrupterRank": 324,
-    "interruptedRank": 502
+    "interrupterRank": 325,
+    "interruptedRank": 517
   },
   "words": {
     "topWords": [
@@ -76,47 +76,127 @@
       {
         "word": "verkehrsprojekt",
         "count": 6,
-        "ratioParty": 3062.1,
-        "ratioBundestag": 13726.8
+        "ratioParty": 3174.7,
+        "ratioBundestag": 14252.5
       },
       {
         "word": "gespalten",
         "count": 6,
-        "ratioParty": 1020.7,
-        "ratioBundestag": 762.6
+        "ratioParty": 793.7,
+        "ratioBundestag": 750.1
       },
       {
         "word": "verkehrsminister",
         "count": 5,
-        "ratioParty": 196.3,
-        "ratioBundestag": 170.7
+        "ratioParty": 203.5,
+        "ratioBundestag": 169.7
       },
       {
         "word": "wichtiges",
         "count": 6,
-        "ratioParty": 145.8,
-        "ratioBundestag": 31.4
+        "ratioParty": 138.0,
+        "ratioBundestag": 31.2
       },
       {
         "word": "festgestellt",
         "count": 6,
-        "ratioParty": 51.9,
-        "ratioBundestag": 73.0
+        "ratioParty": 50.4,
+        "ratioBundestag": 71.6
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "verkehrsprojekt",
+        "count": 6,
+        "score": 48.38,
+        "ratio": 3174.7
+      },
+      {
+        "word": "gespalten",
+        "count": 6,
+        "score": 40.07,
+        "ratio": 793.7
+      },
+      {
+        "word": "wichtiges",
+        "count": 6,
+        "score": 29.61,
+        "ratio": 138.0
+      },
+      {
+        "word": "verkehrsminister",
+        "count": 5,
+        "score": 26.6,
+        "ratio": 203.5
+      },
+      {
+        "word": "festgestellt",
+        "count": 6,
+        "score": 23.64,
+        "ratio": 50.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "verkehrsprojekt",
+        "count": 6,
+        "score": 57.39,
+        "ratio": 14252.5
+      },
+      {
+        "word": "gespalten",
+        "count": 6,
+        "score": 39.73,
+        "ratio": 750.1
+      },
+      {
+        "word": "festgestellt",
+        "count": 6,
+        "score": 25.71,
+        "ratio": 71.6
+      },
+      {
+        "word": "verkehrsminister",
+        "count": 5,
+        "score": 25.7,
+        "ratio": 169.7
+      },
+      {
+        "word": "wichtiges",
+        "count": 6,
+        "score": 20.83,
+        "ratio": 31.2
       }
     ],
     "signatureAdjectives": [
       {
         "word": "falsch",
         "count": 4,
-        "ratioParty": 13.2,
-        "ratioBundestag": 13.2
+        "ratioParty": 13.1,
+        "ratioBundestag": 13.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 10.58,
+        "ratio": 13.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 10.56,
+        "ratio": 13.0
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 318,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.57,
     "vsParliament": 0.54
   },
@@ -136,11 +216,7 @@
     "question": "Welches Wort nutzt Alexis L. Giersch häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
+        "text": "Europa",
         "isCorrect": false
       },
       {
@@ -148,18 +224,22 @@
         "isCorrect": true
       },
       {
-        "text": "Kinder",
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verkehrsprojekt\" nutzt Alexis L. Giersch 3062.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "13726.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Verkehrsprojekt\" nutzt Alexis L. Giersch 3174.7× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "14252.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Alexis L. Giersch häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Jung",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
@@ -167,16 +247,16 @@
         "isCorrect": true
       },
       {
-        "text": "Europäisch",
+        "text": "Klar",
         "isCorrect": false
       },
       {
-        "text": "Sozial",
+        "text": "Erfolgreich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Falsch\" nutzt Alexis L. Giersch 13.2× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "13.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Falsch\" nutzt Alexis L. Giersch 13.1× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "13.0× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -294,11 +374,11 @@
           "count": 2
         },
         {
-          "word": "china",
+          "word": "russland",
           "count": 1
         },
         {
-          "word": "russland",
+          "word": "china",
           "count": 1
         }
       ],
@@ -340,11 +420,11 @@
           "count": 3
         },
         {
-          "word": "infrastruktur",
+          "word": "autobahn",
           "count": 2
         },
         {
-          "word": "autobahn",
+          "word": "infrastruktur",
           "count": 2
         },
         {

@@ -11,23 +11,23 @@
   "minWords": 45,
   "maxWords": 631,
   "rankings": {
-    "speechRank": 441,
-    "wordsRank": 517,
-    "partySpeechRank": 131,
-    "partyWordsRank": 172,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 29.4,
-    "verbosityRank": 344,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 120,
+    "speechRank": 448,
+    "wordsRank": 524,
+    "partySpeechRank": 135,
+    "partyWordsRank": 175,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 28.4,
+    "verbosityRank": 343,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 123,
     "longestSpeechRank": 463
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 5,
     "interrupterRank": null,
-    "interruptedRank": 547
+    "interruptedRank": 538
   },
   "words": {
     "topWords": [
@@ -52,47 +52,127 @@
       {
         "word": "pirmasens",
         "count": 7,
-        "ratioParty": 3473.6,
-        "ratioBundestag": 2135.9
+        "ratioParty": 3605.6,
+        "ratioBundestag": 2217.8
       },
       {
         "word": "rentner",
         "count": 5,
-        "ratioParty": 85.6,
-        "ratioBundestag": 29.3
+        "ratioParty": 85.8,
+        "ratioBundestag": 30.1
       },
       {
         "word": "gerechtigkeit",
         "count": 6,
         "ratioParty": 27.1,
-        "ratioBundestag": 17.3
+        "ratioBundestag": 17.6
       },
       {
         "word": "sozialstaat",
         "count": 5,
-        "ratioParty": 12.3,
-        "ratioBundestag": 15.2
+        "ratioParty": 12.5,
+        "ratioBundestag": 15.4
       },
       {
         "word": "liegen",
         "count": 5,
-        "ratioParty": 11.7,
-        "ratioBundestag": 10.2
+        "ratioParty": 11.4,
+        "ratioBundestag": 10.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "pirmasens",
+        "count": 7,
+        "score": 57.33,
+        "ratio": 3605.6
+      },
+      {
+        "word": "rentner",
+        "count": 5,
+        "score": 22.32,
+        "ratio": 85.8
+      },
+      {
+        "word": "gerechtigkeit",
+        "count": 6,
+        "score": 20.01,
+        "ratio": 27.1
+      },
+      {
+        "word": "sozialstaat",
+        "count": 5,
+        "score": 13.01,
+        "ratio": 12.5
+      },
+      {
+        "word": "liegen",
+        "count": 5,
+        "score": 12.59,
+        "ratio": 11.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "pirmasens",
+        "count": 7,
+        "score": 53.93,
+        "ratio": 2217.8
+      },
+      {
+        "word": "gerechtigkeit",
+        "count": 6,
+        "score": 17.54,
+        "ratio": 17.6
+      },
+      {
+        "word": "rentner",
+        "count": 5,
+        "score": 17.19,
+        "ratio": 30.1
+      },
+      {
+        "word": "sozialstaat",
+        "count": 5,
+        "score": 13.99,
+        "ratio": 15.4
+      },
+      {
+        "word": "liegen",
+        "count": 5,
+        "score": 12.03,
+        "ratio": 10.1
       }
     ],
     "signatureAdjectives": [
       {
         "word": "gerecht",
         "count": 4,
-        "ratioParty": 10.2,
-        "ratioBundestag": 9.2
+        "ratioParty": 10.3,
+        "ratioBundestag": 9.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 9.7,
+        "ratio": 10.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 9.37,
+        "ratio": 9.4
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 409,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.63,
     "vsParliament": 0.7
   },
@@ -112,11 +192,11 @@
     "question": "Welches Wort nutzt Florian Bilic häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Ausschuss",
+        "text": "Europa",
         "isCorrect": false
       },
       {
-        "text": "Rente",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
@@ -124,18 +204,22 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetz",
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Pirmasens\" nutzt Florian Bilic 3473.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "2135.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Pirmasens\" nutzt Florian Bilic 3605.6× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "2217.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Florian Bilic häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Alt",
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
@@ -143,16 +227,12 @@
         "isCorrect": true
       },
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
+        "text": "Notwendig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gerecht\" nutzt Florian Bilic 10.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "9.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Gerecht\" nutzt Florian Bilic 10.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "9.4× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐬",
@@ -276,19 +356,19 @@
           "count": 4
         },
         {
-          "word": "unternehmen",
-          "count": 3
-        },
-        {
           "word": "wirtschaft",
           "count": 3
         },
         {
-          "word": "wettbewerb",
+          "word": "unternehmen",
+          "count": 3
+        },
+        {
+          "word": "betrieb",
           "count": 1
         },
         {
-          "word": "marktwirtschaft",
+          "word": "wirtschaftswachstum",
           "count": 1
         }
       ],
@@ -306,11 +386,11 @@
           "count": 5
         },
         {
-          "word": "grundsicherung",
+          "word": "familie",
           "count": 4
         },
         {
-          "word": "familie",
+          "word": "grundsicherung",
           "count": 4
         }
       ],
@@ -338,6 +418,10 @@
       ],
       "bildung": [
         {
+          "word": "azubi",
+          "count": 1
+        },
+        {
           "word": "ausbildung",
           "count": 1
         },
@@ -347,10 +431,6 @@
         },
         {
           "word": "abitur",
-          "count": 1
-        },
-        {
-          "word": "azubi",
           "count": 1
         }
       ],
@@ -396,19 +476,19 @@
           "count": 2
         },
         {
+          "word": "vollzeit",
+          "count": 1
+        },
+        {
+          "word": "arbeitsplätze",
+          "count": 1
+        },
+        {
           "word": "gesundheitsschutz",
           "count": 1
         },
         {
           "word": "arbeitnehmer",
-          "count": 1
-        },
-        {
-          "word": "jobcenter",
-          "count": 1
-        },
-        {
-          "word": "rentenversicherung",
           "count": 1
         }
       ]

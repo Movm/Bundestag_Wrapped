@@ -11,23 +11,23 @@
   "minWords": 9,
   "maxWords": 1207,
   "rankings": {
-    "speechRank": 232,
-    "wordsRank": 37,
-    "partySpeechRank": 61,
-    "partyWordsRank": 16,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 62.9,
+    "speechRank": 233,
+    "wordsRank": 42,
+    "partySpeechRank": 60,
+    "partyWordsRank": 18,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 62.8,
     "verbosityRank": 548,
-    "verbosityTotal": 579,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 172,
-    "longestSpeechRank": 36
+    "longestSpeechRank": 38
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 6,
     "interrupterRank": null,
-    "interruptedRank": 522
+    "interruptedRank": 524
   },
   "words": {
     "topWords": [
@@ -76,58 +76,122 @@
       {
         "word": "zendis",
         "count": 5,
-        "ratioParty": 463.5,
-        "ratioBundestag": 55.1
+        "ratioParty": 481.3,
+        "ratioBundestag": 57.3
       },
       {
         "word": "verwaltungsdigitalisierung",
         "count": 12,
-        "ratioParty": 158.9,
-        "ratioBundestag": 143.3
-      },
-      {
-        "word": "kunde",
-        "count": 5,
-        "ratioParty": 154.5,
-        "ratioBundestag": 130.3
+        "ratioParty": 165.0,
+        "ratioBundestag": 148.9
       },
       {
         "word": "rechenleistung",
         "count": 5,
-        "ratioParty": 154.5,
-        "ratioBundestag": 143.3
+        "ratioParty": 160.4,
+        "ratioBundestag": 148.9
+      },
+      {
+        "word": "kunde",
+        "count": 5,
+        "ratioParty": 160.4,
+        "ratioBundestag": 124.0
       },
       {
         "word": "source",
         "count": 11,
-        "ratioParty": 127.5,
-        "ratioBundestag": 85.2
+        "ratioParty": 132.3,
+        "ratioBundestag": 86.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "verwaltungsdigitalisierung",
+        "count": 12,
+        "score": 61.34,
+        "ratio": 165.0
+      },
+      {
+        "word": "source",
+        "count": 11,
+        "score": 53.82,
+        "ratio": 132.3
+      },
+      {
+        "word": "zendis",
+        "count": 5,
+        "score": 30.89,
+        "ratio": 481.3
+      },
+      {
+        "word": "rechenleistung",
+        "count": 5,
+        "score": 25.42,
+        "ratio": 160.4
+      },
+      {
+        "word": "kunde",
+        "count": 5,
+        "score": 25.42,
+        "ratio": 160.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "verwaltungsdigitalisierung",
+        "count": 12,
+        "score": 60.12,
+        "ratio": 148.9
+      },
+      {
+        "word": "source",
+        "count": 11,
+        "score": 49.15,
+        "ratio": 86.2
+      },
+      {
+        "word": "rechenleistung",
+        "count": 5,
+        "score": 25.05,
+        "ratio": 148.9
+      },
+      {
+        "word": "kunde",
+        "count": 5,
+        "score": 24.14,
+        "ratio": 124.0
+      },
+      {
+        "word": "zendis",
+        "count": 5,
+        "score": 20.33,
+        "ratio": 57.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "konstruktiv",
         "count": 4,
-        "ratioParty": 7.6,
-        "ratioBundestag": 9.6
+        "ratioParty": 7.5,
+        "ratioBundestag": 9.7
       },
       {
         "word": "effektiv",
         "count": 3,
-        "ratioParty": 5.7,
-        "ratioBundestag": 6.5
+        "ratioParty": 5.8,
+        "ratioBundestag": 6.6
       },
       {
         "word": "zentral",
         "count": 3,
-        "ratioParty": 4.5,
-        "ratioBundestag": 4.8
+        "ratioParty": 4.6,
+        "ratioBundestag": 4.9
       },
       {
         "word": "sicher",
         "count": 15,
         "ratioParty": 3.2,
-        "ratioBundestag": 3.5
+        "ratioBundestag": 3.6
       },
       {
         "word": "stark",
@@ -135,12 +199,76 @@
         "ratioParty": 2.9,
         "ratioBundestag": 3.6
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 15,
+        "score": 21.53,
+        "ratio": 3.2
+      },
+      {
+        "word": "stark",
+        "count": 9,
+        "score": 12.25,
+        "ratio": 2.9
+      },
+      {
+        "word": "konstruktiv",
+        "count": 4,
+        "score": 8.56,
+        "ratio": 7.5
+      },
+      {
+        "word": "effektiv",
+        "count": 3,
+        "score": 5.75,
+        "ratio": 5.8
+      },
+      {
+        "word": "zentral",
+        "count": 3,
+        "score": 5.17,
+        "ratio": 4.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 15,
+        "score": 22.89,
+        "ratio": 3.6
+      },
+      {
+        "word": "stark",
+        "count": 9,
+        "score": 13.73,
+        "ratio": 3.6
+      },
+      {
+        "word": "konstruktiv",
+        "count": 4,
+        "score": 9.48,
+        "ratio": 9.7
+      },
+      {
+        "word": "effektiv",
+        "count": 3,
+        "score": 6.08,
+        "ratio": 6.6
+      },
+      {
+        "word": "zentral",
+        "count": 3,
+        "score": 5.32,
+        "ratio": 4.9
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 235,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.36,
     "vsParliament": 0.4
   },
@@ -164,43 +292,43 @@
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
+        "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Opposition",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Debatte",
+        "text": "Familie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Zendis\" nutzt Dr. Karsten Wildberger 463.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "55.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Zendis\" nutzt Dr. Karsten Wildberger 481.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "57.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Karsten Wildberger häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Konstruktiv",
-        "isCorrect": true
-      },
-      {
         "text": "Sozial",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Notwendig",
+        "text": "Konstruktiv",
+        "isCorrect": true
+      },
+      {
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Konstruktiv\" nutzt Dr. Karsten Wildberger 7.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "9.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Konstruktiv\" nutzt Dr. Karsten Wildberger 7.5× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "9.7× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐬",
@@ -344,11 +472,11 @@
           "count": 2
         },
         {
-          "word": "sozialleistungen",
+          "word": "wohnung",
           "count": 1
         },
         {
-          "word": "wohnung",
+          "word": "sozialleistungen",
           "count": 1
         }
       ],
@@ -456,11 +584,11 @@
           "count": 3
         },
         {
-          "word": "grundgesetz",
+          "word": "novelle",
           "count": 1
         },
         {
-          "word": "novelle",
+          "word": "grundgesetz",
           "count": 1
         }
       ],
@@ -470,15 +598,15 @@
           "count": 4
         },
         {
+          "word": "homeoffice",
+          "count": 1
+        },
+        {
           "word": "arbeitsschutz",
           "count": 1
         },
         {
           "word": "arbeitnehmerinnen",
-          "count": 1
-        },
-        {
-          "word": "homeoffice",
           "count": 1
         }
       ],

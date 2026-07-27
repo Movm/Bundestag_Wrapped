@@ -11,23 +11,23 @@
   "minWords": 7,
   "maxWords": 333,
   "rankings": {
-    "speechRank": 537,
-    "wordsRank": 440,
-    "partySpeechRank": 90,
-    "partyWordsRank": 87,
+    "speechRank": 552,
+    "wordsRank": 447,
+    "partySpeechRank": 95,
+    "partyWordsRank": 88,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 14.1,
-    "verbosityRank": 572,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 101,
-    "longestSpeechRank": 615
+    "totalSpeakers": 626,
+    "percentile": 11.8,
+    "verbosityRank": 575,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 102,
+    "longestSpeechRank": 616
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 8,
     "interrupterRank": null,
-    "interruptedRank": 493
+    "interruptedRank": 504
   },
   "words": {
     "topWords": [
@@ -60,11 +60,11 @@
         "count": 11
       },
       {
-        "word": "gute",
+        "word": "gesetz",
         "count": 9
       },
       {
-        "word": "gesetz",
+        "word": "gute",
         "count": 9
       },
       {
@@ -76,41 +76,107 @@
       {
         "word": "jobturbo",
         "count": 6,
-        "ratioParty": 331.4,
-        "ratioBundestag": 473.7
+        "ratioParty": 346.2,
+        "ratioBundestag": 491.8
       },
       {
         "word": "jobcenter",
         "count": 14,
-        "ratioParty": 110.5,
-        "ratioBundestag": 130.0
+        "ratioParty": 115.4,
+        "ratioBundestag": 135.0
       },
       {
         "word": "bundesagentur",
         "count": 7,
-        "ratioParty": 103.1,
-        "ratioBundestag": 179.9
+        "ratioParty": 107.7,
+        "ratioBundestag": 174.6
       },
       {
         "word": "vermitteln",
         "count": 6,
-        "ratioParty": 73.6,
-        "ratioBundestag": 83.9
+        "ratioParty": 76.9,
+        "ratioBundestag": 84.0
       },
       {
-        "word": "bundesrepublik",
-        "count": 15,
-        "ratioParty": 44.8,
-        "ratioBundestag": 35.0
+        "word": "weiterbildung",
+        "count": 6,
+        "ratioParty": 46.2,
+        "ratioBundestag": 76.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "jobcenter",
+        "count": 14,
+        "score": 66.6,
+        "ratio": 115.4
+      },
+      {
+        "word": "jobturbo",
+        "count": 6,
+        "score": 35.1,
+        "ratio": 346.2
+      },
+      {
+        "word": "bundesagentur",
+        "count": 7,
+        "score": 32.82,
+        "ratio": 107.7
+      },
+      {
+        "word": "vermitteln",
+        "count": 6,
+        "score": 26.13,
+        "ratio": 76.9
+      },
+      {
+        "word": "weiterbildung",
+        "count": 6,
+        "score": 23.13,
+        "ratio": 46.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "jobcenter",
+        "count": 14,
+        "score": 68.78,
+        "ratio": 135.0
+      },
+      {
+        "word": "jobturbo",
+        "count": 6,
+        "score": 37.2,
+        "ratio": 491.8
+      },
+      {
+        "word": "bundesagentur",
+        "count": 7,
+        "score": 36.18,
+        "ratio": 174.6
+      },
+      {
+        "word": "vermitteln",
+        "count": 6,
+        "score": 26.66,
+        "ratio": 84.0
+      },
+      {
+        "word": "weiterbildung",
+        "count": 6,
+        "score": 26.1,
+        "ratio": 76.5
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 133,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.22,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.21,
     "vsParliament": 0.23
   },
   "funFacts": [
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Katja Mast häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
         "text": "Jobturbo",
         "isCorrect": true
       },
       {
-        "text": "Politik",
+        "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Energie",
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Jobturbo\" nutzt Katja Mast 331.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "473.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Jobturbo\" nutzt Katja Mast 346.2× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "491.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -269,15 +335,15 @@
           "count": 3
         },
         {
-          "word": "wachstum",
-          "count": 1
-        },
-        {
           "word": "firma",
           "count": 1
         },
         {
           "word": "wirtschaftswachstum",
+          "count": 1
+        },
+        {
+          "word": "wettbewerb",
           "count": 1
         }
       ],
@@ -385,7 +451,7 @@
           "count": 2
         },
         {
-          "word": "arbeitnehmerinnen",
+          "word": "arbeitsplatz",
           "count": 1
         }
       ],

@@ -11,23 +11,23 @@
   "minWords": 669,
   "maxWords": 683,
   "rankings": {
-    "speechRank": 611,
-    "wordsRank": 585,
-    "partySpeechRank": 202,
-    "partyWordsRank": 193,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 2.2,
+    "speechRank": 600,
+    "wordsRank": 587,
+    "partySpeechRank": 196,
+    "partyWordsRank": 195,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 4.2,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 394
+    "longestSpeechRank": 397
   },
   "drama": {
     "interruptionsGiven": 4,
     "interruptionsReceived": 4,
-    "interrupterRank": 359,
-    "interruptedRank": 563
+    "interrupterRank": 372,
+    "interruptedRank": 566
   },
   "words": {
     "topWords": [
@@ -76,26 +76,26 @@
       {
         "word": "humanitären",
         "count": 8,
-        "ratioParty": 142.7,
-        "ratioBundestag": 128.9
+        "ratioParty": 145.7,
+        "ratioBundestag": 133.2
       },
       {
         "word": "humanitäre",
         "count": 12,
-        "ratioParty": 108.8,
-        "ratioBundestag": 85.2
+        "ratioParty": 112.0,
+        "ratioBundestag": 87.9
       },
       {
         "word": "hilfe",
         "count": 25,
-        "ratioParty": 100.2,
-        "ratioBundestag": 89.8
+        "ratioParty": 101.3,
+        "ratioBundestag": 92.0
       },
       {
         "word": "dürfen",
         "count": 5,
-        "ratioParty": 8.9,
-        "ratioBundestag": 9.7
+        "ratioParty": 9.0,
+        "ratioBundestag": 9.8
       },
       {
         "word": "menschen",
@@ -104,12 +104,78 @@
         "ratioBundestag": 2.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "hilfe",
+        "count": 25,
+        "score": 115.7,
+        "ratio": 101.3
+      },
+      {
+        "word": "humanitäre",
+        "count": 12,
+        "score": 56.73,
+        "ratio": 112.0
+      },
+      {
+        "word": "humanitären",
+        "count": 8,
+        "score": 39.91,
+        "ratio": 145.7
+      },
+      {
+        "word": "dürfen",
+        "count": 5,
+        "score": 11.51,
+        "ratio": 9.0
+      },
+      {
+        "word": "menschen",
+        "count": 8,
+        "score": 10.47,
+        "ratio": 2.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "hilfe",
+        "count": 25,
+        "score": 113.31,
+        "ratio": 92.0
+      },
+      {
+        "word": "humanitäre",
+        "count": 12,
+        "score": 53.85,
+        "ratio": 87.9
+      },
+      {
+        "word": "humanitären",
+        "count": 8,
+        "score": 39.19,
+        "ratio": 133.2
+      },
+      {
+        "word": "dürfen",
+        "count": 5,
+        "score": 11.9,
+        "ratio": 9.8
+      },
+      {
+        "word": "menschen",
+        "count": 8,
+        "score": 9.05,
+        "ratio": 2.1
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 676,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 1.05,
     "vsParliament": 1.16
   },
@@ -129,15 +195,15 @@
     "question": "Welches Wort nutzt Mechthild Heil häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
         "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
         "isCorrect": false
       },
       {
@@ -145,8 +211,8 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Humanitären\" nutzt Mechthild Heil 142.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "128.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Humanitären\" nutzt Mechthild Heil 145.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "133.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

@@ -11,23 +11,23 @@
   "minWords": 391,
   "maxWords": 978,
   "rankings": {
-    "speechRank": 274,
-    "wordsRank": 221,
-    "partySpeechRank": 61,
-    "partyWordsRank": 50,
+    "speechRank": 295,
+    "wordsRank": 229,
+    "partySpeechRank": 64,
+    "partyWordsRank": 51,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 56.2,
-    "verbosityRank": 63,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 52.9,
+    "verbosityRank": 64,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 16,
     "longestSpeechRank": 91
   },
   "drama": {
     "interruptionsGiven": 17,
     "interruptionsReceived": 33,
-    "interrupterRank": 220,
-    "interruptedRank": 209
+    "interrupterRank": 221,
+    "interruptedRank": 222
   },
   "words": {
     "topWords": [
@@ -52,40 +52,106 @@
       {
         "word": "rechenzentren",
         "count": 8,
-        "ratioParty": 46.1,
-        "ratioBundestag": 31.3
+        "ratioParty": 47.8,
+        "ratioBundestag": 31.8
       },
       {
         "word": "digitalministerium",
         "count": 5,
-        "ratioParty": 30.2,
-        "ratioBundestag": 43.2
+        "ratioParty": 31.3,
+        "ratioBundestag": 44.9
       },
       {
         "word": "intelligenz",
         "count": 7,
-        "ratioParty": 25.3,
-        "ratioBundestag": 16.2
+        "ratioParty": 24.9,
+        "ratioBundestag": 15.8
       },
       {
         "word": "bedanke",
         "count": 6,
-        "ratioParty": 23.8,
-        "ratioBundestag": 23.1
+        "ratioParty": 23.2,
+        "ratioBundestag": 22.9
       },
       {
         "word": "gießen",
         "count": 6,
-        "ratioParty": 22.4,
-        "ratioBundestag": 39.8
+        "ratioParty": 23.2,
+        "ratioBundestag": 40.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "rechenzentren",
+        "count": 8,
+        "score": 31.1,
+        "ratio": 47.8
+      },
+      {
+        "word": "intelligenz",
+        "count": 7,
+        "score": 22.78,
+        "ratio": 24.9
+      },
+      {
+        "word": "bedanke",
+        "count": 6,
+        "score": 19.12,
+        "ratio": 23.2
+      },
+      {
+        "word": "gießen",
+        "count": 6,
+        "score": 19.12,
+        "ratio": 23.2
+      },
+      {
+        "word": "digitalministerium",
+        "count": 5,
+        "score": 17.38,
+        "ratio": 31.3
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "rechenzentren",
+        "count": 8,
+        "score": 27.92,
+        "ratio": 31.8
+      },
+      {
+        "word": "gießen",
+        "count": 6,
+        "score": 22.41,
+        "ratio": 40.9
+      },
+      {
+        "word": "intelligenz",
+        "count": 7,
+        "score": 19.75,
+        "ratio": 15.8
+      },
+      {
+        "word": "digitalministerium",
+        "count": 5,
+        "score": 19.13,
+        "ratio": 44.9
+      },
+      {
+        "word": "bedanke",
+        "count": 6,
+        "score": 19.04,
+        "ratio": 22.9
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 595,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 1.07,
     "vsParliament": 1.02
   },
@@ -110,24 +176,24 @@
     "question": "Welches Wort nutzt Robin Jünger häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Abstimmung",
+        "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
         "text": "Rechenzentren",
         "isCorrect": true
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rechenzentren\" nutzt Robin Jünger 46.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "31.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Rechenzentren\" nutzt Robin Jünger 47.8× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "31.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -312,23 +378,15 @@
           "count": 2
         },
         {
-          "word": "frieden",
+          "word": "amerika",
           "count": 1
         },
         {
-          "word": "amerika",
+          "word": "kooperation",
           "count": 1
         }
       ],
       "digital": [
-        {
-          "word": "daten",
-          "count": 3
-        },
-        {
-          "word": "digitalisierung",
-          "count": 3
-        },
         {
           "word": "rechenzentrum",
           "count": 3
@@ -338,7 +396,15 @@
           "count": 3
         },
         {
+          "word": "digitalisierung",
+          "count": 3
+        },
+        {
           "word": "digital",
+          "count": 3
+        },
+        {
+          "word": "daten",
           "count": 3
         }
       ],
@@ -370,7 +436,7 @@
           "count": 2
         },
         {
-          "word": "schuldenbremse",
+          "word": "subventionen",
           "count": 1
         }
       ],
@@ -392,17 +458,17 @@
           "count": 1
         },
         {
-          "word": "strafe",
+          "word": "richter",
           "count": 1
         }
       ],
       "arbeit": [
         {
-          "word": "burnout",
+          "word": "arbeitsschutz",
           "count": 1
         },
         {
-          "word": "arbeitsschutz",
+          "word": "burnout",
           "count": 1
         }
       ],
@@ -412,19 +478,19 @@
           "count": 3
         },
         {
-          "word": "fahrzeuge",
-          "count": 2
-        },
-        {
           "word": "straße",
           "count": 2
         },
         {
-          "word": "bahn",
+          "word": "fahrzeuge",
+          "count": 2
+        },
+        {
+          "word": "verkehr",
           "count": 1
         },
         {
-          "word": "infrastruktur",
+          "word": "autobahn",
           "count": 1
         }
       ]

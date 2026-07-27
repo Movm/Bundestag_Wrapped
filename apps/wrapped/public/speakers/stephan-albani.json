@@ -11,23 +11,23 @@
   "minWords": 61,
   "maxWords": 751,
   "rankings": {
-    "speechRank": 393,
-    "wordsRank": 453,
-    "partySpeechRank": 113,
-    "partyWordsRank": 145,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 37.1,
-    "verbosityRank": 455,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 154,
-    "longestSpeechRank": 309
+    "speechRank": 388,
+    "wordsRank": 460,
+    "partySpeechRank": 109,
+    "partyWordsRank": 148,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 38.0,
+    "verbosityRank": 459,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 156,
+    "longestSpeechRank": 312
   },
   "drama": {
     "interruptionsGiven": 43,
     "interruptionsReceived": 8,
-    "interrupterRank": 121,
-    "interruptedRank": 492
+    "interrupterRank": 126,
+    "interruptedRank": 500
   },
   "words": {
     "topWords": [
@@ -60,11 +60,15 @@
         "count": 8
       },
       {
-        "word": "jahre",
+        "word": "deutschland",
         "count": 7
       },
       {
-        "word": "deutschland",
+        "word": "wichtig",
+        "count": 7
+      },
+      {
+        "word": "jahre",
         "count": 7
       }
     ],
@@ -72,26 +76,26 @@
       {
         "word": "wissenschaft",
         "count": 10,
-        "ratioParty": 26.7,
-        "ratioBundestag": 22.6
+        "ratioParty": 26.2,
+        "ratioBundestag": 22.5
       },
       {
         "word": "raumfahrt",
         "count": 5,
-        "ratioParty": 15.6,
-        "ratioBundestag": 23.6
+        "ratioParty": 16.1,
+        "ratioBundestag": 24.4
       },
       {
         "word": "forschung",
         "count": 13,
-        "ratioParty": 15.2,
-        "ratioBundestag": 18.5
+        "ratioParty": 15.6,
+        "ratioBundestag": 18.8
       },
       {
         "word": "verlässlichkeit",
         "count": 5,
-        "ratioParty": 11.0,
-        "ratioBundestag": 16.1
+        "ratioParty": 10.9,
+        "ratioBundestag": 16.2
       },
       {
         "word": "sinne",
@@ -100,12 +104,78 @@
         "ratioBundestag": 8.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "forschung",
+        "count": 13,
+        "score": 36.52,
+        "ratio": 15.6
+      },
+      {
+        "word": "wissenschaft",
+        "count": 10,
+        "score": 33.03,
+        "ratio": 26.2
+      },
+      {
+        "word": "raumfahrt",
+        "count": 5,
+        "score": 14.2,
+        "ratio": 16.1
+      },
+      {
+        "word": "verlässlichkeit",
+        "count": 5,
+        "score": 12.38,
+        "ratio": 10.9
+      },
+      {
+        "word": "sinne",
+        "count": 5,
+        "score": 10.76,
+        "ratio": 7.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "forschung",
+        "count": 13,
+        "score": 38.81,
+        "ratio": 18.8
+      },
+      {
+        "word": "wissenschaft",
+        "count": 10,
+        "score": 31.57,
+        "ratio": 22.5
+      },
+      {
+        "word": "raumfahrt",
+        "count": 5,
+        "score": 16.17,
+        "ratio": 24.4
+      },
+      {
+        "word": "verlässlichkeit",
+        "count": 5,
+        "score": 14.22,
+        "ratio": 16.2
+      },
+      {
+        "word": "sinne",
+        "count": 5,
+        "score": 11.26,
+        "ratio": 8.5
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 355,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.55,
     "vsParliament": 0.61
   },
@@ -130,24 +200,24 @@
     "question": "Welches Wort nutzt Stephan Albani häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
         "text": "Wissenschaft",
         "isCorrect": true
-      },
-      {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wissenschaft\" nutzt Stephan Albani 26.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "22.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wissenschaft\" nutzt Stephan Albani 26.2× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "22.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -264,15 +334,15 @@
       ],
       "soziales": [
         {
+          "word": "gerechtigkeit",
+          "count": 1
+        },
+        {
           "word": "kinder",
           "count": 1
         },
         {
           "word": "jugend",
-          "count": 1
-        },
-        {
-          "word": "gerechtigkeit",
           "count": 1
         }
       ],
@@ -300,7 +370,7 @@
           "count": 2
         },
         {
-          "word": "hausarzt",
+          "word": "impfung",
           "count": 1
         }
       ],
@@ -326,11 +396,11 @@
           "count": 10
         },
         {
-          "word": "grundlagenforschung",
+          "word": "hochschulen",
           "count": 3
         },
         {
-          "word": "hochschulen",
+          "word": "grundlagenforschung",
           "count": 3
         },
         {

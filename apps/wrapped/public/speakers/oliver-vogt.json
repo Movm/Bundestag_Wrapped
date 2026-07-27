@@ -11,23 +11,23 @@
   "minWords": 333,
   "maxWords": 832,
   "rankings": {
-    "speechRank": 582,
-    "wordsRank": 446,
-    "partySpeechRank": 189,
-    "partyWordsRank": 140,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 6.9,
+    "speechRank": 585,
+    "wordsRank": 451,
+    "partySpeechRank": 190,
+    "partyWordsRank": 143,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 6.5,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 205
+    "longestSpeechRank": 207
   },
   "drama": {
     "interruptionsGiven": 38,
     "interruptionsReceived": 7,
-    "interrupterRank": 139,
-    "interruptedRank": 506
+    "interrupterRank": 141,
+    "interruptedRank": 512
   },
   "words": {
     "topWords": [
@@ -76,42 +76,108 @@
       {
         "word": "forstwirte",
         "count": 5,
-        "ratioParty": 589.3,
-        "ratioBundestag": 679.8
+        "ratioParty": 611.7,
+        "ratioBundestag": 705.8
       },
       {
         "word": "alois",
         "count": 8,
-        "ratioParty": 104.8,
-        "ratioBundestag": 189.2
+        "ratioParty": 108.7,
+        "ratioBundestag": 192.2
       },
       {
         "word": "bauernfamilien",
         "count": 5,
-        "ratioParty": 93.0,
-        "ratioBundestag": 217.5
+        "ratioParty": 96.6,
+        "ratioBundestag": 225.9
       },
       {
         "word": "rainer",
         "count": 10,
-        "ratioParty": 84.2,
-        "ratioBundestag": 62.9
+        "ratioParty": 87.4,
+        "ratioBundestag": 63.4
       },
       {
-        "word": "konstruktiven",
-        "count": 5,
-        "ratioParty": 53.6,
-        "ratioBundestag": 78.8
+        "word": "haushaltsentwurf",
+        "count": 8,
+        "ratioParty": 53.4,
+        "ratioBundestag": 34.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "rainer",
+        "count": 10,
+        "score": 44.82,
+        "ratio": 87.4
+      },
+      {
+        "word": "alois",
+        "count": 8,
+        "score": 37.58,
+        "ratio": 108.7
+      },
+      {
+        "word": "forstwirte",
+        "count": 5,
+        "score": 32.09,
+        "ratio": 611.7
+      },
+      {
+        "word": "haushaltsentwurf",
+        "count": 8,
+        "score": 31.97,
+        "ratio": 53.4
+      },
+      {
+        "word": "bauernfamilien",
+        "count": 5,
+        "score": 22.9,
+        "ratio": 96.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "alois",
+        "count": 8,
+        "score": 42.11,
+        "ratio": 192.2
+      },
+      {
+        "word": "rainer",
+        "count": 10,
+        "score": 41.65,
+        "ratio": 63.4
+      },
+      {
+        "word": "forstwirte",
+        "count": 5,
+        "score": 32.8,
+        "ratio": 705.8
+      },
+      {
+        "word": "haushaltsentwurf",
+        "count": 8,
+        "score": 28.47,
+        "ratio": 34.1
+      },
+      {
+        "word": "bauernfamilien",
+        "count": 5,
+        "score": 27.12,
+        "ratio": 225.9
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 675,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 1.05,
-    "vsParliament": 1.16
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
+    "vsParty": 1.04,
+    "vsParliament": 1.15
   },
   "funFacts": [
     {
@@ -138,20 +204,20 @@
         "isCorrect": false
       },
       {
-        "text": "Opposition",
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
         "text": "Forstwirte",
         "isCorrect": true
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Forstwirte\" nutzt Dr. Oliver Vogt 589.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "679.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Forstwirte\" nutzt Dr. Oliver Vogt 611.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "705.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -258,11 +324,11 @@
           "count": 1
         },
         {
-          "word": "nachhaltigkeit",
+          "word": "wald",
           "count": 1
         },
         {
-          "word": "wald",
+          "word": "nachhaltigkeit",
           "count": 1
         },
         {

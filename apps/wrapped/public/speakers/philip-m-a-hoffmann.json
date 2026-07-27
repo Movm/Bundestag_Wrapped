@@ -11,23 +11,23 @@
   "minWords": 52,
   "maxWords": 647,
   "rankings": {
-    "speechRank": 221,
-    "wordsRank": 260,
-    "partySpeechRank": 55,
-    "partyWordsRank": 74,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 64.6,
-    "verbosityRank": 361,
-    "verbosityTotal": 579,
+    "speechRank": 219,
+    "wordsRank": 275,
+    "partySpeechRank": 53,
+    "partyWordsRank": 76,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 65.0,
+    "verbosityRank": 359,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 128,
-    "longestSpeechRank": 437
+    "longestSpeechRank": 440
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 14,
-    "interrupterRank": 418,
-    "interruptedRank": 400
+    "interrupterRank": 432,
+    "interruptedRank": 411
   },
   "words": {
     "topWords": [
@@ -64,44 +64,108 @@
         "count": 16
       },
       {
-        "word": "banken",
+        "word": "weniger",
         "count": 13
       },
       {
-        "word": "weniger",
+        "word": "regeln",
         "count": 13
       }
     ],
     "signatureWords": [
       {
-        "word": "institute",
-        "count": 6,
-        "ratioParty": 95.6,
-        "ratioBundestag": 85.1
-      },
-      {
         "word": "standortfördergesetz",
         "count": 10,
-        "ratioParty": 94.2,
-        "ratioBundestag": 127.7
+        "ratioParty": 97.8,
+        "ratioBundestag": 132.6
       },
       {
         "word": "banken",
         "count": 13,
-        "ratioParty": 92.9,
-        "ratioBundestag": 58.0
+        "ratioParty": 96.4,
+        "ratioBundestag": 59.8
+      },
+      {
+        "word": "institute",
+        "count": 6,
+        "ratioParty": 92.2,
+        "ratioBundestag": 84.6
       },
       {
         "word": "geldwäsche",
         "count": 5,
-        "ratioParty": 64.8,
-        "ratioBundestag": 49.1
+        "ratioParty": 67.2,
+        "ratioBundestag": 51.0
       },
       {
         "word": "mehrwert",
         "count": 9,
-        "ratioParty": 44.4,
-        "ratioBundestag": 54.2
+        "ratioParty": 44.0,
+        "ratioBundestag": 54.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "banken",
+        "count": 13,
+        "score": 59.52,
+        "ratio": 96.4
+      },
+      {
+        "word": "standortfördergesetz",
+        "count": 10,
+        "score": 45.93,
+        "ratio": 97.8
+      },
+      {
+        "word": "mehrwert",
+        "count": 9,
+        "score": 34.26,
+        "ratio": 44.0
+      },
+      {
+        "word": "institute",
+        "count": 6,
+        "score": 27.21,
+        "ratio": 92.2
+      },
+      {
+        "word": "geldwäsche",
+        "count": 5,
+        "score": 21.11,
+        "ratio": 67.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "banken",
+        "count": 13,
+        "score": 53.4,
+        "ratio": 59.8
+      },
+      {
+        "word": "standortfördergesetz",
+        "count": 10,
+        "score": 48.95,
+        "ratio": 132.6
+      },
+      {
+        "word": "mehrwert",
+        "count": 9,
+        "score": 36.18,
+        "ratio": 54.7
+      },
+      {
+        "word": "institute",
+        "count": 6,
+        "score": 26.7,
+        "ratio": 84.6
+      },
+      {
+        "word": "geldwäsche",
+        "count": 5,
+        "score": 19.76,
+        "ratio": 51.0
       }
     ],
     "signatureAdjectives": [
@@ -109,19 +173,19 @@
         "word": "wirksam",
         "count": 5,
         "ratioParty": 8.5,
-        "ratioBundestag": 11.4
+        "ratioBundestag": 11.5
       },
       {
         "word": "verlässlich",
         "count": 3,
-        "ratioParty": 8.2,
-        "ratioBundestag": 8.5
+        "ratioParty": 8.0,
+        "ratioBundestag": 8.4
       },
       {
         "word": "falsch",
         "count": 4,
-        "ratioParty": 3.8,
-        "ratioBundestag": 3.7
+        "ratioParty": 3.6,
+        "ratioBundestag": 3.6
       },
       {
         "word": "entscheidend",
@@ -129,12 +193,64 @@
         "ratioParty": 2.5,
         "ratioBundestag": 3.8
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirksam",
+        "count": 5,
+        "score": 11.26,
+        "ratio": 8.5
+      },
+      {
+        "word": "verlässlich",
+        "count": 3,
+        "score": 6.59,
+        "ratio": 8.0
+      },
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 6.1,
+        "ratio": 3.6
+      },
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 3.76,
+        "ratio": 2.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "wirksam",
+        "count": 5,
+        "score": 12.63,
+        "ratio": 11.5
+      },
+      {
+        "word": "verlässlich",
+        "count": 3,
+        "score": 6.72,
+        "ratio": 8.4
+      },
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 6.1,
+        "ratio": 3.6
+      },
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 4.71,
+        "ratio": 3.8
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 404,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.63,
     "vsParliament": 0.69
   },
@@ -154,47 +270,47 @@
     "question": "Welches Wort nutzt Philip M. A. Hoffmann häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Familie",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
-        "text": "Bundesregierung",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
-        "text": "Institute",
+        "text": "Standortfördergesetz",
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Institute\" nutzt Philip M. A. Hoffmann 95.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "85.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Standortfördergesetz\" nutzt Philip M. A. Hoffmann 97.8× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "132.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Philip M. A. Hoffmann häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
         "text": "Wirksam",
         "isCorrect": true
+      },
+      {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Wirksam\" nutzt Philip M. A. Hoffmann 8.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "11.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "11.5× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -217,7 +333,7 @@
         "title": "Cleverer Stratege",
         "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
         "id": "fuchs",
-        "score": 0.843
+        "score": 0.847
       }
     ]
   },
@@ -340,7 +456,7 @@
           "count": 5
         },
         {
-          "word": "gerechtigkeit",
+          "word": "rentner",
           "count": 1
         },
         {
@@ -352,7 +468,7 @@
           "count": 1
         },
         {
-          "word": "rentner",
+          "word": "gerechtigkeit",
           "count": 1
         }
       ],
@@ -362,19 +478,19 @@
           "count": 5
         },
         {
-          "word": "verteidigung",
-          "count": 2
-        },
-        {
           "word": "bundeswehr",
           "count": 2
         },
         {
-          "word": "kriminalität",
+          "word": "verteidigung",
+          "count": 2
+        },
+        {
+          "word": "verteidigungsfähigkeit",
           "count": 1
         },
         {
-          "word": "betrug",
+          "word": "polizei",
           "count": 1
         }
       ],
@@ -402,11 +518,11 @@
           "count": 3
         },
         {
-          "word": "kooperation",
+          "word": "nato",
           "count": 2
         },
         {
-          "word": "krieg",
+          "word": "russland",
           "count": 2
         }
       ],
@@ -426,15 +542,15 @@
           "count": 2
         },
         {
+          "word": "schulen",
+          "count": 1
+        },
+        {
           "word": "ausbildung",
           "count": 1
         },
         {
           "word": "forschung",
-          "count": 1
-        },
-        {
-          "word": "schulen",
           "count": 1
         }
       ],
