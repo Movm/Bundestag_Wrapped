@@ -6,7 +6,7 @@
   "type": "module",
   "packageManager": "pnpm@10.0.0",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22.22.0"
   },
   "scripts": {
     "dev:web": "pnpm --filter bundestag-wrapped dev",
@@ -16,6 +16,16 @@
     "lint": "pnpm -r lint",
     "analysis:serve": "cd services/analysis && bundestag-analysis serve",
     "analysis:serve-wrapped": "cd services/analysis && bundestag-analysis serve-wrapped"
+  },
+  "pnpm": {
+    "overrides": {
+      "@hono/node-server": "2.0.10",
+      "brace-expansion": "5.0.8",
+      "fast-uri": "3.1.4",
+      "postcss": "8.5.23",
+      "tar": "7.5.22",
+      "uuid": "11.1.1"
+    }
   },
   "license": "AGPL-3.0-only"
 }

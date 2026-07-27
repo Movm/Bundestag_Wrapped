@@ -1,10 +1,9 @@
 name: Dependabot auto-merge
 
-# Enables GitHub native auto-merge for LOW-RISK Dependabot PRs (patch + minor).
-# The PR still has to pass every required check first — auto-merge only fires once
-# CI is green. Majors are never auto-merged: they land in the queue for a human to
-# review. Requires the repo setting "Allow auto-merge" (Settings → General) and a
-# branch-protection rule with required status checks.
+# Merges LOW-RISK Dependabot PRs (patch + minor) only after every required branch
+# protection check is green. Majors are never auto-merged: they stay queued for a
+# human review. This deliberately does not depend on the repository-wide
+# "Allow auto-merge" setting.
 
 on: pull_request_target
 
@@ -16,14 +15,34 @@ jobs:
   automerge:
     if: github.actor == 'dependabot[bot]'
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - name: Fetch Dependabot metadata
         id: meta
         uses: dependabot/fetch-metadata@v2
 
-      - name: Enable auto-merge for patch + minor
+      - name: Wait for required checks
         if: steps.meta.outputs.update-type == 'version-update:semver-patch' || steps.meta.outputs.update-type == 'version-update:semver-minor'
-        run: gh pr merge --auto --merge "$PR_URL"
+        shell: bash
+        run: |
+          # pull_request_target can start before GitHub has registered the PR's
+          # required checks. Give them a short window to appear, then let `gh`
+          # watch all branch-protection checks through completion.
+          for _ in {1..30}; do
+            output="$(gh pr checks "$PR_URL" --required 2>&1)" && break
+            if [[ "$output" != *"no required checks reported"* ]]; then
+              break
+            fi
+            sleep 10
+          done
+          gh pr checks "$PR_URL" --required --watch --fail-fast --interval 10
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Squash-merge patch + minor
+        if: steps.meta.outputs.update-type == 'version-update:semver-patch' || steps.meta.outputs.update-type == 'version-update:semver-minor'
+        run: gh pr merge --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
