@@ -25,17 +25,47 @@ jobs:
         if: steps.meta.outputs.update-type == 'version-update:semver-patch' || steps.meta.outputs.update-type == 'version-update:semver-minor'
         shell: bash
         run: |
-          # pull_request_target can start before GitHub has registered the PR's
-          # required checks. Give them a short window to appear, then let `gh`
-          # watch all branch-protection checks through completion.
-          for _ in {1..30}; do
-            output="$(gh pr checks "$PR_URL" --required 2>&1)" && break
-            if [[ "$output" != *"no required checks reported"* ]]; then
+          # Dependabot can replace the PR head while checks are running (for
+          # example after a lockfile refresh). In that case `gh pr checks
+          # --watch` loses the old check suite. Retry against the new head, but
+          # still fail immediately when checks fail on an unchanged head.
+          checks_passed=false
+          for attempt in {1..4}; do
+            before_sha="$(gh pr view "$PR_URL" --json headRefOid --jq .headRefOid)"
+
+            # pull_request_target can start before GitHub has registered checks.
+            for _ in {1..30}; do
+              output="$(gh pr checks "$PR_URL" --required 2>&1)" && break
+              if [[ "$output" != *"no required checks reported"* ]]; then
+                break
+              fi
+              sleep 10
+            done
+
+            if gh pr checks "$PR_URL" --required --watch --fail-fast --interval 10; then
+              checks_passed=true
               break
             fi
-            sleep 10
+
+            state="$(gh pr view "$PR_URL" --json state --jq .state)"
+            if [[ "$state" != "OPEN" ]]; then
+              echo "::notice title=Dependabot PR closed::Stopping auto-merge because the PR is no longer open."
+              exit 0
+            fi
+
+            after_sha="$(gh pr view "$PR_URL" --json headRefOid --jq .headRefOid)"
+            if [[ "$after_sha" == "$before_sha" ]]; then
+              echo "::error title=Required checks failed::Checks failed without a Dependabot head update."
+              exit 1
+            fi
+
+            echo "::notice title=Dependabot head updated::The PR head changed during attempt $attempt; retrying required checks."
           done
-          gh pr checks "$PR_URL" --required --watch --fail-fast --interval 10
+
+          if [[ "$checks_passed" != "true" ]]; then
+            echo "::error title=Dependabot kept changing::Required checks never stabilized after four attempts."
+            exit 1
+          fi
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
