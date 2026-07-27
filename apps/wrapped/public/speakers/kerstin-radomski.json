@@ -11,17 +11,17 @@
   "minWords": 461,
   "maxWords": 575,
   "rankings": {
-    "speechRank": 568,
-    "wordsRank": 577,
-    "partySpeechRank": 183,
-    "partyWordsRank": 190,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 9.1,
-    "verbosityRank": 118,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 42,
-    "longestSpeechRank": 520
+    "speechRank": 578,
+    "wordsRank": 578,
+    "partySpeechRank": 189,
+    "partyWordsRank": 191,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 7.7,
+    "verbosityRank": 120,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 43,
+    "longestSpeechRank": 524
   },
   "drama": {
     "interruptionsGiven": 0,
@@ -64,11 +64,11 @@
         "count": 4
       },
       {
-        "word": "deutschland",
+        "word": "lernt",
         "count": 4
       },
       {
-        "word": "lernt",
+        "word": "deutschland",
         "count": 4
       }
     ],
@@ -76,40 +76,106 @@
       {
         "word": "sport",
         "count": 16,
-        "ratioParty": 182.4,
-        "ratioBundestag": 144.4
+        "ratioParty": 167.4,
+        "ratioBundestag": 133.2
       },
       {
         "word": "ehrenamt",
         "count": 8,
-        "ratioParty": 67.8,
-        "ratioBundestag": 75.9
+        "ratioParty": 69.1,
+        "ratioBundestag": 78.3
       },
       {
         "word": "kultur",
         "count": 5,
-        "ratioParty": 43.1,
-        "ratioBundestag": 36.7
+        "ratioParty": 40.7,
+        "ratioBundestag": 34.7
       },
       {
         "word": "einzelplan",
         "count": 5,
-        "ratioParty": 21.3,
-        "ratioBundestag": 24.6
+        "ratioParty": 22.1,
+        "ratioBundestag": 25.5
       },
       {
         "word": "haushalt",
         "count": 5,
-        "ratioParty": 5.0,
-        "ratioBundestag": 5.5
+        "ratioParty": 5.2,
+        "ratioBundestag": 5.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "sport",
+        "count": 16,
+        "score": 82.02,
+        "ratio": 167.4
+      },
+      {
+        "word": "ehrenamt",
+        "count": 8,
+        "score": 34.0,
+        "ratio": 69.1
+      },
+      {
+        "word": "kultur",
+        "count": 5,
+        "score": 18.65,
+        "ratio": 40.7
+      },
+      {
+        "word": "einzelplan",
+        "count": 5,
+        "score": 15.7,
+        "ratio": 22.1
+      },
+      {
+        "word": "haushalt",
+        "count": 5,
+        "score": 9.12,
+        "ratio": 5.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "sport",
+        "count": 16,
+        "score": 78.39,
+        "ratio": 133.2
+      },
+      {
+        "word": "ehrenamt",
+        "count": 8,
+        "score": 34.99,
+        "ratio": 78.3
+      },
+      {
+        "word": "kultur",
+        "count": 5,
+        "score": 17.88,
+        "ratio": 34.7
+      },
+      {
+        "word": "einzelplan",
+        "count": 5,
+        "score": 16.39,
+        "ratio": 25.5
+      },
+      {
+        "word": "haushalt",
+        "count": 5,
+        "score": 9.51,
+        "ratio": 5.7
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 528,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.82,
     "vsParliament": 0.9
   },
@@ -137,16 +203,16 @@
         "isCorrect": true
       },
       {
-        "text": "Kinder",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Politik",
+        "text": "Fraktion",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sport\" nutzt Kerstin Radomski 182.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "144.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Sport\" nutzt Kerstin Radomski 167.4× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "133.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

@@ -11,13 +11,13 @@
   "minWords": 958,
   "maxWords": 958,
   "rankings": {
-    "speechRank": 617,
-    "wordsRank": 599,
-    "partySpeechRank": 112,
+    "speechRank": 605,
+    "wordsRank": 602,
+    "partySpeechRank": 110,
     "partyWordsRank": 110,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 1.3,
+    "totalSpeakers": 626,
+    "percentile": 3.4,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
@@ -26,7 +26,7 @@
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 0,
-    "interrupterRank": 465,
+    "interrupterRank": 440,
     "interruptedRank": null
   },
   "words": {
@@ -76,23 +76,53 @@
       {
         "word": "petitionen",
         "count": 9,
-        "ratioParty": 829.6,
-        "ratioBundestag": 566.9
+        "ratioParty": 787.7,
+        "ratioBundestag": 580.7
       },
       {
         "word": "petition",
         "count": 5,
-        "ratioParty": 512.1,
-        "ratioBundestag": 237.0
+        "ratioParty": 437.6,
+        "ratioBundestag": 241.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "petitionen",
+        "count": 9,
+        "score": 60.03,
+        "ratio": 787.7
+      },
+      {
+        "word": "petition",
+        "count": 5,
+        "score": 30.42,
+        "ratio": 437.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "petitionen",
+        "count": 9,
+        "score": 57.29,
+        "ratio": 580.7
+      },
+      {
+        "word": "petition",
+        "count": 5,
+        "score": 27.45,
+        "ratio": 241.1
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 958,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
-    "vsParty": 1.55,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
+    "vsParty": 1.54,
     "vsParliament": 1.64
   },
   "funFacts": [
@@ -106,11 +136,7 @@
     "question": "Welches Wort nutzt David Mandrella häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
@@ -118,12 +144,16 @@
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Petitionen\" nutzt David Mandrella 829.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "566.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Petitionen\" nutzt David Mandrella 787.7× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "580.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

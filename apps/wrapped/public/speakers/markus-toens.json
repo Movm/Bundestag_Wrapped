@@ -11,23 +11,23 @@
   "minWords": 455,
   "maxWords": 745,
   "rankings": {
-    "speechRank": 538,
-    "wordsRank": 535,
-    "partySpeechRank": 91,
-    "partyWordsRank": 96,
+    "speechRank": 543,
+    "wordsRank": 545,
+    "partySpeechRank": 92,
+    "partyWordsRank": 99,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 13.9,
-    "verbosityRank": 51,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 13.3,
+    "verbosityRank": 52,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 12,
-    "longestSpeechRank": 318
+    "longestSpeechRank": 321
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 8,
     "interrupterRank": null,
-    "interruptedRank": 495
+    "interruptedRank": 502
   },
   "words": {
     "topWords": [
@@ -44,20 +44,12 @@
         "count": 9
       },
       {
-        "word": "souveränität",
-        "count": 7
-      },
-      {
         "word": "glaube",
         "count": 7
       },
       {
-        "word": "gegenüber",
-        "count": 6
-      },
-      {
-        "word": "würden",
-        "count": 6
+        "word": "souveränität",
+        "count": 7
       },
       {
         "word": "reden",
@@ -65,6 +57,14 @@
       },
       {
         "word": "wichtig",
+        "count": 6
+      },
+      {
+        "word": "würden",
+        "count": 6
+      },
+      {
+        "word": "gegenüber",
         "count": 6
       },
       {
@@ -76,49 +76,129 @@
       {
         "word": "handelspolitik",
         "count": 5,
-        "ratioParty": 319.3,
-        "ratioBundestag": 217.5
+        "ratioParty": 333.5,
+        "ratioBundestag": 220.8
       },
       {
         "word": "binnenmarkt",
         "count": 5,
-        "ratioParty": 87.1,
-        "ratioBundestag": 79.7
+        "ratioParty": 91.0,
+        "ratioBundestag": 80.8
       },
       {
         "word": "abkommen",
         "count": 5,
-        "ratioParty": 35.5,
-        "ratioBundestag": 32.8
+        "ratioParty": 36.4,
+        "ratioBundestag": 33.5
       },
       {
         "word": "union",
         "count": 15,
-        "ratioParty": 22.5,
-        "ratioBundestag": 11.5
+        "ratioParty": 22.7,
+        "ratioBundestag": 11.7
       },
       {
         "word": "europäischer",
         "count": 5,
-        "ratioParty": 22.3,
-        "ratioBundestag": 25.1
+        "ratioParty": 21.8,
+        "ratioBundestag": 25.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "union",
+        "count": 15,
+        "score": 47.48,
+        "ratio": 22.7
+      },
+      {
+        "word": "handelspolitik",
+        "count": 5,
+        "score": 29.06,
+        "ratio": 333.5
+      },
+      {
+        "word": "binnenmarkt",
+        "count": 5,
+        "score": 22.61,
+        "ratio": 91.0
+      },
+      {
+        "word": "abkommen",
+        "count": 5,
+        "score": 18.11,
+        "ratio": 36.4
+      },
+      {
+        "word": "europäischer",
+        "count": 5,
+        "score": 15.63,
+        "ratio": 21.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "union",
+        "count": 15,
+        "score": 38.12,
+        "ratio": 11.7
+      },
+      {
+        "word": "handelspolitik",
+        "count": 5,
+        "score": 27.01,
+        "ratio": 220.8
+      },
+      {
+        "word": "binnenmarkt",
+        "count": 5,
+        "score": 22.02,
+        "ratio": 80.8
+      },
+      {
+        "word": "abkommen",
+        "count": 5,
+        "score": 17.7,
+        "ratio": 33.5
+      },
+      {
+        "word": "europäischer",
+        "count": 5,
+        "score": 16.33,
+        "ratio": 25.2
       }
     ],
     "signatureAdjectives": [
       {
         "word": "stark",
         "count": 5,
-        "ratioParty": 11.2,
-        "ratioBundestag": 13.3
+        "ratioParty": 11.1,
+        "ratioBundestag": 13.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "stark",
+        "count": 5,
+        "score": 12.47,
+        "ratio": 11.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "stark",
+        "count": 5,
+        "score": 13.27,
+        "ratio": 13.2
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 611,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.99,
-    "vsParliament": 1.05
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.98,
+    "vsParliament": 1.04
   },
   "funFacts": [
     {
@@ -136,11 +216,7 @@
     "question": "Welches Wort nutzt Markus Töns häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
+        "text": "Rente",
         "isCorrect": false
       },
       {
@@ -148,35 +224,39 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetz",
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Handelspolitik\" nutzt Markus Töns 319.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "217.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Handelspolitik\" nutzt Markus Töns 333.5× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "220.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Markus Töns häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
         "text": "Stark",
         "isCorrect": true
       },
       {
-        "text": "Politisch",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
+        "text": "Sozial",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Stark\" nutzt Markus Töns 11.2× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "13.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Stark\" nutzt Markus Töns 11.1× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "13.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -282,10 +362,6 @@
           "count": 2
         },
         {
-          "word": "volkswirtschaft",
-          "count": 1
-        },
-        {
           "word": "wettbewerbsfähigkeit",
           "count": 1
         },
@@ -295,6 +371,10 @@
         },
         {
           "word": "chemieindustrie",
+          "count": 1
+        },
+        {
+          "word": "kredit",
           "count": 1
         }
       ],
@@ -322,7 +402,7 @@
           "count": 2
         },
         {
-          "word": "außenminister",
+          "word": "ukraine",
           "count": 1
         }
       ],

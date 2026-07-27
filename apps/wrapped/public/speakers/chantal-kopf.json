@@ -12,22 +12,22 @@
   "maxWords": 920,
   "rankings": {
     "speechRank": 422,
-    "wordsRank": 431,
-    "partySpeechRank": 73,
-    "partyWordsRank": 71,
+    "wordsRank": 439,
+    "partySpeechRank": 72,
+    "partyWordsRank": 72,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 32.5,
-    "verbosityRank": 459,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 32.6,
+    "verbosityRank": 462,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 56,
-    "longestSpeechRank": 124
+    "longestSpeechRank": 125
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 5,
-    "interrupterRank": 438,
-    "interruptedRank": 542
+    "interrupterRank": 451,
+    "interruptedRank": 541
   },
   "words": {
     "topWords": [
@@ -48,10 +48,6 @@
         "count": 13
       },
       {
-        "word": "europäischen",
-        "count": 11
-      },
-      {
         "word": "bundeskanzler",
         "count": 11
       },
@@ -60,15 +56,19 @@
         "count": 11
       },
       {
+        "word": "europäischen",
+        "count": 11
+      },
+      {
         "word": "braucht",
         "count": 9
       },
       {
-        "word": "abkommen",
+        "word": "ukraine",
         "count": 8
       },
       {
-        "word": "ukraine",
+        "word": "polen",
         "count": 8
       }
     ],
@@ -76,47 +76,127 @@
       {
         "word": "königreich",
         "count": 7,
-        "ratioParty": 1026.9,
-        "ratioBundestag": 264.5
+        "ratioParty": 1062.9,
+        "ratioBundestag": 274.6
       },
       {
         "word": "vereinigte",
         "count": 6,
-        "ratioParty": 880.2,
-        "ratioBundestag": 510.1
+        "ratioParty": 911.1,
+        "ratioBundestag": 423.7
       },
       {
         "word": "mercosur",
         "count": 6,
-        "ratioParty": 125.7,
-        "ratioBundestag": 37.8
+        "ratioParty": 130.2,
+        "ratioBundestag": 38.5
       },
       {
         "word": "abkommen",
         "count": 8,
-        "ratioParty": 58.7,
-        "ratioBundestag": 28.2
+        "ratioParty": 57.8,
+        "ratioBundestag": 28.8
       },
       {
         "word": "ungarn",
         "count": 6,
-        "ratioParty": 46.3,
-        "ratioBundestag": 37.1
+        "ratioParty": 48.0,
+        "ratioBundestag": 38.3
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "königreich",
+        "count": 7,
+        "score": 48.79,
+        "ratio": 1062.9
+      },
+      {
+        "word": "vereinigte",
+        "count": 6,
+        "score": 40.89,
+        "ratio": 911.1
+      },
+      {
+        "word": "abkommen",
+        "count": 8,
+        "score": 32.59,
+        "ratio": 57.8
+      },
+      {
+        "word": "mercosur",
+        "count": 6,
+        "score": 29.26,
+        "ratio": 130.2
+      },
+      {
+        "word": "ungarn",
+        "count": 6,
+        "score": 23.35,
+        "ratio": 48.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "königreich",
+        "count": 7,
+        "score": 39.33,
+        "ratio": 274.6
+      },
+      {
+        "word": "vereinigte",
+        "count": 6,
+        "score": 36.31,
+        "ratio": 423.7
+      },
+      {
+        "word": "abkommen",
+        "count": 8,
+        "score": 27.16,
+        "ratio": 28.8
+      },
+      {
+        "word": "mercosur",
+        "count": 6,
+        "score": 22.06,
+        "ratio": 38.5
+      },
+      {
+        "word": "ungarn",
+        "count": 6,
+        "score": 22.03,
+        "ratio": 38.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "schwach",
         "count": 3,
-        "ratioParty": 25.9,
-        "ratioBundestag": 51.0
+        "ratioParty": 26.8,
+        "ratioBundestag": 51.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "schwach",
+        "count": 3,
+        "score": 9.98,
+        "ratio": 26.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "schwach",
+        "count": 3,
+        "score": 11.87,
+        "ratio": 51.3
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 352,
     "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 585,
     "vsParty": 0.65,
     "vsParliament": 0.6
   },
@@ -136,47 +216,47 @@
     "question": "Welches Wort nutzt Chantal Kopf häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bildung",
-        "isCorrect": false
-      },
-      {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
         "text": "Königreich",
         "isCorrect": true
+      },
+      {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Königreich\" nutzt Chantal Kopf 1026.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "264.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Königreich\" nutzt Chantal Kopf 1062.9× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "274.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Chantal Kopf häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Politisch",
+        "text": "Schwach",
+        "isCorrect": true
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
         "isCorrect": false
       },
       {
         "text": "National",
         "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
-        "text": "Schwach",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Schwach\" nutzt Chantal Kopf 25.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "51.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Schwach\" nutzt Chantal Kopf 26.8× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "51.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -312,15 +392,15 @@
           "count": 2
         },
         {
-          "word": "mittelstand",
+          "word": "kredit",
           "count": 1
         },
         {
-          "word": "handelsabkommen",
+          "word": "wettbewerbsfähigkeit",
           "count": 1
         },
         {
-          "word": "zölle",
+          "word": "industrie",
           "count": 1
         }
       ],
@@ -366,11 +446,11 @@
           "count": 28
         },
         {
-          "word": "abkommen",
+          "word": "ukraine",
           "count": 8
         },
         {
-          "word": "ukraine",
+          "word": "abkommen",
           "count": 8
         },
         {
@@ -412,15 +492,15 @@
           "count": 5
         },
         {
-          "word": "kosten",
-          "count": 1
-        },
-        {
           "word": "finanzierung",
           "count": 1
         },
         {
           "word": "investitionen",
+          "count": 1
+        },
+        {
+          "word": "kosten",
           "count": 1
         }
       ],
@@ -440,11 +520,11 @@
           "count": 3
         },
         {
-          "word": "autos",
+          "word": "straße",
           "count": 1
         },
         {
-          "word": "straße",
+          "word": "autos",
           "count": 1
         }
       ]

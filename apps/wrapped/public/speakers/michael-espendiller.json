@@ -11,23 +11,23 @@
   "minWords": 17,
   "maxWords": 2329,
   "rankings": {
-    "speechRank": 126,
-    "wordsRank": 41,
-    "partySpeechRank": 26,
-    "partyWordsRank": 7,
+    "speechRank": 147,
+    "wordsRank": 47,
+    "partySpeechRank": 31,
+    "partyWordsRank": 10,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 79.8,
+    "totalSpeakers": 626,
+    "percentile": 76.5,
     "verbosityRank": 9,
-    "verbosityTotal": 579,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 4,
     "longestSpeechRank": 7
   },
   "drama": {
     "interruptionsGiven": 144,
     "interruptionsReceived": 37,
-    "interrupterRank": 26,
-    "interruptedRank": 181
+    "interrupterRank": 29,
+    "interruptedRank": 195
   },
   "words": {
     "topWords": [
@@ -68,47 +68,127 @@
       {
         "word": "dieter",
         "count": 5,
-        "ratioParty": 325.5,
-        "ratioBundestag": 122.9
+        "ratioParty": 337.6,
+        "ratioBundestag": 117.8
       },
       {
         "word": "bildschirmen",
         "count": 14,
-        "ratioParty": 227.8,
-        "ratioBundestag": 196.6
+        "ratioParty": 236.3,
+        "ratioBundestag": 204.1
       },
       {
         "word": "patriot",
         "count": 5,
-        "ratioParty": 54.2,
-        "ratioBundestag": 59.0
+        "ratioParty": 56.3,
+        "ratioBundestag": 51.0
       },
       {
         "word": "zinszahlungen",
         "count": 5,
-        "ratioParty": 40.7,
-        "ratioBundestag": 113.4
+        "ratioParty": 42.2,
+        "ratioBundestag": 117.8
       },
       {
         "word": "haushaltsjahr",
         "count": 6,
-        "ratioParty": 35.5,
-        "ratioBundestag": 52.0
+        "ratioParty": 36.8,
+        "ratioBundestag": 52.5
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "bildschirmen",
+        "count": 14,
+        "score": 76.57,
+        "ratio": 236.3
+      },
+      {
+        "word": "dieter",
+        "count": 5,
+        "score": 29.12,
+        "ratio": 337.6
+      },
+      {
+        "word": "haushaltsjahr",
+        "count": 6,
+        "score": 21.79,
+        "ratio": 36.8
+      },
+      {
+        "word": "patriot",
+        "count": 5,
+        "score": 20.24,
+        "ratio": 56.3
+      },
+      {
+        "word": "zinszahlungen",
+        "count": 5,
+        "score": 18.83,
+        "ratio": 42.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bildschirmen",
+        "count": 14,
+        "score": 74.53,
+        "ratio": 204.1
+      },
+      {
+        "word": "dieter",
+        "count": 5,
+        "score": 23.89,
+        "ratio": 117.8
+      },
+      {
+        "word": "zinszahlungen",
+        "count": 5,
+        "score": 23.89,
+        "ratio": 117.8
+      },
+      {
+        "word": "haushaltsjahr",
+        "count": 6,
+        "score": 23.88,
+        "ratio": 52.5
+      },
+      {
+        "word": "patriot",
+        "count": 5,
+        "score": 19.76,
+        "ratio": 51.0
       }
     ],
     "signatureAdjectives": [
       {
         "word": "schlecht",
         "count": 4,
-        "ratioParty": 2.6,
+        "ratioParty": 2.5,
         "ratioBundestag": 3.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "schlecht",
+        "count": 4,
+        "score": 5.01,
+        "ratio": 2.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "schlecht",
+        "count": 4,
+        "score": 5.74,
+        "ratio": 3.2
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 790,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 1.42,
     "vsParliament": 1.35
   },
@@ -126,7 +206,7 @@
     {
       "emoji": "📚",
       "label": "Wortreichster",
-      "value": "#9 von 579"
+      "value": "#9 von 582"
     },
     {
       "emoji": "📏",
@@ -143,7 +223,11 @@
     "question": "Welches Wort nutzt Dr. Michael Espendiller häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Familie",
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
         "isCorrect": false
       },
       {
@@ -151,38 +235,34 @@
         "isCorrect": true
       },
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Demokratie",
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Dieter\" nutzt Dr. Michael Espendiller 325.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "122.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Dieter\" nutzt Dr. Michael Espendiller 337.6× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "117.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Michael Espendiller häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Schlecht",
-        "isCorrect": true
-      },
-      {
-        "text": "Europäisch",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Gefährlich",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
         "text": "Wichtig",
         "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Schlecht\" nutzt Dr. Michael Espendiller 2.6× häufiger als der AfD-Durchschnitt.",
+    "explanationParty": "\"Schlecht\" nutzt Dr. Michael Espendiller 2.5× häufiger als der AfD-Durchschnitt.",
     "explanationBundestag": "3.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
@@ -281,11 +361,11 @@
           "count": 1
         },
         {
-          "word": "umwelt",
+          "word": "klimaneutralität",
           "count": 1
         },
         {
-          "word": "klimaneutralität",
+          "word": "umwelt",
           "count": 1
         }
       ],
@@ -365,11 +445,11 @@
           "count": 3
         },
         {
-          "word": "ärzte",
+          "word": "krankenkassen",
           "count": 2
         },
         {
-          "word": "krankenkassen",
+          "word": "ärzte",
           "count": 2
         },
         {
@@ -391,11 +471,11 @@
           "count": 2
         },
         {
-          "word": "putin",
+          "word": "europa",
           "count": 2
         },
         {
-          "word": "europa",
+          "word": "putin",
           "count": 2
         }
       ],
@@ -405,19 +485,19 @@
           "count": 2
         },
         {
-          "word": "schule",
-          "count": 1
-        },
-        {
-          "word": "schüler",
-          "count": 1
-        },
-        {
           "word": "lehrer",
           "count": 1
         },
         {
           "word": "schulen",
+          "count": 1
+        },
+        {
+          "word": "schule",
+          "count": 1
+        },
+        {
+          "word": "schüler",
           "count": 1
         }
       ],
@@ -431,11 +511,11 @@
           "count": 20
         },
         {
-          "word": "kosten",
+          "word": "bundeshaushalt",
           "count": 17
         },
         {
-          "word": "bundeshaushalt",
+          "word": "kosten",
           "count": 17
         },
         {
@@ -453,11 +533,11 @@
           "count": 1
         },
         {
-          "word": "grundgesetz",
+          "word": "verfassung",
           "count": 1
         },
         {
-          "word": "verfassung",
+          "word": "grundgesetz",
           "count": 1
         }
       ],

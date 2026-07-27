@@ -11,23 +11,23 @@
   "minWords": 319,
   "maxWords": 452,
   "rankings": {
-    "speechRank": 448,
-    "wordsRank": 500,
-    "partySpeechRank": 104,
+    "speechRank": 473,
+    "wordsRank": 507,
+    "partySpeechRank": 109,
     "partyWordsRank": 114,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 28.3,
-    "verbosityRank": 392,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 24.4,
+    "verbosityRank": 391,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 104,
-    "longestSpeechRank": 597
+    "longestSpeechRank": 599
   },
   "drama": {
     "interruptionsGiven": 5,
     "interruptionsReceived": 14,
-    "interrupterRank": 341,
-    "interruptedRank": 401
+    "interrupterRank": 353,
+    "interruptedRank": 418
   },
   "words": {
     "topWords": [
@@ -44,7 +44,7 @@
         "count": 10
       },
       {
-        "word": "echte",
+        "word": "familien",
         "count": 8
       },
       {
@@ -52,8 +52,12 @@
         "count": 8
       },
       {
-        "word": "familien",
+        "word": "echte",
         "count": 8
+      },
+      {
+        "word": "arbeit",
+        "count": 7
       },
       {
         "word": "regierung",
@@ -61,10 +65,6 @@
       },
       {
         "word": "merz",
-        "count": 7
-      },
-      {
-        "word": "arbeit",
         "count": 7
       },
       {
@@ -76,42 +76,108 @@
       {
         "word": "wohngeld",
         "count": 6,
-        "ratioParty": 89.1,
-        "ratioBundestag": 83.1
-      },
-      {
-        "word": "heizungsgesetz",
-        "count": 6,
-        "ratioParty": 39.8,
-        "ratioBundestag": 51.2
+        "ratioParty": 92.4,
+        "ratioBundestag": 80.7
       },
       {
         "word": "bauturbo",
         "count": 5,
-        "ratioParty": 39.0,
-        "ratioBundestag": 26.3
+        "ratioParty": 40.4,
+        "ratioBundestag": 27.1
+      },
+      {
+        "word": "heizungsgesetz",
+        "count": 6,
+        "ratioParty": 38.8,
+        "ratioBundestag": 49.3
       },
       {
         "word": "wohnen",
         "count": 5,
-        "ratioParty": 31.2,
-        "ratioBundestag": 16.1
+        "ratioParty": 30.5,
+        "ratioBundestag": 16.2
       },
       {
         "word": "rentner",
         "count": 6,
-        "ratioParty": 20.8,
-        "ratioBundestag": 32.4
+        "ratioParty": 21.1,
+        "ratioBundestag": 33.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "wohngeld",
+        "count": 6,
+        "score": 27.22,
+        "ratio": 92.4
+      },
+      {
+        "word": "heizungsgesetz",
+        "count": 6,
+        "score": 22.1,
+        "ratio": 38.8
+      },
+      {
+        "word": "bauturbo",
+        "count": 5,
+        "score": 18.62,
+        "ratio": 40.4
+      },
+      {
+        "word": "rentner",
+        "count": 6,
+        "score": 18.57,
+        "ratio": 21.1
+      },
+      {
+        "word": "wohnen",
+        "count": 5,
+        "score": 17.25,
+        "ratio": 30.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "wohngeld",
+        "count": 6,
+        "score": 26.42,
+        "ratio": 80.7
+      },
+      {
+        "word": "heizungsgesetz",
+        "count": 6,
+        "score": 23.51,
+        "ratio": 49.3
+      },
+      {
+        "word": "rentner",
+        "count": 6,
+        "score": 21.21,
+        "ratio": 33.3
+      },
+      {
+        "word": "bauturbo",
+        "count": 5,
+        "score": 16.68,
+        "ratio": 27.1
+      },
+      {
+        "word": "wohnen",
+        "count": 5,
+        "score": 14.22,
+        "ratio": 16.2
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 389,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.7,
-    "vsParliament": 0.67
+    "vsParliament": 0.66
   },
   "funFacts": [
     {
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Olaf Hilmer häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bildung",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Wohngeld",
-        "isCorrect": true
+        "text": "Klima",
+        "isCorrect": false
       },
       {
         "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
-        "isCorrect": false
+        "text": "Wohngeld",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Wohngeld\" nutzt Olaf Hilmer 89.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "83.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wohngeld\" nutzt Olaf Hilmer 92.4× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "80.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -219,11 +285,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "migration",
+          "word": "zuwanderung",
           "count": 2
         },
         {
-          "word": "zuwanderung",
+          "word": "migration",
           "count": 2
         },
         {
@@ -232,6 +298,10 @@
         }
       ],
       "klima": [
+        {
+          "word": "energiewende",
+          "count": 1
+        },
         {
           "word": "umwelt",
           "count": 1
@@ -246,10 +316,6 @@
         },
         {
           "word": "dämmung",
-          "count": 1
-        },
-        {
-          "word": "energiewende",
           "count": 1
         }
       ],
@@ -269,11 +335,11 @@
           "count": 8
         },
         {
-          "word": "rentner",
+          "word": "wohngeld",
           "count": 6
         },
         {
-          "word": "wohngeld",
+          "word": "rentner",
           "count": 6
         },
         {
@@ -287,11 +353,11 @@
       ],
       "digital": [
         {
-          "word": "digitalisierung",
+          "word": "online",
           "count": 1
         },
         {
-          "word": "online",
+          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -315,21 +381,21 @@
           "count": 3
         },
         {
-          "word": "haushaltsplan",
+          "word": "investitionen",
           "count": 1
         },
         {
-          "word": "entlastung",
+          "word": "haushaltsplan",
           "count": 1
         }
       ],
       "justiz": [
         {
-          "word": "gesetzesänderung",
+          "word": "verordnung",
           "count": 1
         },
         {
-          "word": "verordnung",
+          "word": "gesetzesänderung",
           "count": 1
         }
       ],

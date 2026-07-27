@@ -11,26 +11,30 @@
   "minWords": 421,
   "maxWords": 575,
   "rankings": {
-    "speechRank": 484,
-    "wordsRank": 510,
-    "partySpeechRank": 118,
-    "partyWordsRank": 115,
+    "speechRank": 506,
+    "wordsRank": 515,
+    "partySpeechRank": 125,
+    "partyWordsRank": 117,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 22.6,
-    "verbosityRank": 166,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 43,
-    "longestSpeechRank": 519
+    "totalSpeakers": 626,
+    "percentile": 19.2,
+    "verbosityRank": 168,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 42,
+    "longestSpeechRank": 523
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 7,
     "interrupterRank": null,
-    "interruptedRank": 508
+    "interruptedRank": 520
   },
   "words": {
     "topWords": [
+      {
+        "word": "unternehmen",
+        "count": 9
+      },
       {
         "word": "deutschland",
         "count": 9
@@ -40,15 +44,11 @@
         "count": 9
       },
       {
-        "word": "unternehmen",
-        "count": 9
-      },
-      {
         "word": "geld",
         "count": 7
       },
       {
-        "word": "land",
+        "word": "bmas",
         "count": 6
       },
       {
@@ -56,8 +56,16 @@
         "count": 6
       },
       {
-        "word": "bmas",
+        "word": "land",
         "count": 6
+      },
+      {
+        "word": "wirtschaft",
+        "count": 5
+      },
+      {
+        "word": "moralpolitik",
+        "count": 5
       }
     ],
     "signatureWords": [
@@ -70,14 +78,14 @@
       {
         "word": "aufmerksamkeit",
         "count": 6,
-        "ratioParty": 22.1,
-        "ratioBundestag": 17.7
+        "ratioParty": 22.2,
+        "ratioBundestag": 17.6
       },
       {
         "word": "aktuell",
         "count": 5,
-        "ratioParty": 13.5,
-        "ratioBundestag": 11.7
+        "ratioParty": 13.6,
+        "ratioBundestag": 11.8
       },
       {
         "word": "unternehmen",
@@ -89,7 +97,71 @@
         "word": "waren",
         "count": 5,
         "ratioParty": 3.5,
-        "ratioBundestag": 4.0
+        "ratioBundestag": 3.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "aufmerksamkeit",
+        "count": 6,
+        "score": 18.86,
+        "ratio": 22.2
+      },
+      {
+        "word": "moralpolitik",
+        "count": 5,
+        "score": 16.55,
+        "ratio": 26.4
+      },
+      {
+        "word": "unternehmen",
+        "count": 9,
+        "score": 15.97,
+        "ratio": 4.9
+      },
+      {
+        "word": "aktuell",
+        "count": 5,
+        "score": 13.41,
+        "ratio": 13.6
+      },
+      {
+        "word": "waren",
+        "count": 5,
+        "score": 7.52,
+        "ratio": 3.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "aufmerksamkeit",
+        "count": 6,
+        "score": 17.54,
+        "ratio": 17.6
+      },
+      {
+        "word": "moralpolitik",
+        "count": 5,
+        "score": 16.55,
+        "ratio": 26.4
+      },
+      {
+        "word": "unternehmen",
+        "count": 9,
+        "score": 15.34,
+        "ratio": 4.5
+      },
+      {
+        "word": "aktuell",
+        "count": 5,
+        "score": 12.75,
+        "ratio": 11.8
+      },
+      {
+        "word": "waren",
+        "count": 5,
+        "score": 7.95,
+        "ratio": 3.9
       }
     ],
     "signatureAdjectives": [
@@ -97,15 +169,31 @@
         "word": "falsch",
         "count": 3,
         "ratioParty": 6.5,
-        "ratioBundestag": 6.6
+        "ratioBundestag": 6.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 6.04,
+        "ratio": 6.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 6.04,
+        "ratio": 6.5
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 493,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.88,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.89,
     "vsParliament": 0.84
   },
   "funFacts": [
@@ -124,19 +212,19 @@
     "question": "Welches Wort nutzt Robert Teske häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
         "text": "Moralpolitik",
         "isCorrect": true
       },
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
+        "text": "Europa",
         "isCorrect": false
       }
     ],
@@ -147,24 +235,24 @@
     "question": "Welches Adjektiv nutzt Robert Teske häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
+        "text": "Klar",
         "isCorrect": false
       },
       {
         "text": "Falsch",
         "isCorrect": true
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Erfolgreich",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Falsch\" nutzt Robert Teske 6.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "6.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "6.5× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -268,15 +356,15 @@
           "count": 5
         },
         {
-          "word": "fachkräftemangel",
+          "word": "wirtschaftswachstum",
           "count": 1
         },
         {
-          "word": "konzern",
+          "word": "insolvenz",
           "count": 1
         },
         {
-          "word": "werk",
+          "word": "kredite",
           "count": 1
         }
       ],
@@ -302,11 +390,11 @@
       ],
       "digital": [
         {
-          "word": "digitalisierung",
+          "word": "daten",
           "count": 1
         },
         {
-          "word": "daten",
+          "word": "digitalisierung",
           "count": 1
         },
         {
@@ -342,21 +430,21 @@
           "count": 3
         },
         {
-          "word": "steuerzahler",
-          "count": 1
-        },
-        {
           "word": "kosten",
           "count": 1
         },
         {
           "word": "steuern",
           "count": 1
+        },
+        {
+          "word": "steuerzahler",
+          "count": 1
         }
       ],
       "justiz": [
         {
-          "word": "richter",
+          "word": "gesetzgebung",
           "count": 1
         },
         {
@@ -368,7 +456,7 @@
           "count": 1
         },
         {
-          "word": "gesetzgebung",
+          "word": "richter",
           "count": 1
         }
       ],

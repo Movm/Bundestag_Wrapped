@@ -11,23 +11,23 @@
   "minWords": 83,
   "maxWords": 481,
   "rankings": {
-    "speechRank": 434,
-    "wordsRank": 525,
+    "speechRank": 441,
+    "wordsRank": 535,
     "partySpeechRank": 52,
     "partyWordsRank": 58,
     "partySize": 63,
-    "totalSpeakers": 625,
-    "percentile": 30.6,
-    "verbosityRank": 512,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 55,
-    "longestSpeechRank": 586
+    "totalSpeakers": 626,
+    "percentile": 29.6,
+    "verbosityRank": 515,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 54,
+    "longestSpeechRank": 589
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 7,
     "interrupterRank": null,
-    "interruptedRank": 513
+    "interruptedRank": 515
   },
   "words": {
     "topWords": [
@@ -48,15 +48,15 @@
         "count": 8
       },
       {
+        "word": "pflegeversicherung",
+        "count": 7
+      },
+      {
         "word": "apotheken",
         "count": 7
       },
       {
         "word": "pflegekräfte",
-        "count": 7
-      },
-      {
-        "word": "pflegeversicherung",
         "count": 7
       },
       {
@@ -64,11 +64,11 @@
         "count": 6
       },
       {
-        "word": "braucht",
+        "word": "endlich",
         "count": 6
       },
       {
-        "word": "kosten",
+        "word": "braucht",
         "count": 6
       }
     ],
@@ -76,40 +76,106 @@
       {
         "word": "apotheken",
         "count": 7,
-        "ratioParty": 1167.4,
-        "ratioBundestag": 141.2
+        "ratioParty": 1210.7,
+        "ratioBundestag": 143.1
       },
       {
         "word": "pflegebedürftigen",
         "count": 5,
-        "ratioParty": 833.8,
-        "ratioBundestag": 170.2
+        "ratioParty": 864.8,
+        "ratioBundestag": 176.7
       },
       {
         "word": "pflegeversicherung",
         "count": 7,
-        "ratioParty": 145.9,
-        "ratioBundestag": 80.0
+        "ratioParty": 151.3,
+        "ratioBundestag": 82.5
       },
       {
         "word": "pflege",
         "count": 27,
-        "ratioParty": 72.6,
-        "ratioBundestag": 78.9
+        "ratioParty": 73.0,
+        "ratioBundestag": 80.1
       },
       {
         "word": "pflegekräfte",
         "count": 7,
-        "ratioParty": 58.4,
-        "ratioBundestag": 92.2
+        "ratioParty": 57.7,
+        "ratioBundestag": 93.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "pflege",
+        "count": 27,
+        "score": 116.21,
+        "ratio": 73.0
+      },
+      {
+        "word": "apotheken",
+        "count": 7,
+        "score": 49.7,
+        "ratio": 1210.7
+      },
+      {
+        "word": "pflegeversicherung",
+        "count": 7,
+        "score": 35.18,
+        "ratio": 151.3
+      },
+      {
+        "word": "pflegebedürftigen",
+        "count": 5,
+        "score": 33.82,
+        "ratio": 864.8
+      },
+      {
+        "word": "pflegekräfte",
+        "count": 7,
+        "score": 28.51,
+        "ratio": 57.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "pflege",
+        "count": 27,
+        "score": 118.68,
+        "ratio": 80.1
+      },
+      {
+        "word": "apotheken",
+        "count": 7,
+        "score": 34.79,
+        "ratio": 143.1
+      },
+      {
+        "word": "pflegekräfte",
+        "count": 7,
+        "score": 31.84,
+        "ratio": 93.5
+      },
+      {
+        "word": "pflegeversicherung",
+        "count": 7,
+        "score": 30.97,
+        "ratio": 82.5
+      },
+      {
+        "word": "pflegebedürftigen",
+        "count": 5,
+        "score": 25.9,
+        "ratio": 176.7
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 291,
-    "partyAvgWords": 500,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 499,
+    "parliamentAvgWords": 585,
     "vsParty": 0.58,
     "vsParliament": 0.5
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Evelyn Schötz häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
         "text": "Apotheken",
         "isCorrect": true
       },
       {
-        "text": "Haushalt",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
+        "text": "Familie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Apotheken\" nutzt Evelyn Schötz 1167.4× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "141.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Apotheken\" nutzt Evelyn Schötz 1210.7× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "143.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -261,15 +327,15 @@
           "count": 2
         },
         {
-          "word": "barrierefreiheit",
+          "word": "renten",
+          "count": 1
+        },
+        {
+          "word": "altersarmut",
           "count": 1
         },
         {
           "word": "gerechtigkeit",
-          "count": 1
-        },
-        {
-          "word": "renten",
           "count": 1
         }
       ],
@@ -279,11 +345,11 @@
           "count": 27
         },
         {
-          "word": "pflegekräfte",
+          "word": "pflegeversicherung",
           "count": 7
         },
         {
-          "word": "pflegeversicherung",
+          "word": "pflegekräfte",
           "count": 7
         },
         {
@@ -325,11 +391,11 @@
           "count": 3
         },
         {
-          "word": "löhne",
+          "word": "arbeitszeit",
           "count": 1
         },
         {
-          "word": "arbeitszeit",
+          "word": "löhne",
           "count": 1
         }
       ]

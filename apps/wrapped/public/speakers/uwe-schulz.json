@@ -11,23 +11,23 @@
   "minWords": 423,
   "maxWords": 892,
   "rankings": {
-    "speechRank": 565,
-    "wordsRank": 522,
-    "partySpeechRank": 138,
-    "partyWordsRank": 120,
+    "speechRank": 574,
+    "wordsRank": 533,
+    "partySpeechRank": 142,
+    "partyWordsRank": 122,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 9.6,
-    "verbosityRank": 24,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 8.3,
+    "verbosityRank": 25,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 9,
-    "longestSpeechRank": 141
+    "longestSpeechRank": 144
   },
   "drama": {
-    "interruptionsGiven": 36,
+    "interruptionsGiven": 37,
     "interruptionsReceived": 9,
-    "interrupterRank": 143,
-    "interruptedRank": 481
+    "interrupterRank": 142,
+    "interruptedRank": 497
   },
   "words": {
     "topWords": [
@@ -48,19 +48,19 @@
         "count": 6
       },
       {
-        "word": "gießen",
-        "count": 6
-      },
-      {
         "word": "union",
         "count": 6
       },
       {
-        "word": "waren",
-        "count": 5
+        "word": "gießen",
+        "count": 6
       },
       {
         "word": "anträge",
+        "count": 5
+      },
+      {
+        "word": "waren",
         "count": 5
       },
       {
@@ -72,26 +72,26 @@
       {
         "word": "gießen",
         "count": 6,
-        "ratioParty": 63.8,
-        "ratioBundestag": 113.2
+        "ratioParty": 66.2,
+        "ratioBundestag": 116.1
       },
       {
         "word": "kommission",
         "count": 11,
-        "ratioParty": 32.6,
-        "ratioBundestag": 23.8
+        "ratioParty": 32.5,
+        "ratioBundestag": 23.1
       },
       {
         "word": "produkte",
         "count": 5,
-        "ratioParty": 24.4,
+        "ratioParty": 24.7,
         "ratioBundestag": 22.3
       },
       {
         "word": "anträge",
         "count": 5,
-        "ratioParty": 12.1,
-        "ratioBundestag": 13.8
+        "ratioParty": 11.9,
+        "ratioBundestag": 13.7
       },
       {
         "word": "waren",
@@ -100,14 +100,80 @@
         "ratioBundestag": 4.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "kommission",
+        "count": 11,
+        "score": 38.63,
+        "ratio": 32.5
+      },
+      {
+        "word": "gießen",
+        "count": 6,
+        "score": 25.25,
+        "ratio": 66.2
+      },
+      {
+        "word": "produkte",
+        "count": 5,
+        "score": 16.23,
+        "ratio": 24.7
+      },
+      {
+        "word": "anträge",
+        "count": 5,
+        "score": 12.79,
+        "ratio": 11.9
+      },
+      {
+        "word": "waren",
+        "count": 5,
+        "score": 7.74,
+        "ratio": 3.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "kommission",
+        "count": 11,
+        "score": 35.0,
+        "ratio": 23.1
+      },
+      {
+        "word": "gießen",
+        "count": 6,
+        "score": 28.58,
+        "ratio": 116.1
+      },
+      {
+        "word": "produkte",
+        "count": 5,
+        "score": 15.74,
+        "ratio": 22.3
+      },
+      {
+        "word": "anträge",
+        "count": 5,
+        "score": 13.44,
+        "ratio": 13.7
+      },
+      {
+        "word": "waren",
+        "count": 5,
+        "score": 8.24,
+        "ratio": 4.2
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 675,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 1.21,
-    "vsParliament": 1.16
+    "vsParliament": 1.15
   },
   "funFacts": [
     {
@@ -123,31 +189,31 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "36"
+      "value": "37"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Uwe Schulz häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
         "text": "Gießen",
         "isCorrect": true
-      },
-      {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gießen\" nutzt Uwe Schulz 63.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "113.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Gießen\" nutzt Uwe Schulz 66.2× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "116.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -242,15 +308,15 @@
           "count": 3
         },
         {
-          "word": "industrie",
-          "count": 2
-        },
-        {
           "word": "automobilindustrie",
           "count": 2
         },
         {
           "word": "mittelstand",
+          "count": 2
+        },
+        {
+          "word": "handwerk",
           "count": 2
         }
       ],
@@ -324,11 +390,11 @@
           "count": 2
         },
         {
-          "word": "kosten",
+          "word": "investitionen",
           "count": 1
         },
         {
-          "word": "investitionen",
+          "word": "kosten",
           "count": 1
         }
       ],

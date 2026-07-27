@@ -11,23 +11,23 @@
   "minWords": 52,
   "maxWords": 765,
   "rankings": {
-    "speechRank": 377,
-    "wordsRank": 410,
-    "partySpeechRank": 70,
-    "partyWordsRank": 81,
+    "speechRank": 384,
+    "wordsRank": 418,
+    "partySpeechRank": 71,
+    "partyWordsRank": 82,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 39.7,
-    "verbosityRank": 235,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 52,
-    "longestSpeechRank": 288
+    "totalSpeakers": 626,
+    "percentile": 38.7,
+    "verbosityRank": 236,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 54,
+    "longestSpeechRank": 290
   },
   "drama": {
     "interruptionsGiven": 19,
     "interruptionsReceived": 3,
-    "interrupterRank": 209,
-    "interruptedRank": 570
+    "interrupterRank": 216,
+    "interruptedRank": 575
   },
   "words": {
     "topWords": [
@@ -68,42 +68,108 @@
       {
         "word": "nutztierhaltung",
         "count": 7,
-        "ratioParty": 657.4,
-        "ratioBundestag": 411.3
+        "ratioParty": 686.8,
+        "ratioBundestag": 427.1
       },
       {
         "word": "tierhaltungskennzeichnung",
         "count": 5,
-        "ratioParty": 234.8,
-        "ratioBundestag": 235.1
+        "ratioParty": 245.3,
+        "ratioBundestag": 244.1
       },
       {
         "word": "tierwohl",
         "count": 14,
-        "ratioParty": 219.1,
-        "ratioBundestag": 208.9
+        "ratioParty": 228.9,
+        "ratioBundestag": 216.9
       },
       {
         "word": "kennzeichnung",
         "count": 6,
-        "ratioParty": 187.8,
-        "ratioBundestag": 108.5
+        "ratioParty": 196.2,
+        "ratioBundestag": 112.6
       },
       {
         "word": "tierschutz",
         "count": 9,
-        "ratioParty": 130.0,
-        "ratioBundestag": 92.0
+        "ratioParty": 135.8,
+        "ratioBundestag": 89.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "tierwohl",
+        "count": 14,
+        "score": 76.13,
+        "ratio": 228.9
+      },
+      {
+        "word": "nutztierhaltung",
+        "count": 7,
+        "score": 45.73,
+        "ratio": 686.8
+      },
+      {
+        "word": "tierschutz",
+        "count": 9,
+        "score": 44.27,
+        "ratio": 135.8
+      },
+      {
+        "word": "kennzeichnung",
+        "count": 6,
+        "score": 31.71,
+        "ratio": 196.2
+      },
+      {
+        "word": "tierhaltungskennzeichnung",
+        "count": 5,
+        "score": 27.53,
+        "ratio": 245.3
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "tierwohl",
+        "count": 14,
+        "score": 75.38,
+        "ratio": 216.9
+      },
+      {
+        "word": "nutztierhaltung",
+        "count": 7,
+        "score": 42.42,
+        "ratio": 427.1
+      },
+      {
+        "word": "tierschutz",
+        "count": 9,
+        "score": 40.57,
+        "ratio": 89.7
+      },
+      {
+        "word": "kennzeichnung",
+        "count": 6,
+        "score": 28.4,
+        "ratio": 112.6
+      },
+      {
+        "word": "tierhaltungskennzeichnung",
+        "count": 5,
+        "score": 27.51,
+        "ratio": 244.1
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 459,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
     "vsParty": 0.74,
-    "vsParliament": 0.79
+    "vsParliament": 0.78
   },
   "funFacts": [
     {
@@ -126,7 +192,7 @@
     "question": "Welches Wort nutzt Jens Behrens häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Zukunft",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
@@ -134,16 +200,16 @@
         "isCorrect": true
       },
       {
-        "text": "Debatte",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Bildung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Nutztierhaltung\" nutzt Jens Behrens 657.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "411.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Nutztierhaltung\" nutzt Jens Behrens 686.8× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "427.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -258,25 +324,25 @@
           "count": 1
         },
         {
-          "word": "kapital",
+          "word": "konzerne",
           "count": 1
         },
         {
-          "word": "konzerne",
+          "word": "betrieb",
           "count": 1
         }
       ],
       "soziales": [
-        {
-          "word": "familien",
-          "count": 1
-        },
         {
           "word": "gerechtigkeit",
           "count": 1
         },
         {
           "word": "familie",
+          "count": 1
+        },
+        {
+          "word": "familien",
           "count": 1
         }
       ],
@@ -302,11 +368,11 @@
           "count": 3
         },
         {
-          "word": "onlinehandel",
+          "word": "digital",
           "count": 1
         },
         {
-          "word": "digital",
+          "word": "onlinehandel",
           "count": 1
         },
         {
@@ -334,11 +400,11 @@
       ],
       "finanzen": [
         {
-          "word": "steuergerechtigkeit",
+          "word": "steuern",
           "count": 3
         },
         {
-          "word": "steuern",
+          "word": "steuergerechtigkeit",
           "count": 3
         },
         {
@@ -346,23 +412,15 @@
           "count": 2
         },
         {
-          "word": "gewerbesteuer",
+          "word": "bundesbank",
           "count": 1
         },
         {
-          "word": "steuer",
+          "word": "haushalt",
           "count": 1
         }
       ],
       "justiz": [
-        {
-          "word": "grundgesetz",
-          "count": 1
-        },
-        {
-          "word": "gesetzgebung",
-          "count": 1
-        },
         {
           "word": "novelle",
           "count": 1
@@ -373,6 +431,14 @@
         },
         {
           "word": "bundesverfassungsgericht",
+          "count": 1
+        },
+        {
+          "word": "rechtsprechung",
+          "count": 1
+        },
+        {
+          "word": "grundgesetz",
           "count": 1
         }
       ],

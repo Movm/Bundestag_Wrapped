@@ -11,23 +11,23 @@
   "minWords": 32,
   "maxWords": 864,
   "rankings": {
-    "speechRank": 427,
-    "wordsRank": 275,
-    "partySpeechRank": 125,
-    "partyWordsRank": 80,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 31.7,
-    "verbosityRank": 202,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 72,
+    "speechRank": 429,
+    "wordsRank": 287,
+    "partySpeechRank": 128,
+    "partyWordsRank": 82,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 31.5,
+    "verbosityRank": 203,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 70,
     "longestSpeechRank": 171
   },
   "drama": {
-    "interruptionsGiven": 141,
+    "interruptionsGiven": 142,
     "interruptionsReceived": 18,
-    "interrupterRank": 28,
-    "interruptedRank": 347
+    "interrupterRank": 31,
+    "interruptedRank": 364
   },
   "words": {
     "topWords": [
@@ -62,42 +62,102 @@
       {
         "word": "wissenschaft",
         "count": 15
-      },
-      {
-        "word": "eines",
-        "count": 14
       }
     ],
     "signatureWords": [
       {
         "word": "forschungs",
         "count": 11,
-        "ratioParty": 300.3,
-        "ratioBundestag": 231.2
+        "ratioParty": 311.7,
+        "ratioBundestag": 240.1
       },
       {
         "word": "forschungsförderung",
         "count": 5,
-        "ratioParty": 109.2,
-        "ratioBundestag": 101.9
-      },
-      {
-        "word": "forscherinnen",
-        "count": 5,
-        "ratioParty": 78.0,
-        "ratioBundestag": 116.0
+        "ratioParty": 113.4,
+        "ratioBundestag": 105.8
       },
       {
         "word": "innovationsfreiheitsgesetz",
         "count": 6,
-        "ratioParty": 77.1,
-        "ratioBundestag": 201.8
+        "ratioParty": 80.0,
+        "ratioBundestag": 209.5
+      },
+      {
+        "word": "forscherinnen",
+        "count": 5,
+        "ratioParty": 75.6,
+        "ratioBundestag": 116.4
       },
       {
         "word": "weltspitze",
         "count": 6,
-        "ratioParty": 72.8,
-        "ratioBundestag": 100.9
+        "ratioParty": 75.6,
+        "ratioBundestag": 97.5
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "forschungs",
+        "count": 11,
+        "score": 63.2,
+        "ratio": 311.7
+      },
+      {
+        "word": "innovationsfreiheitsgesetz",
+        "count": 6,
+        "score": 26.37,
+        "ratio": 80.0
+      },
+      {
+        "word": "weltspitze",
+        "count": 6,
+        "score": 26.03,
+        "ratio": 75.6
+      },
+      {
+        "word": "forschungsförderung",
+        "count": 5,
+        "score": 23.7,
+        "ratio": 113.4
+      },
+      {
+        "word": "forscherinnen",
+        "count": 5,
+        "score": 21.69,
+        "ratio": 75.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "forschungs",
+        "count": 11,
+        "score": 60.34,
+        "ratio": 240.1
+      },
+      {
+        "word": "innovationsfreiheitsgesetz",
+        "count": 6,
+        "score": 32.1,
+        "ratio": 209.5
+      },
+      {
+        "word": "weltspitze",
+        "count": 6,
+        "score": 27.54,
+        "ratio": 97.5
+      },
+      {
+        "word": "forscherinnen",
+        "count": 5,
+        "score": 23.83,
+        "ratio": 116.4
+      },
+      {
+        "word": "forschungsförderung",
+        "count": 5,
+        "score": 23.35,
+        "ratio": 105.8
       }
     ],
     "signatureAdjectives": [
@@ -107,12 +167,28 @@
         "ratioParty": 2.7,
         "ratioBundestag": 4.0
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 3.92,
+        "ratio": 2.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 4.83,
+        "ratio": 4.0
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 473,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.73,
     "vsParliament": 0.81
   },
@@ -130,41 +206,41 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "141"
+      "value": "142"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Florian Müller häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
         "text": "Forschungs",
         "isCorrect": true
+      },
+      {
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
+        "isCorrect": false
       },
       {
         "text": "Demokratie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Forschungs\" nutzt Florian Müller 300.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "231.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Forschungs\" nutzt Florian Müller 311.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "240.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Florian Müller häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "National",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Problematisch",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
@@ -172,7 +248,7 @@
         "isCorrect": true
       },
       {
-        "text": "Richtig",
+        "text": "Falsch",
         "isCorrect": false
       }
     ],
@@ -299,7 +375,7 @@
           "count": 4
         },
         {
-          "word": "gründer",
+          "word": "mittelstand",
           "count": 3
         }
       ],
@@ -317,11 +393,11 @@
           "count": 2
         },
         {
-          "word": "umverteilung",
+          "word": "eltern",
           "count": 1
         },
         {
-          "word": "familien",
+          "word": "inklusion",
           "count": 1
         }
       ],
@@ -351,11 +427,7 @@
           "count": 7
         },
         {
-          "word": "daten",
-          "count": 1
-        },
-        {
-          "word": "software",
+          "word": "dsgvo",
           "count": 1
         },
         {
@@ -363,7 +435,11 @@
           "count": 1
         },
         {
-          "word": "dsgvo",
+          "word": "daten",
+          "count": 1
+        },
+        {
+          "word": "software",
           "count": 1
         }
       ],

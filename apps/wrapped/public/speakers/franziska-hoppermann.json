@@ -11,23 +11,23 @@
   "minWords": 457,
   "maxWords": 918,
   "rankings": {
-    "speechRank": 453,
-    "wordsRank": 373,
-    "partySpeechRank": 136,
-    "partyWordsRank": 115,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 27.5,
+    "speechRank": 457,
+    "wordsRank": 386,
+    "partySpeechRank": 143,
+    "partyWordsRank": 119,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 27.0,
     "verbosityRank": 17,
-    "verbosityTotal": 579,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 5,
-    "longestSpeechRank": 126
+    "longestSpeechRank": 127
   },
   "drama": {
-    "interruptionsGiven": 15,
+    "interruptionsGiven": 17,
     "interruptionsReceived": 9,
-    "interrupterRank": 229,
-    "interruptedRank": 480
+    "interrupterRank": 222,
+    "interruptedRank": 485
   },
   "words": {
     "topWords": [
@@ -76,32 +76,96 @@
       {
         "word": "bereinigungssitzung",
         "count": 5,
-        "ratioParty": 101.2,
-        "ratioBundestag": 89.0
+        "ratioParty": 105.0,
+        "ratioBundestag": 92.4
       },
       {
         "word": "staatsmodernisierung",
         "count": 18,
-        "ratioParty": 45.5,
-        "ratioBundestag": 79.3
+        "ratioParty": 47.3,
+        "ratioBundestag": 81.5
       },
       {
         "word": "wildberger",
         "count": 7,
-        "ratioParty": 37.4,
-        "ratioBundestag": 30.8
+        "ratioParty": 38.1,
+        "ratioBundestag": 31.8
       },
       {
         "word": "ministerium",
         "count": 24,
-        "ratioParty": 35.2,
-        "ratioBundestag": 30.9
+        "ratioParty": 36.2,
+        "ratioBundestag": 31.3
       },
       {
         "word": "digitales",
         "count": 8,
-        "ratioParty": 34.3,
-        "ratioBundestag": 49.8
+        "ratioParty": 35.6,
+        "ratioBundestag": 51.0
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "ministerium",
+        "count": 24,
+        "score": 86.79,
+        "ratio": 36.2
+      },
+      {
+        "word": "staatsmodernisierung",
+        "count": 18,
+        "score": 69.79,
+        "ratio": 47.3
+      },
+      {
+        "word": "digitales",
+        "count": 8,
+        "score": 28.8,
+        "ratio": 35.6
+      },
+      {
+        "word": "wildberger",
+        "count": 7,
+        "score": 25.66,
+        "ratio": 38.1
+      },
+      {
+        "word": "bereinigungssitzung",
+        "count": 5,
+        "score": 23.32,
+        "ratio": 105.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "ministerium",
+        "count": 24,
+        "score": 83.4,
+        "ratio": 31.3
+      },
+      {
+        "word": "staatsmodernisierung",
+        "count": 18,
+        "score": 79.43,
+        "ratio": 81.5
+      },
+      {
+        "word": "digitales",
+        "count": 8,
+        "score": 31.61,
+        "ratio": 51.0
+      },
+      {
+        "word": "wildberger",
+        "count": 7,
+        "score": 24.43,
+        "ratio": 31.8
+      },
+      {
+        "word": "bereinigungssitzung",
+        "count": 5,
+        "score": 22.68,
+        "ratio": 92.4
       }
     ],
     "signatureAdjectives": [
@@ -115,16 +179,44 @@
         "word": "sicher",
         "count": 4,
         "ratioParty": 2.6,
-        "ratioBundestag": 2.8
+        "ratioBundestag": 2.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 5.12,
+        "ratio": 2.6
+      },
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 4.51,
+        "ratio": 3.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 5.47,
+        "ratio": 5.2
+      },
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 5.44,
+        "ratio": 2.9
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 733,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 1.14,
-    "vsParliament": 1.26
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
+    "vsParty": 1.13,
+    "vsParliament": 1.25
   },
   "funFacts": [
     {
@@ -140,55 +232,55 @@
     {
       "emoji": "📚",
       "label": "Wortreichster",
-      "value": "#17 von 579"
+      "value": "#17 von 582"
     },
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "15"
+      "value": "17"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Franziska Hoppermann häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
         "text": "Bereinigungssitzung",
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bereinigungssitzung\" nutzt Franziska Hoppermann 101.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "89.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bereinigungssitzung\" nutzt Franziska Hoppermann 105.0× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "92.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Franziska Hoppermann häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Stark",
+        "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
         "text": "Entscheidend",
         "isCorrect": true
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Entscheidend\" nutzt Franziska Hoppermann 3.5× häufiger als der CDU/CSU-Durchschnitt.",
@@ -300,11 +392,11 @@
           "count": 2
         },
         {
-          "word": "betriebe",
+          "word": "wirtschaftswachstum",
           "count": 1
         },
         {
-          "word": "wirtschaftswachstum",
+          "word": "betriebe",
           "count": 1
         }
       ],
@@ -376,7 +468,7 @@
           "count": 2
         },
         {
-          "word": "sondervermögen",
+          "word": "investitionen",
           "count": 2
         }
       ],

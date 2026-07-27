@@ -11,23 +11,23 @@
   "minWords": 23,
   "maxWords": 714,
   "rankings": {
-    "speechRank": 97,
-    "wordsRank": 193,
-    "partySpeechRank": 15,
-    "partyWordsRank": 31,
+    "speechRank": 112,
+    "wordsRank": 204,
+    "partySpeechRank": 20,
+    "partyWordsRank": 33,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 84.5,
-    "verbosityRank": 490,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 82.1,
+    "verbosityRank": 494,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 60,
-    "longestSpeechRank": 356
+    "longestSpeechRank": 361
   },
   "drama": {
     "interruptionsGiven": 9,
     "interruptionsReceived": 28,
-    "interrupterRank": 284,
-    "interruptedRank": 254
+    "interrupterRank": 285,
+    "interruptedRank": 264
   },
   "words": {
     "topWords": [
@@ -52,11 +52,11 @@
         "count": 20
       },
       {
-        "word": "innen",
+        "word": "endlich",
         "count": 17
       },
       {
-        "word": "endlich",
+        "word": "innen",
         "count": 17
       }
     ],
@@ -64,39 +64,103 @@
       {
         "word": "digitalministerium",
         "count": 6,
-        "ratioParty": 143.0,
-        "ratioBundestag": 46.2
+        "ratioParty": 148.1,
+        "ratioBundestag": 48.0
       },
       {
         "word": "source",
         "count": 7,
-        "ratioParty": 125.1,
-        "ratioBundestag": 85.4
+        "ratioParty": 129.6,
+        "ratioBundestag": 86.6
       },
       {
         "word": "netzausbau",
         "count": 8,
-        "ratioParty": 114.4,
-        "ratioBundestag": 46.5
+        "ratioParty": 118.5,
+        "ratioBundestag": 46.2
       },
       {
         "word": "künstliche",
         "count": 5,
-        "ratioParty": 59.6,
-        "ratioBundestag": 14.5
+        "ratioParty": 61.7,
+        "ratioBundestag": 14.2
       },
       {
         "word": "moderner",
         "count": 6,
-        "ratioParty": 33.0,
-        "ratioBundestag": 24.2
+        "ratioParty": 34.2,
+        "ratioBundestag": 24.4
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "netzausbau",
+        "count": 8,
+        "score": 38.27,
+        "ratio": 118.5
+      },
+      {
+        "word": "source",
+        "count": 7,
+        "score": 34.1,
+        "ratio": 129.6
+      },
+      {
+        "word": "digitalministerium",
+        "count": 6,
+        "score": 30.03,
+        "ratio": 148.1
+      },
+      {
+        "word": "moderner",
+        "count": 6,
+        "score": 21.37,
+        "ratio": 34.2
+      },
+      {
+        "word": "künstliche",
+        "count": 5,
+        "score": 20.69,
+        "ratio": 61.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "source",
+        "count": 7,
+        "score": 31.31,
+        "ratio": 86.6
+      },
+      {
+        "word": "netzausbau",
+        "count": 8,
+        "score": 30.84,
+        "ratio": 46.2
+      },
+      {
+        "word": "digitalministerium",
+        "count": 6,
+        "score": 23.35,
+        "ratio": 48.0
+      },
+      {
+        "word": "moderner",
+        "count": 6,
+        "score": 19.41,
+        "ratio": 24.4
+      },
+      {
+        "word": "künstliche",
+        "count": 5,
+        "score": 13.61,
+        "ratio": 14.2
       }
     ],
     "signatureAdjectives": [
       {
         "word": "entscheidend",
         "count": 4,
-        "ratioParty": 5.1,
+        "ratioParty": 5.2,
         "ratioBundestag": 4.0
       },
       {
@@ -105,12 +169,40 @@
         "ratioParty": 3.2,
         "ratioBundestag": 2.9
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 7,
+        "score": 10.05,
+        "ratio": 3.2
+      },
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 7.3,
+        "ratio": 5.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 7,
+        "score": 9.53,
+        "ratio": 2.9
+      },
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 6.44,
+        "ratio": 4.0
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 316,
     "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 585,
     "vsParty": 0.59,
     "vsParliament": 0.54
   },
@@ -130,7 +222,7 @@
     "question": "Welches Wort nutzt Rebecca Lenhard häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Verantwortung",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
@@ -138,38 +230,38 @@
         "isCorrect": false
       },
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
         "text": "Digitalministerium",
         "isCorrect": true
+      },
+      {
+        "text": "Debatte",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Digitalministerium\" nutzt Rebecca Lenhard 143.0× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "46.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Digitalministerium\" nutzt Rebecca Lenhard 148.1× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "48.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Rebecca Lenhard häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
         "text": "Entscheidend",
         "isCorrect": true
-      },
-      {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Rebecca Lenhard 5.1× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationParty": "\"Entscheidend\" nutzt Rebecca Lenhard 5.2× häufiger als der GRÜNE-Durchschnitt.",
     "explanationBundestag": "4.0× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -282,7 +374,7 @@
           "count": 1
         },
         {
-          "word": "naturschutz",
+          "word": "erneuerbare",
           "count": 1
         }
       ],
@@ -318,15 +410,15 @@
           "count": 3
         },
         {
-          "word": "familien",
-          "count": 1
-        },
-        {
-          "word": "kind",
+          "word": "eltern",
           "count": 1
         },
         {
           "word": "wohnung",
+          "count": 1
+        },
+        {
+          "word": "familien",
           "count": 1
         }
       ],
@@ -336,21 +428,21 @@
           "count": 2
         },
         {
-          "word": "verbrechen",
+          "word": "bundeswehr",
           "count": 1
         },
         {
-          "word": "bundeswehr",
+          "word": "verbrechen",
           "count": 1
         }
       ],
       "gesundheit": [
         {
-          "word": "prävention",
+          "word": "medizin",
           "count": 2
         },
         {
-          "word": "medizin",
+          "word": "prävention",
           "count": 2
         },
         {
@@ -420,11 +512,11 @@
           "count": 4
         },
         {
-          "word": "wissenschaftler",
+          "word": "bildung",
           "count": 2
         },
         {
-          "word": "bildung",
+          "word": "wissenschaftler",
           "count": 2
         },
         {
@@ -450,7 +542,7 @@
           "count": 1
         },
         {
-          "word": "bank",
+          "word": "finanzminister",
           "count": 1
         }
       ],
@@ -464,15 +556,15 @@
           "count": 2
         },
         {
+          "word": "gesetzgebung",
+          "count": 1
+        },
+        {
+          "word": "richter",
+          "count": 1
+        },
+        {
           "word": "rechtsstaat",
-          "count": 1
-        },
-        {
-          "word": "strafverfolgung",
-          "count": 1
-        },
-        {
-          "word": "urteil",
           "count": 1
         }
       ],
@@ -482,11 +574,11 @@
           "count": 2
         },
         {
-          "word": "homeoffice",
+          "word": "teilzeit",
           "count": 1
         },
         {
-          "word": "teilzeit",
+          "word": "homeoffice",
           "count": 1
         },
         {

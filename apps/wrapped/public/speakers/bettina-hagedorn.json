@@ -11,23 +11,23 @@
   "minWords": 329,
   "maxWords": 790,
   "rankings": {
-    "speechRank": 454,
-    "wordsRank": 465,
+    "speechRank": 458,
+    "wordsRank": 473,
     "partySpeechRank": 83,
     "partyWordsRank": 90,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 27.4,
-    "verbosityRank": 120,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 27,
-    "longestSpeechRank": 260
+    "totalSpeakers": 626,
+    "percentile": 26.8,
+    "verbosityRank": 124,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 28,
+    "longestSpeechRank": 262
   },
   "drama": {
     "interruptionsGiven": 42,
     "interruptionsReceived": 18,
-    "interrupterRank": 126,
-    "interruptedRank": 344
+    "interrupterRank": 128,
+    "interruptedRank": 360
   },
   "words": {
     "topWords": [
@@ -76,40 +76,106 @@
       {
         "word": "holstein",
         "count": 9,
-        "ratioParty": 331.4,
-        "ratioBundestag": 150.6
+        "ratioParty": 346.2,
+        "ratioBundestag": 156.4
       },
       {
         "word": "schleswig",
         "count": 10,
-        "ratioParty": 234.3,
-        "ratioBundestag": 140.1
+        "ratioParty": 244.8,
+        "ratioBundestag": 145.4
       },
       {
         "word": "ostsee",
         "count": 10,
-        "ratioParty": 95.5,
-        "ratioBundestag": 137.1
+        "ratioParty": 99.7,
+        "ratioBundestag": 142.4
       },
       {
         "word": "schnieder",
         "count": 5,
-        "ratioParty": 75.8,
-        "ratioBundestag": 50.0
+        "ratioParty": 74.8,
+        "ratioBundestag": 51.5
       },
       {
         "word": "haushaltsausschuss",
         "count": 12,
-        "ratioParty": 63.1,
-        "ratioBundestag": 95.5
+        "ratioParty": 63.4,
+        "ratioBundestag": 97.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "schleswig",
+        "count": 10,
+        "score": 55.05,
+        "ratio": 244.8
+      },
+      {
+        "word": "holstein",
+        "count": 9,
+        "score": 52.65,
+        "ratio": 346.2
+      },
+      {
+        "word": "haushaltsausschuss",
+        "count": 12,
+        "score": 49.98,
+        "ratio": 63.4
+      },
+      {
+        "word": "ostsee",
+        "count": 10,
+        "score": 46.12,
+        "ratio": 99.7
+      },
+      {
+        "word": "schnieder",
+        "count": 5,
+        "score": 21.64,
+        "ratio": 74.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "haushaltsausschuss",
+        "count": 12,
+        "score": 55.13,
+        "ratio": 97.9
+      },
+      {
+        "word": "schleswig",
+        "count": 10,
+        "score": 49.86,
+        "ratio": 145.4
+      },
+      {
+        "word": "ostsee",
+        "count": 10,
+        "score": 49.66,
+        "ratio": 142.4
+      },
+      {
+        "word": "holstein",
+        "count": 9,
+        "score": 45.53,
+        "ratio": 156.4
+      },
+      {
+        "word": "schnieder",
+        "count": 5,
+        "score": 19.8,
+        "ratio": 51.5
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 525,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
     "vsParty": 0.85,
     "vsParliament": 0.9
   },
@@ -134,24 +200,24 @@
     "question": "Welches Wort nutzt Bettina Hagedorn häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
         "text": "Holstein",
         "isCorrect": true
       },
       {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Demokratie",
+        "text": "Investitionen",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Holstein\" nutzt Bettina Hagedorn 331.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "150.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Holstein\" nutzt Bettina Hagedorn 346.2× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "156.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -342,11 +408,11 @@
           "count": 5
         },
         {
-          "word": "etat",
+          "word": "sondervermögen",
           "count": 3
         },
         {
-          "word": "sondervermögen",
+          "word": "etat",
           "count": 3
         }
       ],
@@ -364,16 +430,12 @@
       ],
       "mobilitaet": [
         {
-          "word": "verkehrsminister",
-          "count": 2
-        },
-        {
           "word": "infrastruktur",
           "count": 2
         },
         {
-          "word": "verkehrsinfrastruktur",
-          "count": 1
+          "word": "verkehrsminister",
+          "count": 2
         },
         {
           "word": "schiffe",
@@ -381,6 +443,10 @@
         },
         {
           "word": "häfen",
+          "count": 1
+        },
+        {
+          "word": "verkehrsinfrastruktur",
           "count": 1
         }
       ]

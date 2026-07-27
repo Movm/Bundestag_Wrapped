@@ -11,23 +11,23 @@
   "minWords": 22,
   "maxWords": 725,
   "rankings": {
-    "speechRank": 371,
-    "wordsRank": 396,
-    "partySpeechRank": 103,
-    "partyWordsRank": 124,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 40.6,
-    "verbosityRank": 422,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 147,
-    "longestSpeechRank": 346
+    "speechRank": 366,
+    "wordsRank": 405,
+    "partySpeechRank": 100,
+    "partyWordsRank": 128,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 41.5,
+    "verbosityRank": 426,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 148,
+    "longestSpeechRank": 350
   },
   "drama": {
     "interruptionsGiven": 6,
     "interruptionsReceived": 3,
-    "interrupterRank": 330,
-    "interruptedRank": 571
+    "interrupterRank": 333,
+    "interruptedRank": 572
   },
   "words": {
     "topWords": [
@@ -72,32 +72,96 @@
       {
         "word": "übergabe",
         "count": 6,
-        "ratioParty": 248.2,
-        "ratioBundestag": 445.5
+        "ratioParty": 257.6,
+        "ratioBundestag": 462.6
       },
       {
         "word": "küste",
         "count": 6,
-        "ratioParty": 193.0,
-        "ratioBundestag": 167.1
+        "ratioParty": 200.4,
+        "ratioBundestag": 173.5
       },
       {
         "word": "libanesischen",
         "count": 6,
-        "ratioParty": 72.4,
-        "ratioBundestag": 78.6
+        "ratioParty": 75.1,
+        "ratioBundestag": 81.6
       },
       {
         "word": "material",
         "count": 6,
-        "ratioParty": 59.9,
-        "ratioBundestag": 46.9
+        "ratioParty": 62.2,
+        "ratioBundestag": 48.3
       },
       {
         "word": "streitkräfte",
         "count": 7,
-        "ratioParty": 59.6,
-        "ratioBundestag": 44.9
+        "ratioParty": 61.9,
+        "ratioBundestag": 46.3
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "übergabe",
+        "count": 6,
+        "score": 33.33,
+        "ratio": 257.6
+      },
+      {
+        "word": "küste",
+        "count": 6,
+        "score": 31.83,
+        "ratio": 200.4
+      },
+      {
+        "word": "streitkräfte",
+        "count": 7,
+        "score": 28.99,
+        "ratio": 61.9
+      },
+      {
+        "word": "libanesischen",
+        "count": 6,
+        "score": 25.99,
+        "ratio": 75.1
+      },
+      {
+        "word": "material",
+        "count": 6,
+        "score": 24.88,
+        "ratio": 62.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "übergabe",
+        "count": 6,
+        "score": 36.83,
+        "ratio": 462.6
+      },
+      {
+        "word": "küste",
+        "count": 6,
+        "score": 30.97,
+        "ratio": 173.5
+      },
+      {
+        "word": "streitkräfte",
+        "count": 7,
+        "score": 27.0,
+        "ratio": 46.3
+      },
+      {
+        "word": "libanesischen",
+        "count": 6,
+        "score": 26.48,
+        "ratio": 81.6
+      },
+      {
+        "word": "material",
+        "count": 6,
+        "score": 23.39,
+        "ratio": 48.3
       }
     ],
     "signatureAdjectives": [
@@ -105,26 +169,66 @@
         "word": "zuverlässig",
         "count": 4,
         "ratioParty": 44.5,
-        "ratioBundestag": 34.3
+        "ratioBundestag": 35.2
       },
       {
         "word": "wirksam",
         "count": 3,
         "ratioParty": 7.0,
-        "ratioBundestag": 9.5
+        "ratioBundestag": 9.6
       },
       {
         "word": "gerecht",
         "count": 4,
-        "ratioParty": 5.9,
-        "ratioBundestag": 5.4
+        "ratioParty": 6.0,
+        "ratioBundestag": 5.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "zuverlässig",
+        "count": 4,
+        "score": 15.27,
+        "ratio": 44.5
+      },
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 7.78,
+        "ratio": 6.0
+      },
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 6.24,
+        "ratio": 7.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "zuverlässig",
+        "count": 4,
+        "score": 14.36,
+        "ratio": 35.2
+      },
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 7.49,
+        "ratio": 5.5
+      },
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 7.08,
+        "ratio": 9.6
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 372,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.58,
     "vsParliament": 0.64
   },
@@ -144,47 +248,47 @@
     "question": "Welches Wort nutzt Kerstin Vieregge häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Haushalt",
+        "isCorrect": false
+      },
+      {
         "text": "Übergabe",
         "isCorrect": true
-      },
-      {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Übergabe\" nutzt Kerstin Vieregge 248.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "445.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Übergabe\" nutzt Kerstin Vieregge 257.6× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "462.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Kerstin Vieregge häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Politisch",
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
         "text": "Zuverlässig",
         "isCorrect": true
-      },
-      {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Zuverlässig\" nutzt Kerstin Vieregge 44.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "34.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "35.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐝",

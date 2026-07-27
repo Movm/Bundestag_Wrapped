@@ -11,17 +11,17 @@
   "minWords": 17,
   "maxWords": 1062,
   "rankings": {
-    "speechRank": 16,
-    "wordsRank": 12,
+    "speechRank": 23,
+    "wordsRank": 16,
     "partySpeechRank": 1,
     "partyWordsRank": 1,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 97.4,
-    "verbosityRank": 59,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 96.3,
+    "verbosityRank": 63,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 7,
-    "longestSpeechRank": 58
+    "longestSpeechRank": 60
   },
   "drama": {
     "interruptionsGiven": 177,
@@ -52,40 +52,104 @@
       {
         "word": "butter",
         "count": 8,
-        "ratioParty": 248.6,
-        "ratioBundestag": 126.1
+        "ratioParty": 257.5,
+        "ratioBundestag": 131.0
       },
       {
         "word": "transformationskosten",
         "count": 5,
-        "ratioParty": 155.4,
-        "ratioBundestag": 100.3
+        "ratioParty": 160.9,
+        "ratioBundestag": 104.2
       },
       {
         "word": "apotheken",
         "count": 8,
-        "ratioParty": 124.3,
-        "ratioBundestag": 22.1
+        "ratioParty": 128.8,
+        "ratioBundestag": 22.4
       },
       {
         "word": "florian",
         "count": 7,
-        "ratioParty": 108.8,
-        "ratioBundestag": 44.2
+        "ratioParty": 112.7,
+        "ratioBundestag": 39.1
       },
       {
         "word": "svenja",
         "count": 6,
-        "ratioParty": 93.2,
-        "ratioBundestag": 44.2
+        "ratioParty": 96.6,
+        "ratioBundestag": 44.4
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "butter",
+        "count": 8,
+        "score": 44.44,
+        "ratio": 257.5
+      },
+      {
+        "word": "apotheken",
+        "count": 8,
+        "score": 38.93,
+        "ratio": 128.8
+      },
+      {
+        "word": "florian",
+        "count": 7,
+        "score": 33.13,
+        "ratio": 112.7
+      },
+      {
+        "word": "svenja",
+        "count": 6,
+        "score": 27.49,
+        "ratio": 96.6
+      },
+      {
+        "word": "transformationskosten",
+        "count": 5,
+        "score": 25.43,
+        "ratio": 160.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "butter",
+        "count": 8,
+        "score": 39.06,
+        "ratio": 131.0
+      },
+      {
+        "word": "florian",
+        "count": 7,
+        "score": 25.84,
+        "ratio": 39.1
+      },
+      {
+        "word": "apotheken",
+        "count": 8,
+        "score": 25.22,
+        "ratio": 22.4
+      },
+      {
+        "word": "transformationskosten",
+        "count": 5,
+        "score": 23.28,
+        "ratio": 104.2
+      },
+      {
+        "word": "svenja",
+        "count": 6,
+        "score": 22.89,
+        "ratio": 44.4
       }
     ],
     "signatureAdjectives": [
       {
         "word": "unehrlich",
         "count": 3,
-        "ratioParty": 31.1,
-        "ratioBundestag": 30.1
+        "ratioParty": 32.2,
+        "ratioBundestag": 29.9
       },
       {
         "word": "stark",
@@ -93,12 +157,40 @@
         "ratioParty": 2.2,
         "ratioBundestag": 1.8
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "unehrlich",
+        "count": 3,
+        "score": 10.51,
+        "ratio": 32.2
+      },
+      {
+        "word": "stark",
+        "count": 6,
+        "score": 6.98,
+        "ratio": 2.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "unehrlich",
+        "count": 3,
+        "score": 10.29,
+        "ratio": 29.9
+      },
+      {
+        "word": "stark",
+        "count": 6,
+        "score": 6.18,
+        "ratio": 1.8
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 603,
     "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 585,
     "vsParty": 1.12,
     "vsParliament": 1.03
   },
@@ -114,11 +206,6 @@
       "value": "20.515"
     },
     {
-      "emoji": "🏆",
-      "label": "Rang (Reden)",
-      "value": "#16 von 625"
-    },
-    {
       "emoji": "⚡",
       "label": "Zwischenrufer",
       "value": "#20 (177x)"
@@ -127,40 +214,45 @@
       "emoji": "🥇",
       "label": "Rang in GRÜNE",
       "value": "#1 von 86"
+    },
+    {
+      "emoji": "📊",
+      "label": "Top-Redner",
+      "value": "Top 4%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Paula Piechotta häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Rente",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
+        "text": "Familie",
         "isCorrect": false
       },
       {
         "text": "Butter",
         "isCorrect": true
+      },
+      {
+        "text": "Kinder",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Butter\" nutzt Dr. Paula Piechotta 248.6× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "126.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Butter\" nutzt Dr. Paula Piechotta 257.5× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "131.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Paula Piechotta häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Gut",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Problematisch",
+        "text": "Groß",
         "isCorrect": false
       },
       {
@@ -168,12 +260,12 @@
         "isCorrect": true
       },
       {
-        "text": "Politisch",
+        "text": "Wichtig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unehrlich\" nutzt Dr. Paula Piechotta 31.1× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "30.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Unehrlich\" nutzt Dr. Paula Piechotta 32.2× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "29.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦁",
@@ -289,11 +381,11 @@
           "count": 5
         },
         {
-          "word": "unternehmen",
+          "word": "wachstum",
           "count": 3
         },
         {
-          "word": "wachstum",
+          "word": "unternehmen",
           "count": 3
         },
         {
@@ -307,11 +399,11 @@
       ],
       "soziales": [
         {
-          "word": "familie",
+          "word": "kind",
           "count": 3
         },
         {
-          "word": "kind",
+          "word": "familie",
           "count": 3
         },
         {
@@ -343,11 +435,11 @@
           "count": 12
         },
         {
-          "word": "medikamente",
+          "word": "kliniken",
           "count": 10
         },
         {
-          "word": "kliniken",
+          "word": "medikamente",
           "count": 10
         },
         {
@@ -365,11 +457,11 @@
           "count": 1
         },
         {
-          "word": "krieg",
+          "word": "europa",
           "count": 1
         },
         {
-          "word": "europa",
+          "word": "krieg",
           "count": 1
         }
       ],
@@ -441,7 +533,7 @@
           "count": 2
         },
         {
-          "word": "novelle",
+          "word": "urteile",
           "count": 1
         }
       ],
@@ -459,11 +551,11 @@
           "count": 1
         },
         {
-          "word": "arbeitsplatz",
+          "word": "arbeitnehmerinnen",
           "count": 1
         },
         {
-          "word": "arbeitskraft",
+          "word": "arbeitsplatz",
           "count": 1
         }
       ],

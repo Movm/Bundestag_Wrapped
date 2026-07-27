@@ -11,23 +11,23 @@
   "minWords": 7,
   "maxWords": 1478,
   "rankings": {
-    "speechRank": 113,
-    "wordsRank": 16,
+    "speechRank": 127,
+    "wordsRank": 21,
     "partySpeechRank": 26,
     "partyWordsRank": 9,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 81.9,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 79.7,
     "verbosityRank": 556,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 175,
-    "longestSpeechRank": 19
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 174,
+    "longestSpeechRank": 20
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 25,
-    "interrupterRank": 468,
-    "interruptedRank": 286
+    "interrupterRank": 475,
+    "interruptedRank": 300
   },
   "words": {
     "topWords": [
@@ -60,59 +60,163 @@
       {
         "word": "menopause",
         "count": 6,
-        "ratioParty": 452.8,
-        "ratioBundestag": 233.8
+        "ratioParty": 470.2,
+        "ratioBundestag": 242.8
       },
       {
         "word": "gesundheitsforschung",
         "count": 11,
-        "ratioParty": 415.0,
-        "ratioBundestag": 197.8
+        "ratioParty": 431.0,
+        "ratioBundestag": 205.4
       },
       {
         "word": "endometriose",
         "count": 6,
-        "ratioParty": 226.4,
-        "ratioBundestag": 100.2
-      },
-      {
-        "word": "artemis",
-        "count": 5,
-        "ratioParty": 188.7,
-        "ratioBundestag": 83.5
+        "ratioParty": 235.1,
+        "ratioBundestag": 80.9
       },
       {
         "word": "weltall",
         "count": 5,
-        "ratioParty": 188.7,
-        "ratioBundestag": 146.1
+        "ratioParty": 195.9,
+        "ratioBundestag": 151.7
+      },
+      {
+        "word": "artemis",
+        "count": 5,
+        "ratioParty": 195.9,
+        "ratioBundestag": 86.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "gesundheitsforschung",
+        "count": 11,
+        "score": 66.75,
+        "ratio": 431.0
+      },
+      {
+        "word": "menopause",
+        "count": 6,
+        "score": 36.93,
+        "ratio": 470.2
+      },
+      {
+        "word": "endometriose",
+        "count": 6,
+        "score": 32.79,
+        "ratio": 235.1
+      },
+      {
+        "word": "weltall",
+        "count": 5,
+        "score": 26.41,
+        "ratio": 195.9
+      },
+      {
+        "word": "artemis",
+        "count": 5,
+        "score": 26.41,
+        "ratio": 195.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "gesundheitsforschung",
+        "count": 11,
+        "score": 58.63,
+        "ratio": 205.4
+      },
+      {
+        "word": "menopause",
+        "count": 6,
+        "score": 32.98,
+        "ratio": 242.8
+      },
+      {
+        "word": "endometriose",
+        "count": 6,
+        "score": 26.43,
+        "ratio": 80.9
+      },
+      {
+        "word": "weltall",
+        "count": 5,
+        "score": 25.14,
+        "ratio": 151.7
+      },
+      {
+        "word": "artemis",
+        "count": 5,
+        "score": 22.37,
+        "ratio": 86.7
       }
     ],
     "signatureAdjectives": [
       {
         "word": "hervorragend",
         "count": 7,
-        "ratioParty": 31.1,
-        "ratioBundestag": 40.9
+        "ratioParty": 27.4,
+        "ratioBundestag": 37.8
       },
       {
         "word": "wesentlich",
         "count": 5,
-        "ratioParty": 6.7,
-        "ratioBundestag": 8.7
+        "ratioParty": 6.4,
+        "ratioBundestag": 8.6
       },
       {
         "word": "stark",
         "count": 12,
-        "ratioParty": 3.2,
+        "ratioParty": 3.1,
         "ratioBundestag": 3.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "hervorragend",
+        "count": 7,
+        "score": 23.42,
+        "ratio": 27.4
+      },
+      {
+        "word": "stark",
+        "count": 12,
+        "score": 16.93,
+        "ratio": 3.1
+      },
+      {
+        "word": "wesentlich",
+        "count": 5,
+        "score": 10.01,
+        "ratio": 6.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "hervorragend",
+        "count": 7,
+        "score": 25.61,
+        "ratio": 37.8
+      },
+      {
+        "word": "stark",
+        "count": 12,
+        "score": 19.07,
+        "ratio": 3.9
+      },
+      {
+        "word": "wesentlich",
+        "count": 5,
+        "score": 11.31,
+        "ratio": 8.6
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 211,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.33,
     "vsParliament": 0.36
   },
@@ -132,47 +236,47 @@
     "question": "Welches Wort nutzt Dorothee Bär häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
         "text": "Menopause",
         "isCorrect": true
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Freiheit",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Menopause\" nutzt Dorothee Bär 452.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "233.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Menopause\" nutzt Dorothee Bär 470.2× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "242.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dorothee Bär häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
         "text": "Hervorragend",
         "isCorrect": true
+      },
+      {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Hervorragend\" nutzt Dorothee Bär 31.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "40.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Hervorragend\" nutzt Dorothee Bär 27.4× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "37.8× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -272,6 +376,10 @@
           "count": 9
         },
         {
+          "word": "klimaneutralität",
+          "count": 1
+        },
+        {
           "word": "emissionen",
           "count": 1
         },
@@ -280,11 +388,7 @@
           "count": 1
         },
         {
-          "word": "klimaneutralität",
-          "count": 1
-        },
-        {
-          "word": "wasserstoff",
+          "word": "moore",
           "count": 1
         }
       ],
@@ -326,11 +430,11 @@
       ],
       "sicherheit": [
         {
-          "word": "angriff",
+          "word": "verteidigung",
           "count": 2
         },
         {
-          "word": "verteidigung",
+          "word": "angriff",
           "count": 2
         },
         {
@@ -356,7 +460,7 @@
           "count": 2
         },
         {
-          "word": "krankenhaus",
+          "word": "psyche",
           "count": 1
         }
       ],
@@ -388,11 +492,11 @@
           "count": 8
         },
         {
-          "word": "netzwerk",
+          "word": "daten",
           "count": 3
         },
         {
-          "word": "daten",
+          "word": "netzwerk",
           "count": 3
         },
         {
@@ -440,11 +544,11 @@
           "count": 4
         },
         {
-          "word": "bundeshaushalt",
+          "word": "finanzministerium",
           "count": 1
         },
         {
-          "word": "investitionen",
+          "word": "bundeshaushalt",
           "count": 1
         }
       ],
@@ -460,15 +564,15 @@
       ],
       "arbeit": [
         {
+          "word": "arbeiter",
+          "count": 1
+        },
+        {
           "word": "gewerkschaften",
           "count": 1
         },
         {
           "word": "arbeitsplätze",
-          "count": 1
-        },
-        {
-          "word": "arbeiter",
           "count": 1
         }
       ],
@@ -482,15 +586,15 @@
           "count": 6
         },
         {
+          "word": "hafen",
+          "count": 2
+        },
+        {
           "word": "verkehr",
           "count": 2
         },
         {
           "word": "straßen",
-          "count": 2
-        },
-        {
-          "word": "hafen",
           "count": 2
         }
       ]

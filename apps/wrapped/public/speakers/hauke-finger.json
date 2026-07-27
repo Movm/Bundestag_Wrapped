@@ -12,22 +12,22 @@
   "maxWords": 628,
   "rankings": {
     "speechRank": 220,
-    "wordsRank": 282,
+    "wordsRank": 295,
     "partySpeechRank": 47,
-    "partyWordsRank": 61,
+    "partyWordsRank": 62,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 64.8,
-    "verbosityRank": 357,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 91,
-    "longestSpeechRank": 465
+    "totalSpeakers": 626,
+    "percentile": 64.9,
+    "verbosityRank": 355,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 90,
+    "longestSpeechRank": 466
   },
   "drama": {
     "interruptionsGiven": 4,
     "interruptionsReceived": 33,
-    "interrupterRank": 375,
-    "interruptedRank": 208
+    "interrupterRank": 373,
+    "interruptedRank": 220
   },
   "words": {
     "topWords": [
@@ -50,59 +50,155 @@
       {
         "word": "jahr",
         "count": 16
+      },
+      {
+        "word": "abschaffung",
+        "count": 12
       }
     ],
     "signatureWords": [
       {
         "word": "hochverehrte",
         "count": 10,
-        "ratioParty": 378.8,
-        "ratioBundestag": 1704.3
+        "ratioParty": 392.8,
+        "ratioBundestag": 1769.7
       },
       {
         "word": "flugzeuge",
         "count": 6,
-        "ratioParty": 227.3,
-        "ratioBundestag": 141.0
+        "ratioParty": 235.7,
+        "ratioBundestag": 146.5
       },
       {
         "word": "schenkungsteuer",
         "count": 5,
-        "ratioParty": 151.5,
-        "ratioBundestag": 227.2
+        "ratioParty": 157.1,
+        "ratioBundestag": 236.0
       },
       {
         "word": "steuergerechtigkeit",
         "count": 5,
-        "ratioParty": 108.2,
-        "ratioBundestag": 51.6
+        "ratioParty": 112.2,
+        "ratioBundestag": 53.6
       },
       {
         "word": "erbschaftsteuer",
         "count": 16,
-        "ratioParty": 101.0,
-        "ratioBundestag": 68.6
+        "ratioParty": 104.8,
+        "ratioBundestag": 69.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "erbschaftsteuer",
+        "count": 16,
+        "score": 74.58,
+        "ratio": 104.8
+      },
+      {
+        "word": "hochverehrte",
+        "count": 10,
+        "score": 59.76,
+        "ratio": 392.8
+      },
+      {
+        "word": "flugzeuge",
+        "count": 6,
+        "score": 32.8,
+        "ratio": 235.7
+      },
+      {
+        "word": "schenkungsteuer",
+        "count": 5,
+        "score": 25.32,
+        "ratio": 157.1
+      },
+      {
+        "word": "steuergerechtigkeit",
+        "count": 5,
+        "score": 23.65,
+        "ratio": 112.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "hochverehrte",
+        "count": 10,
+        "score": 74.79,
+        "ratio": 1769.7
+      },
+      {
+        "word": "erbschaftsteuer",
+        "count": 16,
+        "score": 68.0,
+        "ratio": 69.1
+      },
+      {
+        "word": "flugzeuge",
+        "count": 6,
+        "score": 29.96,
+        "ratio": 146.5
+      },
+      {
+        "word": "schenkungsteuer",
+        "count": 5,
+        "score": 27.34,
+        "ratio": 236.0
+      },
+      {
+        "word": "steuergerechtigkeit",
+        "count": 5,
+        "score": 20.0,
+        "ratio": 53.6
       }
     ],
     "signatureAdjectives": [
       {
         "word": "ungerecht",
         "count": 4,
-        "ratioParty": 18.9,
-        "ratioBundestag": 22.0
+        "ratioParty": 19.6,
+        "ratioBundestag": 22.8
       },
       {
         "word": "gerecht",
         "count": 5,
-        "ratioParty": 10.4,
-        "ratioBundestag": 5.1
+        "ratioParty": 10.3,
+        "ratioBundestag": 5.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 5,
+        "score": 12.12,
+        "ratio": 10.3
+      },
+      {
+        "word": "ungerecht",
+        "count": 4,
+        "score": 12.1,
+        "ratio": 19.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "ungerecht",
+        "count": 4,
+        "score": 12.68,
+        "ratio": 22.8
+      },
+      {
+        "word": "gerecht",
+        "count": 5,
+        "score": 9.2,
+        "ratio": 5.3
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 405,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.73,
     "vsParliament": 0.69
   },
@@ -122,47 +218,47 @@
     "question": "Welches Wort nutzt Hauke Finger häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
         "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Reform",
+        "text": "Familie",
         "isCorrect": false
       },
       {
         "text": "Hochverehrte",
         "isCorrect": true
-      },
-      {
-        "text": "Politik",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Hochverehrte\" nutzt Hauke Finger 378.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "1704.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Hochverehrte\" nutzt Hauke Finger 392.8× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "1769.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Hauke Finger häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Stark",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
         "text": "Ungerecht",
         "isCorrect": true
+      },
+      {
+        "text": "Sicher",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ungerecht\" nutzt Hauke Finger 18.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "22.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Ungerecht\" nutzt Hauke Finger 19.6× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "22.8× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -290,11 +386,11 @@
           "count": 3
         },
         {
-          "word": "miete",
+          "word": "eltern",
           "count": 2
         },
         {
-          "word": "eltern",
+          "word": "miete",
           "count": 2
         }
       ],
@@ -328,25 +424,25 @@
       ],
       "digital": [
         {
-          "word": "datenbank",
-          "count": 1
-        },
-        {
           "word": "glasfaser",
           "count": 1
         },
         {
           "word": "internet",
           "count": 1
+        },
+        {
+          "word": "datenbank",
+          "count": 1
         }
       ],
       "bildung": [
         {
-          "word": "schulen",
+          "word": "forschung",
           "count": 1
         },
         {
-          "word": "forschung",
+          "word": "schulen",
           "count": 1
         }
       ],
@@ -388,11 +484,11 @@
           "count": 7
         },
         {
-          "word": "arbeiter",
+          "word": "beschäftigung",
           "count": 1
         },
         {
-          "word": "beschäftigung",
+          "word": "arbeiter",
           "count": 1
         },
         {
@@ -418,7 +514,7 @@
           "count": 1
         },
         {
-          "word": "infrastruktur",
+          "word": "fliegen",
           "count": 1
         }
       ]

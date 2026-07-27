@@ -11,23 +11,23 @@
   "minWords": 407,
   "maxWords": 846,
   "rankings": {
-    "speechRank": 203,
-    "wordsRank": 125,
-    "partySpeechRank": 37,
+    "speechRank": 209,
+    "wordsRank": 136,
+    "partySpeechRank": 39,
     "partyWordsRank": 19,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 67.5,
-    "verbosityRank": 28,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 66.6,
+    "verbosityRank": 29,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 3,
-    "longestSpeechRank": 184
+    "longestSpeechRank": 187
   },
   "drama": {
     "interruptionsGiven": 32,
     "interruptionsReceived": 31,
-    "interrupterRank": 158,
-    "interruptedRank": 225
+    "interrupterRank": 164,
+    "interruptedRank": 237
   },
   "words": {
     "topWords": [
@@ -76,65 +76,181 @@
       {
         "word": "antiziganismus",
         "count": 5,
-        "ratioParty": 298.9,
-        "ratioBundestag": 419.3
+        "ratioParty": 309.5,
+        "ratioBundestag": 435.4
       },
       {
         "word": "krisenprävention",
         "count": 8,
-        "ratioParty": 68.3,
-        "ratioBundestag": 88.3
+        "ratioParty": 70.7,
+        "ratioBundestag": 91.7
       },
       {
         "word": "multilateralismus",
         "count": 5,
-        "ratioParty": 59.8,
-        "ratioBundestag": 74.9
+        "ratioParty": 61.9,
+        "ratioBundestag": 75.1
       },
       {
         "word": "entwicklungszusammenarbeit",
         "count": 25,
-        "ratioParty": 42.7,
-        "ratioBundestag": 46.2
+        "ratioParty": 38.7,
+        "ratioBundestag": 45.7
       },
       {
         "word": "auswärtigen",
         "count": 5,
-        "ratioParty": 29.9,
-        "ratioBundestag": 13.2
+        "ratioParty": 28.1,
+        "ratioBundestag": 13.4
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "entwicklungszusammenarbeit",
+        "count": 25,
+        "score": 92.03,
+        "ratio": 38.7
+      },
+      {
+        "word": "krisenprävention",
+        "count": 8,
+        "score": 34.18,
+        "ratio": 70.7
+      },
+      {
+        "word": "antiziganismus",
+        "count": 5,
+        "score": 28.69,
+        "ratio": 309.5
+      },
+      {
+        "word": "multilateralismus",
+        "count": 5,
+        "score": 20.71,
+        "ratio": 61.9
+      },
+      {
+        "word": "auswärtigen",
+        "count": 5,
+        "score": 16.85,
+        "ratio": 28.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "entwicklungszusammenarbeit",
+        "count": 25,
+        "score": 96.09,
+        "ratio": 45.7
+      },
+      {
+        "word": "krisenprävention",
+        "count": 8,
+        "score": 36.23,
+        "ratio": 91.7
+      },
+      {
+        "word": "antiziganismus",
+        "count": 5,
+        "score": 30.39,
+        "ratio": 435.4
+      },
+      {
+        "word": "multilateralismus",
+        "count": 5,
+        "score": 21.66,
+        "ratio": 75.1
+      },
+      {
+        "word": "auswärtigen",
+        "count": 5,
+        "score": 13.34,
+        "ratio": 13.4
       }
     ],
     "signatureAdjectives": [
       {
         "word": "solide",
         "count": 3,
-        "ratioParty": 13.8,
+        "ratioParty": 13.3,
         "ratioBundestag": 9.0
       },
       {
         "word": "angemessen",
         "count": 4,
-        "ratioParty": 8.9,
-        "ratioBundestag": 9.5
+        "ratioParty": 8.5,
+        "ratioBundestag": 9.6
       },
       {
         "word": "rechts",
         "count": 4,
-        "ratioParty": 3.7,
+        "ratioParty": 3.8,
         "ratioBundestag": 3.3
       },
       {
         "word": "gerecht",
         "count": 4,
-        "ratioParty": 2.1,
-        "ratioBundestag": 2.5
+        "ratioParty": 2.2,
+        "ratioBundestag": 2.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "angemessen",
+        "count": 4,
+        "score": 9.01,
+        "ratio": 8.5
+      },
+      {
+        "word": "solide",
+        "count": 3,
+        "score": 7.98,
+        "ratio": 13.3
+      },
+      {
+        "word": "rechts",
+        "count": 4,
+        "score": 6.27,
+        "ratio": 3.8
+      },
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 4.65,
+        "ratio": 2.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "angemessen",
+        "count": 4,
+        "score": 9.44,
+        "ratio": 9.6
+      },
+      {
+        "word": "solide",
+        "count": 3,
+        "score": 6.91,
+        "ratio": 9.0
+      },
+      {
+        "word": "rechts",
+        "count": 4,
+        "score": 5.83,
+        "ratio": 3.3
+      },
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 5.12,
+        "ratio": 2.6
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 654,
     "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 585,
     "vsParty": 1.22,
     "vsParliament": 1.12
   },
@@ -159,7 +275,7 @@
     "question": "Welches Wort nutzt Jamila Schäfer häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Rente",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
@@ -167,38 +283,38 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetz",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Haushalt",
+        "text": "Familie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Antiziganismus\" nutzt Jamila Schäfer 298.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "419.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Antiziganismus\" nutzt Jamila Schäfer 309.5× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "435.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Jamila Schäfer häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
+        "text": "Klar",
         "isCorrect": false
       },
       {
-        "text": "Groß",
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
         "isCorrect": false
       },
       {
         "text": "Solide",
         "isCorrect": true
-      },
-      {
-        "text": "Neu",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Solide\" nutzt Jamila Schäfer 13.8× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationParty": "\"Solide\" nutzt Jamila Schäfer 13.3× häufiger als der GRÜNE-Durchschnitt.",
     "explanationBundestag": "9.0× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -343,11 +459,11 @@
           "count": 3
         },
         {
-          "word": "unternehmen",
+          "word": "fachkräfte",
           "count": 3
         },
         {
-          "word": "fachkräfte",
+          "word": "unternehmen",
           "count": 3
         },
         {
@@ -355,7 +471,7 @@
           "count": 2
         },
         {
-          "word": "märkte",
+          "word": "industriestandort",
           "count": 1
         }
       ],
@@ -373,11 +489,11 @@
           "count": 3
         },
         {
-          "word": "eltern",
+          "word": "kind",
           "count": 3
         },
         {
-          "word": "kind",
+          "word": "eltern",
           "count": 3
         }
       ],
@@ -395,11 +511,11 @@
           "count": 1
         },
         {
-          "word": "verfassungsschutz",
+          "word": "soldaten",
           "count": 1
         },
         {
-          "word": "soldaten",
+          "word": "terroristen",
           "count": 1
         }
       ],
@@ -431,7 +547,7 @@
           "count": 5
         },
         {
-          "word": "russland",
+          "word": "china",
           "count": 4
         }
       ],

@@ -11,23 +11,23 @@
   "minWords": 203,
   "maxWords": 830,
   "rankings": {
-    "speechRank": 197,
-    "wordsRank": 169,
-    "partySpeechRank": 44,
-    "partyWordsRank": 50,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 68.5,
-    "verbosityRank": 71,
-    "verbosityTotal": 579,
+    "speechRank": 210,
+    "wordsRank": 179,
+    "partySpeechRank": 50,
+    "partyWordsRank": 52,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 66.5,
+    "verbosityRank": 75,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 27,
-    "longestSpeechRank": 207
+    "longestSpeechRank": 208
   },
   "drama": {
     "interruptionsGiven": 34,
     "interruptionsReceived": 36,
-    "interrupterRank": 152,
-    "interruptedRank": 188
+    "interrupterRank": 154,
+    "interruptedRank": 200
   },
   "words": {
     "topWords": [
@@ -76,55 +76,147 @@
       {
         "word": "wasserwege",
         "count": 7,
-        "ratioParty": 220.4,
-        "ratioBundestag": 679.5
+        "ratioParty": 228.8,
+        "ratioBundestag": 705.5
       },
       {
         "word": "vergelts",
         "count": 11,
-        "ratioParty": 216.4,
-        "ratioBundestag": 667.3
+        "ratioParty": 199.7,
+        "ratioBundestag": 615.9
       },
       {
         "word": "luftfahrt",
         "count": 7,
-        "ratioParty": 122.4,
-        "ratioBundestag": 109.6
+        "ratioParty": 127.1,
+        "ratioBundestag": 113.8
       },
       {
         "word": "verkehrsträger",
         "count": 11,
-        "ratioParty": 66.6,
-        "ratioBundestag": 100.7
+        "ratioParty": 69.1,
+        "ratioBundestag": 102.7
       },
       {
         "word": "wettbewerbsfähiger",
         "count": 6,
-        "ratioParty": 52.5,
-        "ratioBundestag": 78.7
+        "ratioParty": 54.5,
+        "ratioBundestag": 81.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "vergelts",
+        "count": 11,
+        "score": 58.32,
+        "ratio": 199.7
+      },
+      {
+        "word": "verkehrsträger",
+        "count": 11,
+        "score": 46.75,
+        "ratio": 69.1
+      },
+      {
+        "word": "wasserwege",
+        "count": 7,
+        "score": 38.06,
+        "ratio": 228.8
+      },
+      {
+        "word": "luftfahrt",
+        "count": 7,
+        "score": 33.97,
+        "ratio": 127.1
+      },
+      {
+        "word": "wettbewerbsfähiger",
+        "count": 6,
+        "score": 24.1,
+        "ratio": 54.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "vergelts",
+        "count": 11,
+        "score": 70.67,
+        "ratio": 615.9
+      },
+      {
+        "word": "verkehrsträger",
+        "count": 11,
+        "score": 51.06,
+        "ratio": 102.7
+      },
+      {
+        "word": "wasserwege",
+        "count": 7,
+        "score": 45.92,
+        "ratio": 705.5
+      },
+      {
+        "word": "luftfahrt",
+        "count": 7,
+        "score": 33.2,
+        "ratio": 113.8
+      },
+      {
+        "word": "wettbewerbsfähiger",
+        "count": 6,
+        "score": 26.49,
+        "ratio": 81.7
       }
     ],
     "signatureAdjectives": [
       {
         "word": "solide",
         "count": 3,
-        "ratioParty": 7.3,
-        "ratioBundestag": 10.5
+        "ratioParty": 7.4,
+        "ratioBundestag": 10.4
       },
       {
         "word": "wirtschaftlich",
         "count": 3,
-        "ratioParty": 3.1,
+        "ratioParty": 3.0,
         "ratioBundestag": 3.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "solide",
+        "count": 3,
+        "score": 6.38,
+        "ratio": 7.4
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 4.16,
+        "ratio": 3.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "solide",
+        "count": 3,
+        "score": 7.3,
+        "ratio": 10.4
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 4.51,
+        "ratio": 3.5
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 570,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.88,
-    "vsParliament": 0.98
+    "vsParliament": 0.97
   },
   "funFacts": [
     {
@@ -147,30 +239,30 @@
     "question": "Welches Wort nutzt Florian Oßner häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Sicherheit",
+        "text": "Klima",
         "isCorrect": false
       },
       {
-        "text": "Fraktion",
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Minister",
         "isCorrect": false
       },
       {
         "text": "Wasserwege",
         "isCorrect": true
-      },
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wasserwege\" nutzt Florian Oßner 220.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "679.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wasserwege\" nutzt Florian Oßner 228.8× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "705.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Florian Oßner häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Sozial",
+        "text": "Sicher",
         "isCorrect": false
       },
       {
@@ -178,16 +270,16 @@
         "isCorrect": true
       },
       {
-        "text": "Neu",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
+        "text": "Erfolgreich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Solide\" nutzt Florian Oßner 7.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "10.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Solide\" nutzt Florian Oßner 7.4× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "10.4× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐴",
@@ -283,11 +375,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "migration",
+          "word": "grenze",
           "count": 2
         },
         {
-          "word": "grenze",
+          "word": "migration",
           "count": 2
         }
       ],
@@ -333,15 +425,15 @@
           "count": 2
         },
         {
-          "word": "chancengleichheit",
-          "count": 1
-        },
-        {
           "word": "kinder",
           "count": 1
         },
         {
           "word": "jugendliche",
+          "count": 1
+        },
+        {
+          "word": "rente",
           "count": 1
         }
       ],
@@ -355,15 +447,15 @@
           "count": 2
         },
         {
+          "word": "angriff",
+          "count": 1
+        },
+        {
+          "word": "polizisten",
+          "count": 1
+        },
+        {
           "word": "verteidigungsfähigkeit",
-          "count": 1
-        },
-        {
-          "word": "bundespolizei",
-          "count": 1
-        },
-        {
-          "word": "verfassungsschutz",
           "count": 1
         }
       ],
@@ -383,15 +475,15 @@
           "count": 4
         },
         {
+          "word": "europa",
+          "count": 1
+        },
+        {
           "word": "angriffskrieg",
           "count": 1
         },
         {
           "word": "ukraine",
-          "count": 1
-        },
-        {
-          "word": "europa",
           "count": 1
         }
       ],
@@ -407,19 +499,19 @@
       ],
       "bildung": [
         {
-          "word": "forschung",
-          "count": 2
-        },
-        {
           "word": "ausbildung",
           "count": 2
         },
         {
-          "word": "bildung",
-          "count": 1
+          "word": "forschung",
+          "count": 2
         },
         {
           "word": "studium",
+          "count": 1
+        },
+        {
+          "word": "bildung",
           "count": 1
         }
       ],
@@ -447,11 +539,11 @@
       ],
       "justiz": [
         {
-          "word": "straftat",
+          "word": "gericht",
           "count": 1
         },
         {
-          "word": "gericht",
+          "word": "straftat",
           "count": 1
         }
       ],
@@ -483,11 +575,11 @@
           "count": 13
         },
         {
-          "word": "straßen",
+          "word": "bahn",
           "count": 6
         },
         {
-          "word": "bahn",
+          "word": "verkehr",
           "count": 6
         }
       ]

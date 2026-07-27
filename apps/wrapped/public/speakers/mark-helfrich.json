@@ -11,23 +11,23 @@
   "minWords": 14,
   "maxWords": 662,
   "rankings": {
-    "speechRank": 400,
-    "wordsRank": 407,
-    "partySpeechRank": 115,
-    "partyWordsRank": 127,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 36.0,
-    "verbosityRank": 388,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 136,
-    "longestSpeechRank": 419
+    "speechRank": 408,
+    "wordsRank": 415,
+    "partySpeechRank": 116,
+    "partyWordsRank": 130,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 34.8,
+    "verbosityRank": 385,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 135,
+    "longestSpeechRank": 424
   },
   "drama": {
     "interruptionsGiven": 8,
     "interruptionsReceived": 32,
-    "interrupterRank": 290,
-    "interruptedRank": 221
+    "interrupterRank": 298,
+    "interruptedRank": 233
   },
   "words": {
     "topWords": [
@@ -48,11 +48,11 @@
         "count": 12
       },
       {
-        "word": "beim",
+        "word": "akzeptanz",
         "count": 11
       },
       {
-        "word": "akzeptanz",
+        "word": "beim",
         "count": 11
       },
       {
@@ -62,59 +62,155 @@
       {
         "word": "gemeinsam",
         "count": 9
+      },
+      {
+        "word": "bürger",
+        "count": 8
       }
     ],
     "signatureWords": [
       {
         "word": "klimaziel",
         "count": 8,
-        "ratioParty": 354.0,
-        "ratioBundestag": 177.3
+        "ratioParty": 367.4,
+        "ratioBundestag": 175.9
       },
       {
         "word": "pariser",
         "count": 5,
-        "ratioParty": 110.6,
-        "ratioBundestag": 93.4
+        "ratioParty": 114.8,
+        "ratioBundestag": 97.0
       },
       {
         "word": "umweltpolitik",
         "count": 8,
-        "ratioParty": 107.7,
-        "ratioBundestag": 141.2
+        "ratioParty": 111.8,
+        "ratioBundestag": 141.4
       },
       {
         "word": "bepreisung",
         "count": 7,
-        "ratioParty": 58.6,
-        "ratioBundestag": 50.5
+        "ratioParty": 57.7,
+        "ratioBundestag": 50.6
       },
       {
         "word": "emissionshandel",
         "count": 6,
-        "ratioParty": 35.7,
-        "ratioBundestag": 58.9
+        "ratioParty": 36.4,
+        "ratioBundestag": 57.6
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "klimaziel",
+        "count": 8,
+        "score": 47.27,
+        "ratio": 367.4
+      },
+      {
+        "word": "umweltpolitik",
+        "count": 8,
+        "score": 37.8,
+        "ratio": 111.8
+      },
+      {
+        "word": "bepreisung",
+        "count": 7,
+        "score": 28.51,
+        "ratio": 57.7
+      },
+      {
+        "word": "pariser",
+        "count": 5,
+        "score": 23.76,
+        "ratio": 114.8
+      },
+      {
+        "word": "emissionshandel",
+        "count": 6,
+        "score": 21.73,
+        "ratio": 36.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "klimaziel",
+        "count": 8,
+        "score": 41.4,
+        "ratio": 175.9
+      },
+      {
+        "word": "umweltpolitik",
+        "count": 8,
+        "score": 39.67,
+        "ratio": 141.4
+      },
+      {
+        "word": "bepreisung",
+        "count": 7,
+        "score": 27.6,
+        "ratio": 50.6
+      },
+      {
+        "word": "emissionshandel",
+        "count": 6,
+        "score": 24.42,
+        "ratio": 57.6
+      },
+      {
+        "word": "pariser",
+        "count": 5,
+        "score": 22.92,
+        "ratio": 97.0
       }
     ],
     "signatureAdjectives": [
       {
         "word": "wirtschaftlich",
         "count": 3,
-        "ratioParty": 6.1,
-        "ratioBundestag": 6.8
+        "ratioParty": 6.0,
+        "ratioBundestag": 6.9
       },
       {
         "word": "sicher",
         "count": 3,
         "ratioParty": 2.1,
-        "ratioBundestag": 2.3
+        "ratioBundestag": 2.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 5.84,
+        "ratio": 6.0
+      },
+      {
+        "word": "sicher",
+        "count": 3,
+        "score": 3.39,
+        "ratio": 2.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 6.2,
+        "ratio": 6.9
+      },
+      {
+        "word": "sicher",
+        "count": 3,
+        "score": 3.67,
+        "ratio": 2.4
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 392,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.61,
     "vsParliament": 0.67
   },
@@ -134,47 +230,47 @@
     "question": "Welches Wort nutzt Mark Helfrich häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
         "text": "Klimaziel",
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Klimaziel\" nutzt Mark Helfrich 354.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "177.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Klimaziel\" nutzt Mark Helfrich 367.4× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "175.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Mark Helfrich häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
         "text": "Wirtschaftlich",
         "isCorrect": true
       },
       {
-        "text": "Stark",
+        "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wirtschaftlich\" nutzt Mark Helfrich 6.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "6.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wirtschaftlich\" nutzt Mark Helfrich 6.0× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "6.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -314,11 +410,11 @@
           "count": 3
         },
         {
-          "word": "wettbewerbsfähigkeit",
+          "word": "importe",
           "count": 2
         },
         {
-          "word": "importe",
+          "word": "wettbewerbsfähigkeit",
           "count": 2
         }
       ],
@@ -342,21 +438,21 @@
           "count": 2
         },
         {
-          "word": "china",
+          "word": "binnenmarkt",
           "count": 1
         },
         {
-          "word": "binnenmarkt",
+          "word": "europäisch",
           "count": 1
         }
       ],
       "digital": [
         {
-          "word": "netzausbau",
+          "word": "technologie",
           "count": 1
         },
         {
-          "word": "technologie",
+          "word": "netzausbau",
           "count": 1
         }
       ],
@@ -368,11 +464,11 @@
       ],
       "finanzen": [
         {
-          "word": "kosten",
+          "word": "entlastung",
           "count": 4
         },
         {
-          "word": "entlastung",
+          "word": "kosten",
           "count": 4
         },
         {

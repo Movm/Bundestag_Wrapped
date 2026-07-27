@@ -11,23 +11,23 @@
   "minWords": 15,
   "maxWords": 2039,
   "rankings": {
-    "speechRank": 34,
-    "wordsRank": 32,
-    "partySpeechRank": 9,
-    "partyWordsRank": 14,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 94.6,
-    "verbosityRank": 73,
-    "verbosityTotal": 579,
+    "speechRank": 40,
+    "wordsRank": 39,
+    "partySpeechRank": 10,
+    "partyWordsRank": 16,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 93.6,
+    "verbosityRank": 76,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 28,
     "longestSpeechRank": 10
   },
   "drama": {
     "interruptionsGiven": 4,
     "interruptionsReceived": 50,
-    "interrupterRank": 372,
-    "interruptedRank": 112
+    "interrupterRank": 378,
+    "interruptedRank": 120
   },
   "words": {
     "topWords": [
@@ -60,52 +60,116 @@
       {
         "word": "altersvorsorgedepot",
         "count": 7,
-        "ratioParty": 103.0,
-        "ratioBundestag": 212.5
+        "ratioParty": 107.0,
+        "ratioBundestag": 220.6
       },
       {
         "word": "hinzuverdienen",
         "count": 5,
-        "ratioParty": 73.6,
-        "ratioBundestag": 170.7
+        "ratioParty": 76.4,
+        "ratioBundestag": 177.3
       },
       {
         "word": "oberen",
         "count": 5,
-        "ratioParty": 63.1,
-        "ratioBundestag": 59.4
+        "ratioParty": 65.5,
+        "ratioBundestag": 61.7
       },
       {
         "word": "alterssicherung",
         "count": 12,
-        "ratioParty": 50.5,
-        "ratioBundestag": 84.0
+        "ratioParty": 50.0,
+        "ratioBundestag": 81.0
       },
       {
-        "word": "brutto",
-        "count": 9,
-        "ratioParty": 41.8,
-        "ratioBundestag": 34.1
+        "word": "bündnispartner",
+        "count": 7,
+        "ratioParty": 40.1,
+        "ratioBundestag": 76.4
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "alterssicherung",
+        "count": 12,
+        "score": 47.18,
+        "ratio": 50.0
+      },
+      {
+        "word": "altersvorsorgedepot",
+        "count": 7,
+        "score": 32.77,
+        "ratio": 107.0
+      },
+      {
+        "word": "bündnispartner",
+        "count": 7,
+        "score": 26.01,
+        "ratio": 40.1
+      },
+      {
+        "word": "hinzuverdienen",
+        "count": 5,
+        "score": 21.74,
+        "ratio": 76.4
+      },
+      {
+        "word": "oberen",
+        "count": 5,
+        "score": 20.99,
+        "ratio": 65.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "alterssicherung",
+        "count": 12,
+        "score": 52.88,
+        "ratio": 81.0
+      },
+      {
+        "word": "altersvorsorgedepot",
+        "count": 7,
+        "score": 37.81,
+        "ratio": 220.6
+      },
+      {
+        "word": "bündnispartner",
+        "count": 7,
+        "score": 30.44,
+        "ratio": 76.4
+      },
+      {
+        "word": "hinzuverdienen",
+        "count": 5,
+        "score": 25.92,
+        "ratio": 177.3
+      },
+      {
+        "word": "oberen",
+        "count": 5,
+        "score": 20.69,
+        "ratio": 61.7
       }
     ],
     "signatureAdjectives": [
       {
         "word": "effektiv",
         "count": 3,
-        "ratioParty": 5.4,
-        "ratioBundestag": 6.2
+        "ratioParty": 5.5,
+        "ratioBundestag": 6.3
       },
       {
         "word": "teuer",
         "count": 3,
-        "ratioParty": 3.7,
+        "ratioParty": 3.9,
         "ratioBundestag": 2.1
       },
       {
         "word": "nachhaltig",
         "count": 3,
         "ratioParty": 3.1,
-        "ratioBundestag": 3.0
+        "ratioBundestag": 3.1
       },
       {
         "word": "entscheidend",
@@ -113,12 +177,64 @@
         "ratioParty": 2.6,
         "ratioBundestag": 3.8
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 7,
+        "score": 8.97,
+        "ratio": 2.6
+      },
+      {
+        "word": "effektiv",
+        "count": 3,
+        "score": 5.62,
+        "ratio": 5.5
+      },
+      {
+        "word": "teuer",
+        "count": 3,
+        "score": 4.77,
+        "ratio": 3.9
+      },
+      {
+        "word": "nachhaltig",
+        "count": 3,
+        "score": 4.23,
+        "ratio": 3.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "entscheidend",
+        "count": 7,
+        "score": 10.98,
+        "ratio": 3.8
+      },
+      {
+        "word": "effektiv",
+        "count": 3,
+        "score": 5.96,
+        "ratio": 6.3
+      },
+      {
+        "word": "nachhaltig",
+        "count": 3,
+        "score": 4.23,
+        "ratio": 3.1
+      },
+      {
+        "word": "teuer",
+        "count": 3,
+        "score": 3.39,
+        "ratio": 2.1
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 568,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.88,
     "vsParliament": 0.97
   },
@@ -141,7 +257,7 @@
     {
       "emoji": "📊",
       "label": "Top-Redner",
-      "value": "Top 6%"
+      "value": "Top 7%"
     }
   ],
   "signatureQuiz": {
@@ -152,34 +268,34 @@
         "isCorrect": true
       },
       {
-        "text": "Koalition",
+        "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Reform",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Altersvorsorgedepot\" nutzt Dr. Florian Dorn 103.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "212.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Altersvorsorgedepot\" nutzt Dr. Florian Dorn 107.0× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "220.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Florian Dorn häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
         "text": "Effektiv",
         "isCorrect": true
       },
       {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
@@ -187,8 +303,8 @@
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Effektiv\" nutzt Dr. Florian Dorn 5.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "6.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Effektiv\" nutzt Dr. Florian Dorn 5.5× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "6.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -284,6 +400,10 @@
     "topicWords": {
       "migration": [
         {
+          "word": "drittstaaten",
+          "count": 1
+        },
+        {
           "word": "asyl",
           "count": 1
         },
@@ -293,10 +413,6 @@
         },
         {
           "word": "migration",
-          "count": 1
-        },
-        {
-          "word": "drittstaaten",
           "count": 1
         }
       ],
@@ -310,7 +426,7 @@
           "count": 3
         },
         {
-          "word": "biomasse",
+          "word": "klimaschutz",
           "count": 2
         },
         {
@@ -318,7 +434,7 @@
           "count": 2
         },
         {
-          "word": "klimaschutz",
+          "word": "biomasse",
           "count": 2
         }
       ],
@@ -332,11 +448,11 @@
           "count": 20
         },
         {
-          "word": "standort",
+          "word": "wettbewerbsfähigkeit",
           "count": 14
         },
         {
-          "word": "wettbewerbsfähigkeit",
+          "word": "standort",
           "count": 14
         },
         {
@@ -444,11 +560,11 @@
           "count": 3
         },
         {
-          "word": "bildung",
+          "word": "wissenschaft",
           "count": 1
         },
         {
-          "word": "wissenschaft",
+          "word": "bildung",
           "count": 1
         }
       ],
@@ -498,11 +614,11 @@
           "count": 4
         },
         {
-          "word": "vollzeit",
+          "word": "arbeitsplätze",
           "count": 3
         },
         {
-          "word": "arbeitsplätze",
+          "word": "vollzeit",
           "count": 3
         }
       ],

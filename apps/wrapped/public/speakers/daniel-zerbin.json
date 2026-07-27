@@ -11,23 +11,23 @@
   "minWords": 88,
   "maxWords": 569,
   "rankings": {
-    "speechRank": 259,
-    "wordsRank": 380,
+    "speechRank": 267,
+    "wordsRank": 393,
     "partySpeechRank": 55,
-    "partyWordsRank": 83,
+    "partyWordsRank": 88,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 58.6,
-    "verbosityRank": 439,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 112,
-    "longestSpeechRank": 533
+    "totalSpeakers": 626,
+    "percentile": 57.3,
+    "verbosityRank": 444,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 114,
+    "longestSpeechRank": 535
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 40,
-    "interrupterRank": 453,
-    "interruptedRank": 162
+    "interrupterRank": 447,
+    "interruptedRank": 174
   },
   "words": {
     "topWords": [
@@ -44,11 +44,11 @@
         "count": 12
       },
       {
-        "word": "jahren",
+        "word": "worden",
         "count": 11
       },
       {
-        "word": "worden",
+        "word": "jahren",
         "count": 11
       },
       {
@@ -56,11 +56,11 @@
         "count": 11
       },
       {
-        "word": "sicherheit",
+        "word": "land",
         "count": 10
       },
       {
-        "word": "land",
+        "word": "europa",
         "count": 10
       },
       {
@@ -68,7 +68,7 @@
         "count": 10
       },
       {
-        "word": "europa",
+        "word": "sicherheit",
         "count": 10
       }
     ],
@@ -76,32 +76,96 @@
       {
         "word": "strauß",
         "count": 6,
-        "ratioParty": 51.7,
-        "ratioBundestag": 161.9
+        "ratioParty": 51.4,
+        "ratioBundestag": 146.0
       },
       {
         "word": "jahrzehntelang",
         "count": 7,
-        "ratioParty": 44.7,
-        "ratioBundestag": 82.0
+        "ratioParty": 44.9,
+        "ratioBundestag": 77.0
       },
       {
         "word": "drohnen",
         "count": 11,
-        "ratioParty": 38.2,
-        "ratioBundestag": 39.0
+        "ratioParty": 39.0,
+        "ratioBundestag": 39.7
       },
       {
         "word": "afghanistan",
         "count": 9,
-        "ratioParty": 29.2,
-        "ratioBundestag": 26.4
+        "ratioParty": 29.4,
+        "ratioBundestag": 27.2
       },
       {
         "word": "zusammenarbeit",
         "count": 7,
-        "ratioParty": 19.8,
-        "ratioBundestag": 6.5
+        "ratioParty": 20.0,
+        "ratioBundestag": 6.6
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "drohnen",
+        "count": 11,
+        "score": 40.58,
+        "ratio": 39.0
+      },
+      {
+        "word": "afghanistan",
+        "count": 9,
+        "score": 30.73,
+        "ratio": 29.4
+      },
+      {
+        "word": "jahrzehntelang",
+        "count": 7,
+        "score": 26.79,
+        "ratio": 44.9
+      },
+      {
+        "word": "strauß",
+        "count": 6,
+        "score": 23.75,
+        "ratio": 51.4
+      },
+      {
+        "word": "zusammenarbeit",
+        "count": 7,
+        "score": 21.31,
+        "ratio": 20.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "drohnen",
+        "count": 11,
+        "score": 40.77,
+        "ratio": 39.7
+      },
+      {
+        "word": "jahrzehntelang",
+        "count": 7,
+        "score": 30.5,
+        "ratio": 77.0
+      },
+      {
+        "word": "afghanistan",
+        "count": 9,
+        "score": 30.05,
+        "ratio": 27.2
+      },
+      {
+        "word": "strauß",
+        "count": 6,
+        "score": 29.94,
+        "ratio": 146.0
+      },
+      {
+        "word": "zusammenarbeit",
+        "count": 7,
+        "score": 14.2,
+        "ratio": 6.6
       }
     ],
     "signatureAdjectives": [
@@ -111,12 +175,28 @@
         "ratioParty": 2.5,
         "ratioBundestag": 6.9
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "links",
+        "count": 4,
+        "score": 5.01,
+        "ratio": 2.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "links",
+        "count": 4,
+        "score": 8.27,
+        "ratio": 6.9
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 364,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.65,
     "vsParliament": 0.62
   },
@@ -136,38 +216,38 @@
     "question": "Welches Wort nutzt Dr. Daniel Zerbin häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
         "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Rente",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
         "text": "Strauß",
         "isCorrect": true
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Strauß\" nutzt Dr. Daniel Zerbin 51.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "161.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Strauß\" nutzt Dr. Daniel Zerbin 51.4× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "146.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Daniel Zerbin häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Wichtig",
+        "text": "Klar",
         "isCorrect": false
       },
       {
-        "text": "Gefährlich",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
@@ -248,11 +328,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "migration",
+          "word": "mittelmeer",
           "count": 1
         },
         {
-          "word": "mittelmeer",
+          "word": "migration",
           "count": 1
         },
         {
@@ -272,11 +352,11 @@
       ],
       "wirtschaft": [
         {
-          "word": "wirtschaftskrise",
+          "word": "volkswirtschaft",
           "count": 1
         },
         {
-          "word": "volkswirtschaft",
+          "word": "wirtschaftskrise",
           "count": 1
         },
         {
@@ -322,11 +402,11 @@
       ],
       "gesundheit": [
         {
-          "word": "operation",
+          "word": "corona",
           "count": 1
         },
         {
-          "word": "corona",
+          "word": "operation",
           "count": 1
         }
       ],
@@ -372,11 +452,11 @@
           "count": 2
         },
         {
-          "word": "investitionen",
+          "word": "kosten",
           "count": 1
         },
         {
-          "word": "kosten",
+          "word": "investitionen",
           "count": 1
         },
         {
@@ -386,15 +466,15 @@
       ],
       "justiz": [
         {
-          "word": "rechtsstaatlichkeit",
-          "count": 1
-        },
-        {
           "word": "gefängnis",
           "count": 1
         },
         {
           "word": "verteidiger",
+          "count": 1
+        },
+        {
+          "word": "rechtsstaatlichkeit",
           "count": 1
         }
       ],
@@ -410,11 +490,11 @@
           "count": 4
         },
         {
-          "word": "häfen",
+          "word": "straßen",
           "count": 1
         },
         {
-          "word": "straßen",
+          "word": "häfen",
           "count": 1
         }
       ]

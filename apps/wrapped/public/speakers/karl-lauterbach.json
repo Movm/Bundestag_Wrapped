@@ -11,23 +11,23 @@
   "minWords": 383,
   "maxWords": 581,
   "rankings": {
-    "speechRank": 554,
-    "wordsRank": 558,
-    "partySpeechRank": 96,
-    "partyWordsRank": 101,
+    "speechRank": 561,
+    "wordsRank": 563,
+    "partySpeechRank": 98,
+    "partyWordsRank": 102,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 11.4,
-    "verbosityRank": 170,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 10.4,
+    "verbosityRank": 173,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 39,
-    "longestSpeechRank": 513
+    "longestSpeechRank": 519
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 6,
     "interrupterRank": null,
-    "interruptedRank": 519
+    "interruptedRank": 529
   },
   "words": {
     "topWords": [
@@ -44,7 +44,7 @@
         "count": 7
       },
       {
-        "word": "warteliste",
+        "word": "damals",
         "count": 6
       },
       {
@@ -56,19 +56,19 @@
         "count": 6
       },
       {
-        "word": "damals",
+        "word": "warteliste",
         "count": 6
       },
       {
-        "word": "widerspruchslösung",
-        "count": 5
-      },
-      {
-        "word": "menschen",
-        "count": 5
-      },
-      {
         "word": "deutschland",
+        "count": 5
+      },
+      {
+        "word": "großen",
+        "count": 5
+      },
+      {
+        "word": "lassen",
         "count": 5
       }
     ],
@@ -76,47 +76,127 @@
       {
         "word": "warteliste",
         "count": 6,
-        "ratioParty": 698.4,
-        "ratioBundestag": 871.8
+        "ratioParty": 729.5,
+        "ratioBundestag": 905.2
       },
       {
         "word": "widerspruchslösung",
         "count": 5,
-        "ratioParty": 211.6,
-        "ratioBundestag": 211.3
+        "ratioParty": 221.1,
+        "ratioBundestag": 219.4
       },
       {
         "word": "bafög",
         "count": 9,
-        "ratioParty": 42.3,
-        "ratioBundestag": 68.8
+        "ratioParty": 42.5,
+        "ratioBundestag": 70.3
       },
       {
         "word": "damals",
         "count": 6,
-        "ratioParty": 19.1,
+        "ratioParty": 18.4,
         "ratioBundestag": 15.5
       },
       {
-        "word": "entscheidung",
+        "word": "diejenigen",
+        "count": 6,
+        "ratioParty": 12.9,
+        "ratioBundestag": 17.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "warteliste",
+        "count": 6,
+        "score": 39.56,
+        "ratio": 729.5
+      },
+      {
+        "word": "bafög",
+        "count": 9,
+        "score": 33.95,
+        "ratio": 42.5
+      },
+      {
+        "word": "widerspruchslösung",
         "count": 5,
-        "ratioParty": 13.2,
-        "ratioBundestag": 15.9
+        "score": 27.02,
+        "ratio": 221.1
+      },
+      {
+        "word": "damals",
+        "count": 6,
+        "score": 17.79,
+        "ratio": 18.4
+      },
+      {
+        "word": "diejenigen",
+        "count": 6,
+        "score": 15.79,
+        "ratio": 12.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "warteliste",
+        "count": 6,
+        "score": 40.86,
+        "ratio": 905.2
+      },
+      {
+        "word": "bafög",
+        "count": 9,
+        "score": 38.4,
+        "ratio": 70.3
+      },
+      {
+        "word": "widerspruchslösung",
+        "count": 5,
+        "score": 26.98,
+        "ratio": 219.4
+      },
+      {
+        "word": "diejenigen",
+        "count": 6,
+        "score": 17.41,
+        "ratio": 17.2
+      },
+      {
+        "word": "damals",
+        "count": 6,
+        "score": 16.82,
+        "ratio": 15.5
       }
     ],
     "signatureAdjectives": [
       {
         "word": "sicher",
         "count": 3,
-        "ratioParty": 4.7,
-        "ratioBundestag": 5.7
+        "ratioParty": 4.8,
+        "ratioBundestag": 5.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 3,
+        "score": 5.27,
+        "ratio": 4.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 3,
+        "score": 5.75,
+        "ratio": 5.8
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 490,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
     "vsParty": 0.79,
     "vsParliament": 0.84
   },
@@ -136,15 +216,15 @@
     "question": "Welches Wort nutzt Dr. Karl Lauterbach häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Investitionen",
+        "text": "Energie",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
@@ -152,31 +232,31 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Warteliste\" nutzt Dr. Karl Lauterbach 698.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "871.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Warteliste\" nutzt Dr. Karl Lauterbach 729.5× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "905.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Karl Lauterbach häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Gut",
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
         "isCorrect": false
       },
       {
         "text": "Sicher",
         "isCorrect": true
-      },
-      {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sicher\" nutzt Dr. Karl Lauterbach 4.7× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "5.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Sicher\" nutzt Dr. Karl Lauterbach 4.8× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "5.8× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦦",
@@ -272,25 +352,25 @@
     "topicWords": {
       "klima": [
         {
-          "word": "klimawandel",
-          "count": 1
-        },
-        {
           "word": "klimaneutral",
           "count": 1
         },
         {
           "word": "erneuerbare",
           "count": 1
+        },
+        {
+          "word": "klimawandel",
+          "count": 1
         }
       ],
       "wirtschaft": [
         {
-          "word": "wachstum",
+          "word": "maschinenbau",
           "count": 1
         },
         {
-          "word": "maschinenbau",
+          "word": "wachstum",
           "count": 1
         }
       ],
@@ -300,23 +380,27 @@
           "count": 6
         },
         {
-          "word": "kind",
-          "count": 1
-        },
-        {
-          "word": "familien",
-          "count": 1
-        },
-        {
           "word": "eltern",
           "count": 1
         },
         {
           "word": "familie",
           "count": 1
+        },
+        {
+          "word": "kind",
+          "count": 1
+        },
+        {
+          "word": "familien",
+          "count": 1
         }
       ],
       "gesundheit": [
+        {
+          "word": "medizin",
+          "count": 1
+        },
         {
           "word": "ärzte",
           "count": 1
@@ -331,10 +415,6 @@
         },
         {
           "word": "covid",
-          "count": 1
-        },
-        {
-          "word": "medizin",
           "count": 1
         }
       ],
@@ -358,11 +438,11 @@
           "count": 2
         },
         {
-          "word": "bildungssystem",
+          "word": "forschung",
           "count": 1
         },
         {
-          "word": "forschung",
+          "word": "bildungssystem",
           "count": 1
         }
       ],
@@ -372,11 +452,11 @@
           "count": 4
         },
         {
-          "word": "kosten",
+          "word": "investition",
           "count": 1
         },
         {
-          "word": "investition",
+          "word": "kosten",
           "count": 1
         },
         {

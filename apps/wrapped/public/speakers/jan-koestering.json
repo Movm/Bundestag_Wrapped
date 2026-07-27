@@ -11,23 +11,23 @@
   "minWords": 29,
   "maxWords": 910,
   "rankings": {
-    "speechRank": 12,
-    "wordsRank": 36,
+    "speechRank": 14,
+    "wordsRank": 41,
     "partySpeechRank": 2,
     "partyWordsRank": 3,
     "partySize": 63,
-    "totalSpeakers": 625,
-    "percentile": 98.1,
-    "verbosityRank": 257,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 97.8,
+    "verbosityRank": 259,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 16,
-    "longestSpeechRank": 128
+    "longestSpeechRank": 129
   },
   "drama": {
     "interruptionsGiven": 12,
     "interruptionsReceived": 54,
-    "interrupterRank": 253,
-    "interruptedRank": 95
+    "interrupterRank": 259,
+    "interruptedRank": 102
   },
   "words": {
     "topWords": [
@@ -60,59 +60,163 @@
       {
         "word": "bevölkerungsschutz",
         "count": 25,
-        "ratioParty": 683.5,
-        "ratioBundestag": 29.9
+        "ratioParty": 709.7,
+        "ratioBundestag": 31.1
       },
       {
         "word": "dachgesetz",
         "count": 9,
-        "ratioParty": 246.1,
-        "ratioBundestag": 31.0
+        "ratioParty": 255.5,
+        "ratioBundestag": 32.1
       },
       {
         "word": "bundesinnenministerium",
         "count": 6,
-        "ratioParty": 164.0,
-        "ratioBundestag": 29.5
+        "ratioParty": 170.3,
+        "ratioBundestag": 27.2
       },
       {
         "word": "innern",
         "count": 6,
-        "ratioParty": 164.0,
-        "ratioBundestag": 28.5
+        "ratioParty": 170.3,
+        "ratioBundestag": 29.1
       },
       {
         "word": "kritis",
         "count": 10,
-        "ratioParty": 136.7,
-        "ratioBundestag": 21.2
+        "ratioParty": 141.9,
+        "ratioBundestag": 22.0
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "bevölkerungsschutz",
+        "count": 25,
+        "score": 164.16,
+        "ratio": 709.7
+      },
+      {
+        "word": "dachgesetz",
+        "count": 9,
+        "score": 49.92,
+        "ratio": 255.5
+      },
+      {
+        "word": "kritis",
+        "count": 10,
+        "score": 49.62,
+        "ratio": 141.9
+      },
+      {
+        "word": "bundesinnenministerium",
+        "count": 6,
+        "score": 30.86,
+        "ratio": 170.3
+      },
+      {
+        "word": "innern",
+        "count": 6,
+        "score": 30.86,
+        "ratio": 170.3
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bevölkerungsschutz",
+        "count": 25,
+        "score": 86.72,
+        "ratio": 31.1
+      },
+      {
+        "word": "dachgesetz",
+        "count": 9,
+        "score": 31.5,
+        "ratio": 32.1
+      },
+      {
+        "word": "kritis",
+        "count": 10,
+        "score": 31.35,
+        "ratio": 22.0
+      },
+      {
+        "word": "innern",
+        "count": 6,
+        "score": 20.43,
+        "ratio": 29.1
+      },
+      {
+        "word": "bundesinnenministerium",
+        "count": 6,
+        "score": 20.04,
+        "ratio": 27.2
       }
     ],
     "signatureAdjectives": [
       {
         "word": "fahrlässig",
         "count": 3,
-        "ratioParty": 11.7,
-        "ratioBundestag": 16.8
+        "ratioParty": 12.2,
+        "ratioBundestag": 16.2
       },
       {
         "word": "kritisch",
         "count": 4,
-        "ratioParty": 10.9,
+        "ratioParty": 11.4,
         "ratioBundestag": 5.2
       },
       {
         "word": "gefährlich",
         "count": 3,
-        "ratioParty": 2.7,
-        "ratioBundestag": 4.6
+        "ratioParty": 2.8,
+        "ratioBundestag": 4.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "kritisch",
+        "count": 4,
+        "score": 10.07,
+        "ratio": 11.4
+      },
+      {
+        "word": "fahrlässig",
+        "count": 3,
+        "score": 7.74,
+        "ratio": 12.2
+      },
+      {
+        "word": "gefährlich",
+        "count": 3,
+        "score": 4.01,
+        "ratio": 2.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "fahrlässig",
+        "count": 3,
+        "score": 8.53,
+        "ratio": 16.2
+      },
+      {
+        "word": "kritisch",
+        "count": 4,
+        "score": 7.3,
+        "ratio": 5.2
+      },
+      {
+        "word": "gefährlich",
+        "count": 3,
+        "score": 5.22,
+        "ratio": 4.7
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 446,
-    "partyAvgWords": 500,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 499,
+    "parliamentAvgWords": 585,
     "vsParty": 0.89,
     "vsParliament": 0.76
   },
@@ -130,7 +234,7 @@
     {
       "emoji": "🏆",
       "label": "Rang (Reden)",
-      "value": "#12 von 625"
+      "value": "#14 von 626"
     },
     {
       "emoji": "⚡",
@@ -147,47 +251,47 @@
     "question": "Welches Wort nutzt Jan Köstering häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
         "text": "Bevölkerungsschutz",
         "isCorrect": true
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bevölkerungsschutz\" nutzt Jan Köstering 683.5× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "29.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bevölkerungsschutz\" nutzt Jan Köstering 709.7× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "31.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Jan Köstering häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
+        "text": "Fahrlässig",
+        "isCorrect": true
+      },
+      {
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
         "text": "Gut",
         "isCorrect": false
       },
       {
-        "text": "Sozial",
+        "text": "Klar",
         "isCorrect": false
-      },
-      {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Fahrlässig",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Fahrlässig\" nutzt Jan Köstering 11.7× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "16.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Fahrlässig\" nutzt Jan Köstering 12.2× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "16.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦁",
@@ -200,7 +304,7 @@
         "emoji": "🦉",
         "name": "Eule",
         "title": "Themenexperte",
-        "reason": "Dein Fachwort \"Bevölkerungsschutz\" nutzt du 683.5× häufiger als deine Fraktion.",
+        "reason": "Dein Fachwort \"Bevölkerungsschutz\" nutzt du 709.7× häufiger als deine Fraktion.",
         "id": "eule",
         "score": 1.0
       },
@@ -295,11 +399,11 @@
           "count": 1
         },
         {
-          "word": "bamf",
+          "word": "migration",
           "count": 1
         },
         {
-          "word": "asylverfahren",
+          "word": "flüchtlinge",
           "count": 1
         }
       ],
@@ -309,15 +413,15 @@
           "count": 2
         },
         {
-          "word": "stromnetz",
-          "count": 2
-        },
-        {
           "word": "umwelt",
           "count": 2
         },
         {
           "word": "naturschutz",
+          "count": 2
+        },
+        {
+          "word": "stromnetz",
           "count": 2
         },
         {
@@ -335,7 +439,7 @@
           "count": 2
         },
         {
-          "word": "konjunktur",
+          "word": "fachkräfte",
           "count": 1
         },
         {
@@ -343,7 +447,7 @@
           "count": 1
         },
         {
-          "word": "fachkräfte",
+          "word": "konjunktur",
           "count": 1
         }
       ],
@@ -353,19 +457,19 @@
           "count": 5
         },
         {
-          "word": "umverteilung",
-          "count": 2
-        },
-        {
-          "word": "gerechtigkeit",
-          "count": 2
-        },
-        {
           "word": "obdachlose",
           "count": 2
         },
         {
           "word": "grundsicherung",
+          "count": 2
+        },
+        {
+          "word": "umverteilung",
+          "count": 2
+        },
+        {
+          "word": "gerechtigkeit",
           "count": 2
         }
       ],
@@ -419,10 +523,6 @@
           "count": 3
         },
         {
-          "word": "russland",
-          "count": 2
-        },
-        {
           "word": "außenpolitik",
           "count": 2
         },
@@ -431,7 +531,11 @@
           "count": 2
         },
         {
-          "word": "ukraine",
+          "word": "russland",
+          "count": 2
+        },
+        {
+          "word": "bündnis",
           "count": 1
         }
       ],
@@ -441,11 +545,11 @@
           "count": 13
         },
         {
-          "word": "software",
+          "word": "digital",
           "count": 2
         },
         {
-          "word": "digital",
+          "word": "software",
           "count": 2
         },
         {
@@ -453,7 +557,7 @@
           "count": 1
         },
         {
-          "word": "internet",
+          "word": "datenverarbeitung",
           "count": 1
         }
       ],
@@ -511,11 +615,11 @@
           "count": 6
         },
         {
-          "word": "bundesverfassungsgericht",
+          "word": "strafe",
           "count": 3
         },
         {
-          "word": "strafe",
+          "word": "bundesverfassungsgericht",
           "count": 3
         },
         {
@@ -555,11 +659,11 @@
           "count": 11
         },
         {
-          "word": "straße",
+          "word": "bahn",
           "count": 2
         },
         {
-          "word": "bahn",
+          "word": "straße",
           "count": 2
         },
         {

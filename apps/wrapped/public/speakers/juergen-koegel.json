@@ -12,22 +12,22 @@
   "maxWords": 921,
   "rankings": {
     "speechRank": 536,
-    "wordsRank": 463,
-    "partySpeechRank": 132,
-    "partyWordsRank": 105,
+    "wordsRank": 472,
+    "partySpeechRank": 130,
+    "partyWordsRank": 106,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 14.2,
-    "verbosityRank": 46,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 14.4,
+    "verbosityRank": 49,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 12,
-    "longestSpeechRank": 123
+    "longestSpeechRank": 124
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 11,
-    "interrupterRank": 447,
-    "interruptedRank": 444
+    "interrupterRank": 450,
+    "interruptedRank": 452
   },
   "words": {
     "topWords": [
@@ -52,48 +52,128 @@
       {
         "word": "banker",
         "count": 7,
-        "ratioParty": 1905.7,
-        "ratioBundestag": 2138.5
+        "ratioParty": 1975.9,
+        "ratioBundestag": 2220.5
       },
       {
         "word": "auswärtige",
         "count": 5,
-        "ratioParty": 42.5,
-        "ratioBundestag": 61.7
+        "ratioParty": 44.1,
+        "ratioBundestag": 62.8
       },
       {
         "word": "familie",
         "count": 10,
-        "ratioParty": 14.0,
-        "ratioBundestag": 16.7
+        "ratioParty": 14.3,
+        "ratioBundestag": 16.9
       },
       {
         "word": "ausgaben",
         "count": 6,
         "ratioParty": 10.1,
-        "ratioBundestag": 15.0
+        "ratioBundestag": 14.9
       },
       {
         "word": "mittel",
         "count": 6,
-        "ratioParty": 8.3,
-        "ratioBundestag": 4.6
+        "ratioParty": 8.4,
+        "ratioBundestag": 4.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "banker",
+        "count": 7,
+        "score": 53.12,
+        "ratio": 1975.9
+      },
+      {
+        "word": "familie",
+        "count": 10,
+        "score": 27.28,
+        "ratio": 14.3
+      },
+      {
+        "word": "auswärtige",
+        "count": 5,
+        "score": 19.04,
+        "ratio": 44.1
+      },
+      {
+        "word": "ausgaben",
+        "count": 6,
+        "score": 14.44,
+        "ratio": 10.1
+      },
+      {
+        "word": "mittel",
+        "count": 6,
+        "score": 13.44,
+        "ratio": 8.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "banker",
+        "count": 7,
+        "score": 53.94,
+        "ratio": 2220.5
+      },
+      {
+        "word": "familie",
+        "count": 10,
+        "score": 28.85,
+        "ratio": 16.9
+      },
+      {
+        "word": "auswärtige",
+        "count": 5,
+        "score": 20.78,
+        "ratio": 62.8
+      },
+      {
+        "word": "ausgaben",
+        "count": 6,
+        "score": 16.6,
+        "ratio": 14.9
+      },
+      {
+        "word": "mittel",
+        "count": 6,
+        "score": 10.44,
+        "ratio": 4.7
       }
     ],
     "signatureAdjectives": [
       {
         "word": "erfolgreich",
         "count": 3,
-        "ratioParty": 19.4,
+        "ratioParty": 19.7,
         "ratioBundestag": 9.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 9.09,
+        "ratio": 19.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 7.11,
+        "ratio": 9.7
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 616,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
-    "vsParty": 1.1,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
+    "vsParty": 1.11,
     "vsParliament": 1.05
   },
   "funFacts": [
@@ -112,46 +192,46 @@
     "question": "Welches Wort nutzt Jürgen Koegel häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Energie",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
         "text": "Banker",
         "isCorrect": true
-      },
-      {
-        "text": "Bildung",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Banker\" nutzt Jürgen Koegel 1905.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "2138.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Banker\" nutzt Jürgen Koegel 1975.9× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "2220.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Jürgen Koegel häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
         "text": "Erfolgreich",
         "isCorrect": true
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
-        "isCorrect": false
       },
       {
         "text": "Neu",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Erfolgreich\" nutzt Jürgen Koegel 19.4× häufiger als der AfD-Durchschnitt.",
+    "explanationParty": "\"Erfolgreich\" nutzt Jürgen Koegel 19.7× häufiger als der AfD-Durchschnitt.",
     "explanationBundestag": "9.7× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
@@ -330,7 +410,7 @@
           "count": 4
         },
         {
-          "word": "sondervermögen",
+          "word": "entlastung",
           "count": 2
         }
       ],

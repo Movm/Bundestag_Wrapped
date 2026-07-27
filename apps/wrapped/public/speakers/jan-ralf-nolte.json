@@ -11,23 +11,23 @@
   "minWords": 177,
   "maxWords": 828,
   "rankings": {
-    "speechRank": 459,
-    "wordsRank": 454,
-    "partySpeechRank": 106,
-    "partyWordsRank": 100,
+    "speechRank": 461,
+    "wordsRank": 461,
+    "partySpeechRank": 104,
+    "partyWordsRank": 102,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 26.6,
-    "verbosityRank": 94,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 26.4,
+    "verbosityRank": 96,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 26,
-    "longestSpeechRank": 209
+    "longestSpeechRank": 211
   },
   "drama": {
     "interruptionsGiven": 8,
     "interruptionsReceived": 31,
-    "interrupterRank": 295,
-    "interruptedRank": 228
+    "interrupterRank": 296,
+    "interruptedRank": 239
   },
   "words": {
     "topWords": [
@@ -52,14 +52,6 @@
         "count": 10
       },
       {
-        "word": "diesen",
-        "count": 8
-      },
-      {
-        "word": "menschen",
-        "count": 8
-      },
-      {
         "word": "extremismus",
         "count": 8
       },
@@ -70,53 +62,141 @@
       {
         "word": "einfach",
         "count": 8
+      },
+      {
+        "word": "politik",
+        "count": 8
+      },
+      {
+        "word": "menschen",
+        "count": 8
       }
     ],
     "signatureWords": [
       {
         "word": "extremismus",
         "count": 8,
-        "ratioParty": 137.9,
-        "ratioBundestag": 77.4
+        "ratioParty": 134.0,
+        "ratioBundestag": 71.4
       },
       {
         "word": "soldat",
         "count": 11,
-        "ratioParty": 123.6,
-        "ratioBundestag": 303.9
+        "ratioParty": 128.2,
+        "ratioBundestag": 315.6
       },
       {
         "word": "verteidigt",
         "count": 5,
-        "ratioParty": 46.2,
-        "ratioBundestag": 36.7
+        "ratioParty": 39.4,
+        "ratioBundestag": 35.0
       },
       {
         "word": "verteidigen",
         "count": 7,
-        "ratioParty": 31.2,
-        "ratioBundestag": 17.3
+        "ratioParty": 31.3,
+        "ratioBundestag": 17.4
       },
       {
         "word": "bundeswehr",
         "count": 20,
-        "ratioParty": 22.2,
-        "ratioBundestag": 20.6
+        "ratioParty": 23.0,
+        "ratioBundestag": 21.3
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "bundeswehr",
+        "count": 20,
+        "score": 63.56,
+        "ratio": 23.0
+      },
+      {
+        "word": "soldat",
+        "count": 11,
+        "score": 53.47,
+        "ratio": 128.2
+      },
+      {
+        "word": "extremismus",
+        "count": 8,
+        "score": 39.24,
+        "ratio": 134.0
+      },
+      {
+        "word": "verteidigen",
+        "count": 7,
+        "score": 24.33,
+        "ratio": 31.3
+      },
+      {
+        "word": "verteidigt",
+        "count": 5,
+        "score": 18.49,
+        "ratio": 39.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "soldat",
+        "count": 11,
+        "score": 63.33,
+        "ratio": 315.6
+      },
+      {
+        "word": "bundeswehr",
+        "count": 20,
+        "score": 62.09,
+        "ratio": 21.3
+      },
+      {
+        "word": "extremismus",
+        "count": 8,
+        "score": 34.26,
+        "ratio": 71.4
+      },
+      {
+        "word": "verteidigen",
+        "count": 7,
+        "score": 20.39,
+        "ratio": 17.4
+      },
+      {
+        "word": "verteidigt",
+        "count": 5,
+        "score": 17.92,
+        "ratio": 35.0
       }
     ],
     "signatureAdjectives": [
       {
         "word": "freiheitlich",
         "count": 3,
-        "ratioParty": 33.7,
-        "ratioBundestag": 37.4
+        "ratioParty": 32.2,
+        "ratioBundestag": 36.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "freiheitlich",
+        "count": 3,
+        "score": 10.51,
+        "ratio": 32.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "freiheitlich",
+        "count": 3,
+        "score": 10.87,
+        "ratio": 36.5
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 547,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.98,
     "vsParliament": 0.94
   },
@@ -136,15 +216,15 @@
     "question": "Welches Wort nutzt Jan Ralf Nolte häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Arbeit",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Koalition",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
@@ -152,31 +232,31 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Extremismus\" nutzt Jan Ralf Nolte 137.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "77.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Extremismus\" nutzt Jan Ralf Nolte 134.0× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "71.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Jan Ralf Nolte häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
-        "text": "Sicher",
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
         "text": "Freiheitlich",
         "isCorrect": true
-      },
-      {
-        "text": "Wichtig",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Freiheitlich\" nutzt Jan Ralf Nolte 33.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "37.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Freiheitlich\" nutzt Jan Ralf Nolte 32.2× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "36.5× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -278,15 +358,15 @@
           "count": 2
         },
         {
+          "word": "familie",
+          "count": 1
+        },
+        {
           "word": "sozialsystem",
           "count": 1
         },
         {
           "word": "kinder",
-          "count": 1
-        },
-        {
-          "word": "familie",
           "count": 1
         }
       ],
@@ -324,11 +404,11 @@
           "count": 4
         },
         {
-          "word": "krieg",
+          "word": "russland",
           "count": 2
         },
         {
-          "word": "russland",
+          "word": "krieg",
           "count": 2
         }
       ],
@@ -348,15 +428,15 @@
           "count": 2
         },
         {
+          "word": "studenten",
+          "count": 1
+        },
+        {
           "word": "bildungssystem",
           "count": 1
         },
         {
           "word": "schulen",
-          "count": 1
-        },
-        {
-          "word": "studenten",
           "count": 1
         }
       ],

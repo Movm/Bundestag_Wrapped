@@ -11,23 +11,23 @@
   "minWords": 63,
   "maxWords": 1056,
   "rankings": {
-    "speechRank": 296,
-    "wordsRank": 117,
-    "partySpeechRank": 65,
-    "partyWordsRank": 23,
+    "speechRank": 319,
+    "wordsRank": 127,
+    "partySpeechRank": 73,
+    "partyWordsRank": 27,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 52.6,
-    "verbosityRank": 107,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 49.0,
+    "verbosityRank": 111,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 31,
-    "longestSpeechRank": 60
+    "longestSpeechRank": 62
   },
   "drama": {
     "interruptionsGiven": 7,
     "interruptionsReceived": 57,
-    "interrupterRank": 307,
-    "interruptedRank": 84
+    "interrupterRank": 323,
+    "interruptedRank": 89
   },
   "words": {
     "topWords": [
@@ -54,42 +54,106 @@
     ],
     "signatureWords": [
       {
-        "word": "optimieren",
-        "count": 5,
-        "ratioParty": 155.3,
-        "ratioBundestag": 116.8
-      },
-      {
         "word": "noots",
         "count": 6,
-        "ratioParty": 139.8,
-        "ratioBundestag": 63.1
+        "ratioParty": 145.0,
+        "ratioBundestag": 65.5
+      },
+      {
+        "word": "optimieren",
+        "count": 5,
+        "ratioParty": 120.8,
+        "ratioBundestag": 114.9
       },
       {
         "word": "schleife",
         "count": 5,
-        "ratioParty": 77.7,
-        "ratioBundestag": 95.6
+        "ratioParty": 80.5,
+        "ratioBundestag": 91.0
       },
       {
         "word": "digitalisieren",
         "count": 5,
-        "ratioParty": 66.6,
-        "ratioBundestag": 30.0
+        "ratioParty": 60.4,
+        "ratioBundestag": 29.5
       },
       {
         "word": "dementsprechend",
         "count": 6,
-        "ratioParty": 55.9,
-        "ratioBundestag": 32.4
+        "ratioParty": 58.0,
+        "ratioBundestag": 30.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "noots",
+        "count": 6,
+        "score": 29.9,
+        "ratio": 145.0
+      },
+      {
+        "word": "dementsprechend",
+        "count": 6,
+        "score": 24.47,
+        "ratio": 58.0
+      },
+      {
+        "word": "optimieren",
+        "count": 5,
+        "score": 24.01,
+        "ratio": 120.8
+      },
+      {
+        "word": "schleife",
+        "count": 5,
+        "score": 22.0,
+        "ratio": 80.5
+      },
+      {
+        "word": "digitalisieren",
+        "count": 5,
+        "score": 20.59,
+        "ratio": 60.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "noots",
+        "count": 6,
+        "score": 25.18,
+        "ratio": 65.5
+      },
+      {
+        "word": "optimieren",
+        "count": 5,
+        "score": 23.76,
+        "ratio": 114.9
+      },
+      {
+        "word": "schleife",
+        "count": 5,
+        "score": 22.61,
+        "ratio": 91.0
+      },
+      {
+        "word": "dementsprechend",
+        "count": 6,
+        "score": 20.76,
+        "ratio": 30.8
+      },
+      {
+        "word": "digitalisieren",
+        "count": 5,
+        "score": 17.09,
+        "ratio": 29.5
       }
     ],
     "signatureAdjectives": [
       {
         "word": "demokratisch",
         "count": 6,
-        "ratioParty": 13.0,
-        "ratioBundestag": 19.1
+        "ratioParty": 13.5,
+        "ratioBundestag": 19.0
       },
       {
         "word": "erfolgreich",
@@ -100,8 +164,8 @@
       {
         "word": "gescheitert",
         "count": 3,
-        "ratioParty": 4.2,
-        "ratioBundestag": 7.5
+        "ratioParty": 4.3,
+        "ratioBundestag": 7.7
       },
       {
         "word": "rechts",
@@ -109,12 +173,64 @@
         "ratioParty": 2.8,
         "ratioBundestag": 2.5
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "demokratisch",
+        "count": 6,
+        "score": 16.04,
+        "ratio": 13.5
+      },
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 6.12,
+        "ratio": 6.7
+      },
+      {
+        "word": "gescheitert",
+        "count": 3,
+        "score": 5.0,
+        "ratio": 4.3
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 4.01,
+        "ratio": 2.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "demokratisch",
+        "count": 6,
+        "score": 17.97,
+        "ratio": 19.0
+      },
+      {
+        "word": "gescheitert",
+        "count": 3,
+        "score": 6.49,
+        "ratio": 7.7
+      },
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 4.38,
+        "ratio": 3.3
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 3.76,
+        "ratio": 2.5
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 534,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.96,
     "vsParliament": 0.91
   },
@@ -134,34 +250,34 @@
     "question": "Welches Wort nutzt Sebastian Maack häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Familie",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Optimieren",
+        "text": "Noots",
         "isCorrect": true
       },
       {
-        "text": "Verantwortung",
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Optimieren\" nutzt Sebastian Maack 155.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "116.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Noots\" nutzt Sebastian Maack 145.0× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "65.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Sebastian Maack häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Alt",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Jung",
+        "text": "Neu",
         "isCorrect": false
       },
       {
@@ -169,12 +285,12 @@
         "isCorrect": true
       },
       {
-        "text": "Falsch",
+        "text": "Europäisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Demokratisch\" nutzt Sebastian Maack 13.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "19.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Demokratisch\" nutzt Sebastian Maack 13.5× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "19.0× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -328,15 +444,15 @@
           "count": 2
         },
         {
+          "word": "krankenversicherung",
+          "count": 1
+        },
+        {
           "word": "pflege",
           "count": 1
         },
         {
           "word": "krankenhaus",
-          "count": 1
-        },
-        {
-          "word": "krankenversicherung",
           "count": 1
         },
         {
@@ -354,15 +470,15 @@
           "count": 2
         },
         {
-          "word": "krieg",
-          "count": 1
-        },
-        {
-          "word": "frieden",
-          "count": 1
-        },
-        {
           "word": "israel",
+          "count": 1
+        },
+        {
+          "word": "gipfel",
+          "count": 1
+        },
+        {
+          "word": "krieg",
           "count": 1
         }
       ],
@@ -398,11 +514,11 @@
           "count": 4
         },
         {
-          "word": "schulen",
+          "word": "kindergarten",
           "count": 2
         },
         {
-          "word": "kindergarten",
+          "word": "schulen",
           "count": 2
         },
         {
@@ -428,7 +544,7 @@
           "count": 2
         },
         {
-          "word": "sondervermögen",
+          "word": "zinsen",
           "count": 1
         }
       ],
@@ -450,7 +566,7 @@
           "count": 1
         },
         {
-          "word": "verfassung",
+          "word": "grundrechte",
           "count": 1
         }
       ],

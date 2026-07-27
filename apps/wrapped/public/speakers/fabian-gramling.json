@@ -11,23 +11,23 @@
   "minWords": 59,
   "maxWords": 842,
   "rankings": {
-    "speechRank": 178,
-    "wordsRank": 155,
-    "partySpeechRank": 42,
-    "partyWordsRank": 45,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 71.5,
-    "verbosityRank": 162,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 57,
-    "longestSpeechRank": 188
+    "speechRank": 186,
+    "wordsRank": 169,
+    "partySpeechRank": 43,
+    "partyWordsRank": 49,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 70.3,
+    "verbosityRank": 164,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 60,
+    "longestSpeechRank": 191
   },
   "drama": {
     "interruptionsGiven": 5,
     "interruptionsReceived": 47,
-    "interrupterRank": 355,
-    "interruptedRank": 126
+    "interrupterRank": 359,
+    "interruptedRank": 135
   },
   "words": {
     "topWords": [
@@ -48,11 +48,11 @@
         "count": 21
       },
       {
-        "word": "gesetz",
+        "word": "klar",
         "count": 20
       },
       {
-        "word": "klar",
+        "word": "gesetz",
         "count": 20
       }
     ],
@@ -60,46 +60,110 @@
       {
         "word": "wasserstoffhochlauf",
         "count": 10,
-        "ratioParty": 221.3,
-        "ratioBundestag": 298.6
+        "ratioParty": 229.8,
+        "ratioBundestag": 291.8
       },
       {
         "word": "neckarwestheim",
         "count": 6,
-        "ratioParty": 154.9,
-        "ratioBundestag": 143.3
+        "ratioParty": 160.8,
+        "ratioBundestag": 148.8
       },
       {
         "word": "quantencomputing",
         "count": 6,
-        "ratioParty": 116.2,
-        "ratioBundestag": 204.7
+        "ratioParty": 107.2,
+        "ratioBundestag": 198.4
       },
       {
         "word": "kernfusion",
         "count": 8,
-        "ratioParty": 82.6,
-        "ratioBundestag": 119.4
+        "ratioParty": 85.8,
+        "ratioBundestag": 124.0
       },
       {
         "word": "rohstoffe",
         "count": 9,
-        "ratioParty": 33.2,
-        "ratioBundestag": 28.9
+        "ratioParty": 33.7,
+        "ratioBundestag": 29.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "wasserstoffhochlauf",
+        "count": 10,
+        "score": 54.42,
+        "ratio": 229.8
+      },
+      {
+        "word": "kernfusion",
+        "count": 8,
+        "score": 35.71,
+        "ratio": 85.8
+      },
+      {
+        "word": "rohstoffe",
+        "count": 9,
+        "score": 31.92,
+        "ratio": 33.7
+      },
+      {
+        "word": "neckarwestheim",
+        "count": 6,
+        "score": 30.52,
+        "ratio": 160.8
+      },
+      {
+        "word": "quantencomputing",
+        "count": 6,
+        "score": 28.1,
+        "ratio": 107.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "wasserstoffhochlauf",
+        "count": 10,
+        "score": 56.79,
+        "ratio": 291.8
+      },
+      {
+        "word": "kernfusion",
+        "count": 8,
+        "score": 38.63,
+        "ratio": 124.0
+      },
+      {
+        "word": "quantencomputing",
+        "count": 6,
+        "score": 31.77,
+        "ratio": 198.4
+      },
+      {
+        "word": "rohstoffe",
+        "count": 9,
+        "score": 30.67,
+        "ratio": 29.2
+      },
+      {
+        "word": "neckarwestheim",
+        "count": 6,
+        "score": 30.06,
+        "ratio": 148.8
       }
     ],
     "signatureAdjectives": [
       {
         "word": "zentral",
         "count": 3,
-        "ratioParty": 7.5,
-        "ratioBundestag": 8.0
+        "ratioParty": 7.7,
+        "ratioBundestag": 8.2
       },
       {
         "word": "stark",
         "count": 6,
         "ratioParty": 3.2,
-        "ratioBundestag": 4.0
+        "ratioBundestag": 3.9
       },
       {
         "word": "wirtschaftlich",
@@ -110,15 +174,67 @@
       {
         "word": "falsch",
         "count": 3,
-        "ratioParty": 2.1,
-        "ratioBundestag": 2.1
+        "ratioParty": 2.0,
+        "ratioBundestag": 2.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "stark",
+        "count": 6,
+        "score": 8.61,
+        "ratio": 3.2
+      },
+      {
+        "word": "zentral",
+        "count": 3,
+        "score": 6.49,
+        "ratio": 7.7
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 4.16,
+        "ratio": 3.0
+      },
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 3.3,
+        "ratio": 2.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "stark",
+        "count": 6,
+        "score": 9.54,
+        "ratio": 3.9
+      },
+      {
+        "word": "zentral",
+        "count": 3,
+        "score": 6.66,
+        "ratio": 8.2
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 4.44,
+        "ratio": 3.4
+      },
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 3.3,
+        "ratio": 2.0
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 498,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.77,
     "vsParliament": 0.85
   },
@@ -138,38 +254,38 @@
     "question": "Welches Wort nutzt Fabian Gramling häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Verantwortung",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
-        "text": "Kinder",
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
         "isCorrect": false
       },
       {
         "text": "Wasserstoffhochlauf",
         "isCorrect": true
-      },
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wasserstoffhochlauf\" nutzt Fabian Gramling 221.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "298.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wasserstoffhochlauf\" nutzt Fabian Gramling 229.8× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "291.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Fabian Gramling häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "National",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
-        "text": "Gut",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Sozial",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
@@ -177,8 +293,8 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Zentral\" nutzt Fabian Gramling 7.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "8.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Zentral\" nutzt Fabian Gramling 7.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "8.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -338,11 +454,11 @@
       ],
       "gesundheit": [
         {
-          "word": "vorsorge",
+          "word": "medizin",
           "count": 1
         },
         {
-          "word": "medizin",
+          "word": "vorsorge",
           "count": 1
         }
       ],
@@ -414,15 +530,15 @@
           "count": 2
         },
         {
-          "word": "entlastung",
+          "word": "investitionen",
+          "count": 1
+        },
+        {
+          "word": "konjunkturprogramm",
           "count": 1
         },
         {
           "word": "rechnungshof",
-          "count": 1
-        },
-        {
-          "word": "investitionen",
           "count": 1
         }
       ],

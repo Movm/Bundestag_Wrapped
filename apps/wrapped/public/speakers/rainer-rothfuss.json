@@ -11,23 +11,23 @@
   "minWords": 238,
   "maxWords": 642,
   "rankings": {
-    "speechRank": 306,
-    "wordsRank": 377,
-    "partySpeechRank": 69,
-    "partyWordsRank": 82,
+    "speechRank": 313,
+    "wordsRank": 390,
+    "partySpeechRank": 71,
+    "partyWordsRank": 87,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 51.0,
-    "verbosityRank": 223,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 50.0,
+    "verbosityRank": 226,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 59,
-    "longestSpeechRank": 443
+    "longestSpeechRank": 445
   },
   "drama": {
     "interruptionsGiven": 32,
     "interruptionsReceived": 35,
-    "interrupterRank": 159,
-    "interruptedRank": 196
+    "interrupterRank": 160,
+    "interruptedRank": 203
   },
   "words": {
     "topWords": [
@@ -52,11 +52,11 @@
         "count": 15
       },
       {
-        "word": "menschen",
+        "word": "menschenrechte",
         "count": 11
       },
       {
-        "word": "menschenrechte",
+        "word": "menschen",
         "count": 11
       },
       {
@@ -64,11 +64,11 @@
         "count": 10
       },
       {
-        "word": "jahre",
+        "word": "regierung",
         "count": 9
       },
       {
-        "word": "regierung",
+        "word": "jahre",
         "count": 9
       }
     ],
@@ -76,42 +76,108 @@
       {
         "word": "flüchtlingsströme",
         "count": 5,
-        "ratioParty": 488.1,
-        "ratioBundestag": 1462.4
+        "ratioParty": 506.1,
+        "ratioBundestag": 1518.4
       },
       {
         "word": "humanitäre",
         "count": 23,
-        "ratioParty": 136.1,
-        "ratioBundestag": 44.6
+        "ratioParty": 137.0,
+        "ratioBundestag": 46.1
       },
       {
         "word": "sanktionspolitik",
         "count": 8,
-        "ratioParty": 130.2,
-        "ratioBundestag": 540.0
+        "ratioParty": 135.0,
+        "ratioBundestag": 560.6
       },
       {
         "word": "humanitären",
         "count": 6,
-        "ratioParty": 106.5,
-        "ratioBundestag": 25.6
+        "ratioParty": 110.4,
+        "ratioBundestag": 26.4
       },
       {
         "word": "kürzung",
         "count": 5,
-        "ratioParty": 81.4,
-        "ratioBundestag": 49.3
+        "ratioParty": 84.4,
+        "ratioBundestag": 49.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "humanitäre",
+        "count": 23,
+        "score": 113.33,
+        "ratio": 137.0
+      },
+      {
+        "word": "sanktionspolitik",
+        "count": 8,
+        "score": 39.3,
+        "ratio": 135.0
+      },
+      {
+        "word": "flüchtlingsströme",
+        "count": 5,
+        "score": 31.14,
+        "ratio": 506.1
+      },
+      {
+        "word": "humanitären",
+        "count": 6,
+        "score": 28.28,
+        "ratio": 110.4
+      },
+      {
+        "word": "kürzung",
+        "count": 5,
+        "score": 22.24,
+        "ratio": 84.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "humanitäre",
+        "count": 23,
+        "score": 88.6,
+        "ratio": 46.1
+      },
+      {
+        "word": "sanktionspolitik",
+        "count": 8,
+        "score": 50.65,
+        "ratio": 560.6
+      },
+      {
+        "word": "flüchtlingsströme",
+        "count": 5,
+        "score": 36.63,
+        "ratio": 1518.4
+      },
+      {
+        "word": "humanitären",
+        "count": 6,
+        "score": 19.86,
+        "ratio": 26.4
+      },
+      {
+        "word": "kürzung",
+        "count": 5,
+        "score": 19.61,
+        "ratio": 49.5
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 465,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.83,
-    "vsParliament": 0.8
+    "vsParliament": 0.79
   },
   "funFacts": [
     {
@@ -134,24 +200,24 @@
     "question": "Welches Wort nutzt Dr. Rainer Rothfuß häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Familie",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Flüchtlingsströme",
-        "isCorrect": true
-      },
-      {
-        "text": "Antrag",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
         "text": "Rente",
         "isCorrect": false
+      },
+      {
+        "text": "Flüchtlingsströme",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Flüchtlingsströme\" nutzt Dr. Rainer Rothfuß 488.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "1462.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Flüchtlingsströme\" nutzt Dr. Rainer Rothfuß 506.1× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "1518.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -274,15 +340,15 @@
           "count": 2
         },
         {
-          "word": "terroristen",
-          "count": 1
-        },
-        {
-          "word": "diebstahl",
-          "count": 1
-        },
-        {
           "word": "terrorismus",
+          "count": 1
+        },
+        {
+          "word": "deradikalisierung",
+          "count": 1
+        },
+        {
+          "word": "terroristen",
           "count": 1
         }
       ],
@@ -336,10 +402,6 @@
           "count": 3
         },
         {
-          "word": "etat",
-          "count": 2
-        },
-        {
           "word": "haushaltsentwurf",
           "count": 2
         },
@@ -348,7 +410,11 @@
           "count": 2
         },
         {
-          "word": "sondervermögen",
+          "word": "etat",
+          "count": 2
+        },
+        {
+          "word": "finanzierung",
           "count": 1
         }
       ],
@@ -362,15 +428,15 @@
           "count": 2
         },
         {
-          "word": "grundrechte",
-          "count": 1
-        },
-        {
-          "word": "gesetzgebung",
-          "count": 1
-        },
-        {
           "word": "justizminister",
+          "count": 1
+        },
+        {
+          "word": "richter",
+          "count": 1
+        },
+        {
+          "word": "grundrechte",
           "count": 1
         }
       ],

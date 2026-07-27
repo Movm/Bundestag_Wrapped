@@ -11,23 +11,23 @@
   "minWords": 349,
   "maxWords": 485,
   "rankings": {
-    "speechRank": 472,
-    "wordsRank": 527,
-    "partySpeechRank": 111,
-    "partyWordsRank": 122,
+    "speechRank": 481,
+    "wordsRank": 537,
+    "partySpeechRank": 115,
+    "partyWordsRank": 123,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 24.5,
-    "verbosityRank": 286,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 72,
-    "longestSpeechRank": 582
+    "totalSpeakers": 626,
+    "percentile": 23.2,
+    "verbosityRank": 290,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 71,
+    "longestSpeechRank": 585
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 24,
-    "interrupterRank": 398,
-    "interruptedRank": 289
+    "interrupterRank": 406,
+    "interruptedRank": 303
   },
   "words": {
     "topWords": [
@@ -74,28 +74,28 @@
     ],
     "signatureWords": [
       {
-        "word": "sachsen",
-        "count": 8,
-        "ratioParty": 34.6,
-        "ratioBundestag": 54.3
-      },
-      {
         "word": "landwirte",
         "count": 10,
-        "ratioParty": 33.1,
-        "ratioBundestag": 48.7
+        "ratioParty": 33.7,
+        "ratioBundestag": 49.5
+      },
+      {
+        "word": "sachsen",
+        "count": 8,
+        "ratioParty": 33.2,
+        "ratioBundestag": 49.7
       },
       {
         "word": "richtige",
         "count": 5,
-        "ratioParty": 16.1,
-        "ratioBundestag": 11.6
+        "ratioParty": 16.2,
+        "ratioBundestag": 11.7
       },
       {
         "word": "länder",
         "count": 6,
         "ratioParty": 8.1,
-        "ratioBundestag": 6.4
+        "ratioBundestag": 6.5
       },
       {
         "word": "lässt",
@@ -104,12 +104,78 @@
         "ratioBundestag": 11.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "landwirte",
+        "count": 10,
+        "score": 35.47,
+        "ratio": 33.7
+      },
+      {
+        "word": "sachsen",
+        "count": 8,
+        "score": 28.26,
+        "ratio": 33.2
+      },
+      {
+        "word": "richtige",
+        "count": 5,
+        "score": 14.22,
+        "ratio": 16.2
+      },
+      {
+        "word": "länder",
+        "count": 6,
+        "score": 13.25,
+        "ratio": 8.1
+      },
+      {
+        "word": "lässt",
+        "count": 5,
+        "score": 10.99,
+        "ratio": 8.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "landwirte",
+        "count": 10,
+        "score": 39.22,
+        "ratio": 49.5
+      },
+      {
+        "word": "sachsen",
+        "count": 8,
+        "score": 31.41,
+        "ratio": 49.7
+      },
+      {
+        "word": "richtige",
+        "count": 5,
+        "score": 12.71,
+        "ratio": 11.7
+      },
+      {
+        "word": "lässt",
+        "count": 5,
+        "score": 12.51,
+        "ratio": 11.2
+      },
+      {
+        "word": "länder",
+        "count": 6,
+        "score": 12.09,
+        "ratio": 6.5
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 436,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.78,
     "vsParliament": 0.75
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Danny Meiners häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Zukunft",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Sachsen",
+        "text": "Landwirte",
         "isCorrect": true
+      },
+      {
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sachsen\" nutzt Danny Meiners 34.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "54.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Landwirte\" nutzt Danny Meiners 33.7× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "49.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -231,11 +297,11 @@
           "count": 1
         },
         {
-          "word": "umwelt",
+          "word": "umweltschutz",
           "count": 1
         },
         {
-          "word": "umweltschutz",
+          "word": "umwelt",
           "count": 1
         }
       ],

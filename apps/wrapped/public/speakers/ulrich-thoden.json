@@ -11,23 +11,23 @@
   "minWords": 33,
   "maxWords": 598,
   "rankings": {
-    "speechRank": 118,
-    "wordsRank": 211,
-    "partySpeechRank": 17,
+    "speechRank": 141,
+    "wordsRank": 217,
+    "partySpeechRank": 22,
     "partyWordsRank": 23,
     "partySize": 63,
-    "totalSpeakers": 625,
-    "percentile": 81.1,
-    "verbosityRank": 437,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 77.5,
+    "verbosityRank": 442,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 37,
-    "longestSpeechRank": 495
+    "longestSpeechRank": 499
   },
   "drama": {
     "interruptionsGiven": 6,
     "interruptionsReceived": 22,
-    "interrupterRank": 323,
-    "interruptedRank": 306
+    "interrupterRank": 335,
+    "interruptedRank": 321
   },
   "words": {
     "topWords": [
@@ -60,53 +60,145 @@
       {
         "word": "unifil",
         "count": 8,
-        "ratioParty": 220.8,
-        "ratioBundestag": 28.6
+        "ratioParty": 229.1,
+        "ratioBundestag": 29.7
       },
       {
         "word": "imperialismus",
         "count": 6,
-        "ratioParty": 165.6,
-        "ratioBundestag": 234.3
+        "ratioParty": 171.8,
+        "ratioBundestag": 243.3
       },
       {
         "word": "freundschaft",
         "count": 6,
-        "ratioParty": 165.6,
-        "ratioBundestag": 44.9
+        "ratioParty": 171.8,
+        "ratioBundestag": 44.2
       },
       {
         "word": "klartext",
         "count": 6,
-        "ratioParty": 66.3,
-        "ratioBundestag": 54.7
+        "ratioParty": 57.3,
+        "ratioBundestag": 54.1
       },
       {
         "word": "russische",
         "count": 9,
-        "ratioParty": 55.2,
-        "ratioBundestag": 17.8
+        "ratioParty": 51.6,
+        "ratioBundestag": 18.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "unifil",
+        "count": 8,
+        "score": 43.51,
+        "ratio": 229.1
+      },
+      {
+        "word": "russische",
+        "count": 9,
+        "score": 35.66,
+        "ratio": 51.6
+      },
+      {
+        "word": "imperialismus",
+        "count": 6,
+        "score": 30.91,
+        "ratio": 171.8
+      },
+      {
+        "word": "freundschaft",
+        "count": 6,
+        "score": 30.91,
+        "ratio": 171.8
+      },
+      {
+        "word": "klartext",
+        "count": 6,
+        "score": 24.39,
+        "ratio": 57.3
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "imperialismus",
+        "count": 6,
+        "score": 32.99,
+        "ratio": 243.3
+      },
+      {
+        "word": "unifil",
+        "count": 8,
+        "score": 27.39,
+        "ratio": 29.7
+      },
+      {
+        "word": "russische",
+        "count": 9,
+        "score": 26.55,
+        "ratio": 18.1
+      },
+      {
+        "word": "klartext",
+        "count": 6,
+        "score": 24.05,
+        "ratio": 54.1
+      },
+      {
+        "word": "freundschaft",
+        "count": 6,
+        "score": 22.87,
+        "ratio": 44.2
       }
     ],
     "signatureAdjectives": [
       {
+        "word": "wirksam",
+        "count": 3,
+        "ratioParty": 6.4,
+        "ratioBundestag": 5.9
+      },
+      {
         "word": "peinlich",
         "count": 3,
-        "ratioParty": 6.1,
-        "ratioBundestag": 16.1
+        "ratioParty": 6.4,
+        "ratioBundestag": 16.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 6.0,
+        "ratio": 6.4
+      },
+      {
+        "word": "peinlich",
+        "count": 3,
+        "score": 6.0,
+        "ratio": 6.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "peinlich",
+        "count": 3,
+        "score": 8.53,
+        "ratio": 16.2
       },
       {
         "word": "wirksam",
         "count": 3,
-        "ratioParty": 6.1,
-        "ratioBundestag": 5.8
+        "score": 5.79,
+        "ratio": 5.9
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 364,
-    "partyAvgWords": 500,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 499,
+    "parliamentAvgWords": 585,
     "vsParty": 0.73,
     "vsParliament": 0.62
   },
@@ -126,11 +218,7 @@
     "question": "Welches Wort nutzt Ulrich Thoden häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
@@ -138,35 +226,39 @@
         "isCorrect": true
       },
       {
-        "text": "Bundesregierung",
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Politik",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unifil\" nutzt Ulrich Thoden 220.8× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "28.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Unifil\" nutzt Ulrich Thoden 229.1× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "29.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Ulrich Thoden häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
+        "text": "Wirksam",
+        "isCorrect": true
+      },
+      {
         "text": "Alt",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Peinlich",
-        "isCorrect": true
-      },
-      {
-        "text": "Neu",
+        "text": "Gut",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Peinlich\" nutzt Ulrich Thoden 6.1× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "16.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wirksam\" nutzt Ulrich Thoden 6.4× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "5.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -266,11 +358,11 @@
           "count": 1
         },
         {
-          "word": "drittstaaten",
+          "word": "mittelmeer",
           "count": 1
         },
         {
-          "word": "mittelmeer",
+          "word": "drittstaaten",
           "count": 1
         }
       ],
@@ -300,19 +392,19 @@
           "count": 1
         },
         {
-          "word": "sozialleistungen",
-          "count": 1
-        },
-        {
           "word": "gerechtigkeit",
           "count": 1
         },
         {
-          "word": "sozialstaat",
+          "word": "familie",
           "count": 1
         },
         {
-          "word": "familie",
+          "word": "sozialleistungen",
+          "count": 1
+        },
+        {
+          "word": "sozialstaat",
           "count": 1
         }
       ],
@@ -358,11 +450,11 @@
           "count": 18
         },
         {
-          "word": "krieg",
+          "word": "nato",
           "count": 9
         },
         {
-          "word": "nato",
+          "word": "krieg",
           "count": 9
         },
         {
@@ -414,21 +506,21 @@
       ],
       "justiz": [
         {
-          "word": "gericht",
+          "word": "grundgesetz",
           "count": 1
         },
         {
-          "word": "grundgesetz",
+          "word": "gericht",
           "count": 1
         }
       ],
       "arbeit": [
         {
-          "word": "arbeitsplätze",
+          "word": "vereinbarkeit",
           "count": 1
         },
         {
-          "word": "vereinbarkeit",
+          "word": "arbeitsplätze",
           "count": 1
         }
       ],

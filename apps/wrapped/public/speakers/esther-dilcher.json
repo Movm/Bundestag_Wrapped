@@ -11,23 +11,23 @@
   "minWords": 393,
   "maxWords": 796,
   "rankings": {
-    "speechRank": 336,
-    "wordsRank": 290,
-    "partySpeechRank": 65,
-    "partyWordsRank": 60,
+    "speechRank": 353,
+    "wordsRank": 303,
+    "partySpeechRank": 67,
+    "partyWordsRank": 64,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 46.2,
+    "totalSpeakers": 626,
+    "percentile": 43.6,
     "verbosityRank": 38,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 7,
-    "longestSpeechRank": 250
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 8,
+    "longestSpeechRank": 252
   },
   "drama": {
     "interruptionsGiven": 12,
     "interruptionsReceived": 21,
-    "interrupterRank": 260,
-    "interruptedRank": 313
+    "interrupterRank": 264,
+    "interruptedRank": 328
   },
   "words": {
     "topWords": [
@@ -52,11 +52,11 @@
         "count": 13
       },
       {
-        "word": "deutschland",
+        "word": "verfügung",
         "count": 12
       },
       {
-        "word": "verfügung",
+        "word": "deutschland",
         "count": 12
       },
       {
@@ -68,48 +68,128 @@
       {
         "word": "stallumbau",
         "count": 6,
-        "ratioParty": 415.3,
-        "ratioBundestag": 462.6
+        "ratioParty": 433.8,
+        "ratioBundestag": 480.3
       },
       {
         "word": "wahlprüfungsausschuss",
         "count": 5,
-        "ratioParty": 346.1,
-        "ratioBundestag": 247.8
+        "ratioParty": 361.5,
+        "ratioBundestag": 257.3
       },
       {
         "word": "auswärtige",
         "count": 10,
-        "ratioParty": 197.7,
-        "ratioBundestag": 73.8
+        "ratioParty": 206.6,
+        "ratioBundestag": 75.1
       },
       {
         "word": "einsprüche",
         "count": 7,
-        "ratioParty": 161.5,
-        "ratioBundestag": 142.9
+        "ratioParty": 168.7,
+        "ratioBundestag": 148.3
       },
       {
         "word": "hürde",
         "count": 5,
-        "ratioParty": 138.4,
-        "ratioBundestag": 89.0
+        "ratioParty": 144.6,
+        "ratioBundestag": 92.4
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "auswärtige",
+        "count": 10,
+        "score": 53.36,
+        "ratio": 206.6
+      },
+      {
+        "word": "stallumbau",
+        "count": 6,
+        "score": 36.45,
+        "ratio": 433.8
+      },
+      {
+        "word": "einsprüche",
+        "count": 7,
+        "score": 35.94,
+        "ratio": 168.7
+      },
+      {
+        "word": "wahlprüfungsausschuss",
+        "count": 5,
+        "score": 29.47,
+        "ratio": 361.5
+      },
+      {
+        "word": "hürde",
+        "count": 5,
+        "score": 24.9,
+        "ratio": 144.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "auswärtige",
+        "count": 10,
+        "score": 43.32,
+        "ratio": 75.1
+      },
+      {
+        "word": "stallumbau",
+        "count": 6,
+        "score": 37.06,
+        "ratio": 480.3
+      },
+      {
+        "word": "einsprüche",
+        "count": 7,
+        "score": 35.04,
+        "ratio": 148.3
+      },
+      {
+        "word": "wahlprüfungsausschuss",
+        "count": 5,
+        "score": 27.77,
+        "ratio": 257.3
+      },
+      {
+        "word": "hürde",
+        "count": 5,
+        "score": 22.68,
+        "ratio": 92.4
       }
     ],
     "signatureAdjectives": [
       {
         "word": "zentral",
         "count": 3,
-        "ratioParty": 7.3,
-        "ratioBundestag": 11.6
+        "ratioParty": 7.5,
+        "ratioBundestag": 11.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "zentral",
+        "count": 3,
+        "score": 6.42,
+        "ratio": 7.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "zentral",
+        "count": 3,
+        "score": 7.67,
+        "ratio": 11.9
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 636,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
-    "vsParty": 1.03,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
+    "vsParty": 1.02,
     "vsParliament": 1.09
   },
   "funFacts": [
@@ -137,43 +217,43 @@
         "isCorrect": true
       },
       {
-        "text": "Politik",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
-        "text": "Gesellschaft",
+        "text": "Sicherheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Stallumbau\" nutzt Esther Dilcher 415.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "462.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Stallumbau\" nutzt Esther Dilcher 433.8× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "480.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Esther Dilcher häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "National",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Problematisch",
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
         "isCorrect": false
       },
       {
         "text": "Zentral",
         "isCorrect": true
-      },
-      {
-        "text": "Gefährlich",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Zentral\" nutzt Esther Dilcher 7.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "11.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Zentral\" nutzt Esther Dilcher 7.5× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "11.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -297,19 +377,19 @@
       ],
       "wirtschaft": [
         {
-          "word": "standort",
-          "count": 1
-        },
-        {
           "word": "betriebe",
           "count": 1
         },
         {
-          "word": "export",
+          "word": "handwerk",
           "count": 1
         },
         {
-          "word": "handwerk",
+          "word": "standort",
+          "count": 1
+        },
+        {
+          "word": "export",
           "count": 1
         }
       ],
@@ -369,7 +449,7 @@
           "count": 2
         },
         {
-          "word": "europa",
+          "word": "krieg",
           "count": 2
         }
       ],
@@ -393,11 +473,11 @@
           "count": 2
         },
         {
-          "word": "schulen",
+          "word": "fortbildung",
           "count": 1
         },
         {
-          "word": "fortbildung",
+          "word": "schulen",
           "count": 1
         }
       ],
@@ -415,11 +495,11 @@
           "count": 2
         },
         {
-          "word": "investitionen",
+          "word": "finanzminister",
           "count": 1
         },
         {
-          "word": "währung",
+          "word": "bundeshaushalt",
           "count": 1
         }
       ],

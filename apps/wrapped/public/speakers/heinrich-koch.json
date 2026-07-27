@@ -11,23 +11,23 @@
   "minWords": 221,
   "maxWords": 504,
   "rankings": {
-    "speechRank": 467,
-    "wordsRank": 540,
+    "speechRank": 474,
+    "wordsRank": 549,
     "partySpeechRank": 110,
-    "partyWordsRank": 128,
+    "partyWordsRank": 129,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 25.3,
-    "verbosityRank": 473,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 24.3,
+    "verbosityRank": 476,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 123,
-    "longestSpeechRank": 571
+    "longestSpeechRank": 574
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 9,
-    "interrupterRank": 473,
-    "interruptedRank": 484
+    "interrupterRank": 477,
+    "interruptedRank": 493
   },
   "words": {
     "topWords": [
@@ -48,19 +48,19 @@
         "count": 8
       },
       {
-        "word": "vertrauen",
-        "count": 7
-      },
-      {
         "word": "endlich",
         "count": 7
       },
       {
-        "word": "menschen",
+        "word": "vertrauen",
+        "count": 7
+      },
+      {
+        "word": "jahr",
         "count": 6
       },
       {
-        "word": "regierung",
+        "word": "menschen",
         "count": 6
       },
       {
@@ -68,7 +68,7 @@
         "count": 6
       },
       {
-        "word": "jahr",
+        "word": "regierung",
         "count": 6
       }
     ],
@@ -76,40 +76,106 @@
       {
         "word": "mandat",
         "count": 6,
-        "ratioParty": 34.3,
-        "ratioBundestag": 38.0
+        "ratioParty": 35.1,
+        "ratioBundestag": 39.3
       },
       {
         "word": "wehrpflicht",
         "count": 5,
-        "ratioParty": 32.4,
-        "ratioBundestag": 45.5
+        "ratioParty": 33.6,
+        "ratioBundestag": 47.2
       },
       {
         "word": "einsatz",
         "count": 8,
-        "ratioParty": 20.8,
-        "ratioBundestag": 15.3
+        "ratioParty": 21.4,
+        "ratioBundestag": 15.7
       },
       {
         "word": "soldaten",
         "count": 12,
-        "ratioParty": 18.9,
-        "ratioBundestag": 21.9
+        "ratioParty": 19.6,
+        "ratioBundestag": 22.7
       },
       {
         "word": "bundeswehr",
         "count": 11,
-        "ratioParty": 17.7,
-        "ratioBundestag": 16.9
+        "ratioParty": 18.3,
+        "ratioBundestag": 17.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "soldaten",
+        "count": 12,
+        "score": 36.3,
+        "ratio": 19.6
+      },
+      {
+        "word": "bundeswehr",
+        "count": 11,
+        "score": 32.56,
+        "ratio": 18.3
+      },
+      {
+        "word": "einsatz",
+        "count": 8,
+        "score": 24.87,
+        "ratio": 21.4
+      },
+      {
+        "word": "mandat",
+        "count": 6,
+        "score": 21.52,
+        "ratio": 35.1
+      },
+      {
+        "word": "wehrpflicht",
+        "count": 5,
+        "score": 17.72,
+        "ratio": 33.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "soldaten",
+        "count": 12,
+        "score": 37.99,
+        "ratio": 22.7
+      },
+      {
+        "word": "bundeswehr",
+        "count": 11,
+        "score": 32.1,
+        "ratio": 17.5
+      },
+      {
+        "word": "einsatz",
+        "count": 8,
+        "score": 22.52,
+        "ratio": 15.7
+      },
+      {
+        "word": "mandat",
+        "count": 6,
+        "score": 22.18,
+        "ratio": 39.3
+      },
+      {
+        "word": "wehrpflicht",
+        "count": 5,
+        "score": 19.38,
+        "ratio": 47.2
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 341,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.61,
     "vsParliament": 0.58
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Heinrich Koch häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Rente",
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
         "isCorrect": false
       },
       {
         "text": "Mandat",
         "isCorrect": true
-      },
-      {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Reform",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Mandat\" nutzt Heinrich Koch 34.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "38.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Mandat\" nutzt Heinrich Koch 35.1× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "39.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -229,15 +295,15 @@
           "count": 4
         },
         {
+          "word": "rente",
+          "count": 1
+        },
+        {
           "word": "eltern",
           "count": 1
         },
         {
           "word": "jugend",
-          "count": 1
-        },
-        {
-          "word": "rente",
           "count": 1
         }
       ],
@@ -255,11 +321,11 @@
           "count": 2
         },
         {
-          "word": "panzer",
+          "word": "korruption",
           "count": 1
         },
         {
-          "word": "verteidigung",
+          "word": "soldat",
           "count": 1
         }
       ],

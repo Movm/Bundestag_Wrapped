@@ -11,23 +11,23 @@
   "minWords": 393,
   "maxWords": 520,
   "rankings": {
-    "speechRank": 531,
-    "wordsRank": 567,
-    "partySpeechRank": 131,
-    "partyWordsRank": 137,
+    "speechRank": 547,
+    "wordsRank": 572,
+    "partySpeechRank": 134,
+    "partyWordsRank": 138,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 15.0,
-    "verbosityRank": 255,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 12.6,
+    "verbosityRank": 258,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 64,
-    "longestSpeechRank": 562
+    "longestSpeechRank": 564
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 17,
     "interrupterRank": null,
-    "interruptedRank": 354
+    "interruptedRank": 372
   },
   "words": {
     "topWords": [
@@ -42,6 +42,14 @@
       {
         "word": "saarland",
         "count": 9
+      },
+      {
+        "word": "einfach",
+        "count": 5
+      },
+      {
+        "word": "weiter",
+        "count": 5
       },
       {
         "word": "rede",
@@ -60,14 +68,6 @@
         "count": 5
       },
       {
-        "word": "weiter",
-        "count": 5
-      },
-      {
-        "word": "einfach",
-        "count": 5
-      },
-      {
         "word": "land",
         "count": 5
       }
@@ -76,42 +76,108 @@
       {
         "word": "saarland",
         "count": 9,
-        "ratioParty": 646.6,
-        "ratioBundestag": 724.6
+        "ratioParty": 595.9,
+        "ratioBundestag": 708.0
       },
       {
         "word": "bürokratie",
         "count": 10,
-        "ratioParty": 12.2,
-        "ratioBundestag": 20.0
+        "ratioParty": 12.0,
+        "ratioBundestag": 19.8
       },
       {
         "word": "gesetzentwurf",
         "count": 5,
-        "ratioParty": 7.0,
-        "ratioBundestag": 7.0
+        "ratioParty": 6.9,
+        "ratioBundestag": 6.9
       },
       {
         "word": "weniger",
         "count": 5,
-        "ratioParty": 5.3,
+        "ratioParty": 5.4,
         "ratioBundestag": 5.9
       },
       {
         "word": "gesetz",
         "count": 5,
-        "ratioParty": 5.2,
-        "ratioBundestag": 4.4
+        "ratioParty": 4.8,
+        "ratioBundestag": 4.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "saarland",
+        "count": 9,
+        "score": 57.53,
+        "ratio": 595.9
+      },
+      {
+        "word": "bürokratie",
+        "count": 10,
+        "score": 25.65,
+        "ratio": 12.0
+      },
+      {
+        "word": "gesetzentwurf",
+        "count": 5,
+        "score": 10.33,
+        "ratio": 6.9
+      },
+      {
+        "word": "weniger",
+        "count": 5,
+        "score": 9.28,
+        "ratio": 5.4
+      },
+      {
+        "word": "gesetz",
+        "count": 5,
+        "score": 8.79,
+        "ratio": 4.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "saarland",
+        "count": 9,
+        "score": 59.07,
+        "ratio": 708.0
+      },
+      {
+        "word": "bürokratie",
+        "count": 10,
+        "score": 30.35,
+        "ratio": 19.8
+      },
+      {
+        "word": "gesetzentwurf",
+        "count": 5,
+        "score": 10.33,
+        "ratio": 6.9
+      },
+      {
+        "word": "weniger",
+        "count": 5,
+        "score": 9.66,
+        "ratio": 5.9
+      },
+      {
+        "word": "gesetz",
+        "count": 5,
+        "score": 8.24,
+        "ratio": 4.2
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 447,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.8,
-    "vsParliament": 0.77
+    "vsParliament": 0.76
   },
   "funFacts": [
     {
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Carsten Becker häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
         "text": "Saarland",
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
         "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Saarland\" nutzt Carsten Becker 646.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "724.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Saarland\" nutzt Carsten Becker 595.9× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "708.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

@@ -11,15 +11,15 @@
   "minWords": 111,
   "maxWords": 933,
   "rankings": {
-    "speechRank": 456,
-    "wordsRank": 293,
-    "partySpeechRank": 138,
-    "partyWordsRank": 87,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 27.0,
-    "verbosityRank": 69,
-    "verbosityTotal": 579,
+    "speechRank": 454,
+    "wordsRank": 304,
+    "partySpeechRank": 141,
+    "partyWordsRank": 89,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 27.5,
+    "verbosityRank": 72,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 25,
     "longestSpeechRank": 116
   },
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 54,
     "interrupterRank": null,
-    "interruptedRank": 101
+    "interruptedRank": 103
   },
   "words": {
     "topWords": [
@@ -68,7 +68,7 @@
         "count": 13
       },
       {
-        "word": "europa",
+        "word": "bundesregierung",
         "count": 12
       }
     ],
@@ -76,48 +76,128 @@
       {
         "word": "ehrgeizig",
         "count": 6,
-        "ratioParty": 1439.4,
-        "ratioBundestag": 1477.3
+        "ratioParty": 1494.2,
+        "ratioBundestag": 1533.9
       },
       {
         "word": "bioenergie",
         "count": 5,
-        "ratioParty": 239.9,
-        "ratioBundestag": 369.3
-      },
-      {
-        "word": "zusammenzubringen",
-        "count": 5,
-        "ratioParty": 199.9,
-        "ratioBundestag": 217.2
+        "ratioParty": 249.0,
+        "ratioBundestag": 348.6
       },
       {
         "word": "gedeckelt",
         "count": 5,
-        "ratioParty": 199.9,
-        "ratioBundestag": 205.2
+        "ratioParty": 207.5,
+        "ratioBundestag": 191.7
+      },
+      {
+        "word": "zusammenzubringen",
+        "count": 5,
+        "ratioParty": 155.6,
+        "ratioBundestag": 201.8
       },
       {
         "word": "artenschutz",
         "count": 5,
-        "ratioParty": 149.9,
-        "ratioBundestag": 80.3
+        "ratioParty": 155.6,
+        "ratioBundestag": 81.6
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "ehrgeizig",
+        "count": 6,
+        "score": 43.86,
+        "ratio": 1494.2
+      },
+      {
+        "word": "bioenergie",
+        "count": 5,
+        "score": 27.61,
+        "ratio": 249.0
+      },
+      {
+        "word": "gedeckelt",
+        "count": 5,
+        "score": 26.7,
+        "ratio": 207.5
+      },
+      {
+        "word": "zusammenzubringen",
+        "count": 5,
+        "score": 25.27,
+        "ratio": 155.6
+      },
+      {
+        "word": "artenschutz",
+        "count": 5,
+        "score": 25.27,
+        "ratio": 155.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "ehrgeizig",
+        "count": 6,
+        "score": 44.02,
+        "ratio": 1533.9
+      },
+      {
+        "word": "bioenergie",
+        "count": 5,
+        "score": 29.28,
+        "ratio": 348.6
+      },
+      {
+        "word": "zusammenzubringen",
+        "count": 5,
+        "score": 26.56,
+        "ratio": 201.8
+      },
+      {
+        "word": "gedeckelt",
+        "count": 5,
+        "score": 26.31,
+        "ratio": 191.7
+      },
+      {
+        "word": "artenschutz",
+        "count": 5,
+        "score": 22.07,
+        "ratio": 81.6
       }
     ],
     "signatureAdjectives": [
       {
         "word": "gescheitert",
         "count": 3,
-        "ratioParty": 17.6,
-        "ratioBundestag": 13.2
+        "ratioParty": 18.2,
+        "ratioBundestag": 13.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gescheitert",
+        "count": 3,
+        "score": 8.86,
+        "ratio": 18.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "gescheitert",
+        "count": 3,
+        "score": 8.02,
+        "ratio": 13.5
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 578,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.9,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.89,
     "vsParliament": 0.99
   },
   "funFacts": [
@@ -136,24 +216,24 @@
     "question": "Welches Wort nutzt Andreas Jung häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
-        "isCorrect": false
-      },
-      {
         "text": "Ehrgeizig",
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ehrgeizig\" nutzt Andreas Jung 1439.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "1477.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Ehrgeizig\" nutzt Andreas Jung 1494.2× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "1533.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Andreas Jung häufiger als der Rest der CDU/CSU-Fraktion?",
@@ -163,7 +243,7 @@
         "isCorrect": true
       },
       {
-        "text": "Alt",
+        "text": "Stark",
         "isCorrect": false
       },
       {
@@ -171,12 +251,12 @@
         "isCorrect": false
       },
       {
-        "text": "Schlecht",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gescheitert\" nutzt Andreas Jung 17.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "13.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Gescheitert\" nutzt Andreas Jung 18.2× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "13.5× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -404,11 +484,11 @@
           "count": 2
         },
         {
-          "word": "novelle",
+          "word": "menschenrechte",
           "count": 1
         },
         {
-          "word": "menschenrechte",
+          "word": "rechtsstaatlichkeit",
           "count": 1
         }
       ],

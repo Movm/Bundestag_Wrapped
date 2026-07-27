@@ -12,12 +12,12 @@
   "maxWords": 942,
   "rankings": {
     "speechRank": 621,
-    "wordsRank": 530,
-    "partySpeechRank": 114,
-    "partyWordsRank": 95,
+    "wordsRank": 541,
+    "partySpeechRank": 113,
+    "partyWordsRank": 98,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 0.6,
+    "totalSpeakers": 626,
+    "percentile": 0.8,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 1,
     "interrupterRank": null,
-    "interruptedRank": 599
+    "interruptedRank": 600
   },
   "words": {
     "topWords": [
@@ -76,41 +76,107 @@
       {
         "word": "entwicklungsfinanzierung",
         "count": 5,
-        "ratioParty": 1751.5,
-        "ratioBundestag": 4375.0
+        "ratioParty": 1829.5,
+        "ratioBundestag": 4542.5
       },
       {
         "word": "conference",
         "count": 5,
-        "ratioParty": 437.9,
-        "ratioBundestag": 1458.3
+        "ratioParty": 457.4,
+        "ratioBundestag": 1514.2
       },
       {
         "word": "entwicklungspolitik",
         "count": 16,
-        "ratioParty": 233.5,
-        "ratioBundestag": 233.3
+        "ratioParty": 234.2,
+        "ratioBundestag": 223.6
       },
       {
         "word": "entwicklungszusammenarbeit",
         "count": 5,
-        "ratioParty": 30.2,
-        "ratioBundestag": 35.4
+        "ratioParty": 31.0,
+        "ratioBundestag": 35.2
       },
       {
         "word": "krisen",
         "count": 6,
-        "ratioParty": 20.8,
-        "ratioBundestag": 29.1
+        "ratioParty": 20.9,
+        "ratioBundestag": 29.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "entwicklungspolitik",
+        "count": 16,
+        "score": 87.37,
+        "ratio": 234.2
+      },
+      {
+        "word": "entwicklungsfinanzierung",
+        "count": 5,
+        "score": 37.56,
+        "ratio": 1829.5
+      },
+      {
+        "word": "conference",
+        "count": 5,
+        "score": 30.64,
+        "ratio": 457.4
+      },
+      {
+        "word": "krisen",
+        "count": 6,
+        "score": 18.52,
+        "ratio": 20.9
+      },
+      {
+        "word": "entwicklungszusammenarbeit",
+        "count": 5,
+        "score": 17.33,
+        "ratio": 31.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "entwicklungspolitik",
+        "count": 16,
+        "score": 86.63,
+        "ratio": 223.6
+      },
+      {
+        "word": "entwicklungsfinanzierung",
+        "count": 5,
+        "score": 42.11,
+        "ratio": 4542.5
+      },
+      {
+        "word": "conference",
+        "count": 5,
+        "score": 36.62,
+        "ratio": 1514.2
+      },
+      {
+        "word": "krisen",
+        "count": 6,
+        "score": 20.49,
+        "ratio": 29.4
+      },
+      {
+        "word": "entwicklungszusammenarbeit",
+        "count": 5,
+        "score": 17.95,
+        "ratio": 35.2
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 152,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.25,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.24,
     "vsParliament": 0.26
   },
   "funFacts": [
@@ -129,11 +195,11 @@
     "question": "Welches Wort nutzt Reem Alabali-Radovan häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Rente",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
@@ -141,12 +207,12 @@
         "isCorrect": true
       },
       {
-        "text": "Kinder",
+        "text": "Bildung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entwicklungsfinanzierung\" nutzt Reem Alabali-Radovan 1751.5× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "4375.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Entwicklungsfinanzierung\" nutzt Reem Alabali-Radovan 1829.5× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "4542.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -160,7 +226,7 @@
         "emoji": "🦉",
         "name": "Eule",
         "title": "Themenexpertin",
-        "reason": "Dein Fachwort \"Entwicklungsfinanzierung\" nutzt du 1751.5× häufiger als deine Fraktion.",
+        "reason": "Dein Fachwort \"Entwicklungsfinanzierung\" nutzt du 1829.5× häufiger als deine Fraktion.",
         "id": "eule",
         "score": 0.97
       },

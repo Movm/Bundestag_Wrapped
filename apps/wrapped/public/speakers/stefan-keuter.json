@@ -11,23 +11,23 @@
   "minWords": 44,
   "maxWords": 773,
   "rankings": {
-    "speechRank": 190,
-    "wordsRank": 122,
-    "partySpeechRank": 41,
-    "partyWordsRank": 26,
+    "speechRank": 213,
+    "wordsRank": 133,
+    "partySpeechRank": 45,
+    "partyWordsRank": 29,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 69.6,
-    "verbosityRank": 154,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 66.0,
+    "verbosityRank": 157,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 40,
-    "longestSpeechRank": 274
+    "longestSpeechRank": 276
   },
   "drama": {
-    "interruptionsGiven": 88,
+    "interruptionsGiven": 90,
     "interruptionsReceived": 81,
-    "interrupterRank": 53,
-    "interruptedRank": 39
+    "interrupterRank": 54,
+    "interruptedRank": 44
   },
   "words": {
     "topWords": [
@@ -72,53 +72,145 @@
       {
         "word": "ortskraft",
         "count": 5,
-        "ratioParty": 153.0,
-        "ratioBundestag": 259.1
+        "ratioParty": 158.7,
+        "ratioBundestag": 269.0
       },
       {
         "word": "kabul",
         "count": 7,
-        "ratioParty": 128.6,
-        "ratioBundestag": 161.2
+        "ratioParty": 133.3,
+        "ratioBundestag": 167.4
       },
       {
         "word": "diplomatischen",
         "count": 6,
-        "ratioParty": 78.7,
-        "ratioBundestag": 51.8
+        "ratioParty": 81.6,
+        "ratioBundestag": 52.7
       },
       {
         "word": "auswärtige",
         "count": 11,
-        "ratioParty": 38.8,
-        "ratioBundestag": 49.0
+        "ratioParty": 40.3,
+        "ratioBundestag": 49.8
       },
       {
         "word": "kosovo",
         "count": 10,
-        "ratioParty": 29.6,
-        "ratioBundestag": 25.0
+        "ratioParty": 30.7,
+        "ratioBundestag": 25.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "auswärtige",
+        "count": 11,
+        "score": 40.93,
+        "ratio": 40.3
+      },
+      {
+        "word": "kosovo",
+        "count": 10,
+        "score": 34.56,
+        "ratio": 30.7
+      },
+      {
+        "word": "kabul",
+        "count": 7,
+        "score": 34.3,
+        "ratio": 133.3
+      },
+      {
+        "word": "diplomatischen",
+        "count": 6,
+        "score": 26.48,
+        "ratio": 81.6
+      },
+      {
+        "word": "ortskraft",
+        "count": 5,
+        "score": 25.37,
+        "ratio": 158.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "auswärtige",
+        "count": 11,
+        "score": 43.21,
+        "ratio": 49.8
+      },
+      {
+        "word": "kabul",
+        "count": 7,
+        "score": 35.88,
+        "ratio": 167.4
+      },
+      {
+        "word": "kosovo",
+        "count": 10,
+        "score": 32.92,
+        "ratio": 25.9
+      },
+      {
+        "word": "ortskraft",
+        "count": 5,
+        "score": 27.99,
+        "ratio": 269.0
+      },
+      {
+        "word": "diplomatischen",
+        "count": 6,
+        "score": 23.9,
+        "ratio": 52.7
       }
     ],
     "signatureAdjectives": [
       {
         "word": "verantwortungsvoll",
         "count": 3,
-        "ratioParty": 19.7,
-        "ratioBundestag": 8.5
+        "ratioParty": 19.0,
+        "ratioBundestag": 8.6
       },
       {
         "word": "gefährlich",
         "count": 5,
-        "ratioParty": 15.8,
-        "ratioBundestag": 11.6
+        "ratioParty": 16.4,
+        "ratioBundestag": 11.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gefährlich",
+        "count": 5,
+        "score": 14.28,
+        "ratio": 16.4
+      },
+      {
+        "word": "verantwortungsvoll",
+        "count": 3,
+        "score": 8.99,
+        "ratio": 19.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "gefährlich",
+        "count": 5,
+        "score": 12.75,
+        "ratio": 11.8
+      },
+      {
+        "word": "verantwortungsvoll",
+        "count": 3,
+        "score": 6.79,
+        "ratio": 8.6
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 502,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.9,
     "vsParliament": 0.86
   },
@@ -136,22 +228,22 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "88"
+      "value": "90"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Stefan Keuter häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Opposition",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Migration",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
-        "text": "Familie",
+        "text": "Europa",
         "isCorrect": false
       },
       {
@@ -159,31 +251,31 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Ortskraft\" nutzt Stefan Keuter 153.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "259.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Ortskraft\" nutzt Stefan Keuter 158.7× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "269.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Stefan Keuter häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Europäisch",
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
         "text": "Verantwortungsvoll",
         "isCorrect": true
-      },
-      {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verantwortungsvoll\" nutzt Stefan Keuter 19.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "8.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Verantwortungsvoll\" nutzt Stefan Keuter 19.0× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "8.6× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -263,15 +355,15 @@
           "count": 2
         },
         {
+          "word": "obergrenze",
+          "count": 1
+        },
+        {
           "word": "einbürgerung",
           "count": 1
         },
         {
           "word": "abschiebehaft",
-          "count": 1
-        },
-        {
-          "word": "obergrenze",
           "count": 1
         }
       ],
@@ -311,7 +403,7 @@
           "count": 2
         },
         {
-          "word": "wettbewerb",
+          "word": "qualifikation",
           "count": 2
         }
       ],
@@ -325,11 +417,11 @@
           "count": 1
         },
         {
-          "word": "familie",
+          "word": "wohnungen",
           "count": 1
         },
         {
-          "word": "wohnungen",
+          "word": "familie",
           "count": 1
         }
       ],
@@ -347,7 +439,7 @@
           "count": 3
         },
         {
-          "word": "bundeswehr",
+          "word": "korruption",
           "count": 2
         },
         {
@@ -361,15 +453,15 @@
           "count": 1
         },
         {
-          "word": "vorsorge",
-          "count": 1
-        },
-        {
           "word": "pflege",
           "count": 1
         },
         {
           "word": "operation",
+          "count": 1
+        },
+        {
+          "word": "vorsorge",
           "count": 1
         },
         {
@@ -401,11 +493,11 @@
       ],
       "digital": [
         {
-          "word": "technologie",
+          "word": "plattformen",
           "count": 1
         },
         {
-          "word": "plattformen",
+          "word": "technologie",
           "count": 1
         }
       ],
@@ -429,19 +521,19 @@
       ],
       "finanzen": [
         {
-          "word": "kosten",
-          "count": 8
-        },
-        {
           "word": "steuerzahler",
           "count": 8
         },
         {
-          "word": "bundeshaushalt",
-          "count": 2
+          "word": "kosten",
+          "count": 8
         },
         {
           "word": "entlastung",
+          "count": 2
+        },
+        {
+          "word": "haushaltsausschuss",
           "count": 2
         },
         {
@@ -459,11 +551,11 @@
           "count": 1
         },
         {
-          "word": "bundesverfassungsgericht",
+          "word": "rechtsstaat",
           "count": 1
         },
         {
-          "word": "rechtsstaat",
+          "word": "bundesverfassungsgericht",
           "count": 1
         }
       ],
@@ -483,15 +575,15 @@
           "count": 7
         },
         {
-          "word": "straßen",
-          "count": 2
-        },
-        {
           "word": "schifffahrt",
           "count": 2
         },
         {
-          "word": "straße",
+          "word": "straßen",
+          "count": 2
+        },
+        {
+          "word": "schiff",
           "count": 1
         }
       ]

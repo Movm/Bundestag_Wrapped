@@ -3,40 +3,44 @@
   "party": "CDU/CSU",
   "slug": "tobias-winkler",
   "academicTitle": null,
-  "speeches": 17,
+  "speeches": 18,
   "wortbeitraege": 1,
   "befragungResponses": 0,
-  "totalWords": 9334,
-  "avgWords": 519,
+  "totalWords": 9744,
+  "avgWords": 513,
   "minWords": 84,
   "maxWords": 1116,
   "rankings": {
-    "speechRank": 161,
-    "wordsRank": 162,
-    "partySpeechRank": 34,
-    "partyWordsRank": 47,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 74.2,
-    "verbosityRank": 133,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 46,
-    "longestSpeechRank": 49
+    "speechRank": 132,
+    "wordsRank": 157,
+    "partySpeechRank": 28,
+    "partyWordsRank": 44,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 78.9,
+    "verbosityRank": 141,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 52,
+    "longestSpeechRank": 51
   },
   "drama": {
     "interruptionsGiven": 0,
-    "interruptionsReceived": 27,
+    "interruptionsReceived": 28,
     "interrupterRank": null,
-    "interruptedRank": 271
+    "interruptedRank": 268
   },
   "words": {
     "topWords": [
       {
         "word": "ukraine",
-        "count": 34
+        "count": 42
       },
       {
         "word": "deutschland",
+        "count": 32
+      },
+      {
+        "word": "europäischen",
         "count": 25
       },
       {
@@ -44,12 +48,8 @@
         "count": 23
       },
       {
-        "word": "europäischen",
-        "count": 23
-      },
-      {
         "word": "menschen",
-        "count": 20
+        "count": 22
       },
       {
         "word": "europa",
@@ -57,110 +57,238 @@
       },
       {
         "word": "jahren",
-        "count": 19
+        "count": 20
       },
       {
         "word": "land",
-        "count": 18
-      },
-      {
-        "word": "union",
-        "count": 16
+        "count": 19
       },
       {
         "word": "unterstützung",
-        "count": 15
+        "count": 18
+      },
+      {
+        "word": "osze",
+        "count": 16
       }
     ],
     "signatureWords": [
       {
         "word": "europarat",
         "count": 9,
-        "ratioParty": 70.3,
-        "ratioBundestag": 54.2
+        "ratioParty": 69.7,
+        "ratioBundestag": 53.8
       },
       {
         "word": "geschätzte",
-        "count": 13,
-        "ratioParty": 53.4,
-        "ratioBundestag": 50.9
+        "count": 14,
+        "ratioParty": 54.2,
+        "ratioBundestag": 49.9
       },
       {
         "word": "eufor",
         "count": 5,
-        "ratioParty": 35.5,
-        "ratioBundestag": 37.6
+        "ratioParty": 35.2,
+        "ratioBundestag": 37.3
+      },
+      {
+        "word": "zivilbevölkerung",
+        "count": 5,
+        "ratioParty": 35.2,
+        "ratioBundestag": 23.7
       },
       {
         "word": "althea",
         "count": 5,
-        "ratioParty": 34.0,
-        "ratioBundestag": 37.1
+        "ratioParty": 33.7,
+        "ratioBundestag": 36.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "geschätzte",
+        "count": 14,
+        "score": 56.15,
+        "ratio": 54.2
       },
       {
-        "word": "schwäche",
+        "word": "europarat",
+        "count": 9,
+        "score": 38.33,
+        "ratio": 69.7
+      },
+      {
+        "word": "eufor",
         "count": 5,
-        "ratioParty": 32.5,
-        "ratioBundestag": 31.3
+        "score": 17.95,
+        "ratio": 35.2
+      },
+      {
+        "word": "zivilbevölkerung",
+        "count": 5,
+        "score": 17.95,
+        "ratio": 35.2
+      },
+      {
+        "word": "althea",
+        "count": 5,
+        "score": 17.73,
+        "ratio": 33.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "geschätzte",
+        "count": 14,
+        "score": 55.02,
+        "ratio": 49.9
+      },
+      {
+        "word": "europarat",
+        "count": 9,
+        "score": 36.03,
+        "ratio": 53.8
+      },
+      {
+        "word": "eufor",
+        "count": 5,
+        "score": 18.23,
+        "ratio": 37.3
+      },
+      {
+        "word": "althea",
+        "count": 5,
+        "score": 18.16,
+        "ratio": 36.8
+      },
+      {
+        "word": "zivilbevölkerung",
+        "count": 5,
+        "score": 16.03,
+        "ratio": 23.7
       }
     ],
     "signatureAdjectives": [
       {
-        "word": "rechts",
-        "count": 5,
-        "ratioParty": 5.2,
-        "ratioBundestag": 4.8
-      },
-      {
         "word": "wirtschaftlich",
         "count": 5,
-        "ratioParty": 5.2,
-        "ratioBundestag": 5.7
+        "ratioParty": 4.9,
+        "ratioBundestag": 5.5
+      },
+      {
+        "word": "rechts",
+        "count": 5,
+        "ratioParty": 4.8,
+        "ratioBundestag": 4.6
       },
       {
         "word": "stark",
         "count": 8,
-        "ratioParty": 4.3,
-        "ratioBundestag": 5.4
+        "ratioParty": 4.1,
+        "ratioBundestag": 5.1
       },
       {
         "word": "links",
         "count": 3,
-        "ratioParty": 3.7,
-        "ratioBundestag": 2.8
+        "ratioParty": 3.5,
+        "ratioBundestag": 2.7
       },
       {
         "word": "falsch",
         "count": 4,
-        "ratioParty": 2.8,
-        "ratioBundestag": 2.8
+        "ratioParty": 2.6,
+        "ratioBundestag": 2.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "stark",
+        "count": 8,
+        "score": 13.03,
+        "ratio": 4.1
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 5,
+        "score": 8.87,
+        "ratio": 4.9
+      },
+      {
+        "word": "rechts",
+        "count": 5,
+        "score": 8.79,
+        "ratio": 4.8
+      },
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 5.12,
+        "ratio": 2.6
+      },
+      {
+        "word": "links",
+        "count": 3,
+        "score": 4.51,
+        "ratio": 3.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "stark",
+        "count": 8,
+        "score": 14.47,
+        "ratio": 5.1
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 5,
+        "score": 9.36,
+        "ratio": 5.5
+      },
+      {
+        "word": "rechts",
+        "count": 5,
+        "score": 8.61,
+        "ratio": 4.6
+      },
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 5.12,
+        "ratio": 2.6
+      },
+      {
+        "word": "links",
+        "count": 3,
+        "score": 3.92,
+        "ratio": 2.7
       }
     ]
   },
   "comparison": {
-    "speakerAvgWords": 519,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.8,
-    "vsParliament": 0.89
+    "speakerAvgWords": 513,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.79,
+    "vsParliament": 0.88
   },
   "funFacts": [
     {
       "emoji": "🎤",
       "label": "Reden gehalten",
-      "value": "17"
+      "value": "18"
     },
     {
       "emoji": "📝",
       "label": "Wörter gesprochen",
-      "value": "9.334"
+      "value": "9.744"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Tobias Winkler häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Verantwortung",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
@@ -168,39 +296,39 @@
         "isCorrect": true
       },
       {
-        "text": "Opposition",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
-        "text": "Bildung",
+        "text": "Migration",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Europarat\" nutzt Tobias Winkler 70.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "54.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Europarat\" nutzt Tobias Winkler 69.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "53.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Tobias Winkler häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Rechts",
+        "text": "Wirtschaftlich",
         "isCorrect": true
       },
       {
-        "text": "Klar",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
-        "text": "Alt",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
-        "text": "Sozial",
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rechts\" nutzt Tobias Winkler 5.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "4.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wirtschaftlich\" nutzt Tobias Winkler 4.9× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "5.5× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -221,75 +349,75 @@
         "emoji": "🐻",
         "name": "Bär",
         "title": "Standhafter Debattierer",
-        "reason": "Trotz 27× unterbrochen zu werden, bleibst du standhaft.",
+        "reason": "Trotz 28× unterbrochen zu werden, bleibst du standhaft.",
         "id": "baer",
-        "score": 0.976
+        "score": 0.975
       }
     ]
   },
   "toneProfile": {
     "scores": {
-      "affirmative": 70.3,
-      "aggression": 2.2,
-      "labeling": 17.4,
+      "affirmative": 71.1,
+      "aggression": 2.1,
+      "labeling": 17.0,
       "solution_focus": 83.0,
       "collaboration": 16.7,
-      "demand_intensity": 11.4,
-      "acknowledgment": 12.9,
-      "authority": 75.6,
-      "future_orientation": 69.2,
-      "emotional_intensity": 52.2,
-      "inclusivity": 64.3,
+      "demand_intensity": 12.7,
+      "acknowledgment": 12.7,
+      "authority": 75.3,
+      "future_orientation": 68.8,
+      "emotional_intensity": 54.2,
+      "inclusivity": 64.6,
       "discriminatory": 0.0
     },
     "confidence": "sufficient",
     "sampleSize": {
-      "speeches": 18,
-      "words": 5975,
-      "adjectives": 46,
-      "verbs": 70
+      "speeches": 19,
+      "words": 6252,
+      "adjectives": 47,
+      "verbs": 71
     }
   },
   "topics": {
     "scores": {
-      "migration": 0.5,
-      "klima": 1.0,
-      "wirtschaft": 3.35,
-      "soziales": 2.18,
-      "sicherheit": 5.36,
-      "gesundheit": 0.84,
-      "europa": 31.8,
-      "digital": 1.0,
-      "bildung": 0.67,
-      "finanzen": 2.01,
-      "justiz": 3.01,
-      "arbeit": 0.5,
-      "mobilitaet": 2.85
+      "migration": 0.48,
+      "klima": 0.96,
+      "wirtschaft": 3.2,
+      "soziales": 2.08,
+      "sicherheit": 5.28,
+      "gesundheit": 0.8,
+      "europa": 32.63,
+      "digital": 0.96,
+      "bildung": 0.64,
+      "finanzen": 2.08,
+      "justiz": 2.88,
+      "arbeit": 0.48,
+      "mobilitaet": 2.88
     },
     "topTopics": [
       {
         "topic": "europa",
-        "score": 31.8,
+        "score": 32.63,
         "rank": 1
       },
       {
         "topic": "sicherheit",
-        "score": 5.36,
+        "score": 5.28,
         "rank": 2
       },
       {
         "topic": "wirtschaft",
-        "score": 3.35,
+        "score": 3.2,
         "rank": 3
       },
       {
         "topic": "justiz",
-        "score": 3.01,
+        "score": 2.88,
         "rank": 4
       },
       {
         "topic": "mobilitaet",
-        "score": 2.85,
+        "score": 2.88,
         "rank": 5
       }
     ],
@@ -300,11 +428,11 @@
           "count": 1
         },
         {
-          "word": "integration",
+          "word": "mittelmeer",
           "count": 1
         },
         {
-          "word": "mittelmeer",
+          "word": "integration",
           "count": 1
         }
       ],
@@ -384,12 +512,12 @@
           "count": 3
         },
         {
-          "word": "bundeswehr",
+          "word": "angriff",
           "count": 3
         },
         {
-          "word": "armee",
-          "count": 2
+          "word": "bundeswehr",
+          "count": 3
         },
         {
           "word": "abschreckung",
@@ -413,7 +541,7 @@
       "europa": [
         {
           "word": "ukraine",
-          "count": 34
+          "count": 42
         },
         {
           "word": "frieden",
@@ -424,12 +552,12 @@
           "count": 20
         },
         {
-          "word": "krieg",
-          "count": 15
+          "word": "osze",
+          "count": 16
         },
         {
-          "word": "osze",
-          "count": 14
+          "word": "krieg",
+          "count": 15
         }
       ],
       "digital": [
@@ -442,11 +570,11 @@
           "count": 1
         },
         {
-          "word": "pressefreiheit",
+          "word": "netz",
           "count": 1
         },
         {
-          "word": "netz",
+          "word": "pressefreiheit",
           "count": 1
         }
       ],
@@ -456,21 +584,21 @@
           "count": 2
         },
         {
-          "word": "schule",
+          "word": "ausbildung",
           "count": 1
         },
         {
-          "word": "ausbildung",
+          "word": "schule",
           "count": 1
         }
       ],
       "finanzen": [
         {
-          "word": "kosten",
-          "count": 3
+          "word": "finanzierung",
+          "count": 4
         },
         {
-          "word": "finanzierung",
+          "word": "kosten",
           "count": 3
         },
         {
@@ -525,7 +653,7 @@
       "mobilitaet": [
         {
           "word": "infrastruktur",
-          "count": 6
+          "count": 7
         },
         {
           "word": "straßen",

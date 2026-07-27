@@ -11,23 +11,23 @@
   "minWords": 85,
   "maxWords": 516,
   "rankings": {
-    "speechRank": 410,
-    "wordsRank": 457,
-    "partySpeechRank": 69,
+    "speechRank": 421,
+    "wordsRank": 465,
+    "partySpeechRank": 71,
     "partyWordsRank": 74,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 34.4,
-    "verbosityRank": 513,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 32.7,
+    "verbosityRank": 517,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 69,
-    "longestSpeechRank": 566
+    "longestSpeechRank": 568
   },
   "drama": {
     "interruptionsGiven": 14,
     "interruptionsReceived": 15,
-    "interrupterRank": 236,
-    "interruptedRank": 379
+    "interrupterRank": 243,
+    "interruptedRank": 391
   },
   "words": {
     "topWords": [
@@ -56,47 +56,127 @@
       {
         "word": "steuerzuschuss",
         "count": 5,
-        "ratioParty": 836.6,
-        "ratioBundestag": 1938.0
+        "ratioParty": 865.9,
+        "ratioBundestag": 2012.2
       },
       {
         "word": "darlehen",
         "count": 5,
-        "ratioParty": 83.7,
-        "ratioBundestag": 100.2
-      },
-      {
-        "word": "arbeitgeber",
-        "count": 7,
-        "ratioParty": 73.2,
-        "ratioBundestag": 38.0
+        "ratioParty": 86.6,
+        "ratioBundestag": 104.1
       },
       {
         "word": "hinweise",
         "count": 5,
-        "ratioParty": 64.4,
-        "ratioBundestag": 45.4
+        "ratioParty": 66.6,
+        "ratioBundestag": 46.8
       },
       {
         "word": "kurzfristig",
         "count": 6,
-        "ratioParty": 62.7,
-        "ratioBundestag": 41.8
+        "ratioParty": 64.9,
+        "ratioBundestag": 42.1
+      },
+      {
+        "word": "arbeitgeber",
+        "count": 7,
+        "ratioParty": 63.8,
+        "ratioBundestag": 34.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "steuerzuschuss",
+        "count": 5,
+        "score": 33.82,
+        "ratio": 865.9
+      },
+      {
+        "word": "arbeitgeber",
+        "count": 7,
+        "score": 29.2,
+        "ratio": 63.8
+      },
+      {
+        "word": "kurzfristig",
+        "count": 6,
+        "score": 25.13,
+        "ratio": 64.9
+      },
+      {
+        "word": "darlehen",
+        "count": 5,
+        "score": 22.36,
+        "ratio": 86.6
+      },
+      {
+        "word": "hinweise",
+        "count": 5,
+        "score": 21.07,
+        "ratio": 66.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "steuerzuschuss",
+        "count": 5,
+        "score": 38.04,
+        "ratio": 2012.2
+      },
+      {
+        "word": "arbeitgeber",
+        "count": 7,
+        "score": 25.07,
+        "ratio": 34.9
+      },
+      {
+        "word": "darlehen",
+        "count": 5,
+        "score": 23.27,
+        "ratio": 104.1
+      },
+      {
+        "word": "kurzfristig",
+        "count": 6,
+        "score": 22.58,
+        "ratio": 42.1
+      },
+      {
+        "word": "hinweise",
+        "count": 5,
+        "score": 19.34,
+        "ratio": 46.8
       }
     ],
     "signatureAdjectives": [
       {
         "word": "wirksam",
         "count": 3,
-        "ratioParty": 13.9,
-        "ratioBundestag": 12.4
+        "ratioParty": 13.7,
+        "ratioBundestag": 12.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 8.06,
+        "ratio": 13.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 7.81,
+        "ratio": 12.5
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 290,
     "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 585,
     "vsParty": 0.54,
     "vsParliament": 0.5
   },
@@ -121,47 +201,47 @@
     "question": "Welches Wort nutzt Linda Heitmann häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
         "text": "Steuerzuschuss",
         "isCorrect": true
       },
       {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Steuerzuschuss\" nutzt Linda Heitmann 836.6× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "1938.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Steuerzuschuss\" nutzt Linda Heitmann 865.9× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "2012.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Linda Heitmann häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
         "text": "Wirksam",
         "isCorrect": true
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wirksam\" nutzt Linda Heitmann 13.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "12.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wirksam\" nutzt Linda Heitmann 13.7× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "12.5× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -273,29 +353,29 @@
           "count": 2
         },
         {
-          "word": "gesundheitspolitik",
+          "word": "gesundheitsreform",
           "count": 1
         },
         {
-          "word": "pandemie",
+          "word": "krankenkassen",
           "count": 1
         },
         {
-          "word": "impfquote",
+          "word": "pharmaindustrie",
           "count": 1
         },
         {
-          "word": "gesundheitssystem",
+          "word": "krankenversicherung",
           "count": 1
         }
       ],
       "finanzen": [
         {
-          "word": "haushaltsentwurf",
+          "word": "haushalt",
           "count": 3
         },
         {
-          "word": "haushalt",
+          "word": "haushaltsentwurf",
           "count": 3
         },
         {
@@ -303,11 +383,11 @@
           "count": 2
         },
         {
-          "word": "kosten",
+          "word": "zinsen",
           "count": 1
         },
         {
-          "word": "finanzminister",
+          "word": "entlastung",
           "count": 1
         }
       ],

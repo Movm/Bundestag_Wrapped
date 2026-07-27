@@ -11,23 +11,23 @@
   "minWords": 95,
   "maxWords": 823,
   "rankings": {
-    "speechRank": 350,
-    "wordsRank": 267,
+    "speechRank": 354,
+    "wordsRank": 280,
     "partySpeechRank": 96,
-    "partyWordsRank": 76,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 44.0,
-    "verbosityRank": 47,
-    "verbosityTotal": 579,
+    "partyWordsRank": 79,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 43.5,
+    "verbosityRank": 50,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 19,
-    "longestSpeechRank": 218
+    "longestSpeechRank": 220
   },
   "drama": {
     "interruptionsGiven": 42,
     "interruptionsReceived": 7,
-    "interrupterRank": 127,
-    "interruptedRank": 505
+    "interrupterRank": 129,
+    "interruptedRank": 511
   },
   "words": {
     "topWords": [
@@ -60,32 +60,96 @@
       {
         "word": "wildberger",
         "count": 10,
-        "ratioParty": 41.9,
-        "ratioBundestag": 33.1
+        "ratioParty": 42.6,
+        "ratioBundestag": 34.2
       },
       {
         "word": "geist",
         "count": 5,
-        "ratioParty": 34.9,
-        "ratioBundestag": 37.1
+        "ratioParty": 34.0,
+        "ratioBundestag": 37.6
       },
       {
         "word": "wallet",
         "count": 6,
-        "ratioParty": 30.6,
-        "ratioBundestag": 62.4
+        "ratioParty": 31.0,
+        "ratioBundestag": 63.8
       },
       {
         "word": "schlüsseltechnologien",
         "count": 5,
-        "ratioParty": 20.5,
-        "ratioBundestag": 37.5
+        "ratioParty": 21.3,
+        "ratioBundestag": 38.9
       },
       {
         "word": "hightech",
         "count": 12,
-        "ratioParty": 14.4,
-        "ratioBundestag": 22.4
+        "ratioParty": 14.9,
+        "ratioBundestag": 23.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "wildberger",
+        "count": 10,
+        "score": 37.75,
+        "ratio": 42.6
+      },
+      {
+        "word": "hightech",
+        "count": 12,
+        "score": 33.2,
+        "ratio": 14.9
+      },
+      {
+        "word": "wallet",
+        "count": 6,
+        "score": 20.79,
+        "ratio": 31.0
+      },
+      {
+        "word": "geist",
+        "count": 5,
+        "score": 17.78,
+        "ratio": 34.0
+      },
+      {
+        "word": "schlüsseltechnologien",
+        "count": 5,
+        "score": 15.52,
+        "ratio": 21.3
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "hightech",
+        "count": 12,
+        "score": 38.24,
+        "ratio": 23.2
+      },
+      {
+        "word": "wildberger",
+        "count": 10,
+        "score": 35.61,
+        "ratio": 34.2
+      },
+      {
+        "word": "wallet",
+        "count": 6,
+        "score": 25.03,
+        "ratio": 63.8
+      },
+      {
+        "word": "schlüsseltechnologien",
+        "count": 5,
+        "score": 18.43,
+        "ratio": 38.9
+      },
+      {
+        "word": "geist",
+        "count": 5,
+        "score": 18.27,
+        "ratio": 37.6
       }
     ],
     "signatureAdjectives": [
@@ -98,15 +162,43 @@
       {
         "word": "wirtschaftlich",
         "count": 3,
-        "ratioParty": 4.1,
+        "ratioParty": 4.0,
         "ratioBundestag": 4.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 8,
+        "score": 16.64,
+        "ratio": 7.0
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 4.83,
+        "ratio": 4.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "entscheidend",
+        "count": 8,
+        "score": 19.4,
+        "ratio": 10.3
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 5.17,
+        "ratio": 4.6
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 614,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.95,
     "vsParliament": 1.05
   },
@@ -131,42 +223,42 @@
     "question": "Welches Wort nutzt Ronja Kemmer häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
         "text": "Wildberger",
         "isCorrect": true
+      },
+      {
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wildberger\" nutzt Ronja Kemmer 41.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "33.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wildberger\" nutzt Ronja Kemmer 42.6× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "34.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Ronja Kemmer häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Gut",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
         "text": "Entscheidend",
         "isCorrect": true
       },
       {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
+        "text": "Stark",
         "isCorrect": false
       }
     ],
@@ -285,11 +377,11 @@
           "count": 4
         },
         {
-          "word": "industrie",
+          "word": "wettbewerb",
           "count": 3
         },
         {
-          "word": "wettbewerb",
+          "word": "industrie",
           "count": 3
         }
       ],

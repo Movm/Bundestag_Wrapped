@@ -11,23 +11,23 @@
   "minWords": 36,
   "maxWords": 733,
   "rankings": {
-    "speechRank": 76,
-    "wordsRank": 175,
-    "partySpeechRank": 22,
-    "partyWordsRank": 52,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 87.8,
-    "verbosityRank": 410,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 144,
-    "longestSpeechRank": 329
+    "speechRank": 88,
+    "wordsRank": 186,
+    "partySpeechRank": 23,
+    "partyWordsRank": 54,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 85.9,
+    "verbosityRank": 419,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 145,
+    "longestSpeechRank": 333
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 21,
-    "interrupterRank": 407,
-    "interruptedRank": 318
+    "interrupterRank": 429,
+    "interruptedRank": 336
   },
   "words": {
     "topWords": [
@@ -36,11 +36,11 @@
         "count": 41
       },
       {
-        "word": "menschen",
+        "word": "sicherheit",
         "count": 27
       },
       {
-        "word": "sicherheit",
+        "word": "menschen",
         "count": 27
       },
       {
@@ -66,65 +66,173 @@
       {
         "word": "soldaten",
         "count": 19
+      },
+      {
+        "word": "gehört",
+        "count": 18
       }
     ],
     "signatureWords": [
       {
         "word": "zulagen",
         "count": 6,
-        "ratioParty": 153.9,
-        "ratioBundestag": 189.8
+        "ratioParty": 159.8,
+        "ratioBundestag": 197.1
       },
       {
         "word": "wegschauen",
         "count": 5,
-        "ratioParty": 128.2,
-        "ratioBundestag": 60.8
+        "ratioParty": 114.1,
+        "ratioBundestag": 61.6
       },
       {
         "word": "familienpolitik",
         "count": 8,
-        "ratioParty": 58.6,
-        "ratioBundestag": 53.5
+        "ratioParty": 58.1,
+        "ratioBundestag": 54.0
       },
       {
         "word": "lehrkräfte",
         "count": 7,
-        "ratioParty": 44.9,
-        "ratioBundestag": 36.5
+        "ratioParty": 46.6,
+        "ratioBundestag": 37.9
       },
       {
         "word": "präsenz",
         "count": 5,
-        "ratioParty": 40.5,
-        "ratioBundestag": 26.4
+        "ratioParty": 39.9,
+        "ratioBundestag": 27.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "familienpolitik",
+        "count": 8,
+        "score": 32.63,
+        "ratio": 58.1
+      },
+      {
+        "word": "zulagen",
+        "count": 6,
+        "score": 30.48,
+        "ratio": 159.8
+      },
+      {
+        "word": "lehrkräfte",
+        "count": 7,
+        "score": 27.04,
+        "ratio": 46.6
+      },
+      {
+        "word": "wegschauen",
+        "count": 5,
+        "score": 23.73,
+        "ratio": 114.1
+      },
+      {
+        "word": "präsenz",
+        "count": 5,
+        "score": 18.56,
+        "ratio": 39.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "familienpolitik",
+        "count": 8,
+        "score": 32.06,
+        "ratio": 54.0
+      },
+      {
+        "word": "zulagen",
+        "count": 6,
+        "score": 31.73,
+        "ratio": 197.1
+      },
+      {
+        "word": "lehrkräfte",
+        "count": 7,
+        "score": 25.63,
+        "ratio": 37.9
+      },
+      {
+        "word": "wegschauen",
+        "count": 5,
+        "score": 20.68,
+        "ratio": 61.6
+      },
+      {
+        "word": "präsenz",
+        "count": 5,
+        "score": 16.68,
+        "ratio": 27.1
       }
     ],
     "signatureAdjectives": [
       {
         "word": "verlässlich",
         "count": 3,
-        "ratioParty": 6.1,
-        "ratioBundestag": 6.4
+        "ratioParty": 5.9,
+        "ratioBundestag": 6.3
       },
       {
         "word": "gerecht",
         "count": 5,
         "ratioParty": 4.0,
-        "ratioBundestag": 3.6
+        "ratioBundestag": 3.7
       },
       {
         "word": "falsch",
         "count": 4,
-        "ratioParty": 2.8,
+        "ratioParty": 2.7,
         "ratioBundestag": 2.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 5,
+        "score": 8.05,
+        "ratio": 4.0
+      },
+      {
+        "word": "verlässlich",
+        "count": 3,
+        "score": 5.79,
+        "ratio": 5.9
+      },
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 5.23,
+        "ratio": 2.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "gerecht",
+        "count": 5,
+        "score": 7.74,
+        "ratio": 3.7
+      },
+      {
+        "word": "verlässlich",
+        "count": 3,
+        "score": 5.96,
+        "ratio": 6.3
+      },
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 5.23,
+        "ratio": 2.7
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 375,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.58,
     "vsParliament": 0.64
   },
@@ -144,24 +252,24 @@
     "question": "Welches Wort nutzt Ralph Edelhäußer häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Ausschuss",
+        "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
         "text": "Zulagen",
         "isCorrect": true
-      },
-      {
-        "text": "Freiheit",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Zulagen\" nutzt Ralph Edelhäußer 153.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "189.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Zulagen\" nutzt Ralph Edelhäußer 159.8× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "197.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Ralph Edelhäußer häufiger als der Rest der CDU/CSU-Fraktion?",
@@ -183,8 +291,8 @@
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verlässlich\" nutzt Ralph Edelhäußer 6.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "6.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Verlässlich\" nutzt Ralph Edelhäußer 5.9× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "6.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -280,29 +388,29 @@
     "topicWords": {
       "migration": [
         {
-          "word": "staatsangehörigkeit",
-          "count": 1
-        },
-        {
-          "word": "grenze",
-          "count": 1
-        },
-        {
           "word": "integration",
           "count": 1
         },
         {
           "word": "mittelmeer",
           "count": 1
+        },
+        {
+          "word": "staatsangehörigkeit",
+          "count": 1
+        },
+        {
+          "word": "grenze",
+          "count": 1
         }
       ],
       "klima": [
         {
-          "word": "umweltschutz",
+          "word": "erdöl",
           "count": 1
         },
         {
-          "word": "erdöl",
+          "word": "umweltschutz",
           "count": 1
         }
       ],
@@ -316,11 +424,11 @@
           "count": 2
         },
         {
-          "word": "wirtschaft",
+          "word": "unternehmen",
           "count": 1
         },
         {
-          "word": "unternehmen",
+          "word": "wirtschaft",
           "count": 1
         }
       ],
@@ -378,15 +486,15 @@
           "count": 2
         },
         {
-          "word": "krankenhaus",
-          "count": 1
-        },
-        {
-          "word": "prävention",
-          "count": 1
-        },
-        {
           "word": "pflege",
+          "count": 1
+        },
+        {
+          "word": "pflegeheim",
+          "count": 1
+        },
+        {
+          "word": "krankenhaus",
           "count": 1
         }
       ],
@@ -408,7 +516,7 @@
           "count": 3
         },
         {
-          "word": "kooperation",
+          "word": "bündnis",
           "count": 2
         }
       ],
@@ -436,7 +544,7 @@
           "count": 4
         },
         {
-          "word": "ausbildung",
+          "word": "unterricht",
           "count": 3
         }
       ],
@@ -446,11 +554,7 @@
           "count": 3
         },
         {
-          "word": "steuern",
-          "count": 1
-        },
-        {
-          "word": "bundeshaushalt",
+          "word": "haushaltsentwurf",
           "count": 1
         },
         {
@@ -458,7 +562,11 @@
           "count": 1
         },
         {
-          "word": "haushaltsentwurf",
+          "word": "steuern",
+          "count": 1
+        },
+        {
+          "word": "bundeshaushalt",
           "count": 1
         }
       ],
@@ -468,19 +576,19 @@
           "count": 3
         },
         {
-          "word": "verfassungswidrig",
-          "count": 1
-        },
-        {
-          "word": "diskriminierung",
-          "count": 1
-        },
-        {
-          "word": "beschluss",
-          "count": 1
-        },
-        {
           "word": "gleichberechtigung",
+          "count": 1
+        },
+        {
+          "word": "strafverfolgung",
+          "count": 1
+        },
+        {
+          "word": "rechtsstaat",
+          "count": 1
+        },
+        {
+          "word": "grundrechte",
           "count": 1
         }
       ],

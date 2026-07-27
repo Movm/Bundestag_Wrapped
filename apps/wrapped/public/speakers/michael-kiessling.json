@@ -11,23 +11,23 @@
   "minWords": 34,
   "maxWords": 1047,
   "rankings": {
-    "speechRank": 62,
-    "wordsRank": 61,
-    "partySpeechRank": 17,
+    "speechRank": 75,
+    "wordsRank": 68,
+    "partySpeechRank": 19,
     "partyWordsRank": 23,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 90.1,
-    "verbosityRank": 110,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 39,
-    "longestSpeechRank": 65
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 88.0,
+    "verbosityRank": 116,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 40,
+    "longestSpeechRank": 67
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 58,
     "interrupterRank": null,
-    "interruptedRank": 79
+    "interruptedRank": 87
   },
   "words": {
     "topWords": [
@@ -68,71 +68,199 @@
       {
         "word": "baurecht",
         "count": 22,
-        "ratioParty": 480.5,
-        "ratioBundestag": 463.9
+        "ratioParty": 498.9,
+        "ratioBundestag": 481.7
       },
       {
         "word": "tourismus",
         "count": 63,
-        "ratioParty": 344.0,
-        "ratioBundestag": 202.4
+        "ratioParty": 357.2,
+        "ratioBundestag": 208.2
       },
       {
         "word": "nachverdichtung",
         "count": 5,
-        "ratioParty": 273.0,
-        "ratioBundestag": 281.1
+        "ratioParty": 283.5,
+        "ratioBundestag": 291.9
       },
       {
         "word": "tourismusstrategie",
         "count": 6,
-        "ratioParty": 163.8,
-        "ratioBundestag": 337.4
+        "ratioParty": 170.1,
+        "ratioBundestag": 350.3
       },
       {
         "word": "gastronomen",
         "count": 5,
-        "ratioParty": 136.5,
-        "ratioBundestag": 153.3
+        "ratioParty": 141.7,
+        "ratioBundestag": 159.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "tourismus",
+        "count": 63,
+        "score": 370.51,
+        "ratio": 357.2
+      },
+      {
+        "word": "baurecht",
+        "count": 22,
+        "score": 136.72,
+        "ratio": 498.9
+      },
+      {
+        "word": "tourismusstrategie",
+        "count": 6,
+        "score": 30.85,
+        "ratio": 170.1
+      },
+      {
+        "word": "nachverdichtung",
+        "count": 5,
+        "score": 28.25,
+        "ratio": 283.5
+      },
+      {
+        "word": "gastronomen",
+        "count": 5,
+        "score": 24.8,
+        "ratio": 141.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "tourismus",
+        "count": 63,
+        "score": 336.63,
+        "ratio": 208.2
+      },
+      {
+        "word": "baurecht",
+        "count": 22,
+        "score": 135.95,
+        "ratio": 481.7
+      },
+      {
+        "word": "tourismusstrategie",
+        "count": 6,
+        "score": 35.17,
+        "ratio": 350.3
+      },
+      {
+        "word": "nachverdichtung",
+        "count": 5,
+        "score": 28.4,
+        "ratio": 291.9
+      },
+      {
+        "word": "gastronomen",
+        "count": 5,
+        "score": 25.38,
+        "ratio": 159.2
       }
     ],
     "signatureAdjectives": [
       {
         "word": "wesentlich",
         "count": 3,
-        "ratioParty": 5.6,
-        "ratioBundestag": 7.4
+        "ratioParty": 5.4,
+        "ratioBundestag": 7.3
       },
       {
         "word": "wettbewerbsfähig",
         "count": 3,
         "ratioParty": 4.2,
-        "ratioBundestag": 7.3
+        "ratioBundestag": 7.4
       },
       {
         "word": "links",
         "count": 3,
-        "ratioParty": 2.6,
+        "ratioParty": 2.5,
         "ratioBundestag": 1.9
-      },
-      {
-        "word": "rechts",
-        "count": 3,
-        "ratioParty": 2.1,
-        "ratioBundestag": 2.0
       },
       {
         "word": "wirtschaftlich",
         "count": 3,
         "ratioParty": 2.1,
         "ratioBundestag": 2.4
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "ratioParty": 2.1,
+        "ratioBundestag": 2.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wesentlich",
+        "count": 3,
+        "score": 5.57,
+        "ratio": 5.4
+      },
+      {
+        "word": "wettbewerbsfähig",
+        "count": 3,
+        "score": 4.95,
+        "ratio": 4.2
+      },
+      {
+        "word": "links",
+        "count": 3,
+        "score": 3.76,
+        "ratio": 2.5
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 3.39,
+        "ratio": 2.1
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 3.39,
+        "ratio": 2.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "wettbewerbsfähig",
+        "count": 3,
+        "score": 6.38,
+        "ratio": 7.4
+      },
+      {
+        "word": "wesentlich",
+        "count": 3,
+        "score": 6.35,
+        "ratio": 7.3
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 3.67,
+        "ratio": 2.4
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 3.3,
+        "ratio": 2.0
+      },
+      {
+        "word": "links",
+        "count": 3,
+        "score": 3.19,
+        "ratio": 1.9
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 533,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.83,
     "vsParliament": 0.91
   },
@@ -146,58 +274,53 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "13.861"
-    },
-    {
-      "emoji": "📊",
-      "label": "Top-Redner",
-      "value": "Top 10%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Michael Kießling häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
         "text": "Baurecht",
         "isCorrect": true
+      },
+      {
+        "text": "Koalition",
+        "isCorrect": false
       },
       {
         "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Rente",
+        "text": "Kanzler",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Baurecht\" nutzt Michael Kießling 480.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "463.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Baurecht\" nutzt Michael Kießling 498.9× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "481.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Michael Kießling häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
         "text": "Wesentlich",
         "isCorrect": true
+      },
+      {
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wesentlich\" nutzt Michael Kießling 5.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "7.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wesentlich\" nutzt Michael Kießling 5.4× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "7.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -349,7 +472,7 @@
           "count": 4
         },
         {
-          "word": "markt",
+          "word": "marktwirtschaft",
           "count": 3
         }
       ],
@@ -409,15 +532,15 @@
           "count": 2
         },
         {
+          "word": "digitalisierung",
+          "count": 1
+        },
+        {
           "word": "internet",
           "count": 1
         },
         {
           "word": "daten",
-          "count": 1
-        },
-        {
-          "word": "digitalisierung",
           "count": 1
         },
         {
@@ -431,15 +554,15 @@
           "count": 4
         },
         {
+          "word": "kindergarten",
+          "count": 1
+        },
+        {
           "word": "studenten",
           "count": 1
         },
         {
           "word": "schule",
-          "count": 1
-        },
-        {
-          "word": "kindergarten",
           "count": 1
         }
       ],
@@ -461,7 +584,7 @@
           "count": 6
         },
         {
-          "word": "steuersenkung",
+          "word": "sondervermögen",
           "count": 2
         }
       ],
@@ -471,11 +594,11 @@
           "count": 2
         },
         {
-          "word": "verordnung",
+          "word": "gesetzgebung",
           "count": 2
         },
         {
-          "word": "gesetzgebung",
+          "word": "verordnung",
           "count": 2
         },
         {
@@ -483,7 +606,7 @@
           "count": 1
         },
         {
-          "word": "gesetzesänderung",
+          "word": "beschluss",
           "count": 1
         }
       ],
@@ -515,11 +638,11 @@
           "count": 4
         },
         {
-          "word": "bahn",
+          "word": "auto",
           "count": 2
         },
         {
-          "word": "auto",
+          "word": "bahn",
           "count": 2
         }
       ]

@@ -11,23 +11,23 @@
   "minWords": 27,
   "maxWords": 511,
   "rankings": {
-    "speechRank": 382,
-    "wordsRank": 479,
-    "partySpeechRank": 65,
+    "speechRank": 397,
+    "wordsRank": 487,
+    "partySpeechRank": 67,
     "partyWordsRank": 75,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 38.9,
-    "verbosityRank": 514,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 36.6,
+    "verbosityRank": 519,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 70,
-    "longestSpeechRank": 568
+    "longestSpeechRank": 571
   },
   "drama": {
     "interruptionsGiven": 37,
     "interruptionsReceived": 12,
-    "interrupterRank": 142,
-    "interruptedRank": 426
+    "interrupterRank": 144,
+    "interruptedRank": 440
   },
   "words": {
     "topWords": [
@@ -40,16 +40,24 @@
         "count": 15
       },
       {
-        "word": "bauen",
+        "word": "ministerin",
         "count": 11
       },
       {
-        "word": "ministerin",
+        "word": "bauen",
         "count": 11
       },
       {
         "word": "klar",
         "count": 9
+      },
+      {
+        "word": "stehen",
+        "count": 8
+      },
+      {
+        "word": "simson",
+        "count": 8
       },
       {
         "word": "probleme",
@@ -58,50 +66,112 @@
       {
         "word": "wohnraum",
         "count": 8
-      },
-      {
-        "word": "stehen",
-        "count": 8
       }
     ],
     "signatureWords": [
       {
-        "word": "gebäudeenergiegesetz",
-        "count": 7,
-        "ratioParty": 58.5,
-        "ratioBundestag": 124.1
-      },
-      {
         "word": "bauturbo",
         "count": 5,
-        "ratioParty": 54.0,
-        "ratioBundestag": 24.0
+        "ratioParty": 55.9,
+        "ratioBundestag": 24.7
+      },
+      {
+        "word": "gebäudeenergiegesetz",
+        "count": 7,
+        "ratioParty": 55.5,
+        "ratioBundestag": 114.5
       },
       {
         "word": "bezahlbaren",
         "count": 7,
-        "ratioParty": 51.4,
-        "ratioBundestag": 69.3
+        "ratioParty": 53.2,
+        "ratioBundestag": 70.3
       },
       {
         "word": "ostdeutschland",
         "count": 5,
-        "ratioParty": 51.0,
-        "ratioBundestag": 58.5
+        "ratioParty": 43.2,
+        "ratioBundestag": 55.7
       },
       {
         "word": "simson",
         "count": 8,
         "ratioParty": 35.4,
-        "ratioBundestag": 680.6
+        "ratioBundestag": 706.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "simson",
+        "count": 8,
+        "score": 28.76,
+        "ratio": 35.4
+      },
+      {
+        "word": "gebäudeenergiegesetz",
+        "count": 7,
+        "score": 28.24,
+        "ratio": 55.5
+      },
+      {
+        "word": "bezahlbaren",
+        "count": 7,
+        "score": 27.95,
+        "ratio": 53.2
+      },
+      {
+        "word": "bauturbo",
+        "count": 5,
+        "score": 20.21,
+        "ratio": 55.9
+      },
+      {
+        "word": "ostdeutschland",
+        "count": 5,
+        "score": 18.94,
+        "ratio": 43.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "simson",
+        "count": 8,
+        "score": 52.5,
+        "ratio": 706.7
+      },
+      {
+        "word": "gebäudeenergiegesetz",
+        "count": 7,
+        "score": 33.24,
+        "ratio": 114.5
+      },
+      {
+        "word": "bezahlbaren",
+        "count": 7,
+        "score": 29.87,
+        "ratio": 70.3
+      },
+      {
+        "word": "ostdeutschland",
+        "count": 5,
+        "score": 20.19,
+        "ratio": 55.7
+      },
+      {
+        "word": "bauturbo",
+        "count": 5,
+        "score": 16.23,
+        "ratio": 24.7
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 290,
     "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 585,
     "vsParty": 0.54,
     "vsParliament": 0.5
   },
@@ -126,24 +196,24 @@
     "question": "Welches Wort nutzt Kassem Taher Saleh häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gebäudeenergiegesetz",
+        "text": "Bauturbo",
         "isCorrect": true
       },
       {
-        "text": "Familie",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
-        "text": "Migration",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Fraktion",
+        "text": "Zukunft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gebäudeenergiegesetz\" nutzt Kassem Taher Saleh 58.5× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "124.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bauturbo\" nutzt Kassem Taher Saleh 55.9× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "24.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -254,7 +324,7 @@
           "count": 2
         },
         {
-          "word": "klimaneutral",
+          "word": "emissionen",
           "count": 1
         },
         {
@@ -262,7 +332,7 @@
           "count": 1
         },
         {
-          "word": "emissionen",
+          "word": "klimakrise",
           "count": 1
         }
       ],
@@ -276,7 +346,7 @@
           "count": 2
         },
         {
-          "word": "mittelstand",
+          "word": "industrie",
           "count": 1
         },
         {
@@ -284,7 +354,7 @@
           "count": 1
         },
         {
-          "word": "industrie",
+          "word": "unternehmen",
           "count": 1
         }
       ],
@@ -306,7 +376,7 @@
           "count": 2
         },
         {
-          "word": "wohnung",
+          "word": "jugendliche",
           "count": 1
         }
       ],
@@ -350,15 +420,15 @@
           "count": 2
         },
         {
-          "word": "kosten",
-          "count": 1
-        },
-        {
-          "word": "entlastung",
-          "count": 1
-        },
-        {
           "word": "etat",
+          "count": 1
+        },
+        {
+          "word": "sondervermögen",
+          "count": 1
+        },
+        {
+          "word": "kosten",
           "count": 1
         }
       ],

@@ -11,23 +11,23 @@
   "minWords": 31,
   "maxWords": 515,
   "rankings": {
-    "speechRank": 311,
-    "wordsRank": 307,
-    "partySpeechRank": 55,
-    "partyWordsRank": 52,
+    "speechRank": 333,
+    "wordsRank": 319,
+    "partySpeechRank": 59,
+    "partyWordsRank": 53,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 50.2,
-    "verbosityRank": 485,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 46.8,
+    "verbosityRank": 489,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 59,
-    "longestSpeechRank": 567
+    "longestSpeechRank": 569
   },
   "drama": {
     "interruptionsGiven": 38,
     "interruptionsReceived": 21,
-    "interrupterRank": 137,
-    "interruptedRank": 317
+    "interrupterRank": 140,
+    "interruptedRank": 335
   },
   "words": {
     "topWords": [
@@ -62,53 +62,141 @@
       {
         "word": "familien",
         "count": 12
+      },
+      {
+        "word": "eltern",
+        "count": 12
+      },
+      {
+        "word": "ministerin",
+        "count": 12
       }
     ],
     "signatureWords": [
       {
         "word": "ganztag",
         "count": 19,
-        "ratioParty": 1939.7,
-        "ratioBundestag": 281.7
+        "ratioParty": 2007.9,
+        "ratioBundestag": 292.5
       },
       {
         "word": "digitalpakt",
         "count": 6,
-        "ratioParty": 612.5,
-        "ratioBundestag": 129.4
+        "ratioParty": 634.1,
+        "ratioBundestag": 134.4
       },
       {
         "word": "ferien",
         "count": 10,
-        "ratioParty": 510.4,
-        "ratioBundestag": 154.7
+        "ratioParty": 528.4,
+        "ratioBundestag": 160.7
       },
       {
         "word": "lehrkräfte",
         "count": 12,
-        "ratioParty": 306.3,
-        "ratioBundestag": 99.3
+        "ratioParty": 317.0,
+        "ratioBundestag": 103.1
       },
       {
         "word": "jugendarbeit",
         "count": 6,
-        "ratioParty": 306.3,
-        "ratioBundestag": 80.6
+        "ratioParty": 317.0,
+        "ratioBundestag": 82.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "ganztag",
+        "count": 19,
+        "score": 144.5,
+        "ratio": 2007.9
+      },
+      {
+        "word": "lehrkräfte",
+        "count": 12,
+        "score": 69.14,
+        "ratio": 317.0
+      },
+      {
+        "word": "ferien",
+        "count": 10,
+        "score": 62.72,
+        "ratio": 528.4
+      },
+      {
+        "word": "digitalpakt",
+        "count": 6,
+        "score": 38.72,
+        "ratio": 634.1
+      },
+      {
+        "word": "jugendarbeit",
+        "count": 6,
+        "score": 34.57,
+        "ratio": 317.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "ganztag",
+        "count": 19,
+        "score": 107.96,
+        "ratio": 292.5
+      },
+      {
+        "word": "lehrkräfte",
+        "count": 12,
+        "score": 55.74,
+        "ratio": 103.1
+      },
+      {
+        "word": "ferien",
+        "count": 10,
+        "score": 50.86,
+        "ratio": 160.7
+      },
+      {
+        "word": "digitalpakt",
+        "count": 6,
+        "score": 29.45,
+        "ratio": 134.4
+      },
+      {
+        "word": "jugendarbeit",
+        "count": 6,
+        "score": 26.52,
+        "ratio": 82.1
       }
     ],
     "signatureAdjectives": [
       {
         "word": "sicher",
         "count": 4,
-        "ratioParty": 2.5,
-        "ratioBundestag": 2.3
+        "ratioParty": 2.6,
+        "ratioBundestag": 2.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 5.12,
+        "ratio": 2.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 4.9,
+        "ratio": 2.4
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 325,
     "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 585,
     "vsParty": 0.6,
     "vsParliament": 0.56
   },
@@ -133,7 +221,11 @@
     "question": "Welches Wort nutzt Dr. Anja Reinalter häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Antrag",
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
@@ -141,39 +233,35 @@
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
+        "text": "Antrag",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ganztag\" nutzt Dr. Anja Reinalter 1939.7× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "281.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Ganztag\" nutzt Dr. Anja Reinalter 2007.9× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "292.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Anja Reinalter häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
         "text": "Sicher",
         "isCorrect": true
+      },
+      {
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sicher\" nutzt Dr. Anja Reinalter 2.5× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "2.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Sicher\" nutzt Dr. Anja Reinalter 2.6× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "2.4× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -297,11 +385,11 @@
           "count": 2
         },
         {
-          "word": "volkswirtschaft",
+          "word": "fachkräftemangel",
           "count": 1
         },
         {
-          "word": "fachkräftemangel",
+          "word": "volkswirtschaft",
           "count": 1
         }
       ],
@@ -333,11 +421,11 @@
           "count": 5
         },
         {
-          "word": "polizei",
+          "word": "gewalt",
           "count": 2
         },
         {
-          "word": "gewalt",
+          "word": "polizei",
           "count": 2
         },
         {
@@ -355,11 +443,11 @@
           "count": 1
         },
         {
-          "word": "pandemie",
+          "word": "psychisch",
           "count": 1
         },
         {
-          "word": "psychisch",
+          "word": "pandemie",
           "count": 1
         }
       ],
@@ -405,7 +493,7 @@
           "count": 6
         },
         {
-          "word": "schüler",
+          "word": "weiterbildung",
           "count": 4
         }
       ],
@@ -415,11 +503,11 @@
           "count": 11
         },
         {
-          "word": "haushalt",
+          "word": "investitionen",
           "count": 4
         },
         {
-          "word": "investitionen",
+          "word": "haushalt",
           "count": 4
         },
         {
@@ -427,7 +515,7 @@
           "count": 3
         },
         {
-          "word": "investition",
+          "word": "finanzminister",
           "count": 1
         }
       ],
@@ -437,11 +525,11 @@
           "count": 2
         },
         {
-          "word": "verfassung",
+          "word": "urteil",
           "count": 1
         },
         {
-          "word": "urteil",
+          "word": "verfassung",
           "count": 1
         }
       ],
@@ -451,15 +539,15 @@
           "count": 3
         },
         {
+          "word": "vollzeit",
+          "count": 1
+        },
+        {
           "word": "teilzeit",
           "count": 1
         },
         {
           "word": "lohn",
-          "count": 1
-        },
-        {
-          "word": "vollzeit",
           "count": 1
         }
       ],

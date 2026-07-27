@@ -11,23 +11,23 @@
   "minWords": 89,
   "maxWords": 937,
   "rankings": {
-    "speechRank": 497,
-    "wordsRank": 474,
-    "partySpeechRank": 123,
-    "partyWordsRank": 108,
+    "speechRank": 477,
+    "wordsRank": 480,
+    "partySpeechRank": 112,
+    "partyWordsRank": 109,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 20.5,
+    "totalSpeakers": 626,
+    "percentile": 23.8,
     "verbosityRank": 150,
-    "verbosityTotal": 579,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 38,
-    "longestSpeechRank": 114
+    "longestSpeechRank": 111
   },
   "drama": {
-    "interruptionsGiven": 43,
+    "interruptionsGiven": 44,
     "interruptionsReceived": 18,
-    "interrupterRank": 122,
-    "interruptedRank": 351
+    "interrupterRank": 124,
+    "interruptedRank": 357
   },
   "words": {
     "topWords": [
@@ -40,10 +40,6 @@
         "count": 10
       },
       {
-        "word": "europa",
-        "count": 8
-      },
-      {
         "word": "deutschen",
         "count": 8
       },
@@ -52,8 +48,8 @@
         "count": 8
       },
       {
-        "word": "jahren",
-        "count": 7
+        "word": "europa",
+        "count": 8
       },
       {
         "word": "land",
@@ -68,6 +64,10 @@
         "count": 7
       },
       {
+        "word": "jahren",
+        "count": 7
+      },
+      {
         "word": "habe",
         "count": 7
       }
@@ -76,42 +76,108 @@
       {
         "word": "helmut",
         "count": 6,
-        "ratioParty": 41.9,
-        "ratioBundestag": 94.0
+        "ratioParty": 43.4,
+        "ratioBundestag": 90.6
       },
       {
         "word": "schmidt",
         "count": 5,
-        "ratioParty": 26.2,
-        "ratioBundestag": 44.6
+        "ratioParty": 26.6,
+        "ratioBundestag": 42.8
       },
       {
         "word": "syrien",
         "count": 6,
-        "ratioParty": 17.4,
-        "ratioBundestag": 23.1
+        "ratioParty": 17.8,
+        "ratioBundestag": 23.9
       },
       {
         "word": "damals",
         "count": 10,
-        "ratioParty": 13.3,
-        "ratioBundestag": 13.6
+        "ratioParty": 13.4,
+        "ratioBundestag": 13.7
       },
       {
         "word": "russland",
         "count": 8,
-        "ratioParty": 11.5,
-        "ratioBundestag": 9.4
+        "ratioParty": 11.8,
+        "ratioBundestag": 9.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "damals",
+        "count": 10,
+        "score": 26.67,
+        "ratio": 13.4
+      },
+      {
+        "word": "helmut",
+        "count": 6,
+        "score": 22.76,
+        "ratio": 43.4
+      },
+      {
+        "word": "russland",
+        "count": 8,
+        "score": 20.4,
+        "ratio": 11.8
+      },
+      {
+        "word": "syrien",
+        "count": 6,
+        "score": 17.6,
+        "ratio": 17.8
+      },
+      {
+        "word": "schmidt",
+        "count": 5,
+        "score": 16.59,
+        "ratio": 26.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "helmut",
+        "count": 6,
+        "score": 27.1,
+        "ratio": 90.6
+      },
+      {
+        "word": "damals",
+        "count": 10,
+        "score": 26.88,
+        "ratio": 13.7
+      },
+      {
+        "word": "syrien",
+        "count": 6,
+        "score": 19.29,
+        "ratio": 23.9
+      },
+      {
+        "word": "schmidt",
+        "count": 5,
+        "score": 18.9,
+        "ratio": 42.8
+      },
+      {
+        "word": "russland",
+        "count": 8,
+        "score": 18.81,
+        "ratio": 9.5
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 506,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.91,
-    "vsParliament": 0.87
+    "vsParliament": 0.86
   },
   "funFacts": [
     {
@@ -127,14 +193,14 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "43"
+      "value": "44"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Udo Theodor Hemmelgarn häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kinder",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
@@ -142,16 +208,16 @@
         "isCorrect": true
       },
       {
-        "text": "Ausschuss",
+        "text": "Sicherheit",
         "isCorrect": false
       },
       {
-        "text": "Arbeit",
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Helmut\" nutzt Udo Theodor Hemmelgarn 41.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "94.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Helmut\" nutzt Udo Theodor Hemmelgarn 43.4× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "90.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -272,11 +338,11 @@
           "count": 2
         },
         {
-          "word": "streitkräfte",
+          "word": "anschlag",
           "count": 1
         },
         {
-          "word": "anschlag",
+          "word": "täter",
           "count": 1
         }
       ],
@@ -296,19 +362,19 @@
       ],
       "europa": [
         {
-          "word": "europa",
-          "count": 8
-        },
-        {
           "word": "russland",
           "count": 8
         },
         {
-          "word": "nato",
-          "count": 3
+          "word": "europa",
+          "count": 8
         },
         {
           "word": "moskau",
+          "count": 3
+        },
+        {
+          "word": "nato",
           "count": 3
         },
         {

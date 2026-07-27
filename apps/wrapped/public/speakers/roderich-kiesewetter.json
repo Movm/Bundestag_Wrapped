@@ -11,23 +11,23 @@
   "minWords": 14,
   "maxWords": 670,
   "rankings": {
-    "speechRank": 423,
-    "wordsRank": 436,
-    "partySpeechRank": 123,
-    "partyWordsRank": 137,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 32.3,
-    "verbosityRank": 129,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 45,
-    "longestSpeechRank": 409
+    "speechRank": 437,
+    "wordsRank": 444,
+    "partySpeechRank": 129,
+    "partyWordsRank": 141,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 30.2,
+    "verbosityRank": 130,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 48,
+    "longestSpeechRank": 415
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 3,
-    "interrupterRank": 420,
-    "interruptedRank": 567
+    "interrupterRank": 412,
+    "interruptedRank": 571
   },
   "words": {
     "topWords": [
@@ -56,19 +56,19 @@
         "count": 11
       },
       {
-        "word": "jahren",
-        "count": 9
-      },
-      {
-        "word": "irak",
-        "count": 9
-      },
-      {
         "word": "gehört",
         "count": 9
       },
       {
+        "word": "jahren",
+        "count": 9
+      },
+      {
         "word": "sinne",
+        "count": 9
+      },
+      {
+        "word": "israel",
         "count": 9
       }
     ],
@@ -76,32 +76,96 @@
       {
         "word": "kurden",
         "count": 7,
-        "ratioParty": 478.9,
-        "ratioBundestag": 254.0
+        "ratioParty": 497.1,
+        "ratioBundestag": 263.7
       },
       {
         "word": "begreifen",
         "count": 5,
-        "ratioParty": 90.0,
-        "ratioBundestag": 68.3
+        "ratioParty": 88.8,
+        "ratioBundestag": 69.2
       },
       {
         "word": "schiffe",
         "count": 7,
-        "ratioParty": 82.6,
-        "ratioBundestag": 61.4
+        "ratioParty": 82.8,
+        "ratioBundestag": 63.2
       },
       {
         "word": "hisbollah",
         "count": 15,
-        "ratioParty": 72.3,
-        "ratioBundestag": 90.2
+        "ratioParty": 75.0,
+        "ratioBundestag": 93.7
       },
       {
         "word": "schattenflotte",
         "count": 5,
-        "ratioParty": 63.3,
-        "ratioBundestag": 72.1
+        "ratioParty": 63.4,
+        "ratioBundestag": 72.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "hisbollah",
+        "count": 15,
+        "score": 64.96,
+        "ratio": 75.0
+      },
+      {
+        "word": "kurden",
+        "count": 7,
+        "score": 43.48,
+        "ratio": 497.1
+      },
+      {
+        "word": "schiffe",
+        "count": 7,
+        "score": 31.0,
+        "ratio": 82.8
+      },
+      {
+        "word": "begreifen",
+        "count": 5,
+        "score": 22.49,
+        "ratio": 88.8
+      },
+      {
+        "word": "schattenflotte",
+        "count": 5,
+        "score": 20.83,
+        "ratio": 63.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "hisbollah",
+        "count": 15,
+        "score": 68.26,
+        "ratio": 93.7
+      },
+      {
+        "word": "kurden",
+        "count": 7,
+        "score": 39.05,
+        "ratio": 263.7
+      },
+      {
+        "word": "schiffe",
+        "count": 7,
+        "score": 29.13,
+        "ratio": 63.2
+      },
+      {
+        "word": "schattenflotte",
+        "count": 5,
+        "score": 21.51,
+        "ratio": 72.8
+      },
+      {
+        "word": "begreifen",
+        "count": 5,
+        "score": 21.26,
+        "ratio": 69.2
       }
     ],
     "signatureAdjectives": [
@@ -109,14 +173,30 @@
         "word": "wirksam",
         "count": 3,
         "ratioParty": 8.3,
-        "ratioBundestag": 11.2
+        "ratioBundestag": 11.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 6.69,
+        "ratio": 8.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 7.53,
+        "ratio": 11.3
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 522,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.81,
     "vsParliament": 0.89
   },
@@ -136,47 +216,47 @@
     "question": "Welches Wort nutzt Roderich Kiesewetter häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Debatte",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
         "text": "Kurden",
         "isCorrect": true
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kurden\" nutzt Roderich Kiesewetter 478.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "254.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Kurden\" nutzt Roderich Kiesewetter 497.1× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "263.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Roderich Kiesewetter häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "National",
+        "text": "Sicher",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
         "isCorrect": false
       },
       {
         "text": "Wirksam",
         "isCorrect": true
-      },
-      {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Wirksam\" nutzt Roderich Kiesewetter 8.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "11.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "11.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐝",

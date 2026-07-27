@@ -11,23 +11,23 @@
   "minWords": 406,
   "maxWords": 965,
   "rankings": {
-    "speechRank": 481,
-    "wordsRank": 443,
-    "partySpeechRank": 117,
-    "partyWordsRank": 97,
+    "speechRank": 488,
+    "wordsRank": 450,
+    "partySpeechRank": 119,
+    "partyWordsRank": 99,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 23.0,
-    "verbosityRank": 22,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 22.0,
+    "verbosityRank": 24,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 8,
     "longestSpeechRank": 95
   },
   "drama": {
     "interruptionsGiven": 27,
     "interruptionsReceived": 5,
-    "interrupterRank": 180,
-    "interruptedRank": 548
+    "interrupterRank": 182,
+    "interruptedRank": 543
   },
   "words": {
     "topWords": [
@@ -52,7 +52,7 @@
         "count": 12
       },
       {
-        "word": "verantwortung",
+        "word": "jahre",
         "count": 11
       },
       {
@@ -60,7 +60,7 @@
         "count": 11
       },
       {
-        "word": "jahre",
+        "word": "verantwortung",
         "count": 11
       },
       {
@@ -76,40 +76,106 @@
       {
         "word": "wehrbeauftragten",
         "count": 5,
-        "ratioParty": 388.8,
-        "ratioBundestag": 169.0
+        "ratioParty": 403.1,
+        "ratioBundestag": 175.5
       },
       {
         "word": "verlässlichkeit",
         "count": 5,
-        "ratioParty": 61.4,
-        "ratioBundestag": 14.8
+        "ratioParty": 60.5,
+        "ratioBundestag": 14.9
       },
       {
         "word": "soldat",
         "count": 6,
-        "ratioParty": 50.0,
-        "ratioBundestag": 133.7
+        "ratioParty": 51.8,
+        "ratioBundestag": 138.9
       },
       {
         "word": "soldaten",
         "count": 42,
-        "ratioParty": 45.2,
-        "ratioBundestag": 47.5
+        "ratioParty": 46.8,
+        "ratioBundestag": 49.3
       },
       {
         "word": "kameraden",
         "count": 6,
-        "ratioParty": 45.2,
-        "ratioBundestag": 101.4
+        "ratioParty": 46.8,
+        "ratioBundestag": 105.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "soldaten",
+        "count": 42,
+        "score": 162.42,
+        "ratio": 46.8
+      },
+      {
+        "word": "wehrbeauftragten",
+        "count": 5,
+        "score": 30.01,
+        "ratio": 403.1
+      },
+      {
+        "word": "soldat",
+        "count": 6,
+        "score": 23.8,
+        "ratio": 51.8
+      },
+      {
+        "word": "kameraden",
+        "count": 6,
+        "score": 23.2,
+        "ratio": 46.8
+      },
+      {
+        "word": "verlässlichkeit",
+        "count": 5,
+        "score": 20.6,
+        "ratio": 60.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "soldaten",
+        "count": 42,
+        "score": 164.56,
+        "ratio": 49.3
+      },
+      {
+        "word": "soldat",
+        "count": 6,
+        "score": 29.65,
+        "ratio": 138.9
+      },
+      {
+        "word": "kameraden",
+        "count": 6,
+        "score": 28.0,
+        "ratio": 105.3
+      },
+      {
+        "word": "wehrbeauftragten",
+        "count": 5,
+        "score": 25.87,
+        "ratio": 175.5
+      },
+      {
+        "word": "verlässlichkeit",
+        "count": 5,
+        "score": 13.83,
+        "ratio": 14.9
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 684,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 1.23,
     "vsParliament": 1.17
   },
@@ -138,20 +204,20 @@
         "isCorrect": true
       },
       {
-        "text": "Debatte",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
+        "text": "Politik",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wehrbeauftragten\" nutzt Hannes Gnauck 388.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "169.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wehrbeauftragten\" nutzt Hannes Gnauck 403.1× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "175.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -296,11 +362,11 @@
           "count": 2
         },
         {
-          "word": "waffenlieferungen",
+          "word": "krieg",
           "count": 1
         },
         {
-          "word": "ukraine",
+          "word": "waffenlieferungen",
           "count": 1
         }
       ],
@@ -346,11 +412,11 @@
           "count": 3
         },
         {
-          "word": "auto",
+          "word": "straßen",
           "count": 1
         },
         {
-          "word": "straßen",
+          "word": "auto",
           "count": 1
         },
         {

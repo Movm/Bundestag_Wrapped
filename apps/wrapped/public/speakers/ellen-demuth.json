@@ -11,23 +11,23 @@
   "minWords": 21,
   "maxWords": 654,
   "rankings": {
-    "speechRank": 212,
-    "wordsRank": 268,
-    "partySpeechRank": 50,
-    "partyWordsRank": 77,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 66.1,
-    "verbosityRank": 319,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 111,
-    "longestSpeechRank": 429
+    "speechRank": 204,
+    "wordsRank": 282,
+    "partySpeechRank": 49,
+    "partyWordsRank": 80,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 67.4,
+    "verbosityRank": 320,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 113,
+    "longestSpeechRank": 432
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 24,
     "interrupterRank": null,
-    "interruptedRank": 292
+    "interruptedRank": 305
   },
   "words": {
     "topWords": [
@@ -54,59 +54,155 @@
       {
         "word": "jahren",
         "count": 12
+      },
+      {
+        "word": "warum",
+        "count": 12
       }
     ],
     "signatureWords": [
       {
         "word": "jesidinnen",
         "count": 7,
-        "ratioParty": 1493.8,
-        "ratioBundestag": 209.1
+        "ratioParty": 1550.7,
+        "ratioBundestag": 217.1
       },
       {
         "word": "ministerinnen",
         "count": 6,
-        "ratioParty": 160.0,
-        "ratioBundestag": 112.7
+        "ratioParty": 166.1,
+        "ratioBundestag": 117.0
       },
       {
         "word": "jesiden",
         "count": 7,
-        "ratioParty": 135.8,
-        "ratioBundestag": 80.7
+        "ratioParty": 141.0,
+        "ratioBundestag": 83.8
       },
       {
         "word": "sprachen",
         "count": 6,
-        "ratioParty": 128.0,
-        "ratioBundestag": 61.6
+        "ratioParty": 132.9,
+        "ratioBundestag": 63.0
       },
       {
         "word": "resolution",
         "count": 6,
-        "ratioParty": 80.0,
-        "ratioBundestag": 61.6
+        "ratioParty": 83.1,
+        "ratioBundestag": 64.0
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "jesidinnen",
+        "count": 7,
+        "score": 51.43,
+        "ratio": 1550.7
+      },
+      {
+        "word": "jesiden",
+        "count": 7,
+        "score": 34.69,
+        "ratio": 141.0
+      },
+      {
+        "word": "ministerinnen",
+        "count": 6,
+        "score": 30.71,
+        "ratio": 166.1
+      },
+      {
+        "word": "sprachen",
+        "count": 6,
+        "score": 29.38,
+        "ratio": 132.9
+      },
+      {
+        "word": "resolution",
+        "count": 6,
+        "score": 26.59,
+        "ratio": 83.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "jesidinnen",
+        "count": 7,
+        "score": 37.69,
+        "ratio": 217.1
+      },
+      {
+        "word": "jesiden",
+        "count": 7,
+        "score": 31.08,
+        "ratio": 83.8
+      },
+      {
+        "word": "ministerinnen",
+        "count": 6,
+        "score": 28.62,
+        "ratio": 117.0
+      },
+      {
+        "word": "resolution",
+        "count": 6,
+        "score": 25.05,
+        "ratio": 64.0
+      },
+      {
+        "word": "sprachen",
+        "count": 6,
+        "score": 24.95,
+        "ratio": 63.0
       }
     ],
     "signatureAdjectives": [
       {
         "word": "sachlich",
         "count": 3,
-        "ratioParty": 17.8,
-        "ratioBundestag": 27.0
+        "ratioParty": 18.0,
+        "ratioBundestag": 27.3
       },
       {
         "word": "fair",
         "count": 3,
-        "ratioParty": 12.3,
-        "ratioBundestag": 11.5
+        "ratioParty": 12.5,
+        "ratioBundestag": 11.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sachlich",
+        "count": 3,
+        "score": 8.83,
+        "ratio": 18.0
+      },
+      {
+        "word": "fair",
+        "count": 3,
+        "score": 7.81,
+        "ratio": 12.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sachlich",
+        "count": 3,
+        "score": 10.03,
+        "ratio": 27.3
+      },
+      {
+        "word": "fair",
+        "count": 3,
+        "score": 7.6,
+        "ratio": 11.6
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 421,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.65,
     "vsParliament": 0.72
   },
@@ -126,47 +222,47 @@
     "question": "Welches Wort nutzt Ellen Demuth häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bildung",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
         "text": "Jesidinnen",
         "isCorrect": true
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Jesidinnen\" nutzt Ellen Demuth 1493.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "209.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Jesidinnen\" nutzt Ellen Demuth 1550.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "217.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Ellen Demuth häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Klar",
+        "text": "Gut",
         "isCorrect": false
       },
       {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
         "text": "Sachlich",
         "isCorrect": true
+      },
+      {
+        "text": "Neu",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sachlich\" nutzt Ellen Demuth 17.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "27.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Sachlich\" nutzt Ellen Demuth 18.0× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "27.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -268,15 +364,15 @@
       ],
       "wirtschaft": [
         {
-          "word": "wirtschaft",
-          "count": 1
-        },
-        {
           "word": "werke",
           "count": 1
         },
         {
           "word": "konzerne",
+          "count": 1
+        },
+        {
+          "word": "wirtschaft",
           "count": 1
         }
       ],
@@ -312,11 +408,11 @@
           "count": 4
         },
         {
-          "word": "verbrechen",
+          "word": "armee",
           "count": 2
         },
         {
-          "word": "armee",
+          "word": "verbrechen",
           "count": 2
         },
         {
@@ -352,11 +448,11 @@
           "count": 11
         },
         {
-          "word": "außenpolitik",
+          "word": "europa",
           "count": 7
         },
         {
-          "word": "europa",
+          "word": "außenpolitik",
           "count": 7
         },
         {
@@ -408,25 +504,21 @@
           "count": 2
         },
         {
-          "word": "bildungspolitik",
+          "word": "kinderbetreuung",
           "count": 1
         }
       ],
       "finanzen": [
         {
-          "word": "haushalt",
+          "word": "investition",
           "count": 1
         },
         {
-          "word": "investition",
+          "word": "haushalt",
           "count": 1
         }
       ],
       "justiz": [
-        {
-          "word": "strafverfolgung",
-          "count": 1
-        },
         {
           "word": "rechtsstaat",
           "count": 1
@@ -438,15 +530,19 @@
         {
           "word": "grundgesetz",
           "count": 1
+        },
+        {
+          "word": "strafverfolgung",
+          "count": 1
         }
       ],
       "arbeit": [
         {
-          "word": "einkommen",
+          "word": "vereinbarkeit",
           "count": 1
         },
         {
-          "word": "vereinbarkeit",
+          "word": "einkommen",
           "count": 1
         }
       ],

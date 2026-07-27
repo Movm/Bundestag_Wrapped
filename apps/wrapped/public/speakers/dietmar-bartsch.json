@@ -11,23 +11,23 @@
   "minWords": 219,
   "maxWords": 962,
   "rankings": {
-    "speechRank": 318,
-    "wordsRank": 60,
-    "partySpeechRank": 39,
-    "partyWordsRank": 6,
+    "speechRank": 339,
+    "wordsRank": 67,
+    "partySpeechRank": 45,
+    "partyWordsRank": 7,
     "partySize": 63,
-    "totalSpeakers": 625,
-    "percentile": 49.1,
-    "verbosityRank": 20,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 45.8,
+    "verbosityRank": 21,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 3,
     "longestSpeechRank": 96
   },
   "drama": {
     "interruptionsGiven": 8,
     "interruptionsReceived": 56,
-    "interrupterRank": 296,
-    "interruptedRank": 89
+    "interrupterRank": 299,
+    "interruptedRank": 94
   },
   "words": {
     "topWords": [
@@ -46,77 +46,209 @@
       {
         "word": "jahren",
         "count": 24
+      },
+      {
+        "word": "jahr",
+        "count": 22
       }
     ],
     "signatureWords": [
       {
         "word": "adenauer",
         "count": 11,
-        "ratioParty": 120.7,
-        "ratioBundestag": 33.6
+        "ratioParty": 125.3,
+        "ratioBundestag": 33.9
       },
       {
         "word": "konrad",
         "count": 6,
-        "ratioParty": 98.8,
-        "ratioBundestag": 25.0
+        "ratioParty": 102.5,
+        "ratioBundestag": 24.4
       },
       {
         "word": "verteidigungsetat",
         "count": 5,
-        "ratioParty": 82.3,
-        "ratioBundestag": 82.4
+        "ratioParty": 85.4,
+        "ratioBundestag": 81.5
       },
       {
         "word": "bundesrechnungshof",
         "count": 16,
-        "ratioParty": 75.3,
-        "ratioBundestag": 26.1
+        "ratioParty": 78.1,
+        "ratioBundestag": 27.1
       },
       {
         "word": "martin",
         "count": 5,
-        "ratioParty": 54.9,
-        "ratioBundestag": 30.0
+        "ratioParty": 57.0,
+        "ratioBundestag": 26.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "bundesrechnungshof",
+        "count": 16,
+        "score": 69.93,
+        "ratio": 78.1
+      },
+      {
+        "word": "adenauer",
+        "count": 11,
+        "score": 53.23,
+        "ratio": 125.3
+      },
+      {
+        "word": "konrad",
+        "count": 6,
+        "score": 27.84,
+        "ratio": 102.5
+      },
+      {
+        "word": "verteidigungsetat",
+        "count": 5,
+        "score": 22.29,
+        "ratio": 85.4
+      },
+      {
+        "word": "martin",
+        "count": 5,
+        "score": 20.3,
+        "ratio": 57.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bundesrechnungshof",
+        "count": 16,
+        "score": 53.37,
+        "ratio": 27.1
+      },
+      {
+        "word": "adenauer",
+        "count": 11,
+        "score": 39.08,
+        "ratio": 33.9
+      },
+      {
+        "word": "verteidigungsetat",
+        "count": 5,
+        "score": 22.06,
+        "ratio": 81.5
+      },
+      {
+        "word": "konrad",
+        "count": 6,
+        "score": 19.41,
+        "ratio": 24.4
+      },
+      {
+        "word": "martin",
+        "count": 5,
+        "score": 16.61,
+        "ratio": 26.7
       }
     ],
     "signatureAdjectives": [
       {
         "word": "inakzeptabel",
         "count": 9,
-        "ratioParty": 26.9,
-        "ratioBundestag": 38.5
+        "ratioParty": 28.0,
+        "ratioBundestag": 39.0
       },
       {
         "word": "problematisch",
         "count": 3,
-        "ratioParty": 14.1,
+        "ratioParty": 12.8,
         "ratioBundestag": 11.9
       },
       {
         "word": "vernünftig",
         "count": 3,
-        "ratioParty": 5.5,
-        "ratioBundestag": 6.9
+        "ratioParty": 5.4,
+        "ratioBundestag": 7.0
       },
       {
         "word": "unverantwortlich",
         "count": 3,
-        "ratioParty": 5.2,
-        "ratioBundestag": 13.9
+        "ratioParty": 5.4,
+        "ratioBundestag": 14.3
       },
       {
         "word": "geschützt",
         "count": 5,
-        "ratioParty": 5.0,
+        "ratioParty": 5.2,
         "ratioBundestag": 5.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "inakzeptabel",
+        "count": 9,
+        "score": 30.31,
+        "ratio": 28.0
+      },
+      {
+        "word": "geschützt",
+        "count": 5,
+        "score": 9.12,
+        "ratio": 5.2
+      },
+      {
+        "word": "problematisch",
+        "count": 3,
+        "score": 7.87,
+        "ratio": 12.8
+      },
+      {
+        "word": "vernünftig",
+        "count": 3,
+        "score": 5.57,
+        "ratio": 5.4
+      },
+      {
+        "word": "unverantwortlich",
+        "count": 3,
+        "score": 5.57,
+        "ratio": 5.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "inakzeptabel",
+        "count": 9,
+        "score": 33.2,
+        "ratio": 39.0
+      },
+      {
+        "word": "geschützt",
+        "count": 5,
+        "score": 9.58,
+        "ratio": 5.8
+      },
+      {
+        "word": "unverantwortlich",
+        "count": 3,
+        "score": 8.18,
+        "ratio": 14.3
+      },
+      {
+        "word": "problematisch",
+        "count": 3,
+        "score": 7.67,
+        "ratio": 11.9
+      },
+      {
+        "word": "vernünftig",
+        "count": 3,
+        "score": 6.24,
+        "ratio": 7.0
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 696,
-    "partyAvgWords": 500,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 499,
+    "parliamentAvgWords": 585,
     "vsParty": 1.39,
     "vsParliament": 1.19
   },
@@ -130,58 +262,53 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "13.929"
-    },
-    {
-      "emoji": "📚",
-      "label": "Wortreichster",
-      "value": "#20 von 579"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Dietmar Bartsch häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
         "text": "Adenauer",
         "isCorrect": true
       },
       {
-        "text": "Fraktion",
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Adenauer\" nutzt Dr. Dietmar Bartsch 120.7× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "33.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Adenauer\" nutzt Dr. Dietmar Bartsch 125.3× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "33.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Dietmar Bartsch häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
         "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
         "isCorrect": false
       },
       {
         "text": "Inakzeptabel",
         "isCorrect": true
+      },
+      {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Inakzeptabel\" nutzt Dr. Dietmar Bartsch 26.9× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "38.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Inakzeptabel\" nutzt Dr. Dietmar Bartsch 28.0× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "39.0× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -293,17 +420,17 @@
           "count": 2
         },
         {
-          "word": "sprachkurs",
+          "word": "asylverfahren",
           "count": 1
         }
       ],
       "klima": [
         {
-          "word": "energie",
+          "word": "klimaneutralität",
           "count": 1
         },
         {
-          "word": "klimaneutralität",
+          "word": "energie",
           "count": 1
         },
         {
@@ -329,7 +456,7 @@
           "count": 3
         },
         {
-          "word": "industrie",
+          "word": "wirtschaftswachstum",
           "count": 2
         }
       ],
@@ -339,11 +466,11 @@
           "count": 8
         },
         {
-          "word": "kinder",
+          "word": "rente",
           "count": 6
         },
         {
-          "word": "rente",
+          "word": "kinder",
           "count": 6
         },
         {
@@ -393,6 +520,10 @@
       ],
       "europa": [
         {
+          "word": "europa",
+          "count": 5
+        },
+        {
           "word": "putin",
           "count": 5
         },
@@ -401,15 +532,11 @@
           "count": 5
         },
         {
-          "word": "europa",
-          "count": 5
-        },
-        {
-          "word": "angriffskrieg",
+          "word": "nato",
           "count": 2
         },
         {
-          "word": "frieden",
+          "word": "angriffskrieg",
           "count": 2
         }
       ],
@@ -429,6 +556,10 @@
           "count": 7
         },
         {
+          "word": "fortbildung",
+          "count": 1
+        },
+        {
           "word": "grundschule",
           "count": 1
         },
@@ -438,10 +569,6 @@
         },
         {
           "word": "forschung",
-          "count": 1
-        },
-        {
-          "word": "fortbildung",
           "count": 1
         }
       ],
@@ -495,19 +622,19 @@
           "count": 3
         },
         {
-          "word": "rentenversicherung",
-          "count": 2
-        },
-        {
           "word": "mindestlohn",
           "count": 2
         },
         {
-          "word": "beschäftigte",
-          "count": 1
+          "word": "rentenversicherung",
+          "count": 2
         },
         {
           "word": "gewerkschaften",
+          "count": 1
+        },
+        {
+          "word": "einkommen",
           "count": 1
         }
       ],
@@ -517,11 +644,11 @@
           "count": 5
         },
         {
-          "word": "fahrzeuge",
+          "word": "deutschlandticket",
           "count": 3
         },
         {
-          "word": "deutschlandticket",
+          "word": "fahrzeuge",
           "count": 3
         },
         {

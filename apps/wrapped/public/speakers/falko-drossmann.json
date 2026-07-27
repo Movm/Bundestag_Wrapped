@@ -11,23 +11,23 @@
   "minWords": 53,
   "maxWords": 762,
   "rankings": {
-    "speechRank": 399,
-    "wordsRank": 381,
-    "partySpeechRank": 74,
-    "partyWordsRank": 75,
+    "speechRank": 396,
+    "wordsRank": 394,
+    "partySpeechRank": 75,
+    "partyWordsRank": 76,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 36.2,
+    "totalSpeakers": 626,
+    "percentile": 36.7,
     "verbosityRank": 316,
-    "verbosityTotal": 579,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 74,
-    "longestSpeechRank": 292
+    "longestSpeechRank": 293
   },
   "drama": {
     "interruptionsGiven": 28,
     "interruptionsReceived": 12,
-    "interrupterRank": 175,
-    "interruptedRank": 433
+    "interrupterRank": 180,
+    "interruptedRank": 439
   },
   "words": {
     "topWords": [
@@ -64,47 +64,127 @@
       {
         "word": "armee",
         "count": 5,
-        "ratioParty": 68.5,
-        "ratioBundestag": 32.8
+        "ratioParty": 71.6,
+        "ratioBundestag": 33.6
       },
       {
         "word": "israel",
         "count": 10,
-        "ratioParty": 28.3,
-        "ratioBundestag": 15.8
+        "ratioParty": 29.5,
+        "ratioBundestag": 16.4
       },
       {
         "word": "militärische",
         "count": 7,
-        "ratioParty": 14.5,
-        "ratioBundestag": 19.0
+        "ratioParty": 15.2,
+        "ratioBundestag": 19.5
       },
       {
         "word": "bundeswehr",
         "count": 16,
-        "ratioParty": 11.9,
-        "ratioBundestag": 12.6
+        "ratioParty": 12.3,
+        "ratioBundestag": 13.1
       },
       {
         "word": "soldaten",
         "count": 15,
-        "ratioParty": 11.0,
-        "ratioBundestag": 14.0
+        "ratioParty": 11.4,
+        "ratioBundestag": 14.6
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "bundeswehr",
+        "count": 16,
+        "score": 41.4,
+        "ratio": 12.3
+      },
+      {
+        "word": "soldaten",
+        "count": 15,
+        "score": 37.77,
+        "ratio": 11.4
+      },
+      {
+        "word": "israel",
+        "count": 10,
+        "score": 34.18,
+        "ratio": 29.5
+      },
+      {
+        "word": "armee",
+        "count": 5,
+        "score": 21.42,
+        "ratio": 71.6
+      },
+      {
+        "word": "militärische",
+        "count": 7,
+        "score": 19.5,
+        "ratio": 15.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bundeswehr",
+        "count": 16,
+        "score": 42.34,
+        "ratio": 13.1
+      },
+      {
+        "word": "soldaten",
+        "count": 15,
+        "score": 41.21,
+        "ratio": 14.6
+      },
+      {
+        "word": "israel",
+        "count": 10,
+        "score": 28.56,
+        "ratio": 16.4
+      },
+      {
+        "word": "militärische",
+        "count": 7,
+        "score": 21.14,
+        "ratio": 19.5
+      },
+      {
+        "word": "armee",
+        "count": 5,
+        "score": 17.72,
+        "ratio": 33.6
       }
     ],
     "signatureAdjectives": [
       {
         "word": "falsch",
         "count": 5,
-        "ratioParty": 7.7,
-        "ratioBundestag": 6.4
+        "ratioParty": 7.5,
+        "ratioBundestag": 6.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "falsch",
+        "count": 5,
+        "score": 10.7,
+        "ratio": 7.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "falsch",
+        "count": 5,
+        "score": 9.94,
+        "ratio": 6.3
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 423,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
     "vsParty": 0.68,
     "vsParliament": 0.72
   },
@@ -129,11 +209,7 @@
     "question": "Welches Wort nutzt Falko Droßmann häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
@@ -141,35 +217,39 @@
         "isCorrect": true
       },
       {
-        "text": "Debatte",
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Zukunft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Armee\" nutzt Falko Droßmann 68.5× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "32.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Armee\" nutzt Falko Droßmann 71.6× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "33.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Falko Droßmann häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Klar",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Gut",
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
         "text": "Falsch",
         "isCorrect": true
-      },
-      {
-        "text": "Sicher",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Falsch\" nutzt Falko Droßmann 7.7× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "6.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Falsch\" nutzt Falko Droßmann 7.5× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "6.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -295,19 +375,19 @@
           "count": 5
         },
         {
-          "word": "kinder",
-          "count": 2
-        },
-        {
           "word": "fürsorge",
           "count": 2
         },
         {
-          "word": "kind",
+          "word": "kinder",
+          "count": 2
+        },
+        {
+          "word": "jugend",
           "count": 1
         },
         {
-          "word": "eltern",
+          "word": "kind",
           "count": 1
         }
       ],
@@ -325,11 +405,11 @@
           "count": 5
         },
         {
-          "word": "soldat",
+          "word": "militär",
           "count": 4
         },
         {
-          "word": "militär",
+          "word": "soldat",
           "count": 4
         }
       ],
@@ -397,11 +477,11 @@
           "count": 2
         },
         {
-          "word": "öpnv",
+          "word": "straßen",
           "count": 1
         },
         {
-          "word": "straßen",
+          "word": "öpnv",
           "count": 1
         },
         {

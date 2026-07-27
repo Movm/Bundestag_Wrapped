@@ -11,23 +11,23 @@
   "minWords": 424,
   "maxWords": 654,
   "rankings": {
-    "speechRank": 589,
-    "wordsRank": 552,
-    "partySpeechRank": 145,
-    "partyWordsRank": 131,
+    "speechRank": 592,
+    "wordsRank": 559,
+    "partySpeechRank": 147,
+    "partyWordsRank": 133,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 5.8,
+    "totalSpeakers": 626,
+    "percentile": 5.4,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 430
+    "longestSpeechRank": 434
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 5,
-    "interrupterRank": 455,
-    "interruptedRank": 545
+    "interrupterRank": 453,
+    "interruptedRank": 544
   },
   "words": {
     "topWords": [
@@ -76,42 +76,108 @@
       {
         "word": "apotheken",
         "count": 7,
-        "ratioParty": 378.6,
-        "ratioBundestag": 188.6
+        "ratioParty": 321.1,
+        "ratioBundestag": 191.1
       },
       {
         "word": "krankenhäuser",
         "count": 5,
-        "ratioParty": 34.3,
-        "ratioBundestag": 37.2
+        "ratioParty": 31.9,
+        "ratioBundestag": 36.0
       },
       {
         "word": "daten",
         "count": 5,
-        "ratioParty": 20.8,
-        "ratioBundestag": 15.2
+        "ratioParty": 20.0,
+        "ratioBundestag": 15.0
       },
       {
         "word": "ausgaben",
         "count": 5,
         "ratioParty": 15.0,
-        "ratioBundestag": 22.3
+        "ratioBundestag": 22.1
       },
       {
         "word": "forschung",
         "count": 5,
-        "ratioParty": 14.7,
-        "ratioBundestag": 13.5
+        "ratioParty": 15.0,
+        "ratioBundestag": 13.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "apotheken",
+        "count": 7,
+        "score": 40.42,
+        "ratio": 321.1
+      },
+      {
+        "word": "krankenhäuser",
+        "count": 5,
+        "score": 17.47,
+        "ratio": 31.9
+      },
+      {
+        "word": "daten",
+        "count": 5,
+        "score": 15.22,
+        "ratio": 20.0
+      },
+      {
+        "word": "ausgaben",
+        "count": 5,
+        "score": 13.86,
+        "ratio": 15.0
+      },
+      {
+        "word": "forschung",
+        "count": 5,
+        "score": 13.86,
+        "ratio": 15.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "apotheken",
+        "count": 7,
+        "score": 36.81,
+        "ratio": 191.1
+      },
+      {
+        "word": "krankenhäuser",
+        "count": 5,
+        "score": 18.05,
+        "ratio": 36.0
+      },
+      {
+        "word": "ausgaben",
+        "count": 5,
+        "score": 15.7,
+        "ratio": 22.1
+      },
+      {
+        "word": "daten",
+        "count": 5,
+        "score": 13.86,
+        "ratio": 15.0
+      },
+      {
+        "word": "forschung",
+        "count": 5,
+        "score": 13.44,
+        "ratio": 13.7
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 523,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.94,
-    "vsParliament": 0.9
+    "vsParliament": 0.89
   },
   "funFacts": [
     {
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Thomas Dietz häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
         "text": "Apotheken",
         "isCorrect": true
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Apotheken\" nutzt Thomas Dietz 378.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "188.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Apotheken\" nutzt Thomas Dietz 321.1× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "191.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

@@ -11,23 +11,23 @@
   "minWords": 194,
   "maxWords": 653,
   "rankings": {
-    "speechRank": 464,
-    "wordsRank": 345,
-    "partySpeechRank": 144,
-    "partyWordsRank": 104,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 25.8,
-    "verbosityRank": 161,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 56,
-    "longestSpeechRank": 431
+    "speechRank": 460,
+    "wordsRank": 359,
+    "partySpeechRank": 145,
+    "partyWordsRank": 109,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 26.5,
+    "verbosityRank": 163,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 59,
+    "longestSpeechRank": 435
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 4,
     "interrupterRank": null,
-    "interruptedRank": 562
+    "interruptedRank": 564
   },
   "words": {
     "topWords": [
@@ -76,40 +76,106 @@
       {
         "word": "sportfachliche",
         "count": 6,
-        "ratioParty": 799.3,
-        "ratioBundestag": 2460.5
+        "ratioParty": 829.8,
+        "ratioBundestag": 2554.8
       },
       {
         "word": "schatz",
         "count": 5,
-        "ratioParty": 666.1,
-        "ratioBundestag": 683.5
+        "ratioParty": 691.5,
+        "ratioBundestag": 709.7
       },
       {
         "word": "olympische",
         "count": 6,
-        "ratioParty": 532.9,
-        "ratioBundestag": 104.7
+        "ratioParty": 553.2,
+        "ratioBundestag": 104.3
       },
       {
         "word": "athletinnen",
         "count": 14,
-        "ratioParty": 339.1,
-        "ratioBundestag": 147.2
+        "ratioParty": 352.0,
+        "ratioBundestag": 131.0
       },
       {
-        "word": "sportler",
-        "count": 5,
-        "ratioParty": 333.1,
-        "ratioBundestag": 117.2
+        "word": "engagierte",
+        "count": 16,
+        "ratioParty": 276.6,
+        "ratioBundestag": 209.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "engagierte",
+        "count": 16,
+        "score": 90.02,
+        "ratio": 276.6
+      },
+      {
+        "word": "athletinnen",
+        "count": 14,
+        "score": 82.13,
+        "ratio": 352.0
+      },
+      {
+        "word": "sportfachliche",
+        "count": 6,
+        "score": 40.33,
+        "ratio": 829.8
+      },
+      {
+        "word": "olympische",
+        "count": 6,
+        "score": 37.91,
+        "ratio": 553.2
+      },
+      {
+        "word": "schatz",
+        "count": 5,
+        "score": 32.7,
+        "ratio": 691.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "engagierte",
+        "count": 16,
+        "score": 85.6,
+        "ratio": 209.6
+      },
+      {
+        "word": "athletinnen",
+        "count": 14,
+        "score": 68.36,
+        "ratio": 131.0
+      },
+      {
+        "word": "sportfachliche",
+        "count": 6,
+        "score": 47.08,
+        "ratio": 2554.8
+      },
+      {
+        "word": "schatz",
+        "count": 5,
+        "score": 32.83,
+        "ratio": 709.7
+      },
+      {
+        "word": "olympische",
+        "count": 6,
+        "score": 27.94,
+        "ratio": 104.3
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 499,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.77,
     "vsParliament": 0.85
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Dr. Christiane Schenderlein häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
         "text": "Sportfachliche",
         "isCorrect": true
       },
       {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
+        "text": "Minister",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sportfachliche\" nutzt Dr. Christiane Schenderlein 799.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "2460.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Sportfachliche\" nutzt Dr. Christiane Schenderlein 829.8× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "2554.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -349,11 +415,11 @@
       ],
       "justiz": [
         {
-          "word": "datenschutz",
+          "word": "grundgesetz",
           "count": 4
         },
         {
-          "word": "grundgesetz",
+          "word": "datenschutz",
           "count": 4
         },
         {

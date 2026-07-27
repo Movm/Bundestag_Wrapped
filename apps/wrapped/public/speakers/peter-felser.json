@@ -11,22 +11,22 @@
   "minWords": 391,
   "maxWords": 529,
   "rankings": {
-    "speechRank": 562,
-    "wordsRank": 560,
-    "partySpeechRank": 137,
-    "partyWordsRank": 135,
+    "speechRank": 559,
+    "wordsRank": 565,
+    "partySpeechRank": 138,
+    "partyWordsRank": 136,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 10.1,
-    "verbosityRank": 181,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 46,
-    "longestSpeechRank": 558
+    "totalSpeakers": 626,
+    "percentile": 10.7,
+    "verbosityRank": 185,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 47,
+    "longestSpeechRank": 560
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 5,
-    "interrupterRank": 410,
+    "interrupterRank": 411,
     "interruptedRank": 540
   },
   "words": {
@@ -60,7 +60,7 @@
         "count": 5
       },
       {
-        "word": "akzeptanz",
+        "word": "wünsche",
         "count": 5
       },
       {
@@ -68,7 +68,7 @@
         "count": 5
       },
       {
-        "word": "wünsche",
+        "word": "akzeptanz",
         "count": 5
       }
     ],
@@ -76,40 +76,106 @@
       {
         "word": "jäger",
         "count": 5,
-        "ratioParty": 1264.8,
-        "ratioBundestag": 945.0
+        "ratioParty": 1311.3,
+        "ratioBundestag": 981.2
       },
       {
         "word": "weidetierhalter",
         "count": 5,
-        "ratioParty": 281.1,
-        "ratioBundestag": 436.2
+        "ratioParty": 291.4,
+        "ratioBundestag": 452.9
       },
       {
         "word": "akzeptanz",
         "count": 5,
-        "ratioParty": 87.2,
-        "ratioBundestag": 42.2
+        "ratioParty": 90.4,
+        "ratioBundestag": 42.4
       },
       {
         "word": "wünsche",
         "count": 5,
-        "ratioParty": 38.9,
-        "ratioBundestag": 30.9
+        "ratioParty": 38.6,
+        "ratioBundestag": 31.3
       },
       {
         "word": "umsetzung",
         "count": 6,
-        "ratioParty": 25.1,
-        "ratioBundestag": 15.5
+        "ratioParty": 25.0,
+        "ratioBundestag": 15.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "jäger",
+        "count": 5,
+        "score": 35.9,
+        "ratio": 1311.3
+      },
+      {
+        "word": "weidetierhalter",
+        "count": 5,
+        "score": 28.39,
+        "ratio": 291.4
+      },
+      {
+        "word": "akzeptanz",
+        "count": 5,
+        "score": 22.58,
+        "ratio": 90.4
+      },
+      {
+        "word": "umsetzung",
+        "count": 6,
+        "score": 19.55,
+        "ratio": 25.0
+      },
+      {
+        "word": "wünsche",
+        "count": 5,
+        "score": 18.39,
+        "ratio": 38.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "jäger",
+        "count": 5,
+        "score": 34.45,
+        "ratio": 981.2
+      },
+      {
+        "word": "weidetierhalter",
+        "count": 5,
+        "score": 30.59,
+        "ratio": 452.9
+      },
+      {
+        "word": "akzeptanz",
+        "count": 5,
+        "score": 18.85,
+        "ratio": 42.4
+      },
+      {
+        "word": "wünsche",
+        "count": 5,
+        "score": 17.38,
+        "ratio": 31.3
+      },
+      {
+        "word": "umsetzung",
+        "count": 6,
+        "score": 16.78,
+        "ratio": 15.4
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 484,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.87,
     "vsParliament": 0.83
   },
@@ -129,11 +195,11 @@
     "question": "Welches Wort nutzt Peter Felser häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Abstimmung",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Rente",
         "isCorrect": false
       },
       {
@@ -145,8 +211,8 @@
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Jäger\" nutzt Peter Felser 1264.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "945.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Jäger\" nutzt Peter Felser 1311.3× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "981.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

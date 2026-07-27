@@ -11,23 +11,23 @@
   "minWords": 367,
   "maxWords": 750,
   "rankings": {
-    "speechRank": 420,
-    "wordsRank": 328,
-    "partySpeechRank": 76,
+    "speechRank": 443,
+    "wordsRank": 341,
+    "partySpeechRank": 81,
     "partyWordsRank": 66,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 32.8,
-    "verbosityRank": 123,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 28,
-    "longestSpeechRank": 312
+    "totalSpeakers": 626,
+    "percentile": 29.2,
+    "verbosityRank": 127,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 30,
+    "longestSpeechRank": 316
   },
   "drama": {
     "interruptionsGiven": 20,
     "interruptionsReceived": 14,
-    "interrupterRank": 208,
-    "interruptedRank": 407
+    "interrupterRank": 214,
+    "interruptedRank": 419
   },
   "words": {
     "topWords": [
@@ -56,11 +56,11 @@
         "count": 17
       },
       {
-        "word": "investieren",
+        "word": "junge",
         "count": 15
       },
       {
-        "word": "junge",
+        "word": "investieren",
         "count": 15
       },
       {
@@ -72,45 +72,109 @@
       {
         "word": "häusliche",
         "count": 5,
-        "ratioParty": 94.5,
-        "ratioBundestag": 76.0
+        "ratioParty": 88.8,
+        "ratioBundestag": 77.6
       },
       {
         "word": "talente",
         "count": 5,
-        "ratioParty": 77.3,
-        "ratioBundestag": 92.6
+        "ratioParty": 74.0,
+        "ratioBundestag": 88.4
       },
       {
         "word": "studium",
         "count": 5,
-        "ratioParty": 40.5,
-        "ratioBundestag": 44.8
+        "ratioParty": 37.0,
+        "ratioBundestag": 44.7
       },
       {
         "word": "bafög",
         "count": 18,
         "ratioParty": 34.0,
-        "ratioBundestag": 52.0
+        "ratioBundestag": 53.1
       },
       {
-        "word": "betroffenen",
-        "count": 9,
-        "ratioParty": 18.2,
-        "ratioBundestag": 16.2
+        "word": "junge",
+        "count": 15,
+        "ratioParty": 18.4,
+        "ratioBundestag": 17.6
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "bafög",
+        "count": 18,
+        "score": 64.0,
+        "ratio": 34.0
+      },
+      {
+        "word": "junge",
+        "count": 15,
+        "score": 44.48,
+        "ratio": 18.4
+      },
+      {
+        "word": "häusliche",
+        "count": 5,
+        "score": 22.49,
+        "ratio": 88.8
+      },
+      {
+        "word": "talente",
+        "count": 5,
+        "score": 21.59,
+        "ratio": 74.0
+      },
+      {
+        "word": "studium",
+        "count": 5,
+        "score": 18.19,
+        "ratio": 37.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bafög",
+        "count": 18,
+        "score": 71.84,
+        "ratio": 53.1
+      },
+      {
+        "word": "junge",
+        "count": 15,
+        "score": 43.85,
+        "ratio": 17.6
+      },
+      {
+        "word": "talente",
+        "count": 5,
+        "score": 22.47,
+        "ratio": 88.4
+      },
+      {
+        "word": "häusliche",
+        "count": 5,
+        "score": 21.82,
+        "ratio": 77.6
+      },
+      {
+        "word": "studium",
+        "count": 5,
+        "score": 19.11,
+        "ratio": 44.7
       }
     ],
     "signatureAdjectives": [
       {
         "word": "erfolgreich",
         "count": 3,
-        "ratioParty": 6.1,
+        "ratioParty": 6.0,
         "ratioBundestag": 6.8
       },
       {
         "word": "sicher",
         "count": 5,
-        "ratioParty": 2.9,
+        "ratioParty": 3.0,
         "ratioBundestag": 3.5
       },
       {
@@ -119,13 +183,53 @@
         "ratioParty": 2.9,
         "ratioBundestag": 3.5
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 5,
+        "score": 6.93,
+        "ratio": 3.0
+      },
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 5.84,
+        "ratio": 6.0
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 4.08,
+        "ratio": 2.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 5,
+        "score": 7.52,
+        "ratio": 3.5
+      },
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 6.16,
+        "ratio": 6.8
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 4.51,
+        "ratio": 3.5
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 524,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.85,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.84,
     "vsParliament": 0.9
   },
   "funFacts": [
@@ -149,46 +253,46 @@
     "question": "Welches Wort nutzt Svenja Schulze häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Debatte",
+        "text": "Bildung",
         "isCorrect": false
-      },
-      {
-        "text": "Häusliche",
-        "isCorrect": true
       },
       {
         "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Investitionen",
+        "text": "Ausschuss",
         "isCorrect": false
+      },
+      {
+        "text": "Häusliche",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Häusliche\" nutzt Svenja Schulze 94.5× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "76.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Häusliche\" nutzt Svenja Schulze 88.8× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "77.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Svenja Schulze häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "National",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
         "text": "Erfolgreich",
         "isCorrect": true
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Erfolgreich\" nutzt Svenja Schulze 6.1× häufiger als der SPD-Durchschnitt.",
+    "explanationParty": "\"Erfolgreich\" nutzt Svenja Schulze 6.0× häufiger als der SPD-Durchschnitt.",
     "explanationBundestag": "6.8× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -285,11 +389,11 @@
     "topicWords": {
       "klima": [
         {
-          "word": "klimawandel",
+          "word": "energie",
           "count": 2
         },
         {
-          "word": "energie",
+          "word": "klimawandel",
           "count": 2
         },
         {
@@ -307,15 +411,15 @@
           "count": 2
         },
         {
-          "word": "wirtschaft",
-          "count": 1
-        },
-        {
-          "word": "fachkräftemangel",
-          "count": 1
-        },
-        {
           "word": "industriestandort",
+          "count": 1
+        },
+        {
+          "word": "wettbewerbsfähigkeit",
+          "count": 1
+        },
+        {
+          "word": "wirtschaft",
           "count": 1
         }
       ],
@@ -381,15 +485,15 @@
           "count": 3
         },
         {
+          "word": "daten",
+          "count": 2
+        },
+        {
           "word": "technologie",
           "count": 2
         },
         {
           "word": "netzwerk",
-          "count": 2
-        },
-        {
-          "word": "daten",
           "count": 2
         },
         {
@@ -415,7 +519,7 @@
           "count": 4
         },
         {
-          "word": "ausbildung",
+          "word": "grundlagenforschung",
           "count": 2
         }
       ],
@@ -425,15 +529,15 @@
           "count": 20
         },
         {
+          "word": "investition",
+          "count": 4
+        },
+        {
           "word": "investitionen",
           "count": 4
         },
         {
           "word": "schulden",
-          "count": 4
-        },
-        {
-          "word": "investition",
           "count": 4
         },
         {
@@ -455,11 +559,11 @@
           "count": 3
         },
         {
-          "word": "menschenrechte",
+          "word": "gerichte",
           "count": 1
         },
         {
-          "word": "straftat",
+          "word": "menschenrechte",
           "count": 1
         }
       ],

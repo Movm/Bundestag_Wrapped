@@ -11,23 +11,23 @@
   "minWords": 28,
   "maxWords": 818,
   "rankings": {
-    "speechRank": 550,
-    "wordsRank": 572,
-    "partySpeechRank": 178,
-    "partyWordsRank": 187,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 12.0,
-    "verbosityRank": 474,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 157,
-    "longestSpeechRank": 225
+    "speechRank": 556,
+    "wordsRank": 576,
+    "partySpeechRank": 180,
+    "partyWordsRank": 190,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 11.2,
+    "verbosityRank": 477,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 159,
+    "longestSpeechRank": 227
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 6,
     "interrupterRank": null,
-    "interruptedRank": 517
+    "interruptedRank": 522
   },
   "words": {
     "topWords": [
@@ -76,20 +76,20 @@
       {
         "word": "eigentum",
         "count": 9,
-        "ratioParty": 125.4,
-        "ratioBundestag": 155.6
+        "ratioParty": 126.0,
+        "ratioBundestag": 157.4
       },
       {
         "word": "familien",
         "count": 7,
-        "ratioParty": 17.2,
-        "ratioBundestag": 14.2
+        "ratioParty": 16.9,
+        "ratioBundestag": 13.8
       },
       {
         "word": "kommunen",
         "count": 8,
-        "ratioParty": 8.2,
-        "ratioBundestag": 9.8
+        "ratioParty": 8.4,
+        "ratioBundestag": 10.1
       },
       {
         "word": "menschen",
@@ -98,13 +98,67 @@
         "ratioBundestag": 1.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "eigentum",
+        "count": 9,
+        "score": 43.6,
+        "ratio": 126.0
+      },
+      {
+        "word": "familien",
+        "count": 7,
+        "score": 20.19,
+        "ratio": 16.9
+      },
+      {
+        "word": "kommunen",
+        "count": 8,
+        "score": 17.93,
+        "ratio": 8.4
+      },
+      {
+        "word": "menschen",
+        "count": 9,
+        "score": 11.01,
+        "ratio": 2.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "eigentum",
+        "count": 9,
+        "score": 45.59,
+        "ratio": 157.4
+      },
+      {
+        "word": "kommunen",
+        "count": 8,
+        "score": 19.26,
+        "ratio": 10.1
+      },
+      {
+        "word": "familien",
+        "count": 7,
+        "score": 18.86,
+        "ratio": 13.8
+      },
+      {
+        "word": "menschen",
+        "count": 9,
+        "score": 9.58,
+        "ratio": 1.9
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 339,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.53,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.52,
     "vsParliament": 0.58
   },
   "funFacts": [
@@ -123,24 +177,24 @@
     "question": "Welches Wort nutzt Lutz Brinkmann häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Eigentum",
-        "isCorrect": true
-      },
-      {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
         "text": "Kinder",
         "isCorrect": false
+      },
+      {
+        "text": "Eigentum",
+        "isCorrect": true
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Eigentum\" nutzt Lutz Brinkmann 125.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "155.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Eigentum\" nutzt Lutz Brinkmann 126.0× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "157.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -281,11 +335,11 @@
           "count": 3
         },
         {
-          "word": "mieten",
+          "word": "existenzminimum",
           "count": 2
         },
         {
-          "word": "existenzminimum",
+          "word": "mieten",
           "count": 2
         }
       ],

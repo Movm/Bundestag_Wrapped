@@ -11,23 +11,23 @@
   "minWords": 9,
   "maxWords": 1137,
   "rankings": {
-    "speechRank": 236,
-    "wordsRank": 11,
-    "partySpeechRank": 64,
+    "speechRank": 224,
+    "wordsRank": 12,
+    "partySpeechRank": 56,
     "partyWordsRank": 7,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 62.2,
-    "verbosityRank": 559,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 176,
-    "longestSpeechRank": 45
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 64.2,
+    "verbosityRank": 560,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 177,
+    "longestSpeechRank": 47
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 49,
     "interrupterRank": null,
-    "interruptedRank": 119
+    "interruptedRank": 122
   },
   "words": {
     "topWords": [
@@ -52,11 +52,11 @@
         "count": 48
       },
       {
-        "word": "menschen",
+        "word": "ukraine",
         "count": 46
       },
       {
-        "word": "ukraine",
+        "word": "menschen",
         "count": 46
       },
       {
@@ -76,32 +76,96 @@
       {
         "word": "unrwa",
         "count": 7,
-        "ratioParty": 113.3,
-        "ratioBundestag": 48.5
+        "ratioParty": 117.7,
+        "ratioBundestag": 50.4
       },
       {
         "word": "südsudan",
         "count": 14,
-        "ratioParty": 82.4,
-        "ratioBundestag": 44.6
+        "ratioParty": 85.6,
+        "ratioBundestag": 45.6
       },
       {
         "word": "venezuela",
         "count": 6,
-        "ratioParty": 77.7,
-        "ratioBundestag": 25.6
+        "ratioParty": 80.7,
+        "ratioBundestag": 26.6
       },
       {
         "word": "derartige",
         "count": 10,
-        "ratioParty": 72.0,
+        "ratioParty": 74.7,
         "ratioBundestag": 77.3
       },
       {
-        "word": "weltgemeinschaft",
+        "word": "jüdischen",
         "count": 5,
-        "ratioParty": 64.8,
-        "ratioBundestag": 32.4
+        "ratioParty": 67.3,
+        "ratioBundestag": 28.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "südsudan",
+        "count": 14,
+        "score": 62.46,
+        "ratio": 85.6
+      },
+      {
+        "word": "derartige",
+        "count": 10,
+        "score": 43.27,
+        "ratio": 74.7
+      },
+      {
+        "word": "unrwa",
+        "count": 7,
+        "score": 33.44,
+        "ratio": 117.7
+      },
+      {
+        "word": "venezuela",
+        "count": 6,
+        "score": 26.42,
+        "ratio": 80.7
+      },
+      {
+        "word": "jüdischen",
+        "count": 5,
+        "score": 21.12,
+        "ratio": 67.3
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "südsudan",
+        "count": 14,
+        "score": 53.78,
+        "ratio": 45.6
+      },
+      {
+        "word": "derartige",
+        "count": 10,
+        "score": 43.61,
+        "ratio": 77.3
+      },
+      {
+        "word": "unrwa",
+        "count": 7,
+        "score": 27.58,
+        "ratio": 50.4
+      },
+      {
+        "word": "venezuela",
+        "count": 6,
+        "score": 19.91,
+        "ratio": 26.6
+      },
+      {
+        "word": "jüdischen",
+        "count": 5,
+        "score": 16.87,
+        "ratio": 28.2
       }
     ],
     "signatureAdjectives": [
@@ -109,12 +173,12 @@
         "word": "gerecht",
         "count": 12,
         "ratioParty": 4.2,
-        "ratioBundestag": 3.7
+        "ratioBundestag": 3.8
       },
       {
         "word": "grundlegend",
         "count": 3,
-        "ratioParty": 4.1,
+        "ratioParty": 4.2,
         "ratioBundestag": 4.7
       },
       {
@@ -127,14 +191,66 @@
         "word": "nachhaltig",
         "count": 3,
         "ratioParty": 2.3,
-        "ratioBundestag": 2.2
+        "ratioBundestag": 2.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 12,
+        "score": 19.78,
+        "ratio": 4.2
+      },
+      {
+        "word": "erfolgreich",
+        "count": 6,
+        "score": 7.34,
+        "ratio": 2.4
+      },
+      {
+        "word": "grundlegend",
+        "count": 3,
+        "score": 4.95,
+        "ratio": 4.2
+      },
+      {
+        "word": "nachhaltig",
+        "count": 3,
+        "score": 3.58,
+        "ratio": 2.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "gerecht",
+        "count": 12,
+        "score": 18.82,
+        "ratio": 3.8
+      },
+      {
+        "word": "erfolgreich",
+        "count": 6,
+        "score": 8.61,
+        "ratio": 3.2
+      },
+      {
+        "word": "grundlegend",
+        "count": 3,
+        "score": 5.22,
+        "ratio": 4.7
+      },
+      {
+        "word": "nachhaltig",
+        "count": 3,
+        "score": 3.58,
+        "ratio": 2.3
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 195,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.3,
     "vsParliament": 0.33
   },
@@ -154,11 +270,11 @@
     "question": "Welches Wort nutzt Dr. Johann David Wadephul häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Politik",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Minister",
+        "text": "Familie",
         "isCorrect": false
       },
       {
@@ -166,18 +282,18 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Steuern",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unrwa\" nutzt Dr. Johann David Wadephul 113.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "48.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Unrwa\" nutzt Dr. Johann David Wadephul 117.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "50.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Johann David Wadephul häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Gut",
+        "text": "Alt",
         "isCorrect": false
       },
       {
@@ -185,7 +301,7 @@
         "isCorrect": false
       },
       {
-        "text": "Schlecht",
+        "text": "National",
         "isCorrect": false
       },
       {
@@ -194,7 +310,7 @@
       }
     ],
     "explanationParty": "\"Gerecht\" nutzt Dr. Johann David Wadephul 4.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "3.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "3.8× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -298,15 +414,15 @@
           "count": 2
         },
         {
+          "word": "flüchtlinge",
+          "count": 1
+        },
+        {
           "word": "migration",
           "count": 1
         },
         {
           "word": "asylverfahren",
-          "count": 1
-        },
-        {
-          "word": "obergrenze",
           "count": 1
         }
       ],
@@ -326,19 +442,19 @@
           "count": 6
         },
         {
-          "word": "wirtschaftskrise",
-          "count": 1
-        },
-        {
-          "word": "produktion",
-          "count": 1
-        },
-        {
-          "word": "kapital",
-          "count": 1
-        },
-        {
           "word": "wettbewerbsfähigkeit",
+          "count": 1
+        },
+        {
+          "word": "märkte",
+          "count": 1
+        },
+        {
+          "word": "industrie",
+          "count": 1
+        },
+        {
+          "word": "unternehmen",
           "count": 1
         }
       ],
@@ -374,7 +490,7 @@
           "count": 7
         },
         {
-          "word": "terror",
+          "word": "verteidigung",
           "count": 4
         },
         {
@@ -456,11 +572,11 @@
           "count": 7
         },
         {
-          "word": "haushalt",
+          "word": "investition",
           "count": 7
         },
         {
-          "word": "investition",
+          "word": "haushalt",
           "count": 7
         },
         {
@@ -468,7 +584,7 @@
           "count": 3
         },
         {
-          "word": "investitionen",
+          "word": "kosten",
           "count": 1
         }
       ],
@@ -482,11 +598,11 @@
           "count": 3
         },
         {
-          "word": "haft",
+          "word": "rechtsstaat",
           "count": 2
         },
         {
-          "word": "rechtsstaat",
+          "word": "haft",
           "count": 2
         },
         {
@@ -518,7 +634,7 @@
           "count": 2
         },
         {
-          "word": "bahn",
+          "word": "schiff",
           "count": 1
         }
       ]

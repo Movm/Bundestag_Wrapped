@@ -11,23 +11,23 @@
   "minWords": 8,
   "maxWords": 799,
   "rankings": {
-    "speechRank": 248,
-    "wordsRank": 306,
-    "partySpeechRank": 51,
-    "partyWordsRank": 66,
+    "speechRank": 269,
+    "wordsRank": 318,
+    "partySpeechRank": 56,
+    "partyWordsRank": 69,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 60.3,
-    "verbosityRank": 195,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 57.0,
+    "verbosityRank": 197,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 50,
-    "longestSpeechRank": 248
+    "longestSpeechRank": 250
   },
   "drama": {
-    "interruptionsGiven": 60,
+    "interruptionsGiven": 62,
     "interruptionsReceived": 54,
-    "interrupterRank": 84,
-    "interruptedRank": 100
+    "interrupterRank": 85,
+    "interruptedRank": 104
   },
   "words": {
     "topWords": [
@@ -52,15 +52,15 @@
         "count": 14
       },
       {
-        "word": "bürger",
-        "count": 13
-      },
-      {
         "word": "werte",
         "count": 13
       },
       {
         "word": "zahlen",
+        "count": 13
+      },
+      {
+        "word": "bürger",
         "count": 13
       }
     ],
@@ -68,40 +68,104 @@
       {
         "word": "endlagersuche",
         "count": 5,
-        "ratioParty": 157.2,
-        "ratioBundestag": 220.9
+        "ratioParty": 163.0,
+        "ratioBundestag": 229.4
       },
       {
         "word": "bundesrechnungshofes",
         "count": 7,
-        "ratioParty": 100.0,
-        "ratioBundestag": 145.5
+        "ratioParty": 103.7,
+        "ratioBundestag": 151.1
       },
       {
         "word": "umweltpolitik",
         "count": 5,
-        "ratioParty": 71.4,
-        "ratioBundestag": 62.0
+        "ratioParty": 74.1,
+        "ratioBundestag": 62.2
       },
       {
         "word": "basiert",
         "count": 5,
-        "ratioParty": 65.5,
-        "ratioBundestag": 41.6
+        "ratioParty": 67.9,
+        "ratioBundestag": 41.7
       },
       {
         "word": "klimafonds",
         "count": 5,
-        "ratioParty": 49.1,
-        "ratioBundestag": 168.3
+        "ratioParty": 50.9,
+        "ratioBundestag": 174.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "bundesrechnungshofes",
+        "count": 7,
+        "score": 32.56,
+        "ratio": 103.7
+      },
+      {
+        "word": "endlagersuche",
+        "count": 5,
+        "score": 25.5,
+        "ratio": 163.0
+      },
+      {
+        "word": "umweltpolitik",
+        "count": 5,
+        "score": 21.59,
+        "ratio": 74.1
+      },
+      {
+        "word": "basiert",
+        "count": 5,
+        "score": 21.16,
+        "ratio": 67.9
+      },
+      {
+        "word": "klimafonds",
+        "count": 5,
+        "score": 19.75,
+        "ratio": 50.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bundesrechnungshofes",
+        "count": 7,
+        "score": 35.17,
+        "ratio": 151.1
+      },
+      {
+        "word": "endlagersuche",
+        "count": 5,
+        "score": 27.2,
+        "ratio": 229.4
+      },
+      {
+        "word": "klimafonds",
+        "count": 5,
+        "score": 25.85,
+        "ratio": 174.8
+      },
+      {
+        "word": "umweltpolitik",
+        "count": 5,
+        "score": 20.73,
+        "ratio": 62.2
+      },
+      {
+        "word": "basiert",
+        "count": 5,
+        "score": 18.77,
+        "ratio": 41.7
       }
     ],
     "signatureAdjectives": [
       {
         "word": "gescheitert",
         "count": 4,
-        "ratioParty": 9.5,
-        "ratioBundestag": 16.9
+        "ratioParty": 9.7,
+        "ratioBundestag": 17.4
       },
       {
         "word": "sicher",
@@ -109,13 +173,41 @@
         "ratioParty": 2.9,
         "ratioBundestag": 2.3
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gescheitert",
+        "count": 4,
+        "score": 9.48,
+        "ratio": 9.7
+      },
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 5.44,
+        "ratio": 2.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "gescheitert",
+        "count": 4,
+        "score": 11.65,
+        "ratio": 17.4
+      },
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 4.78,
+        "ratio": 2.3
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 477,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.85,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.86,
     "vsParliament": 0.82
   },
   "funFacts": [
@@ -132,35 +224,43 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "60"
+      "value": "62"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Georg Schroeter häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Wirtschaft",
+        "text": "Endlagersuche",
+        "isCorrect": true
+      },
+      {
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Minister",
         "isCorrect": false
       },
       {
         "text": "Investitionen",
         "isCorrect": false
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Endlagersuche",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Endlagersuche\" nutzt Georg Schroeter 157.2× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "220.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Endlagersuche\" nutzt Georg Schroeter 163.0× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "229.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Georg Schroeter häufiger als der Rest der AfD-Fraktion?",
     "options": [
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
+        "isCorrect": false
+      },
       {
         "text": "Gescheitert",
         "isCorrect": true
@@ -168,18 +268,10 @@
       {
         "text": "Alt",
         "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gescheitert\" nutzt Georg Schroeter 9.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "16.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Gescheitert\" nutzt Georg Schroeter 9.7× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "17.4× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {

@@ -11,23 +11,23 @@
   "minWords": 32,
   "maxWords": 766,
   "rankings": {
-    "speechRank": 189,
-    "wordsRank": 234,
+    "speechRank": 194,
+    "wordsRank": 250,
     "partySpeechRank": 40,
-    "partyWordsRank": 54,
+    "partyWordsRank": 57,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 69.8,
-    "verbosityRank": 291,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 74,
-    "longestSpeechRank": 285
+    "totalSpeakers": 626,
+    "percentile": 69.0,
+    "verbosityRank": 295,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 72,
+    "longestSpeechRank": 287
   },
   "drama": {
     "interruptionsGiven": 34,
     "interruptionsReceived": 54,
-    "interrupterRank": 149,
-    "interruptedRank": 96
+    "interrupterRank": 152,
+    "interruptedRank": 100
   },
   "words": {
     "topWords": [
@@ -60,32 +60,96 @@
       {
         "word": "steuerbetrug",
         "count": 6,
-        "ratioParty": 787.5,
-        "ratioBundestag": 147.7
+        "ratioParty": 816.6,
+        "ratioBundestag": 153.4
       },
       {
         "word": "minderheitsregierung",
         "count": 5,
-        "ratioParty": 328.1,
-        "ratioBundestag": 984.9
+        "ratioParty": 340.2,
+        "ratioBundestag": 1022.6
       },
       {
         "word": "erbschaften",
         "count": 6,
-        "ratioParty": 262.5,
-        "ratioBundestag": 69.5
+        "ratioParty": 272.2,
+        "ratioBundestag": 70.8
       },
       {
         "word": "steuergerechtigkeit",
         "count": 5,
-        "ratioParty": 93.7,
-        "ratioBundestag": 44.8
+        "ratioParty": 97.2,
+        "ratioBundestag": 46.5
       },
       {
         "word": "grundsteuer",
         "count": 11,
-        "ratioParty": 55.5,
-        "ratioBundestag": 73.9
+        "ratioParty": 57.6,
+        "ratioBundestag": 76.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "grundsteuer",
+        "count": 11,
+        "score": 44.78,
+        "ratio": 57.6
+      },
+      {
+        "word": "steuerbetrug",
+        "count": 6,
+        "score": 40.24,
+        "ratio": 816.6
+      },
+      {
+        "word": "erbschaften",
+        "count": 6,
+        "score": 33.66,
+        "ratio": 272.2
+      },
+      {
+        "word": "minderheitsregierung",
+        "count": 5,
+        "score": 29.16,
+        "ratio": 340.2
+      },
+      {
+        "word": "steuergerechtigkeit",
+        "count": 5,
+        "score": 22.94,
+        "ratio": 97.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "grundsteuer",
+        "count": 11,
+        "score": 47.88,
+        "ratio": 76.7
+      },
+      {
+        "word": "minderheitsregierung",
+        "count": 5,
+        "score": 34.66,
+        "ratio": 1022.6
+      },
+      {
+        "word": "steuerbetrug",
+        "count": 6,
+        "score": 30.24,
+        "ratio": 153.4
+      },
+      {
+        "word": "erbschaften",
+        "count": 6,
+        "score": 25.64,
+        "ratio": 70.8
+      },
+      {
+        "word": "steuergerechtigkeit",
+        "count": 5,
+        "score": 19.3,
+        "ratio": 46.5
       }
     ],
     "signatureAdjectives": [
@@ -98,15 +162,43 @@
       {
         "word": "schlecht",
         "count": 4,
-        "ratioParty": 5.2,
-        "ratioBundestag": 6.4
+        "ratioParty": 5.1,
+        "ratioBundestag": 6.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 8.37,
+        "ratio": 7.1
+      },
+      {
+        "word": "schlecht",
+        "count": 4,
+        "score": 7.23,
+        "ratio": 5.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "schlecht",
+        "count": 4,
+        "score": 8.06,
+        "ratio": 6.5
+      },
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 6.1,
+        "ratio": 3.6
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 434,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.78,
     "vsParliament": 0.74
   },
@@ -131,43 +223,43 @@
     "question": "Welches Wort nutzt Diana Zimmer häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
-      },
-      {
         "text": "Steuerbetrug",
         "isCorrect": true
       },
       {
-        "text": "Klima",
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Steuerbetrug\" nutzt Diana Zimmer 787.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "147.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Steuerbetrug\" nutzt Diana Zimmer 816.6× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "153.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Diana Zimmer häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Neu",
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
         "text": "Gerecht",
         "isCorrect": true
-      },
-      {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Gerecht\" nutzt Diana Zimmer 7.1× häufiger als der AfD-Durchschnitt.",
@@ -279,11 +371,11 @@
           "count": 4
         },
         {
-          "word": "betriebe",
+          "word": "wirtschaft",
           "count": 4
         },
         {
-          "word": "wirtschaft",
+          "word": "betriebe",
           "count": 4
         }
       ],
@@ -353,15 +445,15 @@
       ],
       "bildung": [
         {
+          "word": "lehrer",
+          "count": 1
+        },
+        {
           "word": "professor",
           "count": 1
         },
         {
           "word": "schulen",
-          "count": 1
-        },
-        {
-          "word": "lehrer",
           "count": 1
         }
       ],
@@ -383,7 +475,7 @@
           "count": 5
         },
         {
-          "word": "steuergerechtigkeit",
+          "word": "kosten",
           "count": 5
         }
       ],
@@ -393,11 +485,11 @@
           "count": 2
         },
         {
-          "word": "grundgesetz",
+          "word": "gericht",
           "count": 1
         },
         {
-          "word": "gericht",
+          "word": "grundgesetz",
           "count": 1
         }
       ],
@@ -411,15 +503,15 @@
           "count": 4
         },
         {
-          "word": "löhne",
-          "count": 1
-        },
-        {
-          "word": "gehalt",
+          "word": "beschäftigte",
           "count": 1
         },
         {
           "word": "rentenversicherung",
+          "count": 1
+        },
+        {
+          "word": "löhne",
           "count": 1
         }
       ],

@@ -11,23 +11,23 @@
   "minWords": 24,
   "maxWords": 727,
   "rankings": {
-    "speechRank": 106,
-    "wordsRank": 64,
-    "partySpeechRank": 21,
-    "partyWordsRank": 13,
+    "speechRank": 122,
+    "wordsRank": 70,
+    "partySpeechRank": 26,
+    "partyWordsRank": 14,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 83.0,
+    "totalSpeakers": 626,
+    "percentile": 80.5,
     "verbosityRank": 557,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 141,
-    "longestSpeechRank": 342
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 142,
+    "longestSpeechRank": 346
   },
   "drama": {
-    "interruptionsGiven": 200,
+    "interruptionsGiven": 210,
     "interruptionsReceived": 28,
-    "interrupterRank": 18,
-    "interruptedRank": 259
+    "interrupterRank": 19,
+    "interruptedRank": 274
   },
   "words": {
     "topWords": [
@@ -48,65 +48,163 @@
       {
         "word": "augsburg",
         "count": 10,
-        "ratioParty": 117.7,
-        "ratioBundestag": 138.9
-      },
-      {
-        "word": "fördergelder",
-        "count": 6,
-        "ratioParty": 60.5,
-        "ratioBundestag": 79.9
+        "ratioParty": 122.1,
+        "ratioBundestag": 144.3
       },
       {
         "word": "thyssenkrupp",
         "count": 11,
-        "ratioParty": 59.8,
-        "ratioBundestag": 100.4
+        "ratioParty": 62.0,
+        "ratioBundestag": 101.4
       },
       {
         "word": "endlager",
         "count": 6,
-        "ratioParty": 53.0,
-        "ratioBundestag": 63.9
+        "ratioParty": 54.9,
+        "ratioBundestag": 62.2
+      },
+      {
+        "word": "fördergelder",
+        "count": 6,
+        "ratioParty": 54.9,
+        "ratioBundestag": 73.7
       },
       {
         "word": "strompreis",
         "count": 5,
-        "ratioParty": 29.4,
-        "ratioBundestag": 28.0
+        "ratioParty": 30.5,
+        "ratioBundestag": 29.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "augsburg",
+        "count": 10,
+        "score": 48.13,
+        "ratio": 122.1
+      },
+      {
+        "word": "thyssenkrupp",
+        "count": 11,
+        "score": 45.57,
+        "ratio": 62.0
+      },
+      {
+        "word": "endlager",
+        "count": 6,
+        "score": 24.14,
+        "ratio": 54.9
+      },
+      {
+        "word": "fördergelder",
+        "count": 6,
+        "score": 24.14,
+        "ratio": 54.9
+      },
+      {
+        "word": "strompreis",
+        "count": 5,
+        "score": 17.25,
+        "ratio": 30.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "thyssenkrupp",
+        "count": 11,
+        "score": 50.92,
+        "ratio": 101.4
+      },
+      {
+        "word": "augsburg",
+        "count": 10,
+        "score": 49.79,
+        "ratio": 144.3
+      },
+      {
+        "word": "fördergelder",
+        "count": 6,
+        "score": 25.88,
+        "ratio": 73.7
+      },
+      {
+        "word": "endlager",
+        "count": 6,
+        "score": 24.88,
+        "ratio": 62.2
+      },
+      {
+        "word": "strompreis",
+        "count": 5,
+        "score": 17.02,
+        "ratio": 29.1
       }
     ],
     "signatureAdjectives": [
       {
         "word": "unzureichend",
         "count": 5,
-        "ratioParty": 25.2,
-        "ratioBundestag": 30.7
+        "ratioParty": 26.2,
+        "ratioBundestag": 30.2
       },
       {
         "word": "zuverlässig",
         "count": 3,
-        "ratioParty": 8.8,
-        "ratioBundestag": 9.1
+        "ratioParty": 9.2,
+        "ratioBundestag": 9.4
       },
       {
         "word": "absurd",
         "count": 4,
-        "ratioParty": 5.4,
+        "ratioParty": 5.1,
         "ratioBundestag": 6.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "unzureichend",
+        "count": 5,
+        "score": 16.52,
+        "ratio": 26.2
       },
       {
-        "word": "teuer",
+        "word": "absurd",
         "count": 4,
-        "ratioParty": 2.0,
-        "ratioBundestag": 3.2
+        "score": 7.23,
+        "ratio": 5.1
+      },
+      {
+        "word": "zuverlässig",
+        "count": 3,
+        "score": 6.97,
+        "ratio": 9.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "unzureichend",
+        "count": 5,
+        "score": 17.2,
+        "ratio": 30.2
+      },
+      {
+        "word": "absurd",
+        "count": 4,
+        "score": 7.78,
+        "ratio": 6.0
+      },
+      {
+        "word": "zuverlässig",
+        "count": 3,
+        "score": 7.03,
+        "ratio": 9.4
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 208,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.37,
     "vsParliament": 0.36
   },
@@ -124,54 +222,54 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufer",
-      "value": "#18 (200x)"
+      "value": "#19 (210x)"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Rainer Kraft häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
         "text": "Augsburg",
         "isCorrect": true
       },
       {
-        "text": "Politik",
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Augsburg\" nutzt Dr. Rainer Kraft 117.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "138.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Augsburg\" nutzt Dr. Rainer Kraft 122.1× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "144.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Rainer Kraft häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
         "text": "Unzureichend",
         "isCorrect": true
       },
       {
-        "text": "Notwendig",
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unzureichend\" nutzt Dr. Rainer Kraft 25.2× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "30.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Unzureichend\" nutzt Dr. Rainer Kraft 26.2× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "30.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -243,11 +341,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "integration",
+          "word": "grenze",
           "count": 1
         },
         {
-          "word": "grenze",
+          "word": "integration",
           "count": 1
         }
       ],
@@ -265,11 +363,11 @@
           "count": 6
         },
         {
-          "word": "kernkraftwerk",
+          "word": "klimawandel",
           "count": 4
         },
         {
-          "word": "klimawandel",
+          "word": "umwelt",
           "count": 4
         }
       ],
@@ -309,11 +407,11 @@
           "count": 2
         },
         {
-          "word": "familien",
+          "word": "wohnungen",
           "count": 1
         },
         {
-          "word": "wohnungen",
+          "word": "familien",
           "count": 1
         }
       ],
@@ -341,10 +439,6 @@
       ],
       "gesundheit": [
         {
-          "word": "pandemie",
-          "count": 1
-        },
-        {
           "word": "pflege",
           "count": 1
         },
@@ -354,6 +448,10 @@
         },
         {
           "word": "medizin",
+          "count": 1
+        },
+        {
+          "word": "pandemie",
           "count": 1
         }
       ],
@@ -385,11 +483,11 @@
           "count": 2
         },
         {
-          "word": "internet",
+          "word": "digitalisierung",
           "count": 1
         },
         {
-          "word": "digitalisierung",
+          "word": "internet",
           "count": 1
         },
         {
@@ -403,11 +501,11 @@
       ],
       "bildung": [
         {
-          "word": "ausbildung",
+          "word": "wissenschaft",
           "count": 4
         },
         {
-          "word": "wissenschaft",
+          "word": "ausbildung",
           "count": 4
         },
         {
@@ -455,15 +553,15 @@
           "count": 1
         },
         {
-          "word": "straftat",
-          "count": 1
-        },
-        {
           "word": "urteil",
           "count": 1
         },
         {
           "word": "klage",
+          "count": 1
+        },
+        {
+          "word": "straftat",
           "count": 1
         }
       ],
@@ -481,19 +579,15 @@
           "count": 2
         },
         {
-          "word": "beschäftigung",
+          "word": "arbeitskräfte",
           "count": 1
         },
         {
-          "word": "arbeitskräfte",
+          "word": "arbeitnehmer",
           "count": 1
         }
       ],
       "mobilitaet": [
-        {
-          "word": "fahrzeuge",
-          "count": 2
-        },
         {
           "word": "schienenverkehr",
           "count": 2
@@ -503,11 +597,15 @@
           "count": 2
         },
         {
+          "word": "fahrzeuge",
+          "count": 2
+        },
+        {
           "word": "flughafen",
           "count": 1
         },
         {
-          "word": "straßen",
+          "word": "fahrrad",
           "count": 1
         }
       ]

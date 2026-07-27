@@ -11,23 +11,23 @@
   "minWords": 40,
   "maxWords": 1058,
   "rankings": {
-    "speechRank": 312,
-    "wordsRank": 239,
-    "partySpeechRank": 85,
-    "partyWordsRank": 68,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 50.1,
-    "verbosityRank": 54,
-    "verbosityTotal": 579,
+    "speechRank": 327,
+    "wordsRank": 254,
+    "partySpeechRank": 89,
+    "partyWordsRank": 73,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 47.8,
+    "verbosityRank": 55,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 22,
-    "longestSpeechRank": 59
+    "longestSpeechRank": 61
   },
   "drama": {
     "interruptionsGiven": 4,
     "interruptionsReceived": 28,
-    "interrupterRank": 376,
-    "interruptedRank": 256
+    "interrupterRank": 379,
+    "interruptedRank": 269
   },
   "words": {
     "topWords": [
@@ -60,41 +60,107 @@
       {
         "word": "ausgangslage",
         "count": 5,
-        "ratioParty": 92.5,
-        "ratioBundestag": 130.7
+        "ratioParty": 75.5,
+        "ratioBundestag": 120.6
       },
       {
         "word": "konsolidieren",
         "count": 7,
-        "ratioParty": 38.5,
-        "ratioBundestag": 70.8
+        "ratioParty": 40.0,
+        "ratioBundestag": 73.5
       },
       {
         "word": "finanzminister",
         "count": 5,
-        "ratioParty": 29.9,
-        "ratioBundestag": 12.9
+        "ratioParty": 31.1,
+        "ratioBundestag": 13.2
       },
       {
         "word": "kommunalen",
         "count": 11,
-        "ratioParty": 27.6,
-        "ratioBundestag": 37.5
+        "ratioParty": 28.7,
+        "ratioBundestag": 38.5
       },
       {
-        "word": "gucken",
-        "count": 5,
-        "ratioParty": 24.8,
-        "ratioBundestag": 14.5
+        "word": "wirtschaftswachstum",
+        "count": 9,
+        "ratioParty": 25.4,
+        "ratioBundestag": 31.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "kommunalen",
+        "count": 11,
+        "score": 37.3,
+        "ratio": 28.7
+      },
+      {
+        "word": "wirtschaftswachstum",
+        "count": 9,
+        "score": 29.46,
+        "ratio": 25.4
+      },
+      {
+        "word": "konsolidieren",
+        "count": 7,
+        "score": 26.0,
+        "ratio": 40.0
+      },
+      {
+        "word": "ausgangslage",
+        "count": 5,
+        "score": 21.69,
+        "ratio": 75.5
+      },
+      {
+        "word": "finanzminister",
+        "count": 5,
+        "score": 17.34,
+        "ratio": 31.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "kommunalen",
+        "count": 11,
+        "score": 40.44,
+        "ratio": 38.5
+      },
+      {
+        "word": "wirtschaftswachstum",
+        "count": 9,
+        "score": 31.19,
+        "ratio": 31.0
+      },
+      {
+        "word": "konsolidieren",
+        "count": 7,
+        "score": 30.18,
+        "ratio": 73.5
+      },
+      {
+        "word": "ausgangslage",
+        "count": 5,
+        "score": 24.0,
+        "ratio": 120.6
+      },
+      {
+        "word": "finanzminister",
+        "count": 5,
+        "score": 13.27,
+        "ratio": 13.2
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 610,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.95,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.94,
     "vsParliament": 1.04
   },
   "funFacts": [
@@ -117,20 +183,20 @@
         "isCorrect": true
       },
       {
-        "text": "Politik",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
-        "text": "Minister",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Debatte",
+        "text": "Freiheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ausgangslage\" nutzt Christian Haase 92.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "130.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Ausgangslage\" nutzt Christian Haase 75.5× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "120.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -321,6 +387,10 @@
       ],
       "gesundheit": [
         {
+          "word": "krankenstand",
+          "count": 1
+        },
+        {
           "word": "krankenhäuser",
           "count": 1
         },
@@ -330,10 +400,6 @@
         },
         {
           "word": "krankenhaus",
-          "count": 1
-        },
-        {
-          "word": "krankenstand",
           "count": 1
         }
       ],
@@ -395,11 +461,11 @@
           "count": 1
         },
         {
-          "word": "grundgesetz",
+          "word": "verfassung",
           "count": 1
         },
         {
-          "word": "verfassung",
+          "word": "grundgesetz",
           "count": 1
         }
       ],

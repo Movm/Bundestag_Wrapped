@@ -11,23 +11,23 @@
   "minWords": 291,
   "maxWords": 666,
   "rankings": {
-    "speechRank": 226,
-    "wordsRank": 305,
-    "partySpeechRank": 59,
-    "partyWordsRank": 90,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 63.8,
+    "speechRank": 221,
+    "wordsRank": 316,
+    "partySpeechRank": 54,
+    "partyWordsRank": 95,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 64.7,
     "verbosityRank": 262,
-    "verbosityTotal": 579,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 92,
-    "longestSpeechRank": 413
+    "longestSpeechRank": 419
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 30,
     "interrupterRank": null,
-    "interruptedRank": 237
+    "interruptedRank": 246
   },
   "words": {
     "topWords": [
@@ -56,32 +56,96 @@
       {
         "word": "klagen",
         "count": 5,
-        "ratioParty": 41.2,
-        "ratioBundestag": 25.7
+        "ratioParty": 39.8,
+        "ratioBundestag": 25.9
       },
       {
         "word": "mietpreisbremse",
         "count": 8,
-        "ratioParty": 29.1,
-        "ratioBundestag": 18.4
+        "ratioParty": 29.3,
+        "ratioBundestag": 18.6
       },
       {
         "word": "gerichte",
         "count": 6,
-        "ratioParty": 26.7,
-        "ratioBundestag": 19.0
+        "ratioParty": 27.7,
+        "ratioBundestag": 19.6
       },
       {
         "word": "papier",
         "count": 5,
-        "ratioParty": 16.3,
-        "ratioBundestag": 11.6
+        "ratioParty": 16.7,
+        "ratioBundestag": 11.7
       },
       {
         "word": "justiz",
         "count": 11,
-        "ratioParty": 13.1,
-        "ratioBundestag": 14.6
+        "ratioParty": 13.5,
+        "ratioBundestag": 14.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "justiz",
+        "count": 11,
+        "score": 29.42,
+        "ratio": 13.5
+      },
+      {
+        "word": "mietpreisbremse",
+        "count": 8,
+        "score": 27.29,
+        "ratio": 29.3
+      },
+      {
+        "word": "gerichte",
+        "count": 6,
+        "score": 20.14,
+        "ratio": 27.7
+      },
+      {
+        "word": "klagen",
+        "count": 5,
+        "score": 18.54,
+        "ratio": 39.8
+      },
+      {
+        "word": "papier",
+        "count": 5,
+        "score": 14.37,
+        "ratio": 16.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "justiz",
+        "count": 11,
+        "score": 30.43,
+        "ratio": 14.9
+      },
+      {
+        "word": "mietpreisbremse",
+        "count": 8,
+        "score": 23.8,
+        "ratio": 18.6
+      },
+      {
+        "word": "gerichte",
+        "count": 6,
+        "score": 18.15,
+        "ratio": 19.6
+      },
+      {
+        "word": "klagen",
+        "count": 5,
+        "score": 16.46,
+        "ratio": 25.9
+      },
+      {
+        "word": "papier",
+        "count": 5,
+        "score": 12.71,
+        "ratio": 11.7
       }
     ],
     "signatureAdjectives": [
@@ -89,20 +153,48 @@
         "word": "gerecht",
         "count": 3,
         "ratioParty": 3.4,
-        "ratioBundestag": 3.1
+        "ratioBundestag": 3.2
       },
       {
         "word": "sicher",
         "count": 4,
         "ratioParty": 2.0,
-        "ratioBundestag": 2.2
+        "ratioBundestag": 2.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 4.44,
+        "ratio": 3.4
+      },
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 4.39,
+        "ratio": 2.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 4.78,
+        "ratio": 2.3
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 4.31,
+        "ratio": 3.2
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 444,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.69,
     "vsParliament": 0.76
   },
@@ -122,47 +214,47 @@
     "question": "Welches Wort nutzt Dr. David Preisendanz häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Abstimmung",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
         "text": "Klagen",
         "isCorrect": true
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Klagen\" nutzt Dr. David Preisendanz 41.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "25.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Klagen\" nutzt Dr. David Preisendanz 39.8× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "25.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. David Preisendanz häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
         "text": "Gerecht",
         "isCorrect": true
       },
       {
-        "text": "Sozial",
+        "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Groß",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Gerecht\" nutzt Dr. David Preisendanz 3.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "3.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "3.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -316,7 +408,7 @@
           "count": 2
         },
         {
-          "word": "kind",
+          "word": "miete",
           "count": 1
         },
         {
@@ -380,15 +472,15 @@
           "count": 5
         },
         {
+          "word": "netz",
+          "count": 1
+        },
+        {
           "word": "online",
           "count": 1
         },
         {
           "word": "datenbank",
-          "count": 1
-        },
-        {
-          "word": "netz",
           "count": 1
         }
       ],
@@ -418,15 +510,15 @@
           "count": 6
         },
         {
-          "word": "diskriminierung",
-          "count": 3
-        },
-        {
           "word": "verbraucherschutz",
           "count": 3
         },
         {
-          "word": "verfassung",
+          "word": "diskriminierung",
+          "count": 3
+        },
+        {
+          "word": "gesetzgebung",
           "count": 2
         }
       ],

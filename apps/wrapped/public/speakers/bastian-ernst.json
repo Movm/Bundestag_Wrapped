@@ -11,23 +11,23 @@
   "minWords": 390,
   "maxWords": 760,
   "rankings": {
-    "speechRank": 416,
-    "wordsRank": 458,
-    "partySpeechRank": 120,
-    "partyWordsRank": 146,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 33.4,
-    "verbosityRank": 214,
-    "verbosityTotal": 579,
+    "speechRank": 438,
+    "wordsRank": 467,
+    "partySpeechRank": 130,
+    "partyWordsRank": 151,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 30.0,
+    "verbosityRank": 218,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 76,
-    "longestSpeechRank": 296
+    "longestSpeechRank": 299
   },
   "drama": {
     "interruptionsGiven": 3,
     "interruptionsReceived": 5,
-    "interrupterRank": 379,
-    "interruptedRank": 538
+    "interrupterRank": 401,
+    "interruptedRank": 550
   },
   "words": {
     "topWords": [
@@ -48,11 +48,11 @@
         "count": 14
       },
       {
-        "word": "marine",
+        "word": "russland",
         "count": 13
       },
       {
-        "word": "russland",
+        "word": "marine",
         "count": 13
       },
       {
@@ -76,40 +76,106 @@
       {
         "word": "kensington",
         "count": 6,
-        "ratioParty": 754.9,
-        "ratioBundestag": 870.7
+        "ratioParty": 783.6,
+        "ratioBundestag": 904.0
       },
       {
         "word": "marine",
         "count": 13,
-        "ratioParty": 350.5,
-        "ratioBundestag": 196.0
+        "ratioParty": 363.8,
+        "ratioBundestag": 203.5
       },
       {
         "word": "guardian",
         "count": 8,
-        "ratioParty": 251.6,
-        "ratioBundestag": 145.1
+        "ratioParty": 261.2,
+        "ratioBundestag": 150.7
       },
       {
         "word": "miliz",
         "count": 5,
-        "ratioParty": 235.9,
-        "ratioBundestag": 290.2
+        "ratioParty": 244.9,
+        "ratioBundestag": 301.3
       },
       {
         "word": "schiffe",
         "count": 12,
-        "ratioParty": 188.7,
-        "ratioBundestag": 121.1
+        "ratioParty": 188.1,
+        "ratioBundestag": 124.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "marine",
+        "count": 13,
+        "score": 76.69,
+        "ratio": 363.8
+      },
+      {
+        "word": "schiffe",
+        "count": 12,
+        "score": 62.91,
+        "ratio": 188.1
+      },
+      {
+        "word": "guardian",
+        "count": 8,
+        "score": 44.55,
+        "ratio": 261.2
+      },
+      {
+        "word": "kensington",
+        "count": 6,
+        "score": 39.99,
+        "ratio": 783.6
+      },
+      {
+        "word": "miliz",
+        "count": 5,
+        "score": 27.52,
+        "ratio": 244.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "marine",
+        "count": 13,
+        "score": 69.17,
+        "ratio": 203.5
+      },
+      {
+        "word": "schiffe",
+        "count": 12,
+        "score": 58.01,
+        "ratio": 124.7
+      },
+      {
+        "word": "kensington",
+        "count": 6,
+        "score": 40.85,
+        "ratio": 904.0
+      },
+      {
+        "word": "guardian",
+        "count": 8,
+        "score": 40.18,
+        "ratio": 150.7
+      },
+      {
+        "word": "miliz",
+        "count": 5,
+        "score": 28.56,
+        "ratio": 301.3
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 469,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.73,
     "vsParliament": 0.8
   },
@@ -133,20 +199,20 @@
         "isCorrect": true
       },
       {
-        "text": "Sicherheit",
+        "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Steuern",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Koalition",
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kensington\" nutzt Bastian Ernst 754.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "870.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Kensington\" nutzt Bastian Ernst 783.6× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "904.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -285,15 +351,15 @@
           "count": 3
         },
         {
+          "word": "terror",
+          "count": 2
+        },
+        {
           "word": "armee",
           "count": 2
         },
         {
           "word": "streitkräfte",
-          "count": 2
-        },
-        {
-          "word": "abschreckung",
           "count": 2
         }
       ],
@@ -327,15 +393,15 @@
       ],
       "digital": [
         {
+          "word": "netzwerk",
+          "count": 1
+        },
+        {
           "word": "cybersicherheit",
           "count": 1
         },
         {
           "word": "daten",
-          "count": 1
-        },
-        {
-          "word": "netzwerk",
           "count": 1
         }
       ],
@@ -361,11 +427,11 @@
           "count": 12
         },
         {
-          "word": "straße",
+          "word": "infrastruktur",
           "count": 3
         },
         {
-          "word": "infrastruktur",
+          "word": "straße",
           "count": 3
         },
         {

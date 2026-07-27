@@ -11,23 +11,23 @@
   "minWords": 21,
   "maxWords": 691,
   "rankings": {
-    "speechRank": 228,
-    "wordsRank": 212,
-    "partySpeechRank": 60,
-    "partyWordsRank": 59,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 63.5,
-    "verbosityRank": 334,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 116,
-    "longestSpeechRank": 383
+    "speechRank": 235,
+    "wordsRank": 221,
+    "partySpeechRank": 62,
+    "partyWordsRank": 62,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 62.5,
+    "verbosityRank": 329,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 117,
+    "longestSpeechRank": 387
   },
   "drama": {
     "interruptionsGiven": 13,
     "interruptionsReceived": 20,
-    "interrupterRank": 243,
-    "interruptedRank": 330
+    "interrupterRank": 251,
+    "interruptedRank": 342
   },
   "words": {
     "topWords": [
@@ -64,32 +64,96 @@
       {
         "word": "bürgermeisterin",
         "count": 7,
-        "ratioParty": 398.0,
-        "ratioBundestag": 920.0
+        "ratioParty": 309.9,
+        "ratioBundestag": 764.3
       },
       {
         "word": "städtebauförderung",
         "count": 17,
-        "ratioParty": 82.8,
-        "ratioBundestag": 77.0
-      },
-      {
-        "word": "heimatstadt",
-        "count": 6,
-        "ratioParty": 46.5,
-        "ratioBundestag": 56.3
+        "ratioParty": 86.0,
+        "ratioBundestag": 80.0
       },
       {
         "word": "dachgesetz",
         "count": 9,
-        "ratioParty": 45.1,
-        "ratioBundestag": 59.1
+        "ratioParty": 46.9,
+        "ratioBundestag": 61.4
       },
       {
-        "word": "häusern",
+        "word": "heimatstadt",
         "count": 6,
-        "ratioParty": 42.6,
-        "ratioBundestag": 59.5
+        "ratioParty": 44.3,
+        "ratioBundestag": 56.5
+      },
+      {
+        "word": "kritis",
+        "count": 11,
+        "ratioParty": 40.6,
+        "ratioBundestag": 46.5
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "städtebauförderung",
+        "count": 17,
+        "score": 75.92,
+        "ratio": 86.0
+      },
+      {
+        "word": "kritis",
+        "count": 11,
+        "score": 41.01,
+        "ratio": 40.6
+      },
+      {
+        "word": "bürgermeisterin",
+        "count": 7,
+        "score": 40.18,
+        "ratio": 309.9
+      },
+      {
+        "word": "dachgesetz",
+        "count": 9,
+        "score": 34.82,
+        "ratio": 46.9
+      },
+      {
+        "word": "heimatstadt",
+        "count": 6,
+        "score": 22.88,
+        "ratio": 44.3
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "städtebauförderung",
+        "count": 17,
+        "score": 74.71,
+        "ratio": 80.0
+      },
+      {
+        "word": "bürgermeisterin",
+        "count": 7,
+        "score": 46.48,
+        "ratio": 764.3
+      },
+      {
+        "word": "kritis",
+        "count": 11,
+        "score": 42.47,
+        "ratio": 46.5
+      },
+      {
+        "word": "dachgesetz",
+        "count": 9,
+        "score": 37.2,
+        "ratio": 61.4
+      },
+      {
+        "word": "heimatstadt",
+        "count": 6,
+        "score": 24.31,
+        "ratio": 56.5
       }
     ],
     "signatureAdjectives": [
@@ -97,20 +161,48 @@
         "word": "wirksam",
         "count": 3,
         "ratioParty": 4.1,
-        "ratioBundestag": 5.6
+        "ratioBundestag": 5.7
       },
       {
         "word": "wirtschaftlich",
         "count": 3,
         "ratioParty": 3.3,
-        "ratioBundestag": 3.7
+        "ratioBundestag": 3.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 4.89,
+        "ratio": 4.1
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 4.38,
+        "ratio": 3.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 5.71,
+        "ratio": 5.7
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 4.71,
+        "ratio": 3.8
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 416,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.64,
     "vsParliament": 0.71
   },
@@ -135,30 +227,30 @@
     "question": "Welches Wort nutzt Dr. Katja Strauss-Köster häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
         "text": "Bürgermeisterin",
         "isCorrect": true
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bürgermeisterin\" nutzt Dr. Katja Strauss-Köster 398.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "920.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bürgermeisterin\" nutzt Dr. Katja Strauss-Köster 309.9× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "764.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Katja Strauss-Köster häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Gefährlich",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
@@ -166,16 +258,16 @@
         "isCorrect": true
       },
       {
-        "text": "Richtig",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
+        "text": "Sozial",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Wirksam\" nutzt Dr. Katja Strauss-Köster 4.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "5.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "5.7× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -271,11 +363,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "zuwanderer",
+          "word": "integration",
           "count": 1
         },
         {
-          "word": "integration",
+          "word": "zuwanderer",
           "count": 1
         }
       ],
@@ -285,7 +377,7 @@
           "count": 2
         },
         {
-          "word": "müll",
+          "word": "emissionen",
           "count": 1
         },
         {
@@ -321,19 +413,19 @@
           "count": 15
         },
         {
-          "word": "kind",
-          "count": 3
-        },
-        {
           "word": "jugendliche",
           "count": 3
         },
         {
-          "word": "familie",
+          "word": "kind",
           "count": 3
         },
         {
           "word": "wohnungen",
+          "count": 3
+        },
+        {
+          "word": "familie",
           "count": 3
         }
       ],
@@ -395,11 +487,11 @@
           "count": 2
         },
         {
-          "word": "frieden",
+          "word": "wiederaufbau",
           "count": 1
         },
         {
-          "word": "wiederaufbau",
+          "word": "frieden",
           "count": 1
         }
       ],
@@ -417,11 +509,11 @@
           "count": 2
         },
         {
-          "word": "plattformen",
+          "word": "verschlüsselung",
           "count": 1
         },
         {
-          "word": "verschlüsselung",
+          "word": "plattformen",
           "count": 1
         }
       ],
@@ -431,19 +523,19 @@
           "count": 4
         },
         {
-          "word": "studium",
-          "count": 1
-        },
-        {
-          "word": "universität",
-          "count": 1
-        },
-        {
           "word": "auszubildende",
           "count": 1
         },
         {
           "word": "studierende",
+          "count": 1
+        },
+        {
+          "word": "studium",
+          "count": 1
+        },
+        {
+          "word": "universität",
           "count": 1
         }
       ],
@@ -453,19 +545,19 @@
           "count": 3
         },
         {
-          "word": "bundeshaushalt",
-          "count": 2
-        },
-        {
           "word": "investitionen",
           "count": 2
         },
         {
-          "word": "steuern",
+          "word": "bundeshaushalt",
+          "count": 2
+        },
+        {
+          "word": "gewerbesteuer",
           "count": 1
         },
         {
-          "word": "investition",
+          "word": "finanzierung",
           "count": 1
         }
       ],
@@ -483,21 +575,21 @@
           "count": 3
         },
         {
-          "word": "rechtsstaat",
+          "word": "novelle",
           "count": 2
         },
         {
-          "word": "novelle",
+          "word": "rechtsstaat",
           "count": 2
         }
       ],
       "arbeit": [
         {
-          "word": "arbeiter",
+          "word": "arbeitsplätze",
           "count": 2
         },
         {
-          "word": "arbeitsplätze",
+          "word": "arbeiter",
           "count": 2
         }
       ],

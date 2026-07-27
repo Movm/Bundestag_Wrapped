@@ -11,23 +11,23 @@
   "minWords": 54,
   "maxWords": 810,
   "rankings": {
-    "speechRank": 314,
-    "wordsRank": 324,
-    "partySpeechRank": 86,
-    "partyWordsRank": 97,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 49.8,
-    "verbosityRank": 253,
-    "verbosityTotal": 579,
+    "speechRank": 316,
+    "wordsRank": 336,
+    "partySpeechRank": 88,
+    "partyWordsRank": 102,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 49.5,
+    "verbosityRank": 255,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 89,
     "longestSpeechRank": 241
   },
   "drama": {
     "interruptionsGiven": 13,
     "interruptionsReceived": 13,
-    "interrupterRank": 244,
-    "interruptedRank": 415
+    "interrupterRank": 250,
+    "interruptedRank": 423
   },
   "words": {
     "topWords": [
@@ -48,19 +48,19 @@
         "count": 13
       },
       {
-        "word": "leistungen",
-        "count": 12
-      },
-      {
         "word": "arbeit",
         "count": 12
       },
       {
-        "word": "ausdrücklich",
-        "count": 11
+        "word": "leistungen",
+        "count": 12
       },
       {
         "word": "wichtig",
+        "count": 11
+      },
+      {
+        "word": "ausdrücklich",
         "count": 11
       },
       {
@@ -72,40 +72,106 @@
       {
         "word": "barrierefreiheit",
         "count": 11,
-        "ratioParty": 303.5,
-        "ratioBundestag": 123.7
+        "ratioParty": 315.1,
+        "ratioBundestag": 128.4
       },
       {
         "word": "mindestlohnkommission",
         "count": 7,
-        "ratioParty": 193.2,
-        "ratioBundestag": 254.9
-      },
-      {
-        "word": "arbeitszeitgesetz",
-        "count": 5,
-        "ratioParty": 177.4,
-        "ratioBundestag": 115.8
+        "ratioParty": 200.5,
+        "ratioBundestag": 264.6
       },
       {
         "word": "wochenarbeitszeit",
         "count": 5,
-        "ratioParty": 155.2,
-        "ratioBundestag": 273.1
+        "ratioParty": 161.1,
+        "ratioBundestag": 283.5
+      },
+      {
+        "word": "arbeitszeitgesetz",
+        "count": 5,
+        "ratioParty": 161.1,
+        "ratioBundestag": 116.7
       },
       {
         "word": "tariftreuegesetz",
         "count": 5,
-        "ratioParty": 138.0,
-        "ratioBundestag": 56.2
+        "ratioParty": 143.2,
+        "ratioBundestag": 57.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "barrierefreiheit",
+        "count": 11,
+        "score": 63.32,
+        "ratio": 315.1
+      },
+      {
+        "word": "mindestlohnkommission",
+        "count": 7,
+        "score": 37.14,
+        "ratio": 200.5
+      },
+      {
+        "word": "wochenarbeitszeit",
+        "count": 5,
+        "score": 25.44,
+        "ratio": 161.1
+      },
+      {
+        "word": "arbeitszeitgesetz",
+        "count": 5,
+        "score": 25.44,
+        "ratio": 161.1
+      },
+      {
+        "word": "tariftreuegesetz",
+        "count": 5,
+        "score": 24.86,
+        "ratio": 143.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "barrierefreiheit",
+        "count": 11,
+        "score": 53.49,
+        "ratio": 128.4
+      },
+      {
+        "word": "mindestlohnkommission",
+        "count": 7,
+        "score": 39.07,
+        "ratio": 264.6
+      },
+      {
+        "word": "wochenarbeitszeit",
+        "count": 5,
+        "score": 28.25,
+        "ratio": 283.5
+      },
+      {
+        "word": "arbeitszeitgesetz",
+        "count": 5,
+        "score": 23.84,
+        "ratio": 116.7
+      },
+      {
+        "word": "tariftreuegesetz",
+        "count": 5,
+        "score": 20.35,
+        "ratio": 57.5
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 448,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.69,
     "vsParliament": 0.77
   },
@@ -130,15 +196,15 @@
     "question": "Welches Wort nutzt Wilfried Oellers häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Familie",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Energie",
+        "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Ausschuss",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
@@ -146,8 +212,8 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Barrierefreiheit\" nutzt Wilfried Oellers 303.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "123.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Barrierefreiheit\" nutzt Wilfried Oellers 315.1× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "128.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -266,7 +332,7 @@
           "count": 2
         },
         {
-          "word": "produktion",
+          "word": "betriebe",
           "count": 1
         }
       ],
@@ -276,11 +342,11 @@
           "count": 11
         },
         {
-          "word": "sozialstaat",
+          "word": "familie",
           "count": 4
         },
         {
-          "word": "familie",
+          "word": "sozialstaat",
           "count": 4
         },
         {
@@ -344,10 +410,6 @@
       ],
       "justiz": [
         {
-          "word": "beschluss",
-          "count": 1
-        },
-        {
           "word": "rechtsprechung",
           "count": 1
         },
@@ -357,6 +419,10 @@
         },
         {
           "word": "gesetzgebung",
+          "count": 1
+        },
+        {
+          "word": "beschluss",
           "count": 1
         }
       ],

@@ -11,22 +11,22 @@
   "minWords": 344,
   "maxWords": 418,
   "rankings": {
-    "speechRank": 594,
+    "speechRank": 591,
     "wordsRank": 609,
-    "partySpeechRank": 108,
+    "partySpeechRank": 107,
     "partyWordsRank": 112,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 5.0,
+    "totalSpeakers": 626,
+    "percentile": 5.6,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 603
+    "longestSpeechRank": 604
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 1,
     "interruptionsReceived": 0,
-    "interrupterRank": null,
+    "interrupterRank": 470,
     "interruptedRank": null
   },
   "words": {
@@ -36,11 +36,11 @@
         "count": 6
       },
       {
-        "word": "infrastruktur",
+        "word": "gemeinsam",
         "count": 5
       },
       {
-        "word": "gemeinsam",
+        "word": "infrastruktur",
         "count": 5
       },
       {
@@ -52,23 +52,23 @@
         "count": 4
       },
       {
-        "word": "jahre",
-        "count": 3
-      },
-      {
-        "word": "ländern",
-        "count": 3
-      },
-      {
-        "word": "wohnungsbau",
-        "count": 3
-      },
-      {
-        "word": "freue",
+        "word": "gerne",
         "count": 3
       },
       {
         "word": "schneller",
+        "count": 3
+      },
+      {
+        "word": "jahre",
+        "count": 3
+      },
+      {
+        "word": "bauvorhaben",
+        "count": 3
+      },
+      {
+        "word": "wichtig",
         "count": 3
       }
     ],
@@ -76,29 +76,71 @@
       {
         "word": "bauturbo",
         "count": 6,
-        "ratioParty": 93.8,
-        "ratioBundestag": 132.4
+        "ratioParty": 96.7,
+        "ratioBundestag": 136.5
       },
       {
         "word": "infrastruktur",
         "count": 5,
-        "ratioParty": 11.3,
-        "ratioBundestag": 14.6
+        "ratioParty": 11.6,
+        "ratioBundestag": 14.7
       },
       {
         "word": "gemeinsam",
         "count": 5,
-        "ratioParty": 7.6,
+        "ratioParty": 7.7,
         "ratioBundestag": 12.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bauturbo",
+        "count": 6,
+        "score": 27.49,
+        "ratio": 96.7
+      },
+      {
+        "word": "infrastruktur",
+        "count": 5,
+        "score": 12.67,
+        "ratio": 11.6
+      },
+      {
+        "word": "gemeinsam",
+        "count": 5,
+        "score": 10.82,
+        "ratio": 7.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bauturbo",
+        "count": 6,
+        "score": 29.54,
+        "ratio": 136.5
+      },
+      {
+        "word": "infrastruktur",
+        "count": 5,
+        "score": 13.77,
+        "ratio": 14.7
+      },
+      {
+        "word": "gemeinsam",
+        "count": 5,
+        "score": 12.94,
+        "ratio": 12.3
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 381,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.62,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.61,
     "vsParliament": 0.65
   },
   "funFacts": [
@@ -112,24 +154,24 @@
     "question": "Welches Wort nutzt Sören Bartol häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
+      },
+      {
         "text": "Bauturbo",
         "isCorrect": true
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Demokratie",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bauturbo\" nutzt Sören Bartol 93.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "132.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bauturbo\" nutzt Sören Bartol 96.7× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "136.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -153,7 +195,7 @@
         "title": "Konstruktiver Brückenbauer",
         "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
         "id": "biber",
-        "score": 0.8
+        "score": 0.78
       }
     ]
   },
@@ -250,11 +292,11 @@
       ],
       "digital": [
         {
-          "word": "digitalisierung",
+          "word": "technologie",
           "count": 1
         },
         {
-          "word": "technologie",
+          "word": "digitalisierung",
           "count": 1
         }
       ],

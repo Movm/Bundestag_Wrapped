@@ -11,23 +11,23 @@
   "minWords": 51,
   "maxWords": 727,
   "rankings": {
-    "speechRank": 244,
-    "wordsRank": 310,
-    "partySpeechRank": 66,
-    "partyWordsRank": 93,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 61.0,
-    "verbosityRank": 408,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 142,
-    "longestSpeechRank": 340
+    "speechRank": 265,
+    "wordsRank": 323,
+    "partySpeechRank": 73,
+    "partyWordsRank": 98,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 57.7,
+    "verbosityRank": 412,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 143,
+    "longestSpeechRank": 344
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 15,
     "interrupterRank": null,
-    "interruptedRank": 391
+    "interruptedRank": 392
   },
   "words": {
     "topWords": [
@@ -46,58 +46,130 @@
       {
         "word": "minister",
         "count": 11
+      },
+      {
+        "word": "menschen",
+        "count": 11
+      },
+      {
+        "word": "klimaschutz",
+        "count": 11
       }
     ],
     "signatureWords": [
       {
         "word": "arten",
         "count": 5,
-        "ratioParty": 81.9,
-        "ratioBundestag": 73.5
+        "ratioParty": 85.0,
+        "ratioBundestag": 74.8
       },
       {
         "word": "nachhaltigkeit",
         "count": 7,
-        "ratioParty": 23.9,
-        "ratioBundestag": 24.1
+        "ratioParty": 24.9,
+        "ratioBundestag": 25.0
       },
       {
         "word": "mandat",
         "count": 6,
-        "ratioParty": 23.7,
-        "ratioBundestag": 15.3
+        "ratioParty": 24.6,
+        "ratioBundestag": 15.9
       },
       {
         "word": "kosovo",
         "count": 5,
-        "ratioParty": 22.9,
-        "ratioBundestag": 20.6
+        "ratioParty": 23.8,
+        "ratioBundestag": 21.4
       },
       {
         "word": "einsatz",
         "count": 12,
-        "ratioParty": 9.0,
-        "ratioBundestag": 9.3
+        "ratioParty": 9.2,
+        "ratioBundestag": 9.6
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "einsatz",
+        "count": 12,
+        "score": 27.87,
+        "ratio": 9.2
+      },
+      {
+        "word": "nachhaltigkeit",
+        "count": 7,
+        "score": 22.78,
+        "ratio": 24.9
+      },
+      {
+        "word": "arten",
+        "count": 5,
+        "score": 22.27,
+        "ratio": 85.0
+      },
+      {
+        "word": "mandat",
+        "count": 6,
+        "score": 19.46,
+        "ratio": 24.6
+      },
+      {
+        "word": "kosovo",
+        "count": 5,
+        "score": 16.05,
+        "ratio": 23.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "einsatz",
+        "count": 12,
+        "score": 28.33,
+        "ratio": 9.6
+      },
+      {
+        "word": "nachhaltigkeit",
+        "count": 7,
+        "score": 22.81,
+        "ratio": 25.0
+      },
+      {
+        "word": "arten",
+        "count": 5,
+        "score": 21.64,
+        "ratio": 74.8
+      },
+      {
+        "word": "mandat",
+        "count": 6,
+        "score": 16.96,
+        "ratio": 15.9
+      },
+      {
+        "word": "kosovo",
+        "count": 5,
+        "score": 15.55,
+        "ratio": 21.4
       }
     ],
     "signatureAdjectives": [
       {
         "word": "sozial",
         "count": 3,
-        "ratioParty": 10.4,
-        "ratioBundestag": 5.8
+        "ratioParty": 10.3,
+        "ratioBundestag": 6.0
       },
       {
         "word": "falsch",
         "count": 5,
-        "ratioParty": 5.2,
-        "ratioBundestag": 5.1
+        "ratioParty": 5.1,
+        "ratioBundestag": 5.0
       },
       {
         "word": "wirtschaftlich",
         "count": 3,
-        "ratioParty": 4.5,
-        "ratioBundestag": 5.0
+        "ratioParty": 4.4,
+        "ratioBundestag": 5.1
       },
       {
         "word": "erfolgreich",
@@ -111,14 +183,78 @@
         "ratioParty": 2.3,
         "ratioBundestag": 2.9
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "falsch",
+        "count": 5,
+        "score": 9.04,
+        "ratio": 5.1
+      },
+      {
+        "word": "sozial",
+        "count": 3,
+        "score": 7.27,
+        "ratio": 10.3
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 5.06,
+        "ratio": 4.4
+      },
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 4.89,
+        "ratio": 4.1
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 3.58,
+        "ratio": 2.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "falsch",
+        "count": 5,
+        "score": 8.96,
+        "ratio": 5.0
+      },
+      {
+        "word": "sozial",
+        "count": 3,
+        "score": 5.84,
+        "ratio": 6.0
+      },
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 5.66,
+        "ratio": 5.6
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 5.42,
+        "ratio": 5.1
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 4.08,
+        "ratio": 2.9
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 377,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.58,
-    "vsParliament": 0.65
+    "vsParliament": 0.64
   },
   "funFacts": [
     {
@@ -136,7 +272,11 @@
     "question": "Welches Wort nutzt Volker Mayer-Lay häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Verantwortung",
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
@@ -144,39 +284,35 @@
         "isCorrect": true
       },
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
+        "text": "Rente",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Arten\" nutzt Volker Mayer-Lay 81.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "73.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Arten\" nutzt Volker Mayer-Lay 85.0× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "74.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Volker Mayer-Lay häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
         "text": "Sozial",
         "isCorrect": true
       },
       {
-        "text": "National",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "Groß",
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sozial\" nutzt Volker Mayer-Lay 10.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "5.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Sozial\" nutzt Volker Mayer-Lay 10.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "6.0× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -312,11 +448,11 @@
           "count": 2
         },
         {
-          "word": "wachstum",
+          "word": "wettbewerb",
           "count": 1
         },
         {
-          "word": "wirtschaftswachstum",
+          "word": "wachstum",
           "count": 1
         }
       ],
@@ -340,11 +476,11 @@
           "count": 2
         },
         {
-          "word": "terrorismus",
+          "word": "panzer",
           "count": 1
         },
         {
-          "word": "streitkräfte",
+          "word": "terrorismus",
           "count": 1
         }
       ],
@@ -354,19 +490,19 @@
           "count": 7
         },
         {
-          "word": "nato",
-          "count": 5
-        },
-        {
           "word": "russland",
           "count": 5
         },
         {
-          "word": "frieden",
-          "count": 3
+          "word": "nato",
+          "count": 5
         },
         {
           "word": "ukraine",
+          "count": 3
+        },
+        {
+          "word": "frieden",
           "count": 3
         }
       ],
@@ -386,19 +522,19 @@
       ],
       "bildung": [
         {
-          "word": "ausbildung",
-          "count": 2
-        },
-        {
           "word": "forschung",
           "count": 2
         },
         {
-          "word": "schule",
-          "count": 1
+          "word": "ausbildung",
+          "count": 2
         },
         {
           "word": "schulklasse",
+          "count": 1
+        },
+        {
+          "word": "schule",
           "count": 1
         },
         {
@@ -416,15 +552,15 @@
           "count": 1
         },
         {
+          "word": "bundeshaushalt",
+          "count": 1
+        },
+        {
           "word": "schulden",
           "count": 1
         },
         {
           "word": "investitionen",
-          "count": 1
-        },
-        {
-          "word": "bundeshaushalt",
           "count": 1
         }
       ],
@@ -466,15 +602,15 @@
           "count": 2
         },
         {
+          "word": "radwege",
+          "count": 1
+        },
+        {
           "word": "flughafen",
           "count": 1
         },
         {
           "word": "straßen",
-          "count": 1
-        },
-        {
-          "word": "radwege",
           "count": 1
         }
       ]

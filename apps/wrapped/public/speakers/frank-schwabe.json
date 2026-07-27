@@ -11,23 +11,23 @@
   "minWords": 30,
   "maxWords": 400,
   "rankings": {
-    "speechRank": 581,
-    "wordsRank": 206,
-    "partySpeechRank": 104,
-    "partyWordsRank": 48,
+    "speechRank": 583,
+    "wordsRank": 213,
+    "partySpeechRank": 105,
+    "partyWordsRank": 50,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 7.0,
+    "totalSpeakers": 626,
+    "percentile": 6.9,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 608
+    "longestSpeechRank": 609
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 7,
     "interrupterRank": null,
-    "interruptedRank": 504
+    "interruptedRank": 508
   },
   "words": {
     "topWords": [
@@ -76,40 +76,104 @@
       {
         "word": "strafgesetzbuch",
         "count": 9,
-        "ratioParty": 124.0,
-        "ratioBundestag": 115.8
+        "ratioParty": 129.5,
+        "ratioBundestag": 120.2
       },
       {
         "word": "prozessbegleitung",
         "count": 6,
-        "ratioParty": 66.1,
-        "ratioBundestag": 87.3
-      },
-      {
-        "word": "nummer",
-        "count": 6,
-        "ratioParty": 60.1,
-        "ratioBundestag": 34.6
+        "ratioParty": 57.6,
+        "ratioBundestag": 82.1
       },
       {
         "word": "richter",
         "count": 12,
-        "ratioParty": 52.9,
-        "ratioBundestag": 38.6
+        "ratioParty": 53.1,
+        "ratioBundestag": 39.6
       },
       {
-        "word": "absatz",
-        "count": 11,
-        "ratioParty": 50.5,
-        "ratioBundestag": 24.4
+        "word": "strafverfahren",
+        "count": 5,
+        "ratioParty": 41.1,
+        "ratioBundestag": 55.2
+      },
+      {
+        "word": "richterinnen",
+        "count": 7,
+        "ratioParty": 40.3,
+        "ratioBundestag": 74.5
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "richter",
+        "count": 12,
+        "score": 47.89,
+        "ratio": 53.1
+      },
+      {
+        "word": "strafgesetzbuch",
+        "count": 9,
+        "score": 43.84,
+        "ratio": 129.5
+      },
+      {
+        "word": "richterinnen",
+        "count": 7,
+        "score": 26.05,
+        "ratio": 40.3
+      },
+      {
+        "word": "prozessbegleitung",
+        "count": 6,
+        "score": 24.42,
+        "ratio": 57.6
+      },
+      {
+        "word": "strafverfahren",
+        "count": 5,
+        "score": 18.7,
+        "ratio": 41.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "richter",
+        "count": 12,
+        "score": 44.45,
+        "ratio": 39.6
+      },
+      {
+        "word": "strafgesetzbuch",
+        "count": 9,
+        "score": 43.18,
+        "ratio": 120.2
+      },
+      {
+        "word": "richterinnen",
+        "count": 7,
+        "score": 30.27,
+        "ratio": 74.5
+      },
+      {
+        "word": "prozessbegleitung",
+        "count": 6,
+        "score": 26.52,
+        "ratio": 82.1
+      },
+      {
+        "word": "strafverfahren",
+        "count": 5,
+        "score": 20.14,
+        "ratio": 55.2
       }
     ],
     "signatureAdjectives": [
       {
         "word": "demokratisch",
         "count": 4,
-        "ratioParty": 14.2,
-        "ratioBundestag": 16.5
+        "ratioParty": 14.0,
+        "ratioBundestag": 16.4
       },
       {
         "word": "geschützt",
@@ -117,13 +181,41 @@
         "ratioParty": 7.0,
         "ratioBundestag": 9.8
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "demokratisch",
+        "count": 4,
+        "score": 10.83,
+        "ratio": 14.0
+      },
+      {
+        "word": "geschützt",
+        "count": 5,
+        "score": 10.4,
+        "ratio": 7.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "geschützt",
+        "count": 5,
+        "score": 11.9,
+        "ratio": 9.8
+      },
+      {
+        "word": "demokratisch",
+        "count": 4,
+        "score": 11.43,
+        "ratio": 16.4
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 127,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.21,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
+    "vsParty": 0.2,
     "vsParliament": 0.22
   },
   "funFacts": [
@@ -142,11 +234,7 @@
     "question": "Welches Wort nutzt Frank Schwabe häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
+        "text": "Minister",
         "isCorrect": false
       },
       {
@@ -154,35 +242,39 @@
         "isCorrect": true
       },
       {
-        "text": "Bildung",
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Strafgesetzbuch\" nutzt Frank Schwabe 124.0× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "115.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Strafgesetzbuch\" nutzt Frank Schwabe 129.5× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "120.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Frank Schwabe häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
         "text": "Demokratisch",
         "isCorrect": true
+      },
+      {
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Demokratisch\" nutzt Frank Schwabe 14.2× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "16.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Demokratisch\" nutzt Frank Schwabe 14.0× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "16.4× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -396,6 +488,10 @@
       ],
       "finanzen": [
         {
+          "word": "haushaltsausschuss",
+          "count": 1
+        },
+        {
           "word": "etat",
           "count": 1
         },
@@ -405,10 +501,6 @@
         },
         {
           "word": "bundeshaushalt",
-          "count": 1
-        },
-        {
-          "word": "haushaltsausschuss",
           "count": 1
         }
       ],
@@ -426,11 +518,11 @@
           "count": 7
         },
         {
-          "word": "gerichte",
+          "word": "gericht",
           "count": 6
         },
         {
-          "word": "gericht",
+          "word": "gerichte",
           "count": 6
         }
       ]

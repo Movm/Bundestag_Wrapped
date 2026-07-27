@@ -11,23 +11,23 @@
   "minWords": 75,
   "maxWords": 694,
   "rankings": {
-    "speechRank": 207,
-    "wordsRank": 323,
-    "partySpeechRank": 31,
-    "partyWordsRank": 37,
+    "speechRank": 215,
+    "wordsRank": 335,
+    "partySpeechRank": 32,
+    "partyWordsRank": 39,
     "partySize": 63,
-    "totalSpeakers": 625,
-    "percentile": 66.9,
-    "verbosityRank": 438,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 65.7,
+    "verbosityRank": 446,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 38,
-    "longestSpeechRank": 379
+    "longestSpeechRank": 383
   },
   "drama": {
     "interruptionsGiven": 34,
     "interruptionsReceived": 23,
     "interrupterRank": 151,
-    "interruptedRank": 298
+    "interruptedRank": 313
   },
   "words": {
     "topWords": [
@@ -50,53 +50,137 @@
       {
         "word": "geld",
         "count": 11
+      },
+      {
+        "word": "bundesregierung",
+        "count": 10
       }
     ],
     "signatureWords": [
       {
         "word": "potsdam",
         "count": 5,
-        "ratioParty": 96.3,
-        "ratioBundestag": 140.6
+        "ratioParty": 99.8,
+        "ratioBundestag": 146.0
       },
       {
         "word": "geldwäsche",
         "count": 5,
-        "ratioParty": 77.0,
-        "ratioBundestag": 58.4
+        "ratioParty": 79.9,
+        "ratioBundestag": 60.6
       },
       {
         "word": "bündnis",
         "count": 8,
-        "ratioParty": 41.1,
-        "ratioBundestag": 22.4
+        "ratioParty": 39.9,
+        "ratioBundestag": 22.0
       },
       {
         "word": "bekämpfung",
         "count": 5,
-        "ratioParty": 25.7,
-        "ratioBundestag": 16.1
+        "ratioParty": 26.6,
+        "ratioBundestag": 15.9
       },
       {
         "word": "umverteilung",
         "count": 5,
-        "ratioParty": 21.4,
-        "ratioBundestag": 36.1
+        "ratioParty": 22.2,
+        "ratioBundestag": 36.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "bündnis",
+        "count": 8,
+        "score": 29.69,
+        "ratio": 39.9
+      },
+      {
+        "word": "potsdam",
+        "count": 5,
+        "score": 23.07,
+        "ratio": 99.8
+      },
+      {
+        "word": "geldwäsche",
+        "count": 5,
+        "score": 21.97,
+        "ratio": 79.9
+      },
+      {
+        "word": "bekämpfung",
+        "count": 5,
+        "score": 16.59,
+        "ratio": 26.6
+      },
+      {
+        "word": "umverteilung",
+        "count": 5,
+        "score": 15.72,
+        "ratio": 22.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bündnis",
+        "count": 8,
+        "score": 25.08,
+        "ratio": 22.0
+      },
+      {
+        "word": "potsdam",
+        "count": 5,
+        "score": 24.95,
+        "ratio": 146.0
+      },
+      {
+        "word": "geldwäsche",
+        "count": 5,
+        "score": 20.6,
+        "ratio": 60.6
+      },
+      {
+        "word": "umverteilung",
+        "count": 5,
+        "score": 18.16,
+        "ratio": 36.8
+      },
+      {
+        "word": "bekämpfung",
+        "count": 5,
+        "score": 14.14,
+        "ratio": 15.9
       }
     ],
     "signatureAdjectives": [
       {
         "word": "beschämend",
         "count": 3,
-        "ratioParty": 14.4,
-        "ratioBundestag": 47.4
+        "ratioParty": 15.0,
+        "ratioBundestag": 47.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "beschämend",
+        "count": 3,
+        "score": 8.32,
+        "ratio": 15.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "beschämend",
+        "count": 3,
+        "score": 11.63,
+        "ratio": 47.3
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 364,
-    "partyAvgWords": 500,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 499,
+    "parliamentAvgWords": 585,
     "vsParty": 0.73,
     "vsParliament": 0.62
   },
@@ -121,11 +205,7 @@
     "question": "Welches Wort nutzt Isabelle Vandre häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Demokratie",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
@@ -133,35 +213,39 @@
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesellschaft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Potsdam\" nutzt Isabelle Vandre 96.3× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "140.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Potsdam\" nutzt Isabelle Vandre 99.8× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "146.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Isabelle Vandre häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
         "text": "Beschämend",
         "isCorrect": true
-      },
-      {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Sozial",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Beschämend\" nutzt Isabelle Vandre 14.4× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "47.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Beschämend\" nutzt Isabelle Vandre 15.0× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "47.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐺",
@@ -261,7 +345,7 @@
           "count": 2
         },
         {
-          "word": "wirtschaft",
+          "word": "konzerne",
           "count": 1
         },
         {
@@ -269,11 +353,11 @@
           "count": 1
         },
         {
-          "word": "selbstständige",
+          "word": "wirtschaft",
           "count": 1
         },
         {
-          "word": "konzerne",
+          "word": "selbstständige",
           "count": 1
         }
       ],
@@ -283,7 +367,11 @@
           "count": 5
         },
         {
-          "word": "kinder",
+          "word": "sozialstaat",
+          "count": 3
+        },
+        {
+          "word": "mietpreisbremse",
           "count": 3
         },
         {
@@ -291,11 +379,7 @@
           "count": 3
         },
         {
-          "word": "sozialstaat",
-          "count": 3
-        },
-        {
-          "word": "mietpreisbremse",
+          "word": "kinder",
           "count": 3
         }
       ],
@@ -313,11 +397,11 @@
           "count": 2
         },
         {
-          "word": "angriff",
+          "word": "terrorismus",
           "count": 1
         },
         {
-          "word": "verbrechen",
+          "word": "angriff",
           "count": 1
         }
       ],
@@ -341,11 +425,11 @@
           "count": 3
         },
         {
-          "word": "kriegsverbrechen",
+          "word": "putin",
           "count": 1
         },
         {
-          "word": "europa",
+          "word": "angriffskrieg",
           "count": 1
         }
       ],
@@ -375,23 +459,31 @@
           "count": 4
         },
         {
-          "word": "steuern",
-          "count": 3
-        },
-        {
           "word": "haushalt",
           "count": 3
         },
         {
-          "word": "steuergerechtigkeit",
-          "count": 2
+          "word": "steuern",
+          "count": 3
         },
         {
           "word": "kosten",
           "count": 2
+        },
+        {
+          "word": "banken",
+          "count": 2
         }
       ],
       "justiz": [
+        {
+          "word": "diskriminierung",
+          "count": 1
+        },
+        {
+          "word": "staatsanwaltschaft",
+          "count": 1
+        },
         {
           "word": "straftaten",
           "count": 1
@@ -401,15 +493,7 @@
           "count": 1
         },
         {
-          "word": "diskriminierung",
-          "count": 1
-        },
-        {
           "word": "strafverfolgung",
-          "count": 1
-        },
-        {
-          "word": "staatsanwaltschaft",
           "count": 1
         }
       ],
@@ -423,7 +507,7 @@
           "count": 2
         },
         {
-          "word": "lohn",
+          "word": "rentenversicherung",
           "count": 1
         },
         {
@@ -431,17 +515,17 @@
           "count": 1
         },
         {
-          "word": "rentenversicherung",
+          "word": "lohn",
           "count": 1
         }
       ],
       "mobilitaet": [
         {
-          "word": "straße",
+          "word": "öpnv",
           "count": 1
         },
         {
-          "word": "öpnv",
+          "word": "straße",
           "count": 1
         }
       ]

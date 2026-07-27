@@ -11,23 +11,23 @@
   "minWords": 52,
   "maxWords": 731,
   "rankings": {
-    "speechRank": 366,
-    "wordsRank": 370,
+    "speechRank": 367,
+    "wordsRank": 382,
     "partySpeechRank": 101,
-    "partyWordsRank": 113,
-    "partySize": 211,
-    "totalSpeakers": 625,
+    "partyWordsRank": 117,
+    "partySize": 212,
+    "totalSpeakers": 626,
     "percentile": 41.4,
-    "verbosityRank": 432,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 149,
-    "longestSpeechRank": 334
+    "verbosityRank": 438,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 151,
+    "longestSpeechRank": 340
   },
   "drama": {
     "interruptionsGiven": 12,
     "interruptionsReceived": 28,
-    "interrupterRank": 262,
-    "interruptedRank": 262
+    "interrupterRank": 269,
+    "interruptedRank": 275
   },
   "words": {
     "topWords": [
@@ -56,11 +56,11 @@
         "count": 14
       },
       {
-        "word": "infrastruktur",
+        "word": "jahr",
         "count": 13
       },
       {
-        "word": "jahr",
+        "word": "infrastruktur",
         "count": 13
       },
       {
@@ -76,40 +76,104 @@
       {
         "word": "highlight",
         "count": 5,
-        "ratioParty": 204.2,
-        "ratioBundestag": 231.5
+        "ratioParty": 212.0,
+        "ratioBundestag": 240.4
       },
       {
         "word": "bundesverkehrsminister",
         "count": 6,
-        "ratioParty": 190.6,
-        "ratioBundestag": 310.5
+        "ratioParty": 197.8,
+        "ratioBundestag": 322.4
       },
       {
         "word": "verkehrspolitik",
         "count": 5,
-        "ratioParty": 57.2,
-        "ratioBundestag": 55.0
+        "ratioParty": 55.0,
+        "ratioBundestag": 51.9
       },
       {
         "word": "verkehrsinfrastruktur",
         "count": 6,
-        "ratioParty": 44.0,
-        "ratioBundestag": 56.8
+        "ratioParty": 45.7,
+        "ratioBundestag": 57.1
       },
       {
-        "word": "planungs",
+        "word": "schnieder",
+        "count": 5,
+        "ratioParty": 35.3,
+        "ratioBundestag": 35.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "bundesverkehrsminister",
         "count": 6,
-        "ratioParty": 35.0,
-        "ratioBundestag": 53.9
+        "score": 31.75,
+        "ratio": 197.8
+      },
+      {
+        "word": "highlight",
+        "count": 5,
+        "score": 26.81,
+        "ratio": 212.0
+      },
+      {
+        "word": "verkehrsinfrastruktur",
+        "count": 6,
+        "score": 23.06,
+        "ratio": 45.7
+      },
+      {
+        "word": "verkehrspolitik",
+        "count": 5,
+        "score": 20.13,
+        "ratio": 55.0
+      },
+      {
+        "word": "schnieder",
+        "count": 5,
+        "score": 17.96,
+        "ratio": 35.3
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bundesverkehrsminister",
+        "count": 6,
+        "score": 34.67,
+        "ratio": 322.4
+      },
+      {
+        "word": "highlight",
+        "count": 5,
+        "score": 27.43,
+        "ratio": 240.4
+      },
+      {
+        "word": "verkehrsinfrastruktur",
+        "count": 6,
+        "score": 24.37,
+        "ratio": 57.1
+      },
+      {
+        "word": "verkehrspolitik",
+        "count": 5,
+        "score": 19.84,
+        "ratio": 51.9
+      },
+      {
+        "word": "schnieder",
+        "count": 5,
+        "score": 17.93,
+        "ratio": 35.1
       }
     ],
     "signatureAdjectives": [
       {
         "word": "solide",
         "count": 6,
-        "ratioParty": 27.7,
-        "ratioBundestag": 38.8
+        "ratioParty": 28.3,
+        "ratioBundestag": 38.6
       },
       {
         "word": "entscheidend",
@@ -117,12 +181,40 @@
         "ratioParty": 3.5,
         "ratioBundestag": 5.2
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "solide",
+        "count": 6,
+        "score": 20.27,
+        "ratio": 28.3
+      },
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 4.51,
+        "ratio": 3.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "solide",
+        "count": 6,
+        "score": 22.07,
+        "ratio": 38.6
+      },
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 5.47,
+        "ratio": 5.2
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 368,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.57,
     "vsParliament": 0.63
   },
@@ -151,43 +243,43 @@
         "isCorrect": true
       },
       {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
         "text": "Debatte",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Familie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Highlight\" nutzt Stephan Stracke 204.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "231.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Highlight\" nutzt Stephan Stracke 212.0× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "240.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Stephan Stracke häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
         "text": "Solide",
         "isCorrect": true
       },
       {
-        "text": "Falsch",
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Solide\" nutzt Stephan Stracke 27.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "38.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Solide\" nutzt Stephan Stracke 28.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "38.6× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -283,11 +375,11 @@
     "topicWords": {
       "klima": [
         {
-          "word": "naturschutz",
+          "word": "klimaschutz",
           "count": 2
         },
         {
-          "word": "klimaschutz",
+          "word": "naturschutz",
           "count": 2
         }
       ],
@@ -319,6 +411,10 @@
           "count": 2
         },
         {
+          "word": "wohngeld",
+          "count": 1
+        },
+        {
           "word": "mieten",
           "count": 1
         },
@@ -328,10 +424,6 @@
         },
         {
           "word": "wohnungen",
-          "count": 1
-        },
-        {
-          "word": "wohngeld",
           "count": 1
         }
       ],
@@ -343,11 +435,11 @@
       ],
       "digital": [
         {
-          "word": "digitalisierung",
+          "word": "netz",
           "count": 1
         },
         {
-          "word": "netz",
+          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -357,11 +449,11 @@
           "count": 7
         },
         {
-          "word": "finanzierung",
+          "word": "haushalt",
           "count": 5
         },
         {
-          "word": "haushalt",
+          "word": "finanzierung",
           "count": 5
         },
         {
@@ -375,11 +467,11 @@
       ],
       "justiz": [
         {
-          "word": "straftaten",
+          "word": "mietrecht",
           "count": 1
         },
         {
-          "word": "mietrecht",
+          "word": "straftaten",
           "count": 1
         }
       ],
@@ -395,11 +487,11 @@
           "count": 13
         },
         {
-          "word": "schiene",
+          "word": "straße",
           "count": 8
         },
         {
-          "word": "straße",
+          "word": "schiene",
           "count": 8
         },
         {

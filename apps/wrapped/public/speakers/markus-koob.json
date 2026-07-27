@@ -11,17 +11,17 @@
   "minWords": 643,
   "maxWords": 759,
   "rankings": {
-    "speechRank": 592,
-    "wordsRank": 583,
+    "speechRank": 593,
+    "wordsRank": 585,
     "partySpeechRank": 194,
-    "partyWordsRank": 192,
-    "partySize": 211,
-    "totalSpeakers": 625,
+    "partyWordsRank": 194,
+    "partySize": 212,
+    "totalSpeakers": 626,
     "percentile": 5.3,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 299
+    "longestSpeechRank": 301
   },
   "drama": {
     "interruptionsGiven": 0,
@@ -48,14 +48,6 @@
         "count": 5
       },
       {
-        "word": "reden",
-        "count": 4
-      },
-      {
-        "word": "internationalen",
-        "count": 4
-      },
-      {
         "word": "wahl",
         "count": 4
       },
@@ -64,7 +56,15 @@
         "count": 4
       },
       {
+        "word": "internationalen",
+        "count": 4
+      },
+      {
         "word": "globalen",
+        "count": 4
+      },
+      {
+        "word": "reden",
         "count": 4
       },
       {
@@ -76,22 +76,52 @@
       {
         "word": "sudan",
         "count": 5,
-        "ratioParty": 84.6,
-        "ratioBundestag": 68.2
+        "ratioParty": 87.8,
+        "ratioBundestag": 70.5
       },
       {
         "word": "einfluss",
         "count": 6,
-        "ratioParty": 82.0,
-        "ratioBundestag": 69.4
+        "ratioParty": 82.9,
+        "ratioBundestag": 69.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "einfluss",
+        "count": 6,
+        "score": 26.58,
+        "ratio": 82.9
+      },
+      {
+        "word": "sudan",
+        "count": 5,
+        "score": 22.43,
+        "ratio": 87.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "einfluss",
+        "count": 6,
+        "score": 25.49,
+        "ratio": 69.0
+      },
+      {
+        "word": "sudan",
+        "count": 5,
+        "score": 21.35,
+        "ratio": 70.5
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 701,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 1.09,
     "vsParliament": 1.2
   },
@@ -111,24 +141,24 @@
     "question": "Welches Wort nutzt Markus Koob häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
         "text": "Sudan",
         "isCorrect": true
       },
       {
-        "text": "Abstimmung",
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sudan\" nutzt Markus Koob 84.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "68.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Sudan\" nutzt Markus Koob 87.8× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "70.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -255,6 +285,10 @@
       ],
       "europa": [
         {
+          "word": "außenpolitik",
+          "count": 2
+        },
+        {
           "word": "außenminister",
           "count": 2
         },
@@ -263,15 +297,11 @@
           "count": 2
         },
         {
-          "word": "außenpolitik",
-          "count": 2
-        },
-        {
-          "word": "waffenstillstand",
+          "word": "europa",
           "count": 1
         },
         {
-          "word": "europa",
+          "word": "waffenstillstand",
           "count": 1
         }
       ],

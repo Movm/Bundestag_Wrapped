@@ -11,23 +11,23 @@
   "minWords": 31,
   "maxWords": 1193,
   "rankings": {
-    "speechRank": 511,
-    "wordsRank": 481,
-    "partySpeechRank": 55,
-    "partyWordsRank": 49,
+    "speechRank": 515,
+    "wordsRank": 490,
+    "partySpeechRank": 56,
+    "partyWordsRank": 51,
     "partySize": 63,
-    "totalSpeakers": 625,
-    "percentile": 18.2,
-    "verbosityRank": 298,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 17.7,
+    "verbosityRank": 303,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 19,
-    "longestSpeechRank": 37
+    "longestSpeechRank": 39
   },
   "drama": {
     "interruptionsGiven": 7,
     "interruptionsReceived": 6,
-    "interrupterRank": 313,
-    "interruptedRank": 531
+    "interrupterRank": 317,
+    "interruptedRank": 533
   },
   "words": {
     "topWords": [
@@ -76,47 +76,127 @@
       {
         "word": "wohnungslosigkeit",
         "count": 9,
-        "ratioParty": 586.6,
-        "ratioBundestag": 311.1
+        "ratioParty": 608.4,
+        "ratioBundestag": 323.0
       },
       {
         "word": "wohnungslosen",
         "count": 6,
-        "ratioParty": 391.1,
-        "ratioBundestag": 852.7
+        "ratioParty": 270.4,
+        "ratioBundestag": 796.8
       },
       {
         "word": "wohnungspolitik",
         "count": 5,
-        "ratioParty": 130.4,
-        "ratioBundestag": 236.9
+        "ratioParty": 135.2,
+        "ratioBundestag": 245.9
       },
       {
         "word": "wohngeld",
         "count": 11,
-        "ratioParty": 130.4,
-        "ratioBundestag": 146.6
+        "ratioParty": 106.2,
+        "ratioBundestag": 141.8
       },
       {
         "word": "sozialwohnungen",
         "count": 8,
-        "ratioParty": 69.5,
-        "ratioBundestag": 292.3
+        "ratioParty": 72.1,
+        "ratioBundestag": 303.5
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "wohnungslosigkeit",
+        "count": 9,
+        "score": 57.71,
+        "ratio": 608.4
+      },
+      {
+        "word": "wohngeld",
+        "count": 11,
+        "score": 51.42,
+        "ratio": 106.2
+      },
+      {
+        "word": "sozialwohnungen",
+        "count": 8,
+        "score": 34.33,
+        "ratio": 72.1
+      },
+      {
+        "word": "wohnungslosen",
+        "count": 6,
+        "score": 33.62,
+        "ratio": 270.4
+      },
+      {
+        "word": "wohnungspolitik",
+        "count": 5,
+        "score": 24.57,
+        "ratio": 135.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "wohngeld",
+        "count": 11,
+        "score": 54.58,
+        "ratio": 141.8
+      },
+      {
+        "word": "wohnungslosigkeit",
+        "count": 9,
+        "score": 52.03,
+        "ratio": 323.0
+      },
+      {
+        "word": "sozialwohnungen",
+        "count": 8,
+        "score": 45.75,
+        "ratio": 303.5
+      },
+      {
+        "word": "wohnungslosen",
+        "count": 6,
+        "score": 40.09,
+        "ratio": 796.8
+      },
+      {
+        "word": "wohnungspolitik",
+        "count": 5,
+        "score": 27.54,
+        "ratio": 245.9
       }
     ],
     "signatureAdjectives": [
       {
         "word": "gerecht",
         "count": 4,
-        "ratioParty": 6.3,
-        "ratioBundestag": 7.7
+        "ratioParty": 6.5,
+        "ratioBundestag": 7.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 8.06,
+        "ratio": 6.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 8.74,
+        "ratio": 7.9
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 431,
-    "partyAvgWords": 500,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 499,
+    "parliamentAvgWords": 585,
     "vsParty": 0.86,
     "vsParliament": 0.74
   },
@@ -136,7 +216,11 @@
     "question": "Welches Wort nutzt Sahra Mirow häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Sicherheit",
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
@@ -144,30 +228,26 @@
         "isCorrect": true
       },
       {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
+        "text": "Zukunft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wohnungslosigkeit\" nutzt Sahra Mirow 586.6× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "311.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wohnungslosigkeit\" nutzt Sahra Mirow 608.4× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "323.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Sahra Mirow häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Sicher",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Schlecht",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
-        "text": "Notwendig",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
@@ -175,8 +255,8 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Gerecht\" nutzt Sahra Mirow 6.3× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "7.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Gerecht\" nutzt Sahra Mirow 6.5× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "7.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -272,15 +352,15 @@
     "topicWords": {
       "migration": [
         {
+          "word": "staatsangehörigkeit",
+          "count": 1
+        },
+        {
           "word": "sprachkurs",
           "count": 1
         },
         {
           "word": "geflüchtete",
-          "count": 1
-        },
-        {
-          "word": "staatsangehörigkeit",
           "count": 1
         }
       ],

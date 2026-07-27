@@ -11,23 +11,23 @@
   "minWords": 235,
   "maxWords": 613,
   "rankings": {
-    "speechRank": 384,
-    "wordsRank": 361,
-    "partySpeechRank": 91,
-    "partyWordsRank": 76,
+    "speechRank": 403,
+    "wordsRank": 374,
+    "partySpeechRank": 96,
+    "partyWordsRank": 80,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 38.6,
-    "verbosityRank": 463,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 120,
-    "longestSpeechRank": 482
+    "totalSpeakers": 626,
+    "percentile": 35.6,
+    "verbosityRank": 466,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 119,
+    "longestSpeechRank": 486
   },
   "drama": {
     "interruptionsGiven": 6,
     "interruptionsReceived": 31,
-    "interrupterRank": 320,
-    "interruptedRank": 232
+    "interrupterRank": 331,
+    "interruptedRank": 243
   },
   "words": {
     "topWords": [
@@ -36,11 +36,11 @@
         "count": 43
       },
       {
-        "word": "circa",
+        "word": "jahr",
         "count": 15
       },
       {
-        "word": "jahr",
+        "word": "circa",
         "count": 15
       },
       {
@@ -64,11 +64,11 @@
         "count": 11
       },
       {
-        "word": "widerspruchslösung",
+        "word": "krankenkassen",
         "count": 10
       },
       {
-        "word": "krankenkassen",
+        "word": "widerspruchslösung",
         "count": 10
       }
     ],
@@ -76,40 +76,106 @@
       {
         "word": "lebendnierenspende",
         "count": 6,
-        "ratioParty": 1073.5,
-        "ratioBundestag": 344.7
+        "ratioParty": 1113.2,
+        "ratioBundestag": 357.9
       },
       {
         "word": "spender",
         "count": 8,
-        "ratioParty": 477.1,
-        "ratioBundestag": 165.0
+        "ratioParty": 494.7,
+        "ratioBundestag": 171.3
       },
       {
         "word": "widerspruchslösung",
         "count": 10,
-        "ratioParty": 119.3,
-        "ratioBundestag": 160.9
+        "ratioParty": 123.7,
+        "ratioBundestag": 167.0
       },
       {
         "word": "organspende",
         "count": 5,
-        "ratioParty": 55.9,
-        "ratioBundestag": 33.0
+        "ratioParty": 58.0,
+        "ratioBundestag": 34.2
       },
       {
         "word": "krankenkassen",
         "count": 10,
-        "ratioParty": 51.1,
-        "ratioBundestag": 69.3
+        "ratioParty": 50.1,
+        "ratioBundestag": 67.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "spender",
+        "count": 8,
+        "score": 49.65,
+        "ratio": 494.7
+      },
+      {
+        "word": "widerspruchslösung",
+        "count": 10,
+        "score": 48.26,
+        "ratio": 123.7
+      },
+      {
+        "word": "lebendnierenspende",
+        "count": 6,
+        "score": 42.1,
+        "ratio": 1113.2
+      },
+      {
+        "word": "krankenkassen",
+        "count": 10,
+        "score": 39.34,
+        "ratio": 50.1
+      },
+      {
+        "word": "organspende",
+        "count": 5,
+        "score": 20.39,
+        "ratio": 58.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "widerspruchslösung",
+        "count": 10,
+        "score": 51.24,
+        "ratio": 167.0
+      },
+      {
+        "word": "krankenkassen",
+        "count": 10,
+        "score": 42.25,
+        "ratio": 67.4
+      },
+      {
+        "word": "spender",
+        "count": 8,
+        "score": 41.19,
+        "ratio": 171.3
+      },
+      {
+        "word": "lebendnierenspende",
+        "count": 6,
+        "score": 35.3,
+        "ratio": 357.9
+      },
+      {
+        "word": "organspende",
+        "count": 5,
+        "score": 17.81,
+        "ratio": 34.2
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 350,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.63,
     "vsParliament": 0.6
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Joachim Bloch häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
         "text": "Lebendnierenspende",
         "isCorrect": true
       },
       {
-        "text": "Bürger",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Familie",
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Lebendnierenspende\" nutzt Joachim Bloch 1073.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "344.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Lebendnierenspende\" nutzt Joachim Bloch 1113.2× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "357.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -219,6 +285,10 @@
     "topicWords": {
       "migration": [
         {
+          "word": "migration",
+          "count": 2
+        },
+        {
           "word": "integration",
           "count": 2
         },
@@ -227,15 +297,11 @@
           "count": 2
         },
         {
-          "word": "migration",
-          "count": 2
-        },
-        {
-          "word": "asylsuchende",
+          "word": "einwanderung",
           "count": 1
         },
         {
-          "word": "einwanderung",
+          "word": "asylsuchende",
           "count": 1
         }
       ],
@@ -263,11 +329,11 @@
           "count": 2
         },
         {
-          "word": "pleite",
+          "word": "markt",
           "count": 1
         },
         {
-          "word": "markt",
+          "word": "werk",
           "count": 1
         }
       ],
@@ -285,17 +351,17 @@
           "count": 3
         },
         {
-          "word": "sozialstaat",
+          "word": "bürgergeld",
           "count": 2
         },
         {
-          "word": "bürgergeld",
+          "word": "sozialstaat",
           "count": 2
         }
       ],
       "sicherheit": [
         {
-          "word": "verteidigung",
+          "word": "täter",
           "count": 1
         },
         {
@@ -303,7 +369,7 @@
           "count": 1
         },
         {
-          "word": "täter",
+          "word": "verteidigung",
           "count": 1
         }
       ],
@@ -325,17 +391,17 @@
           "count": 5
         },
         {
-          "word": "pflege",
+          "word": "krankenversicherung",
           "count": 4
         }
       ],
       "europa": [
         {
-          "word": "ukrainer",
+          "word": "ukraine",
           "count": 4
         },
         {
-          "word": "ukraine",
+          "word": "ukrainer",
           "count": 4
         },
         {
@@ -343,7 +409,7 @@
           "count": 2
         },
         {
-          "word": "europa",
+          "word": "türkei",
           "count": 1
         },
         {
@@ -377,7 +443,7 @@
           "count": 4
         },
         {
-          "word": "entlastung",
+          "word": "haushalt",
           "count": 3
         },
         {
@@ -385,11 +451,11 @@
           "count": 3
         },
         {
-          "word": "haushalt",
+          "word": "entlastung",
           "count": 3
         },
         {
-          "word": "steuerzahler",
+          "word": "finanzierung",
           "count": 2
         }
       ],

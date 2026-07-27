@@ -11,23 +11,23 @@
   "minWords": 83,
   "maxWords": 815,
   "rankings": {
-    "speechRank": 521,
-    "wordsRank": 452,
-    "partySpeechRank": 127,
-    "partyWordsRank": 99,
+    "speechRank": 522,
+    "wordsRank": 459,
+    "partySpeechRank": 129,
+    "partyWordsRank": 101,
     "partySize": 150,
-    "totalSpeakers": 625,
+    "totalSpeakers": 626,
     "percentile": 16.6,
-    "verbosityRank": 81,
-    "verbosityTotal": 579,
+    "verbosityRank": 83,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 21,
-    "longestSpeechRank": 230
+    "longestSpeechRank": 232
   },
   "drama": {
-    "interruptionsGiven": 45,
+    "interruptionsGiven": 46,
     "interruptionsReceived": 39,
-    "interrupterRank": 115,
-    "interruptedRank": 170
+    "interrupterRank": 119,
+    "interruptedRank": 182
   },
   "words": {
     "topWords": [
@@ -68,48 +68,128 @@
       {
         "word": "hubertz",
         "count": 19,
-        "ratioParty": 154.5,
-        "ratioBundestag": 188.6
+        "ratioParty": 160.2,
+        "ratioBundestag": 190.8
       },
       {
         "word": "fernwärme",
         "count": 5,
-        "ratioParty": 114.6,
-        "ratioBundestag": 182.5
+        "ratioParty": 118.8,
+        "ratioBundestag": 172.8
       },
       {
         "word": "wohnen",
         "count": 7,
-        "ratioParty": 36.8,
-        "ratioBundestag": 18.3
+        "ratioParty": 35.9,
+        "ratioBundestag": 18.4
       },
       {
         "word": "wohnungsnot",
         "count": 5,
-        "ratioParty": 31.5,
-        "ratioBundestag": 82.0
+        "ratioParty": 31.9,
+        "ratioBundestag": 83.9
       },
       {
         "word": "draußen",
         "count": 8,
-        "ratioParty": 13.8,
-        "ratioBundestag": 28.0
+        "ratioParty": 13.2,
+        "ratioBundestag": 27.3
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "hubertz",
+        "count": 19,
+        "score": 96.57,
+        "ratio": 160.2
+      },
+      {
+        "word": "wohnen",
+        "count": 7,
+        "score": 25.26,
+        "ratio": 35.9
+      },
+      {
+        "word": "fernwärme",
+        "count": 5,
+        "score": 23.93,
+        "ratio": 118.8
+      },
+      {
+        "word": "draußen",
+        "count": 8,
+        "score": 21.23,
+        "ratio": 13.2
+      },
+      {
+        "word": "wohnungsnot",
+        "count": 5,
+        "score": 17.47,
+        "ratio": 31.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "hubertz",
+        "count": 19,
+        "score": 99.87,
+        "ratio": 190.8
+      },
+      {
+        "word": "draußen",
+        "count": 8,
+        "score": 26.74,
+        "ratio": 27.3
+      },
+      {
+        "word": "fernwärme",
+        "count": 5,
+        "score": 25.79,
+        "ratio": 172.8
+      },
+      {
+        "word": "wohnungsnot",
+        "count": 5,
+        "score": 22.21,
+        "ratio": 83.9
+      },
+      {
+        "word": "wohnen",
+        "count": 7,
+        "score": 20.76,
+        "ratio": 18.4
       }
     ],
     "signatureAdjectives": [
       {
         "word": "weltfremd",
         "count": 3,
-        "ratioParty": 378.1,
-        "ratioBundestag": 565.9
+        "ratioParty": 392.0,
+        "ratioBundestag": 587.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "weltfremd",
+        "count": 3,
+        "score": 17.92,
+        "ratio": 392.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "weltfremd",
+        "count": 3,
+        "score": 19.13,
+        "ratio": 587.5
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 560,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
-    "vsParty": 1.0,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
+    "vsParty": 1.01,
     "vsParliament": 0.96
   },
   "funFacts": [
@@ -126,54 +206,54 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "45"
+      "value": "46"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Sebastian Münzenmaier häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
         "text": "Hubertz",
         "isCorrect": true
       },
       {
-        "text": "Steuern",
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Hubertz\" nutzt Sebastian Münzenmaier 154.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "188.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Hubertz\" nutzt Sebastian Münzenmaier 160.2× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "190.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Sebastian Münzenmaier häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
         "text": "Weltfremd",
         "isCorrect": true
+      },
+      {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Erfolgreich",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Weltfremd\" nutzt Sebastian Münzenmaier 378.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "565.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Weltfremd\" nutzt Sebastian Münzenmaier 392.0× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "587.5× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {

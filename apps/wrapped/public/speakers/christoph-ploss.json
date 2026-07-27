@@ -11,23 +11,23 @@
   "minWords": 266,
   "maxWords": 629,
   "rankings": {
-    "speechRank": 390,
-    "wordsRank": 442,
-    "partySpeechRank": 111,
-    "partyWordsRank": 139,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 37.6,
+    "speechRank": 394,
+    "wordsRank": 449,
+    "partySpeechRank": 112,
+    "partyWordsRank": 142,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 37.1,
     "verbosityRank": 240,
-    "verbosityTotal": 579,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 86,
-    "longestSpeechRank": 464
+    "longestSpeechRank": 465
   },
   "drama": {
     "interruptionsGiven": 15,
     "interruptionsReceived": 30,
-    "interrupterRank": 232,
-    "interruptedRank": 238
+    "interrupterRank": 240,
+    "interruptedRank": 250
   },
   "words": {
     "topWords": [
@@ -58,38 +58,106 @@
       {
         "word": "bundesregierung",
         "count": 10
+      },
+      {
+        "word": "vergangenen",
+        "count": 10
       }
     ],
     "signatureWords": [
       {
         "word": "infrastrukturprojekte",
         "count": 7,
-        "ratioParty": 239.2,
-        "ratioBundestag": 262.8
-      },
-      {
-        "word": "stuttgart",
-        "count": 7,
-        "ratioParty": 239.2,
-        "ratioBundestag": 80.0
+        "ratioParty": 248.3,
+        "ratioBundestag": 272.9
       },
       {
         "word": "airlines",
         "count": 7,
-        "ratioParty": 239.2,
-        "ratioBundestag": 272.5
+        "ratioParty": 248.3,
+        "ratioBundestag": 283.0
+      },
+      {
+        "word": "stuttgart",
+        "count": 7,
+        "ratioParty": 225.7,
+        "ratioBundestag": 78.0
       },
       {
         "word": "standortkosten",
         "count": 6,
-        "ratioParty": 205.0,
-        "ratioBundestag": 394.2
+        "ratioParty": 212.8,
+        "ratioBundestag": 409.3
       },
       {
         "word": "maritimen",
         "count": 5,
-        "ratioParty": 155.3,
-        "ratioBundestag": 125.1
+        "ratioParty": 161.2,
+        "ratioBundestag": 126.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "infrastrukturprojekte",
+        "count": 7,
+        "score": 38.63,
+        "ratio": 248.3
+      },
+      {
+        "word": "airlines",
+        "count": 7,
+        "score": 38.63,
+        "ratio": 248.3
+      },
+      {
+        "word": "stuttgart",
+        "count": 7,
+        "score": 37.97,
+        "ratio": 225.7
+      },
+      {
+        "word": "standortkosten",
+        "count": 6,
+        "score": 32.19,
+        "ratio": 212.8
+      },
+      {
+        "word": "maritimen",
+        "count": 5,
+        "score": 25.44,
+        "ratio": 161.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "airlines",
+        "count": 7,
+        "score": 39.54,
+        "ratio": 283.0
+      },
+      {
+        "word": "infrastrukturprojekte",
+        "count": 7,
+        "score": 39.29,
+        "ratio": 272.9
+      },
+      {
+        "word": "standortkosten",
+        "count": 6,
+        "score": 36.1,
+        "ratio": 409.3
+      },
+      {
+        "word": "stuttgart",
+        "count": 7,
+        "score": 30.59,
+        "ratio": 78.0
+      },
+      {
+        "word": "maritimen",
+        "count": 5,
+        "score": 24.26,
+        "ratio": 126.9
       }
     ],
     "signatureAdjectives": [
@@ -97,20 +165,48 @@
         "word": "wettbewerbsfähig",
         "count": 3,
         "ratioParty": 13.1,
-        "ratioBundestag": 22.9
+        "ratioBundestag": 23.1
       },
       {
         "word": "stark",
         "count": 5,
-        "ratioParty": 5.9,
-        "ratioBundestag": 7.3
+        "ratioParty": 5.8,
+        "ratioBundestag": 7.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "stark",
+        "count": 5,
+        "score": 9.58,
+        "ratio": 5.8
+      },
+      {
+        "word": "wettbewerbsfähig",
+        "count": 3,
+        "score": 7.94,
+        "ratio": 13.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "stark",
+        "count": 5,
+        "score": 10.52,
+        "ratio": 7.2
+      },
+      {
+        "word": "wettbewerbsfähig",
+        "count": 3,
+        "score": 9.55,
+        "ratio": 23.1
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 456,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.71,
     "vsParliament": 0.78
   },
@@ -135,34 +231,30 @@
     "question": "Welches Wort nutzt Dr. Christoph Ploß häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
         "text": "Infrastrukturprojekte",
         "isCorrect": true
       },
       {
-        "text": "Bürger",
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesellschaft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Infrastrukturprojekte\" nutzt Dr. Christoph Ploß 239.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "262.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Infrastrukturprojekte\" nutzt Dr. Christoph Ploß 248.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "272.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Christoph Ploß häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Wettbewerbsfähig",
-        "isCorrect": true
-      },
-      {
-        "text": "Neu",
+        "text": "Falsch",
         "isCorrect": false
       },
       {
@@ -170,12 +262,16 @@
         "isCorrect": false
       },
       {
-        "text": "Sozial",
+        "text": "National",
         "isCorrect": false
+      },
+      {
+        "text": "Wettbewerbsfähig",
+        "isCorrect": true
       }
     ],
     "explanationParty": "\"Wettbewerbsfähig\" nutzt Dr. Christoph Ploß 13.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "22.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "23.1× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦦",
@@ -275,7 +371,7 @@
           "count": 7
         },
         {
-          "word": "industrie",
+          "word": "volkswirtschaft",
           "count": 4
         },
         {
@@ -283,7 +379,7 @@
           "count": 4
         },
         {
-          "word": "volkswirtschaft",
+          "word": "industrie",
           "count": 4
         },
         {
@@ -293,11 +389,11 @@
       ],
       "europa": [
         {
-          "word": "europa",
+          "word": "amerika",
           "count": 1
         },
         {
-          "word": "amerika",
+          "word": "europa",
           "count": 1
         }
       ],

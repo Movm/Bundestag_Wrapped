@@ -11,22 +11,22 @@
   "minWords": 692,
   "maxWords": 824,
   "rankings": {
-    "speechRank": 569,
-    "wordsRank": 509,
-    "partySpeechRank": 101,
+    "speechRank": 579,
+    "wordsRank": 513,
+    "partySpeechRank": 102,
     "partyWordsRank": 94,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 9.0,
-    "verbosityRank": 16,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 7.5,
+    "verbosityRank": 15,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 3,
-    "longestSpeechRank": 217
+    "longestSpeechRank": 219
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 0,
-    "interrupterRank": 442,
+    "interrupterRank": 460,
     "interruptedRank": null
   },
   "words": {
@@ -76,40 +76,106 @@
       {
         "word": "verteidigungshaushalt",
         "count": 6,
-        "ratioParty": 363.5,
-        "ratioBundestag": 201.8
+        "ratioParty": 316.4,
+        "ratioBundestag": 205.0
       },
       {
         "word": "zeitenwende",
         "count": 5,
-        "ratioParty": 79.7,
-        "ratioBundestag": 55.2
+        "ratioParty": 83.3,
+        "ratioBundestag": 56.9
       },
       {
         "word": "truppe",
         "count": 6,
-        "ratioParty": 41.3,
-        "ratioBundestag": 54.1
-      },
-      {
-        "word": "moderne",
-        "count": 5,
-        "ratioParty": 15.3,
-        "ratioBundestag": 22.2
+        "ratioParty": 43.1,
+        "ratioBundestag": 56.1
       },
       {
         "word": "planungssicherheit",
         "count": 5,
-        "ratioParty": 15.3,
-        "ratioBundestag": 18.0
+        "ratioParty": 15.5,
+        "ratioBundestag": 17.8
+      },
+      {
+        "word": "verteidigung",
+        "count": 5,
+        "ratioParty": 15.1,
+        "ratioBundestag": 18.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "verteidigungshaushalt",
+        "count": 6,
+        "score": 34.56,
+        "ratio": 316.4
+      },
+      {
+        "word": "truppe",
+        "count": 6,
+        "score": 22.72,
+        "ratio": 43.1
+      },
+      {
+        "word": "zeitenwende",
+        "count": 5,
+        "score": 22.17,
+        "ratio": 83.3
+      },
+      {
+        "word": "planungssicherheit",
+        "count": 5,
+        "score": 14.02,
+        "ratio": 15.5
+      },
+      {
+        "word": "verteidigung",
+        "count": 5,
+        "score": 13.89,
+        "ratio": 15.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "verteidigungshaushalt",
+        "count": 6,
+        "score": 31.97,
+        "ratio": 205.0
+      },
+      {
+        "word": "truppe",
+        "count": 6,
+        "score": 24.27,
+        "ratio": 56.1
+      },
+      {
+        "word": "zeitenwende",
+        "count": 5,
+        "score": 20.29,
+        "ratio": 56.9
+      },
+      {
+        "word": "verteidigung",
+        "count": 5,
+        "score": 14.75,
+        "ratio": 18.1
+      },
+      {
+        "word": "planungssicherheit",
+        "count": 5,
+        "score": 14.67,
+        "ratio": 17.8
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 744,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
     "vsParty": 1.2,
     "vsParliament": 1.27
   },
@@ -127,14 +193,14 @@
     {
       "emoji": "📚",
       "label": "Wortreichster",
-      "value": "#16 von 579"
+      "value": "#15 von 582"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Andreas Schwarz häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kinder",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
@@ -142,16 +208,16 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Fraktion",
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verteidigungshaushalt\" nutzt Andreas Schwarz 363.5× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "201.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Verteidigungshaushalt\" nutzt Andreas Schwarz 316.4× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "205.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -364,11 +430,11 @@
           "count": 2
         },
         {
-          "word": "kosten",
+          "word": "finanzminister",
           "count": 1
         },
         {
-          "word": "finanzminister",
+          "word": "bundeshaushalt",
           "count": 1
         }
       ],

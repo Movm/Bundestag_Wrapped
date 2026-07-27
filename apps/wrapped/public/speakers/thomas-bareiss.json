@@ -11,23 +11,23 @@
   "minWords": 473,
   "maxWords": 996,
   "rankings": {
-    "speechRank": 503,
-    "wordsRank": 412,
-    "partySpeechRank": 162,
-    "partyWordsRank": 128,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 19.5,
-    "verbosityRank": 14,
-    "verbosityTotal": 579,
+    "speechRank": 512,
+    "wordsRank": 424,
+    "partySpeechRank": 165,
+    "partyWordsRank": 134,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 18.2,
+    "verbosityRank": 13,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 3,
-    "longestSpeechRank": 81
+    "longestSpeechRank": 82
   },
   "drama": {
     "interruptionsGiven": 16,
     "interruptionsReceived": 6,
-    "interrupterRank": 224,
-    "interruptedRank": 524
+    "interrupterRank": 232,
+    "interruptedRank": 525
   },
   "words": {
     "topWords": [
@@ -76,48 +76,128 @@
       {
         "word": "reiche",
         "count": 8,
-        "ratioParty": 35.7,
-        "ratioBundestag": 13.7
+        "ratioParty": 36.5,
+        "ratioBundestag": 13.8
       },
       {
         "word": "innovationskraft",
         "count": 5,
-        "ratioParty": 35.7,
-        "ratioBundestag": 59.5
+        "ratioParty": 33.3,
+        "ratioBundestag": 57.0
       },
       {
         "word": "schwerpunkt",
         "count": 6,
-        "ratioParty": 22.9,
-        "ratioBundestag": 32.4
+        "ratioParty": 23.2,
+        "ratioBundestag": 33.1
       },
       {
         "word": "mittelstand",
         "count": 14,
-        "ratioParty": 18.7,
-        "ratioBundestag": 27.7
+        "ratioParty": 18.5,
+        "ratioBundestag": 27.5
       },
       {
         "word": "programme",
         "count": 5,
-        "ratioParty": 17.6,
-        "ratioBundestag": 18.3
+        "ratioParty": 17.7,
+        "ratioBundestag": 18.6
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "mittelstand",
+        "count": 14,
+        "score": 41.59,
+        "ratio": 18.5
+      },
+      {
+        "word": "reiche",
+        "count": 8,
+        "score": 28.99,
+        "ratio": 36.5
+      },
+      {
+        "word": "schwerpunkt",
+        "count": 6,
+        "score": 19.12,
+        "ratio": 23.2
+      },
+      {
+        "word": "innovationskraft",
+        "count": 5,
+        "score": 17.68,
+        "ratio": 33.3
+      },
+      {
+        "word": "programme",
+        "count": 5,
+        "score": 14.64,
+        "ratio": 17.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "mittelstand",
+        "count": 14,
+        "score": 46.9,
+        "ratio": 27.5
+      },
+      {
+        "word": "reiche",
+        "count": 8,
+        "score": 21.56,
+        "ratio": 13.8
+      },
+      {
+        "word": "schwerpunkt",
+        "count": 6,
+        "score": 21.18,
+        "ratio": 33.1
+      },
+      {
+        "word": "innovationskraft",
+        "count": 5,
+        "score": 20.3,
+        "ratio": 57.0
+      },
+      {
+        "word": "programme",
+        "count": 5,
+        "score": 14.88,
+        "ratio": 18.6
       }
     ],
     "signatureAdjectives": [
       {
         "word": "stark",
         "count": 4,
-        "ratioParty": 4.4,
-        "ratioBundestag": 5.5
+        "ratioParty": 4.3,
+        "ratioBundestag": 5.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "stark",
+        "count": 4,
+        "score": 6.67,
+        "ratio": 4.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "stark",
+        "count": 4,
+        "score": 7.43,
+        "ratio": 5.4
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 746,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 1.16,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
+    "vsParty": 1.15,
     "vsParliament": 1.28
   },
   "funFacts": [
@@ -134,7 +214,7 @@
     {
       "emoji": "📚",
       "label": "Wortreichster",
-      "value": "#14 von 579"
+      "value": "#13 von 582"
     },
     {
       "emoji": "⚡",
@@ -146,15 +226,15 @@
     "question": "Welches Wort nutzt Thomas Bareiß häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Energie",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Familie",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
@@ -162,31 +242,31 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Reiche\" nutzt Thomas Bareiß 35.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "13.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Reiche\" nutzt Thomas Bareiß 36.5× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "13.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Thomas Bareiß häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
         "text": "Stark",
         "isCorrect": true
       },
       {
-        "text": "Alt",
+        "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Stark\" nutzt Thomas Bareiß 4.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "5.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Stark\" nutzt Thomas Bareiß 4.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "5.4× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦦",

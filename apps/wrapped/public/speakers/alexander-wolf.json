@@ -12,22 +12,22 @@
   "maxWords": 938,
   "rankings": {
     "speechRank": 114,
-    "wordsRank": 132,
-    "partySpeechRank": 22,
-    "partyWordsRank": 29,
+    "wordsRank": 144,
+    "partySpeechRank": 23,
+    "partyWordsRank": 31,
     "partySize": 150,
-    "totalSpeakers": 625,
+    "totalSpeakers": 626,
     "percentile": 81.8,
-    "verbosityRank": 106,
-    "verbosityTotal": 579,
+    "verbosityRank": 108,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 30,
     "longestSpeechRank": 110
   },
   "drama": {
     "interruptionsGiven": 11,
     "interruptionsReceived": 70,
-    "interrupterRank": 268,
-    "interruptedRank": 53
+    "interrupterRank": 272,
+    "interruptedRank": 54
   },
   "words": {
     "topWords": [
@@ -48,11 +48,7 @@
         "count": 19
       },
       {
-        "word": "größten",
-        "count": 16
-      },
-      {
-        "word": "interesse",
+        "word": "europa",
         "count": 16
       },
       {
@@ -60,15 +56,19 @@
         "count": 16
       },
       {
-        "word": "europa",
+        "word": "interesse",
         "count": 16
       },
       {
-        "word": "merkel",
-        "count": 15
+        "word": "größten",
+        "count": 16
       },
       {
         "word": "welt",
+        "count": 15
+      },
+      {
+        "word": "merkel",
         "count": 15
       }
     ],
@@ -76,32 +76,96 @@
       {
         "word": "guterres",
         "count": 5,
-        "ratioParty": 470.7,
-        "ratioBundestag": 708.1
+        "ratioParty": 488.2,
+        "ratioBundestag": 735.3
       },
       {
         "word": "flüchtlingskonvention",
         "count": 8,
-        "ratioParty": 376.6,
-        "ratioBundestag": 64.1
+        "ratioParty": 390.5,
+        "ratioBundestag": 66.6
       },
       {
         "word": "mullahs",
         "count": 9,
-        "ratioParty": 282.4,
-        "ratioBundestag": 182.1
-      },
-      {
-        "word": "konvention",
-        "count": 10,
-        "ratioParty": 235.4,
-        "ratioBundestag": 56.6
+        "ratioParty": 292.9,
+        "ratioBundestag": 189.1
       },
       {
         "word": "verehrtes",
         "count": 11,
-        "ratioParty": 207.1,
-        "ratioBundestag": 934.7
+        "ratioParty": 214.8,
+        "ratioBundestag": 970.5
+      },
+      {
+        "word": "genfer",
+        "count": 8,
+        "ratioParty": 195.3,
+        "ratioBundestag": 59.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "verehrtes",
+        "count": 11,
+        "score": 59.12,
+        "ratio": 214.8
+      },
+      {
+        "word": "mullahs",
+        "count": 9,
+        "score": 51.15,
+        "ratio": 292.9
+      },
+      {
+        "word": "flüchtlingskonvention",
+        "count": 8,
+        "score": 47.76,
+        "ratio": 390.5
+      },
+      {
+        "word": "genfer",
+        "count": 8,
+        "score": 42.24,
+        "ratio": 195.3
+      },
+      {
+        "word": "guterres",
+        "count": 5,
+        "score": 30.96,
+        "ratio": 488.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "verehrtes",
+        "count": 11,
+        "score": 75.67,
+        "ratio": 970.5
+      },
+      {
+        "word": "mullahs",
+        "count": 9,
+        "score": 47.23,
+        "ratio": 189.1
+      },
+      {
+        "word": "flüchtlingskonvention",
+        "count": 8,
+        "score": 33.71,
+        "ratio": 66.6
+      },
+      {
+        "word": "guterres",
+        "count": 5,
+        "score": 33.01,
+        "ratio": 735.3
+      },
+      {
+        "word": "genfer",
+        "count": 8,
+        "score": 32.86,
+        "ratio": 59.8
       }
     ],
     "signatureAdjectives": [
@@ -117,12 +181,40 @@
         "ratioParty": 2.4,
         "ratioBundestag": 2.4
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "links",
+        "count": 11,
+        "score": 16.04,
+        "ratio": 3.3
+      },
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 4.9,
+        "ratio": 2.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "links",
+        "count": 11,
+        "score": 25.44,
+        "ratio": 9.1
+      },
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 4.9,
+        "ratio": 2.4
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 536,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.96,
     "vsParliament": 0.92
   },
@@ -147,42 +239,42 @@
     "question": "Welches Wort nutzt Dr. Alexander Wolf häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
-        "isCorrect": false
-      },
-      {
         "text": "Guterres",
         "isCorrect": true
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Guterres\" nutzt Dr. Alexander Wolf 470.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "708.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Guterres\" nutzt Dr. Alexander Wolf 488.2× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "735.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Alexander Wolf häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
         "text": "Links",
         "isCorrect": true
       },
       {
-        "text": "Sozial",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       }
     ],
@@ -275,7 +367,7 @@
           "count": 2
         },
         {
-          "word": "rückführung",
+          "word": "grenzkontrollen",
           "count": 1
         }
       ],
@@ -285,11 +377,11 @@
           "count": 2
         },
         {
-          "word": "atomausstieg",
+          "word": "nachhaltig",
           "count": 2
         },
         {
-          "word": "nachhaltig",
+          "word": "atomausstieg",
           "count": 2
         },
         {
@@ -297,7 +389,7 @@
           "count": 1
         },
         {
-          "word": "klimawandel",
+          "word": "kernenergie",
           "count": 1
         }
       ],
@@ -329,19 +421,19 @@
           "count": 6
         },
         {
-          "word": "armut",
-          "count": 1
-        },
-        {
           "word": "familien",
           "count": 1
         },
         {
-          "word": "sozialsystem",
+          "word": "familie",
           "count": 1
         },
         {
-          "word": "familie",
+          "word": "armut",
+          "count": 1
+        },
+        {
+          "word": "sozialsystem",
           "count": 1
         }
       ],
@@ -363,17 +455,17 @@
           "count": 3
         },
         {
-          "word": "verfassungsschutz",
+          "word": "terroristen",
           "count": 2
         }
       ],
       "gesundheit": [
         {
-          "word": "klinik",
+          "word": "sucht",
           "count": 1
         },
         {
-          "word": "sucht",
+          "word": "klinik",
           "count": 1
         }
       ],
@@ -387,7 +479,7 @@
           "count": 11
         },
         {
-          "word": "frieden",
+          "word": "vertrag",
           "count": 9
         },
         {
@@ -395,7 +487,7 @@
           "count": 9
         },
         {
-          "word": "vertrag",
+          "word": "frieden",
           "count": 9
         }
       ],
@@ -431,19 +523,19 @@
           "count": 2
         },
         {
+          "word": "urteil",
+          "count": 1
+        },
+        {
           "word": "menschenrechte",
           "count": 1
         },
         {
+          "word": "staatsanwaltschaft",
+          "count": 1
+        },
+        {
           "word": "beschluss",
-          "count": 1
-        },
-        {
-          "word": "verfassung",
-          "count": 1
-        },
-        {
-          "word": "strafe",
           "count": 1
         }
       ],
@@ -457,11 +549,11 @@
           "count": 2
         },
         {
-          "word": "radwege",
+          "word": "infrastruktur",
           "count": 1
         },
         {
-          "word": "auto",
+          "word": "fahrzeuge",
           "count": 1
         },
         {

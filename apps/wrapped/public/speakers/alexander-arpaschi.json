@@ -11,23 +11,23 @@
   "minWords": 47,
   "maxWords": 711,
   "rankings": {
-    "speechRank": 328,
-    "wordsRank": 278,
-    "partySpeechRank": 76,
-    "partyWordsRank": 60,
+    "speechRank": 348,
+    "wordsRank": 290,
+    "partySpeechRank": 82,
+    "partyWordsRank": 61,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 47.5,
-    "verbosityRank": 290,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 44.4,
+    "verbosityRank": 296,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 73,
-    "longestSpeechRank": 362
+    "longestSpeechRank": 366
   },
   "drama": {
-    "interruptionsGiven": 34,
+    "interruptionsGiven": 35,
     "interruptionsReceived": 31,
-    "interrupterRank": 147,
-    "interruptedRank": 233
+    "interrupterRank": 150,
+    "interruptedRank": 242
   },
   "words": {
     "topWords": [
@@ -64,53 +64,145 @@
       {
         "word": "modernen",
         "count": 10,
-        "ratioParty": 107.3,
-        "ratioBundestag": 47.3
+        "ratioParty": 111.3,
+        "ratioBundestag": 47.1
       },
       {
         "word": "amthor",
         "count": 5,
-        "ratioParty": 53.7,
-        "ratioBundestag": 125.2
+        "ratioParty": 55.7,
+        "ratioBundestag": 125.4
       },
       {
         "word": "moderner",
         "count": 5,
-        "ratioParty": 50.1,
-        "ratioBundestag": 27.0
+        "ratioParty": 51.9,
+        "ratioBundestag": 27.2
       },
       {
         "word": "bauturbo",
         "count": 10,
-        "ratioParty": 42.9,
-        "ratioBundestag": 25.9
+        "ratioParty": 44.5,
+        "ratioBundestag": 26.7
       },
       {
         "word": "fläche",
         "count": 6,
-        "ratioParty": 36.1,
-        "ratioBundestag": 27.2
+        "ratioParty": 37.4,
+        "ratioBundestag": 27.0
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "modernen",
+        "count": 10,
+        "score": 47.21,
+        "ratio": 111.3
+      },
+      {
+        "word": "bauturbo",
+        "count": 10,
+        "score": 38.18,
+        "ratio": 44.5
+      },
+      {
+        "word": "fläche",
+        "count": 6,
+        "score": 21.89,
+        "ratio": 37.4
+      },
+      {
+        "word": "amthor",
+        "count": 5,
+        "score": 20.19,
+        "ratio": 55.7
+      },
+      {
+        "word": "moderner",
+        "count": 5,
+        "score": 19.84,
+        "ratio": 51.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "modernen",
+        "count": 10,
+        "score": 38.73,
+        "ratio": 47.1
+      },
+      {
+        "word": "bauturbo",
+        "count": 10,
+        "score": 33.21,
+        "ratio": 26.7
+      },
+      {
+        "word": "amthor",
+        "count": 5,
+        "score": 24.2,
+        "ratio": 125.4
+      },
+      {
+        "word": "fläche",
+        "count": 6,
+        "score": 19.99,
+        "ratio": 27.0
+      },
+      {
+        "word": "moderner",
+        "count": 5,
+        "score": 16.7,
+        "ratio": 27.2
       }
     ],
     "signatureAdjectives": [
       {
         "word": "fair",
         "count": 5,
-        "ratioParty": 27.8,
-        "ratioBundestag": 20.0
+        "ratioParty": 28.9,
+        "ratioBundestag": 20.2
       },
       {
         "word": "schlecht",
         "count": 3,
         "ratioParty": 4.4,
-        "ratioBundestag": 5.5
+        "ratioBundestag": 5.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "fair",
+        "count": 5,
+        "score": 16.99,
+        "ratio": 28.9
+      },
+      {
+        "word": "schlecht",
+        "count": 3,
+        "score": 5.06,
+        "ratio": 4.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "fair",
+        "count": 5,
+        "score": 15.27,
+        "ratio": 20.2
+      },
+      {
+        "word": "schlecht",
+        "count": 3,
+        "score": 5.66,
+        "ratio": 5.6
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 434,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.78,
     "vsParliament": 0.74
   },
@@ -128,18 +220,18 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "34"
+      "value": "35"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Alexander Arpaschi häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Verantwortung",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Bildung",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
@@ -147,35 +239,35 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetz",
+        "text": "Freiheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Modernen\" nutzt Alexander Arpaschi 107.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "47.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Modernen\" nutzt Alexander Arpaschi 111.3× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "47.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Alexander Arpaschi häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Sicher",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Groß",
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
         "text": "Fair",
         "isCorrect": true
-      },
-      {
-        "text": "Sozial",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Fair\" nutzt Alexander Arpaschi 27.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "20.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Fair\" nutzt Alexander Arpaschi 28.9× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "20.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -353,7 +445,7 @@
           "count": 1
         },
         {
-          "word": "netz",
+          "word": "digital",
           "count": 1
         }
       ],

@@ -11,23 +11,23 @@
   "minWords": 75,
   "maxWords": 849,
   "rankings": {
-    "speechRank": 234,
-    "wordsRank": 158,
-    "partySpeechRank": 62,
-    "partyWordsRank": 46,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 62.6,
-    "verbosityRank": 128,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 44,
-    "longestSpeechRank": 183
+    "speechRank": 251,
+    "wordsRank": 170,
+    "partySpeechRank": 68,
+    "partyWordsRank": 50,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 59.9,
+    "verbosityRank": 131,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 49,
+    "longestSpeechRank": 186
   },
   "drama": {
     "interruptionsGiven": 28,
     "interruptionsReceived": 42,
-    "interrupterRank": 174,
-    "interruptedRank": 146
+    "interrupterRank": 181,
+    "interruptedRank": 161
   },
   "words": {
     "topWords": [
@@ -48,53 +48,145 @@
       {
         "word": "waffenrecht",
         "count": 5,
-        "ratioParty": 791.0,
-        "ratioBundestag": 609.7
+        "ratioParty": 821.2,
+        "ratioBundestag": 633.1
       },
       {
         "word": "einigermaßen",
         "count": 8,
-        "ratioParty": 115.1,
-        "ratioBundestag": 88.7
+        "ratioParty": 109.5,
+        "ratioBundestag": 88.1
       },
       {
         "word": "komponenten",
         "count": 5,
-        "ratioParty": 98.9,
-        "ratioBundestag": 81.3
+        "ratioParty": 102.6,
+        "ratioBundestag": 79.1
       },
       {
         "word": "bundesverwaltung",
         "count": 8,
-        "ratioParty": 74.4,
-        "ratioBundestag": 84.8
+        "ratioParty": 77.3,
+        "ratioBundestag": 86.2
       },
       {
-        "word": "offenbar",
-        "count": 14,
-        "ratioParty": 65.1,
-        "ratioBundestag": 25.0
+        "word": "nachrichtendienste",
+        "count": 5,
+        "ratioParty": 63.2,
+        "ratioBundestag": 51.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "einigermaßen",
+        "count": 8,
+        "score": 37.64,
+        "ratio": 109.5
+      },
+      {
+        "word": "bundesverwaltung",
+        "count": 8,
+        "score": 34.88,
+        "ratio": 77.3
+      },
+      {
+        "word": "waffenrecht",
+        "count": 5,
+        "score": 33.56,
+        "ratio": 821.2
+      },
+      {
+        "word": "komponenten",
+        "count": 5,
+        "score": 23.2,
+        "ratio": 102.6
+      },
+      {
+        "word": "nachrichtendienste",
+        "count": 5,
+        "score": 20.81,
+        "ratio": 63.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "einigermaßen",
+        "count": 8,
+        "score": 35.92,
+        "ratio": 88.1
+      },
+      {
+        "word": "bundesverwaltung",
+        "count": 8,
+        "score": 35.75,
+        "ratio": 86.2
+      },
+      {
+        "word": "waffenrecht",
+        "count": 5,
+        "score": 32.26,
+        "ratio": 633.1
+      },
+      {
+        "word": "komponenten",
+        "count": 5,
+        "score": 21.92,
+        "ratio": 79.1
+      },
+      {
+        "word": "nachrichtendienste",
+        "count": 5,
+        "score": 19.82,
+        "ratio": 51.7
       }
     ],
     "signatureAdjectives": [
       {
         "word": "teuer",
         "count": 4,
-        "ratioParty": 9.0,
+        "ratioParty": 9.4,
         "ratioBundestag": 4.9
       },
       {
         "word": "kritisch",
         "count": 3,
-        "ratioParty": 6.8,
+        "ratioParty": 6.7,
         "ratioBundestag": 6.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "teuer",
+        "count": 4,
+        "score": 9.37,
+        "ratio": 9.4
+      },
+      {
+        "word": "kritisch",
+        "count": 3,
+        "score": 6.12,
+        "ratio": 6.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "teuer",
+        "count": 4,
+        "score": 7.1,
+        "ratio": 4.9
+      },
+      {
+        "word": "kritisch",
+        "count": 3,
+        "score": 6.2,
+        "ratio": 6.9
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 522,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.81,
     "vsParliament": 0.89
   },
@@ -119,46 +211,46 @@
     "question": "Welches Wort nutzt Marc Henrichmann häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
         "text": "Waffenrecht",
         "isCorrect": true
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Zukunft",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Waffenrecht\" nutzt Marc Henrichmann 791.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "609.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Waffenrecht\" nutzt Marc Henrichmann 821.2× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "633.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Marc Henrichmann häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
         "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Wichtig",
         "isCorrect": false
       },
       {
         "text": "Teuer",
         "isCorrect": true
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Teuer\" nutzt Marc Henrichmann 9.0× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationParty": "\"Teuer\" nutzt Marc Henrichmann 9.4× häufiger als der CDU/CSU-Durchschnitt.",
     "explanationBundestag": "4.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -291,11 +383,11 @@
           "count": 5
         },
         {
-          "word": "werk",
+          "word": "betriebe",
           "count": 1
         },
         {
-          "word": "betriebe",
+          "word": "werk",
           "count": 1
         }
       ],
@@ -367,7 +459,7 @@
           "count": 3
         },
         {
-          "word": "china",
+          "word": "krieg",
           "count": 2
         }
       ],
@@ -375,10 +467,6 @@
         {
           "word": "cybersicherheit",
           "count": 4
-        },
-        {
-          "word": "pressefreiheit",
-          "count": 1
         },
         {
           "word": "daten",
@@ -390,6 +478,10 @@
         },
         {
           "word": "desinformation",
+          "count": 1
+        },
+        {
+          "word": "netz",
           "count": 1
         }
       ],
@@ -417,11 +509,11 @@
           "count": 2
         },
         {
-          "word": "banken",
+          "word": "entlastung",
           "count": 1
         },
         {
-          "word": "entlastung",
+          "word": "banken",
           "count": 1
         }
       ],
@@ -431,11 +523,11 @@
           "count": 3
         },
         {
-          "word": "gericht",
+          "word": "grundgesetz",
           "count": 2
         },
         {
-          "word": "grundgesetz",
+          "word": "gericht",
           "count": 2
         },
         {
@@ -457,15 +549,15 @@
           "count": 4
         },
         {
-          "word": "luftverkehr",
-          "count": 1
-        },
-        {
-          "word": "schiene",
-          "count": 1
-        },
-        {
           "word": "schiffe",
+          "count": 1
+        },
+        {
+          "word": "bahn",
+          "count": 1
+        },
+        {
+          "word": "führerschein",
           "count": 1
         }
       ]

@@ -11,23 +11,23 @@
   "minWords": 388,
   "maxWords": 961,
   "rankings": {
-    "speechRank": 279,
-    "wordsRank": 237,
-    "partySpeechRank": 77,
-    "partyWordsRank": 67,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 55.4,
-    "verbosityRank": 49,
-    "verbosityTotal": 579,
+    "speechRank": 306,
+    "wordsRank": 252,
+    "partySpeechRank": 85,
+    "partyWordsRank": 72,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 51.1,
+    "verbosityRank": 51,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 20,
     "longestSpeechRank": 97
   },
   "drama": {
-    "interruptionsGiven": 1,
+    "interruptionsGiven": 2,
     "interruptionsReceived": 26,
-    "interrupterRank": 449,
-    "interruptedRank": 279
+    "interrupterRank": 422,
+    "interruptedRank": 290
   },
   "words": {
     "topWords": [
@@ -52,11 +52,11 @@
         "count": 14
       },
       {
-        "word": "menschen",
+        "word": "beratungen",
         "count": 13
       },
       {
-        "word": "beratungen",
+        "word": "menschen",
         "count": 13
       },
       {
@@ -72,59 +72,163 @@
       {
         "word": "anwaltsnotariat",
         "count": 11,
-        "ratioParty": 424.1,
-        "ratioBundestag": 408.4
+        "ratioParty": 440.3,
+        "ratioBundestag": 424.0
       },
       {
         "word": "bewerbermangel",
         "count": 6,
-        "ratioParty": 385.6,
-        "ratioBundestag": 712.8
+        "ratioParty": 400.3,
+        "ratioBundestag": 740.1
       },
       {
         "word": "altersgrenze",
         "count": 17,
-        "ratioParty": 297.9,
-        "ratioBundestag": 348.2
+        "ratioParty": 283.5,
+        "ratioBundestag": 349.5
       },
       {
         "word": "notare",
         "count": 7,
-        "ratioParty": 224.9,
-        "ratioBundestag": 101.4
+        "ratioParty": 233.5,
+        "ratioBundestag": 105.3
       },
       {
         "word": "petitionsrecht",
         "count": 6,
-        "ratioParty": 144.6,
-        "ratioBundestag": 209.6
+        "ratioParty": 150.1,
+        "ratioBundestag": 217.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "altersgrenze",
+        "count": 17,
+        "score": 96.06,
+        "ratio": 283.5
+      },
+      {
+        "word": "anwaltsnotariat",
+        "count": 11,
+        "score": 66.99,
+        "ratio": 440.3
+      },
+      {
+        "word": "notare",
+        "count": 7,
+        "score": 38.2,
+        "ratio": 233.5
+      },
+      {
+        "word": "bewerbermangel",
+        "count": 6,
+        "score": 35.97,
+        "ratio": 400.3
+      },
+      {
+        "word": "petitionsrecht",
+        "count": 6,
+        "score": 30.11,
+        "ratio": 150.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "altersgrenze",
+        "count": 17,
+        "score": 99.61,
+        "ratio": 349.5
+      },
+      {
+        "word": "anwaltsnotariat",
+        "count": 11,
+        "score": 66.57,
+        "ratio": 424.0
+      },
+      {
+        "word": "bewerbermangel",
+        "count": 6,
+        "score": 39.65,
+        "ratio": 740.1
+      },
+      {
+        "word": "notare",
+        "count": 7,
+        "score": 32.66,
+        "ratio": 105.3
+      },
+      {
+        "word": "petitionsrecht",
+        "count": 6,
+        "score": 32.33,
+        "ratio": 217.7
       }
     ],
     "signatureAdjectives": [
       {
         "word": "geschützt",
         "count": 3,
-        "ratioParty": 8.9,
+        "ratioParty": 8.6,
         "ratioBundestag": 6.3
       },
       {
         "word": "verantwortungsvoll",
         "count": 3,
-        "ratioParty": 7.5,
-        "ratioBundestag": 12.1
+        "ratioParty": 7.6,
+        "ratioBundestag": 12.3
       },
       {
         "word": "falsch",
         "count": 3,
-        "ratioParty": 2.6,
-        "ratioBundestag": 2.6
+        "ratioParty": 2.5,
+        "ratioBundestag": 2.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "geschützt",
+        "count": 3,
+        "score": 6.79,
+        "ratio": 8.6
+      },
+      {
+        "word": "verantwortungsvoll",
+        "count": 3,
+        "score": 6.46,
+        "ratio": 7.6
+      },
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 3.76,
+        "ratio": 2.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "verantwortungsvoll",
+        "count": 3,
+        "score": 7.76,
+        "ratio": 12.3
+      },
+      {
+        "word": "geschützt",
+        "count": 3,
+        "score": 5.96,
+        "ratio": 6.3
+      },
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 3.76,
+        "ratio": 2.5
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 612,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.95,
     "vsParliament": 1.05
   },
@@ -144,46 +248,46 @@
     "question": "Welches Wort nutzt Johannes Wiegelmann häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetz",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
         "text": "Anwaltsnotariat",
         "isCorrect": true
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Anwaltsnotariat\" nutzt Johannes Wiegelmann 424.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "408.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Anwaltsnotariat\" nutzt Johannes Wiegelmann 440.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "424.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Johannes Wiegelmann häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
+        "text": "Groß",
         "isCorrect": false
       },
       {
         "text": "Geschützt",
         "isCorrect": true
+      },
+      {
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Richtig",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Geschützt\" nutzt Johannes Wiegelmann 8.9× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationParty": "\"Geschützt\" nutzt Johannes Wiegelmann 8.6× häufiger als der CDU/CSU-Durchschnitt.",
     "explanationBundestag": "6.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -302,7 +406,7 @@
           "count": 2
         },
         {
-          "word": "kredite",
+          "word": "industrie",
           "count": 1
         }
       ],
@@ -316,15 +420,15 @@
           "count": 2
         },
         {
-          "word": "familie",
-          "count": 1
-        },
-        {
-          "word": "elternzeit",
+          "word": "kinder",
           "count": 1
         },
         {
           "word": "rente",
+          "count": 1
+        },
+        {
+          "word": "familie",
           "count": 1
         }
       ],
@@ -338,15 +442,15 @@
           "count": 2
         },
         {
+          "word": "polizei",
+          "count": 1
+        },
+        {
           "word": "verbrechen",
           "count": 1
         },
         {
           "word": "täter",
-          "count": 1
-        },
-        {
-          "word": "straftäter",
           "count": 1
         }
       ],
@@ -372,15 +476,15 @@
           "count": 4
         },
         {
+          "word": "online",
+          "count": 1
+        },
+        {
           "word": "hardware",
           "count": 1
         },
         {
           "word": "netz",
-          "count": 1
-        },
-        {
-          "word": "online",
           "count": 1
         }
       ],
@@ -404,15 +508,15 @@
           "count": 4
         },
         {
-          "word": "kosten",
-          "count": 1
-        },
-        {
           "word": "entlastung",
           "count": 1
         },
         {
           "word": "steuern",
+          "count": 1
+        },
+        {
+          "word": "kosten",
           "count": 1
         }
       ],
@@ -430,11 +534,11 @@
           "count": 4
         },
         {
-          "word": "verbraucherschutz",
+          "word": "bundesverfassungsgericht",
           "count": 3
         },
         {
-          "word": "richter",
+          "word": "strafrecht",
           "count": 3
         }
       ],

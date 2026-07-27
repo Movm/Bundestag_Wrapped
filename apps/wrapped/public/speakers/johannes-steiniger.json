@@ -11,23 +11,23 @@
   "minWords": 47,
   "maxWords": 778,
   "rankings": {
-    "speechRank": 471,
-    "wordsRank": 449,
-    "partySpeechRank": 148,
-    "partyWordsRank": 142,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 24.6,
-    "verbosityRank": 165,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 58,
-    "longestSpeechRank": 270
+    "speechRank": 480,
+    "wordsRank": 457,
+    "partySpeechRank": 152,
+    "partyWordsRank": 146,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 23.3,
+    "verbosityRank": 166,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 61,
+    "longestSpeechRank": 272
   },
   "drama": {
     "interruptionsGiven": 50,
     "interruptionsReceived": 15,
-    "interrupterRank": 101,
-    "interruptedRank": 377
+    "interrupterRank": 106,
+    "interruptedRank": 389
   },
   "words": {
     "topWords": [
@@ -76,40 +76,106 @@
       {
         "word": "bauern",
         "count": 7,
-        "ratioParty": 100.8,
-        "ratioBundestag": 39.9
+        "ratioParty": 104.6,
+        "ratioBundestag": 41.4
       },
       {
         "word": "versprochen",
         "count": 9,
-        "ratioParty": 56.2,
-        "ratioBundestag": 26.6
+        "ratioParty": 54.7,
+        "ratioBundestag": 26.8
       },
       {
         "word": "bundesländer",
         "count": 6,
-        "ratioParty": 52.2,
-        "ratioBundestag": 47.3
+        "ratioParty": 50.7,
+        "ratioBundestag": 47.5
       },
       {
         "word": "landwirtschaft",
         "count": 18,
-        "ratioParty": 25.7,
+        "ratioParty": 25.0,
         "ratioBundestag": 30.7
       },
       {
         "word": "betrieben",
         "count": 6,
-        "ratioParty": 23.4,
-        "ratioBundestag": 24.6
+        "ratioParty": 23.1,
+        "ratioBundestag": 24.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "landwirtschaft",
+        "count": 18,
+        "score": 58.65,
+        "ratio": 25.0
+      },
+      {
+        "word": "versprochen",
+        "count": 9,
+        "score": 36.18,
+        "ratio": 54.7
+      },
+      {
+        "word": "bauern",
+        "count": 7,
+        "score": 32.62,
+        "ratio": 104.6
+      },
+      {
+        "word": "bundesländer",
+        "count": 6,
+        "score": 23.67,
+        "ratio": 50.7
+      },
+      {
+        "word": "betrieben",
+        "count": 6,
+        "score": 19.09,
+        "ratio": 23.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "landwirtschaft",
+        "count": 18,
+        "score": 62.21,
+        "ratio": 30.7
+      },
+      {
+        "word": "versprochen",
+        "count": 9,
+        "score": 29.93,
+        "ratio": 26.8
+      },
+      {
+        "word": "bauern",
+        "count": 7,
+        "score": 26.23,
+        "ratio": 41.4
+      },
+      {
+        "word": "bundesländer",
+        "count": 6,
+        "score": 23.29,
+        "ratio": 47.5
+      },
+      {
+        "word": "betrieben",
+        "count": 6,
+        "score": 19.43,
+        "ratio": 24.5
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 493,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.76,
     "vsParliament": 0.84
   },
@@ -134,24 +200,24 @@
     "question": "Welches Wort nutzt Johannes Steiniger häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Ausschuss",
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
         "text": "Bauern",
         "isCorrect": true
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bauern\" nutzt Johannes Steiniger 100.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "39.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bauern\" nutzt Johannes Steiniger 104.6× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "41.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -248,11 +314,11 @@
     "topicWords": {
       "klima": [
         {
-          "word": "pestizide",
+          "word": "nachhaltig",
           "count": 1
         },
         {
-          "word": "nachhaltig",
+          "word": "pestizide",
           "count": 1
         }
       ],
@@ -270,11 +336,11 @@
           "count": 1
         },
         {
-          "word": "marktwirtschaft",
+          "word": "betriebe",
           "count": 1
         },
         {
-          "word": "wettbewerb",
+          "word": "wettbewerbsfähigkeit",
           "count": 1
         }
       ],
@@ -304,11 +370,11 @@
           "count": 1
         },
         {
-          "word": "russland",
+          "word": "europäisch",
           "count": 1
         },
         {
-          "word": "europäisch",
+          "word": "russland",
           "count": 1
         }
       ],
@@ -338,11 +404,11 @@
           "count": 1
         },
         {
-          "word": "entlastung",
+          "word": "investitionen",
           "count": 1
         },
         {
-          "word": "investitionen",
+          "word": "entlastung",
           "count": 1
         }
       ],

@@ -11,32 +11,32 @@
   "minWords": 10,
   "maxWords": 463,
   "rankings": {
-    "speechRank": 601,
-    "wordsRank": 473,
-    "partySpeechRank": 196,
-    "partyWordsRank": 152,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 3.8,
+    "speechRank": 615,
+    "wordsRank": 479,
+    "partySpeechRank": 205,
+    "partyWordsRank": 156,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 1.8,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 591
+    "longestSpeechRank": 593
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 6,
-    "interrupterRank": 428,
-    "interruptedRank": 529
+    "interrupterRank": 416,
+    "interruptedRank": 537
   },
   "words": {
     "topWords": [
       {
-        "word": "agenda",
+        "word": "wissen",
         "count": 15
       },
       {
-        "word": "wissen",
+        "word": "agenda",
         "count": 15
       },
       {
@@ -68,7 +68,7 @@
         "count": 7
       },
       {
-        "word": "wichtig",
+        "word": "zusammenarbeit",
         "count": 7
       }
     ],
@@ -76,40 +76,106 @@
       {
         "word": "bafög",
         "count": 11,
-        "ratioParty": 75.7,
-        "ratioBundestag": 47.0
+        "ratioParty": 78.6,
+        "ratioBundestag": 48.0
       },
       {
         "word": "fusion",
         "count": 5,
-        "ratioParty": 75.0,
-        "ratioBundestag": 157.4
+        "ratioParty": 77.8,
+        "ratioBundestag": 163.5
       },
       {
         "word": "klimaneutrale",
         "count": 5,
-        "ratioParty": 72.4,
-        "ratioBundestag": 92.2
+        "ratioParty": 72.6,
+        "ratioBundestag": 90.6
       },
       {
         "word": "hightech",
         "count": 14,
-        "ratioParty": 34.2,
-        "ratioBundestag": 52.5
+        "ratioParty": 35.3,
+        "ratioBundestag": 54.4
       },
       {
         "word": "erhöhung",
         "count": 5,
         "ratioParty": 26.9,
-        "ratioBundestag": 27.6
+        "ratioBundestag": 26.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "hightech",
+        "count": 14,
+        "score": 50.29,
+        "ratio": 35.3
+      },
+      {
+        "word": "bafög",
+        "count": 11,
+        "score": 48.15,
+        "ratio": 78.6
+      },
+      {
+        "word": "fusion",
+        "count": 5,
+        "score": 21.83,
+        "ratio": 77.8
+      },
+      {
+        "word": "klimaneutrale",
+        "count": 5,
+        "score": 21.49,
+        "ratio": 72.6
+      },
+      {
+        "word": "erhöhung",
+        "count": 5,
+        "score": 16.64,
+        "ratio": 26.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "hightech",
+        "count": 14,
+        "score": 56.2,
+        "ratio": 54.4
+      },
+      {
+        "word": "bafög",
+        "count": 11,
+        "score": 42.81,
+        "ratio": 48.0
+      },
+      {
+        "word": "fusion",
+        "count": 5,
+        "score": 25.51,
+        "ratio": 163.5
+      },
+      {
+        "word": "klimaneutrale",
+        "count": 5,
+        "score": 22.59,
+        "ratio": 90.6
+      },
+      {
+        "word": "erhöhung",
+        "count": 5,
+        "score": 16.5,
+        "ratio": 26.1
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 99,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.15,
     "vsParliament": 0.17
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Dr. Silke Launert häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
         "text": "Bafög",
         "isCorrect": true
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
+        "isCorrect": false
+      },
+      {
+        "text": "Zukunft",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bafög\" nutzt Dr. Silke Launert 75.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "47.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bafög\" nutzt Dr. Silke Launert 78.6× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "48.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -253,11 +319,11 @@
           "count": 3
         },
         {
-          "word": "geothermie",
+          "word": "klimaneutral",
           "count": 1
         },
         {
-          "word": "klimaneutral",
+          "word": "geothermie",
           "count": 1
         }
       ],
@@ -291,11 +357,11 @@
       ],
       "gesundheit": [
         {
-          "word": "notfall",
+          "word": "medizin",
           "count": 2
         },
         {
-          "word": "medizin",
+          "word": "notfall",
           "count": 2
         },
         {

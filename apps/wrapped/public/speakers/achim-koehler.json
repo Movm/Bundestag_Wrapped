@@ -11,23 +11,23 @@
   "minWords": 202,
   "maxWords": 363,
   "rankings": {
-    "speechRank": 566,
-    "wordsRank": 605,
-    "partySpeechRank": 139,
-    "partyWordsRank": 144,
+    "speechRank": 581,
+    "wordsRank": 606,
+    "partySpeechRank": 144,
+    "partyWordsRank": 145,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 9.4,
-    "verbosityRank": 509,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 130,
-    "longestSpeechRank": 612
+    "totalSpeakers": 626,
+    "percentile": 7.2,
+    "verbosityRank": 512,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 131,
+    "longestSpeechRank": 613
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 1,
     "interrupterRank": null,
-    "interruptedRank": 602
+    "interruptedRank": 603
   },
   "words": {
     "topWords": [
@@ -44,11 +44,11 @@
         "count": 5
       },
       {
-        "word": "worte",
+        "word": "politik",
         "count": 4
       },
       {
-        "word": "politik",
+        "word": "worte",
         "count": 4
       },
       {
@@ -60,15 +60,15 @@
         "count": 3
       },
       {
-        "word": "jahre",
+        "word": "hilfe",
         "count": 2
       },
       {
-        "word": "stehe",
+        "word": "ausland",
         "count": 2
       },
       {
-        "word": "handeln",
+        "word": "unterstützung",
         "count": 2
       }
     ],
@@ -76,28 +76,70 @@
       {
         "word": "menschenrechte",
         "count": 8,
-        "ratioParty": 251.7,
-        "ratioBundestag": 131.0
+        "ratioParty": 253.3,
+        "ratioBundestag": 133.2
       },
       {
         "word": "menschen",
         "count": 8,
-        "ratioParty": 5.3,
+        "ratioParty": 5.2,
         "ratioBundestag": 3.0
       },
       {
         "word": "bürger",
         "count": 5,
         "ratioParty": 3.2,
-        "ratioBundestag": 7.9
+        "ratioBundestag": 7.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "menschenrechte",
+        "count": 8,
+        "score": 44.31,
+        "ratio": 253.3
+      },
+      {
+        "word": "menschen",
+        "count": 8,
+        "score": 14.6,
+        "ratio": 5.2
+      },
+      {
+        "word": "bürger",
+        "count": 5,
+        "score": 7.18,
+        "ratio": 3.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "menschenrechte",
+        "count": 8,
+        "score": 39.19,
+        "ratio": 133.2
+      },
+      {
+        "word": "menschen",
+        "count": 8,
+        "score": 11.09,
+        "ratio": 3.0
+      },
+      {
+        "word": "bürger",
+        "count": 5,
+        "score": 10.87,
+        "ratio": 7.8
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 294,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.53,
     "vsParliament": 0.5
   },
@@ -112,24 +154,24 @@
     "question": "Welches Wort nutzt Achim Köhler häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
         "text": "Menschenrechte",
         "isCorrect": true
       },
       {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
         "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Menschenrechte\" nutzt Achim Köhler 251.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "131.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Menschenrechte\" nutzt Achim Köhler 253.3× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "133.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -208,15 +250,15 @@
       ],
       "soziales": [
         {
-          "word": "gerechtigkeit",
-          "count": 1
-        },
-        {
           "word": "umverteilung",
           "count": 1
         },
         {
           "word": "rentner",
+          "count": 1
+        },
+        {
+          "word": "gerechtigkeit",
           "count": 1
         }
       ],

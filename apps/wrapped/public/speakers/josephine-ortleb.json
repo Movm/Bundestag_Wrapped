@@ -11,22 +11,22 @@
   "minWords": 276,
   "maxWords": 574,
   "rankings": {
-    "speechRank": 549,
-    "wordsRank": 568,
+    "speechRank": 551,
+    "wordsRank": 573,
     "partySpeechRank": 94,
-    "partyWordsRank": 102,
+    "partyWordsRank": 103,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 12.2,
-    "verbosityRank": 277,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 12.0,
+    "verbosityRank": 278,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 66,
-    "longestSpeechRank": 522
+    "longestSpeechRank": 525
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 5,
-    "interrupterRank": 471,
+    "interrupterRank": 481,
     "interruptedRank": 549
   },
   "words": {
@@ -52,6 +52,14 @@
         "count": 7
       },
       {
+        "word": "wert",
+        "count": 6
+      },
+      {
+        "word": "beim",
+        "count": 6
+      },
+      {
         "word": "marlies",
         "count": 6
       },
@@ -62,28 +70,20 @@
       {
         "word": "geld",
         "count": 6
-      },
-      {
-        "word": "wert",
-        "count": 6
-      },
-      {
-        "word": "beim",
-        "count": 6
       }
     ],
     "signatureWords": [
       {
         "word": "krämer",
         "count": 6,
-        "ratioParty": 3010.2,
-        "ratioBundestag": 15027.3
+        "ratioParty": 3144.1,
+        "ratioBundestag": 15602.7
       },
       {
         "word": "gleichstellung",
         "count": 8,
-        "ratioParty": 236.1,
-        "ratioBundestag": 225.1
+        "ratioParty": 246.6,
+        "ratioBundestag": 231.2
       },
       {
         "word": "marlies",
@@ -94,22 +94,88 @@
       {
         "word": "frauen",
         "count": 26,
-        "ratioParty": 25.9,
-        "ratioBundestag": 32.0
+        "ratioParty": 26.0,
+        "ratioBundestag": 32.2
       },
       {
         "word": "gewalt",
         "count": 14,
-        "ratioParty": 15.7,
-        "ratioBundestag": 22.4
+        "ratioParty": 15.3,
+        "ratioBundestag": 22.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "frauen",
+        "count": 26,
+        "score": 85.69,
+        "ratio": 26.0
+      },
+      {
+        "word": "krämer",
+        "count": 6,
+        "score": 48.32,
+        "ratio": 3144.1
+      },
+      {
+        "word": "gleichstellung",
+        "count": 8,
+        "score": 44.09,
+        "ratio": 246.6
+      },
+      {
+        "word": "gewalt",
+        "count": 14,
+        "score": 39.08,
+        "ratio": 15.3
+      },
+      {
+        "word": "marlies",
+        "count": 6,
+        "score": 23.83,
+        "ratio": 52.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "frauen",
+        "count": 26,
+        "score": 91.07,
+        "ratio": 32.2
+      },
+      {
+        "word": "krämer",
+        "count": 6,
+        "score": 57.93,
+        "ratio": 15602.7
+      },
+      {
+        "word": "gewalt",
+        "count": 14,
+        "score": 43.96,
+        "ratio": 22.1
+      },
+      {
+        "word": "gleichstellung",
+        "count": 8,
+        "score": 43.58,
+        "ratio": 231.2
+      },
+      {
+        "word": "marlies",
+        "count": 6,
+        "score": 23.83,
+        "ratio": 52.1
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 440,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
     "vsParty": 0.71,
     "vsParliament": 0.75
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Josephine Ortleb häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Haushalt",
+        "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Reform",
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
         "isCorrect": false
       },
       {
         "text": "Krämer",
         "isCorrect": true
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Krämer\" nutzt Josephine Ortleb 3010.2× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "15027.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Krämer\" nutzt Josephine Ortleb 3144.1× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "15602.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -279,11 +345,11 @@
       ],
       "gesundheit": [
         {
-          "word": "pflege",
+          "word": "prävention",
           "count": 2
         },
         {
-          "word": "prävention",
+          "word": "pflege",
           "count": 2
         }
       ],
@@ -309,11 +375,11 @@
           "count": 2
         },
         {
-          "word": "sparkasse",
+          "word": "finanzierung",
           "count": 1
         },
         {
-          "word": "finanzierung",
+          "word": "sparkasse",
           "count": 1
         }
       ],

@@ -11,23 +11,23 @@
   "minWords": 47,
   "maxWords": 892,
   "rankings": {
-    "speechRank": 431,
-    "wordsRank": 399,
-    "partySpeechRank": 79,
-    "partyWordsRank": 77,
+    "speechRank": 427,
+    "wordsRank": 409,
+    "partySpeechRank": 77,
+    "partyWordsRank": 78,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 31.0,
-    "verbosityRank": 289,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 68,
+    "totalSpeakers": 626,
+    "percentile": 31.8,
+    "verbosityRank": 293,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 67,
     "longestSpeechRank": 142
   },
   "drama": {
     "interruptionsGiven": 14,
     "interruptionsReceived": 14,
-    "interrupterRank": 241,
-    "interruptedRank": 406
+    "interrupterRank": 245,
+    "interruptedRank": 413
   },
   "words": {
     "topWords": [
@@ -76,59 +76,163 @@
       {
         "word": "entwicklungszusammenarbeit",
         "count": 22,
-        "ratioParty": 95.9,
-        "ratioBundestag": 85.6
+        "ratioParty": 97.8,
+        "ratioBundestag": 84.8
+      },
+      {
+        "word": "globale",
+        "count": 10,
+        "ratioParty": 38.9,
+        "ratioBundestag": 42.4
       },
       {
         "word": "hunger",
         "count": 5,
         "ratioParty": 38.9,
-        "ratioBundestag": 37.6
-      },
-      {
-        "word": "globale",
-        "count": 10,
-        "ratioParty": 38.0,
-        "ratioBundestag": 42.0
+        "ratioBundestag": 38.4
       },
       {
         "word": "entwicklungspolitik",
         "count": 5,
-        "ratioParty": 25.5,
-        "ratioBundestag": 34.2
+        "ratioParty": 25.9,
+        "ratioBundestag": 32.9
       },
       {
         "word": "libanon",
         "count": 7,
-        "ratioParty": 24.1,
-        "ratioBundestag": 21.1
+        "ratioParty": 25.1,
+        "ratioBundestag": 21.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "entwicklungszusammenarbeit",
+        "count": 22,
+        "score": 101.05,
+        "ratio": 97.8
+      },
+      {
+        "word": "globale",
+        "count": 10,
+        "score": 36.86,
+        "ratio": 38.9
+      },
+      {
+        "word": "libanon",
+        "count": 7,
+        "score": 22.83,
+        "ratio": 25.1
+      },
+      {
+        "word": "hunger",
+        "count": 5,
+        "score": 18.43,
+        "ratio": 38.9
+      },
+      {
+        "word": "entwicklungspolitik",
+        "count": 5,
+        "score": 16.46,
+        "ratio": 25.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "entwicklungszusammenarbeit",
+        "count": 22,
+        "score": 97.94,
+        "ratio": 84.8
+      },
+      {
+        "word": "globale",
+        "count": 10,
+        "score": 37.7,
+        "ratio": 42.4
+      },
+      {
+        "word": "libanon",
+        "count": 7,
+        "score": 21.92,
+        "ratio": 21.9
+      },
+      {
+        "word": "hunger",
+        "count": 5,
+        "score": 18.37,
+        "ratio": 38.4
+      },
+      {
+        "word": "entwicklungspolitik",
+        "count": 5,
+        "score": 17.62,
+        "ratio": 32.9
       }
     ],
     "signatureAdjectives": [
       {
         "word": "wirkungslos",
         "count": 3,
-        "ratioParty": 134.1,
-        "ratioBundestag": 54.8
+        "ratioParty": 140.0,
+        "ratioBundestag": 54.7
       },
       {
         "word": "entscheidend",
         "count": 4,
-        "ratioParty": 5.3,
+        "ratioParty": 5.4,
         "ratioBundestag": 7.1
       },
       {
         "word": "gerecht",
         "count": 4,
-        "ratioParty": 4.0,
-        "ratioBundestag": 5.4
+        "ratioParty": 4.1,
+        "ratioBundestag": 5.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "wirkungslos",
+        "count": 3,
+        "score": 14.85,
+        "ratio": 140.0
+      },
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 7.43,
+        "ratio": 5.4
+      },
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 6.52,
+        "ratio": 4.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "wirkungslos",
+        "count": 3,
+        "score": 12.06,
+        "ratio": 54.7
+      },
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 8.37,
+        "ratio": 7.1
+      },
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 7.49,
+        "ratio": 5.5
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 435,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 621,
+    "parliamentAvgWords": 585,
     "vsParty": 0.7,
     "vsParliament": 0.74
   },
@@ -153,47 +257,47 @@
     "question": "Welches Wort nutzt Sanae Abdi häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
         "text": "Entwicklungszusammenarbeit",
         "isCorrect": true
       },
       {
-        "text": "Wirtschaft",
+        "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
+        "text": "Antrag",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entwicklungszusammenarbeit\" nutzt Sanae Abdi 95.9× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "85.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Entwicklungszusammenarbeit\" nutzt Sanae Abdi 97.8× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "84.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Sanae Abdi häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
         "text": "Wirkungslos",
         "isCorrect": true
       },
       {
-        "text": "Neu",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Stark",
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wirkungslos\" nutzt Sanae Abdi 134.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "54.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wirkungslos\" nutzt Sanae Abdi 140.0× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "54.7× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -315,11 +419,11 @@
           "count": 2
         },
         {
-          "word": "erneuerbare",
+          "word": "pestizide",
           "count": 1
         },
         {
-          "word": "energieeffizienz",
+          "word": "nachhaltigkeit",
           "count": 1
         }
       ],
@@ -337,11 +441,11 @@
           "count": 2
         },
         {
-          "word": "wirtschaft",
+          "word": "wettbewerbsfähigkeit",
           "count": 1
         },
         {
-          "word": "industrie",
+          "word": "wettbewerb",
           "count": 1
         }
       ],
@@ -351,11 +455,11 @@
           "count": 3
         },
         {
-          "word": "kinder",
+          "word": "familien",
           "count": 3
         },
         {
-          "word": "familien",
+          "word": "kinder",
           "count": 3
         },
         {
@@ -373,11 +477,11 @@
           "count": 7
         },
         {
-          "word": "angriff",
+          "word": "waffen",
           "count": 2
         },
         {
-          "word": "waffen",
+          "word": "angriff",
           "count": 2
         }
       ],
@@ -387,11 +491,11 @@
           "count": 2
         },
         {
-          "word": "krankenhäuser",
+          "word": "krankenhaus",
           "count": 2
         },
         {
-          "word": "krankenhaus",
+          "word": "krankenhäuser",
           "count": 2
         },
         {
@@ -399,7 +503,7 @@
           "count": 1
         },
         {
-          "word": "kliniken",
+          "word": "ärzte",
           "count": 1
         }
       ],
@@ -409,15 +513,15 @@
           "count": 11
         },
         {
+          "word": "krieg",
+          "count": 4
+        },
+        {
           "word": "diplomatie",
           "count": 4
         },
         {
           "word": "russland",
-          "count": 4
-        },
-        {
-          "word": "krieg",
           "count": 4
         },
         {
@@ -459,7 +563,7 @@
           "count": 2
         },
         {
-          "word": "investitionen",
+          "word": "steuerpolitik",
           "count": 1
         }
       ],
@@ -479,15 +583,15 @@
           "count": 2
         },
         {
-          "word": "beschäftigung",
-          "count": 1
-        },
-        {
           "word": "löhne",
           "count": 1
         },
         {
           "word": "gewerkschaften",
+          "count": 1
+        },
+        {
+          "word": "arbeiter",
           "count": 1
         }
       ],

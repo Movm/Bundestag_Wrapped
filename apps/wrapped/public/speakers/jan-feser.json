@@ -11,23 +11,23 @@
   "minWords": 80,
   "maxWords": 1027,
   "rankings": {
-    "speechRank": 269,
-    "wordsRank": 203,
-    "partySpeechRank": 59,
-    "partyWordsRank": 44,
+    "speechRank": 289,
+    "wordsRank": 211,
+    "partySpeechRank": 61,
+    "partyWordsRank": 46,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 57.0,
-    "verbosityRank": 65,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 53.8,
+    "verbosityRank": 66,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 17,
-    "longestSpeechRank": 73
+    "longestSpeechRank": 75
   },
   "drama": {
     "interruptionsGiven": 19,
     "interruptionsReceived": 45,
-    "interrupterRank": 213,
-    "interruptedRank": 136
+    "interrupterRank": 218,
+    "interruptedRank": 147
   },
   "words": {
     "topWords": [
@@ -48,47 +48,127 @@
       {
         "word": "puncto",
         "count": 11,
-        "ratioParty": 437.0,
-        "ratioBundestag": 590.6
+        "ratioParty": 453.2,
+        "ratioBundestag": 613.3
       },
       {
         "word": "leistungsempfänger",
         "count": 7,
-        "ratioParty": 278.1,
-        "ratioBundestag": 375.9
+        "ratioParty": 288.4,
+        "ratioBundestag": 390.3
       },
       {
         "word": "behinderungen",
         "count": 7,
-        "ratioParty": 166.9,
-        "ratioBundestag": 39.2
+        "ratioParty": 173.0,
+        "ratioBundestag": 40.7
       },
       {
         "word": "behinderung",
         "count": 12,
-        "ratioParty": 158.9,
-        "ratioBundestag": 84.8
+        "ratioParty": 164.8,
+        "ratioBundestag": 86.9
       },
       {
         "word": "inklusion",
         "count": 6,
-        "ratioParty": 143.0,
-        "ratioBundestag": 59.7
+        "ratioParty": 148.3,
+        "ratioBundestag": 61.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "puncto",
+        "count": 11,
+        "score": 67.3,
+        "ratio": 453.2
+      },
+      {
+        "word": "behinderung",
+        "count": 12,
+        "score": 61.33,
+        "ratio": 164.8
+      },
+      {
+        "word": "leistungsempfänger",
+        "count": 7,
+        "score": 39.67,
+        "ratio": 288.4
+      },
+      {
+        "word": "behinderungen",
+        "count": 7,
+        "score": 36.11,
+        "ratio": 173.0
+      },
+      {
+        "word": "inklusion",
+        "count": 6,
+        "score": 30.04,
+        "ratio": 148.3
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "puncto",
+        "count": 11,
+        "score": 70.63,
+        "ratio": 613.3
+      },
+      {
+        "word": "behinderung",
+        "count": 12,
+        "score": 53.71,
+        "ratio": 86.9
+      },
+      {
+        "word": "leistungsempfänger",
+        "count": 7,
+        "score": 41.79,
+        "ratio": 390.3
+      },
+      {
+        "word": "behinderungen",
+        "count": 7,
+        "score": 26.11,
+        "ratio": 40.7
+      },
+      {
+        "word": "inklusion",
+        "count": 6,
+        "score": 24.85,
+        "ratio": 61.9
       }
     ],
     "signatureAdjectives": [
       {
         "word": "effektiv",
         "count": 4,
-        "ratioParty": 19.1,
-        "ratioBundestag": 16.3
+        "ratioParty": 19.8,
+        "ratioBundestag": 16.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "effektiv",
+        "count": 4,
+        "score": 12.14,
+        "ratio": 19.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "effektiv",
+        "count": 4,
+        "score": 11.47,
+        "ratio": 16.6
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 585,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 1.05,
     "vsParliament": 1.0
   },
@@ -113,34 +193,34 @@
     "question": "Welches Wort nutzt Jan Feser häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Puncto",
-        "isCorrect": true
-      },
-      {
         "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Gesellschaft",
+        "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Bundesregierung",
+        "text": "Freiheit",
         "isCorrect": false
+      },
+      {
+        "text": "Puncto",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Puncto\" nutzt Jan Feser 437.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "590.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Puncto\" nutzt Jan Feser 453.2× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "613.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Jan Feser häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Notwendig",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
@@ -148,12 +228,12 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Effektiv\" nutzt Jan Feser 19.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "16.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Effektiv\" nutzt Jan Feser 19.8× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "16.6× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -241,7 +321,7 @@
           "count": 2
         },
         {
-          "word": "drittstaaten",
+          "word": "einwanderung",
           "count": 1
         }
       ],
@@ -265,11 +345,11 @@
           "count": 1
         },
         {
-          "word": "unternehmen",
+          "word": "kredit",
           "count": 1
         },
         {
-          "word": "marktwirtschaft",
+          "word": "unternehmen",
           "count": 1
         }
       ],
@@ -287,11 +367,11 @@
           "count": 6
         },
         {
-          "word": "sozialstaat",
+          "word": "barrierefreiheit",
           "count": 4
         },
         {
-          "word": "eltern",
+          "word": "sozialstaat",
           "count": 4
         }
       ],
@@ -343,11 +423,11 @@
       ],
       "bildung": [
         {
-          "word": "schulen",
+          "word": "ausbildung",
           "count": 1
         },
         {
-          "word": "ausbildung",
+          "word": "schulen",
           "count": 1
         }
       ],
@@ -361,11 +441,11 @@
           "count": 3
         },
         {
-          "word": "finanzierung",
+          "word": "haushaltsplan",
           "count": 3
         },
         {
-          "word": "haushaltsplan",
+          "word": "finanzierung",
           "count": 3
         },
         {
@@ -379,10 +459,6 @@
           "count": 2
         },
         {
-          "word": "straftaten",
-          "count": 1
-        },
-        {
           "word": "verordnung",
           "count": 1
         },
@@ -392,6 +468,10 @@
         },
         {
           "word": "gerichte",
+          "count": 1
+        },
+        {
+          "word": "straftaten",
           "count": 1
         }
       ],

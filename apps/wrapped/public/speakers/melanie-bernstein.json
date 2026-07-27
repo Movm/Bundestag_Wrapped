@@ -11,23 +11,23 @@
   "minWords": 307,
   "maxWords": 663,
   "rankings": {
-    "speechRank": 504,
-    "wordsRank": 504,
-    "partySpeechRank": 163,
-    "partyWordsRank": 164,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 19.4,
-    "verbosityRank": 157,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 53,
-    "longestSpeechRank": 416
+    "speechRank": 513,
+    "wordsRank": 510,
+    "partySpeechRank": 166,
+    "partyWordsRank": 169,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 18.1,
+    "verbosityRank": 158,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 55,
+    "longestSpeechRank": 422
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 1,
     "interrupterRank": null,
-    "interruptedRank": 588
+    "interruptedRank": 592
   },
   "words": {
     "topWords": [
@@ -76,47 +76,127 @@
       {
         "word": "karin",
         "count": 6,
-        "ratioParty": 244.1,
-        "ratioBundestag": 346.4
+        "ratioParty": 233.9,
+        "ratioBundestag": 346.3
       },
       {
         "word": "prien",
         "count": 6,
-        "ratioParty": 91.5,
-        "ratioBundestag": 55.6
+        "ratioParty": 92.1,
+        "ratioBundestag": 57.0
       },
       {
         "word": "zusätzlichen",
         "count": 5,
-        "ratioParty": 29.8,
-        "ratioBundestag": 31.7
+        "ratioParty": 28.5,
+        "ratioBundestag": 31.3
       },
       {
         "word": "bundeshaushalt",
         "count": 8,
-        "ratioParty": 23.4,
-        "ratioBundestag": 28.1
+        "ratioParty": 24.0,
+        "ratioBundestag": 28.6
       },
       {
         "word": "bildung",
         "count": 9,
-        "ratioParty": 17.1,
+        "ratioParty": 17.4,
         "ratioBundestag": 17.3
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "karin",
+        "count": 6,
+        "score": 32.75,
+        "ratio": 233.9
+      },
+      {
+        "word": "prien",
+        "count": 6,
+        "score": 27.2,
+        "ratio": 92.1
+      },
+      {
+        "word": "bildung",
+        "count": 9,
+        "score": 26.21,
+        "ratio": 17.4
+      },
+      {
+        "word": "bundeshaushalt",
+        "count": 8,
+        "score": 25.75,
+        "ratio": 24.0
+      },
+      {
+        "word": "zusätzlichen",
+        "count": 5,
+        "score": 16.92,
+        "ratio": 28.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "karin",
+        "count": 6,
+        "score": 35.1,
+        "ratio": 346.3
+      },
+      {
+        "word": "bundeshaushalt",
+        "count": 8,
+        "score": 27.1,
+        "ratio": 28.6
+      },
+      {
+        "word": "bildung",
+        "count": 9,
+        "score": 26.16,
+        "ratio": 17.3
+      },
+      {
+        "word": "prien",
+        "count": 6,
+        "score": 24.36,
+        "ratio": 57.0
+      },
+      {
+        "word": "zusätzlichen",
+        "count": 5,
+        "score": 17.38,
+        "ratio": 31.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "sachlich",
         "count": 4,
-        "ratioParty": 55.8,
-        "ratioBundestag": 83.4
+        "ratioParty": 56.3,
+        "ratioBundestag": 84.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sachlich",
+        "count": 4,
+        "score": 16.19,
+        "ratio": 56.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sachlich",
+        "count": 4,
+        "score": 17.78,
+        "ratio": 84.2
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 501,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.78,
     "vsParliament": 0.86
   },
@@ -140,43 +220,43 @@
         "isCorrect": true
       },
       {
-        "text": "Migration",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Gesetz",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
+        "text": "Bürger",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Karin\" nutzt Melanie Bernstein 244.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "346.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Karin\" nutzt Melanie Bernstein 233.9× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "346.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Melanie Bernstein häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Groß",
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
         "text": "Sachlich",
         "isCorrect": true
-      },
-      {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sachlich\" nutzt Melanie Bernstein 55.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "83.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Sachlich\" nutzt Melanie Bernstein 56.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "84.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦦",
@@ -318,17 +398,17 @@
           "count": 2
         },
         {
-          "word": "obdachlosigkeit",
+          "word": "jugend",
           "count": 1
         }
       ],
       "sicherheit": [
         {
-          "word": "extremismus",
+          "word": "radikalisierung",
           "count": 1
         },
         {
-          "word": "radikalisierung",
+          "word": "extremismus",
           "count": 1
         }
       ],
@@ -360,15 +440,15 @@
           "count": 3
         },
         {
+          "word": "bildungssystem",
+          "count": 1
+        },
+        {
           "word": "weiterbildung",
           "count": 1
         },
         {
           "word": "wissenschaft",
-          "count": 1
-        },
-        {
-          "word": "bildungssystem",
           "count": 1
         }
       ],

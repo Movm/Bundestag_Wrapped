@@ -11,23 +11,23 @@
   "minWords": 283,
   "maxWords": 296,
   "rankings": {
-    "speechRank": 540,
-    "wordsRank": 581,
+    "speechRank": 546,
+    "wordsRank": 583,
     "partySpeechRank": 133,
     "partyWordsRank": 139,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 13.6,
-    "verbosityRank": 511,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 131,
-    "longestSpeechRank": 619
+    "totalSpeakers": 626,
+    "percentile": 12.8,
+    "verbosityRank": 516,
+    "verbosityTotal": 582,
+    "partyVerbosityRank": 132,
+    "longestSpeechRank": 620
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 15,
-    "interrupterRank": 445,
-    "interruptedRank": 390
+    "interrupterRank": 463,
+    "interruptedRank": 403
   },
   "words": {
     "topWords": [
@@ -40,6 +40,10 @@
         "count": 9
       },
       {
+        "word": "vietnam",
+        "count": 8
+      },
+      {
         "word": "projekte",
         "count": 8
       },
@@ -48,23 +52,19 @@
         "count": 8
       },
       {
-        "word": "vietnam",
-        "count": 8
+        "word": "merz",
+        "count": 7
       },
       {
         "word": "bund",
         "count": 7
       },
       {
-        "word": "merz",
-        "count": 7
-      },
-      {
-        "word": "soll",
+        "word": "agenda",
         "count": 6
       },
       {
-        "word": "agenda",
+        "word": "soll",
         "count": 6
       },
       {
@@ -76,40 +76,106 @@
       {
         "word": "vietnam",
         "count": 8,
-        "ratioParty": 1042.9,
-        "ratioBundestag": 1460.4
+        "ratioParty": 1081.2,
+        "ratioBundestag": 1516.4
       },
       {
         "word": "bundesministerin",
         "count": 5,
-        "ratioParty": 141.7,
-        "ratioBundestag": 91.3
+        "ratioParty": 140.8,
+        "ratioBundestag": 93.6
       },
       {
         "word": "steuerreformen",
         "count": 5,
         "ratioParty": 50.7,
-        "ratioBundestag": 4868.1
+        "ratioBundestag": 5054.5
       },
       {
         "word": "agenda",
         "count": 6,
-        "ratioParty": 35.2,
-        "ratioBundestag": 29.0
+        "ratioParty": 36.5,
+        "ratioBundestag": 29.9
       },
       {
         "word": "projekte",
         "count": 8,
-        "ratioParty": 30.5,
-        "ratioBundestag": 37.5
+        "ratioParty": 31.2,
+        "ratioBundestag": 38.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "vietnam",
+        "count": 8,
+        "score": 55.89,
+        "ratio": 1081.2
+      },
+      {
+        "word": "projekte",
+        "count": 8,
+        "score": 27.78,
+        "ratio": 31.2
+      },
+      {
+        "word": "bundesministerin",
+        "count": 5,
+        "score": 24.77,
+        "ratio": 140.8
+      },
+      {
+        "word": "agenda",
+        "count": 6,
+        "score": 21.75,
+        "ratio": 36.5
+      },
+      {
+        "word": "steuerreformen",
+        "count": 5,
+        "score": 19.73,
+        "ratio": 50.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "vietnam",
+        "count": 8,
+        "score": 58.6,
+        "ratio": 1516.4
+      },
+      {
+        "word": "steuerreformen",
+        "count": 5,
+        "score": 42.64,
+        "ratio": 5054.5
+      },
+      {
+        "word": "projekte",
+        "count": 8,
+        "score": 29.39,
+        "ratio": 38.4
+      },
+      {
+        "word": "bundesministerin",
+        "count": 5,
+        "score": 22.75,
+        "ratio": 93.6
+      },
+      {
+        "word": "agenda",
+        "count": 6,
+        "score": 20.58,
+        "ratio": 29.9
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 291,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 557,
+    "parliamentAvgWords": 585,
     "vsParty": 0.52,
     "vsParliament": 0.5
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Johann Martel häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
         "text": "Vietnam",
         "isCorrect": true
       },
       {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
+        "text": "Rente",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Vietnam\" nutzt Johann Martel 1042.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "1460.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Vietnam\" nutzt Johann Martel 1081.2× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "1516.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -237,15 +303,15 @@
           "count": 2
         },
         {
-          "word": "produktion",
-          "count": 1
-        },
-        {
           "word": "wirtschaftswachstum",
           "count": 1
         },
         {
           "word": "freihandel",
+          "count": 1
+        },
+        {
+          "word": "produktion",
           "count": 1
         }
       ],
@@ -287,11 +353,11 @@
       ],
       "bildung": [
         {
-          "word": "ausbildung",
+          "word": "bildung",
           "count": 1
         },
         {
-          "word": "bildung",
+          "word": "ausbildung",
           "count": 1
         }
       ],

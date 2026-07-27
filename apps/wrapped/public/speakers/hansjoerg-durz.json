@@ -11,23 +11,23 @@
   "minWords": 459,
   "maxWords": 697,
   "rankings": {
-    "speechRank": 329,
-    "wordsRank": 344,
-    "partySpeechRank": 90,
-    "partyWordsRank": 103,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 47.4,
-    "verbosityRank": 83,
-    "verbosityTotal": 579,
+    "speechRank": 349,
+    "wordsRank": 357,
+    "partySpeechRank": 95,
+    "partyWordsRank": 108,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 44.2,
+    "verbosityRank": 87,
+    "verbosityTotal": 582,
     "partyVerbosityRank": 30,
-    "longestSpeechRank": 375
+    "longestSpeechRank": 379
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 6,
     "interrupterRank": null,
-    "interruptedRank": 518
+    "interruptedRank": 523
   },
   "words": {
     "topWords": [
@@ -76,40 +76,106 @@
       {
         "word": "neuland",
         "count": 5,
-        "ratioParty": 648.0,
-        "ratioBundestag": 797.9
+        "ratioParty": 672.6,
+        "ratioBundestag": 828.4
       },
       {
         "word": "überragenden",
         "count": 5,
-        "ratioParty": 108.0,
-        "ratioBundestag": 76.7
+        "ratioParty": 112.1,
+        "ratioBundestag": 78.2
       },
       {
         "word": "mobilfunk",
         "count": 5,
-        "ratioParty": 108.0,
-        "ratioBundestag": 153.4
+        "ratioParty": 112.1,
+        "ratioBundestag": 159.3
       },
       {
         "word": "glasfaser",
         "count": 7,
-        "ratioParty": 100.8,
-        "ratioBundestag": 180.2
+        "ratioParty": 104.6,
+        "ratioBundestag": 187.1
       },
       {
         "word": "digitales",
         "count": 13,
-        "ratioParty": 55.2,
-        "ratioBundestag": 76.8
+        "ratioParty": 57.3,
+        "ratioBundestag": 78.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "digitales",
+        "count": 13,
+        "score": 52.85,
+        "ratio": 57.3
+      },
+      {
+        "word": "glasfaser",
+        "count": 7,
+        "score": 32.62,
+        "ratio": 104.6
+      },
+      {
+        "word": "neuland",
+        "count": 5,
+        "score": 32.56,
+        "ratio": 672.6
+      },
+      {
+        "word": "überragenden",
+        "count": 5,
+        "score": 23.64,
+        "ratio": 112.1
+      },
+      {
+        "word": "mobilfunk",
+        "count": 5,
+        "score": 23.64,
+        "ratio": 112.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "digitales",
+        "count": 13,
+        "score": 56.9,
+        "ratio": 78.6
+      },
+      {
+        "word": "glasfaser",
+        "count": 7,
+        "score": 36.66,
+        "ratio": 187.1
+      },
+      {
+        "word": "neuland",
+        "count": 5,
+        "score": 33.6,
+        "ratio": 828.4
+      },
+      {
+        "word": "mobilfunk",
+        "count": 5,
+        "score": 25.39,
+        "ratio": 159.3
+      },
+      {
+        "word": "überragenden",
+        "count": 5,
+        "score": 21.86,
+        "ratio": 78.2
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 554,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 646,
+    "parliamentAvgWords": 585,
     "vsParty": 0.86,
     "vsParliament": 0.95
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Hansjörg Durz häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
         "text": "Neuland",
         "isCorrect": true
       },
       {
-        "text": "Steuern",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
         "text": "Bundesregierung",
         "isCorrect": false
+      },
+      {
+        "text": "Minister",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Neuland\" nutzt Hansjörg Durz 648.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "797.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Neuland\" nutzt Hansjörg Durz 672.6× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "828.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -251,11 +317,11 @@
           "count": 1
         },
         {
-          "word": "energie",
+          "word": "nachhaltig",
           "count": 1
         },
         {
-          "word": "nachhaltig",
+          "word": "energie",
           "count": 1
         }
       ],
@@ -375,11 +441,11 @@
           "count": 1
         },
         {
-          "word": "gesetzesänderung",
+          "word": "gesetzgebung",
           "count": 1
         },
         {
-          "word": "gesetzgebung",
+          "word": "gesetzesänderung",
           "count": 1
         }
       ],
