@@ -12,7 +12,7 @@ importers:
     dependencies:
       '@tanstack/react-query':
         specifier: ^5.101.2
-        version: 5.101.2(react@19.2.7)
+        version: 5.101.2(react@19.2.8)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -21,28 +21,28 @@ importers:
         version: 2.2.4
       lucide-react:
         specifier: ^1.23.0
-        version: 1.23.0(react@19.2.7)
+        version: 1.23.0(react@19.2.8)
       motion:
         specifier: ^12.42.2
-        version: 12.42.2(@emotion/is-prop-valid@0.8.8)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        version: 12.42.2(@emotion/is-prop-valid@0.8.8)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       react:
-        specifier: ^19.2.7
-        version: 19.2.7
+        specifier: ^19.2.8
+        version: 19.2.8
       react-dom:
-        specifier: ^19.2.7
-        version: 19.2.7(react@19.2.7)
+        specifier: ^19.2.8
+        version: 19.2.8(react@19.2.8)
       react-router:
-        specifier: ^8.1.0
-        version: 8.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: ^8.3.0
+        version: 8.3.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       react-sounds:
         specifier: ^1.0.30
-        version: 1.0.30(howler@2.2.4)(react@19.2.7)
+        version: 1.0.30(howler@2.2.4)(react@19.2.8)
       tailwind-merge:
         specifier: ^3.6.0
         version: 3.6.0
       zustand:
         specifier: ^5.0.14
-        version: 5.0.14(@types/react@19.2.17)(react@19.2.7)(use-sync-external-store@1.6.0(react@19.2.7))
+        version: 5.0.14(@types/react@19.2.17)(react@19.2.8)(use-sync-external-store@1.6.0(react@19.2.8))
     devDependencies:
       '@eslint/js':
         specifier: ^10.0.1
@@ -5215,10 +5215,10 @@ packages:
     peerDependencies:
       react: ^19.1.0
 
-  react-dom@19.2.7:
-    resolution: {integrity: sha512-t0BRVXvbiE/o20Hfw669rLbMCDWtYZLvmJigy2f0MxsXF+71pxhR3xOkspmsO8h3ZlNzyibAmtCa3l4lYKk6gQ==}
+  react-dom@19.2.8:
+    resolution: {integrity: sha512-rVprimfGBG3DR+Tq0IQG2DT5PxKth1WIGDmj5yPmlzr4YBe7uyE+Du4oVqTDXZSHGGGXRtTJEGSSePyQCMBglQ==}
     peerDependencies:
-      react: ^19.2.7
+      react: ^19.2.8
 
   react-fast-compare@3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
@@ -5357,8 +5357,8 @@ packages:
       '@types/react':
         optional: true
 
-  react-router@8.1.0:
-    resolution: {integrity: sha512-Mdfi61uObuvWNN9OhChOC0HV6YWOIfKRzEWOvCHRSuQg8IM+Nv10edaM/2HE8ZixBpUTdQbruyWqC3sDkkh9vw==}
+  react-router@8.3.0:
+    resolution: {integrity: sha512-qyPMvW83jGIct3yiieisxdk9M745anqhpIMKN5m1t6yBMfgVPpt77aHOqs5fUlEJRMCGffg9BaQLH9oPVOL7xQ==}
     engines: {node: '>=22.22.0'}
     peerDependencies:
       react: '>=19.2.7'
@@ -5388,8 +5388,8 @@ packages:
     resolution: {integrity: sha512-FS+XFBNvn3GTAWq26joslQgWNoFu08F4kl0J4CgdNKADkdSGXQyTCnKteIAJy96Br6YbpEU1LSzV5dYtjMkMDg==}
     engines: {node: '>=0.10.0'}
 
-  react@19.2.7:
-    resolution: {integrity: sha512-HNe9WslTbXmFK8o8cmwgAeJFSBvt1bPdHCVKtaaV+WlAN36mpT4hcRpwbf3fY56ar2oIXzsBpOAiIRHAdY0OlQ==}
+  react@19.2.8:
+    resolution: {integrity: sha512-PWaYA1L/q9u2u7xYQi+Y3L3Yfnie7XyLeaJICV1MGD6LprsBxcAqGjYyr0eY3p+QdsA+x/Irkt4Qif8D63+Sbw==}
     engines: {node: '>=0.10.0'}
 
   read-cache@1.0.0:
@@ -8769,10 +8769,10 @@ snapshots:
       '@tanstack/query-core': 5.101.2
       react: 19.1.0
 
-  '@tanstack/react-query@5.101.2(react@19.2.7)':
+  '@tanstack/react-query@5.101.2(react@19.2.8)':
     dependencies:
       '@tanstack/query-core': 5.101.2
-      react: 19.2.7
+      react: 19.2.8
 
   '@trickfilm400/rollup-plugin-off-main-thread@3.0.0-pre1':
     dependencies:
@@ -10491,15 +10491,15 @@ snapshots:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
-  framer-motion@12.42.2(@emotion/is-prop-valid@0.8.8)(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
+  framer-motion@12.42.2(@emotion/is-prop-valid@0.8.8)(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
       motion-dom: 12.42.2
       motion-utils: 12.39.0
       tslib: 2.8.1
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
 
   framer-motion@6.5.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
@@ -11280,9 +11280,9 @@ snapshots:
     dependencies:
       react: 19.1.0
 
-  lucide-react@1.23.0(react@19.2.7):
+  lucide-react@1.23.0(react@19.2.8):
     dependencies:
-      react: 19.2.7
+      react: 19.2.8
 
   magic-string@0.30.21:
     dependencies:
@@ -11749,14 +11749,14 @@ snapshots:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
-  motion@12.42.2(@emotion/is-prop-valid@0.8.8)(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
+  motion@12.42.2(@emotion/is-prop-valid@0.8.8)(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
-      framer-motion: 12.42.2(@emotion/is-prop-valid@0.8.8)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      framer-motion: 12.42.2(@emotion/is-prop-valid@0.8.8)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       tslib: 2.8.1
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
 
   mrmime@2.0.1: {}
 
@@ -12169,9 +12169,9 @@ snapshots:
       react: 19.1.0
       scheduler: 0.26.0
 
-  react-dom@19.2.7(react@19.2.7):
+  react-dom@19.2.8(react@19.2.8):
     dependencies:
-      react: 19.2.7
+      react: 19.2.8
       scheduler: 0.27.0
 
   react-fast-compare@3.2.2: {}
@@ -12366,17 +12366,17 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.1.17
 
-  react-router@8.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
+  react-router@8.3.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
       cookie-es: 3.1.1
-      react: 19.2.7
+      react: 19.2.8
     optionalDependencies:
-      react-dom: 19.2.7(react@19.2.7)
+      react-dom: 19.2.8(react@19.2.8)
 
-  react-sounds@1.0.30(howler@2.2.4)(react@19.2.7):
+  react-sounds@1.0.30(howler@2.2.4)(react@19.2.8):
     dependencies:
       howler: 2.2.4
-      react: 19.2.7
+      react: 19.2.8
 
   react-style-singleton@2.2.3(@types/react@19.1.17)(react@19.1.0):
     dependencies:
@@ -12388,7 +12388,7 @@ snapshots:
 
   react@19.1.0: {}
 
-  react@19.2.7: {}
+  react@19.2.8: {}
 
   read-cache@1.0.0:
     dependencies:
@@ -13211,9 +13211,9 @@ snapshots:
     dependencies:
       react: 19.1.0
 
-  use-sync-external-store@1.6.0(react@19.2.7):
+  use-sync-external-store@1.6.0(react@19.2.8):
     dependencies:
-      react: 19.2.7
+      react: 19.2.8
     optional: true
 
   util-deprecate@1.0.2: {}
@@ -13601,8 +13601,8 @@ snapshots:
       react: 19.1.0
       use-sync-external-store: 1.6.0(react@19.1.0)
 
-  zustand@5.0.14(@types/react@19.2.17)(react@19.2.7)(use-sync-external-store@1.6.0(react@19.2.7)):
+  zustand@5.0.14(@types/react@19.2.17)(react@19.2.8)(use-sync-external-store@1.6.0(react@19.2.8)):
     optionalDependencies:
       '@types/react': 19.2.17
-      react: 19.2.7
-      use-sync-external-store: 1.6.0(react@19.2.7)
+      react: 19.2.8
+      use-sync-external-store: 1.6.0(react@19.2.8)
