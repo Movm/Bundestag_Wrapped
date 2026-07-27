@@ -9,7 +9,9 @@ name: Claude dependency maintainer
 #
 # PREREQUISITES (see PR description):
 #   - repo secret ANTHROPIC_API_KEY
-#   - confirm the CLAUDE_MODEL id below is the exact current Sonnet 5 model string
+#
+# Without the optional secret, scheduled/manual runs finish successfully with a
+# clear notice instead of creating a permanently red workflow.
 
 on:
   schedule:
@@ -30,18 +32,36 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
+      - name: Check Claude credential
+        id: auth
+        shell: bash
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [[ -n "$ANTHROPIC_API_KEY" ]]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=Claude maintainer skipped::Repository secret ANTHROPIC_API_KEY is not configured."
+          fi
+
       - uses: actions/checkout@v7
+        if: steps.auth.outputs.configured == 'true'
 
       - uses: pnpm/action-setup@v6
+        if: steps.auth.outputs.configured == 'true'
       - uses: actions/setup-node@v6
+        if: steps.auth.outputs.configured == 'true'
         with:
           node-version: 22
           cache: pnpm
       - uses: actions/setup-python@v6
+        if: steps.auth.outputs.configured == 'true'
         with:
           python-version: '3.13'
 
       - uses: anthropics/claude-code-action@v1
+        if: steps.auth.outputs.configured == 'true'
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           prompt: |
