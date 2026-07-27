@@ -43,12 +43,15 @@
     "prom-client": "^15.1.0"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
       "better-sqlite3"
-    ]
+    ],
+    "overrides": {
+      "@hono/node-server": "2.0.10"
+    }
   },
   "repository": {
     "type": "git",
