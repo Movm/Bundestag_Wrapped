@@ -11,23 +11,23 @@
   "minWords": 7,
   "maxWords": 597,
   "rankings": {
-    "speechRank": 555,
-    "wordsRank": 579,
-    "partySpeechRank": 97,
+    "speechRank": 580,
+    "wordsRank": 578,
+    "partySpeechRank": 103,
     "partyWordsRank": 106,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 11.2,
+    "totalSpeakers": 626,
+    "percentile": 7.3,
     "verbosityRank": 407,
-    "verbosityTotal": 579,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 87,
-    "longestSpeechRank": 496
+    "longestSpeechRank": 500
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 3,
     "interrupterRank": null,
-    "interruptedRank": 564
+    "interruptedRank": 577
   },
   "words": {
     "topWords": [
@@ -64,11 +64,11 @@
         "count": 5
       },
       {
-        "word": "reform",
+        "word": "gesellschaft",
         "count": 4
       },
       {
-        "word": "zusammen",
+        "word": "deutschland",
         "count": 4
       }
     ],
@@ -76,40 +76,106 @@
       {
         "word": "integration",
         "count": 13,
-        "ratioParty": 92.5,
-        "ratioBundestag": 122.5
+        "ratioParty": 93.6,
+        "ratioBundestag": 124.5
       },
       {
         "word": "familie",
         "count": 7,
-        "ratioParty": 27.8,
-        "ratioBundestag": 27.8
+        "ratioParty": 29.4,
+        "ratioBundestag": 28.4
       },
       {
         "word": "punkte",
         "count": 5,
-        "ratioParty": 21.5,
-        "ratioBundestag": 25.3
+        "ratioParty": 21.0,
+        "ratioBundestag": 25.1
       },
       {
         "word": "besonders",
         "count": 6,
-        "ratioParty": 9.8,
-        "ratioBundestag": 11.4
+        "ratioParty": 9.7,
+        "ratioBundestag": 11.6
       },
       {
         "word": "arbeit",
         "count": 6,
-        "ratioParty": 5.0,
-        "ratioBundestag": 7.2
+        "ratioParty": 5.1,
+        "ratioBundestag": 7.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "integration",
+        "count": 13,
+        "score": 59.15,
+        "ratio": 93.6
+      },
+      {
+        "word": "familie",
+        "count": 7,
+        "score": 23.9,
+        "ratio": 29.4
+      },
+      {
+        "word": "punkte",
+        "count": 5,
+        "score": 15.46,
+        "ratio": 21.0
+      },
+      {
+        "word": "besonders",
+        "count": 6,
+        "score": 14.22,
+        "ratio": 9.7
+      },
+      {
+        "word": "arbeit",
+        "count": 6,
+        "score": 10.85,
+        "ratio": 5.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "integration",
+        "count": 13,
+        "score": 62.82,
+        "ratio": 124.5
+      },
+      {
+        "word": "familie",
+        "count": 7,
+        "score": 23.67,
+        "ratio": 28.4
+      },
+      {
+        "word": "punkte",
+        "count": 5,
+        "score": 16.31,
+        "ratio": 25.1
+      },
+      {
+        "word": "besonders",
+        "count": 6,
+        "score": 15.2,
+        "ratio": 11.6
+      },
+      {
+        "word": "arbeit",
+        "count": 6,
+        "score": 12.55,
+        "ratio": 7.1
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 379,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
     "vsParty": 0.61,
     "vsParliament": 0.65
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Natalie Pawlik häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
         "text": "Integration",
         "isCorrect": true
+      },
+      {
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Politik",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Integration\" nutzt Natalie Pawlik 92.5× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "122.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Integration\" nutzt Natalie Pawlik 93.6× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "124.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -265,15 +331,15 @@
       ],
       "wirtschaft": [
         {
-          "word": "qualifikation",
-          "count": 1
-        },
-        {
           "word": "unternehmen",
           "count": 1
         },
         {
           "word": "standort",
+          "count": 1
+        },
+        {
+          "word": "qualifikation",
           "count": 1
         }
       ],
@@ -291,11 +357,11 @@
           "count": 3
         },
         {
-          "word": "jugendhilfe",
+          "word": "wohnungen",
           "count": 1
         },
         {
-          "word": "eltern",
+          "word": "rente",
           "count": 1
         }
       ],
@@ -319,19 +385,19 @@
           "count": 3
         },
         {
-          "word": "schule",
-          "count": 2
-        },
-        {
           "word": "bildung",
           "count": 2
         },
         {
-          "word": "schulen",
-          "count": 1
+          "word": "schule",
+          "count": 2
         },
         {
           "word": "schülerinnen",
+          "count": 1
+        },
+        {
+          "word": "schüler",
           "count": 1
         }
       ],

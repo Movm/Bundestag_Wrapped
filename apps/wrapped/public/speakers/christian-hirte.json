@@ -11,23 +11,23 @@
   "minWords": 16,
   "maxWords": 529,
   "rankings": {
-    "speechRank": 604,
-    "wordsRank": 337,
-    "partySpeechRank": 197,
+    "speechRank": 601,
+    "wordsRank": 334,
+    "partySpeechRank": 198,
     "partyWordsRank": 101,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 3.4,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 4.0,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 560
+    "longestSpeechRank": 559
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 11,
     "interrupterRank": null,
-    "interruptedRank": 449
+    "interruptedRank": 450
   },
   "words": {
     "topWords": [
@@ -76,40 +76,106 @@
       {
         "word": "führerscheins",
         "count": 6,
-        "ratioParty": 1529.6,
-        "ratioBundestag": 941.8
+        "ratioParty": 1527.0,
+        "ratioBundestag": 938.3
       },
       {
         "word": "erwerb",
         "count": 8,
-        "ratioParty": 254.9,
-        "ratioBundestag": 418.6
+        "ratioParty": 254.5,
+        "ratioBundestag": 417.0
       },
       {
         "word": "kraftstoffe",
         "count": 10,
-        "ratioParty": 91.0,
-        "ratioBundestag": 145.3
-      },
-      {
-        "word": "autobahn",
-        "count": 5,
-        "ratioParty": 70.8,
-        "ratioBundestag": 67.7
+        "ratioParty": 90.9,
+        "ratioBundestag": 144.8
       },
       {
         "word": "führerschein",
         "count": 6,
-        "ratioParty": 63.7,
-        "ratioBundestag": 81.2
+        "ratioParty": 63.6,
+        "ratioBundestag": 82.3
+      },
+      {
+        "word": "autobahn",
+        "count": 5,
+        "ratioParty": 63.6,
+        "ratioBundestag": 66.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "kraftstoffe",
+        "count": 10,
+        "score": 45.21,
+        "ratio": 90.9
+      },
+      {
+        "word": "erwerb",
+        "count": 8,
+        "score": 44.35,
+        "ratio": 254.5
+      },
+      {
+        "word": "führerscheins",
+        "count": 6,
+        "score": 43.99,
+        "ratio": 1527.0
+      },
+      {
+        "word": "führerschein",
+        "count": 6,
+        "score": 25.01,
+        "ratio": 63.6
+      },
+      {
+        "word": "autobahn",
+        "count": 5,
+        "score": 20.84,
+        "ratio": 63.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "kraftstoffe",
+        "count": 10,
+        "score": 49.82,
+        "ratio": 144.8
+      },
+      {
+        "word": "erwerb",
+        "count": 8,
+        "score": 48.28,
+        "ratio": 417.0
+      },
+      {
+        "word": "führerscheins",
+        "count": 6,
+        "score": 41.07,
+        "ratio": 938.3
+      },
+      {
+        "word": "führerschein",
+        "count": 6,
+        "score": 26.53,
+        "ratio": 82.3
+      },
+      {
+        "word": "autobahn",
+        "count": 5,
+        "score": 21.05,
+        "ratio": 66.3
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 105,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
     "vsParty": 0.16,
     "vsParliament": 0.18
   },
@@ -129,31 +195,31 @@
     "question": "Welches Wort nutzt Christian Hirte häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
         "text": "Führerscheins",
         "isCorrect": true
+      },
+      {
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Minister",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Führerscheins\" nutzt Christian Hirte 1529.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "941.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Führerscheins\" nutzt Christian Hirte 1527.0× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "938.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
     "emoji": "🦉",
     "name": "Eule",
     "title": "Themenexperte",
-    "reason": "Dein Fachwort \"Führerscheins\" nutzt du 1529.6× häufiger als deine Fraktion.",
+    "reason": "Dein Fachwort \"Führerscheins\" nutzt du 1527.0× häufiger als deine Fraktion.",
     "id": "eule",
     "alternatives": [
       {

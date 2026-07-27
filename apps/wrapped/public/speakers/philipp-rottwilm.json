@@ -11,23 +11,23 @@
   "minWords": 22,
   "maxWords": 746,
   "rankings": {
-    "speechRank": 44,
-    "wordsRank": 104,
-    "partySpeechRank": 12,
-    "partyWordsRank": 27,
+    "speechRank": 40,
+    "wordsRank": 105,
+    "partySpeechRank": 13,
+    "partyWordsRank": 29,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 93.0,
-    "verbosityRank": 259,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 61,
-    "longestSpeechRank": 317
+    "totalSpeakers": 626,
+    "percentile": 93.6,
+    "verbosityRank": 269,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 62,
+    "longestSpeechRank": 318
   },
   "drama": {
     "interruptionsGiven": 9,
     "interruptionsReceived": 65,
-    "interrupterRank": 282,
-    "interruptedRank": 59
+    "interrupterRank": 283,
+    "interruptedRank": 61
   },
   "words": {
     "topWords": [
@@ -61,56 +61,120 @@
         "word": "anleger",
         "count": 8,
         "ratioParty": 646.0,
-        "ratioBundestag": 125.1
+        "ratioBundestag": 124.6
       },
       {
         "word": "kopfkissen",
         "count": 5,
         "ratioParty": 403.7,
-        "ratioBundestag": 1016.1
+        "ratioBundestag": 1012.4
       },
       {
         "word": "kapitalmarkt",
         "count": 6,
-        "ratioParty": 80.7,
-        "ratioBundestag": 49.8
+        "ratioParty": 96.9,
+        "ratioBundestag": 50.6
       },
       {
         "word": "standortfördergesetz",
         "count": 8,
         "ratioParty": 46.1,
-        "ratioBundestag": 62.5
+        "ratioBundestag": 62.3
       },
       {
         "word": "fonds",
         "count": 6,
         "ratioParty": 44.0,
-        "ratioBundestag": 13.2
+        "ratioBundestag": 13.0
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "anleger",
+        "count": 8,
+        "score": 51.78,
+        "ratio": 646.0
+      },
+      {
+        "word": "standortfördergesetz",
+        "count": 8,
+        "score": 30.82,
+        "ratio": 46.1
+      },
+      {
+        "word": "kopfkissen",
+        "count": 5,
+        "score": 30.02,
+        "ratio": 403.7
+      },
+      {
+        "word": "kapitalmarkt",
+        "count": 6,
+        "score": 27.5,
+        "ratio": 96.9
+      },
+      {
+        "word": "fonds",
+        "count": 6,
+        "score": 22.84,
+        "ratio": 44.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "anleger",
+        "count": 8,
+        "score": 38.66,
+        "ratio": 124.6
+      },
+      {
+        "word": "kopfkissen",
+        "count": 5,
+        "score": 34.61,
+        "ratio": 1012.4
+      },
+      {
+        "word": "standortfördergesetz",
+        "count": 8,
+        "score": 33.18,
+        "ratio": 62.3
+      },
+      {
+        "word": "kapitalmarkt",
+        "count": 6,
+        "score": 23.66,
+        "ratio": 50.6
+      },
+      {
+        "word": "fonds",
+        "count": 6,
+        "score": 15.83,
+        "ratio": 13.0
       }
     ],
     "signatureAdjectives": [
       {
         "word": "links",
         "count": 3,
-        "ratioParty": 17.3,
+        "ratioParty": 16.1,
         "ratioBundestag": 2.3
       },
       {
         "word": "teuer",
         "count": 3,
-        "ratioParty": 5.9,
+        "ratioParty": 6.5,
         "ratioBundestag": 3.1
       },
       {
         "word": "rechts",
         "count": 3,
-        "ratioParty": 3.0,
+        "ratioParty": 2.9,
         "ratioBundestag": 2.4
       },
       {
         "word": "erfolgreich",
         "count": 3,
-        "ratioParty": 2.9,
+        "ratioParty": 2.8,
         "ratioBundestag": 3.2
       },
       {
@@ -119,12 +183,76 @@
         "ratioParty": 2.5,
         "ratioBundestag": 2.9
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "links",
+        "count": 3,
+        "score": 8.52,
+        "ratio": 16.1
+      },
+      {
+        "word": "teuer",
+        "count": 3,
+        "score": 6.04,
+        "ratio": 6.5
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 4.08,
+        "ratio": 2.9
+      },
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 4.01,
+        "ratio": 2.8
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 3.76,
+        "ratio": 2.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "erfolgreich",
+        "count": 3,
+        "score": 4.31,
+        "ratio": 3.2
+      },
+      {
+        "word": "teuer",
+        "count": 3,
+        "score": 4.23,
+        "ratio": 3.1
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "score": 4.08,
+        "ratio": 2.9
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 3.67,
+        "ratio": 2.4
+      },
+      {
+        "word": "links",
+        "count": 3,
+        "score": 3.58,
+        "ratio": 2.3
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 444,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
     "vsParty": 0.72,
     "vsParliament": 0.76
   },
@@ -149,7 +277,11 @@
     "question": "Welches Wort nutzt Dr. Philipp Rottwilm häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Familie",
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
@@ -157,22 +289,22 @@
         "isCorrect": true
       },
       {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
+        "text": "Gesetz",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Anleger\" nutzt Dr. Philipp Rottwilm 646.0× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "125.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "124.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Philipp Rottwilm häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Sozial",
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
@@ -180,15 +312,11 @@
         "isCorrect": true
       },
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
+        "text": "Stark",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Links\" nutzt Dr. Philipp Rottwilm 17.3× häufiger als der SPD-Durchschnitt.",
+    "explanationParty": "\"Links\" nutzt Dr. Philipp Rottwilm 16.1× häufiger als der SPD-Durchschnitt.",
     "explanationBundestag": "2.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -307,11 +435,11 @@
           "count": 4
         },
         {
-          "word": "nachhaltig",
+          "word": "wald",
           "count": 1
         },
         {
-          "word": "feinstaub",
+          "word": "wälder",
           "count": 1
         }
       ],
@@ -397,11 +525,11 @@
           "count": 4
         },
         {
-          "word": "partnerschaft",
+          "word": "russland",
           "count": 1
         },
         {
-          "word": "russland",
+          "word": "partnerschaft",
           "count": 1
         }
       ],
@@ -419,11 +547,11 @@
           "count": 1
         },
         {
-          "word": "digitalisierung",
+          "word": "plattformen",
           "count": 1
         },
         {
-          "word": "mobilfunk",
+          "word": "netzwerk",
           "count": 1
         }
       ],
@@ -437,11 +565,11 @@
           "count": 2
         },
         {
-          "word": "hochschulen",
+          "word": "bildungssystem",
           "count": 1
         },
         {
-          "word": "bildungssystem",
+          "word": "hochschulen",
           "count": 1
         }
       ],
@@ -473,10 +601,6 @@
           "count": 2
         },
         {
-          "word": "rechtsstaatlichkeit",
-          "count": 1
-        },
-        {
           "word": "verfassungswidrig",
           "count": 1
         },
@@ -486,6 +610,10 @@
         },
         {
           "word": "beschluss",
+          "count": 1
+        },
+        {
+          "word": "rechtsstaatlichkeit",
           "count": 1
         }
       ],

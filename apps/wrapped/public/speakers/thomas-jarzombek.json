@@ -11,23 +11,23 @@
   "minWords": 7,
   "maxWords": 804,
   "rankings": {
-    "speechRank": 500,
-    "wordsRank": 228,
-    "partySpeechRank": 160,
-    "partyWordsRank": 65,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 20.0,
-    "verbosityRank": 552,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 174,
-    "longestSpeechRank": 243
+    "speechRank": 497,
+    "wordsRank": 227,
+    "partySpeechRank": 156,
+    "partyWordsRank": 63,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 20.6,
+    "verbosityRank": 551,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 173,
+    "longestSpeechRank": 241
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 10,
     "interrupterRank": null,
-    "interruptedRank": 458
+    "interruptedRank": 462
   },
   "words": {
     "topWords": [
@@ -58,54 +58,112 @@
       {
         "word": "kollegin",
         "count": 15
-      },
-      {
-        "word": "wichtig",
-        "count": 14
-      },
-      {
-        "word": "verfahren",
-        "count": 14
       }
     ],
     "signatureWords": [
       {
         "word": "automatisieren",
         "count": 6,
-        "ratioParty": 296.9,
-        "ratioBundestag": 731.8
+        "ratioParty": 296.4,
+        "ratioBundestag": 607.6
       },
       {
         "word": "digitalkonzerne",
         "count": 5,
-        "ratioParty": 247.4,
-        "ratioBundestag": 95.3
-      },
-      {
-        "word": "facebook",
-        "count": 6,
-        "ratioParty": 198.0,
-        "ratioBundestag": 159.1
+        "ratioParty": 247.0,
+        "ratioBundestag": 101.3
       },
       {
         "word": "stack",
         "count": 9,
-        "ratioParty": 148.5,
-        "ratioBundestag": 261.4
+        "ratioParty": 197.6,
+        "ratioBundestag": 364.6
+      },
+      {
+        "word": "facebook",
+        "count": 6,
+        "ratioParty": 169.4,
+        "ratioBundestag": 145.8
       },
       {
         "word": "zivilgesellschaft",
         "count": 16,
-        "ratioParty": 83.4,
-        "ratioBundestag": 29.0
+        "ratioParty": 79.1,
+        "ratioBundestag": 27.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "zivilgesellschaft",
+        "count": 16,
+        "score": 70.13,
+        "ratio": 79.1
+      },
+      {
+        "word": "stack",
+        "count": 9,
+        "score": 47.62,
+        "ratio": 197.6
+      },
+      {
+        "word": "automatisieren",
+        "count": 6,
+        "score": 34.17,
+        "ratio": 296.4
+      },
+      {
+        "word": "facebook",
+        "count": 6,
+        "score": 30.83,
+        "ratio": 169.4
+      },
+      {
+        "word": "digitalkonzerne",
+        "count": 5,
+        "score": 27.57,
+        "ratio": 247.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "zivilgesellschaft",
+        "count": 16,
+        "score": 53.65,
+        "ratio": 27.6
+      },
+      {
+        "word": "stack",
+        "count": 9,
+        "score": 53.11,
+        "ratio": 364.6
+      },
+      {
+        "word": "automatisieren",
+        "count": 6,
+        "score": 38.47,
+        "ratio": 607.6
+      },
+      {
+        "word": "facebook",
+        "count": 6,
+        "score": 29.93,
+        "ratio": 145.8
+      },
+      {
+        "word": "digitalkonzerne",
+        "count": 5,
+        "score": 23.14,
+        "ratio": 101.3
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 221,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
     "vsParty": 0.34,
     "vsParliament": 0.38
   },
@@ -125,11 +183,7 @@
     "question": "Welches Wort nutzt Thomas Jarzombek häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Politik",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
@@ -137,12 +191,16 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaft",
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Automatisieren\" nutzt Thomas Jarzombek 296.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "731.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Automatisieren\" nutzt Thomas Jarzombek 296.4× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "607.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -303,11 +361,11 @@
       ],
       "sicherheit": [
         {
-          "word": "verfassungsschutz",
+          "word": "bundespolizei",
           "count": 1
         },
         {
-          "word": "bundespolizei",
+          "word": "verfassungsschutz",
           "count": 1
         },
         {
@@ -357,7 +415,7 @@
           "count": 4
         },
         {
-          "word": "online",
+          "word": "plattform",
           "count": 3
         }
       ],

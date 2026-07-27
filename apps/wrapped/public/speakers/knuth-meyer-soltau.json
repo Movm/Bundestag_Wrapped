@@ -11,23 +11,23 @@
   "minWords": 87,
   "maxWords": 625,
   "rankings": {
-    "speechRank": 479,
-    "wordsRank": 461,
-    "partySpeechRank": 115,
-    "partyWordsRank": 104,
+    "speechRank": 487,
+    "wordsRank": 457,
+    "partySpeechRank": 117,
+    "partyWordsRank": 102,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 23.4,
-    "verbosityRank": 426,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 109,
-    "longestSpeechRank": 469
+    "totalSpeakers": 626,
+    "percentile": 22.2,
+    "verbosityRank": 431,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 112,
+    "longestSpeechRank": 470
   },
   "drama": {
     "interruptionsGiven": 7,
     "interruptionsReceived": 36,
-    "interrupterRank": 312,
-    "interruptedRank": 185
+    "interrupterRank": 303,
+    "interruptedRank": 190
   },
   "words": {
     "topWords": [
@@ -60,15 +60,15 @@
         "count": 8
       },
       {
-        "word": "hören",
-        "count": 7
-      },
-      {
         "word": "soll",
         "count": 7
       },
       {
-        "word": "neue",
+        "word": "opferschutz",
+        "count": 7
+      },
+      {
+        "word": "diesen",
         "count": 7
       }
     ],
@@ -76,42 +76,108 @@
       {
         "word": "fußfessel",
         "count": 5,
-        "ratioParty": 667.3,
-        "ratioBundestag": 48.3
+        "ratioParty": 663.1,
+        "ratioBundestag": 47.8
       },
       {
         "word": "strafrechts",
         "count": 5,
-        "ratioParty": 444.8,
-        "ratioBundestag": 272.3
+        "ratioParty": 442.1,
+        "ratioBundestag": 284.2
       },
       {
         "word": "opferschutz",
         "count": 7,
-        "ratioParty": 266.9,
-        "ratioBundestag": 233.0
+        "ratioParty": 265.2,
+        "ratioBundestag": 232.1
       },
       {
         "word": "strafrecht",
         "count": 11,
-        "ratioParty": 108.7,
-        "ratioBundestag": 105.4
+        "ratioParty": 108.1,
+        "ratioBundestag": 105.1
       },
       {
         "word": "entwurf",
         "count": 18,
-        "ratioParty": 25.6,
-        "ratioBundestag": 31.8
+        "ratioParty": 25.7,
+        "ratioBundestag": 32.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "entwurf",
+        "count": 18,
+        "score": 59.12,
+        "ratio": 25.7
+      },
+      {
+        "word": "strafrecht",
+        "count": 11,
+        "score": 51.61,
+        "ratio": 108.1
+      },
+      {
+        "word": "opferschutz",
+        "count": 7,
+        "score": 39.09,
+        "ratio": 265.2
+      },
+      {
+        "word": "fußfessel",
+        "count": 5,
+        "score": 32.49,
+        "ratio": 663.1
+      },
+      {
+        "word": "strafrechts",
+        "count": 5,
+        "score": 30.47,
+        "ratio": 442.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "entwurf",
+        "count": 18,
+        "score": 63.31,
+        "ratio": 32.7
+      },
+      {
+        "word": "strafrecht",
+        "count": 11,
+        "score": 51.31,
+        "ratio": 105.1
+      },
+      {
+        "word": "opferschutz",
+        "count": 7,
+        "score": 38.16,
+        "ratio": 232.1
+      },
+      {
+        "word": "strafrechts",
+        "count": 5,
+        "score": 28.27,
+        "ratio": 284.2
+      },
+      {
+        "word": "fußfessel",
+        "count": 5,
+        "score": 19.44,
+        "ratio": 47.8
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 371,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 560,
+    "parliamentAvgWords": 587,
     "vsParty": 0.66,
-    "vsParliament": 0.64
+    "vsParliament": 0.63
   },
   "funFacts": [
     {
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Knuth Meyer-Soltau häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bürger",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Familie",
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
         "text": "Fußfessel",
         "isCorrect": true
-      },
-      {
-        "text": "Reform",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Fußfessel\" nutzt Knuth Meyer-Soltau 667.3× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "48.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Fußfessel\" nutzt Knuth Meyer-Soltau 663.1× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "47.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -225,11 +291,11 @@
       ],
       "soziales": [
         {
-          "word": "gerechtigkeit",
+          "word": "familie",
           "count": 2
         },
         {
-          "word": "familie",
+          "word": "gerechtigkeit",
           "count": 2
         },
         {
@@ -301,15 +367,15 @@
           "count": 4
         },
         {
-          "word": "richter",
-          "count": 2
-        },
-        {
           "word": "straftaten",
           "count": 2
         },
         {
-          "word": "verfassungswidrig",
+          "word": "richter",
+          "count": 2
+        },
+        {
+          "word": "anwalt",
           "count": 1
         }
       ],

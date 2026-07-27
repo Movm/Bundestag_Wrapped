@@ -12,22 +12,22 @@
   "maxWords": 942,
   "rankings": {
     "speechRank": 621,
-    "wordsRank": 530,
-    "partySpeechRank": 114,
-    "partyWordsRank": 95,
+    "wordsRank": 534,
+    "partySpeechRank": 113,
+    "partyWordsRank": 98,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 0.6,
+    "totalSpeakers": 626,
+    "percentile": 0.8,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 109
+    "longestSpeechRank": 108
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 1,
     "interrupterRank": null,
-    "interruptedRank": 599
+    "interruptedRank": 597
   },
   "words": {
     "topWords": [
@@ -77,39 +77,105 @@
         "word": "entwicklungsfinanzierung",
         "count": 5,
         "ratioParty": 1751.5,
-        "ratioBundestag": 4375.0
+        "ratioBundestag": 4359.1
       },
       {
         "word": "conference",
         "count": 5,
         "ratioParty": 437.9,
-        "ratioBundestag": 1458.3
+        "ratioBundestag": 1453.0
       },
       {
         "word": "entwicklungspolitik",
         "count": 16,
-        "ratioParty": 233.5,
-        "ratioBundestag": 233.3
+        "ratioParty": 224.2,
+        "ratioBundestag": 214.6
       },
       {
         "word": "entwicklungszusammenarbeit",
         "count": 5,
         "ratioParty": 30.2,
-        "ratioBundestag": 35.4
+        "ratioBundestag": 33.9
       },
       {
         "word": "krisen",
         "count": 6,
-        "ratioParty": 20.8,
-        "ratioBundestag": 29.1
+        "ratioParty": 21.4,
+        "ratioBundestag": 29.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "entwicklungspolitik",
+        "count": 16,
+        "score": 86.67,
+        "ratio": 224.2
+      },
+      {
+        "word": "entwicklungsfinanzierung",
+        "count": 5,
+        "score": 37.34,
+        "ratio": 1751.5
+      },
+      {
+        "word": "conference",
+        "count": 5,
+        "score": 30.42,
+        "ratio": 437.9
+      },
+      {
+        "word": "krisen",
+        "count": 6,
+        "score": 18.65,
+        "ratio": 21.4
+      },
+      {
+        "word": "entwicklungszusammenarbeit",
+        "count": 5,
+        "score": 17.2,
+        "ratio": 30.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "entwicklungspolitik",
+        "count": 16,
+        "score": 85.97,
+        "ratio": 214.6
+      },
+      {
+        "word": "entwicklungsfinanzierung",
+        "count": 5,
+        "score": 41.9,
+        "ratio": 4359.1
+      },
+      {
+        "word": "conference",
+        "count": 5,
+        "score": 36.41,
+        "ratio": 1453.0
+      },
+      {
+        "word": "krisen",
+        "count": 6,
+        "score": 20.47,
+        "ratio": 29.3
+      },
+      {
+        "word": "entwicklungszusammenarbeit",
+        "count": 5,
+        "score": 17.76,
+        "ratio": 33.9
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 152,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
     "vsParty": 0.25,
     "vsParliament": 0.26
   },
@@ -129,11 +195,11 @@
     "question": "Welches Wort nutzt Reem Alabali-Radovan häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Rente",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
@@ -141,12 +207,12 @@
         "isCorrect": true
       },
       {
-        "text": "Kinder",
+        "text": "Fraktion",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Entwicklungsfinanzierung\" nutzt Reem Alabali-Radovan 1751.5× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "4375.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "4359.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

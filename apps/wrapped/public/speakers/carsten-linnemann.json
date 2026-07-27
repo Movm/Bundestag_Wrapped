@@ -11,23 +11,23 @@
   "minWords": 363,
   "maxWords": 705,
   "rankings": {
-    "speechRank": 436,
-    "wordsRank": 476,
-    "partySpeechRank": 127,
-    "partyWordsRank": 154,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 30.2,
-    "verbosityRank": 152,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 52,
-    "longestSpeechRank": 367
+    "speechRank": 441,
+    "wordsRank": 471,
+    "partySpeechRank": 134,
+    "partyWordsRank": 152,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 29.6,
+    "verbosityRank": 154,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 54,
+    "longestSpeechRank": 369
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 11,
-    "interrupterRank": 421,
-    "interruptedRank": 435
+    "interrupterRank": 417,
+    "interruptedRank": 440
   },
   "words": {
     "topWords": [
@@ -72,48 +72,128 @@
       {
         "word": "sozialsystem",
         "count": 5,
-        "ratioParty": 339.5,
-        "ratioBundestag": 169.3
+        "ratioParty": 406.7,
+        "ratioBundestag": 173.4
       },
       {
         "word": "sozialleistungen",
         "count": 8,
-        "ratioParty": 101.8,
-        "ratioBundestag": 92.0
+        "ratioParty": 105.0,
+        "ratioBundestag": 92.5
       },
       {
         "word": "schwarzarbeit",
         "count": 5,
-        "ratioParty": 55.1,
-        "ratioBundestag": 49.3
+        "ratioParty": 56.5,
+        "ratioBundestag": 49.9
       },
       {
         "word": "grundsicherung",
         "count": 7,
-        "ratioParty": 35.2,
-        "ratioBundestag": 40.0
+        "ratioParty": 34.3,
+        "ratioBundestag": 39.5
       },
       {
         "word": "sozialstaat",
         "count": 16,
-        "ratioParty": 34.3,
-        "ratioBundestag": 40.9
+        "ratioParty": 33.7,
+        "ratioBundestag": 41.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "sozialstaat",
+        "count": 16,
+        "score": 56.75,
+        "ratio": 33.7
+      },
+      {
+        "word": "sozialleistungen",
+        "count": 8,
+        "score": 37.31,
+        "ratio": 105.0
+      },
+      {
+        "word": "sozialsystem",
+        "count": 5,
+        "score": 30.05,
+        "ratio": 406.7
+      },
+      {
+        "word": "grundsicherung",
+        "count": 7,
+        "score": 24.95,
+        "ratio": 34.3
+      },
+      {
+        "word": "schwarzarbeit",
+        "count": 5,
+        "score": 20.26,
+        "ratio": 56.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "sozialstaat",
+        "count": 16,
+        "score": 59.84,
+        "ratio": 41.1
+      },
+      {
+        "word": "sozialleistungen",
+        "count": 8,
+        "score": 36.3,
+        "ratio": 92.5
+      },
+      {
+        "word": "grundsicherung",
+        "count": 7,
+        "score": 25.91,
+        "ratio": 39.5
+      },
+      {
+        "word": "sozialsystem",
+        "count": 5,
+        "score": 25.81,
+        "ratio": 173.4
+      },
+      {
+        "word": "schwarzarbeit",
+        "count": 5,
+        "score": 19.65,
+        "ratio": 49.9
       }
     ],
     "signatureAdjectives": [
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 6.2,
-        "ratioBundestag": 5.7
+        "ratioParty": 6.4,
+        "ratioBundestag": 5.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 6.0,
+        "ratio": 6.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 5.75,
+        "ratio": 5.8
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 504,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.78,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.77,
     "vsParliament": 0.86
   },
   "funFacts": [
@@ -136,20 +216,20 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
-        "text": "Gesetz",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Freiheit",
+        "text": "Wirtschaft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sozialsystem\" nutzt Dr. Carsten Linnemann 339.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "169.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Sozialsystem\" nutzt Dr. Carsten Linnemann 406.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "173.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Carsten Linnemann häufiger als der Rest der CDU/CSU-Fraktion?",
@@ -159,20 +239,20 @@
         "isCorrect": true
       },
       {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
         "text": "Sicher",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gerecht\" nutzt Dr. Carsten Linnemann 6.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "5.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Gerecht\" nutzt Dr. Carsten Linnemann 6.4× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "5.8× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -278,19 +358,19 @@
           "count": 6
         },
         {
-          "word": "gründer",
-          "count": 1
-        },
-        {
-          "word": "selbstständige",
-          "count": 1
-        },
-        {
           "word": "insolvenzen",
           "count": 1
         },
         {
           "word": "industrie",
+          "count": 1
+        },
+        {
+          "word": "betriebe",
+          "count": 1
+        },
+        {
+          "word": "selbstständige",
           "count": 1
         }
       ],
@@ -388,11 +468,11 @@
           "count": 1
         },
         {
-          "word": "einkommen",
+          "word": "vollzeit",
           "count": 1
         },
         {
-          "word": "sozialversicherung",
+          "word": "gehalt",
           "count": 1
         }
       ]

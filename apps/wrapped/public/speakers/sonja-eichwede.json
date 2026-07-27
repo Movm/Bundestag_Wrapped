@@ -11,23 +11,23 @@
   "minWords": 57,
   "maxWords": 706,
   "rankings": {
-    "speechRank": 88,
-    "wordsRank": 172,
+    "speechRank": 93,
+    "wordsRank": 166,
     "partySpeechRank": 25,
-    "partyWordsRank": 42,
+    "partyWordsRank": 39,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 85.9,
-    "verbosityRank": 243,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 85.1,
+    "verbosityRank": 247,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 55,
-    "longestSpeechRank": 366
+    "longestSpeechRank": 368
   },
   "drama": {
     "interruptionsGiven": 17,
     "interruptionsReceived": 29,
-    "interrupterRank": 219,
-    "interruptedRank": 250
+    "interrupterRank": 223,
+    "interruptedRank": 248
   },
   "words": {
     "topWords": [
@@ -76,32 +76,96 @@
       {
         "word": "solidaritätsmechanismus",
         "count": 6,
-        "ratioParty": 574.0,
-        "ratioBundestag": 576.9
+        "ratioParty": 573.9,
+        "ratioBundestag": 574.8
       },
       {
         "word": "freiheitlich",
         "count": 12,
         "ratioParty": 88.3,
-        "ratioBundestag": 68.7
+        "ratioBundestag": 63.9
       },
       {
         "word": "bundesjustizministerin",
         "count": 8,
-        "ratioParty": 85.0,
-        "ratioBundestag": 142.5
+        "ratioParty": 69.6,
+        "ratioBundestag": 132.1
       },
       {
         "word": "einwanderungsland",
         "count": 5,
         "ratioParty": 68.3,
-        "ratioBundestag": 104.5
+        "ratioBundestag": 108.9
       },
       {
         "word": "grundordnung",
         "count": 11,
         "ratioParty": 58.5,
-        "ratioBundestag": 54.5
+        "ratioBundestag": 50.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "freiheitlich",
+        "count": 12,
+        "score": 53.9,
+        "ratio": 88.3
+      },
+      {
+        "word": "grundordnung",
+        "count": 11,
+        "score": 44.95,
+        "ratio": 58.5
+      },
+      {
+        "word": "solidaritätsmechanismus",
+        "count": 6,
+        "score": 38.13,
+        "ratio": 573.9
+      },
+      {
+        "word": "bundesjustizministerin",
+        "count": 8,
+        "score": 34.06,
+        "ratio": 69.6
+      },
+      {
+        "word": "einwanderungsland",
+        "count": 5,
+        "score": 21.19,
+        "ratio": 68.3
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "freiheitlich",
+        "count": 12,
+        "score": 50.07,
+        "ratio": 63.9
+      },
+      {
+        "word": "grundordnung",
+        "count": 11,
+        "score": 43.4,
+        "ratio": 50.7
+      },
+      {
+        "word": "bundesjustizministerin",
+        "count": 8,
+        "score": 39.13,
+        "ratio": 132.1
+      },
+      {
+        "word": "solidaritätsmechanismus",
+        "count": 6,
+        "score": 38.13,
+        "ratio": 574.8
+      },
+      {
+        "word": "einwanderungsland",
+        "count": 5,
+        "score": 23.5,
+        "ratio": 108.9
       }
     ],
     "signatureAdjectives": [
@@ -109,32 +173,84 @@
         "word": "freiheitlich",
         "count": 12,
         "ratioParty": 88.3,
-        "ratioBundestag": 68.7
+        "ratioBundestag": 63.9
       },
       {
         "word": "effektiv",
         "count": 3,
         "ratioParty": 13.7,
-        "ratioBundestag": 10.8
+        "ratioBundestag": 11.2
       },
       {
         "word": "rechts",
         "count": 3,
-        "ratioParty": 3.5,
+        "ratioParty": 3.4,
         "ratioBundestag": 2.9
       },
       {
         "word": "sozial",
         "count": 3,
-        "ratioParty": 3.0,
-        "ratioBundestag": 4.0
+        "ratioParty": 3.2,
+        "ratioBundestag": 4.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "freiheitlich",
+        "count": 12,
+        "score": 53.9,
+        "ratio": 88.3
+      },
+      {
+        "word": "effektiv",
+        "count": 3,
+        "score": 8.06,
+        "ratio": 13.7
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 4.44,
+        "ratio": 3.4
+      },
+      {
+        "word": "sozial",
+        "count": 3,
+        "score": 4.31,
+        "ratio": 3.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "freiheitlich",
+        "count": 12,
+        "score": 50.07,
+        "ratio": 63.9
+      },
+      {
+        "word": "effektiv",
+        "count": 3,
+        "score": 7.5,
+        "ratio": 11.2
+      },
+      {
+        "word": "sozial",
+        "count": 3,
+        "score": 4.95,
+        "ratio": 4.2
+      },
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 4.08,
+        "ratio": 2.9
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 455,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
     "vsParty": 0.74,
     "vsParliament": 0.78
   },
@@ -163,34 +279,34 @@
         "isCorrect": true
       },
       {
-        "text": "Haushalt",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Koalition",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
+        "text": "Investitionen",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Solidaritätsmechanismus\" nutzt Sonja Eichwede 574.0× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "576.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Solidaritätsmechanismus\" nutzt Sonja Eichwede 573.9× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "574.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Sonja Eichwede häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
         "text": "Gut",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
         "isCorrect": false
       },
       {
@@ -199,13 +315,13 @@
       }
     ],
     "explanationParty": "\"Freiheitlich\" nutzt Sonja Eichwede 88.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "68.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "63.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦉",
     "name": "Eule",
     "title": "Themenexpertin",
-    "reason": "Dein Fachwort \"Solidaritätsmechanismus\" nutzt du 574.0× häufiger als deine Fraktion.",
+    "reason": "Dein Fachwort \"Solidaritätsmechanismus\" nutzt du 573.9× häufiger als deine Fraktion.",
     "id": "eule",
     "alternatives": [
       {
@@ -311,7 +427,7 @@
           "count": 3
         },
         {
-          "word": "asylverfahren",
+          "word": "integration",
           "count": 2
         }
       ],
@@ -349,11 +465,11 @@
           "count": 4
         },
         {
-          "word": "gerechtigkeit",
+          "word": "familien",
           "count": 3
         },
         {
-          "word": "familien",
+          "word": "gerechtigkeit",
           "count": 3
         }
       ],
@@ -367,11 +483,11 @@
           "count": 5
         },
         {
-          "word": "täter",
+          "word": "extremismus",
           "count": 4
         },
         {
-          "word": "extremismus",
+          "word": "täter",
           "count": 4
         },
         {
@@ -397,7 +513,7 @@
           "count": 2
         },
         {
-          "word": "putin",
+          "word": "freizügigkeit",
           "count": 1
         }
       ],
@@ -431,11 +547,11 @@
           "count": 11
         },
         {
-          "word": "etat",
+          "word": "bundeshaushalt",
           "count": 2
         },
         {
-          "word": "bundeshaushalt",
+          "word": "etat",
           "count": 2
         },
         {
@@ -443,7 +559,7 @@
           "count": 2
         },
         {
-          "word": "entlastung",
+          "word": "investitionen",
           "count": 1
         }
       ],
@@ -453,15 +569,15 @@
           "count": 26
         },
         {
+          "word": "menschenrechte",
+          "count": 2
+        },
+        {
           "word": "verbraucherschutz",
           "count": 2
         },
         {
           "word": "strafen",
-          "count": 2
-        },
-        {
-          "word": "menschenrechte",
           "count": 2
         },
         {
@@ -475,11 +591,11 @@
           "count": 2
         },
         {
-          "word": "beschäftigte",
+          "word": "gewerkschaft",
           "count": 1
         },
         {
-          "word": "gewerkschaft",
+          "word": "beschäftigte",
           "count": 1
         }
       ],

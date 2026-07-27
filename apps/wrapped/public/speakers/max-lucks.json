@@ -11,22 +11,22 @@
   "minWords": 47,
   "maxWords": 821,
   "rankings": {
-    "speechRank": 210,
-    "wordsRank": 274,
-    "partySpeechRank": 40,
-    "partyWordsRank": 46,
+    "speechRank": 199,
+    "wordsRank": 275,
+    "partySpeechRank": 39,
+    "partyWordsRank": 47,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 66.4,
-    "verbosityRank": 430,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 50,
-    "longestSpeechRank": 221
+    "totalSpeakers": 626,
+    "percentile": 68.2,
+    "verbosityRank": 435,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 51,
+    "longestSpeechRank": 220
   },
   "drama": {
     "interruptionsGiven": 42,
     "interruptionsReceived": 30,
-    "interrupterRank": 128,
+    "interrupterRank": 127,
     "interruptedRank": 244
   },
   "words": {
@@ -76,41 +76,107 @@
       {
         "word": "unmiss",
         "count": 5,
-        "ratioParty": 492.4,
-        "ratioBundestag": 101.0
+        "ratioParty": 488.4,
+        "ratioBundestag": 100.6
       },
       {
         "word": "südsudan",
         "count": 11,
-        "ratioParty": 154.7,
-        "ratioBundestag": 114.5
+        "ratioParty": 153.5,
+        "ratioBundestag": 112.3
       },
       {
         "word": "jesiden",
         "count": 7,
-        "ratioParty": 114.9,
-        "ratioBundestag": 84.3
+        "ratioParty": 114.0,
+        "ratioBundestag": 84.0
       },
       {
         "word": "prägt",
         "count": 5,
-        "ratioParty": 98.5,
-        "ratioBundestag": 90.4
+        "ratioParty": 97.7,
+        "ratioBundestag": 90.0
       },
       {
         "word": "europarat",
         "count": 8,
-        "ratioParty": 87.5,
-        "ratioBundestag": 67.8
+        "ratioParty": 86.8,
+        "ratioBundestag": 67.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "südsudan",
+        "count": 11,
+        "score": 55.44,
+        "ratio": 153.5
+      },
+      {
+        "word": "europarat",
+        "count": 8,
+        "score": 35.8,
+        "ratio": 86.8
+      },
+      {
+        "word": "jesiden",
+        "count": 7,
+        "score": 33.21,
+        "ratio": 114.0
+      },
+      {
+        "word": "unmiss",
+        "count": 5,
+        "score": 30.97,
+        "ratio": 488.4
+      },
+      {
+        "word": "prägt",
+        "count": 5,
+        "score": 22.96,
+        "ratio": 97.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "südsudan",
+        "count": 11,
+        "score": 52.03,
+        "ratio": 112.3
+      },
+      {
+        "word": "europarat",
+        "count": 8,
+        "score": 33.83,
+        "ratio": 67.6
+      },
+      {
+        "word": "jesiden",
+        "count": 7,
+        "score": 31.1,
+        "ratio": 84.0
+      },
+      {
+        "word": "unmiss",
+        "count": 5,
+        "score": 23.11,
+        "ratio": 100.6
+      },
+      {
+        "word": "prägt",
+        "count": 5,
+        "score": 22.55,
+        "ratio": 90.0
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 369,
-    "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.69,
+    "partyAvgWords": 542,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.68,
     "vsParliament": 0.63
   },
   "funFacts": [
@@ -134,24 +200,24 @@
     "question": "Welches Wort nutzt Max Lucks häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Unmiss",
-        "isCorrect": true
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
       },
       {
         "text": "Demokratie",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
+        "text": "Unmiss",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Unmiss\" nutzt Max Lucks 492.4× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "101.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Unmiss\" nutzt Max Lucks 488.4× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "100.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -260,11 +326,11 @@
           "count": 1
         },
         {
-          "word": "grenze",
+          "word": "geflüchtete",
           "count": 1
         },
         {
-          "word": "geflüchtete",
+          "word": "migration",
           "count": 1
         }
       ],
@@ -292,11 +358,11 @@
           "count": 1
         },
         {
-          "word": "altersvorsorge",
+          "word": "familien",
           "count": 1
         },
         {
-          "word": "familien",
+          "word": "altersvorsorge",
           "count": 1
         }
       ],
@@ -328,15 +394,15 @@
           "count": 1
         },
         {
-          "word": "krankheit",
-          "count": 1
-        },
-        {
           "word": "medikamente",
           "count": 1
         },
         {
           "word": "prävention",
+          "count": 1
+        },
+        {
+          "word": "krankheit",
           "count": 1
         }
       ],
@@ -382,19 +448,19 @@
           "count": 7
         },
         {
-          "word": "aktien",
-          "count": 2
-        },
-        {
           "word": "haushalt",
           "count": 2
         },
         {
-          "word": "haushaltsplan",
-          "count": 1
+          "word": "aktien",
+          "count": 2
         },
         {
           "word": "kosten",
+          "count": 1
+        },
+        {
+          "word": "einkommensteuer",
           "count": 1
         }
       ],
@@ -404,19 +470,15 @@
           "count": 10
         },
         {
-          "word": "rechtsstaatlichkeit",
+          "word": "beschluss",
           "count": 1
         },
         {
-          "word": "beschluss",
+          "word": "rechtsstaatlichkeit",
           "count": 1
         }
       ],
       "arbeit": [
-        {
-          "word": "arbeitsplätze",
-          "count": 1
-        },
         {
           "word": "gehalt",
           "count": 1
@@ -432,6 +494,10 @@
         {
           "word": "beschäftigte",
           "count": 1
+        },
+        {
+          "word": "arbeitsplätze",
+          "count": 1
         }
       ],
       "mobilitaet": [
@@ -440,11 +506,11 @@
           "count": 2
         },
         {
-          "word": "deutschlandticket",
+          "word": "straßen",
           "count": 1
         },
         {
-          "word": "straßen",
+          "word": "deutschlandticket",
           "count": 1
         }
       ]

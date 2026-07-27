@@ -11,23 +11,23 @@
   "minWords": 36,
   "maxWords": 626,
   "rankings": {
-    "speechRank": 358,
-    "wordsRank": 409,
-    "partySpeechRank": 67,
+    "speechRank": 345,
+    "wordsRank": 400,
+    "partySpeechRank": 66,
     "partyWordsRank": 80,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 42.7,
-    "verbosityRank": 397,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 44.9,
+    "verbosityRank": 396,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 84,
-    "longestSpeechRank": 467
+    "longestSpeechRank": 466
   },
   "drama": {
     "interruptionsGiven": 23,
     "interruptionsReceived": 39,
-    "interrupterRank": 193,
-    "interruptedRank": 169
+    "interrupterRank": 194,
+    "interruptedRank": 171
   },
   "words": {
     "topWords": [
@@ -48,15 +48,15 @@
         "count": 13
       },
       {
-        "word": "leben",
-        "count": 12
-      },
-      {
         "word": "programm",
         "count": 12
       },
       {
         "word": "gewalt",
+        "count": 12
+      },
+      {
+        "word": "leben",
         "count": 12
       },
       {
@@ -74,49 +74,129 @@
     ],
     "signatureWords": [
       {
+        "word": "nachteile",
+        "count": 5,
+        "ratioParty": 161.2,
+        "ratioBundestag": 107.2
+      },
+      {
         "word": "startchancen",
         "count": 6,
         "ratioParty": 145.1,
-        "ratioBundestag": 161.3
-      },
-      {
-        "word": "nachteile",
-        "count": 5,
-        "ratioParty": 138.2,
-        "ratioBundestag": 103.0
+        "ratioBundestag": 160.8
       },
       {
         "word": "schüler",
         "count": 6,
         "ratioParty": 46.4,
-        "ratioBundestag": 31.2
+        "ratioBundestag": 32.0
       },
       {
         "word": "schülerinnen",
         "count": 5,
         "ratioParty": 35.8,
-        "ratioBundestag": 59.0
+        "ratioBundestag": 60.3
       },
       {
         "word": "schule",
         "count": 8,
-        "ratioParty": 29.2,
-        "ratioBundestag": 23.8
+        "ratioParty": 28.1,
+        "ratioBundestag": 23.5
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "startchancen",
+        "count": 6,
+        "score": 29.91,
+        "ratio": 145.1
+      },
+      {
+        "word": "schule",
+        "count": 8,
+        "score": 26.97,
+        "ratio": 28.1
+      },
+      {
+        "word": "nachteile",
+        "count": 5,
+        "score": 25.44,
+        "ratio": 161.2
+      },
+      {
+        "word": "schüler",
+        "count": 6,
+        "score": 23.15,
+        "ratio": 46.4
+      },
+      {
+        "word": "schülerinnen",
+        "count": 5,
+        "score": 18.03,
+        "ratio": 35.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "startchancen",
+        "count": 6,
+        "score": 30.52,
+        "ratio": 160.8
+      },
+      {
+        "word": "schule",
+        "count": 8,
+        "score": 25.59,
+        "ratio": 23.5
+      },
+      {
+        "word": "nachteile",
+        "count": 5,
+        "score": 23.42,
+        "ratio": 107.2
+      },
+      {
+        "word": "schüler",
+        "count": 6,
+        "score": 20.98,
+        "ratio": 32.0
+      },
+      {
+        "word": "schülerinnen",
+        "count": 5,
+        "score": 20.58,
+        "ratio": 60.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "sozial",
         "count": 4,
-        "ratioParty": 8.1,
-        "ratioBundestag": 10.7
+        "ratioParty": 8.6,
+        "ratioBundestag": 11.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sozial",
+        "count": 4,
+        "score": 9.05,
+        "ratio": 8.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sozial",
+        "count": 4,
+        "score": 10.01,
+        "ratio": 11.2
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 386,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
     "vsParty": 0.62,
     "vsParliament": 0.66
   },
@@ -141,47 +221,47 @@
     "question": "Welches Wort nutzt Saskia Esken häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Fraktion",
         "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Startchancen",
-        "isCorrect": true
       },
       {
         "text": "Demokratie",
         "isCorrect": false
+      },
+      {
+        "text": "Nachteile",
+        "isCorrect": true
+      },
+      {
+        "text": "Bundesregierung",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Startchancen\" nutzt Saskia Esken 145.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "161.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Nachteile\" nutzt Saskia Esken 161.2× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "107.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Saskia Esken häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
         "text": "Sozial",
         "isCorrect": true
+      },
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sozial\" nutzt Saskia Esken 8.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "10.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Sozial\" nutzt Saskia Esken 8.6× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "11.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐝",

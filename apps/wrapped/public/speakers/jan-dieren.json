@@ -6,38 +6,42 @@
   "speeches": 13,
   "wortbeitraege": 1,
   "befragungResponses": 0,
-  "totalWords": 7419,
-  "avgWords": 530,
+  "totalWords": 7685,
+  "avgWords": 549,
   "minWords": 167,
   "maxWords": 1039,
   "rankings": {
-    "speechRank": 254,
-    "wordsRank": 233,
-    "partySpeechRank": 50,
+    "speechRank": 243,
+    "wordsRank": 216,
+    "partySpeechRank": 51,
     "partyWordsRank": 52,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 59.4,
-    "verbosityRank": 116,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 26,
-    "longestSpeechRank": 67
+    "totalSpeakers": 626,
+    "percentile": 61.2,
+    "verbosityRank": 93,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 18,
+    "longestSpeechRank": 69
   },
   "drama": {
     "interruptionsGiven": 0,
-    "interruptionsReceived": 17,
+    "interruptionsReceived": 24,
     "interrupterRank": null,
-    "interruptedRank": 355
+    "interruptedRank": 289
   },
   "words": {
     "topWords": [
       {
         "word": "menschen",
-        "count": 57
+        "count": 56
       },
       {
         "word": "arbeiten",
-        "count": 41
+        "count": 42
+      },
+      {
+        "word": "beschäftigten",
+        "count": 28
       },
       {
         "word": "arbeit",
@@ -48,19 +52,19 @@
         "count": 24
       },
       {
-        "word": "beschäftigten",
-        "count": 24
-      },
-      {
         "word": "zeit",
-        "count": 22
-      },
-      {
-        "word": "beschäftigte",
         "count": 19
       },
       {
+        "word": "beschäftigte",
+        "count": 18
+      },
+      {
         "word": "deutschland",
+        "count": 16
+      },
+      {
+        "word": "habe",
         "count": 16
       }
     ],
@@ -68,49 +72,129 @@
       {
         "word": "arbeitszeit",
         "count": 12,
-        "ratioParty": 128.8,
-        "ratioBundestag": 74.8
-      },
-      {
-        "word": "mitbestimmen",
-        "count": 5,
-        "ratioParty": 118.1,
-        "ratioBundestag": 164.6
+        "ratioParty": 137.2,
+        "ratioBundestag": 75.4
       },
       {
         "word": "teilzeit",
         "count": 7,
-        "ratioParty": 118.1,
-        "ratioBundestag": 52.5
+        "ratioParty": 114.3,
+        "ratioBundestag": 52.7
+      },
+      {
+        "word": "mitbestimmen",
+        "count": 5,
+        "ratioParty": 114.3,
+        "ratioBundestag": 142.9
       },
       {
         "word": "privilegien",
         "count": 6,
-        "ratioParty": 101.2,
-        "ratioBundestag": 122.6
+        "ratioParty": 98.0,
+        "ratioBundestag": 110.7
       },
       {
         "word": "arbeitenden",
         "count": 10,
-        "ratioParty": 98.4,
-        "ratioBundestag": 46.7
+        "ratioParty": 95.3,
+        "ratioBundestag": 45.0
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "arbeitszeit",
+        "count": 12,
+        "score": 59.14,
+        "ratio": 137.2
+      },
+      {
+        "word": "arbeitenden",
+        "count": 10,
+        "score": 45.67,
+        "ratio": 95.3
+      },
+      {
+        "word": "teilzeit",
+        "count": 7,
+        "score": 33.23,
+        "ratio": 114.3
+      },
+      {
+        "word": "privilegien",
+        "count": 6,
+        "score": 27.57,
+        "ratio": 98.0
+      },
+      {
+        "word": "mitbestimmen",
+        "count": 5,
+        "score": 23.74,
+        "ratio": 114.3
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "arbeitszeit",
+        "count": 12,
+        "score": 52.03,
+        "ratio": 75.4
+      },
+      {
+        "word": "arbeitenden",
+        "count": 10,
+        "score": 38.29,
+        "ratio": 45.0
+      },
+      {
+        "word": "privilegien",
+        "count": 6,
+        "score": 28.29,
+        "ratio": 110.7
+      },
+      {
+        "word": "teilzeit",
+        "count": 7,
+        "score": 27.88,
+        "ratio": 52.7
+      },
+      {
+        "word": "mitbestimmen",
+        "count": 5,
+        "score": 24.85,
+        "ratio": 142.9
       }
     ],
     "signatureAdjectives": [
       {
         "word": "rechts",
         "count": 3,
-        "ratioParty": 4.4,
-        "ratioBundestag": 3.5
+        "ratioParty": 4.1,
+        "ratioBundestag": 3.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 4.89,
+        "ratio": 4.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "rechts",
+        "count": 3,
+        "score": 4.44,
+        "ratio": 3.4
       }
     ]
   },
   "comparison": {
-    "speakerAvgWords": 530,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.86,
-    "vsParliament": 0.91
+    "speakerAvgWords": 549,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.89,
+    "vsParliament": 0.94
   },
   "funFacts": [
     {
@@ -121,37 +205,41 @@
     {
       "emoji": "📝",
       "label": "Wörter gesprochen",
-      "value": "7.419"
+      "value": "7.685"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Jan Dieren häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Energie",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
         "text": "Arbeitszeit",
         "isCorrect": true
+      },
+      {
+        "text": "Bundesregierung",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Arbeitszeit\" nutzt Jan Dieren 128.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "74.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Arbeitszeit\" nutzt Jan Dieren 137.2× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "75.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Jan Dieren häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Politisch",
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
@@ -159,16 +247,12 @@
         "isCorrect": true
       },
       {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rechts\" nutzt Jan Dieren 4.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "3.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Rechts\" nutzt Jan Dieren 4.1× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "3.4× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -186,78 +270,78 @@
         "score": 1.0
       },
       {
-        "emoji": "🐬",
-        "name": "Delfin",
-        "title": "Diplomatischer Redner",
-        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-        "id": "delfin",
-        "score": 0.953
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrlicher Redner",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.978
       }
     ]
   },
   "toneProfile": {
     "scores": {
-      "affirmative": 90.0,
-      "aggression": 13.3,
-      "labeling": 20.0,
-      "solution_focus": 96.3,
-      "collaboration": 88.2,
-      "demand_intensity": 0.0,
-      "acknowledgment": 0.0,
-      "authority": 71.5,
+      "affirmative": 88.9,
+      "aggression": 14.3,
+      "labeling": 21.4,
+      "solution_focus": 93.3,
+      "collaboration": 87.5,
+      "demand_intensity": 2.1,
+      "acknowledgment": 2.1,
+      "authority": 72.5,
       "future_orientation": 86.2,
-      "emotional_intensity": 42.9,
-      "inclusivity": 42.0,
+      "emotional_intensity": 41.2,
+      "inclusivity": 43.5,
       "discriminatory": 0.0
     },
     "confidence": "sufficient",
     "sampleSize": {
       "speeches": 14,
-      "words": 4859,
-      "adjectives": 15,
-      "verbs": 44
+      "words": 5017,
+      "adjectives": 14,
+      "verbs": 48
     }
   },
   "topics": {
     "scores": {
-      "migration": 0.21,
-      "klima": 0.21,
-      "wirtschaft": 3.91,
-      "soziales": 6.17,
-      "sicherheit": 0.41,
-      "gesundheit": 3.29,
-      "europa": 0.62,
-      "digital": 1.03,
-      "bildung": 1.23,
-      "finanzen": 1.03,
-      "justiz": 1.03,
-      "arbeit": 23.05,
-      "mobilitaet": 2.88
+      "migration": 0.2,
+      "klima": 0.2,
+      "wirtschaft": 4.78,
+      "soziales": 3.19,
+      "sicherheit": 0.6,
+      "gesundheit": 3.59,
+      "europa": 0.6,
+      "digital": 1.0,
+      "bildung": 1.0,
+      "finanzen": 1.0,
+      "justiz": 1.0,
+      "arbeit": 22.12,
+      "mobilitaet": 2.79
     },
     "topTopics": [
       {
         "topic": "arbeit",
-        "score": 23.05,
+        "score": 22.12,
         "rank": 1
       },
       {
-        "topic": "soziales",
-        "score": 6.17,
+        "topic": "wirtschaft",
+        "score": 4.78,
         "rank": 2
       },
       {
-        "topic": "wirtschaft",
-        "score": 3.91,
+        "topic": "gesundheit",
+        "score": 3.59,
         "rank": 3
       },
       {
-        "topic": "gesundheit",
-        "score": 3.29,
+        "topic": "soziales",
+        "score": 3.19,
         "rank": 4
       },
       {
         "topic": "mobilitaet",
-        "score": 2.88,
+        "score": 2.79,
         "rank": 5
       }
     ],
@@ -280,6 +364,10 @@
           "count": 15
         },
         {
+          "word": "wirtschaft",
+          "count": 4
+        },
+        {
           "word": "konkurrenz",
           "count": 2
         },
@@ -288,36 +376,36 @@
           "count": 1
         },
         {
-          "word": "wirtschaft",
+          "word": "wachstum",
           "count": 1
         }
       ],
       "soziales": [
         {
-          "word": "kinder",
-          "count": 8
-        },
-        {
           "word": "familie",
-          "count": 7
+          "count": 6
         },
         {
           "word": "rente",
           "count": 5
         },
         {
-          "word": "eltern",
-          "count": 4
+          "word": "kinder",
+          "count": 3
         },
         {
-          "word": "kind",
-          "count": 3
+          "word": "mieten",
+          "count": 1
+        },
+        {
+          "word": "gerechtigkeit",
+          "count": 1
         }
       ],
       "sicherheit": [
         {
           "word": "angriff",
-          "count": 2
+          "count": 3
         }
       ],
       "gesundheit": [
@@ -326,16 +414,16 @@
           "count": 9
         },
         {
-          "word": "ärzte",
-          "count": 2
-        },
-        {
           "word": "pflege",
           "count": 2
         },
         {
-          "word": "krankenhaus",
-          "count": 1
+          "word": "ärzte",
+          "count": 2
+        },
+        {
+          "word": "arzt",
+          "count": 2
         },
         {
           "word": "pflegeheim",
@@ -354,15 +442,15 @@
           "count": 2
         },
         {
+          "word": "digitalisierung",
+          "count": 1
+        },
+        {
           "word": "internet",
           "count": 1
         },
         {
           "word": "plattformen",
-          "count": 1
-        },
-        {
-          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -374,10 +462,6 @@
         {
           "word": "schulen",
           "count": 2
-        },
-        {
-          "word": "kita",
-          "count": 1
         }
       ],
       "finanzen": [
@@ -411,7 +495,7 @@
       "arbeit": [
         {
           "word": "beschäftigte",
-          "count": 19
+          "count": 18
         },
         {
           "word": "löhne",
@@ -422,12 +506,12 @@
           "count": 12
         },
         {
-          "word": "rentenversicherung",
+          "word": "gewerkschaften",
           "count": 9
         },
         {
-          "word": "gewerkschaften",
-          "count": 7
+          "word": "rentenversicherung",
+          "count": 9
         }
       ],
       "mobilitaet": [

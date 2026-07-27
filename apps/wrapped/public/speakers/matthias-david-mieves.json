@@ -11,23 +11,23 @@
   "minWords": 74,
   "maxWords": 731,
   "rankings": {
-    "speechRank": 435,
-    "wordsRank": 424,
-    "partySpeechRank": 80,
+    "speechRank": 425,
+    "wordsRank": 418,
+    "partySpeechRank": 78,
     "partyWordsRank": 82,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 30.4,
-    "verbosityRank": 185,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 42,
-    "longestSpeechRank": 336
+    "totalSpeakers": 626,
+    "percentile": 32.1,
+    "verbosityRank": 195,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 47,
+    "longestSpeechRank": 339
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 15,
-    "interrupterRank": 417,
-    "interruptedRank": 395
+    "interrupterRank": 424,
+    "interruptedRank": 396
   },
   "words": {
     "topWords": [
@@ -65,39 +65,103 @@
         "word": "therapie",
         "count": 5,
         "ratioParty": 517.8,
-        "ratioBundestag": 167.2
+        "ratioBundestag": 178.0
       },
       {
         "word": "arzneimittel",
         "count": 5,
-        "ratioParty": 258.9,
-        "ratioBundestag": 136.4
+        "ratioParty": 345.2,
+        "ratioBundestag": 139.5
       },
       {
         "word": "passenden",
         "count": 5,
-        "ratioParty": 207.1,
-        "ratioBundestag": 199.3
+        "ratioParty": 258.9,
+        "ratioBundestag": 206.5
       },
       {
         "word": "mosel",
         "count": 9,
         "ratioParty": 32.4,
-        "ratioBundestag": 333.1
+        "ratioBundestag": 331.9
       },
       {
         "word": "pflege",
         "count": 10,
         "ratioParty": 21.8,
-        "ratioBundestag": 18.0
+        "ratioBundestag": 17.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "mosel",
+        "count": 9,
+        "score": 31.58,
+        "ratio": 32.4
+      },
+      {
+        "word": "pflege",
+        "count": 10,
+        "score": 31.27,
+        "ratio": 21.8
+      },
+      {
+        "word": "therapie",
+        "count": 5,
+        "score": 31.26,
+        "ratio": 517.8
+      },
+      {
+        "word": "arzneimittel",
+        "count": 5,
+        "score": 29.24,
+        "ratio": 345.2
+      },
+      {
+        "word": "passenden",
+        "count": 5,
+        "score": 27.8,
+        "ratio": 258.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "mosel",
+        "count": 9,
+        "score": 52.27,
+        "ratio": 331.9
+      },
+      {
+        "word": "pflege",
+        "count": 10,
+        "score": 29.39,
+        "ratio": 17.9
+      },
+      {
+        "word": "passenden",
+        "count": 5,
+        "score": 26.68,
+        "ratio": 206.5
+      },
+      {
+        "word": "therapie",
+        "count": 5,
+        "score": 25.94,
+        "ratio": 178.0
+      },
+      {
+        "word": "arzneimittel",
+        "count": 5,
+        "score": 24.73,
+        "ratio": 139.5
       }
     ],
     "signatureAdjectives": [
       {
         "word": "teuer",
         "count": 3,
-        "ratioParty": 15.2,
-        "ratioBundestag": 7.8
+        "ratioParty": 16.8,
+        "ratioBundestag": 7.9
       },
       {
         "word": "sicher",
@@ -105,14 +169,42 @@
         "ratioParty": 3.5,
         "ratioBundestag": 4.2
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "teuer",
+        "count": 3,
+        "score": 8.64,
+        "ratio": 16.8
+      },
+      {
+        "word": "sicher",
+        "count": 5,
+        "score": 7.52,
+        "ratio": 3.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 5,
+        "score": 8.24,
+        "ratio": 4.2
+      },
+      {
+        "word": "teuer",
+        "count": 3,
+        "score": 6.56,
+        "ratio": 7.9
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 482,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
     "vsParty": 0.78,
-    "vsParliament": 0.83
+    "vsParliament": 0.82
   },
   "funFacts": [
     {
@@ -130,15 +222,15 @@
     "question": "Welches Wort nutzt Matthias David Mieves häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Ausschuss",
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
         "isCorrect": false
       },
       {
         "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
         "isCorrect": false
       },
       {
@@ -147,21 +239,21 @@
       }
     ],
     "explanationParty": "\"Therapie\" nutzt Matthias David Mieves 517.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "167.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "178.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Matthias David Mieves häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Alt",
+        "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
+        "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Stark",
         "isCorrect": false
       },
       {
@@ -169,8 +261,8 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Teuer\" nutzt Matthias David Mieves 15.2× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "7.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Teuer\" nutzt Matthias David Mieves 16.8× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "7.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -312,11 +404,11 @@
           "count": 10
         },
         {
-          "word": "therapie",
+          "word": "arzneimittel",
           "count": 5
         },
         {
-          "word": "arzneimittel",
+          "word": "therapie",
           "count": 5
         },
         {
@@ -352,11 +444,11 @@
           "count": 2
         },
         {
-          "word": "hackerangriff",
+          "word": "cloud",
           "count": 1
         },
         {
-          "word": "cybersicherheit",
+          "word": "digital",
           "count": 1
         }
       ],
@@ -372,11 +464,11 @@
           "count": 4
         },
         {
-          "word": "steuern",
+          "word": "investitionen",
           "count": 2
         },
         {
-          "word": "investitionen",
+          "word": "steuern",
           "count": 2
         },
         {

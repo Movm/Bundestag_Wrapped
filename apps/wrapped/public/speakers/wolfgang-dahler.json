@@ -11,23 +11,23 @@
   "minWords": 48,
   "maxWords": 871,
   "rankings": {
-    "speechRank": 359,
-    "wordsRank": 379,
-    "partySpeechRank": 99,
-    "partyWordsRank": 118,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 42.6,
-    "verbosityRank": 230,
-    "verbosityTotal": 579,
+    "speechRank": 349,
+    "wordsRank": 366,
+    "partySpeechRank": 94,
+    "partyWordsRank": 113,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 44.2,
+    "verbosityRank": 233,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 82,
     "longestSpeechRank": 159
   },
   "drama": {
-    "interruptionsGiven": 4,
+    "interruptionsGiven": 3,
     "interruptionsReceived": 16,
-    "interrupterRank": 369,
-    "interruptedRank": 375
+    "interrupterRank": 394,
+    "interruptedRank": 376
   },
   "words": {
     "topWords": [
@@ -64,39 +64,103 @@
       {
         "word": "unterhalt",
         "count": 5,
-        "ratioParty": 694.5,
-        "ratioBundestag": 203.6
+        "ratioParty": 462.2,
+        "ratioBundestag": 185.2
       },
       {
         "word": "elterngeld",
         "count": 16,
-        "ratioParty": 153.3,
-        "ratioBundestag": 144.0
+        "ratioParty": 147.9,
+        "ratioBundestag": 133.6
       },
       {
         "word": "ganztag",
         "count": 5,
-        "ratioParty": 115.7,
-        "ratioBundestag": 69.0
+        "ratioParty": 115.6,
+        "ratioBundestag": 69.8
       },
       {
         "word": "unterhaltsvorschuss",
         "count": 5,
-        "ratioParty": 81.7,
-        "ratioBundestag": 75.0
+        "ratioParty": 81.6,
+        "ratioBundestag": 65.5
       },
       {
         "word": "petitionsausschuss",
         "count": 6,
-        "ratioParty": 55.6,
-        "ratioBundestag": 59.7
+        "ratioParty": 55.5,
+        "ratioBundestag": 59.4
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "elterngeld",
+        "count": 16,
+        "score": 80.05,
+        "ratio": 147.9
+      },
+      {
+        "word": "unterhalt",
+        "count": 5,
+        "score": 30.69,
+        "ratio": 462.2
+      },
+      {
+        "word": "petitionsausschuss",
+        "count": 6,
+        "score": 24.21,
+        "ratio": 55.5
+      },
+      {
+        "word": "ganztag",
+        "count": 5,
+        "score": 23.79,
+        "ratio": 115.6
+      },
+      {
+        "word": "unterhaltsvorschuss",
+        "count": 5,
+        "score": 22.07,
+        "ratio": 81.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "elterngeld",
+        "count": 16,
+        "score": 78.44,
+        "ratio": 133.6
+      },
+      {
+        "word": "unterhalt",
+        "count": 5,
+        "score": 26.13,
+        "ratio": 185.2
+      },
+      {
+        "word": "petitionsausschuss",
+        "count": 6,
+        "score": 24.61,
+        "ratio": 59.4
+      },
+      {
+        "word": "ganztag",
+        "count": 5,
+        "score": 21.3,
+        "ratio": 69.8
+      },
+      {
+        "word": "unterhaltsvorschuss",
+        "count": 5,
+        "score": 20.99,
+        "ratio": 65.5
       }
     ],
     "signatureAdjectives": [
       {
         "word": "geschützt",
         "count": 3,
-        "ratioParty": 12.8,
+        "ratioParty": 11.9,
         "ratioBundestag": 9.0
       },
       {
@@ -108,16 +172,56 @@
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 4.3,
+        "ratioParty": 4.4,
         "ratioBundestag": 3.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "geschützt",
+        "count": 3,
+        "score": 7.67,
+        "ratio": 11.9
+      },
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 6.12,
+        "ratio": 6.7
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 5.06,
+        "ratio": 4.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 6.94,
+        "ratio": 9.1
+      },
+      {
+        "word": "geschützt",
+        "count": 3,
+        "score": 6.91,
+        "ratio": 9.0
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 4.77,
+        "ratio": 3.9
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 463,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.72,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.71,
     "vsParliament": 0.79
   },
   "funFacts": [
@@ -136,38 +240,38 @@
     "question": "Welches Wort nutzt Wolfgang Dahler häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Unterhalt",
-        "isCorrect": true
+        "text": "Gesetz",
+        "isCorrect": false
       },
       {
         "text": "Kanzler",
         "isCorrect": false
       },
       {
-        "text": "Sicherheit",
-        "isCorrect": false
+        "text": "Unterhalt",
+        "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unterhalt\" nutzt Wolfgang Dahler 694.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "203.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Unterhalt\" nutzt Wolfgang Dahler 462.2× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "185.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Wolfgang Dahler häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
         "text": "Problematisch",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
         "isCorrect": false
       },
       {
@@ -175,7 +279,7 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Geschützt\" nutzt Wolfgang Dahler 12.8× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationParty": "\"Geschützt\" nutzt Wolfgang Dahler 11.9× häufiger als der CDU/CSU-Durchschnitt.",
     "explanationBundestag": "9.0× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -278,11 +382,11 @@
       ],
       "wirtschaft": [
         {
-          "word": "wettbewerb",
+          "word": "selbstständige",
           "count": 1
         },
         {
-          "word": "selbstständige",
+          "word": "wettbewerb",
           "count": 1
         }
       ],
@@ -352,15 +456,15 @@
           "count": 3
         },
         {
-          "word": "algorithmen",
-          "count": 2
-        },
-        {
           "word": "daten",
           "count": 2
         },
         {
           "word": "internet",
+          "count": 2
+        },
+        {
+          "word": "algorithmen",
           "count": 2
         }
       ],
@@ -378,11 +482,11 @@
           "count": 1
         },
         {
-          "word": "forschung",
+          "word": "bildungspolitik",
           "count": 1
         },
         {
-          "word": "ausbildung",
+          "word": "forschung",
           "count": 1
         }
       ],

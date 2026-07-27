@@ -11,23 +11,23 @@
   "minWords": 65,
   "maxWords": 695,
   "rankings": {
-    "speechRank": 256,
-    "wordsRank": 242,
-    "partySpeechRank": 53,
+    "speechRank": 249,
+    "wordsRank": 247,
+    "partySpeechRank": 52,
     "partyWordsRank": 57,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 59.0,
-    "verbosityRank": 482,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 60.2,
+    "verbosityRank": 484,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 125,
-    "longestSpeechRank": 377
+    "longestSpeechRank": 380
   },
   "drama": {
-    "interruptionsGiven": 68,
+    "interruptionsGiven": 61,
     "interruptionsReceived": 42,
-    "interrupterRank": 71,
-    "interruptedRank": 145
+    "interrupterRank": 81,
+    "interruptedRank": 153
   },
   "words": {
     "topWords": [
@@ -62,53 +62,137 @@
       {
         "word": "probleme",
         "count": 11
+      },
+      {
+        "word": "ministerin",
+        "count": 11
       }
     ],
     "signatureWords": [
       {
         "word": "hochschulen",
         "count": 16,
-        "ratioParty": 152.0,
-        "ratioBundestag": 76.6
+        "ratioParty": 141.0,
+        "ratioBundestag": 69.2
       },
       {
         "word": "geografische",
         "count": 5,
-        "ratioParty": 133.0,
-        "ratioBundestag": 166.3
+        "ratioParty": 132.2,
+        "ratioBundestag": 165.7
       },
       {
         "word": "bafög",
         "count": 10,
-        "ratioParty": 70.0,
-        "ratioBundestag": 19.8
+        "ratioParty": 69.6,
+        "ratioBundestag": 19.4
       },
       {
         "word": "zeitgeist",
         "count": 5,
-        "ratioParty": 66.5,
-        "ratioBundestag": 249.5
+        "ratioParty": 66.1,
+        "ratioBundestag": 248.5
       },
       {
         "word": "werdenden",
         "count": 5,
-        "ratioParty": 60.4,
-        "ratioBundestag": 71.3
+        "ratioParty": 60.1,
+        "ratioBundestag": 71.0
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "hochschulen",
+        "count": 16,
+        "score": 79.29,
+        "ratio": 141.0
+      },
+      {
+        "word": "bafög",
+        "count": 10,
+        "score": 42.57,
+        "ratio": 69.6
+      },
+      {
+        "word": "geografische",
+        "count": 5,
+        "score": 24.46,
+        "ratio": 132.2
+      },
+      {
+        "word": "zeitgeist",
+        "count": 5,
+        "score": 21.03,
+        "ratio": 66.1
+      },
+      {
+        "word": "werdenden",
+        "count": 5,
+        "score": 20.56,
+        "ratio": 60.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "hochschulen",
+        "count": 16,
+        "score": 68.02,
+        "ratio": 69.2
+      },
+      {
+        "word": "bafög",
+        "count": 10,
+        "score": 30.16,
+        "ratio": 19.4
+      },
+      {
+        "word": "zeitgeist",
+        "count": 5,
+        "score": 27.6,
+        "ratio": 248.5
+      },
+      {
+        "word": "geografische",
+        "count": 5,
+        "score": 25.58,
+        "ratio": 165.7
+      },
+      {
+        "word": "werdenden",
+        "count": 5,
+        "score": 21.38,
+        "ratio": 71.0
       }
     ],
     "signatureAdjectives": [
       {
         "word": "stark",
         "count": 4,
-        "ratioParty": 4.6,
+        "ratioParty": 4.7,
         "ratioBundestag": 3.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "stark",
+        "count": 4,
+        "score": 6.96,
+        "ratio": 4.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "stark",
+        "count": 4,
+        "score": 5.83,
+        "ratio": 3.3
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 328,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 560,
+    "parliamentAvgWords": 587,
     "vsParty": 0.59,
     "vsParliament": 0.56
   },
@@ -126,14 +210,18 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "68"
+      "value": "61"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Christoph Birghan häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Abstimmung",
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Kinder",
         "isCorrect": false
       },
       {
@@ -141,16 +229,12 @@
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
+        "text": "Bürger",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Hochschulen\" nutzt Dr. Christoph Birghan 152.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "76.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Hochschulen\" nutzt Dr. Christoph Birghan 141.0× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "69.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Christoph Birghan häufiger als der Rest der AfD-Fraktion?",
@@ -160,19 +244,19 @@
         "isCorrect": true
       },
       {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
         "text": "Neu",
         "isCorrect": false
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Stark\" nutzt Dr. Christoph Birghan 4.6× häufiger als der AfD-Durchschnitt.",
+    "explanationParty": "\"Stark\" nutzt Dr. Christoph Birghan 4.7× häufiger als der AfD-Durchschnitt.",
     "explanationBundestag": "3.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
@@ -259,11 +343,11 @@
           "count": 1
         },
         {
-          "word": "nachhaltig",
+          "word": "umwelt",
           "count": 1
         },
         {
-          "word": "umwelt",
+          "word": "nachhaltig",
           "count": 1
         }
       ],
@@ -285,7 +369,7 @@
           "count": 2
         },
         {
-          "word": "wirtschaft",
+          "word": "produktion",
           "count": 1
         }
       ],
@@ -339,7 +423,7 @@
           "count": 2
         },
         {
-          "word": "krankheit",
+          "word": "krankenhaus",
           "count": 1
         }
       ],
@@ -363,15 +447,15 @@
           "count": 1
         },
         {
+          "word": "digitalisierung",
+          "count": 1
+        },
+        {
           "word": "daten",
           "count": 1
         },
         {
           "word": "online",
-          "count": 1
-        },
-        {
-          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -407,15 +491,15 @@
           "count": 2
         },
         {
-          "word": "finanzminister",
-          "count": 1
-        },
-        {
           "word": "finanzierung",
           "count": 1
         },
         {
           "word": "sondervermögen",
+          "count": 1
+        },
+        {
+          "word": "steuerzahler",
           "count": 1
         }
       ],

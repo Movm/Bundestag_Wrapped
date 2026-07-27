@@ -11,23 +11,23 @@
   "minWords": 10,
   "maxWords": 876,
   "rankings": {
-    "speechRank": 351,
-    "wordsRank": 288,
-    "partySpeechRank": 62,
-    "partyWordsRank": 48,
+    "speechRank": 341,
+    "wordsRank": 285,
+    "partySpeechRank": 60,
+    "partyWordsRank": 50,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 43.8,
-    "verbosityRank": 238,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 26,
-    "longestSpeechRank": 155
+    "totalSpeakers": 626,
+    "percentile": 45.5,
+    "verbosityRank": 242,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 28,
+    "longestSpeechRank": 154
   },
   "drama": {
     "interruptionsGiven": 47,
     "interruptionsReceived": 28,
-    "interrupterRank": 110,
-    "interruptedRank": 260
+    "interrupterRank": 109,
+    "interruptedRank": 255
   },
   "words": {
     "topWords": [
@@ -76,54 +76,146 @@
       {
         "word": "sozialwohnungen",
         "count": 5,
-        "ratioParty": 166.6,
-        "ratioBundestag": 91.7
+        "ratioParty": 165.3,
+        "ratioBundestag": 91.4
       },
       {
         "word": "hubertz",
         "count": 9,
-        "ratioParty": 81.8,
-        "ratioBundestag": 50.6
+        "ratioParty": 81.1,
+        "ratioBundestag": 52.5
       },
       {
         "word": "wohnungsbau",
         "count": 5,
-        "ratioParty": 62.5,
-        "ratioBundestag": 12.4
+        "ratioParty": 62.0,
+        "ratioBundestag": 12.6
       },
       {
         "word": "bezahlbar",
         "count": 5,
-        "ratioParty": 23.8,
+        "ratioParty": 22.5,
         "ratioBundestag": 15.6
       },
       {
-        "word": "tausende",
+        "word": "wahlgeschenke",
         "count": 5,
-        "ratioParty": 20.8,
-        "ratioBundestag": 14.5
+        "ratioParty": 21.6,
+        "ratioBundestag": 128.6
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "hubertz",
+        "count": 9,
+        "score": 39.67,
+        "ratio": 81.1
+      },
+      {
+        "word": "sozialwohnungen",
+        "count": 5,
+        "score": 25.57,
+        "ratio": 165.3
+      },
+      {
+        "word": "wohnungsbau",
+        "count": 5,
+        "score": 20.72,
+        "ratio": 62.0
+      },
+      {
+        "word": "bezahlbar",
+        "count": 5,
+        "score": 15.79,
+        "ratio": 22.5
+      },
+      {
+        "word": "wahlgeschenke",
+        "count": 5,
+        "score": 15.59,
+        "ratio": 21.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "hubertz",
+        "count": 9,
+        "score": 35.82,
+        "ratio": 52.5
+      },
+      {
+        "word": "wahlgeschenke",
+        "count": 5,
+        "score": 24.32,
+        "ratio": 128.6
+      },
+      {
+        "word": "sozialwohnungen",
+        "count": 5,
+        "score": 22.63,
+        "ratio": 91.4
+      },
+      {
+        "word": "bezahlbar",
+        "count": 5,
+        "score": 14.05,
+        "ratio": 15.6
+      },
+      {
+        "word": "wohnungsbau",
+        "count": 5,
+        "score": 13.05,
+        "ratio": 12.6
       }
     ],
     "signatureAdjectives": [
       {
         "word": "absurd",
         "count": 3,
-        "ratioParty": 6.4,
+        "ratioParty": 6.9,
         "ratioBundestag": 9.8
       },
       {
         "word": "schlecht",
         "count": 5,
-        "ratioParty": 5.0,
+        "ratioParty": 5.2,
         "ratioBundestag": 9.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "schlecht",
+        "count": 5,
+        "score": 9.12,
+        "ratio": 5.2
+      },
+      {
+        "word": "absurd",
+        "count": 3,
+        "score": 6.2,
+        "ratio": 6.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "schlecht",
+        "count": 5,
+        "score": 11.76,
+        "ratio": 9.5
+      },
+      {
+        "word": "absurd",
+        "count": 3,
+        "score": 7.14,
+        "ratio": 9.8
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 457,
-    "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.85,
+    "partyAvgWords": 542,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.84,
     "vsParliament": 0.78
   },
   "funFacts": [
@@ -147,46 +239,46 @@
     "question": "Welches Wort nutzt Lisa Paus häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
         "text": "Sozialwohnungen",
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Energie",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sozialwohnungen\" nutzt Lisa Paus 166.6× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "91.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Sozialwohnungen\" nutzt Lisa Paus 165.3× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "91.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Lisa Paus häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
         "text": "Absurd",
         "isCorrect": true
       },
       {
-        "text": "Stark",
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Absurd\" nutzt Lisa Paus 6.4× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationParty": "\"Absurd\" nutzt Lisa Paus 6.9× häufiger als der GRÜNE-Durchschnitt.",
     "explanationBundestag": "9.8× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -295,11 +387,11 @@
           "count": 2
         },
         {
-          "word": "nachhaltigkeit",
+          "word": "nachhaltig",
           "count": 1
         },
         {
-          "word": "kreislaufwirtschaft",
+          "word": "nachhaltigkeit",
           "count": 1
         }
       ],
@@ -387,11 +479,11 @@
           "count": 1
         },
         {
-          "word": "plattformen",
+          "word": "software",
           "count": 1
         },
         {
-          "word": "software",
+          "word": "plattformen",
           "count": 1
         },
         {
@@ -493,7 +585,7 @@
           "count": 2
         },
         {
-          "word": "straßen",
+          "word": "bahnhof",
           "count": 1
         },
         {
@@ -501,11 +593,11 @@
           "count": 1
         },
         {
-          "word": "deutschlandticket",
+          "word": "straßen",
           "count": 1
         },
         {
-          "word": "bahnhof",
+          "word": "deutschlandticket",
           "count": 1
         }
       ]

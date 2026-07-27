@@ -11,23 +11,23 @@
   "minWords": 66,
   "maxWords": 726,
   "rankings": {
-    "speechRank": 405,
-    "wordsRank": 441,
+    "speechRank": 400,
+    "wordsRank": 431,
     "partySpeechRank": 51,
-    "partyWordsRank": 47,
+    "partyWordsRank": 45,
     "partySize": 63,
-    "totalSpeakers": 625,
-    "percentile": 35.2,
-    "verbosityRank": 340,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 36.1,
+    "verbosityRank": 339,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 23,
-    "longestSpeechRank": 344
+    "longestSpeechRank": 346
   },
   "drama": {
     "interruptionsGiven": 23,
     "interruptionsReceived": 17,
-    "interrupterRank": 190,
-    "interruptedRank": 352
+    "interrupterRank": 195,
+    "interruptedRank": 357
   },
   "words": {
     "topWords": [
@@ -76,40 +76,106 @@
       {
         "word": "sozialarbeiterin",
         "count": 5,
-        "ratioParty": 182.0,
-        "ratioBundestag": 1341.3
+        "ratioParty": 181.3,
+        "ratioBundestag": 1336.5
       },
       {
         "word": "verfassung",
         "count": 5,
-        "ratioParty": 39.0,
-        "ratioBundestag": 27.9
+        "ratioParty": 41.8,
+        "ratioBundestag": 26.1
       },
       {
         "word": "schwächsten",
         "count": 5,
-        "ratioParty": 39.0,
-        "ratioBundestag": 97.6
+        "ratioParty": 36.3,
+        "ratioBundestag": 92.2
       },
       {
         "word": "menschenwürde",
         "count": 5,
-        "ratioParty": 32.1,
-        "ratioBundestag": 52.1
+        "ratioParty": 30.2,
+        "ratioBundestag": 51.9
       },
       {
         "word": "sozialstaat",
         "count": 18,
-        "ratioParty": 24.0,
-        "ratioBundestag": 39.6
+        "ratioParty": 24.2,
+        "ratioBundestag": 39.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "sozialstaat",
+        "count": 18,
+        "score": 58.08,
+        "ratio": 24.2
+      },
+      {
+        "word": "sozialarbeiterin",
+        "count": 5,
+        "score": 26.03,
+        "ratio": 181.3
+      },
+      {
+        "word": "verfassung",
+        "count": 5,
+        "score": 18.78,
+        "ratio": 41.8
+      },
+      {
+        "word": "schwächsten",
+        "count": 5,
+        "score": 18.09,
+        "ratio": 36.3
+      },
+      {
+        "word": "menschenwürde",
+        "count": 5,
+        "score": 17.2,
+        "ratio": 30.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "sozialstaat",
+        "count": 18,
+        "score": 66.76,
+        "ratio": 39.8
+      },
+      {
+        "word": "sozialarbeiterin",
+        "count": 5,
+        "score": 35.99,
+        "ratio": 1336.5
+      },
+      {
+        "word": "schwächsten",
+        "count": 5,
+        "score": 22.67,
+        "ratio": 92.2
+      },
+      {
+        "word": "menschenwürde",
+        "count": 5,
+        "score": 19.84,
+        "ratio": 51.9
+      },
+      {
+        "word": "verfassung",
+        "count": 5,
+        "score": 16.5,
+        "ratio": 26.1
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 411,
     "partyAvgWords": 500,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 587,
     "vsParty": 0.82,
     "vsParliament": 0.7
   },
@@ -134,7 +200,11 @@
     "question": "Welches Wort nutzt Cansin Köktürk häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Klima",
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
@@ -142,16 +212,12 @@
         "isCorrect": true
       },
       {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
+        "text": "Arbeit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sozialarbeiterin\" nutzt Cansin Köktürk 182.0× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "1341.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Sozialarbeiterin\" nutzt Cansin Köktürk 181.3× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "1336.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -274,11 +340,11 @@
           "count": 1
         },
         {
-          "word": "nachhaltig",
+          "word": "müll",
           "count": 1
         },
         {
-          "word": "müll",
+          "word": "nachhaltig",
           "count": 1
         }
       ],

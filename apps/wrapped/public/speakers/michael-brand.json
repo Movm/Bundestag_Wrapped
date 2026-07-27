@@ -11,23 +11,23 @@
   "minWords": 312,
   "maxWords": 751,
   "rankings": {
-    "speechRank": 591,
-    "wordsRank": 597,
-    "partySpeechRank": 193,
-    "partyWordsRank": 199,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 5.4,
+    "speechRank": 585,
+    "wordsRank": 599,
+    "partySpeechRank": 191,
+    "partyWordsRank": 201,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 6.5,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 311
+    "longestSpeechRank": 312
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 1,
     "interrupterRank": null,
-    "interruptedRank": 593
+    "interruptedRank": 595
   },
   "words": {
     "topWords": [
@@ -48,6 +48,14 @@
         "count": 5
       },
       {
+        "word": "bundesregierung",
+        "count": 4
+      },
+      {
+        "word": "neuen",
+        "count": 4
+      },
+      {
         "word": "starke",
         "count": 4
       },
@@ -60,15 +68,7 @@
         "count": 4
       },
       {
-        "word": "bundesregierung",
-        "count": 4
-      },
-      {
-        "word": "neuen",
-        "count": 4
-      },
-      {
-        "word": "mittel",
+        "word": "diskriminierung",
         "count": 3
       }
     ],
@@ -76,35 +76,89 @@
       {
         "word": "bildung",
         "count": 6,
-        "ratioParty": 30.7,
-        "ratioBundestag": 31.3
+        "ratioParty": 30.6,
+        "ratioBundestag": 30.6
       },
       {
         "word": "familien",
         "count": 7,
         "ratioParty": 26.9,
-        "ratioBundestag": 22.2
+        "ratioBundestag": 22.7
       },
       {
         "word": "stärken",
         "count": 5,
-        "ratioParty": 7.9,
-        "ratioBundestag": 10.6
+        "ratioParty": 8.0,
+        "ratioBundestag": 10.7
       },
       {
         "word": "haushalt",
         "count": 5,
         "ratioParty": 7.0,
-        "ratioBundestag": 7.7
+        "ratioBundestag": 7.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "familien",
+        "count": 7,
+        "score": 23.3,
+        "ratio": 26.9
+      },
+      {
+        "word": "bildung",
+        "count": 6,
+        "score": 20.72,
+        "ratio": 30.6
+      },
+      {
+        "word": "stärken",
+        "count": 5,
+        "score": 10.99,
+        "ratio": 8.0
+      },
+      {
+        "word": "haushalt",
+        "count": 5,
+        "score": 10.4,
+        "ratio": 7.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "familien",
+        "count": 7,
+        "score": 22.16,
+        "ratio": 22.7
+      },
+      {
+        "word": "bildung",
+        "count": 6,
+        "score": 20.72,
+        "ratio": 30.6
+      },
+      {
+        "word": "stärken",
+        "count": 5,
+        "score": 12.3,
+        "ratio": 10.7
+      },
+      {
+        "word": "haushalt",
+        "count": 5,
+        "score": 10.76,
+        "ratio": 7.6
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 532,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.82,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.81,
     "vsParliament": 0.91
   },
   "funFacts": [
@@ -123,24 +177,24 @@
     "question": "Welches Wort nutzt Michael Brand häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
-        "isCorrect": false
-      },
-      {
         "text": "Bildung",
         "isCorrect": true
+      },
+      {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bildung\" nutzt Michael Brand 30.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "31.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bildung\" nutzt Michael Brand 30.6× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "30.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -237,15 +291,15 @@
     "topicWords": {
       "wirtschaft": [
         {
+          "word": "unternehmen",
+          "count": 1
+        },
+        {
           "word": "wettbewerbsfähigkeit",
           "count": 1
         },
         {
           "word": "standort",
-          "count": 1
-        },
-        {
-          "word": "unternehmen",
           "count": 1
         }
       ],
@@ -287,15 +341,15 @@
           "count": 6
         },
         {
-          "word": "lehrkräfte",
-          "count": 1
-        },
-        {
           "word": "schule",
           "count": 1
         },
         {
           "word": "ausbildung",
+          "count": 1
+        },
+        {
+          "word": "lehrkräfte",
           "count": 1
         }
       ],
@@ -303,6 +357,10 @@
         {
           "word": "haushalt",
           "count": 5
+        },
+        {
+          "word": "kosten",
+          "count": 1
         },
         {
           "word": "bundeshaushalt",
@@ -314,10 +372,6 @@
         },
         {
           "word": "investition",
-          "count": 1
-        },
-        {
-          "word": "sondervermögen",
           "count": 1
         }
       ],
@@ -331,11 +385,11 @@
           "count": 2
         },
         {
-          "word": "verfassungsrecht",
+          "word": "rechtsprechung",
           "count": 1
         },
         {
-          "word": "rechtsprechung",
+          "word": "verfassungsrecht",
           "count": 1
         }
       ],

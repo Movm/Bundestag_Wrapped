@@ -11,23 +11,23 @@
   "minWords": 51,
   "maxWords": 593,
   "rankings": {
-    "speechRank": 150,
-    "wordsRank": 232,
-    "partySpeechRank": 30,
-    "partyWordsRank": 38,
+    "speechRank": 133,
+    "wordsRank": 233,
+    "partySpeechRank": 24,
+    "partyWordsRank": 37,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 76.0,
-    "verbosityRank": 419,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 46,
-    "longestSpeechRank": 500
+    "totalSpeakers": 626,
+    "percentile": 78.8,
+    "verbosityRank": 422,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 48,
+    "longestSpeechRank": 503
   },
   "drama": {
     "interruptionsGiven": 8,
     "interruptionsReceived": 42,
-    "interrupterRank": 291,
-    "interruptedRank": 144
+    "interrupterRank": 287,
+    "interruptedRank": 152
   },
   "words": {
     "topWords": [
@@ -44,11 +44,11 @@
         "count": 37
       },
       {
-        "word": "bundesregierung",
+        "word": "geld",
         "count": 29
       },
       {
-        "word": "geld",
+        "word": "bundesregierung",
         "count": 29
       },
       {
@@ -68,7 +68,7 @@
         "count": 15
       },
       {
-        "word": "gemeinsam",
+        "word": "milliardäre",
         "count": 15
       }
     ],
@@ -76,73 +76,201 @@
       {
         "word": "milliardärinnen",
         "count": 5,
-        "ratioParty": 212.9,
-        "ratioBundestag": 424.8
+        "ratioParty": 211.2,
+        "ratioBundestag": 423.3
       },
       {
         "word": "allerreichsten",
         "count": 6,
-        "ratioParty": 170.3,
-        "ratioBundestag": 1189.4
+        "ratioParty": 169.0,
+        "ratioBundestag": 1185.1
       },
       {
         "word": "finanzkrise",
         "count": 9,
-        "ratioParty": 153.3,
-        "ratioBundestag": 198.2
-      },
-      {
-        "word": "kommunale",
-        "count": 10,
-        "ratioParty": 141.9,
-        "ratioBundestag": 30.2
+        "ratioParty": 152.1,
+        "ratioBundestag": 177.8
       },
       {
         "word": "überreiche",
         "count": 5,
-        "ratioParty": 141.9,
-        "ratioBundestag": 330.4
+        "ratioParty": 140.8,
+        "ratioBundestag": 329.2
+      },
+      {
+        "word": "kommunale",
+        "count": 10,
+        "ratioParty": 140.8,
+        "ratioBundestag": 29.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "kommunale",
+        "count": 10,
+        "score": 49.54,
+        "ratio": 140.8
+      },
+      {
+        "word": "finanzkrise",
+        "count": 9,
+        "score": 45.28,
+        "ratio": 152.1
+      },
+      {
+        "word": "allerreichsten",
+        "count": 6,
+        "score": 30.81,
+        "ratio": 169.0
+      },
+      {
+        "word": "milliardärinnen",
+        "count": 5,
+        "score": 26.79,
+        "ratio": 211.2
+      },
+      {
+        "word": "überreiche",
+        "count": 5,
+        "score": 24.77,
+        "ratio": 140.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "finanzkrise",
+        "count": 9,
+        "score": 46.68,
+        "ratio": 177.8
+      },
+      {
+        "word": "allerreichsten",
+        "count": 6,
+        "score": 42.47,
+        "ratio": 1185.1
+      },
+      {
+        "word": "kommunale",
+        "count": 10,
+        "score": 34.31,
+        "ratio": 29.9
+      },
+      {
+        "word": "milliardärinnen",
+        "count": 5,
+        "score": 30.25,
+        "ratio": 423.3
+      },
+      {
+        "word": "überreiche",
+        "count": 5,
+        "score": 29.0,
+        "ratio": 329.2
       }
     ],
     "signatureAdjectives": [
       {
         "word": "ungerecht",
         "count": 5,
-        "ratioParty": 14.7,
-        "ratioBundestag": 24.2
+        "ratioParty": 15.1,
+        "ratioBundestag": 24.9
       },
       {
         "word": "unfassbar",
         "count": 3,
-        "ratioParty": 11.1,
-        "ratioBundestag": 23.5
+        "ratioParty": 11.0,
+        "ratioBundestag": 22.2
       },
       {
         "word": "absurd",
         "count": 5,
-        "ratioParty": 9.5,
-        "ratioBundestag": 14.0
+        "ratioParty": 10.3,
+        "ratioBundestag": 14.1
       },
       {
         "word": "gerecht",
         "count": 9,
-        "ratioParty": 7.2,
-        "ratioBundestag": 8.1
+        "ratioParty": 7.5,
+        "ratioBundestag": 8.3
       },
       {
         "word": "teuer",
         "count": 3,
-        "ratioParty": 2.8,
-        "ratioBundestag": 4.5
+        "ratioParty": 3.1,
+        "ratioBundestag": 4.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
+        "count": 9,
+        "score": 19.26,
+        "ratio": 7.5
+      },
+      {
+        "word": "ungerecht",
+        "count": 5,
+        "score": 13.89,
+        "ratio": 15.1
+      },
+      {
+        "word": "absurd",
+        "count": 5,
+        "score": 12.12,
+        "ratio": 10.3
+      },
+      {
+        "word": "unfassbar",
+        "count": 3,
+        "score": 7.45,
+        "ratio": 11.0
+      },
+      {
+        "word": "teuer",
+        "count": 3,
+        "score": 4.23,
+        "ratio": 3.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "gerecht",
+        "count": 9,
+        "score": 20.07,
+        "ratio": 8.3
+      },
+      {
+        "word": "ungerecht",
+        "count": 5,
+        "score": 16.27,
+        "ratio": 24.9
+      },
+      {
+        "word": "absurd",
+        "count": 5,
+        "score": 13.57,
+        "ratio": 14.1
+      },
+      {
+        "word": "unfassbar",
+        "count": 3,
+        "score": 9.43,
+        "ratio": 22.2
+      },
+      {
+        "word": "teuer",
+        "count": 3,
+        "score": 5.17,
+        "ratio": 4.6
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 372,
-    "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 542,
+    "parliamentAvgWords": 587,
     "vsParty": 0.69,
-    "vsParliament": 0.64
+    "vsParliament": 0.63
   },
   "funFacts": [
     {
@@ -160,11 +288,7 @@
     "question": "Welches Wort nutzt Karoline Otte häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
@@ -172,22 +296,26 @@
         "isCorrect": true
       },
       {
-        "text": "Antrag",
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Milliardärinnen\" nutzt Karoline Otte 212.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "424.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Milliardärinnen\" nutzt Karoline Otte 211.2× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "423.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Karoline Otte häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Ungerecht",
-        "isCorrect": true
+        "text": "Falsch",
+        "isCorrect": false
       },
       {
-        "text": "Richtig",
+        "text": "Groß",
         "isCorrect": false
       },
       {
@@ -195,12 +323,12 @@
         "isCorrect": false
       },
       {
-        "text": "Stark",
-        "isCorrect": false
+        "text": "Ungerecht",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Ungerecht\" nutzt Karoline Otte 14.7× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "24.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Ungerecht\" nutzt Karoline Otte 15.1× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "24.9× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -308,11 +436,11 @@
           "count": 2
         },
         {
-          "word": "mittelmeer",
+          "word": "aufenthaltsstatus",
           "count": 1
         },
         {
-          "word": "aufenthaltsstatus",
+          "word": "integrationskurs",
           "count": 1
         }
       ],
@@ -330,11 +458,11 @@
           "count": 2
         },
         {
-          "word": "wirtschaftswachstum",
+          "word": "konzern",
           "count": 1
         },
         {
-          "word": "konzern",
+          "word": "wirtschaft",
           "count": 1
         }
       ],
@@ -362,29 +490,29 @@
       ],
       "sicherheit": [
         {
-          "word": "verfassungsschutz",
-          "count": 1
-        },
-        {
           "word": "gewalt",
           "count": 1
         },
         {
           "word": "angriff",
           "count": 1
+        },
+        {
+          "word": "verfassungsschutz",
+          "count": 1
         }
       ],
       "gesundheit": [
-        {
-          "word": "pflegekraft",
-          "count": 1
-        },
         {
           "word": "pflege",
           "count": 1
         },
         {
           "word": "sucht",
+          "count": 1
+        },
+        {
+          "word": "pflegekraft",
           "count": 1
         }
       ],
@@ -422,19 +550,19 @@
           "count": 6
         },
         {
-          "word": "schulen",
-          "count": 2
-        },
-        {
           "word": "lehrer",
           "count": 2
         },
         {
-          "word": "volkshochschule",
+          "word": "schulen",
+          "count": 2
+        },
+        {
+          "word": "bildung",
           "count": 1
         },
         {
-          "word": "schule",
+          "word": "kinderbetreuung",
           "count": 1
         }
       ],
@@ -452,11 +580,11 @@
           "count": 4
         },
         {
-          "word": "sondervermögen",
+          "word": "gewerbesteuer",
           "count": 3
         },
         {
-          "word": "gewerbesteuer",
+          "word": "sondervermögen",
           "count": 3
         }
       ],
@@ -468,6 +596,14 @@
       ],
       "arbeit": [
         {
+          "word": "sozialabgaben",
+          "count": 1
+        },
+        {
+          "word": "einkommen",
+          "count": 1
+        },
+        {
           "word": "arbeitskräfte",
           "count": 1
         },
@@ -478,14 +614,6 @@
         {
           "word": "angestellte",
           "count": 1
-        },
-        {
-          "word": "sozialabgaben",
-          "count": 1
-        },
-        {
-          "word": "einkommen",
-          "count": 1
         }
       ],
       "mobilitaet": [
@@ -494,19 +622,19 @@
           "count": 2
         },
         {
-          "word": "straßen",
-          "count": 1
-        },
-        {
-          "word": "straße",
-          "count": 1
-        },
-        {
           "word": "fliegen",
           "count": 1
         },
         {
           "word": "häfen",
+          "count": 1
+        },
+        {
+          "word": "straßen",
+          "count": 1
+        },
+        {
+          "word": "straße",
           "count": 1
         }
       ]

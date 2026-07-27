@@ -11,23 +11,23 @@
   "minWords": 8,
   "maxWords": 679,
   "rankings": {
-    "speechRank": 499,
-    "wordsRank": 400,
-    "partySpeechRank": 159,
-    "partyWordsRank": 125,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 20.2,
-    "verbosityRank": 575,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 186,
-    "longestSpeechRank": 397
+    "speechRank": 498,
+    "wordsRank": 394,
+    "partySpeechRank": 157,
+    "partyWordsRank": 121,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 20.4,
+    "verbosityRank": 576,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 187,
+    "longestSpeechRank": 400
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 14,
-    "interrupterRank": 411,
-    "interruptedRank": 396
+    "interrupterRank": 407,
+    "interruptedRank": 402
   },
   "words": {
     "topWords": [
@@ -64,40 +64,106 @@
       {
         "word": "brieftasche",
         "count": 5,
-        "ratioParty": 255.4,
-        "ratioBundestag": 314.3
+        "ratioParty": 255.0,
+        "ratioBundestag": 313.2
       },
       {
         "word": "patrioten",
         "count": 5,
-        "ratioParty": 170.3,
-        "ratioBundestag": 152.1
+        "ratioParty": 170.0,
+        "ratioBundestag": 151.5
       },
       {
         "word": "höcke",
         "count": 7,
-        "ratioParty": 71.5,
-        "ratioBundestag": 120.0
+        "ratioParty": 66.9,
+        "ratioBundestag": 124.1
       },
       {
         "word": "bundesministerium",
         "count": 12,
-        "ratioParty": 52.5,
-        "ratioBundestag": 74.0
+        "ratioParty": 56.5,
+        "ratioBundestag": 74.7
       },
       {
-        "word": "hinsichtlich",
-        "count": 7,
-        "ratioParty": 43.8,
-        "ratioBundestag": 58.9
+        "word": "digitales",
+        "count": 8,
+        "ratioParty": 44.5,
+        "ratioBundestag": 59.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bundesministerium",
+        "count": 12,
+        "score": 48.62,
+        "ratio": 56.5
+      },
+      {
+        "word": "digitales",
+        "count": 8,
+        "score": 30.54,
+        "ratio": 44.5
+      },
+      {
+        "word": "höcke",
+        "count": 7,
+        "score": 29.53,
+        "ratio": 66.9
+      },
+      {
+        "word": "brieftasche",
+        "count": 5,
+        "score": 27.73,
+        "ratio": 255.0
+      },
+      {
+        "word": "patrioten",
+        "count": 5,
+        "score": 25.71,
+        "ratio": 170.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bundesministerium",
+        "count": 12,
+        "score": 51.92,
+        "ratio": 74.7
+      },
+      {
+        "word": "höcke",
+        "count": 7,
+        "score": 33.8,
+        "ratio": 124.1
+      },
+      {
+        "word": "digitales",
+        "count": 8,
+        "score": 32.78,
+        "ratio": 59.2
+      },
+      {
+        "word": "brieftasche",
+        "count": 5,
+        "score": 28.75,
+        "ratio": 313.2
+      },
+      {
+        "word": "patrioten",
+        "count": 5,
+        "score": 25.14,
+        "ratio": 151.5
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 106,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
     "vsParty": 0.16,
     "vsParliament": 0.18
   },
@@ -117,15 +183,15 @@
     "question": "Welches Wort nutzt Philipp Amthor häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesellschaft",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Kinder",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
-        "text": "Gesetz",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
@@ -133,8 +199,8 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Brieftasche\" nutzt Philipp Amthor 255.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "314.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Brieftasche\" nutzt Philipp Amthor 255.0× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "313.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -243,11 +309,11 @@
           "count": 1
         },
         {
-          "word": "unternehmen",
+          "word": "werk",
           "count": 1
         },
         {
-          "word": "betrieb",
+          "word": "unternehmen",
           "count": 1
         }
       ],
@@ -255,6 +321,10 @@
         {
           "word": "kinder",
           "count": 2
+        },
+        {
+          "word": "familien",
+          "count": 1
         },
         {
           "word": "bürgergeld",
@@ -267,23 +337,19 @@
         {
           "word": "familie",
           "count": 1
-        },
-        {
-          "word": "jugend",
-          "count": 1
         }
       ],
       "europa": [
-        {
-          "word": "außenpolitik",
-          "count": 2
-        },
         {
           "word": "kreml",
           "count": 2
         },
         {
           "word": "putin",
+          "count": 2
+        },
+        {
+          "word": "außenpolitik",
           "count": 2
         },
         {
@@ -307,11 +373,11 @@
       ],
       "bildung": [
         {
-          "word": "bildung",
+          "word": "schulen",
           "count": 1
         },
         {
-          "word": "schulen",
+          "word": "bildung",
           "count": 1
         }
       ],

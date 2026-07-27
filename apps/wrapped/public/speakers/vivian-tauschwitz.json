@@ -11,23 +11,23 @@
   "minWords": 310,
   "maxWords": 834,
   "rankings": {
-    "speechRank": 545,
-    "wordsRank": 494,
-    "partySpeechRank": 176,
-    "partyWordsRank": 161,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 12.8,
-    "verbosityRank": 34,
-    "verbosityTotal": 579,
+    "speechRank": 540,
+    "wordsRank": 495,
+    "partySpeechRank": 173,
+    "partyWordsRank": 165,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 13.7,
+    "verbosityRank": 35,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 13,
-    "longestSpeechRank": 201
+    "longestSpeechRank": 200
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 4,
     "interrupterRank": null,
-    "interruptedRank": 560
+    "interruptedRank": 558
   },
   "words": {
     "topWords": [
@@ -36,11 +36,11 @@
         "count": 18
       },
       {
-        "word": "bundeswehr",
+        "word": "soldaten",
         "count": 17
       },
       {
-        "word": "soldaten",
+        "word": "bundeswehr",
         "count": 17
       },
       {
@@ -52,11 +52,11 @@
         "count": 9
       },
       {
-        "word": "deutschland",
+        "word": "dienst",
         "count": 8
       },
       {
-        "word": "dienst",
+        "word": "deutschland",
         "count": 8
       },
       {
@@ -66,52 +66,114 @@
       {
         "word": "infrastruktur",
         "count": 7
-      },
-      {
-        "word": "risiken",
-        "count": 6
       }
     ],
     "signatureWords": [
       {
         "word": "veteranen",
         "count": 9,
-        "ratioParty": 997.9,
-        "ratioBundestag": 472.1
+        "ratioParty": 996.3,
+        "ratioBundestag": 470.4
       },
       {
         "word": "veteranentag",
         "count": 5,
-        "ratioParty": 369.6,
-        "ratioBundestag": 220.0
+        "ratioParty": 369.0,
+        "ratioBundestag": 219.2
       },
       {
         "word": "kasernen",
         "count": 6,
-        "ratioParty": 221.8,
-        "ratioBundestag": 233.8
+        "ratioParty": 241.5,
+        "ratioBundestag": 254.8
       },
       {
         "word": "soldatinnen",
         "count": 18,
-        "ratioParty": 37.5,
-        "ratioBundestag": 43.5
+        "ratioParty": 42.6,
+        "ratioBundestag": 48.0
       },
       {
         "word": "soldaten",
         "count": 17,
-        "ratioParty": 26.7,
-        "ratioBundestag": 24.4
+        "ratioParty": 29.6,
+        "ratioBundestag": 26.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "soldatinnen",
+        "count": 18,
+        "score": 67.95,
+        "ratio": 42.6
+      },
+      {
+        "word": "veteranen",
+        "count": 9,
+        "score": 62.15,
+        "ratio": 996.3
+      },
+      {
+        "word": "soldaten",
+        "count": 17,
+        "score": 58.16,
+        "ratio": 29.6
+      },
+      {
+        "word": "kasernen",
+        "count": 6,
+        "score": 32.95,
+        "ratio": 241.5
+      },
+      {
+        "word": "veteranentag",
+        "count": 5,
+        "score": 29.57,
+        "ratio": 369.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "soldatinnen",
+        "count": 18,
+        "score": 70.05,
+        "ratio": 48.0
+      },
+      {
+        "word": "soldaten",
+        "count": 17,
+        "score": 56.34,
+        "ratio": 26.5
+      },
+      {
+        "word": "veteranen",
+        "count": 9,
+        "score": 55.4,
+        "ratio": 470.4
+      },
+      {
+        "word": "kasernen",
+        "count": 6,
+        "score": 33.27,
+        "ratio": 254.8
+      },
+      {
+        "word": "veteranentag",
+        "count": 5,
+        "score": 26.97,
+        "ratio": 219.2
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 642,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 1.0,
-    "vsParliament": 1.1
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.98,
+    "vsParliament": 1.09
   },
   "funFacts": [
     {
@@ -129,24 +191,24 @@
     "question": "Welches Wort nutzt Vivian Tauschwitz häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Rente",
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Familie",
         "isCorrect": false
       },
       {
         "text": "Veteranen",
         "isCorrect": true
-      },
-      {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Veteranen\" nutzt Vivian Tauschwitz 997.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "472.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Veteranen\" nutzt Vivian Tauschwitz 996.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "470.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -265,10 +327,6 @@
       ],
       "soziales": [
         {
-          "word": "sozialstaat",
-          "count": 2
-        },
-        {
           "word": "familie",
           "count": 2
         },
@@ -277,21 +335,25 @@
           "count": 2
         },
         {
+          "word": "sozialstaat",
+          "count": 2
+        },
+        {
           "word": "rente",
           "count": 1
         },
         {
-          "word": "kind",
+          "word": "chancengleichheit",
           "count": 1
         }
       ],
       "sicherheit": [
         {
-          "word": "bundeswehr",
+          "word": "soldaten",
           "count": 17
         },
         {
-          "word": "soldaten",
+          "word": "bundeswehr",
           "count": 17
         },
         {
@@ -333,11 +395,11 @@
       ],
       "digital": [
         {
-          "word": "digitalisierung",
+          "word": "netzwerk",
           "count": 1
         },
         {
-          "word": "netzwerk",
+          "word": "digitalisierung",
           "count": 1
         }
       ],

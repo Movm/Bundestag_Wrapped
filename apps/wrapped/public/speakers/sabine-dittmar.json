@@ -11,23 +11,23 @@
   "minWords": 35,
   "maxWords": 583,
   "rankings": {
-    "speechRank": 444,
-    "wordsRank": 467,
-    "partySpeechRank": 81,
-    "partyWordsRank": 91,
+    "speechRank": 457,
+    "wordsRank": 466,
+    "partySpeechRank": 83,
+    "partyWordsRank": 89,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 29.0,
-    "verbosityRank": 362,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 80,
-    "longestSpeechRank": 511
+    "totalSpeakers": 626,
+    "percentile": 27.0,
+    "verbosityRank": 360,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 78,
+    "longestSpeechRank": 514
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 4,
     "interrupterRank": null,
-    "interruptedRank": 558
+    "interruptedRank": 562
   },
   "words": {
     "topWords": [
@@ -73,46 +73,126 @@
         "word": "wehrpflicht",
         "count": 6,
         "ratioParty": 105.1,
-        "ratioBundestag": 44.0
+        "ratioBundestag": 43.8
       },
       {
         "word": "alter",
         "count": 7,
         "ratioParty": 32.7,
-        "ratioBundestag": 31.2
+        "ratioBundestag": 31.4
       },
       {
         "word": "wehrdienst",
         "count": 5,
-        "ratioParty": 30.5,
-        "ratioBundestag": 44.6
+        "ratioParty": 29.8,
+        "ratioBundestag": 43.9
       },
       {
         "word": "pflege",
         "count": 9,
         "ratioParty": 26.3,
-        "ratioBundestag": 21.8
+        "ratioBundestag": 21.7
       },
       {
         "word": "bericht",
         "count": 6,
-        "ratioParty": 24.4,
-        "ratioBundestag": 18.9
+        "ratioParty": 22.7,
+        "ratioBundestag": 19.3
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "pflege",
+        "count": 9,
+        "score": 29.76,
+        "ratio": 26.3
+      },
+      {
+        "word": "wehrpflicht",
+        "count": 6,
+        "score": 27.99,
+        "ratio": 105.1
+      },
+      {
+        "word": "alter",
+        "count": 7,
+        "score": 24.62,
+        "ratio": 32.7
+      },
+      {
+        "word": "bericht",
+        "count": 6,
+        "score": 18.99,
+        "ratio": 22.7
+      },
+      {
+        "word": "wehrdienst",
+        "count": 5,
+        "score": 17.14,
+        "ratio": 29.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "pflege",
+        "count": 9,
+        "score": 28.1,
+        "ratio": 21.7
+      },
+      {
+        "word": "alter",
+        "count": 7,
+        "score": 24.35,
+        "ratio": 31.4
+      },
+      {
+        "word": "wehrpflicht",
+        "count": 6,
+        "score": 22.81,
+        "ratio": 43.8
+      },
+      {
+        "word": "wehrdienst",
+        "count": 5,
+        "score": 19.02,
+        "ratio": 43.9
+      },
+      {
+        "word": "bericht",
+        "count": 6,
+        "score": 18.06,
+        "ratio": 19.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "entscheidend",
         "count": 4,
-        "ratioParty": 8.3,
-        "ratioBundestag": 11.1
+        "ratioParty": 8.6,
+        "ratioBundestag": 11.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 9.05,
+        "ratio": 8.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 10.01,
+        "ratio": 11.2
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 404,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
     "vsParty": 0.65,
     "vsParliament": 0.69
   },
@@ -132,30 +212,30 @@
     "question": "Welches Wort nutzt Sabine Dittmar häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
         "text": "Wehrpflicht",
         "isCorrect": true
       },
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
-        "isCorrect": false
-      },
-      {
-        "text": "Reform",
+        "text": "Zukunft",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Wehrpflicht\" nutzt Sabine Dittmar 105.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "44.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "43.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Sabine Dittmar häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Sozial",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
@@ -163,16 +243,16 @@
         "isCorrect": true
       },
       {
-        "text": "Erfolgreich",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Neu",
+        "text": "Sicher",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Sabine Dittmar 8.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "11.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Entscheidend\" nutzt Sabine Dittmar 8.6× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "11.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐝",
@@ -272,11 +352,11 @@
           "count": 1
         },
         {
-          "word": "wirtschaft",
+          "word": "unternehmen",
           "count": 1
         },
         {
-          "word": "unternehmen",
+          "word": "wirtschaft",
           "count": 1
         },
         {
@@ -334,11 +414,11 @@
           "count": 1
         },
         {
-          "word": "kliniken",
+          "word": "ärzte",
           "count": 1
         },
         {
-          "word": "ärzte",
+          "word": "kliniken",
           "count": 1
         }
       ],
@@ -404,11 +484,11 @@
       ],
       "arbeit": [
         {
-          "word": "einkommen",
+          "word": "vereinbarkeit",
           "count": 1
         },
         {
-          "word": "vereinbarkeit",
+          "word": "einkommen",
           "count": 1
         }
       ],

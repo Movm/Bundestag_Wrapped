@@ -3,44 +3,60 @@
   "party": "CDU/CSU",
   "slug": "reinhard-brandl",
   "academicTitle": "Dr",
-  "speeches": 1,
+  "speeches": 3,
   "wortbeitraege": 0,
   "befragungResponses": 0,
-  "totalWords": 248,
-  "avgWords": 248,
-  "minWords": 248,
-  "maxWords": 248,
+  "totalWords": 614,
+  "avgWords": 205,
+  "minWords": 74,
+  "maxWords": 292,
   "rankings": {
-    "speechRank": 616,
-    "wordsRank": 624,
-    "partySpeechRank": 205,
-    "partyWordsRank": 210,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 1.4,
-    "verbosityRank": null,
-    "verbosityTotal": null,
-    "partyVerbosityRank": null,
+    "speechRank": 574,
+    "wordsRank": 613,
+    "partySpeechRank": 188,
+    "partyWordsRank": 206,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 8.3,
+    "verbosityRank": 555,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 175,
     "longestSpeechRank": 621
   },
   "drama": {
-    "interruptionsGiven": 12,
-    "interruptionsReceived": 7,
-    "interrupterRank": 259,
-    "interruptedRank": 516
+    "interruptionsGiven": 13,
+    "interruptionsReceived": 11,
+    "interrupterRank": 248,
+    "interruptedRank": 459
   },
   "words": {
     "topWords": [
+      {
+        "word": "bundestag",
+        "count": 4
+      },
+      {
+        "word": "deutschland",
+        "count": 4
+      },
+      {
+        "word": "land",
+        "count": 4
+      },
       {
         "word": "woche",
         "count": 3
       },
       {
-        "word": "bundestag",
+        "word": "funktioniert",
         "count": 3
       },
       {
-        "word": "funktioniert",
+        "word": "menschen",
+        "count": 3
+      },
+      {
+        "word": "akzeptanz",
         "count": 3
       },
       {
@@ -54,44 +70,32 @@
       {
         "word": "demokratie",
         "count": 2
-      },
-      {
-        "word": "deutschland",
-        "count": 2
-      },
-      {
-        "word": "genauso",
-        "count": 2
-      },
-      {
-        "word": "würden",
-        "count": 2
-      },
-      {
-        "word": "schreien",
-        "count": 2
       }
     ],
     "signatureWords": [],
-    "signatureAdjectives": []
+    "signatureWordsParty": [],
+    "signatureWordsBundestag": [],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
-    "speakerAvgWords": 248,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.38,
-    "vsParliament": 0.42
+    "speakerAvgWords": 205,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.31,
+    "vsParliament": 0.35
   },
   "funFacts": [
     {
       "emoji": "🎤",
       "label": "Reden gehalten",
-      "value": "1"
+      "value": "3"
     },
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "12"
+      "value": "13"
     }
   ],
   "signatureQuiz": null,
@@ -109,7 +113,7 @@
         "title": "Wendiger Optimist",
         "reason": "Mit positivem Blick reagierst du schnell auf neue Themen.",
         "id": "hase",
-        "score": 0.575
+        "score": 0.725
       },
       {
         "emoji": "🦫",
@@ -117,7 +121,7 @@
         "title": "Konstruktiver Brückenbauer",
         "reason": "Du baust Brücken zwischen Positionen – kooperativ und lösungsorientiert.",
         "id": "biber",
-        "score": 0.46
+        "score": 0.59
       }
     ]
   },
@@ -126,36 +130,36 @@
       "affirmative": 100.0,
       "aggression": 0.0,
       "labeling": 0.0,
-      "solution_focus": 0.0,
+      "solution_focus": 50.0,
       "collaboration": 100.0,
       "demand_intensity": 0.0,
       "acknowledgment": 0.0,
-      "authority": 0.0,
+      "authority": 71.4,
       "future_orientation": 100.0,
-      "emotional_intensity": 50.0,
-      "inclusivity": 33.3,
+      "emotional_intensity": 33.3,
+      "inclusivity": 58.3,
       "discriminatory": 0.0
     },
-    "confidence": "low",
+    "confidence": "sufficient",
     "sampleSize": {
-      "speeches": 1,
-      "words": 152,
+      "speeches": 3,
+      "words": 383,
       "adjectives": 1,
-      "verbs": 3
+      "verbs": 4
     }
   },
   "topics": {
     "scores": {
       "migration": 0.0,
       "klima": 0.0,
-      "wirtschaft": 0.0,
-      "soziales": 0.0,
+      "wirtschaft": 2.61,
+      "soziales": 2.61,
       "sicherheit": 0.0,
-      "gesundheit": 0.0,
+      "gesundheit": 2.61,
       "europa": 0.0,
       "digital": 0.0,
       "bildung": 0.0,
-      "finanzen": 13.16,
+      "finanzen": 13.05,
       "justiz": 0.0,
       "arbeit": 0.0,
       "mobilitaet": 0.0
@@ -163,15 +167,56 @@
     "topTopics": [
       {
         "topic": "finanzen",
-        "score": 13.16,
+        "score": 13.05,
         "rank": 1
+      },
+      {
+        "topic": "wirtschaft",
+        "score": 2.61,
+        "rank": 2
+      },
+      {
+        "topic": "soziales",
+        "score": 2.61,
+        "rank": 3
+      },
+      {
+        "topic": "gesundheit",
+        "score": 2.61,
+        "rank": 4
       }
     ],
     "topicWords": {
+      "wirtschaft": [
+        {
+          "word": "wettbewerbsfähigkeit",
+          "count": 1
+        }
+      ],
+      "soziales": [
+        {
+          "word": "bürgergeld",
+          "count": 1
+        }
+      ],
+      "gesundheit": [
+        {
+          "word": "gesundheitsreform",
+          "count": 1
+        }
+      ],
       "finanzen": [
         {
           "word": "kosten",
           "count": 2
+        },
+        {
+          "word": "haushalt",
+          "count": 2
+        },
+        {
+          "word": "subventionen",
+          "count": 1
         }
       ]
     }

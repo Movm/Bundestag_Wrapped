@@ -11,23 +11,23 @@
   "minWords": 13,
   "maxWords": 581,
   "rankings": {
-    "speechRank": 586,
+    "speechRank": 582,
     "wordsRank": 569,
-    "partySpeechRank": 106,
-    "partyWordsRank": 103,
+    "partySpeechRank": 105,
+    "partyWordsRank": 104,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 6.2,
+    "totalSpeakers": 626,
+    "percentile": 7.0,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 514
+    "longestSpeechRank": 516
   },
   "drama": {
-    "interruptionsGiven": 3,
+    "interruptionsGiven": 6,
     "interruptionsReceived": 7,
-    "interrupterRank": 384,
-    "interruptedRank": 512
+    "interrupterRank": 339,
+    "interruptedRank": 503
   },
   "words": {
     "topWords": [
@@ -68,7 +68,7 @@
         "count": 5
       },
       {
-        "word": "europäischen",
+        "word": "deutschland",
         "count": 4
       }
     ],
@@ -76,26 +76,26 @@
       {
         "word": "maßnahme",
         "count": 5,
-        "ratioParty": 36.6,
-        "ratioBundestag": 42.8
+        "ratioParty": 38.2,
+        "ratioBundestag": 42.7
       },
       {
         "word": "entlastung",
         "count": 6,
-        "ratioParty": 28.9,
-        "ratioBundestag": 21.7
+        "ratioParty": 29.4,
+        "ratioBundestag": 22.4
       },
       {
         "word": "gesetzentwurf",
         "count": 6,
-        "ratioParty": 10.7,
+        "ratioParty": 10.2,
         "ratioBundestag": 8.5
       },
       {
         "word": "bürgerinnen",
         "count": 6,
-        "ratioParty": 8.2,
-        "ratioBundestag": 12.8
+        "ratioParty": 8.1,
+        "ratioBundestag": 12.6
       },
       {
         "word": "bürger",
@@ -104,12 +104,78 @@
         "ratioBundestag": 4.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "entlastung",
+        "count": 6,
+        "score": 20.49,
+        "ratio": 29.4
+      },
+      {
+        "word": "maßnahme",
+        "count": 5,
+        "score": 18.34,
+        "ratio": 38.2
+      },
+      {
+        "word": "gesetzentwurf",
+        "count": 6,
+        "score": 14.5,
+        "ratio": 10.2
+      },
+      {
+        "word": "bürgerinnen",
+        "count": 6,
+        "score": 13.25,
+        "ratio": 8.1
+      },
+      {
+        "word": "bürger",
+        "count": 5,
+        "score": 10.52,
+        "ratio": 7.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "entlastung",
+        "count": 6,
+        "score": 18.92,
+        "ratio": 22.4
+      },
+      {
+        "word": "maßnahme",
+        "count": 5,
+        "score": 18.89,
+        "ratio": 42.7
+      },
+      {
+        "word": "bürgerinnen",
+        "count": 6,
+        "score": 15.66,
+        "ratio": 12.6
+      },
+      {
+        "word": "gesetzentwurf",
+        "count": 6,
+        "score": 13.51,
+        "ratio": 8.5
+      },
+      {
+        "word": "bürger",
+        "count": 5,
+        "score": 8.43,
+        "ratio": 4.4
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 289,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
     "vsParty": 0.47,
     "vsParliament": 0.49
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Michael Schrodi häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
         "text": "Maßnahme",
         "isCorrect": true
-      },
-      {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Maßnahme\" nutzt Michael Schrodi 36.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "42.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Maßnahme\" nutzt Michael Schrodi 38.2× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "42.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -277,15 +343,15 @@
           "count": 6
         },
         {
-          "word": "investitionen",
-          "count": 2
-        },
-        {
           "word": "steuersenkung",
           "count": 2
         },
         {
           "word": "finanzierung",
+          "count": 2
+        },
+        {
+          "word": "investitionen",
           "count": 2
         },
         {

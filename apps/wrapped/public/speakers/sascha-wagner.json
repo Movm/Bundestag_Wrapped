@@ -11,23 +11,23 @@
   "minWords": 313,
   "maxWords": 839,
   "rankings": {
-    "speechRank": 39,
-    "wordsRank": 94,
+    "speechRank": 36,
+    "wordsRank": 95,
     "partySpeechRank": 5,
     "partyWordsRank": 10,
     "partySize": 63,
-    "totalSpeakers": 625,
-    "percentile": 93.8,
-    "verbosityRank": 267,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 94.2,
+    "verbosityRank": 274,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 17,
     "longestSpeechRank": 191
   },
   "drama": {
-    "interruptionsGiven": 39,
+    "interruptionsGiven": 30,
     "interruptionsReceived": 22,
-    "interrupterRank": 132,
-    "interruptedRank": 309
+    "interrupterRank": 167,
+    "interruptedRank": 310
   },
   "words": {
     "topWords": [
@@ -60,73 +60,201 @@
       {
         "word": "satte",
         "count": 5,
-        "ratioParty": 185.1,
-        "ratioBundestag": 88.0
+        "ratioParty": 184.3,
+        "ratioBundestag": 87.7
       },
       {
         "word": "ländliche",
         "count": 5,
-        "ratioParty": 61.7,
-        "ratioBundestag": 33.6
+        "ratioParty": 61.4,
+        "ratioBundestag": 33.5
       },
       {
         "word": "gleichwertige",
         "count": 6,
-        "ratioParty": 44.4,
-        "ratioBundestag": 51.6
+        "ratioParty": 36.9,
+        "ratioBundestag": 49.1
       },
       {
         "word": "kernhaushalt",
         "count": 5,
-        "ratioParty": 37.0,
-        "ratioBundestag": 14.2
+        "ratioParty": 36.9,
+        "ratioBundestag": 14.3
       },
       {
         "word": "lebensverhältnisse",
         "count": 9,
-        "ratioParty": 33.3,
-        "ratioBundestag": 46.2
+        "ratioParty": 33.2,
+        "ratioBundestag": 46.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "lebensverhältnisse",
+        "count": 9,
+        "score": 31.79,
+        "ratio": 33.2
+      },
+      {
+        "word": "satte",
+        "count": 5,
+        "score": 26.11,
+        "ratio": 184.3
+      },
+      {
+        "word": "gleichwertige",
+        "count": 6,
+        "score": 21.81,
+        "ratio": 36.9
+      },
+      {
+        "word": "ländliche",
+        "count": 5,
+        "score": 20.67,
+        "ratio": 61.4
+      },
+      {
+        "word": "kernhaushalt",
+        "count": 5,
+        "score": 18.17,
+        "ratio": 36.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "lebensverhältnisse",
+        "count": 9,
+        "score": 34.78,
+        "ratio": 46.7
+      },
+      {
+        "word": "gleichwertige",
+        "count": 6,
+        "score": 23.48,
+        "ratio": 49.1
+      },
+      {
+        "word": "satte",
+        "count": 5,
+        "score": 22.43,
+        "ratio": 87.7
+      },
+      {
+        "word": "ländliche",
+        "count": 5,
+        "score": 17.7,
+        "ratio": 33.5
+      },
+      {
+        "word": "kernhaushalt",
+        "count": 5,
+        "score": 13.64,
+        "ratio": 14.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "solide",
         "count": 3,
-        "ratioParty": 37.0,
-        "ratioBundestag": 8.0
-      },
-      {
-        "word": "stark",
-        "count": 4,
-        "ratioParty": 4.1,
-        "ratioBundestag": 2.1
+        "ratioParty": 36.9,
+        "ratioBundestag": 7.8
       },
       {
         "word": "leistungsfähig",
         "count": 3,
         "ratioParty": 3.9,
-        "ratioBundestag": 31.7
+        "ratioBundestag": 34.5
+      },
+      {
+        "word": "stark",
+        "count": 4,
+        "ratioParty": 3.8,
+        "ratioBundestag": 2.0
       },
       {
         "word": "gerecht",
         "count": 7,
-        "ratioParty": 3.2,
-        "ratioBundestag": 3.9
+        "ratioParty": 3.4,
+        "ratioBundestag": 4.0
       },
       {
         "word": "sozial",
         "count": 6,
-        "ratioParty": 2.4,
-        "ratioBundestag": 6.2
+        "ratioParty": 2.5,
+        "ratioBundestag": 6.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "solide",
+        "count": 3,
+        "score": 10.9,
+        "ratio": 36.9
+      },
+      {
+        "word": "gerecht",
+        "count": 7,
+        "score": 10.37,
+        "ratio": 3.4
+      },
+      {
+        "word": "sozial",
+        "count": 6,
+        "score": 7.52,
+        "ratio": 2.5
+      },
+      {
+        "word": "stark",
+        "count": 4,
+        "score": 6.27,
+        "ratio": 3.8
+      },
+      {
+        "word": "leistungsfähig",
+        "count": 3,
+        "score": 4.77,
+        "ratio": 3.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sozial",
+        "count": 6,
+        "score": 12.09,
+        "ratio": 6.5
+      },
+      {
+        "word": "gerecht",
+        "count": 7,
+        "score": 11.27,
+        "ratio": 4.0
+      },
+      {
+        "word": "leistungsfähig",
+        "count": 3,
+        "score": 10.71,
+        "ratio": 34.5
+      },
+      {
+        "word": "solide",
+        "count": 3,
+        "score": 6.52,
+        "ratio": 7.8
+      },
+      {
+        "word": "stark",
+        "count": 4,
+        "score": 4.39,
+        "ratio": 2.0
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 442,
     "partyAvgWords": 500,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 587,
     "vsParty": 0.88,
-    "vsParliament": 0.76
+    "vsParliament": 0.75
   },
   "funFacts": [
     {
@@ -142,7 +270,7 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "39"
+      "value": "30"
     },
     {
       "emoji": "🥇",
@@ -152,54 +280,54 @@
     {
       "emoji": "📊",
       "label": "Top-Redner",
-      "value": "Top 7%"
+      "value": "Top 6%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Sascha Wagner häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
         "text": "Satte",
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Satte\" nutzt Sascha Wagner 185.1× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "88.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Satte\" nutzt Sascha Wagner 184.3× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "87.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Sascha Wagner häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Jung",
-        "isCorrect": false
+        "text": "Solide",
+        "isCorrect": true
       },
       {
         "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Falsch",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Solide",
-        "isCorrect": true
+        "text": "Europäisch",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Solide\" nutzt Sascha Wagner 37.0× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "8.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Solide\" nutzt Sascha Wagner 36.9× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "7.8× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐴",
@@ -309,25 +437,25 @@
           "count": 3
         },
         {
-          "word": "klimaanpassung",
-          "count": 2
-        },
-        {
           "word": "klimaneutralität",
           "count": 2
         },
         {
-          "word": "biodiversität",
+          "word": "klimawandel",
+          "count": 2
+        },
+        {
+          "word": "umweltschutz",
           "count": 2
         }
       ],
       "wirtschaft": [
         {
-          "word": "markt",
+          "word": "wirtschaft",
           "count": 3
         },
         {
-          "word": "wirtschaft",
+          "word": "markt",
           "count": 3
         },
         {
@@ -383,17 +511,17 @@
           "count": 1
         },
         {
-          "word": "bundeswehr",
+          "word": "verteidigungsetat",
           "count": 1
         }
       ],
       "gesundheit": [
         {
-          "word": "krankenhäuser",
+          "word": "prävention",
           "count": 2
         },
         {
-          "word": "prävention",
+          "word": "krankenhäuser",
           "count": 2
         },
         {
@@ -401,11 +529,11 @@
           "count": 2
         },
         {
-          "word": "therapie",
+          "word": "ärzte",
           "count": 1
         },
         {
-          "word": "medikamente",
+          "word": "therapie",
           "count": 1
         }
       ],
@@ -503,19 +631,19 @@
           "count": 5
         },
         {
-          "word": "urteile",
-          "count": 2
-        },
-        {
-          "word": "rechtsstaat",
-          "count": 2
-        },
-        {
           "word": "gerichte",
           "count": 2
         },
         {
           "word": "menschenrechte",
+          "count": 2
+        },
+        {
+          "word": "urteile",
+          "count": 2
+        },
+        {
+          "word": "rechtsstaat",
           "count": 2
         }
       ],

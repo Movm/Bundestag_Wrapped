@@ -11,23 +11,23 @@
   "minWords": 81,
   "maxWords": 624,
   "rankings": {
-    "speechRank": 354,
-    "wordsRank": 395,
-    "partySpeechRank": 83,
+    "speechRank": 346,
+    "wordsRank": 388,
+    "partySpeechRank": 81,
     "partyWordsRank": 88,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 43.4,
-    "verbosityRank": 364,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 94,
-    "longestSpeechRank": 470
+    "totalSpeakers": 626,
+    "percentile": 44.7,
+    "verbosityRank": 362,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 93,
+    "longestSpeechRank": 471
   },
   "drama": {
     "interruptionsGiven": 8,
     "interruptionsReceived": 38,
-    "interrupterRank": 301,
-    "interruptedRank": 175
+    "interrupterRank": 295,
+    "interruptedRank": 177
   },
   "words": {
     "topWords": [
@@ -76,40 +76,106 @@
       {
         "word": "bitcoin",
         "count": 10,
-        "ratioParty": 1994.1,
-        "ratioBundestag": 407.3
+        "ratioParty": 1981.7,
+        "ratioBundestag": 405.8
       },
       {
         "word": "bepreisung",
         "count": 5,
-        "ratioParty": 17.8,
-        "ratioBundestag": 33.4
+        "ratioParty": 17.7,
+        "ratioBundestag": 33.1
       },
       {
         "word": "sozialismus",
         "count": 8,
-        "ratioParty": 16.1,
-        "ratioBundestag": 44.0
+        "ratioParty": 16.0,
+        "ratioBundestag": 43.8
       },
       {
         "word": "aufmerksamkeit",
         "count": 5,
-        "ratioParty": 10.7,
-        "ratioBundestag": 8.7
+        "ratioParty": 10.5,
+        "ratioBundestag": 8.8
       },
       {
-        "word": "vernunft",
+        "word": "planwirtschaft",
         "count": 5,
-        "ratioParty": 8.6,
-        "ratioBundestag": 19.3
+        "ratioParty": 9.1,
+        "ratioBundestag": 31.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bitcoin",
+        "count": 10,
+        "score": 75.92,
+        "ratio": 1981.7
+      },
+      {
+        "word": "sozialismus",
+        "count": 8,
+        "score": 22.67,
+        "ratio": 16.0
+      },
+      {
+        "word": "bepreisung",
+        "count": 5,
+        "score": 14.64,
+        "ratio": 17.7
+      },
+      {
+        "word": "aufmerksamkeit",
+        "count": 5,
+        "score": 12.21,
+        "ratio": 10.5
+      },
+      {
+        "word": "planwirtschaft",
+        "count": 5,
+        "score": 11.56,
+        "ratio": 9.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bitcoin",
+        "count": 10,
+        "score": 60.08,
+        "ratio": 405.8
+      },
+      {
+        "word": "sozialismus",
+        "count": 8,
+        "score": 30.42,
+        "ratio": 43.8
+      },
+      {
+        "word": "bepreisung",
+        "count": 5,
+        "score": 17.65,
+        "ratio": 33.1
+      },
+      {
+        "word": "planwirtschaft",
+        "count": 5,
+        "score": 17.33,
+        "ratio": 31.0
+      },
+      {
+        "word": "aufmerksamkeit",
+        "count": 5,
+        "score": 11.41,
+        "ratio": 8.8
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 403,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 560,
+    "parliamentAvgWords": 587,
     "vsParty": 0.72,
     "vsParliament": 0.69
   },
@@ -129,7 +195,11 @@
     "question": "Welches Wort nutzt Dirk Brandes häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kanzler",
+        "text": "Bitcoin",
+        "isCorrect": true
+      },
+      {
+        "text": "Energie",
         "isCorrect": false
       },
       {
@@ -137,16 +207,12 @@
         "isCorrect": false
       },
       {
-        "text": "Opposition",
+        "text": "Koalition",
         "isCorrect": false
-      },
-      {
-        "text": "Bitcoin",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Bitcoin\" nutzt Dirk Brandes 1994.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "407.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bitcoin\" nutzt Dirk Brandes 1981.7× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "405.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -227,15 +293,15 @@
           "count": 2
         },
         {
-          "word": "klimapolitik",
-          "count": 2
-        },
-        {
           "word": "kernenergie",
           "count": 2
         },
         {
-          "word": "klimawandel",
+          "word": "klimapolitik",
+          "count": 2
+        },
+        {
+          "word": "wärmepumpe",
           "count": 1
         }
       ],
@@ -245,11 +311,11 @@
           "count": 7
         },
         {
-          "word": "unternehmen",
+          "word": "industrie",
           "count": 4
         },
         {
-          "word": "industrie",
+          "word": "unternehmen",
           "count": 4
         },
         {
@@ -267,7 +333,7 @@
           "count": 2
         },
         {
-          "word": "familie",
+          "word": "familien",
           "count": 1
         },
         {
@@ -285,11 +351,15 @@
       ],
       "sicherheit": [
         {
-          "word": "betrug",
+          "word": "überwachung",
           "count": 1
         },
         {
-          "word": "überwachung",
+          "word": "angriff",
+          "count": 1
+        },
+        {
+          "word": "betrug",
           "count": 1
         },
         {
@@ -298,10 +368,6 @@
         },
         {
           "word": "korruption",
-          "count": 1
-        },
-        {
-          "word": "angriff",
           "count": 1
         }
       ],
@@ -329,7 +395,7 @@
           "count": 1
         },
         {
-          "word": "putin",
+          "word": "kooperation",
           "count": 1
         }
       ],
@@ -375,7 +441,7 @@
           "count": 3
         },
         {
-          "word": "etat",
+          "word": "haushaltsentwurf",
           "count": 2
         }
       ],

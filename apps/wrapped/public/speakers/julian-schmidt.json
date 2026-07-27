@@ -11,23 +11,23 @@
   "minWords": 257,
   "maxWords": 867,
   "rankings": {
-    "speechRank": 300,
-    "wordsRank": 314,
-    "partySpeechRank": 67,
-    "partyWordsRank": 68,
+    "speechRank": 308,
+    "wordsRank": 315,
+    "partySpeechRank": 70,
+    "partyWordsRank": 67,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 52.0,
-    "verbosityRank": 100,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 27,
-    "longestSpeechRank": 165
+    "totalSpeakers": 626,
+    "percentile": 50.8,
+    "verbosityRank": 105,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 30,
+    "longestSpeechRank": 164
   },
   "drama": {
     "interruptionsGiven": 4,
     "interruptionsReceived": 16,
     "interrupterRank": 357,
-    "interruptedRank": 368
+    "interruptedRank": 370
   },
   "words": {
     "topWords": [
@@ -72,49 +72,129 @@
       {
         "word": "tierhaltung",
         "count": 10,
-        "ratioParty": 545.7,
-        "ratioBundestag": 102.2
+        "ratioParty": 542.3,
+        "ratioBundestag": 100.5
       },
       {
         "word": "lebensmitteleinzelhandel",
         "count": 6,
-        "ratioParty": 491.1,
-        "ratioBundestag": 631.0
+        "ratioParty": 488.0,
+        "ratioBundestag": 628.7
       },
       {
         "word": "tierwohl",
         "count": 8,
-        "ratioParty": 436.5,
-        "ratioBundestag": 85.4
+        "ratioParty": 433.8,
+        "ratioBundestag": 87.6
       },
       {
         "word": "rainer",
         "count": 13,
-        "ratioParty": 141.9,
-        "ratioBundestag": 56.3
+        "ratioParty": 141.0,
+        "ratioBundestag": 54.5
       },
       {
-        "word": "landwirten",
-        "count": 9,
-        "ratioParty": 56.7,
-        "ratioBundestag": 69.0
+        "word": "umbau",
+        "count": 8,
+        "ratioParty": 62.0,
+        "ratioBundestag": 35.3
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "rainer",
+        "count": 13,
+        "score": 64.43,
+        "ratio": 141.0
+      },
+      {
+        "word": "tierhaltung",
+        "count": 10,
+        "score": 62.98,
+        "ratio": 542.3
+      },
+      {
+        "word": "tierwohl",
+        "count": 8,
+        "score": 48.6,
+        "ratio": 433.8
+      },
+      {
+        "word": "lebensmitteleinzelhandel",
+        "count": 6,
+        "score": 37.15,
+        "ratio": 488.0
+      },
+      {
+        "word": "umbau",
+        "count": 8,
+        "score": 33.15,
+        "ratio": 62.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "rainer",
+        "count": 13,
+        "score": 52.21,
+        "ratio": 54.5
+      },
+      {
+        "word": "tierhaltung",
+        "count": 10,
+        "score": 46.2,
+        "ratio": 100.5
+      },
+      {
+        "word": "lebensmitteleinzelhandel",
+        "count": 6,
+        "score": 38.67,
+        "ratio": 628.7
+      },
+      {
+        "word": "tierwohl",
+        "count": 8,
+        "score": 35.87,
+        "ratio": 87.6
+      },
+      {
+        "word": "umbau",
+        "count": 8,
+        "score": 28.73,
+        "ratio": 35.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "schlecht",
         "count": 5,
-        "ratioParty": 8.2,
+        "ratioParty": 7.8,
         "ratioBundestag": 10.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "schlecht",
+        "count": 5,
+        "score": 10.87,
+        "ratio": 7.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "schlecht",
+        "count": 5,
+        "score": 11.99,
+        "ratio": 10.0
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 541,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 560,
+    "parliamentAvgWords": 587,
     "vsParty": 0.97,
-    "vsParliament": 0.93
+    "vsParliament": 0.92
   },
   "funFacts": [
     {
@@ -132,46 +212,46 @@
     "question": "Welches Wort nutzt Julian Schmidt häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
         "text": "Tierhaltung",
         "isCorrect": true
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Opposition",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Tierhaltung\" nutzt Julian Schmidt 545.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "102.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Tierhaltung\" nutzt Julian Schmidt 542.3× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "100.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Julian Schmidt häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
         "text": "Schlecht",
         "isCorrect": true
       },
       {
-        "text": "Falsch",
+        "text": "Alt",
         "isCorrect": false
       },
       {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
+        "text": "Politisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schlecht\" nutzt Julian Schmidt 8.2× häufiger als der AfD-Durchschnitt.",
+    "explanationParty": "\"Schlecht\" nutzt Julian Schmidt 7.8× häufiger als der AfD-Durchschnitt.",
     "explanationBundestag": "10.0× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,

@@ -11,23 +11,23 @@
   "minWords": 245,
   "maxWords": 985,
   "rankings": {
-    "speechRank": 374,
-    "wordsRank": 171,
-    "partySpeechRank": 105,
-    "partyWordsRank": 51,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 40.2,
+    "speechRank": 362,
+    "wordsRank": 165,
+    "partySpeechRank": 98,
+    "partyWordsRank": 49,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 42.2,
     "verbosityRank": 31,
-    "verbosityTotal": 579,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 10,
     "longestSpeechRank": 88
   },
   "drama": {
-    "interruptionsGiven": 48,
+    "interruptionsGiven": 49,
     "interruptionsReceived": 15,
-    "interrupterRank": 107,
-    "interruptedRank": 393
+    "interrupterRank": 106,
+    "interruptedRank": 398
   },
   "words": {
     "topWords": [
@@ -64,54 +64,146 @@
       {
         "word": "gewaltschutzgesetz",
         "count": 6,
-        "ratioParty": 76.9,
-        "ratioBundestag": 76.9
+        "ratioParty": 76.8,
+        "ratioBundestag": 74.6
       },
       {
         "word": "rechtspolitik",
         "count": 7,
-        "ratioParty": 67.3,
-        "ratioBundestag": 66.4
+        "ratioParty": 67.2,
+        "ratioBundestag": 64.9
       },
       {
         "word": "fußfessel",
         "count": 12,
-        "ratioParty": 54.3,
-        "ratioBundestag": 48.7
+        "ratioParty": 54.2,
+        "ratioBundestag": 48.1
       },
       {
         "word": "häuslicher",
         "count": 6,
         "ratioParty": 31.8,
-        "ratioBundestag": 26.6
+        "ratioBundestag": 26.0
       },
       {
         "word": "mietpreisbremse",
         "count": 10,
-        "ratioParty": 26.1,
-        "ratioBundestag": 16.0
+        "ratioParty": 25.2,
+        "ratioBundestag": 15.6
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "fußfessel",
+        "count": 12,
+        "score": 48.13,
+        "ratio": 54.2
+      },
+      {
+        "word": "mietpreisbremse",
+        "count": 10,
+        "score": 32.66,
+        "ratio": 25.2
+      },
+      {
+        "word": "rechtspolitik",
+        "count": 7,
+        "score": 29.56,
+        "ratio": 67.2
+      },
+      {
+        "word": "gewaltschutzgesetz",
+        "count": 6,
+        "score": 26.12,
+        "ratio": 76.8
+      },
+      {
+        "word": "häuslicher",
+        "count": 6,
+        "score": 20.94,
+        "ratio": 31.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "fußfessel",
+        "count": 12,
+        "score": 46.73,
+        "ratio": 48.1
+      },
+      {
+        "word": "rechtspolitik",
+        "count": 7,
+        "score": 29.32,
+        "ratio": 64.9
+      },
+      {
+        "word": "mietpreisbremse",
+        "count": 10,
+        "score": 28.09,
+        "ratio": 15.6
+      },
+      {
+        "word": "gewaltschutzgesetz",
+        "count": 6,
+        "score": 25.95,
+        "ratio": 74.6
+      },
+      {
+        "word": "häuslicher",
+        "count": 6,
+        "score": 19.78,
+        "ratio": 26.0
       }
     ],
     "signatureAdjectives": [
       {
         "word": "rechts",
         "count": 7,
-        "ratioParty": 7.2,
+        "ratioParty": 7.0,
         "ratioBundestag": 6.7
       },
       {
         "word": "wirksam",
         "count": 3,
         "ratioParty": 3.7,
-        "ratioBundestag": 5.1
+        "ratioBundestag": 5.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "rechts",
+        "count": 7,
+        "score": 14.56,
+        "ratio": 7.0
+      },
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 4.64,
+        "ratio": 3.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "rechts",
+        "count": 7,
+        "score": 14.29,
+        "ratio": 6.7
+      },
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 5.38,
+        "ratio": 5.0
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 650,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 1.01,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 1.0,
     "vsParliament": 1.11
   },
   "funFacts": [
@@ -128,14 +220,18 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "48"
+      "value": "49"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Günter Krings häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Steuern",
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
@@ -143,16 +239,12 @@
         "isCorrect": true
       },
       {
-        "text": "Bildung",
-        "isCorrect": false
-      },
-      {
-        "text": "Politik",
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gewaltschutzgesetz\" nutzt Dr. Günter Krings 76.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "76.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Gewaltschutzgesetz\" nutzt Dr. Günter Krings 76.8× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "74.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Günter Krings häufiger als der Rest der CDU/CSU-Fraktion?",
@@ -162,19 +254,19 @@
         "isCorrect": false
       },
       {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
         "text": "Rechts",
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rechts\" nutzt Dr. Günter Krings 7.2× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationParty": "\"Rechts\" nutzt Dr. Günter Krings 7.0× häufiger als der CDU/CSU-Durchschnitt.",
     "explanationBundestag": "6.7× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -275,6 +367,10 @@
           "count": 7
         },
         {
+          "word": "zuwanderung",
+          "count": 4
+        },
+        {
           "word": "dublin",
           "count": 4
         },
@@ -284,10 +380,6 @@
         },
         {
           "word": "grenze",
-          "count": 4
-        },
-        {
-          "word": "zuwanderung",
           "count": 4
         }
       ],
@@ -305,11 +397,11 @@
           "count": 2
         },
         {
-          "word": "wachstum",
+          "word": "märkte",
           "count": 1
         },
         {
-          "word": "märkte",
+          "word": "wachstum",
           "count": 1
         }
       ],
@@ -385,7 +477,7 @@
           "count": 2
         },
         {
-          "word": "brüssel",
+          "word": "moskau",
           "count": 1
         }
       ],
@@ -457,11 +549,11 @@
           "count": 5
         },
         {
-          "word": "strafverfolgung",
+          "word": "richter",
           "count": 2
         },
         {
-          "word": "richter",
+          "word": "strafverfolgung",
           "count": 2
         }
       ],
@@ -473,11 +565,11 @@
       ],
       "mobilitaet": [
         {
-          "word": "straßenverkehr",
+          "word": "straßen",
           "count": 1
         },
         {
-          "word": "straßen",
+          "word": "straßenverkehr",
           "count": 1
         },
         {

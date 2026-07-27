@@ -6,28 +6,28 @@
   "speeches": 17,
   "wortbeitraege": 3,
   "befragungResponses": 0,
-  "totalWords": 9301,
-  "avgWords": 465,
+  "totalWords": 9350,
+  "avgWords": 468,
   "minWords": 11,
   "maxWords": 859,
   "rankings": {
-    "speechRank": 146,
-    "wordsRank": 165,
-    "partySpeechRank": 30,
-    "partyWordsRank": 48,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 76.6,
-    "verbosityRank": 222,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 78,
-    "longestSpeechRank": 173
+    "speechRank": 134,
+    "wordsRank": 157,
+    "partySpeechRank": 28,
+    "partyWordsRank": 45,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 78.6,
+    "verbosityRank": 221,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 79,
+    "longestSpeechRank": 172
   },
   "drama": {
     "interruptionsGiven": 1,
-    "interruptionsReceived": 45,
-    "interrupterRank": 456,
-    "interruptedRank": 137
+    "interruptionsReceived": 35,
+    "interrupterRank": 451,
+    "interruptedRank": 191
   },
   "words": {
     "topWords": [
@@ -40,77 +40,165 @@
         "count": 29
       },
       {
-        "word": "öffentlich",
-        "count": 22
-      },
-      {
-        "word": "rechtlichen",
-        "count": 18
-      },
-      {
         "word": "steuern",
         "count": 17
       },
       {
+        "word": "deutschland",
+        "count": 16
+      },
+      {
         "word": "diesen",
-        "count": 17
+        "count": 16
       },
       {
         "word": "würde",
-        "count": 17
+        "count": 16
       }
     ],
     "signatureWords": [
       {
         "word": "steuerberatung",
         "count": 6,
-        "ratioParty": 459.5,
-        "ratioBundestag": 257.7
+        "ratioParty": 457.8,
+        "ratioBundestag": 256.2
       },
       {
         "word": "prämie",
         "count": 9,
-        "ratioParty": 275.7,
-        "ratioBundestag": 141.7
+        "ratioParty": 274.7,
+        "ratioBundestag": 140.9
       },
       {
         "word": "grundfreibetrag",
         "count": 5,
-        "ratioParty": 191.5,
-        "ratioBundestag": 168.7
+        "ratioParty": 190.7,
+        "ratioBundestag": 213.5
+      },
+      {
+        "word": "steuersystem",
+        "count": 6,
+        "ratioParty": 130.8,
+        "ratioBundestag": 58.7
       },
       {
         "word": "transaktionen",
         "count": 5,
-        "ratioParty": 127.7,
-        "ratioBundestag": 168.7
+        "ratioParty": 127.2,
+        "ratioBundestag": 167.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "prämie",
+        "count": 9,
+        "score": 50.57,
+        "ratio": 274.7
       },
       {
-        "word": "rundfunks",
-        "count": 10,
-        "ratioParty": 127.7,
-        "ratioBundestag": 152.4
+        "word": "steuerberatung",
+        "count": 6,
+        "score": 36.77,
+        "ratio": 457.8
+      },
+      {
+        "word": "steuersystem",
+        "count": 6,
+        "score": 29.29,
+        "ratio": 130.8
+      },
+      {
+        "word": "grundfreibetrag",
+        "count": 5,
+        "score": 26.28,
+        "ratio": 190.7
+      },
+      {
+        "word": "transaktionen",
+        "count": 5,
+        "score": 24.27,
+        "ratio": 127.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "prämie",
+        "count": 9,
+        "score": 44.6,
+        "ratio": 140.9
+      },
+      {
+        "word": "steuerberatung",
+        "count": 6,
+        "score": 33.3,
+        "ratio": 256.2
+      },
+      {
+        "word": "grundfreibetrag",
+        "count": 5,
+        "score": 26.84,
+        "ratio": 213.5
+      },
+      {
+        "word": "transaktionen",
+        "count": 5,
+        "score": 25.64,
+        "ratio": 167.7
+      },
+      {
+        "word": "steuersystem",
+        "count": 6,
+        "score": 24.54,
+        "ratio": 58.7
       }
     ],
     "signatureAdjectives": [
       {
         "word": "gerecht",
         "count": 5,
-        "ratioParty": 3.9,
+        "ratioParty": 4.0,
         "ratioBundestag": 3.6
       },
       {
         "word": "falsch",
+        "count": 3,
+        "ratioParty": 2.0,
+        "ratioBundestag": 2.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "gerecht",
         "count": 5,
-        "ratioParty": 3.5,
-        "ratioBundestag": 3.4
+        "score": 8.05,
+        "ratio": 4.0
+      },
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 3.3,
+        "ratio": 2.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "gerecht",
+        "count": 5,
+        "score": 7.63,
+        "ratio": 3.6
+      },
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 3.3,
+        "ratio": 2.0
       }
     ]
   },
   "comparison": {
-    "speakerAvgWords": 465,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "speakerAvgWords": 468,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
     "vsParty": 0.72,
     "vsParliament": 0.8
   },
@@ -123,53 +211,53 @@
     {
       "emoji": "📝",
       "label": "Wörter gesprochen",
-      "value": "9.301"
+      "value": "9.350"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Matthias Hiller häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
         "text": "Steuerberatung",
         "isCorrect": true
       },
       {
-        "text": "Debatte",
+        "text": "Sicherheit",
         "isCorrect": false
       },
       {
-        "text": "Haushalt",
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Zukunft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Steuerberatung\" nutzt Dr. Matthias Hiller 459.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "257.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Steuerberatung\" nutzt Dr. Matthias Hiller 457.8× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "256.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Matthias Hiller häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
         "text": "Gerecht",
         "isCorrect": true
       },
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Stark",
+        "text": "Jung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gerecht\" nutzt Dr. Matthias Hiller 3.9× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationParty": "\"Gerecht\" nutzt Dr. Matthias Hiller 4.0× häufiger als der CDU/CSU-Durchschnitt.",
     "explanationBundestag": "3.6× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -199,23 +287,23 @@
   },
   "toneProfile": {
     "scores": {
-      "affirmative": 53.8,
+      "affirmative": 61.5,
       "aggression": 0.0,
       "labeling": 3.7,
-      "solution_focus": 94.2,
-      "collaboration": 75.0,
+      "solution_focus": 94.4,
+      "collaboration": 81.0,
       "demand_intensity": 6.0,
       "acknowledgment": 1.0,
-      "authority": 58.8,
-      "future_orientation": 89.1,
+      "authority": 63.4,
+      "future_orientation": 90.1,
       "emotional_intensity": 23.1,
-      "inclusivity": 63.5,
+      "inclusivity": 62.1,
       "discriminatory": 0.0
     },
     "confidence": "sufficient",
     "sampleSize": {
       "speeches": 20,
-      "words": 6092,
+      "words": 6105,
       "adjectives": 27,
       "verbs": 100
     }
@@ -224,42 +312,42 @@
     "scores": {
       "migration": 0.0,
       "klima": 0.16,
-      "wirtschaft": 12.15,
-      "soziales": 3.78,
-      "sicherheit": 0.66,
+      "wirtschaft": 12.12,
+      "soziales": 7.04,
+      "sicherheit": 0.49,
       "gesundheit": 1.64,
       "europa": 0.98,
-      "digital": 2.63,
-      "bildung": 1.64,
-      "finanzen": 17.73,
-      "justiz": 2.63,
-      "arbeit": 5.75,
-      "mobilitaet": 1.81
+      "digital": 2.13,
+      "bildung": 1.47,
+      "finanzen": 17.53,
+      "justiz": 2.29,
+      "arbeit": 5.73,
+      "mobilitaet": 1.97
     },
     "topTopics": [
       {
         "topic": "finanzen",
-        "score": 17.73,
+        "score": 17.53,
         "rank": 1
       },
       {
         "topic": "wirtschaft",
-        "score": 12.15,
+        "score": 12.12,
         "rank": 2
       },
       {
-        "topic": "arbeit",
-        "score": 5.75,
+        "topic": "soziales",
+        "score": 7.04,
         "rank": 3
       },
       {
-        "topic": "soziales",
-        "score": 3.78,
+        "topic": "arbeit",
+        "score": 5.73,
         "rank": 4
       },
       {
-        "topic": "digital",
-        "score": 2.63,
+        "topic": "justiz",
+        "score": 2.29,
         "rank": 5
       }
     ],
@@ -284,15 +372,19 @@
           "count": 5
         },
         {
-          "word": "standort",
+          "word": "wettbewerb",
           "count": 4
         },
         {
-          "word": "wettbewerb",
+          "word": "standort",
           "count": 4
         }
       ],
       "soziales": [
+        {
+          "word": "familien",
+          "count": 9
+        },
         {
           "word": "rentner",
           "count": 5
@@ -302,29 +394,25 @@
           "count": 4
         },
         {
-          "word": "jugendliche",
+          "word": "kindergeld",
           "count": 4
         },
         {
-          "word": "familien",
-          "count": 2
-        },
-        {
-          "word": "kinder",
-          "count": 2
+          "word": "jugendliche",
+          "count": 4
         }
       ],
       "sicherheit": [
-        {
-          "word": "angriff",
-          "count": 2
-        },
         {
           "word": "bundeswehr",
           "count": 1
         },
         {
           "word": "verteidigung",
+          "count": 1
+        },
+        {
+          "word": "angriff",
           "count": 1
         }
       ],
@@ -356,6 +444,10 @@
           "count": 2
         },
         {
+          "word": "china",
+          "count": 1
+        },
+        {
           "word": "krieg",
           "count": 1
         },
@@ -366,38 +458,42 @@
         {
           "word": "partnerschaft",
           "count": 1
-        },
-        {
-          "word": "china",
-          "count": 1
         }
       ],
       "digital": [
         {
           "word": "rundfunk",
-          "count": 12
-        },
-        {
-          "word": "desinformation",
-          "count": 2
+          "count": 6
         },
         {
           "word": "digitalisierung",
-          "count": 1
+          "count": 3
+        },
+        {
+          "word": "daten",
+          "count": 2
         },
         {
           "word": "netzausbau",
+          "count": 1
+        },
+        {
+          "word": "desinformation",
           "count": 1
         }
       ],
       "bildung": [
         {
           "word": "bildung",
-          "count": 4
+          "count": 3
         },
         {
           "word": "forschung",
           "count": 2
+        },
+        {
+          "word": "studium",
+          "count": 1
         },
         {
           "word": "schulen",
@@ -405,10 +501,6 @@
         },
         {
           "word": "ausbildung",
-          "count": 1
-        },
-        {
-          "word": "studium",
           "count": 1
         }
       ],
@@ -436,11 +528,11 @@
       ],
       "justiz": [
         {
-          "word": "bundesverfassungsgericht",
-          "count": 5
+          "word": "grundgesetz",
+          "count": 3
         },
         {
-          "word": "grundgesetz",
+          "word": "bundesverfassungsgericht",
           "count": 3
         },
         {
@@ -481,7 +573,7 @@
       "mobilitaet": [
         {
           "word": "infrastruktur",
-          "count": 5
+          "count": 6
         },
         {
           "word": "auto",

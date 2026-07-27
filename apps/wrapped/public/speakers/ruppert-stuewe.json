@@ -11,23 +11,23 @@
   "minWords": 42,
   "maxWords": 705,
   "rankings": {
-    "speechRank": 452,
-    "wordsRank": 460,
-    "partySpeechRank": 82,
-    "partyWordsRank": 89,
+    "speechRank": 448,
+    "wordsRank": 453,
+    "partySpeechRank": 81,
+    "partyWordsRank": 86,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 27.7,
-    "verbosityRank": 216,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 28.4,
+    "verbosityRank": 223,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 49,
-    "longestSpeechRank": 368
+    "longestSpeechRank": 370
   },
   "drama": {
     "interruptionsGiven": 3,
     "interruptionsReceived": 6,
-    "interrupterRank": 391,
-    "interruptedRank": 525
+    "interrupterRank": 388,
+    "interruptedRank": 519
   },
   "words": {
     "topWords": [
@@ -76,40 +76,106 @@
       {
         "word": "städtebauförderung",
         "count": 18,
-        "ratioParty": 148.1,
-        "ratioBundestag": 186.8
+        "ratioParty": 159.1,
+        "ratioBundestag": 189.4
       },
       {
         "word": "lebenswerte",
         "count": 6,
-        "ratioParty": 143.2,
-        "ratioBundestag": 188.5
+        "ratioParty": 130.2,
+        "ratioBundestag": 178.4
       },
       {
         "word": "quartiere",
         "count": 6,
         "ratioParty": 119.3,
-        "ratioBundestag": 298.4
+        "ratioBundestag": 297.3
       },
       {
         "word": "bezahlbares",
         "count": 7,
-        "ratioParty": 75.9,
-        "ratioBundestag": 92.8
+        "ratioParty": 83.5,
+        "ratioBundestag": 92.5
       },
       {
         "word": "studierende",
         "count": 5,
         "ratioParty": 44.2,
-        "ratioBundestag": 72.8
+        "ratioBundestag": 72.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "städtebauförderung",
+        "count": 18,
+        "score": 91.36,
+        "ratio": 159.1
+      },
+      {
+        "word": "bezahlbares",
+        "count": 7,
+        "score": 31.06,
+        "ratio": 83.5
+      },
+      {
+        "word": "lebenswerte",
+        "count": 6,
+        "score": 29.26,
+        "ratio": 130.2
+      },
+      {
+        "word": "quartiere",
+        "count": 6,
+        "score": 28.74,
+        "ratio": 119.3
+      },
+      {
+        "word": "studierende",
+        "count": 5,
+        "score": 19.06,
+        "ratio": 44.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "städtebauförderung",
+        "count": 18,
+        "score": 94.48,
+        "ratio": 189.4
+      },
+      {
+        "word": "quartiere",
+        "count": 6,
+        "score": 34.19,
+        "ratio": 297.3
+      },
+      {
+        "word": "bezahlbares",
+        "count": 7,
+        "score": 31.77,
+        "ratio": 92.5
+      },
+      {
+        "word": "lebenswerte",
+        "count": 6,
+        "score": 31.14,
+        "ratio": 178.4
+      },
+      {
+        "word": "studierende",
+        "count": 5,
+        "score": 21.49,
+        "ratio": 72.5
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 468,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
     "vsParty": 0.76,
     "vsParliament": 0.8
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Ruppert Stüwe häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
         "text": "Städtebauförderung",
         "isCorrect": true
+      },
+      {
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Städtebauförderung\" nutzt Ruppert Stüwe 148.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "186.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Städtebauförderung\" nutzt Ruppert Stüwe 159.1× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "189.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -263,11 +329,11 @@
           "count": 6
         },
         {
-          "word": "kapital",
+          "word": "wirtschaft",
           "count": 1
         },
         {
-          "word": "wirtschaft",
+          "word": "kapital",
           "count": 1
         }
       ],
@@ -349,11 +415,11 @@
           "count": 3
         },
         {
-          "word": "schulen",
+          "word": "studium",
           "count": 1
         },
         {
-          "word": "studium",
+          "word": "forschung",
           "count": 1
         }
       ],
@@ -367,11 +433,11 @@
           "count": 7
         },
         {
-          "word": "investitionen",
+          "word": "haushaltsentwurf",
           "count": 4
         },
         {
-          "word": "haushaltsentwurf",
+          "word": "investitionen",
           "count": 4
         },
         {

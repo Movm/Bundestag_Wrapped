@@ -11,16 +11,16 @@
   "minWords": 61,
   "maxWords": 558,
   "rankings": {
-    "speechRank": 438,
-    "wordsRank": 483,
-    "partySpeechRank": 129,
-    "partyWordsRank": 156,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 29.9,
-    "verbosityRank": 308,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 107,
+    "speechRank": 436,
+    "wordsRank": 482,
+    "partySpeechRank": 130,
+    "partyWordsRank": 159,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 30.4,
+    "verbosityRank": 305,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 111,
     "longestSpeechRank": 540
   },
   "drama": {
@@ -60,15 +60,15 @@
         "count": 8
       },
       {
+        "word": "digitalen",
+        "count": 8
+      },
+      {
         "word": "raum",
         "count": 8
       },
       {
         "word": "bürger",
-        "count": 8
-      },
-      {
-        "word": "digitalen",
         "count": 8
       }
     ],
@@ -76,41 +76,107 @@
       {
         "word": "cybersicherheit",
         "count": 9,
-        "ratioParty": 90.4,
-        "ratioBundestag": 103.0
+        "ratioParty": 90.3,
+        "ratioBundestag": 102.6
       },
       {
         "word": "angriffe",
         "count": 6,
-        "ratioParty": 23.0,
-        "ratioBundestag": 19.2
+        "ratioParty": 22.5,
+        "ratioBundestag": 18.7
       },
       {
         "word": "digitalen",
         "count": 8,
-        "ratioParty": 11.2,
-        "ratioBundestag": 15.5
+        "ratioParty": 11.1,
+        "ratioBundestag": 15.2
       },
       {
         "word": "bürgerinnen",
         "count": 10,
-        "ratioParty": 9.0,
-        "ratioBundestag": 10.2
+        "ratioParty": 8.8,
+        "ratioBundestag": 10.1
       },
       {
         "word": "staat",
         "count": 12,
-        "ratioParty": 6.9,
+        "ratioParty": 7.0,
         "ratioBundestag": 6.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "cybersicherheit",
+        "count": 9,
+        "score": 40.63,
+        "ratio": 90.3
+      },
+      {
+        "word": "staat",
+        "count": 12,
+        "score": 24.95,
+        "ratio": 7.0
+      },
+      {
+        "word": "bürgerinnen",
+        "count": 10,
+        "score": 22.82,
+        "ratio": 8.8
+      },
+      {
+        "word": "digitalen",
+        "count": 8,
+        "score": 19.95,
+        "ratio": 11.1
+      },
+      {
+        "word": "angriffe",
+        "count": 6,
+        "score": 18.94,
+        "ratio": 22.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "cybersicherheit",
+        "count": 9,
+        "score": 41.76,
+        "ratio": 102.6
+      },
+      {
+        "word": "staat",
+        "count": 12,
+        "score": 24.18,
+        "ratio": 6.5
+      },
+      {
+        "word": "bürgerinnen",
+        "count": 10,
+        "score": 24.07,
+        "ratio": 10.1
+      },
+      {
+        "word": "digitalen",
+        "count": 8,
+        "score": 22.28,
+        "ratio": 15.2
+      },
+      {
+        "word": "angriffe",
+        "count": 6,
+        "score": 17.88,
+        "ratio": 18.7
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 426,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.66,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.65,
     "vsParliament": 0.73
   },
   "funFacts": [
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Henri Schmidt häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
+      },
+      {
         "text": "Cybersicherheit",
         "isCorrect": true
       },
       {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
+        "text": "Zukunft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Cybersicherheit\" nutzt Henri Schmidt 90.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "103.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Cybersicherheit\" nutzt Henri Schmidt 90.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "102.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -243,11 +309,11 @@
     "topicWords": {
       "klima": [
         {
-          "word": "energie",
+          "word": "klimawandel",
           "count": 1
         },
         {
-          "word": "klimawandel",
+          "word": "energie",
           "count": 1
         }
       ],
@@ -271,11 +337,11 @@
       ],
       "soziales": [
         {
-          "word": "familien",
+          "word": "kind",
           "count": 1
         },
         {
-          "word": "kind",
+          "word": "familien",
           "count": 1
         }
       ],
@@ -285,11 +351,11 @@
           "count": 2
         },
         {
-          "word": "bundespolizei",
+          "word": "betrug",
           "count": 1
         },
         {
-          "word": "betrug",
+          "word": "bundespolizei",
           "count": 1
         }
       ],
@@ -309,19 +375,19 @@
           "count": 5
         },
         {
-          "word": "sanktionen",
-          "count": 1
-        },
-        {
-          "word": "europäisch",
-          "count": 1
-        },
-        {
           "word": "brüssel",
           "count": 1
         },
         {
           "word": "russland",
+          "count": 1
+        },
+        {
+          "word": "sanktionen",
+          "count": 1
+        },
+        {
+          "word": "europäisch",
           "count": 1
         }
       ],
@@ -359,25 +425,25 @@
           "count": 2
         },
         {
-          "word": "bundesrechnungshof",
-          "count": 1
-        },
-        {
           "word": "investitionen",
           "count": 1
         },
         {
           "word": "sondervermögen",
           "count": 1
+        },
+        {
+          "word": "bundesrechnungshof",
+          "count": 1
         }
       ],
       "justiz": [
         {
-          "word": "verordnung",
+          "word": "rechtsstaat",
           "count": 2
         },
         {
-          "word": "rechtsstaat",
+          "word": "verordnung",
           "count": 2
         },
         {

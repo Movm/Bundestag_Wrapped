@@ -13,21 +13,21 @@
   "rankings": {
     "speechRank": 622,
     "wordsRank": 566,
-    "partySpeechRank": 208,
-    "partyWordsRank": 185,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 0.5,
+    "partySpeechRank": 209,
+    "partyWordsRank": 186,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 0.6,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 624
+    "longestSpeechRank": 625
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 1,
     "interrupterRank": null,
-    "interruptedRank": 591
+    "interruptedRank": 593
   },
   "words": {
     "topWords": [
@@ -76,41 +76,107 @@
       {
         "word": "folgt",
         "count": 8,
-        "ratioParty": 78.6,
-        "ratioBundestag": 80.5
+        "ratioParty": 74.6,
+        "ratioBundestag": 79.9
       },
       {
         "word": "brandner",
         "count": 5,
-        "ratioParty": 69.7,
-        "ratioBundestag": 86.0
+        "ratioParty": 69.6,
+        "ratioBundestag": 86.9
       },
       {
         "word": "beantworten",
         "count": 7,
-        "ratioParty": 68.8,
-        "ratioBundestag": 82.4
+        "ratioParty": 68.7,
+        "ratioBundestag": 85.1
       },
       {
         "word": "mitarbeiter",
         "count": 6,
-        "ratioParty": 37.1,
-        "ratioBundestag": 44.2
+        "ratioParty": 35.9,
+        "ratioBundestag": 42.7
       },
       {
         "word": "bundeskanzler",
         "count": 7,
-        "ratioParty": 20.0,
-        "ratioBundestag": 18.7
+        "ratioParty": 19.4,
+        "ratioBundestag": 18.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "folgt",
+        "count": 8,
+        "score": 34.6,
+        "ratio": 74.6
+      },
+      {
+        "word": "beantworten",
+        "count": 7,
+        "score": 29.71,
+        "ratio": 68.7
+      },
+      {
+        "word": "mitarbeiter",
+        "count": 6,
+        "score": 21.65,
+        "ratio": 35.9
+      },
+      {
+        "word": "brandner",
+        "count": 5,
+        "score": 21.29,
+        "ratio": 69.6
+      },
+      {
+        "word": "bundeskanzler",
+        "count": 7,
+        "score": 21.11,
+        "ratio": 19.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "folgt",
+        "count": 8,
+        "score": 35.15,
+        "ratio": 79.9
+      },
+      {
+        "word": "beantworten",
+        "count": 7,
+        "score": 31.19,
+        "ratio": 85.1
+      },
+      {
+        "word": "mitarbeiter",
+        "count": 6,
+        "score": 22.66,
+        "ratio": 42.7
+      },
+      {
+        "word": "brandner",
+        "count": 5,
+        "score": 22.38,
+        "ratio": 86.9
+      },
+      {
+        "word": "bundeskanzler",
+        "count": 7,
+        "score": 20.61,
+        "ratio": 18.0
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 68,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.11,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.1,
     "vsParliament": 0.12
   },
   "funFacts": [
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Dr. Michael Meister häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Folgt",
-        "isCorrect": true
+        "text": "Familie",
+        "isCorrect": false
       },
       {
         "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Politik",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Energie",
-        "isCorrect": false
+        "text": "Folgt",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Folgt\" nutzt Dr. Michael Meister 78.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "80.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Folgt\" nutzt Dr. Michael Meister 74.6× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "79.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

@@ -11,23 +11,23 @@
   "minWords": 15,
   "maxWords": 1044,
   "rankings": {
-    "speechRank": 491,
-    "wordsRank": 372,
-    "partySpeechRank": 155,
-    "partyWordsRank": 114,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 21.4,
-    "verbosityRank": 33,
-    "verbosityTotal": 579,
+    "speechRank": 485,
+    "wordsRank": 358,
+    "partySpeechRank": 153,
+    "partyWordsRank": 109,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 22.5,
+    "verbosityRank": 34,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 12,
-    "longestSpeechRank": 66
+    "longestSpeechRank": 68
   },
   "drama": {
     "interruptionsGiven": 63,
     "interruptionsReceived": 10,
-    "interrupterRank": 80,
-    "interruptedRank": 467
+    "interrupterRank": 76,
+    "interruptedRank": 471
   },
   "words": {
     "topWords": [
@@ -44,11 +44,11 @@
         "count": 19
       },
       {
-        "word": "bundeswehr",
+        "word": "darf",
         "count": 17
       },
       {
-        "word": "darf",
+        "word": "bundeswehr",
         "count": 17
       },
       {
@@ -56,7 +56,7 @@
         "count": 15
       },
       {
-        "word": "habe",
+        "word": "menschen",
         "count": 10
       },
       {
@@ -64,7 +64,7 @@
         "count": 10
       },
       {
-        "word": "menschen",
+        "word": "habe",
         "count": 10
       }
     ],
@@ -72,32 +72,96 @@
       {
         "word": "pistorius",
         "count": 5,
-        "ratioParty": 62.1,
-        "ratioBundestag": 41.9
+        "ratioParty": 64.8,
+        "ratioBundestag": 41.3
       },
       {
         "word": "haushälter",
         "count": 6,
-        "ratioParty": 36.5,
-        "ratioBundestag": 56.1
+        "ratioParty": 36.4,
+        "ratioBundestag": 55.9
       },
       {
         "word": "beschaffung",
         "count": 7,
-        "ratioParty": 33.3,
-        "ratioBundestag": 36.9
+        "ratioParty": 33.9,
+        "ratioBundestag": 37.6
       },
       {
         "word": "schlichtweg",
         "count": 8,
-        "ratioParty": 22.9,
-        "ratioBundestag": 37.8
+        "ratioParty": 23.1,
+        "ratioBundestag": 36.7
       },
       {
         "word": "fähigkeiten",
         "count": 6,
-        "ratioParty": 20.7,
-        "ratioBundestag": 32.4
+        "ratioParty": 21.4,
+        "ratioBundestag": 33.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "schlichtweg",
+        "count": 8,
+        "score": 25.46,
+        "ratio": 23.1
+      },
+      {
+        "word": "beschaffung",
+        "count": 7,
+        "score": 24.87,
+        "ratio": 33.9
+      },
+      {
+        "word": "haushälter",
+        "count": 6,
+        "score": 21.73,
+        "ratio": 36.4
+      },
+      {
+        "word": "pistorius",
+        "count": 5,
+        "score": 20.93,
+        "ratio": 64.8
+      },
+      {
+        "word": "fähigkeiten",
+        "count": 6,
+        "score": 18.65,
+        "ratio": 21.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "schlichtweg",
+        "count": 8,
+        "score": 29.04,
+        "ratio": 36.7
+      },
+      {
+        "word": "beschaffung",
+        "count": 7,
+        "score": 25.57,
+        "ratio": 37.6
+      },
+      {
+        "word": "haushälter",
+        "count": 6,
+        "score": 24.25,
+        "ratio": 55.9
+      },
+      {
+        "word": "fähigkeiten",
+        "count": 6,
+        "score": 21.28,
+        "ratio": 33.7
+      },
+      {
+        "word": "pistorius",
+        "count": 5,
+        "score": 18.72,
+        "ratio": 41.3
       }
     ],
     "signatureAdjectives": [
@@ -107,14 +171,30 @@
         "ratioParty": 3.5,
         "ratioBundestag": 5.2
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 4.51,
+        "ratio": 3.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 5.47,
+        "ratio": 5.2
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 642,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 1.0,
-    "vsParliament": 1.1
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.98,
+    "vsParliament": 1.09
   },
   "funFacts": [
     {
@@ -141,11 +221,11 @@
         "isCorrect": true
       },
       {
-        "text": "Energie",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Kinder",
+        "text": "Sicherheit",
         "isCorrect": false
       },
       {
@@ -153,27 +233,27 @@
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Pistorius\" nutzt Andreas Mattfeldt 62.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "41.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Pistorius\" nutzt Andreas Mattfeldt 64.8× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "41.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Andreas Mattfeldt häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
         "text": "Entscheidend",
         "isCorrect": true
+      },
+      {
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Entscheidend\" nutzt Andreas Mattfeldt 3.5× häufiger als der CDU/CSU-Durchschnitt.",
@@ -287,15 +367,15 @@
           "count": 1
         },
         {
-          "word": "wettbewerb",
-          "count": 1
-        },
-        {
           "word": "betrieb",
           "count": 1
         },
         {
           "word": "wirtschaft",
+          "count": 1
+        },
+        {
+          "word": "unternehmen",
           "count": 1
         }
       ],
@@ -339,7 +419,7 @@
           "count": 2
         },
         {
-          "word": "ukraine",
+          "word": "gipfel",
           "count": 2
         }
       ],
@@ -363,15 +443,15 @@
           "count": 3
         },
         {
-          "word": "investition",
-          "count": 2
-        },
-        {
           "word": "schuldenbremse",
           "count": 2
         },
         {
           "word": "etat",
+          "count": 2
+        },
+        {
+          "word": "investition",
           "count": 2
         }
       ],

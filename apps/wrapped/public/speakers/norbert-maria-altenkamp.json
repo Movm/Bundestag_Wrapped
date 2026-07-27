@@ -11,17 +11,17 @@
   "minWords": 97,
   "maxWords": 651,
   "rankings": {
-    "speechRank": 570,
-    "wordsRank": 561,
-    "partySpeechRank": 184,
-    "partyWordsRank": 182,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 8.8,
-    "verbosityRank": 396,
-    "verbosityTotal": 579,
+    "speechRank": 549,
+    "wordsRank": 562,
+    "partySpeechRank": 177,
+    "partyWordsRank": 183,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 12.3,
+    "verbosityRank": 392,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 139,
-    "longestSpeechRank": 434
+    "longestSpeechRank": 435
   },
   "drama": {
     "interruptionsGiven": 0,
@@ -60,7 +60,7 @@
         "count": 6
       },
       {
-        "word": "humanitären",
+        "word": "deutschland",
         "count": 5
       },
       {
@@ -68,7 +68,7 @@
         "count": 5
       },
       {
-        "word": "deutschland",
+        "word": "humanitären",
         "count": 5
       }
     ],
@@ -76,41 +76,107 @@
       {
         "word": "repression",
         "count": 6,
-        "ratioParty": 539.9,
-        "ratioBundestag": 358.7
+        "ratioParty": 539.0,
+        "ratioBundestag": 357.4
       },
       {
         "word": "humanitäre",
         "count": 21,
-        "ratioParty": 138.7,
-        "ratioBundestag": 102.3
+        "ratioParty": 141.0,
+        "ratioBundestag": 104.5
       },
       {
         "word": "menschenrechte",
         "count": 5,
-        "ratioParty": 75.0,
-        "ratioBundestag": 38.5
+        "ratioParty": 74.9,
+        "ratioBundestag": 38.1
       },
       {
         "word": "hilfe",
         "count": 24,
-        "ratioParty": 64.5,
-        "ratioBundestag": 58.0
+        "ratioParty": 65.3,
+        "ratioBundestag": 59.4
       },
       {
         "word": "humanitären",
         "count": 5,
-        "ratioParty": 57.1,
-        "ratioBundestag": 53.4
+        "ratioParty": 58.0,
+        "ratioBundestag": 54.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "humanitäre",
+        "count": 21,
+        "score": 104.07,
+        "ratio": 141.0
+      },
+      {
+        "word": "hilfe",
+        "count": 24,
+        "score": 100.66,
+        "ratio": 65.3
+      },
+      {
+        "word": "repression",
+        "count": 6,
+        "score": 37.75,
+        "ratio": 539.0
+      },
+      {
+        "word": "menschenrechte",
+        "count": 5,
+        "score": 21.65,
+        "ratio": 74.9
+      },
+      {
+        "word": "humanitären",
+        "count": 5,
+        "score": 20.39,
+        "ratio": 58.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "hilfe",
+        "count": 24,
+        "score": 98.42,
+        "ratio": 59.4
+      },
+      {
+        "word": "humanitäre",
+        "count": 21,
+        "score": 97.83,
+        "ratio": 104.5
+      },
+      {
+        "word": "repression",
+        "count": 6,
+        "score": 35.29,
+        "ratio": 357.4
+      },
+      {
+        "word": "humanitären",
+        "count": 5,
+        "score": 20.06,
+        "ratio": 54.3
+      },
+      {
+        "word": "menschenrechte",
+        "count": 5,
+        "score": 18.33,
+        "ratio": 38.1
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 387,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.6,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.59,
     "vsParliament": 0.66
   },
   "funFacts": [
@@ -129,11 +195,7 @@
     "question": "Welches Wort nutzt Norbert Maria Altenkamp häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaft",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
@@ -141,12 +203,16 @@
         "isCorrect": true
       },
       {
-        "text": "Freiheit",
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Repression\" nutzt Norbert Maria Altenkamp 539.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "358.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Repression\" nutzt Norbert Maria Altenkamp 539.0× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "357.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -160,7 +226,7 @@
         "emoji": "🦉",
         "name": "Eule",
         "title": "Themenexperte",
-        "reason": "Dein Fachwort \"Repression\" nutzt du 539.9× häufiger als deine Fraktion.",
+        "reason": "Dein Fachwort \"Repression\" nutzt du 539.0× häufiger als deine Fraktion.",
         "id": "eule",
         "score": 0.85
       },
@@ -269,14 +335,6 @@
       ],
       "sicherheit": [
         {
-          "word": "extremismus",
-          "count": 1
-        },
-        {
-          "word": "terrorismus",
-          "count": 1
-        },
-        {
           "word": "terroristen",
           "count": 1
         },
@@ -286,6 +344,14 @@
         },
         {
           "word": "angriff",
+          "count": 1
+        },
+        {
+          "word": "extremismus",
+          "count": 1
+        },
+        {
+          "word": "terrorismus",
           "count": 1
         }
       ],
@@ -305,15 +371,15 @@
           "count": 2
         },
         {
-          "word": "völkerrecht",
-          "count": 1
-        },
-        {
-          "word": "wiederaufbau",
+          "word": "außenminister",
           "count": 1
         },
         {
           "word": "china",
+          "count": 1
+        },
+        {
+          "word": "russland",
           "count": 1
         }
       ],

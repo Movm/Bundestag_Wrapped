@@ -11,23 +11,23 @@
   "minWords": 65,
   "maxWords": 761,
   "rankings": {
-    "speechRank": 286,
-    "wordsRank": 226,
+    "speechRank": 290,
+    "wordsRank": 224,
     "partySpeechRank": 63,
-    "partyWordsRank": 51,
+    "partyWordsRank": 49,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 54.2,
-    "verbosityRank": 266,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 53.7,
+    "verbosityRank": 272,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 67,
-    "longestSpeechRank": 295
+    "longestSpeechRank": 294
   },
   "drama": {
-    "interruptionsGiven": 93,
+    "interruptionsGiven": 90,
     "interruptionsReceived": 45,
-    "interrupterRank": 50,
-    "interruptedRank": 138
+    "interrupterRank": 49,
+    "interruptedRank": 142
   },
   "words": {
     "topWords": [
@@ -60,15 +60,15 @@
         "count": 18
       },
       {
+        "word": "lage",
+        "count": 15
+      },
+      {
         "word": "eines",
         "count": 15
       },
       {
         "word": "links",
-        "count": 15
-      },
-      {
-        "word": "lage",
         "count": 15
       }
     ],
@@ -76,61 +76,165 @@
       {
         "word": "linksextremistischer",
         "count": 5,
-        "ratioParty": 323.2,
-        "ratioBundestag": 727.7
+        "ratioParty": 321.2,
+        "ratioBundestag": 725.1
       },
       {
         "word": "messerkriminalität",
         "count": 7,
-        "ratioParty": 301.7,
-        "ratioBundestag": 815.1
+        "ratioParty": 299.8,
+        "ratioBundestag": 812.1
       },
       {
         "word": "linksterroristen",
         "count": 5,
-        "ratioParty": 215.5,
-        "ratioBundestag": 582.2
+        "ratioParty": 160.6,
+        "ratioBundestag": 483.4
       },
       {
         "word": "sicherheitslage",
         "count": 10,
-        "ratioParty": 117.5,
-        "ratioBundestag": 56.5
+        "ratioParty": 107.1,
+        "ratioBundestag": 61.7
       },
       {
         "word": "linksextremismus",
         "count": 11,
-        "ratioParty": 94.8,
-        "ratioBundestag": 94.2
+        "ratioParty": 94.2,
+        "ratioBundestag": 82.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "linksextremismus",
+        "count": 11,
+        "score": 50.12,
+        "ratio": 94.2
+      },
+      {
+        "word": "sicherheitslage",
+        "count": 10,
+        "score": 46.83,
+        "ratio": 107.1
+      },
+      {
+        "word": "messerkriminalität",
+        "count": 7,
+        "score": 39.95,
+        "ratio": 299.8
+      },
+      {
+        "word": "linksextremistischer",
+        "count": 5,
+        "score": 28.88,
+        "ratio": 321.2
+      },
+      {
+        "word": "linksterroristen",
+        "count": 5,
+        "score": 25.43,
+        "ratio": 160.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "linksextremismus",
+        "count": 11,
+        "score": 48.73,
+        "ratio": 82.9
+      },
+      {
+        "word": "messerkriminalität",
+        "count": 7,
+        "score": 46.91,
+        "ratio": 812.1
+      },
+      {
+        "word": "sicherheitslage",
+        "count": 10,
+        "score": 41.38,
+        "ratio": 61.7
+      },
+      {
+        "word": "linksextremistischer",
+        "count": 5,
+        "score": 32.94,
+        "ratio": 725.1
+      },
+      {
+        "word": "linksterroristen",
+        "count": 5,
+        "score": 30.91,
+        "ratio": 483.4
       }
     ],
     "signatureAdjectives": [
       {
         "word": "rechts",
         "count": 7,
-        "ratioParty": 9.3,
+        "ratioParty": 9.5,
         "ratioBundestag": 8.2
       },
       {
         "word": "links",
         "count": 15,
-        "ratioParty": 6.3,
-        "ratioBundestag": 17.2
+        "ratioParty": 6.2,
+        "ratioBundestag": 17.0
       },
       {
         "word": "sicher",
         "count": 10,
-        "ratioParty": 6.2,
+        "ratioParty": 6.1,
         "ratioBundestag": 4.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "links",
+        "count": 15,
+        "score": 29.61,
+        "ratio": 6.2
+      },
+      {
+        "word": "sicher",
+        "count": 10,
+        "score": 19.6,
+        "ratio": 6.1
+      },
+      {
+        "word": "rechts",
+        "count": 7,
+        "score": 16.46,
+        "ratio": 9.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "links",
+        "count": 15,
+        "score": 43.36,
+        "ratio": 17.0
+      },
+      {
+        "word": "sicher",
+        "count": 10,
+        "score": 17.58,
+        "ratio": 4.8
+      },
+      {
+        "word": "rechts",
+        "count": 7,
+        "score": 15.53,
+        "ratio": 8.2
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 443,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 560,
+    "parliamentAvgWords": 587,
     "vsParty": 0.79,
-    "vsParliament": 0.76
+    "vsParliament": 0.75
   },
   "funFacts": [
     {
@@ -146,22 +250,22 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "93"
+      "value": "90"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Martin Hess häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
-        "text": "Migration",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
-        "text": "Freiheit",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
@@ -169,30 +273,30 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Linksextremistischer\" nutzt Martin Hess 323.2× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "727.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Linksextremistischer\" nutzt Martin Hess 321.2× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "725.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Martin Hess häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Schlecht",
+        "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Stark",
-        "isCorrect": false
-      },
-      {
-        "text": "Wichtig",
+        "text": "Falsch",
         "isCorrect": false
       },
       {
         "text": "Rechts",
         "isCorrect": true
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rechts\" nutzt Martin Hess 9.3× häufiger als der AfD-Durchschnitt.",
+    "explanationParty": "\"Rechts\" nutzt Martin Hess 9.5× häufiger als der AfD-Durchschnitt.",
     "explanationBundestag": "8.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
@@ -367,11 +471,11 @@
       ],
       "finanzen": [
         {
-          "word": "finanzminister",
+          "word": "schulden",
           "count": 1
         },
         {
-          "word": "schulden",
+          "word": "finanzminister",
           "count": 1
         }
       ],
@@ -387,11 +491,11 @@
       ],
       "mobilitaet": [
         {
-          "word": "straßen",
+          "word": "infrastruktur",
           "count": 3
         },
         {
-          "word": "infrastruktur",
+          "word": "straßen",
           "count": 3
         },
         {

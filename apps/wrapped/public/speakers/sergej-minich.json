@@ -11,23 +11,23 @@
   "minWords": 389,
   "maxWords": 760,
   "rankings": {
-    "speechRank": 257,
-    "wordsRank": 238,
-    "partySpeechRank": 54,
+    "speechRank": 259,
+    "wordsRank": 239,
+    "partySpeechRank": 55,
     "partyWordsRank": 55,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 58.9,
-    "verbosityRank": 79,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 20,
-    "longestSpeechRank": 297
+    "totalSpeakers": 626,
+    "percentile": 58.6,
+    "verbosityRank": 82,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 21,
+    "longestSpeechRank": 295
   },
   "drama": {
     "interruptionsGiven": 7,
     "interruptionsReceived": 49,
-    "interrupterRank": 315,
-    "interruptedRank": 118
+    "interrupterRank": 321,
+    "interruptedRank": 114
   },
   "words": {
     "topWords": [
@@ -60,11 +60,11 @@
         "count": 14
       },
       {
-        "word": "ministerin",
+        "word": "raumfahrt",
         "count": 14
       },
       {
-        "word": "raumfahrt",
+        "word": "ministerin",
         "count": 14
       },
       {
@@ -76,49 +76,129 @@
       {
         "word": "future",
         "count": 5,
-        "ratioParty": 109.1,
-        "ratioBundestag": 147.4
+        "ratioParty": 108.4,
+        "ratioBundestag": 146.9
       },
       {
         "word": "raumfahrt",
         "count": 14,
-        "ratioParty": 57.3,
+        "ratioParty": 56.9,
         "ratioBundestag": 35.4
       },
       {
         "word": "staatsmodernisierung",
         "count": 7,
-        "ratioParty": 43.6,
-        "ratioBundestag": 19.7
+        "ratioParty": 45.5,
+        "ratioBundestag": 22.1
       },
       {
         "word": "exzellenz",
         "count": 5,
-        "ratioParty": 36.4,
-        "ratioBundestag": 53.6
+        "ratioParty": 40.7,
+        "ratioBundestag": 61.2
       },
       {
-        "word": "bafög",
-        "count": 6,
-        "ratioParty": 34.2,
-        "ratioBundestag": 11.5
+        "word": "digitalministerium",
+        "count": 5,
+        "ratioParty": 36.1,
+        "ratioBundestag": 55.4
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "raumfahrt",
+        "count": 14,
+        "score": 56.82,
+        "ratio": 56.9
+      },
+      {
+        "word": "staatsmodernisierung",
+        "count": 7,
+        "score": 26.88,
+        "ratio": 45.5
+      },
+      {
+        "word": "future",
+        "count": 5,
+        "score": 23.48,
+        "ratio": 108.4
+      },
+      {
+        "word": "exzellenz",
+        "count": 5,
+        "score": 18.65,
+        "ratio": 40.7
+      },
+      {
+        "word": "digitalministerium",
+        "count": 5,
+        "score": 18.07,
+        "ratio": 36.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "raumfahrt",
+        "count": 14,
+        "score": 50.32,
+        "ratio": 35.4
+      },
+      {
+        "word": "future",
+        "count": 5,
+        "score": 24.98,
+        "ratio": 146.9
+      },
+      {
+        "word": "staatsmodernisierung",
+        "count": 7,
+        "score": 21.98,
+        "ratio": 22.1
+      },
+      {
+        "word": "exzellenz",
+        "count": 5,
+        "score": 20.65,
+        "ratio": 61.2
+      },
+      {
+        "word": "digitalministerium",
+        "count": 5,
+        "score": 20.16,
+        "ratio": 55.4
       }
     ],
     "signatureAdjectives": [
       {
         "word": "teuer",
         "count": 4,
-        "ratioParty": 3.8,
-        "ratioBundestag": 5.9
+        "ratioParty": 3.6,
+        "ratioBundestag": 6.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "teuer",
+        "count": 4,
+        "score": 6.1,
+        "ratio": 3.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "teuer",
+        "count": 4,
+        "score": 7.78,
+        "ratio": 6.0
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 564,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 560,
+    "parliamentAvgWords": 587,
     "vsParty": 1.01,
-    "vsParliament": 0.97
+    "vsParliament": 0.96
   },
   "funFacts": [
     {
@@ -136,11 +216,11 @@
     "question": "Welches Wort nutzt Sergej Minich häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Rente",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Gesellschaft",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
@@ -148,26 +228,26 @@
         "isCorrect": true
       },
       {
-        "text": "Koalition",
+        "text": "Investitionen",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Future\" nutzt Sergej Minich 109.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "147.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Future\" nutzt Sergej Minich 108.4× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "146.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Sergej Minich häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "National",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
-        "text": "Gefährlich",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
+        "text": "Alt",
         "isCorrect": false
       },
       {
@@ -175,8 +255,8 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Teuer\" nutzt Sergej Minich 3.8× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "5.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Teuer\" nutzt Sergej Minich 3.6× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "6.0× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -280,11 +360,11 @@
           "count": 1
         },
         {
-          "word": "standort",
+          "word": "industrie",
           "count": 1
         },
         {
-          "word": "betrieb",
+          "word": "unternehmen",
           "count": 1
         }
       ],
@@ -306,7 +386,7 @@
           "count": 3
         },
         {
-          "word": "wohnung",
+          "word": "wohngeld",
           "count": 2
         }
       ],
@@ -340,7 +420,7 @@
           "count": 3
         },
         {
-          "word": "glasfaser",
+          "word": "daten",
           "count": 2
         }
       ],
@@ -358,11 +438,11 @@
           "count": 5
         },
         {
-          "word": "schulen",
+          "word": "wissenschaft",
           "count": 4
         },
         {
-          "word": "wissenschaft",
+          "word": "schulen",
           "count": 4
         }
       ],
@@ -384,7 +464,7 @@
           "count": 5
         },
         {
-          "word": "schulden",
+          "word": "kosten",
           "count": 4
         }
       ],

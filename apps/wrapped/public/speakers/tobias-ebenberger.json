@@ -11,23 +11,23 @@
   "minWords": 60,
   "maxWords": 753,
   "rankings": {
-    "speechRank": 240,
-    "wordsRank": 340,
-    "partySpeechRank": 49,
+    "speechRank": 246,
+    "wordsRank": 335,
+    "partySpeechRank": 51,
     "partyWordsRank": 73,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 61.6,
-    "verbosityRank": 366,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 95,
+    "totalSpeakers": 626,
+    "percentile": 60.7,
+    "verbosityRank": 365,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 94,
     "longestSpeechRank": 303
   },
   "drama": {
-    "interruptionsGiven": 28,
+    "interruptionsGiven": 27,
     "interruptionsReceived": 34,
-    "interrupterRank": 170,
-    "interruptedRank": 198
+    "interrupterRank": 177,
+    "interruptedRank": 200
   },
   "words": {
     "topWords": [
@@ -76,32 +76,96 @@
       {
         "word": "brieftasche",
         "count": 5,
-        "ratioParty": 290.6,
-        "ratioBundestag": 261.3
+        "ratioParty": 288.8,
+        "ratioBundestag": 260.4
       },
       {
         "word": "wallet",
         "count": 5,
-        "ratioParty": 290.6,
-        "ratioBundestag": 62.2
+        "ratioParty": 288.8,
+        "ratioBundestag": 64.0
       },
       {
         "word": "pflegegrad",
         "count": 5,
-        "ratioParty": 218.0,
-        "ratioBundestag": 156.8
+        "ratioParty": 216.6,
+        "ratioBundestag": 156.2
       },
       {
         "word": "digitalen",
         "count": 18,
-        "ratioParty": 45.5,
-        "ratioBundestag": 22.4
+        "ratioParty": 43.9,
+        "ratioBundestag": 22.1
       },
       {
         "word": "tages",
         "count": 6,
-        "ratioParty": 40.2,
-        "ratioBundestag": 32.0
+        "ratioParty": 40.0,
+        "ratioBundestag": 31.0
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "digitalen",
+        "count": 18,
+        "score": 68.48,
+        "ratio": 43.9
+      },
+      {
+        "word": "brieftasche",
+        "count": 5,
+        "score": 28.35,
+        "ratio": 288.8
+      },
+      {
+        "word": "wallet",
+        "count": 5,
+        "score": 28.35,
+        "ratio": 288.8
+      },
+      {
+        "word": "pflegegrad",
+        "count": 5,
+        "score": 26.91,
+        "ratio": 216.6
+      },
+      {
+        "word": "tages",
+        "count": 6,
+        "score": 22.28,
+        "ratio": 40.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "digitalen",
+        "count": 18,
+        "score": 56.52,
+        "ratio": 22.1
+      },
+      {
+        "word": "brieftasche",
+        "count": 5,
+        "score": 27.83,
+        "ratio": 260.4
+      },
+      {
+        "word": "pflegegrad",
+        "count": 5,
+        "score": 25.29,
+        "ratio": 156.2
+      },
+      {
+        "word": "wallet",
+        "count": 5,
+        "score": 20.87,
+        "ratio": 64.0
+      },
+      {
+        "word": "tages",
+        "count": 6,
+        "score": 20.79,
+        "ratio": 31.0
       }
     ],
     "signatureAdjectives": [
@@ -111,14 +175,30 @@
         "ratioParty": 2.4,
         "ratioBundestag": 1.9
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 3,
+        "score": 3.67,
+        "ratio": 2.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 3,
+        "score": 3.19,
+        "ratio": 1.9
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 402,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 560,
+    "parliamentAvgWords": 587,
     "vsParty": 0.72,
-    "vsParliament": 0.69
+    "vsParliament": 0.68
   },
   "funFacts": [
     {
@@ -134,14 +214,18 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "28"
+      "value": "27"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Tobias Ebenberger häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Freiheit",
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
@@ -149,35 +233,31 @@
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaft",
+        "text": "Gesetz",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Brieftasche\" nutzt Tobias Ebenberger 290.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "261.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Brieftasche\" nutzt Tobias Ebenberger 288.8× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "260.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Tobias Ebenberger häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Sozial",
+        "text": "National",
         "isCorrect": false
       },
       {
         "text": "Sicher",
         "isCorrect": true
+      },
+      {
+        "text": "Gut",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Sicher\" nutzt Tobias Ebenberger 2.4× häufiger als der AfD-Durchschnitt.",
@@ -253,11 +333,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "migranten",
+          "word": "asylbewerber",
           "count": 1
         },
         {
-          "word": "asylbewerber",
+          "word": "migranten",
           "count": 1
         }
       ],
@@ -281,11 +361,11 @@
           "count": 2
         },
         {
-          "word": "wirtschaft",
+          "word": "markt",
           "count": 2
         },
         {
-          "word": "markt",
+          "word": "wirtschaft",
           "count": 2
         }
       ],
@@ -303,11 +383,11 @@
           "count": 2
         },
         {
-          "word": "jugendliche",
+          "word": "rente",
           "count": 1
         },
         {
-          "word": "rentner",
+          "word": "wohnung",
           "count": 1
         }
       ],
@@ -321,11 +401,11 @@
           "count": 1
         },
         {
-          "word": "verbrechen",
+          "word": "überwachung",
           "count": 1
         },
         {
-          "word": "überwachung",
+          "word": "verbrechen",
           "count": 1
         }
       ],
@@ -339,15 +419,15 @@
           "count": 4
         },
         {
-          "word": "impfpflicht",
-          "count": 2
-        },
-        {
           "word": "corona",
           "count": 2
         },
         {
-          "word": "krankenversicherung",
+          "word": "impfpflicht",
+          "count": 2
+        },
+        {
+          "word": "sucht",
           "count": 1
         }
       ],
@@ -393,11 +473,11 @@
           "count": 1
         },
         {
-          "word": "professor",
+          "word": "bildung",
           "count": 1
         },
         {
-          "word": "bildung",
+          "word": "professor",
           "count": 1
         }
       ],
@@ -429,29 +509,29 @@
           "count": 3
         },
         {
+          "word": "anwalt",
+          "count": 1
+        },
+        {
           "word": "verordnung",
+          "count": 1
+        },
+        {
+          "word": "grundrechte",
           "count": 1
         },
         {
           "word": "gleichberechtigung",
           "count": 1
-        },
-        {
-          "word": "gleichstellung",
-          "count": 1
-        },
-        {
-          "word": "anwalt",
-          "count": 1
         }
       ],
       "arbeit": [
         {
-          "word": "arbeitsplatz",
+          "word": "sozialabgaben",
           "count": 1
         },
         {
-          "word": "sozialabgaben",
+          "word": "arbeitsplatz",
           "count": 1
         }
       ],
@@ -473,7 +553,7 @@
           "count": 1
         },
         {
-          "word": "flugzeug",
+          "word": "auto",
           "count": 1
         }
       ]

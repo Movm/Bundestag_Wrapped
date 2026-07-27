@@ -11,15 +11,15 @@
   "minWords": 433,
   "maxWords": 888,
   "rankings": {
-    "speechRank": 379,
-    "wordsRank": 335,
-    "partySpeechRank": 71,
-    "partyWordsRank": 67,
+    "speechRank": 375,
+    "wordsRank": 333,
+    "partySpeechRank": 69,
+    "partyWordsRank": 66,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 39.4,
-    "verbosityRank": 41,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 40.1,
+    "verbosityRank": 44,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 8,
     "longestSpeechRank": 144
   },
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 7,
     "interrupterRank": null,
-    "interruptedRank": 507
+    "interruptedRank": 509
   },
   "words": {
     "topWords": [
@@ -68,7 +68,7 @@
         "count": 10
       },
       {
-        "word": "lassen",
+        "word": "zeit",
         "count": 10
       }
     ],
@@ -76,26 +76,26 @@
       {
         "word": "geschlossenheit",
         "count": 7,
-        "ratioParty": 68.8,
-        "ratioBundestag": 131.4
+        "ratioParty": 64.8,
+        "ratioBundestag": 124.9
       },
       {
         "word": "sanktionen",
         "count": 6,
-        "ratioParty": 26.2,
+        "ratioParty": 25.5,
         "ratioBundestag": 14.7
       },
       {
         "word": "denke",
         "count": 8,
-        "ratioParty": 17.2,
-        "ratioBundestag": 19.1
+        "ratioParty": 16.6,
+        "ratioBundestag": 19.0
       },
       {
         "word": "energiepreise",
         "count": 6,
-        "ratioParty": 15.5,
-        "ratioBundestag": 16.8
+        "ratioParty": 16.3,
+        "ratioBundestag": 16.4
       },
       {
         "word": "abkommen",
@@ -104,21 +104,101 @@
         "ratioBundestag": 13.5
       }
     ],
+    "signatureWordsParty": [
+      {
+        "word": "geschlossenheit",
+        "count": 7,
+        "score": 29.31,
+        "ratio": 64.8
+      },
+      {
+        "word": "denke",
+        "count": 8,
+        "score": 22.94,
+        "ratio": 16.6
+      },
+      {
+        "word": "sanktionen",
+        "count": 6,
+        "score": 19.66,
+        "ratio": 25.5
+      },
+      {
+        "word": "energiepreise",
+        "count": 6,
+        "score": 17.1,
+        "ratio": 16.3
+      },
+      {
+        "word": "abkommen",
+        "count": 5,
+        "score": 13.74,
+        "ratio": 14.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "geschlossenheit",
+        "count": 7,
+        "score": 33.85,
+        "ratio": 124.9
+      },
+      {
+        "word": "denke",
+        "count": 8,
+        "score": 23.97,
+        "ratio": 19.0
+      },
+      {
+        "word": "energiepreise",
+        "count": 6,
+        "score": 17.14,
+        "ratio": 16.4
+      },
+      {
+        "word": "sanktionen",
+        "count": 6,
+        "score": 16.52,
+        "ratio": 14.7
+      },
+      {
+        "word": "abkommen",
+        "count": 5,
+        "score": 13.37,
+        "ratio": 13.5
+      }
+    ],
     "signatureAdjectives": [
       {
         "word": "falsch",
         "count": 3,
-        "ratioParty": 4.0,
+        "ratioParty": 3.9,
         "ratioBundestag": 3.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 4.77,
+        "ratio": 3.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 4.44,
+        "ratio": 3.4
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 629,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
     "vsParty": 1.02,
-    "vsParliament": 1.08
+    "vsParliament": 1.07
   },
   "funFacts": [
     {
@@ -136,46 +216,46 @@
     "question": "Welches Wort nutzt Daniel Walter häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
         "text": "Geschlossenheit",
         "isCorrect": true
-      },
-      {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
-        "isCorrect": false
-      },
-      {
-        "text": "Haushalt",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Geschlossenheit\" nutzt Daniel Walter 68.8× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "131.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Geschlossenheit\" nutzt Daniel Walter 64.8× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "124.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Daniel Walter häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Sicher",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Problematisch",
-        "isCorrect": false
+        "text": "Falsch",
+        "isCorrect": true
       },
       {
         "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Falsch",
-        "isCorrect": true
+        "text": "Erfolgreich",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Falsch\" nutzt Daniel Walter 4.0× häufiger als der SPD-Durchschnitt.",
+    "explanationParty": "\"Falsch\" nutzt Daniel Walter 3.9× häufiger als der SPD-Durchschnitt.",
     "explanationBundestag": "3.4× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -286,11 +366,11 @@
           "count": 5
         },
         {
-          "word": "klimaschutz",
+          "word": "energiewende",
           "count": 3
         },
         {
-          "word": "energiewende",
+          "word": "klimaschutz",
           "count": 3
         },
         {
@@ -298,7 +378,7 @@
           "count": 2
         },
         {
-          "word": "klimaneutral",
+          "word": "klimawandel",
           "count": 1
         }
       ],
@@ -332,11 +412,11 @@
       ],
       "sicherheit": [
         {
-          "word": "angriff",
+          "word": "verteidigung",
           "count": 1
         },
         {
-          "word": "verteidigung",
+          "word": "angriff",
           "count": 1
         }
       ],
@@ -388,11 +468,11 @@
           "count": 2
         },
         {
-          "word": "steuern",
+          "word": "zuschuss",
           "count": 1
         },
         {
-          "word": "finanzierung",
+          "word": "steuern",
           "count": 1
         }
       ],

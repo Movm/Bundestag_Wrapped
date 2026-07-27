@@ -11,23 +11,23 @@
   "minWords": 74,
   "maxWords": 731,
   "rankings": {
-    "speechRank": 513,
-    "wordsRank": 495,
-    "partySpeechRank": 167,
-    "partyWordsRank": 162,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 17.9,
-    "verbosityRank": 241,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 87,
-    "longestSpeechRank": 335
+    "speechRank": 506,
+    "wordsRank": 496,
+    "partySpeechRank": 161,
+    "partyWordsRank": 166,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 19.2,
+    "verbosityRank": 244,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 88,
+    "longestSpeechRank": 337
   },
   "drama": {
     "interruptionsGiven": 15,
     "interruptionsReceived": 13,
-    "interrupterRank": 234,
-    "interruptedRank": 424
+    "interrupterRank": 232,
+    "interruptedRank": 426
   },
   "words": {
     "topWords": [
@@ -64,11 +64,11 @@
         "count": 8
       },
       {
-        "word": "staatlich",
+        "word": "deutschland",
         "count": 7
       },
       {
-        "word": "ferner",
+        "word": "reform",
         "count": 7
       }
     ],
@@ -76,41 +76,107 @@
       {
         "word": "sparer",
         "count": 10,
-        "ratioParty": 864.9,
-        "ratioBundestag": 738.8
+        "ratioParty": 1079.3,
+        "ratioBundestag": 779.4
       },
       {
         "word": "riester",
         "count": 12,
-        "ratioParty": 305.3,
-        "ratioBundestag": 301.1
+        "ratioParty": 304.7,
+        "ratioBundestag": 300.0
       },
       {
         "word": "altersvorsorge",
         "count": 30,
-        "ratioParty": 209.2,
-        "ratioBundestag": 190.0
+        "ratioParty": 208.9,
+        "ratioBundestag": 190.2
       },
       {
         "word": "frühstartrente",
         "count": 8,
-        "ratioParty": 203.5,
-        "ratioBundestag": 183.4
+        "ratioParty": 203.2,
+        "ratioBundestag": 182.8
       },
       {
         "word": "geförderten",
         "count": 5,
-        "ratioParty": 180.2,
-        "ratioBundestag": 175.0
+        "ratioParty": 196.2,
+        "ratioBundestag": 179.1
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "altersvorsorge",
+        "count": 30,
+        "score": 160.4,
+        "ratio": 208.9
+      },
+      {
+        "word": "sparer",
+        "count": 10,
+        "score": 69.85,
+        "ratio": 1079.3
+      },
+      {
+        "word": "riester",
+        "count": 12,
+        "score": 68.67,
+        "ratio": 304.7
+      },
+      {
+        "word": "frühstartrente",
+        "count": 8,
+        "score": 42.55,
+        "ratio": 203.2
+      },
+      {
+        "word": "geförderten",
+        "count": 5,
+        "score": 26.42,
+        "ratio": 196.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "altersvorsorge",
+        "count": 30,
+        "score": 157.6,
+        "ratio": 190.2
+      },
+      {
+        "word": "riester",
+        "count": 12,
+        "score": 68.49,
+        "ratio": 300.0
+      },
+      {
+        "word": "sparer",
+        "count": 10,
+        "score": 66.6,
+        "ratio": 779.4
+      },
+      {
+        "word": "frühstartrente",
+        "count": 8,
+        "score": 41.71,
+        "ratio": 182.8
+      },
+      {
+        "word": "geförderten",
+        "count": 5,
+        "score": 25.97,
+        "ratio": 179.1
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 456,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.71,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.7,
     "vsParliament": 0.78
   },
   "funFacts": [
@@ -134,24 +200,24 @@
     "question": "Welches Wort nutzt Dr. Carsten Brodesser häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Fraktion",
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
+      },
+      {
+        "text": "Kinder",
         "isCorrect": false
       },
       {
         "text": "Sparer",
         "isCorrect": true
-      },
-      {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sparer\" nutzt Dr. Carsten Brodesser 864.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "738.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Sparer\" nutzt Dr. Carsten Brodesser 1079.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "779.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -173,7 +239,7 @@
         "emoji": "🦉",
         "name": "Eule",
         "title": "Themenexperte",
-        "reason": "Dein Fachwort \"Sparer\" nutzt du 864.9× häufiger als deine Fraktion.",
+        "reason": "Dein Fachwort \"Sparer\" nutzt du 1079.3× häufiger als deine Fraktion.",
         "id": "eule",
         "score": 0.87
       }
@@ -338,11 +404,11 @@
           "count": 2
         },
         {
-          "word": "aktien",
+          "word": "haushalt",
           "count": 1
         },
         {
-          "word": "haushalt",
+          "word": "steuern",
           "count": 1
         }
       ],

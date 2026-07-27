@@ -12,14 +12,14 @@
   "maxWords": 841,
   "rankings": {
     "speechRank": 505,
-    "wordsRank": 468,
-    "partySpeechRank": 164,
-    "partyWordsRank": 149,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 19.2,
-    "verbosityRank": 18,
-    "verbosityTotal": 579,
+    "wordsRank": 467,
+    "partySpeechRank": 160,
+    "partyWordsRank": 150,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 19.3,
+    "verbosityRank": 20,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 6,
     "longestSpeechRank": 189
   },
@@ -27,10 +27,14 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 6,
     "interrupterRank": null,
-    "interruptedRank": 533
+    "interruptedRank": 531
   },
   "words": {
     "topWords": [
+      {
+        "word": "jahr",
+        "count": 13
+      },
       {
         "word": "wohnungen",
         "count": 13
@@ -40,8 +44,8 @@
         "count": 13
       },
       {
-        "word": "jahr",
-        "count": 13
+        "word": "kommunen",
+        "count": 11
       },
       {
         "word": "wichtig",
@@ -49,10 +53,6 @@
       },
       {
         "word": "menschen",
-        "count": 11
-      },
-      {
-        "word": "kommunen",
         "count": 11
       },
       {
@@ -76,32 +76,96 @@
       {
         "word": "bauhaushalt",
         "count": 7,
-        "ratioParty": 2836.8,
-        "ratioBundestag": 8724.5
+        "ratioParty": 2832.1,
+        "ratioBundestag": 8692.8
       },
       {
         "word": "wohnungslosigkeit",
         "count": 7,
-        "ratioParty": 709.2,
-        "ratioBundestag": 223.7
+        "ratioParty": 708.0,
+        "ratioBundestag": 222.9
       },
       {
         "word": "nächstes",
         "count": 6,
-        "ratioParty": 97.3,
-        "ratioBundestag": 66.8
+        "ratioParty": 105.5,
+        "ratioBundestag": 69.0
       },
       {
         "word": "städtebauförderung",
         "count": 7,
-        "ratioParty": 63.0,
-        "ratioBundestag": 69.2
+        "ratioParty": 62.9,
+        "ratioBundestag": 70.1
       },
       {
-        "word": "wohnung",
-        "count": 8,
-        "ratioParty": 55.0,
-        "ratioBundestag": 29.9
+        "word": "planung",
+        "count": 6,
+        "ratioParty": 56.5,
+        "ratioBundestag": 54.4
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "bauhaushalt",
+        "count": 7,
+        "score": 55.64,
+        "ratio": 2832.1
+      },
+      {
+        "word": "wohnungslosigkeit",
+        "count": 7,
+        "score": 45.95,
+        "ratio": 708.0
+      },
+      {
+        "word": "städtebauförderung",
+        "count": 7,
+        "score": 29.1,
+        "ratio": 62.9
+      },
+      {
+        "word": "nächstes",
+        "count": 6,
+        "score": 28.01,
+        "ratio": 105.5
+      },
+      {
+        "word": "planung",
+        "count": 6,
+        "score": 24.31,
+        "ratio": 56.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bauhaushalt",
+        "count": 7,
+        "score": 63.49,
+        "ratio": 8692.8
+      },
+      {
+        "word": "wohnungslosigkeit",
+        "count": 7,
+        "score": 37.88,
+        "ratio": 222.9
+      },
+      {
+        "word": "städtebauförderung",
+        "count": 7,
+        "score": 29.85,
+        "ratio": 70.1
+      },
+      {
+        "word": "nächstes",
+        "count": 6,
+        "score": 25.49,
+        "ratio": 69.0
+      },
+      {
+        "word": "planung",
+        "count": 6,
+        "score": 24.09,
+        "ratio": 54.4
       }
     ],
     "signatureAdjectives": [
@@ -111,14 +175,30 @@
         "ratioParty": 5.0,
         "ratioBundestag": 7.4
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 5.38,
+        "ratio": 5.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 6.38,
+        "ratio": 7.4
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 724,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 1.12,
-    "vsParliament": 1.24
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 1.11,
+    "vsParliament": 1.23
   },
   "funFacts": [
     {
@@ -134,14 +214,18 @@
     {
       "emoji": "📚",
       "label": "Wortreichster",
-      "value": "#18 von 579"
+      "value": "#20 von 580"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Axel Knoerig häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Politik",
+        "text": "Debatte",
+        "isCorrect": false
+      },
+      {
+        "text": "Klima",
         "isCorrect": false
       },
       {
@@ -149,16 +233,12 @@
         "isCorrect": true
       },
       {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
+        "text": "Minister",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bauhaushalt\" nutzt Axel Knoerig 2836.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "8724.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bauhaushalt\" nutzt Axel Knoerig 2832.1× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "8692.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Axel Knoerig häufiger als der Rest der CDU/CSU-Fraktion?",
@@ -168,15 +248,15 @@
         "isCorrect": true
       },
       {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
         "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
         "isCorrect": false
       }
     ],
@@ -291,15 +371,15 @@
           "count": 4
         },
         {
+          "word": "markt",
+          "count": 1
+        },
+        {
           "word": "firmen",
           "count": 1
         },
         {
           "word": "industrie",
-          "count": 1
-        },
-        {
-          "word": "markt",
           "count": 1
         },
         {
@@ -357,11 +437,11 @@
           "count": 2
         },
         {
-          "word": "schule",
+          "word": "schulen",
           "count": 1
         },
         {
-          "word": "schulen",
+          "word": "schule",
           "count": 1
         },
         {

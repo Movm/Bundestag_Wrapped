@@ -11,22 +11,22 @@
   "minWords": 48,
   "maxWords": 565,
   "rankings": {
-    "speechRank": 182,
+    "speechRank": 172,
     "wordsRank": 277,
-    "partySpeechRank": 34,
-    "partyWordsRank": 47,
+    "partySpeechRank": 33,
+    "partyWordsRank": 48,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 70.9,
-    "verbosityRank": 504,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 65,
+    "totalSpeakers": 626,
+    "percentile": 72.5,
+    "verbosityRank": 506,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 68,
     "longestSpeechRank": 537
   },
   "drama": {
-    "interruptionsGiven": 258,
+    "interruptionsGiven": 248,
     "interruptionsReceived": 34,
-    "interrupterRank": 12,
+    "interrupterRank": 13,
     "interruptedRank": 205
   },
   "words": {
@@ -74,56 +74,148 @@
     ],
     "signatureWords": [
       {
+        "word": "ausländerbehörde",
+        "count": 8,
+        "ratioParty": 764.2,
+        "ratioBundestag": 214.2
+      },
+      {
         "word": "staatsbürgerschaft",
         "count": 7,
-        "ratioParty": 674.1,
-        "ratioBundestag": 50.0
+        "ratioParty": 668.7,
+        "ratioBundestag": 49.8
       },
       {
         "word": "staatsangehörigkeitsrecht",
         "count": 5,
-        "ratioParty": 481.5,
-        "ratioBundestag": 279.9
+        "ratioParty": 477.6,
+        "ratioBundestag": 278.9
       },
       {
         "word": "syrer",
         "count": 6,
-        "ratioParty": 64.2,
-        "ratioBundestag": 39.5
-      },
-      {
-        "word": "verdacht",
-        "count": 5,
-        "ratioParty": 53.5,
-        "ratioBundestag": 38.2
+        "ratioParty": 63.7,
+        "ratioBundestag": 39.8
       },
       {
         "word": "voraussetzungen",
         "count": 5,
-        "ratioParty": 48.1,
-        "ratioBundestag": 12.5
+        "ratioParty": 47.8,
+        "ratioBundestag": 12.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "ausländerbehörde",
+        "count": 8,
+        "score": 53.12,
+        "ratio": 764.2
+      },
+      {
+        "word": "staatsbürgerschaft",
+        "count": 7,
+        "score": 45.55,
+        "ratio": 668.7
+      },
+      {
+        "word": "staatsangehörigkeitsrecht",
+        "count": 5,
+        "score": 30.85,
+        "ratio": 477.6
+      },
+      {
+        "word": "syrer",
+        "count": 6,
+        "score": 25.02,
+        "ratio": 63.7
+      },
+      {
+        "word": "voraussetzungen",
+        "count": 5,
+        "score": 19.44,
+        "ratio": 47.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "ausländerbehörde",
+        "count": 8,
+        "score": 42.97,
+        "ratio": 214.2
+      },
+      {
+        "word": "staatsangehörigkeitsrecht",
+        "count": 5,
+        "score": 28.17,
+        "ratio": 278.9
+      },
+      {
+        "word": "staatsbürgerschaft",
+        "count": 7,
+        "score": 27.5,
+        "ratio": 49.8
+      },
+      {
+        "word": "syrer",
+        "count": 6,
+        "score": 22.25,
+        "ratio": 39.8
+      },
+      {
+        "word": "voraussetzungen",
+        "count": 5,
+        "score": 12.9,
+        "ratio": 12.2
       }
     ],
     "signatureAdjectives": [
       {
         "word": "fatal",
         "count": 3,
-        "ratioParty": 9.6,
-        "ratioBundestag": 23.2
+        "ratioParty": 9.2,
+        "ratioBundestag": 22.6
       },
       {
         "word": "gefährlich",
         "count": 3,
-        "ratioParty": 8.3,
-        "ratioBundestag": 11.1
+        "ratioParty": 8.2,
+        "ratioBundestag": 11.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "fatal",
+        "count": 3,
+        "score": 6.97,
+        "ratio": 9.2
+      },
+      {
+        "word": "gefährlich",
+        "count": 3,
+        "score": 6.66,
+        "ratio": 8.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "fatal",
+        "count": 3,
+        "score": 9.48,
+        "ratio": 22.6
+      },
+      {
+        "word": "gefährlich",
+        "count": 3,
+        "score": 7.55,
+        "ratio": 11.4
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 299,
-    "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.56,
+    "partyAvgWords": 542,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.55,
     "vsParliament": 0.51
   },
   "funFacts": [
@@ -140,60 +232,60 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufer",
-      "value": "#12 (258x)"
+      "value": "#13 (248x)"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Filiz Polat häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Staatsbürgerschaft",
+        "text": "Ausländerbehörde",
         "isCorrect": true
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Staatsbürgerschaft\" nutzt Filiz Polat 674.1× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "50.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Ausländerbehörde\" nutzt Filiz Polat 764.2× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "214.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Filiz Polat häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
         "text": "Fatal",
         "isCorrect": true
+      },
+      {
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Fatal\" nutzt Filiz Polat 9.6× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "23.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Fatal\" nutzt Filiz Polat 9.2× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "22.6× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦉",
     "name": "Eule",
     "title": "Themenexpertin",
-    "reason": "Dein Fachwort \"Staatsbürgerschaft\" nutzt du 674.1× häufiger als deine Fraktion.",
+    "reason": "Dein Fachwort \"Ausländerbehörde\" nutzt du 764.2× häufiger als deine Fraktion.",
     "id": "eule",
     "alternatives": [
       {
@@ -309,11 +401,11 @@
           "count": 2
         },
         {
-          "word": "fachkräfte",
+          "word": "wirtschaft",
           "count": 2
         },
         {
-          "word": "wirtschaft",
+          "word": "fachkräfte",
           "count": 2
         },
         {
@@ -357,11 +449,11 @@
           "count": 1
         },
         {
-          "word": "gefährder",
+          "word": "bundeswehr",
           "count": 1
         },
         {
-          "word": "terroristen",
+          "word": "gefährder",
           "count": 1
         }
       ],
@@ -397,15 +489,15 @@
           "count": 2
         },
         {
-          "word": "ukraine",
-          "count": 1
-        },
-        {
           "word": "ukrainer",
           "count": 1
         },
         {
-          "word": "schengen",
+          "word": "europäisch",
+          "count": 1
+        },
+        {
+          "word": "außenminister",
           "count": 1
         }
       ],
@@ -425,11 +517,11 @@
           "count": 2
         },
         {
-          "word": "bildung",
+          "word": "schüler",
           "count": 1
         },
         {
-          "word": "schulen",
+          "word": "hochschule",
           "count": 1
         },
         {
@@ -437,7 +529,7 @@
           "count": 1
         },
         {
-          "word": "hochschule",
+          "word": "bildung",
           "count": 1
         }
       ],
@@ -451,11 +543,11 @@
           "count": 1
         },
         {
-          "word": "kosten",
+          "word": "investitionen",
           "count": 1
         },
         {
-          "word": "investitionen",
+          "word": "kosten",
           "count": 1
         },
         {
@@ -481,7 +573,7 @@
           "count": 3
         },
         {
-          "word": "gerichte",
+          "word": "verfassungswidrig",
           "count": 2
         }
       ],
@@ -497,11 +589,11 @@
       ],
       "mobilitaet": [
         {
-          "word": "bahn",
+          "word": "straße",
           "count": 1
         },
         {
-          "word": "straße",
+          "word": "bahn",
           "count": 1
         }
       ]

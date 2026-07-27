@@ -11,23 +11,23 @@
   "minWords": 56,
   "maxWords": 1169,
   "rankings": {
-    "speechRank": 430,
-    "wordsRank": 382,
-    "partySpeechRank": 100,
-    "partyWordsRank": 84,
+    "speechRank": 412,
+    "wordsRank": 370,
+    "partySpeechRank": 97,
+    "partyWordsRank": 85,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 31.2,
-    "verbosityRank": 445,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 34.2,
+    "verbosityRank": 446,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 114,
-    "longestSpeechRank": 39
+    "longestSpeechRank": 41
   },
   "drama": {
     "interruptionsGiven": 4,
     "interruptionsReceived": 22,
-    "interrupterRank": 371,
-    "interruptedRank": 312
+    "interrupterRank": 364,
+    "interruptedRank": 311
   },
   "words": {
     "topWords": [
@@ -76,40 +76,106 @@
       {
         "word": "pistorius",
         "count": 11,
-        "ratioParty": 168.0,
-        "ratioBundestag": 99.2
+        "ratioParty": 155.1,
+        "ratioBundestag": 97.8
       },
       {
         "word": "verteidigungspolitik",
         "count": 7,
-        "ratioParty": 106.9,
-        "ratioBundestag": 124.9
+        "ratioParty": 106.3,
+        "ratioBundestag": 127.0
       },
       {
         "word": "siehe",
         "count": 9,
-        "ratioParty": 89.4,
-        "ratioBundestag": 251.0
+        "ratioParty": 84.6,
+        "ratioBundestag": 242.5
       },
       {
         "word": "wehrdienst",
         "count": 5,
-        "ratioParty": 82.8,
-        "ratioBundestag": 28.4
+        "ratioParty": 75.9,
+        "ratioBundestag": 28.0
       },
       {
         "word": "streitkräfte",
         "count": 9,
-        "ratioParty": 52.6,
-        "ratioBundestag": 58.6
+        "ratioParty": 53.8,
+        "ratioBundestag": 62.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "pistorius",
+        "count": 11,
+        "score": 55.56,
+        "ratio": 155.1
+      },
+      {
+        "word": "siehe",
+        "count": 9,
+        "score": 40.05,
+        "ratio": 84.6
+      },
+      {
+        "word": "streitkräfte",
+        "count": 9,
+        "score": 36.03,
+        "ratio": 53.8
+      },
+      {
+        "word": "verteidigungspolitik",
+        "count": 7,
+        "score": 32.73,
+        "ratio": 106.3
+      },
+      {
+        "word": "wehrdienst",
+        "count": 5,
+        "score": 21.71,
+        "ratio": 75.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "pistorius",
+        "count": 11,
+        "score": 50.52,
+        "ratio": 97.8
+      },
+      {
+        "word": "siehe",
+        "count": 9,
+        "score": 49.46,
+        "ratio": 242.5
+      },
+      {
+        "word": "streitkräfte",
+        "count": 9,
+        "score": 37.29,
+        "ratio": 62.0
+      },
+      {
+        "word": "verteidigungspolitik",
+        "count": 7,
+        "score": 33.96,
+        "ratio": 127.0
+      },
+      {
+        "word": "wehrdienst",
+        "count": 5,
+        "score": 16.84,
+        "ratio": 28.0
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 362,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 560,
+    "parliamentAvgWords": 587,
     "vsParty": 0.65,
     "vsParliament": 0.62
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Rüdiger Lucassen häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Antrag",
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Politik",
         "isCorrect": false
       },
       {
         "text": "Pistorius",
         "isCorrect": true
-      },
-      {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Pistorius\" nutzt Rüdiger Lucassen 168.0× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "99.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Pistorius\" nutzt Rüdiger Lucassen 155.1× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "97.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,

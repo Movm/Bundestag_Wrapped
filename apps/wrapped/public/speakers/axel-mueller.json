@@ -6,34 +6,34 @@
   "speeches": 20,
   "wortbeitraege": 3,
   "befragungResponses": 0,
-  "totalWords": 10170,
-  "avgWords": 442,
+  "totalWords": 10012,
+  "avgWords": 435,
   "minWords": 22,
   "maxWords": 770,
   "rankings": {
-    "speechRank": 89,
-    "wordsRank": 136,
-    "partySpeechRank": 23,
-    "partyWordsRank": 35,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 85.8,
-    "verbosityRank": 268,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 93,
-    "longestSpeechRank": 278
+    "speechRank": 83,
+    "wordsRank": 131,
+    "partySpeechRank": 21,
+    "partyWordsRank": 36,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 86.7,
+    "verbosityRank": 291,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 106,
+    "longestSpeechRank": 277
   },
   "drama": {
-    "interruptionsGiven": 33,
+    "interruptionsGiven": 36,
     "interruptionsReceived": 40,
-    "interrupterRank": 156,
-    "interruptedRank": 159
+    "interrupterRank": 141,
+    "interruptedRank": 163
   },
   "words": {
     "topWords": [
       {
         "word": "stgb",
-        "count": 46
+        "count": 45
       },
       {
         "word": "werte",
@@ -41,18 +41,18 @@
       },
       {
         "word": "gesetzentwurf",
-        "count": 19
+        "count": 20
+      },
+      {
+        "word": "jedoch",
+        "count": 18
       },
       {
         "word": "eines",
         "count": 18
       },
       {
-        "word": "jedoch",
-        "count": 17
-      },
-      {
-        "word": "dies",
+        "word": "straftaten",
         "count": 16
       }
     ],
@@ -60,55 +60,129 @@
       {
         "word": "strafantrag",
         "count": 6,
-        "ratioParty": 847.5,
-        "ratioBundestag": 1307.3
+        "ratioParty": 860.0,
+        "ratioBundestag": 1323.8
       },
       {
         "word": "strafbarkeit",
         "count": 9,
-        "ratioParty": 158.9,
-        "ratioBundestag": 126.5
+        "ratioParty": 161.2,
+        "ratioBundestag": 128.1
       },
       {
         "word": "prozessbegleitung",
         "count": 9,
-        "ratioParty": 141.2,
-        "ratioBundestag": 112.1
+        "ratioParty": 143.3,
+        "ratioBundestag": 101.8
       },
       {
         "word": "strafprozessordnung",
         "count": 5,
-        "ratioParty": 117.7,
-        "ratioBundestag": 121.0
+        "ratioParty": 119.4,
+        "ratioBundestag": 110.3
       },
       {
-        "word": "paralleljustiz",
+        "word": "terroristischer",
+        "count": 6,
+        "ratioParty": 95.6,
+        "ratioBundestag": 176.5
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "strafbarkeit",
+        "count": 9,
+        "score": 45.8,
+        "ratio": 161.2
+      },
+      {
+        "word": "prozessbegleitung",
+        "count": 9,
+        "score": 44.75,
+        "ratio": 143.3
+      },
+      {
+        "word": "strafantrag",
+        "count": 6,
+        "score": 40.55,
+        "ratio": 860.0
+      },
+      {
+        "word": "terroristischer",
+        "count": 6,
+        "score": 27.42,
+        "ratio": 95.6
+      },
+      {
+        "word": "strafprozessordnung",
         "count": 5,
-        "ratioParty": 100.9,
-        "ratioBundestag": 114.7
+        "score": 23.95,
+        "ratio": 119.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "strafbarkeit",
+        "count": 9,
+        "score": 43.75,
+        "ratio": 128.1
+      },
+      {
+        "word": "strafantrag",
+        "count": 6,
+        "score": 43.13,
+        "ratio": 1323.8
+      },
+      {
+        "word": "prozessbegleitung",
+        "count": 9,
+        "score": 41.7,
+        "ratio": 101.8
+      },
+      {
+        "word": "terroristischer",
+        "count": 6,
+        "score": 31.07,
+        "ratio": 176.5
+      },
+      {
+        "word": "strafprozessordnung",
+        "count": 5,
+        "score": 23.56,
+        "ratio": 110.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "gerecht",
         "count": 4,
-        "ratioParty": 2.9,
-        "ratioBundestag": 2.6
-      },
+        "ratioParty": 3.0,
+        "ratioBundestag": 2.7
+      }
+    ],
+    "signatureAdjectivesParty": [
       {
-        "word": "falsch",
+        "word": "gerecht",
         "count": 4,
-        "ratioParty": 2.6,
-        "ratioBundestag": 2.5
+        "score": 5.55,
+        "ratio": 3.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "gerecht",
+        "count": 4,
+        "score": 5.23,
+        "ratio": 2.7
       }
     ]
   },
   "comparison": {
-    "speakerAvgWords": 442,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.69,
-    "vsParliament": 0.76
+    "speakerAvgWords": 435,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.67,
+    "vsParliament": 0.74
   },
   "funFacts": [
     {
@@ -119,19 +193,19 @@
     {
       "emoji": "📝",
       "label": "Wörter gesprochen",
-      "value": "10.170"
+      "value": "10.012"
     },
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "33"
+      "value": "36"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Axel Müller häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bundesregierung",
+        "text": "Europa",
         "isCorrect": false
       },
       {
@@ -139,26 +213,22 @@
         "isCorrect": true
       },
       {
-        "text": "Koalition",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
-        "text": "Debatte",
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Strafantrag\" nutzt Axel Müller 847.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "1307.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Strafantrag\" nutzt Axel Müller 860.0× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "1323.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Axel Müller häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Gerecht",
-        "isCorrect": true
-      },
-      {
-        "text": "Klar",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
@@ -166,18 +236,22 @@
         "isCorrect": false
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Gefährlich",
         "isCorrect": false
+      },
+      {
+        "text": "Gerecht",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Gerecht\" nutzt Axel Müller 2.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "2.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Gerecht\" nutzt Axel Müller 3.0× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "2.7× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦉",
     "name": "Eule",
     "title": "Themenexperte",
-    "reason": "Dein Fachwort \"Strafantrag\" nutzt du 847.5× häufiger als deine Fraktion.",
+    "reason": "Dein Fachwort \"Strafantrag\" nutzt du 860.0× häufiger als deine Fraktion.",
     "id": "eule",
     "alternatives": [
       {
@@ -200,76 +274,72 @@
   },
   "toneProfile": {
     "scores": {
-      "affirmative": 47.6,
+      "affirmative": 50.0,
       "aggression": 0.0,
-      "labeling": 8.7,
-      "solution_focus": 82.6,
-      "collaboration": 28.6,
+      "labeling": 9.1,
+      "solution_focus": 85.7,
+      "collaboration": 25.0,
       "demand_intensity": 0.0,
-      "acknowledgment": 7.5,
-      "authority": 76.7,
-      "future_orientation": 88.5,
-      "emotional_intensity": 12.0,
-      "inclusivity": 35.8,
+      "acknowledgment": 8.3,
+      "authority": 71.6,
+      "future_orientation": 85.7,
+      "emotional_intensity": 13.0,
+      "inclusivity": 36.5,
       "discriminatory": 0.0
     },
     "confidence": "sufficient",
     "sampleSize": {
       "speeches": 23,
-      "words": 6603,
-      "adjectives": 23,
-      "verbs": 40
+      "words": 6497,
+      "adjectives": 22,
+      "verbs": 36
     }
   },
   "topics": {
     "scores": {
-      "migration": 0.45,
+      "migration": 0.46,
       "klima": 0.0,
-      "wirtschaft": 0.61,
-      "soziales": 1.36,
-      "sicherheit": 3.33,
-      "gesundheit": 3.18,
-      "europa": 1.51,
-      "digital": 1.36,
-      "bildung": 0.76,
-      "finanzen": 1.51,
-      "justiz": 13.93,
-      "arbeit": 0.45,
-      "mobilitaet": 0.3
+      "wirtschaft": 0.62,
+      "soziales": 1.39,
+      "sicherheit": 3.85,
+      "gesundheit": 3.23,
+      "europa": 1.54,
+      "digital": 2.15,
+      "bildung": 0.77,
+      "finanzen": 1.54,
+      "justiz": 14.78,
+      "arbeit": 0.46,
+      "mobilitaet": 0.31
     },
     "topTopics": [
       {
         "topic": "justiz",
-        "score": 13.93,
+        "score": 14.78,
         "rank": 1
       },
       {
         "topic": "sicherheit",
-        "score": 3.33,
+        "score": 3.85,
         "rank": 2
       },
       {
         "topic": "gesundheit",
-        "score": 3.18,
+        "score": 3.23,
         "rank": 3
       },
       {
-        "topic": "europa",
-        "score": 1.51,
+        "topic": "digital",
+        "score": 2.15,
         "rank": 4
       },
       {
-        "topic": "finanzen",
-        "score": 1.51,
+        "topic": "europa",
+        "score": 1.54,
         "rank": 5
       }
     ],
     "topicWords": {
       "migration": [
-        {
-          "word": "zuwanderer",
-          "count": 1
-        },
         {
           "word": "integration",
           "count": 1
@@ -277,23 +347,27 @@
         {
           "word": "bleiberecht",
           "count": 1
+        },
+        {
+          "word": "zuwanderer",
+          "count": 1
         }
       ],
       "wirtschaft": [
-        {
-          "word": "konjunktur",
-          "count": 1
-        },
-        {
-          "word": "rezession",
-          "count": 1
-        },
         {
           "word": "unternehmen",
           "count": 1
         },
         {
           "word": "kredit",
+          "count": 1
+        },
+        {
+          "word": "konjunktur",
+          "count": 1
+        },
+        {
+          "word": "rezession",
           "count": 1
         }
       ],
@@ -307,15 +381,15 @@
           "count": 2
         },
         {
+          "word": "wohnung",
+          "count": 2
+        },
+        {
           "word": "jugendliche",
           "count": 1
         },
         {
           "word": "kinder",
-          "count": 1
-        },
-        {
-          "word": "behinderung",
           "count": 1
         }
       ],
@@ -326,7 +400,11 @@
         },
         {
           "word": "täter",
-          "count": 6
+          "count": 7
+        },
+        {
+          "word": "polizei",
+          "count": 3
         },
         {
           "word": "terrorismus",
@@ -335,10 +413,6 @@
         {
           "word": "betrug",
           "count": 2
-        },
-        {
-          "word": "mord",
-          "count": 1
         }
       ],
       "gesundheit": [
@@ -347,19 +421,19 @@
           "count": 3
         },
         {
-          "word": "krankenversicherung",
-          "count": 3
-        },
-        {
           "word": "arzt",
           "count": 3
         },
         {
-          "word": "gesundheitswesen",
-          "count": 2
+          "word": "krankenversicherung",
+          "count": 3
         },
         {
           "word": "krankenhäuser",
+          "count": 2
+        },
+        {
+          "word": "gesundheitswesen",
           "count": 2
         }
       ],
@@ -369,37 +443,41 @@
           "count": 4
         },
         {
-          "word": "sanktion",
-          "count": 2
-        },
-        {
           "word": "sanktionen",
           "count": 2
         },
         {
-          "word": "völkerrecht",
-          "count": 1
+          "word": "sanktion",
+          "count": 2
         },
         {
           "word": "waffenstillstand",
+          "count": 1
+        },
+        {
+          "word": "völkerrecht",
           "count": 1
         }
       ],
       "digital": [
         {
           "word": "internet",
-          "count": 5
+          "count": 7
         },
         {
           "word": "daten",
+          "count": 3
+        },
+        {
+          "word": "software",
           "count": 2
         },
         {
-          "word": "netz",
+          "word": "plattform",
           "count": 1
         },
         {
-          "word": "plattform",
+          "word": "netz",
           "count": 1
         }
       ],
@@ -423,7 +501,7 @@
       ],
       "finanzen": [
         {
-          "word": "bundesrechnungshof",
+          "word": "kosten",
           "count": 2
         },
         {
@@ -431,11 +509,11 @@
           "count": 2
         },
         {
-          "word": "kosten",
+          "word": "bundesrechnungshof",
           "count": 2
         },
         {
-          "word": "sondervermögen",
+          "word": "finanzierung",
           "count": 1
         },
         {
@@ -446,19 +524,19 @@
       "justiz": [
         {
           "word": "straftaten",
-          "count": 13
+          "count": 16
         },
         {
           "word": "strafverfolgung",
-          "count": 13
+          "count": 11
         },
         {
           "word": "strafrecht",
-          "count": 8
+          "count": 7
         },
         {
           "word": "straftat",
-          "count": 6
+          "count": 7
         },
         {
           "word": "grundgesetz",
@@ -467,15 +545,15 @@
       ],
       "arbeit": [
         {
+          "word": "einkommen",
+          "count": 1
+        },
+        {
           "word": "arbeitnehmer",
           "count": 1
         },
         {
           "word": "arbeitslosigkeit",
-          "count": 1
-        },
-        {
-          "word": "einkommen",
           "count": 1
         }
       ],

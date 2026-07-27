@@ -11,23 +11,23 @@
   "minWords": 17,
   "maxWords": 719,
   "rankings": {
-    "speechRank": 576,
-    "wordsRank": 401,
-    "partySpeechRank": 102,
+    "speechRank": 570,
+    "wordsRank": 395,
+    "partySpeechRank": 100,
     "partyWordsRank": 78,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 7.8,
-    "verbosityRank": 579,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 8.9,
+    "verbosityRank": 580,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 103,
-    "longestSpeechRank": 351
+    "longestSpeechRank": 353
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 11,
     "interrupterRank": null,
-    "interruptedRank": 457
+    "interruptedRank": 455
   },
   "words": {
     "topWords": [
@@ -66,10 +66,6 @@
       {
         "word": "jahr",
         "count": 8
-      },
-      {
-        "word": "beitrag",
-        "count": 8
       }
     ],
     "signatureWords": [
@@ -77,39 +73,105 @@
         "word": "fragestellung",
         "count": 5,
         "ratioParty": 235.5,
-        "ratioBundestag": 205.0
+        "ratioBundestag": 187.9
       },
       {
         "word": "litauen",
         "count": 13,
         "ratioParty": 98.0,
-        "ratioBundestag": 163.5
+        "ratioBundestag": 165.1
       },
       {
         "word": "operation",
         "count": 7,
-        "ratioParty": 59.9,
-        "ratioBundestag": 64.7
+        "ratioParty": 65.9,
+        "ratioBundestag": 70.7
       },
       {
         "word": "sichergestellt",
         "count": 6,
-        "ratioParty": 40.4,
-        "ratioBundestag": 65.0
+        "ratioParty": 43.5,
+        "ratioBundestag": 67.1
       },
       {
         "word": "verteidigungsfähigkeit",
         "count": 8,
-        "ratioParty": 32.8,
-        "ratioBundestag": 40.1
+        "ratioParty": 33.5,
+        "ratioBundestag": 40.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "litauen",
+        "count": 13,
+        "score": 59.74,
+        "ratio": 98.0
+      },
+      {
+        "word": "operation",
+        "count": 7,
+        "score": 29.42,
+        "ratio": 65.9
+      },
+      {
+        "word": "verteidigungsfähigkeit",
+        "count": 8,
+        "score": 28.33,
+        "ratio": 33.5
+      },
+      {
+        "word": "fragestellung",
+        "count": 5,
+        "score": 27.33,
+        "ratio": 235.5
+      },
+      {
+        "word": "sichergestellt",
+        "count": 6,
+        "score": 22.77,
+        "ratio": 43.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "litauen",
+        "count": 13,
+        "score": 66.46,
+        "ratio": 165.1
+      },
+      {
+        "word": "operation",
+        "count": 7,
+        "score": 29.91,
+        "ratio": 70.7
+      },
+      {
+        "word": "verteidigungsfähigkeit",
+        "count": 8,
+        "score": 29.75,
+        "ratio": 40.2
+      },
+      {
+        "word": "fragestellung",
+        "count": 5,
+        "score": 26.21,
+        "ratio": 187.9
+      },
+      {
+        "word": "sichergestellt",
+        "count": 6,
+        "score": 25.33,
+        "ratio": 67.1
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 96,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
     "vsParty": 0.16,
     "vsParliament": 0.16
   },
@@ -129,15 +191,15 @@
     "question": "Welches Wort nutzt Dr. Nils Schmid häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Klima",
         "isCorrect": false
       },
       {
-        "text": "Reform",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
@@ -146,7 +208,7 @@
       }
     ],
     "explanationParty": "\"Fragestellung\" nutzt Dr. Nils Schmid 235.5× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "205.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "187.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -243,11 +305,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "mittelmeer",
+          "word": "obergrenze",
           "count": 2
         },
         {
-          "word": "obergrenze",
+          "word": "mittelmeer",
           "count": 2
         }
       ],
@@ -321,11 +383,11 @@
           "count": 15
         },
         {
-          "word": "europa",
+          "word": "ukraine",
           "count": 5
         },
         {
-          "word": "ukraine",
+          "word": "europa",
           "count": 5
         },
         {

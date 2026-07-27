@@ -11,23 +11,23 @@
   "minWords": 8,
   "maxWords": 956,
   "rankings": {
-    "speechRank": 560,
-    "wordsRank": 100,
+    "speechRank": 566,
+    "wordsRank": 101,
     "partySpeechRank": 99,
-    "partyWordsRank": 26,
+    "partyWordsRank": 28,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 10.4,
-    "verbosityRank": 578,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 9.6,
+    "verbosityRank": 579,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 102,
-    "longestSpeechRank": 103
+    "longestSpeechRank": 102
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 39,
     "interrupterRank": null,
-    "interruptedRank": 167
+    "interruptedRank": 173
   },
   "words": {
     "topWords": [
@@ -76,32 +76,96 @@
       {
         "word": "gesenhues",
         "count": 13,
-        "ratioParty": 521.9,
-        "ratioBundestag": 404.2
-      },
-      {
-        "word": "schattner",
-        "count": 5,
-        "ratioParty": 401.4,
-        "ratioBundestag": 106.4
-      },
-      {
-        "word": "trifluoressigsäure",
-        "count": 5,
-        "ratioParty": 401.4,
-        "ratioBundestag": 2020.8
+        "ratioParty": 260.9,
+        "ratioBundestag": 327.2
       },
       {
         "word": "bundesumweltministerium",
         "count": 9,
-        "ratioParty": 361.3,
-        "ratioBundestag": 330.7
+        "ratioParty": 240.9,
+        "ratioBundestag": 302.0
+      },
+      {
+        "word": "schattner",
+        "count": 5,
+        "ratioParty": 200.7,
+        "ratioBundestag": 80.5
+      },
+      {
+        "word": "kläranlagen",
+        "count": 5,
+        "ratioParty": 200.7,
+        "ratioBundestag": 402.7
       },
       {
         "word": "badum",
         "count": 14,
-        "ratioParty": 160.6,
-        "ratioBundestag": 195.1
+        "ratioParty": 124.9,
+        "ratioBundestag": 187.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "gesenhues",
+        "count": 13,
+        "score": 72.38,
+        "ratio": 260.9
+      },
+      {
+        "word": "badum",
+        "count": 14,
+        "score": 67.7,
+        "ratio": 124.9
+      },
+      {
+        "word": "bundesumweltministerium",
+        "count": 9,
+        "score": 49.4,
+        "ratio": 240.9
+      },
+      {
+        "word": "schattner",
+        "count": 5,
+        "score": 26.53,
+        "ratio": 200.7
+      },
+      {
+        "word": "kläranlagen",
+        "count": 5,
+        "score": 26.53,
+        "ratio": 200.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "gesenhues",
+        "count": 13,
+        "score": 75.32,
+        "ratio": 327.2
+      },
+      {
+        "word": "badum",
+        "count": 14,
+        "score": 73.38,
+        "ratio": 187.9
+      },
+      {
+        "word": "bundesumweltministerium",
+        "count": 9,
+        "score": 51.42,
+        "ratio": 302.0
+      },
+      {
+        "word": "kläranlagen",
+        "count": 5,
+        "score": 30.0,
+        "ratio": 402.7
+      },
+      {
+        "word": "schattner",
+        "count": 5,
+        "score": 22.0,
+        "ratio": 80.5
       }
     ],
     "signatureAdjectives": [
@@ -109,20 +173,48 @@
         "word": "vorbildlich",
         "count": 3,
         "ratioParty": 120.4,
-        "ratioBundestag": 80.8
+        "ratioBundestag": 80.5
       },
       {
         "word": "sozial",
         "count": 4,
-        "ratioParty": 3.4,
-        "ratioBundestag": 4.5
+        "ratioParty": 3.6,
+        "ratioBundestag": 4.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "vorbildlich",
+        "count": 3,
+        "score": 14.4,
+        "ratio": 120.4
+      },
+      {
+        "word": "sozial",
+        "count": 4,
+        "score": 6.1,
+        "ratio": 3.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "vorbildlich",
+        "count": 3,
+        "score": 13.2,
+        "ratio": 80.5
+      },
+      {
+        "word": "sozial",
+        "count": 4,
+        "score": 6.96,
+        "ratio": 4.7
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 96,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
     "vsParty": 0.16,
     "vsParliament": 0.16
   },
@@ -142,69 +234,69 @@
     "question": "Welches Wort nutzt Rita Schwarzelühr-Sutter häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
         "text": "Gesenhues",
         "isCorrect": true
       },
       {
-        "text": "Kinder",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
+        "text": "Bundesregierung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gesenhues\" nutzt Rita Schwarzelühr-Sutter 521.9× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "404.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Gesenhues\" nutzt Rita Schwarzelühr-Sutter 260.9× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "327.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Rita Schwarzelühr-Sutter häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
         "text": "Vorbildlich",
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Vorbildlich\" nutzt Rita Schwarzelühr-Sutter 120.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "80.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "80.5× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
-    "emoji": "🦉",
-    "name": "Eule",
-    "title": "Themenexpertin",
-    "reason": "Dein Fachwort \"Gesenhues\" nutzt du 521.9× häufiger als deine Fraktion.",
-    "id": "eule",
+    "emoji": "🐬",
+    "name": "Delfin",
+    "title": "Diplomatische Rednerin",
+    "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
+    "id": "delfin",
     "alternatives": [
-      {
-        "emoji": "🐬",
-        "name": "Delfin",
-        "title": "Diplomatische Rednerin",
-        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-        "id": "delfin",
-        "score": 1.0
-      },
       {
         "emoji": "🦊",
         "name": "Fuchs",
         "title": "Clevere Strategin",
         "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
         "id": "fuchs",
+        "score": 1.0
+      },
+      {
+        "emoji": "🐿️",
+        "name": "Eichhörnchen",
+        "title": "Themenhüterin",
+        "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
+        "id": "eichhoernchen",
         "score": 1.0
       }
     ]
@@ -300,7 +392,7 @@
           "count": 5
         },
         {
-          "word": "kernkraftwerk",
+          "word": "erneuerbare",
           "count": 3
         }
       ],
@@ -310,11 +402,11 @@
           "count": 5
         },
         {
-          "word": "unternehmen",
+          "word": "markt",
           "count": 3
         },
         {
-          "word": "markt",
+          "word": "unternehmen",
           "count": 3
         },
         {
@@ -322,7 +414,7 @@
           "count": 2
         },
         {
-          "word": "zölle",
+          "word": "wirtschaftswachstum",
           "count": 1
         }
       ],
@@ -360,11 +452,11 @@
           "count": 2
         },
         {
-          "word": "krieg",
+          "word": "bündnis",
           "count": 1
         },
         {
-          "word": "russland",
+          "word": "brüssel",
           "count": 1
         }
       ],
@@ -414,7 +506,7 @@
           "count": 2
         },
         {
-          "word": "finanzierung",
+          "word": "bank",
           "count": 1
         }
       ],
@@ -428,15 +520,15 @@
           "count": 2
         },
         {
-          "word": "rechtsprechung",
-          "count": 1
-        },
-        {
-          "word": "verordnung",
-          "count": 1
-        },
-        {
           "word": "grundgesetz",
+          "count": 1
+        },
+        {
+          "word": "gleichstellung",
+          "count": 1
+        },
+        {
+          "word": "gericht",
           "count": 1
         }
       ],

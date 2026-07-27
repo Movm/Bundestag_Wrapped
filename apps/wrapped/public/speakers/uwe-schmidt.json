@@ -11,23 +11,23 @@
   "minWords": 816,
   "maxWords": 952,
   "rankings": {
-    "speechRank": 599,
-    "wordsRank": 480,
-    "partySpeechRank": 110,
-    "partyWordsRank": 92,
+    "speechRank": 597,
+    "wordsRank": 478,
+    "partySpeechRank": 109,
+    "partyWordsRank": 91,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 4.2,
+    "totalSpeakers": 626,
+    "percentile": 4.6,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 104
+    "longestSpeechRank": 103
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 6,
-    "interrupterRank": 414,
-    "interruptedRank": 526
+    "interrupterRank": 421,
+    "interruptedRank": 521
   },
   "words": {
     "topWords": [
@@ -74,55 +74,147 @@
     ],
     "signatureWords": [
       {
+        "word": "oßner",
+        "count": 8,
+        "ratioParty": 2063.9,
+        "ratioBundestag": 734.4
+      },
+      {
         "word": "binnenhäfen",
         "count": 5,
-        "ratioParty": 1290.0,
-        "ratioBundestag": 537.5
+        "ratioParty": 1289.9,
+        "ratioBundestag": 535.5
       },
       {
         "word": "wasserstraße",
         "count": 6,
         "ratioParty": 774.0,
-        "ratioBundestag": 209.2
+        "ratioBundestag": 208.4
       },
       {
         "word": "häfen",
         "count": 16,
-        "ratioParty": 589.7,
-        "ratioBundestag": 317.5
+        "ratioParty": 688.0,
+        "ratioBundestag": 321.3
       },
       {
         "word": "bremerhaven",
         "count": 5,
         "ratioParty": 430.0,
-        "ratioBundestag": 537.5
+        "ratioBundestag": 535.5
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "häfen",
+        "count": 16,
+        "score": 104.56,
+        "ratio": 688.0
       },
       {
-        "word": "florian",
-        "count": 9,
-        "ratioParty": 387.0,
-        "ratioBundestag": 351.8
+        "word": "oßner",
+        "count": 8,
+        "score": 61.06,
+        "ratio": 2063.9
+      },
+      {
+        "word": "wasserstraße",
+        "count": 6,
+        "score": 39.92,
+        "ratio": 774.0
+      },
+      {
+        "word": "binnenhäfen",
+        "count": 5,
+        "score": 35.82,
+        "ratio": 1289.9
+      },
+      {
+        "word": "bremerhaven",
+        "count": 5,
+        "score": 30.33,
+        "ratio": 430.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "häfen",
+        "count": 16,
+        "score": 92.41,
+        "ratio": 321.3
+      },
+      {
+        "word": "oßner",
+        "count": 8,
+        "score": 52.8,
+        "ratio": 734.4
+      },
+      {
+        "word": "wasserstraße",
+        "count": 6,
+        "score": 32.07,
+        "ratio": 208.4
+      },
+      {
+        "word": "binnenhäfen",
+        "count": 5,
+        "score": 31.43,
+        "ratio": 535.5
+      },
+      {
+        "word": "bremerhaven",
+        "count": 5,
+        "score": 31.43,
+        "ratio": 535.5
       }
     ],
     "signatureAdjectives": [
       {
         "word": "zuverlässig",
         "count": 5,
-        "ratioParty": 61.4,
-        "ratioBundestag": 62.6
+        "ratioParty": 64.5,
+        "ratioBundestag": 64.3
       },
       {
         "word": "gerecht",
         "count": 3,
         "ratioParty": 4.3,
-        "ratioBundestag": 5.8
+        "ratioBundestag": 5.9
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "zuverlässig",
+        "count": 5,
+        "score": 20.91,
+        "ratio": 64.5
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 5.0,
+        "ratio": 4.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "zuverlässig",
+        "count": 5,
+        "score": 20.89,
+        "ratio": 64.3
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 5.79,
+        "ratio": 5.9
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 867,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
     "vsParty": 1.4,
     "vsParliament": 1.48
   },
@@ -142,47 +234,47 @@
     "question": "Welches Wort nutzt Uwe Schmidt häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Debatte",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Binnenhäfen",
+        "text": "Oßner",
         "isCorrect": true
       },
       {
-        "text": "Kinder",
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Rente",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Binnenhäfen\" nutzt Uwe Schmidt 1290.0× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "537.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Oßner\" nutzt Uwe Schmidt 2063.9× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "734.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Uwe Schmidt häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
         "text": "Zuverlässig",
         "isCorrect": true
       },
       {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Wichtig",
+        "text": "Klar",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Zuverlässig\" nutzt Uwe Schmidt 61.4× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "62.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Zuverlässig\" nutzt Uwe Schmidt 64.5× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "64.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦦",

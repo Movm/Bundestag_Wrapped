@@ -11,23 +11,23 @@
   "minWords": 40,
   "maxWords": 591,
   "rankings": {
-    "speechRank": 490,
-    "wordsRank": 518,
-    "partySpeechRank": 121,
+    "speechRank": 466,
+    "wordsRank": 520,
+    "partySpeechRank": 109,
     "partyWordsRank": 117,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 21.6,
-    "verbosityRank": 450,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 25.6,
+    "verbosityRank": 452,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 117,
-    "longestSpeechRank": 506
+    "longestSpeechRank": 507
   },
   "drama": {
     "interruptionsGiven": 4,
     "interruptionsReceived": 23,
-    "interrupterRank": 361,
-    "interruptedRank": 302
+    "interrupterRank": 358,
+    "interruptedRank": 303
   },
   "words": {
     "topWords": [
@@ -40,11 +40,11 @@
         "count": 11
       },
       {
-        "word": "arbeit",
+        "word": "deutschland",
         "count": 9
       },
       {
-        "word": "deutschland",
+        "word": "arbeit",
         "count": 9
       },
       {
@@ -60,15 +60,11 @@
         "count": 7
       },
       {
-        "word": "bauer",
-        "count": 6
-      },
-      {
-        "word": "leben",
-        "count": 6
-      },
-      {
         "word": "ständig",
+        "count": 6
+      },
+      {
+        "word": "bauer",
         "count": 6
       }
     ],
@@ -76,40 +72,106 @@
       {
         "word": "bauer",
         "count": 6,
-        "ratioParty": 346.5,
-        "ratioBundestag": 548.6
+        "ratioParty": 344.4,
+        "ratioBundestag": 442.5
       },
       {
         "word": "hektar",
         "count": 5,
-        "ratioParty": 133.3,
-        "ratioBundestag": 180.8
+        "ratioParty": 132.5,
+        "ratioBundestag": 180.1
       },
       {
         "word": "böden",
         "count": 5,
-        "ratioParty": 72.2,
-        "ratioBundestag": 93.6
+        "ratioParty": 82.0,
+        "ratioBundestag": 103.3
       },
       {
         "word": "essen",
         "count": 5,
-        "ratioParty": 66.6,
-        "ratioBundestag": 35.0
+        "ratioParty": 68.9,
+        "ratioBundestag": 37.2
       },
       {
         "word": "bauern",
         "count": 14,
-        "ratioParty": 46.2,
-        "ratioBundestag": 111.6
+        "ratioParty": 46.4,
+        "ratioBundestag": 112.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bauern",
+        "count": 14,
+        "score": 54.02,
+        "ratio": 46.4
+      },
+      {
+        "word": "bauer",
+        "count": 6,
+        "score": 35.07,
+        "ratio": 344.4
+      },
+      {
+        "word": "hektar",
+        "count": 5,
+        "score": 24.47,
+        "ratio": 132.5
+      },
+      {
+        "word": "böden",
+        "count": 5,
+        "score": 22.09,
+        "ratio": 82.0
+      },
+      {
+        "word": "essen",
+        "count": 5,
+        "score": 21.24,
+        "ratio": 68.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bauern",
+        "count": 14,
+        "score": 66.23,
+        "ratio": 112.4
+      },
+      {
+        "word": "bauer",
+        "count": 6,
+        "score": 36.57,
+        "ratio": 442.5
+      },
+      {
+        "word": "hektar",
+        "count": 5,
+        "score": 26.0,
+        "ratio": 180.1
+      },
+      {
+        "word": "böden",
+        "count": 5,
+        "score": 23.24,
+        "ratio": 103.3
+      },
+      {
+        "word": "essen",
+        "count": 5,
+        "score": 18.21,
+        "ratio": 37.2
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 357,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 560,
+    "parliamentAvgWords": 587,
     "vsParty": 0.64,
     "vsParliament": 0.61
   },
@@ -133,11 +195,11 @@
         "isCorrect": false
       },
       {
-        "text": "Europa",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Kinder",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
@@ -145,8 +207,8 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Bauer\" nutzt Bernd Schuhmann 346.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "548.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bauer\" nutzt Bernd Schuhmann 344.4× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "442.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -275,15 +337,15 @@
       ],
       "europa": [
         {
-          "word": "afrika",
-          "count": 1
-        },
-        {
           "word": "ukraine",
           "count": 1
         },
         {
           "word": "brüssel",
+          "count": 1
+        },
+        {
+          "word": "afrika",
           "count": 1
         }
       ],
@@ -303,11 +365,11 @@
           "count": 2
         },
         {
-          "word": "haushaltsplan",
+          "word": "steuer",
           "count": 1
         },
         {
-          "word": "steuer",
+          "word": "haushaltsplan",
           "count": 1
         }
       ],

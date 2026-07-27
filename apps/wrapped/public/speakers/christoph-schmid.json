@@ -11,23 +11,23 @@
   "minWords": 34,
   "maxWords": 791,
   "rankings": {
-    "speechRank": 217,
-    "wordsRank": 220,
-    "partySpeechRank": 46,
-    "partyWordsRank": 51,
+    "speechRank": 211,
+    "wordsRank": 214,
+    "partySpeechRank": 45,
+    "partyWordsRank": 50,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 65.3,
+    "totalSpeakers": 626,
+    "percentile": 66.3,
     "verbosityRank": 346,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 78,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 75,
     "longestSpeechRank": 256
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 19,
-    "interrupterRank": 444,
-    "interruptedRank": 341
+    "interrupterRank": 459,
+    "interruptedRank": 344
   },
   "words": {
     "topWords": [
@@ -64,47 +64,127 @@
       {
         "word": "tourismus",
         "count": 35,
-        "ratioParty": 393.2,
-        "ratioBundestag": 163.1
+        "ratioParty": 480.5,
+        "ratioBundestag": 170.2
       },
       {
         "word": "österreich",
         "count": 5,
         "ratioParty": 68.6,
-        "ratioBundestag": 24.6
+        "ratioBundestag": 24.3
       },
       {
         "word": "bemühungen",
         "count": 5,
-        "ratioParty": 38.6,
-        "ratioBundestag": 36.5
+        "ratioParty": 41.2,
+        "ratioBundestag": 37.2
       },
       {
         "word": "empfehlungen",
         "count": 5,
-        "ratioParty": 32.5,
-        "ratioBundestag": 43.7
+        "ratioParty": 30.9,
+        "ratioBundestag": 42.9
       },
       {
-        "word": "parlaments",
+        "word": "wehrbeauftragter",
+        "count": 6,
+        "ratioParty": 27.5,
+        "ratioBundestag": 35.6
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "tourismus",
+        "count": 35,
+        "score": 216.19,
+        "ratio": 480.5
+      },
+      {
+        "word": "österreich",
         "count": 5,
-        "ratioParty": 23.8,
-        "ratioBundestag": 24.2
+        "score": 21.21,
+        "ratio": 68.6
+      },
+      {
+        "word": "wehrbeauftragter",
+        "count": 6,
+        "score": 20.1,
+        "ratio": 27.5
+      },
+      {
+        "word": "bemühungen",
+        "count": 5,
+        "score": 18.71,
+        "ratio": 41.2
+      },
+      {
+        "word": "empfehlungen",
+        "count": 5,
+        "score": 17.31,
+        "ratio": 30.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "tourismus",
+        "count": 35,
+        "score": 180.0,
+        "ratio": 170.2
+      },
+      {
+        "word": "wehrbeauftragter",
+        "count": 6,
+        "score": 21.6,
+        "ratio": 35.6
+      },
+      {
+        "word": "empfehlungen",
+        "count": 5,
+        "score": 18.91,
+        "ratio": 42.9
+      },
+      {
+        "word": "bemühungen",
+        "count": 5,
+        "score": 18.21,
+        "ratio": 37.2
+      },
+      {
+        "word": "österreich",
+        "count": 5,
+        "score": 16.15,
+        "ratio": 24.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "verantwortungsvoll",
         "count": 3,
-        "ratioParty": 9.8,
+        "ratioParty": 10.0,
         "ratioBundestag": 12.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "verantwortungsvoll",
+        "count": 3,
+        "score": 7.19,
+        "ratio": 10.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "verantwortungsvoll",
+        "count": 3,
+        "score": 7.85,
+        "ratio": 12.7
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 408,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
     "vsParty": 0.66,
     "vsParliament": 0.7
   },
@@ -124,46 +204,46 @@
     "question": "Welches Wort nutzt Christoph Schmid häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
         "text": "Tourismus",
         "isCorrect": true
       },
       {
-        "text": "Minister",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Arbeit",
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Tourismus\" nutzt Christoph Schmid 393.2× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "163.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Tourismus\" nutzt Christoph Schmid 480.5× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "170.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Christoph Schmid häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
         "text": "Verantwortungsvoll",
         "isCorrect": true
       },
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verantwortungsvoll\" nutzt Christoph Schmid 9.8× häufiger als der SPD-Durchschnitt.",
+    "explanationParty": "\"Verantwortungsvoll\" nutzt Christoph Schmid 10.0× häufiger als der SPD-Durchschnitt.",
     "explanationBundestag": "12.7× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -304,11 +384,11 @@
           "count": 1
         },
         {
-          "word": "unternehmen",
+          "word": "wirtschaftspolitik",
           "count": 1
         },
         {
-          "word": "wirtschaftspolitik",
+          "word": "wettbewerbsfähigkeit",
           "count": 1
         }
       ],
@@ -340,15 +420,15 @@
           "count": 8
         },
         {
-          "word": "polizisten",
-          "count": 1
-        },
-        {
           "word": "angriff",
           "count": 1
         },
         {
           "word": "verteidigung",
+          "count": 1
+        },
+        {
+          "word": "polizisten",
           "count": 1
         }
       ],
@@ -400,23 +480,15 @@
           "count": 2
         },
         {
-          "word": "kosten",
+          "word": "bundeshaushalt",
           "count": 2
         },
         {
-          "word": "bundeshaushalt",
+          "word": "kosten",
           "count": 2
         }
       ],
       "justiz": [
-        {
-          "word": "datenschutz",
-          "count": 1
-        },
-        {
-          "word": "rechtsstaatlichkeit",
-          "count": 1
-        },
         {
           "word": "grundgesetz",
           "count": 1
@@ -427,6 +499,14 @@
         },
         {
           "word": "diskriminierung",
+          "count": 1
+        },
+        {
+          "word": "datenschutz",
+          "count": 1
+        },
+        {
+          "word": "rechtsstaatlichkeit",
           "count": 1
         }
       ],

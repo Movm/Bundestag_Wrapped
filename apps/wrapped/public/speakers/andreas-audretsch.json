@@ -11,23 +11,23 @@
   "minWords": 66,
   "maxWords": 834,
   "rankings": {
-    "speechRank": 108,
+    "speechRank": 95,
     "wordsRank": 96,
-    "partySpeechRank": 19,
-    "partyWordsRank": 12,
+    "partySpeechRank": 15,
+    "partyWordsRank": 14,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 82.7,
+    "totalSpeakers": 626,
+    "percentile": 84.8,
     "verbosityRank": 130,
-    "verbosityTotal": 579,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 13,
-    "longestSpeechRank": 200
+    "longestSpeechRank": 197
   },
   "drama": {
-    "interruptionsGiven": 21,
+    "interruptionsGiven": 20,
     "interruptionsReceived": 80,
-    "interrupterRank": 200,
-    "interruptedRank": 41
+    "interrupterRank": 208,
+    "interruptedRank": 40
   },
   "words": {
     "topWords": [
@@ -64,66 +64,182 @@
       {
         "word": "beitragssätze",
         "count": 7,
-        "ratioParty": 202.1,
-        "ratioBundestag": 113.4
+        "ratioParty": 200.4,
+        "ratioBundestag": 85.6
       },
       {
         "word": "zwickau",
         "count": 5,
-        "ratioParty": 144.3,
-        "ratioBundestag": 96.4
+        "ratioParty": 95.4,
+        "ratioBundestag": 44.8
       },
       {
         "word": "decke",
         "count": 8,
-        "ratioParty": 38.5,
-        "ratioBundestag": 92.6
+        "ratioParty": 41.6,
+        "ratioBundestag": 85.0
       },
       {
         "word": "elektrifizierung",
         "count": 5,
-        "ratioParty": 24.1,
-        "ratioBundestag": 45.0
+        "ratioParty": 26.0,
+        "ratioBundestag": 46.9
       },
       {
-        "word": "elektromobilität",
+        "word": "absurd",
+        "count": 10,
+        "ratioParty": 15.9,
+        "ratioBundestag": 19.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "beitragssätze",
+        "count": 7,
+        "score": 37.14,
+        "ratio": 200.4
+      },
+      {
+        "word": "decke",
         "count": 8,
-        "ratioParty": 19.2,
-        "ratioBundestag": 27.2
+        "score": 30.01,
+        "ratio": 41.6
+      },
+      {
+        "word": "absurd",
+        "count": 10,
+        "score": 28.27,
+        "ratio": 15.9
+      },
+      {
+        "word": "zwickau",
+        "count": 5,
+        "score": 22.84,
+        "ratio": 95.4
+      },
+      {
+        "word": "elektrifizierung",
+        "count": 5,
+        "score": 16.48,
+        "ratio": 26.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "decke",
+        "count": 8,
+        "score": 35.63,
+        "ratio": 85.0
+      },
+      {
+        "word": "beitragssätze",
+        "count": 7,
+        "score": 31.23,
+        "ratio": 85.6
+      },
+      {
+        "word": "absurd",
+        "count": 10,
+        "score": 30.3,
+        "ratio": 19.7
+      },
+      {
+        "word": "elektrifizierung",
+        "count": 5,
+        "score": 19.35,
+        "ratio": 46.9
+      },
+      {
+        "word": "zwickau",
+        "count": 5,
+        "score": 19.12,
+        "ratio": 44.8
       }
     ],
     "signatureAdjectives": [
       {
         "word": "absurd",
         "count": 10,
-        "ratioParty": 14.4,
-        "ratioBundestag": 19.6
+        "ratioParty": 15.9,
+        "ratioBundestag": 19.7
       },
       {
         "word": "stabil",
         "count": 3,
-        "ratioParty": 7.9,
-        "ratioBundestag": 8.3
+        "ratioParty": 8.2,
+        "ratioBundestag": 8.4
       },
       {
         "word": "teuer",
         "count": 4,
-        "ratioParty": 2.6,
-        "ratioBundestag": 4.1
+        "ratioParty": 2.9,
+        "ratioBundestag": 4.2
       },
       {
         "word": "falsch",
         "count": 4,
-        "ratioParty": 2.0,
+        "ratioParty": 2.1,
         "ratioBundestag": 2.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "absurd",
+        "count": 10,
+        "score": 28.27,
+        "ratio": 15.9
+      },
+      {
+        "word": "stabil",
+        "count": 3,
+        "score": 6.66,
+        "ratio": 8.2
+      },
+      {
+        "word": "teuer",
+        "count": 4,
+        "score": 5.44,
+        "ratio": 2.9
+      },
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 4.53,
+        "ratio": 2.1
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "absurd",
+        "count": 10,
+        "score": 30.3,
+        "ratio": 19.7
+      },
+      {
+        "word": "stabil",
+        "count": 3,
+        "score": 6.72,
+        "ratio": 8.4
+      },
+      {
+        "word": "teuer",
+        "count": 4,
+        "score": 6.59,
+        "ratio": 4.2
+      },
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 4.78,
+        "ratio": 2.3
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 521,
-    "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.97,
+    "partyAvgWords": 542,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.96,
     "vsParliament": 0.89
   },
   "funFacts": [
@@ -140,37 +256,41 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "21"
+      "value": "20"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Andreas Audretsch häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
         "text": "Beitragssätze",
         "isCorrect": true
-      },
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Beitragssätze\" nutzt Andreas Audretsch 202.1× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "113.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Beitragssätze\" nutzt Andreas Audretsch 200.4× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "85.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Andreas Audretsch häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Politisch",
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "National",
         "isCorrect": false
       },
       {
@@ -178,16 +298,12 @@
         "isCorrect": true
       },
       {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
+        "text": "Erfolgreich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Absurd\" nutzt Andreas Audretsch 14.4× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "19.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Absurd\" nutzt Andreas Audretsch 15.9× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "19.7× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐴",
@@ -305,7 +421,7 @@
           "count": 2
         },
         {
-          "word": "windrad",
+          "word": "solarenergie",
           "count": 1
         }
       ],
@@ -359,15 +475,15 @@
           "count": 2
         },
         {
-          "word": "verfassungsschutz",
-          "count": 1
-        },
-        {
           "word": "bundeswehr",
           "count": 1
         },
         {
           "word": "korruption",
+          "count": 1
+        },
+        {
+          "word": "verfassungsschutz",
           "count": 1
         }
       ],
@@ -377,11 +493,11 @@
           "count": 5
         },
         {
-          "word": "medikamente",
+          "word": "pflegekräfte",
           "count": 2
         },
         {
-          "word": "pflegekräfte",
+          "word": "medikamente",
           "count": 2
         },
         {
@@ -449,7 +565,7 @@
           "count": 5
         },
         {
-          "word": "entlastung",
+          "word": "kosten",
           "count": 4
         }
       ],
@@ -477,7 +593,7 @@
           "count": 1
         },
         {
-          "word": "gewerkschaften",
+          "word": "arbeitsplätze",
           "count": 1
         }
       ],

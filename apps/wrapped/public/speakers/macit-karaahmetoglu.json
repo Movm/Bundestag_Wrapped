@@ -11,23 +11,23 @@
   "minWords": 348,
   "maxWords": 369,
   "rankings": {
-    "speechRank": 547,
-    "wordsRank": 582,
-    "partySpeechRank": 93,
+    "speechRank": 534,
+    "wordsRank": 583,
+    "partySpeechRank": 90,
     "partyWordsRank": 107,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 12.5,
-    "verbosityRank": 451,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 89,
-    "longestSpeechRank": 609
+    "totalSpeakers": 626,
+    "percentile": 14.7,
+    "verbosityRank": 453,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 91,
+    "longestSpeechRank": 610
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 2,
-    "interrupterRank": 474,
-    "interruptedRank": 584
+    "interrupterRank": 477,
+    "interruptedRank": 580
   },
   "words": {
     "topWords": [
@@ -56,19 +56,19 @@
         "count": 5
       },
       {
-        "word": "menschen",
-        "count": 5
-      },
-      {
         "word": "staaten",
         "count": 5
       },
       {
-        "word": "guardian",
+        "word": "menschen",
+        "count": 5
+      },
+      {
+        "word": "jahren",
         "count": 4
       },
       {
-        "word": "herzlichen",
+        "word": "kfor",
         "count": 4
       }
     ],
@@ -76,40 +76,106 @@
       {
         "word": "frieden",
         "count": 10,
-        "ratioParty": 23.0,
-        "ratioBundestag": 30.4
+        "ratioParty": 23.3,
+        "ratioBundestag": 30.5
       },
       {
         "word": "stabilität",
         "count": 7,
-        "ratioParty": 20.7,
-        "ratioBundestag": 34.6
+        "ratioParty": 22.5,
+        "ratioBundestag": 36.6
       },
       {
         "word": "staaten",
         "count": 5,
-        "ratioParty": 19.1,
-        "ratioBundestag": 17.8
+        "ratioParty": 19.0,
+        "ratioBundestag": 17.4
       },
       {
         "word": "werte",
         "count": 6,
-        "ratioParty": 15.1,
-        "ratioBundestag": 16.8
+        "ratioParty": 15.0,
+        "ratioBundestag": 16.9
       },
       {
         "word": "europa",
         "count": 6,
-        "ratioParty": 5.5,
+        "ratioParty": 5.7,
         "ratioBundestag": 7.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "frieden",
+        "count": 10,
+        "score": 31.9,
+        "ratio": 23.3
+      },
+      {
+        "word": "stabilität",
+        "count": 7,
+        "score": 22.1,
+        "ratio": 22.5
+      },
+      {
+        "word": "werte",
+        "count": 6,
+        "score": 16.64,
+        "ratio": 15.0
+      },
+      {
+        "word": "staaten",
+        "count": 5,
+        "score": 14.98,
+        "ratio": 19.0
+      },
+      {
+        "word": "europa",
+        "count": 6,
+        "score": 11.41,
+        "ratio": 5.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "frieden",
+        "count": 10,
+        "score": 34.5,
+        "ratio": 30.5
+      },
+      {
+        "word": "stabilität",
+        "count": 7,
+        "score": 25.39,
+        "ratio": 36.6
+      },
+      {
+        "word": "werte",
+        "count": 6,
+        "score": 17.31,
+        "ratio": 16.9
+      },
+      {
+        "word": "staaten",
+        "count": 5,
+        "score": 14.56,
+        "ratio": 17.4
+      },
+      {
+        "word": "europa",
+        "count": 6,
+        "score": 12.48,
+        "ratio": 7.0
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 357,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
     "vsParty": 0.58,
     "vsParliament": 0.61
   },
@@ -133,20 +199,20 @@
         "isCorrect": false
       },
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
         "text": "Frieden",
         "isCorrect": true
+      },
+      {
+        "text": "Energie",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Frieden\" nutzt Macit Karaahmetoğlu 23.0× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "30.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Frieden\" nutzt Macit Karaahmetoğlu 23.3× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "30.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -243,11 +309,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "mittelmeer",
+          "word": "grenze",
           "count": 2
         },
         {
-          "word": "grenze",
+          "word": "mittelmeer",
           "count": 2
         }
       ],
@@ -305,25 +371,25 @@
           "count": 6
         },
         {
-          "word": "nato",
-          "count": 3
-        },
-        {
           "word": "völkerrecht",
           "count": 3
         },
         {
           "word": "sanktionen",
           "count": 3
+        },
+        {
+          "word": "krieg",
+          "count": 3
         }
       ],
       "bildung": [
         {
-          "word": "ausbildung",
+          "word": "schule",
           "count": 1
         },
         {
-          "word": "schule",
+          "word": "ausbildung",
           "count": 1
         }
       ]

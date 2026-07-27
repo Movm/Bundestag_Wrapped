@@ -11,23 +11,23 @@
   "minWords": 45,
   "maxWords": 532,
   "rankings": {
-    "speechRank": 208,
-    "wordsRank": 348,
-    "partySpeechRank": 39,
-    "partyWordsRank": 58,
+    "speechRank": 195,
+    "wordsRank": 343,
+    "partySpeechRank": 38,
+    "partyWordsRank": 56,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 66.7,
-    "verbosityRank": 515,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 68.8,
+    "verbosityRank": 518,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 71,
-    "longestSpeechRank": 556
+    "longestSpeechRank": 554
   },
   "drama": {
-    "interruptionsGiven": 53,
+    "interruptionsGiven": 57,
     "interruptionsReceived": 31,
-    "interrupterRank": 97,
-    "interruptedRank": 227
+    "interrupterRank": 91,
+    "interruptedRank": 233
   },
   "words": {
     "topWords": [
@@ -48,89 +48,209 @@
         "count": 13
       },
       {
-        "word": "deutschland",
-        "count": 12
-      },
-      {
         "word": "jahren",
         "count": 12
       },
       {
-        "word": "leben",
-        "count": 11
+        "word": "deutschland",
+        "count": 12
       },
       {
         "word": "familien",
         "count": 11
       },
       {
+        "word": "leben",
+        "count": 11
+      },
+      {
         "word": "bedeutet",
         "count": 11
+      },
+      {
+        "word": "kinder",
+        "count": 10
       }
     ],
     "signatureWords": [
       {
         "word": "entwicklungspolitik",
         "count": 5,
-        "ratioParty": 572.4,
-        "ratioBundestag": 30.4
+        "ratioParty": 567.8,
+        "ratioBundestag": 28.2
       },
       {
         "word": "bundesaufnahmeprogramm",
         "count": 5,
-        "ratioParty": 286.2,
-        "ratioBundestag": 234.5
+        "ratioParty": 283.9,
+        "ratioBundestag": 233.7
       },
       {
         "word": "aussetzung",
         "count": 5,
-        "ratioParty": 63.6,
-        "ratioBundestag": 44.3
+        "ratioParty": 63.1,
+        "ratioBundestag": 44.1
       },
       {
         "word": "afghanistan",
         "count": 19,
-        "ratioParty": 45.3,
+        "ratioParty": 45.9,
         "ratioBundestag": 51.5
       },
       {
         "word": "usaid",
         "count": 5,
-        "ratioParty": 44.0,
-        "ratioBundestag": 153.3
+        "ratioParty": 43.7,
+        "ratioBundestag": 137.0
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "afghanistan",
+        "count": 19,
+        "score": 73.11,
+        "ratio": 45.9
+      },
+      {
+        "word": "entwicklungspolitik",
+        "count": 5,
+        "score": 31.72,
+        "ratio": 567.8
+      },
+      {
+        "word": "bundesaufnahmeprogramm",
+        "count": 5,
+        "score": 28.26,
+        "ratio": 283.9
+      },
+      {
+        "word": "aussetzung",
+        "count": 5,
+        "score": 20.8,
+        "ratio": 63.1
+      },
+      {
+        "word": "usaid",
+        "count": 5,
+        "score": 19.0,
+        "ratio": 43.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "afghanistan",
+        "count": 19,
+        "score": 75.26,
+        "ratio": 51.5
+      },
+      {
+        "word": "bundesaufnahmeprogramm",
+        "count": 5,
+        "score": 27.29,
+        "ratio": 233.7
+      },
+      {
+        "word": "usaid",
+        "count": 5,
+        "score": 24.64,
+        "ratio": 137.0
+      },
+      {
+        "word": "aussetzung",
+        "count": 5,
+        "score": 19.04,
+        "ratio": 44.1
+      },
+      {
+        "word": "entwicklungspolitik",
+        "count": 5,
+        "score": 16.87,
+        "ratio": 28.2
       }
     ],
     "signatureAdjectives": [
       {
         "word": "verlässlich",
         "count": 3,
-        "ratioParty": 10.7,
-        "ratioBundestag": 10.7
+        "ratioParty": 10.0,
+        "ratioBundestag": 10.5
       },
       {
         "word": "falsch",
         "count": 4,
-        "ratioParty": 4.0,
+        "ratioParty": 4.1,
         "ratioBundestag": 4.6
       },
       {
         "word": "gerecht",
         "count": 3,
-        "ratioParty": 3.0,
-        "ratioBundestag": 3.6
+        "ratioParty": 3.2,
+        "ratioBundestag": 3.7
       },
       {
         "word": "sicher",
         "count": 4,
-        "ratioParty": 2.8,
+        "ratioParty": 2.9,
         "ratioBundestag": 2.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "verlässlich",
+        "count": 3,
+        "score": 7.19,
+        "ratio": 10.0
+      },
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 6.52,
+        "ratio": 4.1
+      },
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 5.44,
+        "ratio": 2.9
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 4.31,
+        "ratio": 3.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "verlässlich",
+        "count": 3,
+        "score": 7.33,
+        "ratio": 10.5
+      },
+      {
+        "word": "falsch",
+        "count": 4,
+        "score": 6.89,
+        "ratio": 4.6
+      },
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 5.12,
+        "ratio": 2.6
+      },
+      {
+        "word": "gerecht",
+        "count": 3,
+        "score": 4.64,
+        "ratio": 3.7
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 287,
-    "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 542,
+    "parliamentAvgWords": 587,
     "vsParty": 0.53,
     "vsParliament": 0.49
   },
@@ -148,14 +268,18 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "53"
+      "value": "57"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Schahina Gambir häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Verantwortung",
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
@@ -163,16 +287,12 @@
         "isCorrect": true
       },
       {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
+        "text": "Wirtschaft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entwicklungspolitik\" nutzt Schahina Gambir 572.4× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "30.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Entwicklungspolitik\" nutzt Schahina Gambir 567.8× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "28.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Schahina Gambir häufiger als der Rest der GRÜNE-Fraktion?",
@@ -182,20 +302,20 @@
         "isCorrect": false
       },
       {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
         "text": "Verlässlich",
         "isCorrect": true
       },
       {
-        "text": "National",
+        "text": "Gut",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Verlässlich\" nutzt Schahina Gambir 10.7× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "10.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Verlässlich\" nutzt Schahina Gambir 10.0× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "10.5× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -303,21 +423,21 @@
           "count": 3
         },
         {
-          "word": "abschiebung",
+          "word": "familiennachzug",
           "count": 2
         },
         {
-          "word": "familiennachzug",
+          "word": "abschiebung",
           "count": 2
         }
       ],
       "klima": [
         {
-          "word": "energie",
+          "word": "nachhaltig",
           "count": 1
         },
         {
-          "word": "nachhaltig",
+          "word": "energie",
           "count": 1
         },
         {
@@ -339,11 +459,11 @@
           "count": 2
         },
         {
-          "word": "lieferkette",
+          "word": "märkte",
           "count": 1
         },
         {
-          "word": "märkte",
+          "word": "lieferkette",
           "count": 1
         },
         {
@@ -365,11 +485,11 @@
           "count": 10
         },
         {
-          "word": "gerechtigkeit",
+          "word": "armut",
           "count": 4
         },
         {
-          "word": "armut",
+          "word": "gerechtigkeit",
           "count": 4
         }
       ],
@@ -407,11 +527,11 @@
           "count": 1
         },
         {
-          "word": "russland",
+          "word": "außenminister",
           "count": 1
         },
         {
-          "word": "china",
+          "word": "russland",
           "count": 1
         }
       ],
@@ -457,15 +577,15 @@
           "count": 2
         },
         {
-          "word": "steuergerechtigkeit",
-          "count": 1
-        },
-        {
-          "word": "vermögensteuer",
-          "count": 1
-        },
-        {
           "word": "konjunkturprogramm",
+          "count": 1
+        },
+        {
+          "word": "bundeshaushalt",
+          "count": 1
+        },
+        {
+          "word": "finanzierung",
           "count": 1
         }
       ],
@@ -479,15 +599,15 @@
           "count": 3
         },
         {
-          "word": "gericht",
-          "count": 2
-        },
-        {
           "word": "gerichte",
           "count": 2
         },
         {
           "word": "gesetzesänderung",
+          "count": 2
+        },
+        {
+          "word": "gericht",
           "count": 2
         }
       ],

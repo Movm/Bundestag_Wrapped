@@ -11,23 +11,23 @@
   "minWords": 159,
   "maxWords": 711,
   "rankings": {
-    "speechRank": 214,
-    "wordsRank": 262,
-    "partySpeechRank": 52,
-    "partyWordsRank": 75,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 65.8,
-    "verbosityRank": 172,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 62,
-    "longestSpeechRank": 361
+    "speechRank": 208,
+    "wordsRank": 264,
+    "partySpeechRank": 51,
+    "partyWordsRank": 74,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 66.8,
+    "verbosityRank": 182,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 65,
+    "longestSpeechRank": 363
   },
   "drama": {
-    "interruptionsGiven": 36,
+    "interruptionsGiven": 35,
     "interruptionsReceived": 49,
-    "interrupterRank": 144,
-    "interruptedRank": 115
+    "interrupterRank": 146,
+    "interruptedRank": 111
   },
   "words": {
     "topWords": [
@@ -52,61 +52,165 @@
       {
         "word": "springer",
         "count": 10,
-        "ratioParty": 538.1,
-        "ratioBundestag": 265.2
+        "ratioParty": 537.2,
+        "ratioBundestag": 264.2
       },
       {
         "word": "leistungsmissbrauch",
         "count": 5,
-        "ratioParty": 358.7,
-        "ratioBundestag": 662.9
+        "ratioParty": 358.1,
+        "ratioBundestag": 550.4
       },
       {
         "word": "arbeitslosen",
         "count": 5,
-        "ratioParty": 215.2,
-        "ratioBundestag": 118.4
+        "ratioParty": 214.9,
+        "ratioBundestag": 122.3
       },
       {
         "word": "jobcentern",
         "count": 6,
-        "ratioParty": 99.3,
-        "ratioBundestag": 73.7
+        "ratioParty": 99.2,
+        "ratioBundestag": 73.4
       },
       {
         "word": "ausländer",
         "count": 8,
-        "ratioParty": 90.6,
-        "ratioBundestag": 34.4
+        "ratioParty": 95.5,
+        "ratioBundestag": 35.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "springer",
+        "count": 10,
+        "score": 62.88,
+        "ratio": 537.2
+      },
+      {
+        "word": "ausländer",
+        "count": 8,
+        "score": 36.56,
+        "ratio": 95.5
+      },
+      {
+        "word": "leistungsmissbrauch",
+        "count": 5,
+        "score": 29.42,
+        "ratio": 358.1
+      },
+      {
+        "word": "jobcentern",
+        "count": 6,
+        "score": 27.64,
+        "ratio": 99.2
+      },
+      {
+        "word": "arbeitslosen",
+        "count": 5,
+        "score": 26.87,
+        "ratio": 214.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "springer",
+        "count": 10,
+        "score": 55.8,
+        "ratio": 264.2
+      },
+      {
+        "word": "leistungsmissbrauch",
+        "count": 5,
+        "score": 31.56,
+        "ratio": 550.4
+      },
+      {
+        "word": "ausländer",
+        "count": 8,
+        "score": 28.82,
+        "ratio": 35.7
+      },
+      {
+        "word": "jobcentern",
+        "count": 6,
+        "score": 25.86,
+        "ratio": 73.4
+      },
+      {
+        "word": "arbeitslosen",
+        "count": 5,
+        "score": 24.07,
+        "ratio": 122.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "unfair",
         "count": 3,
-        "ratioParty": 161.4,
-        "ratioBundestag": 60.3
+        "ratioParty": 128.9,
+        "ratioBundestag": 60.0
       },
       {
         "word": "gefährlich",
         "count": 4,
-        "ratioParty": 31.9,
-        "ratioBundestag": 14.7
+        "ratioParty": 31.8,
+        "ratioBundestag": 15.1
       },
       {
         "word": "falsch",
         "count": 5,
-        "ratioParty": 4.9,
-        "ratioBundestag": 4.8
+        "ratioParty": 4.8,
+        "ratioBundestag": 4.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "unfair",
+        "count": 3,
+        "score": 14.6,
+        "ratio": 128.9
+      },
+      {
+        "word": "gefährlich",
+        "count": 4,
+        "score": 13.96,
+        "ratio": 31.8
+      },
+      {
+        "word": "falsch",
+        "count": 5,
+        "score": 8.79,
+        "ratio": 4.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "unfair",
+        "count": 3,
+        "score": 12.33,
+        "ratio": 60.0
+      },
+      {
+        "word": "gefährlich",
+        "count": 4,
+        "score": 11.12,
+        "ratio": 15.1
+      },
+      {
+        "word": "falsch",
+        "count": 5,
+        "score": 8.7,
+        "ratio": 4.7
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 488,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.76,
-    "vsParliament": 0.84
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.75,
+    "vsParliament": 0.83
   },
   "funFacts": [
     {
@@ -122,18 +226,18 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "36"
+      "value": "35"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Kai Whittaker häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Freiheit",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
@@ -141,26 +245,26 @@
         "isCorrect": true
       },
       {
-        "text": "Verantwortung",
+        "text": "Klima",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Springer\" nutzt Kai Whittaker 538.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "265.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Springer\" nutzt Kai Whittaker 537.2× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "264.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Kai Whittaker häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Schlecht",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
-        "text": "Jung",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Groß",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
@@ -168,8 +272,8 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Unfair\" nutzt Kai Whittaker 161.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "60.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Unfair\" nutzt Kai Whittaker 128.9× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "60.0× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -295,11 +399,11 @@
           "count": 2
         },
         {
-          "word": "selbstständige",
+          "word": "kapital",
           "count": 1
         },
         {
-          "word": "kapital",
+          "word": "selbstständige",
           "count": 1
         },
         {
@@ -353,11 +457,11 @@
       ],
       "gesundheit": [
         {
-          "word": "krankenhäuser",
+          "word": "pflegeversicherung",
           "count": 1
         },
         {
-          "word": "rezept",
+          "word": "krankenhäuser",
           "count": 1
         },
         {
@@ -369,7 +473,7 @@
           "count": 1
         },
         {
-          "word": "pflegeversicherung",
+          "word": "rezept",
           "count": 1
         }
       ],
@@ -383,11 +487,11 @@
           "count": 6
         },
         {
-          "word": "russland",
+          "word": "ukrainer",
           "count": 4
         },
         {
-          "word": "ukrainer",
+          "word": "russland",
           "count": 4
         },
         {
@@ -481,7 +585,7 @@
           "count": 1
         },
         {
-          "word": "arbeitnehmer",
+          "word": "sozialversicherung",
           "count": 1
         }
       ]

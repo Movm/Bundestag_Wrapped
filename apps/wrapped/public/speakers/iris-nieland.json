@@ -11,23 +11,23 @@
   "minWords": 20,
   "maxWords": 603,
   "rankings": {
-    "speechRank": 283,
-    "wordsRank": 389,
-    "partySpeechRank": 62,
-    "partyWordsRank": 85,
+    "speechRank": 277,
+    "wordsRank": 387,
+    "partySpeechRank": 58,
+    "partyWordsRank": 87,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 54.7,
-    "verbosityRank": 466,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 121,
-    "longestSpeechRank": 493
+    "totalSpeakers": 626,
+    "percentile": 55.8,
+    "verbosityRank": 464,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 120,
+    "longestSpeechRank": 495
   },
   "drama": {
     "interruptionsGiven": 3,
     "interruptionsReceived": 18,
     "interrupterRank": 380,
-    "interruptedRank": 349
+    "interruptedRank": 350
   },
   "words": {
     "topWords": [
@@ -64,42 +64,108 @@
       {
         "word": "bargeld",
         "count": 9,
-        "ratioParty": 121.7,
-        "ratioBundestag": 120.7
+        "ratioParty": 121.0,
+        "ratioBundestag": 118.5
       },
       {
         "word": "energiesteuer",
         "count": 7,
-        "ratioParty": 61.8,
-        "ratioBundestag": 110.0
+        "ratioParty": 58.8,
+        "ratioBundestag": 111.5
       },
       {
         "word": "entlastungen",
         "count": 6,
-        "ratioParty": 21.7,
-        "ratioBundestag": 18.9
+        "ratioParty": 21.6,
+        "ratioBundestag": 19.2
       },
       {
         "word": "entlastet",
         "count": 5,
-        "ratioParty": 17.8,
-        "ratioBundestag": 13.6
+        "ratioParty": 18.3,
+        "ratioBundestag": 13.8
       },
       {
         "word": "senken",
         "count": 10,
-        "ratioParty": 13.6,
-        "ratioBundestag": 16.1
+        "ratioParty": 13.2,
+        "ratioBundestag": 16.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bargeld",
+        "count": 9,
+        "score": 43.24,
+        "ratio": 121.0
+      },
+      {
+        "word": "energiesteuer",
+        "count": 7,
+        "score": 28.64,
+        "ratio": 58.8
+      },
+      {
+        "word": "senken",
+        "count": 10,
+        "score": 26.53,
+        "ratio": 13.2
+      },
+      {
+        "word": "entlastungen",
+        "count": 6,
+        "score": 18.71,
+        "ratio": 21.6
+      },
+      {
+        "word": "entlastet",
+        "count": 5,
+        "score": 14.8,
+        "ratio": 18.3
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bargeld",
+        "count": 9,
+        "score": 43.05,
+        "ratio": 118.5
+      },
+      {
+        "word": "energiesteuer",
+        "count": 7,
+        "score": 33.06,
+        "ratio": 111.5
+      },
+      {
+        "word": "senken",
+        "count": 10,
+        "score": 28.56,
+        "ratio": 16.4
+      },
+      {
+        "word": "entlastungen",
+        "count": 6,
+        "score": 18.03,
+        "ratio": 19.2
+      },
+      {
+        "word": "entlastet",
+        "count": 5,
+        "score": 13.47,
+        "ratio": 13.8
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 348,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 560,
+    "parliamentAvgWords": 587,
     "vsParty": 0.62,
-    "vsParliament": 0.6
+    "vsParliament": 0.59
   },
   "funFacts": [
     {
@@ -117,24 +183,24 @@
     "question": "Welches Wort nutzt Iris Nieland häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
         "text": "Bargeld",
         "isCorrect": true
       },
       {
-        "text": "Abstimmung",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
+        "text": "Gesellschaft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bargeld\" nutzt Iris Nieland 121.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "120.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bargeld\" nutzt Iris Nieland 121.0× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "118.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -211,11 +277,11 @@
           "count": 3
         },
         {
-          "word": "kernenergie",
+          "word": "atomausstieg",
           "count": 1
         },
         {
-          "word": "atomausstieg",
+          "word": "kernenergie",
           "count": 1
         }
       ],
@@ -225,19 +291,19 @@
           "count": 3
         },
         {
-          "word": "markt",
-          "count": 3
-        },
-        {
           "word": "unternehmen",
           "count": 3
         },
         {
-          "word": "volkswirtschaft",
-          "count": 2
+          "word": "markt",
+          "count": 3
         },
         {
           "word": "wirtschaft",
+          "count": 2
+        },
+        {
+          "word": "volkswirtschaft",
           "count": 2
         }
       ],
@@ -255,11 +321,11 @@
           "count": 2
         },
         {
-          "word": "kind",
+          "word": "wohnung",
           "count": 1
         },
         {
-          "word": "umverteilung",
+          "word": "kind",
           "count": 1
         }
       ],
@@ -299,11 +365,11 @@
       ],
       "bildung": [
         {
-          "word": "professor",
+          "word": "schulen",
           "count": 1
         },
         {
-          "word": "schulen",
+          "word": "professor",
           "count": 1
         }
       ],
@@ -345,11 +411,11 @@
           "count": 2
         },
         {
-          "word": "arbeitsplätze",
+          "word": "homeoffice",
           "count": 1
         },
         {
-          "word": "homeoffice",
+          "word": "arbeitsplätze",
           "count": 1
         },
         {

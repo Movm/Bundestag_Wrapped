@@ -11,23 +11,23 @@
   "minWords": 13,
   "maxWords": 425,
   "rankings": {
-    "speechRank": 546,
+    "speechRank": 544,
     "wordsRank": 280,
-    "partySpeechRank": 177,
-    "partyWordsRank": 82,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 12.6,
-    "verbosityRank": 577,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 188,
-    "longestSpeechRank": 600
+    "partySpeechRank": 174,
+    "partyWordsRank": 80,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 13.1,
+    "verbosityRank": 578,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 189,
+    "longestSpeechRank": 601
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 14,
     "interrupterRank": null,
-    "interruptedRank": 412
+    "interruptedRank": 415
   },
   "words": {
     "topWords": [
@@ -76,40 +76,106 @@
       {
         "word": "bundeswirtschaftsministerium",
         "count": 6,
-        "ratioParty": 192.6,
-        "ratioBundestag": 259.5
+        "ratioParty": 168.3,
+        "ratioBundestag": 243.4
       },
       {
         "word": "dekarbonisierung",
         "count": 5,
-        "ratioParty": 112.4,
-        "ratioBundestag": 70.6
+        "ratioParty": 102.0,
+        "ratioBundestag": 69.0
       },
       {
         "word": "kraftwerksstrategie",
         "count": 8,
-        "ratioParty": 85.6,
-        "ratioBundestag": 142.0
+        "ratioParty": 85.5,
+        "ratioBundestag": 141.4
       },
       {
         "word": "unterstreichen",
         "count": 10,
-        "ratioParty": 74.9,
-        "ratioBundestag": 113.5
+        "ratioParty": 74.8,
+        "ratioBundestag": 109.5
       },
       {
         "word": "kellner",
         "count": 6,
-        "ratioParty": 56.2,
-        "ratioBundestag": 101.3
+        "ratioParty": 56.1,
+        "ratioBundestag": 96.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "unterstreichen",
+        "count": 10,
+        "score": 43.28,
+        "ratio": 74.8
+      },
+      {
+        "word": "kraftwerksstrategie",
+        "count": 8,
+        "score": 35.68,
+        "ratio": 85.5
+      },
+      {
+        "word": "bundeswirtschaftsministerium",
+        "count": 6,
+        "score": 30.79,
+        "ratio": 168.3
+      },
+      {
+        "word": "kellner",
+        "count": 6,
+        "score": 24.27,
+        "ratio": 56.1
+      },
+      {
+        "word": "dekarbonisierung",
+        "count": 5,
+        "score": 23.17,
+        "ratio": 102.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "unterstreichen",
+        "count": 10,
+        "score": 47.05,
+        "ratio": 109.5
+      },
+      {
+        "word": "kraftwerksstrategie",
+        "count": 8,
+        "score": 39.67,
+        "ratio": 141.4
+      },
+      {
+        "word": "bundeswirtschaftsministerium",
+        "count": 6,
+        "score": 32.99,
+        "ratio": 243.4
+      },
+      {
+        "word": "kellner",
+        "count": 6,
+        "score": 27.46,
+        "ratio": 96.2
+      },
+      {
+        "word": "dekarbonisierung",
+        "count": 5,
+        "score": 21.24,
+        "ratio": 69.0
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 97,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
     "vsParty": 0.15,
     "vsParliament": 0.17
   },
@@ -133,20 +199,20 @@
         "isCorrect": true
       },
       {
-        "text": "Reform",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
-        "text": "Haushalt",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Ausschuss",
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bundeswirtschaftsministerium\" nutzt Stefan Rouenhoff 192.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "259.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bundeswirtschaftsministerium\" nutzt Stefan Rouenhoff 168.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "243.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -165,12 +231,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.989
+        "emoji": "🐬",
+        "name": "Delfin",
+        "title": "Diplomatischer Redner",
+        "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
+        "id": "delfin",
+        "score": 0.956
       }
     ]
   },
@@ -247,11 +313,11 @@
           "count": 2
         },
         {
-          "word": "integration",
+          "word": "einwanderung",
           "count": 1
         },
         {
-          "word": "einwanderung",
+          "word": "integration",
           "count": 1
         }
       ],
@@ -291,7 +357,7 @@
           "count": 9
         },
         {
-          "word": "industrie",
+          "word": "mittelstand",
           "count": 4
         },
         {
@@ -355,11 +421,11 @@
           "count": 3
         },
         {
-          "word": "steuer",
+          "word": "sondervermögen",
           "count": 1
         },
         {
-          "word": "steuerpolitik",
+          "word": "körperschaftsteuer",
           "count": 1
         }
       ],

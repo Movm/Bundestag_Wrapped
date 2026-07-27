@@ -11,23 +11,23 @@
   "minWords": 269,
   "maxWords": 824,
   "rankings": {
-    "speechRank": 121,
-    "wordsRank": 147,
-    "partySpeechRank": 31,
-    "partyWordsRank": 38,
+    "speechRank": 126,
+    "wordsRank": 145,
+    "partySpeechRank": 32,
+    "partyWordsRank": 34,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 80.6,
-    "verbosityRank": 104,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 20,
+    "totalSpeakers": 626,
+    "percentile": 79.9,
+    "verbosityRank": 112,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 25,
     "longestSpeechRank": 215
   },
   "drama": {
     "interruptionsGiven": 6,
     "interruptionsReceived": 21,
-    "interrupterRank": 318,
-    "interruptedRank": 314
+    "interrupterRank": 332,
+    "interruptedRank": 327
   },
   "words": {
     "topWords": [
@@ -57,31 +57,95 @@
         "word": "thyssenkrupp",
         "count": 5,
         "ratioParty": 157.6,
-        "ratioBundestag": 58.0
+        "ratioBundestag": 57.7
+      },
+      {
+        "word": "reichtum",
+        "count": 7,
+        "ratioParty": 132.4,
+        "ratioBundestag": 53.5
       },
       {
         "word": "dortmund",
         "count": 8,
         "ratioParty": 126.1,
-        "ratioBundestag": 181.0
-      },
-      {
-        "word": "reichtum",
-        "count": 7,
-        "ratioParty": 110.3,
-        "ratioBundestag": 54.5
+        "ratioBundestag": 180.4
       },
       {
         "word": "armuts",
         "count": 6,
         "ratioParty": 56.7,
-        "ratioBundestag": 67.9
+        "ratioBundestag": 67.6
       },
       {
         "word": "reichtumsbericht",
         "count": 6,
         "ratioParty": 56.7,
-        "ratioBundestag": 75.0
+        "ratioBundestag": 74.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "dortmund",
+        "count": 8,
+        "score": 38.76,
+        "ratio": 126.1
+      },
+      {
+        "word": "reichtum",
+        "count": 7,
+        "score": 34.25,
+        "ratio": 132.4
+      },
+      {
+        "word": "thyssenkrupp",
+        "count": 5,
+        "score": 25.33,
+        "ratio": 157.6
+      },
+      {
+        "word": "armuts",
+        "count": 6,
+        "score": 24.33,
+        "ratio": 56.7
+      },
+      {
+        "word": "reichtumsbericht",
+        "count": 6,
+        "score": 24.33,
+        "ratio": 56.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "dortmund",
+        "count": 8,
+        "score": 41.61,
+        "ratio": 180.4
+      },
+      {
+        "word": "reichtum",
+        "count": 7,
+        "score": 27.99,
+        "ratio": 53.5
+      },
+      {
+        "word": "reichtumsbericht",
+        "count": 6,
+        "score": 25.97,
+        "ratio": 74.8
+      },
+      {
+        "word": "armuts",
+        "count": 6,
+        "score": 25.37,
+        "ratio": 67.6
+      },
+      {
+        "word": "thyssenkrupp",
+        "count": 5,
+        "score": 20.36,
+        "ratio": 57.7
       }
     ],
     "signatureAdjectives": [
@@ -89,16 +153,32 @@
         "word": "fair",
         "count": 3,
         "ratioParty": 6.3,
-        "ratioBundestag": 8.3
+        "ratioBundestag": 8.4
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "fair",
+        "count": 3,
+        "score": 5.96,
+        "ratio": 6.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "fair",
+        "count": 3,
+        "score": 6.72,
+        "ratio": 8.4
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 536,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
     "vsParty": 0.87,
-    "vsParliament": 0.92
+    "vsParliament": 0.91
   },
   "funFacts": [
     {
@@ -116,34 +196,30 @@
     "question": "Welches Wort nutzt Jens Peick häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Thyssenkrupp",
-        "isCorrect": true
-      },
-      {
         "text": "Zukunft",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
-        "text": "Koalition",
+        "text": "Thyssenkrupp",
+        "isCorrect": true
+      },
+      {
+        "text": "Kinder",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Thyssenkrupp\" nutzt Jens Peick 157.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "58.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "57.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Jens Peick häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
+        "text": "Neu",
         "isCorrect": false
       },
       {
@@ -151,12 +227,16 @@
         "isCorrect": true
       },
       {
-        "text": "National",
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
         "isCorrect": false
       }
     ],
     "explanationParty": "\"Fair\" nutzt Jens Peick 6.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "8.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationBundestag": "8.4× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -274,11 +354,11 @@
       ],
       "klima": [
         {
-          "word": "klimaneutralität",
+          "word": "energiewende",
           "count": 1
         },
         {
-          "word": "energiewende",
+          "word": "klimaneutralität",
           "count": 1
         }
       ],
@@ -318,11 +398,11 @@
           "count": 6
         },
         {
-          "word": "sozialstaat",
+          "word": "grundsicherung",
           "count": 5
         },
         {
-          "word": "grundsicherung",
+          "word": "sozialstaat",
           "count": 5
         }
       ],
@@ -342,23 +422,23 @@
       ],
       "gesundheit": [
         {
-          "word": "notfall",
-          "count": 2
-        },
-        {
           "word": "krankenversicherung",
           "count": 2
         },
         {
-          "word": "corona",
+          "word": "notfall",
+          "count": 2
+        },
+        {
+          "word": "medizin",
           "count": 1
         },
         {
-          "word": "pandemie",
+          "word": "krankheit",
           "count": 1
         },
         {
-          "word": "kliniken",
+          "word": "sucht",
           "count": 1
         }
       ],
@@ -380,7 +460,7 @@
           "count": 4
         },
         {
-          "word": "europa",
+          "word": "russland",
           "count": 3
         }
       ],
@@ -396,15 +476,15 @@
           "count": 2
         },
         {
-          "word": "bildung",
-          "count": 1
-        },
-        {
           "word": "forschung",
           "count": 1
         },
         {
           "word": "ausbildung",
+          "count": 1
+        },
+        {
+          "word": "bildung",
           "count": 1
         },
         {
@@ -426,23 +506,15 @@
           "count": 3
         },
         {
-          "word": "investitionen",
+          "word": "erbschaftsteuer",
           "count": 2
         },
         {
-          "word": "erbschaftsteuer",
+          "word": "investitionen",
           "count": 2
         }
       ],
       "justiz": [
-        {
-          "word": "strafverfolgung",
-          "count": 1
-        },
-        {
-          "word": "datenschutz",
-          "count": 1
-        },
         {
           "word": "urteil",
           "count": 1
@@ -452,7 +524,15 @@
           "count": 1
         },
         {
+          "word": "strafverfolgung",
+          "count": 1
+        },
+        {
           "word": "rechtsstaat",
+          "count": 1
+        },
+        {
+          "word": "datenschutz",
           "count": 1
         }
       ],
@@ -480,11 +560,11 @@
       ],
       "mobilitaet": [
         {
-          "word": "autos",
+          "word": "auto",
           "count": 3
         },
         {
-          "word": "auto",
+          "word": "autos",
           "count": 3
         },
         {

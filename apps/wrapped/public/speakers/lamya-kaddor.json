@@ -6,87 +6,153 @@
   "speeches": 23,
   "wortbeitraege": 2,
   "befragungResponses": 0,
-  "totalWords": 9346,
-  "avgWords": 374,
+  "totalWords": 9387,
+  "avgWords": 375,
   "minWords": 70,
   "maxWords": 784,
   "rankings": {
-    "speechRank": 53,
-    "wordsRank": 161,
+    "speechRank": 51,
+    "wordsRank": 154,
     "partySpeechRank": 8,
-    "partyWordsRank": 24,
+    "partyWordsRank": 25,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 91.5,
-    "verbosityRank": 416,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 91.9,
+    "verbosityRank": 418,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 44,
-    "longestSpeechRank": 266
+    "longestSpeechRank": 265
   },
   "drama": {
-    "interruptionsGiven": 135,
-    "interruptionsReceived": 102,
-    "interrupterRank": 29,
-    "interruptedRank": 26
+    "interruptionsGiven": 141,
+    "interruptionsReceived": 99,
+    "interrupterRank": 30,
+    "interruptedRank": 29
   },
   "words": {
     "topWords": [
       {
         "word": "menschen",
-        "count": 48
+        "count": 52
       },
       {
         "word": "land",
-        "count": 33
+        "count": 35
       },
       {
         "word": "deutschland",
-        "count": 23
+        "count": 24
       },
       {
         "word": "zitat",
-        "count": 18
+        "count": 19
       }
     ],
     "signatureWords": [
       {
         "word": "phänomen",
-        "count": 5,
-        "ratioParty": 333.9,
-        "ratioBundestag": 41.8
-      },
-      {
-        "word": "tribünen",
-        "count": 12,
-        "ratioParty": 267.1,
-        "ratioBundestag": 107.9
+        "count": 6,
+        "ratioParty": 397.2,
+        "ratioBundestag": 53.7
       },
       {
         "word": "besucherinnen",
         "count": 9,
-        "ratioParty": 200.4,
-        "ratioBundestag": 110.8
+        "ratioParty": 297.9,
+        "ratioBundestag": 107.4
       },
       {
         "word": "besucher",
         "count": 9,
-        "ratioParty": 200.4,
-        "ratioBundestag": 55.4
+        "ratioParty": 297.9,
+        "ratioBundestag": 54.4
+      },
+      {
+        "word": "tribünen",
+        "count": 12,
+        "ratioParty": 264.8,
+        "ratioBundestag": 109.6
       },
       {
         "word": "einwanderung",
         "count": 6,
-        "ratioParty": 200.4,
-        "ratioBundestag": 40.1
+        "ratioParty": 198.6,
+        "ratioBundestag": 40.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "tribünen",
+        "count": 12,
+        "score": 66.99,
+        "ratio": 264.8
+      },
+      {
+        "word": "besucherinnen",
+        "count": 9,
+        "score": 51.3,
+        "ratio": 297.9
+      },
+      {
+        "word": "besucher",
+        "count": 9,
+        "score": 51.3,
+        "ratio": 297.9
+      },
+      {
+        "word": "phänomen",
+        "count": 6,
+        "score": 35.92,
+        "ratio": 397.2
+      },
+      {
+        "word": "einwanderung",
+        "count": 6,
+        "score": 31.78,
+        "ratio": 198.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "tribünen",
+        "count": 12,
+        "score": 56.47,
+        "ratio": 109.6
+      },
+      {
+        "word": "besucherinnen",
+        "count": 9,
+        "score": 42.17,
+        "ratio": 107.4
+      },
+      {
+        "word": "besucher",
+        "count": 9,
+        "score": 36.13,
+        "ratio": 54.4
+      },
+      {
+        "word": "phänomen",
+        "count": 6,
+        "score": 24.01,
+        "ratio": 53.7
+      },
+      {
+        "word": "einwanderung",
+        "count": 6,
+        "score": 22.35,
+        "ratio": 40.5
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
-    "speakerAvgWords": 374,
-    "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.7,
+    "speakerAvgWords": 375,
+    "partyAvgWords": 542,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.69,
     "vsParliament": 0.64
   },
   "funFacts": [
@@ -98,12 +164,12 @@
     {
       "emoji": "📝",
       "label": "Wörter gesprochen",
-      "value": "9.346"
+      "value": "9.387"
     },
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "135"
+      "value": "141"
     },
     {
       "emoji": "📊",
@@ -115,15 +181,15 @@
     "question": "Welches Wort nutzt Lamya Kaddor häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
+        "text": "Minister",
         "isCorrect": false
       },
       {
@@ -131,8 +197,8 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Phänomen\" nutzt Lamya Kaddor 333.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "41.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Phänomen\" nutzt Lamya Kaddor 397.2× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "53.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -162,47 +228,47 @@
   },
   "toneProfile": {
     "scores": {
-      "affirmative": 72.2,
-      "aggression": 13.3,
-      "labeling": 26.7,
-      "solution_focus": 83.3,
+      "affirmative": 64.7,
+      "aggression": 13.8,
+      "labeling": 27.6,
+      "solution_focus": 82.1,
       "collaboration": 41.7,
-      "demand_intensity": 4.3,
-      "acknowledgment": 4.3,
-      "authority": 70.7,
-      "future_orientation": 89.5,
-      "emotional_intensity": 24.3,
-      "inclusivity": 51.1,
+      "demand_intensity": 4.5,
+      "acknowledgment": 4.5,
+      "authority": 69.4,
+      "future_orientation": 90.7,
+      "emotional_intensity": 28.6,
+      "inclusivity": 51.0,
       "discriminatory": 0.81
     },
     "confidence": "sufficient",
     "sampleSize": {
       "speeches": 25,
-      "words": 6153,
-      "adjectives": 30,
-      "verbs": 46
+      "words": 6158,
+      "adjectives": 29,
+      "verbs": 44
     }
   },
   "topics": {
     "scores": {
-      "migration": 4.39,
+      "migration": 4.38,
       "klima": 0.0,
       "wirtschaft": 1.46,
-      "soziales": 2.28,
-      "sicherheit": 7.96,
+      "soziales": 2.92,
+      "sicherheit": 7.63,
       "gesundheit": 1.95,
-      "europa": 3.09,
-      "digital": 0.0,
+      "europa": 2.92,
+      "digital": 0.16,
       "bildung": 5.36,
-      "finanzen": 0.98,
-      "justiz": 2.6,
+      "finanzen": 0.97,
+      "justiz": 1.62,
       "arbeit": 0.49,
-      "mobilitaet": 1.79
+      "mobilitaet": 1.95
     },
     "topTopics": [
       {
         "topic": "sicherheit",
-        "score": 7.96,
+        "score": 7.63,
         "rank": 1
       },
       {
@@ -212,17 +278,17 @@
       },
       {
         "topic": "migration",
-        "score": 4.39,
+        "score": 4.38,
         "rank": 3
       },
       {
-        "topic": "europa",
-        "score": 3.09,
+        "topic": "soziales",
+        "score": 2.92,
         "rank": 4
       },
       {
-        "topic": "justiz",
-        "score": 2.6,
+        "topic": "europa",
+        "score": 2.92,
         "rank": 5
       }
     ],
@@ -263,22 +329,22 @@
           "count": 1
         },
         {
-          "word": "unternehmen",
+          "word": "wettbewerb",
           "count": 1
         },
         {
-          "word": "wettbewerb",
+          "word": "produktion",
           "count": 1
         }
       ],
       "soziales": [
         {
           "word": "kinder",
-          "count": 4
+          "count": 7
         },
         {
           "word": "familie",
-          "count": 3
+          "count": 4
         },
         {
           "word": "renten",
@@ -311,7 +377,7 @@
           "count": 6
         },
         {
-          "word": "straftäter",
+          "word": "islamismus",
           "count": 3
         }
       ],
@@ -329,11 +395,11 @@
           "count": 2
         },
         {
-          "word": "medizin",
+          "word": "gesundheitswesen",
           "count": 1
         },
         {
-          "word": "pflegeversicherung",
+          "word": "prävention",
           "count": 1
         }
       ],
@@ -344,10 +410,6 @@
         },
         {
           "word": "russland",
-          "count": 3
-        },
-        {
-          "word": "krieg",
           "count": 2
         },
         {
@@ -355,7 +417,17 @@
           "count": 2
         },
         {
-          "word": "china",
+          "word": "krieg",
+          "count": 2
+        },
+        {
+          "word": "türkei",
+          "count": 1
+        }
+      ],
+      "digital": [
+        {
+          "word": "netz",
           "count": 1
         }
       ],
@@ -369,15 +441,15 @@
           "count": 6
         },
         {
-          "word": "universitäten",
-          "count": 2
-        },
-        {
           "word": "schüler",
           "count": 2
         },
         {
           "word": "forschung",
+          "count": 2
+        },
+        {
+          "word": "schule",
           "count": 2
         }
       ],
@@ -391,33 +463,33 @@
           "count": 2
         },
         {
-          "word": "schuldenbremse",
+          "word": "steuern",
           "count": 1
         },
         {
-          "word": "steuern",
+          "word": "schuldenbremse",
           "count": 1
         }
       ],
       "justiz": [
         {
-          "word": "rechtsstaat",
-          "count": 4
-        },
-        {
           "word": "grundgesetz",
-          "count": 2
-        },
-        {
-          "word": "gerichte",
-          "count": 2
+          "count": 3
         },
         {
           "word": "verfassung",
           "count": 1
         },
         {
-          "word": "gleichberechtigung",
+          "word": "rechtsstaat",
+          "count": 1
+        },
+        {
+          "word": "bundesverfassungsgericht",
+          "count": 1
+        },
+        {
+          "word": "straftaten",
           "count": 1
         }
       ],
@@ -441,15 +513,15 @@
           "count": 2
         },
         {
-          "word": "nahverkehr",
-          "count": 1
-        },
-        {
           "word": "straßen",
-          "count": 1
+          "count": 2
         },
         {
           "word": "verkehr",
+          "count": 1
+        },
+        {
+          "word": "schifffahrt",
           "count": 1
         }
       ]

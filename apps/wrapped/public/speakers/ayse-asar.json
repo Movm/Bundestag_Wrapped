@@ -6,42 +6,46 @@
   "speeches": 20,
   "wortbeitraege": 6,
   "befragungResponses": 0,
-  "totalWords": 7222,
-  "avgWords": 278,
+  "totalWords": 7285,
+  "avgWords": 280,
   "minWords": 49,
   "maxWords": 573,
   "rankings": {
-    "speechRank": 87,
-    "wordsRank": 243,
-    "partySpeechRank": 14,
-    "partyWordsRank": 39,
+    "speechRank": 89,
+    "wordsRank": 240,
+    "partySpeechRank": 13,
+    "partyWordsRank": 40,
     "partySize": 86,
-    "totalSpeakers": 625,
-    "percentile": 86.1,
-    "verbosityRank": 522,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 85.8,
+    "verbosityRank": 525,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 74,
-    "longestSpeechRank": 524
+    "longestSpeechRank": 525
   },
   "drama": {
-    "interruptionsGiven": 9,
+    "interruptionsGiven": 11,
     "interruptionsReceived": 46,
-    "interrupterRank": 283,
-    "interruptedRank": 132
+    "interrupterRank": 263,
+    "interruptedRank": 129
   },
   "words": {
     "topWords": [
-      {
-        "word": "wissenschaft",
-        "count": 32
-      },
       {
         "word": "bafög",
         "count": 32
       },
       {
+        "word": "wissenschaft",
+        "count": 28
+      },
+      {
         "word": "bundesregierung",
         "count": 19
+      },
+      {
+        "word": "deutschland",
+        "count": 17
       },
       {
         "word": "ministerin",
@@ -49,11 +53,7 @@
       },
       {
         "word": "forschung",
-        "count": 15
-      },
-      {
-        "word": "deutschland",
-        "count": 15
+        "count": 16
       },
       {
         "word": "hightech",
@@ -71,41 +71,107 @@
     "signatureWords": [
       {
         "word": "wissenschaftsfreiheit",
-        "count": 10,
-        "ratioParty": 857.5,
-        "ratioBundestag": 70.4
+        "count": 8,
+        "ratioParty": 675.9,
+        "ratioBundestag": 57.1
       },
       {
         "word": "forschende",
         "count": 8,
-        "ratioParty": 343.0,
-        "ratioBundestag": 228.1
+        "ratioParty": 338.0,
+        "ratioBundestag": 225.8
       },
       {
         "word": "verwalten",
         "count": 6,
-        "ratioParty": 171.5,
-        "ratioBundestag": 51.3
-      },
-      {
-        "word": "studierenden",
-        "count": 13,
-        "ratioParty": 139.3,
-        "ratioBundestag": 129.7
+        "ratioParty": 169.0,
+        "ratioBundestag": 51.5
       },
       {
         "word": "innovationspolitik",
         "count": 11,
-        "ratioParty": 134.8,
-        "ratioBundestag": 329.3
+        "ratioParty": 132.8,
+        "ratioBundestag": 326.0
+      },
+      {
+        "word": "studierenden",
+        "count": 13,
+        "ratioParty": 122.0,
+        "ratioBundestag": 122.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "studierenden",
+        "count": 13,
+        "score": 62.56,
+        "ratio": 122.0
+      },
+      {
+        "word": "innovationspolitik",
+        "count": 11,
+        "score": 53.86,
+        "ratio": 132.8
+      },
+      {
+        "word": "wissenschaftsfreiheit",
+        "count": 8,
+        "score": 52.14,
+        "ratio": 675.9
+      },
+      {
+        "word": "forschende",
+        "count": 8,
+        "score": 46.61,
+        "ratio": 338.0
+      },
+      {
+        "word": "verwalten",
+        "count": 6,
+        "score": 30.81,
+        "ratio": 169.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "innovationspolitik",
+        "count": 11,
+        "score": 63.69,
+        "ratio": 326.0
+      },
+      {
+        "word": "studierenden",
+        "count": 13,
+        "score": 62.59,
+        "ratio": 122.3
+      },
+      {
+        "word": "forschende",
+        "count": 8,
+        "score": 43.39,
+        "ratio": 225.8
+      },
+      {
+        "word": "wissenschaftsfreiheit",
+        "count": 8,
+        "score": 32.5,
+        "ratio": 57.1
+      },
+      {
+        "word": "verwalten",
+        "count": 6,
+        "score": 23.76,
+        "ratio": 51.5
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
-    "speakerAvgWords": 278,
-    "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
+    "speakerAvgWords": 280,
+    "partyAvgWords": 542,
+    "parliamentAvgWords": 587,
     "vsParty": 0.52,
     "vsParliament": 0.48
   },
@@ -118,18 +184,23 @@
     {
       "emoji": "📝",
       "label": "Wörter gesprochen",
-      "value": "7.222"
+      "value": "7.285"
+    },
+    {
+      "emoji": "⚡",
+      "label": "Zwischenrufe",
+      "value": "11"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Ayse Asar häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Europa",
+        "text": "Klima",
         "isCorrect": false
       },
       {
-        "text": "Freiheit",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
@@ -137,19 +208,19 @@
         "isCorrect": true
       },
       {
-        "text": "Demokratie",
+        "text": "Freiheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wissenschaftsfreiheit\" nutzt Ayse Asar 857.5× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "70.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wissenschaftsfreiheit\" nutzt Ayse Asar 675.9× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "57.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
     "emoji": "🦉",
     "name": "Eule",
     "title": "Themenexpertin",
-    "reason": "Dein Fachwort \"Wissenschaftsfreiheit\" nutzt du 857.5× häufiger als deine Fraktion.",
+    "reason": "Dein Fachwort \"Wissenschaftsfreiheit\" nutzt du 675.9× häufiger als deine Fraktion.",
     "id": "eule",
     "alternatives": [
       {
@@ -172,67 +243,67 @@
   },
   "toneProfile": {
     "scores": {
-      "affirmative": 92.9,
-      "aggression": 27.3,
-      "labeling": 9.1,
-      "solution_focus": 77.8,
+      "affirmative": 85.7,
+      "aggression": 31.8,
+      "labeling": 4.5,
+      "solution_focus": 72.7,
       "collaboration": 50.0,
-      "demand_intensity": 5.9,
-      "acknowledgment": 8.8,
-      "authority": 88.2,
-      "future_orientation": 82.1,
+      "demand_intensity": 12.9,
+      "acknowledgment": 9.7,
+      "authority": 87.5,
+      "future_orientation": 83.8,
       "emotional_intensity": 91.7,
-      "inclusivity": 50.5,
+      "inclusivity": 47.4,
       "discriminatory": 0.0
     },
     "confidence": "sufficient",
     "sampleSize": {
       "speeches": 26,
-      "words": 4808,
+      "words": 4840,
       "adjectives": 22,
-      "verbs": 34
+      "verbs": 31
     }
   },
   "topics": {
     "scores": {
       "migration": 0.0,
-      "klima": 2.91,
-      "wirtschaft": 2.29,
-      "soziales": 2.5,
+      "klima": 2.89,
+      "wirtschaft": 2.07,
+      "soziales": 2.69,
       "sicherheit": 0.62,
       "gesundheit": 0.62,
-      "europa": 3.74,
-      "digital": 1.66,
-      "bildung": 28.7,
-      "finanzen": 4.78,
-      "justiz": 0.42,
-      "arbeit": 0.21,
-      "mobilitaet": 1.66
+      "europa": 2.69,
+      "digital": 1.65,
+      "bildung": 27.89,
+      "finanzen": 4.55,
+      "justiz": 0.41,
+      "arbeit": 1.03,
+      "mobilitaet": 1.65
     },
     "topTopics": [
       {
         "topic": "bildung",
-        "score": 28.7,
+        "score": 27.89,
         "rank": 1
       },
       {
         "topic": "finanzen",
-        "score": 4.78,
+        "score": 4.55,
         "rank": 2
       },
       {
-        "topic": "europa",
-        "score": 3.74,
+        "topic": "klima",
+        "score": 2.89,
         "rank": 3
       },
       {
-        "topic": "klima",
-        "score": 2.91,
+        "topic": "soziales",
+        "score": 2.69,
         "rank": 4
       },
       {
-        "topic": "soziales",
-        "score": 2.5,
+        "topic": "europa",
+        "score": 2.69,
         "rank": 5
       }
     ],
@@ -269,7 +340,7 @@
           "count": 2
         },
         {
-          "word": "wirtschaft",
+          "word": "fachkräfte",
           "count": 1
         },
         {
@@ -295,11 +366,11 @@
           "count": 1
         },
         {
-          "word": "wohnungsnot",
+          "word": "eltern",
           "count": 1
         },
         {
-          "word": "kinder",
+          "word": "sozialleistung",
           "count": 1
         }
       ],
@@ -319,25 +390,25 @@
           "count": 1
         },
         {
-          "word": "medikamente",
+          "word": "medizin",
           "count": 1
         },
         {
-          "word": "medizin",
+          "word": "medikamente",
           "count": 1
         }
       ],
       "europa": [
         {
           "word": "europa",
-          "count": 9
-        },
-        {
-          "word": "kooperation",
-          "count": 4
+          "count": 7
         },
         {
           "word": "vertrag",
+          "count": 2
+        },
+        {
+          "word": "kooperation",
           "count": 2
         },
         {
@@ -369,16 +440,16 @@
       ],
       "bildung": [
         {
-          "word": "wissenschaft",
-          "count": 32
-        },
-        {
           "word": "bafög",
           "count": 32
         },
         {
+          "word": "wissenschaft",
+          "count": 28
+        },
+        {
           "word": "forschung",
-          "count": 15
+          "count": 16
         },
         {
           "word": "hochschulen",
@@ -386,7 +457,7 @@
         },
         {
           "word": "wissenschaftsfreiheit",
-          "count": 10
+          "count": 8
         }
       ],
       "finanzen": [
@@ -399,16 +470,16 @@
           "count": 3
         },
         {
-          "word": "investitionen",
-          "count": 3
-        },
-        {
           "word": "haushalt",
           "count": 3
         },
         {
-          "word": "finanzierung",
+          "word": "investitionen",
           "count": 3
+        },
+        {
+          "word": "finanzierung",
+          "count": 2
         }
       ],
       "justiz": [
@@ -418,6 +489,22 @@
         }
       ],
       "arbeit": [
+        {
+          "word": "befristung",
+          "count": 1
+        },
+        {
+          "word": "kündigungsschutz",
+          "count": 1
+        },
+        {
+          "word": "beschäftigte",
+          "count": 1
+        },
+        {
+          "word": "arbeitnehmer",
+          "count": 1
+        },
         {
           "word": "arbeitsplätze",
           "count": 1

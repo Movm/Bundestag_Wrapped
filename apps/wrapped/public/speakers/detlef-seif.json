@@ -11,23 +11,23 @@
   "minWords": 57,
   "maxWords": 710,
   "rankings": {
-    "speechRank": 225,
-    "wordsRank": 255,
-    "partySpeechRank": 58,
-    "partyWordsRank": 72,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 64.0,
-    "verbosityRank": 341,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 118,
-    "longestSpeechRank": 363
+    "speechRank": 235,
+    "wordsRank": 256,
+    "partySpeechRank": 60,
+    "partyWordsRank": 70,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 62.5,
+    "verbosityRank": 340,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 121,
+    "longestSpeechRank": 365
   },
   "drama": {
-    "interruptionsGiven": 18,
+    "interruptionsGiven": 20,
     "interruptionsReceived": 104,
-    "interrupterRank": 215,
-    "interruptedRank": 25
+    "interrupterRank": 209,
+    "interruptedRank": 27
   },
   "words": {
     "topWords": [
@@ -40,76 +40,152 @@
         "count": 21
       },
       {
-        "word": "maßnahmen",
-        "count": 19
-      },
-      {
         "word": "bundesregierung",
         "count": 19
       },
       {
-        "word": "deutschland",
-        "count": 17
+        "word": "maßnahmen",
+        "count": 19
       },
       {
         "word": "verfahren",
         "count": 17
       },
       {
-        "word": "union",
-        "count": 14
+        "word": "deutschland",
+        "count": 17
       },
       {
-        "word": "schutz",
-        "count": 12
+        "word": "union",
+        "count": 14
       }
     ],
     "signatureWords": [
       {
         "word": "visum",
         "count": 6,
-        "ratioParty": 630.8,
-        "ratioBundestag": 277.6
+        "ratioParty": 629.7,
+        "ratioBundestag": 276.6
       },
       {
         "word": "aufnahmezusage",
         "count": 6,
-        "ratioParty": 315.4,
-        "ratioBundestag": 138.8
+        "ratioParty": 314.9,
+        "ratioBundestag": 138.3
       },
       {
         "word": "aufschrei",
         "count": 5,
-        "ratioParty": 262.8,
-        "ratioBundestag": 134.9
+        "ratioParty": 209.9,
+        "ratioBundestag": 129.1
       },
       {
         "word": "überlastung",
         "count": 5,
-        "ratioParty": 131.4,
-        "ratioBundestag": 79.0
+        "ratioParty": 131.2,
+        "ratioBundestag": 73.3
       },
       {
         "word": "asylsystem",
         "count": 7,
-        "ratioParty": 58.9,
-        "ratioBundestag": 81.0
+        "ratioParty": 58.8,
+        "ratioBundestag": 80.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "visum",
+        "count": 6,
+        "score": 38.68,
+        "ratio": 629.7
+      },
+      {
+        "word": "aufnahmezusage",
+        "count": 6,
+        "score": 34.53,
+        "ratio": 314.9
+      },
+      {
+        "word": "asylsystem",
+        "count": 7,
+        "score": 28.64,
+        "ratio": 58.8
+      },
+      {
+        "word": "aufschrei",
+        "count": 5,
+        "score": 26.76,
+        "ratio": 209.9
+      },
+      {
+        "word": "überlastung",
+        "count": 5,
+        "score": 24.42,
+        "ratio": 131.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "visum",
+        "count": 6,
+        "score": 33.76,
+        "ratio": 276.6
+      },
+      {
+        "word": "asylsystem",
+        "count": 7,
+        "score": 30.82,
+        "ratio": 80.7
+      },
+      {
+        "word": "aufnahmezusage",
+        "count": 6,
+        "score": 29.62,
+        "ratio": 138.3
+      },
+      {
+        "word": "aufschrei",
+        "count": 5,
+        "score": 24.34,
+        "ratio": 129.1
+      },
+      {
+        "word": "überlastung",
+        "count": 5,
+        "score": 21.54,
+        "ratio": 73.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "falsch",
         "count": 6,
-        "ratioParty": 5.8,
+        "ratioParty": 5.7,
         "ratioBundestag": 5.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "falsch",
+        "count": 6,
+        "score": 11.41,
+        "ratio": 5.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "falsch",
+        "count": 6,
+        "score": 11.32,
+        "ratio": 5.6
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 411,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.64,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.63,
     "vsParliament": 0.7
   },
   "funFacts": [
@@ -126,53 +202,53 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "18"
+      "value": "20"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Detlef Seif häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Haushalt",
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
         "text": "Visum",
         "isCorrect": true
-      },
-      {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Visum\" nutzt Detlef Seif 630.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "277.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Visum\" nutzt Detlef Seif 629.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "276.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Detlef Seif häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
         "text": "Falsch",
         "isCorrect": true
       },
       {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Falsch\" nutzt Detlef Seif 5.8× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationParty": "\"Falsch\" nutzt Detlef Seif 5.7× häufiger als der CDU/CSU-Durchschnitt.",
     "explanationBundestag": "5.6× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -277,11 +353,11 @@
           "count": 5
         },
         {
-          "word": "aufenthaltsgesetz",
+          "word": "familiennachzug",
           "count": 4
         },
         {
-          "word": "familiennachzug",
+          "word": "aufenthaltsgesetz",
           "count": 4
         },
         {
@@ -295,11 +371,11 @@
           "count": 2
         },
         {
-          "word": "import",
+          "word": "handelsbeziehungen",
           "count": 1
         },
         {
-          "word": "handelsbeziehungen",
+          "word": "import",
           "count": 1
         }
       ],
@@ -309,19 +385,19 @@
           "count": 4
         },
         {
-          "word": "eltern",
-          "count": 2
-        },
-        {
           "word": "familien",
           "count": 2
         },
         {
-          "word": "familie",
+          "word": "eltern",
+          "count": 2
+        },
+        {
+          "word": "wohnungsmarkt",
           "count": 1
         },
         {
-          "word": "kind",
+          "word": "familie",
           "count": 1
         }
       ],
@@ -335,15 +411,15 @@
           "count": 3
         },
         {
-          "word": "armee",
-          "count": 1
-        },
-        {
           "word": "terroristen",
           "count": 1
         },
         {
           "word": "anschlag",
+          "count": 1
+        },
+        {
+          "word": "gefährder",
           "count": 1
         }
       ],
@@ -359,7 +435,7 @@
           "count": 2
         },
         {
-          "word": "türkei",
+          "word": "ukraine",
           "count": 1
         },
         {
@@ -411,11 +487,11 @@
           "count": 2
         },
         {
-          "word": "gericht",
+          "word": "verordnung",
           "count": 2
         },
         {
-          "word": "verordnung",
+          "word": "gericht",
           "count": 2
         }
       ],

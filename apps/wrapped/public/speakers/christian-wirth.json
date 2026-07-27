@@ -11,23 +11,23 @@
   "minWords": 319,
   "maxWords": 1037,
   "rankings": {
-    "speechRank": 193,
-    "wordsRank": 160,
+    "speechRank": 201,
+    "wordsRank": 158,
     "partySpeechRank": 43,
-    "partyWordsRank": 35,
+    "partyWordsRank": 34,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 69.1,
-    "verbosityRank": 43,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 11,
-    "longestSpeechRank": 68
+    "totalSpeakers": 626,
+    "percentile": 67.9,
+    "verbosityRank": 49,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 12,
+    "longestSpeechRank": 70
   },
   "drama": {
     "interruptionsGiven": 70,
     "interruptionsReceived": 62,
-    "interrupterRank": 68,
-    "interruptedRank": 71
+    "interrupterRank": 70,
+    "interruptedRank": 69
   },
   "words": {
     "topWords": [
@@ -48,11 +48,11 @@
         "count": 27
       },
       {
-        "word": "recht",
+        "word": "dublin",
         "count": 24
       },
       {
-        "word": "dublin",
+        "word": "recht",
         "count": 24
       },
       {
@@ -60,11 +60,11 @@
         "count": 22
       },
       {
-        "word": "zuständig",
+        "word": "verordnung",
         "count": 20
       },
       {
-        "word": "verordnung",
+        "word": "zuständig",
         "count": 20
       },
       {
@@ -76,39 +76,103 @@
       {
         "word": "binnengrenzen",
         "count": 7,
-        "ratioParty": 727.2,
-        "ratioBundestag": 182.2
+        "ratioParty": 722.7,
+        "ratioBundestag": 181.5
       },
       {
         "word": "herkunftsstaaten",
         "count": 6,
-        "ratioParty": 623.3,
-        "ratioBundestag": 70.3
-      },
-      {
-        "word": "asylrecht",
-        "count": 14,
-        "ratioParty": 484.8,
-        "ratioBundestag": 262.3
+        "ratioParty": 619.4,
+        "ratioBundestag": 70.0
       },
       {
         "word": "wirksames",
         "count": 5,
-        "ratioParty": 259.7,
-        "ratioBundestag": 75.6
+        "ratioParty": 516.2,
+        "ratioBundestag": 80.5
+      },
+      {
+        "word": "asylrecht",
+        "count": 14,
+        "ratioParty": 481.8,
+        "ratioBundestag": 261.4
       },
       {
         "word": "dublin",
         "count": 24,
-        "ratioParty": 249.3,
-        "ratioBundestag": 187.4
+        "ratioParty": 247.8,
+        "ratioBundestag": 186.7
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "dublin",
+        "count": 24,
+        "score": 132.4,
+        "ratio": 247.8
+      },
+      {
+        "word": "asylrecht",
+        "count": 14,
+        "score": 86.51,
+        "ratio": 481.8
+      },
+      {
+        "word": "binnengrenzen",
+        "count": 7,
+        "score": 46.09,
+        "ratio": 722.7
+      },
+      {
+        "word": "herkunftsstaaten",
+        "count": 6,
+        "score": 38.58,
+        "ratio": 619.4
+      },
+      {
+        "word": "wirksames",
+        "count": 5,
+        "score": 31.24,
+        "ratio": 516.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "dublin",
+        "count": 24,
+        "score": 125.64,
+        "ratio": 186.7
+      },
+      {
+        "word": "asylrecht",
+        "count": 14,
+        "score": 77.98,
+        "ratio": 261.4
+      },
+      {
+        "word": "binnengrenzen",
+        "count": 7,
+        "score": 36.45,
+        "ratio": 181.5
+      },
+      {
+        "word": "herkunftsstaaten",
+        "count": 6,
+        "score": 25.58,
+        "ratio": 70.0
+      },
+      {
+        "word": "wirksames",
+        "count": 5,
+        "score": 22.0,
+        "ratio": 80.5
       }
     ],
     "signatureAdjectives": [
       {
         "word": "rechts",
         "count": 5,
-        "ratioParty": 5.2,
+        "ratioParty": 5.3,
         "ratioBundestag": 4.7
       },
       {
@@ -117,14 +181,42 @@
         "ratioParty": 2.4,
         "ratioBundestag": 1.9
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "rechts",
+        "count": 5,
+        "score": 9.2,
+        "ratio": 5.3
+      },
+      {
+        "word": "sicher",
+        "count": 5,
+        "score": 6.12,
+        "ratio": 2.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "rechts",
+        "count": 5,
+        "score": 8.7,
+        "ratio": 4.7
+      },
+      {
+        "word": "sicher",
+        "count": 5,
+        "score": 5.32,
+        "ratio": 1.9
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 623,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
-    "vsParty": 1.12,
-    "vsParliament": 1.07
+    "partyAvgWords": 560,
+    "parliamentAvgWords": 587,
+    "vsParty": 1.11,
+    "vsParliament": 1.06
   },
   "funFacts": [
     {
@@ -147,30 +239,30 @@
     "question": "Welches Wort nutzt Dr. Christian Wirth häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
         "text": "Binnengrenzen",
         "isCorrect": true
       },
       {
-        "text": "Verantwortung",
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Minister",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Binnengrenzen\" nutzt Dr. Christian Wirth 727.2× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "182.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Binnengrenzen\" nutzt Dr. Christian Wirth 722.7× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "181.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Christian Wirth häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Falsch",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
@@ -178,15 +270,15 @@
         "isCorrect": true
       },
       {
-        "text": "Groß",
+        "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Notwendig",
+        "text": "Europäisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Rechts\" nutzt Dr. Christian Wirth 5.2× häufiger als der AfD-Durchschnitt.",
+    "explanationParty": "\"Rechts\" nutzt Dr. Christian Wirth 5.3× häufiger als der AfD-Durchschnitt.",
     "explanationBundestag": "4.7× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
@@ -291,15 +383,15 @@
           "count": 2
         },
         {
-          "word": "wirtschaft",
-          "count": 2
-        },
-        {
           "word": "firmen",
           "count": 2
         },
         {
-          "word": "handwerk",
+          "word": "wirtschaft",
+          "count": 2
+        },
+        {
+          "word": "kredite",
           "count": 1
         },
         {
@@ -321,11 +413,11 @@
           "count": 2
         },
         {
-          "word": "familie",
+          "word": "eltern",
           "count": 1
         },
         {
-          "word": "mietpreisbremse",
+          "word": "sozialsystem",
           "count": 1
         }
       ],
@@ -339,11 +431,11 @@
           "count": 4
         },
         {
-          "word": "verfassungsschutz",
+          "word": "islamismus",
           "count": 3
         },
         {
-          "word": "islamismus",
+          "word": "verfassungsschutz",
           "count": 3
         },
         {
@@ -353,11 +445,11 @@
       ],
       "gesundheit": [
         {
-          "word": "medizin",
+          "word": "krankenkassen",
           "count": 1
         },
         {
-          "word": "krankenkassen",
+          "word": "medizin",
           "count": 1
         }
       ],
@@ -371,15 +463,15 @@
           "count": 4
         },
         {
-          "word": "krieg",
+          "word": "afrika",
           "count": 1
         },
         {
-          "word": "wiederaufbau",
+          "word": "europäisch",
           "count": 1
         },
         {
-          "word": "türkei",
+          "word": "frieden",
           "count": 1
         }
       ],
@@ -395,19 +487,19 @@
           "count": 4
         },
         {
-          "word": "bildung",
-          "count": 1
-        },
-        {
-          "word": "bildungspolitik",
-          "count": 1
-        },
-        {
-          "word": "kita",
-          "count": 1
-        },
-        {
           "word": "schüler",
+          "count": 1
+        },
+        {
+          "word": "grundschule",
+          "count": 1
+        },
+        {
+          "word": "lehrer",
+          "count": 1
+        },
+        {
+          "word": "bildung",
           "count": 1
         }
       ],
@@ -417,19 +509,19 @@
           "count": 4
         },
         {
-          "word": "kosten",
-          "count": 3
-        },
-        {
           "word": "haushalt",
           "count": 3
         },
         {
-          "word": "steuerzahler",
+          "word": "kosten",
+          "count": 3
+        },
+        {
+          "word": "schulden",
           "count": 2
         },
         {
-          "word": "steuern",
+          "word": "steuerzahler",
           "count": 2
         }
       ],
@@ -457,11 +549,11 @@
       ],
       "arbeit": [
         {
-          "word": "sozialabgaben",
+          "word": "arbeitnehmer",
           "count": 1
         },
         {
-          "word": "arbeitnehmer",
+          "word": "sozialabgaben",
           "count": 1
         }
       ],

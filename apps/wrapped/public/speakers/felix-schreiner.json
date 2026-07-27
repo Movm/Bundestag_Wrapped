@@ -11,23 +11,23 @@
   "minWords": 241,
   "maxWords": 306,
   "rankings": {
-    "speechRank": 590,
-    "wordsRank": 617,
-    "partySpeechRank": 192,
+    "speechRank": 591,
+    "wordsRank": 616,
+    "partySpeechRank": 194,
     "partyWordsRank": 208,
-    "partySize": 211,
-    "totalSpeakers": 625,
+    "partySize": 212,
+    "totalSpeakers": 626,
     "percentile": 5.6,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 618
+    "longestSpeechRank": 619
   },
   "drama": {
     "interruptionsGiven": 87,
     "interruptionsReceived": 10,
-    "interrupterRank": 55,
-    "interruptedRank": 473
+    "interrupterRank": 53,
+    "interruptedRank": 472
   },
   "words": {
     "topWords": [
@@ -80,12 +80,30 @@
         "ratioBundestag": 12.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "wissen",
+        "count": 5,
+        "score": 13.57,
+        "ratio": 14.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "wissen",
+        "count": 5,
+        "score": 13.16,
+        "ratio": 12.9
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 274,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
     "vsParty": 0.42,
     "vsParliament": 0.47
   },
@@ -105,15 +123,15 @@
     "question": "Welches Wort nutzt Felix Schreiner häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
         "text": "Kinder",
         "isCorrect": false
       },
       {
-        "text": "Europa",
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
         "isCorrect": false
       },
       {

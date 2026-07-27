@@ -11,23 +11,23 @@
   "minWords": 9,
   "maxWords": 1240,
   "rankings": {
-    "speechRank": 375,
-    "wordsRank": 45,
-    "partySpeechRank": 106,
-    "partyWordsRank": 18,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 40.0,
-    "verbosityRank": 560,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 177,
-    "longestSpeechRank": 33
+    "speechRank": 367,
+    "wordsRank": 48,
+    "partySpeechRank": 102,
+    "partyWordsRank": 17,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 41.4,
+    "verbosityRank": 559,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 178,
+    "longestSpeechRank": 35
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 16,
     "interrupterRank": null,
-    "interruptedRank": 366
+    "interruptedRank": 367
   },
   "words": {
     "topWords": [
@@ -54,49 +54,129 @@
     ],
     "signatureWords": [
       {
-        "word": "agrarexportstrategie",
-        "count": 6,
-        "ratioParty": 591.6,
-        "ratioBundestag": 914.4
+        "word": "gemeinschaftsverpflegung",
+        "count": 5,
+        "ratioParty": 246.1,
+        "ratioBundestag": 253.1
       },
       {
         "word": "ernährungs",
         "count": 5,
-        "ratioParty": 246.5,
-        "ratioBundestag": 304.8
+        "ratioParty": 246.1,
+        "ratioBundestag": 303.7
       },
       {
         "word": "höfen",
         "count": 5,
-        "ratioParty": 246.5,
-        "ratioBundestag": 217.7
-      },
-      {
-        "word": "gemeinschaftsverpflegung",
-        "count": 5,
-        "ratioParty": 246.5,
-        "ratioBundestag": 254.0
+        "ratioParty": 246.1,
+        "ratioBundestag": 216.9
       },
       {
         "word": "landwirtinnen",
         "count": 18,
-        "ratioParty": 221.8,
-        "ratioBundestag": 54.3
+        "ratioParty": 221.5,
+        "ratioBundestag": 54.1
+      },
+      {
+        "word": "agrarexportstrategie",
+        "count": 6,
+        "ratioParty": 196.9,
+        "ratioBundestag": 455.5
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "landwirtinnen",
+        "count": 18,
+        "score": 97.29,
+        "ratio": 221.5
+      },
+      {
+        "word": "agrarexportstrategie",
+        "count": 6,
+        "score": 31.73,
+        "ratio": 196.9
+      },
+      {
+        "word": "gemeinschaftsverpflegung",
+        "count": 5,
+        "score": 27.55,
+        "ratio": 246.1
+      },
+      {
+        "word": "ernährungs",
+        "count": 5,
+        "score": 27.55,
+        "ratio": 246.1
+      },
+      {
+        "word": "höfen",
+        "count": 5,
+        "score": 27.55,
+        "ratio": 246.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "landwirtinnen",
+        "count": 18,
+        "score": 72.16,
+        "ratio": 54.1
+      },
+      {
+        "word": "agrarexportstrategie",
+        "count": 6,
+        "score": 36.74,
+        "ratio": 455.5
+      },
+      {
+        "word": "ernährungs",
+        "count": 5,
+        "score": 28.6,
+        "ratio": 303.7
+      },
+      {
+        "word": "gemeinschaftsverpflegung",
+        "count": 5,
+        "score": 27.69,
+        "ratio": 253.1
+      },
+      {
+        "word": "höfen",
+        "count": 5,
+        "score": 26.92,
+        "ratio": 216.9
       }
     ],
     "signatureAdjectives": [
       {
         "word": "zukunftsfähig",
         "count": 5,
-        "ratioParty": 13.7,
-        "ratioBundestag": 20.9
+        "ratioParty": 13.3,
+        "ratioBundestag": 20.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "zukunftsfähig",
+        "count": 5,
+        "score": 13.3,
+        "ratio": 13.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "zukunftsfähig",
+        "count": 5,
+        "score": 15.41,
+        "ratio": 20.8
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 188,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
     "vsParty": 0.29,
     "vsParliament": 0.32
   },
@@ -116,34 +196,30 @@
     "question": "Welches Wort nutzt Alois Rainer häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Demokratie",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Agrarexportstrategie",
+        "text": "Gemeinschaftsverpflegung",
         "isCorrect": true
       },
       {
-        "text": "Bildung",
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Agrarexportstrategie\" nutzt Alois Rainer 591.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "914.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Gemeinschaftsverpflegung\" nutzt Alois Rainer 246.1× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "253.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Alois Rainer häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
@@ -153,32 +229,36 @@
       {
         "text": "Europäisch",
         "isCorrect": false
+      },
+      {
+        "text": "Sicher",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Zukunftsfähig\" nutzt Alois Rainer 13.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "20.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Zukunftsfähig\" nutzt Alois Rainer 13.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "20.8× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
-    "emoji": "🦉",
-    "name": "Eule",
-    "title": "Themenexperte",
-    "reason": "Dein Fachwort \"Agrarexportstrategie\" nutzt du 591.6× häufiger als deine Fraktion.",
-    "id": "eule",
+    "emoji": "🦊",
+    "name": "Fuchs",
+    "title": "Cleverer Stratege",
+    "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
+    "id": "fuchs",
     "alternatives": [
-      {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 1.0
-      },
       {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
         "title": "Themenhüter",
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
+        "score": 1.0
+      },
+      {
+        "emoji": "🐝",
+        "name": "Biene",
+        "title": "Fleißiger Abgeordneter",
+        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+        "id": "biene",
         "score": 1.0
       }
     ]
@@ -318,11 +398,11 @@
           "count": 2
         },
         {
-          "word": "krankheit",
+          "word": "krankenkassen",
           "count": 1
         },
         {
-          "word": "krankenkassen",
+          "word": "krankheit",
           "count": 1
         }
       ],
@@ -340,11 +420,11 @@
           "count": 2
         },
         {
-          "word": "botschafter",
+          "word": "außenminister",
           "count": 1
         },
         {
-          "word": "außenminister",
+          "word": "botschafter",
           "count": 1
         }
       ],
@@ -358,11 +438,11 @@
           "count": 2
         },
         {
-          "word": "roboter",
+          "word": "digitalisierung",
           "count": 1
         },
         {
-          "word": "digitalisierung",
+          "word": "roboter",
           "count": 1
         }
       ],
@@ -402,29 +482,29 @@
           "count": 6
         },
         {
-          "word": "investitionen",
+          "word": "finanzministerium",
           "count": 5
         },
         {
-          "word": "finanzministerium",
+          "word": "investitionen",
           "count": 5
         }
       ],
       "justiz": [
         {
-          "word": "justizministerium",
-          "count": 1
-        },
-        {
           "word": "urteil",
           "count": 1
         },
         {
-          "word": "verordnung",
+          "word": "urteile",
           "count": 1
         },
         {
-          "word": "urteile",
+          "word": "justizministerium",
+          "count": 1
+        },
+        {
+          "word": "verordnung",
           "count": 1
         }
       ],
@@ -442,11 +522,11 @@
           "count": 1
         },
         {
-          "word": "unfallversicherung",
+          "word": "einkommen",
           "count": 1
         },
         {
-          "word": "einkommen",
+          "word": "unfallversicherung",
           "count": 1
         }
       ],

@@ -11,23 +11,23 @@
   "minWords": 68,
   "maxWords": 1020,
   "rankings": {
-    "speechRank": 180,
-    "wordsRank": 121,
-    "partySpeechRank": 26,
-    "partyWordsRank": 14,
+    "speechRank": 161,
+    "wordsRank": 114,
+    "partySpeechRank": 22,
+    "partyWordsRank": 13,
     "partySize": 63,
-    "totalSpeakers": 625,
-    "percentile": 71.2,
-    "verbosityRank": 540,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 74.3,
+    "verbosityRank": 538,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 59,
-    "longestSpeechRank": 78
+    "longestSpeechRank": 79
   },
   "drama": {
-    "interruptionsGiven": 57,
+    "interruptionsGiven": 59,
     "interruptionsReceived": 11,
-    "interrupterRank": 88,
-    "interruptedRank": 454
+    "interrupterRank": 86,
+    "interruptedRank": 439
   },
   "words": {
     "topWords": [
@@ -38,53 +38,137 @@
       {
         "word": "arbeit",
         "count": 22
+      },
+      {
+        "word": "tarifbindung",
+        "count": 18
       }
     ],
     "signatureWords": [
       {
+        "word": "tariftreuegesetz",
+        "count": 11,
+        "ratioParty": 465.6,
+        "ratioBundestag": 73.6
+      },
+      {
         "word": "subunternehmen",
         "count": 10,
-        "ratioParty": 425.1,
-        "ratioBundestag": 470.0
+        "ratioParty": 423.2,
+        "ratioBundestag": 468.3
       },
       {
         "word": "auftragsvergabe",
         "count": 5,
-        "ratioParty": 212.5,
-        "ratioBundestag": 528.7
+        "ratioParty": 211.6,
+        "ratioBundestag": 526.8
       },
       {
         "word": "jobcentern",
         "count": 5,
-        "ratioParty": 106.3,
-        "ratioBundestag": 38.5
+        "ratioParty": 105.8,
+        "ratioBundestag": 38.3
       },
       {
         "word": "lohndumping",
         "count": 10,
-        "ratioParty": 85.0,
-        "ratioBundestag": 235.0
+        "ratioParty": 84.6,
+        "ratioBundestag": 234.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "tariftreuegesetz",
+        "count": 11,
+        "score": 67.6,
+        "ratio": 465.6
       },
       {
-        "word": "menschenhandel",
-        "count": 9,
-        "ratioParty": 76.5,
-        "ratioBundestag": 59.5
+        "word": "subunternehmen",
+        "count": 10,
+        "score": 60.5,
+        "ratio": 423.2
+      },
+      {
+        "word": "lohndumping",
+        "count": 10,
+        "score": 44.5,
+        "ratio": 84.6
+      },
+      {
+        "word": "auftragsvergabe",
+        "count": 5,
+        "score": 26.8,
+        "ratio": 211.6
+      },
+      {
+        "word": "jobcentern",
+        "count": 5,
+        "score": 23.35,
+        "ratio": 105.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "subunternehmen",
+        "count": 10,
+        "score": 61.51,
+        "ratio": 468.3
+      },
+      {
+        "word": "lohndumping",
+        "count": 10,
+        "score": 54.6,
+        "ratio": 234.1
+      },
+      {
+        "word": "tariftreuegesetz",
+        "count": 11,
+        "score": 47.43,
+        "ratio": 73.6
+      },
+      {
+        "word": "auftragsvergabe",
+        "count": 5,
+        "score": 31.34,
+        "ratio": 526.8
+      },
+      {
+        "word": "jobcentern",
+        "count": 5,
+        "score": 18.36,
+        "ratio": 38.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "erfolgreich",
         "count": 4,
-        "ratioParty": 6.5,
+        "ratioParty": 6.8,
         "ratioBundestag": 4.5
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "erfolgreich",
+        "count": 4,
+        "score": 8.22,
+        "ratio": 6.8
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "erfolgreich",
+        "count": 4,
+        "score": 6.82,
+        "ratio": 4.5
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 252,
     "partyAvgWords": 500,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 587,
     "vsParty": 0.5,
     "vsParliament": 0.43
   },
@@ -102,18 +186,18 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "57"
+      "value": "59"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Pascal Meiser häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
+        "text": "Tariftreuegesetz",
+        "isCorrect": true
       },
       {
-        "text": "Reform",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
@@ -121,34 +205,34 @@
         "isCorrect": false
       },
       {
-        "text": "Subunternehmen",
-        "isCorrect": true
+        "text": "Reform",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Subunternehmen\" nutzt Pascal Meiser 425.1× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "470.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Tariftreuegesetz\" nutzt Pascal Meiser 465.6× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "73.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Pascal Meiser häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
         "text": "Erfolgreich",
         "isCorrect": true
       },
       {
-        "text": "Sozial",
+        "text": "Falsch",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Stark",
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Erfolgreich\" nutzt Pascal Meiser 6.5× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationParty": "\"Erfolgreich\" nutzt Pascal Meiser 6.8× häufiger als der DIE LINKE-Durchschnitt.",
     "explanationBundestag": "4.5× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -249,15 +333,15 @@
           "count": 1
         },
         {
-          "word": "asylbewerber",
-          "count": 1
-        },
-        {
           "word": "aufenthaltstitel",
           "count": 1
         },
         {
           "word": "flüchtlinge",
+          "count": 1
+        },
+        {
+          "word": "asylbewerber",
           "count": 1
         }
       ],
@@ -281,7 +365,7 @@
           "count": 2
         },
         {
-          "word": "konzerne",
+          "word": "fachkräfte",
           "count": 1
         },
         {
@@ -307,7 +391,7 @@
           "count": 2
         },
         {
-          "word": "rentner",
+          "word": "sozialsystem",
           "count": 1
         }
       ],
@@ -321,15 +405,15 @@
           "count": 2
         },
         {
-          "word": "waffen",
+          "word": "verteidigung",
+          "count": 1
+        },
+        {
+          "word": "täter",
           "count": 1
         },
         {
           "word": "polizei",
-          "count": 1
-        },
-        {
-          "word": "militär",
           "count": 1
         }
       ],
@@ -385,11 +469,11 @@
           "count": 4
         },
         {
-          "word": "finanzministerium",
+          "word": "bundeshaushalt",
           "count": 1
         },
         {
-          "word": "bundeshaushalt",
+          "word": "finanzministerium",
           "count": 1
         }
       ],
@@ -443,15 +527,15 @@
           "count": 1
         },
         {
+          "word": "straßen",
+          "count": 1
+        },
+        {
           "word": "nahverkehr",
           "count": 1
         },
         {
           "word": "verkehrswende",
-          "count": 1
-        },
-        {
-          "word": "straßen",
           "count": 1
         }
       ]

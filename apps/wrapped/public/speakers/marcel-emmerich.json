@@ -12,22 +12,22 @@
   "maxWords": 757,
   "rankings": {
     "speechRank": 27,
-    "wordsRank": 43,
-    "partySpeechRank": 2,
-    "partyWordsRank": 6,
+    "wordsRank": 40,
+    "partySpeechRank": 3,
+    "partyWordsRank": 5,
     "partySize": 86,
-    "totalSpeakers": 625,
+    "totalSpeakers": 626,
     "percentile": 95.7,
-    "verbosityRank": 415,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 43,
+    "verbosityRank": 419,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 45,
     "longestSpeechRank": 300
   },
   "drama": {
     "interruptionsGiven": 44,
     "interruptionsReceived": 65,
-    "interrupterRank": 117,
-    "interruptedRank": 61
+    "interrupterRank": 118,
+    "interruptedRank": 63
   },
   "words": {
     "topWords": [
@@ -42,74 +42,202 @@
     ],
     "signatureWords": [
       {
+        "word": "rechtswidrigen",
+        "count": 6,
+        "ratioParty": 250.5,
+        "ratioBundestag": 221.9
+      },
+      {
         "word": "horst",
         "count": 5,
-        "ratioParty": 105.2,
-        "ratioBundestag": 148.5
+        "ratioParty": 104.4,
+        "ratioBundestag": 147.9
       },
       {
         "word": "sicherheitsstrategie",
         "count": 5,
-        "ratioParty": 70.1,
-        "ratioBundestag": 36.2
+        "ratioParty": 69.6,
+        "ratioBundestag": 37.9
       },
       {
         "word": "bundespolizisten",
         "count": 5,
-        "ratioParty": 70.1,
-        "ratioBundestag": 47.9
+        "ratioParty": 69.6,
+        "ratioBundestag": 46.2
       },
       {
         "word": "rechtsbruch",
         "count": 5,
-        "ratioParty": 70.1,
-        "ratioBundestag": 35.3
+        "ratioParty": 69.6,
+        "ratioBundestag": 35.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "rechtswidrigen",
+        "count": 6,
+        "score": 33.16,
+        "ratio": 250.5
       },
       {
-        "word": "polizistinnen",
-        "count": 7,
-        "ratioParty": 58.9,
-        "ratioBundestag": 17.9
+        "word": "horst",
+        "count": 5,
+        "score": 23.29,
+        "ratio": 104.4
+      },
+      {
+        "word": "sicherheitsstrategie",
+        "count": 5,
+        "score": 21.29,
+        "ratio": 69.6
+      },
+      {
+        "word": "bundespolizisten",
+        "count": 5,
+        "score": 21.29,
+        "ratio": 69.6
+      },
+      {
+        "word": "rechtsbruch",
+        "count": 5,
+        "score": 21.29,
+        "ratio": 69.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "rechtswidrigen",
+        "count": 6,
+        "score": 32.44,
+        "ratio": 221.9
+      },
+      {
+        "word": "horst",
+        "count": 5,
+        "score": 25.02,
+        "ratio": 147.9
+      },
+      {
+        "word": "bundespolizisten",
+        "count": 5,
+        "score": 19.27,
+        "ratio": 46.2
+      },
+      {
+        "word": "sicherheitsstrategie",
+        "count": 5,
+        "score": 18.3,
+        "ratio": 37.9
+      },
+      {
+        "word": "rechtsbruch",
+        "count": 5,
+        "score": 17.95,
+        "ratio": 35.2
       }
     ],
     "signatureAdjectives": [
       {
         "word": "fatal",
         "count": 6,
-        "ratioParty": 9.4,
-        "ratioBundestag": 21.2
-      },
-      {
-        "word": "verantwortungslos",
-        "count": 3,
-        "ratioParty": 6.3,
-        "ratioBundestag": 8.7
+        "ratioParty": 8.9,
+        "ratioBundestag": 20.6
       },
       {
         "word": "stabil",
         "count": 3,
-        "ratioParty": 5.7,
-        "ratioBundestag": 6.1
+        "ratioParty": 6.0,
+        "ratioBundestag": 6.2
+      },
+      {
+        "word": "verantwortungslos",
+        "count": 3,
+        "ratioParty": 6.0,
+        "ratioBundestag": 9.0
       },
       {
         "word": "entscheidend",
         "count": 4,
         "ratioParty": 3.0,
-        "ratioBundestag": 2.3
+        "ratioBundestag": 2.4
       },
       {
         "word": "stark",
         "count": 5,
-        "ratioParty": 2.4,
-        "ratioBundestag": 2.1
+        "ratioParty": 2.5,
+        "ratioBundestag": 2.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "fatal",
+        "count": 6,
+        "score": 13.76,
+        "ratio": 8.9
+      },
+      {
+        "word": "stark",
+        "count": 5,
+        "score": 6.26,
+        "ratio": 2.5
+      },
+      {
+        "word": "stabil",
+        "count": 3,
+        "score": 5.84,
+        "ratio": 6.0
+      },
+      {
+        "word": "verantwortungslos",
+        "count": 3,
+        "score": 5.84,
+        "ratio": 6.0
+      },
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 5.55,
+        "ratio": 3.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "fatal",
+        "count": 6,
+        "score": 18.44,
+        "ratio": 20.6
+      },
+      {
+        "word": "verantwortungslos",
+        "count": 3,
+        "score": 6.91,
+        "ratio": 9.0
+      },
+      {
+        "word": "stabil",
+        "count": 3,
+        "score": 5.92,
+        "ratio": 6.2
+      },
+      {
+        "word": "stark",
+        "count": 5,
+        "score": 5.49,
+        "ratio": 2.0
+      },
+      {
+        "word": "entscheidend",
+        "count": 4,
+        "score": 4.9,
+        "ratio": 2.4
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 374,
-    "partyAvgWords": 538,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.7,
+    "partyAvgWords": 542,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.69,
     "vsParliament": 0.64
   },
   "funFacts": [
@@ -131,7 +259,7 @@
     {
       "emoji": "🥇",
       "label": "Rang in GRÜNE",
-      "value": "#2 von 86"
+      "value": "#3 von 86"
     },
     {
       "emoji": "📊",
@@ -143,53 +271,53 @@
     "question": "Welches Wort nutzt Marcel Emmerich häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Europa",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Freiheit",
+        "text": "Klima",
         "isCorrect": false
       },
       {
-        "text": "Horst",
+        "text": "Rechtswidrigen",
         "isCorrect": true
       },
       {
-        "text": "Zukunft",
+        "text": "Arbeit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Horst\" nutzt Marcel Emmerich 105.2× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "148.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Rechtswidrigen\" nutzt Marcel Emmerich 250.5× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "221.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Marcel Emmerich häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Falsch",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
+        "text": "Sicher",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
         "isCorrect": false
       },
       {
         "text": "Fatal",
         "isCorrect": true
-      },
-      {
-        "text": "Alt",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Fatal\" nutzt Marcel Emmerich 9.4× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "21.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Fatal\" nutzt Marcel Emmerich 8.9× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "20.6× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦁",
     "name": "Löwe",
     "title": "Fraktionsstimme",
-    "reason": "Als #2 in der GRÜNE-Fraktion bist du eine führende Stimme.",
+    "reason": "Als #3 in der GRÜNE-Fraktion bist du eine führende Stimme.",
     "id": "loewe",
     "alternatives": [
       {
@@ -283,29 +411,29 @@
           "count": 7
         },
         {
-          "word": "migration",
-          "count": 6
-        },
-        {
           "word": "grenzkontrollen",
           "count": 6
         },
         {
-          "word": "integration",
-          "count": 4
+          "word": "migration",
+          "count": 6
         },
         {
           "word": "asyl",
+          "count": 4
+        },
+        {
+          "word": "integration",
           "count": 4
         }
       ],
       "klima": [
         {
-          "word": "kohle",
+          "word": "stromnetz",
           "count": 1
         },
         {
-          "word": "stromnetz",
+          "word": "kohle",
           "count": 1
         }
       ],
@@ -341,15 +469,15 @@
           "count": 5
         },
         {
-          "word": "jugend",
-          "count": 2
-        },
-        {
           "word": "kinder",
           "count": 2
         },
         {
-          "word": "eltern",
+          "word": "jugend",
+          "count": 2
+        },
+        {
+          "word": "fürsorge",
           "count": 1
         }
       ],
@@ -389,11 +517,11 @@
           "count": 1
         },
         {
-          "word": "krankheit",
+          "word": "rezept",
           "count": 1
         },
         {
-          "word": "kliniken",
+          "word": "krankheit",
           "count": 1
         }
       ],
@@ -407,15 +535,15 @@
           "count": 3
         },
         {
-          "word": "außenminister",
-          "count": 2
-        },
-        {
           "word": "außenpolitik",
           "count": 2
         },
         {
-          "word": "kooperation",
+          "word": "außenminister",
+          "count": 2
+        },
+        {
+          "word": "frieden",
           "count": 1
         }
       ],
@@ -447,7 +575,7 @@
           "count": 2
         },
         {
-          "word": "volkshochschule",
+          "word": "bildung",
           "count": 1
         },
         {
@@ -455,7 +583,7 @@
           "count": 1
         },
         {
-          "word": "bildung",
+          "word": "volkshochschule",
           "count": 1
         }
       ],
@@ -463,6 +591,10 @@
         {
           "word": "kosten",
           "count": 3
+        },
+        {
+          "word": "schulden",
+          "count": 2
         },
         {
           "word": "haushalt",
@@ -473,11 +605,7 @@
           "count": 2
         },
         {
-          "word": "schulden",
-          "count": 2
-        },
-        {
-          "word": "investition",
+          "word": "steuerzahler",
           "count": 1
         }
       ],
@@ -495,21 +623,21 @@
           "count": 6
         },
         {
-          "word": "gericht",
+          "word": "richter",
           "count": 5
         },
         {
-          "word": "richter",
+          "word": "gericht",
           "count": 5
         }
       ],
       "arbeit": [
         {
-          "word": "überstunden",
+          "word": "gehalt",
           "count": 1
         },
         {
-          "word": "gehalt",
+          "word": "überstunden",
           "count": 1
         }
       ],
@@ -527,11 +655,11 @@
           "count": 3
         },
         {
-          "word": "straße",
+          "word": "auto",
           "count": 2
         },
         {
-          "word": "auto",
+          "word": "straße",
           "count": 2
         }
       ]

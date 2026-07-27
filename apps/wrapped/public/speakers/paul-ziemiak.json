@@ -11,23 +11,23 @@
   "minWords": 144,
   "maxWords": 658,
   "rankings": {
-    "speechRank": 512,
+    "speechRank": 520,
     "wordsRank": 565,
     "partySpeechRank": 166,
-    "partyWordsRank": 184,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 18.1,
-    "verbosityRank": 421,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 146,
-    "longestSpeechRank": 423
+    "partyWordsRank": 185,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 16.9,
+    "verbosityRank": 427,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 150,
+    "longestSpeechRank": 427
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 5,
-    "interrupterRank": 443,
-    "interruptedRank": 541
+    "interrupterRank": 458,
+    "interruptedRank": 551
   },
   "words": {
     "topWords": [
@@ -48,27 +48,27 @@
         "count": 9
       },
       {
-        "word": "land",
-        "count": 8
-      },
-      {
         "word": "deutsche",
         "count": 8
       },
       {
-        "word": "polnische",
-        "count": 7
+        "word": "land",
+        "count": 8
       },
       {
         "word": "geschichte",
         "count": 7
       },
       {
-        "word": "deutsch",
-        "count": 5
+        "word": "polnische",
+        "count": 7
       },
       {
         "word": "sehen",
+        "count": 5
+      },
+      {
+        "word": "deutsch",
         "count": 5
       }
     ],
@@ -76,42 +76,108 @@
       {
         "word": "polnische",
         "count": 7,
-        "ratioParty": 235.6,
-        "ratioBundestag": 272.9
-      },
-      {
-        "word": "polen",
-        "count": 11,
-        "ratioParty": 110.6,
-        "ratioBundestag": 87.8
+        "ratioParty": 235.2,
+        "ratioBundestag": 267.6
       },
       {
         "word": "libanon",
         "count": 14,
-        "ratioParty": 108.4,
-        "ratioBundestag": 114.8
+        "ratioParty": 121.5,
+        "ratioBundestag": 129.6
+      },
+      {
+        "word": "polen",
+        "count": 11,
+        "ratioParty": 111.8,
+        "ratioBundestag": 87.8
       },
       {
         "word": "deutsch",
         "count": 5,
-        "ratioParty": 40.3,
-        "ratioBundestag": 37.5
+        "ratioParty": 41.5,
+        "ratioBundestag": 37.7
       },
       {
         "word": "geschichte",
         "count": 7,
-        "ratioParty": 29.3,
-        "ratioBundestag": 24.8
+        "ratioParty": 28.0,
+        "ratioBundestag": 24.0
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "libanon",
+        "count": 14,
+        "score": 67.31,
+        "ratio": 121.5
+      },
+      {
+        "word": "polen",
+        "count": 11,
+        "score": 51.98,
+        "ratio": 111.8
+      },
+      {
+        "word": "polnische",
+        "count": 7,
+        "score": 38.25,
+        "ratio": 235.2
+      },
+      {
+        "word": "geschichte",
+        "count": 7,
+        "score": 23.57,
+        "ratio": 28.0
+      },
+      {
+        "word": "deutsch",
+        "count": 5,
+        "score": 18.75,
+        "ratio": 41.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "libanon",
+        "count": 14,
+        "score": 68.21,
+        "ratio": 129.6
+      },
+      {
+        "word": "polen",
+        "count": 11,
+        "score": 49.35,
+        "ratio": 87.8
+      },
+      {
+        "word": "polnische",
+        "count": 7,
+        "score": 39.15,
+        "ratio": 267.6
+      },
+      {
+        "word": "geschichte",
+        "count": 7,
+        "score": 22.53,
+        "ratio": 24.0
+      },
+      {
+        "word": "deutsch",
+        "count": 5,
+        "score": 18.28,
+        "ratio": 37.7
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 372,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.58,
-    "vsParliament": 0.64
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.57,
+    "vsParliament": 0.63
   },
   "funFacts": [
     {
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Paul Ziemiak häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
         "text": "Polnische",
         "isCorrect": true
+      },
+      {
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Polnische\" nutzt Paul Ziemiak 235.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "272.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Polnische\" nutzt Paul Ziemiak 235.2× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "267.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -251,11 +317,11 @@
           "count": 2
         },
         {
-          "word": "flüchtlinge",
+          "word": "grenze",
           "count": 1
         },
         {
-          "word": "grenze",
+          "word": "flüchtlinge",
           "count": 1
         }
       ],
@@ -303,29 +369,29 @@
           "count": 4
         },
         {
-          "word": "israel",
-          "count": 2
-        },
-        {
           "word": "nato",
           "count": 2
         },
         {
-          "word": "putin",
+          "word": "israel",
+          "count": 2
+        },
+        {
+          "word": "botschafter",
           "count": 1
         },
         {
-          "word": "kreml",
+          "word": "sanktionen",
           "count": 1
         }
       ],
       "finanzen": [
         {
-          "word": "investitionen",
+          "word": "kosten",
           "count": 1
         },
         {
-          "word": "kosten",
+          "word": "investitionen",
           "count": 1
         }
       ],

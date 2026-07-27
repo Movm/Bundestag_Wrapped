@@ -11,23 +11,23 @@
   "minWords": 726,
   "maxWords": 735,
   "rankings": {
-    "speechRank": 587,
+    "speechRank": 586,
     "wordsRank": 580,
-    "partySpeechRank": 191,
-    "partyWordsRank": 191,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 6.1,
+    "partySpeechRank": 192,
+    "partyWordsRank": 192,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 6.4,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 327
+    "longestSpeechRank": 329
   },
   "drama": {
     "interruptionsGiven": 4,
     "interruptionsReceived": 4,
-    "interrupterRank": 366,
-    "interruptedRank": 559
+    "interrupterRank": 368,
+    "interruptedRank": 560
   },
   "words": {
     "topWords": [
@@ -40,24 +40,12 @@
         "count": 11
       },
       {
-        "word": "europäischen",
-        "count": 8
-      },
-      {
         "word": "israel",
         "count": 8
       },
       {
-        "word": "union",
-        "count": 5
-      },
-      {
-        "word": "plötzlich",
-        "count": 5
-      },
-      {
-        "word": "mitglied",
-        "count": 5
+        "word": "europäischen",
+        "count": 8
       },
       {
         "word": "hamas",
@@ -68,7 +56,19 @@
         "count": 5
       },
       {
-        "word": "gemeinschaft",
+        "word": "plötzlich",
+        "count": 5
+      },
+      {
+        "word": "union",
+        "count": 5
+      },
+      {
+        "word": "mitglied",
+        "count": 5
+      },
+      {
+        "word": "anders",
         "count": 4
       }
     ],
@@ -76,42 +76,108 @@
       {
         "word": "europarat",
         "count": 14,
-        "ratioParty": 968.8,
-        "ratioBundestag": 595.3
+        "ratioParty": 967.2,
+        "ratioBundestag": 593.1
       },
       {
         "word": "plötzlich",
         "count": 5,
-        "ratioParty": 112.8,
+        "ratioParty": 115.1,
         "ratioBundestag": 59.3
       },
       {
         "word": "mitglied",
         "count": 5,
-        "ratioParty": 92.7,
-        "ratioBundestag": 91.1
+        "ratioParty": 96.0,
+        "ratioBundestag": 94.6
       },
       {
         "word": "hisbollah",
         "count": 5,
-        "ratioParty": 64.1,
-        "ratioBundestag": 86.2
+        "ratioParty": 68.2,
+        "ratioBundestag": 92.4
       },
       {
         "word": "hamas",
         "count": 5,
-        "ratioParty": 55.8,
-        "ratioBundestag": 65.1
+        "ratioParty": 55.7,
+        "ratioBundestag": 64.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "europarat",
+        "count": 14,
+        "score": 96.26,
+        "ratio": 967.2
+      },
+      {
+        "word": "plötzlich",
+        "count": 5,
+        "score": 23.77,
+        "ratio": 115.1
+      },
+      {
+        "word": "mitglied",
+        "count": 5,
+        "score": 22.87,
+        "ratio": 96.0
+      },
+      {
+        "word": "hisbollah",
+        "count": 5,
+        "score": 21.19,
+        "ratio": 68.2
+      },
+      {
+        "word": "hamas",
+        "count": 5,
+        "score": 20.19,
+        "ratio": 55.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "europarat",
+        "count": 14,
+        "score": 89.42,
+        "ratio": 593.1
+      },
+      {
+        "word": "mitglied",
+        "count": 5,
+        "score": 22.8,
+        "ratio": 94.6
+      },
+      {
+        "word": "hisbollah",
+        "count": 5,
+        "score": 22.68,
+        "ratio": 92.4
+      },
+      {
+        "word": "hamas",
+        "count": 5,
+        "score": 20.93,
+        "ratio": 64.8
+      },
+      {
+        "word": "plötzlich",
+        "count": 5,
+        "score": 20.5,
+        "ratio": 59.3
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 730,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 1.13,
-    "vsParliament": 1.25
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 1.12,
+    "vsParliament": 1.24
   },
   "funFacts": [
     {
@@ -133,20 +199,20 @@
         "isCorrect": false
       },
       {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
         "text": "Europarat",
         "isCorrect": true
-      },
-      {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Haushalt",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Europarat\" nutzt Armin Laschet 968.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "595.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Europarat\" nutzt Armin Laschet 967.2× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "593.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -262,11 +328,11 @@
           "count": 8
         },
         {
-          "word": "europa",
+          "word": "iran",
           "count": 3
         },
         {
-          "word": "iran",
+          "word": "europa",
           "count": 3
         },
         {

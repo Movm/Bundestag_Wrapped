@@ -11,23 +11,23 @@
   "minWords": 314,
   "maxWords": 360,
   "rankings": {
-    "speechRank": 598,
-    "wordsRank": 584,
-    "partySpeechRank": 109,
+    "speechRank": 607,
+    "wordsRank": 586,
+    "partySpeechRank": 111,
     "partyWordsRank": 108,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 4.3,
+    "totalSpeakers": 626,
+    "percentile": 3.0,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 613
+    "longestSpeechRank": 615
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 1,
     "interrupterRank": null,
-    "interruptedRank": 596
+    "interruptedRank": 599
   },
   "words": {
     "topWords": [
@@ -76,34 +76,88 @@
       {
         "word": "ausbeutung",
         "count": 5,
-        "ratioParty": 165.6,
-        "ratioBundestag": 176.4
+        "ratioParty": 157.3,
+        "ratioBundestag": 170.1
       },
       {
         "word": "entwurf",
         "count": 6,
-        "ratioParty": 31.2,
-        "ratioBundestag": 27.3
+        "ratioParty": 30.0,
+        "ratioBundestag": 28.0
       },
       {
         "word": "künftig",
         "count": 6,
-        "ratioParty": 19.1,
-        "ratioBundestag": 24.3
+        "ratioParty": 18.8,
+        "ratioBundestag": 24.2
       },
       {
         "word": "beispiel",
         "count": 6,
         "ratioParty": 5.2,
-        "ratioBundestag": 6.4
+        "ratioBundestag": 6.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "ausbeutung",
+        "count": 5,
+        "score": 25.32,
+        "ratio": 157.3
+      },
+      {
+        "word": "entwurf",
+        "count": 6,
+        "score": 20.6,
+        "ratio": 30.0
+      },
+      {
+        "word": "künftig",
+        "count": 6,
+        "score": 17.91,
+        "ratio": 18.8
+      },
+      {
+        "word": "beispiel",
+        "count": 6,
+        "score": 10.95,
+        "ratio": 5.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "ausbeutung",
+        "count": 5,
+        "score": 25.71,
+        "ratio": 170.1
+      },
+      {
+        "word": "entwurf",
+        "count": 6,
+        "score": 20.2,
+        "ratio": 28.0
+      },
+      {
+        "word": "künftig",
+        "count": 6,
+        "score": 19.36,
+        "ratio": 24.2
+      },
+      {
+        "word": "beispiel",
+        "count": 6,
+        "score": 11.93,
+        "ratio": 6.3
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 340,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
     "vsParty": 0.55,
     "vsParliament": 0.58
   },
@@ -123,24 +177,24 @@
     "question": "Welches Wort nutzt Anette Kramme häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Koalition",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
         "text": "Ausbeutung",
         "isCorrect": true
-      },
-      {
-        "text": "Energie",
-        "isCorrect": false
-      },
-      {
-        "text": "Reform",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ausbeutung\" nutzt Anette Kramme 165.6× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "176.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Ausbeutung\" nutzt Anette Kramme 157.3× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "170.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

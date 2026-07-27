@@ -11,23 +11,23 @@
   "minWords": 255,
   "maxWords": 672,
   "rankings": {
-    "speechRank": 476,
-    "wordsRank": 521,
-    "partySpeechRank": 112,
-    "partyWordsRank": 119,
+    "speechRank": 479,
+    "wordsRank": 528,
+    "partySpeechRank": 115,
+    "partyWordsRank": 120,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 23.8,
-    "verbosityRank": 246,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 23.5,
+    "verbosityRank": 254,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 63,
-    "longestSpeechRank": 406
+    "longestSpeechRank": 412
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 13,
     "interrupterRank": null,
-    "interruptedRank": 422
+    "interruptedRank": 424
   },
   "words": {
     "topWords": [
@@ -52,15 +52,15 @@
         "count": 8
       },
       {
-        "word": "diesen",
-        "count": 8
-      },
-      {
         "word": "abtreibung",
         "count": 8
       },
       {
         "word": "abtreibungen",
+        "count": 8
+      },
+      {
+        "word": "diesen",
         "count": 8
       },
       {
@@ -76,42 +76,108 @@
       {
         "word": "ungeborene",
         "count": 5,
-        "ratioParty": 873.4,
-        "ratioBundestag": 1119.4
+        "ratioParty": 868.0,
+        "ratioBundestag": 1115.3
       },
       {
         "word": "abtreibungen",
         "count": 8,
-        "ratioParty": 310.5,
-        "ratioBundestag": 964.4
+        "ratioParty": 308.6,
+        "ratioBundestag": 960.9
       },
       {
         "word": "abtreibung",
         "count": 8,
-        "ratioParty": 199.6,
-        "ratioBundestag": 597.0
+        "ratioParty": 198.4,
+        "ratioBundestag": 594.9
       },
       {
         "word": "organspende",
         "count": 6,
-        "ratioParty": 139.7,
-        "ratioBundestag": 77.7
+        "ratioParty": 138.9,
+        "ratioBundestag": 77.4
       },
       {
         "word": "familia",
         "count": 8,
         "ratioParty": 43.5,
-        "ratioBundestag": 12537.5
+        "ratioBundestag": 12491.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "abtreibungen",
+        "count": 8,
+        "score": 45.88,
+        "ratio": 308.6
+      },
+      {
+        "word": "abtreibung",
+        "count": 8,
+        "score": 42.36,
+        "ratio": 198.4
+      },
+      {
+        "word": "ungeborene",
+        "count": 5,
+        "score": 33.84,
+        "ratio": 868.0
+      },
+      {
+        "word": "familia",
+        "count": 8,
+        "score": 30.36,
+        "ratio": 43.5
+      },
+      {
+        "word": "organspende",
+        "count": 6,
+        "score": 29.65,
+        "ratio": 138.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "familia",
+        "count": 8,
+        "score": 75.46,
+        "ratio": 12491.9
+      },
+      {
+        "word": "abtreibungen",
+        "count": 8,
+        "score": 54.95,
+        "ratio": 960.9
+      },
+      {
+        "word": "abtreibung",
+        "count": 8,
+        "score": 51.12,
+        "ratio": 594.9
+      },
+      {
+        "word": "ungeborene",
+        "count": 5,
+        "score": 35.09,
+        "ratio": 1115.3
+      },
+      {
+        "word": "organspende",
+        "count": 6,
+        "score": 26.17,
+        "ratio": 77.4
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 454,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 560,
+    "parliamentAvgWords": 587,
     "vsParty": 0.81,
-    "vsParliament": 0.78
+    "vsParliament": 0.77
   },
   "funFacts": [
     {
@@ -129,11 +195,7 @@
     "question": "Welches Wort nutzt Martina Kempf häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Reform",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
@@ -141,12 +203,16 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetz",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Bundesregierung",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ungeborene\" nutzt Martina Kempf 873.4× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "1119.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Ungeborene\" nutzt Martina Kempf 868.0× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "1115.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -231,11 +297,11 @@
           "count": 2
         },
         {
-          "word": "wohnungen",
+          "word": "familie",
           "count": 1
         },
         {
-          "word": "behinderung",
+          "word": "wohnungen",
           "count": 1
         }
       ],
@@ -263,7 +329,7 @@
           "count": 2
         },
         {
-          "word": "arzt",
+          "word": "infektion",
           "count": 1
         }
       ],
@@ -283,11 +349,11 @@
           "count": 2
         },
         {
-          "word": "universität",
+          "word": "professorin",
           "count": 1
         },
         {
-          "word": "professorin",
+          "word": "universität",
           "count": 1
         }
       ],

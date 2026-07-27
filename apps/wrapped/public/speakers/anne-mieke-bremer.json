@@ -11,23 +11,23 @@
   "minWords": 274,
   "maxWords": 856,
   "rankings": {
-    "speechRank": 327,
-    "wordsRank": 397,
-    "partySpeechRank": 42,
-    "partyWordsRank": 43,
+    "speechRank": 336,
+    "wordsRank": 390,
+    "partySpeechRank": 45,
+    "partyWordsRank": 42,
     "partySize": 63,
-    "totalSpeakers": 625,
-    "percentile": 47.7,
-    "verbosityRank": 183,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 46.3,
+    "verbosityRank": 192,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 11,
-    "longestSpeechRank": 175
+    "longestSpeechRank": 174
   },
   "drama": {
-    "interruptionsGiven": 0,
+    "interruptionsGiven": 2,
     "interruptionsReceived": 19,
-    "interrupterRank": null,
-    "interruptedRank": 334
+    "interrupterRank": 420,
+    "interruptedRank": 340
   },
   "words": {
     "topWords": [
@@ -76,49 +76,129 @@
       {
         "word": "staatsmodernisierung",
         "count": 5,
-        "ratioParty": 112.0,
-        "ratioBundestag": 20.9
+        "ratioParty": 111.5,
+        "ratioBundestag": 23.4
       },
       {
         "word": "wildberger",
         "count": 13,
-        "ratioParty": 83.2,
-        "ratioBundestag": 59.7
+        "ratioParty": 96.6,
+        "ratioBundestag": 64.9
       },
       {
         "word": "social",
         "count": 5,
-        "ratioParty": 44.8,
-        "ratioBundestag": 38.7
+        "ratioParty": 40.5,
+        "ratioBundestag": 36.3
       },
       {
         "word": "media",
         "count": 5,
-        "ratioParty": 40.7,
-        "ratioBundestag": 35.8
+        "ratioParty": 37.2,
+        "ratioBundestag": 35.1
       },
       {
         "word": "plattformen",
         "count": 5,
-        "ratioParty": 23.6,
-        "ratioBundestag": 23.5
+        "ratioParty": 22.3,
+        "ratioBundestag": 22.6
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "wildberger",
+        "count": 13,
+        "score": 59.55,
+        "ratio": 96.6
+      },
+      {
+        "word": "staatsmodernisierung",
+        "count": 5,
+        "score": 23.61,
+        "ratio": 111.5
+      },
+      {
+        "word": "social",
+        "count": 5,
+        "score": 18.63,
+        "ratio": 40.5
+      },
+      {
+        "word": "media",
+        "count": 5,
+        "score": 18.21,
+        "ratio": 37.2
+      },
+      {
+        "word": "plattformen",
+        "count": 5,
+        "score": 15.74,
+        "ratio": 22.3
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "wildberger",
+        "count": 13,
+        "score": 54.45,
+        "ratio": 64.9
+      },
+      {
+        "word": "social",
+        "count": 5,
+        "score": 18.09,
+        "ratio": 36.3
+      },
+      {
+        "word": "media",
+        "count": 5,
+        "score": 17.93,
+        "ratio": 35.1
+      },
+      {
+        "word": "staatsmodernisierung",
+        "count": 5,
+        "score": 15.97,
+        "ratio": 23.4
+      },
+      {
+        "word": "plattformen",
+        "count": 5,
+        "score": 15.81,
+        "ratio": 22.6
       }
     ],
     "signatureAdjectives": [
       {
         "word": "absurd",
         "count": 4,
-        "ratioParty": 5.2,
-        "ratioBundestag": 16.6
+        "ratioParty": 5.3,
+        "ratioBundestag": 16.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "absurd",
+        "count": 4,
+        "score": 7.36,
+        "ratio": 5.3
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "absurd",
+        "count": 4,
+        "score": 11.49,
+        "ratio": 16.7
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 482,
     "partyAvgWords": 500,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 587,
     "vsParty": 0.96,
-    "vsParliament": 0.83
+    "vsParliament": 0.82
   },
   "funFacts": [
     {
@@ -136,63 +216,55 @@
     "question": "Welches Wort nutzt Anne-Mieke Bremer häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
         "text": "Staatsmodernisierung",
         "isCorrect": true
-      },
-      {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Staatsmodernisierung\" nutzt Anne-Mieke Bremer 112.0× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "20.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Staatsmodernisierung\" nutzt Anne-Mieke Bremer 111.5× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "23.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Anne-Mieke Bremer häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
         "text": "Absurd",
         "isCorrect": true
       },
       {
-        "text": "Schlecht",
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Absurd\" nutzt Anne-Mieke Bremer 5.2× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "16.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Absurd\" nutzt Anne-Mieke Bremer 5.3× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "16.7× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
-    "emoji": "🐬",
-    "name": "Delfin",
-    "title": "Diplomatische:r Redner:in",
-    "reason": "Aktiv im Parlament, aber respektvoll ohne viele Zwischenrufe.",
-    "id": "delfin",
+    "emoji": "🐝",
+    "name": "Biene",
+    "title": "Fleißige:r Abgeordnete:r",
+    "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
+    "id": "biene",
     "alternatives": [
-      {
-        "emoji": "🐝",
-        "name": "Biene",
-        "title": "Fleißige:r Abgeordnete:r",
-        "reason": "Zuverlässig und engagiert – ein wichtiger Teil des Parlaments.",
-        "id": "biene",
-        "score": 1.0
-      },
       {
         "emoji": "🐿️",
         "name": "Eichhörnchen",
@@ -200,6 +272,14 @@
         "reason": "Du hast deine Spezialthemen, die du immer wieder einbringst.",
         "id": "eichhoernchen",
         "score": 0.993
+      },
+      {
+        "emoji": "🦔",
+        "name": "Igel",
+        "title": "Beharrliche:r Redner:in",
+        "reason": "Auch wenn du oft unterbrochen wirst – du lässt dich nicht beirren.",
+        "id": "igel",
+        "score": 0.908
       }
     ]
   },
@@ -458,7 +538,7 @@
           "count": 2
         },
         {
-          "word": "einkommen",
+          "word": "homeoffice",
           "count": 2
         }
       ],

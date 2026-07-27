@@ -11,23 +11,23 @@
   "minWords": 12,
   "maxWords": 751,
   "rankings": {
-    "speechRank": 157,
-    "wordsRank": 252,
-    "partySpeechRank": 38,
+    "speechRank": 142,
+    "wordsRank": 254,
+    "partySpeechRank": 35,
     "partyWordsRank": 56,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 74.9,
-    "verbosityRank": 389,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 83,
-    "longestSpeechRank": 308
+    "totalSpeakers": 626,
+    "percentile": 77.3,
+    "verbosityRank": 385,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 82,
+    "longestSpeechRank": 309
   },
   "drama": {
     "interruptionsGiven": 19,
     "interruptionsReceived": 11,
-    "interrupterRank": 210,
-    "interruptedRank": 442
+    "interrupterRank": 213,
+    "interruptedRank": 444
   },
   "words": {
     "topWords": [
@@ -60,32 +60,96 @@
       {
         "word": "überstanden",
         "count": 6,
-        "ratioParty": 195.9,
-        "ratioBundestag": 357.2
+        "ratioParty": 130.6,
+        "ratioBundestag": 279.6
       },
       {
         "word": "sicherheitsbeauftragten",
         "count": 5,
         "ratioParty": 130.6,
-        "ratioBundestag": 142.4
+        "ratioBundestag": 148.3
       },
       {
         "word": "tarifvertrag",
         "count": 5,
         "ratioParty": 50.2,
-        "ratioBundestag": 88.5
+        "ratioBundestag": 96.0
+      },
+      {
+        "word": "oftmals",
+        "count": 6,
+        "ratioParty": 35.6,
+        "ratioBundestag": 35.3
       },
       {
         "word": "rentenniveau",
         "count": 8,
         "ratioParty": 34.8,
-        "ratioBundestag": 36.4
+        "ratioBundestag": 36.0
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "überstanden",
+        "count": 6,
+        "score": 29.28,
+        "ratio": 130.6
+      },
+      {
+        "word": "rentenniveau",
+        "count": 8,
+        "score": 28.62,
+        "ratio": 34.8
+      },
+      {
+        "word": "sicherheitsbeauftragten",
+        "count": 5,
+        "score": 24.4,
+        "ratio": 130.6
       },
       {
         "word": "oftmals",
         "count": 6,
-        "ratioParty": 34.1,
-        "ratioBundestag": 35.4
+        "score": 21.6,
+        "ratio": 35.6
+      },
+      {
+        "word": "tarifvertrag",
+        "count": 5,
+        "score": 19.68,
+        "ratio": 50.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "überstanden",
+        "count": 6,
+        "score": 33.82,
+        "ratio": 279.6
+      },
+      {
+        "word": "rentenniveau",
+        "count": 8,
+        "score": 28.89,
+        "ratio": 36.0
+      },
+      {
+        "word": "sicherheitsbeauftragten",
+        "count": 5,
+        "score": 25.03,
+        "ratio": 148.3
+      },
+      {
+        "word": "tarifvertrag",
+        "count": 5,
+        "score": 22.87,
+        "ratio": 96.0
+      },
+      {
+        "word": "oftmals",
+        "count": 6,
+        "score": 21.55,
+        "ratio": 35.3
       }
     ],
     "signatureAdjectives": [
@@ -95,12 +159,28 @@
         "ratioParty": 2.2,
         "ratioBundestag": 2.7
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 5,
+        "score": 5.82,
+        "ratio": 2.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 5,
+        "score": 6.54,
+        "ratio": 2.7
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 391,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
     "vsParty": 0.63,
     "vsParliament": 0.67
   },
@@ -125,15 +205,15 @@
     "question": "Welches Wort nutzt Bernd Rützel häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
         "text": "Ausschuss",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
@@ -141,18 +221,18 @@
         "isCorrect": true
       }
     ],
-    "explanationParty": "\"Überstanden\" nutzt Bernd Rützel 195.9× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "357.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Überstanden\" nutzt Bernd Rützel 130.6× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "279.6× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Bernd Rützel häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Sozial",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "Politisch",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
@@ -160,7 +240,7 @@
         "isCorrect": true
       },
       {
-        "text": "Neu",
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
@@ -183,12 +263,12 @@
         "score": 1.0
       },
       {
-        "emoji": "🦊",
-        "name": "Fuchs",
-        "title": "Cleverer Stratege",
-        "reason": "Mit eigenem Vokabular hebst du dich von der Fraktion ab.",
-        "id": "fuchs",
-        "score": 0.994
+        "emoji": "🐴",
+        "name": "Pferd",
+        "title": "Fleißiger Debattierer",
+        "reason": "Mit 18 Reden gehörst du zu den aktivsten Abgeordneten.",
+        "id": "pferd",
+        "score": 0.954
       }
     ]
   },
@@ -279,11 +359,11 @@
           "count": 1
         },
         {
-          "word": "pestizide",
+          "word": "klimaschutz",
           "count": 1
         },
         {
-          "word": "klimaschutz",
+          "word": "pestizide",
           "count": 1
         }
       ],
@@ -297,11 +377,11 @@
           "count": 5
         },
         {
-          "word": "wettbewerb",
+          "word": "lieferkette",
           "count": 2
         },
         {
-          "word": "lieferkette",
+          "word": "wettbewerb",
           "count": 2
         },
         {
@@ -343,27 +423,19 @@
           "count": 2
         },
         {
+          "word": "digitalisierung",
+          "count": 1
+        },
+        {
           "word": "algorithmen",
           "count": 1
         },
         {
           "word": "algorithmus",
           "count": 1
-        },
-        {
-          "word": "digitalisierung",
-          "count": 1
         }
       ],
       "bildung": [
-        {
-          "word": "bildung",
-          "count": 2
-        },
-        {
-          "word": "schule",
-          "count": 2
-        },
         {
           "word": "ausbildung",
           "count": 2
@@ -374,6 +446,14 @@
         },
         {
           "word": "weiterbildung",
+          "count": 2
+        },
+        {
+          "word": "bildung",
+          "count": 2
+        },
+        {
+          "word": "schule",
           "count": 2
         }
       ],
@@ -391,11 +471,11 @@
           "count": 1
         },
         {
-          "word": "finanzierung",
+          "word": "banken",
           "count": 1
         },
         {
-          "word": "banken",
+          "word": "investition",
           "count": 1
         }
       ],
@@ -405,11 +485,11 @@
           "count": 4
         },
         {
-          "word": "vorschrift",
+          "word": "bundesverfassungsgericht",
           "count": 1
         },
         {
-          "word": "bundesverfassungsgericht",
+          "word": "vorschrift",
           "count": 1
         }
       ],

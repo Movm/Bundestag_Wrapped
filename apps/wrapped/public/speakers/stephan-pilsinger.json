@@ -11,23 +11,23 @@
   "minWords": 27,
   "maxWords": 778,
   "rankings": {
-    "speechRank": 403,
-    "wordsRank": 376,
-    "partySpeechRank": 116,
-    "partyWordsRank": 117,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 35.5,
-    "verbosityRank": 224,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 79,
-    "longestSpeechRank": 271
+    "speechRank": 386,
+    "wordsRank": 363,
+    "partySpeechRank": 109,
+    "partyWordsRank": 112,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 38.3,
+    "verbosityRank": 230,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 81,
+    "longestSpeechRank": 270
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 21,
-    "interrupterRank": 409,
-    "interruptedRank": 323
+    "interrupterRank": 416,
+    "interruptedRank": 325
   },
   "words": {
     "topWords": [
@@ -50,65 +50,153 @@
       {
         "word": "klar",
         "count": 11
-      },
-      {
-        "word": "bekommen",
-        "count": 10
       }
     ],
     "signatureWords": [
       {
         "word": "apotheker",
         "count": 5,
-        "ratioParty": 280.1,
-        "ratioBundestag": 391.8
+        "ratioParty": 349.5,
+        "ratioBundestag": 429.4
       },
       {
         "word": "arzneimittel",
         "count": 8,
-        "ratioParty": 172.3,
-        "ratioBundestag": 197.0
+        "ratioParty": 172.1,
+        "ratioBundestag": 202.1
       },
       {
         "word": "masken",
         "count": 8,
-        "ratioParty": 106.7,
-        "ratioBundestag": 127.7
+        "ratioParty": 106.5,
+        "ratioBundestag": 127.2
       },
       {
         "word": "spahn",
         "count": 5,
-        "ratioParty": 100.0,
-        "ratioBundestag": 13.7
+        "ratioParty": 99.9,
+        "ratioBundestag": 13.3
       },
       {
-        "word": "erkrankungen",
-        "count": 6,
-        "ratioParty": 54.2,
-        "ratioBundestag": 52.8
+        "word": "krankenhausreform",
+        "count": 5,
+        "ratioParty": 63.5,
+        "ratioBundestag": 71.6
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "arzneimittel",
+        "count": 8,
+        "score": 41.23,
+        "ratio": 172.1
+      },
+      {
+        "word": "masken",
+        "count": 8,
+        "score": 37.42,
+        "ratio": 106.5
+      },
+      {
+        "word": "apotheker",
+        "count": 5,
+        "score": 29.3,
+        "ratio": 349.5
+      },
+      {
+        "word": "spahn",
+        "count": 5,
+        "score": 23.07,
+        "ratio": 99.9
+      },
+      {
+        "word": "krankenhausreform",
+        "count": 5,
+        "score": 20.83,
+        "ratio": 63.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "arzneimittel",
+        "count": 8,
+        "score": 42.51,
+        "ratio": 202.1
+      },
+      {
+        "word": "masken",
+        "count": 8,
+        "score": 38.83,
+        "ratio": 127.2
+      },
+      {
+        "word": "apotheker",
+        "count": 5,
+        "score": 30.32,
+        "ratio": 429.4
+      },
+      {
+        "word": "krankenhausreform",
+        "count": 5,
+        "score": 21.42,
+        "ratio": 71.6
+      },
+      {
+        "word": "spahn",
+        "count": 5,
+        "score": 13.3,
+        "ratio": 13.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "lächerlich",
         "count": 3,
-        "ratioParty": 60.0,
-        "ratioBundestag": 27.8
+        "ratioParty": 59.9,
+        "ratioBundestag": 30.0
       },
       {
         "word": "falsch",
         "count": 3,
-        "ratioParty": 3.8,
+        "ratioParty": 3.7,
         "ratioBundestag": 3.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "lächerlich",
+        "count": 3,
+        "score": 12.33,
+        "ratio": 59.9
+      },
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 4.64,
+        "ratio": 3.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "lächerlich",
+        "count": 3,
+        "score": 10.3,
+        "ratio": 30.0
+      },
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 4.64,
+        "ratio": 3.7
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 465,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.72,
-    "vsParliament": 0.8
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.71,
+    "vsParliament": 0.79
   },
   "funFacts": [
     {
@@ -126,47 +214,47 @@
     "question": "Welches Wort nutzt Dr. Stephan Pilsinger häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
         "text": "Apotheker",
         "isCorrect": true
       },
       {
-        "text": "Zukunft",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
+        "text": "Haushalt",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Apotheker\" nutzt Dr. Stephan Pilsinger 280.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "391.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Apotheker\" nutzt Dr. Stephan Pilsinger 349.5× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "429.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Stephan Pilsinger häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
         "text": "Lächerlich",
         "isCorrect": true
       },
       {
-        "text": "Gut",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Stark",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Lächerlich\" nutzt Dr. Stephan Pilsinger 60.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "27.8× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Lächerlich\" nutzt Dr. Stephan Pilsinger 59.9× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "30.0× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -306,15 +394,15 @@
       ],
       "gesundheit": [
         {
-          "word": "arzneimittel",
-          "count": 8
-        },
-        {
           "word": "gesundheitssystem",
           "count": 8
         },
         {
           "word": "krankenhäuser",
+          "count": 8
+        },
+        {
+          "word": "arzneimittel",
           "count": 8
         },
         {
@@ -348,11 +436,11 @@
           "count": 8
         },
         {
-          "word": "inflation",
+          "word": "sondervermögen",
           "count": 2
         },
         {
-          "word": "sondervermögen",
+          "word": "inflation",
           "count": 2
         },
         {

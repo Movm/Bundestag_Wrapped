@@ -11,23 +11,23 @@
   "minWords": 61,
   "maxWords": 751,
   "rankings": {
-    "speechRank": 393,
-    "wordsRank": 453,
-    "partySpeechRank": 113,
-    "partyWordsRank": 145,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 37.1,
-    "verbosityRank": 455,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 154,
-    "longestSpeechRank": 309
+    "speechRank": 377,
+    "wordsRank": 447,
+    "partySpeechRank": 107,
+    "partyWordsRank": 142,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 39.8,
+    "verbosityRank": 456,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 156,
+    "longestSpeechRank": 310
   },
   "drama": {
-    "interruptionsGiven": 43,
+    "interruptionsGiven": 40,
     "interruptionsReceived": 8,
-    "interrupterRank": 121,
-    "interruptedRank": 492
+    "interrupterRank": 130,
+    "interruptedRank": 490
   },
   "words": {
     "topWords": [
@@ -60,11 +60,15 @@
         "count": 8
       },
       {
-        "word": "jahre",
+        "word": "deutschland",
         "count": 7
       },
       {
-        "word": "deutschland",
+        "word": "wichtig",
+        "count": 7
+      },
+      {
+        "word": "jahre",
         "count": 7
       }
     ],
@@ -72,42 +76,108 @@
       {
         "word": "wissenschaft",
         "count": 10,
-        "ratioParty": 26.7,
-        "ratioBundestag": 22.6
-      },
-      {
-        "word": "raumfahrt",
-        "count": 5,
-        "ratioParty": 15.6,
-        "ratioBundestag": 23.6
+        "ratioParty": 28.1,
+        "ratioBundestag": 23.4
       },
       {
         "word": "forschung",
         "count": 13,
-        "ratioParty": 15.2,
-        "ratioBundestag": 18.5
+        "ratioParty": 15.5,
+        "ratioBundestag": 18.6
+      },
+      {
+        "word": "raumfahrt",
+        "count": 5,
+        "ratioParty": 15.4,
+        "ratioBundestag": 23.6
       },
       {
         "word": "verlässlichkeit",
         "count": 5,
-        "ratioParty": 11.0,
-        "ratioBundestag": 16.1
+        "ratioParty": 10.9,
+        "ratioBundestag": 16.4
       },
       {
         "word": "sinne",
         "count": 5,
-        "ratioParty": 7.6,
-        "ratioBundestag": 8.5
+        "ratioParty": 7.5,
+        "ratioBundestag": 8.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "forschung",
+        "count": 13,
+        "score": 36.44,
+        "ratio": 15.5
+      },
+      {
+        "word": "wissenschaft",
+        "count": 10,
+        "score": 33.71,
+        "ratio": 28.1
+      },
+      {
+        "word": "raumfahrt",
+        "count": 5,
+        "score": 13.99,
+        "ratio": 15.4
+      },
+      {
+        "word": "verlässlichkeit",
+        "count": 5,
+        "score": 12.38,
+        "ratio": 10.9
+      },
+      {
+        "word": "sinne",
+        "count": 5,
+        "score": 10.7,
+        "ratio": 7.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "forschung",
+        "count": 13,
+        "score": 38.68,
+        "ratio": 18.6
+      },
+      {
+        "word": "wissenschaft",
+        "count": 10,
+        "score": 31.95,
+        "ratio": 23.4
+      },
+      {
+        "word": "raumfahrt",
+        "count": 5,
+        "score": 16.01,
+        "ratio": 23.6
+      },
+      {
+        "word": "verlässlichkeit",
+        "count": 5,
+        "score": 14.28,
+        "ratio": 16.4
+      },
+      {
+        "word": "sinne",
+        "count": 5,
+        "score": 11.2,
+        "ratio": 8.4
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 355,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.55,
-    "vsParliament": 0.61
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.54,
+    "vsParliament": 0.6
   },
   "funFacts": [
     {
@@ -123,31 +193,31 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "43"
+      "value": "40"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Stephan Albani häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
         "text": "Wissenschaft",
         "isCorrect": true
       },
       {
-        "text": "Opposition",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
+        "text": "Fraktion",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wissenschaft\" nutzt Stephan Albani 26.7× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "22.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Wissenschaft\" nutzt Stephan Albani 28.1× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "23.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -264,15 +334,15 @@
       ],
       "soziales": [
         {
+          "word": "gerechtigkeit",
+          "count": 1
+        },
+        {
           "word": "kinder",
           "count": 1
         },
         {
           "word": "jugend",
-          "count": 1
-        },
-        {
-          "word": "gerechtigkeit",
           "count": 1
         }
       ],
@@ -300,7 +370,7 @@
           "count": 2
         },
         {
-          "word": "hausarzt",
+          "word": "impfung",
           "count": 1
         }
       ],
@@ -326,11 +396,11 @@
           "count": 10
         },
         {
-          "word": "grundlagenforschung",
+          "word": "hochschulen",
           "count": 3
         },
         {
-          "word": "hochschulen",
+          "word": "grundlagenforschung",
           "count": 3
         },
         {

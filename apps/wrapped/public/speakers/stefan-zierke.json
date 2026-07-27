@@ -11,23 +11,23 @@
   "minWords": 213,
   "maxWords": 465,
   "rankings": {
-    "speechRank": 578,
-    "wordsRank": 595,
-    "partySpeechRank": 103,
+    "speechRank": 558,
+    "wordsRank": 597,
+    "partySpeechRank": 98,
     "partyWordsRank": 109,
     "partySize": 114,
-    "totalSpeakers": 625,
-    "percentile": 7.5,
+    "totalSpeakers": 626,
+    "percentile": 10.9,
     "verbosityRank": 404,
-    "verbosityTotal": 579,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 86,
-    "longestSpeechRank": 590
+    "longestSpeechRank": 592
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 1,
-    "interrupterRank": 466,
-    "interruptedRank": 600
+    "interrupterRank": 439,
+    "interruptedRank": 594
   },
   "words": {
     "topWords": [
@@ -40,10 +40,6 @@
         "count": 5
       },
       {
-        "word": "anträge",
-        "count": 4
-      },
-      {
         "word": "habe",
         "count": 4
       },
@@ -52,12 +48,8 @@
         "count": 4
       },
       {
-        "word": "reden",
-        "count": 3
-      },
-      {
-        "word": "gehört",
-        "count": 3
+        "word": "anträge",
+        "count": 4
       },
       {
         "word": "ostdeutsch",
@@ -70,28 +62,66 @@
       {
         "word": "polo",
         "count": 3
+      },
+      {
+        "word": "simson",
+        "count": 3
+      },
+      {
+        "word": "drei",
+        "count": 3
       }
     ],
     "signatureWords": [
       {
         "word": "ostdeutsche",
         "count": 6,
-        "ratioParty": 466.3,
-        "ratioBundestag": 882.4
+        "ratioParty": 512.9,
+        "ratioBundestag": 944.4
       },
       {
         "word": "radverkehr",
         "count": 5,
         "ratioParty": 74.0,
-        "ratioBundestag": 3554.3
+        "ratioBundestag": 3541.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "ostdeutsche",
+        "count": 6,
+        "score": 37.45,
+        "ratio": 512.9
+      },
+      {
+        "word": "radverkehr",
+        "count": 5,
+        "score": 21.59,
+        "ratio": 74.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "ostdeutsche",
+        "count": 6,
+        "score": 41.11,
+        "ratio": 944.4
+      },
+      {
+        "word": "radverkehr",
+        "count": 5,
+        "score": 40.86,
+        "ratio": 3541.3
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 380,
-    "partyAvgWords": 618,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 619,
+    "parliamentAvgWords": 587,
     "vsParty": 0.61,
     "vsParliament": 0.65
   },
@@ -111,24 +141,24 @@
     "question": "Welches Wort nutzt Stefan Zierke häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
         "text": "Ostdeutsche",
         "isCorrect": true
       },
       {
-        "text": "Abstimmung",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ostdeutsche\" nutzt Stefan Zierke 466.3× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "882.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Ostdeutsche\" nutzt Stefan Zierke 512.9× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "944.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -241,11 +271,11 @@
       ],
       "soziales": [
         {
-          "word": "gerechtigkeit",
+          "word": "jugend",
           "count": 1
         },
         {
-          "word": "jugend",
+          "word": "gerechtigkeit",
           "count": 1
         }
       ],

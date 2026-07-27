@@ -11,23 +11,23 @@
   "minWords": 60,
   "maxWords": 898,
   "rankings": {
-    "speechRank": 429,
-    "wordsRank": 430,
-    "partySpeechRank": 99,
+    "speechRank": 411,
+    "wordsRank": 423,
+    "partySpeechRank": 96,
     "partyWordsRank": 94,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 31.4,
-    "verbosityRank": 210,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 55,
+    "totalSpeakers": 626,
+    "percentile": 34.3,
+    "verbosityRank": 215,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 56,
     "longestSpeechRank": 136
   },
   "drama": {
-    "interruptionsGiven": 44,
+    "interruptionsGiven": 40,
     "interruptionsReceived": 15,
-    "interrupterRank": 120,
-    "interruptedRank": 388
+    "interrupterRank": 131,
+    "interruptedRank": 394
   },
   "words": {
     "topWords": [
@@ -76,55 +76,147 @@
       {
         "word": "gemeinschaftsschulden",
         "count": 5,
-        "ratioParty": 1133.4,
-        "ratioBundestag": 5090.2
+        "ratioParty": 1126.3,
+        "ratioBundestag": 5071.7
       },
       {
         "word": "bundesbank",
         "count": 9,
-        "ratioParty": 408.0,
-        "ratioBundestag": 286.3
+        "ratioParty": 405.5,
+        "ratioBundestag": 294.5
       },
       {
         "word": "finanzminister",
         "count": 6,
-        "ratioParty": 23.1,
-        "ratioBundestag": 25.2
+        "ratioParty": 24.1,
+        "ratioBundestag": 26.3
       },
       {
         "word": "brüssel",
         "count": 10,
-        "ratioParty": 19.9,
-        "ratioBundestag": 28.6
+        "ratioParty": 19.3,
+        "ratioBundestag": 27.7
       },
       {
         "word": "ernsthaft",
         "count": 7,
-        "ratioParty": 16.9,
-        "ratioBundestag": 18.8
+        "ratioParty": 16.6,
+        "ratioBundestag": 19.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "bundesbank",
+        "count": 9,
+        "score": 54.07,
+        "ratio": 405.5
+      },
+      {
+        "word": "gemeinschaftsschulden",
+        "count": 5,
+        "score": 35.14,
+        "ratio": 1126.3
+      },
+      {
+        "word": "brüssel",
+        "count": 10,
+        "score": 30.11,
+        "ratio": 19.3
+      },
+      {
+        "word": "ernsthaft",
+        "count": 7,
+        "score": 20.08,
+        "ratio": 16.6
+      },
+      {
+        "word": "finanzminister",
+        "count": 6,
+        "score": 19.34,
+        "ratio": 24.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bundesbank",
+        "count": 9,
+        "score": 51.2,
+        "ratio": 294.5
+      },
+      {
+        "word": "gemeinschaftsschulden",
+        "count": 5,
+        "score": 42.66,
+        "ratio": 5071.7
+      },
+      {
+        "word": "brüssel",
+        "count": 10,
+        "score": 33.57,
+        "ratio": 27.7
+      },
+      {
+        "word": "ernsthaft",
+        "count": 7,
+        "score": 21.01,
+        "ratio": 19.1
+      },
+      {
+        "word": "finanzminister",
+        "count": 6,
+        "score": 19.84,
+        "ratio": 26.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "sicher",
         "count": 6,
-        "ratioParty": 6.4,
+        "ratioParty": 6.3,
         "ratioBundestag": 5.0
       },
       {
         "word": "stark",
         "count": 3,
-        "ratioParty": 5.8,
+        "ratioParty": 5.9,
         "ratioBundestag": 4.2
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 6,
+        "score": 11.93,
+        "ratio": 6.3
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 5.79,
+        "ratio": 5.9
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 6,
+        "score": 10.75,
+        "ratio": 5.0
+      },
+      {
+        "word": "stark",
+        "count": 3,
+        "score": 4.95,
+        "ratio": 4.2
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 471,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 560,
+    "parliamentAvgWords": 587,
     "vsParty": 0.84,
-    "vsParliament": 0.81
+    "vsParliament": 0.8
   },
   "funFacts": [
     {
@@ -140,41 +232,41 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "44"
+      "value": "40"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Peter Boehringer häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Abstimmung",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Minister",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
         "text": "Gemeinschaftsschulden",
         "isCorrect": true
+      },
+      {
+        "text": "Kinder",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gemeinschaftsschulden\" nutzt Peter Boehringer 1133.4× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "5090.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Gemeinschaftsschulden\" nutzt Peter Boehringer 1126.3× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "5071.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Peter Boehringer häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Groß",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
@@ -182,11 +274,11 @@
         "isCorrect": true
       },
       {
-        "text": "Alt",
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sicher\" nutzt Peter Boehringer 6.4× häufiger als der AfD-Durchschnitt.",
+    "explanationParty": "\"Sicher\" nutzt Peter Boehringer 6.3× häufiger als der AfD-Durchschnitt.",
     "explanationBundestag": "5.0× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
@@ -287,11 +379,11 @@
           "count": 1
         },
         {
-          "word": "firma",
+          "word": "unternehmen",
           "count": 1
         },
         {
-          "word": "handel",
+          "word": "kredite",
           "count": 1
         }
       ],
@@ -401,7 +493,7 @@
           "count": 1
         },
         {
-          "word": "rechtsstaat",
+          "word": "grundgesetz",
           "count": 1
         }
       ],

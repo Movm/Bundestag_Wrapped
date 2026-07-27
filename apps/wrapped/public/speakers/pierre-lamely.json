@@ -11,23 +11,23 @@
   "minWords": 39,
   "maxWords": 640,
   "rankings": {
-    "speechRank": 528,
-    "wordsRank": 548,
-    "partySpeechRank": 130,
-    "partyWordsRank": 130,
+    "speechRank": 543,
+    "wordsRank": 552,
+    "partySpeechRank": 134,
+    "partyWordsRank": 129,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 15.5,
-    "verbosityRank": 525,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 13.3,
+    "verbosityRank": 528,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 135,
-    "longestSpeechRank": 446
+    "longestSpeechRank": 447
   },
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 6,
-    "interrupterRank": 436,
-    "interruptedRank": 520
+    "interrupterRank": 467,
+    "interruptedRank": 532
   },
   "words": {
     "topWords": [
@@ -52,23 +52,23 @@
         "count": 8
       },
       {
-        "word": "digitale",
-        "count": 7
-      },
-      {
         "word": "bundesregierung",
         "count": 7
       },
       {
-        "word": "kinder",
-        "count": 6
+        "word": "digitale",
+        "count": 7
       },
       {
         "word": "habe",
         "count": 6
       },
       {
-        "word": "kinderschutz",
+        "word": "kinder",
+        "count": 6
+      },
+      {
+        "word": "deutschland",
         "count": 5
       }
     ],
@@ -76,40 +76,106 @@
       {
         "word": "kinderschutz",
         "count": 5,
-        "ratioParty": 1086.6,
-        "ratioBundestag": 304.5
+        "ratioParty": 1079.9,
+        "ratioBundestag": 294.2
       },
       {
         "word": "chatkontrolle",
         "count": 17,
-        "ratioParty": 273.7,
-        "ratioBundestag": 352.5
+        "ratioParty": 282.4,
+        "ratioBundestag": 358.8
       },
       {
         "word": "kontrollieren",
         "count": 8,
-        "ratioParty": 74.0,
-        "ratioBundestag": 110.6
+        "ratioParty": 67.8,
+        "ratioBundestag": 107.9
       },
       {
         "word": "kommission",
         "count": 11,
-        "ratioParty": 39.2,
-        "ratioBundestag": 28.5
+        "ratioParty": 38.0,
+        "ratioBundestag": 27.4
       },
       {
         "word": "digitale",
         "count": 7,
-        "ratioParty": 22.2,
-        "ratioBundestag": 14.9
+        "ratioParty": 21.4,
+        "ratioBundestag": 14.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "chatkontrolle",
+        "count": 17,
+        "score": 96.0,
+        "ratio": 282.4
+      },
+      {
+        "word": "kommission",
+        "count": 11,
+        "score": 40.3,
+        "ratio": 38.0
+      },
+      {
+        "word": "kinderschutz",
+        "count": 5,
+        "score": 34.93,
+        "ratio": 1079.9
+      },
+      {
+        "word": "kontrollieren",
+        "count": 8,
+        "score": 33.85,
+        "ratio": 67.8
+      },
+      {
+        "word": "digitale",
+        "count": 7,
+        "score": 21.76,
+        "ratio": 21.4
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "chatkontrolle",
+        "count": 17,
+        "score": 100.05,
+        "ratio": 358.8
+      },
+      {
+        "word": "kontrollieren",
+        "count": 8,
+        "score": 37.52,
+        "ratio": 107.9
+      },
+      {
+        "word": "kommission",
+        "count": 11,
+        "score": 36.81,
+        "ratio": 27.4
+      },
+      {
+        "word": "kinderschutz",
+        "count": 5,
+        "score": 28.44,
+        "ratio": 294.2
+      },
+      {
+        "word": "digitale",
+        "count": 7,
+        "score": 19.28,
+        "ratio": 14.7
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 274,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 560,
+    "parliamentAvgWords": 587,
     "vsParty": 0.49,
     "vsParliament": 0.47
   },
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Pierre Lamely häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
         "text": "Kinderschutz",
         "isCorrect": true
+      },
+      {
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesellschaft",
+        "isCorrect": false
       },
       {
         "text": "Zukunft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Kinderschutz\" nutzt Pierre Lamely 1086.6× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "304.5× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Kinderschutz\" nutzt Pierre Lamely 1079.9× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "294.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -229,15 +295,15 @@
           "count": 6
         },
         {
+          "word": "familie",
+          "count": 1
+        },
+        {
           "word": "kindergeld",
           "count": 1
         },
         {
           "word": "bürgergeld",
-          "count": 1
-        },
-        {
-          "word": "familie",
           "count": 1
         }
       ],
@@ -279,6 +345,10 @@
       ],
       "europa": [
         {
+          "word": "sanktionen",
+          "count": 1
+        },
+        {
           "word": "russland",
           "count": 1
         },
@@ -289,20 +359,12 @@
         {
           "word": "brüssel",
           "count": 1
-        },
-        {
-          "word": "sanktionen",
-          "count": 1
         }
       ],
       "digital": [
         {
           "word": "internet",
           "count": 3
-        },
-        {
-          "word": "algorithmen",
-          "count": 1
         },
         {
           "word": "digital",
@@ -314,6 +376,10 @@
         },
         {
           "word": "medienkompetenz",
+          "count": 1
+        },
+        {
+          "word": "algorithmen",
           "count": 1
         }
       ],
@@ -333,6 +399,10 @@
       ],
       "justiz": [
         {
+          "word": "verordnung",
+          "count": 1
+        },
+        {
           "word": "grundrechte",
           "count": 1
         },
@@ -346,10 +416,6 @@
         },
         {
           "word": "rechtsstaat",
-          "count": 1
-        },
-        {
-          "word": "verordnung",
           "count": 1
         }
       ],

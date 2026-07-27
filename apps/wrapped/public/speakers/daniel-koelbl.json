@@ -11,17 +11,17 @@
   "minWords": 68,
   "maxWords": 418,
   "rankings": {
-    "speechRank": 483,
-    "wordsRank": 571,
-    "partySpeechRank": 152,
-    "partyWordsRank": 186,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 22.7,
-    "verbosityRank": 545,
-    "verbosityTotal": 579,
+    "speechRank": 482,
+    "wordsRank": 570,
+    "partySpeechRank": 150,
+    "partyWordsRank": 187,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 23.0,
+    "verbosityRank": 542,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 171,
-    "longestSpeechRank": 602
+    "longestSpeechRank": 603
   },
   "drama": {
     "interruptionsGiven": 1,
@@ -44,10 +44,6 @@
         "count": 6
       },
       {
-        "word": "interesse",
-        "count": 5
-      },
-      {
         "word": "holstein",
         "count": 5
       },
@@ -64,11 +60,15 @@
         "count": 5
       },
       {
-        "word": "jahre",
+        "word": "interesse",
+        "count": 5
+      },
+      {
+        "word": "jahr",
         "count": 4
       },
       {
-        "word": "infrastruktur",
+        "word": "marschbahn",
         "count": 4
       }
     ],
@@ -76,26 +76,26 @@
       {
         "word": "schleswig",
         "count": 6,
-        "ratioParty": 209.8,
-        "ratioBundestag": 161.2
+        "ratioParty": 218.5,
+        "ratioBundestag": 171.3
       },
       {
         "word": "holstein",
         "count": 5,
-        "ratioParty": 209.8,
-        "ratioBundestag": 159.2
+        "ratioParty": 209.4,
+        "ratioBundestag": 166.8
       },
       {
         "word": "schiene",
         "count": 6,
-        "ratioParty": 37.6,
-        "ratioBundestag": 52.1
+        "ratioParty": 37.0,
+        "ratioBundestag": 50.5
       },
       {
         "word": "interesse",
         "count": 5,
-        "ratioParty": 11.3,
-        "ratioBundestag": 13.9
+        "ratioParty": 11.5,
+        "ratioBundestag": 14.3
       },
       {
         "word": "investieren",
@@ -104,14 +104,80 @@
         "ratioBundestag": 9.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "schleswig",
+        "count": 6,
+        "score": 32.35,
+        "ratio": 218.5
+      },
+      {
+        "word": "holstein",
+        "count": 5,
+        "score": 26.75,
+        "ratio": 209.4
+      },
+      {
+        "word": "schiene",
+        "count": 6,
+        "score": 21.83,
+        "ratio": 37.0
+      },
+      {
+        "word": "interesse",
+        "count": 5,
+        "score": 12.63,
+        "ratio": 11.5
+      },
+      {
+        "word": "investieren",
+        "count": 5,
+        "score": 11.46,
+        "ratio": 8.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "schleswig",
+        "count": 6,
+        "score": 30.9,
+        "ratio": 171.3
+      },
+      {
+        "word": "holstein",
+        "count": 5,
+        "score": 25.61,
+        "ratio": 166.8
+      },
+      {
+        "word": "schiene",
+        "count": 6,
+        "score": 23.65,
+        "ratio": 50.5
+      },
+      {
+        "word": "interesse",
+        "count": 5,
+        "score": 13.64,
+        "ratio": 14.3
+      },
+      {
+        "word": "investieren",
+        "count": 5,
+        "score": 11.61,
+        "ratio": 9.2
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 243,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.38,
-    "vsParliament": 0.42
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.37,
+    "vsParliament": 0.41
   },
   "funFacts": [
     {
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Daniel Kölbl häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Familie",
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
         "text": "Schleswig",
         "isCorrect": true
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schleswig\" nutzt Daniel Kölbl 209.8× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "161.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Schleswig\" nutzt Daniel Kölbl 218.5× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "171.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -283,11 +349,11 @@
           "count": 1
         },
         {
-          "word": "haushalt",
+          "word": "sondervermögen",
           "count": 1
         },
         {
-          "word": "sondervermögen",
+          "word": "haushalt",
           "count": 1
         }
       ],

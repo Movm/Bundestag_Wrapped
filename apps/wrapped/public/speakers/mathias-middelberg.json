@@ -11,23 +11,23 @@
   "minWords": 559,
   "maxWords": 991,
   "rankings": {
-    "speechRank": 353,
-    "wordsRank": 225,
-    "partySpeechRank": 97,
-    "partyWordsRank": 64,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 43.5,
-    "verbosityRank": 12,
-    "verbosityTotal": 579,
+    "speechRank": 342,
+    "wordsRank": 218,
+    "partySpeechRank": 92,
+    "partyWordsRank": 61,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 45.4,
+    "verbosityRank": 11,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 2,
-    "longestSpeechRank": 82
+    "longestSpeechRank": 83
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 26,
     "interrupterRank": null,
-    "interruptedRank": 280
+    "interruptedRank": 271
   },
   "words": {
     "topWords": [
@@ -76,66 +76,182 @@
       {
         "word": "freibäder",
         "count": 6,
-        "ratioParty": 1195.4,
-        "ratioBundestag": 920.7
+        "ratioParty": 1193.4,
+        "ratioBundestag": 917.3
       },
       {
         "word": "energiepreisen",
         "count": 6,
-        "ratioParty": 66.4,
-        "ratioBundestag": 57.5
+        "ratioParty": 62.8,
+        "ratioBundestag": 57.3
       },
       {
         "word": "wirtschaftliches",
         "count": 9,
-        "ratioParty": 64.0,
-        "ratioBundestag": 76.7
+        "ratioParty": 61.7,
+        "ratioBundestag": 79.8
       },
       {
         "word": "absenkung",
         "count": 10,
-        "ratioParty": 53.8,
-        "ratioBundestag": 52.9
+        "ratioParty": 51.0,
+        "ratioBundestag": 53.2
       },
       {
         "word": "zielgenau",
         "count": 7,
-        "ratioParty": 46.5,
-        "ratioBundestag": 87.7
+        "ratioParty": 48.0,
+        "ratioBundestag": 89.2
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "freibäder",
+        "count": 6,
+        "score": 42.51,
+        "ratio": 1193.4
+      },
+      {
+        "word": "absenkung",
+        "count": 10,
+        "score": 39.51,
+        "ratio": 51.0
+      },
+      {
+        "word": "wirtschaftliches",
+        "count": 9,
+        "score": 37.25,
+        "ratio": 61.7
+      },
+      {
+        "word": "zielgenau",
+        "count": 7,
+        "score": 27.24,
+        "ratio": 48.0
+      },
+      {
+        "word": "energiepreisen",
+        "count": 6,
+        "score": 24.93,
+        "ratio": 62.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "freibäder",
+        "count": 6,
+        "score": 40.94,
+        "ratio": 917.3
+      },
+      {
+        "word": "absenkung",
+        "count": 10,
+        "score": 39.93,
+        "ratio": 53.2
+      },
+      {
+        "word": "wirtschaftliches",
+        "count": 9,
+        "score": 39.53,
+        "ratio": 79.8
+      },
+      {
+        "word": "zielgenau",
+        "count": 7,
+        "score": 31.51,
+        "ratio": 89.2
+      },
+      {
+        "word": "energiepreisen",
+        "count": 6,
+        "score": 24.39,
+        "ratio": 57.3
       }
     ],
     "signatureAdjectives": [
       {
         "word": "konstruktiv",
         "count": 3,
-        "ratioParty": 12.0,
-        "ratioBundestag": 15.2
+        "ratioParty": 12.7,
+        "ratioBundestag": 15.8
       },
       {
         "word": "kritisch",
         "count": 4,
-        "ratioParty": 11.5,
-        "ratioBundestag": 11.7
+        "ratioParty": 11.7,
+        "ratioBundestag": 11.8
       },
       {
         "word": "wettbewerbsfähig",
         "count": 3,
-        "ratioParty": 7.7,
-        "ratioBundestag": 13.3
+        "ratioParty": 7.6,
+        "ratioBundestag": 13.4
       },
       {
         "word": "entscheidend",
         "count": 7,
         "ratioParty": 5.8,
-        "ratioBundestag": 8.5
+        "ratioBundestag": 8.6
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 7,
+        "score": 13.42,
+        "ratio": 5.8
+      },
+      {
+        "word": "kritisch",
+        "count": 4,
+        "score": 10.17,
+        "ratio": 11.7
+      },
+      {
+        "word": "konstruktiv",
+        "count": 3,
+        "score": 7.85,
+        "ratio": 12.7
+      },
+      {
+        "word": "wettbewerbsfähig",
+        "count": 3,
+        "score": 6.46,
+        "ratio": 7.6
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "entscheidend",
+        "count": 7,
+        "score": 15.83,
+        "ratio": 8.6
+      },
+      {
+        "word": "kritisch",
+        "count": 4,
+        "score": 10.2,
+        "ratio": 11.8
+      },
+      {
+        "word": "konstruktiv",
+        "count": 3,
+        "score": 8.46,
+        "ratio": 15.8
+      },
+      {
+        "word": "wettbewerbsfähig",
+        "count": 3,
+        "score": 8.0,
+        "ratio": 13.4
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 761,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 1.18,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 1.17,
     "vsParliament": 1.3
   },
   "funFacts": [
@@ -152,18 +268,14 @@
     {
       "emoji": "📚",
       "label": "Wortreichster",
-      "value": "#12 von 579"
+      "value": "#11 von 580"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Mathias Middelberg häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaft",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
@@ -171,35 +283,39 @@
         "isCorrect": true
       },
       {
-        "text": "Verantwortung",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaft",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Freibäder\" nutzt Dr. Mathias Middelberg 1195.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "920.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Freibäder\" nutzt Dr. Mathias Middelberg 1193.4× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "917.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Mathias Middelberg häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
         "text": "Konstruktiv",
         "isCorrect": true
       },
       {
-        "text": "Stark",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
+        "text": "Europäisch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Konstruktiv\" nutzt Dr. Mathias Middelberg 12.0× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "15.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Konstruktiv\" nutzt Dr. Mathias Middelberg 12.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "15.8× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🐿️",
@@ -415,11 +531,11 @@
           "count": 5
         },
         {
-          "word": "schule",
+          "word": "ausbildung",
           "count": 1
         },
         {
-          "word": "ausbildung",
+          "word": "schule",
           "count": 1
         }
       ],
@@ -447,11 +563,11 @@
       ],
       "justiz": [
         {
-          "word": "rechtsstaat",
+          "word": "grundgesetz",
           "count": 1
         },
         {
-          "word": "grundgesetz",
+          "word": "rechtsstaat",
           "count": 1
         }
       ],

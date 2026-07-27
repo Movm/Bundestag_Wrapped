@@ -11,23 +11,23 @@
   "minWords": 75,
   "maxWords": 654,
   "rankings": {
-    "speechRank": 380,
-    "wordsRank": 419,
-    "partySpeechRank": 108,
-    "partyWordsRank": 131,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 39.2,
-    "verbosityRank": 274,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 96,
-    "longestSpeechRank": 428
+    "speechRank": 387,
+    "wordsRank": 417,
+    "partySpeechRank": 110,
+    "partyWordsRank": 132,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 38.2,
+    "verbosityRank": 279,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 100,
+    "longestSpeechRank": 432
   },
   "drama": {
     "interruptionsGiven": 7,
     "interruptionsReceived": 14,
     "interrupterRank": 309,
-    "interruptedRank": 404
+    "interruptedRank": 414
   },
   "words": {
     "topWords": [
@@ -52,11 +52,11 @@
         "count": 12
       },
       {
-        "word": "grünen",
+        "word": "deutschen",
         "count": 9
       },
       {
-        "word": "deutschen",
+        "word": "grünen",
         "count": 9
       },
       {
@@ -76,32 +76,96 @@
       {
         "word": "fassade",
         "count": 5,
-        "ratioParty": 200.1,
-        "ratioBundestag": 234.6
-      },
-      {
-        "word": "bahnhöfen",
-        "count": 7,
-        "ratioParty": 140.1,
-        "ratioBundestag": 101.4
+        "ratioParty": 199.8,
+        "ratioBundestag": 233.7
       },
       {
         "word": "abschiebehaft",
         "count": 7,
-        "ratioParty": 140.1,
-        "ratioBundestag": 186.4
+        "ratioParty": 131.6,
+        "ratioBundestag": 171.8
+      },
+      {
+        "word": "bahnhöfen",
+        "count": 7,
+        "ratioParty": 111.9,
+        "ratioBundestag": 90.4
       },
       {
         "word": "migrationswende",
         "count": 6,
-        "ratioParty": 27.1,
-        "ratioBundestag": 40.5
+        "ratioParty": 27.4,
+        "ratioBundestag": 40.6
       },
       {
         "word": "zurückweisungen",
         "count": 6,
-        "ratioParty": 27.1,
-        "ratioBundestag": 39.7
+        "ratioParty": 27.0,
+        "ratioBundestag": 39.5
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "abschiebehaft",
+        "count": 7,
+        "score": 34.21,
+        "ratio": 131.6
+      },
+      {
+        "word": "bahnhöfen",
+        "count": 7,
+        "score": 33.09,
+        "ratio": 111.9
+      },
+      {
+        "word": "fassade",
+        "count": 5,
+        "score": 26.51,
+        "ratio": 199.8
+      },
+      {
+        "word": "migrationswende",
+        "count": 6,
+        "score": 20.08,
+        "ratio": 27.4
+      },
+      {
+        "word": "zurückweisungen",
+        "count": 6,
+        "score": 19.99,
+        "ratio": 27.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "abschiebehaft",
+        "count": 7,
+        "score": 36.06,
+        "ratio": 171.8
+      },
+      {
+        "word": "bahnhöfen",
+        "count": 7,
+        "score": 31.61,
+        "ratio": 90.4
+      },
+      {
+        "word": "fassade",
+        "count": 5,
+        "score": 27.29,
+        "ratio": 233.7
+      },
+      {
+        "word": "migrationswende",
+        "count": 6,
+        "score": 22.37,
+        "ratio": 40.6
+      },
+      {
+        "word": "zurückweisungen",
+        "count": 6,
+        "score": 22.21,
+        "ratio": 39.5
       }
     ],
     "signatureAdjectives": [
@@ -114,16 +178,44 @@
       {
         "word": "sicher",
         "count": 6,
-        "ratioParty": 4.4,
+        "ratioParty": 4.3,
         "ratioBundestag": 4.8
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 6,
+        "score": 10.01,
+        "ratio": 4.3
+      },
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 6.49,
+        "ratio": 7.7
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 6,
+        "score": 10.55,
+        "ratio": 4.8
+      },
+      {
+        "word": "wirksam",
+        "count": 3,
+        "score": 7.33,
+        "ratio": 10.5
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 440,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.68,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.67,
     "vsParliament": 0.75
   },
   "funFacts": [
@@ -146,7 +238,7 @@
         "isCorrect": false
       },
       {
-        "text": "Politik",
+        "text": "Familie",
         "isCorrect": false
       },
       {
@@ -154,22 +246,22 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetz",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Fassade\" nutzt Christina Stumpp 200.1× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "234.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Fassade\" nutzt Christina Stumpp 199.8× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "233.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Christina Stumpp häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Schlecht",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Neu",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
@@ -177,7 +269,7 @@
         "isCorrect": true
       },
       {
-        "text": "Europäisch",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       }
     ],
@@ -278,11 +370,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "abschiebehaft",
+          "word": "migration",
           "count": 7
         },
         {
-          "word": "migration",
+          "word": "abschiebehaft",
           "count": 7
         },
         {
@@ -290,7 +382,7 @@
           "count": 6
         },
         {
-          "word": "familiennachzug",
+          "word": "subsidiär",
           "count": 3
         },
         {
@@ -340,11 +432,11 @@
           "count": 1
         },
         {
-          "word": "polizei",
+          "word": "gewalt",
           "count": 1
         },
         {
-          "word": "polizeipräsenz",
+          "word": "straftäter",
           "count": 1
         }
       ],
@@ -388,15 +480,15 @@
       ],
       "bildung": [
         {
+          "word": "schulen",
+          "count": 1
+        },
+        {
           "word": "student",
           "count": 1
         },
         {
           "word": "kinderbetreuung",
-          "count": 1
-        },
-        {
-          "word": "schulen",
           "count": 1
         }
       ],
@@ -406,11 +498,11 @@
           "count": 2
         },
         {
-          "word": "bundesrechnungshof",
+          "word": "kosten",
           "count": 1
         },
         {
-          "word": "kosten",
+          "word": "bundesrechnungshof",
           "count": 1
         }
       ],
@@ -424,7 +516,7 @@
           "count": 2
         },
         {
-          "word": "straftaten",
+          "word": "straftat",
           "count": 1
         },
         {
@@ -432,7 +524,7 @@
           "count": 1
         },
         {
-          "word": "verfassungswidrig",
+          "word": "straftaten",
           "count": 1
         }
       ],
@@ -448,15 +540,15 @@
           "count": 3
         },
         {
-          "word": "straßen",
-          "count": 1
-        },
-        {
           "word": "bahnhof",
           "count": 1
         },
         {
           "word": "nahverkehr",
+          "count": 1
+        },
+        {
+          "word": "straßen",
           "count": 1
         }
       ]

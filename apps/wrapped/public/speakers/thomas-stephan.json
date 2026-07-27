@@ -11,23 +11,23 @@
   "minWords": 254,
   "maxWords": 621,
   "rankings": {
-    "speechRank": 364,
-    "wordsRank": 302,
-    "partySpeechRank": 86,
-    "partyWordsRank": 65,
+    "speechRank": 359,
+    "wordsRank": 296,
+    "partySpeechRank": 87,
+    "partyWordsRank": 63,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 41.8,
-    "verbosityRank": 335,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 87,
-    "longestSpeechRank": 474
+    "totalSpeakers": 626,
+    "percentile": 42.7,
+    "verbosityRank": 330,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 86,
+    "longestSpeechRank": 475
   },
   "drama": {
     "interruptionsGiven": 20,
     "interruptionsReceived": 32,
-    "interrupterRank": 206,
-    "interruptedRank": 220
+    "interrupterRank": 207,
+    "interruptedRank": 224
   },
   "words": {
     "topWords": [
@@ -36,11 +36,11 @@
         "count": 23
       },
       {
-        "word": "deutschland",
+        "word": "bürger",
         "count": 21
       },
       {
-        "word": "bürger",
+        "word": "deutschland",
         "count": 21
       },
       {
@@ -52,51 +52,119 @@
         "count": 14
       },
       {
+        "word": "bürgergeld",
+        "count": 13
+      },
+      {
         "word": "endlich",
         "count": 13
       },
       {
-        "word": "bürgergeld",
-        "count": 13
+        "word": "bundesregierung",
+        "count": 12
       }
     ],
     "signatureWords": [
       {
         "word": "frühstartrente",
         "count": 5,
-        "ratioParty": 155.2,
-        "ratioBundestag": 57.2
+        "ratioParty": 154.2,
+        "ratioBundestag": 57.0
       },
       {
         "word": "tafeln",
         "count": 6,
-        "ratioParty": 93.1,
-        "ratioBundestag": 174.5
+        "ratioParty": 92.5,
+        "ratioBundestag": 173.9
       },
       {
         "word": "unglaublich",
         "count": 5,
-        "ratioParty": 64.7,
-        "ratioBundestag": 30.6
+        "ratioParty": 64.3,
+        "ratioBundestag": 31.9
       },
       {
         "word": "rentenpolitik",
         "count": 5,
-        "ratioParty": 51.7,
-        "ratioBundestag": 81.2
+        "ratioParty": 51.4,
+        "ratioBundestag": 80.9
       },
       {
         "word": "soziales",
         "count": 5,
-        "ratioParty": 43.1,
-        "ratioBundestag": 24.2
+        "ratioParty": 40.6,
+        "ratioBundestag": 23.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "tafeln",
+        "count": 6,
+        "score": 27.23,
+        "ratio": 92.5
+      },
+      {
+        "word": "frühstartrente",
+        "count": 5,
+        "score": 25.22,
+        "ratio": 154.2
+      },
+      {
+        "word": "unglaublich",
+        "count": 5,
+        "score": 20.89,
+        "ratio": 64.3
+      },
+      {
+        "word": "rentenpolitik",
+        "count": 5,
+        "score": 19.79,
+        "ratio": 51.4
+      },
+      {
+        "word": "soziales",
+        "count": 5,
+        "score": 18.64,
+        "ratio": 40.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "tafeln",
+        "count": 6,
+        "score": 30.99,
+        "ratio": 173.9
+      },
+      {
+        "word": "rentenpolitik",
+        "count": 5,
+        "score": 22.03,
+        "ratio": 80.9
+      },
+      {
+        "word": "frühstartrente",
+        "count": 5,
+        "score": 20.3,
+        "ratio": 57.0
+      },
+      {
+        "word": "unglaublich",
+        "count": 5,
+        "score": 17.47,
+        "ratio": 31.9
+      },
+      {
+        "word": "soziales",
+        "count": 5,
+        "score": 16.05,
+        "ratio": 23.8
       }
     ],
     "signatureAdjectives": [
       {
         "word": "schlecht",
         "count": 4,
-        "ratioParty": 6.1,
+        "ratioParty": 5.9,
         "ratioBundestag": 7.6
       },
       {
@@ -105,13 +173,41 @@
         "ratioParty": 3.0,
         "ratioBundestag": 3.0
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "schlecht",
+        "count": 4,
+        "score": 7.73,
+        "ratio": 5.9
+      },
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 4.16,
+        "ratio": 3.0
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "schlecht",
+        "count": 4,
+        "score": 8.61,
+        "ratio": 7.6
+      },
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 4.16,
+        "ratio": 3.0
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 416,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.75,
+    "partyAvgWords": 560,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.74,
     "vsParliament": 0.71
   },
   "funFacts": [
@@ -135,7 +231,7 @@
     "question": "Welches Wort nutzt Thomas Stephan häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Haushalt",
+        "text": "Europa",
         "isCorrect": false
       },
       {
@@ -143,38 +239,38 @@
         "isCorrect": false
       },
       {
-        "text": "Frühstartrente",
-        "isCorrect": true
+        "text": "Bürger",
+        "isCorrect": false
       },
       {
-        "text": "Steuern",
-        "isCorrect": false
+        "text": "Frühstartrente",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Frühstartrente\" nutzt Thomas Stephan 155.2× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "57.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Frühstartrente\" nutzt Thomas Stephan 154.2× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "57.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Thomas Stephan häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
         "isCorrect": false
       },
       {
         "text": "Schlecht",
         "isCorrect": true
-      },
-      {
-        "text": "National",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Schlecht\" nutzt Thomas Stephan 6.1× häufiger als der AfD-Durchschnitt.",
+    "explanationParty": "\"Schlecht\" nutzt Thomas Stephan 5.9× häufiger als der AfD-Durchschnitt.",
     "explanationBundestag": "7.6× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
@@ -361,15 +457,15 @@
           "count": 4
         },
         {
+          "word": "haushalt",
+          "count": 3
+        },
+        {
           "word": "finanzierung",
           "count": 3
         },
         {
           "word": "haushaltsentwurf",
-          "count": 3
-        },
-        {
-          "word": "haushalt",
           "count": 3
         }
       ],

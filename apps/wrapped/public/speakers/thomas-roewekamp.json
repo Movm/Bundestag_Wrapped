@@ -11,22 +11,22 @@
   "minWords": 396,
   "maxWords": 910,
   "rankings": {
-    "speechRank": 571,
-    "wordsRank": 562,
-    "partySpeechRank": 185,
-    "partyWordsRank": 183,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 8.6,
-    "verbosityRank": 36,
-    "verbosityTotal": 579,
+    "speechRank": 573,
+    "wordsRank": 563,
+    "partySpeechRank": 187,
+    "partyWordsRank": 184,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 8.5,
+    "verbosityRank": 38,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 15,
     "longestSpeechRank": 130
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 7,
-    "interrupterRank": 427,
+    "interrupterRank": 428,
     "interruptedRank": 511
   },
   "words": {
@@ -48,10 +48,6 @@
         "count": 8
       },
       {
-        "word": "nato",
-        "count": 8
-      },
-      {
         "word": "bundeswehr",
         "count": 8
       },
@@ -60,15 +56,19 @@
         "count": 8
       },
       {
+        "word": "nato",
+        "count": 8
+      },
+      {
         "word": "ukraine",
         "count": 7
       },
       {
-        "word": "fähigkeiten",
+        "word": "soldatinnen",
         "count": 6
       },
       {
-        "word": "antwort",
+        "word": "deutschland",
         "count": 6
       }
     ],
@@ -76,42 +76,108 @@
       {
         "word": "personellen",
         "count": 5,
-        "ratioParty": 267.4,
-        "ratioBundestag": 328.7
+        "ratioParty": 287.5,
+        "ratioBundestag": 337.1
       },
       {
         "word": "aufwuchs",
         "count": 9,
-        "ratioParty": 137.5,
-        "ratioBundestag": 160.5
+        "ratioParty": 140.1,
+        "ratioBundestag": 163.7
       },
       {
         "word": "wehrpflicht",
         "count": 5,
-        "ratioParty": 70.6,
-        "ratioBundestag": 59.9
+        "ratioParty": 70.5,
+        "ratioBundestag": 59.7
       },
       {
         "word": "fähigkeiten",
         "count": 6,
-        "ratioParty": 54.1,
-        "ratioBundestag": 84.7
+        "ratioParty": 56.1,
+        "ratioBundestag": 88.2
       },
       {
         "word": "krieg",
         "count": 11,
-        "ratioParty": 25.0,
-        "ratioBundestag": 23.8
+        "ratioParty": 25.5,
+        "ratioBundestag": 24.6
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "aufwuchs",
+        "count": 9,
+        "score": 44.55,
+        "ratio": 140.1
+      },
+      {
+        "word": "krieg",
+        "count": 11,
+        "score": 36.05,
+        "ratio": 25.5
+      },
+      {
+        "word": "personellen",
+        "count": 5,
+        "score": 28.32,
+        "ratio": 287.5
+      },
+      {
+        "word": "fähigkeiten",
+        "count": 6,
+        "score": 24.27,
+        "ratio": 56.1
+      },
+      {
+        "word": "wehrpflicht",
+        "count": 5,
+        "score": 21.35,
+        "ratio": 70.5
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "aufwuchs",
+        "count": 9,
+        "score": 45.94,
+        "ratio": 163.7
+      },
+      {
+        "word": "krieg",
+        "count": 11,
+        "score": 35.67,
+        "ratio": 24.6
+      },
+      {
+        "word": "personellen",
+        "count": 5,
+        "score": 29.12,
+        "ratio": 337.1
+      },
+      {
+        "word": "fähigkeiten",
+        "count": 6,
+        "score": 26.95,
+        "ratio": 88.2
+      },
+      {
+        "word": "wehrpflicht",
+        "count": 5,
+        "score": 20.53,
+        "ratio": 59.7
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 641,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.99,
-    "vsParliament": 1.1
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.98,
+    "vsParliament": 1.09
   },
   "funFacts": [
     {
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Thomas Röwekamp häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
-        "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
         "text": "Personellen",
         "isCorrect": true
+      },
+      {
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Klima",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Personellen\" nutzt Thomas Röwekamp 267.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "328.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Personellen\" nutzt Thomas Röwekamp 287.5× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "337.1× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -269,11 +335,11 @@
           "count": 11
         },
         {
-          "word": "nato",
+          "word": "frieden",
           "count": 8
         },
         {
-          "word": "frieden",
+          "word": "nato",
           "count": 8
         },
         {

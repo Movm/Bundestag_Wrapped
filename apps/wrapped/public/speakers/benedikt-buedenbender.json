@@ -11,17 +11,17 @@
   "minWords": 86,
   "maxWords": 1073,
   "rankings": {
-    "speechRank": 378,
-    "wordsRank": 334,
-    "partySpeechRank": 107,
-    "partyWordsRank": 100,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 39.5,
-    "verbosityRank": 139,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 48,
-    "longestSpeechRank": 56
+    "speechRank": 374,
+    "wordsRank": 329,
+    "partySpeechRank": 105,
+    "partyWordsRank": 98,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 40.3,
+    "verbosityRank": 136,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 50,
+    "longestSpeechRank": 57
   },
   "drama": {
     "interruptionsGiven": 0,
@@ -72,39 +72,103 @@
       {
         "word": "biokraftstoffe",
         "count": 6,
-        "ratioParty": 510.6,
-        "ratioBundestag": 523.9
+        "ratioParty": 509.7,
+        "ratioBundestag": 522.0
       },
       {
         "word": "quote",
         "count": 5,
-        "ratioParty": 141.8,
-        "ratioBundestag": 49.7
+        "ratioParty": 141.6,
+        "ratioBundestag": 48.9
       },
       {
         "word": "landwirte",
         "count": 16,
-        "ratioParty": 43.5,
-        "ratioBundestag": 37.8
+        "ratioParty": 42.5,
+        "ratioBundestag": 37.2
       },
       {
         "word": "kraftstoffe",
         "count": 5,
-        "ratioParty": 38.7,
-        "ratioBundestag": 66.6
+        "ratioParty": 38.6,
+        "ratioBundestag": 66.4
       },
       {
         "word": "rainer",
         "count": 6,
-        "ratioParty": 33.3,
-        "ratioBundestag": 26.6
+        "ratioParty": 33.2,
+        "ratioBundestag": 25.8
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "landwirte",
+        "count": 16,
+        "score": 60.36,
+        "ratio": 42.5
+      },
+      {
+        "word": "biokraftstoffe",
+        "count": 6,
+        "score": 37.41,
+        "ratio": 509.7
+      },
+      {
+        "word": "quote",
+        "count": 5,
+        "score": 24.8,
+        "ratio": 141.6
+      },
+      {
+        "word": "rainer",
+        "count": 6,
+        "score": 21.19,
+        "ratio": 33.2
+      },
+      {
+        "word": "kraftstoffe",
+        "count": 5,
+        "score": 18.39,
+        "ratio": 38.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "landwirte",
+        "count": 16,
+        "score": 58.29,
+        "ratio": 37.2
+      },
+      {
+        "word": "biokraftstoffe",
+        "count": 6,
+        "score": 37.56,
+        "ratio": 522.0
+      },
+      {
+        "word": "kraftstoffe",
+        "count": 5,
+        "score": 21.05,
+        "ratio": 66.4
+      },
+      {
+        "word": "rainer",
+        "count": 6,
+        "score": 19.73,
+        "ratio": 25.8
+      },
+      {
+        "word": "quote",
+        "count": 5,
+        "score": 19.55,
+        "ratio": 48.9
       }
     ],
     "signatureAdjectives": [
       {
         "word": "falsch",
         "count": 3,
-        "ratioParty": 3.5,
+        "ratioParty": 3.4,
         "ratioBundestag": 3.4
       },
       {
@@ -113,13 +177,41 @@
         "ratioParty": 2.3,
         "ratioBundestag": 2.6
       }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 4.78,
+        "ratio": 2.3
+      },
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 4.44,
+        "ratio": 3.4
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "sicher",
+        "count": 4,
+        "score": 5.12,
+        "ratio": 2.6
+      },
+      {
+        "word": "falsch",
+        "count": 3,
+        "score": 4.44,
+        "ratio": 3.4
+      }
     ]
   },
   "comparison": {
     "speakerAvgWords": 516,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.8,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.79,
     "vsParliament": 0.88
   },
   "funFacts": [
@@ -138,46 +230,46 @@
     "question": "Welches Wort nutzt Benedikt Büdenbender häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
         "text": "Biokraftstoffe",
         "isCorrect": true
       },
       {
-        "text": "Fraktion",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Biokraftstoffe\" nutzt Benedikt Büdenbender 510.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "523.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Biokraftstoffe\" nutzt Benedikt Büdenbender 509.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "522.0× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Benedikt Büdenbender häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Gut",
+        "isCorrect": false
+      },
+      {
         "text": "Falsch",
         "isCorrect": true
       },
       {
-        "text": "Jung",
+        "text": "Klar",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
+        "text": "Neu",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Falsch\" nutzt Benedikt Büdenbender 3.5× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationParty": "\"Falsch\" nutzt Benedikt Büdenbender 3.4× häufiger als der CDU/CSU-Durchschnitt.",
     "explanationBundestag": "3.4× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
@@ -296,7 +388,7 @@
           "count": 3
         },
         {
-          "word": "erneuerbare",
+          "word": "wald",
           "count": 2
         }
       ],
@@ -310,11 +402,11 @@
           "count": 6
         },
         {
-          "word": "markt",
+          "word": "betriebe",
           "count": 4
         },
         {
-          "word": "betriebe",
+          "word": "markt",
           "count": 4
         },
         {
@@ -384,7 +476,7 @@
           "count": 3
         },
         {
-          "word": "haushaltsentwurf",
+          "word": "steuer",
           "count": 2
         }
       ],
@@ -418,6 +510,10 @@
           "count": 2
         },
         {
+          "word": "deutschlandticket",
+          "count": 1
+        },
+        {
           "word": "fahrzeuge",
           "count": 1
         },
@@ -427,10 +523,6 @@
         },
         {
           "word": "öpnv",
-          "count": 1
-        },
-        {
-          "word": "infrastruktur",
           "count": 1
         }
       ]

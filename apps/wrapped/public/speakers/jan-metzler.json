@@ -11,23 +11,23 @@
   "minWords": 379,
   "maxWords": 589,
   "rankings": {
-    "speechRank": 532,
-    "wordsRank": 536,
-    "partySpeechRank": 172,
+    "speechRank": 530,
+    "wordsRank": 540,
+    "partySpeechRank": 171,
     "partyWordsRank": 175,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 14.9,
-    "verbosityRank": 175,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 64,
-    "longestSpeechRank": 508
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 15.3,
+    "verbosityRank": 184,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 66,
+    "longestSpeechRank": 511
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 5,
     "interrupterRank": null,
-    "interruptedRank": 539
+    "interruptedRank": 536
   },
   "words": {
     "topWords": [
@@ -48,10 +48,6 @@
         "count": 7
       },
       {
-        "word": "unabhängigkeit",
-        "count": 6
-      },
-      {
         "word": "stehen",
         "count": 6
       },
@@ -64,11 +60,15 @@
         "count": 6
       },
       {
-        "word": "gesetzentwurf",
-        "count": 5
+        "word": "unabhängigkeit",
+        "count": 6
       },
       {
         "word": "zusammenhang",
+        "count": 5
+      },
+      {
+        "word": "halt",
         "count": 5
       }
     ],
@@ -76,48 +76,128 @@
       {
         "word": "bundesrechnungshof",
         "count": 5,
-        "ratioParty": 102.6,
-        "ratioBundestag": 44.4
+        "ratioParty": 102.4,
+        "ratioBundestag": 44.7
       },
       {
         "word": "unabhängigkeit",
         "count": 6,
-        "ratioParty": 50.6,
-        "ratioBundestag": 51.9
+        "ratioParty": 50.5,
+        "ratioBundestag": 51.2
       },
       {
         "word": "bundeshaushalt",
         "count": 7,
-        "ratioParty": 25.7,
-        "ratioBundestag": 31.0
+        "ratioParty": 25.6,
+        "ratioBundestag": 31.5
       },
       {
         "word": "zusammenhang",
         "count": 5,
-        "ratioParty": 17.3,
-        "ratioBundestag": 22.4
+        "ratioParty": 16.6,
+        "ratioBundestag": 21.8
       },
       {
         "word": "zeiten",
         "count": 6,
-        "ratioParty": 13.7,
-        "ratioBundestag": 14.3
+        "ratioParty": 13.5,
+        "ratioBundestag": 14.1
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "unabhängigkeit",
+        "count": 6,
+        "score": 23.65,
+        "ratio": 50.5
+      },
+      {
+        "word": "bundesrechnungshof",
+        "count": 5,
+        "score": 23.19,
+        "ratio": 102.4
+      },
+      {
+        "word": "bundeshaushalt",
+        "count": 7,
+        "score": 22.97,
+        "ratio": 25.6
+      },
+      {
+        "word": "zeiten",
+        "count": 6,
+        "score": 16.04,
+        "ratio": 13.5
+      },
+      {
+        "word": "zusammenhang",
+        "count": 5,
+        "score": 14.34,
+        "ratio": 16.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "bundeshaushalt",
+        "count": 7,
+        "score": 24.37,
+        "ratio": 31.5
+      },
+      {
+        "word": "unabhängigkeit",
+        "count": 6,
+        "score": 23.73,
+        "ratio": 51.2
+      },
+      {
+        "word": "bundesrechnungshof",
+        "count": 5,
+        "score": 19.11,
+        "ratio": 44.7
+      },
+      {
+        "word": "zeiten",
+        "count": 6,
+        "score": 16.29,
+        "ratio": 14.1
+      },
+      {
+        "word": "zusammenhang",
+        "count": 5,
+        "score": 15.63,
+        "ratio": 21.8
       }
     ],
     "signatureAdjectives": [
       {
         "word": "entscheidend",
         "count": 3,
-        "ratioParty": 7.6,
-        "ratioBundestag": 11.2
+        "ratioParty": 7.5,
+        "ratioBundestag": 11.3
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 6.42,
+        "ratio": 7.5
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "entscheidend",
+        "count": 3,
+        "score": 7.53,
+        "ratio": 11.3
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 487,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.76,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.75,
     "vsParliament": 0.83
   },
   "funFacts": [
@@ -136,24 +216,24 @@
     "question": "Welches Wort nutzt Jan Metzler häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
         "text": "Bundesrechnungshof",
         "isCorrect": true
       },
       {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
+        "text": "Energie",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bundesrechnungshof\" nutzt Jan Metzler 102.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "44.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bundesrechnungshof\" nutzt Jan Metzler 102.4× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "44.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Jan Metzler häufiger als der Rest der CDU/CSU-Fraktion?",
@@ -163,20 +243,20 @@
         "isCorrect": true
       },
       {
-        "text": "Stark",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
+        "text": "Falsch",
         "isCorrect": false
       },
       {
         "text": "Alt",
         "isCorrect": false
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entscheidend\" nutzt Jan Metzler 7.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "11.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Entscheidend\" nutzt Jan Metzler 7.5× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "11.3× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦫",

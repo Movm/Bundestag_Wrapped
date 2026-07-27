@@ -11,13 +11,13 @@
   "minWords": 532,
   "maxWords": 532,
   "rankings": {
-    "speechRank": 597,
-    "wordsRank": 618,
-    "partySpeechRank": 195,
+    "speechRank": 600,
+    "wordsRank": 617,
+    "partySpeechRank": 197,
     "partyWordsRank": 209,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 4.5,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 4.2,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
@@ -76,20 +76,20 @@
       {
         "word": "entscheidung",
         "count": 5,
-        "ratioParty": 44.9,
-        "ratioBundestag": 53.9
+        "ratioParty": 43.7,
+        "ratioBundestag": 51.8
       },
       {
         "word": "leben",
         "count": 5,
-        "ratioParty": 14.9,
-        "ratioBundestag": 12.6
+        "ratioParty": 14.7,
+        "ratioBundestag": 12.5
       },
       {
         "word": "verantwortung",
         "count": 6,
-        "ratioParty": 13.5,
-        "ratioBundestag": 15.6
+        "ratioParty": 13.7,
+        "ratioBundestag": 15.8
       },
       {
         "word": "menschen",
@@ -98,13 +98,67 @@
         "ratioBundestag": 4.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "entscheidung",
+        "count": 5,
+        "score": 19.0,
+        "ratio": 43.7
+      },
+      {
+        "word": "verantwortung",
+        "count": 6,
+        "score": 16.13,
+        "ratio": 13.7
+      },
+      {
+        "word": "leben",
+        "count": 5,
+        "score": 13.77,
+        "ratio": 14.7
+      },
+      {
+        "word": "menschen",
+        "count": 7,
+        "score": 13.31,
+        "ratio": 5.7
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "entscheidung",
+        "count": 5,
+        "score": 19.83,
+        "ratio": 51.8
+      },
+      {
+        "word": "verantwortung",
+        "count": 6,
+        "score": 16.93,
+        "ratio": 15.8
+      },
+      {
+        "word": "leben",
+        "count": 5,
+        "score": 13.01,
+        "ratio": 12.5
+      },
+      {
+        "word": "menschen",
+        "count": 7,
+        "score": 11.8,
+        "ratio": 4.4
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 532,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.82,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.81,
     "vsParliament": 0.91
   },
   "funFacts": [
@@ -118,11 +172,7 @@
     "question": "Welches Wort nutzt Stefan Glaser häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
@@ -132,10 +182,14 @@
       {
         "text": "Gesellschaft",
         "isCorrect": false
+      },
+      {
+        "text": "Bundesregierung",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Entscheidung\" nutzt Stefan Glaser 44.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "53.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Entscheidung\" nutzt Stefan Glaser 43.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "51.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

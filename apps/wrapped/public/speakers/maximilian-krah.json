@@ -11,23 +11,23 @@
   "minWords": 563,
   "maxWords": 1031,
   "rankings": {
-    "speechRank": 572,
-    "wordsRank": 542,
-    "partySpeechRank": 141,
-    "partyWordsRank": 129,
+    "speechRank": 551,
+    "wordsRank": 547,
+    "partySpeechRank": 135,
+    "partyWordsRank": 128,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 8.5,
+    "totalSpeakers": 626,
+    "percentile": 12.0,
     "verbosityRank": 10,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 5,
-    "longestSpeechRank": 72
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 6,
+    "longestSpeechRank": 73
   },
   "drama": {
-    "interruptionsGiven": 8,
+    "interruptionsGiven": 7,
     "interruptionsReceived": 15,
-    "interrupterRank": 299,
-    "interruptedRank": 392
+    "interrupterRank": 307,
+    "interruptedRank": 391
   },
   "words": {
     "topWords": [
@@ -40,6 +40,10 @@
         "count": 8
       },
       {
+        "word": "vertrag",
+        "count": 7
+      },
+      {
         "word": "europa",
         "count": 7
       },
@@ -48,23 +52,19 @@
         "count": 7
       },
       {
-        "word": "vertrag",
-        "count": 7
-      },
-      {
         "word": "jahre",
         "count": 6
-      },
-      {
-        "word": "ungarn",
-        "count": 5
       },
       {
         "word": "richtig",
         "count": 5
       },
       {
-        "word": "grenzverfahren",
+        "word": "zeit",
+        "count": 5
+      },
+      {
+        "word": "ungarn",
         "count": 5
       }
     ],
@@ -72,42 +72,108 @@
       {
         "word": "grenzverfahren",
         "count": 5,
-        "ratioParty": 1072.1,
-        "ratioBundestag": 2403.6
-      },
-      {
-        "word": "vertrag",
-        "count": 7,
-        "ratioParty": 63.9,
-        "ratioBundestag": 80.6
+        "ratioParty": 1065.4,
+        "ratioBundestag": 2394.9
       },
       {
         "word": "ungarn",
         "count": 5,
-        "ratioParty": 63.1,
-        "ratioBundestag": 57.9
+        "ratioParty": 62.7,
+        "ratioBundestag": 58.1
+      },
+      {
+        "word": "vertrag",
+        "count": 7,
+        "ratioParty": 62.1,
+        "ratioBundestag": 81.3
       },
       {
         "word": "europa",
         "count": 7,
-        "ratioParty": 11.9,
+        "ratioParty": 12.1,
         "ratioBundestag": 5.2
       },
       {
         "word": "richtig",
         "count": 5,
-        "ratioParty": 6.3,
+        "ratioParty": 6.2,
         "ratioBundestag": 3.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "grenzverfahren",
+        "count": 5,
+        "score": 34.86,
+        "ratio": 1065.4
+      },
+      {
+        "word": "vertrag",
+        "count": 7,
+        "score": 29.01,
+        "ratio": 62.1
+      },
+      {
+        "word": "ungarn",
+        "count": 5,
+        "score": 20.77,
+        "ratio": 62.7
+      },
+      {
+        "word": "europa",
+        "count": 7,
+        "score": 18.01,
+        "ratio": 12.1
+      },
+      {
+        "word": "richtig",
+        "count": 5,
+        "score": 9.87,
+        "ratio": 6.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "grenzverfahren",
+        "count": 5,
+        "score": 38.91,
+        "ratio": 2394.9
+      },
+      {
+        "word": "vertrag",
+        "count": 7,
+        "score": 30.87,
+        "ratio": 81.3
+      },
+      {
+        "word": "ungarn",
+        "count": 5,
+        "score": 20.4,
+        "ratio": 58.1
+      },
+      {
+        "word": "europa",
+        "count": 7,
+        "score": 12.77,
+        "ratio": 5.2
+      },
+      {
+        "word": "richtig",
+        "count": 5,
+        "score": 7.95,
+        "ratio": 3.9
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 786,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
-    "vsParty": 1.41,
-    "vsParliament": 1.35
+    "partyAvgWords": 560,
+    "parliamentAvgWords": 587,
+    "vsParty": 1.4,
+    "vsParliament": 1.34
   },
   "funFacts": [
     {
@@ -123,18 +189,14 @@
     {
       "emoji": "📚",
       "label": "Wortreichster",
-      "value": "#10 von 579"
+      "value": "#10 von 580"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Maximilian Krah häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
+        "text": "Politik",
         "isCorrect": false
       },
       {
@@ -142,12 +204,16 @@
         "isCorrect": true
       },
       {
-        "text": "Koalition",
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Grenzverfahren\" nutzt Dr. Maximilian Krah 1072.1× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "2403.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Grenzverfahren\" nutzt Dr. Maximilian Krah 1065.4× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "2394.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -254,11 +320,11 @@
       ],
       "europa": [
         {
-          "word": "europa",
+          "word": "vertrag",
           "count": 7
         },
         {
-          "word": "vertrag",
+          "word": "europa",
           "count": 7
         },
         {
@@ -266,11 +332,11 @@
           "count": 3
         },
         {
-          "word": "ukraine",
+          "word": "abkommen",
           "count": 2
         },
         {
-          "word": "türkei",
+          "word": "ukraine",
           "count": 2
         }
       ],
@@ -282,11 +348,11 @@
       ],
       "finanzen": [
         {
-          "word": "investitionen",
+          "word": "kosten",
           "count": 1
         },
         {
-          "word": "kosten",
+          "word": "investitionen",
           "count": 1
         }
       ],

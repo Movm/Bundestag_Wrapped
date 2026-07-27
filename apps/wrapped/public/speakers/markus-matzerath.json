@@ -11,23 +11,23 @@
   "minWords": 19,
   "maxWords": 632,
   "rankings": {
-    "speechRank": 465,
-    "wordsRank": 491,
-    "partySpeechRank": 108,
-    "partyWordsRank": 111,
+    "speechRank": 435,
+    "wordsRank": 492,
+    "partySpeechRank": 101,
+    "partyWordsRank": 107,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 25.6,
-    "verbosityRank": 484,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 30.5,
+    "verbosityRank": 486,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 126,
-    "longestSpeechRank": 461
+    "longestSpeechRank": 459
   },
   "drama": {
     "interruptionsGiven": 9,
     "interruptionsReceived": 10,
-    "interrupterRank": 280,
-    "interruptedRank": 471
+    "interrupterRank": 281,
+    "interruptedRank": 461
   },
   "words": {
     "topWords": [
@@ -56,19 +56,19 @@
         "count": 8
       },
       {
-        "word": "schön",
-        "count": 7
-      },
-      {
         "word": "deutsche",
         "count": 7
       },
       {
-        "word": "gewalt",
+        "word": "frontex",
         "count": 7
       },
       {
-        "word": "frontex",
+        "word": "schön",
+        "count": 7
+      },
+      {
+        "word": "gewalt",
         "count": 7
       }
     ],
@@ -76,40 +76,106 @@
       {
         "word": "gruppierungen",
         "count": 5,
-        "ratioParty": 491.4,
-        "ratioBundestag": 551.3
+        "ratioParty": 488.3,
+        "ratioBundestag": 549.3
       },
       {
         "word": "frontex",
         "count": 7,
-        "ratioParty": 412.8,
-        "ratioBundestag": 330.8
+        "ratioParty": 410.2,
+        "ratioBundestag": 329.6
       },
       {
         "word": "polizisten",
         "count": 14,
-        "ratioParty": 82.6,
-        "ratioBundestag": 74.7
+        "ratioParty": 82.0,
+        "ratioBundestag": 72.4
       },
       {
         "word": "linksextremen",
         "count": 5,
-        "ratioParty": 77.6,
-        "ratioBundestag": 220.5
+        "ratioParty": 69.8,
+        "ratioBundestag": 199.7
       },
       {
         "word": "bundespolizei",
         "count": 12,
-        "ratioParty": 66.8,
-        "ratioBundestag": 47.8
+        "ratioParty": 66.3,
+        "ratioBundestag": 44.3
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "polizisten",
+        "count": 14,
+        "score": 61.86,
+        "ratio": 82.0
+      },
+      {
+        "word": "bundespolizei",
+        "count": 12,
+        "score": 50.51,
+        "ratio": 66.3
+      },
+      {
+        "word": "frontex",
+        "count": 7,
+        "score": 42.13,
+        "ratio": 410.2
+      },
+      {
+        "word": "gruppierungen",
+        "count": 5,
+        "score": 30.96,
+        "ratio": 488.3
+      },
+      {
+        "word": "linksextremen",
+        "count": 5,
+        "score": 21.3,
+        "ratio": 69.8
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "polizisten",
+        "count": 14,
+        "score": 60.14,
+        "ratio": 72.4
+      },
+      {
+        "word": "bundespolizei",
+        "count": 12,
+        "score": 45.76,
+        "ratio": 44.3
+      },
+      {
+        "word": "frontex",
+        "count": 7,
+        "score": 40.61,
+        "ratio": 329.6
+      },
+      {
+        "word": "gruppierungen",
+        "count": 5,
+        "score": 31.55,
+        "ratio": 549.3
+      },
+      {
+        "word": "linksextremen",
+        "count": 5,
+        "score": 26.51,
+        "ratio": 199.7
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 326,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 560,
+    "parliamentAvgWords": 587,
     "vsParty": 0.58,
     "vsParliament": 0.56
   },
@@ -129,11 +195,7 @@
     "question": "Welches Wort nutzt Markus Matzerath häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gruppierungen",
-        "isCorrect": true
-      },
-      {
-        "text": "Gesetz",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
@@ -141,12 +203,16 @@
         "isCorrect": false
       },
       {
-        "text": "Opposition",
+        "text": "Familie",
         "isCorrect": false
+      },
+      {
+        "text": "Gruppierungen",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Gruppierungen\" nutzt Markus Matzerath 491.4× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "551.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Gruppierungen\" nutzt Markus Matzerath 488.3× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "549.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": null,
@@ -279,10 +345,6 @@
       ],
       "europa": [
         {
-          "word": "bündnis",
-          "count": 1
-        },
-        {
           "word": "frieden",
           "count": 1
         },
@@ -296,6 +358,10 @@
         },
         {
           "word": "europa",
+          "count": 1
+        },
+        {
+          "word": "bündnis",
           "count": 1
         }
       ],
@@ -329,21 +395,21 @@
           "count": 1
         },
         {
-          "word": "haft",
+          "word": "rechtsstaatlichkeit",
           "count": 1
         },
         {
-          "word": "rechtsstaatlichkeit",
+          "word": "haft",
           "count": 1
         }
       ],
       "mobilitaet": [
         {
-          "word": "autobahn",
+          "word": "bahn",
           "count": 2
         },
         {
-          "word": "bahn",
+          "word": "autobahn",
           "count": 2
         },
         {

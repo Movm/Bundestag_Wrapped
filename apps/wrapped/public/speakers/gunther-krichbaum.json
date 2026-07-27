@@ -11,23 +11,23 @@
   "minWords": 11,
   "maxWords": 959,
   "rankings": {
-    "speechRank": 470,
-    "wordsRank": 516,
-    "partySpeechRank": 147,
-    "partyWordsRank": 171,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 24.8,
-    "verbosityRank": 343,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 119,
+    "speechRank": 439,
+    "wordsRank": 517,
+    "partySpeechRank": 132,
+    "partyWordsRank": 172,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 29.9,
+    "verbosityRank": 341,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 122,
     "longestSpeechRank": 98
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 4,
     "interrupterRank": null,
-    "interruptedRank": 556
+    "interruptedRank": 555
   },
   "words": {
     "topWords": [
@@ -44,12 +44,16 @@
         "count": 9
       },
       {
+        "word": "deutsch",
+        "count": 8
+      },
+      {
         "word": "ungarn",
         "count": 8
       },
       {
-        "word": "deutsch",
-        "count": 8
+        "word": "französische",
+        "count": 7
       },
       {
         "word": "frankreich",
@@ -58,59 +62,113 @@
       {
         "word": "wichtig",
         "count": 7
-      },
-      {
-        "word": "französische",
-        "count": 7
-      },
-      {
-        "word": "magyar",
-        "count": 6
-      },
-      {
-        "word": "union",
-        "count": 6
       }
     ],
     "signatureWords": [
       {
         "word": "magyar",
         "count": 6,
-        "ratioParty": 510.6,
-        "ratioBundestag": 495.7
+        "ratioParty": 509.7,
+        "ratioBundestag": 493.9
       },
       {
         "word": "französische",
         "count": 7,
-        "ratioParty": 198.6,
-        "ratioBundestag": 219.8
+        "ratioParty": 198.2,
+        "ratioBundestag": 219.0
       },
       {
         "word": "aussöhnung",
         "count": 5,
-        "ratioParty": 159.6,
-        "ratioBundestag": 212.1
+        "ratioParty": 159.3,
+        "ratioBundestag": 211.4
       },
       {
         "word": "ungarn",
         "count": 8,
-        "ratioParty": 99.6,
-        "ratioBundestag": 77.0
+        "ratioParty": 99.5,
+        "ratioBundestag": 77.2
       },
       {
         "word": "herzegowina",
         "count": 5,
-        "ratioParty": 44.0,
-        "ratioBundestag": 48.2
+        "ratioParty": 54.2,
+        "ratioBundestag": 53.9
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "magyar",
+        "count": 6,
+        "score": 37.41,
+        "ratio": 509.7
+      },
+      {
+        "word": "französische",
+        "count": 7,
+        "score": 37.06,
+        "ratio": 198.2
+      },
+      {
+        "word": "ungarn",
+        "count": 8,
+        "score": 36.88,
+        "ratio": 99.5
+      },
+      {
+        "word": "aussöhnung",
+        "count": 5,
+        "score": 25.39,
+        "ratio": 159.3
+      },
+      {
+        "word": "herzegowina",
+        "count": 5,
+        "score": 20.05,
+        "ratio": 54.2
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "französische",
+        "count": 7,
+        "score": 37.76,
+        "ratio": 219.0
+      },
+      {
+        "word": "magyar",
+        "count": 6,
+        "score": 37.23,
+        "ratio": 493.9
+      },
+      {
+        "word": "ungarn",
+        "count": 8,
+        "score": 34.87,
+        "ratio": 77.2
+      },
+      {
+        "word": "aussöhnung",
+        "count": 5,
+        "score": 26.79,
+        "ratio": 211.4
+      },
+      {
+        "word": "herzegowina",
+        "count": 5,
+        "score": 20.03,
+        "ratio": 53.9
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 410,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.64,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.63,
     "vsParliament": 0.7
   },
   "funFacts": [
@@ -129,24 +187,24 @@
     "question": "Welches Wort nutzt Gunther Krichbaum häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Magyar",
-        "isCorrect": true
-      },
-      {
-        "text": "Verantwortung",
+        "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
         "text": "Familie",
         "isCorrect": false
+      },
+      {
+        "text": "Magyar",
+        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Magyar\" nutzt Gunther Krichbaum 510.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "495.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Magyar\" nutzt Gunther Krichbaum 509.7× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "493.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -275,11 +333,11 @@
           "count": 1
         },
         {
-          "word": "gewalt",
+          "word": "bundeswehr",
           "count": 1
         },
         {
-          "word": "bundeswehr",
+          "word": "gewalt",
           "count": 1
         }
       ],
@@ -303,21 +361,21 @@
           "count": 4
         },
         {
-          "word": "putin",
+          "word": "frieden",
           "count": 3
         },
         {
-          "word": "frieden",
+          "word": "putin",
           "count": 3
         }
       ],
       "digital": [
         {
-          "word": "pressefreiheit",
+          "word": "digitalisierung",
           "count": 1
         },
         {
-          "word": "digitalisierung",
+          "word": "pressefreiheit",
           "count": 1
         }
       ],

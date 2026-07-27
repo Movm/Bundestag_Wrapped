@@ -11,15 +11,15 @@
   "minWords": 263,
   "maxWords": 754,
   "rankings": {
-    "speechRank": 440,
-    "wordsRank": 497,
+    "speechRank": 431,
+    "wordsRank": 499,
     "partySpeechRank": 53,
     "partyWordsRank": 53,
     "partySize": 63,
-    "totalSpeakers": 625,
-    "percentile": 29.6,
-    "verbosityRank": 245,
-    "verbosityTotal": 579,
+    "totalSpeakers": 626,
+    "percentile": 31.2,
+    "verbosityRank": 250,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 15,
     "longestSpeechRank": 302
   },
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 14,
     "interrupterRank": null,
-    "interruptedRank": 399
+    "interruptedRank": 401
   },
   "words": {
     "topWords": [
@@ -60,15 +60,15 @@
         "count": 8
       },
       {
-        "word": "banken",
-        "count": 8
-      },
-      {
         "word": "finanzlobby",
         "count": 8
       },
       {
-        "word": "finanzmarkt",
+        "word": "banken",
+        "count": 8
+      },
+      {
+        "word": "gesetze",
         "count": 7
       }
     ],
@@ -76,42 +76,108 @@
       {
         "word": "bargeld",
         "count": 10,
-        "ratioParty": 451.7,
-        "ratioBundestag": 198.4
+        "ratioParty": 449.7,
+        "ratioBundestag": 194.8
       },
       {
         "word": "finanzinvestoren",
         "count": 9,
-        "ratioParty": 304.9,
-        "ratioBundestag": 2392.6
+        "ratioParty": 404.8,
+        "ratioBundestag": 2979.8
       },
       {
         "word": "privates",
         "count": 5,
-        "ratioParty": 169.4,
-        "ratioBundestag": 99.2
+        "ratioParty": 224.9,
+        "ratioBundestag": 103.5
       },
       {
         "word": "banken",
         "count": 8,
-        "ratioParty": 108.4,
-        "ratioBundestag": 71.8
+        "ratioParty": 107.9,
+        "ratioBundestag": 72.1
       },
       {
         "word": "lobby",
         "count": 7,
-        "ratioParty": 73.0,
-        "ratioBundestag": 216.4
+        "ratioParty": 72.7,
+        "ratioBundestag": 231.8
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "bargeld",
+        "count": 10,
+        "score": 61.11,
+        "ratio": 449.7
+      },
+      {
+        "word": "finanzinvestoren",
+        "count": 9,
+        "score": 54.05,
+        "ratio": 404.8
+      },
+      {
+        "word": "banken",
+        "count": 8,
+        "score": 37.52,
+        "ratio": 107.9
+      },
+      {
+        "word": "lobby",
+        "count": 7,
+        "score": 30.1,
+        "ratio": 72.7
+      },
+      {
+        "word": "privates",
+        "count": 5,
+        "score": 27.1,
+        "ratio": 224.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "finanzinvestoren",
+        "count": 9,
+        "score": 72.0,
+        "ratio": 2979.8
+      },
+      {
+        "word": "bargeld",
+        "count": 10,
+        "score": 52.77,
+        "ratio": 194.8
+      },
+      {
+        "word": "lobby",
+        "count": 7,
+        "score": 38.15,
+        "ratio": 231.8
+      },
+      {
+        "word": "banken",
+        "count": 8,
+        "score": 34.33,
+        "ratio": 72.1
+      },
+      {
+        "word": "privates",
+        "count": 5,
+        "score": 23.25,
+        "ratio": 103.5
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 454,
     "partyAvgWords": 500,
-    "parliamentAvgWords": 584,
+    "parliamentAvgWords": 587,
     "vsParty": 0.91,
-    "vsParliament": 0.78
+    "vsParliament": 0.77
   },
   "funFacts": [
     {
@@ -133,20 +199,20 @@
         "isCorrect": false
       },
       {
-        "text": "Energie",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
         "text": "Bargeld",
         "isCorrect": true
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Bargeld\" nutzt Lisa Schubert 451.7× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "198.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Bargeld\" nutzt Lisa Schubert 449.7× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "194.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -293,15 +359,15 @@
           "count": 3
         },
         {
-          "word": "wohnung",
+          "word": "miete",
           "count": 1
         },
         {
-          "word": "jugend",
+          "word": "armut",
           "count": 1
         },
         {
-          "word": "gerechtigkeit",
+          "word": "inklusion",
           "count": 1
         }
       ],
@@ -313,11 +379,11 @@
       ],
       "gesundheit": [
         {
-          "word": "gesundheitssystem",
+          "word": "sucht",
           "count": 1
         },
         {
-          "word": "sucht",
+          "word": "gesundheitssystem",
           "count": 1
         }
       ],
@@ -391,11 +457,11 @@
       ],
       "arbeit": [
         {
-          "word": "arbeitsplätze",
+          "word": "einkommen",
           "count": 1
         },
         {
-          "word": "einkommen",
+          "word": "arbeitsplätze",
           "count": 1
         }
       ],

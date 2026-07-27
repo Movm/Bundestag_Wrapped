@@ -11,23 +11,23 @@
   "minWords": 369,
   "maxWords": 447,
   "rankings": {
-    "speechRank": 557,
-    "wordsRank": 590,
-    "partySpeechRank": 180,
-    "partyWordsRank": 196,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 10.9,
+    "speechRank": 571,
+    "wordsRank": 592,
+    "partySpeechRank": 186,
+    "partyWordsRank": 199,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 8.8,
     "verbosityRank": 324,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 113,
-    "longestSpeechRank": 599
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 116,
+    "longestSpeechRank": 600
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 1,
     "interrupterRank": null,
-    "interruptedRank": 592
+    "interruptedRank": 596
   },
   "words": {
     "topWords": [
@@ -56,7 +56,11 @@
         "count": 5
       },
       {
-        "word": "schaffen",
+        "word": "gesetz",
+        "count": 4
+      },
+      {
+        "word": "schafft",
         "count": 4
       },
       {
@@ -64,11 +68,7 @@
         "count": 4
       },
       {
-        "word": "gesetz",
-        "count": 4
-      },
-      {
-        "word": "schafft",
+        "word": "schaffen",
         "count": 4
       }
     ],
@@ -76,26 +76,26 @@
       {
         "word": "ältere",
         "count": 5,
-        "ratioParty": 241.5,
-        "ratioBundestag": 152.6
+        "ratioParty": 252.6,
+        "ratioBundestag": 154.9
       },
       {
         "word": "ausbildung",
         "count": 10,
-        "ratioParty": 68.1,
-        "ratioBundestag": 84.8
+        "ratioParty": 72.7,
+        "ratioBundestag": 90.4
       },
       {
         "word": "teilhabe",
         "count": 6,
-        "ratioParty": 56.9,
-        "ratioBundestag": 61.2
+        "ratioParty": 61.8,
+        "ratioBundestag": 65.9
       },
       {
         "word": "pflege",
         "count": 6,
-        "ratioParty": 30.1,
-        "ratioBundestag": 33.8
+        "ratioParty": 29.9,
+        "ratioBundestag": 33.6
       },
       {
         "word": "deutlich",
@@ -104,14 +104,80 @@
         "ratioBundestag": 8.5
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "ausbildung",
+        "count": 10,
+        "score": 43.0,
+        "ratio": 72.7
+      },
+      {
+        "word": "ältere",
+        "count": 5,
+        "score": 27.68,
+        "ratio": 252.6
+      },
+      {
+        "word": "teilhabe",
+        "count": 6,
+        "score": 24.84,
+        "ratio": 61.8
+      },
+      {
+        "word": "pflege",
+        "count": 6,
+        "score": 20.58,
+        "ratio": 29.9
+      },
+      {
+        "word": "deutlich",
+        "count": 7,
+        "score": 14.81,
+        "ratio": 7.3
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "ausbildung",
+        "count": 10,
+        "score": 45.15,
+        "ratio": 90.4
+      },
+      {
+        "word": "ältere",
+        "count": 5,
+        "score": 25.25,
+        "ratio": 154.9
+      },
+      {
+        "word": "teilhabe",
+        "count": 6,
+        "score": 25.22,
+        "ratio": 65.9
+      },
+      {
+        "word": "pflege",
+        "count": 6,
+        "score": 21.26,
+        "ratio": 33.6
+      },
+      {
+        "word": "deutlich",
+        "count": 7,
+        "score": 15.76,
+        "ratio": 8.5
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 419,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.65,
-    "vsParliament": 0.72
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.64,
+    "vsParliament": 0.71
   },
   "funFacts": [
     {
@@ -129,24 +195,24 @@
     "question": "Welches Wort nutzt Astrid Timmermann-Fechter häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
         "text": "Ältere",
         "isCorrect": true
-      },
-      {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ältere\" nutzt Astrid Timmermann-Fechter 241.5× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "152.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Ältere\" nutzt Astrid Timmermann-Fechter 252.6× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "154.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

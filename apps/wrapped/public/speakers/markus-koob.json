@@ -11,23 +11,23 @@
   "minWords": 643,
   "maxWords": 759,
   "rankings": {
-    "speechRank": 592,
-    "wordsRank": 583,
-    "partySpeechRank": 194,
-    "partyWordsRank": 192,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 5.3,
+    "speechRank": 590,
+    "wordsRank": 585,
+    "partySpeechRank": 193,
+    "partyWordsRank": 194,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 5.8,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 299
+    "longestSpeechRank": 298
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 6,
     "interrupterRank": null,
-    "interruptedRank": 532
+    "interruptedRank": 528
   },
   "words": {
     "topWords": [
@@ -48,14 +48,6 @@
         "count": 5
       },
       {
-        "word": "reden",
-        "count": 4
-      },
-      {
-        "word": "internationalen",
-        "count": 4
-      },
-      {
         "word": "wahl",
         "count": 4
       },
@@ -64,7 +56,15 @@
         "count": 4
       },
       {
+        "word": "internationalen",
+        "count": 4
+      },
+      {
         "word": "globalen",
+        "count": 4
+      },
+      {
+        "word": "reden",
         "count": 4
       },
       {
@@ -76,24 +76,54 @@
       {
         "word": "sudan",
         "count": 5,
-        "ratioParty": 84.6,
-        "ratioBundestag": 68.2
+        "ratioParty": 90.6,
+        "ratioBundestag": 76.8
       },
       {
         "word": "einfluss",
         "count": 6,
-        "ratioParty": 82.0,
-        "ratioBundestag": 69.4
+        "ratioParty": 80.8,
+        "ratioBundestag": 68.2
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "einfluss",
+        "count": 6,
+        "score": 26.43,
+        "ratio": 80.8
+      },
+      {
+        "word": "sudan",
+        "count": 5,
+        "score": 22.59,
+        "ratio": 90.6
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "einfluss",
+        "count": 6,
+        "score": 25.42,
+        "ratio": 68.2
+      },
+      {
+        "word": "sudan",
+        "count": 5,
+        "score": 21.77,
+        "ratio": 76.8
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 701,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 1.09,
-    "vsParliament": 1.2
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 1.07,
+    "vsParliament": 1.19
   },
   "funFacts": [
     {
@@ -111,24 +141,24 @@
     "question": "Welches Wort nutzt Markus Koob häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
         "text": "Sudan",
         "isCorrect": true
       },
       {
-        "text": "Abstimmung",
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sudan\" nutzt Markus Koob 84.6× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "68.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Sudan\" nutzt Markus Koob 90.6× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "76.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -255,6 +285,10 @@
       ],
       "europa": [
         {
+          "word": "außenpolitik",
+          "count": 2
+        },
+        {
           "word": "außenminister",
           "count": 2
         },
@@ -263,15 +297,11 @@
           "count": 2
         },
         {
-          "word": "außenpolitik",
-          "count": 2
-        },
-        {
-          "word": "waffenstillstand",
+          "word": "europa",
           "count": 1
         },
         {
-          "word": "europa",
+          "word": "waffenstillstand",
           "count": 1
         }
       ],

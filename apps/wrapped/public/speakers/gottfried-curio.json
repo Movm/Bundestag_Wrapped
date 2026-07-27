@@ -11,23 +11,23 @@
   "minWords": 68,
   "maxWords": 1155,
   "rankings": {
-    "speechRank": 227,
+    "speechRank": 234,
     "wordsRank": 92,
-    "partySpeechRank": 48,
+    "partySpeechRank": 49,
     "partyWordsRank": 19,
     "partySize": 150,
-    "totalSpeakers": 625,
-    "percentile": 63.7,
-    "verbosityRank": 21,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 7,
-    "longestSpeechRank": 43
+    "totalSpeakers": 626,
+    "percentile": 62.6,
+    "verbosityRank": 24,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 8,
+    "longestSpeechRank": 45
   },
   "drama": {
-    "interruptionsGiven": 33,
+    "interruptionsGiven": 32,
     "interruptionsReceived": 42,
-    "interrupterRank": 154,
-    "interruptedRank": 147
+    "interrupterRank": 157,
+    "interruptedRank": 155
   },
   "words": {
     "topWords": [
@@ -72,49 +72,129 @@
       {
         "word": "münster",
         "count": 5,
-        "ratioParty": 203.7,
-        "ratioBundestag": 92.0
+        "ratioParty": 202.4,
+        "ratioBundestag": 107.9
       },
       {
         "word": "einbürgerung",
         "count": 30,
-        "ratioParty": 188.0,
-        "ratioBundestag": 147.3
+        "ratioParty": 186.8,
+        "ratioBundestag": 146.7
       },
       {
         "word": "zurückzuweisen",
         "count": 5,
-        "ratioParty": 101.8,
-        "ratioBundestag": 102.3
+        "ratioParty": 101.2,
+        "ratioBundestag": 96.5
       },
       {
         "word": "ausnahmslos",
         "count": 8,
-        "ratioParty": 93.1,
-        "ratioBundestag": 184.1
+        "ratioParty": 92.5,
+        "ratioBundestag": 172.6
       },
       {
         "word": "subsidiär",
         "count": 5,
-        "ratioParty": 81.5,
-        "ratioBundestag": 36.1
+        "ratioParty": 81.0,
+        "ratioBundestag": 36.0
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "einbürgerung",
+        "count": 30,
+        "score": 157.06,
+        "ratio": 186.8
+      },
+      {
+        "word": "ausnahmslos",
+        "count": 8,
+        "score": 36.3,
+        "ratio": 92.5
+      },
+      {
+        "word": "münster",
+        "count": 5,
+        "score": 26.58,
+        "ratio": 202.4
+      },
+      {
+        "word": "zurückzuweisen",
+        "count": 5,
+        "score": 23.13,
+        "ratio": 101.2
+      },
+      {
+        "word": "subsidiär",
+        "count": 5,
+        "score": 22.03,
+        "ratio": 81.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "einbürgerung",
+        "count": 30,
+        "score": 149.86,
+        "ratio": 146.7
+      },
+      {
+        "word": "ausnahmslos",
+        "count": 8,
+        "score": 41.25,
+        "ratio": 172.6
+      },
+      {
+        "word": "münster",
+        "count": 5,
+        "score": 23.45,
+        "ratio": 107.9
+      },
+      {
+        "word": "zurückzuweisen",
+        "count": 5,
+        "score": 22.9,
+        "ratio": 96.5
+      },
+      {
+        "word": "subsidiär",
+        "count": 5,
+        "score": 18.05,
+        "ratio": 36.0
       }
     ],
     "signatureAdjectives": [
       {
         "word": "unfähig",
         "count": 3,
-        "ratioParty": 17.5,
-        "ratioBundestag": 58.1
+        "ratioParty": 16.2,
+        "ratioBundestag": 55.0
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "unfähig",
+        "count": 3,
+        "score": 8.53,
+        "ratio": 16.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "unfähig",
+        "count": 3,
+        "score": 12.08,
+        "ratio": 55.0
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 687,
-    "partyAvgWords": 558,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 560,
+    "parliamentAvgWords": 587,
     "vsParty": 1.23,
-    "vsParliament": 1.18
+    "vsParliament": 1.17
   },
   "funFacts": [
     {
@@ -130,18 +210,18 @@
     {
       "emoji": "⚡",
       "label": "Zwischenrufe",
-      "value": "33"
+      "value": "32"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Gottfried Curio häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Rente",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
@@ -149,35 +229,35 @@
         "isCorrect": true
       },
       {
-        "text": "Haushalt",
+        "text": "Kinder",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Münster\" nutzt Dr. Gottfried Curio 203.7× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "92.0× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Münster\" nutzt Dr. Gottfried Curio 202.4× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "107.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Gottfried Curio häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Falsch",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
         "text": "Unfähig",
         "isCorrect": true
+      },
+      {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Unfähig\" nutzt Dr. Gottfried Curio 17.5× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "58.1× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Unfähig\" nutzt Dr. Gottfried Curio 16.2× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "55.0× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": null,
   "toneProfile": {
@@ -281,23 +361,23 @@
       ],
       "wirtschaft": [
         {
-          "word": "industrie",
-          "count": 2
-        },
-        {
           "word": "wirtschaftskrise",
           "count": 2
         },
         {
-          "word": "import",
-          "count": 1
-        },
-        {
-          "word": "handel",
-          "count": 1
+          "word": "industrie",
+          "count": 2
         },
         {
           "word": "fachkräfte",
+          "count": 1
+        },
+        {
+          "word": "qualifikation",
+          "count": 1
+        },
+        {
+          "word": "import",
           "count": 1
         }
       ],
@@ -311,11 +391,11 @@
           "count": 4
         },
         {
-          "word": "rente",
+          "word": "bürgergeld",
           "count": 2
         },
         {
-          "word": "bürgergeld",
+          "word": "rente",
           "count": 2
         },
         {
@@ -341,11 +421,15 @@
           "count": 3
         },
         {
-          "word": "angriff",
+          "word": "mord",
           "count": 2
         }
       ],
       "gesundheit": [
+        {
+          "word": "kranke",
+          "count": 2
+        },
         {
           "word": "arzt",
           "count": 2
@@ -355,11 +439,7 @@
           "count": 2
         },
         {
-          "word": "kranke",
-          "count": 2
-        },
-        {
-          "word": "pflegegrad",
+          "word": "krankenkasse",
           "count": 1
         },
         {
@@ -373,19 +453,19 @@
           "count": 4
         },
         {
-          "word": "afrika",
-          "count": 2
-        },
-        {
-          "word": "außenminister",
-          "count": 2
-        },
-        {
           "word": "kiew",
           "count": 2
         },
         {
           "word": "gipfel",
+          "count": 2
+        },
+        {
+          "word": "afrika",
+          "count": 2
+        },
+        {
+          "word": "außenminister",
           "count": 2
         }
       ],
@@ -407,7 +487,7 @@
           "count": 1
         },
         {
-          "word": "netz",
+          "word": "internet",
           "count": 1
         }
       ],
@@ -417,11 +497,11 @@
           "count": 7
         },
         {
-          "word": "schüler",
+          "word": "lehrer",
           "count": 3
         },
         {
-          "word": "lehrer",
+          "word": "schüler",
           "count": 3
         },
         {
@@ -429,33 +509,37 @@
           "count": 2
         },
         {
-          "word": "schule",
+          "word": "bildungssystem",
           "count": 1
         }
       ],
       "finanzen": [
         {
-          "word": "kosten",
-          "count": 2
-        },
-        {
           "word": "schuldenbremse",
           "count": 2
         },
         {
+          "word": "kosten",
+          "count": 2
+        },
+        {
+          "word": "entlastung",
+          "count": 1
+        },
+        {
+          "word": "schulden",
+          "count": 1
+        },
+        {
           "word": "haushalt",
-          "count": 1
-        },
-        {
-          "word": "steuerzahler",
-          "count": 1
-        },
-        {
-          "word": "defizit",
           "count": 1
         }
       ],
       "justiz": [
+        {
+          "word": "grundgesetz",
+          "count": 2
+        },
         {
           "word": "straftaten",
           "count": 2
@@ -465,15 +549,11 @@
           "count": 2
         },
         {
-          "word": "grundgesetz",
-          "count": 2
-        },
-        {
           "word": "gericht",
           "count": 1
         },
         {
-          "word": "bundesverfassungsgericht",
+          "word": "verordnung",
           "count": 1
         }
       ],

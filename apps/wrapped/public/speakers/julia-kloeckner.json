@@ -11,22 +11,22 @@
   "minWords": 693,
   "maxWords": 693,
   "rankings": {
-    "speechRank": 614,
+    "speechRank": 619,
     "wordsRank": 611,
-    "partySpeechRank": 204,
+    "partySpeechRank": 207,
     "partyWordsRank": 204,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 1.8,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 1.1,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 381
+    "longestSpeechRank": 384
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 1,
-    "interrupterRank": 429,
+    "interrupterRank": 433,
     "interruptedRank": 605
   },
   "words": {
@@ -76,30 +76,72 @@
       {
         "word": "mädchen",
         "count": 5,
-        "ratioParty": 253.9,
-        "ratioBundestag": 136.4
+        "ratioParty": 214.9,
+        "ratioBundestag": 121.2
       },
       {
         "word": "gewalt",
         "count": 16,
-        "ratioParty": 77.9,
-        "ratioBundestag": 62.4
+        "ratioParty": 75.7,
+        "ratioBundestag": 59.8
       },
       {
         "word": "frauen",
         "count": 12,
-        "ratioParty": 50.4,
-        "ratioBundestag": 35.6
+        "ratioParty": 49.2,
+        "ratioBundestag": 35.4
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "gewalt",
+        "count": 16,
+        "score": 69.44,
+        "ratio": 75.7
+      },
+      {
+        "word": "frauen",
+        "count": 12,
+        "score": 46.99,
+        "ratio": 49.2
+      },
+      {
+        "word": "mädchen",
+        "count": 5,
+        "score": 26.87,
+        "ratio": 214.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "gewalt",
+        "count": 16,
+        "score": 65.72,
+        "ratio": 59.8
+      },
+      {
+        "word": "frauen",
+        "count": 12,
+        "score": 43.13,
+        "ratio": 35.4
+      },
+      {
+        "word": "mädchen",
+        "count": 5,
+        "score": 24.03,
+        "ratio": 121.2
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 693,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 1.07,
-    "vsParliament": 1.19
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 1.06,
+    "vsParliament": 1.18
   },
   "funFacts": [
     {
@@ -112,11 +154,11 @@
     "question": "Welches Wort nutzt Julia Klöckner häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Verantwortung",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Migration",
         "isCorrect": false
       },
       {
@@ -124,12 +166,12 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetz",
+        "text": "Klima",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Mädchen\" nutzt Julia Klöckner 253.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "136.4× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Mädchen\" nutzt Julia Klöckner 214.9× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "121.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {

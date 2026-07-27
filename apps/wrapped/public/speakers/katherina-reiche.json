@@ -11,23 +11,23 @@
   "minWords": 6,
   "maxWords": 1477,
   "rankings": {
-    "speechRank": 265,
-    "wordsRank": 29,
-    "partySpeechRank": 71,
-    "partyWordsRank": 13,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 57.6,
-    "verbosityRank": 561,
-    "verbosityTotal": 579,
-    "partyVerbosityRank": 178,
-    "longestSpeechRank": 20
+    "speechRank": 262,
+    "wordsRank": 30,
+    "partySpeechRank": 69,
+    "partyWordsRank": 14,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 58.1,
+    "verbosityRank": 562,
+    "verbosityTotal": 580,
+    "partyVerbosityRank": 180,
+    "longestSpeechRank": 21
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 53,
     "interrupterRank": null,
-    "interruptedRank": 105
+    "interruptedRank": 98
   },
   "words": {
     "topWords": [
@@ -58,34 +58,98 @@
     ],
     "signatureWords": [
       {
-        "word": "aufholjagd",
-        "count": 6,
-        "ratioParty": 108.4,
-        "ratioBundestag": 239.6
-      },
-      {
         "word": "übertragungsnetzentgelte",
         "count": 5,
-        "ratioParty": 90.4,
-        "ratioBundestag": 139.7
+        "ratioParty": 90.2,
+        "ratioBundestag": 139.2
+      },
+      {
+        "word": "aufholjagd",
+        "count": 6,
+        "ratioParty": 90.2,
+        "ratioBundestag": 208.8
       },
       {
         "word": "kapazitätsmarkt",
         "count": 6,
-        "ratioParty": 60.2,
-        "ratioBundestag": 139.7
+        "ratioParty": 60.1,
+        "ratioBundestag": 139.2
       },
       {
         "word": "gesicherte",
         "count": 10,
-        "ratioParty": 56.5,
-        "ratioBundestag": 73.5
+        "ratioParty": 45.1,
+        "ratioBundestag": 64.8
       },
       {
         "word": "systemkosten",
         "count": 5,
-        "ratioParty": 45.2,
-        "ratioBundestag": 82.2
+        "ratioParty": 45.1,
+        "ratioBundestag": 81.9
+      }
+    ],
+    "signatureWordsParty": [
+      {
+        "word": "gesicherte",
+        "count": 10,
+        "score": 38.31,
+        "ratio": 45.1
+      },
+      {
+        "word": "aufholjagd",
+        "count": 6,
+        "score": 27.08,
+        "ratio": 90.2
+      },
+      {
+        "word": "kapazitätsmarkt",
+        "count": 6,
+        "score": 24.68,
+        "ratio": 60.1
+      },
+      {
+        "word": "übertragungsnetzentgelte",
+        "count": 5,
+        "score": 22.57,
+        "ratio": 90.2
+      },
+      {
+        "word": "systemkosten",
+        "count": 5,
+        "score": 19.15,
+        "ratio": 45.1
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "gesicherte",
+        "count": 10,
+        "score": 41.87,
+        "ratio": 64.8
+      },
+      {
+        "word": "aufholjagd",
+        "count": 6,
+        "score": 32.08,
+        "ratio": 208.8
+      },
+      {
+        "word": "kapazitätsmarkt",
+        "count": 6,
+        "score": 29.66,
+        "ratio": 139.2
+      },
+      {
+        "word": "übertragungsnetzentgelte",
+        "count": 5,
+        "score": 24.72,
+        "ratio": 139.2
+      },
+      {
+        "word": "systemkosten",
+        "count": 5,
+        "score": 22.09,
+        "ratio": 81.9
       }
     ],
     "signatureAdjectives": [
@@ -99,32 +163,96 @@
         "word": "erfolgreich",
         "count": 10,
         "ratioParty": 5.6,
-        "ratioBundestag": 7.6
+        "ratioBundestag": 7.5
       },
       {
         "word": "verlässlich",
         "count": 4,
-        "ratioParty": 4.8,
-        "ratioBundestag": 5.0
+        "ratioParty": 4.6,
+        "ratioBundestag": 4.9
       },
       {
         "word": "nachhaltig",
         "count": 3,
         "ratioParty": 3.2,
-        "ratioBundestag": 3.1
+        "ratioBundestag": 3.2
       },
       {
         "word": "stark",
         "count": 7,
-        "ratioParty": 2.2,
+        "ratioParty": 2.1,
         "ratioBundestag": 2.7
+      }
+    ],
+    "signatureAdjectivesParty": [
+      {
+        "word": "erfolgreich",
+        "count": 10,
+        "score": 18.87,
+        "ratio": 5.6
+      },
+      {
+        "word": "wettbewerbsfähig",
+        "count": 5,
+        "score": 9.66,
+        "ratio": 5.9
+      },
+      {
+        "word": "stark",
+        "count": 7,
+        "score": 7.92,
+        "ratio": 2.1
+      },
+      {
+        "word": "verlässlich",
+        "count": 4,
+        "score": 6.89,
+        "ratio": 4.6
+      },
+      {
+        "word": "nachhaltig",
+        "count": 3,
+        "score": 4.31,
+        "ratio": 3.2
+      }
+    ],
+    "signatureAdjectivesBundestag": [
+      {
+        "word": "erfolgreich",
+        "count": 10,
+        "score": 21.4,
+        "ratio": 7.5
+      },
+      {
+        "word": "wettbewerbsfähig",
+        "count": 5,
+        "score": 12.12,
+        "ratio": 10.3
+      },
+      {
+        "word": "stark",
+        "count": 7,
+        "score": 9.16,
+        "ratio": 2.7
+      },
+      {
+        "word": "verlässlich",
+        "count": 4,
+        "score": 7.1,
+        "ratio": 4.9
+      },
+      {
+        "word": "nachhaltig",
+        "count": 3,
+        "score": 4.31,
+        "ratio": 3.2
       }
     ]
   },
   "comparison": {
     "speakerAvgWords": 183,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
     "vsParty": 0.28,
     "vsParliament": 0.31
   },
@@ -144,34 +272,34 @@
     "question": "Welches Wort nutzt Katherina Reiche häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
         "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Aufholjagd",
+        "text": "Übertragungsnetzentgelte",
         "isCorrect": true
       },
       {
-        "text": "Energie",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Aufholjagd\" nutzt Katherina Reiche 108.4× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "239.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Übertragungsnetzentgelte\" nutzt Katherina Reiche 90.2× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "139.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Katherina Reiche häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Gut",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "Alt",
+        "text": "Groß",
         "isCorrect": false
       },
       {
@@ -179,7 +307,7 @@
         "isCorrect": true
       },
       {
-        "text": "Falsch",
+        "text": "Notwendig",
         "isCorrect": false
       }
     ],
@@ -324,15 +452,15 @@
           "count": 36
         },
         {
+          "word": "wettbewerb",
+          "count": 18
+        },
+        {
           "word": "wirtschaft",
           "count": 18
         },
         {
           "word": "mittelstand",
-          "count": 18
-        },
-        {
-          "word": "wettbewerb",
           "count": 18
         }
       ],
@@ -378,11 +506,11 @@
           "count": 1
         },
         {
-          "word": "pflegekraft",
+          "word": "corona",
           "count": 1
         },
         {
-          "word": "corona",
+          "word": "pflegekraft",
           "count": 1
         }
       ],
@@ -404,7 +532,7 @@
           "count": 3
         },
         {
-          "word": "frieden",
+          "word": "europäisch",
           "count": 2
         }
       ],
@@ -440,15 +568,15 @@
           "count": 1
         },
         {
+          "word": "forschungsförderung",
+          "count": 1
+        },
+        {
           "word": "schulabschluss",
           "count": 1
         },
         {
           "word": "ausbildung",
-          "count": 1
-        },
-        {
-          "word": "universität",
           "count": 1
         }
       ],
@@ -462,11 +590,11 @@
           "count": 10
         },
         {
-          "word": "sondervermögen",
+          "word": "haushalt",
           "count": 8
         },
         {
-          "word": "haushalt",
+          "word": "sondervermögen",
           "count": 8
         },
         {
@@ -520,11 +648,11 @@
           "count": 15
         },
         {
-          "word": "straßen",
+          "word": "schiff",
           "count": 2
         },
         {
-          "word": "schiff",
+          "word": "straßen",
           "count": 2
         },
         {

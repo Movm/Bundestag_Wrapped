@@ -11,23 +11,23 @@
   "minWords": 8,
   "maxWords": 698,
   "rankings": {
-    "speechRank": 469,
-    "wordsRank": 508,
-    "partySpeechRank": 146,
-    "partyWordsRank": 168,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 25.0,
-    "verbosityRank": 423,
-    "verbosityTotal": 579,
+    "speechRank": 440,
+    "wordsRank": 507,
+    "partySpeechRank": 133,
+    "partyWordsRank": 170,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 29.7,
+    "verbosityRank": 424,
+    "verbosityTotal": 580,
     "partyVerbosityRank": 148,
-    "longestSpeechRank": 373
+    "longestSpeechRank": 376
   },
   "drama": {
-    "interruptionsGiven": 4,
+    "interruptionsGiven": 6,
     "interruptionsReceived": 16,
-    "interrupterRank": 367,
-    "interruptedRank": 373
+    "interrupterRank": 324,
+    "interruptedRank": 378
   },
   "words": {
     "topWords": [
@@ -60,11 +60,11 @@
         "count": 9
       },
       {
-        "word": "ukraine",
+        "word": "interesse",
         "count": 8
       },
       {
-        "word": "interesse",
+        "word": "ukraine",
         "count": 8
       },
       {
@@ -76,42 +76,108 @@
       {
         "word": "aachen",
         "count": 7,
-        "ratioParty": 684.2,
-        "ratioBundestag": 420.7
+        "ratioParty": 683.1,
+        "ratioBundestag": 419.2
       },
       {
         "word": "vertrag",
         "count": 7,
-        "ratioParty": 87.7,
-        "ratioBundestag": 63.0
+        "ratioParty": 92.3,
+        "ratioBundestag": 63.5
       },
       {
         "word": "aggression",
         "count": 5,
-        "ratioParty": 53.1,
-        "ratioBundestag": 102.9
-      },
-      {
-        "word": "europäer",
-        "count": 6,
-        "ratioParty": 33.7,
-        "ratioBundestag": 64.9
+        "ratioParty": 53.0,
+        "ratioBundestag": 106.9
       },
       {
         "word": "nationen",
         "count": 9,
-        "ratioParty": 31.9,
-        "ratioBundestag": 37.8
+        "ratioParty": 33.3,
+        "ratioBundestag": 38.8
+      },
+      {
+        "word": "europäer",
+        "count": 6,
+        "ratioParty": 32.9,
+        "ratioBundestag": 63.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "aachen",
+        "count": 7,
+        "score": 45.7,
+        "ratio": 683.1
+      },
+      {
+        "word": "nationen",
+        "count": 9,
+        "score": 31.82,
+        "ratio": 33.3
+      },
+      {
+        "word": "vertrag",
+        "count": 7,
+        "score": 31.75,
+        "ratio": 92.3
+      },
+      {
+        "word": "europäer",
+        "count": 6,
+        "score": 21.14,
+        "ratio": 32.9
+      },
+      {
+        "word": "aggression",
+        "count": 5,
+        "score": 19.94,
+        "ratio": 53.0
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "aachen",
+        "count": 7,
+        "score": 42.29,
+        "ratio": 419.2
+      },
+      {
+        "word": "nationen",
+        "count": 9,
+        "score": 33.15,
+        "ratio": 38.8
+      },
+      {
+        "word": "vertrag",
+        "count": 7,
+        "score": 29.17,
+        "ratio": 63.5
+      },
+      {
+        "word": "europäer",
+        "count": 6,
+        "score": 25.02,
+        "ratio": 63.7
+      },
+      {
+        "word": "aggression",
+        "count": 5,
+        "score": 23.41,
+        "ratio": 106.9
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 372,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 0.58,
-    "vsParliament": 0.64
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 0.57,
+    "vsParliament": 0.63
   },
   "funFacts": [
     {
@@ -129,11 +195,7 @@
     "question": "Welches Wort nutzt Roland Theis häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
+        "text": "Familie",
         "isCorrect": false
       },
       {
@@ -141,12 +203,16 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaft",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Politik",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Aachen\" nutzt Roland Theis 684.2× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "420.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Aachen\" nutzt Roland Theis 683.1× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "419.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
@@ -168,7 +234,7 @@
         "emoji": "🦉",
         "name": "Eule",
         "title": "Themenexperte",
-        "reason": "Dein Fachwort \"Aachen\" nutzt du 684.2× häufiger als deine Fraktion.",
+        "reason": "Dein Fachwort \"Aachen\" nutzt du 683.1× häufiger als deine Fraktion.",
         "id": "eule",
         "score": 0.88
       }
@@ -243,11 +309,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "migration",
+          "word": "integration",
           "count": 1
         },
         {
-          "word": "integration",
+          "word": "migration",
           "count": 1
         }
       ],
@@ -269,12 +335,16 @@
       ],
       "sicherheit": [
         {
+          "word": "verteidigung",
+          "count": 5
+        },
+        {
           "word": "soldaten",
           "count": 5
         },
         {
-          "word": "verteidigung",
-          "count": 5
+          "word": "korruption",
+          "count": 1
         },
         {
           "word": "verteidigungsfähigkeit",
@@ -282,10 +352,6 @@
         },
         {
           "word": "streitkräfte",
-          "count": 1
-        },
-        {
-          "word": "armee",
           "count": 1
         }
       ],
@@ -313,21 +379,21 @@
           "count": 7
         },
         {
-          "word": "russland",
+          "word": "putin",
           "count": 3
         }
       ],
       "bildung": [
+        {
+          "word": "schulen",
+          "count": 1
+        },
         {
           "word": "ausbildung",
           "count": 1
         },
         {
           "word": "studium",
-          "count": 1
-        },
-        {
-          "word": "schulen",
           "count": 1
         }
       ],
@@ -337,11 +403,11 @@
           "count": 6
         },
         {
-          "word": "kosten",
+          "word": "investitionen",
           "count": 1
         },
         {
-          "word": "investitionen",
+          "word": "kosten",
           "count": 1
         }
       ],

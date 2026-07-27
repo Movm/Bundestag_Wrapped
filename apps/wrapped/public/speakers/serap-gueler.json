@@ -11,17 +11,17 @@
   "minWords": 1102,
   "maxWords": 1156,
   "rankings": {
-    "speechRank": 608,
-    "wordsRank": 544,
-    "partySpeechRank": 199,
-    "partyWordsRank": 176,
-    "partySize": 211,
-    "totalSpeakers": 625,
-    "percentile": 2.7,
+    "speechRank": 613,
+    "wordsRank": 548,
+    "partySpeechRank": 203,
+    "partyWordsRank": 177,
+    "partySize": 212,
+    "totalSpeakers": 626,
+    "percentile": 2.1,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 42
+    "longestSpeechRank": 44
   },
   "drama": {
     "interruptionsGiven": 0,
@@ -76,42 +76,108 @@
       {
         "word": "sudan",
         "count": 14,
-        "ratioParty": 177.9,
-        "ratioBundestag": 126.6
+        "ratioParty": 193.0,
+        "ratioBundestag": 143.4
       },
       {
         "word": "waffenstillstand",
         "count": 5,
-        "ratioParty": 75.6,
-        "ratioBundestag": 96.7
+        "ratioParty": 75.5,
+        "ratioBundestag": 99.3
       },
       {
         "word": "region",
         "count": 18,
-        "ratioParty": 46.5,
-        "ratioBundestag": 61.5
+        "ratioParty": 48.6,
+        "ratioBundestag": 64.6
       },
       {
         "word": "krise",
         "count": 6,
-        "ratioParty": 34.3,
-        "ratioBundestag": 24.0
+        "ratioParty": 32.3,
+        "ratioBundestag": 23.2
       },
       {
         "word": "verhandlungen",
         "count": 5,
-        "ratioParty": 20.6,
-        "ratioBundestag": 26.9
+        "ratioParty": 20.9,
+        "ratioBundestag": 26.7
       }
     ],
-    "signatureAdjectives": []
+    "signatureWordsParty": [
+      {
+        "word": "sudan",
+        "count": 14,
+        "score": 73.75,
+        "ratio": 193.0
+      },
+      {
+        "word": "region",
+        "count": 18,
+        "score": 70.27,
+        "ratio": 48.6
+      },
+      {
+        "word": "waffenstillstand",
+        "count": 5,
+        "score": 21.69,
+        "ratio": 75.5
+      },
+      {
+        "word": "krise",
+        "count": 6,
+        "score": 21.03,
+        "ratio": 32.3
+      },
+      {
+        "word": "verhandlungen",
+        "count": 5,
+        "score": 15.43,
+        "ratio": 20.9
+      }
+    ],
+    "signatureWordsBundestag": [
+      {
+        "word": "region",
+        "count": 18,
+        "score": 75.3,
+        "ratio": 64.6
+      },
+      {
+        "word": "sudan",
+        "count": 14,
+        "score": 69.62,
+        "ratio": 143.4
+      },
+      {
+        "word": "waffenstillstand",
+        "count": 5,
+        "score": 23.04,
+        "ratio": 99.3
+      },
+      {
+        "word": "krise",
+        "count": 6,
+        "score": 19.12,
+        "ratio": 23.2
+      },
+      {
+        "word": "verhandlungen",
+        "count": 5,
+        "score": 16.61,
+        "ratio": 26.7
+      }
+    ],
+    "signatureAdjectives": [],
+    "signatureAdjectivesParty": [],
+    "signatureAdjectivesBundestag": []
   },
   "comparison": {
     "speakerAvgWords": 1129,
-    "partyAvgWords": 645,
-    "parliamentAvgWords": 584,
-    "vsParty": 1.75,
-    "vsParliament": 1.93
+    "partyAvgWords": 653,
+    "parliamentAvgWords": 587,
+    "vsParty": 1.73,
+    "vsParliament": 1.92
   },
   "funFacts": [
     {
@@ -129,7 +195,7 @@
     "question": "Welches Wort nutzt Serap Güler häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Sicherheit",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
@@ -137,16 +203,16 @@
         "isCorrect": true
       },
       {
-        "text": "Energie",
+        "text": "Europa",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sudan\" nutzt Serap Güler 177.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "126.6× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Sudan\" nutzt Serap Güler 193.0× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "143.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": null,
   "spiritAnimal": {
