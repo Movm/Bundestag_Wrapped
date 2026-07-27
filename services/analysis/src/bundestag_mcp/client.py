@@ -12,6 +12,10 @@ from typing import Any
 import httpx
 
 
+RETRYABLE_STATUS_CODES = {429, 500, 502, 503, 504}
+MAX_RETRIES = 5
+
+
 class BundestagMCPClient:
     """Client to interact with bundestag-mcp server via MCP protocol."""
 
@@ -89,17 +93,25 @@ class BundestagMCPClient:
         if self.session_id:
             headers["mcp-session-id"] = self.session_id
 
-        # Retry logic for transient errors
-        max_retries = 3
-        for attempt in range(max_retries):
+        # Retry transient network failures and upstream throttling/server errors.
+        # Full-text protocol requests can occasionally surface proxy 502/504
+        # responses even though retrying the same request succeeds.
+        for attempt in range(MAX_RETRIES):
             try:
                 response = await self._client.post(f"{self.base_url}/mcp", json=request, headers=headers)
                 response.raise_for_status()
                 break
-            except (httpx.ReadError, httpx.ConnectError, httpx.TimeoutException) as e:
-                if attempt == max_retries - 1:
+            except httpx.HTTPStatusError as error:
+                if (
+                    error.response.status_code not in RETRYABLE_STATUS_CODES
+                    or attempt == MAX_RETRIES - 1
+                ):
                     raise
-                await asyncio.sleep(2 ** attempt)  # Exponential backoff
+                await asyncio.sleep(2 ** attempt)
+            except (httpx.ReadError, httpx.ConnectError, httpx.TimeoutException):
+                if attempt == MAX_RETRIES - 1:
+                    raise
+                await asyncio.sleep(2 ** attempt)
 
         if "text/event-stream" in response.headers.get("content-type", ""):
             async for line in response.aiter_lines():

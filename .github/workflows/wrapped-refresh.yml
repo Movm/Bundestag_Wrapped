@@ -82,6 +82,12 @@ jobs:
           fi
 
           SITZUNGEN=$(python -c "import json;print(json.load(open('apps/wrapped/public/wrapped.json'))['metadata']['sitzungen'])")
+          CURRENT_SITZUNGEN=$(git show HEAD:apps/wrapped/public/wrapped.json | python -c "import json,sys;print(json.load(sys.stdin)['metadata']['sitzungen'])")
+          if (( SITZUNGEN < CURRENT_SITZUNGEN )); then
+            echo "::error::Refusing to publish a data regression from Sitzung ${CURRENT_SITZUNGEN} to ${SITZUNGEN}."
+            exit 1
+          fi
+
           BRANCH="automation/wrapped-data-refresh"
           COMMIT_MESSAGE="chore(data): refresh Bundestag Wrapped datasets (Sitzung ${SITZUNGEN})"
           PR_TITLE="$COMMIT_MESSAGE"
@@ -114,4 +120,19 @@ jobs:
             gh pr edit "$PR_URL" --title "$PR_TITLE" --body "$PR_BODY"
           fi
 
-          gh pr merge "$PR_URL" --auto --squash
+          CHECK_COUNT=0
+          for _ in {1..12}; do
+            CHECK_COUNT=$(gh pr checks "$PR_URL" --required --json name --jq 'length' 2>/dev/null || true)
+            if (( ${CHECK_COUNT:-0} > 0 )); then
+              break
+            fi
+            sleep 5
+          done
+
+          if (( ${CHECK_COUNT:-0} == 0 )); then
+            echo "::error::No required checks were registered for $PR_URL."
+            exit 1
+          fi
+
+          gh pr checks "$PR_URL" --required --watch --interval 15
+          gh pr merge "$PR_URL" --squash --delete-branch

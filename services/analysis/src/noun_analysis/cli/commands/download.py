@@ -121,7 +121,10 @@ async def _download_protocols(
     console.print(f"\n[green]Download complete![/]")
     console.print(f"  Downloaded: {summary['downloaded']}")
     if summary["failed"]:
-        console.print(f"  [yellow]Failed: {summary['failed']} (will retry on next run)[/]")
+        console.print(f"  [red]Failed: {summary['failed']} (will retry on next run)[/]")
+        raise click.ClickException(
+            f"{summary['failed']} of {summary['total_protocols']} protocols could not be downloaded"
+        )
 
 
 @click.command()
