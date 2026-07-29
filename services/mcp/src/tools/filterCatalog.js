@@ -136,7 +136,7 @@ const SURFACES = {
       { field: 'drucksachetyp', type: 'enum', values: DRUCKSACHETYPEN, valueSource: 'closed', note: 'bundestag_search_drucksachen only.' },
       { field: 'vorgangstyp', type: 'string', valueSource: 'open', note: 'bundestag_search_vorgaenge. Examples: "Gesetzgebung", "Antrag", "Kleine Anfrage", "Selbständiger Antrag".' },
       { field: 'sachgebiet', type: 'string', valueSource: 'open', note: 'bundestag_search_vorgaenge. Open set; examples: "Umwelt", "Recht", "Wirtschaft".' },
-      { field: 'fraktion', type: 'string', values: DIP_PARTY_LONG, valueSource: 'open', note: `bundestag_search_personen. LONG official names. ${PARTY_NAMING_NOTE}` },
+      { field: 'fraktion', type: 'string', values: DIP_PARTY_LONG, valueSource: 'open', note: 'bundestag_search_personen. Filtered page-spanning by the MCP because DIP has no person-faction filter. Official names are listed; common aliases are accepted for every faction, e.g. Union/CDU/CSU, Sozialdemokraten, GRÜNE/B90/GR, Linkspartei, Freie Demokraten, Alternative für Deutschland, Wagenknecht and parteilos.' },
       { field: 'urheber', type: 'string', valueSource: 'open', note: 'bundestag_search_drucksachen. Author/initiator, e.g. "Bundesregierung", "CDU/CSU".' },
       { field: 'initiative', type: 'string', valueSource: 'open', note: 'bundestag_search_vorgaenge. Initiating faction/body, LONG names.' },
       { field: 'aktivitaetsart', type: 'string', valueSource: 'open', note: 'bundestag_search_aktivitaeten. Examples: "Rede", "Frage", "Zwischenfrage", "Schriftliche Frage". Filtered client-side.' },

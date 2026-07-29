@@ -53,7 +53,7 @@ lists every filter field + valid values per search surface. Key filters:
 
 | Filter | Tool(s) | Values |
 |--------|---------|--------|
-| \`fraktion\` / \`initiative\` / \`urheber\` | semantic_search, DIP search, document_sections | **LONG** names: \`CDU/CSU\`, \`SPD\`, \`BÜNDNIS 90/DIE GRÜNEN\`, \`AfD\`, \`DIE LINKE\` |
+| \`fraktion\` / \`initiative\` / \`urheber\` | semantic_search, DIP search, document_sections | **LONG** names: \`CDU/CSU\`, \`SPD\`, \`BÜNDNIS 90/DIE GRÜNEN\`, \`AfD\`, \`DIE LINKE\`; search_personen also accepts common aliases for every faction |
 | \`speakerParty\` | search_speeches | **SHORT** names: \`CDU/CSU\`, \`SPD\`, \`GRÜNE\`, \`AfD\`, \`DIE LINKE\` |
 | \`drucksachetyp\` | search_drucksachen, document_sections | \`Gesetzentwurf\`, \`Antrag\`, \`Kleine Anfrage\`, \`Große Anfrage\`, … (closed) |
 | \`speechType\` / \`category\` | search_speeches | \`rede\`, \`befragung\`, \`fragestunde_antwort\`, … / \`rede\`, \`wortbeitrag\` (closed) |
@@ -63,7 +63,9 @@ lists every filter field + valid values per search surface. Key filters:
 | \`wahlperiode\` | all | 21 = current; 20, 19, … |
 
 - **Party naming differs by layer:** the speeches collection stores SHORT names (\`GRÜNE\`),
-  while DIP tools + \`semantic_search\` \`fraktion\` use LONG names (\`BÜNDNIS 90/DIE GRÜNEN\`).
+  while \`semantic_search\` uses LONG names (\`BÜNDNIS 90/DIE GRÜNEN\`).
+  \`search_personen\` accepts official names plus common aliases for every faction
+  and filters page-spanning in the MCP.
   \`CDU/CSU\`, \`SPD\`, \`AfD\`, \`DIE LINKE\` are identical in both.
 - **Recent-first in a window:** pass \`sort:"newest"\` plus \`dateFrom\`/\`dateTo\` on the semantic
   search tools (\`sort\` also takes \`oldest\`/\`relevance\`; default is relevance).
@@ -540,7 +542,7 @@ export const factionenResource = {
           note: 'MPs without faction membership'
         }
       ],
-      usage_note: 'Always use the official name for API filtering (fraktion parameter). Aliases are for recognition and search fallback only.',
+      usage_note: 'Use official names for semantic_search. bundestag_search_personen also accepts common aliases for every faction (e.g. Union, Sozialdemokraten, GRÜNE, Linkspartei, Freie Demokraten, Alternative für Deutschland, Wagenknecht, parteilos) and filters page-spanning in the MCP because DIP has no person-faction filter.',
       api_tip: 'When searching by party, use bundestag_semantic_search with fraktion parameter set to official name'
     };
   }

@@ -53,6 +53,34 @@ const TEXT_SNIPPET_CHARS = 600;
 // Below this hit count, a title-substring search likely under-covered the topic,
 // so we surface a hint pointing at semantic search.
 const LOW_RECALL_THRESHOLD = 5;
+const PERSON_FACTION_CURSOR_PREFIX = 'person-faction-v1:';
+const PERSON_FACTION_ALIASES = new Map([
+  ['cdu', 'cdu/csu'],
+  ['csu', 'cdu/csu'],
+  ['union', 'cdu/csu'],
+  ['unionsfraktion', 'cdu/csu'],
+  ['sozialdemokraten', 'spd'],
+  ['sozialdemokratische partei deutschlands', 'spd'],
+  ['grune', 'bundnis 90/die grunen'],
+  ['grunen', 'bundnis 90/die grunen'],
+  ['gruene', 'bundnis 90/die grunen'],
+  ['gruenen', 'bundnis 90/die grunen'],
+  ['die grunen', 'bundnis 90/die grunen'],
+  ['b90/gr', 'bundnis 90/die grunen'],
+  ['b90/die grunen', 'bundnis 90/die grunen'],
+  ['alternative fur deutschland', 'afd'],
+  ['linke', 'die linke'],
+  ['linkspartei', 'die linke'],
+  ['freie demokraten', 'fdp'],
+  ['freie demokratische partei', 'fdp'],
+  ['bundnis sahra wagenknecht', 'bsw'],
+  ['wagenknecht', 'bsw'],
+  ['sudschleswigscher wahlerverband', 'ssw'],
+  ['parteilos', 'fraktionslos'],
+  ['unabhangig', 'fraktionslos'],
+  ['unaffiliated', 'fraktionslos'],
+  ['independent', 'fraktionslos']
+]);
 
 function pickFields(obj, fields) {
   const out = {};
@@ -112,6 +140,108 @@ function projectRow(endpoint, row, query) {
   }
   const fields = PROJECTION_FIELDS[endpoint];
   return fields ? pickFields(row, fields) : row;
+}
+
+function normalizeFaction(value) {
+  if (typeof value !== 'string') return '';
+
+  const normalized = value
+    .trim()
+    .toLocaleLowerCase('de-DE')
+    .normalize('NFKD')
+    .replace(/\p{Diacritic}/gu, '')
+    .replace(/^fraktion\s+(der\s+)?/, '')
+    .replace(/\s+/g, ' ');
+
+  return PERSON_FACTION_ALIASES.get(normalized) || normalized;
+}
+
+export function matchesPersonFaction(person, requestedFaction) {
+  const expected = normalizeFaction(requestedFaction);
+  const factions = Array.isArray(person?.fraktion)
+    ? person.fraktion
+    : [person?.fraktion];
+  return factions.some((faction) => normalizeFaction(faction) === expected);
+}
+
+function encodePersonFactionCursor(offset) {
+  const encoded = Buffer.from(JSON.stringify({ offset }), 'utf8').toString('base64url');
+  return `${PERSON_FACTION_CURSOR_PREFIX}${encoded}`;
+}
+
+function decodePersonFactionCursor(cursor) {
+  if (!cursor?.startsWith(PERSON_FACTION_CURSOR_PREFIX)) {
+    return { offset: 0, dipCursor: cursor };
+  }
+
+  try {
+    const encoded = cursor.slice(PERSON_FACTION_CURSOR_PREFIX.length);
+    const parsed = JSON.parse(Buffer.from(encoded, 'base64url').toString('utf8'));
+    if (!Number.isInteger(parsed.offset) || parsed.offset < 0) {
+      throw new Error('invalid offset');
+    }
+    return { offset: parsed.offset, dipCursor: undefined };
+  } catch {
+    throw new Error('Invalid person faction pagination cursor');
+  }
+}
+
+/**
+ * DIP has no faction filter on /person. Scan its pages, filter locally, then
+ * paginate the filtered result set with an MCP-owned offset cursor.
+ */
+async function searchPersonsByFaction(params) {
+  const { offset, dipCursor: initialCursor } = decodePersonFactionCursor(params.cursor);
+  const pageSize = config.dipApi.maxLimit;
+  const matches = [];
+  const seenCursors = new Set();
+  let cursor = initialCursor;
+  let scannedResults = 0;
+  let scannedPages = 0;
+  let allCached = true;
+  let apiTotalResults = 0;
+
+  do {
+    const page = await api.searchPersonen(
+      {
+        query: params.query,
+        wahlperiode: params.wahlperiode,
+        limit: pageSize,
+        cursor
+      },
+      { useCache: params.useCache }
+    );
+    const documents = page.documents || [];
+    scannedPages += 1;
+    scannedResults += documents.length;
+    apiTotalResults = page.numFound || apiTotalResults;
+    allCached = allCached && !!page.cached;
+
+    for (const person of documents) {
+      if (matchesPersonFaction(person, params.fraktion)) matches.push(person);
+    }
+
+    const nextCursor = page.cursor;
+    if (!nextCursor || seenCursors.has(nextCursor)) break;
+    seenCursors.add(nextCursor);
+    cursor = nextCursor;
+  } while (true);
+
+  const limit = params.limit || config.dipApi.defaultLimit;
+  const selected = matches.slice(offset, offset + limit);
+  const nextOffset = offset + selected.length;
+
+  return {
+    documents: selected,
+    numFound: matches.length,
+    cursor: nextOffset < matches.length
+      ? encodePersonFactionCursor(nextOffset)
+      : null,
+    cached: allCached,
+    apiTotalResults,
+    scannedResults,
+    scannedPages
+  };
 }
 
 /**
@@ -448,14 +578,16 @@ export const searchPersonenTool = {
   description: `Search for persons in the Bundestag (MPs, ministers, etc.).
 Use this to find information about members of parliament and their affiliations.
 Name matching is by surname — a full "Vorname Nachname" is reduced to the surname
-automatically (the DIP API matches a single name token).`,
+automatically (the DIP API matches a single name token).
+Faction filtering is performed across all DIP result pages by this MCP because
+the DIP /person endpoint does not provide a faction filter.`,
 
   inputSchema: {
     query: z.string().optional()
       .describe('Search by name. Matched on surname — "Katharina Dröge" and "Dröge" both work.'),
     wahlperiode: wahlperiodeSchema,
     fraktion: z.string().optional()
-      .describe('Parliamentary group/faction — DIP LONG official names, e.g. "SPD", "CDU/CSU", "BÜNDNIS 90/DIE GRÜNEN", "DIE LINKE". Note: the speeches collection (bundestag_search_speeches → speakerParty) uses SHORT names (e.g. "GRÜNE"). Call bundestag_get_filters for the full list.'),
+      .describe('Parliamentary group/faction. Accepts official names and common aliases such as Union/CDU/CSU, Sozialdemokraten, GRÜNE/B90/GR, Linkspartei, Freie Demokraten, and Alternative für Deutschland. Filtered page-spanning by the MCP because DIP ignores f.fraktion.'),
     limit: limitSchema,
     cursor: cursorSchema,
     fields: fieldsSchema,
@@ -464,9 +596,18 @@ automatically (the DIP API matches a single name token).`,
 
   async handler(params) {
     try {
-      const result = await api.searchPersonen(params, { useCache: params.useCache });
+      const result = params.fraktion
+        ? await searchPersonsByFaction(params)
+        : await api.searchPersonen(params, { useCache: params.useCache });
 
-      return buildListResponse('person', params, result);
+      const response = buildListResponse('person', params, result);
+      if (params.fraktion) {
+        response.filterMode = 'client-side-page-spanning';
+        response.apiTotalResults = result.apiTotalResults;
+        response.scannedResults = result.scannedResults;
+        response.scannedPages = result.scannedPages;
+      }
+      return response;
     } catch (err) {
       return {
         error: true,
