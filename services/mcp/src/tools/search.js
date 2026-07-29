@@ -54,6 +54,33 @@ const TEXT_SNIPPET_CHARS = 600;
 // so we surface a hint pointing at semantic search.
 const LOW_RECALL_THRESHOLD = 5;
 const PERSON_FACTION_CURSOR_PREFIX = 'person-faction-v1:';
+const PERSON_FACTION_ALIASES = new Map([
+  ['cdu', 'cdu/csu'],
+  ['csu', 'cdu/csu'],
+  ['union', 'cdu/csu'],
+  ['unionsfraktion', 'cdu/csu'],
+  ['sozialdemokraten', 'spd'],
+  ['sozialdemokratische partei deutschlands', 'spd'],
+  ['grune', 'bundnis 90/die grunen'],
+  ['grunen', 'bundnis 90/die grunen'],
+  ['gruene', 'bundnis 90/die grunen'],
+  ['gruenen', 'bundnis 90/die grunen'],
+  ['die grunen', 'bundnis 90/die grunen'],
+  ['b90/gr', 'bundnis 90/die grunen'],
+  ['b90/die grunen', 'bundnis 90/die grunen'],
+  ['alternative fur deutschland', 'afd'],
+  ['linke', 'die linke'],
+  ['linkspartei', 'die linke'],
+  ['freie demokraten', 'fdp'],
+  ['freie demokratische partei', 'fdp'],
+  ['bundnis sahra wagenknecht', 'bsw'],
+  ['wagenknecht', 'bsw'],
+  ['sudschleswigscher wahlerverband', 'ssw'],
+  ['parteilos', 'fraktionslos'],
+  ['unabhangig', 'fraktionslos'],
+  ['unaffiliated', 'fraktionslos'],
+  ['independent', 'fraktionslos']
+]);
 
 function pickFields(obj, fields) {
   const out = {};
@@ -126,15 +153,7 @@ function normalizeFaction(value) {
     .replace(/^fraktion\s+(der\s+)?/, '')
     .replace(/\s+/g, ' ');
 
-  if ([
-    'grune', 'grunen', 'gruene', 'gruenen', 'die grunen',
-    'bundnis 90/die grunen', 'b90/gr'
-  ].includes(normalized)) {
-    return 'bundnis 90/die grunen';
-  }
-
-  if (normalized === 'linke') return 'die linke';
-  return normalized;
+  return PERSON_FACTION_ALIASES.get(normalized) || normalized;
 }
 
 export function matchesPersonFaction(person, requestedFaction) {
@@ -568,7 +587,7 @@ the DIP /person endpoint does not provide a faction filter.`,
       .describe('Search by name. Matched on surname — "Katharina Dröge" and "Dröge" both work.'),
     wahlperiode: wahlperiodeSchema,
     fraktion: z.string().optional()
-      .describe('Parliamentary group/faction. Accepts official names and GRÜNE as an alias for BÜNDNIS 90/DIE GRÜNEN. Filtered page-spanning by the MCP because DIP ignores f.fraktion.'),
+      .describe('Parliamentary group/faction. Accepts official names and common aliases such as Union/CDU/CSU, Sozialdemokraten, GRÜNE/B90/GR, Linkspartei, Freie Demokraten, and Alternative für Deutschland. Filtered page-spanning by the MCP because DIP ignores f.fraktion.'),
     limit: limitSchema,
     cursor: cursorSchema,
     fields: fieldsSchema,

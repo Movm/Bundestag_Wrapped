@@ -37,6 +37,25 @@ describe('person faction filtering', () => {
     expect(matchesPersonFaction(person, 'SPD')).toBe(false);
   });
 
+  it.each([
+    ['CDU/CSU', 'Union'],
+    ['CDU/CSU', 'CDU'],
+    ['CDU/CSU', 'CSU'],
+    ['SPD', 'Sozialdemokraten'],
+    ['SPD', 'Sozialdemokratische Partei Deutschlands'],
+    ['AfD', 'Alternative für Deutschland'],
+    ['DIE LINKE', 'Linkspartei'],
+    ['FDP', 'Freie Demokraten'],
+    ['FDP', 'Freie Demokratische Partei'],
+    ['BSW', 'Bündnis Sahra Wagenknecht'],
+    ['BSW', 'Wagenknecht'],
+    ['SSW', 'Südschleswigscher Wählerverband'],
+    ['fraktionslos', 'parteilos'],
+    ['fraktionslos', 'unabhängig']
+  ])('matches %s when requested as %s', (official, alias) => {
+    expect(matchesPersonFaction({ fraktion: [official] }, alias)).toBe(true);
+  });
+
   it('filters across DIP pages and reports the exact filtered total', async () => {
     const searchSpy = vi.spyOn(api, 'searchPersonen')
       .mockResolvedValueOnce({
