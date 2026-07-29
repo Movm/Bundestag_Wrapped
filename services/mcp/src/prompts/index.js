@@ -296,8 +296,10 @@ Please follow these steps:
 
 4. **Search for their speeches (semantic search)**
    Use \`bundestag_semantic_search\` with:
-   - query: "${name}"
-   - entityTypes: ["speech"]
+   - query: "parliamentary contributions"
+   - docTypes: ["aktivitaet"]
+   - person_id: (from step 1)
+   - entityTypes: ["Rede"]
    - wahlperiode: ${wahlperiode}
    ${date_from ? `- dateFrom: "${date_from}"` : ''}
    ${date_to ? `- dateTo: "${date_to}"` : ''}

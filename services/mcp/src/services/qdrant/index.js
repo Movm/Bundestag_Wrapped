@@ -18,6 +18,7 @@ export {
   ensureCollection,
   search,
   upsertPoints,
+  setActivityPersonIds,
   getPoints,
   pointExists,
   deletePoints,

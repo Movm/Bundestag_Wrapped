@@ -92,6 +92,7 @@ const SURFACES = {
       { field: 'sachgebiet', type: 'string', valueSource: 'open', note: 'DIP subject area (Sachgebiet). Open set; examples: "Arbeit und Beschäftigung", "Umwelt", "Innere Sicherheit".' },
       { field: 'initiative', type: 'string', valueSource: 'open', note: 'Initiating faction/body, LONG names. Examples: "Bundesregierung", "CDU/CSU", "BÜNDNIS 90/DIE GRÜNEN".' },
       { field: 'fraktion', type: 'string', values: DIP_PARTY_LONG, valueSource: 'open', note: `LONG official party names. ${PARTY_NAMING_NOTE}` },
+      { field: 'person_id', type: 'number', valueSource: 'dynamic', note: 'DIP person ID. Filters indexed activities to contributions linked to that person; combine with docTypes:["aktivitaet"].' },
       { field: 'dateFrom', type: 'date (YYYY-MM-DD)', valueSource: 'freeform' },
       { field: 'dateTo', type: 'date (YYYY-MM-DD)', valueSource: 'freeform' },
       { field: 'sort', type: 'enum', values: ['relevance', 'newest', 'oldest'], valueSource: 'closed', note: 'Combine newest/oldest with dateFrom/dateTo for recent-first results in a window.' }

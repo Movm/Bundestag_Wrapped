@@ -25,7 +25,8 @@ const INDEXES = [
   { field: 'entity_type', type: 'keyword' },
   { field: 'sachgebiet', type: 'keyword' },
   { field: 'initiative', type: 'keyword' },
-  { field: 'fraktion', type: 'keyword' }
+  { field: 'fraktion', type: 'keyword' },
+  { field: 'person_id', type: 'integer' }
 ];
 
 /**
@@ -70,6 +71,27 @@ const upsertInternal = createUpserter(config.qdrant.collection, LOG_PREFIX);
  */
 export async function upsertPoints(points) {
   return upsertInternal(points);
+}
+
+/**
+ * Add person IDs to existing activity points without regenerating embeddings.
+ * @param {Array<{id: number, personId: number}>} entries
+ */
+export async function setActivityPersonIds(entries) {
+  const qdrant = getClient();
+  if (!qdrant || entries.length === 0) return;
+
+  const operations = entries.map(({ id, personId }) => ({
+    set_payload: {
+      payload: { person_id: personId },
+      points: [id]
+    }
+  }));
+
+  await qdrant.batchUpdate(config.qdrant.collection, {
+    wait: true,
+    operations
+  });
 }
 
 // Create collection info function using factory
@@ -194,6 +216,13 @@ export function buildFilter(params) {
     conditions.push({
       key: 'fraktion',
       match: { value: params.fraktion }
+    });
+  }
+
+  if (params.person_id) {
+    conditions.push({
+      key: 'person_id',
+      match: { value: params.person_id }
     });
   }
 

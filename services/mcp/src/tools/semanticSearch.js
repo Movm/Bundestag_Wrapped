@@ -93,6 +93,8 @@ Falls back gracefully if vector search is unavailable.`,
       .describe('Filter by initiating faction/body — LONG official names, e.g., "Bundesregierung", "CDU/CSU", "BÜNDNIS 90/DIE GRÜNEN".'),
     fraktion: z.string().optional()
       .describe('Filter by parliamentary group (Fraktion) — LONG official names, e.g., "BÜNDNIS 90/DIE GRÜNEN", "CDU/CSU", "DIE LINKE". Note: the speeches collection (bundestag_search_speeches → speakerParty) uses SHORT names instead (e.g. "GRÜNE"). Call bundestag_get_filters for the full list.'),
+    person_id: z.number().int().positive().optional()
+      .describe('Filter activities by the linked DIP person ID. Combine with docTypes:["aktivitaet"].'),
     dateFrom: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional()
       .describe('Filter from date (YYYY-MM-DD)'),
     dateTo: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional()
@@ -137,6 +139,7 @@ Falls back gracefully if vector search is unavailable.`,
         sachgebiet: params.sachgebiet,
         initiative: params.initiative,
         fraktion: params.fraktion,
+        person_id: params.person_id,
         dateFrom: params.dateFrom,
         dateTo: params.dateTo
       });
@@ -162,6 +165,7 @@ Falls back gracefully if vector search is unavailable.`,
           sachgebiet: params.sachgebiet || 'all',
           initiative: params.initiative || 'all',
           fraktion: params.fraktion || 'all',
+          person_id: params.person_id || 'all',
           dateRange: params.dateFrom || params.dateTo
             ? `${params.dateFrom || '*'} to ${params.dateTo || '*'}`
             : 'all',
@@ -180,6 +184,7 @@ Falls back gracefully if vector search is unavailable.`,
           wahlperiode: r.payload.wahlperiode,
           sachgebiet: r.payload.sachgebiet,
           initiative: r.payload.initiative,
+          personId: r.payload.person_id,
           descriptors: r.payload.descriptors
         }))
       };

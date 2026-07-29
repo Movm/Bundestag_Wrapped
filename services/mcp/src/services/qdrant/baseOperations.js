@@ -149,13 +149,15 @@ export function createExistsChecker(collectionName, idFieldName) {
  * @param {string} logPrefix - Log prefix
  */
 export async function createIndexes(qdrant, collectionName, indexes, logPrefix) {
+  if (indexes.length === 0) return;
+
   for (const { field, type } of indexes) {
     await qdrant.createPayloadIndex(collectionName, {
       field_name: field,
       field_schema: type
     });
   }
-  logger.info(logPrefix, `Created ${indexes.length} payload indexes`);
+  logger.info(logPrefix, `Created ${indexes.length} missing payload indexes`);
 }
 
 /**
@@ -173,6 +175,8 @@ export async function ensureCollectionExists(collectionName, indexes, logPrefix)
     const collections = await qdrant.getCollections();
     const exists = collections.collections.some(c => c.name === collectionName);
 
+    let missingIndexes = indexes;
+
     if (!exists) {
       await qdrant.createCollection(collectionName, {
         vectors: {
@@ -181,9 +185,14 @@ export async function ensureCollectionExists(collectionName, indexes, logPrefix)
         }
       });
       logger.info(logPrefix, `Created collection: ${collectionName}`);
-
-      await createIndexes(qdrant, collectionName, indexes, logPrefix);
+    } else {
+      const collection = await qdrant.getCollection(collectionName);
+      const payloadSchema = collection.payload_schema || {};
+      missingIndexes = indexes.filter(({ field }) => !payloadSchema[field]);
     }
+
+    // Apply indexes introduced by later schema versions to existing collections.
+    await createIndexes(qdrant, collectionName, missingIndexes, logPrefix);
 
     return true;
   } catch (err) {
