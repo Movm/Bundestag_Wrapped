@@ -378,7 +378,6 @@ export async function searchPersonen(params = {}, options = {}) {
     apiParams['f.person'] = q.includes(' ') ? q.split(/\s+/).pop() : q;
   }
   if (params.wahlperiode) apiParams['f.wahlperiode'] = params.wahlperiode;
-  if (params.fraktion) apiParams['f.fraktion'] = params.fraktion;
   if (params.cursor) apiParams['cursor'] = params.cursor;
 
   apiParams['rows'] = Math.min(params.limit || config.dipApi.defaultLimit, config.dipApi.maxLimit);
