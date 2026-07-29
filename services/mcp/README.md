@@ -551,6 +551,7 @@ volumes:
 | `sachgebiet` | Subject area |
 | `initiative` | Initiating faction (CDU/CSU, SPD, etc.) |
 | `fraktion` | Parliamentary group |
+| `person_id` | DIP person ID; filter indexed activities for one person |
 | `dateFrom` / `dateTo` | Date range (YYYY-MM-DD) |
 | `scoreThreshold` | Minimum similarity (0-1, default 0.3) |
 

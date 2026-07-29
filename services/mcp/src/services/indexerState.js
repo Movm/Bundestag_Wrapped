@@ -27,7 +27,11 @@ export function init() {
       last_indexed_at TEXT NOT NULL,
       indexed_count INTEGER DEFAULT 0,
       PRIMARY KEY (wahlperiode, doc_type)
-    )
+    );
+    CREATE TABLE IF NOT EXISTS migrations (
+      name TEXT PRIMARY KEY,
+      completed_at TEXT NOT NULL
+    );
   `);
 
   logger.info('INDEXER_STATE', `Initialized SQLite state at ${DB_PATH}`);
@@ -64,8 +68,24 @@ export function getAllState() {
 export function clearState() {
   if (!db) init();
 
-  db.exec('DELETE FROM index_state');
+  db.exec(`
+    DELETE FROM index_state;
+    DELETE FROM migrations;
+  `);
   logger.info('INDEXER_STATE', 'Cleared all indexer state');
+}
+
+export function isMigrationComplete(name) {
+  if (!db) init();
+  return !!db.prepare('SELECT 1 FROM migrations WHERE name = ?').get(name);
+}
+
+export function markMigrationComplete(name) {
+  if (!db) init();
+  db.prepare(`
+    INSERT OR REPLACE INTO migrations (name, completed_at)
+    VALUES (?, ?)
+  `).run(name, new Date().toISOString());
 }
 
 export function close() {

@@ -32,6 +32,7 @@ const DOCUMENT_CHUNK_START_DELAY_MS = 2 * 60 * 1000;  // 2 min after boot
 const PROTOCOL_CHUNK_START_DELAY_MS = 5 * 60 * 1000;   // 5 min after boot
 let lastIndexTime = null;
 let lastSuccessfulIndexTime = null; // For incremental updates
+const ACTIVITY_PERSON_ID_MIGRATION = 'activity_person_id_v1';
 let stats = {
   totalIndexed: 0,
   lastRunDuration: 0,
@@ -40,6 +41,37 @@ let stats = {
   errors: 0,
   mode: 'full' // 'full' or 'incremental'
 };
+
+function normalizePersonId(personId) {
+  if (personId === undefined || personId === null || personId === '') return null;
+  const normalized = Number(personId);
+  return Number.isInteger(normalized) && normalized > 0 ? normalized : null;
+}
+
+export function buildMainPayload(doc, docType, wahlperiode) {
+  const payload = {
+    doc_id: String(doc.id),
+    doc_type: docType,
+    entity_type: doc.drucksachetyp || doc.vorgangstyp || doc.aktivitaetsart || null,
+    wahlperiode: Array.isArray(doc.wahlperiode) ? doc.wahlperiode[0] : (doc.wahlperiode || wahlperiode),
+    date: doc.datum || doc.aktualisiert || null,
+    title: doc.titel || null,
+    abstract: doc.abstract || null,
+    dokumentnummer: doc.dokumentnummer || null,
+    authors: doc.autoren || doc.urheber || [],
+    descriptors: doc.deskriptoren || [],
+    sachgebiet: doc.sachgebiet || null,
+    initiative: doc.initiative || null,
+    fraktion: Array.isArray(doc.fraktion) ? doc.fraktion[0] : (doc.fraktion || null),
+    ressort: doc.ressort || null
+  };
+
+  if (docType === 'aktivitaet') {
+    payload.person_id = normalizePersonId(doc.person_id);
+  }
+
+  return payload;
+}
 
 /**
  * Generate a unique point ID from document type and ID
@@ -73,9 +105,16 @@ async function getExistingPointIds(pointIds) {
 /**
  * Process a batch of documents: filter, embed, upsert
  * Returns count of newly indexed documents
- * @param {boolean} isIncremental - Skip Qdrant check when true (DIP API already filtered)
+ * @param {object} options
+ * @param {boolean} options.isIncremental - Skip Qdrant check when DIP already filtered
+ * @param {boolean} options.backfillActivityPersonIds - Patch existing activity payloads
  */
-async function processBatch(batch, docType, wahlperiode, isIncremental = false) {
+async function processBatch(
+  batch,
+  docType,
+  wahlperiode,
+  { isIncremental = false, backfillActivityPersonIds = false } = {}
+) {
   const pointIds = batch.map(doc => generatePointId(docType, doc.id));
 
   let newDocs = batch;
@@ -86,6 +125,16 @@ async function processBatch(batch, docType, wahlperiode, isIncremental = false) 
     const existingIds = await getExistingPointIds(pointIds);
     newDocs = batch.filter((_, idx) => !existingIds.has(pointIds[idx]));
     skippedCount = existingIds.size;
+
+    if (backfillActivityPersonIds && docType === 'aktivitaet') {
+      const entries = batch.flatMap((doc, idx) => {
+        const personId = normalizePersonId(doc.person_id);
+        return existingIds.has(pointIds[idx]) && personId
+          ? [{ id: pointIds[idx], personId }]
+          : [];
+      });
+      await qdrant.setActivityPersonIds(entries);
+    }
   }
 
   if (newDocs.length === 0) {
@@ -107,22 +156,7 @@ async function processBatch(batch, docType, wahlperiode, isIncremental = false) 
   // Build points for Qdrant
   const points = newDocs.map((doc, idx) => {
     // Build base payload
-    const payload = {
-      doc_id: String(doc.id),
-      doc_type: docType,
-      entity_type: doc.drucksachetyp || doc.vorgangstyp || doc.aktivitaetsart || null,
-      wahlperiode: Array.isArray(doc.wahlperiode) ? doc.wahlperiode[0] : (doc.wahlperiode || wahlperiode),
-      date: doc.datum || doc.aktualisiert || null,
-      title: doc.titel || null,
-      abstract: doc.abstract || null,
-      dokumentnummer: doc.dokumentnummer || null,
-      authors: doc.autoren || doc.urheber || [],
-      descriptors: doc.deskriptoren || [],
-      sachgebiet: doc.sachgebiet || null,
-      initiative: doc.initiative || null,
-      fraktion: Array.isArray(doc.fraktion) ? doc.fraktion[0] : (doc.fraktion || null),
-      ressort: doc.ressort || null
-    };
+    const payload = buildMainPayload(doc, docType, wahlperiode);
 
     // Add person-specific fields
     if (docType === 'person') {
@@ -162,7 +196,13 @@ function sleep(ms) {
  * Index documents of a specific type
  * Supports incremental mode using f.aktualisiert.start parameter
  */
-async function indexDocumentType(docType, searchFn, wahlperiode, updatedSince = null) {
+async function indexDocumentType(
+  docType,
+  searchFn,
+  wahlperiode,
+  updatedSince = null,
+  { backfillActivityPersonIds = false } = {}
+) {
   const BATCH_SIZE = 64;
   const API_DELAY_MS = 500; // Delay between API calls to avoid rate limits
   let cursor = null;
@@ -198,7 +238,10 @@ async function indexDocumentType(docType, searchFn, wahlperiode, updatedSince = 
       const isIncremental = !!updatedSince;
       for (let i = 0; i < documents.length; i += BATCH_SIZE) {
         const batch = documents.slice(i, i + BATCH_SIZE);
-        const result = await processBatch(batch, docType, wahlperiode, isIncremental);
+        const result = await processBatch(batch, docType, wahlperiode, {
+          isIncremental,
+          backfillActivityPersonIds
+        });
         indexed += result.indexed;
         skipped += result.skipped;
       }
@@ -272,7 +315,13 @@ async function runIndexingPass() {
         ['person', api.searchPersonen]
       ]) {
         // Get per-WP+doctype last indexed time from SQLite
-        const lastTime = indexerState.getLastIndexTime(wp, docType);
+        const activityMigrationName = `${ACTIVITY_PERSON_ID_MIGRATION}_wp${wp}`;
+        const backfillActivityPersonIds =
+          docType === 'aktivitaet' &&
+          !indexerState.isMigrationComplete(activityMigrationName);
+        const lastTime = backfillActivityPersonIds
+          ? null
+          : indexerState.getLastIndexTime(wp, docType);
         let updatedSince = null;
 
         if (lastTime) {
@@ -283,7 +332,14 @@ async function runIndexingPass() {
           stats.mode = 'full';
         }
 
-        const result = await indexDocumentType(docType, searchFn, wp, updatedSince);
+        const errorsBefore = stats.errors;
+        const result = await indexDocumentType(docType, searchFn, wp, updatedSince, {
+          backfillActivityPersonIds
+        });
+        if (backfillActivityPersonIds && stats.errors === errorsBefore) {
+          indexerState.markMigrationComplete(activityMigrationName);
+          logger.info('INDEXER', `Completed activity person_id payload migration for WP${wp}`);
+        }
         totalIndexed += result.indexed;
         totalSkipped += result.skipped;
 

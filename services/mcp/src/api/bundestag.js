@@ -410,7 +410,7 @@ export async function searchAktivitaeten(params = {}, options = {}) {
   // plenary types (Rede, Frage, …) live under "Plenarprotokoll" — which the tool
   // handler uses to narrow before the client-side aktivitaetsart refine.
   if (params.dokumentart) apiParams['f.dokumentart'] = params.dokumentart;
-  if (params.person_id) apiParams['f.person'] = params.person_id;
+  if (params.person_id) apiParams['f.person_id'] = params.person_id;
   if (params.datum_start) apiParams['f.datum.start'] = params.datum_start;
   if (params.datum_end) apiParams['f.datum.end'] = params.datum_end;
   if (params.aktualisiert_start) apiParams['f.aktualisiert.start'] = params.aktualisiert_start;
