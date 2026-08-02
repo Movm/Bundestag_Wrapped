@@ -1,181 +1,153 @@
-# Dependabot configuration — Bundestag Wrapped monorepo
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-#
-# pnpm workspace with ONE root lockfile: each nested npm entry updates its own
-# package.json and the shared root pnpm-lock.yaml. The Expo mobile app is treated
-# specially — its React / React Native deps are pinned to the exact versions the
-# Expo SDK ships and must move only via `npx expo install` (see CLAUDE.md), so
-# Dependabot must never drift them.
-
+# The pnpm workspace has one root lockfile. Dependabot must update workspace
+# manifests through the root so package manifests and pnpm-lock.yaml stay in sync.
 version: 2
 
 updates:
-  # ---------------------------------------------------------------------------
-  # WEB — React + Vite app (apps/wrapped)
-  # ---------------------------------------------------------------------------
-  - package-ecosystem: 'npm'
-    directory: '/apps/wrapped'
+  - package-ecosystem: "npm"
+    directory: "/"
+    exclude-paths:
+      - "apps/wrapped/mobile/**"
     schedule:
-      interval: 'weekly'
-      day: 'monday'
-      time: '05:00'
-      timezone: 'Europe/Berlin'
-    open-pull-requests-limit: 10
-    labels:
-      - 'dependencies'
-      - 'web'
+      interval: "weekly"
+      day: "monday"
+      time: "04:00"
+      timezone: "Europe/Berlin"
+    open-pull-requests-limit: 8
+    cooldown:
+      default-days: 3
+      semver-major-days: 14
+      semver-minor-days: 7
+      semver-patch-days: 3
     groups:
-      react-ecosystem:
+      security-updates:
+        applies-to: "security-updates"
         patterns:
-          - 'react'
-          - 'react-dom'
-          - 'react-router*'
-          - '@types/react*'
-      build-tools:
-        dependency-type: 'development'
+          - "*"
+      mcp-ecosystem:
+        applies-to: "version-updates"
         patterns:
-          - 'vite*'
-          - '@vitejs/*'
-          - 'eslint*'
-          - '@eslint/*'
-          - 'typescript-eslint'
-          - 'globals'
-          - 'tailwindcss'
-          - '@tailwindcss/*'
-      testing:
-        dependency-type: 'development'
-        patterns:
-          - 'vitest'
-          - '@vitest/*'
-          - 'jsdom'
-          - 'playwright'
-      minor-patch:
+          - "@modelcontextprotocol/*"
+          - "@qdrant/*"
+          - "@mistralai/*"
+      production-minor-patch:
+        applies-to: "version-updates"
+        dependency-type: "production"
         update-types:
-          - 'minor'
-          - 'patch'
+          - "minor"
+          - "patch"
         exclude-patterns:
-          - 'react'
-          - 'react-dom'
-          - 'react-router*'
-          - '@types/react*'
-          - 'vite*'
-          - '@vitejs/*'
-          - 'eslint*'
-          - '@eslint/*'
-          - 'typescript-eslint'
-          - 'tailwindcss'
-          - '@tailwindcss/*'
-          - 'vitest'
-          - '@vitest/*'
-          - 'jsdom'
-          - 'playwright'
+          - "@modelcontextprotocol/*"
+          - "@qdrant/*"
+          - "@mistralai/*"
+      development-minor-patch:
+        applies-to: "version-updates"
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
     ignore:
-      # React is decoupled from mobile and bumped deliberately (major only).
-      - dependency-name: 'react'
-        update-types: ['version-update:semver-major']
-      - dependency-name: 'react-dom'
-        update-types: ['version-update:semver-major']
+      - dependency-name: "react"
+        update-types:
+          - "version-update:semver-major"
+      - dependency-name: "react-dom"
+        update-types:
+          - "version-update:semver-major"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
 
-  # ---------------------------------------------------------------------------
-  # MOBILE — Expo / React Native app (apps/wrapped/mobile)
-  # ---------------------------------------------------------------------------
-  # SECURITY-ONLY. The entire mobile dependency tree is governed by the Expo SDK
-  # and must move ONLY via `npx expo install` during a deliberate SDK upgrade
-  # (see CLAUDE.md — RN's bundled renderer needs exact React/native version
-  # matches; routine bumps break the native/JS contract). `open-pull-requests-limit: 0`
-  # disables ROUTINE version-update PRs while STILL allowing Dependabot to open
-  # security-vulnerability PRs. Do not raise this limit; do SDK bumps by hand.
-  - package-ecosystem: 'npm'
-    directory: '/apps/wrapped/mobile'
+  # Expo and React Native versions move together through `npx expo install`.
+  # Routine version PRs are disabled, while security updates remain enabled.
+  - package-ecosystem: "npm"
+    directory: "/apps/wrapped/mobile"
     schedule:
-      interval: 'weekly'
-      day: 'thursday'
-      time: '05:00'
-      timezone: 'Europe/Berlin'
+      interval: "weekly"
+      day: "thursday"
+      time: "04:00"
+      timezone: "Europe/Berlin"
     open-pull-requests-limit: 0
-    labels:
-      - 'dependencies'
-      - 'mobile'
-
-  # ---------------------------------------------------------------------------
-  # MCP SERVER — Node ESM (services/mcp)
-  # ---------------------------------------------------------------------------
-  - package-ecosystem: 'npm'
-    directory: '/services/mcp'
-    schedule:
-      interval: 'weekly'
-      day: 'monday'
-      time: '05:00'
-      timezone: 'Europe/Berlin'
-    open-pull-requests-limit: 10
-    labels:
-      - 'dependencies'
-      - 'mcp'
     groups:
-      mcp-sdk:
+      security-updates:
+        applies-to: "security-updates"
         patterns:
-          - '@modelcontextprotocol/*'
-      dev-dependencies:
-        dependency-type: 'development'
+          - "*"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  - package-ecosystem: "pip"
+    directory: "/services/analysis"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:20"
+      timezone: "Europe/Berlin"
+    open-pull-requests-limit: 5
+    cooldown:
+      default-days: 3
+      semver-major-days: 14
+      semver-minor-days: 7
+      semver-patch-days: 3
+    groups:
+      security-updates:
+        applies-to: "security-updates"
+        patterns:
+          - "*"
       minor-patch:
-        dependency-type: 'production'
+        applies-to: "version-updates"
         update-types:
-          - 'minor'
-          - 'patch'
+          - "minor"
+          - "patch"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
 
-  # ---------------------------------------------------------------------------
-  # PYTHON — NLP analysis service (services/analysis)
-  # ---------------------------------------------------------------------------
-  - package-ecosystem: 'pip'
-    directory: '/services/analysis'
-    schedule:
-      interval: 'weekly'
-      day: 'monday'
-      time: '05:00'
-      timezone: 'Europe/Berlin'
-    open-pull-requests-limit: 10
-    labels:
-      - 'dependencies'
-      - 'python'
-    groups:
-      python-minor-patch:
-        update-types:
-          - 'minor'
-          - 'patch'
-
-  # ---------------------------------------------------------------------------
-  # DOCKER — base image tags in each deployable's Dockerfile
-  # ---------------------------------------------------------------------------
-  - package-ecosystem: 'docker'
+  - package-ecosystem: "docker"
     directories:
-      - '/apps/wrapped'
-      - '/services/mcp'
-      - '/services/analysis'
+      - "/apps/wrapped"
+      - "/services/mcp"
+      - "/services/analysis"
     schedule:
-      interval: 'weekly'
-      day: 'monday'
-      time: '05:00'
-      timezone: 'Europe/Berlin'
-    open-pull-requests-limit: 5
-    labels:
-      - 'dependencies'
-      - 'docker'
-
-  # ---------------------------------------------------------------------------
-  # GITHUB ACTIONS — keep workflow actions current (and let SHA pins auto-bump)
-  # ---------------------------------------------------------------------------
-  - package-ecosystem: 'github-actions'
-    directory: '/'
-    schedule:
-      interval: 'weekly'
-      day: 'monday'
-      time: '05:00'
-      timezone: 'Europe/Berlin'
-    open-pull-requests-limit: 5
-    labels:
-      - 'dependencies'
-      - 'github-actions'
+      interval: "weekly"
+      day: "monday"
+      time: "04:40"
+      timezone: "Europe/Berlin"
+    open-pull-requests-limit: 4
+    cooldown:
+      default-days: 3
     groups:
-      github-actions:
+      security-updates:
+        applies-to: "security-updates"
         patterns:
-          - '*'
+          - "*"
+      minor-patch:
+        applies-to: "version-updates"
+        update-types:
+          - "minor"
+          - "patch"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "05:00"
+      timezone: "Europe/Berlin"
+    open-pull-requests-limit: 4
+    cooldown:
+      default-days: 3
+    groups:
+      security-updates:
+        applies-to: "security-updates"
+        patterns:
+          - "*"
+      github-actions:
+        applies-to: "version-updates"
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
