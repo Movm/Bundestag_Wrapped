@@ -52,6 +52,10 @@ updates:
       - dependency-name: "react-dom"
         update-types:
           - "version-update:semver-major"
+      # TypeScript 7 is not yet supported by typescript-eslint.
+      - dependency-name: "typescript"
+        update-types:
+          - "version-update:semver-major"
     commit-message:
       prefix: "chore"
       include: "scope"
