@@ -11,13 +11,13 @@
   "minWords": 10,
   "maxWords": 876,
   "rankings": {
-    "speechRank": 355,
+    "speechRank": 350,
     "wordsRank": 301,
-    "partySpeechRank": 61,
+    "partySpeechRank": 62,
     "partyWordsRank": 51,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 43.3,
+    "percentile": 44.1,
     "verbosityRank": 239,
     "verbosityTotal": 582,
     "partyVerbosityRank": 26,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 47,
     "interruptionsReceived": 28,
     "interrupterRank": 113,
-    "interruptedRank": 270
+    "interruptedRank": 265
   },
   "words": {
     "topWords": [
@@ -64,11 +64,11 @@
         "count": 12
       },
       {
-        "word": "deutschland",
+        "word": "geld",
         "count": 12
       },
       {
-        "word": "geld",
+        "word": "investitionen",
         "count": 12
       }
     ],
@@ -239,20 +239,20 @@
     "question": "Welches Wort nutzt Lisa Paus häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kinder",
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
         "text": "Sozialwohnungen",
         "isCorrect": true
-      },
-      {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Haushalt",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Sozialwohnungen\" nutzt Lisa Paus 172.5× häufiger als der GRÜNE-Durchschnitt.",
@@ -262,20 +262,20 @@
     "question": "Welches Adjektiv nutzt Lisa Paus häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Wichtig",
+        "text": "Sicher",
         "isCorrect": false
       },
       {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
         "text": "Absurd",
         "isCorrect": true
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Absurd\" nutzt Lisa Paus 6.6× häufiger als der GRÜNE-Durchschnitt.",
@@ -413,7 +413,7 @@
           "count": 2
         },
         {
-          "word": "rezession",
+          "word": "markt",
           "count": 1
         }
       ],
@@ -427,11 +427,11 @@
           "count": 7
         },
         {
-          "word": "kinder",
+          "word": "alleinerziehende",
           "count": 5
         },
         {
-          "word": "alleinerziehende",
+          "word": "kinder",
           "count": 5
         },
         {
@@ -475,10 +475,6 @@
       ],
       "digital": [
         {
-          "word": "digitalisierung",
-          "count": 1
-        },
-        {
           "word": "software",
           "count": 1
         },
@@ -488,6 +484,10 @@
         },
         {
           "word": "algorithmen",
+          "count": 1
+        },
+        {
+          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -501,15 +501,15 @@
           "count": 2
         },
         {
-          "word": "erzieher",
-          "count": 1
-        },
-        {
-          "word": "schulabschluss",
-          "count": 1
-        },
-        {
           "word": "schule",
+          "count": 1
+        },
+        {
+          "word": "studium",
+          "count": 1
+        },
+        {
+          "word": "wissenschaftler",
           "count": 1
         }
       ],
@@ -541,10 +541,6 @@
           "count": 2
         },
         {
-          "word": "gleichberechtigung",
-          "count": 1
-        },
-        {
           "word": "bundesverfassungsgericht",
           "count": 1
         },
@@ -555,12 +551,20 @@
         {
           "word": "gleichstellung",
           "count": 1
+        },
+        {
+          "word": "gleichberechtigung",
+          "count": 1
         }
       ],
       "arbeit": [
         {
           "word": "mindestlohn",
           "count": 3
+        },
+        {
+          "word": "arbeitsschutz",
+          "count": 2
         },
         {
           "word": "vollzeit",
@@ -571,11 +575,7 @@
           "count": 2
         },
         {
-          "word": "arbeitsschutz",
-          "count": 2
-        },
-        {
-          "word": "vereinbarkeit",
+          "word": "arbeitsvertrag",
           "count": 1
         }
       ],
@@ -585,11 +585,11 @@
           "count": 2
         },
         {
-          "word": "bahnhof",
+          "word": "bahn",
           "count": 1
         },
         {
-          "word": "bahn",
+          "word": "bahnhof",
           "count": 1
         },
         {

@@ -11,13 +11,13 @@
   "minWords": 83,
   "maxWords": 896,
   "rankings": {
-    "speechRank": 178,
+    "speechRank": 184,
     "wordsRank": 156,
-    "partySpeechRank": 41,
+    "partySpeechRank": 44,
     "partyWordsRank": 43,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 71.6,
+    "percentile": 70.6,
     "verbosityRank": 73,
     "verbosityTotal": 582,
     "partyVerbosityRank": 26,
@@ -26,7 +26,7 @@
   "drama": {
     "interruptionsGiven": 5,
     "interruptionsReceived": 59,
-    "interrupterRank": 346,
+    "interrupterRank": 353,
     "interruptedRank": 81
   },
   "words": {
@@ -40,11 +40,11 @@
         "count": 23
       },
       {
-        "word": "wissen",
+        "word": "reden",
         "count": 21
       },
       {
-        "word": "reden",
+        "word": "wissen",
         "count": 21
       },
       {
@@ -196,20 +196,20 @@
     "question": "Welches Wort nutzt Dr. Saskia Ludwig häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
         "text": "Terawattstunden",
         "isCorrect": true
+      },
+      {
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Terawattstunden\" nutzt Dr. Saskia Ludwig 102.6× häufiger als der CDU/CSU-Durchschnitt.",
@@ -219,7 +219,11 @@
     "question": "Welches Adjektiv nutzt Dr. Saskia Ludwig häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
+        "text": "Gut",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
         "isCorrect": false
       },
       {
@@ -227,11 +231,7 @@
         "isCorrect": true
       },
       {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
+        "text": "Klar",
         "isCorrect": false
       }
     ],
@@ -354,7 +354,7 @@
           "count": 4
         },
         {
-          "word": "atomausstieg",
+          "word": "atomkraft",
           "count": 4
         }
       ],
@@ -386,11 +386,11 @@
           "count": 3
         },
         {
-          "word": "umverteilung",
+          "word": "rentner",
           "count": 1
         },
         {
-          "word": "rentner",
+          "word": "familie",
           "count": 1
         },
         {
@@ -398,7 +398,7 @@
           "count": 1
         },
         {
-          "word": "familie",
+          "word": "umverteilung",
           "count": 1
         }
       ],
@@ -424,19 +424,19 @@
           "count": 6
         },
         {
-          "word": "europa",
-          "count": 2
-        },
-        {
           "word": "iran",
           "count": 2
         },
         {
-          "word": "bündnis",
+          "word": "europa",
+          "count": 2
+        },
+        {
+          "word": "binnenmarkt",
           "count": 1
         },
         {
-          "word": "ukraine",
+          "word": "bündnis",
           "count": 1
         }
       ],
@@ -490,26 +490,30 @@
           "count": 4
         },
         {
-          "word": "haushalt",
-          "count": 3
-        },
-        {
           "word": "entlastung",
           "count": 3
         },
         {
-          "word": "subventionen",
+          "word": "haushalt",
+          "count": 3
+        },
+        {
+          "word": "investition",
           "count": 2
         }
       ],
       "arbeit": [
         {
+          "word": "beschäftigte",
+          "count": 3
+        },
+        {
           "word": "arbeitsplätze",
           "count": 3
         },
         {
-          "word": "beschäftigte",
-          "count": 3
+          "word": "arbeitszeit",
+          "count": 2
         },
         {
           "word": "arbeitnehmer",
@@ -517,10 +521,6 @@
         },
         {
           "word": "arbeitslosigkeit",
-          "count": 2
-        },
-        {
-          "word": "arbeitszeit",
           "count": 2
         }
       ],

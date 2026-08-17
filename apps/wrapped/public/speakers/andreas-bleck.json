@@ -11,14 +11,14 @@
   "minWords": 79,
   "maxWords": 610,
   "rankings": {
-    "speechRank": 360,
+    "speechRank": 357,
     "wordsRank": 422,
-    "partySpeechRank": 86,
+    "partySpeechRank": 85,
     "partyWordsRank": 93,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 42.5,
-    "verbosityRank": 342,
+    "percentile": 43.0,
+    "verbosityRank": 341,
     "verbosityTotal": 582,
     "partyVerbosityRank": 87,
     "longestSpeechRank": 489
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 53,
     "interruptionsReceived": 23,
-    "interrupterRank": 99,
-    "interruptedRank": 315
+    "interrupterRank": 100,
+    "interruptedRank": 308
   },
   "words": {
     "topWords": [
@@ -221,7 +221,7 @@
     "question": "Welches Wort nutzt Andreas Bleck häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Freiheit",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
@@ -229,11 +229,11 @@
         "isCorrect": true
       },
       {
-        "text": "Kinder",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Verantwortung",
+        "text": "Gesellschaft",
         "isCorrect": false
       }
     ],
@@ -244,20 +244,20 @@
     "question": "Welches Adjektiv nutzt Andreas Bleck häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Jung",
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
         "text": "Falsch",
         "isCorrect": true
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Sozial",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Falsch\" nutzt Andreas Bleck 5.7× häufiger als der AfD-Durchschnitt.",
@@ -409,15 +409,15 @@
           "count": 2
         },
         {
+          "word": "amerika",
+          "count": 1
+        },
+        {
           "word": "abkommen",
           "count": 1
         },
         {
           "word": "waffenstillstand",
-          "count": 1
-        },
-        {
-          "word": "amerika",
           "count": 1
         }
       ],
@@ -435,11 +435,11 @@
       ],
       "finanzen": [
         {
-          "word": "steuerzahler",
+          "word": "steuern",
           "count": 3
         },
         {
-          "word": "steuern",
+          "word": "steuerzahler",
           "count": 3
         },
         {
@@ -447,11 +447,11 @@
           "count": 3
         },
         {
-          "word": "finanzierung",
+          "word": "subventionen",
           "count": 1
         },
         {
-          "word": "subventionen",
+          "word": "haushalt",
           "count": 1
         }
       ],
@@ -463,19 +463,19 @@
       ],
       "mobilitaet": [
         {
-          "word": "auto",
-          "count": 1
-        },
-        {
           "word": "hafen",
           "count": 1
         },
         {
-          "word": "straßen",
+          "word": "fahrzeug",
           "count": 1
         },
         {
-          "word": "fahrzeug",
+          "word": "auto",
+          "count": 1
+        },
+        {
+          "word": "straßen",
           "count": 1
         }
       ]

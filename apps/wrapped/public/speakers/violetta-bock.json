@@ -13,12 +13,12 @@
   "rankings": {
     "speechRank": 116,
     "wordsRank": 176,
-    "partySpeechRank": 17,
+    "partySpeechRank": 18,
     "partyWordsRank": 18,
     "partySize": 63,
     "totalSpeakers": 626,
     "percentile": 81.5,
-    "verbosityRank": 361,
+    "verbosityRank": 362,
     "verbosityTotal": 582,
     "partyVerbosityRank": 27,
     "longestSpeechRank": 148
@@ -27,7 +27,7 @@
     "interruptionsGiven": 14,
     "interruptionsReceived": 49,
     "interrupterRank": 244,
-    "interruptedRank": 126
+    "interruptedRank": 124
   },
   "words": {
     "topWords": [
@@ -50,6 +50,10 @@
       {
         "word": "kosten",
         "count": 16
+      },
+      {
+        "word": "gesetz",
+        "count": 15
       }
     ],
     "signatureWords": [
@@ -219,19 +223,19 @@
     "question": "Welches Wort nutzt Violetta Bock häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
         "text": "Wahlfreiheit",
         "isCorrect": true
       },
       {
-        "text": "Kinder",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Opposition",
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
         "isCorrect": false
       }
     ],
@@ -242,11 +246,7 @@
     "question": "Welches Adjektiv nutzt Violetta Bock häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
+        "text": "Groß",
         "isCorrect": false
       },
       {
@@ -254,7 +254,11 @@
         "isCorrect": true
       },
       {
-        "text": "Groß",
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
@@ -409,11 +413,11 @@
           "count": 4
         },
         {
-          "word": "familien",
+          "word": "mieten",
           "count": 2
         },
         {
-          "word": "mieten",
+          "word": "gerechtigkeit",
           "count": 2
         },
         {
@@ -421,21 +425,21 @@
           "count": 2
         },
         {
-          "word": "gerechtigkeit",
+          "word": "familien",
           "count": 2
         }
       ],
       "sicherheit": [
         {
-          "word": "angriff",
-          "count": 2
-        },
-        {
           "word": "rüstung",
           "count": 2
         },
         {
-          "word": "panzer",
+          "word": "angriff",
+          "count": 2
+        },
+        {
+          "word": "polizei",
           "count": 1
         },
         {
@@ -443,7 +447,7 @@
           "count": 1
         },
         {
-          "word": "polizei",
+          "word": "panzer",
           "count": 1
         }
       ],
@@ -451,10 +455,6 @@
         {
           "word": "abkommen",
           "count": 5
-        },
-        {
-          "word": "gipfel",
-          "count": 1
         },
         {
           "word": "frieden",
@@ -466,6 +466,10 @@
         },
         {
           "word": "ukraine",
+          "count": 1
+        },
+        {
+          "word": "gipfel",
           "count": 1
         }
       ],
@@ -495,15 +499,15 @@
           "count": 10
         },
         {
-          "word": "finanzierung",
-          "count": 2
-        },
-        {
           "word": "steuern",
           "count": 2
         },
         {
-          "word": "fördermittel",
+          "word": "finanzierung",
+          "count": 2
+        },
+        {
+          "word": "investitionen",
           "count": 1
         }
       ],
@@ -521,11 +525,11 @@
           "count": 2
         },
         {
-          "word": "strafen",
+          "word": "vorschrift",
           "count": 1
         },
         {
-          "word": "verfassungswidrig",
+          "word": "verordnung",
           "count": 1
         }
       ],
@@ -535,11 +539,11 @@
           "count": 3
         },
         {
-          "word": "gewerkschaften",
+          "word": "einkommen",
           "count": 2
         },
         {
-          "word": "einkommen",
+          "word": "gewerkschaften",
           "count": 2
         },
         {
@@ -547,22 +551,18 @@
           "count": 2
         },
         {
-          "word": "tarifbindung",
+          "word": "mindestlohn",
           "count": 1
         }
       ],
       "mobilitaet": [
         {
-          "word": "infrastruktur",
-          "count": 3
-        },
-        {
           "word": "verkehrswende",
           "count": 3
         },
         {
-          "word": "straße",
-          "count": 2
+          "word": "infrastruktur",
+          "count": 3
         },
         {
           "word": "autos",
@@ -570,6 +570,10 @@
         },
         {
           "word": "öpnv",
+          "count": 2
+        },
+        {
+          "word": "straße",
           "count": 2
         }
       ]

@@ -11,13 +11,13 @@
   "minWords": 68,
   "maxWords": 1155,
   "rankings": {
-    "speechRank": 249,
+    "speechRank": 244,
     "wordsRank": 99,
     "partySpeechRank": 51,
     "partyWordsRank": 20,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 60.2,
+    "percentile": 61.0,
     "verbosityRank": 23,
     "verbosityTotal": 582,
     "partyVerbosityRank": 7,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 33,
     "interruptionsReceived": 42,
-    "interrupterRank": 159,
-    "interruptedRank": 160
+    "interrupterRank": 158,
+    "interruptedRank": 159
   },
   "words": {
     "topWords": [
@@ -52,11 +52,11 @@
         "count": 30
       },
       {
-        "word": "land",
+        "word": "weiter",
         "count": 23
       },
       {
-        "word": "weiter",
+        "word": "land",
         "count": 23
       },
       {
@@ -217,20 +217,20 @@
     "question": "Welches Wort nutzt Dr. Gottfried Curio häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
         "text": "Münster",
         "isCorrect": true
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Münster\" nutzt Dr. Gottfried Curio 211.3× häufiger als der AfD-Durchschnitt.",
@@ -244,15 +244,15 @@
         "isCorrect": true
       },
       {
-        "text": "Falsch",
+        "text": "National",
         "isCorrect": false
       },
       {
-        "text": "Erfolgreich",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Gut",
+        "text": "Jung",
         "isCorrect": false
       }
     ],
@@ -361,23 +361,23 @@
       ],
       "wirtschaft": [
         {
-          "word": "wirtschaftskrise",
-          "count": 2
-        },
-        {
           "word": "industrie",
           "count": 2
         },
         {
-          "word": "fachkräfte",
-          "count": 1
+          "word": "wirtschaftskrise",
+          "count": 2
         },
         {
           "word": "qualifikation",
           "count": 1
         },
         {
-          "word": "import",
+          "word": "wirtschaft",
+          "count": 1
+        },
+        {
+          "word": "fachkräfte",
           "count": 1
         }
       ],
@@ -391,15 +391,15 @@
           "count": 4
         },
         {
-          "word": "bürgergeld",
+          "word": "jugendliche",
+          "count": 2
+        },
+        {
+          "word": "wohnungen",
           "count": 2
         },
         {
           "word": "rente",
-          "count": 2
-        },
-        {
-          "word": "jugendliche",
           "count": 2
         }
       ],
@@ -413,21 +413,21 @@
           "count": 4
         },
         {
-          "word": "polizei",
-          "count": 3
-        },
-        {
           "word": "anschlag",
           "count": 3
         },
         {
-          "word": "mord",
+          "word": "polizei",
+          "count": 3
+        },
+        {
+          "word": "angriff",
           "count": 2
         }
       ],
       "gesundheit": [
         {
-          "word": "kranke",
+          "word": "operation",
           "count": 2
         },
         {
@@ -435,11 +435,11 @@
           "count": 2
         },
         {
-          "word": "operation",
+          "word": "kranke",
           "count": 2
         },
         {
-          "word": "krankenkasse",
+          "word": "pflegegrad",
           "count": 1
         },
         {
@@ -453,19 +453,19 @@
           "count": 4
         },
         {
-          "word": "kiew",
-          "count": 2
-        },
-        {
-          "word": "gipfel",
-          "count": 2
-        },
-        {
           "word": "afrika",
           "count": 2
         },
         {
           "word": "außenminister",
+          "count": 2
+        },
+        {
+          "word": "kiew",
+          "count": 2
+        },
+        {
+          "word": "gipfel",
           "count": 2
         }
       ],
@@ -487,7 +487,7 @@
           "count": 1
         },
         {
-          "word": "internet",
+          "word": "netz",
           "count": 1
         }
       ],
@@ -509,7 +509,7 @@
           "count": 2
         },
         {
-          "word": "bildungssystem",
+          "word": "bildung",
           "count": 1
         }
       ],
@@ -523,11 +523,11 @@
           "count": 2
         },
         {
-          "word": "entlastung",
+          "word": "defizit",
           "count": 1
         },
         {
-          "word": "schulden",
+          "word": "entlastung",
           "count": 1
         },
         {
@@ -537,6 +537,10 @@
       ],
       "justiz": [
         {
+          "word": "richter",
+          "count": 2
+        },
+        {
           "word": "grundgesetz",
           "count": 2
         },
@@ -545,15 +549,11 @@
           "count": 2
         },
         {
-          "word": "richter",
-          "count": 2
-        },
-        {
-          "word": "gericht",
+          "word": "haftung",
           "count": 1
         },
         {
-          "word": "verordnung",
+          "word": "gerichte",
           "count": 1
         }
       ],
@@ -563,11 +563,11 @@
           "count": 3
         },
         {
-          "word": "schiff",
+          "word": "flugzeug",
           "count": 2
         },
         {
-          "word": "flugzeug",
+          "word": "schiff",
           "count": 2
         },
         {

@@ -11,13 +11,13 @@
   "minWords": 442,
   "maxWords": 510,
   "rankings": {
-    "speechRank": 611,
+    "speechRank": 599,
     "wordsRank": 603,
-    "partySpeechRank": 86,
+    "partySpeechRank": 85,
     "partyWordsRank": 86,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 2.4,
+    "percentile": 4.3,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 17,
     "interrupterRank": null,
-    "interruptedRank": 373
+    "interruptedRank": 368
   },
   "words": {
     "topWords": [
@@ -190,7 +190,11 @@
     "question": "Welches Wort nutzt Annalena Baerbock häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Zukunft",
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
@@ -198,11 +202,7 @@
         "isCorrect": true
       },
       {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
+        "text": "Zukunft",
         "isCorrect": false
       }
     ],

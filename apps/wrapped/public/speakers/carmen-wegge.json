@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 23,
     "interruptionsReceived": 60,
-    "interrupterRank": 199,
-    "interruptedRank": 78
+    "interrupterRank": 198,
+    "interruptedRank": 79
   },
   "words": {
     "topWords": [
@@ -68,16 +68,16 @@
         "ratioBundestag": 63.3
       },
       {
-        "word": "anwaltliche",
-        "count": 5,
-        "ratioParty": 88.1,
-        "ratioBundestag": 120.8
-      },
-      {
         "word": "erteilung",
         "count": 5,
         "ratioParty": 88.1,
         "ratioBundestag": 102.2
+      },
+      {
+        "word": "anwaltliche",
+        "count": 5,
+        "ratioParty": 88.1,
+        "ratioBundestag": 120.8
       },
       {
         "word": "selbstbestimmungsgesetz",
@@ -106,13 +106,13 @@
         "ratio": 132.1
       },
       {
-        "word": "anwaltliche",
+        "word": "erteilung",
         "count": 5,
         "score": 22.45,
         "ratio": 88.1
       },
       {
-        "word": "erteilung",
+        "word": "anwaltliche",
         "count": 5,
         "score": 22.45,
         "ratio": 88.1
@@ -291,7 +291,7 @@
     "question": "Welches Wort nutzt Carmen Wegge häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
@@ -299,7 +299,7 @@
         "isCorrect": true
       },
       {
-        "text": "Kinder",
+        "text": "Familie",
         "isCorrect": false
       },
       {
@@ -314,11 +314,11 @@
     "question": "Welches Adjektiv nutzt Carmen Wegge häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Klar",
+        "text": "National",
         "isCorrect": false
       },
       {
-        "text": "Schlecht",
+        "text": "Gut",
         "isCorrect": false
       },
       {
@@ -326,7 +326,7 @@
         "isCorrect": true
       },
       {
-        "text": "Problematisch",
+        "text": "Falsch",
         "isCorrect": false
       }
     ],
@@ -427,10 +427,6 @@
     "topicWords": {
       "migration": [
         {
-          "word": "ausländerbehörde",
-          "count": 3
-        },
-        {
           "word": "subsidiär",
           "count": 3
         },
@@ -443,21 +439,25 @@
           "count": 3
         },
         {
+          "word": "ausländerbehörde",
+          "count": 3
+        },
+        {
           "word": "aufenthaltsgesetz",
           "count": 2
         }
       ],
       "klima": [
         {
+          "word": "energieeffizienz",
+          "count": 1
+        },
+        {
           "word": "klimaneutral",
           "count": 1
         },
         {
           "word": "nachhaltigkeit",
-          "count": 1
-        },
-        {
-          "word": "energieeffizienz",
           "count": 1
         },
         {
@@ -471,19 +471,19 @@
           "count": 4
         },
         {
-          "word": "kredit",
-          "count": 2
-        },
-        {
           "word": "wirtschaft",
           "count": 2
         },
         {
-          "word": "fachkräfte",
-          "count": 1
+          "word": "kredit",
+          "count": 2
         },
         {
           "word": "anlage",
+          "count": 1
+        },
+        {
+          "word": "fachkräfte",
           "count": 1
         }
       ],
@@ -555,11 +555,11 @@
       ],
       "europa": [
         {
-          "word": "vertrag",
+          "word": "sanktion",
           "count": 1
         },
         {
-          "word": "sanktion",
+          "word": "vertrag",
           "count": 1
         },
         {
@@ -577,19 +577,19 @@
           "count": 7
         },
         {
-          "word": "internet",
-          "count": 3
-        },
-        {
           "word": "online",
           "count": 3
         },
         {
-          "word": "netzwerk",
+          "word": "netz",
           "count": 3
         },
         {
-          "word": "netz",
+          "word": "plattformen",
+          "count": 3
+        },
+        {
+          "word": "netzwerk",
           "count": 3
         }
       ],
@@ -603,11 +603,11 @@
           "count": 1
         },
         {
-          "word": "erzieher",
+          "word": "wissenschaft",
           "count": 1
         },
         {
-          "word": "wissenschaft",
+          "word": "erzieher",
           "count": 1
         }
       ],
@@ -621,15 +621,15 @@
           "count": 2
         },
         {
+          "word": "bundesrechnungshof",
+          "count": 1
+        },
+        {
+          "word": "haushaltsausschuss",
+          "count": 1
+        },
+        {
           "word": "kosten",
-          "count": 1
-        },
-        {
-          "word": "verschuldung",
-          "count": 1
-        },
-        {
-          "word": "banken",
           "count": 1
         }
       ],
@@ -651,7 +651,7 @@
           "count": 12
         },
         {
-          "word": "gerichte",
+          "word": "gleichberechtigung",
           "count": 6
         }
       ],
@@ -679,11 +679,11 @@
       ],
       "mobilitaet": [
         {
-          "word": "bahn",
+          "word": "straße",
           "count": 3
         },
         {
-          "word": "straße",
+          "word": "bahn",
           "count": 3
         },
         {

@@ -11,17 +11,17 @@
   "minWords": 18,
   "maxWords": 811,
   "rankings": {
-    "speechRank": 21,
+    "speechRank": 23,
     "wordsRank": 58,
     "partySpeechRank": 7,
     "partyWordsRank": 17,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 96.6,
+    "percentile": 96.3,
     "verbosityRank": 297,
     "verbosityTotal": 582,
     "partyVerbosityRank": 69,
-    "longestSpeechRank": 239
+    "longestSpeechRank": 240
   },
   "drama": {
     "interruptionsGiven": 47,
@@ -274,20 +274,20 @@
     "question": "Welches Wort nutzt Dunja Kreiser häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesellschaft",
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
         "text": "Salzgitter",
         "isCorrect": true
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Salzgitter\" nutzt Dunja Kreiser 550.6× häufiger als der SPD-Durchschnitt.",
@@ -297,19 +297,19 @@
     "question": "Welches Adjektiv nutzt Dunja Kreiser häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
         "text": "Gefährlich",
         "isCorrect": true
       },
       {
-        "text": "Schlecht",
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
         "isCorrect": false
       }
     ],
@@ -464,11 +464,11 @@
           "count": 3
         },
         {
-          "word": "rente",
+          "word": "familie",
           "count": 1
         },
         {
-          "word": "familie",
+          "word": "rente",
           "count": 1
         }
       ],
@@ -478,11 +478,11 @@
           "count": 2
         },
         {
-          "word": "rüstung",
+          "word": "kriminalität",
           "count": 1
         },
         {
-          "word": "kriminalität",
+          "word": "rüstung",
           "count": 1
         },
         {
@@ -536,15 +536,15 @@
           "count": 1
         },
         {
-          "word": "automatisierung",
+          "word": "plattform",
           "count": 1
         },
         {
-          "word": "digitalisierung",
+          "word": "daten",
           "count": 1
         },
         {
-          "word": "plattformen",
+          "word": "netzausbau",
           "count": 1
         }
       ],
@@ -562,11 +562,11 @@
           "count": 2
         },
         {
-          "word": "berufsausbildung",
+          "word": "ausbildung",
           "count": 1
         },
         {
-          "word": "wissenschaftler",
+          "word": "qualifizierung",
           "count": 1
         }
       ],
@@ -588,7 +588,7 @@
           "count": 2
         },
         {
-          "word": "sondervermögen",
+          "word": "subventionen",
           "count": 2
         }
       ],
@@ -608,7 +608,7 @@
           "count": 4
         },
         {
-          "word": "einkommen",
+          "word": "mitbestimmung",
           "count": 3
         },
         {
@@ -634,11 +634,11 @@
           "count": 8
         },
         {
-          "word": "autos",
+          "word": "auto",
           "count": 4
         },
         {
-          "word": "auto",
+          "word": "autos",
           "count": 4
         }
       ]

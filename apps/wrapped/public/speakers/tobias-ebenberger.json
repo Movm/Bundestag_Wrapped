@@ -11,13 +11,13 @@
   "minWords": 60,
   "maxWords": 753,
   "rankings": {
-    "speechRank": 258,
+    "speechRank": 281,
     "wordsRank": 353,
-    "partySpeechRank": 52,
+    "partySpeechRank": 60,
     "partyWordsRank": 77,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 58.8,
+    "percentile": 55.1,
     "verbosityRank": 367,
     "verbosityTotal": 582,
     "partyVerbosityRank": 94,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 28,
     "interruptionsReceived": 34,
-    "interrupterRank": 179,
-    "interruptedRank": 210
+    "interrupterRank": 181,
+    "interruptedRank": 219
   },
   "words": {
     "topWords": [
@@ -221,19 +221,19 @@
     "question": "Welches Wort nutzt Tobias Ebenberger häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
         "text": "Brieftasche",
         "isCorrect": true
       },
       {
-        "text": "Opposition",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
+        "text": "Klima",
         "isCorrect": false
       }
     ],
@@ -244,11 +244,7 @@
     "question": "Welches Adjektiv nutzt Tobias Ebenberger häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
@@ -256,7 +252,11 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
@@ -383,11 +383,11 @@
           "count": 2
         },
         {
-          "word": "rente",
+          "word": "familien",
           "count": 1
         },
         {
-          "word": "wohnung",
+          "word": "rente",
           "count": 1
         }
       ],
@@ -427,7 +427,7 @@
           "count": 2
         },
         {
-          "word": "sucht",
+          "word": "pandemie",
           "count": 1
         }
       ],
@@ -455,11 +455,11 @@
           "count": 4
         },
         {
-          "word": "internet",
+          "word": "netz",
           "count": 4
         },
         {
-          "word": "netz",
+          "word": "internet",
           "count": 4
         }
       ],
@@ -469,15 +469,15 @@
           "count": 2
         },
         {
+          "word": "professor",
+          "count": 1
+        },
+        {
           "word": "schule",
           "count": 1
         },
         {
           "word": "bildung",
-          "count": 1
-        },
-        {
-          "word": "professor",
           "count": 1
         }
       ],
@@ -509,15 +509,15 @@
           "count": 3
         },
         {
+          "word": "grundrechte",
+          "count": 1
+        },
+        {
           "word": "anwalt",
           "count": 1
         },
         {
           "word": "verordnung",
-          "count": 1
-        },
-        {
-          "word": "grundrechte",
           "count": 1
         },
         {
@@ -545,15 +545,15 @@
           "count": 2
         },
         {
-          "word": "verkehr",
-          "count": 1
-        },
-        {
-          "word": "straßen",
-          "count": 1
-        },
-        {
           "word": "auto",
+          "count": 1
+        },
+        {
+          "word": "bahnhof",
+          "count": 1
+        },
+        {
+          "word": "flugzeug",
           "count": 1
         }
       ]

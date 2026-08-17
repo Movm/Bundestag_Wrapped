@@ -11,23 +11,23 @@
   "minWords": 257,
   "maxWords": 867,
   "rankings": {
-    "speechRank": 322,
+    "speechRank": 339,
     "wordsRank": 328,
-    "partySpeechRank": 75,
+    "partySpeechRank": 79,
     "partyWordsRank": 72,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 48.6,
-    "verbosityRank": 103,
+    "percentile": 45.8,
+    "verbosityRank": 104,
     "verbosityTotal": 582,
     "partyVerbosityRank": 28,
-    "longestSpeechRank": 167
+    "longestSpeechRank": 168
   },
   "drama": {
     "interruptionsGiven": 4,
     "interruptionsReceived": 16,
-    "interrupterRank": 363,
-    "interruptedRank": 377
+    "interrupterRank": 367,
+    "interruptedRank": 378
   },
   "words": {
     "topWords": [
@@ -36,19 +36,19 @@
         "count": 22
       },
       {
-        "word": "landwirte",
-        "count": 21
-      },
-      {
         "word": "bundesregierung",
         "count": 21
       },
       {
-        "word": "haushalt",
-        "count": 15
+        "word": "landwirte",
+        "count": 21
       },
       {
         "word": "minister",
+        "count": 15
+      },
+      {
+        "word": "haushalt",
         "count": 15
       },
       {
@@ -212,19 +212,19 @@
     "question": "Welches Wort nutzt Julian Schmidt häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
         "text": "Tierhaltung",
         "isCorrect": true
       },
       {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
+        "text": "Koalition",
         "isCorrect": false
       }
     ],
@@ -235,7 +235,11 @@
     "question": "Welches Adjektiv nutzt Julian Schmidt häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Klar",
+        "text": "Sicher",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
@@ -243,11 +247,7 @@
         "isCorrect": true
       },
       {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Stark",
+        "text": "Sozial",
         "isCorrect": false
       }
     ],
@@ -334,19 +334,19 @@
           "count": 4
         },
         {
-          "word": "biodiversität",
-          "count": 2
-        },
-        {
           "word": "photovoltaik",
           "count": 2
         },
         {
-          "word": "klimaschutz",
-          "count": 1
+          "word": "biodiversität",
+          "count": 2
         },
         {
           "word": "energie",
+          "count": 1
+        },
+        {
+          "word": "klimaschutz",
           "count": 1
         }
       ],
@@ -360,30 +360,26 @@
           "count": 8
         },
         {
-          "word": "industrie",
-          "count": 2
-        },
-        {
           "word": "konzerne",
           "count": 2
         },
         {
-          "word": "kartell",
+          "word": "industrie",
+          "count": 2
+        },
+        {
+          "word": "märkte",
           "count": 1
         }
       ],
       "soziales": [
         {
-          "word": "familien",
-          "count": 2
-        },
-        {
           "word": "familie",
           "count": 2
         },
         {
-          "word": "sozialstaat",
-          "count": 1
+          "word": "familien",
+          "count": 2
         },
         {
           "word": "sozialsystem",
@@ -391,6 +387,10 @@
         },
         {
           "word": "sozialpolitik",
+          "count": 1
+        },
+        {
+          "word": "sozialstaat",
           "count": 1
         }
       ],
@@ -422,11 +422,11 @@
       ],
       "bildung": [
         {
-          "word": "wissenschaft",
+          "word": "lehrer",
           "count": 1
         },
         {
-          "word": "lehrer",
+          "word": "wissenschaft",
           "count": 1
         }
       ],
@@ -444,11 +444,11 @@
           "count": 5
         },
         {
-          "word": "haushaltsentwurf",
+          "word": "investitionen",
           "count": 3
         },
         {
-          "word": "investitionen",
+          "word": "haushaltsentwurf",
           "count": 3
         }
       ],

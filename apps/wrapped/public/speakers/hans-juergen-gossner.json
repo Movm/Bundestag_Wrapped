@@ -11,22 +11,22 @@
   "minWords": 30,
   "maxWords": 827,
   "rankings": {
-    "speechRank": 317,
+    "speechRank": 329,
     "wordsRank": 325,
-    "partySpeechRank": 72,
+    "partySpeechRank": 77,
     "partyWordsRank": 71,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 49.4,
+    "percentile": 47.4,
     "verbosityRank": 530,
     "verbosityTotal": 582,
     "partyVerbosityRank": 136,
-    "longestSpeechRank": 212
+    "longestSpeechRank": 214
   },
   "drama": {
     "interruptionsGiven": 7,
     "interruptionsReceived": 36,
-    "interrupterRank": 309,
+    "interrupterRank": 307,
     "interruptedRank": 199
   },
   "words": {
@@ -48,7 +48,7 @@
         "count": 11
       },
       {
-        "word": "bundesregierung",
+        "word": "linke",
         "count": 10
       },
       {
@@ -56,7 +56,7 @@
         "count": 10
       },
       {
-        "word": "linke",
+        "word": "bundesregierung",
         "count": 10
       }
     ],
@@ -204,20 +204,20 @@
     "question": "Welches Wort nutzt Hans-Jürgen Goßner häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Krank",
-        "isCorrect": true
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
         "text": "Klima",
         "isCorrect": false
+      },
+      {
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Krank",
+        "isCorrect": true
       }
     ],
     "explanationParty": "\"Krank\" nutzt Hans-Jürgen Goßner 62.2× häufiger als der AfD-Durchschnitt.",
@@ -227,7 +227,11 @@
     "question": "Welches Adjektiv nutzt Hans-Jürgen Goßner häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
@@ -235,11 +239,7 @@
         "isCorrect": true
       },
       {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
+        "text": "Stark",
         "isCorrect": false
       }
     ],
@@ -344,15 +344,15 @@
           "count": 12
         },
         {
-          "word": "wirtschaft",
-          "count": 4
-        },
-        {
           "word": "unternehmen",
           "count": 4
         },
         {
-          "word": "konzerne",
+          "word": "wirtschaft",
+          "count": 4
+        },
+        {
+          "word": "mittelstand",
           "count": 2
         },
         {
@@ -366,19 +366,19 @@
           "count": 2
         },
         {
-          "word": "sozialstaat",
-          "count": 2
-        },
-        {
           "word": "jugend",
           "count": 2
         },
         {
-          "word": "wohnung",
+          "word": "sozialstaat",
+          "count": 2
+        },
+        {
+          "word": "familie",
           "count": 1
         },
         {
-          "word": "kinder",
+          "word": "chancengleichheit",
           "count": 1
         }
       ],
@@ -396,11 +396,11 @@
           "count": 2
         },
         {
-          "word": "überwachung",
+          "word": "polizei",
           "count": 1
         },
         {
-          "word": "polizei",
+          "word": "überwachung",
           "count": 1
         }
       ],
@@ -414,7 +414,7 @@
           "count": 4
         },
         {
-          "word": "pflegegrad",
+          "word": "medizin",
           "count": 1
         },
         {
@@ -422,7 +422,7 @@
           "count": 1
         },
         {
-          "word": "medizin",
+          "word": "pflegegrad",
           "count": 1
         }
       ],
@@ -444,10 +444,6 @@
       ],
       "bildung": [
         {
-          "word": "bildungssystem",
-          "count": 1
-        },
-        {
           "word": "wissenschaft",
           "count": 1
         },
@@ -456,11 +452,15 @@
           "count": 1
         },
         {
-          "word": "meister",
+          "word": "azubi",
           "count": 1
         },
         {
-          "word": "azubi",
+          "word": "bildungssystem",
+          "count": 1
+        },
+        {
+          "word": "meister",
           "count": 1
         }
       ],
@@ -474,15 +474,15 @@
           "count": 3
         },
         {
-          "word": "steuern",
-          "count": 2
-        },
-        {
           "word": "fördermittel",
           "count": 2
         },
         {
-          "word": "kosten",
+          "word": "steuern",
+          "count": 2
+        },
+        {
+          "word": "inflation",
           "count": 1
         }
       ],
@@ -500,11 +500,11 @@
           "count": 2
         },
         {
-          "word": "verfassungsrecht",
+          "word": "haftung",
           "count": 1
         },
         {
-          "word": "haftung",
+          "word": "anwälte",
           "count": 1
         }
       ],
@@ -518,11 +518,11 @@
           "count": 5
         },
         {
-          "word": "arbeitszeit",
+          "word": "gewerkschaften",
           "count": 2
         },
         {
-          "word": "mindestlohn",
+          "word": "arbeitszeit",
           "count": 2
         },
         {
@@ -532,11 +532,15 @@
       ],
       "mobilitaet": [
         {
-          "word": "flug",
+          "word": "infrastruktur",
           "count": 1
         },
         {
-          "word": "straße",
+          "word": "straßen",
+          "count": 1
+        },
+        {
+          "word": "flug",
           "count": 1
         },
         {
@@ -544,11 +548,7 @@
           "count": 1
         },
         {
-          "word": "infrastruktur",
-          "count": 1
-        },
-        {
-          "word": "straßen",
+          "word": "straße",
           "count": 1
         }
       ]

@@ -11,13 +11,13 @@
   "minWords": 31,
   "maxWords": 717,
   "rankings": {
-    "speechRank": 96,
+    "speechRank": 103,
     "wordsRank": 188,
-    "partySpeechRank": 18,
+    "partySpeechRank": 20,
     "partyWordsRank": 40,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 84.7,
+    "percentile": 83.5,
     "verbosityRank": 482,
     "verbosityTotal": 582,
     "partyVerbosityRank": 125,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 61,
     "interruptionsReceived": 67,
     "interrupterRank": 88,
-    "interruptedRank": 60
+    "interruptedRank": 64
   },
   "words": {
     "topWords": [
@@ -44,15 +44,15 @@
         "count": 17
       },
       {
+        "word": "industrie",
+        "count": 15
+      },
+      {
         "word": "brandmauer",
         "count": 15
       },
       {
         "word": "bürger",
-        "count": 15
-      },
-      {
-        "word": "wirtschaft",
         "count": 15
       }
     ],
@@ -277,7 +277,7 @@
     "question": "Welches Wort nutzt Adam Balten häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Energie",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
@@ -285,11 +285,11 @@
         "isCorrect": true
       },
       {
-        "text": "Koalition",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Investitionen",
+        "text": "Klima",
         "isCorrect": false
       }
     ],
@@ -300,19 +300,19 @@
     "question": "Welches Adjektiv nutzt Adam Balten häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
         "text": "Gefährlich",
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
         "isCorrect": false
       }
     ],
@@ -399,11 +399,11 @@
       ],
       "klima": [
         {
-          "word": "kohle",
+          "word": "energie",
           "count": 10
         },
         {
-          "word": "energie",
+          "word": "kohle",
           "count": 10
         },
         {
@@ -421,11 +421,11 @@
       ],
       "wirtschaft": [
         {
-          "word": "wirtschaft",
+          "word": "industrie",
           "count": 15
         },
         {
-          "word": "industrie",
+          "word": "wirtschaft",
           "count": 15
         },
         {
@@ -455,11 +455,11 @@
           "count": 2
         },
         {
-          "word": "familien",
+          "word": "bürgergeld",
           "count": 1
         },
         {
-          "word": "chancengerechtigkeit",
+          "word": "familien",
           "count": 1
         }
       ],
@@ -471,11 +471,11 @@
       ],
       "gesundheit": [
         {
-          "word": "depression",
+          "word": "behandlung",
           "count": 1
         },
         {
-          "word": "behandlung",
+          "word": "depression",
           "count": 1
         }
       ],
@@ -493,11 +493,11 @@
           "count": 1
         },
         {
-          "word": "europa",
+          "word": "ukraine",
           "count": 1
         },
         {
-          "word": "ukraine",
+          "word": "europa",
           "count": 1
         }
       ],
@@ -507,11 +507,7 @@
           "count": 10
         },
         {
-          "word": "netz",
-          "count": 1
-        },
-        {
-          "word": "daten",
+          "word": "internet",
           "count": 1
         },
         {
@@ -519,7 +515,11 @@
           "count": 1
         },
         {
-          "word": "internet",
+          "word": "daten",
+          "count": 1
+        },
+        {
+          "word": "netz",
           "count": 1
         }
       ],
@@ -541,7 +541,7 @@
           "count": 2
         },
         {
-          "word": "hochschulen",
+          "word": "wissenschaftler",
           "count": 1
         }
       ],
@@ -585,17 +585,17 @@
           "count": 2
         },
         {
-          "word": "lohnerhöhung",
+          "word": "beschäftigte",
           "count": 1
         }
       ],
       "mobilitaet": [
         {
-          "word": "verkehr",
+          "word": "fahrzeuge",
           "count": 2
         },
         {
-          "word": "fahrzeuge",
+          "word": "verkehr",
           "count": 2
         },
         {
@@ -603,11 +603,11 @@
           "count": 2
         },
         {
-          "word": "nahverkehr",
+          "word": "fliegen",
           "count": 1
         },
         {
-          "word": "öpnv",
+          "word": "elektromobilität",
           "count": 1
         }
       ]

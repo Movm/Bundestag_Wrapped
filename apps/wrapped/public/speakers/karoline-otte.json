@@ -11,23 +11,23 @@
   "minWords": 51,
   "maxWords": 593,
   "rankings": {
-    "speechRank": 155,
+    "speechRank": 170,
     "wordsRank": 248,
-    "partySpeechRank": 29,
+    "partySpeechRank": 31,
     "partyWordsRank": 40,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 75.2,
-    "verbosityRank": 423,
+    "percentile": 72.8,
+    "verbosityRank": 424,
     "verbosityTotal": 582,
     "partyVerbosityRank": 48,
-    "longestSpeechRank": 504
+    "longestSpeechRank": 505
   },
   "drama": {
     "interruptionsGiven": 8,
     "interruptionsReceived": 42,
-    "interrupterRank": 290,
-    "interruptedRank": 157
+    "interrupterRank": 298,
+    "interruptedRank": 160
   },
   "words": {
     "topWords": [
@@ -44,11 +44,11 @@
         "count": 37
       },
       {
-        "word": "geld",
+        "word": "bundesregierung",
         "count": 29
       },
       {
-        "word": "bundesregierung",
+        "word": "geld",
         "count": 29
       },
       {
@@ -64,11 +64,7 @@
         "count": 17
       },
       {
-        "word": "deutschland",
-        "count": 15
-      },
-      {
-        "word": "milliardäre",
+        "word": "gemeinsam",
         "count": 15
       }
     ],
@@ -92,16 +88,16 @@
         "ratioBundestag": 185.3
       },
       {
-        "word": "überreiche",
-        "count": 5,
-        "ratioParty": 146.9,
-        "ratioBundestag": 343.1
-      },
-      {
         "word": "kommunale",
         "count": 10,
         "ratioParty": 146.9,
         "ratioBundestag": 30.4
+      },
+      {
+        "word": "überreiche",
+        "count": 5,
+        "ratioParty": 146.9,
+        "ratioBundestag": 343.1
       }
     ],
     "signatureWordsParty": [
@@ -288,20 +284,20 @@
     "question": "Welches Wort nutzt Karoline Otte häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kinder",
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
         "isCorrect": false
       },
       {
         "text": "Milliardärinnen",
         "isCorrect": true
-      },
-      {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Milliardärinnen\" nutzt Karoline Otte 220.4× häufiger als der GRÜNE-Durchschnitt.",
@@ -311,20 +307,20 @@
     "question": "Welches Adjektiv nutzt Karoline Otte häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Stark",
-        "isCorrect": false
-      },
-      {
         "text": "Ungerecht",
         "isCorrect": true
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Ungerecht\" nutzt Karoline Otte 15.2× häufiger als der GRÜNE-Durchschnitt.",
@@ -458,11 +454,11 @@
           "count": 2
         },
         {
-          "word": "konzern",
+          "word": "firmen",
           "count": 1
         },
         {
-          "word": "wirtschaft",
+          "word": "wirtschaftswachstum",
           "count": 1
         }
       ],
@@ -490,11 +486,11 @@
       ],
       "sicherheit": [
         {
-          "word": "gewalt",
+          "word": "angriff",
           "count": 1
         },
         {
-          "word": "angriff",
+          "word": "gewalt",
           "count": 1
         },
         {
@@ -504,7 +500,7 @@
       ],
       "gesundheit": [
         {
-          "word": "pflege",
+          "word": "pflegekraft",
           "count": 1
         },
         {
@@ -512,7 +508,7 @@
           "count": 1
         },
         {
-          "word": "pflegekraft",
+          "word": "pflege",
           "count": 1
         }
       ],
@@ -550,19 +546,19 @@
           "count": 6
         },
         {
-          "word": "lehrer",
-          "count": 2
-        },
-        {
           "word": "schulen",
           "count": 2
         },
         {
-          "word": "bildung",
+          "word": "lehrer",
+          "count": 2
+        },
+        {
+          "word": "volkshochschule",
           "count": 1
         },
         {
-          "word": "kinderbetreuung",
+          "word": "schule",
           "count": 1
         }
       ],
@@ -596,14 +592,6 @@
       ],
       "arbeit": [
         {
-          "word": "sozialabgaben",
-          "count": 1
-        },
-        {
-          "word": "einkommen",
-          "count": 1
-        },
-        {
           "word": "arbeitskräfte",
           "count": 1
         },
@@ -614,6 +602,14 @@
         {
           "word": "angestellte",
           "count": 1
+        },
+        {
+          "word": "sozialabgaben",
+          "count": 1
+        },
+        {
+          "word": "einkommen",
+          "count": 1
         }
       ],
       "mobilitaet": [
@@ -622,7 +618,7 @@
           "count": 2
         },
         {
-          "word": "fliegen",
+          "word": "straße",
           "count": 1
         },
         {
@@ -630,11 +626,11 @@
           "count": 1
         },
         {
-          "word": "straßen",
+          "word": "fliegen",
           "count": 1
         },
         {
-          "word": "straße",
+          "word": "straßen",
           "count": 1
         }
       ]

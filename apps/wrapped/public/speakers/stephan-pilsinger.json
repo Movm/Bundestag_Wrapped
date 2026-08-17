@@ -11,23 +11,23 @@
   "minWords": 27,
   "maxWords": 778,
   "rankings": {
-    "speechRank": 399,
+    "speechRank": 389,
     "wordsRank": 389,
-    "partySpeechRank": 113,
+    "partySpeechRank": 107,
     "partyWordsRank": 121,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 36.3,
-    "verbosityRank": 228,
+    "percentile": 37.9,
+    "verbosityRank": 227,
     "verbosityTotal": 582,
     "partyVerbosityRank": 80,
-    "longestSpeechRank": 273
+    "longestSpeechRank": 272
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 21,
-    "interrupterRank": 418,
-    "interruptedRank": 334
+    "interrupterRank": 405,
+    "interruptedRank": 331
   },
   "words": {
     "topWords": [
@@ -50,6 +50,10 @@
       {
         "word": "klar",
         "count": 11
+      },
+      {
+        "word": "bekommen",
+        "count": 10
       }
     ],
     "signatureWords": [
@@ -214,7 +218,11 @@
     "question": "Welches Wort nutzt Dr. Stephan Pilsinger häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Abstimmung",
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
@@ -222,11 +230,7 @@
         "isCorrect": true
       },
       {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
+        "text": "Bildung",
         "isCorrect": false
       }
     ],
@@ -237,16 +241,16 @@
     "question": "Welches Adjektiv nutzt Dr. Stephan Pilsinger häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
         "text": "Lächerlich",
         "isCorrect": true
-      },
-      {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
-        "isCorrect": false
       },
       {
         "text": "Stark",
@@ -354,19 +358,19 @@
           "count": 2
         },
         {
+          "word": "zölle",
+          "count": 1
+        },
+        {
+          "word": "standort",
+          "count": 1
+        },
+        {
           "word": "industrie",
           "count": 1
         },
         {
           "word": "insolvenz",
-          "count": 1
-        },
-        {
-          "word": "wettbewerbsfähigkeit",
-          "count": 1
-        },
-        {
-          "word": "zölle",
           "count": 1
         }
       ],
@@ -376,33 +380,33 @@
           "count": 3
         },
         {
-          "word": "kinder",
-          "count": 2
-        },
-        {
           "word": "eltern",
           "count": 2
         },
         {
-          "word": "gerechtigkeit",
-          "count": 1
+          "word": "kinder",
+          "count": 2
         },
         {
           "word": "behinderung",
           "count": 1
+        },
+        {
+          "word": "gerechtigkeit",
+          "count": 1
         }
       ],
       "gesundheit": [
+        {
+          "word": "arzneimittel",
+          "count": 8
+        },
         {
           "word": "gesundheitssystem",
           "count": 8
         },
         {
           "word": "krankenhäuser",
-          "count": 8
-        },
-        {
-          "word": "arzneimittel",
           "count": 8
         },
         {
@@ -436,11 +440,11 @@
           "count": 8
         },
         {
-          "word": "sondervermögen",
+          "word": "inflation",
           "count": 2
         },
         {
-          "word": "inflation",
+          "word": "sondervermögen",
           "count": 2
         },
         {

@@ -11,13 +11,13 @@
   "minWords": 42,
   "maxWords": 584,
   "rankings": {
-    "speechRank": 336,
+    "speechRank": 313,
     "wordsRank": 410,
-    "partySpeechRank": 44,
+    "partySpeechRank": 40,
     "partyWordsRank": 44,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 46.3,
+    "percentile": 50.0,
     "verbosityRank": 523,
     "verbosityTotal": 582,
     "partyVerbosityRank": 55,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 3,
     "interruptionsReceived": 5,
-    "interrupterRank": 388,
-    "interruptedRank": 542
+    "interrupterRank": 395,
+    "interruptedRank": 553
   },
   "words": {
     "topWords": [
@@ -191,20 +191,20 @@
     "question": "Welches Wort nutzt Julia-Christina Stange häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Wirtschaft",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
         "text": "Endometriose",
         "isCorrect": true
+      },
+      {
+        "text": "Haushalt",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Endometriose\" nutzt Julia-Christina Stange 645.7× häufiger als der DIE LINKE-Durchschnitt.",
@@ -329,10 +329,6 @@
       ],
       "soziales": [
         {
-          "word": "gerechtigkeit",
-          "count": 2
-        },
-        {
           "word": "familie",
           "count": 2
         },
@@ -341,11 +337,15 @@
           "count": 2
         },
         {
-          "word": "rente",
-          "count": 1
+          "word": "gerechtigkeit",
+          "count": 2
         },
         {
           "word": "kinder",
+          "count": 1
+        },
+        {
+          "word": "jugend",
           "count": 1
         }
       ],
@@ -399,15 +399,15 @@
           "count": 12
         },
         {
-          "word": "schulabschluss",
-          "count": 1
-        },
-        {
           "word": "forschungsförderung",
           "count": 1
         },
         {
           "word": "grundlagenforschung",
+          "count": 1
+        },
+        {
+          "word": "schulabschluss",
           "count": 1
         }
       ],
@@ -421,7 +421,7 @@
           "count": 2
         },
         {
-          "word": "steuern",
+          "word": "haushalt",
           "count": 1
         },
         {
@@ -429,7 +429,7 @@
           "count": 1
         },
         {
-          "word": "haushalt",
+          "word": "steuern",
           "count": 1
         }
       ],
@@ -463,11 +463,11 @@
       ],
       "mobilitaet": [
         {
-          "word": "auto",
+          "word": "straße",
           "count": 1
         },
         {
-          "word": "straße",
+          "word": "auto",
           "count": 1
         }
       ]

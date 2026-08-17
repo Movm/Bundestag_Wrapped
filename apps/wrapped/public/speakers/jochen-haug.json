@@ -11,14 +11,14 @@
   "minWords": 398,
   "maxWords": 582,
   "rankings": {
-    "speechRank": 475,
+    "speechRank": 457,
     "wordsRank": 504,
-    "partySpeechRank": 111,
+    "partySpeechRank": 106,
     "partyWordsRank": 112,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 24.1,
-    "verbosityRank": 245,
+    "percentile": 27.0,
+    "verbosityRank": 242,
     "verbosityTotal": 582,
     "partyVerbosityRank": 61,
     "longestSpeechRank": 517
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 6,
     "interruptionsReceived": 20,
-    "interrupterRank": 340,
-    "interruptedRank": 349
+    "interrupterRank": 330,
+    "interruptedRank": 345
   },
   "words": {
     "topWords": [
@@ -48,10 +48,6 @@
         "count": 12
       },
       {
-        "word": "deutschen",
-        "count": 9
-      },
-      {
         "word": "regierung",
         "count": 9
       },
@@ -64,7 +60,11 @@
         "count": 9
       },
       {
-        "word": "grenzen",
+        "word": "deutschen",
+        "count": 9
+      },
+      {
+        "word": "jahren",
         "count": 8
       },
       {
@@ -216,20 +216,20 @@
     "question": "Welches Wort nutzt Jochen Haug häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
         "text": "Zurückweisen",
         "isCorrect": true
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Zurückweisen\" nutzt Jochen Haug 156.1× häufiger als der AfD-Durchschnitt.",
@@ -239,19 +239,19 @@
     "question": "Welches Adjektiv nutzt Jochen Haug häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
+        "text": "Rechts",
+        "isCorrect": true
       },
       {
         "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Rechts",
-        "isCorrect": true
+        "text": "Groß",
+        "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Notwendig",
         "isCorrect": false
       }
     ],
@@ -332,7 +332,7 @@
           "count": 5
         },
         {
-          "word": "migration",
+          "word": "einbürgerung",
           "count": 2
         },
         {
@@ -340,11 +340,11 @@
           "count": 2
         },
         {
-          "word": "einbürgerung",
+          "word": "migration",
           "count": 2
         },
         {
-          "word": "zuwanderung",
+          "word": "staatsangehörigkeit",
           "count": 1
         }
       ],
@@ -416,15 +416,15 @@
       ],
       "justiz": [
         {
-          "word": "grundgesetz",
-          "count": 1
-        },
-        {
           "word": "rechtsstaat",
           "count": 1
         },
         {
           "word": "verordnung",
+          "count": 1
+        },
+        {
+          "word": "grundgesetz",
           "count": 1
         }
       ]

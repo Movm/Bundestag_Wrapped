@@ -11,14 +11,14 @@
   "minWords": 183,
   "maxWords": 729,
   "rankings": {
-    "speechRank": 102,
+    "speechRank": 106,
     "wordsRank": 181,
-    "partySpeechRank": 15,
+    "partySpeechRank": 14,
     "partyWordsRank": 20,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 83.7,
-    "verbosityRank": 243,
+    "percentile": 83.1,
+    "verbosityRank": 244,
     "verbosityTotal": 582,
     "partyVerbosityRank": 14,
     "longestSpeechRank": 342
@@ -27,7 +27,7 @@
     "interruptionsGiven": 106,
     "interruptionsReceived": 61,
     "interrupterRank": 42,
-    "interruptedRank": 77
+    "interruptedRank": 76
   },
   "words": {
     "topWords": [
@@ -65,10 +65,6 @@
       },
       {
         "word": "klimawandel",
-        "count": 15
-      },
-      {
-        "word": "politik",
         "count": 15
       }
     ],
@@ -275,20 +271,20 @@
     "question": "Welches Wort nutzt Dr. Fabian Fahl häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
         "text": "Erwärmung",
         "isCorrect": true
-      },
-      {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Minister",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Erwärmung\" nutzt Dr. Fabian Fahl 256.5× häufiger als der DIE LINKE-Durchschnitt.",
@@ -298,20 +294,20 @@
     "question": "Welches Adjektiv nutzt Dr. Fabian Fahl häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Sicher",
+        "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Problematisch",
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
         "text": "Radikal",
         "isCorrect": true
-      },
-      {
-        "text": "Schlecht",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Radikal\" nutzt Dr. Fabian Fahl 68.4× häufiger als der DIE LINKE-Durchschnitt.",
@@ -445,21 +441,21 @@
           "count": 3
         },
         {
-          "word": "unternehmen",
+          "word": "volkswirtschaft",
           "count": 2
         },
         {
-          "word": "volkswirtschaft",
+          "word": "konzern",
           "count": 2
         }
       ],
       "soziales": [
         {
-          "word": "miete",
+          "word": "kinder",
           "count": 2
         },
         {
-          "word": "kinder",
+          "word": "miete",
           "count": 2
         },
         {
@@ -501,15 +497,15 @@
           "count": 1
         },
         {
+          "word": "krieg",
+          "count": 1
+        },
+        {
           "word": "abkommen",
           "count": 1
         },
         {
           "word": "brüssel",
-          "count": 1
-        },
-        {
-          "word": "russland",
           "count": 1
         }
       ],
@@ -547,23 +543,19 @@
           "count": 4
         },
         {
-          "word": "steuerzahler",
-          "count": 2
-        },
-        {
-          "word": "steuern",
+          "word": "sondervermögen",
           "count": 2
         },
         {
           "word": "investitionen",
           "count": 2
+        },
+        {
+          "word": "steuern",
+          "count": 2
         }
       ],
       "justiz": [
-        {
-          "word": "bundesverfassungsgericht",
-          "count": 2
-        },
         {
           "word": "verfassungswidrig",
           "count": 2
@@ -573,11 +565,15 @@
           "count": 2
         },
         {
-          "word": "gerichte",
+          "word": "bundesverfassungsgericht",
+          "count": 2
+        },
+        {
+          "word": "rechtsstaat",
           "count": 1
         },
         {
-          "word": "haftung",
+          "word": "verfassungskonform",
           "count": 1
         }
       ],
@@ -609,7 +605,7 @@
           "count": 4
         },
         {
-          "word": "tempolimit",
+          "word": "autos",
           "count": 3
         }
       ]

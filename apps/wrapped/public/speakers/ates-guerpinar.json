@@ -11,23 +11,23 @@
   "minWords": 61,
   "maxWords": 864,
   "rankings": {
-    "speechRank": 66,
+    "speechRank": 59,
     "wordsRank": 100,
-    "partySpeechRank": 10,
+    "partySpeechRank": 9,
     "partyWordsRank": 12,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 89.5,
+    "percentile": 90.6,
     "verbosityRank": 490,
     "verbosityTotal": 582,
     "partyVerbosityRank": 49,
-    "longestSpeechRank": 172
+    "longestSpeechRank": 171
   },
   "drama": {
     "interruptionsGiven": 92,
     "interruptionsReceived": 41,
     "interrupterRank": 51,
-    "interruptedRank": 169
+    "interruptedRank": 162
   },
   "words": {
     "topWords": [
@@ -40,11 +40,11 @@
         "count": 26
       },
       {
-        "word": "union",
+        "word": "warken",
         "count": 24
       },
       {
-        "word": "warken",
+        "word": "union",
         "count": 24
       },
       {
@@ -253,26 +253,31 @@
       "emoji": "⚡",
       "label": "Zwischenrufe",
       "value": "92"
+    },
+    {
+      "emoji": "📊",
+      "label": "Top-Redner",
+      "value": "Top 10%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Ates Gürpinar häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
         "text": "Pharmaindustrie",
         "isCorrect": true
+      },
+      {
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Minister",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Pharmaindustrie\" nutzt Ates Gürpinar 318.8× häufiger als der DIE LINKE-Durchschnitt.",
@@ -282,20 +287,20 @@
     "question": "Welches Adjektiv nutzt Ates Gürpinar häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
+        "text": "National",
         "isCorrect": false
       },
       {
         "text": "Ungerecht",
         "isCorrect": true
+      },
+      {
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Ungerecht\" nutzt Ates Gürpinar 4.3× häufiger als der DIE LINKE-Durchschnitt.",
@@ -419,15 +424,15 @@
           "count": 3
         },
         {
-          "word": "unternehmen",
-          "count": 2
-        },
-        {
           "word": "industrie",
           "count": 2
         },
         {
-          "word": "konzern",
+          "word": "unternehmen",
+          "count": 2
+        },
+        {
+          "word": "produktion",
           "count": 1
         },
         {
@@ -573,11 +578,11 @@
           "count": 2
         },
         {
-          "word": "beschäftigte",
+          "word": "jobcenter",
           "count": 1
         },
         {
-          "word": "jobcenter",
+          "word": "vereinbarkeit",
           "count": 1
         }
       ],

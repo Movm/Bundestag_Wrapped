@@ -11,23 +11,23 @@
   "minWords": 50,
   "maxWords": 632,
   "rankings": {
-    "speechRank": 236,
+    "speechRank": 221,
     "wordsRank": 289,
-    "partySpeechRank": 63,
+    "partySpeechRank": 55,
     "partyWordsRank": 83,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 62.3,
+    "percentile": 64.7,
     "verbosityRank": 443,
     "verbosityTotal": 582,
     "partyVerbosityRank": 154,
-    "longestSpeechRank": 461
+    "longestSpeechRank": 460
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 85,
     "interrupterRank": null,
-    "interruptedRank": 37
+    "interruptedRank": 38
   },
   "words": {
     "topWords": [
@@ -226,11 +226,7 @@
     "question": "Welches Wort nutzt Dr. Thomas Gebhart häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Energie",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
@@ -238,7 +234,11 @@
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
         "isCorrect": false
       }
     ],
@@ -249,19 +249,19 @@
     "question": "Welches Adjektiv nutzt Dr. Thomas Gebhart häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
         "text": "Vernünftig",
         "isCorrect": true
       },
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
         "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
         "isCorrect": false
       }
     ],
@@ -412,11 +412,11 @@
       ],
       "gesundheit": [
         {
-          "word": "vorsorge",
+          "word": "ärzte",
           "count": 1
         },
         {
-          "word": "ärzte",
+          "word": "vorsorge",
           "count": 1
         }
       ],
@@ -456,15 +456,15 @@
           "count": 1
         },
         {
-          "word": "bank",
-          "count": 1
-        },
-        {
           "word": "haushalt",
           "count": 1
         },
         {
           "word": "entlastung",
+          "count": 1
+        },
+        {
+          "word": "bank",
           "count": 1
         }
       ],

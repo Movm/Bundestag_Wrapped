@@ -11,13 +11,13 @@
   "minWords": 91,
   "maxWords": 1250,
   "rankings": {
-    "speechRank": 140,
+    "speechRank": 153,
     "wordsRank": 191,
-    "partySpeechRank": 30,
+    "partySpeechRank": 33,
     "partyWordsRank": 56,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 77.6,
+    "percentile": 75.6,
     "verbosityRank": 170,
     "verbosityTotal": 582,
     "partyVerbosityRank": 62,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 8,
     "interruptionsReceived": 28,
-    "interrupterRank": 297,
-    "interruptedRank": 265
+    "interrupterRank": 290,
+    "interruptedRank": 275
   },
   "words": {
     "topWords": [
@@ -230,19 +230,19 @@
     "question": "Welches Wort nutzt Dr. Hülya Düber häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
         "text": "Petitionsausschusses",
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
@@ -253,19 +253,19 @@
     "question": "Welches Adjektiv nutzt Dr. Hülya Düber häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
         "text": "Stark",
         "isCorrect": true
       },
       {
-        "text": "National",
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
         "isCorrect": false
       }
     ],
@@ -370,11 +370,11 @@
           "count": 3
         },
         {
-          "word": "ausländerbehörde",
+          "word": "zuwanderung",
           "count": 1
         },
         {
-          "word": "zuwanderung",
+          "word": "ausländerbehörde",
           "count": 1
         }
       ],
@@ -394,7 +394,7 @@
           "count": 5
         },
         {
-          "word": "marktwirtschaft",
+          "word": "markt",
           "count": 3
         },
         {
@@ -402,7 +402,7 @@
           "count": 3
         },
         {
-          "word": "markt",
+          "word": "marktwirtschaft",
           "count": 3
         }
       ],
@@ -436,10 +436,6 @@
       ],
       "gesundheit": [
         {
-          "word": "krankheit",
-          "count": 1
-        },
-        {
           "word": "pflege",
           "count": 1
         },
@@ -450,27 +446,31 @@
         {
           "word": "pflegekraft",
           "count": 1
+        },
+        {
+          "word": "krankheit",
+          "count": 1
         }
       ],
       "europa": [
-        {
-          "word": "sanktionen",
-          "count": 2
-        },
         {
           "word": "binnenmarkt",
           "count": 2
         },
         {
-          "word": "bündnis",
-          "count": 1
-        },
-        {
-          "word": "partnerschaft",
-          "count": 1
+          "word": "sanktionen",
+          "count": 2
         },
         {
           "word": "ukrainer",
+          "count": 1
+        },
+        {
+          "word": "ukraine",
+          "count": 1
+        },
+        {
+          "word": "bündnis",
           "count": 1
         }
       ],
@@ -484,15 +484,15 @@
           "count": 2
         },
         {
+          "word": "digital",
+          "count": 1
+        },
+        {
           "word": "technologie",
           "count": 1
         },
         {
           "word": "online",
-          "count": 1
-        },
-        {
-          "word": "onlinehandel",
           "count": 1
         }
       ],
@@ -502,25 +502,25 @@
           "count": 2
         },
         {
-          "word": "schule",
-          "count": 1
-        },
-        {
-          "word": "schülerinnen",
-          "count": 1
-        },
-        {
           "word": "erzieherin",
           "count": 1
         },
         {
           "word": "kita",
           "count": 1
+        },
+        {
+          "word": "schule",
+          "count": 1
+        },
+        {
+          "word": "schülerinnen",
+          "count": 1
         }
       ],
       "finanzen": [
         {
-          "word": "kosten",
+          "word": "steuern",
           "count": 2
         },
         {
@@ -528,25 +528,25 @@
           "count": 2
         },
         {
-          "word": "steuern",
+          "word": "kosten",
           "count": 2
         },
         {
-          "word": "entlastung",
+          "word": "inflation",
           "count": 1
         },
         {
-          "word": "inflation",
+          "word": "entlastung",
           "count": 1
         }
       ],
       "justiz": [
         {
-          "word": "grundgesetz",
+          "word": "gesetzesänderung",
           "count": 3
         },
         {
-          "word": "gesetzesänderung",
+          "word": "grundgesetz",
           "count": 3
         },
         {
@@ -554,11 +554,11 @@
           "count": 2
         },
         {
-          "word": "justizministerium",
+          "word": "rechtsstaatlichkeit",
           "count": 1
         },
         {
-          "word": "verfassungskonform",
+          "word": "verbraucherschutz",
           "count": 1
         }
       ],
@@ -568,11 +568,11 @@
           "count": 8
         },
         {
-          "word": "mindestlohn",
+          "word": "arbeitnehmerinnen",
           "count": 4
         },
         {
-          "word": "arbeitnehmerinnen",
+          "word": "mindestlohn",
           "count": 4
         },
         {
@@ -580,7 +580,7 @@
           "count": 3
         },
         {
-          "word": "löhne",
+          "word": "beschäftigte",
           "count": 3
         }
       ]

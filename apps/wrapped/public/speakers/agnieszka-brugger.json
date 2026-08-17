@@ -11,23 +11,23 @@
   "minWords": 84,
   "maxWords": 947,
   "rankings": {
-    "speechRank": 159,
+    "speechRank": 173,
     "wordsRank": 125,
-    "partySpeechRank": 31,
+    "partySpeechRank": 32,
     "partyWordsRank": 17,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 74.6,
-    "verbosityRank": 143,
+    "percentile": 72.4,
+    "verbosityRank": 145,
     "verbosityTotal": 582,
     "partyVerbosityRank": 15,
-    "longestSpeechRank": 106
+    "longestSpeechRank": 107
   },
   "drama": {
     "interruptionsGiven": 64,
     "interruptionsReceived": 28,
     "interrupterRank": 80,
-    "interruptedRank": 267
+    "interruptedRank": 272
   },
   "words": {
     "topWords": [
@@ -235,7 +235,11 @@
     "question": "Welches Wort nutzt Agnieszka Brugger häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
@@ -243,11 +247,7 @@
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Freiheit",
+        "text": "Energie",
         "isCorrect": false
       }
     ],
@@ -258,19 +258,19 @@
     "question": "Welches Adjektiv nutzt Agnieszka Brugger häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
         "text": "Gefährlich",
         "isCorrect": true
       },
       {
-        "text": "National",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
-        "text": "Stark",
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
         "isCorrect": false
       }
     ],
@@ -389,11 +389,11 @@
           "count": 1
         },
         {
-          "word": "klimakonferenz",
+          "word": "klimaschutz",
           "count": 1
         },
         {
-          "word": "klimaschutz",
+          "word": "klimakonferenz",
           "count": 1
         }
       ],
@@ -407,15 +407,15 @@
           "count": 1
         },
         {
-          "word": "konkurrenz",
-          "count": 1
-        },
-        {
-          "word": "insolvenz",
-          "count": 1
-        },
-        {
           "word": "industrie",
+          "count": 1
+        },
+        {
+          "word": "wettbewerb",
+          "count": 1
+        },
+        {
+          "word": "konkurrenz",
           "count": 1
         }
       ],
@@ -429,15 +429,15 @@
           "count": 1
         },
         {
+          "word": "bürgergeld",
+          "count": 1
+        },
+        {
           "word": "kind",
           "count": 1
         },
         {
           "word": "familie",
-          "count": 1
-        },
-        {
-          "word": "bürgergeld",
           "count": 1
         }
       ],
@@ -459,7 +459,7 @@
           "count": 2
         },
         {
-          "word": "korruption",
+          "word": "streitkräfte",
           "count": 1
         }
       ],
@@ -501,7 +501,7 @@
       ],
       "digital": [
         {
-          "word": "hackerangriff",
+          "word": "desinformation",
           "count": 1
         },
         {
@@ -509,7 +509,7 @@
           "count": 1
         },
         {
-          "word": "desinformation",
+          "word": "hackerangriff",
           "count": 1
         }
       ],
@@ -537,25 +537,25 @@
           "count": 3
         },
         {
-          "word": "währung",
+          "word": "banken",
           "count": 1
         },
         {
-          "word": "banken",
+          "word": "schulden",
           "count": 1
         }
       ],
       "justiz": [
         {
-          "word": "menschenrechte",
-          "count": 2
-        },
-        {
           "word": "grundgesetz",
           "count": 2
         },
         {
-          "word": "verurteilung",
+          "word": "menschenrechte",
+          "count": 2
+        },
+        {
+          "word": "rechtsstaat",
           "count": 1
         },
         {
@@ -563,7 +563,7 @@
           "count": 1
         },
         {
-          "word": "rechtsstaat",
+          "word": "gesetzgebung",
           "count": 1
         }
       ],

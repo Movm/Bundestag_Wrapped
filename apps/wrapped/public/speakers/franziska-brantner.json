@@ -11,13 +11,13 @@
   "minWords": 134,
   "maxWords": 666,
   "rankings": {
-    "speechRank": 484,
+    "speechRank": 503,
     "wordsRank": 527,
-    "partySpeechRank": 77,
+    "partySpeechRank": 80,
     "partyWordsRank": 81,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 22.7,
+    "percentile": 19.6,
     "verbosityRank": 201,
     "verbosityTotal": 582,
     "partyVerbosityRank": 21,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 7,
     "interruptionsReceived": 22,
-    "interrupterRank": 311,
-    "interruptedRank": 318
+    "interrupterRank": 320,
+    "interruptedRank": 324
   },
   "words": {
     "topWords": [
@@ -48,11 +48,11 @@
         "count": 9
       },
       {
-        "word": "wissen",
+        "word": "menschen",
         "count": 8
       },
       {
-        "word": "menschen",
+        "word": "wissen",
         "count": 8
       },
       {
@@ -212,11 +212,7 @@
     "question": "Welches Wort nutzt Dr. Franziska Brantner häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
@@ -224,7 +220,11 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetz",
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Rente",
         "isCorrect": false
       }
     ],
@@ -239,15 +239,15 @@
         "isCorrect": true
       },
       {
-        "text": "Notwendig",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
-        "text": "National",
+        "text": "Stark",
         "isCorrect": false
       },
       {
-        "text": "Jung",
+        "text": "Sozial",
         "isCorrect": false
       }
     ],
@@ -354,11 +354,11 @@
       ],
       "klima": [
         {
-          "word": "windenergie",
+          "word": "klimaschutz",
           "count": 1
         },
         {
-          "word": "klimaschutz",
+          "word": "windenergie",
           "count": 1
         }
       ],
@@ -390,15 +390,19 @@
           "count": 2
         },
         {
-          "word": "gerechtigkeit",
+          "word": "familien",
           "count": 1
         },
         {
-          "word": "familien",
+          "word": "gerechtigkeit",
           "count": 1
         }
       ],
       "sicherheit": [
+        {
+          "word": "verfassungsschutz",
+          "count": 1
+        },
         {
           "word": "polizei",
           "count": 1
@@ -409,10 +413,6 @@
         },
         {
           "word": "spionage",
-          "count": 1
-        },
-        {
-          "word": "verfassungsschutz",
           "count": 1
         }
       ],
@@ -440,11 +440,19 @@
           "count": 2
         },
         {
-          "word": "moskau",
+          "word": "ukraine",
           "count": 1
         }
       ],
       "digital": [
+        {
+          "word": "pressefreiheit",
+          "count": 2
+        },
+        {
+          "word": "technologie",
+          "count": 2
+        },
         {
           "word": "internet",
           "count": 2
@@ -454,15 +462,7 @@
           "count": 2
         },
         {
-          "word": "technologie",
-          "count": 2
-        },
-        {
-          "word": "pressefreiheit",
-          "count": 2
-        },
-        {
-          "word": "digital",
+          "word": "plattformen",
           "count": 1
         }
       ],
@@ -492,15 +492,15 @@
       ],
       "justiz": [
         {
-          "word": "verordnung",
-          "count": 2
-        },
-        {
           "word": "verfassung",
           "count": 2
         },
         {
           "word": "rechtsstaat",
+          "count": 2
+        },
+        {
+          "word": "verordnung",
           "count": 2
         },
         {
@@ -516,15 +516,15 @@
       ],
       "mobilitaet": [
         {
-          "word": "bahn",
-          "count": 1
-        },
-        {
-          "word": "schiff",
-          "count": 1
-        },
-        {
           "word": "auto",
+          "count": 1
+        },
+        {
+          "word": "straßen",
+          "count": 1
+        },
+        {
+          "word": "bahn",
           "count": 1
         },
         {
@@ -532,7 +532,7 @@
           "count": 1
         },
         {
-          "word": "straßen",
+          "word": "schiff",
           "count": 1
         }
       ]

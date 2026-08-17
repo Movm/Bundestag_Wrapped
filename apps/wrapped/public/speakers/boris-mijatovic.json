@@ -11,13 +11,13 @@
   "minWords": 20,
   "maxWords": 1121,
   "rankings": {
-    "speechRank": 125,
+    "speechRank": 115,
     "wordsRank": 117,
-    "partySpeechRank": 23,
+    "partySpeechRank": 20,
     "partyWordsRank": 16,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 80.0,
+    "percentile": 81.6,
     "verbosityRank": 133,
     "verbosityTotal": 582,
     "partyVerbosityRank": 13,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 74,
     "interruptionsReceived": 7,
     "interrupterRank": 65,
-    "interruptedRank": 513
+    "interruptedRank": 505
   },
   "words": {
     "topWords": [
@@ -52,19 +52,19 @@
         "count": 26
       },
       {
-        "word": "einsatz",
-        "count": 23
-      },
-      {
         "word": "nationen",
         "count": 23
       },
       {
-        "word": "internationale",
-        "count": 21
+        "word": "einsatz",
+        "count": 23
       },
       {
         "word": "humanitäre",
+        "count": 21
+      },
+      {
+        "word": "internationale",
         "count": 21
       },
       {
@@ -86,16 +86,16 @@
         "ratioBundestag": 55.0
       },
       {
-        "word": "kloster",
-        "count": 5,
-        "ratioParty": 306.8,
-        "ratioBundestag": 2157.9
-      },
-      {
         "word": "gedenktag",
         "count": 5,
         "ratioParty": 306.8,
         "ratioBundestag": 239.8
+      },
+      {
+        "word": "kloster",
+        "count": 5,
+        "ratioParty": 306.8,
+        "ratioBundestag": 2157.9
       },
       {
         "word": "augenblick",
@@ -124,13 +124,13 @@
         "ratio": 143.2
       },
       {
-        "word": "kloster",
+        "word": "gedenktag",
         "count": 5,
         "score": 28.65,
         "ratio": 306.8
       },
       {
-        "word": "gedenktag",
+        "word": "kloster",
         "count": 5,
         "score": 28.65,
         "ratio": 306.8
@@ -239,20 +239,20 @@
     "question": "Welches Wort nutzt Boris Mijatović häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
         "text": "Bosnien",
         "isCorrect": true
+      },
+      {
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Haushalt",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Bosnien\" nutzt Boris Mijatović 1165.8× häufiger als der GRÜNE-Durchschnitt.",
@@ -262,15 +262,15 @@
     "question": "Welches Adjektiv nutzt Boris Mijatović häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
         "text": "Alt",
         "isCorrect": false
       },
       {
-        "text": "Erfolgreich",
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
@@ -439,11 +439,11 @@
           "count": 19
         },
         {
-          "word": "soldaten",
+          "word": "gewalt",
           "count": 6
         },
         {
-          "word": "gewalt",
+          "word": "soldaten",
           "count": 6
         },
         {
@@ -451,7 +451,7 @@
           "count": 5
         },
         {
-          "word": "bundeswehr",
+          "word": "verteidigung",
           "count": 3
         }
       ],
@@ -495,6 +495,10 @@
           "count": 4
         },
         {
+          "word": "haushaltsentwurf",
+          "count": 1
+        },
+        {
           "word": "investition",
           "count": 1
         },
@@ -504,10 +508,6 @@
         },
         {
           "word": "finanzierung",
-          "count": 1
-        },
-        {
-          "word": "etat",
           "count": 1
         }
       ],

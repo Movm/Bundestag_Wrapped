@@ -11,13 +11,13 @@
   "minWords": 385,
   "maxWords": 921,
   "rankings": {
-    "speechRank": 536,
+    "speechRank": 541,
     "wordsRank": 472,
-    "partySpeechRank": 130,
+    "partySpeechRank": 133,
     "partyWordsRank": 106,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 14.4,
+    "percentile": 13.6,
     "verbosityRank": 49,
     "verbosityTotal": 582,
     "partyVerbosityRank": 12,
@@ -26,7 +26,7 @@
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 11,
-    "interrupterRank": 450,
+    "interrupterRank": 467,
     "interruptedRank": 452
   },
   "words": {
@@ -192,19 +192,19 @@
     "question": "Welches Wort nutzt Jürgen Koegel häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
         "text": "Banker",
         "isCorrect": true
       },
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
+        "text": "Kinder",
         "isCorrect": false
       }
     ],
@@ -215,11 +215,7 @@
     "question": "Welches Adjektiv nutzt Jürgen Koegel häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
@@ -227,7 +223,11 @@
         "isCorrect": true
       },
       {
-        "text": "Gefährlich",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
         "isCorrect": false
       }
     ],
@@ -410,7 +410,7 @@
           "count": 4
         },
         {
-          "word": "entlastung",
+          "word": "sondervermögen",
           "count": 2
         }
       ],

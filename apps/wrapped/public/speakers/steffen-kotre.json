@@ -11,22 +11,22 @@
   "minWords": 74,
   "maxWords": 738,
   "rankings": {
-    "speechRank": 46,
+    "speechRank": 47,
     "wordsRank": 84,
-    "partySpeechRank": 9,
+    "partySpeechRank": 10,
     "partyWordsRank": 17,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 92.7,
+    "percentile": 92.5,
     "verbosityRank": 202,
     "verbosityTotal": 582,
     "partyVerbosityRank": 54,
-    "longestSpeechRank": 326
+    "longestSpeechRank": 325
   },
   "drama": {
     "interruptionsGiven": 49,
     "interruptionsReceived": 135,
-    "interrupterRank": 109,
+    "interrupterRank": 110,
     "interruptedRank": 14
   },
   "words": {
@@ -48,11 +48,11 @@
         "count": 31
       },
       {
-        "word": "politik",
+        "word": "russland",
         "count": 28
       },
       {
-        "word": "russland",
+        "word": "politik",
         "count": 28
       },
       {
@@ -60,12 +60,16 @@
         "count": 26
       },
       {
+        "word": "sehen",
+        "count": 24
+      },
+      {
         "word": "bürger",
         "count": 24
       },
       {
-        "word": "sehen",
-        "count": 24
+        "word": "deutsche",
+        "count": 22
       }
     ],
     "signatureWords": [
@@ -294,20 +298,20 @@
     "question": "Welches Wort nutzt Steffen Kotré häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
         "text": "Gaspreise",
         "isCorrect": true
+      },
+      {
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Gaspreise\" nutzt Steffen Kotré 96.0× häufiger als der AfD-Durchschnitt.",
@@ -317,20 +321,20 @@
     "question": "Welches Adjektiv nutzt Steffen Kotré häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Richtig",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
-        "text": "Gefährlich",
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
         "isCorrect": false
       },
       {
         "text": "Erbärmlich",
         "isCorrect": true
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Erbärmlich\" nutzt Steffen Kotré 66.7× häufiger als der AfD-Durchschnitt.",
@@ -406,6 +410,14 @@
     "topicWords": {
       "migration": [
         {
+          "word": "zuwanderung",
+          "count": 1
+        },
+        {
+          "word": "asyl",
+          "count": 1
+        },
+        {
           "word": "migration",
           "count": 1
         },
@@ -415,14 +427,6 @@
         },
         {
           "word": "flüchtlinge",
-          "count": 1
-        },
-        {
-          "word": "asyl",
-          "count": 1
-        },
-        {
-          "word": "zuwanderung",
           "count": 1
         }
       ],
@@ -472,19 +476,19 @@
       ],
       "soziales": [
         {
-          "word": "renten",
-          "count": 1
-        },
-        {
-          "word": "kindergeld",
-          "count": 1
-        },
-        {
           "word": "rentner",
           "count": 1
         },
         {
           "word": "eltern",
+          "count": 1
+        },
+        {
+          "word": "renten",
+          "count": 1
+        },
+        {
+          "word": "kindergeld",
           "count": 1
         }
       ],
@@ -502,7 +506,7 @@
           "count": 2
         },
         {
-          "word": "verteidigung",
+          "word": "diebstahl",
           "count": 1
         },
         {
@@ -524,11 +528,11 @@
           "count": 7
         },
         {
-          "word": "krieg",
+          "word": "außenminister",
           "count": 6
         },
         {
-          "word": "außenminister",
+          "word": "krieg",
           "count": 6
         }
       ],
@@ -546,11 +550,11 @@
           "count": 1
         },
         {
-          "word": "digitalisierung",
+          "word": "netzausbau",
           "count": 1
         },
         {
-          "word": "halbleiter",
+          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -582,11 +586,11 @@
           "count": 9
         },
         {
-          "word": "steuerzahler",
+          "word": "subventionen",
           "count": 6
         },
         {
-          "word": "subventionen",
+          "word": "steuerzahler",
           "count": 6
         },
         {
@@ -596,11 +600,11 @@
       ],
       "justiz": [
         {
-          "word": "gericht",
+          "word": "richter",
           "count": 1
         },
         {
-          "word": "richter",
+          "word": "gericht",
           "count": 1
         },
         {
@@ -632,15 +636,15 @@
           "count": 2
         },
         {
+          "word": "autos",
+          "count": 1
+        },
+        {
           "word": "fliegen",
           "count": 1
         },
         {
           "word": "schiffe",
-          "count": 1
-        },
-        {
-          "word": "radwege",
           "count": 1
         }
       ]

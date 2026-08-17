@@ -11,23 +11,23 @@
   "minWords": 95,
   "maxWords": 928,
   "rankings": {
-    "speechRank": 50,
+    "speechRank": 53,
     "wordsRank": 64,
     "partySpeechRank": 8,
     "partyWordsRank": 5,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 92.0,
+    "percentile": 91.5,
     "verbosityRank": 80,
     "verbosityTotal": 582,
     "partyVerbosityRank": 6,
-    "longestSpeechRank": 119
+    "longestSpeechRank": 120
   },
   "drama": {
     "interruptionsGiven": 75,
     "interruptionsReceived": 55,
-    "interrupterRank": 62,
-    "interruptedRank": 95
+    "interrupterRank": 61,
+    "interruptedRank": 98
   },
   "words": {
     "topWords": [
@@ -50,6 +50,10 @@
       {
         "word": "geld",
         "count": 28
+      },
+      {
+        "word": "wissenschaft",
+        "count": 25
       }
     ],
     "signatureWords": [
@@ -217,27 +221,27 @@
     {
       "emoji": "📊",
       "label": "Top-Redner",
-      "value": "Top 8%"
+      "value": "Top 9%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Sonja Lemke häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
         "text": "Governance",
         "isCorrect": true
+      },
+      {
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Governance\" nutzt Sonja Lemke 288.4× häufiger als der DIE LINKE-Durchschnitt.",
@@ -247,20 +251,20 @@
     "question": "Welches Adjektiv nutzt Sonja Lemke häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
         "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
         "isCorrect": false
       },
       {
         "text": "Fatal",
         "isCorrect": true
-      },
-      {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Fatal\" nutzt Sonja Lemke 4.6× häufiger als der DIE LINKE-Durchschnitt.",
@@ -374,6 +378,10 @@
           "count": 2
         },
         {
+          "word": "müll",
+          "count": 1
+        },
+        {
           "word": "nachhaltig",
           "count": 1
         },
@@ -383,10 +391,6 @@
         },
         {
           "word": "windrad",
-          "count": 1
-        },
-        {
-          "word": "müll",
           "count": 1
         }
       ],
@@ -408,7 +412,7 @@
           "count": 4
         },
         {
-          "word": "wettbewerb",
+          "word": "firmen",
           "count": 1
         }
       ],
@@ -422,15 +426,15 @@
           "count": 2
         },
         {
-          "word": "familie",
+          "word": "rentner",
           "count": 1
         },
         {
-          "word": "jugendhilfe",
+          "word": "miete",
           "count": 1
         },
         {
-          "word": "umverteilung",
+          "word": "mieten",
           "count": 1
         }
       ],
@@ -444,7 +448,7 @@
           "count": 3
         },
         {
-          "word": "gewalt",
+          "word": "rüstung",
           "count": 2
         },
         {
@@ -452,7 +456,7 @@
           "count": 2
         },
         {
-          "word": "rüstung",
+          "word": "gewalt",
           "count": 2
         }
       ],
@@ -484,19 +488,19 @@
           "count": 3
         },
         {
-          "word": "russland",
-          "count": 1
-        },
-        {
-          "word": "brüssel",
-          "count": 1
-        },
-        {
           "word": "krieg",
           "count": 1
         },
         {
           "word": "frieden",
+          "count": 1
+        },
+        {
+          "word": "russland",
+          "count": 1
+        },
+        {
+          "word": "vertrag",
           "count": 1
         }
       ],
@@ -510,15 +514,15 @@
           "count": 7
         },
         {
+          "word": "software",
+          "count": 6
+        },
+        {
           "word": "digital",
           "count": 6
         },
         {
           "word": "plattformen",
-          "count": 6
-        },
-        {
-          "word": "software",
           "count": 6
         }
       ],
@@ -602,11 +606,11 @@
           "count": 1
         },
         {
-          "word": "arbeitnehmer",
+          "word": "arbeiter",
           "count": 1
         },
         {
-          "word": "beschäftigte",
+          "word": "mitbestimmung",
           "count": 1
         }
       ],
@@ -624,11 +628,11 @@
           "count": 2
         },
         {
-          "word": "bahn",
+          "word": "fliegen",
           "count": 2
         },
         {
-          "word": "fliegen",
+          "word": "bahn",
           "count": 2
         }
       ]

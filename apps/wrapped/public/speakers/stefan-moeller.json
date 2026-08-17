@@ -11,13 +11,13 @@
   "minWords": 300,
   "maxWords": 965,
   "rankings": {
-    "speechRank": 312,
+    "speechRank": 322,
     "wordsRank": 302,
-    "partySpeechRank": 70,
+    "partySpeechRank": 74,
     "partyWordsRank": 65,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 50.2,
+    "percentile": 48.6,
     "verbosityRank": 69,
     "verbosityTotal": 582,
     "partyVerbosityRank": 18,
@@ -26,7 +26,7 @@
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 27,
-    "interrupterRank": 434,
+    "interrupterRank": 411,
     "interruptedRank": 277
   },
   "words": {
@@ -42,6 +42,10 @@
       {
         "word": "beim",
         "count": 13
+      },
+      {
+        "word": "politik",
+        "count": 11
       }
     ],
     "signatureWords": [
@@ -167,20 +171,20 @@
     "question": "Welches Wort nutzt Stefan Möller häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
         "text": "Schuldnerberatung",
         "isCorrect": true
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Haushalt",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Schuldnerberatung\" nutzt Stefan Möller 554.2× häufiger als der AfD-Durchschnitt.",
@@ -281,11 +285,11 @@
           "count": 4
         },
         {
-          "word": "qualifikation",
+          "word": "marktwirtschaft",
           "count": 1
         },
         {
-          "word": "marktwirtschaft",
+          "word": "qualifikation",
           "count": 1
         }
       ],
@@ -329,7 +333,7 @@
           "count": 1
         },
         {
-          "word": "polizei",
+          "word": "bundespolizei",
           "count": 1
         }
       ],
@@ -349,7 +353,7 @@
           "count": 2
         },
         {
-          "word": "ukraine",
+          "word": "kooperation",
           "count": 1
         },
         {
@@ -357,17 +361,17 @@
           "count": 1
         },
         {
-          "word": "kooperation",
+          "word": "ukraine",
           "count": 1
         }
       ],
       "digital": [
         {
-          "word": "daten",
+          "word": "digitalisierung",
           "count": 1
         },
         {
-          "word": "digitalisierung",
+          "word": "daten",
           "count": 1
         }
       ],
@@ -377,19 +381,19 @@
           "count": 2
         },
         {
-          "word": "studium",
-          "count": 1
-        },
-        {
-          "word": "schüler",
-          "count": 1
-        },
-        {
-          "word": "lehrermangel",
+          "word": "wissenschaftler",
           "count": 1
         },
         {
           "word": "ausbildung",
+          "count": 1
+        },
+        {
+          "word": "schülerin",
+          "count": 1
+        },
+        {
+          "word": "bildungsplan",
           "count": 1
         }
       ],
@@ -407,11 +411,11 @@
           "count": 2
         },
         {
-          "word": "finanzierung",
+          "word": "investitionen",
           "count": 1
         },
         {
-          "word": "sparkasse",
+          "word": "finanzierung",
           "count": 1
         }
       ],
@@ -425,15 +429,15 @@
           "count": 3
         },
         {
+          "word": "straftaten",
+          "count": 2
+        },
+        {
           "word": "gesetzgebung",
           "count": 2
         },
         {
-          "word": "zivilrecht",
-          "count": 2
-        },
-        {
-          "word": "straftaten",
+          "word": "strafrecht",
           "count": 2
         }
       ],

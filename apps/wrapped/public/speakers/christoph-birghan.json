@@ -11,13 +11,13 @@
   "minWords": 65,
   "maxWords": 695,
   "rankings": {
-    "speechRank": 263,
+    "speechRank": 266,
     "wordsRank": 258,
-    "partySpeechRank": 53,
+    "partySpeechRank": 55,
     "partyWordsRank": 59,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 58.0,
+    "percentile": 57.5,
     "verbosityRank": 485,
     "verbosityTotal": 582,
     "partyVerbosityRank": 126,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 71,
     "interruptionsReceived": 42,
     "interrupterRank": 70,
-    "interruptedRank": 159
+    "interruptedRank": 161
   },
   "words": {
     "topWords": [
@@ -48,23 +48,23 @@
         "count": 14
       },
       {
-        "word": "grünen",
-        "count": 12
-      },
-      {
         "word": "problem",
         "count": 12
       },
       {
-        "word": "letzten",
-        "count": 11
+        "word": "grünen",
+        "count": 12
       },
       {
-        "word": "probleme",
+        "word": "agenda",
         "count": 11
       },
       {
         "word": "ministerin",
+        "count": 11
+      },
+      {
+        "word": "letzten",
         "count": 11
       }
     ],
@@ -217,7 +217,11 @@
     "question": "Welches Wort nutzt Dr. Christoph Birghan häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Migration",
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
@@ -225,11 +229,7 @@
         "isCorrect": true
       },
       {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
+        "text": "Migration",
         "isCorrect": false
       }
     ],
@@ -248,11 +248,11 @@
         "isCorrect": false
       },
       {
-        "text": "National",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
-        "text": "Klar",
+        "text": "National",
         "isCorrect": false
       }
     ],
@@ -335,11 +335,7 @@
       ],
       "klima": [
         {
-          "word": "energie",
-          "count": 1
-        },
-        {
-          "word": "nachhaltigkeit",
+          "word": "nachhaltig",
           "count": 1
         },
         {
@@ -347,25 +343,29 @@
           "count": 1
         },
         {
-          "word": "nachhaltig",
+          "word": "energie",
+          "count": 1
+        },
+        {
+          "word": "nachhaltigkeit",
           "count": 1
         }
       ],
       "wirtschaft": [
         {
-          "word": "wettbewerb",
-          "count": 3
-        },
-        {
           "word": "unternehmen",
           "count": 3
         },
         {
-          "word": "standort",
-          "count": 2
+          "word": "wettbewerb",
+          "count": 3
         },
         {
           "word": "werk",
+          "count": 2
+        },
+        {
+          "word": "standort",
           "count": 2
         },
         {
@@ -379,19 +379,19 @@
           "count": 6
         },
         {
-          "word": "familie",
-          "count": 2
-        },
-        {
           "word": "familien",
           "count": 2
         },
         {
-          "word": "jugend",
+          "word": "familie",
+          "count": 2
+        },
+        {
+          "word": "mieten",
           "count": 1
         },
         {
-          "word": "behinderung",
+          "word": "kind",
           "count": 1
         }
       ],
@@ -411,7 +411,7 @@
           "count": 3
         },
         {
-          "word": "krankenhäuser",
+          "word": "arzneimittel",
           "count": 2
         },
         {
@@ -419,11 +419,11 @@
           "count": 2
         },
         {
-          "word": "arzneimittel",
+          "word": "krankenhäuser",
           "count": 2
         },
         {
-          "word": "krankenhaus",
+          "word": "krankheit",
           "count": 1
         }
       ],
@@ -443,19 +443,19 @@
       ],
       "digital": [
         {
-          "word": "technologie",
-          "count": 1
-        },
-        {
-          "word": "digitalisierung",
-          "count": 1
-        },
-        {
           "word": "daten",
           "count": 1
         },
         {
           "word": "online",
+          "count": 1
+        },
+        {
+          "word": "technologie",
+          "count": 1
+        },
+        {
+          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -483,11 +483,11 @@
       ],
       "finanzen": [
         {
-          "word": "inflation",
+          "word": "haushaltsplan",
           "count": 2
         },
         {
-          "word": "haushaltsplan",
+          "word": "inflation",
           "count": 2
         },
         {
@@ -509,6 +509,10 @@
           "count": 2
         },
         {
+          "word": "grundrechte",
+          "count": 1
+        },
+        {
           "word": "datenschutz",
           "count": 1
         },
@@ -518,10 +522,6 @@
         },
         {
           "word": "rechtsprechung",
-          "count": 1
-        },
-        {
-          "word": "grundrechte",
           "count": 1
         }
       ],
@@ -533,11 +533,11 @@
       ],
       "mobilitaet": [
         {
-          "word": "infrastruktur",
+          "word": "straßen",
           "count": 1
         },
         {
-          "word": "straßen",
+          "word": "infrastruktur",
           "count": 1
         }
       ]

@@ -11,13 +11,13 @@
   "minWords": 349,
   "maxWords": 485,
   "rankings": {
-    "speechRank": 481,
+    "speechRank": 486,
     "wordsRank": 537,
     "partySpeechRank": 115,
     "partyWordsRank": 123,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 23.2,
+    "percentile": 22.4,
     "verbosityRank": 290,
     "verbosityTotal": 582,
     "partyVerbosityRank": 71,
@@ -26,14 +26,18 @@
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 24,
-    "interrupterRank": 406,
-    "interruptedRank": 303
+    "interrupterRank": 412,
+    "interruptedRank": 302
   },
   "words": {
     "topWords": [
       {
         "word": "landwirte",
         "count": 10
+      },
+      {
+        "word": "kinder",
+        "count": 8
       },
       {
         "word": "deutschland",
@@ -44,12 +48,12 @@
         "count": 8
       },
       {
-        "word": "kinder",
+        "word": "sachsen",
         "count": 8
       },
       {
-        "word": "sachsen",
-        "count": 8
+        "word": "länder",
+        "count": 6
       },
       {
         "word": "stehen",
@@ -60,15 +64,11 @@
         "count": 6
       },
       {
-        "word": "länder",
-        "count": 6
-      },
-      {
-        "word": "gesetz",
+        "word": "richtige",
         "count": 5
       },
       {
-        "word": "weiter",
+        "word": "lässt",
         "count": 5
       }
     ],
@@ -195,19 +195,19 @@
     "question": "Welches Wort nutzt Danny Meiners häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
         "text": "Landwirte",
         "isCorrect": true
       },
       {
-        "text": "Klima",
+        "text": "Kinder",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
+        "text": "Haushalt",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
@@ -289,15 +289,15 @@
           "count": 2
         },
         {
+          "word": "umweltschutz",
+          "count": 1
+        },
+        {
           "word": "moore",
           "count": 1
         },
         {
           "word": "klimaschutz",
-          "count": 1
-        },
-        {
-          "word": "umweltschutz",
           "count": 1
         },
         {
@@ -307,6 +307,10 @@
       ],
       "wirtschaft": [
         {
+          "word": "pleite",
+          "count": 2
+        },
+        {
           "word": "importe",
           "count": 2
         },
@@ -315,15 +319,11 @@
           "count": 2
         },
         {
-          "word": "pleite",
-          "count": 2
-        },
-        {
-          "word": "import",
+          "word": "wettbewerbsfähigkeit",
           "count": 1
         },
         {
-          "word": "betriebe",
+          "word": "import",
           "count": 1
         }
       ],
@@ -385,7 +385,7 @@
       ],
       "finanzen": [
         {
-          "word": "kosten",
+          "word": "bundeshaushalt",
           "count": 2
         },
         {
@@ -393,7 +393,7 @@
           "count": 2
         },
         {
-          "word": "bundeshaushalt",
+          "word": "kosten",
           "count": 2
         },
         {

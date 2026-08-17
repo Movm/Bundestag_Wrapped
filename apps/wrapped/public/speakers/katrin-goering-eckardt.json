@@ -11,14 +11,14 @@
   "minWords": 22,
   "maxWords": 791,
   "rankings": {
-    "speechRank": 310,
+    "speechRank": 308,
     "wordsRank": 284,
     "partySpeechRank": 56,
     "partyWordsRank": 47,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 50.5,
-    "verbosityRank": 140,
+    "percentile": 50.8,
+    "verbosityRank": 139,
     "verbosityTotal": 582,
     "partyVerbosityRank": 14,
     "longestSpeechRank": 260
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 6,
     "interruptionsReceived": 26,
-    "interrupterRank": 343,
-    "interruptedRank": 296
+    "interrupterRank": 333,
+    "interruptedRank": 294
   },
   "words": {
     "topWords": [
@@ -179,20 +179,20 @@
     "question": "Welches Wort nutzt Katrin Göring-Eckardt häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Migration",
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
         "text": "Kunst",
         "isCorrect": true
-      },
-      {
-        "text": "Bildung",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Kunst\" nutzt Katrin Göring-Eckardt 202.2× häufiger als der GRÜNE-Durchschnitt.",
@@ -313,15 +313,15 @@
           "count": 2
         },
         {
-          "word": "handwerk",
-          "count": 1
-        },
-        {
           "word": "firmen",
           "count": 1
         },
         {
           "word": "mittelstand",
+          "count": 1
+        },
+        {
+          "word": "konzerne",
           "count": 1
         }
       ],
@@ -331,19 +331,19 @@
           "count": 2
         },
         {
+          "word": "wohnung",
+          "count": 1
+        },
+        {
+          "word": "kinder",
+          "count": 1
+        },
+        {
           "word": "gerechtigkeit",
           "count": 1
         },
         {
           "word": "jugendarbeit",
-          "count": 1
-        },
-        {
-          "word": "jugendliche",
-          "count": 1
-        },
-        {
-          "word": "wohnung",
           "count": 1
         }
       ],
@@ -357,15 +357,15 @@
           "count": 3
         },
         {
-          "word": "angriff",
-          "count": 1
-        },
-        {
-          "word": "spionage",
+          "word": "polizei",
           "count": 1
         },
         {
           "word": "soldaten",
+          "count": 1
+        },
+        {
+          "word": "täter",
           "count": 1
         }
       ],
@@ -393,7 +393,7 @@
           "count": 3
         },
         {
-          "word": "krieg",
+          "word": "russland",
           "count": 2
         }
       ],
@@ -427,19 +427,19 @@
       ],
       "finanzen": [
         {
-          "word": "erbschaftsteuer",
-          "count": 2
-        },
-        {
           "word": "bundesrechnungshof",
           "count": 2
         },
         {
-          "word": "steuern",
+          "word": "erbschaftsteuer",
+          "count": 2
+        },
+        {
+          "word": "entlastung",
           "count": 1
         },
         {
-          "word": "haushalt",
+          "word": "steuern",
           "count": 1
         },
         {
@@ -449,11 +449,11 @@
       ],
       "justiz": [
         {
-          "word": "novelle",
+          "word": "grundgesetz",
           "count": 1
         },
         {
-          "word": "grundgesetz",
+          "word": "novelle",
           "count": 1
         }
       ],
@@ -463,11 +463,11 @@
           "count": 2
         },
         {
-          "word": "verkehr",
+          "word": "fliegen",
           "count": 1
         },
         {
-          "word": "fliegen",
+          "word": "verkehr",
           "count": 1
         }
       ]

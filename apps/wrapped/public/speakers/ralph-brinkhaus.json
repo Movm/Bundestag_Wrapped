@@ -11,14 +11,14 @@
   "minWords": 251,
   "maxWords": 1033,
   "rankings": {
-    "speechRank": 346,
+    "speechRank": 364,
     "wordsRank": 271,
-    "partySpeechRank": 94,
+    "partySpeechRank": 100,
     "partyWordsRank": 75,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 44.7,
-    "verbosityRank": 39,
+    "percentile": 41.9,
+    "verbosityRank": 40,
     "verbosityTotal": 582,
     "partyVerbosityRank": 16,
     "longestSpeechRank": 72
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 9,
     "interruptionsReceived": 11,
-    "interrupterRank": 283,
-    "interruptedRank": 447
+    "interrupterRank": 286,
+    "interruptedRank": 449
   },
   "words": {
     "topWords": [
@@ -40,10 +40,6 @@
         "count": 22
       },
       {
-        "word": "land",
-        "count": 19
-      },
-      {
         "word": "richtig",
         "count": 19
       },
@@ -52,19 +48,23 @@
         "count": 19
       },
       {
-        "word": "glaube",
-        "count": 17
+        "word": "land",
+        "count": 19
       },
       {
         "word": "wichtig",
         "count": 17
       },
       {
-        "word": "ehrlich",
-        "count": 16
+        "word": "glaube",
+        "count": 17
       },
       {
         "word": "minister",
+        "count": 16
+      },
+      {
+        "word": "ehrlich",
         "count": 16
       }
     ],
@@ -248,20 +248,20 @@
     "question": "Welches Wort nutzt Ralph Brinkhaus häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Haushalt",
+        "isCorrect": false
+      },
+      {
         "text": "Menschliche",
         "isCorrect": true
-      },
-      {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Menschliche\" nutzt Ralph Brinkhaus 144.3× häufiger als der CDU/CSU-Durchschnitt.",
@@ -271,20 +271,20 @@
     "question": "Welches Adjektiv nutzt Ralph Brinkhaus häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Gut",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Sicher",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
         "isCorrect": false
       },
       {
         "text": "Schlecht",
         "isCorrect": true
-      },
-      {
-        "text": "Stark",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Schlecht\" nutzt Ralph Brinkhaus 22.7× häufiger als der CDU/CSU-Durchschnitt.",
@@ -394,11 +394,11 @@
           "count": 4
         },
         {
-          "word": "klimawandel",
+          "word": "ökosystem",
           "count": 2
         },
         {
-          "word": "ökosystem",
+          "word": "klimawandel",
           "count": 2
         }
       ],
@@ -408,15 +408,15 @@
           "count": 6
         },
         {
+          "word": "wirtschaft",
+          "count": 2
+        },
+        {
           "word": "marktwirtschaft",
           "count": 2
         },
         {
           "word": "kapital",
-          "count": 2
-        },
-        {
-          "word": "wirtschaft",
           "count": 2
         },
         {
@@ -464,15 +464,15 @@
           "count": 1
         },
         {
+          "word": "russland",
+          "count": 1
+        },
+        {
           "word": "afrika",
           "count": 1
         },
         {
           "word": "europäisch",
-          "count": 1
-        },
-        {
-          "word": "russland",
           "count": 1
         }
       ],
@@ -490,11 +490,11 @@
           "count": 3
         },
         {
-          "word": "software",
+          "word": "digital",
           "count": 2
         },
         {
-          "word": "digital",
+          "word": "software",
           "count": 2
         }
       ],
@@ -554,11 +554,11 @@
       ],
       "mobilitaet": [
         {
-          "word": "infrastruktur",
+          "word": "tempolimit",
           "count": 1
         },
         {
-          "word": "tempolimit",
+          "word": "infrastruktur",
           "count": 1
         }
       ]

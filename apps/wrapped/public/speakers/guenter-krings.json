@@ -11,13 +11,13 @@
   "minWords": 245,
   "maxWords": 985,
   "rankings": {
-    "speechRank": 376,
+    "speechRank": 355,
     "wordsRank": 180,
-    "partySpeechRank": 104,
+    "partySpeechRank": 96,
     "partyWordsRank": 53,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 39.9,
+    "percentile": 43.3,
     "verbosityRank": 31,
     "verbosityTotal": 582,
     "partyVerbosityRank": 9,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 49,
     "interruptionsReceived": 15,
-    "interrupterRank": 110,
-    "interruptedRank": 402
+    "interrupterRank": 109,
+    "interruptedRank": 395
   },
   "words": {
     "topWords": [
@@ -227,19 +227,19 @@
     "question": "Welches Wort nutzt Dr. Günter Krings häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
         "text": "Gewaltschutzgesetz",
         "isCorrect": true
       },
       {
-        "text": "Sicherheit",
+        "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
         "isCorrect": false
       }
     ],
@@ -250,11 +250,7 @@
     "question": "Welches Adjektiv nutzt Dr. Günter Krings häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
+        "text": "Falsch",
         "isCorrect": false
       },
       {
@@ -262,7 +258,11 @@
         "isCorrect": true
       },
       {
-        "text": "Richtig",
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
@@ -367,10 +367,6 @@
           "count": 7
         },
         {
-          "word": "zuwanderung",
-          "count": 4
-        },
-        {
           "word": "dublin",
           "count": 4
         },
@@ -381,11 +377,15 @@
         {
           "word": "grenze",
           "count": 4
+        },
+        {
+          "word": "zuwanderung",
+          "count": 4
         }
       ],
       "wirtschaft": [
         {
-          "word": "marktwirtschaft",
+          "word": "volkswirtschaft",
           "count": 2
         },
         {
@@ -393,7 +393,7 @@
           "count": 2
         },
         {
-          "word": "volkswirtschaft",
+          "word": "marktwirtschaft",
           "count": 2
         },
         {
@@ -401,7 +401,7 @@
           "count": 1
         },
         {
-          "word": "wachstum",
+          "word": "werk",
           "count": 1
         }
       ],
@@ -469,15 +469,15 @@
           "count": 6
         },
         {
-          "word": "abkommen",
-          "count": 2
-        },
-        {
           "word": "ukraine",
           "count": 2
         },
         {
-          "word": "moskau",
+          "word": "abkommen",
+          "count": 2
+        },
+        {
+          "word": "brüssel",
           "count": 1
         }
       ],
@@ -519,11 +519,11 @@
           "count": 5
         },
         {
-          "word": "investitionen",
+          "word": "bundeshaushalt",
           "count": 2
         },
         {
-          "word": "bundeshaushalt",
+          "word": "investitionen",
           "count": 2
         },
         {
@@ -541,19 +541,19 @@
           "count": 11
         },
         {
-          "word": "straftaten",
-          "count": 5
-        },
-        {
           "word": "gerichte",
           "count": 5
         },
         {
-          "word": "richter",
-          "count": 2
+          "word": "straftaten",
+          "count": 5
         },
         {
           "word": "strafverfolgung",
+          "count": 2
+        },
+        {
+          "word": "richter",
           "count": 2
         }
       ],
@@ -565,7 +565,7 @@
       ],
       "mobilitaet": [
         {
-          "word": "straßen",
+          "word": "straße",
           "count": 1
         },
         {
@@ -573,7 +573,7 @@
           "count": 1
         },
         {
-          "word": "straße",
+          "word": "straßen",
           "count": 1
         }
       ]

@@ -11,23 +11,23 @@
   "minWords": 19,
   "maxWords": 733,
   "rankings": {
-    "speechRank": 150,
+    "speechRank": 140,
     "wordsRank": 197,
-    "partySpeechRank": 28,
+    "partySpeechRank": 25,
     "partyWordsRank": 30,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 76.0,
+    "percentile": 77.6,
     "verbosityRank": 447,
     "verbosityTotal": 582,
     "partyVerbosityRank": 52,
-    "longestSpeechRank": 334
+    "longestSpeechRank": 333
   },
   "drama": {
     "interruptionsGiven": 218,
     "interruptionsReceived": 26,
     "interrupterRank": 17,
-    "interruptedRank": 288
+    "interruptedRank": 285
   },
   "words": {
     "topWords": [
@@ -44,11 +44,11 @@
         "count": 20
       },
       {
-        "word": "menschen",
+        "word": "warum",
         "count": 18
       },
       {
-        "word": "warum",
+        "word": "menschen",
         "count": 18
       },
       {
@@ -66,16 +66,16 @@
     ],
     "signatureWords": [
       {
-        "word": "fregatte",
-        "count": 5,
-        "ratioParty": 195.1,
-        "ratioBundestag": 136.9
-      },
-      {
         "word": "verteidigungsausschuss",
         "count": 5,
         "ratioParty": 195.1,
         "ratioBundestag": 101.4
+      },
+      {
+        "word": "fregatte",
+        "count": 5,
+        "ratioParty": 195.1,
+        "ratioBundestag": 136.9
       },
       {
         "word": "truppe",
@@ -116,13 +116,13 @@
         "ratio": 156.1
       },
       {
-        "word": "fregatte",
+        "word": "verteidigungsausschuss",
         "count": 5,
         "score": 26.39,
         "ratio": 195.1
       },
       {
-        "word": "verteidigungsausschuss",
+        "word": "fregatte",
         "count": 5,
         "score": 26.39,
         "ratio": 195.1
@@ -231,43 +231,43 @@
     "question": "Welches Wort nutzt Sara Nanni häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Abstimmung",
+        "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Bildung",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
-        "text": "Fregatte",
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Verteidigungsausschuss",
         "isCorrect": true
-      },
-      {
-        "text": "Arbeit",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Fregatte\" nutzt Sara Nanni 195.1× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "136.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Verteidigungsausschuss\" nutzt Sara Nanni 195.1× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "101.4× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Sara Nanni häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
         "text": "Sicher",
         "isCorrect": true
-      },
-      {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Sicher\" nutzt Sara Nanni 2.4× häufiger als der GRÜNE-Durchschnitt.",
@@ -383,11 +383,11 @@
           "count": 2
         },
         {
-          "word": "eltern",
+          "word": "rente",
           "count": 1
         },
         {
-          "word": "rente",
+          "word": "eltern",
           "count": 1
         }
       ],
@@ -409,7 +409,7 @@
           "count": 2
         },
         {
-          "word": "waffen",
+          "word": "militär",
           "count": 1
         }
       ],

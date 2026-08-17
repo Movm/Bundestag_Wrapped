@@ -11,13 +11,13 @@
   "minWords": 31,
   "maxWords": 1193,
   "rankings": {
-    "speechRank": 515,
+    "speechRank": 517,
     "wordsRank": 490,
     "partySpeechRank": 56,
     "partyWordsRank": 51,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 17.7,
+    "percentile": 17.4,
     "verbosityRank": 303,
     "verbosityTotal": 582,
     "partyVerbosityRank": 19,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 7,
     "interruptionsReceived": 6,
-    "interrupterRank": 317,
-    "interruptedRank": 533
+    "interrupterRank": 310,
+    "interruptedRank": 526
   },
   "words": {
     "topWords": [
@@ -52,10 +52,6 @@
         "count": 12
       },
       {
-        "word": "sozialen",
-        "count": 11
-      },
-      {
         "word": "wohngeld",
         "count": 11
       },
@@ -64,11 +60,15 @@
         "count": 11
       },
       {
-        "word": "wohnungslosigkeit",
-        "count": 9
+        "word": "sozialen",
+        "count": 11
       },
       {
         "word": "wohnraum",
+        "count": 9
+      },
+      {
+        "word": "wohnungslosigkeit",
         "count": 9
       }
     ],
@@ -216,20 +216,20 @@
     "question": "Welches Wort nutzt Sahra Mirow häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Wohnungslosigkeit",
-        "isCorrect": true
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
         "text": "Kanzler",
         "isCorrect": false
       },
       {
-        "text": "Bundesregierung",
+        "text": "Sicherheit",
         "isCorrect": false
+      },
+      {
+        "text": "Haushalt",
+        "isCorrect": false
+      },
+      {
+        "text": "Wohnungslosigkeit",
+        "isCorrect": true
       }
     ],
     "explanationParty": "\"Wohnungslosigkeit\" nutzt Sahra Mirow 608.4× häufiger als der DIE LINKE-Durchschnitt.",
@@ -243,15 +243,15 @@
         "isCorrect": true
       },
       {
-        "text": "Falsch",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Stark",
+        "text": "Gut",
         "isCorrect": false
       },
       {
-        "text": "Sicher",
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
@@ -352,25 +352,25 @@
     "topicWords": {
       "migration": [
         {
-          "word": "staatsangehörigkeit",
-          "count": 1
-        },
-        {
           "word": "sprachkurs",
           "count": 1
         },
         {
           "word": "geflüchtete",
           "count": 1
+        },
+        {
+          "word": "staatsangehörigkeit",
+          "count": 1
         }
       ],
       "wirtschaft": [
         {
-          "word": "markt",
+          "word": "fachkräfte",
           "count": 1
         },
         {
-          "word": "fachkräfte",
+          "word": "markt",
           "count": 1
         }
       ],
@@ -380,15 +380,15 @@
           "count": 11
         },
         {
-          "word": "wohnungen",
-          "count": 5
-        },
-        {
           "word": "familien",
           "count": 5
         },
         {
           "word": "mieten",
+          "count": 5
+        },
+        {
+          "word": "wohnungen",
           "count": 5
         },
         {
@@ -428,10 +428,6 @@
           "count": 2
         },
         {
-          "word": "universitäten",
-          "count": 1
-        },
-        {
           "word": "schulen",
           "count": 1
         },
@@ -442,27 +438,31 @@
         {
           "word": "erzieher",
           "count": 1
+        },
+        {
+          "word": "universitäten",
+          "count": 1
         }
       ],
       "finanzen": [
-        {
-          "word": "haushaltsplan",
-          "count": 3
-        },
         {
           "word": "haushalt",
           "count": 3
         },
         {
+          "word": "haushaltsplan",
+          "count": 3
+        },
+        {
+          "word": "haushaltsentwurf",
+          "count": 1
+        },
+        {
+          "word": "defizit",
+          "count": 1
+        },
+        {
           "word": "bundeshaushalt",
-          "count": 1
-        },
-        {
-          "word": "fördermittel",
-          "count": 1
-        },
-        {
-          "word": "steuerzahler",
           "count": 1
         }
       ],

@@ -11,13 +11,13 @@
   "minWords": 57,
   "maxWords": 710,
   "rankings": {
-    "speechRank": 250,
+    "speechRank": 235,
     "wordsRank": 268,
-    "partySpeechRank": 67,
+    "partySpeechRank": 62,
     "partyWordsRank": 74,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 60.1,
+    "percentile": 62.5,
     "verbosityRank": 339,
     "verbosityTotal": 582,
     "partyVerbosityRank": 121,
@@ -26,7 +26,7 @@
   "drama": {
     "interruptionsGiven": 20,
     "interruptionsReceived": 104,
-    "interrupterRank": 212,
+    "interrupterRank": 214,
     "interruptedRank": 31
   },
   "words": {
@@ -40,24 +40,28 @@
         "count": 21
       },
       {
-        "word": "bundesregierung",
-        "count": 19
-      },
-      {
         "word": "maßnahmen",
         "count": 19
       },
       {
-        "word": "verfahren",
-        "count": 17
+        "word": "bundesregierung",
+        "count": 19
       },
       {
         "word": "deutschland",
         "count": 17
       },
       {
+        "word": "verfahren",
+        "count": 17
+      },
+      {
         "word": "union",
         "count": 14
+      },
+      {
+        "word": "schutz",
+        "count": 12
       }
     ],
     "signatureWords": [
@@ -209,20 +213,20 @@
     "question": "Welches Wort nutzt Detlef Seif häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Wirtschaft",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
+        "text": "Reform",
         "isCorrect": false
       },
       {
         "text": "Visum",
         "isCorrect": true
+      },
+      {
+        "text": "Rente",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Visum\" nutzt Detlef Seif 654.8× häufiger als der CDU/CSU-Durchschnitt.",
@@ -232,11 +236,11 @@
     "question": "Welches Adjektiv nutzt Detlef Seif häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Europäisch",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Jung",
+        "text": "Groß",
         "isCorrect": false
       },
       {
@@ -244,7 +248,7 @@
         "isCorrect": true
       },
       {
-        "text": "Gefährlich",
+        "text": "Erfolgreich",
         "isCorrect": false
       }
     ],
@@ -411,15 +415,15 @@
           "count": 3
         },
         {
+          "word": "straftäter",
+          "count": 1
+        },
+        {
           "word": "terroristen",
           "count": 1
         },
         {
           "word": "anschlag",
-          "count": 1
-        },
-        {
-          "word": "gefährder",
           "count": 1
         }
       ],
@@ -435,10 +439,6 @@
           "count": 2
         },
         {
-          "word": "ukraine",
-          "count": 1
-        },
-        {
           "word": "außenminister",
           "count": 1
         },
@@ -447,7 +447,11 @@
           "count": 1
         },
         {
-          "word": "europäisch",
+          "word": "ukraine",
+          "count": 1
+        },
+        {
+          "word": "türkei",
           "count": 1
         }
       ],
@@ -483,15 +487,15 @@
           "count": 6
         },
         {
+          "word": "gericht",
+          "count": 2
+        },
+        {
           "word": "rechtsstaat",
           "count": 2
         },
         {
-          "word": "verordnung",
-          "count": 2
-        },
-        {
-          "word": "gericht",
+          "word": "grundrechte",
           "count": 2
         }
       ],

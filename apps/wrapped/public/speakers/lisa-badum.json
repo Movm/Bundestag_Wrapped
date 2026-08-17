@@ -11,13 +11,13 @@
   "minWords": 60,
   "maxWords": 686,
   "rankings": {
-    "speechRank": 62,
+    "speechRank": 63,
     "wordsRank": 183,
     "partySpeechRank": 9,
     "partyWordsRank": 26,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 90.1,
+    "percentile": 89.9,
     "verbosityRank": 522,
     "verbosityTotal": 582,
     "partyVerbosityRank": 73,
@@ -64,16 +64,16 @@
         "ratioBundestag": 323.4
       },
       {
-        "word": "klimakonferenz",
-        "count": 5,
-        "ratioParty": 94.3,
-        "ratioBundestag": 85.4
-      },
-      {
         "word": "abgabe",
         "count": 5,
         "ratioParty": 94.3,
         "ratioBundestag": 20.7
+      },
+      {
+        "word": "klimakonferenz",
+        "count": 5,
+        "ratioParty": 94.3,
+        "ratioBundestag": 85.4
       }
     ],
     "signatureWordsParty": [
@@ -96,13 +96,13 @@
         "ratio": 188.6
       },
       {
-        "word": "klimakonferenz",
+        "word": "abgabe",
         "count": 5,
         "score": 22.79,
         "ratio": 94.3
       },
       {
-        "word": "abgabe",
+        "word": "klimakonferenz",
         "count": 5,
         "score": 22.79,
         "ratio": 94.3
@@ -241,26 +241,21 @@
       "emoji": "⚡",
       "label": "Zwischenrufer",
       "value": "#14 (252x)"
-    },
-    {
-      "emoji": "📊",
-      "label": "Top-Redner",
-      "value": "Top 10%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Lisa Badum häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
         "text": "Klimatopf",
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Familie",
         "isCorrect": false
       },
       {
@@ -275,15 +270,15 @@
     "question": "Welches Adjektiv nutzt Lisa Badum häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Klar",
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Politisch",
         "isCorrect": false
       },
       {
         "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
-        "text": "Stark",
         "isCorrect": false
       },
       {
@@ -414,11 +409,11 @@
           "count": 11
         },
         {
-          "word": "industrie",
+          "word": "konzerne",
           "count": 5
         },
         {
-          "word": "konzerne",
+          "word": "industrie",
           "count": 5
         },
         {
@@ -426,7 +421,7 @@
           "count": 2
         },
         {
-          "word": "werke",
+          "word": "chemieindustrie",
           "count": 1
         }
       ],
@@ -454,7 +449,7 @@
           "count": 2
         },
         {
-          "word": "weltbank",
+          "word": "bündnis",
           "count": 1
         }
       ],
@@ -480,19 +475,19 @@
           "count": 6
         },
         {
-          "word": "inflation",
-          "count": 1
-        },
-        {
-          "word": "sondervermögen",
-          "count": 1
-        },
-        {
-          "word": "finanzministerium",
+          "word": "steuer",
           "count": 1
         },
         {
           "word": "entlastung",
+          "count": 1
+        },
+        {
+          "word": "haushalt",
+          "count": 1
+        },
+        {
+          "word": "finanzminister",
           "count": 1
         }
       ],
@@ -530,7 +525,7 @@
           "count": 2
         },
         {
-          "word": "auto",
+          "word": "verkehr",
           "count": 1
         }
       ]

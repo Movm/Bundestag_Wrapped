@@ -11,23 +11,23 @@
   "minWords": 36,
   "maxWords": 663,
   "rankings": {
-    "speechRank": 191,
+    "speechRank": 179,
     "wordsRank": 276,
-    "partySpeechRank": 46,
+    "partySpeechRank": 43,
     "partyWordsRank": 77,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 69.5,
-    "verbosityRank": 365,
+    "percentile": 71.4,
+    "verbosityRank": 363,
     "verbosityTotal": 582,
-    "partyVerbosityRank": 130,
-    "longestSpeechRank": 423
+    "partyVerbosityRank": 129,
+    "longestSpeechRank": 422
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 32,
     "interrupterRank": null,
-    "interruptedRank": 230
+    "interruptedRank": 227
   },
   "words": {
     "topWords": [
@@ -44,12 +44,16 @@
         "count": 15
       },
       {
+        "word": "wachstum",
+        "count": 13
+      },
+      {
         "word": "union",
         "count": 13
       },
       {
-        "word": "wachstum",
-        "count": 13
+        "word": "infrastruktur",
+        "count": 11
       }
     ],
     "signatureWords": [
@@ -196,20 +200,20 @@
     "question": "Welches Wort nutzt Lukas Krieger häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Bitcoin",
+        "isCorrect": true
+      },
+      {
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
         "text": "Kinder",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
+        "text": "Opposition",
         "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Bitcoin",
-        "isCorrect": true
       }
     ],
     "explanationParty": "\"Bitcoin\" nutzt Lukas Krieger 142.2× häufiger als der CDU/CSU-Durchschnitt.",
@@ -219,7 +223,7 @@
     "question": "Welches Adjektiv nutzt Lukas Krieger häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Erfolgreich",
+        "text": "Falsch",
         "isCorrect": false
       },
       {
@@ -227,11 +231,11 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "National",
         "isCorrect": false
       },
       {
-        "text": "Neu",
+        "text": "Klar",
         "isCorrect": false
       }
     ],
@@ -362,11 +366,11 @@
           "count": 9
         },
         {
-          "word": "mittelstand",
+          "word": "wirtschaft",
           "count": 6
         },
         {
-          "word": "wirtschaft",
+          "word": "mittelstand",
           "count": 6
         },
         {
@@ -384,23 +388,19 @@
           "count": 2
         },
         {
-          "word": "sozialstaat",
-          "count": 2
-        },
-        {
           "word": "kind",
           "count": 2
         },
         {
           "word": "kinder",
           "count": 2
+        },
+        {
+          "word": "rente",
+          "count": 2
         }
       ],
       "sicherheit": [
-        {
-          "word": "bundeswehr",
-          "count": 1
-        },
         {
           "word": "verteidigungsfähigkeit",
           "count": 1
@@ -416,15 +416,19 @@
         {
           "word": "bundespolizei",
           "count": 1
+        },
+        {
+          "word": "bundeswehr",
+          "count": 1
         }
       ],
       "gesundheit": [
         {
-          "word": "krankenversicherung",
+          "word": "corona",
           "count": 1
         },
         {
-          "word": "corona",
+          "word": "krankenversicherung",
           "count": 1
         }
       ],
@@ -432,6 +436,10 @@
         {
           "word": "krieg",
           "count": 4
+        },
+        {
+          "word": "ukraine",
+          "count": 3
         },
         {
           "word": "europa",
@@ -442,11 +450,7 @@
           "count": 3
         },
         {
-          "word": "ukraine",
-          "count": 3
-        },
-        {
-          "word": "russland",
+          "word": "nato",
           "count": 1
         }
       ],
@@ -456,11 +460,11 @@
           "count": 5
         },
         {
-          "word": "plattformen",
+          "word": "daten",
           "count": 2
         },
         {
-          "word": "daten",
+          "word": "plattformen",
           "count": 2
         }
       ],
@@ -488,19 +492,23 @@
           "count": 15
         },
         {
-          "word": "entlastung",
-          "count": 8
-        },
-        {
           "word": "sondervermögen",
           "count": 8
         },
         {
-          "word": "vermögensteuer",
+          "word": "entlastung",
+          "count": 8
+        },
+        {
+          "word": "bundeshaushalt",
           "count": 6
         }
       ],
       "justiz": [
+        {
+          "word": "rechtsprechung",
+          "count": 1
+        },
         {
           "word": "beschluss",
           "count": 1
@@ -511,10 +519,6 @@
         },
         {
           "word": "verbraucherschutz",
-          "count": 1
-        },
-        {
-          "word": "rechtsprechung",
           "count": 1
         }
       ],

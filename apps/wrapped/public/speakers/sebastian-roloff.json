@@ -11,13 +11,13 @@
   "minWords": 90,
   "maxWords": 931,
   "rankings": {
-    "speechRank": 42,
+    "speechRank": 43,
     "wordsRank": 46,
     "partySpeechRank": 12,
     "partyWordsRank": 11,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 93.3,
+    "percentile": 93.1,
     "verbosityRank": 180,
     "verbosityTotal": 582,
     "partyVerbosityRank": 41,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 11,
     "interruptionsReceived": 38,
-    "interrupterRank": 271,
-    "interruptedRank": 191
+    "interrupterRank": 273,
+    "interruptedRank": 189
   },
   "words": {
     "topWords": [
@@ -232,20 +232,20 @@
     "question": "Welches Wort nutzt Sebastian Roloff häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Demokratie",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
         "text": "Dienstwagen",
         "isCorrect": true
+      },
+      {
+        "text": "Zukunft",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Dienstwagen\" nutzt Sebastian Roloff 306.5× häufiger als der SPD-Durchschnitt.",
@@ -255,20 +255,20 @@
     "question": "Welches Adjektiv nutzt Sebastian Roloff häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Notwendig",
+        "text": "Sozial",
         "isCorrect": false
       },
       {
-        "text": "Gefährlich",
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
         "text": "Kritisch",
         "isCorrect": true
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Kritisch\" nutzt Sebastian Roloff 3.8× häufiger als der SPD-Durchschnitt.",
@@ -368,11 +368,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "migration",
+          "word": "geflüchtete",
           "count": 1
         },
         {
-          "word": "geflüchtete",
+          "word": "migration",
           "count": 1
         }
       ],
@@ -382,19 +382,19 @@
           "count": 7
         },
         {
-          "word": "klimaneutralität",
-          "count": 2
-        },
-        {
-          "word": "klimaschutz",
-          "count": 2
-        },
-        {
           "word": "recycling",
           "count": 2
         },
         {
+          "word": "klimaneutralität",
+          "count": 2
+        },
+        {
           "word": "erneuerbare",
+          "count": 2
+        },
+        {
+          "word": "klimaschutz",
           "count": 2
         }
       ],
@@ -436,15 +436,15 @@
       ],
       "gesundheit": [
         {
-          "word": "pandemie",
-          "count": 1
-        },
-        {
           "word": "sucht",
           "count": 1
         },
         {
           "word": "corona",
+          "count": 1
+        },
+        {
+          "word": "pandemie",
           "count": 1
         },
         {
@@ -480,6 +480,10 @@
           "count": 1
         },
         {
+          "word": "software",
+          "count": 1
+        },
+        {
           "word": "digitalisierung",
           "count": 1
         },
@@ -488,11 +492,7 @@
           "count": 1
         },
         {
-          "word": "hardware",
-          "count": 1
-        },
-        {
-          "word": "software",
+          "word": "netzausbau",
           "count": 1
         }
       ],
@@ -506,15 +506,15 @@
           "count": 2
         },
         {
-          "word": "forschungsförderung",
-          "count": 1
-        },
-        {
-          "word": "hochschulen",
-          "count": 1
-        },
-        {
           "word": "schulen",
+          "count": 1
+        },
+        {
+          "word": "schule",
+          "count": 1
+        },
+        {
+          "word": "bildung",
           "count": 1
         }
       ],
@@ -560,11 +560,11 @@
           "count": 6
         },
         {
-          "word": "arbeitnehmerinnen",
+          "word": "mitbestimmung",
           "count": 2
         },
         {
-          "word": "arbeitnehmer",
+          "word": "gewerkschaften",
           "count": 2
         },
         {
@@ -582,15 +582,15 @@
           "count": 7
         },
         {
-          "word": "elektromobilität",
-          "count": 3
-        },
-        {
           "word": "straßen",
           "count": 3
         },
         {
-          "word": "straße",
+          "word": "elektromobilität",
+          "count": 3
+        },
+        {
+          "word": "ladeinfrastruktur",
           "count": 2
         }
       ]

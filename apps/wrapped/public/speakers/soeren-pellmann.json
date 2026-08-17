@@ -13,7 +13,7 @@
   "rankings": {
     "speechRank": 61,
     "wordsRank": 65,
-    "partySpeechRank": 9,
+    "partySpeechRank": 10,
     "partyWordsRank": 6,
     "partySize": 63,
     "totalSpeakers": 626,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 58,
     "interruptionsReceived": 26,
-    "interrupterRank": 92,
-    "interruptedRank": 285
+    "interrupterRank": 93,
+    "interruptedRank": 295
   },
   "words": {
     "topWords": [
@@ -234,20 +234,20 @@
     "question": "Welches Wort nutzt Sören Pellmann häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
         "isCorrect": false
       },
       {
         "text": "Petition",
         "isCorrect": true
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Petition\" nutzt Sören Pellmann 65.9× häufiger als der DIE LINKE-Durchschnitt.",
@@ -257,11 +257,11 @@
     "question": "Welches Adjektiv nutzt Sören Pellmann häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Richtig",
+        "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Erfolgreich",
+        "text": "Jung",
         "isCorrect": false
       },
       {
@@ -269,7 +269,7 @@
         "isCorrect": true
       },
       {
-        "text": "Alt",
+        "text": "Neu",
         "isCorrect": false
       }
     ],
@@ -394,19 +394,19 @@
           "count": 11
         },
         {
-          "word": "konjunktur",
-          "count": 4
-        },
-        {
           "word": "unternehmen",
           "count": 4
         },
         {
-          "word": "wirtschaftspolitik",
+          "word": "konjunktur",
+          "count": 4
+        },
+        {
+          "word": "industrie",
           "count": 2
         },
         {
-          "word": "marktwirtschaft",
+          "word": "wirtschaftspolitik",
           "count": 2
         }
       ],
@@ -424,11 +424,11 @@
           "count": 9
         },
         {
-          "word": "altersarmut",
+          "word": "rentner",
           "count": 8
         },
         {
-          "word": "rentner",
+          "word": "altersarmut",
           "count": 8
         }
       ],
@@ -442,11 +442,11 @@
           "count": 8
         },
         {
-          "word": "waffen",
+          "word": "soldaten",
           "count": 5
         },
         {
-          "word": "soldaten",
+          "word": "waffen",
           "count": 5
         },
         {
@@ -510,19 +510,19 @@
           "count": 3
         },
         {
-          "word": "studierende",
-          "count": 1
-        },
-        {
-          "word": "schulen",
-          "count": 1
-        },
-        {
-          "word": "grundschule",
+          "word": "lehrer",
           "count": 1
         },
         {
           "word": "wissenschaft",
+          "count": 1
+        },
+        {
+          "word": "wissenschaftsfreiheit",
+          "count": 1
+        },
+        {
+          "word": "studierende",
           "count": 1
         }
       ],
@@ -540,11 +540,11 @@
           "count": 4
         },
         {
-          "word": "finanzierung",
+          "word": "schuldenbremse",
           "count": 3
         },
         {
-          "word": "kosten",
+          "word": "finanzierung",
           "count": 3
         }
       ],
@@ -566,7 +566,7 @@
           "count": 2
         },
         {
-          "word": "bundesverfassungsgericht",
+          "word": "beschluss",
           "count": 1
         }
       ],
@@ -584,11 +584,11 @@
           "count": 2
         },
         {
-          "word": "rentenversicherung",
+          "word": "arbeitslose",
           "count": 1
         },
         {
-          "word": "beschäftigung",
+          "word": "rentenversicherung",
           "count": 1
         }
       ],

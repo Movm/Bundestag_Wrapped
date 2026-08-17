@@ -11,14 +11,14 @@
   "minWords": 7,
   "maxWords": 5956,
   "rankings": {
-    "speechRank": 189,
+    "speechRank": 178,
     "wordsRank": 1,
-    "partySpeechRank": 44,
+    "partySpeechRank": 42,
     "partyWordsRank": 1,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 69.8,
-    "verbosityRank": 510,
+    "percentile": 71.6,
+    "verbosityRank": 509,
     "verbosityTotal": 582,
     "partyVerbosityRank": 167,
     "longestSpeechRank": 2
@@ -82,6 +82,12 @@
         "ratioBundestag": 66.4
       },
       {
+        "word": "rauer",
+        "count": 5,
+        "ratioParty": 122.8,
+        "ratioBundestag": 193.8
+      },
+      {
         "word": "entschiedenheit",
         "count": 5,
         "ratioParty": 122.8,
@@ -92,12 +98,6 @@
         "count": 5,
         "ratioParty": 122.8,
         "ratioBundestag": 43.1
-      },
-      {
-        "word": "rauer",
-        "count": 5,
-        "ratioParty": 122.8,
-        "ratioBundestag": 193.8
       }
     ],
     "signatureWordsParty": [
@@ -114,6 +114,12 @@
         "ratio": 147.4
       },
       {
+        "word": "rauer",
+        "count": 5,
+        "score": 24.09,
+        "ratio": 122.8
+      },
+      {
         "word": "entschiedenheit",
         "count": 5,
         "score": 24.09,
@@ -121,12 +127,6 @@
       },
       {
         "word": "beständig",
-        "count": 5,
-        "score": 24.09,
-        "ratio": 122.8
-      },
-      {
-        "word": "rauer",
         "count": 5,
         "score": 24.09,
         "ratio": 122.8
@@ -190,10 +190,10 @@
         "ratioBundestag": 6.3
       },
       {
-        "word": "beispielhaft",
-        "count": 3,
+        "word": "grundlegend",
+        "count": 7,
         "ratioParty": 3.9,
-        "ratioBundestag": 3.6
+        "ratioBundestag": 4.2
       }
     ],
     "signatureAdjectivesParty": [
@@ -216,16 +216,16 @@
         "ratio": 4.4
       },
       {
+        "word": "grundlegend",
+        "count": 7,
+        "score": 11.12,
+        "ratio": 3.9
+      },
+      {
         "word": "zukunftsfähig",
         "count": 6,
         "score": 9.78,
         "ratio": 4.1
-      },
-      {
-        "word": "beispielhaft",
-        "count": 3,
-        "score": 4.77,
-        "ratio": 3.9
       }
     ],
     "signatureAdjectivesBundestag": [
@@ -254,10 +254,10 @@
         "ratio": 6.3
       },
       {
-        "word": "beispielhaft",
-        "count": 3,
-        "score": 4.58,
-        "ratio": 3.6
+        "word": "grundlegend",
+        "count": 7,
+        "score": 11.54,
+        "ratio": 4.2
       }
     ]
   },
@@ -289,15 +289,15 @@
     "question": "Welches Wort nutzt Friedrich Merz häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
         "text": "Bundeskabinetts",
         "isCorrect": true
       },
       {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Haushalt",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
@@ -312,7 +312,7 @@
     "question": "Welches Adjektiv nutzt Friedrich Merz häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Gefährlich",
+        "text": "Jung",
         "isCorrect": false
       },
       {
@@ -324,7 +324,7 @@
         "isCorrect": true
       },
       {
-        "text": "Erfolgreich",
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
@@ -441,7 +441,7 @@
           "count": 3
         },
         {
-          "word": "einwanderung",
+          "word": "asylverfahren",
           "count": 2
         }
       ],
@@ -455,15 +455,15 @@
           "count": 5
         },
         {
-          "word": "umwelt",
-          "count": 2
-        },
-        {
           "word": "klimapolitik",
           "count": 2
         },
         {
-          "word": "klimaneutralität",
+          "word": "umwelt",
+          "count": 2
+        },
+        {
+          "word": "fracking",
           "count": 2
         }
       ],
@@ -551,7 +551,7 @@
           "count": 2
         },
         {
-          "word": "pflege",
+          "word": "sucht",
           "count": 2
         }
       ],
@@ -657,11 +657,11 @@
           "count": 4
         },
         {
-          "word": "rechtsstaat",
+          "word": "richter",
           "count": 3
         },
         {
-          "word": "richter",
+          "word": "rechtsstaat",
           "count": 3
         }
       ],
@@ -679,11 +679,11 @@
           "count": 8
         },
         {
-          "word": "arbeitnehmer",
+          "word": "beschäftigung",
           "count": 6
         },
         {
-          "word": "gewerkschaften",
+          "word": "arbeitnehmer",
           "count": 6
         }
       ],
@@ -701,11 +701,11 @@
           "count": 2
         },
         {
-          "word": "schifffahrt",
+          "word": "luftverkehr",
           "count": 2
         },
         {
-          "word": "luftverkehr",
+          "word": "schifffahrt",
           "count": 2
         }
       ]

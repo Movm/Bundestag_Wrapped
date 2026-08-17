@@ -11,23 +11,23 @@
   "minWords": 70,
   "maxWords": 626,
   "rankings": {
-    "speechRank": 368,
+    "speechRank": 361,
     "wordsRank": 454,
-    "partySpeechRank": 47,
+    "partySpeechRank": 48,
     "partyWordsRank": 49,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 41.2,
+    "percentile": 42.3,
     "verbosityRank": 483,
     "verbosityTotal": 582,
     "partyVerbosityRank": 47,
-    "longestSpeechRank": 469
+    "longestSpeechRank": 468
   },
   "drama": {
     "interruptionsGiven": 29,
     "interruptionsReceived": 12,
     "interrupterRank": 175,
-    "interruptedRank": 438
+    "interruptedRank": 440
   },
   "words": {
     "topWords": [
@@ -36,11 +36,11 @@
         "count": 22
       },
       {
-        "word": "mindestlohn",
+        "word": "menschen",
         "count": 16
       },
       {
-        "word": "menschen",
+        "word": "mindestlohn",
         "count": 16
       },
       {
@@ -56,11 +56,11 @@
         "count": 11
       },
       {
-        "word": "jahren",
+        "word": "leben",
         "count": 9
       },
       {
-        "word": "leben",
+        "word": "jahren",
         "count": 9
       },
       {
@@ -221,20 +221,20 @@
     "question": "Welches Wort nutzt Cem Ince häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Europa",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
-        "isCorrect": false
+        "text": "Sicherheitsbeauftragte",
+        "isCorrect": true
       },
       {
         "text": "Gesetz",
         "isCorrect": false
       },
       {
-        "text": "Sicherheitsbeauftragte",
-        "isCorrect": true
+        "text": "Klima",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Sicherheitsbeauftragte\" nutzt Cem Ince 340.2× häufiger als der DIE LINKE-Durchschnitt.",
@@ -244,20 +244,20 @@
     "question": "Welches Adjektiv nutzt Cem Ince häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
+        "text": "National",
         "isCorrect": false
       },
       {
         "text": "Solidarisch",
         "isCorrect": true
+      },
+      {
+        "text": "Stark",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Solidarisch\" nutzt Cem Ince 15.5× häufiger als der DIE LINKE-Durchschnitt.",
@@ -381,7 +381,7 @@
           "count": 3
         },
         {
-          "word": "betriebe",
+          "word": "standort",
           "count": 2
         },
         {
@@ -399,19 +399,23 @@
           "count": 3
         },
         {
-          "word": "gerechtigkeit",
-          "count": 2
-        },
-        {
           "word": "wohnung",
           "count": 2
         },
         {
           "word": "sozialstaat",
           "count": 2
+        },
+        {
+          "word": "gerechtigkeit",
+          "count": 2
         }
       ],
       "sicherheit": [
+        {
+          "word": "militär",
+          "count": 1
+        },
         {
           "word": "waffen",
           "count": 1
@@ -422,10 +426,6 @@
         },
         {
           "word": "kriminalität",
-          "count": 1
-        },
-        {
-          "word": "militär",
           "count": 1
         }
       ],
@@ -443,15 +443,15 @@
       ],
       "digital": [
         {
+          "word": "software",
+          "count": 1
+        },
+        {
           "word": "technologie",
           "count": 1
         },
         {
           "word": "digitalisierung",
-          "count": 1
-        },
-        {
-          "word": "software",
           "count": 1
         }
       ],
@@ -461,15 +461,15 @@
           "count": 2
         },
         {
-          "word": "auszubildende",
-          "count": 1
-        },
-        {
           "word": "schulen",
           "count": 1
         },
         {
           "word": "ausbildungsplätze",
+          "count": 1
+        },
+        {
+          "word": "auszubildende",
           "count": 1
         }
       ],
@@ -483,11 +483,11 @@
           "count": 2
         },
         {
-          "word": "inflation",
+          "word": "haushalt",
           "count": 1
         },
         {
-          "word": "haushalt",
+          "word": "inflation",
           "count": 1
         }
       ],
@@ -515,7 +515,7 @@
           "count": 6
         },
         {
-          "word": "arbeitsplatz",
+          "word": "mitbestimmung",
           "count": 5
         }
       ],
@@ -525,15 +525,15 @@
           "count": 2
         },
         {
+          "word": "führerschein",
+          "count": 1
+        },
+        {
           "word": "straße",
           "count": 1
         },
         {
           "word": "autos",
-          "count": 1
-        },
-        {
-          "word": "führerschein",
           "count": 1
         }
       ]

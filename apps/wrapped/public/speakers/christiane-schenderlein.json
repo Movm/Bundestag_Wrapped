@@ -11,14 +11,14 @@
   "minWords": 194,
   "maxWords": 653,
   "rankings": {
-    "speechRank": 460,
+    "speechRank": 453,
     "wordsRank": 359,
-    "partySpeechRank": 145,
+    "partySpeechRank": 138,
     "partyWordsRank": 109,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 26.5,
-    "verbosityRank": 163,
+    "percentile": 27.6,
+    "verbosityRank": 162,
     "verbosityTotal": 582,
     "partyVerbosityRank": 59,
     "longestSpeechRank": 435
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 4,
     "interrupterRank": null,
-    "interruptedRank": 564
+    "interruptedRank": 555
   },
   "words": {
     "topWords": [
@@ -36,11 +36,11 @@
         "count": 29
       },
       {
-        "word": "ehrenamt",
+        "word": "menschen",
         "count": 27
       },
       {
-        "word": "menschen",
+        "word": "ehrenamt",
         "count": 27
       },
       {
@@ -68,7 +68,7 @@
         "count": 14
       },
       {
-        "word": "beim",
+        "word": "stehen",
         "count": 13
       }
     ],
@@ -98,24 +98,24 @@
         "ratioBundestag": 131.0
       },
       {
-        "word": "engagierte",
-        "count": 16,
+        "word": "paralympischen",
+        "count": 8,
         "ratioParty": 276.6,
-        "ratioBundestag": 209.6
+        "ratioBundestag": 219.8
       }
     ],
     "signatureWordsParty": [
-      {
-        "word": "engagierte",
-        "count": 16,
-        "score": 90.02,
-        "ratio": 276.6
-      },
       {
         "word": "athletinnen",
         "count": 14,
         "score": 82.13,
         "ratio": 352.0
+      },
+      {
+        "word": "paralympischen",
+        "count": 8,
+        "score": 45.01,
+        "ratio": 276.6
       },
       {
         "word": "sportfachliche",
@@ -138,12 +138,6 @@
     ],
     "signatureWordsBundestag": [
       {
-        "word": "engagierte",
-        "count": 16,
-        "score": 85.6,
-        "ratio": 209.6
-      },
-      {
         "word": "athletinnen",
         "count": 14,
         "score": 68.36,
@@ -154,6 +148,12 @@
         "count": 6,
         "score": 47.08,
         "ratio": 2554.8
+      },
+      {
+        "word": "paralympischen",
+        "count": 8,
+        "score": 43.18,
+        "ratio": 219.8
       },
       {
         "word": "schatz",
@@ -195,20 +195,20 @@
     "question": "Welches Wort nutzt Dr. Christiane Schenderlein häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
         "text": "Haushalt",
+        "isCorrect": false
+      },
+      {
+        "text": "Klima",
         "isCorrect": false
       },
       {
         "text": "Sportfachliche",
         "isCorrect": true
-      },
-      {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Sportfachliche\" nutzt Dr. Christiane Schenderlein 829.8× häufiger als der CDU/CSU-Durchschnitt.",
@@ -415,11 +415,11 @@
       ],
       "justiz": [
         {
-          "word": "grundgesetz",
+          "word": "datenschutz",
           "count": 4
         },
         {
-          "word": "datenschutz",
+          "word": "grundgesetz",
           "count": 4
         },
         {

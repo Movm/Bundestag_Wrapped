@@ -11,14 +11,14 @@
   "minWords": 49,
   "maxWords": 832,
   "rankings": {
-    "speechRank": 8,
+    "speechRank": 9,
     "wordsRank": 10,
     "partySpeechRank": 3,
     "partyWordsRank": 5,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 98.7,
-    "verbosityRank": 182,
+    "percentile": 98.6,
+    "verbosityRank": 183,
     "verbosityTotal": 582,
     "partyVerbosityRank": 69,
     "longestSpeechRank": 205
@@ -48,16 +48,16 @@
         "ratioBundestag": 279.8
       },
       {
-        "word": "geschmack",
-        "count": 5,
-        "ratioParty": 315.5,
-        "ratioBundestag": 163.2
-      },
-      {
         "word": "nuklearallianz",
         "count": 5,
         "ratioParty": 315.5,
         "ratioBundestag": 89.0
+      },
+      {
+        "word": "geschmack",
+        "count": 5,
+        "ratioParty": 315.5,
+        "ratioBundestag": 163.2
       },
       {
         "word": "klang",
@@ -86,13 +86,13 @@
         "ratio": 630.9
       },
       {
-        "word": "geschmack",
+        "word": "nuklearallianz",
         "count": 5,
         "score": 28.79,
         "ratio": 315.5
       },
       {
-        "word": "nuklearallianz",
+        "word": "geschmack",
         "count": 5,
         "score": 28.79,
         "ratio": 315.5
@@ -254,7 +254,7 @@
     {
       "emoji": "🏆",
       "label": "Rang (Reden)",
-      "value": "#8 von 626"
+      "value": "#9 von 626"
     },
     {
       "emoji": "⚡",
@@ -271,20 +271,20 @@
     "question": "Welches Wort nutzt Dr. Klaus Wiener häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
         "text": "Energieangebot",
         "isCorrect": true
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesellschaft",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Energieangebot\" nutzt Dr. Klaus Wiener 630.9× häufiger als der CDU/CSU-Durchschnitt.",
@@ -294,20 +294,20 @@
     "question": "Welches Adjektiv nutzt Dr. Klaus Wiener häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
+        "text": "Alt",
         "isCorrect": false
       },
       {
         "text": "Schlimm",
         "isCorrect": true
+      },
+      {
+        "text": "Europäisch",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Schlimm\" nutzt Dr. Klaus Wiener 8.6× häufiger als der CDU/CSU-Durchschnitt.",
@@ -411,15 +411,15 @@
           "count": 2
         },
         {
+          "word": "drittstaaten",
+          "count": 1
+        },
+        {
           "word": "migration",
           "count": 1
         },
         {
           "word": "grenze",
-          "count": 1
-        },
-        {
-          "word": "drittstaaten",
           "count": 1
         }
       ],
@@ -441,7 +441,7 @@
           "count": 8
         },
         {
-          "word": "klimawandel",
+          "word": "wasserstoff",
           "count": 6
         }
       ],
@@ -459,11 +459,11 @@
           "count": 17
         },
         {
-          "word": "volkswirtschaft",
+          "word": "wettbewerb",
           "count": 13
         },
         {
-          "word": "wettbewerb",
+          "word": "wachstum",
           "count": 13
         }
       ],
@@ -473,15 +473,15 @@
           "count": 4
         },
         {
+          "word": "altersvorsorge",
+          "count": 1
+        },
+        {
           "word": "rentenniveau",
           "count": 1
         },
         {
           "word": "grundsicherung",
-          "count": 1
-        },
-        {
-          "word": "altersvorsorge",
           "count": 1
         }
       ],
@@ -537,15 +537,15 @@
           "count": 1
         },
         {
+          "word": "technologie",
+          "count": 1
+        },
+        {
           "word": "netz",
           "count": 1
         },
         {
           "word": "netzausbau",
-          "count": 1
-        },
-        {
-          "word": "software",
           "count": 1
         }
       ],
@@ -555,11 +555,11 @@
           "count": 4
         },
         {
-          "word": "bildung",
+          "word": "forschung",
           "count": 3
         },
         {
-          "word": "forschung",
+          "word": "bildung",
           "count": 3
         },
         {
@@ -567,7 +567,7 @@
           "count": 2
         },
         {
-          "word": "meisterbrief",
+          "word": "schulen",
           "count": 1
         }
       ],
@@ -603,15 +603,15 @@
           "count": 2
         },
         {
-          "word": "rechtsstaatlichkeit",
+          "word": "verbraucherschutz",
           "count": 1
         },
         {
-          "word": "haftung",
+          "word": "urteil",
           "count": 1
         },
         {
-          "word": "diskriminierung",
+          "word": "anwalt",
           "count": 1
         }
       ],
@@ -651,11 +651,11 @@
           "count": 2
         },
         {
-          "word": "verkehrsinfrastruktur",
+          "word": "autos",
           "count": 1
         },
         {
-          "word": "fahrzeug",
+          "word": "bahn",
           "count": 1
         }
       ]

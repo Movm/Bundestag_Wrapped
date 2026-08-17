@@ -11,13 +11,13 @@
   "minWords": 55,
   "maxWords": 731,
   "rankings": {
-    "speechRank": 71,
+    "speechRank": 68,
     "wordsRank": 126,
     "partySpeechRank": 10,
     "partyWordsRank": 18,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 88.7,
+    "percentile": 89.1,
     "verbosityRank": 495,
     "verbosityTotal": 582,
     "partyVerbosityRank": 61,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 4,
     "interruptionsReceived": 16,
-    "interrupterRank": 369,
-    "interruptedRank": 375
+    "interrupterRank": 370,
+    "interruptedRank": 379
   },
   "words": {
     "topWords": [
@@ -48,15 +48,27 @@
         "count": 20
       },
       {
-        "word": "jahren",
+        "word": "grüne",
         "count": 20
       },
       {
-        "word": "grüne",
+        "word": "jahren",
         "count": 20
       }
     ],
     "signatureWords": [
+      {
+        "word": "lebenserwartung",
+        "count": 5,
+        "ratioParty": 303.6,
+        "ratioBundestag": 64.7
+      },
+      {
+        "word": "garantierente",
+        "count": 5,
+        "ratioParty": 303.6,
+        "ratioBundestag": 2135.9
+      },
       {
         "word": "ärztliche",
         "count": 5,
@@ -68,18 +80,6 @@
         "count": 5,
         "ratioParty": 303.6,
         "ratioBundestag": 73.7
-      },
-      {
-        "word": "garantierente",
-        "count": 5,
-        "ratioParty": 303.6,
-        "ratioBundestag": 2135.9
-      },
-      {
-        "word": "lebenserwartung",
-        "count": 5,
-        "ratioParty": 303.6,
-        "ratioBundestag": 64.7
       },
       {
         "word": "renteneintrittsalter",
@@ -96,13 +96,7 @@
         "ratio": 182.2
       },
       {
-        "word": "ärztliche",
-        "count": 5,
-        "score": 28.59,
-        "ratio": 303.6
-      },
-      {
-        "word": "primärversorgungssystem",
+        "word": "lebenserwartung",
         "count": 5,
         "score": 28.59,
         "ratio": 303.6
@@ -114,7 +108,13 @@
         "ratio": 303.6
       },
       {
-        "word": "lebenserwartung",
+        "word": "ärztliche",
+        "count": 5,
+        "score": 28.59,
+        "ratio": 303.6
+      },
+      {
+        "word": "primärversorgungssystem",
         "count": 5,
         "score": 28.59,
         "ratio": 303.6
@@ -218,30 +218,34 @@
     "question": "Welches Wort nutzt Dr. Armin Grau häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Debatte",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Ärztliche",
+        "text": "Lebenserwartung",
         "isCorrect": true
+      },
+      {
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Ärztliche\" nutzt Dr. Armin Grau 303.6× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "76.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Lebenserwartung\" nutzt Dr. Armin Grau 303.6× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "64.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Armin Grau häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Sicher",
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
         "isCorrect": false
       },
       {
@@ -249,11 +253,7 @@
         "isCorrect": true
       },
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
+        "text": "Politisch",
         "isCorrect": false
       }
     ],
@@ -430,11 +430,11 @@
       ],
       "sicherheit": [
         {
-          "word": "angriff",
+          "word": "bundeswehr",
           "count": 2
         },
         {
-          "word": "bundeswehr",
+          "word": "angriff",
           "count": 2
         }
       ],
@@ -444,11 +444,11 @@
           "count": 10
         },
         {
-          "word": "kliniken",
+          "word": "krankenhäuser",
           "count": 9
         },
         {
-          "word": "krankenhäuser",
+          "word": "kliniken",
           "count": 9
         },
         {
@@ -484,11 +484,11 @@
           "count": 1
         },
         {
-          "word": "digital",
+          "word": "software",
           "count": 1
         },
         {
-          "word": "software",
+          "word": "digital",
           "count": 1
         }
       ],
@@ -496,6 +496,10 @@
         {
           "word": "weiterbildung",
           "count": 2
+        },
+        {
+          "word": "kinderbetreuung",
+          "count": 1
         },
         {
           "word": "schülerinnen",
@@ -507,10 +511,6 @@
         },
         {
           "word": "umschulung",
-          "count": 1
-        },
-        {
-          "word": "kinderbetreuung",
           "count": 1
         }
       ],
@@ -532,17 +532,17 @@
           "count": 5
         },
         {
-          "word": "steuer",
+          "word": "investitionen",
           "count": 2
         }
       ],
       "justiz": [
         {
-          "word": "verfassungswidrig",
+          "word": "gesetzgebung",
           "count": 1
         },
         {
-          "word": "gesetzgebung",
+          "word": "verfassungswidrig",
           "count": 1
         },
         {

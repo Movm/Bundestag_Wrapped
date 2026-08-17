@@ -11,23 +11,23 @@
   "minWords": 104,
   "maxWords": 678,
   "rankings": {
-    "speechRank": 110,
+    "speechRank": 125,
     "wordsRank": 247,
-    "partySpeechRank": 21,
+    "partySpeechRank": 26,
     "partyWordsRank": 56,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 82.4,
-    "verbosityRank": 424,
+    "percentile": 80.0,
+    "verbosityRank": 425,
     "verbosityTotal": 582,
     "partyVerbosityRank": 110,
-    "longestSpeechRank": 403
+    "longestSpeechRank": 404
   },
   "drama": {
     "interruptionsGiven": 8,
     "interruptionsReceived": 41,
-    "interrupterRank": 291,
-    "interruptedRank": 162
+    "interrupterRank": 296,
+    "interruptedRank": 168
   },
   "words": {
     "topWords": [
@@ -54,6 +54,10 @@
       {
         "word": "gesetz",
         "count": 15
+      },
+      {
+        "word": "bahn",
+        "count": 14
       },
       {
         "word": "grünen",
@@ -204,20 +208,20 @@
     "question": "Welches Wort nutzt Ulrich von Zons häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
         "text": "Formular",
         "isCorrect": true
+      },
+      {
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Formular\" nutzt Ulrich von Zons 216.4× häufiger als der AfD-Durchschnitt.",
@@ -227,11 +231,11 @@
     "question": "Welches Adjektiv nutzt Ulrich von Zons häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Jung",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Groß",
+        "text": "Falsch",
         "isCorrect": false
       },
       {
@@ -239,7 +243,7 @@
         "isCorrect": true
       },
       {
-        "text": "Problematisch",
+        "text": "Stark",
         "isCorrect": false
       }
     ],
@@ -334,6 +338,10 @@
           "count": 2
         },
         {
+          "word": "erneuerbare",
+          "count": 1
+        },
+        {
           "word": "umwelt",
           "count": 1
         },
@@ -343,10 +351,6 @@
         },
         {
           "word": "umweltschutz",
-          "count": 1
-        },
-        {
-          "word": "energiewende",
           "count": 1
         }
       ],
@@ -360,7 +364,7 @@
           "count": 2
         },
         {
-          "word": "firmen",
+          "word": "wirtschaft",
           "count": 1
         },
         {
@@ -378,11 +382,11 @@
           "count": 6
         },
         {
-          "word": "familie",
+          "word": "rente",
           "count": 1
         },
         {
-          "word": "alleinerziehende",
+          "word": "wohnungsmarkt",
           "count": 1
         },
         {
@@ -436,7 +440,7 @@
           "count": 2
         },
         {
-          "word": "ukraine",
+          "word": "brüssel",
           "count": 1
         },
         {
@@ -444,7 +448,7 @@
           "count": 1
         },
         {
-          "word": "brüssel",
+          "word": "ukraine",
           "count": 1
         }
       ],
@@ -454,19 +458,19 @@
           "count": 7
         },
         {
-          "word": "digitalisierung",
-          "count": 3
-        },
-        {
           "word": "pressefreiheit",
           "count": 3
         },
         {
-          "word": "hardware",
-          "count": 1
+          "word": "digitalisierung",
+          "count": 3
         },
         {
           "word": "software",
+          "count": 1
+        },
+        {
+          "word": "netzwerk",
           "count": 1
         }
       ],
@@ -502,7 +506,7 @@
           "count": 2
         },
         {
-          "word": "schulden",
+          "word": "finanzierung",
           "count": 1
         }
       ],
@@ -512,11 +516,11 @@
           "count": 8
         },
         {
-          "word": "grundgesetz",
+          "word": "urteil",
           "count": 4
         },
         {
-          "word": "urteil",
+          "word": "grundgesetz",
           "count": 4
         },
         {

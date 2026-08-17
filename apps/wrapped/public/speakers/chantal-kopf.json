@@ -11,13 +11,13 @@
   "minWords": 38,
   "maxWords": 920,
   "rankings": {
-    "speechRank": 422,
+    "speechRank": 424,
     "wordsRank": 439,
-    "partySpeechRank": 72,
+    "partySpeechRank": 71,
     "partyWordsRank": 72,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 32.6,
+    "percentile": 32.3,
     "verbosityRank": 462,
     "verbosityTotal": 582,
     "partyVerbosityRank": 56,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 5,
-    "interrupterRank": 451,
-    "interruptedRank": 541
+    "interrupterRank": 460,
+    "interruptedRank": 542
   },
   "words": {
     "topWords": [
@@ -216,19 +216,19 @@
     "question": "Welches Wort nutzt Chantal Kopf häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
         "text": "Königreich",
         "isCorrect": true
       },
       {
-        "text": "Minister",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Opposition",
+        "text": "Bürger",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
         "isCorrect": false
       }
     ],
@@ -239,11 +239,7 @@
     "question": "Welches Adjektiv nutzt Chantal Kopf häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
+        "text": "Sicher",
         "isCorrect": false
       },
       {
@@ -251,7 +247,11 @@
         "isCorrect": true
       },
       {
-        "text": "Stark",
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
         "isCorrect": false
       }
     ],
@@ -362,6 +362,10 @@
       ],
       "klima": [
         {
+          "word": "naturschutz",
+          "count": 2
+        },
+        {
           "word": "klimaschutz",
           "count": 2
         },
@@ -370,15 +374,11 @@
           "count": 2
         },
         {
-          "word": "naturschutz",
-          "count": 2
-        },
-        {
-          "word": "klimapolitik",
+          "word": "umwelt",
           "count": 1
         },
         {
-          "word": "energie",
+          "word": "klimapolitik",
           "count": 1
         }
       ],
@@ -400,7 +400,7 @@
           "count": 1
         },
         {
-          "word": "industrie",
+          "word": "mittelstand",
           "count": 1
         }
       ],
@@ -424,11 +424,11 @@
           "count": 2
         },
         {
-          "word": "rüstung",
+          "word": "polizei",
           "count": 1
         },
         {
-          "word": "polizei",
+          "word": "rüstung",
           "count": 1
         },
         {
@@ -496,11 +496,11 @@
           "count": 1
         },
         {
-          "word": "investitionen",
+          "word": "kosten",
           "count": 1
         },
         {
-          "word": "kosten",
+          "word": "investitionen",
           "count": 1
         }
       ],

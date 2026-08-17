@@ -11,13 +11,13 @@
   "minWords": 219,
   "maxWords": 962,
   "rankings": {
-    "speechRank": 339,
+    "speechRank": 321,
     "wordsRank": 67,
-    "partySpeechRank": 45,
+    "partySpeechRank": 42,
     "partyWordsRank": 7,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 45.8,
+    "percentile": 48.7,
     "verbosityRank": 21,
     "verbosityTotal": 582,
     "partyVerbosityRank": 3,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 8,
     "interruptionsReceived": 56,
-    "interrupterRank": 299,
-    "interruptedRank": 94
+    "interrupterRank": 291,
+    "interruptedRank": 92
   },
   "words": {
     "topWords": [
@@ -272,15 +272,15 @@
         "isCorrect": true
       },
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
         "text": "Fraktion",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
         "isCorrect": false
       }
     ],
@@ -291,7 +291,11 @@
     "question": "Welches Adjektiv nutzt Dr. Dietmar Bartsch häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Notwendig",
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
         "isCorrect": false
       },
       {
@@ -301,10 +305,6 @@
       {
         "text": "Inakzeptabel",
         "isCorrect": true
-      },
-      {
-        "text": "Schlecht",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Inakzeptabel\" nutzt Dr. Dietmar Bartsch 28.0× häufiger als der DIE LINKE-Durchschnitt.",
@@ -408,11 +408,11 @@
           "count": 4
         },
         {
-          "word": "flüchtlinge",
+          "word": "integration",
           "count": 3
         },
         {
-          "word": "integration",
+          "word": "flüchtlinge",
           "count": 3
         },
         {
@@ -420,21 +420,21 @@
           "count": 2
         },
         {
-          "word": "asylverfahren",
+          "word": "sprachkurs",
           "count": 1
         }
       ],
       "klima": [
-        {
-          "word": "klimaneutralität",
-          "count": 1
-        },
         {
           "word": "energie",
           "count": 1
         },
         {
           "word": "extremwetter",
+          "count": 1
+        },
+        {
+          "word": "klimaneutralität",
           "count": 1
         }
       ],
@@ -456,7 +456,7 @@
           "count": 3
         },
         {
-          "word": "wirtschaftswachstum",
+          "word": "konzern",
           "count": 2
         }
       ],
@@ -464,10 +464,6 @@
         {
           "word": "sozialstaat",
           "count": 8
-        },
-        {
-          "word": "rente",
-          "count": 6
         },
         {
           "word": "kinder",
@@ -478,17 +474,21 @@
           "count": 6
         },
         {
+          "word": "rente",
+          "count": 6
+        },
+        {
           "word": "rentenniveau",
           "count": 5
         }
       ],
       "sicherheit": [
         {
-          "word": "bundeswehr",
+          "word": "rüstung",
           "count": 11
         },
         {
-          "word": "rüstung",
+          "word": "bundeswehr",
           "count": 11
         },
         {
@@ -500,7 +500,7 @@
           "count": 6
         },
         {
-          "word": "panzer",
+          "word": "verteidigungsetat",
           "count": 5
         }
       ],
@@ -510,25 +510,25 @@
           "count": 2
         },
         {
-          "word": "therapie",
+          "word": "krankenkassen",
           "count": 1
         },
         {
-          "word": "krankenkassen",
+          "word": "therapie",
           "count": 1
         }
       ],
       "europa": [
-        {
-          "word": "europa",
-          "count": 5
-        },
         {
           "word": "putin",
           "count": 5
         },
         {
           "word": "ukraine",
+          "count": 5
+        },
+        {
+          "word": "europa",
           "count": 5
         },
         {
@@ -556,7 +556,7 @@
           "count": 7
         },
         {
-          "word": "fortbildung",
+          "word": "forschung",
           "count": 1
         },
         {
@@ -568,7 +568,7 @@
           "count": 1
         },
         {
-          "word": "forschung",
+          "word": "fortbildung",
           "count": 1
         }
       ],
@@ -630,11 +630,11 @@
           "count": 2
         },
         {
-          "word": "gewerkschaften",
+          "word": "beschäftigte",
           "count": 1
         },
         {
-          "word": "einkommen",
+          "word": "arbeitslose",
           "count": 1
         }
       ],
@@ -644,11 +644,11 @@
           "count": 5
         },
         {
-          "word": "deutschlandticket",
+          "word": "fahrzeuge",
           "count": 3
         },
         {
-          "word": "fahrzeuge",
+          "word": "deutschlandticket",
           "count": 3
         },
         {

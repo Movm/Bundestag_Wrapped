@@ -11,17 +11,17 @@
   "minWords": 93,
   "maxWords": 626,
   "rankings": {
-    "speechRank": 22,
+    "speechRank": 16,
     "wordsRank": 30,
-    "partySpeechRank": 4,
+    "partySpeechRank": 3,
     "partyWordsRank": 6,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 96.5,
+    "percentile": 97.4,
     "verbosityRank": 371,
     "verbosityTotal": 582,
     "partyVerbosityRank": 96,
-    "longestSpeechRank": 468
+    "longestSpeechRank": 467
   },
   "drama": {
     "interruptionsGiven": 275,
@@ -248,6 +248,11 @@
       "value": "17.103"
     },
     {
+      "emoji": "🏆",
+      "label": "Rang (Reden)",
+      "value": "#16 von 626"
+    },
+    {
       "emoji": "⚡",
       "label": "Zwischenrufer",
       "value": "#10 (275x)"
@@ -255,23 +260,18 @@
     {
       "emoji": "🥇",
       "label": "Rang in AfD",
-      "value": "#4 von 150"
-    },
-    {
-      "emoji": "📊",
-      "label": "Top-Redner",
-      "value": "Top 4%"
+      "value": "#3 von 150"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Marc Bernhard häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Energie",
-        "isCorrect": false
+        "text": "Zufallsenergien",
+        "isCorrect": true
       },
       {
-        "text": "Europa",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
@@ -279,8 +279,8 @@
         "isCorrect": false
       },
       {
-        "text": "Zufallsenergien",
-        "isCorrect": true
+        "text": "Europa",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Zufallsenergien\" nutzt Marc Bernhard 525.2× häufiger als der AfD-Durchschnitt.",
@@ -290,11 +290,7 @@
     "question": "Welches Adjektiv nutzt Marc Bernhard häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Wichtig",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
@@ -302,7 +298,11 @@
         "isCorrect": true
       },
       {
-        "text": "National",
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
         "isCorrect": false
       }
     ],
@@ -379,11 +379,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "migration",
+          "word": "flüchtlinge",
           "count": 5
         },
         {
-          "word": "flüchtlinge",
+          "word": "migration",
           "count": 5
         },
         {
@@ -435,7 +435,7 @@
           "count": 8
         },
         {
-          "word": "wirtschaft",
+          "word": "produktion",
           "count": 6
         },
         {
@@ -493,11 +493,11 @@
           "count": 3
         },
         {
-          "word": "pflegekraft",
+          "word": "kliniken",
           "count": 1
         },
         {
-          "word": "kliniken",
+          "word": "pflegekraft",
           "count": 1
         },
         {
@@ -519,7 +519,7 @@
           "count": 2
         },
         {
-          "word": "europa",
+          "word": "frieden",
           "count": 1
         },
         {
@@ -527,7 +527,7 @@
           "count": 1
         },
         {
-          "word": "frieden",
+          "word": "europa",
           "count": 1
         }
       ],
@@ -587,11 +587,11 @@
           "count": 2
         },
         {
-          "word": "haftung",
+          "word": "novelle",
           "count": 1
         },
         {
-          "word": "novelle",
+          "word": "haftung",
           "count": 1
         },
         {
@@ -621,7 +621,7 @@
           "count": 1
         },
         {
-          "word": "arbeitslose",
+          "word": "vollzeit",
           "count": 1
         }
       ],
@@ -639,7 +639,7 @@
           "count": 2
         },
         {
-          "word": "bahn",
+          "word": "infrastruktur",
           "count": 1
         },
         {

@@ -11,13 +11,13 @@
   "minWords": 79,
   "maxWords": 1054,
   "rankings": {
-    "speechRank": 187,
+    "speechRank": 181,
     "wordsRank": 198,
-    "partySpeechRank": 35,
+    "partySpeechRank": 34,
     "partyWordsRank": 31,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 70.1,
+    "percentile": 71.1,
     "verbosityRank": 409,
     "verbosityTotal": 582,
     "partyVerbosityRank": 43,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 74,
     "interruptionsReceived": 39,
-    "interrupterRank": 67,
-    "interruptedRank": 184
+    "interrupterRank": 66,
+    "interruptedRank": 180
   },
   "words": {
     "topWords": [
@@ -56,11 +56,11 @@
         "count": 18
       },
       {
-        "word": "einfach",
+        "word": "kollege",
         "count": 17
       },
       {
-        "word": "kollege",
+        "word": "einfach",
         "count": 17
       },
       {
@@ -271,7 +271,11 @@
     "question": "Welches Wort nutzt Dr. Konstantin von Notz häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kanzler",
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
@@ -279,11 +283,7 @@
         "isCorrect": true
       },
       {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
+        "text": "Investitionen",
         "isCorrect": false
       }
     ],
@@ -294,19 +294,19 @@
     "question": "Welches Adjektiv nutzt Dr. Konstantin von Notz häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Schlimm",
-        "isCorrect": true
-      },
-      {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
         "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Falsch",
+        "text": "Schlimm",
+        "isCorrect": true
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
         "isCorrect": false
       }
     ],
@@ -443,15 +443,15 @@
           "count": 7
         },
         {
+          "word": "produktion",
+          "count": 1
+        },
+        {
           "word": "handwerk",
           "count": 1
         },
         {
           "word": "industrie",
-          "count": 1
-        },
-        {
-          "word": "firmen",
           "count": 1
         }
       ],
@@ -503,11 +503,11 @@
           "count": 2
         },
         {
-          "word": "nato",
+          "word": "putin",
           "count": 1
         },
         {
-          "word": "putin",
+          "word": "nato",
           "count": 1
         }
       ],
@@ -553,15 +553,15 @@
           "count": 3
         },
         {
-          "word": "beschluss",
-          "count": 2
-        },
-        {
           "word": "bundesverfassungsgericht",
           "count": 2
         },
         {
           "word": "rechtsstaatlichkeit",
+          "count": 2
+        },
+        {
+          "word": "beschluss",
           "count": 2
         }
       ],

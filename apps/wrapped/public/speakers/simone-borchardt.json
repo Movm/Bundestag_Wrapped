@@ -11,23 +11,23 @@
   "minWords": 30,
   "maxWords": 814,
   "rankings": {
-    "speechRank": 174,
+    "speechRank": 165,
     "wordsRank": 158,
-    "partySpeechRank": 40,
+    "partySpeechRank": 36,
     "partyWordsRank": 45,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 72.2,
-    "verbosityRank": 318,
+    "percentile": 73.6,
+    "verbosityRank": 315,
     "verbosityTotal": 582,
-    "partyVerbosityRank": 111,
+    "partyVerbosityRank": 110,
     "longestSpeechRank": 234
   },
   "drama": {
     "interruptionsGiven": 51,
     "interruptionsReceived": 45,
     "interrupterRank": 105,
-    "interruptedRank": 150
+    "interruptedRank": 148
   },
   "words": {
     "topWords": [
@@ -70,12 +70,6 @@
         "ratioBundestag": 467.7
       },
       {
-        "word": "ärztliche",
-        "count": 5,
-        "ratioParty": 84.2,
-        "ratioBundestag": 83.5
-      },
-      {
         "word": "pflegeeinrichtungen",
         "count": 5,
         "ratioParty": 84.2,
@@ -86,6 +80,12 @@
         "count": 5,
         "ratioParty": 84.2,
         "ratioBundestag": 47.7
+      },
+      {
+        "word": "ärztliche",
+        "count": 5,
+        "ratioParty": 84.2,
+        "ratioBundestag": 83.5
       }
     ],
     "signatureWordsParty": [
@@ -102,12 +102,6 @@
         "ratio": 189.5
       },
       {
-        "word": "ärztliche",
-        "count": 5,
-        "score": 22.23,
-        "ratio": 84.2
-      },
-      {
         "word": "pflegeeinrichtungen",
         "count": 5,
         "score": 22.23,
@@ -115,6 +109,12 @@
       },
       {
         "word": "leistungskürzungen",
+        "count": 5,
+        "score": 22.23,
+        "ratio": 84.2
+      },
+      {
+        "word": "ärztliche",
         "count": 5,
         "score": 22.23,
         "ratio": 84.2
@@ -205,20 +205,20 @@
     "question": "Welches Wort nutzt Simone Borchardt häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Migration",
+        "text": "Gesetzentwurf",
         "isCorrect": false
-      },
-      {
-        "text": "Ambulantisierung",
-        "isCorrect": true
       },
       {
         "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Freiheit",
         "isCorrect": false
+      },
+      {
+        "text": "Ambulantisierung",
+        "isCorrect": true
       }
     ],
     "explanationParty": "\"Ambulantisierung\" nutzt Simone Borchardt 757.9× häufiger als der CDU/CSU-Durchschnitt.",
@@ -228,19 +228,19 @@
     "question": "Welches Adjektiv nutzt Simone Borchardt häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
         "text": "Vernünftig",
         "isCorrect": true
       },
       {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
+        "text": "Alt",
         "isCorrect": false
       }
     ],
@@ -341,11 +341,11 @@
     "topicWords": {
       "klima": [
         {
-          "word": "umweltschutz",
+          "word": "nachhaltig",
           "count": 1
         },
         {
-          "word": "nachhaltig",
+          "word": "umweltschutz",
           "count": 1
         }
       ],
@@ -395,11 +395,11 @@
       ],
       "sicherheit": [
         {
-          "word": "gewalt",
+          "word": "angriff",
           "count": 1
         },
         {
-          "word": "angriff",
+          "word": "gewalt",
           "count": 1
         }
       ],
@@ -417,11 +417,11 @@
           "count": 9
         },
         {
-          "word": "krankenhäuser",
+          "word": "pflegekräfte",
           "count": 8
         },
         {
-          "word": "pflegekräfte",
+          "word": "krankenhäuser",
           "count": 8
         }
       ],
@@ -455,15 +455,15 @@
           "count": 2
         },
         {
-          "word": "bildung",
-          "count": 1
-        },
-        {
           "word": "bildungspolitik",
           "count": 1
         },
         {
           "word": "master",
+          "count": 1
+        },
+        {
+          "word": "bildung",
           "count": 1
         }
       ],
@@ -513,11 +513,11 @@
           "count": 2
         },
         {
-          "word": "beschäftigte",
+          "word": "arbeitnehmer",
           "count": 2
         },
         {
-          "word": "arbeitnehmer",
+          "word": "beschäftigte",
           "count": 2
         },
         {

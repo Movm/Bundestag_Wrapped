@@ -11,14 +11,14 @@
   "minWords": 16,
   "maxWords": 631,
   "rankings": {
-    "speechRank": 385,
+    "speechRank": 390,
     "wordsRank": 322,
-    "partySpeechRank": 91,
+    "partySpeechRank": 96,
     "partyWordsRank": 70,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 38.5,
-    "verbosityRank": 573,
+    "percentile": 37.7,
+    "verbosityRank": 574,
     "verbosityTotal": 582,
     "partyVerbosityRank": 144,
     "longestSpeechRank": 464
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 25,
     "interruptionsReceived": 13,
-    "interrupterRank": 189,
-    "interruptedRank": 427
+    "interrupterRank": 188,
+    "interruptedRank": 425
   },
   "words": {
     "topWords": [
@@ -40,6 +40,14 @@
         "count": 17
       },
       {
+        "word": "bundesregierung",
+        "count": 12
+      },
+      {
+        "word": "deutsche",
+        "count": 12
+      },
+      {
         "word": "neue",
         "count": 12
       },
@@ -48,15 +56,7 @@
         "count": 12
       },
       {
-        "word": "deutsche",
-        "count": 12
-      },
-      {
-        "word": "bundesregierung",
-        "count": 12
-      },
-      {
-        "word": "soll",
+        "word": "staatssekretärin",
         "count": 10
       }
     ],
@@ -227,19 +227,19 @@
     "question": "Welches Wort nutzt Stefan Schröder häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
         "text": "Herdenschutz",
         "isCorrect": true
       },
       {
-        "text": "Bundesregierung",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
         "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
         "isCorrect": false
       }
     ],
@@ -250,20 +250,20 @@
     "question": "Welches Adjektiv nutzt Stefan Schröder häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
         "text": "Wesentlich",
         "isCorrect": true
+      },
+      {
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Wesentlich\" nutzt Stefan Schröder 19.9× häufiger als der AfD-Durchschnitt.",
@@ -343,19 +343,19 @@
           "count": 4
         },
         {
-          "word": "energieeffizienz",
-          "count": 1
-        },
-        {
-          "word": "nachhaltig",
-          "count": 1
-        },
-        {
           "word": "klimapolitik",
           "count": 1
         },
         {
           "word": "emissionen",
+          "count": 1
+        },
+        {
+          "word": "energieeffizienz",
+          "count": 1
+        },
+        {
+          "word": "nachhaltig",
           "count": 1
         }
       ],
@@ -365,15 +365,15 @@
           "count": 5
         },
         {
-          "word": "betrieb",
-          "count": 3
-        },
-        {
           "word": "industrie",
           "count": 3
         },
         {
-          "word": "betriebe",
+          "word": "betrieb",
+          "count": 3
+        },
+        {
+          "word": "mittelstand",
           "count": 2
         },
         {
@@ -431,11 +431,11 @@
           "count": 1
         },
         {
-          "word": "roboter",
+          "word": "daten",
           "count": 1
         },
         {
-          "word": "daten",
+          "word": "roboter",
           "count": 1
         }
       ],
@@ -467,11 +467,11 @@
           "count": 2
         },
         {
-          "word": "haushalt",
+          "word": "subvention",
           "count": 1
         },
         {
-          "word": "finanzierung",
+          "word": "haushaltsentwurf",
           "count": 1
         }
       ],
@@ -495,15 +495,15 @@
       ],
       "mobilitaet": [
         {
-          "word": "infrastruktur",
-          "count": 1
-        },
-        {
           "word": "fahrrad",
           "count": 1
         },
         {
           "word": "flug",
+          "count": 1
+        },
+        {
+          "word": "infrastruktur",
           "count": 1
         }
       ]

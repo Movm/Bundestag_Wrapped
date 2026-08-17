@@ -11,13 +11,13 @@
   "minWords": 533,
   "maxWords": 1558,
   "rankings": {
-    "speechRank": 330,
+    "speechRank": 317,
     "wordsRank": 105,
-    "partySpeechRank": 63,
+    "partySpeechRank": 62,
     "partyWordsRank": 26,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 47.3,
+    "percentile": 49.4,
     "verbosityRank": 4,
     "verbosityTotal": 582,
     "partyVerbosityRank": 1,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 3,
     "interruptionsReceived": 85,
-    "interrupterRank": 380,
-    "interruptedRank": 38
+    "interrupterRank": 397,
+    "interruptedRank": 37
   },
   "words": {
     "topWords": [
@@ -267,7 +267,11 @@
     "question": "Welches Wort nutzt Dr. Matthias Miersch häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Freiheit",
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
@@ -275,11 +279,7 @@
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
+        "text": "Familie",
         "isCorrect": false
       }
     ],
@@ -290,19 +290,19 @@
     "question": "Welches Adjektiv nutzt Dr. Matthias Miersch häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
         "text": "Zentral",
         "isCorrect": true
       },
       {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Wichtig",
+        "text": "Neu",
         "isCorrect": false
       }
     ],
@@ -501,6 +501,10 @@
           "count": 3
         },
         {
+          "word": "vorsorge",
+          "count": 1
+        },
+        {
           "word": "pandemie",
           "count": 1
         },
@@ -510,10 +514,6 @@
         },
         {
           "word": "corona",
-          "count": 1
-        },
-        {
-          "word": "facharzt",
           "count": 1
         }
       ],
@@ -541,11 +541,11 @@
       ],
       "digital": [
         {
-          "word": "netz",
+          "word": "digitalisierung",
           "count": 2
         },
         {
-          "word": "digitalisierung",
+          "word": "netz",
           "count": 2
         },
         {
@@ -553,11 +553,11 @@
           "count": 1
         },
         {
-          "word": "algorithmen",
+          "word": "daten",
           "count": 1
         },
         {
-          "word": "daten",
+          "word": "algorithmen",
           "count": 1
         }
       ],
@@ -611,11 +611,11 @@
           "count": 1
         },
         {
-          "word": "gericht",
+          "word": "rechtsstaat",
           "count": 1
         },
         {
-          "word": "rechtsstaat",
+          "word": "gericht",
           "count": 1
         }
       ],
@@ -633,11 +633,11 @@
           "count": 1
         },
         {
-          "word": "arbeitsplatz",
+          "word": "lohndumping",
           "count": 1
         },
         {
-          "word": "lohndumping",
+          "word": "arbeitsplatz",
           "count": 1
         }
       ],

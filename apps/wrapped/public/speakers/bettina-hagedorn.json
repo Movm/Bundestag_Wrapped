@@ -11,23 +11,23 @@
   "minWords": 329,
   "maxWords": 790,
   "rankings": {
-    "speechRank": 458,
+    "speechRank": 459,
     "wordsRank": 473,
     "partySpeechRank": 83,
     "partyWordsRank": 90,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 26.8,
+    "percentile": 26.7,
     "verbosityRank": 124,
     "verbosityTotal": 582,
     "partyVerbosityRank": 28,
-    "longestSpeechRank": 262
+    "longestSpeechRank": 261
   },
   "drama": {
     "interruptionsGiven": 42,
     "interruptionsReceived": 18,
     "interrupterRank": 128,
-    "interruptedRank": 360
+    "interruptedRank": 362
   },
   "words": {
     "topWords": [
@@ -36,11 +36,11 @@
         "count": 13
       },
       {
-        "word": "wichtig",
+        "word": "haushaltsausschuss",
         "count": 12
       },
       {
-        "word": "haushaltsausschuss",
+        "word": "wichtig",
         "count": 12
       },
       {
@@ -60,7 +60,7 @@
         "count": 8
       },
       {
-        "word": "klimaschutz",
+        "word": "jahr",
         "count": 8
       },
       {
@@ -200,11 +200,7 @@
     "question": "Welches Wort nutzt Bettina Hagedorn häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Minister",
+        "text": "Sicherheit",
         "isCorrect": false
       },
       {
@@ -212,7 +208,11 @@
         "isCorrect": true
       },
       {
-        "text": "Koalition",
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Politik",
         "isCorrect": false
       }
     ],
@@ -340,15 +340,15 @@
           "count": 5
         },
         {
-          "word": "wirtschaft",
-          "count": 1
-        },
-        {
           "word": "markt",
           "count": 1
         },
         {
           "word": "betrieb",
+          "count": 1
+        },
+        {
+          "word": "wirtschaft",
           "count": 1
         }
       ],
@@ -376,11 +376,11 @@
       ],
       "digital": [
         {
-          "word": "netz",
+          "word": "plattform",
           "count": 1
         },
         {
-          "word": "plattform",
+          "word": "netz",
           "count": 1
         }
       ],
@@ -408,11 +408,11 @@
           "count": 5
         },
         {
-          "word": "sondervermögen",
+          "word": "etat",
           "count": 3
         },
         {
-          "word": "etat",
+          "word": "sondervermögen",
           "count": 3
         }
       ],
@@ -430,12 +430,16 @@
       ],
       "mobilitaet": [
         {
+          "word": "verkehrsminister",
+          "count": 2
+        },
+        {
           "word": "infrastruktur",
           "count": 2
         },
         {
-          "word": "verkehrsminister",
-          "count": 2
+          "word": "verkehrsinfrastruktur",
+          "count": 1
         },
         {
           "word": "schiffe",
@@ -443,10 +447,6 @@
         },
         {
           "word": "häfen",
-          "count": 1
-        },
-        {
-          "word": "verkehrsinfrastruktur",
           "count": 1
         }
       ]

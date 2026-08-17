@@ -11,17 +11,17 @@
   "minWords": 22,
   "maxWords": 751,
   "rankings": {
-    "speechRank": 168,
+    "speechRank": 172,
     "wordsRank": 232,
-    "partySpeechRank": 36,
+    "partySpeechRank": 40,
     "partyWordsRank": 65,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 73.2,
+    "percentile": 72.5,
     "verbosityRank": 364,
     "verbosityTotal": 582,
-    "partyVerbosityRank": 129,
-    "longestSpeechRank": 313
+    "partyVerbosityRank": 130,
+    "longestSpeechRank": 311
   },
   "drama": {
     "interruptionsGiven": 0,
@@ -44,11 +44,11 @@
         "count": 15
       },
       {
-        "word": "bringen",
+        "word": "worden",
         "count": 14
       },
       {
-        "word": "worden",
+        "word": "bringen",
         "count": 14
       }
     ],
@@ -196,19 +196,19 @@
     "question": "Welches Wort nutzt Oliver Pöpsel häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
         "text": "Boehringer",
         "isCorrect": true
       },
       {
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
         "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
         "isCorrect": false
       }
     ],
@@ -219,6 +219,10 @@
     "question": "Welches Adjektiv nutzt Oliver Pöpsel häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
         "text": "Jung",
         "isCorrect": false
       },
@@ -227,11 +231,7 @@
         "isCorrect": true
       },
       {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
+        "text": "Sicher",
         "isCorrect": false
       }
     ],
@@ -332,6 +332,10 @@
     "topicWords": {
       "wirtschaft": [
         {
+          "word": "wachstum",
+          "count": 4
+        },
+        {
           "word": "unternehmen",
           "count": 4
         },
@@ -340,15 +344,11 @@
           "count": 4
         },
         {
-          "word": "wachstum",
-          "count": 4
-        },
-        {
           "word": "fachkräftemangel",
           "count": 3
         },
         {
-          "word": "fachkräfte",
+          "word": "wirtschaftswachstum",
           "count": 2
         }
       ],
@@ -392,21 +392,21 @@
           "count": 1
         },
         {
-          "word": "spionage",
+          "word": "radikalisierung",
           "count": 1
         }
       ],
       "gesundheit": [
+        {
+          "word": "prävention",
+          "count": 1
+        },
         {
           "word": "pflegekraft",
           "count": 1
         },
         {
           "word": "pflegeversicherung",
-          "count": 1
-        },
-        {
-          "word": "prävention",
           "count": 1
         }
       ],
@@ -416,15 +416,15 @@
           "count": 4
         },
         {
+          "word": "digitalisierung",
+          "count": 1
+        },
+        {
           "word": "internet",
           "count": 1
         },
         {
           "word": "verschlüsselung",
-          "count": 1
-        },
-        {
-          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -442,26 +442,22 @@
           "count": 3
         },
         {
-          "word": "bildungspolitik",
+          "word": "forschung",
           "count": 2
         },
         {
-          "word": "kinderbetreuung",
+          "word": "bildungspolitik",
           "count": 2
         }
       ],
       "finanzen": [
         {
-          "word": "haushalt",
-          "count": 10
-        },
-        {
           "word": "investitionen",
           "count": 10
         },
         {
-          "word": "bundesbank",
-          "count": 3
+          "word": "haushalt",
+          "count": 10
         },
         {
           "word": "sondervermögen",
@@ -469,6 +465,10 @@
         },
         {
           "word": "kosten",
+          "count": 3
+        },
+        {
+          "word": "bundesbank",
           "count": 3
         }
       ],
@@ -482,11 +482,11 @@
           "count": 3
         },
         {
-          "word": "rechtsstaat",
+          "word": "staatsanwaltschaft",
           "count": 2
         },
         {
-          "word": "staatsanwaltschaft",
+          "word": "rechtsstaat",
           "count": 2
         },
         {
@@ -496,23 +496,23 @@
       ],
       "arbeit": [
         {
-          "word": "rentenversicherung",
-          "count": 2
-        },
-        {
           "word": "überstunden",
           "count": 2
         },
         {
-          "word": "sozialversicherung",
-          "count": 1
-        },
-        {
-          "word": "arbeitslosenversicherung",
-          "count": 1
+          "word": "rentenversicherung",
+          "count": 2
         },
         {
           "word": "arbeitskräfte",
+          "count": 1
+        },
+        {
+          "word": "einkommen",
+          "count": 1
+        },
+        {
+          "word": "sozialversicherung",
           "count": 1
         }
       ],
@@ -522,7 +522,7 @@
           "count": 2
         },
         {
-          "word": "infrastruktur",
+          "word": "verkehr",
           "count": 1
         },
         {
@@ -530,7 +530,7 @@
           "count": 1
         },
         {
-          "word": "verkehr",
+          "word": "infrastruktur",
           "count": 1
         }
       ]

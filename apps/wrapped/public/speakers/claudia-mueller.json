@@ -11,14 +11,14 @@
   "minWords": 309,
   "maxWords": 1088,
   "rankings": {
-    "speechRank": 271,
+    "speechRank": 267,
     "wordsRank": 214,
-    "partySpeechRank": 50,
+    "partySpeechRank": 49,
     "partyWordsRank": 35,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 56.7,
-    "verbosityRank": 46,
+    "percentile": 57.3,
+    "verbosityRank": 47,
     "verbosityTotal": 582,
     "partyVerbosityRank": 5,
     "longestSpeechRank": 55
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 42,
     "interruptionsReceived": 23,
-    "interrupterRank": 131,
-    "interruptedRank": 309
+    "interrupterRank": 127,
+    "interruptedRank": 310
   },
   "words": {
     "topWords": [
@@ -72,16 +72,16 @@
         "ratioBundestag": 18.0
       },
       {
-        "word": "kernhaushalt",
-        "count": 7,
-        "ratioParty": 24.7,
-        "ratioBundestag": 30.7
-      },
-      {
         "word": "umweltschutz",
         "count": 7,
         "ratioParty": 24.7,
         "ratioBundestag": 23.9
+      },
+      {
+        "word": "kernhaushalt",
+        "count": 7,
+        "ratioParty": 24.7,
+        "ratioBundestag": 30.7
       }
     ],
     "signatureWordsParty": [
@@ -104,13 +104,13 @@
         "ratio": 54.1
       },
       {
-        "word": "kernhaushalt",
+        "word": "umweltschutz",
         "count": 7,
         "score": 22.73,
         "ratio": 24.7
       },
       {
-        "word": "umweltschutz",
+        "word": "kernhaushalt",
         "count": 7,
         "score": 22.73,
         "ratio": 24.7
@@ -219,20 +219,20 @@
     "question": "Welches Wort nutzt Claudia Müller häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Investitionen",
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
         "isCorrect": false
       },
       {
         "text": "Aufstockung",
         "isCorrect": true
-      },
-      {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Aufstockung\" nutzt Claudia Müller 54.1× häufiger als der GRÜNE-Durchschnitt.",
@@ -242,7 +242,7 @@
     "question": "Welches Adjektiv nutzt Claudia Müller häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Notwendig",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
@@ -250,11 +250,11 @@
         "isCorrect": true
       },
       {
-        "text": "Gefährlich",
+        "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Falsch",
+        "text": "Notwendig",
         "isCorrect": false
       }
     ],
@@ -385,7 +385,7 @@
           "count": 7
         },
         {
-          "word": "kreislaufwirtschaft",
+          "word": "klimakrise",
           "count": 4
         }
       ],
@@ -403,11 +403,11 @@
           "count": 4
         },
         {
-          "word": "standort",
+          "word": "wettbewerb",
           "count": 2
         },
         {
-          "word": "wettbewerb",
+          "word": "standort",
           "count": 2
         }
       ],
@@ -417,15 +417,15 @@
           "count": 2
         },
         {
-          "word": "kinder",
-          "count": 1
-        },
-        {
           "word": "eltern",
           "count": 1
         },
         {
           "word": "familien",
+          "count": 1
+        },
+        {
+          "word": "kinder",
           "count": 1
         }
       ],
@@ -463,15 +463,15 @@
           "count": 2
         },
         {
+          "word": "iran",
+          "count": 1
+        },
+        {
           "word": "bündnis",
           "count": 1
         },
         {
           "word": "russland",
-          "count": 1
-        },
-        {
-          "word": "iran",
           "count": 1
         }
       ],
@@ -495,11 +495,11 @@
           "count": 13
         },
         {
-          "word": "grundlagenforschung",
+          "word": "schule",
           "count": 2
         },
         {
-          "word": "schule",
+          "word": "grundlagenforschung",
           "count": 2
         }
       ],
@@ -531,15 +531,15 @@
           "count": 1
         },
         {
-          "word": "grundgesetz",
-          "count": 1
-        },
-        {
           "word": "rechtsstaatlichkeit",
           "count": 1
         },
         {
           "word": "gerichte",
+          "count": 1
+        },
+        {
+          "word": "grundgesetz",
           "count": 1
         }
       ],
@@ -559,15 +559,15 @@
           "count": 3
         },
         {
-          "word": "schifffahrt",
-          "count": 1
-        },
-        {
           "word": "autos",
           "count": 1
         },
         {
           "word": "hafen",
+          "count": 1
+        },
+        {
+          "word": "schiene",
           "count": 1
         }
       ]

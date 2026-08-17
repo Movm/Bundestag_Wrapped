@@ -11,23 +11,23 @@
   "minWords": 270,
   "maxWords": 762,
   "rankings": {
-    "speechRank": 171,
+    "speechRank": 156,
     "wordsRank": 153,
-    "partySpeechRank": 36,
+    "partySpeechRank": 34,
     "partyWordsRank": 33,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 72.7,
-    "verbosityRank": 97,
+    "percentile": 75.1,
+    "verbosityRank": 96,
     "verbosityTotal": 582,
-    "partyVerbosityRank": 27,
-    "longestSpeechRank": 294
+    "partyVerbosityRank": 26,
+    "longestSpeechRank": 293
   },
   "drama": {
     "interruptionsGiven": 70,
     "interruptionsReceived": 32,
-    "interrupterRank": 73,
-    "interruptedRank": 232
+    "interrupterRank": 74,
+    "interruptedRank": 234
   },
   "words": {
     "topWords": [
@@ -253,19 +253,19 @@
     "question": "Welches Wort nutzt Gerold Otten häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Unmiss",
-        "isCorrect": true
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
         "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Unmiss",
+        "isCorrect": true
+      },
+      {
+        "text": "Kinder",
         "isCorrect": false
       }
     ],
@@ -276,19 +276,19 @@
     "question": "Welches Adjektiv nutzt Gerold Otten häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
         "text": "Unfähig",
         "isCorrect": true
       },
       {
-        "text": "Klar",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Gut",
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
@@ -397,16 +397,12 @@
       ],
       "wirtschaft": [
         {
-          "word": "wirtschaft",
-          "count": 2
-        },
-        {
           "word": "unternehmen",
           "count": 2
         },
         {
-          "word": "produktion",
-          "count": 1
+          "word": "wirtschaft",
+          "count": 2
         },
         {
           "word": "märkte",
@@ -414,6 +410,10 @@
         },
         {
           "word": "kredite",
+          "count": 1
+        },
+        {
+          "word": "marktwirtschaft",
           "count": 1
         }
       ],
@@ -483,19 +483,15 @@
           "count": 3
         },
         {
-          "word": "bildung",
+          "word": "schüler",
           "count": 1
         },
         {
-          "word": "schüler",
+          "word": "bildung",
           "count": 1
         }
       ],
       "finanzen": [
-        {
-          "word": "haushalt",
-          "count": 2
-        },
         {
           "word": "schuldenbremse",
           "count": 2
@@ -505,7 +501,11 @@
           "count": 2
         },
         {
-          "word": "bank",
+          "word": "haushalt",
+          "count": 2
+        },
+        {
+          "word": "steuerzahler",
           "count": 1
         },
         {
@@ -533,15 +533,15 @@
           "count": 2
         },
         {
+          "word": "seeverkehr",
+          "count": 1
+        },
+        {
           "word": "straßen",
           "count": 1
         },
         {
           "word": "infrastruktur",
-          "count": 1
-        },
-        {
-          "word": "seeverkehr",
           "count": 1
         }
       ]

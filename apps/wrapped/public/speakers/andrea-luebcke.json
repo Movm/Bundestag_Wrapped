@@ -11,13 +11,13 @@
   "minWords": 49,
   "maxWords": 660,
   "rankings": {
-    "speechRank": 523,
+    "speechRank": 515,
     "wordsRank": 521,
     "partySpeechRank": 81,
     "partyWordsRank": 79,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 16.5,
+    "percentile": 17.7,
     "verbosityRank": 536,
     "verbosityTotal": 582,
     "partyVerbosityRank": 75,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 14,
-    "interrupterRank": 459,
-    "interruptedRank": 417
+    "interrupterRank": 438,
+    "interruptedRank": 422
   },
   "words": {
     "topWords": [
@@ -48,11 +48,11 @@
         "count": 16
       },
       {
-        "word": "souveränität",
+        "word": "forschung",
         "count": 10
       },
       {
-        "word": "forschung",
+        "word": "souveränität",
         "count": 10
       },
       {
@@ -216,7 +216,11 @@
     "question": "Welches Wort nutzt Dr. Andrea Lübcke häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Familie",
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Politik",
         "isCorrect": false
       },
       {
@@ -224,11 +228,7 @@
         "isCorrect": true
       },
       {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
+        "text": "Verantwortung",
         "isCorrect": false
       }
     ],
@@ -239,20 +239,20 @@
     "question": "Welches Adjektiv nutzt Dr. Andrea Lübcke häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Stark",
+        "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
         "text": "Erfolgreich",
         "isCorrect": true
+      },
+      {
+        "text": "Gut",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Erfolgreich\" nutzt Dr. Andrea Lübcke 14.9× häufiger als der GRÜNE-Durchschnitt.",
@@ -360,19 +360,23 @@
           "count": 3
         },
         {
-          "word": "nachhaltigkeit",
-          "count": 2
-        },
-        {
           "word": "kohleausstieg",
           "count": 2
         },
         {
-          "word": "nachhaltig",
+          "word": "nachhaltigkeit",
+          "count": 2
+        },
+        {
+          "word": "klimakrise",
           "count": 1
         }
       ],
       "wirtschaft": [
+        {
+          "word": "unternehmen",
+          "count": 2
+        },
         {
           "word": "markt",
           "count": 2
@@ -382,15 +386,11 @@
           "count": 2
         },
         {
-          "word": "unternehmen",
-          "count": 2
-        },
-        {
-          "word": "wettbewerb",
+          "word": "wirtschaft",
           "count": 1
         },
         {
-          "word": "mittelstand",
+          "word": "wettbewerb",
           "count": 1
         }
       ],

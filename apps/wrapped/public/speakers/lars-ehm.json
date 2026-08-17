@@ -11,14 +11,14 @@
   "minWords": 222,
   "maxWords": 537,
   "rankings": {
-    "speechRank": 442,
+    "speechRank": 439,
     "wordsRank": 483,
-    "partySpeechRank": 132,
+    "partySpeechRank": 128,
     "partyWordsRank": 159,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 29.4,
-    "verbosityRank": 277,
+    "percentile": 29.9,
+    "verbosityRank": 278,
     "verbosityTotal": 582,
     "partyVerbosityRank": 100,
     "longestSpeechRank": 555
@@ -64,7 +64,7 @@
         "count": 8
       },
       {
-        "word": "diesen",
+        "word": "bürokratie",
         "count": 8
       },
       {
@@ -74,16 +74,16 @@
     ],
     "signatureWords": [
       {
-        "word": "sicherheitsbeauftragten",
-        "count": 5,
-        "ratioParty": 521.3,
-        "ratioBundestag": 278.9
-      },
-      {
         "word": "produktsicherheit",
         "count": 5,
         "ratioParty": 521.3,
         "ratioBundestag": 427.7
+      },
+      {
+        "word": "sicherheitsbeauftragten",
+        "count": 5,
+        "ratioParty": 521.3,
+        "ratioBundestag": 278.9
       },
       {
         "word": "beschäftigten",
@@ -112,13 +112,13 @@
         "ratio": 44.8
       },
       {
-        "word": "sicherheitsbeauftragten",
+        "word": "produktsicherheit",
         "count": 5,
         "score": 31.29,
         "ratio": 521.3
       },
       {
-        "word": "produktsicherheit",
+        "word": "sicherheitsbeauftragten",
         "count": 5,
         "score": 31.29,
         "ratio": 521.3
@@ -216,43 +216,43 @@
     "question": "Welches Wort nutzt Lars Ehm häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Antrag",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Sicherheitsbeauftragten",
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Produktsicherheit",
         "isCorrect": true
-      },
-      {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
-        "text": "Familie",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Sicherheitsbeauftragten\" nutzt Lars Ehm 521.3× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "278.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Produktsicherheit\" nutzt Lars Ehm 521.3× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "427.7× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Lars Ehm häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Gefährlich",
+        "text": "Klar",
         "isCorrect": false
       },
       {
-        "text": "Sicher",
-        "isCorrect": true
+        "text": "Alt",
+        "isCorrect": false
       },
       {
         "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Jung",
-        "isCorrect": false
+        "text": "Sicher",
+        "isCorrect": true
       }
     ],
     "explanationParty": "\"Sicher\" nutzt Lars Ehm 2.7× häufiger als der CDU/CSU-Durchschnitt.",
@@ -380,19 +380,19 @@
           "count": 18
         },
         {
-          "word": "betriebe",
-          "count": 6
-        },
-        {
           "word": "wirtschaft",
           "count": 6
         },
         {
-          "word": "marktwirtschaft",
-          "count": 2
+          "word": "betriebe",
+          "count": 6
         },
         {
           "word": "markt",
+          "count": 2
+        },
+        {
+          "word": "marktwirtschaft",
           "count": 2
         }
       ],
@@ -470,11 +470,11 @@
       ],
       "arbeit": [
         {
-          "word": "arbeitsschutz",
+          "word": "beschäftigte",
           "count": 4
         },
         {
-          "word": "beschäftigte",
+          "word": "arbeitsschutz",
           "count": 4
         },
         {
@@ -486,7 +486,7 @@
           "count": 2
         },
         {
-          "word": "arbeitsplatz",
+          "word": "lohndumping",
           "count": 1
         }
       ]

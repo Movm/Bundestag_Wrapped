@@ -11,13 +11,13 @@
   "minWords": 163,
   "maxWords": 861,
   "rankings": {
-    "speechRank": 222,
+    "speechRank": 242,
     "wordsRank": 352,
-    "partySpeechRank": 48,
+    "partySpeechRank": 50,
     "partyWordsRank": 76,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 64.5,
+    "percentile": 61.3,
     "verbosityRank": 366,
     "verbosityTotal": 582,
     "partyVerbosityRank": 93,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 34,
-    "interrupterRank": 413,
-    "interruptedRank": 209
+    "interrupterRank": 407,
+    "interruptedRank": 211
   },
   "words": {
     "topWords": [
@@ -240,20 +240,20 @@
     "question": "Welches Wort nutzt Christopher Drößler häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Haushalt",
+        "isCorrect": false
+      },
+      {
         "text": "Multikulturelle",
         "isCorrect": true
-      },
-      {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Multikulturelle\" nutzt Christopher Drößler 287.9× häufiger als der AfD-Durchschnitt.",
@@ -263,19 +263,19 @@
     "question": "Welches Adjektiv nutzt Christopher Drößler häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
         "text": "Effektiv",
         "isCorrect": true
       },
       {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
@@ -364,11 +364,11 @@
           "count": 3
         },
         {
-          "word": "grenze",
+          "word": "zuwanderung",
           "count": 2
         },
         {
-          "word": "zuwanderung",
+          "word": "grenze",
           "count": 2
         }
       ],
@@ -380,15 +380,15 @@
       ],
       "soziales": [
         {
-          "word": "jugend",
-          "count": 1
-        },
-        {
           "word": "gerechtigkeit",
           "count": 1
         },
         {
           "word": "sozialstaat",
+          "count": 1
+        },
+        {
+          "word": "jugend",
           "count": 1
         }
       ],
@@ -424,15 +424,15 @@
           "count": 1
         },
         {
-          "word": "freizügigkeit",
-          "count": 1
-        },
-        {
           "word": "abkommen",
           "count": 1
         },
         {
           "word": "europa",
+          "count": 1
+        },
+        {
+          "word": "freizügigkeit",
           "count": 1
         }
       ],
@@ -444,11 +444,11 @@
       ],
       "bildung": [
         {
-          "word": "universität",
+          "word": "schulen",
           "count": 1
         },
         {
-          "word": "schulen",
+          "word": "fortbildung",
           "count": 1
         },
         {
@@ -456,7 +456,7 @@
           "count": 1
         },
         {
-          "word": "fortbildung",
+          "word": "universität",
           "count": 1
         }
       ],
@@ -464,10 +464,6 @@
         {
           "word": "haushalt",
           "count": 3
-        },
-        {
-          "word": "haushaltsplan",
-          "count": 2
         },
         {
           "word": "kosten",
@@ -478,7 +474,11 @@
           "count": 2
         },
         {
-          "word": "sondervermögen",
+          "word": "haushaltsplan",
+          "count": 2
+        },
+        {
+          "word": "bundeshaushalt",
           "count": 1
         }
       ],
@@ -492,15 +492,15 @@
           "count": 2
         },
         {
-          "word": "richter",
-          "count": 1
-        },
-        {
-          "word": "verwaltungsgericht",
-          "count": 1
-        },
-        {
           "word": "straftaten",
+          "count": 1
+        },
+        {
+          "word": "diskriminierung",
+          "count": 1
+        },
+        {
+          "word": "richter",
           "count": 1
         }
       ],
@@ -510,15 +510,15 @@
           "count": 2
         },
         {
-          "word": "straßen",
-          "count": 1
-        },
-        {
           "word": "luftverkehr",
           "count": 1
         },
         {
           "word": "infrastruktur",
+          "count": 1
+        },
+        {
+          "word": "straßen",
           "count": 1
         }
       ]

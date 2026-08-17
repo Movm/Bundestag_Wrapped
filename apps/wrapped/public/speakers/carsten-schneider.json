@@ -11,13 +11,13 @@
   "minWords": 7,
   "maxWords": 1279,
   "rankings": {
-    "speechRank": 60,
+    "speechRank": 66,
     "wordsRank": 9,
-    "partySpeechRank": 15,
+    "partySpeechRank": 16,
     "partyWordsRank": 3,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 90.4,
+    "percentile": 89.5,
     "verbosityRank": 567,
     "verbosityTotal": 582,
     "partyVerbosityRank": 99,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 110,
     "interrupterRank": null,
-    "interruptedRank": 25
+    "interruptedRank": 26
   },
   "words": {
     "topWords": [
@@ -62,13 +62,15 @@
       {
         "word": "energien",
         "count": 39
-      },
-      {
-        "word": "natur",
-        "count": 39
       }
     ],
     "signatureWords": [
+      {
+        "word": "flüssen",
+        "count": 5,
+        "ratioParty": 192.1,
+        "ratioBundestag": 97.2
+      },
       {
         "word": "field",
         "count": 5,
@@ -82,36 +84,36 @@
         "ratioBundestag": 60.7
       },
       {
-        "word": "flüssen",
-        "count": 5,
-        "ratioParty": 192.1,
-        "ratioBundestag": 97.2
-      },
-      {
         "word": "methanverordnung",
         "count": 8,
         "ratioParty": 153.7,
         "ratioBundestag": 311.0
       },
       {
-        "word": "flüsse",
-        "count": 9,
+        "word": "pariser",
+        "count": 6,
         "ratioParty": 115.3,
-        "ratioBundestag": 87.5
+        "ratioBundestag": 23.3
       }
     ],
     "signatureWordsParty": [
-      {
-        "word": "flüsse",
-        "count": 9,
-        "score": 42.81,
-        "ratio": 115.3
-      },
       {
         "word": "methanverordnung",
         "count": 8,
         "score": 40.33,
         "ratio": 153.7
+      },
+      {
+        "word": "pariser",
+        "count": 6,
+        "score": 28.54,
+        "ratio": 115.3
+      },
+      {
+        "word": "flüssen",
+        "count": 5,
+        "score": 26.32,
+        "ratio": 192.1
       },
       {
         "word": "field",
@@ -124,12 +126,6 @@
         "count": 5,
         "score": 26.32,
         "ratio": 192.1
-      },
-      {
-        "word": "flüssen",
-        "count": 5,
-        "score": 26.32,
-        "ratio": 192.1
       }
     ],
     "signatureWordsBundestag": [
@@ -138,12 +134,6 @@
         "count": 8,
         "score": 45.94,
         "ratio": 311.0
-      },
-      {
-        "word": "flüsse",
-        "count": 9,
-        "score": 40.35,
-        "ratio": 87.5
       },
       {
         "word": "flüssen",
@@ -162,6 +152,12 @@
         "count": 5,
         "score": 20.61,
         "ratio": 60.7
+      },
+      {
+        "word": "pariser",
+        "count": 6,
+        "score": 19.14,
+        "ratio": 23.3
       }
     ],
     "signatureAdjectives": [
@@ -172,10 +168,10 @@
         "ratioBundestag": 4.2
       },
       {
-        "word": "erfolgreich",
-        "count": 6,
+        "word": "nachhaltig",
+        "count": 4,
         "ratioParty": 2.7,
-        "ratioBundestag": 3.0
+        "ratioBundestag": 2.8
       },
       {
         "word": "zentral",
@@ -184,10 +180,10 @@
         "ratioBundestag": 4.3
       },
       {
-        "word": "nachhaltig",
-        "count": 4,
+        "word": "erfolgreich",
+        "count": 6,
         "ratioParty": 2.7,
-        "ratioBundestag": 2.8
+        "ratioBundestag": 3.0
       },
       {
         "word": "gefährlich",
@@ -204,13 +200,13 @@
         "ratio": 2.7
       },
       {
-        "word": "zentral",
+        "word": "nachhaltig",
         "count": 4,
         "score": 5.23,
         "ratio": 2.7
       },
       {
-        "word": "nachhaltig",
+        "word": "zentral",
         "count": 4,
         "score": 5.23,
         "ratio": 2.7
@@ -278,45 +274,36 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "24.556"
-    },
-    {
-      "emoji": "📊",
-      "label": "Top-Redner",
-      "value": "Top 10%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Carsten Schneider häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Zukunft",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Haushalt",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Field",
+        "text": "Flüssen",
         "isCorrect": true
+      },
+      {
+        "text": "Klima",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Field\" nutzt Carsten Schneider 192.1× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "74.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Flüssen\" nutzt Carsten Schneider 192.1× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "97.2× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Carsten Schneider häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
+        "text": "Jung",
         "isCorrect": false
       },
       {
@@ -324,7 +311,11 @@
         "isCorrect": true
       },
       {
-        "text": "Jung",
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
@@ -485,15 +476,15 @@
       ],
       "sicherheit": [
         {
+          "word": "angriff",
+          "count": 1
+        },
+        {
           "word": "betrug",
           "count": 1
         },
         {
           "word": "anschlag",
-          "count": 1
-        },
-        {
-          "word": "angriff",
           "count": 1
         }
       ],
@@ -539,11 +530,11 @@
           "count": 9
         },
         {
-          "word": "plattform",
+          "word": "digitalisierung",
           "count": 2
         },
         {
-          "word": "digitalisierung",
+          "word": "plattform",
           "count": 2
         },
         {
@@ -561,15 +552,15 @@
           "count": 3
         },
         {
-          "word": "wissenschaftsfreiheit",
-          "count": 1
-        },
-        {
-          "word": "professor",
+          "word": "wissenschaftler",
           "count": 1
         },
         {
           "word": "bildung",
+          "count": 1
+        },
+        {
+          "word": "hochschulen",
           "count": 1
         }
       ],
@@ -605,15 +596,15 @@
           "count": 4
         },
         {
-          "word": "verfassung",
-          "count": 3
-        },
-        {
           "word": "gesetzgebung",
           "count": 3
         },
         {
-          "word": "beschluss",
+          "word": "verfassung",
+          "count": 3
+        },
+        {
+          "word": "verbraucherschutz",
           "count": 1
         }
       ],
@@ -627,11 +618,11 @@
           "count": 6
         },
         {
-          "word": "gewerkschaften",
+          "word": "beschäftigte",
           "count": 1
         },
         {
-          "word": "beschäftigte",
+          "word": "gewerkschaften",
           "count": 1
         }
       ],
@@ -641,11 +632,11 @@
           "count": 8
         },
         {
-          "word": "auto",
+          "word": "autos",
           "count": 6
         },
         {
-          "word": "autos",
+          "word": "auto",
           "count": 6
         },
         {

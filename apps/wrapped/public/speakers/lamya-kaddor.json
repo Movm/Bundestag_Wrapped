@@ -11,13 +11,13 @@
   "minWords": 70,
   "maxWords": 784,
   "rankings": {
-    "speechRank": 53,
+    "speechRank": 48,
     "wordsRank": 149,
     "partySpeechRank": 8,
     "partyWordsRank": 24,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 91.5,
+    "percentile": 92.3,
     "verbosityRank": 401,
     "verbosityTotal": 582,
     "partyVerbosityRank": 40,
@@ -26,7 +26,7 @@
   "drama": {
     "interruptionsGiven": 144,
     "interruptionsReceived": 106,
-    "interrupterRank": 30,
+    "interrupterRank": 29,
     "interruptedRank": 28
   },
   "words": {
@@ -174,14 +174,18 @@
     {
       "emoji": "📊",
       "label": "Top-Redner",
-      "value": "Top 9%"
+      "value": "Top 8%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Lamya Kaddor häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Abstimmung",
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
@@ -189,11 +193,7 @@
         "isCorrect": true
       },
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
+        "text": "Zukunft",
         "isCorrect": false
       }
     ],
@@ -303,11 +303,11 @@
           "count": 5
         },
         {
-          "word": "abschiebung",
+          "word": "migration",
           "count": 4
         },
         {
-          "word": "migration",
+          "word": "abschiebung",
           "count": 4
         },
         {
@@ -329,11 +329,11 @@
           "count": 1
         },
         {
-          "word": "wettbewerb",
+          "word": "unternehmen",
           "count": 1
         },
         {
-          "word": "produktion",
+          "word": "wettbewerb",
           "count": 1
         }
       ],
@@ -347,15 +347,15 @@
           "count": 4
         },
         {
-          "word": "renten",
-          "count": 2
-        },
-        {
           "word": "jugendliche",
           "count": 2
         },
         {
-          "word": "familien",
+          "word": "renten",
+          "count": 2
+        },
+        {
+          "word": "gerechtigkeit",
           "count": 1
         }
       ],
@@ -395,11 +395,11 @@
           "count": 2
         },
         {
-          "word": "gesundheitswesen",
+          "word": "prävention",
           "count": 1
         },
         {
-          "word": "prävention",
+          "word": "medizin",
           "count": 1
         }
       ],
@@ -413,11 +413,11 @@
           "count": 3
         },
         {
-          "word": "israel",
+          "word": "krieg",
           "count": 2
         },
         {
-          "word": "krieg",
+          "word": "israel",
           "count": 2
         },
         {
@@ -441,7 +441,7 @@
           "count": 6
         },
         {
-          "word": "schüler",
+          "word": "universitäten",
           "count": 2
         },
         {
@@ -463,11 +463,11 @@
           "count": 2
         },
         {
-          "word": "steuern",
+          "word": "schuldenbremse",
           "count": 1
         },
         {
-          "word": "schuldenbremse",
+          "word": "steuern",
           "count": 1
         }
       ],
@@ -489,7 +489,7 @@
           "count": 1
         },
         {
-          "word": "bundesverfassungsgericht",
+          "word": "verwaltungsgericht",
           "count": 1
         }
       ],
@@ -509,19 +509,19 @@
           "count": 4
         },
         {
-          "word": "infrastruktur",
-          "count": 2
-        },
-        {
           "word": "straßen",
           "count": 2
         },
         {
-          "word": "verkehr",
+          "word": "infrastruktur",
+          "count": 2
+        },
+        {
+          "word": "nahverkehr",
           "count": 1
         },
         {
-          "word": "schifffahrt",
+          "word": "verkehr",
           "count": 1
         }
       ]

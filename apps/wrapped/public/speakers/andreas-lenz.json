@@ -11,13 +11,13 @@
   "minWords": 64,
   "maxWords": 707,
   "rankings": {
-    "speechRank": 39,
+    "speechRank": 40,
     "wordsRank": 76,
-    "partySpeechRank": 9,
+    "partySpeechRank": 10,
     "partyWordsRank": 26,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 93.8,
+    "percentile": 93.6,
     "verbosityRank": 234,
     "verbosityTotal": 582,
     "partyVerbosityRank": 83,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 67,
     "interruptionsReceived": 46,
-    "interrupterRank": 78,
-    "interruptedRank": 140
+    "interrupterRank": 77,
+    "interruptedRank": 144
   },
   "words": {
     "topWords": [
@@ -52,11 +52,11 @@
         "count": 30
       },
       {
-        "word": "jahr",
+        "word": "insgesamt",
         "count": 29
       },
       {
-        "word": "insgesamt",
+        "word": "jahr",
         "count": 29
       },
       {
@@ -272,20 +272,20 @@
     "question": "Welches Wort nutzt Dr. Andreas Lenz häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bürger",
+        "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Bundesregierung",
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
         "text": "Schock",
         "isCorrect": true
-      },
-      {
-        "text": "Investitionen",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Schock\" nutzt Dr. Andreas Lenz 94.7× häufiger als der CDU/CSU-Durchschnitt.",
@@ -295,11 +295,7 @@
     "question": "Welches Adjektiv nutzt Dr. Andreas Lenz häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
+        "text": "Klar",
         "isCorrect": false
       },
       {
@@ -307,7 +303,11 @@
         "isCorrect": true
       },
       {
-        "text": "Sozial",
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
         "isCorrect": false
       }
     ],
@@ -422,15 +422,15 @@
           "count": 5
         },
         {
-          "word": "wärmepumpe",
-          "count": 3
-        },
-        {
           "word": "geothermie",
           "count": 3
         },
         {
-          "word": "fernwärme",
+          "word": "wärmepumpe",
+          "count": 3
+        },
+        {
+          "word": "energiewende",
           "count": 2
         }
       ],
@@ -492,26 +492,22 @@
           "count": 3
         },
         {
-          "word": "ukraine",
+          "word": "moskau",
           "count": 1
         },
         {
-          "word": "moskau",
+          "word": "nato",
           "count": 1
         }
       ],
       "digital": [
         {
-          "word": "algorithmen",
-          "count": 2
-        },
-        {
           "word": "netz",
           "count": 2
         },
         {
-          "word": "technologie",
-          "count": 1
+          "word": "algorithmen",
+          "count": 2
         },
         {
           "word": "digitalisierung",
@@ -519,6 +515,10 @@
         },
         {
           "word": "netzausbau",
+          "count": 1
+        },
+        {
+          "word": "technologie",
           "count": 1
         }
       ],
@@ -532,11 +532,11 @@
           "count": 2
         },
         {
-          "word": "ausbildungsplätze",
+          "word": "forschungsförderung",
           "count": 1
         },
         {
-          "word": "forschungsförderung",
+          "word": "ausbildungsplätze",
           "count": 1
         }
       ],
@@ -582,11 +582,11 @@
           "count": 3
         },
         {
-          "word": "arbeitnehmerinnen",
+          "word": "beschäftigung",
           "count": 2
         },
         {
-          "word": "beschäftigung",
+          "word": "arbeitnehmerinnen",
           "count": 2
         },
         {
@@ -600,11 +600,11 @@
           "count": 2
         },
         {
-          "word": "elektromobilität",
+          "word": "infrastruktur",
           "count": 2
         },
         {
-          "word": "infrastruktur",
+          "word": "elektromobilität",
           "count": 2
         },
         {
@@ -612,7 +612,7 @@
           "count": 1
         },
         {
-          "word": "autos",
+          "word": "ladeinfrastruktur",
           "count": 1
         }
       ]

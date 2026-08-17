@@ -11,14 +11,14 @@
   "minWords": 347,
   "maxWords": 938,
   "rankings": {
-    "speechRank": 114,
+    "speechRank": 120,
     "wordsRank": 144,
-    "partySpeechRank": 23,
+    "partySpeechRank": 24,
     "partyWordsRank": 31,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 81.8,
-    "verbosityRank": 108,
+    "percentile": 80.8,
+    "verbosityRank": 109,
     "verbosityTotal": 582,
     "partyVerbosityRank": 30,
     "longestSpeechRank": 110
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 11,
     "interruptionsReceived": 70,
-    "interrupterRank": 272,
-    "interruptedRank": 54
+    "interrupterRank": 271,
+    "interruptedRank": 55
   },
   "words": {
     "topWords": [
@@ -48,11 +48,7 @@
         "count": 19
       },
       {
-        "word": "europa",
-        "count": 16
-      },
-      {
-        "word": "menschen",
+        "word": "größten",
         "count": 16
       },
       {
@@ -60,15 +56,19 @@
         "count": 16
       },
       {
-        "word": "größten",
+        "word": "menschen",
         "count": 16
       },
       {
-        "word": "welt",
-        "count": 15
+        "word": "europa",
+        "count": 16
       },
       {
         "word": "merkel",
+        "count": 15
+      },
+      {
+        "word": "welt",
         "count": 15
       }
     ],
@@ -239,20 +239,20 @@
     "question": "Welches Wort nutzt Dr. Alexander Wolf häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Steuern",
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
         "isCorrect": false
       },
       {
         "text": "Guterres",
         "isCorrect": true
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Guterres\" nutzt Dr. Alexander Wolf 488.2× häufiger als der AfD-Durchschnitt.",
@@ -262,7 +262,7 @@
     "question": "Welches Adjektiv nutzt Dr. Alexander Wolf häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Neu",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
@@ -270,11 +270,11 @@
         "isCorrect": true
       },
       {
-        "text": "Problematisch",
+        "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Schlecht",
+        "text": "Richtig",
         "isCorrect": false
       }
     ],
@@ -373,6 +373,10 @@
       ],
       "klima": [
         {
+          "word": "atomausstieg",
+          "count": 2
+        },
+        {
           "word": "klimaabkommen",
           "count": 2
         },
@@ -381,15 +385,11 @@
           "count": 2
         },
         {
-          "word": "atomausstieg",
-          "count": 2
-        },
-        {
           "word": "umweltschutz",
           "count": 1
         },
         {
-          "word": "kernenergie",
+          "word": "klimawandel",
           "count": 1
         }
       ],
@@ -407,11 +407,11 @@
           "count": 1
         },
         {
-          "word": "produktion",
+          "word": "fachkräfte",
           "count": 1
         },
         {
-          "word": "fachkräfte",
+          "word": "produktion",
           "count": 1
         }
       ],
@@ -425,7 +425,7 @@
           "count": 1
         },
         {
-          "word": "familie",
+          "word": "sozialsystem",
           "count": 1
         },
         {
@@ -433,7 +433,7 @@
           "count": 1
         },
         {
-          "word": "sozialsystem",
+          "word": "familie",
           "count": 1
         }
       ],
@@ -461,11 +461,11 @@
       ],
       "gesundheit": [
         {
-          "word": "sucht",
+          "word": "klinik",
           "count": 1
         },
         {
-          "word": "klinik",
+          "word": "sucht",
           "count": 1
         }
       ],
@@ -479,15 +479,15 @@
           "count": 11
         },
         {
-          "word": "vertrag",
-          "count": 9
-        },
-        {
           "word": "israel",
           "count": 9
         },
         {
           "word": "frieden",
+          "count": 9
+        },
+        {
+          "word": "vertrag",
           "count": 9
         }
       ],
@@ -523,19 +523,19 @@
           "count": 2
         },
         {
-          "word": "urteil",
-          "count": 1
-        },
-        {
-          "word": "menschenrechte",
-          "count": 1
-        },
-        {
           "word": "staatsanwaltschaft",
           "count": 1
         },
         {
-          "word": "beschluss",
+          "word": "urteil",
+          "count": 1
+        },
+        {
+          "word": "straftat",
+          "count": 1
+        },
+        {
+          "word": "menschenrechte",
           "count": 1
         }
       ],
@@ -549,15 +549,15 @@
           "count": 2
         },
         {
+          "word": "radwege",
+          "count": 1
+        },
+        {
+          "word": "auto",
+          "count": 1
+        },
+        {
           "word": "infrastruktur",
-          "count": 1
-        },
-        {
-          "word": "fahrzeuge",
-          "count": 1
-        },
-        {
-          "word": "schiff",
           "count": 1
         }
       ]

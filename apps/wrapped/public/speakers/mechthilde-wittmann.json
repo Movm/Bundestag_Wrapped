@@ -11,13 +11,13 @@
   "minWords": 29,
   "maxWords": 1224,
   "rankings": {
-    "speechRank": 16,
+    "speechRank": 21,
     "wordsRank": 11,
     "partySpeechRank": 7,
     "partyWordsRank": 6,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 97.4,
+    "percentile": 96.6,
     "verbosityRank": 36,
     "verbosityTotal": 582,
     "partyVerbosityRank": 14,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 15,
     "interruptionsReceived": 68,
-    "interrupterRank": 233,
-    "interruptedRank": 58
+    "interrupterRank": 237,
+    "interruptedRank": 59
   },
   "words": {
     "topWords": [
@@ -188,21 +188,21 @@
       "value": "23.692"
     },
     {
-      "emoji": "🏆",
-      "label": "Rang (Reden)",
-      "value": "#16 von 626"
-    },
-    {
       "emoji": "⚡",
       "label": "Zwischenrufe",
       "value": "15"
+    },
+    {
+      "emoji": "📊",
+      "label": "Top-Redner",
+      "value": "Top 4%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Mechthilde Wittmann häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Wirtschaft",
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
@@ -210,11 +210,11 @@
         "isCorrect": true
       },
       {
-        "text": "Reform",
+        "text": "Politik",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
+        "text": "Europa",
         "isCorrect": false
       }
     ],
@@ -225,19 +225,19 @@
     "question": "Welches Adjektiv nutzt Mechthilde Wittmann häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
         "text": "Angemessen",
         "isCorrect": true
       },
       {
         "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
@@ -352,7 +352,7 @@
           "count": 2
         },
         {
-          "word": "klimaschutz",
+          "word": "klimaneutralität",
           "count": 1
         },
         {
@@ -360,7 +360,7 @@
           "count": 1
         },
         {
-          "word": "klimaneutralität",
+          "word": "klimaschutz",
           "count": 1
         }
       ],
@@ -370,11 +370,11 @@
           "count": 20
         },
         {
-          "word": "wirtschaft",
+          "word": "standort",
           "count": 14
         },
         {
-          "word": "standort",
+          "word": "wirtschaft",
           "count": 14
         },
         {
@@ -382,7 +382,7 @@
           "count": 13
         },
         {
-          "word": "markt",
+          "word": "handwerk",
           "count": 7
         }
       ],
@@ -400,21 +400,21 @@
           "count": 4
         },
         {
-          "word": "kind",
+          "word": "rente",
           "count": 4
         },
         {
-          "word": "rente",
+          "word": "kind",
           "count": 4
         }
       ],
       "sicherheit": [
         {
-          "word": "polizisten",
+          "word": "verteidigung",
           "count": 3
         },
         {
-          "word": "verteidigung",
+          "word": "polizisten",
           "count": 3
         },
         {
@@ -422,11 +422,11 @@
           "count": 2
         },
         {
-          "word": "geldwäsche",
+          "word": "kriminalität",
           "count": 1
         },
         {
-          "word": "spionage",
+          "word": "geldwäsche",
           "count": 1
         }
       ],
@@ -440,15 +440,15 @@
           "count": 4
         },
         {
-          "word": "krankenhäuser",
-          "count": 3
-        },
-        {
           "word": "corona",
           "count": 3
         },
         {
-          "word": "notfall",
+          "word": "krankenhäuser",
+          "count": 3
+        },
+        {
+          "word": "krankheit",
           "count": 1
         }
       ],
@@ -466,11 +466,11 @@
           "count": 1
         },
         {
-          "word": "freizügigkeit",
+          "word": "frieden",
           "count": 1
         },
         {
-          "word": "frieden",
+          "word": "binnenmarkt",
           "count": 1
         }
       ],
@@ -498,6 +498,10 @@
       ],
       "bildung": [
         {
+          "word": "ausbildungsplätze",
+          "count": 2
+        },
+        {
           "word": "lehrerin",
           "count": 2
         },
@@ -506,15 +510,11 @@
           "count": 2
         },
         {
-          "word": "forschung",
-          "count": 2
-        },
-        {
-          "word": "ausbildungsplätze",
-          "count": 2
-        },
-        {
           "word": "ausbildung",
+          "count": 2
+        },
+        {
+          "word": "forschung",
           "count": 2
         }
       ],
@@ -528,11 +528,11 @@
           "count": 19
         },
         {
-          "word": "banken",
+          "word": "entlastung",
           "count": 14
         },
         {
-          "word": "entlastung",
+          "word": "banken",
           "count": 14
         },
         {
@@ -546,15 +546,15 @@
           "count": 2
         },
         {
+          "word": "verwaltungsgericht",
+          "count": 1
+        },
+        {
           "word": "bundesverfassungsgericht",
           "count": 1
         },
         {
           "word": "beschluss",
-          "count": 1
-        },
-        {
-          "word": "verwaltungsgericht",
           "count": 1
         },
         {
@@ -598,11 +598,11 @@
           "count": 5
         },
         {
-          "word": "öpnv",
+          "word": "flugverkehr",
           "count": 2
         },
         {
-          "word": "flugverkehr",
+          "word": "öpnv",
           "count": 2
         }
       ]

@@ -11,13 +11,13 @@
   "minWords": 46,
   "maxWords": 728,
   "rankings": {
-    "speechRank": 343,
+    "speechRank": 341,
     "wordsRank": 326,
-    "partySpeechRank": 92,
+    "partySpeechRank": 91,
     "partyWordsRank": 99,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 45.2,
+    "percentile": 45.5,
     "verbosityRank": 235,
     "verbosityTotal": 582,
     "partyVerbosityRank": 84,
@@ -36,11 +36,11 @@
         "count": 18
       },
       {
-        "word": "menschen",
+        "word": "sozialstaat",
         "count": 16
       },
       {
-        "word": "sozialstaat",
+        "word": "menschen",
         "count": 16
       },
       {
@@ -54,6 +54,10 @@
       {
         "word": "wirtschaft",
         "count": 13
+      },
+      {
+        "word": "koalition",
+        "count": 11
       },
       {
         "word": "erstens",
@@ -183,20 +187,20 @@
     "question": "Welches Wort nutzt Dr. Markus Reichel häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Migration",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
         "isCorrect": false
       },
       {
         "text": "Dresden",
         "isCorrect": true
-      },
-      {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Dresden\" nutzt Dr. Markus Reichel 103.8× häufiger als der CDU/CSU-Durchschnitt.",
@@ -297,11 +301,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "migration",
+          "word": "integration",
           "count": 2
         },
         {
-          "word": "integration",
+          "word": "migration",
           "count": 2
         },
         {
@@ -315,19 +319,19 @@
       ],
       "klima": [
         {
-          "word": "umweltschutz",
-          "count": 2
-        },
-        {
           "word": "nachhaltigkeit",
           "count": 2
         },
         {
-          "word": "klimawandel",
-          "count": 1
+          "word": "umweltschutz",
+          "count": 2
         },
         {
           "word": "ökosystem",
+          "count": 1
+        },
+        {
+          "word": "klimawandel",
           "count": 1
         }
       ],
@@ -367,11 +371,11 @@
           "count": 4
         },
         {
-          "word": "jugendliche",
+          "word": "sozialleistungen",
           "count": 2
         },
         {
-          "word": "sozialleistungen",
+          "word": "jugendliche",
           "count": 2
         }
       ],
@@ -391,10 +395,6 @@
           "count": 2
         },
         {
-          "word": "sanktionen",
-          "count": 1
-        },
-        {
           "word": "binnenmarkt",
           "count": 1
         },
@@ -405,6 +405,10 @@
         {
           "word": "europäisch",
           "count": 1
+        },
+        {
+          "word": "sanktionen",
+          "count": 1
         }
       ],
       "digital": [
@@ -413,19 +417,19 @@
           "count": 4
         },
         {
-          "word": "online",
-          "count": 2
-        },
-        {
-          "word": "plattformen",
-          "count": 2
-        },
-        {
           "word": "daten",
           "count": 2
         },
         {
           "word": "registermodernisierung",
+          "count": 2
+        },
+        {
+          "word": "digitalisierung",
+          "count": 2
+        },
+        {
+          "word": "online",
           "count": 2
         }
       ],
@@ -435,19 +439,19 @@
           "count": 2
         },
         {
-          "word": "schülerin",
-          "count": 1
-        },
-        {
-          "word": "lehrer",
-          "count": 1
-        },
-        {
           "word": "bafög",
           "count": 1
         },
         {
           "word": "bildung",
+          "count": 1
+        },
+        {
+          "word": "schülerin",
+          "count": 1
+        },
+        {
+          "word": "lehrer",
           "count": 1
         }
       ],
@@ -475,7 +479,7 @@
       ],
       "justiz": [
         {
-          "word": "strafrecht",
+          "word": "datenschutz",
           "count": 1
         },
         {
@@ -487,19 +491,15 @@
           "count": 1
         },
         {
-          "word": "datenschutz",
+          "word": "beschluss",
           "count": 1
         },
         {
-          "word": "beschluss",
+          "word": "strafrecht",
           "count": 1
         }
       ],
       "arbeit": [
-        {
-          "word": "arbeitszeit",
-          "count": 3
-        },
         {
           "word": "arbeitsplätze",
           "count": 3
@@ -510,6 +510,10 @@
         },
         {
           "word": "einkommen",
+          "count": 3
+        },
+        {
+          "word": "arbeitszeit",
           "count": 3
         },
         {

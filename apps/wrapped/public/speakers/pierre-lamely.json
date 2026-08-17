@@ -11,13 +11,13 @@
   "minWords": 39,
   "maxWords": 640,
   "rankings": {
-    "speechRank": 548,
+    "speechRank": 549,
     "wordsRank": 556,
     "partySpeechRank": 135,
     "partyWordsRank": 131,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 12.5,
+    "percentile": 12.3,
     "verbosityRank": 529,
     "verbosityTotal": 582,
     "partyVerbosityRank": 135,
@@ -26,7 +26,7 @@
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 6,
-    "interrupterRank": 469,
+    "interrupterRank": 477,
     "interruptedRank": 536
   },
   "words": {
@@ -195,20 +195,20 @@
     "question": "Welches Wort nutzt Pierre Lamely häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Verantwortung",
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
         "isCorrect": false
       },
       {
         "text": "Kinderschutz",
         "isCorrect": true
-      },
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Kinderschutz\" nutzt Pierre Lamely 1126.6× häufiger als der AfD-Durchschnitt.",
@@ -349,15 +349,15 @@
           "count": 1
         },
         {
+          "word": "brüssel",
+          "count": 1
+        },
+        {
           "word": "russland",
           "count": 1
         },
         {
           "word": "ukraine",
-          "count": 1
-        },
-        {
-          "word": "brüssel",
           "count": 1
         }
       ],
@@ -385,27 +385,19 @@
       ],
       "finanzen": [
         {
-          "word": "steuerzahler",
-          "count": 1
-        },
-        {
           "word": "haushalt",
           "count": 1
         },
         {
           "word": "steuern",
           "count": 1
+        },
+        {
+          "word": "steuerzahler",
+          "count": 1
         }
       ],
       "justiz": [
-        {
-          "word": "verordnung",
-          "count": 1
-        },
-        {
-          "word": "grundrechte",
-          "count": 1
-        },
         {
           "word": "anwälte",
           "count": 1
@@ -416,6 +408,14 @@
         },
         {
           "word": "rechtsstaat",
+          "count": 1
+        },
+        {
+          "word": "verordnung",
+          "count": 1
+        },
+        {
+          "word": "grundrechte",
           "count": 1
         }
       ],

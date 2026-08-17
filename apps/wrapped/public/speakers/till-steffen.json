@@ -11,13 +11,13 @@
   "minWords": 44,
   "maxWords": 759,
   "rankings": {
-    "speechRank": 157,
+    "speechRank": 168,
     "wordsRank": 89,
     "partySpeechRank": 30,
     "partyWordsRank": 12,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 74.9,
+    "percentile": 73.2,
     "verbosityRank": 155,
     "verbosityTotal": 582,
     "partyVerbosityRank": 16,
@@ -26,7 +26,7 @@
   "drama": {
     "interruptionsGiven": 36,
     "interruptionsReceived": 27,
-    "interrupterRank": 146,
+    "interrupterRank": 147,
     "interruptedRank": 279
   },
   "words": {
@@ -44,11 +44,11 @@
         "count": 24
       },
       {
-        "word": "beispiel",
+        "word": "verbraucherinnen",
         "count": 23
       },
       {
-        "word": "verbraucherinnen",
+        "word": "beispiel",
         "count": 23
       },
       {
@@ -76,16 +76,16 @@
         "ratioBundestag": 222.1
       },
       {
+        "word": "mieterhöhungen",
+        "count": 5,
+        "ratioParty": 262.5,
+        "ratioBundestag": 264.3
+      },
+      {
         "word": "letztens",
         "count": 5,
         "ratioParty": 262.5,
         "ratioBundestag": 132.2
-      },
-      {
-        "word": "verbraucherschutzministerin",
-        "count": 5,
-        "ratioParty": 262.5,
-        "ratioBundestag": 616.8
       }
     ],
     "signatureWordsParty": [
@@ -108,13 +108,13 @@
         "ratio": 315.0
       },
       {
-        "word": "letztens",
+        "word": "mieterhöhungen",
         "count": 5,
         "score": 27.87,
         "ratio": 262.5
       },
       {
-        "word": "verbraucherschutzministerin",
+        "word": "letztens",
         "count": 5,
         "score": 27.87,
         "ratio": 262.5
@@ -140,10 +140,10 @@
         "ratio": 222.1
       },
       {
-        "word": "verbraucherschutzministerin",
+        "word": "mieterhöhungen",
         "count": 5,
-        "score": 32.13,
-        "ratio": 616.8
+        "score": 27.9,
+        "ratio": 264.3
       },
       {
         "word": "letztens",
@@ -241,11 +241,7 @@
     "question": "Welches Wort nutzt Dr. Till Steffen häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
@@ -253,7 +249,11 @@
         "isCorrect": true
       },
       {
-        "text": "Steuern",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
@@ -264,19 +264,19 @@
     "question": "Welches Adjektiv nutzt Dr. Till Steffen häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
+        "text": "Gut",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
         "text": "Geschützt",
         "isCorrect": true
       },
       {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
-        "text": "Falsch",
+        "text": "Politisch",
         "isCorrect": false
       }
     ],
@@ -467,11 +467,11 @@
       ],
       "gesundheit": [
         {
-          "word": "krankheit",
+          "word": "behandlung",
           "count": 1
         },
         {
-          "word": "behandlung",
+          "word": "krankheit",
           "count": 1
         }
       ],
@@ -485,15 +485,15 @@
           "count": 2
         },
         {
-          "word": "europa",
-          "count": 1
-        },
-        {
           "word": "bündnis",
           "count": 1
         },
         {
           "word": "frieden",
+          "count": 1
+        },
+        {
+          "word": "europa",
           "count": 1
         }
       ],
@@ -515,25 +515,25 @@
           "count": 2
         },
         {
-          "word": "netz",
+          "word": "startup",
           "count": 1
         }
       ],
       "bildung": [
         {
-          "word": "studentin",
-          "count": 1
-        },
-        {
           "word": "ausbildung",
           "count": 1
         },
         {
-          "word": "studierende",
+          "word": "bildung",
           "count": 1
         },
         {
-          "word": "bildung",
+          "word": "studentin",
+          "count": 1
+        },
+        {
+          "word": "studierende",
           "count": 1
         }
       ],
@@ -543,7 +543,7 @@
           "count": 8
         },
         {
-          "word": "subvention",
+          "word": "haushalt",
           "count": 2
         },
         {
@@ -551,11 +551,11 @@
           "count": 2
         },
         {
-          "word": "haushalt",
+          "word": "subvention",
           "count": 2
         },
         {
-          "word": "zuschuss",
+          "word": "bundeshaushalt",
           "count": 1
         }
       ],
@@ -573,11 +573,11 @@
           "count": 4
         },
         {
-          "word": "verwaltungsgericht",
+          "word": "gericht",
           "count": 3
         },
         {
-          "word": "gericht",
+          "word": "verwaltungsgericht",
           "count": 3
         }
       ],
@@ -593,10 +593,6 @@
           "count": 4
         },
         {
-          "word": "auto",
-          "count": 2
-        },
-        {
           "word": "flughafen",
           "count": 2
         },
@@ -605,7 +601,11 @@
           "count": 2
         },
         {
-          "word": "elektroauto",
+          "word": "auto",
+          "count": 2
+        },
+        {
+          "word": "flugzeug",
           "count": 1
         }
       ]

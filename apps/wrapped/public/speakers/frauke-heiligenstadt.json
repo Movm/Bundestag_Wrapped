@@ -11,13 +11,13 @@
   "minWords": 9,
   "maxWords": 751,
   "rankings": {
-    "speechRank": 9,
+    "speechRank": 8,
     "wordsRank": 51,
     "partySpeechRank": 2,
     "partyWordsRank": 13,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 98.6,
+    "percentile": 98.7,
     "verbosityRank": 449,
     "verbosityTotal": 582,
     "partyVerbosityRank": 89,
@@ -26,7 +26,7 @@
   "drama": {
     "interruptionsGiven": 70,
     "interruptionsReceived": 70,
-    "interrupterRank": 72,
+    "interrupterRank": 73,
     "interruptedRank": 53
   },
   "words": {
@@ -266,7 +266,7 @@
     {
       "emoji": "🏆",
       "label": "Rang (Reden)",
-      "value": "#9 von 626"
+      "value": "#8 von 626"
     },
     {
       "emoji": "⚡",
@@ -283,11 +283,7 @@
     "question": "Welches Wort nutzt Frauke Heiligenstadt häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
@@ -295,7 +291,11 @@
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
         "isCorrect": false
       }
     ],
@@ -306,19 +306,19 @@
     "question": "Welches Adjektiv nutzt Frauke Heiligenstadt häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
         "text": "Solide",
         "isCorrect": true
       },
       {
-        "text": "Alt",
+        "text": "Sicher",
         "isCorrect": false
       },
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
+        "text": "Gut",
         "isCorrect": false
       }
     ],
@@ -449,11 +449,11 @@
           "count": 2
         },
         {
-          "word": "umweltschutz",
+          "word": "klimawandel",
           "count": 1
         },
         {
-          "word": "klimawandel",
+          "word": "dämmung",
           "count": 1
         }
       ],
@@ -493,11 +493,11 @@
           "count": 7
         },
         {
-          "word": "rente",
+          "word": "kindergeld",
           "count": 6
         },
         {
-          "word": "kindergeld",
+          "word": "rente",
           "count": 6
         }
       ],
@@ -507,11 +507,11 @@
           "count": 3
         },
         {
-          "word": "betrug",
+          "word": "angriff",
           "count": 2
         },
         {
-          "word": "angriff",
+          "word": "betrug",
           "count": 2
         },
         {
@@ -539,19 +539,19 @@
           "count": 2
         },
         {
+          "word": "frieden",
+          "count": 1
+        },
+        {
+          "word": "abkommen",
+          "count": 1
+        },
+        {
           "word": "krieg",
           "count": 1
         },
         {
           "word": "ukraine",
-          "count": 1
-        },
-        {
-          "word": "frieden",
-          "count": 1
-        },
-        {
-          "word": "europa",
           "count": 1
         }
       ],
@@ -667,7 +667,7 @@
           "count": 1
         },
         {
-          "word": "nahverkehr",
+          "word": "schiene",
           "count": 1
         }
       ]

@@ -11,13 +11,13 @@
   "minWords": 73,
   "maxWords": 893,
   "rankings": {
-    "speechRank": 91,
+    "speechRank": 94,
     "wordsRank": 151,
     "partySpeechRank": 24,
     "partyWordsRank": 41,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 85.5,
+    "percentile": 85.0,
     "verbosityRank": 302,
     "verbosityTotal": 582,
     "partyVerbosityRank": 108,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 3,
     "interruptionsReceived": 30,
-    "interrupterRank": 399,
-    "interruptedRank": 252
+    "interrupterRank": 394,
+    "interruptedRank": 247
   },
   "words": {
     "topWords": [
@@ -48,27 +48,27 @@
         "count": 27
       },
       {
-        "word": "gesetzentwurf",
-        "count": 25
-      },
-      {
         "word": "recht",
         "count": 25
       },
       {
-        "word": "vertrauen",
-        "count": 20
+        "word": "gesetzentwurf",
+        "count": 25
       },
       {
         "word": "lassen",
         "count": 20
       },
       {
-        "word": "schutz",
+        "word": "vertrauen",
+        "count": 20
+      },
+      {
+        "word": "haushalt",
         "count": 18
       },
       {
-        "word": "verfahren",
+        "word": "schutz",
         "count": 18
       }
     ],
@@ -234,20 +234,20 @@
     "question": "Welches Wort nutzt Susanne Hierl häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kanzler",
+        "text": "Politik",
         "isCorrect": false
+      },
+      {
+        "text": "Schwangerschaftsabbruch",
+        "isCorrect": true
       },
       {
         "text": "Ausschuss",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Antrag",
         "isCorrect": false
-      },
-      {
-        "text": "Schwangerschaftsabbruch",
-        "isCorrect": true
       }
     ],
     "explanationParty": "\"Schwangerschaftsabbruch\" nutzt Susanne Hierl 298.3× häufiger als der CDU/CSU-Durchschnitt.",
@@ -261,15 +261,15 @@
         "isCorrect": true
       },
       {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
         "text": "Stark",
         "isCorrect": false
       },
       {
         "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
         "isCorrect": false
       }
     ],
@@ -390,6 +390,10 @@
           "count": 7
         },
         {
+          "word": "markt",
+          "count": 2
+        },
+        {
           "word": "wettbewerb",
           "count": 2
         },
@@ -398,11 +402,7 @@
           "count": 2
         },
         {
-          "word": "markt",
-          "count": 2
-        },
-        {
-          "word": "marktwirtschaft",
+          "word": "wirtschaftspolitik",
           "count": 1
         }
       ],
@@ -452,14 +452,6 @@
       ],
       "gesundheit": [
         {
-          "word": "behandlung",
-          "count": 1
-        },
-        {
-          "word": "krankheit",
-          "count": 1
-        },
-        {
           "word": "mediziner",
           "count": 1
         },
@@ -469,6 +461,14 @@
         },
         {
           "word": "vorsorge",
+          "count": 1
+        },
+        {
+          "word": "pflege",
+          "count": 1
+        },
+        {
+          "word": "behandlung",
           "count": 1
         }
       ],
@@ -488,15 +488,15 @@
           "count": 3
         },
         {
-          "word": "cloud",
-          "count": 2
-        },
-        {
-          "word": "digital",
-          "count": 2
-        },
-        {
           "word": "internet",
+          "count": 2
+        },
+        {
+          "word": "netz",
+          "count": 2
+        },
+        {
+          "word": "cloud",
           "count": 2
         }
       ],
@@ -506,19 +506,19 @@
           "count": 1
         },
         {
+          "word": "auszubildende",
+          "count": 1
+        },
+        {
+          "word": "studenten",
+          "count": 1
+        },
+        {
           "word": "studium",
           "count": 1
         },
         {
           "word": "ausbildung",
-          "count": 1
-        },
-        {
-          "word": "universität",
-          "count": 1
-        },
-        {
-          "word": "auszubildende",
           "count": 1
         }
       ],
@@ -532,11 +532,11 @@
           "count": 5
         },
         {
-          "word": "bundeshaushalt",
+          "word": "kosten",
           "count": 2
         },
         {
-          "word": "kosten",
+          "word": "bundeshaushalt",
           "count": 2
         },
         {
@@ -546,11 +546,11 @@
       ],
       "justiz": [
         {
-          "word": "rechtsstaat",
+          "word": "verbraucherschutz",
           "count": 16
         },
         {
-          "word": "verbraucherschutz",
+          "word": "rechtsstaat",
           "count": 16
         },
         {

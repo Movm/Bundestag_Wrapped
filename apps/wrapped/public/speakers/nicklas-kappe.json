@@ -11,13 +11,13 @@
   "minWords": 348,
   "maxWords": 987,
   "rankings": {
-    "speechRank": 153,
+    "speechRank": 143,
     "wordsRank": 107,
-    "partySpeechRank": 33,
+    "partySpeechRank": 31,
     "partyWordsRank": 31,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 75.6,
+    "percentile": 77.2,
     "verbosityRank": 45,
     "verbosityTotal": 582,
     "partyVerbosityRank": 18,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 53,
-    "interrupterRank": 433,
-    "interruptedRank": 109
+    "interrupterRank": 435,
+    "interruptedRank": 108
   },
   "words": {
     "topWords": [
@@ -78,10 +78,10 @@
         "ratioBundestag": 36.0
       },
       {
-        "word": "hochlauf",
-        "count": 10,
+        "word": "vorgabe",
+        "count": 6,
         "ratioParty": 53.4,
-        "ratioBundestag": 49.6
+        "ratioBundestag": 49.4
       }
     ],
     "signatureWordsParty": [
@@ -98,12 +98,6 @@
         "ratio": 800.7
       },
       {
-        "word": "hochlauf",
-        "count": 10,
-        "score": 39.96,
-        "ratio": 53.4
-      },
-      {
         "word": "carbon",
         "count": 6,
         "score": 29.4,
@@ -114,6 +108,12 @@
         "count": 7,
         "score": 28.16,
         "ratio": 54.9
+      },
+      {
+        "word": "vorgabe",
+        "count": 6,
+        "score": 23.98,
+        "ratio": 53.4
       }
     ],
     "signatureWordsBundestag": [
@@ -130,12 +130,6 @@
         "ratio": 1235.8
       },
       {
-        "word": "hochlauf",
-        "count": 10,
-        "score": 39.24,
-        "ratio": 49.6
-      },
-      {
         "word": "carbon",
         "count": 6,
         "score": 33.71,
@@ -146,6 +140,12 @@
         "count": 7,
         "score": 25.28,
         "ratio": 36.0
+      },
+      {
+        "word": "vorgabe",
+        "count": 6,
+        "score": 23.52,
+        "ratio": 49.4
       }
     ],
     "signatureAdjectives": [
@@ -250,20 +250,20 @@
     "question": "Welches Wort nutzt Nicklas Kappe häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Reform",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
-        "text": "Arbeit",
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
         "text": "Chemiepark",
         "isCorrect": true
-      },
-      {
-        "text": "Freiheit",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Chemiepark\" nutzt Nicklas Kappe 800.7× häufiger als der CDU/CSU-Durchschnitt.",
@@ -273,19 +273,19 @@
     "question": "Welches Adjektiv nutzt Nicklas Kappe häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
         "text": "Vernünftig",
         "isCorrect": true
       },
       {
-        "text": "National",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Politisch",
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
         "isCorrect": false
       }
     ],
@@ -420,7 +420,7 @@
           "count": 4
         },
         {
-          "word": "klimawandel",
+          "word": "energie",
           "count": 3
         }
       ],
@@ -438,11 +438,11 @@
           "count": 10
         },
         {
-          "word": "stahlindustrie",
+          "word": "mittelstand",
           "count": 7
         },
         {
-          "word": "mittelstand",
+          "word": "stahlindustrie",
           "count": 7
         }
       ],
@@ -452,11 +452,11 @@
           "count": 3
         },
         {
-          "word": "kind",
+          "word": "wohnung",
           "count": 2
         },
         {
-          "word": "wohnung",
+          "word": "kind",
           "count": 2
         },
         {
@@ -484,11 +484,11 @@
           "count": 4
         },
         {
-          "word": "brüssel",
+          "word": "russland",
           "count": 2
         },
         {
-          "word": "russland",
+          "word": "brüssel",
           "count": 2
         },
         {
@@ -532,7 +532,7 @@
           "count": 1
         },
         {
-          "word": "entlastung",
+          "word": "mehrwertsteuer",
           "count": 1
         }
       ],
@@ -542,15 +542,15 @@
           "count": 2
         },
         {
+          "word": "novelle",
+          "count": 1
+        },
+        {
           "word": "grundgesetz",
           "count": 1
         },
         {
           "word": "gericht",
-          "count": 1
-        },
-        {
-          "word": "novelle",
           "count": 1
         },
         {
@@ -578,15 +578,15 @@
           "count": 1
         },
         {
+          "word": "schiff",
+          "count": 1
+        },
+        {
+          "word": "schiene",
+          "count": 1
+        },
+        {
           "word": "autos",
-          "count": 1
-        },
-        {
-          "word": "ladeinfrastruktur",
-          "count": 1
-        },
-        {
-          "word": "auto",
           "count": 1
         }
       ]

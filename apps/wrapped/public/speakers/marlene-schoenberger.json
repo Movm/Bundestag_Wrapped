@@ -11,23 +11,23 @@
   "minWords": 60,
   "maxWords": 570,
   "rankings": {
-    "speechRank": 256,
-    "wordsRank": 430,
-    "partySpeechRank": 48,
+    "speechRank": 278,
+    "wordsRank": 431,
+    "partySpeechRank": 52,
     "partyWordsRank": 71,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 59.1,
+    "percentile": 55.6,
     "verbosityRank": 513,
     "verbosityTotal": 582,
     "partyVerbosityRank": 68,
-    "longestSpeechRank": 531
+    "longestSpeechRank": 532
   },
   "drama": {
     "interruptionsGiven": 6,
     "interruptionsReceived": 32,
-    "interrupterRank": 328,
-    "interruptedRank": 227
+    "interrupterRank": 345,
+    "interruptedRank": 232
   },
   "words": {
     "topWords": [
@@ -52,6 +52,10 @@
         "count": 9
       },
       {
+        "word": "juden",
+        "count": 9
+      },
+      {
         "word": "queere",
         "count": 9
       },
@@ -60,11 +64,11 @@
         "count": 9
       },
       {
-        "word": "juden",
-        "count": 9
+        "word": "rechtsextreme",
+        "count": 8
       },
       {
-        "word": "rechtsextreme",
+        "word": "jüdinnen",
         "count": 8
       }
     ],
@@ -230,20 +234,20 @@
     "question": "Welches Wort nutzt Marlene Schönberger häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Europa",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
+        "text": "Rente",
         "isCorrect": false
       },
       {
         "text": "Jüdinnen",
         "isCorrect": true
+      },
+      {
+        "text": "Minister",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Jüdinnen\" nutzt Marlene Schönberger 235.7× häufiger als der GRÜNE-Durchschnitt.",
@@ -253,7 +257,7 @@
     "question": "Welches Adjektiv nutzt Marlene Schönberger häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Sicher",
         "isCorrect": false
       },
       {
@@ -261,11 +265,11 @@
         "isCorrect": true
       },
       {
-        "text": "Richtig",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Sozial",
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
@@ -416,29 +420,25 @@
           "count": 1
         },
         {
+          "word": "sucht",
+          "count": 1
+        },
+        {
           "word": "prävention",
           "count": 1
         },
         {
           "word": "rettungsdienst",
           "count": 1
-        },
-        {
-          "word": "sucht",
-          "count": 1
         }
       ],
       "europa": [
         {
-          "word": "putin",
+          "word": "kreml",
           "count": 1
         },
         {
-          "word": "russland",
-          "count": 1
-        },
-        {
-          "word": "kriegsverbrechen",
+          "word": "israel",
           "count": 1
         },
         {
@@ -446,7 +446,11 @@
           "count": 1
         },
         {
-          "word": "israel",
+          "word": "russland",
+          "count": 1
+        },
+        {
+          "word": "putin",
           "count": 1
         }
       ],
@@ -456,7 +460,7 @@
           "count": 2
         },
         {
-          "word": "daten",
+          "word": "rundfunk",
           "count": 1
         },
         {
@@ -468,7 +472,7 @@
           "count": 1
         },
         {
-          "word": "digitalisierung",
+          "word": "daten",
           "count": 1
         }
       ],
@@ -478,19 +482,19 @@
           "count": 7
         },
         {
-          "word": "wissenschaft",
-          "count": 1
-        },
-        {
-          "word": "forschung",
-          "count": 1
-        },
-        {
           "word": "schulen",
           "count": 1
         },
         {
           "word": "hochschulen",
+          "count": 1
+        },
+        {
+          "word": "wissenschaft",
+          "count": 1
+        },
+        {
+          "word": "forschung",
           "count": 1
         }
       ],
@@ -530,7 +534,7 @@
           "count": 2
         },
         {
-          "word": "rechtsstaatlichkeit",
+          "word": "rechtsstaat",
           "count": 2
         }
       ]

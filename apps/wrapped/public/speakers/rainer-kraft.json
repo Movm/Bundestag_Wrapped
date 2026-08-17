@@ -11,13 +11,13 @@
   "minWords": 24,
   "maxWords": 727,
   "rankings": {
-    "speechRank": 122,
+    "speechRank": 119,
     "wordsRank": 70,
-    "partySpeechRank": 26,
+    "partySpeechRank": 23,
     "partyWordsRank": 14,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 80.5,
+    "percentile": 81.0,
     "verbosityRank": 557,
     "verbosityTotal": 582,
     "partyVerbosityRank": 142,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 210,
     "interruptionsReceived": 28,
     "interrupterRank": 19,
-    "interruptedRank": 274
+    "interruptedRank": 267
   },
   "words": {
     "topWords": [
@@ -58,16 +58,16 @@
         "ratioBundestag": 101.4
       },
       {
-        "word": "endlager",
-        "count": 6,
-        "ratioParty": 54.9,
-        "ratioBundestag": 62.2
-      },
-      {
         "word": "fördergelder",
         "count": 6,
         "ratioParty": 54.9,
         "ratioBundestag": 73.7
+      },
+      {
+        "word": "endlager",
+        "count": 6,
+        "ratioParty": 54.9,
+        "ratioBundestag": 62.2
       },
       {
         "word": "strompreis",
@@ -90,13 +90,13 @@
         "ratio": 62.0
       },
       {
-        "word": "endlager",
+        "word": "fördergelder",
         "count": 6,
         "score": 24.14,
         "ratio": 54.9
       },
       {
-        "word": "fördergelder",
+        "word": "endlager",
         "count": 6,
         "score": 24.14,
         "ratio": 54.9
@@ -229,20 +229,20 @@
     "question": "Welches Wort nutzt Dr. Rainer Kraft häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
+        "text": "Energie",
         "isCorrect": false
       },
       {
         "text": "Augsburg",
         "isCorrect": true
+      },
+      {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Augsburg\" nutzt Dr. Rainer Kraft 122.1× häufiger als der AfD-Durchschnitt.",
@@ -252,7 +252,11 @@
     "question": "Welches Adjektiv nutzt Dr. Rainer Kraft häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Groß",
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
@@ -260,11 +264,7 @@
         "isCorrect": true
       },
       {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
+        "text": "Stark",
         "isCorrect": false
       }
     ],
@@ -363,11 +363,11 @@
           "count": 6
         },
         {
-          "word": "klimawandel",
+          "word": "umwelt",
           "count": 4
         },
         {
-          "word": "umwelt",
+          "word": "kernkraftwerk",
           "count": 4
         }
       ],
@@ -407,7 +407,7 @@
           "count": 2
         },
         {
-          "word": "wohnungen",
+          "word": "renten",
           "count": 1
         },
         {
@@ -433,25 +433,25 @@
           "count": 2
         },
         {
-          "word": "täter",
+          "word": "polizei",
           "count": 1
         }
       ],
       "gesundheit": [
-        {
-          "word": "pflege",
-          "count": 1
-        },
-        {
-          "word": "gesundheitssystem",
-          "count": 1
-        },
         {
           "word": "medizin",
           "count": 1
         },
         {
           "word": "pandemie",
+          "count": 1
+        },
+        {
+          "word": "pflege",
+          "count": 1
+        },
+        {
+          "word": "gesundheitssystem",
           "count": 1
         }
       ],
@@ -469,11 +469,11 @@
           "count": 3
         },
         {
-          "word": "moskau",
+          "word": "israel",
           "count": 3
         },
         {
-          "word": "israel",
+          "word": "moskau",
           "count": 3
         }
       ],
@@ -483,19 +483,19 @@
           "count": 2
         },
         {
-          "word": "digitalisierung",
-          "count": 1
-        },
-        {
           "word": "internet",
           "count": 1
         },
         {
-          "word": "netzausbau",
+          "word": "digitalisierung",
           "count": 1
         },
         {
           "word": "daten",
+          "count": 1
+        },
+        {
+          "word": "netzausbau",
           "count": 1
         }
       ],
@@ -527,11 +527,11 @@
           "count": 9
         },
         {
-          "word": "steuerzahler",
+          "word": "subventionen",
           "count": 8
         },
         {
-          "word": "subventionen",
+          "word": "steuerzahler",
           "count": 8
         },
         {
@@ -553,15 +553,15 @@
           "count": 1
         },
         {
+          "word": "straftat",
+          "count": 1
+        },
+        {
           "word": "urteil",
           "count": 1
         },
         {
           "word": "klage",
-          "count": 1
-        },
-        {
-          "word": "straftat",
           "count": 1
         }
       ],
@@ -579,11 +579,11 @@
           "count": 2
         },
         {
-          "word": "arbeitskräfte",
+          "word": "arbeitnehmer",
           "count": 1
         },
         {
-          "word": "arbeitnehmer",
+          "word": "beschäftigung",
           "count": 1
         }
       ],

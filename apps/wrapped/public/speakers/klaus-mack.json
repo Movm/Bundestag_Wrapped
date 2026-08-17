@@ -11,13 +11,13 @@
   "minWords": 74,
   "maxWords": 792,
   "rankings": {
-    "speechRank": 308,
+    "speechRank": 304,
     "wordsRank": 251,
-    "partySpeechRank": 86,
+    "partySpeechRank": 85,
     "partyWordsRank": 71,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 50.8,
+    "percentile": 51.4,
     "verbosityRank": 171,
     "verbosityTotal": 582,
     "partyVerbosityRank": 63,
@@ -26,7 +26,7 @@
   "drama": {
     "interruptionsGiven": 3,
     "interruptionsReceived": 57,
-    "interrupterRank": 400,
+    "interrupterRank": 384,
     "interruptedRank": 91
   },
   "words": {
@@ -226,19 +226,19 @@
     "question": "Welches Wort nutzt Klaus Mack häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
         "text": "Naturschutz",
         "isCorrect": true
       },
       {
-        "text": "Koalition",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Freiheit",
+        "text": "Wirtschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
         "isCorrect": false
       }
     ],
@@ -249,19 +249,19 @@
     "question": "Welches Adjektiv nutzt Klaus Mack häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
         "text": "Ideologisch",
         "isCorrect": true
       },
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
         "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
         "isCorrect": false
       }
     ],
@@ -406,11 +406,11 @@
       ],
       "wirtschaft": [
         {
-          "word": "kapital",
+          "word": "wirtschaft",
           "count": 1
         },
         {
-          "word": "wirtschaft",
+          "word": "kapital",
           "count": 1
         }
       ],
@@ -428,11 +428,11 @@
           "count": 2
         },
         {
-          "word": "sozialstaat",
+          "word": "rente",
           "count": 1
         },
         {
-          "word": "rente",
+          "word": "bürgergeld",
           "count": 1
         }
       ],
@@ -466,11 +466,11 @@
           "count": 1
         },
         {
-          "word": "türkei",
+          "word": "brüssel",
           "count": 1
         },
         {
-          "word": "brüssel",
+          "word": "türkei",
           "count": 1
         }
       ],
@@ -526,19 +526,19 @@
           "count": 1
         },
         {
-          "word": "gesetzgebung",
-          "count": 1
-        },
-        {
-          "word": "beschluss",
-          "count": 1
-        },
-        {
           "word": "anwälte",
           "count": 1
         },
         {
           "word": "rechtsstaat",
+          "count": 1
+        },
+        {
+          "word": "gesetzgebung",
+          "count": 1
+        },
+        {
+          "word": "beschluss",
           "count": 1
         }
       ],

@@ -11,23 +11,23 @@
   "minWords": 61,
   "maxWords": 673,
   "rankings": {
-    "speechRank": 175,
+    "speechRank": 190,
     "wordsRank": 202,
     "partySpeechRank": 41,
     "partyWordsRank": 48,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 72.0,
+    "percentile": 69.6,
     "verbosityRank": 254,
     "verbosityTotal": 582,
     "partyVerbosityRank": 60,
-    "longestSpeechRank": 409
+    "longestSpeechRank": 411
   },
   "drama": {
     "interruptionsGiven": 384,
     "interruptionsReceived": 37,
     "interrupterRank": 5,
-    "interruptedRank": 193
+    "interruptedRank": 196
   },
   "words": {
     "topWords": [
@@ -54,6 +54,10 @@
       {
         "word": "bundestag",
         "count": 18
+      },
+      {
+        "word": "lassen",
+        "count": 16
       }
     ],
     "signatureWords": [
@@ -205,20 +209,20 @@
     "question": "Welches Wort nutzt Dr. Johannes Fechner häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
+        "text": "Rente",
         "isCorrect": false
       },
       {
         "text": "Diäten",
         "isCorrect": true
+      },
+      {
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Diäten\" nutzt Dr. Johannes Fechner 485.6× häufiger als der SPD-Durchschnitt.",
@@ -232,15 +236,15 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
         "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
+        "text": "National",
         "isCorrect": false
       }
     ],
@@ -357,11 +361,7 @@
       ],
       "soziales": [
         {
-          "word": "familien",
-          "count": 1
-        },
-        {
-          "word": "kinder",
+          "word": "rente",
           "count": 1
         },
         {
@@ -369,11 +369,15 @@
           "count": 1
         },
         {
-          "word": "familie",
+          "word": "kinder",
           "count": 1
         },
         {
-          "word": "miete",
+          "word": "familien",
+          "count": 1
+        },
+        {
+          "word": "familie",
           "count": 1
         }
       ],
@@ -405,11 +409,11 @@
           "count": 1
         },
         {
-          "word": "behandlung",
+          "word": "krankheit",
           "count": 1
         },
         {
-          "word": "krankheit",
+          "word": "behandlung",
           "count": 1
         }
       ],
@@ -427,11 +431,11 @@
           "count": 2
         },
         {
-          "word": "europa",
+          "word": "china",
           "count": 1
         },
         {
-          "word": "vertrag",
+          "word": "europa",
           "count": 1
         }
       ],
@@ -503,11 +507,11 @@
           "count": 2
         },
         {
-          "word": "gehalt",
+          "word": "beschäftigte",
           "count": 1
         },
         {
-          "word": "rentenversicherung",
+          "word": "arbeitnehmerinnen",
           "count": 1
         }
       ],
@@ -517,11 +521,11 @@
           "count": 2
         },
         {
-          "word": "autos",
+          "word": "verkehrsminister",
           "count": 1
         },
         {
-          "word": "verkehrsminister",
+          "word": "autos",
           "count": 1
         }
       ]

@@ -11,14 +11,14 @@
   "minWords": 13,
   "maxWords": 2457,
   "rankings": {
-    "speechRank": 274,
+    "speechRank": 259,
     "wordsRank": 159,
-    "partySpeechRank": 75,
+    "partySpeechRank": 72,
     "partyWordsRank": 46,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 56.2,
-    "verbosityRank": 104,
+    "percentile": 58.6,
+    "verbosityRank": 103,
     "verbosityTotal": 582,
     "partyVerbosityRank": 38,
     "longestSpeechRank": 6
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 19,
-    "interrupterRank": 430,
-    "interruptedRank": 356
+    "interrupterRank": 416,
+    "interruptedRank": 351
   },
   "words": {
     "topWords": [
@@ -62,6 +62,10 @@
       {
         "word": "änderung",
         "count": 18
+      },
+      {
+        "word": "drucksache",
+        "count": 17
       }
     ],
     "signatureWords": [
@@ -213,19 +217,19 @@
     "question": "Welches Wort nutzt Nicolas Zippelius häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Politik",
+        "isCorrect": false
+      },
+      {
         "text": "Notfallverfahren",
         "isCorrect": true
       },
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
+        "text": "Haushalt",
         "isCorrect": false
       }
     ],
@@ -236,20 +240,20 @@
     "question": "Welches Adjektiv nutzt Nicolas Zippelius häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
+        "text": "Neu",
         "isCorrect": false
       },
       {
         "text": "Zentral",
         "isCorrect": true
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Zentral\" nutzt Nicolas Zippelius 10.0× häufiger als der CDU/CSU-Durchschnitt.",
@@ -429,10 +433,6 @@
       ],
       "gesundheit": [
         {
-          "word": "gesundheitswesen",
-          "count": 1
-        },
-        {
           "word": "notfall",
           "count": 1
         },
@@ -446,6 +446,10 @@
         },
         {
           "word": "covid",
+          "count": 1
+        },
+        {
+          "word": "gesundheitswesen",
           "count": 1
         }
       ],
@@ -479,7 +483,7 @@
       ],
       "bildung": [
         {
-          "word": "wissenschaftler",
+          "word": "studenten",
           "count": 1
         },
         {
@@ -487,7 +491,7 @@
           "count": 1
         },
         {
-          "word": "studenten",
+          "word": "wissenschaftler",
           "count": 1
         }
       ],

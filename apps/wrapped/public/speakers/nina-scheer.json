@@ -11,14 +11,14 @@
   "minWords": 145,
   "maxWords": 789,
   "rankings": {
-    "speechRank": 63,
+    "speechRank": 64,
     "wordsRank": 77,
-    "partySpeechRank": 16,
+    "partySpeechRank": 15,
     "partyWordsRank": 20,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 89.9,
-    "verbosityRank": 144,
+    "percentile": 89.8,
+    "verbosityRank": 143,
     "verbosityTotal": 582,
     "partyVerbosityRank": 35,
     "longestSpeechRank": 264
@@ -26,7 +26,7 @@
   "drama": {
     "interruptionsGiven": 10,
     "interruptionsReceived": 137,
-    "interrupterRank": 276,
+    "interrupterRank": 277,
     "interruptedRank": 13
   },
   "words": {
@@ -237,15 +237,15 @@
     "question": "Welches Wort nutzt Dr. Nina Scheer häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
         "text": "Zielsetzungen",
         "isCorrect": true
       },
       {
-        "text": "Minister",
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
@@ -260,20 +260,20 @@
     "question": "Welches Adjektiv nutzt Dr. Nina Scheer häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Sicher",
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
         "isCorrect": false
       },
       {
         "text": "Unverantwortlich",
         "isCorrect": true
-      },
-      {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Unverantwortlich\" nutzt Dr. Nina Scheer 105.1× häufiger als der SPD-Durchschnitt.",
@@ -417,7 +417,7 @@
           "count": 3
         },
         {
-          "word": "wirtschaft",
+          "word": "wettbewerb",
           "count": 2
         }
       ],
@@ -437,15 +437,15 @@
           "count": 4
         },
         {
-          "word": "europa",
-          "count": 2
-        },
-        {
           "word": "kooperation",
           "count": 2
         },
         {
-          "word": "iran",
+          "word": "europa",
+          "count": 2
+        },
+        {
+          "word": "europäisch",
           "count": 2
         }
       ],
@@ -483,11 +483,11 @@
           "count": 2
         },
         {
-          "word": "subventionen",
+          "word": "steuern",
           "count": 1
         },
         {
-          "word": "währung",
+          "word": "fördermittel",
           "count": 1
         }
       ],
@@ -505,11 +505,11 @@
           "count": 1
         },
         {
-          "word": "verfassung",
+          "word": "bundesverfassungsgericht",
           "count": 1
         },
         {
-          "word": "bundesverfassungsgericht",
+          "word": "verfassung",
           "count": 1
         }
       ],
@@ -521,19 +521,19 @@
       ],
       "mobilitaet": [
         {
-          "word": "stau",
-          "count": 1
-        },
-        {
-          "word": "infrastruktur",
-          "count": 1
-        },
-        {
           "word": "verkehr",
           "count": 1
         },
         {
           "word": "schiff",
+          "count": 1
+        },
+        {
+          "word": "stau",
+          "count": 1
+        },
+        {
+          "word": "infrastruktur",
           "count": 1
         }
       ]

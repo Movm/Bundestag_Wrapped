@@ -11,13 +11,13 @@
   "minWords": 473,
   "maxWords": 1102,
   "rankings": {
-    "speechRank": 282,
+    "speechRank": 274,
     "wordsRank": 59,
-    "partySpeechRank": 60,
+    "partySpeechRank": 58,
     "partyWordsRank": 12,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 55.0,
+    "percentile": 56.2,
     "verbosityRank": 8,
     "verbosityTotal": 582,
     "partyVerbosityRank": 3,
@@ -26,7 +26,7 @@
   "drama": {
     "interruptionsGiven": 63,
     "interruptionsReceived": 36,
-    "interrupterRank": 84,
+    "interrupterRank": 82,
     "interruptedRank": 201
   },
   "words": {
@@ -206,19 +206,19 @@
     "question": "Welches Wort nutzt Ulrike Schielke-Ziesing häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
         "text": "Haltelinie",
         "isCorrect": true
       },
       {
-        "text": "Sicherheit",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
-        "text": "Koalition",
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
         "isCorrect": false
       }
     ],
@@ -229,15 +229,15 @@
     "question": "Welches Adjektiv nutzt Ulrike Schielke-Ziesing häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Sozial",
+        "text": "Gut",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Alt",
         "isCorrect": false
       },
       {
-        "text": "Gefährlich",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
@@ -322,10 +322,6 @@
           "count": 2
         },
         {
-          "word": "migration",
-          "count": 1
-        },
-        {
           "word": "staatsangehörigkeit",
           "count": 1
         },
@@ -336,15 +332,19 @@
         {
           "word": "rückführung",
           "count": 1
+        },
+        {
+          "word": "migration",
+          "count": 1
         }
       ],
       "klima": [
         {
-          "word": "nachhaltig",
+          "word": "energie",
           "count": 1
         },
         {
-          "word": "energie",
+          "word": "nachhaltig",
           "count": 1
         }
       ],
@@ -358,15 +358,15 @@
           "count": 4
         },
         {
+          "word": "betriebe",
+          "count": 2
+        },
+        {
           "word": "wirtschaftspolitik",
           "count": 2
         },
         {
           "word": "fachkräfte",
-          "count": 2
-        },
-        {
-          "word": "kredite",
           "count": 2
         }
       ],
@@ -416,11 +416,11 @@
           "count": 3
         },
         {
-          "word": "vorsorge",
+          "word": "prävention",
           "count": 2
         },
         {
-          "word": "prävention",
+          "word": "vorsorge",
           "count": 2
         }
       ],
@@ -446,11 +446,11 @@
           "count": 2
         },
         {
-          "word": "bafög",
+          "word": "schulen",
           "count": 1
         },
         {
-          "word": "schulen",
+          "word": "bafög",
           "count": 1
         },
         {
@@ -494,11 +494,11 @@
           "count": 2
         },
         {
-          "word": "beschäftigung",
+          "word": "arbeitslosigkeit",
           "count": 2
         },
         {
-          "word": "arbeitslosigkeit",
+          "word": "beschäftigung",
           "count": 2
         }
       ],

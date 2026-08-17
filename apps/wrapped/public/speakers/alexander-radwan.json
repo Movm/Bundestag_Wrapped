@@ -11,32 +11,32 @@
   "minWords": 183,
   "maxWords": 656,
   "rankings": {
-    "speechRank": 445,
+    "speechRank": 468,
     "wordsRank": 471,
-    "partySpeechRank": 133,
+    "partySpeechRank": 147,
     "partyWordsRank": 153,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 28.9,
-    "verbosityRank": 119,
+    "percentile": 25.2,
+    "verbosityRank": 120,
     "verbosityTotal": 582,
-    "partyVerbosityRank": 42,
-    "longestSpeechRank": 429
+    "partyVerbosityRank": 43,
+    "longestSpeechRank": 430
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 18,
     "interrupterRank": null,
-    "interruptedRank": 358
+    "interruptedRank": 363
   },
   "words": {
     "topWords": [
       {
-        "word": "europa",
+        "word": "region",
         "count": 18
       },
       {
-        "word": "region",
+        "word": "europa",
         "count": 18
       },
       {
@@ -62,6 +62,10 @@
       {
         "word": "menschen",
         "count": 8
+      },
+      {
+        "word": "lassen",
+        "count": 7
       }
     ],
     "signatureWords": [
@@ -244,20 +248,20 @@
     "question": "Welches Wort nutzt Alexander Radwan häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
+        "isCorrect": false
+      },
+      {
         "text": "Proxys",
         "isCorrect": true
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Proxys\" nutzt Alexander Radwan 1125.2× häufiger als der CDU/CSU-Durchschnitt.",
@@ -267,19 +271,19 @@
     "question": "Welches Adjektiv nutzt Alexander Radwan häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
         "text": "Wirtschaftlich",
         "isCorrect": true
       },
       {
-        "text": "Klar",
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
         "isCorrect": false
       }
     ],
@@ -392,12 +396,16 @@
       ],
       "wirtschaft": [
         {
+          "word": "wirtschaft",
+          "count": 2
+        },
+        {
           "word": "freihandel",
           "count": 2
         },
         {
-          "word": "wirtschaft",
-          "count": 2
+          "word": "produktion",
+          "count": 1
         },
         {
           "word": "handel",
@@ -406,29 +414,25 @@
         {
           "word": "import",
           "count": 1
-        },
-        {
-          "word": "produktion",
-          "count": 1
         }
       ],
       "soziales": [
         {
-          "word": "rente",
+          "word": "mieten",
           "count": 1
         },
         {
-          "word": "mieten",
+          "word": "rente",
           "count": 1
         }
       ],
       "sicherheit": [
         {
-          "word": "waffen",
+          "word": "terror",
           "count": 4
         },
         {
-          "word": "terror",
+          "word": "waffen",
           "count": 4
         },
         {
@@ -462,17 +466,17 @@
           "count": 9
         },
         {
-          "word": "nato",
+          "word": "außenminister",
           "count": 4
         }
       ],
       "justiz": [
         {
-          "word": "datenschutz",
+          "word": "menschenrechte",
           "count": 1
         },
         {
-          "word": "menschenrechte",
+          "word": "datenschutz",
           "count": 1
         }
       ],

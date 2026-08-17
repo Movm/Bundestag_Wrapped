@@ -11,16 +11,16 @@
   "minWords": 269,
   "maxWords": 747,
   "rankings": {
-    "speechRank": 288,
+    "speechRank": 294,
     "wordsRank": 371,
-    "partySpeechRank": 81,
+    "partySpeechRank": 82,
     "partyWordsRank": 114,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 54.0,
-    "verbosityRank": 263,
+    "percentile": 53.0,
+    "verbosityRank": 262,
     "verbosityTotal": 582,
-    "partyVerbosityRank": 93,
+    "partyVerbosityRank": 92,
     "longestSpeechRank": 319
   },
   "drama": {
@@ -56,19 +56,19 @@
         "count": 11
       },
       {
+        "word": "gesetzentwurf",
+        "count": 10
+      },
+      {
         "word": "deutschen",
         "count": 10
       },
       {
-        "word": "grundgesetz",
-        "count": 10
-      },
-      {
-        "word": "unabhängigkeit",
-        "count": 10
-      },
-      {
         "word": "grundgesetzes",
+        "count": 10
+      },
+      {
+        "word": "grundgesetz",
         "count": 10
       }
     ],
@@ -98,10 +98,10 @@
         "ratioBundestag": 204.4
       },
       {
-        "word": "entschädigung",
+        "word": "unterhaltsvorschuss",
         "count": 7,
         "ratioParty": 129.1,
-        "ratioBundestag": 124.2
+        "ratioBundestag": 90.3
       }
     ],
     "signatureWordsParty": [
@@ -112,7 +112,7 @@
         "ratio": 1382.9
       },
       {
-        "word": "entschädigung",
+        "word": "unterhaltsvorschuss",
         "count": 7,
         "score": 34.08,
         "ratio": 129.1
@@ -144,16 +144,16 @@
         "ratio": 1064.5
       },
       {
-        "word": "entschädigung",
-        "count": 7,
-        "score": 33.81,
-        "ratio": 124.2
-      },
-      {
         "word": "bundesrechnungshofs",
         "count": 6,
         "score": 31.95,
         "ratio": 204.4
+      },
+      {
+        "word": "unterhaltsvorschuss",
+        "count": 7,
+        "score": 31.6,
+        "ratio": 90.3
       },
       {
         "word": "materiell",
@@ -252,7 +252,11 @@
     "question": "Welches Wort nutzt Ansgar Heveling häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Politik",
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
         "isCorrect": false
       },
       {
@@ -260,11 +264,7 @@
         "isCorrect": true
       },
       {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
+        "text": "Investitionen",
         "isCorrect": false
       }
     ],
@@ -275,20 +275,20 @@
     "question": "Welches Adjektiv nutzt Ansgar Heveling häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Gut",
+        "text": "Alt",
         "isCorrect": false
       },
       {
-        "text": "Geschützt",
-        "isCorrect": true
+        "text": "Erfolgreich",
+        "isCorrect": false
       },
       {
         "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
-        "isCorrect": false
+        "text": "Geschützt",
+        "isCorrect": true
       }
     ],
     "explanationParty": "\"Geschützt\" nutzt Ansgar Heveling 16.0× häufiger als der CDU/CSU-Durchschnitt.",
@@ -408,15 +408,15 @@
           "count": 4
         },
         {
-          "word": "jugendliche",
-          "count": 3
-        },
-        {
           "word": "alleinerziehende",
           "count": 3
         },
         {
-          "word": "gerechtigkeit",
+          "word": "jugendliche",
+          "count": 3
+        },
+        {
+          "word": "familie",
           "count": 2
         }
       ],
@@ -436,6 +436,10 @@
       ],
       "europa": [
         {
+          "word": "bündnis",
+          "count": 1
+        },
+        {
           "word": "europa",
           "count": 1
         },
@@ -445,10 +449,6 @@
         },
         {
           "word": "binnenmarkt",
-          "count": 1
-        },
-        {
-          "word": "bündnis",
           "count": 1
         }
       ],
@@ -494,11 +494,11 @@
       ],
       "finanzen": [
         {
-          "word": "schulden",
+          "word": "bundeshaushalt",
           "count": 1
         },
         {
-          "word": "bundeshaushalt",
+          "word": "schulden",
           "count": 1
         }
       ],
@@ -512,15 +512,15 @@
           "count": 7
         },
         {
-          "word": "rechtsprechung",
-          "count": 2
-        },
-        {
           "word": "bundesverfassungsgericht",
           "count": 2
         },
         {
-          "word": "haft",
+          "word": "rechtsprechung",
+          "count": 2
+        },
+        {
+          "word": "urteil",
           "count": 1
         }
       ],

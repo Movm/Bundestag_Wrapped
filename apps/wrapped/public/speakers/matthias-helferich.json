@@ -11,23 +11,23 @@
   "minWords": 53,
   "maxWords": 572,
   "rankings": {
-    "speechRank": 335,
+    "speechRank": 316,
     "wordsRank": 516,
-    "partySpeechRank": 80,
+    "partySpeechRank": 72,
     "partyWordsRank": 118,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 46.5,
-    "verbosityRank": 534,
+    "percentile": 49.5,
+    "verbosityRank": 533,
     "verbosityTotal": 582,
-    "partyVerbosityRank": 139,
-    "longestSpeechRank": 529
+    "partyVerbosityRank": 138,
+    "longestSpeechRank": 528
   },
   "drama": {
     "interruptionsGiven": 4,
     "interruptionsReceived": 13,
-    "interrupterRank": 377,
-    "interruptedRank": 434
+    "interrupterRank": 374,
+    "interruptedRank": 423
   },
   "words": {
     "topWords": [
@@ -48,7 +48,7 @@
         "count": 9
       },
       {
-        "word": "hätte",
+        "word": "museum",
         "count": 7
       },
       {
@@ -56,7 +56,7 @@
         "count": 7
       },
       {
-        "word": "museum",
+        "word": "hätte",
         "count": 7
       },
       {
@@ -195,20 +195,20 @@
     "question": "Welches Wort nutzt Matthias Helferich häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
         "text": "Kassiererin",
         "isCorrect": true
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Kassiererin\" nutzt Matthias Helferich 1313.4× häufiger als der AfD-Durchschnitt.",
@@ -291,10 +291,6 @@
       ],
       "wirtschaft": [
         {
-          "word": "markt",
-          "count": 1
-        },
-        {
           "word": "konzerne",
           "count": 1
         },
@@ -305,11 +301,19 @@
         {
           "word": "werk",
           "count": 1
+        },
+        {
+          "word": "markt",
+          "count": 1
         }
       ],
       "soziales": [
         {
-          "word": "familie",
+          "word": "jugend",
+          "count": 1
+        },
+        {
+          "word": "kind",
           "count": 1
         },
         {
@@ -317,11 +321,7 @@
           "count": 1
         },
         {
-          "word": "jugend",
-          "count": 1
-        },
-        {
-          "word": "kind",
+          "word": "familie",
           "count": 1
         }
       ],
@@ -353,10 +353,6 @@
           "count": 1
         },
         {
-          "word": "brexit",
-          "count": 1
-        },
-        {
           "word": "europa",
           "count": 1
         },
@@ -366,6 +362,10 @@
         },
         {
           "word": "krieg",
+          "count": 1
+        },
+        {
+          "word": "brexit",
           "count": 1
         }
       ],
@@ -397,19 +397,19 @@
       ],
       "justiz": [
         {
-          "word": "verfassung",
-          "count": 1
-        },
-        {
-          "word": "straftaten",
-          "count": 1
-        },
-        {
           "word": "staatsanwalt",
           "count": 1
         },
         {
+          "word": "verfassung",
+          "count": 1
+        },
+        {
           "word": "justizministerium",
+          "count": 1
+        },
+        {
+          "word": "straftaten",
           "count": 1
         }
       ],

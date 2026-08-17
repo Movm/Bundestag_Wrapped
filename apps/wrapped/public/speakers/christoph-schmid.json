@@ -11,14 +11,14 @@
   "minWords": 34,
   "maxWords": 791,
   "rankings": {
-    "speechRank": 228,
+    "speechRank": 248,
     "wordsRank": 228,
-    "partySpeechRank": 48,
+    "partySpeechRank": 49,
     "partyWordsRank": 52,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 63.6,
-    "verbosityRank": 346,
+    "percentile": 60.4,
+    "verbosityRank": 348,
     "verbosityTotal": 582,
     "partyVerbosityRank": 77,
     "longestSpeechRank": 259
@@ -26,7 +26,7 @@
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 19,
-    "interrupterRank": 462,
+    "interrupterRank": 451,
     "interruptedRank": 353
   },
   "words": {
@@ -58,6 +58,10 @@
       {
         "word": "vier",
         "count": 14
+      },
+      {
+        "word": "infrastruktur",
+        "count": 12
       }
     ],
     "signatureWords": [
@@ -212,11 +216,11 @@
         "isCorrect": false
       },
       {
-        "text": "Migration",
+        "text": "Reform",
         "isCorrect": false
       },
       {
-        "text": "Gesellschaft",
+        "text": "Haushalt",
         "isCorrect": false
       }
     ],
@@ -227,20 +231,20 @@
     "question": "Welches Adjektiv nutzt Christoph Schmid häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Stark",
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
         "isCorrect": false
       },
       {
         "text": "Verantwortungsvoll",
         "isCorrect": true
-      },
-      {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Verantwortungsvoll\" nutzt Christoph Schmid 10.2× häufiger als der SPD-Durchschnitt.",
@@ -340,11 +344,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "integration",
+          "word": "migration",
           "count": 1
         },
         {
-          "word": "migration",
+          "word": "integration",
           "count": 1
         }
       ],
@@ -380,15 +384,15 @@
           "count": 2
         },
         {
-          "word": "mittelstand",
-          "count": 1
-        },
-        {
-          "word": "wirtschaftspolitik",
-          "count": 1
-        },
-        {
           "word": "wettbewerbsfähigkeit",
+          "count": 1
+        },
+        {
+          "word": "unternehmen",
+          "count": 1
+        },
+        {
+          "word": "mittelstand",
           "count": 1
         }
       ],
@@ -420,15 +424,15 @@
           "count": 8
         },
         {
+          "word": "polizisten",
+          "count": 1
+        },
+        {
           "word": "angriff",
           "count": 1
         },
         {
-          "word": "verteidigung",
-          "count": 1
-        },
-        {
-          "word": "polizisten",
+          "word": "terror",
           "count": 1
         }
       ],
@@ -476,7 +480,7 @@
           "count": 3
         },
         {
-          "word": "haushaltsausschuss",
+          "word": "finanzminister",
           "count": 2
         },
         {
@@ -490,6 +494,14 @@
       ],
       "justiz": [
         {
+          "word": "datenschutz",
+          "count": 1
+        },
+        {
+          "word": "rechtsstaatlichkeit",
+          "count": 1
+        },
+        {
           "word": "grundgesetz",
           "count": 1
         },
@@ -499,14 +511,6 @@
         },
         {
           "word": "diskriminierung",
-          "count": 1
-        },
-        {
-          "word": "datenschutz",
-          "count": 1
-        },
-        {
-          "word": "rechtsstaatlichkeit",
           "count": 1
         }
       ],

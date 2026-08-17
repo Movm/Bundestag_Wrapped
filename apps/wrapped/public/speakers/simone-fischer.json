@@ -11,13 +11,13 @@
   "minWords": 16,
   "maxWords": 558,
   "rankings": {
-    "speechRank": 277,
+    "speechRank": 270,
     "wordsRank": 370,
-    "partySpeechRank": 52,
+    "partySpeechRank": 50,
     "partyWordsRank": 63,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 55.8,
+    "percentile": 56.9,
     "verbosityRank": 455,
     "verbosityTotal": 582,
     "partyVerbosityRank": 54,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 10,
     "interruptionsReceived": 12,
-    "interrupterRank": 278,
-    "interruptedRank": 442
+    "interrupterRank": 276,
+    "interruptedRank": 439
   },
   "words": {
     "topWords": [
@@ -48,11 +48,11 @@
         "count": 22
       },
       {
-        "word": "verantwortung",
+        "word": "bundesregierung",
         "count": 21
       },
       {
-        "word": "bundesregierung",
+        "word": "verantwortung",
         "count": 21
       },
       {
@@ -275,10 +275,6 @@
     "question": "Welches Wort nutzt Simone Fischer häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
         "text": "Haushalt",
         "isCorrect": false
       },
@@ -287,7 +283,11 @@
         "isCorrect": true
       },
       {
-        "text": "Freiheit",
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Arbeit",
         "isCorrect": false
       }
     ],
@@ -298,19 +298,19 @@
     "question": "Welches Adjektiv nutzt Simone Fischer häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
         "text": "Solide",
         "isCorrect": true
       },
       {
-        "text": "Sicher",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
-        "text": "Notwendig",
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
         "isCorrect": false
       }
     ],
@@ -465,7 +465,7 @@
           "count": 3
         },
         {
-          "word": "gesundheitssystem",
+          "word": "krankenversicherung",
           "count": 1
         }
       ],
@@ -489,11 +489,11 @@
           "count": 2
         },
         {
-          "word": "qualifizierung",
+          "word": "professor",
           "count": 1
         },
         {
-          "word": "professor",
+          "word": "qualifizierung",
           "count": 1
         }
       ],
@@ -511,11 +511,11 @@
           "count": 5
         },
         {
-          "word": "defizit",
+          "word": "bundeshaushalt",
           "count": 3
         },
         {
-          "word": "bundeshaushalt",
+          "word": "defizit",
           "count": 3
         }
       ],
@@ -527,15 +527,15 @@
       ],
       "arbeit": [
         {
+          "word": "arbeitsplätze",
+          "count": 1
+        },
+        {
           "word": "beitragssatz",
           "count": 1
         },
         {
           "word": "einkommen",
-          "count": 1
-        },
-        {
-          "word": "arbeitsplätze",
           "count": 1
         }
       ]

@@ -11,13 +11,13 @@
   "minWords": 254,
   "maxWords": 621,
   "rankings": {
-    "speechRank": 375,
+    "speechRank": 371,
     "wordsRank": 312,
-    "partySpeechRank": 90,
+    "partySpeechRank": 87,
     "partyWordsRank": 67,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 40.1,
+    "percentile": 40.7,
     "verbosityRank": 330,
     "verbosityTotal": 582,
     "partyVerbosityRank": 84,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 20,
     "interruptionsReceived": 32,
-    "interrupterRank": 211,
-    "interruptedRank": 234
+    "interrupterRank": 213,
+    "interruptedRank": 233
   },
   "words": {
     "topWords": [
@@ -58,10 +58,6 @@
       {
         "word": "endlich",
         "count": 13
-      },
-      {
-        "word": "bundesregierung",
-        "count": 12
       }
     ],
     "signatureWords": [
@@ -231,20 +227,20 @@
     "question": "Welches Wort nutzt Thomas Stephan häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Politik",
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
         "text": "Frühstartrente",
         "isCorrect": true
-      },
-      {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Frühstartrente\" nutzt Thomas Stephan 160.9× häufiger als der AfD-Durchschnitt.",
@@ -254,19 +250,19 @@
     "question": "Welches Adjektiv nutzt Thomas Stephan häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
         "text": "Schlecht",
         "isCorrect": true
       },
       {
-        "text": "Stark",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
@@ -343,10 +339,6 @@
     "topicWords": {
       "migration": [
         {
-          "word": "schlepper",
-          "count": 1
-        },
-        {
           "word": "asyl",
           "count": 1
         },
@@ -360,6 +352,10 @@
         },
         {
           "word": "staatsangehörigkeit",
+          "count": 1
+        },
+        {
+          "word": "schlepper",
           "count": 1
         }
       ],
@@ -377,11 +373,11 @@
           "count": 2
         },
         {
-          "word": "betriebe",
+          "word": "freiberufler",
           "count": 1
         },
         {
-          "word": "freiberufler",
+          "word": "handel",
           "count": 1
         }
       ],
@@ -399,11 +395,11 @@
           "count": 7
         },
         {
-          "word": "armut",
+          "word": "grundsicherung",
           "count": 5
         },
         {
-          "word": "grundsicherung",
+          "word": "armut",
           "count": 5
         }
       ],
@@ -429,11 +425,11 @@
           "count": 3
         },
         {
-          "word": "europa",
+          "word": "frieden",
           "count": 2
         },
         {
-          "word": "frieden",
+          "word": "europa",
           "count": 2
         },
         {
@@ -457,11 +453,11 @@
           "count": 4
         },
         {
-          "word": "haushalt",
+          "word": "finanzierung",
           "count": 3
         },
         {
-          "word": "finanzierung",
+          "word": "haushalt",
           "count": 3
         },
         {
@@ -479,11 +475,11 @@
           "count": 2
         },
         {
-          "word": "menschenrechte",
+          "word": "novelle",
           "count": 1
         },
         {
-          "word": "novelle",
+          "word": "menschenrechte",
           "count": 1
         }
       ],

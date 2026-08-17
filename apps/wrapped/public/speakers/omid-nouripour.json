@@ -11,13 +11,13 @@
   "minWords": 22,
   "maxWords": 790,
   "rankings": {
-    "speechRank": 525,
+    "speechRank": 524,
     "wordsRank": 543,
     "partySpeechRank": 82,
     "partyWordsRank": 83,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 16.1,
+    "percentile": 16.3,
     "verbosityRank": 165,
     "verbosityTotal": 582,
     "partyVerbosityRank": 17,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 5,
     "interruptionsReceived": 2,
-    "interrupterRank": 354,
-    "interruptedRank": 590
+    "interrupterRank": 357,
+    "interruptedRank": 589
   },
   "words": {
     "topWords": [
@@ -52,10 +52,6 @@
         "count": 8
       },
       {
-        "word": "problem",
-        "count": 7
-      },
-      {
         "word": "worden",
         "count": 7
       },
@@ -64,7 +60,11 @@
         "count": 7
       },
       {
-        "word": "sicherheit",
+        "word": "problem",
+        "count": 7
+      },
+      {
+        "word": "passiert",
         "count": 6
       },
       {
@@ -195,20 +195,20 @@
     "question": "Welches Wort nutzt Omid Nouripour häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
         "text": "Teheran",
         "isCorrect": true
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Teheran\" nutzt Omid Nouripour 690.5× häufiger als der GRÜNE-Durchschnitt.",
@@ -349,7 +349,7 @@
           "count": 2
         },
         {
-          "word": "waffen",
+          "word": "verbrechen",
           "count": 1
         }
       ],
@@ -363,11 +363,11 @@
           "count": 3
         },
         {
-          "word": "außenminister",
+          "word": "frieden",
           "count": 3
         },
         {
-          "word": "frieden",
+          "word": "außenminister",
           "count": 3
         },
         {
@@ -403,11 +403,11 @@
           "count": 5
         },
         {
-          "word": "gericht",
+          "word": "haft",
           "count": 1
         },
         {
-          "word": "haft",
+          "word": "gericht",
           "count": 1
         }
       ],
@@ -419,15 +419,15 @@
       ],
       "mobilitaet": [
         {
+          "word": "straßen",
+          "count": 1
+        },
+        {
           "word": "auto",
           "count": 1
         },
         {
           "word": "infrastruktur",
-          "count": 1
-        },
-        {
-          "word": "straßen",
           "count": 1
         }
       ]

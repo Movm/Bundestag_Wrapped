@@ -13,21 +13,21 @@
   "rankings": {
     "speechRank": 182,
     "wordsRank": 317,
-    "partySpeechRank": 27,
+    "partySpeechRank": 26,
     "partyWordsRank": 36,
     "partySize": 63,
     "totalSpeakers": 626,
     "percentile": 70.9,
-    "verbosityRank": 471,
+    "verbosityRank": 472,
     "verbosityTotal": 582,
-    "partyVerbosityRank": 43,
-    "longestSpeechRank": 240
+    "partyVerbosityRank": 44,
+    "longestSpeechRank": 239
   },
   "drama": {
     "interruptionsGiven": 100,
     "interruptionsReceived": 31,
     "interrupterRank": 47,
-    "interruptedRank": 245
+    "interruptedRank": 236
   },
   "words": {
     "topWords": [
@@ -48,16 +48,20 @@
         "count": 17
       },
       {
-        "word": "arbeitsplätze",
+        "word": "land",
         "count": 15
       },
       {
-        "word": "land",
+        "word": "arbeitsplätze",
         "count": 15
       },
       {
         "word": "politik",
         "count": 13
+      },
+      {
+        "word": "unternehmen",
+        "count": 12
       }
     ],
     "signatureWords": [
@@ -227,20 +231,20 @@
     "question": "Welches Wort nutzt Mirze Edis häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Thyssenkrupp",
-        "isCorrect": true
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
+        "isCorrect": false
       },
       {
         "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Familie",
-        "isCorrect": false
+        "text": "Thyssenkrupp",
+        "isCorrect": true
       }
     ],
     "explanationParty": "\"Thyssenkrupp\" nutzt Mirze Edis 456.4× häufiger als der DIE LINKE-Durchschnitt.",
@@ -250,19 +254,19 @@
     "question": "Welches Adjektiv nutzt Mirze Edis häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
         "text": "Solidarisch",
         "isCorrect": true
       },
       {
-        "text": "Wichtig",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
         "isCorrect": false
       }
     ],
@@ -381,11 +385,11 @@
           "count": 7
         },
         {
-          "word": "energiewende",
+          "word": "energie",
           "count": 6
         },
         {
-          "word": "energie",
+          "word": "energiewende",
           "count": 6
         },
         {
@@ -535,11 +539,11 @@
       ],
       "justiz": [
         {
-          "word": "grundgesetz",
+          "word": "verteidiger",
           "count": 1
         },
         {
-          "word": "verteidiger",
+          "word": "grundgesetz",
           "count": 1
         }
       ],
@@ -553,15 +557,15 @@
           "count": 7
         },
         {
+          "word": "löhne",
+          "count": 4
+        },
+        {
           "word": "betriebsrat",
           "count": 4
         },
         {
           "word": "gewerkschaften",
-          "count": 4
-        },
-        {
-          "word": "löhne",
           "count": 4
         }
       ],

@@ -11,13 +11,13 @@
   "minWords": 575,
   "maxWords": 841,
   "rankings": {
-    "speechRank": 516,
+    "speechRank": 508,
     "wordsRank": 476,
-    "partySpeechRank": 167,
+    "partySpeechRank": 162,
     "partyWordsRank": 155,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 17.6,
+    "percentile": 18.8,
     "verbosityRank": 18,
     "verbosityTotal": 582,
     "partyVerbosityRank": 6,
@@ -27,14 +27,10 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 6,
     "interrupterRank": null,
-    "interruptedRank": 535
+    "interruptedRank": 533
   },
   "words": {
     "topWords": [
-      {
-        "word": "jahr",
-        "count": 13
-      },
       {
         "word": "wohnungen",
         "count": 13
@@ -44,8 +40,8 @@
         "count": 13
       },
       {
-        "word": "kommunen",
-        "count": 11
+        "word": "jahr",
+        "count": 13
       },
       {
         "word": "wichtig",
@@ -53,6 +49,10 @@
       },
       {
         "word": "menschen",
+        "count": 11
+      },
+      {
+        "word": "kommunen",
         "count": 11
       },
       {
@@ -221,20 +221,20 @@
     "question": "Welches Wort nutzt Axel Knoerig häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Steuern",
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
         "isCorrect": false
       },
       {
         "text": "Bauhaushalt",
         "isCorrect": true
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Bauhaushalt\" nutzt Axel Knoerig 2944.6× häufiger als der CDU/CSU-Durchschnitt.",
@@ -244,19 +244,19 @@
     "question": "Welches Adjektiv nutzt Axel Knoerig häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
         "text": "Entscheidend",
         "isCorrect": true
       },
       {
-        "text": "Richtig",
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
@@ -371,15 +371,15 @@
           "count": 4
         },
         {
-          "word": "markt",
-          "count": 1
-        },
-        {
           "word": "firmen",
           "count": 1
         },
         {
           "word": "industrie",
+          "count": 1
+        },
+        {
+          "word": "markt",
           "count": 1
         },
         {
@@ -437,19 +437,19 @@
           "count": 2
         },
         {
-          "word": "schulen",
-          "count": 1
-        },
-        {
           "word": "schule",
           "count": 1
         },
         {
-          "word": "auszubildende",
+          "word": "schulen",
           "count": 1
         },
         {
-          "word": "forschung",
+          "word": "student",
+          "count": 1
+        },
+        {
+          "word": "auszubildende",
           "count": 1
         }
       ],
@@ -463,7 +463,7 @@
           "count": 3
         },
         {
-          "word": "zinsen",
+          "word": "sondervermögen",
           "count": 2
         },
         {
@@ -471,7 +471,7 @@
           "count": 2
         },
         {
-          "word": "kosten",
+          "word": "zinsen",
           "count": 2
         }
       ],
@@ -491,15 +491,15 @@
           "count": 2
         },
         {
+          "word": "löhne",
+          "count": 1
+        },
+        {
           "word": "arbeitskräfte",
           "count": 1
         },
         {
           "word": "jobcenter",
-          "count": 1
-        },
-        {
-          "word": "löhne",
           "count": 1
         }
       ],

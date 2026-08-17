@@ -11,13 +11,13 @@
   "minWords": 695,
   "maxWords": 695,
   "rankings": {
-    "speechRank": 612,
+    "speechRank": 611,
     "wordsRank": 610,
     "partySpeechRank": 148,
     "partyWordsRank": 147,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 2.2,
+    "percentile": 2.4,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 4,
     "interrupterRank": null,
-    "interruptedRank": 569
+    "interruptedRank": 565
   },
   "words": {
     "topWords": [
@@ -154,7 +154,11 @@
     "question": "Welches Wort nutzt Matthias Moosdorf häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bundesregierung",
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Opposition",
         "isCorrect": false
       },
       {
@@ -163,10 +167,6 @@
       },
       {
         "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
         "isCorrect": false
       }
     ],

@@ -11,13 +11,13 @@
   "minWords": 42,
   "maxWords": 817,
   "rankings": {
-    "speechRank": 35,
+    "speechRank": 36,
     "wordsRank": 66,
-    "partySpeechRank": 5,
+    "partySpeechRank": 6,
     "partyWordsRank": 7,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 94.4,
+    "percentile": 94.2,
     "verbosityRank": 440,
     "verbosityTotal": 582,
     "partyVerbosityRank": 51,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 123,
     "interruptionsReceived": 67,
     "interrupterRank": 36,
-    "interruptedRank": 61
+    "interruptedRank": 63
   },
   "words": {
     "topWords": [
@@ -36,11 +36,11 @@
         "count": 34
       },
       {
-        "word": "land",
+        "word": "nord",
         "count": 31
       },
       {
-        "word": "nord",
+        "word": "land",
         "count": 31
       },
       {
@@ -60,11 +60,11 @@
         "count": 27
       },
       {
-        "word": "regierung",
+        "word": "sehen",
         "count": 26
       },
       {
-        "word": "sehen",
+        "word": "regierung",
         "count": 26
       }
     ],
@@ -88,16 +88,16 @@
         "ratioBundestag": 73.7
       },
       {
-        "word": "batteriespeicher",
-        "count": 6,
-        "ratioParty": 98.4,
-        "ratioBundestag": 109.6
-      },
-      {
         "word": "einseitige",
         "count": 6,
         "ratioParty": 98.4,
         "ratioBundestag": 46.3
+      },
+      {
+        "word": "batteriespeicher",
+        "count": 6,
+        "ratioParty": 98.4,
+        "ratioBundestag": 109.6
       }
     ],
     "signatureWordsParty": [
@@ -114,13 +114,13 @@
         "ratio": 147.6
       },
       {
-        "word": "batteriespeicher",
+        "word": "einseitige",
         "count": 6,
         "score": 27.59,
         "ratio": 98.4
       },
       {
-        "word": "einseitige",
+        "word": "batteriespeicher",
         "count": 6,
         "score": 27.59,
         "ratio": 98.4
@@ -249,11 +249,6 @@
       "value": "123"
     },
     {
-      "emoji": "🥇",
-      "label": "Rang in GRÜNE",
-      "value": "#5 von 86"
-    },
-    {
       "emoji": "📊",
       "label": "Top-Redner",
       "value": "Top 6%"
@@ -263,20 +258,20 @@
     "question": "Welches Wort nutzt Michael Kellner häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
+        "text": "Migration",
         "isCorrect": false
       },
       {
         "text": "Firma",
         "isCorrect": true
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Firma\" nutzt Michael Kellner 147.6× häufiger als der GRÜNE-Durchschnitt.",
@@ -286,19 +281,19 @@
     "question": "Welches Adjektiv nutzt Michael Kellner häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Alt",
-        "isCorrect": false
+        "text": "Falsch",
+        "isCorrect": true
       },
       {
         "text": "Sicher",
         "isCorrect": false
       },
       {
-        "text": "Falsch",
-        "isCorrect": true
+        "text": "Wirtschaftlich",
+        "isCorrect": false
       },
       {
-        "text": "Neu",
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
@@ -425,7 +420,7 @@
           "count": 8
         },
         {
-          "word": "solaranlage",
+          "word": "wärmepumpe",
           "count": 6
         }
       ],
@@ -443,11 +438,11 @@
           "count": 10
         },
         {
-          "word": "mittelstand",
+          "word": "firma",
           "count": 6
         },
         {
-          "word": "firma",
+          "word": "mittelstand",
           "count": 6
         }
       ],
@@ -461,11 +456,11 @@
           "count": 1
         },
         {
-          "word": "familie",
+          "word": "kinder",
           "count": 1
         },
         {
-          "word": "kinder",
+          "word": "familie",
           "count": 1
         }
       ],
@@ -487,11 +482,11 @@
       ],
       "europa": [
         {
-          "word": "bündnis",
+          "word": "brüssel",
           "count": 7
         },
         {
-          "word": "brüssel",
+          "word": "bündnis",
           "count": 7
         },
         {
@@ -523,29 +518,29 @@
       ],
       "bildung": [
         {
-          "word": "bafög",
-          "count": 1
-        },
-        {
           "word": "wissenschaft",
           "count": 1
         },
         {
-          "word": "schulen",
+          "word": "bafög",
           "count": 1
         },
         {
           "word": "professorin",
           "count": 1
+        },
+        {
+          "word": "schulen",
+          "count": 1
         }
       ],
       "finanzen": [
         {
-          "word": "haushaltsentwurf",
+          "word": "steuerzahler",
           "count": 4
         },
         {
-          "word": "steuerzahler",
+          "word": "haushaltsentwurf",
           "count": 4
         },
         {
@@ -553,11 +548,11 @@
           "count": 3
         },
         {
-          "word": "investitionen",
+          "word": "kosten",
           "count": 3
         },
         {
-          "word": "kosten",
+          "word": "investitionen",
           "count": 3
         }
       ],
@@ -567,11 +562,11 @@
           "count": 2
         },
         {
-          "word": "anwälte",
+          "word": "grundgesetz",
           "count": 1
         },
         {
-          "word": "grundgesetz",
+          "word": "anwälte",
           "count": 1
         }
       ],
@@ -611,7 +606,7 @@
           "count": 5
         },
         {
-          "word": "tempolimit",
+          "word": "straße",
           "count": 2
         },
         {

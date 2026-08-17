@@ -11,23 +11,23 @@
   "minWords": 134,
   "maxWords": 591,
   "rankings": {
-    "speechRank": 166,
+    "speechRank": 169,
     "wordsRank": 297,
-    "partySpeechRank": 35,
+    "partySpeechRank": 39,
     "partyWordsRank": 88,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 73.5,
-    "verbosityRank": 407,
+    "percentile": 73.0,
+    "verbosityRank": 408,
     "verbosityTotal": 582,
     "partyVerbosityRank": 142,
-    "longestSpeechRank": 509
+    "longestSpeechRank": 508
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 34,
-    "interrupterRank": 410,
-    "interruptedRank": 213
+    "interrupterRank": 402,
+    "interruptedRank": 215
   },
   "words": {
     "topWords": [
@@ -36,15 +36,15 @@
         "count": 27
       },
       {
-        "word": "grünen",
-        "count": 16
-      },
-      {
         "word": "dies",
         "count": 16
       },
       {
         "word": "gesetz",
+        "count": 16
+      },
+      {
+        "word": "grünen",
         "count": 16
       },
       {
@@ -250,20 +250,20 @@
     "question": "Welches Wort nutzt Günter Baumgartner häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Klima",
+        "text": "Migration",
         "isCorrect": false
       },
       {
-        "text": "Familie",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
         "text": "Ehrenamtlicher",
         "isCorrect": true
+      },
+      {
+        "text": "Haushalt",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Ehrenamtlicher\" nutzt Günter Baumgartner 285.6× häufiger als der CDU/CSU-Durchschnitt.",
@@ -273,19 +273,19 @@
     "question": "Welches Adjektiv nutzt Günter Baumgartner häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
+        "isCorrect": false
+      },
+      {
         "text": "Ideologisch",
         "isCorrect": true
       },
       {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
         "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Wichtig",
         "isCorrect": false
       }
     ],
@@ -394,11 +394,11 @@
           "count": 1
         },
         {
-          "word": "energie",
+          "word": "emissionen",
           "count": 1
         },
         {
-          "word": "emissionen",
+          "word": "energie",
           "count": 1
         },
         {
@@ -430,14 +430,6 @@
       ],
       "soziales": [
         {
-          "word": "gerechtigkeit",
-          "count": 1
-        },
-        {
-          "word": "wohnungen",
-          "count": 1
-        },
-        {
           "word": "rente",
           "count": 1
         },
@@ -446,7 +438,15 @@
           "count": 1
         },
         {
+          "word": "gerechtigkeit",
+          "count": 1
+        },
+        {
           "word": "familien",
+          "count": 1
+        },
+        {
+          "word": "wohnungen",
           "count": 1
         }
       ],
@@ -462,11 +462,11 @@
           "count": 2
         },
         {
-          "word": "brüssel",
+          "word": "bündnis",
           "count": 1
         },
         {
-          "word": "bündnis",
+          "word": "brüssel",
           "count": 1
         }
       ],
@@ -486,15 +486,15 @@
       ],
       "bildung": [
         {
-          "word": "forschung",
-          "count": 2
-        },
-        {
           "word": "schulen",
           "count": 2
         },
         {
           "word": "kindergarten",
+          "count": 2
+        },
+        {
+          "word": "forschung",
           "count": 2
         },
         {
@@ -520,7 +520,7 @@
           "count": 2
         },
         {
-          "word": "finanzierung",
+          "word": "entlastung",
           "count": 1
         },
         {
@@ -548,15 +548,15 @@
       ],
       "arbeit": [
         {
-          "word": "gewerkschaften",
-          "count": 1
-        },
-        {
           "word": "einkommen",
           "count": 1
         },
         {
           "word": "arbeitsplätze",
+          "count": 1
+        },
+        {
+          "word": "gewerkschaften",
           "count": 1
         }
       ],

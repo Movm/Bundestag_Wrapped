@@ -11,23 +11,23 @@
   "minWords": 31,
   "maxWords": 835,
   "rankings": {
-    "speechRank": 299,
+    "speechRank": 291,
     "wordsRank": 294,
-    "partySpeechRank": 58,
+    "partySpeechRank": 55,
     "partyWordsRank": 63,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 52.2,
-    "verbosityRank": 162,
+    "percentile": 53.5,
+    "verbosityRank": 163,
     "verbosityTotal": 582,
     "partyVerbosityRank": 38,
-    "longestSpeechRank": 199
+    "longestSpeechRank": 198
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 10,
     "interrupterRank": null,
-    "interruptedRank": 475
+    "interruptedRank": 470
   },
   "words": {
     "topWords": [
@@ -48,12 +48,16 @@
         "count": 16
       },
       {
+        "word": "haushalt",
+        "count": 15
+      },
+      {
         "word": "glaube",
         "count": 15
       },
       {
-        "word": "haushalt",
-        "count": 15
+        "word": "finde",
+        "count": 14
       },
       {
         "word": "regierungsentwurf",
@@ -64,11 +68,7 @@
         "count": 14
       },
       {
-        "word": "finde",
-        "count": 14
-      },
-      {
-        "word": "infrastruktur",
+        "word": "beim",
         "count": 13
       }
     ],
@@ -234,11 +234,7 @@
     "question": "Welches Wort nutzt Martin Gerster häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
+        "text": "Minister",
         "isCorrect": false
       },
       {
@@ -246,7 +242,11 @@
         "isCorrect": true
       },
       {
-        "text": "Koalition",
+        "text": "Debatte",
+        "isCorrect": false
+      },
+      {
+        "text": "Kinder",
         "isCorrect": false
       }
     ],
@@ -257,19 +257,19 @@
     "question": "Welches Adjektiv nutzt Martin Gerster häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
         "text": "Entscheidend",
         "isCorrect": true
       },
       {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
@@ -384,11 +384,11 @@
           "count": 3
         },
         {
-          "word": "nachhaltig",
+          "word": "umweltschutz",
           "count": 1
         },
         {
-          "word": "umweltschutz",
+          "word": "nachhaltig",
           "count": 1
         }
       ],
@@ -416,25 +416,21 @@
           "count": 2
         },
         {
-          "word": "verteidigung",
+          "word": "extremismus",
           "count": 2
         },
         {
-          "word": "extremismus",
+          "word": "angriff",
           "count": 2
         }
       ],
       "europa": [
         {
-          "word": "china",
-          "count": 1
-        },
-        {
-          "word": "kooperation",
-          "count": 1
-        },
-        {
           "word": "weltbank",
+          "count": 1
+        },
+        {
+          "word": "frieden",
           "count": 1
         },
         {
@@ -442,7 +438,11 @@
           "count": 1
         },
         {
-          "word": "frieden",
+          "word": "china",
+          "count": 1
+        },
+        {
+          "word": "kooperation",
           "count": 1
         }
       ],
@@ -492,15 +492,15 @@
           "count": 15
         },
         {
-          "word": "haushaltsausschuss",
-          "count": 10
-        },
-        {
           "word": "etat",
           "count": 10
         },
         {
-          "word": "sondervermögen",
+          "word": "haushaltsausschuss",
+          "count": 10
+        },
+        {
+          "word": "schuldenbremse",
           "count": 9
         }
       ],
@@ -520,11 +520,11 @@
           "count": 3
         },
         {
-          "word": "gewerkschaft",
+          "word": "mindestlohn",
           "count": 1
         },
         {
-          "word": "mindestlohn",
+          "word": "gewerkschaft",
           "count": 1
         }
       ],
@@ -534,11 +534,11 @@
           "count": 13
         },
         {
-          "word": "bahn",
+          "word": "schiene",
           "count": 1
         },
         {
-          "word": "bahnstrecke",
+          "word": "straße",
           "count": 1
         },
         {
@@ -546,7 +546,7 @@
           "count": 1
         },
         {
-          "word": "schiene",
+          "word": "bahn",
           "count": 1
         }
       ]

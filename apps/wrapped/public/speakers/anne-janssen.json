@@ -11,14 +11,14 @@
   "minWords": 316,
   "maxWords": 497,
   "rankings": {
-    "speechRank": 411,
+    "speechRank": 397,
     "wordsRank": 474,
-    "partySpeechRank": 118,
+    "partySpeechRank": 111,
     "partyWordsRank": 154,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 34.3,
-    "verbosityRank": 348,
+    "percentile": 36.6,
+    "verbosityRank": 347,
     "verbosityTotal": 582,
     "partyVerbosityRank": 124,
     "longestSpeechRank": 578
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 2,
     "interrupterRank": null,
-    "interruptedRank": 584
+    "interruptedRank": 587
   },
   "words": {
     "topWords": [
@@ -45,6 +45,10 @@
       },
       {
         "word": "debatte",
+        "count": 7
+      },
+      {
+        "word": "infrastruktur",
         "count": 7
       }
     ],
@@ -210,6 +214,10 @@
     "question": "Welches Wort nutzt Anne Janssen häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
         "text": "Rente",
         "isCorrect": false
       },
@@ -220,10 +228,6 @@
       {
         "text": "Ambulanten",
         "isCorrect": true
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Ambulanten\" nutzt Anne Janssen 250.3× häufiger als der CDU/CSU-Durchschnitt.",
@@ -233,20 +237,20 @@
     "question": "Welches Adjektiv nutzt Anne Janssen häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Klar",
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
         "isCorrect": false
       },
       {
         "text": "Verantwortungsvoll",
         "isCorrect": true
-      },
-      {
-        "text": "Alt",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Verantwortungsvoll\" nutzt Anne Janssen 26.0× häufiger als der CDU/CSU-Durchschnitt.",
@@ -346,7 +350,7 @@
     "topicWords": {
       "wirtschaft": [
         {
-          "word": "gründer",
+          "word": "insolvenzen",
           "count": 1
         },
         {
@@ -354,7 +358,7 @@
           "count": 1
         },
         {
-          "word": "insolvenzen",
+          "word": "gründer",
           "count": 1
         }
       ],
@@ -392,7 +396,7 @@
           "count": 4
         },
         {
-          "word": "ärzte",
+          "word": "pflegekraft",
           "count": 2
         }
       ],
@@ -408,11 +412,11 @@
       ],
       "digital": [
         {
-          "word": "digitalisierung",
+          "word": "netz",
           "count": 1
         },
         {
-          "word": "netz",
+          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -440,6 +444,10 @@
       ],
       "finanzen": [
         {
+          "word": "kosten",
+          "count": 1
+        },
+        {
           "word": "finanzierung",
           "count": 1
         },
@@ -453,10 +461,6 @@
         },
         {
           "word": "entlastung",
-          "count": 1
-        },
-        {
-          "word": "kosten",
           "count": 1
         }
       ],

@@ -11,13 +11,13 @@
   "minWords": 10,
   "maxWords": 1546,
   "rankings": {
-    "speechRank": 206,
+    "speechRank": 198,
     "wordsRank": 142,
-    "partySpeechRank": 44,
+    "partySpeechRank": 42,
     "partyWordsRank": 30,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 67.1,
+    "percentile": 68.4,
     "verbosityRank": 61,
     "verbosityTotal": 582,
     "partyVerbosityRank": 15,
@@ -56,15 +56,15 @@
         "count": 23
       },
       {
-        "word": "migranten",
-        "count": 22
-      },
-      {
         "word": "links",
         "count": 22
       },
       {
         "word": "weiter",
+        "count": 22
+      },
+      {
+        "word": "migranten",
         "count": 22
       },
       {
@@ -257,11 +257,7 @@
     "question": "Welches Wort nutzt Dr. Bernd Baumann häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Freiheit",
+        "text": "Minister",
         "isCorrect": false
       },
       {
@@ -269,7 +265,11 @@
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
@@ -280,19 +280,19 @@
     "question": "Welches Adjektiv nutzt Dr. Bernd Baumann häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
         "text": "Unfassbar",
         "isCorrect": true
       },
       {
-        "text": "Jung",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaftlich",
+        "text": "Notwendig",
         "isCorrect": false
       }
     ],
@@ -399,15 +399,19 @@
           "count": 1
         },
         {
-          "word": "klimapolitik",
+          "word": "klimaneutralität",
           "count": 1
         },
         {
-          "word": "klimaneutralität",
+          "word": "klimapolitik",
           "count": 1
         }
       ],
       "wirtschaft": [
+        {
+          "word": "industrie",
+          "count": 2
+        },
         {
           "word": "unternehmen",
           "count": 2
@@ -417,15 +421,11 @@
           "count": 2
         },
         {
-          "word": "industrie",
-          "count": 2
-        },
-        {
-          "word": "qualifikation",
+          "word": "wirtschaft",
           "count": 1
         },
         {
-          "word": "kartell",
+          "word": "wettbewerb",
           "count": 1
         }
       ],
@@ -439,11 +439,11 @@
           "count": 3
         },
         {
-          "word": "familie",
+          "word": "kinder",
           "count": 2
         },
         {
-          "word": "kinder",
+          "word": "familie",
           "count": 2
         },
         {
@@ -507,11 +507,11 @@
       ],
       "bildung": [
         {
-          "word": "schulen",
+          "word": "wissenschaft",
           "count": 1
         },
         {
-          "word": "wissenschaft",
+          "word": "schulen",
           "count": 1
         }
       ],
@@ -525,33 +525,33 @@
           "count": 2
         },
         {
+          "word": "schuldenbremse",
+          "count": 1
+        },
+        {
           "word": "neuverschuldung",
           "count": 1
         },
         {
-          "word": "konjunkturprogramm",
-          "count": 1
-        },
-        {
-          "word": "haushalt",
+          "word": "banken",
           "count": 1
         }
       ],
       "justiz": [
         {
-          "word": "richterin",
-          "count": 2
-        },
-        {
           "word": "gericht",
           "count": 2
         },
         {
-          "word": "richter",
+          "word": "richterin",
           "count": 2
         },
         {
           "word": "grundgesetz",
+          "count": 2
+        },
+        {
+          "word": "richter",
           "count": 2
         },
         {
@@ -561,11 +561,11 @@
       ],
       "arbeit": [
         {
-          "word": "gewerkschaft",
+          "word": "gehalt",
           "count": 1
         },
         {
-          "word": "gehalt",
+          "word": "gewerkschaft",
           "count": 1
         }
       ],

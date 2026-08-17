@@ -26,7 +26,7 @@
   "drama": {
     "interruptionsGiven": 44,
     "interruptionsReceived": 65,
-    "interrupterRank": 122,
+    "interrupterRank": 124,
     "interruptedRank": 67
   },
   "words": {
@@ -54,16 +54,16 @@
         "ratioBundestag": 154.2
       },
       {
-        "word": "sicherheitsstrategie",
-        "count": 5,
-        "ratioParty": 72.6,
-        "ratioBundestag": 37.6
-      },
-      {
         "word": "bundespolizisten",
         "count": 5,
         "ratioParty": 72.6,
         "ratioBundestag": 48.2
+      },
+      {
+        "word": "sicherheitsstrategie",
+        "count": 5,
+        "ratioParty": 72.6,
+        "ratioBundestag": 37.6
       },
       {
         "word": "rechtsbruch",
@@ -86,13 +86,13 @@
         "ratio": 109.0
       },
       {
-        "word": "sicherheitsstrategie",
+        "word": "bundespolizisten",
         "count": 5,
         "score": 21.49,
         "ratio": 72.6
       },
       {
-        "word": "bundespolizisten",
+        "word": "sicherheitsstrategie",
         "count": 5,
         "score": 21.49,
         "ratio": 72.6
@@ -271,19 +271,19 @@
     "question": "Welches Wort nutzt Marcel Emmerich häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bürger",
-        "isCorrect": false
+        "text": "Rechtswidrigen",
+        "isCorrect": true
       },
       {
         "text": "Zukunft",
         "isCorrect": false
       },
       {
-        "text": "Rechtswidrigen",
-        "isCorrect": true
+        "text": "Debatte",
+        "isCorrect": false
       },
       {
-        "text": "Fraktion",
+        "text": "Gesellschaft",
         "isCorrect": false
       }
     ],
@@ -294,19 +294,19 @@
     "question": "Welches Adjektiv nutzt Marcel Emmerich häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
         "text": "Fatal",
         "isCorrect": true
       },
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
         "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
         "isCorrect": false
       }
     ],
@@ -411,11 +411,11 @@
           "count": 7
         },
         {
-          "word": "grenzkontrollen",
+          "word": "migration",
           "count": 6
         },
         {
-          "word": "migration",
+          "word": "grenzkontrollen",
           "count": 6
         },
         {
@@ -429,11 +429,11 @@
       ],
       "klima": [
         {
-          "word": "stromnetz",
+          "word": "kohle",
           "count": 1
         },
         {
-          "word": "kohle",
+          "word": "stromnetz",
           "count": 1
         }
       ],
@@ -469,15 +469,15 @@
           "count": 5
         },
         {
-          "word": "kinder",
-          "count": 2
-        },
-        {
           "word": "jugend",
           "count": 2
         },
         {
-          "word": "fürsorge",
+          "word": "kinder",
+          "count": 2
+        },
+        {
+          "word": "eltern",
           "count": 1
         }
       ],
@@ -517,11 +517,11 @@
           "count": 1
         },
         {
-          "word": "rezept",
+          "word": "krankheit",
           "count": 1
         },
         {
-          "word": "krankheit",
+          "word": "kliniken",
           "count": 1
         }
       ],
@@ -535,15 +535,15 @@
           "count": 3
         },
         {
-          "word": "außenpolitik",
-          "count": 2
-        },
-        {
           "word": "außenminister",
           "count": 2
         },
         {
-          "word": "frieden",
+          "word": "außenpolitik",
+          "count": 2
+        },
+        {
+          "word": "kooperation",
           "count": 1
         }
       ],
@@ -575,15 +575,15 @@
           "count": 2
         },
         {
+          "word": "volkshochschule",
+          "count": 1
+        },
+        {
           "word": "bildung",
           "count": 1
         },
         {
           "word": "fortbildung",
-          "count": 1
-        },
-        {
-          "word": "volkshochschule",
           "count": 1
         }
       ],
@@ -591,10 +591,6 @@
         {
           "word": "kosten",
           "count": 3
-        },
-        {
-          "word": "schulden",
-          "count": 2
         },
         {
           "word": "haushalt",
@@ -605,7 +601,11 @@
           "count": 2
         },
         {
-          "word": "steuerzahler",
+          "word": "schulden",
+          "count": 2
+        },
+        {
+          "word": "investition",
           "count": 1
         }
       ],
@@ -623,21 +623,21 @@
           "count": 6
         },
         {
-          "word": "richter",
+          "word": "gericht",
           "count": 5
         },
         {
-          "word": "gericht",
+          "word": "richter",
           "count": 5
         }
       ],
       "arbeit": [
         {
-          "word": "gehalt",
+          "word": "überstunden",
           "count": 1
         },
         {
-          "word": "überstunden",
+          "word": "gehalt",
           "count": 1
         }
       ],

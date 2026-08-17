@@ -11,13 +11,13 @@
   "minWords": 51,
   "maxWords": 562,
   "rankings": {
-    "speechRank": 192,
+    "speechRank": 189,
     "wordsRank": 307,
     "partySpeechRank": 37,
     "partyWordsRank": 52,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 69.3,
+    "percentile": 69.8,
     "verbosityRank": 430,
     "verbosityTotal": 582,
     "partyVerbosityRank": 49,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 170,
     "interruptionsReceived": 23,
     "interrupterRank": 23,
-    "interruptedRank": 314
+    "interruptedRank": 309
   },
   "words": {
     "topWords": [
@@ -257,19 +257,19 @@
     "question": "Welches Wort nutzt Stefan Schmidt häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
         "text": "Überschuldung",
         "isCorrect": true
       },
       {
-        "text": "Politik",
+        "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
+        "text": "Reform",
         "isCorrect": false
       }
     ],
@@ -280,19 +280,19 @@
     "question": "Welches Adjektiv nutzt Stefan Schmidt häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
         "text": "Sozial",
         "isCorrect": true
       },
       {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
+        "text": "Wichtig",
         "isCorrect": false
       }
     ],
@@ -403,11 +403,11 @@
           "count": 3
         },
         {
-          "word": "klimakrise",
+          "word": "klimaneutralität",
           "count": 2
         },
         {
-          "word": "klimaneutralität",
+          "word": "klimakrise",
           "count": 2
         },
         {
@@ -501,11 +501,11 @@
           "count": 8
         },
         {
-          "word": "kosten",
+          "word": "mehrwertsteuer",
           "count": 4
         },
         {
-          "word": "mehrwertsteuer",
+          "word": "kosten",
           "count": 4
         },
         {
@@ -537,21 +537,25 @@
           "count": 6
         },
         {
+          "word": "mindestlohn",
+          "count": 1
+        },
+        {
           "word": "vollzeit",
           "count": 1
         },
         {
           "word": "arbeitslosigkeit",
           "count": 1
-        },
-        {
-          "word": "mindestlohn",
-          "count": 1
         }
       ],
       "mobilitaet": [
         {
           "word": "bahn",
+          "count": 2
+        },
+        {
+          "word": "infrastruktur",
           "count": 2
         },
         {
@@ -563,11 +567,7 @@
           "count": 2
         },
         {
-          "word": "infrastruktur",
-          "count": 2
-        },
-        {
-          "word": "führerschein",
+          "word": "radweg",
           "count": 1
         }
       ]

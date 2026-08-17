@@ -18,16 +18,16 @@
     "partySize": 114,
     "totalSpeakers": 626,
     "percentile": 99.4,
-    "verbosityRank": 142,
+    "verbosityRank": 141,
     "verbosityTotal": 582,
     "partyVerbosityRank": 34,
-    "longestSpeechRank": 179
+    "longestSpeechRank": 180
   },
   "drama": {
     "interruptionsGiven": 16,
     "interruptionsReceived": 158,
-    "interrupterRank": 231,
-    "interruptedRank": 7
+    "interrupterRank": 230,
+    "interruptedRank": 8
   },
   "words": {
     "topWords": [
@@ -64,16 +64,16 @@
         "ratioBundestag": 59.5
       },
       {
-        "word": "linksextremismus",
-        "count": 5,
-        "ratioParty": 196.0,
-        "ratioBundestag": 11.9
-      },
-      {
         "word": "drößler",
         "count": 5,
         "ratioParty": 196.0,
         "ratioBundestag": 165.2
+      },
+      {
+        "word": "linksextremismus",
+        "count": 5,
+        "ratioParty": 196.0,
+        "ratioBundestag": 11.9
       }
     ],
     "signatureWordsParty": [
@@ -96,13 +96,13 @@
         "ratio": 235.2
       },
       {
-        "word": "linksextremismus",
+        "word": "drößler",
         "count": 5,
         "score": 26.42,
         "ratio": 196.0
       },
       {
-        "word": "drößler",
+        "word": "linksextremismus",
         "count": 5,
         "score": 26.42,
         "ratio": 196.0
@@ -275,20 +275,20 @@
     "question": "Welches Wort nutzt Helge Lindh häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Sicherheit",
+        "text": "Haushalt",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
+        "text": "Minister",
         "isCorrect": false
       },
       {
         "text": "Herrschaft",
         "isCorrect": true
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Herrschaft\" nutzt Helge Lindh 313.6× häufiger als der SPD-Durchschnitt.",
@@ -298,11 +298,7 @@
     "question": "Welches Adjektiv nutzt Helge Lindh häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
@@ -310,7 +306,11 @@
         "isCorrect": true
       },
       {
-        "text": "Falsch",
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
         "isCorrect": false
       }
     ],
@@ -443,10 +443,6 @@
           "count": 3
         },
         {
-          "word": "unternehmertum",
-          "count": 1
-        },
-        {
           "word": "produktion",
           "count": 1
         },
@@ -455,7 +451,11 @@
           "count": 1
         },
         {
-          "word": "werk",
+          "word": "unternehmertum",
+          "count": 1
+        },
+        {
+          "word": "unternehmen",
           "count": 1
         }
       ],
@@ -477,7 +477,7 @@
           "count": 4
         },
         {
-          "word": "familien",
+          "word": "gerechtigkeit",
           "count": 3
         }
       ],
@@ -495,11 +495,11 @@
           "count": 9
         },
         {
-          "word": "extremismus",
+          "word": "verbrechen",
           "count": 6
         },
         {
-          "word": "verbrechen",
+          "word": "extremismus",
           "count": 6
         }
       ],
@@ -509,15 +509,15 @@
           "count": 7
         },
         {
+          "word": "operation",
+          "count": 1
+        },
+        {
           "word": "krankheit",
           "count": 1
         },
         {
           "word": "kranke",
-          "count": 1
-        },
-        {
-          "word": "operation",
           "count": 1
         },
         {
@@ -531,19 +531,19 @@
           "count": 6
         },
         {
-          "word": "putin",
-          "count": 5
-        },
-        {
           "word": "europa",
           "count": 5
         },
         {
-          "word": "sanktionen",
+          "word": "putin",
+          "count": 5
+        },
+        {
+          "word": "iran",
           "count": 2
         },
         {
-          "word": "krieg",
+          "word": "israel",
           "count": 2
         }
       ],
@@ -571,10 +571,6 @@
       ],
       "bildung": [
         {
-          "word": "schüler",
-          "count": 2
-        },
-        {
           "word": "schule",
           "count": 2
         },
@@ -583,11 +579,15 @@
           "count": 2
         },
         {
+          "word": "schüler",
+          "count": 2
+        },
+        {
           "word": "meister",
           "count": 1
         },
         {
-          "word": "bildung",
+          "word": "professor",
           "count": 1
         }
       ],
@@ -605,11 +605,11 @@
           "count": 3
         },
         {
-          "word": "steuern",
+          "word": "bank",
           "count": 1
         },
         {
-          "word": "bank",
+          "word": "steuern",
           "count": 1
         }
       ],
@@ -627,11 +627,11 @@
           "count": 6
         },
         {
-          "word": "diskriminierung",
+          "word": "strafverfolgung",
           "count": 4
         },
         {
-          "word": "strafverfolgung",
+          "word": "diskriminierung",
           "count": 4
         }
       ],

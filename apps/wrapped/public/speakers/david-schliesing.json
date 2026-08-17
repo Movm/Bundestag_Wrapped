@@ -11,14 +11,14 @@
   "minWords": 254,
   "maxWords": 752,
   "rankings": {
-    "speechRank": 229,
+    "speechRank": 227,
     "wordsRank": 246,
-    "partySpeechRank": 33,
+    "partySpeechRank": 34,
     "partyWordsRank": 28,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 63.4,
-    "verbosityRank": 280,
+    "percentile": 63.7,
+    "verbosityRank": 279,
     "verbosityTotal": 582,
     "partyVerbosityRank": 18,
     "longestSpeechRank": 307
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 10,
     "interruptionsReceived": 34,
-    "interrupterRank": 275,
-    "interruptedRank": 212
+    "interrupterRank": 274,
+    "interruptedRank": 209
   },
   "words": {
     "topWords": [
@@ -36,11 +36,11 @@
         "count": 27
       },
       {
-        "word": "rechtlichen",
+        "word": "kultur",
         "count": 18
       },
       {
-        "word": "kultur",
+        "word": "rechtlichen",
         "count": 18
       },
       {
@@ -245,20 +245,20 @@
     "question": "Welches Wort nutzt David Schliesing häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetz",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
+        "text": "Rente",
         "isCorrect": false
       },
       {
         "text": "Rundfunk",
         "isCorrect": true
+      },
+      {
+        "text": "Bundesregierung",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Rundfunk\" nutzt David Schliesing 729.2× häufiger als der DIE LINKE-Durchschnitt.",
@@ -268,7 +268,11 @@
     "question": "Welches Adjektiv nutzt David Schliesing häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Schlecht",
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
@@ -276,11 +280,7 @@
         "isCorrect": true
       },
       {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
+        "text": "Wichtig",
         "isCorrect": false
       }
     ],
@@ -439,7 +439,7 @@
           "count": 2
         },
         {
-          "word": "jugendliche",
+          "word": "familie",
           "count": 1
         }
       ],
@@ -447,10 +447,6 @@
         {
           "word": "verbrechen",
           "count": 5
-        },
-        {
-          "word": "gewalt",
-          "count": 2
         },
         {
           "word": "angriff",
@@ -461,11 +457,19 @@
           "count": 2
         },
         {
-          "word": "betrug",
+          "word": "gewalt",
+          "count": 2
+        },
+        {
+          "word": "diebstahl",
           "count": 1
         }
       ],
       "europa": [
+        {
+          "word": "bündnis",
+          "count": 2
+        },
         {
           "word": "europa",
           "count": 2
@@ -475,11 +479,7 @@
           "count": 2
         },
         {
-          "word": "bündnis",
-          "count": 2
-        },
-        {
-          "word": "frieden",
+          "word": "putin",
           "count": 1
         },
         {
@@ -493,6 +493,10 @@
           "count": 12
         },
         {
+          "word": "plattform",
+          "count": 2
+        },
+        {
           "word": "plattformen",
           "count": 2
         },
@@ -502,10 +506,6 @@
         },
         {
           "word": "desinformation",
-          "count": 2
-        },
-        {
-          "word": "plattform",
           "count": 2
         }
       ],
@@ -537,25 +537,25 @@
           "count": 2
         },
         {
-          "word": "steuern",
+          "word": "etat",
           "count": 1
         },
         {
-          "word": "steuerhinterziehung",
+          "word": "steuern",
           "count": 1
         }
       ],
       "justiz": [
+        {
+          "word": "grundgesetz",
+          "count": 3
+        },
         {
           "word": "verfassungswidrig",
           "count": 3
         },
         {
           "word": "verfassung",
-          "count": 3
-        },
-        {
-          "word": "grundgesetz",
           "count": 3
         },
         {
