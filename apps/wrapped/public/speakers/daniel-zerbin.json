@@ -11,13 +11,13 @@
   "minWords": 88,
   "maxWords": 569,
   "rankings": {
-    "speechRank": 267,
+    "speechRank": 262,
     "wordsRank": 393,
-    "partySpeechRank": 55,
+    "partySpeechRank": 54,
     "partyWordsRank": 88,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 57.3,
+    "percentile": 58.1,
     "verbosityRank": 444,
     "verbosityTotal": 582,
     "partyVerbosityRank": 114,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 40,
-    "interrupterRank": 447,
-    "interruptedRank": 174
+    "interrupterRank": 475,
+    "interruptedRank": 173
   },
   "words": {
     "topWords": [
@@ -44,11 +44,11 @@
         "count": 12
       },
       {
-        "word": "worden",
+        "word": "jahren",
         "count": 11
       },
       {
-        "word": "jahren",
+        "word": "worden",
         "count": 11
       },
       {
@@ -56,7 +56,11 @@
         "count": 11
       },
       {
-        "word": "land",
+        "word": "recht",
+        "count": 10
+      },
+      {
+        "word": "sicherheit",
         "count": 10
       },
       {
@@ -64,11 +68,7 @@
         "count": 10
       },
       {
-        "word": "recht",
-        "count": 10
-      },
-      {
-        "word": "sicherheit",
+        "word": "land",
         "count": 10
       }
     ],
@@ -220,15 +220,15 @@
         "isCorrect": true
       },
       {
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
         "text": "Bildung",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
         "isCorrect": false
       }
     ],
@@ -239,20 +239,20 @@
     "question": "Welches Adjektiv nutzt Dr. Daniel Zerbin häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Links",
-        "isCorrect": true
-      },
-      {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
         "text": "Jung",
         "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Links",
+        "isCorrect": true
       }
     ],
     "explanationParty": "\"Links\" nutzt Dr. Daniel Zerbin 2.5× häufiger als der AfD-Durchschnitt.",
@@ -328,43 +328,43 @@
     "topicWords": {
       "migration": [
         {
+          "word": "grenze",
+          "count": 1
+        },
+        {
           "word": "mittelmeer",
           "count": 1
         },
         {
           "word": "migration",
           "count": 1
-        },
-        {
-          "word": "grenze",
-          "count": 1
         }
       ],
       "klima": [
         {
-          "word": "energiewende",
+          "word": "nachhaltig",
           "count": 1
         },
         {
-          "word": "nachhaltig",
+          "word": "energiewende",
           "count": 1
         }
       ],
       "wirtschaft": [
-        {
-          "word": "volkswirtschaft",
-          "count": 1
-        },
-        {
-          "word": "wirtschaftskrise",
-          "count": 1
-        },
         {
           "word": "markt",
           "count": 1
         },
         {
           "word": "handel",
+          "count": 1
+        },
+        {
+          "word": "volkswirtschaft",
+          "count": 1
+        },
+        {
+          "word": "wirtschaftskrise",
           "count": 1
         }
       ],
@@ -388,11 +388,11 @@
           "count": 4
         },
         {
-          "word": "gewalt",
+          "word": "überwachung",
           "count": 3
         },
         {
-          "word": "überwachung",
+          "word": "gewalt",
           "count": 3
         },
         {
@@ -420,11 +420,11 @@
           "count": 7
         },
         {
-          "word": "russland",
+          "word": "ukraine",
           "count": 5
         },
         {
-          "word": "ukraine",
+          "word": "russland",
           "count": 5
         },
         {
@@ -452,25 +452,25 @@
           "count": 2
         },
         {
-          "word": "kosten",
-          "count": 1
-        },
-        {
           "word": "investitionen",
           "count": 1
         },
         {
           "word": "inflation",
           "count": 1
+        },
+        {
+          "word": "kosten",
+          "count": 1
         }
       ],
       "justiz": [
         {
-          "word": "gefängnis",
+          "word": "verteidiger",
           "count": 1
         },
         {
-          "word": "verteidiger",
+          "word": "gefängnis",
           "count": 1
         },
         {
@@ -490,11 +490,11 @@
           "count": 4
         },
         {
-          "word": "straßen",
+          "word": "häfen",
           "count": 1
         },
         {
-          "word": "häfen",
+          "word": "straßen",
           "count": 1
         }
       ]

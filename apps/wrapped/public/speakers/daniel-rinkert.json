@@ -11,13 +11,13 @@
   "minWords": 64,
   "maxWords": 876,
   "rankings": {
-    "speechRank": 297,
+    "speechRank": 300,
     "wordsRank": 306,
-    "partySpeechRank": 57,
+    "partySpeechRank": 58,
     "partyWordsRank": 65,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 52.6,
+    "percentile": 52.1,
     "verbosityRank": 177,
     "verbosityTotal": 582,
     "partyVerbosityRank": 40,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 31,
     "interruptionsReceived": 35,
     "interrupterRank": 168,
-    "interruptedRank": 204
+    "interruptedRank": 205
   },
   "words": {
     "topWords": [
@@ -263,20 +263,20 @@
     "question": "Welches Wort nutzt Daniel Rinkert häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Quote",
-        "isCorrect": true
-      },
-      {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
         "text": "Familie",
         "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Quote",
+        "isCorrect": true
       }
     ],
     "explanationParty": "\"Quote\" nutzt Daniel Rinkert 54.6× häufiger als der SPD-Durchschnitt.",
@@ -286,6 +286,10 @@
     "question": "Welches Adjektiv nutzt Daniel Rinkert häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
         "text": "Sozial",
         "isCorrect": true
       },
@@ -294,11 +298,7 @@
         "isCorrect": false
       },
       {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
@@ -409,11 +409,11 @@
           "count": 18
         },
         {
-          "word": "umwelt",
+          "word": "wasserstoff",
           "count": 4
         },
         {
-          "word": "wasserstoff",
+          "word": "umwelt",
           "count": 4
         },
         {
@@ -431,11 +431,11 @@
           "count": 8
         },
         {
-          "word": "marktwirtschaft",
+          "word": "markt",
           "count": 1
         },
         {
-          "word": "wettbewerb",
+          "word": "marktwirtschaft",
           "count": 1
         },
         {
@@ -479,15 +479,15 @@
           "count": 1
         },
         {
-          "word": "täter",
-          "count": 1
-        },
-        {
           "word": "abschreckung",
           "count": 1
         },
         {
           "word": "korruption",
+          "count": 1
+        },
+        {
+          "word": "täter",
           "count": 1
         }
       ],
@@ -515,7 +515,7 @@
           "count": 3
         },
         {
-          "word": "daten",
+          "word": "pressefreiheit",
           "count": 2
         },
         {
@@ -523,21 +523,21 @@
           "count": 2
         },
         {
-          "word": "pressefreiheit",
+          "word": "daten",
           "count": 2
         }
       ],
       "bildung": [
+        {
+          "word": "wissenschaftler",
+          "count": 1
+        },
         {
           "word": "wissenschaft",
           "count": 1
         },
         {
           "word": "schulen",
-          "count": 1
-        },
-        {
-          "word": "wissenschaftler",
           "count": 1
         }
       ],
@@ -569,19 +569,19 @@
           "count": 10
         },
         {
-          "word": "gericht",
-          "count": 2
-        },
-        {
           "word": "klage",
           "count": 2
         },
         {
-          "word": "beschluss",
+          "word": "gericht",
+          "count": 2
+        },
+        {
+          "word": "gesetzgebung",
           "count": 1
         },
         {
-          "word": "vorschrift",
+          "word": "kläger",
           "count": 1
         }
       ],
@@ -597,10 +597,6 @@
       ],
       "mobilitaet": [
         {
-          "word": "infrastruktur",
-          "count": 2
-        },
-        {
           "word": "elektromobilität",
           "count": 2
         },
@@ -613,7 +609,11 @@
           "count": 2
         },
         {
-          "word": "straßen",
+          "word": "infrastruktur",
+          "count": 2
+        },
+        {
+          "word": "autos",
           "count": 1
         }
       ]

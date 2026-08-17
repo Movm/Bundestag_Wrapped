@@ -11,13 +11,13 @@
   "minWords": 118,
   "maxWords": 664,
   "rankings": {
-    "speechRank": 531,
+    "speechRank": 550,
     "wordsRank": 569,
-    "partySpeechRank": 59,
+    "partySpeechRank": 60,
     "partyWordsRank": 60,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 15.2,
+    "percentile": 12.1,
     "verbosityRank": 402,
     "verbosityTotal": 582,
     "partyVerbosityRank": 30,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 4,
     "interruptionsReceived": 6,
-    "interrupterRank": 362,
-    "interruptedRank": 521
+    "interrupterRank": 376,
+    "interruptedRank": 535
   },
   "words": {
     "topWords": [
@@ -56,11 +56,7 @@
         "count": 7
       },
       {
-        "word": "merz",
-        "count": 6
-      },
-      {
-        "word": "land",
+        "word": "achtstundentag",
         "count": 6
       },
       {
@@ -68,7 +64,11 @@
         "count": 6
       },
       {
-        "word": "achtstundentag",
+        "word": "merz",
+        "count": 6
+      },
+      {
+        "word": "land",
         "count": 6
       }
     ],
@@ -195,20 +195,20 @@
     "question": "Welches Wort nutzt Anne Zerr häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Verantwortung",
+        "text": "Sicherheit",
         "isCorrect": false
       },
       {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Freiheit",
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
         "text": "Achtstundentag",
         "isCorrect": true
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Achtstundentag\" nutzt Anne Zerr 132.3× häufiger als der DIE LINKE-Durchschnitt.",
@@ -337,6 +337,10 @@
           "count": 3
         },
         {
+          "word": "miete",
+          "count": 1
+        },
+        {
           "word": "familie",
           "count": 1
         },
@@ -346,10 +350,6 @@
         },
         {
           "word": "kinder",
-          "count": 1
-        },
-        {
-          "word": "miete",
           "count": 1
         }
       ],
@@ -361,15 +361,15 @@
       ],
       "gesundheit": [
         {
+          "word": "krankenstand",
+          "count": 1
+        },
+        {
           "word": "pflegekräfte",
           "count": 1
         },
         {
           "word": "pflege",
-          "count": 1
-        },
-        {
-          "word": "krankenstand",
           "count": 1
         }
       ],
@@ -397,11 +397,11 @@
           "count": 4
         },
         {
-          "word": "lohn",
+          "word": "mindestlohn",
           "count": 2
         },
         {
-          "word": "arbeitnehmerinnen",
+          "word": "lohn",
           "count": 2
         }
       ],

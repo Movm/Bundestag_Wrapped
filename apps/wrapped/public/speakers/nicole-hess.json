@@ -11,14 +11,14 @@
   "minWords": 23,
   "maxWords": 870,
   "rankings": {
-    "speechRank": 115,
+    "speechRank": 121,
     "wordsRank": 155,
-    "partySpeechRank": 24,
+    "partySpeechRank": 25,
     "partyWordsRank": 34,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 81.6,
-    "verbosityRank": 221,
+    "percentile": 80.7,
+    "verbosityRank": 223,
     "verbosityTotal": 582,
     "partyVerbosityRank": 58,
     "longestSpeechRank": 161
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 30,
-    "interrupterRank": 438,
-    "interruptedRank": 247
+    "interrupterRank": 442,
+    "interruptedRank": 252
   },
   "words": {
     "topWords": [
@@ -192,20 +192,20 @@
     "question": "Welches Wort nutzt Nicole Hess häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Investitionen",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Rettungsassistenten",
-        "isCorrect": true
+        "text": "Opposition",
+        "isCorrect": false
       },
       {
         "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
-        "isCorrect": false
+        "text": "Rettungsassistenten",
+        "isCorrect": true
       }
     ],
     "explanationParty": "\"Rettungsassistenten\" nutzt Nicole Hess 702.3× häufiger als der AfD-Durchschnitt.",
@@ -215,11 +215,7 @@
     "question": "Welches Adjektiv nutzt Nicole Hess häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
+        "text": "Gut",
         "isCorrect": false
       },
       {
@@ -227,7 +223,11 @@
         "isCorrect": true
       },
       {
-        "text": "Gut",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
         "isCorrect": false
       }
     ],
@@ -324,23 +324,23 @@
       ],
       "wirtschaft": [
         {
-          "word": "mittelstand",
-          "count": 1
-        },
-        {
           "word": "konkurrenz",
           "count": 1
         },
         {
-          "word": "betriebe",
-          "count": 1
-        },
-        {
-          "word": "qualifikation",
-          "count": 1
-        },
-        {
           "word": "insolvenzen",
+          "count": 1
+        },
+        {
+          "word": "fachkräftemangel",
+          "count": 1
+        },
+        {
+          "word": "wirtschaft",
+          "count": 1
+        },
+        {
+          "word": "produktion",
           "count": 1
         }
       ],
@@ -390,11 +390,11 @@
           "count": 5
         },
         {
-          "word": "krankenkassen",
+          "word": "arzneimittel",
           "count": 4
         },
         {
-          "word": "psychotherapie",
+          "word": "hausarzt",
           "count": 4
         }
       ],
@@ -414,15 +414,15 @@
       ],
       "digital": [
         {
-          "word": "digitalisierung",
-          "count": 2
-        },
-        {
           "word": "medienkompetenz",
           "count": 2
         },
         {
           "word": "daten",
+          "count": 2
+        },
+        {
+          "word": "digitalisierung",
           "count": 2
         },
         {
@@ -450,11 +450,11 @@
           "count": 7
         },
         {
-          "word": "kosten",
+          "word": "bundeshaushalt",
           "count": 6
         },
         {
-          "word": "bundeshaushalt",
+          "word": "kosten",
           "count": 6
         },
         {
@@ -476,11 +476,11 @@
           "count": 1
         },
         {
-          "word": "haftung",
+          "word": "rechtsstaatlichkeit",
           "count": 1
         },
         {
-          "word": "rechtsstaatlichkeit",
+          "word": "haftung",
           "count": 1
         },
         {
@@ -504,15 +504,15 @@
           "count": 3
         },
         {
+          "word": "infrastruktur",
+          "count": 1
+        },
+        {
           "word": "auto",
           "count": 1
         },
         {
           "word": "öpnv",
-          "count": 1
-        },
-        {
-          "word": "infrastruktur",
           "count": 1
         }
       ]

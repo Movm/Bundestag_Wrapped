@@ -11,14 +11,14 @@
   "minWords": 11,
   "maxWords": 859,
   "rankings": {
-    "speechRank": 128,
+    "speechRank": 134,
     "wordsRank": 152,
-    "partySpeechRank": 27,
+    "partySpeechRank": 28,
     "partyWordsRank": 42,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 79.6,
-    "verbosityRank": 207,
+    "percentile": 78.6,
+    "verbosityRank": 208,
     "verbosityTotal": 582,
     "partyVerbosityRank": 71,
     "longestSpeechRank": 175
@@ -27,7 +27,7 @@
     "interruptionsGiven": 1,
     "interruptionsReceived": 45,
     "interrupterRank": 454,
-    "interruptedRank": 146
+    "interruptedRank": 147
   },
   "words": {
     "topWords": [
@@ -218,20 +218,20 @@
     "question": "Welches Wort nutzt Dr. Matthias Hiller häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Steuerberatung",
-        "isCorrect": true
-      },
-      {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Verantwortung",
-        "isCorrect": false
-      },
-      {
         "text": "Klima",
         "isCorrect": false
+      },
+      {
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuerberatung",
+        "isCorrect": true
       }
     ],
     "explanationParty": "\"Steuerberatung\" nutzt Dr. Matthias Hiller 448.4× häufiger als der CDU/CSU-Durchschnitt.",
@@ -241,20 +241,20 @@
     "question": "Welches Adjektiv nutzt Dr. Matthias Hiller häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Stark",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
         "text": "Gerecht",
         "isCorrect": true
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Gerecht\" nutzt Dr. Matthias Hiller 3.7× häufiger als der CDU/CSU-Durchschnitt.",
@@ -408,11 +408,11 @@
           "count": 2
         },
         {
-          "word": "bundeswehr",
+          "word": "verteidigung",
           "count": 1
         },
         {
-          "word": "verteidigung",
+          "word": "bundeswehr",
           "count": 1
         }
       ],
@@ -444,10 +444,6 @@
           "count": 2
         },
         {
-          "word": "china",
-          "count": 1
-        },
-        {
           "word": "krieg",
           "count": 1
         },
@@ -457,6 +453,10 @@
         },
         {
           "word": "partnerschaft",
+          "count": 1
+        },
+        {
+          "word": "china",
           "count": 1
         }
       ],
@@ -492,15 +492,15 @@
           "count": 2
         },
         {
-          "word": "studium",
-          "count": 1
-        },
-        {
           "word": "schulen",
           "count": 1
         },
         {
-          "word": "ausbildung",
+          "word": "schule",
+          "count": 1
+        },
+        {
+          "word": "studium",
           "count": 1
         }
       ],
@@ -580,15 +580,15 @@
           "count": 3
         },
         {
+          "word": "bahn",
+          "count": 1
+        },
+        {
           "word": "nahverkehr",
           "count": 1
         },
         {
           "word": "fahrzeug",
-          "count": 1
-        },
-        {
-          "word": "bahn",
           "count": 1
         }
       ]

@@ -11,23 +11,23 @@
   "minWords": 16,
   "maxWords": 720,
   "rankings": {
-    "speechRank": 130,
+    "speechRank": 149,
     "wordsRank": 137,
-    "partySpeechRank": 24,
+    "partySpeechRank": 27,
     "partyWordsRank": 20,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 79.2,
-    "verbosityRank": 289,
+    "percentile": 76.2,
+    "verbosityRank": 292,
     "verbosityTotal": 582,
     "partyVerbosityRank": 30,
-    "longestSpeechRank": 353
+    "longestSpeechRank": 354
   },
   "drama": {
     "interruptionsGiven": 50,
     "interruptionsReceived": 47,
     "interrupterRank": 108,
-    "interruptedRank": 132
+    "interruptedRank": 134
   },
   "words": {
     "topWords": [
@@ -54,6 +54,10 @@
       {
         "word": "geld",
         "count": 21
+      },
+      {
+        "word": "schutz",
+        "count": 19
       }
     ],
     "signatureWords": [
@@ -205,20 +209,20 @@
     "question": "Welches Wort nutzt Dr. Lena Gumnior häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
         "text": "Kommunalpolitiker",
         "isCorrect": true
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Kommunalpolitiker\" nutzt Dr. Lena Gumnior 304.3× häufiger als der GRÜNE-Durchschnitt.",
@@ -228,11 +232,7 @@
     "question": "Welches Adjektiv nutzt Dr. Lena Gumnior häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
@@ -240,7 +240,11 @@
         "isCorrect": true
       },
       {
-        "text": "Alt",
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
@@ -375,11 +379,11 @@
           "count": 7
         },
         {
-          "word": "jugendliche",
+          "word": "armut",
           "count": 6
         },
         {
-          "word": "armut",
+          "word": "jugendliche",
           "count": 6
         },
         {
@@ -429,15 +433,15 @@
           "count": 2
         },
         {
+          "word": "vertrag",
+          "count": 1
+        },
+        {
           "word": "iran",
           "count": 1
         },
         {
           "word": "china",
-          "count": 1
-        },
-        {
-          "word": "vertrag",
           "count": 1
         }
       ],
@@ -457,11 +461,11 @@
           "count": 3
         },
         {
-          "word": "ausbildung",
+          "word": "bildung",
           "count": 2
         },
         {
-          "word": "bildung",
+          "word": "ausbildung",
           "count": 2
         },
         {
@@ -487,7 +491,7 @@
           "count": 2
         },
         {
-          "word": "finanzminister",
+          "word": "kosten",
           "count": 1
         }
       ],
@@ -521,23 +525,23 @@
       ],
       "mobilitaet": [
         {
-          "word": "autos",
-          "count": 1
-        },
-        {
-          "word": "straßen",
-          "count": 1
-        },
-        {
           "word": "fahrrad",
           "count": 1
         },
         {
-          "word": "nahverkehr",
+          "word": "straße",
           "count": 1
         },
         {
           "word": "infrastruktur",
+          "count": 1
+        },
+        {
+          "word": "flughafen",
+          "count": 1
+        },
+        {
+          "word": "autos",
           "count": 1
         }
       ]

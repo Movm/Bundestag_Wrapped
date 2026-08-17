@@ -11,14 +11,14 @@
   "minWords": 52,
   "maxWords": 735,
   "rankings": {
-    "speechRank": 137,
+    "speechRank": 130,
     "wordsRank": 166,
-    "partySpeechRank": 26,
+    "partySpeechRank": 24,
     "partyWordsRank": 25,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 78.1,
-    "verbosityRank": 251,
+    "percentile": 79.2,
+    "verbosityRank": 250,
     "verbosityTotal": 582,
     "partyVerbosityRank": 27,
     "longestSpeechRank": 329
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 7,
     "interruptionsReceived": 23,
-    "interrupterRank": 320,
-    "interruptedRank": 308
+    "interrupterRank": 312,
+    "interruptedRank": 315
   },
   "words": {
     "topWords": [
@@ -66,16 +66,16 @@
         "ratioBundestag": 76.8
       },
       {
-        "word": "chats",
-        "count": 6,
-        "ratioParty": 202.3,
-        "ratioBundestag": 157.9
-      },
-      {
         "word": "ansprechpartner",
         "count": 6,
         "ratioParty": 202.3,
         "ratioBundestag": 76.8
+      },
+      {
+        "word": "chats",
+        "count": 6,
+        "ratioParty": 202.3,
+        "ratioBundestag": 157.9
       },
       {
         "word": "chatkontrolle",
@@ -98,13 +98,13 @@
         "ratio": 202.3
       },
       {
-        "word": "chats",
+        "word": "ansprechpartner",
         "count": 6,
         "score": 31.89,
         "ratio": 202.3
       },
       {
-        "word": "ansprechpartner",
+        "word": "chats",
         "count": 6,
         "score": 31.89,
         "ratio": 202.3
@@ -232,7 +232,11 @@
     "question": "Welches Wort nutzt Jeanne Dillschneider häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Steuern",
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Kinder",
         "isCorrect": false
       },
       {
@@ -240,11 +244,7 @@
         "isCorrect": true
       },
       {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
@@ -255,20 +255,20 @@
     "question": "Welches Adjektiv nutzt Jeanne Dillschneider häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
-        "text": "Falsch",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
         "text": "Zentral",
         "isCorrect": true
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Zentral\" nutzt Jeanne Dillschneider 8.4× häufiger als der GRÜNE-Durchschnitt.",
@@ -384,7 +384,7 @@
           "count": 2
         },
         {
-          "word": "geflüchtete",
+          "word": "schutzsuchende",
           "count": 1
         }
       ],
@@ -418,6 +418,10 @@
       ],
       "soziales": [
         {
+          "word": "behinderung",
+          "count": 1
+        },
+        {
           "word": "eltern",
           "count": 1
         },
@@ -432,10 +436,6 @@
         {
           "word": "jugendliche",
           "count": 1
-        },
-        {
-          "word": "behinderung",
-          "count": 1
         }
       ],
       "sicherheit": [
@@ -444,19 +444,19 @@
           "count": 4
         },
         {
-          "word": "polizei",
-          "count": 3
-        },
-        {
           "word": "bundeswehr",
           "count": 3
         },
         {
-          "word": "soldaten",
-          "count": 2
+          "word": "polizei",
+          "count": 3
         },
         {
           "word": "bundespolizei",
+          "count": 2
+        },
+        {
+          "word": "waffen",
           "count": 2
         }
       ],
@@ -484,11 +484,11 @@
           "count": 10
         },
         {
-          "word": "ukraine",
+          "word": "putin",
           "count": 6
         },
         {
-          "word": "putin",
+          "word": "ukraine",
           "count": 6
         },
         {
@@ -572,11 +572,11 @@
           "count": 2
         },
         {
-          "word": "verordnung",
+          "word": "menschenrechte",
           "count": 1
         },
         {
-          "word": "straftaten",
+          "word": "rechtsstaatlichkeit",
           "count": 1
         }
       ],

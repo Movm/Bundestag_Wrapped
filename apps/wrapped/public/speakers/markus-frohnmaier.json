@@ -13,7 +13,7 @@
   "rankings": {
     "speechRank": 17,
     "wordsRank": 26,
-    "partySpeechRank": 3,
+    "partySpeechRank": 4,
     "partyWordsRank": 5,
     "partySize": 150,
     "totalSpeakers": 626,
@@ -21,7 +21,7 @@
     "verbosityRank": 193,
     "verbosityTotal": 582,
     "partyVerbosityRank": 49,
-    "longestSpeechRank": 130
+    "longestSpeechRank": 129
   },
   "drama": {
     "interruptionsGiven": 292,
@@ -56,11 +56,11 @@
         "count": 42
       },
       {
-        "word": "außenpolitik",
+        "word": "bundesregierung",
         "count": 41
       },
       {
-        "word": "bundesregierung",
+        "word": "außenpolitik",
         "count": 41
       },
       {
@@ -86,6 +86,12 @@
         "ratioBundestag": 247.6
       },
       {
+        "word": "gesprengt",
+        "count": 8,
+        "ratioParty": 54.5,
+        "ratioBundestag": 116.5
+      },
+      {
         "word": "energiesouveränität",
         "count": 5,
         "ratioParty": 54.5,
@@ -96,12 +102,6 @@
         "count": 5,
         "ratioParty": 54.5,
         "ratioBundestag": 176.9
-      },
-      {
-        "word": "gesprengt",
-        "count": 8,
-        "ratioParty": 54.5,
-        "ratioBundestag": 116.5
       }
     ],
     "signatureWordsParty": [
@@ -224,27 +224,27 @@
     {
       "emoji": "🥇",
       "label": "Rang in AfD",
-      "value": "#3 von 150"
+      "value": "#4 von 150"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Markus Frohnmaier häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Arbeit",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Fraktion",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
         "isCorrect": false
       },
       {
         "text": "Röttgen",
         "isCorrect": true
-      },
-      {
-        "text": "Verantwortung",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Röttgen\" nutzt Markus Frohnmaier 163.4× häufiger als der AfD-Durchschnitt.",
@@ -254,7 +254,7 @@
     "question": "Welches Adjektiv nutzt Markus Frohnmaier häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "National",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
@@ -262,12 +262,12 @@
         "isCorrect": false
       },
       {
-        "text": "Verantwortungslos",
-        "isCorrect": true
+        "text": "Erfolgreich",
+        "isCorrect": false
       },
       {
-        "text": "Groß",
-        "isCorrect": false
+        "text": "Verantwortungslos",
+        "isCorrect": true
       }
     ],
     "explanationParty": "\"Verantwortungslos\" nutzt Markus Frohnmaier 4.5× häufiger als der AfD-Durchschnitt.",
@@ -355,11 +355,11 @@
           "count": 2
         },
         {
-          "word": "migrationsabkommen",
+          "word": "migranten",
           "count": 1
         },
         {
-          "word": "asylbewerber",
+          "word": "migrationsabkommen",
           "count": 1
         }
       ],
@@ -417,15 +417,15 @@
           "count": 3
         },
         {
-          "word": "eltern",
-          "count": 2
-        },
-        {
           "word": "rente",
           "count": 2
         },
         {
-          "word": "kind",
+          "word": "eltern",
+          "count": 2
+        },
+        {
+          "word": "mieten",
           "count": 1
         }
       ],
@@ -457,11 +457,11 @@
           "count": 1
         },
         {
-          "word": "krankenhäuser",
+          "word": "sucht",
           "count": 1
         },
         {
-          "word": "sucht",
+          "word": "krankenhäuser",
           "count": 1
         }
       ],
@@ -497,11 +497,11 @@
           "count": 2
         },
         {
-          "word": "datensicherheit",
+          "word": "desinformation",
           "count": 1
         },
         {
-          "word": "desinformation",
+          "word": "datensicherheit",
           "count": 1
         }
       ],
@@ -521,11 +521,11 @@
           "count": 9
         },
         {
-          "word": "kosten",
+          "word": "haushalt",
           "count": 5
         },
         {
-          "word": "haushalt",
+          "word": "kosten",
           "count": 5
         },
         {
@@ -547,15 +547,15 @@
           "count": 3
         },
         {
+          "word": "gerichte",
+          "count": 2
+        },
+        {
           "word": "verfassung",
           "count": 2
         },
         {
           "word": "rechtsstaatlichkeit",
-          "count": 2
-        },
-        {
-          "word": "gerichte",
           "count": 2
         }
       ],
@@ -587,7 +587,7 @@
           "count": 3
         },
         {
-          "word": "schiffe",
+          "word": "schiff",
           "count": 1
         },
         {

@@ -11,23 +11,23 @@
   "minWords": 36,
   "maxWords": 626,
   "rankings": {
-    "speechRank": 358,
+    "speechRank": 366,
     "wordsRank": 416,
-    "partySpeechRank": 68,
+    "partySpeechRank": 67,
     "partyWordsRank": 81,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 42.8,
+    "percentile": 41.5,
     "verbosityRank": 398,
     "verbosityTotal": 582,
     "partyVerbosityRank": 85,
-    "longestSpeechRank": 467
+    "longestSpeechRank": 469
   },
   "drama": {
     "interruptionsGiven": 23,
     "interruptionsReceived": 39,
-    "interrupterRank": 197,
-    "interruptedRank": 180
+    "interrupterRank": 199,
+    "interruptedRank": 184
   },
   "words": {
     "topWords": [
@@ -239,7 +239,11 @@
     "question": "Welches Wort nutzt Saskia Esken häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Sicherheit",
+        "text": "Startchancen",
+        "isCorrect": true
+      },
+      {
+        "text": "Kinder",
         "isCorrect": false
       },
       {
@@ -247,11 +251,7 @@
         "isCorrect": false
       },
       {
-        "text": "Startchancen",
-        "isCorrect": true
-      },
-      {
-        "text": "Gesellschaft",
+        "text": "Familie",
         "isCorrect": false
       }
     ],
@@ -262,20 +262,20 @@
     "question": "Welches Adjektiv nutzt Saskia Esken häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Falsch",
+        "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
         "text": "Sozial",
         "isCorrect": true
-      },
-      {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Sozial\" nutzt Saskia Esken 8.4× häufiger als der SPD-Durchschnitt.",
@@ -375,15 +375,15 @@
     "topicWords": {
       "migration": [
         {
-          "word": "aufenthaltsstatus",
-          "count": 1
-        },
-        {
           "word": "zuwanderung",
           "count": 1
         },
         {
           "word": "migration",
+          "count": 1
+        },
+        {
+          "word": "aufenthaltsstatus",
           "count": 1
         }
       ],
@@ -433,11 +433,11 @@
           "count": 2
         },
         {
-          "word": "verfassungsschutz",
+          "word": "täter",
           "count": 1
         },
         {
-          "word": "täter",
+          "word": "verfassungsschutz",
           "count": 1
         }
       ],

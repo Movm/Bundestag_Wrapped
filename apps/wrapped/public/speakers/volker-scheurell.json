@@ -11,14 +11,14 @@
   "minWords": 323,
   "maxWords": 412,
   "rankings": {
-    "speechRank": 468,
+    "speechRank": 446,
     "wordsRank": 539,
-    "partySpeechRank": 107,
+    "partySpeechRank": 103,
     "partyWordsRank": 124,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 25.2,
-    "verbosityRank": 429,
+    "percentile": 28.8,
+    "verbosityRank": 428,
     "verbosityTotal": 582,
     "partyVerbosityRank": 111,
     "longestSpeechRank": 606
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 20,
-    "interrupterRank": 473,
-    "interruptedRank": 346
+    "interrupterRank": 463,
+    "interruptedRank": 342
   },
   "words": {
     "topWords": [
@@ -40,11 +40,11 @@
         "count": 10
       },
       {
-        "word": "kommunen",
+        "word": "städtebauförderung",
         "count": 8
       },
       {
-        "word": "städtebauförderung",
+        "word": "kommunen",
         "count": 8
       },
       {
@@ -187,7 +187,11 @@
     "question": "Welches Wort nutzt Volker Scheurell häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Familie",
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
@@ -195,11 +199,7 @@
         "isCorrect": true
       },
       {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
+        "text": "Haushalt",
         "isCorrect": false
       }
     ],
@@ -295,15 +295,15 @@
           "count": 1
         },
         {
+          "word": "energie",
+          "count": 1
+        },
+        {
           "word": "kernenergie",
           "count": 1
         },
         {
           "word": "klimapolitik",
-          "count": 1
-        },
-        {
-          "word": "energie",
           "count": 1
         }
       ],
@@ -339,15 +339,15 @@
           "count": 2
         },
         {
-          "word": "familien",
-          "count": 1
-        },
-        {
           "word": "familie",
           "count": 1
         },
         {
-          "word": "miete",
+          "word": "jugend",
+          "count": 1
+        },
+        {
+          "word": "familien",
           "count": 1
         }
       ],
@@ -373,14 +373,6 @@
       ],
       "finanzen": [
         {
-          "word": "steuern",
-          "count": 1
-        },
-        {
-          "word": "investitionen",
-          "count": 1
-        },
-        {
           "word": "kosten",
           "count": 1
         },
@@ -390,6 +382,14 @@
         },
         {
           "word": "haushalt",
+          "count": 1
+        },
+        {
+          "word": "schulden",
+          "count": 1
+        },
+        {
+          "word": "defizit",
           "count": 1
         }
       ],

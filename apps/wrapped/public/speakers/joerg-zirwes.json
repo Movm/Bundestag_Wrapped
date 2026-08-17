@@ -11,13 +11,13 @@
   "minWords": 321,
   "maxWords": 458,
   "rankings": {
-    "speechRank": 433,
+    "speechRank": 418,
     "wordsRank": 506,
-    "partySpeechRank": 102,
+    "partySpeechRank": 101,
     "partyWordsRank": 113,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 30.8,
+    "percentile": 33.2,
     "verbosityRank": 390,
     "verbosityTotal": 582,
     "partyVerbosityRank": 103,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 3,
     "interruptionsReceived": 14,
-    "interrupterRank": 391,
-    "interruptedRank": 414
+    "interrupterRank": 399,
+    "interruptedRank": 420
   },
   "words": {
     "topWords": [
@@ -52,6 +52,14 @@
         "count": 8
       },
       {
+        "word": "wehrpflicht",
+        "count": 8
+      },
+      {
+        "word": "sicherheit",
+        "count": 8
+      },
+      {
         "word": "bosnien",
         "count": 8
       },
@@ -60,15 +68,7 @@
         "count": 8
       },
       {
-        "word": "sicherheit",
-        "count": 8
-      },
-      {
-        "word": "wehrpflicht",
-        "count": 8
-      },
-      {
-        "word": "verlängerung",
+        "word": "streitkräfte",
         "count": 7
       }
     ],
@@ -195,20 +195,20 @@
     "question": "Welches Wort nutzt Jörg Zirwes häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bürger",
+        "text": "Demokratie",
         "isCorrect": false
       },
       {
-        "text": "Familie",
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
         "text": "Herzegowina",
         "isCorrect": true
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Herzegowina\" nutzt Jörg Zirwes 115.4× häufiger als der AfD-Durchschnitt.",
@@ -301,25 +301,25 @@
       ],
       "wirtschaft": [
         {
+          "word": "unternehmen",
+          "count": 1
+        },
+        {
           "word": "handwerk",
           "count": 1
         },
         {
           "word": "betriebe",
           "count": 1
-        },
-        {
-          "word": "unternehmen",
-          "count": 1
         }
       ],
       "soziales": [
         {
-          "word": "fürsorge",
+          "word": "familie",
           "count": 1
         },
         {
-          "word": "familie",
+          "word": "fürsorge",
           "count": 1
         }
       ],
@@ -333,11 +333,11 @@
           "count": 7
         },
         {
-          "word": "verteidigung",
+          "word": "bundeswehr",
           "count": 6
         },
         {
-          "word": "bundeswehr",
+          "word": "verteidigung",
           "count": 6
         },
         {
@@ -381,15 +381,15 @@
           "count": 2
         },
         {
-          "word": "haushalt",
-          "count": 1
-        },
-        {
           "word": "währung",
           "count": 1
         },
         {
           "word": "sondervermögen",
+          "count": 1
+        },
+        {
+          "word": "haushalt",
           "count": 1
         }
       ],
@@ -423,11 +423,11 @@
           "count": 2
         },
         {
-          "word": "fahrzeuge",
+          "word": "infrastruktur",
           "count": 1
         },
         {
-          "word": "infrastruktur",
+          "word": "fahrzeuge",
           "count": 1
         }
       ]

@@ -11,14 +11,14 @@
   "minWords": 44,
   "maxWords": 773,
   "rankings": {
-    "speechRank": 213,
+    "speechRank": 197,
     "wordsRank": 133,
-    "partySpeechRank": 45,
+    "partySpeechRank": 41,
     "partyWordsRank": 29,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 66.0,
-    "verbosityRank": 157,
+    "percentile": 68.5,
+    "verbosityRank": 156,
     "verbosityTotal": 582,
     "partyVerbosityRank": 40,
     "longestSpeechRank": 276
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 90,
     "interruptionsReceived": 81,
-    "interrupterRank": 54,
-    "interruptedRank": 44
+    "interrupterRank": 53,
+    "interruptedRank": 43
   },
   "words": {
     "topWords": [
@@ -235,11 +235,7 @@
     "question": "Welches Wort nutzt Stefan Keuter häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
@@ -247,7 +243,11 @@
         "isCorrect": true
       },
       {
-        "text": "Opposition",
+        "text": "Investitionen",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
         "isCorrect": false
       }
     ],
@@ -262,15 +262,15 @@
         "isCorrect": true
       },
       {
-        "text": "Notwendig",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Alt",
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
@@ -355,15 +355,15 @@
           "count": 2
         },
         {
-          "word": "obergrenze",
-          "count": 1
-        },
-        {
           "word": "einbürgerung",
           "count": 1
         },
         {
           "word": "abschiebehaft",
+          "count": 1
+        },
+        {
+          "word": "obergrenze",
           "count": 1
         }
       ],
@@ -373,11 +373,11 @@
           "count": 2
         },
         {
-          "word": "energie",
+          "word": "nachhaltig",
           "count": 1
         },
         {
-          "word": "nachhaltig",
+          "word": "energie",
           "count": 1
         },
         {
@@ -439,17 +439,21 @@
           "count": 3
         },
         {
-          "word": "korruption",
+          "word": "terror",
           "count": 2
         },
         {
-          "word": "terror",
+          "word": "korruption",
           "count": 2
         }
       ],
       "gesundheit": [
         {
           "word": "krankenversicherung",
+          "count": 1
+        },
+        {
+          "word": "sucht",
           "count": 1
         },
         {
@@ -462,10 +466,6 @@
         },
         {
           "word": "vorsorge",
-          "count": 1
-        },
-        {
-          "word": "sucht",
           "count": 1
         }
       ],
@@ -493,21 +493,21 @@
       ],
       "digital": [
         {
-          "word": "plattformen",
+          "word": "technologie",
           "count": 1
         },
         {
-          "word": "technologie",
+          "word": "plattformen",
           "count": 1
         }
       ],
       "bildung": [
         {
-          "word": "schulen",
+          "word": "universitäten",
           "count": 2
         },
         {
-          "word": "universitäten",
+          "word": "schulen",
           "count": 2
         },
         {
@@ -529,11 +529,11 @@
           "count": 8
         },
         {
-          "word": "entlastung",
+          "word": "bundeshaushalt",
           "count": 2
         },
         {
-          "word": "haushaltsausschuss",
+          "word": "entlastung",
           "count": 2
         },
         {
@@ -575,15 +575,15 @@
           "count": 7
         },
         {
-          "word": "schifffahrt",
-          "count": 2
-        },
-        {
           "word": "straßen",
           "count": 2
         },
         {
-          "word": "schiff",
+          "word": "schifffahrt",
+          "count": 2
+        },
+        {
+          "word": "straße",
           "count": 1
         }
       ]

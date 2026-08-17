@@ -11,13 +11,13 @@
   "minWords": 33,
   "maxWords": 598,
   "rankings": {
-    "speechRank": 141,
+    "speechRank": 135,
     "wordsRank": 217,
-    "partySpeechRank": 22,
+    "partySpeechRank": 20,
     "partyWordsRank": 23,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 77.5,
+    "percentile": 78.4,
     "verbosityRank": 442,
     "verbosityTotal": 582,
     "partyVerbosityRank": 37,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 6,
     "interruptionsReceived": 22,
-    "interrupterRank": 335,
-    "interruptedRank": 321
+    "interrupterRank": 332,
+    "interruptedRank": 316
   },
   "words": {
     "topWords": [
@@ -154,27 +154,27 @@
     ],
     "signatureAdjectives": [
       {
-        "word": "wirksam",
-        "count": 3,
-        "ratioParty": 6.4,
-        "ratioBundestag": 5.9
-      },
-      {
         "word": "peinlich",
         "count": 3,
         "ratioParty": 6.4,
         "ratioBundestag": 16.2
+      },
+      {
+        "word": "wirksam",
+        "count": 3,
+        "ratioParty": 6.4,
+        "ratioBundestag": 5.9
       }
     ],
     "signatureAdjectivesParty": [
       {
-        "word": "wirksam",
+        "word": "peinlich",
         "count": 3,
         "score": 6.0,
         "ratio": 6.4
       },
       {
-        "word": "peinlich",
+        "word": "wirksam",
         "count": 3,
         "score": 6.0,
         "ratio": 6.4
@@ -218,19 +218,19 @@
     "question": "Welches Wort nutzt Ulrich Thoden häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
-        "isCorrect": false
-      },
-      {
         "text": "Unifil",
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
+        "text": "Freiheit",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
         "isCorrect": false
       }
     ],
@@ -241,24 +241,24 @@
     "question": "Welches Adjektiv nutzt Ulrich Thoden häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
         "text": "Klar",
         "isCorrect": false
       },
       {
-        "text": "Wirksam",
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Peinlich",
         "isCorrect": true
       },
       {
-        "text": "Sozial",
+        "text": "Falsch",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Wirksam\" nutzt Ulrich Thoden 6.4× häufiger als der DIE LINKE-Durchschnitt.",
-    "explanationBundestag": "5.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Peinlich\" nutzt Ulrich Thoden 6.4× häufiger als der DIE LINKE-Durchschnitt.",
+    "explanationBundestag": "16.2× häufiger als der Bundestag-Durchschnitt."
   },
   "spiritAnimal": {
     "emoji": "🦊",
@@ -378,15 +378,23 @@
       ],
       "wirtschaft": [
         {
-          "word": "firmen",
+          "word": "firma",
           "count": 1
         },
         {
-          "word": "firma",
+          "word": "firmen",
           "count": 1
         }
       ],
       "soziales": [
+        {
+          "word": "sozialleistungen",
+          "count": 1
+        },
+        {
+          "word": "sozialstaat",
+          "count": 1
+        },
         {
           "word": "bürgergeld",
           "count": 1
@@ -397,14 +405,6 @@
         },
         {
           "word": "familie",
-          "count": 1
-        },
-        {
-          "word": "sozialleistungen",
-          "count": 1
-        },
-        {
-          "word": "sozialstaat",
           "count": 1
         }
       ],
@@ -450,11 +450,11 @@
           "count": 18
         },
         {
-          "word": "nato",
+          "word": "krieg",
           "count": 9
         },
         {
-          "word": "krieg",
+          "word": "nato",
           "count": 9
         },
         {
@@ -462,7 +462,7 @@
           "count": 8
         },
         {
-          "word": "europa",
+          "word": "frieden",
           "count": 6
         }
       ],
@@ -506,21 +506,21 @@
       ],
       "justiz": [
         {
-          "word": "grundgesetz",
+          "word": "gericht",
           "count": 1
         },
         {
-          "word": "gericht",
+          "word": "grundgesetz",
           "count": 1
         }
       ],
       "arbeit": [
         {
-          "word": "vereinbarkeit",
+          "word": "arbeitsplätze",
           "count": 1
         },
         {
-          "word": "arbeitsplätze",
+          "word": "vereinbarkeit",
           "count": 1
         }
       ],

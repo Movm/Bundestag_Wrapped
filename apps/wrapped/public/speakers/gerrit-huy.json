@@ -11,13 +11,13 @@
   "minWords": 95,
   "maxWords": 989,
   "rankings": {
-    "speechRank": 135,
+    "speechRank": 131,
     "wordsRank": 128,
-    "partySpeechRank": 29,
+    "partySpeechRank": 28,
     "partyWordsRank": 28,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 78.4,
+    "percentile": 79.1,
     "verbosityRank": 114,
     "verbosityTotal": 582,
     "partyVerbosityRank": 32,
@@ -27,16 +27,16 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 46,
     "interrupterRank": null,
-    "interruptedRank": 139
+    "interruptedRank": 137
   },
   "words": {
     "topWords": [
       {
-        "word": "menschen",
+        "word": "bürgergeld",
         "count": 28
       },
       {
-        "word": "bürgergeld",
+        "word": "menschen",
         "count": 28
       },
       {
@@ -52,7 +52,7 @@
         "count": 21
       },
       {
-        "word": "union",
+        "word": "kosten",
         "count": 20
       }
     ],
@@ -200,7 +200,11 @@
     "question": "Welches Wort nutzt Gerrit Huy häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Haushalt",
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Opposition",
         "isCorrect": false
       },
       {
@@ -208,11 +212,7 @@
         "isCorrect": true
       },
       {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Bürger",
+        "text": "Fraktion",
         "isCorrect": false
       }
     ],
@@ -223,20 +223,20 @@
     "question": "Welches Adjektiv nutzt Gerrit Huy häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
         "text": "Stark",
         "isCorrect": true
+      },
+      {
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Stark\" nutzt Gerrit Huy 5.6× häufiger als der AfD-Durchschnitt.",
@@ -316,11 +316,11 @@
           "count": 12
         },
         {
-          "word": "asylbewerber",
+          "word": "einwanderung",
           "count": 5
         },
         {
-          "word": "einwanderung",
+          "word": "asylbewerber",
           "count": 5
         },
         {
@@ -350,7 +350,7 @@
           "count": 1
         },
         {
-          "word": "klimaziel",
+          "word": "kernenergie",
           "count": 1
         }
       ],
@@ -390,21 +390,17 @@
           "count": 12
         },
         {
-          "word": "grundsicherung",
+          "word": "renten",
           "count": 10
         },
         {
-          "word": "renten",
+          "word": "grundsicherung",
           "count": 10
         }
       ],
       "sicherheit": [
         {
           "word": "polizei",
-          "count": 1
-        },
-        {
-          "word": "bundeswehr",
           "count": 1
         },
         {
@@ -417,6 +413,10 @@
         },
         {
           "word": "polizisten",
+          "count": 1
+        },
+        {
+          "word": "verteidigung",
           "count": 1
         }
       ],
@@ -440,11 +440,11 @@
           "count": 7
         },
         {
-          "word": "sanktionen",
+          "word": "krieg",
           "count": 3
         },
         {
-          "word": "krieg",
+          "word": "sanktionen",
           "count": 3
         },
         {
@@ -476,7 +476,7 @@
           "count": 1
         },
         {
-          "word": "kindergarten",
+          "word": "professor",
           "count": 1
         },
         {
@@ -542,11 +542,11 @@
           "count": 4
         },
         {
-          "word": "teilzeit",
+          "word": "einkommen",
           "count": 3
         },
         {
-          "word": "einkommen",
+          "word": "arbeitslosigkeit",
           "count": 3
         }
       ],

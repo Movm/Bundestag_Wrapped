@@ -11,23 +11,23 @@
   "minWords": 12,
   "maxWords": 751,
   "rankings": {
-    "speechRank": 163,
+    "speechRank": 174,
     "wordsRank": 266,
-    "partySpeechRank": 38,
+    "partySpeechRank": 40,
     "partyWordsRank": 59,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 74.0,
-    "verbosityRank": 387,
+    "percentile": 72.2,
+    "verbosityRank": 388,
     "verbosityTotal": 582,
     "partyVerbosityRank": 83,
-    "longestSpeechRank": 311
+    "longestSpeechRank": 313
   },
   "drama": {
     "interruptionsGiven": 19,
     "interruptionsReceived": 11,
-    "interrupterRank": 215,
-    "interruptedRank": 450
+    "interrupterRank": 218,
+    "interruptedRank": 457
   },
   "words": {
     "topWords": [
@@ -205,15 +205,15 @@
     "question": "Welches Wort nutzt Bernd Rützel häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Verantwortung",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Energie",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Antrag",
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
@@ -228,20 +228,20 @@
     "question": "Welches Adjektiv nutzt Bernd Rützel häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
+        "text": "Alt",
         "isCorrect": false
       },
       {
         "text": "Sicher",
         "isCorrect": true
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Sicher\" nutzt Bernd Rützel 2.3× häufiger als der SPD-Durchschnitt.",
@@ -351,19 +351,19 @@
       ],
       "klima": [
         {
-          "word": "umwelt",
-          "count": 1
-        },
-        {
-          "word": "nachhaltig",
-          "count": 1
-        },
-        {
           "word": "klimaschutz",
           "count": 1
         },
         {
           "word": "pestizide",
+          "count": 1
+        },
+        {
+          "word": "umwelt",
+          "count": 1
+        },
+        {
+          "word": "nachhaltig",
           "count": 1
         }
       ],
@@ -377,15 +377,15 @@
           "count": 5
         },
         {
-          "word": "lieferkette",
-          "count": 2
-        },
-        {
           "word": "wettbewerb",
           "count": 2
         },
         {
           "word": "firma",
+          "count": 2
+        },
+        {
+          "word": "lieferkette",
           "count": 2
         }
       ],
@@ -423,19 +423,27 @@
           "count": 2
         },
         {
-          "word": "digitalisierung",
-          "count": 1
-        },
-        {
           "word": "algorithmen",
           "count": 1
         },
         {
           "word": "algorithmus",
           "count": 1
+        },
+        {
+          "word": "digitalisierung",
+          "count": 1
         }
       ],
       "bildung": [
+        {
+          "word": "schule",
+          "count": 2
+        },
+        {
+          "word": "bildung",
+          "count": 2
+        },
         {
           "word": "ausbildung",
           "count": 2
@@ -447,14 +455,6 @@
         {
           "word": "weiterbildung",
           "count": 2
-        },
-        {
-          "word": "bildung",
-          "count": 2
-        },
-        {
-          "word": "schule",
-          "count": 2
         }
       ],
       "finanzen": [
@@ -463,11 +463,11 @@
           "count": 2
         },
         {
-          "word": "kosten",
+          "word": "investition",
           "count": 1
         },
         {
-          "word": "investitionen",
+          "word": "haushalt",
           "count": 1
         },
         {
@@ -475,7 +475,7 @@
           "count": 1
         },
         {
-          "word": "investition",
+          "word": "finanzierung",
           "count": 1
         }
       ],
@@ -485,11 +485,11 @@
           "count": 4
         },
         {
-          "word": "bundesverfassungsgericht",
+          "word": "vorschrift",
           "count": 1
         },
         {
-          "word": "vorschrift",
+          "word": "bundesverfassungsgericht",
           "count": 1
         }
       ],

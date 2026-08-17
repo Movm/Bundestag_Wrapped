@@ -11,14 +11,14 @@
   "minWords": 45,
   "maxWords": 1339,
   "rankings": {
-    "speechRank": 79,
+    "speechRank": 80,
     "wordsRank": 82,
-    "partySpeechRank": 11,
+    "partySpeechRank": 12,
     "partyWordsRank": 11,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 87.4,
-    "verbosityRank": 53,
+    "percentile": 87.2,
+    "verbosityRank": 54,
     "verbosityTotal": 582,
     "partyVerbosityRank": 6,
     "longestSpeechRank": 26
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 38,
     "interruptionsReceived": 18,
-    "interrupterRank": 136,
-    "interruptedRank": 363
+    "interrupterRank": 137,
+    "interruptedRank": 364
   },
   "words": {
     "topWords": [
@@ -40,11 +40,11 @@
         "count": 25
       },
       {
-        "word": "bundesregierung",
+        "word": "mission",
         "count": 24
       },
       {
-        "word": "mission",
+        "word": "bundesregierung",
         "count": 24
       },
       {
@@ -54,16 +54,16 @@
     ],
     "signatureWords": [
       {
-        "word": "assad",
-        "count": 10,
-        "ratioParty": 252.9,
-        "ratioBundestag": 101.9
-      },
-      {
         "word": "mandates",
         "count": 5,
         "ratioParty": 252.9,
         "ratioBundestag": 74.3
+      },
+      {
+        "word": "assad",
+        "count": 10,
+        "ratioParty": 252.9,
+        "ratioBundestag": 101.9
       },
       {
         "word": "libanesischen",
@@ -201,43 +201,43 @@
     "question": "Welches Wort nutzt Luise Amtsberg häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
+        "isCorrect": false
+      },
+      {
         "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Assad",
+        "text": "Mandates",
         "isCorrect": true
-      },
-      {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Assad\" nutzt Luise Amtsberg 252.9× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "101.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Mandates\" nutzt Luise Amtsberg 252.9× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "74.3× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Luise Amtsberg häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
         "text": "Geschützt",
         "isCorrect": true
+      },
+      {
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Geschützt\" nutzt Luise Amtsberg 3.4× häufiger als der GRÜNE-Durchschnitt.",
@@ -349,11 +349,11 @@
           "count": 2
         },
         {
-          "word": "integration",
+          "word": "grenze",
           "count": 1
         },
         {
-          "word": "grenze",
+          "word": "integration",
           "count": 1
         }
       ],
@@ -363,11 +363,11 @@
           "count": 2
         },
         {
-          "word": "klimaschutz",
+          "word": "klimakrise",
           "count": 1
         },
         {
-          "word": "klimakrise",
+          "word": "klimaschutz",
           "count": 1
         }
       ],
@@ -387,6 +387,10 @@
       ],
       "soziales": [
         {
+          "word": "kinder",
+          "count": 2
+        },
+        {
           "word": "familie",
           "count": 2
         },
@@ -395,15 +399,11 @@
           "count": 2
         },
         {
-          "word": "kinder",
-          "count": 2
-        },
-        {
-          "word": "gerechtigkeit",
+          "word": "eltern",
           "count": 1
         },
         {
-          "word": "eltern",
+          "word": "gerechtigkeit",
           "count": 1
         }
       ],
@@ -431,10 +431,6 @@
       ],
       "gesundheit": [
         {
-          "word": "gesundheitssystem",
-          "count": 1
-        },
-        {
           "word": "krankenhäuser",
           "count": 1
         },
@@ -448,6 +444,10 @@
         },
         {
           "word": "pflegekräfte",
+          "count": 1
+        },
+        {
+          "word": "gesundheitssystem",
           "count": 1
         }
       ],
@@ -481,19 +481,19 @@
       ],
       "bildung": [
         {
-          "word": "bildung",
-          "count": 1
-        },
-        {
-          "word": "lehrkräfte",
-          "count": 1
-        },
-        {
           "word": "universität",
           "count": 1
         },
         {
           "word": "ausbildung",
+          "count": 1
+        },
+        {
+          "word": "bildung",
+          "count": 1
+        },
+        {
+          "word": "lehrkräfte",
           "count": 1
         }
       ],
@@ -503,19 +503,19 @@
           "count": 2
         },
         {
-          "word": "haushaltsausschuss",
-          "count": 1
-        },
-        {
-          "word": "bundeshaushalt",
-          "count": 1
-        },
-        {
-          "word": "schuldenbremse",
+          "word": "sondervermögen",
           "count": 1
         },
         {
           "word": "kosten",
+          "count": 1
+        },
+        {
+          "word": "finanzierung",
+          "count": 1
+        },
+        {
+          "word": "schuldenbremse",
           "count": 1
         }
       ],

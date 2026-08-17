@@ -11,13 +11,13 @@
   "minWords": 10,
   "maxWords": 1115,
   "rankings": {
-    "speechRank": 369,
+    "speechRank": 352,
     "wordsRank": 74,
-    "partySpeechRank": 102,
+    "partySpeechRank": 94,
     "partyWordsRank": 25,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 41.1,
+    "percentile": 43.8,
     "verbosityRank": 537,
     "verbosityTotal": 582,
     "partyVerbosityRank": 170,
@@ -26,7 +26,7 @@
   "drama": {
     "interruptionsGiven": 4,
     "interruptionsReceived": 27,
-    "interrupterRank": 365,
+    "interrupterRank": 372,
     "interruptedRank": 282
   },
   "words": {
@@ -234,20 +234,20 @@
     "question": "Welches Wort nutzt Florian Hahn häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
+        "text": "Reform",
         "isCorrect": false
       },
       {
         "text": "Alliierten",
         "isCorrect": true
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Alliierten\" nutzt Florian Hahn 107.9× häufiger als der CDU/CSU-Durchschnitt.",
@@ -257,19 +257,19 @@
     "question": "Welches Adjektiv nutzt Florian Hahn häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
         "text": "Stabil",
         "isCorrect": true
       },
       {
         "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
         "isCorrect": false
       }
     ],
@@ -396,11 +396,11 @@
           "count": 2
         },
         {
-          "word": "klimaschutz",
+          "word": "energie",
           "count": 1
         },
         {
-          "word": "energie",
+          "word": "klimaschutz",
           "count": 1
         }
       ],
@@ -424,7 +424,7 @@
       ],
       "soziales": [
         {
-          "word": "familien",
+          "word": "wohnungen",
           "count": 1
         },
         {
@@ -432,7 +432,7 @@
           "count": 1
         },
         {
-          "word": "wohnungen",
+          "word": "familien",
           "count": 1
         }
       ],
@@ -446,11 +446,11 @@
           "count": 8
         },
         {
-          "word": "streitkräfte",
+          "word": "waffen",
           "count": 5
         },
         {
-          "word": "waffen",
+          "word": "streitkräfte",
           "count": 5
         },
         {
@@ -526,15 +526,15 @@
           "count": 2
         },
         {
-          "word": "richter",
-          "count": 1
-        },
-        {
           "word": "verfassung",
           "count": 1
         },
         {
           "word": "strafverfolgung",
+          "count": 1
+        },
+        {
+          "word": "richter",
           "count": 1
         }
       ],

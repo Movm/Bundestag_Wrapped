@@ -11,14 +11,14 @@
   "minWords": 19,
   "maxWords": 879,
   "rankings": {
-    "speechRank": 45,
+    "speechRank": 46,
     "wordsRank": 140,
     "partySpeechRank": 7,
     "partyWordsRank": 16,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 92.8,
-    "verbosityRank": 432,
+    "percentile": 92.7,
+    "verbosityRank": 433,
     "verbosityTotal": 582,
     "partyVerbosityRank": 34,
     "longestSpeechRank": 152
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 38,
     "interruptionsReceived": 22,
-    "interrupterRank": 138,
-    "interruptedRank": 317
+    "interrupterRank": 136,
+    "interruptedRank": 319
   },
   "words": {
     "topWords": [
@@ -238,7 +238,11 @@
     "question": "Welches Wort nutzt Ina Latendorf häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Minister",
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Opposition",
         "isCorrect": false
       },
       {
@@ -246,11 +250,7 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
+        "text": "Abstimmung",
         "isCorrect": false
       }
     ],
@@ -261,20 +261,20 @@
     "question": "Welches Adjektiv nutzt Ina Latendorf häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Europäisch",
+        "text": "Gut",
         "isCorrect": false
       },
       {
-        "text": "Notwendig",
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
         "isCorrect": false
       },
       {
         "text": "Schlecht",
         "isCorrect": true
-      },
-      {
-        "text": "Stark",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Schlecht\" nutzt Ina Latendorf 3.2× häufiger als der DIE LINKE-Durchschnitt.",
@@ -388,15 +388,15 @@
           "count": 2
         },
         {
-          "word": "umweltschutz",
-          "count": 1
-        },
-        {
-          "word": "naturschutz",
-          "count": 1
-        },
-        {
           "word": "fracking",
+          "count": 1
+        },
+        {
+          "word": "energie",
+          "count": 1
+        },
+        {
+          "word": "erneuerbare",
           "count": 1
         }
       ],
@@ -410,15 +410,15 @@
           "count": 2
         },
         {
+          "word": "markt",
+          "count": 1
+        },
+        {
           "word": "kartell",
           "count": 1
         },
         {
           "word": "wettbewerbsrecht",
-          "count": 1
-        },
-        {
-          "word": "markt",
           "count": 1
         }
       ],
@@ -518,7 +518,7 @@
           "count": 1
         },
         {
-          "word": "bildung",
+          "word": "wissenschaft",
           "count": 1
         }
       ],
@@ -528,15 +528,15 @@
           "count": 3
         },
         {
+          "word": "kosten",
+          "count": 2
+        },
+        {
           "word": "finanzierung",
           "count": 2
         },
         {
           "word": "mehrwertsteuer",
-          "count": 2
-        },
-        {
-          "word": "kosten",
           "count": 2
         },
         {
@@ -554,11 +554,11 @@
           "count": 4
         },
         {
-          "word": "beschluss",
+          "word": "bundesverfassungsgericht",
           "count": 3
         },
         {
-          "word": "bundesverfassungsgericht",
+          "word": "beschluss",
           "count": 3
         },
         {
@@ -572,21 +572,21 @@
           "count": 2
         },
         {
-          "word": "arbeitnehmerinnen",
+          "word": "einkommen",
           "count": 1
         },
         {
-          "word": "einkommen",
+          "word": "arbeitnehmerinnen",
           "count": 1
         }
       ],
       "mobilitaet": [
         {
-          "word": "infrastruktur",
+          "word": "bahn",
           "count": 1
         },
         {
-          "word": "bahn",
+          "word": "infrastruktur",
           "count": 1
         }
       ]

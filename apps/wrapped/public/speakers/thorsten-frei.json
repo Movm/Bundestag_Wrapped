@@ -11,13 +11,13 @@
   "minWords": 8,
   "maxWords": 518,
   "rankings": {
-    "speechRank": 560,
+    "speechRank": 563,
     "wordsRank": 164,
-    "partySpeechRank": 181,
+    "partySpeechRank": 182,
     "partyWordsRank": 47,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 10.5,
+    "percentile": 10.1,
     "verbosityRank": 579,
     "verbosityTotal": 582,
     "partyVerbosityRank": 188,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 11,
-    "interrupterRank": 476,
-    "interruptedRank": 453
+    "interrupterRank": 444,
+    "interruptedRank": 447
   },
   "words": {
     "topWords": [
@@ -56,11 +56,11 @@
         "count": 19
       },
       {
-        "word": "gesellschaft",
+        "word": "habe",
         "count": 18
       },
       {
-        "word": "habe",
+        "word": "gesellschaft",
         "count": 18
       }
     ],
@@ -262,19 +262,19 @@
     "question": "Welches Wort nutzt Thorsten Frei häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
         "text": "Meiser",
         "isCorrect": true
       },
       {
-        "text": "Politik",
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesellschaft",
         "isCorrect": false
       }
     ],
@@ -285,19 +285,19 @@
     "question": "Welches Adjektiv nutzt Thorsten Frei häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
         "text": "Maßgeblich",
         "isCorrect": true
       },
       {
-        "text": "National",
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
         "isCorrect": false
       }
     ],
@@ -452,15 +452,15 @@
           "count": 5
         },
         {
-          "word": "familie",
+          "word": "rentner",
           "count": 1
         },
         {
-          "word": "renten",
+          "word": "altersvorsorge",
           "count": 1
         },
         {
-          "word": "gerechtigkeit",
+          "word": "jugend",
           "count": 1
         }
       ],
@@ -474,11 +474,11 @@
           "count": 3
         },
         {
-          "word": "verteidigungsfähigkeit",
+          "word": "armee",
           "count": 1
         },
         {
-          "word": "armee",
+          "word": "verteidigungsfähigkeit",
           "count": 1
         },
         {
@@ -530,19 +530,19 @@
       ],
       "bildung": [
         {
-          "word": "schulen",
-          "count": 2
-        },
-        {
           "word": "professor",
           "count": 2
         },
         {
-          "word": "lehrer",
-          "count": 1
+          "word": "schulen",
+          "count": 2
         },
         {
           "word": "forschung",
+          "count": 1
+        },
+        {
+          "word": "lehrer",
           "count": 1
         },
         {
@@ -568,7 +568,7 @@
           "count": 2
         },
         {
-          "word": "steuern",
+          "word": "defizit",
           "count": 1
         }
       ],
@@ -592,6 +592,10 @@
       ],
       "arbeit": [
         {
+          "word": "lohn",
+          "count": 4
+        },
+        {
           "word": "arbeitnehmerinnen",
           "count": 4
         },
@@ -601,10 +605,6 @@
         },
         {
           "word": "arbeitsplätze",
-          "count": 4
-        },
-        {
-          "word": "lohn",
           "count": 4
         },
         {

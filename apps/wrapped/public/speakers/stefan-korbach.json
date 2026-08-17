@@ -11,14 +11,14 @@
   "minWords": 312,
   "maxWords": 537,
   "rankings": {
-    "speechRank": 390,
+    "speechRank": 396,
     "wordsRank": 458,
     "partySpeechRank": 110,
     "partyWordsRank": 147,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 37.7,
-    "verbosityRank": 287,
+    "percentile": 36.7,
+    "verbosityRank": 288,
     "verbosityTotal": 582,
     "partyVerbosityRank": 105,
     "longestSpeechRank": 554
@@ -27,13 +27,17 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 7,
     "interrupterRank": null,
-    "interruptedRank": 510
+    "interruptedRank": 509
   },
   "words": {
     "topWords": [
       {
         "word": "deutschland",
         "count": 12
+      },
+      {
+        "word": "entlastung",
+        "count": 10
       },
       {
         "word": "unternehmen",
@@ -44,19 +48,15 @@
         "count": 10
       },
       {
-        "word": "entlastung",
-        "count": 10
-      },
-      {
         "word": "luftverkehr",
         "count": 10
       },
       {
-        "word": "land",
+        "word": "rund",
         "count": 9
       },
       {
-        "word": "rund",
+        "word": "land",
         "count": 9
       },
       {
@@ -64,11 +64,11 @@
         "count": 9
       },
       {
-        "word": "gesetzentwurf",
+        "word": "linke",
         "count": 8
       },
       {
-        "word": "grünen",
+        "word": "gegenüber",
         "count": 8
       }
     ],
@@ -234,20 +234,20 @@
     "question": "Welches Wort nutzt Dr. Stefan Korbach häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Investitionen",
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
         "text": "Supermarkt",
         "isCorrect": true
-      },
-      {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Supermarkt\" nutzt Dr. Stefan Korbach 187.6× häufiger als der CDU/CSU-Durchschnitt.",
@@ -261,15 +261,15 @@
         "isCorrect": true
       },
       {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
         "text": "Stark",
         "isCorrect": false
       },
       {
-        "text": "Alt",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
@@ -430,7 +430,11 @@
       ],
       "europa": [
         {
-          "word": "europa",
+          "word": "krieg",
+          "count": 1
+        },
+        {
+          "word": "iran",
           "count": 1
         },
         {
@@ -442,11 +446,7 @@
           "count": 1
         },
         {
-          "word": "krieg",
-          "count": 1
-        },
-        {
-          "word": "iran",
+          "word": "europa",
           "count": 1
         }
       ],
@@ -462,11 +462,11 @@
           "count": 10
         },
         {
-          "word": "kosten",
+          "word": "mehrwertsteuer",
           "count": 4
         },
         {
-          "word": "mehrwertsteuer",
+          "word": "kosten",
           "count": 4
         },
         {
@@ -506,7 +506,7 @@
           "count": 3
         },
         {
-          "word": "flughafen",
+          "word": "fernverkehr",
           "count": 1
         }
       ]

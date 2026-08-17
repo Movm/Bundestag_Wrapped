@@ -11,13 +11,13 @@
   "minWords": 532,
   "maxWords": 717,
   "rankings": {
-    "speechRank": 502,
+    "speechRank": 493,
     "wordsRank": 466,
-    "partySpeechRank": 160,
+    "partySpeechRank": 154,
     "partyWordsRank": 150,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 19.8,
+    "percentile": 21.2,
     "verbosityRank": 43,
     "verbosityTotal": 582,
     "partyVerbosityRank": 17,
@@ -26,7 +26,7 @@
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 15,
-    "interrupterRank": 446,
+    "interrupterRank": 468,
     "interruptedRank": 401
   },
   "words": {
@@ -60,15 +60,15 @@
         "count": 11
       },
       {
-        "word": "jahren",
-        "count": 10
-      },
-      {
         "word": "technologie",
         "count": 10
       },
       {
-        "word": "morgen",
+        "word": "jahren",
+        "count": 10
+      },
+      {
+        "word": "nächsten",
         "count": 10
       }
     ],
@@ -216,20 +216,20 @@
     "question": "Welches Wort nutzt Carsten Körber häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bürger",
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
         "isCorrect": false
       },
       {
         "text": "Volkswagen",
         "isCorrect": true
-      },
-      {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Volkswagen\" nutzt Carsten Körber 396.3× häufiger als der CDU/CSU-Durchschnitt.",
@@ -239,11 +239,7 @@
     "question": "Welches Adjektiv nutzt Carsten Körber häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Europäisch",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
@@ -251,7 +247,11 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
         "isCorrect": false
       }
     ],
@@ -356,33 +356,33 @@
           "count": 2
         },
         {
-          "word": "klimaneutralität",
+          "word": "klimaschutz",
           "count": 1
         },
         {
-          "word": "klimaschutz",
+          "word": "klimaneutralität",
           "count": 1
         }
       ],
       "wirtschaft": [
         {
-          "word": "werk",
-          "count": 3
-        },
-        {
           "word": "wettbewerbsfähigkeit",
           "count": 3
         },
         {
-          "word": "standort",
-          "count": 2
+          "word": "werk",
+          "count": 3
         },
         {
           "word": "wachstum",
           "count": 2
         },
         {
-          "word": "marktanteil",
+          "word": "standort",
+          "count": 2
+        },
+        {
+          "word": "fachkräfte",
           "count": 1
         }
       ],
@@ -428,15 +428,15 @@
           "count": 13
         },
         {
-          "word": "bildung",
-          "count": 1
-        },
-        {
           "word": "wissenschaftler",
           "count": 1
         },
         {
           "word": "schule",
+          "count": 1
+        },
+        {
+          "word": "bildung",
           "count": 1
         }
       ],
@@ -480,11 +480,11 @@
       ],
       "mobilitaet": [
         {
-          "word": "auto",
+          "word": "infrastruktur",
           "count": 3
         },
         {
-          "word": "infrastruktur",
+          "word": "auto",
           "count": 3
         },
         {

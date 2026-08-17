@@ -21,7 +21,7 @@
     "verbosityRank": 345,
     "verbosityTotal": 582,
     "partyVerbosityRank": 88,
-    "longestSpeechRank": 140
+    "longestSpeechRank": 141
   },
   "drama": {
     "interruptionsGiven": 1254,
@@ -50,12 +50,6 @@
     ],
     "signatureWords": [
       {
-        "word": "vermittlungsausschuss",
-        "count": 6,
-        "ratioParty": 233.9,
-        "ratioBundestag": 56.3
-      },
-      {
         "word": "kartellparteien",
         "count": 12,
         "ratioParty": 233.9,
@@ -66,6 +60,12 @@
         "count": 6,
         "ratioParty": 233.9,
         "ratioBundestag": 133.7
+      },
+      {
+        "word": "vermittlungsausschuss",
+        "count": 6,
+        "ratioParty": 233.9,
+        "ratioBundestag": 56.3
       },
       {
         "word": "diäten",
@@ -94,13 +94,13 @@
         "ratio": 93.6
       },
       {
-        "word": "vermittlungsausschuss",
+        "word": "scheuer",
         "count": 6,
         "score": 32.75,
         "ratio": 233.9
       },
       {
-        "word": "scheuer",
+        "word": "vermittlungsausschuss",
         "count": 6,
         "score": 32.75,
         "ratio": 233.9
@@ -261,34 +261,34 @@
     "question": "Welches Wort nutzt Stephan Brandner häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Steuern",
+        "text": "Familie",
         "isCorrect": false
+      },
+      {
+        "text": "Kartellparteien",
+        "isCorrect": true
       },
       {
         "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
+        "text": "Gesetzentwurf",
         "isCorrect": false
-      },
-      {
-        "text": "Vermittlungsausschuss",
-        "isCorrect": true
       }
     ],
-    "explanationParty": "\"Vermittlungsausschuss\" nutzt Stephan Brandner 233.9× häufiger als der AfD-Durchschnitt.",
-    "explanationBundestag": "56.3× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Kartellparteien\" nutzt Stephan Brandner 233.9× häufiger als der AfD-Durchschnitt.",
+    "explanationBundestag": "712.9× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Stephan Brandner häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Sicher",
+        "text": "Stark",
         "isCorrect": false
       },
       {
-        "text": "Richtig",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
@@ -296,7 +296,7 @@
         "isCorrect": true
       },
       {
-        "text": "Wichtig",
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
@@ -385,11 +385,11 @@
           "count": 1
         },
         {
-          "word": "zuwanderer",
+          "word": "migranten",
           "count": 1
         },
         {
-          "word": "abschiebung",
+          "word": "zuwanderer",
           "count": 1
         }
       ],
@@ -403,7 +403,7 @@
           "count": 2
         },
         {
-          "word": "klimaneutral",
+          "word": "stromnetz",
           "count": 1
         },
         {
@@ -411,17 +411,17 @@
           "count": 1
         },
         {
-          "word": "stromnetz",
+          "word": "klimaneutral",
           "count": 1
         }
       ],
       "wirtschaft": [
         {
-          "word": "produktion",
+          "word": "fachkräftemangel",
           "count": 4
         },
         {
-          "word": "fachkräftemangel",
+          "word": "produktion",
           "count": 4
         },
         {
@@ -433,7 +433,7 @@
           "count": 2
         },
         {
-          "word": "industrie",
+          "word": "wachstum",
           "count": 1
         }
       ],
@@ -451,11 +451,11 @@
           "count": 3
         },
         {
-          "word": "wohnungen",
+          "word": "eltern",
           "count": 2
         },
         {
-          "word": "rentenanspruch",
+          "word": "wohnungen",
           "count": 2
         }
       ],
@@ -491,15 +491,15 @@
           "count": 2
         },
         {
-          "word": "pflege",
-          "count": 1
-        },
-        {
           "word": "behandlung",
           "count": 1
         },
         {
           "word": "psychisch",
+          "count": 1
+        },
+        {
+          "word": "pflege",
           "count": 1
         }
       ],
@@ -575,11 +575,11 @@
           "count": 8
         },
         {
-          "word": "sondervermögen",
+          "word": "haushalt",
           "count": 5
         },
         {
-          "word": "haushalt",
+          "word": "sondervermögen",
           "count": 5
         },
         {
@@ -619,15 +619,15 @@
           "count": 3
         },
         {
-          "word": "einkommen",
+          "word": "arbeitslosigkeit",
+          "count": 1
+        },
+        {
+          "word": "gewerkschaft",
           "count": 1
         },
         {
           "word": "arbeitnehmer",
-          "count": 1
-        },
-        {
-          "word": "löhne",
           "count": 1
         }
       ],
@@ -649,7 +649,7 @@
           "count": 2
         },
         {
-          "word": "inlandsflüge",
+          "word": "fliegen",
           "count": 1
         }
       ]

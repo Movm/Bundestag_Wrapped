@@ -11,13 +11,13 @@
   "minWords": 56,
   "maxWords": 692,
   "rankings": {
-    "speechRank": 416,
+    "speechRank": 423,
     "wordsRank": 196,
     "partySpeechRank": 70,
     "partyWordsRank": 29,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 33.5,
+    "percentile": 32.4,
     "verbosityRank": 547,
     "verbosityTotal": 582,
     "partyVerbosityRank": 80,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 30,
     "interruptionsReceived": 60,
-    "interrupterRank": 169,
-    "interruptedRank": 79
+    "interrupterRank": 173,
+    "interruptedRank": 80
   },
   "words": {
     "topWords": [
@@ -40,19 +40,19 @@
         "count": 34
       },
       {
-        "word": "kinder",
-        "count": 24
-      },
-      {
         "word": "wissen",
         "count": 24
       },
       {
-        "word": "tierschutz",
-        "count": 23
+        "word": "kinder",
+        "count": 24
       },
       {
         "word": "tiere",
+        "count": 23
+      },
+      {
+        "word": "tierschutz",
         "count": 23
       },
       {
@@ -66,6 +66,10 @@
       {
         "word": "tieren",
         "count": 19
+      },
+      {
+        "word": "deutschen",
+        "count": 17
       }
     ],
     "signatureWords": [
@@ -235,20 +239,20 @@
     "question": "Welches Wort nutzt Dr. Zoe Mayer häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
         "text": "Tierversuchen",
         "isCorrect": true
+      },
+      {
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Tierversuchen\" nutzt Dr. Zoe Mayer 531.1× häufiger als der GRÜNE-Durchschnitt.",
@@ -258,10 +262,6 @@
     "question": "Welches Adjektiv nutzt Dr. Zoe Mayer häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
         "text": "Unfair",
         "isCorrect": true
       },
@@ -270,7 +270,11 @@
         "isCorrect": false
       },
       {
-        "text": "Politisch",
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
@@ -481,33 +485,33 @@
       ],
       "digital": [
         {
+          "word": "internet",
+          "count": 1
+        },
+        {
           "word": "digitalisierung",
           "count": 1
         },
         {
           "word": "daten",
           "count": 1
-        },
-        {
-          "word": "internet",
-          "count": 1
         }
       ],
       "bildung": [
-        {
-          "word": "wissenschaft",
-          "count": 4
-        },
         {
           "word": "schulen",
           "count": 4
         },
         {
-          "word": "forschung",
-          "count": 2
+          "word": "wissenschaft",
+          "count": 4
         },
         {
           "word": "schule",
+          "count": 2
+        },
+        {
+          "word": "forschung",
           "count": 2
         }
       ],
@@ -517,11 +521,11 @@
           "count": 11
         },
         {
-          "word": "haushalt",
+          "word": "inflation",
           "count": 2
         },
         {
-          "word": "inflation",
+          "word": "haushalt",
           "count": 2
         },
         {
@@ -529,7 +533,7 @@
           "count": 2
         },
         {
-          "word": "steuerzahler",
+          "word": "steuer",
           "count": 1
         }
       ],
@@ -543,11 +547,11 @@
           "count": 2
         },
         {
-          "word": "verordnung",
+          "word": "novelle",
           "count": 1
         },
         {
-          "word": "novelle",
+          "word": "verordnung",
           "count": 1
         }
       ],
@@ -567,11 +571,11 @@
           "count": 1
         },
         {
-          "word": "bahn",
+          "word": "verkehrsminister",
           "count": 1
         },
         {
-          "word": "verkehrsminister",
+          "word": "bahn",
           "count": 1
         }
       ]

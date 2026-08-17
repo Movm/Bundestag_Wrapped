@@ -11,14 +11,14 @@
   "minWords": 10,
   "maxWords": 749,
   "rankings": {
-    "speechRank": 25,
+    "speechRank": 26,
     "wordsRank": 69,
     "partySpeechRank": 4,
     "partyWordsRank": 8,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 96.0,
-    "verbosityRank": 350,
+    "percentile": 95.8,
+    "verbosityRank": 352,
     "verbosityTotal": 582,
     "partyVerbosityRank": 25,
     "longestSpeechRank": 317
@@ -46,10 +46,6 @@
       {
         "word": "linke",
         "count": 25
-      },
-      {
-        "word": "koalition",
-        "count": 24
       }
     ],
     "signatureWords": [
@@ -66,16 +62,16 @@
         "ratioBundestag": 30.4
       },
       {
-        "word": "güntzler",
-        "count": 6,
-        "ratioParty": 207.0,
-        "ratioBundestag": 103.6
-      },
-      {
         "word": "olympischen",
         "count": 6,
         "ratioParty": 207.0,
         "ratioBundestag": 30.0
+      },
+      {
+        "word": "güntzler",
+        "count": 6,
+        "ratioParty": 207.0,
+        "ratioBundestag": 103.6
       },
       {
         "word": "unternehmensteuerreform",
@@ -98,13 +94,13 @@
         "ratio": 276.1
       },
       {
-        "word": "güntzler",
+        "word": "olympischen",
         "count": 6,
         "score": 32.03,
         "ratio": 207.0
       },
       {
-        "word": "olympischen",
+        "word": "güntzler",
         "count": 6,
         "score": 32.03,
         "ratio": 207.0
@@ -258,16 +254,12 @@
     {
       "emoji": "📊",
       "label": "Top-Redner",
-      "value": "Top 4%"
+      "value": "Top 5%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Christian Görke häufiger als der Rest der Fraktion?",
     "options": [
-      {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
       {
         "text": "Bundesfinanzminister",
         "isCorrect": true
@@ -277,7 +269,11 @@
         "isCorrect": false
       },
       {
-        "text": "Bürger",
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
         "isCorrect": false
       }
     ],
@@ -288,15 +284,15 @@
     "question": "Welches Adjektiv nutzt Christian Görke häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Richtig",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
         "isCorrect": false
       },
       {
         "text": "Stark",
-        "isCorrect": false
-      },
-      {
-        "text": "Europäisch",
         "isCorrect": false
       },
       {
@@ -429,15 +425,15 @@
           "count": 7
         },
         {
-          "word": "firmen",
-          "count": 3
-        },
-        {
           "word": "volkswirtschaft",
           "count": 3
         },
         {
-          "word": "zoll",
+          "word": "firmen",
+          "count": 3
+        },
+        {
+          "word": "pleite",
           "count": 1
         }
       ],
@@ -455,11 +451,11 @@
           "count": 3
         },
         {
-          "word": "familien",
+          "word": "mieten",
           "count": 2
         },
         {
-          "word": "mieten",
+          "word": "wohnung",
           "count": 2
         }
       ],
@@ -469,11 +465,11 @@
           "count": 2
         },
         {
-          "word": "polizei",
+          "word": "bundespolizei",
           "count": 1
         },
         {
-          "word": "bundespolizei",
+          "word": "polizei",
           "count": 1
         }
       ],
@@ -505,21 +501,21 @@
           "count": 1
         },
         {
-          "word": "europa",
+          "word": "gipfel",
           "count": 1
         },
         {
-          "word": "gipfel",
+          "word": "europa",
           "count": 1
         }
       ],
       "digital": [
         {
-          "word": "online",
+          "word": "rundfunk",
           "count": 1
         },
         {
-          "word": "rundfunk",
+          "word": "online",
           "count": 1
         }
       ],
@@ -533,11 +529,11 @@
           "count": 2
         },
         {
-          "word": "professor",
+          "word": "weiterbildung",
           "count": 1
         },
         {
-          "word": "weiterbildung",
+          "word": "professor",
           "count": 1
         },
         {
@@ -577,15 +573,15 @@
           "count": 2
         },
         {
-          "word": "verfassungswidrig",
-          "count": 1
-        },
-        {
-          "word": "gesetzgebung",
+          "word": "diskriminierung",
           "count": 1
         },
         {
           "word": "urteil",
+          "count": 1
+        },
+        {
+          "word": "verfassungswidrig",
           "count": 1
         }
       ],
@@ -595,19 +591,19 @@
           "count": 8
         },
         {
-          "word": "arbeitslose",
-          "count": 1
-        },
-        {
-          "word": "arbeitsplätze",
-          "count": 1
-        },
-        {
           "word": "sozialabgaben",
           "count": 1
         },
         {
-          "word": "arbeitszeit",
+          "word": "arbeitslose",
+          "count": 1
+        },
+        {
+          "word": "befristung",
+          "count": 1
+        },
+        {
+          "word": "arbeitsplätze",
           "count": 1
         }
       ],
@@ -625,7 +621,7 @@
           "count": 3
         },
         {
-          "word": "auto",
+          "word": "bahnhof",
           "count": 1
         },
         {

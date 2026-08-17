@@ -13,7 +13,7 @@
   "rankings": {
     "speechRank": 595,
     "wordsRank": 599,
-    "partySpeechRank": 61,
+    "partySpeechRank": 62,
     "partyWordsRank": 61,
     "partySize": 63,
     "totalSpeakers": 626,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 7,
     "interruptionsReceived": 5,
-    "interrupterRank": 319,
-    "interruptedRank": 546
+    "interrupterRank": 311,
+    "interruptedRank": 552
   },
   "words": {
     "topWords": [
@@ -40,11 +40,11 @@
         "count": 6
       },
       {
-        "word": "soldaten",
+        "word": "soldatinnen",
         "count": 6
       },
       {
-        "word": "soldatinnen",
+        "word": "soldaten",
         "count": 6
       },
       {
@@ -52,15 +52,7 @@
         "count": 5
       },
       {
-        "word": "problem",
-        "count": 4
-      },
-      {
-        "word": "haltung",
-        "count": 4
-      },
-      {
-        "word": "sicherheit",
+        "word": "kfor",
         "count": 4
       },
       {
@@ -68,7 +60,15 @@
         "count": 4
       },
       {
-        "word": "gesetz",
+        "word": "sicherheit",
+        "count": 4
+      },
+      {
+        "word": "problem",
+        "count": 4
+      },
+      {
+        "word": "haltung",
         "count": 4
       }
     ],
@@ -198,20 +198,20 @@
     "question": "Welches Wort nutzt Zada Salihović häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Fraktion",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Soldatinnen",
-        "isCorrect": true
+        "text": "Antrag",
+        "isCorrect": false
       },
       {
         "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Bildung",
-        "isCorrect": false
+        "text": "Soldatinnen",
+        "isCorrect": true
       }
     ],
     "explanationParty": "\"Soldatinnen\" nutzt Zada Salihović 103.3× häufiger als der DIE LINKE-Durchschnitt.",
@@ -221,11 +221,7 @@
     "question": "Welches Adjektiv nutzt Zada Salihović häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
@@ -233,7 +229,11 @@
         "isCorrect": true
       },
       {
-        "text": "Schlecht",
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Neu",
         "isCorrect": false
       }
     ],
@@ -356,7 +356,7 @@
           "count": 2
         },
         {
-          "word": "verfassungsschutz",
+          "word": "gewalt",
           "count": 1
         }
       ],
@@ -386,15 +386,15 @@
           "count": 2
         },
         {
+          "word": "schulen",
+          "count": 1
+        },
+        {
           "word": "ausbildung",
           "count": 1
         },
         {
           "word": "forschung",
-          "count": 1
-        },
-        {
-          "word": "schulen",
           "count": 1
         }
       ],

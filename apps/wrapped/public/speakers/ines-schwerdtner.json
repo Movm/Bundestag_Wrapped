@@ -11,13 +11,13 @@
   "minWords": 101,
   "maxWords": 1480,
   "rankings": {
-    "speechRank": 136,
+    "speechRank": 142,
     "wordsRank": 60,
-    "partySpeechRank": 20,
+    "partySpeechRank": 21,
     "partyWordsRank": 4,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 78.3,
+    "percentile": 77.3,
     "verbosityRank": 19,
     "verbosityTotal": 582,
     "partyVerbosityRank": 2,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 52,
     "interruptionsReceived": 68,
     "interrupterRank": 102,
-    "interruptedRank": 59
+    "interruptedRank": 58
   },
   "words": {
     "topWords": [
@@ -54,6 +54,10 @@
       {
         "word": "haushalt",
         "count": 25
+      },
+      {
+        "word": "leben",
+        "count": 24
       }
     ],
     "signatureWords": [
@@ -210,7 +214,11 @@
     "question": "Welches Wort nutzt Ines Schwerdtner häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Zukunft",
+        "text": "Haushalt",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
@@ -218,11 +226,7 @@
         "isCorrect": true
       },
       {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
@@ -233,7 +237,7 @@
     "question": "Welches Adjektiv nutzt Ines Schwerdtner häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Politisch",
+        "text": "Klar",
         "isCorrect": false
       },
       {
@@ -241,7 +245,7 @@
         "isCorrect": false
       },
       {
-        "text": "Gut",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
@@ -346,15 +350,15 @@
     "topicWords": {
       "migration": [
         {
-          "word": "familiennachzug",
-          "count": 1
-        },
-        {
           "word": "asylbewerber",
           "count": 1
         },
         {
           "word": "migranten",
+          "count": 1
+        },
+        {
+          "word": "familiennachzug",
           "count": 1
         }
       ],
@@ -398,7 +402,7 @@
           "count": 4
         },
         {
-          "word": "wirtschaftskrise",
+          "word": "unternehmen",
           "count": 2
         }
       ],
@@ -434,11 +438,11 @@
           "count": 4
         },
         {
-          "word": "armee",
+          "word": "waffen",
           "count": 4
         },
         {
-          "word": "waffen",
+          "word": "armee",
           "count": 4
         },
         {
@@ -464,7 +468,7 @@
           "count": 3
         },
         {
-          "word": "krankheit",
+          "word": "pflegekraft",
           "count": 1
         }
       ],
@@ -506,15 +510,15 @@
           "count": 3
         },
         {
-          "word": "bildung",
-          "count": 2
-        },
-        {
           "word": "schüler",
           "count": 2
         },
         {
-          "word": "erzieherin",
+          "word": "bildung",
+          "count": 2
+        },
+        {
+          "word": "kita",
           "count": 1
         }
       ],
@@ -568,7 +572,7 @@
           "count": 3
         },
         {
-          "word": "arbeitszeit",
+          "word": "arbeitsplatz",
           "count": 2
         }
       ],
@@ -582,15 +586,15 @@
           "count": 4
         },
         {
-          "word": "deutschlandticket",
-          "count": 2
-        },
-        {
           "word": "auto",
           "count": 2
         },
         {
-          "word": "straße",
+          "word": "deutschlandticket",
+          "count": 2
+        },
+        {
+          "word": "stau",
           "count": 1
         }
       ]

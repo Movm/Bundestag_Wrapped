@@ -11,13 +11,13 @@
   "minWords": 391,
   "maxWords": 978,
   "rankings": {
-    "speechRank": 295,
+    "speechRank": 283,
     "wordsRank": 229,
-    "partySpeechRank": 64,
+    "partySpeechRank": 61,
     "partyWordsRank": 51,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 52.9,
+    "percentile": 54.8,
     "verbosityRank": 64,
     "verbosityTotal": 582,
     "partyVerbosityRank": 16,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 17,
     "interruptionsReceived": 33,
-    "interrupterRank": 221,
-    "interruptedRank": 222
+    "interrupterRank": 225,
+    "interruptedRank": 220
   },
   "words": {
     "topWords": [
@@ -68,16 +68,16 @@
         "ratioBundestag": 15.8
       },
       {
-        "word": "bedanke",
-        "count": 6,
-        "ratioParty": 23.2,
-        "ratioBundestag": 22.9
-      },
-      {
         "word": "gießen",
         "count": 6,
         "ratioParty": 23.2,
         "ratioBundestag": 40.9
+      },
+      {
+        "word": "bedanke",
+        "count": 6,
+        "ratioParty": 23.2,
+        "ratioBundestag": 22.9
       }
     ],
     "signatureWordsParty": [
@@ -94,13 +94,13 @@
         "ratio": 24.9
       },
       {
-        "word": "bedanke",
+        "word": "gießen",
         "count": 6,
         "score": 19.12,
         "ratio": 23.2
       },
       {
-        "word": "gießen",
+        "word": "bedanke",
         "count": 6,
         "score": 19.12,
         "ratio": 23.2
@@ -176,11 +176,7 @@
     "question": "Welches Wort nutzt Robin Jünger häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
@@ -188,7 +184,11 @@
         "isCorrect": true
       },
       {
-        "text": "Migration",
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
         "isCorrect": false
       }
     ],
@@ -388,6 +388,10 @@
       ],
       "digital": [
         {
+          "word": "daten",
+          "count": 3
+        },
+        {
           "word": "rechenzentrum",
           "count": 3
         },
@@ -401,10 +405,6 @@
         },
         {
           "word": "digital",
-          "count": 3
-        },
-        {
-          "word": "daten",
           "count": 3
         }
       ],
@@ -458,17 +458,17 @@
           "count": 1
         },
         {
-          "word": "richter",
+          "word": "strafe",
           "count": 1
         }
       ],
       "arbeit": [
         {
-          "word": "arbeitsschutz",
+          "word": "burnout",
           "count": 1
         },
         {
-          "word": "burnout",
+          "word": "arbeitsschutz",
           "count": 1
         }
       ],
@@ -486,11 +486,11 @@
           "count": 2
         },
         {
-          "word": "verkehr",
+          "word": "infrastruktur",
           "count": 1
         },
         {
-          "word": "autobahn",
+          "word": "verkehr",
           "count": 1
         }
       ]

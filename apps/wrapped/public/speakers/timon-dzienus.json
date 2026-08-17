@@ -11,13 +11,13 @@
   "minWords": 67,
   "maxWords": 873,
   "rankings": {
-    "speechRank": 255,
+    "speechRank": 252,
     "wordsRank": 194,
-    "partySpeechRank": 47,
+    "partySpeechRank": 46,
     "partyWordsRank": 28,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 59.3,
+    "percentile": 59.7,
     "verbosityRank": 230,
     "verbosityTotal": 582,
     "partyVerbosityRank": 25,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 46,
     "interruptionsReceived": 20,
-    "interrupterRank": 116,
-    "interruptedRank": 345
+    "interrupterRank": 115,
+    "interruptedRank": 341
   },
   "words": {
     "topWords": [
@@ -293,6 +293,10 @@
     "question": "Welches Wort nutzt Timon Dzienus häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
         "text": "Gesetz",
         "isCorrect": false
       },
@@ -302,10 +306,6 @@
       },
       {
         "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
         "isCorrect": false
       }
     ],
@@ -320,15 +320,15 @@
         "isCorrect": true
       },
       {
-        "text": "Groß",
+        "text": "Politisch",
         "isCorrect": false
       },
       {
-        "text": "Gut",
+        "text": "Klar",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
+        "text": "National",
         "isCorrect": false
       }
     ],
@@ -469,11 +469,11 @@
           "count": 1
         },
         {
-          "word": "wirtschaft",
+          "word": "kapital",
           "count": 1
         },
         {
-          "word": "kapital",
+          "word": "markt",
           "count": 1
         }
       ],
@@ -515,15 +515,15 @@
       ],
       "gesundheit": [
         {
-          "word": "psychisch",
-          "count": 2
-        },
-        {
           "word": "pflege",
           "count": 2
         },
         {
           "word": "prävention",
+          "count": 2
+        },
+        {
+          "word": "psychisch",
           "count": 2
         },
         {
@@ -609,6 +609,10 @@
           "count": 3
         },
         {
+          "word": "gesundheitsschutz",
+          "count": 2
+        },
+        {
           "word": "einkommen",
           "count": 2
         },
@@ -619,15 +623,11 @@
         {
           "word": "arbeitsplätze",
           "count": 2
-        },
-        {
-          "word": "gesundheitsschutz",
-          "count": 2
         }
       ],
       "mobilitaet": [
         {
-          "word": "straßen",
+          "word": "straße",
           "count": 1
         },
         {
@@ -635,7 +635,7 @@
           "count": 1
         },
         {
-          "word": "straße",
+          "word": "straßen",
           "count": 1
         }
       ]

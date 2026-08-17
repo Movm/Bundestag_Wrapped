@@ -11,13 +11,13 @@
   "minWords": 273,
   "maxWords": 843,
   "rankings": {
-    "speechRank": 119,
+    "speechRank": 110,
     "wordsRank": 123,
-    "partySpeechRank": 25,
+    "partySpeechRank": 21,
     "partyWordsRank": 26,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 81.0,
+    "percentile": 82.4,
     "verbosityRank": 106,
     "verbosityTotal": 582,
     "partyVerbosityRank": 29,
@@ -26,7 +26,7 @@
   "drama": {
     "interruptionsGiven": 22,
     "interruptionsReceived": 74,
-    "interrupterRank": 206,
+    "interrupterRank": 203,
     "interruptedRank": 49
   },
   "words": {
@@ -36,11 +36,11 @@
         "count": 47
       },
       {
-        "word": "infrastruktur",
+        "word": "bürger",
         "count": 24
       },
       {
-        "word": "bürger",
+        "word": "infrastruktur",
         "count": 24
       },
       {
@@ -48,11 +48,11 @@
         "count": 24
       },
       {
-        "word": "sicherheit",
+        "word": "bundesregierung",
         "count": 22
       },
       {
-        "word": "bundesregierung",
+        "word": "sicherheit",
         "count": 22
       },
       {
@@ -249,20 +249,20 @@
     "question": "Welches Wort nutzt Arne Raue häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
         "text": "Hilfswerk",
         "isCorrect": true
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
-        "text": "Familie",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Hilfswerk\" nutzt Arne Raue 113.6× häufiger als der AfD-Durchschnitt.",
@@ -276,16 +276,16 @@
         "isCorrect": false
       },
       {
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
         "text": "Unzureichend",
         "isCorrect": true
-      },
-      {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Unzureichend\" nutzt Arne Raue 17.0× häufiger als der AfD-Durchschnitt.",
@@ -365,19 +365,19 @@
           "count": 4
         },
         {
-          "word": "flüchtlinge",
-          "count": 3
-        },
-        {
           "word": "familiennachzug",
           "count": 3
         },
         {
-          "word": "migranten",
-          "count": 1
+          "word": "flüchtlinge",
+          "count": 3
         },
         {
           "word": "asylrecht",
+          "count": 1
+        },
+        {
+          "word": "subsidiär",
           "count": 1
         }
       ],
@@ -431,15 +431,15 @@
           "count": 3
         },
         {
-          "word": "sozialleistungen",
-          "count": 2
-        },
-        {
           "word": "kind",
           "count": 2
         },
         {
-          "word": "sozialhilfe",
+          "word": "sozialleistungen",
+          "count": 2
+        },
+        {
+          "word": "sozialsystem",
           "count": 1
         }
       ],
@@ -457,11 +457,11 @@
           "count": 3
         },
         {
-          "word": "anschlag",
+          "word": "streitkräfte",
           "count": 2
         },
         {
-          "word": "streitkräfte",
+          "word": "soldaten",
           "count": 2
         }
       ],
@@ -489,14 +489,6 @@
       ],
       "europa": [
         {
-          "word": "brüssel",
-          "count": 1
-        },
-        {
-          "word": "außenminister",
-          "count": 1
-        },
-        {
           "word": "sanktionen",
           "count": 1
         },
@@ -507,15 +499,23 @@
         {
           "word": "ukraine",
           "count": 1
+        },
+        {
+          "word": "brüssel",
+          "count": 1
+        },
+        {
+          "word": "außenminister",
+          "count": 1
         }
       ],
       "digital": [
         {
-          "word": "netz",
+          "word": "cybersicherheit",
           "count": 3
         },
         {
-          "word": "cybersicherheit",
+          "word": "netz",
           "count": 3
         },
         {
@@ -547,19 +547,19 @@
           "count": 3
         },
         {
-          "word": "steuerzahler",
-          "count": 2
-        },
-        {
           "word": "finanzamt",
           "count": 2
         },
         {
-          "word": "finanzierung",
+          "word": "steuerzahler",
+          "count": 2
+        },
+        {
+          "word": "haushalt",
           "count": 1
         },
         {
-          "word": "steuern",
+          "word": "finanzierung",
           "count": 1
         }
       ],
@@ -573,25 +573,25 @@
           "count": 2
         },
         {
-          "word": "straftaten",
-          "count": 2
-        },
-        {
           "word": "strafrecht",
           "count": 2
         },
         {
-          "word": "strafen",
+          "word": "straftaten",
+          "count": 2
+        },
+        {
+          "word": "gleichberechtigung",
           "count": 1
         }
       ],
       "arbeit": [
         {
-          "word": "jobcenter",
+          "word": "überstunden",
           "count": 1
         },
         {
-          "word": "überstunden",
+          "word": "jobcenter",
           "count": 1
         }
       ],

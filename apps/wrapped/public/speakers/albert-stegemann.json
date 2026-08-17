@@ -11,13 +11,13 @@
   "minWords": 68,
   "maxWords": 1085,
   "rankings": {
-    "speechRank": 419,
+    "speechRank": 434,
     "wordsRank": 396,
-    "partySpeechRank": 123,
+    "partySpeechRank": 126,
     "partyWordsRank": 123,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 33.1,
+    "percentile": 30.7,
     "verbosityRank": 152,
     "verbosityTotal": 582,
     "partyVerbosityRank": 53,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 46,
     "interruptionsReceived": 13,
-    "interrupterRank": 117,
-    "interruptedRank": 425
+    "interrupterRank": 119,
+    "interruptedRank": 430
   },
   "words": {
     "topWords": [
@@ -184,11 +184,7 @@
     "question": "Welches Wort nutzt Albert Stegemann häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
@@ -196,7 +192,11 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaft",
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Freiheit",
         "isCorrect": false
       }
     ],
@@ -320,15 +320,15 @@
           "count": 6
         },
         {
-          "word": "handel",
-          "count": 3
-        },
-        {
           "word": "produktion",
           "count": 3
         },
         {
           "word": "rezession",
+          "count": 3
+        },
+        {
+          "word": "handel",
           "count": 3
         }
       ],
@@ -350,11 +350,11 @@
       ],
       "gesundheit": [
         {
-          "word": "gesundheitssystem",
+          "word": "krankenversicherung",
           "count": 3
         },
         {
-          "word": "krankenversicherung",
+          "word": "gesundheitssystem",
           "count": 3
         },
         {
@@ -362,11 +362,11 @@
           "count": 2
         },
         {
-          "word": "krankenhausreform",
+          "word": "pandemie",
           "count": 1
         },
         {
-          "word": "pandemie",
+          "word": "medikamente",
           "count": 1
         }
       ],
@@ -414,11 +414,11 @@
           "count": 2
         },
         {
-          "word": "inflation",
+          "word": "haushaltsentwurf",
           "count": 1
         },
         {
-          "word": "vermögensteuer",
+          "word": "subventionen",
           "count": 1
         }
       ],
@@ -426,6 +426,10 @@
         {
           "word": "arbeitnehmer",
           "count": 4
+        },
+        {
+          "word": "löhne",
+          "count": 1
         },
         {
           "word": "arbeitsplätze",
@@ -437,10 +441,6 @@
         },
         {
           "word": "sozialabgaben",
-          "count": 1
-        },
-        {
-          "word": "löhne",
           "count": 1
         }
       ]

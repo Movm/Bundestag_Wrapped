@@ -11,22 +11,22 @@
   "minWords": 61,
   "maxWords": 575,
   "rankings": {
-    "speechRank": 404,
+    "speechRank": 407,
     "wordsRank": 453,
     "partySpeechRank": 97,
     "partyWordsRank": 100,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 35.5,
+    "percentile": 35.0,
     "verbosityRank": 501,
     "verbosityTotal": 582,
     "partyVerbosityRank": 129,
-    "longestSpeechRank": 521
+    "longestSpeechRank": 524
   },
   "drama": {
     "interruptionsGiven": 30,
     "interruptionsReceived": 17,
-    "interrupterRank": 173,
+    "interrupterRank": 169,
     "interruptedRank": 369
   },
   "words": {
@@ -217,11 +217,11 @@
     "question": "Welches Wort nutzt Dr. Michael Blos häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Reform",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Zukunft",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
@@ -229,7 +229,7 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaft",
+        "text": "Bürger",
         "isCorrect": false
       }
     ],
@@ -240,19 +240,19 @@
     "question": "Welches Adjektiv nutzt Dr. Michael Blos häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
         "text": "Links",
         "isCorrect": true
       },
       {
-        "text": "Sicher",
+        "text": "National",
         "isCorrect": false
       },
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
+        "text": "Wichtig",
         "isCorrect": false
       }
     ],
@@ -347,15 +347,15 @@
           "count": 4
         },
         {
-          "word": "wälder",
-          "count": 3
-        },
-        {
           "word": "energiewende",
           "count": 3
         },
         {
           "word": "umweltpolitik",
+          "count": 3
+        },
+        {
+          "word": "wälder",
           "count": 3
         }
       ],
@@ -363,10 +363,6 @@
         {
           "word": "betriebe",
           "count": 5
-        },
-        {
-          "word": "mittelstand",
-          "count": 3
         },
         {
           "word": "wirtschaft",
@@ -377,21 +373,25 @@
           "count": 3
         },
         {
+          "word": "mittelstand",
+          "count": 3
+        },
+        {
           "word": "markt",
           "count": 1
         }
       ],
       "sicherheit": [
         {
+          "word": "betrug",
+          "count": 1
+        },
+        {
           "word": "verteidigung",
           "count": 1
         },
         {
           "word": "bundeswehr",
-          "count": 1
-        },
-        {
-          "word": "betrug",
           "count": 1
         }
       ],
@@ -429,11 +429,11 @@
           "count": 2
         },
         {
-          "word": "steuerzahler",
+          "word": "haushaltsentwurf",
           "count": 1
         },
         {
-          "word": "haushaltsentwurf",
+          "word": "finanzminister",
           "count": 1
         }
       ],

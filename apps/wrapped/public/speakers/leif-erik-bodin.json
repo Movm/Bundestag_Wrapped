@@ -11,53 +11,45 @@
   "minWords": 53,
   "maxWords": 593,
   "rankings": {
-    "speechRank": 533,
+    "speechRank": 534,
     "wordsRank": 536,
-    "partySpeechRank": 173,
+    "partySpeechRank": 172,
     "partyWordsRank": 177,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 14.9,
+    "percentile": 14.7,
     "verbosityRank": 291,
     "verbosityTotal": 582,
-    "partyVerbosityRank": 106,
-    "longestSpeechRank": 506
+    "partyVerbosityRank": 107,
+    "longestSpeechRank": 504
   },
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 12,
-    "interrupterRank": 421,
-    "interruptedRank": 437
+    "interrupterRank": 404,
+    "interruptedRank": 438
   },
   "words": {
     "topWords": [
-      {
-        "word": "nordfriesland",
-        "count": 10
-      },
       {
         "word": "insel",
         "count": 10
       },
       {
-        "word": "dithmarschen",
-        "count": 9
+        "word": "nordfriesland",
+        "count": 10
       },
       {
         "word": "menschen",
         "count": 9
       },
       {
-        "word": "wasser",
+        "word": "dithmarschen",
         "count": 9
       },
       {
-        "word": "verantwortung",
-        "count": 6
-      },
-      {
-        "word": "deutschland",
-        "count": 6
+        "word": "wasser",
+        "count": 9
       },
       {
         "word": "sylt",
@@ -69,6 +61,14 @@
       },
       {
         "word": "mein",
+        "count": 6
+      },
+      {
+        "word": "westküste",
+        "count": 6
+      },
+      {
+        "word": "umsetzung",
         "count": 6
       }
     ],
@@ -252,20 +252,20 @@
     "question": "Welches Wort nutzt Leif Erik Bodin häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
+        "text": "Migration",
         "isCorrect": false
       },
       {
         "text": "Westküste",
         "isCorrect": true
+      },
+      {
+        "text": "Rente",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Westküste\" nutzt Leif Erik Bodin 3446.9× häufiger als der CDU/CSU-Durchschnitt.",
@@ -275,20 +275,20 @@
     "question": "Welches Adjektiv nutzt Leif Erik Bodin häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Falsch",
+        "text": "Sicher",
         "isCorrect": false
       },
       {
-        "text": "Europäisch",
-        "isCorrect": false
+        "text": "Wirtschaftlich",
+        "isCorrect": true
       },
       {
         "text": "Sozial",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": true
+        "text": "Richtig",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Wirtschaftlich\" nutzt Leif Erik Bodin 10.7× häufiger als der CDU/CSU-Durchschnitt.",
@@ -398,6 +398,10 @@
           "count": 4
         },
         {
+          "word": "energie",
+          "count": 2
+        },
+        {
           "word": "klimawandel",
           "count": 2
         },
@@ -406,11 +410,7 @@
           "count": 2
         },
         {
-          "word": "energie",
-          "count": 2
-        },
-        {
-          "word": "erderwärmung",
+          "word": "naturschutz",
           "count": 1
         }
       ],
@@ -428,11 +428,11 @@
           "count": 2
         },
         {
-          "word": "betriebe",
+          "word": "wettbewerb",
           "count": 1
         },
         {
-          "word": "produktion",
+          "word": "konkurrenz",
           "count": 1
         }
       ],
@@ -484,11 +484,11 @@
       ],
       "mobilitaet": [
         {
-          "word": "infrastruktur",
+          "word": "verkehrsminister",
           "count": 2
         },
         {
-          "word": "verkehrsminister",
+          "word": "infrastruktur",
           "count": 2
         }
       ]

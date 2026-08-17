@@ -11,13 +11,13 @@
   "minWords": 45,
   "maxWords": 1930,
   "rankings": {
-    "speechRank": 275,
+    "speechRank": 257,
     "wordsRank": 139,
-    "partySpeechRank": 51,
+    "partySpeechRank": 47,
     "partyWordsRank": 21,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 56.1,
+    "percentile": 58.9,
     "verbosityRank": 16,
     "verbosityTotal": 582,
     "partyVerbosityRank": 2,
@@ -246,20 +246,20 @@
     "question": "Welches Wort nutzt Britta Haßelmann häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Demokratie",
+        "text": "Bundesregierung",
+        "isCorrect": false
+      },
+      {
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
         "text": "Pflegenden",
         "isCorrect": true
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Pflegenden\" nutzt Britta Haßelmann 83.1× häufiger als der GRÜNE-Durchschnitt.",
@@ -269,7 +269,7 @@
     "question": "Welches Adjektiv nutzt Britta Haßelmann häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Europäisch",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
@@ -277,11 +277,11 @@
         "isCorrect": true
       },
       {
-        "text": "Politisch",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Stark",
+        "text": "Sicher",
         "isCorrect": false
       }
     ],
@@ -382,7 +382,7 @@
     "topicWords": {
       "migration": [
         {
-          "word": "grenzkontrollen",
+          "word": "aufenthaltsstatus",
           "count": 1
         },
         {
@@ -390,17 +390,17 @@
           "count": 1
         },
         {
-          "word": "aufenthaltsstatus",
+          "word": "grenzkontrollen",
           "count": 1
         }
       ],
       "klima": [
         {
-          "word": "klimaschutz",
+          "word": "klimaneutralität",
           "count": 3
         },
         {
-          "word": "klimaneutralität",
+          "word": "klimaschutz",
           "count": 3
         },
         {
@@ -422,11 +422,11 @@
           "count": 2
         },
         {
-          "word": "handelsabkommen",
+          "word": "wirtschaftspolitik",
           "count": 1
         },
         {
-          "word": "wirtschaftspolitik",
+          "word": "handelsabkommen",
           "count": 1
         }
       ],
@@ -448,7 +448,7 @@
           "count": 3
         },
         {
-          "word": "eltern",
+          "word": "rente",
           "count": 2
         }
       ],
@@ -458,11 +458,11 @@
           "count": 4
         },
         {
-          "word": "polizisten",
+          "word": "bundeswehr",
           "count": 2
         },
         {
-          "word": "bundeswehr",
+          "word": "polizisten",
           "count": 2
         },
         {
@@ -520,11 +520,11 @@
       ],
       "digital": [
         {
-          "word": "cybersicherheit",
+          "word": "pressefreiheit",
           "count": 1
         },
         {
-          "word": "pressefreiheit",
+          "word": "cybersicherheit",
           "count": 1
         }
       ],
@@ -544,11 +544,11 @@
           "count": 5
         },
         {
-          "word": "investitionen",
+          "word": "sondervermögen",
           "count": 3
         },
         {
-          "word": "sondervermögen",
+          "word": "investitionen",
           "count": 3
         },
         {
@@ -556,7 +556,7 @@
           "count": 2
         },
         {
-          "word": "bundeshaushalt",
+          "word": "investition",
           "count": 1
         }
       ],
@@ -570,23 +570,19 @@
           "count": 3
         },
         {
-          "word": "verwaltungsgericht",
+          "word": "rechtsstaatlichkeit",
           "count": 1
         },
         {
-          "word": "gericht",
+          "word": "grundrechte",
           "count": 1
         },
         {
-          "word": "verfassung",
+          "word": "menschenrechte",
           "count": 1
         }
       ],
       "arbeit": [
-        {
-          "word": "vereinbarkeit",
-          "count": 2
-        },
         {
           "word": "arbeitnehmer",
           "count": 2
@@ -596,11 +592,15 @@
           "count": 2
         },
         {
-          "word": "sozialpartner",
+          "word": "vereinbarkeit",
+          "count": 2
+        },
+        {
+          "word": "arbeitsplatz",
           "count": 1
         },
         {
-          "word": "teilzeit",
+          "word": "rentenversicherung",
           "count": 1
         }
       ],
@@ -614,11 +614,11 @@
           "count": 4
         },
         {
-          "word": "straßen",
+          "word": "schiene",
           "count": 2
         },
         {
-          "word": "schiene",
+          "word": "straßen",
           "count": 2
         },
         {

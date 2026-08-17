@@ -11,13 +11,13 @@
   "minWords": 379,
   "maxWords": 589,
   "rankings": {
-    "speechRank": 535,
+    "speechRank": 536,
     "wordsRank": 546,
-    "partySpeechRank": 174,
+    "partySpeechRank": 173,
     "partyWordsRank": 178,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 14.5,
+    "percentile": 14.4,
     "verbosityRank": 178,
     "verbosityTotal": 582,
     "partyVerbosityRank": 67,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 5,
     "interrupterRank": null,
-    "interruptedRank": 539
+    "interruptedRank": 543
   },
   "words": {
     "topWords": [
@@ -48,6 +48,14 @@
         "count": 7
       },
       {
+        "word": "unabhängigkeit",
+        "count": 6
+      },
+      {
+        "word": "zeiten",
+        "count": 6
+      },
+      {
         "word": "stehen",
         "count": 6
       },
@@ -56,19 +64,11 @@
         "count": 6
       },
       {
-        "word": "zeiten",
-        "count": 6
-      },
-      {
-        "word": "unabhängigkeit",
-        "count": 6
-      },
-      {
-        "word": "zusammenhang",
+        "word": "gesetzentwurf",
         "count": 5
       },
       {
-        "word": "halt",
+        "word": "zusammenhang",
         "count": 5
       }
     ],
@@ -216,20 +216,20 @@
     "question": "Welches Wort nutzt Jan Metzler häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Bundesrechnungshof",
+        "isCorrect": true
+      },
+      {
         "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Investitionen",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Wirtschaft",
+        "text": "Gesetz",
         "isCorrect": false
-      },
-      {
-        "text": "Bundesrechnungshof",
-        "isCorrect": true
       }
     ],
     "explanationParty": "\"Bundesrechnungshof\" nutzt Jan Metzler 106.5× häufiger als der CDU/CSU-Durchschnitt.",
@@ -239,7 +239,11 @@
     "question": "Welches Adjektiv nutzt Jan Metzler häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Klar",
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
         "isCorrect": false
       },
       {
@@ -247,11 +251,7 @@
         "isCorrect": true
       },
       {
-        "text": "Stark",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
+        "text": "Erfolgreich",
         "isCorrect": false
       }
     ],
@@ -360,25 +360,25 @@
           "count": 3
         },
         {
+          "word": "wettbewerbsfähigkeit",
+          "count": 1
+        },
+        {
           "word": "markt",
           "count": 1
         },
         {
           "word": "mittelstand",
           "count": 1
-        },
-        {
-          "word": "wirtschaft",
-          "count": 1
         }
       ],
       "soziales": [
         {
-          "word": "sozialpolitik",
+          "word": "sozialstaat",
           "count": 1
         },
         {
-          "word": "sozialstaat",
+          "word": "sozialpolitik",
           "count": 1
         }
       ],

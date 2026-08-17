@@ -11,13 +11,13 @@
   "minWords": 429,
   "maxWords": 488,
   "rankings": {
-    "speechRank": 596,
+    "speechRank": 586,
     "wordsRank": 604,
-    "partySpeechRank": 108,
+    "partySpeechRank": 106,
     "partyWordsRank": 111,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 4.8,
+    "percentile": 6.4,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 5,
-    "interrupterRank": 465,
-    "interruptedRank": 551
+    "interrupterRank": 476,
+    "interruptedRank": 541
   },
   "words": {
     "topWords": [
@@ -40,15 +40,15 @@
         "count": 5
       },
       {
+        "word": "weniger",
+        "count": 5
+      },
+      {
         "word": "brücken",
         "count": 5
       },
       {
         "word": "kostet",
-        "count": 5
-      },
-      {
-        "word": "weniger",
         "count": 5
       },
       {
@@ -60,15 +60,15 @@
         "count": 4
       },
       {
-        "word": "gesetz",
-        "count": 4
-      },
-      {
         "word": "beschleunigung",
         "count": 4
       },
       {
-        "word": "lesung",
+        "word": "gesetz",
+        "count": 4
+      },
+      {
+        "word": "zukunftsgesetz",
         "count": 3
       }
     ],
@@ -190,20 +190,20 @@
     "question": "Welches Wort nutzt Dirk Vöpel häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Fraktion",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
-        "text": "Zukunft",
-        "isCorrect": false
+        "text": "Kostet",
+        "isCorrect": true
       },
       {
         "text": "Investitionen",
         "isCorrect": false
       },
       {
-        "text": "Kostet",
-        "isCorrect": true
+        "text": "Europa",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Kostet\" nutzt Dirk Vöpel 75.4× häufiger als der SPD-Durchschnitt.",
@@ -310,10 +310,6 @@
       ],
       "klima": [
         {
-          "word": "umwelt",
-          "count": 1
-        },
-        {
           "word": "klimaschutz",
           "count": 1
         },
@@ -324,13 +320,13 @@
         {
           "word": "energiewende",
           "count": 1
+        },
+        {
+          "word": "umwelt",
+          "count": 1
         }
       ],
       "wirtschaft": [
-        {
-          "word": "unternehmen",
-          "count": 1
-        },
         {
           "word": "volkswirtschaft",
           "count": 1
@@ -341,6 +337,10 @@
         },
         {
           "word": "wettbewerbsfähigkeit",
+          "count": 1
+        },
+        {
+          "word": "unternehmen",
           "count": 1
         }
       ],

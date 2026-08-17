@@ -11,14 +11,14 @@
   "minWords": 48,
   "maxWords": 585,
   "rankings": {
-    "speechRank": 540,
+    "speechRank": 530,
     "wordsRank": 530,
-    "partySpeechRank": 60,
+    "partySpeechRank": 59,
     "partyWordsRank": 57,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 13.7,
-    "verbosityRank": 504,
+    "percentile": 15.3,
+    "verbosityRank": 502,
     "verbosityTotal": 582,
     "partyVerbosityRank": 51,
     "longestSpeechRank": 514
@@ -26,7 +26,7 @@
   "drama": {
     "interruptionsGiven": 5,
     "interruptionsReceived": 0,
-    "interrupterRank": 348,
+    "interrupterRank": 360,
     "interruptedRank": null
   },
   "words": {
@@ -56,10 +56,6 @@
         "count": 7
       },
       {
-        "word": "weiter",
-        "count": 6
-      },
-      {
         "word": "habe",
         "count": 6
       },
@@ -69,6 +65,10 @@
       },
       {
         "word": "wissen",
+        "count": 6
+      },
+      {
+        "word": "bedeutet",
         "count": 6
       }
     ],
@@ -195,19 +195,19 @@
     "question": "Welches Wort nutzt Stella Merendino häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
         "text": "Spende",
         "isCorrect": true
       },
       {
-        "text": "Politik",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
-        "text": "Gesetzentwurf",
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
         "isCorrect": false
       }
     ],
@@ -313,19 +313,19 @@
           "count": 1
         },
         {
-          "word": "fachkräftemangel",
-          "count": 1
-        },
-        {
-          "word": "kapital",
-          "count": 1
-        },
-        {
           "word": "konzerne",
           "count": 1
         },
         {
           "word": "unternehmen",
+          "count": 1
+        },
+        {
+          "word": "fachkräftemangel",
+          "count": 1
+        },
+        {
+          "word": "kapital",
           "count": 1
         }
       ],
@@ -335,11 +335,11 @@
           "count": 2
         },
         {
-          "word": "jugendliche",
+          "word": "eltern",
           "count": 1
         },
         {
-          "word": "eltern",
+          "word": "jugendliche",
           "count": 1
         }
       ],
@@ -351,11 +351,11 @@
       ],
       "gesundheit": [
         {
-          "word": "pflegekräfte",
+          "word": "krankenhaus",
           "count": 5
         },
         {
-          "word": "krankenhaus",
+          "word": "pflegekräfte",
           "count": 5
         },
         {
@@ -363,11 +363,11 @@
           "count": 4
         },
         {
-          "word": "pflege",
+          "word": "notaufnahme",
           "count": 3
         },
         {
-          "word": "prävention",
+          "word": "pflege",
           "count": 3
         }
       ],

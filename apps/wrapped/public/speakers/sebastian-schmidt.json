@@ -11,32 +11,32 @@
   "minWords": 79,
   "maxWords": 647,
   "rankings": {
-    "speechRank": 181,
+    "speechRank": 175,
     "wordsRank": 223,
-    "partySpeechRank": 42,
+    "partySpeechRank": 41,
     "partyWordsRank": 64,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 71.1,
-    "verbosityRank": 231,
+    "percentile": 72.0,
+    "verbosityRank": 229,
     "verbosityTotal": 582,
     "partyVerbosityRank": 81,
-    "longestSpeechRank": 441
+    "longestSpeechRank": 440
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 12,
     "interrupterRank": null,
-    "interruptedRank": 436
+    "interruptedRank": 444
   },
   "words": {
     "topWords": [
       {
-        "word": "bevölkerungsschutz",
+        "word": "sicherheit",
         "count": 30
       },
       {
-        "word": "sicherheit",
+        "word": "bevölkerungsschutz",
         "count": 30
       },
       {
@@ -60,11 +60,11 @@
         "count": 18
       },
       {
-        "word": "eines",
+        "word": "haushalt",
         "count": 17
       },
       {
-        "word": "haushalt",
+        "word": "eines",
         "count": 17
       },
       {
@@ -234,7 +234,11 @@
     "question": "Welches Wort nutzt Sebastian Schmidt häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Wirtschaft",
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
@@ -242,11 +246,7 @@
         "isCorrect": true
       },
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
@@ -257,15 +257,15 @@
     "question": "Welches Adjektiv nutzt Sebastian Schmidt häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
         "text": "Angemessen",
         "isCorrect": true
       },
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
+        "text": "National",
         "isCorrect": false
       },
       {
@@ -404,15 +404,15 @@
           "count": 7
         },
         {
-          "word": "polizei",
-          "count": 5
-        },
-        {
           "word": "bundeswehr",
           "count": 5
         },
         {
-          "word": "anschlag",
+          "word": "polizei",
+          "count": 5
+        },
+        {
+          "word": "angriff",
           "count": 3
         }
       ],
@@ -422,11 +422,11 @@
           "count": 3
         },
         {
-          "word": "gesundheitswesen",
+          "word": "vorsorge",
           "count": 2
         },
         {
-          "word": "rettungsdienst",
+          "word": "gesundheitswesen",
           "count": 2
         },
         {
@@ -434,7 +434,7 @@
           "count": 2
         },
         {
-          "word": "vorsorge",
+          "word": "rettungsdienst",
           "count": 2
         }
       ],
@@ -448,15 +448,15 @@
           "count": 2
         },
         {
-          "word": "ukraine",
-          "count": 1
-        },
-        {
           "word": "krieg",
           "count": 1
         },
         {
           "word": "frieden",
+          "count": 1
+        },
+        {
+          "word": "ukraine",
           "count": 1
         }
       ],
@@ -524,11 +524,11 @@
       ],
       "justiz": [
         {
-          "word": "datenschutz",
+          "word": "novelle",
           "count": 1
         },
         {
-          "word": "novelle",
+          "word": "datenschutz",
           "count": 1
         }
       ],
@@ -552,11 +552,11 @@
           "count": 4
         },
         {
-          "word": "verkehr",
+          "word": "flugverkehr",
           "count": 1
         },
         {
-          "word": "flugverkehr",
+          "word": "verkehr",
           "count": 1
         }
       ]

@@ -11,23 +11,23 @@
   "minWords": 39,
   "maxWords": 834,
   "rankings": {
-    "speechRank": 26,
+    "speechRank": 25,
     "wordsRank": 45,
     "partySpeechRank": 8,
     "partyWordsRank": 10,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 95.8,
-    "verbosityRank": 256,
+    "percentile": 96.0,
+    "verbosityRank": 255,
     "verbosityTotal": 582,
     "partyVerbosityRank": 61,
-    "longestSpeechRank": 201
+    "longestSpeechRank": 200
   },
   "drama": {
     "interruptionsGiven": 38,
     "interruptionsReceived": 58,
     "interrupterRank": 139,
-    "interruptedRank": 84
+    "interruptedRank": 86
   },
   "words": {
     "topWords": [
@@ -46,16 +46,16 @@
     ],
     "signatureWords": [
       {
-        "word": "microsoft",
-        "count": 5,
-        "ratioParty": 303.2,
-        "ratioBundestag": 60.9
-      },
-      {
         "word": "reallaboren",
         "count": 5,
         "ratioParty": 303.2,
         "ratioBundestag": 126.8
+      },
+      {
+        "word": "microsoft",
+        "count": 5,
+        "ratioParty": 303.2,
+        "ratioBundestag": 60.9
       },
       {
         "word": "zendis",
@@ -70,10 +70,10 @@
         "ratioBundestag": 304.4
       },
       {
-        "word": "source",
+        "word": "publikationen",
         "count": 6,
         "ratioParty": 121.3,
-        "ratioBundestag": 42.5
+        "ratioBundestag": 140.5
       }
     ],
     "signatureWordsParty": [
@@ -90,19 +90,19 @@
         "ratio": 133.4
       },
       {
-        "word": "source",
+        "word": "publikationen",
         "count": 6,
         "score": 28.84,
         "ratio": 121.3
       },
       {
-        "word": "microsoft",
+        "word": "reallaboren",
         "count": 5,
         "score": 28.59,
         "ratio": 303.2
       },
       {
-        "word": "reallaboren",
+        "word": "microsoft",
         "count": 5,
         "score": 28.59,
         "ratio": 303.2
@@ -122,16 +122,16 @@
         "ratio": 304.4
       },
       {
+        "word": "publikationen",
+        "count": 6,
+        "score": 29.71,
+        "ratio": 140.5
+      },
+      {
         "word": "reallaboren",
         "count": 5,
         "score": 24.25,
         "ratio": 126.8
-      },
-      {
-        "word": "source",
-        "count": 6,
-        "score": 22.64,
-        "ratio": 42.5
       },
       {
         "word": "microsoft",
@@ -227,37 +227,37 @@
     {
       "emoji": "📊",
       "label": "Top-Redner",
-      "value": "Top 5%"
+      "value": "Top 4%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Carolin Wagner häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Microsoft",
-        "isCorrect": true
-      },
-      {
-        "text": "Sicherheit",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
         "text": "Gesellschaft",
         "isCorrect": false
+      },
+      {
+        "text": "Reallaboren",
+        "isCorrect": true
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Microsoft\" nutzt Dr. Carolin Wagner 303.2× häufiger als der SPD-Durchschnitt.",
-    "explanationBundestag": "60.9× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Reallaboren\" nutzt Dr. Carolin Wagner 303.2× häufiger als der SPD-Durchschnitt.",
+    "explanationBundestag": "126.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Dr. Carolin Wagner häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Jung",
         "isCorrect": false
       },
       {
@@ -265,7 +265,7 @@
         "isCorrect": false
       },
       {
-        "text": "Groß",
+        "text": "Alt",
         "isCorrect": false
       },
       {
@@ -382,11 +382,11 @@
           "count": 2
         },
         {
-          "word": "solarenergie",
+          "word": "klimaneutralität",
           "count": 1
         },
         {
-          "word": "offshore",
+          "word": "emissionen",
           "count": 1
         }
       ],
@@ -408,17 +408,17 @@
           "count": 4
         },
         {
-          "word": "produktion",
+          "word": "markt",
           "count": 2
         }
       ],
       "soziales": [
         {
-          "word": "kind",
+          "word": "kinder",
           "count": 3
         },
         {
-          "word": "kinder",
+          "word": "kind",
           "count": 3
         },
         {
@@ -480,7 +480,7 @@
           "count": 3
         },
         {
-          "word": "ukraine",
+          "word": "gipfel",
           "count": 2
         }
       ],
@@ -498,11 +498,11 @@
           "count": 7
         },
         {
-          "word": "netzausbau",
+          "word": "plattformen",
           "count": 5
         },
         {
-          "word": "plattformen",
+          "word": "netzausbau",
           "count": 5
         }
       ],
@@ -542,11 +542,11 @@
           "count": 4
         },
         {
-          "word": "finanzierung",
+          "word": "sondervermögen",
           "count": 3
         },
         {
-          "word": "sondervermögen",
+          "word": "finanzierung",
           "count": 3
         }
       ],
@@ -582,15 +582,15 @@
           "count": 2
         },
         {
-          "word": "arbeitnehmerinnen",
+          "word": "sozialversicherung",
           "count": 1
         },
         {
-          "word": "arbeitnehmer",
+          "word": "gewerkschaft",
           "count": 1
         },
         {
-          "word": "mindestlohn",
+          "word": "tarifvertrag",
           "count": 1
         }
       ],
@@ -600,19 +600,19 @@
           "count": 9
         },
         {
-          "word": "verkehr",
-          "count": 2
-        },
-        {
           "word": "schiene",
           "count": 2
         },
         {
-          "word": "auto",
-          "count": 1
+          "word": "verkehr",
+          "count": 2
         },
         {
           "word": "bahn",
+          "count": 1
+        },
+        {
+          "word": "auto",
           "count": 1
         }
       ]

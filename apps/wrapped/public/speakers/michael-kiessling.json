@@ -11,14 +11,14 @@
   "minWords": 34,
   "maxWords": 1047,
   "rankings": {
-    "speechRank": 75,
+    "speechRank": 67,
     "wordsRank": 68,
-    "partySpeechRank": 19,
+    "partySpeechRank": 17,
     "partyWordsRank": 23,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 88.0,
-    "verbosityRank": 116,
+    "percentile": 89.3,
+    "verbosityRank": 115,
     "verbosityTotal": 582,
     "partyVerbosityRank": 40,
     "longestSpeechRank": 67
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 58,
     "interrupterRank": null,
-    "interruptedRank": 87
+    "interruptedRank": 83
   },
   "words": {
     "topWords": [
@@ -180,16 +180,16 @@
         "ratioBundestag": 1.9
       },
       {
-        "word": "wirtschaftlich",
-        "count": 3,
-        "ratioParty": 2.1,
-        "ratioBundestag": 2.4
-      },
-      {
         "word": "rechts",
         "count": 3,
         "ratioParty": 2.1,
         "ratioBundestag": 2.0
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 3,
+        "ratioParty": 2.1,
+        "ratioBundestag": 2.4
       }
     ],
     "signatureAdjectivesParty": [
@@ -212,13 +212,13 @@
         "ratio": 2.5
       },
       {
-        "word": "wirtschaftlich",
+        "word": "rechts",
         "count": 3,
         "score": 3.39,
         "ratio": 2.1
       },
       {
-        "word": "rechts",
+        "word": "wirtschaftlich",
         "count": 3,
         "score": 3.39,
         "ratio": 2.1
@@ -280,20 +280,20 @@
     "question": "Welches Wort nutzt Michael Kießling häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Politik",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
         "isCorrect": false
       },
       {
         "text": "Baurecht",
         "isCorrect": true
-      },
-      {
-        "text": "Investitionen",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Baurecht\" nutzt Michael Kießling 498.9× häufiger als der CDU/CSU-Durchschnitt.",
@@ -303,20 +303,20 @@
     "question": "Welches Adjektiv nutzt Michael Kießling häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
+        "isCorrect": false
+      },
+      {
         "text": "Wesentlich",
         "isCorrect": true
-      },
-      {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Wesentlich\" nutzt Michael Kießling 5.4× häufiger als der CDU/CSU-Durchschnitt.",
@@ -450,7 +450,7 @@
           "count": 2
         },
         {
-          "word": "klimaschutz",
+          "word": "windenergie",
           "count": 2
         }
       ],
@@ -472,7 +472,7 @@
           "count": 4
         },
         {
-          "word": "marktwirtschaft",
+          "word": "wachstum",
           "count": 3
         }
       ],
@@ -532,10 +532,6 @@
           "count": 2
         },
         {
-          "word": "digitalisierung",
-          "count": 1
-        },
-        {
           "word": "internet",
           "count": 1
         },
@@ -546,6 +542,10 @@
         {
           "word": "plattform",
           "count": 1
+        },
+        {
+          "word": "digitalisierung",
+          "count": 1
         }
       ],
       "bildung": [
@@ -554,11 +554,11 @@
           "count": 4
         },
         {
-          "word": "kindergarten",
+          "word": "studenten",
           "count": 1
         },
         {
-          "word": "studenten",
+          "word": "kindergarten",
           "count": 1
         },
         {
@@ -584,11 +584,15 @@
           "count": 6
         },
         {
-          "word": "sondervermögen",
+          "word": "steuersenkung",
           "count": 2
         }
       ],
       "justiz": [
+        {
+          "word": "verordnung",
+          "count": 2
+        },
         {
           "word": "novelle",
           "count": 2
@@ -598,25 +602,21 @@
           "count": 2
         },
         {
-          "word": "verordnung",
-          "count": 2
-        },
-        {
           "word": "vertragsrecht",
           "count": 1
         },
         {
-          "word": "beschluss",
+          "word": "gesetzesänderung",
           "count": 1
         }
       ],
       "arbeit": [
         {
-          "word": "arbeitsplätze",
+          "word": "arbeitnehmer",
           "count": 4
         },
         {
-          "word": "arbeitnehmer",
+          "word": "arbeitsplätze",
           "count": 4
         },
         {

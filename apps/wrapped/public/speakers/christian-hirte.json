@@ -11,23 +11,23 @@
   "minWords": 16,
   "maxWords": 529,
   "rankings": {
-    "speechRank": 602,
+    "speechRank": 605,
     "wordsRank": 351,
-    "partySpeechRank": 198,
+    "partySpeechRank": 199,
     "partyWordsRank": 107,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 3.8,
+    "percentile": 3.4,
     "verbosityRank": null,
     "verbosityTotal": null,
     "partyVerbosityRank": null,
-    "longestSpeechRank": 561
+    "longestSpeechRank": 562
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 11,
     "interrupterRank": null,
-    "interruptedRank": 456
+    "interruptedRank": 459
   },
   "words": {
     "topWords": [
@@ -48,16 +48,12 @@
         "count": 17
       },
       {
-        "word": "wasserstoff",
-        "count": 15
-      },
-      {
         "word": "künftig",
         "count": 15
       },
       {
-        "word": "habe",
-        "count": 12
+        "word": "wasserstoff",
+        "count": 15
       },
       {
         "word": "beispiel",
@@ -68,7 +64,11 @@
         "count": 12
       },
       {
-        "word": "jahr",
+        "word": "habe",
+        "count": 12
+      },
+      {
+        "word": "verkehr",
         "count": 11
       }
     ],
@@ -92,16 +92,16 @@
         "ratioBundestag": 145.5
       },
       {
-        "word": "führerschein",
-        "count": 6,
-        "ratioParty": 66.2,
-        "ratioBundestag": 84.3
-      },
-      {
         "word": "autobahn",
         "count": 5,
         "ratioParty": 66.2,
         "ratioBundestag": 66.8
+      },
+      {
+        "word": "führerschein",
+        "count": 6,
+        "ratioParty": 66.2,
+        "ratioBundestag": 84.3
       }
     ],
     "signatureWordsParty": [
@@ -195,7 +195,11 @@
     "question": "Welches Wort nutzt Christian Hirte häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Opposition",
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
         "isCorrect": false
       },
       {
@@ -203,11 +207,7 @@
         "isCorrect": true
       },
       {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
+        "text": "Wirtschaft",
         "isCorrect": false
       }
     ],
@@ -343,21 +343,21 @@
           "count": 3
         },
         {
-          "word": "standort",
+          "word": "betrieb",
           "count": 2
         },
         {
-          "word": "betrieb",
+          "word": "standort",
           "count": 2
         }
       ],
       "soziales": [
         {
-          "word": "eltern",
+          "word": "barrierefreiheit",
           "count": 1
         },
         {
-          "word": "barrierefreiheit",
+          "word": "eltern",
           "count": 1
         }
       ],
@@ -399,15 +399,15 @@
           "count": 7
         },
         {
-          "word": "universitäten",
-          "count": 1
-        },
-        {
           "word": "schülerinnen",
           "count": 1
         },
         {
           "word": "schüler",
+          "count": 1
+        },
+        {
+          "word": "universitäten",
           "count": 1
         }
       ],
@@ -431,7 +431,7 @@
       ],
       "justiz": [
         {
-          "word": "straftaten",
+          "word": "urteil",
           "count": 1
         },
         {
@@ -439,7 +439,7 @@
           "count": 1
         },
         {
-          "word": "urteil",
+          "word": "straftaten",
           "count": 1
         }
       ],
@@ -461,7 +461,7 @@
           "count": 6
         },
         {
-          "word": "öpnv",
+          "word": "autobahn",
           "count": 5
         }
       ]

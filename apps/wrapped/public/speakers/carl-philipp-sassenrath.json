@@ -11,14 +11,14 @@
   "minWords": 27,
   "maxWords": 689,
   "rankings": {
-    "speechRank": 234,
+    "speechRank": 240,
     "wordsRank": 138,
-    "partySpeechRank": 61,
+    "partySpeechRank": 64,
     "partyWordsRank": 38,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 62.6,
-    "verbosityRank": 210,
+    "percentile": 61.7,
+    "verbosityRank": 211,
     "verbosityTotal": 582,
     "partyVerbosityRank": 73,
     "longestSpeechRank": 389
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 20,
-    "interrupterRank": 468,
-    "interruptedRank": 348
+    "interrupterRank": 479,
+    "interruptedRank": 347
   },
   "words": {
     "topWords": [
@@ -42,6 +42,10 @@
       {
         "word": "deutschland",
         "count": 22
+      },
+      {
+        "word": "politik",
+        "count": 19
       }
     ],
     "signatureWords": [
@@ -188,11 +192,11 @@
     "question": "Welches Wort nutzt Carl-Philipp Sassenrath häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Demokratie",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
-        "text": "Europa",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
@@ -200,7 +204,7 @@
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
+        "text": "Minister",
         "isCorrect": false
       }
     ],
@@ -215,15 +219,15 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
-        "text": "Problematisch",
+        "text": "Jung",
         "isCorrect": false
       }
     ],
@@ -338,19 +342,19 @@
           "count": 2
         },
         {
-          "word": "nachhaltigkeit",
-          "count": 2
-        },
-        {
           "word": "klimaneutralität",
           "count": 2
         },
         {
-          "word": "energie",
-          "count": 1
+          "word": "nachhaltigkeit",
+          "count": 2
         },
         {
           "word": "umweltschutz",
+          "count": 1
+        },
+        {
+          "word": "energie",
           "count": 1
         }
       ],
@@ -372,21 +376,21 @@
           "count": 3
         },
         {
-          "word": "wettbewerbsfähigkeit",
+          "word": "wettbewerb",
           "count": 2
         }
       ],
       "soziales": [
+        {
+          "word": "armut",
+          "count": 1
+        },
         {
           "word": "familie",
           "count": 1
         },
         {
           "word": "rente",
-          "count": 1
-        },
-        {
-          "word": "armut",
           "count": 1
         }
       ],
@@ -402,10 +406,6 @@
           "count": 9
         },
         {
-          "word": "pandemie",
-          "count": 1
-        },
-        {
           "word": "krankenhaus",
           "count": 1
         },
@@ -416,15 +416,19 @@
         {
           "word": "gesundheitssystem",
           "count": 1
+        },
+        {
+          "word": "infektion",
+          "count": 1
         }
       ],
       "europa": [
         {
-          "word": "krieg",
+          "word": "europa",
           "count": 6
         },
         {
-          "word": "europa",
+          "word": "krieg",
           "count": 6
         },
         {
@@ -446,10 +450,6 @@
           "count": 2
         },
         {
-          "word": "technologie",
-          "count": 1
-        },
-        {
           "word": "rundfunk",
           "count": 1
         },
@@ -459,6 +459,10 @@
         },
         {
           "word": "digitalisierung",
+          "count": 1
+        },
+        {
+          "word": "technologie",
           "count": 1
         }
       ],
@@ -492,7 +496,7 @@
       ],
       "justiz": [
         {
-          "word": "grundrechte",
+          "word": "grundgesetz",
           "count": 1
         },
         {
@@ -504,11 +508,11 @@
           "count": 1
         },
         {
-          "word": "straftat",
+          "word": "grundrechte",
           "count": 1
         },
         {
-          "word": "gleichberechtigung",
+          "word": "straftat",
           "count": 1
         }
       ],

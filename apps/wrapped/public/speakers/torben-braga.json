@@ -11,13 +11,13 @@
   "minWords": 14,
   "maxWords": 845,
   "rankings": {
-    "speechRank": 472,
+    "speechRank": 462,
     "wordsRank": 485,
-    "partySpeechRank": 108,
+    "partySpeechRank": 107,
     "partyWordsRank": 110,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 24.6,
+    "percentile": 26.2,
     "verbosityRank": 282,
     "verbosityTotal": 582,
     "partyVerbosityRank": 68,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 16,
-    "interrupterRank": 425,
-    "interruptedRank": 386
+    "interrupterRank": 424,
+    "interruptedRank": 375
   },
   "words": {
     "topWords": [
@@ -44,6 +44,10 @@
         "count": 9
       },
       {
+        "word": "land",
+        "count": 8
+      },
+      {
         "word": "außenpolitik",
         "count": 8
       },
@@ -52,23 +56,19 @@
         "count": 8
       },
       {
-        "word": "land",
-        "count": 8
+        "word": "bundeskanzler",
+        "count": 6
       },
       {
-        "word": "israel",
+        "word": "soll",
+        "count": 6
+      },
+      {
+        "word": "wäre",
         "count": 6
       },
       {
         "word": "menschen",
-        "count": 6
-      },
-      {
-        "word": "braucht",
-        "count": 6
-      },
-      {
-        "word": "bundeskanzler",
         "count": 6
       }
     ],
@@ -234,19 +234,19 @@
     "question": "Welches Wort nutzt Torben Braga häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
         "text": "Amtes",
         "isCorrect": true
       },
       {
-        "text": "Migration",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Zukunft",
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Klima",
         "isCorrect": false
       }
     ],
@@ -257,19 +257,19 @@
     "question": "Welches Adjektiv nutzt Torben Braga häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
         "text": "Verantwortungslos",
         "isCorrect": true
       },
       {
-        "text": "Gefährlich",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "Stark",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
+        "text": "Groß",
         "isCorrect": false
       }
     ],
@@ -414,15 +414,15 @@
           "count": 4
         },
         {
-          "word": "terroristen",
-          "count": 1
-        },
-        {
           "word": "anschlag",
           "count": 1
         },
         {
           "word": "soldaten",
+          "count": 1
+        },
+        {
+          "word": "terroristen",
           "count": 1
         }
       ],
@@ -514,15 +514,15 @@
       ],
       "mobilitaet": [
         {
-          "word": "schiff",
-          "count": 1
-        },
-        {
           "word": "infrastruktur",
           "count": 1
         },
         {
           "word": "schiffe",
+          "count": 1
+        },
+        {
+          "word": "schiff",
           "count": 1
         }
       ]

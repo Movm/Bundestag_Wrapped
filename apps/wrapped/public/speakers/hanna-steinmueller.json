@@ -11,13 +11,13 @@
   "minWords": 67,
   "maxWords": 764,
   "rankings": {
-    "speechRank": 240,
+    "speechRank": 241,
     "wordsRank": 270,
-    "partySpeechRank": 45,
+    "partySpeechRank": 44,
     "partyWordsRank": 44,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 61.7,
+    "percentile": 61.5,
     "verbosityRank": 505,
     "verbosityTotal": 582,
     "partyVerbosityRank": 65,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 14,
     "interruptionsReceived": 32,
-    "interrupterRank": 246,
-    "interruptedRank": 229
+    "interrupterRank": 247,
+    "interruptedRank": 230
   },
   "words": {
     "topWords": [
@@ -257,15 +257,15 @@
         "isCorrect": true
       },
       {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetz",
-        "isCorrect": false
-      },
-      {
         "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
         "isCorrect": false
       }
     ],
@@ -276,11 +276,7 @@
     "question": "Welches Adjektiv nutzt Hanna Steinmüller häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
@@ -288,7 +284,11 @@
         "isCorrect": true
       },
       {
-        "text": "Notwendig",
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
         "isCorrect": false
       }
     ],
@@ -403,6 +403,14 @@
       ],
       "klima": [
         {
+          "word": "klimaschutzgesetz",
+          "count": 1
+        },
+        {
+          "word": "erneuerbare",
+          "count": 1
+        },
+        {
           "word": "nachhaltig",
           "count": 1
         },
@@ -413,23 +421,15 @@
         {
           "word": "energie",
           "count": 1
-        },
-        {
-          "word": "klimaschutzgesetz",
-          "count": 1
-        },
-        {
-          "word": "erneuerbare",
-          "count": 1
         }
       ],
       "wirtschaft": [
         {
-          "word": "markt",
+          "word": "wirtschaft",
           "count": 2
         },
         {
-          "word": "wirtschaft",
+          "word": "markt",
           "count": 2
         },
         {
@@ -461,11 +461,11 @@
       ],
       "gesundheit": [
         {
-          "word": "sucht",
+          "word": "arzt",
           "count": 1
         },
         {
-          "word": "arzt",
+          "word": "sucht",
           "count": 1
         }
       ],
@@ -487,15 +487,15 @@
       ],
       "bildung": [
         {
-          "word": "wissenschaftler",
-          "count": 1
-        },
-        {
           "word": "studierende",
           "count": 1
         },
         {
           "word": "bafög",
+          "count": 1
+        },
+        {
+          "word": "wissenschaftler",
           "count": 1
         }
       ],
@@ -509,7 +509,7 @@
           "count": 3
         },
         {
-          "word": "investitionen",
+          "word": "entlastung",
           "count": 1
         },
         {
@@ -531,21 +531,21 @@
           "count": 2
         },
         {
-          "word": "rechtsanwalt",
+          "word": "rechtsstaat",
           "count": 1
         },
         {
-          "word": "rechtsstaat",
+          "word": "rechtsanwalt",
           "count": 1
         }
       ],
       "arbeit": [
         {
-          "word": "kündigungsschutz",
+          "word": "arbeiter",
           "count": 1
         },
         {
-          "word": "arbeiter",
+          "word": "kündigungsschutz",
           "count": 1
         },
         {

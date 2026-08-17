@@ -11,13 +11,13 @@
   "minWords": 226,
   "maxWords": 819,
   "rankings": {
-    "speechRank": 190,
+    "speechRank": 191,
     "wordsRank": 135,
-    "partySpeechRank": 45,
+    "partySpeechRank": 46,
     "partyWordsRank": 37,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 69.6,
+    "percentile": 69.5,
     "verbosityRank": 125,
     "verbosityTotal": 582,
     "partyVerbosityRank": 46,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 15,
     "interruptionsReceived": 35,
-    "interrupterRank": 238,
-    "interruptedRank": 205
+    "interrupterRank": 240,
+    "interruptedRank": 206
   },
   "words": {
     "topWords": [
@@ -215,20 +215,20 @@
     "question": "Welches Wort nutzt Pascal Reddig häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesetzentwurf",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
         "text": "Urheberrechtsverletzungen",
         "isCorrect": true
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Urheberrechtsverletzungen\" nutzt Pascal Reddig 852.4× häufiger als der CDU/CSU-Durchschnitt.",
@@ -238,20 +238,20 @@
     "question": "Welches Adjektiv nutzt Pascal Reddig häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
-        "isCorrect": false
-      },
-      {
         "text": "Rechts",
         "isCorrect": true
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
+      },
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Rechts\" nutzt Pascal Reddig 2.6× häufiger als der CDU/CSU-Durchschnitt.",
@@ -361,12 +361,16 @@
       ],
       "wirtschaft": [
         {
+          "word": "wirtschaft",
+          "count": 2
+        },
+        {
           "word": "wachstum",
           "count": 2
         },
         {
-          "word": "wirtschaft",
-          "count": 2
+          "word": "konjunktur",
+          "count": 1
         },
         {
           "word": "wettbewerbsfähigkeit",
@@ -374,10 +378,6 @@
         },
         {
           "word": "konzerne",
-          "count": 1
-        },
-        {
-          "word": "konjunktur",
           "count": 1
         }
       ],
@@ -391,23 +391,19 @@
           "count": 5
         },
         {
-          "word": "renten",
-          "count": 3
-        },
-        {
-          "word": "rentenniveau",
+          "word": "sozialstaat",
           "count": 3
         },
         {
           "word": "eltern",
           "count": 3
+        },
+        {
+          "word": "renten",
+          "count": 3
         }
       ],
       "sicherheit": [
-        {
-          "word": "verfassungsschutz",
-          "count": 2
-        },
         {
           "word": "polizei",
           "count": 2
@@ -417,11 +413,15 @@
           "count": 2
         },
         {
-          "word": "angriff",
-          "count": 1
+          "word": "verfassungsschutz",
+          "count": 2
         },
         {
           "word": "extremismus",
+          "count": 1
+        },
+        {
+          "word": "angriff",
           "count": 1
         }
       ],
@@ -499,11 +499,11 @@
           "count": 2
         },
         {
-          "word": "tilgung",
+          "word": "bundeshaushalt",
           "count": 1
         },
         {
-          "word": "zinsen",
+          "word": "finanzminister",
           "count": 1
         }
       ],
@@ -525,7 +525,7 @@
           "count": 2
         },
         {
-          "word": "urteile",
+          "word": "landgericht",
           "count": 1
         }
       ],

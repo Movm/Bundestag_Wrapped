@@ -11,14 +11,14 @@
   "minWords": 22,
   "maxWords": 770,
   "rankings": {
-    "speechRank": 80,
+    "speechRank": 88,
     "wordsRank": 130,
-    "partySpeechRank": 21,
+    "partySpeechRank": 23,
     "partyWordsRank": 36,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 87.2,
-    "verbosityRank": 268,
+    "percentile": 85.9,
+    "verbosityRank": 270,
     "verbosityTotal": 582,
     "partyVerbosityRank": 96,
     "longestSpeechRank": 280
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 36,
     "interruptionsReceived": 40,
-    "interrupterRank": 149,
-    "interruptedRank": 170
+    "interrupterRank": 148,
+    "interruptedRank": 175
   },
   "words": {
     "topWords": [
@@ -219,19 +219,19 @@
     "question": "Welches Wort nutzt Axel Müller häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
         "text": "Strafantrag",
         "isCorrect": true
       },
       {
-        "text": "Klima",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
-        "text": "Gesetz",
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Haushalt",
         "isCorrect": false
       }
     ],
@@ -242,11 +242,11 @@
     "question": "Welches Adjektiv nutzt Axel Müller häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Groß",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Alt",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
@@ -254,7 +254,7 @@
         "isCorrect": true
       },
       {
-        "text": "Problematisch",
+        "text": "Jung",
         "isCorrect": false
       }
     ],
@@ -373,15 +373,15 @@
           "count": 1
         },
         {
-          "word": "kredit",
-          "count": 1
-        },
-        {
           "word": "konjunktur",
           "count": 1
         },
         {
           "word": "rezession",
+          "count": 1
+        },
+        {
+          "word": "kredit",
           "count": 1
         }
       ],
@@ -391,29 +391,29 @@
           "count": 3
         },
         {
-          "word": "jugend",
-          "count": 2
-        },
-        {
           "word": "wohnung",
           "count": 2
         },
         {
-          "word": "jugendliche",
+          "word": "jugend",
+          "count": 2
+        },
+        {
+          "word": "behinderung",
           "count": 1
         },
         {
-          "word": "kinder",
+          "word": "jugendliche",
           "count": 1
         }
       ],
       "sicherheit": [
         {
-          "word": "gewalt",
+          "word": "täter",
           "count": 7
         },
         {
-          "word": "täter",
+          "word": "gewalt",
           "count": 7
         },
         {
@@ -431,7 +431,7 @@
       ],
       "gesundheit": [
         {
-          "word": "gesundheitssystem",
+          "word": "krankenversicherung",
           "count": 3
         },
         {
@@ -439,15 +439,15 @@
           "count": 3
         },
         {
-          "word": "krankenversicherung",
+          "word": "gesundheitssystem",
           "count": 3
         },
         {
-          "word": "krankenhäuser",
+          "word": "gesundheitswesen",
           "count": 2
         },
         {
-          "word": "gesundheitswesen",
+          "word": "krankenhäuser",
           "count": 2
         }
       ],
@@ -465,11 +465,11 @@
           "count": 2
         },
         {
-          "word": "waffenstillstand",
+          "word": "völkerrecht",
           "count": 1
         },
         {
-          "word": "völkerrecht",
+          "word": "waffenstillstand",
           "count": 1
         }
       ],
@@ -487,11 +487,11 @@
           "count": 2
         },
         {
-          "word": "plattform",
+          "word": "netz",
           "count": 1
         },
         {
-          "word": "netz",
+          "word": "plattform",
           "count": 1
         }
       ],
@@ -531,7 +531,7 @@
           "count": 1
         },
         {
-          "word": "steuern",
+          "word": "sondervermögen",
           "count": 1
         }
       ],
@@ -559,15 +559,15 @@
       ],
       "arbeit": [
         {
-          "word": "einkommen",
-          "count": 1
-        },
-        {
           "word": "arbeitnehmer",
           "count": 1
         },
         {
           "word": "arbeitslosigkeit",
+          "count": 1
+        },
+        {
+          "word": "einkommen",
           "count": 1
         }
       ],

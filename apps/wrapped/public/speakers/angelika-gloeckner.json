@@ -11,13 +11,13 @@
   "minWords": 22,
   "maxWords": 633,
   "rankings": {
-    "speechRank": 85,
+    "speechRank": 87,
     "wordsRank": 265,
-    "partySpeechRank": 23,
+    "partySpeechRank": 24,
     "partyWordsRank": 58,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 86.4,
+    "percentile": 86.1,
     "verbosityRank": 479,
     "verbosityTotal": 582,
     "partyVerbosityRank": 94,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 10,
     "interruptionsReceived": 35,
-    "interrupterRank": 280,
-    "interruptedRank": 207
+    "interrupterRank": 278,
+    "interruptedRank": 204
   },
   "words": {
     "topWords": [
@@ -36,11 +36,11 @@
         "count": 60
       },
       {
-        "word": "land",
+        "word": "klar",
         "count": 17
       },
       {
-        "word": "klar",
+        "word": "land",
         "count": 17
       },
       {
@@ -255,19 +255,19 @@
     "question": "Welches Wort nutzt Angelika Glöckner häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Demokratie",
-        "isCorrect": false
-      },
-      {
         "text": "Arbeitsschutz",
         "isCorrect": true
       },
       {
-        "text": "Steuern",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
-        "text": "Koalition",
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
         "isCorrect": false
       }
     ],
@@ -278,19 +278,19 @@
     "question": "Welches Adjektiv nutzt Angelika Glöckner häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
         "text": "Wirtschaftlich",
         "isCorrect": true
       },
       {
-        "text": "Richtig",
+        "text": "Sicher",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
+        "isCorrect": false
+      },
+      {
+        "text": "Erfolgreich",
         "isCorrect": false
       }
     ],
@@ -395,11 +395,11 @@
           "count": 3
         },
         {
-          "word": "asyl",
+          "word": "integration",
           "count": 2
         },
         {
-          "word": "integration",
+          "word": "asyl",
           "count": 2
         },
         {
@@ -435,10 +435,6 @@
       ],
       "wirtschaft": [
         {
-          "word": "wirtschaft",
-          "count": 2
-        },
-        {
           "word": "unternehmen",
           "count": 2
         },
@@ -447,21 +443,25 @@
           "count": 2
         },
         {
-          "word": "markt",
+          "word": "betrieb",
           "count": 2
         },
         {
-          "word": "betrieb",
+          "word": "wirtschaft",
+          "count": 2
+        },
+        {
+          "word": "markt",
           "count": 2
         }
       ],
       "soziales": [
         {
-          "word": "miete",
+          "word": "rente",
           "count": 8
         },
         {
-          "word": "rente",
+          "word": "miete",
           "count": 8
         },
         {
@@ -485,15 +485,15 @@
       ],
       "gesundheit": [
         {
+          "word": "prävention",
+          "count": 1
+        },
+        {
           "word": "arzt",
           "count": 1
         },
         {
           "word": "krankenversicherung",
-          "count": 1
-        },
-        {
-          "word": "prävention",
           "count": 1
         }
       ],
@@ -503,15 +503,15 @@
           "count": 7
         },
         {
-          "word": "europäisch",
-          "count": 2
-        },
-        {
           "word": "putin",
           "count": 2
         },
         {
-          "word": "bündnis",
+          "word": "europäisch",
+          "count": 2
+        },
+        {
+          "word": "sanktionen",
           "count": 1
         },
         {
@@ -531,15 +531,15 @@
       ],
       "bildung": [
         {
+          "word": "qualifizierung",
+          "count": 1
+        },
+        {
           "word": "student",
           "count": 1
         },
         {
           "word": "auszubildende",
-          "count": 1
-        },
-        {
-          "word": "qualifizierung",
           "count": 1
         }
       ],
@@ -549,11 +549,11 @@
           "count": 5
         },
         {
-          "word": "inflation",
+          "word": "investitionen",
           "count": 2
         },
         {
-          "word": "investitionen",
+          "word": "inflation",
           "count": 2
         },
         {
@@ -601,7 +601,7 @@
           "count": 3
         },
         {
-          "word": "arbeitnehmer",
+          "word": "gesundheitsschutz",
           "count": 2
         }
       ],

@@ -11,13 +11,13 @@
   "minWords": 16,
   "maxWords": 621,
   "rankings": {
-    "speechRank": 423,
+    "speechRank": 438,
     "wordsRank": 534,
-    "partySpeechRank": 125,
+    "partySpeechRank": 127,
     "partyWordsRank": 176,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 32.4,
+    "percentile": 30.0,
     "verbosityRank": 514,
     "verbosityTotal": 582,
     "partyVerbosityRank": 168,
@@ -27,16 +27,16 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 3,
     "interrupterRank": null,
-    "interruptedRank": 570
+    "interruptedRank": 571
   },
   "words": {
     "topWords": [
       {
-        "word": "bildung",
+        "word": "menschen",
         "count": 11
       },
       {
-        "word": "menschen",
+        "word": "bildung",
         "count": 11
       },
       {
@@ -56,11 +56,7 @@
         "count": 7
       },
       {
-        "word": "rund",
-        "count": 6
-      },
-      {
-        "word": "investieren",
+        "word": "ticket",
         "count": 6
       },
       {
@@ -68,7 +64,11 @@
         "count": 6
       },
       {
-        "word": "brücke",
+        "word": "investieren",
+        "count": 6
+      },
+      {
+        "word": "rund",
         "count": 6
       }
     ],
@@ -195,20 +195,20 @@
     "question": "Welches Wort nutzt Harald Orthey häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Tempolimit",
+        "isCorrect": true
+      },
+      {
         "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Minister",
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
-        "text": "Sicherheit",
+        "text": "Arbeit",
         "isCorrect": false
-      },
-      {
-        "text": "Tempolimit",
-        "isCorrect": true
       }
     ],
     "explanationParty": "\"Tempolimit\" nutzt Harald Orthey 148.9× häufiger als der CDU/CSU-Durchschnitt.",
@@ -401,7 +401,7 @@
       ],
       "finanzen": [
         {
-          "word": "haushalt",
+          "word": "finanzierung",
           "count": 3
         },
         {
@@ -409,29 +409,29 @@
           "count": 3
         },
         {
-          "word": "finanzierung",
+          "word": "haushalt",
           "count": 3
         },
         {
-          "word": "investitionen",
+          "word": "entlastung",
           "count": 1
         },
         {
-          "word": "sondervermögen",
+          "word": "steuern",
           "count": 1
         }
       ],
       "arbeit": [
+        {
+          "word": "arbeitszeit",
+          "count": 1
+        },
         {
           "word": "einkommen",
           "count": 1
         },
         {
           "word": "vereinbarkeit",
-          "count": 1
-        },
-        {
-          "word": "arbeitszeit",
           "count": 1
         }
       ],
@@ -449,11 +449,11 @@
           "count": 4
         },
         {
-          "word": "schiene",
+          "word": "öpnv",
           "count": 3
         },
         {
-          "word": "autos",
+          "word": "schiene",
           "count": 3
         }
       ]

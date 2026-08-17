@@ -11,22 +11,22 @@
   "minWords": 14,
   "maxWords": 593,
   "rankings": {
-    "speechRank": 129,
+    "speechRank": 150,
     "wordsRank": 242,
-    "partySpeechRank": 27,
+    "partySpeechRank": 32,
     "partyWordsRank": 55,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 79.4,
-    "verbosityRank": 414,
+    "percentile": 76.0,
+    "verbosityRank": 418,
     "verbosityTotal": 582,
-    "partyVerbosityRank": 107,
-    "longestSpeechRank": 505
+    "partyVerbosityRank": 109,
+    "longestSpeechRank": 506
   },
   "drama": {
     "interruptionsGiven": 7,
     "interruptionsReceived": 58,
-    "interrupterRank": 307,
+    "interrupterRank": 323,
     "interruptedRank": 88
   },
   "words": {
@@ -74,16 +74,16 @@
         "ratioBundestag": 32.0
       },
       {
-        "word": "mietpreisbremse",
-        "count": 12,
-        "ratioParty": 37.7,
-        "ratioBundestag": 23.7
-      },
-      {
         "word": "mieter",
         "count": 10,
         "ratioParty": 37.7,
         "ratioBundestag": 18.0
+      },
+      {
+        "word": "mietpreisbremse",
+        "count": 12,
+        "ratioParty": 37.7,
+        "ratioBundestag": 23.7
       },
       {
         "word": "sachverständigen",
@@ -204,20 +204,20 @@
     "question": "Welches Wort nutzt Rainer Galla häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Debatte",
+        "isCorrect": false
+      },
+      {
         "text": "Häuslicher",
         "isCorrect": true
-      },
-      {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Häuslicher\" nutzt Rainer Galla 220.1× häufiger als der AfD-Durchschnitt.",
@@ -227,15 +227,15 @@
     "question": "Welches Adjektiv nutzt Rainer Galla häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
         "text": "Stark",
         "isCorrect": false
       },
       {
-        "text": "National",
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
         "isCorrect": false
       },
       {
@@ -328,11 +328,11 @@
       ],
       "wirtschaft": [
         {
-          "word": "unternehmen",
+          "word": "markt",
           "count": 1
         },
         {
-          "word": "markt",
+          "word": "unternehmen",
           "count": 1
         }
       ],
@@ -346,15 +346,15 @@
           "count": 8
         },
         {
-          "word": "kinder",
-          "count": 5
-        },
-        {
           "word": "familie",
           "count": 5
         },
         {
-          "word": "miete",
+          "word": "kinder",
+          "count": 5
+        },
+        {
+          "word": "wohnung",
           "count": 4
         }
       ],
@@ -372,11 +372,11 @@
           "count": 3
         },
         {
-          "word": "terroristen",
+          "word": "polizei",
           "count": 2
         },
         {
-          "word": "polizei",
+          "word": "terroristen",
           "count": 2
         }
       ],
@@ -410,11 +410,11 @@
       ],
       "finanzen": [
         {
-          "word": "kosten",
+          "word": "investitionen",
           "count": 3
         },
         {
-          "word": "investitionen",
+          "word": "kosten",
           "count": 3
         },
         {
@@ -432,15 +432,15 @@
           "count": 6
         },
         {
-          "word": "grundgesetz",
-          "count": 3
-        },
-        {
           "word": "bundesverfassungsgericht",
           "count": 3
         },
         {
-          "word": "grundrechte",
+          "word": "grundgesetz",
+          "count": 3
+        },
+        {
+          "word": "gesetzgebung",
           "count": 2
         }
       ],

@@ -11,13 +11,13 @@
   "minWords": 55,
   "maxWords": 859,
   "rankings": {
-    "speechRank": 262,
+    "speechRank": 265,
     "wordsRank": 222,
-    "partySpeechRank": 72,
+    "partySpeechRank": 75,
     "partyWordsRank": 63,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 58.1,
+    "percentile": 57.7,
     "verbosityRank": 123,
     "verbosityTotal": 582,
     "partyVerbosityRank": 45,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 37,
-    "interrupterRank": 414,
-    "interruptedRank": 196
+    "interrupterRank": 430,
+    "interruptedRank": 195
   },
   "words": {
     "topWords": [
@@ -204,15 +204,15 @@
         "isCorrect": true
       },
       {
-        "text": "Opposition",
+        "text": "Zukunft",
         "isCorrect": false
       },
       {
-        "text": "Haushalt",
+        "text": "Antrag",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
+        "text": "Minister",
         "isCorrect": false
       }
     ],
@@ -223,20 +223,20 @@
     "question": "Welches Adjektiv nutzt Wilhelm Gebhard häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
         "text": "Schlecht",
         "isCorrect": true
+      },
+      {
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Erfolgreich",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Schlecht\" nutzt Wilhelm Gebhard 7.7× häufiger als der CDU/CSU-Durchschnitt.",
@@ -362,15 +362,15 @@
           "count": 6
         },
         {
+          "word": "erneuerbare",
+          "count": 2
+        },
+        {
           "word": "fernwärme",
           "count": 2
         },
         {
           "word": "wärmepumpe",
-          "count": 2
-        },
-        {
-          "word": "erneuerbare",
           "count": 2
         },
         {
@@ -388,15 +388,15 @@
           "count": 2
         },
         {
+          "word": "marktwirtschaft",
+          "count": 1
+        },
+        {
+          "word": "mittelstand",
+          "count": 1
+        },
+        {
           "word": "industrie",
-          "count": 1
-        },
-        {
-          "word": "markt",
-          "count": 1
-        },
-        {
-          "word": "konzerne",
           "count": 1
         }
       ],
@@ -414,11 +414,11 @@
           "count": 1
         },
         {
-          "word": "grundsicherung",
+          "word": "wohnung",
           "count": 1
         },
         {
-          "word": "sozialstaat",
+          "word": "grundsicherung",
           "count": 1
         }
       ],
@@ -430,19 +430,19 @@
       ],
       "europa": [
         {
-          "word": "frieden",
-          "count": 1
-        },
-        {
           "word": "europa",
           "count": 1
         },
         {
-          "word": "russland",
+          "word": "frieden",
           "count": 1
         },
         {
           "word": "bündnis",
+          "count": 1
+        },
+        {
+          "word": "russland",
           "count": 1
         }
       ],
@@ -458,15 +458,15 @@
           "count": 3
         },
         {
+          "word": "schulen",
+          "count": 1
+        },
+        {
           "word": "kita",
           "count": 1
         },
         {
           "word": "wissenschaftler",
-          "count": 1
-        },
-        {
-          "word": "schulen",
           "count": 1
         }
       ],
@@ -476,27 +476,23 @@
           "count": 4
         },
         {
-          "word": "steuern",
-          "count": 3
-        },
-        {
           "word": "investitionen",
           "count": 3
         },
         {
-          "word": "kosten",
+          "word": "steuern",
+          "count": 3
+        },
+        {
+          "word": "sondervermögen",
           "count": 2
         },
         {
-          "word": "entlastung",
+          "word": "kosten",
           "count": 2
         }
       ],
       "justiz": [
-        {
-          "word": "grundgesetz",
-          "count": 1
-        },
         {
           "word": "haftung",
           "count": 1
@@ -507,6 +503,10 @@
         },
         {
           "word": "verordnung",
+          "count": 1
+        },
+        {
+          "word": "grundgesetz",
           "count": 1
         }
       ],
@@ -534,11 +534,11 @@
           "count": 2
         },
         {
-          "word": "deutschlandticket",
+          "word": "straße",
           "count": 1
         },
         {
-          "word": "bahn",
+          "word": "fahrrad",
           "count": 1
         }
       ]

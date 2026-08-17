@@ -11,13 +11,13 @@
   "minWords": 388,
   "maxWords": 961,
   "rankings": {
-    "speechRank": 306,
+    "speechRank": 293,
     "wordsRank": 252,
-    "partySpeechRank": 85,
+    "partySpeechRank": 81,
     "partyWordsRank": 72,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 51.1,
+    "percentile": 53.2,
     "verbosityRank": 51,
     "verbosityTotal": 582,
     "partyVerbosityRank": 20,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 26,
-    "interrupterRank": 422,
-    "interruptedRank": 290
+    "interrupterRank": 420,
+    "interruptedRank": 291
   },
   "words": {
     "topWords": [
@@ -62,6 +62,10 @@
       {
         "word": "entwurf",
         "count": 12
+      },
+      {
+        "word": "anwaltsnotariat",
+        "count": 11
       },
       {
         "word": "besonders",
@@ -248,20 +252,20 @@
     "question": "Welches Wort nutzt Johannes Wiegelmann häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Reform",
+        "text": "Minister",
         "isCorrect": false
       },
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
+        "text": "Politik",
         "isCorrect": false
       },
       {
         "text": "Anwaltsnotariat",
         "isCorrect": true
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Anwaltsnotariat\" nutzt Johannes Wiegelmann 440.3× häufiger als der CDU/CSU-Durchschnitt.",
@@ -271,20 +275,20 @@
     "question": "Welches Adjektiv nutzt Johannes Wiegelmann häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
         "text": "Geschützt",
         "isCorrect": true
+      },
+      {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Problematisch",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Geschützt\" nutzt Johannes Wiegelmann 8.6× häufiger als der CDU/CSU-Durchschnitt.",
@@ -394,10 +398,6 @@
           "count": 4
         },
         {
-          "word": "wirtschaft",
-          "count": 2
-        },
-        {
           "word": "markt",
           "count": 2
         },
@@ -406,7 +406,11 @@
           "count": 2
         },
         {
-          "word": "industrie",
+          "word": "wirtschaft",
+          "count": 2
+        },
+        {
+          "word": "qualifikation",
           "count": 1
         }
       ],
@@ -420,15 +424,15 @@
           "count": 2
         },
         {
-          "word": "kinder",
+          "word": "familie",
+          "count": 1
+        },
+        {
+          "word": "elternzeit",
           "count": 1
         },
         {
           "word": "rente",
-          "count": 1
-        },
-        {
-          "word": "familie",
           "count": 1
         }
       ],
@@ -442,15 +446,15 @@
           "count": 2
         },
         {
-          "word": "polizei",
-          "count": 1
-        },
-        {
           "word": "verbrechen",
           "count": 1
         },
         {
           "word": "täter",
+          "count": 1
+        },
+        {
+          "word": "straftäter",
           "count": 1
         }
       ],
@@ -534,11 +538,11 @@
           "count": 4
         },
         {
-          "word": "bundesverfassungsgericht",
+          "word": "richter",
           "count": 3
         },
         {
-          "word": "strafrecht",
+          "word": "bundesverfassungsgericht",
           "count": 3
         }
       ],

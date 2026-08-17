@@ -18,10 +18,10 @@
     "partySize": 150,
     "totalSpeakers": 626,
     "percentile": 96.2,
-    "verbosityRank": 206,
+    "verbosityRank": 205,
     "verbosityTotal": 582,
     "partyVerbosityRank": 55,
-    "longestSpeechRank": 178
+    "longestSpeechRank": 177
   },
   "drama": {
     "interruptionsGiven": 579,
@@ -32,11 +32,11 @@
   "words": {
     "topWords": [
       {
-        "word": "weimer",
+        "word": "deutschland",
         "count": 37
       },
       {
-        "word": "deutschland",
+        "word": "weimer",
         "count": 37
       },
       {
@@ -239,20 +239,20 @@
     "question": "Welches Wort nutzt Dr. Götz Frömming häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
         "text": "Buchmesse",
         "isCorrect": true
-      },
-      {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Reform",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Buchmesse\" nutzt Dr. Götz Frömming 334.2× häufiger als der AfD-Durchschnitt.",
@@ -262,15 +262,15 @@
     "question": "Welches Adjektiv nutzt Dr. Götz Frömming häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Wichtig",
+        "text": "Notwendig",
         "isCorrect": false
       },
       {
-        "text": "Problematisch",
+        "text": "Alt",
         "isCorrect": false
       },
       {
-        "text": "Jung",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
@@ -351,12 +351,16 @@
     "topicWords": {
       "migration": [
         {
+          "word": "abschiebung",
+          "count": 2
+        },
+        {
           "word": "migration",
           "count": 2
         },
         {
-          "word": "abschiebung",
-          "count": 2
+          "word": "einwanderer",
+          "count": 1
         },
         {
           "word": "staatsangehörigkeit",
@@ -364,10 +368,6 @@
         },
         {
           "word": "asyl",
-          "count": 1
-        },
-        {
-          "word": "einwanderer",
           "count": 1
         }
       ],
@@ -383,19 +383,19 @@
           "count": 5
         },
         {
-          "word": "import",
-          "count": 2
-        },
-        {
           "word": "wirtschaft",
           "count": 2
         },
         {
-          "word": "betrieb",
-          "count": 1
+          "word": "import",
+          "count": 2
         },
         {
           "word": "firmen",
+          "count": 1
+        },
+        {
+          "word": "betrieb",
           "count": 1
         }
       ],
@@ -439,7 +439,7 @@
           "count": 3
         },
         {
-          "word": "gewalt",
+          "word": "verfassungsschutz",
           "count": 3
         }
       ],
@@ -449,11 +449,11 @@
           "count": 3
         },
         {
-          "word": "behandlung",
+          "word": "arzt",
           "count": 1
         },
         {
-          "word": "sucht",
+          "word": "medizin",
           "count": 1
         },
         {
@@ -461,7 +461,7 @@
           "count": 1
         },
         {
-          "word": "arzt",
+          "word": "behandlung",
           "count": 1
         }
       ],
@@ -475,11 +475,11 @@
           "count": 4
         },
         {
-          "word": "israel",
+          "word": "europa",
           "count": 2
         },
         {
-          "word": "europa",
+          "word": "israel",
           "count": 2
         },
         {
@@ -511,11 +511,11 @@
       ],
       "bildung": [
         {
-          "word": "schulen",
+          "word": "schule",
           "count": 17
         },
         {
-          "word": "schule",
+          "word": "schulen",
           "count": 17
         },
         {
@@ -533,6 +533,10 @@
       ],
       "finanzen": [
         {
+          "word": "etat",
+          "count": 2
+        },
+        {
           "word": "schuldenbremse",
           "count": 2
         },
@@ -541,15 +545,11 @@
           "count": 2
         },
         {
-          "word": "etat",
-          "count": 2
-        },
-        {
-          "word": "schulden",
+          "word": "investitionen",
           "count": 1
         },
         {
-          "word": "bank",
+          "word": "bundesrechnungshof",
           "count": 1
         }
       ],
@@ -557,6 +557,10 @@
         {
           "word": "straftaten",
           "count": 3
+        },
+        {
+          "word": "anwalt",
+          "count": 2
         },
         {
           "word": "grundgesetz",
@@ -567,23 +571,11 @@
           "count": 2
         },
         {
-          "word": "anwalt",
-          "count": 2
-        },
-        {
-          "word": "strafen",
+          "word": "rechtsstaat",
           "count": 1
         }
       ],
       "arbeit": [
-        {
-          "word": "gewerkschaft",
-          "count": 1
-        },
-        {
-          "word": "arbeiter",
-          "count": 1
-        },
         {
           "word": "angestellte",
           "count": 1
@@ -595,27 +587,35 @@
         {
           "word": "gewerkschaften",
           "count": 1
+        },
+        {
+          "word": "arbeiter",
+          "count": 1
+        },
+        {
+          "word": "gewerkschaft",
+          "count": 1
         }
       ],
       "mobilitaet": [
-        {
-          "word": "pünktlichkeit",
-          "count": 2
-        },
         {
           "word": "straße",
           "count": 2
         },
         {
-          "word": "bahnhof",
-          "count": 1
+          "word": "pünktlichkeit",
+          "count": 2
         },
         {
-          "word": "bahn",
+          "word": "auto",
           "count": 1
         },
         {
           "word": "autos",
+          "count": 1
+        },
+        {
+          "word": "bahnhof",
           "count": 1
         }
       ]

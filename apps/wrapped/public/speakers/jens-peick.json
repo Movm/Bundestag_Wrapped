@@ -11,23 +11,23 @@
   "minWords": 269,
   "maxWords": 824,
   "rankings": {
-    "speechRank": 146,
+    "speechRank": 132,
     "wordsRank": 163,
-    "partySpeechRank": 35,
+    "partySpeechRank": 34,
     "partyWordsRank": 40,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 76.7,
-    "verbosityRank": 110,
+    "percentile": 78.9,
+    "verbosityRank": 108,
     "verbosityTotal": 582,
-    "partyVerbosityRank": 24,
-    "longestSpeechRank": 218
+    "partyVerbosityRank": 23,
+    "longestSpeechRank": 217
   },
   "drama": {
     "interruptionsGiven": 6,
     "interruptionsReceived": 21,
-    "interrupterRank": 339,
-    "interruptedRank": 339
+    "interrupterRank": 325,
+    "interruptedRank": 326
   },
   "words": {
     "topWords": [
@@ -196,19 +196,19 @@
     "question": "Welches Wort nutzt Jens Peick häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
+      },
+      {
         "text": "Thyssenkrupp",
         "isCorrect": true
       },
       {
-        "text": "Bürger",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
-        "text": "Fraktion",
+        "text": "Reform",
         "isCorrect": false
       }
     ],
@@ -219,20 +219,20 @@
     "question": "Welches Adjektiv nutzt Jens Peick häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Gut",
+        "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
-        "text": "Europäisch",
+        "text": "National",
         "isCorrect": false
       },
       {
         "text": "Fair",
         "isCorrect": true
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Fair\" nutzt Jens Peick 6.3× häufiger als der SPD-Durchschnitt.",
@@ -398,11 +398,11 @@
           "count": 6
         },
         {
-          "word": "grundsicherung",
+          "word": "sozialstaat",
           "count": 5
         },
         {
-          "word": "sozialstaat",
+          "word": "grundsicherung",
           "count": 5
         }
       ],
@@ -422,23 +422,23 @@
       ],
       "gesundheit": [
         {
-          "word": "krankenversicherung",
-          "count": 2
-        },
-        {
           "word": "notfall",
           "count": 2
         },
         {
-          "word": "medizin",
+          "word": "krankenversicherung",
+          "count": 2
+        },
+        {
+          "word": "corona",
           "count": 1
         },
         {
-          "word": "krankheit",
+          "word": "pandemie",
           "count": 1
         },
         {
-          "word": "sucht",
+          "word": "pflege",
           "count": 1
         }
       ],
@@ -460,7 +460,7 @@
           "count": 4
         },
         {
-          "word": "russland",
+          "word": "europa",
           "count": 3
         }
       ],
@@ -506,15 +506,23 @@
           "count": 3
         },
         {
-          "word": "erbschaftsteuer",
+          "word": "investitionen",
           "count": 2
         },
         {
-          "word": "investitionen",
+          "word": "bundeshaushalt",
           "count": 2
         }
       ],
       "justiz": [
+        {
+          "word": "strafverfolgung",
+          "count": 1
+        },
+        {
+          "word": "datenschutz",
+          "count": 1
+        },
         {
           "word": "urteil",
           "count": 1
@@ -524,19 +532,15 @@
           "count": 1
         },
         {
-          "word": "strafverfolgung",
-          "count": 1
-        },
-        {
           "word": "rechtsstaat",
-          "count": 1
-        },
-        {
-          "word": "datenschutz",
           "count": 1
         }
       ],
       "arbeit": [
+        {
+          "word": "arbeitsplätze",
+          "count": 7
+        },
         {
           "word": "beschäftigte",
           "count": 7
@@ -546,29 +550,25 @@
           "count": 7
         },
         {
-          "word": "arbeitsplätze",
-          "count": 7
+          "word": "arbeitslosigkeit",
+          "count": 4
         },
         {
           "word": "arbeitnehmerinnen",
           "count": 4
-        },
-        {
-          "word": "arbeitslosigkeit",
-          "count": 4
         }
       ],
       "mobilitaet": [
+        {
+          "word": "straßen",
+          "count": 3
+        },
         {
           "word": "auto",
           "count": 3
         },
         {
           "word": "autos",
-          "count": 3
-        },
-        {
-          "word": "straßen",
           "count": 3
         },
         {

@@ -11,13 +11,13 @@
   "minWords": 17,
   "maxWords": 2329,
   "rankings": {
-    "speechRank": 147,
+    "speechRank": 141,
     "wordsRank": 47,
-    "partySpeechRank": 31,
+    "partySpeechRank": 30,
     "partyWordsRank": 10,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 76.5,
+    "percentile": 77.5,
     "verbosityRank": 9,
     "verbosityTotal": 582,
     "partyVerbosityRank": 4,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 144,
     "interruptionsReceived": 37,
-    "interrupterRank": 29,
-    "interruptedRank": 195
+    "interrupterRank": 30,
+    "interruptedRank": 194
   },
   "words": {
     "topWords": [
@@ -58,10 +58,6 @@
       {
         "word": "schulden",
         "count": 38
-      },
-      {
-        "word": "weiter",
-        "count": 26
       }
     ],
     "signatureWords": [
@@ -223,20 +219,20 @@
     "question": "Welches Wort nutzt Dr. Michael Espendiller häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
         "text": "Dieter",
         "isCorrect": true
+      },
+      {
+        "text": "Familie",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Rente",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Dieter\" nutzt Dr. Michael Espendiller 337.6× häufiger als der AfD-Durchschnitt.",
@@ -246,19 +242,19 @@
     "question": "Welches Adjektiv nutzt Dr. Michael Espendiller häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
         "text": "Schlecht",
         "isCorrect": true
       },
       {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
+        "text": "Gefährlich",
         "isCorrect": false
       }
     ],
@@ -349,12 +345,16 @@
       ],
       "klima": [
         {
+          "word": "energie",
+          "count": 2
+        },
+        {
           "word": "klimapolitik",
           "count": 2
         },
         {
-          "word": "energie",
-          "count": 2
+          "word": "umwelt",
+          "count": 1
         },
         {
           "word": "emissionshandel",
@@ -362,10 +362,6 @@
         },
         {
           "word": "klimaneutralität",
-          "count": 1
-        },
-        {
-          "word": "umwelt",
           "count": 1
         }
       ],
@@ -383,7 +379,7 @@
           "count": 4
         },
         {
-          "word": "rezession",
+          "word": "industrie",
           "count": 2
         },
         {
@@ -409,7 +405,7 @@
           "count": 2
         },
         {
-          "word": "rentenniveau",
+          "word": "eltern",
           "count": 1
         }
       ],
@@ -445,15 +441,15 @@
           "count": 3
         },
         {
-          "word": "krankenkassen",
-          "count": 2
-        },
-        {
           "word": "ärzte",
           "count": 2
         },
         {
-          "word": "zusatzbeitrag",
+          "word": "krankenkassen",
+          "count": 2
+        },
+        {
+          "word": "pflege",
           "count": 1
         }
       ],
@@ -467,15 +463,15 @@
           "count": 3
         },
         {
-          "word": "krieg",
-          "count": 2
-        },
-        {
           "word": "europa",
           "count": 2
         },
         {
           "word": "putin",
+          "count": 2
+        },
+        {
+          "word": "krieg",
           "count": 2
         }
       ],
@@ -485,11 +481,11 @@
           "count": 2
         },
         {
-          "word": "lehrer",
+          "word": "forschung",
           "count": 1
         },
         {
-          "word": "schulen",
+          "word": "lehrer",
           "count": 1
         },
         {
@@ -529,7 +525,7 @@
           "count": 3
         },
         {
-          "word": "verfassungswidrig",
+          "word": "grundgesetz",
           "count": 1
         },
         {
@@ -537,17 +533,17 @@
           "count": 1
         },
         {
-          "word": "grundgesetz",
+          "word": "verfassungswidrig",
           "count": 1
         }
       ],
       "arbeit": [
         {
-          "word": "rentenversicherung",
+          "word": "arbeitsplätze",
           "count": 2
         },
         {
-          "word": "arbeitsplätze",
+          "word": "rentenversicherung",
           "count": 2
         },
         {
@@ -555,11 +551,11 @@
           "count": 2
         },
         {
-          "word": "einkommen",
+          "word": "überstunden",
           "count": 1
         },
         {
-          "word": "überstunden",
+          "word": "einkommen",
           "count": 1
         }
       ],

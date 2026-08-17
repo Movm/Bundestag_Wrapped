@@ -11,13 +11,13 @@
   "minWords": 6,
   "maxWords": 1477,
   "rankings": {
-    "speechRank": 276,
+    "speechRank": 275,
     "wordsRank": 34,
     "partySpeechRank": 76,
     "partyWordsRank": 14,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 55.9,
+    "percentile": 56.1,
     "verbosityRank": 564,
     "verbosityTotal": 582,
     "partyVerbosityRank": 180,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 53,
     "interrupterRank": null,
-    "interruptedRank": 108
+    "interruptedRank": 109
   },
   "words": {
     "topWords": [
@@ -272,19 +272,19 @@
     "question": "Welches Wort nutzt Katherina Reiche häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
         "text": "Übertragungsnetzentgelte",
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Rente",
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Energie",
         "isCorrect": false
       }
     ],
@@ -295,11 +295,11 @@
     "question": "Welches Adjektiv nutzt Katherina Reiche häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Jung",
+        "text": "Falsch",
         "isCorrect": false
       },
       {
-        "text": "Alt",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
@@ -307,7 +307,7 @@
         "isCorrect": true
       },
       {
-        "text": "Falsch",
+        "text": "Klar",
         "isCorrect": false
       }
     ],
@@ -452,19 +452,23 @@
           "count": 36
         },
         {
-          "word": "wettbewerb",
-          "count": 18
-        },
-        {
           "word": "wirtschaft",
           "count": 18
         },
         {
           "word": "mittelstand",
           "count": 18
+        },
+        {
+          "word": "wettbewerb",
+          "count": 18
         }
       ],
       "soziales": [
+        {
+          "word": "familie",
+          "count": 1
+        },
         {
           "word": "rentnerin",
           "count": 1
@@ -479,10 +483,6 @@
         },
         {
           "word": "sozialstaat",
-          "count": 1
-        },
-        {
-          "word": "eltern",
           "count": 1
         }
       ],
@@ -502,11 +502,11 @@
       ],
       "gesundheit": [
         {
-          "word": "pflege",
+          "word": "corona",
           "count": 1
         },
         {
-          "word": "corona",
+          "word": "pflege",
           "count": 1
         },
         {
@@ -546,11 +546,11 @@
           "count": 5
         },
         {
-          "word": "digitalisierung",
+          "word": "netz",
           "count": 2
         },
         {
-          "word": "netz",
+          "word": "digitalisierung",
           "count": 2
         },
         {
@@ -564,10 +564,6 @@
           "count": 5
         },
         {
-          "word": "bildung",
-          "count": 1
-        },
-        {
           "word": "forschungsförderung",
           "count": 1
         },
@@ -577,6 +573,10 @@
         },
         {
           "word": "ausbildung",
+          "count": 1
+        },
+        {
+          "word": "universität",
           "count": 1
         }
       ],
@@ -612,11 +612,11 @@
           "count": 2
         },
         {
-          "word": "gericht",
+          "word": "haftung",
           "count": 1
         },
         {
-          "word": "haftung",
+          "word": "gericht",
           "count": 1
         }
       ],
@@ -638,7 +638,7 @@
           "count": 2
         },
         {
-          "word": "löhne",
+          "word": "arbeitnehmer",
           "count": 1
         }
       ],
@@ -656,11 +656,11 @@
           "count": 2
         },
         {
-          "word": "schiene",
+          "word": "elektromobilität",
           "count": 1
         },
         {
-          "word": "straße",
+          "word": "auto",
           "count": 1
         }
       ]

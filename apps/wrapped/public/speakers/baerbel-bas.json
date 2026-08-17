@@ -11,13 +11,13 @@
   "minWords": 8,
   "maxWords": 1158,
   "rankings": {
-    "speechRank": 257,
+    "speechRank": 273,
     "wordsRank": 33,
-    "partySpeechRank": 52,
+    "partySpeechRank": 53,
     "partyWordsRank": 9,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 58.9,
+    "percentile": 56.4,
     "verbosityRank": 572,
     "verbosityTotal": 582,
     "partyVerbosityRank": 100,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 9,
     "interrupterRank": null,
-    "interruptedRank": 486
+    "interruptedRank": 489
   },
   "words": {
     "topWords": [
@@ -58,6 +58,10 @@
       {
         "word": "arbeiten",
         "count": 34
+      },
+      {
+        "word": "unternehmen",
+        "count": 33
       }
     ],
     "signatureWords": [
@@ -68,16 +72,16 @@
         "ratioBundestag": 49.0
       },
       {
-        "word": "entgelt",
-        "count": 5,
-        "ratioParty": 284.6,
-        "ratioBundestag": 178.8
-      },
-      {
         "word": "arbeitsministerin",
         "count": 5,
         "ratioParty": 284.6,
         "ratioBundestag": 65.0
+      },
+      {
+        "word": "entgelt",
+        "count": 5,
+        "ratioParty": 284.6,
+        "ratioBundestag": 178.8
       },
       {
         "word": "arbeitszeitgesetz",
@@ -112,13 +116,13 @@
         "ratio": 113.8
       },
       {
-        "word": "entgelt",
+        "word": "arbeitsministerin",
         "count": 5,
         "score": 28.27,
         "ratio": 284.6
       },
       {
-        "word": "arbeitsministerin",
+        "word": "entgelt",
         "count": 5,
         "score": 28.27,
         "ratio": 284.6
@@ -222,20 +226,20 @@
     "question": "Welches Wort nutzt Bärbel Bas häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Investitionen",
+        "text": "Fraktion",
         "isCorrect": false
       },
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Demokratie",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
         "text": "Tarif",
         "isCorrect": true
+      },
+      {
+        "text": "Arbeit",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Tarif\" nutzt Bärbel Bas 341.5× häufiger als der SPD-Durchschnitt.",
@@ -245,19 +249,19 @@
     "question": "Welches Adjektiv nutzt Bärbel Bas häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Alt",
-        "isCorrect": false
-      },
-      {
         "text": "Qualifiziert",
         "isCorrect": true
       },
       {
-        "text": "Falsch",
+        "text": "Neu",
         "isCorrect": false
       },
       {
-        "text": "Schlecht",
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
         "isCorrect": false
       }
     ],
@@ -422,21 +426,17 @@
       ],
       "sicherheit": [
         {
-          "word": "angriff",
+          "word": "gewalt",
           "count": 1
         },
         {
-          "word": "gewalt",
+          "word": "angriff",
           "count": 1
         }
       ],
       "gesundheit": [
         {
-          "word": "pflege",
-          "count": 2
-        },
-        {
-          "word": "vorsorge",
+          "word": "krankenhäuser",
           "count": 2
         },
         {
@@ -444,11 +444,15 @@
           "count": 2
         },
         {
-          "word": "krankenhäuser",
+          "word": "prävention",
           "count": 2
         },
         {
-          "word": "prävention",
+          "word": "pflege",
+          "count": 2
+        },
+        {
+          "word": "vorsorge",
           "count": 2
         }
       ],
@@ -462,25 +466,25 @@
           "count": 1
         },
         {
-          "word": "ukrainer",
-          "count": 1
-        },
-        {
-          "word": "sanktionen",
+          "word": "bündnis",
           "count": 1
         },
         {
           "word": "allianz",
           "count": 1
+        },
+        {
+          "word": "amerika",
+          "count": 1
         }
       ],
       "digital": [
         {
-          "word": "plattform",
+          "word": "digitalisierung",
           "count": 4
         },
         {
-          "word": "digitalisierung",
+          "word": "plattform",
           "count": 4
         },
         {
@@ -498,11 +502,11 @@
           "count": 6
         },
         {
-          "word": "schulen",
+          "word": "weiterbildung",
           "count": 3
         },
         {
-          "word": "weiterbildung",
+          "word": "schulen",
           "count": 3
         },
         {
@@ -532,7 +536,7 @@
           "count": 3
         },
         {
-          "word": "entlastung",
+          "word": "sondervermögen",
           "count": 2
         }
       ],
@@ -542,19 +546,19 @@
           "count": 3
         },
         {
-          "word": "verfassungskonform",
+          "word": "gleichberechtigung",
           "count": 1
         },
         {
-          "word": "gericht",
+          "word": "gleichstellung",
+          "count": 1
+        },
+        {
+          "word": "grundgesetz",
           "count": 1
         },
         {
           "word": "gesetzgebung",
-          "count": 1
-        },
-        {
-          "word": "menschenrechte",
           "count": 1
         }
       ],
@@ -568,11 +572,11 @@
           "count": 10
         },
         {
-          "word": "mindestlohn",
+          "word": "löhne",
           "count": 8
         },
         {
-          "word": "löhne",
+          "word": "mindestlohn",
           "count": 8
         },
         {

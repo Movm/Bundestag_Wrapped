@@ -11,17 +11,17 @@
   "minWords": 89,
   "maxWords": 867,
   "rankings": {
-    "speechRank": 89,
+    "speechRank": 84,
     "wordsRank": 92,
-    "partySpeechRank": 25,
+    "partySpeechRank": 22,
     "partyWordsRank": 24,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 85.8,
+    "percentile": 86.6,
     "verbosityRank": 237,
     "verbosityTotal": 582,
     "partyVerbosityRank": 55,
-    "longestSpeechRank": 168
+    "longestSpeechRank": 167
   },
   "drama": {
     "interruptionsGiven": 34,
@@ -215,19 +215,19 @@
     "question": "Welches Wort nutzt Felix Döring häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gruppenbezogene",
-        "isCorrect": true
-      },
-      {
-        "text": "Energie",
-        "isCorrect": false
-      },
-      {
         "text": "Haushalt",
         "isCorrect": false
       },
       {
-        "text": "Politik",
+        "text": "Gruppenbezogene",
+        "isCorrect": true
+      },
+      {
+        "text": "Investitionen",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
         "isCorrect": false
       }
     ],
@@ -238,20 +238,20 @@
     "question": "Welches Adjektiv nutzt Felix Döring häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Gefährlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Alt",
+        "text": "Klar",
         "isCorrect": false
       },
       {
         "text": "Links",
         "isCorrect": true
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Links\" nutzt Felix Döring 21.3× häufiger als der SPD-Durchschnitt.",
@@ -351,7 +351,7 @@
     "topicWords": {
       "migration": [
         {
-          "word": "geflüchtete",
+          "word": "migration",
           "count": 1
         },
         {
@@ -359,7 +359,7 @@
           "count": 1
         },
         {
-          "word": "migration",
+          "word": "geflüchtete",
           "count": 1
         }
       ],
@@ -375,11 +375,7 @@
       ],
       "wirtschaft": [
         {
-          "word": "bruttoinlandsprodukt",
-          "count": 1
-        },
-        {
-          "word": "unternehmen",
+          "word": "wirtschaft",
           "count": 1
         },
         {
@@ -391,7 +387,11 @@
           "count": 1
         },
         {
-          "word": "wirtschaft",
+          "word": "bruttoinlandsprodukt",
+          "count": 1
+        },
+        {
+          "word": "unternehmen",
           "count": 1
         }
       ],
@@ -423,19 +423,19 @@
           "count": 4
         },
         {
+          "word": "verteidigung",
+          "count": 1
+        },
+        {
+          "word": "soldaten",
+          "count": 1
+        },
+        {
           "word": "angriff",
           "count": 1
         },
         {
           "word": "verfassungsschutz",
-          "count": 1
-        },
-        {
-          "word": "extremismus",
-          "count": 1
-        },
-        {
-          "word": "straftäter",
           "count": 1
         }
       ],
@@ -451,6 +451,14 @@
       ],
       "europa": [
         {
+          "word": "ukraine",
+          "count": 2
+        },
+        {
+          "word": "wiederaufbau",
+          "count": 2
+        },
+        {
           "word": "außenminister",
           "count": 2
         },
@@ -460,14 +468,6 @@
         },
         {
           "word": "europa",
-          "count": 2
-        },
-        {
-          "word": "wiederaufbau",
-          "count": 2
-        },
-        {
-          "word": "ukraine",
           "count": 2
         }
       ],
@@ -481,15 +481,15 @@
           "count": 2
         },
         {
+          "word": "medienkompetenz",
+          "count": 1
+        },
+        {
           "word": "plattformen",
           "count": 1
         },
         {
           "word": "algorithmen",
-          "count": 1
-        },
-        {
-          "word": "medienkompetenz",
           "count": 1
         }
       ],
@@ -529,11 +529,11 @@
           "count": 3
         },
         {
-          "word": "finanzierung",
+          "word": "investitionen",
           "count": 2
         },
         {
-          "word": "investition",
+          "word": "finanzierung",
           "count": 2
         }
       ],
@@ -547,7 +547,7 @@
           "count": 2
         },
         {
-          "word": "straftat",
+          "word": "bundesverfassungsgericht",
           "count": 1
         },
         {

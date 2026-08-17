@@ -18,10 +18,10 @@
     "partySize": 212,
     "totalSpeakers": 626,
     "percentile": 99.8,
-    "verbosityRank": 225,
+    "verbosityRank": 226,
     "verbosityTotal": 582,
     "partyVerbosityRank": 79,
-    "longestSpeechRank": 141
+    "longestSpeechRank": 143
   },
   "drama": {
     "interruptionsGiven": 76,
@@ -267,19 +267,19 @@
     "question": "Welches Wort nutzt Dr. Konrad Körner häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
         "text": "Vogtschmidt",
         "isCorrect": true
       },
       {
-        "text": "Freiheit",
+        "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Energie",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
+        "text": "Gesetz",
         "isCorrect": false
       }
     ],
@@ -290,19 +290,19 @@
     "question": "Welches Adjektiv nutzt Dr. Konrad Körner häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
         "text": "Demokratisch",
         "isCorrect": true
       },
       {
-        "text": "Wichtig",
+        "text": "Groß",
         "isCorrect": false
       },
       {
-        "text": "Sicher",
+        "text": "Erfolgreich",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
         "isCorrect": false
       }
     ],
@@ -403,19 +403,23 @@
     "topicWords": {
       "migration": [
         {
-          "word": "grenze",
-          "count": 1
-        },
-        {
           "word": "flüchtling",
           "count": 1
         },
         {
           "word": "integration",
           "count": 1
+        },
+        {
+          "word": "grenze",
+          "count": 1
         }
       ],
       "klima": [
+        {
+          "word": "ökosystem",
+          "count": 2
+        },
         {
           "word": "klimaneutralität",
           "count": 2
@@ -425,11 +429,7 @@
           "count": 2
         },
         {
-          "word": "ökosystem",
-          "count": 2
-        },
-        {
-          "word": "umwelt",
+          "word": "kohle",
           "count": 1
         },
         {
@@ -499,7 +499,7 @@
           "count": 2
         },
         {
-          "word": "angriff",
+          "word": "bundeswehr",
           "count": 1
         }
       ],
@@ -509,7 +509,7 @@
           "count": 2
         },
         {
-          "word": "prävention",
+          "word": "medikament",
           "count": 1
         },
         {
@@ -517,7 +517,7 @@
           "count": 1
         },
         {
-          "word": "medikament",
+          "word": "prävention",
           "count": 1
         },
         {
@@ -539,11 +539,11 @@
           "count": 3
         },
         {
-          "word": "gipfel",
+          "word": "putin",
           "count": 2
         },
         {
-          "word": "putin",
+          "word": "binnenmarkt",
           "count": 2
         }
       ],
@@ -575,19 +575,19 @@
           "count": 15
         },
         {
-          "word": "schulen",
-          "count": 11
-        },
-        {
           "word": "lehrer",
           "count": 11
         },
         {
-          "word": "schüler",
-          "count": 6
+          "word": "schulen",
+          "count": 11
         },
         {
           "word": "schule",
+          "count": 6
+        },
+        {
+          "word": "schüler",
           "count": 6
         }
       ],
@@ -637,10 +637,6 @@
       ],
       "arbeit": [
         {
-          "word": "minijob",
-          "count": 3
-        },
-        {
           "word": "gewerkschaften",
           "count": 3
         },
@@ -649,11 +645,15 @@
           "count": 3
         },
         {
+          "word": "minijob",
+          "count": 3
+        },
+        {
           "word": "einkommen",
           "count": 2
         },
         {
-          "word": "unfallversicherung",
+          "word": "arbeitslosigkeit",
           "count": 1
         }
       ],
@@ -671,11 +671,11 @@
           "count": 2
         },
         {
-          "word": "elektromobilität",
+          "word": "verkehr",
           "count": 1
         },
         {
-          "word": "verkehr",
+          "word": "elektromobilität",
           "count": 1
         }
       ]

@@ -11,23 +11,23 @@
   "minWords": 55,
   "maxWords": 721,
   "rankings": {
-    "speechRank": 98,
+    "speechRank": 91,
     "wordsRank": 210,
-    "partySpeechRank": 20,
+    "partySpeechRank": 17,
     "partyWordsRank": 45,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 84.3,
-    "verbosityRank": 452,
+    "percentile": 85.5,
+    "verbosityRank": 451,
     "verbosityTotal": 582,
-    "partyVerbosityRank": 117,
+    "partyVerbosityRank": 116,
     "longestSpeechRank": 352
   },
   "drama": {
     "interruptionsGiven": 17,
     "interruptionsReceived": 39,
-    "interrupterRank": 220,
-    "interruptedRank": 181
+    "interrupterRank": 221,
+    "interruptedRank": 178
   },
   "words": {
     "topWords": [
@@ -44,11 +44,11 @@
         "count": 24
       },
       {
-        "word": "staat",
+        "word": "weiter",
         "count": 18
       },
       {
-        "word": "weiter",
+        "word": "staat",
         "count": 18
       },
       {
@@ -249,20 +249,20 @@
     "question": "Welches Wort nutzt Otto Strauß häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
+        "text": "Bundesregierung",
         "isCorrect": false
       },
       {
         "text": "Airlines",
         "isCorrect": true
+      },
+      {
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Abstimmung",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Airlines\" nutzt Otto Strauß 600.1× häufiger als der AfD-Durchschnitt.",
@@ -272,7 +272,11 @@
     "question": "Welches Adjektiv nutzt Otto Strauß häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Klar",
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Jung",
         "isCorrect": false
       },
       {
@@ -280,11 +284,7 @@
         "isCorrect": true
       },
       {
-        "text": "Groß",
-        "isCorrect": false
-      },
-      {
-        "text": "Erfolgreich",
+        "text": "Sicher",
         "isCorrect": false
       }
     ],
@@ -361,11 +361,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "abschiebung",
+          "word": "migration",
           "count": 2
         },
         {
-          "word": "migration",
+          "word": "abschiebung",
           "count": 2
         },
         {
@@ -383,33 +383,33 @@
           "count": 4
         },
         {
-          "word": "fernwärme",
-          "count": 2
-        },
-        {
           "word": "energie",
           "count": 2
         },
         {
-          "word": "klimaschutz",
-          "count": 1
+          "word": "fernwärme",
+          "count": 2
         },
         {
           "word": "klimaanpassung",
           "count": 1
+        },
+        {
+          "word": "klimaschutz",
+          "count": 1
         }
       ],
       "wirtschaft": [
-        {
-          "word": "unternehmen",
-          "count": 6
-        },
         {
           "word": "standort",
           "count": 6
         },
         {
           "word": "wirtschaft",
+          "count": 6
+        },
+        {
+          "word": "unternehmen",
           "count": 6
         },
         {
@@ -435,11 +435,11 @@
           "count": 5
         },
         {
-          "word": "wohnungsnot",
+          "word": "mieten",
           "count": 5
         },
         {
-          "word": "mieten",
+          "word": "wohnungsnot",
           "count": 5
         }
       ],
@@ -487,11 +487,11 @@
       ],
       "finanzen": [
         {
-          "word": "kosten",
+          "word": "investitionen",
           "count": 7
         },
         {
-          "word": "investitionen",
+          "word": "kosten",
           "count": 7
         },
         {
@@ -513,19 +513,19 @@
           "count": 2
         },
         {
-          "word": "diskriminierung",
-          "count": 1
-        },
-        {
-          "word": "datenschutz",
-          "count": 1
-        },
-        {
           "word": "gefängnis",
           "count": 1
         },
         {
           "word": "strafen",
+          "count": 1
+        },
+        {
+          "word": "staatsanwaltschaft",
+          "count": 1
+        },
+        {
+          "word": "datenschutz",
           "count": 1
         }
       ],
@@ -565,11 +565,11 @@
           "count": 2
         },
         {
-          "word": "fliegen",
+          "word": "bahn",
           "count": 2
         },
         {
-          "word": "verkehr",
+          "word": "flughafen",
           "count": 2
         }
       ]

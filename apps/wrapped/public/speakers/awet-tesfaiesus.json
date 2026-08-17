@@ -11,23 +11,23 @@
   "minWords": 58,
   "maxWords": 501,
   "rankings": {
-    "speechRank": 331,
+    "speechRank": 325,
     "wordsRank": 420,
-    "partySpeechRank": 58,
+    "partySpeechRank": 57,
     "partyWordsRank": 68,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 47.1,
-    "verbosityRank": 411,
+    "percentile": 48.1,
+    "verbosityRank": 410,
     "verbosityTotal": 582,
-    "partyVerbosityRank": 45,
+    "partyVerbosityRank": 44,
     "longestSpeechRank": 575
   },
   "drama": {
     "interruptionsGiven": 15,
     "interruptionsReceived": 38,
-    "interrupterRank": 239,
-    "interruptedRank": 190
+    "interrupterRank": 236,
+    "interruptedRank": 187
   },
   "words": {
     "topWords": [
@@ -48,11 +48,11 @@
         "count": 17
       },
       {
-        "word": "gesetz",
+        "word": "journalisten",
         "count": 13
       },
       {
-        "word": "journalisten",
+        "word": "gesetz",
         "count": 13
       },
       {
@@ -221,20 +221,20 @@
     "question": "Welches Wort nutzt Awet Tesfaiesus häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesetzentwurf",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Rente",
         "isCorrect": false
       },
       {
         "text": "Rundfunk",
         "isCorrect": true
-      },
-      {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Rundfunk\" nutzt Awet Tesfaiesus 473.9× häufiger als der GRÜNE-Durchschnitt.",
@@ -244,19 +244,19 @@
     "question": "Welches Adjektiv nutzt Awet Tesfaiesus häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
         "text": "Gerecht",
         "isCorrect": true
       },
       {
-        "text": "Problematisch",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Jung",
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Falsch",
         "isCorrect": false
       }
     ],
@@ -371,23 +371,19 @@
           "count": 2
         },
         {
+          "word": "kredite",
+          "count": 1
+        },
+        {
           "word": "konzerne",
           "count": 1
         },
         {
           "word": "werke",
           "count": 1
-        },
-        {
-          "word": "kredite",
-          "count": 1
         }
       ],
       "soziales": [
-        {
-          "word": "gerechtigkeit",
-          "count": 1
-        },
         {
           "word": "wohnung",
           "count": 1
@@ -403,19 +399,23 @@
         {
           "word": "wohnungen",
           "count": 1
+        },
+        {
+          "word": "gerechtigkeit",
+          "count": 1
         }
       ],
       "sicherheit": [
-        {
-          "word": "polizei",
-          "count": 1
-        },
         {
           "word": "korruption",
           "count": 1
         },
         {
           "word": "geldwäsche",
+          "count": 1
+        },
+        {
+          "word": "polizei",
           "count": 1
         }
       ],
@@ -439,7 +439,7 @@
           "count": 2
         },
         {
-          "word": "amerika",
+          "word": "sanktionen",
           "count": 1
         },
         {
@@ -447,7 +447,7 @@
           "count": 1
         },
         {
-          "word": "sanktionen",
+          "word": "amerika",
           "count": 1
         }
       ],
@@ -461,15 +461,15 @@
           "count": 4
         },
         {
-          "word": "digital",
-          "count": 2
-        },
-        {
           "word": "pressefreiheit",
           "count": 2
         },
         {
-          "word": "technologie",
+          "word": "digital",
+          "count": 2
+        },
+        {
+          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -497,11 +497,11 @@
           "count": 2
         },
         {
-          "word": "steuerhinterziehung",
+          "word": "bundeshaushalt",
           "count": 1
         },
         {
-          "word": "bundeshaushalt",
+          "word": "defizit",
           "count": 1
         }
       ],
@@ -523,7 +523,7 @@
           "count": 2
         },
         {
-          "word": "verordnung",
+          "word": "gerichte",
           "count": 1
         }
       ],
@@ -535,15 +535,15 @@
       ],
       "mobilitaet": [
         {
+          "word": "infrastruktur",
+          "count": 1
+        },
+        {
           "word": "bahnhof",
           "count": 1
         },
         {
           "word": "straßen",
-          "count": 1
-        },
-        {
-          "word": "infrastruktur",
           "count": 1
         }
       ]

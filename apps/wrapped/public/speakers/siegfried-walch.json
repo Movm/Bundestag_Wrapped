@@ -13,7 +13,7 @@
   "rankings": {
     "speechRank": 52,
     "wordsRank": 72,
-    "partySpeechRank": 12,
+    "partySpeechRank": 13,
     "partyWordsRank": 24,
     "partySize": 212,
     "totalSpeakers": 626,
@@ -21,13 +21,13 @@
     "verbosityRank": 209,
     "verbosityTotal": 582,
     "partyVerbosityRank": 72,
-    "longestSpeechRank": 243
+    "longestSpeechRank": 241
   },
   "drama": {
     "interruptionsGiven": 25,
     "interruptionsReceived": 60,
-    "interrupterRank": 188,
-    "interruptedRank": 80
+    "interrupterRank": 191,
+    "interruptedRank": 78
   },
   "words": {
     "topWords": [
@@ -256,11 +256,7 @@
     "question": "Welches Wort nutzt Siegfried Walch häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Klima",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
+        "text": "Koalition",
         "isCorrect": false
       },
       {
@@ -268,7 +264,11 @@
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
+        "text": "Klima",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
         "isCorrect": false
       }
     ],
@@ -283,7 +283,7 @@
         "isCorrect": true
       },
       {
-        "text": "Alt",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
@@ -291,7 +291,7 @@
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Jung",
         "isCorrect": false
       }
     ],
@@ -424,15 +424,15 @@
           "count": 2
         },
         {
-          "word": "märkte",
-          "count": 1
-        },
-        {
           "word": "firmen",
           "count": 1
         },
         {
           "word": "zoll",
+          "count": 1
+        },
+        {
+          "word": "märkte",
           "count": 1
         }
       ],
@@ -494,11 +494,11 @@
           "count": 5
         },
         {
-          "word": "krieg",
+          "word": "israel",
           "count": 4
         },
         {
-          "word": "israel",
+          "word": "krieg",
           "count": 4
         }
       ],
@@ -532,11 +532,11 @@
       ],
       "finanzen": [
         {
-          "word": "bundeshaushalt",
+          "word": "fördermittel",
           "count": 1
         },
         {
-          "word": "fördermittel",
+          "word": "bundeshaushalt",
           "count": 1
         },
         {
@@ -558,11 +558,11 @@
           "count": 2
         },
         {
-          "word": "gericht",
+          "word": "strafrecht",
           "count": 1
         },
         {
-          "word": "gleichberechtigung",
+          "word": "rechtsstaatlichkeit",
           "count": 1
         }
       ],
@@ -574,19 +574,19 @@
       ],
       "mobilitaet": [
         {
-          "word": "infrastruktur",
-          "count": 2
-        },
-        {
           "word": "straße",
           "count": 2
         },
         {
-          "word": "fahrzeuge",
-          "count": 1
+          "word": "infrastruktur",
+          "count": 2
         },
         {
           "word": "straßen",
+          "count": 1
+        },
+        {
+          "word": "fahrzeuge",
           "count": 1
         }
       ]

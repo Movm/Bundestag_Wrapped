@@ -11,23 +11,23 @@
   "minWords": 122,
   "maxWords": 632,
   "rankings": {
-    "speechRank": 272,
+    "speechRank": 260,
     "wordsRank": 373,
-    "partySpeechRank": 58,
+    "partySpeechRank": 53,
     "partyWordsRank": 79,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 56.5,
-    "verbosityRank": 347,
+    "percentile": 58.5,
+    "verbosityRank": 346,
     "verbosityTotal": 582,
     "partyVerbosityRank": 89,
-    "longestSpeechRank": 462
+    "longestSpeechRank": 461
   },
   "drama": {
     "interruptionsGiven": 5,
     "interruptionsReceived": 29,
-    "interrupterRank": 358,
-    "interruptedRank": 257
+    "interrupterRank": 347,
+    "interruptedRank": 259
   },
   "words": {
     "topWords": [
@@ -48,11 +48,11 @@
         "count": 14
       },
       {
-        "word": "politik",
+        "word": "gleichzeitig",
         "count": 13
       },
       {
-        "word": "gleichzeitig",
+        "word": "politik",
         "count": 13
       },
       {
@@ -234,7 +234,11 @@
     "question": "Welches Wort nutzt Thomas Korell häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Reform",
+        "text": "Steuern",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesellschaft",
         "isCorrect": false
       },
       {
@@ -242,11 +246,7 @@
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
+        "text": "Ausschuss",
         "isCorrect": false
       }
     ],
@@ -257,19 +257,19 @@
     "question": "Welches Adjektiv nutzt Thomas Korell häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
         "text": "Solide",
         "isCorrect": true
       },
       {
-        "text": "Politisch",
+        "text": "Falsch",
         "isCorrect": false
       },
       {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
+        "text": "Neu",
         "isCorrect": false
       }
     ],
@@ -398,7 +398,7 @@
           "count": 2
         },
         {
-          "word": "anlage",
+          "word": "wettbewerbsfähigkeit",
           "count": 1
         }
       ],
@@ -492,11 +492,11 @@
       ],
       "justiz": [
         {
-          "word": "vorschrift",
+          "word": "verordnung",
           "count": 2
         },
         {
-          "word": "verordnung",
+          "word": "vorschrift",
           "count": 2
         }
       ],

@@ -11,13 +11,13 @@
   "minWords": 61,
   "maxWords": 635,
   "rankings": {
-    "speechRank": 113,
+    "speechRank": 111,
     "wordsRank": 167,
     "partySpeechRank": 22,
     "partyWordsRank": 36,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 81.9,
+    "percentile": 82.3,
     "verbosityRank": 199,
     "verbosityTotal": 582,
     "partyVerbosityRank": 52,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 24,
     "interruptionsReceived": 51,
-    "interrupterRank": 195,
-    "interruptedRank": 114
+    "interrupterRank": 192,
+    "interruptedRank": 113
   },
   "words": {
     "topWords": [
@@ -60,15 +60,15 @@
         "count": 20
       },
       {
-        "word": "linken",
-        "count": 19
-      },
-      {
         "word": "soll",
         "count": 19
       },
       {
         "word": "weniger",
+        "count": 19
+      },
+      {
+        "word": "linken",
         "count": 19
       }
     ],
@@ -221,7 +221,11 @@
     "question": "Welches Wort nutzt Peter Bohnhof häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Fraktion",
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
         "isCorrect": false
       },
       {
@@ -229,11 +233,7 @@
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
+        "text": "Kanzler",
         "isCorrect": false
       }
     ],
@@ -244,7 +244,7 @@
     "question": "Welches Adjektiv nutzt Peter Bohnhof häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Erfolgreich",
+        "text": "Klar",
         "isCorrect": false
       },
       {
@@ -256,7 +256,7 @@
         "isCorrect": true
       },
       {
-        "text": "Alt",
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
@@ -351,19 +351,19 @@
           "count": 4
         },
         {
-          "word": "klimawandel",
-          "count": 2
-        },
-        {
           "word": "energie",
           "count": 2
         },
         {
-          "word": "solarenergie",
+          "word": "klimawandel",
+          "count": 2
+        },
+        {
+          "word": "klimapolitik",
           "count": 1
         },
         {
-          "word": "kohle",
+          "word": "klimaschutz",
           "count": 1
         }
       ],
@@ -385,7 +385,7 @@
           "count": 12
         },
         {
-          "word": "mittelstand",
+          "word": "firmen",
           "count": 7
         }
       ],
@@ -427,15 +427,15 @@
           "count": 2
         },
         {
-          "word": "pflege",
-          "count": 1
-        },
-        {
-          "word": "krankenhaus",
-          "count": 1
-        },
-        {
           "word": "sucht",
+          "count": 1
+        },
+        {
+          "word": "rezept",
+          "count": 1
+        },
+        {
+          "word": "pflege",
           "count": 1
         }
       ],
@@ -445,11 +445,11 @@
           "count": 4
         },
         {
-          "word": "amerika",
+          "word": "ukraine",
           "count": 1
         },
         {
-          "word": "ukraine",
+          "word": "amerika",
           "count": 1
         },
         {
@@ -473,15 +473,15 @@
           "count": 1
         },
         {
+          "word": "ausbildung",
+          "count": 1
+        },
+        {
           "word": "wissenschaftler",
           "count": 1
         },
         {
           "word": "bildung",
-          "count": 1
-        },
-        {
-          "word": "ausbildung",
           "count": 1
         }
       ],
@@ -503,7 +503,7 @@
           "count": 3
         },
         {
-          "word": "steuer",
+          "word": "bank",
           "count": 2
         }
       ],
@@ -521,11 +521,11 @@
           "count": 2
         },
         {
-          "word": "grundgesetz",
+          "word": "haftung",
           "count": 1
         },
         {
-          "word": "verfassung",
+          "word": "anwälte",
           "count": 1
         }
       ],
@@ -547,7 +547,7 @@
           "count": 7
         },
         {
-          "word": "teilzeit",
+          "word": "löhne",
           "count": 5
         }
       ],
@@ -565,11 +565,11 @@
           "count": 2
         },
         {
-          "word": "fliegen",
+          "word": "auto",
           "count": 1
         },
         {
-          "word": "auto",
+          "word": "fliegen",
           "count": 1
         }
       ]

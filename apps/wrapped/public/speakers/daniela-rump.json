@@ -11,13 +11,13 @@
   "minWords": 29,
   "maxWords": 619,
   "rankings": {
-    "speechRank": 290,
+    "speechRank": 284,
     "wordsRank": 368,
-    "partySpeechRank": 56,
+    "partySpeechRank": 54,
     "partyWordsRank": 73,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 53.7,
+    "percentile": 54.6,
     "verbosityRank": 399,
     "verbosityTotal": 582,
     "partyVerbosityRank": 86,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 10,
     "interrupterRank": null,
-    "interruptedRank": 469
+    "interruptedRank": 466
   },
   "words": {
     "topWords": [
@@ -62,10 +62,6 @@
       {
         "word": "demokratie",
         "count": 10
-      },
-      {
-        "word": "kinder",
-        "count": 9
       }
     ],
     "signatureWords": [
@@ -230,20 +226,20 @@
     "question": "Welches Wort nutzt Daniela Rump häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Migration",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Wirtschaft",
+        "text": "Energie",
         "isCorrect": false
       },
       {
         "text": "Petitionsausschuss",
         "isCorrect": true
+      },
+      {
+        "text": "Antrag",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Petitionsausschuss\" nutzt Daniela Rump 333.3× häufiger als der SPD-Durchschnitt.",
@@ -253,11 +249,7 @@
     "question": "Welches Adjektiv nutzt Daniela Rump häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Sozial",
+        "text": "Richtig",
         "isCorrect": false
       },
       {
@@ -265,7 +257,11 @@
         "isCorrect": true
       },
       {
-        "text": "Falsch",
+        "text": "Wichtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
         "isCorrect": false
       }
     ],
@@ -366,15 +362,15 @@
     "topicWords": {
       "migration": [
         {
-          "word": "geflüchtete",
-          "count": 1
-        },
-        {
           "word": "migration",
           "count": 1
         },
         {
           "word": "zuwanderung",
+          "count": 1
+        },
+        {
+          "word": "geflüchtete",
           "count": 1
         }
       ],
@@ -460,15 +456,15 @@
       ],
       "digital": [
         {
-          "word": "digital",
-          "count": 1
-        },
-        {
           "word": "digitalisierung",
           "count": 1
         },
         {
           "word": "automatisierung",
+          "count": 1
+        },
+        {
+          "word": "digital",
           "count": 1
         }
       ],
@@ -544,11 +540,11 @@
           "count": 6
         },
         {
-          "word": "löhne",
+          "word": "beschäftigte",
           "count": 4
         },
         {
-          "word": "beschäftigte",
+          "word": "löhne",
           "count": 4
         },
         {
@@ -566,11 +562,11 @@
           "count": 2
         },
         {
-          "word": "straße",
+          "word": "nahverkehr",
           "count": 1
         },
         {
-          "word": "nahverkehr",
+          "word": "straße",
           "count": 1
         }
       ]

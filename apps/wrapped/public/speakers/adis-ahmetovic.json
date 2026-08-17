@@ -11,14 +11,14 @@
   "minWords": 9,
   "maxWords": 817,
   "rankings": {
-    "speechRank": 69,
+    "speechRank": 70,
     "wordsRank": 106,
-    "partySpeechRank": 18,
+    "partySpeechRank": 17,
     "partyWordsRank": 27,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 89.0,
-    "verbosityRank": 250,
+    "percentile": 88.8,
+    "verbosityRank": 251,
     "verbosityTotal": 582,
     "partyVerbosityRank": 59,
     "longestSpeechRank": 229
@@ -27,7 +27,7 @@
     "interruptionsGiven": 18,
     "interruptionsReceived": 6,
     "interrupterRank": 219,
-    "interruptedRank": 534
+    "interruptedRank": 522
   },
   "words": {
     "topWords": [
@@ -66,6 +66,10 @@
       {
         "word": "land",
         "count": 20
+      },
+      {
+        "word": "leben",
+        "count": 19
       }
     ],
     "signatureWords": [
@@ -88,16 +92,16 @@
         "ratioBundestag": 55.9
       },
       {
-        "word": "bruch",
-        "count": 6,
-        "ratioParty": 72.4,
-        "ratioBundestag": 46.1
-      },
-      {
         "word": "narrativ",
         "count": 6,
         "ratioParty": 72.4,
         "ratioBundestag": 51.7
+      },
+      {
+        "word": "bruch",
+        "count": 6,
+        "ratioParty": 72.4,
+        "ratioBundestag": 46.1
       }
     ],
     "signatureWordsParty": [
@@ -114,13 +118,13 @@
         "ratio": 211.1
       },
       {
-        "word": "bruch",
+        "word": "narrativ",
         "count": 6,
         "score": 25.78,
         "ratio": 72.4
       },
       {
-        "word": "narrativ",
+        "word": "bruch",
         "count": 6,
         "score": 25.78,
         "ratio": 72.4
@@ -235,20 +239,20 @@
     "question": "Welches Wort nutzt Adis Ahmetovic häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
         "text": "Legitimieren",
         "isCorrect": true
-      },
-      {
-        "text": "Gesellschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Reform",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Legitimieren\" nutzt Adis Ahmetovic 211.1× häufiger als der SPD-Durchschnitt.",
@@ -258,19 +262,19 @@
     "question": "Welches Adjektiv nutzt Adis Ahmetovic häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
+        "text": "Sozial",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
         "text": "Menschlich",
         "isCorrect": true
       },
       {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Stark",
-        "isCorrect": false
-      },
-      {
-        "text": "Groß",
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
@@ -371,14 +375,6 @@
     "topicWords": {
       "migration": [
         {
-          "word": "migration",
-          "count": 1
-        },
-        {
-          "word": "flüchtlinge",
-          "count": 1
-        },
-        {
           "word": "subsidiär",
           "count": 1
         },
@@ -388,6 +384,14 @@
         },
         {
           "word": "integration",
+          "count": 1
+        },
+        {
+          "word": "migration",
+          "count": 1
+        },
+        {
+          "word": "flüchtlinge",
           "count": 1
         }
       ],
@@ -399,15 +403,15 @@
       ],
       "wirtschaft": [
         {
-          "word": "kredit",
-          "count": 1
-        },
-        {
           "word": "wirtschaftspolitik",
           "count": 1
         },
         {
           "word": "volkswirtschaft",
+          "count": 1
+        },
+        {
+          "word": "kredit",
           "count": 1
         }
       ],
@@ -435,10 +439,6 @@
       ],
       "sicherheit": [
         {
-          "word": "angriff",
-          "count": 5
-        },
-        {
           "word": "waffen",
           "count": 5
         },
@@ -447,11 +447,15 @@
           "count": 5
         },
         {
+          "word": "angriff",
+          "count": 5
+        },
+        {
           "word": "verbrechen",
           "count": 2
         },
         {
-          "word": "terrorismus",
+          "word": "korruption",
           "count": 1
         }
       ],
@@ -461,11 +465,7 @@
           "count": 2
         },
         {
-          "word": "pflege",
-          "count": 1
-        },
-        {
-          "word": "sucht",
+          "word": "medizin",
           "count": 1
         },
         {
@@ -474,6 +474,10 @@
         },
         {
           "word": "krankenhäuser",
+          "count": 1
+        },
+        {
+          "word": "pflege",
           "count": 1
         }
       ],
@@ -501,6 +505,14 @@
       ],
       "bildung": [
         {
+          "word": "bildung",
+          "count": 1
+        },
+        {
+          "word": "schulen",
+          "count": 1
+        },
+        {
           "word": "wissenschaft",
           "count": 1
         },
@@ -511,14 +523,6 @@
         {
           "word": "ausbildung",
           "count": 1
-        },
-        {
-          "word": "bildung",
-          "count": 1
-        },
-        {
-          "word": "schulen",
-          "count": 1
         }
       ],
       "finanzen": [
@@ -527,11 +531,11 @@
           "count": 3
         },
         {
-          "word": "inflation",
+          "word": "haushaltsplan",
           "count": 1
         },
         {
-          "word": "haushaltsplan",
+          "word": "inflation",
           "count": 1
         }
       ],
@@ -545,7 +549,7 @@
           "count": 4
         },
         {
-          "word": "gleichberechtigung",
+          "word": "beschluss",
           "count": 1
         },
         {
@@ -553,7 +557,7 @@
           "count": 1
         },
         {
-          "word": "beschluss",
+          "word": "verfassungsrecht",
           "count": 1
         }
       ],

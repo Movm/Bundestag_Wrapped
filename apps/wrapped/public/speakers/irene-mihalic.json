@@ -18,15 +18,15 @@
     "partySize": 86,
     "totalSpeakers": 626,
     "percentile": 95.7,
-    "verbosityRank": 410,
+    "verbosityRank": 411,
     "verbosityTotal": 582,
-    "partyVerbosityRank": 44,
-    "longestSpeechRank": 349
+    "partyVerbosityRank": 45,
+    "longestSpeechRank": 350
   },
   "drama": {
     "interruptionsGiven": 153,
     "interruptionsReceived": 112,
-    "interrupterRank": 27,
+    "interrupterRank": 26,
     "interruptedRank": 23
   },
   "words": {
@@ -271,11 +271,7 @@
     "question": "Welches Wort nutzt Dr. Irene Mihalic häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Wirtschaft",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
+        "text": "Migration",
         "isCorrect": false
       },
       {
@@ -283,7 +279,11 @@
         "isCorrect": true
       },
       {
-        "text": "Politik",
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
         "isCorrect": false
       }
     ],
@@ -294,20 +294,20 @@
     "question": "Welches Adjektiv nutzt Dr. Irene Mihalic häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Notwendig",
+        "text": "Inakzeptabel",
+        "isCorrect": true
+      },
+      {
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
-        "text": "Wichtig",
+        "text": "Alt",
         "isCorrect": false
       },
       {
         "text": "Stark",
         "isCorrect": false
-      },
-      {
-        "text": "Inakzeptabel",
-        "isCorrect": true
       }
     ],
     "explanationParty": "\"Inakzeptabel\" nutzt Dr. Irene Mihalic 12.9× häufiger als der GRÜNE-Durchschnitt.",
@@ -415,11 +415,11 @@
           "count": 2
         },
         {
-          "word": "integration",
+          "word": "drittstaaten",
           "count": 2
         },
         {
-          "word": "drittstaaten",
+          "word": "integration",
           "count": 2
         },
         {
@@ -443,11 +443,11 @@
       ],
       "wirtschaft": [
         {
-          "word": "kapital",
+          "word": "wirtschaft",
           "count": 1
         },
         {
-          "word": "wirtschaft",
+          "word": "kapital",
           "count": 1
         }
       ],
@@ -541,15 +541,19 @@
           "count": 1
         },
         {
-          "word": "cybersicherheit",
+          "word": "rundfunk",
           "count": 1
         },
         {
-          "word": "netz",
+          "word": "cybersicherheit",
           "count": 1
         }
       ],
       "bildung": [
+        {
+          "word": "schülerin",
+          "count": 1
+        },
         {
           "word": "wissenschaft",
           "count": 1
@@ -565,13 +569,17 @@
         {
           "word": "hochschulen",
           "count": 1
-        },
-        {
-          "word": "schülerin",
-          "count": 1
         }
       ],
       "finanzen": [
+        {
+          "word": "steuern",
+          "count": 1
+        },
+        {
+          "word": "schuldenbremse",
+          "count": 1
+        },
         {
           "word": "bundeshaushalt",
           "count": 1
@@ -582,14 +590,6 @@
         },
         {
           "word": "haushalt",
-          "count": 1
-        },
-        {
-          "word": "schuldenbremse",
-          "count": 1
-        },
-        {
-          "word": "steuern",
           "count": 1
         }
       ],
@@ -621,11 +621,11 @@
           "count": 2
         },
         {
-          "word": "arbeitszeit",
+          "word": "überstunden",
           "count": 1
         },
         {
-          "word": "überstunden",
+          "word": "arbeitszeit",
           "count": 1
         }
       ],
@@ -639,15 +639,15 @@
           "count": 2
         },
         {
+          "word": "bahnhof",
+          "count": 1
+        },
+        {
           "word": "fahrzeuge",
           "count": 1
         },
         {
-          "word": "flug",
-          "count": 1
-        },
-        {
-          "word": "bahnhof",
+          "word": "straßen",
           "count": 1
         }
       ]

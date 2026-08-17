@@ -42,6 +42,10 @@
       {
         "word": "jahren",
         "count": 69
+      },
+      {
+        "word": "letzten",
+        "count": 44
       }
     ],
     "signatureWords": [
@@ -52,16 +56,16 @@
         "ratioBundestag": 80.0
       },
       {
-        "word": "nachhilfe",
-        "count": 6,
-        "ratioParty": 78.1,
-        "ratioBundestag": 71.4
-      },
-      {
         "word": "pendlerpauschale",
         "count": 12,
         "ratioParty": 78.1,
         "ratioBundestag": 25.8
+      },
+      {
+        "word": "nachhilfe",
+        "count": 6,
+        "ratioParty": 78.1,
+        "ratioBundestag": 71.4
       },
       {
         "word": "umstellen",
@@ -239,20 +243,20 @@
     "question": "Welches Wort nutzt Kay Gottschalk häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
-      },
-      {
-        "text": "Migration",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
         "text": "Solidaritätszuschlag",
         "isCorrect": true
+      },
+      {
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Solidaritätszuschlag\" nutzt Kay Gottschalk 169.2× häufiger als der AfD-Durchschnitt.",
@@ -262,7 +266,11 @@
     "question": "Welches Adjektiv nutzt Kay Gottschalk häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Erfolgreich",
+        "text": "Wirtschaftlich",
+        "isCorrect": false
+      },
+      {
+        "text": "National",
         "isCorrect": false
       },
       {
@@ -270,11 +278,7 @@
         "isCorrect": true
       },
       {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
+        "text": "Klar",
         "isCorrect": false
       }
     ],
@@ -351,23 +355,23 @@
     "topicWords": {
       "migration": [
         {
-          "word": "migration",
-          "count": 2
-        },
-        {
           "word": "einwanderung",
           "count": 2
         },
         {
-          "word": "migranten",
-          "count": 1
+          "word": "migration",
+          "count": 2
         },
         {
-          "word": "aufenthaltstitel",
+          "word": "obergrenze",
           "count": 1
         },
         {
           "word": "flüchtlinge",
+          "count": 1
+        },
+        {
+          "word": "migranten",
           "count": 1
         }
       ],
@@ -375,10 +379,6 @@
         {
           "word": "energie",
           "count": 4
-        },
-        {
-          "word": "fernwärme",
-          "count": 2
         },
         {
           "word": "klimaschutz",
@@ -389,7 +389,11 @@
           "count": 2
         },
         {
-          "word": "nachhaltigkeit",
+          "word": "fernwärme",
+          "count": 2
+        },
+        {
+          "word": "klimawandel",
           "count": 1
         }
       ],
@@ -403,11 +407,11 @@
           "count": 21
         },
         {
-          "word": "betriebe",
+          "word": "handel",
           "count": 8
         },
         {
-          "word": "handel",
+          "word": "betriebe",
           "count": 8
         },
         {
@@ -429,11 +433,11 @@
           "count": 9
         },
         {
-          "word": "altersvorsorge",
+          "word": "kind",
           "count": 6
         },
         {
-          "word": "kind",
+          "word": "altersvorsorge",
           "count": 6
         }
       ],
@@ -465,11 +469,11 @@
           "count": 4
         },
         {
-          "word": "corona",
+          "word": "krankenkassen",
           "count": 1
         },
         {
-          "word": "krankenkassen",
+          "word": "corona",
           "count": 1
         },
         {
@@ -487,11 +491,11 @@
           "count": 7
         },
         {
-          "word": "russland",
+          "word": "krieg",
           "count": 5
         },
         {
-          "word": "krieg",
+          "word": "russland",
           "count": 5
         },
         {
@@ -509,11 +513,7 @@
           "count": 3
         },
         {
-          "word": "plattformen",
-          "count": 1
-        },
-        {
-          "word": "plattform",
+          "word": "rundfunk",
           "count": 1
         },
         {
@@ -521,17 +521,21 @@
           "count": 1
         },
         {
-          "word": "internet",
+          "word": "daten",
+          "count": 1
+        },
+        {
+          "word": "netzwerk",
           "count": 1
         }
       ],
       "bildung": [
         {
-          "word": "studium",
+          "word": "bildung",
           "count": 4
         },
         {
-          "word": "bildung",
+          "word": "studium",
           "count": 4
         },
         {
@@ -543,7 +547,7 @@
           "count": 2
         },
         {
-          "word": "fortbildung",
+          "word": "schule",
           "count": 1
         }
       ],
@@ -553,11 +557,11 @@
           "count": 22
         },
         {
-          "word": "steuer",
+          "word": "schulden",
           "count": 17
         },
         {
-          "word": "schulden",
+          "word": "steuer",
           "count": 17
         },
         {
@@ -565,17 +569,17 @@
           "count": 13
         },
         {
-          "word": "inflation",
+          "word": "körperschaftsteuer",
           "count": 12
         }
       ],
       "justiz": [
         {
-          "word": "rechtsprechung",
+          "word": "staatsanwaltschaft",
           "count": 3
         },
         {
-          "word": "staatsanwaltschaft",
+          "word": "rechtsprechung",
           "count": 3
         },
         {
@@ -583,11 +587,11 @@
           "count": 2
         },
         {
-          "word": "diskriminierung",
+          "word": "anwalt",
           "count": 2
         },
         {
-          "word": "anwalt",
+          "word": "diskriminierung",
           "count": 2
         }
       ],
@@ -605,11 +609,11 @@
           "count": 17
         },
         {
-          "word": "beschäftigung",
+          "word": "lohn",
           "count": 2
         },
         {
-          "word": "gewerkschaften",
+          "word": "beschäftigung",
           "count": 2
         }
       ],
@@ -619,19 +623,19 @@
           "count": 10
         },
         {
-          "word": "straße",
-          "count": 3
-        },
-        {
           "word": "bahn",
           "count": 3
         },
         {
-          "word": "auto",
-          "count": 2
+          "word": "straße",
+          "count": 3
         },
         {
           "word": "autos",
+          "count": 2
+        },
+        {
+          "word": "auto",
           "count": 2
         }
       ]

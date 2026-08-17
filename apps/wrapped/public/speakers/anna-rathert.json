@@ -11,22 +11,22 @@
   "minWords": 15,
   "maxWords": 720,
   "rankings": {
-    "speechRank": 65,
+    "speechRank": 62,
     "wordsRank": 114,
     "partySpeechRank": 14,
     "partyWordsRank": 24,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 89.6,
-    "verbosityRank": 275,
+    "percentile": 90.1,
+    "verbosityRank": 274,
     "verbosityTotal": 582,
     "partyVerbosityRank": 66,
-    "longestSpeechRank": 354
+    "longestSpeechRank": 353
   },
   "drama": {
     "interruptionsGiven": 8,
     "interruptionsReceived": 75,
-    "interrupterRank": 295,
+    "interrupterRank": 293,
     "interruptedRank": 48
   },
   "words": {
@@ -40,11 +40,11 @@
         "count": 28
       },
       {
-        "word": "außenpolitik",
+        "word": "interessen",
         "count": 27
       },
       {
-        "word": "interessen",
+        "word": "außenpolitik",
         "count": 27
       },
       {
@@ -56,11 +56,11 @@
         "count": 24
       },
       {
-        "word": "politik",
+        "word": "eigenen",
         "count": 21
       },
       {
-        "word": "eigenen",
+        "word": "politik",
         "count": 21
       }
     ],
@@ -256,26 +256,31 @@
       "emoji": "📝",
       "label": "Wörter gesprochen",
       "value": "11.005"
+    },
+    {
+      "emoji": "📊",
+      "label": "Top-Redner",
+      "value": "Top 10%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Anna Rathert häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Opposition",
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Politik",
         "isCorrect": false
       },
       {
         "text": "Fängt",
         "isCorrect": true
-      },
-      {
-        "text": "Kanzler",
-        "isCorrect": false
-      },
-      {
-        "text": "Arbeit",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Fängt\" nutzt Dr. Anna Rathert 53.9× häufiger als der AfD-Durchschnitt.",
@@ -285,19 +290,19 @@
     "question": "Welches Adjektiv nutzt Dr. Anna Rathert häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
+        "text": "National",
+        "isCorrect": false
+      },
+      {
         "text": "Geschützt",
         "isCorrect": true
       },
       {
-        "text": "Groß",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
+        "text": "Neu",
         "isCorrect": false
       }
     ],
@@ -400,11 +405,11 @@
           "count": 2
         },
         {
-          "word": "kernenergie",
+          "word": "energiewende",
           "count": 1
         },
         {
-          "word": "energiewende",
+          "word": "kernenergie",
           "count": 1
         }
       ],
@@ -414,11 +419,11 @@
           "count": 10
         },
         {
-          "word": "wirtschaft",
+          "word": "unternehmen",
           "count": 3
         },
         {
-          "word": "unternehmen",
+          "word": "wirtschaft",
           "count": 3
         },
         {
@@ -432,11 +437,11 @@
       ],
       "soziales": [
         {
-          "word": "kind",
+          "word": "familien",
           "count": 16
         },
         {
-          "word": "familien",
+          "word": "kind",
           "count": 16
         },
         {
@@ -466,7 +471,7 @@
           "count": 4
         },
         {
-          "word": "kriminalität",
+          "word": "terroranschlag",
           "count": 2
         },
         {
@@ -516,15 +521,15 @@
           "count": 2
         },
         {
-          "word": "bildungspolitik",
-          "count": 1
-        },
-        {
-          "word": "bildungssystem",
-          "count": 1
-        },
-        {
           "word": "wissenschaftler",
+          "count": 1
+        },
+        {
+          "word": "lehrer",
+          "count": 1
+        },
+        {
+          "word": "bildungspolitik",
           "count": 1
         }
       ],
@@ -546,7 +551,7 @@
           "count": 2
         },
         {
-          "word": "steuer",
+          "word": "schulden",
           "count": 1
         }
       ],
@@ -564,11 +569,11 @@
           "count": 2
         },
         {
-          "word": "gesetzgebung",
+          "word": "strafverfolgung",
           "count": 1
         },
         {
-          "word": "strafverfolgung",
+          "word": "urteile",
           "count": 1
         }
       ],
@@ -582,11 +587,11 @@
           "count": 1
         },
         {
-          "word": "gehalt",
+          "word": "arbeitsplätze",
           "count": 1
         },
         {
-          "word": "arbeitsplätze",
+          "word": "gehalt",
           "count": 1
         }
       ],
@@ -596,7 +601,7 @@
           "count": 5
         },
         {
-          "word": "schiffe",
+          "word": "straße",
           "count": 1
         },
         {
@@ -604,7 +609,7 @@
           "count": 1
         },
         {
-          "word": "straße",
+          "word": "schiffe",
           "count": 1
         }
       ]

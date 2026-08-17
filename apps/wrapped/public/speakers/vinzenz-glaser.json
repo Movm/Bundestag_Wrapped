@@ -11,23 +11,23 @@
   "minWords": 98,
   "maxWords": 621,
   "rankings": {
-    "speechRank": 382,
+    "speechRank": 395,
     "wordsRank": 493,
-    "partySpeechRank": 50,
+    "partySpeechRank": 49,
     "partyWordsRank": 53,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 39.0,
-    "verbosityRank": 415,
+    "percentile": 36.9,
+    "verbosityRank": 417,
     "verbosityTotal": 582,
-    "partyVerbosityRank": 31,
+    "partyVerbosityRank": 32,
     "longestSpeechRank": 474
   },
   "drama": {
     "interruptionsGiven": 40,
     "interruptionsReceived": 4,
     "interrupterRank": 133,
-    "interruptedRank": 565
+    "interruptedRank": 562
   },
   "words": {
     "topWords": [
@@ -200,20 +200,20 @@
     "question": "Welches Wort nutzt Vinzenz Glaser häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
         "text": "Europarat",
         "isCorrect": true
+      },
+      {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Bürger",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Europarat\" nutzt Vinzenz Glaser 334.6× häufiger als der DIE LINKE-Durchschnitt.",
@@ -314,14 +314,6 @@
     "topicWords": {
       "migration": [
         {
-          "word": "geflüchtete",
-          "count": 1
-        },
-        {
-          "word": "obergrenze",
-          "count": 1
-        },
-        {
           "word": "migranten",
           "count": 1
         },
@@ -332,15 +324,23 @@
         {
           "word": "mittelmeer",
           "count": 1
+        },
+        {
+          "word": "obergrenze",
+          "count": 1
+        },
+        {
+          "word": "geflüchtete",
+          "count": 1
         }
       ],
       "klima": [
         {
-          "word": "klimawandel",
+          "word": "klimaschutz",
           "count": 1
         },
         {
-          "word": "klimaschutz",
+          "word": "klimawandel",
           "count": 1
         }
       ],
@@ -354,15 +354,15 @@
           "count": 1
         },
         {
+          "word": "konzerne",
+          "count": 1
+        },
+        {
           "word": "wirtschaftspolitik",
           "count": 1
         },
         {
           "word": "zölle",
-          "count": 1
-        },
-        {
-          "word": "konzerne",
           "count": 1
         }
       ],
@@ -376,15 +376,15 @@
           "count": 3
         },
         {
-          "word": "tafel",
-          "count": 2
-        },
-        {
           "word": "kinder",
           "count": 2
         },
         {
-          "word": "mieten",
+          "word": "tafel",
+          "count": 2
+        },
+        {
+          "word": "kind",
           "count": 1
         }
       ],
@@ -406,7 +406,7 @@
           "count": 2
         },
         {
-          "word": "verteidigung",
+          "word": "verbrechen",
           "count": 1
         }
       ],
@@ -434,15 +434,15 @@
           "count": 5
         },
         {
-          "word": "außenminister",
-          "count": 3
-        },
-        {
           "word": "waffenlieferungen",
           "count": 3
         },
         {
           "word": "krieg",
+          "count": 3
+        },
+        {
+          "word": "außenminister",
           "count": 3
         }
       ],
@@ -460,7 +460,11 @@
       ],
       "finanzen": [
         {
-          "word": "mehrwertsteuer",
+          "word": "steuer",
+          "count": 1
+        },
+        {
+          "word": "finanzierung",
           "count": 1
         },
         {
@@ -472,11 +476,7 @@
           "count": 1
         },
         {
-          "word": "steuer",
-          "count": 1
-        },
-        {
-          "word": "finanzierung",
+          "word": "mehrwertsteuer",
           "count": 1
         }
       ],
@@ -486,11 +486,11 @@
           "count": 7
         },
         {
-          "word": "urteile",
+          "word": "gleichberechtigung",
           "count": 1
         },
         {
-          "word": "gleichberechtigung",
+          "word": "urteile",
           "count": 1
         }
       ],
@@ -500,11 +500,11 @@
           "count": 3
         },
         {
-          "word": "bahn",
+          "word": "schiffe",
           "count": 1
         },
         {
-          "word": "schiffe",
+          "word": "bahn",
           "count": 1
         }
       ]

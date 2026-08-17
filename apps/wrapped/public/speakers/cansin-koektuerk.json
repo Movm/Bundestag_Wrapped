@@ -11,13 +11,13 @@
   "minWords": 66,
   "maxWords": 726,
   "rankings": {
-    "speechRank": 418,
+    "speechRank": 414,
     "wordsRank": 448,
     "partySpeechRank": 51,
     "partyWordsRank": 47,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 33.2,
+    "percentile": 33.9,
     "verbosityRank": 337,
     "verbosityTotal": 582,
     "partyVerbosityRank": 22,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 23,
     "interruptionsReceived": 17,
-    "interrupterRank": 198,
-    "interruptedRank": 366
+    "interrupterRank": 197,
+    "interruptedRank": 365
   },
   "words": {
     "topWords": [
@@ -200,11 +200,7 @@
     "question": "Welches Wort nutzt Cansin Köktürk häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
@@ -212,7 +208,11 @@
         "isCorrect": true
       },
       {
-        "text": "Politik",
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
         "isCorrect": false
       }
     ],
@@ -336,11 +336,11 @@
       ],
       "klima": [
         {
-          "word": "kohle",
+          "word": "müll",
           "count": 1
         },
         {
-          "word": "müll",
+          "word": "kohle",
           "count": 1
         },
         {
@@ -372,15 +372,15 @@
       ],
       "sicherheit": [
         {
+          "word": "waffen",
+          "count": 2
+        },
+        {
           "word": "betrug",
           "count": 2
         },
         {
           "word": "kriminalität",
-          "count": 2
-        },
-        {
-          "word": "waffen",
           "count": 2
         },
         {
@@ -394,11 +394,11 @@
       ],
       "gesundheit": [
         {
-          "word": "kranke",
+          "word": "krankheit",
           "count": 2
         },
         {
-          "word": "krankheit",
+          "word": "kranke",
           "count": 2
         },
         {
@@ -446,7 +446,7 @@
           "count": 2
         },
         {
-          "word": "grundrechte",
+          "word": "menschenrechte",
           "count": 1
         }
       ],

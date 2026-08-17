@@ -11,23 +11,23 @@
   "minWords": 65,
   "maxWords": 1005,
   "rankings": {
-    "speechRank": 203,
+    "speechRank": 204,
     "wordsRank": 168,
-    "partySpeechRank": 43,
+    "partySpeechRank": 44,
     "partyWordsRank": 37,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 67.6,
-    "verbosityRank": 379,
+    "percentile": 67.4,
+    "verbosityRank": 377,
     "verbosityTotal": 582,
-    "partyVerbosityRank": 99,
+    "partyVerbosityRank": 100,
     "longestSpeechRank": 80
   },
   "drama": {
     "interruptionsGiven": 53,
     "interruptionsReceived": 32,
-    "interrupterRank": 100,
-    "interruptedRank": 228
+    "interrupterRank": 98,
+    "interruptedRank": 229
   },
   "words": {
     "topWords": [
@@ -229,11 +229,11 @@
     "question": "Welches Wort nutzt Tobias Matthias Peterka häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Klima",
-        "isCorrect": false
+        "text": "Bestrafung",
+        "isCorrect": true
       },
       {
-        "text": "Rente",
+        "text": "Opposition",
         "isCorrect": false
       },
       {
@@ -241,8 +241,8 @@
         "isCorrect": false
       },
       {
-        "text": "Bestrafung",
-        "isCorrect": true
+        "text": "Migration",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Bestrafung\" nutzt Tobias Matthias Peterka 126.4× häufiger als der AfD-Durchschnitt.",
@@ -252,20 +252,20 @@
     "question": "Welches Adjektiv nutzt Tobias Matthias Peterka häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
-        "text": "Erfolgreich",
-        "isCorrect": false
-      },
-      {
-        "text": "Gefährlich",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
         "text": "Sicher",
         "isCorrect": true
+      },
+      {
+        "text": "Jung",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Sicher\" nutzt Tobias Matthias Peterka 4.4× häufiger als der AfD-Durchschnitt.",
@@ -341,15 +341,11 @@
     "topicWords": {
       "migration": [
         {
-          "word": "grenze",
+          "word": "asyl",
           "count": 1
         },
         {
-          "word": "migranten",
-          "count": 1
-        },
-        {
-          "word": "asylverfahren",
+          "word": "asylgesetz",
           "count": 1
         },
         {
@@ -357,7 +353,11 @@
           "count": 1
         },
         {
-          "word": "asylgesetz",
+          "word": "asylverfahren",
+          "count": 1
+        },
+        {
+          "word": "grenze",
           "count": 1
         }
       ],
@@ -377,15 +377,15 @@
       ],
       "wirtschaft": [
         {
+          "word": "unternehmen",
+          "count": 2
+        },
+        {
           "word": "marktwirtschaft",
           "count": 2
         },
         {
           "word": "werk",
-          "count": 2
-        },
-        {
-          "word": "unternehmen",
           "count": 2
         },
         {
@@ -407,15 +407,15 @@
           "count": 4
         },
         {
-          "word": "jugendliche",
-          "count": 3
-        },
-        {
           "word": "mietpreisbremse",
           "count": 3
         },
         {
-          "word": "kind",
+          "word": "jugendliche",
+          "count": 3
+        },
+        {
+          "word": "wohnung",
           "count": 2
         }
       ],
@@ -423,6 +423,10 @@
         {
           "word": "gewalt",
           "count": 3
+        },
+        {
+          "word": "korruption",
+          "count": 2
         },
         {
           "word": "kriminalität",
@@ -433,11 +437,7 @@
           "count": 2
         },
         {
-          "word": "korruption",
-          "count": 2
-        },
-        {
-          "word": "landespolizei",
+          "word": "mord",
           "count": 1
         }
       ],
@@ -453,29 +453,29 @@
           "count": 1
         },
         {
-          "word": "frieden",
-          "count": 1
-        },
-        {
-          "word": "china",
-          "count": 1
-        },
-        {
-          "word": "türkei",
+          "word": "allianz",
           "count": 1
         },
         {
           "word": "israel",
           "count": 1
+        },
+        {
+          "word": "außenpolitik",
+          "count": 1
+        },
+        {
+          "word": "außenminister",
+          "count": 1
         }
       ],
       "digital": [
         {
-          "word": "internet",
+          "word": "digitalisierung",
           "count": 3
         },
         {
-          "word": "digitalisierung",
+          "word": "internet",
           "count": 3
         },
         {
@@ -515,11 +515,11 @@
       ],
       "finanzen": [
         {
-          "word": "kosten",
+          "word": "haushalt",
           "count": 2
         },
         {
-          "word": "haushalt",
+          "word": "kosten",
           "count": 2
         },
         {
@@ -553,7 +553,7 @@
           "count": 3
         },
         {
-          "word": "grundgesetz",
+          "word": "richter",
           "count": 2
         }
       ],
@@ -565,19 +565,19 @@
       ],
       "mobilitaet": [
         {
-          "word": "straßen",
-          "count": 1
-        },
-        {
-          "word": "bahnhof",
-          "count": 1
-        },
-        {
           "word": "infrastruktur",
           "count": 1
         },
         {
           "word": "hafen",
+          "count": 1
+        },
+        {
+          "word": "straßen",
+          "count": 1
+        },
+        {
+          "word": "bahnhof",
           "count": 1
         }
       ]

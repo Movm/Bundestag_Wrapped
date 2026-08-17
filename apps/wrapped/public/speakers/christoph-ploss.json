@@ -11,13 +11,13 @@
   "minWords": 266,
   "maxWords": 629,
   "rankings": {
-    "speechRank": 394,
+    "speechRank": 400,
     "wordsRank": 449,
-    "partySpeechRank": 112,
+    "partySpeechRank": 113,
     "partyWordsRank": 142,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 37.1,
+    "percentile": 36.1,
     "verbosityRank": 240,
     "verbosityTotal": 582,
     "partyVerbosityRank": 86,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 15,
     "interruptionsReceived": 30,
-    "interrupterRank": 240,
-    "interruptedRank": 250
+    "interrupterRank": 235,
+    "interruptedRank": 253
   },
   "words": {
     "topWords": [
@@ -57,10 +57,6 @@
       },
       {
         "word": "bundesregierung",
-        "count": 10
-      },
-      {
-        "word": "vergangenen",
         "count": 10
       }
     ],
@@ -231,20 +227,20 @@
     "question": "Welches Wort nutzt Dr. Christoph Ploß häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Infrastrukturprojekte",
+        "isCorrect": true
+      },
+      {
         "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Kinder",
+        "text": "Verantwortung",
         "isCorrect": false
       },
       {
-        "text": "Abstimmung",
+        "text": "Gesetz",
         "isCorrect": false
-      },
-      {
-        "text": "Infrastrukturprojekte",
-        "isCorrect": true
       }
     ],
     "explanationParty": "\"Infrastrukturprojekte\" nutzt Dr. Christoph Ploß 248.3× häufiger als der CDU/CSU-Durchschnitt.",
@@ -254,20 +250,20 @@
     "question": "Welches Adjektiv nutzt Dr. Christoph Ploß häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
         "text": "Wettbewerbsfähig",
         "isCorrect": true
+      },
+      {
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Wettbewerbsfähig\" nutzt Dr. Christoph Ploß 13.1× häufiger als der CDU/CSU-Durchschnitt.",
@@ -371,7 +367,7 @@
           "count": 7
         },
         {
-          "word": "volkswirtschaft",
+          "word": "industrie",
           "count": 4
         },
         {
@@ -379,7 +375,7 @@
           "count": 4
         },
         {
-          "word": "industrie",
+          "word": "volkswirtschaft",
           "count": 4
         },
         {
@@ -389,11 +385,11 @@
       ],
       "europa": [
         {
-          "word": "amerika",
+          "word": "europa",
           "count": 1
         },
         {
-          "word": "europa",
+          "word": "amerika",
           "count": 1
         }
       ],

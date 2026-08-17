@@ -11,13 +11,13 @@
   "minWords": 371,
   "maxWords": 709,
   "rankings": {
-    "speechRank": 162,
+    "speechRank": 171,
     "wordsRank": 174,
-    "partySpeechRank": 35,
+    "partySpeechRank": 36,
     "partyWordsRank": 39,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 74.1,
+    "percentile": 72.7,
     "verbosityRank": 94,
     "verbosityTotal": 582,
     "partyVerbosityRank": 25,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 63,
     "interruptionsReceived": 51,
-    "interrupterRank": 82,
-    "interruptedRank": 115
+    "interrupterRank": 84,
+    "interruptedRank": 116
   },
   "words": {
     "topWords": [
@@ -40,11 +40,11 @@
         "count": 26
       },
       {
-        "word": "verfassungsgericht",
+        "word": "soll",
         "count": 23
       },
       {
-        "word": "soll",
+        "word": "verfassungsgericht",
         "count": 23
       },
       {
@@ -66,6 +66,10 @@
       {
         "word": "gesetzentwurf",
         "count": 17
+      },
+      {
+        "word": "verfassung",
+        "count": 16
       }
     ],
     "signatureWords": [
@@ -217,11 +221,7 @@
     "question": "Welches Wort nutzt Fabian Jacobi häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Ausschuss",
-        "isCorrect": false
-      },
-      {
-        "text": "Debatte",
+        "text": "Reform",
         "isCorrect": false
       },
       {
@@ -229,7 +229,11 @@
         "isCorrect": true
       },
       {
-        "text": "Antrag",
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
         "isCorrect": false
       }
     ],
@@ -240,20 +244,20 @@
     "question": "Welches Adjektiv nutzt Fabian Jacobi häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Wirtschaftlich",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
         "text": "Gerecht",
         "isCorrect": true
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Sozial",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Gerecht\" nutzt Fabian Jacobi 5.6× häufiger als der AfD-Durchschnitt.",
@@ -343,15 +347,15 @@
           "count": 4
         },
         {
-          "word": "markt",
-          "count": 1
-        },
-        {
           "word": "werk",
           "count": 1
         },
         {
           "word": "kartell",
+          "count": 1
+        },
+        {
+          "word": "markt",
           "count": 1
         }
       ],
@@ -371,19 +375,19 @@
           "count": 6
         },
         {
-          "word": "angriff",
-          "count": 1
-        },
-        {
           "word": "verbrechen",
           "count": 1
         },
         {
-          "word": "verteidigung",
+          "word": "gewalt",
           "count": 1
         },
         {
-          "word": "gewalt",
+          "word": "anschlag",
+          "count": 1
+        },
+        {
+          "word": "angriff",
           "count": 1
         }
       ],
@@ -403,11 +407,11 @@
           "count": 4
         },
         {
-          "word": "europa",
+          "word": "krieg",
           "count": 2
         },
         {
-          "word": "krieg",
+          "word": "europa",
           "count": 2
         },
         {
@@ -429,11 +433,11 @@
           "count": 2
         },
         {
-          "word": "technologie",
+          "word": "netzwerk",
           "count": 1
         },
         {
-          "word": "netzwerk",
+          "word": "internet",
           "count": 1
         }
       ],
@@ -443,11 +447,11 @@
           "count": 3
         },
         {
-          "word": "etat",
+          "word": "bundeshaushalt",
           "count": 1
         },
         {
-          "word": "bundeshaushalt",
+          "word": "etat",
           "count": 1
         }
       ],
@@ -465,7 +469,7 @@
           "count": 4
         },
         {
-          "word": "gerichte",
+          "word": "bundesverfassungsgericht",
           "count": 3
         },
         {

@@ -11,13 +11,13 @@
   "minWords": 169,
   "maxWords": 552,
   "rankings": {
-    "speechRank": 54,
+    "speechRank": 49,
     "wordsRank": 150,
-    "partySpeechRank": 13,
+    "partySpeechRank": 11,
     "partyWordsRank": 40,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 91.4,
+    "percentile": 92.2,
     "verbosityRank": 334,
     "verbosityTotal": 582,
     "partyVerbosityRank": 119,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 10,
     "interruptionsReceived": 48,
-    "interrupterRank": 277,
-    "interruptedRank": 131
+    "interrupterRank": 282,
+    "interruptedRank": 129
   },
   "words": {
     "topWords": [
@@ -54,10 +54,6 @@
       {
         "word": "demokratie",
         "count": 19
-      },
-      {
-        "word": "freiheit",
-        "count": 18
       }
     ],
     "signatureWords": [
@@ -225,27 +221,27 @@
     {
       "emoji": "📊",
       "label": "Top-Redner",
-      "value": "Top 9%"
+      "value": "Top 8%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Dr. Ottilie Klein häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bundesregierung",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Bürger",
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Kanzler",
         "isCorrect": false
       },
       {
         "text": "Kunstfreiheit",
         "isCorrect": true
-      },
-      {
-        "text": "Energie",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Kunstfreiheit\" nutzt Dr. Ottilie Klein 346.5× häufiger als der CDU/CSU-Durchschnitt.",
@@ -255,19 +251,19 @@
     "question": "Welches Adjektiv nutzt Dr. Ottilie Klein häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Wichtig",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
         "text": "Freiheitlich",
         "isCorrect": true
       },
       {
-        "text": "Falsch",
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Gut",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
         "isCorrect": false
       }
     ],
@@ -386,11 +382,11 @@
           "count": 3
         },
         {
-          "word": "fachkräftemangel",
+          "word": "betriebe",
           "count": 2
         },
         {
-          "word": "betriebe",
+          "word": "fachkräftemangel",
           "count": 2
         }
       ],
@@ -426,15 +422,15 @@
           "count": 4
         },
         {
-          "word": "betrug",
-          "count": 2
-        },
-        {
           "word": "gewalt",
           "count": 2
         },
         {
-          "word": "spionage",
+          "word": "betrug",
+          "count": 2
+        },
+        {
+          "word": "straftäter",
           "count": 1
         }
       ],
@@ -490,11 +486,11 @@
           "count": 3
         },
         {
-          "word": "bildungspolitik",
+          "word": "wissenschaft",
           "count": 1
         },
         {
-          "word": "wissenschaft",
+          "word": "bildungspolitik",
           "count": 1
         },
         {
@@ -512,23 +508,27 @@
           "count": 4
         },
         {
-          "word": "investitionen",
-          "count": 2
-        },
-        {
           "word": "haushaltsentwurf",
           "count": 2
         },
         {
-          "word": "steuern",
-          "count": 1
+          "word": "investitionen",
+          "count": 2
         },
         {
           "word": "investition",
           "count": 1
+        },
+        {
+          "word": "steuern",
+          "count": 1
         }
       ],
       "justiz": [
+        {
+          "word": "urteil",
+          "count": 2
+        },
         {
           "word": "urteile",
           "count": 2
@@ -538,27 +538,15 @@
           "count": 2
         },
         {
-          "word": "urteil",
-          "count": 2
-        },
-        {
-          "word": "gesetzgebung",
+          "word": "gerichte",
           "count": 1
         },
         {
-          "word": "grundgesetz",
+          "word": "verurteilung",
           "count": 1
         }
       ],
       "arbeit": [
-        {
-          "word": "arbeitnehmer",
-          "count": 5
-        },
-        {
-          "word": "arbeitsplätze",
-          "count": 5
-        },
         {
           "word": "tarifbindung",
           "count": 5
@@ -568,7 +556,15 @@
           "count": 5
         },
         {
-          "word": "arbeitszeit",
+          "word": "arbeitnehmer",
+          "count": 5
+        },
+        {
+          "word": "arbeitsplätze",
+          "count": 5
+        },
+        {
+          "word": "gewerkschaften",
           "count": 4
         }
       ],

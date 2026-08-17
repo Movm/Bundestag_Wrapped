@@ -11,13 +11,13 @@
   "minWords": 9,
   "maxWords": 1240,
   "rankings": {
-    "speechRank": 380,
+    "speechRank": 408,
     "wordsRank": 54,
-    "partySpeechRank": 107,
+    "partySpeechRank": 117,
     "partyWordsRank": 20,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 39.3,
+    "percentile": 34.8,
     "verbosityRank": 562,
     "verbosityTotal": 582,
     "partyVerbosityRank": 178,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 16,
     "interrupterRank": null,
-    "interruptedRank": 374
+    "interruptedRank": 377
   },
   "words": {
     "topWords": [
@@ -54,12 +54,6 @@
     ],
     "signatureWords": [
       {
-        "word": "gemeinschaftsverpflegung",
-        "count": 5,
-        "ratioParty": 255.9,
-        "ratioBundestag": 263.7
-      },
-      {
         "word": "ernährungs",
         "count": 5,
         "ratioParty": 255.9,
@@ -72,16 +66,22 @@
         "ratioBundestag": 226.1
       },
       {
+        "word": "gemeinschaftsverpflegung",
+        "count": 5,
+        "ratioParty": 255.9,
+        "ratioBundestag": 263.7
+      },
+      {
         "word": "landwirtinnen",
         "count": 18,
         "ratioParty": 230.3,
         "ratioBundestag": 55.9
       },
       {
-        "word": "agrarexportstrategie",
+        "word": "nutztierhaltung",
         "count": 6,
         "ratioParty": 204.7,
-        "ratioBundestag": 474.7
+        "ratioBundestag": 111.7
       }
     ],
     "signatureWordsParty": [
@@ -92,16 +92,10 @@
         "ratio": 230.3
       },
       {
-        "word": "agrarexportstrategie",
+        "word": "nutztierhaltung",
         "count": 6,
         "score": 31.96,
         "ratio": 204.7
-      },
-      {
-        "word": "gemeinschaftsverpflegung",
-        "count": 5,
-        "score": 27.74,
-        "ratio": 255.9
       },
       {
         "word": "ernährungs",
@@ -111,6 +105,12 @@
       },
       {
         "word": "höfen",
+        "count": 5,
+        "score": 27.74,
+        "ratio": 255.9
+      },
+      {
+        "word": "gemeinschaftsverpflegung",
         "count": 5,
         "score": 27.74,
         "ratio": 255.9
@@ -124,16 +124,16 @@
         "ratio": 55.9
       },
       {
-        "word": "agrarexportstrategie",
-        "count": 6,
-        "score": 36.99,
-        "ratio": 474.7
-      },
-      {
         "word": "ernährungs",
         "count": 5,
         "score": 28.8,
         "ratio": 316.5
+      },
+      {
+        "word": "nutztierhaltung",
+        "count": 6,
+        "score": 28.35,
+        "ratio": 111.7
       },
       {
         "word": "gemeinschaftsverpflegung",
@@ -196,24 +196,24 @@
     "question": "Welches Wort nutzt Alois Rainer häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Bundesregierung",
-        "isCorrect": false
-      },
-      {
-        "text": "Gemeinschaftsverpflegung",
+        "text": "Ernährungs",
         "isCorrect": true
       },
       {
-        "text": "Kanzler",
+        "text": "Europa",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Minister",
         "isCorrect": false
       }
     ],
-    "explanationParty": "\"Gemeinschaftsverpflegung\" nutzt Alois Rainer 255.9× häufiger als der CDU/CSU-Durchschnitt.",
-    "explanationBundestag": "263.7× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Ernährungs\" nutzt Alois Rainer 255.9× häufiger als der CDU/CSU-Durchschnitt.",
+    "explanationBundestag": "316.5× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Alois Rainer häufiger als der Rest der CDU/CSU-Fraktion?",
@@ -223,15 +223,15 @@
         "isCorrect": true
       },
       {
-        "text": "Wirtschaftlich",
+        "text": "Schlecht",
         "isCorrect": false
       },
       {
-        "text": "Politisch",
+        "text": "Jung",
         "isCorrect": false
       },
       {
-        "text": "Erfolgreich",
+        "text": "Falsch",
         "isCorrect": false
       }
     ],
@@ -340,15 +340,15 @@
           "count": 4
         },
         {
+          "word": "naturschutz",
+          "count": 3
+        },
+        {
           "word": "klimaschutz",
           "count": 3
         },
         {
           "word": "umweltschutz",
-          "count": 3
-        },
-        {
-          "word": "naturschutz",
           "count": 3
         }
       ],
@@ -362,11 +362,11 @@
           "count": 8
         },
         {
-          "word": "export",
+          "word": "wirtschaft",
           "count": 5
         },
         {
-          "word": "wirtschaft",
+          "word": "export",
           "count": 5
         },
         {
@@ -398,11 +398,11 @@
           "count": 2
         },
         {
-          "word": "krankenkassen",
+          "word": "krankheit",
           "count": 1
         },
         {
-          "word": "krankheit",
+          "word": "krankenkassen",
           "count": 1
         }
       ],
@@ -420,11 +420,11 @@
           "count": 2
         },
         {
-          "word": "außenminister",
+          "word": "botschafter",
           "count": 1
         },
         {
-          "word": "botschafter",
+          "word": "außenminister",
           "count": 1
         }
       ],
@@ -438,11 +438,11 @@
           "count": 2
         },
         {
-          "word": "digitalisierung",
+          "word": "roboter",
           "count": 1
         },
         {
-          "word": "roboter",
+          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -482,29 +482,29 @@
           "count": 6
         },
         {
-          "word": "finanzministerium",
+          "word": "investitionen",
           "count": 5
         },
         {
-          "word": "investitionen",
+          "word": "finanzministerium",
           "count": 5
         }
       ],
       "justiz": [
-        {
-          "word": "urteil",
-          "count": 1
-        },
-        {
-          "word": "urteile",
-          "count": 1
-        },
         {
           "word": "justizministerium",
           "count": 1
         },
         {
           "word": "verordnung",
+          "count": 1
+        },
+        {
+          "word": "urteil",
+          "count": 1
+        },
+        {
+          "word": "urteile",
           "count": 1
         }
       ],
@@ -518,15 +518,15 @@
           "count": 4
         },
         {
+          "word": "unfallversicherung",
+          "count": 1
+        },
+        {
           "word": "sozialversicherung",
           "count": 1
         },
         {
           "word": "einkommen",
-          "count": 1
-        },
-        {
-          "word": "unfallversicherung",
           "count": 1
         }
       ],

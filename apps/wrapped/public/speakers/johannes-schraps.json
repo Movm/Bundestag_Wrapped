@@ -11,13 +11,13 @@
   "minWords": 11,
   "maxWords": 864,
   "rankings": {
-    "speechRank": 154,
+    "speechRank": 155,
     "wordsRank": 193,
     "partySpeechRank": 37,
     "partyWordsRank": 47,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 75.4,
+    "percentile": 75.2,
     "verbosityRank": 272,
     "verbosityTotal": 582,
     "partyVerbosityRank": 64,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 55,
     "interruptionsReceived": 34,
     "interrupterRank": 97,
-    "interruptedRank": 208
+    "interruptedRank": 218
   },
   "words": {
     "topWords": [
@@ -48,7 +48,7 @@
         "count": 24
       },
       {
-        "word": "europäische",
+        "word": "unterstützung",
         "count": 22
       },
       {
@@ -56,7 +56,7 @@
         "count": 22
       },
       {
-        "word": "unterstützung",
+        "word": "europäische",
         "count": 22
       },
       {
@@ -68,7 +68,7 @@
         "count": 18
       },
       {
-        "word": "deutschland",
+        "word": "russischen",
         "count": 17
       }
     ],
@@ -221,20 +221,20 @@
     "question": "Welches Wort nutzt Johannes Schraps häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Koalition",
-        "isCorrect": false
-      },
-      {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Antrag",
-        "isCorrect": false
-      },
-      {
         "text": "Eingefrorenen",
         "isCorrect": true
+      },
+      {
+        "text": "Gesellschaft",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
+        "isCorrect": false
+      },
+      {
+        "text": "Fraktion",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Eingefrorenen\" nutzt Johannes Schraps 236.5× häufiger als der SPD-Durchschnitt.",
@@ -244,19 +244,19 @@
     "question": "Welches Adjektiv nutzt Johannes Schraps häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
         "text": "Wirtschaftlich",
         "isCorrect": true
+      },
+      {
+        "text": "Falsch",
+        "isCorrect": false
       },
       {
         "text": "Sozial",
         "isCorrect": false
       },
       {
-        "text": "Gut",
+        "text": "Stark",
         "isCorrect": false
       }
     ],
@@ -365,11 +365,11 @@
           "count": 2
         },
         {
-          "word": "grenzkontrollen",
+          "word": "integration",
           "count": 1
         },
         {
-          "word": "integration",
+          "word": "grenzkontrollen",
           "count": 1
         }
       ],
@@ -379,15 +379,15 @@
           "count": 2
         },
         {
-          "word": "umwelt",
-          "count": 1
-        },
-        {
           "word": "erneuerbare",
           "count": 1
         },
         {
           "word": "klimaschutz",
+          "count": 1
+        },
+        {
+          "word": "umwelt",
           "count": 1
         }
       ],
@@ -401,11 +401,11 @@
           "count": 4
         },
         {
-          "word": "wirtschaft",
+          "word": "betrieb",
           "count": 3
         },
         {
-          "word": "betrieb",
+          "word": "wirtschaft",
           "count": 3
         },
         {
@@ -463,11 +463,11 @@
           "count": 4
         },
         {
-          "word": "corona",
+          "word": "krankenhaus",
           "count": 1
         },
         {
-          "word": "krankenhaus",
+          "word": "corona",
           "count": 1
         }
       ],
@@ -495,11 +495,11 @@
       ],
       "digital": [
         {
-          "word": "internet",
+          "word": "digitalisierung",
           "count": 1
         },
         {
-          "word": "digitalisierung",
+          "word": "internet",
           "count": 1
         }
       ],
@@ -517,11 +517,11 @@
           "count": 1
         },
         {
-          "word": "kita",
+          "word": "lehrer",
           "count": 1
         },
         {
-          "word": "lehrer",
+          "word": "kita",
           "count": 1
         }
       ],
@@ -535,11 +535,11 @@
           "count": 7
         },
         {
-          "word": "finanzierung",
+          "word": "entlastung",
           "count": 3
         },
         {
-          "word": "entlastung",
+          "word": "finanzierung",
           "count": 3
         },
         {
@@ -549,12 +549,16 @@
       ],
       "justiz": [
         {
+          "word": "gericht",
+          "count": 2
+        },
+        {
           "word": "rechtsstaatlichkeit",
           "count": 2
         },
         {
-          "word": "gericht",
-          "count": 2
+          "word": "beschluss",
+          "count": 1
         },
         {
           "word": "gesetzgebung",
@@ -562,10 +566,6 @@
         },
         {
           "word": "verordnung",
-          "count": 1
-        },
-        {
-          "word": "beschluss",
           "count": 1
         }
       ],
@@ -575,15 +575,15 @@
           "count": 2
         },
         {
-          "word": "einkommen",
-          "count": 1
-        },
-        {
           "word": "löhne",
           "count": 1
         },
         {
           "word": "gehälter",
+          "count": 1
+        },
+        {
+          "word": "einkommen",
           "count": 1
         }
       ],

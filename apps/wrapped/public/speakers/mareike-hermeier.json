@@ -11,33 +11,29 @@
   "minWords": 14,
   "maxWords": 984,
   "rankings": {
-    "speechRank": 90,
+    "speechRank": 95,
     "wordsRank": 160,
     "partySpeechRank": 12,
     "partyWordsRank": 17,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 85.6,
+    "percentile": 84.8,
     "verbosityRank": 356,
     "verbosityTotal": 582,
     "partyVerbosityRank": 26,
-    "longestSpeechRank": 89
+    "longestSpeechRank": 90
   },
   "drama": {
     "interruptionsGiven": 8,
     "interruptionsReceived": 41,
     "interrupterRank": 306,
-    "interruptedRank": 166
+    "interruptedRank": 163
   },
   "words": {
     "topWords": [
       {
         "word": "kinder",
         "count": 26
-      },
-      {
-        "word": "menschen",
-        "count": 14
       }
     ],
     "signatureWords": [
@@ -66,10 +62,10 @@
         "ratioBundestag": 13.7
       },
       {
-        "word": "nukleare",
+        "word": "terawattstunden",
         "count": 5,
         "ratioParty": 236.4,
-        "ratioBundestag": 56.0
+        "ratioBundestag": 90.4
       }
     ],
     "signatureWordsParty": [
@@ -98,7 +94,7 @@
         "ratio": 283.7
       },
       {
-        "word": "nukleare",
+        "word": "terawattstunden",
         "count": 5,
         "score": 27.35,
         "ratio": 236.4
@@ -124,10 +120,10 @@
         "ratio": 53.2
       },
       {
-        "word": "nukleare",
+        "word": "terawattstunden",
         "count": 5,
-        "score": 20.22,
-        "ratio": 56.0
+        "score": 22.58,
+        "ratio": 90.4
       },
       {
         "word": "kernenergie",
@@ -220,15 +216,15 @@
     "question": "Welches Wort nutzt Mareike Hermeier häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Kanzler",
+        "isCorrect": false
+      },
+      {
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
         "text": "Freiheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Rente",
-        "isCorrect": false
-      },
-      {
-        "text": "Ausschuss",
         "isCorrect": false
       },
       {
@@ -243,11 +239,7 @@
     "question": "Welches Adjektiv nutzt Mareike Hermeier häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Notwendig",
+        "text": "Klar",
         "isCorrect": false
       },
       {
@@ -255,7 +247,11 @@
         "isCorrect": true
       },
       {
-        "text": "Europäisch",
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Schlecht",
         "isCorrect": false
       }
     ],
@@ -360,11 +356,11 @@
           "count": 3
         },
         {
-          "word": "drittstaaten",
+          "word": "migranten",
           "count": 1
         },
         {
-          "word": "migranten",
+          "word": "drittstaaten",
           "count": 1
         }
       ],
@@ -378,33 +374,33 @@
           "count": 6
         },
         {
-          "word": "kernenergie",
-          "count": 6
-        },
-        {
           "word": "müll",
           "count": 6
         },
         {
-          "word": "kreislaufwirtschaft",
+          "word": "kernenergie",
+          "count": 6
+        },
+        {
+          "word": "energiewende",
           "count": 5
         }
       ],
       "wirtschaft": [
         {
-          "word": "unternehmen",
-          "count": 3
-        },
-        {
           "word": "markt",
           "count": 3
         },
         {
-          "word": "wirtschaft",
-          "count": 2
+          "word": "unternehmen",
+          "count": 3
         },
         {
           "word": "firma",
+          "count": 2
+        },
+        {
+          "word": "wirtschaft",
           "count": 2
         },
         {
@@ -444,11 +440,11 @@
           "count": 2
         },
         {
-          "word": "gewalt",
+          "word": "abschreckung",
           "count": 2
         },
         {
-          "word": "abschreckung",
+          "word": "gewalt",
           "count": 2
         },
         {
@@ -472,12 +468,16 @@
       ],
       "europa": [
         {
+          "word": "allianz",
+          "count": 2
+        },
+        {
           "word": "krieg",
           "count": 2
         },
         {
-          "word": "allianz",
-          "count": 2
+          "word": "partnerschaft",
+          "count": 1
         },
         {
           "word": "vertrag",
@@ -485,10 +485,6 @@
         },
         {
           "word": "iran",
-          "count": 1
-        },
-        {
-          "word": "partnerschaft",
           "count": 1
         }
       ],
@@ -502,7 +498,7 @@
           "count": 3
         },
         {
-          "word": "onlinehandel",
+          "word": "digitalisierung",
           "count": 1
         },
         {
@@ -510,7 +506,7 @@
           "count": 1
         },
         {
-          "word": "digitalisierung",
+          "word": "onlinehandel",
           "count": 1
         }
       ],
@@ -528,11 +524,11 @@
           "count": 2
         },
         {
-          "word": "bafög",
+          "word": "ausbildung",
           "count": 1
         },
         {
-          "word": "wissenschaft",
+          "word": "bafög",
           "count": 1
         }
       ],
@@ -550,7 +546,7 @@
           "count": 4
         },
         {
-          "word": "etat",
+          "word": "finanzierung",
           "count": 2
         },
         {
@@ -560,7 +556,7 @@
       ],
       "arbeit": [
         {
-          "word": "beschäftigte",
+          "word": "einkommen",
           "count": 1
         },
         {
@@ -568,7 +564,7 @@
           "count": 1
         },
         {
-          "word": "einkommen",
+          "word": "beschäftigte",
           "count": 1
         }
       ]

@@ -11,23 +11,23 @@
   "minWords": 258,
   "maxWords": 672,
   "rankings": {
-    "speechRank": 285,
+    "speechRank": 307,
     "wordsRank": 324,
-    "partySpeechRank": 38,
+    "partySpeechRank": 39,
     "partyWordsRank": 37,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 54.5,
-    "verbosityRank": 229,
+    "percentile": 51.0,
+    "verbosityRank": 231,
     "verbosityTotal": 582,
     "partyVerbosityRank": 13,
-    "longestSpeechRank": 412
+    "longestSpeechRank": 413
   },
   "drama": {
     "interruptionsGiven": 6,
     "interruptionsReceived": 21,
-    "interrupterRank": 332,
-    "interruptedRank": 333
+    "interrupterRank": 331,
+    "interruptedRank": 339
   },
   "words": {
     "topWords": [
@@ -195,20 +195,20 @@
     "question": "Welches Wort nutzt Lea Reisner häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Zukunft",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
-        "text": "Demokratie",
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
         "isCorrect": false
       },
       {
         "text": "Ukrainische",
         "isCorrect": true
-      },
-      {
-        "text": "Haushalt",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Ukrainische\" nutzt Lea Reisner 148.8× häufiger als der DIE LINKE-Durchschnitt.",
@@ -323,7 +323,7 @@
       ],
       "klima": [
         {
-          "word": "klimaschutz",
+          "word": "offshore",
           "count": 1
         },
         {
@@ -331,22 +331,18 @@
           "count": 1
         },
         {
-          "word": "offshore",
+          "word": "klimaschutz",
           "count": 1
         }
       ],
       "wirtschaft": [
         {
-          "word": "konzerne",
-          "count": 2
-        },
-        {
           "word": "bruttoinlandsprodukt",
           "count": 2
         },
         {
-          "word": "märkte",
-          "count": 1
+          "word": "konzerne",
+          "count": 2
         },
         {
           "word": "kredit",
@@ -354,6 +350,10 @@
         },
         {
           "word": "kredite",
+          "count": 1
+        },
+        {
+          "word": "märkte",
           "count": 1
         }
       ],
@@ -371,11 +371,11 @@
           "count": 3
         },
         {
-          "word": "sozialstaat",
+          "word": "familie",
           "count": 3
         },
         {
-          "word": "familie",
+          "word": "sozialstaat",
           "count": 3
         }
       ],
@@ -415,11 +415,11 @@
           "count": 2
         },
         {
-          "word": "pflegekräfte",
+          "word": "ärzte",
           "count": 1
         },
         {
-          "word": "ärzte",
+          "word": "gesundheitssystem",
           "count": 1
         }
       ],
@@ -447,15 +447,15 @@
       ],
       "bildung": [
         {
-          "word": "schulen",
-          "count": 1
-        },
-        {
           "word": "bildung",
           "count": 1
         },
         {
           "word": "lehrerin",
+          "count": 1
+        },
+        {
+          "word": "schulen",
           "count": 1
         }
       ],
@@ -465,11 +465,11 @@
           "count": 4
         },
         {
-          "word": "kosten",
+          "word": "schulden",
           "count": 2
         },
         {
-          "word": "schulden",
+          "word": "kosten",
           "count": 2
         },
         {
@@ -493,19 +493,19 @@
       ],
       "arbeit": [
         {
-          "word": "gewerkschaften",
-          "count": 2
-        },
-        {
           "word": "arbeiter",
           "count": 2
         },
         {
-          "word": "mindestlohn",
-          "count": 1
+          "word": "gewerkschaften",
+          "count": 2
         },
         {
           "word": "einkommen",
+          "count": 1
+        },
+        {
+          "word": "mindestlohn",
           "count": 1
         }
       ],
@@ -515,7 +515,11 @@
           "count": 4
         },
         {
-          "word": "straße",
+          "word": "auto",
+          "count": 1
+        },
+        {
+          "word": "straßen",
           "count": 1
         },
         {
@@ -523,11 +527,7 @@
           "count": 1
         },
         {
-          "word": "auto",
-          "count": 1
-        },
-        {
-          "word": "straßen",
+          "word": "straße",
           "count": 1
         }
       ]

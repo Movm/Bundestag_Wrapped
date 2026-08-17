@@ -11,23 +11,23 @@
   "minWords": 251,
   "maxWords": 605,
   "rankings": {
-    "speechRank": 100,
+    "speechRank": 102,
     "wordsRank": 173,
-    "partySpeechRank": 27,
+    "partySpeechRank": 30,
     "partyWordsRank": 42,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 84.0,
-    "verbosityRank": 352,
+    "percentile": 83.7,
+    "verbosityRank": 353,
     "verbosityTotal": 582,
     "partyVerbosityRank": 79,
-    "longestSpeechRank": 493
+    "longestSpeechRank": 492
   },
   "drama": {
     "interruptionsGiven": 15,
     "interruptionsReceived": 57,
-    "interrupterRank": 235,
-    "interruptedRank": 90
+    "interrupterRank": 234,
+    "interruptedRank": 89
   },
   "words": {
     "topWords": [
@@ -223,7 +223,11 @@
     "question": "Welches Wort nutzt Martin Rabanus häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Sicherheit",
+        "text": "Zukunft",
+        "isCorrect": false
+      },
+      {
+        "text": "Opposition",
         "isCorrect": false
       },
       {
@@ -231,11 +235,7 @@
         "isCorrect": true
       },
       {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
+        "text": "Arbeit",
         "isCorrect": false
       }
     ],
@@ -246,19 +246,19 @@
     "question": "Welches Adjektiv nutzt Martin Rabanus häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
-        "isCorrect": false
-      },
-      {
         "text": "Stark",
         "isCorrect": true
       },
       {
-        "text": "Klar",
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Alt",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicher",
         "isCorrect": false
       }
     ],
@@ -373,7 +373,7 @@
           "count": 3
         },
         {
-          "word": "unternehmen",
+          "word": "kapital",
           "count": 1
         },
         {
@@ -381,7 +381,7 @@
           "count": 1
         },
         {
-          "word": "zoll",
+          "word": "werk",
           "count": 1
         }
       ],
@@ -391,19 +391,19 @@
           "count": 11
         },
         {
-          "word": "jugendliche",
-          "count": 4
-        },
-        {
           "word": "familie",
           "count": 4
         },
         {
-          "word": "chancengleichheit",
+          "word": "jugendliche",
+          "count": 4
+        },
+        {
+          "word": "jugend",
           "count": 2
         },
         {
-          "word": "gerechtigkeit",
+          "word": "chancengleichheit",
           "count": 2
         }
       ],
@@ -413,11 +413,11 @@
           "count": 3
         },
         {
-          "word": "verfassungsschutz",
+          "word": "täter",
           "count": 1
         },
         {
-          "word": "täter",
+          "word": "verfassungsschutz",
           "count": 1
         }
       ],
@@ -491,11 +491,11 @@
           "count": 3
         },
         {
-          "word": "finanzierung",
+          "word": "steuerzahler",
           "count": 2
         },
         {
-          "word": "steuerzahler",
+          "word": "bundeshaushalt",
           "count": 2
         }
       ],
@@ -509,15 +509,15 @@
           "count": 4
         },
         {
-          "word": "strafverfolgung",
-          "count": 2
-        },
-        {
           "word": "verfassung",
           "count": 2
         },
         {
-          "word": "grundgesetz",
+          "word": "strafverfolgung",
+          "count": 2
+        },
+        {
+          "word": "gerichte",
           "count": 1
         }
       ],

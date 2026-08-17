@@ -11,23 +11,23 @@
   "minWords": 21,
   "maxWords": 654,
   "rankings": {
-    "speechRank": 204,
+    "speechRank": 214,
     "wordsRank": 282,
-    "partySpeechRank": 49,
+    "partySpeechRank": 51,
     "partyWordsRank": 80,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 67.4,
+    "percentile": 65.8,
     "verbosityRank": 320,
     "verbosityTotal": 582,
     "partyVerbosityRank": 113,
-    "longestSpeechRank": 432
+    "longestSpeechRank": 434
   },
   "drama": {
     "interruptionsGiven": 0,
     "interruptionsReceived": 24,
     "interrupterRank": null,
-    "interruptedRank": 305
+    "interruptedRank": 304
   },
   "words": {
     "topWords": [
@@ -53,10 +53,6 @@
       },
       {
         "word": "jahren",
-        "count": 12
-      },
-      {
-        "word": "warum",
         "count": 12
       }
     ],
@@ -222,19 +218,19 @@
     "question": "Welches Wort nutzt Ellen Demuth häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Verantwortung",
+        "isCorrect": false
+      },
+      {
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
         "text": "Jesidinnen",
         "isCorrect": true
       },
       {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
-        "isCorrect": false
-      },
-      {
-        "text": "Kanzler",
+        "text": "Haushalt",
         "isCorrect": false
       }
     ],
@@ -245,20 +241,20 @@
     "question": "Welches Adjektiv nutzt Ellen Demuth häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "National",
+        "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
         "text": "Sachlich",
         "isCorrect": true
+      },
+      {
+        "text": "Politisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Notwendig",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Sachlich\" nutzt Ellen Demuth 18.0× häufiger als der CDU/CSU-Durchschnitt.",
@@ -364,15 +360,15 @@
       ],
       "wirtschaft": [
         {
+          "word": "wirtschaft",
+          "count": 1
+        },
+        {
           "word": "werke",
           "count": 1
         },
         {
           "word": "konzerne",
-          "count": 1
-        },
-        {
-          "word": "wirtschaft",
           "count": 1
         }
       ],
@@ -408,19 +404,23 @@
           "count": 4
         },
         {
-          "word": "armee",
-          "count": 2
-        },
-        {
           "word": "verbrechen",
           "count": 2
         },
         {
-          "word": "terror",
+          "word": "armee",
+          "count": 2
+        },
+        {
+          "word": "verfassungsschutz",
           "count": 1
         }
       ],
       "gesundheit": [
+        {
+          "word": "sucht",
+          "count": 1
+        },
         {
           "word": "gesundheitssystem",
           "count": 1
@@ -435,10 +435,6 @@
         },
         {
           "word": "krankenkassen",
-          "count": 1
-        },
-        {
-          "word": "sucht",
           "count": 1
         }
       ],
@@ -474,7 +470,7 @@
           "count": 3
         },
         {
-          "word": "algorithmen",
+          "word": "daten",
           "count": 1
         },
         {
@@ -482,7 +478,7 @@
           "count": 1
         },
         {
-          "word": "daten",
+          "word": "algorithmen",
           "count": 1
         }
       ],
@@ -510,25 +506,25 @@
       ],
       "finanzen": [
         {
-          "word": "investition",
+          "word": "haushalt",
           "count": 1
         },
         {
-          "word": "haushalt",
+          "word": "investition",
           "count": 1
         }
       ],
       "justiz": [
+        {
+          "word": "grundgesetz",
+          "count": 1
+        },
         {
           "word": "rechtsstaat",
           "count": 1
         },
         {
           "word": "anklage",
-          "count": 1
-        },
-        {
-          "word": "grundgesetz",
           "count": 1
         },
         {

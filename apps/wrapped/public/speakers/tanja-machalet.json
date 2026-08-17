@@ -11,13 +11,13 @@
   "minWords": 58,
   "maxWords": 1409,
   "rankings": {
-    "speechRank": 395,
+    "speechRank": 388,
     "wordsRank": 257,
-    "partySpeechRank": 74,
+    "partySpeechRank": 72,
     "partyWordsRank": 55,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 36.9,
+    "percentile": 38.0,
     "verbosityRank": 58,
     "verbosityTotal": 582,
     "partyVerbosityRank": 14,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 5,
     "interruptionsReceived": 6,
-    "interrupterRank": 360,
-    "interruptedRank": 528
+    "interrupterRank": 352,
+    "interruptedRank": 524
   },
   "words": {
     "topWords": [
@@ -191,11 +191,7 @@
     "question": "Welches Wort nutzt Dr. Tanja Machalet häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Debatte",
-        "isCorrect": false
-      },
-      {
-        "text": "Abstimmung",
+        "text": "Familie",
         "isCorrect": false
       },
       {
@@ -203,7 +199,11 @@
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
+        "text": "Gesetzentwurf",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
         "isCorrect": false
       }
     ],
@@ -317,11 +317,11 @@
           "count": 2
         },
         {
-          "word": "erstaufnahme",
+          "word": "aufenthaltsstatus",
           "count": 1
         },
         {
-          "word": "aufenthaltsstatus",
+          "word": "aufenthaltstitel",
           "count": 1
         }
       ],
@@ -333,14 +333,6 @@
       ],
       "wirtschaft": [
         {
-          "word": "insolvenzen",
-          "count": 1
-        },
-        {
-          "word": "werk",
-          "count": 1
-        },
-        {
           "word": "fachkräftemangel",
           "count": 1
         },
@@ -349,7 +341,15 @@
           "count": 1
         },
         {
+          "word": "werk",
+          "count": 1
+        },
+        {
           "word": "unternehmen",
+          "count": 1
+        },
+        {
+          "word": "anlage",
           "count": 1
         }
       ],
@@ -389,7 +389,7 @@
           "count": 5
         },
         {
-          "word": "krankenhausreform",
+          "word": "gesundheitssystem",
           "count": 4
         },
         {
@@ -457,7 +457,7 @@
           "count": 2
         },
         {
-          "word": "sondervermögen",
+          "word": "haushalt",
           "count": 1
         }
       ],
@@ -473,6 +473,10 @@
       ],
       "arbeit": [
         {
+          "word": "befristung",
+          "count": 2
+        },
+        {
           "word": "tarifbindung",
           "count": 2
         },
@@ -485,11 +489,7 @@
           "count": 2
         },
         {
-          "word": "befristung",
-          "count": 2
-        },
-        {
-          "word": "arbeitszeit",
+          "word": "lohnfortzahlung",
           "count": 1
         }
       ],

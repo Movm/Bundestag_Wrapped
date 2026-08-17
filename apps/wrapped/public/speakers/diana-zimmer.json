@@ -11,13 +11,13 @@
   "minWords": 32,
   "maxWords": 766,
   "rankings": {
-    "speechRank": 194,
+    "speechRank": 196,
     "wordsRank": 250,
     "partySpeechRank": 40,
     "partyWordsRank": 57,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 69.0,
+    "percentile": 68.7,
     "verbosityRank": 295,
     "verbosityTotal": 582,
     "partyVerbosityRank": 72,
@@ -26,7 +26,7 @@
   "drama": {
     "interruptionsGiven": 34,
     "interruptionsReceived": 54,
-    "interrupterRank": 152,
+    "interrupterRank": 151,
     "interruptedRank": 100
   },
   "words": {
@@ -223,11 +223,7 @@
     "question": "Welches Wort nutzt Diana Zimmer häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Minister",
-        "isCorrect": false
-      },
-      {
-        "text": "Energie",
+        "text": "Steuern",
         "isCorrect": false
       },
       {
@@ -235,7 +231,11 @@
         "isCorrect": true
       },
       {
-        "text": "Rente",
+        "text": "Opposition",
+        "isCorrect": false
+      },
+      {
+        "text": "Minister",
         "isCorrect": false
       }
     ],
@@ -246,20 +246,20 @@
     "question": "Welches Adjektiv nutzt Diana Zimmer häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Falsch",
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Richtig",
+        "isCorrect": false
+      },
+      {
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
         "text": "Gerecht",
         "isCorrect": true
-      },
-      {
-        "text": "Europäisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Klar",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Gerecht\" nutzt Diana Zimmer 7.1× häufiger als der AfD-Durchschnitt.",
@@ -341,10 +341,6 @@
       ],
       "klima": [
         {
-          "word": "energie",
-          "count": 1
-        },
-        {
           "word": "energiewende",
           "count": 1
         },
@@ -354,6 +350,10 @@
         },
         {
           "word": "nachhaltig",
+          "count": 1
+        },
+        {
+          "word": "energie",
           "count": 1
         }
       ],
@@ -371,11 +371,11 @@
           "count": 4
         },
         {
-          "word": "wirtschaft",
+          "word": "betriebe",
           "count": 4
         },
         {
-          "word": "betriebe",
+          "word": "wirtschaft",
           "count": 4
         }
       ],
@@ -383,6 +383,10 @@
         {
           "word": "gerechtigkeit",
           "count": 6
+        },
+        {
+          "word": "familien",
+          "count": 5
         },
         {
           "word": "rente",
@@ -393,11 +397,7 @@
           "count": 5
         },
         {
-          "word": "familien",
-          "count": 5
-        },
-        {
-          "word": "umverteilung",
+          "word": "altersvorsorge",
           "count": 3
         }
       ],
@@ -421,19 +421,15 @@
       ],
       "gesundheit": [
         {
-          "word": "vorsorge",
+          "word": "depression",
           "count": 1
         },
         {
-          "word": "depression",
+          "word": "vorsorge",
           "count": 1
         }
       ],
       "europa": [
-        {
-          "word": "europa",
-          "count": 1
-        },
         {
           "word": "krieg",
           "count": 1
@@ -441,19 +437,23 @@
         {
           "word": "frieden",
           "count": 1
+        },
+        {
+          "word": "europa",
+          "count": 1
         }
       ],
       "bildung": [
-        {
-          "word": "lehrer",
-          "count": 1
-        },
         {
           "word": "professor",
           "count": 1
         },
         {
           "word": "schulen",
+          "count": 1
+        },
+        {
+          "word": "lehrer",
           "count": 1
         }
       ],
@@ -467,15 +467,15 @@
           "count": 6
         },
         {
-          "word": "steuer",
-          "count": 5
-        },
-        {
           "word": "schulden",
           "count": 5
         },
         {
           "word": "kosten",
+          "count": 5
+        },
+        {
+          "word": "steuer",
           "count": 5
         }
       ],
@@ -485,11 +485,11 @@
           "count": 2
         },
         {
-          "word": "gericht",
+          "word": "grundgesetz",
           "count": 1
         },
         {
-          "word": "grundgesetz",
+          "word": "gericht",
           "count": 1
         }
       ],
@@ -503,11 +503,11 @@
           "count": 4
         },
         {
-          "word": "beschäftigte",
+          "word": "rentenversicherung",
           "count": 1
         },
         {
-          "word": "rentenversicherung",
+          "word": "beschäftigte",
           "count": 1
         },
         {
@@ -517,15 +517,15 @@
       ],
       "mobilitaet": [
         {
-          "word": "fahrräder",
-          "count": 1
-        },
-        {
           "word": "straßen",
           "count": 1
         },
         {
           "word": "infrastruktur",
+          "count": 1
+        },
+        {
+          "word": "fahrräder",
           "count": 1
         }
       ]

@@ -11,16 +11,16 @@
   "minWords": 87,
   "maxWords": 836,
   "rankings": {
-    "speechRank": 37,
+    "speechRank": 35,
     "wordsRank": 38,
-    "partySpeechRank": 6,
+    "partySpeechRank": 5,
     "partyWordsRank": 5,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 94.1,
-    "verbosityRank": 369,
+    "percentile": 94.4,
+    "verbosityRank": 370,
     "verbosityTotal": 582,
-    "partyVerbosityRank": 37,
+    "partyVerbosityRank": 38,
     "longestSpeechRank": 197
   },
   "drama": {
@@ -62,12 +62,6 @@
     ],
     "signatureWords": [
       {
-        "word": "stadien",
-        "count": 5,
-        "ratioParty": 200.7,
-        "ratioBundestag": 142.2
-      },
-      {
         "word": "hausdurchsuchung",
         "count": 5,
         "ratioParty": 200.7,
@@ -75,6 +69,12 @@
       },
       {
         "word": "anwaltschaft",
+        "count": 5,
+        "ratioParty": 200.7,
+        "ratioBundestag": 142.2
+      },
+      {
+        "word": "stadien",
         "count": 5,
         "ratioParty": 200.7,
         "ratioBundestag": 142.2
@@ -106,12 +106,6 @@
         "ratio": 120.4
       },
       {
-        "word": "stadien",
-        "count": 5,
-        "score": 26.53,
-        "ratio": 200.7
-      },
-      {
         "word": "hausdurchsuchung",
         "count": 5,
         "score": 26.53,
@@ -119,6 +113,12 @@
       },
       {
         "word": "anwaltschaft",
+        "count": 5,
+        "score": 26.53,
+        "ratio": 200.7
+      },
+      {
+        "word": "stadien",
         "count": 5,
         "score": 26.53,
         "ratio": 200.7
@@ -138,13 +138,13 @@
         "ratio": 170.6
       },
       {
-        "word": "stadien",
+        "word": "anwaltschaft",
         "count": 5,
         "score": 24.82,
         "ratio": 142.2
       },
       {
-        "word": "anwaltschaft",
+        "word": "stadien",
         "count": 5,
         "score": 24.82,
         "ratio": 142.2
@@ -259,6 +259,11 @@
       "value": "123"
     },
     {
+      "emoji": "🥇",
+      "label": "Rang in GRÜNE",
+      "value": "#5 von 86"
+    },
+    {
       "emoji": "📊",
       "label": "Top-Redner",
       "value": "Top 6%"
@@ -268,42 +273,42 @@
     "question": "Welches Wort nutzt Helge Limburg häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Abstimmung",
+        "text": "Familie",
         "isCorrect": false
       },
       {
-        "text": "Arbeit",
+        "text": "Rente",
         "isCorrect": false
       },
       {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Stadien",
+        "text": "Hausdurchsuchung",
         "isCorrect": true
+      },
+      {
+        "text": "Debatte",
+        "isCorrect": false
       }
     ],
-    "explanationParty": "\"Stadien\" nutzt Helge Limburg 200.7× häufiger als der GRÜNE-Durchschnitt.",
-    "explanationBundestag": "142.2× häufiger als der Bundestag-Durchschnitt."
+    "explanationParty": "\"Hausdurchsuchung\" nutzt Helge Limburg 200.7× häufiger als der GRÜNE-Durchschnitt.",
+    "explanationBundestag": "61.8× häufiger als der Bundestag-Durchschnitt."
   },
   "signatureAdjectiveQuiz": {
     "question": "Welches Adjektiv nutzt Helge Limburg häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
-        "text": "Problematisch",
-        "isCorrect": false
-      },
-      {
         "text": "Inakzeptabel",
         "isCorrect": true
       },
       {
-        "text": "Alt",
+        "text": "Problematisch",
         "isCorrect": false
       },
       {
-        "text": "Klar",
+        "text": "Gefährlich",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
         "isCorrect": false
       }
     ],
@@ -420,7 +425,7 @@
           "count": 3
         },
         {
-          "word": "abschiebung",
+          "word": "migration",
           "count": 2
         }
       ],
@@ -434,15 +439,15 @@
           "count": 1
         },
         {
-          "word": "klimakrise",
-          "count": 1
-        },
-        {
           "word": "umweltschutz",
           "count": 1
         },
         {
           "word": "umwelt",
+          "count": 1
+        },
+        {
+          "word": "klimakrise",
           "count": 1
         }
       ],
@@ -470,10 +475,6 @@
           "count": 14
         },
         {
-          "word": "renten",
-          "count": 3
-        },
-        {
           "word": "kind",
           "count": 3
         },
@@ -482,7 +483,11 @@
           "count": 3
         },
         {
-          "word": "altersvorsorge",
+          "word": "renten",
+          "count": 3
+        },
+        {
+          "word": "eltern",
           "count": 2
         }
       ],
@@ -544,11 +549,11 @@
           "count": 2
         },
         {
-          "word": "bündnis",
+          "word": "partnerschaft",
           "count": 1
         },
         {
-          "word": "europa",
+          "word": "putin",
           "count": 1
         }
       ],
@@ -562,11 +567,11 @@
           "count": 5
         },
         {
-          "word": "digitalisierung",
+          "word": "software",
           "count": 2
         },
         {
-          "word": "software",
+          "word": "digitalisierung",
           "count": 2
         },
         {
@@ -586,11 +591,11 @@
       ],
       "finanzen": [
         {
-          "word": "kosten",
+          "word": "finanzierung",
           "count": 2
         },
         {
-          "word": "finanzierung",
+          "word": "kosten",
           "count": 2
         },
         {
@@ -638,11 +643,11 @@
           "count": 3
         },
         {
-          "word": "gehälter",
+          "word": "gesundheitsschutz",
           "count": 2
         },
         {
-          "word": "mindestlohn",
+          "word": "arbeitnehmerinnen",
           "count": 2
         }
       ]

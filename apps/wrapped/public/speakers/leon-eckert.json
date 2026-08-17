@@ -11,13 +11,13 @@
   "minWords": 37,
   "maxWords": 887,
   "rankings": {
-    "speechRank": 41,
+    "speechRank": 42,
     "wordsRank": 35,
     "partySpeechRank": 7,
     "partyWordsRank": 3,
     "partySize": 86,
     "totalSpeakers": 626,
-    "percentile": 93.5,
+    "percentile": 93.3,
     "verbosityRank": 194,
     "verbosityTotal": 582,
     "partyVerbosityRank": 20,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 74,
     "interruptionsReceived": 31,
-    "interrupterRank": 66,
-    "interruptedRank": 235
+    "interrupterRank": 67,
+    "interruptedRank": 238
   },
   "words": {
     "topWords": [
@@ -270,7 +270,11 @@
     "question": "Welches Wort nutzt Leon Eckert häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Kanzler",
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
         "isCorrect": false
       },
       {
@@ -278,11 +282,7 @@
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Europa",
+        "text": "Gesellschaft",
         "isCorrect": false
       }
     ],
@@ -293,15 +293,15 @@
     "question": "Welches Adjektiv nutzt Leon Eckert häufiger als der Rest der GRÜNE-Fraktion?",
     "options": [
       {
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
         "text": "Wirtschaftlich",
         "isCorrect": false
       },
       {
-        "text": "Politisch",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
+        "text": "Europäisch",
         "isCorrect": false
       },
       {
@@ -428,33 +428,33 @@
       ],
       "klima": [
         {
-          "word": "klimaschutz",
-          "count": 4
-        },
-        {
           "word": "klimakrise",
           "count": 4
         },
         {
-          "word": "artensterben",
-          "count": 2
+          "word": "klimaschutz",
+          "count": 4
         },
         {
           "word": "energiewende",
           "count": 2
         },
         {
-          "word": "umwelt",
+          "word": "artensterben",
+          "count": 2
+        },
+        {
+          "word": "energie",
           "count": 1
         }
       ],
       "wirtschaft": [
         {
-          "word": "wirtschaft",
+          "word": "kredit",
           "count": 3
         },
         {
-          "word": "kredit",
+          "word": "wirtschaft",
           "count": 3
         },
         {
@@ -462,11 +462,11 @@
           "count": 3
         },
         {
-          "word": "unternehmen",
+          "word": "wettbewerb",
           "count": 2
         },
         {
-          "word": "wettbewerb",
+          "word": "unternehmen",
           "count": 2
         }
       ],
@@ -488,7 +488,7 @@
           "count": 3
         },
         {
-          "word": "altersvorsorge",
+          "word": "familie",
           "count": 2
         }
       ],
@@ -502,15 +502,15 @@
           "count": 4
         },
         {
-          "word": "soldaten",
-          "count": 1
-        },
-        {
           "word": "gefährder",
           "count": 1
         },
         {
           "word": "täter",
+          "count": 1
+        },
+        {
+          "word": "soldaten",
           "count": 1
         }
       ],
@@ -534,15 +534,15 @@
           "count": 1
         },
         {
-          "word": "russland",
-          "count": 1
-        },
-        {
           "word": "angriffskrieg",
           "count": 1
         },
         {
           "word": "ukraine",
+          "count": 1
+        },
+        {
+          "word": "europa",
           "count": 1
         }
       ],
@@ -556,11 +556,11 @@
           "count": 2
         },
         {
-          "word": "technologie",
+          "word": "digitalisierung",
           "count": 1
         },
         {
-          "word": "digitalisierung",
+          "word": "technologie",
           "count": 1
         }
       ],
@@ -662,15 +662,15 @@
           "count": 4
         },
         {
+          "word": "deutschlandticket",
+          "count": 1
+        },
+        {
+          "word": "bahn",
+          "count": 1
+        },
+        {
           "word": "straßen",
-          "count": 1
-        },
-        {
-          "word": "auto",
-          "count": 1
-        },
-        {
-          "word": "radwege",
           "count": 1
         }
       ]

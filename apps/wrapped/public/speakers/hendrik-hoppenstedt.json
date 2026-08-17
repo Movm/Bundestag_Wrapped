@@ -11,13 +11,13 @@
   "minWords": 227,
   "maxWords": 880,
   "rankings": {
-    "speechRank": 260,
+    "speechRank": 261,
     "wordsRank": 208,
-    "partySpeechRank": 70,
+    "partySpeechRank": 73,
     "partyWordsRank": 59,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 58.5,
+    "percentile": 58.3,
     "verbosityRank": 88,
     "verbosityTotal": 582,
     "partyVerbosityRank": 31,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 126,
     "interruptionsReceived": 86,
     "interrupterRank": 33,
-    "interruptedRank": 35
+    "interruptedRank": 36
   },
   "words": {
     "topWords": [
@@ -176,20 +176,20 @@
     "question": "Welches Wort nutzt Dr. Hendrik Hoppenstedt häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bürger",
+        "text": "Debatte",
         "isCorrect": false
       },
       {
-        "text": "Opposition",
+        "text": "Koalition",
+        "isCorrect": false
+      },
+      {
+        "text": "Investitionen",
         "isCorrect": false
       },
       {
         "text": "Untersuchungsausschusses",
         "isCorrect": true
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Untersuchungsausschusses\" nutzt Dr. Hendrik Hoppenstedt 199.3× häufiger als der CDU/CSU-Durchschnitt.",
@@ -362,11 +362,11 @@
           "count": 3
         },
         {
-          "word": "frieden",
+          "word": "russland",
           "count": 2
         },
         {
-          "word": "russland",
+          "word": "frieden",
           "count": 2
         }
       ],
@@ -382,11 +382,11 @@
       ],
       "bildung": [
         {
-          "word": "wissenschaft",
+          "word": "professor",
           "count": 1
         },
         {
-          "word": "professor",
+          "word": "wissenschaft",
           "count": 1
         }
       ],
@@ -398,11 +398,11 @@
       ],
       "justiz": [
         {
-          "word": "beschluss",
+          "word": "rechtsprechung",
           "count": 4
         },
         {
-          "word": "rechtsprechung",
+          "word": "beschluss",
           "count": 4
         },
         {
@@ -420,6 +420,10 @@
       ],
       "arbeit": [
         {
+          "word": "einkommen",
+          "count": 2
+        },
+        {
           "word": "löhne",
           "count": 2
         },
@@ -428,15 +432,11 @@
           "count": 2
         },
         {
-          "word": "einkommen",
-          "count": 2
-        },
-        {
-          "word": "gehalt",
+          "word": "arbeitnehmerinnen",
           "count": 1
         },
         {
-          "word": "arbeitnehmerinnen",
+          "word": "arbeitnehmer",
           "count": 1
         }
       ],

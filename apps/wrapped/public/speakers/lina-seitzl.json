@@ -11,14 +11,14 @@
   "minWords": 53,
   "maxWords": 868,
   "rankings": {
-    "speechRank": 120,
+    "speechRank": 122,
     "wordsRank": 145,
     "partySpeechRank": 31,
     "partyWordsRank": 37,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 80.8,
-    "verbosityRank": 274,
+    "percentile": 80.5,
+    "verbosityRank": 275,
     "verbosityTotal": 582,
     "partyVerbosityRank": 65,
     "longestSpeechRank": 164
@@ -27,7 +27,7 @@
     "interruptionsGiven": 3,
     "interruptionsReceived": 52,
     "interrupterRank": 383,
-    "interruptedRank": 110
+    "interruptedRank": 112
   },
   "words": {
     "topWords": [
@@ -226,11 +226,11 @@
     "question": "Welches Wort nutzt Dr. Lina Seitzl häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Gesellschaft",
+        "text": "Bürger",
         "isCorrect": false
       },
       {
-        "text": "Familie",
+        "text": "Abstimmung",
         "isCorrect": false
       },
       {
@@ -238,7 +238,7 @@
         "isCorrect": true
       },
       {
-        "text": "Koalition",
+        "text": "Opposition",
         "isCorrect": false
       }
     ],
@@ -249,10 +249,6 @@
     "question": "Welches Adjektiv nutzt Dr. Lina Seitzl häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Schlecht",
-        "isCorrect": false
-      },
-      {
         "text": "Solidarisch",
         "isCorrect": true
       },
@@ -261,7 +257,11 @@
         "isCorrect": false
       },
       {
-        "text": "Sicher",
+        "text": "Schlecht",
+        "isCorrect": false
+      },
+      {
+        "text": "Wirtschaftlich",
         "isCorrect": false
       }
     ],
@@ -382,15 +382,15 @@
           "count": 2
         },
         {
+          "word": "wirtschaft",
+          "count": 1
+        },
+        {
           "word": "unternehmen",
           "count": 1
         },
         {
           "word": "standort",
-          "count": 1
-        },
-        {
-          "word": "wirtschaft",
           "count": 1
         }
       ],
@@ -426,15 +426,15 @@
           "count": 15
         },
         {
-          "word": "pflege",
-          "count": 7
-        },
-        {
           "word": "pandemie",
           "count": 7
         },
         {
           "word": "pflegeversicherung",
+          "count": 7
+        },
+        {
+          "word": "pflege",
           "count": 7
         }
       ],
@@ -498,11 +498,11 @@
           "count": 3
         },
         {
-          "word": "verschuldung",
+          "word": "haushaltsentwurf",
           "count": 2
         },
         {
-          "word": "finanzierung",
+          "word": "bundeshaushalt",
           "count": 2
         }
       ],
@@ -530,7 +530,7 @@
           "count": 1
         },
         {
-          "word": "einkommen",
+          "word": "vereinbarkeit",
           "count": 1
         }
       ]

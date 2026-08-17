@@ -11,13 +11,13 @@
   "minWords": 43,
   "maxWords": 957,
   "rankings": {
-    "speechRank": 305,
+    "speechRank": 310,
     "wordsRank": 274,
     "partySpeechRank": 60,
     "partyWordsRank": 61,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 51.3,
+    "percentile": 50.5,
     "verbosityRank": 301,
     "verbosityTotal": 582,
     "partyVerbosityRank": 71,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 21,
     "interrupterRank": null,
-    "interruptedRank": 337
+    "interruptedRank": 340
   },
   "words": {
     "topWords": [
@@ -179,20 +179,20 @@
     "question": "Welches Wort nutzt Serdar Yüksel häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Fraktion",
+        "isCorrect": false
+      },
+      {
+        "text": "Bildung",
+        "isCorrect": false
+      },
+      {
+        "text": "Migration",
+        "isCorrect": false
+      },
+      {
         "text": "Petitionsrecht",
         "isCorrect": true
-      },
-      {
-        "text": "Europa",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Petitionsrecht\" nutzt Serdar Yüksel 230.0× häufiger als der SPD-Durchschnitt.",
@@ -319,15 +319,15 @@
           "count": 3
         },
         {
-          "word": "unternehmen",
-          "count": 1
-        },
-        {
           "word": "wirtschaft",
           "count": 1
         },
         {
           "word": "handel",
+          "count": 1
+        },
+        {
+          "word": "unternehmen",
           "count": 1
         }
       ],
@@ -373,11 +373,11 @@
           "count": 3
         },
         {
-          "word": "arzt",
+          "word": "medikamente",
           "count": 3
         },
         {
-          "word": "medikamente",
+          "word": "arzt",
           "count": 3
         }
       ],
@@ -405,10 +405,6 @@
       ],
       "bildung": [
         {
-          "word": "ausbildung",
-          "count": 1
-        },
-        {
           "word": "erzieherin",
           "count": 1
         },
@@ -423,16 +419,16 @@
         {
           "word": "bildungssystem",
           "count": 1
+        },
+        {
+          "word": "ausbildung",
+          "count": 1
         }
       ],
       "finanzen": [
         {
           "word": "entlastung",
           "count": 2
-        },
-        {
-          "word": "finanzierung",
-          "count": 1
         },
         {
           "word": "haushalt",
@@ -445,11 +441,15 @@
         {
           "word": "kosten",
           "count": 1
+        },
+        {
+          "word": "finanzierung",
+          "count": 1
         }
       ],
       "justiz": [
         {
-          "word": "verfassungsrecht",
+          "word": "urteil",
           "count": 2
         },
         {
@@ -457,7 +457,7 @@
           "count": 2
         },
         {
-          "word": "urteil",
+          "word": "verfassungsrecht",
           "count": 2
         },
         {

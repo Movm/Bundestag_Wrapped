@@ -11,13 +11,13 @@
   "minWords": 110,
   "maxWords": 673,
   "rankings": {
-    "speechRank": 138,
+    "speechRank": 145,
     "wordsRank": 260,
-    "partySpeechRank": 21,
+    "partySpeechRank": 23,
     "partyWordsRank": 29,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 78.0,
+    "percentile": 76.8,
     "verbosityRank": 450,
     "verbosityTotal": 582,
     "partyVerbosityRank": 39,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 40,
     "interrupterRank": null,
-    "interruptedRank": 172
+    "interruptedRank": 177
   },
   "words": {
     "topWords": [
@@ -40,7 +40,7 @@
         "count": 20
       },
       {
-        "word": "zukunft",
+        "word": "braucht",
         "count": 15
       },
       {
@@ -48,7 +48,7 @@
         "count": 15
       },
       {
-        "word": "braucht",
+        "word": "zukunft",
         "count": 15
       },
       {
@@ -272,7 +272,11 @@
     "question": "Welches Wort nutzt Agnes Conrad häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Europa",
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
@@ -280,11 +284,7 @@
         "isCorrect": true
       },
       {
-        "text": "Kinder",
-        "isCorrect": false
-      },
-      {
-        "text": "Zukunft",
+        "text": "Steuern",
         "isCorrect": false
       }
     ],
@@ -295,19 +295,19 @@
     "question": "Welches Adjektiv nutzt Agnes Conrad häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
+        "text": "Notwendig",
+        "isCorrect": false
+      },
+      {
+        "text": "Europäisch",
+        "isCorrect": false
+      },
+      {
         "text": "Entscheidend",
         "isCorrect": true
       },
       {
-        "text": "Klar",
-        "isCorrect": false
-      },
-      {
-        "text": "Gut",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
+        "text": "Jung",
         "isCorrect": false
       }
     ],
@@ -408,11 +408,11 @@
     "topicWords": {
       "klima": [
         {
-          "word": "klimaschutz",
+          "word": "klimaneutralität",
           "count": 7
         },
         {
-          "word": "klimaneutralität",
+          "word": "klimaschutz",
           "count": 7
         },
         {
@@ -452,11 +452,11 @@
       ],
       "soziales": [
         {
-          "word": "gerechtigkeit",
+          "word": "familien",
           "count": 2
         },
         {
-          "word": "familien",
+          "word": "gerechtigkeit",
           "count": 2
         },
         {
@@ -468,7 +468,7 @@
           "count": 1
         },
         {
-          "word": "familie",
+          "word": "rentner",
           "count": 1
         }
       ],
@@ -536,11 +536,11 @@
           "count": 1
         },
         {
-          "word": "internet",
+          "word": "digitalisierung",
           "count": 1
         },
         {
-          "word": "digitalisierung",
+          "word": "cloud",
           "count": 1
         }
       ],
@@ -550,19 +550,19 @@
           "count": 7
         },
         {
-          "word": "bildung",
-          "count": 2
-        },
-        {
           "word": "azubi",
           "count": 2
         },
         {
-          "word": "schulen",
-          "count": 1
+          "word": "bildung",
+          "count": 2
         },
         {
           "word": "qualifizierung",
+          "count": 1
+        },
+        {
+          "word": "schulen",
           "count": 1
         }
       ],
@@ -584,7 +584,7 @@
           "count": 2
         },
         {
-          "word": "steuern",
+          "word": "subvention",
           "count": 1
         }
       ],
@@ -598,11 +598,11 @@
           "count": 2
         },
         {
-          "word": "vorschrift",
+          "word": "richter",
           "count": 1
         },
         {
-          "word": "richter",
+          "word": "vorschrift",
           "count": 1
         }
       ],
@@ -624,17 +624,17 @@
           "count": 7
         },
         {
-          "word": "mitbestimmung",
+          "word": "gewerkschaften",
           "count": 7
         }
       ],
       "mobilitaet": [
         {
-          "word": "ladeinfrastruktur",
+          "word": "auto",
           "count": 4
         },
         {
-          "word": "auto",
+          "word": "ladeinfrastruktur",
           "count": 4
         },
         {
@@ -642,11 +642,11 @@
           "count": 3
         },
         {
-          "word": "fliegen",
+          "word": "autos",
           "count": 1
         },
         {
-          "word": "straßen",
+          "word": "deutschlandticket",
           "count": 1
         }
       ]

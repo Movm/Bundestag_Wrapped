@@ -11,13 +11,13 @@
   "minWords": 7,
   "maxWords": 1478,
   "rankings": {
-    "speechRank": 127,
+    "speechRank": 123,
     "wordsRank": 21,
     "partySpeechRank": 26,
     "partyWordsRank": 9,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 79.7,
+    "percentile": 80.4,
     "verbosityRank": 556,
     "verbosityTotal": 582,
     "partyVerbosityRank": 174,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 1,
     "interruptionsReceived": 25,
-    "interrupterRank": 475,
-    "interruptedRank": 300
+    "interrupterRank": 443,
+    "interruptedRank": 299
   },
   "words": {
     "topWords": [
@@ -76,16 +76,16 @@
         "ratioBundestag": 80.9
       },
       {
-        "word": "weltall",
-        "count": 5,
-        "ratioParty": 195.9,
-        "ratioBundestag": 151.7
-      },
-      {
         "word": "artemis",
         "count": 5,
         "ratioParty": 195.9,
         "ratioBundestag": 86.7
+      },
+      {
+        "word": "weltall",
+        "count": 5,
+        "ratioParty": 195.9,
+        "ratioBundestag": 151.7
       }
     ],
     "signatureWordsParty": [
@@ -108,13 +108,13 @@
         "ratio": 235.1
       },
       {
-        "word": "weltall",
+        "word": "artemis",
         "count": 5,
         "score": 26.41,
         "ratio": 195.9
       },
       {
-        "word": "artemis",
+        "word": "weltall",
         "count": 5,
         "score": 26.41,
         "ratio": 195.9
@@ -236,20 +236,20 @@
     "question": "Welches Wort nutzt Dorothee Bär häufiger als der Rest der Fraktion?",
     "options": [
       {
+        "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetz",
+        "isCorrect": false
+      },
+      {
         "text": "Debatte",
         "isCorrect": false
       },
       {
         "text": "Menopause",
         "isCorrect": true
-      },
-      {
-        "text": "Arbeit",
-        "isCorrect": false
-      },
-      {
-        "text": "Bildung",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Menopause\" nutzt Dorothee Bär 470.2× häufiger als der CDU/CSU-Durchschnitt.",
@@ -259,7 +259,11 @@
     "question": "Welches Adjektiv nutzt Dorothee Bär häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Jung",
+        "text": "National",
+        "isCorrect": false
+      },
+      {
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
@@ -267,11 +271,7 @@
         "isCorrect": true
       },
       {
-        "text": "Falsch",
-        "isCorrect": false
-      },
-      {
-        "text": "Schlecht",
+        "text": "Problematisch",
         "isCorrect": false
       }
     ],
@@ -380,15 +380,15 @@
           "count": 1
         },
         {
+          "word": "wasserstoff",
+          "count": 1
+        },
+        {
           "word": "emissionen",
           "count": 1
         },
         {
           "word": "klimaschutz",
-          "count": 1
-        },
-        {
-          "word": "moore",
           "count": 1
         }
       ],
@@ -410,7 +410,7 @@
           "count": 3
         },
         {
-          "word": "wettbewerbsfähigkeit",
+          "word": "standort",
           "count": 3
         }
       ],
@@ -460,7 +460,7 @@
           "count": 2
         },
         {
-          "word": "psyche",
+          "word": "krankenhaus",
           "count": 1
         }
       ],
@@ -492,11 +492,11 @@
           "count": 8
         },
         {
-          "word": "daten",
+          "word": "netzwerk",
           "count": 3
         },
         {
-          "word": "netzwerk",
+          "word": "daten",
           "count": 3
         },
         {
@@ -544,11 +544,11 @@
           "count": 4
         },
         {
-          "word": "finanzministerium",
+          "word": "bundeshaushalt",
           "count": 1
         },
         {
-          "word": "bundeshaushalt",
+          "word": "investitionen",
           "count": 1
         }
       ],
@@ -564,15 +564,15 @@
       ],
       "arbeit": [
         {
-          "word": "arbeiter",
-          "count": 1
-        },
-        {
           "word": "gewerkschaften",
           "count": 1
         },
         {
           "word": "arbeitsplätze",
+          "count": 1
+        },
+        {
+          "word": "arbeiter",
           "count": 1
         }
       ],
@@ -586,15 +586,15 @@
           "count": 6
         },
         {
+          "word": "straßen",
+          "count": 2
+        },
+        {
           "word": "hafen",
           "count": 2
         },
         {
           "word": "verkehr",
-          "count": 2
-        },
-        {
-          "word": "straßen",
           "count": 2
         }
       ]

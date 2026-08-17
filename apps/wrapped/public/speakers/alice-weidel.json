@@ -11,13 +11,13 @@
   "minWords": 77,
   "maxWords": 2186,
   "rankings": {
-    "speechRank": 302,
+    "speechRank": 288,
     "wordsRank": 50,
-    "partySpeechRank": 66,
+    "partySpeechRank": 63,
     "partyWordsRank": 11,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 51.8,
+    "percentile": 54.0,
     "verbosityRank": 5,
     "verbosityTotal": 582,
     "partyVerbosityRank": 2,
@@ -263,15 +263,15 @@
         "isCorrect": true
       },
       {
-        "text": "Arbeit",
+        "text": "Wirtschaft",
         "isCorrect": false
       },
       {
-        "text": "Reform",
+        "text": "Bildung",
         "isCorrect": false
       },
       {
-        "text": "Kinder",
+        "text": "Steuern",
         "isCorrect": false
       }
     ],
@@ -282,7 +282,7 @@
     "question": "Welches Adjektiv nutzt Dr. Alice Weidel häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Alt",
+        "text": "Falsch",
         "isCorrect": false
       },
       {
@@ -290,11 +290,11 @@
         "isCorrect": true
       },
       {
-        "text": "Klar",
+        "text": "Stark",
         "isCorrect": false
       },
       {
-        "text": "Stark",
+        "text": "Politisch",
         "isCorrect": false
       }
     ],
@@ -371,7 +371,7 @@
     "topicWords": {
       "migration": [
         {
-          "word": "migranten",
+          "word": "familiennachzug",
           "count": 6
         },
         {
@@ -379,7 +379,7 @@
           "count": 6
         },
         {
-          "word": "familiennachzug",
+          "word": "migranten",
           "count": 6
         },
         {
@@ -453,7 +453,7 @@
           "count": 4
         },
         {
-          "word": "sozialleistungen",
+          "word": "familien",
           "count": 4
         }
       ],
@@ -485,7 +485,7 @@
           "count": 2
         },
         {
-          "word": "sucht",
+          "word": "krankenkassen",
           "count": 1
         },
         {
@@ -493,11 +493,11 @@
           "count": 1
         },
         {
-          "word": "krankenkassen",
+          "word": "pflegeversicherung",
           "count": 1
         },
         {
-          "word": "pflegeversicherung",
+          "word": "epidemie",
           "count": 1
         }
       ],
@@ -533,15 +533,15 @@
           "count": 2
         },
         {
-          "word": "forschung",
-          "count": 1
-        },
-        {
           "word": "lehrer",
           "count": 1
         },
         {
           "word": "hochschulen",
+          "count": 1
+        },
+        {
+          "word": "universitäten",
           "count": 1
         }
       ],
@@ -569,12 +569,16 @@
       ],
       "justiz": [
         {
+          "word": "rechtsstaatlichkeit",
+          "count": 3
+        },
+        {
           "word": "grundgesetz",
           "count": 3
         },
         {
-          "word": "rechtsstaatlichkeit",
-          "count": 3
+          "word": "verfassungskonform",
+          "count": 2
         },
         {
           "word": "verfassung",
@@ -582,10 +586,6 @@
         },
         {
           "word": "bundesverfassungsgericht",
-          "count": 2
-        },
-        {
-          "word": "verteidiger",
           "count": 2
         }
       ],
@@ -607,7 +607,7 @@
           "count": 2
         },
         {
-          "word": "arbeitslosigkeit",
+          "word": "rentenversicherung",
           "count": 1
         }
       ],
@@ -615,10 +615,6 @@
         {
           "word": "infrastruktur",
           "count": 8
-        },
-        {
-          "word": "straße",
-          "count": 2
         },
         {
           "word": "auto",
@@ -629,7 +625,11 @@
           "count": 2
         },
         {
-          "word": "verkehrsminister",
+          "word": "straße",
+          "count": 2
+        },
+        {
+          "word": "straßen",
           "count": 1
         }
       ]

@@ -11,13 +11,13 @@
   "minWords": 67,
   "maxWords": 853,
   "rankings": {
-    "speechRank": 57,
+    "speechRank": 51,
     "wordsRank": 53,
-    "partySpeechRank": 14,
+    "partySpeechRank": 12,
     "partyWordsRank": 19,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 90.9,
+    "percentile": 91.9,
     "verbosityRank": 79,
     "verbosityTotal": 582,
     "partyVerbosityRank": 29,
@@ -204,14 +204,18 @@
     {
       "emoji": "📊",
       "label": "Top-Redner",
-      "value": "Top 10%"
+      "value": "Top 9%"
     }
   ],
   "signatureQuiz": {
     "question": "Welches Wort nutzt Tijen Ataoğlu häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Bildung",
+        "text": "Energie",
+        "isCorrect": false
+      },
+      {
+        "text": "Reform",
         "isCorrect": false
       },
       {
@@ -219,11 +223,7 @@
         "isCorrect": true
       },
       {
-        "text": "Investitionen",
-        "isCorrect": false
-      },
-      {
-        "text": "Gesellschaft",
+        "text": "Europa",
         "isCorrect": false
       }
     ],
@@ -234,11 +234,11 @@
     "question": "Welches Adjektiv nutzt Tijen Ataoğlu häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Sicher",
+        "text": "Stark",
         "isCorrect": false
       },
       {
-        "text": "Politisch",
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
@@ -246,7 +246,7 @@
         "isCorrect": true
       },
       {
-        "text": "Europäisch",
+        "text": "Jung",
         "isCorrect": false
       }
     ],
@@ -347,19 +347,19 @@
     "topicWords": {
       "migration": [
         {
-          "word": "staatsangehörigkeit",
-          "count": 2
-        },
-        {
-          "word": "ausländerbehörde",
-          "count": 2
-        },
-        {
           "word": "migration",
           "count": 2
         },
         {
           "word": "grenzkontrollen",
+          "count": 2
+        },
+        {
+          "word": "staatsangehörigkeit",
+          "count": 2
+        },
+        {
+          "word": "ausländerbehörde",
           "count": 2
         },
         {
@@ -395,15 +395,15 @@
           "count": 5
         },
         {
-          "word": "kind",
-          "count": 3
-        },
-        {
           "word": "wohnung",
           "count": 3
         },
         {
-          "word": "sozialstaat",
+          "word": "kind",
+          "count": 3
+        },
+        {
+          "word": "jugendliche",
           "count": 1
         }
       ],
@@ -475,11 +475,11 @@
           "count": 5
         },
         {
-          "word": "daten",
+          "word": "online",
           "count": 2
         },
         {
-          "word": "online",
+          "word": "daten",
           "count": 2
         }
       ],

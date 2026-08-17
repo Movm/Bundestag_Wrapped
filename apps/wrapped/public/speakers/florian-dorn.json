@@ -11,13 +11,13 @@
   "minWords": 15,
   "maxWords": 2039,
   "rankings": {
-    "speechRank": 40,
+    "speechRank": 39,
     "wordsRank": 39,
-    "partySpeechRank": 10,
+    "partySpeechRank": 9,
     "partyWordsRank": 16,
     "partySize": 212,
     "totalSpeakers": 626,
-    "percentile": 93.6,
+    "percentile": 93.8,
     "verbosityRank": 76,
     "verbosityTotal": 582,
     "partyVerbosityRank": 28,
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 4,
     "interruptionsReceived": 50,
-    "interrupterRank": 378,
-    "interruptedRank": 120
+    "interrupterRank": 379,
+    "interruptedRank": 118
   },
   "words": {
     "topWords": [
@@ -264,20 +264,20 @@
     "question": "Welches Wort nutzt Dr. Florian Dorn häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Opposition",
-        "isCorrect": false
-      },
-      {
-        "text": "Haushalt",
-        "isCorrect": false
-      },
-      {
-        "text": "Steuern",
-        "isCorrect": false
-      },
-      {
         "text": "Altersvorsorgedepot",
         "isCorrect": true
+      },
+      {
+        "text": "Kinder",
+        "isCorrect": false
+      },
+      {
+        "text": "Minister",
+        "isCorrect": false
+      },
+      {
+        "text": "Sicherheit",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Altersvorsorgedepot\" nutzt Dr. Florian Dorn 107.0× häufiger als der CDU/CSU-Durchschnitt.",
@@ -287,20 +287,20 @@
     "question": "Welches Adjektiv nutzt Dr. Florian Dorn häufiger als der Rest der CDU/CSU-Fraktion?",
     "options": [
       {
-        "text": "Neu",
+        "text": "Groß",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
+        "isCorrect": false
+      },
+      {
+        "text": "Wichtig",
         "isCorrect": false
       },
       {
         "text": "Effektiv",
         "isCorrect": true
-      },
-      {
-        "text": "Sicher",
-        "isCorrect": false
-      },
-      {
-        "text": "Problematisch",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Effektiv\" nutzt Dr. Florian Dorn 5.5× häufiger als der CDU/CSU-Durchschnitt.",
@@ -400,10 +400,6 @@
     "topicWords": {
       "migration": [
         {
-          "word": "drittstaaten",
-          "count": 1
-        },
-        {
           "word": "asyl",
           "count": 1
         },
@@ -413,6 +409,10 @@
         },
         {
           "word": "migration",
+          "count": 1
+        },
+        {
+          "word": "drittstaaten",
           "count": 1
         }
       ],
@@ -430,11 +430,11 @@
           "count": 2
         },
         {
-          "word": "energiewende",
+          "word": "biomasse",
           "count": 2
         },
         {
-          "word": "biomasse",
+          "word": "energiewende",
           "count": 2
         }
       ],
@@ -478,17 +478,17 @@
           "count": 7
         },
         {
-          "word": "familien",
+          "word": "sozialstaat",
           "count": 5
         }
       ],
       "sicherheit": [
         {
-          "word": "bundeswehr",
+          "word": "verteidigungsfähigkeit",
           "count": 11
         },
         {
-          "word": "verteidigungsfähigkeit",
+          "word": "bundeswehr",
           "count": 11
         },
         {
@@ -510,15 +510,15 @@
           "count": 2
         },
         {
+          "word": "gesundheitswesen",
+          "count": 1
+        },
+        {
           "word": "pflege",
           "count": 1
         },
         {
           "word": "pandemie",
-          "count": 1
-        },
-        {
-          "word": "gesundheitswesen",
           "count": 1
         }
       ],
@@ -614,11 +614,11 @@
           "count": 4
         },
         {
-          "word": "arbeitsplätze",
+          "word": "vollzeit",
           "count": 3
         },
         {
-          "word": "vollzeit",
+          "word": "löhne",
           "count": 3
         }
       ],

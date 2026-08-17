@@ -11,14 +11,14 @@
   "minWords": 32,
   "maxWords": 569,
   "rankings": {
-    "speechRank": 311,
+    "speechRank": 315,
     "wordsRank": 381,
-    "partySpeechRank": 69,
+    "partySpeechRank": 71,
     "partyWordsRank": 83,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 50.3,
-    "verbosityRank": 372,
+    "percentile": 49.7,
+    "verbosityRank": 373,
     "verbosityTotal": 582,
     "partyVerbosityRank": 97,
     "longestSpeechRank": 534
@@ -26,8 +26,8 @@
   "drama": {
     "interruptionsGiven": 2,
     "interruptionsReceived": 15,
-    "interrupterRank": 402,
-    "interruptedRank": 399
+    "interrupterRank": 406,
+    "interruptedRank": 391
   },
   "words": {
     "topWords": [
@@ -179,20 +179,20 @@
     "question": "Welches Wort nutzt Rainer Groß häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Fraktion",
-        "isCorrect": false
-      },
-      {
-        "text": "Politik",
-        "isCorrect": false
-      },
-      {
-        "text": "Klima",
+        "text": "Freiheit",
         "isCorrect": false
       },
       {
         "text": "Kreditwirtschaft",
         "isCorrect": true
+      },
+      {
+        "text": "Demokratie",
+        "isCorrect": false
+      },
+      {
+        "text": "Gesetzentwurf",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Kreditwirtschaft\" nutzt Rainer Groß 996.1× häufiger als der AfD-Durchschnitt.",
@@ -295,7 +295,7 @@
           "count": 1
         },
         {
-          "word": "energiewende",
+          "word": "kernenergie",
           "count": 1
         }
       ],
@@ -305,11 +305,11 @@
           "count": 10
         },
         {
-          "word": "unternehmen",
+          "word": "marktwirtschaft",
           "count": 8
         },
         {
-          "word": "marktwirtschaft",
+          "word": "unternehmen",
           "count": 8
         },
         {
@@ -335,11 +335,11 @@
           "count": 1
         },
         {
-          "word": "altersvorsorge",
+          "word": "armut",
           "count": 1
         },
         {
-          "word": "familien",
+          "word": "altersvorsorge",
           "count": 1
         }
       ],
@@ -357,11 +357,11 @@
           "count": 3
         },
         {
-          "word": "eurozone",
+          "word": "außenminister",
           "count": 2
         },
         {
-          "word": "außenminister",
+          "word": "eurozone",
           "count": 2
         }
       ],
@@ -399,7 +399,7 @@
           "count": 5
         },
         {
-          "word": "zinsen",
+          "word": "steuern",
           "count": 4
         }
       ],
@@ -421,6 +421,10 @@
       ],
       "mobilitaet": [
         {
+          "word": "flugzeug",
+          "count": 1
+        },
+        {
           "word": "flughafen",
           "count": 1
         },
@@ -434,10 +438,6 @@
         },
         {
           "word": "fahrzeuge",
-          "count": 1
-        },
-        {
-          "word": "flugzeug",
           "count": 1
         }
       ]

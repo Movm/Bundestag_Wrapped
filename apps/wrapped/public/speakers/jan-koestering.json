@@ -11,23 +11,23 @@
   "minWords": 29,
   "maxWords": 910,
   "rankings": {
-    "speechRank": 14,
+    "speechRank": 15,
     "wordsRank": 41,
     "partySpeechRank": 2,
     "partyWordsRank": 3,
     "partySize": 63,
     "totalSpeakers": 626,
-    "percentile": 97.8,
+    "percentile": 97.6,
     "verbosityRank": 259,
     "verbosityTotal": 582,
     "partyVerbosityRank": 16,
-    "longestSpeechRank": 129
+    "longestSpeechRank": 131
   },
   "drama": {
     "interruptionsGiven": 12,
     "interruptionsReceived": 54,
     "interrupterRank": 259,
-    "interruptedRank": 102
+    "interruptedRank": 104
   },
   "words": {
     "topWords": [
@@ -70,22 +70,22 @@
         "ratioBundestag": 32.1
       },
       {
-        "word": "bundesinnenministerium",
-        "count": 6,
-        "ratioParty": 170.3,
-        "ratioBundestag": 27.2
-      },
-      {
         "word": "innern",
         "count": 6,
         "ratioParty": 170.3,
         "ratioBundestag": 29.1
       },
       {
-        "word": "kritis",
+        "word": "bundesinnenministerium",
+        "count": 6,
+        "ratioParty": 170.3,
+        "ratioBundestag": 27.2
+      },
+      {
+        "word": "überblick",
         "count": 10,
         "ratioParty": 141.9,
-        "ratioBundestag": 22.0
+        "ratioBundestag": 58.3
       }
     ],
     "signatureWordsParty": [
@@ -102,19 +102,19 @@
         "ratio": 255.5
       },
       {
-        "word": "kritis",
+        "word": "überblick",
         "count": 10,
         "score": 49.62,
         "ratio": 141.9
       },
       {
-        "word": "bundesinnenministerium",
+        "word": "innern",
         "count": 6,
         "score": 30.86,
         "ratio": 170.3
       },
       {
-        "word": "innern",
+        "word": "bundesinnenministerium",
         "count": 6,
         "score": 30.86,
         "ratio": 170.3
@@ -128,16 +128,16 @@
         "ratio": 31.1
       },
       {
+        "word": "überblick",
+        "count": 10,
+        "score": 40.83,
+        "ratio": 58.3
+      },
+      {
         "word": "dachgesetz",
         "count": 9,
         "score": 31.5,
         "ratio": 32.1
-      },
-      {
-        "word": "kritis",
-        "count": 10,
-        "score": 31.35,
-        "ratio": 22.0
       },
       {
         "word": "innern",
@@ -234,7 +234,7 @@
     {
       "emoji": "🏆",
       "label": "Rang (Reden)",
-      "value": "#14 von 626"
+      "value": "#15 von 626"
     },
     {
       "emoji": "⚡",
@@ -251,15 +251,15 @@
     "question": "Welches Wort nutzt Jan Köstering häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Sicherheit",
-        "isCorrect": false
-      },
-      {
-        "text": "Koalition",
+        "text": "Migration",
         "isCorrect": false
       },
       {
         "text": "Abstimmung",
+        "isCorrect": false
+      },
+      {
+        "text": "Antrag",
         "isCorrect": false
       },
       {
@@ -274,20 +274,20 @@
     "question": "Welches Adjektiv nutzt Jan Köstering häufiger als der Rest der DIE LINKE-Fraktion?",
     "options": [
       {
-        "text": "Alt",
+        "text": "Problematisch",
+        "isCorrect": false
+      },
+      {
+        "text": "Stark",
+        "isCorrect": false
+      },
+      {
+        "text": "Klar",
         "isCorrect": false
       },
       {
         "text": "Fahrlässig",
         "isCorrect": true
-      },
-      {
-        "text": "Notwendig",
-        "isCorrect": false
-      },
-      {
-        "text": "Jung",
-        "isCorrect": false
       }
     ],
     "explanationParty": "\"Fahrlässig\" nutzt Jan Köstering 12.2× häufiger als der DIE LINKE-Durchschnitt.",
@@ -387,31 +387,27 @@
     "topicWords": {
       "migration": [
         {
-          "word": "frontex",
-          "count": 2
-        },
-        {
           "word": "integration",
           "count": 2
         },
         {
-          "word": "asyl",
+          "word": "frontex",
+          "count": 2
+        },
+        {
+          "word": "bamf",
+          "count": 1
+        },
+        {
+          "word": "asylverfahren",
           "count": 1
         },
         {
           "word": "migration",
           "count": 1
-        },
-        {
-          "word": "flüchtlinge",
-          "count": 1
         }
       ],
       "klima": [
-        {
-          "word": "nachhaltig",
-          "count": 2
-        },
         {
           "word": "umwelt",
           "count": 2
@@ -421,11 +417,15 @@
           "count": 2
         },
         {
-          "word": "stromnetz",
+          "word": "klimawandel",
           "count": 2
         },
         {
-          "word": "klimawandel",
+          "word": "nachhaltig",
+          "count": 2
+        },
+        {
+          "word": "stromnetz",
           "count": 2
         }
       ],
@@ -443,11 +443,11 @@
           "count": 1
         },
         {
-          "word": "wirtschaft",
+          "word": "konjunktur",
           "count": 1
         },
         {
-          "word": "konjunktur",
+          "word": "wirtschaft",
           "count": 1
         }
       ],
@@ -465,11 +465,11 @@
           "count": 2
         },
         {
-          "word": "umverteilung",
+          "word": "gerechtigkeit",
           "count": 2
         },
         {
-          "word": "gerechtigkeit",
+          "word": "umverteilung",
           "count": 2
         }
       ],
@@ -501,11 +501,11 @@
           "count": 9
         },
         {
-          "word": "rettungsdienst",
+          "word": "vorsorge",
           "count": 5
         },
         {
-          "word": "vorsorge",
+          "word": "rettungsdienst",
           "count": 5
         },
         {
@@ -527,15 +527,15 @@
           "count": 2
         },
         {
-          "word": "diplomatie",
-          "count": 2
-        },
-        {
           "word": "russland",
           "count": 2
         },
         {
-          "word": "bündnis",
+          "word": "diplomatie",
+          "count": 2
+        },
+        {
+          "word": "nato",
           "count": 1
         }
       ],
@@ -557,7 +557,7 @@
           "count": 1
         },
         {
-          "word": "datenverarbeitung",
+          "word": "internet",
           "count": 1
         }
       ],
@@ -575,11 +575,11 @@
           "count": 2
         },
         {
-          "word": "universität",
+          "word": "kita",
           "count": 1
         },
         {
-          "word": "kita",
+          "word": "universität",
           "count": 1
         }
       ],
@@ -615,15 +615,15 @@
           "count": 6
         },
         {
-          "word": "strafe",
-          "count": 3
-        },
-        {
           "word": "bundesverfassungsgericht",
           "count": 3
         },
         {
           "word": "straftaten",
+          "count": 3
+        },
+        {
+          "word": "strafe",
           "count": 3
         }
       ],
@@ -637,7 +637,7 @@
           "count": 2
         },
         {
-          "word": "beschäftigte",
+          "word": "überstunden",
           "count": 1
         },
         {

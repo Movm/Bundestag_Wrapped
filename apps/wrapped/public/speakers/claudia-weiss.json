@@ -11,13 +11,13 @@
   "minWords": 240,
   "maxWords": 573,
   "rankings": {
-    "speechRank": 332,
+    "speechRank": 340,
     "wordsRank": 427,
-    "partySpeechRank": 79,
+    "partySpeechRank": 80,
     "partyWordsRank": 94,
     "partySize": 150,
     "totalSpeakers": 626,
-    "percentile": 47.0,
+    "percentile": 45.7,
     "verbosityRank": 368,
     "verbosityTotal": 582,
     "partyVerbosityRank": 95,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 11,
     "interrupterRank": null,
-    "interruptedRank": 455
+    "interruptedRank": 461
   },
   "words": {
     "topWords": [
@@ -40,11 +40,11 @@
         "count": 18
       },
       {
-        "word": "gesetz",
+        "word": "bundesregierung",
         "count": 15
       },
       {
-        "word": "bundesregierung",
+        "word": "gesetz",
         "count": 15
       },
       {
@@ -56,10 +56,6 @@
         "count": 12
       },
       {
-        "word": "weniger",
-        "count": 11
-      },
-      {
         "word": "kosten",
         "count": 11
       },
@@ -68,7 +64,11 @@
         "count": 11
       },
       {
-        "word": "darf",
+        "word": "weniger",
+        "count": 11
+      },
+      {
+        "word": "bürger",
         "count": 10
       }
     ],
@@ -216,7 +216,7 @@
     "question": "Welches Wort nutzt Claudia Weiss häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Energie",
+        "text": "Gesetzentwurf",
         "isCorrect": false
       },
       {
@@ -224,7 +224,7 @@
         "isCorrect": false
       },
       {
-        "text": "Politik",
+        "text": "Ausschuss",
         "isCorrect": false
       },
       {
@@ -239,20 +239,20 @@
     "question": "Welches Adjektiv nutzt Claudia Weiss häufiger als der Rest der AfD-Fraktion?",
     "options": [
       {
-        "text": "Sozial",
-        "isCorrect": false
-      },
-      {
-        "text": "Neu",
-        "isCorrect": false
-      },
-      {
-        "text": "Richtig",
+        "text": "Erfolgreich",
         "isCorrect": false
       },
       {
         "text": "Gerecht",
         "isCorrect": true
+      },
+      {
+        "text": "Falsch",
+        "isCorrect": false
+      },
+      {
+        "text": "Gefährlich",
+        "isCorrect": false
       }
     ],
     "explanationParty": "\"Gerecht\" nutzt Claudia Weiss 8.3× häufiger als der AfD-Durchschnitt.",
@@ -348,11 +348,11 @@
       ],
       "wirtschaft": [
         {
-          "word": "fachkräftemangel",
+          "word": "unternehmen",
           "count": 2
         },
         {
-          "word": "unternehmen",
+          "word": "fachkräftemangel",
           "count": 2
         },
         {
@@ -378,15 +378,15 @@
           "count": 6
         },
         {
-          "word": "kind",
-          "count": 2
-        },
-        {
           "word": "altersarmut",
           "count": 2
         },
         {
           "word": "sozialhilfe",
+          "count": 2
+        },
+        {
+          "word": "kind",
           "count": 2
         }
       ],
@@ -420,11 +420,11 @@
       ],
       "digital": [
         {
-          "word": "digitalisierung",
+          "word": "daten",
           "count": 1
         },
         {
-          "word": "daten",
+          "word": "digitalisierung",
           "count": 1
         }
       ],
@@ -452,7 +452,7 @@
           "count": 2
         },
         {
-          "word": "investitionen",
+          "word": "steuerzahler",
           "count": 1
         }
       ],
@@ -464,6 +464,10 @@
       ],
       "arbeit": [
         {
+          "word": "überstunden",
+          "count": 1
+        },
+        {
           "word": "einkommen",
           "count": 1
         },
@@ -473,10 +477,6 @@
         },
         {
           "word": "arbeitnehmer",
-          "count": 1
-        },
-        {
-          "word": "überstunden",
           "count": 1
         },
         {

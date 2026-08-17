@@ -11,13 +11,13 @@
   "minWords": 34,
   "maxWords": 1154,
   "rankings": {
-    "speechRank": 252,
+    "speechRank": 264,
     "wordsRank": 14,
     "partySpeechRank": 51,
     "partyWordsRank": 5,
     "partySize": 114,
     "totalSpeakers": 626,
-    "percentile": 59.7,
+    "percentile": 57.8,
     "verbosityRank": 561,
     "verbosityTotal": 582,
     "partyVerbosityRank": 98,
@@ -27,7 +27,7 @@
     "interruptionsGiven": 0,
     "interruptionsReceived": 22,
     "interrupterRank": null,
-    "interruptedRank": 316
+    "interruptedRank": 320
   },
   "words": {
     "topWords": [
@@ -54,10 +54,6 @@
       {
         "word": "menschen",
         "count": 46
-      },
-      {
-        "word": "wichtig",
-        "count": 43
       }
     ],
     "signatureWords": [
@@ -74,16 +70,16 @@
         "ratioBundestag": 215.7
       },
       {
-        "word": "adressen",
-        "count": 10,
-        "ratioParty": 106.8,
-        "ratioBundestag": 24.8
-      },
-      {
         "word": "verbändeanhörung",
         "count": 5,
         "ratioParty": 106.8,
         "ratioBundestag": 107.8
+      },
+      {
+        "word": "adressen",
+        "count": 10,
+        "ratioParty": 106.8,
+        "ratioBundestag": 24.8
       },
       {
         "word": "vermögensabschöpfung",
@@ -276,7 +272,11 @@
     "question": "Welches Wort nutzt Dr. Stefanie Hubig häufiger als der Rest der Fraktion?",
     "options": [
       {
-        "text": "Abstimmung",
+        "text": "Gewaltschutz",
+        "isCorrect": true
+      },
+      {
+        "text": "Rente",
         "isCorrect": false
       },
       {
@@ -284,11 +284,7 @@
         "isCorrect": false
       },
       {
-        "text": "Gewaltschutz",
-        "isCorrect": true
-      },
-      {
-        "text": "Minister",
+        "text": "Arbeit",
         "isCorrect": false
       }
     ],
@@ -299,11 +295,11 @@
     "question": "Welches Adjektiv nutzt Dr. Stefanie Hubig häufiger als der Rest der SPD-Fraktion?",
     "options": [
       {
-        "text": "Wichtig",
+        "text": "Gefährlich",
         "isCorrect": false
       },
       {
-        "text": "Gut",
+        "text": "Sicher",
         "isCorrect": false
       },
       {
@@ -311,7 +307,7 @@
         "isCorrect": true
       },
       {
-        "text": "Sicher",
+        "text": "Klar",
         "isCorrect": false
       }
     ],
@@ -422,11 +418,11 @@
       ],
       "klima": [
         {
-          "word": "erneuerbare",
+          "word": "nachhaltig",
           "count": 2
         },
         {
-          "word": "nachhaltig",
+          "word": "erneuerbare",
           "count": 2
         },
         {
@@ -456,11 +452,11 @@
           "count": 3
         },
         {
-          "word": "industrie",
+          "word": "fachkräfte",
           "count": 2
         },
         {
-          "word": "fachkräfte",
+          "word": "industrie",
           "count": 2
         }
       ],
@@ -524,19 +520,19 @@
       ],
       "europa": [
         {
-          "word": "krieg",
-          "count": 3
-        },
-        {
           "word": "europa",
           "count": 3
         },
         {
-          "word": "iran",
-          "count": 2
+          "word": "krieg",
+          "count": 3
         },
         {
           "word": "vertrag",
+          "count": 2
+        },
+        {
+          "word": "iran",
           "count": 2
         },
         {
@@ -558,11 +554,11 @@
           "count": 6
         },
         {
-          "word": "daten",
+          "word": "online",
           "count": 4
         },
         {
-          "word": "online",
+          "word": "daten",
           "count": 4
         }
       ],
@@ -570,10 +566,6 @@
         {
           "word": "kita",
           "count": 2
-        },
-        {
-          "word": "schule",
-          "count": 1
         },
         {
           "word": "professorin",
@@ -585,6 +577,10 @@
         },
         {
           "word": "wissenschaftlerin",
+          "count": 1
+        },
+        {
+          "word": "schule",
           "count": 1
         }
       ],
@@ -638,11 +634,7 @@
           "count": 2
         },
         {
-          "word": "arbeitsplätze",
-          "count": 1
-        },
-        {
-          "word": "arbeitslosigkeit",
+          "word": "einkommen",
           "count": 1
         },
         {
@@ -650,17 +642,21 @@
           "count": 1
         },
         {
-          "word": "einkommen",
+          "word": "arbeitslosigkeit",
+          "count": 1
+        },
+        {
+          "word": "arbeitsplätze",
           "count": 1
         }
       ],
       "mobilitaet": [
         {
-          "word": "auto",
+          "word": "straße",
           "count": 4
         },
         {
-          "word": "straße",
+          "word": "auto",
           "count": 4
         },
         {
@@ -668,11 +664,11 @@
           "count": 2
         },
         {
-          "word": "autos",
+          "word": "flug",
           "count": 1
         },
         {
-          "word": "nahverkehr",
+          "word": "bahn",
           "count": 1
         }
       ]
