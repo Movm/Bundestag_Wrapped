@@ -51,6 +51,10 @@ function formatNumber(value: number): string {
   return value.toLocaleString('de-DE');
 }
 
+function formatOptionalNumber(value?: number | null): string {
+  return typeof value === 'number' ? formatNumber(value) : '–';
+}
+
 function formatRatio(value: number): string {
   return `${value.toLocaleString('de-DE', { maximumFractionDigits: 1, minimumFractionDigits: 1 })}×`;
 }
@@ -413,27 +417,57 @@ function BiographyFact({
   );
 }
 
-function ProfilePortrait({ image, name }: { image: ProfileImageMetadata | OfficialImageMetadata; name: string }) {
-  const sourceLabel = image.sourceLabel === 'Wikimedia Commons' ? 'Wikimedia' : 'Bundestag';
+function profileInitials(name: string): string {
+  const parts = name.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return 'MdB';
+  if (parts.length === 1) return parts[0].slice(0, 2).toLocaleUpperCase('de-DE');
+  return `${parts[0][0]}${parts.at(-1)?.[0] ?? ''}`.toLocaleUpperCase('de-DE');
+}
+
+function ProfilePortrait({
+  image,
+  name,
+}: {
+  image?: ProfileImageMetadata | OfficialImageMetadata | null;
+  name: string;
+}) {
+  const sourceLabel = image?.sourceLabel === 'Wikimedia Commons' ? 'Wikimedia' : 'Bundestag';
 
   return (
     <figure className="w-[150px] shrink-0 md:w-[210px]">
-      <div className="h-[187px] overflow-hidden rounded-2xl border-[3px] border-pink-600/55 bg-white/[0.04] shadow-2xl shadow-pink-950/30 md:h-[262px]">
-      <img
-        src={image.thumbnailUrl ?? image.url}
-        alt={image.alt ?? `${name}, offizielles Bundestag-Foto`}
-        className="h-full w-full object-cover"
-        loading="eager"
-      />
-      </div>
-      <a
-        href={image.sourceUrl}
-        target="_blank"
-        rel="noreferrer"
-        className="mt-2 inline-flex items-center gap-1 text-[11px] font-semibold text-white/70 hover:text-pink-200"
+      <div
+        className="relative flex h-[187px] items-center justify-center overflow-hidden rounded-2xl border-[3px] border-pink-600/55 bg-gradient-to-br from-pink-950/70 to-violet-950/70 shadow-2xl shadow-pink-950/30 md:h-[262px]"
+        aria-label={image ? undefined : `${name}, kein frei lizenziertes Profilfoto verfügbar`}
       >
-        Foto: {sourceLabel} <ExternalLink size={11} />
-      </a>
+        <span className="text-5xl font-black tracking-tight text-white/65 md:text-7xl" aria-hidden="true">
+          {profileInitials(name)}
+        </span>
+        {image ? (
+          <img
+            src={image.thumbnailUrl ?? image.url}
+            alt={image.alt ?? `Porträt von ${name}`}
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="eager"
+            onError={(event) => {
+              event.currentTarget.style.display = 'none';
+            }}
+          />
+        ) : null}
+      </div>
+      {image ? (
+        <a
+          href={image.sourceUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-2 inline-flex items-center gap-1 text-[11px] font-semibold text-white/70 hover:text-pink-200"
+        >
+          Foto: {sourceLabel} <ExternalLink size={11} />
+        </a>
+      ) : (
+        <figcaption className="mt-2 text-[11px] font-semibold text-white/45">
+          Kein frei lizenziertes Foto verfügbar
+        </figcaption>
+      )}
     </figure>
   );
 }
@@ -621,7 +655,7 @@ function OverviewTransparencyPanel({ profile }: { profile?: AbgeordnetenwatchPro
   const incomeCount = sidejobs.filter(
     (sidejob) => typeof sidejob.income === 'number' || typeof sidejob.incomeLevel === 'number'
   ).length;
-  const voteCount = profile.votes?.total ?? profile.votes?.recent.length ?? 0;
+  const voteCount = profile.votes?.total ?? profile.votes?.recent.length;
 
   return (
     <div className="rounded-lg border border-white/10 bg-white/[0.05] p-5">
@@ -642,8 +676,8 @@ function OverviewTransparencyPanel({ profile }: { profile?: AbgeordnetenwatchPro
       <div className="mt-4 grid grid-cols-2 gap-3">
         <StatTile label="Nebentätigkeiten" value={formatNumber(sidejobs.length)} />
         <StatTile label="mit Einkommen" value={formatNumber(incomeCount)} />
-        <StatTile label="Abstimmungen" value={formatNumber(voteCount)} />
-        <StatTile label="Bürgerfragen" value={formatNumber(profile.politician.questions ?? 0)} />
+        <StatTile label="Abstimmungen" value={formatOptionalNumber(voteCount)} />
+        <StatTile label="Bürgerfragen" value={formatOptionalNumber(profile.politician.questions)} />
       </div>
       {sidejobs.length > 0 && incomeCount === 0 ? (
         <p className="mt-3 text-xs leading-5 text-white/45">
@@ -836,6 +870,7 @@ export function MdbProfilePage() {
   const profileDescription = speaker?.profileDescription ?? null;
   const biography = speaker?.biography ?? null;
   const abgeordnetenwatch = speaker?.abgeordnetenwatch ?? null;
+  const voteCount = abgeordnetenwatch?.votes?.total ?? abgeordnetenwatch?.votes?.recent.length;
   const wikipediaTitle = wikipediaTitleFromDescription(profileDescription);
   const {
     data: wikipediaIntro,
@@ -972,7 +1007,7 @@ export function MdbProfilePage() {
               </div>
 
               <div className="grid grid-cols-[150px_1fr] gap-5 px-5 pb-10 pt-3 md:grid-cols-[210px_1fr] md:px-11 lg:grid-cols-[210px_1fr_150px] lg:gap-10 lg:items-start">
-                <div>{profileImage ? <ProfilePortrait image={profileImage} name={displayName} /> : null}</div>
+                <div><ProfilePortrait image={profileImage} name={displayName} /></div>
                 <div>
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-center gap-2">
@@ -1042,7 +1077,7 @@ export function MdbProfilePage() {
               </div>
               <div className="border-white/10 px-5 py-6 md:px-8 lg:border-r">
                 <div className="text-4xl font-black text-white">
-                  {formatNumber(abgeordnetenwatch?.votes?.total ?? abgeordnetenwatch?.votes?.recent.length ?? 0)}
+                  {formatOptionalNumber(voteCount)}
                 </div>
                 <div className="mt-1 text-[11px] uppercase tracking-wider text-white/50">
                   Namentliche Abstimmungen
@@ -1285,7 +1320,7 @@ export function MdbProfilePage() {
                           <h2 className="mt-2 text-2xl font-black text-white">Abstimmungsverhalten</h2>
                         </div>
                         <span className="text-sm text-white/50">
-                          {formatNumber(abgeordnetenwatch?.votes?.total ?? abgeordnetenwatch?.votes?.recent.length ?? 0)} Abstimmungen
+                          {voteCount == null ? 'Noch nicht verknüpft' : `${formatNumber(voteCount)} Abstimmungen`}
                         </span>
                       </div>
                       <div className="mt-6 space-y-3">
@@ -1295,7 +1330,9 @@ export function MdbProfilePage() {
                           ))
                         ) : (
                           <p className="rounded-lg border border-white/10 bg-white/[0.035] p-4 text-sm text-white/55">
-                            Keine namentlichen Abstimmungen im aktuellen Import.
+                            {abgeordnetenwatch
+                              ? 'Keine namentlichen Abstimmungen im aktuellen Import.'
+                              : 'Abstimmungsdaten für dieses Profil sind noch nicht verknüpft.'}
                           </p>
                         )}
                       </div>
@@ -1323,7 +1360,7 @@ export function MdbProfilePage() {
                         <div className="mt-4 grid grid-cols-2 gap-4">
                           <StatTile
                             label="Abstimmungen"
-                            value={formatNumber(abgeordnetenwatch?.votes?.total ?? abgeordnetenwatch?.votes?.recent.length ?? 0)}
+                            value={formatOptionalNumber(voteCount)}
                           />
                           <StatTile label="Fraktion" value={abgeordnetenwatch?.mandate?.fraction ?? speaker.party} />
                         </div>
