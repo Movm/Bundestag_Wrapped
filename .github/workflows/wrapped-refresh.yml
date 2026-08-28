@@ -45,6 +45,10 @@ jobs:
           token: ${{ secrets.GHCR_PAT }}
           fetch-depth: 0
 
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
@@ -66,6 +70,10 @@ jobs:
           bundestag-analysis parse ./data
           bundestag-analysis analyze ./data -w "$WP" -o ./results -q
           bundestag-analysis export-all ./data -r ./results -o "$GITHUB_WORKSPACE/apps/wrapped/public"
+
+      - name: Refresh Abgeordnetenwatch profile data
+        working-directory: apps/wrapped
+        run: node scripts/sync-abgeordnetenwatch.cjs
 
       - name: Publish refreshed datasets through a protected pull request
         env:

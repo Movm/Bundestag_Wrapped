@@ -104,6 +104,9 @@ export default defineConfig({
     }),
   ],
   resolve: {
+    // The web and Expo workspaces intentionally use different React versions.
+    // Always resolve one app-local React instance for web dependencies and peers.
+    dedupe: ['react', 'react-dom'],
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
