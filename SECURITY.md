@@ -15,7 +15,7 @@ the address on their GitHub profile.
 
 Please include:
 
-- affected component (`services/mcp`, `services/analysis`, `apps/wrapped`, or `apps/wrapped/mobile`),
+- affected component (`services/mcp`, `services/analysis`, or `apps/wrapped`),
 - a description and impact assessment,
 - reproduction steps or a proof of concept,
 - any suggested remediation.
@@ -38,7 +38,7 @@ publishes a static "Wrapped" site. Of particular interest:
 
 ## Automated security tooling
 
-- **Dependabot** version updates across npm (web/mcp/mobile), pip, Docker base
+- **Dependabot** version updates across npm (web/mcp), pip, Docker base
   images, and GitHub Actions — see [`.github/dependabot.yml`](.github/dependabot.yml).
 - **CodeQL** code scanning for JavaScript/TypeScript and Python on every push and
   PR to `main`, plus a weekly scheduled scan.

@@ -1,7 +1,7 @@
 # Bundestag Wrapped — Monorepo
 
 One pnpm monorepo for the Bundestag project: the **MCP/API backend**, the **Python
-NLP analysis** pipeline, and the **"Wrapped"** web + mobile frontend.
+NLP analysis** pipeline, and the **"Wrapped"** web frontend.
 
 Combines three formerly-separate repos with full git history preserved
 ([`bundestag-mcp`](https://github.com/Movm/bundestag-mcp),
@@ -12,8 +12,7 @@ Combines three formerly-separate repos with full git history preserved
 |---------|------|-------|------|
 | **bundestag-mcp** | `services/mcp` | Node 22 / ESM | MCP server + HTTP API over the Bundestag DIP API. 33 MCP tools, semantic search (Qdrant + Mistral), NLP proxy. |
 | **bundestag-analysis** | `services/analysis` | Python 3.12 (spaCy, FastAPI) | NLP library, NLP API + Wrapped API, CLI, JSON exports. *(not a pnpm member)* |
-| **bundestag-wrapped** | `apps/wrapped` | React 19 + Vite 7 | "Spotify Wrapped" for parliament (web). |
-| **bundestag-wrapped-mobile** | `apps/wrapped/mobile` | Expo / RN | Native app. |
+| **bundestag-wrapped** | `apps/wrapped` | React 19 + Vite 7 | "Spotify Wrapped" for parliament (web/PWA). |
 
 ## Architecture / data flow
 
@@ -29,7 +28,7 @@ Combines three formerly-separate repos with full git history preserved
   └─ exports static JSON                 │
         │                                ▼
         ▼                          MCP clients (Claude, Grünerator, …)
-  apps/wrapped (web + mobile)
+  apps/wrapped (web/PWA)
   consumes the static JSON
 ```
 
@@ -40,24 +39,21 @@ Combines three formerly-separate repos with full git history preserved
 
 ## Getting started
 
-### JS/TS workspace (mcp + wrapped web/mobile)
+### JS/TS workspace (mcp + wrapped web)
 
 ```bash
 pnpm install                 # single lockfile for all JS/TS packages
 
 pnpm dev:mcp                 # MCP server — needs DIP_API_KEY (services/mcp/.env.example)
 pnpm dev:web                 # Wrapped web app
-pnpm --filter bundestag-wrapped-mobile start   # Expo dev server
 
 pnpm test                    # all workspace tests
 pnpm lint                    # all workspace lint
 pnpm build                   # build the web app
 ```
 
-> **React versions are decoupled.** `apps/wrapped/mobile` (Expo) pins the exact React
-> version its Expo SDK ships. Do **not** add `react`/`react-dom` to root
-> `pnpm.overrides` — a global override breaks React Native. Root `.npmrc` uses
-> `node-linker=hoisted` so Expo and the native `better-sqlite3` resolve correctly.
+> Root `.npmrc` uses `node-linker=hoisted` so the native `better-sqlite3` dependency
+> resolves correctly.
 
 ### Python service (`services/analysis`)
 

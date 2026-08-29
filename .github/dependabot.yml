@@ -2,10 +2,7 @@
 # https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 #
 # pnpm workspace with ONE root lockfile: each nested npm entry updates its own
-# package.json and the shared root pnpm-lock.yaml. The Expo mobile app is treated
-# specially — its React / React Native deps are pinned to the exact versions the
-# Expo SDK ships and must move only via `npx expo install` (see CLAUDE.md), so
-# Dependabot must never drift them.
+# package.json and the shared root pnpm-lock.yaml.
 
 version: 2
 
@@ -75,58 +72,6 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: 'react-dom'
         update-types: ['version-update:semver-major']
-
-  # ---------------------------------------------------------------------------
-  # MOBILE — Expo / React Native app (apps/wrapped/mobile)
-  # ---------------------------------------------------------------------------
-  - package-ecosystem: 'npm'
-    directory: '/apps/wrapped/mobile'
-    schedule:
-      interval: 'weekly'
-      day: 'thursday'
-      time: '05:00'
-      timezone: 'Europe/Berlin'
-    open-pull-requests-limit: 10
-    labels:
-      - 'dependencies'
-      - 'mobile'
-    groups:
-      expo:
-        patterns:
-          - 'expo'
-          - 'expo-*'
-          - '@expo/*'
-      react-native-core:
-        patterns:
-          - 'react-native'
-          - 'react-native-gesture-handler'
-          - 'react-native-reanimated'
-          - 'react-native-screens'
-          - 'react-native-safe-area-context'
-          - 'react-native-worklets'
-      react-native-ui:
-        patterns:
-          - 'react-native-*'
-          - '@shopify/*'
-          - 'moti'
-          - 'nativewind'
-        exclude-patterns:
-          - 'react-native'
-          - 'react-native-gesture-handler'
-          - 'react-native-reanimated'
-          - 'react-native-screens'
-          - 'react-native-safe-area-context'
-          - 'react-native-worklets'
-    ignore:
-      # Expo / RN move only via `npx expo install` during an SDK upgrade.
-      - dependency-name: 'expo'
-        update-types: ['version-update:semver-major']
-      - dependency-name: 'react-native'
-        update-types: ['version-update:semver-major']
-      # react/react-dom are pinned to the EXACT version the Expo SDK ships (RN's
-      # bundled renderer requires an exact match). Never let Dependabot drift them.
-      - dependency-name: 'react'
-      - dependency-name: 'react-dom'
 
   # ---------------------------------------------------------------------------
   # MCP SERVER — Node ESM (services/mcp)

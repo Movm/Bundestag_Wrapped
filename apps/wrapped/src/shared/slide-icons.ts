@@ -21,7 +21,7 @@ import {
 export interface SlideIconConfig {
   /** Custom SVG icon component */
   Icon: ComponentType<{ className?: string }>;
-  /** Fallback emoji (for mobile/SSR) */
+  /** Fallback emoji for non-SVG rendering */
   emoji: string;
   /** CSS animation class */
   animation: string;

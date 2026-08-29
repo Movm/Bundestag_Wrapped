@@ -1,6 +1,6 @@
 /**
  * End Slide Content
- * German copy for the final slide - shared between web and mobile.
+ * German copy for the final web slide.
  */
 
 export const END_SLIDE_CONTENT = {

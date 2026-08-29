@@ -1,6 +1,6 @@
 /**
  * Speaker Wrapped Content Strings
- * German copy for speaker wrapped sections - shared between web and mobile.
+ * German copy for speaker-wrapped web sections.
  */
 
 export const SPEAKER_CONTENT = {

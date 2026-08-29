@@ -1,9 +1,7 @@
 /**
- * Shared Layer - Cross-Platform Exports
+ * Shared Web Layer Exports
  *
- * This module contains platform-agnostic code that can be used by both:
- * - Web (src/components/slides/)
- * - Mobile (mobile/slides/)
+ * This module centralizes reusable code within the web app.
  */
 
 // Animation configurations
@@ -12,11 +10,11 @@ export * from './animations/animation-config';
 // Hooks
 export { useQuizConfig, type QuizConfig, type QuizConfigOptions } from './hooks/useQuizConfig';
 
-// Re-export existing shared data (already platform-agnostic)
+// Re-export shared data
 export { QUIZZES } from '../data/quizzes';
 export { INFO_SLIDES, type InfoSlideContent } from '../data/info-slides';
 
-// Re-export party colors (already platform-agnostic)
+// Re-export party colors
 export {
   PARTY_COLORS,
   PARTY_BG_COLORS,
