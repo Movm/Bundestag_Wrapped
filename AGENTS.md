@@ -1,4 +1,4 @@
-# CLAUDE.md — Bundestag Wrapped Monorepo
+# AGENTS.md — Bundestag Wrapped Monorepo
 
 pnpm monorepo combining three formerly-separate repos (imported via `git subtree`,
 history preserved). See `README.md` for the full architecture diagram.
@@ -26,5 +26,5 @@ history preserved). See `README.md` for the full architecture diagram.
 `services/analysis` (Python) parses DIP protocols → runs spaCy NLP → exports static
 JSON (consumed by `apps/wrapped`) and serves the NLP/Wrapped APIs (proxied by
 `services/mcp`). `services/mcp` also does its own DIP search + Qdrant/Mistral
-semantic search and exposes everything over MCP + HTTP to clients (Claude,
+semantic search and exposes everything over MCP + HTTP to clients (Codex,
 Grünerator).

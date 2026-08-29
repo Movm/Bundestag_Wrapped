@@ -1,6 +1,6 @@
 /**
  * Topic category metadata for Scheme F topic analysis.
- * Shared between web and mobile platforms.
+ * Used across the web app.
  */
 
 export interface TopicMeta {

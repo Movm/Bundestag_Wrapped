@@ -1,8 +1,7 @@
 /**
  * Shared Theme Backgrounds Types and Constants
  *
- * Platform-agnostic background theme definitions.
- * Used by both web (React/Motion) and mobile (React Native/Reanimated).
+ * Background theme definitions for React/Motion.
  *
  * Each topic section gets a unique visual effect with its own color palette.
  */

@@ -1,8 +1,7 @@
 /**
  * Shared Theme Music Types and Constants
  *
- * Platform-agnostic theme music definitions.
- * Used by both web (browser Audio) and mobile (expo-av).
+ * Theme music definitions for browser audio.
  *
  * Track Credits (alphabetical):
  * - Broke For Free: Night Owl, Living In Reverse

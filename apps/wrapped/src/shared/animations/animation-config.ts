@@ -1,9 +1,7 @@
 /**
  * Shared Animation Timings
  *
- * Platform-agnostic animation configuration values.
- * - Web: Consumed by Motion (Framer Motion)
- * - Mobile: Consumed by React Native Reanimated
+ * Animation configuration values consumed by Motion (Framer Motion).
  *
  * All timing values are in milliseconds for consistency.
  * Spring configs use standard physics properties (stiffness, damping, mass).
@@ -229,7 +227,7 @@ export const DELAY = {
 
 // ─────────────────────────────────────────────────────────────
 // Slide Intro Animation Config
-// Shared between web (Motion) and mobile (Reanimated)
+// Used by web slide intro animations.
 // ─────────────────────────────────────────────────────────────
 
 export const SLIDE_INTRO = {

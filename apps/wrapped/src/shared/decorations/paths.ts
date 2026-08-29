@@ -1,9 +1,8 @@
 /**
- * Shared SVG Path Definitions for Decorative Elements
+ * SVG Path Definitions for Decorative Elements
  *
- * These path definitions are shared between web (Motion) and mobile (Reanimated).
  * Each decoration type has its geometry defined here, with animations handled
- * by the platform-specific components.
+ * by the web components.
  */
 
 import type { ThemeColors } from '../theme-backgrounds/types';

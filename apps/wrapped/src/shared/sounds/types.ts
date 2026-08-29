@@ -1,12 +1,9 @@
 /**
  * Shared Sound Types
  *
- * Platform-agnostic sound type definitions and constants.
- * Used by both web (browser Audio) and mobile (expo-av).
+ * Sound type definitions and constants for browser audio.
  */
 
-// Web uses: click, correct, wrong, start, whoosh, hover
-// Mobile uses: click, correct, wrong, whoosh (no hover on mobile - touch only)
 export type SoundType = 'click' | 'correct' | 'wrong' | 'start' | 'whoosh' | 'hover';
 
 export const SOUND_PATHS: Record<SoundType, string> = {

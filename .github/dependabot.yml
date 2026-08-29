@@ -5,8 +5,6 @@ version: 2
 updates:
   - package-ecosystem: "npm"
     directory: "/"
-    exclude-paths:
-      - "apps/wrapped/mobile/**"
     schedule:
       interval: "weekly"
       day: "monday"
@@ -56,25 +54,6 @@ updates:
       - dependency-name: "typescript"
         update-types:
           - "version-update:semver-major"
-    commit-message:
-      prefix: "chore"
-      include: "scope"
-
-  # Expo and React Native versions move together through `npx expo install`.
-  # Routine version PRs are disabled, while security updates remain enabled.
-  - package-ecosystem: "npm"
-    directory: "/apps/wrapped/mobile"
-    schedule:
-      interval: "weekly"
-      day: "thursday"
-      time: "04:00"
-      timezone: "Europe/Berlin"
-    open-pull-requests-limit: 0
-    groups:
-      security-updates:
-        applies-to: "security-updates"
-        patterns:
-          - "*"
     commit-message:
       prefix: "chore"
       include: "scope"

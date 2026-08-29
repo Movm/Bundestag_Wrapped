@@ -61,9 +61,8 @@ jobs:
             - Fix a hardcoded python3.<minor>/site-packages COPY path after a base bump.
             For a Python image bump where PyPI has no compatible wheels for the target
             (check via curl to https://pypi.org), do NOT force it — close the PR with
-            `gh pr close` and a one-line reason. Do NOT touch apps/wrapped/mobile
-            (Expo-managed). When you have a fix: run the relevant tests/build, commit,
-            and push to the PR branch. Do not merge or deploy.
+            `gh pr close` and a one-line reason. When you have a fix: run the relevant
+            tests/build, commit, and push to the PR branch. Do not merge or deploy.
           claude_args: >
             --bare
             --model ${{ env.CLAUDE_MODEL }}
