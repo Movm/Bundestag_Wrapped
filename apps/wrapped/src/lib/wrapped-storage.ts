@@ -21,7 +21,7 @@ function keyFor(surface?: StorageSurface): string {
 }
 
 function readProgress(key: string): WrappedProgress | null {
-  const raw = localStorage.getItem(key);
+  const raw = window.localStorage.getItem(key);
   if (!raw) return null;
   return JSON.parse(raw) as WrappedProgress;
 }
@@ -38,22 +38,22 @@ export function getWrappedProgress(surface?: StorageSurface): WrappedProgress | 
     if (!data && surface && surface.editionId === 'legacy') {
       data = readProgress(STORAGE_KEY);
       if (data) {
-        localStorage.setItem(key, JSON.stringify(data));
-        localStorage.removeItem(STORAGE_KEY);
+        window.localStorage.setItem(key, JSON.stringify(data));
+        window.localStorage.removeItem(STORAGE_KEY);
       }
     }
     if (!data) return null;
 
     // Check expiration
     if (Date.now() - data.savedAt > TTL_MS) {
-      localStorage.removeItem(key);
+      window.localStorage.removeItem(key);
       return null;
     }
 
     return data;
   } catch {
     // Invalid JSON or other error - clear corrupted data
-    localStorage.removeItem(keyFor(surface));
+    window.localStorage.removeItem(keyFor(surface));
     return null;
   }
 }
@@ -70,7 +70,7 @@ export function setWrappedProgress(
       ...progress,
       savedAt: Date.now(),
     };
-    localStorage.setItem(keyFor(surface), JSON.stringify(data));
+    window.localStorage.setItem(keyFor(surface), JSON.stringify(data));
   } catch {
     // Storage full or disabled - fail silently
   }
@@ -81,7 +81,7 @@ export function setWrappedProgress(
  */
 export function clearWrappedProgress(surface?: StorageSurface): void {
   try {
-    localStorage.removeItem(keyFor(surface));
+    window.localStorage.removeItem(keyFor(surface));
   } catch {
     // Fail silently
   }
