@@ -37,8 +37,8 @@ python -m spacy download de_core_news_lg
 # Test MCP server connection
 bundestag-analysis test
 
-# Download and analyze protocols
-bundestag-analysis download ./data -w 21
+# Download an inclusive calendar-year selection (repeat --wahlperiode as needed)
+bundestag-analysis download ./data --from 2026-01-01 --to 2026-12-31 -w 21
 bundestag-analysis parse ./data
 bundestag-analysis analyze ./data -o ./results
 
@@ -55,6 +55,13 @@ bundestag-analysis serve --port 8000
 # Start Wrapped API (serves pre-computed data, no spaCy required)
 bundestag-analysis serve-wrapped --port 8001 --data-dir ./web-output
 ```
+
+`download` stores the selected protocol metadata (ID, document number, date, and
+Wahlperiode) in a versioned resume state. Resuming is only allowed with identical
+`--from`, `--to`, `--wahlperiode`, and `--max-protocols` options, preventing data
+from different editions from mixing. Omitting `--from` and `--to` keeps the legacy
+cumulative selection of all available protocol dates; records without a valid date
+are recorded as coverage problems and are never silently included.
 
 ### Export Commands
 

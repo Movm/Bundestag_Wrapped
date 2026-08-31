@@ -5,6 +5,9 @@ from datetime import datetime
 from pathlib import Path
 
 
+STATE_SCHEMA_VERSION = 2
+
+
 class DataStore:
     """Manages persistent storage for the download/parse pipeline.
 
@@ -50,22 +53,47 @@ class DataStore:
 
     def init_state(
         self,
-        wahlperiode: int,
         server: str,
-        protocol_ids: list[int],
+        selection: dict,
+        protocol_metadata: list[dict],
+        coverage_problems: list[dict],
     ) -> dict:
-        """Initialize a new state for fresh download."""
+        """Initialize a versioned state for one reproducible protocol selection."""
         self.ensure_dirs()
         state = {
-            "wahlperiode": wahlperiode,
+            "stateSchemaVersion": STATE_SCHEMA_VERSION,
             "server": server,
-            "protocol_ids": protocol_ids,
+            "selection": selection,
+            "protocols": protocol_metadata,
+            # Keep IDs explicit for inexpensive resume/progress operations.
+            "protocol_ids": [protocol["id"] for protocol in protocol_metadata],
+            "coverageProblems": coverage_problems,
             "downloaded": [],
             "failed": [],
             "parsed": False,
         }
         self.save_state(state)
         return state
+
+    def assert_resume_compatible(self, state: dict, selection: dict) -> None:
+        """Reject resume when it could combine data from different editions."""
+        if state.get("stateSchemaVersion") != STATE_SCHEMA_VERSION:
+            raise ValueError(
+                "Existing download state uses an unsupported schema version. "
+                "Start a new data directory for this selection."
+            )
+        if state.get("selection") != selection:
+            raise ValueError(
+                "Existing download state was created with different selection parameters. "
+                "Use the original --from/--to/--wahlperiode values or a new data directory."
+            )
+
+    def protocol_metadata(self, state: dict, protocol_id: int) -> dict | None:
+        """Return persisted selection metadata for a downloaded protocol."""
+        for protocol in state.get("protocols", []):
+            if protocol.get("id") == protocol_id:
+                return protocol
+        return None
 
     def get_pending_ids(self, state: dict) -> list[int]:
         """Get protocol IDs that still need to be downloaded.
@@ -146,7 +174,7 @@ class DataStore:
 
         return {
             "status": "in_progress" if downloaded < total else "download_complete",
-            "wahlperiode": state.get("wahlperiode"),
+            "wahlperioden": state.get("selection", {}).get("wahlperioden", []),
             "server": state.get("server"),
             "total_protocols": total,
             "downloaded": downloaded,
@@ -154,4 +182,5 @@ class DataStore:
             "pending": total - downloaded,
             "parsed": state.get("parsed", False),
             "last_updated": state.get("last_updated"),
+            "coverage_problems": len(state.get("coverageProblems", [])),
         }
