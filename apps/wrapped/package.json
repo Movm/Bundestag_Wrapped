@@ -8,6 +8,7 @@
     "dev": "vite",
     "prebuild": "node scripts/generate-sitemap.cjs",
     "build": "tsc -b && vite build",
+    "check:bundle-budget": "node scripts/check-bundle-budget.cjs",
     "check:edition-surface": "node scripts/check-edition-hardcodes.cjs",
     "import:abgeordnetenwatch": "node scripts/import-abgeordnetenwatch.cjs",
     "sync:abgeordnetenwatch": "node scripts/sync-abgeordnetenwatch.cjs",

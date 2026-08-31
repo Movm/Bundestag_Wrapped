@@ -48,6 +48,9 @@ jobs:
       - name: Build web
         run: pnpm --filter bundestag-wrapped build
 
+      - name: Check web bundle budget
+        run: pnpm --filter bundestag-wrapped check:bundle-budget
+
   python:
     name: Python analysis (pytest)
     runs-on: ubuntu-latest

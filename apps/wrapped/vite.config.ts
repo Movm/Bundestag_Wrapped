@@ -102,7 +102,7 @@ export default defineConfig({
         // Pre-cache critical assets
         globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
         // Don't pre-cache large JSON files (they'll be runtime cached)
-        globIgnores: ['**/speeches_*.json', '**/words_index.json'],
+        globIgnores: ['**/speeches_*.json', '**/words_index.json', '**/word_rankings.json'],
       },
     }),
   ],
@@ -115,6 +115,7 @@ export default defineConfig({
     },
   },
   build: {
+    manifest: true,
     rollupOptions: {
       output: {
         // Vite 8's bundler only accepts the function form of manualChunks.

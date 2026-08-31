@@ -7,4 +7,4 @@ services:
         VITE_UMAMI_WEBSITE_ID: ${VITE_UMAMI_WEBSITE_ID:-}
     restart: unless-stopped
     expose:
-      - "80"
+      - "8080"
