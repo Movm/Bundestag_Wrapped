@@ -21,6 +21,10 @@ class BundestagMCPClient:
 
     def __init__(self, base_url: str = "http://localhost:3000"):
         self.base_url = base_url.rstrip("/")
+        # The public service is documented as an MCP endpoint ending in /mcp,
+        # while local deployments are commonly configured as their server root.
+        # Accept both forms so callers never send requests to /mcp/mcp.
+        self.mcp_url = self.base_url if self.base_url.endswith("/mcp") else f"{self.base_url}/mcp"
         self.session_id: str | None = None
         self._client: httpx.AsyncClient | None = None
 
@@ -47,7 +51,7 @@ class BundestagMCPClient:
         }
 
         response = await self._client.post(
-            f"{self.base_url}/mcp",
+            self.mcp_url,
             json=init_request,
             headers={"Content-Type": "application/json", "Accept": "application/json, text/event-stream"},
         )
@@ -76,7 +80,7 @@ class BundestagMCPClient:
         if self.session_id:
             headers["mcp-session-id"] = self.session_id
 
-        await self._client.post(f"{self.base_url}/mcp", json=notification, headers=headers)
+        await self._client.post(self.mcp_url, json=notification, headers=headers)
 
     async def call_tool(self, name: str, arguments: dict[str, Any] = None) -> Any:
         """Call an MCP tool and return the result."""
@@ -98,7 +102,7 @@ class BundestagMCPClient:
         # responses even though retrying the same request succeeds.
         for attempt in range(MAX_RETRIES):
             try:
-                response = await self._client.post(f"{self.base_url}/mcp", json=request, headers=headers)
+                response = await self._client.post(self.mcp_url, json=request, headers=headers)
                 response.raise_for_status()
                 break
             except httpx.HTTPStatusError as error:
