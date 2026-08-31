@@ -264,8 +264,8 @@ importers:
   services/mcp:
     dependencies:
       '@mistralai/mistralai':
-        specifier: ^2.6.3
-        version: 2.6.3(@opentelemetry/api@1.9.1)
+        specifier: ^2.6.4
+        version: 2.6.4(@opentelemetry/api@1.9.1)
       '@modelcontextprotocol/sdk':
         specifier: ^1.30.0
         version: 1.30.0(zod@4.4.3)
@@ -1534,8 +1534,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@mistralai/mistralai@2.6.3':
-    resolution: {integrity: sha512-4nOSDZTJXnmfsDtPFZEX4tAaJwIP2xyZwka9XK7ueNmOX0DuVhu2Ph2uWEeBMaNjpXbnVgmXLZ2Q58vFd8gsgg==}
+  '@mistralai/mistralai@2.6.4':
+    resolution: {integrity: sha512-PPt4GyJqs2hEsWrYCJZK5f0ORmT+L2MSm75LVGD7kBLf6ZKsoDpld/FRBQXr8xG6iFCBOFJFYzvGYhUb+UCkbw==}
     peerDependencies:
       '@opentelemetry/api': ^1.9.0
       '@opentelemetry/exporter-trace-otlp-http': ^0.220.0
@@ -5688,8 +5688,8 @@ packages:
     resolution: {integrity: sha512-ghgmKt5o4Tly5yEG/UJp8qTd0AN7Xalw4XBtDEKP655B699qMEtra1WlXeE6WIvdEG481JvRxULKsInq/iNysw==}
     engines: {node: '>=0.10.0'}
 
-  serialize-javascript@7.1.0:
-    resolution: {integrity: sha512-RNEqWOyhhUQYN9V1GfHwu9AR/g+NTciH6Z5u3/no6X3/w+04J2lVDL+svFQVXgXrEGBMG2puMVN3gq2SNGuTGw==}
+  serialize-javascript@7.1.1:
+    resolution: {integrity: sha512-k3CMsaIvvdSwm8oLB4MXSl0wH2/cwlH7xGcnRd2DaeRmBkbzYmyT8j0tsX60DwD1eRwHTpNpH8ljKu9oUT1MeQ==}
     engines: {node: '>=20.0.0'}
 
   serve-static@1.16.3:
@@ -5871,8 +5871,8 @@ packages:
     resolution: {integrity: sha512-o7+c9bW6zpAdJHTtujeePODAhkuicdAryFsfVKwA+wGw89wJ4GTY484WTucM9hLtDEOpOvI+aHnzqnC5lHp4Rg==}
     engines: {node: '>= 0.4'}
 
-  string.prototype.matchall@4.0.12:
-    resolution: {integrity: sha512-6CC9uyBL+/48dYizRf7H7VAYCMCNTBeM78x/VTUe9bFEaxBepPJDa1Ow99LqI/1yF7kuy7Q3cQsYMrcjGUcskA==}
+  string.prototype.matchall@4.1.0:
+    resolution: {integrity: sha512-tHNHTxInrYLCga9O9YGxWA3G9/nnzQw8UGAyqGx3Ar1pSTTzIuM4woFSq4SowkXCjJIwq5sIiQvEfRI9tCH1qQ==}
     engines: {node: '>= 0.4'}
 
   string.prototype.trim@1.2.11:
@@ -8179,7 +8179,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.6.0
 
-  '@mistralai/mistralai@2.6.3(@opentelemetry/api@1.9.1)':
+  '@mistralai/mistralai@2.6.4(@opentelemetry/api@1.9.1)':
     dependencies:
       '@opentelemetry/semantic-conventions': 1.43.0
       ws: 8.21.3
@@ -8746,7 +8746,7 @@ snapshots:
 
   '@rollup/plugin-terser@1.0.0(rollup@4.63.1)':
     dependencies:
-      serialize-javascript: 7.1.0
+      serialize-javascript: 7.1.1
       smob: 1.6.2
       terser: 5.51.2
     optionalDependencies:
@@ -8943,7 +8943,7 @@ snapshots:
       ejs: 3.1.10
       json5: 2.2.3
       magic-string: 0.30.21
-      string.prototype.matchall: 4.0.12
+      string.prototype.matchall: 4.1.0
 
   '@types/babel__core@7.20.5':
     dependencies:
@@ -12845,7 +12845,7 @@ snapshots:
 
   serialize-error@2.1.0: {}
 
-  serialize-javascript@7.1.0: {}
+  serialize-javascript@7.1.1: {}
 
   serve-static@1.16.3:
     dependencies:
@@ -13029,7 +13029,7 @@ snapshots:
       define-properties: 1.2.1
       es-abstract: 1.24.2
 
-  string.prototype.matchall@4.0.12:
+  string.prototype.matchall@4.1.0:
     dependencies:
       call-bind: 1.0.9
       call-bound: 1.0.4
