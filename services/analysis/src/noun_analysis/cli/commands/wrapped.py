@@ -1,16 +1,82 @@
 """Wrapped commands for Bundestag Wrapped exports."""
 
 import json
+import random
 import time
 from collections import Counter
+from datetime import datetime, timezone
 from pathlib import Path
 
 import click
 
 from noun_analysis.wrapped import WrappedData, WrappedRenderer
 from noun_analysis.wrapped.speaker_export import SpeakerExporter
+from noun_analysis.edition.export import EditionValidationError, build_manifest, publish_edition
 
 from ..constants import console
+
+
+@click.command("generate-edition")
+@click.option("--edition", "edition_id", required=True, help="Edition identifier, e.g. 2026")
+@click.option("--from", "period_start", required=True, help="Inclusive ISO start date")
+@click.option("--to", "period_end", required=True, help="Inclusive ISO end date")
+@click.option("--wahlperiode", "wahlperioden", multiple=True, type=int, required=True, help="Legislative period (repeatable)")
+@click.option("--output", "output_root", type=click.Path(), required=True, help="Edition output root")
+@click.option("--data-dir", type=click.Path(exists=True), default="./data_wp21", show_default=True)
+@click.option("--results-dir", type=click.Path(exists=True), default="./results_wp21", show_default=True)
+@click.option("--data-version", default="preview", show_default=True)
+@click.option("--freeze", is_flag=True, help="Mark this explicitly complete and frozen")
+def generate_edition(
+    edition_id: str,
+    period_start: str,
+    period_end: str,
+    wahlperioden: tuple[int, ...],
+    output_root: str,
+    data_dir: str,
+    results_dir: str,
+    data_version: str,
+    freeze: bool,
+):
+    """Generate one atomic, schema-validated Wrapped edition."""
+    try:
+        year = int(edition_id)
+        datetime.fromisoformat(period_start)
+        datetime.fromisoformat(period_end)
+        if period_start > period_end:
+            raise ValueError("--from must be before or equal to --to")
+        data = WrappedData.load(Path(results_dir), Path(data_dir))
+        speeches_by_party = json.loads((Path(data_dir) / "speeches.json").read_text(encoding="utf-8"))
+        speeches = [speech for party_speeches in speeches_by_party.values() for speech in party_speeches]
+        generated_at = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+        # Existing quiz generation uses randomised answer order. Seed it from
+        # immutable edition inputs so the published data remains reproducible.
+        random_state = random.getstate()
+        random.seed(f"{edition_id}:{data_version}")
+        try:
+            wrapped_data = data.to_web_json()
+        finally:
+            random.setstate(random_state)
+        wrapped_data["metadata"]["generatedAt"] = generated_at
+        exporter = SpeakerExporter(data)
+        speaker_index = exporter.generate_index()
+        artifacts: dict[str, object] = {
+            "wrapped.json": wrapped_data,
+            "speakers/index.json": speaker_index,
+            "speeches.json": {"speeches": speeches},
+            "words.json": {"parties": [{"party": party["party"], "words": party["topWords"]} for party in wrapped_data["parties"]]},
+            "word_rankings.json": {"parties": [{"party": party["party"], "signatureWords": party["signatureWords"]} for party in wrapped_data["parties"]]},
+            "topic_rankings.json": {"topics": wrapped_data["hotTopics"]},
+            "content.json": {"editionId": edition_id, "year": year},
+        }
+        for speaker_key in exporter._speaker_index:
+            speaker = exporter.generate_speaker_data(speaker_key)
+            if speaker:
+                artifacts[f"speakers/{speaker['slug']}.json"] = speaker
+        manifest = build_manifest(edition_id, year, data_version, generated_at, period_start, period_end, list(wahlperioden), speeches, freeze)
+        target = publish_edition(Path(output_root), edition_id, data_version, manifest, artifacts)
+    except (FileNotFoundError, ValueError, EditionValidationError) as error:
+        raise click.ClickException(str(error)) from error
+    console.print(f"[green]Published validated edition: {target}[/]")
 
 
 @click.command()

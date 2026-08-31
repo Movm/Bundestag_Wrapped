@@ -56,6 +56,7 @@ main.add_command(wrapped.export_speeches)
 main.add_command(wrapped.export_interruptions)
 main.add_command(wrapped.export_neutral_texts)
 main.add_command(wrapped.export_all)
+main.add_command(wrapped.generate_edition)
 
 # Register commands from evaluate.py
 main.add_command(evaluate.evaluate_parser)
