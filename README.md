@@ -34,7 +34,7 @@ each as an animated story card you can share.
 It's free, open-source, and runs on the Bundestag's own [open-data DIP API](https://dip.bundestag.de/).
 
 > ### ▶ **[bundestag-wrapped.de](https://bundestag-wrapped.de)**
-> No login, no install — open it in a browser (or grab the native app).
+> No login or installation — open it in a browser.
 
 ---
 
@@ -71,8 +71,8 @@ It's free, open-source, and runs on the Bundestag's own [open-data DIP API](http
 - **Party & statistics pages** — coalition vs. opposition, who interrupts whom, cross-party
   comparisons.
 
-### 📱 Everywhere
-- **Web app** (React 19) and a **native iOS/Android app** (Expo / React Native).
+### 📱 Web/PWA
+- **Web app** (React 19) with Progressive Web App support.
 
 ### 🤖 Built for humans _and_ AI
 - The same parliamentary data powers an **MCP server** so you can ask **Claude, ChatGPT, or
@@ -97,7 +97,7 @@ Three layers turn raw parliamentary records into a Wrapped story (and an AI-quer
    • export static JSON  ────────┐              • proxies the NLP service
               │                  │                          │
               ▼                  │                          ▼
-   apps/wrapped  (React + RN)    │              AI assistants & apps
+   apps/wrapped  (React Web/PWA) │              AI assistants & apps
    renders the static JSON       │              (Claude · ChatGPT · Grünerator)
                                  └──────────────────────────┘
 ```
@@ -164,8 +164,7 @@ A single pnpm monorepo (three formerly-separate repos, git history preserved):
 
 | Package | Path | Stack | Role |
 |---------|------|-------|------|
-| **Wrapped** (web) | [`apps/wrapped`](apps/wrapped/README.md) | React 19 · Vite 7 · Tailwind 4 | The flagship "Wrapped" web experience |
-| **Wrapped** (mobile) | [`apps/wrapped/mobile`](apps/wrapped/README.md) | Expo SDK 54 · React Native 0.81 | Native iOS/Android app |
+| **Wrapped** (web/PWA) | [`apps/wrapped`](apps/wrapped/README.md) | React 19 · Vite 7 · Tailwind 4 | The flagship "Wrapped" web experience |
 | **Analysis** | [`services/analysis`](services/analysis/README.md) | Python 3.12 · spaCy · FastAPI | NLP pipeline, JSON exports, two APIs, CLI |
 | **MCP server** | [`services/mcp`](services/mcp/README.md) | Node 22 · Express 5 · MCP SDK | 30+ tools + semantic search for AI clients |
 
@@ -185,7 +184,6 @@ pnpm install                 # one lockfile for all JS/TS packages
 
 pnpm dev:web                 # Wrapped web app  → http://localhost:5173
 pnpm dev:mcp                 # MCP server       → http://localhost:3000  (needs DIP_API_KEY)
-pnpm --filter bundestag-wrapped-mobile start   # Expo dev server
 
 pnpm test                    # all workspace tests
 pnpm lint                    # all workspace lint
@@ -193,9 +191,7 @@ pnpm build                   # build the web app
 ```
 
 > [!NOTE]
-> **React versions are decoupled.** `apps/wrapped/mobile` (Expo) pins the exact React version its
-> SDK ships — do **not** add `react`/`react-dom` to root `pnpm.overrides` (it breaks React Native).
-> Root `.npmrc` uses `node-linker=hoisted` so Expo and native modules resolve correctly.
+> Root `.npmrc` uses `node-linker=hoisted` so the native `better-sqlite3` dependency resolves correctly.
 
 ### Python NLP service
 
@@ -220,7 +216,7 @@ See each package README for env vars and deploy targets.
 
 ## 🛠️ Tech stack
 
-**Frontend** — React 19 · Vite 7 · TailwindCSS 4 · Motion · Zustand · TanStack Query · Expo / React Native · NativeWind
+**Frontend** — React 19 · Vite 7 · TailwindCSS 4 · Motion · Zustand · TanStack Query · PWA
 **Backend** — Node 22 · Express 5 · MCP SDK · Qdrant · Mistral embeddings · Python 3.12 · spaCy · FastAPI
 **Infra** — Docker · Coolify · pnpm workspaces · GitHub Actions (CI · CodeQL · Dependabot)
 

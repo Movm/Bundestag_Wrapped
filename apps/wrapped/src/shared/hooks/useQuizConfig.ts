@@ -41,7 +41,7 @@ export interface QuizConfigOptions<T> {
 
 /**
  * Hook to build a memoized quiz configuration
- * Platform-agnostic - works on both web and mobile
+ * Reusable across quiz components in the web app.
  *
  * @example
  * const quiz = useQuizConfig({

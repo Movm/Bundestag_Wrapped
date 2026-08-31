@@ -1,7 +1,7 @@
 /**
  * Shared Sounds Module
  *
- * Exports platform-agnostic sound types and hook factory.
+ * Exports sound types and the hook factory for the web app.
  */
 
 export * from './types';
