@@ -98,6 +98,11 @@ def test_mcp_client_forwards_date_range_to_protocol_search(monkeypatch):
     }
 
 
+def test_mcp_client_accepts_a_server_root_or_the_documented_mcp_endpoint():
+    assert BundestagMCPClient("https://example.test").mcp_url == "https://example.test/mcp"
+    assert BundestagMCPClient("https://example.test/mcp").mcp_url == "https://example.test/mcp"
+
+
 def test_resume_requires_the_same_versioned_selection(tmp_path):
     store = DataStore(tmp_path)
     original = selection(wahlperioden=[21])
