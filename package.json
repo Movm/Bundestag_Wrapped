@@ -14,6 +14,8 @@
     "build": "pnpm --filter bundestag-wrapped build",
     "test": "pnpm -r test",
     "lint": "pnpm -r lint",
+    "contract:generate": "node scripts/generate-wrapped-contract.mjs",
+    "contract:check": "node scripts/generate-wrapped-contract.mjs --check",
     "analysis:serve": "cd services/analysis && bundestag-analysis serve",
     "analysis:serve-wrapped": "cd services/analysis && bundestag-analysis serve-wrapped"
   },

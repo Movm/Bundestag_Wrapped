@@ -1,3 +1,8 @@
+import { validateWrappedData } from './wrapped-contract';
+import type { WrappedData as ContractWrappedData } from '@/generated/wrapped-contract-v1';
+
+export type WrappedData = ContractWrappedData;
+
 export interface PartyStats {
   party: string;
   speeches: number;
@@ -202,7 +207,7 @@ export interface ToneAnalysis {
   };
 }
 
-export interface WrappedData {
+export interface LegacyWrappedData {
   metadata: {
     generatedAt: string;
     totalSpeeches: number;
@@ -247,5 +252,6 @@ export async function loadWrappedData(): Promise<WrappedData> {
   if (!response.ok) {
     throw new Error('Failed to load wrapped data');
   }
-  return response.json();
+  const payload: unknown = await response.json();
+  return validateWrappedData(payload, '/wrapped.json');
 }
