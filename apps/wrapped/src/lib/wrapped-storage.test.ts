@@ -5,7 +5,20 @@ const edition2025 = { editionId: '2025', dataVersion: 'frozen-1' };
 const edition2026 = { editionId: '2026', dataVersion: 'preview-1' };
 
 describe('wrapped storage', () => {
-  beforeEach(() => window.localStorage.clear());
+  beforeEach(() => {
+    const values = new Map<string, string>();
+    Object.defineProperty(window, 'localStorage', {
+      configurable: true,
+      value: {
+        clear: () => values.clear(),
+        getItem: (key: string) => values.get(key) ?? null,
+        key: (index: number) => [...values.keys()][index] ?? null,
+        removeItem: (key: string) => values.delete(key),
+        setItem: (key: string, value: string) => values.set(key, value),
+        get length() { return values.size; },
+      } satisfies Storage,
+    });
+  });
 
   it('isolates progress between editions and data versions', () => {
     setWrappedProgress({ currentSection: 'quiz-1', quizAnswers: {} }, edition2025);
