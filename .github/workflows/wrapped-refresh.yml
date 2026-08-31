@@ -38,7 +38,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  MCP_SERVER: https://mcp.bundestag-wrapped.de
+  MCP_SERVER: https://bundestagapi.moritz-waechter.de/mcp
   EDITION: ${{ inputs.editionId || '2026' }}
   FROM: ${{ inputs.from || '2026-01-01' }}
   TO: ${{ inputs.to || github.run_started_at }}
