@@ -1,6 +1,6 @@
 import Ajv2020, { type ErrorObject } from 'ajv/dist/2020';
 import addFormats from 'ajv-formats';
-import contractSchema from '../../../../contracts/wrapped/v1.schema.json';
+import contractSchema from '../generated/wrapped-contract-v1.schema.json';
 import type { WrappedData } from '@/generated/wrapped-contract-v1';
 
 export type ContractDocument = 'EditionsIndex' | 'EditionManifest' | 'WrappedData';
