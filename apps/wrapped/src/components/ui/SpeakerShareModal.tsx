@@ -7,6 +7,8 @@ import {
   shareSpeakerImage,
   type SpeakerShareData,
 } from '@/lib/speaker-share-canvas';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionSurface } from '@/edition/surface';
 
 interface SpeakerShareModalProps {
   isOpen: boolean;
@@ -15,6 +17,7 @@ interface SpeakerShareModalProps {
 }
 
 export function SpeakerShareModal({ isOpen, onClose, data }: SpeakerShareModalProps) {
+  const surface = editionSurface(useOptionalEdition());
   const [canShare, setCanShare] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -24,19 +27,19 @@ export function SpeakerShareModal({ isOpen, onClose, data }: SpeakerShareModalPr
 
   useEffect(() => {
     if (isOpen && canvasRef.current) {
-      renderSpeakerShareImage(canvasRef.current, data);
+      renderSpeakerShareImage(canvasRef.current, { ...data, editionTitle: surface.title, editionId: surface.editionId });
     }
-  }, [isOpen, data]);
+  }, [isOpen, data, surface.editionId, surface.title]);
 
   const handleDownload = () => {
     if (canvasRef.current) {
-      downloadSpeakerShareImage(canvasRef.current, data.name);
+      downloadSpeakerShareImage(canvasRef.current, data.name, surface.editionId);
     }
   };
 
   const handleShare = async () => {
     if (canvasRef.current) {
-      await shareSpeakerImage(canvasRef.current, data.name);
+      await shareSpeakerImage(canvasRef.current, data.name, surface.title, surface.editionId);
     }
   };
 

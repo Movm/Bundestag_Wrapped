@@ -6,7 +6,7 @@
 export const SPEAKER_CONTENT = {
   intro: {
     emoji: '🏛️',
-    subtitle: 'Dein Bundestag Wrapped 2025',
+    subtitle: 'Dein Bundestag Wrapped',
     cta: "Los geht's",
   },
 
@@ -46,7 +46,7 @@ export const SPEAKER_CONTENT = {
   end: {
     emoji: '🎉',
     title: "Das war's!",
-    subtitle: 'Dein Bundestag Wrapped 2025',
+    subtitle: 'Dein Bundestag Wrapped',
     shareButton: 'Ergebnis teilen',
     restartButton: '🔄 Nochmal ansehen',
     otherSpeakersButton: 'Andere Abgeordnete ansehen',

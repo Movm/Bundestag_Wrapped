@@ -13,6 +13,8 @@ import {
   type SpeakerShareData,
 } from '@/lib/speaker-share-canvas';
 import { signatureWordsForDisplay } from '@/lib/speaker-profile-utils';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionSurface } from '@/edition/surface';
 
 interface SpeakerShareSlideProps {
   speaker: SpeakerWrapped;
@@ -23,7 +25,7 @@ const CONFETTI_COLORS = ['#000000', '#DD0000', '#FFCC00'];
 
 const MotionLink = motion.create(Link);
 
-function toShareData(data: SpeakerWrapped, wordIndex: number): SpeakerShareData {
+function toShareData(data: SpeakerWrapped, wordIndex: number, editionTitle: string, editionId: string): SpeakerShareData {
   // Use Bundestag comparison - shows national uniqueness
   const sigWord = signatureWordsForDisplay(data)[wordIndex];
   return {
@@ -44,6 +46,8 @@ function toShareData(data: SpeakerWrapped, wordIndex: number): SpeakerShareData 
           ratio: sigWord.ratio ?? 0,
         }
       : null,
+    editionTitle,
+    editionId,
   };
 }
 
@@ -97,6 +101,7 @@ export const SpeakerShareSlide = memo(function SpeakerShareSlide({
   speaker,
   onRestart,
 }: SpeakerShareSlideProps) {
+  const surface = editionSurface(useOptionalEdition());
   const [canShare, setCanShare] = useState(false);
   const [selectedWordIndex, setSelectedWordIndex] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -110,20 +115,20 @@ export const SpeakerShareSlide = memo(function SpeakerShareSlide({
   useEffect(() => {
     preloadLogo().then(() => {
       if (canvasRef.current) {
-        renderSpeakerShareImage(canvasRef.current, toShareData(speaker, selectedWordIndex));
+        renderSpeakerShareImage(canvasRef.current, toShareData(speaker, selectedWordIndex, surface.title, surface.editionId));
       }
     });
-  }, [speaker, selectedWordIndex]);
+  }, [speaker, selectedWordIndex, surface.editionId, surface.title]);
 
   const handleDownload = () => {
     if (canvasRef.current) {
-      downloadSpeakerShareImage(canvasRef.current, speaker.name);
+      downloadSpeakerShareImage(canvasRef.current, speaker.name, surface.editionId);
     }
   };
 
   const handleShare = async () => {
     if (canvasRef.current) {
-      await shareSpeakerImage(canvasRef.current, speaker.name);
+      await shareSpeakerImage(canvasRef.current, speaker.name, surface.title, surface.editionId);
     }
   };
 

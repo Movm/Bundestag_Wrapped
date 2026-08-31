@@ -2,6 +2,8 @@ import { useState, useRef, useEffect, useMemo, memo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Download, Share2, X } from 'lucide-react';
 import { renderShareImage, downloadShareImage, shareImage, preloadLogo } from '@/lib/share-canvas';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionSurface } from '@/edition/surface';
 
 interface ShareModalProps {
   isOpen: boolean;
@@ -56,6 +58,7 @@ const FallingConfetti = memo(function FallingConfetti() {
 });
 
 export function ShareModal({ isOpen, onClose, correctCount, totalQuestions }: ShareModalProps) {
+  const surface = editionSurface(useOptionalEdition());
   const [userName, setUserName] = useState('');
   const [canShare, setCanShare] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -73,21 +76,23 @@ export function ShareModal({ isOpen, onClose, correctCount, totalQuestions }: Sh
             correctCount,
             totalQuestions,
             userName: userName.trim() || undefined,
+            editionTitle: surface.title,
+            editionId: surface.editionId,
           });
         }
       });
     }
-  }, [isOpen, correctCount, totalQuestions, userName]);
+  }, [isOpen, correctCount, totalQuestions, userName, surface.editionId, surface.title]);
 
   const handleDownload = () => {
     if (canvasRef.current) {
-      downloadShareImage(canvasRef.current, userName);
+      downloadShareImage(canvasRef.current, userName, surface.editionId);
     }
   };
 
   const handleShare = async () => {
     if (canvasRef.current) {
-      await shareImage(canvasRef.current);
+      await shareImage(canvasRef.current, surface.title, surface.editionId);
     }
   };
 

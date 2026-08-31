@@ -1,12 +1,16 @@
 import { SEO } from './SEO';
 import { SITE_CONFIG } from './constants';
 import type { SpeakerWrapped } from '@/data/speaker-wrapped';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionPath, editionSurface } from '@/edition/surface';
 
 interface SpeakerSEOProps {
   speaker: SpeakerWrapped;
 }
 
 export function SpeakerSEO({ speaker }: SpeakerSEOProps) {
+  const surface = editionSurface(useOptionalEdition());
+  const canonicalPath = editionPath(surface, `wrapped/${speaker.slug}`);
   const title = `${speaker.name} (${speaker.party})`;
 
   const description = speaker.spiritAnimal
@@ -33,14 +37,14 @@ export function SpeakerSEO({ speaker }: SpeakerSEOProps) {
       name: 'Deutscher Bundestag',
       url: 'https://www.bundestag.de',
     },
-    url: `${SITE_CONFIG.siteUrl}/wrapped/${speaker.slug}`,
+    url: `${SITE_CONFIG.siteUrl}${canonicalPath}`,
   };
 
   return (
     <SEO
       title={title}
       description={description}
-      canonicalUrl={`/wrapped/${speaker.slug}`}
+      canonicalUrl={canonicalPath}
       ogImage={ogImage}
       ogType="profile"
       structuredData={personSchema}

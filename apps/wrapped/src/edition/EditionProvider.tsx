@@ -1,16 +1,10 @@
 import { createContext, type ReactNode, useContext } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import type { WrappedData } from '@/data/wrapped';
 import { loadEditionWrapped, loadManifest, loadRegistry } from './loader';
-import { LEGACY_EDITION_ID, type Edition } from './registry';
+import { LEGACY_EDITION_ID } from './registry';
+import type { EditionContextValue } from './types';
 
-interface EditionContextValue {
-  editionId: string;
-  manifest?: Edition;
-  data?: WrappedData;
-  error?: Error | null;
-  isLoading: boolean;
-}
+export type { EditionContextValue } from './types';
 
 const EditionContext = createContext<EditionContextValue | null>(null);
 

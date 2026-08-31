@@ -150,7 +150,7 @@ function drawHeader(ctx: CanvasRenderingContext2D): void {
   ctx.font = '600 24px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
   ctx.textAlign = 'left';
   ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-  ctx.fillText('BUNDESTAG WRAPPED 2025', headerX + logoSize + 12, headerY);
+  ctx.fillText('BUNDESTAG WRAPPED', headerX + logoSize + 12, headerY);
 }
 
 function drawFooter(ctx: CanvasRenderingContext2D, centerX: number): void {

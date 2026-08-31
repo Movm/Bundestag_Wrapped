@@ -5,6 +5,8 @@ import { itemVariants } from '@/components/slides/shared/animations';
 import { getPartyColor, PARTY_BG_CLASSES } from './party-colors';
 import { playSound } from '@/lib/sounds';
 import { displaySpeakerName } from '@/lib/speaker-profile-utils';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionSurface } from '@/edition/surface';
 
 interface SpeakerIntroSlideProps {
   speaker: SpeakerWrapped;
@@ -17,6 +19,7 @@ interface SpeakerIntroSlideProps {
  * Button unlocks scroll to next slide.
  */
 export function SpeakerIntroSlide({ speaker, onStart }: SpeakerIntroSlideProps) {
+  const surface = editionSurface(useOptionalEdition());
   const partyColor = getPartyColor(speaker.party);
 
   const handleStart = () => {
@@ -39,7 +42,7 @@ export function SpeakerIntroSlide({ speaker, onStart }: SpeakerIntroSlideProps) 
         >
           {speaker.party}
         </span>
-        <p className="text-white/60 text-lg mb-8">Dein Bundestag Wrapped 2025</p>
+        <p className="text-white/60 text-lg mb-8">Dein {surface.title}</p>
       </motion.div>
 
       {/* Start button */}
