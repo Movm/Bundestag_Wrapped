@@ -269,7 +269,7 @@ describe('share-canvas', () => {
       downloadShareImage(mockCanvas, 'Max');
 
       // Wait for the toBlob callback
-      expect(mockLink.download).toBe('bundestag-wrapped-2025-max.png');
+      expect(mockLink.download).toBe('bundestag-wrapped-edition-max.png');
 
       createElementSpy.mockRestore();
       revokeObjectURL.mockRestore();

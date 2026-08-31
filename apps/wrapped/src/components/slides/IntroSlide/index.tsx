@@ -7,6 +7,8 @@ import {
   FLIGHT_DURATION,
 } from '../shared';
 import { playSound } from '@/lib/sounds';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionSurface } from '@/edition/surface';
 
 const TEXT_HIDE_DURATION = 0.4;
 
@@ -15,6 +17,7 @@ interface IntroSlideProps {
 }
 
 export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps) {
+  const surface = editionSurface(useOptionalEdition());
   const [launchPhase, setLaunchPhase] = useState<
     'idle' | 'hiding' | 'charging' | 'launching'
   >('idle');
@@ -159,7 +162,7 @@ export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps)
             ease: isHiding ? [0.4, 0, 1, 1] : 'easeOut',
           }}
         >
-          2025
+          {surface.year ?? ''}
         </motion.p>
 
         <motion.button

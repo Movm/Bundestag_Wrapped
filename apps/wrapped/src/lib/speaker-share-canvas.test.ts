@@ -114,7 +114,7 @@ describe('speaker-share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       const hasHeaderText = fillTextCalls.some(
-        (call: unknown[]) => call[0] === 'BUNDESTAG WRAPPED 2025'
+        (call: unknown[]) => call[0] === 'BUNDESTAG WRAPPED'
       );
       expect(hasHeaderText).toBe(true);
     });
@@ -406,7 +406,7 @@ describe('speaker-share-canvas', () => {
 
       downloadSpeakerShareImage(mockCanvas, 'Lars Klingbeil');
 
-      expect(mockLink.download).toBe('bundestag-wrapped-lars-klingbeil.png');
+      expect(mockLink.download).toBe('bundestag-wrapped-edition-lars-klingbeil.png');
 
       createElementSpy.mockRestore();
       revokeObjectURL.mockRestore();
@@ -423,7 +423,7 @@ describe('speaker-share-canvas', () => {
 
       downloadSpeakerShareImage(mockCanvas, 'Jürgen Müller');
 
-      expect(mockLink.download).toBe('bundestag-wrapped-juergen-mueller.png');
+      expect(mockLink.download).toBe('bundestag-wrapped-edition-juergen-mueller.png');
 
       createElementSpy.mockRestore();
       revokeObjectURL.mockRestore();

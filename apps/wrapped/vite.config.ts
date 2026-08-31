@@ -4,6 +4,8 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import path from 'path'
 
+const editionCacheVersion = process.env.VITE_EDITION_CACHE_VERSION ?? 'edition-v1'
+
 export default defineConfig({
   plugins: [
     react(),
@@ -12,9 +14,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'logo.png', 'fonts/*.woff2'],
       manifest: {
-        name: 'Bundestag Wrapped 2025',
+        name: 'Bundestag Wrapped',
         short_name: 'BT Wrapped',
-        description: 'Entdecke die Sprache des Bundestags: Interaktive Statistiken zur 21. Wahlperiode.',
+        description: 'Entdecke die Sprache des Bundestags mit interaktiven, editionsbasierten Statistiken.',
         theme_color: '#0a0a0f',
         background_color: '#0a0a0f',
         display: 'standalone',
@@ -42,23 +44,24 @@ export default defineConfig({
         ],
       },
       workbox: {
-        // Cache static JSON data files
+        // Edition URLs contain both the edition and its immutable dataVersion.
+        // That makes CacheFirst safe without ever serving one edition's data for another.
         runtimeCaching: [
           {
-            urlPattern: /\/wrapped\.json$/,
+            urlPattern: /\/data\/[^/]+\/[^/]+\/wrapped\.json$/,
             handler: 'CacheFirst',
             options: {
-              cacheName: 'wrapped-data',
+              cacheName: `wrapped-data-${editionCacheVersion}`,
               expiration: {
                 maxAgeSeconds: 60 * 60 * 24 * 7, // 1 week
               },
             },
           },
           {
-            urlPattern: /\/speakers\/.*\.json$/,
+            urlPattern: /\/data\/[^/]+\/[^/]+\/speakers\/.*\.json$/,
             handler: 'CacheFirst',
             options: {
-              cacheName: 'speaker-data',
+              cacheName: `speaker-data-${editionCacheVersion}`,
               expiration: {
                 maxEntries: 100,
                 maxAgeSeconds: 60 * 60 * 24 * 7, // 1 week
@@ -66,20 +69,20 @@ export default defineConfig({
             },
           },
           {
-            urlPattern: /\/speeches_db\.json$/,
+            urlPattern: /\/data\/[^/]+\/[^/]+\/speeches.*\.json$/,
             handler: 'CacheFirst',
             options: {
-              cacheName: 'speeches-data',
+              cacheName: `speeches-data-${editionCacheVersion}`,
               expiration: {
                 maxAgeSeconds: 60 * 60 * 24 * 7, // 1 week
               },
             },
           },
           {
-            urlPattern: /\/words_index\.json$/,
+            urlPattern: /\/data\/[^/]+\/[^/]+\/words.*\.json$/,
             handler: 'CacheFirst',
             options: {
-              cacheName: 'words-data',
+              cacheName: `words-data-${editionCacheVersion}`,
               expiration: {
                 maxAgeSeconds: 60 * 60 * 24 * 7, // 1 week
               },

@@ -1,4 +1,6 @@
 import { SITE_CONFIG } from './constants';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionSurface } from '@/edition/surface';
 
 interface SEOProps {
   title?: string | null;
@@ -21,9 +23,12 @@ export function SEO({
   structuredData,
   twitterCard = 'summary_large_image',
 }: SEOProps) {
+  const edition = useOptionalEdition();
+  const surface = editionSurface(edition);
+  const siteName = surface.title;
   const fullTitle = title
-    ? `${title} | ${SITE_CONFIG.siteName}`
-    : SITE_CONFIG.defaultTitle;
+    ? `${title} | ${siteName}`
+    : `${siteName} – Deine Bundestagsstatistiken`;
 
   const absoluteOgImage = ogImage.startsWith('http')
     ? ogImage
@@ -39,16 +44,16 @@ export function SEO({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {noIndex && <meta name="robots" content="noindex,nofollow" />}
-      {absoluteCanonical && <link rel="canonical" href={absoluteCanonical} />}
+      <link rel="canonical" href={absoluteCanonical ?? `${SITE_CONFIG.siteUrl}${surface.canonicalPath}`} />
 
       {/* Open Graph Tags */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={absoluteOgImage} />
       <meta property="og:type" content={ogType} />
-      <meta property="og:site_name" content={SITE_CONFIG.siteName} />
+      <meta property="og:site_name" content={siteName} />
       <meta property="og:locale" content="de_DE" />
-      {absoluteCanonical && <meta property="og:url" content={absoluteCanonical} />}
+      <meta property="og:url" content={absoluteCanonical ?? `${SITE_CONFIG.siteUrl}${surface.canonicalPath}`} />
 
       {/* Twitter Card Tags */}
       <meta name="twitter:card" content={twitterCard} />

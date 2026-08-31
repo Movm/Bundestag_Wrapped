@@ -14,6 +14,8 @@ export interface SpeakerShareData {
     title: string;
     reason: string;
   } | null;
+  editionTitle?: string;
+  editionId?: string;
   signatureWord: {
     word: string;
     count: number;
@@ -202,7 +204,7 @@ export function renderSpeakerShareImage(
   ctx.font = '600 25px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
   ctx.textAlign = 'left';
   ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-  ctx.fillText('BUNDESTAG WRAPPED 2025', headerX + logoSize + 12, headerY);
+  ctx.fillText((data.editionTitle ?? 'Bundestag Wrapped').toUpperCase(), headerX + logoSize + 12, headerY);
 
   // Layout constants
   const leftX = 70;
@@ -377,7 +379,8 @@ export function renderSpeakerShareImage(
 
 export function downloadSpeakerShareImage(
   canvas: HTMLCanvasElement,
-  speakerName: string
+  speakerName: string,
+  editionId = 'edition',
 ): void {
   canvas.toBlob((blob) => {
     if (!blob) return;
@@ -388,7 +391,7 @@ export function downloadSpeakerShareImage(
       .toLowerCase()
       .replace(/\s+/g, '-')
       .replace(/[äöü]/g, (m) => ({ 'ä': 'ae', 'ö': 'oe', 'ü': 'ue' }[m] || m));
-    a.download = `bundestag-wrapped-${slug}.png`;
+    a.download = `bundestag-wrapped-${editionId}-${slug}.png`;
     a.click();
     URL.revokeObjectURL(url);
   }, 'image/png');
@@ -396,7 +399,9 @@ export function downloadSpeakerShareImage(
 
 export async function shareSpeakerImage(
   canvas: HTMLCanvasElement,
-  speakerName: string
+  speakerName: string,
+  editionTitle = 'Bundestag Wrapped',
+  editionId = 'edition',
 ): Promise<boolean> {
   if (!navigator.share || !navigator.canShare) return false;
 
@@ -410,13 +415,13 @@ export async function shareSpeakerImage(
       try {
         const file = new File(
           [blob],
-          `bundestag-wrapped-${speakerName}.png`,
+          `bundestag-wrapped-${editionId}-${speakerName}.png`,
           { type: 'image/png' }
         );
         if (navigator.canShare({ files: [file] })) {
           await navigator.share({
             files: [file],
-            title: `${speakerName} - Bundestag Wrapped 2025`,
+            title: `${speakerName} – ${editionTitle}`,
           });
           resolve(true);
         } else {

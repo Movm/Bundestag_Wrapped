@@ -1,9 +1,9 @@
 export const SITE_CONFIG = {
-  siteName: 'Bundestag Wrapped 2025',
+  siteName: 'Bundestag Wrapped',
   siteUrl: 'https://bundestag-wrapped.de',
-  defaultTitle: 'Bundestag Wrapped 2025 - Deine Bundestagsstatistiken',
+  defaultTitle: 'Bundestag Wrapped – Deine Bundestagsstatistiken',
   defaultDescription:
-    'Entdecke die Sprache des Bundestags: 2,5 Millionen Worter, 4.200 Reden, 600 Abgeordnete. Interaktive Statistiken zur 21. Wahlperiode.',
+    'Entdecke die Sprache des Bundestags mit interaktiven, editionsbasierten Statistiken.',
   defaultOgImage: '/og-image.png',
 } as const;
 
@@ -25,7 +25,7 @@ export const PAGE_META = {
   privacy: {
     title: 'Datenschutz',
     description:
-      'Datenschutzerklarung fur Bundestag Wrapped 2025. Keine Cookies, kein Tracking, keine Datenerhebung.',
+      'Datenschutzerklärung für Bundestag Wrapped. Keine Cookies und keine verpflichtende Datenerhebung.',
   },
   mcp: {
     title: 'MCP-Server',
@@ -40,6 +40,6 @@ export const PAGE_META = {
   documentation: {
     title: 'Dokumentation',
     description:
-      'Methodik und technische Dokumentation zu Bundestag Wrapped 2025. Erfahre wie die Sprachanalyse funktioniert.',
+      'Methodik und technische Dokumentation zu Bundestag Wrapped. Erfahre, wie die Sprachanalyse funktioniert.',
   },
 } as const;

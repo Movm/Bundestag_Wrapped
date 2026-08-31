@@ -173,7 +173,7 @@ export function DatenschutzPage() {
         </div>
 
         <p className="text-white/40 text-xs mt-10">
-          Stand: Dezember 2025
+          Stand: aktuelle Edition
         </p>
       </motion.div>
     </div>

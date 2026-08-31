@@ -8,12 +8,15 @@ import {
   shareSharepic,
   preloadLogo,
 } from '@/lib/slide-sharepics';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionSurface } from '@/edition/surface';
 
 interface SlideShareFABProps {
   slideData: SlideData;
 }
 
 export function SlideShareFAB({ slideData }: SlideShareFABProps) {
+  const surface = editionSurface(useOptionalEdition());
   const [isOpen, setIsOpen] = useState(false);
   const [canShare, setCanShare] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -39,13 +42,13 @@ export function SlideShareFAB({ slideData }: SlideShareFABProps) {
 
   const handleDownload = () => {
     if (!canvasRef.current) return;
-    const filename = `bundestag-wrapped-${slideData.type}.png`;
+    const filename = `bundestag-wrapped-${surface.editionId}-${slideData.type}.png`;
     downloadSharepic(canvasRef.current, filename);
   };
 
   const handleShare = async () => {
     if (!canvasRef.current) return;
-    await shareSharepic(canvasRef.current, 'Bundestag Wrapped 2025');
+    await shareSharepic(canvasRef.current, surface.title);
   };
 
   return (

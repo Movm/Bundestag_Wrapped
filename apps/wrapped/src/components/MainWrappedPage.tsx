@@ -10,6 +10,8 @@ import { BackgroundSystem } from '@/components/ui/BackgroundSystem';
 import { getSlideIntensity } from '@/lib/background-config';
 import { themeMusic, getThemeForSlide } from '@/lib/theme-music';
 import { clearWrappedProgress } from '@/lib/wrapped-storage';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionSurface } from '@/edition/surface';
 import { useIsQuizAnswered, useQuizStore } from '@/stores/quizStore';
 import {
   ScrollContainer,
@@ -32,6 +34,7 @@ interface MainWrappedPageProps {
 }
 
 export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPageProps) {
+  const surface = editionSurface(useOptionalEdition());
   // React Query fetches data and syncs to wrappedStore
   // Slides use store selectors directly, not data prop
   const { isLoading: loading, error, data } = useWrappedData();
@@ -96,7 +99,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
 
   // Restart handler - clears progress and reloads page
   const handleRestart = useCallback(() => {
-    clearWrappedProgress();
+    clearWrappedProgress(surface);
     resetQuiz();
     window.location.reload();
   }, [resetQuiz]);
@@ -180,7 +183,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
 
   return (
     <>
-      <SEO canonicalUrl="/" structuredData={websiteSchema} />
+      <SEO canonicalUrl={surface.canonicalPath} structuredData={{ ...websiteSchema, name: surface.title, url: `${SITE_CONFIG.siteUrl}${surface.canonicalPath}` }} />
       <WrappedToolbar isMenuOpen={isMenuOpen} onMenuToggle={onMenuToggle} />
 
       <BackgroundSystem

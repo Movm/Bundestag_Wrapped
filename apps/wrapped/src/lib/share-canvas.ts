@@ -4,6 +4,8 @@ export interface ShareImageData {
   correctCount: number;
   totalQuestions: number;
   userName?: string;
+  editionTitle?: string;
+  editionId?: string;
 }
 
 export type ShareCanvasVariant = 'score' | 'title';
@@ -166,11 +168,11 @@ export function renderShareImage(
 
   const centerX = SIZE / 2;
 
-  // === COMPACT HEADER: Logo + "BUNDESTAG WRAPPED 2025" left-aligned ===
+  // === COMPACT HEADER: Logo + edition title left-aligned ===
   const headerY = 80;
   const headerX = 70;
   const logoSize = 40;
-  const headerText = 'BUNDESTAG WRAPPED 2025';
+  const headerText = data.editionTitle?.toUpperCase() ?? 'BUNDESTAG WRAPPED';
 
   if (logoImage) {
     const logoHeight = (logoImage.height / logoImage.width) * logoSize;
@@ -252,16 +254,20 @@ export function renderShareImage(
   ctx.fillText('bundestag-wrapped.de', centerX, footerY + 45);
 }
 
-export function downloadShareImage(canvas: HTMLCanvasElement, userName?: string): void {
+function shareFilename(editionId = 'edition', userName?: string): string {
+  const suffix = userName?.trim()
+    ? `-${userName.trim().toLowerCase().replace(/\s+/g, '-')}`
+    : '';
+  return `bundestag-wrapped-${editionId}${suffix}.png`;
+}
+
+export function downloadShareImage(canvas: HTMLCanvasElement, userName?: string, editionId?: string): void {
   canvas.toBlob((blob) => {
     if (!blob) return;
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    const filename = userName?.trim()
-      ? `bundestag-wrapped-2025-${userName.trim().toLowerCase().replace(/\s+/g, '-')}.png`
-      : 'bundestag-wrapped-2025.png';
-    a.download = filename;
+    a.download = shareFilename(editionId, userName);
     a.click();
     URL.revokeObjectURL(url);
   }, 'image/png');
@@ -270,7 +276,7 @@ export function downloadShareImage(canvas: HTMLCanvasElement, userName?: string)
 /**
  * Share image using Web Share API
  */
-export async function shareImage(canvas: HTMLCanvasElement): Promise<boolean> {
+export async function shareImage(canvas: HTMLCanvasElement, editionTitle = 'Bundestag Wrapped', editionId?: string): Promise<boolean> {
   // Check if Web Share API is available
   if (!navigator.share || !navigator.canShare) {
     return false;
@@ -284,11 +290,11 @@ export async function shareImage(canvas: HTMLCanvasElement): Promise<boolean> {
       }
 
       try {
-        const file = new File([blob], 'bundestag-wrapped-2025.png', { type: 'image/png' });
+        const file = new File([blob], shareFilename(editionId), { type: 'image/png' });
         if (navigator.canShare({ files: [file] })) {
           await navigator.share({
             files: [file],
-            title: 'Mein Bundestag Wrapped 2025',
+            title: `Mein ${editionTitle}`,
           });
           resolve(true);
         } else {

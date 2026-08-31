@@ -15,7 +15,7 @@ export function DocFooter() {
             </a>
           </p>
           <p className="font-mono text-xs text-stone-400">
-            Stand: Dezember 2025 • WP21
+            Stand: aktuelle Edition • WP21
           </p>
         </div>
       </div>

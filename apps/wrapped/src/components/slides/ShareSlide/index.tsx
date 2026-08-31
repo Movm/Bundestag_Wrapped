@@ -4,6 +4,8 @@ import { Download, Share2 } from 'lucide-react';
 import { SlideContainer, itemVariants } from '../shared';
 import { renderShareImage, downloadShareImage, shareImage, preloadLogo } from '@/lib/share-canvas';
 import { useCorrectCount } from '@/stores/quizStore';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionSurface } from '@/edition/surface';
 
 interface ShareSlideProps {
   totalQuestions: number;
@@ -110,6 +112,7 @@ const FallingConfetti = memo(function FallingConfetti() {
 export const ShareSlide = memo(function ShareSlide({
   totalQuestions,
 }: ShareSlideProps) {
+  const surface = editionSurface(useOptionalEdition());
   // Get correct count from store (only ShareSlide subscribes to this)
   const correctCount = useCorrectCount();
   const [userName, setUserName] = useState('');
@@ -134,6 +137,8 @@ export const ShareSlide = memo(function ShareSlide({
       correctCount,
       totalQuestions,
       userName: userName.trim() || undefined,
+      editionTitle: surface.title,
+      editionId: surface.editionId,
     };
 
     preloadLogo().then(() => {
@@ -146,31 +151,31 @@ export const ShareSlide = memo(function ShareSlide({
         renderShareImage(canvasRefTitle.current, data, 'title');
       }
     });
-  }, [correctCount, totalQuestions, userName, isInView]);
+  }, [correctCount, totalQuestions, userName, isInView, surface.editionId, surface.title]);
 
   // Handlers for score variant
   const handleDownloadScore = () => {
     if (canvasRefScore.current) {
-      downloadShareImage(canvasRefScore.current, userName);
+      downloadShareImage(canvasRefScore.current, userName, surface.editionId);
     }
   };
 
   const handleShareScore = async () => {
     if (canvasRefScore.current) {
-      await shareImage(canvasRefScore.current);
+      await shareImage(canvasRefScore.current, surface.title, surface.editionId);
     }
   };
 
   // Handlers for title variant
   const handleDownloadTitle = () => {
     if (canvasRefTitle.current) {
-      downloadShareImage(canvasRefTitle.current, userName);
+      downloadShareImage(canvasRefTitle.current, userName, surface.editionId);
     }
   };
 
   const handleShareTitle = async () => {
     if (canvasRefTitle.current) {
-      await shareImage(canvasRefTitle.current);
+      await shareImage(canvasRefTitle.current, surface.title, surface.editionId);
     }
   };
 

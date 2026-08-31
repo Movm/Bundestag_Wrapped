@@ -6,6 +6,8 @@ import {
   clearWrappedProgress,
 } from '@/lib/wrapped-storage';
 import { useQuizStore } from '@/stores/quizStore';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionSurface } from '@/edition/surface';
 
 /**
  * Simplified scroll state hook - quiz state moved to quizStore.
@@ -29,8 +31,8 @@ export interface ScrollWrappedState {
 }
 
 // Load initial section from localStorage
-function getInitialSection(): SlideType {
-  const saved = getWrappedProgress();
+function getInitialSection(surface: ReturnType<typeof editionSurface>): SlideType {
+  const saved = getWrappedProgress(surface);
   if (saved && SLIDES.includes(saved.currentSection as SlideType)) {
     return saved.currentSection as SlideType;
   }
@@ -38,7 +40,12 @@ function getInitialSection(): SlideType {
 }
 
 export function useScrollWrapped(): ScrollWrappedState {
-  const initialSection = useMemo(() => getInitialSection(), []);
+  const edition = useOptionalEdition();
+  const surface = useMemo(
+    () => editionSurface(edition),
+    [edition?.editionId, edition?.manifest?.dataVersion],
+  );
+  const initialSection = useMemo(() => getInitialSection(surface), [surface.editionId, surface.dataVersion]);
   const [currentSection, setCurrentSection] = useState<SlideType>(initialSection);
   const clearQuizProgress = useQuizStore((state) => state.clearProgress);
 
@@ -56,14 +63,14 @@ export function useScrollWrapped(): ScrollWrappedState {
 
     // Clear all progress when user completes the experience
     if (currentSection === 'finale') {
-      clearWrappedProgress();
+      clearWrappedProgress(surface);
       clearQuizProgress();
       return;
     }
 
     // Only persist currentSection - quiz state is in quizStore
-    setWrappedProgress({ currentSection, quizAnswers: {} });
-  }, [currentSection, clearQuizProgress]);
+    setWrappedProgress({ currentSection, quizAnswers: {} }, surface);
+  }, [currentSection, clearQuizProgress, surface]);
 
   return {
     currentSection,
