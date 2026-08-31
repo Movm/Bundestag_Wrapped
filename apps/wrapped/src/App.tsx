@@ -1,9 +1,10 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { BrowserRouter, Routes, Route, useParams } from 'react-router';
 import { DarkLayout, LightLayout } from '@/layouts/MainLayout';
 import { MobileMenu } from '@/components/ui/MobileMenu';
 import { useMenuState } from '@/hooks/useMenuState';
 import { UmamiAnalytics } from '@/components/analytics/UmamiAnalytics';
+import { EditionProvider } from '@/edition/EditionProvider';
 
 // Critical path - keep eager
 import { MainWrappedPage } from '@/components/MainWrappedPage';
@@ -51,6 +52,31 @@ function MainWrappedRoute() {
   );
 }
 
+function EditionMainRoute() {
+  const { editionId = '' } = useParams();
+  return <EditionProvider editionId={editionId}><MainWrappedRoute /></EditionProvider>;
+}
+
+function EditionSpeakerRoute() {
+  const { editionId = '' } = useParams();
+  return <EditionProvider editionId={editionId}><SpeakerWrappedPage /></EditionProvider>;
+}
+
+function EditionSucheRoute() {
+  const { editionId = '' } = useParams();
+  return <EditionProvider editionId={editionId}><SuchePage /></EditionProvider>;
+}
+
+function EditionAbgeordneteRoute() {
+  const { editionId = '' } = useParams();
+  return <EditionProvider editionId={editionId}><AbgeordnetePage /></EditionProvider>;
+}
+
+function EditionDokumentationRoute() {
+  const { editionId = '' } = useParams();
+  return <EditionProvider editionId={editionId}><DokumentationPage /></EditionProvider>;
+}
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -59,6 +85,7 @@ export default function App() {
         <Routes>
           {/* Main page has special header behavior (scroll-based visibility) */}
           <Route path="/" element={<MainWrappedRoute />} />
+          <Route path="/:editionId" element={<EditionMainRoute />} />
 
           {/* Dark theme routes */}
           <Route element={<DarkLayout />}>
@@ -67,6 +94,9 @@ export default function App() {
             <Route path="/reden" element={<SuchePage />} />
             <Route path="/abgeordnete" element={<AbgeordnetePage />} />
             <Route path="/abgeordnete/:slug" element={<MdbProfilePage />} />
+            <Route path="/:editionId/wrapped/:slug" element={<EditionSpeakerRoute />} />
+            <Route path="/:editionId/suche" element={<EditionSucheRoute />} />
+            <Route path="/:editionId/abgeordnete" element={<EditionAbgeordneteRoute />} />
           </Route>
 
           {/* Statistiken routes - TEMPORARILY DISABLED
@@ -87,6 +117,7 @@ export default function App() {
             <Route path="/dokumentation" element={<DokumentationPage />} />
             <Route path="/mcp" element={<McpPage />} />
             <Route path="/mcp/technik" element={<McpTechnikPage />} />
+            <Route path="/:editionId/dokumentation" element={<EditionDokumentationRoute />} />
           </Route>
         </Routes>
       </Suspense>

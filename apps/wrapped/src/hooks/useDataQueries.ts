@@ -1,9 +1,11 @@
 import { useEffect } from 'react'
 import { useQuery } from '@tanstack/react-query'
+import type { UseQueryResult } from '@tanstack/react-query'
 import { loadWrappedData, type WrappedData } from '../data/wrapped'
 import { loadSpeakerIndex, loadSpeakerData, type SpeakerIndex, type SpeakerWrapped } from '../data/speaker-wrapped'
 import { type Speech, type WordsIndex, type WordRankingsData, type TopicRankingsData } from '../lib/search-utils'
 import { useWrappedStore } from '@/stores/wrappedStore'
+import { useOptionalEdition } from '@/edition/EditionProvider'
 
 export interface SpeechesData {
   speeches: Speech[]
@@ -27,9 +29,11 @@ export function useWrappedData() {
   const setData = useWrappedStore((s) => s.setData)
   const setError = useWrappedStore((s) => s.setError)
 
+  const edition = useOptionalEdition()
   const query = useQuery<WrappedData, Error>({
-    queryKey: ['wrapped'],
+    queryKey: ['wrapped', edition?.editionId, edition?.manifest?.dataVersion],
     queryFn: loadWrappedData,
+    enabled: !edition,
     ...STATIC_DATA_OPTIONS,
   })
 
@@ -46,6 +50,16 @@ export function useWrappedData() {
     }
   }, [query.error, setError])
 
+  if (edition) {
+    return {
+      ...query,
+      data: edition.data,
+      error: edition.error ?? null,
+      isLoading: edition.isLoading,
+      isError: Boolean(edition.error),
+      isSuccess: Boolean(edition.data),
+    } as UseQueryResult<WrappedData, Error>
+  }
   return query
 }
 
