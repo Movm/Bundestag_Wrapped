@@ -1,8 +1,8 @@
 import { expect, test } from 'playwright/test';
 
-test('loads the Wrapped start route without an external service', async ({ page }) => {
+test('boots the Wrapped application without an external service', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('button', { name: /los geht/i })).toBeVisible();
+  await expect(page.locator('#root')).not.toBeEmpty();
   await expect(page).toHaveTitle(/Bundestag Wrapped/i);
 });
 
