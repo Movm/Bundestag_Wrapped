@@ -16,8 +16,9 @@ and the current `wrapped.json` payload.
 ## Generated types
 
 Run `pnpm contract:generate` after editing the schema. `pnpm contract:check`
-fails when `apps/wrapped/src/generated/wrapped-contract-v1.ts` is stale; CI runs
-this check before the web build.
+fails when either the generated TypeScript types or the generated browser schema
+copy in `apps/wrapped/src/generated/` is stale; CI runs this check before the web
+build.
 
 Both the browser and Python validate JSON against this schema at runtime. The
 closed objects reject undeclared fields; the few maps marked with

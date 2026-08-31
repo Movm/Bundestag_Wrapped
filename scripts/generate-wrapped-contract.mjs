@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 const root = resolve(import.meta.dirname, '..');
 const schemaPath = resolve(root, 'contracts/wrapped/v1.schema.json');
 const outputPath = resolve(root, 'apps/wrapped/src/generated/wrapped-contract-v1.ts');
+const runtimeSchemaPath = resolve(root, 'apps/wrapped/src/generated/wrapped-contract-v1.schema.json');
 const check = process.argv.includes('--check');
 
 const schema = JSON.parse(await readFile(schemaPath, 'utf8'));
@@ -59,14 +60,17 @@ const declarations = Object.entries(schema.$defs)
   .map(([name, node]) => declaration(name, node))
   .join('\n\n');
 const generated = `/**\n * GENERATED FILE — DO NOT EDIT.\n * Source: contracts/wrapped/v1.schema.json\n * Run: pnpm contract:generate\n */\n\n${declarations}\n`;
+const runtimeSchema = `${JSON.stringify(schema, null, 2)}\n`;
 
 if (check) {
   const current = await readFile(outputPath, 'utf8').catch(() => '');
-  if (current !== generated) {
-    console.error('Generated Wrapped contract types are stale. Run: pnpm contract:generate');
+  const currentRuntimeSchema = await readFile(runtimeSchemaPath, 'utf8').catch(() => '');
+  if (current !== generated || currentRuntimeSchema !== runtimeSchema) {
+    console.error('Generated Wrapped contract artifacts are stale. Run: pnpm contract:generate');
     process.exitCode = 1;
   }
 } else {
   await mkdir(resolve(root, 'apps/wrapped/src/generated'), { recursive: true });
   await writeFile(outputPath, generated);
+  await writeFile(runtimeSchemaPath, runtimeSchema);
 }

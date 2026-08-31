@@ -1,0 +1,1432 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bundestag-wrapped.de/contracts/wrapped/v1.schema.json",
+  "title": "Bundestag Wrapped contract v1",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/EditionsIndex"
+    },
+    {
+      "$ref": "#/$defs/EditionManifest"
+    },
+    {
+      "$ref": "#/$defs/WrappedData"
+    }
+  ],
+  "$defs": {
+    "NonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "IsoDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "IsoDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "Count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "Ratio": {
+      "type": "number"
+    },
+    "WordCount": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "word",
+        "count"
+      ],
+      "properties": {
+        "word": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "count": {
+          "$ref": "#/$defs/Count"
+        }
+      }
+    },
+    "SignatureWord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "word",
+        "ratio"
+      ],
+      "properties": {
+        "word": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "ratio": {
+          "$ref": "#/$defs/Ratio"
+        }
+      }
+    },
+    "KeyTopic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "word",
+        "count",
+        "ratio"
+      ],
+      "properties": {
+        "word": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "count": {
+          "$ref": "#/$defs/Count"
+        },
+        "ratio": {
+          "$ref": "#/$defs/Ratio"
+        }
+      }
+    },
+    "PartyStats": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "party",
+        "speeches",
+        "wortbeitraege",
+        "totalWords",
+        "uniqueSpeakers",
+        "topWords",
+        "signatureWords",
+        "keyTopics",
+        "avgSpeechLength",
+        "descriptiveness",
+        "topSpeaker"
+      ],
+      "properties": {
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "speeches": {
+          "$ref": "#/$defs/Count"
+        },
+        "wortbeitraege": {
+          "$ref": "#/$defs/Count"
+        },
+        "totalWords": {
+          "$ref": "#/$defs/Count"
+        },
+        "uniqueSpeakers": {
+          "$ref": "#/$defs/Count"
+        },
+        "topWords": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/WordCount"
+          }
+        },
+        "signatureWords": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SignatureWord"
+          }
+        },
+        "keyTopics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/KeyTopic"
+          }
+        },
+        "avgSpeechLength": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "descriptiveness": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "topSpeaker": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "speeches"
+          ],
+          "properties": {
+            "name": {
+              "$ref": "#/$defs/NonEmptyString"
+            },
+            "speeches": {
+              "$ref": "#/$defs/Count"
+            }
+          }
+        }
+      }
+    },
+    "Classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "positive",
+        "negative",
+        "neutral"
+      ],
+      "properties": {
+        "positive": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "negative": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "neutral": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      }
+    },
+    "ZwischenrufStats": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total",
+        "positive",
+        "negative",
+        "neutral",
+        "positivePercent",
+        "negativePercent",
+        "neutralPercent",
+        "classification"
+      ],
+      "properties": {
+        "total": {
+          "$ref": "#/$defs/Count"
+        },
+        "positive": {
+          "$ref": "#/$defs/Count"
+        },
+        "negative": {
+          "$ref": "#/$defs/Count"
+        },
+        "neutral": {
+          "$ref": "#/$defs/Count"
+        },
+        "positivePercent": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "negativePercent": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "neutralPercent": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "classification": {
+          "$ref": "#/$defs/Classification"
+        }
+      }
+    },
+    "NamedPartyCount": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "party",
+        "count"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "count": {
+          "$ref": "#/$defs/Count"
+        }
+      }
+    },
+    "PartyCount": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "party",
+        "count"
+      ],
+      "properties": {
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "count": {
+          "$ref": "#/$defs/Count"
+        }
+      }
+    },
+    "DramaStats": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "topZwischenrufer",
+        "mostInterrupted",
+        "applauseChampions",
+        "loudestHecklers",
+        "zwischenrufStats"
+      ],
+      "properties": {
+        "topZwischenrufer": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NamedPartyCount"
+          }
+        },
+        "mostInterrupted": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NamedPartyCount"
+          }
+        },
+        "applauseChampions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/PartyCount"
+          }
+        },
+        "loudestHecklers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/PartyCount"
+          }
+        },
+        "zwischenrufStats": {
+          "$ref": "#/$defs/ZwischenrufStats"
+        }
+      }
+    },
+    "TopSpeaker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "party",
+        "speeches"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "speeches": {
+          "$ref": "#/$defs/Count"
+        }
+      }
+    },
+    "SpeakerWords": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "party",
+        "totalWords",
+        "speeches"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "totalWords": {
+          "$ref": "#/$defs/Count"
+        },
+        "speeches": {
+          "$ref": "#/$defs/Count"
+        }
+      }
+    },
+    "SpeakerAverageWords": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "party",
+        "avgWords",
+        "totalWords",
+        "speeches"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "avgWords": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "totalWords": {
+          "$ref": "#/$defs/Count"
+        },
+        "speeches": {
+          "$ref": "#/$defs/Count"
+        }
+      }
+    },
+    "FunFact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "emoji",
+        "value",
+        "label",
+        "category"
+      ],
+      "properties": {
+        "emoji": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "value": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "label": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "sublabel": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "category": {
+          "enum": [
+            "general",
+            "tone",
+            "gender"
+          ]
+        }
+      }
+    },
+    "GenderDistribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "male",
+        "female",
+        "unknown",
+        "femalePercent"
+      ],
+      "properties": {
+        "male": {
+          "$ref": "#/$defs/Count"
+        },
+        "female": {
+          "$ref": "#/$defs/Count"
+        },
+        "unknown": {
+          "$ref": "#/$defs/Count"
+        },
+        "femalePercent": {
+          "$ref": "#/$defs/Ratio"
+        }
+      }
+    },
+    "GenderByParty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "party",
+        "male",
+        "female",
+        "femaleRatio"
+      ],
+      "properties": {
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "male": {
+          "$ref": "#/$defs/Count"
+        },
+        "female": {
+          "$ref": "#/$defs/Count"
+        },
+        "femaleRatio": {
+          "$ref": "#/$defs/Ratio"
+        }
+      }
+    },
+    "GenderSpeaker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "party",
+        "count"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "count": {
+          "$ref": "#/$defs/Count"
+        }
+      }
+    },
+    "InterruptionPatterns": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "maleInterruptions",
+        "femaleInterruptions",
+        "maleInterrupted",
+        "femaleInterrupted"
+      ],
+      "properties": {
+        "maleInterruptions": {
+          "$ref": "#/$defs/Count"
+        },
+        "femaleInterruptions": {
+          "$ref": "#/$defs/Count"
+        },
+        "maleInterrupted": {
+          "$ref": "#/$defs/Count"
+        },
+        "femaleInterrupted": {
+          "$ref": "#/$defs/Count"
+        }
+      }
+    },
+    "GenderAnalysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "distribution",
+        "byParty",
+        "topFemaleSpeakersReden",
+        "topMaleSpeakersReden",
+        "interruptionPatterns"
+      ],
+      "properties": {
+        "distribution": {
+          "$ref": "#/$defs/GenderDistribution"
+        },
+        "byParty": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/GenderByParty"
+          }
+        },
+        "topFemaleSpeakersReden": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/GenderSpeaker"
+          }
+        },
+        "topMaleSpeakersReden": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/GenderSpeaker"
+          }
+        },
+        "topFemaleSpeakersAll": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/GenderSpeaker"
+          }
+        },
+        "topMaleSpeakersAll": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/GenderSpeaker"
+          }
+        },
+        "interruptionPatterns": {
+          "$ref": "#/$defs/InterruptionPatterns"
+        },
+        "speechLength": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female",
+            "unknown"
+          ],
+          "properties": {
+            "male": {
+              "$ref": "#/$defs/Ratio"
+            },
+            "female": {
+              "$ref": "#/$defs/Ratio"
+            },
+            "unknown": {
+              "$ref": "#/$defs/Ratio"
+            }
+          }
+        },
+        "academicTitles": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "$ref": "#/$defs/Ratio"
+            },
+            "female": {
+              "$ref": "#/$defs/Ratio"
+            }
+          }
+        },
+        "_metrics": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Extensible analysis metrics map."
+        }
+      }
+    },
+    "BefragungResponder": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "party",
+        "responses"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "responses": {
+          "$ref": "#/$defs/Count"
+        }
+      }
+    },
+    "ToneRanking": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "party",
+        "score"
+      ],
+      "properties": {
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "score": {
+          "$ref": "#/$defs/Ratio"
+        }
+      }
+    },
+    "ExtendedToneScores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "affirmative",
+        "aggression",
+        "labeling",
+        "solution_focus",
+        "collaboration",
+        "demand_intensity",
+        "acknowledgment",
+        "authority",
+        "future_orientation",
+        "emotional_intensity",
+        "inclusivity",
+        "discriminatory"
+      ],
+      "properties": {
+        "affirmative": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "aggression": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "labeling": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "solution_focus": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "collaboration": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "demand_intensity": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "acknowledgment": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "authority": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "future_orientation": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "emotional_intensity": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "inclusivity": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "discriminatory": {
+          "$ref": "#/$defs/Ratio"
+        }
+      }
+    },
+    "PartyProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "party",
+        "category",
+        "categoryName",
+        "emoji",
+        "description",
+        "rank",
+        "totalParties",
+        "score",
+        "traits",
+        "scores"
+      ],
+      "properties": {
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "category": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "categoryName": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "emoji": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "description": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "rank": {
+          "$ref": "#/$defs/Count"
+        },
+        "totalParties": {
+          "$ref": "#/$defs/Count"
+        },
+        "score": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "traits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NonEmptyString"
+          }
+        },
+        "scores": {
+          "$ref": "#/$defs/ExtendedToneScores"
+        },
+        "archetype": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "archetypeName": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      }
+    },
+    "ToneParty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "party",
+        "scores",
+        "topAffirmative",
+        "topCritical",
+        "topAggressive",
+        "topLabeling",
+        "topSolution",
+        "topProblem",
+        "topCollaborative",
+        "topConfrontational",
+        "topDemanding",
+        "topAcknowledging"
+      ],
+      "properties": {
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "scores": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/Ratio"
+          }
+        },
+        "topAffirmative": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/WordCount"
+          }
+        },
+        "topCritical": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/WordCount"
+          }
+        },
+        "topAggressive": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/WordCount"
+          }
+        },
+        "topLabeling": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/WordCount"
+          }
+        },
+        "topSolution": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/WordCount"
+          }
+        },
+        "topProblem": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/WordCount"
+          }
+        },
+        "topCollaborative": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/WordCount"
+          }
+        },
+        "topConfrontational": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/WordCount"
+          }
+        },
+        "topDemanding": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/WordCount"
+          }
+        },
+        "topAcknowledging": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/WordCount"
+          }
+        }
+      }
+    },
+    "ToneRankings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "affirmative",
+        "aggression",
+        "labeling",
+        "solutionFocus",
+        "collaboration",
+        "demandIntensity",
+        "acknowledgment"
+      ],
+      "properties": {
+        "affirmative": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ToneRanking"
+          }
+        },
+        "aggression": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ToneRanking"
+          }
+        },
+        "labeling": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ToneRanking"
+          }
+        },
+        "solutionFocus": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ToneRanking"
+          }
+        },
+        "collaboration": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ToneRanking"
+          }
+        },
+        "demandIntensity": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ToneRanking"
+          }
+        },
+        "acknowledgment": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ToneRanking"
+          }
+        },
+        "authority": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ToneRanking"
+          }
+        },
+        "futureOrientation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ToneRanking"
+          }
+        },
+        "emotionalIntensity": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ToneRanking"
+          }
+        },
+        "inclusivity": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ToneRanking"
+          }
+        },
+        "discriminatory": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ToneRanking"
+          }
+        },
+        "discriminatoryCounts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/PartyCount"
+          }
+        }
+      }
+    },
+    "ToneAnalysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parties",
+        "partyProfiles",
+        "rankings"
+      ],
+      "properties": {
+        "parties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ToneParty"
+          }
+        },
+        "partyProfiles": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/PartyProfile"
+          }
+        },
+        "rankings": {
+          "$ref": "#/$defs/ToneRankings"
+        }
+      }
+    },
+    "TopicScore": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "topic",
+        "score",
+        "rank"
+      ],
+      "properties": {
+        "topic": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "score": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "rank": {
+          "$ref": "#/$defs/Count"
+        }
+      }
+    },
+    "TopicAnalysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "byParty",
+        "overall",
+        "topTopics"
+      ],
+      "properties": {
+        "byParty": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/$defs/Ratio"
+            }
+          }
+        },
+        "overall": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/Ratio"
+          }
+        },
+        "topTopics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/TopicScore"
+          }
+        }
+      }
+    },
+    "QuizQuestion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "question",
+        "options",
+        "correctAnswer",
+        "explanation"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "type": {
+          "enum": [
+            "guess-party",
+            "prediction",
+            "emoji-quiz"
+          ]
+        },
+        "question": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "word": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NonEmptyString"
+          }
+        },
+        "correctAnswer": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "explanation": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "ratio": {
+          "$ref": "#/$defs/Ratio"
+        },
+        "swiftie": {
+          "$ref": "#/$defs/NamedParty"
+        },
+        "decoys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NamedParty"
+          }
+        }
+      }
+    },
+    "NamedParty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "party"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      }
+    },
+    "WrappedMetadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generatedAt",
+        "totalSpeeches",
+        "redenCount",
+        "wortbeitraegeCount",
+        "totalWords",
+        "partyCount",
+        "speakerCount",
+        "wahlperiode",
+        "sitzungen"
+      ],
+      "properties": {
+        "generatedAt": {
+          "$ref": "#/$defs/IsoDateTime"
+        },
+        "totalSpeeches": {
+          "$ref": "#/$defs/Count"
+        },
+        "redenCount": {
+          "$ref": "#/$defs/Count"
+        },
+        "wortbeitraegeCount": {
+          "$ref": "#/$defs/Count"
+        },
+        "totalWords": {
+          "$ref": "#/$defs/Count"
+        },
+        "partyCount": {
+          "$ref": "#/$defs/Count"
+        },
+        "speakerCount": {
+          "$ref": "#/$defs/Count"
+        },
+        "wahlperiode": {
+          "$ref": "#/$defs/Count"
+        },
+        "sitzungen": {
+          "$ref": "#/$defs/Count"
+        }
+      }
+    },
+    "WrappedData": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "metadata",
+        "parties",
+        "drama",
+        "topSpeakers",
+        "topBefragungResponders",
+        "topSpeakersByWords",
+        "topSpeakersByAvgWords",
+        "hotTopics",
+        "toneAnalysis",
+        "topicAnalysis",
+        "funFacts",
+        "genderAnalysis",
+        "moinSpeakers",
+        "topQuestionAskers"
+      ],
+      "properties": {
+        "metadata": {
+          "$ref": "#/$defs/WrappedMetadata"
+        },
+        "parties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/PartyStats"
+          }
+        },
+        "drama": {
+          "$ref": "#/$defs/DramaStats"
+        },
+        "topSpeakers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/TopSpeaker"
+          }
+        },
+        "topBefragungResponders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/BefragungResponder"
+          }
+        },
+        "topSpeakersByWords": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SpeakerWords"
+          }
+        },
+        "topSpeakersByAvgWords": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SpeakerAverageWords"
+          }
+        },
+        "hotTopics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NonEmptyString"
+          }
+        },
+        "quizQuestions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/QuizQuestion"
+          }
+        },
+        "toneAnalysis": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ToneAnalysis"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "topicAnalysis": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TopicAnalysis"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "funFacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/FunFact"
+          }
+        },
+        "genderAnalysis": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/GenderAnalysis"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "moinSpeakers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NamedPartyCount"
+          }
+        },
+        "topQuestionAskers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NamedPartyCount"
+          }
+        }
+      }
+    },
+    "EditionStatus": {
+      "enum": [
+        "draft",
+        "preview",
+        "frozen",
+        "published",
+        "superseded"
+      ]
+    },
+    "EditionPeriod": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start",
+        "end",
+        "timezone",
+        "wahlperioden"
+      ],
+      "properties": {
+        "start": {
+          "$ref": "#/$defs/IsoDate"
+        },
+        "end": {
+          "$ref": "#/$defs/IsoDate"
+        },
+        "timezone": {
+          "const": "Europe/Berlin"
+        },
+        "wahlperioden": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "Coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocolCount",
+        "firstProtocolDate",
+        "lastProtocolDate",
+        "complete"
+      ],
+      "properties": {
+        "protocolCount": {
+          "$ref": "#/$defs/Count"
+        },
+        "firstProtocolDate": {
+          "$ref": "#/$defs/IsoDate"
+        },
+        "lastProtocolDate": {
+          "$ref": "#/$defs/IsoDate"
+        },
+        "complete": {
+          "type": "boolean"
+        }
+      }
+    },
+    "EditionAssets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "wrapped",
+        "speakerIndex",
+        "speakersBase",
+        "speeches",
+        "words",
+        "wordRankings",
+        "topicRankings"
+      ],
+      "properties": {
+        "wrapped": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "speakerIndex": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "speakersBase": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "speeches": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "words": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "wordRankings": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "topicRankings": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      }
+    },
+    "EditionManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "editionId",
+        "year",
+        "title",
+        "status",
+        "period",
+        "dataVersion",
+        "generatedAt",
+        "coverage",
+        "assets",
+        "content",
+        "checksums"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "editionId": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "year": {
+          "type": "integer",
+          "minimum": 2000
+        },
+        "title": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "status": {
+          "$ref": "#/$defs/EditionStatus"
+        },
+        "period": {
+          "$ref": "#/$defs/EditionPeriod"
+        },
+        "dataVersion": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "generatedAt": {
+          "$ref": "#/$defs/IsoDateTime"
+        },
+        "coverage": {
+          "$ref": "#/$defs/Coverage"
+        },
+        "assets": {
+          "$ref": "#/$defs/EditionAssets"
+        },
+        "content": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "checksums": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      }
+    },
+    "EditionSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "year",
+        "status",
+        "manifestUrl"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "year": {
+          "type": "integer",
+          "minimum": 2000
+        },
+        "status": {
+          "$ref": "#/$defs/EditionStatus"
+        },
+        "manifestUrl": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      }
+    },
+    "EditionsIndex": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "currentEdition",
+        "editions"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "currentEdition": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "editions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/EditionSummary"
+          }
+        }
+      }
+    }
+  }
+}
