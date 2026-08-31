@@ -63,6 +63,28 @@ from different editions from mixing. Omitting `--from` and `--to` keeps the lega
 cumulative selection of all available protocol dates; records without a valid date
 are recorded as coverage problems and are never silently included.
 
+### Versioned edition export
+
+`generate-edition` is the production export path. It writes the edition into a
+temporary staging directory, validates the contract, checksums, coverage, and
+speaker references, and only then atomically publishes it under
+`<output>/<edition>/<dataVersion>/`.
+
+```bash
+# Preview: complete is false until an explicit freeze
+bundestag-analysis generate-edition --edition 2026 --from 2026-01-01 --to 2026-12-31 \
+  --wahlperiode 21 --data-dir ./data-2026 --results-dir ./results-2026 \
+  --output ./editions --data-version preview-1
+
+# Freeze: marks this exact, validated release as complete
+bundestag-analysis generate-edition --edition 2026 --from 2026-01-01 --to 2026-12-31 \
+  --wahlperiode 21 --data-dir ./data-2026 --results-dir ./results-2026 \
+  --output ./editions --data-version 2026.1 --freeze
+```
+
+`export-all` remains available as a low-level legacy export for local tooling; it
+does not create a versioned, checksummed edition release.
+
 ### Export Commands
 
 Generate JSON files for web apps, research, and transparency:
