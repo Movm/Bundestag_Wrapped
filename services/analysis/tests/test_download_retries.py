@@ -99,7 +99,7 @@ async def test_download_fails_closed_when_a_protocol_is_missing(tmp_path, monkey
             return None
 
         async def get_all_protocol_ids(self, **_kwargs):
-            return [{"id": "5795"}]
+            return [{"id": "5795", "dokumentnummer": "21/1", "datum": "2026-01-01", "wahlperiode": 21}]
 
         async def get_plenarprotokoll(self, _protocol_id, include_full_text=True):
             assert include_full_text
@@ -112,8 +112,7 @@ async def test_download_fails_closed_when_a_protocol_is_missing(tmp_path, monkey
         await download_module._download_protocols(
             store=store,
             server="https://example.test",
-            wahlperiode=21,
-            max_protocols=0,
+            selection={"from": None, "to": None, "wahlperioden": [21], "maxProtocols": 0},
             state=None,
             pending=None,
         )

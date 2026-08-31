@@ -201,6 +201,8 @@ class BundestagMCPClient:
         wahlperiode: int = 20,
         limit: int = 100,
         cursor: str | None = None,
+        date_from: str | None = None,
+        date_to: str | None = None,
     ) -> dict:
         """Search for Plenarprotokolle.
 
@@ -212,6 +214,10 @@ class BundestagMCPClient:
         }
         if cursor:
             args["cursor"] = cursor
+        if date_from:
+            args["datum_start"] = date_from
+        if date_to:
+            args["datum_end"] = date_to
 
         result = await self.call_tool("bundestag_search_plenarprotokolle", args)
 
@@ -256,6 +262,8 @@ class BundestagMCPClient:
         herausgeber: str = "BT",
         max_protocols: int = 0,
         progress_callback=None,
+        date_from: str | None = None,
+        date_to: str | None = None,
     ) -> list[dict]:
         """Fetch all protocol metadata using cursor pagination.
 
@@ -283,6 +291,8 @@ class BundestagMCPClient:
                 wahlperiode=wahlperiode,
                 limit=100,
                 cursor=cursor,
+                date_from=date_from,
+                date_to=date_to,
             )
 
             protocols = [p for p in result.get("results", []) if p.get("herausgeber") == herausgeber]
