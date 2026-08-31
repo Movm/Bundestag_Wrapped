@@ -1,146 +1,172 @@
-name: Refresh Bundestag Wrapped data
-
-# Regenerates the pre-computed Bundestag-Wrapped datasets (apps/wrapped/public/*.json)
-# from the public MCP server. Refreshed data is merged through a pull request because
-# main is protected by required status checks. bundestag-wrapped (Coolify, GitHub-App
-# connected to main) auto-deploys after the pull request is merged.
-#
-# Runs weekly, and on demand via "Run workflow".
+name: Build Wrapped edition
 
 on:
   schedule:
-    - cron: '0 5 * * 1' # Mondays 05:00 UTC
+    - cron: '0 5 * * 1'
   workflow_dispatch:
     inputs:
+      mode:
+        description: Preview creates an artifact; freeze proposes immutable data; publish switches the index.
+        type: choice
+        options: [preview, freeze, publish]
+        default: preview
+        required: true
+      editionId:
+        description: Four-digit edition year.
+        default: '2026'
+        required: true
+      from:
+        default: '2026-01-01'
+        required: true
+      to:
+        default: '2026-12-31'
+        required: true
       wahlperiode:
-        description: 'Wahlperiode to analyze'
         default: '21'
-        required: false
+        required: true
+      dataVersion:
+        description: Immutable version label, e.g. preview-42 or final.
+        default: preview
+        required: true
 
-# The existing PAT is used below instead of GITHUB_TOKEN so that pushes to the
-# refresh branch trigger the pull_request workflows required by branch protection.
 permissions:
   contents: read
+  pull-requests: write
 
 concurrency:
-  group: wrapped-refresh
+  group: wrapped-edition-${{ inputs.editionId || 'weekly' }}
   cancel-in-progress: false
 
+env:
+  MCP_SERVER: https://mcp.bundestag-wrapped.de
+  EDITION: ${{ inputs.editionId || '2026' }}
+  FROM: ${{ inputs.from || '2026-01-01' }}
+  TO: ${{ inputs.to || github.run_started_at }}
+  WP: ${{ inputs.wahlperiode || '21' }}
+  VERSION: ${{ inputs.dataVersion || format('preview-{0}', github.run_number) }}
+
 jobs:
-  refresh:
+  preview:
+    name: Build preview
+    if: ${{ github.event_name == 'schedule' || inputs.mode == 'preview' }}
     runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
-      - name: Verify refresh token
-        env:
-          GH_TOKEN: ${{ secrets.GHCR_PAT }}
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Install analysis package and language model
         run: |
-          if [[ -z "$GH_TOKEN" ]]; then
-            echo "::error::GHCR_PAT must have repository contents and pull-request write access."
-            exit 1
-          fi
+          python -m pip install --upgrade pip
+          pip install -e services/analysis
+          pip install https://github.com/explosion/spacy-models/releases/download/de_core_news_lg-3.8.0/de_core_news_lg-3.8.0-py3-none-any.whl
+      - name: Validate release inputs
+        run: python -c "from noun_analysis.edition.release import validate_release_input; import os; validate_release_input(os.environ['EDITION'], os.environ['FROM'], os.environ['TO'][:10], os.environ['VERSION'])"
+      - name: Download, parse, analyse, and export preview
+        working-directory: services/analysis
+        run: |
+          set -euo pipefail
+          bundestag-analysis --server "$MCP_SERVER" download ./data --from "$FROM" --to "${TO:0:10}" -w "$WP"
+          bundestag-analysis parse ./data
+          bundestag-analysis analyze ./data -w "$WP" -o ./results -q
+          bundestag-analysis generate-edition --edition "$EDITION" --from "$FROM" --to "${TO:0:10}" --wahlperiode "$WP" --data-version "$VERSION" --data-dir ./data --results-dir ./results --output "$GITHUB_WORKSPACE/apps/wrapped/public/data"
+      - name: Upload preview artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: wrapped-edition-${{ env.EDITION }}-${{ env.VERSION }}
+          path: apps/wrapped/public/data/${{ env.EDITION }}/${{ env.VERSION }}
+          retention-days: 14
 
+  freeze:
+    name: Freeze immutable edition
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.mode == 'freeze' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    environment: wrapped-edition-release
+    steps:
       - uses: actions/checkout@v7
         with:
           token: ${{ secrets.GHCR_PAT }}
           fetch-depth: 0
-
-      - uses: actions/setup-node@v6
-        with:
-          node-version: '22'
-
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-
-      - name: Install analysis package + spaCy model
+      - name: Install analysis package and language model
         run: |
           python -m pip install --upgrade pip
           pip install -e services/analysis
-          pip install "https://github.com/explosion/spacy-models/releases/download/de_core_news_lg-3.8.0/de_core_news_lg-3.8.0-py3-none-any.whl"
-
-      - name: Regenerate datasets from the public MCP
+          pip install https://github.com/explosion/spacy-models/releases/download/de_core_news_lg-3.8.0/de_core_news_lg-3.8.0-py3-none-any.whl
+      - name: Rebuild and validate frozen artifact
         working-directory: services/analysis
-        env:
-          WP: ${{ github.event.inputs.wahlperiode || '21' }}
-          MCP_SERVER: https://mcp.bundestag-wrapped.de
         run: |
           set -euo pipefail
-          bundestag-analysis --server "$MCP_SERVER" download ./data -w "$WP"
+          python -c "from noun_analysis.edition.release import validate_release_input; import os; validate_release_input(os.environ['EDITION'], os.environ['FROM'], os.environ['TO'][:10], os.environ['VERSION'])"
+          bundestag-analysis --server "$MCP_SERVER" download ./data --from "$FROM" --to "${TO:0:10}" -w "$WP"
           bundestag-analysis parse ./data
           bundestag-analysis analyze ./data -w "$WP" -o ./results -q
-          bundestag-analysis export-all ./data -r ./results -o "$GITHUB_WORKSPACE/apps/wrapped/public"
-
-      - name: Refresh Abgeordnetenwatch profile data
-        working-directory: apps/wrapped
-        run: node scripts/sync-abgeordnetenwatch.cjs
-
-      - name: Publish refreshed datasets through a protected pull request
+          bundestag-analysis generate-edition --edition "$EDITION" --from "$FROM" --to "${TO:0:10}" --wahlperiode "$WP" --data-version "$VERSION" --data-dir ./data --results-dir ./results --output "$GITHUB_WORKSPACE/apps/wrapped/public/data" --freeze
+          python -c "from pathlib import Path; from noun_analysis.edition.release import validate_freeze_against_index; validate_freeze_against_index(Path('$GITHUB_WORKSPACE/apps/wrapped/public/data') / '$EDITION' / '$VERSION', Path('$GITHUB_WORKSPACE/apps/wrapped/public/data/editions.json'))"
+      - name: Create reviewed frozen-data pull request
         env:
           GH_TOKEN: ${{ secrets.GHCR_PAT }}
         run: |
           set -euo pipefail
-
-          git config user.name "wrapped-data-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add apps/wrapped/public
-          if git diff --cached --quiet; then
-            echo "No data changes — nothing to publish."
-            exit 0
-          fi
-
-          SITZUNGEN=$(python -c "import json;print(json.load(open('apps/wrapped/public/wrapped.json'))['metadata']['sitzungen'])")
-          CURRENT_SITZUNGEN=$(git show HEAD:apps/wrapped/public/wrapped.json | python -c "import json,sys;print(json.load(sys.stdin)['metadata']['sitzungen'])")
-          if (( SITZUNGEN < CURRENT_SITZUNGEN )); then
-            echo "::error::Refusing to publish a data regression from Sitzung ${CURRENT_SITZUNGEN} to ${SITZUNGEN}."
-            exit 1
-          fi
-
-          BRANCH="automation/wrapped-data-refresh"
-          COMMIT_MESSAGE="chore(data): refresh Bundestag Wrapped datasets (Sitzung ${SITZUNGEN})"
-          PR_TITLE="$COMMIT_MESSAGE"
-          PR_BODY="Automated weekly refresh of the pre-computed Bundestag Wrapped datasets through Sitzung ${SITZUNGEN}."
-
-          git switch -C "$BRANCH"
-          git commit -m "$COMMIT_MESSAGE"
-
-          REMOTE_SHA=$(git ls-remote --heads origin "refs/heads/$BRANCH" | awk '{print $1}')
-          if [[ -n "$REMOTE_SHA" ]]; then
-            git push --force-with-lease="refs/heads/$BRANCH:$REMOTE_SHA" origin "HEAD:refs/heads/$BRANCH"
+          git config user.name wrapped-data-bot
+          git config user.email 41898282+github-actions[bot].users.noreply.github.com
+          git add apps/wrapped/public/data
+          git diff --cached --quiet && exit 0
+          branch="automation/wrapped-edition-$EDITION-$VERSION"
+          git switch -C "$branch"
+          git commit -m "chore(data): freeze Wrapped edition $EDITION"
+          remote_sha=$(git ls-remote --heads origin "refs/heads/$branch" | awk '{print $1}')
+          if [[ -n "$remote_sha" ]]; then
+            git push --force-with-lease="refs/heads/$branch:$remote_sha" origin "HEAD:refs/heads/$branch"
           else
-            git push origin "HEAD:refs/heads/$BRANCH"
+            git push origin "HEAD:refs/heads/$branch"
+          fi
+          pr_url=$(gh pr list --head "$branch" --base main --state open --json url --jq '.[0].url')
+          if [[ -z "$pr_url" ]]; then
+            gh pr create --base main --head "$branch" --title "chore(data): freeze Wrapped edition $EDITION" --body "Validated frozen artifact. Publishing the index is a separate reversible PR."
           fi
 
-          PR_URL=$(gh pr list \
-            --head "$BRANCH" \
-            --base main \
-            --state open \
-            --json url \
-            --jq '.[0].url')
-
-          if [[ -z "$PR_URL" ]]; then
-            PR_URL=$(gh pr create \
-              --head "$BRANCH" \
-              --base main \
-              --title "$PR_TITLE" \
-              --body "$PR_BODY")
+  publish:
+    name: Publish frozen edition
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.mode == 'publish' }}
+    runs-on: ubuntu-latest
+    environment: wrapped-edition-release
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.GHCR_PAT }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: pip install -e services/analysis
+      - name: Verify frozen artifact and update only the editions index
+        run: |
+          python -c "from noun_analysis.edition.release import validate_release_input; import os; validate_release_input(os.environ['EDITION'], os.environ['FROM'], os.environ['TO'][:10], os.environ['VERSION'])"
+          python -c "from pathlib import Path; from noun_analysis.edition.release import publish_in_index; publish_in_index(Path('apps/wrapped/public/data/editions.json'), Path('apps/wrapped/public/data') / '$EDITION' / '$VERSION')"
+      - name: Create reviewed index pull request
+        env:
+          GH_TOKEN: ${{ secrets.GHCR_PAT }}
+        run: |
+          set -euo pipefail
+          git config user.name wrapped-data-bot
+          git config user.email 41898282+github-actions[bot].users.noreply.github.com
+          git add apps/wrapped/public/data/editions.json
+          git diff --cached --quiet && exit 0
+          branch="automation/wrapped-edition-index-$EDITION"
+          git switch -C "$branch"
+          git commit -m "chore(data): publish Wrapped edition $EDITION"
+          remote_sha=$(git ls-remote --heads origin "refs/heads/$branch" | awk '{print $1}')
+          if [[ -n "$remote_sha" ]]; then
+            git push --force-with-lease="refs/heads/$branch:$remote_sha" origin "HEAD:refs/heads/$branch"
           else
-            gh pr edit "$PR_URL" --title "$PR_TITLE" --body "$PR_BODY"
+            git push origin "HEAD:refs/heads/$branch"
           fi
-
-          CHECK_COUNT=0
-          for _ in {1..12}; do
-            CHECK_COUNT=$(gh pr checks "$PR_URL" --required --json name --jq 'length' 2>/dev/null || true)
-            if (( ${CHECK_COUNT:-0} > 0 )); then
-              break
-            fi
-            sleep 5
-          done
-
-          if (( ${CHECK_COUNT:-0} == 0 )); then
-            echo "::error::No required checks were registered for $PR_URL."
-            exit 1
+          pr_url=$(gh pr list --head "$branch" --base main --state open --json url --jq '.[0].url')
+          if [[ -z "$pr_url" ]]; then
+            gh pr create --base main --head "$branch" --title "chore(data): publish Wrapped edition $EDITION" --body "Validated frozen artifact; this PR only switches the reversible editions index."
           fi
-
-          gh pr checks "$PR_URL" --required --watch --interval 15
-          gh pr merge "$PR_URL" --squash --delete-branch
