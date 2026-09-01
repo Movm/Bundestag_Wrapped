@@ -21,4 +21,43 @@ describe('buildEditionQuizModel', () => {
     expect(first['quiz-drama']?.correctAnswer).toContain('Rufer A');
     expect(buildEditionQuizModel(fixture('Europa', 'Partei A') as never)['quiz-topics']).toEqual(first['quiz-topics']);
   });
+
+  it('keeps independent later questions when the top-topic metric is missing', () => {
+    const data = fixture('Europa', 'Partei A');
+    data.hotTopics = [];
+    data.topicAnalysis = { topTopics: [], byParty: {}, overall: {} };
+
+    const model = buildEditionQuizModel(data as never);
+
+    expect(model['quiz-topics']).toBeUndefined();
+    expect(model['quiz-speeches']).toBeDefined();
+    expect(model['quiz-drama']).toBeDefined();
+    expect(model['quiz-gender']).toBeDefined();
+  });
+
+  it('only omits the speech question when its metric is missing', () => {
+    const data = fixture('Europa', 'Partei A');
+    data.topSpeakersByWords = [];
+
+    const model = buildEditionQuizModel(data as never);
+
+    expect(model['quiz-speeches']).toBeUndefined();
+    expect(model['quiz-topics']).toBeDefined();
+    expect(model['quiz-drama']).toBeDefined();
+  });
+
+  it('omits a question when fewer than four distinct answers are evidenced', () => {
+    const data = fixture('Europa', 'Partei A');
+    data.hotTopics = ['Europa', 'Klima', 'Haushalt'];
+    data.topicAnalysis = { topTopics: [{ topic: 'Europa', score: 1, rank: 1 }], byParty: {}, overall: {} };
+
+    expect(buildEditionQuizModel(data as never)['quiz-topics']).toBeUndefined();
+  });
+
+  it('does not hide unexpected builder errors', () => {
+    const data = fixture('Europa', 'Partei A');
+    data.parties = null as never;
+
+    expect(() => buildEditionQuizModel(data as never)).toThrow();
+  });
 });

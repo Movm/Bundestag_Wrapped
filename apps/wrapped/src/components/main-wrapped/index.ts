@@ -1,5 +1,6 @@
-export { SLIDES, TOTAL_QUIZ_QUESTIONS, SHAREABLE_SLIDES, type SlideType } from './constants';
+export { SLIDES, SHAREABLE_SLIDES, type SlideType } from './constants';
 export { useScrollWrapped, type ScrollWrappedState } from './useScrollWrapped';
+export { buildActiveSlidePlan, getQuizSlides, hasAvailableMoinQuiz } from './slide-plan';
 export { SlideRenderer, useSlideShareData } from './SlideRenderer';
 export { ScrollContainer, type ScrollContainerRef } from './ScrollContainer';
 export { SlideSection } from './SlideSection';

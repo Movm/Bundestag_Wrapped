@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-import { SLIDES, TOTAL_QUIZ_QUESTIONS, type SlideType } from './constants';
+import { SLIDES, type SlideType } from './constants';
 import {
   getWrappedProgress,
   setWrappedProgress,
@@ -31,50 +31,71 @@ export interface ScrollWrappedState {
 }
 
 // Load initial section from localStorage
-function getInitialSection(surface: ReturnType<typeof editionSurface>): SlideType {
-  const saved = getWrappedProgress(surface);
-  if (saved && SLIDES.includes(saved.currentSection as SlideType)) {
-    return saved.currentSection as SlideType;
-  }
-  return 'intro';
+export function normalizeSection(
+  section: string | null | undefined,
+  activeSlides: readonly SlideType[],
+): SlideType {
+  if (section && activeSlides.includes(section as SlideType)) return section as SlideType;
+  return activeSlides[0] ?? 'intro';
 }
 
-export function useScrollWrapped(): ScrollWrappedState {
+function getInitialSection(
+  surface: ReturnType<typeof editionSurface>,
+  activeSlides: readonly SlideType[],
+): SlideType {
+  const saved = getWrappedProgress(surface, activeSlides);
+  return normalizeSection(saved?.currentSection, activeSlides);
+}
+
+export function useScrollWrapped(activeSlides: readonly SlideType[] = SLIDES): ScrollWrappedState {
   const edition = useOptionalEdition();
   const surface = useMemo(
     () => editionSurface(edition),
     [edition],
   );
-  const initialSection = useMemo(() => getInitialSection(surface), [surface]);
+  const initialSection = useMemo(
+    () => getInitialSection(surface, activeSlides),
+    [activeSlides, surface],
+  );
   const [currentSection, setCurrentSection] = useState<SlideType>(initialSection);
   const clearQuizProgress = useQuizStore((state) => state.clearProgress);
 
   // Track initial section for scroll restoration (null after first render)
+  const normalizedCurrentSection = normalizeSection(currentSection, activeSlides);
   const restoredSection = initialSection !== 'intro' ? initialSection : null;
+
+  // An edition update can remove a story group. Repair both the visible section
+  // and persisted progress before a renderer can be asked for a missing slide.
+  useEffect(() => {
+    if (currentSection !== normalizedCurrentSection) {
+      const frame = requestAnimationFrame(() => setCurrentSection(normalizedCurrentSection));
+      return () => cancelAnimationFrame(frame);
+    }
+  }, [currentSection, normalizedCurrentSection]);
 
   // Persist section to localStorage on changes
   useEffect(() => {
     // Don't persist intro (fresh state)
-    if (currentSection === 'intro') {
+    if (normalizedCurrentSection === 'intro') {
       return;
     }
 
     // Clear all progress when user completes the experience
-    if (currentSection === 'finale') {
+    if (normalizedCurrentSection === 'finale') {
       clearWrappedProgress(surface);
       clearQuizProgress();
       return;
     }
 
     // Only persist currentSection - quiz state is in quizStore
-    setWrappedProgress({ currentSection, quizAnswers: {} }, surface);
-  }, [currentSection, clearQuizProgress, surface]);
+    setWrappedProgress({ currentSection: normalizedCurrentSection, quizAnswers: {} }, surface);
+  }, [normalizedCurrentSection, clearQuizProgress, surface]);
 
   return {
-    currentSection,
+    currentSection: normalizedCurrentSection,
     initialSection: restoredSection,
     setCurrentSection,
   };
 }
 
-export { SLIDES, TOTAL_QUIZ_QUESTIONS, type SlideType };
+export { SLIDES, type SlideType };

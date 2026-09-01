@@ -12,6 +12,7 @@ import { themeMusic, getThemeForSlide } from '@/lib/theme-music';
 import { clearWrappedProgress } from '@/lib/wrapped-storage';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
+import { buildEditionQuizModel } from '@/domain/edition-quiz';
 import { useIsQuizAnswered, useQuizStore } from '@/stores/quizStore';
 import {
   ScrollContainer,
@@ -23,6 +24,8 @@ import {
   SLIDES,
   SHAREABLE_SLIDES,
   useSlideShareData,
+  buildActiveSlidePlan,
+  getQuizSlides,
   type ScrollContainerRef,
   type SlideType,
 } from './main-wrapped';
@@ -39,9 +42,15 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
   // Slides use store selectors directly, not data prop
   const { isLoading: loading, error, data } = useWrappedData();
   const scrollContainerRef = useRef<ScrollContainerRef>(null);
+  const quizModel = useMemo(() => (data ? buildEditionQuizModel(data) : {}), [data]);
+  const activeSlides = useMemo(
+    () => data ? buildActiveSlidePlan(quizModel, data.moinSpeakers) : SLIDES,
+    [data, quizModel],
+  );
+  const activeQuizSlides = useMemo(() => getQuizSlides(activeSlides), [activeSlides]);
 
   // Simplified: quiz state is in quizStore, not passed as props
-  const { currentSection, initialSection, setCurrentSection } = useScrollWrapped();
+  const { currentSection, initialSection, setCurrentSection } = useScrollWrapped(activeSlides);
 
   // For scroll lock: check if current quiz is answered (only subscribes when on quiz slide)
   const isCurrentQuizAnswered = useIsQuizAnswered(currentSection as SlideType);
@@ -112,18 +121,18 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
   // Pre-compute slide callbacks (simplified - quiz answers handled by store)
   const slideCallbacks = useMemo(() => {
     return Object.fromEntries(
-      SLIDES.map((slideId) => [
+      activeSlides.map((slideId) => [
         slideId,
         { onComplete: () => handleQuizComplete(slideId) },
       ])
     ) as Record<SlideType, { onComplete: () => void }>;
-  }, [handleQuizComplete]);
+  }, [activeSlides, handleQuizComplete]);
 
   // Lock scroll on intro (until started) and unanswered quiz slides
   const [scrollLocked, setScrollLocked] = useState(true); // Start locked for intro
   const shouldLock =
     (currentSection === 'intro' && !introStarted) ||
-    (currentSection.startsWith('quiz-') && !isCurrentQuizAnswered);
+    (activeQuizSlides.includes(currentSection as (typeof activeQuizSlides)[number]) && !isCurrentQuizAnswered);
 
   useEffect(() => {
     if (shouldLock) {
@@ -199,12 +208,14 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
           onSectionChange={handleSectionChange}
           locked={scrollLocked}
         >
-          {SLIDES.map((slideId) => (
+          {activeSlides.map((slideId) => (
             <SlideSection key={slideId} id={slideId}>
               <SlideRenderer
                 slide={slideId}
                 onComplete={slideCallbacks[slideId].onComplete}
                 onRestart={handleRestart}
+                quizModel={quizModel}
+                quizSlides={activeQuizSlides}
               />
             </SlideSection>
           ))}

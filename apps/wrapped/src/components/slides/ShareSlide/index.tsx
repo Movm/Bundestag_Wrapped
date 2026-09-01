@@ -6,9 +6,11 @@ import { renderShareImage, downloadShareImage, shareImage, preloadLogo } from '@
 import { useCorrectCount } from '@/stores/quizStore';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
+import type { SlideType } from '@/components/main-wrapped/constants';
 
 interface ShareSlideProps {
   totalQuestions: number;
+  quizSlideIds: readonly SlideType[];
 }
 
 interface CanvasPreviewProps {
@@ -111,10 +113,11 @@ const FallingConfetti = memo(function FallingConfetti() {
 
 export const ShareSlide = memo(function ShareSlide({
   totalQuestions,
+  quizSlideIds,
 }: ShareSlideProps) {
   const surface = editionSurface(useOptionalEdition());
   // Get correct count from store (only ShareSlide subscribes to this)
-  const correctCount = useCorrectCount();
+  const correctCount = useCorrectCount(quizSlideIds);
   const [userName, setUserName] = useState('');
   const [canShare, setCanShare] = useState(false);
   // Two canvas refs for both variants

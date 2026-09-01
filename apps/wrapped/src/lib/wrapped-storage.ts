@@ -29,7 +29,10 @@ function readProgress(key: string): WrappedProgress | null {
 /**
  * Get saved progress from localStorage, returning null if expired or invalid.
  */
-export function getWrappedProgress(surface?: StorageSurface): WrappedProgress | null {
+export function getWrappedProgress(
+  surface?: StorageSurface,
+  allowedSections?: readonly string[],
+): WrappedProgress | null {
   try {
     const key = keyFor(surface);
     let data = readProgress(key);
@@ -46,6 +49,11 @@ export function getWrappedProgress(surface?: StorageSurface): WrappedProgress | 
 
     // Check expiration
     if (Date.now() - data.savedAt > TTL_MS) {
+      window.localStorage.removeItem(key);
+      return null;
+    }
+
+    if (allowedSections && !allowedSections.includes(data.currentSection)) {
       window.localStorage.removeItem(key);
       return null;
     }
