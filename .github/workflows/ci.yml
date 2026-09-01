@@ -39,6 +39,9 @@ jobs:
       - name: Check generated Wrapped contract types
         run: pnpm contract:check
 
+      - name: Check edition surface boundaries
+        run: pnpm --filter bundestag-wrapped check:edition-surface
+
       - name: Lint
         run: pnpm -r lint
 
