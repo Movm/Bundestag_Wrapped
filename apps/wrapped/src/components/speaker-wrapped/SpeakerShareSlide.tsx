@@ -14,7 +14,7 @@ import {
 } from '@/lib/speaker-share-canvas';
 import { signatureWordsForDisplay } from '@/lib/speaker-profile-utils';
 import { useOptionalEdition } from '@/edition/EditionProvider';
-import { editionSurface } from '@/edition/surface';
+import { editionPath, editionSurface } from '@/edition/surface';
 
 interface SpeakerShareSlideProps {
   speaker: SpeakerWrapped;
@@ -240,7 +240,7 @@ export const SpeakerShareSlide = memo(function SpeakerShareSlide({
               <RotateCcw size={20} aria-hidden="true" />
             </motion.button>
             <MotionLink
-              to="/abgeordnete"
+              to={editionPath(surface, 'abgeordnete')}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -253,7 +253,7 @@ export const SpeakerShareSlide = memo(function SpeakerShareSlide({
               <Users size={20} aria-hidden="true" />
             </MotionLink>
             <MotionLink
-              to="/"
+              to={editionPath(surface)}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}

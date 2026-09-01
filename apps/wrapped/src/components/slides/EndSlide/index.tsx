@@ -3,6 +3,8 @@ import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { SlideContainer, itemVariants } from '../shared';
 import { END_SLIDE_CONTENT } from '@/shared/end-slide';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionPath, editionSurface } from '@/edition/surface';
 
 function GitHubIcon() {
   return (
@@ -52,6 +54,7 @@ const SOCIAL_ICONS: Record<string, React.FC> = {
 };
 
 export const EndSlide = memo(function EndSlide({ onRestart }: EndSlideProps) {
+  const surface = editionSurface(useOptionalEdition());
   return (
     <SlideContainer
       innerClassName="max-w-md md:max-w-4xl lg:max-w-5xl"
@@ -111,7 +114,7 @@ export const EndSlide = memo(function EndSlide({ onRestart }: EndSlideProps) {
             className="flex flex-wrap justify-center gap-3"
           >
             <Link
-              to="/dokumentation"
+              to={editionPath(surface, 'dokumentation')}
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/15 border border-white/20 rounded-full text-white font-semibold transition-all hover:scale-105 text-sm"
             >
               <span className="hidden md:inline">📖</span>
@@ -133,7 +136,7 @@ export const EndSlide = memo(function EndSlide({ onRestart }: EndSlideProps) {
               {END_SLIDE_CONTENT.buttons.restart}
             </button>
             <Link
-              to="/abgeordnete"
+              to={editionPath(surface, 'abgeordnete')}
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/15 border border-white/20 rounded-full text-white font-semibold transition-all hover:scale-105 text-sm"
             >
               {END_SLIDE_CONTENT.buttons.speakers}

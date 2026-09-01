@@ -46,6 +46,8 @@ import type {
   SpeakerWrapped,
   SpiritAnimal,
 } from '@/data/speaker-wrapped';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionPath, editionSurface } from '@/edition/surface';
 
 function formatNumber(value: number): string {
   return value.toLocaleString('de-DE');
@@ -839,6 +841,7 @@ function TransparencyDetail({ profile }: { profile?: AbgeordnetenwatchProfile | 
 }
 
 export function MdbProfilePage() {
+  const surface = editionSurface(useOptionalEdition());
   const { slug = '' } = useParams<{ slug: string }>();
   const [activeTab, setActiveTab] = useState<ProfileTab>('overview');
   const { data: speaker, isLoading, error } = useSpeakerData(slug);
@@ -885,8 +888,8 @@ export function MdbProfilePage() {
     refetchOnWindowFocus: false,
   });
   const searchUrl = speaker
-    ? `/suche?tab=speeches&q=${encodeURIComponent(`"${displayName}"`)}`
-    : '/suche?tab=speeches';
+    ? `${editionPath(surface, 'suche')}?tab=speeches&q=${encodeURIComponent(`"${displayName}"`)}`
+    : `${editionPath(surface, 'suche')}?tab=speeches`;
   const profileHighlights = speaker
     ? buildProfileHighlights({
         speaker,
@@ -939,7 +942,7 @@ export function MdbProfilePage() {
         <div className="text-center">
           <p className="text-red-400">Abgeordnetenprofil nicht gefunden</p>
           <p className="mt-2 text-sm text-white/40">{error?.message}</p>
-          <Link to="/abgeordnete" className="mt-6 inline-flex text-pink-300 hover:text-pink-200">
+          <Link to={editionPath(surface, 'abgeordnete')} className="mt-6 inline-flex text-pink-300 hover:text-pink-200">
             Zur Suche
           </Link>
         </div>
@@ -963,7 +966,7 @@ export function MdbProfilePage() {
     },
     ...(profileImage ? { image: profileImage.url } : {}),
     ...(profileDescription ? { description: profileDescription.text } : {}),
-    url: `${SITE_CONFIG.siteUrl}/abgeordnete/${speaker.slug}`,
+    url: `${SITE_CONFIG.siteUrl}${editionPath(surface, `abgeordnete/${speaker.slug}`)}`,
   };
 
   return (
@@ -971,7 +974,7 @@ export function MdbProfilePage() {
       <SEO
         title={`${displayName} (${speaker.party})`}
         description={`${displayName}: Profil mit Reden, Themen, Sprache und Tonalität aus Bundestag Wrapped.`}
-        canonicalUrl={`/abgeordnete/${speaker.slug}`}
+        canonicalUrl={editionPath(surface, `abgeordnete/${speaker.slug}`)}
         ogType="profile"
         structuredData={personSchema}
       />
@@ -986,7 +989,7 @@ export function MdbProfilePage() {
               }}
             >
               <div className="flex flex-wrap items-center justify-between gap-3 px-5 py-5 md:px-11">
-                <Link to="/abgeordnete" className="text-sm text-white/55 hover:text-white">
+                <Link to={editionPath(surface, 'abgeordnete')} className="text-sm text-white/55 hover:text-white">
                   ← Alle Abgeordneten
                 </Link>
                 <div className="flex gap-2">
