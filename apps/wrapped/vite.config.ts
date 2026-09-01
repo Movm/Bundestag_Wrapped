@@ -4,7 +4,9 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import path from 'path'
 
-const editionCacheVersion = process.env.VITE_EDITION_CACHE_VERSION ?? 'edition-v1'
+// Bump this only when the runtime-data cache schema changes. Workbox then removes
+// the old named caches while leaving unrelated browser storage untouched.
+const editionCacheVersion = process.env.VITE_EDITION_CACHE_VERSION ?? 'edition-v2'
 
 export default defineConfig({
   plugins: [
@@ -79,7 +81,7 @@ export default defineConfig({
             },
           },
           {
-            urlPattern: /\/data\/[^/]+\/[^/]+\/words.*\.json$/,
+            urlPattern: /\/data\/[^/]+\/[^/]+\/(?:words|word_rankings|topic_rankings).*\.json$/,
             handler: 'CacheFirst',
             options: {
               cacheName: `words-data-${editionCacheVersion}`,

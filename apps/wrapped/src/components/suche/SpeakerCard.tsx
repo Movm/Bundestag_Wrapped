@@ -3,6 +3,8 @@ import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { PARTY_BG_CLASSES } from '@/lib/party-colors';
 import { highlightTerms, type ScoredSpeaker, type ParsedQuery } from '@/lib/search-utils';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionPath, editionSurface } from '@/edition/surface';
 
 const MotionLink = motion.create(Link);
 
@@ -13,6 +15,7 @@ interface SpeakerCardProps {
 }
 
 export function SpeakerCard({ speaker, query, index }: SpeakerCardProps) {
+  const surface = editionSurface(useOptionalEdition());
   const highlightedName = useMemo(
     () => highlightTerms(speaker.name, query, 100),
     [speaker.name, query]
@@ -20,7 +23,7 @@ export function SpeakerCard({ speaker, query, index }: SpeakerCardProps) {
 
   return (
     <MotionLink
-      to={`/abgeordnete/${speaker.slug}`}
+      to={editionPath(surface, `abgeordnete/${speaker.slug}`)}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}

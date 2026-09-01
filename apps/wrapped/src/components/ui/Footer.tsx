@@ -1,6 +1,9 @@
 import { Link } from 'react-router';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionPath, editionSurface } from '@/edition/surface';
 
 export function Footer() {
+  const surface = editionSurface(useOptionalEdition());
   return (
     <footer className="w-full mt-auto border-t border-white/10">
       <div className="container mx-auto px-4 py-6 md:py-8">
@@ -78,7 +81,7 @@ export function Footer() {
             <span className="text-white/30">|</span>
             */}
             <Link
-              to="/suche"
+              to={editionPath(surface, 'suche')}
               className="hover:text-white/70 transition-colors"
             >
               Suche
@@ -101,7 +104,7 @@ export function Footer() {
             </Link>
             <span className="text-white/30">|</span>
             <Link
-              to="/dokumentation"
+              to={editionPath(surface, 'dokumentation')}
               className="hover:text-white/70 transition-colors"
             >
               Dokumentation

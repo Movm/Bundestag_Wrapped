@@ -7,10 +7,13 @@ import { type SpeakerSummary } from '@/data/speaker-wrapped';
 import { useSpeakerIndex } from '@/hooks/useDataQueries';
 import { useDebounce } from '@/hooks/useSearchState';
 import { PARTY_BG_CLASSES } from '@/lib/party-colors';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionPath, editionSurface } from '@/edition/surface';
 
 const MotionLink = motion.create(Link);
 
 export function AbgeordnetePage() {
+  const surface = editionSurface(useOptionalEdition());
   const { data: speakerIndex, isLoading: loading, error } = useSpeakerIndex();
   const [searchQuery, setSearchQuery] = useState('');
   const [inputFocused, setInputFocused] = useState(false);
@@ -63,7 +66,7 @@ export function AbgeordnetePage() {
       <SEO
         title={PAGE_META.speakers.title}
         description={PAGE_META.speakers.description}
-        canonicalUrl="/abgeordnete"
+        canonicalUrl={editionPath(surface, 'abgeordnete')}
       />
       <div className="min-h-screen page-bg pt-14">
         <div className="min-h-screen flex flex-col items-center justify-center px-4 pb-20">
@@ -179,7 +182,7 @@ export function AbgeordnetePage() {
                         className="flex items-center justify-between gap-3 px-4 py-3 hover:bg-white/5 transition-colors group"
                       >
                         <Link
-                          to={`/abgeordnete/${speaker.slug}`}
+                          to={editionPath(surface, `abgeordnete/${speaker.slug}`)}
                           className="flex min-w-0 flex-1 items-center gap-3"
                         >
                           <span className="text-white font-medium group-hover:text-pink-300 transition-colors">
@@ -198,7 +201,7 @@ export function AbgeordnetePage() {
                             {speaker.speeches} Reden
                           </span>
                           <Link
-                            to={`/wrapped/${speaker.slug}`}
+                            to={editionPath(surface, `wrapped/${speaker.slug}`)}
                             className="text-xs text-pink-300 hover:text-pink-200"
                           >
                             Wrapped
@@ -233,7 +236,7 @@ export function AbgeordnetePage() {
 
         {/* Link to full search */}
         <MotionLink
-          to="/suche?tab=speakers"
+          to={`${editionPath(surface, 'suche')}?tab=speakers`}
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6 }}
@@ -247,7 +250,7 @@ export function AbgeordnetePage() {
       <footer className="fixed bottom-0 left-0 right-0 p-4 pointer-events-none">
         <div className="flex justify-center gap-4 text-xs text-white/40">
           <Link
-            to="/"
+            to={editionPath(surface)}
             className="hover:text-white/60 transition-colors pointer-events-auto"
           >
             ← Zurück
