@@ -28,7 +28,7 @@ export function SpeakerQuizSlide({
   const quizConfig = useMemo((): QuizConfigAlt | null => {
     if (!nounQuiz) return null;
 
-    const explanationParty = nounQuiz.explanationParty ?? (nounQuiz as any).explanation ?? '';
+    const explanationParty = nounQuiz.explanationParty ?? '';
     const explanationBundestag = nounQuiz.explanationBundestag ?? '';
 
     return {

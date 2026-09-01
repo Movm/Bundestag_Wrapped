@@ -18,12 +18,8 @@ interface SpeakerShareModalProps {
 
 export function SpeakerShareModal({ isOpen, onClose, data }: SpeakerShareModalProps) {
   const surface = editionSurface(useOptionalEdition());
-  const [canShare, setCanShare] = useState(false);
+  const [canShare] = useState(() => typeof navigator !== 'undefined' && !!navigator.share && !!navigator.canShare);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    setCanShare(typeof navigator !== 'undefined' && !!navigator.share && !!navigator.canShare);
-  }, []);
 
   useEffect(() => {
     if (isOpen && canvasRef.current) {

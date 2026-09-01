@@ -1,4 +1,4 @@
-import { useRef, Suspense, lazy } from 'react';
+import { useRef, useEffect, Suspense, lazy } from 'react';
 import { useDebugRender } from '@/hooks/useDebugRender';
 import { useReducedMotion, useScroll, useTransform, AnimatePresence, motion, type MotionValue } from 'motion/react';
 import { BackgroundContrails, ContrailGradients } from './Contrails';
@@ -66,7 +66,9 @@ export function BackgroundSystem({
 
   // Create a ref wrapper for the scroll container
   const containerRef = useRef<HTMLDivElement | null>(null);
-  containerRef.current = scrollContainer ?? null;
+  useEffect(() => {
+    containerRef.current = scrollContainer ?? null;
+  }, [scrollContainer]);
 
   // Track scroll progress through all slides
   const { scrollYProgress } = useScroll({

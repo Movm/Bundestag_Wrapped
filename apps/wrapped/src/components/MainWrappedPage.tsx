@@ -102,7 +102,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
     clearWrappedProgress(surface);
     resetQuiz();
     window.location.reload();
-  }, [resetQuiz]);
+  }, [resetQuiz, surface]);
 
   // Stable section change handler
   const handleSectionChange = useCallback((id: string) => {
@@ -132,7 +132,8 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
       return () => clearTimeout(timer);
     } else {
       // Unlock immediately (no delay needed)
-      setScrollLocked(false);
+      const frame = requestAnimationFrame(() => setScrollLocked(false));
+      return () => cancelAnimationFrame(frame);
     }
   }, [shouldLock]);
 
@@ -189,7 +190,6 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
       <BackgroundSystem
         slideId={currentSection}
         intensity={getSlideIntensity(currentSection)}
-        scrollContainer={scrollContainerRef.current?.containerRef}
         sparkles={true}
       />
 

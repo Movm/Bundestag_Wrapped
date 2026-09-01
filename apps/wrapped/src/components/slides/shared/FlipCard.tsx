@@ -46,7 +46,8 @@ export function FlipCard({
   // Reduced motion: show content without 3D flip animation
   if (prefersReducedMotion) {
     return (
-      <div
+      <button
+        type="button"
         onClick={() => setIsFlipped((prev) => !prev)}
         className={`cursor-pointer relative ${className}`}
         style={{ width: size, height: size }}
@@ -57,12 +58,14 @@ export function FlipCard({
         <div className="absolute inset-0" style={{ opacity: isFlipped ? 1 : 0 }}>
           {back}
         </div>
-      </div>
+      </button>
     );
   }
 
   return (
-    <motion.div
+    <motion.button
+      type="button"
+      onClick={() => setIsFlipped((prev) => !prev)}
       animate={{ rotateY: isFlipped ? 180 : 0 }}
       transition={{ duration: 0.6, type: 'spring', stiffness: 100, damping: 15 }}
       onTouchStart={handleTouchStart}
@@ -96,6 +99,6 @@ export function FlipCard({
       >
         {back}
       </div>
-    </motion.div>
+    </motion.button>
   );
 }

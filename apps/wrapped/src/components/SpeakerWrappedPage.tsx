@@ -57,11 +57,11 @@ export function SpeakerWrappedPage() {
   // Restore scroll position on mount (if resuming)
   useEffect(() => {
     if (initialSection && data && initialSection !== 'speaker-intro') {
-      setIntroStarted(true); // Skip intro lock if resuming
+      const frame = requestAnimationFrame(() => setIntroStarted(true)); // Skip intro lock if resuming
       const timer = setTimeout(() => {
         scrollContainerRef.current?.scrollToSlide(initialSection);
       }, 100);
-      return () => clearTimeout(timer);
+      return () => { cancelAnimationFrame(frame); clearTimeout(timer); };
     }
   }, [initialSection, data]);
 
@@ -133,7 +133,6 @@ export function SpeakerWrappedPage() {
       {/* Background system with themed effects */}
       <BackgroundSystem
         slideId={currentSection}
-        scrollContainer={scrollContainerRef.current?.containerRef}
         sparkles
       />
 

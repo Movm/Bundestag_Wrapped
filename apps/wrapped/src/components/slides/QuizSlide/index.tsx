@@ -213,7 +213,8 @@ export const QuizSlide = memo(function QuizSlide({
   // Show lock hint when quiz comes into view and isn't answered
   useEffect(() => {
     if (isInView && !isAnswered && !showLockHint) {
-      setShowLockHint(true);
+      const frame = requestAnimationFrame(() => setShowLockHint(true));
+      return () => cancelAnimationFrame(frame);
     }
   }, [isInView, isAnswered, showLockHint]);
 

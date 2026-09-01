@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { SPEAKER_SLIDES, type SpeakerSlideType } from './constants';
 import { useSpeakerQuizStore } from '@/stores/speakerQuizStore';
 
@@ -84,9 +84,7 @@ export function useSpeakerScrollWrapped(slug: string): SpeakerScrollWrappedState
   const [currentSection, setCurrentSection] = useState<SpeakerSlideType>(initialSection);
 
   // Track initial section for scroll restoration (null after first render)
-  const initialSectionRef = useRef<SpeakerSlideType | null>(
-    initialSection !== 'speaker-intro' ? initialSection : null
-  );
+  const restoredSection = initialSection !== 'speaker-intro' ? initialSection : null;
 
   // Clear quiz progress action from store
   const clearQuizProgress = useSpeakerQuizStore((state) => state.clearProgress);
@@ -119,7 +117,7 @@ export function useSpeakerScrollWrapped(slug: string): SpeakerScrollWrappedState
 
   return {
     currentSection,
-    initialSection: initialSectionRef.current,
+    initialSection: restoredSection,
     setCurrentSection,
     handleRestart,
   };

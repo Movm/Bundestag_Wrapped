@@ -51,12 +51,14 @@ export function EditionProvider({ editionId, children }: { editionId: string; ch
   }}>{children}</EditionContext.Provider>;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components -- provider context hook must share this private context
 export function useEdition(): EditionContextValue {
   const value = useContext(EditionContext);
   if (!value) throw new Error('useEdition must be used inside EditionProvider');
   return value;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components -- provider context hook must share this private context
 export function useOptionalEdition(): EditionContextValue | null {
   return useContext(EditionContext);
 }
