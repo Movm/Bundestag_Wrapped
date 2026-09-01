@@ -112,7 +112,8 @@ export function MobileWrappedPage({ data, onComplete }: MobileWrappedPageProps) 
       const timer = setTimeout(() => setScrollLocked(true), 200);
       return () => clearTimeout(timer);
     } else {
-      setScrollLocked(false);
+      const frame = requestAnimationFrame(() => setScrollLocked(false));
+      return () => cancelAnimationFrame(frame);
     }
   }, [shouldLock]);
 

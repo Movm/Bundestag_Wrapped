@@ -44,7 +44,7 @@ export function ResultView({ topics }: ResultViewProps) {
         {topics.map((topic, i) => (
           <motion.span
             key={topic}
-            initial={{ opacity: 0, scale: 0, rotate: Math.random() * 20 - 10 }}
+            initial={{ opacity: 0, scale: 0, rotate: (i * 7) % 20 - 10 }}
             whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
             viewport={{ once: true }}
             transition={{
@@ -54,7 +54,7 @@ export function ResultView({ topics }: ResultViewProps) {
             }}
             whileHover={{
               scale: 1.15,
-              rotate: Math.random() * 10 - 5,
+              rotate: (i * 3) % 10 - 5,
             }}
             className={`${WORD_SIZES[Math.min(i, WORD_SIZES.length - 1)]} ${WORD_COLORS[i % WORD_COLORS.length]} px-2 cursor-default transition-transform`}
           >

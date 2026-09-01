@@ -19,11 +19,11 @@ const FallingConfetti = memo(function FallingConfetti() {
     () =>
       Array.from({ length: 40 }, (_, i) => ({
         id: i,
-        left: Math.random() * 100,
-        color: CONFETTI_COLORS[Math.floor(Math.random() * 3)],
-        rotate: Math.random() * 720 - 360,
-        duration: Math.random() * 3 + 2,
-        delay: Math.random() * 3,
+        left: (i * 37) % 100,
+        color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
+        rotate: (i * 83) % 720 - 360,
+        duration: 2 + (i % 4) * 0.75,
+        delay: (i % 6) * 0.5,
       })),
     []
   );
@@ -60,12 +60,8 @@ const FallingConfetti = memo(function FallingConfetti() {
 export function ShareModal({ isOpen, onClose, correctCount, totalQuestions }: ShareModalProps) {
   const surface = editionSurface(useOptionalEdition());
   const [userName, setUserName] = useState('');
-  const [canShare, setCanShare] = useState(false);
+  const [canShare] = useState(() => typeof navigator !== 'undefined' && !!navigator.share && !!navigator.canShare);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    setCanShare(typeof navigator !== 'undefined' && !!navigator.share && !!navigator.canShare);
-  }, []);
 
   useEffect(() => {
     if (isOpen && canvasRef.current) {

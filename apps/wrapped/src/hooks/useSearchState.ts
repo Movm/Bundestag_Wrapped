@@ -57,7 +57,8 @@ export function useSearchState(): [
   // Sync state from URL when it changes externally (back/forward navigation)
   useEffect(() => {
     const urlState = parseStateFromParams(searchParams);
-    setState(urlState);
+    const frame = requestAnimationFrame(() => setState(urlState));
+    return () => cancelAnimationFrame(frame);
   }, [searchParams]);
 
   const updateState = useCallback((updates: Partial<SearchState>) => {

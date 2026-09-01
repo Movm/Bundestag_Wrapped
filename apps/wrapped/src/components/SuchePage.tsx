@@ -112,7 +112,8 @@ export function SuchePage() {
   }, [updateState]);
 
   useEffect(() => {
-    setVisibleCount(50);
+    const frame = requestAnimationFrame(() => setVisibleCount(50));
+    return () => cancelAnimationFrame(frame);
   }, [state.party, state.tab, debouncedQuery, state.sort, state.minWords, state.maxWords]);
 
   const loadMore = useCallback(() => {

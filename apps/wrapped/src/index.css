@@ -397,10 +397,18 @@ h1, h2, h3, h4, h5, h6 {
     animation: none;
   }
 
-  @keyframes pillar-float,
-  @keyframes pillar-sway,
-  @keyframes pillar-move,
-  @keyframes pillar-breathe,
+  @keyframes pillar-float {
+    from, to { transform: rotate(45deg); }
+  }
+  @keyframes pillar-sway {
+    from, to { transform: rotate(45deg); }
+  }
+  @keyframes pillar-move {
+    from, to { transform: rotate(45deg); }
+  }
+  @keyframes pillar-breathe {
+    from, to { transform: rotate(45deg); }
+  }
   @keyframes pillar-float-subtle {
     from, to {
       transform: rotate(45deg);

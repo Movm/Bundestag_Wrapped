@@ -19,9 +19,9 @@ export function WrappedToolbar({ isMenuOpen, onMenuToggle }: WrappedToolbarProps
   // Show track info briefly when theme changes
   useEffect(() => {
     if (currentTheme && !muted) {
-      setShowTrackInfo(true);
+      const frame = requestAnimationFrame(() => setShowTrackInfo(true));
       const timer = setTimeout(() => setShowTrackInfo(false), 3000);
-      return () => clearTimeout(timer);
+      return () => { cancelAnimationFrame(frame); clearTimeout(timer); };
     }
   }, [currentTheme, muted]);
 

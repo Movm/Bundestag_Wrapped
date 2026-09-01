@@ -18,12 +18,8 @@ interface SlideShareFABProps {
 export function SlideShareFAB({ slideData }: SlideShareFABProps) {
   const surface = editionSurface(useOptionalEdition());
   const [isOpen, setIsOpen] = useState(false);
-  const [canShare, setCanShare] = useState(false);
+  const [canShare] = useState(() => typeof navigator !== 'undefined' && !!navigator.share && !!navigator.canShare);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    setCanShare(typeof navigator !== 'undefined' && !!navigator.share && !!navigator.canShare);
-  }, []);
 
   // Render the sharepic when modal opens and canvas is mounted
   useEffect(() => {

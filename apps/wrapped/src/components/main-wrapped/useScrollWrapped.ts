@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { SLIDES, TOTAL_QUIZ_QUESTIONS, type SlideType } from './constants';
 import {
   getWrappedProgress,
@@ -43,16 +43,14 @@ export function useScrollWrapped(): ScrollWrappedState {
   const edition = useOptionalEdition();
   const surface = useMemo(
     () => editionSurface(edition),
-    [edition?.editionId, edition?.manifest?.dataVersion],
+    [edition],
   );
-  const initialSection = useMemo(() => getInitialSection(surface), [surface.editionId, surface.dataVersion]);
+  const initialSection = useMemo(() => getInitialSection(surface), [surface]);
   const [currentSection, setCurrentSection] = useState<SlideType>(initialSection);
   const clearQuizProgress = useQuizStore((state) => state.clearProgress);
 
   // Track initial section for scroll restoration (null after first render)
-  const initialSectionRef = useRef<SlideType | null>(
-    initialSection !== 'intro' ? initialSection : null
-  );
+  const restoredSection = initialSection !== 'intro' ? initialSection : null;
 
   // Persist section to localStorage on changes
   useEffect(() => {
@@ -74,7 +72,7 @@ export function useScrollWrapped(): ScrollWrappedState {
 
   return {
     currentSection,
-    initialSection: initialSectionRef.current,
+    initialSection: restoredSection,
     setCurrentSection,
   };
 }

@@ -37,6 +37,7 @@ import {
  * Hook to get share data for the current slide.
  * Uses Zustand store so only re-renders when relevant data changes.
  */
+// eslint-disable-next-line react-refresh/only-export-components -- colocated store selector, not a component export
 export function useSlideShareData(slide: SlideType): SlideData | null {
   const data = useFullWrappedData();
   if (!data) return null;
