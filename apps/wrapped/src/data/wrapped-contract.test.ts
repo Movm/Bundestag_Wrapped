@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import wrapped from '../../public/wrapped.json';
 
-import { validateContractDocument, validateWrappedData } from './wrapped-contract';
+import { validateContractDocument, validateEditionContent, validateWrappedData } from './wrapped-contract';
 
 const fixture = {
   schemaVersion: 1,
@@ -39,5 +39,10 @@ describe('Wrapped v1 contract', () => {
 
   it('accepts the checked-in Wrapped production payload', () => {
     expect(validateWrappedData(wrapped, 'wrapped.json')).toEqual(wrapped);
+  });
+
+  it('validates the minimal edition content contract', () => {
+    expect(validateEditionContent({ editionId: 'fixture-edition', year: 2042 }, 'content.json')).toEqual({ editionId: 'fixture-edition', year: 2042 });
+    expect(() => validateEditionContent({ editionId: 'fixture-edition' }, 'content.json')).toThrow('content.json/');
   });
 });

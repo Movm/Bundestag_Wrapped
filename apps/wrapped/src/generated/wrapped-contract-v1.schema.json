@@ -10,6 +10,9 @@
       "$ref": "#/$defs/EditionManifest"
     },
     {
+      "$ref": "#/$defs/EditionContent"
+    },
+    {
       "$ref": "#/$defs/WrappedData"
     }
   ],
@@ -1376,6 +1379,23 @@
         },
         "checksums": {
           "$ref": "#/$defs/NonEmptyString"
+        }
+      }
+    },
+    "EditionContent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "editionId",
+        "year"
+      ],
+      "properties": {
+        "editionId": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "year": {
+          "type": "integer",
+          "minimum": 2000
         }
       }
     },

@@ -26,3 +26,10 @@ def test_rejects_invalid_manifest(filename: str):
 
 def test_accepts_current_wrapped_data():
     validate_contract_document(json.loads(WRAPPED_JSON.read_text(encoding="utf-8")), "WrappedData", "wrapped.json")
+
+
+def test_validates_minimal_edition_content_contract():
+    validate_contract_document({"editionId": "fixture-edition", "year": 2042}, "EditionContent", "content.json")
+
+    with pytest.raises(ContractValidationError, match=r"content.json/"):
+        validate_contract_document({"editionId": "fixture-edition"}, "EditionContent", "content.json")

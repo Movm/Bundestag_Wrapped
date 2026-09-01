@@ -1,10 +1,13 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route, useParams } from 'react-router';
+import { BrowserRouter, Navigate, Routes, Route, useLocation, useParams } from 'react-router';
+import { useQuery } from '@tanstack/react-query';
 import { DarkLayout, LightLayout } from '@/layouts/MainLayout';
 import { MobileMenu } from '@/components/ui/MobileMenu';
 import { useMenuState } from '@/hooks/useMenuState';
 import { UmamiAnalytics } from '@/components/analytics/UmamiAnalytics';
 import { EditionProvider } from '@/edition/EditionProvider';
+import { loadRegistry } from '@/edition/loader';
+import { currentEditionPath, resolveLegacyEditionPath } from '@/edition/registry';
 
 // Critical path - keep eager
 import { MainWrappedPage } from '@/components/MainWrappedPage';
@@ -52,6 +55,40 @@ function MainWrappedRoute() {
   );
 }
 
+function RedirectError({ message }: { message: string }) {
+  return (
+    <div className="min-h-screen page-bg flex items-center justify-center">
+      <div className="text-center">
+        <div className="text-6xl mb-4">⚠️</div>
+        <p className="text-red-400 mb-2">Fehler beim Laden</p>
+        <p className="text-white/40 text-sm">{message}</p>
+      </div>
+    </div>
+  );
+}
+
+function CurrentEditionRedirect({ legacy }: { legacy: boolean }) {
+  const location = useLocation();
+  const registry = useQuery({ queryKey: ['editions'], queryFn: loadRegistry, staleTime: Infinity });
+
+  if (registry.isLoading) return <PageLoader />;
+  if (registry.error || !registry.data) return <RedirectError message={registry.error?.message ?? 'Editionsindex ist nicht verfügbar'} />;
+
+  let target: string | null = null;
+  let routeError: string | null = null;
+  try {
+    target = legacy
+      ? resolveLegacyEditionPath(registry.data, location.pathname)
+      : currentEditionPath(registry.data);
+  } catch (error) {
+    routeError = error instanceof Error ? error.message : 'Ungültiger Editionsindex';
+  }
+
+  if (routeError) return <RedirectError message={routeError} />;
+  if (!target) return <RedirectError message={`Keine Editionsroute für ${location.pathname}`} />;
+  return <Navigate replace to={`${target}${location.search}${location.hash}`} />;
+}
+
 function EditionMainRoute() {
   const { editionId = '' } = useParams();
   return <EditionProvider editionId={editionId}><MainWrappedRoute /></EditionProvider>;
@@ -77,6 +114,11 @@ function EditionDokumentationRoute() {
   return <EditionProvider editionId={editionId}><DokumentationPage /></EditionProvider>;
 }
 
+function EditionMdbRoute() {
+  const { editionId = '' } = useParams();
+  return <EditionProvider editionId={editionId}><MdbProfilePage /></EditionProvider>;
+}
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -84,19 +126,20 @@ export default function App() {
       <Suspense fallback={<PageLoader />}>
         <Routes>
           {/* Main page has special header behavior (scroll-based visibility) */}
-          <Route path="/" element={<MainWrappedRoute />} />
+          <Route path="/" element={<CurrentEditionRedirect legacy={false} />} />
           <Route path="/:editionId" element={<EditionMainRoute />} />
 
           {/* Dark theme routes */}
           <Route element={<DarkLayout />}>
-            <Route path="/wrapped/:slug" element={<SpeakerWrappedPage />} />
-            <Route path="/suche" element={<SuchePage />} />
-            <Route path="/reden" element={<SuchePage />} />
-            <Route path="/abgeordnete" element={<AbgeordnetePage />} />
-            <Route path="/abgeordnete/:slug" element={<MdbProfilePage />} />
+            <Route path="/wrapped/:slug" element={<CurrentEditionRedirect legacy />} />
+            <Route path="/suche" element={<CurrentEditionRedirect legacy />} />
+            <Route path="/reden" element={<CurrentEditionRedirect legacy />} />
+            <Route path="/abgeordnete" element={<CurrentEditionRedirect legacy />} />
+            <Route path="/abgeordnete/:slug" element={<CurrentEditionRedirect legacy />} />
             <Route path="/:editionId/wrapped/:slug" element={<EditionSpeakerRoute />} />
             <Route path="/:editionId/suche" element={<EditionSucheRoute />} />
             <Route path="/:editionId/abgeordnete" element={<EditionAbgeordneteRoute />} />
+            <Route path="/:editionId/abgeordnete/:slug" element={<EditionMdbRoute />} />
           </Route>
 
           {/* Statistiken routes - TEMPORARILY DISABLED
@@ -114,7 +157,7 @@ export default function App() {
           {/* Light theme routes */}
           <Route element={<LightLayout />}>
             <Route path="/datenschutz" element={<DatenschutzPage />} />
-            <Route path="/dokumentation" element={<DokumentationPage />} />
+            <Route path="/dokumentation" element={<CurrentEditionRedirect legacy />} />
             <Route path="/mcp" element={<McpPage />} />
             <Route path="/mcp/technik" element={<McpTechnikPage />} />
             <Route path="/:editionId/dokumentation" element={<EditionDokumentationRoute />} />

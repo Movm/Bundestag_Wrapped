@@ -1,4 +1,3 @@
-import { validateWrappedData } from './wrapped-contract';
 import type { WrappedData as ContractWrappedData } from '@/generated/wrapped-contract-v1';
 
 export type WrappedData = ContractWrappedData;
@@ -245,13 +244,4 @@ export interface LegacyWrappedData {
   // Raw data for quiz generation
   moinSpeakers?: Array<{ name: string; party: string; count: number }>;
   topQuestionAskers?: Array<{ name: string; party: string; count: number }>;
-}
-
-export async function loadWrappedData(): Promise<WrappedData> {
-  const response = await fetch('/wrapped.json');
-  if (!response.ok) {
-    throw new Error('Failed to load wrapped data');
-  }
-  const payload: unknown = await response.json();
-  return validateWrappedData(payload, '/wrapped.json');
 }

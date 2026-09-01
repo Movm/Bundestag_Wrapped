@@ -1,9 +1,9 @@
 import Ajv2020, { type ErrorObject } from 'ajv/dist/2020';
 import addFormats from 'ajv-formats';
 import contractSchema from '../generated/wrapped-contract-v1.schema.json';
-import type { WrappedData } from '@/generated/wrapped-contract-v1';
+import type { EditionContent, WrappedData } from '@/generated/wrapped-contract-v1';
 
-export type ContractDocument = 'EditionsIndex' | 'EditionManifest' | 'WrappedData';
+export type ContractDocument = 'EditionsIndex' | 'EditionManifest' | 'EditionContent' | 'WrappedData';
 
 const ajv = new Ajv2020({ allErrors: true, strict: true });
 addFormats(ajv);
@@ -28,4 +28,8 @@ export function validateContractDocument<T>(
 
 export function validateWrappedData(payload: unknown, filename: string): WrappedData {
   return validateContractDocument<WrappedData>('WrappedData', payload, filename);
+}
+
+export function validateEditionContent(payload: unknown, filename: string): EditionContent {
+  return validateContractDocument<EditionContent>('EditionContent', payload, filename);
 }
