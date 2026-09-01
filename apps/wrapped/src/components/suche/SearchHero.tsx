@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import type { SearchState } from '@/hooks/useSearchState';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionPath, editionSurface } from '@/edition/surface';
 
 interface SearchHeroProps {
   state: SearchState;
@@ -11,6 +13,7 @@ interface SearchHeroProps {
 const SUGGESTION_TERMS = ['Klimaschutz', 'Migration', 'Digitalisierung', 'Rente', 'Bildung', 'Energie'];
 
 export function SearchHero({ state, updateState }: SearchHeroProps) {
+  const surface = editionSurface(useOptionalEdition());
   const [inputFocused, setInputFocused] = useState(false);
 
   return (
@@ -157,7 +160,7 @@ export function SearchHero({ state, updateState }: SearchHeroProps) {
 
       <footer className="fixed bottom-0 left-0 right-0 p-4 pointer-events-none">
         <div className="flex justify-center gap-4 text-xs text-white/40">
-          <Link to="/" className="hover:text-white/60 transition-colors pointer-events-auto">
+          <Link to={editionPath(surface)} className="hover:text-white/60 transition-colors pointer-events-auto">
             ← Zurück
           </Link>
           <span>|</span>

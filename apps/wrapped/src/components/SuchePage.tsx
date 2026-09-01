@@ -29,8 +29,11 @@ import {
   SpeechDetailModal,
 } from './suche';
 import { SuchePageSkeleton } from './skeletons/SuchePageSkeleton';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionPath, editionSurface } from '@/edition/surface';
 
 export function SuchePage() {
+  const surface = editionSurface(useOptionalEdition());
   const [state, updateState, resetFilters] = useSearchState();
 
   // Conditional fetching: only load data for the active tab (saves 20MB+ on initial load)
@@ -139,7 +142,7 @@ export function SuchePage() {
       <SEO
         title={PAGE_META.search.title}
         description={PAGE_META.search.description}
-        canonicalUrl="/suche"
+        canonicalUrl={editionPath(surface, 'suche')}
       />
       <div className="min-h-screen page-bg pt-14">
         {!showResults && (

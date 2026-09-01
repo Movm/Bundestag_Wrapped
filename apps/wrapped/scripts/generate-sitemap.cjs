@@ -7,7 +7,8 @@ const fs = require('fs');
 const path = require('path');
 
 const SITE_URL = 'https://bundestag-wrapped.de';
-const TODAY = new Date().toISOString().split('T')[0];
+// This value is intentionally stable: a build must not dirty a clean checkout.
+const STATIC_LASTMOD = '2025-01-01';
 
 const STATIC_PAGES = [
   { path: '/mcp', priority: '0.6', changefreq: 'monthly' },
@@ -29,8 +30,16 @@ function publishedEditions() {
     .map((edition) => ({ ...edition, manifest: readJson(path.join(publicDir, edition.manifestUrl.replace(/^\//, ''))) }));
 }
 
-function getSpeakerSlugs(manifest, publicDir) {
-  const indexPath = path.join(publicDir, manifest.assets.speakerIndex.replace(/^\//, ''));
+function resolveManifestAsset(manifestUrl, asset) {
+  return path.posix.normalize(path.posix.join(path.posix.dirname(manifestUrl.replace(/^\//, '')), asset));
+}
+
+function lastModified(manifest) {
+  return manifest.generatedAt ? manifest.generatedAt.slice(0, 10) : STATIC_LASTMOD;
+}
+
+function getSpeakerSlugs(manifestUrl, manifest, publicDir) {
+  const indexPath = path.join(publicDir, resolveManifestAsset(manifestUrl, manifest.assets.speakerIndex));
   if (!fs.existsSync(indexPath)) return [];
   const index = readJson(indexPath);
   return (index.speakers ?? []).map((speaker) => speaker.slug).filter(Boolean);
@@ -48,7 +57,7 @@ function generateSitemap() {
   for (const page of STATIC_PAGES) {
     xml += `  <url>
     <loc>${SITE_URL}${page.path}</loc>
-    <lastmod>${TODAY}</lastmod>
+    <lastmod>${STATIC_LASTMOD}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>
@@ -57,16 +66,17 @@ function generateSitemap() {
 
   for (const edition of editions) {
     const base = `/${edition.id}`;
+    const modified = lastModified(edition.manifest);
     for (const page of [
       { path: base, priority: '1.0', changefreq: 'weekly' },
       { path: `${base}/suche`, priority: '0.8', changefreq: 'weekly' },
       { path: `${base}/abgeordnete`, priority: '0.8', changefreq: 'weekly' },
       { path: `${base}/dokumentation`, priority: '0.6', changefreq: 'monthly' },
     ]) {
-      xml += `  <url>\n    <loc>${SITE_URL}${page.path}</loc>\n    <lastmod>${TODAY}</lastmod>\n    <changefreq>${page.changefreq}</changefreq>\n    <priority>${page.priority}</priority>\n  </url>\n`;
+      xml += `  <url>\n    <loc>${SITE_URL}${page.path}</loc>\n    <lastmod>${modified}</lastmod>\n    <changefreq>${page.changefreq}</changefreq>\n    <priority>${page.priority}</priority>\n  </url>\n`;
     }
-    for (const slug of getSpeakerSlugs(edition.manifest, publicDir)) {
-      xml += `  <url>\n    <loc>${SITE_URL}${base}/wrapped/${slug}</loc>\n    <lastmod>${TODAY}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`;
+    for (const slug of getSpeakerSlugs(edition.manifestUrl, edition.manifest, publicDir)) {
+      xml += `  <url>\n    <loc>${SITE_URL}${base}/wrapped/${slug}</loc>\n    <lastmod>${modified}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`;
     }
   }
 

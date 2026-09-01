@@ -25,6 +25,7 @@ export function SEO({
 }: SEOProps) {
   const edition = useOptionalEdition();
   const surface = editionSurface(edition);
+  const editionIsIndexable = !edition?.manifest || edition.manifest.status === 'published';
   const siteName = surface.title;
   const fullTitle = title
     ? `${title} | ${siteName}`
@@ -43,7 +44,7 @@ export function SEO({
       {/* Basic Meta Tags - React 19 hoists these to <head> automatically */}
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      {noIndex && <meta name="robots" content="noindex,nofollow" />}
+      {(!editionIsIndexable || noIndex) && <meta name="robots" content="noindex,nofollow" />}
       <link rel="canonical" href={absoluteCanonical ?? `${SITE_CONFIG.siteUrl}${surface.canonicalPath}`} />
 
       {/* Open Graph Tags */}
