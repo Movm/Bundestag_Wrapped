@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { useDebugRender } from '@/hooks/useDebugRender';
-import { QUIZZES } from '@/data/quizzes';
+import { buildEditionQuizModel } from '@/domain/edition-quiz';
 import { INFO_SLIDES } from '@/data/info-slides';
 import { TOTAL_QUIZ_QUESTIONS, type SlideType } from './constants';
 import {
@@ -13,7 +13,6 @@ import {
   PartyTopicsSlide,
   CommonWordsSlide,
   MoinSlide,
-  SwiftieSlide,
   ToneAnalysisSlide,
   DiscriminatorySlide,
   GenderSlide,
@@ -62,8 +61,6 @@ export function useSlideShareData(slide: SlideType): SlideData | null {
       return { type: 'commonWords', data: { topics: data.hotTopics } };
     case 'reveal-moin':
       return { type: 'moin', speakers: data.moinSpeakers ?? [] };
-    case 'reveal-swiftie':
-      return { type: 'swiftie', data: { name: 'Daniel Baldy', party: 'SPD' } };
     case 'reveal-tone':
       return data.toneAnalysis?.partyProfiles
         ? { type: 'toneAnalysis', data: { partyProfiles: data.toneAnalysis.partyProfiles } }
@@ -94,7 +91,7 @@ interface SlideRendererProps {
 // Pre-compute quiz slides and their numbers at module level
 const QUIZ_SLIDES = [
   'quiz-topics', 'quiz-signature', 'quiz-speeches', 'quiz-drama',
-  'quiz-discriminatory', 'quiz-common-words', 'quiz-moin', 'quiz-swiftie',
+  'quiz-discriminatory', 'quiz-common-words', 'quiz-moin',
   'quiz-tone', 'quiz-gender',
 ] as const;
 
@@ -192,6 +189,8 @@ export const SlideRenderer = memo(function SlideRenderer({
   // Quiz state from store
   const isQuizAnswered = useIsQuizAnswered(slide);
   const answerQuiz = useAnswerQuiz();
+  const data = useFullWrappedData();
+  const quizzes = data ? buildEditionQuizModel(data) : {};
 
   // Quiz number computed from slide ID (static)
   const quizNumber = getQuizNumber(slide);
@@ -261,27 +260,11 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'reveal-moin':
       return <MoinSlideWrapper phase="result" />;
 
-    // Swiftie Easter Egg: intro -> quiz -> result (no data needed)
-    case 'intro-swiftie':
-      return <SwiftieSlide phase="intro" />;
-
-    case 'quiz-swiftie':
-      return (
-        <SwiftieSlide
-          phase="quiz"
-          onQuizAnswer={handleQuizAnswer}
-          onComplete={onComplete}
-        />
-      );
-
-    case 'reveal-swiftie':
-      return <SwiftieSlide phase="result" />;
-
     // Tone: intro -> result
     case 'intro-tone':
       return <ToneSlideWrapper phase="intro" />;
 
-    // All quiz slides use hardcoded QUIZZES (no data needed)
+    // Every active quiz is derived from the loaded edition data.
     case 'quiz-topics':
     case 'quiz-signature':
     case 'quiz-speeches':
@@ -290,7 +273,8 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'quiz-common-words':
     case 'quiz-tone':
     case 'quiz-gender': {
-      const question = QUIZZES[slide];
+      const question = quizzes[slide];
+      if (!question) return null;
       return (
         <QuizSlide
           question={question}

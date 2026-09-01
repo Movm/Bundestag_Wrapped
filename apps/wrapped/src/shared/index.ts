@@ -11,7 +11,6 @@ export * from './animations/animation-config';
 export { useQuizConfig, type QuizConfig, type QuizConfigOptions } from './hooks/useQuizConfig';
 
 // Re-export shared data
-export { QUIZZES } from '../data/quizzes';
 export { INFO_SLIDES, type InfoSlideContent } from '../data/info-slides';
 
 // Re-export party colors
