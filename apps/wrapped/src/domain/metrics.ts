@@ -16,7 +16,7 @@ export function topSpeakerByWords(data: WrappedData) {
 }
 
 export function topInterrupter(data: WrappedData) {
-  return required(data.drama.topZwischenrufer[0], 'topInterrupter');
+  return required(data.drama?.topZwischenrufer[0], 'topInterrupter');
 }
 
 export function deterministicDecoys<T extends { party: string }>(items: readonly T[], answer: T, count = 3): T[] {

@@ -1,5 +1,6 @@
 import { useState, useCallback, useMemo } from 'react';
-import { SLIDES, TOTAL_QUIZ_QUESTIONS, type SlideType } from './constants';
+import { SLIDES, type SlideType } from './constants';
+import { getQuizSlides } from './slide-plan';
 
 export interface WrappedState {
   currentSlide: SlideType;
@@ -11,18 +12,18 @@ export interface WrappedState {
   handleQuizAnswer: (isCorrect: boolean) => void;
 }
 
-export function useWrappedState(): WrappedState {
-  const [currentSlide, setCurrentSlide] = useState<SlideType>('intro');
+export function useWrappedState(activeSlides: readonly SlideType[] = SLIDES): WrappedState {
+  const [currentSlide, setCurrentSlide] = useState<SlideType>(activeSlides[0] ?? 'intro');
   const [quizAnswers, setQuizAnswers] = useState<boolean[]>([]);
 
-  const slideIndex = SLIDES.indexOf(currentSlide);
-  const progress = ((slideIndex + 1) / SLIDES.length) * 100;
+  const slideIndex = activeSlides.indexOf(currentSlide);
+  const progress = ((slideIndex + 1) / activeSlides.length) * 100;
 
   const quizNumber = useMemo(() => {
-    const quizSlides = SLIDES.filter((s) => s.startsWith('quiz-'));
+    const quizSlides = getQuizSlides(activeSlides);
     const currentQuizIndex = quizSlides.indexOf(currentSlide as (typeof quizSlides)[number]);
     return currentQuizIndex + 1;
-  }, [currentSlide]);
+  }, [activeSlides, currentSlide]);
 
   const correctCount = useMemo(
     () => quizAnswers.filter(Boolean).length,
@@ -30,11 +31,11 @@ export function useWrappedState(): WrappedState {
   );
 
   const goToNextSlide = useCallback(() => {
-    const currentIndex = SLIDES.indexOf(currentSlide);
-    if (currentIndex < SLIDES.length - 1) {
-      setCurrentSlide(SLIDES[currentIndex + 1]);
+    const currentIndex = activeSlides.indexOf(currentSlide);
+    if (currentIndex < activeSlides.length - 1) {
+      setCurrentSlide(activeSlides[currentIndex + 1]);
     }
-  }, [currentSlide]);
+  }, [activeSlides, currentSlide]);
 
   const handleQuizAnswer = useCallback((isCorrect: boolean) => {
     setQuizAnswers((prev) => [...prev, isCorrect]);
@@ -51,4 +52,4 @@ export function useWrappedState(): WrappedState {
   };
 }
 
-export { SLIDES, TOTAL_QUIZ_QUESTIONS, type SlideType };
+export { SLIDES, type SlideType };

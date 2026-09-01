@@ -78,8 +78,6 @@ export const SLIDES = [
 
 export type SlideType = (typeof SLIDES)[number];
 
-export const TOTAL_QUIZ_QUESTIONS = 9;
-
 // Slides that auto-scroll to next after a delay (section intros and info slides)
 export const AUTO_SCROLL_SLIDES = new Set<SlideType>([
   'info-disclaimer',

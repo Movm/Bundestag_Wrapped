@@ -1,8 +1,9 @@
 import { memo } from 'react';
 import { useDebugRender } from '@/hooks/useDebugRender';
-import { buildEditionQuizModel } from '@/domain/edition-quiz';
+import { buildEditionQuizModel, type EditionQuizModel } from '@/domain/edition-quiz';
 import { INFO_SLIDES } from '@/data/info-slides';
-import { TOTAL_QUIZ_QUESTIONS, type SlideType } from './constants';
+import { SLIDES, type SlideType } from './constants';
+import { getQuizSlides, type QUIZ_SLIDES } from './slide-plan';
 import {
   IntroSlide,
   QuizSlide,
@@ -87,17 +88,11 @@ interface SlideRendererProps {
   slide: SlideType;
   onComplete: () => void;
   onRestart?: () => void;
+  quizModel?: EditionQuizModel;
+  quizSlides?: readonly (typeof QUIZ_SLIDES)[number][];
 }
-
-// Pre-compute quiz slides and their numbers at module level
-const QUIZ_SLIDES = [
-  'quiz-topics', 'quiz-signature', 'quiz-speeches', 'quiz-drama',
-  'quiz-discriminatory', 'quiz-common-words', 'quiz-moin',
-  'quiz-tone', 'quiz-gender',
-] as const;
-
-function getQuizNumber(slideId: string): number {
-  const index = QUIZ_SLIDES.indexOf(slideId as typeof QUIZ_SLIDES[number]);
+function getQuizNumber(slideId: string, quizSlides: readonly (typeof QUIZ_SLIDES)[number][]): number {
+  const index = quizSlides.indexOf(slideId as typeof QUIZ_SLIDES[number]);
   return index >= 0 ? index + 1 : 0;
 }
 
@@ -186,15 +181,18 @@ export const SlideRenderer = memo(function SlideRenderer({
   slide,
   onComplete,
   onRestart,
+  quizModel,
+  quizSlides,
 }: SlideRendererProps) {
   // Quiz state from store
   const isQuizAnswered = useIsQuizAnswered(slide);
   const answerQuiz = useAnswerQuiz();
   const data = useFullWrappedData();
-  const quizzes = data ? buildEditionQuizModel(data) : {};
-
-  // Quiz number computed from slide ID (static)
-  const quizNumber = getQuizNumber(slide);
+  const quizzes = quizModel ?? (data ? buildEditionQuizModel(data) : {});
+  // The web route supplies its active plan. The optional fallback only preserves
+  // compatibility for the unused legacy mobile wrapper while it is decommissioned.
+  const activeQuizSlides = quizSlides ?? getQuizSlides(SLIDES);
+  const quizNumber = getQuizNumber(slide, activeQuizSlides);
 
   // Handle quiz answer by updating store
   const handleQuizAnswer = (isCorrect: boolean) => {
@@ -280,7 +278,7 @@ export const SlideRenderer = memo(function SlideRenderer({
         <QuizSlide
           question={question}
           questionNumber={quizNumber}
-          totalQuestions={TOTAL_QUIZ_QUESTIONS}
+          totalQuestions={activeQuizSlides.length}
           isAnswered={isQuizAnswered}
           onAnswer={handleQuizAnswer}
           onComplete={onComplete}
@@ -318,7 +316,7 @@ export const SlideRenderer = memo(function SlideRenderer({
       return <GenderSlideWrapper />;
 
     case 'share':
-      return <ShareSlide totalQuestions={TOTAL_QUIZ_QUESTIONS} />;
+      return <ShareSlide totalQuestions={activeQuizSlides.length} quizSlideIds={activeQuizSlides} />;
 
     case 'finale':
       return <EndSlide onRestart={onRestart} />;
@@ -329,4 +327,4 @@ export const SlideRenderer = memo(function SlideRenderer({
   };
 
   return renderSlideContent();
-}, (prev, next) => prev.slide === next.slide);
+});

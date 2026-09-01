@@ -62,10 +62,18 @@ export const useQuizStore = create<QuizState>()(
  * Get correct answer count
  * Only ShareSlide needs this
  */
-export function useCorrectCount(): number {
-  return useQuizStore((state) =>
-    Object.values(state.quizAnswers).filter(Boolean).length
-  );
+export function countCorrectAnswers(
+  answers: Record<string, boolean>,
+  activeSlides?: readonly SlideType[],
+): number {
+  const relevantAnswers = activeSlides
+    ? activeSlides.map((slide) => answers[slide]).filter((answer): answer is boolean => answer !== undefined)
+    : Object.values(answers);
+  return relevantAnswers.filter(Boolean).length;
+}
+
+export function useCorrectCount(activeSlides?: readonly SlideType[]): number {
+  return useQuizStore((state) => countCorrectAnswers(state.quizAnswers, activeSlides));
 }
 
 /**

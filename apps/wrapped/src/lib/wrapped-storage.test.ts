@@ -32,6 +32,13 @@ describe('wrapped storage', () => {
     expect(getWrappedProgress(edition2026)?.currentSection).toBe('topics');
   });
 
+  it('clears progress for a slide that no longer exists in the active plan', () => {
+    setWrappedProgress({ currentSection: 'quiz-removed', quizAnswers: {} }, edition2025);
+
+    expect(getWrappedProgress(edition2025, ['intro', 'finale'])).toBeNull();
+    expect(getWrappedProgress(edition2025)).toBeNull();
+  });
+
   it('migrates the unversioned key exactly once to legacy', () => {
     window.localStorage.setItem('bundestag-wrapped-progress', JSON.stringify({ currentSection: 'topics', quizAnswers: {}, savedAt: Date.now() }));
     const legacy = { editionId: 'legacy', dataVersion: 'legacy' };
