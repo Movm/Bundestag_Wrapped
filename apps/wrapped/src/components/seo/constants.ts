@@ -27,6 +27,11 @@ export const PAGE_META = {
     description:
       'Datenschutzerklärung für Bundestag Wrapped. Keine Cookies und keine verpflichtende Datenerhebung.',
   },
+  terms: {
+    title: 'Nutzungsbedingungen',
+    description:
+      'Nutzungsbedingungen für Bundestag Wrapped: Hinweise zu Datenquellen, Nutzung, MCP-Server, Lizenzen und Haftung.',
+  },
   mcp: {
     title: 'MCP-Server',
     description:

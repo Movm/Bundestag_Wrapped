@@ -124,8 +124,9 @@ function annotationsFor(name) {
     readOnlyHint: readOnly,
     destructiveHint: DESTRUCTIVE_TOOLS.has(name),
     idempotentHint: readOnly,
-    // get_client_config and get_filters are local/static (no external calls).
-    openWorldHint: name !== 'get_client_config' && name !== 'bundestag_get_filters'
+    // Tools either read public/open datasets or operate on this server's private
+    // indexes; none publish, send, or otherwise change public internet state.
+    openWorldHint: false
   };
 }
 
