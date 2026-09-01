@@ -72,7 +72,7 @@ jobs:
           bundestag-analysis analyze ./data -w "$WP" -o ./results -q
           bundestag-analysis generate-edition --edition "$EDITION" --from "$FROM" --to "${TO:0:10}" --wahlperiode "$WP" --data-version "$VERSION" --data-dir ./data --results-dir ./results --output "$GITHUB_WORKSPACE/apps/wrapped/public/data"
       - name: Upload preview artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: wrapped-edition-${{ env.EDITION }}-${{ env.VERSION }}
           path: apps/wrapped/public/data/${{ env.EDITION }}/${{ env.VERSION }}
