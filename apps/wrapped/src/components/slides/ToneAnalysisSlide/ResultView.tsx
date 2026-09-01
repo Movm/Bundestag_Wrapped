@@ -6,14 +6,6 @@ import { FlipCard, BUBBLE_POSITIONS, FLOAT_ANIMATIONS } from '../shared';
 import { sortParties } from './constants';
 import { LegacyResultView } from './LegacyResultView';
 
-const PARTY_SUMMARIES: Record<string, string> = {
-  'CDU/CSU': 'Setzt auf positive Rhetorik und sucht Konsens statt Konfrontation.',
-  'SPD': 'Fokussiert auf praktische Lösungen und parteiübergreifende Zusammenarbeit.',
-  'GRÜNE': 'Balanciert Idealismus mit pragmatischen Ansätzen im Parlament.',
-  'AfD': 'Greift scharf an, etikettiert Gegner und setzt auf Konfrontation statt Kooperation.',
-  'DIE LINKE': 'Stellt kämpferisch soziale Forderungen und hinterfragt die Regierung.',
-};
-
 interface ResultViewProps {
   toneAnalysis: ToneAnalysis;
 }
@@ -113,7 +105,7 @@ const ToneBubble = memo(function ToneBubble({
         {profile.party}
       </h4>
       <p className="text-white/90 text-xs md:text-sm px-3 leading-relaxed text-center">
-        {PARTY_SUMMARIES[profile.party] || 'Keine Beschreibung verfügbar.'}
+        {profile.description}
       </p>
     </div>
   );
