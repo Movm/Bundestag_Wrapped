@@ -17,7 +17,7 @@ export const INTRO_SLIDES: Record<string, IntroSlideContent> = {
   'intro-vocabulary': {
     emoji: '📚',
     title: 'Jede Fraktion hat ihre Lieblingswörter.',
-    subtitle: 'Erkennst du, welches Wort die Partei Die Linke am meisten Verwendet?',
+    subtitle: 'Erkennst du das auffälligste Wort einer Fraktion?',
   },
   'intro-speeches': {
     emoji: '🎤',
@@ -52,7 +52,7 @@ export const INTRO_SLIDES: Record<string, IntroSlideContent> = {
   'intro-tone': {
     emoji: '🎭',
     title: 'Jede Fraktion hat ihren eigenen Ton.',
-    subtitle: 'Welches Emoji passt zur SPD?',
+    subtitle: 'Welches Emoji passt zu diesem Tonfall?',
   },
   'intro-gender': {
     emoji: '👩‍💼',

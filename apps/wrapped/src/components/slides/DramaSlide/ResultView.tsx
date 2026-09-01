@@ -112,7 +112,7 @@ export function ResultView({ drama }: ResultViewProps) {
         transition={{ delay: NOTE_DELAY, duration: 0.5 }}
         className="text-white/40 text-sm md:text-base"
       >
-        Mit über 4.000 (!) Zwischenrufen stört die AfD mit Abstand am meisten.
+        Die Auswertung zeigt den höchsten gezählten Wert dieser Edition.
       </motion.p>
 
       <ScrollHint delay={SCROLL_HINT_DELAY} className="mt-10" />

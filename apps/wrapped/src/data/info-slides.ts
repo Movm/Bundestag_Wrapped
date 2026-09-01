@@ -17,7 +17,7 @@ export const INFO_SLIDES: Record<string, InfoSlideContent> = {
   'info-topics': {
     emoji: '📊',
     title: 'Themen-Analyse',
-    body: 'Wir haben alle Bundestagsreden analysiert und 13 Themenbereiche identifiziert – von Finanzen über Klima bis Justiz. Aber worüber spricht Berlin?',
+    body: 'Wir analysieren die Themen der Reden dieser Edition und machen ihre Schwerpunkte vergleichbar.',
   },
   'info-party-topics': {
     emoji: '',
@@ -32,17 +32,17 @@ export const INFO_SLIDES: Record<string, InfoSlideContent> = {
   'info-speeches': {
     emoji: '🎤',
     title: 'Wer redet am meisten?',
-    body: 'Friedrich Merz führt die Redezeit-Statistik an – als Kanzler beantwortet er viele Fragen in der Fragestunde. Die längste Einzelrede hielt jedoch Lars Klingbeil mit 5.977 Wörtern (knapp vor Merz).',
+    body: 'Die Frage nutzt die in dieser Edition gemessene Gesamtwortzahl je Person. Einzelreden werden dafür nicht als eigene Rangliste behauptet.',
   },
   'info-drama': {
     emoji: '🎭',
     title: 'Zwischenrufe im Bundestag',
-    body: 'Zwischenrufe sind spontane Reaktionen während Reden - Positiv oder Negativ. Oppositionsparteien rufen häufiger dazwischen – die AfD als größte Oppositionsfraktion führt diese Statistik an. Überdeutlich.',
+    body: 'Zwischenrufe sind spontane Reaktionen während Reden. Die Auswertung zeigt die gezählten Werte dieser Edition, ohne daraus eine allgemeine politische Regel abzuleiten.',
   },
   'info-moin': {
     emoji: '🌊',
     title: 'Der SSW im Bundestag',
-    body: "Stefan Seidler vertritt den Südschleswigschen Wählerverband (SSW) – die Partei der dänischen und friesischen Minderheiten, die seit 2021 wieder im Bundestag sitzt. Für diese gilt die 5-Prozent-Hürde nicht.",
+    body: 'Die Optionen stammen ausschließlich aus den in dieser Edition gezählten Personen. Es werden keine zusätzlichen Namen ergänzt.',
   },
   'info-tone': {
     emoji: '🎭',
@@ -52,7 +52,7 @@ export const INFO_SLIDES: Record<string, InfoSlideContent> = {
   'info-gender': {
     emoji: '👩‍💼',
     title: 'Redezeit nach Geschlecht',
-    body: 'Der Frauenanteil bei Bundestagsreden variiert stark zwischen Fraktionen. Dies hängt von der Zusammensetzung der Fraktion, internen Strukturen und Themenschwerpunkten ab. Der Frauenanteil sank im Bundestag zuletzt, vor allem durch die AfD.',
+    body: 'Der Frauenanteil bei Bundestagsreden variiert zwischen Fraktionen. Die Einordnung bezieht sich ausschließlich auf die Daten dieser Edition.',
   },
   'info-discriminatory': {
     emoji: '⚠️',
