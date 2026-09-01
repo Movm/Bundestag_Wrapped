@@ -15,6 +15,5 @@ export { ToneAnalysisSlide } from './ToneAnalysisSlide';
 export { DiscriminatorySlide } from './DiscriminatorySlide';
 export { GenderSlide } from './GenderSlide';
 export { MoinSlide } from './MoinSlide';
-export { SwiftieSlide } from './SwiftieSlide';
 export { ShareSlide } from './ShareSlide';
 export { EndSlide } from './EndSlide';

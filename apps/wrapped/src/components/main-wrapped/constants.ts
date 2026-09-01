@@ -58,11 +58,6 @@ export const SLIDES = [
   'info-moin',
   'reveal-moin',
 
-  // Swiftie Easter Egg
-  'intro-swiftie',
-  'quiz-swiftie',
-  'reveal-swiftie',
-
   // Tone Analysis
   'intro-tone',
   'quiz-tone',
@@ -83,7 +78,7 @@ export const SLIDES = [
 
 export type SlideType = (typeof SLIDES)[number];
 
-export const TOTAL_QUIZ_QUESTIONS = 10;
+export const TOTAL_QUIZ_QUESTIONS = 9;
 
 // Slides that auto-scroll to next after a delay (section intros and info slides)
 export const AUTO_SCROLL_SLIDES = new Set<SlideType>([
@@ -97,7 +92,6 @@ export const AUTO_SCROLL_SLIDES = new Set<SlideType>([
   'intro-discriminatory',
   'intro-common-words',
   'intro-moin',
-  'intro-swiftie',
   'intro-tone',
   // Info slides also auto-scroll
   'info-signature',
@@ -119,7 +113,6 @@ export const SHAREABLE_SLIDES = new Set<SlideType>([
   'reveal-discriminatory',  // Discriminatory Language
   'reveal-common-words',    // Common Words
   'reveal-moin',            // Moin
-  'reveal-swiftie',         // Swiftie
   'reveal-tone',            // Tone Analysis
   'reveal-gender',          // Gender
 ]);
