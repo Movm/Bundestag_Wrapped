@@ -21,6 +21,7 @@ interface WrappedStore {
   setData: (data: WrappedData) => void;
   setLoading: (loading: boolean) => void;
   setError: (error: Error | null) => void;
+  reset: () => void;
 }
 
 export const useWrappedStore = create<WrappedStore>((set) => ({
@@ -30,6 +31,7 @@ export const useWrappedStore = create<WrappedStore>((set) => ({
   setData: (data) => set({ data, isLoading: false }),
   setLoading: (isLoading) => set({ isLoading }),
   setError: (error) => set({ error, isLoading: false }),
+  reset: () => set({ data: null, error: null, isLoading: true }),
 }));
 
 // ============================================================================

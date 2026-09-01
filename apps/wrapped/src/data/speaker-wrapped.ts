@@ -321,31 +321,11 @@ interface SpeakerEnrichment {
 }
 
 /**
- * Load the speaker index (list of all speakers with basic stats).
- * Note: Caching is handled by React Query.
+ * Adds optional, non-statistical biography data kept outside edition artifacts.
+ * All speech, word, ranking, and party statistics are loaded from the edition
+ * manifest by useSpeakerData.
  */
-export async function loadSpeakerIndex(): Promise<SpeakerIndex> {
-  const response = await fetch('/speakers/index.json');
-  if (!response.ok) {
-    throw new Error(`Failed to load speaker index: ${response.status}`);
-  }
-  return response.json();
-}
-
-/**
- * Load detailed wrapped data for a specific speaker.
- */
-export async function loadSpeakerData(slug: string): Promise<SpeakerWrapped> {
-  const response = await fetch(`/speakers/${slug}.json`);
-  if (!response.ok) {
-    if (response.status === 404) {
-      throw new Error(`Speaker not found: ${slug}`);
-    }
-    throw new Error(`Failed to load speaker data: ${response.status}`);
-  }
-
-  const speaker = await response.json() as SpeakerWrapped;
-
+export async function enrichSpeakerData(speaker: SpeakerWrapped, slug: string): Promise<SpeakerWrapped> {
   try {
     const enrichmentResponse = await fetch(`/speaker-enrichment/${slug}.json`);
     if (!enrichmentResponse.ok) {

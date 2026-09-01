@@ -9,7 +9,7 @@ from typing import Any, Literal
 
 from jsonschema import Draft202012Validator, FormatChecker
 
-DocumentName = Literal["EditionsIndex", "EditionManifest", "WrappedData"]
+DocumentName = Literal["EditionsIndex", "EditionManifest", "EditionContent", "WrappedData"]
 
 
 class ContractValidationError(ValueError):

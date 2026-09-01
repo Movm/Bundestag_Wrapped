@@ -339,6 +339,11 @@ export interface EditionManifest {
   "checksums": NonEmptyString;
 }
 
+export interface EditionContent {
+  "editionId": NonEmptyString;
+  "year": number;
+}
+
 export interface EditionSummary {
   "id": NonEmptyString;
   "year": number;

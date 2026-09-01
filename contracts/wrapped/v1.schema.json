@@ -5,6 +5,7 @@
   "oneOf": [
     { "$ref": "#/$defs/EditionsIndex" },
     { "$ref": "#/$defs/EditionManifest" },
+    { "$ref": "#/$defs/EditionContent" },
     { "$ref": "#/$defs/WrappedData" }
   ],
   "$defs": {
@@ -194,6 +195,7 @@
     "Coverage": { "type": "object", "additionalProperties": false, "required": ["protocolCount", "firstProtocolDate", "lastProtocolDate", "complete"], "properties": { "protocolCount": { "$ref": "#/$defs/Count" }, "firstProtocolDate": { "$ref": "#/$defs/IsoDate" }, "lastProtocolDate": { "$ref": "#/$defs/IsoDate" }, "complete": { "type": "boolean" } } },
     "EditionAssets": { "type": "object", "additionalProperties": false, "required": ["wrapped", "speakerIndex", "speakersBase", "speeches", "words", "wordRankings", "topicRankings"], "properties": { "wrapped": { "$ref": "#/$defs/NonEmptyString" }, "speakerIndex": { "$ref": "#/$defs/NonEmptyString" }, "speakersBase": { "$ref": "#/$defs/NonEmptyString" }, "speeches": { "$ref": "#/$defs/NonEmptyString" }, "words": { "$ref": "#/$defs/NonEmptyString" }, "wordRankings": { "$ref": "#/$defs/NonEmptyString" }, "topicRankings": { "$ref": "#/$defs/NonEmptyString" } } },
     "EditionManifest": { "type": "object", "additionalProperties": false, "required": ["schemaVersion", "editionId", "year", "title", "status", "period", "dataVersion", "generatedAt", "coverage", "assets", "content", "checksums"], "properties": { "schemaVersion": { "const": 1 }, "editionId": { "$ref": "#/$defs/NonEmptyString" }, "year": { "type": "integer", "minimum": 2000 }, "title": { "$ref": "#/$defs/NonEmptyString" }, "status": { "$ref": "#/$defs/EditionStatus" }, "period": { "$ref": "#/$defs/EditionPeriod" }, "dataVersion": { "$ref": "#/$defs/NonEmptyString" }, "generatedAt": { "$ref": "#/$defs/IsoDateTime" }, "coverage": { "$ref": "#/$defs/Coverage" }, "assets": { "$ref": "#/$defs/EditionAssets" }, "content": { "$ref": "#/$defs/NonEmptyString" }, "checksums": { "$ref": "#/$defs/NonEmptyString" } } },
+    "EditionContent": { "type": "object", "additionalProperties": false, "required": ["editionId", "year"], "properties": { "editionId": { "$ref": "#/$defs/NonEmptyString" }, "year": { "type": "integer", "minimum": 2000 } } },
     "EditionSummary": { "type": "object", "additionalProperties": false, "required": ["id", "year", "status", "manifestUrl"], "properties": { "id": { "$ref": "#/$defs/NonEmptyString" }, "year": { "type": "integer", "minimum": 2000 }, "status": { "$ref": "#/$defs/EditionStatus" }, "manifestUrl": { "$ref": "#/$defs/NonEmptyString" } } },
     "EditionsIndex": { "type": "object", "additionalProperties": false, "required": ["schemaVersion", "currentEdition", "editions"], "properties": { "schemaVersion": { "const": 1 }, "currentEdition": { "$ref": "#/$defs/NonEmptyString" }, "editions": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/EditionSummary" } } } }
   }

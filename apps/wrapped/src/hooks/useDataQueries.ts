@@ -1,129 +1,133 @@
-import { useEffect } from 'react'
-import { useQuery } from '@tanstack/react-query'
-import type { UseQueryResult } from '@tanstack/react-query'
-import { loadWrappedData, type WrappedData } from '../data/wrapped'
-import { loadSpeakerIndex, loadSpeakerData, type SpeakerIndex, type SpeakerWrapped } from '../data/speaker-wrapped'
-import { type Speech, type WordsIndex, type WordRankingsData, type TopicRankingsData } from '../lib/search-utils'
-import { useWrappedStore } from '@/stores/wrappedStore'
-import { useOptionalEdition } from '@/edition/EditionProvider'
+import { useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import type { UseQueryResult } from '@tanstack/react-query';
+import type { WrappedData } from '@/data/wrapped';
+import { enrichSpeakerData, type SpeakerIndex, type SpeakerWrapped } from '@/data/speaker-wrapped';
+import type { Speech, TopicRankingsData, WordRankingsData, WordsIndex } from '@/lib/search-utils';
+import { loadEditionAsset } from '@/edition/loader';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import type { EditionContextValue } from '@/edition/types';
+import type { Edition } from '@/edition/registry';
+import { useWrappedStore } from '@/stores/wrappedStore';
 
 export interface SpeechesData {
-  speeches: Speech[]
+  speeches: Speech[];
 }
 
-// Static data never changes during a session - cache indefinitely
 const STATIC_DATA_OPTIONS = {
-  staleTime: Infinity,  // Data is never considered stale
-  gcTime: Infinity,     // Keep in cache indefinitely (prevents GC)
+  staleTime: Infinity,
+  gcTime: Infinity,
   refetchOnWindowFocus: false,
   refetchOnReconnect: false,
-} as const
+} as const;
 
-/**
- * Fetches wrapped data and syncs to Zustand store.
- *
- * React Query handles fetching/caching, Zustand handles selective subscriptions.
- * Slides use store hooks (useParties, useDrama, etc.) to avoid re-render cascade.
- */
-export function useWrappedData() {
-  const setData = useWrappedStore((s) => s.setData)
-  const setError = useWrappedStore((s) => s.setError)
+type AssetType = 'speaker-index' | 'speaker' | 'speeches' | 'words' | 'word-rankings' | 'topic-rankings';
+type EditionQueryIdentity = { editionId?: string; manifest?: Pick<Edition, 'editionId' | 'dataVersion'> } | null;
 
-  const edition = useOptionalEdition()
-  const query = useQuery<WrappedData, Error>({
-    queryKey: ['wrapped', edition?.editionId, edition?.manifest?.dataVersion],
-    queryFn: loadWrappedData,
-    enabled: !edition,
-    ...STATIC_DATA_OPTIONS,
-  })
+export function editionAssetQueryKey(
+  edition: EditionQueryIdentity,
+  assetType: AssetType,
+  suffix?: string,
+): readonly string[] {
+  return [
+    'edition',
+    edition?.manifest?.editionId ?? edition?.editionId ?? 'missing-edition',
+    edition?.manifest?.dataVersion ?? 'missing-version',
+    assetType,
+    ...(suffix ? [suffix] : []),
+  ];
+}
 
-  // Sync React Query state to Zustand store
-  useEffect(() => {
-    if (query.data) {
-      setData(query.data)
-    }
-  }, [query.data, setData])
-
-  useEffect(() => {
-    if (query.error) {
-      setError(query.error)
-    }
-  }, [query.error, setError])
-
-  if (edition) {
-    return {
-      ...query,
-      data: edition.data,
-      error: edition.error ?? null,
-      isLoading: edition.isLoading,
-      isError: Boolean(edition.error),
-      isSuccess: Boolean(edition.data),
-    } as UseQueryResult<WrappedData, Error>
+function editionAsset<T>(edition: EditionContextValue | null, asset: string): Promise<T> {
+  if (!edition?.manifest || !edition.manifestUrl) {
+    return Promise.reject(new Error('Edition context is unavailable for this data asset'));
   }
-  return query
+  return loadEditionAsset<T>(edition.manifestUrl, asset);
+}
+
+function speakerAssetPath(speakersBase: string, slug: string): string {
+  return `${speakersBase.replace(/\/?$/, '/')}${slug}.json`;
+}
+
+/** Keeps the Zustand slide store in lockstep with the active edition only. */
+export function useWrappedData(): UseQueryResult<WrappedData, Error> {
+  const edition = useOptionalEdition();
+  const setData = useWrappedStore((state) => state.setData);
+  const setError = useWrappedStore((state) => state.setError);
+  const reset = useWrappedStore((state) => state.reset);
+  const editionId = edition?.manifest?.editionId ?? edition?.editionId;
+  const dataVersion = edition?.manifest?.dataVersion;
+
+  useEffect(() => {
+    reset();
+  }, [editionId, dataVersion, reset]);
+
+  useEffect(() => {
+    if (edition?.data) setData(edition.data);
+    if (edition?.error) setError(edition.error);
+  }, [edition?.data, edition?.error, setData, setError]);
+
+  const error = edition?.error ?? (!edition ? new Error('Edition context is unavailable for Wrapped data') : null);
+  return {
+    data: edition?.data,
+    error,
+    isLoading: edition?.isLoading ?? false,
+    isError: Boolean(error),
+    isSuccess: Boolean(edition?.data),
+    status: error ? 'error' : edition?.data ? 'success' : 'pending',
+    fetchStatus: 'idle',
+  } as UseQueryResult<WrappedData, Error>;
 }
 
 export function useSpeakerIndex() {
+  const edition = useOptionalEdition();
   return useQuery<SpeakerIndex, Error>({
-    queryKey: ['speakerIndex'],
-    queryFn: loadSpeakerIndex,
+    queryKey: editionAssetQueryKey(edition, 'speaker-index'),
+    queryFn: () => editionAsset<SpeakerIndex>(edition, edition!.manifest!.assets.speakerIndex),
+    enabled: Boolean(edition?.manifest && edition.manifestUrl),
     ...STATIC_DATA_OPTIONS,
-  })
+  });
 }
 
 export function useSpeakerData(slug: string) {
+  const edition = useOptionalEdition();
   return useQuery<SpeakerWrapped, Error>({
-    queryKey: ['speaker', slug],
-    queryFn: () => loadSpeakerData(slug),
-    enabled: !!slug,
+    queryKey: editionAssetQueryKey(edition, 'speaker', slug),
+    queryFn: async () => {
+      const speaker = await editionAsset<SpeakerWrapped>(edition, speakerAssetPath(edition!.manifest!.assets.speakersBase, slug));
+      return enrichSpeakerData(speaker, slug);
+    },
+    enabled: Boolean(slug && edition?.manifest && edition.manifestUrl),
     ...STATIC_DATA_OPTIONS,
-  })
+  });
+}
+
+function useEditionJsonAsset<T>(
+  assetType: Exclude<AssetType, 'speaker-index' | 'speaker'>,
+  asset: (edition: NonNullable<ReturnType<typeof useOptionalEdition>>) => string,
+  enabled = true,
+) {
+  const edition = useOptionalEdition();
+  return useQuery<T, Error>({
+    queryKey: editionAssetQueryKey(edition, assetType),
+    queryFn: () => editionAsset<T>(edition, asset(edition!)),
+    enabled: Boolean(enabled && edition?.manifest && edition.manifestUrl),
+    ...STATIC_DATA_OPTIONS,
+  });
 }
 
 export function useSpeechesDb(options?: { enabled?: boolean }) {
-  return useQuery<SpeechesData, Error>({
-    queryKey: ['speeches'],
-    queryFn: () => fetch('/speeches_db.json').then(r => {
-      if (!r.ok) throw new Error('Failed to load speeches')
-      return r.json()
-    }),
-    ...STATIC_DATA_OPTIONS,
-    enabled: options?.enabled ?? true,
-  })
+  return useEditionJsonAsset<SpeechesData>('speeches', (edition) => edition.manifest!.assets.speeches, options?.enabled ?? true);
 }
 
 export function useWordsIndex(options?: { enabled?: boolean }) {
-  return useQuery<WordsIndex, Error>({
-    queryKey: ['words-index'],
-    queryFn: () => fetch('/words_index.json').then(r => {
-      if (!r.ok) throw new Error('Failed to load words index')
-      return r.json()
-    }),
-    ...STATIC_DATA_OPTIONS,
-    enabled: options?.enabled ?? true,
-  })
+  return useEditionJsonAsset<WordsIndex>('words', (edition) => edition.manifest!.assets.words, options?.enabled ?? true);
 }
 
 export function useWordRankings(options?: { enabled?: boolean }) {
-  return useQuery<WordRankingsData, Error>({
-    queryKey: ['word-rankings'],
-    queryFn: () => fetch('/word_rankings.json').then(r => {
-      if (!r.ok) throw new Error('Failed to load word rankings')
-      return r.json()
-    }),
-    ...STATIC_DATA_OPTIONS,
-    enabled: options?.enabled ?? true,
-  })
+  return useEditionJsonAsset<WordRankingsData>('word-rankings', (edition) => edition.manifest!.assets.wordRankings, options?.enabled ?? true);
 }
 
 export function useTopicRankings(options?: { enabled?: boolean }) {
-  return useQuery<TopicRankingsData, Error>({
-    queryKey: ['topic-rankings'],
-    queryFn: () => fetch('/topic_rankings.json').then(r => {
-      if (!r.ok) throw new Error('Failed to load topic rankings')
-      return r.json()
-    }),
-    ...STATIC_DATA_OPTIONS,
-    enabled: options?.enabled ?? true,
-  })
+  return useEditionJsonAsset<TopicRankingsData>('topic-rankings', (edition) => edition.manifest!.assets.topicRankings, options?.enabled ?? true);
 }
