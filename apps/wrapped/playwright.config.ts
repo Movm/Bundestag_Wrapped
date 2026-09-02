@@ -9,6 +9,9 @@ export default defineConfig({
   reporter: process.env.CI ? [['github'], ['html', { outputFolder: 'playwright-report', open: 'never' }]] : 'list',
   use: {
     baseURL: 'http://127.0.0.1:4173',
+    // Fixture routes must see every edition asset; a registered PWA service
+    // worker would otherwise satisfy later requests from its own cache.
+    serviceWorkers: 'block',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
