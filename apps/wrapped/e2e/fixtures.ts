@@ -33,8 +33,8 @@ function manifest(editionId: string, year: number, dataVersion: string) {
 }
 
 const editions = {
-  '2025': { manifest: manifest('2025', 2025, 'fixture-a'), content: { editionId: '2025', year: 2025 }, wrapped: wrapped('2025', true) },
-  '2026': { manifest: manifest('2026', 2026, 'fixture-b'), content: { editionId: '2026', year: 2026 }, wrapped: wrapped('2026', false) },
+  '2025': { manifest: manifest('2025', 2025, 'fixture-a'), content: { editionId: '2025', year: 2025 }, wrapped: wrapped('2025', true), speakerIndex: { speakers: [{ slug: 'shared-speaker', name: 'Alex Ausgabe Eins', party: 'Partei Alpha', speeches: 4, wortbeitraege: 1, words: 400 }] } },
+  '2026': { manifest: manifest('2026', 2026, 'fixture-b'), content: { editionId: '2026', year: 2026 }, wrapped: wrapped('2026', false), speakerIndex: { speakers: [{ slug: 'shared-speaker', name: 'Bea Ausgabe Zwei', party: 'Partei Beta', speeches: 5, wortbeitraege: 2, words: 500 }] } },
 };
 
 function respond(route: Route, payload: unknown) {
@@ -53,6 +53,7 @@ export async function installEditionFixtures(page: Page) {
     if (asset === 'manifest.json') return respond(route, fixture.manifest);
     if (asset === 'content.json') return respond(route, fixture.content);
     if (asset === 'wrapped.json') return respond(route, fixture.wrapped);
+    if (asset === 'speakers/index.json') return respond(route, fixture.speakerIndex);
     return route.fulfill({ status: 404, contentType: 'application/json', body: JSON.stringify({ error: 'fixture asset missing' }) });
   });
 }
