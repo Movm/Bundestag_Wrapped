@@ -78,6 +78,37 @@ test('completes the fixture journey with a quiz gate, mixed answers, and the act
   await expect(page.locator('[data-slide-id="finale"]').getByRole('heading', { name: 'Bundestag Wrapped' })).toBeVisible();
 });
 
+test('uses the active edition for share and download output', async ({ page }) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, 'canShare', { configurable: true, value: () => true });
+    Object.defineProperty(navigator, 'share', {
+      configurable: true,
+      value: async (payload: { files: File[]; title: string }) => {
+        window.localStorage.setItem('fixture-share', JSON.stringify({
+          filename: payload.files[0]?.name,
+          title: payload.title,
+        }));
+      },
+    });
+  });
+  await page.goto('/2026');
+  await moveToSlide(page, 'share');
+
+  const shareSlide = page.locator('[data-slide-id="share"]');
+  await expect(shareSlide.getByRole('heading', { name: 'Teile dein Ergebnis!' })).toBeVisible();
+  await expect(shareSlide.getByRole('button', { name: 'Teilen' }).first()).toBeVisible();
+
+  const downloadPromise = page.waitForEvent('download');
+  await shareSlide.getByRole('button', { name: 'Speichern' }).first().click();
+  expect((await downloadPromise).suggestedFilename()).toBe('bundestag-wrapped-2026.png');
+
+  await shareSlide.getByRole('button', { name: 'Teilen' }).first().click();
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('fixture-share'))).toBe(JSON.stringify({
+    filename: 'bundestag-wrapped-2026.png',
+    title: 'Mein Fixture Wrapped 2026',
+  }));
+});
+
 test('keeps an index result and its destinations within the active preview edition', async ({ page }) => {
   await page.goto('/2026/abgeordnete');
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://bundestag-wrapped.de/2026/abgeordnete');
