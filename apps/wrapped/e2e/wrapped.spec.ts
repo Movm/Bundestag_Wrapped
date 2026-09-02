@@ -26,6 +26,18 @@ test('omits only the unavailable speech quiz group for its fixture edition', asy
   await expect(page.locator('[data-slide-id^="quiz-"]')).toHaveCount(5);
 });
 
+test('keeps an index result and its destinations within the active preview edition', async ({ page }) => {
+  await page.goto('/2026/abgeordnete');
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://bundestag-wrapped.de/2026/abgeordnete');
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex,nofollow');
+
+  await page.getByRole('textbox', { name: 'Abgeordneten suchen' }).fill('Bea');
+  const profile = page.getByRole('link', { name: 'Bea Ausgabe Zwei Partei Beta' });
+  await expect(profile).toHaveAttribute('href', '/2026/abgeordnete/shared-speaker');
+  await expect(page.getByRole('link', { name: 'Wrapped', exact: true })).toHaveAttribute('href', '/2026/wrapped/shared-speaker');
+  await expect(page.getByText('Alex Ausgabe Eins')).toHaveCount(0);
+});
+
 test('unknown editions stay in a controlled, accessible error state', async ({ page }) => {
   await page.goto('/does-not-exist');
   await expect(page.getByText('Fehler beim Laden', { exact: true })).toBeVisible();
