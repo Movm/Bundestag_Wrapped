@@ -1,5 +1,7 @@
 import { validateContractDocument, validateEditionContent, validateWrappedData } from '@/data/wrapped-contract';
 import type { WrappedData } from '@/data/wrapped';
+import type { SpeakerIndex, SpeakerWrapped } from '@/data/speaker-wrapped';
+import type { Speech, TopicRankingsData, WordRankingsData, WordsIndex } from '@/lib/search-utils';
 import { resolveAssetUrl, type Edition, type EditionRegistry } from './registry';
 import type { EditionContent, EditionSummary } from '@/generated/wrapped-contract-v1';
 
@@ -20,6 +22,27 @@ export class EditionLoadError extends Error {
     this.url = url;
   }
 }
+
+export interface SpeechesData {
+  speeches: Speech[];
+}
+
+export type EditionAssetDocument =
+  | 'SpeakerIndexAsset'
+  | 'SpeakerWrappedAsset'
+  | 'SpeechesAsset'
+  | 'WordsAsset'
+  | 'WordRankingsAsset'
+  | 'TopicRankingsAsset';
+
+type EditionAssetData = {
+  SpeakerIndexAsset: SpeakerIndex;
+  SpeakerWrappedAsset: SpeakerWrapped;
+  SpeechesAsset: SpeechesData;
+  WordsAsset: WordsIndex;
+  WordRankingsAsset: WordRankingsData;
+  TopicRankingsAsset: TopicRankingsData;
+};
 
 async function fetchJson(url: string): Promise<unknown> {
   let response: Response;
@@ -74,8 +97,14 @@ export async function loadEditionWrapped(manifestUrl: string, manifest: Edition)
   return validate(() => validateWrappedData(payload, url), url);
 }
 
-export async function loadEditionAsset<T>(manifestUrl: string, asset: string): Promise<T> {
-  return fetchJson(resolveAssetUrl(manifestUrl, asset)) as Promise<T>;
+export async function loadEditionAsset<Document extends EditionAssetDocument>(
+  manifestUrl: string,
+  asset: string,
+  document: Document,
+): Promise<EditionAssetData[Document]> {
+  const url = resolveAssetUrl(manifestUrl, asset);
+  const payload = await fetchJson(url);
+  return validate(() => validateContractDocument<EditionAssetData[Document]>(document, payload, url), url);
 }
 
 export function assertEditionConsistency(

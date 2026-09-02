@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { assertEditionConsistency, loadEditionContent } from './loader';
+import { assertEditionConsistency, loadEditionAsset, loadEditionContent } from './loader';
 import type { Edition } from './registry';
 
 const manifest = {
@@ -43,5 +43,29 @@ describe('edition runtime loader', () => {
       manifest,
       { editionId: 'other-edition', year: 2042 },
     )).toThrow('Edition content and manifest disagree');
+  });
+
+  it('requires a concrete runtime validator for manifest assets', async () => {
+    const fetch = vi.fn().mockResolvedValue(new Response(JSON.stringify({
+      speakers: [{ slug: 'fixture-speaker', name: 'Fixture Speaker', party: 'Fixture Party', speeches: 2, wortbeitraege: 1, words: 42 }],
+    }), { status: 200 }));
+    vi.stubGlobal('fetch', fetch);
+
+    await expect(loadEditionAsset('/fixtures/nested/manifest.json', 'speakers/index.json', 'SpeakerIndexAsset')).resolves.toMatchObject({
+      speakers: [{ slug: 'fixture-speaker' }],
+    });
+    expect(fetch).toHaveBeenCalledWith('/fixtures/nested/speakers/index.json');
+  });
+
+  it('reports the asset URL and JSON path when a runtime asset is malformed', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockImplementation(() => Promise.resolve(new Response(JSON.stringify({
+      speakers: [{ slug: 'fixture-speaker', name: 'Fixture Speaker', party: 'Fixture Party', speeches: 'two', wortbeitraege: 1, words: 42 }],
+    }), { status: 200 }))));
+
+    await expect(loadEditionAsset('/fixtures/manifest.json', 'speakers/index.json', 'SpeakerIndexAsset')).rejects.toMatchObject({
+      kind: 'invalid-contract',
+      url: '/fixtures/speakers/index.json',
+    });
+    await expect(loadEditionAsset('/fixtures/manifest.json', 'speakers/index.json', 'SpeakerIndexAsset')).rejects.toThrow('/speakers/0/speeches');
   });
 });

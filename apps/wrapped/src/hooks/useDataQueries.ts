@@ -3,16 +3,12 @@ import { useQuery } from '@tanstack/react-query';
 import type { UseQueryResult } from '@tanstack/react-query';
 import type { WrappedData } from '@/data/wrapped';
 import { enrichSpeakerData, type SpeakerIndex, type SpeakerWrapped } from '@/data/speaker-wrapped';
-import type { Speech, TopicRankingsData, WordRankingsData, WordsIndex } from '@/lib/search-utils';
-import { loadEditionAsset } from '@/edition/loader';
+import type { TopicRankingsData, WordRankingsData, WordsIndex } from '@/lib/search-utils';
+import { loadEditionAsset, type EditionAssetDocument, type SpeechesData } from '@/edition/loader';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import type { EditionContextValue } from '@/edition/types';
 import type { Edition } from '@/edition/registry';
 import { useWrappedStore } from '@/stores/wrappedStore';
-
-export interface SpeechesData {
-  speeches: Speech[];
-}
 
 const STATIC_DATA_OPTIONS = {
   staleTime: Infinity,
@@ -38,11 +34,15 @@ export function editionAssetQueryKey(
   ];
 }
 
-function editionAsset<T>(edition: EditionContextValue | null, asset: string): Promise<T> {
+function editionAsset<Document extends EditionAssetDocument>(
+  edition: EditionContextValue | null,
+  asset: string,
+  document: Document,
+) {
   if (!edition?.manifest || !edition.manifestUrl) {
     return Promise.reject(new Error('Edition context is unavailable for this data asset'));
   }
-  return loadEditionAsset<T>(edition.manifestUrl, asset);
+  return loadEditionAsset(edition.manifestUrl, asset, document);
 }
 
 function speakerAssetPath(speakersBase: string, slug: string): string {
@@ -83,7 +83,7 @@ export function useSpeakerIndex() {
   const edition = useOptionalEdition();
   return useQuery<SpeakerIndex, Error>({
     queryKey: editionAssetQueryKey(edition, 'speaker-index'),
-    queryFn: () => editionAsset<SpeakerIndex>(edition, edition!.manifest!.assets.speakerIndex),
+    queryFn: () => editionAsset(edition, edition!.manifest!.assets.speakerIndex, 'SpeakerIndexAsset'),
     enabled: Boolean(edition?.manifest && edition.manifestUrl),
     ...STATIC_DATA_OPTIONS,
   });
@@ -94,7 +94,7 @@ export function useSpeakerData(slug: string) {
   return useQuery<SpeakerWrapped, Error>({
     queryKey: editionAssetQueryKey(edition, 'speaker', slug),
     queryFn: async () => {
-      const speaker = await editionAsset<SpeakerWrapped>(edition, speakerAssetPath(edition!.manifest!.assets.speakersBase, slug));
+      const speaker = await editionAsset(edition, speakerAssetPath(edition!.manifest!.assets.speakersBase, slug), 'SpeakerWrappedAsset');
       return enrichSpeakerData(speaker, slug);
     },
     enabled: Boolean(slug && edition?.manifest && edition.manifestUrl),
@@ -105,29 +105,50 @@ export function useSpeakerData(slug: string) {
 function useEditionJsonAsset<T>(
   assetType: Exclude<AssetType, 'speaker-index' | 'speaker'>,
   asset: (edition: NonNullable<ReturnType<typeof useOptionalEdition>>) => string,
+  load: (edition: NonNullable<ReturnType<typeof useOptionalEdition>>, asset: string) => Promise<T>,
   enabled = true,
 ) {
   const edition = useOptionalEdition();
   return useQuery<T, Error>({
     queryKey: editionAssetQueryKey(edition, assetType),
-    queryFn: () => editionAsset<T>(edition, asset(edition!)),
+    queryFn: () => load(edition!, asset(edition!)),
     enabled: Boolean(enabled && edition?.manifest && edition.manifestUrl),
     ...STATIC_DATA_OPTIONS,
   });
 }
 
 export function useSpeechesDb(options?: { enabled?: boolean }) {
-  return useEditionJsonAsset<SpeechesData>('speeches', (edition) => edition.manifest!.assets.speeches, options?.enabled ?? true);
+  return useEditionJsonAsset<SpeechesData>(
+    'speeches',
+    (edition) => edition.manifest!.assets.speeches,
+    (edition, asset) => editionAsset(edition, asset, 'SpeechesAsset'),
+    options?.enabled ?? true,
+  );
 }
 
 export function useWordsIndex(options?: { enabled?: boolean }) {
-  return useEditionJsonAsset<WordsIndex>('words', (edition) => edition.manifest!.assets.words, options?.enabled ?? true);
+  return useEditionJsonAsset<WordsIndex>(
+    'words',
+    (edition) => edition.manifest!.assets.words,
+    (edition, asset) => editionAsset(edition, asset, 'WordsAsset'),
+    options?.enabled ?? true,
+  );
 }
 
 export function useWordRankings(options?: { enabled?: boolean }) {
-  return useEditionJsonAsset<WordRankingsData>('word-rankings', (edition) => edition.manifest!.assets.wordRankings, options?.enabled ?? true);
+  return useEditionJsonAsset<WordRankingsData>(
+    'word-rankings',
+    (edition) => edition.manifest!.assets.wordRankings,
+    (edition, asset) => editionAsset(edition, asset, 'WordRankingsAsset'),
+    options?.enabled ?? true,
+  );
 }
 
 export function useTopicRankings(options?: { enabled?: boolean }) {
-  return useEditionJsonAsset<TopicRankingsData>('topic-rankings', (edition) => edition.manifest!.assets.topicRankings, options?.enabled ?? true);
+  return useEditionJsonAsset<TopicRankingsData>(
+    'topic-rankings',
+    (edition) => edition.manifest!.assets.topicRankings,
+    (edition, asset) => editionAsset(edition, asset, 'TopicRankingsAsset'),
+    options?.enabled ?? true,
+  );
 }

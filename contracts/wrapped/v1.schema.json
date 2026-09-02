@@ -190,6 +190,125 @@
       "required": ["metadata", "parties", "drama", "topSpeakers", "topBefragungResponders", "topSpeakersByWords", "topSpeakersByAvgWords", "hotTopics", "toneAnalysis", "topicAnalysis", "funFacts", "genderAnalysis", "moinSpeakers", "topQuestionAskers"],
       "properties": { "metadata": { "$ref": "#/$defs/WrappedMetadata" }, "parties": { "type": "array", "items": { "$ref": "#/$defs/PartyStats" } }, "drama": { "$ref": "#/$defs/DramaStats" }, "topSpeakers": { "type": "array", "items": { "$ref": "#/$defs/TopSpeaker" } }, "topBefragungResponders": { "type": "array", "items": { "$ref": "#/$defs/BefragungResponder" } }, "topSpeakersByWords": { "type": "array", "items": { "$ref": "#/$defs/SpeakerWords" } }, "topSpeakersByAvgWords": { "type": "array", "items": { "$ref": "#/$defs/SpeakerAverageWords" } }, "hotTopics": { "type": "array", "items": { "$ref": "#/$defs/NonEmptyString" } }, "quizQuestions": { "type": "array", "items": { "$ref": "#/$defs/QuizQuestion" } }, "toneAnalysis": { "anyOf": [{ "$ref": "#/$defs/ToneAnalysis" }, { "type": "null" }] }, "topicAnalysis": { "anyOf": [{ "$ref": "#/$defs/TopicAnalysis" }, { "type": "null" }] }, "funFacts": { "type": "array", "items": { "$ref": "#/$defs/FunFact" } }, "genderAnalysis": { "anyOf": [{ "$ref": "#/$defs/GenderAnalysis" }, { "type": "null" }] }, "moinSpeakers": { "type": "array", "items": { "$ref": "#/$defs/NamedPartyCount" } }, "topQuestionAskers": { "type": "array", "items": { "$ref": "#/$defs/NamedPartyCount" } } }
     },
+    "SpeakerIndexAsset": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["speakers"],
+      "properties": {
+        "speakers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": ["slug", "name", "party", "speeches", "wortbeitraege", "words"],
+            "properties": {
+              "slug": { "$ref": "#/$defs/NonEmptyString" },
+              "name": { "$ref": "#/$defs/NonEmptyString" },
+              "party": { "$ref": "#/$defs/NonEmptyString" },
+              "speeches": { "$ref": "#/$defs/Count" },
+              "wortbeitraege": { "$ref": "#/$defs/Count" },
+              "words": { "$ref": "#/$defs/Count" }
+            }
+          }
+        }
+      }
+    },
+    "SpeakerWrappedAsset": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["name", "party", "slug", "speeches", "wortbeitraege", "totalWords", "avgWords", "minWords", "maxWords", "rankings", "drama", "words", "comparison", "funFacts"],
+      "properties": {
+        "name": { "$ref": "#/$defs/NonEmptyString" },
+        "party": { "$ref": "#/$defs/NonEmptyString" },
+        "slug": { "$ref": "#/$defs/NonEmptyString" },
+        "speeches": { "$ref": "#/$defs/Count" },
+        "wortbeitraege": { "$ref": "#/$defs/Count" },
+        "totalWords": { "$ref": "#/$defs/Count" },
+        "avgWords": { "$ref": "#/$defs/Ratio" },
+        "minWords": { "$ref": "#/$defs/Count" },
+        "maxWords": { "$ref": "#/$defs/Count" },
+        "rankings": { "type": "object" },
+        "drama": { "type": "object" },
+        "words": { "type": "object" },
+        "comparison": { "type": "object" },
+        "funFacts": { "type": "array" }
+      }
+    },
+    "SpeechesAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["speeches"],
+      "properties": {
+        "speeches": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": ["speaker", "party", "category", "words", "text"],
+            "properties": {
+              "speaker": { "$ref": "#/$defs/NonEmptyString" },
+              "party": { "$ref": "#/$defs/NonEmptyString" },
+              "category": { "enum": ["rede", "wortbeitrag"] },
+              "words": { "$ref": "#/$defs/Count" },
+              "text": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "PartyWord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["word", "count"],
+      "properties": {
+        "word": { "$ref": "#/$defs/NonEmptyString" },
+        "count": { "$ref": "#/$defs/Count" }
+      }
+    },
+    "WordsAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["parties"],
+      "properties": {
+        "parties": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["party", "words"],
+            "properties": {
+              "party": { "$ref": "#/$defs/NonEmptyString" },
+              "words": { "type": "array", "items": { "$ref": "#/$defs/PartyWord" } }
+            }
+          }
+        }
+      }
+    },
+    "WordRankingsAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["parties"],
+      "properties": {
+        "parties": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["party", "signatureWords"],
+            "properties": {
+              "party": { "$ref": "#/$defs/NonEmptyString" },
+              "signatureWords": { "type": "array", "items": { "$ref": "#/$defs/SignatureWord" } }
+            }
+          }
+        }
+      }
+    },
+    "TopicRankingsAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["topics"],
+      "properties": { "topics": { "type": "array", "items": { "$ref": "#/$defs/NonEmptyString" } } }
+    },
     "EditionStatus": { "enum": ["draft", "preview", "frozen", "published", "superseded"] },
     "EditionPeriod": { "type": "object", "additionalProperties": false, "required": ["start", "end", "timezone", "wahlperioden"], "properties": { "start": { "$ref": "#/$defs/IsoDate" }, "end": { "$ref": "#/$defs/IsoDate" }, "timezone": { "const": "Europe/Berlin" }, "wahlperioden": { "type": "array", "minItems": 1, "items": { "type": "integer", "minimum": 1 } } } },
     "Coverage": { "type": "object", "additionalProperties": false, "required": ["protocolCount", "firstProtocolDate", "lastProtocolDate", "complete"], "properties": { "protocolCount": { "$ref": "#/$defs/Count" }, "firstProtocolDate": { "$ref": "#/$defs/IsoDate" }, "lastProtocolDate": { "$ref": "#/$defs/IsoDate" }, "complete": { "type": "boolean" } } },
