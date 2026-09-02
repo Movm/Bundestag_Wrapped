@@ -298,6 +298,37 @@ export interface WrappedData {
   "topQuestionAskers": Array<NamedPartyCount>;
 }
 
+export type SpeakerIndexAsset = Record<string, unknown>;
+
+export type SpeakerWrappedAsset = Record<string, unknown>;
+
+export interface SpeechesAsset {
+  "speeches": Array<Record<string, unknown>>;
+}
+
+export interface PartyWord {
+  "word": NonEmptyString;
+  "count": Count;
+}
+
+export interface WordsAsset {
+  "parties": Array<{
+  "party": NonEmptyString;
+  "words": Array<PartyWord>;
+}>;
+}
+
+export interface WordRankingsAsset {
+  "parties": Array<{
+  "party": NonEmptyString;
+  "signatureWords": Array<SignatureWord>;
+}>;
+}
+
+export interface TopicRankingsAsset {
+  "topics": Array<NonEmptyString>;
+}
+
 export type EditionStatus = "draft" | "preview" | "frozen" | "published" | "superseded";
 
 export interface EditionPeriod {

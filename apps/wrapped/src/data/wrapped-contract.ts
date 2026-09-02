@@ -3,7 +3,17 @@ import addFormats from 'ajv-formats';
 import contractSchema from '../generated/wrapped-contract-v1.schema.json';
 import type { EditionContent, WrappedData } from '@/generated/wrapped-contract-v1';
 
-export type ContractDocument = 'EditionsIndex' | 'EditionManifest' | 'EditionContent' | 'WrappedData';
+export type ContractDocument =
+  | 'EditionsIndex'
+  | 'EditionManifest'
+  | 'EditionContent'
+  | 'WrappedData'
+  | 'SpeakerIndexAsset'
+  | 'SpeakerWrappedAsset'
+  | 'SpeechesAsset'
+  | 'WordsAsset'
+  | 'WordRankingsAsset'
+  | 'TopicRankingsAsset';
 
 const ajv = new Ajv2020({ allErrors: true, strict: true });
 addFormats(ajv);

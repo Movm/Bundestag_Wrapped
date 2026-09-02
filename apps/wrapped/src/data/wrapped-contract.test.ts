@@ -45,4 +45,33 @@ describe('Wrapped v1 contract', () => {
     expect(validateEditionContent({ editionId: 'fixture-edition', year: 2042 }, 'content.json')).toEqual({ editionId: 'fixture-edition', year: 2042 });
     expect(() => validateEditionContent({ editionId: 'fixture-edition' }, 'content.json')).toThrow('content.json/');
   });
+
+  it('validates each manifest-referenced runtime asset shape', () => {
+    expect(validateContractDocument('SpeakerIndexAsset', {
+      speakers: [{ slug: 'fixture-speaker', name: 'Fixture Speaker', party: 'Fixture Party', speeches: 1, wortbeitraege: 0, words: 5 }],
+    }, 'speakers/index.json')).toBeDefined();
+    expect(validateContractDocument('SpeakerWrappedAsset', {
+      name: 'Fixture Speaker', party: 'Fixture Party', slug: 'fixture-speaker', speeches: 1, wortbeitraege: 0,
+      totalWords: 5, avgWords: 5, minWords: 5, maxWords: 5, rankings: {}, drama: {}, words: {}, comparison: {}, funFacts: [],
+    }, 'speakers/fixture-speaker.json')).toBeDefined();
+    expect(validateContractDocument('SpeechesAsset', {
+      speeches: [{ speaker: 'Fixture Speaker', party: 'Fixture Party', category: 'rede', words: 5, text: 'Fixture speech.' }],
+    }, 'speeches.json')).toBeDefined();
+    expect(validateContractDocument('WordsAsset', {
+      parties: [{ party: 'Fixture Party', words: [{ word: 'fixture', count: 1 }] }],
+    }, 'words.json')).toBeDefined();
+    expect(validateContractDocument('WordRankingsAsset', {
+      parties: [{ party: 'Fixture Party', signatureWords: [{ word: 'fixture', ratio: 1.5 }] }],
+    }, 'word-rankings.json')).toBeDefined();
+    expect(validateContractDocument('TopicRankingsAsset', { topics: ['fixture'] }, 'topic-rankings.json')).toBeDefined();
+  });
+
+  it('rejects wrong runtime asset fields with an asset path', () => {
+    expect(() => validateContractDocument('SpeechesAsset', {
+      speeches: [{ speaker: 'Fixture Speaker', party: 'Fixture Party', category: 'rede', words: 'five', text: 'Fixture speech.' }],
+    }, 'speeches.json')).toThrow('speeches.json/speeches/0/words');
+    expect(() => validateContractDocument('WordsAsset', {
+      parties: [{ party: 'Fixture Party', words: [{ word: 'fixture', count: 'one' }] }],
+    }, 'words.json')).toThrow('words.json/parties/0/words/0/count');
+  });
 });
