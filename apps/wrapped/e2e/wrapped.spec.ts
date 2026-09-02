@@ -53,6 +53,15 @@ test('does not retain a same-slug profile or canonical from another edition', as
   await expect(page.getByRole('link', { name: 'Reden durchsuchen' })).toHaveAttribute('href', /\/2026\/suche\?tab=speeches/);
 });
 
+test('loads the active edition speech fixture through the profile search route', async ({ page }) => {
+  await page.goto('/2026/suche?tab=speeches&q=Bea');
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://bundestag-wrapped.de/2026/suche');
+  await expect(page.locator('[role="tabpanel"] p').first()).toHaveText(/1\s+Reden gefunden/);
+  await expect(page.getByRole('button', { name: /Bea Ausgabe Zwei/ })).toBeVisible();
+  await expect(page.getByText(/Fixture-Rede 2026/)).toBeVisible();
+  await expect(page.getByText('Alex Ausgabe Eins')).toHaveCount(0);
+});
+
 test('unknown editions stay in a controlled, accessible error state', async ({ page }) => {
   await page.goto('/does-not-exist');
   await expect(page.getByText('Fehler beim Laden', { exact: true })).toBeVisible();
