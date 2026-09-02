@@ -42,6 +42,9 @@ jobs:
       - name: Check edition surface boundaries
         run: pnpm --filter bundestag-wrapped check:edition-surface
 
+      - name: Check registered editions
+        run: pnpm check:registered-editions
+
       - name: Lint
         run: pnpm -r lint
 
