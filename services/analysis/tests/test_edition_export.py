@@ -64,6 +64,22 @@ def test_tampered_artifact_fails_checksum_validation(tmp_path):
         validate_edition(target)
 
 
+def test_missing_or_extra_checksum_entries_fail_validation(tmp_path):
+    target = publish(tmp_path)
+    checksums_path = target / "checksums.json"
+    checksums = json.loads(checksums_path.read_text())
+    del checksums["content.json"]
+    checksums_path.write_text(json.dumps(checksums), encoding="utf-8")
+    with pytest.raises(EditionValidationError, match="missing file: content.json"):
+        validate_edition(target)
+
+    checksums["content.json"] = hashlib.sha256((target / "content.json").read_bytes()).hexdigest()
+    checksums["unknown.json"] = "0" * 64
+    checksums_path.write_text(json.dumps(checksums), encoding="utf-8")
+    with pytest.raises(EditionValidationError, match="unexpected file: unknown.json"):
+        validate_edition(target)
+
+
 def test_missing_speaker_profile_never_publishes_a_partial_release(tmp_path):
     _, artifacts = fixture_artifacts()
     del artifacts["speakers/ada.json"]

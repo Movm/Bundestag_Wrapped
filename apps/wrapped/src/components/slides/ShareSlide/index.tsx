@@ -5,7 +5,7 @@ import { SlideContainer, itemVariants } from '../shared';
 import { renderShareImage, downloadShareImage, shareImage, preloadLogo } from '@/lib/share-canvas';
 import { useCorrectCount } from '@/stores/quizStore';
 import { useOptionalEdition } from '@/edition/EditionProvider';
-import { editionSurface } from '@/edition/surface';
+import { editionShareUrl, editionSurface } from '@/edition/surface';
 import type { SlideType } from '@/components/main-wrapped/constants';
 
 interface ShareSlideProps {
@@ -117,7 +117,7 @@ export const ShareSlide = memo(function ShareSlide({
 }: ShareSlideProps) {
   const surface = editionSurface(useOptionalEdition());
   // Get correct count from store (only ShareSlide subscribes to this)
-  const correctCount = useCorrectCount(quizSlideIds);
+  const correctCount = useCorrectCount(surface, quizSlideIds);
   const [userName, setUserName] = useState('');
   const [canShare, setCanShare] = useState(false);
   // Two canvas refs for both variants
@@ -165,7 +165,7 @@ export const ShareSlide = memo(function ShareSlide({
 
   const handleShareScore = async () => {
     if (canvasRefScore.current) {
-      await shareImage(canvasRefScore.current, surface.title, surface.editionId);
+      await shareImage(canvasRefScore.current, surface.title, surface.editionId, editionShareUrl(surface));
     }
   };
 
@@ -178,7 +178,7 @@ export const ShareSlide = memo(function ShareSlide({
 
   const handleShareTitle = async () => {
     if (canvasRefTitle.current) {
-      await shareImage(canvasRefTitle.current, surface.title, surface.editionId);
+      await shareImage(canvasRefTitle.current, surface.title, surface.editionId, editionShareUrl(surface));
     }
   };
 

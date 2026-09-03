@@ -276,7 +276,7 @@ export function downloadShareImage(canvas: HTMLCanvasElement, userName?: string,
 /**
  * Share image using Web Share API
  */
-export async function shareImage(canvas: HTMLCanvasElement, editionTitle = 'Bundestag Wrapped', editionId?: string): Promise<boolean> {
+export async function shareImage(canvas: HTMLCanvasElement, editionTitle = 'Bundestag Wrapped', editionId?: string, url?: string): Promise<boolean> {
   // Check if Web Share API is available
   if (!navigator.share || !navigator.canShare) {
     return false;
@@ -295,6 +295,7 @@ export async function shareImage(canvas: HTMLCanvasElement, editionTitle = 'Bund
           await navigator.share({
             files: [file],
             title: `Mein ${editionTitle}`,
+            url,
           });
           resolve(true);
         } else {

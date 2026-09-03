@@ -62,7 +62,9 @@ test('completes the fixture journey with a quiz gate, mixed answers, and the act
       const answers = section.getByRole('button');
       await expect(answers.first()).toBeVisible();
       await answers.nth(slide === 'quiz-signature' ? 1 : 0).click();
-      await expect(section.getByText('Scroll weiter')).toBeVisible();
+      // The result overlay may auto-advance before a browser paints the visual
+      // scroll hint. Disabled options are the stable, user-visible gate state.
+      await expect(answers.first()).toBeDisabled();
       await scrollToNextSlide(page, slide, nextSlide);
       continue;
     }
@@ -72,8 +74,8 @@ test('completes the fixture journey with a quiz gate, mixed answers, and the act
 
   await expect(page.locator('[data-slide-id="share"]')).toContainText('Teile dein Ergebnis!');
   await expect(page.locator('[data-slide-id^="quiz-"]')).toHaveCount(6);
-  await expect.poll(() => page.evaluate(() => localStorage.getItem('quiz-storage'))).toContain('"quiz-signature":false');
-  await expect.poll(() => page.evaluate(() => localStorage.getItem('quiz-storage'))).toContain('"quiz-topics":true');
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('quiz-storage-v2'))).toContain('"quiz-signature":false');
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('quiz-storage-v2'))).toContain('"quiz-topics":true');
   await scrollToNextSlide(page, 'share', 'finale');
   await expect(page.locator('[data-slide-id="finale"]').getByRole('heading', { name: 'Bundestag Wrapped' })).toBeVisible();
 });
@@ -83,10 +85,11 @@ test('uses the active edition for share and download output', async ({ page }) =
     Object.defineProperty(navigator, 'canShare', { configurable: true, value: () => true });
     Object.defineProperty(navigator, 'share', {
       configurable: true,
-      value: async (payload: { files: File[]; title: string }) => {
+      value: async (payload: { files: File[]; title: string; url: string }) => {
         window.localStorage.setItem('fixture-share', JSON.stringify({
           filename: payload.files[0]?.name,
           title: payload.title,
+          url: payload.url,
         }));
       },
     });
@@ -106,7 +109,46 @@ test('uses the active edition for share and download output', async ({ page }) =
   await expect.poll(() => page.evaluate(() => localStorage.getItem('fixture-share'))).toBe(JSON.stringify({
     filename: 'bundestag-wrapped-2026.png',
     title: 'Mein Fixture Wrapped 2026',
+    url: 'http://127.0.0.1:4173/2026',
   }));
+});
+
+test('keeps annual navigation, share FAB and its dialog accessible', async ({ page }) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, 'canShare', { configurable: true, value: () => true });
+    Object.defineProperty(navigator, 'share', { configurable: true, value: async () => undefined });
+  });
+  await page.goto('/2026/abgeordnete?fixture=yes#directory');
+  await expect(page.getByRole('link', { name: 'Bundestag Wrapped - Zur Startseite' })).toHaveAttribute('href', '/2026?fixture=yes#directory');
+  await page.getByRole('button', { name: 'Menü öffnen' }).click();
+  await expect(page.getByRole('link', { name: 'Dokumentation' })).toHaveAttribute('href', '/2026/dokumentation?fixture=yes#directory');
+  await page.keyboard.press('Escape');
+
+  await page.goto('/2026');
+  await moveToSlide(page, 'reveal-drama');
+  const trigger = page.getByRole('button', { name: 'Diese Folie teilen' });
+  await trigger.click();
+  const dialog = page.getByRole('dialog', { name: 'Diese Folie teilen' });
+  await expect(dialog).toBeVisible();
+  const results = await new AxeBuilder({ page }).include('[role="dialog"]').withTags(['wcag2a', 'wcag2aa']).analyze();
+  expect(results.violations).toEqual([]);
+  await page.keyboard.press('Escape');
+  await expect(dialog).toHaveCount(0);
+  await expect(trigger).toBeFocused();
+});
+
+test('does not expose fixture quiz answers across annual routes', async ({ page }) => {
+  await page.goto('/2025');
+  await page.evaluate(() => {
+    localStorage.setItem('quiz-storage-v2', JSON.stringify({
+      state: { answersByScope: { 'quiz:2025:fixture-a': { 'quiz-topics': true } } },
+      version: 0,
+    }));
+  });
+  await page.reload();
+  await page.goto('/2026');
+  await expect(page.locator('[data-slide-id="quiz-topics"]')).toContainText('Quiz');
+  await expect(page.locator('[data-slide-id="quiz-topics"]').getByText('Scroll weiter')).toHaveCount(0);
 });
 
 test('keeps an index result and its destinations within the active preview edition', async ({ page }) => {

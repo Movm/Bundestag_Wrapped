@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router';
+import { Link, useLocation, useParams } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
 import { Home, BookOpen, Shield, FileText, ExternalLink, Users, X, RotateCcw, Plug } from 'lucide-react';
 import { clearWrappedProgress } from '@/lib/wrapped-storage';
 import { useQuizStore } from '@/stores/quizStore';
+import { editionPath, LEGACY_SURFACE } from '@/edition/surface';
 
 interface NavItem {
   href: string;
@@ -11,13 +12,6 @@ interface NavItem {
   icon: React.ReactNode;
   external?: boolean;
 }
-
-const NAV_ITEMS: NavItem[] = [
-  { href: '/', label: 'Bundestag Wrapped', icon: <Home size={20} /> },
-  { href: '/abgeordnete', label: 'Abgeordnete-Wrapped', icon: <Users size={20} /> },
-  { href: '/dokumentation', label: 'Dokumentation', icon: <BookOpen size={20} /> },
-  { href: '/mcp', label: 'MCP-Server', icon: <Plug size={20} /> },
-];
 
 const FOOTER_LINKS: NavItem[] = [
   { href: '/datenschutz', label: 'Datenschutz', icon: <Shield size={14} /> },
@@ -37,17 +31,26 @@ interface MobileMenuProps {
 }
 
 export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProps) {
+  const { editionId } = useParams<{ editionId?: string }>();
+  const location = useLocation();
+  const surface = editionId ? { ...LEGACY_SURFACE, editionId, canonicalPath: `/${editionId}` } : LEGACY_SURFACE;
+  const suffix = `${location.search}${location.hash}`;
+  const navItems: NavItem[] = [
+    { href: `${editionPath(surface)}${suffix}`, label: 'Bundestag Wrapped', icon: <Home size={20} /> },
+    { href: `${editionPath(surface, 'abgeordnete')}${suffix}`, label: 'Abgeordnete-Wrapped', icon: <Users size={20} /> },
+    { href: `${editionPath(surface, 'dokumentation')}${suffix}`, label: 'Dokumentation', icon: <BookOpen size={20} /> },
+    { href: '/mcp', label: 'MCP-Server', icon: <Plug size={20} /> },
+  ];
   const menuRef = useRef<HTMLElement>(null);
   const isDark = variant === 'dark';
-  const location = useLocation();
   const currentPath = location.pathname;
-  const isMainPage = currentPath === '/';
+  const isMainPage = currentPath === editionPath(surface);
   const resetQuiz = useQuizStore((state) => state.reset);
 
   const handleRestart = () => {
     onClose();
-    clearWrappedProgress();
-    resetQuiz();
+    clearWrappedProgress(surface);
+    resetQuiz(surface);
     window.location.reload();
   };
 
@@ -165,7 +168,7 @@ export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProp
             <div className="flex flex-col h-full pt-20 px-5">
               {/* Navigation items */}
               <ul className="space-y-2">
-                {NAV_ITEMS.map((item) => {
+                {navItems.map((item) => {
                   const isActive = !item.external && currentPath === item.href;
 
                   const linkClassName = `group relative flex items-center gap-3 px-4 py-3.5 rounded-xl transition-colors

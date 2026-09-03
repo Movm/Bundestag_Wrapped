@@ -911,7 +911,7 @@ export function downloadSharepic(canvas: HTMLCanvasElement, filename: string): v
 
 export async function shareSharepic(
   canvas: HTMLCanvasElement,
-  title: string
+  { title, filename, url }: { title: string; filename: string; url: string },
 ): Promise<boolean> {
   if (!navigator.share || !navigator.canShare) return false;
 
@@ -923,11 +923,12 @@ export async function shareSharepic(
       }
 
       try {
-        const file = new File([blob], 'bundestag-wrapped.png', { type: 'image/png' });
+        const file = new File([blob], filename.endsWith('.png') ? filename : `${filename}.png`, { type: 'image/png' });
         if (navigator.canShare({ files: [file] })) {
           await navigator.share({
             files: [file],
             title,
+            url,
           });
           resolve(true);
         } else {

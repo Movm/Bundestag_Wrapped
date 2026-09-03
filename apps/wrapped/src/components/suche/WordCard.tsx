@@ -1,7 +1,10 @@
 import { useState, useMemo } from 'react';
+import { Link } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
 import { PARTY_BG_CLASSES, PARTY_BG_COLORS } from '@/lib/party-colors';
 import { highlightTerms, type ScoredWord, type ParsedQuery, type WordRanking } from '@/lib/search-utils';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionPath, editionSurface } from '@/edition/surface';
 
 interface WordCardProps {
   word: ScoredWord;
@@ -11,9 +14,8 @@ interface WordCardProps {
   onSearchInSpeeches?: (word: string) => void;
 }
 
-const PARTY_ORDER = ['CDU/CSU', 'SPD', 'GRÜNE', 'AfD', 'DIE LINKE', 'fraktionslos'];
-
 export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: WordCardProps) {
+  const surface = editionSurface(useOptionalEdition());
   const [expanded, setExpanded] = useState(false);
 
   const highlightedWord = useMemo(
@@ -28,9 +30,10 @@ export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: Wo
 
   // Get parties sorted by usage
   const sortedParties = useMemo(() => {
-    return PARTY_ORDER
-      .filter((party) => word.parties[party]?.count > 0)
-      .sort((a, b) => (word.parties[b]?.per1000 || 0) - (word.parties[a]?.per1000 || 0));
+    return Object.entries(word.parties)
+      .filter(([, stats]) => stats.count > 0)
+      .sort(([partyA, a], [partyB, b]) => b.per1000 - a.per1000 || partyA.localeCompare(partyB, 'de'))
+      .map(([party]) => party);
   }, [word.parties]);
 
   return (
@@ -158,9 +161,9 @@ export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: Wo
                   </h4>
                   <div className="space-y-1">
                     {word.topSpeakers.map((speaker, idx) => (
-                      <a
+                      <Link
                         key={speaker.slug}
-                        href={`/abgeordnete/${speaker.slug}`}
+                        to={editionPath(surface, `abgeordnete/${speaker.slug}`)}
                         className="flex items-center gap-2 text-sm hover:bg-white/5 rounded px-2 py-1 -mx-2 transition-colors"
                       >
                         <span className="text-white/40 w-6 text-right shrink-0">
@@ -172,7 +175,7 @@ export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: Wo
                         <span className="text-white/40 ml-auto shrink-0">
                           {speaker.count}×
                         </span>
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>

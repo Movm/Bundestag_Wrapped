@@ -19,8 +19,11 @@ import {
   useSpeakerQuizStore,
 } from '@/stores/speakerQuizStore';
 import { SpeakerSlideRenderer } from './speaker-wrapped/SpeakerSlideRenderer';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionSurface } from '@/edition/surface';
 
 export function SpeakerWrappedPage() {
+  const surface = editionSurface(useOptionalEdition());
   const { slug = '' } = useParams<{ slug: string }>();
   const { data, isLoading: loading, error } = useSpeakerData(slug);
   const scrollContainerRef = useRef<ScrollContainerRef>(null);
@@ -32,7 +35,7 @@ export function SpeakerWrappedPage() {
   const [introStarted, setIntroStarted] = useState(false);
 
   // Quiz state from store (like main wrapped)
-  const isQuizAnswered = useSpeakerQuizAnswered(slug);
+  const isQuizAnswered = useSpeakerQuizAnswered(surface, slug);
   const answerQuiz = useSpeakerQuizStore((state) => state.answerQuiz);
 
   // Scroll lock logic (like main wrapped)
@@ -75,8 +78,8 @@ export function SpeakerWrappedPage() {
 
   // Handle quiz answer (store in Zustand, like main wrapped)
   const handleQuizAnswer = useCallback((isCorrect: boolean) => {
-    answerQuiz(slug, isCorrect);
-  }, [slug, answerQuiz]);
+    answerQuiz(surface, slug, isCorrect);
+  }, [surface, slug, answerQuiz]);
 
   // Handle quiz complete (scroll to next after animation)
   const handleQuizComplete = useCallback(() => {

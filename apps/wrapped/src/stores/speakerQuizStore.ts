@@ -1,75 +1,64 @@
-/**
- * Speaker Quiz Store - Zustand-based quiz state management for Speaker Wrapped
- *
- * Following the pattern from quizStore.ts.
- * Each speaker has one quiz (signature word guess).
- * State is keyed by speaker slug.
- */
-
+/** Edition- and speaker-scoped persistence for the personal Wrapped quiz. */
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { editionStorageKey, type EditionSurface } from '@/edition/surface';
+
+type SpeakerSurface = Pick<EditionSurface, 'editionId' | 'dataVersion'>;
+type ScopedAnswers = Record<string, Record<string, boolean>>;
+
+function editionSuffix(surface: SpeakerSurface): string {
+  return `:${surface.editionId}:${surface.dataVersion}`;
+}
 
 interface SpeakerQuizState {
-  /** Record of quiz answers: speakerSlug -> isCorrect */
-  quizAnswers: Record<string, boolean>;
+  answersByScope: ScopedAnswers;
+  answerQuiz: (surface: SpeakerSurface, slug: string, isCorrect: boolean) => void;
+  reset: (surface: SpeakerSurface, slug?: string) => void;
+  clearProgress: (surface: SpeakerSurface, slug?: string) => void;
+}
 
-  /** Answer a speaker's quiz question */
-  answerQuiz: (slug: string, isCorrect: boolean) => void;
+export function speakerQuizScope(surface: SpeakerSurface, slug: string): string {
+  return editionStorageKey(`speaker-quiz:${slug}`, surface);
+}
 
-  /** Reset all quiz state */
-  reset: () => void;
-
-  /** Clear persisted state */
-  clearProgress: () => void;
+function answersFor(state: SpeakerQuizState, surface: SpeakerSurface, slug: string): Record<string, boolean> {
+  return state.answersByScope[speakerQuizScope(surface, slug)] ?? {};
 }
 
 export const useSpeakerQuizStore = create<SpeakerQuizState>()(
   persist(
     (set) => ({
-      quizAnswers: {},
-
-      answerQuiz: (slug, isCorrect) =>
-        set((state) => {
-          // Skip if already answered for this speaker
-          if (slug in state.quizAnswers) {
-            return state;
-          }
-          return {
-            quizAnswers: { ...state.quizAnswers, [slug]: isCorrect },
-          };
-        }),
-
-      reset: () => set({ quizAnswers: {} }),
-
-      clearProgress: () => {
-        localStorage.removeItem('speaker-quiz-storage');
-        set({ quizAnswers: {} });
-      },
+      answersByScope: {},
+      answerQuiz: (surface, slug, isCorrect) => set((state) => {
+        const scope = speakerQuizScope(surface, slug);
+        const answers = answersFor(state, surface, slug);
+        if (slug in answers) return state;
+        return { answersByScope: { ...state.answersByScope, [scope]: { ...answers, [slug]: isCorrect } } };
+      }),
+      reset: (surface, slug) => set((state) => {
+        if (slug) return { answersByScope: { ...state.answersByScope, [speakerQuizScope(surface, slug)]: {} } };
+        return { answersByScope: Object.fromEntries(Object.entries(state.answersByScope).filter(([key]) => !key.endsWith(editionSuffix(surface)))) };
+      }),
+      clearProgress: (surface, slug) => set((state) => {
+        if (slug) {
+          const { [speakerQuizScope(surface, slug)]: _removed, ...remaining } = state.answersByScope;
+          return { answersByScope: remaining };
+        }
+        return { answersByScope: Object.fromEntries(Object.entries(state.answersByScope).filter(([key]) => !key.endsWith(editionSuffix(surface)))) };
+      }),
     }),
     {
-      name: 'speaker-quiz-storage',
-    }
-  )
+      name: 'speaker-quiz-storage-v2',
+      // Global legacy speaker answers have no reliable edition ownership.
+      onRehydrateStorage: () => () => localStorage.removeItem('speaker-quiz-storage'),
+    },
+  ),
 );
 
-/**
- * Check if a specific speaker's quiz has been answered
- * Per-speaker subscription - only that speaker's quiz slide re-renders
- */
-export function useSpeakerQuizAnswered(slug: string): boolean {
-  return useSpeakerQuizStore((state) => slug in state.quizAnswers);
+export function useSpeakerQuizAnswered(surface: SpeakerSurface, slug: string): boolean {
+  return useSpeakerQuizStore((state) => slug in answersFor(state, surface, slug));
 }
 
-/**
- * Check if a specific speaker's quiz was answered correctly
- */
-export function useSpeakerQuizCorrect(slug: string): boolean | null {
-  return useSpeakerQuizStore((state) => state.quizAnswers[slug] ?? null);
-}
-
-/**
- * Get the answerQuiz action without subscribing to state
- */
-export function useAnswerSpeakerQuiz() {
-  return useSpeakerQuizStore.getState().answerQuiz;
+export function useSpeakerQuizCorrect(surface: SpeakerSurface, slug: string): boolean | null {
+  return useSpeakerQuizStore((state) => answersFor(state, surface, slug)[slug] ?? null);
 }

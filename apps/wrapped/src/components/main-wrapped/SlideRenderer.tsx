@@ -23,6 +23,8 @@ import {
 import { SlideInfo } from '@/components/slides/shared';
 import type { SlideData } from '@/lib/slide-sharepics';
 import { useIsQuizAnswered, useAnswerQuiz } from '@/stores/quizStore';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionSurface } from '@/edition/surface';
 import {
   useParties,
   useDrama,
@@ -184,9 +186,10 @@ export const SlideRenderer = memo(function SlideRenderer({
   quizModel,
   quizSlides,
 }: SlideRendererProps) {
+  const surface = editionSurface(useOptionalEdition());
   // Quiz state from store
-  const isQuizAnswered = useIsQuizAnswered(slide);
-  const answerQuiz = useAnswerQuiz();
+  const isQuizAnswered = useIsQuizAnswered(surface, slide);
+  const answerQuiz = useAnswerQuiz(surface);
   const data = useFullWrappedData();
   const quizzes = quizModel ?? (data ? buildEditionQuizModel(data) : {});
   // The web route supplies its active plan. The optional fallback only preserves
