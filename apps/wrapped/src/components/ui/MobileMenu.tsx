@@ -32,16 +32,17 @@ interface MobileMenuProps {
 
 export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProps) {
   const { editionId } = useParams<{ editionId?: string }>();
+  const location = useLocation();
   const surface = editionId ? { ...LEGACY_SURFACE, editionId, canonicalPath: `/${editionId}` } : LEGACY_SURFACE;
+  const suffix = `${location.search}${location.hash}`;
   const navItems: NavItem[] = [
-    { href: editionPath(surface), label: 'Bundestag Wrapped', icon: <Home size={20} /> },
-    { href: editionPath(surface, 'abgeordnete'), label: 'Abgeordnete-Wrapped', icon: <Users size={20} /> },
-    { href: editionPath(surface, 'dokumentation'), label: 'Dokumentation', icon: <BookOpen size={20} /> },
+    { href: `${editionPath(surface)}${suffix}`, label: 'Bundestag Wrapped', icon: <Home size={20} /> },
+    { href: `${editionPath(surface, 'abgeordnete')}${suffix}`, label: 'Abgeordnete-Wrapped', icon: <Users size={20} /> },
+    { href: `${editionPath(surface, 'dokumentation')}${suffix}`, label: 'Dokumentation', icon: <BookOpen size={20} /> },
     { href: '/mcp', label: 'MCP-Server', icon: <Plug size={20} /> },
   ];
   const menuRef = useRef<HTMLElement>(null);
   const isDark = variant === 'dark';
-  const location = useLocation();
   const currentPath = location.pathname;
   const isMainPage = currentPath === editionPath(surface);
   const resetQuiz = useQuizStore((state) => state.reset);
