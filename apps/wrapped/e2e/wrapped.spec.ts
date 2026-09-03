@@ -62,7 +62,9 @@ test('completes the fixture journey with a quiz gate, mixed answers, and the act
       const answers = section.getByRole('button');
       await expect(answers.first()).toBeVisible();
       await answers.nth(slide === 'quiz-signature' ? 1 : 0).click();
-      await expect(section.getByText('Scroll weiter')).toBeVisible();
+      // The result overlay may auto-advance before a browser paints the visual
+      // scroll hint. Disabled options are the stable, user-visible gate state.
+      await expect(answers.first()).toBeDisabled();
       await scrollToNextSlide(page, slide, nextSlide);
       continue;
     }
