@@ -6,5 +6,3 @@ export const dramaConfig: SlideConfig = {
   subtitle: 'Zwischenrufe',
   filename: 'bundestag-wrapped-drama',
 };
-
-export const dramaNote = 'Mit über 4.000 (!) Zwischenrufen stört die AfD am meisten.';

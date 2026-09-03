@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 
-export function HeroSection() {
+export function HeroSection({ wahlperioden }: { wahlperioden?: number[] }) {
   return (
     <motion.section
       initial={{ opacity: 0, y: 20 }}
@@ -13,7 +13,9 @@ export function HeroSection() {
           Algorithmus
         </span>
         <span className="text-stone-300">•</span>
-        <span className="text-stone-500 text-sm">Wahlperiode 21</span>
+        {wahlperioden && wahlperioden.length > 0 && (
+          <span className="text-stone-500 text-sm">Wahlperiode {wahlperioden.join(', ')}</span>
+        )}
       </div>
       <h1 className="text-4xl md:text-5xl font-serif font-light text-stone-900 mb-6 leading-tight">
         Klassifikation von<br />

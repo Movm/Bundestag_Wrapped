@@ -151,6 +151,63 @@ test('does not expose fixture quiz answers across annual routes', async ({ page 
   await expect(page.locator('[data-slide-id="quiz-topics"]').getByText('Scroll weiter')).toHaveCount(0);
 });
 
+test('keeps same-slug speaker quiz state edition-scoped and clears it from the speaker restart control', async ({ page }) => {
+  await page.goto('/2025/wrapped/shared-speaker');
+  await page.evaluate(() => {
+    localStorage.setItem('speaker-quiz-storage-v2', JSON.stringify({
+      state: { answersByScope: { 'speaker-quiz:shared-speaker:2025:fixture-a': { 'shared-speaker': true } } },
+      version: 0,
+    }));
+  });
+  await page.reload();
+  await moveToSlide(page, 'speaker-share');
+  await expect(page.getByRole('button', { name: 'Nochmal ansehen' })).toBeVisible();
+  await page.getByRole('button', { name: 'Nochmal ansehen' }).click();
+  await expect(page.locator('[data-slide-id="speaker-intro"]')).toBeVisible();
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('speaker-quiz-storage-v2'))).not.toContain('speaker-quiz:shared-speaker:2025:fixture-a');
+
+  await page.goto('/2026/wrapped/shared-speaker');
+  await moveToSlide(page, 'speaker-quiz');
+  await expect(page.getByRole('button', { name: 'fixture', exact: true })).toBeEnabled();
+});
+
+test('renders documentation statistics from each edition payload instead of global values', async ({ page }) => {
+  await page.goto('/2025/dokumentation');
+  await expect(page.getByText('10', { exact: true })).toBeVisible();
+  await expect(page.getByText('Fraktionen')).toBeVisible();
+
+  await page.goto('/2026/dokumentation');
+  await expect(page.getByText('20', { exact: true })).toBeVisible();
+  await expect(page.getByText('5', { exact: true })).toHaveCount(2);
+});
+
+test('runs Axe against the annual start, answered quiz, search, speaker index, profile, and controlled error routes', async ({ page }) => {
+  const scan = async () => {
+    const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze();
+    expect(results.violations).toEqual([]);
+  };
+
+  await page.goto('/2025');
+  await expect(page.getByRole('button', { name: 'Starten', exact: true })).toBeVisible();
+  await scan();
+  await page.getByRole('button', { name: 'Starten', exact: true }).click();
+  await moveToSlide(page, 'quiz-topics');
+  const answer = page.locator('[data-slide-id="quiz-topics"]').getByRole('button').first();
+  await answer.click();
+  await expect(answer).toBeDisabled();
+  await scan();
+
+  for (const path of ['/2025/suche', '/2025/abgeordnete', '/2025/abgeordnete/shared-speaker', '/does-not-exist']) {
+    await page.goto(path);
+    if (path === '/does-not-exist') {
+      await expect(page.getByText('Fehler beim Laden', { exact: true })).toBeVisible();
+    } else {
+      await expect(page.locator('#main-content')).toBeVisible();
+    }
+    await scan();
+  }
+});
+
 test('keeps an index result and its destinations within the active preview edition', async ({ page }) => {
   await page.goto('/2026/abgeordnete');
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://bundestag-wrapped.de/2026/abgeordnete');

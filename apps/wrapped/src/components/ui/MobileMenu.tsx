@@ -1,10 +1,11 @@
 import { useEffect, useRef } from 'react';
-import { Link, useLocation, useParams } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
 import { Home, BookOpen, Shield, FileText, ExternalLink, Users, X, RotateCcw, Plug } from 'lucide-react';
 import { clearWrappedProgress } from '@/lib/wrapped-storage';
 import { useQuizStore } from '@/stores/quizStore';
-import { editionPath, LEGACY_SURFACE } from '@/edition/surface';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionPath, editionSurface } from '@/edition/surface';
 
 interface NavItem {
   href: string;
@@ -31,9 +32,8 @@ interface MobileMenuProps {
 }
 
 export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProps) {
-  const { editionId } = useParams<{ editionId?: string }>();
   const location = useLocation();
-  const surface = editionId ? { ...LEGACY_SURFACE, editionId, canonicalPath: `/${editionId}` } : LEGACY_SURFACE;
+  const surface = editionSurface(useOptionalEdition());
   const suffix = `${location.search}${location.hash}`;
   const navItems: NavItem[] = [
     { href: `${editionPath(surface)}${suffix}`, label: 'Bundestag Wrapped', icon: <Home size={20} /> },

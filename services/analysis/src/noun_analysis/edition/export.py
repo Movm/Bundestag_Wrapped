@@ -31,7 +31,14 @@ def _checksum(path: Path) -> str:
 
 
 def _all_files(root: Path) -> list[Path]:
-    return sorted(path for path in root.rglob("*") if path.is_file() and path.name != "checksums.json")
+    files: list[Path] = []
+    for path in root.rglob("*"):
+        relative = path.relative_to(root).as_posix()
+        if path.is_symlink():
+            raise EditionValidationError(f"edition contains symbolic link: {relative}")
+        if path.is_file() and path.name != "checksums.json":
+            files.append(path)
+    return sorted(files)
 
 
 def _validate_checksums(root: Path, checksums: dict[str, str]) -> None:
@@ -54,6 +61,12 @@ def _validate_checksums(root: Path, checksums: dict[str, str]) -> None:
         raise EditionValidationError(f"checksums.json references unexpected file: {sorted(extra)[0]}")
     for relative, expected in checksums.items():
         path = root / relative
+        if path.is_symlink():
+            raise EditionValidationError(f"checksums.json references symbolic link: {relative}")
+        try:
+            path.resolve().relative_to(root.resolve())
+        except ValueError as error:
+            raise EditionValidationError(f"checksums.json path escapes edition root: {relative}") from error
         if not path.is_file():
             raise EditionValidationError(f"checksums.json references missing file: {relative}")
         if _checksum(path) != expected:

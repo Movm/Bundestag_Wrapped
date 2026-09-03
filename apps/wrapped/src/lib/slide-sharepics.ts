@@ -375,10 +375,10 @@ export function renderDramaSharepic(
   ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
   ctx.fillText('Zwischenrufe', centerX, startY + 410);
 
-  // Note
+  // Note: the leader is computed from the current edition's drama payload.
   ctx.font = '20px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
   ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
-  ctx.fillText('Mit über 4.000 (!) Zwischenrufen stört die AfD am meisten.', centerX, startY + 470);
+  ctx.fillText(`${leader.party}: ${leader.count.toLocaleString('de-DE')} Zwischenrufe`, centerX, startY + 470);
 
   drawFooter(ctx, centerX);
 }

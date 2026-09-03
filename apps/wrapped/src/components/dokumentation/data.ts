@@ -21,6 +21,37 @@ export interface Category {
   pattern: string;
 }
 
+export interface DocumentationStat {
+  label: string;
+  value: string;
+}
+
+export interface DocumentationDataSource {
+  metadata: {
+    totalSpeeches: number;
+    partyCount: number;
+    speakerCount: number;
+  };
+}
+
+/**
+ * Numeric documentation claims belong to the active edition rather than a
+ * timeless marketing snapshot.  The caller only renders these when the
+ * validated Wrapped payload and manifest are available.
+ */
+export function buildDocumentationStats(
+  data: DocumentationDataSource | undefined,
+  protocolCount: number | undefined,
+): DocumentationStat[] {
+  if (!data || protocolCount === undefined) return [];
+  return [
+    { label: 'Beiträge analysiert', value: data.metadata.totalSpeeches.toLocaleString('de-DE') },
+    { label: 'Fraktionen', value: data.metadata.partyCount.toLocaleString('de-DE') },
+    { label: 'Abgeordnete', value: data.metadata.speakerCount.toLocaleString('de-DE') },
+    { label: 'Protokolle', value: protocolCount.toLocaleString('de-DE') },
+  ];
+}
+
 export const quizQuestions: QuizQuestion[] = [
   {
     id: 'speaking',
@@ -263,11 +294,4 @@ export const limitations = [
   'Internationale Namen benötigen manuelle Zuordnung in den BUNDESTAG_OVERRIDES.',
   'Die Geschlechtszuordnung basiert auf Namensheuristiken, nicht auf Selbstidentifikation.',
   'Fraktionslose Abgeordnete erscheinen nicht in Partei-Rankings, haben aber eigene Speaker Wrappeds.',
-];
-
-export const statsData = [
-  { label: 'Beiträge analysiert', value: '6.340' },
-  { label: 'Kategorien', value: '10' },
-  { label: 'Klassifikationsrate', value: '100%' },
-  { label: 'Protokolle', value: '50' },
 ];

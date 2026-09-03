@@ -1,10 +1,11 @@
-import { Link, useLocation, useParams } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import { motion } from 'motion/react';
 import { Menu, X, Volume2, VolumeX, Music, Music2 } from 'lucide-react';
 import { useState } from 'react';
 import { toggleBackgroundMusic, isBackgroundMusicPlaying } from '@/lib/sounds';
 import { useAudioStore } from '@/stores/audioStore';
-import { editionPath, LEGACY_SURFACE } from '@/edition/surface';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionPath, editionSurface } from '@/edition/surface';
 
 interface HeaderProps {
   variant?: 'dark' | 'light';
@@ -13,9 +14,8 @@ interface HeaderProps {
 }
 
 export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderProps) {
-  const { editionId } = useParams<{ editionId?: string }>();
   const location = useLocation();
-  const surface = editionId ? { ...LEGACY_SURFACE, editionId, canonicalPath: `/${editionId}` } : LEGACY_SURFACE;
+  const surface = editionSurface(useOptionalEdition());
   const isDark = variant === 'dark';
   const muted = useAudioStore((s) => s.isMuted);
   const toggleMute = useAudioStore((s) => s.toggleMute);
