@@ -13,8 +13,8 @@ describe('edition-scoped quiz state', () => {
       clear: () => values.clear(),
       getItem: (key: string) => values.get(key) ?? null,
       key: (index: number) => [...values.keys()][index] ?? null,
-      removeItem: (key: string) => values.delete(key),
-      setItem: (key: string, value: string) => values.set(key, value),
+      removeItem: (key: string) => { values.delete(key); },
+      setItem: (key: string, value: string) => { values.set(key, value); },
       get length() { return values.size; },
     } satisfies Storage;
     // Node 26 exposes an unconfigured native localStorage. Configure the
