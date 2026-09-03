@@ -1,9 +1,10 @@
-import { Link } from 'react-router';
+import { Link, useParams } from 'react-router';
 import { motion } from 'motion/react';
 import { Menu, X, Volume2, VolumeX, Music, Music2 } from 'lucide-react';
 import { useState } from 'react';
 import { toggleBackgroundMusic, isBackgroundMusicPlaying } from '@/lib/sounds';
 import { useAudioStore } from '@/stores/audioStore';
+import { editionPath, LEGACY_SURFACE } from '@/edition/surface';
 
 interface HeaderProps {
   variant?: 'dark' | 'light';
@@ -12,6 +13,8 @@ interface HeaderProps {
 }
 
 export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderProps) {
+  const { editionId } = useParams<{ editionId?: string }>();
+  const surface = editionId ? { ...LEGACY_SURFACE, editionId, canonicalPath: `/${editionId}` } : LEGACY_SURFACE;
   const isDark = variant === 'dark';
   const muted = useAudioStore((s) => s.isMuted);
   const toggleMute = useAudioStore((s) => s.toggleMute);
@@ -30,7 +33,7 @@ export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderPro
     <header className="fixed top-0 left-0 right-0 z-60 h-14">
       <div className="h-full px-4 flex items-center justify-between">
         <Link
-          to="/"
+          to={editionPath(surface)}
           className="transition-opacity hover:opacity-80"
           aria-label="Bundestag Wrapped - Zur Startseite"
         >

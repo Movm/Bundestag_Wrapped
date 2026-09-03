@@ -53,7 +53,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
   const { currentSection, initialSection, setCurrentSection } = useScrollWrapped(activeSlides);
 
   // For scroll lock: check if current quiz is answered (only subscribes when on quiz slide)
-  const isCurrentQuizAnswered = useIsQuizAnswered(currentSection as SlideType);
+  const isCurrentQuizAnswered = useIsQuizAnswered(surface, currentSection as SlideType);
   const resetQuiz = useQuizStore((state) => state.reset);
 
   // Auto-scroll on intro slides after 4 seconds
@@ -109,7 +109,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
   // Restart handler - clears progress and reloads page
   const handleRestart = useCallback(() => {
     clearWrappedProgress(surface);
-    resetQuiz();
+    resetQuiz(surface);
     window.location.reload();
   }, [resetQuiz, surface]);
 

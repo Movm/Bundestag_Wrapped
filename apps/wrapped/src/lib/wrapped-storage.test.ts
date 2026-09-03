@@ -21,8 +21,8 @@ describe('wrapped storage', () => {
   });
 
   it('isolates progress between editions and data versions', () => {
-    setWrappedProgress({ currentSection: 'quiz-1', quizAnswers: {} }, edition2025);
-    setWrappedProgress({ currentSection: 'topics', quizAnswers: {} }, edition2026);
+    setWrappedProgress({ currentSection: 'quiz-1' }, edition2025);
+    setWrappedProgress({ currentSection: 'topics' }, edition2026);
 
     expect(getWrappedProgress(edition2025)?.currentSection).toBe('quiz-1');
     expect(getWrappedProgress(edition2026)?.currentSection).toBe('topics');
@@ -33,7 +33,7 @@ describe('wrapped storage', () => {
   });
 
   it('clears progress for a slide that no longer exists in the active plan', () => {
-    setWrappedProgress({ currentSection: 'quiz-removed', quizAnswers: {} }, edition2025);
+    setWrappedProgress({ currentSection: 'quiz-removed' }, edition2025);
 
     expect(getWrappedProgress(edition2025, ['intro', 'finale'])).toBeNull();
     expect(getWrappedProgress(edition2025)).toBeNull();

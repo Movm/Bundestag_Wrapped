@@ -402,6 +402,7 @@ export async function shareSpeakerImage(
   speakerName: string,
   editionTitle = 'Bundestag Wrapped',
   editionId = 'edition',
+  url?: string,
 ): Promise<boolean> {
   if (!navigator.share || !navigator.canShare) return false;
 
@@ -422,6 +423,7 @@ export async function shareSpeakerImage(
           await navigator.share({
             files: [file],
             title: `${speakerName} – ${editionTitle}`,
+            url,
           });
           resolve(true);
         } else {

@@ -14,7 +14,7 @@ import {
 } from '@/lib/speaker-share-canvas';
 import { signatureWordsForDisplay } from '@/lib/speaker-profile-utils';
 import { useOptionalEdition } from '@/edition/EditionProvider';
-import { editionPath, editionSurface } from '@/edition/surface';
+import { editionPath, editionShareUrl, editionSurface } from '@/edition/surface';
 
 interface SpeakerShareSlideProps {
   speaker: SpeakerWrapped;
@@ -128,7 +128,7 @@ export const SpeakerShareSlide = memo(function SpeakerShareSlide({
 
   const handleShare = async () => {
     if (canvasRef.current) {
-      await shareSpeakerImage(canvasRef.current, speaker.name, surface.title, surface.editionId);
+      await shareSpeakerImage(canvasRef.current, speaker.name, surface.title, surface.editionId, editionShareUrl(surface, `wrapped/${speaker.slug}`));
     }
   };
 

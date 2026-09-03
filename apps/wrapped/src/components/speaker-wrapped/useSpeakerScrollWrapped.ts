@@ -1,6 +1,8 @@
 import { useState, useMemo, useEffect } from 'react';
 import { SPEAKER_SLIDES, type SpeakerSlideType } from './constants';
 import { useSpeakerQuizStore } from '@/stores/speakerQuizStore';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionStorageKey, editionSurface } from '@/edition/surface';
 
 /**
  * Scroll state hook for Speaker Wrapped.
@@ -18,20 +20,20 @@ interface SpeakerProgress {
   savedAt: number;
 }
 
-function getStorageKey(slug: string): string {
-  return `${STORAGE_PREFIX}${slug}`;
+function getStorageKey(slug: string, surface: ReturnType<typeof editionSurface>): string {
+  return editionStorageKey(`${STORAGE_PREFIX}${slug}`, surface);
 }
 
-function getSavedProgress(slug: string): SpeakerSlideType | null {
+function getSavedProgress(slug: string, surface: ReturnType<typeof editionSurface>): SpeakerSlideType | null {
   try {
-    const raw = localStorage.getItem(getStorageKey(slug));
+    const raw = localStorage.getItem(getStorageKey(slug, surface));
     if (!raw) return null;
 
     const data = JSON.parse(raw) as SpeakerProgress;
 
     // Check expiration
     if (Date.now() - data.savedAt > TTL_MS) {
-      localStorage.removeItem(getStorageKey(slug));
+      localStorage.removeItem(getStorageKey(slug, surface));
       return null;
     }
 
@@ -42,26 +44,26 @@ function getSavedProgress(slug: string): SpeakerSlideType | null {
 
     return null;
   } catch {
-    localStorage.removeItem(getStorageKey(slug));
+    localStorage.removeItem(getStorageKey(slug, surface));
     return null;
   }
 }
 
-function saveProgress(slug: string, section: SpeakerSlideType): void {
+function saveProgress(slug: string, section: SpeakerSlideType, surface: ReturnType<typeof editionSurface>): void {
   try {
     const data: SpeakerProgress = {
       currentSection: section,
       savedAt: Date.now(),
     };
-    localStorage.setItem(getStorageKey(slug), JSON.stringify(data));
+    localStorage.setItem(getStorageKey(slug, surface), JSON.stringify(data));
   } catch {
     // Storage full or disabled - fail silently
   }
 }
 
-function clearProgress(slug: string): void {
+function clearProgress(slug: string, surface: ReturnType<typeof editionSurface>): void {
   try {
-    localStorage.removeItem(getStorageKey(slug));
+    localStorage.removeItem(getStorageKey(slug, surface));
   } catch {
     // Fail silently
   }
@@ -75,11 +77,12 @@ export interface SpeakerScrollWrappedState {
 }
 
 export function useSpeakerScrollWrapped(slug: string): SpeakerScrollWrappedState {
+  const surface = editionSurface(useOptionalEdition());
   // Load initial section from localStorage
   const initialSection = useMemo(() => {
-    const saved = getSavedProgress(slug);
+    const saved = getSavedProgress(slug, surface);
     return saved || 'speaker-intro';
-  }, [slug]);
+  }, [slug, surface]);
 
   const [currentSection, setCurrentSection] = useState<SpeakerSlideType>(initialSection);
 
@@ -98,22 +101,22 @@ export function useSpeakerScrollWrapped(slug: string): SpeakerScrollWrappedState
 
     // Clear all progress when user completes the experience
     if (currentSection === 'speaker-share') {
-      clearProgress(slug);
+      clearProgress(slug, surface);
       // Note: Don't clear quiz progress here - user might restart
       return;
     }
 
-    saveProgress(slug, currentSection);
-  }, [slug, currentSection]);
+    saveProgress(slug, currentSection, surface);
+  }, [slug, currentSection, surface]);
 
   // Handle restart - clears progress and resets to intro
   const handleRestart = useMemo(() => {
     return () => {
-      clearProgress(slug);
-      clearQuizProgress();
+      clearProgress(slug, surface);
+      clearQuizProgress(surface, slug);
       setCurrentSection('speaker-intro');
     };
-  }, [slug, clearQuizProgress]);
+  }, [slug, surface, clearQuizProgress]);
 
   return {
     currentSection,

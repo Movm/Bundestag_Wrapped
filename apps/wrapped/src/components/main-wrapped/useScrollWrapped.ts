@@ -83,12 +83,12 @@ export function useScrollWrapped(activeSlides: readonly SlideType[] = SLIDES): S
     // Clear all progress when user completes the experience
     if (normalizedCurrentSection === 'finale') {
       clearWrappedProgress(surface);
-      clearQuizProgress();
+      clearQuizProgress(surface);
       return;
     }
 
     // Only persist currentSection - quiz state is in quizStore
-    setWrappedProgress({ currentSection: normalizedCurrentSection, quizAnswers: {} }, surface);
+    setWrappedProgress({ currentSection: normalizedCurrentSection }, surface);
   }, [normalizedCurrentSection, clearQuizProgress, surface]);
 
   return {

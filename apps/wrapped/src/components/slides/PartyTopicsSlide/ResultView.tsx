@@ -4,6 +4,7 @@ import type { TopicAnalysis } from '@/data/wrapped';
 import { BUBBLE_POSITIONS, FLOAT_ANIMATIONS, FlipCard } from '../shared';
 import { TOPIC_BY_ID } from '@/shared/constants/topics';
 import { getPartyBgColor } from '@/lib/party-colors';
+import { selectDisplayParties } from '@/domain/party-selection';
 
 interface ResultViewProps {
   topicAnalysis: TopicAnalysis;
@@ -13,9 +14,6 @@ interface TopicScore {
   topic: string;
   score: number;
 }
-
-// The 5 main parties to display (excludes fraktionslos)
-const DISPLAY_PARTIES = ['AfD', 'CDU/CSU', 'DIE LINKE', 'GRÜNE', 'SPD'];
 
 interface PartyBubbleProps {
   party: string;
@@ -122,11 +120,12 @@ const PartyBubble = memo(function PartyBubble({
 
 export function ResultView({ topicAnalysis }: ResultViewProps) {
   const { byParty } = topicAnalysis;
+  const displayParties = useMemo(() => selectDisplayParties(byParty), [byParty]);
 
   // Compute top 3 topics for each party
   const partyTopTopics = useMemo(() => {
     const result: Record<string, TopicScore[]> = {};
-    for (const party of DISPLAY_PARTIES) {
+    for (const party of displayParties) {
       const partyData = byParty[party];
       if (!partyData) continue;
 
@@ -138,7 +137,7 @@ export function ResultView({ topicAnalysis }: ResultViewProps) {
       result[party] = sorted;
     }
     return result;
-  }, [byParty]);
+  }, [byParty, displayParties]);
 
   return (
     <div className="min-h-screen relative w-full">
@@ -157,7 +156,7 @@ export function ResultView({ topicAnalysis }: ResultViewProps) {
       </motion.div>
 
       <div className="absolute inset-0 z-10">
-        {DISPLAY_PARTIES.map((party, i) => {
+        {displayParties.map((party, i) => {
           const topTopics = partyTopTopics[party];
           if (!topTopics) return null;
           return (

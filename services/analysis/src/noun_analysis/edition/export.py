@@ -35,6 +35,23 @@ def _all_files(root: Path) -> list[Path]:
 
 
 def _validate_checksums(root: Path, checksums: dict[str, str]) -> None:
+    expected_paths = {path.relative_to(root).as_posix() for path in _all_files(root)}
+    normalized_paths: set[str] = set()
+    for relative, expected in checksums.items():
+        candidate = Path(relative)
+        if candidate.is_absolute() or ".." in candidate.parts or candidate.as_posix() != relative:
+            raise EditionValidationError(f"invalid checksum path: {relative}")
+        if relative in normalized_paths:
+            raise EditionValidationError(f"duplicate checksum target: {relative}")
+        normalized_paths.add(relative)
+        if not isinstance(expected, str) or len(expected) != 64 or any(char not in "0123456789abcdefABCDEF" for char in expected):
+            raise EditionValidationError(f"invalid checksum: {relative}")
+    missing = expected_paths - set(checksums)
+    extra = set(checksums) - expected_paths
+    if missing:
+        raise EditionValidationError(f"checksums.json missing file: {sorted(missing)[0]}")
+    if extra:
+        raise EditionValidationError(f"checksums.json references unexpected file: {sorted(extra)[0]}")
     for relative, expected in checksums.items():
         path = root / relative
         if not path.is_file():

@@ -24,6 +24,7 @@ import {
 } from '@/components/main-wrapped';
 import { useIsQuizAnswered, useQuizStore } from '@/stores/quizStore';
 import { useWrappedStore } from '@/stores/wrappedStore';
+import { LEGACY_SURFACE } from '@/edition/surface';
 
 interface MobileWrappedPageProps {
   /** DOM prop required by Expo's 'use dom' directive */
@@ -49,7 +50,7 @@ export function MobileWrappedPage({ data, onComplete }: MobileWrappedPageProps) 
   const { currentSection, initialSection, setCurrentSection } = useScrollWrapped();
 
   // For scroll lock: check if current quiz is answered
-  const isCurrentQuizAnswered = useIsQuizAnswered(currentSection as SlideType);
+  const isCurrentQuizAnswered = useIsQuizAnswered(LEGACY_SURFACE, currentSection as SlideType);
   const resetQuiz = useQuizStore((state) => state.reset);
 
   // Auto-scroll on intro slides
@@ -79,7 +80,7 @@ export function MobileWrappedPage({ data, onComplete }: MobileWrappedPageProps) 
       setIntroStarted(true);
     }
     if (slideId === 'finale') {
-      resetQuiz();
+      resetQuiz(LEGACY_SURFACE);
       onComplete?.();
     }
     setTimeout(() => {

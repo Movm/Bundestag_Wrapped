@@ -11,8 +11,6 @@ interface WordCardProps {
   onSearchInSpeeches?: (word: string) => void;
 }
 
-const PARTY_ORDER = ['CDU/CSU', 'SPD', 'GRÜNE', 'AfD', 'DIE LINKE', 'fraktionslos'];
-
 export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: WordCardProps) {
   const [expanded, setExpanded] = useState(false);
 
@@ -28,9 +26,10 @@ export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: Wo
 
   // Get parties sorted by usage
   const sortedParties = useMemo(() => {
-    return PARTY_ORDER
-      .filter((party) => word.parties[party]?.count > 0)
-      .sort((a, b) => (word.parties[b]?.per1000 || 0) - (word.parties[a]?.per1000 || 0));
+    return Object.entries(word.parties)
+      .filter(([, stats]) => stats.count > 0)
+      .sort(([partyA, a], [partyB, b]) => b.per1000 - a.per1000 || partyA.localeCompare(partyB, 'de'))
+      .map(([party]) => party);
   }, [word.parties]);
 
   return (

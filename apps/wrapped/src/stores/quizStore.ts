@@ -1,67 +1,54 @@
-/**
- * Quiz Store - Zustand-based quiz state management
- *
- * Adapted from mobile/stores/quizStore.ts for web.
- * This prevents re-render cascades when quiz answers change.
- *
- * With Zustand:
- * - Only quiz slides subscribe to quiz state
- * - Non-quiz slides never re-render for quiz changes
- * - MainWrappedPage doesn't hold quiz state
- */
-
+/** Edition-scoped quiz persistence for the Wrapped journey. */
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { SlideType } from '@/components/main-wrapped/constants';
+import { editionStorageKey, type EditionSurface } from '@/edition/surface';
+
+type QuizSurface = Pick<EditionSurface, 'editionId' | 'dataVersion'>;
+type ScopedAnswers = Record<string, Record<string, boolean>>;
 
 interface QuizState {
-  /** Record of quiz answers: slideId -> isCorrect */
-  quizAnswers: Record<string, boolean>;
+  answersByScope: ScopedAnswers;
+  answerQuiz: (surface: QuizSurface, slideId: SlideType, isCorrect: boolean) => void;
+  reset: (surface: QuizSurface) => void;
+  clearProgress: (surface: QuizSurface) => void;
+}
 
-  /** Answer a quiz question */
-  answerQuiz: (slideId: SlideType, isCorrect: boolean) => void;
+export function quizScope(surface: QuizSurface): string {
+  return editionStorageKey('quiz', surface);
+}
 
-  /** Reset all quiz state */
-  reset: () => void;
-
-  /** Clear persisted state (on finale) */
-  clearProgress: () => void;
+function answersFor(state: QuizState, surface: QuizSurface): Record<string, boolean> {
+  return state.answersByScope[quizScope(surface)] ?? {};
 }
 
 export const useQuizStore = create<QuizState>()(
   persist(
     (set) => ({
-      quizAnswers: {},
-
-      answerQuiz: (slideId, isCorrect) =>
-        set((state) => {
-          // Skip if already answered
-          if (slideId in state.quizAnswers) {
-            return state;
-          }
-          return {
-            quizAnswers: { ...state.quizAnswers, [slideId]: isCorrect },
-          };
-        }),
-
-      reset: () => set({ quizAnswers: {} }),
-
-      clearProgress: () => {
-        // Clear localStorage directly
-        localStorage.removeItem('quiz-storage');
-        set({ quizAnswers: {} });
-      },
+      answersByScope: {},
+      answerQuiz: (surface, slideId, isCorrect) => set((state) => {
+        const scope = quizScope(surface);
+        const answers = answersFor(state, surface);
+        if (slideId in answers) return state;
+        return { answersByScope: { ...state.answersByScope, [scope]: { ...answers, [slideId]: isCorrect } } };
+      }),
+      reset: (surface) => set((state) => ({
+        answersByScope: { ...state.answersByScope, [quizScope(surface)]: {} },
+      })),
+      clearProgress: (surface) => set((state) => {
+        const { [quizScope(surface)]: _removed, ...remaining } = state.answersByScope;
+        return { answersByScope: remaining };
+      }),
     }),
     {
-      name: 'quiz-storage',
-    }
-  )
+      name: 'quiz-storage-v2',
+      // The former unscoped answers cannot safely be assigned to a year. Discard
+      // them once instead of allowing a legacy answer to unlock an edition route.
+      onRehydrateStorage: () => () => localStorage.removeItem('quiz-storage'),
+    },
+  ),
 );
 
-/**
- * Get correct answer count
- * Only ShareSlide needs this
- */
 export function countCorrectAnswers(
   answers: Record<string, boolean>,
   activeSlides?: readonly SlideType[],
@@ -72,29 +59,18 @@ export function countCorrectAnswers(
   return relevantAnswers.filter(Boolean).length;
 }
 
-export function useCorrectCount(activeSlides?: readonly SlideType[]): number {
-  return useQuizStore((state) => countCorrectAnswers(state.quizAnswers, activeSlides));
+export function useCorrectCount(surface: QuizSurface, activeSlides?: readonly SlideType[]): number {
+  return useQuizStore((state) => countCorrectAnswers(answersFor(state, surface), activeSlides));
 }
 
-/**
- * Check if a specific quiz has been answered
- * Per-slide subscription - only that quiz slide re-renders when answered
- */
-export function useIsQuizAnswered(slideId: SlideType): boolean {
-  return useQuizStore((state) => slideId in state.quizAnswers);
+export function useIsQuizAnswered(surface: QuizSurface, slideId: SlideType): boolean {
+  return useQuizStore((state) => slideId in answersFor(state, surface));
 }
 
-/**
- * Check if ANY quiz has been answered (for conditional logic)
- */
-export function useHasAnsweredAny(): boolean {
-  return useQuizStore((state) => Object.keys(state.quizAnswers).length > 0);
+export function useHasAnsweredAny(surface: QuizSurface): boolean {
+  return useQuizStore((state) => Object.keys(answersFor(state, surface)).length > 0);
 }
 
-/**
- * Get the answerQuiz action without subscribing to state
- * Using getState() to avoid subscription entirely
- */
-export function useAnswerQuiz() {
-  return useQuizStore.getState().answerQuiz;
+export function useAnswerQuiz(surface: QuizSurface) {
+  return (slideId: SlideType, isCorrect: boolean) => useQuizStore.getState().answerQuiz(surface, slideId, isCorrect);
 }

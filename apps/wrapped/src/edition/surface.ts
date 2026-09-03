@@ -39,6 +39,12 @@ export function editionPath(surface: EditionSurface, path = ''): string {
   return suffix ? `${surface.canonicalPath}/${suffix}` : surface.canonicalPath;
 }
 
+export function editionShareUrl(surface: EditionSurface, path = ''): string {
+  const target = editionPath(surface, path);
+  if (typeof window === 'undefined') return target;
+  return new URL(target, window.location.origin).toString();
+}
+
 export function editionStorageKey(base: string, surface: Pick<EditionSurface, 'editionId' | 'dataVersion'> = LEGACY_SURFACE): string {
   return `${base}:${surface.editionId}:${surface.dataVersion}`;
 }
