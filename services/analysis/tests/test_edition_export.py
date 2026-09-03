@@ -64,6 +64,22 @@ def test_tampered_artifact_fails_checksum_validation(tmp_path):
         validate_edition(target)
 
 
+def test_checksum_validation_rejects_symlink_escape(tmp_path):
+    target = publish(tmp_path)
+    outside = tmp_path / "outside.json"
+    outside.write_text('{"outside": true}\n', encoding="utf-8")
+    escaped = target / "escape.json"
+    escaped.symlink_to(outside)
+
+    checksums_path = target / "checksums.json"
+    checksums = json.loads(checksums_path.read_text())
+    checksums["escape.json"] = hashlib.sha256(outside.read_bytes()).hexdigest()
+    checksums_path.write_text(json.dumps(checksums), encoding="utf-8")
+
+    with pytest.raises(EditionValidationError, match="symbolic link"):
+        validate_edition(target)
+
+
 def test_missing_or_extra_checksum_entries_fail_validation(tmp_path):
     target = publish(tmp_path)
     checksums_path = target / "checksums.json"

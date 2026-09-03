@@ -17,6 +17,7 @@
     "contract:generate": "node scripts/generate-wrapped-contract.mjs",
     "contract:check": "node scripts/generate-wrapped-contract.mjs --check",
     "check:registered-editions": "node scripts/check-registered-editions.mjs",
+    "test:edition-validator": "node --test scripts/check-registered-editions.test.mjs",
     "analysis:serve": "cd services/analysis && bundestag-analysis serve",
     "analysis:serve-wrapped": "cd services/analysis && bundestag-analysis serve-wrapped"
   },

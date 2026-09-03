@@ -29,7 +29,7 @@ export function SpeakerWrappedPage() {
   const scrollContainerRef = useRef<ScrollContainerRef>(null);
 
   // Scroll state with persistence
-  const { currentSection, initialSection, setCurrentSection } = useSpeakerScrollWrapped(slug);
+  const { currentSection, initialSection, setCurrentSection, handleRestart: clearSpeakerProgress } = useSpeakerScrollWrapped(slug);
 
   // Track if intro has started (user clicked "Los geht's")
   const [introStarted, setIntroStarted] = useState(false);
@@ -90,10 +90,11 @@ export function SpeakerWrappedPage() {
 
   // Handle restart
   const handleRestart = useCallback(() => {
+    clearSpeakerProgress();
     setIntroStarted(false);
     setCurrentSection('speaker-intro');
     scrollContainerRef.current?.scrollToSlide('speaker-intro');
-  }, [setCurrentSection]);
+  }, [clearSpeakerProgress, setCurrentSection]);
 
   // Handle section change from scroll
   const handleSectionChange = useCallback((sectionId: string) => {

@@ -1,7 +1,9 @@
 import { motion } from 'motion/react';
-import { statsData } from './data';
+import type { DocumentationStat } from './data';
 
-export function StatsBar() {
+export function StatsBar({ stats }: { stats: DocumentationStat[] }) {
+  if (stats.length === 0) return null;
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -11,8 +13,8 @@ export function StatsBar() {
     >
       <div className="max-w-4xl mx-auto px-6 py-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {statsData.map((stat, i) => (
-            <div key={i}>
+          {stats.map((stat) => (
+            <div key={stat.label}>
               <div className="text-2xl md:text-3xl font-light text-stone-900 font-mono">
                 {stat.value}
               </div>

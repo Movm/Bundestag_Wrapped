@@ -7,12 +7,13 @@ function party(name: string, word: string, signatureWords: string[]) {
 }
 
 function wrapped(editionId: string, includeSpeechMetric: boolean) {
+  const isSecondEdition = editionId === '2026';
   const parties = [party('Partei Alpha', 'alpha', ['alpha', 'birke', 'ceder', 'delta']), party('Partei Beta', 'beta', ['echo', 'fichte', 'gamma', 'helix']), party('Partei Gamma', 'gamma', ['iris', 'jupiter', 'kiesel', 'lima']), party('Partei Delta', 'delta', ['mango', 'nova', 'opal', 'pixel'])];
   const speakers = ['Alex Alpha', 'Bea Beta', 'Chris Gamma', 'Dana Delta'];
   const named = speakers.map((name, index) => ({ name, party: parties[index].party, count: 4 - index }));
   const byWords = speakers.map((name, index) => ({ name, party: parties[index].party, totalWords: 400 - index * 10, speeches: 4 - index }));
   return {
-    metadata: { generatedAt: '2042-01-01T00:00:00Z', totalSpeeches: 10, redenCount: 8, wortbeitraegeCount: 2, totalWords: 1000, partyCount: 4, speakerCount: 4, wahlperiode: 99, sitzungen: 1 },
+    metadata: { generatedAt: '2042-01-01T00:00:00Z', totalSpeeches: isSecondEdition ? 20 : 10, redenCount: isSecondEdition ? 15 : 8, wortbeitraegeCount: isSecondEdition ? 5 : 2, totalWords: isSecondEdition ? 2000 : 1000, partyCount: isSecondEdition ? 5 : 4, speakerCount: isSecondEdition ? 5 : 4, wahlperiode: 99, sitzungen: 1 },
     parties,
     drama: { topZwischenrufer: named, mostInterrupted: named, applauseChampions: parties.map((entry, index) => ({ party: entry.party, count: 4 - index })), loudestHecklers: parties.map((entry, index) => ({ party: entry.party, count: 4 - index })), zwischenrufStats: { total: 10, positive: 3, negative: 3, neutral: 4, positivePercent: 30, negativePercent: 30, neutralPercent: 40, classification: { positive: 'positiv', negative: 'negativ', neutral: 'neutral' } } },
     topSpeakers: speakers.map((name, index) => ({ name, party: parties[index].party, speeches: 4 - index })),
@@ -37,7 +38,7 @@ function speaker(name: string, party: string) {
     name, party, slug: 'shared-speaker', academicTitle: null, speeches: 4, wortbeitraege: 1, befragungResponses: 0, totalWords: 400, avgWords: 100, minWords: 50, maxWords: 150,
     rankings: { speechRank: 1, wordsRank: 1, partySpeechRank: 1, partyWordsRank: 1, partySize: 1, totalSpeakers: 1, percentile: 100, verbosityRank: null, verbosityTotal: null, partyVerbosityRank: null, longestSpeechRank: 1 },
     drama: { interruptionsGiven: 0, interruptionsReceived: 0, interrupterRank: null, interruptedRank: null },
-    words: { topWords: [{ word: 'fixture', count: 4 }] }, comparison: { speakerAvgWords: 100, partyAvgWords: 100, parliamentAvgWords: 100, vsParty: 0, vsParliament: 0 }, funFacts: [], signatureQuiz: null, signatureAdjectiveQuiz: null, spiritAnimal: null, toneProfile: null, topics: null,
+    words: { topWords: [{ word: 'fixture', count: 4 }] }, comparison: { speakerAvgWords: 100, partyAvgWords: 100, parliamentAvgWords: 100, vsParty: 0, vsParliament: 0 }, funFacts: [], signatureQuiz: { question: 'Welches Wort ist typisch?', options: [{ text: 'fixture', isCorrect: true }, { text: 'andere', isCorrect: false }], explanationParty: 'Fixture-Erklärung', explanationBundestag: 'Editionierte Fixture-Erklärung' }, signatureAdjectiveQuiz: null, spiritAnimal: null, toneProfile: null, topics: null,
   };
 }
 

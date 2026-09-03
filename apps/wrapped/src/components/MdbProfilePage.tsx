@@ -439,6 +439,7 @@ function ProfilePortrait({
     <figure className="w-[150px] shrink-0 md:w-[210px]">
       <div
         className="relative flex h-[187px] items-center justify-center overflow-hidden rounded-2xl border-[3px] border-pink-600/55 bg-gradient-to-br from-pink-950/70 to-violet-950/70 shadow-2xl shadow-pink-950/30 md:h-[262px]"
+        role={image ? undefined : 'img'}
         aria-label={image ? undefined : `${name}, kein frei lizenziertes Profilfoto verfügbar`}
       >
         <span className="text-5xl font-black tracking-tight text-white/65 md:text-7xl" aria-hidden="true">

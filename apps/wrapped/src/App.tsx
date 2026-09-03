@@ -95,29 +95,20 @@ function EditionMainRoute() {
   return <EditionProvider editionId={editionId}><MainWrappedRoute /></EditionProvider>;
 }
 
-function EditionSpeakerRoute() {
+/**
+ * The application shell (header and mobile menu) must share the validated
+ * edition context with the page beneath it.  Keeping this at the annual route
+ * boundary also means navigation and restart actions use the manifest's
+ * dataVersion, not a route-derived placeholder.
+ */
+function EditionDarkLayout() {
   const { editionId = '' } = useParams();
-  return <EditionProvider editionId={editionId}><SpeakerWrappedPage /></EditionProvider>;
+  return <EditionProvider editionId={editionId}><DarkLayout /></EditionProvider>;
 }
 
-function EditionSucheRoute() {
+function EditionLightLayout() {
   const { editionId = '' } = useParams();
-  return <EditionProvider editionId={editionId}><SuchePage /></EditionProvider>;
-}
-
-function EditionAbgeordneteRoute() {
-  const { editionId = '' } = useParams();
-  return <EditionProvider editionId={editionId}><AbgeordnetePage /></EditionProvider>;
-}
-
-function EditionDokumentationRoute() {
-  const { editionId = '' } = useParams();
-  return <EditionProvider editionId={editionId}><DokumentationPage /></EditionProvider>;
-}
-
-function EditionMdbRoute() {
-  const { editionId = '' } = useParams();
-  return <EditionProvider editionId={editionId}><MdbProfilePage /></EditionProvider>;
+  return <EditionProvider editionId={editionId}><LightLayout /></EditionProvider>;
 }
 
 export default function App() {
@@ -137,10 +128,13 @@ export default function App() {
             <Route path="/reden" element={<CurrentEditionRedirect legacy />} />
             <Route path="/abgeordnete" element={<CurrentEditionRedirect legacy />} />
             <Route path="/abgeordnete/:slug" element={<CurrentEditionRedirect legacy />} />
-            <Route path="/:editionId/wrapped/:slug" element={<EditionSpeakerRoute />} />
-            <Route path="/:editionId/suche" element={<EditionSucheRoute />} />
-            <Route path="/:editionId/abgeordnete" element={<EditionAbgeordneteRoute />} />
-            <Route path="/:editionId/abgeordnete/:slug" element={<EditionMdbRoute />} />
+          </Route>
+
+          <Route path="/:editionId" element={<EditionDarkLayout />}>
+            <Route path="wrapped/:slug" element={<SpeakerWrappedPage />} />
+            <Route path="suche" element={<SuchePage />} />
+            <Route path="abgeordnete" element={<AbgeordnetePage />} />
+            <Route path="abgeordnete/:slug" element={<MdbProfilePage />} />
           </Route>
 
           {/* Statistiken routes - TEMPORARILY DISABLED
@@ -162,7 +156,9 @@ export default function App() {
             <Route path="/dokumentation" element={<CurrentEditionRedirect legacy />} />
             <Route path="/mcp" element={<McpPage />} />
             <Route path="/mcp/technik" element={<McpTechnikPage />} />
-            <Route path="/:editionId/dokumentation" element={<EditionDokumentationRoute />} />
+          </Route>
+          <Route path="/:editionId" element={<EditionLightLayout />}>
+            <Route path="dokumentation" element={<DokumentationPage />} />
           </Route>
         </Routes>
       </Suspense>

@@ -9,9 +9,12 @@ import { SEO } from '@/components/seo/SEO';
 import { PAGE_META } from '@/components/seo/constants';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionPath, editionSurface } from '@/edition/surface';
+import { buildDocumentationStats } from './dokumentation/data';
 
 export function DokumentationPage() {
   const surface = editionSurface(useOptionalEdition());
+  const edition = useOptionalEdition();
+  const stats = buildDocumentationStats(edition?.data, edition?.manifest?.coverage.protocolCount);
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
@@ -37,8 +40,8 @@ export function DokumentationPage() {
         structuredData={articleSchema}
       />
       <div className="min-h-screen bg-[#fafaf9] pt-14">
-        <HeroSection />
-        <StatsBar />
+        <HeroSection wahlperioden={edition?.manifest?.period.wahlperioden} />
+        <StatsBar stats={stats} />
         <OverviewSection />
         <ComingSoonSection />
         <DocFooter />

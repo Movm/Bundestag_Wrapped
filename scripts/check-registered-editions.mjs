@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
-import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
+import { existsSync, lstatSync, readFileSync, readdirSync } from 'node:fs';
 import { dirname, join, relative as relativePath, resolve, sep } from 'node:path';
+import { pathToFileURL } from 'node:url';
 import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 import contractSchema from '../contracts/wrapped/v1.schema.json' with { type: 'json' };
@@ -33,7 +34,10 @@ function validate(document, payload, file) {
 function editionFiles(root, current = root) {
   return readdirSync(current).flatMap((entry) => {
     const file = join(current, entry);
-    if (statSync(file).isDirectory()) return editionFiles(root, file);
+    const stat = lstatSync(file);
+    if (stat.isSymbolicLink()) fail(`edition contains symbolic link ${relativePath(root, file)}`);
+    if (stat.isDirectory()) return editionFiles(root, file);
+    if (!stat.isFile()) fail(`edition contains non-regular file ${relativePath(root, file)}`);
     const path = relativePath(root, file).split(sep).join('/');
     return path === 'checksums.json' ? [] : [path];
   }).sort();
@@ -55,6 +59,7 @@ export function validateChecksums(root, checksums) {
   for (const asset of entries) if (!expected.includes(asset)) fail(`checksum references unexpected asset ${asset}`);
   for (const asset of expected) {
     const file = safeRelative(root, asset);
+    if (lstatSync(file).isSymbolicLink()) fail(`checksum references symbolic link ${asset}`);
     if (typeof checksums[asset] !== 'string' || !/^[a-f0-9]{64}$/i.test(checksums[asset])) fail(`invalid checksum for ${asset}`);
     if (sha256(file) !== checksums[asset]) fail(`checksum mismatch ${asset}`);
   }
@@ -93,8 +98,14 @@ function checkEdition(summary) {
   validate('TopicRankingsAsset', json(safeRelative(base, manifest.assets.topicRankings)), safeRelative(base, manifest.assets.topicRankings));
 }
 
-const registry = json(join(publicData, 'editions.json'));
-validate('EditionsIndex', registry, join(publicData, 'editions.json'));
-if (!registry.editions?.some((edition) => edition.id === registry.currentEdition)) fail('currentEdition is not registered');
-registry.editions.forEach(checkEdition);
-console.log(`Registered editions check passed (${registry.editions.length} editions).`);
+export function checkRegisteredEditions() {
+  const registry = json(join(publicData, 'editions.json'));
+  validate('EditionsIndex', registry, join(publicData, 'editions.json'));
+  if (!registry.editions?.some((edition) => edition.id === registry.currentEdition)) fail('currentEdition is not registered');
+  registry.editions.forEach(checkEdition);
+  console.log(`Registered editions check passed (${registry.editions.length} editions).`);
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  checkRegisteredEditions();
+}
