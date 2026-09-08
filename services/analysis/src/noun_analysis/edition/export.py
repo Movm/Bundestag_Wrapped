@@ -46,7 +46,14 @@ def _validate_checksums(root: Path, checksums: dict[str, str]) -> None:
     normalized_paths: set[str] = set()
     for relative, expected in checksums.items():
         candidate = Path(relative)
-        if candidate.is_absolute() or ".." in candidate.parts or candidate.as_posix() != relative:
+        if (
+            not relative
+            or candidate.is_absolute()
+            or (len(relative) >= 3 and relative[0].isalpha() and relative[1:3] == ":/")
+            or "\\" in relative
+            or any(part in ("", ".", "..") for part in relative.split("/"))
+            or candidate.as_posix() != relative
+        ):
             raise EditionValidationError(f"invalid checksum path: {relative}")
         if relative in normalized_paths:
             raise EditionValidationError(f"duplicate checksum target: {relative}")

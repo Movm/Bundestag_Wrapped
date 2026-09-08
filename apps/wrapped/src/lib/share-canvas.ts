@@ -278,7 +278,7 @@ export function downloadShareImage(canvas: HTMLCanvasElement, userName?: string,
  */
 export async function shareImage(canvas: HTMLCanvasElement, editionTitle = 'Bundestag Wrapped', editionId?: string, url?: string): Promise<boolean> {
   // Check if Web Share API is available
-  if (!navigator.share || !navigator.canShare) {
+  if (!navigator.share) {
     return false;
   }
 
@@ -291,16 +291,19 @@ export async function shareImage(canvas: HTMLCanvasElement, editionTitle = 'Bund
 
       try {
         const file = new File([blob], shareFilename(editionId), { type: 'image/png' });
-        if (navigator.canShare({ files: [file] })) {
+        if (navigator.canShare?.({ files: [file] })) {
           await navigator.share({
             files: [file],
             title: `Mein ${editionTitle}`,
             url,
           });
-          resolve(true);
         } else {
-          resolve(false);
+          await navigator.share({
+            title: `Mein ${editionTitle}`,
+            url,
+          });
         }
+        resolve(true);
       } catch {
         resolve(false);
       }

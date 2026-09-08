@@ -28,7 +28,8 @@ export interface DocumentationStat {
 
 export interface DocumentationDataSource {
   metadata: {
-    totalSpeeches: number;
+    redenCount: number;
+    wortbeitraegeCount: number;
     partyCount: number;
     speakerCount: number;
   };
@@ -45,7 +46,10 @@ export function buildDocumentationStats(
 ): DocumentationStat[] {
   if (!data || protocolCount === undefined) return [];
   return [
-    { label: 'Beiträge analysiert', value: data.metadata.totalSpeeches.toLocaleString('de-DE') },
+    {
+      label: 'Beiträge analysiert',
+      value: (data.metadata.redenCount + data.metadata.wortbeitraegeCount).toLocaleString('de-DE'),
+    },
     { label: 'Fraktionen', value: data.metadata.partyCount.toLocaleString('de-DE') },
     { label: 'Abgeordnete', value: data.metadata.speakerCount.toLocaleString('de-DE') },
     { label: 'Protokolle', value: protocolCount.toLocaleString('de-DE') },

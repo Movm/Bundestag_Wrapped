@@ -4,6 +4,8 @@ import type { SpeechSortOption, SpeakerSortOption, WordSortOption } from '@/lib/
 import type { SearchState } from '@/hooks/useSearchState';
 import { TabButton } from './TabButton';
 import { SPEECH_SORT_OPTIONS, SPEAKER_SORT_OPTIONS, WORD_SORT_OPTIONS } from './data';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionPath, editionSurface } from '@/edition/surface';
 
 interface SearchHeaderProps {
   state: SearchState;
@@ -12,6 +14,7 @@ interface SearchHeaderProps {
 }
 
 export function SearchHeader({ state, updateState, parties }: SearchHeaderProps) {
+  const surface = editionSurface(useOptionalEdition());
   const sortOptions = state.tab === 'speeches'
     ? SPEECH_SORT_OPTIONS
     : state.tab === 'speakers'
@@ -27,7 +30,7 @@ export function SearchHeader({ state, updateState, parties }: SearchHeaderProps)
       <div className="max-w-4xl mx-auto px-4 py-4">
         <div className="flex items-center gap-4 mb-4">
           <a
-            href="/"
+            href={editionPath(surface)}
             className="text-white/60 hover:text-white transition-colors"
             aria-label="Zurück zur Startseite"
           >

@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { existsSync, lstatSync, readFileSync, readdirSync } from 'node:fs';
-import { dirname, join, relative as relativePath, resolve, sep } from 'node:path';
+import { dirname, isAbsolute, join, relative as relativePath, resolve, sep } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
@@ -10,7 +10,15 @@ const publicData = resolve('apps/wrapped/public/data');
 const json = (file) => JSON.parse(readFileSync(file, 'utf8'));
 const fail = (message) => { throw new Error(message); };
 function safeRelative(base, asset) {
-  if (typeof asset !== 'string' || asset.startsWith('/') || asset.split('/').includes('..')) fail(`invalid edition asset path ${asset}`);
+  const segments = typeof asset === 'string' ? asset.split('/') : [];
+  if (
+    typeof asset !== 'string'
+    || !asset
+    || isAbsolute(asset)
+    || /^[A-Za-z]:\//.test(asset)
+    || asset.includes('\\')
+    || segments.some((segment) => !segment || segment === '.' || segment === '..')
+  ) fail(`invalid edition asset path ${asset}`);
   const file = resolve(base, asset);
   if (file !== base && !file.startsWith(`${base}${sep}`)) fail(`edition asset escapes root ${asset}`);
   return file;

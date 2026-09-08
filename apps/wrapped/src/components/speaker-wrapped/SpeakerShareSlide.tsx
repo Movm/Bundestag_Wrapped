@@ -109,7 +109,7 @@ export const SpeakerShareSlide = memo(function SpeakerShareSlide({
   const signatureWords = signatureWordsForDisplay(speaker);
 
   useEffect(() => {
-    setCanShare(typeof navigator !== 'undefined' && !!navigator.share && !!navigator.canShare);
+    setCanShare(typeof navigator !== 'undefined' && !!navigator.share);
   }, []);
 
   useEffect(() => {

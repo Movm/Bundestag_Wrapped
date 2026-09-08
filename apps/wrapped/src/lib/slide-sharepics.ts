@@ -138,7 +138,7 @@ function setupCanvas(canvas: HTMLCanvasElement): CanvasSetup | null {
   return { ctx, SIZE, centerX: SIZE / 2 };
 }
 
-function drawHeader(ctx: CanvasRenderingContext2D): void {
+function drawHeader(ctx: CanvasRenderingContext2D, editionTitle: string): void {
   const headerY = 70, headerX = 60, logoSize = 38;
   if (logoImage) {
     const logoHeight = (logoImage.height / logoImage.width) * logoSize;
@@ -150,7 +150,7 @@ function drawHeader(ctx: CanvasRenderingContext2D): void {
   ctx.font = '600 24px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
   ctx.textAlign = 'left';
   ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-  ctx.fillText('BUNDESTAG WRAPPED', headerX + logoSize + 12, headerY);
+  ctx.fillText(editionTitle.toUpperCase(), headerX + logoSize + 12, headerY);
 }
 
 function drawFooter(ctx: CanvasRenderingContext2D, centerX: number): void {
@@ -261,14 +261,15 @@ function drawMoinCard(
 
 export function renderMoinSharepic(
   canvas: HTMLCanvasElement,
-  speakers: MoinSpeaker[]
+  speakers: MoinSpeaker[],
+  editionTitle = 'Bundestag Wrapped',
 ): void {
   const setup = setupCanvas(canvas);
   if (!setup) return;
   const { ctx, centerX } = setup;
   const centerY = SIZE / 2;
 
-  drawHeader(ctx);
+  drawHeader(ctx, editionTitle);
 
   // Calculate content dimensions for centering
   const cardWidth = 230, cardHeight = 220, gap = 24;
@@ -323,14 +324,15 @@ export function renderMoinSharepic(
 
 export function renderDramaSharepic(
   canvas: HTMLCanvasElement,
-  drama: DramaStats
+  drama: DramaStats,
+  editionTitle = 'Bundestag Wrapped',
 ): void {
   const setup = setupCanvas(canvas);
   if (!setup) return;
   const { ctx, centerX } = setup;
   const centerY = SIZE / 2;
 
-  drawHeader(ctx);
+  drawHeader(ctx, editionTitle);
 
   const leader = drama.topZwischenrufer?.[0];
   if (!leader) return;
@@ -387,14 +389,15 @@ export function renderDramaSharepic(
 
 export function renderGenderSharepic(
   canvas: HTMLCanvasElement,
-  genderAnalysis: GenderAnalysis
+  genderAnalysis: GenderAnalysis,
+  editionTitle = 'Bundestag Wrapped',
 ): void {
   const setup = setupCanvas(canvas);
   if (!setup) return;
   const { ctx, centerX } = setup;
   const centerY = SIZE / 2;
 
-  drawHeader(ctx);
+  drawHeader(ctx, editionTitle);
 
   const parties = (genderAnalysis.byParty || [])
     .filter((p) => p.party !== 'fraktionslos')
@@ -511,14 +514,15 @@ function drawVocabularyBubble(
 
 export function renderVocabularySharepic(
   canvas: HTMLCanvasElement,
-  data: VocabularyData
+  data: VocabularyData,
+  editionTitle = 'Bundestag Wrapped',
 ): void {
   const setup = setupCanvas(canvas);
   if (!setup) return;
   const { ctx, centerX } = setup;
   const centerY = SIZE / 2;
 
-  drawHeader(ctx);
+  drawHeader(ctx, editionTitle);
 
   const parties = data.parties
     .filter(p => p.party !== 'fraktionslos' && p.signatureWords.length > 0)
@@ -572,13 +576,14 @@ export interface SpeechesData {
 
 export function renderSpeechesSharepic(
   canvas: HTMLCanvasElement,
-  data: SpeechesData
+  data: SpeechesData,
+  editionTitle = 'Bundestag Wrapped',
 ): void {
   const setup = setupCanvas(canvas);
   if (!setup) return;
   const { ctx, centerX } = setup;
 
-  drawHeader(ctx);
+  drawHeader(ctx, editionTitle);
 
   const parties = data.parties
     .filter(p => p.party !== 'fraktionslos')
@@ -654,13 +659,14 @@ const WORD_CLOUD_COLORS = [
 
 export function renderCommonWordsSharepic(
   canvas: HTMLCanvasElement,
-  data: CommonWordsData
+  data: CommonWordsData,
+  editionTitle = 'Bundestag Wrapped',
 ): void {
   const setup = setupCanvas(canvas);
   if (!setup) return;
   const { ctx, centerX } = setup;
 
-  drawHeader(ctx);
+  drawHeader(ctx, editionTitle);
 
   const words = data.topics.slice(0, 12);
 
@@ -758,13 +764,14 @@ function drawToneBubble(
 
 export function renderToneAnalysisSharepic(
   canvas: HTMLCanvasElement,
-  data: ToneAnalysisData
+  data: ToneAnalysisData,
+  editionTitle = 'Bundestag Wrapped',
 ): void {
   const setup = setupCanvas(canvas);
   if (!setup) return;
   const { ctx, centerX } = setup;
 
-  drawHeader(ctx);
+  drawHeader(ctx, editionTitle);
 
   const profiles = Object.values(data.partyProfiles)
     .filter(p => p.party !== 'fraktionslos')
@@ -811,14 +818,15 @@ export interface SwiftieData {
 
 export function renderSwiftieSharepic(
   canvas: HTMLCanvasElement,
-  data: SwiftieData
+  data: SwiftieData,
+  editionTitle = 'Bundestag Wrapped',
 ): void {
   const setup = setupCanvas(canvas);
   if (!setup) return;
   const { ctx, centerX } = setup;
   const centerY = SIZE / 2;
 
-  drawHeader(ctx);
+  drawHeader(ctx, editionTitle);
 
   const partyColor = getPartyColor(data.party);
 
@@ -913,7 +921,7 @@ export async function shareSharepic(
   canvas: HTMLCanvasElement,
   { title, filename, url }: { title: string; filename: string; url: string },
 ): Promise<boolean> {
-  if (!navigator.share || !navigator.canShare) return false;
+  if (!navigator.share) return false;
 
   return new Promise((resolve) => {
     canvas.toBlob(async (blob) => {
@@ -924,16 +932,16 @@ export async function shareSharepic(
 
       try {
         const file = new File([blob], filename.endsWith('.png') ? filename : `${filename}.png`, { type: 'image/png' });
-        if (navigator.canShare({ files: [file] })) {
+        if (navigator.canShare?.({ files: [file] })) {
           await navigator.share({
             files: [file],
             title,
             url,
           });
-          resolve(true);
         } else {
-          resolve(false);
+          await navigator.share({ title, url });
         }
+        resolve(true);
       } catch {
         resolve(false);
       }
@@ -963,31 +971,35 @@ export type SlideData =
   | { type: 'toneAnalysis'; data: ToneAnalysisData }
   | { type: 'swiftie'; data: SwiftieData };
 
-export function renderSlideSharepic(canvas: HTMLCanvasElement, slideData: SlideData): void {
+export function renderSlideSharepic(
+  canvas: HTMLCanvasElement,
+  slideData: SlideData,
+  editionTitle = 'Bundestag Wrapped',
+): void {
   switch (slideData.type) {
     case 'moin':
-      renderMoinSharepic(canvas, slideData.speakers);
+      renderMoinSharepic(canvas, slideData.speakers, editionTitle);
       break;
     case 'drama':
-      renderDramaSharepic(canvas, slideData.drama);
+      renderDramaSharepic(canvas, slideData.drama, editionTitle);
       break;
     case 'gender':
-      renderGenderSharepic(canvas, slideData.genderAnalysis);
+      renderGenderSharepic(canvas, slideData.genderAnalysis, editionTitle);
       break;
     case 'vocabulary':
-      renderVocabularySharepic(canvas, slideData.data);
+      renderVocabularySharepic(canvas, slideData.data, editionTitle);
       break;
     case 'speeches':
-      renderSpeechesSharepic(canvas, slideData.data);
+      renderSpeechesSharepic(canvas, slideData.data, editionTitle);
       break;
     case 'commonWords':
-      renderCommonWordsSharepic(canvas, slideData.data);
+      renderCommonWordsSharepic(canvas, slideData.data, editionTitle);
       break;
     case 'toneAnalysis':
-      renderToneAnalysisSharepic(canvas, slideData.data);
+      renderToneAnalysisSharepic(canvas, slideData.data, editionTitle);
       break;
     case 'swiftie':
-      renderSwiftieSharepic(canvas, slideData.data);
+      renderSwiftieSharepic(canvas, slideData.data, editionTitle);
       break;
   }
 }

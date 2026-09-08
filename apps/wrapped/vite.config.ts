@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import path from 'path'
+import { EDITION_ASSET_PATTERNS } from './pwa-cache-routes.ts'
 
 // Bump this only when the runtime-data cache schema changes. Workbox then removes
 // the old named caches while leaving unrelated browser storage untouched.
@@ -50,7 +51,7 @@ export default defineConfig({
         // That makes CacheFirst safe without ever serving one edition's data for another.
         runtimeCaching: [
           {
-            urlPattern: /\/data\/[^/]+\/[^/]+\/wrapped\.json$/,
+            urlPattern: EDITION_ASSET_PATTERNS.wrapped,
             handler: 'CacheFirst',
             options: {
               cacheName: `wrapped-data-${editionCacheVersion}`,
@@ -60,7 +61,7 @@ export default defineConfig({
             },
           },
           {
-            urlPattern: /\/data\/[^/]+\/[^/]+\/speakers\/.*\.json$/,
+            urlPattern: EDITION_ASSET_PATTERNS.speakers,
             handler: 'CacheFirst',
             options: {
               cacheName: `speaker-data-${editionCacheVersion}`,
@@ -71,7 +72,7 @@ export default defineConfig({
             },
           },
           {
-            urlPattern: /\/data\/[^/]+\/[^/]+\/speeches.*\.json$/,
+            urlPattern: EDITION_ASSET_PATTERNS.speeches,
             handler: 'CacheFirst',
             options: {
               cacheName: `speeches-data-${editionCacheVersion}`,
@@ -81,7 +82,7 @@ export default defineConfig({
             },
           },
           {
-            urlPattern: /\/data\/[^/]+\/[^/]+\/(?:words|word_rankings|topic_rankings).*\.json$/,
+            urlPattern: EDITION_ASSET_PATTERNS.rankings,
             handler: 'CacheFirst',
             options: {
               cacheName: `words-data-${editionCacheVersion}`,
@@ -109,11 +110,10 @@ export default defineConfig({
     }),
   ],
   resolve: {
-    // The web and Expo workspaces intentionally use different React versions.
     // Always resolve one app-local React instance for web dependencies and peers.
     dedupe: ['react', 'react-dom'],
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(import.meta.dirname, './src'),
     },
   },
   build: {

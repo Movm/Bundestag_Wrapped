@@ -129,7 +129,7 @@ export const ShareSlide = memo(function ShareSlide({
   const isInView = useInView(containerRef, { once: true, amount: 0.3 });
 
   useEffect(() => {
-    setCanShare(typeof navigator !== 'undefined' && !!navigator.share && !!navigator.canShare);
+    setCanShare(typeof navigator !== 'undefined' && !!navigator.share);
   }, []);
 
   useEffect(() => {

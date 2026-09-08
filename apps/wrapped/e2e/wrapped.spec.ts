@@ -20,6 +20,19 @@ async function moveToSlide(page: Page, slide: string) {
   });
 }
 
+async function finishFiniteAnimations(page: Page) {
+  await page.evaluate(() => {
+    for (const animation of document.getAnimations()) {
+      if (animation.effect?.getTiming().iterations === Infinity) continue;
+      try {
+        animation.finish();
+      } catch {
+        // Some browser-managed animations cannot be advanced programmatically.
+      }
+    }
+  });
+}
+
 test('redirects to the fixture current edition and starts a keyboard-operable journey', async ({ page }) => {
   await page.goto('/');
   await expect(page).toHaveURL(/\/2025$/);
@@ -116,13 +129,25 @@ test('uses the active edition for share and download output', async ({ page }) =
 test('keeps annual navigation, share FAB and its dialog accessible', async ({ page }) => {
   await page.addInitScript(() => {
     Object.defineProperty(navigator, 'canShare', { configurable: true, value: () => true });
-    Object.defineProperty(navigator, 'share', { configurable: true, value: async () => undefined });
+    Object.defineProperty(navigator, 'share', {
+      configurable: true,
+      value: async (payload: { files?: File[]; title?: string; url?: string }) => {
+        localStorage.setItem('fixture-fab-share', JSON.stringify({
+          filename: payload.files?.[0]?.name,
+          title: payload.title,
+          url: payload.url,
+        }));
+      },
+    });
   });
   await page.goto('/2026/abgeordnete?fixture=yes#directory');
   await expect(page.getByRole('link', { name: 'Bundestag Wrapped - Zur Startseite' })).toHaveAttribute('href', '/2026?fixture=yes#directory');
-  await page.getByRole('button', { name: 'Menü öffnen' }).click();
+  const menuTrigger = page.getByRole('button', { name: 'Menü öffnen' });
+  await menuTrigger.focus();
+  await page.keyboard.press('Enter');
   await expect(page.getByRole('link', { name: 'Dokumentation' })).toHaveAttribute('href', '/2026/dokumentation?fixture=yes#directory');
   await page.keyboard.press('Escape');
+  await expect(menuTrigger).toBeFocused();
 
   await page.goto('/2026');
   await moveToSlide(page, 'reveal-drama');
@@ -132,43 +157,166 @@ test('keeps annual navigation, share FAB and its dialog accessible', async ({ pa
   await expect(dialog).toBeVisible();
   const results = await new AxeBuilder({ page }).include('[role="dialog"]').withTags(['wcag2a', 'wcag2aa']).analyze();
   expect(results.violations).toEqual([]);
+
+  const close = dialog.getByRole('button', { name: 'Teilen schließen' });
+  await expect(close).toBeFocused();
+  await page.keyboard.press('Shift+Tab');
+  await expect(dialog.getByRole('button', { name: 'Teilen', exact: true })).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(close).toBeFocused();
+
+  const downloadPromise = page.waitForEvent('download');
+  await dialog.getByRole('button', { name: 'Speichern' }).click();
+  expect((await downloadPromise).suggestedFilename()).toBe('bundestag-wrapped-2026-drama.png');
+  await dialog.getByRole('button', { name: 'Teilen', exact: true }).click();
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('fixture-fab-share'))).toBe(JSON.stringify({
+    filename: 'bundestag-wrapped-2026-drama.png',
+    title: 'Fixture Wrapped 2026',
+    url: 'http://127.0.0.1:4173/2026',
+  }));
   await page.keyboard.press('Escape');
   await expect(dialog).toHaveCount(0);
   await expect(trigger).toBeFocused();
 });
 
-test('does not expose fixture quiz answers across annual routes', async ({ page }) => {
+test('restores different answers when switching between annual routes', async ({ page }) => {
   await page.goto('/2025');
-  await page.evaluate(() => {
-    localStorage.setItem('quiz-storage-v2', JSON.stringify({
-      state: { answersByScope: { 'quiz:2025:fixture-a': { 'quiz-topics': true } } },
-      version: 0,
-    }));
-  });
-  await page.reload();
+  await page.getByRole('button', { name: 'Starten', exact: true }).click();
+  await moveToSlide(page, 'quiz-topics');
+  await page.locator('[data-slide-id="quiz-topics"]').getByRole('button').first().click();
+
   await page.goto('/2026');
-  await expect(page.locator('[data-slide-id="quiz-topics"]')).toContainText('Quiz');
-  await expect(page.locator('[data-slide-id="quiz-topics"]').getByText('Scroll weiter')).toHaveCount(0);
+  await moveToSlide(page, 'quiz-topics');
+  const secondEditionAnswers = page.locator('[data-slide-id="quiz-topics"]').getByRole('button');
+  await expect(secondEditionAnswers.first()).toBeEnabled();
+  await secondEditionAnswers.nth(1).click();
+
+  await page.goto('/2025');
+  await moveToSlide(page, 'quiz-topics');
+  await expect(page.locator('[data-slide-id="quiz-topics"]').getByRole('button').first()).toBeDisabled();
+  await expect(page.locator('[data-slide-id="quiz-topics"]').getByText('Scroll weiter')).toBeVisible();
+  const scopes = await page.evaluate(() => JSON.parse(localStorage.getItem('quiz-storage-v2') ?? '{}').state?.answersByScope);
+  expect(scopes['quiz:2025:fixture-a']['quiz-topics']).toBe(true);
+  expect(scopes['quiz:2026:fixture-b']['quiz-topics']).toBe(false);
 });
 
-test('keeps same-slug speaker quiz state edition-scoped and clears it from the speaker restart control', async ({ page }) => {
-  await page.goto('/2025/wrapped/shared-speaker');
+test('clears speaker state on completion and uses edition-safe share output', async ({ page }) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, 'canShare', { configurable: true, value: () => true });
+    Object.defineProperty(navigator, 'share', {
+      configurable: true,
+      value: async (payload: { files?: File[]; title?: string; url?: string }) => {
+        localStorage.setItem('fixture-speaker-share', JSON.stringify({
+          filename: payload.files?.[0]?.name,
+          title: payload.title,
+          url: payload.url,
+        }));
+      },
+    });
+  });
+  await page.goto('/2026/wrapped/shared-speaker');
   await page.evaluate(() => {
     localStorage.setItem('speaker-quiz-storage-v2', JSON.stringify({
-      state: { answersByScope: { 'speaker-quiz:shared-speaker:2025:fixture-a': { 'shared-speaker': true } } },
+      state: { answersByScope: { 'speaker-quiz:shared-speaker:2026:fixture-b': { 'shared-speaker': true } } },
       version: 0,
     }));
   });
   await page.reload();
   await moveToSlide(page, 'speaker-share');
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('speaker-quiz-storage-v2'))).not.toContain('speaker-quiz:shared-speaker:2026:fixture-b');
+
+  const downloadPromise = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Speichern' }).click();
+  expect((await downloadPromise).suggestedFilename()).toBe('bundestag-wrapped-2026-bea-ausgabe-zwei.png');
+  await page.getByRole('button', { name: 'Teilen' }).click();
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('fixture-speaker-share'))).toBe(JSON.stringify({
+    filename: 'bundestag-wrapped-2026-bea-ausgabe-zwei.png',
+    title: 'Bea Ausgabe Zwei – Fixture Wrapped 2026',
+    url: 'http://127.0.0.1:4173/2026/wrapped/shared-speaker',
+  }));
+
   await expect(page.getByRole('button', { name: 'Nochmal ansehen' })).toBeVisible();
   await page.getByRole('button', { name: 'Nochmal ansehen' }).click();
   await expect(page.locator('[data-slide-id="speaker-intro"]')).toBeVisible();
-  await expect.poll(() => page.evaluate(() => localStorage.getItem('speaker-quiz-storage-v2'))).not.toContain('speaker-quiz:shared-speaker:2025:fixture-a');
+});
 
-  await page.goto('/2026/wrapped/shared-speaker');
-  await moveToSlide(page, 'speaker-quiz');
-  await expect(page.getByRole('button', { name: 'fixture', exact: true })).toBeEnabled();
+test('shares the annual URL without a file when native file sharing is unavailable', async ({ page }) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, 'canShare', { configurable: true, value: () => false });
+    Object.defineProperty(navigator, 'share', {
+      configurable: true,
+      value: async (payload: { files?: File[]; title?: string; url?: string }) => {
+        localStorage.setItem('fixture-url-share', JSON.stringify({
+          fileCount: payload.files?.length ?? 0,
+          title: payload.title,
+          url: payload.url,
+        }));
+      },
+    });
+  });
+  await page.goto('/2026');
+  await moveToSlide(page, 'reveal-drama');
+  await page.getByRole('button', { name: 'Diese Folie teilen' }).click();
+  await page.getByRole('dialog', { name: 'Diese Folie teilen' }).getByRole('button', { name: 'Teilen', exact: true }).click();
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('fixture-url-share'))).toBe(JSON.stringify({
+    fileCount: 0,
+    title: 'Fixture Wrapped 2026',
+    url: 'http://127.0.0.1:4173/2026',
+  }));
+});
+
+test('keeps the annual shell hidden until its manifest is validated', async ({ page }) => {
+  let releaseManifest = () => {};
+  let markRequested = () => {};
+  const requested = new Promise<void>((resolve) => { markRequested = resolve; });
+  const blocked = new Promise<void>((resolve) => { releaseManifest = resolve; });
+  await page.route('**/data/fixtures/2026/manifest.json', async (route) => {
+    markRequested();
+    await blocked;
+    await route.fallback();
+  });
+
+  const navigation = page.goto('/2026/abgeordnete');
+  await requested;
+  await expect(page.getByText('Lade...', { exact: true })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Bundestag Wrapped - Zur Startseite' })).toHaveCount(0);
+  releaseManifest();
+  await navigation;
+  await expect(page.getByRole('link', { name: 'Bundestag Wrapped - Zur Startseite' })).toHaveAttribute('href', '/2026');
+});
+
+test('restarts only the active annual scope from the keyboard-operated menu', async ({ page }) => {
+  await page.goto('/2026');
+  await page.evaluate(() => {
+    localStorage.setItem('quiz-storage-v2', JSON.stringify({
+      state: { answersByScope: {
+        'quiz:2025:fixture-a': { 'quiz-topics': true },
+        'quiz:2026:fixture-b': { 'quiz-topics': false },
+      } },
+      version: 0,
+    }));
+    localStorage.setItem('bundestag-wrapped-progress:2025:fixture-a', JSON.stringify({ currentSection: 'quiz-topics', savedAt: Date.now() }));
+    localStorage.setItem('bundestag-wrapped-progress:2026:fixture-b', JSON.stringify({ currentSection: 'quiz-topics', savedAt: Date.now() }));
+  });
+  await page.reload();
+
+  const menuTrigger = page.getByRole('button', { name: 'Menü öffnen' });
+  await menuTrigger.focus();
+  await page.keyboard.press('Enter');
+  const restart = page.getByRole('button', { name: 'Neu starten' });
+  await restart.focus();
+  await page.keyboard.press('Enter');
+  await expect(page.getByRole('button', { name: 'Starten', exact: true })).toBeVisible();
+
+  const state = await page.evaluate(() => ({
+    progress2025: localStorage.getItem('bundestag-wrapped-progress:2025:fixture-a'),
+    progress2026: localStorage.getItem('bundestag-wrapped-progress:2026:fixture-b'),
+    quiz: JSON.parse(localStorage.getItem('quiz-storage-v2') ?? '{}').state?.answersByScope,
+  }));
+  expect(state.progress2025).not.toBeNull();
+  expect(state.progress2026).toBeNull();
+  expect(state.quiz['quiz:2025:fixture-a']).toEqual({ 'quiz-topics': true });
+  expect(state.quiz['quiz:2026:fixture-b']).toEqual({});
 });
 
 test('renders documentation statistics from each edition payload instead of global values', async ({ page }) => {
@@ -182,7 +330,12 @@ test('renders documentation statistics from each edition payload instead of glob
 });
 
 test('runs Axe against the annual start, answered quiz, search, speaker index, profile, and controlled error routes', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+
   const scan = async () => {
+    // Axe must inspect the final visual state, not a partially transparent
+    // frame from Motion's route entrance animation.
+    await finishFiniteAnimations(page);
     const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze();
     expect(results.violations).toEqual([]);
   };
@@ -193,7 +346,8 @@ test('runs Axe against the annual start, answered quiz, search, speaker index, p
   await page.getByRole('button', { name: 'Starten', exact: true }).click();
   await moveToSlide(page, 'quiz-topics');
   const answer = page.locator('[data-slide-id="quiz-topics"]').getByRole('button').first();
-  await answer.click();
+  await answer.focus();
+  await page.keyboard.press('Enter');
   await expect(answer).toBeDisabled();
   await scan();
 
@@ -237,6 +391,7 @@ test('does not retain a same-slug profile or canonical from another edition', as
 
 test('loads the active edition speech fixture through the profile search route', async ({ page }) => {
   await page.goto('/2026/suche?tab=speeches&q=Bea');
+  await expect(page.getByRole('link', { name: 'Zurück zur Startseite' })).toHaveAttribute('href', '/2026');
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://bundestag-wrapped.de/2026/suche');
   await expect(page.locator('[role="tabpanel"] p').first()).toHaveText(/1\s+Reden gefunden/);
   await expect(page.getByRole('button', { name: /Bea Ausgabe Zwei/ })).toBeVisible();

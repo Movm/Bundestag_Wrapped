@@ -42,6 +42,7 @@ export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProp
     { href: '/mcp', label: 'MCP-Server', icon: <Plug size={20} /> },
   ];
   const menuRef = useRef<HTMLElement>(null);
+  const returnFocusRef = useRef<HTMLElement | null>(null);
   const isDark = variant === 'dark';
   const currentPath = location.pathname;
   const isMainPage = currentPath === editionPath(surface);
@@ -59,6 +60,9 @@ export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProp
     if (!isOpen || !menuRef.current) return;
 
     const menu = menuRef.current;
+    returnFocusRef.current = document.activeElement instanceof HTMLElement
+      ? document.activeElement
+      : null;
     const focusableElements = menu.querySelectorAll<HTMLElement>(
       'a[href], button:not([disabled])'
     );
@@ -94,6 +98,8 @@ export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProp
     return () => {
       menu.removeEventListener('keydown', handleTabKey);
       document.removeEventListener('keydown', handleEscKey);
+      if (returnFocusRef.current?.isConnected) returnFocusRef.current.focus();
+      returnFocusRef.current = null;
     };
   }, [isOpen, onClose]);
 
