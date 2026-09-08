@@ -5,11 +5,11 @@ import { buildDocumentationStats } from './data';
 describe('buildDocumentationStats', () => {
   it('renders each annual documentation route from its own Wrapped payload and manifest', () => {
     const first = buildDocumentationStats(
-      { metadata: { totalSpeeches: 1234, partyCount: 4, speakerCount: 80 } },
+      { metadata: { redenCount: 1000, wortbeitraegeCount: 234, partyCount: 4, speakerCount: 80 } },
       12,
     );
     const second = buildDocumentationStats(
-      { metadata: { totalSpeeches: 4321, partyCount: 5, speakerCount: 90 } },
+      { metadata: { redenCount: 4000, wortbeitraegeCount: 321, partyCount: 5, speakerCount: 90 } },
       34,
     );
 

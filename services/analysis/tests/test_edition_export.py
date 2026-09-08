@@ -80,6 +80,21 @@ def test_checksum_validation_rejects_symlink_escape(tmp_path):
         validate_edition(target)
 
 
+@pytest.mark.parametrize(
+    "unsafe",
+    ["../outside.json", "/tmp/outside.json", "C:/outside.json", "./content.json", "nested\\outside.json"],
+)
+def test_checksum_validation_rejects_unsafe_paths(tmp_path, unsafe):
+    target = publish(tmp_path)
+    checksums_path = target / "checksums.json"
+    checksums = json.loads(checksums_path.read_text())
+    checksums[unsafe] = "0" * 64
+    checksums_path.write_text(json.dumps(checksums), encoding="utf-8")
+
+    with pytest.raises(EditionValidationError, match="invalid checksum path"):
+        validate_edition(target)
+
+
 def test_missing_or_extra_checksum_entries_fail_validation(tmp_path):
     target = publish(tmp_path)
     checksums_path = target / "checksums.json"

@@ -45,6 +45,9 @@ jobs:
       - name: Check registered editions
         run: pnpm check:registered-editions
 
+      - name: Test edition validator negative cases
+        run: pnpm test:edition-validator
+
       - name: Lint
         run: pnpm -r lint
 

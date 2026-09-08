@@ -18,7 +18,7 @@ interface SlideShareFABProps {
 export function SlideShareFAB({ slideData }: SlideShareFABProps) {
   const surface = editionSurface(useOptionalEdition());
   const [isOpen, setIsOpen] = useState(false);
-  const [canShare] = useState(() => typeof navigator !== 'undefined' && !!navigator.share && !!navigator.canShare);
+  const [canShare] = useState(() => typeof navigator !== 'undefined' && !!navigator.share);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -28,11 +28,11 @@ export function SlideShareFAB({ slideData }: SlideShareFABProps) {
     if (isOpen && canvasRef.current) {
       preloadLogo().then(() => {
         if (canvasRef.current) {
-          renderSlideSharepic(canvasRef.current, slideData);
+          renderSlideSharepic(canvasRef.current, slideData, surface.title);
         }
       });
     }
-  }, [isOpen, slideData]);
+  }, [isOpen, slideData, surface.title]);
 
   const handleOpen = () => {
     setIsOpen(true);

@@ -1,11 +1,11 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, type ReactNode } from 'react';
 import { BrowserRouter, Navigate, Routes, Route, useLocation, useParams } from 'react-router';
 import { useQuery } from '@tanstack/react-query';
 import { DarkLayout, LightLayout } from '@/layouts/MainLayout';
 import { MobileMenu } from '@/components/ui/MobileMenu';
 import { useMenuState } from '@/hooks/useMenuState';
 import { UmamiAnalytics } from '@/components/analytics/UmamiAnalytics';
-import { EditionProvider } from '@/edition/EditionProvider';
+import { EditionProvider, useEdition } from '@/edition/EditionProvider';
 import { loadRegistry } from '@/edition/loader';
 import { currentEditionPath, resolveLegacyEditionPath } from '@/edition/registry';
 
@@ -90,9 +90,24 @@ function CurrentEditionRedirect({ legacy }: { legacy: boolean }) {
   return <Navigate replace to={`${target}${location.search}${location.hash}`} />;
 }
 
+function ValidatedEdition({ children }: { children: ReactNode }) {
+  const edition = useEdition();
+
+  if (edition.isLoading) return <PageLoader />;
+  if (edition.error || !edition.manifest || !edition.content || !edition.data) {
+    return <RedirectError message={edition.error?.message ?? 'Edition ist nicht verfügbar'} />;
+  }
+
+  return children;
+}
+
 function EditionMainRoute() {
   const { editionId = '' } = useParams();
-  return <EditionProvider editionId={editionId}><MainWrappedRoute /></EditionProvider>;
+  return (
+    <EditionProvider editionId={editionId}>
+      <ValidatedEdition><MainWrappedRoute /></ValidatedEdition>
+    </EditionProvider>
+  );
 }
 
 /**
@@ -103,12 +118,20 @@ function EditionMainRoute() {
  */
 function EditionDarkLayout() {
   const { editionId = '' } = useParams();
-  return <EditionProvider editionId={editionId}><DarkLayout /></EditionProvider>;
+  return (
+    <EditionProvider editionId={editionId}>
+      <ValidatedEdition><DarkLayout /></ValidatedEdition>
+    </EditionProvider>
+  );
 }
 
 function EditionLightLayout() {
   const { editionId = '' } = useParams();
-  return <EditionProvider editionId={editionId}><LightLayout /></EditionProvider>;
+  return (
+    <EditionProvider editionId={editionId}>
+      <ValidatedEdition><LightLayout /></ValidatedEdition>
+    </EditionProvider>
+  );
 }
 
 export default function App() {

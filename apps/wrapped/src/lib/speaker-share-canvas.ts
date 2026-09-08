@@ -387,14 +387,24 @@ export function downloadSpeakerShareImage(
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    const slug = speakerName
-      .toLowerCase()
-      .replace(/\s+/g, '-')
-      .replace(/[äöü]/g, (m) => ({ 'ä': 'ae', 'ö': 'oe', 'ü': 'ue' }[m] || m));
-    a.download = `bundestag-wrapped-${editionId}-${slug}.png`;
+    a.download = speakerShareFilename(speakerName, editionId);
     a.click();
     URL.revokeObjectURL(url);
   }, 'image/png');
+}
+
+export function speakerShareFilename(speakerName: string, editionId = 'edition'): string {
+  const slug = speakerName
+    .replace(/[Ää]/g, 'ae')
+    .replace(/[Öö]/g, 'oe')
+    .replace(/[Üü]/g, 'ue')
+    .replace(/ß/g, 'ss')
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '') || 'speaker';
+  return `bundestag-wrapped-${editionId}-${slug}.png`;
 }
 
 export async function shareSpeakerImage(
@@ -404,7 +414,7 @@ export async function shareSpeakerImage(
   editionId = 'edition',
   url?: string,
 ): Promise<boolean> {
-  if (!navigator.share || !navigator.canShare) return false;
+  if (!navigator.share) return false;
 
   return new Promise((resolve) => {
     canvas.toBlob(async (blob) => {
@@ -416,19 +426,22 @@ export async function shareSpeakerImage(
       try {
         const file = new File(
           [blob],
-          `bundestag-wrapped-${editionId}-${speakerName}.png`,
+          speakerShareFilename(speakerName, editionId),
           { type: 'image/png' }
         );
-        if (navigator.canShare({ files: [file] })) {
+        if (navigator.canShare?.({ files: [file] })) {
           await navigator.share({
             files: [file],
             title: `${speakerName} – ${editionTitle}`,
             url,
           });
-          resolve(true);
         } else {
-          resolve(false);
+          await navigator.share({
+            title: `${speakerName} – ${editionTitle}`,
+            url,
+          });
         }
+        resolve(true);
       } catch {
         resolve(false);
       }

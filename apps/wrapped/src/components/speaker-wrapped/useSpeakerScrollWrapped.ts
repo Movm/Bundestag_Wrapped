@@ -102,12 +102,12 @@ export function useSpeakerScrollWrapped(slug: string): SpeakerScrollWrappedState
     // Clear all progress when user completes the experience
     if (currentSection === 'speaker-share') {
       clearProgress(slug, surface);
-      // Note: Don't clear quiz progress here - user might restart
+      clearQuizProgress(surface, slug);
       return;
     }
 
     saveProgress(slug, currentSection, surface);
-  }, [slug, currentSection, surface]);
+  }, [slug, currentSection, surface, clearQuizProgress]);
 
   // Handle restart - clears progress and resets to intro
   const handleRestart = useMemo(() => {

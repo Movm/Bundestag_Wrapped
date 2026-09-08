@@ -2,6 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import {
   renderSpeakerShareImage,
   downloadSpeakerShareImage,
+  speakerShareFilename,
   getResponsiveFontSize,
   _resetLogoForTesting,
   type SpeakerShareData,
@@ -428,6 +429,12 @@ describe('speaker-share-canvas', () => {
       createElementSpy.mockRestore();
       revokeObjectURL.mockRestore();
       createObjectURL.mockRestore();
+    });
+
+    it('uses the same safe filename for native speaker shares', () => {
+      expect(speakerShareFilename('Jürgen / Müller', '2026')).toBe(
+        'bundestag-wrapped-2026-juergen-mueller.png',
+      );
     });
   });
 });
