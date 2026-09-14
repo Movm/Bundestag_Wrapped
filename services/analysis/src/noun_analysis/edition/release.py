@@ -41,7 +41,10 @@ def validate_freeze(candidate_root: Path, previous_root: Path | None = None) -> 
     manifest = require_frozen_artifact(candidate_root)
     previous = None
     if previous_root and previous_root.is_dir():
-        previous = require_frozen_artifact(previous_root)
+        # A first release replaces a registered preview. Its validated coverage
+        # is still a useful baseline; only the candidate must already be frozen.
+        validate_edition(previous_root)
+        previous = json.loads((previous_root / "manifest.json").read_text(encoding="utf-8"))
     prevent_regression(previous, manifest)
     return manifest
 
