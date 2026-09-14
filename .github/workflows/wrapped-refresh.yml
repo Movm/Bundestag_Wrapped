@@ -19,8 +19,8 @@ on:
         default: '2026-01-01'
         required: true
       to:
-        default: '2026-12-31'
-        required: true
+        description: Preview defaults to today (UTC); freeze and publish require an explicit cutoff.
+        required: false
       wahlperiode:
         default: '21'
         required: true
@@ -31,7 +31,6 @@ on:
 
 permissions:
   contents: read
-  pull-requests: write
 
 concurrency:
   group: wrapped-edition-${{ inputs.editionId || 'weekly' }}
@@ -41,7 +40,7 @@ env:
   MCP_SERVER: https://bundestagapi.moritz-waechter.de/mcp
   EDITION: ${{ inputs.editionId || '2026' }}
   FROM: ${{ inputs.from || '2026-01-01' }}
-  TO: ${{ inputs.to || github.run_started_at }}
+  TO: ${{ inputs.to }}
   WP: ${{ inputs.wahlperiode || '21' }}
   VERSION: ${{ inputs.dataVersion || format('preview-{0}', github.run_number) }}
 
@@ -56,6 +55,8 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
+      - name: Resolve preview cutoff
+        run: python .github/scripts/resolve-wrapped-preview.py
       - name: Install analysis package and language model
         run: |
           python -m pip install --upgrade pip
@@ -70,16 +71,20 @@ jobs:
           bundestag-analysis --server "$MCP_SERVER" download ./data --from "$FROM" --to "${TO:0:10}" -w "$WP"
           bundestag-analysis parse ./data
           bundestag-analysis analyze ./data -w "$WP" -o ./results -q
-          bundestag-analysis generate-edition --edition "$EDITION" --from "$FROM" --to "${TO:0:10}" --wahlperiode "$WP" --data-version "$VERSION" --data-dir ./data --results-dir ./results --output "$GITHUB_WORKSPACE/apps/wrapped/public/data"
+          bundestag-analysis generate-edition --edition "$EDITION" --from "$FROM" --to "$TO" --wahlperiode "$WP" --data-version "$VERSION" --data-dir ./data --results-dir ./results --output "$RUNNER_TEMP/wrapped-preview"
       - name: Upload preview artifact
         uses: actions/upload-artifact@v7
         with:
           name: wrapped-edition-${{ env.EDITION }}-${{ env.VERSION }}
-          path: apps/wrapped/public/data/${{ env.EDITION }}/${{ env.VERSION }}
+          path: ${{ runner.temp }}/wrapped-preview/${{ env.EDITION }}/${{ env.VERSION }}
+          if-no-files-found: error
           retention-days: 14
 
   freeze:
     name: Freeze immutable edition
+    permissions:
+      contents: read
+      pull-requests: write
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.mode == 'freeze' }}
     runs-on: ubuntu-latest
     timeout-minutes: 120
@@ -132,6 +137,9 @@ jobs:
 
   publish:
     name: Publish frozen edition
+    permissions:
+      contents: read
+      pull-requests: write
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.mode == 'publish' }}
     runs-on: ubuntu-latest
     environment: wrapped-edition-release
