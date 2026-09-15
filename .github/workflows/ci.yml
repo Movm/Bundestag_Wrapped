@@ -45,6 +45,9 @@ jobs:
       - name: Check registered editions
         run: pnpm check:registered-editions
 
+      - name: Check edition publication gate
+        run: pnpm check:publication-gate && pnpm test:publication-gate
+
       - name: Test edition validator negative cases
         run: pnpm test:edition-validator
 
