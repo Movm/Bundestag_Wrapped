@@ -155,6 +155,7 @@ jobs:
       - name: Verify frozen artifact and update only the editions index
         run: |
           python -c "from noun_analysis.edition.release import validate_release_input; import os; validate_release_input(os.environ['EDITION'], os.environ['FROM'], os.environ['TO'][:10], os.environ['VERSION'])"
+          # This is a gate, not a scheduler: reaching the day never changes the index.
           python -c "from pathlib import Path; from noun_analysis.edition.release import publish_in_index; publish_in_index(Path('apps/wrapped/public/data/editions.json'), Path('apps/wrapped/public/data') / '$EDITION' / '$VERSION')"
       - name: Create reviewed index pull request
         env:

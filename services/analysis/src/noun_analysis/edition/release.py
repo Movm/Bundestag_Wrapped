@@ -3,8 +3,9 @@
 from __future__ import annotations
 
 import json
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from .export import EditionValidationError, validate_edition
 from .validate import validate_contract_document
@@ -63,9 +64,24 @@ def validate_freeze_against_index(candidate_root: Path, index_path: Path) -> dic
     return candidate
 
 
-def publish_in_index(index_path: Path, artifact_root: Path) -> dict:
+PUBLICATION_NOT_BEFORE = {"2026": date(2026, 12, 1)}
+
+
+def assert_publication_allowed(edition_id: str, now: datetime | None = None) -> None:
+    """Reject a publication before its explicitly approved Berlin calendar day."""
+    not_before = PUBLICATION_NOT_BEFORE.get(edition_id)
+    if not not_before:
+        return
+    instant = now or datetime.now(ZoneInfo("Europe/Berlin"))
+    berlin_day = instant.astimezone(ZoneInfo("Europe/Berlin")).date() if instant.tzinfo else instant.replace(tzinfo=ZoneInfo("Europe/Berlin")).date()
+    if berlin_day < not_before:
+        raise EditionValidationError(f"edition {edition_id} must not be published before {not_before.isoformat()} Europe/Berlin")
+
+
+def publish_in_index(index_path: Path, artifact_root: Path, *, now: datetime | None = None) -> dict:
     """Publish a frozen artifact through the small, reversible editions index."""
     manifest = require_frozen_artifact(artifact_root)
+    assert_publication_allowed(manifest["editionId"], now)
     data_root = index_path.parent
     relative_manifest = f"/{data_root.name}/" + artifact_root.relative_to(data_root).joinpath("manifest.json").as_posix()
     if index_path.exists():
