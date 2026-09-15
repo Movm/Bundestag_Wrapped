@@ -21,7 +21,7 @@ def fixture_artifacts():
         "words.json": {"parties": []},
         "word_rankings.json": {"parties": []},
         "topic_rankings.json": {"topics": []},
-        "content.json": {"editionId": "2026"},
+        "content.json": {"editionId": "2026", "year": 2026},
     }
 
 

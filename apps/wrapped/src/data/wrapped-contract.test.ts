@@ -46,6 +46,16 @@ describe('Wrapped v1 contract', () => {
     expect(() => validateEditionContent({ editionId: 'fixture-edition' }, 'content.json')).toThrow('content.json/');
   });
 
+  it('validates versioned quiz configuration and rejects unknown quiz formats', () => {
+    const content = {
+      editionId: 'fixture-edition', year: 2042,
+      quiz: { version: 1, groups: [{ id: 'quiz-bonus', question: { id: 'quiz-bonus', type: 'prediction', question: 'Test?', options: ['A', 'B'], correctAnswer: 'A', explanation: 'Test.' } }] },
+    };
+    expect(validateEditionContent(content, 'content.json')).toEqual(content);
+    expect(() => validateEditionContent({ ...content, quiz: { ...content.quiz, version: 2 } }, 'content.json')).toThrow('version');
+    expect(() => validateEditionContent({ ...content, quiz: { ...content.quiz, groups: [{ ...content.quiz.groups[0], question: { ...content.quiz.groups[0].question, type: 'new-format' } }] } }, 'content.json')).toThrow('type');
+  });
+
   it('validates each manifest-referenced runtime asset shape', () => {
     expect(validateContractDocument('SpeakerIndexAsset', {
       speakers: [{ slug: 'fixture-speaker', name: 'Fixture Speaker', party: 'Fixture Party', speeches: 1, wortbeitraege: 0, words: 5 }],

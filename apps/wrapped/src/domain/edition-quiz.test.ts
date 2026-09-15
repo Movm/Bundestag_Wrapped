@@ -1,5 +1,9 @@
 import { describe, expect, it } from 'vitest';
-import { buildEditionQuizModel } from './edition-quiz';
+import { applyEditionQuizConfiguration, buildEditionQuizModel } from './edition-quiz';
+import edition2025 from '../../public/data/2025/final/wrapped.json';
+import content2025 from '../../public/data/2025/final/content.json';
+import { buildActiveSlidePlan, getQuizSlides } from '@/components/main-wrapped/slide-plan';
+import type { WrappedData } from '@/data/wrapped';
 
 function fixture(topic: string, party: string) {
   return {
@@ -59,5 +63,45 @@ describe('buildEditionQuizModel', () => {
     data.parties = null as never;
 
     expect(() => buildEditionQuizModel(data as never)).toThrow();
+  });
+});
+
+describe('edition quiz configuration', () => {
+  it('preserves the rendered 2025 quiz model when no configuration exists', () => {
+    expect((content2025 as { quiz?: unknown }).quiz).toBeUndefined();
+    const data2025 = edition2025 as WrappedData;
+    const model = buildEditionQuizModel(data2025);
+    expect(model).toMatchSnapshot('questions');
+    // Keep the original complete 2025 reference snapshot stable as well.
+    expect(model).toMatchSnapshot();
+    expect(getQuizSlides(buildActiveSlidePlan(model, data2025.moinSpeakers))).toMatchSnapshot('group order');
+  });
+
+  it('keeps the generated 2025-compatible model unchanged when configuration is absent', () => {
+    const generated = buildEditionQuizModel(fixture('Europa', 'Partei A') as never);
+    expect(applyEditionQuizConfiguration(generated)).toBe(generated);
+  });
+
+  it('uses one ordered list to hide, reorder, override and add questions', () => {
+    const generated = buildEditionQuizModel(fixture('Europa', 'Partei A') as never);
+    const configured = applyEditionQuizConfiguration(generated, {
+      version: 1,
+      groups: [
+        { id: 'quiz-drama' },
+        { id: 'quiz-topics', text: { question: 'Überschriebene Frage' } },
+        { id: 'quiz-bonus', question: { id: 'quiz-bonus', type: 'prediction', question: 'Bonus?', options: ['A', 'B', 'C', 'D'], correctAnswer: 'A', explanation: 'Testdaten' } },
+      ],
+    });
+
+    expect(Object.keys(configured)).toEqual(['quiz-drama', 'quiz-topics', 'quiz-bonus']);
+    expect(configured['quiz-topics']?.question).toBe('Überschriebene Frage');
+    expect(configured['quiz-bonus']?.correctAnswer).toBe('A');
+  });
+
+  it('rejects duplicate, unavailable, and contradictory configuration entries', () => {
+    const generated = buildEditionQuizModel(fixture('Europa', 'Partei A') as never);
+    expect(() => applyEditionQuizConfiguration(generated, { version: 1, groups: [{ id: 'quiz-topics' }, { id: 'quiz-topics' }] })).toThrow('duplicate group ID');
+    expect(() => applyEditionQuizConfiguration(generated, { version: 1, groups: [{ id: 'quiz-missing' }] })).toThrow('unavailable group');
+    expect(() => applyEditionQuizConfiguration(generated, { version: 1, groups: [{ id: 'quiz-bonus', question: { id: 'quiz-bonus', type: 'prediction', question: 'Bonus?', options: ['A', 'B', 'C', 'D'], correctAnswer: 'Z', explanation: 'Testdaten' } }] })).toThrow('matching correct answer');
   });
 });
