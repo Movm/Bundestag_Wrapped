@@ -1,9 +1,9 @@
 import { memo } from 'react';
 import { useDebugRender } from '@/hooks/useDebugRender';
-import { buildEditionQuizModel, type EditionQuizModel } from '@/domain/edition-quiz';
+import { buildConfiguredEditionQuizModel, type EditionQuizModel } from '@/domain/edition-quiz';
 import { INFO_SLIDES } from '@/data/info-slides';
 import { SLIDES, type SlideType } from './constants';
-import { getQuizSlides, type QUIZ_SLIDES } from './slide-plan';
+import { getQuizSlides } from './slide-plan';
 import {
   IntroSlide,
   QuizSlide,
@@ -91,10 +91,10 @@ interface SlideRendererProps {
   onComplete: () => void;
   onRestart?: () => void;
   quizModel?: EditionQuizModel;
-  quizSlides?: readonly (typeof QUIZ_SLIDES)[number][];
+  quizSlides?: readonly `quiz-${string}`[];
 }
-function getQuizNumber(slideId: string, quizSlides: readonly (typeof QUIZ_SLIDES)[number][]): number {
-  const index = quizSlides.indexOf(slideId as typeof QUIZ_SLIDES[number]);
+function getQuizNumber(slideId: string, quizSlides: readonly `quiz-${string}`[]): number {
+  const index = quizSlides.indexOf(slideId as `quiz-${string}`);
   return index >= 0 ? index + 1 : 0;
 }
 
@@ -186,12 +186,13 @@ export const SlideRenderer = memo(function SlideRenderer({
   quizModel,
   quizSlides,
 }: SlideRendererProps) {
-  const surface = editionSurface(useOptionalEdition());
+  const edition = useOptionalEdition();
+  const surface = editionSurface(edition);
   // Quiz state from store
   const isQuizAnswered = useIsQuizAnswered(surface, slide);
   const answerQuiz = useAnswerQuiz(surface);
   const data = useFullWrappedData();
-  const quizzes = quizModel ?? (data ? buildEditionQuizModel(data) : {});
+  const quizzes = quizModel ?? (data ? buildConfiguredEditionQuizModel(data, edition?.content?.quiz) : {});
   // The web route supplies its active plan. The optional fallback only preserves
   // compatibility for the unused legacy mobile wrapper while it is decommissioned.
   const activeQuizSlides = quizSlides ?? getQuizSlides(SLIDES);
@@ -206,6 +207,13 @@ export const SlideRenderer = memo(function SlideRenderer({
   useDebugRender('SlideRenderer', { slide });
 
   const renderSlideContent = () => {
+    // Edition-defined questions use the existing QuizSlide interaction. This is
+    // deliberately checked before the static story switch so a configured
+    // replacement for quiz-moin does not retain its data-derived interaction.
+    if (quizzes[slide] && (slide === 'quiz-moin' || !(SLIDES as readonly string[]).includes(slide))) {
+      const question = quizzes[slide];
+      return <QuizSlide question={question} questionNumber={quizNumber} totalQuestions={activeQuizSlides.length} isAnswered={isQuizAnswered} onAnswer={handleQuizAnswer} onComplete={onComplete} slideId={slide} />;
+    }
     switch (slide) {
     case 'intro':
       return <IntroSlide onStart={onComplete} />;

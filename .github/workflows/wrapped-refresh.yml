@@ -28,6 +28,9 @@ on:
         description: Immutable version label, e.g. preview-42 or final.
         default: preview
         required: true
+      quizConfig:
+        description: Repository-relative, reviewed quiz configuration JSON (optional).
+        required: false
 
 permissions:
   contents: read
@@ -43,6 +46,7 @@ env:
   TO: ${{ inputs.to }}
   WP: ${{ inputs.wahlperiode || '21' }}
   VERSION: ${{ inputs.dataVersion || format('preview-{0}', github.run_number) }}
+  QUIZ_CONFIG: ${{ inputs.quizConfig }}
 
 jobs:
   preview:
@@ -71,7 +75,9 @@ jobs:
           bundestag-analysis --server "$MCP_SERVER" download ./data --from "$FROM" --to "${TO:0:10}" -w "$WP"
           bundestag-analysis parse ./data
           bundestag-analysis analyze ./data -w "$WP" -o ./results -q
-          bundestag-analysis generate-edition --edition "$EDITION" --from "$FROM" --to "$TO" --wahlperiode "$WP" --data-version "$VERSION" --data-dir ./data --results-dir ./results --output "$RUNNER_TEMP/wrapped-preview"
+          quiz_config=()
+          if [[ -n "$QUIZ_CONFIG" ]]; then quiz_config=(--quiz-config "$GITHUB_WORKSPACE/$QUIZ_CONFIG"); fi
+          bundestag-analysis generate-edition --edition "$EDITION" --from "$FROM" --to "$TO" --wahlperiode "$WP" --data-version "$VERSION" --data-dir ./data --results-dir ./results --output "$RUNNER_TEMP/wrapped-preview" "${quiz_config[@]}"
       - name: Upload preview artifact
         uses: actions/upload-artifact@v7
         with:
@@ -110,7 +116,9 @@ jobs:
           bundestag-analysis --server "$MCP_SERVER" download ./data --from "$FROM" --to "${TO:0:10}" -w "$WP"
           bundestag-analysis parse ./data
           bundestag-analysis analyze ./data -w "$WP" -o ./results -q
-          bundestag-analysis generate-edition --edition "$EDITION" --from "$FROM" --to "${TO:0:10}" --wahlperiode "$WP" --data-version "$VERSION" --data-dir ./data --results-dir ./results --output "$GITHUB_WORKSPACE/apps/wrapped/public/data" --freeze
+          quiz_config=()
+          if [[ -n "$QUIZ_CONFIG" ]]; then quiz_config=(--quiz-config "$GITHUB_WORKSPACE/$QUIZ_CONFIG"); fi
+          bundestag-analysis generate-edition --edition "$EDITION" --from "$FROM" --to "${TO:0:10}" --wahlperiode "$WP" --data-version "$VERSION" --data-dir ./data --results-dir ./results --output "$GITHUB_WORKSPACE/apps/wrapped/public/data" --freeze "${quiz_config[@]}"
           python -c "from pathlib import Path; from noun_analysis.edition.release import validate_freeze_against_index; validate_freeze_against_index(Path('$GITHUB_WORKSPACE/apps/wrapped/public/data') / '$EDITION' / '$VERSION', Path('$GITHUB_WORKSPACE/apps/wrapped/public/data/editions.json'))"
       - name: Create reviewed frozen-data pull request
         env:
@@ -155,6 +163,7 @@ jobs:
       - name: Verify frozen artifact and update only the editions index
         run: |
           python -c "from noun_analysis.edition.release import validate_release_input; import os; validate_release_input(os.environ['EDITION'], os.environ['FROM'], os.environ['TO'][:10], os.environ['VERSION'])"
+          # This is a gate, not a scheduler: reaching the day never changes the index.
           python -c "from pathlib import Path; from noun_analysis.edition.release import publish_in_index; publish_in_index(Path('apps/wrapped/public/data/editions.json'), Path('apps/wrapped/public/data') / '$EDITION' / '$VERSION')"
       - name: Create reviewed index pull request
         env:

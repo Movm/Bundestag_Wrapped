@@ -59,4 +59,15 @@ describe('active slide plan', () => {
     expect(normalizeSection('quiz-speeches', plan)).toBe('intro');
     expect(normalizeSection('quiz-topics', plan)).toBe('quiz-topics');
   });
+
+  it('orders configured groups and renders a custom supported question without orphaned slides', () => {
+    const plan = buildActiveSlidePlan(
+      quizModel(['quiz-topics', 'quiz-drama', 'quiz-bonus']),
+      [],
+      { version: 1, groups: [{ id: 'quiz-drama' }, { id: 'quiz-bonus' }, { id: 'quiz-topics' }] },
+    );
+    expect(getQuizSlides(plan)).toEqual(['quiz-drama', 'quiz-bonus', 'quiz-topics']);
+    expect(plan).not.toContain('intro-speeches');
+    expect(normalizeSection('quiz-speeches', plan)).toBe('intro');
+  });
 });

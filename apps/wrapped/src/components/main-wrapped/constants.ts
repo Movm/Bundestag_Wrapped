@@ -76,7 +76,8 @@ export const SLIDES = [
   'finale',
 ] as const;
 
-export type SlideType = (typeof SLIDES)[number];
+/** Custom edition questions are rendered as regular `quiz-*` slides. */
+export type SlideType = (typeof SLIDES)[number] | `quiz-${string}`;
 
 // Slides that auto-scroll to next after a delay (section intros and info slides)
 export const AUTO_SCROLL_SLIDES = new Set<SlideType>([

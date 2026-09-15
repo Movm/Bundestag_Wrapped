@@ -12,6 +12,8 @@ import click
 from noun_analysis.wrapped import WrappedData, WrappedRenderer
 from noun_analysis.wrapped.speaker_export import SpeakerExporter
 from noun_analysis.edition.export import EditionValidationError, build_manifest, publish_edition
+from noun_analysis.edition.release import build_release_report
+from noun_analysis.storage import DataStore
 
 from ..constants import console
 
@@ -25,6 +27,7 @@ from ..constants import console
 @click.option("--data-dir", type=click.Path(exists=True), default="./data_wp21", show_default=True)
 @click.option("--results-dir", type=click.Path(exists=True), default="./results_wp21", show_default=True)
 @click.option("--data-version", default="preview", show_default=True)
+@click.option("--quiz-config", type=click.Path(exists=True), help="Optional version-1 quiz configuration JSON to include in content.json")
 @click.option("--freeze", is_flag=True, help="Mark this explicitly complete and frozen")
 def generate_edition(
     edition_id: str,
@@ -35,6 +38,7 @@ def generate_edition(
     data_dir: str,
     results_dir: str,
     data_version: str,
+    quiz_config: str | None,
     freeze: bool,
 ):
     """Generate one atomic, schema-validated Wrapped edition."""
@@ -59,6 +63,11 @@ def generate_edition(
         wrapped_data["metadata"]["generatedAt"] = generated_at
         exporter = SpeakerExporter(data)
         speaker_index = exporter.generate_index()
+        content: dict[str, object] = {"editionId": edition_id, "year": year}
+        if quiz_config:
+            content["quiz"] = json.loads(Path(quiz_config).read_text(encoding="utf-8"))
+        source_state = DataStore(Path(data_dir)).load_state()
+        manifest = build_manifest(edition_id, year, data_version, generated_at, period_start, period_end, list(wahlperioden), speeches, freeze)
         artifacts: dict[str, object] = {
             "wrapped.json": wrapped_data,
             "speakers/index.json": speaker_index,
@@ -66,13 +75,13 @@ def generate_edition(
             "words.json": {"parties": [{"party": party["party"], "words": party["topWords"]} for party in wrapped_data["parties"]]},
             "word_rankings.json": {"parties": [{"party": party["party"], "signatureWords": party["signatureWords"]} for party in wrapped_data["parties"]]},
             "topic_rankings.json": {"topics": wrapped_data["hotTopics"]},
-            "content.json": {"editionId": edition_id, "year": year},
+            "content.json": content,
+            "release-report.json": build_release_report(manifest, content, source_state),
         }
         for speaker_key in exporter._speaker_index:
             speaker = exporter.generate_speaker_data(speaker_key)
             if speaker:
                 artifacts[f"speakers/{speaker['slug']}.json"] = speaker
-        manifest = build_manifest(edition_id, year, data_version, generated_at, period_start, period_end, list(wahlperioden), speeches, freeze)
         target = publish_edition(Path(output_root), edition_id, data_version, manifest, artifacts)
     except (FileNotFoundError, ValueError, EditionValidationError) as error:
         raise click.ClickException(str(error)) from error
