@@ -12,7 +12,7 @@ import { themeMusic, getThemeForSlide } from '@/lib/theme-music';
 import { clearWrappedProgress } from '@/lib/wrapped-storage';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
-import { buildEditionQuizModel } from '@/domain/edition-quiz';
+import { buildConfiguredEditionQuizModel } from '@/domain/edition-quiz';
 import { useIsQuizAnswered, useQuizStore } from '@/stores/quizStore';
 import {
   ScrollContainer,
@@ -42,10 +42,11 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
   // Slides use store selectors directly, not data prop
   const { isLoading: loading, error, data } = useWrappedData();
   const scrollContainerRef = useRef<ScrollContainerRef>(null);
-  const quizModel = useMemo(() => (data ? buildEditionQuizModel(data) : {}), [data]);
+  const quizConfiguration = useOptionalEdition()?.content?.quiz;
+  const quizModel = useMemo(() => (data ? buildConfiguredEditionQuizModel(data, quizConfiguration) : {}), [data, quizConfiguration]);
   const activeSlides = useMemo(
-    () => data ? buildActiveSlidePlan(quizModel, data.moinSpeakers) : SLIDES,
-    [data, quizModel],
+    () => data ? buildActiveSlidePlan(quizModel, data.moinSpeakers, quizConfiguration) : SLIDES,
+    [data, quizModel, quizConfiguration],
   );
   const activeQuizSlides = useMemo(() => getQuizSlides(activeSlides), [activeSlides]);
 
