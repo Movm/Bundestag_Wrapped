@@ -1626,6 +1626,56 @@
         }
       }
     },
+    "EditionQuizTextOverrides": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "question": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "explanation": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      }
+    },
+    "EditionQuizGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^quiz-[a-z0-9-]+$"
+        },
+        "question": {
+          "$ref": "#/$defs/QuizQuestion"
+        },
+        "text": {
+          "$ref": "#/$defs/EditionQuizTextOverrides"
+        }
+      }
+    },
+    "EditionQuizConfiguration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "version",
+        "groups"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/EditionQuizGroup"
+          }
+        }
+      }
+    },
     "EditionContent": {
       "type": "object",
       "additionalProperties": false,
@@ -1640,6 +1690,9 @@
         "year": {
           "type": "integer",
           "minimum": 2000
+        },
+        "quiz": {
+          "$ref": "#/$defs/EditionQuizConfiguration"
         }
       }
     },

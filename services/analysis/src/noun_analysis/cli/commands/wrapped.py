@@ -25,6 +25,7 @@ from ..constants import console
 @click.option("--data-dir", type=click.Path(exists=True), default="./data_wp21", show_default=True)
 @click.option("--results-dir", type=click.Path(exists=True), default="./results_wp21", show_default=True)
 @click.option("--data-version", default="preview", show_default=True)
+@click.option("--quiz-config", type=click.Path(exists=True), help="Optional version-1 quiz configuration JSON to include in content.json")
 @click.option("--freeze", is_flag=True, help="Mark this explicitly complete and frozen")
 def generate_edition(
     edition_id: str,
@@ -35,6 +36,7 @@ def generate_edition(
     data_dir: str,
     results_dir: str,
     data_version: str,
+    quiz_config: str | None,
     freeze: bool,
 ):
     """Generate one atomic, schema-validated Wrapped edition."""
@@ -59,6 +61,9 @@ def generate_edition(
         wrapped_data["metadata"]["generatedAt"] = generated_at
         exporter = SpeakerExporter(data)
         speaker_index = exporter.generate_index()
+        content: dict[str, object] = {"editionId": edition_id, "year": year}
+        if quiz_config:
+            content["quiz"] = json.loads(Path(quiz_config).read_text(encoding="utf-8"))
         artifacts: dict[str, object] = {
             "wrapped.json": wrapped_data,
             "speakers/index.json": speaker_index,
@@ -66,7 +71,7 @@ def generate_edition(
             "words.json": {"parties": [{"party": party["party"], "words": party["topWords"]} for party in wrapped_data["parties"]]},
             "word_rankings.json": {"parties": [{"party": party["party"], "signatureWords": party["signatureWords"]} for party in wrapped_data["parties"]]},
             "topic_rankings.json": {"topics": wrapped_data["hotTopics"]},
-            "content.json": {"editionId": edition_id, "year": year},
+            "content.json": content,
         }
         for speaker_key in exporter._speaker_index:
             speaker = exporter.generate_speaker_data(speaker_key)
