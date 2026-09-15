@@ -370,9 +370,26 @@ export interface EditionManifest {
   "checksums": NonEmptyString;
 }
 
+export interface EditionQuizTextOverrides {
+  "question"?: NonEmptyString;
+  "explanation"?: NonEmptyString;
+}
+
+export interface EditionQuizGroup {
+  "id": string;
+  "question"?: QuizQuestion;
+  "text"?: EditionQuizTextOverrides;
+}
+
+export interface EditionQuizConfiguration {
+  "version": 1;
+  "groups": Array<EditionQuizGroup>;
+}
+
 export interface EditionContent {
   "editionId": NonEmptyString;
   "year": number;
+  "quiz"?: EditionQuizConfiguration;
 }
 
 export interface EditionSummary {
