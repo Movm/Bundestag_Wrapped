@@ -115,14 +115,17 @@ def validate_edition(root: Path) -> None:
     manifest = _json(manifest_path)
     try:
         validate_contract_document(manifest, "EditionManifest", str(manifest_path))
-        validate_contract_document(_json(root / manifest["content"]), "EditionContent", str(root / manifest["content"]))
-        validate_contract_document(_json(wrapped_path), "WrappedData", str(wrapped_path))
     except ContractValidationError as error:
         raise EditionValidationError(str(error)) from error
     checksums = _json(root / manifest["checksums"])
     if not isinstance(checksums, dict):
         raise EditionValidationError("checksums.json must be an object")
     _validate_checksums(root, checksums)
+    try:
+        validate_contract_document(_json(root / manifest["content"]), "EditionContent", str(root / manifest["content"]))
+        validate_contract_document(_json(wrapped_path), "WrappedData", str(wrapped_path))
+    except ContractValidationError as error:
+        raise EditionValidationError(str(error)) from error
     _validate_invariants(root, manifest)
 
 

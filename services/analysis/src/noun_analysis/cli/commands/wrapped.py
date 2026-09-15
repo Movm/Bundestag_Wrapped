@@ -12,6 +12,8 @@ import click
 from noun_analysis.wrapped import WrappedData, WrappedRenderer
 from noun_analysis.wrapped.speaker_export import SpeakerExporter
 from noun_analysis.edition.export import EditionValidationError, build_manifest, publish_edition
+from noun_analysis.edition.release import build_release_report
+from noun_analysis.storage import DataStore
 
 from ..constants import console
 
@@ -64,6 +66,8 @@ def generate_edition(
         content: dict[str, object] = {"editionId": edition_id, "year": year}
         if quiz_config:
             content["quiz"] = json.loads(Path(quiz_config).read_text(encoding="utf-8"))
+        source_state = DataStore(Path(data_dir)).load_state()
+        manifest = build_manifest(edition_id, year, data_version, generated_at, period_start, period_end, list(wahlperioden), speeches, freeze)
         artifacts: dict[str, object] = {
             "wrapped.json": wrapped_data,
             "speakers/index.json": speaker_index,
@@ -72,12 +76,12 @@ def generate_edition(
             "word_rankings.json": {"parties": [{"party": party["party"], "signatureWords": party["signatureWords"]} for party in wrapped_data["parties"]]},
             "topic_rankings.json": {"topics": wrapped_data["hotTopics"]},
             "content.json": content,
+            "release-report.json": build_release_report(manifest, content, source_state),
         }
         for speaker_key in exporter._speaker_index:
             speaker = exporter.generate_speaker_data(speaker_key)
             if speaker:
                 artifacts[f"speakers/{speaker['slug']}.json"] = speaker
-        manifest = build_manifest(edition_id, year, data_version, generated_at, period_start, period_end, list(wahlperioden), speeches, freeze)
         target = publish_edition(Path(output_root), edition_id, data_version, manifest, artifacts)
     except (FileNotFoundError, ValueError, EditionValidationError) as error:
         raise click.ClickException(str(error)) from error
