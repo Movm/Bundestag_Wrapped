@@ -1,4 +1,5 @@
 import type { EditionQuizModel } from '@/domain/edition-quiz';
+import type { EditionQuizConfiguration } from '@/generated/wrapped-contract-v1';
 import type { SlideType } from './constants';
 
 export const QUIZ_SLIDES = [
@@ -57,7 +58,25 @@ function hasQuiz(model: EditionQuizModel, slide: DataQuizSlide): boolean {
 export function buildActiveSlidePlan(
   model: EditionQuizModel,
   moinSpeakers: readonly MoinQuizCandidate[] | null | undefined,
+  configuration?: EditionQuizConfiguration,
 ): SlideType[] {
+  if (configuration) {
+    const groups = new Map(
+      STORY_TEMPLATE.filter(isStoryGroup).map((group) => [group.quiz, group]),
+    );
+    return [
+      'intro',
+      'info-disclaimer',
+      ...configuration.groups.flatMap(({ id }) => {
+        const group = groups.get(id as (typeof QUIZ_SLIDES)[number]);
+        if (group) return model[id] ? [...group.slides] : [];
+        // Configuration validation guarantees that custom groups have a question.
+        return model[id] ? [id as SlideType] : [];
+      }),
+      'share',
+      'finale',
+    ];
+  }
   return STORY_TEMPLATE.flatMap((entry) => {
     if (!isStoryGroup(entry)) return [entry];
     const available = entry.quiz === 'quiz-moin'
@@ -67,8 +86,6 @@ export function buildActiveSlidePlan(
   });
 }
 
-export function getQuizSlides(slides: readonly SlideType[]): (typeof QUIZ_SLIDES)[number][] {
-  return slides.filter((slide): slide is (typeof QUIZ_SLIDES)[number] =>
-    (QUIZ_SLIDES as readonly string[]).includes(slide),
-  );
+export function getQuizSlides(slides: readonly SlideType[]): `quiz-${string}`[] {
+  return slides.filter((slide): slide is `quiz-${string}` => slide.startsWith('quiz-'));
 }

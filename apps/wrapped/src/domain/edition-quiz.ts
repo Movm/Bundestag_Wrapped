@@ -1,10 +1,8 @@
 import type { QuizQuestion, WrappedData } from '@/data/wrapped';
+import type { EditionQuizConfiguration } from '@/generated/wrapped-contract-v1';
 import { MissingMetricError, topInterrupter, topSpeakerByWords, topTopic } from './metrics';
 
-export type EditionQuizModel = Partial<Record<
-  'quiz-topics' | 'quiz-signature' | 'quiz-speeches' | 'quiz-drama' | 'quiz-discriminatory' | 'quiz-common-words' | 'quiz-tone' | 'quiz-gender',
-  QuizQuestion
->>;
+export type EditionQuizModel = Record<string, QuizQuestion>;
 
 const number = new Intl.NumberFormat('de-DE');
 
@@ -16,7 +14,7 @@ function question(id: QuizQuestion['id'], text: string, options: string[], answe
 
 function addQuestion(
   model: EditionQuizModel,
-  id: keyof EditionQuizModel,
+  id: string,
   build: () => QuizQuestion | undefined,
 ): void {
   try {
@@ -92,4 +90,41 @@ export function buildEditionQuizModel(data: WrappedData): EditionQuizModel {
       : undefined;
   });
   return model;
+}
+
+/**
+ * Applies an edition's ordered quiz configuration to the data-derived model.
+ * A missing configuration intentionally returns the legacy model verbatim: it
+ * is the compatibility boundary for the frozen 2025 edition.
+ */
+export function applyEditionQuizConfiguration(
+  generated: EditionQuizModel,
+  configuration?: EditionQuizConfiguration,
+): EditionQuizModel {
+  if (!configuration) return generated;
+
+  const configured: EditionQuizModel = {};
+  const groupIds = new Set<string>();
+  const questionIds = new Set<string>();
+  for (const group of configuration.groups) {
+    if (groupIds.has(group.id)) throw new Error(`Quiz configuration contains duplicate group ID: ${group.id}`);
+    groupIds.add(group.id);
+    const baseQuiz = group.question ?? generated[group.id];
+    const quiz = baseQuiz && group.text ? { ...baseQuiz, ...group.text } : baseQuiz;
+    if (!quiz) throw new Error(`Quiz configuration references unavailable group: ${group.id}`);
+    if (quiz.id !== group.id) throw new Error(`Quiz question ID must match its group ID: ${group.id}`);
+    if (questionIds.has(quiz.id)) throw new Error(`Quiz configuration contains duplicate question ID: ${quiz.id}`);
+    questionIds.add(quiz.id);
+    if (!quiz.options.includes(quiz.correctAnswer)) throw new Error(`Quiz question has no matching correct answer: ${quiz.id}`);
+    if (new Set(quiz.options).size !== quiz.options.length) throw new Error(`Quiz question has duplicate options: ${quiz.id}`);
+    configured[group.id] = quiz;
+  }
+  return configured;
+}
+
+export function buildConfiguredEditionQuizModel(
+  data: WrappedData,
+  configuration?: EditionQuizConfiguration,
+): EditionQuizModel {
+  return applyEditionQuizConfiguration(buildEditionQuizModel(data), configuration);
 }
