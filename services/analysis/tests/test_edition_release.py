@@ -1,10 +1,14 @@
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 import pytest
 
 from noun_analysis.edition.export import EditionValidationError, build_manifest, publish_edition
-from noun_analysis.edition.release import prevent_regression, publish_in_index, validate_freeze_against_index, validate_release_input
+from noun_analysis.edition.release import assert_publication_allowed, prevent_regression, publish_in_index, validate_freeze_against_index, validate_release_input
+
+
+AFTER_2026_LAUNCH = datetime(2026, 12, 1, 0, 0, tzinfo=timezone.utc)
 
 
 def fixture_artifacts():
@@ -30,6 +34,12 @@ def test_release_input_rejects_invalid_periods():
         validate_release_input("2026", "2025-12-31", "2026-01-01", "preview")
 
 
+def test_2026_publication_gate_uses_berlin_calendar_day():
+    with pytest.raises(EditionValidationError, match="must not be published"):
+        assert_publication_allowed("2026", datetime(2026, 11, 30, 22, 59, tzinfo=timezone.utc))
+    assert_publication_allowed("2026", datetime(2026, 11, 30, 23, 0, tzinfo=timezone.utc))
+
+
 def test_regression_is_blocked():
     old = {"coverage": {"protocolCount": 2, "lastProtocolDate": "2026-12-31"}}
     new = {"coverage": {"protocolCount": 1, "lastProtocolDate": "2026-11-30"}}
@@ -43,7 +53,7 @@ def test_publish_index_points_at_a_valid_frozen_artifact(tmp_path):
     artifact_root = publish_edition(tmp_path / "data", "2026", "final", manifest, artifacts)
 
     index_path = tmp_path / "data" / "editions.json"
-    index = publish_in_index(index_path, artifact_root)
+    index = publish_in_index(index_path, artifact_root, now=AFTER_2026_LAUNCH)
 
     assert index["currentEdition"] == "2026"
     assert index["editions"] == [{"id": "2026", "year": 2026, "status": "published", "manifestUrl": "/data/2026/final/manifest.json"}]
@@ -55,7 +65,7 @@ def test_freeze_rejects_regression_against_published_edition(tmp_path):
     old = build_manifest("2026", 2026, "old", "2027-01-02T08:00:00Z", "2026-01-01", "2026-12-31", [21], speeches, True)
     old_root = publish_edition(tmp_path / "data", "2026", "old", old, artifacts)
     index_path = tmp_path / "data" / "editions.json"
-    publish_in_index(index_path, old_root)
+    publish_in_index(index_path, old_root, now=AFTER_2026_LAUNCH)
     reduced_speeches = speeches[:1]
     reduced_artifacts = {**artifacts, "speeches.json": {"speeches": reduced_speeches}}
     reduced = build_manifest("2026", 2026, "new", "2027-01-02T08:00:00Z", "2026-01-01", "2026-12-31", [21], reduced_speeches, True)
