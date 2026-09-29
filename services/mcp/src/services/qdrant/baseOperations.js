@@ -29,13 +29,14 @@ export function createSearcher(collectionName, logPrefix) {
     const startTime = Date.now();
 
     try {
-      const results = await qdrant.search(collectionName, {
-        vector,
+      const response = await qdrant.query(collectionName, {
+        query: vector,
         limit,
         filter,
         score_threshold: scoreThreshold,
         with_payload: true
       });
+      const results = response.points;
 
       const elapsed = Date.now() - startTime;
       logger.debug(logPrefix, `Search returned ${results.length} results in ${elapsed}ms`);
