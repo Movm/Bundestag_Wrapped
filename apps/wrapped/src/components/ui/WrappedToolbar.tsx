@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { Volume2, VolumeX, Music, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { useAudioStore, useTrackInfo } from '@/stores/audioStore';
+import { IS_DEV_AUDIO_DISABLED, useAudioStore, useTrackInfo } from '@/stores/audioStore';
 import { themeMusic } from '@/lib/theme-music';
 
 interface WrappedToolbarProps {
@@ -60,9 +60,10 @@ export function WrappedToolbar({ isMenuOpen, onMenuToggle }: WrappedToolbarProps
       {/* Audio toggle */}
       <button
         onClick={handleToggleMute}
-        className="p-2 rounded-lg transition-colors text-white/70 hover:text-white hover:bg-white/10"
-        aria-label={muted ? 'Ton einschalten' : 'Ton ausschalten'}
-        title={trackInfo ? `${trackInfo.title} - ${trackInfo.artist}` : undefined}
+        disabled={IS_DEV_AUDIO_DISABLED}
+        className="p-2 rounded-lg transition-colors text-white/70 hover:text-white hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent"
+        aria-label={IS_DEV_AUDIO_DISABLED ? 'Ton im Entwicklungsmodus deaktiviert' : muted ? 'Ton einschalten' : 'Ton ausschalten'}
+        title={IS_DEV_AUDIO_DISABLED ? 'Ton ist im Entwicklungsmodus deaktiviert' : trackInfo ? `${trackInfo.title} - ${trackInfo.artist}` : undefined}
       >
         {muted ? <VolumeX size={20} aria-hidden="true" /> : <Volume2 size={20} aria-hidden="true" />}
       </button>

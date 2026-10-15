@@ -22,8 +22,9 @@ PARTY_STOPWORDS = {
     "christdemokrat", "christdemokratin", "christdemokraten",
     # Party abbreviations in compounds
     "spd-geführt", "cdu-geführt", "grün-geführt",
+    # Party-name self-reference that otherwise dominates AfD results
+    "alternative",
 }
-
 
 class WrappedDataQueries:
     """Mixin providing all get_* query methods for WrappedData."""
@@ -67,11 +68,16 @@ class WrappedDataQueries:
         df["score"] = df["ratio"] * df[party_col].apply(lambda x: math.sqrt(x))
 
         # Filter: 0.05% min count, ratio > 2.0, exclude stopwords
+        configured_stopwords = getattr(self, "signature_stopwords", set())
+        exclude_multiword_terms = getattr(self, "exclude_multiword_signature_terms", False)
+        allowed_shape = ~df["word"].str.contains(r"\s", regex=True, na=False) if exclude_multiword_terms else True
         distinctive = df[
             (df[party_count_col] >= min_count) &
             (df["ratio"] > 2.0) &
             (~df["word"].isin(EVENT_STOPWORDS)) &
-            (~df["word"].isin(PARTY_STOPWORDS))
+            (~df["word"].isin(PARTY_STOPWORDS)) &
+            (~df["word"].isin(configured_stopwords)) &
+            allowed_shape
         ]
         # Rank by balanced score
         distinctive = distinctive.nlargest(top_n, "score")
@@ -113,11 +119,16 @@ class WrappedDataQueries:
         df["ratio"] = df[party_freq_col] / (df["others_avg"] + 0.001)
 
         # Filter: 0.05% min count, ratio > 1.5 (mild distinctiveness), exclude stopwords
+        configured_stopwords = getattr(self, "signature_stopwords", set())
+        exclude_multiword_terms = getattr(self, "exclude_multiword_signature_terms", False)
+        allowed_shape = ~df["word"].str.contains(r"\s", regex=True, na=False) if exclude_multiword_terms else True
         key_topics = df[
             (df[party_count_col] >= min_count) &
             (df["ratio"] > 1.5) &
             (~df["word"].isin(EVENT_STOPWORDS)) &
-            (~df["word"].isin(PARTY_STOPWORDS))
+            (~df["word"].isin(PARTY_STOPWORDS)) &
+            (~df["word"].isin(configured_stopwords)) &
+            allowed_shape
         ]
         # Rank by count (most talked about), not ratio
         key_topics = key_topics.nlargest(top_n * 2, party_count_col)

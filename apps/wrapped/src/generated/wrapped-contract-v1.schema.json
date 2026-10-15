@@ -992,6 +992,211 @@
         }
       }
     },
+    "ComparisonPeriod": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "editionId",
+        "start",
+        "end"
+      ],
+      "properties": {
+        "editionId": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "start": {
+          "$ref": "#/$defs/IsoDate"
+        },
+        "end": {
+          "$ref": "#/$defs/IsoDate"
+        }
+      }
+    },
+    "RankMovement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "currentRank",
+        "previousRank",
+        "rankChange"
+      ],
+      "properties": {
+        "label": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "currentRank": {
+          "$ref": "#/$defs/Count"
+        },
+        "previousRank": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Count"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rankChange": {
+          "type": "integer"
+        }
+      }
+    },
+    "YouthWordCount": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "word",
+        "count",
+        "previousCount",
+        "change"
+      ],
+      "properties": {
+        "word": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "count": {
+          "$ref": "#/$defs/Count"
+        },
+        "previousCount": {
+          "$ref": "#/$defs/Count"
+        },
+        "change": {
+          "type": "integer"
+        }
+      }
+    },
+    "YouthLanguageAnalysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lexiconVersion",
+        "words",
+        "byParty",
+        "bySpeaker"
+      ],
+      "properties": {
+        "lexiconVersion": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "words": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/YouthWordCount"
+          }
+        },
+        "byParty": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/PartyCount"
+          }
+        },
+        "bySpeaker": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NamedPartyCount"
+          }
+        }
+      }
+    },
+    "SignatureWordMovement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "word",
+        "currentRank",
+        "previousRank"
+      ],
+      "properties": {
+        "word": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "currentRank": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Count"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "previousRank": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Count"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "PartySignatureWordMovements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "party",
+        "risers",
+        "fallers"
+      ],
+      "properties": {
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "risers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SignatureWordMovement"
+          }
+        },
+        "fallers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SignatureWordMovement"
+          }
+        }
+      }
+    },
+    "YearOverYearAnalysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "baseline",
+        "topics",
+        "words",
+        "signatureWords",
+        "youthLanguage"
+      ],
+      "properties": {
+        "baseline": {
+          "$ref": "#/$defs/ComparisonPeriod"
+        },
+        "topics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/RankMovement"
+          }
+        },
+        "words": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/RankMovement"
+          }
+        },
+        "signatureWords": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/PartySignatureWordMovements"
+          }
+        },
+        "youthLanguage": {
+          "$ref": "#/$defs/YouthLanguageAnalysis"
+        }
+      }
+    },
     "QuizQuestion": {
       "type": "object",
       "additionalProperties": false,
@@ -1224,6 +1429,9 @@
           "items": {
             "$ref": "#/$defs/NamedPartyCount"
           }
+        },
+        "yearOverYear": {
+          "$ref": "#/$defs/YearOverYearAnalysis"
         }
       }
     },

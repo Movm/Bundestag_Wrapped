@@ -15,6 +15,14 @@ export const SLIDES = [
   // Disclaimer (experimental project notice)
   'info-disclaimer',
 
+  // Year-over-year movements
+  'quiz-topic-riser',
+  'info-topic-riser',
+  'reveal-topic-risers',
+  'quiz-word-riser',
+  'info-word-riser',
+  'reveal-word-risers',
+
   // Topics (first section - what does the Bundestag talk about?)
   'intro-topics',
   'quiz-topics',
@@ -28,6 +36,7 @@ export const SLIDES = [
   'quiz-signature',
   'info-signature',
   'reveal-signature',
+  'reveal-signature-movements',
 
   // Speech Volume
   'intro-speeches',
@@ -51,6 +60,13 @@ export const SLIDES = [
   'intro-common-words',
   'quiz-common-words',
   'reveal-common-words',
+
+  // Youth language
+  'quiz-youth-language',
+  'info-youth-language',
+  'reveal-youth-language',
+  'reveal-youth-parties',
+  'reveal-youth-speakers',
 
   // Moin
   'intro-moin',
@@ -82,6 +98,8 @@ export type SlideType = (typeof SLIDES)[number] | `quiz-${string}`;
 // Slides that auto-scroll to next after a delay (section intros and info slides)
 export const AUTO_SCROLL_SLIDES = new Set<SlideType>([
   'info-disclaimer',
+  'info-topic-riser',
+  'info-word-riser',
   'intro-topics',
   'info-topics',
   'info-party-topics',
@@ -100,6 +118,7 @@ export const AUTO_SCROLL_SLIDES = new Set<SlideType>([
   'info-moin',
   'info-tone',
   'info-gender',
+  'info-youth-language',
 ]);
 
 export const AUTO_SCROLL_DELAY = 4000; // 4 seconds

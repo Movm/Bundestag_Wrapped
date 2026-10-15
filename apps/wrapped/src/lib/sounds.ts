@@ -20,7 +20,7 @@ import {
   SOUND_VOLUMES,
   createSlideTransitionSoundHook,
 } from '@/shared/sounds';
-import { useAudioStore } from '@/stores/audioStore';
+import { IS_DEV_AUDIO_DISABLED, useAudioStore } from '@/stores/audioStore';
 
 export type { SoundType };
 
@@ -36,7 +36,7 @@ const audioCache: Partial<Record<SoundType, HTMLAudioElement>> = {};
 let isInitialized = false;
 
 // Track user interaction to unlock audio and preload sounds
-if (typeof window !== 'undefined') {
+if (typeof window !== 'undefined' && !IS_DEV_AUDIO_DISABLED) {
   const unlockAudio = () => {
     // Initialize sounds on first interaction
     if (!isInitialized) {
@@ -58,7 +58,7 @@ if (typeof window !== 'undefined') {
  * Call this on first user interaction to comply with autoplay policies.
  */
 export function initSounds(): void {
-  if (isInitialized) return;
+  if (IS_DEV_AUDIO_DISABLED || isInitialized) return;
 
   Object.entries(SOUND_PATHS).forEach(([type, path]) => {
     const audio = new Audio(path);
@@ -76,6 +76,7 @@ export function initSounds(): void {
  * @param type - The type of sound to play
  */
 export function playSound(type: SoundType): void {
+  if (IS_DEV_AUDIO_DISABLED) return;
   if (useAudioStore.getState().isMuted) return;
   if (typeof window === 'undefined') return;
 
@@ -112,6 +113,7 @@ function initBackgroundMusic(): HTMLAudioElement {
  * Start playing background music
  */
 export function playBackgroundMusic(): void {
+  if (IS_DEV_AUDIO_DISABLED) return;
   if (useAudioStore.getState().isMuted) return;
   if (typeof window === 'undefined') return;
 
@@ -142,6 +144,7 @@ export function pauseBackgroundMusic(): void {
  * Toggle background music on/off
  */
 export function toggleBackgroundMusic(): boolean {
+  if (IS_DEV_AUDIO_DISABLED) return false;
   if (isMusicPlaying) {
     pauseBackgroundMusic();
     return false;

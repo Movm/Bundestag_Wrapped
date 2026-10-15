@@ -19,6 +19,11 @@ import {
   GenderSlide,
   ShareSlide,
   EndSlide,
+  RankingMovementSlide,
+  SignatureWordMovementSlide,
+  YouthLanguageResultSlide,
+  YouthLanguagePartySlide,
+  YouthLanguageSpeakerSlide,
 } from '@/components/slides';
 import { SlideInfo } from '@/components/slides/shared';
 import type { SlideData } from '@/lib/slide-sharepics';
@@ -175,6 +180,36 @@ function GenderSlideWrapper() {
   return <GenderSlide genderAnalysis={genderAnalysis} phase="result" />;
 }
 
+function RankingMovementSlideWrapper({ kind }: { kind: 'topics' | 'words' }) {
+  const data = useFullWrappedData();
+  if (!data?.yearOverYear) return null;
+  return <RankingMovementSlide analysis={data.yearOverYear} kind={kind} />;
+}
+
+function SignatureWordMovementSlideWrapper() {
+  const data = useFullWrappedData();
+  if (!data?.yearOverYear) return null;
+  return <SignatureWordMovementSlide analysis={data.yearOverYear} />;
+}
+
+function YouthLanguageResultSlideWrapper() {
+  const data = useFullWrappedData();
+  if (!data?.yearOverYear) return null;
+  return <YouthLanguageResultSlide analysis={data.yearOverYear} />;
+}
+
+function YouthLanguagePartySlideWrapper() {
+  const data = useFullWrappedData();
+  if (!data?.yearOverYear) return null;
+  return <YouthLanguagePartySlide analysis={data.yearOverYear} />;
+}
+
+function YouthLanguageSpeakerSlideWrapper() {
+  const data = useFullWrappedData();
+  if (!data?.yearOverYear) return null;
+  return <YouthLanguageSpeakerSlide analysis={data.yearOverYear} />;
+}
+
 // ============================================================================
 // Main SlideRenderer
 // ============================================================================
@@ -276,6 +311,9 @@ export const SlideRenderer = memo(function SlideRenderer({
 
     // Every active quiz is derived from the loaded edition data.
     case 'quiz-topics':
+    case 'quiz-topic-riser':
+    case 'quiz-word-riser':
+    case 'quiz-youth-language':
     case 'quiz-signature':
     case 'quiz-speeches':
     case 'quiz-drama':
@@ -300,6 +338,9 @@ export const SlideRenderer = memo(function SlideRenderer({
 
     // Info slides - educational context (no data needed, uses INFO_SLIDES constant)
     case 'info-disclaimer':
+    case 'info-topic-riser':
+    case 'info-word-riser':
+    case 'info-youth-language':
     case 'info-topics':
     case 'info-party-topics':
     case 'info-signature':
@@ -310,6 +351,24 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'info-tone':
     case 'info-gender':
       return <SlideInfo {...INFO_SLIDES[slide]} slideId={slide} />;
+
+    case 'reveal-topic-risers':
+      return <RankingMovementSlideWrapper kind="topics" />;
+
+    case 'reveal-word-risers':
+      return <RankingMovementSlideWrapper kind="words" />;
+
+    case 'reveal-signature-movements':
+      return <SignatureWordMovementSlideWrapper />;
+
+    case 'reveal-youth-language':
+      return <YouthLanguageResultSlideWrapper />;
+
+    case 'reveal-youth-parties':
+      return <YouthLanguagePartySlideWrapper />;
+
+    case 'reveal-youth-speakers':
+      return <YouthLanguageSpeakerSlideWrapper />;
 
     case 'reveal-drama':
       return <DramaSlideWrapper phase="result" />;

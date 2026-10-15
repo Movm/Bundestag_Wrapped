@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { applyEditionQuizConfiguration, buildEditionQuizModel } from './edition-quiz';
 import edition2025 from '../../public/data/2025/final/wrapped.json';
 import content2025 from '../../public/data/2025/final/content.json';
+import quiz2026 from '../../config/2026/quiz.json';
 import { buildActiveSlidePlan, getQuizSlides } from '@/components/main-wrapped/slide-plan';
 import type { WrappedData } from '@/data/wrapped';
 
@@ -64,9 +65,57 @@ describe('buildEditionQuizModel', () => {
 
     expect(() => buildEditionQuizModel(data as never)).toThrow();
   });
+
+  it('builds year-over-year and youth-language questions from comparison evidence', () => {
+    const data = {
+      ...fixture('Europa', 'Partei A'),
+      yearOverYear: {
+        baseline: { editionId: '2025', start: '2025-01-01', end: '2025-12-31' },
+        topics: [
+          { label: 'Wirtschaft', currentRank: 1, previousRank: 4, rankChange: 3 },
+          { label: 'Europa', currentRank: 2, previousRank: 3, rankChange: 1 },
+          { label: 'Soziales', currentRank: 3, previousRank: 2, rankChange: -1 },
+          { label: 'Finanzen', currentRank: 4, previousRank: 1, rankChange: -3 },
+        ],
+        words: [
+          { label: 'mensch', currentRank: 1, previousRank: 3, rankChange: 2 },
+          { label: 'dank', currentRank: 2, previousRank: 4, rankChange: 2 },
+          { label: 'land', currentRank: 3, previousRank: 1, rankChange: -2 },
+          { label: 'euro', currentRank: 4, previousRank: 2, rankChange: -2 },
+        ],
+        youthLanguage: {
+          lexiconVersion: 'test-v1',
+          words: [
+            { word: 'safe', count: 9, previousCount: 4, change: 5 },
+            { word: 'wild', count: 7, previousCount: 8, change: -1 },
+            { word: 'bro', count: 5, previousCount: 1, change: 4 },
+            { word: 'lowkey', count: 3, previousCount: 0, change: 3 },
+          ],
+          byParty: [
+            { party: 'Partei A', count: 9 },
+            { party: 'Partei B', count: 7 },
+            { party: 'Partei C', count: 5 },
+            { party: 'Partei D', count: 3 },
+          ],
+        },
+      },
+    };
+
+    const model = buildEditionQuizModel(data as never);
+
+    expect(model['quiz-topic-riser']?.correctAnswer).toBe('Wirtschaft');
+    expect(model['quiz-word-riser']?.correctAnswer).toBe('mensch');
+    expect(model['quiz-word-riser']?.question).toBe('Was ist das Aufsteigerwort des Jahres?');
+    expect(model['quiz-youth-language']?.correctAnswer).toBe('safe');
+    expect(model['quiz-youth-language']?.explanation).toContain('Partei A');
+  });
 });
 
 describe('edition quiz configuration', () => {
+  it('starts the 2026 edition with the word-riser question', () => {
+    expect(quiz2026.groups[0]?.id).toBe('quiz-word-riser');
+  });
+
   it('preserves the rendered 2025 quiz model when no configuration exists', () => {
     expect((content2025 as { quiz?: unknown }).quiz).toBeUndefined();
     const data2025 = edition2025 as WrappedData;

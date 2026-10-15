@@ -9,6 +9,7 @@ import {
 import { playSound } from '@/lib/sounds';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
+import { previewCoverageLabel } from '@/edition/labels';
 
 const TEXT_HIDE_DURATION = 0.4;
 
@@ -17,7 +18,9 @@ interface IntroSlideProps {
 }
 
 export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps) {
-  const surface = editionSurface(useOptionalEdition());
+  const edition = useOptionalEdition();
+  const surface = editionSurface(edition);
+  const previewLabel = previewCoverageLabel(edition?.manifest);
   const [launchPhase, setLaunchPhase] = useState<
     'idle' | 'hiding' | 'charging' | 'launching'
   >('idle');
@@ -150,7 +153,7 @@ export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps)
         </motion.h2>
 
         <motion.p
-          className="text-2xl md:text-3xl font-bold text-pink-400 mb-12"
+          className={`text-2xl md:text-3xl font-bold text-pink-400 ${previewLabel ? 'mb-3' : 'mb-12'}`}
           initial={{ opacity: 0, y: 20 }}
           animate={{
             opacity: isHiding ? 0 : 1,
@@ -164,6 +167,17 @@ export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps)
         >
           {surface.year ?? ''}
         </motion.p>
+
+        {previewLabel && (
+          <motion.p
+            className="mb-12 text-sm font-semibold tracking-wide text-white/65"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: isHiding ? 0 : 1, y: isHiding ? -16 : 0 }}
+            transition={{ delay: isHiding ? TEXT_STAGGER * 3 : 0.95, duration: TEXT_FADE_DURATION }}
+          >
+            {previewLabel}
+          </motion.p>
+        )}
 
         <motion.button
           onClick={handleStart}

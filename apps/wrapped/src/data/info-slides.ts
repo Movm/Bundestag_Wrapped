@@ -14,6 +14,21 @@ export const INFO_SLIDES: Record<string, InfoSlideContent> = {
     title: 'Hinweis',
     body: 'Dies ist ein Experiment. Die Daten wurden mit Natural Language Processing analysiert und können fehlerhaft sein.',
   },
+  'info-topic-riser': {
+    emoji: '📈',
+    title: 'Was bedeutet „aufgestiegen“?',
+    body: 'Wir vergleichen die Rangfolge der Bundestagsthemen im selben Kalenderzeitraum: jeweils 1. Januar bis 12. Oktober. Je weiter ein Thema gegenüber 2025 nach vorn rückt, desto größer ist sein Aufstieg.',
+  },
+  'info-word-riser': {
+    emoji: '🔤',
+    title: 'Wörter im Jahresvergleich',
+    body: 'Verglichen werden häufige Wörter, die in beiden Editionen in der Rangliste vorkommen. Neue Einträge werden getrennt erfasst und zählen nicht automatisch als Aufstieg.',
+  },
+  'info-youth-language': {
+    emoji: '🗣️',
+    title: 'Wie zählen wir Jugendwörter?',
+    body: 'Das aktuelle Jugendwort 2026 ist „Ragebait“ – absichtlich provozierender Inhalt, der Wut und Reaktionen erzeugen soll. Wir prüfen alle 42 unterschiedlichen Top-10-Kandidaten von 2022 bis 2026 sowie vier Ergänzungen. Mehrdeutige Wörter zählen nur, wenn der Kontext zur offiziellen Bedeutung passt.',
+  },
   'info-topics': {
     emoji: '📊',
     title: 'Themen-Analyse',
