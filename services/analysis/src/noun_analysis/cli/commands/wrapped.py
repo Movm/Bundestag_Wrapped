@@ -12,8 +12,25 @@ import click
 from noun_analysis.wrapped import WrappedData, WrappedRenderer
 from noun_analysis.wrapped.speaker_export import SpeakerExporter
 from noun_analysis.edition.export import EditionValidationError, build_manifest, publish_edition
+from noun_analysis.edition.comparison import build_year_over_year
 
 from ..constants import console
+
+
+def _apply_signature_configs(data, config_paths: tuple[str, ...]) -> None:
+    excluded_words: set[str] = set()
+    exclude_multiword_terms = False
+    for config_path in config_paths:
+        payload = json.loads(Path(config_path).read_text(encoding="utf-8"))
+        if payload.get("version") != 1:
+            raise ValueError(f"unsupported signature-word config version: {config_path}")
+        words = payload.get("excludedWords", [])
+        if not isinstance(words, list) or not all(isinstance(word, str) and word.strip() for word in words):
+            raise ValueError(f"signature-word config requires an excludedWords array: {config_path}")
+        excluded_words.update(word.strip().casefold() for word in words)
+        exclude_multiword_terms = exclude_multiword_terms or payload.get("excludeMultiwordTerms", False) is True
+    data.signature_stopwords = excluded_words
+    data.exclude_multiword_signature_terms = exclude_multiword_terms
 
 
 @click.command("generate-edition")
@@ -26,6 +43,9 @@ from ..constants import console
 @click.option("--results-dir", type=click.Path(exists=True), default="./results_wp21", show_default=True)
 @click.option("--data-version", default="preview", show_default=True)
 @click.option("--quiz-config", type=click.Path(exists=True), help="Optional version-1 quiz configuration JSON to include in content.json")
+@click.option("--compare-with", type=click.Path(exists=True, file_okay=False), help="Prior edition directory used for year-over-year analysis")
+@click.option("--youth-words", type=click.Path(exists=True, dir_okay=False), help="Versioned youth-word lexicon JSON")
+@click.option("--signature-config", "signature_configs", multiple=True, type=click.Path(exists=True, dir_okay=False), help="Repeatable signature-word filter configuration")
 @click.option("--freeze", is_flag=True, help="Mark this explicitly complete and frozen")
 def generate_edition(
     edition_id: str,
@@ -37,6 +57,9 @@ def generate_edition(
     results_dir: str,
     data_version: str,
     quiz_config: str | None,
+    compare_with: str | None,
+    youth_words: str | None,
+    signature_configs: tuple[str, ...],
     freeze: bool,
 ):
     """Generate one atomic, schema-validated Wrapped edition."""
@@ -47,6 +70,7 @@ def generate_edition(
         if period_start > period_end:
             raise ValueError("--from must be before or equal to --to")
         data = WrappedData.load(Path(results_dir), Path(data_dir))
+        _apply_signature_configs(data, signature_configs)
         speeches_by_party = json.loads((Path(data_dir) / "speeches.json").read_text(encoding="utf-8"))
         speeches = [speech for party_speeches in speeches_by_party.values() for speech in party_speeches]
         generated_at = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
@@ -59,6 +83,15 @@ def generate_edition(
         finally:
             random.setstate(random_state)
         wrapped_data["metadata"]["generatedAt"] = generated_at
+        if bool(compare_with) != bool(youth_words):
+            raise ValueError("--compare-with and --youth-words must be provided together")
+        if compare_with and youth_words:
+            wrapped_data["yearOverYear"] = build_year_over_year(
+                wrapped_data,
+                speeches,
+                Path(compare_with),
+                Path(youth_words),
+            )
         exporter = SpeakerExporter(data)
         speaker_index = exporter.generate_index()
         content: dict[str, object] = {"editionId": edition_id, "year": year}

@@ -10,6 +10,7 @@ Uses parser.py for speech parsing, this file handles orchestration only.
 
 from pathlib import Path
 from collections import Counter
+import hashlib
 import json
 import logging
 
@@ -65,15 +66,22 @@ def _parse_protocols_and_aggregate(data_dir: Path) -> dict:
 
     all_speeches = []
     raw_full_texts = []  # Store raw fullText for drama parsing
+    seen_protocol_texts: set[str] = set()
 
     # Parse each protocol file using the unified parser from parser.py
-    for protocol_file in protocols_dir.glob("*.json"):
+    for protocol_file in sorted(protocols_dir.glob("*.json")):
         with open(protocol_file) as f:
             protocol = json.load(f)
 
         full_text = protocol.get("fullText", "")
         if not full_text or not isinstance(full_text, str):
             continue
+
+        fingerprint = hashlib.sha256(full_text.encode("utf-8")).hexdigest()
+        if fingerprint in seen_protocol_texts:
+            logger.warning("Skipping duplicate protocol payload from %s", protocol_file.name)
+            continue
+        seen_protocol_texts.add(fingerprint)
 
         speeches = parse_speeches_from_protocol(full_text)
         all_speeches.extend(speeches)
@@ -431,6 +439,7 @@ def load_wrapped_data(results_dir: Path, data_dir: Path, cls=None):
 
     # Load and classify speeches from protocol files
     classified = _parse_protocols_and_aggregate(data_dir)
+    metadata["sitzungen"] = len(classified["raw_full_texts"])
     speaker_stats = classified["speaker_stats"]
     befragung_speaker_stats = classified["befragung_speaker_stats"]
     question_speaker_stats = classified["question_speaker_stats"]

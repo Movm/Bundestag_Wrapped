@@ -158,7 +158,7 @@ def test_parse_inherits_protocol_metadata_and_sorts_speeches(tmp_path, monkeypat
     ]
     state = store.init_state("https://example.test", selection(wahlperioden=[21]), selected, [])
     for item in selected:
-        store.save_protocol(item["id"], {"fullText": "fixture"})
+        store.save_protocol(item["id"], {"fullText": f"fixture {item['id']}"})
         store.mark_downloaded(state, item["id"])
 
     monkeypatch.setattr(
@@ -178,3 +178,25 @@ def test_parse_inherits_protocol_metadata_and_sorts_speeches(tmp_path, monkeypat
     assert speeches["SPD"][0]["protocolDate"] == "2026-01-01"
     assert speeches["SPD"][0]["protocolNumber"] == "21/1"
     assert speeches["SPD"][0]["wahlperiode"] == 21
+
+
+def test_parse_skips_complete_duplicate_protocol_payloads(tmp_path, monkeypatch):
+    store = DataStore(tmp_path)
+    selected = [
+        {"id": 1, "protocolNumber": "21/1", "protocolDate": "2026-01-01", "wahlperiode": 21},
+        {"id": 2, "protocolNumber": "21/2", "protocolDate": "2026-01-02", "wahlperiode": 21},
+    ]
+    state = store.init_state("https://example.test", selection(wahlperioden=[21]), selected, [])
+    for item in selected:
+        store.save_protocol(item["id"], {"fullText": "identical fixture"})
+        store.mark_downloaded(state, item["id"])
+
+    monkeypatch.setattr(
+        download_module,
+        "parse_speeches_from_protocol",
+        lambda _text: [{"party": "SPD", "speaker": "One"}],
+    )
+    download_module.parse.callback(str(tmp_path))
+
+    speeches = json.loads((tmp_path / "speeches.json").read_text())
+    assert [(speech["protocolId"], speech["speechPosition"]) for speech in speeches["SPD"]] == [(1, 1)]

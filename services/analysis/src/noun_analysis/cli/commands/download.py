@@ -1,6 +1,7 @@
 """Download and parse commands for protocol data."""
 
 import asyncio
+import hashlib
 import subprocess
 import sys
 from datetime import date
@@ -287,6 +288,8 @@ def parse(data_dir: str):
     console.print(f"[bold]Parsing {len(downloaded)} protocols...[/]")
 
     speeches_by_party: dict[str, list[dict]] = {}
+    seen_protocol_texts: dict[str, int] = {}
+    duplicate_protocols: list[tuple[int, int]] = []
 
     with Progress(
         SpinnerColumn(),
@@ -313,6 +316,14 @@ def parse(data_dir: str):
             full_text = protocol.get("fullText", "")
             if not full_text or not isinstance(full_text, str):
                 continue
+
+            fingerprint = hashlib.sha256(full_text.encode("utf-8")).hexdigest()
+            original_protocol_id = seen_protocol_texts.get(fingerprint)
+            if original_protocol_id is not None:
+                duplicate_protocols.append((protocol_id, original_protocol_id))
+                progress.update(task, completed=i + 1)
+                continue
+            seen_protocol_texts[fingerprint] = protocol_id
 
             speeches = parse_speeches_from_protocol(full_text)
             for speech_position, speech in enumerate(speeches, start=1):
@@ -353,6 +364,9 @@ def parse(data_dir: str):
     total_speeches = sum(len(s) for s in speeches_by_party.values())
     console.print(f"\n[green]Parsing complete![/]")
     console.print(f"  Total speeches: {total_speeches}")
+    if duplicate_protocols:
+        duplicates = ", ".join(f"{duplicate} = {original}" for duplicate, original in duplicate_protocols)
+        console.print(f"  Skipped duplicate protocols: {duplicates}")
     console.print(f"  Parties: {', '.join(speeches_by_party.keys())}")
     console.print(f"  Saved to: {store.speeches_file}")
 

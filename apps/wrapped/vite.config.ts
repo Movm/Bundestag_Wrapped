@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import path from 'path'
 import { EDITION_ASSET_PATTERNS } from './pwa-cache-routes.ts'
+import { devEditionsPlugin } from './dev-editions.ts'
 
 // Bump this only when the runtime-data cache schema changes. Workbox then removes
 // the old named caches while leaving unrelated browser storage untouched.
@@ -11,6 +12,7 @@ const editionCacheVersion = process.env.VITE_EDITION_CACHE_VERSION ?? 'edition-v
 
 export default defineConfig({
   plugins: [
+    devEditionsPlugin(),
     react(),
     tailwindcss(),
     VitePWA({
