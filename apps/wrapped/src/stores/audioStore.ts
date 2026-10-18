@@ -15,6 +15,15 @@ import { type ThemeType, THEME_TRACK_INFO } from '@/shared/theme-music';
 
 const STORAGE_KEY = 'bundestag-wrapped-sound-muted';
 
+function getBrowserStorage(): Storage | undefined {
+  if (typeof window === 'undefined') return undefined;
+  try {
+    return window.localStorage ?? undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 /** Local previews must stay silent so tests and review sessions never emit audio. */
 export const IS_DEV_AUDIO_DISABLED = import.meta.env.DEV;
 
@@ -31,24 +40,18 @@ interface AudioState {
 
 export const useAudioStore = create<AudioState>((set, get) => ({
   isMuted: IS_DEV_AUDIO_DISABLED ||
-    (typeof window !== 'undefined'
-      ? window.localStorage.getItem(STORAGE_KEY) === 'true'
-      : false),
+    getBrowserStorage()?.getItem(STORAGE_KEY) === 'true',
   currentTheme: null,
 
   setMuted: (muted) => {
     const nextMuted = IS_DEV_AUDIO_DISABLED || muted;
-    if (typeof window !== 'undefined') {
-      window.localStorage.setItem(STORAGE_KEY, String(nextMuted));
-    }
+    getBrowserStorage()?.setItem(STORAGE_KEY, String(nextMuted));
     set({ isMuted: nextMuted });
   },
 
   toggleMute: () => {
     const newMuted = IS_DEV_AUDIO_DISABLED || !get().isMuted;
-    if (typeof window !== 'undefined') {
-      window.localStorage.setItem(STORAGE_KEY, String(newMuted));
-    }
+    getBrowserStorage()?.setItem(STORAGE_KEY, String(newMuted));
     set({ isMuted: newMuted });
     return newMuted;
   },
