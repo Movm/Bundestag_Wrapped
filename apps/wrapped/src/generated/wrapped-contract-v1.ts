@@ -445,6 +445,7 @@ export interface EditionSummary {
   "year": number;
   "status": EditionStatus;
   "manifestUrl": NonEmptyString;
+  "access"?: "basic-auth";
 }
 
 export interface EditionsIndex {

@@ -18,7 +18,7 @@ import pandas as pd
 
 from noun_analysis.parser import parse_speeches_from_protocol
 from noun_analysis.speech_aggregation import aggregate_speeches_by_type
-from noun_analysis.text_utils import strip_parenthetical_content, extract_name_parts
+from noun_analysis.text_utils import extract_name_parts
 from noun_analysis.factions import extract_parties_from_applause, normalize_party
 from .types import (
     WrappedDataBase,
@@ -29,7 +29,6 @@ from .types import (
     SpeakerProfile,
     GenderStats,
     GenderPartyStats,
-    Gender,
 )
 from .gender import GenderDetector, load_custom_mappings
 

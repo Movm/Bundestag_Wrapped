@@ -65,7 +65,7 @@ class WrappedDataQueries:
         df["others_avg"] = df[other_cols].mean(axis=1)
         df["ratio"] = df[party_col] / (df["others_avg"] + 0.001)
         # Balanced score: ratio × √per1000 (rewards both distinctiveness AND frequency)
-        df["score"] = df["ratio"] * df[party_col].apply(lambda x: math.sqrt(x))
+        df["score"] = df["ratio"] * df[party_col].apply(math.sqrt)
 
         # Filter: 0.05% min count, ratio > 2.0, exclude stopwords
         configured_stopwords = getattr(self, "signature_stopwords", set())

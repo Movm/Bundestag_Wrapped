@@ -30,9 +30,13 @@ RUN pnpm build
 # nginx-unprivileged runs as uid 101 and cannot bind :80, so it listens on 8080
 # (matched by nginx.conf). Coolify: set the app's internal port to 8080.
 FROM nginxinc/nginx-unprivileged:alpine
+USER root
+RUN apk add --no-cache apache2-utils
 # COPY runs as root at build time, so writing the html/conf dirs is fine.
 COPY --from=build /app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --chmod=755 docker-entrypoint.d/40-preview-auth.sh /docker-entrypoint.d/40-preview-auth.sh
+USER 101
 EXPOSE 8080
 # 127.0.0.1 (not localhost) avoids IPv6 resolution issues in Alpine
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \

@@ -32,6 +32,15 @@ checksums, and quiz output. A successful preview does not deploy anything or
 refresh the preview registered on the live site.
 
 Keep `currentEdition` set to **2025** until the 2026 launch is explicitly approved.
+
+### Protected 2026 preview deployment
+
+The production registry may contain the 2026 preview only with
+`"access": "basic-auth"`; it must not be `currentEdition`. The web container
+requires `PREVIEW_ACCESS_CODE` at runtime and accepts an optional
+`PREVIEW_ACCESS_USER` (default: `preview`). Nginx protects `/2026`, all nested
+preview routes, and `/data/2026/`. The sitemap includes published editions only,
+and protected preview responses are excluded from the service-worker caches.
 Do not regenerate the published `data/2025/final` artifacts or legacy 2025 quiz
 JSON while preparing 2026. Do not switch the homepage as part of a preview fix.
 

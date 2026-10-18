@@ -15,7 +15,7 @@ function manifestsBelow(root) {
   });
 }
 
-/** Fail closed when a deployable data tree contains a preview edition. */
+/** Fail closed unless a preview is explicitly registered as server-protected. */
 export function checkProductionEditions(dataRoot) {
   const registryFile = path.join(dataRoot, 'editions.json');
   if (!existsSync(registryFile)) throw new Error(`Missing production edition registry: ${registryFile}`);
@@ -24,13 +24,19 @@ export function checkProductionEditions(dataRoot) {
   if (!current || current.status !== 'published') {
     throw new Error('Production currentEdition must reference a published edition');
   }
-  const preview = registry.editions.find(edition => edition.status !== 'published');
-  if (preview) throw new Error(`Production registry contains non-published edition: ${preview.id}`);
+  const protectedManifestFiles = new Set();
+  for (const edition of registry.editions) {
+    if (edition.status === 'published') continue;
+    if (edition.status !== 'preview' || edition.access !== 'basic-auth') {
+      throw new Error(`Production registry contains unprotected non-published edition: ${edition.id}`);
+    }
+    protectedManifestFiles.add(path.resolve(dataRoot, edition.manifestUrl.replace(/^\/data\//, '')));
+  }
 
   for (const manifestFile of manifestsBelow(dataRoot)) {
     const manifest = readJson(manifestFile);
-    if (manifest.status === 'preview') {
-      throw new Error(`Production data contains preview manifest: ${path.relative(dataRoot, manifestFile)}`);
+    if (manifest.status === 'preview' && !protectedManifestFiles.has(path.resolve(manifestFile))) {
+      throw new Error(`Production data contains unregistered or unprotected preview manifest: ${path.relative(dataRoot, manifestFile)}`);
     }
   }
   return registry;

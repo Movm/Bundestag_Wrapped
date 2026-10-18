@@ -1926,6 +1926,11 @@
         },
         "manifestUrl": {
           "$ref": "#/$defs/NonEmptyString"
+        },
+        "access": {
+          "enum": [
+            "basic-auth"
+          ]
         }
       }
     },

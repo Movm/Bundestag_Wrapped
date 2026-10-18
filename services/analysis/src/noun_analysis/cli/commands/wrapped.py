@@ -175,6 +175,7 @@ def export_web(data_dir: str, results_dir: str, output: str):
     web_data = data.to_web_json()
     output_path = Path(output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
+    # codeql[py/clear-text-storage-sensitive-data]: public parliamentary aggregates, not credentials or private data.
     output_path.write_text(json.dumps(web_data, ensure_ascii=False, indent=2))
 
     console.print(f"\n[green]Exported to {output}[/]")
@@ -240,8 +241,8 @@ def export_speeches(data_dir: str, output: str):
                 datum = data.get("datum", "")
                 if doc_num and datum:
                     protocol_dates[doc_num] = datum
-            except Exception:
-                pass
+            except Exception as error:
+                console.print(f"[dim]Skipping unreadable protocol metadata {pfile.name}: {error}[/]")
 
     # Build speech database
     speeches = []
@@ -456,6 +457,7 @@ def export_all(data_dir: str, results_dir: str, output_dir: str, skip_speeches: 
     console.print("\n[cyan]1/5[/cyan] Exporting wrapped.json...")
     web_data = data.to_web_json()
     wrapped_path = output_path / "wrapped.json"
+    # codeql[py/clear-text-storage-sensitive-data]: public parliamentary aggregates, not credentials or private data.
     wrapped_path.write_text(json.dumps(web_data, ensure_ascii=False, indent=2))
     console.print(f"  [green]✓[/] {wrapped_path}")
 
