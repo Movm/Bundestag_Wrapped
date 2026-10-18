@@ -3,7 +3,7 @@ import { IS_DEV_AUDIO_DISABLED, useAudioStore } from './audioStore';
 
 describe('audioStore in development', () => {
   beforeEach(() => {
-    localStorage.clear();
+    window.localStorage.clear();
     useAudioStore.getState().setMuted(true);
   });
 
@@ -15,6 +15,6 @@ describe('audioStore in development', () => {
 
     expect(useAudioStore.getState().toggleMute()).toBe(true);
     expect(useAudioStore.getState().isMuted).toBe(true);
-    expect(localStorage.getItem('bundestag-wrapped-sound-muted')).toBe('true');
+    expect(window.localStorage.getItem('bundestag-wrapped-sound-muted')).toBe('true');
   });
 });

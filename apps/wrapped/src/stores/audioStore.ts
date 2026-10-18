@@ -32,14 +32,14 @@ interface AudioState {
 export const useAudioStore = create<AudioState>((set, get) => ({
   isMuted: IS_DEV_AUDIO_DISABLED ||
     (typeof window !== 'undefined'
-      ? localStorage.getItem(STORAGE_KEY) === 'true'
+      ? window.localStorage.getItem(STORAGE_KEY) === 'true'
       : false),
   currentTheme: null,
 
   setMuted: (muted) => {
     const nextMuted = IS_DEV_AUDIO_DISABLED || muted;
     if (typeof window !== 'undefined') {
-      localStorage.setItem(STORAGE_KEY, String(nextMuted));
+      window.localStorage.setItem(STORAGE_KEY, String(nextMuted));
     }
     set({ isMuted: nextMuted });
   },
@@ -47,7 +47,7 @@ export const useAudioStore = create<AudioState>((set, get) => ({
   toggleMute: () => {
     const newMuted = IS_DEV_AUDIO_DISABLED || !get().isMuted;
     if (typeof window !== 'undefined') {
-      localStorage.setItem(STORAGE_KEY, String(newMuted));
+      window.localStorage.setItem(STORAGE_KEY, String(newMuted));
     }
     set({ isMuted: newMuted });
     return newMuted;
