@@ -70,4 +70,55 @@ describe('active slide plan', () => {
     expect(plan).not.toContain('intro-speeches');
     expect(normalizeSection('quiz-speeches', plan)).toBe('intro');
   });
+
+  it('adds explanation and ranking slides for the new comparison questions', () => {
+    const plan = buildActiveSlidePlan(
+      quizModel(['quiz-topic-riser', 'quiz-word-riser', 'quiz-youth-language']),
+      [],
+      {
+        version: 1,
+        groups: [
+          { id: 'quiz-topic-riser' },
+          { id: 'quiz-word-riser' },
+          { id: 'quiz-youth-language' },
+        ],
+      },
+    );
+
+    expect(plan).toEqual([
+      'intro',
+      'info-disclaimer',
+      'quiz-topic-riser',
+      'info-topic-riser',
+      'reveal-topic-risers',
+      'quiz-word-riser',
+      'info-word-riser',
+      'reveal-word-risers',
+      'quiz-youth-language',
+      'info-youth-language',
+      'reveal-youth-language',
+      'reveal-youth-parties',
+      'reveal-youth-speakers',
+      'share',
+      'finale',
+    ]);
+  });
+
+  it('adds signature-word movements only when year-over-year data exists', () => {
+    const model = quizModel(['quiz-signature']);
+    const configuration = { version: 1 as const, groups: [{ id: 'quiz-signature' }] };
+
+    expect(buildActiveSlidePlan(model, [], configuration)).not.toContain('reveal-signature-movements');
+    expect(buildActiveSlidePlan(model, [], configuration, true)).toEqual([
+      'intro',
+      'info-disclaimer',
+      'intro-vocabulary',
+      'quiz-signature',
+      'info-signature',
+      'reveal-signature',
+      'reveal-signature-movements',
+      'share',
+      'finale',
+    ]);
+  });
 });

@@ -176,6 +176,34 @@
       "type": "object", "additionalProperties": false, "required": ["byParty", "overall", "topTopics"],
       "properties": { "byParty": { "type": "object", "additionalProperties": { "type": "object", "additionalProperties": { "$ref": "#/$defs/Ratio" } } }, "overall": { "type": "object", "additionalProperties": { "$ref": "#/$defs/Ratio" } }, "topTopics": { "type": "array", "items": { "$ref": "#/$defs/TopicScore" } } }
     },
+    "ComparisonPeriod": {
+      "type": "object", "additionalProperties": false, "required": ["editionId", "start", "end"],
+      "properties": { "editionId": { "$ref": "#/$defs/NonEmptyString" }, "start": { "$ref": "#/$defs/IsoDate" }, "end": { "$ref": "#/$defs/IsoDate" } }
+    },
+    "RankMovement": {
+      "type": "object", "additionalProperties": false, "required": ["label", "currentRank", "previousRank", "rankChange"],
+      "properties": { "label": { "$ref": "#/$defs/NonEmptyString" }, "currentRank": { "$ref": "#/$defs/Count" }, "previousRank": { "anyOf": [{ "$ref": "#/$defs/Count" }, { "type": "null" }] }, "rankChange": { "type": "integer" } }
+    },
+    "YouthWordCount": {
+      "type": "object", "additionalProperties": false, "required": ["word", "count", "previousCount", "change"],
+      "properties": { "word": { "$ref": "#/$defs/NonEmptyString" }, "count": { "$ref": "#/$defs/Count" }, "previousCount": { "$ref": "#/$defs/Count" }, "change": { "type": "integer" } }
+    },
+    "YouthLanguageAnalysis": {
+      "type": "object", "additionalProperties": false, "required": ["lexiconVersion", "words", "byParty", "bySpeaker"],
+      "properties": { "lexiconVersion": { "$ref": "#/$defs/NonEmptyString" }, "words": { "type": "array", "items": { "$ref": "#/$defs/YouthWordCount" } }, "byParty": { "type": "array", "items": { "$ref": "#/$defs/PartyCount" } }, "bySpeaker": { "type": "array", "items": { "$ref": "#/$defs/NamedPartyCount" } } }
+    },
+    "SignatureWordMovement": {
+      "type": "object", "additionalProperties": false, "required": ["word", "currentRank", "previousRank"],
+      "properties": { "word": { "$ref": "#/$defs/NonEmptyString" }, "currentRank": { "anyOf": [{ "$ref": "#/$defs/Count" }, { "type": "null" }] }, "previousRank": { "anyOf": [{ "$ref": "#/$defs/Count" }, { "type": "null" }] } }
+    },
+    "PartySignatureWordMovements": {
+      "type": "object", "additionalProperties": false, "required": ["party", "risers", "fallers"],
+      "properties": { "party": { "$ref": "#/$defs/NonEmptyString" }, "risers": { "type": "array", "items": { "$ref": "#/$defs/SignatureWordMovement" } }, "fallers": { "type": "array", "items": { "$ref": "#/$defs/SignatureWordMovement" } } }
+    },
+    "YearOverYearAnalysis": {
+      "type": "object", "additionalProperties": false, "required": ["baseline", "topics", "words", "signatureWords", "youthLanguage"],
+      "properties": { "baseline": { "$ref": "#/$defs/ComparisonPeriod" }, "topics": { "type": "array", "items": { "$ref": "#/$defs/RankMovement" } }, "words": { "type": "array", "items": { "$ref": "#/$defs/RankMovement" } }, "signatureWords": { "type": "array", "items": { "$ref": "#/$defs/PartySignatureWordMovements" } }, "youthLanguage": { "$ref": "#/$defs/YouthLanguageAnalysis" } }
+    },
     "QuizQuestion": {
       "type": "object", "additionalProperties": false, "required": ["id", "type", "question", "options", "correctAnswer", "explanation"],
       "properties": { "id": { "$ref": "#/$defs/NonEmptyString" }, "type": { "enum": ["guess-party", "prediction", "emoji-quiz"] }, "question": { "$ref": "#/$defs/NonEmptyString" }, "word": { "$ref": "#/$defs/NonEmptyString" }, "party": { "$ref": "#/$defs/NonEmptyString" }, "options": { "type": "array", "items": { "$ref": "#/$defs/NonEmptyString" } }, "correctAnswer": { "$ref": "#/$defs/NonEmptyString" }, "explanation": { "$ref": "#/$defs/NonEmptyString" }, "ratio": { "$ref": "#/$defs/Ratio" }, "swiftie": { "$ref": "#/$defs/NamedParty" }, "decoys": { "type": "array", "items": { "$ref": "#/$defs/NamedParty" } } }
@@ -188,7 +216,7 @@
     "WrappedData": {
       "type": "object", "additionalProperties": false,
       "required": ["metadata", "parties", "drama", "topSpeakers", "topBefragungResponders", "topSpeakersByWords", "topSpeakersByAvgWords", "hotTopics", "toneAnalysis", "topicAnalysis", "funFacts", "genderAnalysis", "moinSpeakers", "topQuestionAskers"],
-      "properties": { "metadata": { "$ref": "#/$defs/WrappedMetadata" }, "parties": { "type": "array", "items": { "$ref": "#/$defs/PartyStats" } }, "drama": { "$ref": "#/$defs/DramaStats" }, "topSpeakers": { "type": "array", "items": { "$ref": "#/$defs/TopSpeaker" } }, "topBefragungResponders": { "type": "array", "items": { "$ref": "#/$defs/BefragungResponder" } }, "topSpeakersByWords": { "type": "array", "items": { "$ref": "#/$defs/SpeakerWords" } }, "topSpeakersByAvgWords": { "type": "array", "items": { "$ref": "#/$defs/SpeakerAverageWords" } }, "hotTopics": { "type": "array", "items": { "$ref": "#/$defs/NonEmptyString" } }, "quizQuestions": { "type": "array", "items": { "$ref": "#/$defs/QuizQuestion" } }, "toneAnalysis": { "anyOf": [{ "$ref": "#/$defs/ToneAnalysis" }, { "type": "null" }] }, "topicAnalysis": { "anyOf": [{ "$ref": "#/$defs/TopicAnalysis" }, { "type": "null" }] }, "funFacts": { "type": "array", "items": { "$ref": "#/$defs/FunFact" } }, "genderAnalysis": { "anyOf": [{ "$ref": "#/$defs/GenderAnalysis" }, { "type": "null" }] }, "moinSpeakers": { "type": "array", "items": { "$ref": "#/$defs/NamedPartyCount" } }, "topQuestionAskers": { "type": "array", "items": { "$ref": "#/$defs/NamedPartyCount" } } }
+      "properties": { "metadata": { "$ref": "#/$defs/WrappedMetadata" }, "parties": { "type": "array", "items": { "$ref": "#/$defs/PartyStats" } }, "drama": { "$ref": "#/$defs/DramaStats" }, "topSpeakers": { "type": "array", "items": { "$ref": "#/$defs/TopSpeaker" } }, "topBefragungResponders": { "type": "array", "items": { "$ref": "#/$defs/BefragungResponder" } }, "topSpeakersByWords": { "type": "array", "items": { "$ref": "#/$defs/SpeakerWords" } }, "topSpeakersByAvgWords": { "type": "array", "items": { "$ref": "#/$defs/SpeakerAverageWords" } }, "hotTopics": { "type": "array", "items": { "$ref": "#/$defs/NonEmptyString" } }, "quizQuestions": { "type": "array", "items": { "$ref": "#/$defs/QuizQuestion" } }, "toneAnalysis": { "anyOf": [{ "$ref": "#/$defs/ToneAnalysis" }, { "type": "null" }] }, "topicAnalysis": { "anyOf": [{ "$ref": "#/$defs/TopicAnalysis" }, { "type": "null" }] }, "funFacts": { "type": "array", "items": { "$ref": "#/$defs/FunFact" } }, "genderAnalysis": { "anyOf": [{ "$ref": "#/$defs/GenderAnalysis" }, { "type": "null" }] }, "moinSpeakers": { "type": "array", "items": { "$ref": "#/$defs/NamedPartyCount" } }, "topQuestionAskers": { "type": "array", "items": { "$ref": "#/$defs/NamedPartyCount" } }, "yearOverYear": { "$ref": "#/$defs/YearOverYearAnalysis" } }
     },
     "SpeakerIndexAsset": {
       "type": "object",
@@ -318,7 +346,7 @@
     "EditionQuizGroup": { "type": "object", "additionalProperties": false, "required": ["id"], "properties": { "id": { "type": "string", "pattern": "^quiz-[a-z0-9-]+$" }, "question": { "$ref": "#/$defs/QuizQuestion" }, "text": { "$ref": "#/$defs/EditionQuizTextOverrides" } } },
     "EditionQuizConfiguration": { "type": "object", "additionalProperties": false, "required": ["version", "groups"], "properties": { "version": { "const": 1 }, "groups": { "type": "array", "items": { "$ref": "#/$defs/EditionQuizGroup" } } } },
     "EditionContent": { "type": "object", "additionalProperties": false, "required": ["editionId", "year"], "properties": { "editionId": { "$ref": "#/$defs/NonEmptyString" }, "year": { "type": "integer", "minimum": 2000 }, "quiz": { "$ref": "#/$defs/EditionQuizConfiguration" } } },
-    "EditionSummary": { "type": "object", "additionalProperties": false, "required": ["id", "year", "status", "manifestUrl"], "properties": { "id": { "$ref": "#/$defs/NonEmptyString" }, "year": { "type": "integer", "minimum": 2000 }, "status": { "$ref": "#/$defs/EditionStatus" }, "manifestUrl": { "$ref": "#/$defs/NonEmptyString" } } },
+    "EditionSummary": { "type": "object", "additionalProperties": false, "required": ["id", "year", "status", "manifestUrl"], "properties": { "id": { "$ref": "#/$defs/NonEmptyString" }, "year": { "type": "integer", "minimum": 2000 }, "status": { "$ref": "#/$defs/EditionStatus" }, "manifestUrl": { "$ref": "#/$defs/NonEmptyString" }, "access": { "enum": ["basic-auth"] } } },
     "EditionsIndex": { "type": "object", "additionalProperties": false, "required": ["schemaVersion", "currentEdition", "editions"], "properties": { "schemaVersion": { "const": 1 }, "currentEdition": { "$ref": "#/$defs/NonEmptyString" }, "editions": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/EditionSummary" } } } }
   }
 }

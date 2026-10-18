@@ -6,8 +6,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/generate-sitemap.cjs",
+    "prebuild": "node scripts/check-production-editions.mjs && node scripts/check-preview-auth.mjs && node scripts/generate-sitemap.cjs",
     "build": "tsc -b && vite build",
+    "postbuild": "node scripts/check-production-editions.mjs dist/data",
     "check:bundle-budget": "node scripts/check-bundle-budget.cjs",
     "check:edition-surface": "node scripts/check-edition-hardcodes.cjs",
     "import:abgeordnetenwatch": "node scripts/import-abgeordnetenwatch.cjs",

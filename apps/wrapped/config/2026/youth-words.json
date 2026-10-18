@@ -1,0 +1,83 @@
+{
+  "version": "2026-official-candidates-v3-context",
+  "description": "Alle 42 unterschiedlichen Top-10-Kandidaten von Langenscheidt 2022 bis 2026 sowie vier bereits verwendete Ergänzungen. Mehrdeutige Wörter werden nur in redaktionell definierten Kontexten gezählt.",
+  "terms": [
+    { "word": "gommemode", "years": [2022] },
+    { "word": "siu (uuu)", "aliases": ["siu", "siuu", "siuuu", "siuuuu", "siuuuuu"], "years": [2022] },
+    { "word": "smash", "years": [2022] },
+    {
+      "word": "wild/wyld",
+      "aliases": ["wild", "wyld"],
+      "years": [2022],
+      "includeContexts": ["(?:arg|so|richtig|nur)\\s+wild", "(?:arg|so|richtig|nur)\\s+wyld"],
+      "excludeContexts": ["halb\\s+so\\s+wild", "so\\s+wild\\s+um\\s+sich"]
+    },
+    { "word": "digga", "aliases": ["digga", "diggah"], "years": [2022, 2023, 2024, 2025, 2026] },
+    { "word": "macher", "years": [2022] },
+    { "word": "bodenlos", "years": [2022] },
+    { "word": "slay", "years": [2022, 2023] },
+    { "word": "sus", "years": [2022] },
+    {
+      "word": "bre/bro/bruder",
+      "aliases": ["bre", "bro", "bruder"],
+      "years": [2022],
+      "includeContexts": ["[„\\\"](?:bre|bro|bruder)[“\\\"]", "\\bbruder,\\s+(?:einer|vertrau)"]
+    },
+    { "word": "auf lock", "years": [2023] },
+    { "word": "darf er so", "years": [2023] },
+    { "word": "goofy", "years": [2023] },
+    { "word": "kerl*in", "aliases": ["kerl*in", "kerl:in", "kerlin"], "years": [2023] },
+    { "word": "npc", "years": [2023] },
+    { "word": "rizz", "years": [2023] },
+    { "word": "side eye", "years": [2023] },
+    { "word": "yolo", "years": [2023, 2024] },
+    {
+      "word": "aura",
+      "years": [2024],
+      "includeContexts": ["[+-]\\d+\\s+aura", "aura\\s+(?:haben|verlieren|verloren|bekommen|gesammelt)"]
+    },
+    { "word": "akh", "aliases": ["akh", "akhi"], "years": [2024] },
+    { "word": "hölle nein", "years": [2024] },
+    { "word": "talahon", "years": [2024] },
+    {
+      "word": "schere",
+      "years": [2024, 2025, 2026],
+      "includeContexts": ["schere\\s*(?:[.!?]|heben|hoch)", "(?:hebe|heb|hebt).{0,30}schere"]
+    },
+    { "word": "yurr", "years": [2024] },
+    { "word": "nein pascal, ich denke nicht", "years": [2024] },
+    {
+      "word": "pyrotechnik",
+      "years": [2024],
+      "includeContexts": ["pyrotechnik\\s*!", "pyrotechnik.{0,24}kein verbrechen", "für\\s+(?:den einsatz von\\s+)?pyrotechnik"]
+    },
+    { "word": "checkst du", "years": [2025] },
+    { "word": "das crazy", "years": [2025] },
+    { "word": "goonen", "years": [2025] },
+    { "word": "lowkey", "years": [2025] },
+    {
+      "word": "rede",
+      "years": [2025],
+      "includeContexts": ["(?:^|[.!?]\\s|[„“\\\"])\\s*rede\\s*[!.?„“\\\"]"]
+    },
+    { "word": "sybau", "years": [2025] },
+    { "word": "tot", "years": [2025], "includeContexts": ["(?:komplett|voll|so|einfach)\\s+tot"] },
+    { "word": "tuff", "years": [2025] },
+    {
+      "word": "67",
+      "years": [2026],
+      "includeContexts": ["(?:^|[.!?]\\s|[„“\\\"])\\s*67\\s*[!.?„“\\\"]"]
+    },
+    { "word": "crashout", "years": [2026] },
+    { "word": "du bist gut genug", "years": [2026] },
+    { "word": "gute käse", "years": [2026] },
+    { "word": "macker", "years": [2026] },
+    { "word": "peak", "years": [2026], "includeContexts": ["(?:ist|war|einfach|absolut)\\s+peak"] },
+    { "word": "ragebait", "years": [2026], "winner": 2026 },
+    { "word": "süper", "years": [2026] },
+    { "word": "lost", "years": [2020], "source": "supplement" },
+    { "word": "cringe", "years": [2021], "source": "supplement" },
+    { "word": "delulu", "source": "supplement" },
+    { "word": "yapping", "source": "supplement" }
+  ]
+}

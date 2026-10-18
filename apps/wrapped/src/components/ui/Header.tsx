@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Menu, X, Volume2, VolumeX, Music, Music2 } from 'lucide-react';
 import { useState } from 'react';
 import { toggleBackgroundMusic, isBackgroundMusicPlaying } from '@/lib/sounds';
-import { useAudioStore } from '@/stores/audioStore';
+import { IS_DEV_AUDIO_DISABLED, useAudioStore } from '@/stores/audioStore';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionPath, editionSurface } from '@/edition/surface';
 
@@ -45,6 +45,7 @@ export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderPro
           {/* Background music toggle */}
           <button
             onClick={handleToggleMusic}
+            disabled={IS_DEV_AUDIO_DISABLED}
             className={`p-2 rounded-lg transition-colors ${
               isDark
                 ? musicPlaying
@@ -54,7 +55,8 @@ export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderPro
                   ? 'text-pink-500 hover:text-pink-600 hover:bg-gray-100'
                   : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
             }`}
-            aria-label={musicPlaying ? 'Musik ausschalten' : 'Musik einschalten'}
+            aria-label={IS_DEV_AUDIO_DISABLED ? 'Musik im Entwicklungsmodus deaktiviert' : musicPlaying ? 'Musik ausschalten' : 'Musik einschalten'}
+            title={IS_DEV_AUDIO_DISABLED ? 'Musik ist im Entwicklungsmodus deaktiviert' : undefined}
           >
             {musicPlaying ? <Music size={20} aria-hidden="true" /> : <Music2 size={20} aria-hidden="true" />}
           </button>
@@ -62,12 +64,14 @@ export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderPro
           {/* Sound effects toggle */}
           <button
             onClick={handleToggleMute}
+            disabled={IS_DEV_AUDIO_DISABLED}
             className={`p-2 rounded-lg transition-colors ${
               isDark
                 ? 'text-white/70 hover:text-white hover:bg-white/10'
                 : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
             }`}
-            aria-label={muted ? 'Ton einschalten' : 'Ton ausschalten'}
+            aria-label={IS_DEV_AUDIO_DISABLED ? 'Ton im Entwicklungsmodus deaktiviert' : muted ? 'Ton einschalten' : 'Ton ausschalten'}
+            title={IS_DEV_AUDIO_DISABLED ? 'Ton ist im Entwicklungsmodus deaktiviert' : undefined}
           >
             {muted ? <VolumeX size={20} aria-hidden="true" /> : <Volume2 size={20} aria-hidden="true" />}
           </button>

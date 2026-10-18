@@ -30,6 +30,58 @@ function addQuestion(
 /** Builds deterministic, evidence-backed quiz questions for one edition. */
 export function buildEditionQuizModel(data: WrappedData): EditionQuizModel {
   const model: EditionQuizModel = {};
+  addQuestion(model, 'quiz-topic-riser', () => {
+    const comparison = data.yearOverYear;
+    const winner = comparison?.topics[0];
+    if (!comparison || !winner) return undefined;
+    const baseline = comparison.baseline.editionId;
+    const movement = winner.previousRank === null
+      ? `neu auf Platz ${winner.currentRank}`
+      : `von Platz ${winner.previousRank} auf Platz ${winner.currentRank}`;
+    return question(
+      'quiz-topic-riser',
+      `Welches Thema ist gegenüber ${baseline} am stärksten aufgestiegen?`,
+      comparison.topics.map(item => item.label),
+      winner.label,
+      `${winner.label} stieg ${movement}.`,
+    );
+  });
+
+  addQuestion(model, 'quiz-word-riser', () => {
+    const comparison = data.yearOverYear;
+    // A new top-list entry is useful data, but it has no actual prior rank and
+    // therefore must not win a question specifically about moving up.
+    const movements = comparison?.words.filter(item => item.previousRank !== null) ?? [];
+    const winner = movements[0];
+    if (!comparison || !winner) return undefined;
+    const movement = winner.previousRank === null
+      ? `neu auf Platz ${winner.currentRank}`
+      : `von Platz ${winner.previousRank} auf Platz ${winner.currentRank}`;
+    return question(
+      'quiz-word-riser',
+      'Was ist das Aufsteigerwort des Jahres?',
+      movements.map(item => item.label),
+      winner.label,
+      `„${winner.label}“ stieg ${movement}.`,
+    );
+  });
+
+  addQuestion(model, 'quiz-youth-language', () => {
+    const comparison = data.yearOverYear;
+    const words = (comparison?.youthLanguage.words ?? []).filter(item => item.count > 0);
+    const winner = words[0];
+    if (!winner) return undefined;
+    const topParty = comparison?.youthLanguage.byParty.find(item => item.party !== 'fraktionslos');
+    const partyDetail = topParty ? ` Die meisten Treffer entfielen auf ${topParty.party} (${number.format(topParty.count)}).` : '';
+    return question(
+      'quiz-youth-language',
+      'Welches Wort aus unserer Jugendwortliste kam im Bundestag am häufigsten vor?',
+      words.map(item => item.word),
+      winner.word,
+      `„${winner.word}“ kommt auf ${number.format(winner.count)} kontextuell bestätigte Treffer.${partyDetail}`,
+    );
+  });
+
   addQuestion(model, 'quiz-topics', () => {
     const winner = topTopic(data);
     const topics = (data.topicAnalysis?.topTopics ?? []).map(item => item.topic);

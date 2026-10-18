@@ -249,6 +249,53 @@ export interface TopicAnalysis {
   "topTopics": Array<TopicScore>;
 }
 
+export interface ComparisonPeriod {
+  "editionId": NonEmptyString;
+  "start": IsoDate;
+  "end": IsoDate;
+}
+
+export interface RankMovement {
+  "label": NonEmptyString;
+  "currentRank": Count;
+  "previousRank": Count | null;
+  "rankChange": number;
+}
+
+export interface YouthWordCount {
+  "word": NonEmptyString;
+  "count": Count;
+  "previousCount": Count;
+  "change": number;
+}
+
+export interface YouthLanguageAnalysis {
+  "lexiconVersion": NonEmptyString;
+  "words": Array<YouthWordCount>;
+  "byParty": Array<PartyCount>;
+  "bySpeaker": Array<NamedPartyCount>;
+}
+
+export interface SignatureWordMovement {
+  "word": NonEmptyString;
+  "currentRank": Count | null;
+  "previousRank": Count | null;
+}
+
+export interface PartySignatureWordMovements {
+  "party": NonEmptyString;
+  "risers": Array<SignatureWordMovement>;
+  "fallers": Array<SignatureWordMovement>;
+}
+
+export interface YearOverYearAnalysis {
+  "baseline": ComparisonPeriod;
+  "topics": Array<RankMovement>;
+  "words": Array<RankMovement>;
+  "signatureWords": Array<PartySignatureWordMovements>;
+  "youthLanguage": YouthLanguageAnalysis;
+}
+
 export interface QuizQuestion {
   "id": NonEmptyString;
   "type": "guess-party" | "prediction" | "emoji-quiz";
@@ -296,6 +343,7 @@ export interface WrappedData {
   "genderAnalysis": GenderAnalysis | null;
   "moinSpeakers": Array<NamedPartyCount>;
   "topQuestionAskers": Array<NamedPartyCount>;
+  "yearOverYear"?: YearOverYearAnalysis;
 }
 
 export type SpeakerIndexAsset = Record<string, unknown>;
@@ -397,6 +445,7 @@ export interface EditionSummary {
   "year": number;
   "status": EditionStatus;
   "manifestUrl": NonEmptyString;
+  "access"?: "basic-auth";
 }
 
 export interface EditionsIndex {

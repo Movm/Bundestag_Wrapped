@@ -3,6 +3,7 @@ import type { EditionQuizConfiguration } from '@/generated/wrapped-contract-v1';
 import type { SlideType } from './constants';
 
 export const QUIZ_SLIDES = [
+  'quiz-topic-riser', 'quiz-word-riser', 'quiz-youth-language',
   'quiz-topics', 'quiz-signature', 'quiz-speeches', 'quiz-drama',
   'quiz-discriminatory', 'quiz-common-words', 'quiz-moin',
   'quiz-tone', 'quiz-gender',
@@ -13,6 +14,7 @@ type DataQuizSlide = Exclude<(typeof QUIZ_SLIDES)[number], 'quiz-moin'>;
 interface StoryGroup {
   readonly quiz: (typeof QUIZ_SLIDES)[number];
   readonly slides: readonly SlideType[];
+  readonly comparisonSlides?: readonly SlideType[];
 }
 
 /**
@@ -23,12 +25,15 @@ interface StoryGroup {
 const STORY_TEMPLATE: readonly (SlideType | StoryGroup)[] = [
   'intro',
   'info-disclaimer',
+  { quiz: 'quiz-topic-riser', slides: ['quiz-topic-riser', 'info-topic-riser', 'reveal-topic-risers'] },
+  { quiz: 'quiz-word-riser', slides: ['quiz-word-riser', 'info-word-riser', 'reveal-word-risers'] },
   { quiz: 'quiz-topics', slides: ['intro-topics', 'quiz-topics', 'info-topics', 'reveal-topics', 'info-party-topics', 'reveal-party-topics'] },
-  { quiz: 'quiz-signature', slides: ['intro-vocabulary', 'quiz-signature', 'info-signature', 'reveal-signature'] },
+  { quiz: 'quiz-signature', slides: ['intro-vocabulary', 'quiz-signature', 'info-signature', 'reveal-signature'], comparisonSlides: ['reveal-signature-movements'] },
   { quiz: 'quiz-speeches', slides: ['intro-speeches', 'quiz-speeches', 'info-speeches', 'chart-speeches'] },
   { quiz: 'quiz-drama', slides: ['intro-drama', 'quiz-drama', 'info-drama', 'reveal-drama'] },
   { quiz: 'quiz-discriminatory', slides: ['intro-discriminatory', 'quiz-discriminatory', 'info-discriminatory', 'reveal-discriminatory'] },
   { quiz: 'quiz-common-words', slides: ['intro-common-words', 'quiz-common-words', 'reveal-common-words'] },
+  { quiz: 'quiz-youth-language', slides: ['quiz-youth-language', 'info-youth-language', 'reveal-youth-language', 'reveal-youth-parties', 'reveal-youth-speakers'] },
   { quiz: 'quiz-moin', slides: ['intro-moin', 'quiz-moin', 'info-moin', 'reveal-moin'] },
   { quiz: 'quiz-tone', slides: ['intro-tone', 'quiz-tone', 'info-tone', 'reveal-tone'] },
   { quiz: 'quiz-gender', slides: ['quiz-gender', 'info-gender', 'reveal-gender'] },
@@ -59,6 +64,7 @@ export function buildActiveSlidePlan(
   model: EditionQuizModel,
   moinSpeakers: readonly MoinQuizCandidate[] | null | undefined,
   configuration?: EditionQuizConfiguration,
+  hasYearOverYear = false,
 ): SlideType[] {
   if (configuration) {
     const groups = new Map(
@@ -69,7 +75,9 @@ export function buildActiveSlidePlan(
       'info-disclaimer',
       ...configuration.groups.flatMap(({ id }) => {
         const group = groups.get(id as (typeof QUIZ_SLIDES)[number]);
-        if (group) return model[id] ? [...group.slides] : [];
+        if (group) return model[id]
+          ? [...group.slides, ...(hasYearOverYear ? group.comparisonSlides ?? [] : [])]
+          : [];
         // Configuration validation guarantees that custom groups have a question.
         return model[id] ? [id as SlideType] : [];
       }),
@@ -82,7 +90,9 @@ export function buildActiveSlidePlan(
     const available = entry.quiz === 'quiz-moin'
       ? hasAvailableMoinQuiz(moinSpeakers)
       : hasQuiz(model, entry.quiz);
-    return available ? [...entry.slides] : [];
+    return available
+      ? [...entry.slides, ...(hasYearOverYear ? entry.comparisonSlides ?? [] : [])]
+      : [];
   });
 }
 
