@@ -3,6 +3,8 @@
 from datetime import datetime, timezone
 import random
 
+from ..stopwords import is_content_word
+
 
 def _generated_at() -> str:
     """Return the export time as an ISO 8601 UTC timestamp."""
@@ -485,7 +487,10 @@ class ExportMixin:
                 "uniqueSpeakers": unique_speakers,
                 "topWords": [
                     {"word": w, "count": c}
-                    for w, c in self.top_words.get(party, {}).get("nouns", [])[:7]
+                    for w, c in [
+                        (w, c) for w, c in self.top_words.get(party, {}).get("nouns", [])
+                        if is_content_word(w)
+                    ][:7]
                 ],
                 "signatureWords": [
                     {"word": w, "ratio": round(r, 1)}

@@ -3,6 +3,8 @@
 import math
 from collections import Counter
 
+from ..stopwords import is_content_word
+
 # Event-specific words to exclude from distinctive word calculations
 # These skew statistics due to specific debates (e.g., Afghanistan/Ortskräfte debate)
 EVENT_STOPWORDS = {
@@ -37,7 +39,7 @@ class WrappedDataQueries:
         Uses a balanced algorithm:
         1. Minimum count: 0.05% of party's total words (scales with speaking time)
         2. Distinctiveness: ratio vs other parties must be > 2.0
-        3. Stopword filtering: Excludes event-specific and party self-reference words
+        3. Stopword filtering: Excludes generic, procedural, event and party terms
         4. Balanced score: ratio × √per1000 (rewards both distinctiveness AND frequency)
         """
         if word_type not in self.word_frequencies:
@@ -74,8 +76,9 @@ class WrappedDataQueries:
         distinctive = df[
             (df[party_count_col] >= min_count) &
             (df["ratio"] > 2.0) &
-            (~df["word"].isin(EVENT_STOPWORDS)) &
-            (~df["word"].isin(PARTY_STOPWORDS)) &
+            (df["word"].map(lambda word: is_content_word(word, word_type))) &
+            (~df["word"].str.casefold().isin(EVENT_STOPWORDS)) &
+            (~df["word"].str.casefold().isin(PARTY_STOPWORDS)) &
             (~df["word"].isin(configured_stopwords)) &
             allowed_shape
         ]
@@ -125,8 +128,9 @@ class WrappedDataQueries:
         key_topics = df[
             (df[party_count_col] >= min_count) &
             (df["ratio"] > 1.5) &
-            (~df["word"].isin(EVENT_STOPWORDS)) &
-            (~df["word"].isin(PARTY_STOPWORDS)) &
+            (df["word"].map(lambda word: is_content_word(word, word_type))) &
+            (~df["word"].str.casefold().isin(EVENT_STOPWORDS)) &
+            (~df["word"].str.casefold().isin(PARTY_STOPWORDS)) &
             (~df["word"].isin(configured_stopwords)) &
             allowed_shape
         ]
@@ -239,7 +243,8 @@ class WrappedDataQueries:
         for party in self.metadata["parties"]:
             if party not in self.top_words:
                 continue
-            top_50 = self.top_words[party]["nouns"][:50]
+            top_50 = [(w, c) for w, c in self.top_words[party]["nouns"]
+                      if is_content_word(w)][:50]
             for word, count in top_50:
                 word_party_count[word] += 1
                 word_total_count[word] += count
