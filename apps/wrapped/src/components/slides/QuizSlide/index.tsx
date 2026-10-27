@@ -196,6 +196,13 @@ export const QuizSlide = memo(function QuizSlide({
     onComplete,
   });
 
+  // Result overlays belong to the visible question, not a retained neighbour.
+  useEffect(() => {
+    if (isInView || !showResult) return;
+    const frame = requestAnimationFrame(() => { setShowResult(false); setSelectedAnswer(null); });
+    return () => cancelAnimationFrame(frame);
+  }, [isInView, showResult]);
+
   const isCorrect = selectedAnswer === question.correctAnswer;
 
   // Get confetti colors from theme
@@ -260,10 +267,10 @@ export const QuizSlide = memo(function QuizSlide({
       </AnimatePresence>
 
       <AnimatePresence>
-        {showResult && isCorrect && (
+        {showResult && isInView && isCorrect && (
           <SuccessOverlay onComplete={handleOverlayComplete} confettiColors={confettiColors} />
         )}
-        {showResult && !isCorrect && (
+        {showResult && isInView && !isCorrect && (
           <WrongOverlay
             explanation={question.explanation}
             onComplete={handleOverlayComplete}

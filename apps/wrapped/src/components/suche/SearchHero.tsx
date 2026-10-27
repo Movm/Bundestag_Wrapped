@@ -1,3 +1,4 @@
+import { SearchInput } from './SearchInput';
 import { useState } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
@@ -76,11 +77,11 @@ export function SearchHero({ state, updateState }: SearchHeroProps) {
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             />
           </svg>
-          <input
+          <SearchInput
             type="text"
             placeholder="Suche nach Themen, Redner:innen, Parteien..."
             value={state.q}
-            onChange={(e) => updateState({ q: e.target.value })}
+            onQueryChange={(q) => updateState({ q })}
             onFocus={() => setInputFocused(true)}
             onBlur={() => setInputFocused(false)}
             className="w-full bg-transparent px-14 py-5 text-lg text-white placeholder:text-white/40 focus:outline-none"

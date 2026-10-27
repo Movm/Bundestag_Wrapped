@@ -1,8 +1,9 @@
-import { useRef, useImperativeHandle, forwardRef, useEffect, useCallback, type ReactNode } from 'react';
+import { useRef, useImperativeHandle, forwardRef, useEffect, useCallback, type ReactNode, type RefObject } from 'react';
 import { cn } from '@/lib/utils';
 
 interface ScrollContainerProps {
   children: ReactNode;
+  scrollElementRef?: RefObject<HTMLDivElement | null>;
   onSectionChange?: (sectionId: string) => void;
   locked?: boolean;
   className?: string;
@@ -20,8 +21,9 @@ const SCROLL_COOLDOWN = 600;   // ms to wait after scrolling before allowing ano
 const DELTA_RESET_DELAY = 150; // ms of no wheel events before resetting accumulator
 
 export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerProps>(
-  function ScrollContainer({ children, onSectionChange, locked, className }, ref) {
-    const containerRef = useRef<HTMLDivElement>(null);
+  function ScrollContainer({ children, onSectionChange, locked, className, scrollElementRef }, ref) {
+    const internalRef = useRef<HTMLDivElement>(null);
+    const containerRef = scrollElementRef ?? internalRef;
 
     // Store callback in ref to avoid recreating IntersectionObserver
     const onSectionChangeRef = useRef(onSectionChange);
@@ -42,7 +44,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
     // Helper: get all slide sections
     const getSections = useCallback(() => {
       return Array.from(containerRef.current?.querySelectorAll('[data-slide-id]') || []);
-    }, []);
+    }, [containerRef]);
 
     // Helper: get current section index
     const getCurrentIndex = useCallback(() => {
@@ -85,7 +87,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
       sections.forEach((section) => observer.observe(section));
 
       return () => observer.disconnect();
-    }, []); // Empty deps - observer is stable, callback accessed via ref
+    }, [containerRef]); // Callback accessed via ref
 
     // Wheel event handler for controlled slide-by-slide scrolling
     useEffect(() => {
@@ -157,10 +159,13 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
           window.clearTimeout(deltaResetTimeoutRef.current);
         }
       };
-    }, [getCurrentIndex, getSections, scrollToIndex]);
+    }, [containerRef, getCurrentIndex, getSections, scrollToIndex]);
 
     useImperativeHandle(ref, () => ({
       scrollToNextSlide: (currentSlideId: string) => {
+        // A completed quiz/auto-advance timer must not pull the reader back
+        // after they have already navigated to another section.
+        if (currentSectionRef.current !== currentSlideId) return;
         // Set scrolling flag to prevent wheel interference
         isScrollingRef.current = true;
         setTimeout(() => {
@@ -187,8 +192,11 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
     }));
 
     return (
-      <div
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- Scroll region needs keyboard access even when all quiz buttons are disabled.
+      <div tabIndex={0}
         ref={containerRef}
+        role="region"
+        aria-label="Wrapped-Folien"
         className={cn(
           'h-screen scroll-smooth',
           'snap-y snap-mandatory',

@@ -1,4 +1,5 @@
-import { useRef, useEffect, Suspense, lazy } from 'react';
+import { usePageVisible } from '@/hooks/usePageVisible';
+import { Activity, Suspense, lazy, type RefObject } from 'react';
 import { useDebugRender } from '@/hooks/useDebugRender';
 import { useReducedMotion, useScroll, useTransform, AnimatePresence, motion, type MotionValue } from 'motion/react';
 import { BackgroundContrails, ContrailGradients } from './Contrails';
@@ -35,7 +36,7 @@ interface BackgroundSystemProps {
   slideId?: string;
   /** Legacy intensity prop (used when slideId not provided) */
   intensity?: Intensity;
-  scrollContainer?: HTMLDivElement | null;
+  scrollContainer?: RefObject<HTMLDivElement | null>;
   sparkles?: boolean | SparklesConfig;
 }
 
@@ -48,7 +49,12 @@ interface BackgroundSystemProps {
  * When slideId is provided, the system automatically selects the
  * appropriate theme and effect. Falls back to contrails when not provided.
  */
-export function BackgroundSystem({
+export function BackgroundSystem(props: BackgroundSystemProps) {
+  const visible = usePageVisible();
+  return <Activity mode={visible ? 'visible' : 'hidden'}><BackgroundContent {...props} /></Activity>;
+}
+
+function BackgroundContent({
   slideId,
   intensity = 'medium',
   scrollContainer,
@@ -64,16 +70,7 @@ export function BackgroundSystem({
     sparkles,
   });
 
-  // Create a ref wrapper for the scroll container
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  useEffect(() => {
-    containerRef.current = scrollContainer ?? null;
-  }, [scrollContainer]);
-
-  // Track scroll progress through all slides
-  const { scrollYProgress } = useScroll({
-    container: scrollContainer ? containerRef : undefined,
-  });
+  const { scrollYProgress } = useScroll({ container: scrollContainer });
 
   // Create parallax transforms for each contrail
   const parallaxTransforms = PARALLAX_SPEEDS.map((speed) =>

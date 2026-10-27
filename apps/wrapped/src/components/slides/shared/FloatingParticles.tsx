@@ -1,4 +1,5 @@
-import { memo, useMemo, useId } from 'react';
+import { memo, useMemo, type CSSProperties } from 'react';
+import { useReducedMotion } from 'motion/react';
 
 interface FloatingParticlesProps {
   count?: number;
@@ -14,18 +15,15 @@ interface FloatingParticlesProps {
  * - Pre-computed particle data via useMemo (no recalculation on re-render)
  * - CSS @keyframes instead of JS animations (runs on compositor thread)
  * - Percentage-based positioning (SSR-safe, no window object)
- * - willChange hint for GPU acceleration
+ * - Shared keyframes and a bounded default particle count
  * - prefers-reduced-motion support for accessibility
  */
 export const FloatingParticles = memo(function FloatingParticles({
-  count = 60,
+  count = 24,
   color = 'rgb(236 72 153 / 0.2)', // pink-500/20
   minSize = 2,
   maxSize = 6,
 }: FloatingParticlesProps) {
-  // Unique ID for this instance's keyframes (prevents collision)
-  const instanceId = useId().replace(/:/g, '');
-
   // Pre-compute all particle data ONCE
   const particles = useMemo(
     () =>
@@ -42,32 +40,7 @@ export const FloatingParticles = memo(function FloatingParticles({
     [count, minSize, maxSize]
   );
 
-  // Generate CSS keyframes ONCE (computed on mount)
-  const keyframeCSS = useMemo(
-    () =>
-      particles
-        .map(
-          (p) => `
-          @keyframes float-${instanceId}-${p.id} {
-            0%, 100% {
-              transform: translateY(0) scale(${p.scale});
-              opacity: 0;
-            }
-            50% {
-              transform: translateY(-${p.yOffset}px) scale(${p.scale});
-              opacity: 1;
-            }
-          }
-        `
-        )
-        .join('\n'),
-    [particles, instanceId]
-  );
-
-  // Check reduced motion preference (client-side only)
-  const prefersReducedMotion =
-    typeof window !== 'undefined' &&
-    window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion = useReducedMotion();
 
   if (prefersReducedMotion) {
     return null;
@@ -78,8 +51,8 @@ export const FloatingParticles = memo(function FloatingParticles({
       className="absolute inset-0 overflow-hidden pointer-events-none"
       aria-hidden="true"
     >
-      {/* Inject keyframes - computed once, never re-rendered */}
-      <style dangerouslySetInnerHTML={{ __html: keyframeCSS }} />
+      {/* Static parameters vary by particle; only transform and opacity animate. */}
+      <style>{`@keyframes wrapped-particle-float { 0%, 100% { transform: translateY(0) scale(var(--particle-scale)); opacity: 0; } 50% { transform: translateY(var(--particle-drift)) scale(var(--particle-scale)); opacity: 1; } }`}</style>
 
       {/* Render particles with CSS animations */}
       {particles.map((p) => (
@@ -87,14 +60,15 @@ export const FloatingParticles = memo(function FloatingParticles({
           key={p.id}
           className="absolute rounded-full"
           style={{
+            '--particle-scale': p.scale,
+            '--particle-drift': `-${p.yOffset}px`,
             left: `${p.left}%`,
             top: `${p.top}%`,
             width: p.size,
             height: p.size,
             backgroundColor: color,
-            animation: `float-${instanceId}-${p.id} ${p.duration}s ease-in-out ${p.delay}s infinite`,
-            willChange: 'transform, opacity',
-          }}
+            animation: `wrapped-particle-float ${p.duration}s ease-in-out ${p.delay}s infinite`,
+          } as CSSProperties}
         />
       ))}
     </div>

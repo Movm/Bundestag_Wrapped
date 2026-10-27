@@ -27,6 +27,7 @@ export function SpeakerWrappedPage() {
   const { slug = '' } = useParams<{ slug: string }>();
   const { data, isLoading: loading, error } = useSpeakerData(slug);
   const scrollContainerRef = useRef<ScrollContainerRef>(null);
+  const scrollElementRef = useRef<HTMLDivElement>(null);
 
   // Scroll state with persistence
   const { currentSection, initialSection, setCurrentSection, handleRestart: clearSpeakerProgress } = useSpeakerScrollWrapped(slug);
@@ -158,9 +159,9 @@ export function SpeakerWrappedPage() {
             >
               <motion.div
                 className="h-full rounded-full"
-                style={{ backgroundColor: partyColor }}
-                initial={{ width: 0 }}
-                animate={{ width: `${progress}%` }}
+                style={{ backgroundColor: partyColor, width: '100%', transformOrigin: 'left' }}
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: progress / 100 }}
                 transition={{ duration: 0.3 }}
               />
             </div>
@@ -170,11 +171,12 @@ export function SpeakerWrappedPage() {
         {/* Scroll container with slides */}
         <ScrollContainer
           ref={scrollContainerRef}
+          scrollElementRef={scrollElementRef}
           onSectionChange={handleSectionChange}
           locked={scrollLocked}
         >
-          {SPEAKER_SLIDES.map((slideId) => (
-            <SlideSection key={slideId} id={slideId}>
+          {SPEAKER_SLIDES.map((slideId, index) => (
+            <SlideSection key={slideId} id={slideId} active={Math.abs(index - sectionIndex) <= 1}>
               <SpeakerSlideRenderer
                 slide={slideId}
                 speaker={data}

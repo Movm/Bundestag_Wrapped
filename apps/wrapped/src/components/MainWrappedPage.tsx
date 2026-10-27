@@ -42,6 +42,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
   // Slides use store selectors directly, not data prop
   const { isLoading: loading, error, data } = useWrappedData();
   const scrollContainerRef = useRef<ScrollContainerRef>(null);
+  const scrollElementRef = useRef<HTMLDivElement>(null);
   const quizConfiguration = useOptionalEdition()?.content?.quiz;
   const quizModel = useMemo(() => (data ? buildConfiguredEditionQuizModel(data, quizConfiguration) : {}), [data, quizConfiguration]);
   const activeSlides = useMemo(
@@ -206,11 +207,12 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
       <div className="relative z-10">
         <ScrollContainer
           ref={scrollContainerRef}
+          scrollElementRef={scrollElementRef}
           onSectionChange={handleSectionChange}
           locked={scrollLocked}
         >
-          {activeSlides.map((slideId) => (
-            <SlideSection key={slideId} id={slideId}>
+          {activeSlides.map((slideId, index) => (
+            <SlideSection key={slideId} id={slideId} active={Math.abs(index - activeSlides.findIndex(id => id === currentSection)) <= 1}>
               <SlideRenderer
                 slide={slideId}
                 onComplete={slideCallbacks[slideId].onComplete}
