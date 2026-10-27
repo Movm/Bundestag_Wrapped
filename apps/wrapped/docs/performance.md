@@ -30,7 +30,8 @@ is an effect/rendering optimization rather than a fixed upper bound on story DOM
 
 Run `pnpm --filter bundestag-wrapped audit:performance` against a production
 preview. `PERF_URL`, `PERF_LABEL`, `PERF_OUTPUT`, `PERF_CPU`, `PERF_EDITION`, and
-`PERF_CHANNEL` configure the run. The default is mobile headless Chrome at 4x CPU
+`PERF_CHANNEL` configure the run. Every run creates and prints a private, random
+artifact subdirectory under `PERF_OUTPUT` (or the OS temporary directory). The default is mobile headless Chrome at 4x CPU
 slowdown. Compare identical data and hardware without concurrent builds/tests.
 The script reports rAF gaps and long tasks; it does not assert actual presented
 frames or replace testing on physical Android/iOS devices.

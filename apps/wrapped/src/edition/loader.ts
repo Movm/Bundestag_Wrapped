@@ -45,9 +45,15 @@ type EditionAssetData = {
 };
 
 async function fetchJson(url: string): Promise<unknown> {
+  // Edition documents are static, root-relative JSON resources under /data/.
+  // Validate the raw path before fetch: no hostnames, encoded separators,
+  // dot-only traversal segments, query strings or fragments can reach an API.
+  if (!/^\/data\/(?:[A-Za-z0-9_-][A-Za-z0-9_.-]*\/)*[A-Za-z0-9_-][A-Za-z0-9_.-]*\.json$/.test(url)) {
+    throw new EditionLoadError('invalid-contract', 'Untrusted edition asset URL', url);
+  }
   let response: Response;
   try {
-    response = await fetch(url);
+    response = await fetch(url, { redirect: 'error' });
   } catch {
     throw new EditionLoadError('network', `Network error while loading ${url}`, url);
   }

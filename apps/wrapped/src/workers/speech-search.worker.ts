@@ -1,6 +1,6 @@
 import { loadEditionAsset } from '@/edition/loader';
 import { SpeechSearchEngine } from '@/lib/speech-search-engine';
-import type { SpeechSearchRequest, SpeechSearchResponse } from '@/lib/speech-search-protocol';
+import { isSpeechSearchRequest, type SpeechSearchRequest, type SpeechSearchResponse } from '@/lib/speech-search-protocol';
 
 let corpusKey = '';
 let engine: Promise<SpeechSearchEngine> | undefined;
@@ -19,7 +19,11 @@ async function respond(request: SpeechSearchRequest): Promise<SpeechSearchRespon
   if (!engine) throw new Error('Reden noch nicht geladen');
   return { id: request.id, type: 'detail', data: (await engine).detail(request.speechId) };
 }
-self.onmessage = (event: MessageEvent<SpeechSearchRequest>) => {
+self.onmessage = (event: MessageEvent<unknown>) => {
+  // Dedicated Worker.postMessage events have an empty origin and a null source.
+  // If a browser supplies an origin, only the worker's own origin is accepted.
+  if (event.origin !== '' && event.origin !== self.location.origin) return;
+  if (event.source !== null || !isSpeechSearchRequest(event.data)) return;
   const request = event.data;
   void respond(request).then(response => self.postMessage(response)).catch(error => {
     self.postMessage({ id: request.id, type: 'error', message: error instanceof Error ? error.message : 'Suche fehlgeschlagen' } satisfies SpeechSearchResponse);
