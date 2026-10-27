@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router';
 import type { SpeechSortOption, SpeakerSortOption, WordSortOption } from '@/lib/search-utils';
 
@@ -52,60 +52,40 @@ export function useSearchState(): [
   () => void
 ] {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [state, setState] = useState<SearchState>(() => parseStateFromParams(searchParams));
-
-  // Sync state from URL when it changes externally (back/forward navigation)
-  useEffect(() => {
-    const urlState = parseStateFromParams(searchParams);
-    const frame = requestAnimationFrame(() => setState(urlState));
-    return () => cancelAnimationFrame(frame);
-  }, [searchParams]);
+  const state = useMemo(() => parseStateFromParams(searchParams), [searchParams]);
 
   const updateState = useCallback((updates: Partial<SearchState>) => {
-    setState((prev) => {
-      const next = { ...prev, ...updates };
+    const prev = parseStateFromParams(searchParams);
+    const next = { ...prev, ...updates };
 
-      // Reset sort to relevance when changing tabs (if current sort doesn't apply)
-      if (updates.tab && updates.tab !== prev.tab) {
-        const speechSorts: SpeechSortOption[] = ['relevance', 'date', 'words-desc', 'words-asc', 'speaker'];
-        const speakerSorts: SpeakerSortOption[] = ['relevance', 'speeches-desc', 'speeches-asc', 'words-desc', 'name'];
-        const wordSorts: WordSortOption[] = ['relevance', 'total', 'alphabetical'];
+    // Reset sort to relevance when changing tabs (if current sort doesn't apply)
+    if (updates.tab && updates.tab !== prev.tab) {
+      const speechSorts: SpeechSortOption[] = ['relevance', 'date', 'words-desc', 'words-asc', 'speaker'];
+      const speakerSorts: SpeakerSortOption[] = ['relevance', 'speeches-desc', 'speeches-asc', 'words-desc', 'name'];
+      const wordSorts: WordSortOption[] = ['relevance', 'total', 'alphabetical'];
 
-        if (updates.tab === 'speeches' && !speechSorts.includes(prev.sort as SpeechSortOption)) {
-          next.sort = 'relevance';
-        } else if (updates.tab === 'speakers' && !speakerSorts.includes(prev.sort as SpeakerSortOption)) {
-          next.sort = 'relevance';
-        } else if (updates.tab === 'words' && !wordSorts.includes(prev.sort as WordSortOption)) {
-          next.sort = 'relevance';
-        }
-
-        // Clear word filters when switching to speakers or words
-        if (updates.tab === 'speakers' || updates.tab === 'words') {
-          next.minWords = 0;
-          next.maxWords = 0;
-        }
+      if (updates.tab === 'speeches' && !speechSorts.includes(prev.sort as SpeechSortOption)) {
+        next.sort = 'relevance';
+      } else if (updates.tab === 'speakers' && !speakerSorts.includes(prev.sort as SpeakerSortOption)) {
+        next.sort = 'relevance';
+      } else if (updates.tab === 'words' && !wordSorts.includes(prev.sort as WordSortOption)) {
+        next.sort = 'relevance';
       }
 
-      // Update URL
-      setSearchParams(buildParamsFromState(next), { replace: true });
+      // Clear word filters when switching to speakers or words
+      if (updates.tab === 'speakers' || updates.tab === 'words') {
+        next.minWords = 0;
+        next.maxWords = 0;
+      }
+    }
 
-      return next;
-    });
-  }, [setSearchParams]);
+    const params = buildParamsFromState(next);
+    if (params.toString() !== searchParams.toString()) setSearchParams(params, { replace: true });
+  }, [searchParams, setSearchParams]);
 
   const resetFilters = useCallback(() => {
-    setState((prev) => {
-      const next = {
-        ...DEFAULT_STATE,
-        tab: prev.tab, // Keep current tab
-      };
-
-      // Update URL
-      setSearchParams(buildParamsFromState(next), { replace: true });
-
-      return next;
-    });
-  }, [setSearchParams]);
+    setSearchParams(buildParamsFromState({ ...DEFAULT_STATE, tab: state.tab }), { replace: true });
+  }, [state.tab, setSearchParams]);
 
   return [state, updateState, resetFilters];
 }

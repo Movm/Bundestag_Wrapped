@@ -1,3 +1,4 @@
+import { SearchInput } from './SearchInput';
 import { motion } from 'motion/react';
 import { getPartyColor } from '@/lib/party-colors';
 import type { SpeechSortOption, SpeakerSortOption, WordSortOption } from '@/lib/search-utils';
@@ -42,11 +43,11 @@ export function SearchHeader({ state, updateState, parties }: SearchHeaderProps)
         </div>
 
         <div className="relative mb-4">
-          <input
+          <SearchInput
             type="text"
             placeholder='Suche... (z.B. "klima" AND energie NOT atomkraft)'
             value={state.q}
-            onChange={(e) => updateState({ q: e.target.value })}
+            onQueryChange={(q) => updateState({ q })}
             className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 pl-11 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-pink-500/50 focus:border-pink-500/50"
             aria-label="Suche nach Reden, Abgeordneten oder Wörtern"
           />

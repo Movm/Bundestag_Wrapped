@@ -122,7 +122,7 @@ test('uses the active edition for share and download output', async ({ page }) =
   await expect.poll(() => page.evaluate(() => localStorage.getItem('fixture-share'))).toBe(JSON.stringify({
     filename: 'bundestag-wrapped-2026.png',
     title: 'Mein Fixture Wrapped 2026',
-    url: 'http://127.0.0.1:4173/2026',
+    url: new URL('/2026', page.url()).href,
   }));
 });
 
@@ -172,7 +172,7 @@ test('keeps annual navigation, share FAB and its dialog accessible', async ({ pa
   await expect.poll(() => page.evaluate(() => localStorage.getItem('fixture-fab-share'))).toBe(JSON.stringify({
     filename: 'bundestag-wrapped-2026-drama.png',
     title: 'Fixture Wrapped 2026',
-    url: 'http://127.0.0.1:4173/2026',
+    url: new URL('/2026', page.url()).href,
   }));
   await page.keyboard.press('Escape');
   await expect(dialog).toHaveCount(0);
@@ -232,7 +232,7 @@ test('clears speaker state on completion and uses edition-safe share output', as
   await expect.poll(() => page.evaluate(() => localStorage.getItem('fixture-speaker-share'))).toBe(JSON.stringify({
     filename: 'bundestag-wrapped-2026-bea-ausgabe-zwei.png',
     title: 'Bea Ausgabe Zwei – Fixture Wrapped 2026',
-    url: 'http://127.0.0.1:4173/2026/wrapped/shared-speaker',
+    url: new URL('/2026/wrapped/shared-speaker', page.url()).href,
   }));
 
   await expect(page.getByRole('button', { name: 'Nochmal ansehen' })).toBeVisible();
@@ -261,7 +261,7 @@ test('shares the annual URL without a file when native file sharing is unavailab
   await expect.poll(() => page.evaluate(() => localStorage.getItem('fixture-url-share'))).toBe(JSON.stringify({
     fileCount: 0,
     title: 'Fixture Wrapped 2026',
-    url: 'http://127.0.0.1:4173/2026',
+    url: new URL('/2026', page.url()).href,
   }));
 });
 

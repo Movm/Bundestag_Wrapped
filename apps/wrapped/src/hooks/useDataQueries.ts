@@ -114,6 +114,7 @@ function useEditionJsonAsset<T>(
     queryFn: () => load(edition!, asset(edition!)),
     enabled: Boolean(enabled && edition?.manifest && edition.manifestUrl),
     ...STATIC_DATA_OPTIONS,
+    gcTime: 5 * 60 * 1000,
   });
 }
 

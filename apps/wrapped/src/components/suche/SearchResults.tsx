@@ -1,3 +1,5 @@
+import { memo } from 'react';
+import { SEARCH_PAGE_SIZE } from '@/lib/speech-search-protocol';
 import { AnimatePresence } from 'motion/react';
 import type { ScoredSpeech, ScoredSpeaker, ScoredWord, ParsedQuery, Speech, WordRankingsData } from '@/lib/search-utils';
 import type { SearchState } from '@/hooks/useSearchState';
@@ -12,7 +14,10 @@ interface SearchResultsProps {
   filteredWords: ScoredWord[];
   wordRankings?: WordRankingsData;
   parsedQuery: ParsedQuery;
-  visibleCount: number;
+  page: number;
+  speechTotal: number;
+  loading: boolean;
+  onPreviousPage: () => void;
   hasActiveFilters: boolean;
   hasQuery: boolean;
   onSpeechClick: (speech: Speech) => void;
@@ -21,14 +26,17 @@ interface SearchResultsProps {
   onSearchWordInSpeeches?: (word: string) => void;
 }
 
-export function SearchResults({
+export const SearchResults = memo(function SearchResults({
   state,
   filteredSpeeches,
   filteredSpeakers,
   filteredWords,
   wordRankings,
   parsedQuery,
-  visibleCount,
+  page,
+  speechTotal,
+  loading,
+  onPreviousPage,
   hasActiveFilters,
   hasQuery,
   onSpeechClick,
@@ -37,18 +45,18 @@ export function SearchResults({
   onSearchWordInSpeeches,
 }: SearchResultsProps) {
   const resultCount = state.tab === 'speeches'
-    ? filteredSpeeches.length
+    ? speechTotal
     : state.tab === 'speakers'
     ? filteredSpeakers.length
     : filteredWords.length;
 
   const visibleResults = state.tab === 'speeches'
-    ? filteredSpeeches.slice(0, visibleCount)
+    ? filteredSpeeches
     : state.tab === 'speakers'
-    ? filteredSpeakers.slice(0, visibleCount)
-    : filteredWords.slice(0, visibleCount);
+    ? filteredSpeakers.slice(page * SEARCH_PAGE_SIZE, (page + 1) * SEARCH_PAGE_SIZE)
+    : filteredWords.slice(page * SEARCH_PAGE_SIZE, (page + 1) * SEARCH_PAGE_SIZE);
 
-  const hasMore = visibleCount < resultCount;
+  const hasMore = (page + 1) * SEARCH_PAGE_SIZE < resultCount;
 
   const resultLabel = state.tab === 'speeches'
     ? 'Reden'
@@ -57,7 +65,7 @@ export function SearchResults({
     : 'Wörter';
 
   return (
-    <main id="search-results" role="tabpanel" className="max-w-4xl mx-auto px-4 py-6 pb-20">
+    <main id="search-results" role="tabpanel" className="max-w-4xl mx-auto px-4 py-6 pb-20 scroll-mt-64" aria-busy={loading}>
       {/* Screen reader announcement for search results */}
       <div aria-live="polite" aria-atomic="true" className="sr-only">
         {resultCount.toLocaleString('de-DE')} {resultLabel} gefunden
@@ -96,14 +104,13 @@ export function SearchResults({
       )}
 
       <div className={state.tab === 'speakers' ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3' : 'space-y-3'}>
-        <AnimatePresence mode="popLayout">
+        <AnimatePresence initial={false}>
           {state.tab === 'speeches' &&
-            (visibleResults as ScoredSpeech[]).map((speech, index) => (
+            (visibleResults as ScoredSpeech[]).map((speech) => (
               <SpeechCard
                 key={speech.id}
                 speech={speech}
                 query={parsedQuery}
-                index={index}
                 onClick={() => onSpeechClick(speech)}
               />
             ))}
@@ -130,18 +137,24 @@ export function SearchResults({
         </AnimatePresence>
       </div>
 
+      {loading && <p role="status" className="py-6 text-white/60">Suche läuft…</p>}
+      {page > 0 && (
+        <button onClick={onPreviousPage} disabled={loading} className="mt-6 px-6 py-3 bg-white/10 rounded-xl text-white">Vorherige Ergebnisse</button>
+      )}
+      {!loading && resultCount > 0 && <p className="text-center text-white/50 mt-4">Seite {page + 1} von {Math.ceil(resultCount / SEARCH_PAGE_SIZE)}</p>}
       {hasMore && (
         <div className="mt-6 text-center">
           <button
             onClick={onLoadMore}
+            disabled={loading}
             className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-xl transition-colors"
           >
-            Mehr laden ({resultCount - visibleCount} weitere)
+            Weitere Ergebnisse ({resultCount - (page + 1) * SEARCH_PAGE_SIZE} weitere)
           </button>
         </div>
       )}
 
-      {resultCount === 0 && (
+      {!loading && resultCount === 0 && (
         <div className="text-center py-12">
           <div className="text-4xl mb-4">🔍</div>
           <p className="text-white/60">Keine Ergebnisse gefunden</p>
@@ -152,4 +165,4 @@ export function SearchResults({
       )}
     </main>
   );
-}
+});

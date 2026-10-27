@@ -1,0 +1,134 @@
+{
+  "browser": "156.0.8078.48",
+  "cpu": 4,
+  "viewport": "390x844 DPR3",
+  "headless": true,
+  "serviceWorkers": "blocked",
+  "edition": "2025",
+  "base": "http://127.0.0.1:4175",
+  "results": [
+    {
+      "name": "intro-idle",
+      "p95": 16.700000000000273,
+      "max": 16.800000000000182,
+      "frames": 89,
+      "gapsOver25": 0,
+      "longtasks": [],
+      "dom": 1612,
+      "runningAnimations": 203,
+      "offscreenAnimations": 72,
+      "sections": 40,
+      "mounted": 0
+    },
+    {
+      "name": "intro-start",
+      "p95": 16.799999999999727,
+      "max": 16.800000000000182,
+      "frames": 80,
+      "gapsOver25": 0,
+      "longtasks": [],
+      "dom": 1621,
+      "runningAnimations": 206,
+      "offscreenAnimations": 140,
+      "sections": 40,
+      "mounted": 0
+    },
+    {
+      "name": "reveal-topics",
+      "p95": 16.800000000000182,
+      "max": 16.800000000000182,
+      "frames": 91,
+      "gapsOver25": 0,
+      "longtasks": [],
+      "dom": 1605,
+      "runningAnimations": 208,
+      "offscreenAnimations": 142,
+      "sections": 40,
+      "mounted": 0
+    },
+    {
+      "name": "chart-speeches",
+      "p95": 16.799999999999272,
+      "max": 16.800000000000182,
+      "frames": 90,
+      "gapsOver25": 0,
+      "longtasks": [],
+      "dom": 1640,
+      "runningAnimations": 199,
+      "offscreenAnimations": 139,
+      "sections": 40,
+      "mounted": 0
+    },
+    {
+      "name": "reveal-tone",
+      "p95": 16.700000000000728,
+      "max": 16.80000000000109,
+      "frames": 89,
+      "gapsOver25": 0,
+      "longtasks": [],
+      "dom": 1661,
+      "runningAnimations": 199,
+      "offscreenAnimations": 140,
+      "sections": 40,
+      "mounted": 0
+    },
+    {
+      "name": "search-typing",
+      "p95": 16.800000000000182,
+      "max": 199.9000000000001,
+      "frames": 155,
+      "gapsOver25": 4,
+      "longtasks": [
+        {
+          "start": 3286.2000000029802,
+          "duration": 210
+        }
+      ],
+      "dom": 694,
+      "runningAnimations": 0,
+      "offscreenAnimations": 0,
+      "sections": 0,
+      "mounted": 0
+    },
+    {
+      "name": "search-page-2",
+      "p95": 16.700000000000728,
+      "max": 16.800000000000182,
+      "frames": 61,
+      "gapsOver25": 0,
+      "longtasks": [],
+      "dom": 1239,
+      "runningAnimations": 0,
+      "offscreenAnimations": 0,
+      "sections": 0,
+      "mounted": 0
+    },
+    {
+      "name": "search-page-3",
+      "p95": 16.700000000000728,
+      "max": 16.800000000000182,
+      "frames": 62,
+      "gapsOver25": 0,
+      "longtasks": [],
+      "dom": 1801,
+      "runningAnimations": 0,
+      "offscreenAnimations": 0,
+      "sections": 0,
+      "mounted": 0
+    },
+    {
+      "name": "search-page-4",
+      "p95": 16.700000000000728,
+      "max": 33.399999999999636,
+      "frames": 62,
+      "gapsOver25": 1,
+      "longtasks": [],
+      "dom": 2357,
+      "runningAnimations": 0,
+      "offscreenAnimations": 0,
+      "sections": 0,
+      "mounted": 0
+    }
+  ],
+  "errors": []
+}

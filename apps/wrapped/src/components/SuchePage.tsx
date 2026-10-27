@@ -1,14 +1,13 @@
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useSpeechSearch } from '@/hooks/useSpeechSearch';
+import { useState, useMemo, useCallback } from 'react';
 import { Link } from 'react-router';
 import { AnimatePresence } from 'motion/react';
 import { SEO } from '@/components/seo/SEO';
 import { PAGE_META } from '@/components/seo/constants';
 import {
   parseSearchQuery,
-  searchSpeeches,
   searchSpeakers,
   searchWords,
-  sortSpeeches,
   sortSpeakers,
   sortWords,
   hasSearchContent,
@@ -16,12 +15,11 @@ import {
   type ScoredSpeech,
   type ScoredSpeaker,
   type ScoredWord,
-  type SpeechSortOption,
   type SpeakerSortOption,
   type WordSortOption,
 } from '@/lib/search-utils';
-import { useSearchState, useDebounce } from '@/hooks/useSearchState';
-import { useSpeakerIndex, useSpeechesDb, useWordsIndex, useWordRankings } from '@/hooks/useDataQueries';
+import { useSearchState } from '@/hooks/useSearchState';
+import { useSpeakerIndex, useWordsIndex, useWordRankings } from '@/hooks/useDataQueries';
 import {
   SearchHero,
   SearchHeader,
@@ -32,6 +30,8 @@ import { SuchePageSkeleton } from './skeletons/SuchePageSkeleton';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionPath, editionSurface } from '@/edition/surface';
 
+const EMPTY_SPEECHES: ScoredSpeech[] = [];
+
 export function SuchePage() {
   const surface = editionSurface(useOptionalEdition());
   const [state, updateState, resetFilters] = useSearchState();
@@ -39,9 +39,6 @@ export function SuchePage() {
   // Conditional fetching: only load data for the active tab (saves 20MB+ on initial load)
   // Speaker index is always loaded (small, needed for party filter dropdown)
   const { data: speakerIndex, isLoading: speakersLoading, error: speakersError } = useSpeakerIndex();
-  const { data: speechesData, isLoading: speechesLoading, error: speechesError } = useSpeechesDb({
-    enabled: state.tab === 'speeches',
-  });
   const { data: wordsIndex, isLoading: wordsLoading, error: wordsError } = useWordsIndex({
     enabled: state.tab === 'words',
   });
@@ -49,43 +46,25 @@ export function SuchePage() {
     enabled: state.tab === 'words',
   });
 
-  const [selectedSpeech, setSelectedSpeech] = useState<Speech | null>(null);
-  const [visibleCount, setVisibleCount] = useState(50);
-
-  // Only show loading for the currently active tab
-  const loading = speakersLoading ||
-    (state.tab === 'speeches' && speechesLoading) ||
-    (state.tab === 'words' && wordsLoading);
-  const error = speakersError ||
-    (state.tab === 'speeches' && speechesError) ||
-    (state.tab === 'words' && wordsError);
-
-  const debouncedQuery = useDebounce(state.q, 300);
-
-  const parsedQuery = useMemo(
-    () => parseSearchQuery(debouncedQuery),
-    [debouncedQuery]
-  );
-
+  const [selection, setSelection] = useState<{ key: string; speech: Speech } | null>(null);
+  const [pagination, setPagination] = useState({ key: '', page: 0 });
+  const criteria = useMemo(() => JSON.stringify([surface.editionId, state.q, state.party, state.minWords, state.maxWords, state.sort, state.tab]),
+    [surface.editionId, state.q, state.party, state.minWords, state.maxWords, state.sort, state.tab]);
+  const selectedSpeech = selection?.key === criteria ? selection.speech : null;
+  const page = pagination.key === criteria ? pagination.page : 0;
+  const parsedQuery = useMemo(() => parseSearchQuery(state.q), [state.q]);
   const hasQuery = hasSearchContent(parsedQuery);
-  const showResults = hasQuery || state.party || state.minWords > 0 || state.maxWords > 0 || state.tab === 'words';
+  const showResults = Boolean(hasQuery || state.party || state.minWords > 0 || state.maxWords > 0 || state.tab === 'words');
+  const speechSearch = useSpeechSearch(state, page, state.tab === 'speeches' && showResults);
+  const { loadSpeech } = speechSearch;
+  const filteredSpeeches = speechSearch.data?.items ?? EMPTY_SPEECHES;
+  const loading = speakersLoading || (state.tab === 'words' && wordsLoading);
+  const error = speakersError || speechSearch.error || (state.tab === 'words' && wordsError);
 
   const parties = useMemo(() => {
     if (!speakerIndex) return [];
     return [...new Set(speakerIndex.speakers.map(s => s.party))];
   }, [speakerIndex]);
-
-  const filteredSpeeches = useMemo((): ScoredSpeech[] => {
-    if (!speechesData || state.tab !== 'speeches') return [];
-
-    const filtered = searchSpeeches(speechesData.speeches, parsedQuery, {
-      party: state.party,
-      minWords: state.minWords || undefined,
-      maxWords: state.maxWords || undefined,
-    });
-
-    return sortSpeeches(filtered, state.sort as SpeechSortOption, hasQuery);
-  }, [speechesData, parsedQuery, state.party, state.minWords, state.maxWords, state.sort, state.tab, hasQuery]);
 
   const filteredSpeakers = useMemo((): ScoredSpeaker[] => {
     if (!speakerIndex || state.tab !== 'speakers') return [];
@@ -111,14 +90,23 @@ export function SuchePage() {
     updateState({ q: word, tab: 'speeches' });
   }, [updateState]);
 
-  useEffect(() => {
-    const frame = requestAnimationFrame(() => setVisibleCount(50));
-    return () => cancelAnimationFrame(frame);
-  }, [state.party, state.tab, debouncedQuery, state.sort, state.minWords, state.maxWords]);
-
   const loadMore = useCallback(() => {
-    setVisibleCount((prev) => prev + 50);
-  }, []);
+    setPagination(previous => ({ key: criteria, page: (previous.key === criteria ? previous.page : 0) + 1 }));
+    document.getElementById('search-results')?.scrollIntoView({ block: 'start' });
+  }, [criteria]);
+  const previousPage = useCallback(() => {
+    setPagination(previous => ({ key: criteria, page: Math.max(0, (previous.key === criteria ? previous.page : 0) - 1) }));
+    document.getElementById('search-results')?.scrollIntoView({ block: 'start' });
+  }, [criteria]);
+  const openSpeech = useCallback((speech: Speech) => {
+    setSelection({ key: criteria, speech: { ...speech, text: 'Rede wird geladen…' } });
+    void loadSpeech(speech.id).then(full => {
+      setSelection(current => current?.key === criteria && current.speech.id === speech.id ? { key: criteria, speech: full } : current);
+    }).catch(() => {
+      setSelection(current => current?.key === criteria && current.speech.id === speech.id ? { key: criteria, speech: { ...current.speech, text: 'Rede konnte nicht geladen werden.' } } : current);
+    });
+  }, [loadSpeech, criteria]);
+  const closeSpeech = useCallback(() => setSelection(null), []);
 
   const hasActiveFilters = state.party || state.q || state.minWords > 0 || state.maxWords > 0;
 
@@ -165,10 +153,13 @@ export function SuchePage() {
             filteredWords={filteredWords}
             wordRankings={wordRankings}
             parsedQuery={parsedQuery}
-            visibleCount={visibleCount}
+            page={page}
+            speechTotal={speechSearch.data?.total ?? 0}
+            loading={speechSearch.isLoading}
+            onPreviousPage={previousPage}
             hasActiveFilters={!!hasActiveFilters}
             hasQuery={hasQuery}
-            onSpeechClick={setSelectedSpeech}
+            onSpeechClick={openSpeech}
             onLoadMore={loadMore}
             onResetFilters={resetFilters}
             onSearchWordInSpeeches={handleSearchWordInSpeeches}
@@ -178,7 +169,7 @@ export function SuchePage() {
             {selectedSpeech && (
               <SpeechDetailModal
                 speech={selectedSpeech}
-                onClose={() => setSelectedSpeech(null)}
+                onClose={closeSpeech}
               />
             )}
           </AnimatePresence>
