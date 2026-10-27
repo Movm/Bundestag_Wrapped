@@ -14,7 +14,7 @@ export function DocFooter() {
               Plenarprotokolle des Deutschen Bundestages
             </a>
           </p>
-          <p className="font-mono text-xs text-stone-400">
+          <p className="font-mono text-xs text-stone-600">
             Stand: aktuelle Edition • WP21
           </p>
         </div>

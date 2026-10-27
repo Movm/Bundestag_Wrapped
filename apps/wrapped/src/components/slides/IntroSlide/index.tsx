@@ -121,7 +121,7 @@ export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps)
         </motion.div>
 
         <motion.h1
-          className="text-5xl md:text-7xl font-black mb-4 gradient-text"
+          className="text-[clamp(1.75rem,10vw,4.5rem)] font-black mb-4 gradient-text"
           initial={{ opacity: 0, y: 20 }}
           animate={{
             opacity: isHiding ? 0 : 1,

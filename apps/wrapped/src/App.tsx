@@ -1,4 +1,4 @@
-import { lazy, Suspense, type ReactNode } from 'react';
+import { lazy, Suspense, useCallback, useState, type ReactNode } from 'react';
 import { BrowserRouter, Navigate, Routes, Route, useLocation, useParams } from 'react-router';
 import { useQuery } from '@tanstack/react-query';
 import { DarkLayout, LightLayout } from '@/layouts/MainLayout';
@@ -48,10 +48,16 @@ function PageLoader() {
 function MainWrappedRoute() {
   const { isOpen: isMenuOpen, toggle: toggleMenu, close: closeMenu } = useMenuState();
 
+  const [restartKey, setRestartKey] = useState(0);
+  const restart = useCallback(() => {
+    setRestartKey(key => key + 1);
+    requestAnimationFrame(() => document.getElementById('intro')?.focus({ preventScroll: true }));
+  }, []);
+
   return (
     <>
-      <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} variant="dark" />
-      <MainWrappedPage isMenuOpen={isMenuOpen} onMenuToggle={toggleMenu} />
+      <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} variant="dark" onRestart={restart} />
+      <MainWrappedPage key={restartKey} isMenuOpen={isMenuOpen} onMenuToggle={toggleMenu} onRestart={restart} />
     </>
   );
 }

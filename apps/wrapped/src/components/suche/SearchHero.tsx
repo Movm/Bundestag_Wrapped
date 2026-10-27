@@ -1,3 +1,4 @@
+import { TabButton } from './TabButton';
 import { useState } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
@@ -93,46 +94,13 @@ export function SearchHero({ state, updateState }: SearchHeroProps) {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="flex gap-3 mb-10"
+        className="flex flex-wrap justify-center gap-2 mb-10"
         role="tablist"
         aria-label="Suchmodus"
       >
-        <button
-          role="tab"
-          aria-selected={state.tab === 'speeches'}
-          onClick={() => updateState({ tab: 'speeches' })}
-          className={`px-6 py-3 rounded-xl text-sm font-medium transition-all ${
-            state.tab === 'speeches'
-              ? 'bg-pink-600 text-white shadow-lg shadow-pink-500/30'
-              : 'bg-white/5 text-white/70 hover:bg-white/10'
-          }`}
-        >
-          <span aria-hidden="true">🎤 </span>Reden
-        </button>
-        <button
-          role="tab"
-          aria-selected={state.tab === 'speakers'}
-          onClick={() => updateState({ tab: 'speakers' })}
-          className={`px-6 py-3 rounded-xl text-sm font-medium transition-all ${
-            state.tab === 'speakers'
-              ? 'bg-pink-600 text-white shadow-lg shadow-pink-500/30'
-              : 'bg-white/5 text-white/70 hover:bg-white/10'
-          }`}
-        >
-          <span aria-hidden="true">👥 </span>Abgeordnete
-        </button>
-        <button
-          role="tab"
-          aria-selected={state.tab === 'words'}
-          onClick={() => updateState({ tab: 'words' })}
-          className={`px-6 py-3 rounded-xl text-sm font-medium transition-all ${
-            state.tab === 'words'
-              ? 'bg-pink-600 text-white shadow-lg shadow-pink-500/30'
-              : 'bg-white/5 text-white/70 hover:bg-white/10'
-          }`}
-        >
-          <span aria-hidden="true">📊 </span>Wörter
-        </button>
+        <TabButton active={state.tab === 'speeches'} onClick={() => updateState({ tab: 'speeches' })}>Reden</TabButton>
+        <TabButton active={state.tab === 'speakers'} onClick={() => updateState({ tab: 'speakers' })}>Abgeordnete</TabButton>
+        <TabButton active={state.tab === 'words'} onClick={() => updateState({ tab: 'words' })}>Wörter</TabButton>
       </motion.div>
 
       <motion.div

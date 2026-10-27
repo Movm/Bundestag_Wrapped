@@ -155,7 +155,7 @@ test('keeps annual navigation, share FAB and its dialog accessible', async ({ pa
   await trigger.click();
   const dialog = page.getByRole('dialog', { name: 'Diese Folie teilen' });
   await expect(dialog).toBeVisible();
-  const results = await new AxeBuilder({ page }).include('[role="dialog"]').withTags(['wcag2a', 'wcag2aa']).analyze();
+  const results = await new AxeBuilder({ page }).include('dialog[open]').withTags(['wcag2a', 'wcag2aa']).analyze();
   expect(results.violations).toEqual([]);
 
   const close = dialog.getByRole('button', { name: 'Teilen schließen' });
@@ -194,7 +194,7 @@ test('restores different answers when switching between annual routes', async ({
   await page.goto('/2025');
   await moveToSlide(page, 'quiz-topics');
   await expect(page.locator('[data-slide-id="quiz-topics"]').getByRole('button').first()).toBeDisabled();
-  await expect(page.locator('[data-slide-id="quiz-topics"]').getByText('Scroll weiter')).toBeVisible();
+  await expect(page.locator('[data-slide-id="quiz-topics"]').getByText('Scroll weiter oder wähle „Weiter“.')).toBeVisible();
   const scopes = await page.evaluate(() => JSON.parse(localStorage.getItem('quiz-storage-v2') ?? '{}').state?.answersByScope);
   expect(scopes['quiz:2025:fixture-a']['quiz-topics']).toBe(true);
   expect(scopes['quiz:2026:fixture-b']['quiz-topics']).toBe(false);

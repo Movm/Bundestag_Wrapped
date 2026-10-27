@@ -18,7 +18,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:e2e": "playwright test",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:a11y": "playwright test e2e/accessibility.spec.ts"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.104.4",

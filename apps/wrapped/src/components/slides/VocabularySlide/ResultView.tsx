@@ -13,7 +13,7 @@ export function ResultView({ parties }: ResultViewProps) {
     .slice(0, 5);
 
   return (
-    <div className="min-h-screen relative w-full">
+    <div className="bubble-slide min-h-screen relative w-full">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ export function ResultView({ parties }: ResultViewProps) {
 Diese Wörter zeichnen die Parteien aus.        </p>
       </motion.div>
 
-      <div className="absolute inset-0 z-10">
+      <div className="bubble-grid absolute inset-0 z-10">
         {topParties.map((party, i) => (
           <PartyBubble
             key={party.party}

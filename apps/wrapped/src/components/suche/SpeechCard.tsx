@@ -23,7 +23,7 @@ export function SpeechCard({ speech, query, index, onClick }: SpeechCardProps) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ delay: Math.min(index * 0.02, 0.3) }}
-      onClick={onClick}
+      onClick={event => { event.currentTarget.focus(); onClick(); }}
       className="w-full text-left bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl p-4 transition-all group"
     >
       <div className="flex items-start justify-between gap-3 mb-2">
@@ -38,7 +38,7 @@ export function SpeechCard({ speech, query, index, onClick }: SpeechCardProps) {
           </span>
           <CategoryBadge category={speech.category} size="sm" />
         </div>
-        <span className="text-white/40 text-sm whitespace-nowrap">
+        <span className="text-white/65 text-sm whitespace-nowrap">
           {speech.words.toLocaleString('de-DE')} Wörter
         </span>
       </div>

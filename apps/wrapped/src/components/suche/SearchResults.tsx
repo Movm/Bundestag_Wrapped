@@ -1,3 +1,4 @@
+import type { WordRankingsAsset } from '@/generated/wrapped-contract-v1';
 import { AnimatePresence } from 'motion/react';
 import type { ScoredSpeech, ScoredSpeaker, ScoredWord, ParsedQuery, Speech, WordRankingsData } from '@/lib/search-utils';
 import type { SearchState } from '@/hooks/useSearchState';
@@ -6,11 +7,13 @@ import { SpeakerCard } from './SpeakerCard';
 import { WordCard } from './WordCard';
 
 interface SearchResultsProps {
+  loading?: boolean;
+  errorMessage?: string;
   state: SearchState;
   filteredSpeeches: ScoredSpeech[];
   filteredSpeakers: ScoredSpeaker[];
   filteredWords: ScoredWord[];
-  wordRankings?: WordRankingsData;
+  wordRankings?: WordRankingsData | WordRankingsAsset;
   parsedQuery: ParsedQuery;
   visibleCount: number;
   hasActiveFilters: boolean;
@@ -22,6 +25,8 @@ interface SearchResultsProps {
 }
 
 export function SearchResults({
+  loading = false,
+  errorMessage,
   state,
   filteredSpeeches,
   filteredSpeakers,
@@ -57,10 +62,11 @@ export function SearchResults({
     : 'Wörter';
 
   return (
-    <main id="search-results" role="tabpanel" className="max-w-4xl mx-auto px-4 py-6 pb-20">
+    <section id="search-results" role="tabpanel" aria-busy={loading} aria-labelledby={`search-tab-${state.tab}`} tabIndex={0} className="max-w-4xl mx-auto px-4 py-6 pb-20">
+      {errorMessage && <p role="alert" className="text-red-300 mb-4">Fehler beim Laden: {errorMessage}</p>}
       {/* Screen reader announcement for search results */}
       <div aria-live="polite" aria-atomic="true" className="sr-only">
-        {resultCount.toLocaleString('de-DE')} {resultLabel} gefunden
+        {loading ? 'Lade Suchergebnisse…' : errorMessage ? 'Fehler beim Laden der Suchergebnisse.' : `${resultCount.toLocaleString('de-DE')} ${resultLabel} gefunden`}
       </div>
 
       <div className="flex items-center justify-between mb-4">
@@ -121,7 +127,7 @@ export function SearchResults({
               <WordCard
                 key={word.word}
                 word={word}
-                ranking={wordRankings?.words[word.word]}
+                ranking={wordRankings && 'words' in wordRankings ? wordRankings.words[word.word] : undefined}
                 query={parsedQuery}
                 index={index}
                 onSearchInSpeeches={onSearchWordInSpeeches}
@@ -150,6 +156,6 @@ export function SearchResults({
           </p>
         </div>
       )}
-    </main>
+    </section>
   );
 }

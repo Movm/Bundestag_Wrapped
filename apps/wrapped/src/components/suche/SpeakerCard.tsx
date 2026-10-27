@@ -47,7 +47,7 @@ export function SpeakerCard({ speaker, query, index }: SpeakerCardProps) {
           <div className="text-white/80 font-semibold">
             {speaker.speeches + (speaker.wortbeitraege || 0)} Wortbeitr.
           </div>
-          <div className="text-white/40 text-xs">
+          <div className="text-white/65 text-xs">
             davon {speaker.speeches} Reden
           </div>
         </div>

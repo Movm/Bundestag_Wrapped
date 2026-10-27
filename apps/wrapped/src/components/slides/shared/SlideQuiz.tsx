@@ -1,15 +1,5 @@
-import { motion, AnimatePresence } from 'motion/react';
-import { useState, useMemo, useEffect } from 'react';
-import { getPartyBgColor, PARTY_COLORS } from '@/lib/party-colors';
+import { useState, useMemo } from 'react';
 import { playSound } from '@/lib/sounds';
-import { Confetti } from './Confetti';
-import { getThemeConfig } from '@/shared/theme-backgrounds/types';
-
-// Convert RGB string "r, g, b" to hex "#rrggbb"
-function rgbToHex(rgb: string): string {
-  const [r, g, b] = rgb.split(',').map(n => parseInt(n.trim(), 10));
-  return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
-}
 
 export interface QuizConfig {
   question: string;
@@ -58,6 +48,7 @@ function normalizeQuizConfig(config: QuizConfig | QuizConfigAlt): NormalizedQuiz
 
 interface SlideQuizProps {
   quiz: QuizConfig | QuizConfigAlt;
+  isAnswered?: boolean;
   onAnswer: (isCorrect: boolean) => void;
   onComplete: () => void;
   title?: string;
@@ -68,220 +59,43 @@ interface SlideQuizProps {
   slideId?: string;
 }
 
-const FALLBACK_COLORS = ['#2d2d3a', '#363647', '#3f3f52', '#4a4a5e'];
-
-function SuccessOverlay({
-  onComplete,
-  confettiColors,
-}: {
-  onComplete: () => void;
-  confettiColors?: string[];
-}) {
-  useEffect(() => {
-    playSound('correct');
-  }, []);
-
+// Persistent inline feedback lets users read explanations at their own pace.
+export function SlideQuiz({ quiz: rawQuiz, onAnswer, isAnswered = false, title, emoji, badge }: SlideQuizProps) {
+  const quiz = useMemo(() => normalizeQuizConfig(rawQuiz), [rawQuiz]);
+  const [selected, setSelected] = useState<string | null>(null);
+  const answered = isAnswered || selected !== null;
+  const emojiNames: Record<string, string> = { '🛠️': 'Werkzeug', '🏛️': 'Parlament', '⚖️': 'Waage', '✊': 'Erhobene Faust', '😤': 'Verärgertes Gesicht' };
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      onAnimationComplete={() => setTimeout(onComplete, 1500)}
-      className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none"
-    >
-      <Confetti count={20} colors={confettiColors} />
-      <motion.div
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ type: 'spring', bounce: 0.5 }}
-        className="text-center"
-      >
-        <div className="text-8xl mb-4">🎉</div>
-        <p className="text-3xl font-black text-green-400">Richtig!</p>
-      </motion.div>
-    </motion.div>
-  );
-}
-
-function WrongOverlay({
-  explanation,
-  onComplete,
-}: {
-  explanation: string[];
-  onComplete: () => void;
-}) {
-  useEffect(() => {
-    playSound('wrong');
-  }, []);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      onAnimationComplete={() => setTimeout(onComplete, 2000)}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
-    >
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        className="text-center px-8"
-      >
-        <div className="text-7xl mb-4">😅</div>
-        <p className="text-2xl font-bold text-red-400 mb-3">Nicht ganz...</p>
-        <div className="text-white/70 text-base max-w-sm mx-auto space-y-1">
-          {explanation.map((line, i) => (
-            <p key={i}>{explanation.length > 1 ? `• ${line}` : line}</p>
+    <div className="min-h-screen w-full flex flex-col items-center justify-center px-6 py-8">
+      <div className="w-full max-w-lg">
+        {emoji && <div className="text-5xl text-center mb-3" aria-hidden="true">{emoji}</div>}
+        {title && <p className="text-xl font-bold text-center mb-2">{title}</p>}
+        {badge && <p className="text-white/70 text-sm text-center mb-4">{badge}</p>}
+        <h2 className="text-2xl font-bold text-center mb-8">{quiz.question}</h2>
+        <div className="grid grid-cols-2 gap-3">
+          {quiz.options.map(option => (
+            <button key={option} type="button" disabled={answered}
+              aria-label={emojiNames[option] ? `${option} ${emojiNames[option]}` : undefined}
+              className={`min-h-24 p-4 rounded-2xl text-base font-bold break-words ${answered && option === quiz.correctAnswer ? 'bg-green-800 ring-2 ring-green-300' : 'bg-bg-elevated'} ${selected === option ? 'ring-2 ring-white' : ''}`}
+              onClick={() => {
+                if (answered) return;
+                setSelected(option);
+                const correct = option === quiz.correctAnswer;
+                playSound(correct ? 'correct' : 'wrong');
+                onAnswer(correct);
+              }}>
+              {option}
+            </button>
           ))}
         </div>
-      </motion.div>
-    </motion.div>
-  );
-}
-
-export function SlideQuiz({
-  quiz: rawQuiz,
-  onAnswer,
-  onComplete,
-  title,
-  emoji,
-  badge,
-  partyColor: _partyColor,
-  slideId,
-}: SlideQuizProps) {
-  const quiz = useMemo(() => normalizeQuizConfig(rawQuiz), [rawQuiz]);
-  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
-  const [showResult, setShowResult] = useState(false);
-
-  const isCorrect = selectedAnswer === quiz.correctAnswer;
-
-  // Get confetti colors from theme
-  const confettiColors = useMemo(() => {
-    if (!slideId) return undefined;
-    const config = getThemeConfig(slideId);
-    return [
-      rgbToHex(config.colors.primary),
-      rgbToHex(config.colors.secondary),
-      rgbToHex(config.colors.glow),
-      '#ffffff', // White accent
-    ];
-  }, [slideId]);
-
-  const optionColors = useMemo(
-    () =>
-      quiz.options.map((option, i) => {
-        const partyMatch = option.match(/\(([^)]+)\)$/);
-        const partyName = partyMatch ? partyMatch[1] : option;
-        const isParty = partyName in PARTY_COLORS;
-        return isParty ? getPartyBgColor(partyName) : FALLBACK_COLORS[i];
-      }),
-    [quiz.options]
-  );
-
-  const handleSelect = (answer: string) => {
-    if (showResult) return;
-
-    playSound('click');
-    const correct = answer === quiz.correctAnswer;
-    setSelectedAnswer(answer);
-    setShowResult(true);
-    onAnswer(correct);
-  };
-
-  const handleOverlayComplete = () => {
-    setShowResult(false);
-    onComplete();
-  };
-
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6 py-8">
-      <AnimatePresence>
-        {showResult && isCorrect && (
-          <SuccessOverlay onComplete={handleOverlayComplete} confettiColors={confettiColors} />
-        )}
-        {showResult && !isCorrect && (
-          <WrongOverlay
-            explanation={quiz.explanation}
-            onComplete={handleOverlayComplete}
-          />
-        )}
-      </AnimatePresence>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="w-full max-w-md"
-      >
-        {(emoji || title || badge) && (
-          <div className="text-center mb-6">
-            {emoji && <div className="text-5xl mb-3">{emoji}</div>}
-            {title && (
-              <h2 className="text-xl font-bold text-white mb-1">{title}</h2>
-            )}
-            {badge && <p className="text-white/40 text-sm">{badge}</p>}
-          </div>
-        )}
-
-        <h2 className="text-2xl font-bold text-white text-center mb-8">
-          {quiz.question}
-        </h2>
-
-        <div className="grid grid-cols-2 gap-3">
-          {quiz.options.map((option, i) => {
-            const isSelected = selectedAnswer === option;
-            const isAnswer = option === quiz.correctAnswer;
-            const baseColor = optionColors[i];
-
-            let style: React.CSSProperties = {
-              background: `linear-gradient(135deg, ${baseColor}cc, ${baseColor}ee)`,
-            };
-            let ringClass = '';
-
-            if (showResult) {
-              if (isAnswer) {
-                style = {
-                  background: 'linear-gradient(135deg, #22c55ecc, #16a34aee)',
-                };
-                ringClass = 'ring-2 ring-green-300';
-              } else if (isSelected) {
-                style = {
-                  background: 'linear-gradient(135deg, #6b7280aa, #4b5563cc)',
-                };
-                ringClass = 'ring-2 ring-red-400';
-              } else {
-                style = {
-                  background: 'linear-gradient(135deg, #6b728066, #4b556388)',
-                };
-              }
-            }
-
-            const isEmoji = /^\p{Emoji}/u.test(option);
-
-            return (
-              <motion.button
-                key={i}
-                onClick={() => handleSelect(option)}
-                onMouseEnter={() => !showResult && playSound('hover')}
-                style={style}
-                className={`aspect-[4/3] p-4 rounded-2xl flex items-center justify-center text-center transition-all hover:brightness-110 ${ringClass} ${
-                  showResult ? 'cursor-default opacity-50' : 'cursor-pointer'
-                } ${showResult && (isAnswer || isSelected) ? '!opacity-100' : ''}`}
-                whileHover={showResult ? {} : { scale: 1.04 }}
-                whileTap={showResult ? {} : { scale: 0.96 }}
-                disabled={showResult}
-              >
-                {isEmoji ? (
-                  <span className="text-5xl">{option}</span>
-                ) : (
-                  <span className="font-bold text-white text-base leading-tight drop-shadow-sm">
-                    {option}
-                  </span>
-                )}
-              </motion.button>
-            );
-          })}
+        <div role="status" aria-live="polite" aria-atomic="true" className="mt-6">
+          {answered && <>
+            <p className="font-bold">{selected ? selected === quiz.correctAnswer ? 'Richtig!' : 'Nicht ganz.' : 'Antwort gespeichert.'} Richtige Antwort: {quiz.correctAnswer}</p>
+            {quiz.explanation.map((line, index) => <p key={index} className="text-white/80 mt-2">{line}</p>)}
+          </>}
         </div>
-      </motion.div>
+        {answered && <p className="mt-4 text-sm text-white/70">Scroll weiter oder wähle „Weiter“.</p>}
+      </div>
     </div>
   );
 }

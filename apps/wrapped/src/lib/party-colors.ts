@@ -18,30 +18,30 @@ export const PARTY_COLORS: Record<string, string> = {
 export const PARTY_BG_COLORS: Record<string, string> = {
   SPD: '#E3000F',
   'CDU/CSU': '#000000',  // Traditional black for backgrounds (white doesn't work)
-  GRÜNE: '#1AA037',
-  AfD: '#009EE0',
+  GRÜNE: '#13752A',
+  AfD: '#006C99',
   'DIE LINKE': '#BE3075',
-  BSW: '#FF6B35',
+  BSW: '#AE3A10',
   fraktionslos: '#6B7280',
 };
 
 export const PARTY_GRADIENTS: Record<string, string> = {
   SPD: 'from-spd/80 to-spd',
   'CDU/CSU': 'from-gray-800 to-cdu',
-  GRÜNE: 'from-gruene/80 to-gruene',
-  AfD: 'from-afd/80 to-afd',
+  GRÜNE: 'from-[#13752A] to-[#0D5B20]',
+  AfD: 'from-[#006C99] to-[#005477]',
   'DIE LINKE': 'from-linke/80 to-linke',
-  BSW: 'from-bsw/80 to-bsw',
+  BSW: 'from-[#AE3A10] to-[#8E2E0B]',
   fraktionslos: 'from-fraktionslos/80 to-fraktionslos',
 };
 
 export const PARTY_BG_CLASSES: Record<string, string> = {
   SPD: 'bg-spd',
   'CDU/CSU': 'bg-cdu',
-  GRÜNE: 'bg-gruene',
-  AfD: 'bg-afd',
+  GRÜNE: 'bg-[#13752A]',
+  AfD: 'bg-[#006C99]',
   'DIE LINKE': 'bg-linke',
-  BSW: 'bg-bsw',
+  BSW: 'bg-[#AE3A10]',
   fraktionslos: 'bg-fraktionslos',
 };
 

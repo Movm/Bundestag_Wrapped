@@ -1,10 +1,11 @@
-import { useRef, useImperativeHandle, forwardRef, useEffect, useCallback, type ReactNode } from 'react';
+import { Children, isValidElement, useRef, useState, useImperativeHandle, forwardRef, useEffect, useLayoutEffect, useCallback, type ReactNode } from 'react';
 import { cn } from '@/lib/utils';
+import { StoryContext } from './StoryContext';
 
 interface ScrollContainerProps {
   children: ReactNode;
+  initialSection?: string | null;
   onSectionChange?: (sectionId: string) => void;
-  locked?: boolean;
   className?: string;
 }
 
@@ -14,190 +15,80 @@ export interface ScrollContainerRef {
   containerRef: HTMLDivElement | null;
 }
 
-// Wheel scroll constants (tunable)
-const SCROLL_THRESHOLD = 50;   // Accumulated delta needed to trigger scroll
-const SCROLL_COOLDOWN = 600;   // ms to wait after scrolling before allowing another
-const DELTA_RESET_DELAY = 150; // ms of no wheel events before resetting accumulator
-
+/** Native scrolling keeps long slides readable; explicit controls provide the same journey by keyboard. */
 export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerProps>(
-  function ScrollContainer({ children, onSectionChange, locked, className }, ref) {
+  function ScrollContainer({ children, initialSection, onSectionChange, className }, ref) {
+    const ids = Children.toArray(children).flatMap(child => isValidElement<{ id: string }>(child) ? [child.props.id] : []);
+    const [activeId, setActiveId] = useState(initialSection ?? ids[0] ?? '');
+    const [readingMode, setReadingMode] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
+    const currentId = ids.includes(activeId) ? activeId : ids[0] ?? '';
+    const index = Math.max(0, ids.indexOf(currentId));
 
-    // Store callback in ref to avoid recreating IntersectionObserver
-    const onSectionChangeRef = useRef(onSectionChange);
-    onSectionChangeRef.current = onSectionChange;
+    useEffect(() => { onSectionChange?.(currentId); }, [currentId, onSectionChange]);
 
-    // Mirror locked prop in ref for synchronous access in wheel handler
-    const lockedRef = useRef(locked);
-    useEffect(() => {
-      lockedRef.current = locked;
-    }, [locked]);
-
-    // Wheel scroll state
-    const currentSectionRef = useRef<string | null>(null);
-    const isScrollingRef = useRef(false);
-    const accumulatedDeltaRef = useRef(0);
-    const deltaResetTimeoutRef = useRef<number | undefined>(undefined);
-
-    // Helper: get all slide sections
-    const getSections = useCallback(() => {
-      return Array.from(containerRef.current?.querySelectorAll('[data-slide-id]') || []);
+    const navigate = useCallback((id: string, focus = true) => {
+      const container = containerRef.current;
+      const section = Array.from(container?.querySelectorAll<HTMLElement>('[data-slide-id]') ?? [])
+        .find(section => section.id === id);
+      if (!container || !section) return;
+      // Remove inert before moving focus; React reconciles it on the next render.
+      section.inert = false;
+      section.removeAttribute('aria-hidden');
+      setActiveId(id);
+      if (focus) section.focus({ preventScroll: true });
+      container.scrollTo({ top: section.offsetTop, behavior: 'instant' });
     }, []);
 
-    // Helper: get current section index
-    const getCurrentIndex = useCallback(() => {
-      const sections = getSections();
-      return sections.findIndex(s => s.getAttribute('data-slide-id') === currentSectionRef.current);
-    }, [getSections]);
-
-    // Helper: scroll to a specific index
-    const scrollToIndex = useCallback((index: number) => {
-      const sections = getSections();
-      if (index >= 0 && index < sections.length) {
-        isScrollingRef.current = true;
-        setTimeout(() => {
-          isScrollingRef.current = false;
-        }, SCROLL_COOLDOWN);
-        sections[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, [getSections]);
-
-    // IntersectionObserver to track which section is visible
-    useEffect(() => {
-      if (!containerRef.current) return;
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          for (const entry of entries) {
-            if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
-              const id = entry.target.getAttribute('data-slide-id');
-              if (id) {
-                currentSectionRef.current = id;
-                onSectionChangeRef.current?.(id);
-              }
-            }
-          }
-        },
-        { root: containerRef.current, threshold: 0.5 }
-      );
-
-      const sections = containerRef.current.querySelectorAll('[data-slide-id]');
-      sections.forEach((section) => observer.observe(section));
-
-      return () => observer.disconnect();
-    }, []); // Empty deps - observer is stable, callback accessed via ref
-
-    // Wheel event handler for controlled slide-by-slide scrolling
-    useEffect(() => {
-      const container = containerRef.current;
-      if (!container) return;
-
-      const handleWheel = (e: WheelEvent) => {
-        // Don't intercept if locked (quiz slides, intro before start)
-        if (lockedRef.current) return;
-
-        // Don't intercept during programmatic scroll (cooldown active)
-        if (isScrollingRef.current) {
-          e.preventDefault();
-          return;
-        }
-
-        // Normalize delta for different input devices
-        // deltaMode: 0 = pixels (trackpad), 1 = lines (mouse wheel), 2 = pages
-        let normalizedDelta = e.deltaY;
-        if (e.deltaMode === 1) {
-          normalizedDelta *= 40;
-        } else if (e.deltaMode === 2) {
-          normalizedDelta *= 800;
-        }
-
-        // Clear existing reset timeout
-        if (deltaResetTimeoutRef.current) {
-          window.clearTimeout(deltaResetTimeoutRef.current);
-        }
-
-        // Accumulate delta
-        accumulatedDeltaRef.current += normalizedDelta;
-
-        // Check if threshold reached
-        if (Math.abs(accumulatedDeltaRef.current) >= SCROLL_THRESHOLD) {
-          const direction = accumulatedDeltaRef.current > 0 ? 1 : -1;
-          const currentIndex = getCurrentIndex();
-          const sections = getSections();
-          const targetIndex = currentIndex + direction;
-
-          // Reset accumulator
-          accumulatedDeltaRef.current = 0;
-
-          // Boundary check: don't scroll past first/last slide
-          if (targetIndex < 0 || targetIndex >= sections.length) {
-            return;
-          }
-
-          // Prevent default and navigate
-          e.preventDefault();
-          scrollToIndex(targetIndex);
-        } else {
-          // Prevent partial scrolling while accumulating
-          e.preventDefault();
-
-          // Reset accumulator after period of no wheel events
-          deltaResetTimeoutRef.current = window.setTimeout(() => {
-            accumulatedDeltaRef.current = 0;
-          }, DELTA_RESET_DELAY);
-        }
-      };
-
-      // Use passive: false to allow preventDefault
-      container.addEventListener('wheel', handleWheel, { passive: false });
-
-      return () => {
-        container.removeEventListener('wheel', handleWheel);
-        if (deltaResetTimeoutRef.current) {
-          window.clearTimeout(deltaResetTimeoutRef.current);
-        }
-      };
-    }, [getCurrentIndex, getSections, scrollToIndex]);
+    useLayoutEffect(() => {
+      if (initialSection) navigate(initialSection, false);
+    }, [initialSection, navigate]);
 
     useImperativeHandle(ref, () => ({
-      scrollToNextSlide: (currentSlideId: string) => {
-        // Set scrolling flag to prevent wheel interference
-        isScrollingRef.current = true;
-        setTimeout(() => {
-          isScrollingRef.current = false;
-        }, SCROLL_COOLDOWN);
-
-        const sections = Array.from(containerRef.current?.querySelectorAll('[data-slide-id]') || []);
-        const idx = sections.findIndex(s => s.getAttribute('data-slide-id') === currentSlideId);
-        sections[idx + 1]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      scrollToNextSlide: id => {
+        const next = ids[ids.indexOf(id) + 1];
+        if (next) navigate(next);
       },
-      scrollToSlide: (slideId: string) => {
-        // Shorter cooldown for instant scrolls (e.g., restore position)
-        isScrollingRef.current = true;
-        setTimeout(() => {
-          isScrollingRef.current = false;
-        }, 100);
-
-        const section = containerRef.current?.querySelector(`[data-slide-id="${slideId}"]`);
-        section?.scrollIntoView({ behavior: 'instant', block: 'start' });
-      },
-      get containerRef() {
-        return containerRef.current;
-      },
+      scrollToSlide: id => navigate(id),
+      get containerRef() { return containerRef.current; },
     }));
 
+    const trackSection = () => {
+      const container = containerRef.current;
+      if (!container) return;
+      const sections = Array.from(container.querySelectorAll<HTMLElement>('[data-slide-id]'));
+      // The viewport midpoint selects the visible slide even when its content is tall.
+      const anchor = container.getBoundingClientRect().top + container.clientHeight / 2;
+      const section = sections.find(section => {
+        const rect = section.getBoundingClientRect();
+        return rect.top <= anchor && rect.bottom > anchor;
+      });
+      if (!section || section.id === currentId) return;
+      const previous = sections.find(section => section.id === currentId);
+      if (!readingMode && previous?.contains(document.activeElement)) {
+        section.inert = false;
+        section.removeAttribute('aria-hidden');
+        section.focus({ preventScroll: true });
+      }
+      setActiveId(section.id);
+    };
+
     return (
-      <div
-        ref={containerRef}
-        className={cn(
-          'h-screen scroll-smooth',
-          'snap-y snap-mandatory',
-          'scrollbar-hide',
-          locked ? 'overflow-hidden' : 'overflow-y-scroll',
-          className
-        )}
-      >
-        {children}
+      <div className="story-shell">
+        {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- Safari needs an explicit tab stop to scroll text-only slides by keyboard. */}
+        <div ref={containerRef} data-story-scroll tabIndex={0} role="region" aria-label="Wrapped-Folien" onScroll={trackSection}
+          className={cn('story-scroll relative overflow-y-auto overscroll-contain', className)}>
+          <StoryContext value={{ activeId: currentId, readingMode }}>{children}</StoryContext>
+        </div>
+        <nav aria-label="Foliennavigation" className="story-navigation">
+          <button type="button" disabled={index === 0} onClick={() => navigate(ids[index - 1])}>Zurück</button>
+          <span className="text-xs text-white/80" role="status" aria-live="polite">Folie {index + 1} von {ids.length}</span>
+          <button type="button" disabled={index === ids.length - 1} onClick={() => navigate(ids[index + 1])}>Weiter</button>
+          <label className="flex items-center justify-center gap-2 min-h-11 text-sm col-span-3">
+            <input type="checkbox" checked={readingMode} onChange={event => setReadingMode(event.target.checked)} />
+            Lesemodus (alle Folien)
+          </label>
+        </nav>
       </div>
     );
   }

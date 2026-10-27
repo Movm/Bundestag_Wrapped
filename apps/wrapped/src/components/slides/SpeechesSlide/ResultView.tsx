@@ -50,7 +50,7 @@ export const ResultView = memo(function ResultView({ parties }: ResultViewProps)
   const totalReden = top5.reduce((sum, p) => sum + p.speeches, 0);
 
   return (
-    <div className="min-h-screen relative w-full">
+    <div className="bubble-slide min-h-screen relative w-full">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -79,7 +79,7 @@ export const ResultView = memo(function ResultView({ parties }: ResultViewProps)
         </motion.p>
       </motion.div>
 
-      <div className="absolute inset-0 z-10">
+      <div className="bubble-grid absolute inset-0 z-10">
         {top5.map((party, i) => {
           const speechSizePercent = 20 + ((party.speeches - minSpeeches) / speechRange) * 80;
           const wortSizePercent = 20 + ((party.wortbeitraege - minWortbeitraege) / wortbeitraegeRange) * 80;
@@ -118,9 +118,9 @@ export const ResultView = memo(function ResultView({ parties }: ResultViewProps)
 
           const backContent = (
             <div className={bubbleClasses}>
-              <h4 className="text-white font-black text-xs md:text-sm drop-shadow-md absolute top-3 md:top-4">
+              <h3 className="text-white font-black text-xs md:text-sm drop-shadow-md absolute top-3 md:top-4">
                 {party.party}
-              </h4>
+              </h3>
               <p className="text-white font-black text-xl md:text-2xl lg:text-3xl drop-shadow-md">
                 {party.wortbeitraege.toLocaleString('de-DE')}
               </p>
@@ -158,6 +158,7 @@ export const ResultView = memo(function ResultView({ parties }: ResultViewProps)
                 style={{ willChange: 'transform' }}
               >
                 <FlipCard
+                  label={party.party}
                   front={frontContent}
                   back={backContent}
                   className="min-w-[100px] min-h-[100px] max-w-[280px] max-h-[280px]"
