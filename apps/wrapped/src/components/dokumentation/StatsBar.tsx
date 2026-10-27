@@ -18,7 +18,7 @@ export function StatsBar({ stats }: { stats: DocumentationStat[] }) {
               <div className="text-2xl md:text-3xl font-light text-stone-900 font-mono">
                 {stat.value}
               </div>
-              <div className="text-sm text-stone-500 mt-1">{stat.label}</div>
+              <div className="text-sm text-stone-600 mt-1">{stat.label}</div>
             </div>
           ))}
         </div>

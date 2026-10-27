@@ -415,3 +415,84 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 }
+
+/* Accessible story shell: text may grow; navigation never covers the content. */
+.story-shell {
+  --story-height: calc(100dvh - 7rem);
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+.speaker-story { padding-top: calc(3.5rem + env(safe-area-inset-top, 0px)); }
+.speaker-story .story-shell { height: calc(100dvh - 3.5rem - env(safe-area-inset-top, 0px)); --story-height: calc(100dvh - 10.5rem); }
+.story-scroll { scroll-behavior: auto; scrollbar-gutter: stable; }
+.story-section { min-height: var(--story-height); padding-top: 4rem; padding-bottom: 1rem; overflow-wrap: anywhere; }
+.story-section > * { width: 100%; }
+.story-section .min-h-screen { min-height: calc(var(--story-height) - 5rem); }
+.story-navigation {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0 0.5rem;
+  padding: 0.25rem max(1rem, env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) max(1rem, env(safe-area-inset-left, 0px));
+  background: #12121a;
+  border-top: 1px solid #52525b;
+  position: relative;
+  z-index: 40;
+}
+.story-navigation button { min-height: 44px; padding: 0.5rem; border-radius: 0.5rem; }
+.story-navigation button:disabled { opacity: 0.5; }
+.story-navigation button:not(:disabled):active { background: #3f3f46; }
+.story-share-trigger { bottom: calc(7rem + env(safe-area-inset-bottom, 0px)); right: max(1rem, env(safe-area-inset-right, 0px)); }
+.story-share-popup { bottom: max(1rem, env(safe-area-inset-bottom, 0px)); right: max(1rem, env(safe-area-inset-right, 0px)); }
+.accessible-dialog {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: white;
+}
+.accessible-dialog::backdrop { background: rgb(0 0 0 / 60%); }
+:focus-visible { outline: 3px solid #ec4899; outline-offset: 3px; }
+button, a, input, select, textarea { touch-action: manipulation; }
+button { -webkit-user-select: none; user-select: none; }
+button[aria-label], button:has(> svg) { min-width: 44px; min-height: 44px; }
+input:not([type="checkbox"]), select, textarea { font-size: max(1rem, 16px); }
+header.fixed { padding-top: env(safe-area-inset-top, 0px); }
+header.fixed img { max-width: 100%; object-fit: contain; }
+header.fixed a { min-width: 0; }
+header.fixed > div > div { flex-shrink: 0; }
+/* Story toolbar clears notches in either orientation. */
+.fixed.top-4.right-4 { top: max(1rem, env(safe-area-inset-top, 0px)); right: max(1rem, env(safe-area-inset-right, 0px)); }
+
+@media (max-width: 767px), (max-height: 600px), (prefers-reduced-motion: reduce) {
+  .bubble-slide { padding: 1rem 0; }
+  .bubble-slide > .absolute:not(.bubble-grid) { position: relative; inset: auto; margin-bottom: 1.5rem; }
+  .bubble-grid { position: relative; inset: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; padding: 1rem; }
+  .bubble-grid > * { position: relative !important; inset: auto !important; transform: none !important; }
+  .bubble-grid > * > * { transform: none !important; }
+  .bubble-grid .flip-card { width: 100%; height: 200px; min-width: 0; max-width: none; max-height: none; }
+  .bubble-grid h3 { overflow-wrap: anywhere; }
+}
+@media (max-width: 359px) { .bubble-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media (forced-colors: active) {
+  .gradient-text { background: none; -webkit-text-fill-color: currentColor; color: CanvasText; }
+  button, select, input { border: 1px solid ButtonText; }
+}
+@media (max-width: 767px), (max-height: 600px), (prefers-reduced-motion: reduce) {
+  .bubble-grid .flip-card { height: auto; min-height: 200px; }
+  .bubble-grid .flip-card > div, .bubble-grid .flip-card > div > div { position: relative; inset: auto; transform: none !important; }
+  .bubble-grid .flip-card [aria-hidden="true"] { display: none; }
+  .bubble-grid .flip-card > div > div > div { min-height: 200px; padding: 1rem; }
+  .bubble-grid > * > .rounded-full { width: 100% !important; height: auto !important; min-height: 160px; max-height: none; }
+}

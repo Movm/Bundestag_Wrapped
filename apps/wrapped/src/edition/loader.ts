@@ -1,9 +1,9 @@
 import { validateContractDocument, validateEditionContent, validateWrappedData } from '@/data/wrapped-contract';
 import type { WrappedData } from '@/data/wrapped';
 import type { SpeakerIndex, SpeakerWrapped } from '@/data/speaker-wrapped';
-import type { Speech, TopicRankingsData, WordRankingsData, WordsIndex } from '@/lib/search-utils';
+import type { Speech, TopicRankingsData } from '@/lib/search-utils';
 import { resolveAssetUrl, type Edition, type EditionRegistry } from './registry';
-import type { EditionContent, EditionSummary } from '@/generated/wrapped-contract-v1';
+import type { EditionContent, EditionSummary, WordsAsset, WordRankingsAsset } from '@/generated/wrapped-contract-v1';
 
 export type EditionLoadErrorKind = 'unknown-edition' | 'invalid-contract' | 'missing-asset' | 'http' | 'network';
 
@@ -39,8 +39,8 @@ type EditionAssetData = {
   SpeakerIndexAsset: SpeakerIndex;
   SpeakerWrappedAsset: SpeakerWrapped;
   SpeechesAsset: SpeechesData;
-  WordsAsset: WordsIndex;
-  WordRankingsAsset: WordRankingsData;
+  WordsAsset: WordsAsset;
+  WordRankingsAsset: WordRankingsAsset;
   TopicRankingsAsset: TopicRankingsData;
 };
 

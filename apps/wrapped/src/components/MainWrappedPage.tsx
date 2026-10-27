@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useWrappedData } from '@/hooks/useDataQueries';
 import { WrappedToolbar } from '@/components/ui/WrappedToolbar';
 import { Footer } from '@/components/ui/Footer';
+import { SkipLink } from '@/components/ui/SkipLink';
 import { SEO } from '@/components/seo/SEO';
 import { SITE_CONFIG } from '@/components/seo/constants';
 import { BackgroundSystem } from '@/components/ui/BackgroundSystem';
@@ -13,12 +14,11 @@ import { clearWrappedProgress } from '@/lib/wrapped-storage';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
 import { buildConfiguredEditionQuizModel } from '@/domain/edition-quiz';
-import { useIsQuizAnswered, useQuizStore } from '@/stores/quizStore';
+import { useQuizStore } from '@/stores/quizStore';
 import {
   ScrollContainer,
   SlideSection,
   useScrollWrapped,
-  useAutoScroll,
   useSlideTransitionSound,
   SlideRenderer,
   SLIDES,
@@ -34,9 +34,10 @@ import { SlideShareFAB } from './slides/shared';
 interface MainWrappedPageProps {
   isMenuOpen: boolean;
   onMenuToggle: () => void;
+  onRestart: () => void;
 }
 
-export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPageProps) {
+export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWrappedPageProps) {
   const surface = editionSurface(useOptionalEdition());
   // React Query fetches data and syncs to wrappedStore
   // Slides use store selectors directly, not data prop
@@ -54,12 +55,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
   // Simplified: quiz state is in quizStore, not passed as props
   const { currentSection, initialSection, setCurrentSection } = useScrollWrapped(activeSlides);
 
-  // For scroll lock: check if current quiz is answered (only subscribes when on quiz slide)
-  const isCurrentQuizAnswered = useIsQuizAnswered(surface, currentSection as SlideType);
   const resetQuiz = useQuizStore((state) => state.reset);
-
-  // Auto-scroll on intro slides after 4 seconds
-  useAutoScroll(currentSection, scrollContainerRef);
 
   // Play subtle whoosh sound on slide transitions
   useSlideTransitionSound(currentSection);
@@ -87,18 +83,6 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
     };
   }, []);
 
-  // Restore scroll position on mount if we have saved progress
-  const hasRestoredRef = useRef(false);
-  useEffect(() => {
-    if (initialSection && !hasRestoredRef.current && !loading && data) {
-      hasRestoredRef.current = true;
-      // Small delay to ensure ScrollContainer is mounted
-      requestAnimationFrame(() => {
-        scrollContainerRef.current?.scrollToSlide(initialSection);
-      });
-    }
-  }, [initialSection, loading, data]);
-
   const handleQuizComplete = useCallback((slideId: string) => {
     if (slideId === 'intro') {
       setIntroStarted(true);
@@ -108,12 +92,12 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
     }, 100);
   }, []);
 
-  // Restart handler - clears progress and reloads page
+  // Remount the journey after clearing progress; avoid unload/scroll persistence races.
   const handleRestart = useCallback(() => {
     clearWrappedProgress(surface);
     resetQuiz(surface);
-    window.location.reload();
-  }, [resetQuiz, surface]);
+    onRestart();
+  }, [resetQuiz, surface, onRestart]);
 
   // Stable section change handler
   const handleSectionChange = useCallback((id: string) => {
@@ -130,29 +114,10 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
     ) as Record<SlideType, { onComplete: () => void }>;
   }, [activeSlides, handleQuizComplete]);
 
-  // Lock scroll on intro (until started) and unanswered quiz slides
-  const [scrollLocked, setScrollLocked] = useState(true); // Start locked for intro
-  const shouldLock =
-    (currentSection === 'intro' && !introStarted) ||
-    (activeQuizSlides.includes(currentSection as (typeof activeQuizSlides)[number]) && !isCurrentQuizAnswered);
-
-  useEffect(() => {
-    if (shouldLock) {
-      // Delay lock to let scroll-snap animation complete before triggering reflow
-      const timer = setTimeout(() => setScrollLocked(true), 200);
-      return () => clearTimeout(timer);
-    } else {
-      // Unlock immediately (no delay needed)
-      const frame = requestAnimationFrame(() => setScrollLocked(false));
-      return () => cancelAnimationFrame(frame);
-    }
-  }, [shouldLock]);
-
   // Debug: Track re-renders and prop changes
   useDebugRender('MainWrappedPage', {
     currentSection,
     introStarted,
-    scrollLocked,
     dataLoaded: !!data,
     handleQuizComplete,
   });
@@ -196,6 +161,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
   return (
     <>
       <SEO canonicalUrl={surface.canonicalPath} structuredData={{ ...websiteSchema, name: surface.title, url: `${SITE_CONFIG.siteUrl}${surface.canonicalPath}` }} />
+      <SkipLink />
       <WrappedToolbar isMenuOpen={isMenuOpen} onMenuToggle={onMenuToggle} />
 
       <BackgroundSystem
@@ -204,12 +170,12 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
         sparkles={true}
       />
 
-      <div className="relative z-10">
+      <main id="main-content" tabIndex={-1} className="relative z-10">
         <ScrollContainer
           ref={scrollContainerRef}
           scrollElementRef={scrollElementRef}
+          initialSection={initialSection}
           onSectionChange={handleSectionChange}
-          locked={scrollLocked}
         >
           {activeSlides.map((slideId, index) => (
             <SlideSection key={slideId} id={slideId} active={Math.abs(index - activeSlides.findIndex(id => id === currentSection)) <= 1}>
@@ -239,7 +205,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
+      </main>
     </>
   );
 }

@@ -50,7 +50,7 @@ interface CodeBlockProps {
 
 export function CodeBlock({ children, title, note }: CodeBlockProps) {
   return (
-    <div className="bg-stone-900 rounded-xl p-6 text-white font-mono text-sm">
+    <div className="bg-stone-900 rounded-xl p-6 text-white font-mono text-sm break-words [overflow-wrap:anywhere]">
       {title && (
         <h4 className="font-mono text-xs text-stone-400 uppercase tracking-wider mb-4">
           {title}

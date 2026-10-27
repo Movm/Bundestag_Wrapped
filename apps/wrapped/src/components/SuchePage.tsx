@@ -110,11 +110,11 @@ export function SuchePage() {
 
   const hasActiveFilters = state.party || state.q || state.minWords > 0 || state.maxWords > 0;
 
-  if (loading) {
+  if (loading && !speakerIndex) {
     return <SuchePageSkeleton />;
   }
 
-  if (error) {
+  if (error && !speakerIndex) {
     return (
       <div className="min-h-screen page-bg flex items-center justify-center pt-14">
         <div className="text-center">
@@ -147,6 +147,7 @@ export function SuchePage() {
           />
 
           <SearchResults
+            errorMessage={error ? error.message : undefined}
             state={state}
             filteredSpeeches={filteredSpeeches}
             filteredSpeakers={filteredSpeakers}
@@ -155,7 +156,7 @@ export function SuchePage() {
             parsedQuery={parsedQuery}
             page={page}
             speechTotal={speechSearch.data?.total ?? 0}
-            loading={speechSearch.isLoading}
+            loading={Boolean(loading) || speechSearch.isLoading}
             onPreviousPage={previousPage}
             hasActiveFilters={!!hasActiveFilters}
             hasQuery={hasQuery}

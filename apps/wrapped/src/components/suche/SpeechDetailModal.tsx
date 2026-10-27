@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { AccessibleDialog } from '@/components/ui/AccessibleDialog';
 import { motion } from 'motion/react';
 import { PARTY_BG_CLASSES } from '@/lib/party-colors';
 import type { Speech } from '@/lib/search-utils';
@@ -9,40 +9,13 @@ interface SpeechDetailModalProps {
 }
 
 export function SpeechDetailModal({ speech, onClose }: SpeechDetailModalProps) {
-  const previousFocusRef = useRef<HTMLElement | null>(null);
-
-  useEffect(() => {
-    // Store the currently focused element to restore on close
-    previousFocusRef.current = document.activeElement as HTMLElement;
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-    window.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-      // Restore focus to the previously focused element
-      previousFocusRef.current?.focus();
-    };
-  }, [onClose]);
-
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, []);
-
   return (
+    <AccessibleDialog open onClose={onClose} labelledBy="speech-modal-title">
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className="fixed inset-0 z-50 flex items-end sm:items-center justify-center"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="speech-modal-title"
     >
       <motion.div
         initial={{ opacity: 0 }}
@@ -57,9 +30,9 @@ export function SpeechDetailModal({ speech, onClose }: SpeechDetailModalProps) {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 100 }}
-        className="relative w-full sm:max-w-2xl max-h-[90vh] bg-bg-secondary border border-white/10 rounded-t-2xl sm:rounded-2xl overflow-hidden flex flex-col"
+        className="relative w-full sm:max-w-2xl max-h-[90dvh] bg-bg-secondary border border-white/10 rounded-t-2xl sm:rounded-2xl overflow-hidden flex flex-col"
       >
-        <div className="flex items-start justify-between gap-4 p-4 sm:p-6 border-b border-white/10">
+        <div className="shrink-0 flex items-start justify-between gap-4 p-4 sm:p-6 border-b border-white/10">
           <div>
             <div className="flex items-center gap-2 flex-wrap mb-1">
               <h2 id="speech-modal-title" className="text-xl font-bold text-white">{speech.speaker}</h2>
@@ -86,7 +59,7 @@ export function SpeechDetailModal({ speech, onClose }: SpeechDetailModalProps) {
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-4 sm:p-6">
+        <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain p-4 sm:p-6">
           <div className="prose prose-invert prose-sm max-w-none">
             <p className="text-white/80 leading-relaxed whitespace-pre-wrap">
               {speech.text}
@@ -95,11 +68,12 @@ export function SpeechDetailModal({ speech, onClose }: SpeechDetailModalProps) {
         </div>
 
         <div className="p-4 border-t border-white/10 bg-bg-primary/50">
-          <p className="text-center text-white/40 text-xs">
+          <p className="text-center text-white/65 text-xs">
             Quelle: Deutscher Bundestag, 21. Wahlperiode
           </p>
         </div>
       </motion.div>
     </motion.div>
+    </AccessibleDialog>
   );
 }

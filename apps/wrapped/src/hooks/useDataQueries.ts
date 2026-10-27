@@ -1,9 +1,11 @@
+import { buildWordSearchIndex } from '@/domain/word-search-data';
+import type { WordRankingsAsset } from '@/generated/wrapped-contract-v1';
 import { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import type { UseQueryResult } from '@tanstack/react-query';
 import type { WrappedData } from '@/data/wrapped';
 import { enrichSpeakerData, type SpeakerIndex, type SpeakerWrapped } from '@/data/speaker-wrapped';
-import type { TopicRankingsData, WordRankingsData, WordsIndex } from '@/lib/search-utils';
+import type { TopicRankingsData, WordsIndex } from '@/lib/search-utils';
 import { loadEditionAsset, type EditionAssetDocument, type SpeechesData } from '@/edition/loader';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import type { EditionContextValue } from '@/edition/types';
@@ -131,13 +133,13 @@ export function useWordsIndex(options?: { enabled?: boolean }) {
   return useEditionJsonAsset<WordsIndex>(
     'words',
     (edition) => edition.manifest!.assets.words,
-    (edition, asset) => editionAsset(edition, asset, 'WordsAsset'),
+    async (edition, asset) => buildWordSearchIndex(await editionAsset(edition, asset, 'WordsAsset'), edition.data?.parties ?? []),
     options?.enabled ?? true,
   );
 }
 
 export function useWordRankings(options?: { enabled?: boolean }) {
-  return useEditionJsonAsset<WordRankingsData>(
+  return useEditionJsonAsset<WordRankingsAsset>(
     'word-rankings',
     (edition) => edition.manifest!.assets.wordRankings,
     (edition, asset) => editionAsset(edition, asset, 'WordRankingsAsset'),

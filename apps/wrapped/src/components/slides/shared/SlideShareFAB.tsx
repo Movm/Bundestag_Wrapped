@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { AccessibleDialog } from '@/components/ui/AccessibleDialog';
 import { Share2, Download, X } from 'lucide-react';
 import {
   type SlideData,
@@ -20,8 +21,6 @@ export function SlideShareFAB({ slideData }: SlideShareFABProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [canShare] = useState(() => typeof navigator !== 'undefined' && !!navigator.share);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const triggerRef = useRef<HTMLButtonElement>(null);
-  const dialogRef = useRef<HTMLDivElement>(null);
 
   // Render the sharepic when modal opens and canvas is mounted
   useEffect(() => {
@@ -39,28 +38,6 @@ export function SlideShareFAB({ slideData }: SlideShareFABProps) {
   };
 
   const close = () => setIsOpen(false);
-
-  useEffect(() => {
-    if (!isOpen) {
-      triggerRef.current?.focus();
-      return;
-    }
-    const dialog = dialogRef.current;
-    const closeButton = dialog?.querySelector<HTMLButtonElement>('[data-share-close]');
-    closeButton?.focus();
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') close();
-      if (event.key !== 'Tab' || !dialog) return;
-      const focusable = [...dialog.querySelectorAll<HTMLElement>('button:not([disabled])')];
-      if (!focusable.length) return;
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-      if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
-    };
-    document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
-  }, [isOpen]);
 
   const handleDownload = () => {
     if (!canvasRef.current) return;
@@ -81,9 +58,8 @@ export function SlideShareFAB({ slideData }: SlideShareFABProps) {
     <>
       {/* FAB Button */}
       <motion.button
-        ref={triggerRef}
-        onClick={handleOpen}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-lg hover:bg-white/20 transition-colors"
+        onClick={event => { event.currentTarget.focus(); handleOpen(); }}
+        className="fixed story-share-trigger z-50 w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-lg hover:bg-white/20 transition-colors"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         initial={{ opacity: 0, scale: 0.8 }}
@@ -95,6 +71,7 @@ export function SlideShareFAB({ slideData }: SlideShareFABProps) {
       </motion.button>
 
       {/* Share Popup */}
+      <AccessibleDialog open={isOpen} onClose={close} labelledBy="slide-share-title">
       <AnimatePresence>
         {isOpen && (
           <>
@@ -110,20 +87,16 @@ export function SlideShareFAB({ slideData }: SlideShareFABProps) {
 
             {/* Modal */}
             <motion.div
-              ref={dialogRef}
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="fixed bottom-24 right-6 z-50 bg-[#1a1a2e]/95 backdrop-blur-xl rounded-2xl border border-white/10 p-4 shadow-2xl w-72"
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="slide-share-title"
+              className="fixed story-share-popup z-50 bg-[#1a1a2e]/95 backdrop-blur-xl rounded-2xl border border-white/10 p-4 shadow-2xl w-72 max-w-[calc(100vw-2rem)] max-h-[calc(100dvh-2rem)] overflow-y-auto"
             >
               {/* Close button */}
               <button
                 data-share-close
                 onClick={close}
-                className="absolute top-3 right-3 text-white/50 hover:text-white transition-colors"
+                className="absolute top-1 right-1 p-3 text-white/70 hover:text-white transition-colors"
               >
                 <X className="w-5 h-5" aria-hidden="true" />
                 <span className="sr-only">Teilen schließen</span>
@@ -137,7 +110,7 @@ export function SlideShareFAB({ slideData }: SlideShareFABProps) {
                   ref={canvasRef}
                   width={1080}
                   height={1080}
-                  className="w-full aspect-square rounded-lg"
+                  className="w-full aspect-square rounded-lg" role="img" aria-label={`Vorschau: ${surface.title}`}
                 />
               </div>
 
@@ -164,6 +137,7 @@ export function SlideShareFAB({ slideData }: SlideShareFABProps) {
           </>
         )}
       </AnimatePresence>
+      </AccessibleDialog>
     </>
   );
 }

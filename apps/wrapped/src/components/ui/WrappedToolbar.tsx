@@ -70,7 +70,7 @@ export function WrappedToolbar({ isMenuOpen, onMenuToggle }: WrappedToolbarProps
 
       {/* Menu toggle */}
       <button
-        onClick={onMenuToggle}
+        onClick={event => { event.currentTarget.focus(); onMenuToggle(); }}
         className="p-2 rounded-lg transition-colors text-white/70 hover:text-white hover:bg-white/10"
         aria-expanded={isMenuOpen}
         aria-label={isMenuOpen ? 'Menü schließen' : 'Menü öffnen'}

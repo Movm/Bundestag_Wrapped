@@ -65,7 +65,7 @@ export function ResultView({ genderAnalysis }: ResultViewProps) {
             </motion.p>
           </motion.div>
 
-          <div className="flex flex-row items-end gap-6 lg:gap-10">
+          <div className="flex flex-wrap justify-center items-end gap-6 lg:gap-10">
             {topParty && (() => {
               const size = 100 + (topParty.femaleRatio / 100) * 120;
               return (
