@@ -73,7 +73,7 @@ export const ComparisonSlide = memo(function ComparisonSlide({
   const positions = BUBBLE_POSITIONS[items.length] || BUBBLE_POSITIONS[5];
 
   return (
-    <div className="min-h-screen relative w-full">
+    <div className="bubble-slide min-h-screen relative w-full">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ export const ComparisonSlide = memo(function ComparisonSlide({
         )}
       </motion.div>
 
-      <div className="absolute inset-0 z-10">
+      <div className="bubble-grid absolute inset-0 z-10">
         {items.map((item, i) => {
           const sizePercent = 20 + ((item.value - minValue) / range) * 80;
 

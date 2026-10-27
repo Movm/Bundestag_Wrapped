@@ -1,3 +1,4 @@
+import { AccessibleDialog } from './AccessibleDialog';
 import { useState, useRef, useEffect, useMemo, memo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Download, Share2, X } from 'lucide-react';
@@ -99,6 +100,7 @@ export function ShareModal({ isOpen, onClose, correctCount, totalQuestions }: Sh
   };
 
   return (
+    <AccessibleDialog open={isOpen} onClose={onClose} label="Ergebnis teilen">
     <AnimatePresence>
       {isOpen && (
         <motion.div
@@ -115,11 +117,12 @@ export function ShareModal({ isOpen, onClose, correctCount, totalQuestions }: Sh
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-[320px] sm:max-w-sm md:max-w-md lg:max-w-lg bg-white/5 rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 shadow-2xl backdrop-blur-md"
+            className="relative w-full max-h-[calc(100dvh-2rem)] overflow-y-auto max-w-[320px] sm:max-w-sm md:max-w-md lg:max-w-lg bg-white/5 rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 shadow-2xl backdrop-blur-md"
           >
             {/* Close button */}
             <button
               onClick={onClose}
+              aria-label="Teilen schließen"
               className="absolute top-4 right-4 p-2 text-white/60 hover:text-white hover:bg-white/10 rounded-full transition-all hover:scale-110"
             >
               <X size={24} />
@@ -149,15 +152,16 @@ export function ShareModal({ isOpen, onClose, correctCount, totalQuestions }: Sh
               type="text"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
-              placeholder="Dein Name (optional)"
+              placeholder="Dein Name (optional)" aria-label="Dein Name (optional)"
               maxLength={30}
-              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 text-center text-sm sm:text-base focus:outline-none focus:border-pink-500/50 focus:bg-white/10 transition-all mb-4 sm:mb-6"
+              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 text-center text-base focus:outline-none focus:border-pink-500/50 focus:bg-white/10 transition-all mb-4 sm:mb-6"
             />
 
             {/* Canvas Preview */}
             <div className="rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 mb-4 sm:mb-8 bg-black/20 max-w-[200px] sm:max-w-[280px] md:max-w-none mx-auto">
               <canvas
                 ref={canvasRef}
+                role="img" aria-label="Vorschau des persönlichen Ergebnisses"
                 className="w-full h-auto block"
                 style={{ aspectRatio: '1 / 1' }}
               />
@@ -191,5 +195,6 @@ export function ShareModal({ isOpen, onClose, correctCount, totalQuestions }: Sh
         </motion.div>
       )}
     </AnimatePresence>
+    </AccessibleDialog>
   );
 }

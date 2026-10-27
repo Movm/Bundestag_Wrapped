@@ -3,102 +3,35 @@ import { motion, useReducedMotion } from 'motion/react';
 import { playSound } from '@/lib/sounds';
 
 interface FlipCardProps {
-  /** Content shown on the front (initial) side */
   front: ReactNode;
-  /** Content shown on the back (flipped) side */
   back: ReactNode;
-  /** Additional CSS classes for the container */
+  label: string;
   className?: string;
-  /** Width/height of the card (CSS value) */
   size?: string;
-  /** Whether to scale up slightly on hover (default: true) */
   hoverScale?: boolean;
 }
 
-/**
- * A 3D flip card component that shows front content initially,
- * and flips to show back content on hover (desktop) or tap (mobile).
- */
-export function FlipCard({
-  front,
-  back,
-  className = '',
-  size,
-  hoverScale = true,
-}: FlipCardProps) {
+/** A single activation path avoids flipping twice on touch (touchstart + click). */
+export function FlipCard({ front, back, label, className = '', size, hoverScale = true }: FlipCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
-  const prefersReducedMotion = useReducedMotion();
-
-  const handleTouchStart = () => {
-    setIsTouchDevice(true);
-    setIsFlipped((prev) => !prev);
-    playSound('click');
-  };
-
-  const handleHoverStart = () => {
-    if (!isTouchDevice) {
-      setIsFlipped(true);
-      playSound('click');
-    }
-  };
-
-  // Reduced motion: show content without 3D flip animation
-  if (prefersReducedMotion) {
-    return (
-      <button
-        type="button"
-        onClick={() => setIsFlipped((prev) => !prev)}
-        className={`cursor-pointer relative ${className}`}
-        style={{ width: size, height: size }}
-      >
-        <div className="absolute inset-0" style={{ opacity: isFlipped ? 0 : 1 }}>
-          {front}
-        </div>
-        <div className="absolute inset-0" style={{ opacity: isFlipped ? 1 : 0 }}>
-          {back}
-        </div>
-      </button>
-    );
-  }
-
+  const reducedMotion = useReducedMotion();
   return (
-    <motion.button
-      type="button"
-      onClick={() => setIsFlipped((prev) => !prev)}
-      animate={{ rotateY: isFlipped ? 180 : 0 }}
-      transition={{ duration: 0.6, type: 'spring', stiffness: 100, damping: 15 }}
-      onTouchStart={handleTouchStart}
-      onHoverStart={handleHoverStart}
-      onHoverEnd={() => !isTouchDevice && setIsFlipped(false)}
-      whileHover={hoverScale && !isTouchDevice ? { scale: 1.03 } : undefined}
-      className={`cursor-pointer relative ${className}`}
-      style={{
-        transformStyle: 'preserve-3d',
-        perspective: 1000,
-        width: size,
-        height: size,
-        willChange: 'transform',
-      }}
-    >
-      {/* Front face */}
-      <div
+    <div className={`flip-card relative ${className}`} style={{ width: size, height: size }}>
+      <motion.div
         className="absolute inset-0"
-        style={{ backfaceVisibility: 'hidden' }}
+        animate={{ rotateY: !reducedMotion && isFlipped ? 180 : 0 }}
+        transition={{ duration: reducedMotion ? 0 : 0.3 }}
+        style={{ transformStyle: 'preserve-3d' }}
       >
-        {front}
-      </div>
-
-      {/* Back face (pre-rotated 180deg) */}
-      <div
-        className="absolute inset-0"
-        style={{
-          backfaceVisibility: 'hidden',
-          transform: 'rotateY(180deg)',
-        }}
-      >
-        {back}
-      </div>
-    </motion.button>
+        <div className="absolute inset-0" hidden={Boolean(reducedMotion && isFlipped)} aria-hidden={isFlipped}
+          style={{ backfaceVisibility: 'hidden' }}>{front}</div>
+        <div className="absolute inset-0" hidden={Boolean(reducedMotion && !isFlipped)} aria-hidden={!isFlipped}
+          style={{ backfaceVisibility: 'hidden', transform: reducedMotion ? undefined : 'rotateY(180deg)' }}>{back}</div>
+      </motion.div>
+      <motion.button type="button" className="absolute inset-0 w-full h-full rounded-full cursor-pointer"
+        aria-label={`${label}: Details ${isFlipped ? 'verbergen' : 'anzeigen'}`} aria-expanded={isFlipped}
+        whileTap={hoverScale && !reducedMotion ? { scale: 0.98 } : undefined}
+        onClick={() => { setIsFlipped(value => !value); playSound('click'); }} />
+    </div>
   );
 }

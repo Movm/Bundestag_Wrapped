@@ -1,4 +1,4 @@
-import { useRef, useEffect, useCallback, useState } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router';
 import { motion } from 'motion/react';
 import { useSpeakerData } from '@/hooks/useDataQueries';
@@ -15,7 +15,6 @@ import {
 } from './speaker-wrapped/constants';
 import { useSpeakerScrollWrapped } from './speaker-wrapped/useSpeakerScrollWrapped';
 import {
-  useSpeakerQuizAnswered,
   useSpeakerQuizStore,
 } from '@/stores/speakerQuizStore';
 import { SpeakerSlideRenderer } from './speaker-wrapped/SpeakerSlideRenderer';
@@ -32,17 +31,7 @@ export function SpeakerWrappedPage() {
   // Scroll state with persistence
   const { currentSection, initialSection, setCurrentSection, handleRestart: clearSpeakerProgress } = useSpeakerScrollWrapped(slug);
 
-  // Track if intro has started (user clicked "Los geht's")
-  const [introStarted, setIntroStarted] = useState(false);
-
-  // Quiz state from store (like main wrapped)
-  const isQuizAnswered = useSpeakerQuizAnswered(surface, slug);
   const answerQuiz = useSpeakerQuizStore((state) => state.answerQuiz);
-
-  // Scroll lock logic (like main wrapped)
-  const scrollLocked =
-    (currentSection === 'speaker-intro' && !introStarted) ||
-    (currentSection === 'speaker-quiz' && !isQuizAnswered);
 
   // Progress calculation
   const sectionIndex = SPEAKER_SLIDES.indexOf(currentSection);
@@ -58,20 +47,8 @@ export function SpeakerWrappedPage() {
     }
   }, [currentSection]);
 
-  // Restore scroll position on mount (if resuming)
-  useEffect(() => {
-    if (initialSection && data && initialSection !== 'speaker-intro') {
-      const frame = requestAnimationFrame(() => setIntroStarted(true)); // Skip intro lock if resuming
-      const timer = setTimeout(() => {
-        scrollContainerRef.current?.scrollToSlide(initialSection);
-      }, 100);
-      return () => { cancelAnimationFrame(frame); clearTimeout(timer); };
-    }
-  }, [initialSection, data]);
-
   // Handle intro start (unlock scroll)
   const handleIntroStart = useCallback(() => {
-    setIntroStarted(true);
     setTimeout(() => {
       scrollContainerRef.current?.scrollToNextSlide('speaker-intro');
     }, 100);
@@ -92,7 +69,6 @@ export function SpeakerWrappedPage() {
   // Handle restart
   const handleRestart = useCallback(() => {
     clearSpeakerProgress();
-    setIntroStarted(false);
     setCurrentSection('speaker-intro');
     scrollContainerRef.current?.scrollToSlide('speaker-intro');
   }, [clearSpeakerProgress, setCurrentSection]);
@@ -141,7 +117,7 @@ export function SpeakerWrappedPage() {
         sparkles
       />
 
-      <div className="min-h-screen page-bg pt-14">
+      <div className="speaker-story page-bg">
         {/* Progress bar */}
         {!hideProgressBar && (
           <motion.div
@@ -172,8 +148,8 @@ export function SpeakerWrappedPage() {
         <ScrollContainer
           ref={scrollContainerRef}
           scrollElementRef={scrollElementRef}
+          initialSection={initialSection}
           onSectionChange={handleSectionChange}
-          locked={scrollLocked}
         >
           {SPEAKER_SLIDES.map((slideId, index) => (
             <SlideSection key={slideId} id={slideId} active={Math.abs(index - sectionIndex) <= 1}>

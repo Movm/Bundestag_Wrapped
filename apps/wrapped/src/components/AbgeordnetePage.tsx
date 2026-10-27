@@ -55,7 +55,7 @@ export function AbgeordnetePage() {
         <div className="text-center">
           <div className="text-6xl mb-4">⚠️</div>
           <p className="text-red-400">Fehler beim Laden</p>
-          <p className="text-white/40 text-sm mt-2">{error?.message}</p>
+          <p className="text-white/65 text-sm mt-2">{error?.message}</p>
         </div>
       </div>
     );
@@ -114,7 +114,7 @@ export function AbgeordnetePage() {
             }`}
           >
             <svg
-              className="absolute left-5 top-1/2 -translate-y-1/2 w-6 h-6 text-white/40"
+              className="absolute left-5 top-1/2 -translate-y-1/2 w-6 h-6 text-white/65"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -134,14 +134,14 @@ export function AbgeordnetePage() {
               onChange={(e) => setSearchQuery(e.target.value)}
               onFocus={() => setInputFocused(true)}
               onBlur={() => setInputFocused(false)}
-              className="w-full bg-transparent px-14 py-5 text-lg text-white placeholder:text-white/40 focus:outline-none"
+              className="w-full bg-transparent px-14 py-5 text-lg text-white placeholder:text-white/65 focus:outline-none"
               autoComplete="off"
               aria-label="Abgeordneten suchen"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-5 top-1/2 -translate-y-1/2 text-white/40 hover:text-white"
+                className="absolute right-1 top-1/2 -translate-y-1/2 p-3 text-white/70 hover:text-white"
                 aria-label="Suche löschen"
               >
                 <svg
@@ -162,6 +162,7 @@ export function AbgeordnetePage() {
             )}
           </div>
 
+          <p role="status" className="sr-only">{showResults ? `${filteredSpeakers.length} Abgeordnete gefunden` : ''}</p>
           {/* Results Dropdown */}
           <AnimatePresence>
             {showResults && (
@@ -169,7 +170,7 @@ export function AbgeordnetePage() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="absolute top-full left-0 right-0 mt-2 bg-bg-card border border-white/10 rounded-xl overflow-hidden shadow-2xl z-50"
+                className="relative mt-2 bg-bg-card border border-white/10 rounded-xl overflow-hidden shadow-2xl z-50"
               >
                 {filteredSpeakers.length > 0 ? (
                   <div className="py-2">
@@ -179,11 +180,11 @@ export function AbgeordnetePage() {
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.03 }}
-                        className="flex items-center justify-between gap-3 px-4 py-3 hover:bg-white/5 transition-colors group"
+                        className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 hover:bg-white/5 transition-colors group"
                       >
                         <Link
                           to={editionPath(surface, `abgeordnete/${speaker.slug}`)}
-                          className="flex min-w-0 flex-1 items-center gap-3"
+                          className="flex min-w-0 flex-1 flex-wrap items-center gap-3"
                         >
                           <span className="text-white font-medium group-hover:text-pink-300 transition-colors">
                             {speaker.name}
@@ -197,7 +198,7 @@ export function AbgeordnetePage() {
                           </span>
                         </Link>
                         <div className="flex flex-shrink-0 items-center gap-3">
-                          <span className="text-white/40 text-sm">
+                          <span className="text-white/65 text-sm">
                             {speaker.speeches} Reden
                           </span>
                           <Link
@@ -213,7 +214,7 @@ export function AbgeordnetePage() {
                 ) : (
                   <div className="px-4 py-6 text-center">
                     <p className="text-white/60">Kein Abgeordneter gefunden</p>
-                    <p className="text-white/40 text-sm mt-1">
+                    <p className="text-white/65 text-sm mt-1">
                       Versuche einen anderen Namen
                     </p>
                   </div>
@@ -228,7 +229,7 @@ export function AbgeordnetePage() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="mt-8 text-white/40 text-sm"
+          className="mt-8 text-white/65 text-sm"
         >
           {speakerIndex?.speakers.length.toLocaleString('de-DE')} Abgeordnete
           verfügbar
@@ -247,8 +248,8 @@ export function AbgeordnetePage() {
       </div>
 
       {/* Footer */}
-      <footer className="fixed bottom-0 left-0 right-0 p-4 pointer-events-none">
-        <div className="flex justify-center gap-4 text-xs text-white/40">
+      <footer className="relative mt-6 p-4 pointer-events-none">
+        <div className="flex justify-center gap-4 text-xs text-white/65">
           <Link
             to={editionPath(surface)}
             className="hover:text-white/60 transition-colors pointer-events-auto"

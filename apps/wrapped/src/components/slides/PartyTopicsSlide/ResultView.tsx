@@ -109,6 +109,7 @@ const PartyBubble = memo(function PartyBubble({
         style={{ willChange: 'transform' }}
       >
         <FlipCard
+          label={party}
           front={frontContent}
           back={backContent}
           className="w-[28vw] h-[28vw] max-w-[200px] max-h-[200px] min-w-[110px] min-h-[110px]"
@@ -140,7 +141,7 @@ export function ResultView({ topicAnalysis }: ResultViewProps) {
   }, [byParty, displayParties]);
 
   return (
-    <div className="min-h-screen relative w-full">
+    <div className="bubble-slide min-h-screen relative w-full">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -155,7 +156,7 @@ export function ResultView({ topicAnalysis }: ResultViewProps) {
         </p>
       </motion.div>
 
-      <div className="absolute inset-0 z-10">
+      <div className="bubble-grid absolute inset-0 z-10">
         {displayParties.map((party, i) => {
           const topTopics = partyTopTopics[party];
           if (!topTopics) return null;

@@ -9,20 +9,19 @@
  * - Has no ShareFAB (skipping sharepics for mobile)
  */
 
-import { useRef, useCallback, useMemo, useState, useEffect } from 'react';
+import { useRef, useCallback, useMemo, useEffect } from 'react';
 import type { WrappedData } from '@/data/wrapped';
 import {
   ScrollContainer,
   SlideSection,
   useScrollWrapped,
-  useAutoScroll,
   useSlideTransitionSound,
   SlideRenderer,
   SLIDES,
   type ScrollContainerRef,
   type SlideType,
 } from '@/components/main-wrapped';
-import { useIsQuizAnswered, useQuizStore } from '@/stores/quizStore';
+import { useQuizStore } from '@/stores/quizStore';
 import { useWrappedStore } from '@/stores/wrappedStore';
 import { LEGACY_SURFACE } from '@/edition/surface';
 
@@ -49,36 +48,12 @@ export function MobileWrappedPage({ data, onComplete }: MobileWrappedPageProps) 
   // Simplified: quiz state is in quizStore, not passed as props
   const { currentSection, initialSection, setCurrentSection } = useScrollWrapped();
 
-  // For scroll lock: check if current quiz is answered
-  const isCurrentQuizAnswered = useIsQuizAnswered(LEGACY_SURFACE, currentSection as SlideType);
   const resetQuiz = useQuizStore((state) => state.reset);
-
-  // Auto-scroll on intro slides
-  useAutoScroll(currentSection, scrollContainerRef);
 
   // Play subtle whoosh sound on slide transitions
   useSlideTransitionSound(currentSection);
 
-  // Track intro state
-  const [introStarted, setIntroStarted] = useState(
-    () => initialSection !== null && initialSection !== 'intro'
-  );
-
-  // Restore scroll position
-  const hasRestoredRef = useRef(false);
-  useEffect(() => {
-    if (initialSection && !hasRestoredRef.current && data) {
-      hasRestoredRef.current = true;
-      requestAnimationFrame(() => {
-        scrollContainerRef.current?.scrollToSlide(initialSection);
-      });
-    }
-  }, [initialSection, data]);
-
   const handleQuizComplete = useCallback((slideId: string) => {
-    if (slideId === 'intro') {
-      setIntroStarted(true);
-    }
     if (slideId === 'finale') {
       resetQuiz(LEGACY_SURFACE);
       onComplete?.();
@@ -102,22 +77,6 @@ export function MobileWrappedPage({ data, onComplete }: MobileWrappedPageProps) 
     ) as Record<SlideType, { onComplete: () => void }>;
   }, [handleQuizComplete]);
 
-  // Scroll lock logic
-  const [scrollLocked, setScrollLocked] = useState(true);
-  const shouldLock =
-    (currentSection === 'intro' && !introStarted) ||
-    (currentSection.startsWith('quiz-') && !isCurrentQuizAnswered);
-
-  useEffect(() => {
-    if (shouldLock) {
-      const timer = setTimeout(() => setScrollLocked(true), 200);
-      return () => clearTimeout(timer);
-    } else {
-      const frame = requestAnimationFrame(() => setScrollLocked(false));
-      return () => cancelAnimationFrame(frame);
-    }
-  }, [shouldLock]);
-
   // Data is passed as prop, so no loading state needed
   if (!data) {
     return (
@@ -131,8 +90,8 @@ export function MobileWrappedPage({ data, onComplete }: MobileWrappedPageProps) 
     <div className="relative bg-neutral-950 min-h-screen h-full">
       <ScrollContainer
         ref={scrollContainerRef}
+        initialSection={initialSection}
         onSectionChange={handleSectionChange}
-        locked={scrollLocked}
       >
         {SLIDES.map((slideId) => (
           <SlideSection key={slideId} id={slideId}>

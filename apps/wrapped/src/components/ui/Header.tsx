@@ -77,7 +77,7 @@ export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderPro
           </button>
 
           <button
-            onClick={onMenuToggle}
+            onClick={event => { event.currentTarget.focus(); onMenuToggle(); }}
             className={`p-2 rounded-lg transition-colors ${
               isDark
                 ? 'text-white/70 hover:text-white hover:bg-white/10'

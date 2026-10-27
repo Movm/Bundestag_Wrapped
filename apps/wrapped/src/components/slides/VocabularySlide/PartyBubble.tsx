@@ -41,9 +41,9 @@ export const PartyBubble = memo(function PartyBubble({
 
   const backContent = (
     <div className={bubbleClasses}>
-      <h4 className="text-white font-black text-xs md:text-sm drop-shadow-md absolute top-3 md:top-4">
+      <h3 className="text-white font-black text-xs md:text-sm drop-shadow-md absolute top-3 md:top-4">
         {party.party}
-      </h4>
+      </h3>
       <div className="space-y-0.5 text-center px-2" lang="de">
         {backWords.map((w, i) => (
           <p
@@ -86,6 +86,7 @@ export const PartyBubble = memo(function PartyBubble({
         style={{ willChange: 'transform' }}
       >
         <FlipCard
+          label={party.party}
           front={frontContent}
           back={backContent}
           className="w-[28vw] h-[28vw] max-w-[220px] max-h-[220px] min-w-[120px] min-h-[120px]"

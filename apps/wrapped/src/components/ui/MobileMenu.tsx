@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { AccessibleDialog } from './AccessibleDialog';
 import { Link, useLocation } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
 import { Home, BookOpen, Shield, FileText, ExternalLink, Users, X, RotateCcw, Plug } from 'lucide-react';
@@ -28,10 +28,11 @@ const FOOTER_LINKS: NavItem[] = [
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
+  onRestart?: () => void;
   variant?: 'dark' | 'light';
 }
 
-export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProps) {
+export function MobileMenu({ isOpen, onClose, onRestart, variant = 'dark' }: MobileMenuProps) {
   const location = useLocation();
   const surface = editionSurface(useOptionalEdition());
   const suffix = `${location.search}${location.hash}`;
@@ -41,8 +42,6 @@ export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProp
     { href: `${editionPath(surface, 'dokumentation')}${suffix}`, label: 'Dokumentation', icon: <BookOpen size={20} /> },
     { href: '/mcp', label: 'MCP-Server', icon: <Plug size={20} /> },
   ];
-  const menuRef = useRef<HTMLElement>(null);
-  const returnFocusRef = useRef<HTMLElement | null>(null);
   const isDark = variant === 'dark';
   const currentPath = location.pathname;
   const isMainPage = currentPath === editionPath(surface);
@@ -52,56 +51,8 @@ export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProp
     onClose();
     clearWrappedProgress(surface);
     resetQuiz(surface);
-    window.location.reload();
+    onRestart?.();
   };
-
-  // Focus trap and focus management
-  useEffect(() => {
-    if (!isOpen || !menuRef.current) return;
-
-    const menu = menuRef.current;
-    returnFocusRef.current = document.activeElement instanceof HTMLElement
-      ? document.activeElement
-      : null;
-    const focusableElements = menu.querySelectorAll<HTMLElement>(
-      'a[href], button:not([disabled])'
-    );
-    const firstElement = focusableElements[0];
-    const lastElement = focusableElements[focusableElements.length - 1];
-
-    // Focus close button when menu opens
-    const closeButton = menu.querySelector<HTMLButtonElement>('button');
-    closeButton?.focus();
-
-    const handleTabKey = (e: KeyboardEvent) => {
-      if (e.key !== 'Tab') return;
-
-      if (e.shiftKey) {
-        if (document.activeElement === firstElement) {
-          e.preventDefault();
-          lastElement?.focus();
-        }
-      } else {
-        if (document.activeElement === lastElement) {
-          e.preventDefault();
-          firstElement?.focus();
-        }
-      }
-    };
-
-    const handleEscKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-
-    menu.addEventListener('keydown', handleTabKey);
-    document.addEventListener('keydown', handleEscKey);
-    return () => {
-      menu.removeEventListener('keydown', handleTabKey);
-      document.removeEventListener('keydown', handleEscKey);
-      if (returnFocusRef.current?.isConnected) returnFocusRef.current.focus();
-      returnFocusRef.current = null;
-    };
-  }, [isOpen, onClose]);
 
   const handleNavClick = (item: NavItem) => {
     if (!item.external) {
@@ -110,6 +61,7 @@ export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProp
   };
 
   return (
+    <AccessibleDialog open={isOpen} onClose={onClose} label="Hauptnavigation">
     <AnimatePresence>
       {isOpen && (
         <>
@@ -129,8 +81,7 @@ export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProp
 
           {/* Premium Drawer */}
           <motion.nav
-            ref={menuRef}
-            className={`fixed top-0 right-0 h-full w-[300px] max-w-[85vw] z-70 overflow-hidden
+            className={`fixed top-0 right-0 h-full w-[300px] max-w-[85vw] z-70 overflow-y-auto overscroll-contain safe-area-top safe-area-bottom
               ${isDark
                 ? 'bg-gradient-to-b from-[#1a1a24] via-[#12121a] to-[#0a0a0f]'
                 : 'bg-white'
@@ -171,7 +122,7 @@ export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProp
               </button>
             </div>
 
-            <div className="flex flex-col h-full pt-20 px-5">
+            <div className="flex flex-col min-h-full pt-20 px-5">
               {/* Navigation items */}
               <ul className="space-y-2">
                 {navItems.map((item) => {
@@ -202,7 +153,7 @@ export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProp
                             : 'bg-white/5 text-white/50 group-hover:bg-pink-500/10 group-hover:text-pink-400'
                           : isActive
                             ? 'bg-pink-100 text-pink-600'
-                            : 'bg-gray-100 text-gray-400 group-hover:text-pink-500'
+                            : 'bg-gray-100 text-gray-600 group-hover:text-pink-500'
                         }`}
                       >
                         {item.icon}
@@ -256,7 +207,7 @@ export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProp
                       <span className={`flex items-center justify-center w-9 h-9 rounded-lg transition-colors
                         ${isDark
                           ? 'bg-white/5 text-white/50 group-hover:bg-pink-500/10 group-hover:text-pink-400'
-                          : 'bg-gray-100 text-gray-400 group-hover:text-pink-500'
+                          : 'bg-gray-100 text-gray-600 group-hover:text-pink-500'
                         }`}
                       >
                         <RotateCcw size={20} />
@@ -272,12 +223,12 @@ export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProp
 
               {/* Footer area */}
               <div className="pb-8">
-                <div className="flex items-center gap-2 mb-3">
+                <div className="flex flex-wrap items-center gap-2 mb-3">
                   {FOOTER_LINKS.map((item, index) => {
                     const footerLinkClassName = `text-xs transition-colors
                       ${isDark
-                        ? 'text-white/40 hover:text-pink-400'
-                        : 'text-gray-400 hover:text-pink-500'
+                        ? 'text-white/65 hover:text-pink-400'
+                        : 'text-gray-600 hover:text-pink-500'
                       }`;
 
                     return (
@@ -301,13 +252,13 @@ export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProp
                           </Link>
                         )}
                         {index < FOOTER_LINKS.length - 1 && (
-                          <span className={`mx-2 ${isDark ? 'text-white/20' : 'text-gray-300'}`}>·</span>
+                          <span className={`mx-2 ${isDark ? 'text-white/20' : 'text-gray-600'}`}>·</span>
                         )}
                       </span>
                     );
                   })}
                 </div>
-                <p className={`text-xs ${isDark ? 'text-white/25' : 'text-gray-300'}`}>
+                <p className={`text-xs ${isDark ? 'text-white/60' : 'text-gray-600'}`}>
                   Daten aus der 21. Wahlperiode
                 </p>
               </div>
@@ -316,5 +267,6 @@ export function MobileMenu({ isOpen, onClose, variant = 'dark' }: MobileMenuProp
         </>
       )}
     </AnimatePresence>
+    </AccessibleDialog>
   );
 }

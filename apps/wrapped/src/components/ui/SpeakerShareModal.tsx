@@ -1,3 +1,4 @@
+import { AccessibleDialog } from './AccessibleDialog';
 import { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Download, Share2, X } from 'lucide-react';
@@ -46,6 +47,7 @@ export function SpeakerShareModal({ isOpen, onClose, data }: SpeakerShareModalPr
   };
 
   return (
+    <AccessibleDialog open={isOpen} onClose={onClose} label="Ergebnis teilen">
     <AnimatePresence>
       {isOpen && (
         <motion.div
@@ -59,11 +61,12 @@ export function SpeakerShareModal({ isOpen, onClose, data }: SpeakerShareModalPr
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-[320px] sm:max-w-sm md:max-w-md modal-bg rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-white/10 shadow-2xl"
+            className="relative w-full max-h-[calc(100dvh-2rem)] overflow-y-auto max-w-[320px] sm:max-w-sm md:max-w-md modal-bg rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-white/10 shadow-2xl"
           >
             {/* Close button */}
             <button
               onClick={onClose}
+              aria-label="Teilen schließen"
               className="absolute top-3 right-3 sm:top-4 sm:right-4 p-1.5 sm:p-2 text-white/60 hover:text-white hover:bg-white/10 rounded-full transition-colors"
             >
               <X size={20} className="sm:w-6 sm:h-6" />
@@ -80,6 +83,7 @@ export function SpeakerShareModal({ isOpen, onClose, data }: SpeakerShareModalPr
             <div className="rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 mb-4 sm:mb-6 max-w-[200px] sm:max-w-[280px] md:max-w-none mx-auto">
               <canvas
                 ref={canvasRef}
+                role="img" aria-label="Vorschau des persönlichen Ergebnisses"
                 className="w-full h-auto block"
                 style={{ aspectRatio: '1 / 1' }}
               />
@@ -113,5 +117,6 @@ export function SpeakerShareModal({ isOpen, onClose, data }: SpeakerShareModalPr
         </motion.div>
       )}
     </AnimatePresence>
+    </AccessibleDialog>
   );
 }

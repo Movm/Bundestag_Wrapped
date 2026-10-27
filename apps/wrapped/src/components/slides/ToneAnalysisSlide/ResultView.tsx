@@ -98,12 +98,12 @@ const ToneBubble = memo(function ToneBubble({
   // Back: Party name + summary sentence
   const backContent = (
     <div className={bubbleClasses}>
-      <h4
+      <h3
         className="font-black text-sm md:text-base drop-shadow-md mb-2"
         style={{ color: partyColor }}
       >
         {profile.party}
-      </h4>
+      </h3>
       <p className="text-white/90 text-xs md:text-sm px-3 leading-relaxed text-center">
         {profile.description}
       </p>
@@ -137,6 +137,7 @@ const ToneBubble = memo(function ToneBubble({
         style={{ willChange: 'transform' }}
       >
         <FlipCard
+          label={profile.party}
           front={frontContent}
           back={backContent}
           className="w-[28vw] h-[28vw] max-w-[220px] max-h-[220px] min-w-[120px] min-h-[120px]"
@@ -162,7 +163,7 @@ export function ResultView({ toneAnalysis }: ResultViewProps) {
   }
 
   return (
-    <div className="min-h-screen relative w-full">
+    <div className="bubble-slide min-h-screen relative w-full">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -177,7 +178,7 @@ export function ResultView({ toneAnalysis }: ResultViewProps) {
         </p>
       </motion.div>
 
-      <div className="absolute inset-0 z-10">
+      <div className="bubble-grid absolute inset-0 z-10">
         {topParties.map((profile, i) => (
           <ToneBubble
             key={profile.party}

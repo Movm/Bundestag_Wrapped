@@ -77,7 +77,8 @@ export interface SpeakerScrollWrappedState {
 }
 
 export function useSpeakerScrollWrapped(slug: string): SpeakerScrollWrappedState {
-  const surface = editionSurface(useOptionalEdition());
+  const edition = useOptionalEdition();
+  const surface = useMemo(() => editionSurface(edition), [edition]);
   // Load initial section from localStorage
   const initialSection = useMemo(() => {
     const saved = getSavedProgress(slug, surface);

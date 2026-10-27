@@ -73,9 +73,9 @@ export const ComparisonBubble = memo(function ComparisonBubble({
           willChange: 'transform',
         }}
       >
-        <h4 className="text-white font-black text-sm md:text-base lg:text-lg drop-shadow-md leading-tight mb-2">
+        <h3 className="text-white font-black text-sm md:text-base lg:text-lg drop-shadow-md leading-tight mb-2">
           {item.label}
-        </h4>
+        </h3>
         <p className="text-white/90 text-xs md:text-sm font-semibold">
           {item.value.toLocaleString('de-DE')} {unit}
         </p>
