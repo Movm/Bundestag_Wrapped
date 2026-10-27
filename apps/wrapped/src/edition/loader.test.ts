@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { assertEditionConsistency, loadEditionAsset, loadEditionContent } from './loader';
+import { assertEditionConsistency, loadEditionAsset, loadEditionContent, loadManifest } from './loader';
 import type { Edition } from './registry';
 
 const manifest = {
@@ -21,25 +21,36 @@ const manifest = {
 afterEach(() => vi.unstubAllGlobals());
 
 describe('edition runtime loader', () => {
+  it.each([
+    'https://evil.example/data/manifest.json', '//evil.example/data/manifest.json',
+    '/api/delete.json', '/data/../api/delete.json', '/data/%2e%2e/api.json',
+    '/data/2025/manifest.json?redirect=/api/delete', '/data/2025/manifest.json#fragment',
+    '/data/2025/..\\private.json',
+  ])('rejects untrusted edition URLs before making a request: %s', async url => {
+    const fetch = vi.fn();
+    vi.stubGlobal('fetch', fetch);
+    await expect(loadManifest(url)).rejects.toMatchObject({ kind: 'invalid-contract' });
+    expect(fetch).not.toHaveBeenCalled();
+  });
   it('loads and validates content relative to the manifest URL', async () => {
     const fetch = vi.fn().mockResolvedValue(new Response(JSON.stringify({ editionId: 'fixture-edition', year: 2042 }), { status: 200 }));
     vi.stubGlobal('fetch', fetch);
 
-    await expect(loadEditionContent('/fixtures/nested/v2/manifest.json', manifest)).resolves.toEqual({ editionId: 'fixture-edition', year: 2042 });
-    expect(fetch).toHaveBeenCalledWith('/fixtures/nested/v2/content.json');
+    await expect(loadEditionContent('/data/fixtures/nested/v2/manifest.json', manifest)).resolves.toEqual({ editionId: 'fixture-edition', year: 2042 });
+    expect(fetch).toHaveBeenCalledWith('/data/fixtures/nested/v2/content.json', { redirect: 'error' });
   });
 
   it('distinguishes a missing asset from an invalid content document', async () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response(null, { status: 404, statusText: 'Not Found' })));
-    await expect(loadEditionContent('/fixtures/manifest.json', manifest)).rejects.toMatchObject({ kind: 'missing-asset' });
+    await expect(loadEditionContent('/data/fixtures/manifest.json', manifest)).rejects.toMatchObject({ kind: 'missing-asset' });
 
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response(JSON.stringify({ editionId: 'fixture-edition' }), { status: 200 })));
-    await expect(loadEditionContent('/fixtures/manifest.json', manifest)).rejects.toMatchObject({ kind: 'invalid-contract' });
+    await expect(loadEditionContent('/data/fixtures/manifest.json', manifest)).rejects.toMatchObject({ kind: 'invalid-contract' });
   });
 
   it('rejects inconsistent index, manifest, and content metadata', () => {
     expect(() => assertEditionConsistency(
-      { id: 'fixture-edition', year: 2042, status: 'preview', manifestUrl: '/fixtures/manifest.json' },
+      { id: 'fixture-edition', year: 2042, status: 'preview', manifestUrl: '/data/fixtures/manifest.json' },
       manifest,
       { editionId: 'other-edition', year: 2042 },
     )).toThrow('Edition content and manifest disagree');
@@ -51,10 +62,10 @@ describe('edition runtime loader', () => {
     }), { status: 200 }));
     vi.stubGlobal('fetch', fetch);
 
-    await expect(loadEditionAsset('/fixtures/nested/manifest.json', 'speakers/index.json', 'SpeakerIndexAsset')).resolves.toMatchObject({
+    await expect(loadEditionAsset('/data/fixtures/nested/manifest.json', 'speakers/index.json', 'SpeakerIndexAsset')).resolves.toMatchObject({
       speakers: [{ slug: 'fixture-speaker' }],
     });
-    expect(fetch).toHaveBeenCalledWith('/fixtures/nested/speakers/index.json');
+    expect(fetch).toHaveBeenCalledWith('/data/fixtures/nested/speakers/index.json', { redirect: 'error' });
   });
 
   it('reports the asset URL and JSON path when a runtime asset is malformed', async () => {
@@ -62,10 +73,10 @@ describe('edition runtime loader', () => {
       speakers: [{ slug: 'fixture-speaker', name: 'Fixture Speaker', party: 'Fixture Party', speeches: 'two', wortbeitraege: 1, words: 42 }],
     }), { status: 200 }))));
 
-    await expect(loadEditionAsset('/fixtures/manifest.json', 'speakers/index.json', 'SpeakerIndexAsset')).rejects.toMatchObject({
+    await expect(loadEditionAsset('/data/fixtures/manifest.json', 'speakers/index.json', 'SpeakerIndexAsset')).rejects.toMatchObject({
       kind: 'invalid-contract',
-      url: '/fixtures/speakers/index.json',
+      url: '/data/fixtures/speakers/index.json',
     });
-    await expect(loadEditionAsset('/fixtures/manifest.json', 'speakers/index.json', 'SpeakerIndexAsset')).rejects.toThrow('/speakers/0/speeches');
+    await expect(loadEditionAsset('/data/fixtures/manifest.json', 'speakers/index.json', 'SpeakerIndexAsset')).rejects.toThrow('/speakers/0/speeches');
   });
 });

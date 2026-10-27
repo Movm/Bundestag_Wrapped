@@ -2,14 +2,20 @@
 const { chromium } = require('playwright');
 const fs = require('node:fs');
 const path = require('node:path');
+const os = require('node:os');
 
 (async () => {
   const base = process.env.PERF_URL || 'http://127.0.0.1:4173';
   const label = process.env.PERF_LABEL || 'performance';
   const edition = process.env.PERF_EDITION || '2025';
   const cpu = Number(process.env.PERF_CPU || 4);
-  const output = process.env.PERF_OUTPUT || '/tmp/wrapped-performance-results';
-  fs.mkdirSync(output, { recursive: true });
+  if (!/^[A-Za-z0-9_-]+$/.test(label)) throw new Error('PERF_LABEL must contain only letters, numbers, underscores or hyphens');
+  const outputRoot = process.env.PERF_OUTPUT || os.tmpdir();
+  fs.mkdirSync(outputRoot, { recursive: true, mode: 0o700 });
+  // A private, unpredictable directory prevents another local user pre-creating
+  // report files or replacing predictable paths with symlinks.
+  const output = fs.mkdtempSync(path.join(outputRoot, 'wrapped-performance-'));
+  console.log(`Performance artifacts: ${output}`);
   const browser = await chromium.launch({ channel: process.env.PERF_CHANNEL || 'chrome', headless: true });
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 3, isMobile: true, hasTouch: true, serviceWorkers: 'block' });
   const page = await context.newPage();
@@ -85,7 +91,7 @@ const path = require('node:path');
     fs.writeFileSync(path.join(output, `${label}.json`), JSON.stringify({
       browser: browser.version(), cpu, viewport: '390x844 DPR3', headless: true, serviceWorkers: 'blocked',
       edition, base, results, errors,
-    }, null, 2));
+    }, null, 2), { flag: 'wx', mode: 0o600 });
     await browser.close();
   }
 })().catch(error => { console.error(error); process.exitCode = 1; });
