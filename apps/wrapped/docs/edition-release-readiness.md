@@ -7,8 +7,8 @@ a separate, index-only PR and remains a separately reviewed release. The protect
 
 `generate-edition` writes `release-report.json` into every artifact. The report pins
 the requested period, Wahlperioden, selected and downloaded protocol IDs, source
-coverage problems, the data version, the reviewed quiz configuration, active question
-IDs, configured omissions, and a deterministic input fingerprint. The report itself
+coverage problems, the data version, the reviewed quiz configuration, explicitly configured question
+IDs (or a data-derived mode marker), configured omissions, and a deterministic input fingerprint. The report itself
 is protected by the artifact checksum map.
 
 Freezing and publishing fail closed unless the report proves all selected protocols
@@ -22,6 +22,6 @@ when manually dispatching the workflow. The configuration is copied into
 visible. Do not supply final 2026 wording until the November content review.
 
 Before the actual launch, run the workflow against a test edition and verify:
-preview artifact → frozen-data PR → date-allowed index-only PR → registry rollback.
+preview artifact → frozen-data PR → reviewed index-only PR → registry rollback.
 The test must use a disposable data root; it must not alter `apps/wrapped/public/data/editions.json`.
 After deployment, smoke-test `/`, `/2025`, `/2026`, and the chosen data version.

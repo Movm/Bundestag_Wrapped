@@ -37,6 +37,12 @@ updates:
           - "@modelcontextprotocol/*"
           - "@qdrant/*"
           - "@mistralai/*"
+      # Runner, UI and coverage have matching peer versions; review majors together.
+      vitest-ecosystem:
+        applies-to: "version-updates"
+        patterns:
+          - "vitest"
+          - "@vitest/*"
       development-minor-patch:
         applies-to: "version-updates"
         dependency-type: "development"

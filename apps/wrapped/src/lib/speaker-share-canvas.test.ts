@@ -393,8 +393,20 @@ describe('speaker-share-canvas', () => {
 
   describe('downloadSpeakerShareImage', () => {
     it('should call toBlob on canvas', () => {
-      downloadSpeakerShareImage(mockCanvas, 'Lars Klingbeil');
-      expect(mockCanvas.toBlob).toHaveBeenCalled();
+      const createObjectURL = vi.spyOn(URL, 'createObjectURL').mockReturnValue('blob:test');
+      const revokeObjectURL = vi.spyOn(URL, 'revokeObjectURL').mockImplementation(() => {});
+      const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
+      try {
+        downloadSpeakerShareImage(mockCanvas, 'Lars Klingbeil');
+        expect(mockCanvas.toBlob).toHaveBeenCalled();
+        expect(createObjectURL).toHaveBeenCalledWith(expect.any(Blob));
+        expect(click).toHaveBeenCalledOnce();
+        expect(revokeObjectURL).toHaveBeenCalledWith('blob:test');
+      } finally {
+        createObjectURL.mockRestore();
+        revokeObjectURL.mockRestore();
+        click.mockRestore();
+      }
     });
 
     it('should create download link with slugified name', () => {

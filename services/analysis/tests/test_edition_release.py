@@ -123,3 +123,36 @@ def test_november_cutoff_can_freeze_over_preview_without_publishing(tmp_path):
     reduced_root = publish_release(data_root, "reduced", reduced, reduced_artifacts, reduced_speeches)
     with pytest.raises(EditionValidationError, match="regression"):
         validate_freeze_against_index(reduced_root, index_path)
+
+
+@pytest.mark.parametrize("change, message", [
+    ({"downloaded": [1]}, "incomplete downloads"),
+    ({"parsed": False}, "incomplete downloads"),
+    ({"coverageProblems": ["missing protocol"]}, "unresolved source coverage"),
+    ({"selection": {"from": "2025-01-01"}}, "selection does not match"),
+    ({"protocols": []}, "metadata does not match"),
+])
+def test_frozen_release_rejects_incomplete_provenance(tmp_path, change, message):
+    speeches, artifacts = fixture_artifacts()
+    manifest = build_manifest("2026", 2026, "provenance", "2027-01-02T08:00:00Z", "2026-01-01", "2026-12-31", [21], speeches, True)
+    source = {**release_source(speeches, manifest), **change}
+    artifacts["release-report.json"] = build_release_report(manifest, artifacts["content.json"], source)
+    target = publish_edition(tmp_path, "2026", "provenance", manifest, artifacts)
+    with pytest.raises(EditionValidationError, match=message):
+        require_frozen_artifact(target)
+
+
+def test_frozen_release_requires_report_and_correct_input_fingerprint(tmp_path):
+    speeches, artifacts = fixture_artifacts()
+    manifest = build_manifest("2026", 2026, "fingerprint", "2027-01-02T08:00:00Z", "2026-01-01", "2026-12-31", [21], speeches, True)
+    target = publish_edition(tmp_path / "missing", "2026", "fingerprint", manifest, artifacts)
+    with pytest.raises(EditionValidationError, match="requires release-report"):
+        require_frozen_artifact(target)
+    report = build_release_report(manifest, artifacts["content.json"], release_source(speeches, manifest))
+    assert report["quiz"]["mode"] == "data-derived"
+    assert report["quiz"]["activeQuestionIds"] is None
+    report["inputFingerprint"] = "0" * 64
+    artifacts["release-report.json"] = report
+    target = publish_edition(tmp_path / "tampered", "2026", "fingerprint", manifest, artifacts)
+    with pytest.raises(EditionValidationError, match="fingerprint does not match"):
+        require_frozen_artifact(target)

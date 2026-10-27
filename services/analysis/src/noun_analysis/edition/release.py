@@ -13,6 +13,7 @@ from .validate import validate_contract_document
 
 RELEASE_REPORT = "release-report.json"
 BUILT_IN_QUIZ_GROUPS = (
+    "quiz-topic-riser", "quiz-word-riser", "quiz-youth-language",
     "quiz-topics", "quiz-signature", "quiz-speeches", "quiz-drama",
     "quiz-discriminatory", "quiz-common-words", "quiz-moin", "quiz-tone", "quiz-gender",
 )
@@ -43,7 +44,8 @@ def build_release_report(manifest: dict, content: dict, source_state: dict) -> d
         },
         "quiz": {
             "configurationVersion": (content.get("quiz") or {}).get("version"),
-            "activeQuestionIds": active,
+            "mode": "configured" if content.get("quiz") is not None else "data-derived",
+            "activeQuestionIds": active if content.get("quiz") is not None else None,
             "omittedGroups": [
                 {"id": group, "reason": "not_configured"}
                 for group in BUILT_IN_QUIZ_GROUPS if quiz_groups and group not in active

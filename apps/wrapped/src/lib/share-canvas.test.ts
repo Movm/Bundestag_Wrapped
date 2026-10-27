@@ -254,8 +254,20 @@ describe('share-canvas', () => {
 
   describe('downloadShareImage', () => {
     it('should call toBlob on canvas', () => {
-      downloadShareImage(mockCanvas);
-      expect(mockCanvas.toBlob).toHaveBeenCalled();
+      const createObjectURL = vi.spyOn(URL, 'createObjectURL').mockReturnValue('blob:test');
+      const revokeObjectURL = vi.spyOn(URL, 'revokeObjectURL').mockImplementation(() => {});
+      const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
+      try {
+        downloadShareImage(mockCanvas);
+        expect(mockCanvas.toBlob).toHaveBeenCalled();
+        expect(createObjectURL).toHaveBeenCalledWith(expect.any(Blob));
+        expect(click).toHaveBeenCalledOnce();
+        expect(revokeObjectURL).toHaveBeenCalledWith('blob:test');
+      } finally {
+        createObjectURL.mockRestore();
+        revokeObjectURL.mockRestore();
+        click.mockRestore();
+      }
     });
 
     it('should include user name in filename when provided', () => {
