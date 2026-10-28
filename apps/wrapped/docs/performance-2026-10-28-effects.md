@@ -84,3 +84,9 @@ fixture explicitly includes four Moin speakers and verifies that they rendered.
 Against the original image this enhanced test fails with five running offscreen
 loops in every browser; the correction must bring that count to zero. This is a
 required acceptance gate before marking the visibility package complete.
+
+The same review found 25 confetti loops on an inactive personal Wrapped share
+slide. That component also now uses the shared visibility boundary. A separate
+personal-story reading-mode regression checks that no share animation runs while
+another slide is selected; it fails against the prior image. This extends the
+correction beyond the annual story's data-dependent Moin case.

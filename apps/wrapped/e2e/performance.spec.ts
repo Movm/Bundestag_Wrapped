@@ -103,3 +103,14 @@ test('pauses offscreen decoration in reading mode while retaining all slide cont
   expect(offscreenLoops).toBe(0);
   await expect(page.locator('[data-slide-id="intro"] h1')).toContainText('BUNDESTAG');
 });
+
+
+test('pauses offscreen speaker-share confetti in reading mode', async ({ page }) => {
+  await page.goto('/2025/wrapped/shared-speaker');
+  await page.getByRole('checkbox', { name: /Lesemodus/ }).check();
+  const share = page.locator('#speaker-share');
+  await expect(share).toHaveAttribute('data-slide-effects-active', 'false');
+  await page.waitForTimeout(2500);
+  const running = await share.evaluate(section => section.getAnimations({ subtree: true }).filter(animation => animation.playState === 'running').length);
+  expect(running).toBe(0);
+});
