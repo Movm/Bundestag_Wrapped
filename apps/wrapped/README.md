@@ -86,7 +86,8 @@ Python pipeline (no runtime backend):
 
 ```bash
 # Docker (static site via nginx, serves on :8080)
-docker build -t bundestag-wrapped . && docker run -p 8080:8080 bundestag-wrapped
+docker build -f apps/wrapped/Dockerfile -t bundestag-wrapped . && docker run -p 8080:8080 bundestag-wrapped
+# Run from the monorepo root. Coolify: base_directory=/, Dockerfile=/apps/wrapped/Dockerfile.
 
 # Static hosting
 pnpm --filter bundestag-wrapped build   # deploy dist/

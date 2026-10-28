@@ -1,6 +1,8 @@
 services:
   bundestag-mcp:
-    build: .
+    build:
+      context: ../..
+      dockerfile: services/mcp/Dockerfile
     expose:
       - "3000"
     environment:

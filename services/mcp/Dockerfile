@@ -1,11 +1,8 @@
 # Bundestag MCP Server — container image (self-contained, multi-stage)
 #
-# Build context is THIS directory (services/mcp). The package has no
-# workspace-internal dependencies, so it builds standalone.
-#
-#   docker build -t bundestag-mcp services/mcp
-#
-# Coolify: build pack = Dockerfile, "Base Directory" = /services/mcp
+# Build context is the monorepo root; dependency versions come from pnpm-lock.yaml.
+#   docker build -f services/mcp/Dockerfile .
+# Coolify: Base Directory = /; Dockerfile Location = /services/mcp/Dockerfile
 
 # ----- Build stage: has the C++ toolchain to compile better-sqlite3 -----
 # Pinned to Node 22 LTS: Node >=25 ships an undici whose stricter argument
@@ -18,11 +15,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Pin pnpm to match the repo (honors package.json pnpm.onlyBuiltDependencies)
 RUN npm install -g pnpm@10.0.0
 
-WORKDIR /app
-# Install prod deps (better-sqlite3 native build approved via package.json pnpm config)
-COPY package.json ./
-RUN pnpm install --prod --no-frozen-lockfile
-COPY src/ ./src/
+WORKDIR /workspace
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
+COPY services/mcp/package.json services/mcp/package.json
+RUN pnpm install --prod --frozen-lockfile --filter bundestag-mcp --config.node-linker=isolated
+COPY services/mcp/src services/mcp/src
+COPY scripts/write-build-info.mjs scripts/write-build-info.mjs
+ARG SOURCE_COMMIT
+RUN pnpm --filter bundestag-mcp deploy --prod /opt/production
+RUN SOURCE_COMMIT=$SOURCE_COMMIT node scripts/write-build-info.mjs services/mcp /opt/production/build-info.json /opt/production
 
 # ----- Runtime stage: clean base, no compilers/pnpm — just node + the app -----
 FROM node:22-slim AS runtime
@@ -42,9 +43,7 @@ WORKDIR /app
 ENV NODE_ENV=production
 # Copy the already-built dependency tree + source, owned by the unprivileged
 # "node" user (uid 1000) that ships with node:22-slim.
-COPY --from=build --chown=node:node /app/node_modules ./node_modules
-COPY --from=build --chown=node:node /app/package.json ./package.json
-COPY --from=build --chown=node:node /app/src ./src
+COPY --from=build --chown=node:node /opt/production/ ./
 # Writable SQLite cache dir owned by the runtime user
 RUN mkdir -p /app/data && chown -R node:node /app/data
 

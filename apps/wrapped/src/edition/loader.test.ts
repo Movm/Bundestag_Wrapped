@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { assertEditionConsistency, loadEditionAsset, loadEditionContent, loadManifest } from './loader';
+import { assertEditionConsistency, loadEditionAsset, loadEditionContent, loadManifest, type EditionAssetTiming } from './loader';
 import type { Edition } from './registry';
 
 const manifest = {
@@ -79,4 +79,16 @@ describe('edition runtime loader', () => {
     });
     await expect(loadEditionAsset('/data/fixtures/manifest.json', 'speakers/index.json', 'SpeakerIndexAsset')).rejects.toThrow('/speakers/0/speeches');
   });
+});
+
+
+it('separates transfer/parsing/validation timing without changing validated assets', async () => {
+  let tick = 0;
+  vi.stubGlobal('performance', { now: () => ++tick, getEntriesByName: () => [{ encodedBodySize: 12, decodedBodySize: 34 }] });
+  const payload = { parties: [] };
+  vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response(JSON.stringify(payload), { headers: { 'content-encoding': 'gzip' } })));
+  const timing: EditionAssetTiming = {};
+  await expect(loadEditionAsset('/data/fixtures/manifest.json', 'words.json', 'WordsAsset', timing)).resolves.toEqual(payload);
+  expect(timing).toMatchObject({ contentEncoding: 'gzip', encodedBytes: 12, decodedBytes: 34 });
+  for (const duration of [timing.headersMs, timing.bodyMs, timing.jsonMs, timing.validationMs]) expect(duration).toBeGreaterThanOrEqual(0);
 });

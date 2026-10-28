@@ -8,7 +8,7 @@
     "dev": "vite",
     "prebuild": "node scripts/check-production-editions.mjs && node scripts/check-preview-auth.mjs && node scripts/generate-sitemap.cjs",
     "build": "tsc -b && vite build",
-    "postbuild": "node scripts/check-production-editions.mjs dist/data",
+    "postbuild": "node scripts/check-production-editions.mjs dist/data && node ../../scripts/write-build-info.mjs apps/wrapped apps/wrapped/dist/build-info.json",
     "check:bundle-budget": "node scripts/check-bundle-budget.cjs",
     "check:edition-surface": "node scripts/check-edition-hardcodes.cjs",
     "import:abgeordnetenwatch": "node scripts/import-abgeordnetenwatch.cjs",

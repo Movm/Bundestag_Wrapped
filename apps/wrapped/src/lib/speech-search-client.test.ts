@@ -36,3 +36,19 @@ describe('speech search request lifecycle', () => {
     await expect(client.request({ type: 'detail', speechId: 2 })).rejects.toThrow('Suche beendet');
   });
 });
+
+it('records ready/round-trip timings only in an explicitly instrumented session', async () => {
+  vi.stubGlobal('Worker', FakeWorker);
+  vi.stubGlobal('__WRAPPED_PERFORMANCE__', true);
+  const measure = vi.fn();
+  vi.stubGlobal('performance', { now: () => 100, clearMeasures: vi.fn(), measure });
+  const client = new SpeechSearchClient();
+  const worker = FakeWorker.current;
+  const receive = worker.onmessage as (event: { data: import('./speech-search-protocol').SpeechWorkerMessage }) => void;
+  receive({ data: { type: 'ready' } });
+  const pending = client.request({ type: 'detail', speechId: 1 });
+  receive({ data: { id: worker.sent[0].id, type: 'detail', data: { id: 1 } as import('./search-utils').Speech } });
+  await pending;
+  expect(measure.mock.calls.map(call => call[0])).toEqual(['wrapped:speech-worker-startup', 'wrapped:speech-round-trip']);
+  client.dispose();
+});
