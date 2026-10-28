@@ -365,7 +365,8 @@ The server is fully compatible with ChatGPT as a connector. Use the public insta
 
 ```bash
 # Build
-docker build -t bundestag-mcp .
+docker build -f services/mcp/Dockerfile -t bundestag-mcp .
+# Run from the monorepo root. Coolify: base_directory=/, Dockerfile=/services/mcp/Dockerfile.
 
 # Run
 docker run -p 3000:3000 \

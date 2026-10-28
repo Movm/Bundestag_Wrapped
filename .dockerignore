@@ -9,6 +9,10 @@
 **/__pycache__
 **/*.pyc
 **/data
+!apps/wrapped/public/data
+!apps/wrapped/public/data/**
+!apps/wrapped/src/**
+!services/mcp/src/**
 **/web-output
 **/exports
 **/results
@@ -19,3 +23,9 @@
 .DS_Store
 **/screenshots
 **/.pnpm-store
+
+**/.env
+**/.env.*
+**/.claude
+**/.codex
+**/.design-sync

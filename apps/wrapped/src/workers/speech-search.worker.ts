@@ -1,19 +1,28 @@
-import { loadEditionAsset } from '@/edition/loader';
+import { loadEditionAsset, type EditionAssetTiming } from '@/edition/loader';
 import { SpeechSearchEngine } from '@/lib/speech-search-engine';
 import { isSpeechSearchRequest, type SpeechSearchRequest, type SpeechSearchResponse } from '@/lib/speech-search-protocol';
 
 let corpusKey = '';
 let engine: Promise<SpeechSearchEngine> | undefined;
+let loadTiming: EditionAssetTiming;
+let engineMs = 0;
 async function respond(request: SpeechSearchRequest): Promise<SpeechSearchResponse> {
   if (request.type === 'search') {
     const key = JSON.stringify([request.manifestUrl, request.asset]);
-    if (key !== corpusKey || !engine) {
+    const cold = key !== corpusKey || !engine;
+    if (cold) {
       corpusKey = key;
-      engine = loadEditionAsset(request.manifestUrl, request.asset, 'SpeechesAsset')
-        .then(data => new SpeechSearchEngine(data.speeches));
+      loadTiming = {};
+      engine = loadEditionAsset(request.manifestUrl, request.asset, 'SpeechesAsset', loadTiming)
+        .then(data => { const started = performance.now(); const result = new SpeechSearchEngine(data.speeches); engineMs = performance.now() - started; return result; });
     }
     const current = engine;
-    try { return { id: request.id, type: 'page', data: (await current).search(request) }; }
+    try {
+      const ready = await current!;
+      const started = performance.now();
+      const data = ready.search(request);
+      return { id: request.id, type: 'page', data, timing: { cold, load: cold ? loadTiming : undefined, engineMs: cold ? engineMs : 0, queryMs: performance.now() - started } };
+    }
     catch (error) { if (engine === current) engine = undefined; throw error; }
   }
   if (!engine) throw new Error('Reden noch nicht geladen');
@@ -29,3 +38,5 @@ self.onmessage = (event: MessageEvent<unknown>) => {
     self.postMessage({ id: request.id, type: 'error', message: error instanceof Error ? error.message : 'Suche fehlgeschlagen' } satisfies SpeechSearchResponse);
   });
 };
+
+self.postMessage({ type: 'ready' });

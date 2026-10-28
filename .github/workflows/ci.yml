@@ -39,6 +39,9 @@ jobs:
       - name: Check generated Wrapped contract types
         run: pnpm contract:check
 
+      - name: Test build provenance
+        run: node --test scripts/write-build-info.test.mjs
+
       - name: Check edition surface boundaries
         run: pnpm --filter bundestag-wrapped check:edition-surface
 
@@ -116,7 +119,7 @@ jobs:
           if-no-files-found: ignore
 
   docker:
-    name: Docker image build (no push)
+    name: Docker image build (no push) (${{ matrix.name }}, ${{ matrix.check_context }}, ${{ matrix.file }})
     runs-on: ubuntu-latest
     # Build the three images in parallel — the analysis image (build-essential
     # compile + 610 MB spaCy download) dominates wall time, so a matrix runs it
@@ -125,24 +128,24 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          # Preserve required-status names while the physical context moves to root.
           - name: wrapped
-            context: ./apps/wrapped
+            check_context: ./apps/wrapped
+            context: .
             file: ./apps/wrapped/Dockerfile
           - name: mcp
-            context: ./services/mcp
+            check_context: ./services/mcp
+            context: .
             file: ./services/mcp/Dockerfile
           - name: analysis
+            check_context: ./services/analysis
             context: ./services/analysis
             file: ./services/analysis/Dockerfile.api
     steps:
       - uses: actions/checkout@v7
 
-      # Coolify builds each image from its OWN directory as the build context
-      # (base_directory), so `context`/`file` mirror that here. This job catches
-      # breakage the unit tests can't: a bad base-image bump, a removed build tool
-      # (corepack), a stale hardcoded path (python3.<minor>/site-packages), a
-      # Dockerfile syntax error — all of which otherwise only fail at deploy,
-      # leaving main un-deployable.
+      # Node applications build from the workspace root with its frozen lockfile.
+      # The Python service keeps its own independent build context.
       - uses: docker/setup-buildx-action@v4
 
       # A plain `docker build` on a fresh runner has NO cross-run cache, so the
@@ -154,6 +157,22 @@ jobs:
           context: ${{ matrix.context }}
           file: ${{ matrix.file }}
           push: false
+          load: ${{ matrix.name != 'analysis' }}
+          build-args: SOURCE_COMMIT=${{ github.sha }}
           tags: ci/bundestag-${{ matrix.name }}:pr
           cache-from: type=gha,scope=${{ matrix.name }}
           cache-to: type=gha,mode=max,scope=${{ matrix.name }}
+
+      - name: Verify installed dependency provenance
+        if: matrix.name != 'analysis'
+        run: |
+          artifact=/tmp/build-info-${{ matrix.name }}.json
+          if [[ "${{ matrix.name }}" == "wrapped" ]]; then location=/usr/share/nginx/html/build-info.json; else location=/app/build-info.json; fi
+          docker run --rm --entrypoint cat ci/bundestag-${{ matrix.name }}:pr "$location" > "$artifact"
+          node scripts/check-build-info.mjs "$artifact" "${{ matrix.name }}"
+      - name: Upload dependency provenance
+        if: matrix.name != 'analysis'
+        uses: actions/upload-artifact@v7
+        with:
+          name: build-info-${{ matrix.name }}
+          path: /tmp/build-info-${{ matrix.name }}.json

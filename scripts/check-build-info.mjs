@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { digest } from './write-build-info.mjs';
+
+const profile = { wrapped: ['apps/wrapped', '26'], mcp: ['services/mcp', '22'] }[process.argv[3]];
+assert(profile, 'Unknown image profile');
+const info = JSON.parse(readFileSync(process.argv[2], 'utf8'));
+assert.equal(info.lockfileSha256, digest(readFileSync('pnpm-lock.yaml')));
+const manifest = readFileSync(resolve(profile[0], 'package.json'));
+const pkg = JSON.parse(manifest);
+assert.equal(info.packageManifestSha256, digest(manifest));
+assert.equal(info.packageName, pkg.name);
+assert.equal(info.packageManager, JSON.parse(readFileSync('package.json', 'utf8')).packageManager);
+assert(info.nodeVersion.startsWith(`v${profile[1]}.`), 'Unexpected Node image version');
+for (const name of Object.keys(pkg.dependencies ?? {})) assert.equal(typeof info.versions[name], 'string', `Missing installed ${name}`);
+const { sourceCommit, dependencyFingerprint, ...inputs } = info;
+assert.equal(dependencyFingerprint, digest(JSON.stringify(inputs)));
+if (process.env.GITHUB_SHA) assert.equal(sourceCommit, process.env.GITHUB_SHA);
+console.log(`Verified ${info.packageName}: ${dependencyFingerprint}`);
