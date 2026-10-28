@@ -519,9 +519,14 @@ MISTRAL_API_KEY=your-mistral-api-key
 
 # Background Indexer
 INDEXER_ENABLED=true
-INDEXER_INTERVAL_MINUTES=15
+INDEXER_INTERVAL_MINUTES=1440
+INDEXER_CHUNK_INTERVAL_MINUTES=1440
 INDEXER_WAHLPERIODEN=19,20
 ```
+
+Both indexer intervals default to 24 hours. The first metadata pass starts at
+boot; enabled document and protocol chunk passes start two and five minutes
+later. Environment variables can override the intervals.
 
 > **Tip**: Generate a secure API key with `openssl rand -hex 32`
 
