@@ -1,3 +1,4 @@
+import { LoopMotion } from '@/components/slides/shared/LoopMotion';
 import { memo } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 import { PartyBadge } from '@/components/ui/PartyBadge';
@@ -35,7 +36,7 @@ export const WavingCard = memo(function WavingCard({
         transition={{ delay, type: 'spring', stiffness: 150, damping: 15 }}
         className="relative"
       >
-        <motion.div
+        <LoopMotion
           animate={prefersReducedMotion ? {} : { y: [0, -3, 0] }}
           transition={{
             duration: 2.5,
@@ -59,7 +60,7 @@ export const WavingCard = memo(function WavingCard({
           <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-white/10 text-white/80">
             <span className="text-sm font-bold">{speaker.count}×</span>
           </div>
-        </motion.div>
+        </LoopMotion>
       </motion.div>
     );
   }
@@ -77,7 +78,7 @@ export const WavingCard = memo(function WavingCard({
       }}
       className="relative"
     >
-      <motion.div
+      <LoopMotion
         animate={prefersReducedMotion ? {} : {
           rotate: [-3, 3, -3],
           y: [0, -6, 0],
@@ -110,7 +111,7 @@ export const WavingCard = memo(function WavingCard({
           </motion.div>
         )}
 
-        <motion.div
+        <LoopMotion
           animate={prefersReducedMotion ? {} : { rotate: [0, 15, -10, 15, 0] }}
           transition={{
             duration: 1.5,
@@ -122,7 +123,7 @@ export const WavingCard = memo(function WavingCard({
           className={`text-4xl md:text-5xl mb-3 ${isChampion ? '' : 'opacity-80'}`}
         >
           👋
-        </motion.div>
+        </LoopMotion>
 
         <div
           className={`
@@ -151,7 +152,7 @@ export const WavingCard = memo(function WavingCard({
           <span className="text-lg font-black">{speaker.count}×</span>
           <span className="text-sm font-medium">"Moin"</span>
         </div>
-      </motion.div>
+      </LoopMotion>
     </motion.div>
   );
 });

@@ -86,6 +86,7 @@ test('cancels an intro launch when navigating away and permits starting again', 
 });
 
 test('pauses offscreen decoration in reading mode while retaining all slide content', async ({ page }) => {
+  await installEditionFixtures(page, { includeMoinSpeakers: true });
   await page.goto('/2025');
   await page.getByRole('checkbox', { name: /Lesemodus/ }).check();
   const target = page.locator('[data-slide-id="reveal-topics"]');
@@ -93,6 +94,7 @@ test('pauses offscreen decoration in reading mode while retaining all slide cont
   await expect(target).toHaveAttribute('data-slide-effects-active', 'true');
   await expect(page.locator('[data-slide-effects-active="true"]')).toHaveCount(1);
   await page.waitForTimeout(2500);
+  await expect(page.locator('#reveal-moin')).toContainText('Alex Alpha');
   const offscreenLoops = await page.locator('[data-slide-effects-active="false"]').evaluateAll(sections =>
     sections.flatMap(section => section.getAnimations({ subtree: true })).filter(animation =>
       animation.playState === 'running' && animation.effect?.getTiming().iterations === Infinity,
