@@ -1,3 +1,4 @@
+import { LoopMotion } from '@/components/slides/shared/LoopMotion';
 import { memo, useState, useRef, useEffect, useMemo } from 'react';
 import { motion, useInView } from 'motion/react';
 import { Download, Share2 } from 'lucide-react';
@@ -85,7 +86,7 @@ const FallingConfetti = memo(function FallingConfetti() {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
       {particles.map((p) => (
-        <motion.div
+        <LoopMotion
           key={p.id}
           className="absolute w-2 h-2 md:w-3 md:h-3 rounded-sm"
           style={{

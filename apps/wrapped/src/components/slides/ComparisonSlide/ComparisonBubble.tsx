@@ -1,3 +1,4 @@
+import { LoopMotion } from '@/components/slides/shared/LoopMotion';
 import { memo } from 'react';
 import { motion } from 'motion/react';
 import { getPartyGradient } from '@/lib/party-colors';
@@ -51,7 +52,7 @@ export const ComparisonBubble = memo(function ComparisonBubble({
         left: position.left,
       }}
     >
-      <motion.div
+      <LoopMotion
         animate={{ x: floatAnimation.x, y: floatAnimation.y }}
         transition={{
           repeat: Infinity,
@@ -84,7 +85,7 @@ export const ComparisonBubble = memo(function ComparisonBubble({
             {item.subValue}
           </p>
         )}
-      </motion.div>
+      </LoopMotion>
     </motion.div>
   );
 });

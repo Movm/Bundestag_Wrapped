@@ -1,7 +1,7 @@
-import { memo, useState, useCallback } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { useSlideEffectsActive } from '@/components/main-wrapped/SlideEffectsContext';
+import { memo, useState, useCallback, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import {
-  FloatingParticles,
   LaunchEffects,
   CHARGE_DURATION,
   FLIGHT_DURATION,
@@ -25,27 +25,41 @@ export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps)
     'idle' | 'hiding' | 'charging' | 'launching'
   >('idle');
 
+  const active = useSlideEffectsActive();
+  const reduced = useReducedMotion();
+  const timers = useRef<number[]>([]);
+  useEffect(() => {
+    if (!active) return;
+    return () => {
+      for (const timer of timers.current) window.clearTimeout(timer);
+      timers.current = [];
+      setLaunchPhase('idle');
+    };
+  }, [active]);
+
   const handleStart = useCallback(() => {
+    if (!active || launchPhase !== 'idle') return;
+    if (reduced) { playSound('start'); onStart?.(); return; }
     playSound('start');
     // Theme music is started by MainWrappedPage when introStarted becomes true
     setLaunchPhase('hiding');
 
-    setTimeout(() => {
+    timers.current.push(window.setTimeout(() => {
       setLaunchPhase('charging');
-    }, TEXT_HIDE_DURATION * 1000);
+    }, TEXT_HIDE_DURATION * 1000));
 
-    setTimeout(() => {
+    timers.current.push(window.setTimeout(() => {
       setLaunchPhase('launching');
-    }, (TEXT_HIDE_DURATION + CHARGE_DURATION) * 1000);
+    }, (TEXT_HIDE_DURATION + CHARGE_DURATION) * 1000));
 
-    setTimeout(() => {
+    timers.current.push(window.setTimeout(() => {
       onStart?.();
-    }, (TEXT_HIDE_DURATION + CHARGE_DURATION) * 1000); // Immediate after charge
+    }, (TEXT_HIDE_DURATION + CHARGE_DURATION) * 1000)); // Immediate after charge
 
-    setTimeout(() => {
+    timers.current.push(window.setTimeout(() => {
       setLaunchPhase('idle');
-    }, (TEXT_HIDE_DURATION + CHARGE_DURATION + FLIGHT_DURATION) * 1000 + 100);
-  }, [onStart]);
+    }, (TEXT_HIDE_DURATION + CHARGE_DURATION + FLIGHT_DURATION) * 1000 + 100));
+  }, [onStart, active, reduced, launchPhase]);
 
   const isAnimating = launchPhase !== 'idle';
   const isHiding = launchPhase !== 'idle';
@@ -56,10 +70,6 @@ export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps)
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <FloatingParticles count={80} />
-      </div>
-
       <AnimatePresence>
         {isCharging && (
           <LaunchEffects phase={launchPhase as 'charging' | 'launching'} />

@@ -496,3 +496,11 @@ header.fixed > div > div { flex-shrink: 0; }
   .bubble-grid .flip-card > div > div > div { min-height: 200px; padding: 1rem; }
   .bubble-grid > * > .rounded-full { width: 100% !important; height: auto !important; min-height: 160px; max-height: none; }
 }
+
+/* Preloaded/reading-mode content stays readable while offscreen CSS effects sleep. */
+[data-slide-effects-active="false"],
+[data-slide-effects-active="false"] *,
+[data-slide-effects-active="false"] *::before,
+[data-slide-effects-active="false"] *::after {
+  animation-play-state: paused !important;
+}

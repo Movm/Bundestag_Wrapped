@@ -1,3 +1,4 @@
+import { LoopMotion } from '@/components/slides/shared/LoopMotion';
 import { memo, useMemo } from 'react';
 import { motion } from 'motion/react';
 import type { TopicAnalysis } from '@/data/wrapped';
@@ -95,7 +96,7 @@ const TopicBubble = memo(function TopicBubble({
         left: position.left,
       }}
     >
-      <motion.div
+      <LoopMotion
         animate={{ x: floatOffset.x, y: floatOffset.y }}
         transition={{
           repeat: Infinity,
@@ -110,7 +111,7 @@ const TopicBubble = memo(function TopicBubble({
           back={backContent}
           className="w-[28vw] h-[28vw] max-w-[200px] max-h-[200px] min-w-[110px] min-h-[110px]"
         />
-      </motion.div>
+      </LoopMotion>
     </motion.div>
   );
 });
