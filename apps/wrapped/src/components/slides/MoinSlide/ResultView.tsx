@@ -1,3 +1,4 @@
+import { LoopSpan } from '@/components/slides/shared/LoopMotion';
 import { useMemo } from 'react';
 import { motion } from 'motion/react';
 import { WavingCard } from './WavingCard';
@@ -23,13 +24,13 @@ export function ResultView({ speakers }: ResultViewProps) {
         viewport={{ once: true }}
         className="text-center mb-10"
       >
-        <motion.span
+        <LoopSpan
           animate={{ rotate: [0, 15, -10, 15, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 3 }}
           className="text-5xl md:text-6xl mb-4 block"
         >
           👋
-        </motion.span>
+        </LoopSpan>
         <h2 className="text-2xl md:text-4xl font-black text-white">
           Die Moin-Champions
         </h2>

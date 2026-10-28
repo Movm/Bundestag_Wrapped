@@ -1,3 +1,4 @@
+import { LoopSpan } from '@/components/slides/shared/LoopMotion';
 import { motion } from 'motion/react';
 import { cn } from '@/lib/utils';
 
@@ -43,12 +44,12 @@ export function ScrollHint({
         className
       )}
     >
-      <motion.span
+      <LoopSpan
         animate={{ y: [0, 5, 0] }}
         transition={{ repeat: Infinity, duration: 1.5 }}
       >
         ↓
-      </motion.span>
+      </LoopSpan>
       {text}
     </motion.div>
   );

@@ -1,3 +1,4 @@
+import { LoopMotion } from '@/components/slides/shared/LoopMotion';
 import { useMemo } from 'react';
 import { motion } from 'motion/react';
 import type { GenderAnalysis } from '@/data/wrapped';
@@ -75,7 +76,7 @@ export function ResultView({ genderAnalysis }: ResultViewProps) {
                   viewport={{ once: true }}
                   transition={{ delay: 0.8, type: 'spring', stiffness: 150, damping: 15 }}
                 >
-                  <motion.div
+                  <LoopMotion
                     animate={{ y: [0, -8, 0] }}
                     transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
                     style={{ width: size, height: size }}
@@ -93,7 +94,7 @@ export function ResultView({ genderAnalysis }: ResultViewProps) {
                     <span className="font-mono text-3xl lg:text-4xl text-white font-black tabular-nums mt-1">
                       {topParty.femaleRatio.toFixed(0)}%
                     </span>
-                  </motion.div>
+                  </LoopMotion>
                 </motion.div>
               );
             })()}
@@ -107,7 +108,7 @@ export function ResultView({ genderAnalysis }: ResultViewProps) {
                   viewport={{ once: true }}
                   transition={{ delay: 1.0, type: 'spring', stiffness: 150, damping: 15 }}
                 >
-                  <motion.div
+                  <LoopMotion
                     animate={{ y: [0, -6, 0] }}
                     transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut', delay: 0.5 }}
                     style={{ width: size, height: size }}
@@ -126,7 +127,7 @@ export function ResultView({ genderAnalysis }: ResultViewProps) {
                     <span className="font-mono text-2xl lg:text-3xl text-white font-black tabular-nums mt-1">
                       {bottomParty.femaleRatio.toFixed(0)}%
                     </span>
-                  </motion.div>
+                  </LoopMotion>
                 </motion.div>
               );
             })()}

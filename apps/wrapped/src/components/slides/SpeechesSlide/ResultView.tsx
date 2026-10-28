@@ -1,3 +1,4 @@
+import { LoopMotion } from '@/components/slides/shared/LoopMotion';
 import { memo, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { getPartyGradient } from '@/lib/party-colors';
@@ -148,7 +149,7 @@ export const ResultView = memo(function ResultView({ parties }: ResultViewProps)
                 left: position.left,
               }}
             >
-              <motion.div
+              <LoopMotion
                 animate={{ x: float.x, y: float.y }}
                 transition={{
                   repeat: Infinity,
@@ -164,7 +165,7 @@ export const ResultView = memo(function ResultView({ parties }: ResultViewProps)
                   className="min-w-[100px] min-h-[100px] max-w-[280px] max-h-[280px]"
                   size={`${vwSize}vw`}
                 />
-              </motion.div>
+              </LoopMotion>
             </motion.div>
           );
         })}

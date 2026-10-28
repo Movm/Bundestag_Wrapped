@@ -69,3 +69,35 @@ test('does not let an old quiz overlay pull the reader back after navigation', a
   await page.waitForTimeout(2800);
   await expect(target).toHaveAttribute('data-slide-active', 'true');
 });
+
+
+test('cancels an intro launch when navigating away and permits starting again', async ({ page }) => {
+  await page.goto('/2025');
+  const intro = page.locator('[data-slide-id="intro"]');
+  await intro.getByRole('button', { name: 'Starten', exact: true }).click();
+  const target = page.locator('[data-slide-id="reveal-drama"]');
+  await target.evaluate(el => el.parentElement!.scrollTo({ top: el.offsetTop, behavior: 'instant' }));
+  await expect(target).toHaveAttribute('data-slide-effects-active', 'true');
+  await page.waitForTimeout(1600);
+  await expect(target).toHaveAttribute('data-slide-effects-active', 'true');
+  await intro.evaluate(el => el.parentElement!.scrollTo({ top: el.offsetTop, behavior: 'instant' }));
+  await expect(intro).toHaveAttribute('data-slide-effects-active', 'true');
+  await expect(intro.getByRole('button', { name: 'Starten', exact: true })).toBeEnabled();
+});
+
+test('pauses offscreen decoration in reading mode while retaining all slide content', async ({ page }) => {
+  await page.goto('/2025');
+  await page.getByRole('checkbox', { name: /Lesemodus/ }).check();
+  const target = page.locator('[data-slide-id="reveal-topics"]');
+  await target.evaluate(el => el.parentElement!.scrollTo({ top: el.offsetTop, behavior: 'instant' }));
+  await expect(target).toHaveAttribute('data-slide-effects-active', 'true');
+  await expect(page.locator('[data-slide-effects-active="true"]')).toHaveCount(1);
+  await page.waitForTimeout(2500);
+  const offscreenLoops = await page.locator('[data-slide-effects-active="false"]').evaluateAll(sections =>
+    sections.flatMap(section => section.getAnimations({ subtree: true })).filter(animation =>
+      animation.playState === 'running' && animation.effect?.getTiming().iterations === Infinity,
+    ).length,
+  );
+  expect(offscreenLoops).toBe(0);
+  await expect(page.locator('[data-slide-id="intro"] h1')).toContainText('BUNDESTAG');
+});

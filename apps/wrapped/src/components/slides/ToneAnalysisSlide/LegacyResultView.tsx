@@ -1,3 +1,4 @@
+import { LoopMotion } from '@/components/slides/shared/LoopMotion';
 import { motion } from 'motion/react';
 import type { ToneAnalysis } from '@/data/wrapped';
 import { getPartyColor } from '@/lib/party-colors';
@@ -57,7 +58,7 @@ export function LegacyResultView({ toneAnalysis }: LegacyResultViewProps) {
                 left: position.left,
               }}
             >
-              <motion.div
+              <LoopMotion
                 animate={{ x: floatAnimation.x, y: floatAnimation.y }}
                 transition={{
                   repeat: Infinity,
@@ -82,7 +83,7 @@ export function LegacyResultView({ toneAnalysis }: LegacyResultViewProps) {
                   {winner.party}
                 </p>
                 <p className="text-xs text-white/50">{cat.label}</p>
-              </motion.div>
+              </LoopMotion>
             </motion.div>
           );
         })}

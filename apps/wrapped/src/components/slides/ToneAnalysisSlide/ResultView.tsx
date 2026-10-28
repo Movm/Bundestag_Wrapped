@@ -1,3 +1,4 @@
+import { LoopMotion } from '@/components/slides/shared/LoopMotion';
 import { memo, useMemo } from 'react';
 import { motion } from 'motion/react';
 import type { ToneAnalysis, PartyProfile, ExtendedToneScores } from '@/data/wrapped';
@@ -127,7 +128,7 @@ const ToneBubble = memo(function ToneBubble({
         left: position.left,
       }}
     >
-      <motion.div
+      <LoopMotion
         animate={{ x: floatOffset.x, y: floatOffset.y }}
         transition={{
           repeat: Infinity,
@@ -142,7 +143,7 @@ const ToneBubble = memo(function ToneBubble({
           back={backContent}
           className="w-[28vw] h-[28vw] max-w-[220px] max-h-[220px] min-w-[120px] min-h-[120px]"
         />
-      </motion.div>
+      </LoopMotion>
     </motion.div>
   );
 });

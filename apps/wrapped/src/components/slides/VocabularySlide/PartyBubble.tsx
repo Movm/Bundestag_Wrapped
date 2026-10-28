@@ -1,3 +1,4 @@
+import { LoopMotion } from '@/components/slides/shared/LoopMotion';
 import { memo } from 'react';
 import { motion } from 'motion/react';
 import type { PartyStats } from '@/data/wrapped';
@@ -76,7 +77,7 @@ export const PartyBubble = memo(function PartyBubble({
         left: position.left,
       }}
     >
-      <motion.div
+      <LoopMotion
         animate={{ x: floatOffset.x, y: floatOffset.y }}
         transition={{
           repeat: Infinity,
@@ -91,7 +92,7 @@ export const PartyBubble = memo(function PartyBubble({
           back={backContent}
           className="w-[28vw] h-[28vw] max-w-[220px] max-h-[220px] min-w-[120px] min-h-[120px]"
         />
-      </motion.div>
+      </LoopMotion>
     </motion.div>
   );
 });

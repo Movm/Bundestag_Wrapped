@@ -24,7 +24,12 @@ pages instead of growing the DOM with every request.
 
 Wrapped keeps all scroll-snap sections, but mounts contents only around the active
 slide. Visited contents retain local state in React Activity; their effects are
-suspended outside that window and while the document is hidden. The global
+suspended outside that window and while the document is hidden. Decoration has a
+separate activation boundary: only the selected, page-visible slide runs its
+repeating Motion effects or particles. CSS animations pause on other sections.
+Reading mode retains accessible contents across all slides without starting all
+decorative loops. The intro shares the global particle layer and cancels pending
+launch timers on navigation or when the document becomes hidden. The global
 background also suspends when hidden. Previously visited DOM is retained, so this
 is an effect/rendering optimization rather than a fixed upper bound on story DOM.
 

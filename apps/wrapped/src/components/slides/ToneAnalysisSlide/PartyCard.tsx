@@ -1,3 +1,4 @@
+import { LoopMotion } from '@/components/slides/shared/LoopMotion';
 import { memo } from 'react';
 import { motion } from 'motion/react';
 import type { PartyProfile } from '@/data/wrapped';
@@ -43,7 +44,7 @@ export const PartyCard = memo(function PartyCard({
       }}
       className="relative group"
     >
-      <motion.div
+      <LoopMotion
         animate={animation.card}
         transition={{
           repeat: Infinity,
@@ -55,7 +56,7 @@ export const PartyCard = memo(function PartyCard({
                    hover:bg-white/10 cursor-default"
         style={{ willChange: 'transform' }}
       >
-        <motion.div
+        <LoopMotion
           className="absolute inset-0 rounded-2xl -z-10 blur-xl opacity-20 group-hover:opacity-40 transition-opacity"
           style={{ backgroundColor: partyColor }}
           animate={{
@@ -70,7 +71,7 @@ export const PartyCard = memo(function PartyCard({
           }}
         />
 
-        <motion.div
+        <LoopMotion
           className="text-4xl md:text-5xl lg:text-6xl text-center mb-3"
           animate={animation.emoji}
           transition={{
@@ -80,7 +81,7 @@ export const PartyCard = memo(function PartyCard({
           }}
         >
           {profile.emoji}
-        </motion.div>
+        </LoopMotion>
 
         <motion.h3
           className="text-base md:text-lg font-bold text-center mb-1"
@@ -114,7 +115,7 @@ export const PartyCard = memo(function PartyCard({
             </motion.span>
           ))}
         </div>
-      </motion.div>
+      </LoopMotion>
     </motion.div>
   );
 });

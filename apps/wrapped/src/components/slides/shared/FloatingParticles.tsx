@@ -1,3 +1,4 @@
+import { useSlideEffectsActive } from '@/components/main-wrapped/SlideEffectsContext';
 import { memo, useMemo, type CSSProperties } from 'react';
 import { useReducedMotion } from 'motion/react';
 
@@ -41,8 +42,9 @@ export const FloatingParticles = memo(function FloatingParticles({
   );
 
   const prefersReducedMotion = useReducedMotion();
+  const active = useSlideEffectsActive();
 
-  if (prefersReducedMotion) {
+  if (prefersReducedMotion || !active) {
     return null;
   }
 
