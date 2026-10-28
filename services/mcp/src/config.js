@@ -60,11 +60,11 @@ export const config = {
 
   indexer: {
     enabled: process.env.INDEXER_ENABLED === 'true',
-    intervalMinutes: parseInt(process.env.INDEXER_INTERVAL_MINUTES) || 15,
+    intervalMinutes: parseInt(process.env.INDEXER_INTERVAL_MINUTES) || 1440,
     // Full-text chunk indexers (Drucksachen sections + protocol speeches) run on
-    // their own, longer interval and are gated by their own flags. They still
+    // their own configurable interval and are gated by their own flags. They still
     // require INDEXER_ENABLED + QDRANT + Mistral (start() bails without them).
-    chunkIntervalMinutes: parseInt(process.env.INDEXER_CHUNK_INTERVAL_MINUTES) || 60,
+    chunkIntervalMinutes: parseInt(process.env.INDEXER_CHUNK_INTERVAL_MINUTES) || 1440,
     documentIndexingEnabled: process.env.DOCUMENT_INDEXING_ENABLED === 'true',
     protocolIndexingEnabled: process.env.PROTOCOL_INDEXING_ENABLED === 'true',
     wahlperioden: (process.env.INDEXER_WAHLPERIODEN || '19,20,21').split(',').map(Number)
