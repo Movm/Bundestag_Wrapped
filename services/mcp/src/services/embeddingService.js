@@ -8,6 +8,29 @@ import { config } from '../config.js';
 import * as logger from '../utils/logger.js';
 
 let client = null;
+const usageStats = {};
+
+/** Token counts reported by Mistral since this process started. */
+export function getUsageStats() {
+  return { since: usageStartedAt, byPurpose: structuredClone(usageStats) };
+}
+const usageStartedAt = new Date().toISOString();
+
+function recordUsage(purpose, usage) {
+  const stats = usageStats[purpose] ||= { requests: 0, requestsWithoutUsage: 0, inputTokens: 0, totalTokens: 0 };
+  stats.requests++;
+  const input = usage?.promptTokens ?? usage?.prompt_tokens;
+  const total = usage?.totalTokens ?? usage?.total_tokens;
+  if (typeof input !== 'number' || typeof total !== 'number') {
+    stats.requestsWithoutUsage++;
+  } else {
+    stats.inputTokens += input;
+    stats.totalTokens += total;
+  }
+  logger.info('EMBEDDING_USAGE', 'Mistral embedding request', {
+    purpose, inputTokens: input ?? null, totalTokens: total ?? null
+  });
+}
 
 /**
  * Initialize the Mistral client
@@ -33,7 +56,7 @@ export function isAvailable() {
  * @returns {Promise<number[]>} - Embedding vector (1024 dimensions)
  */
 export async function embed(text) {
-  const embeddings = await embedBatch([text]);
+  const embeddings = await embedBatch([text], 'search');
   return embeddings[0];
 }
 
@@ -42,7 +65,7 @@ export async function embed(text) {
  * @param {string[]} texts - Array of texts to embed
  * @returns {Promise<number[][]>} - Array of embedding vectors
  */
-export async function embedBatch(texts) {
+export async function embedBatch(texts, purpose = 'other') {
   const mistral = getClient();
   if (!mistral) {
     throw new Error('Mistral API key not configured');
@@ -60,6 +83,7 @@ export async function embedBatch(texts) {
       inputs: texts
     });
 
+    recordUsage(purpose, response.usage);
     const embeddings = response.data.map(item => item.embedding);
     const elapsed = Date.now() - startTime;
 

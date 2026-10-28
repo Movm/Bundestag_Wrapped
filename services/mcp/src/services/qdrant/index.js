@@ -20,6 +20,7 @@ export {
   upsertPoints,
   setActivityPersonIds,
   getPoints,
+  setPointPayload,
   pointExists,
   deletePoints,
   getCollectionInfo,
