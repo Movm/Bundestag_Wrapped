@@ -8,6 +8,7 @@
  * - Skip already-indexed documents (incremental indexing)
  */
 
+import { createHash } from 'node:crypto';
 import { config } from '../config.js';
 import * as api from '../api/bundestag.js';
 import * as embedding from '../services/embeddingService.js';
@@ -88,75 +89,36 @@ function generatePointId(docType, docId) {
   return Math.abs(hash);
 }
 
-/**
- * Check which documents are already indexed in Qdrant
- * Returns Set of existing point IDs
- */
-async function getExistingPointIds(pointIds) {
-  try {
-    const existing = await qdrant.getPoints(pointIds);
-    return new Set(existing.map(p => p.id));
-  } catch (err) {
-    logger.warn('INDEXER', `Could not check existing points: ${err.message}`);
-    return new Set();
-  }
-}
-
-/**
- * Process a batch of documents: filter, embed, upsert
- * Returns count of newly indexed documents
- * @param {object} options
- * @param {boolean} options.isIncremental - Skip Qdrant check when DIP already filtered
- * @param {boolean} options.backfillActivityPersonIds - Patch existing activity payloads
- */
-async function processBatch(
-  batch,
-  docType,
-  wahlperiode,
-  { isIncremental = false, backfillActivityPersonIds = false } = {}
-) {
+/** Process metadata in batches, reusing vectors when the embedded text is unchanged. */
+export async function processBatch(batch, docType, wahlperiode, { isIncremental = false, backfillActivityPersonIds = false } = {}) {
   const pointIds = batch.map(doc => generatePointId(docType, doc.id));
-
-  let newDocs = batch;
-  let skippedCount = 0;
-
-  // In incremental mode, skip Qdrant check - DIP API already filtered by aktualisiert
-  if (!isIncremental) {
-    const existingIds = await getExistingPointIds(pointIds);
-    newDocs = batch.filter((_, idx) => !existingIds.has(pointIds[idx]));
-    skippedCount = existingIds.size;
-
-    if (backfillActivityPersonIds && docType === 'aktivitaet') {
-      const entries = batch.flatMap((doc, idx) => {
-        const personId = normalizePersonId(doc.person_id);
-        return existingIds.has(pointIds[idx]) && personId
-          ? [{ id: pointIds[idx], personId }]
-          : [];
-      });
-      await qdrant.setActivityPersonIds(entries);
-    }
-  }
-
-  if (newDocs.length === 0) {
-    return { indexed: 0, skipped: batch.length };
-  }
-
-  // Generate embeddings for new docs only
-  const textsToEmbed = newDocs.map(doc => embedding.prepareDocumentText(doc));
-
-  let embeddings;
-  try {
-    embeddings = await embedding.embedBatch(textsToEmbed);
-  } catch (err) {
-    logger.error('INDEXER', `Embedding failed: ${err.message}`);
-    stats.errors++;
-    return { indexed: 0, skipped: skippedCount };
+  // Fail closed: a failed lookup must never turn a whole batch into paid embeds.
+  const existing = await qdrant.getPoints(pointIds, { withPayload: true });
+  const byId = new Map(existing.map(point => [String(point.id), point]));
+  const entries = batch.map((doc, index) => {
+    const text = embedding.prepareDocumentText(doc);
+    return {
+      doc,
+      id: pointIds[index],
+      text,
+      hash: createHash('sha256').update(text).digest('hex'),
+      existing: byId.get(String(pointIds[index]))
+    };
+  });
+  // A full scan historically skipped existing points. Preserve that for legacy
+  // records without hashes; incremental passes migrate them when encountered.
+  const legacySkipped = entries.filter(entry => !isIncremental && entry.existing && !entry.existing.payload?.embedding_text_hash);
+  const comparable = entries.filter(entry => !legacySkipped.includes(entry));
+  const changed = comparable.filter(entry => entry.existing?.payload?.embedding_text_hash !== entry.hash);
+  const unchanged = comparable.filter(entry => entry.existing?.payload?.embedding_text_hash === entry.hash);
+  let embeddings = [];
+  if (changed.length) {
+    embeddings = await embedding.embedBatch(changed.map(entry => entry.text), 'indexing');
   }
 
   // Build points for Qdrant
-  const points = newDocs.map((doc, idx) => {
-    // Build base payload
-    const payload = buildMainPayload(doc, docType, wahlperiode);
+  const buildPayload = (doc, hash) => {
+    const payload = { ...buildMainPayload(doc, docType, wahlperiode), embedding_text_hash: hash };
 
     // Add person-specific fields
     if (docType === 'person') {
@@ -167,22 +129,35 @@ async function processBatch(
       payload.person_wahlperioden = Array.isArray(doc.wahlperiode) ? doc.wahlperiode : [doc.wahlperiode];
     }
 
-    return {
-      id: generatePointId(docType, doc.id),
-      vector: embeddings[idx],
-      payload
-    };
-  });
+    return payload;
+  };
 
-  // Upsert to Qdrant
-  try {
-    await qdrant.upsertPoints(points);
-    return { indexed: points.length, skipped: skippedCount };
-  } catch (err) {
-    logger.error('INDEXER', `Qdrant upsert failed: ${err.message}`);
-    stats.errors++;
-    return { indexed: 0, skipped: skippedCount };
+  // Preserve the existing activity person_id backfill for legacy full scans.
+  if (backfillActivityPersonIds && docType === 'aktivitaet') {
+    const updates = legacySkipped.flatMap(entry => {
+      const personId = normalizePersonId(entry.doc.person_id);
+      return personId ? [{ id: entry.id, personId }] : [];
+    });
+    await qdrant.setActivityPersonIds(updates);
   }
+
+  // Preserve the vector while keeping search filters and displayed metadata current.
+  for (const entry of unchanged) {
+    const payload = buildPayload(entry.doc, entry.hash);
+    if (Object.keys(payload).some(key => JSON.stringify(payload[key]) !== JSON.stringify(entry.existing.payload[key]))) {
+      await qdrant.setPointPayload(entry.id, payload);
+    }
+  }
+
+  if (changed.length) {
+    const points = changed.map((entry, idx) => ({
+      id: entry.id,
+      vector: embeddings[idx],
+      payload: buildPayload(entry.doc, entry.hash)
+    }));
+    await qdrant.upsertPoints(points);
+  }
+  return { indexed: changed.length, skipped: unchanged.length + legacySkipped.length };
 }
 
 /**
@@ -263,7 +238,7 @@ async function indexDocumentType(
         logger.warn('INDEXER', 'Rate limited, waiting 30s before retry...');
         await sleep(30000);
       }
-      hasMore = false;
+      throw err;
     }
   }
 
@@ -712,7 +687,7 @@ async function indexProtocol(protokoll) {
 
     let embeddings;
     try {
-      embeddings = await embedding.embedBatch(textsToEmbed);
+      embeddings = await embedding.embedBatch(textsToEmbed, 'indexing');
     } catch (err) {
       logger.error('INDEXER', `Embedding failed for protocol ${protokollId}: ${err.message}`);
       protocolStats.errors++;
@@ -1044,7 +1019,7 @@ async function indexDrucksache(drucksache) {
 
     let embeddings;
     try {
-      embeddings = await embedding.embedBatch(textsToEmbed);
+      embeddings = await embedding.embedBatch(textsToEmbed, 'indexing');
     } catch (err) {
       logger.error('INDEXER', `Embedding failed for Drucksache ${drucksacheId}: ${err.message}`);
       documentChunkStats.errors++;

@@ -216,7 +216,8 @@ and background indexer statistics.`,
       endpoint: 'semantic_search_status',
       embeddingService: {
         available: embedding.isAvailable(),
-        model: config.mistral.embeddingModel
+        model: config.mistral.embeddingModel,
+        usage: embedding.getUsageStats()
       },
       qdrant: {
         enabled: config.qdrant.enabled,

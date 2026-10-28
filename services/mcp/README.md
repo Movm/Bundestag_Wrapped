@@ -493,6 +493,19 @@ The server supports AI-powered semantic search using Qdrant vector database and 
 - **Document Section Search**: Find specific paragraphs, questions, or articles within documents
 - **Incremental Indexing**: Uses `f.aktualisiert.start` for efficient updates after initial indexing
 
+The metadata indexer compares a hash of each embedding input with the stored
+hash, so overlap between incremental runs does not repeatedly call Mistral for
+unchanged text. Existing points without a hash are embedded once when an
+incremental pass next encounters them; full scans continue to skip those legacy
+points. Metadata-only changes update the Qdrant payload without regenerating the
+vector.
+
+`bundestag_semantic_search_status` reports Mistral's token usage separately for
+search and indexing, accumulated since the server process started. Requests
+without a usage response are counted separately, so the totals are not a
+substitute for Mistral billing. Each embedding request also emits a structured
+`EMBEDDING_USAGE` log without the input text.
+
 ### Configuration
 
 Add to your `.env` file:

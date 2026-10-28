@@ -109,23 +109,29 @@ export async function getCollectionInfo() {
  * @param {number[]} pointIds - Array of point IDs to check
  * @returns {Promise<Array<{id: number}>>} - Array of existing points
  */
-export async function getPoints(pointIds) {
+export async function getPoints(pointIds, { withPayload = false } = {}) {
   const qdrant = getClient();
-  if (!qdrant || pointIds.length === 0) {
-    return [];
-  }
+  if (pointIds.length === 0) return [];
+  if (!qdrant) throw new Error('Qdrant not available');
 
   try {
     const result = await qdrant.retrieve(config.qdrant.collection, {
       ids: pointIds,
-      with_payload: false,
+      with_payload: withPayload,
       with_vector: false
     });
     return result || [];
   } catch (err) {
-    logger.debug(LOG_PREFIX, `getPoints failed: ${err.message}`);
-    return [];
+    logger.warn(LOG_PREFIX, `getPoints failed: ${err.message}`);
+    throw err;
   }
+}
+
+/** Update metadata without recomputing an unchanged vector. */
+export async function setPointPayload(id, payload) {
+  const qdrant = getClient();
+  if (!qdrant) throw new Error('Qdrant not available');
+  await qdrant.setPayload(config.qdrant.collection, { wait: true, points: [id], payload });
 }
 
 /**
