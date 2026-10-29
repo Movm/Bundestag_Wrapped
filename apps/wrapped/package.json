@@ -8,7 +8,7 @@
     "dev": "vite",
     "prebuild": "node scripts/check-production-editions.mjs && node scripts/check-preview-auth.mjs && node scripts/generate-sitemap.cjs",
     "build": "tsc -b && vite build",
-    "postbuild": "node scripts/check-production-editions.mjs dist/data && node ../../scripts/write-build-info.mjs apps/wrapped apps/wrapped/dist/build-info.json",
+    "postbuild": "node scripts/check-production-editions.mjs dist/data && node scripts/build-speech-search.mjs && node ../../scripts/write-build-info.mjs apps/wrapped apps/wrapped/dist/build-info.json",
     "check:bundle-budget": "node scripts/check-bundle-budget.cjs",
     "check:edition-surface": "node scripts/check-edition-hardcodes.cjs",
     "import:abgeordnetenwatch": "node scripts/import-abgeordnetenwatch.cjs",
@@ -20,7 +20,8 @@
     "test:e2e": "playwright test",
     "test:watch": "vitest",
     "audit:performance": "node scripts/audit-performance.cjs",
-    "test:a11y": "playwright test e2e/accessibility.spec.ts"
+    "test:a11y": "playwright test e2e/accessibility.spec.ts",
+    "check:search-index": "node scripts/check-search-index-parity.mjs"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.104.5",

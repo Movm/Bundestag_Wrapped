@@ -17,3 +17,14 @@ describe('edition PWA runtime-cache routes', () => {
     expect(pattern.test(first.replace('/2025/final', '/2026/preview-1'))).toBe(false);
   });
 });
+
+it('caches version-bound public search resources without caching range bodies or private previews', () => {
+  const base = `/data/2025/search-v1-${'a'.repeat(64)}-${'b'.repeat(64)}`;
+  const pattern = EDITION_ASSET_PATTERNS.searchIndex;
+  for (const asset of ['index.json', 'grams/006100620063.bin', 'details/12.json']) {
+    expect(pattern.test(`${base}/${asset}`)).toBe(true);
+    expect(pattern.test(`${base.replace('/2025/', '/2026/')}/${asset}`)).toBe(false);
+  }
+  expect(pattern.test(`${base}/texts.bin`)).toBe(false);
+  expect(pattern.test('/data/2025/search-v1/index.json')).toBe(false);
+});

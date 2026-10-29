@@ -215,37 +215,43 @@ export function parseSearchQuery(query: string): ParsedQuery {
 }
 
 // Calculate relevance score for a speech
-function calculateSpeechScore(speech: Speech, query: ParsedQuery): number {
+export interface SpeechTextLookup {
+  contains(term: string): boolean;
+  frequency(termIndex: number): number;
+}
+
+function calculateSpeechScore(speech: Speech, query: ParsedQuery, lookup?: SpeechTextLookup): number {
   let score = 0;
-  const textLower = speech.text?.toLowerCase() || '';
+  const textLower = lookup ? '' : speech.text?.toLowerCase() || '';
+  const contains = (term: string) => lookup ? lookup.contains(term) : textLower.includes(term);
   const speakerLower = speech.speaker?.toLowerCase() || '';
 
   // Score exact phrases (highest weight)
   for (const phrase of query.phrases) {
-    if (textLower.includes(phrase)) score += 10;
+    if (contains(phrase)) score += 10;
     if (speakerLower.includes(phrase)) score += 15;
   }
 
   // Score terms based on operator
   if (query.operator === 'AND') {
     const allMatch = query.terms.every(
-      (term) => textLower.includes(term) || speakerLower.includes(term)
+      (term) => contains(term) || speakerLower.includes(term)
     );
     if (!allMatch && query.terms.length > 0) return 0;
     score += query.terms.length * 3;
   } else {
     // OR: score each match
     for (const term of query.terms) {
-      if (textLower.includes(term)) score += 3;
+      if (contains(term)) score += 3;
       if (speakerLower.includes(term)) score += 5;
     }
   }
 
   // Boost for term frequency (capped) - uses pre-compiled regex for performance
-  for (const regex of query.termRegexes) {
+  for (const [index, regex] of query.termRegexes.entries()) {
     // Reset lastIndex since we're reusing the regex
     regex.lastIndex = 0;
-    const matches = (textLower.match(regex) || []).length;
+    const matches = lookup ? lookup.frequency(index) : (textLower.match(regex) || []).length;
     score += Math.min(matches, 5);
   }
 
@@ -291,12 +297,14 @@ function calculateSpeakerScore(speaker: SpeakerSummary, query: ParsedQuery): num
 export function searchSpeeches(
   speeches: Speech[],
   query: ParsedQuery,
-  filters: SearchFilters
+  filters: SearchFilters,
+  lookup?: (speech: Speech, index: number) => SpeechTextLookup,
 ): ScoredSpeech[] {
+  const lookups = lookup ? speeches.map(lookup) : undefined;
   return speeches
     .map((speech, idx) => ({
       ...speech,
-      score: calculateSpeechScore(speech, query),
+      score: calculateSpeechScore(speech, query, lookups?.[idx]),
       _idx: idx,
     }))
     .filter((speech) => {
@@ -338,9 +346,9 @@ export function searchSpeeches(
       }
 
       // Check NOT terms
-      const textLower = speech.text.toLowerCase();
+      const textLower = lookups ? '' : speech.text.toLowerCase();
       for (const notTerm of query.notTerms) {
-        if (textLower.includes(notTerm)) return false;
+        if (lookups ? lookups[speech._idx].contains(notTerm) : textLower.includes(notTerm)) return false;
       }
 
       // If no search query, include all (filters only)

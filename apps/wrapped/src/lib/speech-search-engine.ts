@@ -1,6 +1,6 @@
 import { findBestSnippet, hasSearchContent, parseSearchQuery, searchSpeeches, sortSpeeches } from './search-utils';
 import type { ScoredSpeech, Speech } from './search-utils';
-import { SEARCH_PAGE_SIZE, type SpeechSearchPage, type SpeechSearchRequest } from './speech-search-protocol';
+import { SEARCH_PAGE_SIZE, toSpeechPreview, type SpeechSearchPage, type SpeechSearchRequest } from './speech-search-protocol';
 
 type SearchRequest = Extract<SpeechSearchRequest, { type: 'search' }>;
 /** Owns the full corpus in the worker. Only bounded previews cross to the UI. */
@@ -24,11 +24,7 @@ export class SpeechSearchEngine {
       this.queryKey = key;
     }
     const page = Math.max(0, Math.floor(request.page));
-    const items = this.results.slice(page * SEARCH_PAGE_SIZE, (page + 1) * SEARCH_PAGE_SIZE).map(speech => ({
-      ...speech,
-      preview: findBestSnippet(speech.text, [...parsed.terms, ...parsed.phrases], 150),
-      text: '',
-    }));
+    const items = this.results.slice(page * SEARCH_PAGE_SIZE, (page + 1) * SEARCH_PAGE_SIZE).map(speech => toSpeechPreview(speech, findBestSnippet(speech.text, [...parsed.terms, ...parsed.phrases], 150)));
     return { items, total: this.results.length };
   }
   detail(id: number): Speech {

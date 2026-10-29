@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }) => { await installEditionFixtures(page); });
 
 test('does not fetch the speech corpus before a search is requested', async ({ page, context }) => {
   const speechRequests: string[] = [];
-  context.on('request', request => { if (request.url().endsWith('/speeches.json')) speechRequests.push(request.url()); });
+  context.on('request', request => { if (request.url().endsWith('/speeches.json') || /\/search-v[0-9]+-/.test(request.url())) speechRequests.push(request.url()); });
   await page.goto('/2025/suche');
   await expect(page.getByRole('textbox', { name: 'Suche nach Themen, Redner:innen oder Parteien' })).toBeVisible();
   await page.waitForTimeout(500);
@@ -50,8 +50,7 @@ test('keeps snap sections but activates only the current slide and neighbours', 
   await target.evaluate(el => el.parentElement!.scrollTo({ top: el.offsetTop, behavior: 'instant' }));
   await expect(target).toHaveAttribute('data-slide-active', 'true');
   await expect(page.locator('[data-slide-id="intro"]')).toHaveAttribute('data-slide-active', 'false');
-  const introAnimations = await page.locator('[data-slide-id="intro"]').evaluate(el => el.getAnimations({ subtree: true }).filter(a => a.playState === 'running').length);
-  expect(introAnimations).toBe(0);
+  await expect.poll(() => page.locator('[data-slide-id="intro"]').evaluate(el => el.getAnimations({ subtree: true }).filter(a => a.playState === 'running').length)).toBe(0);
 });
 
 test('does not let an old quiz overlay pull the reader back after navigation', async ({ page }) => {

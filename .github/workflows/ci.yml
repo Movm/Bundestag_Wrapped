@@ -60,6 +60,9 @@ jobs:
       - name: Build web
         run: pnpm --filter bundestag-wrapped build
 
+      - name: Check full-corpus search parity
+        run: pnpm --filter bundestag-wrapped check:search-index
+
       - name: Check web bundle budget
         run: pnpm --filter bundestag-wrapped check:bundle-budget
 
@@ -170,6 +173,22 @@ jobs:
           if [[ "${{ matrix.name }}" == "wrapped" ]]; then location=/usr/share/nginx/html/build-info.json; else location=/app/build-info.json; fi
           docker run --rm --entrypoint cat ci/bundestag-${{ matrix.name }}:pr "$location" > "$artifact"
           node scripts/check-build-info.mjs "$artifact" "${{ matrix.name }}"
+      - uses: actions/setup-node@v7
+        if: matrix.name == 'wrapped'
+        with:
+          node-version: 22
+
+      - name: Verify indexed search transport and preview auth
+        if: matrix.name == 'wrapped'
+        run: |
+          docker run -d --name search-http-check -p 127.0.0.1:4179:8080 -e PREVIEW_ACCESS_CODE=ci-search-test-only ci/bundestag-wrapped:pr
+          trap 'docker rm -f search-http-check' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --silent --fail http://127.0.0.1:4179/ > /dev/null; then break; fi
+            sleep 1
+          done
+          node apps/wrapped/scripts/check-search-http.mjs http://127.0.0.1:4179
+
       - name: Upload dependency provenance
         if: matrix.name != 'analysis'
         uses: actions/upload-artifact@v7

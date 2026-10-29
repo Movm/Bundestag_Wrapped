@@ -45,6 +45,8 @@ type EditionAssetData = {
 };
 
 export interface EditionAssetTiming {
+  assetKind?: 'corpus' | 'index';
+  bootstrapMs?: number;
   headersMs?: number;
   bodyMs?: number;
   jsonMs?: number;
@@ -54,7 +56,7 @@ export interface EditionAssetTiming {
   contentEncoding?: string | null;
 }
 
-async function fetchJson(url: string, timing?: EditionAssetTiming): Promise<unknown> {
+export async function fetchJson(url: string, timing?: EditionAssetTiming): Promise<unknown> {
   // Edition documents are static, root-relative JSON resources under /data/.
   // Validate the raw path before fetch: no hostnames, encoded separators,
   // dot-only traversal segments, query strings or fragments can reach an API.
