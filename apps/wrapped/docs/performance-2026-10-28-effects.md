@@ -68,3 +68,25 @@ Desktop CPU emulation does not emulate their GPU or memory limits. The initial
 30–40-animation budget was exploratory: intro idle is 41, and transition snapshots
 are higher. Frame timing and verified inactive loops take precedence over forcing
 an arbitrary counter down.
+
+## Production data correction
+
+The first production reading-mode check on `8978ee8` found four remaining
+endless animations in `MoinSlide/WavingCard`. Their conditional `repeat` values
+had escaped the initial conversion, and the shared browser fixture had no Moin
+speakers. The original green fixture test did not cover those populated cards.
+The functional production smoke (search, navigation, preview protection, MCP/DIP/
+Qdrant/spaCy) passed independently of this animation failure.
+
+WavingCard now uses the same visibility-controlled Motion component for both
+full and compact cards and their waving emoji. The reading-mode regression
+fixture explicitly includes four Moin speakers and verifies that they rendered.
+Against the original image this enhanced test fails with five running offscreen
+loops in every browser; the correction must bring that count to zero. This is a
+required acceptance gate before marking the visibility package complete.
+
+The same review found 25 confetti loops on an inactive personal Wrapped share
+slide. That component also now uses the shared visibility boundary. A separate
+personal-story reading-mode regression checks that no share animation runs while
+another slide is selected; it fails against the prior image. This extends the
+correction beyond the annual story's data-dependent Moin case.

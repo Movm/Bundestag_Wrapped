@@ -52,7 +52,7 @@ function respond(route: Route, payload: unknown) {
 }
 
 /** Routes edition bootstrap requests to small, deterministic browser fixtures. */
-export async function installEditionFixtures(page: Page) {
+export async function installEditionFixtures(page: Page, { includeMoinSpeakers = false } = {}) {
   await page.route('**/data/**', async (route) => {
     const path = new URL(route.request().url()).pathname;
     if (path === '/data/editions.json') return respond(route, { schemaVersion: 1, currentEdition: '2025', editions: Object.entries(editions).map(([id, edition]) => ({ id, year: edition.manifest.year, status: edition.manifest.status, manifestUrl: `/data/fixtures/${id}/manifest.json` })) });
@@ -62,7 +62,7 @@ export async function installEditionFixtures(page: Page) {
     const fixture = editions[editionId as keyof typeof editions];
     if (asset === 'manifest.json') return respond(route, fixture.manifest);
     if (asset === 'content.json') return respond(route, fixture.content);
-    if (asset === 'wrapped.json') return respond(route, fixture.wrapped);
+    if (asset === 'wrapped.json') return respond(route, includeMoinSpeakers ? { ...fixture.wrapped, moinSpeakers: fixture.wrapped.drama.topZwischenrufer } : fixture.wrapped);
     if (asset === 'speakers/index.json') return respond(route, fixture.speakerIndex);
     if (asset === 'speakers/shared-speaker.json') return respond(route, fixture.speaker);
     if (asset === 'speeches.json') return respond(route, fixture.speeches);
