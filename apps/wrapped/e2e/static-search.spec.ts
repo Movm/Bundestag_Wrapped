@@ -29,7 +29,10 @@ let rangeServer: Server, rangeOrigin: string;
 test.beforeAll(async ({ baseURL }) => {
   rangeServer = createServer((request, response) => {
     if (!request.url?.endsWith('/texts.bin')) {
-      const upstream = httpRequest(new URL(request.url ?? '/', String(baseURL)), { method: request.method, headers: request.headers }, incoming => {
+      const target = new URL(String(baseURL));
+      const resource = new URL(request.url ?? '/', 'http://fixture.invalid');
+      target.pathname = resource.pathname; target.search = resource.search;
+      const upstream = httpRequest(target, { method: request.method, headers: { ...request.headers, host: target.host } }, incoming => {
         response.writeHead(incoming.statusCode ?? 502, incoming.headers); incoming.pipe(response);
       });
       upstream.on('error', () => { response.writeHead(502); response.end(); });
