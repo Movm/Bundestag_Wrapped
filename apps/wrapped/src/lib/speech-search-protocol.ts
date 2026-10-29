@@ -8,6 +8,8 @@ export type SpeechSearchRequest = { id: number } & (
   | { type: 'detail'; speechId: number }
 );
 export interface SpeechSearchTiming {
+  backend?: 'index' | 'legacy' | 'legacy-fallback';
+  queryIncludesResources?: boolean;
   cold: boolean;
   load?: EditionAssetTiming;
   engineMs: number;
@@ -32,4 +34,10 @@ export function isSpeechSearchRequest(value: unknown): value is SpeechSearchRequ
   const filters = request.filters as Record<string, unknown>;
   return typeof filters.party === 'string' && [filters.minWords, filters.maxWords].every(value =>
     value === undefined || (typeof value === 'number' && Number.isFinite(value) && value >= 0));
+}
+
+/** Only the documented preview fields cross the worker boundary. */
+export function toSpeechPreview(speech: ScoredSpeech, preview: string): ScoredSpeech {
+  return { id: speech.id, speaker: speech.speaker, party: speech.party, type: speech.type ?? '', category: speech.category, words: speech.words,
+    score: speech.score, _idx: speech._idx, text: '', preview };
 }

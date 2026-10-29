@@ -33,12 +33,13 @@ const os = require('node:os');
   try { const response = await context.request.get(`${base}/build-info.json`); if (response.ok()) { const data = await response.json(); if (data.dependencyFingerprint) buildInfo = data; } } catch { /* An older deployment may not expose provenance yet. */ }
   const networkResources = [];
   const pendingNetwork = [];
-  page.on('requestfinished', request => {
+  context.on('requestfinished', request => {
     if (!new URL(request.url()).pathname.startsWith('/data/')) return;
     pendingNetwork.push((async () => {
       const sizes = await request.sizes();
       const timing = request.timing();
-      networkResources.push({ path: new URL(request.url()).pathname, encodedBytes: sizes.responseBodySize, headerBytes: sizes.responseHeadersSize, durationMs: timing.responseEnd - timing.requestStart });
+      const response = await request.response();
+      networkResources.push({ status: response?.status(), range: request.headers().range || null, path: new URL(request.url()).pathname, encodedBytes: sizes.responseBodySize, headerBytes: sizes.responseHeadersSize, durationMs: timing.responseEnd - timing.requestStart });
     })().catch(() => {}));
   });
   const errors = [];

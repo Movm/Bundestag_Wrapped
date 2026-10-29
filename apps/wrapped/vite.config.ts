@@ -53,6 +53,16 @@ export default defineConfig({
         // That makes CacheFirst safe without ever serving one edition's data for another.
         runtimeCaching: [
           {
+            // Range responses are intentionally excluded: only bounded index/detail
+            // resources enter the public PWA cache. Protected previews never match.
+            urlPattern: EDITION_ASSET_PATTERNS.searchIndex,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: `speech-index-${editionCacheVersion}`,
+              expiration: { maxEntries: 128, maxAgeSeconds: 60 * 60 * 24 * 7, purgeOnQuotaError: true },
+            },
+          },
+          {
             urlPattern: EDITION_ASSET_PATTERNS.wrapped,
             handler: 'CacheFirst',
             options: {

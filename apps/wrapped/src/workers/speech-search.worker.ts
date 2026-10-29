@@ -1,36 +1,33 @@
-import { loadEditionAsset, type EditionAssetTiming } from '@/edition/loader';
-import { SpeechSearchEngine } from '@/lib/speech-search-engine';
+import type { EditionAssetTiming } from '@/edition/loader';
+import { createEditionSpeechSearch } from '@/lib/edition-speech-search';
 import { isSpeechSearchRequest, type SpeechSearchRequest, type SpeechSearchResponse } from '@/lib/speech-search-protocol';
 
-let corpusKey = '';
-let engine: Promise<SpeechSearchEngine> | undefined;
-let loadTiming: EditionAssetTiming;
-let engineMs = 0;
+function createCorpus(request: Extract<SpeechSearchRequest, { type: 'search' }>) {
+  const timing: EditionAssetTiming = {};
+  return { key: JSON.stringify([request.manifestUrl, request.asset]), timing, delivered: false,
+    ready: createEditionSpeechSearch(request.manifestUrl, request.asset, timing) };
+}
+let corpus: ReturnType<typeof createCorpus> | undefined;
 async function respond(request: SpeechSearchRequest): Promise<SpeechSearchResponse> {
   if (request.type === 'search') {
     const key = JSON.stringify([request.manifestUrl, request.asset]);
-    const cold = key !== corpusKey || !engine;
-    if (cold) {
-      corpusKey = key;
-      loadTiming = {};
-      engine = loadEditionAsset(request.manifestUrl, request.asset, 'SpeechesAsset', loadTiming)
-        .then(data => { const started = performance.now(); const result = new SpeechSearchEngine(data.speeches); engineMs = performance.now() - started; return result; });
-    }
-    const current = engine;
-    try {
-      const ready = await current!;
-      const started = performance.now();
-      const data = ready.search(request);
-      return { id: request.id, type: 'page', data, timing: { cold, load: cold ? loadTiming : undefined, engineMs: cold ? engineMs : 0, queryMs: performance.now() - started } };
-    }
-    catch (error) { if (engine === current) engine = undefined; throw error; }
+    if (!corpus || key !== corpus.key) corpus = createCorpus(request);
+    const current = corpus;
+    let ready: Awaited<typeof current.ready>;
+    try { ready = await current.ready; }
+    catch (error) { if (corpus === current) corpus = undefined; throw error; }
+    const started = performance.now(), initialBackend = ready.engine.kind;
+    const data = await ready.engine.search(request);
+    const cold = !current.delivered;
+    current.delivered = true;
+    return { id: request.id, type: 'page', data, timing: { cold, backend: ready.engine.kind, queryIncludesResources: initialBackend === 'index',
+      load: cold ? current.timing : undefined, engineMs: cold ? ready.engineMs : 0, queryMs: performance.now() - started } };
   }
-  if (!engine) throw new Error('Reden noch nicht geladen');
-  return { id: request.id, type: 'detail', data: (await engine).detail(request.speechId) };
+  if (!corpus) throw new Error('Reden noch nicht geladen');
+  return { id: request.id, type: 'detail', data: await (await corpus.ready).engine.detail(request.speechId) };
 }
 self.onmessage = (event: MessageEvent<unknown>) => {
   // Dedicated Worker.postMessage events have an empty origin and a null source.
-  // If a browser supplies an origin, only the worker's own origin is accepted.
   if (event.origin !== '' && event.origin !== self.location.origin) return;
   if (event.source !== null || !isSpeechSearchRequest(event.data)) return;
   const request = event.data;
@@ -38,5 +35,4 @@ self.onmessage = (event: MessageEvent<unknown>) => {
     self.postMessage({ id: request.id, type: 'error', message: error instanceof Error ? error.message : 'Suche fehlgeschlagen' } satisfies SpeechSearchResponse);
   });
 };
-
 self.postMessage({ type: 'ready' });
