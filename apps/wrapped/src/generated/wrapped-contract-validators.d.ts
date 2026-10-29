@@ -1,0 +1,11 @@
+import type { ValidateFunction } from "ajv";
+export const EditionsIndex: ValidateFunction;
+export const EditionManifest: ValidateFunction;
+export const EditionContent: ValidateFunction;
+export const WrappedData: ValidateFunction;
+export const SpeakerIndexAsset: ValidateFunction;
+export const SpeakerWrappedAsset: ValidateFunction;
+export const SpeechesAsset: ValidateFunction;
+export const WordsAsset: ValidateFunction;
+export const WordRankingsAsset: ValidateFunction;
+export const TopicRankingsAsset: ValidateFunction;

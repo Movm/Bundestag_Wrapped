@@ -108,16 +108,16 @@ export const SearchResults = memo(function SearchResults({
       )}
 
       <div className={state.tab === 'speakers' ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3' : 'space-y-3'}>
+        {state.tab === 'speeches' &&
+          (visibleResults as ScoredSpeech[]).map((speech) => (
+            <SpeechCard
+              key={speech.id}
+              speech={speech}
+              query={parsedQuery}
+              onClick={onSpeechClick}
+            />
+          ))}
         <AnimatePresence initial={false}>
-          {state.tab === 'speeches' &&
-            (visibleResults as ScoredSpeech[]).map((speech) => (
-              <SpeechCard
-                key={speech.id}
-                speech={speech}
-                query={parsedQuery}
-                onClick={() => onSpeechClick(speech)}
-              />
-            ))}
           {state.tab === 'speakers' &&
             (visibleResults as ScoredSpeaker[]).map((speaker, index) => (
               <SpeakerCard

@@ -1,3 +1,4 @@
+import { execFileSync } from 'node:child_process';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
@@ -74,3 +75,5 @@ if (check) {
   await writeFile(outputPath, generated);
   await writeFile(runtimeSchemaPath, runtimeSchema);
 }
+
+execFileSync(process.execPath, [resolve(root, "apps/wrapped/scripts/generate-contract-validators.mjs"), ...(check ? ["--check"] : [])], { stdio: "inherit" });
