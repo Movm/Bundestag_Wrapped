@@ -9,8 +9,7 @@ import { EditionProvider, useEdition } from '@/edition/EditionProvider';
 import { loadRegistry } from '@/edition/loader';
 import { currentEditionPath, resolveLegacyEditionPath } from '@/edition/registry';
 
-// Critical path - keep eager
-import { MainWrappedPage } from '@/components/MainWrappedPage';
+const MainWrappedPage = lazy(() => import('@/components/MainWrappedPage').then(m => ({ default: m.MainWrappedPage })));
 const SpeakerWrappedPage = lazy(() => import('@/components/SpeakerWrappedPage').then(m => ({ default: m.SpeakerWrappedPage })));
 
 // Lazy-loaded routes for smaller initial bundle
