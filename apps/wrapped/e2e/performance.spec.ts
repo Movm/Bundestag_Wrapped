@@ -145,3 +145,20 @@ test('retains the height of tall visited content when its effects are suspended'
   await expect(tall).toHaveAttribute('data-slide-active', 'false');
   await expect.poll(() => tall.evaluate(section => section.getBoundingClientRect().height)).toBeCloseTo(height, 0);
 });
+
+test('keeps selection aligned with the viewport after content reflows without scrolling', async ({ page }) => {
+  await page.goto('/2025');
+  await expect(page.getByRole('button', { name: 'Starten', exact: true })).toBeVisible();
+  await page.addStyleTag({ content: '[data-story-scroll] { overflow-anchor: none; }' });
+  await page.locator('[data-slide-id="reveal-topics"]').evaluate(section => section.parentElement!.scrollTo({ top: section.offsetTop, behavior: 'instant' }));
+  await expect(page.locator('[data-slide-id="reveal-topics"]')).toHaveAttribute('data-slide-effects-active', 'true');
+  await page.addStyleTag({ content: '[data-slide-id="info-disclaimer"] { min-height: 3000px !important; }' });
+  await expect.poll(() => page.evaluate(() => {
+    const root = document.querySelector('[data-story-scroll]')!;
+    const viewport = root.getBoundingClientRect(), anchor = viewport.top + viewport.height / 2;
+    const actual = [...root.querySelectorAll<HTMLElement>('[data-slide-id]')].find(section => {
+      const rect = section.getBoundingClientRect(); return rect.top <= anchor && rect.bottom > anchor;
+    });
+    return actual?.getAttribute('data-slide-effects-active');
+  })).toBe('true');
+});
