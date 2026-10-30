@@ -1,0 +1,15 @@
+# Schwarze Folien auf der 2025-Seite, 30. Oktober 2026
+
+Der gemeldete schwarze Bildschirm wurde auf dem bisherigen Produktionsstand reproduziert: Bei schnellem mobilem Scrollen zeigte WebKit „Folie 40 von 40“, während die aktive Abschlussfolie keinen sichtbaren Inhalt hatte. Ein zweiter Fall zeigte nach einem Layoutwechsel nicht mehr die ausgewählte Folie in der Mitte des Scrollbereichs.
+
+Die Scroll-Auswahl wird im Container sofort aktualisiert. Die Auswahl für das Vorhalten benachbarter Folien folgt dagegen über einen Effekt im Elternteil. Beim direkten Sprung über mehrere Folien konnte das neue Ziel deshalb bereits ausgewählt, sein Inhalt aber noch durch React Activity verborgen sein. Außerdem schrumpften hohe besuchte Folien beim Verbergen ihres Inhalts auf ihre CSS-Mindesthöhe; dadurch verschoben sich nachfolgende Scrollziele.
+
+Die aktive Folie bleibt nun unabhängig vom nachlaufenden Nachbarzustand sichtbar. Für vorübergehend verborgene Folien wird die zuletzt gemessene Höhe erhalten. Ein ResizeObserver misst nur sichtbare Folien; Endlosschleifen und Dekorationen bleiben außerhalb der aktiven Folie pausiert.
+
+Zwei Browser-Regressionen prüfen die sofortige Sichtbarkeit eines entfernten Scrollziels und die erhaltene Höhe einer 1.600 Pixel hohen Folie. Beide schlagen vor der Korrektur in Chromium, WebKit und Firefox fehl und bestehen danach in allen drei Browsern. Zusätzlich wird die vollständige reale 2025-Strecke auf Desktop und Mobilansicht einschließlich Quiz, Neuladen und gespeichertem Fortschritt geprüft. Die Navigationsanzeige selbst stammt aus der bestehenden Bedienleiste; die Korrektur adressiert die leeren Inhalte und instabile Scroll-Geometrie.
+
+Die vollständige lokale Browser-Suite umfasst jetzt 114 bestandene Fälle. Nach der abschließenden Umstellung der Höhenmessung auf einen Ref bestehen die sechs gezielten Browserfälle erneut. Die echte Jahresstrecke besteht in allen sechs Kombinationen aus Browser und Bildschirmgröße mit aktivem Service Worker, sichtbarem Inhalt, Quiz und Wiederaufnahme nach Neuladen. 90 Stichproben beim schnellen Vorwärts-/Rückwärtsscrollen zeigen weder leere aktive Folien noch ein verschobenes Scrollziel.
+
+Drei isolierte Messläufe des Vite-Produktionsbuilds im nginx-Testserver (4× CPU, 5 Mbit/s, 80 ms, 390 × 844 / DPR 3) enthalten keine Long Tasks. p95 bleibt in allen erfassten Phasen ≤16,8 ms. Die kalte Suche dauert 1.554–1.560 ms, sichtbare Seitenwechsel 178–198 ms. Lauf 1 hat beim Start und Tippen jeweils einen einzelnen maximalen Frame-Abstand von 33,3 ms; diese Ausreißer bleiben dokumentiert.
+
+Die lokale Docker-Steuerverbindung fiel während des Image-Builds aus. Die laufenden Container wurden nicht neu gestartet. Die lokalen Browserprüfungen verwenden deshalb das schreibgeschützt eingebundene Produktionsbundle im bestehenden nginx-Container über einen separaten SSH-Tunnel; der frische Docker-Build und dessen HTTP-Prüfung sind zusätzliche CI-Gates. CodeQL, vollständige CI und Produktionsprüfung folgen vor der Freigabe. Physische Mobilgeräte wurden nicht getestet.

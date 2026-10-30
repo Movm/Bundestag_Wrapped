@@ -113,3 +113,35 @@ test('pauses offscreen speaker-share confetti in reading mode', async ({ page })
   const running = await share.evaluate(section => section.getAnimations({ subtree: true }).filter(animation => animation.playState === 'running').length);
   expect(running).toBe(0);
 });
+
+test('reveals a distant scroll destination in the same commit that selects it', async ({ page }) => {
+  await page.goto('/2025');
+  await expect(page.getByRole('button', { name: 'Starten', exact: true })).toBeVisible();
+  await page.evaluate(() => {
+    const blanks: string[] = [];
+    Object.assign(window, { __blankSelectedSlides: blanks });
+    const root = document.querySelector('[data-story-scroll]')!;
+    new MutationObserver(() => {
+      const selected = root.querySelector<HTMLElement>('[data-slide-effects-active="true"]');
+      if (selected && !selected.innerText.trim()) blanks.push(selected.id);
+    }).observe(root, { attributes: true, subtree: true, childList: true, attributeFilter: ['data-slide-effects-active', 'style'] });
+  });
+  await page.locator('[data-slide-id="finale"]').evaluate(section => section.parentElement!.scrollTo({ top: section.offsetTop, behavior: 'instant' }));
+  await expect(page.locator('[data-slide-id="finale"]')).toHaveAttribute('data-slide-effects-active', 'true');
+  await expect(page.locator('[data-slide-id="finale"]')).toContainText('Bundestag Wrapped');
+  expect(await page.evaluate(() => Reflect.get(window, '__blankSelectedSlides'))).toEqual([]);
+});
+
+test('retains the height of tall visited content when its effects are suspended', async ({ page }) => {
+  await page.goto('/2025');
+  await expect(page.getByRole('button', { name: 'Starten', exact: true })).toBeVisible();
+  await page.addStyleTag({ content: '[data-slide-id="info-disclaimer"] > * { min-height: 1600px !important; }' });
+  const tall = page.locator('[data-slide-id="info-disclaimer"]');
+  await tall.evaluate(section => section.parentElement!.scrollTo({ top: section.offsetTop, behavior: 'instant' }));
+  await expect(tall).toHaveAttribute('data-slide-effects-active', 'true');
+  await expect.poll(() => tall.evaluate(section => section.getBoundingClientRect().height)).toBeGreaterThan(1600);
+  const height = await tall.evaluate(section => section.getBoundingClientRect().height);
+  await page.locator('[data-slide-id="reveal-topics"]').evaluate(section => section.parentElement!.scrollTo({ top: section.offsetTop, behavior: 'instant' }));
+  await expect(tall).toHaveAttribute('data-slide-active', 'false');
+  await expect.poll(() => tall.evaluate(section => section.getBoundingClientRect().height)).toBeCloseTo(height, 0);
+});
