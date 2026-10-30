@@ -26,6 +26,9 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
     const containerRef = scrollElementRef ?? internalRef;
     const currentId = ids.includes(activeId) ? activeId : ids[0] ?? '';
     const index = Math.max(0, ids.indexOf(currentId));
+    const selectedId = useRef(currentId);
+    useLayoutEffect(() => { selectedId.current = currentId; }, [currentId]);
+    const sectionKey = ids.join('|');
 
     useEffect(() => { onSectionChange?.(currentId); }, [currentId, onSectionChange]);
 
@@ -56,7 +59,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
       get containerRef() { return containerRef.current; },
     }));
 
-    const trackSection = () => {
+    const trackSection = useCallback(() => {
       const container = containerRef.current;
       if (!container) return;
       const sections = Array.from(container.querySelectorAll<HTMLElement>('[data-slide-id]'));
@@ -66,15 +69,26 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
         const rect = section.getBoundingClientRect();
         return rect.top <= anchor && rect.bottom > anchor;
       });
-      if (!section || section.id === currentId) return;
-      const previous = sections.find(section => section.id === currentId);
+      if (!section || section.id === selectedId.current) return;
+      const previous = sections.find(section => section.id === selectedId.current);
       if (!readingMode && previous?.contains(document.activeElement)) {
         section.inert = false;
         section.removeAttribute('aria-hidden');
         section.focus({ preventScroll: true });
       }
       setActiveId(section.id);
-    };
+    }, [containerRef, readingMode]);
+
+    // Activity, loaded content and viewport rotation can change section geometry
+    // without another scroll event. Reconcile the actual viewport after layout.
+    useLayoutEffect(() => {
+      const container = containerRef.current;
+      if (!container || typeof ResizeObserver === 'undefined') return;
+      const observer = new ResizeObserver(trackSection);
+      observer.observe(container);
+      container.querySelectorAll('[data-slide-id]').forEach(section => observer.observe(section));
+      return () => observer.disconnect();
+    }, [containerRef, sectionKey, trackSection]);
 
     return (
       <div className="story-shell">

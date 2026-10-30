@@ -44,6 +44,7 @@ it('keeps neighbouring and reading-mode content rendered with only selected effe
   try {
     await act(async () => render('next', false));
     expect(container.querySelector('#intro output')?.textContent).toBe('false');
+    expect(container.querySelector('#next output')?.textContent).toBe('true');
     await act(async () => render('next', true));
     expect(container.querySelector('#intro output')?.textContent).toBe('false');
     expect(container.querySelector('#next output')?.textContent).toBe('true');
