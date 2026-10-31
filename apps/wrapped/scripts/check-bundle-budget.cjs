@@ -8,7 +8,7 @@ const path = require('path');
 
 const dist = path.resolve(__dirname, '../dist');
 const manifestPath = path.join(dist, '.vite/manifest.json');
-const MAX_INITIAL_JS_BYTES = 1024 * 1024;
+const MAX_INITIAL_JS_BYTES = 750 * 1024;
 const MAX_INITIAL_CSS_BYTES = 150 * 1024;
 
 function fileSize(relativePath) {
@@ -30,6 +30,10 @@ function addChunk(chunk) {
   for (const imported of chunk.imports ?? []) addChunk(manifest[imported]);
 }
 addChunk(entry);
+const annualStory = manifest['src/components/MainWrappedPage.tsx'];
+if (!annualStory?.isDynamicEntry || chunks.has(annualStory.file)) {
+  throw new Error('Annual story must stay outside the shared initial JavaScript graph.');
+}
 
 const initialJsBytes = [...chunks.values()].reduce((total, chunk) => total + fileSize(chunk.file), 0);
 const initialCssBytes = [...new Set([...chunks.values()].flatMap((chunk) => chunk.css ?? []))]

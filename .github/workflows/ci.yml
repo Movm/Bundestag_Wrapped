@@ -178,6 +178,15 @@ jobs:
         with:
           node-version: 22
 
+      - uses: pnpm/action-setup@v6
+        if: matrix.name == 'wrapped'
+
+      - name: Install production browser diagnostic
+        if: matrix.name == 'wrapped'
+        run: |
+          pnpm install --frozen-lockfile --filter bundestag-wrapped
+          pnpm --filter bundestag-wrapped exec playwright install --with-deps chromium
+
       - name: Verify indexed search transport and preview auth
         if: matrix.name == 'wrapped'
         run: |
@@ -188,6 +197,15 @@ jobs:
             sleep 1
           done
           node apps/wrapped/scripts/check-search-http.mjs http://127.0.0.1:4179
+          PERF_URL=http://127.0.0.1:4179 PERF_CHANNEL=chromium PERF_CYCLES=3 pnpm --filter bundestag-wrapped audit:cache-memory
+
+      - name: Upload cache and worker diagnostic
+        if: always() && matrix.name == 'wrapped'
+        uses: actions/upload-artifact@v7
+        with:
+          name: wrapped-cache-memory
+          path: /tmp/wrapped-cache-memory-*/cache-memory.json
+          if-no-files-found: ignore
 
       - name: Upload dependency provenance
         if: matrix.name != 'analysis'
