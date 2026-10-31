@@ -21,7 +21,8 @@
     "test:watch": "vitest",
     "audit:performance": "node scripts/audit-performance.cjs",
     "test:a11y": "playwright test e2e/accessibility.spec.ts",
-    "check:search-index": "node scripts/check-search-index-parity.mjs"
+    "check:search-index": "node scripts/check-search-index-parity.mjs",
+    "audit:cache-memory": "node scripts/audit-cache-memory.cjs"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.104.5",

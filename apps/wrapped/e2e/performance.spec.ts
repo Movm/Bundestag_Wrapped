@@ -162,3 +162,35 @@ test('keeps selection aligned with the viewport after content reflows without sc
     return actual?.getAttribute('data-slide-effects-active');
   })).toBe('true');
 });
+
+test('releases search workers across repeated tab switches without accumulating results', async ({ page }) => {
+  await page.addInitScript(() => {
+    const NativeWorker = window.Worker;
+    let active = 0, created = 0;
+    window.Worker = class extends NativeWorker {
+      terminated = false;
+      constructor(url: string | URL, options?: WorkerOptions) { super(url, options); active++; created++; }
+      terminate() { if (!this.terminated) { this.terminated = true; active--; } super.terminate(); }
+    };
+    Object.defineProperty(window, '__workerLifecycle', { get: () => ({ active, created }) });
+  });
+  const activeWorkers = () => page.evaluate(() => Reflect.get(window, '__workerLifecycle').active as number);
+  await page.goto('/2025/suche?q=Fixture');
+  const panel = page.locator('#search-results');
+  await expect(panel).toHaveAttribute('aria-busy', 'false');
+  await expect.poll(activeWorkers).toBe(1);
+  await expect(panel.locator('button.group')).toHaveCount(1);
+  const initialCount = await panel.locator('button.group').count();
+  expect(initialCount).toBeGreaterThan(0);
+  expect(initialCount).toBeLessThanOrEqual(50);
+  for (let cycle = 0; cycle < 3; cycle++) {
+    await page.getByRole('tab', { name: 'Wörter', exact: true }).click();
+    await expect.poll(activeWorkers).toBe(0);
+    await page.getByRole('tab', { name: 'Reden', exact: true }).click();
+    await expect.poll(activeWorkers).toBe(1);
+    await expect(panel).toHaveAttribute('aria-busy', 'false');
+    await expect(panel.locator('button.group')).toHaveCount(initialCount);
+    await expect(panel).not.toContainText('Fehler beim Laden');
+  }
+  expect(await page.evaluate(() => Reflect.get(window, '__workerLifecycle').created)).toBe(4);
+});
