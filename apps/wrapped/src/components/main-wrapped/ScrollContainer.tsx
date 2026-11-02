@@ -1,4 +1,4 @@
-import { Children, isValidElement, useRef, useState, useImperativeHandle, forwardRef, useEffect, useLayoutEffect, useCallback, type ReactNode, type RefObject } from 'react';
+import { Children, isValidElement, useRef, useState, useImperativeHandle, forwardRef, useEffect, useLayoutEffect, useCallback, useId, type ReactNode, type RefObject } from 'react';
 import { cn } from '@/lib/utils';
 import { StoryContext } from './StoryContext';
 
@@ -22,6 +22,8 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
     const ids = Children.toArray(children).flatMap(child => isValidElement<{ id: string }>(child) ? [child.props.id] : []);
     const [activeId, setActiveId] = useState(initialSection ?? ids[0] ?? '');
     const [readingMode, setReadingMode] = useState(false);
+    const [navigationOpen, setNavigationOpen] = useState(false);
+    const navigationId = useId();
     const internalRef = useRef<HTMLDivElement>(null);
     const containerRef = scrollElementRef ?? internalRef;
     const currentId = ids.includes(activeId) ? activeId : ids[0] ?? '';
@@ -29,6 +31,22 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
     const selectedId = useRef(currentId);
     useLayoutEffect(() => { selectedId.current = currentId; }, [currentId]);
     const sectionKey = ids.join('|');
+
+    const closeNavigation = useCallback(() => {
+      setNavigationOpen(false);
+      containerRef.current?.focus({ preventScroll: true });
+    }, [containerRef]);
+
+    useEffect(() => {
+      if (!navigationOpen) return;
+      const closeOnEscape = (event: KeyboardEvent) => {
+        if (event.key !== 'Escape' || event.defaultPrevented) return;
+        event.preventDefault();
+        closeNavigation();
+      };
+      document.addEventListener('keydown', closeOnEscape);
+      return () => document.removeEventListener('keydown', closeOnEscape);
+    }, [navigationOpen, closeNavigation]);
 
     useEffect(() => { onSectionChange?.(currentId); }, [currentId, onSectionChange]);
 
@@ -97,9 +115,14 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
           className={cn('story-scroll relative overflow-y-auto overscroll-contain', className)}>
           <StoryContext value={{ activeId: currentId, readingMode }}>{children}</StoryContext>
         </div>
-        <nav aria-label="Foliennavigation" className="story-navigation">
+        <span className="sr-only" role="status" aria-live="polite">Folie {index + 1} von {ids.length}</span>
+        <button type="button" className="story-navigation-toggle" aria-expanded={navigationOpen}
+          aria-controls={navigationId} onClick={() => navigationOpen ? closeNavigation() : setNavigationOpen(true)}>
+          {navigationOpen ? 'Navigation schließen' : 'Foliennavigation'}
+        </button>
+        <nav id={navigationId} hidden={!navigationOpen} aria-label="Foliennavigation" className="story-navigation">
           <button type="button" disabled={index === 0} onClick={() => navigate(ids[index - 1])}>Zurück</button>
-          <span className="text-xs text-white/80" role="status" aria-live="polite">Folie {index + 1} von {ids.length}</span>
+          <span className="text-xs text-white/80" aria-hidden="true">Folie {index + 1} von {ids.length}</span>
           <button type="button" disabled={index === ids.length - 1} onClick={() => navigate(ids[index + 1])}>Weiter</button>
           <label className="flex items-center justify-center gap-2 min-h-11 text-sm col-span-3">
             <input type="checkbox" checked={readingMode} onChange={event => setReadingMode(event.target.checked)} />

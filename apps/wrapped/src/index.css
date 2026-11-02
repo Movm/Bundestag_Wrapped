@@ -418,17 +418,42 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Accessible story shell: text may grow; navigation never covers the content. */
 .story-shell {
-  --story-height: calc(100dvh - 7rem);
+  --story-height: 100dvh;
+  position: relative;
   height: 100dvh;
   display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
+  grid-template-rows: minmax(0, 1fr);
 }
 .speaker-story { padding-top: calc(3.5rem + env(safe-area-inset-top, 0px)); }
-.speaker-story .story-shell { height: calc(100dvh - 3.5rem - env(safe-area-inset-top, 0px)); --story-height: calc(100dvh - 10.5rem); }
+.speaker-story .story-shell { height: calc(100dvh - 3.5rem - env(safe-area-inset-top, 0px)); --story-height: calc(100dvh - 3.5rem - env(safe-area-inset-top, 0px)); }
 .story-scroll { scroll-behavior: auto; scrollbar-gutter: stable; }
-.story-section { min-height: var(--story-height); padding-top: 4rem; padding-bottom: 1rem; overflow-wrap: anywhere; }
+.story-section { min-height: var(--story-height); padding-top: 4rem; padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px)); overflow-wrap: anywhere; }
 .story-section > * { width: 100%; }
-.story-section .min-h-screen { min-height: calc(var(--story-height) - 5rem); }
+.story-section .min-h-screen { min-height: calc(var(--story-height) - 8rem); }
+.story-navigation[hidden] { display: none; }
+.story-navigation-toggle {
+  position: absolute;
+  bottom: max(0.5rem, env(safe-area-inset-bottom, 0px));
+  left: max(1rem, env(safe-area-inset-left, 0px));
+  z-index: 41;
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #52525b;
+  border-radius: 0.75rem;
+  background: #12121a;
+  color: white;
+  font-size: 0.75rem;
+}
+.story-navigation-toggle:not(:focus):not([aria-expanded="true"]) {
+  width: 1px;
+  height: 1px;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
 .story-navigation {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -437,13 +462,16 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.25rem max(1rem, env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) max(1rem, env(safe-area-inset-left, 0px));
   background: #12121a;
   border-top: 1px solid #52525b;
-  position: relative;
+  position: absolute;
+  bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px));
+  left: 0;
+  right: 0;
   z-index: 40;
 }
 .story-navigation button { min-height: 44px; padding: 0.5rem; border-radius: 0.5rem; }
 .story-navigation button:disabled { opacity: 0.5; }
 .story-navigation button:not(:disabled):active { background: #3f3f46; }
-.story-share-trigger { bottom: calc(7rem + env(safe-area-inset-bottom, 0px)); right: max(1rem, env(safe-area-inset-right, 0px)); }
+.story-share-trigger { bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px)); right: max(1rem, env(safe-area-inset-right, 0px)); }
 .story-share-popup { bottom: max(1rem, env(safe-area-inset-bottom, 0px)); right: max(1rem, env(safe-area-inset-right, 0px)); }
 .accessible-dialog {
   position: fixed;

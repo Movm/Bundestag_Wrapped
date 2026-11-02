@@ -87,6 +87,8 @@ test('cancels an intro launch when navigating away and permits starting again', 
 test('pauses offscreen decoration in reading mode while retaining all slide content', async ({ page }) => {
   await installEditionFixtures(page, { includeMoinSpeakers: true });
   await page.goto('/2025');
+  await page.getByRole('button', { name: 'Foliennavigation', exact: true }).focus();
+  await page.keyboard.press('Enter');
   await page.getByRole('checkbox', { name: /Lesemodus/ }).check();
   const target = page.locator('[data-slide-id="reveal-topics"]');
   await target.evaluate(el => el.parentElement!.scrollTo({ top: el.offsetTop, behavior: 'instant' }));
@@ -106,6 +108,8 @@ test('pauses offscreen decoration in reading mode while retaining all slide cont
 
 test('pauses offscreen speaker-share confetti in reading mode', async ({ page }) => {
   await page.goto('/2025/wrapped/shared-speaker');
+  await page.getByRole('button', { name: 'Foliennavigation', exact: true }).focus();
+  await page.keyboard.press('Enter');
   await page.getByRole('checkbox', { name: /Lesemodus/ }).check();
   const share = page.locator('#speaker-share');
   await expect(share).toHaveAttribute('data-slide-effects-active', 'false');
