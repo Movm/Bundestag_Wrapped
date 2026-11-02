@@ -21,12 +21,20 @@ test('keeps future slides out of Tab order, stops timed reading, and supports re
   // Regression for the previous four-second auto-advance timer.
   await page.waitForTimeout(4500);
   await expect(disclaimer).not.toHaveAttribute('inert', '');
+  await expect(page.getByRole('navigation', { name: 'Foliennavigation' })).toBeHidden();
+  expect((await page.getByRole('button', { name: 'Foliennavigation', exact: true }).boundingBox())?.width).toBe(1);
+  await page.getByRole('button', { name: 'Foliennavigation', exact: true }).focus();
+  await page.keyboard.press('Enter');
   await page.getByRole('button', { name: 'Weiter', exact: true }).click();
   await expect(page.locator('#intro-topics')).toBeFocused();
   await page.getByRole('checkbox', { name: /Lesemodus/ }).check();
   await expect(page.locator('[data-slide-id][inert]')).toHaveCount(0);
   await page.getByRole('checkbox', { name: /Lesemodus/ }).uncheck();
   await expect(page.locator('[data-slide-id]:not([inert])')).toHaveCount(1);
+  const position = await page.locator('[data-story-scroll]').evaluate(el => el.scrollTop);
+  await page.getByRole('button', { name: 'Navigation schließen' }).click();
+  await expect(page.getByRole('navigation', { name: 'Foliennavigation' })).toBeHidden();
+  expect(await page.locator('[data-story-scroll]').evaluate(el => el.scrollTop)).toBe(position);
 });
 
 test('provides persistent quiz feedback and keyboard-operable, single-activation flip cards', async ({ page }) => {
