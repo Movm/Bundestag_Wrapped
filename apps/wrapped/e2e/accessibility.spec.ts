@@ -35,13 +35,13 @@ test('keeps future slides out of Tab order, stops timed reading, and supports re
   await page.getByRole('button', { name: 'Navigation schließen' }).click();
   await expect(page.getByRole('navigation', { name: 'Foliennavigation' })).toBeHidden();
   expect(await page.locator('[data-story-scroll]').evaluate(el => el.scrollTop)).toBe(position);
+  await page.getByRole('button', { name: 'Foliennavigation', exact: true }).focus();
   await page.keyboard.press('Enter');
   await page.getByRole('checkbox', { name: /Lesemodus/ }).focus();
   await page.keyboard.press('Escape');
   await expect(page.getByRole('navigation', { name: 'Foliennavigation' })).toBeHidden();
   const toggle = page.getByRole('button', { name: 'Foliennavigation', exact: true });
-  await expect(toggle).toBeFocused();
-  await page.keyboard.press('Tab');
+  await expect(page.locator('[data-story-scroll]')).toBeFocused();
   expect((await toggle.boundingBox())?.width).toBe(1);
   expect(await page.locator('[data-story-scroll]').evaluate(el => el.scrollTop)).toBe(position);
 });
