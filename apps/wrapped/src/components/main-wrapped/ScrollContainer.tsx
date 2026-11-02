@@ -24,6 +24,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
     const [readingMode, setReadingMode] = useState(false);
     const [navigationOpen, setNavigationOpen] = useState(false);
     const navigationId = useId();
+    const navigationToggleRef = useRef<HTMLButtonElement>(null);
     const internalRef = useRef<HTMLDivElement>(null);
     const containerRef = scrollElementRef ?? internalRef;
     const currentId = ids.includes(activeId) ? activeId : ids[0] ?? '';
@@ -31,6 +32,18 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
     const selectedId = useRef(currentId);
     useLayoutEffect(() => { selectedId.current = currentId; }, [currentId]);
     const sectionKey = ids.join('|');
+
+    useEffect(() => {
+      if (!navigationOpen) return;
+      const closeOnEscape = (event: KeyboardEvent) => {
+        if (event.key !== 'Escape' || event.defaultPrevented) return;
+        event.preventDefault();
+        setNavigationOpen(false);
+        navigationToggleRef.current?.focus({ preventScroll: true });
+      };
+      document.addEventListener('keydown', closeOnEscape);
+      return () => document.removeEventListener('keydown', closeOnEscape);
+    }, [navigationOpen]);
 
     useEffect(() => { onSectionChange?.(currentId); }, [currentId, onSectionChange]);
 
@@ -100,7 +113,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
           <StoryContext value={{ activeId: currentId, readingMode }}>{children}</StoryContext>
         </div>
         <span className="sr-only" role="status" aria-live="polite">Folie {index + 1} von {ids.length}</span>
-        <button type="button" className="story-navigation-toggle" aria-expanded={navigationOpen}
+        <button ref={navigationToggleRef} type="button" className="story-navigation-toggle" aria-expanded={navigationOpen}
           aria-controls={navigationId} onClick={() => setNavigationOpen(open => !open)}>
           {navigationOpen ? 'Navigation schließen' : 'Foliennavigation'}
         </button>
