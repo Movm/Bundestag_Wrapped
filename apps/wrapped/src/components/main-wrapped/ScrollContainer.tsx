@@ -31,6 +31,10 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
     const selectedId = useRef(currentId);
     useLayoutEffect(() => { selectedId.current = currentId; }, [currentId]);
     const sectionKey = ids.join('|');
+    const viewport = useRef<{ width: number; height: number } | null>(null);
+    const position = useRef<{ id: string; fraction: number } | null>(null);
+    const resizeFrame = useRef<number | null>(null);
+
 
     const closeNavigation = useCallback(() => {
       setNavigationOpen(false);
@@ -55,12 +59,15 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
       const section = Array.from(container?.querySelectorAll<HTMLElement>('[data-slide-id]') ?? [])
         .find(section => section.id === id);
       if (!container || !section) return;
+      if (resizeFrame.current !== null) { cancelAnimationFrame(resizeFrame.current); resizeFrame.current = null; }
       // Remove inert before moving focus; React reconciles it on the next render.
       section.inert = false;
       section.removeAttribute('aria-hidden');
       setActiveId(id);
       if (focus) section.focus({ preventScroll: true });
       container.scrollTo({ top: section.offsetTop, behavior: 'instant' });
+      position.current = { id, fraction: Math.min(1, container.clientHeight / 2 / Math.max(section.offsetHeight, 1)) };
+      viewport.current = { width: container.clientWidth, height: container.clientHeight };
     }, [containerRef]);
 
     useLayoutEffect(() => {
@@ -80,6 +87,23 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
     const trackSection = useCallback(() => {
       const container = containerRef.current;
       if (!container) return;
+      const size = { width: container.clientWidth, height: container.clientHeight };
+      const changed = viewport.current && (viewport.current.width !== size.width || viewport.current.height !== size.height);
+      if (changed && position.current) {
+        viewport.current = size;
+        if (resizeFrame.current !== null) cancelAnimationFrame(resizeFrame.current);
+        resizeFrame.current = requestAnimationFrame(() => {
+          resizeFrame.current = null;
+          const saved = position.current;
+          const target = saved && container.querySelector<HTMLElement>(`[data-slide-id="${saved.id}"]`);
+          if (saved && target) {
+            container.scrollTo({ top: target.offsetTop + saved.fraction * target.offsetHeight - container.clientHeight / 2, behavior: 'instant' });
+          }
+        });
+        return;
+      }
+      viewport.current = size;
+      if (resizeFrame.current !== null) return;
       const sections = Array.from(container.querySelectorAll<HTMLElement>('[data-slide-id]'));
       // The viewport midpoint selects the visible slide even when its content is tall.
       const anchor = container.getBoundingClientRect().top + container.clientHeight / 2;
@@ -87,7 +111,10 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
         const rect = section.getBoundingClientRect();
         return rect.top <= anchor && rect.bottom > anchor;
       });
-      if (!section || section.id === selectedId.current) return;
+      if (!section) return;
+      const rect = section.getBoundingClientRect();
+      position.current = { id: section.id, fraction: Math.max(0, Math.min(1, (anchor - rect.top) / Math.max(rect.height, 1))) };
+      if (section.id === selectedId.current) return;
       const previous = sections.find(section => section.id === selectedId.current);
       if (!readingMode && previous?.contains(document.activeElement)) {
         section.inert = false;
@@ -102,10 +129,31 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
     useLayoutEffect(() => {
       const container = containerRef.current;
       if (!container || typeof ResizeObserver === 'undefined') return;
+      const cancelResizeRestore = () => {
+        if (resizeFrame.current === null) return;
+        cancelAnimationFrame(resizeFrame.current);
+        resizeFrame.current = null;
+        trackSection();
+      };
+      trackSection();
+      window.addEventListener('resize', trackSection);
+      container.addEventListener('pointerdown', cancelResizeRestore, { passive: true });
+      container.addEventListener('touchstart', cancelResizeRestore, { passive: true });
+      container.addEventListener('wheel', cancelResizeRestore, { passive: true });
+      container.addEventListener('keydown', cancelResizeRestore);
       const observer = new ResizeObserver(trackSection);
       observer.observe(container);
       container.querySelectorAll('[data-slide-id]').forEach(section => observer.observe(section));
-      return () => observer.disconnect();
+      return () => {
+        observer.disconnect();
+        window.removeEventListener('resize', trackSection);
+        container.removeEventListener('pointerdown', cancelResizeRestore);
+        container.removeEventListener('touchstart', cancelResizeRestore);
+        container.removeEventListener('wheel', cancelResizeRestore);
+        container.removeEventListener('keydown', cancelResizeRestore);
+        if (resizeFrame.current !== null) cancelAnimationFrame(resizeFrame.current);
+        resizeFrame.current = null;
+      };
     }, [containerRef, sectionKey, trackSection]);
 
     return (
