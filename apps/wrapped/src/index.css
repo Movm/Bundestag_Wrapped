@@ -532,3 +532,8 @@ header.fixed > div > div { flex-shrink: 0; }
 [data-slide-effects-active="false"] *::after {
   animation-play-state: paused !important;
 }
+
+/* Avoid rerasterizing blurred, morphing SVG ribbons on mobile GPUs. */
+@media (max-width: 767px), (max-height: 600px) {
+  .tone-ribbon-path { filter: none; }
+}

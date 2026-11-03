@@ -79,6 +79,7 @@ export const RibbonsEffect = memo(function RibbonsEffect({
             </defs>
 
             <motion.path
+              className="tone-ribbon-path"
               d={`M 0,50 Q 125,${50 - ribbon.amplitude / 2} 250,50 T 500,50 T 750,50 T 1000,50`}
               fill="none"
               stroke={`url(#ribbon-gradient-${index})`}
@@ -102,6 +103,7 @@ export const RibbonsEffect = memo(function RibbonsEffect({
 
             {/* Glow path */}
             <motion.path
+              className="tone-ribbon-path"
               d={`M 0,50 Q 125,${50 - ribbon.amplitude / 2} 250,50 T 500,50 T 750,50 T 1000,50`}
               fill="none"
               stroke={`rgba(${colors.glow}, ${baseOpacity * 0.3})`}
