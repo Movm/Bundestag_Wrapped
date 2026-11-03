@@ -127,7 +127,7 @@ export const SpeakerShareSlide = memo(function SpeakerShareSlide({
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12 relative overflow-hidden">
+    <div className="min-h-dvh flex flex-col items-center justify-center px-4 py-12 relative overflow-hidden">
       <FallingConfetti />
 
       <motion.div

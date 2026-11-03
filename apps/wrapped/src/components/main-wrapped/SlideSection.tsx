@@ -13,8 +13,8 @@ export function SlideSection({ id, children, className }: SlideSectionProps) {
       id={id}
       data-slide-id={id}
       className={cn(
-        'h-screen w-full',
-        'snap-start',
+        'min-h-dvh w-full',
+        'snap-start snap-always',
         'flex flex-col items-center justify-center',
         className
       )}

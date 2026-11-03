@@ -252,7 +252,7 @@ export const QuizSlide = memo(function QuizSlide({
   return (
     <div
       ref={ref}
-      className="min-h-screen flex flex-col items-center justify-center px-6 py-8 relative"
+      className="min-h-dvh flex flex-col items-center justify-center px-6 py-8 relative"
     >
       <AnimatePresence>
         {showLockHint && !showResult && <LockIndicator />}

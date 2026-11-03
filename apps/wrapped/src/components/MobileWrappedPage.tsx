@@ -15,7 +15,6 @@ import {
   ScrollContainer,
   SlideSection,
   useScrollWrapped,
-  useAutoScroll,
   useSlideTransitionSound,
   SlideRenderer,
   SLIDES,
@@ -53,7 +52,7 @@ export function MobileWrappedPage({ data, onComplete }: MobileWrappedPageProps) 
   const resetQuiz = useQuizStore((state) => state.reset);
 
   // Auto-scroll on intro slides
-  useAutoScroll(currentSection, scrollContainerRef);
+
 
   // Play subtle whoosh sound on slide transitions
   useSlideTransitionSound(currentSection);
@@ -83,7 +82,7 @@ export function MobileWrappedPage({ data, onComplete }: MobileWrappedPageProps) 
       onComplete?.();
     }
     setTimeout(() => {
-      scrollContainerRef.current?.scrollToNextSlide(slideId);
+      if (slideId === 'intro') scrollContainerRef.current?.scrollToNextSlide(slideId);
     }, 100);
   }, [onComplete, resetQuiz]);
 

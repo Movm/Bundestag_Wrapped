@@ -170,7 +170,7 @@ export function ResultView({ toneAnalysis }: ResultViewProps) {
   }
 
   return (
-    <div className="min-h-screen relative w-full">
+    <div className="min-h-dvh relative w-full">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}

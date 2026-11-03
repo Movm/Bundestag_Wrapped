@@ -15,7 +15,7 @@ export function LegacyResultView({ toneAnalysis }: LegacyResultViewProps) {
   const { rankings } = toneAnalysis;
 
   return (
-    <div className="min-h-screen relative w-full overflow-hidden">
+    <div className="min-h-dvh relative w-full overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}

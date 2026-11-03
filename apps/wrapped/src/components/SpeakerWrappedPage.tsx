@@ -81,7 +81,7 @@ export function SpeakerWrappedPage() {
   // Handle quiz complete (scroll to next after animation)
   const handleQuizComplete = useCallback(() => {
     setTimeout(() => {
-      scrollContainerRef.current?.scrollToNextSlide('speaker-quiz');
+      // Feedback completion keeps the current slide visible.
     }, 100);
   }, []);
 

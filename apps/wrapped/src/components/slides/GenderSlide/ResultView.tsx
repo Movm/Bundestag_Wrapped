@@ -23,7 +23,7 @@ export function ResultView({ genderAnalysis }: ResultViewProps) {
   const bottomParty = sortedParties[sortedParties.length - 1];
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-8 lg:py-12">
+    <div className="min-h-dvh flex flex-col items-center justify-center px-4 py-8 lg:py-12">
       <motion.div
         variants={containerVariants}
         initial="hidden"

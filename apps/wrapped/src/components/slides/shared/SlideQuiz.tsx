@@ -194,7 +194,7 @@ export function SlideQuiz({
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6 py-8">
+    <div className="min-h-dvh flex flex-col items-center justify-center px-6 py-8">
       <AnimatePresence>
         {showResult && isCorrect && (
           <SuccessOverlay onComplete={handleOverlayComplete} confettiColors={confettiColors} />

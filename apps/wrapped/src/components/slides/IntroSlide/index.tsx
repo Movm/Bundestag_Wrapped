@@ -49,7 +49,7 @@ export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps)
   const TEXT_STAGGER = 0.08;
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">
+    <div className="min-h-dvh flex flex-col items-center justify-center px-6 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <FloatingParticles count={80} />
       </div>

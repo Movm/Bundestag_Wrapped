@@ -16,7 +16,7 @@ export function ResultView({ speakers }: ResultViewProps) {
   const topSpeakers = useMemo(() => speakers.slice(0, 4), [speakers]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6 py-8">
+    <div className="min-h-dvh flex flex-col items-center justify-center px-6 py-8">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}

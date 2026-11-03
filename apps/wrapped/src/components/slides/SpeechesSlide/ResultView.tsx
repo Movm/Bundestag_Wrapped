@@ -50,7 +50,7 @@ export const ResultView = memo(function ResultView({ parties }: ResultViewProps)
   const totalReden = top5.reduce((sum, p) => sum + p.speeches, 0);
 
   return (
-    <div className="min-h-screen relative w-full">
+    <div className="min-h-dvh relative w-full">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}

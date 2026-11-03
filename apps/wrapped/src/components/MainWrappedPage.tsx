@@ -15,7 +15,6 @@ import {
   ScrollContainer,
   SlideSection,
   useScrollWrapped,
-  useAutoScroll,
   useSlideTransitionSound,
   SlideRenderer,
   SLIDES,
@@ -45,7 +44,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
   const resetQuiz = useQuizStore((state) => state.reset);
 
   // Auto-scroll on intro slides after 4 seconds
-  useAutoScroll(currentSection, scrollContainerRef);
+
 
   // Play subtle whoosh sound on slide transitions
   useSlideTransitionSound(currentSection);
@@ -90,7 +89,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle }: MainWrappedPagePro
       setIntroStarted(true);
     }
     setTimeout(() => {
-      scrollContainerRef.current?.scrollToNextSlide(slideId);
+      if (slideId === 'intro') scrollContainerRef.current?.scrollToNextSlide(slideId);
     }, 100);
   }, []);
 

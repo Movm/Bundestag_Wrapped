@@ -24,7 +24,7 @@ export const SlideInfo = memo(function SlideInfo({ emoji, title, body, slideId }
   const animationClass = iconConfig?.animation;
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6">
+    <div className="min-h-dvh flex flex-col items-center justify-center px-6">
       <div className="text-center max-w-lg">
         {/* Icon or Emoji with scale-pop effect */}
         {IconComponent ? (

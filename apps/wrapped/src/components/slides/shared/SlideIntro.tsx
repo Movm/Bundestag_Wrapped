@@ -30,7 +30,7 @@ export function SlideIntro({ emoji, title, subtitle, showAccents = true, slideId
   const animationClass = iconConfig?.animation;
 
   return (
-    <div ref={ref} className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">
+    <div ref={ref} className="min-h-dvh flex flex-col items-center justify-center px-6 relative overflow-hidden">
       {/* Layer 1: Abstract floating particles - themed by slideId */}
       {showAccents && <AbstractParticles slideId={slideId} isInView={isInView} />}
 
