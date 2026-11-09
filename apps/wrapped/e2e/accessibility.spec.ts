@@ -115,9 +115,15 @@ for (const viewport of [{ width: 320, height: 568 }, { width: 390, height: 844 }
       const width = await page.evaluate(() => ({ viewport: document.documentElement.clientWidth, content: document.documentElement.scrollWidth }));
       expect(width.content, path).toBeLessThanOrEqual(width.viewport + 1);
       const sections = page.locator('[data-slide-id]');
+      if (await sections.count()) {
+        await page.getByRole('button', { name: 'Foliennavigation', exact: true }).focus();
+        await page.keyboard.press('Enter');
+        await page.getByRole('checkbox', { name: /Lesemodus/ }).check();
+      }
       for (let i = 0; i < await sections.count(); i++) {
         const section = sections.nth(i);
-        await jumpToSlide(page, (await section.getAttribute('id'))!);
+        await section.evaluate(element => element.parentElement!.scrollTo({ top: element.offsetTop, behavior: 'instant' }));
+        await expect(section).toHaveAttribute('data-slide-effects-active', 'true');
         await expect(section).not.toHaveAttribute('inert', '');
         const bounds = await section.evaluate(element => ({ content: element.scrollWidth, width: element.clientWidth }));
         expect(bounds.content, await section.getAttribute('id') ?? path).toBeLessThanOrEqual(bounds.width + 1);

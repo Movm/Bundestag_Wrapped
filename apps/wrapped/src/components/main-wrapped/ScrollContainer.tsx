@@ -39,6 +39,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
     }, [navigationOpen, containerRef]);
     const callback = useRef(onSectionChange);
     useLayoutEffect(() => { callback.current = onSectionChange; });
+    const cancelNavigation = useRef(() => {});
     const controller = useRef({ next: (_id?: string, _instant?: boolean) => {}, previous: (_instant?: boolean) => {}, restore: (_id: string) => {} });
     const [activeId, setActiveId] = useState(initialSection ?? ids[0] ?? '');
     const [position, setPosition] = useState({ index: 0, count: 0, blocked: true });
@@ -172,6 +173,12 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
       sections.forEach(section => resize.observe(section));
       const gates = new MutationObserver(updatePosition);
       sections.forEach(section => gates.observe(section, { attributes: true, attributeFilter: ['data-forward-blocked'] }));
+      cancelNavigation.current = () => {
+        target = null;
+        focusOnArrival = false;
+        container.scrollTo({ top: container.scrollTop, behavior: 'instant' });
+        schedule();
+      };
       controller.current = {
         next: (id, instant = false) => { if (!id || sections[active].id === id) { focusOnArrival = true; if (id) navigate(active + 1, instant); else step(1, instant); } },
         previous: (instant = false) => { focusOnArrival = true; step(-1, instant); },
@@ -225,7 +232,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
             <span className="text-xs text-white/80" aria-hidden="true">Folie {position.index + 1} von {position.count}</span>
             <button type="button" disabled={(!readingMode && position.blocked) || position.index === position.count - 1} onClick={event => controller.current.next(undefined, event.detail === 0)}>Weiter</button>
             <label className="flex items-center justify-center gap-2 min-h-11 text-sm col-span-3">
-              <input type="checkbox" checked={readingMode} onChange={event => setReadingMode(event.target.checked)} />
+              <input type="checkbox" checked={readingMode} onChange={event => { cancelNavigation.current(); setReadingMode(event.target.checked); }} />
               Lesemodus (alle Folien)
             </label>
           </nav>
