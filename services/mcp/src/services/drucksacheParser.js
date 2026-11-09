@@ -135,7 +135,6 @@ function parseGesetzentwurf(text, metadata) {
   let currentSection = null;
   let currentContent = [];
   let inBegruendung = false;
-  let begruendungPart = null;
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim();
@@ -159,7 +158,6 @@ function parseGesetzentwurf(text, metadata) {
     if (inBegruendung) {
       if (SECTION_PATTERNS.allgemeinerTeil.test(line)) {
         saveCurrentSection(chunks, currentSection, currentContent, 'begruendung');
-        begruendungPart = 'allgemein';
         currentSection = { type: 'begruendung_allgemein', title: 'Begründung - Allgemeiner Teil' };
         currentContent = [];
         continue;
@@ -167,7 +165,6 @@ function parseGesetzentwurf(text, metadata) {
 
       if (SECTION_PATTERNS.besondererTeil.test(line)) {
         saveCurrentSection(chunks, currentSection, currentContent, 'begruendung');
-        begruendungPart = 'besonders';
         currentSection = { type: 'begruendung_besonders', title: 'Begründung - Besonderer Teil' };
         currentContent = [];
         continue;

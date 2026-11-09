@@ -1084,7 +1084,7 @@ async function indexDrucksache(drucksache) {
 async function indexDrucksachenChunksForWahlperiode(wahlperiode, drucksachetypen = null, aktualisiert_start = null) {
   const API_DELAY_MS = 500;
   let cursor = null;
-  let hasMore = true;
+  let hasMore;
   let totalChunks = 0;
   let totalDocuments = 0;
   let skipped = 0;
