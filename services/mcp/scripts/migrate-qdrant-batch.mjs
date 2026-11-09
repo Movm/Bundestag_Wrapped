@@ -11,18 +11,6 @@ const BATCH_SIZE = 100;
 
 const COLLECTIONS = ['bundestag-docs', 'bundestag-protocol-chunks', 'bundestag-document-chunks'];
 
-async function fetchJson(url, options = {}) {
-  const res = await fetch(url, {
-    ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      'api-key': API_KEY,
-      ...options.headers,
-    },
-  });
-  return res.json();
-}
-
 async function getCollectionInfo(baseUrl, collection, useKey = false) {
   const headers = useKey ? { 'api-key': API_KEY } : {};
   const res = await fetch(`${baseUrl}/collections/${collection}`, { headers });

@@ -7,7 +7,7 @@ for the Bundestag wrapped analysis.
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from .types import Gender, GenderStats, SpeakerProfile
+    from .types import Gender, SpeakerProfile
 
 
 class GenderAnalysisMixin:

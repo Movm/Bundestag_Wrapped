@@ -10,7 +10,7 @@ import {
   getCachedEntity,
   cacheEntity
 } from '../utils/cache.js';
-import { debug, error, info, logApiRequest } from '../utils/logger.js';
+import { debug, info, logApiRequest } from '../utils/logger.js';
 import { withRetry } from '../utils/retry.js';
 
 /**

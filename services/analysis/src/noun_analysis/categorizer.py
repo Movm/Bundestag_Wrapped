@@ -23,7 +23,6 @@ from .lexicons import (
     categorize_intensity,
     categorize_pronoun,
     categorize_discriminatory,
-    get_multi_label_tags,
     get_topic_multi_labels,
 )
 
