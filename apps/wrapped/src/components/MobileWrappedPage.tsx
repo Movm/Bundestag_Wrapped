@@ -9,7 +9,7 @@
  * - Has no ShareFAB (skipping sharepics for mobile)
  */
 
-import { useRef, useCallback, useMemo, useEffect } from 'react';
+import { useRef, useCallback, useMemo, useEffect, useState } from 'react';
 import type { WrappedData } from '@/data/wrapped';
 import {
   ScrollContainer,
@@ -21,7 +21,7 @@ import {
   type ScrollContainerRef,
   type SlideType,
 } from '@/components/main-wrapped';
-import { useQuizStore } from '@/stores/quizStore';
+import { quizScope, useQuizStore } from '@/stores/quizStore';
 import { useWrappedStore } from '@/stores/wrappedStore';
 import { LEGACY_SURFACE } from '@/edition/surface';
 
@@ -48,19 +48,22 @@ export function MobileWrappedPage({ data, onComplete }: MobileWrappedPageProps) 
   // Simplified: quiz state is in quizStore, not passed as props
   const { currentSection, initialSection, setCurrentSection } = useScrollWrapped();
 
+  const quizAnswers = useQuizStore(state => state.answersByScope[quizScope(LEGACY_SURFACE)]);
+  const [introStarted, setIntroStarted] = useState(() => !!initialSection && initialSection !== 'intro');
   const resetQuiz = useQuizStore((state) => state.reset);
 
   // Play subtle whoosh sound on slide transitions
   useSlideTransitionSound(currentSection);
 
   const handleQuizComplete = useCallback((slideId: string) => {
+    if (slideId === 'intro') setIntroStarted(true);
     if (slideId === 'finale') {
       resetQuiz(LEGACY_SURFACE);
       onComplete?.();
     }
-    setTimeout(() => {
-      scrollContainerRef.current?.scrollToNextSlide(slideId);
-    }, 100);
+    requestAnimationFrame(() => {
+      if (slideId === 'intro') scrollContainerRef.current?.scrollToNextSlide(slideId);
+    });
   }, [onComplete, resetQuiz]);
 
   const handleSectionChange = useCallback((id: string) => {
@@ -94,7 +97,7 @@ export function MobileWrappedPage({ data, onComplete }: MobileWrappedPageProps) 
         onSectionChange={handleSectionChange}
       >
         {SLIDES.map((slideId) => (
-          <SlideSection key={slideId} id={slideId}>
+          <SlideSection key={slideId} id={slideId} forwardBlocked={(slideId === 'intro' && !introStarted) || (slideId.startsWith('quiz-') && !(slideId in (quizAnswers ?? {})))}>
             <SlideRenderer
               slide={slideId}
               onComplete={slideCallbacks[slideId].onComplete}

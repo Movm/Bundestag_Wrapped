@@ -1,3 +1,4 @@
+import { jumpToSlide } from './story-navigation';
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from 'playwright/test';
 
@@ -9,15 +10,16 @@ test.beforeEach(async ({ page }) => {
 
 async function scrollToNextSlide(page: Page, currentSlide: string, nextSlide: string) {
   const current = page.locator(`[data-slide-id="${currentSlide}"]`);
-  await moveToSlide(page, currentSlide);
+  await scrollSequentially(page, currentSlide);
   await expect(current).toBeVisible();
-  await moveToSlide(page, nextSlide);
+  await scrollSequentially(page, nextSlide);
 }
 
-async function moveToSlide(page: Page, slide: string) {
+async function scrollSequentially(page: Page, slide: string) {
   await page.locator(`[data-slide-id="${slide}"]`).evaluate((section) => {
     section.parentElement?.scrollTo({ top: section.offsetTop, behavior: 'instant' });
   });
+  await expect(page.locator(`[data-slide-id="${slide}"]`)).toHaveAttribute('data-active', 'true');
 }
 
 async function finishFiniteAnimations(page: Page) {
@@ -75,8 +77,7 @@ test('completes the fixture journey with a quiz gate, mixed answers, and the act
       const answers = section.getByRole('button');
       await expect(answers.first()).toBeVisible();
       await answers.nth(slide === 'quiz-signature' ? 1 : 0).click();
-      // The result overlay may auto-advance before a browser paints the visual
-      // scroll hint. Disabled options are the stable, user-visible gate state.
+      // Feedback stays on the slide until the user explicitly continues.
       await expect(answers.first()).toBeDisabled();
       await scrollToNextSlide(page, slide, nextSlide);
       continue;
@@ -108,7 +109,7 @@ test('uses the active edition for share and download output', async ({ page }) =
     });
   });
   await page.goto('/2026');
-  await moveToSlide(page, 'share');
+  await jumpToSlide(page, 'share');
 
   const shareSlide = page.locator('[data-slide-id="share"]');
   await expect(shareSlide.getByRole('heading', { name: 'Teile dein Ergebnis!' })).toBeVisible();
@@ -150,7 +151,7 @@ test('keeps annual navigation, share FAB and its dialog accessible', async ({ pa
   await expect(menuTrigger).toBeFocused();
 
   await page.goto('/2026');
-  await moveToSlide(page, 'reveal-drama');
+  await jumpToSlide(page, 'reveal-drama');
   const trigger = page.getByRole('button', { name: 'Diese Folie teilen' });
   await trigger.click();
   const dialog = page.getByRole('dialog', { name: 'Diese Folie teilen' });
@@ -182,17 +183,17 @@ test('keeps annual navigation, share FAB and its dialog accessible', async ({ pa
 test('restores different answers when switching between annual routes', async ({ page }) => {
   await page.goto('/2025');
   await page.getByRole('button', { name: 'Starten', exact: true }).click();
-  await moveToSlide(page, 'quiz-topics');
+  await jumpToSlide(page, 'quiz-topics');
   await page.locator('[data-slide-id="quiz-topics"]').getByRole('button').first().click();
 
   await page.goto('/2026');
-  await moveToSlide(page, 'quiz-topics');
+  await jumpToSlide(page, 'quiz-topics');
   const secondEditionAnswers = page.locator('[data-slide-id="quiz-topics"]').getByRole('button');
   await expect(secondEditionAnswers.first()).toBeEnabled();
   await secondEditionAnswers.nth(1).click();
 
   await page.goto('/2025');
-  await moveToSlide(page, 'quiz-topics');
+  await jumpToSlide(page, 'quiz-topics');
   await expect(page.locator('[data-slide-id="quiz-topics"]').getByRole('button').first()).toBeDisabled();
   await expect(page.locator('[data-slide-id="quiz-topics"]').getByText('Scroll weiter oder wähle „Weiter“.')).toBeVisible();
   const scopes = await page.evaluate(() => JSON.parse(localStorage.getItem('quiz-storage-v2') ?? '{}').state?.answersByScope);
@@ -200,7 +201,7 @@ test('restores different answers when switching between annual routes', async ({
   expect(scopes['quiz:2026:fixture-b']['quiz-topics']).toBe(false);
 });
 
-test('clears speaker state on completion and uses edition-safe share output', async ({ page }) => {
+test('retains speaker answers until restart and uses edition-safe share output', async ({ page }) => {
   await page.addInitScript(() => {
     Object.defineProperty(navigator, 'canShare', { configurable: true, value: () => true });
     Object.defineProperty(navigator, 'share', {
@@ -222,8 +223,8 @@ test('clears speaker state on completion and uses edition-safe share output', as
     }));
   });
   await page.reload();
-  await moveToSlide(page, 'speaker-share');
-  await expect.poll(() => page.evaluate(() => localStorage.getItem('speaker-quiz-storage-v2'))).not.toContain('speaker-quiz:shared-speaker:2026:fixture-b');
+  await jumpToSlide(page, 'speaker-share');
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('speaker-quiz-storage-v2'))).toContain('speaker-quiz:shared-speaker:2026:fixture-b');
 
   const downloadPromise = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Speichern' }).click();
@@ -237,6 +238,7 @@ test('clears speaker state on completion and uses edition-safe share output', as
 
   await expect(page.getByRole('button', { name: 'Nochmal ansehen' })).toBeVisible();
   await page.getByRole('button', { name: 'Nochmal ansehen' }).click();
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('speaker-quiz-storage-v2'))).not.toContain('speaker-quiz:shared-speaker:2026:fixture-b');
   await expect(page.locator('[data-slide-id="speaker-intro"]')).toBeVisible();
 });
 
@@ -255,7 +257,7 @@ test('shares the annual URL without a file when native file sharing is unavailab
     });
   });
   await page.goto('/2026');
-  await moveToSlide(page, 'reveal-drama');
+  await jumpToSlide(page, 'reveal-drama');
   await page.getByRole('button', { name: 'Diese Folie teilen' }).click();
   await page.getByRole('dialog', { name: 'Diese Folie teilen' }).getByRole('button', { name: 'Teilen', exact: true }).click();
   await expect.poll(() => page.evaluate(() => localStorage.getItem('fixture-url-share'))).toBe(JSON.stringify({
@@ -344,7 +346,7 @@ test('runs Axe against the annual start, answered quiz, search, speaker index, p
   await expect(page.getByRole('button', { name: 'Starten', exact: true })).toBeVisible();
   await scan();
   await page.getByRole('button', { name: 'Starten', exact: true }).click();
-  await moveToSlide(page, 'quiz-topics');
+  await jumpToSlide(page, 'quiz-topics');
   const answer = page.locator('[data-slide-id="quiz-topics"]').getByRole('button').first();
   await answer.focus();
   await page.keyboard.press('Enter');

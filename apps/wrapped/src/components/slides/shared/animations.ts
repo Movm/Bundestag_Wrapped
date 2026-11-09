@@ -7,7 +7,7 @@ import type { Variants } from 'motion/react';
 export const containerVariants: Variants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.06, delayChildren: 0.12 },
   },
 };
 
@@ -20,7 +20,7 @@ export const itemVariants: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: 'spring', bounce: 0.3 },
+    transition: { duration: 0.3, ease: [0.23, 1, 0.32, 1], },
   },
 };
 
@@ -32,7 +32,7 @@ export const itemSlideInVariants: Variants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { type: 'spring', bounce: 0.3 },
+    transition: { duration: 0.3, ease: [0.23, 1, 0.32, 1], },
   },
 };
 
@@ -40,11 +40,11 @@ export const itemSlideInVariants: Variants = {
  * Scale-in animation for cards and featured elements.
  */
 export const scaleInVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.8 },
+  hidden: { opacity: 0, scale: 0.95 },
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { type: 'spring', bounce: 0.4 },
+    transition: { duration: 0.3, ease: [0.23, 1, 0.32, 1], },
   },
 };
 
@@ -65,7 +65,7 @@ export const quizContainerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.12,
+      staggerChildren: 0.06,
       delayChildren: 0.1,
     },
   },
@@ -85,10 +85,7 @@ export const quizItemVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      type: 'spring',
-      stiffness: 80,
-      damping: 14,
-      mass: 0.9,
+      duration: 0.3, ease: [0.23, 1, 0.32, 1],
     },
   },
 };
@@ -107,9 +104,7 @@ export const optionButtonVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      type: 'spring',
-      stiffness: 100,
-      damping: 15,
+      duration: 0.3, ease: [0.23, 1, 0.32, 1],
       delay: 0.05 + i * 0.06,
     },
   }),
@@ -129,9 +124,7 @@ export const featuredWordVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      type: 'spring',
-      stiffness: 70,
-      damping: 12,
+      duration: 0.3, ease: [0.23, 1, 0.32, 1],
     },
   },
 };

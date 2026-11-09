@@ -1,4 +1,4 @@
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback, useState } from 'react';
 import { useParams } from 'react-router';
 import { motion } from 'motion/react';
 import { useSpeakerData } from '@/hooks/useDataQueries';
@@ -15,7 +15,7 @@ import {
 } from './speaker-wrapped/constants';
 import { useSpeakerScrollWrapped } from './speaker-wrapped/useSpeakerScrollWrapped';
 import {
-  useSpeakerQuizStore,
+  useSpeakerQuizStore, useSpeakerQuizAnswered,
 } from '@/stores/speakerQuizStore';
 import { SpeakerSlideRenderer } from './speaker-wrapped/SpeakerSlideRenderer';
 import { useOptionalEdition } from '@/edition/EditionProvider';
@@ -31,6 +31,9 @@ export function SpeakerWrappedPage() {
   // Scroll state with persistence
   const { currentSection, initialSection, setCurrentSection, handleRestart: clearSpeakerProgress } = useSpeakerScrollWrapped(slug);
 
+  const [introStarted, setIntroStarted] = useState(() => !!initialSection && initialSection !== 'speaker-intro');
+  const isQuizAnswered = useSpeakerQuizAnswered(surface, slug);
+  const [restartCount, setRestartCount] = useState(0);
   const answerQuiz = useSpeakerQuizStore((state) => state.answerQuiz);
 
   // Progress calculation
@@ -49,9 +52,10 @@ export function SpeakerWrappedPage() {
 
   // Handle intro start (unlock scroll)
   const handleIntroStart = useCallback(() => {
-    setTimeout(() => {
+    setIntroStarted(true);
+    requestAnimationFrame(() => {
       scrollContainerRef.current?.scrollToNextSlide('speaker-intro');
-    }, 100);
+    });
   }, []);
 
   // Handle quiz answer (store in Zustand, like main wrapped)
@@ -59,15 +63,12 @@ export function SpeakerWrappedPage() {
     answerQuiz(surface, slug, isCorrect);
   }, [surface, slug, answerQuiz]);
 
-  // Handle quiz complete (scroll to next after animation)
-  const handleQuizComplete = useCallback(() => {
-    setTimeout(() => {
-      scrollContainerRef.current?.scrollToNextSlide('speaker-quiz');
-    }, 100);
-  }, []);
+  const handleQuizComplete = useCallback(() => {}, []);
 
   // Handle restart
   const handleRestart = useCallback(() => {
+    setRestartCount(count => count + 1);
+    setIntroStarted(false);
     clearSpeakerProgress();
     setCurrentSection('speaker-intro');
     scrollContainerRef.current?.scrollToSlide('speaker-intro');
@@ -152,8 +153,10 @@ export function SpeakerWrappedPage() {
           onSectionChange={handleSectionChange}
         >
           {SPEAKER_SLIDES.map((slideId, index) => (
-            <SlideSection key={slideId} id={slideId} active={Math.abs(index - sectionIndex) <= 1}>
+            <SlideSection key={slideId} id={slideId} forwardBlocked={(slideId === 'speaker-intro' && !introStarted) || (slideId === 'speaker-quiz' && !!data.signatureQuiz && !isQuizAnswered)} active={Math.abs(index - sectionIndex) <= 1}>
               <SpeakerSlideRenderer
+                key={restartCount}
+                isQuizAnswered={isQuizAnswered}
                 slide={slideId}
                 speaker={data}
                 onStart={handleIntroStart}
