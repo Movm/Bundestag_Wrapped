@@ -75,3 +75,33 @@ describe('Qdrant activity person_id migration', () => {
     });
   });
 });
+
+describe('payload index type changes', () => {
+  it('drops and rebuilds an index whose type changed', async () => {
+    const client = {
+      getCollections: vi.fn().mockResolvedValue({ collections: [{ name: 'bundestag-protocol-chunks' }] }),
+      getCollection: vi.fn().mockResolvedValue({
+        payload_schema: { datum: { data_type: 'keyword' }, speaker: { data_type: 'keyword' } }
+      }),
+      deletePayloadIndex: vi.fn().mockResolvedValue({}),
+      createPayloadIndex: vi.fn().mockResolvedValue({})
+    };
+    getClientMock.mockReturnValue(client);
+
+    await ensureCollectionExists(
+      'bundestag-protocol-chunks',
+      [
+        { field: 'datum', type: 'datetime' },
+        { field: 'speaker', type: 'keyword' }
+      ],
+      'TEST'
+    );
+
+    expect(client.deletePayloadIndex).toHaveBeenCalledWith('bundestag-protocol-chunks', 'datum', { wait: true });
+    expect(client.createPayloadIndex).toHaveBeenCalledOnce();
+    expect(client.createPayloadIndex).toHaveBeenCalledWith('bundestag-protocol-chunks', {
+      field_name: 'datum',
+      field_schema: 'datetime'
+    });
+  });
+});
