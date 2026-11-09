@@ -53,31 +53,6 @@ const GROUP_FIELDS = {
 
 const MAX_BUCKETS = 240;
 
-// DIP stores faction initiatives as exact strings like "Fraktion der AfD" /
-// "Fraktion BÜNDNIS 90/DIE GRÜNEN". Passing a short name ("AfD", "GRÜNE") matches
-// nothing and returns a silent 0, so expand the common short forms to the exact
-// DIP value. Unknown values (Bundesregierung, a Bundesland, …) pass through.
-const INITIATIVE_ALIASES = {
-  'afd': 'Fraktion der AfD',
-  'spd': 'Fraktion der SPD',
-  'cdu': 'Fraktion der CDU/CSU',
-  'csu': 'Fraktion der CDU/CSU',
-  'cdu/csu': 'Fraktion der CDU/CSU',
-  'union': 'Fraktion der CDU/CSU',
-  'grüne': 'Fraktion BÜNDNIS 90/DIE GRÜNEN',
-  'gruene': 'Fraktion BÜNDNIS 90/DIE GRÜNEN',
-  'grünen': 'Fraktion BÜNDNIS 90/DIE GRÜNEN',
-  'die grünen': 'Fraktion BÜNDNIS 90/DIE GRÜNEN',
-  'bündnis 90/die grünen': 'Fraktion BÜNDNIS 90/DIE GRÜNEN',
-  'linke': 'Fraktion DIE LINKE',
-  'die linke': 'Fraktion DIE LINKE'
-};
-
-function normalizeInitiative(value) {
-  if (typeof value !== 'string') return value;
-  return INITIATIVE_ALIASES[value.trim().toLowerCase()] || value;
-}
-
 // Count is just the numFound from a single-row search — no rows paged into context.
 async function countFor(entity, params, useCache) {
   const fn = ENTITY_SEARCH[entity];
@@ -172,7 +147,7 @@ groupBy:
       if (params.datum_end) base.datum_end = params.datum_end;
       if (params.drucksachetyp) base.drucksachetyp = params.drucksachetyp;
       if (params.vorgangstyp) base.vorgangstyp = params.vorgangstyp;
-      if (params.initiative) base.initiative = normalizeInitiative(params.initiative);
+      if (params.initiative) base.initiative = normalizeDipFaction(params.initiative);
       if (params.aktivitaetsart) base.aktivitaetsart = params.aktivitaetsart;
 
       // --- Ungrouped: single total -----------------------------------------
@@ -232,7 +207,7 @@ groupBy:
       for (const value of values) {
         // The group field replaces any same-named base filter. Faction short
         // names are normalized to their exact DIP string so they don't count 0.
-        const filterValue = groupBy === 'initiative' ? normalizeInitiative(value) : value;
+        const filterValue = groupBy === 'initiative' ? normalizeDipFaction(value) : value;
         const count = await countFor(entity, { ...base, [groupBy]: filterValue }, useCache);
         groups.push({ label: value, count });
       }
