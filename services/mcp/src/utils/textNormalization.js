@@ -17,7 +17,7 @@ const SUPERSCRIPT_MAP = {
  * Fold German umlauts to ASCII equivalents
  */
 export function foldUmlauts(s) {
-  if (!s) return s || '';
+  if (!s) return '';
   return s
     .replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue')
     .replace(/Ä/g, 'Ae').replace(/Ö/g, 'Oe').replace(/Ü/g, 'Ue')
@@ -28,7 +28,7 @@ export function foldUmlauts(s) {
  * Normalize unicode subscript and superscript numbers to ASCII
  */
 export function normalizeUnicodeNumbers(text) {
-  if (!text) return text || '';
+  if (!text) return '';
   let out = text;
   for (const [unicode, ascii] of Object.entries(SUBSCRIPT_MAP)) {
     out = out.replace(new RegExp(unicode, 'g'), ascii);

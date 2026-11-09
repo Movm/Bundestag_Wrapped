@@ -66,7 +66,7 @@ class BundestagMCPClient:
                     if "result" in data:
                         break
         else:
-            data = response.json()
+            response.json()
 
         await self._send_initialized()
 

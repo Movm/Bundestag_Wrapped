@@ -3,6 +3,8 @@
 from collections import Counter
 from typing import TYPE_CHECKING
 
+from .signature_scoring import MIN_Z_SCORE, log_odds_score
+
 if TYPE_CHECKING:
     from collections.abc import Set
 
@@ -65,32 +67,29 @@ class SignatureWordsMixin:
             if speaker_count < 5:  # Minimum count
                 continue
 
-            speaker_freq = speaker_count / speaker_total_words * 1000
             party_count = party_word_counts.get(word, 0)
-            party_freq = party_count / party_total_words * 1000 if party_total_words > 0 else 0
             bundestag_count = bundestag_word_counts.get(word, 0)
-            bundestag_freq = bundestag_count / bundestag_total_words * 1000 if bundestag_total_words > 0 else 0
+            corpus_count = self._bundestag_word_counts.get(word, 0)
+            vs_party = log_odds_score(
+                speaker_count, speaker_total_words, party_count, party_total_words,
+                corpus_count, self._bundestag_total_words,
+            )
+            vs_bundestag = log_odds_score(
+                speaker_count, speaker_total_words, bundestag_count, bundestag_total_words,
+                corpus_count, self._bundestag_total_words,
+            )
 
-            if party_freq > 0:
-                ratio_party = speaker_freq / party_freq
-            else:
-                ratio_party = speaker_freq * 10  # Word not used by party = very distinctive
-
-            if bundestag_freq > 0:
-                ratio_bundestag = speaker_freq / bundestag_freq
-            else:
-                ratio_bundestag = speaker_freq * 10
-
-            if ratio_party >= 2.0:  # At least 2x more than party average
+            if vs_party.z_score >= MIN_Z_SCORE and vs_party.ratio_low >= 2.0:
                 signature_words.append({
                     'word': word,
                     'count': speaker_count,
-                    'ratioParty': round(ratio_party, 1),
-                    'ratioBundestag': round(ratio_bundestag, 1),
+                    'ratioParty': round(vs_party.ratio_low, 1),
+                    'ratioBundestag': round(max(vs_bundestag.ratio_low, 1.0), 1),
+                    'zScore': round(vs_party.z_score, 2),
                 })
 
-        # Sort by party ratio and take top 5
-        signature_words.sort(key=lambda x: x['ratioParty'], reverse=True)
+        # Rank by significance (z-score), not by raw ratio, and take top 5
+        signature_words.sort(key=lambda x: x['zScore'], reverse=True)
         return signature_words[:5]
 
     def _get_speaker_signature_adjectives(self, speaker: str, party: str) -> list[dict]:
@@ -122,30 +121,27 @@ class SignatureWordsMixin:
             if speaker_count < 3:  # Minimum count
                 continue
 
-            speaker_freq = speaker_count / speaker_total_words * 1000
             party_count = party_adj_counts.get(adj, 0)
-            party_freq = party_count / party_total_words * 1000 if party_total_words > 0 else 0
             bundestag_count = bundestag_adj_counts.get(adj, 0)
-            bundestag_freq = bundestag_count / bundestag_total_words * 1000 if bundestag_total_words > 0 else 0
+            corpus_count = self._bundestag_adj_counts.get(adj, 0)
+            vs_party = log_odds_score(
+                speaker_count, speaker_total_words, party_count, party_total_words,
+                corpus_count, self._bundestag_total_words,
+            )
+            vs_bundestag = log_odds_score(
+                speaker_count, speaker_total_words, bundestag_count, bundestag_total_words,
+                corpus_count, self._bundestag_total_words,
+            )
 
-            if party_freq > 0:
-                ratio_party = speaker_freq / party_freq
-            else:
-                ratio_party = speaker_freq * 10  # Adjective not used by party = very distinctive
-
-            if bundestag_freq > 0:
-                ratio_bundestag = speaker_freq / bundestag_freq
-            else:
-                ratio_bundestag = speaker_freq * 10
-
-            if ratio_party >= 2.0:  # At least 2x more than party average
+            if vs_party.z_score >= MIN_Z_SCORE and vs_party.ratio_low >= 2.0:
                 signature_adjectives.append({
                     'word': adj,
                     'count': speaker_count,
-                    'ratioParty': round(ratio_party, 1),
-                    'ratioBundestag': round(ratio_bundestag, 1),
+                    'ratioParty': round(vs_party.ratio_low, 1),
+                    'ratioBundestag': round(max(vs_bundestag.ratio_low, 1.0), 1),
+                    'zScore': round(vs_party.z_score, 2),
                 })
 
-        # Sort by party ratio and take top 5
-        signature_adjectives.sort(key=lambda x: x['ratioParty'], reverse=True)
+        # Rank by significance (z-score), not by raw ratio, and take top 5
+        signature_adjectives.sort(key=lambda x: x['zScore'], reverse=True)
         return signature_adjectives[:5]

@@ -21,7 +21,6 @@
 
 import { config } from '../config.js';
 import { getCachedApiResponse, cacheApiResponse } from '../utils/cache.js';
-import { debug, warn } from '../utils/logger.js';
 import { withRetry } from '../utils/retry.js';
 import { RateLimiter } from '../utils/rateLimiter.js';
 

@@ -3,9 +3,8 @@
 from collections import Counter
 from fastapi import APIRouter, HTTPException, Query
 
-from ..analyzer import WordAnalyzer, AnalysisResult
+from ..analyzer import WordAnalyzer
 from ..parser import parse_speeches_from_protocol
-from ..categorizer import WordCategorizer
 from .schemas import (
     ExtractSpeechesRequest,
     ExtractSpeechesResponse,
@@ -21,10 +20,7 @@ from .schemas import (
     TopicScores,
     HealthResponse,
     # New schemas for speaker profile and party comparison
-    SpeakerProfileRequest,
     SpeakerProfileResponse,
-    SignatureWord,
-    PartyComparisonRequest,
     PartyComparisonResponse,
     PartyProfile,
 )
@@ -298,7 +294,7 @@ async def get_speaker_profile(
     """Get a comprehensive profile for a speaker based on their speeches.
 
     Requires a list of speeches (pre-filtered by speaker from bundestag-mcp).
-    Returns speech statistics, top words, signature words, tone, and topics.
+    Returns speech statistics, top words, tone, and topics.
     """
     speeches = speeches_input.speeches
 
