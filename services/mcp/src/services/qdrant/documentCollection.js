@@ -3,9 +3,7 @@
  * Stores section chunks from Drucksachen for semantic search
  */
 
-import { getClient } from './client.js';
 import { config } from '../../config.js';
-import * as logger from '../../utils/logger.js';
 import { buildDateCondition } from './dateRange.js';
 import {
   createSearcher,

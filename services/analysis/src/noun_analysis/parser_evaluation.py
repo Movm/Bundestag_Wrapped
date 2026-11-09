@@ -7,7 +7,6 @@ Compares regex-based parsing with Gemini extraction to identify:
 - Speaker/party extraction errors
 """
 
-import asyncio
 import json
 import re
 from dataclasses import dataclass, field
