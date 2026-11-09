@@ -35,6 +35,16 @@ from .gender import GenderDetector, load_custom_mappings
 logger = logging.getLogger(__name__)
 
 
+def read_word_frequency_csv(csv_path: Path) -> pd.DataFrame:
+    """Read a word-frequency CSV without turning words into NaN.
+
+    pandas parses "NA", "null", "nan", "None" and friends as missing by default,
+    so a parliament word like "null" became a float and broke every string
+    filter downstream. Only an empty cell counts as missing here.
+    """
+    return pd.read_csv(csv_path, keep_default_na=False, na_values=[""])
+
+
 def _parse_protocols_and_aggregate(data_dir: Path) -> dict:
     """Load protocols and classify all speeches by type.
 
@@ -487,8 +497,7 @@ def load_wrapped_data(results_dir: Path, data_dir: Path, cls=None):
     for word_type in ["nouns", "adjectives", "verbs"]:
         csv_path = results_dir / f"{word_type}.csv"
         if csv_path.exists():
-            df = pd.read_csv(csv_path)
-            word_frequencies[word_type] = df
+            word_frequencies[word_type] = read_word_frequency_csv(csv_path)
 
     # Positive interjection keywords (Zustimmung)
     POSITIVE_KEYWORDS = [

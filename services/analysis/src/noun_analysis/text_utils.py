@@ -79,6 +79,26 @@ def extract_name_parts(name_raw: str) -> dict:
     }
 
 
+def _remove_paren_spans(text: str) -> str:
+    parts = []
+    pos = 0
+    search_from = 0
+    while True:
+        open_at = text.find('(', search_from)
+        if open_at == -1:
+            break
+        close_at = text.find(')', open_at + 1)
+        if close_at == -1:
+            break  # no ")" left, so no later "(" can close either
+        if close_at == open_at + 1:
+            search_from = open_at + 1  # "()" is kept, like the regex's [^)]+
+            continue
+        parts.append(text[pos:open_at])
+        pos = search_from = close_at + 1
+    parts.append(text[pos:])
+    return ''.join(parts)
+
+
 def strip_parenthetical_content(text: str) -> str:
     """Remove parenthetical content from speech text.
 
@@ -92,9 +112,9 @@ def strip_parenthetical_content(text: str) -> str:
     These are NOT the speaker's own words and should not be counted
     in word frequency analysis.
     """
-    # Remove all parenthetical content
-    # Use non-greedy match to handle nested parens correctly
-    cleaned = re.sub(r'\([^)]+\)', '', text)
+    # Remove each "(" up to the next ")" — same result as re.sub(r'\([^)]+\)', '', text),
+    # but linear: that regex retries from every "(" and goes quadratic on unclosed parens.
+    cleaned = _remove_paren_spans(text)
     # Clean up extra whitespace
     cleaned = re.sub(r'\s+', ' ', cleaned)
     return cleaned.strip()

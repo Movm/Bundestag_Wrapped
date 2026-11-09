@@ -5,8 +5,6 @@
  * perform complex multi-step tasks with the Bundestag API.
  */
 
-import { z } from 'zod';
-
 /**
  * All MCP Prompts for the Bundestag server
  */
