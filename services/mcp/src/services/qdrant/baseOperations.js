@@ -189,7 +189,21 @@ export async function ensureCollectionExists(collectionName, indexes, logPrefix)
     } else {
       const collection = await qdrant.getCollection(collectionName);
       const payloadSchema = collection.payload_schema || {};
-      missingIndexes = indexes.filter(({ field }) => !payloadSchema[field]);
+      // An index whose type changed in a later schema version (e.g. `datum`
+      // keyword → datetime, so range filters work) is dropped and rebuilt.
+      const retyped = indexes.filter(
+        ({ field, type }) => payloadSchema[field] && payloadSchema[field].data_type !== type
+      );
+      for (const { field, type } of retyped) {
+        await qdrant.deletePayloadIndex(collectionName, field, { wait: true });
+        logger.info(
+          logPrefix,
+          `Dropped ${payloadSchema[field].data_type} index on ${field} to rebuild it as ${type}`
+        );
+      }
+      missingIndexes = indexes.filter(
+        ({ field }) => !payloadSchema[field] || retyped.some((r) => r.field === field)
+      );
     }
 
     // Apply indexes introduced by later schema versions to existing collections.

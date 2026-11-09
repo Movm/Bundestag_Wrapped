@@ -360,6 +360,31 @@ The server is fully compatible with ChatGPT as a connector. Use the public insta
 | `GET /.well-known/mcp.json` | Auto-discovery |
 | `GET /config/:client` | Client-specific config |
 | `GET /info` | Server information |
+| `POST /api/v1/search` | Notebook API: semantic search across speeches and Drucksachen (Bearer key) |
+| `POST /api/v1/chunks` | Notebook API: chunks of one speech or Drucksache (Bearer key) |
+| `POST /api/v1/facets` | Notebook API: value counts per speech/Drucksache (Bearer key) |
+
+### Notebook API
+
+A small, key-protected REST API for external notebook retrieval (consumer:
+Grünerator). Qdrant itself stays private. Keys come from `NOTEBOOK_API_KEYS`
+(comma-separated); without keys every request gets `401`. Rate limit per key:
+`NOTEBOOK_API_RPM` (default 240/min, `429` above it). A Qdrant or embedding
+failure answers `503`, never an empty list.
+
+The schemas in `src/notebookApi/router.js` are the contract. The unit is the
+**citable unit**: `doc_id` is one speech (`<protokoll_id>-<first chunk_index>`)
+or one Drucksache (`drucksache_id`), and `chunk_index` counts within it.
+`party` carries short names (`GRÜNE`) for both sources — for Drucksachen the
+initiating factions from `urheber`. `excerpt` is the best ≤1800-character
+window of a long chunk for the query. Facets count per unit, except
+`section_type` on Drucksachen (per chunk).
+
+```bash
+curl -s https://mcp.bundestag-wrapped.de/api/v1/search \
+  -H "Authorization: Bearer $KEY" -H 'content-type: application/json' \
+  -d '{"query":"Wärmepumpe","filters":{"party":["GRÜNE"],"from":"2026-01-01"},"limit":5}'
+```
 
 ## Docker
 

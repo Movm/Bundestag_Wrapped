@@ -6,6 +6,7 @@
 import { getClient } from './client.js';
 import { config } from '../../config.js';
 import * as logger from '../../utils/logger.js';
+import { buildDateCondition } from './dateRange.js';
 import {
   createSearcher,
   createUpserter,
@@ -25,7 +26,9 @@ const INDEXES = [
   { field: 'drucksachetyp', type: 'keyword' },
   { field: 'chunk_type', type: 'keyword' },
   { field: 'wahlperiode', type: 'integer' },
-  { field: 'datum', type: 'keyword' },
+  { field: 'datum', type: 'datetime' },
+  // Document heads (`chunk_index = 0`) for per-document facet counts.
+  { field: 'chunk_index', type: 'integer' },
   { field: 'urheber', type: 'keyword' }
 ];
 
@@ -145,6 +148,14 @@ export function buildDocumentFilter(params) {
     });
   }
 
+  if (params.urheberAny && params.urheberAny.length > 0) {
+    conditions.push({ key: 'urheber', match: { any: params.urheberAny } });
+  }
+
+  if (params.wahlperioden && params.wahlperioden.length > 0) {
+    conditions.push({ key: 'wahlperiode', match: { any: params.wahlperioden } });
+  }
+
   if (params.drucksacheId) {
     conditions.push({
       key: 'drucksache_id',
@@ -153,15 +164,7 @@ export function buildDocumentFilter(params) {
   }
 
   if (params.dateFrom || params.dateTo) {
-    const dateCondition = { key: 'datum' };
-    if (params.dateFrom && params.dateTo) {
-      dateCondition.range = { gte: params.dateFrom, lte: params.dateTo };
-    } else if (params.dateFrom) {
-      dateCondition.range = { gte: params.dateFrom };
-    } else {
-      dateCondition.range = { lte: params.dateTo };
-    }
-    conditions.push(dateCondition);
+    conditions.push(buildDateCondition(params.dateFrom, params.dateTo));
   }
 
   if (conditions.length === 0) {

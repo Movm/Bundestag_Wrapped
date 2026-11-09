@@ -52,6 +52,13 @@ export const config = {
     vectorSize: 1024  // Mistral embed dimensions
   },
 
+  // Key-protected REST API for external notebook retrieval (Grünerator).
+  // Comma-separated; without keys every request is rejected.
+  notebookApi: {
+    keys: (process.env.NOTEBOOK_API_KEYS || '').split(',').map((k) => k.trim()).filter(Boolean),
+    requestsPerMinute: parseInt(process.env.NOTEBOOK_API_RPM) || 240
+  },
+
   mistral: {
     apiKey: process.env.MISTRAL_API_KEY,
     embeddingModel: 'mistral-embed',
