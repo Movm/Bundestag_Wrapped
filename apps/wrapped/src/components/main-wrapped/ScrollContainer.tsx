@@ -58,6 +58,9 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
       let touchY = 0;
       let touchX = 0;
       let focusOnArrival = false;
+      let focusFrom: Element | null = null;
+      const wantFocus = () => { if (!focusOnArrival) focusFrom = document.activeElement; focusOnArrival = true; };
+      let stalledAt: number | null = null;
       let timer: ReturnType<typeof setTimeout>;
       let frame = 0;
       let size = { width: container.clientWidth, height: container.clientHeight };
@@ -70,7 +73,14 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
         // A resize may dispatch scrollend before ResizeObserver restores position.
         // Do not replace the saved slide with a neighbour in the new geometry.
         if (touching || frame || size.width !== container.clientWidth || size.height !== container.clientHeight) return;
-        if (target !== null && Math.abs(container.scrollTop - top(target)) > 2) return;
+        if (target !== null && Math.abs(container.scrollTop - top(target)) > 2) {
+          // A smooth scroll that is still travelling moves between attempts. One that was
+          // overridden (another scrollTo, scrollbar drag, anchor jump) leaves scrollTop
+          // where it is and would block every later commit with a stale target.
+          if (stalledAt !== container.scrollTop) { stalledAt = container.scrollTop; schedule(); return; }
+          target = null;
+        }
+        stalledAt = null;
         const index = sections.findIndex((section, i) => top(i) <= container.scrollTop + 2 && top(i) + section.offsetHeight > container.scrollTop + 2);
         if (index < 0) return;
         active = index;
@@ -78,7 +88,10 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
         target = null;
         const focused = document.activeElement;
         // The arriving section is settled; make it focusable before React reconciles inert.
-        const shouldFocus = focusOnArrival || (focused instanceof HTMLElement && container.contains(focused) && !sections[active].contains(focused));
+        // Focus the arrival unless the person has since moved focus to another control
+        // (for example the slide navigation toggle) while the scroll was settling.
+        const focusMoved = focusFrom !== null && focused !== null && focused !== focusFrom && focused !== document.body;
+        const shouldFocus = (focusOnArrival && !focusMoved) || (focused instanceof HTMLElement && container.contains(focused) && !sections[active].contains(focused));
         focusOnArrival = false;
         const id = sections[active].id;
         setActiveId(id);
@@ -96,7 +109,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
       const navigate = (requested: number, instant = false, restore = false) => {
         const index = restore ? Math.max(0, Math.min(requested, sections.length - 1)) : boundedTarget(active, requested, blocked());
         target = index;
-        focusOnArrival = focusOnArrival || instant;
+        if (instant) wantFocus();
         container.scrollTo({ top: top(index), behavior: instant || reduced.matches ? 'instant' : 'smooth' });
         schedule();
       };
@@ -180,8 +193,15 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
         schedule();
       };
       controller.current = {
-        next: (id, instant = false) => { if (!id || sections[active].id === id) { focusOnArrival = true; if (id) navigate(active + 1, instant); else step(1, instant); } },
-        previous: (instant = false) => { focusOnArrival = true; step(-1, instant); },
+        next: (id, instant = false) => {
+          // A request made for a slide (intro launch) is stale once the scroll position has left it,
+          // even if the settled `active` has not caught up yet.
+          const at = container.scrollTop + 2;
+          if (id && (sections[active].id !== id || at < top(active) || at >= top(active) + sections[active].offsetHeight)) return;
+          wantFocus();
+          if (id) navigate(active + 1, instant); else step(1, instant);
+        },
+        previous: (instant = false) => { wantFocus(); step(-1, instant); },
         restore: id => { const index = sections.findIndex(section => section.id === id); if (index >= 0) navigate(index, true, true); },
       };
       container.scrollTo({ top: top(active), behavior: 'instant' });
