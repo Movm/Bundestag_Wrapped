@@ -400,7 +400,7 @@ app.get('/health/deep', async (req, res) => {
   {
     const idx = checks.indexer;
     const uptimeMs = process.uptime() * 1000;
-    let status = 'fresh';
+    let status;
     let minutesSinceIndex = null;
 
     if (!config.qdrant.enabled || !idx.enabled) {

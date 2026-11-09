@@ -255,7 +255,6 @@ class GenderDetector:
         # From 21. Wahlperiode Wikipedia list - male
         "sanae": "female",  # Sanae Abdi
         "knut": "male",  # Knut Abraham
-        "adis": "male",  # Adis Ahmetovic
         "reem": "female",  # Reem Alabali Radovan
         "alaa": "male",  # Alaa Alhamwi
         "tarek": "male",  # Tarek Al-Wazir
