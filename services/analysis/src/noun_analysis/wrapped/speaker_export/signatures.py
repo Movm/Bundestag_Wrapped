@@ -67,9 +67,9 @@ class SignatureWordsMixin:
 
             speaker_freq = speaker_count / speaker_total_words * 1000
             party_count = party_word_counts.get(word, 0)
-            party_freq = party_count / party_total_words * 1000 if party_total_words > 0 else 0
+            party_freq = party_count / party_total_words * 1000
             bundestag_count = bundestag_word_counts.get(word, 0)
-            bundestag_freq = bundestag_count / bundestag_total_words * 1000 if bundestag_total_words > 0 else 0
+            bundestag_freq = bundestag_count / bundestag_total_words * 1000
 
             if party_freq > 0:
                 ratio_party = speaker_freq / party_freq
@@ -124,9 +124,9 @@ class SignatureWordsMixin:
 
             speaker_freq = speaker_count / speaker_total_words * 1000
             party_count = party_adj_counts.get(adj, 0)
-            party_freq = party_count / party_total_words * 1000 if party_total_words > 0 else 0
+            party_freq = party_count / party_total_words * 1000
             bundestag_count = bundestag_adj_counts.get(adj, 0)
-            bundestag_freq = bundestag_count / bundestag_total_words * 1000 if bundestag_total_words > 0 else 0
+            bundestag_freq = bundestag_count / bundestag_total_words * 1000
 
             if party_freq > 0:
                 ratio_party = speaker_freq / party_freq

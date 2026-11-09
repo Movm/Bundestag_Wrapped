@@ -52,7 +52,7 @@ export function ExpandableDetails({
             exit={{ opacity: 0, height: 0 }}
             transition={{
               height: { duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] },
-              opacity: { duration: 0.25, delay: isExpanded ? 0.1 : 0 },
+              opacity: { duration: 0.25, delay: 0.1 },
             }}
             className="overflow-hidden"
           >

@@ -3,9 +3,8 @@
 from collections import Counter
 from fastapi import APIRouter, HTTPException, Query
 
-from ..analyzer import WordAnalyzer, AnalysisResult
+from ..analyzer import WordAnalyzer
 from ..parser import parse_speeches_from_protocol
-from ..categorizer import WordCategorizer
 from .schemas import (
     ExtractSpeechesRequest,
     ExtractSpeechesResponse,
@@ -21,9 +20,7 @@ from .schemas import (
     TopicScores,
     HealthResponse,
     # New schemas for speaker profile and party comparison
-    SpeakerProfileRequest,
     SpeakerProfileResponse,
-    PartyComparisonRequest,
     PartyComparisonResponse,
     PartyProfile,
 )

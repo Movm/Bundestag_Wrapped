@@ -6,6 +6,8 @@ a formal speech or an intervention.
 
 import re
 
+_OFFICIAL_TITLE = re.compile(r'(herr|frau)\s+(staatsminister|staatssekretär|bundesminister)')
+
 
 def classify_speech_type(context: str) -> str:
     """Classify speech introduction type from preceding context.
@@ -103,8 +105,11 @@ def classify_by_preceding_context(text: str, speech_start: int) -> str | None:
 
     # Pattern 3: Government official answer invitation
     # "Sie haben das Wort" with Staatsminister/Staatssekretär in the SAME sentence
-    if re.search(r'(herr|frau)\s+(staatsminister|staatssekretär|bundesminister)[^.]*sie haben das wort', context):
-        return 'fragestunde_antwort'
+    # Split on "." instead of matching [^.]* — that regex is quadratic on long sentences.
+    for sentence in context.split('.'):
+        title = _OFFICIAL_TITLE.search(sentence)
+        if title and 'sie haben das wort' in sentence[title.end():]:
+            return 'fragestunde_antwort'
     if re.search(r'sie haben das wort[^.]{0,50}(staatsminister|staatssekretär|bundesminister)', context):
         return 'fragestunde_antwort'
 

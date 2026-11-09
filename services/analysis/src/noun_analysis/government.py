@@ -193,6 +193,5 @@ def get_party_for_official(name: str) -> str | None:
         return party
 
     # Try without academic title prefix
-    import re
     name_without_title = re.sub(r'^(?:Dr\.|Prof\.|Dr\s|Prof\s)\s*', '', name).strip()
     return GOVERNMENT_PARTY_MAP.get(name_without_title)

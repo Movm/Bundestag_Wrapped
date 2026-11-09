@@ -5,7 +5,6 @@ Useful for analyzing large amounts of parliamentary speech text.
 """
 
 import asyncio
-import json
 import os
 from typing import Any
 
