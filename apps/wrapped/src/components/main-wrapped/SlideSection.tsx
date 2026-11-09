@@ -4,14 +4,17 @@ import { cn } from '@/lib/utils';
 import { StoryContext } from './StoryContext';
 import { SlideEffectsContext } from './SlideEffectsContext';
 
-interface SlideSectionProps { id: string; children: ReactNode; className?: string; active?: boolean; }
+interface SlideSectionProps { id: string; children: ReactNode; className?: string; active?: boolean; forwardBlocked?: boolean; }
 
-export function SlideSection({ id, children, className, active = true }: SlideSectionProps) {
+export function SlideSection({ id, children, className, active = true, forwardBlocked = false }: SlideSectionProps) {
   const { activeId, readingMode } = useContext(StoryContext);
   const pageVisible = usePageVisible();
   // ScrollContainer selects synchronously; the parent's overscan state follows
   // in an effect. A fast jump must reveal its destination in this same commit.
-  const visible = active || activeId === id || readingMode;
+  const arrived = (activeId ? activeId === id : active) || readingMode;
+  const [visited, setVisited] = useState(false);
+  if (arrived && !visited) setVisited(true);
+  const visible = (visited && active) || arrived;
   const sectionRef = useRef<HTMLElement>(null);
   const retainedHeight = useRef(0);
   useLayoutEffect(() => {
@@ -32,10 +35,8 @@ export function SlideSection({ id, children, className, active = true }: SlideSe
     return () => observer.disconnect();
   }, [visible, pageVisible]);
   const effectsActive = pageVisible && (activeId ? activeId === id : active);
-  const [visited, setVisited] = useState(visible);
-  if (visible && !visited) setVisited(true);
   return (
-    <section ref={sectionRef} id={id} data-slide-id={id} tabIndex={-1}
+    <section ref={sectionRef} id={id} data-slide-id={id} data-forward-blocked={forwardBlocked} data-active={activeId === id} tabIndex={-1}
       data-slide-active={visible} data-slide-mounted={visited} data-slide-effects-active={effectsActive}
       inert={!readingMode && activeId !== '' && activeId !== id}
       aria-hidden={!readingMode && activeId !== '' && activeId !== id}

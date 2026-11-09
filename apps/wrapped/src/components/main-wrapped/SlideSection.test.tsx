@@ -30,7 +30,7 @@ it('defers unseen slides, cleans hidden effects and preserves visited local stat
   } finally { await act(async () => root.unmount()); container.remove(); }
 });
 
-it('keeps neighbouring and reading-mode content rendered with only selected effects active', async () => {
+it('defers unseen neighbours until arrival or reading mode, with only selected effects active', async () => {
   function Content() { return <output>{String(useSlideEffectsActive())}</output>; }
   const container = document.createElement('div');
   document.body.append(container);
@@ -43,7 +43,7 @@ it('keeps neighbouring and reading-mode content rendered with only selected effe
   );
   try {
     await act(async () => render('next', false));
-    expect(container.querySelector('#intro output')?.textContent).toBe('false');
+    expect(container.querySelector('#intro output')).toBeNull();
     expect(container.querySelector('#next output')?.textContent).toBe('true');
     await act(async () => render('next', true));
     expect(container.querySelector('#intro output')?.textContent).toBe('false');

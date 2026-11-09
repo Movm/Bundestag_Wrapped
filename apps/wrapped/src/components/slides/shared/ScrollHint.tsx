@@ -19,7 +19,7 @@ interface ScrollHintProps {
  */
 export function ScrollHint({
   text = 'Scroll weiter',
-  delay = 1.2,
+  delay = 0.15,
   className,
   trigger = 'inView',
 }: ScrollHintProps) {
@@ -38,7 +38,7 @@ export function ScrollHint({
   return (
     <motion.div
       {...animationProps}
-      transition={{ delay }}
+      transition={{ delay: Math.min(delay, 0.15), duration: 0.2 }}
       className={cn(
         'text-center text-white/40 text-sm flex items-center justify-center gap-2',
         className

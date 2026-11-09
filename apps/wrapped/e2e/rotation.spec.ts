@@ -1,3 +1,4 @@
+import { jumpToSlide } from './story-navigation';
 import { expect, test } from 'playwright/test';
 import { installEditionFixtures } from './fixtures';
 
@@ -7,7 +8,7 @@ test('retains the active slide through rotation and allows subsequent navigation
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/2025');
   const slide = page.locator('#quiz-drama');
-  await slide.evaluate(el => el.parentElement?.scrollTo({ top: el.offsetTop, behavior: 'instant' }));
+  await jumpToSlide(page, (await slide.getAttribute('id'))!);
   await expect(slide).not.toHaveAttribute('inert', '');
   const answer = slide.getByRole('button').first();
   await answer.click();
@@ -23,7 +24,7 @@ test('retains the active slide through rotation and allows subsequent navigation
   await page.waitForTimeout(300);
   await expect(slide).not.toHaveAttribute('inert', '');
   const next = page.locator('#quiz-gender');
-  await next.evaluate(el => el.parentElement?.scrollTo({ top: el.offsetTop, behavior: 'instant' }));
+  await jumpToSlide(page, (await next.getAttribute('id'))!);
   await expect(next).not.toHaveAttribute('inert', '');
 });
 

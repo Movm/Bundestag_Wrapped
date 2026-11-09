@@ -1,3 +1,4 @@
+import { jumpToSlide } from './story-navigation';
 import { expect, test } from 'playwright/test';
 import { installEditionFixtures } from './fixtures';
 
@@ -47,7 +48,7 @@ test('keeps snap sections but activates only the current slide and neighbours', 
   expect(await page.locator('[data-slide-id]').count()).toBeGreaterThan(20);
   expect(await page.locator('[data-slide-mounted="true"]').count()).toBeLessThanOrEqual(3);
   const target = page.locator('[data-slide-id="reveal-topics"]');
-  await target.evaluate(el => el.parentElement!.scrollTo({ top: el.offsetTop, behavior: 'instant' }));
+  await jumpToSlide(page, (await target.getAttribute('id'))!);
   await expect(target).toHaveAttribute('data-slide-active', 'true');
   await expect(page.locator('[data-slide-id="intro"]')).toHaveAttribute('data-slide-active', 'false');
   await expect.poll(() => page.locator('[data-slide-id="intro"]').evaluate(el => el.getAnimations({ subtree: true }).filter(a => a.playState === 'running').length)).toBe(0);
@@ -58,12 +59,12 @@ test('does not let an old quiz overlay pull the reader back after navigation', a
   await page.goto('/2025');
   await page.getByRole('button', { name: 'Starten', exact: true }).click();
   const quiz = page.locator('[data-slide-id="quiz-topics"]');
-  await quiz.evaluate(el => el.parentElement!.scrollTo({ top: el.offsetTop, behavior: 'instant' }));
+  await jumpToSlide(page, (await quiz.getAttribute('id'))!);
   const answer = quiz.getByRole('button').first();
   await answer.click();
   await expect(answer).toBeDisabled();
   const target = page.locator('[data-slide-id="reveal-drama"]');
-  await target.evaluate(el => el.parentElement!.scrollTo({ top: el.offsetTop, behavior: 'instant' }));
+  await jumpToSlide(page, (await target.getAttribute('id'))!);
   await expect(target).toHaveAttribute('data-slide-active', 'true');
   await page.waitForTimeout(2800);
   await expect(target).toHaveAttribute('data-slide-active', 'true');
@@ -75,11 +76,11 @@ test('cancels an intro launch when navigating away and permits starting again', 
   const intro = page.locator('[data-slide-id="intro"]');
   await intro.getByRole('button', { name: 'Starten', exact: true }).click();
   const target = page.locator('[data-slide-id="reveal-drama"]');
-  await target.evaluate(el => el.parentElement!.scrollTo({ top: el.offsetTop, behavior: 'instant' }));
+  await jumpToSlide(page, (await target.getAttribute('id'))!);
   await expect(target).toHaveAttribute('data-slide-effects-active', 'true');
   await page.waitForTimeout(1600);
   await expect(target).toHaveAttribute('data-slide-effects-active', 'true');
-  await intro.evaluate(el => el.parentElement!.scrollTo({ top: el.offsetTop, behavior: 'instant' }));
+  await jumpToSlide(page, (await intro.getAttribute('id'))!);
   await expect(intro).toHaveAttribute('data-slide-effects-active', 'true');
   await expect(intro.getByRole('button', { name: 'Starten', exact: true })).toBeEnabled();
 });
@@ -130,7 +131,7 @@ test('reveals a distant scroll destination in the same commit that selects it', 
       if (selected && !selected.innerText.trim()) blanks.push(selected.id);
     }).observe(root, { attributes: true, subtree: true, childList: true, attributeFilter: ['data-slide-effects-active', 'style'] });
   });
-  await page.locator('[data-slide-id="finale"]').evaluate(section => section.parentElement!.scrollTo({ top: section.offsetTop, behavior: 'instant' }));
+  await jumpToSlide(page, (await page.locator('[data-slide-id="finale"]').getAttribute('id'))!);
   await expect(page.locator('[data-slide-id="finale"]')).toHaveAttribute('data-slide-effects-active', 'true');
   await expect(page.locator('[data-slide-id="finale"]')).toContainText('Bundestag Wrapped');
   expect(await page.evaluate(() => Reflect.get(window, '__blankSelectedSlides'))).toEqual([]);
@@ -141,11 +142,11 @@ test('retains the height of tall visited content when its effects are suspended'
   await expect(page.getByRole('button', { name: 'Starten', exact: true })).toBeVisible();
   await page.addStyleTag({ content: '[data-slide-id="info-disclaimer"] > * { min-height: 1600px !important; }' });
   const tall = page.locator('[data-slide-id="info-disclaimer"]');
-  await tall.evaluate(section => section.parentElement!.scrollTo({ top: section.offsetTop, behavior: 'instant' }));
+  await jumpToSlide(page, (await tall.getAttribute('id'))!);
   await expect(tall).toHaveAttribute('data-slide-effects-active', 'true');
   await expect.poll(() => tall.evaluate(section => section.getBoundingClientRect().height)).toBeGreaterThan(1600);
   const height = await tall.evaluate(section => section.getBoundingClientRect().height);
-  await page.locator('[data-slide-id="reveal-topics"]').evaluate(section => section.parentElement!.scrollTo({ top: section.offsetTop, behavior: 'instant' }));
+  await jumpToSlide(page, (await page.locator('[data-slide-id="reveal-topics"]').getAttribute('id'))!);
   await expect(tall).toHaveAttribute('data-slide-active', 'false');
   await expect.poll(() => tall.evaluate(section => section.getBoundingClientRect().height)).toBeCloseTo(height, 0);
 });
@@ -154,7 +155,7 @@ test('keeps selection aligned with the viewport after content reflows without sc
   await page.goto('/2025');
   await expect(page.getByRole('button', { name: 'Starten', exact: true })).toBeVisible();
   await page.addStyleTag({ content: '[data-story-scroll] { overflow-anchor: none; }' });
-  await page.locator('[data-slide-id="reveal-topics"]').evaluate(section => section.parentElement!.scrollTo({ top: section.offsetTop, behavior: 'instant' }));
+  await jumpToSlide(page, (await page.locator('[data-slide-id="reveal-topics"]').getAttribute('id'))!);
   await expect(page.locator('[data-slide-id="reveal-topics"]')).toHaveAttribute('data-slide-effects-active', 'true');
   await page.addStyleTag({ content: '[data-slide-id="info-disclaimer"] { min-height: 3000px !important; }' });
   await expect.poll(() => page.evaluate(() => {

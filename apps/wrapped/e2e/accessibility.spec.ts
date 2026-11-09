@@ -1,3 +1,4 @@
+import { jumpToSlide } from './story-navigation';
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from 'playwright/test';
 import { installEditionFixtures } from './fixtures';
@@ -48,14 +49,14 @@ test('keeps future slides out of Tab order, stops timed reading, and supports re
 
 test('provides persistent quiz feedback and keyboard-operable, single-activation flip cards', async ({ page }) => {
   await page.goto('/2025');
-  await page.locator('#quiz-topics').evaluate(section => section.parentElement?.scrollTo({ top: section.offsetTop }));
+  await jumpToSlide(page, (await page.locator('#quiz-topics').getAttribute('id'))!);
   const quiz = page.locator('#quiz-topics');
   await expect(quiz).not.toHaveAttribute('inert', '');
   await quiz.getByRole('button').first().click();
   await expect(quiz.getByRole('status')).toContainText('Richtige Antwort:');
   await page.waitForTimeout(3000);
   await expect(quiz).not.toHaveAttribute('inert', '');
-  await page.locator('#reveal-signature').evaluate(section => section.parentElement?.scrollTo({ top: section.offsetTop }));
+  await jumpToSlide(page, (await page.locator('#reveal-signature').getAttribute('id'))!);
   const card = page.locator('#reveal-signature').getByRole('button').first();
   await card.focus();
   await page.keyboard.press('Enter');
@@ -116,7 +117,7 @@ for (const viewport of [{ width: 320, height: 568 }, { width: 390, height: 844 }
       const sections = page.locator('[data-slide-id]');
       for (let i = 0; i < await sections.count(); i++) {
         const section = sections.nth(i);
-        await section.evaluate(element => element.parentElement?.scrollTo({ top: element.offsetTop, behavior: 'instant' }));
+        await jumpToSlide(page, (await section.getAttribute('id'))!);
         await expect(section).not.toHaveAttribute('inert', '');
         const bounds = await section.evaluate(element => ({ content: element.scrollWidth, width: element.clientWidth }));
         expect(bounds.content, await section.getAttribute('id') ?? path).toBeLessThanOrEqual(bounds.width + 1);

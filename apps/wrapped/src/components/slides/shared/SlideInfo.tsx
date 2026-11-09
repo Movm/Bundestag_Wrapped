@@ -29,14 +29,12 @@ export const SlideInfo = memo(function SlideInfo({ emoji, title, body, slideId }
         {/* Icon or Emoji with scale-pop effect */}
         {IconComponent ? (
           <motion.div
-            initial={{ opacity: 0, scale: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{
               delay: 0.1,
-              type: 'spring',
-              bounce: 0.5,
-              duration: 0.6,
+              duration: 0.3, ease: [0.23, 1, 0.32, 1],
             }}
             className="mb-4 flex justify-center"
           >
@@ -44,14 +42,12 @@ export const SlideInfo = memo(function SlideInfo({ emoji, title, body, slideId }
           </motion.div>
         ) : (
           <motion.span
-            initial={{ opacity: 0, scale: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{
               delay: 0.1,
-              type: 'spring',
-              bounce: 0.5,
-              duration: 0.6,
+              duration: 0.3, ease: [0.23, 1, 0.32, 1],
             }}
             className="text-5xl md:text-6xl mb-4 block"
           >
@@ -64,7 +60,7 @@ export const SlideInfo = memo(function SlideInfo({ emoji, title, body, slideId }
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.3, type: 'spring', bounce: 0.3 }}
+          transition={{ delay: 0.12, duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
           className="text-xl md:text-2xl font-bold text-white mb-4"
         >
           {title}
@@ -75,7 +71,7 @@ export const SlideInfo = memo(function SlideInfo({ emoji, title, body, slideId }
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.8, duration: 0.5 }}
+          transition={{ delay: 0.15, duration: 0.3 }}
           className="text-white/70 text-base md:text-lg leading-relaxed"
         >
           {body}

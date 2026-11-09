@@ -3,9 +3,7 @@ import { SLIDES, type SlideType } from './constants';
 import {
   getWrappedProgress,
   setWrappedProgress,
-  clearWrappedProgress,
 } from '@/lib/wrapped-storage';
-import { useQuizStore } from '@/stores/quizStore';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
 
@@ -58,7 +56,6 @@ export function useScrollWrapped(activeSlides: readonly SlideType[] = SLIDES): S
     [activeSlides, surface],
   );
   const [currentSection, setCurrentSection] = useState<SlideType>(initialSection);
-  const clearQuizProgress = useQuizStore((state) => state.clearProgress);
 
   // Track initial section for scroll restoration (null after first render)
   const normalizedCurrentSection = normalizeSection(currentSection, activeSlides);
@@ -80,16 +77,10 @@ export function useScrollWrapped(activeSlides: readonly SlideType[] = SLIDES): S
       return;
     }
 
-    // Clear all progress when user completes the experience
-    if (normalizedCurrentSection === 'finale') {
-      clearWrappedProgress(surface);
-      clearQuizProgress(surface);
-      return;
-    }
-
+    // Keep answers until an explicit restart, including when revisiting the finale.
     // Only persist currentSection - quiz state is in quizStore
     setWrappedProgress({ currentSection: normalizedCurrentSection }, surface);
-  }, [normalizedCurrentSection, clearQuizProgress, surface]);
+  }, [normalizedCurrentSection, surface]);
 
   return {
     currentSection: normalizedCurrentSection,

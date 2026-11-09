@@ -1,6 +1,5 @@
 import { useRef, useCallback, useMemo, useState, useEffect } from 'react';
 import { useDebugRender } from '@/hooks/useDebugRender';
-import { motion, AnimatePresence } from 'motion/react';
 import { useWrappedData } from '@/hooks/useDataQueries';
 import { WrappedToolbar } from '@/components/ui/WrappedToolbar';
 import { Footer } from '@/components/ui/Footer';
@@ -14,7 +13,7 @@ import { clearWrappedProgress } from '@/lib/wrapped-storage';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
 import { buildConfiguredEditionQuizModel } from '@/domain/edition-quiz';
-import { useQuizStore } from '@/stores/quizStore';
+import { quizScope, useQuizStore } from '@/stores/quizStore';
 import {
   ScrollContainer,
   SlideSection,
@@ -55,6 +54,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
   // Simplified: quiz state is in quizStore, not passed as props
   const { currentSection, initialSection, setCurrentSection } = useScrollWrapped(activeSlides);
 
+  const quizAnswers = useQuizStore(state => state.answersByScope[quizScope(surface)]);
   const resetQuiz = useQuizStore((state) => state.reset);
 
   // Play subtle whoosh sound on slide transitions
@@ -87,9 +87,9 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
     if (slideId === 'intro') {
       setIntroStarted(true);
     }
-    setTimeout(() => {
-      scrollContainerRef.current?.scrollToNextSlide(slideId);
-    }, 100);
+    requestAnimationFrame(() => {
+      if (slideId === 'intro') scrollContainerRef.current?.scrollToNextSlide(slideId);
+    });
   }, []);
 
   // Remount the journey after clearing progress; avoid unload/scroll persistence races.
@@ -142,7 +142,6 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
     );
   }
 
-  const showFooter = currentSection === 'finale';
 
   const websiteSchema = {
     '@context': 'https://schema.org',
@@ -178,7 +177,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
           onSectionChange={handleSectionChange}
         >
           {activeSlides.map((slideId, index) => (
-            <SlideSection key={slideId} id={slideId} active={Math.abs(index - activeSlides.findIndex(id => id === currentSection)) <= 1}>
+            <SlideSection key={slideId} id={slideId} forwardBlocked={(slideId === 'intro' && !introStarted) || (slideId.startsWith('quiz-') && !(slideId in (quizAnswers ?? {})))} active={Math.abs(index - activeSlides.findIndex(id => id === currentSection)) <= 1}>
               <SlideRenderer
                 slide={slideId}
                 onComplete={slideCallbacks[slideId].onComplete}
@@ -186,6 +185,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
                 quizModel={quizModel}
                 quizSlides={activeQuizSlides}
               />
+              {slideId === 'finale' && <Footer />}
             </SlideSection>
           ))}
         </ScrollContainer>
@@ -193,18 +193,6 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
         {/* Single FAB instance - only show on shareable slides */}
         {isShareable && shareData && <SlideShareFAB slideData={shareData} />}
 
-        <AnimatePresence>
-          {showFooter && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Footer />
-            </motion.div>
-          )}
-        </AnimatePresence>
       </main>
     </>
   );

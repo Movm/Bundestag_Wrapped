@@ -7,6 +7,7 @@ import { SlideHeader } from '@/components/slides/shared/SlideHeader';
 
 interface SpeakerQuizSlideProps {
   speaker: SpeakerWrapped;
+  isAnswered?: boolean;
   onQuizAnswer?: (isCorrect: boolean) => void;
   onComplete?: () => void;
 }
@@ -18,6 +19,7 @@ interface SpeakerQuizSlideProps {
  */
 export function SpeakerQuizSlide({
   speaker,
+  isAnswered,
   onQuizAnswer,
   onComplete,
 }: SpeakerQuizSlideProps) {
@@ -56,6 +58,7 @@ export function SpeakerQuizSlide({
   return (
     <SlideQuiz
       quiz={quizConfig}
+      isAnswered={isAnswered}
       onAnswer={onQuizAnswer ?? (() => {})}
       onComplete={onComplete ?? (() => {})}
       emoji="🎯"

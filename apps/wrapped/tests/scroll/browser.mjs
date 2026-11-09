@@ -1,0 +1,107 @@
+import assert from 'node:assert/strict';
+import { chromium } from 'playwright';
+const base = process.env.SCROLL_TEST_URL || 'http://127.0.0.1:5173';
+const browser = await chromium.launch({ headless: true, ...(process.env.SCROLL_BROWSER_CHANNEL ? { channel: process.env.SCROLL_BROWSER_CHANNEL } : {}) });
+const page = await browser.newPage({ viewport: { width: 1280, height: 800 }, reducedMotion: 'reduce' });
+const errors = [];
+page.on('pageerror', error => errors.push(error.message));
+await page.route('**/scroll-fixture*', route => route.fulfill({ contentType: 'text/html', body: '<html><body><div id="root"></div><script type="module">import RefreshRuntime from "/@react-refresh"; RefreshRuntime.injectIntoGlobalHook(window); window.$RefreshReg$ = () => {}; window.$RefreshSig$ = () => type => type; window.__vite_plugin_react_preamble_installed__ = true;</script><script type="module" src="/tests/scroll/fixture.tsx"></script></body></html>' }));
+const active = () => page.locator('[data-active="true"]').getAttribute('id');
+const wait = id => page.waitForFunction(id => document.querySelector('[data-active="true"]')?.id === id, id);
+const wheel = (deltaY, extras = {}) => page.locator('.story-scroll').evaluate((el, values) => el.dispatchEvent(new WheelEvent('wheel', { bubbles: true, cancelable: true, deltaY: values.deltaY, ...values.extras })), { deltaY, extras });
+try {
+  await page.goto(`${base}/scroll-fixture`);
+  await wait('first');
+  assert.equal(await page.locator('#quiz').textContent(), '');
+  await wheel(100, { ctrlKey: true });
+  await wheel(5, { deltaX: 100 });
+  assert.equal(await active(), 'first', 'zoom/horizontal input leaves slide alone');
+  await page.getByLabel('Text field').focus();
+  await page.keyboard.press('ArrowDown');
+  assert.equal(await active(), 'first', 'form fields retain keyboard input');
+  await page.locator('#first').focus();
+  await page.keyboard.press('PageDown');
+  await wait('quiz');
+  await page.keyboard.press('PageDown');
+  await page.waitForTimeout(180);
+  assert.equal(await active(), 'quiz', 'unanswered quiz blocks forward');
+  await page.keyboard.press('PageUp');
+  await wait('first');
+  await page.keyboard.press('PageDown');
+  await wait('quiz');
+  await page.getByRole('button', { name: 'No', exact: true }).click();
+  await page.waitForTimeout(3000);
+  assert.equal(await active(), 'quiz', 'quiz never auto advances');
+  assert.match(await page.locator('#quiz [role=status]').textContent(), /persistent explanation/);
+  await page.getByRole('button', { name: 'Nächste Slide' }).click();
+  await wait('long');
+  await page.locator('#long').focus();
+  await page.keyboard.press('PageDown');
+  await page.waitForTimeout(180);
+  assert.equal(await active(), 'long', 'long content stays readable');
+  await page.keyboard.press('PageDown');
+  await page.waitForTimeout(180);
+  if (await active() === 'long') await page.keyboard.press('PageDown');
+  await wait('last');
+  assert.equal(await page.getByRole('button', { name: 'Nächste Slide' }).count(), 0);
+  await page.getByRole('button', { name: 'Restart' }).click();
+  await wait('first');
+  await wheel(100);
+  await wait('quiz');
+  await wheel(100);
+  await page.waitForTimeout(180);
+  assert.equal(await active(), 'quiz', 'momentum tail does not skip another slide');
+  await wheel(-100);
+  await wait('first');
+  await page.goto(`${base}/scroll-fixture?slide=long`);
+  await wait('long');
+  await page.setViewportSize({ width: 390, height: 650 });
+  await page.waitForTimeout(300);
+  assert.equal(await active(), 'long');
+  const alignment = await page.locator('#long').evaluate(el => el.getBoundingClientRect().top - el.parentElement.getBoundingClientRect().top);
+  assert.ok(Math.abs(alignment) <= 2, `resize keeps alignment: ${alignment}`);
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+  // Normal motion remains interruptible; subsequent input must not be locked out.
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto(`${base}/scroll-fixture`);
+  await wait('first');
+  await wheel(100);
+  await page.waitForTimeout(35);
+  await wheel(-100);
+  await page.waitForTimeout(600);
+  assert.equal(await active(), 'first');
+  await page.getByRole('button', { name: 'Foliennavigation', exact: true }).focus();
+  await page.keyboard.press('Enter');
+  await page.getByRole('checkbox', { name: /Lesemodus/ }).check();
+  assert.equal(await page.locator('[data-slide-id][inert]').count(), 0);
+  await page.locator('#last').evaluate(el => el.parentElement.scrollTo({ top: el.offsetTop, behavior: 'instant' }));
+  await wait('last');
+  await page.getByRole('checkbox', { name: /Lesemodus/ }).uncheck();
+  await page.keyboard.press('Escape');
+  assert.equal(await page.locator('[data-slide-id][inert]').count(), 3);
+
+  // Real browser touch events (mobile viewport), including quiz forward gating.
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto(`${base}/scroll-fixture`);
+  await wait('first');
+  const cdp = await page.context().newCDPSession(page);
+  await cdp.send('Emulation.setTouchEmulationEnabled', { enabled: true });
+  async function swipe(from, to) {
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: 180, y: from }] });
+    for (let i = 1; i <= 8; i++) {
+      await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: 180, y: from + (to - from) * i / 8 }] });
+      await page.waitForTimeout(20);
+    }
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+    await page.waitForTimeout(600);
+  }
+  await swipe(550, 100);
+  await wait('quiz');
+  await swipe(550, 100);
+  assert.equal(await active(), 'quiz');
+  await swipe(100, 550);
+  await wait('first');
+  await cdp.detach();
+  assert.deepEqual(errors, []);
+  console.log('Scroll browser checks passed (keyboard, quiz, momentum, restore, resize, long content, reduced motion, reading mode, smooth reversal, touch).');
+} finally { await browser.close(); }
