@@ -35,6 +35,7 @@ import {
 } from './utils/metrics.js';
 import * as indexer from './jobs/indexer.js';
 import * as qdrantService from './services/qdrant/index.js';
+import { createNotebookApiRouter } from './notebookApi/router.js';
 console.log('[Boot] Config loaded');
 
 // Validate configuration
@@ -65,6 +66,9 @@ app.use((req, res, next) => {
 
 // Prometheus metrics middleware (records HTTP metrics)
 app.use(metricsMiddleware());
+
+// Key-protected REST API for external notebook retrieval (Grünerator, #227).
+app.use('/api/v1', createNotebookApiRouter());
 
 console.log('[Boot] Express configured');
 

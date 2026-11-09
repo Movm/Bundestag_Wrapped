@@ -6,6 +6,7 @@
 import { getClient } from './client.js';
 import { config } from '../../config.js';
 import * as logger from '../../utils/logger.js';
+import { buildDateCondition } from './dateRange.js';
 import {
   createSearcher,
   createUpserter,
@@ -26,9 +27,13 @@ const INDEXES = [
   { field: 'speaker_state', type: 'keyword' },
   { field: 'top', type: 'keyword' },
   { field: 'wahlperiode', type: 'integer' },
-  { field: 'datum', type: 'keyword' },
+  { field: 'datum', type: 'datetime' },
   { field: 'herausgeber', type: 'keyword' },
   { field: 'chunk_type', type: 'keyword' },
+  // Speech heads (`chunk_part = 0`) for per-speech facet counts, and the
+  // protocol layout the notebook API derives speech identities from.
+  { field: 'chunk_index', type: 'integer' },
+  { field: 'chunk_part', type: 'integer' },
   // Enhanced speech parsing indexes (Phase 2)
   { field: 'speech_type', type: 'keyword' },
   { field: 'category', type: 'keyword' },
@@ -218,6 +223,18 @@ export function buildProtocolFilter(params) {
     });
   }
 
+  if (params.speakerParties && params.speakerParties.length > 0) {
+    conditions.push({ key: 'speaker_party', match: { any: params.speakerParties } });
+  }
+
+  if (params.speakers && params.speakers.length > 0) {
+    conditions.push({ key: 'speaker', match: { any: params.speakers } });
+  }
+
+  if (params.wahlperioden && params.wahlperioden.length > 0) {
+    conditions.push({ key: 'wahlperiode', match: { any: params.wahlperioden } });
+  }
+
   if (params.speakerState) {
     conditions.push({
       key: 'speaker_state',
@@ -290,15 +307,7 @@ export function buildProtocolFilter(params) {
   }
 
   if (params.dateFrom || params.dateTo) {
-    const dateCondition = { key: 'datum' };
-    if (params.dateFrom && params.dateTo) {
-      dateCondition.range = { gte: params.dateFrom, lte: params.dateTo };
-    } else if (params.dateFrom) {
-      dateCondition.range = { gte: params.dateFrom };
-    } else {
-      dateCondition.range = { lte: params.dateTo };
-    }
-    conditions.push(dateCondition);
+    conditions.push(buildDateCondition(params.dateFrom, params.dateTo));
   }
 
   if (conditions.length === 0) {
