@@ -12,6 +12,7 @@ import {
 } from '../utils/cache.js';
 import { debug, info, logApiRequest } from '../utils/logger.js';
 import { withRetry } from '../utils/retry.js';
+import { normalizeDipFaction } from '../utils/factionNames.js';
 
 /**
  * Make an authenticated request to the DIP API
@@ -203,7 +204,7 @@ export async function searchDrucksachen(params = {}, options = {}) {
   if (params.drucksachetyp) apiParams['f.drucksachetyp'] = params.drucksachetyp;
   if (params.datum_start) apiParams['f.datum.start'] = params.datum_start;
   if (params.datum_end) apiParams['f.datum.end'] = params.datum_end;
-  if (params.urheber) apiParams['f.urheber'] = params.urheber;
+  if (params.urheber) apiParams['f.urheber'] = normalizeDipFaction(params.urheber);
   if (params.aktualisiert_start) apiParams['f.aktualisiert.start'] = params.aktualisiert_start;
   if (params.cursor) apiParams['cursor'] = params.cursor;
 
@@ -321,7 +322,7 @@ export async function searchVorgaenge(params = {}, options = {}) {
   if (params.deskriptor) apiParams['f.deskriptor'] = params.deskriptor;
   if (params.datum_start) apiParams['f.datum.start'] = params.datum_start;
   if (params.datum_end) apiParams['f.datum.end'] = params.datum_end;
-  if (params.initiative) apiParams['f.initiative'] = params.initiative;
+  if (params.initiative) apiParams['f.initiative'] = normalizeDipFaction(params.initiative);
   if (params.aktualisiert_start) apiParams['f.aktualisiert.start'] = params.aktualisiert_start;
   if (params.cursor) apiParams['cursor'] = params.cursor;
 
