@@ -23,7 +23,6 @@ from .schemas import (
     # New schemas for speaker profile and party comparison
     SpeakerProfileRequest,
     SpeakerProfileResponse,
-    SignatureWord,
     PartyComparisonRequest,
     PartyComparisonResponse,
     PartyProfile,
@@ -298,7 +297,7 @@ async def get_speaker_profile(
     """Get a comprehensive profile for a speaker based on their speeches.
 
     Requires a list of speeches (pre-filtered by speaker from bundestag-mcp).
-    Returns speech statistics, top words, signature words, tone, and topics.
+    Returns speech statistics, top words, tone, and topics.
     """
     speeches = speeches_input.speeches
 

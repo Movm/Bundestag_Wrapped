@@ -208,10 +208,6 @@ class SpeakerProfileRequest(BaseModel):
 
     speaker_name: str = Field(..., description="Full name of the speaker")
     wahlperiode: int = Field(default=21, description="Electoral period")
-    include_signature_words: bool = Field(
-        default=True,
-        description="Include signature words (distinctive vocabulary)",
-    )
     include_tone: bool = Field(
         default=True,
         description="Include tone analysis scores",
@@ -220,15 +216,6 @@ class SpeakerProfileRequest(BaseModel):
         default=True,
         description="Include topic focus areas",
     )
-
-
-class SignatureWord(BaseModel):
-    """A signature word that is distinctive for a speaker."""
-
-    word: str
-    speaker_frequency: float = Field(description="Per-1000 frequency for speaker")
-    baseline_frequency: float = Field(description="Per-1000 frequency for baseline")
-    ratio: float = Field(description="How many times more frequent than baseline")
 
 
 class SpeakerProfileResponse(BaseModel):
@@ -258,10 +245,6 @@ class SpeakerProfileResponse(BaseModel):
     top_nouns: list[WordCount] = []
     top_adjectives: list[WordCount] = []
     top_verbs: list[WordCount] = []
-
-    # Signature words (distinctive vocabulary)
-    signature_nouns: list[SignatureWord] = []
-    signature_adjectives: list[SignatureWord] = []
 
     # Analysis scores
     tone_scores: ToneScores | None = None
@@ -295,15 +278,11 @@ class PartyComparisonRequest(BaseModel):
         default=True,
         description="Include topic focus comparison",
     )
-    include_distinctive_words: bool = Field(
-        default=True,
-        description="Include distinctive vocabulary per party",
-    )
     top_n: int = Field(
         default=20,
         ge=1,
         le=100,
-        description="Number of top words/distinctive words to return",
+        description="Number of top words to return",
     )
 
 
@@ -320,10 +299,6 @@ class PartyProfile(BaseModel):
     top_nouns: list[WordCount] = []
     top_adjectives: list[WordCount] = []
     top_verbs: list[WordCount] = []
-
-    # Distinctive words (used more than other parties)
-    distinctive_nouns: list[SignatureWord] = []
-    distinctive_adjectives: list[SignatureWord] = []
 
     # Analysis scores
     tone_scores: ToneScores | None = None
