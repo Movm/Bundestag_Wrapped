@@ -389,7 +389,6 @@ Analyzes all speeches from a specific speaker to create a detailed profile inclu
 
 **Vocabulary Analysis:**
 - Top nouns, adjectives, and verbs used
-- Signature words (characteristic vocabulary for this speaker)
 
 **Communication Style:**
 - Tone scores (aggression, collaboration, solution-focus, etc.)
