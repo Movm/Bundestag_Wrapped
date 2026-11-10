@@ -33,7 +33,7 @@ const STORY_TEMPLATE: readonly (SlideType | StoryGroup)[] = [
   { quiz: 'quiz-drama', slides: ['intro-drama', 'quiz-drama', 'info-drama', 'reveal-drama'] },
   { quiz: 'quiz-discriminatory', slides: ['intro-discriminatory', 'quiz-discriminatory', 'info-discriminatory', 'reveal-discriminatory'] },
   { quiz: 'quiz-common-words', slides: ['intro-common-words', 'quiz-common-words', 'reveal-common-words'] },
-  { quiz: 'quiz-youth-language', slides: ['quiz-youth-language', 'info-youth-language', 'reveal-youth-language', 'reveal-youth-parties', 'reveal-youth-speakers'] },
+  { quiz: 'quiz-youth-language', slides: ['quiz-youth-language', 'reveal-youth-language', 'info-youth-language'] },
   // Moment of the year (e.g. Timmy der Wal), from the edition's mentions.
   { quiz: 'quiz-mention', slides: ['intro-mention', 'quiz-mention', 'info-mention'] },
   // Gen Z MPs against older MPs, from the edition's generations section.

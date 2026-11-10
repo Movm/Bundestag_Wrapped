@@ -24,8 +24,6 @@ import {
   SignatureWordMovementSlide,
   TopicRiserContextSlide,
   YouthLanguageResultSlide,
-  YouthLanguagePartySlide,
-  YouthLanguageSpeakerSlide,
   MentionIntroSlide,
   MentionInfoSlide,
   GenerationIntroSlide,
@@ -211,18 +209,6 @@ function YouthLanguageResultSlideWrapper() {
   return <YouthLanguageResultSlide analysis={data.yearOverYear} />;
 }
 
-function YouthLanguagePartySlideWrapper() {
-  const data = useFullWrappedData();
-  if (!data?.yearOverYear) return null;
-  return <YouthLanguagePartySlide analysis={data.yearOverYear} />;
-}
-
-function YouthLanguageSpeakerSlideWrapper() {
-  const data = useFullWrappedData();
-  if (!data?.yearOverYear) return null;
-  return <YouthLanguageSpeakerSlide analysis={data.yearOverYear} />;
-}
-
 function MentionSlideWrapper({ part }: { part: 'intro' | 'info' }) {
   const data = useFullWrappedData();
   const mention = data?.mentions?.[0];
@@ -395,11 +381,7 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'reveal-youth-language':
       return <YouthLanguageResultSlideWrapper />;
 
-    case 'reveal-youth-parties':
-      return <YouthLanguagePartySlideWrapper />;
 
-    case 'reveal-youth-speakers':
-      return <YouthLanguageSpeakerSlideWrapper />;
 
     case 'intro-mention':
       return <MentionSlideWrapper part="intro" />;

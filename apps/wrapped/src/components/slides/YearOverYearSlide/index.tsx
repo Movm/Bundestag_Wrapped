@@ -4,6 +4,7 @@ import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
 import { TOPIC_BY_ID } from '@/shared/constants/topics';
 import type { TopicRiserContext } from '@/domain/topic-riser-context';
+import { youthWordMeaning } from '@/domain/youth-words';
 import { Enter, Slide } from '@/design-system/components/Slide';
 import { Display, Eyebrow, FitWord, Lead, Mark, Note } from '@/design-system/components/Type';
 import { ChipCloud, Delta, RankCard } from '@/design-system/components/Data';
@@ -12,12 +13,6 @@ import { PartyBlock, PartyGrid } from '@/design-system/components/PartyBlock';
 type RankingKind = 'topics' | 'words';
 
 const number = new Intl.NumberFormat('de-DE');
-
-function signed(value: number): string {
-  if (value > 0) return `+${number.format(value)}`;
-  if (value === 0) return '±0';
-  return number.format(value);
-}
 
 const RANK_TONES = ['white', 'violet', 'pink', 'card'] as const;
 
@@ -111,100 +106,72 @@ export function SignatureWordMovementSlide({ analysis }: { analysis: YearOverYea
   );
 }
 
+/**
+ * Everything about the youth words on one slide: the most frequent word with
+ * its meaning, who said it, other hits, and the candidates that never came up.
+ * The data is usually thin (a handful of hits), so it reads as text, not charts.
+ */
 export function YouthLanguageResultSlide({ analysis }: { analysis: YearOverYearAnalysis }) {
   const youth = analysis.youthLanguage;
-  const words = youth.words.filter(item => item.count > 0);
-  const currentWinner = youth.words.find(item => item.word === 'ragebait');
+  const hits = youth.words.filter(item => item.count > 0);
+  const misses = youth.words.filter(item => item.count === 0).map(item => item.word);
+  const top = hits[0];
+  const speakers = youth.bySpeaker.slice(0, 6);
+  const parties = youth.byParty.filter(item => item.party !== 'fraktionslos');
+  const meaning = top ? youthWordMeaning(top.word) : undefined;
+  const winnerLabel = top?.winnerYear ? `Jugendwort ${top.winnerYear}` : 'Jugendwort-Kandidat';
   return (
     <Slide
       shapes="corner"
-      footer={<Note className="ds-note--plate">Kontextgeprüft · Veränderung gegenüber {analysis.baseline.editionId}</Note>}
+      footer={<Note className="ds-note--plate">Kontextgeprüfte Treffer in allen Reden · Vergleich mit {analysis.baseline.editionId}</Note>}
     >
-      <div className="flex flex-col items-start gap-3">
-        <Display size="xl" face="wide">Die häufigsten <Mark>Jugendwörter.</Mark></Display>
-        <Lead>
-          {currentWinner && words[0]
-            ? `Ragebait: ${number.format(currentWinner.count)} Treffer · Bundestag-Spitze: ${words[0].word}`
-            : `Kontextgeprüfte Treffer · Vergleich mit ${analysis.baseline.editionId}`}
-        </Lead>
-      </div>
-      <ol className="m-0 flex list-none flex-col gap-3 p-0" aria-label="Häufigste Jugendwörter">
-        {words.slice(0, 5).map((item, index) => (
-          <li key={item.word}>
-            <RankCard
-              rank={index + 1}
-              label={item.word}
-              detail={`${number.format(item.count)}× · ${signed(item.change)} zum Vorjahr`}
-              tone={RANK_TONES[index % RANK_TONES.length]}
-              step={index}
-            />
-          </li>
-        ))}
-      </ol>
-    </Slide>
-  );
-}
-
-export function YouthLanguagePartySlide({ analysis }: { analysis: YearOverYearAnalysis }) {
-  const youth = analysis.youthLanguage;
-  const parties = youth.byParty.filter(item => item.party !== 'fraktionslos').slice(0, 5);
-  const additionalWords = youth.words.filter(item => item.count > 0).slice(5, 8);
-  return (
-    <Slide
-      shapes="corner"
-      footer={<Note className="ds-note--plate">Mehrdeutige Wörter zählen nur, wenn ihre Verwendung zur Jugendwort-Bedeutung passt.</Note>}
-    >
-      <div className="flex flex-col items-start gap-3">
-        <Display size="xl" face="wide">Wer nutzt <Mark>Jugendwörter?</Mark></Display>
-        <Lead>Treffer nach Fraktion.</Lead>
-      </div>
-      <ol className="m-0 flex list-none flex-col gap-3 p-0" aria-label="Jugendwort-Treffer nach Fraktion">
-        {parties.map((item, index) => (
-          <li key={item.party}>
-            <RankCard
-              rank={index + 1}
-              label={item.party}
-              detail={<span style={{ color: getPartyTone(item.party, 'light') }}>{number.format(item.count)}× Treffer</span>}
-              tone="white"
-              step={index}
-            />
-          </li>
-        ))}
-      </ol>
-      {additionalWords.length > 0 && (
+      {top ? (
+        <div className="flex flex-col items-start gap-3">
+          <Enter><Eyebrow>{winnerLabel}</Eyebrow></Enter>
+          <Display size="xl" face="wide">„{top.word}“: <Mark>{number.format(top.count)}×</Mark> im Bundestag.</Display>
+          <Lead>
+            {meaning ? `${meaning} ` : ''}
+            {top.previousCount === 0 ? `Im Vorjahr fiel es kein einziges Mal.` : `Im Vorjahr: ${number.format(top.previousCount)}×.`}
+          </Lead>
+        </div>
+      ) : (
+        <div className="flex flex-col items-start gap-3">
+          <Display size="xl" face="wide">Kein <Mark>Jugendwort</Mark> im Bundestag.</Display>
+          <Lead>Keiner der Kandidaten fiel in einer Rede.</Lead>
+        </div>
+      )}
+      {speakers.length > 0 && (
+        <div className="flex flex-col gap-3">
+          <Enter as="p" className="m-0 text-base font-semibold">Gesagt von</Enter>
+          <ul className="m-0 flex list-none flex-wrap gap-2 p-0" aria-label="Abgeordnete mit Jugendwort-Treffern">
+            {speakers.map(item => (
+              <Enter as="li" key={`${item.name}-${item.party}`} kind="pop">
+                <span data-surface="light" className="inline-flex max-w-full flex-wrap items-baseline gap-x-2 rounded-full px-4 py-2 font-wide text-lg font-extrabold">
+                  <span className="[overflow-wrap:anywhere]">{item.name}</span>
+                  <span className="text-sm font-bold" style={{ color: getPartyTone(item.party, 'light') }}>{item.party}</span>
+                  <span className="text-sm font-bold">{number.format(item.count)}×</span>
+                </span>
+              </Enter>
+            ))}
+          </ul>
+          {parties.length > 1 && (
+            <Enter as="p" className="m-0 text-base font-semibold">
+              Nach Fraktion: {parties.map(item => `${item.party} ${number.format(item.count)}×`).join(' · ')}
+            </Enter>
+          )}
+        </div>
+      )}
+      {hits.length > 1 && (
         <Enter className="flex flex-col items-start gap-3">
-          <p className="m-0 text-base font-semibold">Weitere Treffer:</p>
-          <ChipCloud words={additionalWords.map(item => `${item.word} ${number.format(item.count)}×`)} label="Weitere Jugendwörter" />
+          <p className="m-0 text-base font-semibold">Weitere Treffer</p>
+          <ChipCloud words={hits.slice(1, 6).map(item => `${item.word} ${number.format(item.count)}×`)} label="Weitere Jugendwörter" />
         </Enter>
       )}
-    </Slide>
-  );
-}
-
-export function YouthLanguageSpeakerSlide({ analysis }: { analysis: YearOverYearAnalysis }) {
-  const speakers = analysis.youthLanguage.bySpeaker.slice(0, 5);
-  return (
-    <Slide
-      shapes="corner"
-      footer={<Note className="ds-note--plate">Kontextgeprüfte Treffer – Zitate bleiben als tatsächliche Verwendung sichtbar.</Note>}
-    >
-      <div className="flex flex-col items-start gap-3">
-        <Display size="xl" face="wide">Top-<Mark>Abgeordnete.</Mark></Display>
-        <Lead>Die meisten Treffer in ihren Redebeiträgen.</Lead>
-      </div>
-      <ol className="m-0 flex list-none flex-col gap-3 p-0" aria-label="Abgeordnete mit den meisten Jugendwort-Treffern">
-        {speakers.map((item, index) => (
-          <li key={`${item.name}-${item.party}`}>
-            <RankCard
-              rank={index + 1}
-              label={item.name}
-              detail={<><span style={{ color: getPartyTone(item.party, 'light') }}>{item.party}</span> · {number.format(item.count)}× Treffer</>}
-              tone="white"
-              step={index}
-            />
-          </li>
-        ))}
-      </ol>
+      {misses.length > 0 && (
+        <Enter as="p" className="m-0 max-w-[40rem] text-base">
+          <strong>Nie gefallen:</strong> {misses.map(word => `„${word}“`).join(', ')}.
+        </Enter>
+      )}
     </Slide>
   );
 }
