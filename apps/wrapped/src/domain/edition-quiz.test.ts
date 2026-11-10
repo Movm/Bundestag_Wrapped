@@ -27,6 +27,16 @@ describe('buildEditionQuizModel', () => {
     expect(buildEditionQuizModel(fixture('Europa', 'Partei A') as never)['quiz-topics']).toEqual(first['quiz-topics']);
   });
 
+  it('asks the signature quiz about the party an edition pins', () => {
+    const data = fixture('Europa', 'AfD');
+    data.parties.push({ party: 'SPD', signatureWords: [{ word: 'bafög', ratio: 1.3 }, { word: 'Zwei', ratio: 1.2 }, { word: 'Drei', ratio: 1.1 }, { word: 'Vier', ratio: 1.05 }] });
+
+    expect(buildEditionQuizModel(data as never)['quiz-signature']?.question).toContain('AfD');
+    const pinned = buildEditionQuizModel(data as never, { version: 1, groups: [{ id: 'quiz-signature', party: 'SPD' }] })['quiz-signature'];
+    expect(pinned?.question).toContain('SPD');
+    expect(pinned?.correctAnswer).toBe('bafög');
+  });
+
   it('keeps independent later questions when the top-topic metric is missing', () => {
     const data = fixture('Europa', 'Partei A');
     data.hotTopics = [];
@@ -253,8 +263,17 @@ describe('Jugendwort speaker question', () => {
 });
 
 describe('edition quiz configuration', () => {
-  it('runs the 2026 edition as topic riser, signature words, youth language and the moment of the year', () => {
-    expect(quiz2026.groups.map(group => group.id)).toEqual(['quiz-topic-riser', 'quiz-signature', 'quiz-youth-language', 'quiz-mention']);
+  it('runs the 2026 edition as topic riser, signature words, youth language, the moment of the year and Gen Z', () => {
+    expect(quiz2026.groups.map(group => group.id)).toEqual(['quiz-topic-riser', 'quiz-signature', 'quiz-youth-language', 'quiz-mention', 'quiz-genz']);
+  });
+
+  it('asks which group has the most Gen Z MPs only with a clear leader', () => {
+    const parties = [{ party: 'DIE LINKE', count: 10 }, { party: 'AfD', count: 3 }, { party: 'GRÜNE', count: 3 }, { party: 'SPD', count: 2 }, { party: 'CDU/CSU', count: 1 }];
+    const quizOf = (list: typeof parties) => buildEditionQuizModel({ ...fixture('Europa', 'A'), generations: { speakerCount: 19, parties: list } } as never)['quiz-genz'];
+    const quiz = quizOf(parties);
+    expect(quiz?.correctAnswer).toBe('DIE LINKE');
+    expect(quiz?.options).toHaveLength(4);
+    expect(quizOf([{ party: 'A', count: 3 }, { party: 'B', count: 3 }, { party: 'C', count: 1 }, { party: 'D', count: 1 }])).toBeUndefined();
   });
 
   it('preserves the rendered 2025 quiz model when no configuration exists', () => {

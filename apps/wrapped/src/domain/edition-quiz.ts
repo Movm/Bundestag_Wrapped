@@ -115,6 +115,22 @@ function jugendwortSpeakerQuestion(
 }
 
 /**
+ * Asks which parliamentary group has the most Gen Z MPs at the lectern. Only
+ * asked when one group clearly leads, so no second option is also correct.
+ */
+function genzPartyQuestion(generations: { speakerCount: number; parties: Array<{ party: string; count: number }> }): QuizQuestion | undefined {
+  const [winner, ...others] = generations.parties;
+  if (!winner || others.some(item => item.count >= winner.count)) return undefined;
+  return question(
+    'quiz-genz',
+    'Welche Fraktion schickt die meisten Gen-Z-Abgeordneten ans Rednerpult?',
+    [winner.party, ...others.map(item => item.party)],
+    winner.party,
+    `${winner.party}: ${number.format(winner.count)} der ${number.format(generations.speakerCount)} Gen-Z-Abgeordneten, die im Plenum sprachen.`,
+  );
+}
+
+/**
  * Asks who talked most about the edition's moment of the year (e.g. "Timmy der
  * Wal"). Only asked when one MP clearly leads; the wrong options are other MPs
  * who mentioned it less often, so no second answer is correct.
@@ -134,7 +150,7 @@ function mentionQuestion(mention: { label: string; speakers: Array<{ name: strin
 }
 
 /** Builds deterministic, evidence-backed quiz questions for one edition. */
-export function buildEditionQuizModel(data: WrappedData): EditionQuizModel {
+export function buildEditionQuizModel(data: WrappedData, configuration?: EditionQuizConfiguration): EditionQuizModel {
   const model: EditionQuizModel = {};
   addQuestion(model, 'quiz-topic-riser', () => {
     const comparison = data.yearOverYear;
@@ -209,6 +225,11 @@ export function buildEditionQuizModel(data: WrappedData): EditionQuizModel {
     return mention ? mentionQuestion(mention) : undefined;
   });
 
+  addQuestion(model, 'quiz-genz', () => {
+    const generations = data.generations;
+    return generations ? genzPartyQuestion(generations) : undefined;
+  });
+
   addQuestion(model, 'quiz-topics', () => {
     const winner = topTopic(data);
     const topics = (data.topicAnalysis?.topTopics ?? []).map(item => item.topic);
@@ -216,8 +237,10 @@ export function buildEditionQuizModel(data: WrappedData): EditionQuizModel {
   });
 
   addQuestion(model, 'quiz-signature', () => {
+    // An edition can pin the party; otherwise the strongest signature word wins.
+    const pinned = configuration?.groups.find(group => group.id === 'quiz-signature')?.party;
     const signatureParty = [...data.parties]
-      .filter(party => party.signatureWords.length >= 4)
+      .filter(party => party.signatureWords.length >= 4 && (!pinned || party.party === pinned))
       .sort((a, b) => (b.signatureWords[0]?.ratio ?? 0) - (a.signatureWords[0]?.ratio ?? 0))[0];
     if (signatureParty?.signatureWords[0]) {
       const winnerWord = signatureParty.signatureWords[0];
@@ -305,5 +328,5 @@ export function buildConfiguredEditionQuizModel(
   data: WrappedData,
   configuration?: EditionQuizConfiguration,
 ): EditionQuizModel {
-  return applyEditionQuizConfiguration(buildEditionQuizModel(data), configuration);
+  return applyEditionQuizConfiguration(buildEditionQuizModel(data, configuration), configuration);
 }

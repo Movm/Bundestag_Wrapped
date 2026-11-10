@@ -1158,6 +1158,128 @@
         }
       }
     },
+    "GenerationWord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "word",
+        "ratio",
+        "zScore"
+      ],
+      "properties": {
+        "word": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ratio": {
+          "type": "number",
+          "minimum": 0
+        },
+        "zScore": {
+          "type": "number"
+        }
+      }
+    },
+    "GenerationSpeaker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "party",
+        "birthYear",
+        "speeches"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "birthYear": {
+          "type": "integer",
+          "minimum": 1900
+        },
+        "speeches": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "GenerationComparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Gen Z MPs at the lectern against older MPs; words compared at the same party mix.",
+      "required": [
+        "cohort",
+        "bornFrom",
+        "speakerCount",
+        "totalSpeakers",
+        "unknownSpeakers",
+        "parties",
+        "speakers",
+        "speechesPerSpeaker",
+        "olderSpeechesPerSpeaker",
+        "words",
+        "fewerWords"
+      ],
+      "properties": {
+        "cohort": {
+          "const": "genz"
+        },
+        "bornFrom": {
+          "type": "integer",
+          "minimum": 1900
+        },
+        "speakerCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "totalSpeakers": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "unknownSpeakers": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "parties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/PartyCount"
+          }
+        },
+        "speakers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/GenerationSpeaker"
+          }
+        },
+        "speechesPerSpeaker": {
+          "type": "number",
+          "minimum": 0
+        },
+        "olderSpeechesPerSpeaker": {
+          "type": "number",
+          "minimum": 0
+        },
+        "words": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/GenerationWord"
+          }
+        },
+        "fewerWords": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/GenerationWord"
+          }
+        }
+      }
+    },
     "Mention": {
       "type": "object",
       "additionalProperties": false,
@@ -1641,6 +1763,9 @@
           "items": {
             "$ref": "#/$defs/Mention"
           }
+        },
+        "generations": {
+          "$ref": "#/$defs/GenerationComparison"
         }
       }
     },
@@ -2096,6 +2221,10 @@
         },
         "text": {
           "$ref": "#/$defs/EditionQuizTextOverrides"
+        },
+        "party": {
+          "$ref": "#/$defs/NonEmptyString",
+          "description": "Asks a party question (quiz-signature) about this party instead of the data-picked one."
         }
       }
     },

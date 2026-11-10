@@ -28,6 +28,8 @@ import {
   YouthLanguageSpeakerSlide,
   MentionIntroSlide,
   MentionInfoSlide,
+  GenerationIntroSlide,
+  GenerationInfoSlide,
 } from '@/components/slides';
 import { SlideInfo } from '@/components/slides/shared';
 import type { SlideData } from '@/lib/slide-sharepics';
@@ -228,6 +230,12 @@ function MentionSlideWrapper({ part }: { part: 'intro' | 'info' }) {
   return part === 'intro' ? <MentionIntroSlide mention={mention} /> : <MentionInfoSlide mention={mention} />;
 }
 
+function GenerationSlideWrapper({ part }: { part: 'intro' | 'info' }) {
+  const generations = useFullWrappedData()?.generations;
+  if (!generations) return null;
+  return part === 'intro' ? <GenerationIntroSlide generations={generations} /> : <GenerationInfoSlide generations={generations} />;
+}
+
 // ============================================================================
 // Main SlideRenderer
 // ============================================================================
@@ -339,7 +347,8 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'quiz-common-words':
     case 'quiz-tone':
     case 'quiz-gender':
-    case 'quiz-mention': {
+    case 'quiz-mention':
+    case 'quiz-genz': {
       const question = quizzes[slide];
       if (!question) return null;
       return (
@@ -397,6 +406,12 @@ export const SlideRenderer = memo(function SlideRenderer({
 
     case 'info-mention':
       return <MentionSlideWrapper part="info" />;
+
+    case 'intro-genz':
+      return <GenerationSlideWrapper part="intro" />;
+
+    case 'info-genz':
+      return <GenerationSlideWrapper part="info" />;
 
 
     case 'reveal-drama':
