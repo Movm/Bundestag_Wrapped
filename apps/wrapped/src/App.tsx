@@ -23,6 +23,7 @@ const SuchePage = lazy(() => import('@/components/SuchePage').then(m => ({ defau
 const AbgeordnetePage = lazy(() => import('@/components/AbgeordnetePage').then(m => ({ default: m.AbgeordnetePage })));
 const MdbProfilePage = lazy(() => import('@/components/MdbProfilePage').then(m => ({ default: m.MdbProfilePage })));
 const MdbQuizPage = lazy(() => import('@/components/mdb-profile/MdbQuizPage').then(m => ({ default: m.MdbQuizPage })));
+const PerfectMatchPage = lazy(() => import('@/components/perfect-match/PerfectMatchPage').then(m => ({ default: m.PerfectMatchPage })));
 
 // Statistiken pages (overview + subpages) - TEMPORARILY DISABLED
 // const StatistikenLayout = lazy(() => import('@/components/statistiken/StatistikenLayout').then(m => ({ default: m.StatistikenLayout })));
@@ -167,6 +168,7 @@ export default function App() {
             <Route path="abgeordnete" element={<AbgeordnetePage />} />
             <Route path="abgeordnete/:slug" element={<MdbProfilePage />} />
             <Route path="abgeordnete/:slug/quiz" element={<MdbQuizPage />} />
+            <Route path="perfect-match" element={<PerfectMatchPage />} />
           </Route>
 
           {/* Statistiken routes - TEMPORARILY DISABLED
