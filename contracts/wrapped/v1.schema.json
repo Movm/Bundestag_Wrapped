@@ -203,7 +203,7 @@
     },
     "Mention": {
       "type": "object", "additionalProperties": false, "required": ["id", "label", "count", "speakers"],
-      "properties": { "id": { "type": "string", "pattern": "^[a-z0-9-]+$" }, "label": { "$ref": "#/$defs/NonEmptyString" }, "count": { "$ref": "#/$defs/Count" }, "speakers": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/MentionSpeaker" } } }
+      "properties": { "id": { "type": "string", "pattern": "^[a-z0-9-]+$" }, "label": { "$ref": "#/$defs/NonEmptyString" }, "count": { "$ref": "#/$defs/Count" }, "speakers": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/MentionSpeaker" } }, "background": { "type": "array", "items": { "$ref": "#/$defs/NonEmptyString" } }, "source": { "$ref": "#/$defs/NonEmptyString" } }
     },
     "YouthWordSpeaker": {
       "type": "object", "additionalProperties": false, "required": ["name", "party", "count"],

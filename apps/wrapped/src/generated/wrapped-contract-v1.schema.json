@@ -1184,6 +1184,15 @@
           "items": {
             "$ref": "#/$defs/MentionSpeaker"
           }
+        },
+        "background": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NonEmptyString"
+          }
+        },
+        "source": {
+          "$ref": "#/$defs/NonEmptyString"
         }
       }
     },

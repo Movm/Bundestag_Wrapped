@@ -299,6 +299,8 @@ export interface Mention {
   "label": NonEmptyString;
   "count": Count;
   "speakers": Array<MentionSpeaker>;
+  "background"?: Array<NonEmptyString>;
+  "source"?: NonEmptyString;
 }
 
 export interface YouthWordSpeaker {

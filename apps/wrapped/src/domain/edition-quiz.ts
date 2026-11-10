@@ -114,6 +114,25 @@ function jugendwortSpeakerQuestion(
   );
 }
 
+/**
+ * Asks who talked most about the edition's moment of the year (e.g. "Timmy der
+ * Wal"). Only asked when one MP clearly leads; the wrong options are other MPs
+ * who mentioned it less often, so no second answer is correct.
+ */
+function mentionQuestion(mention: { label: string; speakers: Array<{ name: string; party: string; count: number }> }): QuizQuestion | undefined {
+  const [winner, ...others] = mention.speakers;
+  if (!winner || others.some(speaker => speaker.count >= winner.count)) return undefined;
+  const answer = speakerLabel(winner);
+  const times = winner.count === 1 ? 'einmal' : `${number.format(winner.count)}-mal`;
+  return question(
+    'quiz-mention',
+    `Wer hat im Bundestag am häufigsten über ${mention.label} gesprochen?`,
+    [answer, ...others.slice(0, 3).map(speakerLabel)],
+    answer,
+    `${answer} erwähnte ${mention.label} ${times}, alle anderen höchstens ${others[0]?.count === 1 ? 'einmal' : `${number.format(others[0]?.count ?? 0)}-mal`}.`,
+  );
+}
+
 /** Builds deterministic, evidence-backed quiz questions for one edition. */
 export function buildEditionQuizModel(data: WrappedData): EditionQuizModel {
   const model: EditionQuizModel = {};
@@ -183,6 +202,11 @@ export function buildEditionQuizModel(data: WrappedData): EditionQuizModel {
       winner.word,
       `„${winner.word}“ kommt auf ${number.format(winner.count)} kontextuell bestätigte Treffer.${partyDetail}`,
     );
+  });
+
+  addQuestion(model, 'quiz-mention', () => {
+    const mention = data.mentions?.[0];
+    return mention ? mentionQuestion(mention) : undefined;
   });
 
   addQuestion(model, 'quiz-topics', () => {
