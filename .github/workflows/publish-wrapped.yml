@@ -63,7 +63,7 @@ jobs:
         with:
           images: ${{ env.IMAGE }}
           tags: |
-            type=raw,value=main
+            type=raw,value=main,enable={{is_default_branch}}
             type=sha,format=long
 
       # Same Dockerfile and cache scope as the CI build (ci.yml, matrix "wrapped"),
@@ -95,5 +95,11 @@ jobs:
             echo "COOLIFY_API_TOKEN or COOLIFY_WRAPPED_APP_UUID not set: image pushed, skipping redeploy."
             exit 0
           fi
-          curl -fsS "${COOLIFY_URL}/api/v1/deploy?uuid=${APP_UUID}&force=false" \
-            -H "Authorization: Bearer ${COOLIFY_API_TOKEN}"
+          # Coolify 4.2+ only accepts POST here (GET answers 405); older versions only GET.
+          url="${COOLIFY_URL}/api/v1/deploy?uuid=${APP_UUID}&force=false"
+          status=$(curl -sS -o /tmp/coolify.json -w '%{http_code}' -X POST "$url" -H "Authorization: Bearer ${COOLIFY_API_TOKEN}")
+          if [ "$status" = "405" ]; then
+            status=$(curl -sS -o /tmp/coolify.json -w '%{http_code}' "$url" -H "Authorization: Bearer ${COOLIFY_API_TOKEN}")
+          fi
+          cat /tmp/coolify.json; echo
+          if [ "$status" -ge 300 ]; then echo "Coolify deploy request failed with HTTP $status"; exit 1; fi
