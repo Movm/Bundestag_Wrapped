@@ -1,3 +1,4 @@
+import type { MatchAnimal, MatchAsset } from '@/generated/wrapped-contract-v1';
 import { TOPIC_BY_ID } from '@/shared/constants/topics';
 
 /**
@@ -15,37 +16,9 @@ import { TOPIC_BY_ID } from '@/shared/constants/topics';
  * The percentage shown is that sum × 100, so 100 % means a perfect answer set.
  */
 
-export interface MatchWord {
-  word: string;
-  topic: string | null;
-}
-
-export interface MatchAnimal {
-  id: string;
-  emoji: string;
-  name: string;
-  count: number;
-}
-
-export interface MatchMp {
-  slug: string;
-  name: string;
-  party: number;
-  animal: number;
-  /** Topic score × 100, in the order of `MatchData.topics`. */
-  topics: number[];
-  /** Smoothed ratio vs. the Bundestag × 10, in the order of `MatchData.words`. */
-  words: number[];
-}
-
-export interface MatchData {
-  schemaVersion: number;
-  parties: string[];
-  topics: string[];
-  words: MatchWord[];
-  animals: MatchAnimal[];
-  mps: MatchMp[];
-}
+export type { MatchAnimal, MatchMp, MatchWord } from '@/generated/wrapped-contract-v1';
+/** `match.json`: topic scores × 100 and smoothed word ratios × 10, column-aligned with `topics` / `words`. */
+export type MatchData = MatchAsset;
 
 export interface MatchAnswers {
   /** Party names, most preferred first. */
@@ -84,6 +57,7 @@ export function formatTimes(ratio: number): string {
   return `${ratio.toLocaleString('de-DE', { maximumFractionDigits: 1 })}×`;
 }
 
+const LIST = new Intl.ListFormat('de', { type: 'conjunction' });
 const clamp01 = (value: number) => Math.min(1, Math.max(0, value));
 
 export function wordPoints(ratio: number): number {
@@ -120,7 +94,7 @@ export function scoreMatches(data: MatchData, answers: MatchAnswers, limit = 3):
     const reasons: string[] = [];
     reasons.push(item.rank === 0 ? `${item.party} ist deine Nr. 1` : `${item.party} auf deinem Platz ${item.rank + 1}`);
     const sharedTopics = answers.topics.filter((_, slot) => item.shares[slot] >= TOPIC_REASON_SHARE).map(topicName);
-    if (sharedTopics.length) reasons.push(`Spricht viel über ${sharedTopics.join(' & ')}`);
+    if (sharedTopics.length) reasons.push(`Spricht viel über ${LIST.format(sharedTopics)}`);
     const best = item.ratios.reduce((bestIndex, ratio, index) => (ratio > (item.ratios[bestIndex] ?? 0) ? index : bestIndex), 0);
     const bestRatio = item.ratios[best];
     if (bestRatio !== undefined && bestRatio >= WORD_REASON_RATIO) {

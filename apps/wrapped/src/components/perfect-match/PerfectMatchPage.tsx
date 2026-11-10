@@ -38,9 +38,11 @@ function PerfectMatch({ data, homeUrl, profileUrl }: { data: MatchData; homeUrl:
     [step, data, order, slots, words, liked],
   );
 
-  const firstRender = useRef(true);
+  const shown = useRef(`${attempt}-${step}`);
   useEffect(() => {
-    if (firstRender.current) { firstRender.current = false; return; }
+    const key = `${attempt}-${step}`;
+    if (shown.current === key) return;
+    shown.current = key;
     window.scrollTo(0, 0);
     stageRef.current?.focus({ preventScroll: true });
   }, [step, attempt]);

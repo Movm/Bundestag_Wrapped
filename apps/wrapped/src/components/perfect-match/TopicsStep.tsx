@@ -87,13 +87,16 @@ export function TopicsStep({ topics, slots, onChange, onDone }: { topics: string
                 }}
                 onDrag={(_, info) => setHoverOnChange(hitTest(info))}
                 onDragEnd={(_, info) => {
+                  // The click that may follow this pointerup must not count as a tap;
+                  // reset afterwards so a drag without a click can't swallow the next tap.
+                  window.setTimeout(() => { dragged.current = false; });
                   const target = hitTest(info);
                   setHoverOnChange(-1);
                   setDragging(null);
                   if (target >= 0) place(topic, target);
                 }}
                 onClick={() => {
-                  if (dragged.current) { dragged.current = false; return; }
+                  if (dragged.current) return;
                   place(topic, -1);
                 }}
               >

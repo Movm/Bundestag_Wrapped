@@ -9,7 +9,7 @@
  */
 .pm {
   display: flex; flex-direction: column; overflow: hidden;
-  padding: clamp(1.25rem, 3vw, 2.5rem) var(--mp-pad-right) max(1.5rem, env(safe-area-inset-bottom, 0px)) var(--mp-pad-left);
+  padding: 5rem var(--mp-pad-right) max(1.5rem, env(safe-area-inset-bottom, 0px)) var(--mp-pad-left);
 }
 .pm::before { content: ''; position: absolute; width: 56vw; max-width: 50rem; aspect-ratio: 1; border-radius: 50%; top: -24vw; right: -16vw; background: #2a1550; }
 .pm::after { content: ''; position: absolute; width: 22vw; max-width: 20rem; aspect-ratio: 1; background: var(--color-wr-pink); bottom: -9vw; left: -6vw; transform: rotate(18deg); }
@@ -24,7 +24,7 @@
 .pm__close { flex: none; display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; background: #fff; color: var(--color-wr-ink); }
 
 .pm__stage { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: clamp(1.5rem, 3.5vw, 2.5rem); width: 100%; max-width: 80rem; margin: 0 auto; padding-top: clamp(1.75rem, 4vw, 3.5rem); }
-.pm__title { margin: 0; max-width: 70rem; font-weight: 900; font-stretch: 115%; font-size: clamp(2rem, 1.25rem + 3.4vw, 4.875rem); line-height: 0.95; letter-spacing: -0.035em; text-transform: uppercase; text-wrap: balance; overflow-wrap: anywhere; hyphens: auto; }
+.pm__title { margin: 0; max-width: 70rem; font-weight: 900; font-stretch: 115%; font-size: clamp(2rem, 1.25rem + 3.4vw, 4.875rem); line-height: 0.95; letter-spacing: -0.035em; text-transform: uppercase; text-wrap: balance; overflow-wrap: anywhere; }
 .pm__hint { margin: 0; max-width: 34rem; font-size: 1.0625rem; font-weight: 600; line-height: 1.35; color: var(--mp-muted); }
 .pm__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; }
 .pm .mp-btn:disabled { opacity: 0.35; cursor: not-allowed; }
@@ -49,7 +49,7 @@
 .pm-grip span { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 
 /* ── 2 · Topics into slots ─────────────────────────────────────── */
-.pm-slots { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 0.875rem; }
+.pm-slots { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr)); gap: 0.875rem; }
 .pm-slot {
   min-height: clamp(6.875rem, 12vw, 9.375rem); border-radius: 1.75rem; border: 2px dashed #3a2a55; background: transparent; color: #8c7ca8;
   padding: 1.25rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; gap: 0.5rem; text-align: left;
@@ -140,3 +140,4 @@
 .pm__note { margin: 0; font-size: 0.9375rem; color: var(--mp-muted); }
 
 .pm-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.pm__stage:focus { outline: none; }
