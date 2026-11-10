@@ -96,8 +96,8 @@ describe('active slide plan', () => {
       'info-word-riser',
       'reveal-word-risers',
       'quiz-youth-language',
-      'reveal-youth-language',
       'info-youth-language',
+      'reveal-youth-language',
       'share',
       'finale',
     ]);
@@ -125,8 +125,8 @@ describe('active slide plan', () => {
     const configuration = { version: 1 as const, groups: [{ id: 'quiz-youth-language' }, { id: 'quiz-mention' }] };
     expect(buildActiveSlidePlan(quizModel(['quiz-youth-language']), [], configuration)).not.toContain('intro-mention');
     const plan = buildActiveSlidePlan(quizModel(['quiz-youth-language', 'quiz-mention']), [], configuration);
-    expect(plan.slice(plan.indexOf('info-youth-language'), plan.indexOf('info-youth-language') + 4)).toEqual([
-      'info-youth-language', 'intro-mention', 'quiz-mention', 'info-mention',
+    expect(plan.slice(plan.indexOf('reveal-youth-language'), plan.indexOf('reveal-youth-language') + 4)).toEqual([
+      'reveal-youth-language', 'intro-mention', 'quiz-mention', 'info-mention',
     ]);
   });
 });

@@ -139,8 +139,8 @@ export const ShareSlide = memo(function ShareSlide({
     <div ref={containerRef}>
       <Slide shapes="ring">
         <div className="flex flex-col items-start gap-3">
-          <Display size="lg" face="wide">Teile dein <Mark>Ergebnis!</Mark></Display>
-          <Lead>Erstelle dein persönliches Sharepic.</Lead>
+          <Display size="lg" face="wide">Wie gut kennst du den <Mark>Bundestag?</Mark></Display>
+          <Lead>Teile dein Ergebnis. Schaffen deine Freund:innen mehr als {correctCount} von {totalQuestions}?</Lead>
         </div>
         <label className="share-name">
           <span className="sr-only">Dein Name (optional)</span>

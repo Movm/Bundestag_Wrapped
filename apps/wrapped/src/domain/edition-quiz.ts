@@ -106,10 +106,10 @@ function jugendwortSpeakerQuestion(
   const meaning = youthWordMeaning(word.word) ? ` ${youthWordMeaning(word.word)}` : '';
   return question(
     'quiz-youth-language',
-    `Wer hat das Jugendwort ${word.winnerYear} „${word.word}“ im Bundestag gesagt?`,
+    `Das Jugendwort ${word.winnerYear} heißt „${word.word}“. Wer hat es im Bundestag gesagt?`,
     [answer, ...picked.map(speakerLabel)],
     answer,
-    `${answer} sagte „${word.word}“ ${times(winner.count)}.${alsoSaid}${meaning}`,
+    `${answer} sagte „${word.word}“ ${times(winner.count)}.${alsoSaid}${meaning} Das sagt nur, dass das Wort fiel, nicht, wie es gemeint war.`,
   );
 }
 
@@ -122,7 +122,7 @@ function genzPartyQuestion(generations: { speakerCount: number; parties: Array<{
   if (!winner || others.some(item => item.count >= winner.count)) return undefined;
   return question(
     'quiz-genz',
-    'Welche Fraktion schickt die meisten Gen-Z-Abgeordneten ans Rednerpult?',
+    'Welche Fraktion hat die meisten Gen-Z-Abgeordneten, die gesprochen haben?',
     [winner.party, ...others.map(item => item.party)],
     winner.party,
     `${winner.party}: ${number.format(winner.count)} der ${number.format(generations.speakerCount)} Gen-Z-Abgeordneten, die im Plenum sprachen.`,
@@ -141,10 +141,10 @@ function mentionQuestion(mention: { label: string; speakers: Array<{ name: strin
   const times = winner.count === 1 ? 'einmal' : `${number.format(winner.count)}-mal`;
   return question(
     'quiz-mention',
-    `Wer hat im Bundestag am häufigsten über ${mention.label} gesprochen?`,
+    `Wer hat ${mention.label} im Plenum am häufigsten erwähnt?`,
     [answer, ...others.slice(0, 3).map(speakerLabel)],
     answer,
-    `${answer} erwähnte ${mention.label} ${times}, alle anderen höchstens ${others[0]?.count === 1 ? 'einmal' : `${number.format(others[0]?.count ?? 0)}-mal`}.`,
+    `${answer} erwähnte ${mention.label} ${times}, alle anderen höchstens ${others[0]?.count === 1 ? 'einmal' : `${number.format(others[0]?.count ?? 0)}-mal`}. Gezählt wird, wie oft der Name fiel, nicht in welchem Zusammenhang.`,
   );
 }
 
@@ -162,10 +162,10 @@ export function buildEditionQuizModel(data: WrappedData, configuration?: Edition
       : `von Platz ${winner.previousRank} auf Platz ${winner.currentRank}`;
     return question(
       'quiz-topic-riser',
-      `Welches Thema ist gegenüber ${baseline} am stärksten aufgestiegen?`,
+      `Über welches Thema wird gegenüber ${baseline} deutlich mehr geredet?`,
       picked.options,
       winner.label,
-      `${winner.label} stieg ${movement}.`,
+      `${winner.label} stieg ${movement}. Gemessen daran, wie viele Wörter in den Reden zum Thema gehören, nicht an der Zahl der Reden.`,
     );
   });
 
@@ -243,7 +243,11 @@ export function buildEditionQuizModel(data: WrappedData, configuration?: Edition
       .sort((a, b) => (b.signatureWords[0]?.ratio ?? 0) - (a.signatureWords[0]?.ratio ?? 0))[0];
     if (signatureParty?.signatureWords[0]) {
       const winnerWord = signatureParty.signatureWords[0];
-      return question('quiz-signature', `Welches Wort nutzt ${signatureParty.party} am meisten im Vergleich zu anderen?`, signatureParty.signatureWords.map(word => word.word), winnerWord.word, `„${winnerWord.word}“ ist bei ${signatureParty.party} ${winnerWord.ratio.toLocaleString('de-DE', { maximumFractionDigits: 1 })}× häufiger vertreten.`);
+      const ratio = winnerWord.ratio.toLocaleString('de-DE', { maximumFractionDigits: 1 });
+      // The frozen 2025 edition (no configuration) keeps its published wording.
+      return configuration
+        ? question('quiz-signature', `Welches Wort fällt bei ${signatureParty.party} im Vergleich zu den anderen Fraktionen besonders auf?`, signatureParty.signatureWords.map(word => word.word), winnerWord.word, `„${winnerWord.word}“ sagt ${signatureParty.party} ${ratio}× so oft wie die anderen Fraktionen im Schnitt, gemessen pro 1.000 Wörter.`)
+        : question('quiz-signature', `Welches Wort nutzt ${signatureParty.party} am meisten im Vergleich zu anderen?`, signatureParty.signatureWords.map(word => word.word), winnerWord.word, `„${winnerWord.word}“ ist bei ${signatureParty.party} ${ratio}× häufiger vertreten.`);
     }
     return undefined;
   });

@@ -225,7 +225,7 @@ describe('Jugendwort speaker question', () => {
 
   it('asks who said the word, excludes the other sayer and mentions them', () => {
     const quiz = quizOf(build(sayers, [...sayers, ...others]));
-    expect(quiz?.question).toBe('Wer hat das Jugendwort 2026 „ragebait“ im Bundestag gesagt?');
+    expect(quiz?.question).toBe('Das Jugendwort 2026 heißt „ragebait“. Wer hat es im Bundestag gesagt?');
     // tie: alphabetically first name is the answer, the other sayer is not offered
     expect(quiz?.correctAnswer).toBe('Marcel Emmerich (GRÜNE)');
     expect(quiz?.options).toEqual(['Marcel Emmerich (GRÜNE)', 'Beatrix von Storch (AfD)', 'Mandy Eißing (DIE LINKE)', 'Caroline Bosbach (CDU/CSU)']);
@@ -323,7 +323,7 @@ describe('edition quiz configuration', () => {
     ];
     const base = fixture('Europa', 'Partei A') as WrappedData;
     const quiz = buildEditionQuizModel({ ...base, mentions: [{ id: 'timmy', label: 'Timmy der Wal', count: 5, speakers }] })['quiz-mention'];
-    expect(quiz?.question).toBe('Wer hat im Bundestag am häufigsten über Timmy der Wal gesprochen?');
+    expect(quiz?.question).toBe('Wer hat Timmy der Wal im Plenum am häufigsten erwähnt?');
     expect(quiz?.correctAnswer).toBe('Zoe (GRÜNE)');
     expect(quiz?.options).toHaveLength(4);
     const tie = speakers.map(speaker => ({ ...speaker, count: 1 }));

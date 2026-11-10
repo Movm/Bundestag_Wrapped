@@ -5,21 +5,21 @@
 
 export const END_SLIDE_CONTENT = {
   header: {
-    label: 'Das war',
+    label: 'Dein Bundestagsjahr',
     title: 'Bundestag Wrapped',
   },
 
   message: {
     primary:
-      'Die meisten demokratischen Politiker:innen leisten harte Arbeit für unser Land – unabhängig von ihrer Partei. Danke dafür!',
+      'Hinter jeder Zahl stecken Menschen, die sich im Plenum zusammenraufen. Danke an alle Abgeordneten, die dafür im Plenum stehen.',
     secondary:
-      'Dies ist ein Spaßprojekt und keine wissenschaftliche Analyse. Mehr zur Methodik findest du in der Dokumentation oder auf GitHub.',
+      'Ein Spaßprojekt, keine wissenschaftliche Analyse. Wie wir zählen, steht in der Dokumentation.',
   },
 
   buttons: {
-    restart: 'Nochmal starten',
+    restart: 'Nochmal spielen',
     speakers: 'Abgeordnete',
-    documentation: 'Dokumentation',
+    documentation: 'Wie wir zählen',
     github: 'GitHub',
   },
 
@@ -42,3 +42,17 @@ export const END_SLIDE_CONTENT = {
     },
   ],
 } as const;
+
+/** Reader type by share of correct quiz answers, shown on the end slide. */
+const QUIZ_TIERS = [
+  { min: 0.76, label: 'Parlamentsprofi', line: 'So viel Gespür hat nicht jeder Abgeordnete.' },
+  { min: 0.51, label: 'Stammgast im Plenum', line: 'Du weißt, wer wo sitzt.' },
+  { min: 0.26, label: 'Zuschauer:in auf der Tribüne', line: 'Bald bist du Stammgast.' },
+  { min: 0, label: 'Frischer Besuch', line: 'Das Beste kommt noch.' },
+] as const;
+
+export function quizTier(correct: number, total: number): (typeof QUIZ_TIERS)[number] | null {
+  if (total <= 0) return null;
+  const share = correct / total;
+  return QUIZ_TIERS.find(tier => share >= tier.min) ?? null;
+}

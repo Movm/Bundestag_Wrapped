@@ -16,8 +16,8 @@ export const INTRO_SLIDES: Record<string, IntroSlideContent> = {
   },
   'intro-vocabulary': {
     emoji: '📚',
-    title: 'Jede Fraktion hat ihre Lieblingswörter.',
-    subtitle: 'Erkennst du das auffälligste Wort einer Fraktion?',
+    title: 'Jede Fraktion hat Wörter, die bei ihr auffallen.',
+    subtitle: 'Soweit die Themen. Jetzt zu den Wörtern dahinter: Erkennst du eins?',
   },
   'intro-speeches': {
     emoji: '🎤',
@@ -31,7 +31,7 @@ export const INTRO_SLIDES: Record<string, IntroSlideContent> = {
   },
   'intro-discriminatory': {
     emoji: '⚠️',
-    title: 'Die Atmosphäre im Bundestag wird rauer?.',
+    title: 'Wird der Ton im Bundestag rauer?',
     subtitle: 'Welche Fraktion fällt besonders negativ auf?',
   },
   'intro-common-words': {

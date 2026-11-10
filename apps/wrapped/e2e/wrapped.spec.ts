@@ -87,7 +87,7 @@ test('completes the fixture journey with a quiz gate, mixed answers, and the act
     await scrollToNextSlide(page, slide, nextSlide);
   }
 
-  await expect(page.locator('[data-slide-id="share"]')).toContainText('Teile dein Ergebnis!');
+  await expect(page.locator('[data-slide-id="share"]')).toContainText('Wie gut kennst du den Bundestag?');
   await expect(page.locator('[data-slide-id^="quiz-"]')).toHaveCount(6);
   await expect.poll(() => page.evaluate(() => localStorage.getItem('quiz-storage-v2'))).toContain('"quiz-signature":false');
   await expect.poll(() => page.evaluate(() => localStorage.getItem('quiz-storage-v2'))).toContain('"quiz-topics":true');
@@ -113,7 +113,7 @@ test('uses the active edition for share and download output', async ({ page }) =
   await jumpToSlide(page, 'share');
 
   const shareSlide = page.locator('[data-slide-id="share"]');
-  await expect(shareSlide.getByRole('heading', { name: 'Teile dein Ergebnis!' })).toBeVisible();
+  await expect(shareSlide.getByRole('heading', { name: 'Wie gut kennst du den Bundestag?' })).toBeVisible();
   await expect(shareSlide.getByRole('button', { name: 'Teilen' }).first()).toBeVisible();
 
   const downloadPromise = page.waitForEvent('download');

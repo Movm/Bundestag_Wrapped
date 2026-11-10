@@ -14,16 +14,16 @@ export interface InfoSlideContent {
 
 export const INFO_SLIDES: Record<string, InfoSlideContent> = {
   'info-disclaimer': {
-    emoji: '⚠️',
-    title: 'Hinweis',
-    eyebrow: 'Experiment',
-    body: 'Die Daten wurden mit Natural Language Processing analysiert und können fehlerhaft sein.',
-    highlight: 'Natural Language Processing',
+    emoji: '🧮',
+    title: 'Wir zählen, wir urteilen nicht.',
+    eyebrow: 'So zählen wir',
+    body: 'Gleiche Regeln für alle Fraktionen. Zahlen sind Zählungen, keine Meinung. Verzählt haben wir uns vielleicht trotzdem.',
+    highlight: 'Zahlen sind Zählungen, keine Meinung.',
   },
   'info-topic-riser': {
     emoji: '📈',
-    title: 'Was bedeutet „aufgestiegen“?',
-    body: 'Wir vergleichen die Rangfolge der Bundestagsthemen im selben Kalenderzeitraum wie im Vorjahr. Je weiter ein Thema gegenüber 2025 nach vorn rückt, desto größer ist sein Aufstieg.',
+    title: 'Was heißt „aufgestiegen“?',
+    body: 'Wir vergleichen mit demselben Zeitraum im Vorjahr. Der Rang zeigt, wie viele Wörter in den Reden zum Thema gehören.',
   },
   'info-word-riser': {
     emoji: '🔤',
@@ -32,8 +32,8 @@ export const INFO_SLIDES: Record<string, InfoSlideContent> = {
   },
   'info-youth-language': {
     emoji: '🗣️',
-    title: 'Wie zählen wir Jugendwörter?',
-    body: 'Wir durchsuchen alle Reden nach den zehn Kandidaten, die Langenscheidt für das Jugendwort 2026 nominiert hat. „Schere“ lassen wir weg: Im Bundestag ist damit fast immer die Gerechtigkeitsschere gemeint. Mehrdeutige Wörter wie „peak“ oder „67“ zählen nur, wenn der Satz zur Jugendwort-Bedeutung passt. Zitate zählen mit – auch sie fielen im Plenum.',
+    title: 'So zählen wir Jugendwörter',
+    body: 'Zehn Kandidaten von Langenscheidt, alle Reden. Zitate zählen mit, mehrdeutige Wörter nur im passenden Zusammenhang.',
   },
   'info-topics': {
     emoji: '📊',
@@ -47,8 +47,8 @@ export const INFO_SLIDES: Record<string, InfoSlideContent> = {
   },
   'info-signature': {
     emoji: '📊',
-    title: 'Was macht die Parteien aus?',
-    body: 'Signature Words sind Wörter, die eine Partei im Vergleich zu anderen besonders häufig verwendet.',
+    title: 'Was heißt „typisch“?',
+    body: 'Häufiger als bei den anderen Fraktionen. Nicht besser, nicht schlechter, nur anders.',
   },
   'info-speeches': {
     emoji: '🎤',
