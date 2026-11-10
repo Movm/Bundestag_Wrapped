@@ -1,4 +1,4 @@
-import { useRef, useImperativeHandle, forwardRef, useLayoutEffect, useEffect, useState, useId, Children, isValidElement, type RefObject, type ReactNode } from 'react';
+import { useCallback, useRef, useImperativeHandle, forwardRef, useLayoutEffect, useEffect, useState, useId, Children, isValidElement, type RefObject, type ReactNode } from 'react';
 import { ProgressSegments } from '@/design-system/components/ProgressSegments';
 import { surfaceForSlide } from '@/design-system/surfaces';
 import { MotionConfig } from 'motion/react';
@@ -231,6 +231,8 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
       get containerRef() { return containerRef.current; },
     }), [containerRef]);
 
+    const goNext = useCallback((fromId: string) => controller.current.next(fromId), []);
+
     return (
       <MotionConfig reducedMotion="user">
         <div className="story-shell">
@@ -238,7 +240,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
           <div ref={containerRef} data-story-scroll tabIndex={0} role="region" aria-label="Wrapped-Folien"
             data-reading-mode={readingMode}
             className={cn('story-scroll relative overflow-y-auto overscroll-contain', className)}>
-            <StoryContext value={{ activeId, readingMode }}>{children}</StoryContext>
+            <StoryContext value={{ activeId, readingMode, next: goNext }}>{children}</StoryContext>
           </div>
           <ProgressSegments index={position.index} count={position.count} surface={surfaceForSlide(activeId)} />
           <span className="sr-only" role="status" aria-live="polite">Folie {position.index + 1} von {position.count}</span>

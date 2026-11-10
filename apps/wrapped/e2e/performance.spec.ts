@@ -1,4 +1,4 @@
-import { jumpToSlide } from './story-navigation';
+import { jumpToSlide, closeQuizResult } from './story-navigation';
 import { expect, test } from 'playwright/test';
 import { installEditionFixtures } from './fixtures';
 
@@ -63,6 +63,7 @@ test('does not let an old quiz overlay pull the reader back after navigation', a
   const answer = quiz.getByRole('button').first();
   await answer.click();
   await expect(answer).toBeDisabled();
+  await closeQuizResult(page);
   const target = page.locator('[data-slide-id="reveal-drama"]');
   await jumpToSlide(page, (await target.getAttribute('id'))!);
   await expect(target).toHaveAttribute('data-slide-active', 'true');

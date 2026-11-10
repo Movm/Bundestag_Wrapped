@@ -101,7 +101,7 @@
 .ds-display {
   margin: 0;
   hyphenate-limit-chars: 12 5 5;
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: -0.04em;
@@ -121,17 +121,16 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  font-family: var(--font-wide);
-  font-weight: 800;
-  font-stretch: 110%;
+  font-family: var(--font-mono);
+  font-weight: 700;
   font-size: 0.8125rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   line-height: 1.2;
 }
 .ds-eyebrow--contrast { background: var(--surface-contrast); color: var(--surface-on-contrast); padding: 0.45em 0.9em; border-radius: 999px; }
 .ds-lead { margin: 0; max-width: 40rem; font-size: clamp(1.0625rem, 0.95rem + 0.6vw, 1.5rem); font-weight: 600; line-height: 1.35; text-wrap: pretty; }
-.ds-note { margin: 0; max-width: 34rem; font-size: 0.875rem; line-height: 1.5; color: var(--surface-on-muted); }
+.ds-note { margin: 0; max-width: 34rem; font-family: var(--font-mono); font-size: 0.8125rem; line-height: 1.5; color: var(--surface-on-muted); }
 .ds-number { font-family: var(--font-wide); font-weight: 900; font-stretch: 125%; letter-spacing: -0.05em; line-height: 0.8; font-variant-numeric: tabular-nums; }
 
 /* ─── Buttons ──────────────────────────────────────────────────────── */
@@ -183,7 +182,7 @@
 .ds-rank__number { font-family: var(--font-wide); font-weight: 900; font-stretch: 125%; line-height: 0.8; letter-spacing: -0.05em; color: var(--surface-display-accent); font-variant-numeric: tabular-nums; }
 .ds-rank__text { display: flex; flex-direction: column; gap: 0.35rem; min-width: 0; }
 .ds-rank__label { font-family: var(--font-wide); font-weight: 900; font-stretch: 110%; line-height: 0.95; letter-spacing: -0.03em; overflow-wrap: break-word; }
-.ds-rank__detail { font-size: clamp(0.8125rem, 0.75rem + 0.3vw, 1rem); color: var(--surface-on-muted); font-variant-numeric: tabular-nums; }
+.ds-rank__detail { font-family: var(--font-mono); font-size: clamp(0.8125rem, 0.75rem + 0.3vw, 1rem); color: var(--surface-on-muted); font-variant-numeric: tabular-nums; }
 .ds-rank--step-0 .ds-rank__number { font-size: clamp(3rem, 1.5rem + min(6vw, 9vh), 8.75rem); }
 .ds-rank--step-0 .ds-rank__label { font-size: clamp(1.75rem, 1rem + min(3.4vw, 5vh), 4.5rem); }
 .ds-rank--step-1 { margin-left: clamp(0rem, 4vw - 1.5rem, 4rem); }
@@ -198,7 +197,7 @@
 .ds-bars { display: flex; flex-direction: column; gap: 1.125rem; padding: clamp(1.25rem, 1rem + 1.2vw, 2rem); }
 .ds-bars__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem 1rem; }
 .ds-bars__title { margin: 0; font-family: var(--font-wide); font-weight: 900; font-stretch: 110%; font-size: clamp(1.25rem, 1rem + 0.8vw, 1.75rem); letter-spacing: -0.02em; line-height: 1.1; }
-.ds-bars__legend { font-family: var(--font-wide); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--surface-on-muted); }
+.ds-bars__legend { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--surface-on-muted); }
 .ds-bars__table { width: 100%; border-collapse: separate; border-spacing: 0 0.75rem; margin-block: -0.75rem; }
 .ds-bars__table th { text-align: left; font-weight: 800; font-size: 1.0625rem; padding-right: 1rem; white-space: nowrap; width: 1%; }
 .ds-bars__track { position: relative; height: 1.75rem; }
@@ -253,7 +252,7 @@
   cursor: pointer;
   touch-action: manipulation;
 }
-.ds-choice__letter { font-family: var(--font-wide); font-weight: 800; font-size: clamp(0.875rem, 0.8rem + 0.4vw, 1.25rem); font-variant-numeric: tabular-nums; }
+.ds-choice__letter { font-family: var(--font-mono); font-weight: 700; font-size: clamp(0.875rem, 0.8rem + 0.4vw, 1.25rem); font-variant-numeric: tabular-nums; }
 .ds-choice__label { font-family: var(--font-wide); font-weight: 900; letter-spacing: -0.03em; line-height: 0.95; overflow-wrap: break-word; min-width: 0; }
 .ds-choice__tag { font-family: var(--font-wide); font-size: 0.875rem; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.4em 0.8em; border-radius: 999px; background: var(--surface-contrast); color: var(--surface-on-contrast); white-space: nowrap; }
 .ds-choice[aria-disabled='true'] { cursor: default; }
@@ -366,4 +365,30 @@
   0% { transform: translate(0, 0) scale(0) rotate(0deg); opacity: 1; }
   30% { transform: translate(calc(var(--x) * 0.4), calc(var(--y) * 0.4)) scale(1) rotate(calc(var(--r) * 0.4)); opacity: 1; }
   100% { transform: translate(var(--x), var(--y)) scale(0.5) rotate(var(--r)); opacity: 0; }
+}
+
+/* Result dialog (AccessibleDialog): the design's pop-up card. Solid scrim from
+   .accessible-dialog::backdrop, no blur. Only transform/opacity animate. */
+.ds-result-dialog { display: flex; align-items: center; justify-content: center; min-height: 100%; padding: max(1.25rem, env(safe-area-inset-top, 0px)) max(1.25rem, env(safe-area-inset-right, 0px)) max(1.25rem, env(safe-area-inset-bottom, 0px)) max(1.25rem, env(safe-area-inset-left, 0px)); }
+.ds-result-dialog__card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 35rem;
+  max-height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: clamp(1.5rem, 1rem + 2vw, 2.75rem);
+  border-radius: clamp(1.5rem, 1rem + 1.6vw, 2.25rem);
+  animation: ds-result-pop 0.6s var(--ease-wr-pop) both;
+}
+.ds-result-dialog__shape { position: absolute; width: 20rem; aspect-ratio: 1; border-radius: 50%; top: -9rem; right: -7.5rem; background: var(--surface-shape-b); opacity: 0.35; pointer-events: none; }
+.ds-result-dialog__verdict { position: relative; margin: 0; font-family: var(--font-wide); font-weight: 900; font-stretch: 125%; font-size: clamp(2.5rem, 1.5rem + min(4vw, 6vh), 5.5rem); line-height: 0.85; letter-spacing: -0.045em; text-transform: uppercase; }
+.ds-result-dialog__answer { position: relative; margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; font-family: var(--font-wide); font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem); line-height: 1.1; overflow-wrap: anywhere; }
+.ds-result-dialog__actions { position: relative; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+@keyframes ds-result-pop {
+  from { opacity: 0; transform: translateY(3.75rem) scale(0.85) rotate(-4deg); }
+  to { opacity: 1; transform: none; }
 }
