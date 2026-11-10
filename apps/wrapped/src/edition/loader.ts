@@ -71,6 +71,11 @@ export async function fetchJson(url: string, timing?: EditionAssetTiming): Promi
   } catch {
     throw new EditionLoadError('network', `Network error while loading ${url}`, url);
   }
+  if (response.status === 401 && typeof window !== 'undefined' && !window.location.pathname.startsWith('/zugang')) {
+    // A protected preview without the password cookie (nginx answers data with 401).
+    const here = window.location.pathname + window.location.search + window.location.hash;
+    window.location.assign(`/zugang/?next=${encodeURIComponent(here)}`);
+  }
   if (!response.ok) {
     const kind = response.status === 404 ? 'missing-asset' : 'http';
     throw new EditionLoadError(kind, `${url}: ${response.status} ${response.statusText}`, url);

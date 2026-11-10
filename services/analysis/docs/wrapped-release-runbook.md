@@ -36,10 +36,13 @@ Keep `currentEdition` set to **2025** until the 2026 launch is explicitly approv
 ### Protected 2026 preview deployment
 
 The production registry may contain the 2026 preview only with
-`"access": "basic-auth"`; it must not be `currentEdition`. The web container
-requires `PREVIEW_ACCESS_CODE` at runtime and accepts an optional
-`PREVIEW_ACCESS_USER` (default: `preview`). Nginx protects `/2026`, all nested
-preview routes, and `/data/2026/`. The sitemap includes published editions only,
+`"access": "basic-auth"` (the contract value; the gate is now a password page);
+it must not be `currentEdition`. The web container requires
+`PREVIEW_ACCESS_CODE` at runtime. Visitors without the `gartenzaun` cookie are
+sent from `/2026` and all nested routes to `/zugang/`, which asks for the code
+(case-insensitive) and sets the cookie for 30 days; `/data/2026/` answers 401.
+Share link: `/zugang/?code=<code>` unlocks without typing. This is a garden
+fence, not access control for secrets: the code travels as a plain cookie. The sitemap includes published editions only,
 and protected preview responses are excluded from the service-worker caches.
 Do not regenerate the published `data/2025/final` artifacts or legacy 2025 quiz
 JSON while preparing 2026. Do not switch the homepage as part of a preview fix.

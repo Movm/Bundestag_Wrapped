@@ -197,6 +197,12 @@ jobs:
             sleep 1
           done
           node apps/wrapped/scripts/check-search-http.mjs http://127.0.0.1:4179
+          # Preview gate: no cookie -> password page / 401; right cookie (any case) -> content.
+          test "$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' http://127.0.0.1:4179/2026/abgeordnete)" = "302 http://127.0.0.1:4179/zugang/?next=/2026/abgeordnete"
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:4179/data/2026/)" = "401"
+          test "$(curl -s -o /dev/null -w '%{http_code}' -b gartenzaun=wrong http://127.0.0.1:4179/2026)" = "302"
+          test "$(curl -s -o /dev/null -w '%{http_code}' -b gartenzaun=ci-search-test-only http://127.0.0.1:4179/2026)" = "200"
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:4179/zugang/)" = "200"
           PERF_URL=http://127.0.0.1:4179 PERF_CHANNEL=chromium PERF_CYCLES=3 pnpm --filter bundestag-wrapped audit:cache-memory
 
       - name: Upload cache and worker diagnostic
