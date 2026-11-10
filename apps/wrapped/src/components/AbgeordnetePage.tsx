@@ -42,8 +42,7 @@ export function AbgeordnetePage() {
     return (
       <div className="min-h-screen page-bg flex items-center justify-center pt-14">
         <div className="text-center">
-          <div className="text-6xl mb-4 animate-pulse">🏛️</div>
-          <p className="text-white/60">Lade Abgeordnete...</p>
+          <p className="text-on-muted">Lade Abgeordnete...</p>
         </div>
       </div>
     );
@@ -53,9 +52,8 @@ export function AbgeordnetePage() {
     return (
       <div className="min-h-screen page-bg flex items-center justify-center pt-14">
         <div className="text-center">
-          <div className="text-6xl mb-4">⚠️</div>
           <p className="text-red-400">Fehler beim Laden</p>
-          <p className="text-white/65 text-sm mt-2">{error?.message}</p>
+          <p className="text-on-muted text-sm mt-2">{error?.message}</p>
         </div>
       </div>
     );
@@ -71,20 +69,11 @@ export function AbgeordnetePage() {
       <div className="min-h-screen page-bg pt-14">
         <div className="min-h-screen flex flex-col items-center justify-center px-4 pb-20">
         {/* Hero */}
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.1, type: 'spring', stiffness: 200 }}
-          className="text-8xl mb-6"
-        >
-          🎤
-        </motion.div>
-
         <motion.h1
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-4xl md:text-5xl font-bold text-white mb-3 text-center"
+          className="ds-display ds-display--lg mb-3 text-center"
         >
           Dein Bundestag Wrapped
         </motion.h1>
@@ -93,7 +82,7 @@ export function AbgeordnetePage() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="text-white/50 mb-8 text-center max-w-md"
+          className="text-on-muted mb-8 text-center max-w-md"
         >
           Finde dich selbst und entdecke deine persönlichen Statistiken aus der
           21. Wahlperiode
@@ -107,14 +96,14 @@ export function AbgeordnetePage() {
           className="w-full max-w-lg relative"
         >
           <div
-            className={`relative bg-white/5 border-2 rounded-2xl transition-all duration-300 ${
+            className={`relative bg-wr-card border-2 rounded-2xl transition-all duration-300 ${
               inputFocused
-                ? 'border-pink-500/70 shadow-lg shadow-pink-500/20 scale-[1.02]'
-                : 'border-white/10 hover:border-white/20'
+                ? 'border-wr-pink  scale-[1.02]'
+                : 'border-track hover:border-track'
             }`}
           >
             <svg
-              className="absolute left-5 top-1/2 -translate-y-1/2 w-6 h-6 text-white/65"
+              className="absolute left-5 top-1/2 -translate-y-1/2 w-6 h-6 text-on-muted"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -134,14 +123,14 @@ export function AbgeordnetePage() {
               onChange={(e) => setSearchQuery(e.target.value)}
               onFocus={() => setInputFocused(true)}
               onBlur={() => setInputFocused(false)}
-              className="w-full bg-transparent px-14 py-5 text-lg text-white placeholder:text-white/65 focus:outline-none"
+              className="w-full bg-transparent px-14 py-5 text-lg text-on placeholder:text-on-muted focus:outline-none"
               autoComplete="off"
               aria-label="Abgeordneten suchen"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-1 top-1/2 -translate-y-1/2 p-3 text-white/70 hover:text-white"
+                className="absolute right-1 top-1/2 -translate-y-1/2 p-3 text-on-muted hover:text-on"
                 aria-label="Suche löschen"
               >
                 <svg
@@ -170,7 +159,7 @@ export function AbgeordnetePage() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="relative mt-2 bg-bg-card border border-white/10 rounded-xl overflow-hidden shadow-2xl z-50"
+                className="relative mt-2 bg-bg-card border border-track rounded-xl overflow-hidden z-50"
               >
                 {filteredSpeakers.length > 0 ? (
                   <div className="py-2">
@@ -180,17 +169,17 @@ export function AbgeordnetePage() {
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.03 }}
-                        className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 hover:bg-white/5 transition-colors group"
+                        className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 hover:bg-bg-elevated transition-colors group"
                       >
                         <Link
                           to={editionPath(surface, `abgeordnete/${speaker.slug}`)}
                           className="flex min-w-0 flex-1 flex-wrap items-center gap-3"
                         >
-                          <span className="text-white font-medium group-hover:text-pink-300 transition-colors">
+                          <span className="text-on font-medium group-hover:text-on-accent transition-colors">
                             {speaker.name}
                           </span>
                           <span
-                            className={`px-2 py-0.5 rounded text-xs font-medium text-white ${
+                            className={`px-2 py-0.5 rounded text-xs font-medium text-on ${
                               PARTY_BG_CLASSES[speaker.party] || 'bg-gray-500'
                             }`}
                           >
@@ -198,12 +187,12 @@ export function AbgeordnetePage() {
                           </span>
                         </Link>
                         <div className="flex flex-shrink-0 items-center gap-3">
-                          <span className="text-white/65 text-sm">
+                          <span className="text-on-muted text-sm">
                             {speaker.speeches} Reden
                           </span>
                           <Link
                             to={editionPath(surface, `wrapped/${speaker.slug}`)}
-                            className="text-xs text-pink-300 hover:text-pink-200"
+                            className="text-xs text-on-accent hover:text-on-accent"
                           >
                             Wrapped
                           </Link>
@@ -213,8 +202,8 @@ export function AbgeordnetePage() {
                   </div>
                 ) : (
                   <div className="px-4 py-6 text-center">
-                    <p className="text-white/60">Kein Abgeordneter gefunden</p>
-                    <p className="text-white/65 text-sm mt-1">
+                    <p className="text-on-muted">Kein Abgeordneter gefunden</p>
+                    <p className="text-on-muted text-sm mt-1">
                       Versuche einen anderen Namen
                     </p>
                   </div>
@@ -229,7 +218,7 @@ export function AbgeordnetePage() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="mt-8 text-white/65 text-sm"
+          className="mt-8 text-on-muted text-sm"
         >
           {speakerIndex?.speakers.length.toLocaleString('de-DE')} Abgeordnete
           verfügbar
@@ -241,7 +230,7 @@ export function AbgeordnetePage() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="mt-4 text-pink-400 hover:text-pink-300 text-sm transition-colors"
+          className="mt-4 text-on-accent hover:text-on-accent text-sm transition-colors"
         >
           Alle Abgeordneten durchsuchen →
         </MotionLink>
@@ -249,10 +238,10 @@ export function AbgeordnetePage() {
 
       {/* Footer */}
       <footer className="relative mt-6 p-4 pointer-events-none">
-        <div className="flex justify-center gap-4 text-xs text-white/65">
+        <div className="flex justify-center gap-4 text-xs text-on-muted">
           <Link
             to={editionPath(surface)}
-            className="hover:text-white/60 transition-colors pointer-events-auto"
+            className="hover:text-on-muted transition-colors pointer-events-auto"
           >
             ← Zurück
           </Link>
@@ -261,14 +250,14 @@ export function AbgeordnetePage() {
             href="https://www.moritz-waechter.de/impressum"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white/60 transition-colors pointer-events-auto"
+            className="hover:text-on-muted transition-colors pointer-events-auto"
           >
             Impressum
           </a>
           <span>|</span>
           <Link
             to="/datenschutz"
-            className="hover:text-white/60 transition-colors pointer-events-auto"
+            className="hover:text-on-muted transition-colors pointer-events-auto"
           >
             Datenschutz
           </Link>

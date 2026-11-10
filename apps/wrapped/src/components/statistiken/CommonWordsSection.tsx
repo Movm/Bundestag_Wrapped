@@ -34,7 +34,7 @@ export function CommonWordsSection({ commonWords }: CommonWordsSectionProps) {
           className="text-center"
         >
           <motion.span
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 bg-clip-text text-transparent"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-display-accent"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -49,7 +49,7 @@ export function CommonWordsSection({ commonWords }: CommonWordsSectionProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.6 }}
-          className="text-xl md:text-2xl text-white/70 mt-6"
+          className="text-xl md:text-2xl text-on-muted mt-6"
         >
           Meistgenutztes Wort aller Parteien
         </motion.p>
@@ -59,7 +59,7 @@ export function CommonWordsSection({ commonWords }: CommonWordsSectionProps) {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.8 }}
-          className="text-white/40 text-base mt-2"
+          className="text-on-muted text-base mt-2"
         >
           Erscheint bei allen Fraktionen unter den Top-50
         </motion.p>
@@ -71,7 +71,7 @@ export function CommonWordsSection({ commonWords }: CommonWordsSectionProps) {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center text-white/50 text-base max-w-2xl mx-auto mb-12"
+          className="text-center text-on-muted text-base max-w-2xl mx-auto mb-12"
         >
           {config.explanation}
         </motion.p>
@@ -94,12 +94,12 @@ export function CommonWordsSection({ commonWords }: CommonWordsSectionProps) {
                 px-4 py-2 rounded-full font-medium
                 transition-all cursor-default
                 ${i === 0
-                  ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white text-lg'
+                  ? 'bg-wr-pink text-wr-ink text-lg'
                   : i < 3
-                    ? 'bg-pink-500/20 text-pink-300 border border-pink-500/30'
+                    ? 'bg-wr-card text-on-accent border border-wr-pink'
                     : i < 6
-                      ? 'bg-white/10 text-white/80 border border-white/20'
-                      : 'bg-white/5 text-white/60 border border-white/10 text-sm'
+                      ? 'bg-wr-card text-on border border-track'
+                      : 'bg-wr-card text-on-muted border border-track text-sm'
                 }
               `}
             >
@@ -114,7 +114,7 @@ export function CommonWordsSection({ commonWords }: CommonWordsSectionProps) {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="text-center text-white/40 text-sm mt-8"
+          className="text-center text-on-muted text-sm mt-8"
         >
           Wörter die bei mehreren Parteien unter den Top-50 erscheinen
         </motion.p>

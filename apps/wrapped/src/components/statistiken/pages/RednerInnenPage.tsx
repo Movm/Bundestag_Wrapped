@@ -30,8 +30,7 @@ function PageLoader() {
   return (
     <div className="min-h-[60vh] flex items-center justify-center">
       <div className="text-center">
-        <div className="w-12 h-12 border-4 border-amber-500/30 border-t-amber-500 rounded-full animate-spin mx-auto mb-4" />
-        <p className="text-white/60">Lade Redner:innen...</p>
+        <p className="text-on-muted">Lade Redner:innen...</p>
       </div>
     </div>
   );
@@ -42,7 +41,7 @@ function PageError({ error }: { error: Error | null }) {
     <div className="min-h-[60vh] flex items-center justify-center px-4">
       <div className="text-center">
         <p className="text-red-400 text-xl mb-4">Fehler beim Laden</p>
-        <p className="text-white/60">{error?.message}</p>
+        <p className="text-on-muted">{error?.message}</p>
       </div>
     </div>
   );

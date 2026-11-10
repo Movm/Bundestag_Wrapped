@@ -69,15 +69,15 @@ export const SearchResults = memo(function SearchResults({
 
   return (
     <section id="search-results" role="tabpanel" aria-busy={loading} aria-labelledby={`search-tab-${state.tab}`} tabIndex={0} className="max-w-4xl mx-auto px-4 py-6 pb-20">
-      {errorMessage && <p role="alert" className="text-red-300 mb-4">Fehler beim Laden: {errorMessage}</p>}
+      {errorMessage && <p role="alert" className="text-on mb-4 [overflow-wrap:anywhere]">Fehler beim Laden: {errorMessage}</p>}
       {/* Screen reader announcement for search results */}
       <div aria-live="polite" aria-atomic="true" className="sr-only">
         {loading ? 'Lade Suchergebnisse…' : errorMessage ? 'Fehler beim Laden der Suchergebnisse.' : `${resultCount.toLocaleString('de-DE')} ${resultLabel} gefunden`}
       </div>
 
       <div className="flex items-center justify-between mb-4">
-        <p className="text-white/60 text-sm">
-          <span className="text-white font-semibold">
+        <p className="text-on-muted text-sm">
+          <span className="text-on font-semibold">
             {resultCount.toLocaleString('de-DE')}
           </span>{' '}
           {resultLabel} gefunden
@@ -85,7 +85,7 @@ export const SearchResults = memo(function SearchResults({
         {hasActiveFilters && (
           <button
             onClick={onResetFilters}
-            className="text-pink-400 hover:text-pink-300 text-sm"
+            className="text-on-accent hover:text-on-accent text-sm"
           >
             Filter zurücksetzen
           </button>
@@ -93,16 +93,16 @@ export const SearchResults = memo(function SearchResults({
       </div>
 
       {state.q && !hasQuery && (
-        <div className="mb-4 p-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white/60">
-          <p className="font-medium text-white/80 mb-1">Suchtipps:</p>
+        <div className="mb-4 p-3 bg-wr-card border border-track rounded-xl text-sm text-on-muted">
+          <p className="font-medium text-on mb-1">Suchtipps:</p>
           <ul className="space-y-0.5 text-xs">
-            <li><code className="bg-white/10 px-1 rounded">"exakte phrase"</code> für exakte Übereinstimmung</li>
-            <li><code className="bg-white/10 px-1 rounded">wort1 AND wort2</code> beide Begriffe müssen vorkommen</li>
-            <li><code className="bg-white/10 px-1 rounded">wort1 OR wort2</code> einer der Begriffe</li>
-            <li><code className="bg-white/10 px-1 rounded">NOT wort</code> Begriff ausschließen</li>
-            <li><code className="bg-white/10 px-1 rounded">speaker:name</code> nach Redner:in filtern</li>
-            <li><code className="bg-white/10 px-1 rounded">party:SPD</code> nach Partei filtern</li>
-            <li><code className="bg-white/10 px-1 rounded">words:&gt;500</code> Mindestwortzahl</li>
+            <li><code className="bg-wr-card px-1 rounded">"exakte phrase"</code> für exakte Übereinstimmung</li>
+            <li><code className="bg-wr-card px-1 rounded">wort1 AND wort2</code> beide Begriffe müssen vorkommen</li>
+            <li><code className="bg-wr-card px-1 rounded">wort1 OR wort2</code> einer der Begriffe</li>
+            <li><code className="bg-wr-card px-1 rounded">NOT wort</code> Begriff ausschließen</li>
+            <li><code className="bg-wr-card px-1 rounded">speaker:name</code> nach Redner:in filtern</li>
+            <li><code className="bg-wr-card px-1 rounded">party:SPD</code> nach Partei filtern</li>
+            <li><code className="bg-wr-card px-1 rounded">words:&gt;500</code> Mindestwortzahl</li>
           </ul>
         </div>
       )}
@@ -141,17 +141,17 @@ export const SearchResults = memo(function SearchResults({
         </AnimatePresence>
       </div>
 
-      {loading && <p role="status" className="py-6 text-white/60">Suche läuft…</p>}
+      {loading && <p role="status" className="py-6 text-on-muted">Suche läuft…</p>}
       {page > 0 && (
-        <button onClick={onPreviousPage} disabled={loading} className="mt-6 px-6 py-3 bg-white/10 rounded-xl text-white">Vorherige Ergebnisse</button>
+        <button onClick={onPreviousPage} disabled={loading} className="mt-6 px-6 py-3 bg-wr-card rounded-xl text-on">Vorherige Ergebnisse</button>
       )}
-      {!loading && resultCount > 0 && <p className="text-center text-white/50 mt-4">Seite {page + 1} von {Math.ceil(resultCount / SEARCH_PAGE_SIZE)}</p>}
+      {!loading && resultCount > 0 && <p className="text-center text-on-muted mt-4">Seite {page + 1} von {Math.ceil(resultCount / SEARCH_PAGE_SIZE)}</p>}
       {hasMore && (
         <div className="mt-6 text-center">
           <button
             onClick={onLoadMore}
             disabled={loading}
-            className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-xl transition-colors"
+            className="px-6 py-3 bg-wr-card hover:bg-bg-elevated text-on rounded-xl transition-colors"
           >
             Weitere Ergebnisse ({resultCount - (page + 1) * SEARCH_PAGE_SIZE} weitere)
           </button>
@@ -160,9 +160,9 @@ export const SearchResults = memo(function SearchResults({
 
       {!loading && resultCount === 0 && (
         <div className="text-center py-12">
-          <div className="text-4xl mb-4">🔍</div>
-          <p className="text-white/60">Keine Ergebnisse gefunden</p>
-          <p className="text-white/40 text-sm mt-1">
+          
+          <p className="text-on-muted">Keine Ergebnisse gefunden</p>
+          <p className="text-on-muted text-sm mt-1">
             Versuche andere Suchbegriffe oder Filter
           </p>
         </div>

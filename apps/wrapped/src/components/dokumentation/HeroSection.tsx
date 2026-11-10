@@ -9,19 +9,19 @@ export function HeroSection({ wahlperioden }: { wahlperioden?: number[] }) {
       className="max-w-4xl mx-auto px-6 pt-16 pb-12"
     >
       <div className="flex flex-wrap items-center gap-3 mb-6">
-        <span className="px-2 py-1 bg-stone-100 text-stone-600 text-xs font-mono rounded">
+        <span className="ds-eyebrow ds-eyebrow--contrast">
           Algorithmus
         </span>
-        <span className="text-stone-300">•</span>
+        <span className="text-on-muted">•</span>
         {wahlperioden && wahlperioden.length > 0 && (
-          <span className="text-stone-600 text-sm">Wahlperiode {wahlperioden.join(', ')}</span>
+          <span className="text-on-muted text-sm">Wahlperiode {wahlperioden.join(', ')}</span>
         )}
       </div>
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-stone-900 mb-6 leading-tight">
+      <h1 className="ds-display ds-display--lg mb-6">
         Klassifikation von<br />
-        <span className="font-medium break-words">Bundestagsreden</span>
+        <span className="text-display-accent break-words">Bundestagsreden</span>
       </h1>
-      <p className="text-lg text-stone-600 leading-relaxed max-w-2xl">
+      <p className="text-lg text-on-muted leading-relaxed max-w-[65ch]">
         Dokumentation des Algorithmus zur automatischen Kategorisierung
         parlamentarischer Beiträge aus den Plenarprotokollen des Deutschen Bundestages.
       </p>

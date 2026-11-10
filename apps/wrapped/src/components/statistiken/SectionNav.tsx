@@ -12,7 +12,7 @@ export function SectionNav({ activeSection, onSectionClick }: SectionNavProps) {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.5 }}
-      className="fixed top-16 left-0 right-0 z-40 bg-[#0a0a0f]/80 backdrop-blur-xl border-b border-white/10"
+      className="fixed top-16 left-0 right-0 z-40 bg-wr-ink border-b border-track"
     >
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-center gap-1 md:gap-2 py-2 overflow-x-auto scrollbar-hide">
@@ -29,7 +29,7 @@ export function SectionNav({ activeSection, onSectionClick }: SectionNavProps) {
                   transition-all duration-200 whitespace-nowrap
                   ${isActive
                     ? 'border'
-                    : 'text-white/60 hover:text-white/80 hover:bg-white/5'
+                    : 'text-on-muted hover:text-on hover:bg-bg-elevated'
                   }
                 `}
                 style={isActive ? {

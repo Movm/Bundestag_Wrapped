@@ -66,21 +66,21 @@ export function McpPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="font-mono text-xs uppercase tracking-[0.16em] text-pink-400 mb-5 flex items-center gap-3">
-              <span className="inline-block w-6 h-px bg-pink-400" aria-hidden="true" />
+            <p className="font-mono text-xs uppercase tracking-[0.16em] text-on-accent mb-5 flex items-center gap-3">
+              <span className="inline-block w-6 h-px bg-wr-pink" aria-hidden="true" />
               Bundestag Wrapped · für KI-Assistenten
             </p>
-            <h1 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.05] mb-5 text-balance">
+            <h1 className="ds-display ds-display--lg mb-5">
               Frag deine KI über den echten Bundestag
             </h1>
-            <p className="text-lg text-white/70 leading-relaxed max-w-2xl">
-              Verbinde <strong className="text-white font-semibold">Claude</strong>,{' '}
-              <strong className="text-white font-semibold">ChatGPT</strong> oder{' '}
-              <strong className="text-white font-semibold">Mistral</strong> mit der amtlichen
+            <p className="text-lg text-on-muted leading-relaxed max-w-2xl">
+              Verbinde <strong className="text-on font-semibold">Claude</strong>,{' '}
+              <strong className="text-on font-semibold">ChatGPT</strong> oder{' '}
+              <strong className="text-on font-semibold">Mistral</strong> mit der amtlichen
               Parlamentsdokumentation des Bundestags. Statt zu raten, sucht dein Assistent die
               passende Drucksache, liest die Rede und nennt die Quelle.
             </p>
-            <p className="mt-4 font-mono text-xs uppercase tracking-[0.1em] text-white/40">
+            <p className="mt-4 font-mono text-xs uppercase tracking-[0.1em] text-on-muted">
               kostenlos · keine Anmeldung · für alle gängigen KI-Assistenten
             </p>
           </motion.header>
@@ -92,15 +92,15 @@ export function McpPage() {
               {CAN_ASK.map(cap => (
                 <div
                   key={cap.title}
-                  className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 transition-colors hover:border-white/20"
+                  className="bg-wr-card border border-track rounded-2xl p-6 transition-colors hover:border-track"
                 >
-                  <h3 className="text-xl font-bold text-white tracking-tight mb-2">{cap.title}</h3>
-                  <p className="text-[15px] text-white/70 leading-relaxed mb-4 max-w-2xl">{cap.plain}</p>
-                  <div className="bg-white/[0.04] rounded-xl px-4 py-3.5">
-                    <span className="block font-mono text-[10px] uppercase tracking-wider text-pink-400 mb-1.5">
+                  <h3 className="text-xl font-bold text-on tracking-tight mb-2">{cap.title}</h3>
+                  <p className="text-[15px] text-on-muted leading-relaxed mb-4 max-w-2xl">{cap.plain}</p>
+                  <div className="bg-wr-card rounded-xl px-4 py-3.5">
+                    <span className="block font-mono text-[10px] uppercase tracking-wider text-on-accent mb-1.5">
                       Frag z.&nbsp;B.
                     </span>
-                    <p className="text-base text-white/85 leading-relaxed">„{cap.example}"</p>
+                    <p className="text-base text-on leading-relaxed">„{cap.example}"</p>
                   </div>
                 </div>
               ))}
@@ -110,26 +110,26 @@ export function McpPage() {
           {/* Connect */}
           <DocSection delay={0.15} className="mt-14">
             <SectionLabel>In wenigen Minuten verbinden</SectionLabel>
-            <p className="text-sm text-white/50 mb-2">{CONNECT_INTRO}</p>
+            <p className="text-sm text-on-muted mb-2">{CONNECT_INTRO}</p>
             <div className="mb-6">
               <EndpointBar />
             </div>
 
             <div className="grid gap-4">
-              <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6">
-                <h3 className="text-lg font-bold text-white mb-2">Claude</h3>
-                <p className="text-sm text-white/60 leading-relaxed mb-3">
-                  <strong className="text-white/90">claude.ai &amp; Claude Desktop</strong> (Free, Pro, Max,
-                  Team, Enterprise): <strong className="text-white/90">Einstellungen → Connectors</strong> →
-                  „+" → <strong className="text-white/90">„Eigenen Connector hinzufügen"</strong> → Endpoint
-                  eintragen → <strong className="text-white/90">Hinzufügen</strong>. Danach pro Chat über das
+              <div className="bg-wr-card border border-track rounded-2xl p-6">
+                <h3 className="text-lg font-bold text-on mb-2">Claude</h3>
+                <p className="text-sm text-on-muted leading-relaxed mb-3">
+                  <strong className="text-on">claude.ai &amp; Claude Desktop</strong> (Free, Pro, Max,
+                  Team, Enterprise): <strong className="text-on">Einstellungen → Connectors</strong> →
+                  „+" → <strong className="text-on">„Eigenen Connector hinzufügen"</strong> → Endpoint
+                  eintragen → <strong className="text-on">Hinzufügen</strong>. Danach pro Chat über das
                   „+"-Menü aktivieren.
                 </p>
-                <p className="text-sm text-white/50 mb-2">Oder in Claude Code (CLI):</p>
-                <code className="block bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-xs text-white/90 font-mono overflow-x-auto mb-3">
+                <p className="text-sm text-on-muted mb-2">Oder in Claude Code (CLI):</p>
+                <code className="block bg-wr-ink border border-track rounded-lg px-4 py-3 text-xs text-on font-mono overflow-x-auto mb-3">
                   claude mcp add --transport http bundestag {MCP_ENDPOINT}
                 </code>
-                <p className="text-xs text-white/50">
+                <p className="text-xs text-on-muted">
                   Ausführlich:{' '}
                   <a className={docLink} href="https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp" target="_blank" rel="noopener noreferrer">
                     Custom Connectors (Claude Help Center)
@@ -142,15 +142,15 @@ export function McpPage() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6">
-                  <h3 className="text-lg font-bold text-white mb-2">ChatGPT</h3>
-                  <p className="text-sm text-white/60 leading-relaxed mb-3">
-                    Zuerst den <strong className="text-white/90">Entwicklermodus</strong> einschalten:{' '}
-                    <strong className="text-white/90">Einstellungen → Connectors → Erweiterte Einstellungen</strong>.
-                    Dann <strong className="text-white/90">Connectors → „Erstellen"</strong> → Name, Beschreibung
+                <div className="bg-wr-card border border-track rounded-2xl p-6">
+                  <h3 className="text-lg font-bold text-on mb-2">ChatGPT</h3>
+                  <p className="text-sm text-on-muted leading-relaxed mb-3">
+                    Zuerst den <strong className="text-on">Entwicklermodus</strong> einschalten:{' '}
+                    <strong className="text-on">Einstellungen → Connectors → Erweiterte Einstellungen</strong>.
+                    Dann <strong className="text-on">Connectors → „Erstellen"</strong> → Name, Beschreibung
                     und Endpoint als MCP-Server-URL. Auf allen Plänen verfügbar.
                   </p>
-                  <p className="text-xs text-white/50">
+                  <p className="text-xs text-on-muted">
                     Ausführlich:{' '}
                     <a className={docLink} href="https://developers.openai.com/apps-sdk/deploy/connect-chatgpt" target="_blank" rel="noopener noreferrer">
                       Remote MCP in ChatGPT verbinden (OpenAI Docs)
@@ -158,16 +158,16 @@ export function McpPage() {
                   </p>
                 </div>
 
-                <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6">
-                  <h3 className="text-lg font-bold text-white mb-2">Mistral / Le&nbsp;Chat</h3>
-                  <p className="text-sm text-white/60 leading-relaxed mb-3">
-                    <strong className="text-white/90">Connectors</strong> →{' '}
-                    <strong className="text-white/90">„+ Add Connector"</strong> → Reiter{' '}
-                    <strong className="text-white/90">„Custom MCP Connector"</strong> → Name und Endpoint als
-                    Server-URL → <strong className="text-white/90">Connect</strong>. Auth:{' '}
-                    <strong className="text-white/90">„No authentication"</strong>.
+                <div className="bg-wr-card border border-track rounded-2xl p-6">
+                  <h3 className="text-lg font-bold text-on mb-2">Mistral / Le&nbsp;Chat</h3>
+                  <p className="text-sm text-on-muted leading-relaxed mb-3">
+                    <strong className="text-on">Connectors</strong> →{' '}
+                    <strong className="text-on">„+ Add Connector"</strong> → Reiter{' '}
+                    <strong className="text-on">„Custom MCP Connector"</strong> → Name und Endpoint als
+                    Server-URL → <strong className="text-on">Connect</strong>. Auth:{' '}
+                    <strong className="text-on">„No authentication"</strong>.
                   </p>
-                  <p className="text-xs text-white/50">
+                  <p className="text-xs text-on-muted">
                     Ausführlich:{' '}
                     <a className={docLink} href="https://docs.mistral.ai/vibe/work/connectors/mcp-connectors" target="_blank" rel="noopener noreferrer">
                       MCP Connectors (Mistral Docs)
@@ -182,20 +182,20 @@ export function McpPage() {
           <DocSection delay={0.15} className="mt-14">
             <Link
               to="/mcp/technik"
-              className="group flex items-center justify-between gap-4 bg-white/[0.03] border border-white/10 rounded-2xl p-6 transition-colors hover:border-pink-400/40"
+              className="group flex items-center justify-between gap-4 bg-wr-card border border-track rounded-2xl p-6 transition-colors hover:border-wr-pink"
             >
               <div>
-                <h3 className="text-lg font-bold text-white mb-1">Technische Details →</h3>
-                <p className="text-sm text-white/60 leading-relaxed max-w-xl">
+                <h3 className="text-lg font-bold text-on mb-1">Technische Details →</h3>
+                <p className="text-sm text-on-muted leading-relaxed max-w-xl">
                   Alle 38 Werkzeuge, Filter &amp; Sortierung, Endpoint, Datenquellen und Hinweise für
                   Entwickler:innen.
                 </p>
               </div>
-              <span className="text-pink-400 text-2xl shrink-0 transition-transform group-hover:translate-x-1" aria-hidden="true">
+              <span className="text-on-accent text-2xl shrink-0 transition-transform group-hover:translate-x-1" aria-hidden="true">
                 →
               </span>
             </Link>
-            <p className="mt-4 text-sm text-white/50">
+            <p className="mt-4 text-sm text-on-muted">
               Server, Analyse-Pipeline und diese Website sind Open Source:{' '}
               <a className={docLink} href="https://github.com/Movm/Bundestag_Wrapped" target="_blank" rel="noopener noreferrer">
                 github.com/Movm/Bundestag_Wrapped

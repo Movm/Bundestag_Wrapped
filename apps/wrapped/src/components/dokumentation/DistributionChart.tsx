@@ -5,17 +5,17 @@ const TOTAL_BEITRAEGE = 4798;
 
 export function DistributionChart() {
   return (
-    <section className="border-t border-stone-200">
+    <section className="border-t border-track">
       <div className="max-w-4xl mx-auto px-6 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          <h2 className="text-xs font-mono text-stone-400 uppercase tracking-wider mb-4">
+          <h2 className="text-xs font-mono text-on-muted uppercase tracking-wider mb-4">
             Verteilung
           </h2>
-          <h3 className="text-2xl font-serif text-stone-900 mb-8">
+          <h3 className="text-2xl font-heading text-on mb-8">
             Anteile der Kategorien
           </h3>
         </motion.div>
@@ -31,10 +31,10 @@ export function DistributionChart() {
                 transition={{ delay: 0.7 + index * 0.05, duration: 0.5 }}
                 className="flex items-center gap-4"
               >
-                <div className="w-32 text-sm text-stone-600 text-right">
+                <div className="w-32 text-sm text-on-muted text-right">
                   {cat.name}
                 </div>
-                <div className="flex-1 h-8 bg-stone-100 rounded overflow-hidden">
+                <div className="flex-1 h-8 bg-wr-card rounded overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${percentage}%` }}
@@ -43,7 +43,7 @@ export function DistributionChart() {
                     style={{ backgroundColor: cat.color }}
                   />
                 </div>
-                <div className="w-20 text-sm font-mono text-stone-500 text-right">
+                <div className="w-20 text-sm font-mono text-on-muted text-right">
                   {percentage.toFixed(1)}%
                 </div>
               </motion.div>

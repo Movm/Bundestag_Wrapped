@@ -39,7 +39,7 @@ export function DokumentationPage() {
         canonicalUrl={editionPath(surface, 'dokumentation')}
         structuredData={articleSchema}
       />
-      <div className="min-h-screen bg-[#fafaf9] pt-14">
+      <div className="min-h-screen bg-wr-ink pt-14">
         <HeroSection wahlperioden={edition?.manifest?.period.wahlperioden} />
         <StatsBar stats={stats} />
         <OverviewSection />
