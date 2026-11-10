@@ -1,22 +1,23 @@
 /**
  * Sound System for Bundestag Wrapped (Web)
  *
- * Provides audio feedback for quiz interactions:
- * - click: Button tap feedback
- * - correct: Success fanfare for right answers
- * - wrong: Error sound for wrong answers
- * - whoosh: Slide transition sound
+ * Short effects (click, quiz answers, slide whoosh, Perfect Match drag and
+ * swipe feedback) run through one Web Audio context: every sound is decoded
+ * once into a buffer, starts without the latency of a media element and can
+ * overlap itself, which drag ticks need. Background music stays a looping
+ * <audio> element, since it is long and streams.
  *
- * Features:
- * - Preloads sounds on first user interaction
- * - Background music with loop support
- * - Mute preference persisted to localStorage
- * - Graceful fallback if audio fails
+ * - The UI sounds are data URIs in `ui-sounds.ts`, imported lazily so they
+ *   never weigh on the start bundle; `start` is a file in /public/sounds.
+ * - Loading starts when the page is idle; the context is resumed on the first
+ *   pointer or key press, as browsers require.
+ * - A sound asked for before its buffer is ready is skipped, not played late.
+ * - Mute preference lives in the audio store (persisted to localStorage).
  */
 
 import {
   type SoundType,
-  SOUND_PATHS,
+  SOUND_FILES,
   SOUND_VOLUMES,
   createSlideTransitionSoundHook,
 } from '@/shared/sounds';
@@ -32,83 +33,95 @@ const BACKGROUND_VOLUME = 0.08;
 let backgroundMusic: HTMLAudioElement | null = null;
 let isMusicPlaying = false;
 
-// Audio cache for preloaded sounds
-const audioCache: Partial<Record<SoundType, HTMLAudioElement>> = {};
-let isInitialized = false;
+let context: AudioContext | null = null;
+const buffers = new Map<SoundType, AudioBuffer>();
+let loading: Promise<void> | null = null;
 
-// Track user interaction to unlock audio and preload sounds
-if (typeof window !== 'undefined' && !IS_DEV_AUDIO_DISABLED) {
-  const unlockAudio = () => {
-    // Initialize sounds on first interaction
-    if (!isInitialized) {
-      initSounds();
+function audioContext(): AudioContext | null {
+  if (context) return context;
+  const Ctor = window.AudioContext ?? (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+  if (!Ctor) return null;
+  context = new Ctor();
+  return context;
+}
+
+/** Data URIs are decoded in place, so a future CSP `connect-src` can't block them. */
+async function bytes(src: string): Promise<ArrayBuffer> {
+  if (!src.startsWith('data:')) return (await fetch(src)).arrayBuffer();
+  const binary = atob(src.slice(src.indexOf(',') + 1));
+  const out = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) out[i] = binary.charCodeAt(i);
+  return out.buffer;
+}
+
+async function decode(ctx: AudioContext, type: SoundType, src: string): Promise<void> {
+  try {
+    buffers.set(type, await ctx.decodeAudioData(await bytes(src)));
+  } catch (error) {
+    console.debug(`Sound "${type}" failed to load:`, error instanceof Error ? error.message : error);
+  }
+}
+
+/**
+ * Decode every sound once, one per task so decoding never costs a frame.
+ * Safe to call repeatedly; later calls return the same promise.
+ */
+export function initSounds(): Promise<void> {
+  if (IS_DEV_AUDIO_DISABLED || typeof window === 'undefined') return Promise.resolve();
+  if (loading) return loading;
+  const ctx = audioContext();
+  if (!ctx) return Promise.resolve();
+  loading = import('./ui-sounds').then(async ({ UI_SOUNDS }) => {
+    // The intro sound first: it is the one played on the very first tap.
+    const sources = { ...SOUND_FILES, ...UI_SOUNDS } as Partial<Record<SoundType, string>>;
+    for (const [type, src] of Object.entries(sources) as [SoundType, string][]) {
+      await decode(ctx, type, src);
+      await new Promise(resolve => window.setTimeout(resolve, 0));
     }
-    // Remove listeners after first interaction
-    document.removeEventListener('click', unlockAudio);
-    document.removeEventListener('touchstart', unlockAudio);
-    document.removeEventListener('keydown', unlockAudio);
+  });
+  return loading;
+}
+
+if (typeof window !== 'undefined' && !IS_DEV_AUDIO_DISABLED) {
+  // pointerdown/up and keydown are user activations, so resume() is allowed here.
+  const events = ['pointerdown', 'pointerup', 'keydown'] as const;
+  const unlock = () => {
+    void initSounds();
+    const ctx = audioContext();
+    if (!ctx) return;
+    void ctx.resume().then(() => {
+      if (ctx.state === 'running') events.forEach(event => document.removeEventListener(event, unlock, true));
+    });
   };
+  events.forEach(event => document.addEventListener(event, unlock, true));
 
-  document.addEventListener('click', unlockAudio);
-  document.addEventListener('touchstart', unlockAudio);
-  document.addEventListener('keydown', unlockAudio);
-
-  // Creating and loading audio needs no user gesture (only play() does). Doing it
-  // while the page is idle keeps the media setup out of the "Starten" click,
-  // where it cost a dropped frame.
-  whenTrulyIdle(() => initSounds());
+  // Loading and decoding needs no user gesture (only starting the context does).
+  whenTrulyIdle(() => void initSounds());
 }
 
 /**
- * Initialize and preload all sounds.
- * Call this on first user interaction to comply with autoplay policies.
- */
-function loadSound(type: SoundType): HTMLAudioElement {
-  const cached = audioCache[type];
-  if (cached) return cached;
-  const audio = new Audio(SOUND_PATHS[type]);
-  audio.preload = 'auto';
-  audio.load();
-  audioCache[type] = audio;
-  return audio;
-}
-
-/**
- * Preload all sounds, one media element per task: creating an Audio element
- * is native main-thread work, and doing all of them in one task cost a frame.
- */
-export function initSounds(): void {
-  if (IS_DEV_AUDIO_DISABLED || isInitialized) return;
-  isInitialized = true;
-  const pending = Object.keys(SOUND_PATHS) as SoundType[];
-  const next = () => {
-    const type = pending.shift();
-    if (!type) return;
-    loadSound(type);
-    window.setTimeout(next, 120);
-  };
-  next();
-}
-
-/**
- * Play a sound effect
- * Uses cached audio elements for efficiency - no new allocations per play
- * @param type - The type of sound to play
+ * Play a sound effect. Fire-and-forget: muted, not yet decoded or a
+ * suspended context all simply skip the sound.
  */
 export function playSound(type: SoundType): void {
   if (IS_DEV_AUDIO_DISABLED) return;
   if (useAudioStore.getState().isMuted) return;
   if (typeof window === 'undefined') return;
 
-  // Only the sound needed now is created on demand; the rest preloads in the background.
-  const audio = loadSound(type);
-  if (!isInitialized) initSounds();
+  const buffer = buffers.get(type);
+  const ctx = context;
+  if (!buffer || !ctx) {
+    void initSounds();
+    return;
+  }
+  if (ctx.state !== 'running') void ctx.resume();
 
-  audio.currentTime = 0;
-  audio.volume = SOUND_VOLUMES[type];
-  audio.play().catch((error) => {
-    console.debug('Sound playback failed:', error.message);
-  });
+  const source = ctx.createBufferSource();
+  const gain = ctx.createGain();
+  source.buffer = buffer;
+  gain.gain.value = SOUND_VOLUMES[type];
+  source.connect(gain).connect(ctx.destination);
+  source.start();
 }
 
 /**

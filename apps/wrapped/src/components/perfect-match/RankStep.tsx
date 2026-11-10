@@ -3,6 +3,7 @@ import { motion, Reorder } from 'motion/react';
 import { ENTER } from '@/design-system/motion';
 import { getPartyTone } from '@/lib/party-colors';
 import { ArrowIcon } from '@/components/mdb-profile/shared';
+import { playSound } from '@/lib/sounds';
 
 const LABEL: Record<string, string> = { 'CDU/CSU': 'CDU/CSU', SPD: 'SPD', GRÜNE: 'Grüne', 'DIE LINKE': 'Linke' };
 
@@ -27,6 +28,7 @@ export function RankStep({ order, onChange, onDone }: { order: string[]; onChang
     const next = order.slice();
     next.splice(from, 1);
     next.splice(to, 0, party);
+    playSound('tick');
     onChange(next);
     setAnnounce(`${LABEL[party] ?? party} jetzt auf Platz ${to + 1}`);
     requestAnimationFrame(() => (event.target as HTMLElement).focus());
@@ -40,7 +42,7 @@ export function RankStep({ order, onChange, onDone }: { order: string[]; onChang
         <button type="button" className="mp-btn mp-btn--pink mp-btn--lg" onClick={onDone}>Passt so<ArrowIcon /></button>
       </motion.div>
       <motion.div variants={ENTER.slide}>
-        <Reorder.Group as="ol" axis="y" values={order} onReorder={onChange} className="pm-rank__list" aria-label="Deine Reihenfolge der Fraktionen">
+        <Reorder.Group as="ol" axis="y" values={order} onReorder={next => { playSound('tick'); onChange(next); }} className="pm-rank__list" aria-label="Deine Reihenfolge der Fraktionen">
           {order.map((party, index) => (
             <Reorder.Item
               key={party}
@@ -51,7 +53,7 @@ export function RankStep({ order, onChange, onDone }: { order: string[]; onChang
               data-dragging={dragging === party}
               aria-label={`${LABEL[party] ?? party}, Platz ${index + 1} von ${order.length}`}
               whileDrag={{ scale: 1.04, rotate: -1.5 }}
-              onDragStart={() => setDragging(party)}
+              onDragStart={() => { playSound('lift'); setDragging(party); }}
               onDragEnd={() => setDragging(null)}
               onKeyDown={event => {
                 if (event.key === 'ArrowUp') move(party, -1, event);

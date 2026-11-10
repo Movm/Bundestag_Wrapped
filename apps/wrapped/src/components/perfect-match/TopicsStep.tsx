@@ -3,6 +3,7 @@ import { motion, type PanInfo } from 'motion/react';
 import { ENTER } from '@/design-system/motion';
 import { ArrowIcon } from '@/components/mdb-profile/shared';
 import { topicName } from '@/lib/perfect-match';
+import { playSound } from '@/lib/sounds';
 
 export type Slots = [string | null, string | null, string | null];
 
@@ -26,6 +27,7 @@ export function TopicsStep({ topics, slots, onChange, onDone }: { topics: string
     if (target < 0) return;
     const next = slots.map(value => (value === topic ? null : value)) as Slots;
     next[target] = topic;
+    playSound('drop');
     onChange(next);
   };
 
@@ -55,7 +57,7 @@ export function TopicsStep({ topics, slots, onChange, onDone }: { topics: string
               data-hover={hover === index}
               disabled={!topic}
               aria-label={topic ? `Platz ${index + 1}: ${topicName(topic)}, antippen zum Leeren` : `Platz ${index + 1}: leer`}
-              onClick={() => { if (topic) onChange(slots.map((value, i) => (i === index ? null : value)) as Slots); }}
+              onClick={() => { if (!topic) return; playSound('click'); onChange(slots.map((value, i) => (i === index ? null : value)) as Slots); }}
             >
               <span className="pm-slot__num" aria-hidden="true">{index + 1}</span>
               <span className="pm-slot__label">{topic ? topicName(topic) : ''}</span>
@@ -82,6 +84,7 @@ export function TopicsStep({ topics, slots, onChange, onDone }: { topics: string
                 whileDrag={{ scale: 1.08, rotate: -4 }}
                 onDragStart={() => {
                   dragged.current = true;
+                  playSound('lift');
                   rects.current = slotRefs.current.map(el => el?.getBoundingClientRect() ?? new DOMRect());
                   setDragging(topic);
                 }}
