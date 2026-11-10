@@ -68,6 +68,8 @@ export const SLIDES = [
   'reveal-youth-language',
   'reveal-youth-parties',
   'reveal-youth-speakers',
+  // Moment of the year (e.g. Timmy der Wal), shown when the edition has mentions
+  'reveal-mention',
 
   // Moin
   'intro-moin',

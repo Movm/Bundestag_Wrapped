@@ -18,6 +18,7 @@ function parseArgs(values) {
     quizConfig: '',
     compareWith: '',
     youthWords: '',
+    mentions: '',
     signatureConfig: '',
     editionSignatureConfig: '',
     comparisonFrom: '',
@@ -85,6 +86,7 @@ export function prepareDevEdition(rawArgs = process.argv.slice(2)) {
   if (options.edition === '2026') {
     options.quizConfig ||= path.join(appRoot, 'config/2026/quiz.json');
     options.youthWords ||= path.join(appRoot, 'config/2026/youth-words.json');
+    options.mentions ||= path.join(appRoot, 'config/2026/mentions.json');
     options.signatureConfig ||= path.join(appRoot, 'config/signature-words.json');
     options.editionSignatureConfig ||= path.join(appRoot, 'config/2026/signature-words.json');
     options.comparisonFrom ||= '2025-01-01';
@@ -161,6 +163,7 @@ export function prepareDevEdition(rawArgs = process.argv.slice(2)) {
   if (options.quizConfig) editionArgs.push('--quiz-config', options.quizConfig);
   if (options.compareWith) editionArgs.push('--compare-with', options.compareWith);
   if (options.youthWords) editionArgs.push('--youth-words', options.youthWords);
+  if (options.mentions) editionArgs.push('--mentions', options.mentions);
   if (options.signatureConfig) editionArgs.push('--signature-config', options.signatureConfig);
   if (options.editionSignatureConfig) editionArgs.push('--signature-config', options.editionSignatureConfig);
   run(executable, editionArgs);

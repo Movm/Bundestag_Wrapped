@@ -189,6 +189,14 @@
       "type": "object", "additionalProperties": false, "required": ["label", "currentRank", "previousRank", "rankChange"],
       "properties": { "label": { "$ref": "#/$defs/NonEmptyString" }, "currentRank": { "$ref": "#/$defs/Count" }, "previousRank": { "anyOf": [{ "$ref": "#/$defs/Count" }, { "type": "null" }] }, "rankChange": { "type": "integer" } }
     },
+    "MentionSpeaker": {
+      "type": "object", "additionalProperties": false, "required": ["name", "party", "count", "date", "quote"],
+      "properties": { "name": { "$ref": "#/$defs/NonEmptyString" }, "party": { "$ref": "#/$defs/NonEmptyString" }, "count": { "$ref": "#/$defs/Count" }, "date": { "$ref": "#/$defs/IsoDate" }, "quote": { "$ref": "#/$defs/NonEmptyString" } }
+    },
+    "Mention": {
+      "type": "object", "additionalProperties": false, "required": ["id", "label", "count", "speakers"],
+      "properties": { "id": { "type": "string", "pattern": "^[a-z0-9-]+$" }, "label": { "$ref": "#/$defs/NonEmptyString" }, "count": { "$ref": "#/$defs/Count" }, "speakers": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/MentionSpeaker" } } }
+    },
     "YouthWordSpeaker": {
       "type": "object", "additionalProperties": false, "required": ["name", "party", "count"],
       "properties": { "name": { "$ref": "#/$defs/NonEmptyString" }, "party": { "$ref": "#/$defs/NonEmptyString" }, "count": { "$ref": "#/$defs/Count" } }
@@ -225,7 +233,7 @@
     "WrappedData": {
       "type": "object", "additionalProperties": false,
       "required": ["metadata", "parties", "drama", "topSpeakers", "topBefragungResponders", "topSpeakersByWords", "topSpeakersByAvgWords", "hotTopics", "toneAnalysis", "topicAnalysis", "funFacts", "genderAnalysis", "moinSpeakers", "topQuestionAskers"],
-      "properties": { "metadata": { "$ref": "#/$defs/WrappedMetadata" }, "parties": { "type": "array", "items": { "$ref": "#/$defs/PartyStats" } }, "drama": { "$ref": "#/$defs/DramaStats" }, "topSpeakers": { "type": "array", "items": { "$ref": "#/$defs/TopSpeaker" } }, "topBefragungResponders": { "type": "array", "items": { "$ref": "#/$defs/BefragungResponder" } }, "topSpeakersByWords": { "type": "array", "items": { "$ref": "#/$defs/SpeakerWords" } }, "topSpeakersByAvgWords": { "type": "array", "items": { "$ref": "#/$defs/SpeakerAverageWords" } }, "hotTopics": { "type": "array", "items": { "$ref": "#/$defs/NonEmptyString" } }, "quizQuestions": { "type": "array", "items": { "$ref": "#/$defs/QuizQuestion" } }, "toneAnalysis": { "anyOf": [{ "$ref": "#/$defs/ToneAnalysis" }, { "type": "null" }] }, "topicAnalysis": { "anyOf": [{ "$ref": "#/$defs/TopicAnalysis" }, { "type": "null" }] }, "funFacts": { "type": "array", "items": { "$ref": "#/$defs/FunFact" } }, "genderAnalysis": { "anyOf": [{ "$ref": "#/$defs/GenderAnalysis" }, { "type": "null" }] }, "moinSpeakers": { "type": "array", "items": { "$ref": "#/$defs/NamedPartyCount" } }, "topQuestionAskers": { "type": "array", "items": { "$ref": "#/$defs/NamedPartyCount" } }, "yearOverYear": { "$ref": "#/$defs/YearOverYearAnalysis" } }
+      "properties": { "metadata": { "$ref": "#/$defs/WrappedMetadata" }, "parties": { "type": "array", "items": { "$ref": "#/$defs/PartyStats" } }, "drama": { "$ref": "#/$defs/DramaStats" }, "topSpeakers": { "type": "array", "items": { "$ref": "#/$defs/TopSpeaker" } }, "topBefragungResponders": { "type": "array", "items": { "$ref": "#/$defs/BefragungResponder" } }, "topSpeakersByWords": { "type": "array", "items": { "$ref": "#/$defs/SpeakerWords" } }, "topSpeakersByAvgWords": { "type": "array", "items": { "$ref": "#/$defs/SpeakerAverageWords" } }, "hotTopics": { "type": "array", "items": { "$ref": "#/$defs/NonEmptyString" } }, "quizQuestions": { "type": "array", "items": { "$ref": "#/$defs/QuizQuestion" } }, "toneAnalysis": { "anyOf": [{ "$ref": "#/$defs/ToneAnalysis" }, { "type": "null" }] }, "topicAnalysis": { "anyOf": [{ "$ref": "#/$defs/TopicAnalysis" }, { "type": "null" }] }, "funFacts": { "type": "array", "items": { "$ref": "#/$defs/FunFact" } }, "genderAnalysis": { "anyOf": [{ "$ref": "#/$defs/GenderAnalysis" }, { "type": "null" }] }, "moinSpeakers": { "type": "array", "items": { "$ref": "#/$defs/NamedPartyCount" } }, "topQuestionAskers": { "type": "array", "items": { "$ref": "#/$defs/NamedPartyCount" } }, "yearOverYear": { "$ref": "#/$defs/YearOverYearAnalysis" }, "mentions": { "type": "array", "items": { "$ref": "#/$defs/Mention" } } }
     },
     "SpeakerIndexAsset": {
       "type": "object",

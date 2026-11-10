@@ -26,6 +26,7 @@ import {
   YouthLanguageResultSlide,
   YouthLanguagePartySlide,
   YouthLanguageSpeakerSlide,
+  MentionSlide,
 } from '@/components/slides';
 import { SlideInfo } from '@/components/slides/shared';
 import type { SlideData } from '@/lib/slide-sharepics';
@@ -219,6 +220,13 @@ function YouthLanguageSpeakerSlideWrapper() {
   return <YouthLanguageSpeakerSlide analysis={data.yearOverYear} />;
 }
 
+function MentionSlideWrapper() {
+  const data = useFullWrappedData();
+  const mention = data?.mentions?.[0];
+  if (!mention) return null;
+  return <MentionSlide mention={mention} />;
+}
+
 // ============================================================================
 // Main SlideRenderer
 // ============================================================================
@@ -381,6 +389,9 @@ export const SlideRenderer = memo(function SlideRenderer({
 
     case 'reveal-youth-speakers':
       return <YouthLanguageSpeakerSlideWrapper />;
+
+    case 'reveal-mention':
+      return <MentionSlideWrapper />;
 
     case 'reveal-drama':
       return <DramaSlideWrapper phase="result" />;

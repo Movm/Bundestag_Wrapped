@@ -122,4 +122,16 @@ describe('active slide plan', () => {
       'finale',
     ]);
   });
+
+  it('adds the mention slide after the youth-language speakers only when the edition has mentions', () => {
+    const model = quizModel(['quiz-youth-language']);
+    const configuration = { version: 1 as const, groups: [{ id: 'quiz-youth-language' }] };
+
+    expect(buildActiveSlidePlan(model, [], configuration, true)).not.toContain('reveal-mention');
+    const plan = buildActiveSlidePlan(model, [], configuration, true, true);
+    expect(plan.slice(plan.indexOf('reveal-youth-speakers'), plan.indexOf('reveal-youth-speakers') + 2)).toEqual([
+      'reveal-youth-speakers',
+      'reveal-mention',
+    ]);
+  });
 });

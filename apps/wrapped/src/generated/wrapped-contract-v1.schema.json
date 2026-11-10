@@ -1076,6 +1076,63 @@
         }
       }
     },
+    "MentionSpeaker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "party",
+        "count",
+        "date",
+        "quote"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "count": {
+          "$ref": "#/$defs/Count"
+        },
+        "date": {
+          "$ref": "#/$defs/IsoDate"
+        },
+        "quote": {
+          "$ref": "#/$defs/NonEmptyString"
+        }
+      }
+    },
+    "Mention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "count",
+        "speakers"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "label": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "count": {
+          "$ref": "#/$defs/Count"
+        },
+        "speakers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/MentionSpeaker"
+          }
+        }
+      }
+    },
     "YouthWordSpeaker": {
       "type": "object",
       "additionalProperties": false,
@@ -1509,6 +1566,12 @@
         },
         "yearOverYear": {
           "$ref": "#/$defs/YearOverYearAnalysis"
+        },
+        "mentions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Mention"
+          }
         }
       }
     },
