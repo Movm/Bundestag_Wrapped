@@ -483,6 +483,7 @@ export interface EditionQuizGroup {
   "id": string;
   "question"?: QuizQuestion;
   "text"?: EditionQuizTextOverrides;
+  "party"?: NonEmptyString;
 }
 
 export interface EditionQuizConfiguration {

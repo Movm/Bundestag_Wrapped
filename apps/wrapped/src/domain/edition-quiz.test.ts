@@ -27,6 +27,16 @@ describe('buildEditionQuizModel', () => {
     expect(buildEditionQuizModel(fixture('Europa', 'Partei A') as never)['quiz-topics']).toEqual(first['quiz-topics']);
   });
 
+  it('asks the signature quiz about the party an edition pins', () => {
+    const data = fixture('Europa', 'AfD');
+    data.parties.push({ party: 'SPD', signatureWords: [{ word: 'bafög', ratio: 1.3 }, { word: 'Zwei', ratio: 1.2 }, { word: 'Drei', ratio: 1.1 }, { word: 'Vier', ratio: 1.05 }] });
+
+    expect(buildEditionQuizModel(data as never)['quiz-signature']?.question).toContain('AfD');
+    const pinned = buildEditionQuizModel(data as never, { version: 1, groups: [{ id: 'quiz-signature', party: 'SPD' }] })['quiz-signature'];
+    expect(pinned?.question).toContain('SPD');
+    expect(pinned?.correctAnswer).toBe('bafög');
+  });
+
   it('keeps independent later questions when the top-topic metric is missing', () => {
     const data = fixture('Europa', 'Partei A');
     data.hotTopics = [];

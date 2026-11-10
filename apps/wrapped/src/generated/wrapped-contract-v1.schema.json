@@ -2096,6 +2096,10 @@
         },
         "text": {
           "$ref": "#/$defs/EditionQuizTextOverrides"
+        },
+        "party": {
+          "$ref": "#/$defs/NonEmptyString",
+          "description": "Asks a party question (quiz-signature) about this party instead of the data-picked one."
         }
       }
     },

@@ -134,7 +134,7 @@ function mentionQuestion(mention: { label: string; speakers: Array<{ name: strin
 }
 
 /** Builds deterministic, evidence-backed quiz questions for one edition. */
-export function buildEditionQuizModel(data: WrappedData): EditionQuizModel {
+export function buildEditionQuizModel(data: WrappedData, configuration?: EditionQuizConfiguration): EditionQuizModel {
   const model: EditionQuizModel = {};
   addQuestion(model, 'quiz-topic-riser', () => {
     const comparison = data.yearOverYear;
@@ -216,8 +216,10 @@ export function buildEditionQuizModel(data: WrappedData): EditionQuizModel {
   });
 
   addQuestion(model, 'quiz-signature', () => {
+    // An edition can pin the party; otherwise the strongest signature word wins.
+    const pinned = configuration?.groups.find(group => group.id === 'quiz-signature')?.party;
     const signatureParty = [...data.parties]
-      .filter(party => party.signatureWords.length >= 4)
+      .filter(party => party.signatureWords.length >= 4 && (!pinned || party.party === pinned))
       .sort((a, b) => (b.signatureWords[0]?.ratio ?? 0) - (a.signatureWords[0]?.ratio ?? 0))[0];
     if (signatureParty?.signatureWords[0]) {
       const winnerWord = signatureParty.signatureWords[0];
@@ -305,5 +307,5 @@ export function buildConfiguredEditionQuizModel(
   data: WrappedData,
   configuration?: EditionQuizConfiguration,
 ): EditionQuizModel {
-  return applyEditionQuizConfiguration(buildEditionQuizModel(data), configuration);
+  return applyEditionQuizConfiguration(buildEditionQuizModel(data, configuration), configuration);
 }
