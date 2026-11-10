@@ -2,7 +2,8 @@
  * Shared Sound Types
  *
  * Sound type definitions and constants for browser audio. The short UI sounds
- * live as data URIs in `lib/ui-sounds.ts`; only the long intro sound is a file.
+ * are segments of the SND sprite (`lib/snd-sprite.ts`); only the long intro
+ * sound is a file of its own.
  */
 
 export type SoundType =
@@ -23,9 +24,30 @@ export type SoundType =
   /** Perfect Match: the result appears. */
   | 'match';
 
-/** Sounds served as files instead of data URIs in `lib/ui-sounds.ts`. */
+/** Sounds served as files of their own. */
 export const SOUND_FILES: Partial<Record<SoundType, string>> = {
   start: '/sounds/start.wav',
+};
+
+const TAPS = ['tap_01', 'tap_02', 'tap_03', 'tap_04', 'tap_05'] as const;
+const SWIPES = ['swipe_01', 'swipe_02', 'swipe_03', 'swipe_04', 'swipe_05'] as const;
+
+/**
+ * SND sprite segments per sound. Several names = variants picked at random,
+ * as SND recommends for sounds that repeat often.
+ */
+export const SOUND_SPRITES: Partial<Record<SoundType, readonly string[]>> = {
+  click: ['button'],
+  hover: TAPS,
+  correct: ['notification'],
+  wrong: ['caution'],
+  whoosh: SWIPES,
+  tick: TAPS,
+  lift: ['select'],
+  drop: ['toggle_on'],
+  like: ['transition_up'],
+  nope: ['transition_down'],
+  match: ['celebration'],
 };
 
 export const SOUND_VOLUMES: Record<SoundType, number> = {

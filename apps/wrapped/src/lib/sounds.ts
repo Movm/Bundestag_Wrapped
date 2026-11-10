@@ -2,22 +2,25 @@
  * Sound System for Bundestag Wrapped (Web)
  *
  * Short effects (click, quiz answers, slide whoosh, Perfect Match drag and
- * swipe feedback) run through one Web Audio context: every sound is decoded
- * once into a buffer, starts without the latency of a media element and can
- * overlap itself, which drag ticks need. Background music stays a looping
- * <audio> element, since it is long and streams.
+ * swipe feedback) run through one Web Audio context: each sound is decoded
+ * once, starts without the latency of a media element and can overlap itself,
+ * which drag ticks need. Background music stays a looping <audio> element,
+ * since it is long and streams.
  *
- * - The UI sounds are data URIs in `ui-sounds.ts`, imported lazily so they
- *   never weigh on the start bundle; `start` is a file in /public/sounds.
+ * - The UI sounds are one SND sprite (`snd-sprite.ts`), imported lazily so it
+ *   never weighs on the start bundle; `start` is a file in /public/sounds.
+ * - Sounds with several variants (tap, swipe) pick one at random, so repeated
+ *   ticks don't sound mechanical.
  * - Loading starts when the page is idle; the context is resumed on the first
  *   pointer or key press, as browsers require.
- * - A sound asked for before its buffer is ready is skipped, not played late.
+ * - A sound asked for before it is decoded is skipped, not played late.
  * - Mute preference lives in the audio store (persisted to localStorage).
  */
 
 import {
   type SoundType,
   SOUND_FILES,
+  SOUND_SPRITES,
   SOUND_VOLUMES,
   createSlideTransitionSoundHook,
 } from '@/shared/sounds';
@@ -33,8 +36,14 @@ const BACKGROUND_VOLUME = 0.08;
 let backgroundMusic: HTMLAudioElement | null = null;
 let isMusicPlaying = false;
 
+interface Clip {
+  buffer: AudioBuffer;
+  offset: number;
+  duration: number;
+}
+
 let context: AudioContext | null = null;
-const buffers = new Map<SoundType, AudioBuffer>();
+const clips = new Map<SoundType, Clip[]>();
 let loading: Promise<void> | null = null;
 
 function audioContext(): AudioContext | null {
@@ -45,40 +54,43 @@ function audioContext(): AudioContext | null {
   return context;
 }
 
-/** Data URIs are decoded in place, so a future CSP `connect-src` can't block them. */
-async function bytes(src: string): Promise<ArrayBuffer> {
-  if (!src.startsWith('data:')) return (await fetch(src)).arrayBuffer();
-  const binary = atob(src.slice(src.indexOf(',') + 1));
-  const out = new Uint8Array(binary.length);
-  for (let i = 0; i < binary.length; i++) out[i] = binary.charCodeAt(i);
-  return out.buffer;
+async function decodeFirst(ctx: AudioContext, urls: string[]): Promise<AudioBuffer | null> {
+  for (const url of urls) {
+    try {
+      return await ctx.decodeAudioData(await (await fetch(url)).arrayBuffer());
+    } catch (error) {
+      console.debug(`Sound ${url} failed to load:`, error instanceof Error ? error.message : error);
+    }
+  }
+  return null;
 }
 
-async function decode(ctx: AudioContext, type: SoundType, src: string): Promise<void> {
-  try {
-    buffers.set(type, await ctx.decodeAudioData(await bytes(src)));
-  } catch (error) {
-    console.debug(`Sound "${type}" failed to load:`, error instanceof Error ? error.message : error);
-  }
-}
+const nextTask = () => new Promise(resolve => window.setTimeout(resolve, 0));
 
 /**
- * Decode every sound once, one per task so decoding never costs a frame.
- * Safe to call repeatedly; later calls return the same promise.
+ * Decode the intro sound and the SND sprite once, one per task so decoding
+ * never costs a frame. Safe to call repeatedly; later calls share the promise.
  */
 export function initSounds(): Promise<void> {
   if (IS_DEV_AUDIO_DISABLED || typeof window === 'undefined') return Promise.resolve();
   if (loading) return loading;
   const ctx = audioContext();
   if (!ctx) return Promise.resolve();
-  loading = import('./ui-sounds').then(async ({ UI_SOUNDS }) => {
+  loading = (async () => {
     // The intro sound first: it is the one played on the very first tap.
-    const sources = { ...SOUND_FILES, ...UI_SOUNDS } as Partial<Record<SoundType, string>>;
-    for (const [type, src] of Object.entries(sources) as [SoundType, string][]) {
-      await decode(ctx, type, src);
-      await new Promise(resolve => window.setTimeout(resolve, 0));
+    for (const [type, url] of Object.entries(SOUND_FILES) as [SoundType, string][]) {
+      const buffer = await decodeFirst(ctx, [url]);
+      if (buffer) clips.set(type, [{ buffer, offset: 0, duration: buffer.duration }]);
+      await nextTask();
     }
-  });
+    const { SPRITE_URLS, SPRITE_MAP } = await import('./snd-sprite');
+    const buffer = await decodeFirst(ctx, SPRITE_URLS);
+    if (!buffer) return;
+    for (const [type, names] of Object.entries(SOUND_SPRITES) as [SoundType, readonly string[]][]) {
+      const parts = names.map(name => SPRITE_MAP[name]).filter(Boolean);
+      clips.set(type, parts.map(({ start, end }) => ({ buffer, offset: start, duration: end - start })));
+    }
+  })();
   return loading;
 }
 
@@ -108,20 +120,21 @@ export function playSound(type: SoundType): void {
   if (useAudioStore.getState().isMuted) return;
   if (typeof window === 'undefined') return;
 
-  const buffer = buffers.get(type);
+  const variants = clips.get(type);
   const ctx = context;
-  if (!buffer || !ctx) {
+  if (!variants?.length || !ctx) {
     void initSounds();
     return;
   }
   if (ctx.state !== 'running') void ctx.resume();
 
+  const clip = variants[Math.floor(Math.random() * variants.length)];
   const source = ctx.createBufferSource();
   const gain = ctx.createGain();
-  source.buffer = buffer;
+  source.buffer = clip.buffer;
   gain.gain.value = SOUND_VOLUMES[type];
   source.connect(gain).connect(ctx.destination);
-  source.start();
+  source.start(0, clip.offset, clip.duration);
 }
 
 /**
