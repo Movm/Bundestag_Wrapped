@@ -1,12 +1,11 @@
-import { existsSync } from 'node:fs';
-import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { EDITION_MUSIC, parseEditionMusic, themeForSlide } from './editions';
 import { THEME_IDS, TRACKS, getThemeForSlide } from './types';
 
 describe('edition music', () => {
   it('ships a file for every track', () => {
-    const missing = THEME_IDS.filter(id => !existsSync(path.join(import.meta.dirname, '../../../public', TRACKS[id].path)));
+    const files = new Set(Object.keys(import.meta.glob('/public/sounds/*.mp3')).map(file => file.replace(/^\/public/, '')));
+    const missing = THEME_IDS.filter(id => !files.has(TRACKS[id].path));
     expect(missing).toEqual([]);
   });
 
