@@ -260,7 +260,8 @@
 
 /* stack */
 .ds-quiz-stack { position: relative; }
-.ds-quiz-stack__band { position: absolute; left: -50vw; right: -50vw; top: 22%; height: 56%; background: var(--color-wr-ink); rotate: -5deg; transform-origin: left; }
+/* Full-bleed band: the box stays inside the column; the shadow paints to the edges without creating scroll overflow. */
+.ds-quiz-stack__band { position: absolute; left: 0; right: 0; top: 22%; height: 56%; background: var(--color-wr-ink); box-shadow: 0 0 0 100vmax var(--color-wr-ink); clip-path: inset(0 -100vmax); rotate: -5deg; transform-origin: left; }
 .ds-quiz-stack__list { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 0.25rem; }
 .ds-choice--word { align-items: baseline; gap: clamp(0.75rem, 0.5rem + 1.4vw, 1.75rem); padding: 0.25rem 0.5rem 0.25rem 0; color: #fff; transition: transform 0.35s var(--ease-wr-pop), opacity 0.3s; }
 .ds-choice--word .ds-choice__label { font-size: clamp(2.375rem, 1rem + min(7.4vw, 9vh), 7.75rem); text-transform: uppercase; letter-spacing: -0.05em; }

@@ -62,7 +62,7 @@ export const EndSlide = memo(function EndSlide({ onRestart }: EndSlideProps) {
     <Slide shapes="cover">
       <Enter><Eyebrow>{END_SLIDE_CONTENT.header.label}</Eyebrow></Enter>
       <Display level={2} size="hero" className="hyphens-none">
-        <span className="block text-wr-pink">Bundestag</span>
+        <span className="block text-wr-pink">Bundestag</span>{' '}
         <span className="block">Wrapped{surface.year ? ` ${surface.year}` : ''}</span>
       </Display>
       <Lead className="max-w-[38rem]">{END_SLIDE_CONTENT.message.primary}</Lead>
@@ -94,7 +94,7 @@ export const EndSlide = memo(function EndSlide({ onRestart }: EndSlideProps) {
             );
           })}
         </ul>
-        <Note>{END_SLIDE_CONTENT.message.secondary}</Note>
+        <Note className="ds-note--plate">{END_SLIDE_CONTENT.message.secondary}</Note>
       </Enter>
     </Slide>
   );

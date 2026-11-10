@@ -1,5 +1,5 @@
 import { Enter, Slide } from '@/design-system/components/Slide';
-import { Display, Eyebrow, Mark, Note } from '@/design-system/components/Type';
+import { Display, Eyebrow, Mark, Note, FitWord } from '@/design-system/components/Type';
 import { ChipCloud } from '@/design-system/components/Data';
 
 interface ResultViewProps {
@@ -18,11 +18,9 @@ export function ResultView({ topics }: ResultViewProps) {
         <Display size="lg" face="wide">Häufigste <Mark>Wörter.</Mark></Display>
       </div>
       {first && (
-        <Enter kind="stamp" className="flex flex-wrap items-baseline gap-x-6 gap-y-2">
+        <Enter className="ds-fit-scope">
           <span className="sr-only">Platz 1: </span>
-          <span lang="de" className="font-wide text-[clamp(2.5rem,0.5rem+min(11vw,14vh),9rem)] font-black uppercase leading-[0.9] tracking-tight [hyphens:auto] [overflow-wrap:anywhere]">
-            {first}
-          </span>
+          <FitWord word={first} max="9rem" />
         </Enter>
       )}
       {second && (

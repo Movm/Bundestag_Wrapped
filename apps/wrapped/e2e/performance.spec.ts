@@ -103,7 +103,8 @@ test('pauses offscreen decoration in reading mode while retaining all slide cont
     ).length,
   );
   expect(offscreenLoops).toBe(0);
-  await expect(page.locator('[data-slide-id="intro"] h1')).toContainText('BUNDESTAG');
+  // Uppercase is a CSS transform; the text itself reads "Bundestag Wrapped".
+  await expect(page.locator('[data-slide-id="intro"] h1')).toContainText('Bundestag Wrapped');
 });
 
 

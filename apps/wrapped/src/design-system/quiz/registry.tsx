@@ -17,8 +17,8 @@ export const QUIZ_LAYOUT_REGISTRY: readonly QuizLayoutSpec[] = [
   { id: 'stack', component: StackLayout, fits: options => FITS.count(options, 2, 4) && FITS.shortLabels(options, 12) },
   { id: 'fan', component: FanLayout, fits: options => FITS.count(options, 3, 4) && FITS.shortLabels(options, 14) },
   { id: 'quadrants', component: QuadrantsLayout, fits: options => options.length === 4 && FITS.shortLabels(options, 16) },
-  { id: 'swipe', component: SwipeLayout, fits: options => FITS.count(options, 2, 5) },
-  { id: 'gap', component: GapLayout, fits: (options, { gapSentence }) => Boolean(gapSentence?.includes(GAP_MARK)) && FITS.count(options, 2, 6) },
+  { id: 'swipe', component: SwipeLayout, optIn: true, fits: options => FITS.count(options, 2, 5) },
+  { id: 'gap', component: GapLayout, optIn: true, fits: (options, { gapSentence }) => Boolean(gapSentence?.includes(GAP_MARK)) && FITS.count(options, 2, 6) },
   { id: 'stickers', component: StickersLayout, fits: options => FITS.count(options, 2, 6) && FITS.shortLabels(options, 18) },
   { id: 'tiles', component: TilesLayout, fits: () => true },
 ];

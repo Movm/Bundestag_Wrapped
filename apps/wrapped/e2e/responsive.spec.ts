@@ -43,6 +43,8 @@ for (const viewport of VIEWPORTS) {
   test(`every slide fits and reads well on ${viewport.name} (${viewport.width}×${viewport.height})`, async ({ page }) => {
     test.setTimeout(240_000);
     await installEditionFixtures(page);
+    // Measure the settled layout: reduced motion skips entrance transforms.
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.setViewportSize({ width: viewport.width, height: viewport.height });
     await openReadingMode(page);
     const ids = await page.$$eval('[data-slide-id]', sections => sections.map(section => section.getAttribute('data-slide-id')!));
