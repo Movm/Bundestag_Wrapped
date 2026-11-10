@@ -40,7 +40,7 @@ export const SOUND_SPRITES: Partial<Record<SoundType, readonly string[]>> = {
   click: ['button'],
   hover: TAPS,
   correct: ['notification'],
-  wrong: ['toggle_off'],
+  wrong: ['disabled'],
   whoosh: SWIPES,
   tick: TAPS,
   lift: ['select'],
