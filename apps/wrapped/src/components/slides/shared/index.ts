@@ -17,7 +17,6 @@ export {
 } from './animations';
 
 // Shared slide components
-export { Confetti } from './Confetti';
 export { FloatingParticles } from './FloatingParticles';
 export { SlideContainer, type SparklesConfig } from './SlideContainer';
 export { SlideInfo } from './SlideInfo';

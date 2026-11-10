@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'motion/react';
 import { useEffect, useId, useMemo, useState } from 'react';
-import { Confetti } from '@/components/slides/shared/Confetti';
+import { Confetti } from '../components/Confetti';
 import { ENTER } from '../motion';
 import { useQuizEngine, type AnyQuizConfig } from './engine';
 import { pickQuizLayout, type QuizLayoutId } from './layouts';
