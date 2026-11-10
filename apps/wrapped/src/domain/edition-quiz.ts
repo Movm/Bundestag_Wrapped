@@ -63,6 +63,57 @@ function jugendwortQuestion(word: { word: string; count: number; winnerYear?: nu
   );
 }
 
+interface WordSpeaker { name: string; party: string; count: number }
+type YouthWord = { word: string; count: number; winnerYear?: number; speakers?: WordSpeaker[] };
+
+const speakerLabel = (speaker: { name: string; party: string }) => `${speaker.name} (${speaker.party})`;
+
+/**
+ * Asks who said the flagged Jugendwort. The pipeline orders `speakers` by count
+ * (descending) and then name, so the first entry is the correct answer; on a tie
+ * the alphabetically first name wins (speeches carry no date here). Every other
+ * speaker of the word is kept out of the options so no second answer is correct.
+ * Distractors are people who used other youth words but not this one, preferring
+ * parties not yet in the options, then other prominent speakers of the edition.
+ * With fewer than four options the question is omitted.
+ */
+function jugendwortSpeakerQuestion(
+  word: YouthWord & { speakers: WordSpeaker[] },
+  youthSpeakers: Array<{ name: string; party: string }>,
+  prominentSpeakers: Array<{ name: string; party: string }>,
+): QuizQuestion | undefined {
+  const [winner, ...others] = word.speakers;
+  if (!winner) return undefined;
+  const sayers = new Set(word.speakers.map(speaker => speaker.name));
+  const pool = [...youthSpeakers, ...prominentSpeakers].filter(speaker => !sayers.has(speaker.name));
+  const unique = pool.filter((speaker, index) => pool.findIndex(other => other.name === speaker.name) === index);
+  const usedParties = new Set([winner.party]);
+  const picked: Array<{ name: string; party: string }> = [];
+  for (const speaker of unique) {
+    if (picked.length === 3) break;
+    if (usedParties.has(speaker.party)) continue;
+    usedParties.add(speaker.party);
+    picked.push(speaker);
+  }
+  for (const speaker of unique) {
+    if (picked.length === 3) break;
+    if (!picked.includes(speaker)) picked.push(speaker);
+  }
+  const answer = speakerLabel(winner);
+  const times = (count: number) => (count === 1 ? 'einmal' : `${number.format(count)}-mal`);
+  const alsoSaid = others.length
+    ? ` Auch gesagt haben es ${others.map(speaker => `${speakerLabel(speaker)} (${times(speaker.count)})`).join(', ')}.`
+    : '';
+  const meaning = word.word === 'ragebait' ? ` ${RAGEBAIT_MEANING}` : '';
+  return question(
+    'quiz-youth-language',
+    `Wer hat das Jugendwort ${word.winnerYear} „${word.word}“ im Bundestag gesagt?`,
+    [answer, ...picked.map(speakerLabel)],
+    answer,
+    `${answer} sagte „${word.word}“ ${times(winner.count)}.${alsoSaid}${meaning}`,
+  );
+}
+
 /** Builds deterministic, evidence-backed quiz questions for one edition. */
 export function buildEditionQuizModel(data: WrappedData): EditionQuizModel {
   const model: EditionQuizModel = {};
@@ -111,6 +162,14 @@ export function buildEditionQuizModel(data: WrappedData): EditionQuizModel {
     const jugendwort = [...(comparison?.youthLanguage.words ?? [])]
       .filter(item => item.winnerYear !== undefined)
       .sort((a, b) => (b.winnerYear ?? 0) - (a.winnerYear ?? 0))[0];
+    if (jugendwort?.speakers?.length) {
+      return jugendwortSpeakerQuestion(
+        { ...jugendwort, speakers: jugendwort.speakers },
+        comparison?.youthLanguage.bySpeaker ?? [],
+        data.topSpeakersByWords ?? [],
+      );
+    }
+    // Editions generated before per-word speakers existed keep the count question.
     if (jugendwort) return jugendwortQuestion(jugendwort);
     const words = (comparison?.youthLanguage.words ?? []).filter(item => item.count > 0);
     const winner = words[0];

@@ -17,4 +17,4 @@ export { GenderSlide } from './GenderSlide';
 export { MoinSlide } from './MoinSlide';
 export { ShareSlide } from './ShareSlide';
 export { EndSlide } from './EndSlide';
-export { RankingMovementSlide, SignatureWordMovementSlide, YouthLanguageResultSlide, YouthLanguagePartySlide, YouthLanguageSpeakerSlide } from './YearOverYearSlide';
+export { RankingMovementSlide, SignatureWordMovementSlide, TopicRiserContextSlide, YouthLanguageResultSlide, YouthLanguagePartySlide, YouthLanguageSpeakerSlide } from './YearOverYearSlide';

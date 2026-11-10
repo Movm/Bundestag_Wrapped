@@ -58,7 +58,10 @@ def test_builds_rank_movements_and_youth_language_counts(tmp_path):
             {"word": "sinkt", "currentRank": 3, "previousRank": 2},
         ],
     }]
-    assert result["youthLanguage"]["words"][0] == {"word": "safe", "count": 2, "previousCount": 1, "change": 1}
+    assert result["youthLanguage"]["words"][0] == {
+        "word": "safe", "count": 2, "previousCount": 1, "change": 1,
+        "speakers": [{"name": "Berta Beispiel", "party": "B", "count": 2}],
+    }
     assert result["youthLanguage"]["byParty"] == [{"party": "B", "count": 3}, {"party": "A", "count": 2}]
     assert result["youthLanguage"]["bySpeaker"] == [
         {"name": "Berta Beispiel", "party": "B", "count": 3},
@@ -113,3 +116,102 @@ def test_lexicon_keeps_winner_year_and_rejects_invalid_ones(tmp_path):
     write_json(lexicon, {"version": "v", "terms": ["safe", "wild", "bro", {"word": "ragebait", "winner": "2026"}]})
     with pytest.raises(ValueError, match="winner"):
         _lexicon(lexicon)
+
+
+from noun_analysis.edition.comparison import _contextual_count, _lexicon, _term_pattern
+
+
+def _term(word, **extra):
+    return {"word": word, "aliases": extra.pop("aliases", [word]), "includeContexts": [], "excludeContexts": [], **extra}
+
+
+@pytest.mark.parametrize("text", [
+    "Er liefert Ragebait ab.",
+    "mit Trollfarmen, Bots und Ragebaits überrennen",
+    "Das ist RAGEBAIT.",
+    "ein Rage-Bait der Regierung",
+    "ein Rage Bait der Regierung",
+    "wegen des Ragebaits",
+    "mit Ragebaiten",
+])
+def test_variants_of_a_term_are_counted(text):
+    assert _contextual_count(text, _term("ragebait")) == 1
+
+
+@pytest.mark.parametrize("text", [
+    "Das Bait liegt im Wasser.",
+    "Das ist Rage und Wut.",
+    "Ragebaiter überall.",
+    "Sie lieben Anti-Ragebait nicht.",
+])
+def test_unrelated_forms_are_not_counted(text):
+    assert _contextual_count(text, _term("ragebait")) == 0
+
+
+def test_two_uses_in_one_speech_are_both_counted():
+    assert _contextual_count("Ragebait hier, Ragebaits dort.", _term("ragebait")) == 2
+
+
+def test_multi_word_alias_accepts_hyphen_and_plural():
+    assert _contextual_count("ein Side-Eye und zwei Side Eyes", _term("side eye")) == 2
+
+
+def test_short_and_ambiguous_terms_get_no_loose_variants():
+    # no join variants for short words, no endings for terms with context rules
+    assert _contextual_count("Der Bus us", _term("sus")) == 0
+    ambiguous = _term("wild", includeContexts=["so\\s+wild"])
+    assert _contextual_count("so wild", ambiguous) == 1
+    assert _contextual_count("so wilde Tiere", ambiguous) == 0
+    assert _contextual_count("wild", ambiguous) == 0
+
+
+def test_context_rules_still_apply_to_spelling_variants():
+    term = _term("crashout", includeContexts=["totaler"])
+    assert _contextual_count("ein totaler Crash-out", term) == 1
+    assert _contextual_count("ein Crash-out", term) == 0
+
+
+def test_term_pattern_is_shared_for_every_alias():
+    assert _term_pattern("ragebait").search("Ragebaits")
+
+
+def test_ragebait_regression_fixtures_from_2026_preview(tmp_path):
+    baseline = tmp_path / "baseline"
+    write_json(baseline / "manifest.json", {"editionId": "2025", "period": {"start": "2025-01-01", "end": "2025-12-31"}})
+    write_json(baseline / "wrapped.json", {})
+    write_json(baseline / "speeches.json", {"speeches": []})
+    lexicon = tmp_path / "youth.json"
+    write_json(lexicon, {"version": "t", "terms": [
+        {"word": "ragebait", "winner": 2026}, "safe", "wild", "bro",
+    ]})
+    speeches = [
+        {"speaker": "Awet Tesfaiesus", "party": "GRÜNE", "text": "… mit Trollfarmen, Bots und Ragebaits überrennen …"},
+        {"speaker": "Marcel Emmerich", "party": "GRÜNE", "text": "Er liefert Ragebait ab."},
+        {"speaker": "Marcel Emmerich", "party": "GRÜNE", "text": "Noch einmal Ragebait."},
+    ]
+    result = build_year_over_year({}, speeches, baseline, lexicon)
+    words = {item["word"]: item for item in result["youthLanguage"]["words"]}
+    assert words["ragebait"]["count"] == 3
+    assert words["ragebait"]["speakers"] == [
+        {"name": "Marcel Emmerich", "party": "GRÜNE", "count": 2},
+        {"name": "Awet Tesfaiesus", "party": "GRÜNE", "count": 1},
+    ]
+    assert "speakers" not in words["safe"]
+    assert result["youthLanguage"]["bySpeaker"][0]["name"] == "Marcel Emmerich"
+
+
+def test_speakers_sort_by_count_then_name(tmp_path):
+    baseline = tmp_path / "baseline"
+    write_json(baseline / "manifest.json", {"editionId": "2025", "period": {"start": "a", "end": "b"}})
+    write_json(baseline / "wrapped.json", {})
+    write_json(baseline / "speeches.json", {"speeches": []})
+    lexicon = tmp_path / "youth.json"
+    write_json(lexicon, {"version": "t", "terms": ["safe", "wild", "bro", "lowkey"]})
+    speeches = [
+        {"speaker": "Zora", "party": "A", "text": "safe"},
+        {"speaker": "Adam", "party": "B", "text": "safe"},
+        {"speaker": "Mia", "party": "A", "text": "safe safe"},
+    ]
+    result = build_year_over_year({}, speeches, baseline, lexicon)
+    safe = next(item for item in result["youthLanguage"]["words"] if item["word"] == "safe")
+    assert [item["name"] for item in safe["speakers"]] == ["Mia", "Adam", "Zora"]

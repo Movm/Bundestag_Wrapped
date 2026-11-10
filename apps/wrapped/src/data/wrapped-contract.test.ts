@@ -84,4 +84,27 @@ describe('Wrapped v1 contract', () => {
       parties: [{ party: 'Fixture Party', words: [{ word: 'fixture', count: 'one' }] }],
     }, 'words.json')).toThrow('words.json/parties/0/words/0/count');
   });
+
+  describe('youth-word speakers', () => {
+    const withWord = (extra: Record<string, unknown>) => ({
+      ...wrapped,
+      yearOverYear: {
+        baseline: { editionId: '2025', start: '2025-01-01', end: '2025-12-31' },
+        topics: [], words: [], signatureWords: [],
+        youthLanguage: {
+          lexiconVersion: 'x', byParty: [], bySpeaker: [],
+          words: [{ word: 'ragebait', count: 1, previousCount: 0, change: 1, winnerYear: 2026, ...extra }],
+        },
+      },
+    });
+
+    it('accepts words with and without the optional speakers field', () => {
+      expect(() => validateWrappedData(withWord({}), 'wrapped.json')).not.toThrow();
+      expect(() => validateWrappedData(withWord({ speakers: [{ name: 'Fixture Speaker', party: 'GRÜNE', count: 1 }] }), 'wrapped.json')).not.toThrow();
+    });
+
+    it('rejects malformed speakers', () => {
+      expect(() => validateWrappedData(withWord({ speakers: [{ name: 'Fixture Speaker', party: 'GRÜNE' }] }), 'wrapped.json')).toThrow('speakers/0');
+    });
+  });
 });

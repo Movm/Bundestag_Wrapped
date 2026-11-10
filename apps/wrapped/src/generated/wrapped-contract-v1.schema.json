@@ -1043,6 +1043,26 @@
         }
       }
     },
+    "YouthWordSpeaker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "party",
+        "count"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "count": {
+          "$ref": "#/$defs/Count"
+        }
+      }
+    },
     "YouthWordCount": {
       "type": "object",
       "additionalProperties": false,
@@ -1067,6 +1087,12 @@
         },
         "winnerYear": {
           "$ref": "#/$defs/Count"
+        },
+        "speakers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/YouthWordSpeaker"
+          }
         }
       }
     },
