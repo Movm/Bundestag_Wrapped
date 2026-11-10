@@ -1,885 +1,281 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router';
 import { useQuery } from '@tanstack/react-query';
-import { motion } from 'motion/react';
-import {
-  BarChart3,
-  BookOpen,
-  BriefcaseBusiness,
-  CalendarDays,
-  Camera,
-  ExternalLink,
-  IdCard,
-  type LucideIcon,
-  MapPin,
-  MessageSquare,
-  Sparkles,
-  Trophy,
-} from 'lucide-react';
 import { SEO } from '@/components/seo/SEO';
 import { SITE_CONFIG } from '@/components/seo/constants';
-import { PartyBadge } from '@/components/ui/PartyBadge';
 import { useSpeakerData, useSpeechesDb } from '@/hooks/useDataQueries';
-import { getPartyColor, getPartyTextColor } from '@/lib/party-colors';
-import {
-  buildMdbLiveSummary,
-  fetchWikimediaIntro,
-  wikipediaTitleFromDescription,
-} from '@/lib/mdb-live-summary';
+import { fetchWikimediaIntro, wikipediaTitleFromDescription } from '@/lib/wikimedia-intro';
+import { buildMdbQuiz, firstName, formatRatio, genitive, quizWords } from '@/lib/mdb-quiz';
 import {
   displaySpeakerName,
   signatureAdjectivesForDisplay,
-  signatureWordsForDisplay,
   speechesForSpeaker,
   speechTypeLabel,
 } from '@/lib/speaker-profile-utils';
 import { TOPIC_BY_ID } from '@/shared/constants/topics';
-import type { Speech } from '@/lib/search-utils';
 import type {
   AbgeordnetenwatchProfile,
   AbgeordnetenwatchSidejob,
-  AbgeordnetenwatchVote,
-  OfficialImageMetadata,
-  ProfileDescription,
-  ProfileImageMetadata,
-  SpeakerBiography,
   SpeakerWrapped,
-  SpiritAnimal,
 } from '@/data/speaker-wrapped';
+import type { Speech } from '@/lib/search-utils';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionPath, editionSurface } from '@/edition/surface';
+import { ArrowIcon, GrowBar, PartyPill, RatioBars, Reveal } from './mdb-profile/shared';
+import { partyStyle } from './mdb-profile/party-style';
 
-function formatNumber(value: number): string {
-  return value.toLocaleString('de-DE');
-}
+const number = new Intl.NumberFormat('de-DE');
+const euro = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
+/** Typical plenary speaking pace, used only for the "≈ minutes" estimate. */
+const WORDS_PER_MINUTE = 130;
+const RANK_SHOWN = 25;
 
-function formatOptionalNumber(value?: number | null): string {
-  return typeof value === 'number' ? formatNumber(value) : '–';
-}
-
-function formatRatio(value: number): string {
-  return `${value.toLocaleString('de-DE', { maximumFractionDigits: 1, minimumFractionDigits: 1 })}×`;
-}
-
-function formatEuro(value: number): string {
-  return new Intl.NumberFormat('de-DE', {
-    style: 'currency',
-    currency: 'EUR',
-    maximumFractionDigits: 0,
-  }).format(value);
-}
-
-const INCOME_LEVEL_LABELS: Record<number, string> = {
-  0: '1 € bis 1.000 €',
-  1: '1.000 € bis 3.500 €',
-  2: '3.500 € bis 7.000 €',
-  3: '7.000 € bis 15.000 €',
-  4: '15.000 € bis 30.000 €',
-  5: '30.000 € bis 50.000 €',
-  6: '50.000 € bis 75.000 €',
-  7: '75.000 € bis 100.000 €',
-  8: '100.000 € bis 150.000 €',
-  9: '150.000 € bis 250.000 €',
-  10: 'ab 250.000 €',
+const VOTE_LABELS: Record<string, string> = { yes: 'Ja', no: 'Nein', abstain: 'Enthalten', no_show: 'Nicht da' };
+const MANDATE_WON_LABELS: Record<string, string> = { constituency: 'Direktmandat', list: 'Landesliste', moved_up: 'Nachgerückt' };
+const TONE_LABELS: Record<string, string> = {
+  solution_focus: 'Lösungsfokus',
+  collaboration: 'Zusammenarbeit',
+  future_orientation: 'Zukunft',
+  authority: 'Autorität',
+  inclusivity: 'Inklusivität',
+  emotional_intensity: 'Emotion',
+  aggression: 'Angriff',
+  labeling: 'Etiketten',
+  acknowledgment: 'Anerkennung',
 };
+const TOPIC_COLORS = ['var(--color-wr-pink)', 'var(--color-wr-violet)', '#fff', 'var(--color-wr-mint)', 'var(--color-wr-lilac)'];
 
-const VOTE_LABELS: Record<string, string> = {
-  yes: 'Ja',
-  no: 'Nein',
-  abstain: 'Enthalten',
-  no_show: 'Nicht beteiligt',
-};
-
-const MANDATE_WON_LABELS: Record<string, string> = {
-  constituency: 'Direktmandat',
-  list: 'Landesliste',
-  moved_up: 'Nachgerückt',
-};
-
-function formatIncome(sidejob: AbgeordnetenwatchSidejob): string {
-  if (typeof sidejob.income === 'number') return formatEuro(sidejob.income);
-  if (typeof sidejob.incomeLevel === 'number') {
-    return `Stufe ${sidejob.incomeLevel}: ${INCOME_LEVEL_LABELS[sidejob.incomeLevel] ?? 'unbekannte Spanne'}`;
-  }
-  return 'keine Einkommensangabe';
-}
-
-function formatVote(value: string): string {
-  return VOTE_LABELS[value] ?? value;
-}
-
-function formatMandateWon(value?: string | null): string | null {
+/** "86 - Aachen I (Bundestag 2025 - 2029)" → "86 · Aachen I"; drops soft hyphens. */
+function stripPeriod(value?: string | null): string | null {
   if (!value) return null;
-  return MANDATE_WON_LABELS[value] ?? value;
+  return value.replace(/­/g, '').replace(/\s*\(Bundestag[^)]*\)\s*$/, '').replace(/^(\d+) - /, '$1 · ').trim() || null;
 }
 
-function StatTile({
-  label,
-  value,
-  detail,
-}: {
-  label: string;
-  value: string;
-  detail?: string;
-}) {
-  return (
-    <div className="rounded-lg border border-track bg-wr-card px-4 py-3">
-      <p className="text-xs uppercase tracking-wide text-on-muted">{label}</p>
-      <p className="mt-1 text-2xl font-black text-on">{value}</p>
-      {detail && <p className="mt-1 text-xs text-on-muted">{detail}</p>}
-    </div>
-  );
+function sidejobIncome(job: AbgeordnetenwatchSidejob): number | null {
+  return typeof job.income === 'number' ? job.income : null;
 }
 
-function SpeechRow({ speech }: { speech: Speech }) {
-  return (
-    <details className="group rounded-lg border border-track bg-wr-card px-4 py-3 open:bg-wr-card">
-      <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-        <div>
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-wr-card px-2 py-0.5 text-xs font-medium text-on-muted">
-              {speechTypeLabel(speech)}
-            </span>
-            <span className="text-xs text-on-muted">{formatNumber(speech.words)} Wörter</span>
-          </div>
-          <p className="mt-2 line-clamp-2 text-sm text-on-muted">{speech.preview || speech.text}</p>
-        </div>
-        <span className="mt-1 text-sm text-on-accent group-open:rotate-45">+</span>
-      </summary>
-      <p className="mt-4 border-t border-track pt-4 text-sm leading-7 text-on-muted">
-        {speech.text}
-      </p>
-    </details>
-  );
+function rankDetail(rank: number | null | undefined, fallback: string): string {
+  return rank && rank <= RANK_SHOWN ? `Platz ${rank} im Bundestag` : fallback;
 }
 
-type ToneCard = [label: string, value: number, Icon: LucideIcon];
-type ProfileTab = 'overview' | 'bio' | 'transparency' | 'topics' | 'language' | 'tone' | 'speeches' | 'votes';
-type ProfileHighlight = {
-  label: string;
-  value: string;
-  detail: string;
-  Icon: LucideIcon;
+type ChapterId = 'signatur' | 'zahlen' | 'themen' | 'ton' | 'reden' | 'abstimmungen' | 'mandat';
+const CHAPTER_LABELS: Record<ChapterId, string> = {
+  signatur: 'Signatur', zahlen: 'Zahlen', themen: 'Themen', ton: 'Ton', reden: 'Reden', abstimmungen: 'Abstimmungen', mandat: 'Mandat',
 };
 
-const PROFILE_TABS: { id: ProfileTab; label: string }[] = [
-  { id: 'overview', label: 'Überblick' },
-  { id: 'topics', label: 'Themen' },
-  { id: 'speeches', label: 'Reden' },
-  { id: 'votes', label: 'Abstimmungen' },
-  { id: 'transparency', label: 'Transparenz' },
-];
+function useActiveChapter(ids: ChapterId[]): [ChapterId | undefined, (id: ChapterId) => void] {
+  const [active, setActive] = useState<ChapterId | undefined>(ids[0]);
+  const key = ids.join(',');
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(entry => { if (entry.isIntersecting) setActive(entry.target.id as ChapterId); }),
+      { rootMargin: '-40% 0px -55% 0px' },
+    );
+    key.split(',').forEach(id => { const el = document.getElementById(id); if (el) observer.observe(el); });
+    return () => observer.disconnect();
+  }, [key]);
+  // Keep the active pill visible in the horizontally scrolling nav.
+  useEffect(() => {
+    if (active) document.querySelector(`[data-chapter-link="${active}"]`)?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  }, [active]);
+  return [active, setActive];
+}
 
-function TabButton({
-  active,
-  label,
-  onClick,
-}: {
-  active: boolean;
-  label: string;
-  onClick: () => void;
-}) {
+/** True once the chapter nav sticks below the fixed header (4rem). */
+function useStuck(): [(node: HTMLElement | null) => void, boolean] {
+  const [stuck, setStuck] = useState(false);
+  const [node, setNode] = useState<HTMLElement | null>(null);
+  useEffect(() => {
+    if (!node) return;
+    const update = () => setStuck(node.getBoundingClientRect().top <= 64.5);
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    return () => window.removeEventListener('scroll', update);
+  }, [node]);
+  return [setNode, stuck];
+}
+
+/** Big tile number; --chars lets the CSS fit it to the tile. */
+function TileValue({ value }: { value: number }) {
+  const text = number.format(value);
+  return <span className="mp-tile__value" style={{ '--chars': Math.max(3, text.length) } as React.CSSProperties}>{text}</span>;
+}
+
+function ChapterHead({ num, kicker, title, children, className }: { num: string; kicker: string; title: string; children?: React.ReactNode; className?: string }) {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={[
-        'whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold transition',
-        active
-          ? 'bg-wr-pink text-wr-ink'
-          : 'border border-track bg-wr-card text-on-muted hover:bg-bg-elevated hover:text-on',
-      ].join(' ')}
-    >
-      {label}
+    <Reveal className={`mp-head ${className ?? ''}`}>
+      <span className="mp-kicker">{num} · {kicker}</span>
+      <h2 className="mp-h2">{title}</h2>
+      {children}
+    </Reveal>
+  );
+}
+
+function Portrait({ speaker, name }: { speaker: SpeakerWrapped; name: string }) {
+  const image = speaker.profileImage ?? speaker.officialImage ?? null;
+  const [failed, setFailed] = useState(false);
+  const initials = name.split(/\s+/).filter(Boolean).map(part => part[0]).filter((_, i, all) => i === 0 || i === all.length - 1).join('').toLocaleUpperCase('de-DE');
+  return (
+    <Reveal className="mp-portrait">
+      <figure className="m-0">
+        <div className="mp-portrait__back" aria-hidden="true" />
+        <div className="mp-portrait__frame">
+          <span className="mp-portrait__initials" aria-hidden="true">{initials}</span>
+          {image && !failed && (
+            <img src={image.thumbnailUrl ?? image.url} alt={image.alt ?? `Porträt von ${name}`} loading="eager" onError={() => setFailed(true)} />
+          )}
+        </div>
+        <figcaption>
+          {image ? (
+            <a href={image.sourceUrl} target="_blank" rel="noreferrer">
+              Foto: {image.sourceLabel === 'Wikimedia Commons' ? 'Wikimedia' : image.sourceLabel ?? 'Bundestag'} ↗
+            </a>
+          ) : 'Kein frei lizenziertes Foto verfügbar'}
+        </figcaption>
+      </figure>
+    </Reveal>
+  );
+}
+
+function SpeechCard({ speech, longest }: { speech: Speech; longest: number }) {
+  const [open, setOpen] = useState(false);
+  const label = speechTypeLabel(speech);
+  return (
+    <button type="button" className="mp-speech" aria-expanded={open} onClick={() => setOpen(value => !value)}>
+      <span className="mp-speech__meta">
+        <span className={`mp-speech__type ${label === 'Rede' ? '' : 'mp-speech__type--short'}`}>{label}</span>
+        <span className="mp-speech__words">{number.format(speech.words)} Wörter</span>
+      </span>
+      <span className="mp-speech__text">„{(open ? speech.text : speech.preview || speech.text).trim()}“</span>
+      <span className="mp-speech__foot">
+        <span className="mp-speech__length" aria-hidden="true"><span style={{ width: `${Math.max(4, (speech.words / longest) * 100)}%` }} /></span>
+        <span className="mp-speech__more">{open ? 'Weniger' : 'Weiterlesen'}</span>
+      </span>
     </button>
   );
 }
 
-function InsightCard({ highlight }: { highlight: ProfileHighlight }) {
-  const { Icon } = highlight;
-
-  return (
-    <div className="rounded-lg border border-track bg-wr-card p-4">
-      <div className="flex items-center justify-between gap-3">
-        <p className="text-xs font-semibold uppercase tracking-wide text-on-muted">{highlight.label}</p>
-        <Icon size={18} className="text-on-accent" />
-      </div>
-      <p className="mt-3 text-xl font-black text-on">{highlight.value}</p>
-      <p className="mt-2 text-sm leading-6 text-on-muted">{highlight.detail}</p>
-    </div>
-  );
-}
-
-function buildToneHighlight(speaker: SpeakerWrapped): ProfileHighlight | null {
-  if (!speaker.toneProfile) return null;
-
-  const toneCandidates: ProfileHighlight[] = [
-    {
-      label: 'Tonalität',
-      value: `${Math.round(speaker.toneProfile.scores.solution_focus)}% Lösungsfokus`,
-      detail: 'Die Sprache wirkt im Modell stark auf Lösung, Zukunft und Handlungsfähigkeit ausgerichtet.',
-      Icon: BarChart3,
-    },
-    {
-      label: 'Tonalität',
-      value: `${Math.round(speaker.toneProfile.scores.collaboration)}% Zusammenarbeit`,
-      detail: 'Kooperative Begriffe und Wir-Formulierungen sind im Tonprofil deutlich vertreten.',
-      Icon: Trophy,
-    },
-    {
-      label: 'Tonalität',
-      value: `${Math.round(speaker.toneProfile.scores.future_orientation)}% Zukunft`,
-      detail: 'Das Sprachprofil zeigt einen starken Fokus auf kommende Aufgaben und politische Richtung.',
-      Icon: Sparkles,
-    },
+function MandateChapter({ num, speaker, profile, bioText, bioSource }: {
+  num: string;
+  speaker: SpeakerWrapped;
+  profile: AbgeordnetenwatchProfile | null;
+  bioText: string | null;
+  bioSource: { url: string; label: string } | null;
+}) {
+  const biography = speaker.biography ?? null;
+  const mandate = profile?.mandate ?? null;
+  const politician = profile?.politician ?? null;
+  const sidejobs = profile?.sidejobs ?? [];
+  const withIncome = sidejobs.filter(job => sidejobIncome(job) !== null || typeof job.incomeLevel === 'number');
+  const topJob = [...sidejobs].sort((a, b) => (sidejobIncome(b) ?? -1) - (sidejobIncome(a) ?? -1))[0];
+  const questions = politician?.questions ?? null;
+  const answered = politician?.questionsAnswered ?? null;
+  const share = questions && answered !== null ? Math.round((answered / questions) * 100) : null;
+  const born = biography?.birthDate
+    ? `${biography.birthDate}${biography.birthPlace ? ` in ${biography.birthPlace}` : ''}`
+    : politician?.yearOfBirth ? String(politician.yearOfBirth) : null;
+  const facts: [string, string | null | undefined][] = [
+    ['Wahlperiode', stripPeriod(mandate?.parliamentPeriod)?.replace('Bundestag ', '')],
+    ['Mandat', mandate?.mandateWon ? MANDATE_WON_LABELS[mandate.mandateWon] ?? mandate.mandateWon : null],
+    ['Wahlkreis', stripPeriod(mandate?.constituency) ?? biography?.constituency],
+    ['Fraktion', stripPeriod(mandate?.fraction) ?? speaker.party],
+    ['Beruf', biography?.profession ?? politician?.occupation],
+    ['Geboren', born],
   ];
-
-  return toneCandidates.sort((a, b) => Number.parseInt(b.value, 10) - Number.parseInt(a.value, 10))[0];
-}
-
-function buildProfileHighlights({
-  speaker,
-  topTopicName,
-  topTopicWords,
-  signatureWords,
-  signatureAdjectives,
-}: {
-  speaker: SpeakerWrapped;
-  topTopicName?: string;
-  topTopicWords: string[];
-  signatureWords: ReturnType<typeof signatureWordsForDisplay>;
-  signatureAdjectives: ReturnType<typeof signatureAdjectivesForDisplay>;
-}): ProfileHighlight[] {
-  const highlights: ProfileHighlight[] = [];
-
-  if (speaker.rankings.wordsRank <= 10) {
-    highlights.push({
-      label: 'Wortgewicht',
-      value: `#${speaker.rankings.wordsRank} nach Wörtern`,
-      detail: `${formatNumber(speaker.totalWords)} ausgewertete Wörter machen dieses Profil im Datensatz besonders sichtbar.`,
-      Icon: Trophy,
-    });
-  }
-
-  if (speaker.drama.interruptedRank && speaker.drama.interruptedRank <= 10 && speaker.drama.interruptionsReceived > 0) {
-    highlights.push({
-      label: 'Plenardrama',
-      value: `#${speaker.drama.interruptedRank} bei Zwischenrufen`,
-      detail: `${formatNumber(speaker.drama.interruptionsReceived)} registrierte Zwischenrufe gegen diese Redebeiträge.`,
-      Icon: MessageSquare,
-    });
-  }
-
-  if (speaker.rankings.longestSpeechRank <= 10) {
-    highlights.push({
-      label: 'Längste Rede',
-      value: `#${speaker.rankings.longestSpeechRank} im Bundestag`,
-      detail: `Die längste erfasste Rede umfasst ${formatNumber(speaker.maxWords)} Wörter.`,
-      Icon: BarChart3,
-    });
-  }
-
-  const toneHighlight = buildToneHighlight(speaker);
-  if (toneHighlight) {
-    highlights.push(toneHighlight);
-  }
-
-  if (topTopicName) {
-    highlights.push({
-      label: 'Top-Thema',
-      value: topTopicName,
-      detail: topTopicWords.length
-        ? `Prägende Wörter: ${topTopicWords.join(', ')}.`
-        : 'Das stärkste Thema im persönlichen Themenprofil.',
-      Icon: BookOpen,
-    });
-  }
-
-  const signatureWord = signatureWords[0];
-  if (signatureWord) {
-    highlights.push({
-      label: 'Signaturwort',
-      value: signatureWord.word,
-      detail: `${formatRatio(signatureWord.ratio ?? 0)} häufiger als der Bundestag-Durchschnitt.`,
-      Icon: Sparkles,
-    });
-  }
-
-  const signatureAdjective = signatureAdjectives[0];
-  if (signatureAdjective) {
-    highlights.push({
-      label: 'Signatur-Adjektiv',
-      value: signatureAdjective.word,
-      detail: `${formatRatio(signatureAdjective.ratio ?? 0)} häufiger als der Bundestag-Durchschnitt.`,
-      Icon: BookOpen,
-    });
-  }
-
-  return highlights.slice(0, 6);
-}
-
-function buildOverviewLead({
-  speaker,
-  topTopicName,
-  signatureWord,
-}: {
-  speaker: SpeakerWrapped;
-  topTopicName?: string;
-  signatureWord?: string;
-}) {
-  const observations: string[] = [];
-
-  if (speaker.rankings.wordsRank <= 10) {
-    observations.push('sehr hohe Redepräsenz');
-  }
-  if (speaker.drama.interruptedRank && speaker.drama.interruptedRank <= 10) {
-    observations.push('auffallend viele Zwischenrufe');
-  }
-  if (speaker.rankings.longestSpeechRank <= 10) {
-    observations.push('besonders ausführliche Beiträge');
-  }
-
-  const rankSentence = observations.length
-    ? `Das Profil fällt durch ${observations.join(', ')} auf.`
-    : `Das Profil bündelt die parlamentarischen Spuren aus ${formatNumber(speaker.wortbeitraege)} Wortbeiträgen.`;
-  const topicSentence = topTopicName
-    ? `Inhaltlich liegt der Schwerpunkt bei ${topTopicName}.`
-    : 'Das Themenprofil ist noch nicht stark genug ausdifferenziert.';
-  const wordSentence = signatureWord
-    ? `Sprachlich setzt "${signatureWord}" einen wiedererkennbaren Akzent.`
-    : 'Für die Sprache liegen noch keine belastbaren Signaturwörter vor.';
-
-  return `${rankSentence} ${topicSentence} ${wordSentence}`;
-}
-
-function OverviewDigest({
-  lead,
-  highlights,
-}: {
-  lead: string;
-  highlights: ProfileHighlight[];
-}) {
-  return (
-    <div>
-      <div className="max-w-3xl">
-        <p className="text-sm leading-7 text-on-muted">{lead}</p>
-      </div>
-      <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-        {highlights.map((highlight) => (
-          <InsightCard key={`${highlight.label}-${highlight.value}`} highlight={highlight} />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function SpiritAnimalSpotlight({
-  animal,
-  partyColor,
-}: {
-  animal: SpiritAnimal;
-  partyColor: string;
-}) {
-  return (
-    <div className="flex flex-col items-center gap-3 justify-self-end text-center">
-      <div
-        className="flex h-[120px] w-[120px] items-center justify-center overflow-hidden rounded-full border-[3px] bg-wr-card text-7xl "
-        style={{ borderColor: `${partyColor}99` }}
-        aria-hidden="true"
-      >
-        {animal.emoji}
-      </div>
-      <div>
-        <p className="text-lg font-black leading-tight text-on">{animal.name}</p>
-        <p className="mt-1 text-xs font-semibold leading-5 text-on">{animal.title}</p>
-      </div>
-    </div>
-  );
-}
-
-function BiographyFact({
-  icon: Icon,
-  label,
-  value,
-}: {
-  icon: LucideIcon;
-  label: string;
-  value?: string | null;
-}) {
-  if (!value) return null;
+  const shownFacts = facts.filter((fact): fact is [string, string] => !!fact[1]);
 
   return (
-    <div className="rounded-lg border border-track bg-wr-card p-4">
-      <div className="flex items-center gap-2 text-on-muted">
-        <Icon size={16} />
-        <p className="text-xs uppercase tracking-wide">{label}</p>
-      </div>
-      <p className="mt-2 text-sm font-semibold text-on">{value}</p>
-    </div>
-  );
-}
-
-function profileInitials(name: string): string {
-  const parts = name.trim().split(/\s+/).filter(Boolean);
-  if (parts.length === 0) return 'MdB';
-  if (parts.length === 1) return parts[0].slice(0, 2).toLocaleUpperCase('de-DE');
-  return `${parts[0][0]}${parts.at(-1)?.[0] ?? ''}`.toLocaleUpperCase('de-DE');
-}
-
-function ProfilePortrait({
-  image,
-  name,
-}: {
-  image?: ProfileImageMetadata | OfficialImageMetadata | null;
-  name: string;
-}) {
-  const sourceLabel = image?.sourceLabel === 'Wikimedia Commons' ? 'Wikimedia' : 'Bundestag';
-
-  return (
-    <figure className="w-[150px] shrink-0 md:w-[210px]">
-      <div
-        className="relative flex h-[187px] items-center justify-center overflow-hidden rounded-2xl border-[3px] border-wr-pink bg-wr-card  md:h-[262px]"
-        role={image ? undefined : 'img'}
-        aria-label={image ? undefined : `${name}, kein frei lizenziertes Profilfoto verfügbar`}
-      >
-        <span className="text-5xl font-black tracking-tight text-on-muted md:text-7xl" aria-hidden="true">
-          {profileInitials(name)}
-        </span>
-        {image ? (
-          <img
-            src={image.thumbnailUrl ?? image.url}
-            alt={image.alt ?? `Porträt von ${name}`}
-            className="absolute inset-0 h-full w-full object-cover"
-            loading="eager"
-            onError={(event) => {
-              event.currentTarget.style.display = 'none';
-            }}
-          />
+    <section id="mandat" className="mp-chapter" aria-labelledby="mandat-title">
+      <Reveal className="mp-head mp-head--row">
+        <div className="mp-head">
+          <span className="mp-kicker">{num} · Mandat &amp; Transparenz</span>
+          <h2 id="mandat-title" className="mp-h2">Person &amp; Nebenjobs</h2>
+        </div>
+        {profile && <a className="mp-btn mp-btn--ghost" href={profile.sourceUrl} target="_blank" rel="noreferrer">Profil bei Abgeordnetenwatch ↗</a>}
+      </Reveal>
+      <div className="mp-cards">
+        {questions ? (
+          <Reveal className="mp-card mp-card--row">
+            <div className="mp-donut" style={{ '--p': share ?? 0 } as React.CSSProperties} aria-hidden="true"><span>{share ?? '–'}{share !== null && '%'}</span></div>
+            <div>
+              <div className="mp-card__title">Bürgerfragen</div>
+              <div className="mp-card__detail">{answered !== null ? `${number.format(answered)} von ${number.format(questions)} beantwortet` : `${number.format(questions)} Fragen`}</div>
+            </div>
+          </Reveal>
         ) : null}
+        {profile && (
+          <Reveal className="mp-card">
+            <div className="mp-card__big">
+              <span>{number.format(sidejobs.length)}</span>
+              <span>Nebentätigkeiten{sidejobs.length > 0 && <><br /><span className="mp-mint">{number.format(withIncome.length)} mit Einkommen</span></>}</span>
+            </div>
+            {topJob && (
+              <div className="mp-job">
+                <div>
+                  <div className="mp-job__title">{topJob.organization ?? topJob.title}</div>
+                  <div className="mp-job__detail">{[topJob.organization ? topJob.title : null, topJob.intervalLabel].filter(Boolean).join(' · ')}</div>
+                </div>
+                {sidejobIncome(topJob) !== null && <span className="mp-job__income">{euro.format(sidejobIncome(topJob)!)}</span>}
+              </div>
+            )}
+            {sidejobs.length > 1 && (
+              <details className="mp-details">
+                <summary>Alle {number.format(sidejobs.length)} ansehen</summary>
+                <ul>
+                  {sidejobs.map(job => (
+                    <li key={job.id} className="mp-job">
+                      <div>
+                        <div className="mp-job__title">{job.title}</div>
+                        <div className="mp-job__detail">{[job.organization, job.intervalLabel].filter(Boolean).join(' · ')}</div>
+                      </div>
+                      <span className="mp-job__income">{sidejobIncome(job) !== null ? euro.format(sidejobIncome(job)!) : typeof job.incomeLevel === 'number' ? `Stufe ${job.incomeLevel}` : '–'}</span>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )}
+          </Reveal>
+        )}
+        {shownFacts.length > 0 && (
+          <Reveal className="mp-card">
+            <dl className="mp-facts">
+              {shownFacts.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
+            </dl>
+          </Reveal>
+        )}
       </div>
-      {image ? (
-        <a
-          href={image.sourceUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-2 inline-flex items-center gap-1 text-[11px] font-semibold text-on-muted hover:text-on-accent"
-        >
-          Foto: {sourceLabel} <ExternalLink size={11} />
-        </a>
-      ) : (
-        <figcaption className="mt-2 text-[11px] font-semibold text-on-muted">
-          Kein frei lizenziertes Foto verfügbar
-        </figcaption>
+      {bioText && (
+        <Reveal className="mp-bio">
+          <span className="mp-kicker">Kurzbiografie</span>
+          <p>{bioText}</p>
+          {bioSource && <a className="mp-link" href={bioSource.url} target="_blank" rel="noreferrer">Quelle: {bioSource.label} ↗</a>}
+        </Reveal>
       )}
-    </figure>
-  );
-}
-
-function ProfileDescriptionBlock({ description }: { description: ProfileDescription }) {
-  const displayText = description.longText ?? description.text;
-
-  return (
-    <div className="rounded-lg border border-track bg-wr-card p-4">
-      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-on-accent">Kurzbeschreibung</p>
-      <p className="mt-3 whitespace-pre-line text-sm leading-7 text-on-muted">{displayText}</p>
-      <a
-        href={description.sourceUrl}
-        target="_blank"
-        rel="noreferrer"
-        className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-on-accent hover:text-on-accent"
-      >
-        Quelle: {description.sourceLabel}
-        {description.license ? `, ${description.license}` : ''}
-        <ExternalLink size={13} />
-      </a>
-    </div>
-  );
-}
-
-function OfficialImageCard({ image }: { image: OfficialImageMetadata }) {
-  return (
-    <figure className="overflow-hidden rounded-lg border border-track bg-wr-card">
-      <img
-        src={image.thumbnailUrl ?? image.url}
-        alt={image.alt ?? image.caption ?? 'Offizielles Bundestag-Foto'}
-        className="aspect-[4/3] w-full object-cover"
-        loading="lazy"
-      />
-      <figcaption className="space-y-2 p-4">
-        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-on-muted">
-          <Camera size={15} />
-          Offizielles Foto
-        </div>
-        <p className="text-sm font-semibold text-on">{image.credit}</p>
-        {image.takenAt ? <p className="text-xs text-on-muted">Aufgenommen: {image.takenAt}</p> : null}
-        <a
-          href={image.sourceUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-1 text-xs font-semibold text-on-accent hover:text-on-accent"
-        >
-          {image.sourceLabel} <ExternalLink size={13} />
-        </a>
-      </figcaption>
-    </figure>
-  );
-}
-
-function BiographyDetail({
-  biography,
-  description,
-  profileImage,
-  image,
-}: {
-  biography?: SpeakerBiography | null;
-  description?: ProfileDescription | null;
-  profileImage?: ProfileImageMetadata | null;
-  image?: OfficialImageMetadata | null;
-}) {
-  if (!biography && !description && !profileImage && !image) {
-    return (
-      <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-on-accent">Biografie</p>
-        <h2 className="mt-2 text-2xl font-black text-on">Noch keine Zusatzdaten</h2>
-        <p className="mt-4 text-on-muted">
-          Für dieses Profil sind noch keine biografischen Ergänzungen oder offiziellen Bilddaten importiert.
-        </p>
-      </div>
-    );
-  }
-
-  return (
-    <div>
-      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-on-accent">Biografie</p>
-      <h2 className="mt-2 text-2xl font-black text-on">Person, Mandat & Quellen</h2>
-      <div className="mt-6 grid gap-5 lg:grid-cols-[1fr_320px]">
-        <div className="space-y-5">
-          {description ? <ProfileDescriptionBlock description={description} /> : null}
-
-          {biography ? (
-            <>
-              <div className="grid gap-3 sm:grid-cols-2">
-                <BiographyFact icon={CalendarDays} label="Geboren" value={biography.birthDate} />
-                <BiographyFact icon={MapPin} label="Geburtsort" value={biography.birthPlace} />
-                <BiographyFact icon={MapPin} label="Wohnort" value={biography.residence} />
-                <BiographyFact icon={BriefcaseBusiness} label="Beruf" value={biography.profession} />
-                <BiographyFact icon={IdCard} label="Wahlkreis" value={biography.constituency} />
-              </div>
-
-              {biography.roles?.length ? (
-                <div className="rounded-lg border border-track bg-wr-card p-4">
-                  <h3 className="font-bold text-on">Funktionen</h3>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {biography.roles.map((role) => (
-                      <span key={role} className="rounded-full bg-wr-card px-3 py-1.5 text-sm text-on-muted">
-                        {role}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ) : null}
-
-              {biography.education?.length ? (
-                <div className="rounded-lg border border-track bg-wr-card p-4">
-                  <h3 className="font-bold text-on">Ausbildung</h3>
-                  <p className="mt-2 text-sm leading-6 text-on-muted">{biography.education.join(', ')}</p>
-                </div>
-              ) : null}
-
-              {biography.sourceUrl ? (
-                <a
-                  href={biography.sourceUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-on-accent hover:text-on-accent"
-                >
-                  Quelle: {biography.sourceLabel ?? 'Bundestag'} <ExternalLink size={15} />
-                </a>
-              ) : null}
-            </>
-          ) : (
-            <p className="text-on-muted">Für dieses Profil sind noch keine biografischen Ergänzungen importiert.</p>
-          )}
-        </div>
-
-        {profileImage || image ? (
-          <div className="space-y-3">
-            {profileImage ? <OfficialImageCard image={profileImage} /> : null}
-            {image ? <OfficialImageCard image={image} /> : null}
-            {profileImage?.usageNotice ? (
-              <div className="rounded-lg border border-track bg-wr-card p-3 text-xs leading-5 text-on-muted">
-                {profileImage.usageNotice}
-              </div>
-            ) : null}
-            {image?.usageNotice ? (
-              <div className="rounded-lg border border-amber-400/20 bg-amber-400/10 p-3 text-xs leading-5 text-amber-100/80">
-                {image.usageNotice}
-              </div>
-            ) : null}
-          </div>
-        ) : null}
-      </div>
-    </div>
-  );
-}
-
-function OverviewBiographyPanel({ biography }: { biography?: SpeakerBiography | null }) {
-  if (!biography) return null;
-  const facts = [
-    biography.birthDate && biography.birthPlace ? `Geboren ${biography.birthDate} in ${biography.birthPlace}` : null,
-    biography.profession ? `Beruf: ${biography.profession}` : null,
-    biography.constituency ? `Wahlkreis: ${biography.constituency}` : null,
-  ].filter(Boolean);
-
-  return (
-    <div className="rounded-lg border border-track bg-wr-card p-5">
-      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-on-muted">Biografie</p>
-      <div className="mt-3 space-y-2 text-sm leading-6 text-on-muted">
-        {facts.map((fact) => (
-          <p key={fact}>{fact}</p>
-        ))}
-      </div>
-      {biography.roles?.length ? (
-        <div className="mt-4 flex flex-wrap gap-2">
-          {biography.roles.slice(0, 3).map((role) => (
-            <span key={role} className="rounded-full bg-wr-card px-2.5 py-1 text-xs font-semibold text-on-muted">
-              {role}
-            </span>
-          ))}
-        </div>
-      ) : null}
-    </div>
-  );
-}
-
-function OverviewTransparencyPanel({ profile }: { profile?: AbgeordnetenwatchProfile | null }) {
-  if (!profile) return null;
-  const sidejobs = profile.sidejobs ?? [];
-  const incomeCount = sidejobs.filter(
-    (sidejob) => typeof sidejob.income === 'number' || typeof sidejob.incomeLevel === 'number'
-  ).length;
-  const voteCount = profile.votes?.total ?? profile.votes?.recent.length;
-
-  return (
-    <div className="rounded-lg border border-track bg-wr-card p-5">
-      <div className="flex items-start justify-between gap-3">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-on-muted">Abgeordnetenwatch</p>
-          <h3 className="mt-1 text-lg font-black text-on">Mandat & Transparenz</h3>
-        </div>
-        <a
-          href={profile.sourceUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="shrink-0 text-xs font-semibold text-on-accent hover:text-on-accent"
-        >
-          Quelle ↗
-        </a>
-      </div>
-      <div className="mt-4 grid grid-cols-2 gap-3">
-        <StatTile label="Nebentätigkeiten" value={formatNumber(sidejobs.length)} />
-        <StatTile label="mit Einkommen" value={formatNumber(incomeCount)} />
-        <StatTile label="Abstimmungen" value={formatOptionalNumber(voteCount)} />
-        <StatTile label="Bürgerfragen" value={formatOptionalNumber(profile.politician.questions)} />
-      </div>
-      {sidejobs.length > 0 && incomeCount === 0 ? (
-        <p className="mt-3 text-xs leading-5 text-on-muted">
-          Für die importierten Nebentätigkeiten ist im API-Eintrag keine Einkommensangabe hinterlegt.
-        </p>
-      ) : null}
-    </div>
-  );
-}
-
-function SidejobRow({ sidejob }: { sidejob: AbgeordnetenwatchSidejob }) {
-  return (
-    <div className="rounded-lg border border-track bg-wr-card p-4">
-      <div className="flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <p className="font-semibold text-on">{sidejob.title}</p>
-          {sidejob.organization ? <p className="mt-1 text-sm text-on-muted">{sidejob.organization}</p> : null}
-        </div>
-        <span className="rounded-full bg-wr-card px-3 py-1 text-xs font-semibold text-on-muted">
-          {formatIncome(sidejob)}
-        </span>
-      </div>
-      <div className="mt-3 flex flex-wrap gap-2">
-        {sidejob.categoryLabel ? (
-          <span className="rounded-full bg-wr-card px-2.5 py-1 text-xs text-pink-100/80">
-            {sidejob.categoryLabel}
-          </span>
-        ) : null}
-        {sidejob.intervalLabel ? (
-          <span className="rounded-full bg-wr-card px-2.5 py-1 text-xs text-on-muted">
-            {sidejob.intervalLabel}
-          </span>
-        ) : null}
-        {[sidejob.city, sidejob.country].filter(Boolean).join(', ') ? (
-          <span className="rounded-full bg-wr-card px-2.5 py-1 text-xs text-on-muted">
-            {[sidejob.city, sidejob.country].filter(Boolean).join(', ')}
-          </span>
-        ) : null}
-        {sidejob.topics?.slice(0, 3).map((topic) => (
-          <span key={topic} className="rounded-full bg-wr-card px-2.5 py-1 text-xs text-on-muted">
-            {topic}
-          </span>
-        ))}
-      </div>
-      {sidejob.dataChangeDate ? (
-        <p className="mt-3 text-xs text-on-muted">Letzte Datenänderung: {sidejob.dataChangeDate}</p>
-      ) : null}
-    </div>
-  );
-}
-
-function VoteRow({ vote }: { vote: AbgeordnetenwatchVote }) {
-  return (
-    <a
-      href={vote.url ?? undefined}
-      target="_blank"
-      rel="noreferrer"
-      className="block rounded-lg border border-track bg-wr-card p-4 hover:bg-wr-card"
-    >
-      <div className="flex flex-wrap items-start justify-between gap-3">
-        <div className="min-w-0">
-          <p className="line-clamp-2 font-semibold text-on">{vote.pollLabel}</p>
-          {vote.fraction ? <p className="mt-1 text-xs text-on-muted">{vote.fraction}</p> : null}
-        </div>
-        <span className="rounded-full bg-wr-card px-3 py-1 text-xs font-semibold text-on-muted">
-          {formatVote(vote.vote)}
-        </span>
-      </div>
-    </a>
-  );
-}
-
-function TransparencyDetail({ profile }: { profile?: AbgeordnetenwatchProfile | null }) {
-  if (!profile) {
-    return (
-      <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-on-accent">Transparenz</p>
-        <h2 className="mt-2 text-2xl font-black text-on">Noch nicht verknüpft</h2>
-        <p className="mt-4 max-w-3xl text-sm leading-7 text-on-muted">
-          Für dieses Profil sind noch keine Abgeordnetenwatch-Daten importiert. Verfügbar wären Stammdaten,
-          aktuelle Mandate, namentliche Abstimmungen und gemeldete Nebentätigkeiten.
-        </p>
-      </div>
-    );
-  }
-
-  const mandate = profile.mandate;
-  const sidejobs = profile.sidejobs ?? [];
-  const answered = profile.politician.questionsAnswered;
-  const questions = profile.politician.questions;
-  const answerDetail = typeof answered === 'number' && typeof questions === 'number'
-    ? `${formatNumber(answered)} von ${formatNumber(questions)} beantwortet`
-    : typeof questions === 'number'
-      ? `${formatNumber(questions)} Fragen, Antwortzahl nicht ausgewiesen`
-      : undefined;
-
-  return (
-    <div>
-      <div className="flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-on-accent">Transparenz</p>
-          <h2 className="mt-2 text-2xl font-black text-on">Mandat & Nebentätigkeiten</h2>
-        </div>
-        <a
-          href={profile.sourceUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-2 rounded-full border border-track px-4 py-2 text-sm font-semibold text-on-muted hover:bg-bg-elevated hover:text-on"
-        >
-          Profil bei Abgeordnetenwatch <ExternalLink size={15} />
-        </a>
-      </div>
-
-      <div className="mt-6 grid gap-3 sm:grid-cols-3">
-        <StatTile label="Nebentätigkeiten" value={formatNumber(sidejobs.length)} />
-        <StatTile label="Bürgerfragen" value={formatNumber(questions ?? 0)} detail={answerDetail} />
-        <StatTile label="Lizenz" value={profile.license} detail="Abgeordnetenwatch API" />
-      </div>
-
-      {mandate ? (
-        <div className="mt-5 rounded-lg border border-track bg-wr-card p-4">
-          <h3 className="font-bold text-on">Aktuelles Mandat</h3>
-          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            <BiographyFact icon={IdCard} label="Wahlperiode" value={mandate.parliamentPeriod ?? mandate.label} />
-            <BiographyFact icon={BriefcaseBusiness} label="Fraktion" value={mandate.fraction} />
-            <BiographyFact icon={MapPin} label="Wahlkreis" value={mandate.constituency} />
-            <BiographyFact icon={Trophy} label="Mandat" value={formatMandateWon(mandate.mandateWon)} />
-          </div>
-          {typeof mandate.constituencyResult === 'number' ? (
-            <p className="mt-3 text-sm text-on-muted">
-              Wahlkreisergebnis: {mandate.constituencyResult.toLocaleString('de-DE')}%.
-            </p>
-          ) : null}
-        </div>
-      ) : null}
-
-      <div className="mt-5">
-        <h3 className="font-bold text-on">Nebentätigkeiten</h3>
-        <p className="mt-2 text-sm leading-6 text-on-muted">
-          Abgeordnetenwatch bereitet Veröffentlichungen der Bundestagsverwaltung auf. Ein fehlender Betrag
-          bedeutet hier: In diesem API-Eintrag ist kein Einkommen hinterlegt.
-        </p>
-        <div className="mt-4 space-y-3">
-          {sidejobs.length ? sidejobs.map((sidejob) => (
-            <SidejobRow key={sidejob.id} sidejob={sidejob} />
-          )) : (
-            <p className="rounded-lg border border-track bg-wr-card p-4 text-sm text-on-muted">
-              Keine Nebentätigkeiten im aktuellen Import.
-            </p>
-          )}
-        </div>
-      </div>
-
-      <p className="mt-5 text-xs leading-5 text-on-muted">
-        Quelle: {profile.sourceLabel}, {profile.license}; aktualisiert am {profile.updatedAt}.
+      <p className="mp-source">
+        Daten: {profile ? `${profile.sourceLabel} (${profile.license}), Stand ${profile.updatedAt}; ` : ''}Bundestag-Plenarprotokolle. Fehlender Betrag = kein Einkommen im API-Eintrag hinterlegt.
       </p>
-    </div>
+    </section>
   );
 }
 
 export function MdbProfilePage() {
   const surface = editionSurface(useOptionalEdition());
   const { slug = '' } = useParams<{ slug: string }>();
-  const [activeTab, setActiveTab] = useState<ProfileTab>('overview');
   const { data: speaker, isLoading, error } = useSpeakerData(slug);
   const { data: speechesData } = useSpeechesDb({ enabled: !!speaker });
+  const [shareNote, setShareNote] = useState<string | null>(null);
 
-  const partyColor = speaker ? getPartyColor(speaker.party) : '#db2777';
-  const partyTextColor = speaker ? getPartyTextColor(speaker.party) : '#db2777';
-
-  const speakerSpeeches = useMemo(() => {
+  const speeches = useMemo(() => {
     if (!speaker || !speechesData?.speeches) return [];
     return speechesForSpeaker(speechesData.speeches, speaker)
       .map((speech, index) => ({ ...speech, id: speech.id ?? index }))
       .sort((a, b) => b.id - a.id);
   }, [speaker, speechesData]);
 
-  const recentSpeeches = speakerSpeeches.slice(0, 8);
-  const displayName = speaker ? displaySpeakerName(speaker) : '';
-  const signatureWords = speaker ? signatureWordsForDisplay(speaker).slice(0, 6) : [];
-  const signatureAdjectives = speaker ? signatureAdjectivesForDisplay(speaker).slice(0, 5) : [];
-  const topTopics = speaker?.topics?.topTopics.slice(0, 5) ?? [];
-  const topTopic = topTopics[0];
-  const topTopicName = topTopic ? TOPIC_BY_ID[topTopic.topic]?.name ?? topTopic.topic : undefined;
-  const topTopicWords = speaker && topTopic
-    ? speaker.topics?.topicWords[topTopic.topic]?.slice(0, 3).map((word) => word.word) ?? []
-    : [];
-  const spiritAnimal = speaker?.spiritAnimal ?? null;
-  const officialImage = speaker?.officialImage ?? null;
-  const profileImage = speaker?.profileImage ?? speaker?.officialImage ?? null;
-  const profileDescription = speaker?.profileDescription ?? null;
-  const biography = speaker?.biography ?? null;
-  const abgeordnetenwatch = speaker?.abgeordnetenwatch ?? null;
-  const voteCount = abgeordnetenwatch?.votes?.total ?? abgeordnetenwatch?.votes?.recent.length;
-  const wikipediaTitle = wikipediaTitleFromDescription(profileDescription);
-  const {
-    data: wikipediaIntro,
-    isLoading: isWikimediaSummaryLoading,
-  } = useQuery({
+  const description = speaker?.profileDescription ?? null;
+  const wikipediaTitle = wikipediaTitleFromDescription(description);
+  const { data: wikipediaIntro } = useQuery({
     queryKey: ['wikimedia-intro', wikipediaTitle],
     queryFn: () => fetchWikimediaIntro(wikipediaTitle ?? ''),
     enabled: !!wikipediaTitle,
@@ -888,85 +284,96 @@ export function MdbProfilePage() {
     retry: 1,
     refetchOnWindowFocus: false,
   });
-  const searchUrl = speaker
-    ? `${editionPath(surface, 'suche')}?tab=speeches&q=${encodeURIComponent(`"${displayName}"`)}`
-    : `${editionPath(surface, 'suche')}?tab=speeches`;
-  const profileHighlights = speaker
-    ? buildProfileHighlights({
-        speaker,
-        topTopicName,
-        topTopicWords,
-        signatureWords,
-        signatureAdjectives,
-      })
+
+  const words = useMemo(() => (speaker ? quizWords(speaker) : []), [speaker]);
+  const quiz = useMemo(() => (speaker ? buildMdbQuiz(speaker) : null), [speaker]);
+  const signature = words.find(word => word.bundestag !== null);
+  const topTopics = speaker?.topics?.topTopics.slice(0, 5) ?? [];
+  const toneRows = speaker?.toneProfile
+    ? Object.entries(speaker.toneProfile.scores)
+        .filter(([key]) => key in TONE_LABELS)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 5)
     : [];
-  const overviewLead = speaker
-    ? buildOverviewLead({
-        speaker,
-        topTopicName,
-        signatureWord: signatureWords[0]?.word,
-      })
-    : '';
-  const liveSummary = speaker
-    ? buildMdbLiveSummary({
-        speaker,
-        displayName,
-        topTopicName,
-        signatureWord: signatureWords[0],
-        spiritAnimal,
-        abgeordnetenwatch,
-        wikipediaIntro,
-        fallbackDescription: profileDescription,
-      })
-    : '';
-  const liveSummarySourceUrl = wikipediaIntro?.sourceUrl ?? profileDescription?.sourceUrl ?? null;
-  const liveSummarySourceLabel = wikipediaIntro
-    ? 'Wikimedia live'
-    : profileDescription
-      ? `${profileDescription.sourceLabel}${profileDescription.license ? `, ${profileDescription.license}` : ''}`
-      : 'Wrapped-Daten';
-  const liveSummarySourceNote = isWikimediaSummaryLoading
-    ? 'Live-Kurzprofil: Wikimedia lädt, Fallback aus Profil- und Wrapped-Daten'
-    : `Live-Kurzprofil: ${liveSummarySourceLabel}, Wrapped-Daten`;
+  const votes = speaker?.abgeordnetenwatch?.votes?.recent.slice(0, 6) ?? [];
+  const voteCount = speaker?.abgeordnetenwatch?.votes?.total ?? speaker?.abgeordnetenwatch?.votes?.recent.length ?? null;
+
+  const chapters: ChapterId[] = speaker
+    ? ([
+        signature && 'signatur',
+        'zahlen',
+        topTopics.length > 0 && 'themen',
+        toneRows.length > 0 && 'ton',
+        speeches.length > 0 && 'reden',
+        votes.length > 0 && 'abstimmungen',
+        (speaker.abgeordnetenwatch || speaker.biography || description) && 'mandat',
+      ].filter(Boolean) as ChapterId[])
+    : [];
+  const [active, setActive] = useActiveChapter(chapters);
+  const [navRef, navStuck] = useStuck();
+  const num = (id: ChapterId) => String(chapters.indexOf(id) + 1).padStart(2, '0');
 
   if (isLoading) {
     return (
-      <div className="min-h-screen page-bg flex items-center justify-center pt-14">
-        <p className="text-on-muted">Lade Profil...</p>
+      <div className="mp-page grid place-items-center">
+        <p role="status" className="mp-muted">Lade Profil …</p>
       </div>
     );
   }
 
   if (error || !speaker) {
     return (
-      <div className="min-h-screen page-bg flex items-center justify-center pt-14">
-        <div className="text-center">
-          <p className="text-red-400">Abgeordnetenprofil nicht gefunden</p>
-          <p className="mt-2 text-sm text-on-muted">{error?.message}</p>
-          <Link to={editionPath(surface, 'abgeordnete')} className="mt-6 inline-flex text-on-accent hover:text-on-accent">
-            Zur Suche
-          </Link>
+      <div className="mp-page grid place-items-center px-6">
+        <div role="alert" className="flex flex-col items-start gap-3">
+          <p className="mp-h2">Profil nicht gefunden</p>
+          {error?.message && <p className="mp-muted">{error.message}</p>}
+          <Link to={editionPath(surface, 'abgeordnete')} className="mp-link">Zur Abgeordneten-Suche</Link>
         </div>
       </div>
     );
   }
+
+  const displayName = displaySpeakerName(speaker);
+  const first = firstName(speaker);
+  const nameParts = displayName.split(/\s+/);
+  const lastName = nameParts.length > 1 ? nameParts.at(-1)! : '';
+  const firstLine = nameParts.length > 1 ? nameParts.slice(0, -1).join(' ') : displayName;
+  const longName = nameParts.some(part => part.length > 12);
+  const profile = speaker.abgeordnetenwatch ?? null;
+  const mandate = profile?.mandate ?? null;
+  const topTopicName = topTopics[0] ? TOPIC_BY_ID[topTopics[0].topic]?.name ?? topTopics[0].topic : null;
+  const lead = [
+    topTopicName ? `${first} redet am meisten über ${topTopicName}` : null,
+    signature?.bundestag ? `${topTopicName ? 'und sagt' : `${first} sagt`} „${signature.word}“ ${formatRatio(signature.bundestag)} so oft wie der Bundestag-Durchschnitt` : null,
+  ].filter(Boolean).join(' – ');
+  const searchUrl = `${editionPath(surface, 'suche')}?tab=speeches&q=${encodeURIComponent(`"${displayName}"`)}`;
+  const quizUrl = editionPath(surface, `abgeordnete/${speaker.slug}/quiz`);
+  const longest = Math.max(1, ...speeches.map(speech => speech.words));
+  const adjectives = signatureAdjectivesForDisplay(speaker).slice(0, 4).map(word => word.word);
+  const moreWords = words.filter(word => word !== signature && word.bundestag !== null).slice(0, 5).map(word => word.word);
+  const bioText = wikipediaIntro?.text ?? description?.longText ?? description?.text ?? null;
+  const bioSource = wikipediaIntro
+    ? { url: wikipediaIntro.sourceUrl, label: 'Wikipedia (CC BY-SA)' }
+    : description ? { url: description.sourceUrl, label: `${description.sourceLabel}${description.license ? `, ${description.license}` : ''}` } : null;
+
+  const share = async () => {
+    const url = window.location.href;
+    if (navigator.share) {
+      try { await navigator.share({ title: displayName, url }); } catch { /* dismissed */ }
+      return;
+    }
+    try { await navigator.clipboard.writeText(url); setShareNote('Link kopiert'); } catch { setShareNote('Kopieren nicht möglich'); }
+  };
 
   const personSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: displayName,
     jobTitle: 'Mitglied des Bundestages',
-    affiliation: {
-      '@type': 'Organization',
-      name: speaker.party,
-    },
-    memberOf: {
-      '@type': 'Organization',
-      name: 'Deutscher Bundestag',
-      url: 'https://www.bundestag.de',
-    },
-    ...(profileImage ? { image: profileImage.url } : {}),
-    ...(profileDescription ? { description: profileDescription.text } : {}),
+    affiliation: { '@type': 'Organization', name: speaker.party },
+    memberOf: { '@type': 'Organization', name: 'Deutscher Bundestag', url: 'https://www.bundestag.de' },
+    ...(speaker.profileImage ?? speaker.officialImage ? { image: (speaker.profileImage ?? speaker.officialImage)!.url } : {}),
+    ...(description ? { description: description.text } : {}),
     url: `${SITE_CONFIG.siteUrl}${editionPath(surface, `abgeordnete/${speaker.slug}`)}`,
   };
 
@@ -974,408 +381,223 @@ export function MdbProfilePage() {
     <>
       <SEO
         title={`${displayName} (${speaker.party})`}
-        description={`${displayName}: Profil mit Reden, Themen, Sprache und Tonalität aus Bundestag Wrapped.`}
+        description={`${displayName}: Profil mit Signaturwort, Themen, Reden, Abstimmungen und Nebentätigkeiten aus Bundestag Wrapped.`}
         canonicalUrl={editionPath(surface, `abgeordnete/${speaker.slug}`)}
         ogType="profile"
         structuredData={personSchema}
       />
 
-      <div className="min-h-screen page-bg pt-14">
-        <main className="px-4 py-8">
-          <section className="mx-auto w-full max-w-[1200px] overflow-hidden rounded-lg border border-track bg-wr-ink ">
-            <div
-              className="border-b-[3px] border-wr-pink"
-              style={{
-                background: `radial-gradient(1000px 420px at 82% -10%, ${partyColor}42, transparent 62%), #0a0a12`,
-              }}
-            >
-              <div className="flex flex-wrap items-center justify-between gap-3 px-5 py-5 md:px-11">
-                <Link to={editionPath(surface, 'abgeordnete')} className="text-sm text-on-muted hover:text-on">
-                  ← Alle Abgeordneten
-                </Link>
-                <div className="flex gap-2">
-                  <Link
-                    to={searchUrl}
-                    className="rounded-full border border-track px-4 py-2 text-sm text-on hover:bg-bg-elevated"
-                  >
-                    Reden durchsuchen
-                  </Link>
-                  <button
-                    type="button"
-                    onClick={() => navigator.share?.({ title: displayName, url: window.location.href })}
-                    className="rounded-full bg-wr-pink px-4 py-2 text-sm font-semibold text-wr-ink hover:bg-wr-pink"
-                  >
-                    Teilen
-                  </button>
-                </div>
-              </div>
+      <div className="mp-page" style={partyStyle(speaker.party)}>
+        <div className="mp-top mp-wrap">
+          <Link to={editionPath(surface, 'abgeordnete')} className="mp-back"><ArrowIcon direction="left" />Alle Abgeordneten</Link>
+          <div className="mp-top__actions">
+            <Link to={searchUrl} className="mp-btn mp-btn--ghost">Reden durchsuchen</Link>
+            <button type="button" className="mp-btn mp-btn--pink" onClick={() => void share()}>Teilen</button>
+            <span role="status" className="sr-only">{shareNote}</span>
+          </div>
+        </div>
 
-              <div className="grid grid-cols-[150px_1fr] gap-5 px-5 pb-10 pt-3 md:grid-cols-[210px_1fr] md:px-11 lg:grid-cols-[210px_1fr_150px] lg:gap-10 lg:items-start">
-                <div><ProfilePortrait image={profileImage} name={displayName} /></div>
-                <div>
-                  <div className="min-w-0">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <PartyBadge party={speaker.party} variant="filled" />
-                    </div>
-                    <h1 className="mt-3 max-w-4xl text-4xl font-black leading-[1.02] text-on md:text-[68px]">
-                      {displayName}
-                    </h1>
-                    <div className="mt-3 text-sm text-on-muted md:text-[15px]">
-                      {[
-                        biography?.constituency ? `Wahlkreis ${biography.constituency}` : null,
-                        biography?.profession,
-                        biography?.birthDate && biography?.birthPlace
-                          ? `geb. ${biography.birthDate} in ${biography.birthPlace}`
-                          : biography?.birthDate ? `geb. ${biography.birthDate}` : null,
-                      ].filter(Boolean).join(' · ')}
-                    </div>
-                  </div>
-                  <p className="mt-5 max-w-[600px] text-sm leading-7 text-on md:text-[17px] md:leading-[1.7]">{liveSummary}</p>
-                  {liveSummarySourceUrl ? (
-                    <a
-                      href={liveSummarySourceUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-on-muted hover:text-on-accent"
-                    >
-                      {liveSummarySourceNote}
-                      <ExternalLink size={12} />
-                    </a>
-                  ) : (
-                    <p className="mt-2 text-xs font-semibold text-on-muted">{liveSummarySourceNote}</p>
+        <section className="mp-hero" aria-labelledby="mp-name">
+          <div className="mp-hero__orb" aria-hidden="true" />
+          <div className="mp-hero__grid mp-wrap">
+            <div className="mp-hero__text">
+              <Reveal className="mp-hero__pills">
+                <PartyPill party={speaker.party} />
+                {stripPeriod(mandate?.constituency) && <span className="mp-pill">WK {stripPeriod(mandate?.constituency)}</span>}
+                {mandate?.mandateWon && <span className="mp-pill">{MANDATE_WON_LABELS[mandate.mandateWon] ?? mandate.mandateWon}</span>}
+              </Reveal>
+              <h1 id="mp-name" className={`mp-name ${longName ? 'mp-name--long' : ''}`}>
+                <span>{firstLine}</span>{lastName && <> <span className="mp-name__last">{lastName}</span></>}
+              </h1>
+              {lead && <Reveal><p className="mp-lead">{lead}.</p></Reveal>}
+              {speaker.spiritAnimal && (
+                <Reveal className="mp-animal">
+                  <span className="mp-animal__face" aria-hidden="true">{speaker.spiritAnimal.emoji}</span>
+                  <span className="mp-animal__text">
+                    <span className="mp-animal__label mp-mono">Profiltyp</span>
+                    <span className="mp-animal__name">{speaker.spiritAnimal.name} · {speaker.spiritAnimal.title}</span>
+                  </span>
+                </Reveal>
+              )}
+            </div>
+            <Portrait speaker={speaker} name={displayName} />
+          </div>
+        </section>
+
+        <nav ref={navRef} className="mp-nav" data-stuck={navStuck} aria-label="Kapitel">
+          <ol className="mp-nav__list">
+            {chapters.map((id, index) => (
+              <li key={id}>
+                <a href={`#${id}`} data-chapter-link={id} className="mp-nav__link" aria-current={active === id ? 'true' : undefined} onClick={() => setActive(id)}>
+                  <span className="mp-nav__num" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>{CHAPTER_LABELS[id]}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+
+        <div className="mp-main">
+          {signature?.bundestag && (
+            <section id="signatur" className="mp-chapter mp-signature" aria-labelledby="signatur-title">
+              <div className="mp-signature__top">
+                <h2 id="signatur-title" className="mp-kicker m-0">{num('signatur')} · Signaturwort</h2>
+                <span>im Vergleich zum Bundestag</span>
+              </div>
+              <Reveal><span className="mp-signature__word block" lang="de" style={{ '--chars': signature.word.length } as React.CSSProperties}>{signature.word}</span></Reveal>
+              <div className="mp-signature__grid">
+                <RatioBars word={signature} name={first} party={speaker.party} />
+                <div className="mp-signature__aside">
+                  <p>
+                    {formatRatio(signature.bundestag)} häufiger als der Bundestag-Durchschnitt
+                    {signature.party ? ` – und ${formatRatio(signature.party)} häufiger als in der eigenen Fraktion.` : '.'}
+                  </p>
+                  {quiz && (
+                    <Link to={quizUrl} className="mp-btn mp-btn--ink mp-btn--lg">{genitive(first)} Wörter erraten<ArrowIcon /></Link>
                   )}
                 </div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="hidden justify-self-start lg:block lg:justify-self-end"
-                >
-                  {spiritAnimal ? (
-                    <SpiritAnimalSpotlight animal={spiritAnimal} partyColor={partyColor} />
-                  ) : (
-                    <div className="h-[120px] w-[120px] rounded-full border-[3px] border-wr-pink bg-wr-card" />
-                  )}
-                </motion.div>
               </div>
-            </div>
-
-            <div className="grid border-b border-track sm:grid-cols-2 lg:grid-cols-4">
-              <div className="border-track px-5 py-6 md:px-11 lg:border-r">
-                <div className="text-4xl font-black text-on">{formatNumber(speaker.totalWords)}</div>
-                <div className="mt-1 text-[11px] uppercase tracking-wider text-on-muted">
-                  Wörter gesprochen
-                  {speaker.rankings.wordsRank <= 10 ? (
-                    <span className="font-bold text-on-accent"> · #{speaker.rankings.wordsRank}</span>
-                  ) : null}
+              {(moreWords.length > 0 || adjectives.length > 0) && (
+                <div className="flex flex-col gap-3">
+                  {moreWords.length > 0 && <div className="mp-signature__more"><span className="mp-signature__more-label">Auch typisch</span>{moreWords.map(word => <span key={word}>{word}</span>)}</div>}
+                  {adjectives.length > 0 && <div className="mp-signature__more"><span className="mp-signature__more-label">Adjektive</span>{adjectives.map(word => <span key={word}>{word}</span>)}</div>}
                 </div>
-              </div>
-              <div className="border-track px-5 py-6 md:px-8 lg:border-r">
-                <div className="text-4xl font-black text-on">{formatNumber(speaker.wortbeitraege)}</div>
-                <div className="mt-1 text-[11px] uppercase tracking-wider text-on-muted">
-                  Wortbeiträge
-                  {speaker.drama.interruptedRank && speaker.drama.interruptedRank <= 10 ? (
-                    <span className="font-bold text-on-accent"> · Drama #{speaker.drama.interruptedRank}</span>
-                  ) : null}
-                </div>
-              </div>
-              <div className="border-track px-5 py-6 md:px-8 lg:border-r">
-                <div className="text-4xl font-black text-on">
-                  {formatOptionalNumber(voteCount)}
-                </div>
-                <div className="mt-1 text-[11px] uppercase tracking-wider text-on-muted">
-                  Namentliche Abstimmungen
-                </div>
-              </div>
-              <div className="px-5 py-6 md:px-8">
-                <div className="text-4xl font-black text-on">{formatNumber(speaker.maxWords)}</div>
-                <div className="mt-1 text-[11px] uppercase tracking-wider text-on-muted">
-                  Wörter, längste Rede
-                  {speaker.rankings.longestSpeechRank <= 10 ? (
-                    <span className="font-bold text-on-accent"> · #{speaker.rankings.longestSpeechRank}</span>
-                  ) : null}
-                </div>
-              </div>
-            </div>
+              )}
+            </section>
+          )}
 
-            <div className="sticky top-14 z-20 flex gap-2 overflow-x-auto border-b border-track bg-wr-ink px-5 py-[18px] md:px-11">
-              {PROFILE_TABS.map((tab) => (
-                <TabButton
-                  key={tab.id}
-                  active={activeTab === tab.id}
-                  label={tab.label}
-                  onClick={() => setActiveTab(tab.id)}
-                />
-              ))}
-            </div>
-
-            <div className="px-5 py-9 md:px-11 md:pb-12">
-              <div>
-                {activeTab === 'overview' && (
-                  <div className="grid gap-8 lg:grid-cols-[1fr_340px]">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-on-accent">Ranglisten</p>
-                      <h2 className="mt-2 text-2xl font-black text-on">Wo dieses Profil herausragt</h2>
-                      <div className="mt-5">
-                        <OverviewDigest lead={overviewLead} highlights={profileHighlights} />
-                      </div>
-                    </div>
-                    <div className="space-y-5">
-                      <div className="rounded-lg border border-track bg-wr-card p-5">
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-on-muted">Kurzprofil</p>
-                        <p className="mt-3 text-sm leading-7 text-on-muted">{overviewLead}</p>
-                      </div>
-                      <OverviewBiographyPanel biography={biography} />
-                      <OverviewTransparencyPanel profile={abgeordnetenwatch} />
-                    </div>
-                  </div>
-                )}
-
-                {activeTab === 'bio' && (
-                  <BiographyDetail
-                    biography={biography}
-                    description={profileDescription}
-                    profileImage={speaker.profileImage ?? null}
-                    image={officialImage}
-                  />
-                )}
-
-                {activeTab === 'transparency' && (
-                  <TransparencyDetail profile={abgeordnetenwatch} />
-                )}
-
-                {activeTab === 'topics' && (
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-on-accent">Themen</p>
-                    <h2 className="mt-2 text-2xl font-black text-on">Politische Schwerpunkte</h2>
-                    {topTopics.length > 0 ? (
-                      <div className="mt-6 space-y-4">
-                        {topTopics.map((topic) => {
-                          const meta = TOPIC_BY_ID[topic.topic];
-                          const max = topTopics[0]?.score || 1;
-                          return (
-                            <div key={topic.topic} className="rounded-lg border border-track bg-wr-card p-4">
-                              <div className="flex items-center justify-between gap-4">
-                                <div>
-                                  <p className="font-semibold text-on">{meta?.name ?? topic.topic}</p>
-                                  <p className="text-sm text-on-muted">
-                                    Rang {topic.rank} im persönlichen Themenprofil
-                                  </p>
-                                </div>
-                                <p className="text-sm font-semibold text-on-muted">{topic.score.toFixed(2)}</p>
-                              </div>
-                              <div className="mt-3 h-2 overflow-hidden rounded-full bg-wr-card">
-                                <div
-                                  className="h-full rounded-full"
-                                  style={{
-                                    width: `${Math.max(6, (topic.score / max) * 100)}%`,
-                                    backgroundColor: meta?.color ?? partyTextColor,
-                                  }}
-                                />
-                              </div>
-                              {speaker.topics?.topicWords[topic.topic]?.length ? (
-                                <div className="mt-3 flex flex-wrap gap-2">
-                                  {speaker.topics.topicWords[topic.topic].map((word) => (
-                                    <span
-                                      key={word.word}
-                                      className="rounded-full bg-wr-card px-2 py-1 text-xs text-on-muted"
-                                    >
-                                      {word.word} {word.count}x
-                                    </span>
-                                  ))}
-                                </div>
-                              ) : null}
-                            </div>
-                          );
-                        })}
-                      </div>
-                    ) : (
-                      <p className="mt-6 text-on-muted">Für dieses Profil liegen noch keine Themenwerte vor.</p>
-                    )}
-                  </div>
-                )}
-
-                {activeTab === 'language' && (
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-on-accent">Sprache</p>
-                    <h2 className="mt-2 text-2xl font-black text-on">Wörter, die hängen bleiben</h2>
-                    <div className="mt-6 grid gap-5 lg:grid-cols-3">
-                      <div className="rounded-lg border border-track bg-wr-card p-5">
-                        <div className="flex items-center gap-2 text-on">
-                          <MessageSquare size={18} />
-                          <h3 className="font-bold">Häufigste Wörter</h3>
-                        </div>
-                        <div className="mt-4 flex flex-wrap gap-2">
-                          {speaker.words.topWords.slice(0, 10).map((word) => (
-                            <span
-                              key={word.word}
-                              className="rounded-full bg-wr-card px-3 py-1.5 text-sm text-on-muted"
-                            >
-                              {word.word} <span className="text-on-muted">{word.count}x</span>
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="rounded-lg border border-track bg-wr-card p-5">
-                        <div className="flex items-center gap-2 text-on">
-                          <Sparkles size={18} />
-                          <h3 className="font-bold">Signature Words</h3>
-                        </div>
-                        <div className="mt-4 space-y-2">
-                          {signatureWords.map((word) => (
-                            <div key={word.word} className="flex items-center justify-between gap-3 text-sm">
-                              <span className="text-on-muted">{word.word}</span>
-                              <span className="font-semibold text-on-accent">{formatRatio(word.ratio ?? 0)}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="rounded-lg border border-track bg-wr-card p-5">
-                        <div className="flex items-center gap-2 text-on">
-                          <BookOpen size={18} />
-                          <h3 className="font-bold">Adjektive</h3>
-                        </div>
-                        <div className="mt-4 space-y-2">
-                          {signatureAdjectives.length > 0 ? signatureAdjectives.map((word) => (
-                            <div key={word.word} className="flex items-center justify-between gap-3 text-sm">
-                              <span className="text-on-muted">{word.word}</span>
-                              <span className="font-semibold text-on-accent">{formatRatio(word.ratio ?? 0)}</span>
-                            </div>
-                          )) : (
-                            <p className="text-sm text-on-muted">Noch keine belastbaren Adjektiv-Signaturen.</p>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {activeTab === 'tone' && (
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-on-accent">Tonalität</p>
-                    <h2 className="mt-2 text-2xl font-black text-on">Kommunikationsstil</h2>
-                    {speaker.toneProfile ? (
-                      <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                        {([
-                          ['Lösungsfokus', speaker.toneProfile.scores.solution_focus, BarChart3],
-                          ['Zusammenarbeit', speaker.toneProfile.scores.collaboration, Trophy],
-                          ['Autorität', speaker.toneProfile.scores.authority, ExternalLink],
-                          ['Inklusivität', speaker.toneProfile.scores.inclusivity, MessageSquare],
-                        ] satisfies ToneCard[]).map(([label, value, Icon]) => (
-                          <div key={label} className="rounded-lg border border-track bg-wr-card p-4">
-                            <div className="flex items-center justify-between">
-                              <p className="text-sm font-semibold text-on-muted">{label}</p>
-                              <Icon size={18} className="text-on-muted" />
-                            </div>
-                            <p className="mt-3 text-3xl font-black text-on">{Math.round(value)}</p>
-                            <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-wr-card">
-                              <div
-                                className="h-full rounded-full"
-                                style={{ width: `${value}%`, backgroundColor: partyTextColor }}
-                              />
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    ) : (
-                      <p className="mt-6 text-on-muted">Für dieses Profil liegt noch kein Tonalitätsprofil vor.</p>
-                    )}
-                  </div>
-                )}
-
-                {activeTab === 'speeches' && (
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-on-accent">Reden</p>
-                    <h2 className="mt-2 text-2xl font-black text-on">Reden & Beiträge</h2>
-                    <div className="mt-6 mb-5 rounded-lg border border-amber-400/20 bg-amber-400/10 p-4 text-sm text-amber-100/80">
-                      Die vorhandenen statischen Rededaten enthalten aktuell keine verlässlichen Datumsfelder.
-                      Diese Liste nutzt deshalb die Exportreihenfolge. Für echte neueste Reden sollte der Export
-                      um Datum, Protokoll-ID und Tagesordnungspunkt erweitert werden.
-                    </div>
-
-                    {recentSpeeches.length > 0 ? (
-                      <div className="space-y-3">
-                        {recentSpeeches.map((speech) => (
-                          <SpeechRow key={speech.id} speech={speech} />
-                        ))}
-                        <Link
-                          to={searchUrl}
-                          className="inline-flex items-center gap-2 pt-3 text-sm font-semibold text-on-accent hover:text-on-accent"
-                        >
-                          Alle Treffer in der Suche öffnen <ExternalLink size={16} />
-                        </Link>
-                      </div>
-                    ) : (
-                      <p className="text-on-muted">Keine Reden in der statischen Suchdatenbank gefunden.</p>
-                    )}
-                  </div>
-                )}
-
-                {activeTab === 'votes' && (
-                  <div className="grid gap-8 lg:grid-cols-[1fr_340px]">
-                    <div>
-                      <div className="flex flex-wrap items-baseline justify-between gap-3">
-                        <div>
-                          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-on-accent">
-                            Namentliche Abstimmungen
-                          </p>
-                          <h2 className="mt-2 text-2xl font-black text-on">Abstimmungsverhalten</h2>
-                        </div>
-                        <span className="text-sm text-on-muted">
-                          {voteCount == null ? 'Noch nicht verknüpft' : `${formatNumber(voteCount)} Abstimmungen`}
-                        </span>
-                      </div>
-                      <div className="mt-6 space-y-3">
-                        {abgeordnetenwatch?.votes?.recent.length ? (
-                          abgeordnetenwatch.votes.recent.map((vote) => (
-                            <VoteRow key={vote.id} vote={vote} />
-                          ))
-                        ) : (
-                          <p className="rounded-lg border border-track bg-wr-card p-4 text-sm text-on-muted">
-                            {abgeordnetenwatch
-                              ? 'Keine namentlichen Abstimmungen im aktuellen Import.'
-                              : 'Abstimmungsdaten für dieses Profil sind noch nicht verknüpft.'}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                    <div className="space-y-5">
-                      <div className="rounded-lg border border-track bg-wr-card p-5">
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-on-muted">Quelle</p>
-                        <p className="mt-3 text-sm leading-7 text-on-muted">
-                          Die Abstimmungsdaten kommen aus dem verknüpften Abgeordnetenwatch-Mandat und werden
-                          hier als neueste verfügbare API-Auszüge gezeigt.
-                        </p>
-                        {abgeordnetenwatch?.sourceUrl ? (
-                          <a
-                            href={abgeordnetenwatch.sourceUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-on-accent hover:text-on-accent"
-                          >
-                            Abgeordnetenwatch öffnen <ExternalLink size={13} />
-                          </a>
-                        ) : null}
-                      </div>
-                      <div className="rounded-lg border border-track bg-wr-card p-5">
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-on-muted">Kennzahlen</p>
-                        <div className="mt-4 grid grid-cols-2 gap-4">
-                          <StatTile
-                            label="Abstimmungen"
-                            value={formatOptionalNumber(voteCount)}
-                          />
-                          <StatTile label="Fraktion" value={abgeordnetenwatch?.mandate?.fraction ?? speaker.party} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
+          <section id="zahlen" className="mp-chapter" aria-labelledby="zahlen-title">
+            <ChapterHead num={num('zahlen')} kicker="In Zahlen" title="Die Legislatur bisher" />
+            <div className="mp-tiles">
+              <Reveal className="mp-tile mp-tile--violet">
+                <TileValue value={speaker.totalWords} />
+                <div><div className="mp-tile__label">Wörter gesprochen</div><div className="mp-tile__detail">{rankDetail(speaker.rankings.wordsRank, `≈ ${number.format(Math.max(1, Math.round(speaker.totalWords / WORDS_PER_MINUTE)))} Minuten am Rednerpult`)}</div></div>
+              </Reveal>
+              <Reveal className="mp-tile mp-tile--white">
+                <TileValue value={speaker.speeches} />
+                <div><div className="mp-tile__label">{speaker.speeches === 1 ? 'Rede' : 'Reden'}</div><div className="mp-tile__detail">{speaker.wortbeitraege > 0 ? `dazu ${number.format(speaker.wortbeitraege)} ${speaker.wortbeitraege === 1 ? 'Wortbeitrag' : 'Wortbeiträge'}` : rankDetail(speaker.rankings.speechRank, 'im Plenum')}</div></div>
+              </Reveal>
+              <Reveal className="mp-tile mp-tile--mint">
+                <TileValue value={speaker.maxWords} />
+                <div><div className="mp-tile__label">Wörter, längste Rede</div><div className="mp-tile__detail">{rankDetail(speaker.rankings.longestSpeechRank, `im Schnitt ${number.format(Math.round(speaker.avgWords))} pro Rede`)}</div></div>
+              </Reveal>
+              {voteCount !== null ? (
+                <Reveal className="mp-tile mp-tile--card">
+                  <TileValue value={voteCount} />
+                  <div><div className="mp-tile__label">Namentliche Abstimmungen</div><div className="mp-tile__detail mp-muted">via Abgeordnetenwatch</div></div>
+                </Reveal>
+              ) : (
+                <Reveal className="mp-tile mp-tile--card">
+                  <TileValue value={speaker.drama.interruptionsReceived} />
+                  <div><div className="mp-tile__label">Zwischenrufe erhalten</div><div className="mp-tile__detail mp-muted">{rankDetail(speaker.drama.interruptedRank, 'während der eigenen Reden')}</div></div>
+                </Reveal>
+              )}
             </div>
           </section>
-        </main>
+
+          {topTopics.length > 0 && (
+            <section id="themen" className="mp-chapter mp-chapter--split" aria-labelledby="themen-title">
+              <ChapterHead num={num('themen')} kicker="Top-Themen" title={`Worüber ${first} redet`} className="mp-head--sticky">
+                <p className="mp-copy">Themenwert aus dem persönlichen Wortprofil. Darunter die Wörter, die das Thema tragen.</p>
+              </ChapterHead>
+              <ol className="mp-ranks" aria-label="Top-Themen">
+                {topTopics.map((topic, index) => (
+                  <Reveal as="li" key={topic.topic} className="mp-rank">
+                    <span className="mp-rank__num" aria-hidden="true">{index + 1}</span>
+                    <div className="mp-rank__body">
+                      <div className="mp-rank__title">
+                        <span className="mp-rank__name">{TOPIC_BY_ID[topic.topic]?.name ?? topic.topic}</span>
+                        <span className="mp-rank__score">{topic.score.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                      </div>
+                      <span className="mp-meter" aria-hidden="true"><GrowBar className="mp-meter__fill" width={(topic.score / (topTopics[0].score || 1)) * 100} style={{ background: TOPIC_COLORS[index] }} /></span>
+                      {speaker.topics?.topicWords[topic.topic]?.length ? (
+                        <ul className="mp-chips" aria-label="Wörter zum Thema">
+                          {speaker.topics.topicWords[topic.topic].slice(0, 5).map(word => <li key={word.word}>{word.word} {word.count}×</li>)}
+                        </ul>
+                      ) : null}
+                    </div>
+                  </Reveal>
+                ))}
+              </ol>
+            </section>
+          )}
+
+          {toneRows.length > 0 && (
+            <section id="ton" className="mp-chapter mp-chapter--split" aria-labelledby="ton-title">
+              <ChapterHead num={num('ton')} kicker="Tonalität" title={`So klingt ${first}`} className="mp-head--sticky">
+                <p className="mp-copy">Die stärksten Werte im Tonalitätsmodell, jeweils von 0 bis 100.</p>
+              </ChapterHead>
+              <ol className="mp-ranks" aria-label="Tonalität">
+                {toneRows.map(([key, value], index) => (
+                  <Reveal as="li" key={key} className="mp-rank">
+                    <span className="mp-rank__num" aria-hidden="true">{index + 1}</span>
+                    <div className="mp-rank__body">
+                      <div className="mp-rank__title">
+                        <span className="mp-rank__name">{TONE_LABELS[key]}</span>
+                        <span className="mp-rank__score">{Math.round(value)}</span>
+                      </div>
+                      <span className="mp-meter" aria-hidden="true"><GrowBar className="mp-meter__fill" width={value} style={{ background: TOPIC_COLORS[index] }} /></span>
+                    </div>
+                  </Reveal>
+                ))}
+              </ol>
+            </section>
+          )}
+
+          {speeches.length > 0 && (
+            <section id="reden" className="mp-chapter" aria-labelledby="reden-title">
+              <Reveal className="mp-head mp-head--row">
+                <div className="mp-head">
+                  <span className="mp-kicker">{num('reden')} · Reden</span>
+                  <h2 id="reden-title" className="mp-h2">So fängt {first} an</h2>
+                </div>
+                <p className="mp-source max-w-[22rem]">Reihenfolge laut Export – Datum und Tagesordnungspunkt fehlen noch in den Rededaten.</p>
+              </Reveal>
+              <ul className="mp-speeches">
+                {speeches.slice(0, 6).map(speech => <Reveal as="li" key={speech.id}><SpeechCard speech={speech} longest={longest} /></Reveal>)}
+              </ul>
+              {speeches.length > 6 && <Link to={searchUrl} className="mp-link self-start">Alle {number.format(speeches.length)} Beiträge in der Suche →</Link>}
+            </section>
+          )}
+
+          {votes.length > 0 && (
+            <section id="abstimmungen" className="mp-chapter mp-chapter--split" aria-labelledby="abstimmungen-title">
+              <ChapterHead num={num('abstimmungen')} kicker="Abstimmungen" title="Ja. Nein. Ja.">
+                <p className="mp-copy">Die neuesten namentlichen Abstimmungen aus dem Mandat.</p>
+                {profile && <a className="mp-link" href={profile.sourceUrl} target="_blank" rel="noreferrer">{voteCount ? `Alle ${number.format(voteCount)}` : 'Alle'} auf Abgeordnetenwatch ↗</a>}
+              </ChapterHead>
+              <ul className="mp-votes">
+                {votes.map(vote => {
+                  const body = (
+                    <>
+                      <span className="mp-vote__title">{vote.pollLabel}</span>
+                      <span className="mp-vote__value" data-vote={vote.vote}>{VOTE_LABELS[vote.vote] ?? vote.vote}</span>
+                    </>
+                  );
+                  return (
+                    <Reveal as="li" key={vote.id}>
+                      {vote.url ? <a className="mp-vote" href={vote.url} target="_blank" rel="noreferrer">{body}</a> : <div className="mp-vote">{body}</div>}
+                    </Reveal>
+                  );
+                })}
+              </ul>
+            </section>
+          )}
+
+          {chapters.includes('mandat') && (
+            <MandateChapter num={num('mandat')} speaker={speaker} profile={profile} bioText={bioText} bioSource={bioSource} />
+          )}
+
+          {quiz && (
+            <Reveal className="mp-cta">
+              <div className="mp-cta__text">
+                <span className="mp-mono text-sm">Quiz · {quiz.rounds.length} Runden</span>
+                <h2 className="mp-cta__title">Kennst du {genitive(first)} Signature Words?</h2>
+                <p>{genitive(first)} Wörter gegen den Bundestag – und gegen die eigene Fraktion.</p>
+              </div>
+              <Link to={quizUrl} className="mp-btn mp-btn--white mp-btn--lg">Quiz starten<ArrowIcon /></Link>
+            </Reveal>
+          )}
+        </div>
       </div>
     </>
   );

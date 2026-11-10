@@ -22,6 +22,7 @@ const McpTechnikPage = lazy(() => import('@/components/McpTechnikPage').then(m =
 const SuchePage = lazy(() => import('@/components/SuchePage').then(m => ({ default: m.SuchePage })));
 const AbgeordnetePage = lazy(() => import('@/components/AbgeordnetePage').then(m => ({ default: m.AbgeordnetePage })));
 const MdbProfilePage = lazy(() => import('@/components/MdbProfilePage').then(m => ({ default: m.MdbProfilePage })));
+const MdbQuizPage = lazy(() => import('@/components/mdb-profile/MdbQuizPage').then(m => ({ default: m.MdbQuizPage })));
 
 // Statistiken pages (overview + subpages) - TEMPORARILY DISABLED
 // const StatistikenLayout = lazy(() => import('@/components/statistiken/StatistikenLayout').then(m => ({ default: m.StatistikenLayout })));
@@ -165,6 +166,7 @@ export default function App() {
             <Route path="suche" element={<SuchePage />} />
             <Route path="abgeordnete" element={<AbgeordnetePage />} />
             <Route path="abgeordnete/:slug" element={<MdbProfilePage />} />
+            <Route path="abgeordnete/:slug/quiz" element={<MdbQuizPage />} />
           </Route>
 
           {/* Statistiken routes - TEMPORARILY DISABLED

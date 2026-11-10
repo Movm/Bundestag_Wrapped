@@ -391,7 +391,7 @@ test('does not retain a same-slug profile or canonical from another edition', as
   await expect(page.getByRole('heading', { name: 'Bea Ausgabe Zwei' })).toBeVisible();
   await expect(page.getByText('Alex Ausgabe Eins')).toHaveCount(0);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://bundestag-wrapped.de/2026/abgeordnete/shared-speaker');
-  await expect(page.getByRole('link', { name: '← Alle Abgeordneten' })).toHaveAttribute('href', '/2026/abgeordnete');
+  await expect(page.getByRole('link', { name: 'Alle Abgeordneten' })).toHaveAttribute('href', '/2026/abgeordnete');
   await expect(page.getByRole('link', { name: 'Reden durchsuchen' })).toHaveAttribute('href', /\/2026\/suche\?tab=speeches/);
 });
 
