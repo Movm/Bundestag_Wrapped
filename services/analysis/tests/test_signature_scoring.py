@@ -2,7 +2,6 @@
 
 import math
 from collections import Counter
-from types import SimpleNamespace
 
 from noun_analysis.wrapped.speaker_export.signature_scoring import (
     MIN_Z_SCORE,
