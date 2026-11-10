@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { AccessibleDialog } from '@/components/ui/AccessibleDialog';
 import { Share2, Download, X } from 'lucide-react';
+import { ActionButton } from '@/design-system/components/ActionButton';
 import {
   type SlideData,
   renderSlideSharepic,
@@ -59,14 +60,13 @@ export function SlideShareFAB({ slideData }: SlideShareFABProps) {
       {/* FAB Button */}
       <motion.button
         onClick={event => { event.currentTarget.focus(); handleOpen(); }}
-        className="fixed story-share-trigger z-50 w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-lg hover:bg-white/20 transition-colors"
-        whileHover={{ scale: 1.1 }}
+        className="ds-icon-button fixed story-share-trigger z-50 !h-14 !w-14"
         whileTap={{ scale: 0.95 }}
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.2, delay: 0.5 }}
       >
-        <Share2 className="w-6 h-6 text-white" aria-hidden="true" />
+        <Share2 size={24} strokeWidth={2.4} aria-hidden="true" />
         <span className="sr-only">Diese Folie teilen</span>
       </motion.button>
 
@@ -81,7 +81,7 @@ export function SlideShareFAB({ slideData }: SlideShareFABProps) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={close}
-              className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
+              className="fixed inset-0 z-50 bg-wr-ink/80"
               aria-hidden="true"
             />
 
@@ -90,48 +90,35 @@ export function SlideShareFAB({ slideData }: SlideShareFABProps) {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="fixed story-share-popup z-50 bg-[#1a1a2e]/95 backdrop-blur-xl rounded-2xl border border-white/10 p-4 shadow-2xl w-72 max-w-[calc(100vw-2rem)] max-h-[calc(100dvh-2rem)] overflow-y-auto"
+              data-surface="ink"
+              className="fixed story-share-popup z-50 rounded-[1.75rem] p-4 w-72 max-w-[calc(100vw-2rem)] max-h-[calc(100dvh-2rem)] overflow-y-auto"
             >
               {/* Close button */}
               <button
                 data-share-close
                 onClick={close}
-                className="absolute top-1 right-1 p-3 text-white/70 hover:text-white transition-colors"
+                className="ds-icon-button absolute top-3 right-3 !h-11 !w-11"
               >
-                <X className="w-5 h-5" aria-hidden="true" />
+                <X size={20} strokeWidth={2.6} aria-hidden="true" />
                 <span className="sr-only">Teilen schließen</span>
               </button>
 
               <h2 id="slide-share-title" className="sr-only">Diese Folie teilen</h2>
 
               {/* Preview */}
-              <div className="mb-4">
+              <div className="mb-4 mt-12">
                 <canvas
                   ref={canvasRef}
                   width={1080}
                   height={1080}
-                  className="w-full aspect-square rounded-lg" role="img" aria-label={`Vorschau: ${surface.title}`}
+                  className="w-full aspect-square rounded-2xl" role="img" aria-label={`Vorschau: ${surface.title}`}
                 />
               </div>
 
               {/* Buttons */}
-              <div className="flex gap-2">
-                <button
-                  onClick={handleDownload}
-                  className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-pink-600 to-pink-500 text-white font-medium hover:from-pink-500 hover:to-pink-400 transition-all"
-                >
-                  <Download className="w-5 h-5" />
-                  Speichern
-                </button>
-                {canShare && (
-                  <button
-                    onClick={handleShare}
-                    className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-white/10 border border-white/20 text-white font-medium hover:bg-white/20 transition-all"
-                  >
-                  <Share2 className="w-5 h-5" />
-                    Teilen
-                  </button>
-                )}
+              <div className="flex flex-wrap gap-2">
+                <ActionButton icon="none" onClick={handleDownload}><Download size={20} aria-hidden="true" />Speichern</ActionButton>
+                {canShare && <ActionButton icon="none" variant="outline" onClick={handleShare}><Share2 size={20} aria-hidden="true" />Teilen</ActionButton>}
               </div>
             </motion.div>
           </>

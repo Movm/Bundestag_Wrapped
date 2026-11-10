@@ -1,7 +1,6 @@
 import type { SlideConfig, CardConfig } from './types';
 
 export const vocabularyConfig: SlideConfig = {
-  emoji: '📚',
   title: 'Partei-Vokabular',
   subtitle: 'Diese Wörter zeichnen die Parteien aus',
   filename: 'bundestag-wrapped-vocabulary',

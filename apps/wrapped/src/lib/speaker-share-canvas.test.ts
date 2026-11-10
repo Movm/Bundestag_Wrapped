@@ -8,6 +8,9 @@ import {
   type SpeakerShareData,
 } from './speaker-share-canvas';
 
+// Big words are drawn as capitals, so compare text case-insensitively.
+const same = (a: unknown, b: string) => typeof a === 'string' && a.toLowerCase() === b.toLowerCase();
+
 // Mock canvas context with all required methods
 function createMockContext(): CanvasRenderingContext2D {
   return {
@@ -89,7 +92,7 @@ describe('speaker-share-canvas', () => {
       expect(mockCanvas.getContext).toHaveBeenCalledWith('2d');
     });
 
-    it('should draw background gradient', () => {
+    it('should paint a flat background field', () => {
       const data: SpeakerShareData = {
         name: 'Lars Klingbeil',
         party: 'SPD',
@@ -99,7 +102,6 @@ describe('speaker-share-canvas', () => {
 
       renderSpeakerShareImage(mockCanvas, data);
 
-      expect(mockCtx.createLinearGradient).toHaveBeenCalled();
       expect(mockCtx.fillRect).toHaveBeenCalledWith(0, 0, 1080, 1080);
     });
 
@@ -115,7 +117,7 @@ describe('speaker-share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       const hasHeaderText = fillTextCalls.some(
-        (call: unknown[]) => call[0] === 'BUNDESTAG WRAPPED'
+        (call: unknown[]) => same(call[0], 'BUNDESTAG WRAPPED')
       );
       expect(hasHeaderText).toBe(true);
     });
@@ -132,7 +134,7 @@ describe('speaker-share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       const hasName = fillTextCalls.some(
-        (call: unknown[]) => call[0] === 'Friedrich Merz'
+        (call: unknown[]) => same(call[0], 'Friedrich Merz')
       );
       expect(hasName).toBe(true);
     });
@@ -153,7 +155,7 @@ describe('speaker-share-canvas', () => {
       renderSpeakerShareImage(mockCanvas, data);
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
-      const hasEmoji = fillTextCalls.some((call: unknown[]) => call[0] === '🐘');
+      const hasEmoji = fillTextCalls.some((call: unknown[]) => same(call[0], '🐘'));
       expect(hasEmoji).toBe(true);
     });
 
@@ -174,11 +176,11 @@ describe('speaker-share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       // White parts
-      expect(fillTextCalls.some((c: unknown[]) => c[0] === 'Lars Klingbeil, dein ')).toBe(true);
-      expect(fillTextCalls.some((c: unknown[]) => c[0] === 'ist der ')).toBe(true);
+      expect(fillTextCalls.some((c: unknown[]) => same(c[0], 'Lars Klingbeil, dein '))).toBe(true);
+      expect(fillTextCalls.some((c: unknown[]) => same(c[0], 'ist der '))).toBe(true);
       // Pink parts (with period at end of animal name)
-      expect(fillTextCalls.some((c: unknown[]) => c[0] === 'Spirit Animal')).toBe(true);
-      expect(fillTextCalls.some((c: unknown[]) => c[0] === 'Elefant.')).toBe(true);
+      expect(fillTextCalls.some((c: unknown[]) => same(c[0], 'Spirit Animal'))).toBe(true);
+      expect(fillTextCalls.some((c: unknown[]) => same(c[0], 'Elefant.'))).toBe(true);
     });
 
     it('should render spirit text with correct article for feminine animals', () => {
@@ -197,8 +199,8 @@ describe('speaker-share-canvas', () => {
       renderSpeakerShareImage(mockCanvas, data);
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
-      expect(fillTextCalls.some((c: unknown[]) => c[0] === 'ist die ')).toBe(true);
-      expect(fillTextCalls.some((c: unknown[]) => c[0] === 'Eule.')).toBe(true);
+      expect(fillTextCalls.some((c: unknown[]) => same(c[0], 'ist die '))).toBe(true);
+      expect(fillTextCalls.some((c: unknown[]) => same(c[0], 'Eule.'))).toBe(true);
     });
 
     it('should render spirit animal subtitle with title and reason', () => {
@@ -218,7 +220,7 @@ describe('speaker-share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       const hasSubtitle = fillTextCalls.some(
-        (c: unknown[]) => c[0] === 'Wortgewaltige:r Redner:in: Mit 45.000 Wörtern eine:r der redefreudigsten Abgeordneten.'
+        (c: unknown[]) => same(c[0], 'Wortgewaltige:r Redner:in: Mit 45.000 Wörtern eine:r der redefreudigsten Abgeordneten.')
       );
       expect(hasSubtitle).toBe(true);
     });
@@ -235,7 +237,7 @@ describe('speaker-share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       const hasSignatureWord = fillTextCalls.some(
-        (call: unknown[]) => call[0] === 'Standortfördergesetz.'
+        (call: unknown[]) => same(call[0], 'Standortfördergesetz.')
       );
       expect(hasSignatureWord).toBe(true);
     });
@@ -252,7 +254,7 @@ describe('speaker-share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       // White label text (with trailing space before pink word)
-      expect(fillTextCalls.some((c: unknown[]) => c[0] === 'Dein Signaturwort ist ')).toBe(true);
+      expect(fillTextCalls.some((c: unknown[]) => same(c[0], 'Dein Signaturwort ist '))).toBe(true);
     });
 
     it('should render signature word count stats', () => {
@@ -267,7 +269,7 @@ describe('speaker-share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       const hasCountText = fillTextCalls.some(
-        (call: unknown[]) => call[0] === '12× gesagt'
+        (call: unknown[]) => same(call[0], '12× gesagt')
       );
       expect(hasCountText).toBe(true);
     });
@@ -284,7 +286,7 @@ describe('speaker-share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       const hasLabel = fillTextCalls.some(
-        (call: unknown[]) => call[0] === 'Dein Signaturwort ist '
+        (call: unknown[]) => same(call[0], 'Dein Signaturwort ist ')
       );
       expect(hasLabel).toBe(false);
     });
@@ -301,13 +303,13 @@ describe('speaker-share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       const hasQuestion = fillTextCalls.some(
-        (call: unknown[]) => call[0] === 'Du willst auch dein Spirit Animal und Signaturwort kennen?'
+        (call: unknown[]) => same(call[0], 'Du willst auch dein Spirit Animal und Signaturwort kennen?')
       );
       const hasAnswer = fillTextCalls.some(
-        (call: unknown[]) => call[0] === 'Finde dein eigenes Wrapped auf '
+        (call: unknown[]) => same(call[0], 'Finde dein eigenes Wrapped auf ')
       );
       const hasUrl = fillTextCalls.some(
-        (call: unknown[]) => call[0] === 'bundestag-wrapped.de'
+        (call: unknown[]) => same(call[0], 'bundestag-wrapped.de')
       );
       expect(hasQuestion).toBe(true);
       expect(hasAnswer).toBe(true);
@@ -332,10 +334,10 @@ describe('speaker-share-canvas', () => {
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
 
       // Should have all elements (with periods)
-      expect(fillTextCalls.some((c: unknown[]) => c[0] === '🐘')).toBe(true);
-      expect(fillTextCalls.some((c: unknown[]) => c[0] === 'Spirit Animal')).toBe(true);
-      expect(fillTextCalls.some((c: unknown[]) => c[0] === 'Elefant.')).toBe(true);
-      expect(fillTextCalls.some((c: unknown[]) => c[0] === 'Standortfördergesetz.')).toBe(true);
+      expect(fillTextCalls.some((c: unknown[]) => same(c[0], '🐘'))).toBe(true);
+      expect(fillTextCalls.some((c: unknown[]) => same(c[0], 'Spirit Animal'))).toBe(true);
+      expect(fillTextCalls.some((c: unknown[]) => same(c[0], 'Elefant.'))).toBe(true);
+      expect(fillTextCalls.some((c: unknown[]) => same(c[0], 'Standortfördergesetz.'))).toBe(true);
     });
 
     it('should draw decorative orbs', () => {
@@ -348,9 +350,7 @@ describe('speaker-share-canvas', () => {
 
       renderSpeakerShareImage(mockCanvas, data);
 
-      // Decorative orbs use radial gradients
-      expect(mockCtx.createRadialGradient).toHaveBeenCalled();
-      // Should have multiple arc calls for orbs
+      // Flat field with geometric shapes: a circle is drawn with arc
       expect(mockCtx.arc).toHaveBeenCalled();
     });
   });

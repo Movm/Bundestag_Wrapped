@@ -84,7 +84,7 @@ describe('share-canvas', () => {
       expect(mockCanvas.getContext).toHaveBeenCalledWith('2d');
     });
 
-    it('should draw background gradient', () => {
+    it('should paint a flat background field', () => {
       const data: ShareImageData = {
         correctCount: 10,
         totalQuestions: 14,
@@ -92,7 +92,6 @@ describe('share-canvas', () => {
 
       renderShareImage(mockCanvas, data);
 
-      expect(mockCtx.createLinearGradient).toHaveBeenCalled();
       expect(mockCtx.fillRect).toHaveBeenCalledWith(0, 0, 1080, 1080);
     });
 
@@ -126,7 +125,7 @@ describe('share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       const hasUserName = fillTextCalls.some(
-        (call: unknown[]) => typeof call[0] === 'string' && call[0].includes('Max')
+        (call: unknown[]) => typeof call[0] === 'string' && call[0].toLowerCase().includes('max')
       );
       expect(hasUserName).toBe(true);
     });
@@ -142,7 +141,7 @@ describe('share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       const hasErgebnisText = fillTextCalls.some(
-        (call: unknown[]) => typeof call[0] === 'string' && call[0].includes('Ergebnis')
+        (call: unknown[]) => typeof call[0] === 'string' && call[0].toLowerCase().includes('ergebnis')
       );
       expect(hasErgebnisText).toBe(false);
     });
@@ -159,9 +158,9 @@ describe('share-canvas', () => {
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       // Should use trimmed name in the "Max, du bist" line
       const userNameCall = fillTextCalls.find(
-        (call: unknown[]) => typeof call[0] === 'string' && call[0].includes('Max')
+        (call: unknown[]) => typeof call[0] === 'string' && call[0].toLowerCase().includes('max')
       );
-      expect(userNameCall?.[0]).toBe('Max, du bist');
+      expect(userNameCall?.[0]).toBe('MAX, DU BIST');
     });
 
     it('should draw decorative orbs using arc', () => {
@@ -201,7 +200,7 @@ describe('share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       const hasTitle = fillTextCalls.some(
-        (call: unknown[]) => typeof call[0] === 'string' && call[0].includes('Legende!')
+        (call: unknown[]) => typeof call[0] === 'string' && call[0].toLowerCase().includes('legende!')
       );
       expect(hasTitle).toBe(true);
     });
@@ -216,7 +215,7 @@ describe('share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       const hasTitle = fillTextCalls.some(
-        (call: unknown[]) => typeof call[0] === 'string' && call[0].includes('Demokratie-Star!')
+        (call: unknown[]) => typeof call[0] === 'string' && call[0].toLowerCase().includes('demokratie-star!')
       );
       expect(hasTitle).toBe(true);
     });
@@ -231,7 +230,7 @@ describe('share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       const hasTitle = fillTextCalls.some(
-        (call: unknown[]) => typeof call[0] === 'string' && call[0].includes('Politik-Talent!')
+        (call: unknown[]) => typeof call[0] === 'string' && call[0].toLowerCase().includes('politik-talent!')
       );
       expect(hasTitle).toBe(true);
     });
@@ -246,7 +245,7 @@ describe('share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       const hasTitle = fillTextCalls.some(
-        (call: unknown[]) => typeof call[0] === 'string' && call[0].includes('Rising Star!')
+        (call: unknown[]) => typeof call[0] === 'string' && call[0].toLowerCase().includes('rising star!')
       );
       expect(hasTitle).toBe(true);
     });

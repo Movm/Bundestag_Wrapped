@@ -1,11 +1,12 @@
-import { LoopMotion } from '@/components/slides/shared/LoopMotion';
-import { memo, useState, useRef, useEffect, useMemo } from 'react';
+import { memo, useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { Download, Share2, RotateCcw, Users, Home } from 'lucide-react';
 import type { SpeakerWrapped } from '@/data/speaker-wrapped';
-import { itemVariants } from '@/components/slides/shared/animations';
-import { getPartyColor } from './party-colors';
+import { Slide } from '@/design-system/components/Slide';
+import { Display, Mark } from '@/design-system/components/Type';
+import { ActionButton } from '@/design-system/components/ActionButton';
+import { ENTER } from '@/design-system/motion';
 import {
   preloadLogo,
   renderSpeakerShareImage,
@@ -16,18 +17,15 @@ import {
 import { signatureWordsForDisplay } from '@/lib/speaker-profile-utils';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionPath, editionShareUrl, editionSurface } from '@/edition/surface';
+import './speaker.css';
 
 interface SpeakerShareSlideProps {
   speaker: SpeakerWrapped;
   onRestart?: () => void;
 }
 
-const CONFETTI_COLORS = ['#000000', '#DD0000', '#FFCC00'];
-
-const MotionLink = motion.create(Link);
-
 function toShareData(data: SpeakerWrapped, wordIndex: number, editionTitle: string, editionId: string): SpeakerShareData {
-  // Use Bundestag comparison - shows national uniqueness
+  // Bundestag comparison shows national uniqueness.
   const sigWord = signatureWordsForDisplay(data)[wordIndex];
   return {
     name: data.name,
@@ -40,73 +38,18 @@ function toShareData(data: SpeakerWrapped, wordIndex: number, editionTitle: stri
           reason: data.spiritAnimal.reason,
         }
       : null,
-    signatureWord: sigWord
-      ? {
-          word: sigWord.word,
-          count: sigWord.count,
-          ratio: sigWord.ratio ?? 0,
-        }
-      : null,
+    signatureWord: sigWord ? { word: sigWord.word, count: sigWord.count, ratio: sigWord.ratio ?? 0 } : null,
     editionTitle,
     editionId,
   };
 }
 
-const FallingConfetti = memo(function FallingConfetti() {
-  const particles = useMemo(
-    () =>
-      Array.from({ length: 25 }, (_, i) => ({
-        id: i,
-        left: Math.random() * 100,
-        color: CONFETTI_COLORS[Math.floor(Math.random() * 3)],
-        rotate: Math.random() * 720 - 360,
-        duration: Math.random() * 3 + 2,
-        delay: Math.random() * 3,
-      })),
-    []
-  );
-
-  return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden">
-      {particles.map((p) => (
-        <LoopMotion
-          key={p.id}
-          className="absolute w-2 h-2 rounded-sm"
-          style={{
-            left: `${p.left}%`,
-            backgroundColor: p.color,
-          }}
-          initial={{ y: -20, opacity: 0, rotate: 0 }}
-          animate={{
-            y: typeof window !== 'undefined' ? window.innerHeight + 20 : 1000,
-            opacity: [0, 1, 1, 0],
-            rotate: p.rotate,
-          }}
-          transition={{
-            duration: p.duration,
-            repeat: Infinity,
-            delay: p.delay,
-            ease: 'linear',
-          }}
-        />
-      ))}
-    </div>
-  );
-});
-
-/**
- * Speaker Wrapped share slide.
- * Canvas-based sharepic generation with download/share functionality.
- */
-export const SpeakerShareSlide = memo(function SpeakerShareSlide({
-  speaker,
-  onRestart,
-}: SpeakerShareSlideProps) {
+/** Share slide (pink): canvas preview, signature-word picker, save/share and navigation. */
+export const SpeakerShareSlide = memo(function SpeakerShareSlide({ speaker, onRestart }: SpeakerShareSlideProps) {
   const surface = editionSurface(useOptionalEdition());
   const [canShare, setCanShare] = useState(false);
   const [selectedWordIndex, setSelectedWordIndex] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const partyColor = getPartyColor(speaker.party);
   const signatureWords = signatureWordsForDisplay(speaker);
 
   useEffect(() => {
@@ -122,9 +65,7 @@ export const SpeakerShareSlide = memo(function SpeakerShareSlide({
   }, [speaker, selectedWordIndex, surface.editionId, surface.title]);
 
   const handleDownload = () => {
-    if (canvasRef.current) {
-      downloadSpeakerShareImage(canvasRef.current, speaker.name, surface.editionId);
-    }
+    if (canvasRef.current) downloadSpeakerShareImage(canvasRef.current, speaker.name, surface.editionId);
   };
 
   const handleShare = async () => {
@@ -134,141 +75,48 @@ export const SpeakerShareSlide = memo(function SpeakerShareSlide({
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12 relative overflow-hidden">
-      <FallingConfetti />
-
-      <motion.div
-        variants={itemVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="w-full max-w-4xl relative z-10 flex flex-col lg:flex-row lg:items-center lg:gap-12"
-      >
-        {/* Left: Canvas */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="w-full max-w-[200px] sm:max-w-[280px] lg:max-w-md mx-auto lg:mx-0 lg:flex-shrink-0 rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 bg-black/20 shadow-2xl mb-4 sm:mb-6 lg:mb-0"
-        >
-          <canvas
-            ref={canvasRef}
-            className="w-full h-auto block"
-            style={{ aspectRatio: '1 / 1' }}
-            aria-label={`Sharepic für ${speaker.name}`}
-          />
+    <Slide shapes="ring">
+      <div className="sp-share">
+        <motion.div variants={ENTER.pop} className="sp-share__canvas">
+          <canvas ref={canvasRef} role="img" aria-label={`Sharepic für ${speaker.name}`} />
         </motion.div>
 
-        {/* Right: Controls */}
-        <div className="flex-1 text-center lg:text-left">
-          <motion.span
-            className="text-4xl sm:text-5xl lg:text-6xl block mb-2 sm:mb-4"
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ type: 'spring', bounce: 0.5 }}
-          >
-            📸
-          </motion.span>
-
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-1 sm:mb-2">
-            Teile dein Ergebnis!
-          </h2>
-          <p className="text-white/60 text-sm sm:text-base mb-4 sm:mb-6">
-            Erstelle dein persönliches Sharepic
-          </p>
+        <div className="sp-share__controls">
+          <Display size="lg">Teile dein <Mark>Ergebnis</Mark></Display>
 
           {signatureWords.length > 1 && (
-            <div className="mb-4 sm:mb-6">
-              <p className="text-white/50 text-xs sm:text-sm mb-2">Wähle dein Signaturwort:</p>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-1.5 sm:gap-2">
+            <motion.div variants={ENTER.rise}>
+              <p id="sp-word-pick-label" className="ds-note mb-2 font-bold">Wähle dein Signaturwort</p>
+              <ul className="sp-word-pick" aria-labelledby="sp-word-pick-label">
                 {signatureWords.map((word, index) => (
-                  <button
-                    key={word.word}
-                    onClick={() => setSelectedWordIndex(index)}
-                    className="px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all"
-                    style={{
-                      backgroundColor: index === selectedWordIndex ? partyColor : 'rgba(255,255,255,0.1)',
-                      color: index === selectedWordIndex ? 'white' : 'rgba(255,255,255,0.7)',
-                      border: index === selectedWordIndex ? 'none' : '1px solid rgba(255,255,255,0.2)',
-                    }}
-                  >
-                    {word.word} {(word.ratio ?? 0).toFixed(1)}×
-                  </button>
+                  <li key={word.word}>
+                    <button type="button" aria-pressed={index === selectedWordIndex} onClick={() => setSelectedWordIndex(index)}>
+                      {word.word} {(word.ratio ?? 0).toFixed(1)}×
+                    </button>
+                  </li>
                 ))}
-              </div>
-            </div>
+              </ul>
+            </motion.div>
           )}
 
-          <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 mb-4 sm:mb-6">
-            <motion.button
-              onClick={handleDownload}
-              className="flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-pink-600 to-pink-500 rounded-full text-white text-sm sm:text-base font-bold shadow-lg shadow-pink-500/25"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Download size={18} className="sm:w-5 sm:h-5" aria-hidden="true" />
-              Speichern
-            </motion.button>
+          <motion.div variants={ENTER.rise} className="sp-share__row">
+            <ActionButton icon="none" onClick={handleDownload}><Download size={20} aria-hidden="true" />Speichern</ActionButton>
+            {canShare && <ActionButton icon="none" variant="outline" onClick={handleShare}><Share2 size={20} aria-hidden="true" />Teilen</ActionButton>}
+          </motion.div>
 
-            {canShare && (
-              <motion.button
-                onClick={handleShare}
-                className="flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-white/10 hover:bg-white/15 border border-white/20 rounded-full text-white text-sm sm:text-base font-bold transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Share2 size={18} className="sm:w-5 sm:h-5" aria-hidden="true" />
-                Teilen
-              </motion.button>
-            )}
-          </div>
-
-          <div className="flex justify-center lg:justify-start gap-3">
-            <motion.button
-              onClick={onRestart}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="w-12 h-12 rounded-full flex items-center justify-center text-white transition-colors"
-              style={{ backgroundColor: partyColor }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="Nochmal ansehen"
-            >
-              <RotateCcw size={20} aria-hidden="true" />
-            </motion.button>
-            <MotionLink
-              to={editionPath(surface, 'abgeordnete')}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="w-12 h-12 rounded-full flex items-center justify-center text-white bg-white/10 hover:bg-white/20 transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="Andere Abgeordnete anzeigen"
-            >
-              <Users size={20} aria-hidden="true" />
-            </MotionLink>
-            <MotionLink
-              to={editionPath(surface)}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
-              className="w-12 h-12 rounded-full flex items-center justify-center text-white/70 bg-white/5 hover:bg-white/10 transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="Zur Startseite"
-            >
-              <Home size={20} aria-hidden="true" />
-            </MotionLink>
-          </div>
+          <motion.div variants={ENTER.rise} className="sp-share__row">
+            <button type="button" className="ds-icon-button" onClick={onRestart} aria-label="Nochmal ansehen">
+              <RotateCcw size={20} strokeWidth={2.4} aria-hidden="true" />
+            </button>
+            <Link to={editionPath(surface, 'abgeordnete')} className="ds-icon-button" aria-label="Andere Abgeordnete anzeigen">
+              <Users size={20} strokeWidth={2.4} aria-hidden="true" />
+            </Link>
+            <Link to={editionPath(surface)} className="ds-icon-button" aria-label="Zur Startseite">
+              <Home size={20} strokeWidth={2.4} aria-hidden="true" />
+            </Link>
+          </motion.div>
         </div>
-      </motion.div>
-    </div>
+      </div>
+    </Slide>
   );
 });

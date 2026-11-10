@@ -1,16 +1,12 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
 import { useParams } from 'react-router';
-import { motion } from 'motion/react';
 import { useSpeakerData } from '@/hooks/useDataQueries';
 import { SpeakerSEO } from '@/components/seo/SpeakerSEO';
-import { BackgroundSystem } from '@/components/ui/BackgroundSystem';
 import { ScrollContainer, type ScrollContainerRef } from '@/components/main-wrapped/ScrollContainer';
 import { SlideSection } from '@/components/main-wrapped/SlideSection';
 import { playSound } from '@/lib/sounds';
-import { getPartyColor } from './speaker-wrapped/party-colors';
 import {
   SPEAKER_SLIDES,
-  SPEAKER_HIDE_PROGRESS_SLIDES,
   type SpeakerSlideType,
 } from './speaker-wrapped/constants';
 import { useSpeakerScrollWrapped } from './speaker-wrapped/useSpeakerScrollWrapped';
@@ -36,10 +32,7 @@ export function SpeakerWrappedPage() {
   const [restartCount, setRestartCount] = useState(0);
   const answerQuiz = useSpeakerQuizStore((state) => state.answerQuiz);
 
-  // Progress calculation
   const sectionIndex = SPEAKER_SLIDES.indexOf(currentSection);
-  const progress = ((sectionIndex + 1) / SPEAKER_SLIDES.length) * 100;
-  const hideProgressBar = SPEAKER_HIDE_PROGRESS_SLIDES.has(currentSection);
 
   // Play sound on section change
   const prevSectionRef = useRef(currentSection);
@@ -79,72 +72,35 @@ export function SpeakerWrappedPage() {
     setCurrentSection(sectionId as SpeakerSlideType);
   }, [setCurrentSection]);
 
-  // Loading state
   if (loading) {
     return (
-      <div className="min-h-screen page-bg flex items-center justify-center pt-14">
-        <div className="text-center">
-          <div className="text-6xl mb-4 animate-pulse">🎤</div>
-          <p className="text-white/60">Lade Wrapped...</p>
+      <div data-surface="ink" className="speaker-story">
+        <div className="story-shell grid place-items-center px-6">
+          <p role="status" className="ds-display ds-display--lg">Lade Wrapped…</p>
         </div>
       </div>
     );
   }
 
-  // Error state
   if (error || !data) {
+    const notFound = error?.message?.includes('not found');
     return (
-      <div className="min-h-screen page-bg flex items-center justify-center pt-14">
-        <div className="text-center">
-          <div className="text-6xl mb-4">⚠️</div>
-          <p className="text-red-400 mb-2">
-            {error?.message?.includes('not found') ? 'Abgeordnete/r nicht gefunden' : 'Fehler beim Laden'}
-          </p>
-          <p className="text-white/40 text-sm">{error?.message}</p>
+      <div data-surface="ink" className="speaker-story">
+        <div className="story-shell grid place-items-center px-6">
+          <div role="alert" className="flex flex-col items-start gap-3">
+            <p className="ds-display ds-display--lg">{notFound ? 'Abgeordnete/r nicht gefunden' : 'Fehler beim Laden'}</p>
+            {!notFound && error?.message && <p className="ds-note">{error.message}</p>}
+          </div>
         </div>
       </div>
     );
   }
-
-  const partyColor = getPartyColor(data.party);
 
   return (
     <>
       <SpeakerSEO speaker={data} />
 
-      {/* Background system with themed effects */}
-      <BackgroundSystem
-        slideId={currentSection}
-        sparkles
-      />
-
-      <div className="speaker-story page-bg">
-        {/* Progress bar */}
-        {!hideProgressBar && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="fixed top-14 left-0 right-0 z-50 p-4"
-          >
-            <div
-              className="max-w-md mx-auto h-1 bg-white/10 rounded-full overflow-hidden"
-              role="progressbar"
-              aria-valuenow={Math.round(progress)}
-              aria-valuemin={0}
-              aria-valuemax={100}
-              aria-label="Fortschritt durch das Wrapped"
-            >
-              <motion.div
-                className="h-full rounded-full"
-                style={{ backgroundColor: partyColor, width: '100%', transformOrigin: 'left' }}
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: progress / 100 }}
-                transition={{ duration: 0.3 }}
-              />
-            </div>
-          </motion.div>
-        )}
-
+      <div data-surface="ink" className="speaker-story">
         {/* Scroll container with slides */}
         <ScrollContainer
           ref={scrollContainerRef}
