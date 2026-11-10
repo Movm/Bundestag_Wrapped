@@ -12,7 +12,10 @@ const CC_BY_NC_ND_4: License = { name: 'CC BY-NC-ND 4.0', url: 'https://creative
 const CC_BY_NC_ND_3: License = { name: 'CC BY-NC-ND 3.0', url: 'https://creativecommons.org/licenses/by-nc-nd/3.0/' };
 const CC_BY_NC_3: License = { name: 'CC BY-NC 3.0', url: 'https://creativecommons.org/licenses/by-nc/3.0/' };
 const CC_BY_SA_3: License = { name: 'CC BY-SA 3.0', url: 'https://creativecommons.org/licenses/by-sa/3.0/' };
+// Licensed through the project's Epidemic Sound subscription; no Creative Commons licence.
+const EPIDEMIC_LICENSE: License = { name: 'Epidemic Sound Lizenz', url: 'https://www.epidemicsound.com/licensing/' };
 const FMA = { name: 'Free Music Archive', url: 'https://freemusicarchive.org' };
+const EPIDEMIC = { name: 'Epidemic Sound', url: 'https://www.epidemicsound.com' };
 const JAMENDO = { name: 'Jamendo', url: 'https://www.jamendo.com' };
 const CLASSICALS = { name: 'Classicals.de', url: 'https://www.classicals.de' };
 
@@ -45,6 +48,10 @@ export const TRACKS = {
   saturday: { path: '/sounds/crumbsnatchers-saturday.mp3', title: 'Saturday', artist: 'CrumbSnatchers', license: CC_BY_NC_ND_3, source: JAMENDO },
   'get-popular': { path: '/sounds/toussaint-morrison-get-popular.mp3', title: 'Get Popular', artist: 'Toussaint Morrison', license: CC_BY_NC_3, source: { name: 'Free Music Archive', url: 'https://freemusicarchive.org/music/Toussaint_Morrison/Toussaint_Morrison_Is_Not_My_Boyfriend/Toussaint_Morrison_-_Toussaint_Morrison_Is_Not_My_Boyfriend_-_13_Get_Popular1' } },
   'vivaldi-spring': { path: '/sounds/vivaldi-spring-allegro-john-harrison.mp3', title: 'Vivaldi: Frühling, 1. Satz (Allegro)', artist: 'John Harrison & Wichita State University Chamber Players', license: CC_BY_SA_3, source: CLASSICALS },
+  'gloss-that': { path: '/sounds/loreana-gloss-that.mp3', title: 'GLOSS THAT', artist: 'Loreana', license: EPIDEMIC_LICENSE, source: EPIDEMIC },
+  pressure: { path: '/sounds/nyck-caution-pressure.mp3', title: 'PRESSURE!', artist: 'Nyck Caution', license: EPIDEMIC_LICENSE, source: EPIDEMIC },
+  'i-still-break': { path: '/sounds/parellite-i-still-break.mp3', title: 'I Still Break', artist: 'Parellite', license: EPIDEMIC_LICENSE, source: EPIDEMIC },
+  'take-2': { path: '/sounds/mushkilla-take-2-harrison-first-rework.mp3', title: 'Take 2 (Harrison First Rework)', artist: 'Mushkilla & Harrison First', license: EPIDEMIC_LICENSE, source: EPIDEMIC },
 } as const satisfies Record<string, Track>;
 
 export type ThemeType = keyof typeof TRACKS;

@@ -12,8 +12,8 @@ describe('edition music', () => {
   it('loads the 2026 music.json', () => {
     expect(Object.keys(EDITION_MUSIC)).toContain('2026');
     expect(themeForSlide('intro', '2026')).toBe('only-alone');
-    expect(themeForSlide('quiz-youth-language', '2026')).toBe('get-popular');
-    expect(themeForSlide('reveal-mention', '2026')).toBe('only-alone');
+    expect(themeForSlide('quiz-youth-language', '2026')).toBe('gloss-that');
+    expect(themeForSlide('reveal-mention', '2026')).toBe('i-still-break');
     expect(themeForSlide('finale', '2026')).toBe('vivaldi-spring');
   });
 
