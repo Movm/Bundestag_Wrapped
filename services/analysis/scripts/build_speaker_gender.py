@@ -8,7 +8,7 @@ https://www.bundestag.de/services/opendata
 Usage:
     python scripts/build_speaker_gender.py [--zip PATH | --url URL] [--min-wp 19]
 
-Output: src/noun_analysis/wrapped/data/speaker_gender.json, keyed by
+Output: src/noun_analysis/wrapped/reference/speaker_gender.json, keyed by
 "<last name>|<first name>" (see noun_analysis.wrapped.gender.name_key).
 Keys that map to different genders (namesakes) are dropped, not guessed.
 
@@ -47,7 +47,7 @@ _spec.loader.exec_module(_gender)
 name_key = _gender.name_key
 
 DEFAULT_URL = "https://www.bundestag.de/resource/blob/472878/MdB-Stammdaten.zip"
-OUT = ROOT / "src/noun_analysis/wrapped/data/speaker_gender.json"
+OUT = ROOT / "src/noun_analysis/wrapped/reference/speaker_gender.json"
 GENDER = {"männlich": "male", "weiblich": "female", "divers": "diverse"}
 
 

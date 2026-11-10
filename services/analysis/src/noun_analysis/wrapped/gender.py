@@ -15,7 +15,7 @@ import unicodedata
 Gender = Literal["male", "female", "unknown"]
 GenderSource = Literal["official", "override", "name_dictionary", "heuristic", "unknown"]
 
-OFFICIAL_LOOKUP_PATH = Path(__file__).parent / "data" / "speaker_gender.json"
+OFFICIAL_LOOKUP_PATH = Path(__file__).parent / "reference" / "speaker_gender.json"
 
 _SOURCE_CATEGORY: dict[str, GenderSource] = {
     "official": "official",
