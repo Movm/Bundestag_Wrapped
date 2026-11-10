@@ -31,33 +31,11 @@ export function SectionWrapper({
         className
       )}
     >
-      {/* Background gradient overlay */}
-      <div
-        className={cn(
-          'absolute inset-0 bg-gradient-to-b pointer-events-none',
-          config.gradient
-        )}
-      />
-
-      {/* Top accent border */}
       {showTopBorder && (
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl px-8">
-          <div
-            className="h-px w-full"
-            style={{
-              background: `linear-gradient(90deg, transparent 0%, ${config.accent}40 20%, ${config.accent}60 50%, ${config.accent}40 80%, transparent 100%)`,
-            }}
-          />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl px-8" aria-hidden="true">
+          <div className="h-1 w-full rounded-full bg-wr-card" />
         </div>
       )}
-
-      {/* Subtle glow effect at top */}
-      <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none opacity-30 blur-3xl"
-        style={{
-          background: `radial-gradient(ellipse at center top, ${config.accent}20 0%, transparent 70%)`,
-        }}
-      />
 
       {/* Content */}
       <div className="relative max-w-6xl mx-auto">

@@ -13,10 +13,9 @@ interface HeaderProps {
   onMenuToggle: () => void;
 }
 
-export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderProps) {
+export function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
   const location = useLocation();
   const surface = editionSurface(useOptionalEdition());
-  const isDark = variant === 'dark';
   const muted = useAudioStore((s) => s.isMuted);
   const toggleMute = useAudioStore((s) => s.toggleMute);
   const [musicPlaying, setMusicPlaying] = useState(() => isBackgroundMusicPlaying());
@@ -31,8 +30,8 @@ export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderPro
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-60 h-14">
-      <div className="h-full px-4 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-60 h-16">
+      <div className="h-full px-4 flex items-center justify-between gap-2">
         <Link
           to={`${editionPath(surface)}${location.search}${location.hash}`}
           className="transition-opacity hover:opacity-80"
@@ -46,7 +45,7 @@ export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderPro
           <button
             onClick={handleToggleMusic}
             disabled={IS_DEV_AUDIO_DISABLED}
-            className={isDark ? 'ds-icon-button' : 'p-2 rounded-lg transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-100'}
+            className="ds-icon-button"
             aria-label={IS_DEV_AUDIO_DISABLED ? 'Musik im Entwicklungsmodus deaktiviert' : musicPlaying ? 'Musik ausschalten' : 'Musik einschalten'}
             title={IS_DEV_AUDIO_DISABLED ? 'Musik ist im Entwicklungsmodus deaktiviert' : undefined}
           >
@@ -57,7 +56,7 @@ export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderPro
           <button
             onClick={handleToggleMute}
             disabled={IS_DEV_AUDIO_DISABLED}
-            className={isDark ? 'ds-icon-button' : 'p-2 rounded-lg transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-100'}
+            className="ds-icon-button"
             aria-label={IS_DEV_AUDIO_DISABLED ? 'Ton im Entwicklungsmodus deaktiviert' : muted ? 'Ton einschalten' : 'Ton ausschalten'}
             title={IS_DEV_AUDIO_DISABLED ? 'Ton ist im Entwicklungsmodus deaktiviert' : undefined}
           >
@@ -66,7 +65,7 @@ export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderPro
 
           <button
             onClick={event => { event.currentTarget.focus(); onMenuToggle(); }}
-            className={isDark ? 'ds-icon-button' : 'p-2 rounded-lg transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-100'}
+            className="ds-icon-button"
             aria-expanded={isMenuOpen}
             aria-label={isMenuOpen ? 'Menü schließen' : 'Menü öffnen'}
           >

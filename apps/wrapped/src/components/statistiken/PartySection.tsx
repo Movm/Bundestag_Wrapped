@@ -90,7 +90,7 @@ function PartyHeroCard({ party, index, topicAnalysis }: PartyHeroCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.5, ease: 'easeOut' }}
-      className="relative rounded-2xl overflow-hidden bg-gray-950"
+      className="relative rounded-2xl overflow-hidden bg-wr-ink border border-track"
       style={{
         border: `2px solid ${partyColor}`,
       }}
@@ -103,7 +103,7 @@ function PartyHeroCard({ party, index, topicAnalysis }: PartyHeroCardProps) {
             className="w-6 h-6 rounded-full"
             style={{ backgroundColor: partyColor }}
           />
-          <h3 className="text-3xl md:text-4xl font-black text-white">
+          <h3 className="text-3xl md:text-4xl font-black text-on">
             {party.party}
           </h3>
         </div>
@@ -126,10 +126,10 @@ function PartyHeroCard({ party, index, topicAnalysis }: PartyHeroCardProps) {
                   }}
                 >
                   <span className="text-3xl md:text-4xl mb-2">{topic.meta.emoji}</span>
-                  <span className="text-white font-bold text-sm md:text-base leading-tight">
+                  <span className="text-on font-bold text-sm md:text-base leading-tight">
                     {topic.meta.name}
                   </span>
-                  <span className="text-white/60 text-xs mt-1">
+                  <span className="text-on-muted text-xs mt-1">
                     {topic.score.toFixed(1)}%
                   </span>
                 </motion.div>
@@ -146,11 +146,11 @@ function PartyHeroCard({ party, index, topicAnalysis }: PartyHeroCardProps) {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.3 + i * 0.02 }}
-                    className="flex items-center gap-2 py-2 px-3 rounded-xl bg-white/5"
+                    className="flex items-center gap-2 py-2 px-3 rounded-xl bg-wr-card"
                   >
                     <span className="text-lg">{topic.meta.emoji}</span>
-                    <span className="text-white text-sm flex-1 truncate">{topic.meta.name}</span>
-                    <span className="text-white/40 text-xs">{topic.score.toFixed(1)}%</span>
+                    <span className="text-on text-sm flex-1 truncate">{topic.meta.name}</span>
+                    <span className="text-on-muted text-xs">{topic.score.toFixed(1)}%</span>
                   </motion.div>
                 ))}
               </div>
@@ -161,7 +161,7 @@ function PartyHeroCard({ party, index, topicAnalysis }: PartyHeroCardProps) {
         {/* Signature Words */}
         {party.signatureWords && party.signatureWords.length > 0 && (
           <div className="mb-6">
-            <h4 className="text-white/40 text-xs uppercase tracking-wider mb-3">Signature-Wörter</h4>
+            <h4 className="text-on-muted text-xs uppercase tracking-wider mb-3">Signature-Wörter</h4>
             <div className="flex flex-wrap gap-2">
               {party.signatureWords.slice(0, 6).map((word) => (
                 <span
@@ -181,28 +181,28 @@ function PartyHeroCard({ party, index, topicAnalysis }: PartyHeroCardProps) {
         )}
 
         {/* BOTTOM: Stats + Wortbeiträge */}
-        <div className="pt-6 border-t border-white/10">
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-white/50 text-sm">
+        <div className="pt-6 border-t border-track">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-on-muted text-sm">
             <div className="flex items-center gap-2">
-              <span className="text-white font-semibold">{formatNumber(totalContributions)}</span>
+              <span className="text-on font-semibold">{formatNumber(totalContributions)}</span>
               <span>Wortbeiträge</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-white font-semibold">{formatNumber(party.speeches)}</span>
+              <span className="text-on font-semibold">{formatNumber(party.speeches)}</span>
               <span>Reden</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-white font-semibold">{formatNumber(party.uniqueSpeakers)}</span>
+              <span className="text-on font-semibold">{formatNumber(party.uniqueSpeakers)}</span>
               <span>Redner:innen</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-white font-semibold">{formatNumber(party.totalWords)}</span>
+              <span className="text-on font-semibold">{formatNumber(party.totalWords)}</span>
               <span>Wörter</span>
             </div>
             {party.topSpeaker?.name && (
               <div className="flex items-center gap-2">
-                <span className="text-white/40">Top:</span>
-                <span className="text-white">{party.topSpeaker.name}</span>
+                <span className="text-on-muted">Top:</span>
+                <span className="text-on">{party.topSpeaker.name}</span>
               </div>
             )}
           </div>

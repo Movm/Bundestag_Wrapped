@@ -4,24 +4,11 @@ interface SkeletonProps {
   className?: string;
 }
 
+/** Flat placeholder block; no pulse or shimmer. */
 export function Skeleton({ className }: SkeletonProps) {
-  return (
-    <div
-      className={cn('bg-white/10 rounded animate-pulse', className)}
-      aria-hidden="true"
-    />
-  );
+  return <div className={cn('bg-wr-card rounded-xl', className)} aria-hidden="true" />;
 }
 
 export function SkeletonShimmer({ className }: SkeletonProps) {
-  return (
-    <div
-      className={cn(
-        'bg-gradient-to-r from-white/5 via-white/15 to-white/5',
-        'bg-[length:200%_100%] animate-shimmer rounded',
-        className
-      )}
-      aria-hidden="true"
-    />
-  );
+  return <Skeleton className={className} />;
 }

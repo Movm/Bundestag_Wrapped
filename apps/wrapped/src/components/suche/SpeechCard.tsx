@@ -18,13 +18,13 @@ export const SpeechCard = memo(function SpeechCard({ speech, query, onClick }: S
   return (
     <button
       onClick={event => { event.currentTarget.focus(); onClick(speech); }}
-      className="w-full text-left bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl p-4 transition-colors group"
+      className="w-full text-left bg-wr-card hover:bg-bg-elevated border border-track rounded-xl p-4 transition-colors group"
     >
       <div className="flex items-start justify-between gap-3 mb-2">
         <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-white font-medium">{speech.speaker}</span>
+          <span className="text-on font-medium">{speech.speaker}</span>
           <span
-            className={`px-2 py-0.5 rounded text-xs font-medium text-white ${
+            className={`px-2 py-0.5 rounded text-xs font-medium text-on ${
               PARTY_BG_CLASSES[speech.party] || 'bg-gray-500'
             }`}
           >
@@ -32,11 +32,11 @@ export const SpeechCard = memo(function SpeechCard({ speech, query, onClick }: S
           </span>
           <CategoryBadge category={speech.category} size="sm" />
         </div>
-        <span className="text-white/65 text-sm whitespace-nowrap">
+        <span className="text-on-muted text-sm whitespace-nowrap">
           {speech.words.toLocaleString('de-DE')} Wörter
         </span>
       </div>
-      <p className="text-white/60 text-sm leading-relaxed line-clamp-2 group-hover:text-white/80 transition-colors">
+      <p className="text-on-muted text-sm leading-relaxed line-clamp-2 group-hover:text-on transition-colors">
         "{highlightedPreview}"
       </p>
     </button>

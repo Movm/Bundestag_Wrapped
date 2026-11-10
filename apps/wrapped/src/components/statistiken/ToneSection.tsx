@@ -131,7 +131,7 @@ export function ToneSection({ toneAnalysis, defaultExpanded = false }: ToneSecti
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center text-white/50 text-base max-w-2xl mx-auto mb-12"
+            className="text-center text-on-muted text-base max-w-2xl mx-auto mb-12"
           >
             {config.explanation}
           </motion.p>
@@ -150,13 +150,13 @@ export function ToneSection({ toneAnalysis, defaultExpanded = false }: ToneSecti
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="bg-white/5 rounded-2xl p-6 border border-white/10"
+                  className="bg-wr-card rounded-2xl p-6 border border-track"
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-2xl">{metric.icon}</span>
                     <div>
-                      <h3 className="text-white font-bold">{metric.label}</h3>
-                      <p className="text-white/40 text-sm">{metric.description}</p>
+                      <h3 className="text-on font-bold">{metric.label}</h3>
+                      <p className="text-on-muted text-sm">{metric.description}</p>
                     </div>
                   </div>
 
@@ -183,7 +183,7 @@ export function ToneSection({ toneAnalysis, defaultExpanded = false }: ToneSecti
               viewport={{ once: true }}
               className="mt-12"
             >
-              <h3 className="text-xl font-bold text-white mb-6 text-center">
+              <h3 className="text-xl font-bold text-on mb-6 text-center">
                 Top Wörter nach Kategorie
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -218,8 +218,8 @@ function ToneBar({ party, score, maxScore, index }: ToneBarProps) {
       transition={{ delay: index * 0.05 }}
       className="flex items-center gap-3"
     >
-      <div className="w-20 text-sm text-white/80 truncate">{party}</div>
-      <div className="flex-1 h-6 bg-white/10 rounded-full overflow-hidden">
+      <div className="w-20 text-sm text-on truncate">{party}</div>
+      <div className="flex-1 h-6 bg-wr-card rounded-full overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${percentage}%` }}
@@ -252,19 +252,19 @@ function PartyToneWords({ partyData }: PartyToneWordsProps) {
   if (categories.length === 0) return null;
 
   return (
-    <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+    <div className="bg-wr-card rounded-xl p-4 border border-track">
       <div className="flex items-center gap-2 mb-3">
         <div
           className="w-3 h-3 rounded-full"
           style={{ backgroundColor: partyColor }}
         />
-        <h4 className="text-white font-bold">{partyData.party}</h4>
+        <h4 className="text-on font-bold">{partyData.party}</h4>
       </div>
 
       <div className="space-y-2">
         {categories.slice(0, 2).map((category) => (
           <div key={category.key}>
-            <p className="text-white/40 text-xs uppercase tracking-wide mb-1">
+            <p className="text-on-muted text-xs uppercase tracking-wide mb-1">
               {category.label}
             </p>
             <div className="flex flex-wrap gap-1">

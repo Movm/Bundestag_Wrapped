@@ -5,18 +5,18 @@ import { editionPath, editionSurface } from '@/edition/surface';
 export function Footer() {
   const surface = editionSurface(useOptionalEdition());
   return (
-    <footer className="w-full mt-auto border-t border-white/10">
+    <footer className="w-full mt-auto border-t-4 border-wr-pink bg-wr-ink">
       <div className="container mx-auto px-4 py-6 md:py-8">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-white/50">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-base text-on-muted">
           {/* Author + Social Icons */}
           <div className="flex items-center justify-center md:justify-start gap-4">
             <span>
-              Made with <span className="text-red-500">♥</span> by{' '}
+              Made with <span className="text-on-accent" aria-hidden="true">♥</span><span className="sr-only">Liebe</span> by{' '}
               <a
                 href="https://www.moritz-waechter.de"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white/70 transition-colors font-medium"
+                className="hover:text-on underline-offset-4 hover:underline transition-colors font-medium"
               >
                 Moritz Wächter
               </a>
@@ -26,7 +26,7 @@ export function Footer() {
                 href="https://github.com/Movm/bundestag-wrapped"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white/70 transition-colors"
+                className="hover:text-on underline-offset-4 hover:underline transition-colors"
                 aria-label="GitHub"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -37,7 +37,7 @@ export function Footer() {
                 href="https://www.linkedin.com/in/moritz-w%C3%A4chter-6ab033210/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white/70 transition-colors"
+                className="hover:text-on underline-offset-4 hover:underline transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -48,7 +48,7 @@ export function Footer() {
                 href="https://x.com/MoritzWaech"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white/70 transition-colors"
+                className="hover:text-on underline-offset-4 hover:underline transition-colors"
                 aria-label="X (Twitter)"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -59,7 +59,7 @@ export function Footer() {
                 href="https://www.instagram.com/moritz_waechter/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white/70 transition-colors"
+                className="hover:text-on underline-offset-4 hover:underline transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -74,38 +74,38 @@ export function Footer() {
             {/* TODO: Re-enable when statistiken is ready
             <Link
               to="/statistiken"
-              className="hover:text-white/70 transition-colors"
+              className="hover:text-on underline-offset-4 hover:underline transition-colors"
             >
               Statistiken
             </Link>
-            <span className="text-white/30">|</span>
+            <span className="text-on-muted" aria-hidden="true">|</span>
             */}
             <Link
               to={editionPath(surface, 'suche')}
-              className="hover:text-white/70 transition-colors"
+              className="hover:text-on underline-offset-4 hover:underline transition-colors"
             >
               Suche
             </Link>
-            <span className="text-white/30">|</span>
+            <span className="text-on-muted" aria-hidden="true">|</span>
             <a
               href="https://www.moritz-waechter.de/impressum"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white/70 transition-colors"
+              className="hover:text-on underline-offset-4 hover:underline transition-colors"
             >
               Impressum
             </a>
-            <span className="text-white/30">|</span>
+            <span className="text-on-muted" aria-hidden="true">|</span>
             <Link
               to="/datenschutz"
-              className="hover:text-white/70 transition-colors"
+              className="hover:text-on underline-offset-4 hover:underline transition-colors"
             >
               Datenschutz
             </Link>
-            <span className="text-white/30">|</span>
+            <span className="text-on-muted" aria-hidden="true">|</span>
             <Link
               to={editionPath(surface, 'dokumentation')}
-              className="hover:text-white/70 transition-colors"
+              className="hover:text-on underline-offset-4 hover:underline transition-colors"
             >
               Dokumentation
             </Link>

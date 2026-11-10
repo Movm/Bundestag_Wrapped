@@ -41,22 +41,6 @@ export function HeroSection({ metadata, funFacts }: HeroSectionProps) {
           format="compact"
           color={config.accent}
         />
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2 }}
-          className="mt-20 text-center"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-            className="text-2xl text-white/30"
-          >
-            ↓
-          </motion.div>
-        </motion.div>
       </div>
 
       {/* EXPANDABLE DETAILS */}
@@ -102,7 +86,7 @@ export function HeroSection({ metadata, funFacts }: HeroSectionProps) {
               transition={{ duration: 0.6 }}
               className="w-full max-w-5xl mx-auto"
             >
-              <h2 className="text-xl font-bold text-white/80 mb-6 text-center">Fun Facts</h2>
+              <h2 className="text-xl font-bold text-on mb-6 text-center">Fun Facts</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
                 {funFacts.slice(0, 8).map((fact, i) => (
                   <motion.div
@@ -111,13 +95,13 @@ export function HeroSection({ metadata, funFacts }: HeroSectionProps) {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.05 }}
-                    className="bg-white/5 rounded-xl p-4 border border-white/10 hover:border-white/20 transition-colors"
+                    className="bg-wr-card rounded-xl p-4 border border-track hover:border-track transition-colors"
                   >
                     <span className="text-2xl block mb-2">{fact.emoji}</span>
-                    <p className="text-white font-bold text-lg">{fact.value}</p>
-                    <p className="text-white/60 text-sm">{fact.label}</p>
+                    <p className="text-on font-bold text-lg">{fact.value}</p>
+                    <p className="text-on-muted text-sm">{fact.label}</p>
                     {fact.sublabel && (
-                      <p className="text-white/40 text-xs mt-1">{fact.sublabel}</p>
+                      <p className="text-on-muted text-xs mt-1">{fact.sublabel}</p>
                     )}
                   </motion.div>
                 ))}
@@ -142,14 +126,14 @@ function StatCard({ value, label, icon }: StatCardProps) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="bg-white/5 rounded-2xl p-5 border border-white/10 hover:border-pink-500/30 transition-colors text-center"
+      className="bg-wr-card rounded-2xl p-5 border border-track hover:border-wr-pink transition-colors text-center"
     >
-      <span className="text-3xl md:text-4xl block mb-2">{icon}</span>
+      <span aria-hidden="true" className="hidden">{icon}</span>
       <AnimatedCounter
         value={value}
-        className="text-2xl md:text-3xl font-black text-white"
+        className="text-2xl md:text-3xl font-black text-on"
       />
-      <p className="text-white/60 text-sm mt-1">{label}</p>
+      <p className="text-on-muted text-sm mt-1">{label}</p>
     </motion.div>
   );
 }
