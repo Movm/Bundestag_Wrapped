@@ -45,6 +45,24 @@ export function pickRiserOptions<T extends RankMovement>(items: T[]): { winner: 
   return { winner, options: [winner.label, ...distractors] };
 }
 
+const RAGEBAIT_MEANING = 'Gemeint sind Inhalte, die gezielt Wut provozieren sollen, um Reichweite zu erzeugen.';
+
+/** Numeric options around the real count: it, two higher ones and a lower one (0 at the bottom). */
+function countOptions(count: number): string[] {
+  return [...new Set([count, count + 2, count + 4, count > 2 ? count - 2 : 0])].map(value => number.format(value));
+}
+
+function jugendwortQuestion(word: { word: string; count: number; winnerYear?: number }): QuizQuestion | undefined {
+  if (word.count < 1) return undefined;
+  return question(
+    'quiz-youth-language',
+    `Wie oft fiel das Jugendwort ${word.winnerYear} „${word.word}“ bisher im Bundestag?`,
+    countOptions(word.count),
+    number.format(word.count),
+    `„${word.word}“ kommt auf ${number.format(word.count)} kontextuell bestätigte Treffer. ${word.word === 'ragebait' ? RAGEBAIT_MEANING : ''}`.trim(),
+  );
+}
+
 /** Builds deterministic, evidence-backed quiz questions for one edition. */
 export function buildEditionQuizModel(data: WrappedData): EditionQuizModel {
   const model: EditionQuizModel = {};
@@ -88,6 +106,12 @@ export function buildEditionQuizModel(data: WrappedData): EditionQuizModel {
 
   addQuestion(model, 'quiz-youth-language', () => {
     const comparison = data.yearOverYear;
+    // The lexicon marks the current Jugendwort with a winner year (youth-words.json).
+    // When one exists the question is about it; without a hit it is omitted.
+    const jugendwort = [...(comparison?.youthLanguage.words ?? [])]
+      .filter(item => item.winnerYear !== undefined)
+      .sort((a, b) => (b.winnerYear ?? 0) - (a.winnerYear ?? 0))[0];
+    if (jugendwort) return jugendwortQuestion(jugendwort);
     const words = (comparison?.youthLanguage.words ?? []).filter(item => item.count > 0);
     const winner = words[0];
     if (!winner) return undefined;

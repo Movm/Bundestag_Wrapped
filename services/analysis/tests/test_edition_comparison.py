@@ -1,4 +1,5 @@
 import json
+import pytest
 
 from noun_analysis.edition.comparison import build_year_over_year
 
@@ -99,3 +100,16 @@ def test_context_rules_and_complete_protocol_deduplication(tmp_path):
     counts = {item["word"]: item["count"] for item in result["youthLanguage"]["words"]}
     assert counts == {"wild/wyld": 1, "lowkey": 1, "sus": 1, "schere": 0}
     assert result["youthLanguage"]["byParty"] == [{"party": "P", "count": 3}]
+
+
+def test_lexicon_keeps_winner_year_and_rejects_invalid_ones(tmp_path):
+    from noun_analysis.edition.comparison import _lexicon
+
+    lexicon = tmp_path / "youth.json"
+    write_json(lexicon, {"version": "v", "terms": ["safe", "wild", "bro", {"word": "ragebait", "winner": 2026}]})
+    terms = {term["word"]: term["winner"] for term in _lexicon(lexicon)[1]}
+    assert terms == {"safe": None, "wild": None, "bro": None, "ragebait": 2026}
+
+    write_json(lexicon, {"version": "v", "terms": ["safe", "wild", "bro", {"word": "ragebait", "winner": "2026"}]})
+    with pytest.raises(ValueError, match="winner"):
+        _lexicon(lexicon)

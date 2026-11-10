@@ -267,6 +267,7 @@ export interface YouthWordCount {
   "count": Count;
   "previousCount": Count;
   "change": number;
+  "winnerYear"?: Count;
 }
 
 export interface YouthLanguageAnalysis {

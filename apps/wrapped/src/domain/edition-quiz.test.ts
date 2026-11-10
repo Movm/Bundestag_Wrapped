@@ -149,6 +149,43 @@ describe('riser ties', () => {
   });
 });
 
+describe('Jugendwort question', () => {
+  const withYouth = (words: Array<{ word: string; count: number; winnerYear?: number }>) => ({
+    ...fixture('Europa', 'Partei A'),
+    yearOverYear: {
+      baseline: { editionId: '2025', start: '2025-01-01', end: '2025-12-31' },
+      topics: [], words: [],
+      youthLanguage: {
+        lexiconVersion: 'x',
+        words: words.map(item => ({ previousCount: 0, change: item.count, ...item })),
+        byParty: [{ party: 'Partei A', count: 9 }], bySpeaker: [],
+      },
+    },
+  });
+
+  it('asks for the winner flagged by the lexicon with numeric options around its count', () => {
+    const model = buildEditionQuizModel(withYouth([
+      { word: 'macher', count: 8 }, { word: 'ragebait', count: 1, winnerYear: 2026 },
+    ]) as never);
+    const quiz = model['quiz-youth-language'];
+    expect(quiz?.question).toBe('Wie oft fiel das Jugendwort 2026 „ragebait“ bisher im Bundestag?');
+    expect(quiz?.correctAnswer).toBe('1');
+    expect(quiz?.options).toEqual(['1', '3', '5', '0']);
+    expect(quiz?.explanation).toContain('1 kontextuell bestätigte Treffer');
+    expect(quiz?.explanation).toContain('Wut provozieren');
+  });
+
+  it('follows the count and keeps options distinct', () => {
+    const quiz = buildEditionQuizModel(withYouth([{ word: 'ragebait', count: 12, winnerYear: 2026 }]) as never)['quiz-youth-language'];
+    expect(quiz?.options).toEqual(['12', '14', '16', '10']);
+  });
+
+  it('is omitted without hits for the winner', () => {
+    const model = buildEditionQuizModel(withYouth([{ word: 'macher', count: 8 }, { word: 'ragebait', count: 0, winnerYear: 2026 }]) as never);
+    expect(model['quiz-youth-language']).toBeUndefined();
+  });
+});
+
 describe('edition quiz configuration', () => {
   it('starts the 2026 edition with the word-riser question', () => {
     expect(quiz2026.groups[0]?.id).toBe('quiz-word-riser');
