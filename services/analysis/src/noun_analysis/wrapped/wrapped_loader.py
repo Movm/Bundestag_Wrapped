@@ -145,7 +145,7 @@ def build_speaker_profiles(
                 last_name = name_parts.get("last_name", "")
                 acad_title = name_parts.get("acad_title") or acad_title
 
-            gender_result = gender_detector.detect(first_name)
+            gender_result = gender_detector.detect_speaker(first_name, last_name)
 
             profiles[key] = SpeakerProfile(
                 name=speaker,
@@ -153,6 +153,7 @@ def build_speaker_profiles(
                 last_name=last_name,
                 party=speech.get("party", ""),
                 gender=gender_result.gender,
+                gender_source=gender_result.gender_source,
                 acad_title=acad_title,
                 total_speeches=0,
                 total_words=0,
