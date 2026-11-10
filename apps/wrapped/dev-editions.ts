@@ -2,7 +2,7 @@ import { createReadStream, existsSync, statSync } from 'node:fs';
 import path from 'node:path';
 import type { Plugin } from 'vite';
 
-export const DEV_EDITIONS_URL_PREFIX = '/__dev-editions/';
+export const DEV_EDITIONS_URL_PREFIX = '/data/__dev-editions/';
 
 export function devEditionsRoot(): string {
   return process.env.WRAPPED_DEV_EDITIONS_DIR
