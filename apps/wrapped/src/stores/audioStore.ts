@@ -24,8 +24,11 @@ function getBrowserStorage(): Storage | undefined {
   }
 }
 
-/** Local previews must stay silent so tests and review sessions never emit audio. */
-export const IS_DEV_AUDIO_DISABLED = import.meta.env.DEV;
+/**
+ * Sound plays in development too (mute it in the toolbar). Set
+ * VITE_DEV_AUDIO=off to keep a local session completely silent.
+ */
+export const IS_DEV_AUDIO_DISABLED = import.meta.env.DEV && import.meta.env.VITE_DEV_AUDIO === 'off';
 
 interface AudioState {
   // State
