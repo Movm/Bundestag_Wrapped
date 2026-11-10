@@ -26,20 +26,20 @@ export function SearchHeader({ state, updateState, parties }: SearchHeaderProps)
     <motion.header
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="sticky top-14 z-40 page-bg-sticky border-b border-white/10"
+      className="sticky top-14 z-40 page-bg-sticky border-b border-track"
     >
       <div className="max-w-4xl mx-auto px-4 py-4">
         <div className="flex items-center gap-4 mb-4">
           <a
             href={editionPath(surface)}
-            className="text-white/60 hover:text-white transition-colors"
+            className="text-on-muted hover:text-on transition-colors"
             aria-label="Zurück zur Startseite"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </a>
-          <h1 className="text-xl font-bold text-white">🏛️ Bundestag Suche</h1>
+          <h1 className="ds-display ds-display--sm">Bundestag Suche</h1>
         </div>
 
         <div className="relative mb-4">
@@ -48,11 +48,11 @@ export function SearchHeader({ state, updateState, parties }: SearchHeaderProps)
             placeholder='Suche... (z.B. "klima" AND energie NOT atomkraft)'
             value={state.q}
             onQueryChange={(q) => updateState({ q })}
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 pl-11 pr-14 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-pink-500/50 focus:border-pink-500/50"
+            className="w-full bg-wr-card border border-track rounded-xl px-4 py-3 pl-11 pr-14 text-on placeholder:text-on-muted focus:outline-none focus:ring-2 focus:ring-wr-pink focus:border-wr-pink"
             aria-label="Suche nach Reden, Abgeordneten oder Wörtern"
           />
           <svg
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/40"
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-on-muted"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -68,7 +68,7 @@ export function SearchHeader({ state, updateState, parties }: SearchHeaderProps)
           {state.q && (
             <button
               onClick={() => updateState({ q: '' })}
-              className="absolute right-1 top-1/2 -translate-y-1/2 p-3 text-white/70 hover:text-white"
+              className="absolute right-1 top-1/2 -translate-y-1/2 p-3 text-on-muted hover:text-on"
               aria-label="Suchfeld leeren"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -109,7 +109,7 @@ export function SearchHeader({ state, updateState, parties }: SearchHeaderProps)
           <select
             value={state.sort}
             onChange={(e) => updateState({ sort: e.target.value as SpeechSortOption | SpeakerSortOption | WordSortOption })}
-            className="min-w-0 max-w-full min-h-11 bg-white/10 border border-white/10 rounded-lg px-3 py-1.5 text-base text-white focus:outline-none focus:ring-1 focus:ring-pink-500/50"
+            className="min-w-0 max-w-full min-h-11 bg-wr-card border border-track rounded-lg px-3 py-1.5 text-base text-on focus:outline-none focus:ring-1 focus:ring-wr-pink"
             aria-label="Sortieren nach"
           >
             {sortOptions.map((opt) => (
@@ -125,8 +125,8 @@ export function SearchHeader({ state, updateState, parties }: SearchHeaderProps)
             onClick={() => updateState({ party: '' })}
             className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
               !state.party
-                ? 'bg-white text-black'
-                : 'bg-white/10 text-white/70 hover:bg-white/20'
+                ? 'bg-wr-card text-on'
+                : 'bg-wr-card text-on-muted hover:bg-bg-elevated'
             }`}
             aria-pressed={!state.party}
           >
@@ -138,8 +138,8 @@ export function SearchHeader({ state, updateState, parties }: SearchHeaderProps)
               onClick={() => updateState({ party: party === state.party ? '' : party })}
               className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
                 state.party === party
-                  ? 'text-white ring-2 ring-white/50'
-                  : 'text-white/90 hover:ring-1 hover:ring-white/30'
+                  ? 'text-on ring-2 ring-white/50'
+                  : 'text-on hover:ring-1 hover:ring-white/30'
               }`}
               style={{
                 backgroundColor: state.party === party
@@ -155,22 +155,22 @@ export function SearchHeader({ state, updateState, parties }: SearchHeaderProps)
 
         {state.tab === 'speeches' && (
           <div className="flex items-center gap-3 mt-3">
-            <span className="text-white/50 text-sm" id="word-count-label">Wörter:</span>
+            <span className="text-on-muted text-sm" id="word-count-label">Wörter:</span>
             <input
               type="number"
               placeholder="Min"
               value={state.minWords || ''}
               onChange={(e) => updateState({ minWords: parseInt(e.target.value, 10) || 0 })}
-              className="w-20 bg-white/5 border border-white/10 rounded-lg px-2 py-1 text-base text-white placeholder:text-white/40 focus:outline-none focus:ring-1 focus:ring-pink-500/50"
+              className="w-20 bg-wr-card border border-track rounded-lg px-2 py-1 text-base text-on placeholder:text-on-muted focus:outline-none focus:ring-1 focus:ring-wr-pink"
               aria-label="Minimale Wortzahl"
             />
-            <span className="text-white/30" aria-hidden="true">–</span>
+            <span className="text-on-muted" aria-hidden="true">–</span>
             <input
               type="number"
               placeholder="Max"
               value={state.maxWords || ''}
               onChange={(e) => updateState({ maxWords: parseInt(e.target.value, 10) || 0 })}
-              className="w-20 bg-white/5 border border-white/10 rounded-lg px-2 py-1 text-base text-white placeholder:text-white/40 focus:outline-none focus:ring-1 focus:ring-pink-500/50"
+              className="w-20 bg-wr-card border border-track rounded-lg px-2 py-1 text-base text-on placeholder:text-on-muted focus:outline-none focus:ring-1 focus:ring-wr-pink"
               aria-label="Maximale Wortzahl"
             />
           </div>

@@ -118,9 +118,9 @@ export function SuchePage() {
     return (
       <div className="min-h-screen page-bg flex items-center justify-center pt-14">
         <div className="text-center">
-          <div className="text-6xl mb-4">⚠️</div>
+          
           <p className="text-red-400">Fehler beim Laden</p>
-          <p className="text-white/40 text-sm mt-2">{error?.message}</p>
+          <p className="text-on-muted text-sm mt-2">{error?.message}</p>
         </div>
       </div>
     );
@@ -176,19 +176,19 @@ export function SuchePage() {
           </AnimatePresence>
 
           <footer className="fixed bottom-0 left-0 right-0 z-30 p-4 pointer-events-none">
-            <div className="flex justify-center gap-4 text-xs text-white/40">
+            <div className="flex justify-center gap-4 text-xs text-on-muted">
               <a
                 href="https://www.moritz-waechter.de/impressum"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white/60 transition-colors pointer-events-auto"
+                className="hover:text-on-muted transition-colors pointer-events-auto"
               >
                 Impressum
               </a>
               <span>|</span>
               <Link
                 to="/datenschutz"
-                className="hover:text-white/60 transition-colors pointer-events-auto"
+                className="hover:text-on-muted transition-colors pointer-events-auto"
               >
                 Datenschutz
               </Link>

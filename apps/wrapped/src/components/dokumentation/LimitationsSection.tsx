@@ -4,20 +4,20 @@ import { WarningIcon } from './ui';
 
 export function LimitationsSection() {
   return (
-    <section className="border-t border-stone-200">
+    <section className="border-t border-track">
       <div className="max-w-4xl mx-auto px-6 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.6 }}
         >
-          <h2 className="text-xs font-mono text-stone-400 uppercase tracking-wider mb-4">
+          <h2 className="text-xs font-mono text-on-muted uppercase tracking-wider mb-4">
             Einschränkungen
           </h2>
-          <h3 className="text-2xl font-serif text-stone-900 mb-6">
+          <h3 className="text-2xl font-heading text-on mb-6">
             Bekannte Limitierungen
           </h3>
-          <ul className="space-y-3 text-stone-600">
+          <ul className="space-y-3 text-on-muted">
             {limitations.map((item, i) => (
               <li key={i} className="flex items-start gap-3">
                 <WarningIcon />

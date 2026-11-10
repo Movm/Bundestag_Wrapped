@@ -26,8 +26,8 @@ export function ExpandableDetails({
         onClick={() => setIsExpanded(!isExpanded)}
         className={cn(
           'group flex items-center gap-3 mx-auto px-6 py-3 rounded-full',
-          'bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20',
-          'text-white/60 hover:text-white/90 transition-all duration-300',
+          'bg-wr-card hover:bg-bg-elevated border border-track hover:border-track',
+          'text-on-muted hover:text-on transition-all duration-300',
           'text-base md:text-lg font-medium'
         )}
         whileHover={{ scale: 1.02 }}

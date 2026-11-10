@@ -26,20 +26,20 @@ const MULTI_LABEL_EXAMPLES = [
 
 export function TopicsSection() {
   return (
-    <section className="border-t border-stone-200 bg-white" id="topics">
+    <section className="border-t border-track bg-wr-card" id="topics">
       <div className="max-w-4xl mx-auto px-6 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.85, duration: 0.6 }}
         >
-          <h2 className="text-xs font-mono text-stone-400 uppercase tracking-wider mb-4">
+          <h2 className="text-xs font-mono text-on-muted uppercase tracking-wider mb-4">
             Themenanalyse
           </h2>
-          <h3 className="text-2xl font-serif text-stone-900 mb-6">
+          <h3 className="text-2xl font-heading text-on mb-6">
             13 Politische Themenfelder
           </h3>
-          <p className="text-stone-600 leading-relaxed mb-8">
+          <p className="text-on-muted leading-relaxed mb-8">
             Die Themenanalyse (Scheme F) kategorisiert Bundestagsreden anhand von Substantiven
             in 13 politische Themenfelder. Jedes Thema wird durch ein Lexikon relevanter Begriffe
             definiert, die automatisch in den Redetexten erkannt werden.
@@ -53,26 +53,26 @@ export function TopicsSection() {
           transition={{ delay: 0.86, duration: 0.6 }}
           className="mb-12"
         >
-          <h4 className="font-medium text-stone-900 mb-4">Methodik</h4>
+          <h4 className="font-medium text-on mb-4">Methodik</h4>
           <div className="grid md:grid-cols-3 gap-4">
-            <div className="bg-stone-50 rounded-lg p-4 border border-stone-200">
-              <div className="w-8 h-8 rounded-full bg-stone-900 text-white flex items-center justify-center text-sm font-mono mb-3">1</div>
-              <div className="text-sm font-medium text-stone-900 mb-1">Substantive extrahieren</div>
-              <p className="text-xs text-stone-600">
+            <div className="bg-wr-card rounded-lg p-4 border border-track">
+              <div className="w-8 h-8 rounded-full bg-wr-ink border border-track text-on flex items-center justify-center text-sm font-mono mb-3">1</div>
+              <div className="text-sm font-medium text-on mb-1">Substantive extrahieren</div>
+              <p className="text-xs text-on-muted">
                 spaCy identifiziert und lemmatisiert alle Substantive aus dem Redetext.
               </p>
             </div>
-            <div className="bg-stone-50 rounded-lg p-4 border border-stone-200">
-              <div className="w-8 h-8 rounded-full bg-stone-900 text-white flex items-center justify-center text-sm font-mono mb-3">2</div>
-              <div className="text-sm font-medium text-stone-900 mb-1">Lexikon-Matching</div>
-              <p className="text-xs text-stone-600">
+            <div className="bg-wr-card rounded-lg p-4 border border-track">
+              <div className="w-8 h-8 rounded-full bg-wr-ink border border-track text-on flex items-center justify-center text-sm font-mono mb-3">2</div>
+              <div className="text-sm font-medium text-on mb-1">Lexikon-Matching</div>
+              <p className="text-xs text-on-muted">
                 Jedes Substantiv wird gegen 13 themenspezifische Lexika abgeglichen.
               </p>
             </div>
-            <div className="bg-stone-50 rounded-lg p-4 border border-stone-200">
-              <div className="w-8 h-8 rounded-full bg-stone-900 text-white flex items-center justify-center text-sm font-mono mb-3">3</div>
-              <div className="text-sm font-medium text-stone-900 mb-1">Normalisierung</div>
-              <p className="text-xs text-stone-600">
+            <div className="bg-wr-card rounded-lg p-4 border border-track">
+              <div className="w-8 h-8 rounded-full bg-wr-ink border border-track text-on flex items-center justify-center text-sm font-mono mb-3">3</div>
+              <div className="text-sm font-medium text-on mb-1">Normalisierung</div>
+              <p className="text-xs text-on-muted">
                 Scores werden pro 1.000 Wörter berechnet für Vergleichbarkeit zwischen Fraktionen.
               </p>
             </div>
@@ -86,37 +86,37 @@ export function TopicsSection() {
           transition={{ delay: 0.87, duration: 0.6 }}
           className="mb-12"
         >
-          <h4 className="font-medium text-stone-900 mb-4">Die 13 Themenfelder</h4>
+          <h4 className="font-medium text-on mb-4">Die 13 Themenfelder</h4>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {TOPICS_DATA.map((topic) => (
               <div
                 key={topic.id}
-                className="border border-stone-200 rounded-lg p-4 hover:border-stone-300 transition-colors"
+                className="border border-track rounded-lg p-4 hover:border-track transition-colors"
               >
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-xl">{topic.emoji}</span>
-                  <span className="font-medium text-stone-900">{topic.name}</span>
+                  <span className="font-medium text-on">{topic.name}</span>
                 </div>
-                <p className="text-xs text-stone-500 mb-3">{topic.desc}</p>
+                <p className="text-xs text-on-muted mb-3">{topic.desc}</p>
                 <div className="flex flex-wrap gap-1">
                   {topic.keywords.slice(0, 3).map((kw) => (
                     <span
                       key={kw}
-                      className="px-1.5 py-0.5 bg-stone-100 text-stone-600 text-xs rounded"
+                      className="px-1.5 py-0.5 bg-wr-card text-on-muted text-xs rounded"
                     >
                       {kw}
                     </span>
                   ))}
-                  <span className="px-1.5 py-0.5 text-stone-400 text-xs">
+                  <span className="px-1.5 py-0.5 text-on-muted text-xs">
                     +{topic.keywords.length > 3 ? '...' : ''}
                   </span>
                 </div>
               </div>
             ))}
           </div>
-          <p className="text-xs text-stone-500 mt-4">
+          <p className="text-xs text-on-muted mt-4">
             Jedes Lexikon enthält 30-100+ relevante Begriffe. Die vollständige Liste ist in{' '}
-            <code className="bg-stone-100 px-1.5 py-0.5 rounded">src/noun_analysis/lexicons/topics.py</code> definiert.
+            <code className="bg-wr-card px-1.5 py-0.5 rounded">src/noun_analysis/lexicons/topics.py</code> definiert.
           </p>
         </motion.div>
 
@@ -127,22 +127,22 @@ export function TopicsSection() {
           transition={{ delay: 0.88, duration: 0.6 }}
           className="mb-12"
         >
-          <h4 className="font-medium text-stone-900 mb-4">Lexikon-Struktur</h4>
-          <p className="text-sm text-stone-600 mb-4">
+          <h4 className="font-medium text-on mb-4">Lexikon-Struktur</h4>
+          <p className="text-sm text-on-muted mb-4">
             Die Lexika sind kuratiert und enthalten sowohl Kernbegriffe als auch institutionelle
             und politikspezifische Termini:
           </p>
-          <div className="bg-stone-900 rounded-lg p-4 font-mono text-sm overflow-x-auto">
-            <p className="text-stone-400"># Beispiel: Migration-Lexikon</p>
-            <p className="text-emerald-400">TOPIC_LEXICONS<span className="text-white">[</span><span className="text-amber-400">TopicCategory.MIGRATION</span><span className="text-white">] = {'{'}</span></p>
-            <p className="text-stone-400 ml-4"># Kernbegriffe</p>
+          <div className="bg-wr-ink border border-track rounded-lg p-4 font-mono text-sm overflow-x-auto">
+            <p className="text-on-muted"># Beispiel: Migration-Lexikon</p>
+            <p className="text-emerald-400">TOPIC_LEXICONS<span className="text-on">[</span><span className="text-amber-400">TopicCategory.MIGRATION</span><span className="text-on">] = {'{'}</span></p>
+            <p className="text-on-muted ml-4"># Kernbegriffe</p>
             <p className="text-sky-400 ml-4">"migration", "asyl", "flüchtling", "einwanderung",</p>
-            <p className="text-stone-400 ml-4"># Institutionen</p>
+            <p className="text-on-muted ml-4"># Institutionen</p>
             <p className="text-sky-400 ml-4">"bamf", "frontex", "ankerzentrum",</p>
-            <p className="text-stone-400 ml-4"># Policy-Begriffe</p>
+            <p className="text-on-muted ml-4"># Policy-Begriffe</p>
             <p className="text-sky-400 ml-4">"familiennachzug", "dublin", "abschiebung",</p>
-            <p className="text-stone-400 ml-4"># ~60 weitere Begriffe...</p>
-            <p className="text-white">{'}'}</p>
+            <p className="text-on-muted ml-4"># ~60 weitere Begriffe...</p>
+            <p className="text-on">{'}'}</p>
           </div>
         </motion.div>
 
@@ -153,38 +153,38 @@ export function TopicsSection() {
           transition={{ delay: 0.89, duration: 0.6 }}
           className="mb-12"
         >
-          <h4 className="font-medium text-stone-900 mb-4">Multi-Label-Zuordnung</h4>
-          <p className="text-sm text-stone-600 mb-4">
+          <h4 className="font-medium text-on mb-4">Multi-Label-Zuordnung</h4>
+          <p className="text-sm text-on-muted mb-4">
             Einige Begriffe gehören zu mehreren Themenfeldern. Diese werden mit gewichteter
             Zuordnung erfasst:
           </p>
 
           <div className="space-y-3">
             {MULTI_LABEL_EXAMPLES.map((ex) => (
-              <div key={ex.word} className="flex items-start gap-4 bg-stone-50 rounded-lg p-3 border border-stone-200">
-                <code className="px-2 py-1 bg-stone-900 text-white text-xs rounded font-mono shrink-0">
+              <div key={ex.word} className="flex items-start gap-4 bg-wr-card rounded-lg p-3 border border-track">
+                <code className="px-2 py-1 bg-wr-ink border border-track text-on text-xs rounded font-mono shrink-0">
                   {ex.word}
                 </code>
                 <div>
                   <div className="flex gap-2 mb-1">
                     {ex.topics.map((t) => (
-                      <span key={t} className="px-2 py-0.5 bg-stone-200 text-stone-700 text-xs rounded">
+                      <span key={t} className="px-2 py-0.5 bg-wr-card text-on-muted text-xs rounded">
                         {t}
                       </span>
                     ))}
                   </div>
-                  <p className="text-xs text-stone-500">{ex.reason}</p>
+                  <p className="text-xs text-on-muted">{ex.reason}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-4 bg-stone-900 rounded-lg p-4 font-mono text-sm">
-            <p className="text-stone-400"># Multi-Label mit Gewichtung</p>
-            <p className="text-emerald-400">TOPIC_MULTI_LABEL<span className="text-white">[</span><span className="text-amber-400">"pflege"</span><span className="text-white">] = [</span></p>
+          <div className="mt-4 bg-wr-ink border border-track rounded-lg p-4 font-mono text-sm">
+            <p className="text-on-muted"># Multi-Label mit Gewichtung</p>
+            <p className="text-emerald-400">TOPIC_MULTI_LABEL<span className="text-on">[</span><span className="text-amber-400">"pflege"</span><span className="text-on">] = [</span></p>
             <p className="text-sky-400 ml-4">(TopicCategory.GESUNDHEIT, <span className="text-amber-400">1.0</span>),</p>
             <p className="text-sky-400 ml-4">(TopicCategory.SOZIALES, <span className="text-amber-400">0.7</span>),</p>
-            <p className="text-white">]</p>
+            <p className="text-on">]</p>
           </div>
         </motion.div>
 
@@ -195,27 +195,27 @@ export function TopicsSection() {
           transition={{ delay: 0.90, duration: 0.6 }}
           className="mb-12"
         >
-          <h4 className="font-medium text-stone-900 mb-4">Score-Berechnung</h4>
+          <h4 className="font-medium text-on mb-4">Score-Berechnung</h4>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-stone-50 rounded-lg p-4 border border-stone-200">
-              <div className="text-xs font-mono text-stone-400 uppercase tracking-wider mb-3">
+            <div className="bg-wr-card rounded-lg p-4 border border-track">
+              <div className="text-xs font-mono text-on-muted uppercase tracking-wider mb-3">
                 Absoluter Score
               </div>
-              <code className="text-sm text-stone-800">
+              <code className="text-sm text-on">
                 score = topic_nouns / total_words × 1000
               </code>
-              <p className="text-xs text-stone-500 mt-2">
+              <p className="text-xs text-on-muted mt-2">
                 Anzahl themenrelevanter Substantive pro 1.000 Wörter Redetext.
               </p>
             </div>
-            <div className="bg-stone-50 rounded-lg p-4 border border-stone-200">
-              <div className="text-xs font-mono text-stone-400 uppercase tracking-wider mb-3">
+            <div className="bg-wr-card rounded-lg p-4 border border-track">
+              <div className="text-xs font-mono text-on-muted uppercase tracking-wider mb-3">
                 Relativer Score
               </div>
-              <code className="text-sm text-stone-800">
+              <code className="text-sm text-on">
                 ratio = party_score / avg_score
               </code>
-              <p className="text-xs text-stone-500 mt-2">
+              <p className="text-xs text-on-muted mt-2">
                 Wie stark fokussiert eine Fraktion ein Thema im Vergleich zum Durchschnitt?
               </p>
             </div>
@@ -228,13 +228,13 @@ export function TopicsSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.91, duration: 0.6 }}
         >
-          <h4 className="font-medium text-stone-900 mb-4">Interpretation</h4>
-          <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-4">
+          <h4 className="font-medium text-on mb-4">Interpretation</h4>
+          <div className="bg-wr-card border border-track rounded-lg p-4 mb-4">
             <div className="flex items-start gap-3">
               <InfoIcon />
               <div>
-                <div className="text-sm font-medium text-amber-800 mb-1">Wichtiger Hinweis</div>
-                <p className="text-sm text-amber-700">
+                <div className="text-sm font-medium text-on mb-1">Wichtiger Hinweis</div>
+                <p className="text-sm text-on">
                   Die Themenanalyse zeigt, <strong>wie oft</strong> Fraktionen über Themen sprechen,
                   nicht <strong>wie</strong> sie darüber sprechen. Ein hoher Migrations-Score bedeutet
                   häufiges Thematisieren, nicht zwingend eine bestimmte Position.
@@ -243,30 +243,30 @@ export function TopicsSection() {
             </div>
           </div>
 
-          <p className="text-sm text-stone-600 mb-4">
+          <p className="text-sm text-on-muted mb-4">
             Beispielhafte Schwerpunkte aus den Daten:
           </p>
-          <ul className="text-sm text-stone-600 space-y-2">
+          <ul className="text-sm text-on-muted space-y-2">
             <li className="flex items-start gap-2">
-              <span className="text-green-600">•</span>
+              <span className="text-on">•</span>
               <span><strong>GRÜNE</strong> fokussieren auf Klima & Umwelt (1,4× über Durchschnitt)</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-red-600">•</span>
+              <span className="text-on">•</span>
               <span><strong>DIE LINKE</strong> fokussiert auf Soziales (1,8× über Durchschnitt)</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-blue-600">•</span>
+              <span className="text-on">•</span>
               <span><strong>AfD</strong> fokussiert auf Justiz/Recht und Migration</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-stone-600">•</span>
+              <span className="text-on-muted">•</span>
               <span><strong>Finanzen</strong> ist das #1 Thema aller Fraktionen (Haushaltsdebatte)</span>
             </li>
           </ul>
 
-          <p className="text-xs text-stone-500 mt-6">
-            Quelldatei: <code className="bg-stone-100 px-1.5 py-0.5 rounded">src/noun_analysis/lexicons/topics.py</code>
+          <p className="text-xs text-on-muted mt-6">
+            Quelldatei: <code className="bg-wr-card px-1.5 py-0.5 rounded">src/noun_analysis/lexicons/topics.py</code>
           </p>
         </motion.div>
       </div>

@@ -60,7 +60,7 @@ export function SpeakerSection({
               viewport={{ once: true }}
               className="text-center mb-4"
             >
-              <span className="text-2xl md:text-3xl font-bold text-white">
+              <span className="text-2xl md:text-3xl font-bold text-on">
                 {topSpeakerByWords.name}
               </span>
               <div className="mt-2">
@@ -91,7 +91,7 @@ export function SpeakerSection({
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center text-white/50 text-base max-w-2xl mx-auto mb-12"
+            className="text-center text-on-muted text-base max-w-2xl mx-auto mb-12"
           >
             {config.explanation}
           </motion.p>
@@ -145,7 +145,7 @@ export function SpeakerSection({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold text-white mb-6 text-center flex items-center justify-center gap-2">
+              <h3 className="text-xl font-bold text-on mb-6 text-center flex items-center justify-center gap-2">
                 <span className="text-2xl">❓</span>
                 Regierungsbefragung - Top Antwortgeber
               </h3>
@@ -157,12 +157,12 @@ export function SpeakerSection({
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="bg-white/5 rounded-xl p-4 border border-white/10 text-center"
+                    className="bg-wr-card rounded-xl p-4 border border-track text-center"
                   >
                     <span className="text-2xl block mb-2">
                       {i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `${i + 1}.`}
                     </span>
-                    <p className="text-white font-medium text-sm truncate">{responder.name}</p>
+                    <p className="text-on font-medium text-sm truncate">{responder.name}</p>
                     <PartyBadge party={responder.party} size="sm" />
                     <p
                       className="text-xl font-bold mt-2"
@@ -170,7 +170,7 @@ export function SpeakerSection({
                     >
                       {responder.responses}
                     </p>
-                    <p className="text-white/40 text-xs">Antworten</p>
+                    <p className="text-on-muted text-xs">Antworten</p>
                   </motion.div>
                 ))}
               </div>
@@ -201,9 +201,9 @@ function RankingCard({ title, icon, items, formatValue }: RankingCardProps) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="bg-white/5 rounded-2xl p-5 border border-white/10"
+      className="bg-wr-card rounded-2xl p-5 border border-track"
     >
-      <h3 className="text-white/60 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
+      <h3 className="text-on-muted text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
         <span className="text-xl">{icon}</span> {title}
       </h3>
 
@@ -216,20 +216,20 @@ function RankingCard({ title, icon, items, formatValue }: RankingCardProps) {
             viewport={{ once: true }}
             transition={{ delay: i * 0.05 }}
             className={`flex items-center gap-3 py-2 ${
-              i < items.length - 1 ? 'border-b border-white/5' : ''
+              i < items.length - 1 ? 'border-b border-track' : ''
             }`}
           >
             <span className="text-lg w-6 text-center">
               {i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : (
-                <span className="text-white/40 text-sm">{i + 1}.</span>
+                <span className="text-on-muted text-sm">{i + 1}.</span>
               )}
             </span>
             <div className="flex-1 min-w-0">
-              <p className="text-white font-medium text-sm truncate">{item.name}</p>
+              <p className="text-on font-medium text-sm truncate">{item.name}</p>
               <div className="flex items-center gap-2">
                 <PartyBadge party={item.party} size="sm" />
                 {item.subValue && (
-                  <span className="text-white/40 text-xs">{item.subValue}</span>
+                  <span className="text-on-muted text-xs">{item.subValue}</span>
                 )}
               </div>
             </div>

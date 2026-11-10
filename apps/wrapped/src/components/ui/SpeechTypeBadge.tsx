@@ -21,12 +21,12 @@ const TYPE_LABELS: Record<string, string> = {
 
 const CATEGORY_CONFIG = {
   rede: {
-    color: '#F59E0B', // Amber
+    color: '#ffffff',
     label: 'Rede',
     icon: null,
   },
   wortbeitrag: {
-    color: '#0EA5E9', // Sky
+    color: '#c9c4d4',
     label: 'Wortbeitrag',
     icon: null,
   },
@@ -52,11 +52,10 @@ export function SpeechTypeBadge({
 
   return (
     <span
-      className={`inline-flex items-center gap-1 rounded-full font-medium ${sizeClasses[size]} ${className}`}
+      className={`inline-flex items-center gap-1 rounded-full font-wide font-bold ${sizeClasses[size]} ${className}`}
       style={{
-        backgroundColor: `${config.color}20`,
         color: config.color,
-        border: `1px solid ${config.color}40`,
+        border: `2px solid ${config.color}`,
       }}
     >
       {label}
@@ -77,17 +76,17 @@ export function CategoryBadge({
   const config = CATEGORY_CONFIG[category];
 
   const sizeClasses = {
-    sm: 'px-1.5 py-0.5 text-[10px]',
+    sm: 'px-1.5 py-0.5 text-xs',
     md: 'px-2 py-0.5 text-xs',
     lg: 'px-3 py-1 text-sm',
   };
 
   return (
     <span
-      className={`inline-flex items-center rounded font-semibold uppercase tracking-wide ${sizeClasses[size]} ${className}`}
+      className={`inline-flex items-center rounded font-wide font-bold uppercase tracking-wide ${sizeClasses[size]} ${className}`}
       style={{
-        backgroundColor: `${config.color}20`,
         color: config.color,
+        border: `1px solid ${config.color}`,
       }}
     >
       {config.label}

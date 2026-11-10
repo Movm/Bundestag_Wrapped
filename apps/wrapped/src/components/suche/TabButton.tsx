@@ -24,7 +24,7 @@ export function TabButton({ active, onClick, children, controls, id }: TabButton
   return (
     <button type="button" role="tab" id={id} tabIndex={active ? 0 : -1}
       aria-selected={active} aria-controls={controls} onClick={onClick} onKeyDown={navigateTabs}
-      className={`min-h-11 px-3 sm:px-4 py-2 rounded-xl text-sm font-medium transition-colors ${active ? 'bg-pink-700 text-white' : 'bg-white/10 text-white/80 hover:bg-white/20'}`}>
+      className={`min-h-11 px-3 sm:px-4 py-2 rounded-xl text-sm font-medium transition-colors ${active ? 'bg-wr-pink text-wr-ink' : 'bg-wr-card text-on hover:bg-bg-elevated'}`}>
       {children}
     </button>
   );

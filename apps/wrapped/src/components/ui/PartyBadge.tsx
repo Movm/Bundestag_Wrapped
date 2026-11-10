@@ -1,4 +1,4 @@
-import { getPartyColor } from '@/lib/party-colors';
+import { getPartyTone } from '@/lib/party-colors';
 
 interface PartyBadgeProps {
   party: string;
@@ -7,22 +7,23 @@ interface PartyBadgeProps {
   className?: string;
 }
 
+/** Party pill: flat plate in the party tone (readable on ink), or an outline. */
 export function PartyBadge({ party, size = 'md', variant = 'outline', className = '' }: PartyBadgeProps) {
-  const color = getPartyColor(party);
-
   const sizeClasses = {
-    sm: 'px-2 py-0.5 text-xs',
+    sm: 'px-2.5 py-0.5 text-xs',
     md: 'px-3 py-1 text-sm',
     lg: 'px-4 py-1.5 text-base',
   };
 
-  const style = variant === 'filled'
-    ? { backgroundColor: color, color: '#ffffff' }
-    : { backgroundColor: `${color}20`, color: color, border: `1px solid ${color}40` };
+  const tone = getPartyTone(party, 'dark');
+  const style =
+    variant === 'filled'
+      ? { backgroundColor: tone, color: 'var(--color-wr-ink)' }
+      : { color: tone, border: `2px solid ${tone}` };
 
   return (
     <span
-      className={`inline-flex items-center rounded-full font-medium ${sizeClasses[size]} ${className}`}
+      className={`inline-flex items-center rounded-full font-wide font-bold ${sizeClasses[size]} ${className}`}
       style={style}
     >
       {party}
