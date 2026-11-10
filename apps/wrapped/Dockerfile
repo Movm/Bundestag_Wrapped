@@ -32,11 +32,10 @@ RUN pnpm --filter bundestag-wrapped build
 # (matched by nginx.conf). Coolify: set the app's internal port to 8080.
 FROM nginxinc/nginx-unprivileged:alpine
 USER root
-RUN apk add --no-cache apache2-utils
 # COPY runs as root at build time, so writing the html/conf dirs is fine.
 COPY --from=build /workspace/apps/wrapped/dist /usr/share/nginx/html
 COPY apps/wrapped/nginx.conf /etc/nginx/conf.d/default.conf
-COPY --chmod=755 apps/wrapped/docker-entrypoint.d/40-preview-auth.sh /docker-entrypoint.d/40-preview-auth.sh
+COPY --chmod=755 apps/wrapped/docker-entrypoint.d/40-preview-access.sh /docker-entrypoint.d/40-preview-access.sh
 USER 101
 EXPOSE 8080
 # 127.0.0.1 (not localhost) avoids IPv6 resolution issues in Alpine
