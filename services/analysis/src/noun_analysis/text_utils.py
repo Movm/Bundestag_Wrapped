@@ -51,9 +51,9 @@ def extract_name_parts(name_raw: str) -> dict:
     Returns dict with 'first_name', 'last_name', 'acad_title', 'full_name'.
     Adapted from Open Discourse 02_clean_speeches.py.
     """
-    # Remove non-alphabetic chars except hyphen, umlauts, and accented chars
-    # Keep: Latin letters, German umlauts, common accented chars (é, ğ, ş, ç, ó, ñ, etc.)
-    name_clean = re.sub(r"[^a-zA-ZÀ-ÿÖÄÜäöüßğşçıİ\-\s]", " ", name_raw)
+    # Remove everything except letters (any script, so "ć" in "Mijatović"
+    # survives), hyphens and whitespace.
+    name_clean = re.sub(r"[^\w\s-]|[\d_]", " ", name_raw)
     name_clean = re.sub(r"  +", " ", name_clean).strip()
 
     parts = name_clean.split()
