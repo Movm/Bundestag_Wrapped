@@ -13,6 +13,9 @@ function stubMatchMedia(reduce: boolean) {
   })) as typeof window.matchMedia;
 }
 
+// jsdom has no IntersectionObserver; slide entrances (whileInView) need one.
+globalThis.IntersectionObserver ??= class { observe() {} unobserve() {} disconnect() {} takeRecords() { return []; } root = null; rootMargin = ''; thresholds = []; } as unknown as typeof IntersectionObserver;
+
 let container: HTMLDivElement;
 beforeEach(() => { container = document.createElement('div'); document.body.append(container); });
 afterEach(() => { container.remove(); });

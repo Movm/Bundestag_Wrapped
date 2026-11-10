@@ -37,7 +37,7 @@ export function WrappedToolbar({ isMenuOpen, onMenuToggle }: WrappedToolbarProps
   };
 
   return (
-    <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
+    <div className="fixed top-4 right-4 z-50 flex items-center gap-3">
       {/* Track info (shows on theme change) */}
       <AnimatePresence>
         {showTrackInfo && trackInfo && !muted && (
@@ -46,12 +46,12 @@ export function WrappedToolbar({ isMenuOpen, onMenuToggle }: WrappedToolbarProps
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 10 }}
             transition={{ duration: 0.3 }}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/10 backdrop-blur-sm"
+            className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white text-wr-ink"
           >
-            <Music size={14} className="text-pink-400" aria-hidden="true" />
-            <div className="text-xs">
-              <div className="text-white/90 font-medium">{trackInfo.title}</div>
-              <div className="text-white/50">{trackInfo.artist}</div>
+            <Music size={14} aria-hidden="true" />
+            <div className="text-xs leading-tight">
+              <div className="font-bold">{trackInfo.title}</div>
+              <div>{trackInfo.artist}</div>
             </div>
           </motion.div>
         )}
@@ -59,29 +59,25 @@ export function WrappedToolbar({ isMenuOpen, onMenuToggle }: WrappedToolbarProps
 
       {/* Audio toggle */}
       <button
+        type="button"
         onClick={handleToggleMute}
         disabled={IS_DEV_AUDIO_DISABLED}
-        className="p-2 rounded-lg transition-colors text-white/70 hover:text-white hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent"
+        className="ds-icon-button"
         aria-label={IS_DEV_AUDIO_DISABLED ? 'Ton im Entwicklungsmodus deaktiviert' : muted ? 'Ton einschalten' : 'Ton ausschalten'}
         title={IS_DEV_AUDIO_DISABLED ? 'Ton ist im Entwicklungsmodus deaktiviert' : trackInfo ? `${trackInfo.title} - ${trackInfo.artist}` : undefined}
       >
-        {muted ? <VolumeX size={20} aria-hidden="true" /> : <Volume2 size={20} aria-hidden="true" />}
+        {muted ? <VolumeX size={20} strokeWidth={2.4} aria-hidden="true" /> : <Volume2 size={20} strokeWidth={2.4} aria-hidden="true" />}
       </button>
 
       {/* Menu toggle */}
       <button
+        type="button"
         onClick={event => { event.currentTarget.focus(); onMenuToggle(); }}
-        className="p-2 rounded-lg transition-colors text-white/70 hover:text-white hover:bg-white/10"
+        className="ds-icon-button"
         aria-expanded={isMenuOpen}
         aria-label={isMenuOpen ? 'Menü schließen' : 'Menü öffnen'}
       >
-        <motion.div
-          initial={false}
-          animate={{ rotate: isMenuOpen ? 90 : 0 }}
-          transition={{ duration: 0.2 }}
-        >
-          {isMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
-        </motion.div>
+        {isMenuOpen ? <X size={20} strokeWidth={2.6} aria-hidden="true" /> : <Menu size={20} strokeWidth={2.6} aria-hidden="true" />}
       </button>
     </div>
   );

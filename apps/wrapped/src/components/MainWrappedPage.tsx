@@ -6,8 +6,6 @@ import { Footer } from '@/components/ui/Footer';
 import { SkipLink } from '@/components/ui/SkipLink';
 import { SEO } from '@/components/seo/SEO';
 import { SITE_CONFIG } from '@/components/seo/constants';
-import { BackgroundSystem } from '@/components/ui/BackgroundSystem';
-import { getSlideIntensity } from '@/lib/background-config';
 import { themeMusic, getThemeForSlide } from '@/lib/theme-music';
 import { clearWrappedProgress } from '@/lib/wrapped-storage';
 import { useOptionalEdition } from '@/edition/EditionProvider';
@@ -162,12 +160,6 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
       <SEO canonicalUrl={surface.canonicalPath} structuredData={{ ...websiteSchema, name: surface.title, url: `${SITE_CONFIG.siteUrl}${surface.canonicalPath}` }} />
       <SkipLink />
       <WrappedToolbar isMenuOpen={isMenuOpen} onMenuToggle={onMenuToggle} />
-
-      <BackgroundSystem
-        slideId={currentSection}
-        intensity={getSlideIntensity(currentSection)}
-        sparkles={true}
-      />
 
       <main id="main-content" tabIndex={-1} className="relative z-10">
         <ScrollContainer

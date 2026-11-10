@@ -1,0 +1,140 @@
+/*
+ * Wrapped design system — tokens.
+ *
+ * Two layers:
+ *  1. Brand palette (`--color-wr-*`): fixed colours, usable as Tailwind utilities
+ *     (`bg-wr-pink`, `text-wr-ink`, …).
+ *  2. Surface roles (`data-surface="ink|deep|violet|pink"`): every surface sets
+ *     its own foreground/accent/track colours. Components use the role
+ *     utilities (`text-on`, `text-on-muted`, `bg-contrast`, …) and therefore
+ *     stay readable on whatever field they are placed on.
+ *
+ * Every pair below is measured against WCAG 2.2 (see docs/design-system.md):
+ * on   ≥ 4.5:1 normal text      muted ≥ 4.5:1 normal text
+ * display-accent ≥ 3:1 → only for large text (≥ 24px, or ≥ 18.66px bold)
+ * track ≥ 3:1 → non-text (progress, borders)
+ *
+ * Fonts stay swappable: components only use --font-heading, --font-sans and
+ * --font-wide. Change a family here and the whole system follows.
+ */
+
+/* Archivo (OFL) — only the wide display axis is used: big numbers, quiz answers, labels. */
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/Archivo-latin-ext.woff2') format('woff2');
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/Archivo-latin.woff2') format('woff2');
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@theme {
+  --font-wide: 'Archivo', 'Noto Sans', system-ui, sans-serif;
+
+  --color-wr-ink: #0e0a14;
+  --color-wr-deep: #3a1670;
+  --color-wr-violet: #7b3ff2;
+  --color-wr-pink: #ff4fa0;
+  --color-wr-card: #1c1030;
+  --color-wr-lilac: #b98cff;
+  --color-wr-white: #ffffff;
+
+  /* Spring that overshoots slightly — the design's cubic-bezier(.2,1.3,.4,1). */
+  --ease-wr-pop: cubic-bezier(0.2, 1.3, 0.4, 1);
+  --ease-wr-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Role utilities resolve per element, so they must stay `inline`. */
+@theme inline {
+  --color-surface: var(--surface-bg);
+  --color-on: var(--surface-on);
+  --color-on-muted: var(--surface-on-muted);
+  --color-on-accent: var(--surface-accent);
+  --color-display-accent: var(--surface-display-accent);
+  --color-track: var(--surface-track);
+  --color-contrast: var(--surface-contrast);
+  --color-on-contrast: var(--surface-on-contrast);
+  --color-shape-a: var(--surface-shape-a);
+  --color-shape-b: var(--surface-shape-b);
+}
+
+@layer base {
+/* Default = ink, so anything outside a surface still has valid roles. */
+:root,
+[data-surface='ink'] {
+  --surface-bg: var(--color-wr-ink);
+  --surface-on: #ffffff; /* 19.6:1 */
+  --surface-on-muted: color-mix(in srgb, #ffffff 78%, var(--color-wr-ink)); /* ≈11.8:1 */
+  --surface-accent: var(--color-wr-pink); /* 6.4:1 — any text size */
+  --surface-display-accent: var(--color-wr-pink);
+  --surface-track: color-mix(in srgb, #ffffff 45%, var(--color-wr-ink)); /* 4.5:1 */
+  --surface-contrast: #ffffff;
+  --surface-on-contrast: var(--color-wr-ink);
+  --surface-shape-a: var(--color-wr-deep);
+  --surface-shape-b: var(--color-wr-pink);
+}
+
+[data-surface='deep'] {
+  --surface-bg: var(--color-wr-deep);
+  --surface-on: #ffffff; /* 13.7:1 */
+  --surface-on-muted: color-mix(in srgb, #ffffff 82%, var(--color-wr-deep)); /* ≈9.6:1 */
+  --surface-accent: var(--color-wr-lilac); /* 5.4:1 */
+  --surface-display-accent: var(--color-wr-pink); /* 4.5:1 */
+  --surface-track: color-mix(in srgb, #ffffff 45%, var(--color-wr-deep)); /* 3.9:1 */
+  --surface-contrast: #ffffff;
+  --surface-on-contrast: var(--color-wr-ink);
+  --surface-shape-a: var(--color-wr-violet);
+  --surface-shape-b: var(--color-wr-pink);
+}
+
+[data-surface='violet'] {
+  --surface-bg: var(--color-wr-violet);
+  --surface-on: #ffffff; /* 5.5:1 */
+  --surface-on-muted: color-mix(in srgb, #ffffff 92%, var(--color-wr-violet)); /* ≈4.9:1 */
+  --surface-accent: #ffffff; /* pink on violet is 1.8:1 — never */
+  --surface-display-accent: var(--color-wr-ink); /* 3.6:1 — large text only */
+  --surface-track: var(--color-wr-ink); /* 3.6:1 */
+  --surface-contrast: var(--color-wr-ink);
+  --surface-on-contrast: #ffffff;
+  --surface-shape-a: var(--color-wr-ink);
+  --surface-shape-b: var(--color-wr-pink);
+}
+
+[data-surface='pink'] {
+  --surface-bg: var(--color-wr-pink);
+  --surface-on: var(--color-wr-ink); /* 6.4:1 */
+  --surface-on-muted: color-mix(in srgb, var(--color-wr-ink) 86%, var(--color-wr-pink)); /* ≈5.5:1 */
+  --surface-accent: var(--color-wr-ink);
+  --surface-display-accent: var(--color-wr-deep); /* 4.5:1 */
+  --surface-track: color-mix(in srgb, var(--color-wr-ink) 62%, var(--color-wr-pink)); /* 3.5:1 */
+  --surface-contrast: var(--color-wr-ink);
+  --surface-on-contrast: #ffffff;
+  --surface-shape-a: var(--color-wr-ink);
+  --surface-shape-b: var(--color-wr-violet);
+}
+
+[data-surface] {
+  background-color: var(--surface-bg);
+  color: var(--surface-on);
+}
+
+/* Focus ring follows the surface text colour — visible on every field. */
+[data-surface] :focus-visible {
+  outline: 3px solid var(--surface-on);
+  outline-offset: 3px;
+}
+/* On a contrast-filled control the ring sits outside, against the surface. */
+[data-surface] .ds-contrast:focus-visible {
+  outline-color: var(--surface-on);
+}
+}
