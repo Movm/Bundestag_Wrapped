@@ -195,7 +195,7 @@ body {
   top: 0;
   right: 0;
   bottom: 0;
-  width: min(26rem, 92vw);
+  width: min(28rem, calc(100vw - 1.75rem));
   background: var(--color-bg-primary);
   border-left: 4px solid var(--color-brand-primary);
   z-index: 70;
