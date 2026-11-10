@@ -46,9 +46,10 @@ the meaning of a delta.
 The edition-specific quiz order lives in `config/2026/quiz.json`. It replaces
 the Moin, speech-volume and interruption questions with topic riser, word riser
 and youth-language questions. The editable lexicon is
-`config/2026/youth-words.json`. It contains all 42 distinct Langenscheidt Top-10
-candidates from 2022 through 2026, aliases, nomination years, four established
-supplementary terms and context rules for ambiguous words. A complete duplicate
+`config/2026/youth-words.json`. It contains the ten Langenscheidt nominees for
+the Jugendwort 2026 except „Schere“, whose apology sense cannot be told apart
+from the tool or the gap metaphor in speeches, plus aliases and context rules
+for ambiguous words. A complete duplicate
 protocol payload is ignored during parsing and comparison. Changing these rules
 requires a new data version and a regenerated preview. The frozen 2025 edition
 remains unchanged.
