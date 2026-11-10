@@ -1,22 +1,16 @@
-import { LoopMotion } from '@/components/slides/shared/LoopMotion';
 import { memo, useMemo } from 'react';
 import { motion } from 'motion/react';
 import type { ToneAnalysis, PartyProfile, ExtendedToneScores } from '@/data/wrapped';
-import { getPartyGradient, getPartyColor } from '@/lib/party-colors';
-import { FlipCard, BUBBLE_POSITIONS, FLOAT_ANIMATIONS } from '../shared';
+import { getPartyTone } from '@/lib/party-colors';
+import { Slide } from '@/design-system/components/Slide';
+import { Display, Eyebrow, Mark, Note } from '@/design-system/components/Type';
+import { ENTER } from '@/design-system/motion';
 import { sortParties } from './constants';
 import { LegacyResultView } from './LegacyResultView';
+import './tone.css';
 
 interface ResultViewProps {
   toneAnalysis: ToneAnalysis;
-}
-
-interface ToneBubbleProps {
-  profile: PartyProfile;
-  index: number;
-  position: { top: string; left: string };
-  floatOffset: { x: number[]; y: number[] };
-  duration: number;
 }
 
 // Generate a holistic one-word summary based on ALL tone scores
@@ -55,142 +49,41 @@ function getHolisticSummary(scores: ExtendedToneScores): string {
   return 'Sachlich'; // Default fallback
 }
 
-// Direction vectors for each bubble position (radiates outward from center)
-const ENTRY_DIRECTIONS = [
-  { x: -60, y: -40 },  // top-left enters from upper-left
-  { x: 60, y: -40 },   // top-right enters from upper-right
-  { x: 0, y: -50 },    // center enters from above
-  { x: -60, y: 40 },   // bottom-left enters from lower-left
-  { x: 60, y: 40 },    // bottom-right enters from lower-right
-];
-
-const ToneBubble = memo(function ToneBubble({
-  profile,
-  index,
-  position,
-  floatOffset,
-  duration,
-}: ToneBubbleProps) {
-  const partyColor = getPartyColor(profile.party);
-  const holisticSummary = getHolisticSummary(profile.scores);
-  const entryDir = ENTRY_DIRECTIONS[index] || { x: 0, y: -50 };
-
-  const bubbleClasses = `
-    w-full h-full
-    rounded-full
-    bg-gradient-to-br ${getPartyGradient(profile.party)}
-    shadow-2xl shadow-black/30
-    flex flex-col items-center justify-center
-    p-3 text-center
-  `;
-
-  // Front: Just emoji and holistic one-word summary
-  const frontContent = (
-    <div className={bubbleClasses}>
-      <span className="text-4xl md:text-5xl lg:text-6xl mb-1 drop-shadow-lg">
-        {profile.emoji}
-      </span>
-      <p className="text-white font-bold text-sm md:text-base drop-shadow-md">
-        {holisticSummary}
-      </p>
-    </div>
-  );
-
-  // Back: Party name + summary sentence
-  const backContent = (
-    <div className={bubbleClasses}>
-      <h3
-        className="font-black text-sm md:text-base drop-shadow-md mb-2"
-        style={{ color: partyColor }}
-      >
-        {profile.party}
-      </h3>
-      <p className="text-white/90 text-xs md:text-sm px-3 leading-relaxed text-center">
-        {profile.description}
-      </p>
-    </div>
-  );
-
+/** Flat party block: party colour as ground, one-word verdict, description, trait stickers. */
+const PartyToneBlock = memo(function PartyToneBlock({ profile }: { profile: PartyProfile }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.7, x: entryDir.x, y: entryDir.y }}
-      whileInView={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-      viewport={{ once: true }}
-      transition={{
-        delay: index * 0.4,
-        type: 'spring',
-        stiffness: 100,
-        damping: 14,
-      }}
-      style={{
-        position: 'absolute',
-        top: position.top,
-        left: position.left,
-      }}
-    >
-      <LoopMotion
-        animate={{ x: floatOffset.x, y: floatOffset.y }}
-        transition={{
-          repeat: Infinity,
-          duration,
-          ease: 'easeInOut',
-        }}
-        style={{ willChange: 'transform' }}
-      >
-        <FlipCard
-          label={profile.party}
-          front={frontContent}
-          back={backContent}
-          className="w-[28vw] h-[28vw] max-w-[220px] max-h-[220px] min-w-[120px] min-h-[120px]"
-        />
-      </LoopMotion>
-    </motion.div>
+    <motion.li className="tone-block" style={{ background: getPartyTone(profile.party, 'light') }} variants={ENTER.pop}>
+      <span className="tone-block__party">{profile.party}</span>
+      <span className="tone-block__verdict">{getHolisticSummary(profile.scores)}</span>
+      <p className="tone-block__text">{profile.description}</p>
+      {profile.traits.length > 0 && (
+        <ul className="tone-block__traits" aria-label={`Eigenschaften ${profile.party}`}>
+          {profile.traits.slice(0, 3).map(trait => <li key={trait}>{trait}</li>)}
+        </ul>
+      )}
+    </motion.li>
   );
 });
 
 export function ResultView({ toneAnalysis }: ResultViewProps) {
-  const sortedProfiles = useMemo(() => {
+  const topParties = useMemo(() => {
     if (!toneAnalysis.partyProfiles) return [];
-    return sortParties(toneAnalysis.partyProfiles).filter(
-      (p) => p.party !== 'fraktionslos'
-    );
+    return sortParties(toneAnalysis.partyProfiles).filter(p => p.party !== 'fraktionslos').slice(0, 5);
   }, [toneAnalysis.partyProfiles]);
-
-  // Only show first 5 parties for the bubble layout
-  const topParties = sortedProfiles.slice(0, 5);
 
   if (topParties.length === 0) {
     return <LegacyResultView toneAnalysis={toneAnalysis} />;
   }
 
   return (
-    <div className="bubble-slide min-h-screen relative w-full">
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="absolute top-8 left-0 right-0 text-center z-20"
-      >
-        <h2 className="text-2xl md:text-3xl font-black text-white mb-1">
-          Fraktions-Persönlichkeiten
-        </h2>
-        <p className="text-white/50 text-xs md:text-sm">
-          Tippe zum Umdrehen
-        </p>
-      </motion.div>
-
-      <div className="bubble-grid absolute inset-0 z-10">
-        {topParties.map((profile, i) => (
-          <ToneBubble
-            key={profile.party}
-            profile={profile}
-            index={i}
-            position={BUBBLE_POSITIONS[i]}
-            floatOffset={FLOAT_ANIMATIONS[i]}
-            duration={FLOAT_ANIMATIONS[i].duration}
-          />
-        ))}
+    <Slide shapes="corner" footer={<Note className="ds-note--plate">Wertung nach Tonalität der Redebeiträge, nicht nach Inhalt.</Note>}>
+      <div className="flex flex-col items-start gap-4">
+        <Eyebrow>So klingen die Fraktionen</Eyebrow>
+        <Display size="xl" face="wide">Fraktions-<Mark>Persönlichkeiten.</Mark></Display>
       </div>
-    </div>
+      <ul className="tone-grid" aria-label="Fraktions-Persönlichkeiten">
+        {topParties.map(profile => <PartyToneBlock key={profile.party} profile={profile} />)}
+      </ul>
+    </Slide>
   );
 }
