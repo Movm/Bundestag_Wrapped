@@ -91,6 +91,7 @@ describe('active slide plan', () => {
       'quiz-topic-riser',
       'info-topic-riser',
       'reveal-topic-risers',
+      'reveal-topic-riser-context',
       'quiz-word-riser',
       'info-word-riser',
       'reveal-word-risers',

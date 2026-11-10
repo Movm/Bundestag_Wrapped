@@ -273,12 +273,19 @@ export interface RankMovement {
   "rankChange": number;
 }
 
+export interface YouthWordSpeaker {
+  "name": NonEmptyString;
+  "party": NonEmptyString;
+  "count": Count;
+}
+
 export interface YouthWordCount {
   "word": NonEmptyString;
   "count": Count;
   "previousCount": Count;
   "change": number;
   "winnerYear"?: Count;
+  "speakers"?: Array<YouthWordSpeaker>;
 }
 
 export interface YouthLanguageAnalysis {

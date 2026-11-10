@@ -17,7 +17,7 @@ export const INFO_SLIDES: Record<string, InfoSlideContent> = {
   'info-topic-riser': {
     emoji: '📈',
     title: 'Was bedeutet „aufgestiegen“?',
-    body: 'Wir vergleichen die Rangfolge der Bundestagsthemen im selben Kalenderzeitraum: jeweils 1. Januar bis 12. Oktober. Je weiter ein Thema gegenüber 2025 nach vorn rückt, desto größer ist sein Aufstieg.',
+    body: 'Wir vergleichen die Rangfolge der Bundestagsthemen im selben Kalenderzeitraum wie im Vorjahr. Je weiter ein Thema gegenüber 2025 nach vorn rückt, desto größer ist sein Aufstieg.',
   },
   'info-word-riser': {
     emoji: '🔤',

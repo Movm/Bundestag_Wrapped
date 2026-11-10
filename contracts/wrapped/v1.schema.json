@@ -189,9 +189,13 @@
       "type": "object", "additionalProperties": false, "required": ["label", "currentRank", "previousRank", "rankChange"],
       "properties": { "label": { "$ref": "#/$defs/NonEmptyString" }, "currentRank": { "$ref": "#/$defs/Count" }, "previousRank": { "anyOf": [{ "$ref": "#/$defs/Count" }, { "type": "null" }] }, "rankChange": { "type": "integer" } }
     },
+    "YouthWordSpeaker": {
+      "type": "object", "additionalProperties": false, "required": ["name", "party", "count"],
+      "properties": { "name": { "$ref": "#/$defs/NonEmptyString" }, "party": { "$ref": "#/$defs/NonEmptyString" }, "count": { "$ref": "#/$defs/Count" } }
+    },
     "YouthWordCount": {
       "type": "object", "additionalProperties": false, "required": ["word", "count", "previousCount", "change"],
-      "properties": { "word": { "$ref": "#/$defs/NonEmptyString" }, "count": { "$ref": "#/$defs/Count" }, "previousCount": { "$ref": "#/$defs/Count" }, "change": { "type": "integer" }, "winnerYear": { "$ref": "#/$defs/Count" } }
+      "properties": { "word": { "$ref": "#/$defs/NonEmptyString" }, "count": { "$ref": "#/$defs/Count" }, "previousCount": { "$ref": "#/$defs/Count" }, "change": { "type": "integer" }, "winnerYear": { "$ref": "#/$defs/Count" }, "speakers": { "type": "array", "items": { "$ref": "#/$defs/YouthWordSpeaker" } } }
     },
     "YouthLanguageAnalysis": {
       "type": "object", "additionalProperties": false, "required": ["lexiconVersion", "words", "byParty", "bySpeaker"],

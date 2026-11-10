@@ -1,6 +1,8 @@
 import { motion } from 'motion/react';
 import type { RankMovement, SignatureWordMovement, YearOverYearAnalysis } from '@/generated/wrapped-contract-v1';
-import { getPartyTextColor } from '@/lib/party-colors';
+import { getPartyBgColor, getPartyTextColor } from '@/lib/party-colors';
+import { TOPIC_BY_ID } from '@/shared/constants/topics';
+import type { TopicRiserContext } from '@/domain/topic-riser-context';
 import { SlideContainer, SlideHeader, ScrollHint, itemVariants } from '../shared';
 
 type RankingKind = 'topics' | 'words';
@@ -224,6 +226,89 @@ export function YouthLanguageSpeakerSlide({ analysis }: { analysis: YearOverYear
       </motion.ol>
       <p className="mt-4 text-center text-xs text-white/40">Kontextgeprüfte Treffer – Zitate bleiben als tatsächliche Verwendung sichtbar.</p>
       <ScrollHint delay={1.3} />
+    </SlideContainer>
+  );
+}
+
+function topicName(id: string): string {
+  return TOPIC_BY_ID[id]?.name ?? id;
+}
+
+function vsAverageLabel(ratio: number): string {
+  const percent = Math.round((ratio - 1) * 100);
+  if (percent === 0) return 'wie der Schnitt';
+  return `${percent > 0 ? '+' : '−'}${number.format(Math.abs(percent))} % ${percent > 0 ? 'über' : 'unter'} Schnitt`;
+}
+
+function RankSwap({ item, tone }: { item: RankMovement; tone: 'up' | 'down' }) {
+  const up = tone === 'up';
+  return (
+    <motion.div variants={itemVariants} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+      <div className={`text-[11px] font-black uppercase tracking-wider ${up ? 'text-green-300' : 'text-rose-300'}`}>
+        {up ? '↑ Aufgestiegen' : '↓ Abgestiegen'}
+      </div>
+      <div className="mt-1 flex items-baseline justify-between gap-3">
+        <span className="truncate text-xl font-black text-white md:text-2xl">
+          <span aria-hidden="true">{TOPIC_BY_ID[item.label]?.emoji} </span>{topicName(item.label)}
+        </span>
+        <span className="shrink-0 text-sm font-bold text-white/70">
+          Platz {item.previousRank} → {item.currentRank}
+        </span>
+      </div>
+    </motion.div>
+  );
+}
+
+export function TopicRiserContextSlide({ context, baselineYear }: { context: TopicRiserContext; baselineYear: string }) {
+  const { riser, faller, parties, leader } = context;
+  const max = Math.max(...parties.map(item => item.vsAverage), 1);
+  return (
+    <SlideContainer innerClassName="mx-auto max-w-2xl" className="py-6 sm:py-8">
+      <SlideHeader
+        emoji={TOPIC_BY_ID[riser.label]?.emoji ?? '📈'}
+        title={`Warum ${topicName(riser.label)}?`}
+        subtitle={`Was hinter dem Aufstieg gegenüber ${baselineYear} steckt`}
+        className="mb-4 sm:mb-5"
+        slideId="reveal-topic-riser-context"
+      />
+      <motion.div variants={itemVariants} className="grid gap-2 sm:grid-cols-2">
+        <RankSwap item={riser} tone="up" />
+        {faller && <RankSwap item={faller} tone="down" />}
+      </motion.div>
+
+      {parties.length > 0 && (
+        <motion.section variants={itemVariants} className="mt-4" aria-labelledby="topic-riser-parties">
+          <h3 id="topic-riser-parties" className="mb-2 text-sm font-bold text-white/70">
+            Wer spricht am meisten über {topicName(riser.label)}?
+          </h3>
+          <ol className="grid gap-1.5">
+            {parties.map(item => (
+              <li key={item.party} className="grid grid-cols-[6.5rem_1fr_auto] items-center gap-2 text-sm">
+                <span className="truncate font-bold" style={{ color: getPartyTextColor(item.party) }}>{item.party}</span>
+                <span className="h-2 overflow-hidden rounded-full bg-white/10" aria-hidden="true">
+                  <span
+                    className="block h-full rounded-full"
+                    style={{ width: `${(item.vsAverage / max) * 100}%`, backgroundColor: getPartyBgColor(item.party) }}
+                  />
+                </span>
+                <span className="text-right text-xs font-semibold text-white/70">{vsAverageLabel(item.vsAverage)}</span>
+              </li>
+            ))}
+          </ol>
+        </motion.section>
+      )}
+
+      {leader && (
+        <motion.p variants={itemVariants} className="mt-4 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80">
+          Neu in den Top-Signature-Words der <span className="font-bold" style={{ color: getPartyTextColor(leader.party) }}>{leader.party}</span>:{' '}
+          <span className="font-bold text-white">{leader.newSignatureWords.join(', ')}</span>
+        </motion.p>
+      )}
+
+      <p className="mt-4 text-center text-[11px] text-white/40 sm:text-xs">
+        Themenanteil am Redeinhalt im Vergleich zum Bundestagsschnitt · gleicher Kalenderzeitraum wie im Vorjahr
+      </p>
+      <ScrollHint delay={1.4} />
     </SlideContainer>
   );
 }

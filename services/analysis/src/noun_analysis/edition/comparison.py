@@ -119,9 +119,44 @@ def _lexicon(path: Path) -> tuple[str, list[dict[str, Any]]]:
     return version, normalized
 
 
-def _term_pattern(term: str) -> re.Pattern[str]:
-    pieces = [re.escape(piece) for piece in term.split()]
-    return re.compile(r"(?<![\w-])" + r"\s+".join(pieces) + r"(?![\w-])", re.IGNORECASE)
+# Inflection endings accepted after the last word of an alias: English/German plural
+# and case endings (-s, -e, -es, -en, -n; genitive -s is covered by -s).
+# Deliberately NOT included: -er/-ern (agent nouns such as "Ragebaiter" are a
+# different word) and verb endings (-ed, -ing, -et).
+_INFLECTION = r"(?:es|en|s|e|n)?"
+# A compound-join variant ("rage bait", "rage-bait", "ragebait") is only
+# derived for aliases long enough that both halves stay distinctive; each half
+# must have at least three letters, so a lone "bait" never matches.
+_MIN_JOINABLE_LENGTH = 6
+_MIN_PIECE_LENGTH = 3
+_SEPARATOR = r"[\s-]?"
+
+
+def _alias_body(alias: str) -> str:
+    """Regex body for one alias, tolerating hyphen/space/join spelling variants."""
+    pieces = alias.split()
+    if len(pieces) > 1:
+        return r"[\s-]+".join(re.escape(piece) for piece in pieces)
+    word = pieces[0]
+    if len(word) < _MIN_JOINABLE_LENGTH or not word.isalpha():
+        return re.escape(word)
+    parts = [re.escape(word[:_MIN_PIECE_LENGTH])]
+    for index in range(_MIN_PIECE_LENGTH, len(word)):
+        if index <= len(word) - _MIN_PIECE_LENGTH:
+            parts.append(_SEPARATOR)
+        parts.append(re.escape(word[index]))
+    return "".join(parts)
+
+
+def _term_pattern(alias: str, *, inflect: bool = True) -> re.Pattern[str]:
+    """Match an alias and its plural, case and spelling variants.
+
+    The matcher works on the raw text: spaCy frequently fails to lemmatize
+    English loanwords in German ("Ragebaits"), so a lemma lookup alone would miss
+    them. Variant matching is therefore done here, once, for every term.
+    """
+    ending = _INFLECTION if inflect and alias[-1].isalpha() and len(alias) >= 4 else ""
+    return re.compile(r"(?<![\w-])" + _alias_body(alias) + ending + r"(?![\w-])", re.IGNORECASE)
 
 
 def _deduplicate_protocols(speeches: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -157,9 +192,13 @@ def _deduplicate_protocols(speeches: list[dict[str, Any]]) -> list[dict[str, Any
 def _contextual_count(text: str, term: dict[str, Any]) -> int:
     include = [re.compile(pattern, re.IGNORECASE) for pattern in term["includeContexts"]]
     exclude = [re.compile(pattern, re.IGNORECASE) for pattern in term["excludeContexts"]]
+    # Ambiguous terms carry editorially written context rules that assume the base
+    # form, so they get spelling variants but no inflection endings: variants must
+    # not make them noisier.
+    inflect = not include and not exclude
     count = 0
     for alias in term["aliases"]:
-        for match in _term_pattern(alias).finditer(text):
+        for match in _term_pattern(alias, inflect=inflect).finditer(text):
             window = text[max(0, match.start() - 90):min(len(text), match.end() + 130)]
             if include and not any(pattern.search(window) for pattern in include):
                 continue
@@ -172,10 +211,11 @@ def _contextual_count(text: str, term: dict[str, Any]) -> int:
 def _youth_counts(
     speeches: list[dict[str, Any]],
     terms: list[dict[str, Any]],
-) -> tuple[Counter[str], Counter[str], Counter[tuple[str, str]]]:
+) -> tuple[Counter[str], Counter[str], Counter[tuple[str, str]], dict[str, Counter[tuple[str, str]]]]:
     words: Counter[str] = Counter()
     parties: Counter[str] = Counter()
     speakers: Counter[tuple[str, str]] = Counter()
+    word_speakers: dict[str, Counter[tuple[str, str]]] = {}
     for speech in _deduplicate_protocols(speeches):
         text = speech.get("text")
         party = speech.get("party")
@@ -192,7 +232,15 @@ def _youth_counts(
                 parties[party] += count
             if isinstance(speaker, str) and speaker and isinstance(party, str) and party:
                 speakers[(speaker, party)] += count
-    return words, parties, speakers
+                word_speakers.setdefault(word, Counter())[(speaker, party)] += count
+    return words, parties, speakers, word_speakers
+
+
+def _speaker_list(counter: Counter[tuple[str, str]]) -> list[dict[str, Any]]:
+    return [
+        {"name": name, "party": party, "count": count}
+        for (name, party), count in sorted(counter.items(), key=lambda item: (-item[1], item[0][0], item[0][1]))
+    ]
 
 
 def build_year_over_year(
@@ -212,14 +260,16 @@ def build_year_over_year(
     current_words = current_wrapped.get("hotTopics", [])
     baseline_words = baseline_wrapped.get("hotTopics", [])
 
-    youth_current, party_current, speaker_current = _youth_counts(current_speeches, terms)
-    youth_previous, _, _ = _youth_counts(baseline_speeches, terms)
+    youth_current, party_current, speaker_current, word_speakers = _youth_counts(current_speeches, terms)
+    youth_previous, _, _, _ = _youth_counts(baseline_speeches, terms)
     youth_words = [{
         "word": term["word"],
         "count": youth_current[term["word"]],
         "previousCount": youth_previous[term["word"]],
         "change": youth_current[term["word"]] - youth_previous[term["word"]],
         **({"winnerYear": term["winner"]} if term["winner"] is not None else {}),
+        # Who said the word, most frequent first. Omitted when nobody did.
+        **({"speakers": _speaker_list(word_speakers[term["word"]])} if word_speakers.get(term["word"]) else {}),
     } for term in terms]
     youth_words.sort(key=lambda item: (-item["count"], -item["change"], item["word"]))
 

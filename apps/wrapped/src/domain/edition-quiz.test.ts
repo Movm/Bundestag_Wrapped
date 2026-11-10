@@ -186,9 +186,75 @@ describe('Jugendwort question', () => {
   });
 });
 
+describe('Jugendwort speaker question', () => {
+  type Sayer = { name: string; party: string; count: number };
+  // Mirrors the 2026 preview: two GRÜNE speakers said "ragebait" once each.
+  const sayers: Sayer[] = [
+    { name: 'Marcel Emmerich', party: 'GRÜNE', count: 1 },
+    { name: 'Awet Tesfaiesus', party: 'GRÜNE', count: 1 },
+  ];
+  const others: Sayer[] = [
+    { name: 'Beatrix von Storch', party: 'AfD', count: 2 },
+    { name: 'Christian Zaum', party: 'AfD', count: 2 },
+    { name: 'Mandy Eißing', party: 'DIE LINKE', count: 2 },
+    { name: 'Caroline Bosbach', party: 'CDU/CSU', count: 1 },
+  ];
+  const build = (speakers: Sayer[] | undefined, bySpeaker: Sayer[], count = speakers?.reduce((sum, item) => sum + item.count, 0) ?? 2) => ({
+    ...fixture('Europa', 'Partei A'),
+    yearOverYear: {
+      baseline: { editionId: '2025', start: '2025-01-01', end: '2025-12-31' },
+      topics: [], words: [],
+      youthLanguage: {
+        lexiconVersion: 'x',
+        words: [{ word: 'ragebait', count, previousCount: 0, change: count, winnerYear: 2026, ...(speakers ? { speakers } : {}) }],
+        byParty: [], bySpeaker,
+      },
+    },
+  });
+  const quizOf = (data: unknown) => buildEditionQuizModel(data as never)['quiz-youth-language'];
+
+  it('asks who said the word, excludes the other sayer and mentions them', () => {
+    const quiz = quizOf(build(sayers, [...sayers, ...others]));
+    expect(quiz?.question).toBe('Wer hat das Jugendwort 2026 „ragebait“ im Bundestag gesagt?');
+    // tie: alphabetically first name is the answer, the other sayer is not offered
+    expect(quiz?.correctAnswer).toBe('Marcel Emmerich (GRÜNE)');
+    expect(quiz?.options).toEqual(['Marcel Emmerich (GRÜNE)', 'Beatrix von Storch (AfD)', 'Mandy Eißing (DIE LINKE)', 'Caroline Bosbach (CDU/CSU)']);
+    expect(quiz?.options.join()).not.toContain('Tesfaiesus');
+    expect(quiz?.explanation).toContain('Marcel Emmerich (GRÜNE) sagte „ragebait“ einmal.');
+    expect(quiz?.explanation).toContain('Awet Tesfaiesus (GRÜNE) (einmal)');
+    expect(quiz?.explanation).toContain('Wut provozieren');
+  });
+
+  it('uses the most frequent speaker as the answer for a single sayer', () => {
+    const quiz = quizOf(build([{ name: 'Awet Tesfaiesus', party: 'GRÜNE', count: 3 }], others));
+    expect(quiz?.correctAnswer).toBe('Awet Tesfaiesus (GRÜNE)');
+    expect(quiz?.explanation).toContain('3-mal');
+    expect(quiz?.explanation).not.toContain('Auch gesagt');
+  });
+
+  it('prefers distractors from different parties', () => {
+    const quiz = quizOf(build([sayers[0]!], others));
+    expect(quiz?.options.slice(1)).toEqual(['Beatrix von Storch (AfD)', 'Mandy Eißing (DIE LINKE)', 'Caroline Bosbach (CDU/CSU)']);
+  });
+
+  it('is omitted when fewer than four options can be built', () => {
+    // no prominent-speaker fallback either
+    expect(quizOf({ ...build([sayers[0]!], others.slice(0, 2)), topSpeakersByWords: [] })).toBeUndefined();
+  });
+
+  it('is omitted without hits', () => {
+    expect(quizOf(build([], others, 0))).toBeUndefined();
+  });
+
+  it('falls back to the count question when the edition has no speaker data', () => {
+    const quiz = quizOf(build(undefined, others, 2));
+    expect(quiz?.question).toBe('Wie oft fiel das Jugendwort 2026 „ragebait“ bisher im Bundestag?');
+  });
+});
+
 describe('edition quiz configuration', () => {
-  it('starts the 2026 edition with the word-riser question', () => {
-    expect(quiz2026.groups[0]?.id).toBe('quiz-word-riser');
+  it('runs the 2026 edition as topic riser, signature words and youth language', () => {
+    expect(quiz2026.groups.map(group => group.id)).toEqual(['quiz-topic-riser', 'quiz-signature', 'quiz-youth-language']);
   });
 
   it('preserves the rendered 2025 quiz model when no configuration exists', () => {
