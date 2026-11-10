@@ -1,7 +1,8 @@
 import { AccessibleDialog } from './AccessibleDialog';
-import { useState, useRef, useEffect, useMemo, memo } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Download, Share2, X } from 'lucide-react';
+import { ActionButton } from '@/design-system/components/ActionButton';
 import { renderShareImage, downloadShareImage, shareImage, preloadLogo } from '@/lib/share-canvas';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
@@ -12,51 +13,6 @@ interface ShareModalProps {
   correctCount: number;
   totalQuestions: number;
 }
-
-const CONFETTI_COLORS = ['#000000', '#DD0000', '#FFCC00'];
-
-const FallingConfetti = memo(function FallingConfetti() {
-  const particles = useMemo(
-    () =>
-      Array.from({ length: 40 }, (_, i) => ({
-        id: i,
-        left: (i * 37) % 100,
-        color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
-        rotate: (i * 83) % 720 - 360,
-        duration: 2 + (i % 4) * 0.75,
-        delay: (i % 6) * 0.5,
-      })),
-    []
-  );
-
-  return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden">
-      {particles.map((p) => (
-        <motion.div
-          key={p.id}
-          className="absolute w-3 h-3 rounded-sm"
-          style={{
-            left: `${p.left}%`,
-            backgroundColor: p.color,
-            willChange: 'transform',
-          }}
-          initial={{ y: -20, opacity: 0, rotate: 0 }}
-          animate={{
-            y: '100vh',
-            opacity: [0, 1, 1, 0],
-            rotate: p.rotate,
-          }}
-          transition={{
-            duration: p.duration,
-            repeat: Infinity,
-            delay: p.delay,
-            ease: 'linear',
-          }}
-        />
-      ))}
-    </div>
-  );
-});
 
 export function ShareModal({ isOpen, onClose, correctCount, totalQuestions }: ShareModalProps) {
   const surface = editionSurface(useOptionalEdition());
@@ -108,44 +64,21 @@ export function ShareModal({ isOpen, onClose, correctCount, totalQuestions }: Sh
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={handleBackdropClick}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-hidden"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-wr-ink/90 p-4 overflow-hidden"
         >
-          {/* Schwarz-Rot-Gold Confetti */}
-          <FallingConfetti />
-
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-h-[calc(100dvh-2rem)] overflow-y-auto max-w-[320px] sm:max-w-sm md:max-w-md lg:max-w-lg bg-white/5 rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 shadow-2xl backdrop-blur-md"
+            data-surface="ink"
+            className="relative w-full max-h-[calc(100dvh-2rem)] overflow-y-auto max-w-[320px] sm:max-w-sm md:max-w-md lg:max-w-lg rounded-[1.75rem] p-5 sm:p-7"
           >
-            {/* Close button */}
-            <button
-              onClick={onClose}
-              aria-label="Teilen schließen"
-              className="absolute top-4 right-4 p-2 text-white/60 hover:text-white hover:bg-white/10 rounded-full transition-all hover:scale-110"
-            >
-              <X size={24} />
+            <button type="button" onClick={onClose} aria-label="Teilen schließen" className="ds-icon-button absolute top-4 right-4">
+              <X size={20} strokeWidth={2.6} aria-hidden="true" />
             </button>
 
-            {/* Emoji Header */}
-            <motion.div className="text-center mb-2 sm:mb-4">
-              <motion.span
-                className="text-4xl sm:text-5xl md:text-6xl block"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ type: 'spring', bounce: 0.5, delay: 0.1 }}
-              >
-                📸
-              </motion.span>
-            </motion.div>
-
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-black gradient-text mb-1 sm:mb-2 text-center">
-              Teile dein Ergebnis!
-            </h2>
-            <p className="text-white/60 text-xs sm:text-sm md:text-base mb-4 sm:mb-6 text-center">
-              Erstelle ein Bild für Social Media
-            </p>
+            <h2 className="ds-display ds-display--md mb-2 pr-14">Teile dein <span className="text-display-accent">Ergebnis</span></h2>
+            <p className="ds-note mb-5">Erstelle ein Bild für Social Media</p>
 
             {/* Name Input */}
             <input
@@ -154,11 +87,11 @@ export function ShareModal({ isOpen, onClose, correctCount, totalQuestions }: Sh
               onChange={(e) => setUserName(e.target.value)}
               placeholder="Dein Name (optional)" aria-label="Dein Name (optional)"
               maxLength={30}
-              className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 text-center text-base focus:outline-none focus:border-pink-500/50 focus:bg-white/10 transition-all mb-4 sm:mb-6"
+              className="mb-5 w-full rounded-full bg-white px-5 py-3 text-base font-bold text-wr-ink placeholder:text-wr-ink/70"
             />
 
             {/* Canvas Preview */}
-            <div className="rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 mb-4 sm:mb-8 bg-black/20 max-w-[200px] sm:max-w-[280px] md:max-w-none mx-auto">
+            <div className="mx-auto mb-6 max-w-[240px] overflow-hidden rounded-2xl sm:max-w-[320px] md:max-w-none">
               <canvas
                 ref={canvasRef}
                 role="img" aria-label="Vorschau des persönlichen Ergebnisses"
@@ -167,29 +100,9 @@ export function ShareModal({ isOpen, onClose, correctCount, totalQuestions }: Sh
               />
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-              <motion.button
-                onClick={handleDownload}
-                className="flex-1 min-w-[120px] sm:min-w-[140px] flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-pink-600 to-pink-500 rounded-full text-white text-sm sm:text-base font-bold shadow-lg shadow-pink-500/25"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Download size={18} className="sm:w-5 sm:h-5" />
-                Speichern
-              </motion.button>
-
-              {canShare && (
-                <motion.button
-                  onClick={handleShare}
-                  className="flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-white/10 hover:bg-white/15 border border-white/20 rounded-full text-white text-sm sm:text-base font-bold transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Share2 size={18} className="sm:w-5 sm:h-5" />
-                  Teilen
-                </motion.button>
-              )}
+            <div className="flex flex-wrap gap-3">
+              <ActionButton icon="none" onClick={handleDownload}><Download size={20} aria-hidden="true" />Speichern</ActionButton>
+              {canShare && <ActionButton icon="none" variant="outline" onClick={handleShare}><Share2 size={20} aria-hidden="true" />Teilen</ActionButton>}
             </div>
           </motion.div>
         </motion.div>

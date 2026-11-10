@@ -41,48 +41,32 @@ export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderPro
           <img src="/logo.png" alt="Bundestag Wrapped" className="h-8 w-auto" />
         </Link>
 
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
           {/* Background music toggle */}
           <button
             onClick={handleToggleMusic}
             disabled={IS_DEV_AUDIO_DISABLED}
-            className={`p-2 rounded-lg transition-colors ${
-              isDark
-                ? musicPlaying
-                  ? 'text-pink-400 hover:text-pink-300 hover:bg-white/10'
-                  : 'text-white/70 hover:text-white hover:bg-white/10'
-                : musicPlaying
-                  ? 'text-pink-500 hover:text-pink-600 hover:bg-gray-100'
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-            }`}
+            className={isDark ? 'ds-icon-button' : 'p-2 rounded-lg transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-100'}
             aria-label={IS_DEV_AUDIO_DISABLED ? 'Musik im Entwicklungsmodus deaktiviert' : musicPlaying ? 'Musik ausschalten' : 'Musik einschalten'}
             title={IS_DEV_AUDIO_DISABLED ? 'Musik ist im Entwicklungsmodus deaktiviert' : undefined}
           >
-            {musicPlaying ? <Music size={20} aria-hidden="true" /> : <Music2 size={20} aria-hidden="true" />}
+            {musicPlaying ? <Music size={20} strokeWidth={2.4} aria-hidden="true" /> : <Music2 size={20} strokeWidth={2.4} aria-hidden="true" />}
           </button>
 
           {/* Sound effects toggle */}
           <button
             onClick={handleToggleMute}
             disabled={IS_DEV_AUDIO_DISABLED}
-            className={`p-2 rounded-lg transition-colors ${
-              isDark
-                ? 'text-white/70 hover:text-white hover:bg-white/10'
-                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-            }`}
+            className={isDark ? 'ds-icon-button' : 'p-2 rounded-lg transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-100'}
             aria-label={IS_DEV_AUDIO_DISABLED ? 'Ton im Entwicklungsmodus deaktiviert' : muted ? 'Ton einschalten' : 'Ton ausschalten'}
             title={IS_DEV_AUDIO_DISABLED ? 'Ton ist im Entwicklungsmodus deaktiviert' : undefined}
           >
-            {muted ? <VolumeX size={20} aria-hidden="true" /> : <Volume2 size={20} aria-hidden="true" />}
+            {muted ? <VolumeX size={20} strokeWidth={2.4} aria-hidden="true" /> : <Volume2 size={20} strokeWidth={2.4} aria-hidden="true" />}
           </button>
 
           <button
             onClick={event => { event.currentTarget.focus(); onMenuToggle(); }}
-            className={`p-2 rounded-lg transition-colors ${
-              isDark
-                ? 'text-white/70 hover:text-white hover:bg-white/10'
-                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-            }`}
+            className={isDark ? 'ds-icon-button' : 'p-2 rounded-lg transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-100'}
             aria-expanded={isMenuOpen}
             aria-label={isMenuOpen ? 'Menü schließen' : 'Menü öffnen'}
           >
@@ -91,7 +75,7 @@ export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderPro
               animate={{ rotate: isMenuOpen ? 90 : 0 }}
               transition={{ duration: 0.2 }}
             >
-              {isMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+              {isMenuOpen ? <X size={20} strokeWidth={2.6} aria-hidden="true" /> : <Menu size={20} strokeWidth={2.6} aria-hidden="true" />}
             </motion.div>
           </button>
         </div>

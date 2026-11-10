@@ -46,15 +46,15 @@ export const TEXT = {
 
 /**
  * Hex values for canvas/non-CSS contexts
- * Keep in sync with index.css @theme
+ * Keep in sync with `--color-wr-*` in design-system/tokens.css
  */
 export const BRAND_COLORS = {
-  primary: '#db2777',
-  secondary: '#ec4899',
-  light: '#f472b6',
-  gradientStart: '#be185d',
-  gradientMid: '#db2777',
-  gradientEnd: '#f472b6',
+  ink: '#0e0a14',
+  deep: '#3a1670',
+  violet: '#7b3ff2',
+  pink: '#ff4fa0',
+  lilac: '#b98cff',
+  white: '#ffffff',
 } as const;
 
 /**
@@ -66,9 +66,10 @@ export const FLAG_COLORS = {
   gold: '#FFCC00',
 } as const;
 
+/** Flat fields of the story surfaces (ink, deep, violet, pink) as canvas fills. */
 export const BG_COLORS = {
-  primary: '#0a0a0f',
-  secondary: '#12121a',
-  card: '#1a1a24',
-  elevated: '#242430',
+  ink: BRAND_COLORS.ink,
+  deep: BRAND_COLORS.deep,
+  violet: BRAND_COLORS.violet,
+  pink: BRAND_COLORS.pink,
 } as const;
