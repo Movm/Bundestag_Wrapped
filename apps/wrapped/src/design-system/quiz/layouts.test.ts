@@ -22,10 +22,11 @@ describe('quiz layout picking', () => {
     expect(pickQuizLayout(QUIZ_LAYOUT_REGISTRY, long, { preferred: 'stack', seed: 'quiz-youth-language' }).id).toBe(first.id);
   });
 
-  it('never picks the gap layout without a gap sentence', () => {
-    for (const seed of ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']) {
-      expect(pickQuizLayout(QUIZ_LAYOUT_REGISTRY, short, { seed }).id).not.toBe('gap');
+  it('uses layouts with their own mechanic (swipe, gap) only when pinned', () => {
+    for (const seed of ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'quiz-topics', 'quiz-speeches']) {
+      expect(['swipe', 'gap']).not.toContain(pickQuizLayout(QUIZ_LAYOUT_REGISTRY, short, { seed, gapSentence: 'Platz 1 ist {answer}.' }).id);
     }
+    expect(pickQuizLayout(QUIZ_LAYOUT_REGISTRY, short, { seed: 'x', preferred: 'swipe' }).id).toBe('swipe');
   });
 
   it('rotates layouts across quizzes', () => {

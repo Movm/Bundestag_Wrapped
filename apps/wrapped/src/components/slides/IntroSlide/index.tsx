@@ -32,10 +32,10 @@ export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps)
       {previewLabel && <motion.div variants={ENTER.rise}><Eyebrow>{previewLabel}</Eyebrow></motion.div>}
       <motion.img src="/logo.png" alt="" className="ds-cover__logo" variants={ENTER.stamp} />
       <h1 className="ds-display ds-display--hero ds-cover__title">
-        <motion.span className="block text-wr-pink" variants={ENTER.rise}>Bundestag</motion.span>
+        <motion.span className="block text-wr-pink" variants={ENTER.rise}>Bundestag</motion.span>{' '}
         <motion.span className="ds-cover__line" variants={ENTER.rise}>
           <span>Wrapped</span>
-          {surface.year && <span className="ds-cover__year">{surface.year}</span>}
+          {surface.year && <>{' '}<span className="ds-cover__year">{surface.year}</span></>}
         </motion.span>
       </h1>
       <motion.div className="ds-cover__start" variants={ENTER.rise}>

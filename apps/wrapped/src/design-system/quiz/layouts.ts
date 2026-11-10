@@ -25,6 +25,11 @@ export interface QuizLayoutSpec {
   component: ComponentType<QuizLayoutProps>;
   /** Is this layout a good fit for these options? */
   fits: (options: string[], context: { gapSentence?: string }) => boolean;
+  /**
+   * Layouts with their own mechanic (swipe: yes/no per card; gap: needs a
+   * sentence) are used only when an edition pins them, never by rotation.
+   */
+  optIn?: boolean;
 }
 
 const longest = (options: string[]) => Math.max(0, ...options.map(option => option.length));
@@ -45,7 +50,8 @@ export function hashSeed(value: string): number {
 /**
  * Picks a layout: an explicit choice wins if it fits; otherwise rotate over the
  * fitting layouts by seed (slide id), so neighbouring quizzes look different.
- * `tiles` fits everything and is the final fallback.
+ * Opt-in layouts are skipped by the rotation. `tiles` fits everything and is
+ * the final fallback.
  */
 export function pickQuizLayout(
   registry: readonly QuizLayoutSpec[],
@@ -55,6 +61,6 @@ export function pickQuizLayout(
   const fitting = registry.filter(spec => spec.fits(options, { gapSentence }));
   const chosen = preferred && fitting.find(spec => spec.id === preferred);
   if (chosen) return chosen;
-  const pool = fitting.filter(spec => spec.id !== 'gap' || gapSentence);
+  const pool = fitting.filter(spec => !spec.optIn);
   return pool[hashSeed(seed) % Math.max(1, pool.length)] ?? registry.find(spec => spec.id === 'tiles')!;
 }
