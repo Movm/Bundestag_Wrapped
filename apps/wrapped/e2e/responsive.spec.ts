@@ -12,6 +12,8 @@ const VIEWPORTS = [
   { name: 'phone', width: 390, height: 844, axe: true },
   { name: 'phone-landscape', width: 844, height: 390, axe: false },
   { name: 'tablet', width: 768, height: 1024, axe: false },
+  // A 1280×900 window at 200 % browser zoom (WCAG 1.4.4) lays out like 640×450.
+  { name: 'zoom-200', width: 640, height: 450, axe: false },
   { name: 'laptop', width: 1440, height: 900, axe: true },
   { name: 'desktop', width: 1920, height: 1080, axe: false },
 ] as const;
@@ -47,6 +49,7 @@ for (const viewport of VIEWPORTS) {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.setViewportSize({ width: viewport.width, height: viewport.height });
     await openReadingMode(page);
+    await expect(page.getByRole('progressbar', { name: 'Fortschritt' })).toHaveAttribute('aria-valuetext', /^Folie \d+ von \d+$/);
     const ids = await page.$$eval('[data-slide-id]', sections => sections.map(section => section.getAttribute('data-slide-id')!));
     const problems: string[] = [];
     for (const id of ids) {

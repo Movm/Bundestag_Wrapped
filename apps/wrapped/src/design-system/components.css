@@ -392,3 +392,7 @@
   from { opacity: 0; transform: translateY(3.75rem) scale(0.85) rotate(-4deg); }
   to { opacity: 1; transform: none; }
 }
+
+/* Toolbar track pill: faded via class, never mounted mid-story. */
+.ds-track-pill { align-items: center; gap: 0.5rem; padding: 0.375rem 0.75rem; border-radius: 999px; background: #fff; color: var(--color-wr-ink); opacity: 0; transform: translateX(0.625rem); pointer-events: none; transition: opacity 0.3s var(--ease-wr-out), transform 0.3s var(--ease-wr-out); }
+.ds-track-pill[data-show='true'] { opacity: 1; transform: none; }
