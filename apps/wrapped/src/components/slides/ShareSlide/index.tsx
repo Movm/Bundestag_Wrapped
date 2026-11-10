@@ -85,16 +85,28 @@ export const ShareSlide = memo(function ShareSlide({
       editionId: surface.editionId,
     };
 
-    preloadLogo().then(() => {
-      // Render score variant (with emoji title)
-      if (canvasRefScore.current) {
-        renderShareImage(canvasRefScore.current, data, 'score');
-      }
-      // Render title variant ("Du bist eine:")
-      if (canvasRefTitle.current) {
-        renderShareImage(canvasRefTitle.current, data, 'title');
-      }
+    // Draw after the slide transition has settled, one canvas per idle slot,
+    // so painting the previews never costs a frame of the scroll animation.
+    let cancelled = false;
+    const timeouts: number[] = [];
+    const idles: number[] = [];
+    const whenIdle = (task: () => void) => {
+      const run = () => { if (!cancelled) task(); };
+      // A scroll transition lasts < 700 ms; idle callbacks fire between its frames otherwise.
+      timeouts.push(window.setTimeout(() => {
+        if (typeof requestIdleCallback === 'function') idles.push(requestIdleCallback(run, { timeout: 1200 }));
+        else run();
+      }, 700));
+    };
+    void preloadLogo().then(() => {
+      whenIdle(() => { if (canvasRefScore.current) renderShareImage(canvasRefScore.current, data, 'score'); });
+      whenIdle(() => { if (canvasRefTitle.current) renderShareImage(canvasRefTitle.current, data, 'title'); });
     });
+    return () => {
+      cancelled = true;
+      timeouts.forEach(handle => window.clearTimeout(handle));
+      if (typeof cancelIdleCallback === 'function') idles.forEach(handle => cancelIdleCallback(handle));
+    };
   }, [correctCount, totalQuestions, userName, isInView, surface.editionId, surface.title]);
 
   // Handlers for score variant
