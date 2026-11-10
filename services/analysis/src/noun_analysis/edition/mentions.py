@@ -34,12 +34,13 @@ def _config(path: Path) -> list[dict[str, Any]]:
         background = item.get("background", [])
         if not isinstance(background, list) or not all(isinstance(line, str) and line.strip() for line in background):
             raise ValueError(f"mention {mention_id!r} has an invalid background")
-        source = item.get("source")
-        if source is not None and (not isinstance(source, str) or not source.strip()):
-            raise ValueError(f"mention {mention_id!r} has an invalid source")
+        texts = {key: item.get(key) for key in ("source", "headline", "subtitle")}
+        for key, value in texts.items():
+            if value is not None and (not isinstance(value, str) or not value.strip()):
+                raise ValueError(f"mention {mention_id!r} has an invalid {key}")
         seen.add(mention_id)
         normalized.append({
-            "source": source.strip() if source else None,
+            **{key: value.strip() if value else None for key, value in texts.items()},
             "id": mention_id,
             "label": label.strip(),
             "background": [line.strip() for line in background],
@@ -102,6 +103,6 @@ def build_mentions(speeches: list[dict[str, Any]], config_path: Path) -> list[di
             "count": sum(counts.values()),
             "speakers": speakers,
             **({"background": mention["background"]} if mention["background"] else {}),
-            **({"source": mention["source"]} if mention["source"] else {}),
+            **{key: mention[key] for key in ("headline", "subtitle", "source") if mention[key]},
         })
     return results

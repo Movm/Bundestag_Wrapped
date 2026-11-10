@@ -127,8 +127,8 @@ describe('active slide plan', () => {
     const configuration = { version: 1 as const, groups: [{ id: 'quiz-youth-language' }, { id: 'quiz-mention' }] };
     expect(buildActiveSlidePlan(quizModel(['quiz-youth-language']), [], configuration)).not.toContain('intro-mention');
     const plan = buildActiveSlidePlan(quizModel(['quiz-youth-language', 'quiz-mention']), [], configuration);
-    expect(plan.slice(plan.indexOf('reveal-youth-speakers'), plan.indexOf('reveal-youth-speakers') + 5)).toEqual([
-      'reveal-youth-speakers', 'intro-mention', 'quiz-mention', 'info-mention', 'reveal-mention',
+    expect(plan.slice(plan.indexOf('reveal-youth-speakers'), plan.indexOf('reveal-youth-speakers') + 4)).toEqual([
+      'reveal-youth-speakers', 'intro-mention', 'quiz-mention', 'info-mention',
     ]);
   });
 });

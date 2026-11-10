@@ -72,7 +72,6 @@ export const SLIDES = [
   'intro-mention',
   'quiz-mention',
   'info-mention',
-  'reveal-mention',
 
   // Moin
   'intro-moin',

@@ -35,7 +35,7 @@ const STORY_TEMPLATE: readonly (SlideType | StoryGroup)[] = [
   { quiz: 'quiz-common-words', slides: ['intro-common-words', 'quiz-common-words', 'reveal-common-words'] },
   { quiz: 'quiz-youth-language', slides: ['quiz-youth-language', 'info-youth-language', 'reveal-youth-language', 'reveal-youth-parties', 'reveal-youth-speakers'] },
   // Moment of the year (e.g. Timmy der Wal), from the edition's mentions.
-  { quiz: 'quiz-mention', slides: ['intro-mention', 'quiz-mention', 'info-mention', 'reveal-mention'] },
+  { quiz: 'quiz-mention', slides: ['intro-mention', 'quiz-mention', 'info-mention'] },
   { quiz: 'quiz-moin', slides: ['intro-moin', 'quiz-moin', 'info-moin', 'reveal-moin'] },
   { quiz: 'quiz-tone', slides: ['intro-tone', 'quiz-tone', 'info-tone', 'reveal-tone'] },
   { quiz: 'quiz-gender', slides: ['quiz-gender', 'info-gender', 'reveal-gender'] },

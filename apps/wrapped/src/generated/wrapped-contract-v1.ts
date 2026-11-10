@@ -301,6 +301,8 @@ export interface Mention {
   "speakers": Array<MentionSpeaker>;
   "background"?: Array<NonEmptyString>;
   "source"?: NonEmptyString;
+  "headline"?: NonEmptyString;
+  "subtitle"?: NonEmptyString;
 }
 
 export interface YouthWordSpeaker {
