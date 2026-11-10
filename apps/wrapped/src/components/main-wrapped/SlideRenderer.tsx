@@ -2,6 +2,7 @@ import { memo } from 'react';
 import { useDebugRender } from '@/hooks/useDebugRender';
 import { buildConfiguredEditionQuizModel, type EditionQuizModel } from '@/domain/edition-quiz';
 import { INFO_SLIDES } from '@/data/info-slides';
+import { buildTopicRiserContext } from '@/domain/topic-riser-context';
 import { SLIDES, type SlideType } from './constants';
 import { getQuizSlides } from './slide-plan';
 import {
@@ -21,6 +22,7 @@ import {
   EndSlide,
   RankingMovementSlide,
   SignatureWordMovementSlide,
+  TopicRiserContextSlide,
   YouthLanguageResultSlide,
   YouthLanguagePartySlide,
   YouthLanguageSpeakerSlide,
@@ -184,6 +186,13 @@ function RankingMovementSlideWrapper({ kind }: { kind: 'topics' | 'words' }) {
   const data = useFullWrappedData();
   if (!data?.yearOverYear) return null;
   return <RankingMovementSlide analysis={data.yearOverYear} kind={kind} />;
+}
+
+function TopicRiserContextSlideWrapper() {
+  const data = useFullWrappedData();
+  const context = data?.yearOverYear ? buildTopicRiserContext(data.yearOverYear, data.topicAnalysis) : null;
+  if (!data?.yearOverYear || !context) return null;
+  return <TopicRiserContextSlide context={context} baselineYear={data.yearOverYear.baseline.editionId} />;
 }
 
 function SignatureWordMovementSlideWrapper() {
@@ -354,6 +363,9 @@ export const SlideRenderer = memo(function SlideRenderer({
 
     case 'reveal-topic-risers':
       return <RankingMovementSlideWrapper kind="topics" />;
+
+    case 'reveal-topic-riser-context':
+      return <TopicRiserContextSlideWrapper />;
 
     case 'reveal-word-risers':
       return <RankingMovementSlideWrapper kind="words" />;
