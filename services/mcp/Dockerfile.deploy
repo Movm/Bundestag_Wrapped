@@ -1,0 +1,10 @@
+# Deploy-only Dockerfile for the existing git-based Coolify MCP app.
+#
+# The real build runs in GitHub Actions (.github/workflows/publish-mcp.yml),
+# which pushes ghcr.io/movm/bundestag-mcp:main and then triggers the Coolify
+# redeploy. Coolify's "build" with this file is just a pull of that image.
+# CMD, port 3000, user and health check come from the image unchanged.
+#
+# Coolify: Dockerfile Location = /services/mcp/Dockerfile.deploy, git
+# auto-deploy off; runtime variables stay on the app.
+FROM ghcr.io/movm/bundestag-mcp:main

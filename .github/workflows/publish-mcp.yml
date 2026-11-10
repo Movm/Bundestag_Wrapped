@@ -5,10 +5,10 @@ name: Publish MCP image
 # The host's flaky SSH made in-place `docker build` + rolling healthchecks
 # unreliable; "pull + swap" is faster and takes build load off the box.
 #
-# Coolify side (one-time, in the UI): set the `bundestag-mcp` app's build pack to
-# "Docker Image" = ghcr.io/<owner>/bundestag-mcp:main, and either make the GHCR
-# package public or add a registry pull credential. Then merges here build the
-# image in Actions and (optionally) trigger a redeploy via the step below.
+# Coolify side (one-time): the existing git app keeps the Dockerfile build
+# pack with Dockerfile Location /services/mcp/Dockerfile.deploy (a single FROM
+# of this image) and git auto-deploy off. Set the repository variable
+# COOLIFY_MCP_APP_UUID; COOLIFY_API_TOKEN is shared with publish-wrapped.yml.
 
 on:
   push:
