@@ -33,7 +33,7 @@ export const INFO_SLIDES: Record<string, InfoSlideContent> = {
   'info-youth-language': {
     emoji: '🗣️',
     title: 'Wie zählen wir Jugendwörter?',
-    body: 'Das aktuelle Jugendwort 2026 ist „Ragebait“ – absichtlich provozierender Inhalt, der Wut und Reaktionen erzeugen soll. Wir prüfen alle 42 unterschiedlichen Top-10-Kandidaten von 2022 bis 2026 sowie vier Ergänzungen. Mehrdeutige Wörter zählen nur, wenn der Kontext zur offiziellen Bedeutung passt.',
+    body: 'Wir durchsuchen alle Reden nach den zehn Kandidaten, die Langenscheidt für das Jugendwort 2026 nominiert hat. „Schere“ lassen wir weg: Im Bundestag ist damit fast immer die Gerechtigkeitsschere gemeint. Mehrdeutige Wörter wie „peak“ oder „67“ zählen nur, wenn der Satz zur Jugendwort-Bedeutung passt. Zitate zählen mit – auch sie fielen im Plenum.',
   },
   'info-topics': {
     emoji: '📊',

@@ -1,4 +1,5 @@
 import type { QuizQuestion, WrappedData } from '@/data/wrapped';
+import { youthWordMeaning } from './youth-words';
 import type { EditionQuizConfiguration } from '@/generated/wrapped-contract-v1';
 import { MissingMetricError, topInterrupter, topSpeakerByWords, topTopic } from './metrics';
 
@@ -45,8 +46,6 @@ export function pickRiserOptions<T extends RankMovement>(items: T[]): { winner: 
   return { winner, options: [winner.label, ...distractors] };
 }
 
-const RAGEBAIT_MEANING = 'Gemeint sind Inhalte, die gezielt Wut provozieren sollen, um Reichweite zu erzeugen.';
-
 /** Numeric options around the real count: it, two higher ones and a lower one (0 at the bottom). */
 function countOptions(count: number): string[] {
   return [...new Set([count, count + 2, count + 4, count > 2 ? count - 2 : 0])].map(value => number.format(value));
@@ -59,7 +58,7 @@ function jugendwortQuestion(word: { word: string; count: number; winnerYear?: nu
     `Wie oft fiel das Jugendwort ${word.winnerYear} „${word.word}“ bisher im Bundestag?`,
     countOptions(word.count),
     number.format(word.count),
-    `„${word.word}“ kommt auf ${number.format(word.count)} kontextuell bestätigte Treffer. ${word.word === 'ragebait' ? RAGEBAIT_MEANING : ''}`.trim(),
+    `„${word.word}“ kommt auf ${number.format(word.count)} kontextuell bestätigte Treffer. ${youthWordMeaning(word.word) ?? ''}`.trim(),
   );
 }
 
@@ -104,7 +103,7 @@ function jugendwortSpeakerQuestion(
   const alsoSaid = others.length
     ? ` Auch gesagt haben es ${others.map(speaker => `${speakerLabel(speaker)} (${times(speaker.count)})`).join(', ')}.`
     : '';
-  const meaning = word.word === 'ragebait' ? ` ${RAGEBAIT_MEANING}` : '';
+  const meaning = youthWordMeaning(word.word) ? ` ${youthWordMeaning(word.word)}` : '';
   return question(
     'quiz-youth-language',
     `Wer hat das Jugendwort ${word.winnerYear} „${word.word}“ im Bundestag gesagt?`,
