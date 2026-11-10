@@ -30,3 +30,11 @@ export async function closeQuizResult(page: Page) {
   await dialog.getByRole('button', { name: 'Zum Quiz' }).click();
   await expect(dialog).toBeHidden();
 }
+
+/**
+ * "Starten" on the story's own cover slide. The boot cover in index.html shows
+ * the same button before React has rendered; this one means the story is ready.
+ */
+export function storyStart(page: Page) {
+  return page.locator('#intro').getByRole('button', { name: 'Starten', exact: true });
+}

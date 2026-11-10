@@ -1,47 +1,53 @@
-import { memo, useCallback } from 'react';
-import { motion } from 'motion/react';
+import { memo, useEffect, useLayoutEffect, useRef } from 'react';
 import { useSlideEffectsActive } from '@/components/main-wrapped/SlideEffectsContext';
 import { playSound } from '@/lib/sounds';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
-import { previewCoverageLabel } from '@/edition/labels';
-import { Slide } from '@/design-system/components/Slide';
-import { Eyebrow, Lead } from '@/design-system/components/Type';
-import { ActionButton } from '@/design-system/components/ActionButton';
-import { ENTER } from '@/design-system/motion';
+import { acquireCover, releaseBootShell } from '@/cover/shell';
+import type { CoverController } from '@/cover/cover';
 
 interface IntroSlideProps {
   onStart?: () => void;
 }
 
-/** Cover: eagle, huge two-line wordmark with a tilted year pill, start button. */
+/**
+ * Cover ("Start Sitzreihen"). The cover itself is framework-free
+ * (src/cover/cover.ts) and usually already painted by the inline boot script;
+ * this slide adopts that element, so the first visit never waits for React.
+ */
 export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps) {
-  const edition = useOptionalEdition();
-  const surface = editionSurface(edition);
-  const previewLabel = previewCoverageLabel(edition?.manifest);
+  const year = editionSurface(useOptionalEdition()).year;
   const active = useSlideEffectsActive();
+  const hostRef = useRef<HTMLDivElement>(null);
+  const coverRef = useRef<CoverController | null>(null);
+  const onStartRef = useRef(onStart);
+  useLayoutEffect(() => { onStartRef.current = onStart; });
 
-  const handleStart = useCallback(() => {
-    if (!active) return;
-    playSound('start');
-    onStart?.();
-  }, [onStart, active]);
+  useLayoutEffect(() => {
+    const host = hostRef.current;
+    if (!host) return;
+    const bootHost = window.__btCover?.host ?? null;
+    const { controller, startRequested } = acquireCover();
+    const hadFocus = controller.root.contains(document.activeElement);
+    host.appendChild(controller.root);
+    releaseBootShell(bootHost);
+    if (hadFocus) controller.root.querySelector<HTMLButtonElement>('.cv-start')?.focus({ preventScroll: true });
+    controller.onPress = () => playSound('start');
+    controller.onStart = () => onStartRef.current?.();
+    coverRef.current = controller;
+    // "Starten" was pressed on the boot cover before the story was ready.
+    if (startRequested) onStartRef.current?.();
+    return () => { controller.onStart = null; controller.onPress = null; };
+  }, []);
 
-  return (
-    <Slide shapes="cover">
-      {previewLabel && <motion.div variants={ENTER.rise}><Eyebrow>{previewLabel}</Eyebrow></motion.div>}
-      <motion.img src="/logo.png" alt="" className="ds-cover__logo" variants={ENTER.stamp} />
-      <h1 className="ds-display ds-display--hero ds-cover__title">
-        <motion.span className="block text-wr-pink" variants={ENTER.rise}>Bundestag</motion.span>{' '}
-        <motion.span className="ds-cover__line" variants={ENTER.rise}>
-          <span>Wrapped</span>
-          {surface.year && <>{' '}<span className="ds-cover__year">{surface.year}</span></>}
-        </motion.span>
-      </h1>
-      <motion.div className="ds-cover__start" variants={ENTER.rise}>
-        <ActionButton size="lg" icon="right" onClick={handleStart}>Starten</ActionButton>
-        <Lead className="max-w-[22rem]">Dein Jahr im Parlament – Themen, Reden, Aufsteiger.</Lead>
-      </motion.div>
-    </Slide>
-  );
+  useEffect(() => { coverRef.current?.setYear(year ? String(year) : null); }, [year]);
+
+  useEffect(() => {
+    const cover = coverRef.current;
+    if (!cover) return;
+    if (active) cover.resume();
+    else cover.pause();
+  }, [active]);
+
+  return <div ref={hostRef} className="h-full w-full" />;
 });

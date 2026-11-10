@@ -5,6 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import path from 'path'
 import { EDITION_ASSET_PATTERNS } from './pwa-cache-routes.ts'
 import { devEditionsPlugin } from './dev-editions.ts'
+import { coverShellPlugin } from './cover-shell.ts'
 
 // Bump this only when the runtime-data cache schema changes. Workbox then removes
 // the old named caches while leaving unrelated browser storage untouched.
@@ -13,11 +14,12 @@ const editionCacheVersion = process.env.VITE_EDITION_CACHE_VERSION ?? 'edition-v
 export default defineConfig({
   plugins: [
     devEditionsPlugin(),
+    coverShellPlugin(),
     react(),
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'logo.png', 'fonts/*.woff2'],
+      includeAssets: ['favicon.svg', 'logo.png', 'cover-adler.webp', 'fonts/*.woff2'],
       manifest: {
         name: 'Bundestag Wrapped',
         short_name: 'BT Wrapped',
@@ -115,7 +117,7 @@ export default defineConfig({
           },
         ],
         // Pre-cache critical assets
-        globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
+        globPatterns: ['**/*.{js,css,html,svg,png,webp,woff2}'],
         // Don't pre-cache large JSON files (they'll be runtime cached)
         globIgnores: ['**/speeches_*.json', '**/words_index.json', '**/word_rankings.json'],
       },

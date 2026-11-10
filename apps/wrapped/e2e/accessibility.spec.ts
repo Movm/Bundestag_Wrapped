@@ -1,4 +1,4 @@
-import { jumpToSlide, closeQuizResult } from './story-navigation';
+import { jumpToSlide, closeQuizResult, storyStart } from './story-navigation';
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from 'playwright/test';
 import { installEditionFixtures } from './fixtures';
@@ -12,10 +12,10 @@ test.beforeEach(async ({ page }) => {
 
 test('keeps future slides out of Tab order, stops timed reading, and supports reading mode', async ({ page }) => {
   await page.goto('/2025');
-  await expect(page.getByRole('button', { name: 'Starten', exact: true })).toBeVisible();
+  await expect(storyStart(page)).toBeVisible();
   await expect(page.locator('[data-slide-id="quiz-topics"]')).toHaveAttribute('inert', '');
   await expect(page.getByRole('heading', { name: 'Welches Thema dominiert den Bundestag?' })).toHaveCount(0);
-  await page.getByRole('button', { name: 'Starten', exact: true }).click();
+  await storyStart(page).click();
   const disclaimer = page.locator('#info-disclaimer');
   await expect(disclaimer).not.toHaveAttribute('inert', '');
   await expect(disclaimer).toBeFocused();
@@ -103,7 +103,7 @@ for (const viewport of [{ width: 320, height: 568 }, { width: 390, height: 844 }
       if (path.endsWith('/wrapped/shared-speaker')) await expect(page.getByRole('button', { name: "Los geht's" })).toBeVisible();
       if (path.endsWith('/dokumentation')) await expect(page.getByRole('heading', { name: /Klassifikation von/ })).toBeVisible();
       if (path.includes('/suche')) await expect(page.getByRole('tab', { name: 'Reden', exact: true })).toBeVisible();
-      if (path.endsWith('/2025')) await expect(page.getByRole('button', { name: 'Starten', exact: true })).toBeVisible();
+      if (path.endsWith('/2025')) await expect(storyStart(page)).toBeVisible();
       const width = await page.evaluate(() => ({ viewport: document.documentElement.clientWidth, content: document.documentElement.scrollWidth }));
       expect(width.content, path).toBeLessThanOrEqual(width.viewport + 1);
       const sections = page.locator('[data-slide-id]');

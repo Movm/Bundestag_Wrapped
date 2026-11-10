@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useState, type ReactNode } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useState, type ReactNode } from 'react';
 import { BrowserRouter, Navigate, Routes, Route, useLocation, useParams } from 'react-router';
 import { useQuery } from '@tanstack/react-query';
 import { DarkLayout, LightLayout } from '@/layouts/MainLayout';
@@ -8,6 +8,7 @@ import { UmamiAnalytics } from '@/components/analytics/UmamiAnalytics';
 import { EditionProvider, useEdition } from '@/edition/EditionProvider';
 import { loadRegistry } from '@/edition/loader';
 import { currentEditionPath, resolveLegacyEditionPath } from '@/edition/registry';
+import { dismissBootCover } from '@/cover/shell';
 
 const MainWrappedPage = lazy(() => import('@/components/MainWrappedPage').then(m => ({ default: m.MainWrappedPage })));
 const SpeakerWrappedPage = lazy(() => import('@/components/SpeakerWrappedPage').then(m => ({ default: m.SpeakerWrappedPage })));
@@ -62,6 +63,7 @@ function MainWrappedRoute() {
 }
 
 function RedirectError({ message }: { message: string }) {
+  useEffect(dismissBootCover, []);
   return (
     <div className="min-h-screen page-bg flex items-center justify-center">
       <div className="text-center">
