@@ -4,7 +4,6 @@ export { type SlidePhase } from './shared';
 // Slide components
 export { IntroSlide } from './IntroSlide';
 export { QuizSlide } from './QuizSlide';
-export { ComparisonSlide, type ComparisonItem } from './ComparisonSlide';
 export { VocabularySlide } from './VocabularySlide';
 export { SpeechesSlide } from './SpeechesSlide';
 export { DramaSlide } from './DramaSlide';
