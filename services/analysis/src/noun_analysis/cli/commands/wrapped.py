@@ -12,6 +12,7 @@ import click
 from noun_analysis.analyzer import WordAnalyzer
 from noun_analysis.wrapped import WrappedData, WrappedRenderer
 from noun_analysis.wrapped.speaker_export import SpeakerExporter
+from noun_analysis.wrapped.speaker_export.match import build_match_from_exporter, noun_counts_from_frame
 from noun_analysis.edition.export import EditionValidationError, build_manifest, publish_edition
 from noun_analysis.edition.comparison import build_year_over_year
 from noun_analysis.edition.generations import build_generations
@@ -115,7 +116,7 @@ def generate_edition(
         if quiz_config:
             content["quiz"] = json.loads(Path(quiz_config).read_text(encoding="utf-8"))
         source_state = DataStore(Path(data_dir)).load_state()
-        manifest = build_manifest(edition_id, year, data_version, generated_at, period_start, period_end, list(wahlperioden), speeches, freeze)
+        manifest = build_manifest(edition_id, year, data_version, generated_at, period_start, period_end, list(wahlperioden), speeches, freeze, with_match=True)
         artifacts: dict[str, object] = {
             "wrapped.json": wrapped_data,
             "speakers/index.json": speaker_index,
@@ -126,10 +127,18 @@ def generate_edition(
             "content.json": content,
             "release-report.json": build_release_report(manifest, content, source_state),
         }
+        speaker_files: dict[str, dict] = {}
         for speaker_key in exporter._speaker_index:
             speaker = exporter.generate_speaker_data(speaker_key)
             if speaker:
+                speaker_files[speaker_key] = speaker
                 artifacts[f"speakers/{speaker['slug']}.json"] = speaker
+        match_payload, match_words = build_match_from_exporter(
+            exporter, speaker_files, noun_counts_from_frame(data.word_frequencies["nouns"]), data.signature_stopwords
+        )
+        artifacts["match.json"] = match_payload
+        console.print(f"Perfect Match: {len(match_payload['mps'])} MPs, words: " + ", ".join(
+            f"{w.word} ({match_payload['parties'][w.party]} x{w.lean})" for w in match_words))
         target = publish_edition(Path(output_root), edition_id, data_version, manifest, artifacts)
     except (FileNotFoundError, ValueError, EditionValidationError) as error:
         raise click.ClickException(str(error)) from error

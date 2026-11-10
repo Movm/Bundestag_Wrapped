@@ -106,7 +106,6 @@ def test_context_rules_and_complete_protocol_deduplication(tmp_path):
 
 
 def test_lexicon_keeps_winner_year_and_rejects_invalid_ones(tmp_path):
-    from noun_analysis.edition.comparison import _lexicon
 
     lexicon = tmp_path / "youth.json"
     write_json(lexicon, {"version": "v", "terms": ["safe", "wild", "bro", {"word": "ragebait", "winner": 2026}]})

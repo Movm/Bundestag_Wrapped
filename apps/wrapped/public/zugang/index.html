@@ -96,8 +96,14 @@
     var params = new URLSearchParams(location.search);
     // `next` is the rest of the query string: nginx passes $request_uri unencoded.
     var match = location.search.match(/[?&]next=(.*)$/);
-    var next = match ? decodeURIComponent(match[1]) : '/2026';
-    if (next.charAt(0) !== '/' || next.charAt(1) === '/' || next.charAt(1) === '\\') next = '/2026';
+    // Resolve the target the way the browser will and keep only same-origin
+    // paths: a string check alone lets "/\t/evil.example" through, because
+    // browsers strip tabs and newlines and read it as "//evil.example".
+    var next = '/2026';
+    try {
+      var target = new URL(match ? decodeURIComponent(match[1]) : next, location.origin);
+      if (target.origin === location.origin) next = target.pathname + target.search + target.hash;
+    } catch (e) { /* malformed: keep the default */ }
     var input = document.getElementById('code');
     var error = document.getElementById('error');
 
