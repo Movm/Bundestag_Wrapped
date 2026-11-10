@@ -1,0 +1,8 @@
+/* Shared answered states for solid-colour answer controls (fan, gap, fields, stickers, swipe).
+   Fixed colours on purpose: they hold on every surface (ink on white 19.6:1, white on ink 19.6:1). */
+:where(.ds-solid) { border: 2px solid transparent; transition: translate 0.35s var(--ease-wr-pop), rotate 0.35s var(--ease-wr-pop), opacity 0.3s; }
+.ds-solid.ds-tone--ink { border-color: #fff; }
+.ds-solid[data-status='correct'] { background: #fff; color: var(--color-wr-ink); border-color: var(--color-wr-ink); box-shadow: 0 0 0 4px #fff; }
+.ds-solid[data-status='wrong'] { background: var(--color-wr-ink); color: #fff; border-color: #fff; }
+.ds-solid[data-status='wrong'] .ds-choice__label { text-decoration: line-through; }
+.ds-solid[data-status='other'] { opacity: 0.7; } /* inactive control (aria-disabled) */

@@ -1,0 +1,19 @@
+/* stickers: tilted sticker buttons in a wrapping wall, beside the question on wide screens. */
+.ds-quiz--stickers { display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; }
+@media (min-width: 64rem) { .ds-quiz--stickers { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); } }
+.ds-quiz-stickers { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: clamp(0.75rem, 0.4rem + 1.6vw, 1.75rem); padding: 0.5rem; }
+.ds-choice--sticker {
+  flex: 0 1 clamp(8rem, 5rem + 12vw, 15rem);
+  min-width: 0;
+  min-height: clamp(6rem, 4rem + 8vw, 10rem);
+  flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0.4rem;
+  padding: clamp(0.75rem, 0.5rem + 1vw, 1.5rem);
+  rotate: var(--sticker-rot);
+}
+.ds-choice--sticker:nth-child(4n + 1) { border-radius: 999px; }
+.ds-choice--sticker:nth-child(4n + 2) { border-radius: clamp(1.25rem, 1rem + 1.2vw, 2.25rem); }
+.ds-choice--sticker:nth-child(4n + 3) { border-radius: 50% / 38%; }
+.ds-choice--sticker:nth-child(4n) { border-radius: 1.75rem; border-style: dashed; border-color: var(--color-wr-pink); }
+.ds-choice--sticker .ds-choice__label { font-size: clamp(1.0625rem, 0.7rem + 1.5vw, 2.25rem); text-transform: uppercase; hyphens: auto; }
+@media (hover: hover) and (pointer: fine) { .ds-choice--sticker:not([aria-disabled='true']):hover { rotate: 0deg; scale: 1.06; } }
+.ds-choice--sticker[data-status='correct'] { rotate: 0deg; }

@@ -1,0 +1,27 @@
+/* fan: answer cards fanned like a hand; the hovered/focused card lifts. */
+.ds-quiz-fan { display: flex; justify-content: center; align-items: center; padding-block: 1.5rem 0.5rem; }
+.ds-choice--card {
+  flex: 0 1 clamp(5.5rem, 3rem + 14vw, 14rem);
+  min-width: 0;
+  aspect-ratio: 3 / 4;
+  margin-inline: calc(clamp(5.5rem, 3rem + 14vw, 14rem) * -0.06);
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: clamp(0.5rem, 0.3rem + 1vw, 1.5rem);
+  border-radius: clamp(1rem, 0.6rem + 1.4vw, 1.75rem);
+  rotate: var(--fan-rot);
+  translate: 0 var(--fan-drop);
+}
+.ds-choice--card .ds-choice__label {
+  font-size: clamp(0.8125rem, 0.5rem + 1.5vw, 2.5rem);
+  text-transform: uppercase;
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
+.ds-choice--card .ds-choice__tag { align-self: flex-start; font-size: clamp(0.6875rem, 0.55rem + 0.4vw, 0.875rem); }
+.ds-choice--card:focus-visible { z-index: 2; }
+@media (hover: hover) and (pointer: fine) { .ds-choice--card:not([aria-disabled='true']):hover { translate: 0 calc(var(--fan-drop) - 1.5rem); } }
+.ds-choice--card:focus-visible:not([aria-disabled='true']) { translate: 0 calc(var(--fan-drop) - 1.5rem); }
+.ds-choice--card[data-status='correct'] { translate: 0 -1.25rem; z-index: 1; }
+@media (prefers-reduced-motion: reduce) { .ds-choice--card { transition: none; } }
