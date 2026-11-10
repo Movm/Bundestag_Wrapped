@@ -1,9 +1,14 @@
 import { motion } from 'motion/react';
 import type { RankMovement, SignatureWordMovement, YearOverYearAnalysis } from '@/generated/wrapped-contract-v1';
-import { getPartyBgColor, getPartyTextColor } from '@/lib/party-colors';
+import { getPartyTextColor } from '@/lib/party-colors';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionSurface } from '@/edition/surface';
 import { TOPIC_BY_ID } from '@/shared/constants/topics';
 import type { TopicRiserContext } from '@/domain/topic-riser-context';
 import { SlideContainer, SlideHeader, ScrollHint, itemVariants } from '../shared';
+import { Enter, Slide } from '@/design-system/components/Slide';
+import { Display, Eyebrow, Lead, Mark, Note } from '@/design-system/components/Type';
+import { Block, ChipCloud, DivergingBars, RankCard } from '@/design-system/components/Data';
 
 type RankingKind = 'topics' | 'words';
 
@@ -15,49 +20,48 @@ function signed(value: number): string {
   return number.format(value);
 }
 
-function MovementRow({ item, index }: { item: RankMovement; index: number }) {
-  const isNew = item.previousRank === null;
-  const movementLabel = signed(item.rankChange);
-  return (
-    <motion.li
-      variants={itemVariants}
-      className="grid grid-cols-[2rem_1fr_auto] items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-left"
-    >
-      <span className="text-center text-lg font-black text-white/35">{index + 1}</span>
-      <div className="min-w-0">
-        <div className="truncate text-lg font-bold text-white md:text-xl">{item.label}</div>
-        <div className="text-sm text-white/50">
-          {isNew ? `Neu auf Platz ${item.currentRank}` : `Platz ${item.previousRank} → ${item.currentRank}`}
-        </div>
-      </div>
-      <span className={`rounded-full px-3 py-1 text-sm font-black ${isNew ? 'bg-blue-400/15 text-blue-300' : 'bg-green-400/15 text-green-300'}`}>
-        {isNew ? 'NEU' : movementLabel}
-      </span>
-    </motion.li>
-  );
+const RANK_TONES = ['white', 'violet', 'pink', 'card'] as const;
+
+function movementName(kind: RankingKind, label: string): string {
+  return kind === 'topics' ? topicName(label) : label;
 }
 
+/** "Diese Themen sind aufgestiegen": stair-stepped rank cards, biggest riser first. */
 export function RankingMovementSlide({ analysis, kind }: { analysis: YearOverYearAnalysis; kind: RankingKind }) {
   const items = analysis[kind]
     .filter(item => item.previousRank !== null && item.rankChange > 0)
-    .slice(0, 6);
+    .slice(0, 4);
   const isTopics = kind === 'topics';
+  const year = editionSurface(useOptionalEdition()).year;
   return (
-    <SlideContainer innerClassName="mx-auto max-w-3xl">
-      <SlideHeader
-        emoji={isTopics ? '📈' : '🔤'}
-        title={isTopics ? 'Diese Themen sind aufgestiegen' : 'Diese Wörter sind aufgestiegen'}
-        subtitle={`Rangveränderung gegenüber ${analysis.baseline.editionId}`}
-        slideId={isTopics ? 'reveal-topic-risers' : 'reveal-word-risers'}
-      />
-      <motion.ol variants={itemVariants} className="space-y-2">
-        {items.map((item, index) => <MovementRow key={item.label} item={item} index={index} />)}
-      </motion.ol>
-      <p className="mt-6 text-center text-xs text-white/40">
-        Gezeigt werden Einträge, die in beiden Jahren vorkommen und Rangplätze gewonnen haben.
-      </p>
-      <ScrollHint delay={1.4} />
-    </SlideContainer>
+    <Slide
+      shapes="corner"
+      footer={<Note className="ds-note--plate">Gezeigt werden Einträge, die in beiden Jahren vorkommen und Rangplätze gewonnen haben.</Note>}
+    >
+      <div className="flex flex-col gap-4">
+        <Enter className="flex flex-wrap items-center gap-3">
+          <Eyebrow>{analysis.baseline.editionId}{year ? ` → ${year}` : ''}</Eyebrow>
+          <span className="ds-eyebrow">Rangveränderung</span>
+        </Enter>
+        <Display size="xl" face="wide">
+          Diese {isTopics ? 'Themen' : 'Wörter'} sind <Mark>aufgestiegen.</Mark>
+        </Display>
+      </div>
+      <ol className="flex flex-col gap-3" aria-label={isTopics ? 'Aufgestiegene Themen' : 'Aufgestiegene Wörter'}>
+        {items.map((item, index) => (
+          <li key={item.label}>
+            <RankCard
+              rank={item.currentRank ?? index + 1}
+              label={movementName(kind, item.label)}
+              detail={`Platz ${item.previousRank} → ${item.currentRank}`}
+              change={item.rankChange}
+              tone={RANK_TONES[index % RANK_TONES.length]}
+              step={index}
+            />
+          </li>
+        ))}
+      </ol>
+    </Slide>
   );
 }
 
@@ -234,81 +238,52 @@ function topicName(id: string): string {
   return TOPIC_BY_ID[id]?.name ?? id;
 }
 
-function vsAverageLabel(ratio: number): string {
-  const percent = Math.round((ratio - 1) * 100);
-  if (percent === 0) return 'wie der Schnitt';
-  return `${percent > 0 ? '+' : '−'}${number.format(Math.abs(percent))} % ${percent > 0 ? 'über' : 'unter'} Schnitt`;
-}
-
 function RankSwap({ item, tone }: { item: RankMovement; tone: 'up' | 'down' }) {
   const up = tone === 'up';
   return (
-    <motion.div variants={itemVariants} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-      <div className={`text-[11px] font-black uppercase tracking-wider ${up ? 'text-green-300' : 'text-rose-300'}`}>
-        {up ? '↑ Aufgestiegen' : '↓ Abgestiegen'}
+    <Block tone={up ? 'pink' : 'card'} className={up ? 'ds-swap' : 'ds-swap ds-swap--down'}>
+      <div className="flex min-w-0 flex-col gap-2">
+        <span className="ds-eyebrow text-on-accent"><span aria-hidden="true">{up ? '▲' : '▼'} </span>{up ? 'Aufgestiegen' : 'Abgestiegen'}</span>
+        <span className="ds-swap__name">{topicName(item.label)}</span>
       </div>
-      <div className="mt-1 flex items-baseline justify-between gap-3">
-        <span className="truncate text-xl font-black text-white md:text-2xl">
-          <span aria-hidden="true">{TOPIC_BY_ID[item.label]?.emoji} </span>{topicName(item.label)}
-        </span>
-        <span className="shrink-0 text-sm font-bold text-white/70">
-          Platz {item.previousRank} → {item.currentRank}
-        </span>
-      </div>
-    </motion.div>
+      <span className="ds-swap__ranks">
+        <span aria-hidden="true">{item.previousRank} → {item.currentRank}</span>
+        <span className="sr-only">von Platz {item.previousRank} auf Platz {item.currentRank}</span>
+      </span>
+    </Block>
   );
 }
 
+/** "Warum Wirtschaft?": rank swap, party emphasis around the average, new signature words. */
 export function TopicRiserContextSlide({ context, baselineYear }: { context: TopicRiserContext; baselineYear: string }) {
   const { riser, faller, parties, leader } = context;
-  const max = Math.max(...parties.map(item => item.vsAverage), 1);
+  const name = topicName(riser.label);
   return (
-    <SlideContainer innerClassName="mx-auto max-w-2xl" className="py-6 sm:py-8">
-      <SlideHeader
-        emoji={TOPIC_BY_ID[riser.label]?.emoji ?? '📈'}
-        title={`Warum ${topicName(riser.label)}?`}
-        subtitle={`Was hinter dem Aufstieg gegenüber ${baselineYear} steckt`}
-        className="mb-4 sm:mb-5"
-        slideId="reveal-topic-riser-context"
-      />
-      <motion.div variants={itemVariants} className="grid gap-2 sm:grid-cols-2">
+    <Slide
+      shapes="corner"
+      footer={<Note className="ds-note--plate">Themenanteil am Redeinhalt im Vergleich zum Bundestagsschnitt · gleicher Kalenderzeitraum wie im Vorjahr</Note>}
+    >
+      <div className="flex flex-col gap-3">
+        <Display size="xl">Warum <Mark>{name}?</Mark></Display>
+        <Lead>Was hinter dem Aufstieg gegenüber {baselineYear} steckt.</Lead>
+      </div>
+      <div className="grid gap-3 [grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr))]">
         <RankSwap item={riser} tone="up" />
         {faller && <RankSwap item={faller} tone="down" />}
-      </motion.div>
-
+      </div>
       {parties.length > 0 && (
-        <motion.section variants={itemVariants} className="mt-4" aria-labelledby="topic-riser-parties">
-          <h3 id="topic-riser-parties" className="mb-2 text-sm font-bold text-white/70">
-            Wer spricht am meisten über {topicName(riser.label)}?
-          </h3>
-          <ol className="grid gap-1.5">
-            {parties.map(item => (
-              <li key={item.party} className="grid grid-cols-[6.5rem_1fr_auto] items-center gap-2 text-sm">
-                <span className="truncate font-bold" style={{ color: getPartyTextColor(item.party) }}>{item.party}</span>
-                <span className="h-2 overflow-hidden rounded-full bg-white/10" aria-hidden="true">
-                  <span
-                    className="block h-full rounded-full"
-                    style={{ width: `${(item.vsAverage / max) * 100}%`, backgroundColor: getPartyBgColor(item.party) }}
-                  />
-                </span>
-                <span className="text-right text-xs font-semibold text-white/70">{vsAverageLabel(item.vsAverage)}</span>
-              </li>
-            ))}
-          </ol>
-        </motion.section>
+        <DivergingBars
+          title={`Wer spricht am meisten über ${name}?`}
+          caption={`Anteil des Themas ${name} je Fraktion im Vergleich zum Bundestagsschnitt`}
+          rows={parties.map(item => ({ label: item.party, party: item.party, ratio: item.vsAverage }))}
+        />
       )}
-
       {leader && (
-        <motion.p variants={itemVariants} className="mt-4 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80">
-          Neu in den Top-Signature-Words der <span className="font-bold" style={{ color: getPartyTextColor(leader.party) }}>{leader.party}</span>:{' '}
-          <span className="font-bold text-white">{leader.newSignatureWords.join(', ')}</span>
-        </motion.p>
+        <Enter className="flex flex-col gap-3">
+          <p className="m-0 text-base font-semibold">Neu in den Top-Signature-Words der <strong>{leader.party}</strong>:</p>
+          <ChipCloud words={leader.newSignatureWords} label={`Neue Signature-Words der ${leader.party}`} />
+        </Enter>
       )}
-
-      <p className="mt-4 text-center text-[11px] text-white/40 sm:text-xs">
-        Themenanteil am Redeinhalt im Vergleich zum Bundestagsschnitt · gleicher Kalenderzeitraum wie im Vorjahr
-      </p>
-      <ScrollHint delay={1.4} />
-    </SlideContainer>
+    </Slide>
   );
 }

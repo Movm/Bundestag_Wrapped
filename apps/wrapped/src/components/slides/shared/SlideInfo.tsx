@@ -1,82 +1,34 @@
 import { memo } from 'react';
 import { motion } from 'motion/react';
-import { getSlideIconConfig } from '@/shared/slide-icons';
+import { Slide } from '@/design-system/components/Slide';
+import { Display, Eyebrow, Mark } from '@/design-system/components/Type';
+import { ENTER } from '@/design-system/motion';
 
 interface SlideInfoProps {
-  emoji: string;
+  /** Kept for the data shape; the design system uses no emoji headers. */
+  emoji?: string;
   title: string;
   body: string;
-  /** Slide ID for custom icon lookup (e.g., 'info-topics') */
+  eyebrow?: string;
+  highlight?: string;
   slideId?: string;
 }
 
-/**
- * Educational info slide - appears between quiz and reveal.
- * Shows emoji/icon, title, and 1-2 sentences explaining the topic.
- * Supports custom SVG icons when slideId is provided.
- *
- * Memoized to prevent re-renders when parent re-renders with same props.
- */
-export const SlideInfo = memo(function SlideInfo({ emoji, title, body, slideId }: SlideInfoProps) {
-  // Get icon config from centralized source (handles info-* -> section mapping)
-  const iconConfig = slideId ? getSlideIconConfig(slideId) : undefined;
-  const IconComponent = iconConfig?.Icon;
-  const animationClass = iconConfig?.animation;
+function withHighlight(body: string, highlight?: string) {
+  const at = highlight ? body.indexOf(highlight) : -1;
+  if (!highlight || at < 0) return body;
+  return <>{body.slice(0, at)}<Mark block>{highlight}</Mark>{body.slice(at + highlight.length)}</>;
+}
 
+/** Info slide (pink surface): stamped label, huge title, one or two big sentences. */
+export const SlideInfo = memo(function SlideInfo({ title, body, eyebrow = 'Gut zu wissen', highlight }: SlideInfoProps) {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6">
-      <div className="text-center max-w-lg">
-        {/* Icon or Emoji with scale-pop effect */}
-        {IconComponent ? (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{
-              delay: 0.1,
-              duration: 0.3, ease: [0.23, 1, 0.32, 1],
-            }}
-            className="mb-4 flex justify-center"
-          >
-            <IconComponent className={`w-14 h-14 md:w-18 md:h-18 ${animationClass ?? ''}`} />
-          </motion.div>
-        ) : (
-          <motion.span
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{
-              delay: 0.1,
-              duration: 0.3, ease: [0.23, 1, 0.32, 1],
-            }}
-            className="text-5xl md:text-6xl mb-4 block"
-          >
-            {emoji}
-          </motion.span>
-        )}
-
-        {/* Title with slide-up spring animation */}
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.12, duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-          className="text-xl md:text-2xl font-bold text-white mb-4"
-        >
-          {title}
-        </motion.h2>
-
-        {/* Body text with fade-in */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.15, duration: 0.3 }}
-          className="text-white/70 text-base md:text-lg leading-relaxed"
-        >
-          {body}
-        </motion.p>
-      </div>
-    </div>
+    <Slide shapes="ring">
+      <motion.div variants={ENTER.stamp} className="self-start rotate-[-4deg]">
+        <Eyebrow>{eyebrow}</Eyebrow>
+      </motion.div>
+      <Display size={title.length > 18 ? 'lg' : 'hero'}>{title}</Display>
+      <motion.p variants={ENTER.rise} className={body.length > 160 ? 'ds-statement ds-statement--long' : 'ds-statement'}>{withHighlight(body, highlight)}</motion.p>
+    </Slide>
   );
 });

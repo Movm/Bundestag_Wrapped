@@ -6,13 +6,19 @@ export interface InfoSlideContent {
   emoji: string;
   title: string;
   body: string;
+  /** Small label above the title; defaults to "Gut zu wissen". */
+  eyebrow?: string;
+  /** Exact phrase inside `body` to set as a highlighted block. */
+  highlight?: string;
 }
 
 export const INFO_SLIDES: Record<string, InfoSlideContent> = {
   'info-disclaimer': {
     emoji: '⚠️',
     title: 'Hinweis',
-    body: 'Dies ist ein Experiment. Die Daten wurden mit Natural Language Processing analysiert und können fehlerhaft sein.',
+    eyebrow: 'Experiment',
+    body: 'Die Daten wurden mit Natural Language Processing analysiert und können fehlerhaft sein.',
+    highlight: 'Natural Language Processing',
   },
   'info-topic-riser': {
     emoji: '📈',

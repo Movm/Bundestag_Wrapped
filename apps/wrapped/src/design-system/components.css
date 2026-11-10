@@ -110,7 +110,7 @@
   color: inherit;
 }
 .ds-display--wide { font-family: var(--font-wide); font-weight: 900; font-stretch: 118%; letter-spacing: -0.035em; }
-.ds-display--hero { font-size: clamp(2.5rem, 1rem + min(12vw, 15vh), 12.5rem); line-height: 0.84; letter-spacing: -0.045em; }
+.ds-display--hero { font-size: clamp(2.5rem, 0.25rem + min(12.5vw, 15vh), 12.5rem); line-height: 0.84; letter-spacing: -0.045em; }
 .ds-display--xl { font-size: clamp(2.25rem, 1rem + min(7.4vw, 10vh), 8rem); line-height: 0.86; }
 .ds-display--lg { font-size: clamp(1.875rem, 1rem + min(4.4vw, 6.5vh), 5.25rem); line-height: 0.95; }
 .ds-display--md { font-size: clamp(1.5rem, 0.75rem + min(2.6vw, 4vh), 3rem); line-height: 1; }
@@ -185,10 +185,10 @@
 .ds-rank__detail { font-size: clamp(0.8125rem, 0.75rem + 0.3vw, 1rem); color: var(--surface-on-muted); font-variant-numeric: tabular-nums; }
 .ds-rank--step-0 .ds-rank__number { font-size: clamp(3rem, 1.5rem + min(6vw, 9vh), 8.75rem); }
 .ds-rank--step-0 .ds-rank__label { font-size: clamp(1.75rem, 1rem + min(3.4vw, 5vh), 4.5rem); }
-.ds-rank--step-1 { margin-left: clamp(0rem, 4vw, 4rem); }
+.ds-rank--step-1 { margin-left: clamp(0rem, 4vw - 1.5rem, 4rem); }
 .ds-rank--step-1 .ds-rank__number { font-size: clamp(2.5rem, 1.25rem + min(4.6vw, 7vh), 6.25rem); }
 .ds-rank--step-1 .ds-rank__label { font-size: clamp(1.5rem, 1rem + min(2.6vw, 4vh), 3.5rem); }
-.ds-rank--step-2, .ds-rank--step-3 { margin-left: clamp(0rem, 8vw, 8rem); }
+.ds-rank--step-2, .ds-rank--step-3 { margin-left: clamp(0rem, 8vw - 3rem, 8rem); }
 .ds-rank--step-2 .ds-rank__number, .ds-rank--step-3 .ds-rank__number { font-size: clamp(2.25rem, 1.25rem + min(3.6vw, 5.5vh), 5.25rem); }
 .ds-rank--step-2 .ds-rank__label, .ds-rank--step-3 .ds-rank__label { font-size: clamp(1.375rem, 1rem + min(2vw, 3vh), 2.875rem); }
 /* light rank cards: big number in pink is decorative; the rank is spoken in the label */
@@ -324,3 +324,31 @@
 }
 .ds-icon-button:disabled { cursor: not-allowed; opacity: 0.6; }
 .ds-icon-button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; box-shadow: 0 0 0 6px var(--color-wr-ink); }
+
+/* ─── Cover ────────────────────────────────────────────────────────── */
+.ds-cover__logo { width: clamp(7rem, 4rem + min(12vw, 16vh), 16rem); height: auto; }
+.ds-cover__title { display: flex; flex-direction: column; hyphens: none; -webkit-hyphens: none; white-space: nowrap; }
+.ds-cover__line { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(0.75rem, 2vw, 1.75rem); }
+.ds-cover__year {
+  font-size: 0.32em;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  padding: 0.08em 0.32em 0.12em;
+  border-radius: 999px;
+  background: var(--color-wr-pink);
+  color: var(--color-wr-ink);
+  rotate: -6deg;
+}
+.ds-cover__start { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; }
+
+/* Big statement copy (info slides, section intros). */
+.ds-statement { margin: 0; max-width: 55rem; font-family: var(--font-wide); font-weight: 800; font-stretch: 105%; font-size: clamp(1.25rem, 0.9rem + min(1.9vw, 3vh), 2.875rem); line-height: 1.15; letter-spacing: -0.02em; text-wrap: pretty; }
+.ds-statement--long { font-size: clamp(1.125rem, 0.9rem + min(1.1vw, 1.8vh), 1.875rem); line-height: 1.25; }
+
+/* Rank swap (riser / faller) */
+.ds-swap { display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; padding: 1.375rem 1.75rem; }
+.ds-swap--down { border: 2px solid var(--color-wr-violet); }
+.ds-swap__name { font-family: var(--font-wide); font-weight: 900; font-stretch: 110%; font-size: clamp(1.75rem, 1.2rem + min(2vw, 3vh), 3rem); line-height: 1; letter-spacing: -0.03em; overflow-wrap: break-word; }
+.ds-swap__ranks { font-family: var(--font-wide); font-weight: 900; font-stretch: 125%; font-size: clamp(1.875rem, 1.25rem + min(2.2vw, 3.4vh), 3.25rem); line-height: 0.9; letter-spacing: -0.04em; white-space: nowrap; color: var(--surface-accent); }
+/* A note on an ink plate stays readable even where it crosses a shape. */
+.ds-note--plate { background: var(--color-wr-ink); color: color-mix(in srgb, #fff 82%, var(--color-wr-ink)); padding: 0.625rem 0.875rem; border-radius: 0.75rem; }
