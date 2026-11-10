@@ -1,179 +1,57 @@
-import { LoopMotion } from '@/components/slides/shared/LoopMotion';
-import { memo, useMemo } from 'react';
-import { motion } from 'motion/react';
+import { useMemo } from 'react';
 import type { TopicAnalysis } from '@/data/wrapped';
-import { BUBBLE_POSITIONS, FLOAT_ANIMATIONS, FlipCard } from '../shared';
 import { TOPIC_BY_ID } from '@/shared/constants/topics';
-import { getPartyBgColor } from '@/lib/party-colors';
 import { selectDisplayParties } from '@/domain/party-selection';
+import { Enter, Slide } from '@/design-system/components/Slide';
+import { Display, Eyebrow, Mark } from '@/design-system/components/Type';
+import { PartyBlock, PartyGrid } from '@/design-system/components/PartyBlock';
 
 interface ResultViewProps {
   topicAnalysis: TopicAnalysis;
 }
 
-interface TopicScore {
-  topic: string;
-  score: number;
-}
-
-interface PartyBubbleProps {
-  party: string;
-  topTopics: TopicScore[];
-  index: number;
-  position: { top: string; left: string };
-  floatOffset: { x: number[]; y: number[] };
-  duration: number;
-}
-
-const PartyBubble = memo(function PartyBubble({
-  party,
-  topTopics,
-  index,
-  position,
-  floatOffset,
-  duration,
-}: PartyBubbleProps) {
-  const partyColor = getPartyBgColor(party);
-
-  const bubbleClasses = `
-    w-full h-full
-    rounded-full
-    shadow-2xl shadow-black/30
-    flex flex-col items-center justify-center
-    p-3 text-center
-  `;
-
-  const frontContent = (
-    <div
-      className={bubbleClasses}
-      style={{ background: `linear-gradient(135deg, ${partyColor}, ${partyColor}dd)` }}
-    >
-      <span className="text-white font-black text-xl md:text-2xl drop-shadow-md leading-tight">
-        {party}
-      </span>
-    </div>
-  );
-
-  const backContent = (
-    <div
-      className={bubbleClasses}
-      style={{ background: `linear-gradient(135deg, ${partyColor}ee, ${partyColor}cc)` }}
-    >
-      <div className="space-y-1 px-1">
-        {topTopics.map((ts, i) => {
-          const topic = TOPIC_BY_ID[ts.topic];
-          if (!topic) return null;
-          return (
-            <div key={ts.topic} className="flex items-center gap-1.5 justify-center">
-              <span className="text-white/60 text-[10px] md:text-xs w-3">{i + 1}.</span>
-              <div
-                className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full flex-shrink-0"
-                style={{ backgroundColor: topic.color }}
-              />
-              <span className="text-white text-[10px] md:text-xs font-semibold truncate max-w-[60px] md:max-w-[80px]">
-                {topic.name}
-              </span>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-
-  // Alternate tilt directions for visual interest
-  const tiltAngle = index % 2 === 0 ? -8 : 8;
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0, rotate: tiltAngle }}
-      whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-      viewport={{ once: true }}
-      transition={{
-        delay: index * 0.4,
-        type: 'spring',
-        stiffness: 110,
-        damping: 12,
-      }}
-      style={{
-        position: 'absolute',
-        top: position.top,
-        left: position.left,
-      }}
-    >
-      <LoopMotion
-        animate={{ x: floatOffset.x, y: floatOffset.y }}
-        transition={{
-          repeat: Infinity,
-          duration,
-          ease: 'easeInOut',
-        }}
-        style={{ willChange: 'transform' }}
-      >
-        <FlipCard
-          label={party}
-          front={frontContent}
-          back={backContent}
-          className="w-[28vw] h-[28vw] max-w-[200px] max-h-[200px] min-w-[110px] min-h-[110px]"
-        />
-      </LoopMotion>
-    </motion.div>
-  );
-});
-
 export function ResultView({ topicAnalysis }: ResultViewProps) {
   const { byParty } = topicAnalysis;
   const displayParties = useMemo(() => selectDisplayParties(byParty), [byParty]);
 
-  // Compute top 3 topics for each party
-  const partyTopTopics = useMemo(() => {
-    const result: Record<string, TopicScore[]> = {};
-    for (const party of displayParties) {
-      const partyData = byParty[party];
-      if (!partyData) continue;
-
-      const sorted = Object.entries(partyData)
-        .map(([topic, score]) => ({ topic, score }))
-        .sort((a, b) => b.score - a.score)
-        .slice(0, 5);
-
-      result[party] = sorted;
-    }
-    return result;
-  }, [byParty, displayParties]);
+  const partyTopics = useMemo(
+    () =>
+      displayParties.flatMap(party => {
+        const data = byParty[party];
+        if (!data) return [];
+        const topics = Object.entries(data)
+          .sort(([, a], [, b]) => b - a)
+          .slice(0, 5)
+          .map(([topic]) => TOPIC_BY_ID[topic]?.name ?? topic);
+        return [{ party, topics }];
+      }),
+    [byParty, displayParties],
+  );
 
   return (
-    <div className="bubble-slide min-h-screen relative w-full">
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="absolute top-8 left-0 right-0 text-center z-20"
-      >
-        <h2 className="text-2xl md:text-3xl font-black text-white mb-1">
-          Die Themen der Parteien
-        </h2>
-        <p className="text-white/50 text-xs md:text-sm">
-          Worüber sprechen die Fraktionen am meisten?
-        </p>
-      </motion.div>
-
-      <div className="bubble-grid absolute inset-0 z-10">
-        {displayParties.map((party, i) => {
-          const topTopics = partyTopTopics[party];
-          if (!topTopics) return null;
-          return (
-            <PartyBubble
-              key={party}
-              party={party}
-              topTopics={topTopics}
-              index={i}
-              position={BUBBLE_POSITIONS[i]}
-              floatOffset={FLOAT_ANIMATIONS[i]}
-              duration={FLOAT_ANIMATIONS[i].duration}
-            />
-          );
-        })}
+    <Slide shapes="corner">
+      <div className="flex flex-col gap-4">
+        <Enter><Eyebrow>Worüber sprechen die Fraktionen am meisten?</Eyebrow></Enter>
+        <Display size="xl" face="wide">
+          Die Themen der <Mark>Parteien.</Mark>
+        </Display>
       </div>
-    </div>
+      <PartyGrid label="Top-Themen je Fraktion">
+        {partyTopics.map(({ party, topics }) => (
+          <PartyBlock key={party} party={party}>
+            <ol className="m-0 flex list-none flex-col gap-1 p-0" aria-label={`Themen von ${party}`}>
+              {topics.map((topic, index) => (
+                <li
+                  key={topic}
+                  className={index === 0 ? 'font-heading text-[clamp(1.375rem,1rem+1.6vw,2.25rem)] font-black uppercase leading-none' : 'text-[clamp(0.9375rem,0.85rem+0.4vw,1.125rem)] font-bold'}
+                >
+                  <span className="sr-only">Platz {index + 1}: </span>{topic}
+                </li>
+              ))}
+            </ol>
+          </PartyBlock>
+        ))}
+      </PartyGrid>
+    </Slide>
   );
 }
