@@ -27,13 +27,50 @@ function addQuestion(
   }
 }
 
+interface RankMovement { label: string; currentRank: number; rankChange: number }
+
+/**
+ * Picks the riser and the distractors for a "who rose the most" question.
+ * Several entries can share the biggest rank change. The winner is then the one
+ * with the better (lower) current rank, a deterministic tie-break. Every other
+ * entry with the same rank change is dropped from the options, so the question
+ * never offers a second answer that is equally correct.
+ */
+export function pickRiserOptions<T extends RankMovement>(items: T[]): { winner: T; options: string[] } | undefined {
+  const winner = items.reduce<T | undefined>((best, item) => (
+    !best || item.rankChange > best.rankChange || (item.rankChange === best.rankChange && item.currentRank < best.currentRank) ? item : best
+  ), undefined);
+  if (!winner) return undefined;
+  const distractors = items.filter(item => item.rankChange !== winner.rankChange).map(item => item.label);
+  return { winner, options: [winner.label, ...distractors] };
+}
+
+const RAGEBAIT_MEANING = 'Gemeint sind Inhalte, die gezielt Wut provozieren sollen, um Reichweite zu erzeugen.';
+
+/** Numeric options around the real count: it, two higher ones and a lower one (0 at the bottom). */
+function countOptions(count: number): string[] {
+  return [...new Set([count, count + 2, count + 4, count > 2 ? count - 2 : 0])].map(value => number.format(value));
+}
+
+function jugendwortQuestion(word: { word: string; count: number; winnerYear?: number }): QuizQuestion | undefined {
+  if (word.count < 1) return undefined;
+  return question(
+    'quiz-youth-language',
+    `Wie oft fiel das Jugendwort ${word.winnerYear} „${word.word}“ bisher im Bundestag?`,
+    countOptions(word.count),
+    number.format(word.count),
+    `„${word.word}“ kommt auf ${number.format(word.count)} kontextuell bestätigte Treffer. ${word.word === 'ragebait' ? RAGEBAIT_MEANING : ''}`.trim(),
+  );
+}
+
 /** Builds deterministic, evidence-backed quiz questions for one edition. */
 export function buildEditionQuizModel(data: WrappedData): EditionQuizModel {
   const model: EditionQuizModel = {};
   addQuestion(model, 'quiz-topic-riser', () => {
     const comparison = data.yearOverYear;
-    const winner = comparison?.topics[0];
-    if (!comparison || !winner) return undefined;
+    const picked = comparison ? pickRiserOptions(comparison.topics) : undefined;
+    if (!comparison || !picked) return undefined;
+    const { winner } = picked;
     const baseline = comparison.baseline.editionId;
     const movement = winner.previousRank === null
       ? `neu auf Platz ${winner.currentRank}`
@@ -41,7 +78,7 @@ export function buildEditionQuizModel(data: WrappedData): EditionQuizModel {
     return question(
       'quiz-topic-riser',
       `Welches Thema ist gegenüber ${baseline} am stärksten aufgestiegen?`,
-      comparison.topics.map(item => item.label),
+      picked.options,
       winner.label,
       `${winner.label} stieg ${movement}.`,
     );
@@ -52,15 +89,16 @@ export function buildEditionQuizModel(data: WrappedData): EditionQuizModel {
     // A new top-list entry is useful data, but it has no actual prior rank and
     // therefore must not win a question specifically about moving up.
     const movements = comparison?.words.filter(item => item.previousRank !== null) ?? [];
-    const winner = movements[0];
-    if (!comparison || !winner) return undefined;
+    const picked = pickRiserOptions(movements);
+    if (!comparison || !picked) return undefined;
+    const { winner } = picked;
     const movement = winner.previousRank === null
       ? `neu auf Platz ${winner.currentRank}`
       : `von Platz ${winner.previousRank} auf Platz ${winner.currentRank}`;
     return question(
       'quiz-word-riser',
       'Was ist das Aufsteigerwort des Jahres?',
-      movements.map(item => item.label),
+      picked.options,
       winner.label,
       `„${winner.label}“ stieg ${movement}.`,
     );
@@ -68,6 +106,12 @@ export function buildEditionQuizModel(data: WrappedData): EditionQuizModel {
 
   addQuestion(model, 'quiz-youth-language', () => {
     const comparison = data.yearOverYear;
+    // The lexicon marks the current Jugendwort with a winner year (youth-words.json).
+    // When one exists the question is about it; without a hit it is omitted.
+    const jugendwort = [...(comparison?.youthLanguage.words ?? [])]
+      .filter(item => item.winnerYear !== undefined)
+      .sort((a, b) => (b.winnerYear ?? 0) - (a.winnerYear ?? 0))[0];
+    if (jugendwort) return jugendwortQuestion(jugendwort);
     const words = (comparison?.youthLanguage.words ?? []).filter(item => item.count > 0);
     const winner = words[0];
     if (!winner) return undefined;

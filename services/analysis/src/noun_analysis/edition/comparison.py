@@ -100,6 +100,9 @@ def _lexicon(path: Path) -> tuple[str, list[dict[str, Any]]]:
             raise ValueError(f"youth-word term {word!r} requires non-empty aliases")
         if not all(isinstance(pattern, str) and pattern for pattern in include_contexts + exclude_contexts):
             raise ValueError(f"youth-word term {word!r} has invalid context patterns")
+        winner = value.get("winner")
+        if winner is not None and (not isinstance(winner, int) or isinstance(winner, bool)):
+            raise ValueError(f"youth-word term {word!r} has an invalid winner year")
         key = word.strip().casefold()
         if key in seen:
             raise ValueError(f"duplicate youth-word term: {word}")
@@ -109,6 +112,7 @@ def _lexicon(path: Path) -> tuple[str, list[dict[str, Any]]]:
             "aliases": list(dict.fromkeys(alias.strip().casefold() for alias in aliases)),
             "includeContexts": include_contexts,
             "excludeContexts": exclude_contexts,
+            "winner": winner,
         })
     if len(normalized) < 4:
         raise ValueError("youth-word lexicon requires at least four distinct terms")
@@ -215,6 +219,7 @@ def build_year_over_year(
         "count": youth_current[term["word"]],
         "previousCount": youth_previous[term["word"]],
         "change": youth_current[term["word"]] - youth_previous[term["word"]],
+        **({"winnerYear": term["winner"]} if term["winner"] is not None else {}),
     } for term in terms]
     youth_words.sort(key=lambda item: (-item["count"], -item["change"], item["word"]))
 

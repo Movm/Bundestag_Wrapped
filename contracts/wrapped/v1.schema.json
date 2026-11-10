@@ -186,7 +186,7 @@
     },
     "YouthWordCount": {
       "type": "object", "additionalProperties": false, "required": ["word", "count", "previousCount", "change"],
-      "properties": { "word": { "$ref": "#/$defs/NonEmptyString" }, "count": { "$ref": "#/$defs/Count" }, "previousCount": { "$ref": "#/$defs/Count" }, "change": { "type": "integer" } }
+      "properties": { "word": { "$ref": "#/$defs/NonEmptyString" }, "count": { "$ref": "#/$defs/Count" }, "previousCount": { "$ref": "#/$defs/Count" }, "change": { "type": "integer" }, "winnerYear": { "$ref": "#/$defs/Count" } }
     },
     "YouthLanguageAnalysis": {
       "type": "object", "additionalProperties": false, "required": ["lexiconVersion", "words", "byParty", "bySpeaker"],
