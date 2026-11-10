@@ -1,5 +1,5 @@
 import { buildWordSearchIndex } from '@/domain/word-search-data';
-import type { WordRankingsAsset } from '@/generated/wrapped-contract-v1';
+import type { MatchAsset, WordRankingsAsset } from '@/generated/wrapped-contract-v1';
 import { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import type { UseQueryResult } from '@tanstack/react-query';
@@ -19,7 +19,7 @@ const STATIC_DATA_OPTIONS = {
   refetchOnReconnect: false,
 } as const;
 
-type AssetType = 'speaker-index' | 'speaker' | 'speeches' | 'words' | 'word-rankings' | 'topic-rankings';
+type AssetType = 'speaker-index' | 'speaker' | 'speeches' | 'words' | 'word-rankings' | 'topic-rankings' | 'match';
 type EditionQueryIdentity = { editionId?: string; manifest?: Pick<Edition, 'editionId' | 'dataVersion'> } | null;
 
 export function editionAssetQueryKey(
@@ -152,6 +152,16 @@ export function useTopicRankings(options?: { enabled?: boolean }) {
     'topic-rankings',
     (edition) => edition.manifest!.assets.topicRankings,
     (edition, asset) => editionAsset(edition, asset, 'TopicRankingsAsset'),
+    options?.enabled ?? true,
+  );
+}
+
+/** Perfect Match index; only editions whose manifest lists `assets.match` have one. */
+export function useMatchData(options?: { enabled?: boolean }) {
+  return useEditionJsonAsset<MatchAsset>(
+    'match',
+    (edition) => edition.manifest!.assets.match!,
+    (edition, asset) => editionAsset(edition, asset, 'MatchAsset'),
     options?.enabled ?? true,
   );
 }

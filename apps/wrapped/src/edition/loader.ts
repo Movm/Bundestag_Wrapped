@@ -3,7 +3,7 @@ import type { WrappedData } from '@/data/wrapped';
 import type { SpeakerIndex, SpeakerWrapped } from '@/data/speaker-wrapped';
 import type { Speech, TopicRankingsData } from '@/lib/search-utils';
 import { resolveAssetUrl, type Edition, type EditionRegistry } from './registry';
-import type { EditionContent, EditionSummary, WordsAsset, WordRankingsAsset } from '@/generated/wrapped-contract-v1';
+import type { EditionContent, EditionSummary, MatchAsset, WordsAsset, WordRankingsAsset } from '@/generated/wrapped-contract-v1';
 import { takePrefetched } from './prefetch';
 
 export type EditionLoadErrorKind = 'unknown-edition' | 'invalid-contract' | 'missing-asset' | 'http' | 'network';
@@ -34,7 +34,8 @@ export type EditionAssetDocument =
   | 'SpeechesAsset'
   | 'WordsAsset'
   | 'WordRankingsAsset'
-  | 'TopicRankingsAsset';
+  | 'TopicRankingsAsset'
+  | 'MatchAsset';
 
 type EditionAssetData = {
   SpeakerIndexAsset: SpeakerIndex;
@@ -43,6 +44,7 @@ type EditionAssetData = {
   WordsAsset: WordsAsset;
   WordRankingsAsset: WordRankingsAsset;
   TopicRankingsAsset: TopicRankingsData;
+  MatchAsset: MatchAsset;
 };
 
 export interface EditionAssetTiming {

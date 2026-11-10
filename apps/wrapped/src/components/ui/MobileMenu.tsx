@@ -38,12 +38,14 @@ interface MobileMenuProps {
 
 export function MobileMenu({ isOpen, onClose, onRestart }: MobileMenuProps) {
   const location = useLocation();
-  const surface = editionSurface(useOptionalEdition());
+  const edition = useOptionalEdition();
+  const surface = editionSurface(edition);
   const reduceMotion = useReducedMotion();
   const suffix = `${location.search}${location.hash}`;
   const navItems: NavItem[] = [
     { href: `${editionPath(surface)}${suffix}`, label: 'Bundestag Wrapped', title: 'Bundestag Wrapped', color: 'pink', rotate: -2 },
     { href: `${editionPath(surface, 'abgeordnete')}${suffix}`, label: 'Abgeordnete-Wrapped', title: 'Abgeordnete-Wrapped', color: 'violet', rotate: 1.5 },
+    ...(edition?.manifest?.assets.match ? [{ href: `${editionPath(surface, 'perfect-match')}${suffix}`, label: 'Perfect Match', title: 'Perfect Match', color: 'mint', rotate: -1.5 } satisfies NavItem] : []),
     { href: `${editionPath(surface, 'dokumentation')}${suffix}`, label: 'Dokumentation', title: 'Doku­mentation', color: 'white', rotate: -1, tile: true },
     { href: '/mcp', label: 'MCP-Server', title: 'MCP-Server', color: 'mint', rotate: 2, tile: true },
   ];
