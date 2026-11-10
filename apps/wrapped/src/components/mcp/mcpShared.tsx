@@ -2,11 +2,11 @@ import { useState, type ReactNode } from 'react';
 
 export const MCP_ENDPOINT = 'https://mcp.bundestag-wrapped.de/mcp';
 
-export const docLink = 'text-pink-400 hover:text-pink-300 underline underline-offset-2';
+export const docLink = 'text-on-accent hover:text-on-accent underline underline-offset-2';
 
 export function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <h2 className="font-mono text-xs uppercase tracking-[0.14em] text-white/40 border-b border-white/10 pb-3 mb-6">
+    <h2 className="font-mono text-xs uppercase tracking-[0.14em] text-on-muted border-b border-track pb-3 mb-6">
       {children}
     </h2>
   );
@@ -14,7 +14,7 @@ export function SectionLabel({ children }: { children: ReactNode }) {
 
 export function ToolChip({ name }: { name: string }) {
   return (
-    <span className="font-mono text-xs text-white/80 bg-white/5 border border-white/10 rounded-md px-2 py-1">
+    <span className="font-mono text-xs text-on bg-wr-card border border-track rounded-md px-2 py-1">
       {name}
     </span>
   );
@@ -30,13 +30,13 @@ export function EndpointBar() {
   };
   return (
     <div className="flex items-stretch gap-2">
-      <code className="flex-1 bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-sm text-white/90 font-mono overflow-x-auto flex items-center">
+      <code className="flex-1 bg-wr-ink border border-track rounded-xl px-4 py-3 text-sm text-on font-mono overflow-x-auto flex items-center">
         {MCP_ENDPOINT}
       </code>
       <button
         type="button"
         onClick={copy}
-        className="shrink-0 px-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-sm font-medium text-white/80 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-pink-400"
+        className="shrink-0 px-4 rounded-xl border border-track bg-wr-card hover:bg-bg-elevated text-sm font-medium text-on transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-pink-400"
         aria-label="Endpoint-URL kopieren"
       >
         {copied ? 'Kopiert ✓' : 'Kopieren'}

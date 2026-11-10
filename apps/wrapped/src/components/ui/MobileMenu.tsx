@@ -32,17 +32,16 @@ interface MobileMenuProps {
   variant?: 'dark' | 'light';
 }
 
-export function MobileMenu({ isOpen, onClose, onRestart, variant = 'dark' }: MobileMenuProps) {
+export function MobileMenu({ isOpen, onClose, onRestart }: MobileMenuProps) {
   const location = useLocation();
   const surface = editionSurface(useOptionalEdition());
   const suffix = `${location.search}${location.hash}`;
   const navItems: NavItem[] = [
-    { href: `${editionPath(surface)}${suffix}`, label: 'Bundestag Wrapped', icon: <Home size={20} /> },
-    { href: `${editionPath(surface, 'abgeordnete')}${suffix}`, label: 'Abgeordnete-Wrapped', icon: <Users size={20} /> },
-    { href: `${editionPath(surface, 'dokumentation')}${suffix}`, label: 'Dokumentation', icon: <BookOpen size={20} /> },
-    { href: '/mcp', label: 'MCP-Server', icon: <Plug size={20} /> },
+    { href: `${editionPath(surface)}${suffix}`, label: 'Bundestag Wrapped', icon: <Home size={22} aria-hidden="true" /> },
+    { href: `${editionPath(surface, 'abgeordnete')}${suffix}`, label: 'Abgeordnete-Wrapped', icon: <Users size={22} aria-hidden="true" /> },
+    { href: `${editionPath(surface, 'dokumentation')}${suffix}`, label: 'Dokumentation', icon: <BookOpen size={22} aria-hidden="true" /> },
+    { href: '/mcp', label: 'MCP-Server', icon: <Plug size={22} aria-hidden="true" /> },
   ];
-  const isDark = variant === 'dark';
   const currentPath = location.pathname;
   const isMainPage = currentPath === editionPath(surface);
   const resetQuiz = useQuizStore((state) => state.reset);
@@ -60,113 +59,53 @@ export function MobileMenu({ isOpen, onClose, onRestart, variant = 'dark' }: Mob
     }
   };
 
+  const linkClass = (active: boolean) =>
+    `group flex items-center gap-4 rounded-2xl px-4 py-3 font-wide font-extrabold uppercase leading-tight tracking-tight text-[clamp(1.25rem,1rem+2vw,1.75rem)] transition-colors ${
+      active ? 'bg-wr-pink text-wr-ink' : 'text-on hover:bg-wr-card'
+    }`;
+
   return (
     <AccessibleDialog open={isOpen} onClose={onClose} label="Hauptnavigation">
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Enhanced Backdrop with blur */}
+          {/* Solid overlay, no blur */}
           <motion.div
-            className="fixed inset-0 z-60 bg-black/70 backdrop-blur-md"
+            className="menu-backdrop"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
+            transition={{ duration: 0.2 }}
             onClick={onClose}
             aria-hidden="true"
-          >
-            {/* Subtle pink gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-pink-900/20 via-transparent to-transparent" />
-          </motion.div>
+          />
 
-          {/* Premium Drawer */}
+          {/* Flat ink drawer */}
           <motion.nav
-            className={`fixed top-0 right-0 h-full w-[300px] max-w-[85vw] z-70 overflow-y-auto overscroll-contain safe-area-top safe-area-bottom
-              ${isDark
-                ? 'bg-gradient-to-b from-[#1a1a24] via-[#12121a] to-[#0a0a0f]'
-                : 'bg-white'
-              }
-              border-l ${isDark ? 'border-pink-500/20' : 'border-gray-200'}
-              shadow-2xl ${isDark ? 'shadow-pink-500/10' : ''}`}
-            style={isDark ? {
-              boxShadow: 'inset 0 0 80px rgba(219, 39, 119, 0.08), -20px 0 60px rgba(0, 0, 0, 0.5)',
-            } : undefined}
+            className="menu-drawer overflow-y-auto overscroll-contain safe-area-top safe-area-bottom"
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 28, stiffness: 300 }}
+            transition={{ type: 'spring', damping: 30, stiffness: 320 }}
             aria-label="Hauptnavigation"
           >
-            {/* Decorative pink orb */}
-            {isDark && (
-              <div
-                className="absolute -bottom-32 -right-32 w-64 h-64 rounded-full opacity-30 blur-3xl pointer-events-none"
-                style={{
-                  background: 'radial-gradient(circle, rgba(219, 39, 119, 0.4) 0%, transparent 70%)',
-                }}
-              />
-            )}
-
-            {/* Close button */}
-            <div className="absolute top-6 right-6">
-              <button
-                onClick={onClose}
-                className={`p-2 rounded-full transition-colors
-                  ${isDark
-                    ? 'bg-white/5 hover:bg-pink-500/20 text-white/60 hover:text-pink-400'
-                    : 'bg-gray-100 hover:bg-gray-200 text-gray-500'
-                  }`}
-                aria-label="Menü schließen"
-              >
-                <X size={20} aria-hidden="true" />
+            <div className="absolute top-4 right-4">
+              <button onClick={onClose} className="ds-icon-button" aria-label="Menü schließen">
+                <X size={22} aria-hidden="true" />
               </button>
             </div>
 
-            <div className="flex flex-col min-h-full pt-20 px-5">
-              {/* Navigation items */}
-              <ul className="space-y-2">
+            <div className="flex flex-col min-h-full pt-20 px-4 sm:px-6">
+              <ul className="space-y-1">
                 {navItems.map((item) => {
                   const isActive = !item.external && currentPath === item.href;
-
-                  const linkClassName = `group relative flex items-center gap-3 px-4 py-3.5 rounded-xl transition-colors
-                    ${isDark
-                      ? isActive
-                        ? 'bg-gradient-to-r from-pink-600/25 to-pink-500/10 text-white'
-                        : 'text-white/70 hover:text-white hover:bg-white/5'
-                      : isActive
-                        ? 'bg-pink-50 text-pink-700'
-                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                    }`;
-
-                  const linkContent = (
+                  const content = (
                     <>
-                      {/* Active indicator bar */}
-                      {isActive && isDark && (
-                        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 rounded-full bg-gradient-to-b from-pink-400 to-pink-600" />
-                      )}
-
-                      {/* Icon container */}
-                      <span className={`flex items-center justify-center w-9 h-9 rounded-lg transition-colors
-                        ${isDark
-                          ? isActive
-                            ? 'bg-pink-500/20 text-pink-400'
-                            : 'bg-white/5 text-white/50 group-hover:bg-pink-500/10 group-hover:text-pink-400'
-                          : isActive
-                            ? 'bg-pink-100 text-pink-600'
-                            : 'bg-gray-100 text-gray-600 group-hover:text-pink-500'
-                        }`}
-                      >
-                        {item.icon}
-                      </span>
-
-                      <span className="font-medium">{item.label}</span>
-
-                      {item.external && (
-                        <ExternalLink size={14} className="ml-auto opacity-40" />
-                      )}
+                      <span className="shrink-0" aria-hidden="true">{item.icon}</span>
+                      <span className="min-w-0 [overflow-wrap:anywhere]">{item.label}</span>
+                      {item.external && <ExternalLink size={16} className="ml-auto" aria-hidden="true" />}
                     </>
                   );
-
                   return (
                     <li key={item.href}>
                       {item.external ? (
@@ -175,18 +114,18 @@ export function MobileMenu({ isOpen, onClose, onRestart, variant = 'dark' }: Mob
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={() => handleNavClick(item)}
-                          className={linkClassName}
+                          className={linkClass(false)}
                         >
-                          {linkContent}
+                          {content}
                         </a>
                       ) : (
                         <Link
                           to={item.href}
                           onClick={() => handleNavClick(item)}
-                          className={linkClassName}
+                          className={linkClass(isActive)}
                           aria-current={isActive ? 'page' : undefined}
                         >
-                          {linkContent}
+                          {content}
                         </Link>
                       )}
                     </li>
@@ -196,71 +135,32 @@ export function MobileMenu({ isOpen, onClose, onRestart, variant = 'dark' }: Mob
                 {/* Restart option - only on main wrapped page */}
                 {isMainPage && (
                   <li>
-                    <button
-                      onClick={handleRestart}
-                      className={`group relative flex items-center gap-3 px-4 py-3.5 rounded-xl transition-colors w-full text-left
-                        ${isDark
-                          ? 'text-white/70 hover:text-white hover:bg-white/5'
-                          : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
-                        }`}
-                    >
-                      <span className={`flex items-center justify-center w-9 h-9 rounded-lg transition-colors
-                        ${isDark
-                          ? 'bg-white/5 text-white/50 group-hover:bg-pink-500/10 group-hover:text-pink-400'
-                          : 'bg-gray-100 text-gray-600 group-hover:text-pink-500'
-                        }`}
-                      >
-                        <RotateCcw size={20} />
-                      </span>
-                      <span className="font-medium">Neu starten</span>
+                    <button onClick={handleRestart} className={`${linkClass(false)} w-full text-left`}>
+                      <RotateCcw size={22} aria-hidden="true" className="shrink-0" />
+                      <span>Neu starten</span>
                     </button>
                   </li>
                 )}
               </ul>
 
-              {/* Pink separator line */}
-              <div className={`mt-auto mb-6 h-px ${isDark ? 'bg-gradient-to-r from-transparent via-pink-500/30 to-transparent' : 'bg-gray-200'}`} />
+              <div className="mt-auto mb-6 h-1 rounded-full bg-wr-card" aria-hidden="true" />
 
-              {/* Footer area */}
               <div className="pb-8">
-                <div className="flex flex-wrap items-center gap-2 mb-3">
-                  {FOOTER_LINKS.map((item, index) => {
-                    const footerLinkClassName = `text-xs transition-colors
-                      ${isDark
-                        ? 'text-white/65 hover:text-pink-400'
-                        : 'text-gray-600 hover:text-pink-500'
-                      }`;
-
-                    return (
-                      <span key={item.href} className="flex items-center">
-                        {item.external ? (
-                          <a
-                            href={item.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={footerLinkClassName}
-                          >
-                            {item.label}
-                          </a>
-                        ) : (
-                          <Link
-                            to={item.href}
-                            onClick={() => handleNavClick(item)}
-                            className={footerLinkClassName}
-                          >
-                            {item.label}
-                          </Link>
-                        )}
-                        {index < FOOTER_LINKS.length - 1 && (
-                          <span className={`mx-2 ${isDark ? 'text-white/20' : 'text-gray-600'}`}>·</span>
-                        )}
-                      </span>
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-1 mb-3">
+                  {FOOTER_LINKS.map((item) => {
+                    const cls = 'inline-flex min-h-11 items-center text-base text-on-muted underline underline-offset-4 hover:text-on';
+                    return item.external ? (
+                      <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" className={cls}>
+                        {item.label}
+                      </a>
+                    ) : (
+                      <Link key={item.href} to={item.href} onClick={() => handleNavClick(item)} className={cls}>
+                        {item.label}
+                      </Link>
                     );
                   })}
                 </div>
-                <p className={`text-xs ${isDark ? 'text-white/60' : 'text-gray-600'}`}>
-                  Daten aus der 21. Wahlperiode
-                </p>
+                <p className="text-base text-on-muted">Daten aus der 21. Wahlperiode</p>
               </div>
             </div>
           </motion.nav>

@@ -46,16 +46,16 @@
   --font-heading: 'Noto Sans', system-ui, sans-serif;
 
   /* === Brand / Accent Colors (Pink-based, no purple) === */
-  --color-brand-primary: #db2777;
-  --color-brand-secondary: #ec4899;
-  --color-brand-light: #f472b6;
-  --color-brand-gradient-start: #be185d;
-  --color-brand-gradient-mid: #db2777;
-  --color-brand-gradient-end: #f472b6;
+  --color-brand-primary: #ff4fa0;
+  --color-brand-secondary: #ff4fa0;
+  --color-brand-light: #ff8fc0;
+  --color-brand-gradient-start: #ff4fa0;
+  --color-brand-gradient-mid: #ff4fa0;
+  --color-brand-gradient-end: #ff4fa0;
 
   /* Legacy accent aliases */
-  --color-accent: #db2777;
-  --color-accent-light: #ec4899;
+  --color-accent: #ff4fa0;
+  --color-accent-light: #ff8fc0;
 
   /* === Schwarz-Rot-Gold (German Flag) === */
   --color-flag-schwarz: #000000;
@@ -63,15 +63,15 @@
   --color-flag-gold: #FFCC00;
 
   /* === Backgrounds === */
-  --color-bg-primary: #0a0a0f;
-  --color-bg-secondary: #12121a;
-  --color-bg-card: #1a1a24;
-  --color-bg-elevated: #242430;
+  --color-bg-primary: #0e0a14;
+  --color-bg-secondary: #0e0a14;
+  --color-bg-card: #1c1030;
+  --color-bg-elevated: #3a1670;
 
-  /* === Text === */
+  /* === Text === (secondary 11.5:1 / muted 8.0:1 on ink, 10.6 / 7.4 on card) */
   --color-text-primary: #ffffff;
-  --color-text-secondary: #a1a1aa;
-  --color-text-muted: #71717a;
+  --color-text-secondary: #c9c4d4;
+  --color-text-muted: #a9a3b6;
 
   /* === Party Colors === */
   --color-spd: #E3000F;
@@ -109,53 +109,36 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    180deg,
-    var(--color-flag-schwarz) 0%,
-    var(--color-flag-rot) 50%,
-    var(--color-flag-gold) 100%
-  );
+  background: var(--color-brand-primary);
   border-radius: 3px;
 }
 
-/* Animated gradient text */
+/* Flat pink text (formerly an animated gradient) */
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-brand-gradient-start) 0%, var(--color-brand-gradient-mid) 50%, var(--color-brand-gradient-end) 100%);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradient-shift 3s ease infinite;
+  color: var(--color-brand-primary);
 }
 
-@keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-/* Glass effect */
+/* Flat card (formerly glass) */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-bg-elevated);
 }
 
 /* Reusable page/slide backgrounds */
 .page-bg {
-  background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+  background: var(--color-bg-primary);
 }
 
 .page-bg-sticky {
-  background: color-mix(in srgb, var(--color-bg-primary) 90%, transparent);
-  backdrop-filter: blur(12px);
+  background: var(--color-bg-primary);
 }
 
 .modal-bg {
-  background: linear-gradient(180deg, var(--color-bg-elevated) 0%, var(--color-bg-primary) 100%);
+  background: var(--color-bg-card);
 }
 
 /* Schwarz-Rot-Gold accent utilities */
@@ -194,37 +177,32 @@ body {
 
 /* Header - light theme variant */
 .header-glass-light {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
+  background: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* Menu backdrop overlay */
+/* Menu backdrop overlay: solid, no blur */
 .menu-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
+  background: rgba(14, 10, 20, 0.85);
   z-index: 60;
 }
 
-/* Menu drawer - dark theme */
+/* Menu drawer: flat ink panel */
 .menu-drawer {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  width: 280px;
-  max-width: 80vw;
-  background: linear-gradient(180deg, var(--color-bg-elevated) 0%, var(--color-bg-primary) 100%);
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  width: min(26rem, 92vw);
+  background: var(--color-bg-primary);
+  border-left: 4px solid var(--color-brand-primary);
   z-index: 70;
 }
 
-/* Menu drawer - light theme */
 .menu-drawer-light {
-  background: #ffffff;
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--color-bg-primary);
 }
 
 /* ============================================
@@ -442,7 +420,7 @@ body {
   padding: 0.5rem 0.75rem;
   border: 1px solid #52525b;
   border-radius: 0.75rem;
-  background: #12121a;
+  background: #1c1030;
   color: white;
   font-size: 0.75rem;
 }
@@ -462,7 +440,7 @@ body {
   align-items: center;
   gap: 0 0.5rem;
   padding: 0.25rem max(1rem, env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) max(1rem, env(safe-area-inset-left, 0px));
-  background: #12121a;
+  background: #1c1030;
   border-top: 1px solid #52525b;
   position: absolute;
   bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px));
@@ -489,7 +467,7 @@ body {
   color: white;
 }
 .accessible-dialog::backdrop { background: rgb(0 0 0 / 60%); }
-:focus-visible { outline: 3px solid #ec4899; outline-offset: 3px; }
+:focus-visible { outline: 3px solid #ff4fa0; outline-offset: 3px; }
 button, a, input, select, textarea { touch-action: manipulation; }
 button { -webkit-user-select: none; user-select: none; }
 button[aria-label], button:has(> svg) { min-width: 44px; min-height: 44px; }

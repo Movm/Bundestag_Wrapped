@@ -24,20 +24,11 @@ export function SearchHero({ state, updateState }: SearchHeroProps) {
       animate={{ opacity: 1 }}
       className="min-h-screen flex flex-col items-center justify-center px-4 pb-20"
     >
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.1, type: 'spring', stiffness: 200 }}
-        className="text-8xl mb-6"
-      >
-        🏛️
-      </motion.div>
-
       <motion.h1
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
-        className="text-4xl md:text-5xl font-bold text-white mb-3 text-center"
+        className="ds-display ds-display--lg mb-3 text-center"
       >
         Bundestag Suche
       </motion.h1>
@@ -46,7 +37,7 @@ export function SearchHero({ state, updateState }: SearchHeroProps) {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.3 }}
-        className="text-white/50 mb-8 text-center"
+        className="text-on-muted mb-8 text-center"
       >
         Durchsuche alle Reden der 21. Wahlperiode
       </motion.p>
@@ -58,14 +49,14 @@ export function SearchHero({ state, updateState }: SearchHeroProps) {
         className="w-full max-w-2xl mb-6"
       >
         <div
-          className={`relative bg-white/5 border-2 rounded-2xl transition-all duration-300 ${
+          className={`relative bg-wr-card border-2 rounded-2xl transition-all duration-300 ${
             inputFocused
-              ? 'border-pink-500/70 shadow-lg shadow-pink-500/20 scale-[1.02]'
-              : 'border-white/10 hover:border-white/20'
+              ? 'border-wr-pink  scale-[1.02]'
+              : 'border-track hover:border-track'
           }`}
         >
           <svg
-            className="absolute left-5 top-1/2 -translate-y-1/2 w-6 h-6 text-white/40"
+            className="absolute left-5 top-1/2 -translate-y-1/2 w-6 h-6 text-on-muted"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -85,7 +76,7 @@ export function SearchHero({ state, updateState }: SearchHeroProps) {
             onQueryChange={(q) => updateState({ q })}
             onFocus={() => setInputFocused(true)}
             onBlur={() => setInputFocused(false)}
-            className="w-full bg-transparent px-14 py-5 text-lg text-white placeholder:text-white/40 focus:outline-none"
+            className="w-full bg-transparent px-14 py-5 text-lg text-on placeholder:text-on-muted focus:outline-none"
             aria-label="Suche nach Themen, Redner:innen oder Parteien"
           />
         </div>
@@ -110,7 +101,7 @@ export function SearchHero({ state, updateState }: SearchHeroProps) {
         transition={{ delay: 0.6 }}
         className="text-center"
       >
-        <p className="text-white/40 text-sm mb-4">Probiere es mit:</p>
+        <p className="text-on-muted text-sm mb-4">Probiere es mit:</p>
         <div className="flex flex-wrap justify-center gap-2">
           {SUGGESTION_TERMS.map((term, i) => (
             <motion.button
@@ -119,7 +110,7 @@ export function SearchHero({ state, updateState }: SearchHeroProps) {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.7 + i * 0.05 }}
               onClick={() => updateState({ q: term })}
-              className="px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-full text-white/70 hover:text-white text-sm transition-all"
+              className="px-4 py-2 bg-wr-card hover:bg-bg-elevated border border-track hover:border-track rounded-full text-on-muted hover:text-on text-sm transition-all"
             >
               {term}
             </motion.button>
@@ -128,8 +119,8 @@ export function SearchHero({ state, updateState }: SearchHeroProps) {
       </motion.div>
 
       <footer className="fixed bottom-0 left-0 right-0 p-4 pointer-events-none">
-        <div className="flex justify-center gap-4 text-xs text-white/40">
-          <Link to={editionPath(surface)} className="hover:text-white/60 transition-colors pointer-events-auto">
+        <div className="flex justify-center gap-4 text-xs text-on-muted">
+          <Link to={editionPath(surface)} className="hover:text-on-muted transition-colors pointer-events-auto">
             ← Zurück
           </Link>
           <span>|</span>
@@ -137,12 +128,12 @@ export function SearchHero({ state, updateState }: SearchHeroProps) {
             href="https://www.moritz-waechter.de/impressum"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white/60 transition-colors pointer-events-auto"
+            className="hover:text-on-muted transition-colors pointer-events-auto"
           >
             Impressum
           </a>
           <span>|</span>
-          <Link to="/datenschutz" className="hover:text-white/60 transition-colors pointer-events-auto">
+          <Link to="/datenschutz" className="hover:text-on-muted transition-colors pointer-events-auto">
             Datenschutz
           </Link>
         </div>

@@ -21,7 +21,7 @@ export function SpeechDetailModal({ speech, onClose }: SpeechDetailModalProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+        className="absolute inset-0 bg-wr-ink"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -30,27 +30,27 @@ export function SpeechDetailModal({ speech, onClose }: SpeechDetailModalProps) {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 100 }}
-        className="relative w-full sm:max-w-2xl max-h-[90dvh] bg-bg-secondary border border-white/10 rounded-t-2xl sm:rounded-2xl overflow-hidden flex flex-col"
+        className="relative w-full sm:max-w-2xl max-h-[90dvh] bg-bg-secondary border border-track rounded-t-2xl sm:rounded-2xl overflow-hidden flex flex-col"
       >
-        <div className="shrink-0 flex items-start justify-between gap-4 p-4 sm:p-6 border-b border-white/10">
+        <div className="shrink-0 flex items-start justify-between gap-4 p-4 sm:p-6 border-b border-track">
           <div>
             <div className="flex items-center gap-2 flex-wrap mb-1">
-              <h2 id="speech-modal-title" className="text-xl font-bold text-white">{speech.speaker}</h2>
+              <h2 id="speech-modal-title" className="text-xl font-bold text-on">{speech.speaker}</h2>
               <span
-                className={`px-2 py-0.5 rounded text-xs font-medium text-white ${
+                className={`px-2 py-0.5 rounded text-xs font-medium text-on ${
                   PARTY_BG_CLASSES[speech.party] || 'bg-gray-500'
                 }`}
               >
                 {speech.party}
               </span>
             </div>
-            <p className="text-white/50 text-sm">
+            <p className="text-on-muted text-sm">
               {speech.words.toLocaleString('de-DE')} Wörter · {speech.type}
             </p>
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-white/10 rounded-lg transition-colors text-white/60 hover:text-white"
+            className="p-2 hover:bg-bg-elevated rounded-lg transition-colors text-on-muted hover:text-on"
             aria-label="Dialog schließen"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -61,14 +61,14 @@ export function SpeechDetailModal({ speech, onClose }: SpeechDetailModalProps) {
 
         <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain p-4 sm:p-6">
           <div className="prose prose-invert prose-sm max-w-none">
-            <p className="text-white/80 leading-relaxed whitespace-pre-wrap">
+            <p className="text-on leading-relaxed whitespace-pre-wrap">
               {speech.text}
             </p>
           </div>
         </div>
 
-        <div className="p-4 border-t border-white/10 bg-bg-primary/50">
-          <p className="text-center text-white/65 text-xs">
+        <div className="p-4 border-t border-track bg-bg-primary/50">
+          <p className="text-center text-on-muted text-xs">
             Quelle: Deutscher Bundestag, 21. Wahlperiode
           </p>
         </div>

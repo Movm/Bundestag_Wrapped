@@ -109,7 +109,7 @@ export function HeroStat({
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 0.4, duration: 0.5 }}
-        className="text-2xl md:text-3xl lg:text-4xl text-white/70 font-medium"
+        className="text-2xl md:text-3xl lg:text-4xl text-on-muted font-medium"
       >
         {label}
       </motion.p>
@@ -120,7 +120,7 @@ export function HeroStat({
           initial={{ opacity: 0, y: 10 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.6, duration: 0.5 }}
-          className="text-lg md:text-xl lg:text-2xl text-white/50 mt-3"
+          className="text-lg md:text-xl lg:text-2xl text-on-muted mt-3"
         >
           {sublabel}
         </motion.p>

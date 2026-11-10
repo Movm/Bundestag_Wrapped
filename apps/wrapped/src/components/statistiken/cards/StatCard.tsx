@@ -54,8 +54,8 @@ export function StatCard({
       <motion.article
         whileHover={{ scale: 1.02, y: -4 }}
         whileTap={{ scale: 0.98 }}
-        className="relative bg-white/5 rounded-2xl p-6 border border-white/10
-                   hover:border-white/20 transition-colors cursor-pointer group overflow-hidden"
+        className="relative bg-wr-card rounded-2xl p-6 border border-track
+                   hover:border-track transition-colors cursor-pointer group overflow-hidden"
       >
         {/* Accent gradient background */}
         <div
@@ -86,16 +86,16 @@ export function StatCard({
             >
               {formatValue(heroValue, format)}
             </span>
-            <p className="text-white/70 text-sm mt-1">{heroLabel}</p>
+            <p className="text-on-muted text-sm mt-1">{heroLabel}</p>
             {heroSublabel && (
-              <p className="text-white/50 text-xs mt-0.5">{heroSublabel}</p>
+              <p className="text-on-muted text-xs mt-0.5">{heroSublabel}</p>
             )}
           </div>
 
           {/* Title + arrow */}
           <div className="flex items-center justify-between">
-            <h3 className="text-white font-bold">{config.title}</h3>
-            <span className="text-white/40 group-hover:text-white/80 group-hover:translate-x-1 transition-all duration-200">
+            <h3 className="text-on font-bold">{config.title}</h3>
+            <span className="text-on-muted group-hover:text-on group-hover:translate-x-1 transition-all duration-200">
               →
             </span>
           </div>

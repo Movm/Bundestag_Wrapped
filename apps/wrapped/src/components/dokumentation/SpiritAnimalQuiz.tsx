@@ -30,7 +30,7 @@ export function SpiritAnimalQuiz() {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-gradient-to-br from-pink-50 to-pink-50 border border-pink-200 rounded-xl p-8 text-center"
+        className="bg-wr-card border border-track rounded-xl p-8 text-center"
       >
         <motion.div
           initial={{ scale: 0 }}
@@ -40,12 +40,12 @@ export function SpiritAnimalQuiz() {
         >
           {result.emoji}
         </motion.div>
-        <h4 className="text-2xl font-bold text-stone-900 mb-1">{result.name}</h4>
-        <p className="text-pink-600 font-medium mb-4">{result.title}</p>
-        <p className="text-stone-600 mb-6">{result.reason}</p>
+        <h4 className="text-2xl font-bold text-on mb-1">{result.name}</h4>
+        <p className="text-on-accent font-medium mb-4">{result.title}</p>
+        <p className="text-on-muted mb-6">{result.reason}</p>
         <button
           onClick={resetQuiz}
-          className="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white rounded-lg text-sm font-medium transition-colors"
+          className="px-4 py-2 bg-wr-pink hover:bg-wr-pink text-wr-ink rounded-lg text-sm font-medium transition-colors"
         >
           Nochmal spielen
         </button>
@@ -56,27 +56,27 @@ export function SpiritAnimalQuiz() {
   const question = quizQuestions[currentQuestion];
 
   return (
-    <div className="bg-stone-50 border border-stone-200 rounded-xl p-6">
+    <div className="bg-wr-card border border-track rounded-xl p-6">
       <div className="flex items-center justify-between mb-4">
-        <span className="text-xs font-mono text-stone-400">
+        <span className="text-xs font-mono text-on-muted">
           Frage {currentQuestion + 1} von {quizQuestions.length}
         </span>
         <div className="flex gap-1">
           {quizQuestions.map((_, i) => (
             <div
               key={i}
-              className={`w-2 h-2 rounded-full ${i <= currentQuestion ? 'bg-pink-500' : 'bg-stone-300'}`}
+              className={`w-2 h-2 rounded-full ${i <= currentQuestion ? 'bg-wr-pink' : 'bg-wr-card'}`}
             />
           ))}
         </div>
       </div>
-      <h4 className="text-lg font-medium text-stone-900 mb-4">{question.question}</h4>
+      <h4 className="text-lg font-medium text-on mb-4">{question.question}</h4>
       <div className="space-y-2">
         {question.options.map((option) => (
           <button
             key={option.value}
             onClick={() => handleAnswer(option.value)}
-            className="w-full text-left px-4 py-3 bg-white border border-stone-200 rounded-lg hover:border-pink-300 hover:bg-pink-50 transition-colors text-sm text-stone-700"
+            className="w-full text-left px-4 py-3 bg-wr-card border border-track rounded-lg hover:border-wr-pink hover:bg-bg-elevated transition-colors text-sm text-on-muted"
           >
             {option.label}
           </button>

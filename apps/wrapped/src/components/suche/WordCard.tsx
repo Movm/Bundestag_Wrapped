@@ -42,7 +42,7 @@ export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: Wo
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ delay: Math.min(index * 0.02, 0.3) }}
-      className="bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl overflow-hidden transition-all"
+      className="bg-wr-card hover:bg-bg-elevated border border-track rounded-xl overflow-hidden transition-all"
     >
       <button
         onClick={() => setExpanded(!expanded)}
@@ -52,14 +52,14 @@ export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: Wo
       >
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0 flex-1">
-            <h3 className="text-white font-medium text-lg">
+            <h3 className="text-on font-medium text-lg">
               {highlightedWord}
             </h3>
-            <div className="text-white/50 text-sm mt-0.5">
+            <div className="text-on-muted text-sm mt-0.5">
               {word.total.toLocaleString('de-DE')}x verwendet
             </div>
           </div>
-          <div className="flex-shrink-0 text-white/40">
+          <div className="flex-shrink-0 text-on-muted">
             <motion.span
               animate={{ rotate: expanded ? 180 : 0 }}
               transition={{ duration: 0.2 }}
@@ -80,8 +80,8 @@ export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: Wo
 
             return (
               <div key={party} className="flex items-center gap-2">
-                <div className="w-20 text-xs text-white/60 truncate">{party}</div>
-                <div className="flex-1 h-4 bg-white/5 rounded-full overflow-hidden">
+                <div className="w-20 text-xs text-on-muted truncate">{party}</div>
+                <div className="flex-1 h-4 bg-wr-card rounded-full overflow-hidden">
                   <div
                     className="h-full rounded-full transition-all duration-300"
                     style={{
@@ -90,14 +90,14 @@ export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: Wo
                     }}
                   />
                 </div>
-                <div className="w-16 text-xs text-white/50 text-right">
+                <div className="w-16 text-xs text-on-muted text-right">
                   {stats.per1000.toFixed(2)}‰
                 </div>
               </div>
             );
           })}
           {!expanded && sortedParties.length > 3 && (
-            <div className="text-xs text-white/40 text-center pt-1">
+            <div className="text-xs text-on-muted text-center pt-1">
               +{sortedParties.length - 3} weitere Parteien
             </div>
           )}
@@ -115,36 +115,36 @@ export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: Wo
             transition={{ duration: 0.2 }}
             className="overflow-hidden"
           >
-            <div className="px-4 pb-4 pt-2 border-t border-white/10">
+            <div className="px-4 pb-4 pt-2 border-t border-track">
               {/* Top speakers from ranking data */}
               {ranking?.top && ranking.top.length > 0 && (
                 <div className="mb-4">
-                  <h4 className="text-white/60 text-xs uppercase tracking-wider mb-2">
+                  <h4 className="text-on-muted text-xs uppercase tracking-wider mb-2">
                     Top Sprecher ({ranking.speakers} Abgeordnete gesamt)
                   </h4>
                   <div className="space-y-1 max-h-72 overflow-y-auto">
                     {ranking.top.map((speaker, idx) => (
                       <div
                         key={`${speaker.speaker}-${idx}`}
-                        className="flex items-center gap-2 text-sm hover:bg-white/5 rounded px-2 py-1.5 -mx-2 transition-colors"
+                        className="flex items-center gap-2 text-sm hover:bg-bg-elevated rounded px-2 py-1.5 -mx-2 transition-colors"
                       >
-                        <span className="text-white/40 w-6 text-right shrink-0">
+                        <span className="text-on-muted w-6 text-right shrink-0">
                           {idx + 1}.
                         </span>
                         <span
-                          className={`px-1.5 py-0.5 rounded text-xs text-white shrink-0 ${
+                          className={`px-1.5 py-0.5 rounded text-xs text-on shrink-0 ${
                             PARTY_BG_CLASSES[speaker.party] || 'bg-gray-500'
                           }`}
                         >
                           {speaker.party}
                         </span>
-                        <span className="text-white/80 truncate">
+                        <span className="text-on truncate">
                           {speaker.speaker}
                         </span>
-                        <span className={`text-xs shrink-0 ${speaker.gender === 'female' ? 'text-pink-400' : 'text-blue-400'}`}>
+                        <span className={`text-xs shrink-0 ${speaker.gender === 'female' ? 'text-on-accent' : 'text-blue-400'}`}>
                           {speaker.gender === 'female' ? '♀' : '♂'}
                         </span>
-                        <span className="text-white/40 ml-auto shrink-0">
+                        <span className="text-on-muted ml-auto shrink-0">
                           {speaker.count}×
                         </span>
                       </div>
@@ -156,7 +156,7 @@ export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: Wo
               {/* Fallback: Top speakers from word index (if no ranking data) */}
               {!ranking?.top && word.topSpeakers && word.topSpeakers.length > 0 && (
                 <div className="mb-4">
-                  <h4 className="text-white/60 text-xs uppercase tracking-wider mb-2">
+                  <h4 className="text-on-muted text-xs uppercase tracking-wider mb-2">
                     Top Sprecher
                   </h4>
                   <div className="space-y-1">
@@ -164,15 +164,15 @@ export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: Wo
                       <Link
                         key={speaker.slug}
                         to={editionPath(surface, `abgeordnete/${speaker.slug}`)}
-                        className="flex items-center gap-2 text-sm hover:bg-white/5 rounded px-2 py-1 -mx-2 transition-colors"
+                        className="flex items-center gap-2 text-sm hover:bg-bg-elevated rounded px-2 py-1 -mx-2 transition-colors"
                       >
-                        <span className="text-white/40 w-6 text-right shrink-0">
+                        <span className="text-on-muted w-6 text-right shrink-0">
                           {idx + 1}.
                         </span>
-                        <span className="text-white/80 hover:text-pink-300 truncate">
+                        <span className="text-on hover:text-on-accent truncate">
                           {speaker.name}
                         </span>
-                        <span className="text-white/40 ml-auto shrink-0">
+                        <span className="text-on-muted ml-auto shrink-0">
                           {speaker.count}×
                         </span>
                       </Link>
@@ -184,11 +184,11 @@ export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: Wo
               {/* Gender breakdown */}
               {ranking?.byGender && (
                 <div className="mb-4">
-                  <h4 className="text-white/60 text-xs uppercase tracking-wider mb-2">
+                  <h4 className="text-on-muted text-xs uppercase tracking-wider mb-2">
                     Nach Geschlecht
                   </h4>
                   <div className="flex items-center gap-2">
-                    <div className="flex-1 h-3 bg-white/10 rounded-full overflow-hidden flex">
+                    <div className="flex-1 h-3 bg-wr-card rounded-full overflow-hidden flex">
                       <div
                         className="h-full bg-blue-400"
                         style={{
@@ -197,7 +197,7 @@ export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: Wo
                         title={`Männlich: ${ranking.byGender.male.toLocaleString('de-DE')}`}
                       />
                       <div
-                        className="h-full bg-pink-400"
+                        className="h-full bg-wr-pink"
                         style={{
                           width: `${(ranking.byGender.female / ranking.total) * 100}%`,
                         }}
@@ -205,7 +205,7 @@ export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: Wo
                       />
                     </div>
                   </div>
-                  <div className="flex justify-between text-xs text-white/50 mt-1">
+                  <div className="flex justify-between text-xs text-on-muted mt-1">
                     <span>♂ {Math.round((ranking.byGender.male / ranking.total) * 100)}%</span>
                     <span>♀ {Math.round((ranking.byGender.female / ranking.total) * 100)}%</span>
                   </div>
@@ -214,7 +214,7 @@ export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: Wo
 
               {/* Party breakdown table */}
               <div className="mb-4">
-                <h4 className="text-white/60 text-xs uppercase tracking-wider mb-2">
+                <h4 className="text-on-muted text-xs uppercase tracking-wider mb-2">
                   Nutzung nach Partei
                 </h4>
                 <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
@@ -224,13 +224,13 @@ export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: Wo
                     return (
                       <div key={party} className="flex items-center justify-between">
                         <span
-                          className={`px-1.5 py-0.5 rounded text-xs text-white ${
+                          className={`px-1.5 py-0.5 rounded text-xs text-on ${
                             PARTY_BG_CLASSES[party] || 'bg-gray-500'
                           }`}
                         >
                           {party}
                         </span>
-                        <span className="text-white/50">
+                        <span className="text-on-muted">
                           {stats.count.toLocaleString('de-DE')}
                         </span>
                       </div>
@@ -247,7 +247,7 @@ export function WordCard({ word, ranking, query, index, onSearchInSpeeches }: Wo
                       e.stopPropagation();
                       onSearchInSpeeches(word.word);
                     }}
-                    className="flex-1 text-sm bg-pink-500/20 hover:bg-pink-500/30 text-pink-300 rounded-lg py-2 px-3 transition-colors"
+                    className="flex-1 text-sm bg-wr-card hover:bg-bg-elevated text-on-accent rounded-lg py-2 px-3 transition-colors"
                   >
                     In Reden suchen →
                   </button>

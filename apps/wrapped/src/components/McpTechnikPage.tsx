@@ -90,7 +90,7 @@ const META_TOOLS = [
   'get_client_config',
 ];
 
-const code = 'font-mono text-xs bg-white/5 border border-white/10 rounded px-1.5 py-0.5 text-white/85';
+const code = 'font-mono text-xs bg-wr-card border border-track rounded px-1.5 py-0.5 text-on';
 
 export function McpTechnikPage() {
   return (
@@ -108,18 +108,18 @@ export function McpTechnikPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Link to="/mcp" className="inline-block font-mono text-xs uppercase tracking-[0.14em] text-white/40 hover:text-pink-400 transition-colors mb-5">
+            <Link to="/mcp" className="inline-block font-mono text-xs uppercase tracking-[0.14em] text-on-muted hover:text-on-accent transition-colors mb-5">
               ← Übersicht
             </Link>
-            <p className="font-mono text-xs uppercase tracking-[0.16em] text-pink-400 mb-5 flex items-center gap-3">
-              <span className="inline-block w-6 h-px bg-pink-400" aria-hidden="true" />
+            <p className="font-mono text-xs uppercase tracking-[0.16em] text-on-accent mb-5 flex items-center gap-3">
+              <span className="inline-block w-6 h-px bg-wr-pink" aria-hidden="true" />
               MCP · Technische Referenz
             </p>
-            <h1 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.05] mb-5 text-balance">
+            <h1 className="ds-display ds-display--lg mb-5">
               Bundestag-MCP — technische Details
             </h1>
-            <p className="text-lg text-white/70 leading-relaxed max-w-2xl">
-              38 nur-lesende Werkzeuge über <strong className="text-white font-semibold">Streamable HTTP</strong>,
+            <p className="text-lg text-on-muted leading-relaxed max-w-2xl">
+              38 nur-lesende Werkzeuge über <strong className="text-on font-semibold">Streamable HTTP</strong>,
               ohne Anmeldung. Diese Seite listet den vollständigen Tool-Katalog, die Filter und die Sortierung —
               für die Einbindung in eigene MCP-Clients.
             </p>
@@ -127,22 +127,22 @@ export function McpTechnikPage() {
 
           {/* Endpoint + facts */}
           <DocSection delay={0.1} className="mt-10">
-            <p className="text-sm text-white/50 mb-2">{CONNECT_INTRO}</p>
+            <p className="text-sm text-on-muted mb-2">{CONNECT_INTRO}</p>
             <EndpointBar />
-            <dl className="grid grid-cols-2 md:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden mt-4">
+            <dl className="grid grid-cols-2 md:grid-cols-3 gap-px bg-wr-card border border-track rounded-2xl overflow-hidden mt-4">
               {FACTS.map(f => (
                 <div key={f.label} className="bg-bg-card/60 px-4 py-4">
-                  <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-1.5">
+                  <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-on-muted mb-1.5">
                     {f.label}
                   </dt>
-                  <dd className="text-white font-semibold tabular-nums">
+                  <dd className="text-on font-semibold tabular-nums">
                     {f.value}
-                    {f.sub && <span className="text-white/40 font-normal"> · {f.sub}</span>}
+                    {f.sub && <span className="text-on-muted font-normal"> · {f.sub}</span>}
                   </dd>
                 </div>
               ))}
               <div className="bg-bg-card/60 px-4 py-4">
-                <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-1.5">Aktualität</dt>
+                <dt className="font-mono text-[10px] uppercase tracking-[0.1em] text-on-muted mb-1.5">Aktualität</dt>
                 <dd>
                   <span className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 bg-emerald-400/10 px-2.5 py-1 rounded-full">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
@@ -156,17 +156,17 @@ export function McpTechnikPage() {
           {/* Tool catalog */}
           <DocSection delay={0.15} className="mt-14">
             <SectionLabel>Werkzeuge · Tool-Katalog</SectionLabel>
-            <div className="grid gap-4">
+            <div className="grid gap-4 [&>*]:min-w-0 grid-cols-[minmax(0,1fr)]">
               {CAPABILITIES.map(cap => (
                 <div
                   key={cap.title}
-                  className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 transition-colors hover:border-white/20"
+                  className="bg-wr-card border border-track rounded-2xl p-6 transition-colors hover:border-track"
                 >
                   <div className="flex items-baseline justify-between gap-4 mb-2">
-                    <h3 className="text-xl font-bold text-white tracking-tight">{cap.title}</h3>
-                    <span className="font-mono text-xs text-white/40 whitespace-nowrap">{cap.badge}</span>
+                    <h3 className="text-xl font-bold text-on tracking-tight">{cap.title}</h3>
+                    <span className="font-mono text-xs text-on-muted whitespace-nowrap">{cap.badge}</span>
                   </div>
-                  <p className="text-[15px] text-white/70 leading-relaxed mb-4 max-w-2xl">{cap.purpose}</p>
+                  <p className="text-[15px] text-on-muted leading-relaxed mb-4 max-w-2xl">{cap.purpose}</p>
                   <div className="flex flex-wrap gap-2">
                     {cap.tools.map(t => (
                       <ToolChip key={t} name={t} />
@@ -180,10 +180,10 @@ export function McpTechnikPage() {
           {/* Filters & sorting */}
           <DocSection delay={0.15} className="mt-14">
             <SectionLabel>Filter & Sortierung</SectionLabel>
-            <div className="grid gap-4">
-              <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6">
-                <h3 className="text-lg font-bold text-white mb-2">Sortierung</h3>
-                <p className="text-sm text-white/60 leading-relaxed">
+            <div className="grid gap-4 [&>*]:min-w-0 grid-cols-[minmax(0,1fr)]">
+              <div className="bg-wr-card border border-track rounded-2xl p-6">
+                <h3 className="text-lg font-bold text-on mb-2">Sortierung</h3>
+                <p className="text-sm text-on-muted leading-relaxed">
                   Die semantischen Tools (<code className={code}>semantic_search</code>,{' '}
                   <code className={code}>search_speeches</code>, <code className={code}>search_document_sections</code>)
                   nehmen <code className={code}>sort</code> = <code className={code}>relevance</code> (Standard) ·{' '}
@@ -192,23 +192,23 @@ export function McpTechnikPage() {
                   kombinieren.
                 </p>
               </div>
-              <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6">
-                <h3 className="text-lg font-bold text-white mb-2">Zeitraum</h3>
-                <p className="text-sm text-white/60 leading-relaxed">
+              <div className="bg-wr-card border border-track rounded-2xl p-6">
+                <h3 className="text-lg font-bold text-on mb-2">Zeitraum</h3>
+                <p className="text-sm text-on-muted leading-relaxed">
                   Semantische Tools filtern per <code className={code}>dateFrom</code>/<code className={code}>dateTo</code>,
                   die DIP-Tools per <code className={code}>datum_start</code>/<code className={code}>datum_end</code>{' '}
                   (jeweils <code className={code}>YYYY-MM-DD</code>). DIP liefert grundsätzlich neueste zuerst.
                 </p>
               </div>
-              <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6">
-                <h3 className="text-lg font-bold text-white mb-2">Filterwerte entdecken</h3>
-                <p className="text-sm text-white/60 leading-relaxed mb-3">
+              <div className="bg-wr-card border border-track rounded-2xl p-6">
+                <h3 className="text-lg font-bold text-on mb-2">Filterwerte entdecken</h3>
+                <p className="text-sm text-on-muted leading-relaxed mb-3">
                   <code className={code}>get_filters</code> liefert pro Such-Fläche die verfügbaren Filter und ihre
                   gültigen Werte (Parteien, Redetypen, Drucksachetypen, Sachgebiete, abgedeckte Wahlperioden). Die KI
                   ruft es einmal auf, statt Werte zu raten.
                 </p>
-                <p className="text-sm text-white/60 leading-relaxed border-l-2 border-pink-500 pl-4">
-                  <strong className="text-white/90">Achtung — Parteinamen je Ebene:</strong> die Reden-Collection
+                <p className="text-sm text-on-muted leading-relaxed border-l-2 border-wr-pink pl-4">
+                  <strong className="text-on">Achtung — Parteinamen je Ebene:</strong> die Reden-Collection
                   speichert Kurznamen (<code className={code}>GRÜNE</code>), DIP-Tools und{' '}
                   <code className={code}>semantic_search</code> nutzen die langen Namen
                   (<code className={code}>BÜNDNIS 90/DIE GRÜNEN</code>). <code className={code}>CDU/CSU</code>,{' '}
@@ -222,9 +222,9 @@ export function McpTechnikPage() {
           {/* Operations & data */}
           <DocSection delay={0.15} className="mt-14">
             <SectionLabel>Betrieb &amp; Daten</SectionLabel>
-            <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-sm text-white/60 leading-relaxed">
+            <div className="bg-wr-card border border-track rounded-2xl p-6 text-sm text-on-muted leading-relaxed">
               <p className="mb-3">
-                <strong className="text-white/90">Datenquellen:</strong> amtliche{' '}
+                <strong className="text-on">Datenquellen:</strong> amtliche{' '}
                 <a className={docLink} href="https://dip.bundestag.de" target="_blank" rel="noopener noreferrer">
                   DIP-API
                 </a>{' '}
@@ -233,7 +233,7 @@ export function McpTechnikPage() {
                 aktualisiert sich alle 15&nbsp;Minuten, die Wrapped-Auswertungen wöchentlich.
               </p>
               <p className="mb-3">
-                <strong className="text-white/90">Acht Meta-Werkzeuge</strong> für Filter-Discovery, Betrieb &amp;
+                <strong className="text-on">Acht Meta-Werkzeuge</strong> für Filter-Discovery, Betrieb &amp;
                 Diagnose — <code className={code}>get_filters</code> für gültige Filterwerte, dazu Größencheck vor
                 dem Volltextabruf, Status- und Health-Endpunkte, Cache-Statistik und fertige Client-Konfiguration:
               </p>
@@ -243,7 +243,7 @@ export function McpTechnikPage() {
                 ))}
               </div>
             </div>
-            <p className="mt-4 text-sm text-white/50">
+            <p className="mt-4 text-sm text-on-muted">
               Jeder MCP-fähige Client mit Streamable-HTTP funktioniert (Claude, ChatGPT, Mistral, Cursor,
               VS&nbsp;Code …). Mehr zum Standard:{' '}
               <a className={docLink} href="https://modelcontextprotocol.io" target="_blank" rel="noopener noreferrer">
@@ -255,7 +255,7 @@ export function McpTechnikPage() {
               </a>
             </p>
             <p className="mt-6">
-              <Link to="/mcp" className="text-pink-400 hover:text-pink-300 text-sm font-medium">
+              <Link to="/mcp" className="text-on-accent hover:text-on-accent text-sm font-medium">
                 ← Zurück zur Übersicht
               </Link>
             </p>

@@ -31,12 +31,12 @@ interface SectionHeaderProps {
 export function SectionHeader({ tag, title, description }: SectionHeaderProps) {
   return (
     <>
-      <h2 className="text-xs font-mono text-stone-400 uppercase tracking-wider mb-4">
+      <h2 className="ds-eyebrow ds-eyebrow--contrast mb-4">
         {tag}
       </h2>
-      <h3 className="text-2xl font-serif text-stone-900 mb-6">{title}</h3>
+      <h3 className="ds-display ds-display--sm mb-6">{title}</h3>
       {description && (
-        <p className="text-stone-600 leading-relaxed mb-8">{description}</p>
+        <p className="text-on-muted text-lg leading-relaxed mb-8 max-w-[70ch]">{description}</p>
       )}
     </>
   );
@@ -50,16 +50,16 @@ interface CodeBlockProps {
 
 export function CodeBlock({ children, title, note }: CodeBlockProps) {
   return (
-    <div className="bg-stone-900 rounded-xl p-6 text-white font-mono text-sm break-words [overflow-wrap:anywhere]">
+    <div className="bg-wr-ink border border-track rounded-xl p-6 text-on font-mono text-sm break-words [overflow-wrap:anywhere]">
       {title && (
-        <h4 className="font-mono text-xs text-stone-400 uppercase tracking-wider mb-4">
+        <h4 className="font-mono text-xs text-on-muted uppercase tracking-wider mb-4">
           {title}
         </h4>
       )}
       <div className="space-y-2">{children}</div>
       {note && (
-        <div className="mt-6 pt-4 border-t border-stone-700 text-stone-400 text-xs">
-          <strong className="text-stone-300">Hinweis:</strong> {note}
+        <div className="mt-6 pt-4 border-t border-track text-on-muted text-xs">
+          <strong className="text-on-muted">Hinweis:</strong> {note}
         </div>
       )}
     </div>
@@ -73,7 +73,7 @@ interface InfoCardProps {
 
 export function InfoCard({ children, className = '' }: InfoCardProps) {
   return (
-    <div className={`bg-white border border-stone-200 rounded-lg p-6 ${className}`}>
+    <div className={`bg-wr-card border border-track rounded-lg p-6 ${className}`}>
       {children}
     </div>
   );
@@ -87,12 +87,12 @@ interface StepCardProps {
 
 export function StepCard({ number, title, children }: StepCardProps) {
   return (
-    <div className="bg-white border border-stone-200 rounded-lg p-6">
-      <div className="w-8 h-8 rounded-full bg-stone-900 text-white flex items-center justify-center text-sm font-mono mb-4">
+    <div className="bg-wr-card border border-track rounded-lg p-6">
+      <div className="w-8 h-8 rounded-full bg-wr-ink border border-track text-on flex items-center justify-center text-sm font-mono mb-4">
         {number}
       </div>
-      <h4 className="font-medium text-stone-900 mb-2">{title}</h4>
-      <div className="text-sm text-stone-600 leading-relaxed">{children}</div>
+      <h4 className="font-medium text-on mb-2">{title}</h4>
+      <div className="text-sm text-on-muted leading-relaxed">{children}</div>
     </div>
   );
 }
@@ -105,9 +105,9 @@ interface StatBoxProps {
 
 export function StatBox({ value, label, className = '' }: StatBoxProps) {
   return (
-    <div className={`bg-white border border-stone-200 rounded-lg p-6 text-center ${className}`}>
-      <div className="text-3xl font-mono text-stone-900 mb-2">{value}</div>
-      <div className="text-sm text-stone-600">{label}</div>
+    <div className={`bg-wr-card border border-track rounded-lg p-6 text-center ${className}`}>
+      <div className="text-3xl font-mono text-on mb-2">{value}</div>
+      <div className="text-sm text-on-muted">{label}</div>
     </div>
   );
 }
@@ -121,14 +121,14 @@ interface DownloadLinkProps {
 
 export function DownloadLink({ href, title, description, color }: DownloadLinkProps) {
   const colorClasses = {
-    pink: 'hover:border-pink-300 hover:bg-pink-50 group-hover:text-pink-600',
-    blue: 'hover:border-blue-300 hover:bg-blue-50 group-hover:text-blue-600',
-    emerald: 'hover:border-emerald-300 hover:bg-emerald-50 group-hover:text-emerald-600',
-    stone: 'hover:border-stone-300 hover:bg-stone-100 group-hover:text-stone-600',
+    pink: 'hover:border-wr-pink hover:bg-bg-elevated group-hover:text-on-accent',
+    blue: 'hover:border-track hover:bg-bg-elevated group-hover:text-on',
+    emerald: 'hover:border-track hover:bg-bg-elevated group-hover:text-on',
+    stone: 'hover:border-track hover:bg-bg-elevated group-hover:text-on-muted',
   };
 
   const dotColor = {
-    pink: 'bg-pink-500',
+    pink: 'bg-wr-pink',
     blue: 'bg-blue-500',
     emerald: 'bg-emerald-500',
     stone: 'bg-stone-500',
@@ -139,16 +139,16 @@ export function DownloadLink({ href, title, description, color }: DownloadLinkPr
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`flex items-center justify-between p-4 bg-white border border-stone-200 rounded-lg transition-colors group ${colorClasses[color]}`}
+      className={`flex items-center justify-between p-4 bg-wr-card border border-track rounded-lg transition-colors group ${colorClasses[color]}`}
     >
       <div>
         <div className="flex items-center gap-2 mb-1">
           <div className={`w-3 h-3 rounded-full ${dotColor[color]}`} />
-          <span className="font-medium text-stone-900">{title}</span>
+          <span className="font-medium text-on">{title}</span>
         </div>
-        <p className="text-xs text-stone-500">{description}</p>
+        <p className="text-xs text-on-muted">{description}</p>
       </div>
-      <div className={`flex items-center gap-2 text-stone-400 ${colorClasses[color].split(' ').pop()}`}>
+      <div className={`flex items-center gap-2 text-on-muted ${colorClasses[color].split(' ').pop()}`}>
         <span className="text-xs font-mono">JSON</span>
         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
