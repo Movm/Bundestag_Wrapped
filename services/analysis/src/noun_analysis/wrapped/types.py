@@ -57,6 +57,7 @@ class SpeakerProfile:
     party: str
     gender: Gender
     acad_title: str | None
+    gender_source: str = "unknown"
     total_speeches: int = 0
     total_words: int = 0
     formal_speeches: int = 0  # category='rede' (formal podium speeches)

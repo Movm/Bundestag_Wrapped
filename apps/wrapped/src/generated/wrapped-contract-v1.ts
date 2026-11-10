@@ -117,6 +117,17 @@ export interface GenderDistribution {
   "female": Count;
   "unknown": Count;
   "femalePercent": Ratio;
+  "bySource"?: GenderSourceCounts;
+}
+
+export type GenderSource = "official" | "override" | "name_dictionary" | "heuristic" | "unknown";
+
+export interface GenderSourceCounts {
+  "official"?: Count;
+  "override"?: Count;
+  "name_dictionary"?: Count;
+  "heuristic"?: Count;
+  "unknown"?: Count;
 }
 
 export interface GenderByParty {

@@ -36,6 +36,16 @@ class GenderAnalysisMixin:
             "unknown": gs.total_unknown_speakers,
         }
 
+    def get_gender_source_counts(self) -> dict[str, int]:
+        """Count speakers per gender source (official, override, name_dictionary, ...)."""
+        counts = {"official": 0, "override": 0, "name_dictionary": 0, "heuristic": 0, "unknown": 0}
+        if not self.gender_stats:
+            return counts
+        for profile in self.speaker_profiles.values():
+            if profile.party in self.gender_stats.by_party:
+                counts[profile.gender_source] = counts.get(profile.gender_source, 0) + 1
+        return counts
+
     def get_gender_distribution_by_party(self) -> dict[str, dict[str, int]]:
         """Get gender distribution per party.
 
