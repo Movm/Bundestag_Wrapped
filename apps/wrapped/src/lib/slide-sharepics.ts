@@ -3,8 +3,12 @@
  * Renders various Bundestag Wrapped slides as shareable 1080x1080 canvas images.
  */
 
-import { BG_COLORS, BRAND_COLORS } from './design-tokens';
-import { getPartyColor } from './party-colors';
+import { getPartyTone } from './party-colors';
+import {
+  SIZE, MARGIN, PALETTES, type FieldTone, type Palette, type ShapeSet,
+  drawField, drawBrandHeader, drawFooterUrl, drawHeading, drawSubtitle, setFont, fitSize, pill, roundedRect, preloadShareAssets,
+} from './share-kit';
+import { moinConfig, genderConfig, vocabularyConfig, commonWordsConfig, toneAnalysisConfig, swiftieConfig } from './sharepic-configs';
 
 // ============ TYPES ============
 
@@ -33,291 +37,114 @@ export interface GenderAnalysis {
   byParty: PartyGenderStats[];
 }
 
-// ============ CONSTANTS ============
+// ============ SHARED ============
 
-const SIZE = 1080;
+/** Logo and fonts: canvas drawing needs both loaded before the first render. */
+export const preloadLogo = preloadShareAssets;
 
-const CHAMPION_COLORS = {
-  bg: '#f59e0b',
-  bgLight: '#fbbf24',
-  border: '#fcd34d',
-  text: '#78350f',
-};
-
-// ============ LOGO CACHE ============
-
-let logoImage: HTMLImageElement | null = null;
-let logoLoadPromise: Promise<HTMLImageElement> | null = null;
-
-export function preloadLogo(): Promise<HTMLImageElement> {
-  if (logoImage) return Promise.resolve(logoImage);
-  if (logoLoadPromise) return logoLoadPromise;
-
-  logoLoadPromise = new Promise((resolve, reject) => {
-    const img = new Image();
-    img.onload = () => {
-      logoImage = img;
-      resolve(img);
-    };
-    img.onerror = reject;
-    img.src = '/logo.png';
-  });
-
-  return logoLoadPromise;
-}
-
-if (typeof window !== 'undefined') {
-  preloadLogo();
-}
-
-// ============ SHARED UTILITIES ============
-
-function drawRoundedRect(
-  ctx: CanvasRenderingContext2D,
-  x: number,
-  y: number,
-  w: number,
-  h: number,
-  r: number
-): void {
-  ctx.beginPath();
-  ctx.moveTo(x + r, y);
-  ctx.lineTo(x + w - r, y);
-  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
-  ctx.lineTo(x + w, y + h - r);
-  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-  ctx.lineTo(x + r, y + h);
-  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
-  ctx.lineTo(x, y + r);
-  ctx.quadraticCurveTo(x, y, x + r, y);
-  ctx.closePath();
-}
-
-interface CanvasSetup {
+interface Setup {
   ctx: CanvasRenderingContext2D;
-  SIZE: number;
-  centerX: number;
+  p: Palette;
 }
 
-function setupCanvas(canvas: HTMLCanvasElement): CanvasSetup | null {
+/** Sizes the canvas, paints the flat field with shapes and draws the header. */
+function setupCanvas(canvas: HTMLCanvasElement, tone: FieldTone, shapes: ShapeSet, editionTitle: string): Setup | null {
   canvas.width = SIZE;
   canvas.height = SIZE;
   const ctx = canvas.getContext('2d');
   if (!ctx) return null;
-
-  // Background gradient
-  const bgGradient = ctx.createLinearGradient(0, 0, 0, SIZE);
-  bgGradient.addColorStop(0, BG_COLORS.primary);
-  bgGradient.addColorStop(1, BG_COLORS.elevated);
-  ctx.fillStyle = bgGradient;
-  ctx.fillRect(0, 0, SIZE, SIZE);
-
-  // Decorative orbs
-  const gradient1 = ctx.createRadialGradient(
-    SIZE * 0.85, SIZE * 0.12, 0,
-    SIZE * 0.85, SIZE * 0.12, 300
-  );
-  gradient1.addColorStop(0, `${BRAND_COLORS.primary}20`);
-  gradient1.addColorStop(1, 'transparent');
-  ctx.fillStyle = gradient1;
-  ctx.beginPath();
-  ctx.arc(SIZE * 0.85, SIZE * 0.12, 300, 0, Math.PI * 2);
-  ctx.fill();
-
-  const gradient2 = ctx.createRadialGradient(
-    SIZE * 0.1, SIZE * 0.85, 0,
-    SIZE * 0.1, SIZE * 0.85, 250
-  );
-  gradient2.addColorStop(0, `${BRAND_COLORS.light}18`);
-  gradient2.addColorStop(1, 'transparent');
-  ctx.fillStyle = gradient2;
-  ctx.beginPath();
-  ctx.arc(SIZE * 0.1, SIZE * 0.85, 250, 0, Math.PI * 2);
-  ctx.fill();
-
-  return { ctx, SIZE, centerX: SIZE / 2 };
+  const p = drawField(ctx, tone, shapes);
+  drawBrandHeader(ctx, p, editionTitle);
+  return { ctx, p };
 }
 
-function drawHeader(ctx: CanvasRenderingContext2D, editionTitle: string): void {
-  const headerY = 70, headerX = 60, logoSize = 38;
-  if (logoImage) {
-    const logoHeight = (logoImage.height / logoImage.width) * logoSize;
-    ctx.shadowColor = BRAND_COLORS.primary;
-    ctx.shadowBlur = 10;
-    ctx.drawImage(logoImage, headerX, headerY - logoHeight / 2 - 4, logoSize, logoHeight);
-    ctx.shadowBlur = 0;
-  }
-  ctx.font = '600 24px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+/** Huge uppercase heading plus subtitle. Returns the y below them. */
+function drawTitle(ctx: CanvasRenderingContext2D, p: Palette, title: string, subtitle: string, y = 170): number {
+  const below = drawHeading(ctx, title, y, p.on, 110, 56);
+  return drawSubtitle(ctx, subtitle, below + 12, p.muted) + 14;
+}
+
+/** Party colour for fills that carry white text. */
+const partyFill = (party: string) => getPartyTone(party, 'light');
+const INK = PALETTES.ink.bg;
+
+/** White plate with label / bar / value rows; party colours are measured against light ground. */
+function drawBarRows(
+  ctx: CanvasRenderingContext2D,
+  rows: { label: string; party: string; ratio: number; value: string }[],
+  top: number,
+  rowH: number,
+  gap: number,
+): void {
+  const plateH = rows.length * rowH + Math.max(0, rows.length - 1) * gap + 70;
+  roundedRect(ctx, MARGIN, top, SIZE - MARGIN * 2, plateH, 40);
+  ctx.fillStyle = '#ffffff';
+  ctx.fill();
+  const labelW = 210, valueW = 170;
+  const barX = MARGIN + 35 + labelW;
+  const barW = SIZE - MARGIN * 2 - 70 - labelW - valueW;
+  ctx.textBaseline = 'alphabetic';
+  rows.forEach((row, i) => {
+    const y = top + 35 + i * (rowH + gap);
+    setFont(ctx, 'wide', 26);
+    ctx.textAlign = 'left';
+    ctx.fillStyle = INK;
+    ctx.fillText(row.label, MARGIN + 35, y + rowH / 2 + 9);
+    roundedRect(ctx, barX, y, barW, rowH, rowH / 2);
+    ctx.fillStyle = '#ece8f2';
+    ctx.fill();
+    roundedRect(ctx, barX, y, Math.max(barW * row.ratio, rowH), rowH, rowH / 2);
+    ctx.fillStyle = partyFill(row.party);
+    ctx.fill();
+    ctx.textAlign = 'right';
+    ctx.fillStyle = INK;
+    ctx.fillText(row.value, SIZE - MARGIN - 35, y + rowH / 2 + 9);
+  });
   ctx.textAlign = 'left';
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-  ctx.fillText(editionTitle.toUpperCase(), headerX + logoSize + 12, headerY);
-}
-
-function drawFooter(ctx: CanvasRenderingContext2D, centerX: number): void {
-  ctx.textAlign = 'center';
-  const footerY = SIZE - 80;
-  ctx.font = '24px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.45)';
-  ctx.fillText('Teste dein Wissen auf', centerX, footerY);
-
-  ctx.font = 'bold 30px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  const urlGradient = ctx.createLinearGradient(centerX - 180, 0, centerX + 180, 0);
-  urlGradient.addColorStop(0, BRAND_COLORS.gradientStart);
-  urlGradient.addColorStop(1, BRAND_COLORS.light);
-  ctx.fillStyle = urlGradient;
-  ctx.fillText('bundestag-wrapped.de', centerX, footerY + 40);
 }
 
 // ============ MOIN SLIDE ============
-
-function drawMoinCard(
-  ctx: CanvasRenderingContext2D,
-  speaker: MoinSpeaker,
-  rank: number,
-  x: number,
-  y: number,
-  w: number,
-  h: number
-): void {
-  const isChampion = rank === 1;
-  const partyColor = getPartyColor(speaker.party);
-
-  // Background
-  if (isChampion) {
-    const g = ctx.createLinearGradient(x, y, x + w, y + h);
-    g.addColorStop(0, `${CHAMPION_COLORS.bg}50`);
-    g.addColorStop(1, `${CHAMPION_COLORS.bgLight}30`);
-    ctx.fillStyle = g;
-  } else {
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
-  }
-  drawRoundedRect(ctx, x, y, w, h, 24);
-  ctx.fill();
-  ctx.strokeStyle = isChampion ? `${CHAMPION_COLORS.border}80` : 'rgba(255, 255, 255, 0.15)';
-  ctx.lineWidth = isChampion ? 3 : 2;
-  drawRoundedRect(ctx, x, y, w, h, 24);
-  ctx.stroke();
-
-  const cx = x + w / 2;
-  let cy = y + 30;
-
-  // Crown for champion
-  if (isChampion) {
-    ctx.font = '36px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText('👑', cx + 50, cy + 10);
-  }
-
-  // Wave emoji
-  ctx.font = `${isChampion ? 56 : 48}px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`;
-  if (isChampion) {
-    ctx.shadowColor = `${CHAMPION_COLORS.bg}80`;
-    ctx.shadowBlur = 20;
-  }
-  ctx.fillText('👋', cx, cy + 45);
-  ctx.shadowBlur = 0;
-  cy += isChampion ? 70 : 60;
-
-  // Rank badge
-  ctx.beginPath();
-  ctx.arc(x + 30, y + 30, 18, 0, Math.PI * 2);
-  ctx.fillStyle = isChampion ? CHAMPION_COLORS.bg : 'rgba(255, 255, 255, 0.2)';
-  ctx.fill();
-  ctx.font = 'bold 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.textBaseline = 'middle';
-  ctx.fillStyle = isChampion ? CHAMPION_COLORS.text : 'rgba(255, 255, 255, 0.8)';
-  ctx.fillText(`#${rank}`, x + 30, y + 30);
-  ctx.textBaseline = 'alphabetic';
-
-  // Name
-  ctx.font = `bold ${isChampion ? 22 : 20}px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`;
-  ctx.fillStyle = '#ffffff';
-  let name = speaker.name;
-  while (ctx.measureText(name).width > w - 40 && name.length > 3) name = name.slice(0, -1);
-  if (name !== speaker.name) name = name.slice(0, -2) + '...';
-  ctx.fillText(name, cx, cy);
-  cy += 32;
-
-  // Party pill
-  ctx.font = 'bold 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  const pw = ctx.measureText(speaker.party).width + 24;
-  drawRoundedRect(ctx, cx - pw / 2, cy - 16, pw, 26, 13);
-  ctx.fillStyle = partyColor;
-  ctx.fill();
-  ctx.fillStyle = partyColor === '#FFFFFF' ? '#000' : '#fff';
-  ctx.fillText(speaker.party, cx, cy);
-  cy += 36;
-
-  // Count pill
-  const countText = `${speaker.count}× Moin`;
-  ctx.font = 'bold 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  const cw = ctx.measureText(countText).width + 28;
-  drawRoundedRect(ctx, cx - cw / 2, cy - 22, cw, 34, 17);
-  ctx.fillStyle = isChampion ? `${CHAMPION_COLORS.bg}40` : 'rgba(255, 255, 255, 0.1)';
-  ctx.fill();
-  ctx.fillStyle = isChampion ? CHAMPION_COLORS.border : 'rgba(255, 255, 255, 0.8)';
-  ctx.fillText(countText, cx, cy);
-}
 
 export function renderMoinSharepic(
   canvas: HTMLCanvasElement,
   speakers: MoinSpeaker[],
   editionTitle = 'Bundestag Wrapped',
 ): void {
-  const setup = setupCanvas(canvas);
+  const setup = setupCanvas(canvas, 'ink', 'orbit', editionTitle);
   if (!setup) return;
-  const { ctx, centerX } = setup;
-  const centerY = SIZE / 2;
+  const { ctx, p } = setup;
 
-  drawHeader(ctx, editionTitle);
+  let y = drawTitle(ctx, p, moinConfig.title, moinConfig.subtitle);
 
-  // Calculate content dimensions for centering
-  const cardWidth = 230, cardHeight = 220, gap = 24;
-  const speakerCount = Math.min(speakers.length, 4);
-  const champW = 280, champH = 260;
-  const titleHeight = 130; // emoji + title + subtitle
-  const cardsHeight = speakerCount === 3
-    ? champH + gap + cardHeight
-    : cardHeight * 2 + gap;
-  const totalHeight = titleHeight + 30 + cardsHeight;
-  const startY = centerY - totalHeight / 2;
+  // Stair-stepped rank cards: the leader is the biggest, the rest step in.
+  const heights = [180, 140, 120, 120];
+  speakers.slice(0, 4).forEach((speaker, i) => {
+    const h = heights[i];
+    const x = MARGIN + i * 34;
+    const w = SIZE - MARGIN * 2 - i * 34;
+    roundedRect(ctx, x, y, w, h, 36);
+    ctx.fillStyle = i === 0 ? p.accent : '#ffffff';
+    ctx.fill();
+    ctx.textBaseline = 'alphabetic';
+    ctx.textAlign = 'left';
+    ctx.fillStyle = INK;
+    setFont(ctx, 'wide', h * 0.6);
+    ctx.fillText(String(i + 1), x + 34, y + h * 0.74);
+    const textX = x + 34 + h * 0.6 + 34;
+    const name = speaker.name.toUpperCase();
+    const nameSize = fitSize(ctx, 'wide', name, w - (textX - x) - 240, i === 0 ? 40 : 34, 20);
+    setFont(ctx, 'wide', nameSize);
+    ctx.fillText(name, textX, y + h * 0.42);
+    pill(ctx, speaker.party, textX, y + h * 0.52, partyFill(speaker.party), '#ffffff', 22);
+    ctx.textAlign = 'right';
+    setFont(ctx, 'wide', i === 0 ? 38 : 30);
+    ctx.fillStyle = INK;
+    ctx.fillText(`${speaker.count}× Moin`, x + w - 30, y + h * 0.52 + 36);
+    ctx.textAlign = 'left';
+    y += h + 16;
+  });
 
-  // Title section
-  ctx.font = '70px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.textAlign = 'center';
-  ctx.shadowColor = `${BRAND_COLORS.primary}50`;
-  ctx.shadowBlur = 30;
-  ctx.fillText('👋', centerX, startY + 50);
-  ctx.shadowBlur = 0;
-
-  ctx.font = 'bold 48px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = '#ffffff';
-  ctx.fillText('Die Moin-Champions', centerX, startY + 105);
-
-  ctx.font = '24px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-  ctx.fillText('Norddeutsche Grüße im Bundestag', centerX, startY + 135);
-
-  const cardsY = startY + titleHeight + 30;
-
-  if (speakerCount === 3) {
-    // Pyramid: champion on top, 2 below
-    drawMoinCard(ctx, speakers[0], 1, centerX - champW / 2, cardsY, champW, champH);
-    const row2W = cardWidth * 2 + gap;
-    const row2X = centerX - row2W / 2;
-    drawMoinCard(ctx, speakers[1], 2, row2X, cardsY + champH + gap, cardWidth, cardHeight);
-    drawMoinCard(ctx, speakers[2], 3, row2X + cardWidth + gap, cardsY + champH + gap, cardWidth, cardHeight);
-  } else {
-    // 2x2 grid
-    const gridW = cardWidth * 2 + gap;
-    const gridX = centerX - gridW / 2;
-    speakers.slice(0, 4).forEach((s, i) => {
-      const col = i % 2, row = Math.floor(i / 2);
-      drawMoinCard(ctx, s, i + 1, gridX + col * (cardWidth + gap), cardsY + row * (cardHeight + gap), cardWidth, cardHeight);
-    });
-  }
-
-  drawFooter(ctx, centerX);
+  drawFooterUrl(ctx, p);
 }
 
 // ============ DRAMA SLIDE ============
@@ -327,62 +154,39 @@ export function renderDramaSharepic(
   drama: DramaStats,
   editionTitle = 'Bundestag Wrapped',
 ): void {
-  const setup = setupCanvas(canvas);
+  const setup = setupCanvas(canvas, 'ink', 'corner', editionTitle);
   if (!setup) return;
-  const { ctx, centerX } = setup;
-  const centerY = SIZE / 2;
-
-  drawHeader(ctx, editionTitle);
+  const { ctx, p } = setup;
 
   const leader = drama.topZwischenrufer?.[0];
   if (!leader) return;
 
-  const partyColor = getPartyColor(leader.party);
+  const y = drawTitle(ctx, p, 'Drama im Bundestag', 'Wer ruft am meisten dazwischen?');
 
-  // Calculate content height for centering
-  // emoji(70) + name(50) + party(40) + count(180) + label(40) + note(30) + spacing
-  const totalHeight = 480;
-  const startY = centerY - totalHeight / 2;
+  const count = leader.count.toLocaleString('de-DE');
+  const size = fitSize(ctx, 'wide', count, SIZE - MARGIN * 2, 300, 120);
+  setFont(ctx, 'wide', size);
+  ctx.textAlign = 'left';
+  ctx.fillStyle = p.accent;
+  ctx.fillText(count, MARGIN, y + 20 + size * 0.8);
+  const bottom = y + 20 + size;
 
-  // Emoji
-  ctx.font = '80px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText('🎭', centerX, startY + 60);
+  setFont(ctx, 'heading', 52);
+  ctx.fillStyle = p.on;
+  ctx.fillText('ZWISCHENRUFE', MARGIN, bottom + 60);
 
-  // Name
-  ctx.font = 'bold 44px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = '#ffffff';
-  ctx.fillText(leader.name, centerX, startY + 130);
+  const name = leader.name.toUpperCase();
+  const nameSize = fitSize(ctx, 'heading', name, SIZE - MARGIN * 2, 60, 32);
+  setFont(ctx, 'heading', nameSize);
+  ctx.fillText(name, MARGIN, bottom + 60 + nameSize + 30);
+  const pillY = bottom + 60 + nameSize + 56;
+  const pillW = pill(ctx, leader.party, MARGIN, pillY, partyFill(leader.party), '#ffffff', 26);
 
-  // Party
-  ctx.font = 'bold 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  const pw = ctx.measureText(leader.party).width + 28;
-  drawRoundedRect(ctx, centerX - pw / 2, startY + 150, pw, 32, 16);
-  ctx.fillStyle = partyColor;
-  ctx.fill();
-  ctx.fillStyle = partyColor === '#FFFFFF' ? '#000' : '#fff';
-  ctx.textAlign = 'center';
-  ctx.fillText(leader.party, centerX, startY + 172);
+  setFont(ctx, 'text', 24, 600);
+  ctx.fillStyle = p.muted;
+  ctx.fillText(`${leader.party}: ${count} Zwischenrufe`, MARGIN + pillW + 24, pillY + 34);
 
-  // Big count
-  ctx.font = '900 160px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = partyColor;
-  ctx.shadowColor = `${partyColor}50`;
-  ctx.shadowBlur = 80;
-  ctx.fillText(leader.count.toLocaleString('de-DE'), centerX, startY + 350);
-  ctx.shadowBlur = 0;
-
-  // Label
-  ctx.font = '30px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-  ctx.fillText('Zwischenrufe', centerX, startY + 410);
-
-  // Note: the leader is computed from the current edition's drama payload.
-  ctx.font = '20px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
-  ctx.fillText(`${leader.party}: ${leader.count.toLocaleString('de-DE')} Zwischenrufe`, centerX, startY + 470);
-
-  drawFooter(ctx, centerX);
+  drawFooterUrl(ctx, p);
 }
 
 // ============ GENDER SLIDE ============
@@ -392,72 +196,18 @@ export function renderGenderSharepic(
   genderAnalysis: GenderAnalysis,
   editionTitle = 'Bundestag Wrapped',
 ): void {
-  const setup = setupCanvas(canvas);
+  const setup = setupCanvas(canvas, 'pink', 'corner', editionTitle);
   if (!setup) return;
-  const { ctx, centerX } = setup;
-  const centerY = SIZE / 2;
-
-  drawHeader(ctx, editionTitle);
+  const { ctx, p } = setup;
 
   const parties = (genderAnalysis.byParty || [])
-    .filter((p) => p.party !== 'fraktionslos')
+    .filter((entry) => entry.party !== 'fraktionslos')
     .sort((a, b) => b.femaleRatio - a.femaleRatio);
 
-  // Calculate content height for centering
-  const barH = 44, gap = 16;
-  const titleHeight = 120;
-  const barsHeight = parties.length * barH + (parties.length - 1) * gap;
-  const totalHeight = titleHeight + 30 + barsHeight;
-  const startY = centerY - totalHeight / 2;
+  const y = drawTitle(ctx, p, genderConfig.title, genderConfig.subtitle);
+  drawBarRows(ctx, parties.map(entry => ({ label: entry.party, party: entry.party, ratio: entry.femaleRatio / 100, value: `${entry.femaleRatio.toFixed(0)} %` })), y, 52, 14);
 
-  // Title
-  ctx.font = '60px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText('👩‍💼', centerX, startY + 45);
-
-  ctx.font = 'bold 40px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = '#ffffff';
-  ctx.fillText('Frauenanteil bei Reden', centerX, startY + 100);
-
-  ctx.font = '20px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-  ctx.fillText('Anteil weiblicher Rednerinnen pro Fraktion', centerX, startY + 130);
-
-  // Bars
-  const barW = 700;
-  const barStartX = centerX - barW / 2;
-  let y = startY + titleHeight + 30;
-
-  parties.forEach((p) => {
-    const partyColor = getPartyColor(p.party);
-    const ratio = p.femaleRatio / 100;
-
-    // BG bar
-    drawRoundedRect(ctx, barStartX, y, barW, barH, barH / 2);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
-    ctx.fill();
-
-    // Filled bar
-    const fillW = Math.max(barW * ratio, barH);
-    drawRoundedRect(ctx, barStartX, y, fillW, barH, barH / 2);
-    ctx.fillStyle = partyColor;
-    ctx.fill();
-
-    // Party name
-    ctx.font = 'bold 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-    ctx.textAlign = 'left';
-    ctx.fillStyle = partyColor === '#FFFFFF' ? '#000' : '#fff';
-    ctx.fillText(p.party, barStartX + 16, y + barH / 2 + 5);
-
-    // Percentage
-    ctx.textAlign = 'right';
-    ctx.fillStyle = '#ffffff';
-    ctx.fillText(`${p.femaleRatio.toFixed(0)}%`, barStartX + barW - 16, y + barH / 2 + 5);
-
-    y += barH + gap;
-  });
-
-  drawFooter(ctx, centerX);
+  drawFooterUrl(ctx, p, 'Mehr dazu auf');
 }
 
 // ============ VOCABULARY SLIDE ============
@@ -476,89 +226,36 @@ export interface VocabularyData {
   parties: PartyStats[];
 }
 
-function drawVocabularyBubble(
-  ctx: CanvasRenderingContext2D,
-  party: string,
-  word: string,
-  x: number,
-  y: number,
-  size: number
-): void {
-  const partyColor = getPartyColor(party);
-
-  // Bubble background
-  ctx.beginPath();
-  ctx.arc(x, y, size / 2, 0, Math.PI * 2);
-  const gradient = ctx.createRadialGradient(x - size * 0.2, y - size * 0.2, 0, x, y, size / 2);
-  gradient.addColorStop(0, `${partyColor}40`);
-  gradient.addColorStop(1, `${partyColor}20`);
-  ctx.fillStyle = gradient;
-  ctx.fill();
-  ctx.strokeStyle = `${partyColor}80`;
-  ctx.lineWidth = 2;
-  ctx.stroke();
-
-  // Word
-  ctx.font = `bold ${Math.floor(size * 0.22)}px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`;
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.fillStyle = '#ffffff';
-  ctx.fillText(word, x, y - 10);
-
-  // Party label
-  ctx.font = `bold ${Math.floor(size * 0.14)}px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`;
-  ctx.fillStyle = partyColor;
-  ctx.fillText(party, x, y + size * 0.25);
-  ctx.textBaseline = 'alphabetic';
-}
-
 export function renderVocabularySharepic(
   canvas: HTMLCanvasElement,
   data: VocabularyData,
   editionTitle = 'Bundestag Wrapped',
 ): void {
-  const setup = setupCanvas(canvas);
+  const setup = setupCanvas(canvas, 'violet', 'corner', editionTitle);
   if (!setup) return;
-  const { ctx, centerX } = setup;
-  const centerY = SIZE / 2;
-
-  drawHeader(ctx, editionTitle);
+  const { ctx, p } = setup;
 
   const parties = data.parties
-    .filter(p => p.party !== 'fraktionslos' && p.signatureWords.length > 0)
+    .filter(entry => entry.party !== 'fraktionslos' && entry.signatureWords.length > 0)
     .slice(0, 5);
 
-  // Title
-  ctx.font = '60px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText('📚', centerX, 180);
+  let y = drawTitle(ctx, p, vocabularyConfig.title, vocabularyConfig.subtitle);
 
-  ctx.font = 'bold 44px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = '#ffffff';
-  ctx.fillText('Partei-Vokabular', centerX, 240);
-
-  ctx.font = '22px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-  ctx.fillText('Diese Wörter zeichnen die Parteien aus', centerX, 275);
-
-  // Bubbles layout: 2 top, 3 bottom
-  const bubbleSize = 200;
-  const positions = [
-    { x: centerX - 130, y: centerY - 60 },
-    { x: centerX + 130, y: centerY - 60 },
-    { x: centerX - 220, y: centerY + 150 },
-    { x: centerX, y: centerY + 180 },
-    { x: centerX + 220, y: centerY + 150 },
-  ];
-
-  parties.forEach((party, i) => {
-    if (positions[i]) {
-      const topWord = party.signatureWords[0]?.word || '—';
-      drawVocabularyBubble(ctx, party.party, topWord, positions[i].x, positions[i].y, bubbleSize);
-    }
+  // One row per party: party pill, then its signature word in huge capitals.
+  const rowH = 96;
+  parties.forEach((entry) => {
+    const word = (entry.signatureWords[0]?.word || '—').toUpperCase();
+    const pillW = pill(ctx, entry.party, MARGIN, y + 14, partyFill(entry.party), '#ffffff', 24);
+    const size = fitSize(ctx, 'heading', word, SIZE - MARGIN * 2 - pillW - 30, 68, 30);
+    setFont(ctx, 'heading', size);
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillStyle = p.on;
+    ctx.fillText(word, MARGIN + pillW + 30, y + 14 + 24 + size * 0.36);
+    y += rowH;
   });
 
-  drawFooter(ctx, centerX);
+  drawFooterUrl(ctx, p);
 }
 
 // ============ SPEECHES SLIDE ============
@@ -579,71 +276,22 @@ export function renderSpeechesSharepic(
   data: SpeechesData,
   editionTitle = 'Bundestag Wrapped',
 ): void {
-  const setup = setupCanvas(canvas);
+  const setup = setupCanvas(canvas, 'ink', 'corner', editionTitle);
   if (!setup) return;
-  const { ctx, centerX } = setup;
-
-  drawHeader(ctx, editionTitle);
+  const { ctx, p } = setup;
 
   const parties = data.parties
-    .filter(p => p.party !== 'fraktionslos')
+    .filter(entry => entry.party !== 'fraktionslos')
     .sort((a, b) => b.speeches - a.speeches)
     .slice(0, 5);
 
-  const total = data.totalSpeeches || parties.reduce((sum, p) => sum + p.speeches, 0);
+  const total = data.totalSpeeches || parties.reduce((sum, entry) => sum + entry.speeches, 0);
+  const max = Math.max(1, ...parties.map(entry => entry.speeches));
 
-  // Title
-  ctx.font = '60px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText('🎤', centerX, 180);
+  const y = drawTitle(ctx, p, 'Die Reden', `${total.toLocaleString('de-DE')} Reden im Bundestag`);
+  drawBarRows(ctx, parties.map(entry => ({ label: entry.party, party: entry.party, ratio: entry.speeches / max, value: `${entry.speeches.toLocaleString('de-DE')}` })), y, 58, 16);
 
-  ctx.font = 'bold 44px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = '#ffffff';
-  ctx.fillText('Die Reden', centerX, 240);
-
-  ctx.font = '22px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-  ctx.fillText(`${total.toLocaleString('de-DE')} Reden im Bundestag`, centerX, 275);
-
-  // Bar chart
-  const barW = 700;
-  const barH = 50;
-  const gap = 16;
-  const barStartX = centerX - barW / 2;
-  let y = 340;
-
-  const maxSpeeches = Math.max(...parties.map(p => p.speeches));
-
-  parties.forEach((p) => {
-    const partyColor = getPartyColor(p.party);
-    const ratio = p.speeches / maxSpeeches;
-
-    // BG bar
-    drawRoundedRect(ctx, barStartX, y, barW, barH, barH / 2);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
-    ctx.fill();
-
-    // Filled bar
-    const fillW = Math.max(barW * ratio, barH);
-    drawRoundedRect(ctx, barStartX, y, fillW, barH, barH / 2);
-    ctx.fillStyle = partyColor;
-    ctx.fill();
-
-    // Party name
-    ctx.font = 'bold 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-    ctx.textAlign = 'left';
-    ctx.fillStyle = partyColor === '#FFFFFF' ? '#000' : '#fff';
-    ctx.fillText(p.party, barStartX + 18, y + barH / 2 + 5);
-
-    // Count
-    ctx.textAlign = 'right';
-    ctx.fillStyle = '#ffffff';
-    ctx.fillText(`${p.speeches} Reden`, barStartX + barW - 18, y + barH / 2 + 5);
-
-    y += barH + gap;
-  });
-
-  drawFooter(ctx, centerX);
+  drawFooterUrl(ctx, p);
 }
 
 // ============ COMMON WORDS SLIDE ============
@@ -652,9 +300,10 @@ export interface CommonWordsData {
   topics: string[];
 }
 
-const WORD_CLOUD_COLORS = [
-  '#ec4899', '#8b5cf6', '#06b6d4', '#10b981',
-  '#f59e0b', '#ef4444', '#3b82f6', '#84cc16',
+const CHIP_STYLES = [
+  { bg: '#ff4fa0', fg: INK },
+  { bg: '#7b3ff2', fg: '#ffffff' },
+  { bg: '#ffffff', fg: INK },
 ];
 
 export function renderCommonWordsSharepic(
@@ -662,50 +311,35 @@ export function renderCommonWordsSharepic(
   data: CommonWordsData,
   editionTitle = 'Bundestag Wrapped',
 ): void {
-  const setup = setupCanvas(canvas);
+  const setup = setupCanvas(canvas, 'ink', 'orbit', editionTitle);
   if (!setup) return;
-  const { ctx, centerX } = setup;
-
-  drawHeader(ctx, editionTitle);
+  const { ctx, p } = setup;
 
   const words = data.topics.slice(0, 12);
+  let y = drawTitle(ctx, p, commonWordsConfig.title, commonWordsConfig.subtitle);
 
-  // Title
-  ctx.font = '60px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText('📊', centerX, 180);
-
-  ctx.font = 'bold 44px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = '#ffffff';
-  ctx.fillText('Häufigste Wörter', centerX, 240);
-
-  ctx.font = '22px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-  ctx.fillText('Die meistgenutzten Wörter im Bundestag', centerX, 275);
-
-  // Word cloud - simple grid layout
-  const startY = 340;
-  const cols = 3;
-  const rowH = 100;
-  const colW = 300;
-
+  // Word chips flow left to right; the first words are the biggest.
+  let x = MARGIN;
+  let rowH = 0;
   words.forEach((word, i) => {
-    const col = i % cols;
-    const row = Math.floor(i / cols);
-    const x = centerX + (col - 1) * colW;
-    const y = startY + row * rowH;
-
-    // Size based on position (first words bigger)
-    const fontSize = i < 2 ? 42 : i < 5 ? 34 : i < 8 ? 28 : 24;
-    const color = WORD_CLOUD_COLORS[i % WORD_CLOUD_COLORS.length];
-
-    ctx.font = `bold ${fontSize}px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`;
-    ctx.fillStyle = color;
-    ctx.textAlign = 'center';
-    ctx.fillText(word, x, y);
+    const size = i < 2 ? 54 : i < 5 ? 44 : 36;
+    const style = CHIP_STYLES[i % CHIP_STYLES.length];
+    setFont(ctx, 'wide', size);
+    const w = ctx.measureText(word).width + size * 1.4;
+    const h = size * 1.9;
+    if (x + w > SIZE - MARGIN) { x = MARGIN; y += rowH + 16; rowH = 0; }
+    roundedRect(ctx, x, y, w, h, h / 2);
+    ctx.fillStyle = style.bg;
+    ctx.fill();
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillStyle = style.fg;
+    ctx.fillText(word, x + size * 0.7, y + h / 2 + size * 0.35);
+    x += w + 16;
+    rowH = Math.max(rowH, h);
   });
 
-  drawFooter(ctx, centerX);
+  drawFooterUrl(ctx, p);
 }
 
 // ============ TONE ANALYSIS SLIDE ============
@@ -721,92 +355,51 @@ export interface ToneAnalysisData {
   partyProfiles: Record<string, PartyProfile>;
 }
 
-function drawToneBubble(
-  ctx: CanvasRenderingContext2D,
-  profile: PartyProfile,
-  x: number,
-  y: number,
-  w: number,
-  h: number
-): void {
-  const partyColor = getPartyColor(profile.party);
-
-  // Card background
-  const gradient = ctx.createLinearGradient(x, y, x + w, y + h);
-  gradient.addColorStop(0, `${partyColor}30`);
-  gradient.addColorStop(1, `${partyColor}15`);
-  ctx.fillStyle = gradient;
-  drawRoundedRect(ctx, x, y, w, h, 20);
-  ctx.fill();
-  ctx.strokeStyle = `${partyColor}60`;
-  ctx.lineWidth = 2;
-  drawRoundedRect(ctx, x, y, w, h, 20);
-  ctx.stroke();
-
-  const cx = x + w / 2;
-
-  // Emoji
-  ctx.font = '40px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText(profile.emoji || '🎭', cx, y + 50);
-
-  // Party name
-  ctx.font = 'bold 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = partyColor;
-  ctx.fillText(profile.party, cx, y + 85);
-
-  // Category/trait
-  ctx.font = '14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
-  const trait = profile.categoryName || profile.traits?.[0] || '';
-  ctx.fillText(trait, cx, y + 110);
-}
+const TONE_CARDS = [
+  { bg: '#ffffff', fg: INK },
+  { bg: '#ff4fa0', fg: INK },
+  { bg: '#0e0a14', fg: '#ffffff' },
+];
 
 export function renderToneAnalysisSharepic(
   canvas: HTMLCanvasElement,
   data: ToneAnalysisData,
   editionTitle = 'Bundestag Wrapped',
 ): void {
-  const setup = setupCanvas(canvas);
+  const setup = setupCanvas(canvas, 'violet', 'corner', editionTitle);
   if (!setup) return;
-  const { ctx, centerX } = setup;
-
-  drawHeader(ctx, editionTitle);
+  const { ctx, p } = setup;
 
   const profiles = Object.values(data.partyProfiles)
-    .filter(p => p.party !== 'fraktionslos')
+    .filter(profile => profile.party !== 'fraktionslos')
     .slice(0, 6);
 
-  // Title
-  ctx.font = '60px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText('🎭', centerX, 180);
+  const top = drawTitle(ctx, p, toneAnalysisConfig.title, toneAnalysisConfig.subtitle, 160);
 
-  ctx.font = 'bold 40px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = '#ffffff';
-  ctx.fillText('Fraktions-Persönlichkeiten', centerX, 240);
-
-  ctx.font = '22px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-  ctx.fillText('Die Kommunikationsstile der Parteien', centerX, 275);
-
-  // Grid: 3 columns, 2 rows
-  const cardW = 180;
-  const cardH = 130;
+  // 3 x 2 cards; party in wide capitals, communication style below.
   const gap = 20;
-  const gridW = cardW * 3 + gap * 2;
-  const startX = centerX - gridW / 2;
-  const startY = 320;
-
+  const cardW = (SIZE - MARGIN * 2 - gap * 2) / 3;
+  const cardH = 190;
   profiles.forEach((profile, i) => {
-    const col = i % 3;
-    const row = Math.floor(i / 3);
-    const x = startX + col * (cardW + gap);
-    const y = startY + row * (cardH + gap);
-    drawToneBubble(ctx, profile, x, y, cardW, cardH);
+    const x = MARGIN + (i % 3) * (cardW + gap);
+    const y = top + Math.floor(i / 3) * (cardH + gap);
+    const style = TONE_CARDS[i % TONE_CARDS.length];
+    roundedRect(ctx, x, y, cardW, cardH, 32);
+    ctx.fillStyle = style.bg;
+    ctx.fill();
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillStyle = style.fg;
+    const party = profile.party.toUpperCase();
+    setFont(ctx, 'wide', fitSize(ctx, 'wide', party, cardW - 48, 36, 20));
+    ctx.fillText(party, x + 24, y + 66);
+    const trait = profile.categoryName || profile.traits?.[0] || '';
+    const traitSize = fitSize(ctx, 'text', trait, cardW - 48, 28, 18, 700);
+    setFont(ctx, 'text', traitSize, 700);
+    ctx.fillText(trait, x + 24, y + 120);
   });
 
-  drawFooter(ctx, centerX);
+  drawFooterUrl(ctx, p);
 }
 
 // ============ SWIFTIE SLIDE ============
@@ -821,86 +414,32 @@ export function renderSwiftieSharepic(
   data: SwiftieData,
   editionTitle = 'Bundestag Wrapped',
 ): void {
-  const setup = setupCanvas(canvas);
+  const setup = setupCanvas(canvas, 'pink', 'corner', editionTitle);
   if (!setup) return;
-  const { ctx, centerX } = setup;
-  const centerY = SIZE / 2;
+  const { ctx, p } = setup;
 
-  drawHeader(ctx, editionTitle);
+  let y = drawHeading(ctx, swiftieConfig.title, 190, p.on, 120, 56);
+  y = drawSubtitle(ctx, swiftieConfig.subtitle, y + 8, p.muted, 40) + 20;
 
-  const partyColor = getPartyColor(data.party);
-
-  // Purple decorative orb
-  const purpleOrb = ctx.createRadialGradient(centerX, centerY - 100, 0, centerX, centerY - 100, 300);
-  purpleOrb.addColorStop(0, '#9333ea30');
-  purpleOrb.addColorStop(1, 'transparent');
-  ctx.fillStyle = purpleOrb;
-  ctx.beginPath();
-  ctx.arc(centerX, centerY - 100, 300, 0, Math.PI * 2);
-  ctx.fill();
-
-  // Title
-  ctx.font = '80px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText('💜', centerX, 200);
-
-  ctx.font = 'bold 48px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+  // Name on a white plate, party as pill.
+  const name = data.name.toUpperCase();
+  const plateH = 340;
+  roundedRect(ctx, MARGIN, y, SIZE - MARGIN * 2, plateH, 40);
   ctx.fillStyle = '#ffffff';
-  ctx.fillText('Der einzige Swiftie', centerX, 270);
-
-  ctx.font = '26px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-  ctx.fillText('im Bundestag', centerX, 310);
-
-  // Card
-  const cardW = 400;
-  const cardH = 280;
-  const cardX = centerX - cardW / 2;
-  const cardY = 360;
-
-  const cardGradient = ctx.createLinearGradient(cardX, cardY, cardX + cardW, cardY + cardH);
-  cardGradient.addColorStop(0, 'rgba(147, 51, 234, 0.3)');
-  cardGradient.addColorStop(1, 'rgba(236, 72, 153, 0.2)');
-  ctx.fillStyle = cardGradient;
-  drawRoundedRect(ctx, cardX, cardY, cardW, cardH, 24);
   ctx.fill();
-  ctx.strokeStyle = 'rgba(168, 85, 247, 0.5)';
-  ctx.lineWidth = 2;
-  drawRoundedRect(ctx, cardX, cardY, cardW, cardH, 24);
-  ctx.stroke();
+  const size = fitSize(ctx, 'wide', name, SIZE - MARGIN * 2 - 80, 72, 34);
+  setFont(ctx, 'wide', size);
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'alphabetic';
+  ctx.fillStyle = INK;
+  ctx.fillText(name, MARGIN + 40, y + 40 + size);
+  pill(ctx, data.party, MARGIN + 40, y + 40 + size + 30, partyFill(data.party), '#ffffff', 28);
+  setFont(ctx, 'text', 28, 600);
+  ctx.fillStyle = INK;
+  ctx.fillText('Erwähnte "Taylor Swift" und "Swifties"', MARGIN + 40, y + plateH - 84);
+  ctx.fillText('in einer Rede über Cybersicherheit', MARGIN + 40, y + plateH - 40);
 
-  // Crown
-  ctx.font = '36px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillText('👑', cardX + cardW - 40, cardY + 40);
-
-  // Bracelets
-  ctx.font = '44px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillText('🩷💎🩵', centerX, cardY + 70);
-
-  // Name
-  ctx.font = 'bold 38px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = partyColor;
-  ctx.shadowColor = `${partyColor}50`;
-  ctx.shadowBlur = 30;
-  ctx.fillText(data.name, centerX, cardY + 140);
-  ctx.shadowBlur = 0;
-
-  // Party badge
-  ctx.font = 'bold 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  const pw = ctx.measureText(data.party).width + 28;
-  drawRoundedRect(ctx, centerX - pw / 2, cardY + 165, pw, 32, 16);
-  ctx.fillStyle = partyColor;
-  ctx.fill();
-  ctx.fillStyle = partyColor === '#FFFFFF' ? '#000' : '#fff';
-  ctx.fillText(data.party, centerX, cardY + 187);
-
-  // Context
-  ctx.font = '16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-  ctx.fillText('Erwähnte "Taylor Swift" und "Swifties"', centerX, cardY + 230);
-  ctx.fillText('in einer Rede über Cybersicherheit', centerX, cardY + 252);
-
-  drawFooter(ctx, centerX);
+  drawFooterUrl(ctx, p);
 }
 
 // ============ DOWNLOAD/SHARE HELPERS ============

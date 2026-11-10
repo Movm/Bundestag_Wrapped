@@ -2,9 +2,6 @@
 @import "./design-system/tokens.css";
 @import "./design-system/components.css" layer(components);
 
-/* === Icon Animations === */
-@import "./components/icons/intro-icons/animations.css";
-
 /* === Local Fonts (GDPR compliant) === */
 
 /* Noto Sans - Headers (Variable Font) */
@@ -524,3 +521,5 @@ body:has([data-story-scroll]) { overflow: hidden; }
 .story-scroll:not([data-reading-mode="true"]) { scroll-snap-type: y mandatory; }
 .story-section { scroll-snap-align: start; scroll-snap-stop: always; }
 .story-next { position: absolute; bottom: max(1rem, env(safe-area-inset-bottom)); right: max(1.25rem, env(safe-area-inset-right, 0px)); z-index: 40; min-height: 3rem; padding: 0 1.4rem; font-size: 1rem; }
+/* When a slide offers sharing, the round share button takes the corner and "Weiter" moves left of it. */
+main:has(.story-share-trigger) .story-next { right: calc(max(1.25rem, env(safe-area-inset-right, 0px)) + 4.25rem); }

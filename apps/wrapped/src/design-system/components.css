@@ -358,3 +358,11 @@
 .ds-fit-scope { container-type: inline-size; }
 .ds-fit-word { display: block; font-family: var(--font-wide); font-weight: 900; font-stretch: 110%; text-transform: uppercase; line-height: 0.95; letter-spacing: -0.03em; hyphens: auto; hyphenate-limit-chars: 12 6 6; overflow-wrap: anywhere; font-size: clamp(1.125rem, calc(100cqi / (var(--chars) * 0.88)), var(--fit-max)); }
 .ds-delta--sm { font-size: 0.8125rem; padding: 0.3em 0.7em; }
+
+/* Confetti (see Confetti.tsx): compositor-only. */
+.ds-confetti { top: 50%; transform: scale(0); animation: ds-confetti var(--d, 0.8s) var(--delay, 0s) cubic-bezier(0.2, 0.8, 0.3, 1) forwards; will-change: transform, opacity; }
+@keyframes ds-confetti {
+  0% { transform: translate(0, 0) scale(0) rotate(0deg); opacity: 1; }
+  30% { transform: translate(calc(var(--x) * 0.4), calc(var(--y) * 0.4)) scale(1) rotate(calc(var(--r) * 0.4)); opacity: 1; }
+  100% { transform: translate(var(--x), var(--y)) scale(0.5) rotate(var(--r)); opacity: 0; }
+}

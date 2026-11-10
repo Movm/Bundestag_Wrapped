@@ -1,9 +1,8 @@
 import { useMemo } from 'react';
 import type { SpeakerWrapped } from '@/data/speaker-wrapped';
-import { getPartyColor } from './party-colors';
 import { SlideQuiz, type QuizConfigAlt } from '@/components/slides/shared/SlideQuiz';
-import { SlideContainer } from '@/components/slides/shared/SlideContainer';
-import { SlideHeader } from '@/components/slides/shared/SlideHeader';
+import { Slide } from '@/design-system/components/Slide';
+import { Display, Lead, Mark } from '@/design-system/components/Type';
 
 interface SpeakerQuizSlideProps {
   speaker: SpeakerWrapped;
@@ -12,21 +11,10 @@ interface SpeakerQuizSlideProps {
   onComplete?: () => void;
 }
 
-/**
- * Speaker Wrapped quiz slide.
- * Uses the signature word quiz from speaker data.
- * Follows the same pattern as main wrapped quizzes.
- */
-export function SpeakerQuizSlide({
-  speaker,
-  isAnswered,
-  onQuizAnswer,
-  onComplete,
-}: SpeakerQuizSlideProps) {
-  const partyColor = getPartyColor(speaker.party);
+/** Signature-word quiz (one question) on the quiz surface; same engine as the main story. */
+export function SpeakerQuizSlide({ speaker, isAnswered, onQuizAnswer, onComplete }: SpeakerQuizSlideProps) {
   const nounQuiz = speaker.signatureQuiz;
 
-  // Build quiz config from speaker data
   const quizConfig = useMemo((): QuizConfigAlt | null => {
     if (!nounQuiz) return null;
 
@@ -36,22 +24,16 @@ export function SpeakerQuizSlide({
     return {
       question: nounQuiz.question,
       options: nounQuiz.options,
-      explanation: explanationBundestag
-        ? [explanationParty, explanationBundestag]
-        : explanationParty,
+      explanation: explanationBundestag ? [explanationParty, explanationBundestag] : explanationParty,
     };
   }, [nounQuiz]);
 
-  // Fallback if no quiz data
   if (!quizConfig) {
     return (
-      <SlideContainer>
-        <SlideHeader
-          emoji="✨"
-          title="Bereit für die Statistiken?"
-          subtitle="Lass uns sehen, wie du im Bundestag performt hast."
-        />
-      </SlideContainer>
+      <Slide shapes="band">
+        <Display size="xl">Bereit für die <Mark>Statistiken</Mark>?</Display>
+        <Lead>Lass uns sehen, wie du im Bundestag performt hast.</Lead>
+      </Slide>
     );
   }
 
@@ -61,9 +43,7 @@ export function SpeakerQuizSlide({
       isAnswered={isAnswered}
       onAnswer={onQuizAnswer ?? (() => {})}
       onComplete={onComplete ?? (() => {})}
-      emoji="🎯"
       title="Wort-Quiz"
-      partyColor={partyColor}
       slideId="speaker-quiz"
     />
   );

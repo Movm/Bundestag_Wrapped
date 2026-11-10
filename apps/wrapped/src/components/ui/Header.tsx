@@ -49,7 +49,7 @@ export function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
             aria-label={IS_DEV_AUDIO_DISABLED ? 'Musik im Entwicklungsmodus deaktiviert' : musicPlaying ? 'Musik ausschalten' : 'Musik einschalten'}
             title={IS_DEV_AUDIO_DISABLED ? 'Musik ist im Entwicklungsmodus deaktiviert' : undefined}
           >
-            {musicPlaying ? <Music size={20} aria-hidden="true" /> : <Music2 size={20} aria-hidden="true" />}
+            {musicPlaying ? <Music size={20} strokeWidth={2.4} aria-hidden="true" /> : <Music2 size={20} strokeWidth={2.4} aria-hidden="true" />}
           </button>
 
           {/* Sound effects toggle */}
@@ -60,7 +60,7 @@ export function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
             aria-label={IS_DEV_AUDIO_DISABLED ? 'Ton im Entwicklungsmodus deaktiviert' : muted ? 'Ton einschalten' : 'Ton ausschalten'}
             title={IS_DEV_AUDIO_DISABLED ? 'Ton ist im Entwicklungsmodus deaktiviert' : undefined}
           >
-            {muted ? <VolumeX size={20} aria-hidden="true" /> : <Volume2 size={20} aria-hidden="true" />}
+            {muted ? <VolumeX size={20} strokeWidth={2.4} aria-hidden="true" /> : <Volume2 size={20} strokeWidth={2.4} aria-hidden="true" />}
           </button>
 
           <button
@@ -74,7 +74,7 @@ export function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
               animate={{ rotate: isMenuOpen ? 90 : 0 }}
               transition={{ duration: 0.2 }}
             >
-              {isMenuOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
+              {isMenuOpen ? <X size={20} strokeWidth={2.6} aria-hidden="true" /> : <Menu size={20} strokeWidth={2.6} aria-hidden="true" />}
             </motion.div>
           </button>
         </div>

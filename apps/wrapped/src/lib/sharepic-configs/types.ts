@@ -3,7 +3,6 @@
  */
 
 export interface SlideConfig {
-  emoji: string;
   title: string;
   subtitle: string;
   filename: string;
@@ -22,10 +21,10 @@ export interface ChampionCardConfig extends CardConfig {
 }
 
 export const CHAMPION_COLORS = {
-  bg: '#f59e0b',
-  bgLight: '#fbbf24',
-  border: '#fcd34d',
-  text: '#78350f',
+  bg: '#ff4fa0',
+  bgLight: '#ff4fa0',
+  border: '#ffffff',
+  text: '#0e0a14',
 } as const;
 
 export const SIZE = 1080;

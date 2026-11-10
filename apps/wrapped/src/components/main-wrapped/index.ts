@@ -4,7 +4,6 @@ export { buildActiveSlidePlan, getQuizSlides, hasAvailableMoinQuiz } from './sli
 export { SlideRenderer, useSlideShareData } from './SlideRenderer';
 export { ScrollContainer, type ScrollContainerRef } from './ScrollContainer';
 export { SlideSection } from './SlideSection';
-export { ScrollProgressBar } from './ScrollProgressBar';
 export { useQuizGate } from './useQuizGate';
 export { useAutoScroll } from './useAutoScroll';
 export { useSlideTransitionSound } from '@/lib/sounds';
