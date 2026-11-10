@@ -28,9 +28,9 @@ export function MentionSlide({ mention }: { mention: Mention }) {
         </Lead>
       </div>
       <Block tone="pink">
-        <figure className="m-0 flex flex-col gap-3">
-          <blockquote className="m-0 text-lg font-semibold leading-snug hyphens-auto" lang="de">„{top.quote}“</blockquote>
-          <figcaption className="text-sm">
+        <figure className="ds-quote">
+          <blockquote lang="de">„{top.quote}“</blockquote>
+          <figcaption>
             <strong>{top.name}</strong> ({top.party}) · {day.format(new Date(`${top.date}T00:00:00Z`))}
           </figcaption>
         </figure>
