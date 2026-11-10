@@ -45,8 +45,8 @@ export const SOUND_SPRITES: Partial<Record<SoundType, readonly string[]>> = {
   tick: TAPS,
   lift: ['select'],
   drop: ['toggle_on'],
-  like: ['transition_up'],
-  nope: ['transition_down'],
+  like: SWIPES,
+  nope: SWIPES,
   match: ['celebration'],
 };
 
