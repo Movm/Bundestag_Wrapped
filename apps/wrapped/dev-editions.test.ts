@@ -12,8 +12,8 @@ describe('dev edition request resolution', () => {
   });
 
   it('rejects traversal and unrelated production requests', () => {
-    expect(resolveDevEditionRequest('/__dev-editions/../public/secret.json', root)).toBeNull();
-    expect(resolveDevEditionRequest('/__dev-editions/%2e%2e/public/secret.json', root)).toBeNull();
+    expect(resolveDevEditionRequest('/data/__dev-editions/../public/secret.json', root)).toBeNull();
+    expect(resolveDevEditionRequest('/data/__dev-editions/%2e%2e/public/secret.json', root)).toBeNull();
     expect(resolveDevEditionRequest('/data/2025/final/manifest.json', root)).toBeNull();
   });
 });

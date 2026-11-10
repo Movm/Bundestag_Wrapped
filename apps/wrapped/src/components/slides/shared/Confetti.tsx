@@ -7,6 +7,8 @@ interface ConfettiProps {
   count?: number;
   /** Custom colors for confetti particles (defaults to German flag colors) */
   colors?: string[];
+  /** Seconds each particle flies (default 1.5) */
+  duration?: number;
 }
 
 /**
@@ -17,6 +19,7 @@ interface ConfettiProps {
 export const Confetti = memo(function Confetti({
   count = 20,
   colors = DEFAULT_COLORS,
+  duration = 1.5,
 }: ConfettiProps) {
   const prefersReducedMotion = useReducedMotion();
 
@@ -29,10 +32,10 @@ export const Confetti = memo(function Confetti({
         yEnd: Math.random() * 100 - 50,
         xEnd: Math.random() * 200 - 100,
         rotate: Math.random() * 720 - 360,
-        delay: Math.random() * 0.3,
+        delay: Math.random() * Math.min(0.3, duration * 0.2),
         color: colors[i % colors.length],
       })),
-    [count, colors]
+    [count, colors, duration]
   );
 
   // Respect reduced motion preferences - show static confetti instead
@@ -74,7 +77,7 @@ export const Confetti = memo(function Confetti({
             scale: [0, 1, 0.5],
             rotate: p.rotate,
           }}
-          transition={{ duration: 1.5, delay: p.delay }}
+          transition={{ duration, delay: p.delay }}
         />
       ))}
     </>
