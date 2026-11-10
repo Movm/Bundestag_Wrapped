@@ -34,7 +34,7 @@ describe.each(LAYOUTS)('quiz layout %s', (layout) => {
     const region = container.querySelector('[role="status"]')!;
     expect(region.textContent).toBe('');
     // swipe starts on card A, every other layout offers one button per option
-    const control = [...container.querySelectorAll('button')].find(b => /^(A|✓ Ja)/.test(b.textContent ?? '') && !b.textContent?.startsWith('Nein'))!;
+    const control = [...container.querySelectorAll('button')].find(b => /^(A|\s*Ja)/.test(b.textContent ?? '') && !b.textContent?.startsWith('Nein'))!;
     control.focus();
     await act(async () => control.click());
 

@@ -74,6 +74,17 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
     themeMusic.playTheme(theme);
   }, [currentSection, introStarted]);
 
+  // Load the first theme while the reader is still on the cover, so pressing
+  // "Starten" only starts playback instead of setting up a media element.
+  const firstThemeSlide = activeSlides[1];
+  useEffect(() => {
+    if (introStarted || !firstThemeSlide) return;
+    const whenIdle = window.requestIdleCallback ?? ((task: () => void) => window.setTimeout(task, 1500));
+    const cancel = window.cancelIdleCallback ?? window.clearTimeout;
+    const handle = whenIdle(() => themeMusic.preload(getThemeForSlide(firstThemeSlide)), { timeout: 4000 });
+    return () => cancel(handle);
+  }, [introStarted, firstThemeSlide]);
+
   // Clean up theme music when leaving the page to free memory
   useEffect(() => {
     return () => {

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { QuizQuestion } from '../QuizQuestion';
 import type { QuizLayoutProps } from '../layouts';
+import { Glyph } from '../../components/Glyph';
 import './swipe.css';
 
 /**
@@ -28,7 +29,7 @@ export function SwipeLayout({ engine, questionId }: QuizLayoutProps) {
               aria-label="Nein, nächste Karte"
               onClick={() => { if (!answered) setIndex((index + 1) % options.length); }}
             >
-              <span aria-hidden="true">✕ </span>Nein
+              <Glyph name="cross" /> Nein
             </button>
             <button
               type="button"
@@ -38,8 +39,8 @@ export function SwipeLayout({ engine, questionId }: QuizLayoutProps) {
               aria-label={`Ja, ${shown.text}${shown.statusWord ? `, ${shown.statusWord}` : ''}`}
               onClick={() => { if (!answered) shown.select(); }}
             >
-              <span aria-hidden="true">✓ </span>Ja
-              {shown.statusWord && <span className="ds-choice__tag" aria-hidden="true">{shown.status === 'correct' ? '✓ ' : '✕ '}{shown.statusWord}</span>}
+              <Glyph name="check" /> Ja
+              {shown.statusWord && <span className="ds-choice__tag" aria-hidden="true"><Glyph name={shown.status === 'correct' ? 'check' : 'cross'} />{' '}{shown.statusWord}</span>}
             </button>
           </div>
         </div>
