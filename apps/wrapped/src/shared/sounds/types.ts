@@ -11,6 +11,8 @@ export type SoundType =
   | 'correct'
   | 'wrong'
   | 'start'
+  /** Cover: the seats fly into their rows. */
+  | 'assemble'
   | 'whoosh'
   | 'hover'
   /** Perfect Match: a card moves one place while reordering. */
@@ -48,6 +50,7 @@ export const SOUND_SPRITES: Partial<Record<SoundType, readonly string[]>> = {
   like: SWIPES,
   nope: SWIPES,
   match: ['celebration'],
+  assemble: ['transition_up'],
 };
 
 export const SOUND_VOLUMES: Record<SoundType, number> = {
@@ -55,6 +58,7 @@ export const SOUND_VOLUMES: Record<SoundType, number> = {
   correct: 0.8,
   wrong: 0.7,
   start: 0.9,
+  assemble: 0.6,
   whoosh: 0.45,
   hover: 0.25, // Subtle hover feedback
   tick: 0.35,

@@ -13,7 +13,10 @@
  *   ticks don't sound mechanical.
  * - Loading starts when the page is idle; the context is resumed on the first
  *   pointer or key press, as browsers require.
- * - A sound asked for before it is decoded is skipped, not played late.
+ * - A sound asked for while it is still decoding plays as soon as it is ready,
+ *   if that is within its wait limit; later than that it would no longer
+ *   match the action, so it is dropped. Before the reader has pressed
+ *   anything, browsers forbid sound, so nothing is queued at all.
  * - Mute preference lives in the audio store (persisted to localStorage).
  */
 
@@ -24,6 +27,7 @@ import {
   SOUND_VOLUMES,
   createSlideTransitionSoundHook,
 } from '@/shared/sounds';
+import { hasUserActivation, onUserActivation } from './audio-unlock';
 import { whenTrulyIdle } from './when-idle';
 import { IS_DEV_AUDIO_DISABLED, useAudioStore } from '@/stores/audioStore';
 
@@ -81,6 +85,7 @@ export function initSounds(): Promise<void> {
     for (const [type, url] of Object.entries(SOUND_FILES) as [SoundType, string][]) {
       const buffer = await decodeFirst(ctx, [url]);
       if (buffer) clips.set(type, [{ buffer, offset: 0, duration: buffer.duration }]);
+      flushPending();
       await nextTask();
     }
     const { SPRITE_URLS, SPRITE_MAP } = await import('./snd-sprite');
@@ -90,25 +95,36 @@ export function initSounds(): Promise<void> {
       const parts = names.map(name => SPRITE_MAP[name]).filter(Boolean);
       clips.set(type, parts.map(({ start, end }) => ({ buffer, offset: start, duration: end - start })));
     }
+    flushPending();
   })();
   return loading;
 }
 
 if (typeof window !== 'undefined' && !IS_DEV_AUDIO_DISABLED) {
-  // pointerdown/up and keydown are user activations, so resume() is allowed here.
-  const events = ['pointerdown', 'pointerup', 'keydown'] as const;
-  const unlock = () => {
+  // Activations allow resume(); stop listening once the context runs.
+  const stop = onUserActivation(() => {
     void initSounds();
     const ctx = audioContext();
     if (!ctx) return;
-    void ctx.resume().then(() => {
-      if (ctx.state === 'running') events.forEach(event => document.removeEventListener(event, unlock, true));
-    });
-  };
-  events.forEach(event => document.addEventListener(event, unlock, true));
+    void ctx.resume().then(() => { if (ctx.state === 'running') stop(); });
+  });
 
   // Loading and decoding needs no user gesture (only starting the context does).
   whenTrulyIdle(() => void initSounds());
+}
+
+/** How long a sound may wait for its decode before it no longer fits the action. */
+const MAX_WAIT_MS: Partial<Record<SoundType, number>> = { start: 1500 };
+const DEFAULT_MAX_WAIT_MS = 200;
+const pending = new Map<SoundType, number>();
+
+function flushPending() {
+  const now = performance.now();
+  for (const [type, deadline] of pending) {
+    if (!clips.has(type)) continue;
+    pending.delete(type);
+    if (now <= deadline) playSound(type);
+  }
 }
 
 /**
@@ -120,9 +136,13 @@ export function playSound(type: SoundType): void {
   if (useAudioStore.getState().isMuted) return;
   if (typeof window === 'undefined') return;
 
+  // Before any press the context can't start; a queued sound would go off on the first click.
+  if (!hasUserActivation()) return;
+
   const variants = clips.get(type);
   const ctx = context;
   if (!variants?.length || !ctx) {
+    pending.set(type, performance.now() + (MAX_WAIT_MS[type] ?? DEFAULT_MAX_WAIT_MS));
     void initSounds();
     return;
   }
