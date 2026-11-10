@@ -21,7 +21,8 @@ import type {
 import type { Speech } from '@/lib/search-utils';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionPath, editionSurface } from '@/edition/surface';
-import { ArrowIcon, GrowBar, PartyPill, RatioBars, Reveal, partyStyle } from './mdb-profile/shared';
+import { ArrowIcon, GrowBar, PartyPill, RatioBars, Reveal } from './mdb-profile/shared';
+import { partyStyle } from './mdb-profile/party-style';
 
 const number = new Intl.NumberFormat('de-DE');
 const euro = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });

@@ -179,7 +179,7 @@
 /* Digits never break: the size shrinks with the tile instead (~0.85em per digit at 125% stretch). */
 .mp-tile__value { font-weight: 900; font-stretch: 125%; font-size: min(6.5rem, calc(100cqi / (var(--chars, 3) * 0.85))); line-height: 0.85; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .mp-tile__label { font-weight: 800; font-size: 1.1875rem; }
-.mp-tile__detail { margin-top: 0.25rem; font-size: 0.9375rem; opacity: 0.85; }
+.mp-tile__detail { margin-top: 0.25rem; font-size: 0.9375rem; }
 
 /* 03 Topics / 04 Tone: ranked rows */
 .mp-ranks { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }

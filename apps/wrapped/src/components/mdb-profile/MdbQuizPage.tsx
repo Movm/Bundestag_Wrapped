@@ -23,7 +23,8 @@ import {
 } from '@/lib/mdb-quiz';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionPath, editionSurface } from '@/edition/surface';
-import { ArrowIcon, GrowBar, PartyPill, RatioBars, partyStyle } from './shared';
+import { ArrowIcon, GrowBar, PartyPill, RatioBars } from './shared';
+import { partyStyle } from './party-style';
 
 /** Time to see the marked answer before the result card opens. */
 const RESULT_DELAY_MS = 650;
