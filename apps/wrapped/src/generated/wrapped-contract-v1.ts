@@ -273,6 +273,21 @@ export interface RankMovement {
   "rankChange": number;
 }
 
+export interface MentionSpeaker {
+  "name": NonEmptyString;
+  "party": NonEmptyString;
+  "count": Count;
+  "date": IsoDate;
+  "quote": NonEmptyString;
+}
+
+export interface Mention {
+  "id": string;
+  "label": NonEmptyString;
+  "count": Count;
+  "speakers": Array<MentionSpeaker>;
+}
+
 export interface YouthWordSpeaker {
   "name": NonEmptyString;
   "party": NonEmptyString;
@@ -365,6 +380,7 @@ export interface WrappedData {
   "moinSpeakers": Array<NamedPartyCount>;
   "topQuestionAskers": Array<NamedPartyCount>;
   "yearOverYear"?: YearOverYearAnalysis;
+  "mentions"?: Array<Mention>;
 }
 
 export type SpeakerIndexAsset = Record<string, unknown>;

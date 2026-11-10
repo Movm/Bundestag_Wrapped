@@ -15,6 +15,8 @@ interface StoryGroup {
   readonly quiz: (typeof QUIZ_SLIDES)[number];
   readonly slides: readonly SlideType[];
   readonly comparisonSlides?: readonly SlideType[];
+  /** Shown only when the edition has a moment-of-the-year mention. */
+  readonly mentionSlides?: readonly SlideType[];
 }
 
 /**
@@ -33,7 +35,7 @@ const STORY_TEMPLATE: readonly (SlideType | StoryGroup)[] = [
   { quiz: 'quiz-drama', slides: ['intro-drama', 'quiz-drama', 'info-drama', 'reveal-drama'] },
   { quiz: 'quiz-discriminatory', slides: ['intro-discriminatory', 'quiz-discriminatory', 'info-discriminatory', 'reveal-discriminatory'] },
   { quiz: 'quiz-common-words', slides: ['intro-common-words', 'quiz-common-words', 'reveal-common-words'] },
-  { quiz: 'quiz-youth-language', slides: ['quiz-youth-language', 'info-youth-language', 'reveal-youth-language', 'reveal-youth-parties', 'reveal-youth-speakers'] },
+  { quiz: 'quiz-youth-language', slides: ['quiz-youth-language', 'info-youth-language', 'reveal-youth-language', 'reveal-youth-parties', 'reveal-youth-speakers'], mentionSlides: ['reveal-mention'] },
   { quiz: 'quiz-moin', slides: ['intro-moin', 'quiz-moin', 'info-moin', 'reveal-moin'] },
   { quiz: 'quiz-tone', slides: ['intro-tone', 'quiz-tone', 'info-tone', 'reveal-tone'] },
   { quiz: 'quiz-gender', slides: ['quiz-gender', 'info-gender', 'reveal-gender'] },
@@ -65,7 +67,13 @@ export function buildActiveSlidePlan(
   moinSpeakers: readonly MoinQuizCandidate[] | null | undefined,
   configuration?: EditionQuizConfiguration,
   hasYearOverYear = false,
+  hasMentions = false,
 ): SlideType[] {
+  const groupSlides = (group: StoryGroup): SlideType[] => [
+    ...group.slides,
+    ...(hasYearOverYear ? group.comparisonSlides ?? [] : []),
+    ...(hasMentions ? group.mentionSlides ?? [] : []),
+  ];
   if (configuration) {
     const groups = new Map(
       STORY_TEMPLATE.filter(isStoryGroup).map((group) => [group.quiz, group]),
@@ -75,9 +83,7 @@ export function buildActiveSlidePlan(
       'info-disclaimer',
       ...configuration.groups.flatMap(({ id }) => {
         const group = groups.get(id as (typeof QUIZ_SLIDES)[number]);
-        if (group) return model[id]
-          ? [...group.slides, ...(hasYearOverYear ? group.comparisonSlides ?? [] : [])]
-          : [];
+        if (group) return model[id] ? groupSlides(group) : [];
         // Configuration validation guarantees that custom groups have a question.
         return model[id] ? [id as SlideType] : [];
       }),
@@ -90,9 +96,7 @@ export function buildActiveSlidePlan(
     const available = entry.quiz === 'quiz-moin'
       ? hasAvailableMoinQuiz(moinSpeakers)
       : hasQuiz(model, entry.quiz);
-    return available
-      ? [...entry.slides, ...(hasYearOverYear ? entry.comparisonSlides ?? [] : [])]
-      : [];
+    return available ? groupSlides(entry) : [];
   });
 }
 
