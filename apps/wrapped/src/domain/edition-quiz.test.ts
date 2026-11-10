@@ -187,8 +187,8 @@ describe('Jugendwort question', () => {
 });
 
 describe('edition quiz configuration', () => {
-  it('starts the 2026 edition with the word-riser question', () => {
-    expect(quiz2026.groups[0]?.id).toBe('quiz-word-riser');
+  it('runs the 2026 edition as topic riser, signature words and youth language', () => {
+    expect(quiz2026.groups.map(group => group.id)).toEqual(['quiz-topic-riser', 'quiz-signature', 'quiz-youth-language']);
   });
 
   it('preserves the rendered 2025 quiz model when no configuration exists', () => {
