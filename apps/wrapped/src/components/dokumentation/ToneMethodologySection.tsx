@@ -250,7 +250,7 @@ const DISCRIMINATORY_LEXICONS = {
 };
 
 function WordList({ words, color = 'stone' }: { words: string[]; color?: string }) {
-  const bgColor = color === 'amber' ? 'bg-amber-100 text-amber-800' : 'bg-stone-100 text-stone-600';
+  const bgColor = color === 'amber' ? 'bg-wr-card text-on' : 'bg-wr-card text-on-muted';
   return (
     <div className="flex flex-wrap gap-1">
       {words.map((word) => (
@@ -281,28 +281,28 @@ function CollapsibleCategory({
   defaultOpen?: boolean;
 }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
-  const borderColor = color === 'amber' ? 'border-amber-200 bg-amber-50' : 'border-stone-200';
+  const borderColor = color === 'amber' ? 'border-track bg-wr-card' : 'border-track';
 
   return (
     <div className={`border ${borderColor} rounded-lg overflow-hidden`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full p-4 flex items-center justify-between hover:bg-stone-50 transition-colors"
+        className="w-full p-4 flex items-center justify-between hover:bg-bg-elevated transition-colors"
       >
         <div className="flex items-center gap-2">
           <span className="text-xl">{emoji}</span>
           <div className="text-left">
-            <span className="font-medium text-stone-900">{name}</span>
-            <span className="text-stone-400 text-sm ml-2">({words.length} Wörter)</span>
+            <span className="font-medium text-on">{name}</span>
+            <span className="text-on-muted text-sm ml-2">({words.length} Wörter)</span>
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-xs text-stone-500">{description}</span>
-          <span className="text-stone-400">{isOpen ? '▼' : '▶'}</span>
+          <span className="text-xs text-on-muted">{description}</span>
+          <span className="text-on-muted">{isOpen ? '▼' : '▶'}</span>
         </div>
       </button>
       {isOpen && (
-        <div className="p-4 pt-0 border-t border-stone-100">
+        <div className="p-4 pt-0 border-t border-track">
           <WordList words={words} color={color} />
         </div>
       )}
@@ -312,20 +312,20 @@ function CollapsibleCategory({
 
 export function ToneMethodologySection() {
   return (
-    <section className="border-t border-stone-200 bg-white">
+    <section className="border-t border-track bg-wr-card">
       <div className="max-w-4xl mx-auto px-6 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          <h2 className="text-xs font-mono text-stone-400 uppercase tracking-wider mb-4">
+          <h2 className="text-xs font-mono text-on-muted uppercase tracking-wider mb-4">
             Sprachanalyse
           </h2>
-          <h3 className="text-2xl font-serif text-stone-900 mb-4">
+          <h3 className="text-2xl font-heading text-on mb-4">
             Zwei Dimensionen der politischen Kommunikation
           </h3>
-          <p className="text-stone-600 leading-relaxed mb-8">
+          <p className="text-on-muted leading-relaxed mb-8">
             Die Analyse unterscheidet zwischen <strong>Tonalität</strong> (wie wird gesprochen)
             und <strong>Framing</strong> (welche Begriffe werden verwendet). Diese Trennung
             folgt der Politolinguistik: Adjektive und Verben sind bewertend, Substantive sind rahmend.
@@ -340,51 +340,51 @@ export function ToneMethodologySection() {
           className="grid md:grid-cols-2 gap-6 mb-12"
         >
           {/* Tonalität */}
-          <div className="border border-stone-200 rounded-lg p-6 bg-gradient-to-br from-blue-50 to-white">
+          <div className="border border-track rounded-lg p-6 bg-wr-card">
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-3xl">🎭</span>
+              <span aria-hidden="true" className="text-3xl">🎭</span>
               <div>
-                <h4 className="font-medium text-stone-900">Tonalität</h4>
-                <p className="text-sm text-stone-500">Wie wird gesprochen?</p>
+                <h4 className="font-medium text-on">Tonalität</h4>
+                <p className="text-sm text-on-muted">Wie wird gesprochen?</p>
               </div>
             </div>
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
-                <span className="w-20 text-stone-500">Wortarten:</span>
-                <span className="font-mono text-stone-700">Adjektive, Verben</span>
+                <span className="w-20 text-on-muted">Wortarten:</span>
+                <span className="font-mono text-on-muted">Adjektive, Verben</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-20 text-stone-500">Misst:</span>
-                <span className="text-stone-700">Evaluativen Stil</span>
+                <span className="w-20 text-on-muted">Misst:</span>
+                <span className="text-on-muted">Evaluativen Stil</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-20 text-stone-500">Beispiel:</span>
-                <span className="text-stone-700 italic">"Das ist absurd"</span>
+                <span className="w-20 text-on-muted">Beispiel:</span>
+                <span className="text-on-muted italic">"Das ist absurd"</span>
               </div>
             </div>
           </div>
 
           {/* Framing */}
-          <div className="border border-stone-200 rounded-lg p-6 bg-gradient-to-br from-amber-50 to-white">
+          <div className="border border-track rounded-lg p-6 bg-wr-card">
             <div className="flex items-center gap-3 mb-4">
               <span className="text-3xl">🏷️</span>
               <div>
-                <h4 className="font-medium text-stone-900">Framing</h4>
-                <p className="text-sm text-stone-500">Welche Begriffe werden verwendet?</p>
+                <h4 className="font-medium text-on">Framing</h4>
+                <p className="text-sm text-on-muted">Welche Begriffe werden verwendet?</p>
               </div>
             </div>
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
-                <span className="w-20 text-stone-500">Wortarten:</span>
-                <span className="font-mono text-stone-700">Substantive (Schlagwörter)</span>
+                <span className="w-20 text-on-muted">Wortarten:</span>
+                <span className="font-mono text-on-muted">Substantive (Schlagwörter)</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-20 text-stone-500">Misst:</span>
-                <span className="text-stone-700">Konzeptuelle Rahmung</span>
+                <span className="w-20 text-on-muted">Misst:</span>
+                <span className="text-on-muted">Konzeptuelle Rahmung</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-20 text-stone-500">Beispiel:</span>
-                <span className="text-stone-700 italic">"Asylflut" vs "Schutzsuchende"</span>
+                <span className="w-20 text-on-muted">Beispiel:</span>
+                <span className="text-on-muted italic">"Asylflut" vs "Schutzsuchende"</span>
               </div>
             </div>
           </div>
@@ -395,20 +395,20 @@ export function ToneMethodologySection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.5 }}
-          className="bg-stone-50 rounded-lg p-6 mb-12"
+          className="bg-wr-card rounded-lg p-6 mb-12"
         >
-          <h4 className="font-medium text-stone-900 mb-3">Warum getrennt?</h4>
-          <ul className="space-y-2 text-sm text-stone-600">
+          <h4 className="font-medium text-on mb-3">Warum getrennt?</h4>
+          <ul className="space-y-2 text-sm text-on-muted">
             <li className="flex items-start gap-2">
-              <span className="text-stone-400 mt-0.5">•</span>
+              <span className="text-on-muted mt-0.5">•</span>
               <span><strong>Adjektive sind bewertend:</strong> "Das ist lächerlich" – direkte Wertung</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-stone-400 mt-0.5">•</span>
+              <span className="text-on-muted mt-0.5">•</span>
               <span><strong>Substantive sind rahmend:</strong> "Überfremdung" – setzt Deutungsrahmen</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-stone-400 mt-0.5">•</span>
+              <span className="text-on-muted mt-0.5">•</span>
               <span><strong>Beides misst verschiedene Phänomene:</strong> Eine Partei kann höflichen Ton (wenig aggressive Adjektive) mit geladener Terminologie (Schlagwörter) kombinieren</span>
             </li>
           </ul>
@@ -421,8 +421,8 @@ export function ToneMethodologySection() {
           transition={{ delay: 0.7, duration: 0.5 }}
           className="mb-12"
         >
-          <h4 className="text-sm font-medium text-stone-900 mb-2">Adjektiv-Kategorien</h4>
-          <p className="text-xs text-stone-500 mb-4">Klicken zum Aufklappen • {Object.values(ADJECTIVE_LEXICONS).reduce((sum, cat) => sum + cat.words.length, 0)} Wörter gesamt</p>
+          <h4 className="text-sm font-medium text-on mb-2">Adjektiv-Kategorien</h4>
+          <p className="text-xs text-on-muted mb-4">Klicken zum Aufklappen • {Object.values(ADJECTIVE_LEXICONS).reduce((sum, cat) => sum + cat.words.length, 0)} Wörter gesamt</p>
           <div className="space-y-2">
             {Object.entries(ADJECTIVE_LEXICONS).map(([id, cat]) => (
               <CollapsibleCategory
@@ -443,8 +443,8 @@ export function ToneMethodologySection() {
           transition={{ delay: 0.8, duration: 0.5 }}
           className="mb-12"
         >
-          <h4 className="text-sm font-medium text-stone-900 mb-2">Verb-Kategorien</h4>
-          <p className="text-xs text-stone-500 mb-4">Klicken zum Aufklappen • {Object.values(VERB_LEXICONS).reduce((sum, cat) => sum + cat.words.length, 0)} Wörter gesamt</p>
+          <h4 className="text-sm font-medium text-on mb-2">Verb-Kategorien</h4>
+          <p className="text-xs text-on-muted mb-4">Klicken zum Aufklappen • {Object.values(VERB_LEXICONS).reduce((sum, cat) => sum + cat.words.length, 0)} Wörter gesamt</p>
           <div className="space-y-2">
             {Object.entries(VERB_LEXICONS).map(([id, cat]) => (
               <CollapsibleCategory
@@ -465,8 +465,8 @@ export function ToneMethodologySection() {
           transition={{ delay: 0.9, duration: 0.5 }}
           className="mb-12"
         >
-          <h4 className="text-sm font-medium text-stone-900 mb-2">Framing-Kategorien (Schlagwörter)</h4>
-          <p className="text-xs text-stone-500 mb-4">Separat angezeigt, nicht im Ranking • {Object.values(DISCRIMINATORY_LEXICONS).reduce((sum, cat) => sum + cat.words.length, 0)} Wörter gesamt</p>
+          <h4 className="text-sm font-medium text-on mb-2">Framing-Kategorien (Schlagwörter)</h4>
+          <p className="text-xs text-on-muted mb-4">Separat angezeigt, nicht im Ranking • {Object.values(DISCRIMINATORY_LEXICONS).reduce((sum, cat) => sum + cat.words.length, 0)} Wörter gesamt</p>
           <div className="space-y-2">
             {Object.entries(DISCRIMINATORY_LEXICONS).map(([id, cat]) => (
               <CollapsibleCategory
@@ -487,11 +487,11 @@ export function ToneMethodologySection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.5 }}
         >
-          <h4 className="text-sm font-medium text-stone-900 mb-4">Technische Methodik</h4>
+          <h4 className="text-sm font-medium text-on mb-4">Technische Methodik</h4>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h5 className="text-xs font-mono text-stone-400 uppercase tracking-wider mb-2">Verarbeitung</h5>
-              <ul className="text-sm text-stone-600 space-y-1">
+              <h5 className="text-xs font-mono text-on-muted uppercase tracking-wider mb-2">Verarbeitung</h5>
+              <ul className="text-sm text-on-muted space-y-1">
                 <li>• spaCy de_core_news_lg für POS-Tagging</li>
                 <li>• Lemmatisierung für Wortformenabgleich</li>
                 <li>• {Object.values(ADJECTIVE_LEXICONS).reduce((sum, cat) => sum + cat.words.length, 0)} Adjektive in 4 Kategorien</li>
@@ -500,8 +500,8 @@ export function ToneMethodologySection() {
               </ul>
             </div>
             <div>
-              <h5 className="text-xs font-mono text-stone-400 uppercase tracking-wider mb-2">Score-Formeln</h5>
-              <ul className="text-sm text-stone-600 space-y-1 font-mono">
+              <h5 className="text-xs font-mono text-on-muted uppercase tracking-wider mb-2">Score-Formeln</h5>
+              <ul className="text-sm text-on-muted space-y-1 font-mono">
                 <li>• Aggression = aggressive_adj / all_adj</li>
                 <li>• Kooperation = collab_verbs / (collab + confront)</li>
                 <li>• Framing = discrim_terms / total_words × 1000</li>
@@ -515,9 +515,9 @@ export function ToneMethodologySection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1, duration: 0.5 }}
-          className="mt-8 pt-6 border-t border-stone-200"
+          className="mt-8 pt-6 border-t border-track"
         >
-          <p className="text-xs text-stone-400">
+          <p className="text-xs text-on-muted">
             Methodischer Ansatz basiert auf der Politolinguistik (Wengeler, Klein, Wodak).
             Unterscheidung zwischen Schlagwörtern (Framing) und wertender Sprache (Tonalität)
             folgt der Forschung zu politischen Kampfbegriffen im deutschen Parlamentsdiskurs.

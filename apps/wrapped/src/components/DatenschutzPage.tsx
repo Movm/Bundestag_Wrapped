@@ -16,13 +16,13 @@ export function DatenschutzPage() {
         animate={{ opacity: 1, y: 0 }}
         className="w-full max-w-2xl"
       >
-        <h1 className="text-3xl md:text-4xl font-black text-white mb-8">
+        <h1 className="ds-display ds-display--lg mb-8">
           Datenschutzerklärung
         </h1>
 
-        <div className="space-y-6 text-white/70 text-sm leading-relaxed">
+        <div className="space-y-6 text-on-muted text-sm leading-relaxed">
           <section>
-            <h2 className="text-lg font-semibold text-white mb-2">1. Verantwortlicher</h2>
+            <h2 className="text-lg font-semibold text-on mb-2">1. Verantwortlicher</h2>
             <p>
               Verantwortlich für diese Website ist Moritz Wächter.
               Kontaktdaten finden Sie im{' '}
@@ -30,7 +30,7 @@ export function DatenschutzPage() {
                 href="https://www.moritz-waechter.de/impressum"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-pink-400 hover:text-pink-300 underline"
+                className="text-on-accent hover:text-on-accent underline"
               >
                 Impressum
               </a>.
@@ -38,15 +38,15 @@ export function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-white mb-2">2. Datenverarbeitung</h2>
+            <h2 className="text-lg font-semibold text-on mb-2">2. Datenverarbeitung</h2>
             <p className="mb-3">
-              Diese Website verwendet <strong className="text-white">keine Cookies</strong> und
+              Diese Website verwendet <strong className="text-on">keine Cookies</strong> und
               kein geräteübergreifendes Tracking. Es werden keine personenbezogenen Daten an
               Dritte weitergegeben.
             </p>
 
             <p className="mb-2">
-              <strong className="text-white">Webanalyse mit Umami:</strong>
+              <strong className="text-on">Webanalyse mit Umami:</strong>
             </p>
             <p className="mb-3">
               Zur Verbesserung dieser Website nutzen wir Umami, ein datenschutzfreundliches
@@ -65,14 +65,14 @@ export function DatenschutzPage() {
               <li>Land (abgeleitet aus der IP-Adresse, die anschließend verworfen wird)</li>
             </ul>
             <p className="mb-3">
-              Umami verwendet <strong className="text-white">keine Cookies</strong> und speichert
+              Umami verwendet <strong className="text-on">keine Cookies</strong> und speichert
               keine Informationen auf Ihrem Gerät. Es werden keine individuellen Nutzerprofile
               erstellt und kein Tracking über verschiedene Websites hinweg durchgeführt. Ihre
               IP-Adresse wird zur Länderbestimmung verwendet und danach sofort anonymisiert –
               sie wird nicht gespeichert.
             </p>
             <p className="mb-4">
-              <strong className="text-white">Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO
+              <strong className="text-on">Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO
               (berechtigtes Interesse). Unser berechtigtes Interesse liegt in der Analyse der
               Websitenutzung zur Verbesserung unseres Angebots. Da Umami keine Cookies verwendet
               und keine Daten auf Ihrem Gerät speichert, ist keine Einwilligung nach § 25 TTDSG
@@ -80,17 +80,17 @@ export function DatenschutzPage() {
             </p>
 
             <p className="mb-2">
-              <strong className="text-white">Lokale Speicherung (localStorage):</strong> Um Ihren Fortschritt
+              <strong className="text-on">Lokale Speicherung (localStorage):</strong> Um Ihren Fortschritt
               und Ihre Einstellungen zu speichern, nutzt diese Website die localStorage-Funktion
               Ihres Browsers:
             </p>
             <ul className="list-disc list-inside space-y-1 ml-2 mb-3">
               <li>
-                <strong className="text-white">Fortschritt:</strong> Ihre Quiz-Antworten und der aktuelle
+                <strong className="text-on">Fortschritt:</strong> Ihre Quiz-Antworten und der aktuelle
                 Abschnitt werden lokal gespeichert (automatische Löschung nach 7 Tagen)
               </li>
               <li>
-                <strong className="text-white">Toneinstellungen:</strong> Ihre Präferenz zur Stummschaltung
+                <strong className="text-on">Toneinstellungen:</strong> Ihre Präferenz zur Stummschaltung
                 der Hintergrundmusik
               </li>
             </ul>
@@ -102,17 +102,17 @@ export function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-white mb-2">3. Optionale Eingaben</h2>
+            <h2 className="text-lg font-semibold text-on mb-2">3. Optionale Eingaben</h2>
             <p>
               Bei der Erstellung von Sharebildern können Sie optional einen Namen eingeben.
-              Dieser wird <strong className="text-white">ausschließlich lokal</strong> in Ihrem Browser zur
+              Dieser wird <strong className="text-on">ausschließlich lokal</strong> in Ihrem Browser zur
               Bildgenerierung verwendet, nicht gespeichert und nicht an Server übertragen.
               Nach Verlassen der Seite ist die Eingabe nicht mehr vorhanden.
             </p>
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-white mb-2">4. Hosting</h2>
+            <h2 className="text-lg font-semibold text-on mb-2">4. Hosting</h2>
             <p>
               Die Website wird als statische Seite gehostet. Der Hosting-Anbieter kann
               in Server-Logfiles automatisch Informationen speichern, die Ihr Browser
@@ -122,7 +122,7 @@ export function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-white mb-2">5. Externe Links</h2>
+            <h2 className="text-lg font-semibold text-on mb-2">5. Externe Links</h2>
             <p>
               Diese Website enthält Links zu externen Websites (GitHub, Bundestag).
               Für deren Inhalte und Datenschutzpraktiken sind die jeweiligen Betreiber verantwortlich.
@@ -130,7 +130,7 @@ export function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-white mb-2">6. Ihre Rechte</h2>
+            <h2 className="text-lg font-semibold text-on mb-2">6. Ihre Rechte</h2>
             <p className="mb-3">
               Sie haben gegenüber uns folgende Rechte hinsichtlich Ihrer personenbezogenen Daten:
             </p>
@@ -141,7 +141,7 @@ export function DatenschutzPage() {
               <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
               <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
               <li>
-                <strong className="text-white">Widerspruchsrecht (Art. 21 DSGVO):</strong> Sie haben das Recht,
+                <strong className="text-on">Widerspruchsrecht (Art. 21 DSGVO):</strong> Sie haben das Recht,
                 aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die
                 Verarbeitung Sie betreffender Daten, die auf Art. 6 Abs. 1 lit. f DSGVO beruht,
                 Widerspruch einzulegen.
@@ -159,12 +159,12 @@ export function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-white mb-2">7. Lizenzen</h2>
+            <h2 className="text-lg font-semibold text-on mb-2">7. Lizenzen</h2>
             <p>
               Informationen zu verwendeten Musik- und Soundlizenzen finden Sie auf der{' '}
               <a
                 href="/dokumentation"
-                className="text-pink-400 hover:text-pink-300 underline"
+                className="text-on-accent hover:text-on-accent underline"
               >
                 Dokumentationsseite
               </a>.
@@ -172,7 +172,7 @@ export function DatenschutzPage() {
           </section>
         </div>
 
-        <p className="text-white/40 text-xs mt-10">
+        <p className="text-on-muted text-xs mt-10">
           Stand: aktuelle Edition
         </p>
       </motion.div>

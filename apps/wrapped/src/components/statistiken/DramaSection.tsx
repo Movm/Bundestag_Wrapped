@@ -56,8 +56,8 @@ export function DramaSection({ drama, defaultExpanded = false }: DramaSectionPro
               <p className="text-red-400/60 text-sm">Kritik</p>
             </div>
             <div className="text-center">
-              <span className="text-white/60 font-bold text-xl">{stats.neutralPercent}%</span>
-              <p className="text-white/40 text-sm">Neutral</p>
+              <span className="text-on-muted font-bold text-xl">{stats.neutralPercent}%</span>
+              <p className="text-on-muted text-sm">Neutral</p>
             </div>
           </motion.div>
         )}
@@ -74,7 +74,7 @@ export function DramaSection({ drama, defaultExpanded = false }: DramaSectionPro
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center text-white/50 text-base max-w-2xl mx-auto mb-12"
+            className="text-center text-on-muted text-base max-w-2xl mx-auto mb-12"
           >
             {config.explanation}
           </motion.p>
@@ -100,12 +100,12 @@ export function DramaSection({ drama, defaultExpanded = false }: DramaSectionPro
                 <div className="text-red-400/60 text-sm">{stats.negativePercent}%</div>
                 <div className="text-red-300/60 text-xs md:text-sm mt-1">Kritik</div>
               </div>
-              <div className="bg-white/10 border border-white/20 rounded-xl p-4 text-center">
-                <div className="text-white/80 font-bold text-2xl md:text-3xl">
+              <div className="bg-wr-card border border-track rounded-xl p-4 text-center">
+                <div className="text-on font-bold text-2xl md:text-3xl">
                   {formatNumber(stats.neutral)}
                 </div>
-                <div className="text-white/50 text-sm">{stats.neutralPercent}%</div>
-                <div className="text-white/40 text-xs md:text-sm mt-1">Neutral</div>
+                <div className="text-on-muted text-sm">{stats.neutralPercent}%</div>
+                <div className="text-on-muted text-xs md:text-sm mt-1">Neutral</div>
               </div>
             </motion.div>
           )}
@@ -115,9 +115,9 @@ export function DramaSection({ drama, defaultExpanded = false }: DramaSectionPro
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white/5 rounded-2xl p-6 border border-white/10"
+              className="bg-wr-card rounded-2xl p-6 border border-track"
             >
-              <h3 className="text-white/60 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
+              <h3 className="text-on-muted text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
                 <span className="text-2xl">📢</span> Top Zwischenrufer
               </h3>
               <div className="space-y-3">
@@ -137,9 +137,9 @@ export function DramaSection({ drama, defaultExpanded = false }: DramaSectionPro
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white/5 rounded-2xl p-6 border border-white/10"
+              className="bg-wr-card rounded-2xl p-6 border border-track"
             >
-              <h3 className="text-white/60 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
+              <h3 className="text-on-muted text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
                 <span className="text-2xl">🎯</span> Meistens unterbrochen
               </h3>
               <div className="space-y-3">
@@ -162,9 +162,9 @@ export function DramaSection({ drama, defaultExpanded = false }: DramaSectionPro
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white/5 rounded-2xl p-6 border border-white/10"
+              className="bg-wr-card rounded-2xl p-6 border border-track"
             >
-              <h3 className="text-white/60 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
+              <h3 className="text-on-muted text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
                 <span className="text-2xl">👏</span> Applaus-Champions
               </h3>
               <div className="space-y-3">
@@ -183,9 +183,9 @@ export function DramaSection({ drama, defaultExpanded = false }: DramaSectionPro
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white/5 rounded-2xl p-6 border border-white/10"
+              className="bg-wr-card rounded-2xl p-6 border border-track"
             >
-              <h3 className="text-white/60 text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
+              <h3 className="text-on-muted text-sm uppercase tracking-wide mb-4 flex items-center gap-2">
                 <span className="text-2xl">📣</span> Häufigste Zwischenrufer (Partei)
               </h3>
               <div className="space-y-3">
@@ -221,16 +221,16 @@ function PersonRow({ name, party, value, rank, suffix = '' }: PersonRowProps) {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ delay: rank * 0.05 }}
-      className="flex items-center justify-between py-2 border-b border-white/5 last:border-0"
+      className="flex items-center justify-between py-2 border-b border-track last:border-0"
     >
       <div className="flex items-center gap-3">
         <span className="text-xl w-8">
           {rank === 0 ? '🥇' : rank === 1 ? '🥈' : rank === 2 ? '🥉' : (
-            <span className="text-white/40 text-sm">{rank + 1}.</span>
+            <span className="text-on-muted text-sm">{rank + 1}.</span>
           )}
         </span>
         <div>
-          <p className="text-white font-medium">{name}</p>
+          <p className="text-on font-medium">{name}</p>
           <PartyBadge party={party} size="sm" />
         </div>
       </div>
@@ -259,12 +259,12 @@ function PartyRow({ party, value, rank }: PartyRowProps) {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ delay: rank * 0.05 }}
-      className="flex items-center justify-between py-2 border-b border-white/5 last:border-0"
+      className="flex items-center justify-between py-2 border-b border-track last:border-0"
     >
       <div className="flex items-center gap-3">
         <span className="text-xl w-8">
           {rank === 0 ? '🥇' : rank === 1 ? '🥈' : rank === 2 ? '🥉' : (
-            <span className="text-white/40 text-sm">{rank + 1}.</span>
+            <span className="text-on-muted text-sm">{rank + 1}.</span>
           )}
         </span>
         <div className="flex items-center gap-2">
@@ -272,7 +272,7 @@ function PartyRow({ party, value, rank }: PartyRowProps) {
             className="w-3 h-3 rounded-full"
             style={{ backgroundColor: partyColor }}
           />
-          <p className="text-white font-medium">{party}</p>
+          <p className="text-on font-medium">{party}</p>
         </div>
       </div>
       <span className="text-xl font-bold" style={{ color: partyColor }}>

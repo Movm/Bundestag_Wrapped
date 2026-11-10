@@ -20,8 +20,7 @@ export function StatistikenOverviewPage() {
           animate={{ opacity: 1 }}
           className="text-center"
         >
-          <div className="w-16 h-16 border-4 border-pink-500/30 border-t-pink-500 rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-white/60">Lade Statistiken...</p>
+          <p className="text-on-muted">Lade Statistiken...</p>
         </motion.div>
       </div>
     );
@@ -32,7 +31,7 @@ export function StatistikenOverviewPage() {
       <div className="min-h-[60vh] flex items-center justify-center px-4">
         <div className="text-center">
           <p className="text-red-400 text-xl mb-4">Fehler beim Laden der Daten</p>
-          <p className="text-white/60">{error?.message}</p>
+          <p className="text-on-muted">{error?.message}</p>
         </div>
       </div>
     );
@@ -133,7 +132,7 @@ export function StatistikenOverviewPage() {
         transition={{ delay: 0.3 }}
         className="max-w-6xl mx-auto"
       >
-        <h2 className="text-xl font-bold text-white/80 mb-6 text-center">
+        <h2 className="text-xl font-bold text-on mb-6 text-center">
           Detaillierte Analysen
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -185,11 +184,11 @@ function MetricCard({ value, label, format, accent }: MetricCardProps) {
         : formatNumber(value);
 
   return (
-    <div className="bg-white/5 rounded-xl p-4 text-center border border-white/10">
+    <div className="bg-wr-card rounded-xl p-4 text-center border border-track">
       <p className="text-3xl md:text-4xl font-black" style={{ color: accent }}>
         {displayValue}
       </p>
-      <p className="text-white/60 text-sm mt-1">{label}</p>
+      <p className="text-on-muted text-sm mt-1">{label}</p>
     </div>
   );
 }

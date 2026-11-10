@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { useWrappedData } from '@/hooks/useDataQueries';
-import { BackgroundSystem } from '@/components/ui/BackgroundSystem';
 import { Footer } from '@/components/ui/Footer';
 import { HeroSection } from './statistiken/HeroSection';
 import { PartySection } from './statistiken/PartySection';
@@ -15,15 +14,13 @@ export function StatistikenPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#0a0a0f] flex items-center justify-center">
-        <BackgroundSystem intensity="subtle" />
+      <div className="min-h-screen bg-wr-ink flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="text-center"
         >
-          <div className="w-16 h-16 border-4 border-pink-500/30 border-t-pink-500 rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-white/60">Lade Statistiken...</p>
+          <p className="text-on-muted">Lade Statistiken...</p>
         </motion.div>
       </div>
     );
@@ -31,19 +28,17 @@ export function StatistikenPage() {
 
   if (error || !data) {
     return (
-      <div className="min-h-screen bg-[#0a0a0f] flex items-center justify-center px-4">
-        <BackgroundSystem intensity="subtle" />
+      <div className="min-h-screen bg-wr-ink flex items-center justify-center px-4">
         <div className="text-center">
-          <p className="text-red-400 text-xl mb-4">Fehler beim Laden der Daten</p>
-          <p className="text-white/60">{error?.message}</p>
+          <p className="text-on text-xl mb-4">Fehler beim Laden der Daten</p>
+          <p className="text-on-muted">{error?.message}</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0f] relative">
-      <BackgroundSystem intensity="medium" />
+    <div className="min-h-screen bg-wr-ink relative">
 
       <main className="relative z-10">
         <section id="overview">

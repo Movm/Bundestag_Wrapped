@@ -13,10 +13,9 @@ interface HeaderProps {
   onMenuToggle: () => void;
 }
 
-export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderProps) {
+export function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
   const location = useLocation();
   const surface = editionSurface(useOptionalEdition());
-  const isDark = variant === 'dark';
   const muted = useAudioStore((s) => s.isMuted);
   const toggleMute = useAudioStore((s) => s.toggleMute);
   const [musicPlaying, setMusicPlaying] = useState(() => isBackgroundMusicPlaying());
@@ -31,8 +30,8 @@ export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderPro
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-60 h-14">
-      <div className="h-full px-4 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-60 h-16">
+      <div className="h-full px-4 flex items-center justify-between gap-2">
         <Link
           to={`${editionPath(surface)}${location.search}${location.hash}`}
           className="transition-opacity hover:opacity-80"
@@ -41,20 +40,12 @@ export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderPro
           <img src="/logo.png" alt="Bundestag Wrapped" className="h-8 w-auto" />
         </Link>
 
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
           {/* Background music toggle */}
           <button
             onClick={handleToggleMusic}
             disabled={IS_DEV_AUDIO_DISABLED}
-            className={`p-2 rounded-lg transition-colors ${
-              isDark
-                ? musicPlaying
-                  ? 'text-pink-400 hover:text-pink-300 hover:bg-white/10'
-                  : 'text-white/70 hover:text-white hover:bg-white/10'
-                : musicPlaying
-                  ? 'text-pink-500 hover:text-pink-600 hover:bg-gray-100'
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-            }`}
+            className="ds-icon-button"
             aria-label={IS_DEV_AUDIO_DISABLED ? 'Musik im Entwicklungsmodus deaktiviert' : musicPlaying ? 'Musik ausschalten' : 'Musik einschalten'}
             title={IS_DEV_AUDIO_DISABLED ? 'Musik ist im Entwicklungsmodus deaktiviert' : undefined}
           >
@@ -65,11 +56,7 @@ export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderPro
           <button
             onClick={handleToggleMute}
             disabled={IS_DEV_AUDIO_DISABLED}
-            className={`p-2 rounded-lg transition-colors ${
-              isDark
-                ? 'text-white/70 hover:text-white hover:bg-white/10'
-                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-            }`}
+            className="ds-icon-button"
             aria-label={IS_DEV_AUDIO_DISABLED ? 'Ton im Entwicklungsmodus deaktiviert' : muted ? 'Ton einschalten' : 'Ton ausschalten'}
             title={IS_DEV_AUDIO_DISABLED ? 'Ton ist im Entwicklungsmodus deaktiviert' : undefined}
           >
@@ -78,11 +65,7 @@ export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderPro
 
           <button
             onClick={event => { event.currentTarget.focus(); onMenuToggle(); }}
-            className={`p-2 rounded-lg transition-colors ${
-              isDark
-                ? 'text-white/70 hover:text-white hover:bg-white/10'
-                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
-            }`}
+            className="ds-icon-button"
             aria-expanded={isMenuOpen}
             aria-label={isMenuOpen ? 'Menü schließen' : 'Menü öffnen'}
           >
@@ -91,7 +74,7 @@ export function Header({ variant = 'dark', isMenuOpen, onMenuToggle }: HeaderPro
               animate={{ rotate: isMenuOpen ? 90 : 0 }}
               transition={{ duration: 0.2 }}
             >
-              {isMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+              {isMenuOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
             </motion.div>
           </button>
         </div>
