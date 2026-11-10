@@ -1,0 +1,32 @@
+.quiz-answer-button {
+  min-height: 6rem;
+  min-width: 44px;
+  touch-action: manipulation;
+  transition: background-color 250ms ease, box-shadow 250ms ease;
+}
+
+.quiz-answer-button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 4px;
+}
+
+/* Decorative emoji scatter: only where it cannot crowd the content. */
+.quiz-scatter { display: none; }
+
+@media (min-width: 768px) and (min-height: 600px) {
+  .quiz-scatter { display: block; }
+}
+
+.quiz-emoji-float {
+  display: inline-block;
+  animation: quiz-emoji-float var(--quiz-float-duration, 4s) ease-in-out infinite;
+}
+
+@keyframes quiz-emoji-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quiz-emoji-float { animation: none; }
+}
