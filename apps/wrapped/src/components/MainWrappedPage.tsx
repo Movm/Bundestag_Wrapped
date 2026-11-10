@@ -1,4 +1,4 @@
-import { useRef, useCallback, useMemo, useState, useEffect } from 'react';
+import { startTransition, useRef, useCallback, useMemo, useState, useEffect } from 'react';
 import { useDebugRender } from '@/hooks/useDebugRender';
 import { useWrappedData } from '@/hooks/useDataQueries';
 import { WrappedToolbar } from '@/components/ui/WrappedToolbar';
@@ -7,6 +7,7 @@ import { SkipLink } from '@/components/ui/SkipLink';
 import { SEO } from '@/components/seo/SEO';
 import { SITE_CONFIG } from '@/components/seo/constants';
 import { themeMusic, getThemeForSlide } from '@/lib/theme-music';
+import { whenTrulyIdle } from '@/lib/when-idle';
 import { clearWrappedProgress } from '@/lib/wrapped-storage';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
@@ -66,12 +67,24 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
 
   // Switch background theme music based on current section
   // Theme is automatically pushed to audioStore by themeMusic.playTheme()
+  // The very first play() sets up the browser's audio output on the main
+  // thread (a measured 22 ms task = one dropped frame). Start it only after the
+  // first slide has finished arriving, in an idle moment; later theme switches
+  // reuse the running output and stay immediate.
+  const musicStarted = useRef(false);
   useEffect(() => {
     // Only switch themes after intro has started (user clicked start button)
     if (!introStarted) return;
 
     const theme = getThemeForSlide(currentSection);
-    themeMusic.playTheme(theme);
+    if (musicStarted.current) {
+      themeMusic.playTheme(theme);
+      return;
+    }
+    return whenTrulyIdle(() => {
+      musicStarted.current = true;
+      void themeMusic.playTheme(theme);
+    });
   }, [currentSection, introStarted]);
 
   // Load the first theme while the reader is still on the cover, so pressing
@@ -79,10 +92,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
   const firstThemeSlide = activeSlides[1];
   useEffect(() => {
     if (introStarted || !firstThemeSlide) return;
-    const whenIdle = window.requestIdleCallback ?? ((task: () => void) => window.setTimeout(task, 1500));
-    const cancel = window.cancelIdleCallback ?? window.clearTimeout;
-    const handle = whenIdle(() => themeMusic.preload(getThemeForSlide(firstThemeSlide)), { timeout: 4000 });
-    return () => cancel(handle);
+    return whenTrulyIdle(() => themeMusic.preload(getThemeForSlide(firstThemeSlide)));
   }, [introStarted, firstThemeSlide]);
 
   // Clean up theme music when leaving the page to free memory
@@ -92,14 +102,21 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
     };
   }, []);
 
+  // "Starten": rendering the started story is a big update. Run it as a
+  // transition (time-sliced, so the click frame stays short) and scroll only
+  // after it has committed — before that, the cover is still forward-blocked.
+  const pendingStart = useRef(false);
   const handleQuizComplete = useCallback((slideId: string) => {
-    if (slideId === 'intro') {
-      setIntroStarted(true);
-    }
-    requestAnimationFrame(() => {
-      if (slideId === 'intro') scrollContainerRef.current?.scrollToNextSlide(slideId);
-    });
+    if (slideId !== 'intro') return;
+    pendingStart.current = true;
+    startTransition(() => setIntroStarted(true));
   }, []);
+  useEffect(() => {
+    if (!introStarted || !pendingStart.current) return;
+    pendingStart.current = false;
+    const frame = requestAnimationFrame(() => scrollContainerRef.current?.scrollToNextSlide('intro'));
+    return () => cancelAnimationFrame(frame);
+  }, [introStarted]);
 
   // Remount the journey after clearing progress; avoid unload/scroll persistence races.
   const handleRestart = useCallback(() => {

@@ -25,6 +25,7 @@ import {
   SECTION_THEMES,
   getThemeForSlide as getThemeForSlideShared,
 } from '@/shared/theme-music';
+import { whenTrulyIdle } from './when-idle';
 
 // Re-export shared types and constants for backwards compatibility
 export { type ThemeType, THEME_TRACK_INFO } from '@/shared/theme-music';
@@ -147,8 +148,9 @@ class ThemeMusicManager {
   private preloadNextTheme(currentSlide: string): void {
     const nextTheme = getNextTheme(currentSlide);
     if (nextTheme && !this.audioElements.has(nextTheme)) {
-      // Fire and forget - don't await
-      this.loadTheme(nextTheme).catch(() => {});
+      // Creating a media element is native main-thread work: do it only when
+      // the page is truly idle, never between the frames of a transition.
+      whenTrulyIdle(() => { this.loadTheme(nextTheme).catch(() => {}); });
     }
   }
 

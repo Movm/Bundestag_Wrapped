@@ -1,4 +1,3 @@
-import { motion, AnimatePresence } from 'motion/react';
 import { Volume2, VolumeX, Music, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { IS_DEV_AUDIO_DISABLED, useAudioStore, useTrackInfo } from '@/stores/audioStore';
@@ -38,24 +37,18 @@ export function WrappedToolbar({ isMenuOpen, onMenuToggle }: WrappedToolbarProps
 
   return (
     <div className="fixed top-4 right-4 z-50 flex items-center gap-3">
-      {/* Track info (shows on theme change) */}
-      <AnimatePresence>
-        {showTrackInfo && trackInfo && !muted && (
-          <motion.div
-            initial={{ opacity: 0, x: 10 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 10 }}
-            transition={{ duration: 0.3 }}
-            className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white text-wr-ink"
-          >
-            <Music size={14} aria-hidden="true" />
-            <div className="text-xs leading-tight">
-              <div className="font-bold">{trackInfo.title}</div>
-              <div>{trackInfo.artist}</div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Track info (shows on theme change). Always mounted and faded with a
+          CSS class (compositor-only), so a theme change never mounts components
+          mid-story; hidden on phones. */}
+      {trackInfo && (
+        <div className="ds-track-pill hidden sm:flex" data-show={showTrackInfo && !muted} aria-hidden={!(showTrackInfo && !muted)}>
+          <Music size={14} aria-hidden="true" />
+          <div className="text-xs leading-tight">
+            <div className="font-bold">{trackInfo.title}</div>
+            <div>{trackInfo.artist}</div>
+          </div>
+        </div>
+      )}
 
       {/* Audio toggle */}
       <button

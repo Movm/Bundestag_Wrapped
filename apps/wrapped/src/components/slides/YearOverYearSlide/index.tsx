@@ -47,7 +47,7 @@ export function RankingMovementSlide({ analysis, kind }: { analysis: YearOverYea
           Diese {isTopics ? 'Themen' : 'Wörter'} sind <Mark>aufgestiegen.</Mark>
         </Display>
       </div>
-      <ol className="flex flex-col items-start gap-3" aria-label={isTopics ? 'Aufgestiegene Themen' : 'Aufgestiegene Wörter'}>
+      <ol className="flex flex-col gap-3" aria-label={isTopics ? 'Aufgestiegene Themen' : 'Aufgestiegene Wörter'}>
         {items.map((item, index) => (
           <li key={item.label}>
             <RankCard
