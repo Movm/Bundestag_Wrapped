@@ -22,52 +22,19 @@ import {
   THEME_PATHS,
   THEME_VOLUME,
   CROSSFADE_DURATION,
-  SECTION_THEMES,
-  getThemeForSlide as getThemeForSlideShared,
+  themeForSlide,
 } from '@/shared/theme-music';
-import { whenTrulyIdle } from './when-idle';
 
 // Re-export shared types and constants for backwards compatibility
 export { type ThemeType, THEME_TRACK_INFO } from '@/shared/theme-music';
 
 const FADE_STEPS = 20; // Smooth fade with 20 steps
 
-// Section order for next-theme prediction
-const SECTION_ORDER: string[] = [
-  'topics',
-  'vocabulary',
-  'speeches',
-  'drama',
-  'discriminatory',
-  'common-words',
-  'moin',
-  'swiftie',
-  'tone',
-  'gender',
-  'share',
-  'finale',
-];
-
 /**
- * Get the next theme to preload based on current slide
+ * The track for a slide; `editionId` selects that edition's music.json.
  */
-function getNextTheme(currentSlide: string): ThemeType | null {
-  const section = currentSlide.replace(/^(intro|quiz|info|reveal|chart)-/, '');
-  const currentIndex = SECTION_ORDER.indexOf(section);
-
-  if (currentIndex === -1 || currentIndex >= SECTION_ORDER.length - 1) {
-    return null;
-  }
-
-  const nextSection = SECTION_ORDER[currentIndex + 1];
-  return SECTION_THEMES[nextSection] || null;
-}
-
-/**
- * Get the theme type for a given slide
- */
-export function getThemeForSlide(slideId: SlideType): ThemeType {
-  return getThemeForSlideShared(slideId);
+export function getThemeForSlide(slideId: SlideType, editionId?: string | null): ThemeType {
+  return themeForSlide(slideId, editionId);
 }
 
 /**
@@ -76,7 +43,6 @@ export function getThemeForSlide(slideId: SlideType): ThemeType {
  */
 class ThemeMusicManager {
   private currentTheme: ThemeType | null = null;
-  private currentSlide: string | null = null;
   private audioElements: Map<ThemeType, HTMLAudioElement> = new Map();
   private loadingThemes: Set<ThemeType> = new Set();
   private fadeIntervals: Map<ThemeType, number> = new Map();
@@ -143,29 +109,12 @@ class ThemeMusicManager {
   }
 
   /**
-   * Preload next theme in background (non-blocking)
-   */
-  private preloadNextTheme(currentSlide: string): void {
-    const nextTheme = getNextTheme(currentSlide);
-    if (nextTheme && !this.audioElements.has(nextTheme)) {
-      // Creating a media element is native main-thread work: do it only when
-      // the page is truly idle, never between the frames of a transition.
-      whenTrulyIdle(() => { this.loadTheme(nextTheme).catch(() => {}); });
-    }
-  }
-
-  /**
    * Play a theme (crossfade from current if different)
    * Now with lazy loading - only loads the needed track
    */
-  async playTheme(theme: ThemeType, slideId?: string): Promise<void> {
+  async playTheme(theme: ThemeType): Promise<void> {
     if (typeof window === 'undefined') return;
     if (useAudioStore.getState().isMuted) return;
-
-    // Store current slide for preloading logic
-    if (slideId) {
-      this.currentSlide = slideId;
-    }
 
     // Skip if already playing this theme
     if (theme === this.currentTheme) return;
@@ -188,11 +137,6 @@ class ThemeMusicManager {
 
     // Update store so UI components can react to theme changes
     useAudioStore.getState().setCurrentTheme(theme);
-
-    // Preload next theme in background after starting current
-    if (this.currentSlide) {
-      this.preloadNextTheme(this.currentSlide);
-    }
   }
 
   /**
@@ -378,7 +322,6 @@ class ThemeMusicManager {
     });
     this.fadeIntervals.clear();
     this.currentTheme = null;
-    this.currentSlide = null;
 
     // Clear theme in store
     useAudioStore.getState().setCurrentTheme(null);
@@ -418,7 +361,6 @@ class ThemeMusicManager {
     this.fadeIntervals.clear();
     this.loadingThemes.clear();
     this.currentTheme = null;
-    this.currentSlide = null;
   }
 }
 

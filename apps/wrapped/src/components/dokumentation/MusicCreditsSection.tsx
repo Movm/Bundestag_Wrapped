@@ -1,27 +1,15 @@
 import { motion } from 'motion/react';
-import { Music, ExternalLink } from 'lucide-react';
+import { Music } from 'lucide-react';
+import { EDITION_MUSIC, THEME_IDS, TRACKS, type ThemeType } from '@/shared/theme-music';
 
-interface TrackCredit {
-  title: string;
-  artist: string;
-  section: string;
+/** Every track with the editions that play it (music.json, otherwise the 2025 mapping). */
+const editionsByTrack = new Map<ThemeType, string[]>();
+for (const [editionId, music] of Object.entries(EDITION_MUSIC).sort()) {
+  for (const track of new Set<ThemeType>([music.default, ...Object.values(music.sections)])) {
+    editionsByTrack.set(track, [...(editionsByTrack.get(track) ?? []), editionId]);
+  }
 }
-
-const tracks: TrackCredit[] = [
-  { title: 'Night Owl', artist: 'Broke For Free', section: 'Intro' },
-  { title: 'Living In Reverse', artist: 'Broke For Free', section: 'Zwischenfragen' },
-  { title: 'I Know You\'re Out There', artist: 'Chromix', section: 'Diskriminierung' },
-  { title: 'Mutant Club', artist: 'HoliznaCC0', section: 'Themen' },
-  { title: 'Godsize', artist: 'IKILLYA', section: 'Drama' },
-  { title: 'Hyperfun', artist: 'Kevin MacLeod', section: 'Swiftie' },
-  { title: 'Hustle', artist: 'Kevin MacLeod', section: 'Reden, Top-Redner & Teilen' },
-  { title: 'Dirt Rhodes', artist: 'Kevin MacLeod', section: 'Häufige Wörter' },
-  { title: 'Nuff Stickers', artist: 'Kidkanevil & DZA', section: 'Gender' },
-  { title: 'Love Others ICE', artist: 'Lopkerjo', section: 'Tonalität' },
-  { title: 'APC Reflections', artist: 'jonas the plugexpert', section: 'Vokabular & Lieblingswörter' },
-  { title: 'Canción Popular', artist: 'sarah rasines', section: 'Moin' },
-  { title: 'Starling', artist: 'Podington Bear', section: 'Finale' },
-];
+const tracks = THEME_IDS.map(id => ({ id, ...TRACKS[id], editions: editionsByTrack.get(id) ?? ['2025'] }));
 
 export function MusicCreditsSection() {
   return (
@@ -41,26 +29,7 @@ export function MusicCreditsSection() {
 
           <div className="bg-wr-card rounded-lg p-4 mb-6">
             <p className="text-sm text-on-muted leading-relaxed">
-              Alle Musiktitel stammen vom{' '}
-              <a
-                href="https://freemusicarchive.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-on-accent hover:text-on-accent underline"
-              >
-                Free Music Archive
-              </a>{' '}
-              und sind lizenziert unter{' '}
-              <a
-                href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-on-accent hover:text-on-accent underline inline-flex items-center gap-1"
-              >
-                CC BY-NC-ND 4.0
-                <ExternalLink size={12} />
-              </a>
-              .
+              Alle Musiktitel stehen unter Creative-Commons-Lizenzen. Lizenz und Quelle stehen bei jedem Titel; wir spielen jeweils einen Ausschnitt.
             </p>
           </div>
 
@@ -70,28 +39,31 @@ export function MusicCreditsSection() {
                 <tr className="border-b border-track">
                   <th className="text-left py-2 pr-4 font-medium text-on-muted">Titel</th>
                   <th className="text-left py-2 pr-4 font-medium text-on-muted">Künstler</th>
-                  <th className="text-left py-2 font-medium text-on-muted">Sektion</th>
+                  <th className="text-left py-2 pr-4 font-medium text-on-muted">Lizenz</th>
+                  <th className="text-left py-2 font-medium text-on-muted">Ausgabe</th>
                 </tr>
               </thead>
               <tbody>
-                {tracks.map((track, i) => (
-                  <tr key={i} className="border-b border-track">
+                {tracks.map(track => (
+                  <tr key={track.id} className="border-b border-track">
                     <td className="py-2 pr-4 text-on flex items-center gap-2">
                       <Music size={14} className="text-on-accent flex-shrink-0" />
                       {track.title}
                     </td>
-                    <td className="py-2 pr-4 text-on-muted">{track.artist}</td>
-                    <td className="py-2 text-on-muted">{track.section}</td>
+                    <td className="py-2 pr-4 text-on-muted">
+                      {track.artist}
+                      {'source' in track && <> · <a href={track.source.url} target="_blank" rel="noopener noreferrer" className="text-on-accent underline">{track.source.name}</a></>}
+                    </td>
+                    <td className="py-2 pr-4">
+                      <a href={track.license.url} target="_blank" rel="noopener noreferrer" className="text-on-accent underline whitespace-nowrap">{track.license.name}</a>
+                    </td>
+                    <td className="py-2 text-on-muted">{track.editions.join(', ')}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
 
-          <p className="mt-6 text-xs text-on-muted leading-relaxed">
-            Quelle: Free Music Archive (freemusicarchive.org) | Lizenz: Creative Commons
-            Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)
-          </p>
 
           <h3 className="text-2xl font-heading text-on mt-12 mb-6">
             Soundeffekte

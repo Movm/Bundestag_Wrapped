@@ -77,7 +77,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
     // Only switch themes after intro has started (user clicked start button)
     if (!introStarted) return;
 
-    const theme = getThemeForSlide(currentSection);
+    const theme = getThemeForSlide(currentSection, surface.editionId);
     if (musicStarted.current) {
       themeMusic.playTheme(theme);
       return;
@@ -86,15 +86,23 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
       musicStarted.current = true;
       void themeMusic.playTheme(theme);
     });
-  }, [currentSection, introStarted]);
+  }, [currentSection, introStarted, surface.editionId]);
+
+  // Fetch the next slide's track in an idle moment, so a section change only
+  // crossfades. Uses the real slide plan, so every edition's music.json works.
+  const nextThemeSlide = activeSlides[activeSlides.findIndex(id => id === currentSection) + 1];
+  useEffect(() => {
+    if (!introStarted || !nextThemeSlide) return;
+    return whenTrulyIdle(() => themeMusic.preload(getThemeForSlide(nextThemeSlide, surface.editionId)));
+  }, [introStarted, nextThemeSlide, surface.editionId]);
 
   // Load the first theme while the reader is still on the cover, so pressing
   // "Starten" only starts playback instead of setting up a media element.
   const firstThemeSlide = activeSlides[1];
   useEffect(() => {
     if (introStarted || !firstThemeSlide) return;
-    return whenTrulyIdle(() => themeMusic.preload(getThemeForSlide(firstThemeSlide)));
-  }, [introStarted, firstThemeSlide]);
+    return whenTrulyIdle(() => themeMusic.preload(getThemeForSlide(firstThemeSlide, surface.editionId)));
+  }, [introStarted, firstThemeSlide, surface.editionId]);
 
   // Clean up theme music when leaving the page to free memory
   useEffect(() => {

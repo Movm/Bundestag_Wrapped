@@ -54,6 +54,14 @@ protocol payload is ignored during parsing and comparison. Changing these rules
 requires a new data version and a regenerated preview. The frozen 2025 edition
 remains unchanged.
 
+Background music is chosen per edition in `config/<edition>/music.json`: a
+`default` track plus one track per story section (`intro`, `topic-riser`,
+`youth-language`, `mention`, `finale`, …). Track ids come from the registry in
+`src/shared/theme-music/types.ts`, which also holds each file's licence and
+source; the credits page is generated from it. An edition without the file
+keeps the original 2025 mapping. The app reads the file at build time, so a
+change needs no regenerated edition.
+
 Signature-word filters are defined globally in `config/signature-words.json`
 and can be extended per edition in `config/2026/signature-words.json`.
 Multi-word terms are excluded because the NLP output can contain merged person
