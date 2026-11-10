@@ -115,6 +115,22 @@ function jugendwortSpeakerQuestion(
 }
 
 /**
+ * Asks which parliamentary group has the most Gen Z MPs at the lectern. Only
+ * asked when one group clearly leads, so no second option is also correct.
+ */
+function genzPartyQuestion(generations: { speakerCount: number; parties: Array<{ party: string; count: number }> }): QuizQuestion | undefined {
+  const [winner, ...others] = generations.parties;
+  if (!winner || others.some(item => item.count >= winner.count)) return undefined;
+  return question(
+    'quiz-genz',
+    'Welche Fraktion schickt die meisten Gen-Z-Abgeordneten ans Rednerpult?',
+    [winner.party, ...others.map(item => item.party)],
+    winner.party,
+    `${winner.party}: ${number.format(winner.count)} der ${number.format(generations.speakerCount)} Gen-Z-Abgeordneten, die im Plenum sprachen.`,
+  );
+}
+
+/**
  * Asks who talked most about the edition's moment of the year (e.g. "Timmy der
  * Wal"). Only asked when one MP clearly leads; the wrong options are other MPs
  * who mentioned it less often, so no second answer is correct.
@@ -207,6 +223,11 @@ export function buildEditionQuizModel(data: WrappedData, configuration?: Edition
   addQuestion(model, 'quiz-mention', () => {
     const mention = data.mentions?.[0];
     return mention ? mentionQuestion(mention) : undefined;
+  });
+
+  addQuestion(model, 'quiz-genz', () => {
+    const generations = data.generations;
+    return generations ? genzPartyQuestion(generations) : undefined;
   });
 
   addQuestion(model, 'quiz-topics', () => {

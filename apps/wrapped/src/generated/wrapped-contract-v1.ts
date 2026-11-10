@@ -294,6 +294,34 @@ export interface MentionSpeaker {
   "quote": NonEmptyString;
 }
 
+export interface GenerationWord {
+  "word": NonEmptyString;
+  "count"?: number;
+  "ratio": number;
+  "zScore": number;
+}
+
+export interface GenerationSpeaker {
+  "name": NonEmptyString;
+  "party": NonEmptyString;
+  "birthYear": number;
+  "speeches": number;
+}
+
+export interface GenerationComparison {
+  "cohort": "genz";
+  "bornFrom": number;
+  "speakerCount": number;
+  "totalSpeakers": number;
+  "unknownSpeakers": number;
+  "parties": Array<PartyCount>;
+  "speakers": Array<GenerationSpeaker>;
+  "speechesPerSpeaker": number;
+  "olderSpeechesPerSpeaker": number;
+  "words": Array<GenerationWord>;
+  "fewerWords": Array<GenerationWord>;
+}
+
 export interface Mention {
   "id": string;
   "label": NonEmptyString;
@@ -398,6 +426,7 @@ export interface WrappedData {
   "topQuestionAskers": Array<NamedPartyCount>;
   "yearOverYear"?: YearOverYearAnalysis;
   "mentions"?: Array<Mention>;
+  "generations"?: GenerationComparison;
 }
 
 export type SpeakerIndexAsset = Record<string, unknown>;

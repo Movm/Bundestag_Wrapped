@@ -9,10 +9,12 @@ from pathlib import Path
 
 import click
 
+from noun_analysis.analyzer import WordAnalyzer
 from noun_analysis.wrapped import WrappedData, WrappedRenderer
 from noun_analysis.wrapped.speaker_export import SpeakerExporter
 from noun_analysis.edition.export import EditionValidationError, build_manifest, publish_edition
 from noun_analysis.edition.comparison import build_year_over_year
+from noun_analysis.edition.generations import build_generations
 from noun_analysis.edition.mentions import build_mentions
 from noun_analysis.edition.release import build_release_report
 from noun_analysis.storage import DataStore
@@ -49,6 +51,7 @@ def _apply_signature_configs(data, config_paths: tuple[str, ...]) -> None:
 @click.option("--compare-with", type=click.Path(exists=True, file_okay=False), help="Prior edition directory used for year-over-year analysis")
 @click.option("--youth-words", type=click.Path(exists=True, dir_okay=False), help="Versioned youth-word lexicon JSON")
 @click.option("--mentions", "mentions_config", type=click.Path(exists=True, dir_okay=False), help="Versioned mentions config (who talked about a named moment)")
+@click.option("--generations", is_flag=True, help="Add the Gen Z comparison (birth years from the MdB Stammdaten)")
 @click.option("--signature-config", "signature_configs", multiple=True, type=click.Path(exists=True, dir_okay=False), help="Repeatable signature-word filter configuration")
 @click.option("--freeze", is_flag=True, help="Mark this explicitly complete and frozen")
 def generate_edition(
@@ -64,6 +67,7 @@ def generate_edition(
     compare_with: str | None,
     youth_words: str | None,
     mentions_config: str | None,
+    generations: bool,
     signature_configs: tuple[str, ...],
     freeze: bool,
 ):
@@ -101,6 +105,10 @@ def generate_edition(
             mentions = build_mentions(speeches, Path(mentions_config))
             if mentions:
                 wrapped_data["mentions"] = mentions
+        if generations:
+            cohort = build_generations(speeches, set(WordAnalyzer.STOPWORD_GENERIC) | data.signature_stopwords)
+            if cohort:
+                wrapped_data["generations"] = cohort
         exporter = SpeakerExporter(data)
         speaker_index = exporter.generate_index()
         content: dict[str, object] = {"editionId": edition_id, "year": year}

@@ -72,6 +72,10 @@ export const SLIDES = [
   'intro-mention',
   'quiz-mention',
   'info-mention',
+  // Gen Z MPs against older MPs
+  'intro-genz',
+  'quiz-genz',
+  'info-genz',
 
   // Moin
   'intro-moin',
@@ -114,6 +118,7 @@ export const AUTO_SCROLL_SLIDES = new Set<SlideType>([
   'intro-discriminatory',
   'intro-common-words',
   'intro-mention',
+  'intro-genz',
   'intro-moin',
   'intro-tone',
   // Info slides also auto-scroll
