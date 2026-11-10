@@ -1,4 +1,4 @@
-import { jumpToSlide } from './story-navigation';
+import { jumpToSlide, closeQuizResult } from './story-navigation';
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from 'playwright/test';
 import { installEditionFixtures } from './fixtures';
@@ -54,6 +54,7 @@ test('provides persistent quiz feedback', async ({ page }) => {
   await expect(quiz).not.toHaveAttribute('inert', '');
   await quiz.getByRole('button').first().click();
   await expect(quiz.getByRole('status')).toContainText('Richtige Antwort:');
+  await closeQuizResult(page);
   await page.waitForTimeout(3000);
   await expect(quiz).not.toHaveAttribute('inert', '');
 });

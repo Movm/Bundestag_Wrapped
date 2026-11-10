@@ -1,4 +1,4 @@
-import { jumpToSlide } from './story-navigation';
+import { jumpToSlide, closeQuizResult } from './story-navigation';
 import { expect, test } from 'playwright/test';
 import { installEditionFixtures } from './fixtures';
 
@@ -13,6 +13,7 @@ test('retains the active slide through rotation and allows subsequent navigation
   const answer = slide.getByRole('button').first();
   await answer.click();
   await expect(slide.getByRole('status')).toContainText('Richtige Antwort:');
+  await closeQuizResult(page);
   await slide.focus();
   await expect(slide).toBeFocused();
   await page.setViewportSize({ width: 844, height: 390 });

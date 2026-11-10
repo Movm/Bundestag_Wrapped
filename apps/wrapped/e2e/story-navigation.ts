@@ -21,3 +21,12 @@ export async function jumpToSlide(page: Page, id: string) {
   await expect(section).not.toHaveAttribute('inert', '');
   await page.getByRole('button', { name: 'Navigation schließen' }).click();
 }
+
+/** A fresh answer opens the result dialog shortly after; close it ("Zum Quiz") and return to the slide. */
+export async function closeQuizResult(page: Page) {
+  const dialog = page.getByRole('dialog');
+  await expect(dialog).toBeVisible();
+  await expect(dialog).toContainText('Richtige Antwort');
+  await dialog.getByRole('button', { name: 'Zum Quiz' }).click();
+  await expect(dialog).toBeHidden();
+}
