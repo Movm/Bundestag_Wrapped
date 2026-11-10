@@ -58,6 +58,10 @@ export interface QuizQuestion {
   // For swiftie quiz: structured data for runtime option generation
   swiftie?: { name: string; party: string };
   decoys?: Array<{ name: string; party: string }>;
+  /** Presentation hint from the edition quiz config; see design-system quiz layouts. */
+  layout?: import('@/generated/wrapped-contract-v1').QuizQuestion['layout'];
+  /** Sentence containing "{answer}" for the gap layout. */
+  gapSentence?: string;
 }
 
 export interface FunFact {

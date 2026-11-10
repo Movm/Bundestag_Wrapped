@@ -13,5 +13,5 @@ interface QuizSlideProps {
 }
 
 export const QuizSlide = memo(function QuizSlide({ question, questionNumber, totalQuestions, isAnswered, onAnswer, onComplete, slideId }: QuizSlideProps) {
-  return <SlideQuiz quiz={question} badge={`Quiz ${questionNumber}/${totalQuestions}`} isAnswered={isAnswered} onAnswer={onAnswer} onComplete={onComplete} slideId={slideId} />;
+  return <SlideQuiz quiz={question} badge={`Quiz ${questionNumber}/${totalQuestions}`} isAnswered={isAnswered} onAnswer={onAnswer} onComplete={onComplete} slideId={slideId} layout={question.layout} gapSentence={question.gapSentence} />;
 });
