@@ -2,6 +2,7 @@ import { useEffect, useRef, type CSSProperties, type MutableRefObject } from 're
 import { animate, motion, useMotionValue, useReducedMotion, useTransform, type PanInfo } from 'motion/react';
 import { ENTER, POP } from '@/design-system/motion';
 import type { MatchAnimal } from '@/lib/perfect-match';
+import { playSound } from '@/lib/sounds';
 
 const CARD_COLORS = [['var(--color-wr-violet)', '#fff'], ['var(--color-wr-pink)', 'var(--color-wr-ink)'], ['#fff', 'var(--color-wr-ink)'], ['var(--color-wr-mint)', 'var(--color-wr-ink)']];
 /** Release past this distance, or flick faster than this speed, to decide. */
@@ -25,6 +26,7 @@ function Card({ animal, index, depth, flingRef, onDecide }: { animal: MatchAnima
     const fling: Fling = direction => {
       if (busy.current) return;
       busy.current = true;
+      playSound(direction > 0 ? 'like' : 'nope');
       if (reduce) { onDecide(direction); return; }
       void animate(x, direction * Math.max(window.innerWidth, 600), { duration: 0.38, ease: [0.4, 0, 1, 1] }).then(() => onDecide(direction));
     };

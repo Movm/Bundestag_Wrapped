@@ -13,8 +13,10 @@ import { buildSeats, type Seat } from './seats';
 
 export interface CoverController {
   readonly root: HTMLElement;
-  /** Called on the "Starten" press itself (sound). */
+  /** Called on the "Starten" press itself (sound, music). */
   onPress: (() => void) | null;
+  /** Called when the seats start assembling (sound). */
+  onAssemble: (() => void) | null;
   /** Called once the pink wipe covers the screen (or at once with reduced motion). */
   onStart: (() => void) | null;
   /** True between "Starten" and the end of the wipe. */
@@ -158,6 +160,7 @@ export function createCover(root: HTMLElement, options: { eagleSrc: string; year
 
   /** Seed pulse, seats fly out of the centre into their rows, then the title rises. */
   function assemble() {
+    controller.onAssemble?.();
     const rand = random(630);
     const { width, height, cx, cy } = geometry();
     animate(story, seed, [
@@ -331,6 +334,7 @@ export function createCover(root: HTMLElement, options: { eagleSrc: string; year
   const controller: CoverController = {
     root,
     onPress: null,
+    onAssemble: null,
     onStart: null,
     get exiting() { return exiting; },
     setYear(value) { year.textContent = value ?? ''; year.hidden = !value; },

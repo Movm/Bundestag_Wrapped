@@ -3,6 +3,7 @@ import { QuizQuestion } from '../QuizQuestion';
 import type { QuizLayoutProps } from '../layouts';
 import { Glyph } from '../../components/Glyph';
 import './swipe.css';
+import { playSound } from '@/lib/sounds';
 
 /**
  * "Ja/Nein-Stapel": one card at a time. "Ja" answers with the shown option
@@ -27,6 +28,7 @@ export function SwipeLayout({ engine, questionId }: QuizLayoutProps) {
               className="ds-swipe-btn ds-swipe-btn--no"
               aria-disabled={answered || undefined}
               aria-label="Nein, nächste Karte"
+              onPointerEnter={event => { if (!answered && event.pointerType === 'mouse') playSound('hover'); }}
               onClick={() => { if (!answered) setIndex((index + 1) % options.length); }}
             >
               <Glyph name="cross" /> Nein
@@ -37,6 +39,7 @@ export function SwipeLayout({ engine, questionId }: QuizLayoutProps) {
               data-status={shown.status}
               aria-disabled={answered || undefined}
               aria-label={`Ja, ${shown.text}${shown.statusWord ? `, ${shown.statusWord}` : ''}`}
+              onPointerEnter={event => { if (!answered && event.pointerType === 'mouse') playSound('hover'); }}
               onClick={() => { if (!answered) shown.select(); }}
             >
               <Glyph name="check" /> Ja

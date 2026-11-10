@@ -66,26 +66,12 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
     () => initialSection !== null && initialSection !== 'intro'
   );
 
-  // Switch background theme music based on current section
-  // Theme is automatically pushed to audioStore by themeMusic.playTheme()
-  // The very first play() sets up the browser's audio output on the main
-  // thread (a measured 22 ms task = one dropped frame). Start it only after the
-  // first slide has finished arriving, in an idle moment; later theme switches
-  // reuse the running output and stay immediate.
-  const musicStarted = useRef(false);
+  // Switch the theme music with the section. The first track is started by
+  // "Starten" itself (IntroSlide → themeMusic.startPrimed), inside the click,
+  // because browsers only allow audio to start inside a user activation.
   useEffect(() => {
-    // Only switch themes after intro has started (user clicked start button)
     if (!introStarted) return;
-
-    const theme = getThemeForSlide(currentSection, surface.editionId);
-    if (musicStarted.current) {
-      themeMusic.playTheme(theme);
-      return;
-    }
-    return whenTrulyIdle(() => {
-      musicStarted.current = true;
-      void themeMusic.playTheme(theme);
-    });
+    themeMusic.playTheme(getThemeForSlide(currentSection, surface.editionId));
   }, [currentSection, introStarted, surface.editionId]);
 
   // Fetch the next slide's track in an idle moment, so a section change only
@@ -96,12 +82,12 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
     return whenTrulyIdle(() => themeMusic.preload(getThemeForSlide(nextThemeSlide, surface.editionId)));
   }, [introStarted, nextThemeSlide, surface.editionId]);
 
-  // Load the first theme while the reader is still on the cover, so pressing
-  // "Starten" only starts playback instead of setting up a media element.
+  // Prime the first theme while the reader is still on the cover, so pressing
+  // "Starten" only starts playback, and does so inside the click.
   const firstThemeSlide = activeSlides[1];
   useEffect(() => {
     if (introStarted || !firstThemeSlide) return;
-    return whenTrulyIdle(() => themeMusic.preload(getThemeForSlide(firstThemeSlide, surface.editionId)));
+    return themeMusic.prime(getThemeForSlide(firstThemeSlide, surface.editionId));
   }, [introStarted, firstThemeSlide, surface.editionId]);
 
   // Clean up theme music when leaving the page to free memory

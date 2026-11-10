@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'motion/react';
 import { type CSSProperties, type ReactNode } from 'react';
 import { cn } from '@/lib/utils';
+import { playSound } from '@/lib/sounds';
 import { ENTER } from '../motion';
 import { Glyph } from '../components/Glyph';
 import type { QuizOption } from './engine';
@@ -38,6 +39,8 @@ export function QuizChoice({ option, answered, className, style, children, showT
       style={style}
       variants={enter ? ENTER[enter] : undefined}
       animate={feedback}
+      // Mouse only: a touch "hover" fires on every tap, right before the click sound.
+      onPointerEnter={event => { if (!answered && event.pointerType === 'mouse') playSound('hover'); }}
       onClick={() => { if (!answered) option.select(); }}
     >
       <span className="ds-choice__letter" aria-hidden="true">{option.letter}</span>

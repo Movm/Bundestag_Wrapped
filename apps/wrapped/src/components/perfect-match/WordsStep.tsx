@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { ENTER } from '@/design-system/motion';
 import { ArrowIcon } from '@/components/mdb-profile/shared';
 import type { MatchWord } from '@/lib/perfect-match';
+import { playSound } from '@/lib/sounds';
 
 export const MAX_WORDS = 3;
 const PICK_COLORS = [['var(--color-wr-pink)', 'var(--color-wr-ink)'], ['var(--color-wr-violet)', '#fff'], ['var(--color-wr-mint)', 'var(--color-wr-ink)']];
@@ -32,7 +33,7 @@ export function WordsStep({ words, picked, onChange, onDone }: { words: MatchWor
                 aria-pressed={on}
                 disabled={!on && full}
                 style={{ '--pm-pick': pick, '--pm-pick-ink': ink, '--pm-tilt': index % 2 ? '1.5deg' : '-1.5deg' } as CSSProperties}
-                onClick={() => onChange(on ? picked.filter(word => word !== item.word) : [...picked, item.word])}
+                onClick={() => { playSound('click'); onChange(on ? picked.filter(word => word !== item.word) : [...picked, item.word]); }}
               >
                 <span className="pm-word__label">{item.word}</span>
                 <span className="pm-word__mark" aria-hidden="true">{on ? position + 1 : '+'}</span>

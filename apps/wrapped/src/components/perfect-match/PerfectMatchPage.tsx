@@ -14,6 +14,7 @@ import { WordsStep } from './WordsStep';
 import { SwipeStep } from './SwipeStep';
 import { ResultStep } from './ResultStep';
 import './perfect-match.css';
+import { playSound } from '@/lib/sounds';
 
 const STEPS = ['Fraktionen', 'Themen', 'Wörter', 'Spirit Animal', 'Ergebnis'] as const;
 /** Time to see the last card fly out before the result opens. */
@@ -53,7 +54,7 @@ function PerfectMatch({ data, homeUrl, profileUrl }: { data: MatchData; homeUrl:
     if (direction > 0) setLiked(previous => [...previous, animal.id]);
     const next = decided + 1;
     setDecided(next);
-    if (next >= deck.length) window.setTimeout(() => setStep(4), reduce ? 0 : RESULT_DELAY_MS);
+    if (next >= deck.length) window.setTimeout(() => { playSound('match'); setStep(4); }, reduce ? 0 : RESULT_DELAY_MS);
   }, [deck, decided, reduce]);
 
   const restart = () => {

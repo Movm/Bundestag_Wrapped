@@ -1,22 +1,31 @@
 /**
  * Theme Music Manager for Bundestag Wrapped (Web)
  *
- * Web-specific implementation using browser Audio API.
- * Uses shared types from @/shared/theme-music.
+ * Background music per story section, crossfaded between two fixed <audio>
+ * elements ("decks"). Which track plays where is set per edition in
+ * config/<edition>/music.json (see @/shared/theme-music).
  *
- * Features:
- * - LAZY LOADING: Only loads tracks when needed (not all 13 at startup)
- * - Preloads next section's theme for seamless transitions
- * - Crossfade between themes using browser Audio API
+ * Why two fixed decks instead of one element per track: Safari grants audio
+ * playback per media element, and only to an element first played inside a
+ * user activation. A fresh element per track meant every section change was
+ * a new element that might be refused. The two decks are unlocked once, on
+ * the reader's first press (`audio-unlock.ts`), and then swap tracks freely.
  *
- * Sound Files Inventory (public/sounds/):
- * All files use kebab-case names for Metro/asset bundler compatibility.
- * See THEME_PATHS in @/shared/theme-music/types.ts for file mappings.
+ * Reliability rules:
+ * - `wanted` is the track that should play, `playing` the one that is
+ *   confirmed playing. Only a resolved `play()` sets `playing`, so a refused
+ *   start is never mistaken for a running one.
+ * - A refused start is retried inside the reader's next press.
+ * - "Starten" calls `startPrimed()` synchronously in its click, so the first
+ *   track starts with the button, not at some later idle moment.
+ * - The idle deck preloads the next section's track, so a change only fades.
  */
 
 import { useEffect, useRef } from 'react';
 import type { SlideType } from '@/components/main-wrapped/constants';
 import { useAudioStore } from '@/stores/audioStore';
+import { onUserActivation } from './audio-unlock';
+import { whenTrulyIdle } from './when-idle';
 import {
   type ThemeType,
   THEME_PATHS,
@@ -28,7 +37,7 @@ import {
 // Re-export shared types and constants for backwards compatibility
 export { type ThemeType, THEME_TRACK_INFO } from '@/shared/theme-music';
 
-const FADE_STEPS = 20; // Smooth fade with 20 steps
+const FADE_STEPS = 20;
 
 /**
  * The track for a slide; `editionId` selects that edition's music.json.
@@ -37,330 +46,242 @@ export function getThemeForSlide(slideId: SlideType, editionId?: string | null):
   return themeForSlide(slideId, editionId);
 }
 
-/**
- * Theme Music Manager class
- * Singleton that handles crossfading between section themes with LAZY LOADING
- */
-class ThemeMusicManager {
-  private currentTheme: ThemeType | null = null;
-  private audioElements: Map<ThemeType, HTMLAudioElement> = new Map();
-  private loadingThemes: Set<ThemeType> = new Set();
-  private fadeIntervals: Map<ThemeType, number> = new Map();
-  private isTransitioning = false;
+/** 0.1 s of silence, used to unlock a deck that has no track yet. */
+function silentWav(): string {
+  const samples = 800;
+  const bytes = new Uint8Array(44 + samples);
+  const view = new DataView(bytes.buffer);
+  const text = (offset: number, value: string) => [...value].forEach((c, i) => view.setUint8(offset + i, c.charCodeAt(0)));
+  text(0, 'RIFF'); view.setUint32(4, 36 + samples, true); text(8, 'WAVE');
+  text(12, 'fmt '); view.setUint32(16, 16, true); view.setUint16(20, 1, true); view.setUint16(22, 1, true);
+  view.setUint32(24, 8000, true); view.setUint32(28, 8000, true); view.setUint16(32, 1, true); view.setUint16(34, 8, true);
+  text(36, 'data'); view.setUint32(40, samples, true);
+  bytes.fill(128, 44);
+  return `data:audio/wav;base64,${btoa(String.fromCharCode(...bytes))}`;
+}
 
-  /**
-   * Load a single theme track on-demand (LAZY LOADING)
-   * Returns cached audio element if already loaded
-   */
-  private async loadTheme(theme: ThemeType): Promise<HTMLAudioElement | null> {
+interface Deck {
+  audio: HTMLAudioElement;
+  theme: ThemeType | null;
+  fade: number | null;
+  /** Set while this deck is meant to be audible; the unlock must not pause it. */
+  claimed: boolean;
+}
+
+export class ThemeMusicManager {
+  private decks: [Deck, Deck] | null = null;
+  /** Index of the deck that carries `playing`. */
+  private active = 0;
+  private wanted: ThemeType | null = null;
+  private playing: ThemeType | null = null;
+  private primed: ThemeType | null = null;
+  private pendingPreload: ThemeType | null = null;
+  private stopRetry: (() => void) | null = null;
+
+  private getDecks(): [Deck, Deck] | null {
     if (typeof window === 'undefined') return null;
-
-    // Return cached audio element
-    if (this.audioElements.has(theme)) {
-      return this.audioElements.get(theme)!;
-    }
-
-    // Prevent duplicate loading
-    if (this.loadingThemes.has(theme)) {
-      // Wait for existing load to complete
-      while (this.loadingThemes.has(theme)) {
-        await new Promise(resolve => setTimeout(resolve, 50));
-      }
-      return this.audioElements.get(theme) || null;
-    }
-
-    this.loadingThemes.add(theme);
-
-    try {
-      const path = THEME_PATHS[theme];
-      if (!path) {
-        this.loadingThemes.delete(theme);
-        return null;
-      }
-
-      const audio = new Audio(path);
+    if (this.decks) return this.decks;
+    const make = (): Deck => {
+      const audio = new Audio();
       audio.loop = true;
-      audio.volume = 0;
       audio.preload = 'auto';
+      audio.volume = 0;
+      return { audio, theme: null, fade: null, claimed: false };
+    };
+    this.decks = [make(), make()];
+    const stop = onUserActivation(() => {
+      stop();
+      this.unlockDecks();
+    });
+    return this.decks;
+  }
 
-      // Wait for audio to be ready
-      await new Promise<void>((resolve, reject) => {
-        audio.addEventListener('canplaythrough', () => resolve(), { once: true });
-        audio.addEventListener('error', () => reject(new Error('Failed to load')), { once: true });
-        audio.load();
+  /** Plays each idle deck muted for a moment inside the press, so Safari allows it later. */
+  private unlockDecks() {
+    const silent = silentWav();
+    for (const deck of this.decks ?? []) {
+      if (deck.claimed) continue;
+      const audio = deck.audio;
+      const borrowed = !audio.getAttribute('src');
+      if (borrowed) audio.src = silent;
+      audio.muted = true;
+      audio.play().then(() => {
+        if (!deck.claimed) audio.pause();
+      }).catch(() => {}).finally(() => {
+        audio.muted = false;
+        if (borrowed && deck.theme === null) audio.removeAttribute('src');
       });
-
-      this.audioElements.set(theme, audio);
-      this.loadingThemes.delete(theme);
-
-      return audio;
-    } catch (error) {
-      console.debug(`Failed to load theme ${theme}:`, error);
-      this.loadingThemes.delete(theme);
-      return null;
     }
   }
 
-  /** Load a theme ahead of time (no playback), e.g. while the cover is idle. */
+  private load(deck: Deck, theme: ThemeType) {
+    if (deck.theme === theme) return;
+    deck.theme = theme;
+    deck.audio.src = THEME_PATHS[theme];
+    deck.audio.load();
+  }
+
+  private fade(deck: Deck, to: number, done?: () => void) {
+    if (deck.fade !== null) clearInterval(deck.fade);
+    const from = deck.audio.volume;
+    let step = 0;
+    deck.fade = window.setInterval(() => {
+      step++;
+      deck.audio.volume = Math.min(1, Math.max(0, from + (to - from) * (step / FADE_STEPS)));
+      if (step < FADE_STEPS) return;
+      if (deck.fade !== null) clearInterval(deck.fade);
+      deck.fade = null;
+      done?.();
+    }, CROSSFADE_DURATION / FADE_STEPS);
+  }
+
+  private silence(deck: Deck) {
+    deck.claimed = false;
+    this.fade(deck, 0, () => {
+      deck.audio.pause();
+      if (this.pendingPreload) {
+        const theme = this.pendingPreload;
+        this.pendingPreload = null;
+        this.preload(theme);
+      }
+    });
+  }
+
+  /** Retry the wanted track inside the reader's next press. */
+  private retryOnActivation() {
+    if (this.stopRetry) return;
+    this.stopRetry = onUserActivation(() => {
+      this.stopRetry?.();
+      this.stopRetry = null;
+      if (this.wanted && this.wanted !== this.playing) this.playTheme(this.wanted);
+    });
+  }
+
+  /** Load a theme into the idle deck ahead of time (no playback). */
   preload(theme: ThemeType): void {
-    if (typeof window === 'undefined' || this.audioElements.has(theme)) return;
     if (useAudioStore.getState().isMuted) return; // no download for people who muted
-    this.loadTheme(theme).catch(() => {});
-  }
-
-  /**
-   * Play a theme (crossfade from current if different)
-   * Now with lazy loading - only loads the needed track
-   */
-  async playTheme(theme: ThemeType): Promise<void> {
-    if (typeof window === 'undefined') return;
-    if (useAudioStore.getState().isMuted) return;
-
-    // Skip if already playing this theme
-    if (theme === this.currentTheme) return;
-
-    // If already transitioning (rapid scroll), force stop everything first
-    if (this.isTransitioning) {
-      this.forceStopAll();
-    }
-
-    this.isTransitioning = true;
-
-    // Load the theme on-demand (lazy loading!)
-    const audio = await this.loadTheme(theme);
-    if (!audio) {
-      this.isTransitioning = false;
+    const decks = this.getDecks();
+    if (!decks || decks.some(deck => deck.theme === theme)) return;
+    const idle = decks[1 - this.active];
+    // Still starting or fading out a track: load once it is silent.
+    if (idle.claimed || idle.fade !== null) {
+      this.pendingPreload = theme;
       return;
     }
-
-    this.crossfadeTo(theme);
-
-    // Update store so UI components can react to theme changes
-    useAudioStore.getState().setCurrentTheme(theme);
+    this.load(idle, theme);
   }
 
   /**
-   * Force stop all audio immediately (for rapid scrolling)
+   * Remember the first track at once (so an early "Starten" can start it) and
+   * preload it when the page is idle, so pressing play only has to play.
    */
-  private forceStopAll(): void {
-    this.fadeIntervals.forEach((interval) => clearInterval(interval));
-    this.fadeIntervals.clear();
-    this.audioElements.forEach((audio) => {
-      audio.pause();
-      audio.currentTime = 0;
-      audio.volume = 0;
+  prime(theme: ThemeType): () => void {
+    this.primed = theme;
+    return whenTrulyIdle(() => this.preload(theme));
+  }
+
+  /** Call synchronously inside the "Starten" click: starts the primed track with the button. */
+  startPrimed(): void {
+    if (this.primed) this.playTheme(this.primed);
+  }
+
+  /** Make `theme` the track that plays, crossfading from the current one. */
+  playTheme(theme: ThemeType): void {
+    const decks = this.getDecks();
+    if (!decks) return;
+    this.wanted = theme;
+    if (useAudioStore.getState().isMuted) return; // resume() picks `wanted` up on unmute
+    const current = decks[this.active];
+    if (theme === this.playing && !current.audio.paused) return;
+
+    // Same track, only paused: continue on its deck. Otherwise the idle deck takes it.
+    const index = theme === this.playing ? this.active : 1 - this.active;
+    const deck = decks[index];
+    const previous = index === this.active ? null : current;
+    if (deck.fade !== null) { clearInterval(deck.fade); deck.fade = null; }
+    if (index !== this.active) {
+      this.load(deck, theme);
+      deck.audio.volume = 0;
+      deck.audio.currentTime = 0;
+    }
+    deck.claimed = true;
+
+    deck.audio.play().then(() => {
+      // Superseded while starting (fast scrolling): this deck is no longer wanted.
+      if (this.wanted !== theme || deck.theme !== theme) {
+        if (deck.theme !== this.wanted) { deck.claimed = false; deck.audio.pause(); }
+        return;
+      }
+      this.stopRetry?.();
+      this.stopRetry = null;
+      this.active = index;
+      this.playing = theme;
+      this.fade(deck, THEME_VOLUME);
+      if (previous && !previous.audio.paused) this.silence(previous);
+      useAudioStore.getState().setCurrentTheme(theme);
+      if (this.pendingPreload) {
+        const next = this.pendingPreload;
+        this.pendingPreload = null;
+        this.preload(next);
+      }
+    }).catch((error: unknown) => {
+      // AbortError: the source was swapped for a newer track; that call takes over.
+      if (error instanceof DOMException && error.name === 'AbortError') return;
+      deck.claimed = false;
+      if (this.wanted === theme) this.retryOnActivation();
+      console.debug('Theme music failed to start:', error instanceof Error ? error.message : error);
     });
   }
 
-  /**
-   * Crossfade from current theme to new theme
-   */
-  private crossfadeTo(newTheme: ThemeType): void {
-    const oldTheme = this.currentTheme;
-    const newAudio = this.audioElements.get(newTheme);
-
-    if (!newAudio) return;
-
-    // FIRST: Set currentTheme to prevent race conditions
-    this.currentTheme = newTheme;
-
-    // Stop ALL tracks except the new one and the one we're fading out
-    this.audioElements.forEach((audio, theme) => {
-      if (theme !== newTheme && theme !== oldTheme) {
-        const fade = this.fadeIntervals.get(theme);
-        if (fade) clearInterval(fade);
-        audio.pause();
-        audio.currentTime = 0;
-        audio.volume = 0;
-      }
-    });
-
-    // Clear any existing fade for the new theme
-    const existingFade = this.fadeIntervals.get(newTheme);
-    if (existingFade) {
-      clearInterval(existingFade);
-    }
-
-    // Fade out old theme if playing
-    if (oldTheme && oldTheme !== newTheme) {
-      this.fadeOut(oldTheme);
-    }
-
-    // Start new theme at 0 volume and fade in
-    newAudio.volume = 0;
-    newAudio.currentTime = 0;
-
-    const playPromise = newAudio.play();
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => {
-          this.fadeIn(newTheme);
-        })
-        .catch((error) => {
-          console.debug('Theme music failed to start:', error.message);
-        });
-    }
-  }
-
-  /**
-   * Fade in a theme to target volume
-   */
-  private fadeIn(theme: ThemeType): void {
-    const audio = this.audioElements.get(theme);
-    if (!audio) return;
-
-    const stepDuration = CROSSFADE_DURATION / FADE_STEPS;
-    const volumeStep = THEME_VOLUME / FADE_STEPS;
-    let currentStep = 0;
-
-    const interval = window.setInterval(() => {
-      currentStep++;
-      audio.volume = Math.min(volumeStep * currentStep, THEME_VOLUME);
-
-      if (currentStep >= FADE_STEPS) {
-        clearInterval(interval);
-        this.fadeIntervals.delete(theme);
-
-        // SAFETY: After fade completes, ensure no other tracks are playing
-        this.stopAllExcept(theme);
-
-        // Clear transitioning flag
-        this.isTransitioning = false;
-      }
-    }, stepDuration);
-
-    this.fadeIntervals.set(theme, interval);
-  }
-
-  /**
-   * Stop all tracks except the specified one (safety mechanism)
-   */
-  private stopAllExcept(theme: ThemeType): void {
-    this.audioElements.forEach((audio, t) => {
-      if (t !== theme && !audio.paused) {
-        const fade = this.fadeIntervals.get(t);
-        if (fade) clearInterval(fade);
-        audio.pause();
-        audio.currentTime = 0;
-        audio.volume = 0;
-      }
-    });
-  }
-
-  /**
-   * Fade out a theme to silence and pause
-   */
-  private fadeOut(theme: ThemeType): void {
-    const audio = this.audioElements.get(theme);
-    if (!audio) return;
-
-    // Clear any existing fade for this theme
-    const existingFade = this.fadeIntervals.get(theme);
-    if (existingFade) {
-      clearInterval(existingFade);
-    }
-
-    const stepDuration = CROSSFADE_DURATION / FADE_STEPS;
-    const startVolume = audio.volume;
-    const volumeStep = startVolume / FADE_STEPS;
-    let currentStep = 0;
-
-    const interval = window.setInterval(() => {
-      currentStep++;
-      audio.volume = Math.max(startVolume - volumeStep * currentStep, 0);
-
-      if (currentStep >= FADE_STEPS) {
-        clearInterval(interval);
-        this.fadeIntervals.delete(theme);
-        audio.pause();
-        audio.currentTime = 0;
-      }
-    }, stepDuration);
-
-    this.fadeIntervals.set(theme, interval);
-  }
-
-  /**
-   * Pause current theme (preserves position)
-   */
+  /** Pause the current theme (keeps its position). */
   pause(): void {
-    if (this.currentTheme) {
-      const audio = this.audioElements.get(this.currentTheme);
-      if (audio) {
-        audio.pause();
-      }
-    }
+    const deck = this.decks?.[this.active];
+    if (deck && this.playing) deck.audio.pause();
   }
 
-  /**
-   * Resume current theme
-   */
+  /** Resume after unmuting: continues the playing track or starts the wanted one. */
   resume(): void {
-    if (useAudioStore.getState().isMuted) return;
-
-    if (this.currentTheme) {
-      const audio = this.audioElements.get(this.currentTheme);
-      if (audio) {
-        audio.volume = THEME_VOLUME;
-        audio.play().catch((error) => {
-          console.debug('Theme resume failed:', error.message);
-        });
-      }
-    }
+    if (useAudioStore.getState().isMuted || !this.wanted) return;
+    this.playTheme(this.wanted);
   }
 
-  /**
-   * Stop all themes (for finale or mute)
-   */
+  /** Stop all music (finale, leaving the story). */
   stop(): void {
-    this.audioElements.forEach((audio, theme) => {
-      const fade = this.fadeIntervals.get(theme);
-      if (fade) clearInterval(fade);
-      audio.pause();
-      audio.currentTime = 0;
-      audio.volume = 0;
-    });
-    this.fadeIntervals.clear();
-    this.currentTheme = null;
-
-    // Clear theme in store
+    for (const deck of this.decks ?? []) {
+      if (deck.fade !== null) clearInterval(deck.fade);
+      deck.fade = null;
+      deck.claimed = false;
+      deck.audio.pause();
+      deck.audio.volume = 0;
+    }
+    this.stopRetry?.();
+    this.stopRetry = null;
+    this.wanted = null;
+    this.playing = null;
     useAudioStore.getState().setCurrentTheme(null);
   }
 
-  /**
-   * Get current playing theme
-   */
   getCurrentTheme(): ThemeType | null {
-    return this.currentTheme;
+    return this.playing;
   }
 
-  /**
-   * Check if a theme is currently playing
-   */
   isPlaying(): boolean {
-    if (!this.currentTheme) return false;
-    const audio = this.audioElements.get(this.currentTheme);
-    return audio ? !audio.paused : false;
+    return Boolean(this.playing && this.decks && !this.decks[this.active].audio.paused);
   }
 
   /**
-   * Cleanup all audio resources
-   * Call when leaving the wrapped experience to release memory
+   * Release the tracks when leaving the story. The decks themselves stay:
+   * they are already unlocked, which a new element would not be.
    */
   cleanup(): void {
     this.stop();
-
-    // Release all audio elements
-    this.audioElements.forEach((audio) => {
-      audio.pause();
-      audio.src = ''; // Release network resources
-      audio.load(); // Reset audio element
-    });
-
-    this.audioElements.clear();
-    this.fadeIntervals.clear();
-    this.loadingThemes.clear();
-    this.currentTheme = null;
+    this.primed = null;
+    this.pendingPreload = null;
+    for (const deck of this.decks ?? []) {
+      deck.theme = null;
+      deck.audio.removeAttribute('src');
+      deck.audio.load();
+    }
   }
 }
 
