@@ -105,9 +105,16 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
   // "Starten": rendering the started story is a big update. Run it as a
   // transition (time-sliced, so the click frame stays short) and scroll only
   // after it has committed — before that, the cover is still forward-blocked.
+  // A reader who comes back to the cover is already started: just move on.
   const pendingStart = useRef(false);
+  const startedRef = useRef(introStarted);
+  useEffect(() => { startedRef.current = introStarted; }, [introStarted]);
   const handleQuizComplete = useCallback((slideId: string) => {
     if (slideId !== 'intro') return;
+    if (startedRef.current) {
+      requestAnimationFrame(() => scrollContainerRef.current?.scrollToNextSlide('intro'));
+      return;
+    }
     pendingStart.current = true;
     startTransition(() => setIntroStarted(true));
   }, []);

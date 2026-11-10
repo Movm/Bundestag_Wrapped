@@ -44,3 +44,15 @@ test('continues to the next slide from the result dialog', async ({ page }) => {
   await expect(dialog).toBeHidden();
   await expect(quiz).toHaveAttribute('data-active', 'false');
 });
+
+test('starts again from the cover after coming back to it', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/2025');
+  const start = page.getByRole('button', { name: 'Starten', exact: true });
+  await start.click();
+  await expect(page.locator('#intro')).toHaveAttribute('data-active', 'false');
+  await page.keyboard.press('ArrowUp');
+  await expect(page.locator('#intro')).toHaveAttribute('data-active', 'true');
+  await start.click();
+  await expect(page.locator('#intro')).toHaveAttribute('data-active', 'false');
+});
