@@ -56,3 +56,28 @@ test('starts again from the cover after coming back to it', async ({ page }) => 
   await start.click();
   await expect(page.locator('#intro')).toHaveAttribute('data-active', 'false');
 });
+
+test('shows the cover again, not the pink wipe, after coming back to it', async ({ page }) => {
+  await page.goto('/2025');
+  await storyStart(page).click();
+  await expect(page.locator('#info-disclaimer')).toHaveAttribute('data-active', 'true', { timeout: 10_000 });
+  await page.keyboard.press('ArrowUp');
+  await expect(page.locator('#intro')).toHaveAttribute('data-active', 'true');
+  // The wipe is reset (scale 0) and the title is back.
+  await expect.poll(() => page.locator('#intro .cv-burst').evaluate(el => getComputedStyle(el).transform)).toBe('matrix(0, 0, 0, 0, 0, 0)');
+  await expect(page.locator('#intro h1')).toBeVisible();
+});
+
+test('draws the cover at full size when a restored story goes back to it', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/2025');
+  await storyStart(page).click();
+  await expect(page.locator('#info-disclaimer')).toHaveAttribute('data-active', 'true');
+  // Reload: the story resumes at the saved slide and builds the cover off screen.
+  await page.reload();
+  await expect(page.locator('#info-disclaimer')).toHaveAttribute('data-active', 'true');
+  await page.keyboard.press('ArrowUp');
+  await expect(page.locator('#intro')).toHaveAttribute('data-active', 'true');
+  // Star layers are painted at their real size, not as a stretched 1×1 pixel.
+  await expect.poll(() => page.locator('#intro .cv-stars canvas').first().evaluate(c => (c as HTMLCanvasElement).width)).toBeGreaterThan(100);
+});

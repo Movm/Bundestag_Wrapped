@@ -133,6 +133,8 @@ export function createCover(root: HTMLElement, options: { eagleSrc: string; year
   let collapsed = false;
   /** The wave is due but the cover was off screen; `resume` starts it. */
   let wavePending = false;
+  /** Created detached (no size yet, e.g. a restored story): assemble when first shown. */
+  let pristine = !root.isConnected;
 
   const later = (fn: () => void, ms: number) => { timers.push(window.setTimeout(fn, ms)); };
   const clearTimers = () => { timers.forEach(clearTimeout); timers = []; };
@@ -346,10 +348,14 @@ export function createCover(root: HTMLElement, options: { eagleSrc: string; year
       story.forEach(a => a.pause());
     },
     resume() {
-      if (!paused) return;
+      const wasPaused = paused;
       paused = false;
-      if (collapsed) controller.replay();
-      else story.forEach(a => a.play());
+      if (collapsed || pristine) {
+        pristine = false;
+        controller.replay();
+      } else if (wasPaused) {
+        story.forEach(a => a.play());
+      }
       if (wavePending) wave();
       startAmbient();
     },
@@ -357,10 +363,19 @@ export function createCover(root: HTMLElement, options: { eagleSrc: string; year
 
   startButton.addEventListener('click', exit);
   controller.setYear(options.year);
-  paintStars();
-  let resizeFrame = 0;
-  addEventListener('resize', () => { cancelAnimationFrame(resizeFrame); resizeFrame = requestAnimationFrame(paintStars); });
-  if (!reducedMotion()) assemble();
-  startAmbient();
+  // Stars are drawn at the layer's real size: on first attach (a cover can be
+  // created detached) and again whenever that size changes.
+  let starsSize = '';
+  new ResizeObserver(() => {
+    const box = layers[0].getBoundingClientRect();
+    const size = `${Math.round(box.width)}x${Math.round(box.height)}`;
+    if (!box.width || size === starsSize) return;
+    starsSize = size;
+    paintStars();
+  }).observe(layers[0]);
+  if (!pristine) {
+    if (!reducedMotion()) assemble();
+    startAmbient();
+  }
   return controller;
 }
