@@ -595,6 +595,7 @@ class SpeakerExporter(
             None,
         )
         gender = profile.gender if profile else "unknown"
+        gender_source = profile.gender_source if profile else "unknown"
 
         # Assign spirit animal based on speaker behavior
         spirit_animal = self._assign_spirit_animal(
@@ -634,6 +635,8 @@ class SpeakerExporter(
             'signatureQuiz': signature_quiz,
             'signatureAdjectiveQuiz': signature_adjective_quiz,
             'spiritAnimal': spirit_animal,
+            'gender': gender,
+            'genderSource': gender_source,
             'toneProfile': self._speaker_tone_scores.get(speaker),
             'topics': self._speaker_topic_data.get(speaker),
         }

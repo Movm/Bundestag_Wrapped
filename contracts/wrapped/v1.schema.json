@@ -111,7 +111,12 @@
     },
     "GenderDistribution": {
       "type": "object", "additionalProperties": false, "required": ["male", "female", "unknown", "femalePercent"],
-      "properties": { "male": { "$ref": "#/$defs/Count" }, "female": { "$ref": "#/$defs/Count" }, "unknown": { "$ref": "#/$defs/Count" }, "femalePercent": { "$ref": "#/$defs/Ratio" } }
+      "properties": { "male": { "$ref": "#/$defs/Count" }, "female": { "$ref": "#/$defs/Count" }, "unknown": { "$ref": "#/$defs/Count" }, "femalePercent": { "$ref": "#/$defs/Ratio" }, "bySource": { "$ref": "#/$defs/GenderSourceCounts" } }
+    },
+    "GenderSource": { "enum": ["official", "override", "name_dictionary", "heuristic", "unknown"] },
+    "GenderSourceCounts": {
+      "type": "object", "additionalProperties": false,
+      "properties": { "official": { "$ref": "#/$defs/Count" }, "override": { "$ref": "#/$defs/Count" }, "name_dictionary": { "$ref": "#/$defs/Count" }, "heuristic": { "$ref": "#/$defs/Count" }, "unknown": { "$ref": "#/$defs/Count" } }
     },
     "GenderByParty": {
       "type": "object", "additionalProperties": false, "required": ["party", "male", "female", "femaleRatio"],
@@ -255,6 +260,8 @@
         "avgWords": { "$ref": "#/$defs/Ratio" },
         "minWords": { "$ref": "#/$defs/Count" },
         "maxWords": { "$ref": "#/$defs/Count" },
+        "gender": { "enum": ["male", "female", "unknown"] },
+        "genderSource": { "$ref": "#/$defs/GenderSource" },
         "rankings": { "type": "object" },
         "drama": { "type": "object" },
         "words": { "type": "object" },

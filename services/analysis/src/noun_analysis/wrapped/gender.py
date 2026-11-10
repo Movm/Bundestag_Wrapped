@@ -5,12 +5,52 @@ plus heuristics for unknown names and support for custom overrides.
 """
 
 from dataclasses import dataclass
+from functools import lru_cache
 from pathlib import Path
 from typing import Literal
 import json
 import logging
+import unicodedata
 
 Gender = Literal["male", "female", "unknown"]
+GenderSource = Literal["official", "override", "name_dictionary", "heuristic", "unknown"]
+
+OFFICIAL_LOOKUP_PATH = Path(__file__).parent / "data" / "speaker_gender.json"
+
+_SOURCE_CATEGORY: dict[str, GenderSource] = {
+    "official": "official",
+    "manual": "override",
+    "bundestag_override": "override",
+    "dictionary": "name_dictionary",
+    "heuristic": "heuristic",
+}
+
+
+def _fold(value: str) -> str:
+    """Lowercase and strip diacritics so lookups survive spelling variants."""
+    value = value.strip().lower().replace("ß", "ss")
+    value = unicodedata.normalize("NFKD", value)
+    return "".join(c for c in value if not unicodedata.combining(c))
+
+
+def name_key(first_name: str, last_name: str) -> str:
+    """Normalized "<last>|<first>" key shared by the lookup builder and detector."""
+    return f"{_fold(last_name)}|{_fold(first_name)}"
+
+
+@lru_cache(maxsize=1)
+def load_official_lookup(path: Path = OFFICIAL_LOOKUP_PATH) -> dict[str, Gender]:
+    """Load the committed official lookup (empty if the file is missing)."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+        # Stammdaten win over the abgeordnetenwatch supplement (non-MdB ministers).
+        entries = {**data.get("abgeordnetenwatch", {}), **data.get("entries", {})}
+    except (OSError, ValueError) as e:
+        logger.warning(f"Official gender lookup unavailable: {e}")
+        return {}
+    # Official data may carry "diverse"; the output stays binary + unknown.
+    return {k: v if v in ("male", "female") else "unknown" for k, v in entries.items()}
 
 logger = logging.getLogger(__name__)
 
@@ -21,17 +61,28 @@ class GenderResult:
 
     gender: Gender
     confidence: float  # 0.0 - 1.0
-    source: str  # "dictionary", "manual", "heuristic", "unknown"
+    source: str  # "official", "dictionary", "manual", "bundestag_override", "heuristic", "unknown"
+
+    @property
+    def gender_source(self) -> GenderSource:
+        """Coarse source category exported with the edition data."""
+        return _SOURCE_CATEGORY.get(self.source, "unknown")
 
 
 class GenderDetector:
     """Detect gender from German first names.
 
-    Lookup order:
+    Lookup order for ``detect_speaker`` (full name known):
+    1. Custom mappings file (explicit operator override)
+    2. Official Bundestag Stammdaten lookup (by last + first name)
+    3. The first-name chain of ``detect``
+
+    Lookup order for ``detect`` (first name only):
     1. Custom mappings (manual overrides)
-    2. Built-in German name dictionary
-    3. Heuristic fallback (German name endings)
-    4. Mark as unknown and log for review
+    2. Bundestag-specific overrides
+    3. Built-in German name dictionary
+    4. Heuristic fallback (German name endings)
+    5. Mark as unknown and log for review
     """
 
     # Common German male first names
@@ -62,7 +113,7 @@ class GenderDetector:
         "friedhelm", "friedrich", "fritz",
         # G
         "gabriel", "georg", "gereon", "gerald", "gerd", "gerhard", "gerhart",
-        "gernot", "gero", "gerold", "gerrit", "gitta", "gottfried", "gotthard",
+        "gernot", "gero", "gerold", "gerrit", "gottfried", "gotthard",
         "gregor", "günter", "günther", "guido", "gunther", "gustav", "götz",
         # H
         "hagen", "hakan", "hannes", "hanno", "hans", "hansgeorg", "hansjörg",
@@ -146,7 +197,7 @@ class GenderDetector:
         # F
         "felicitas", "filiz", "franziska", "frauke", "friederike",
         # G
-        "gabriele", "gabi", "gerda", "gerlinde", "gertrud", "gesa", "gisela",
+        "gabriele", "gabi", "gerda", "gerlinde", "gertrud", "gesa", "gisela", "gitta",
         "grete", "gudrun", "gyde", "gökay", "gülistan",
         # H
         "hanna", "hannah", "hannelore", "harriet", "hedwig", "heide", "heidi",
@@ -160,7 +211,7 @@ class GenderDetector:
         "jana", "janine", "jasmin", "jennifer", "jessica", "johanna", "josephine",
         "judith", "julia", "juliane", "julie", "jutta",
         # K
-        "karen", "karin", "karoline", "katarina", "katharina", "kathleen", "kathrin",
+        "karen", "karin", "karoline", "katarina", "katharina", "katherina", "kathleen", "kathrin",
         "katja", "katrin", "kerstin", "kirsten", "klara", "kornelia", "kristina", "kristine",
         # L
         "larissa", "laura", "lea", "lena", "leni", "leonie", "lieselotte", "lilian",
@@ -299,17 +350,39 @@ class GenderDetector:
         self,
         custom_mappings: dict[str, Gender] | None = None,
         unknown_log_path: Path | None = None,
+        official_lookup: dict[str, Gender] | None = None,
     ):
         """Initialize detector with optional custom mappings.
 
         Args:
             custom_mappings: Override dict for specific names (full first name -> gender)
             unknown_log_path: Path to log unknown names for manual review
+            official_lookup: "<last>|<first>" -> gender; defaults to the committed
+                Stammdaten lookup
         """
+        self._official = load_official_lookup() if official_lookup is None else official_lookup
         self._custom_mappings = custom_mappings or {}
         self._unknown_log_path = unknown_log_path
         self._cache: dict[str, GenderResult] = {}
         self._unknown_names: set[str] = set()
+
+    def detect_speaker(self, first_name: str, last_name: str) -> GenderResult:
+        """Detect gender for a speaker, preferring official data over name guessing."""
+        first_parts = first_name.split()
+        if first_parts and first_parts[0].lower() in self._custom_mappings:
+            return self.detect(first_name)
+
+        last_parts = last_name.split()
+        last_variants = [last_name] + ([last_parts[-1]] if len(last_parts) > 1 else [])
+        first_variants = [first_name] + ([first_parts[0]] if len(first_parts) > 1 else [])
+        for last in last_variants:
+            for first in first_variants:
+                if not first.strip() or not last.strip():
+                    continue
+                gender = self._official.get(name_key(first, last))
+                if gender:
+                    return GenderResult(gender, 1.0, "official")
+        return self.detect(first_name)
 
     def detect(self, first_name: str) -> GenderResult:
         """Detect gender from first name.
