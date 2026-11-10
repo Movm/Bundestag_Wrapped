@@ -14,7 +14,8 @@ interface ScrollContainerProps {
   className?: string;
 }
 export interface ScrollContainerRef {
-  scrollToNextSlide: (currentSlideId: string) => void;
+  /** `instant` cuts to the next slide instead of scrolling; the arriving slide's own entrance animates. */
+  scrollToNextSlide: (currentSlideId: string, instant?: boolean) => void;
   scrollToSlide: (slideId: string) => void;
   containerRef: HTMLDivElement | null;
 }
@@ -226,7 +227,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
     }, [initialSection, containerRef, sectionKey]);
 
     useImperativeHandle(ref, () => ({
-      scrollToNextSlide: id => controller.current.next(id),
+      scrollToNextSlide: (id, instant) => controller.current.next(id, instant),
       scrollToSlide: id => controller.current.restore(id),
       get containerRef() { return containerRef.current; },
     }), [containerRef]);

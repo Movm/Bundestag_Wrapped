@@ -112,7 +112,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
   const handleQuizComplete = useCallback((slideId: string) => {
     if (slideId !== 'intro') return;
     if (startedRef.current) {
-      requestAnimationFrame(() => scrollContainerRef.current?.scrollToNextSlide('intro'));
+      requestAnimationFrame(() => scrollContainerRef.current?.scrollToNextSlide('intro', true));
       return;
     }
     pendingStart.current = true;
@@ -121,7 +121,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
   useEffect(() => {
     if (!introStarted || !pendingStart.current) return;
     pendingStart.current = false;
-    const frame = requestAnimationFrame(() => scrollContainerRef.current?.scrollToNextSlide('intro'));
+    const frame = requestAnimationFrame(() => scrollContainerRef.current?.scrollToNextSlide('intro', true));
     return () => cancelAnimationFrame(frame);
   }, [introStarted]);
 
