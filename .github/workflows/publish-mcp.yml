@@ -94,5 +94,11 @@ jobs:
             exit 0
           fi
           echo "Triggering Coolify redeploy for app $APP_UUID"
-          curl -fsS "https://app.coolify.io/api/v1/deploy?uuid=${APP_UUID}&force=false" \
-            -H "Authorization: Bearer ${COOLIFY_API_TOKEN}"
+          # Coolify 4.2+ only accepts POST here (GET answers 405); older versions only GET.
+          url="https://app.coolify.io/api/v1/deploy?uuid=${APP_UUID}&force=false"
+          status=$(curl -sS -o /tmp/coolify.json -w '%{http_code}' -X POST "$url" -H "Authorization: Bearer ${COOLIFY_API_TOKEN}")
+          if [ "$status" = "405" ]; then
+            status=$(curl -sS -o /tmp/coolify.json -w '%{http_code}' "$url" -H "Authorization: Bearer ${COOLIFY_API_TOKEN}")
+          fi
+          cat /tmp/coolify.json; echo
+          if [ "$status" -ge 300 ]; then echo "Coolify deploy request failed with HTTP $status"; exit 1; fi
