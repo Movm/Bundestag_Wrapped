@@ -6,11 +6,11 @@ describe('audioStore in development', () => {
     useAudioStore.getState().setMuted(true);
   });
 
-  it('keeps audio muted even when callers try to enable it', () => {
-    expect(IS_DEV_AUDIO_DISABLED).toBe(true);
+  it('lets the reader switch sound on and off (silence only with VITE_DEV_AUDIO=off)', () => {
+    expect(IS_DEV_AUDIO_DISABLED).toBe(false);
 
     useAudioStore.getState().setMuted(false);
-    expect(useAudioStore.getState().isMuted).toBe(true);
+    expect(useAudioStore.getState().isMuted).toBe(false);
 
     expect(useAudioStore.getState().toggleMute()).toBe(true);
     expect(useAudioStore.getState().isMuted).toBe(true);
