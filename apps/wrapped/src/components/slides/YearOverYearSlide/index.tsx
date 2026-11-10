@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import type { RankMovement, SignatureWordMovement, YearOverYearAnalysis } from '@/generated/wrapped-contract-v1';
-import { getPartyTextColor } from '@/lib/party-colors';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
 import { TOPIC_BY_ID } from '@/shared/constants/topics';
@@ -8,7 +7,8 @@ import type { TopicRiserContext } from '@/domain/topic-riser-context';
 import { SlideContainer, SlideHeader, ScrollHint, itemVariants } from '../shared';
 import { Enter, Slide } from '@/design-system/components/Slide';
 import { Display, Eyebrow, Lead, Mark, Note } from '@/design-system/components/Type';
-import { Block, ChipCloud, DivergingBars, RankCard } from '@/design-system/components/Data';
+import { Block, ChipCloud, Delta, DivergingBars, RankCard } from '@/design-system/components/Data';
+import { PartyBlock, PartyGrid } from '@/design-system/components/PartyBlock';
 
 type RankingKind = 'topics' | 'words';
 
@@ -65,67 +65,51 @@ export function RankingMovementSlide({ analysis, kind }: { analysis: YearOverYea
   );
 }
 
-function signatureMovementLabel(item: SignatureWordMovement): string {
-  if (item.previousRank === null) return 'NEU';
-  if (item.currentRank === null) return 'RAUS';
-  return `${item.previousRank} → ${item.currentRank}`;
+function MovementBadge({ item }: { item: SignatureWordMovement }) {
+  if (item.previousRank === null) return <span className="ds-contrast ds-delta">Neu</span>;
+  if (item.currentRank === null) return <span className="ds-contrast ds-delta">Raus</span>;
+  return <Delta change={item.previousRank - item.currentRank} />;
 }
 
 export function SignatureWordMovementSlide({ analysis }: { analysis: YearOverYearAnalysis }) {
   const parties = analysis.signatureWords.filter(item => item.risers.length > 0 || item.fallers.length > 0);
   return (
-    <SlideContainer innerClassName="mx-auto max-w-3xl" className="py-6 sm:py-8">
-      <SlideHeader
-        emoji="↕️"
-        title="Signature Words im Wandel"
-        subtitle={`Auf- und Absteiger gegenüber ${analysis.baseline.editionId}`}
-        className="mb-3 sm:mb-5"
-        slideId="reveal-signature-movements"
-      />
-      <motion.div variants={itemVariants} className="grid gap-2 sm:gap-2.5">
-        {parties.map(party => (
-          <motion.div
-            key={party.party}
-            variants={itemVariants}
-            className="overflow-hidden rounded-2xl border border-white/10 bg-white/5"
-          >
-            <div className="border-b border-white/10 px-3 py-1.5 text-xs font-black sm:text-sm" style={{ color: getPartyTextColor(party.party) }}>
-              {party.party}
-            </div>
-            <div className="grid grid-cols-2">
-              <div className="px-2.5 py-1.5 sm:py-2">
-                <div className="mb-0.5 text-[10px] font-black uppercase tracking-wider text-green-300">↑ Aufsteiger</div>
-                <div className="space-y-0.5">
-                  {party.risers.slice(0, 2).map(item => (
-                    <div key={item.word} className="flex min-w-0 items-center justify-between gap-1 text-[11px] sm:text-sm">
-                      <span className="truncate font-bold text-white">{item.word}</span>
-                      <span className="shrink-0 text-[9px] font-black text-green-300 sm:text-[10px]">{signatureMovementLabel(item)}</span>
-                    </div>
-                  ))}
-                  {party.risers.length === 0 && <span className="text-xs text-white/30">–</span>}
-                </div>
+    <Slide
+      shapes="corner"
+      footer={<Note className="ds-note--plate">„Neu“ und „Raus“ beziehen sich auf die fünf stärksten Signature Words jeder Fraktion.</Note>}
+    >
+      <div className="flex flex-col gap-4">
+        <Enter><Eyebrow>Auf- und Absteiger gegenüber {analysis.baseline.editionId}</Eyebrow></Enter>
+        <Display size="xl" face="wide">
+          Signature Words <Mark>im Wandel.</Mark>
+        </Display>
+      </div>
+      <PartyGrid label="Signature Words im Wandel je Fraktion">
+        {parties.map(party => {
+          const [lead, ...rest] = [...party.risers.slice(0, 2), ...party.fallers.slice(0, 2)];
+          return (
+            <PartyBlock key={party.party} party={party.party}>
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                <p lang="de" className="m-0 min-w-0 font-wide text-[clamp(1.5rem,0.9rem+2.4vw,3.25rem)] font-black uppercase leading-[0.95] [hyphens:auto] [overflow-wrap:anywhere]">
+                  {lead.word}
+                </p>
+                <MovementBadge item={lead} />
               </div>
-              <div className="border-l border-white/10 px-2.5 py-1.5 sm:py-2">
-                <div className="mb-0.5 text-[10px] font-black uppercase tracking-wider text-rose-300">↓ Absteiger</div>
-                <div className="space-y-0.5">
-                  {party.fallers.slice(0, 2).map(item => (
-                    <div key={item.word} className="flex min-w-0 items-center justify-between gap-1 text-[11px] sm:text-sm">
-                      <span className="truncate font-bold text-white">{item.word}</span>
-                      <span className="shrink-0 text-[9px] font-black text-rose-300 sm:text-[10px]">{signatureMovementLabel(item)}</span>
-                    </div>
+              {rest.length > 0 && (
+                <ul className="m-0 flex list-none flex-wrap gap-2 p-0" aria-label={`Weitere Veränderungen bei ${party.party}`}>
+                  {rest.map(item => (
+                    <li key={item.word} lang="de" className="inline-flex items-center gap-2 rounded-full bg-white py-1 pl-3 pr-1 text-sm font-bold text-wr-ink">
+                      <span className="[overflow-wrap:anywhere]">{item.word}</span>
+                      <MovementBadge item={item} />
+                    </li>
                   ))}
-                  {party.fallers.length === 0 && <span className="text-xs text-white/30">–</span>}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
-      <p className="mt-3 text-center text-[11px] text-white/40 sm:mt-4 sm:text-xs">
-        „Neu“ und „raus“ beziehen sich auf die fünf stärksten Signature Words jeder Fraktion.
-      </p>
-      <ScrollHint delay={1.3} />
-    </SlideContainer>
+                </ul>
+              )}
+            </PartyBlock>
+          );
+        })}
+      </PartyGrid>
+    </Slide>
   );
 }
 
