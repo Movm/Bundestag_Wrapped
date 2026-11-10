@@ -7,6 +7,7 @@ import type { TopicRiserContext } from '@/domain/topic-riser-context';
 import { Enter, Slide } from '@/design-system/components/Slide';
 import { Display, Eyebrow, FitWord, Lead, Mark, Note } from '@/design-system/components/Type';
 import { Block, ChipCloud, Delta, DivergingBars, RankCard } from '@/design-system/components/Data';
+import { Glyph } from '@/design-system/components/Glyph';
 import { PartyBlock, PartyGrid } from '@/design-system/components/PartyBlock';
 
 type RankingKind = 'topics' | 'words';
@@ -218,7 +219,7 @@ function RankSwap({ item, tone }: { item: RankMovement; tone: 'up' | 'down' }) {
   return (
     <Block tone={up ? 'pink' : 'card'} className={up ? 'ds-swap' : 'ds-swap ds-swap--down'}>
       <div className="flex min-w-0 flex-col gap-2">
-        <span className="ds-eyebrow text-on-accent"><span aria-hidden="true">{up ? '▲' : '▼'} </span>{up ? 'Aufgestiegen' : 'Abgestiegen'}</span>
+        <span className="ds-eyebrow text-on-accent"><Glyph name={up ? 'up' : 'down'} /> {up ? 'Aufgestiegen' : 'Abgestiegen'}</span>
         <span className="ds-swap__name">{topicName(item.label)}</span>
       </div>
       <span className="ds-swap__ranks">

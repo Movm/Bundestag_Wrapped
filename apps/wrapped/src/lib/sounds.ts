@@ -51,6 +51,12 @@ if (typeof window !== 'undefined' && !IS_DEV_AUDIO_DISABLED) {
   document.addEventListener('click', unlockAudio);
   document.addEventListener('touchstart', unlockAudio);
   document.addEventListener('keydown', unlockAudio);
+
+  // Creating and loading audio needs no user gesture (only play() does). Doing it
+  // while the page is idle keeps the media setup out of the "Starten" click,
+  // where it cost a dropped frame.
+  const whenIdle = window.requestIdleCallback ?? ((task: () => void) => window.setTimeout(task, 1500));
+  whenIdle(() => initSounds(), { timeout: 4000 });
 }
 
 /**

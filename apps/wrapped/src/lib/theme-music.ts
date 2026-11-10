@@ -134,6 +134,13 @@ class ThemeMusicManager {
     }
   }
 
+  /** Load a theme ahead of time (no playback), e.g. while the cover is idle. */
+  preload(theme: ThemeType): void {
+    if (typeof window === 'undefined' || this.audioElements.has(theme)) return;
+    if (useAudioStore.getState().isMuted) return; // no download for people who muted
+    this.loadTheme(theme).catch(() => {});
+  }
+
   /**
    * Preload next theme in background (non-blocking)
    */

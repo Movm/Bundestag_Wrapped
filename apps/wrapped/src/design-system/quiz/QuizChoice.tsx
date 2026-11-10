@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from 'motion/react';
 import { type CSSProperties, type ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 import { ENTER } from '../motion';
+import { Glyph } from '../components/Glyph';
 import type { QuizOption } from './engine';
 
 interface QuizChoiceProps {
@@ -43,7 +44,7 @@ export function QuizChoice({ option, answered, className, style, children, showT
       <span className="ds-choice__label">{children ?? option.text}</span>
       {option.statusWord && (
         <span className={showTag ? 'ds-choice__tag' : 'sr-only'}>
-          {showTag ? (option.status === 'correct' ? '✓ ' : '✕ ') : ', '}{option.statusWord}
+          {showTag ? <Glyph name={option.status === 'correct' ? 'check' : 'cross'} /> : ', '}{showTag ? ' ' : ''}{option.statusWord}
         </span>
       )}
     </motion.button>
