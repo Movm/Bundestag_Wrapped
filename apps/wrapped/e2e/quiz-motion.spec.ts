@@ -1,6 +1,6 @@
 import { expect, test } from 'playwright/test';
 import { installEditionFixtures } from './fixtures';
-import { jumpToSlide, closeQuizResult } from './story-navigation';
+import { jumpToSlide, closeQuizResult, storyStart } from './story-navigation';
 
 test.beforeEach(async ({ page }) => {
   await installEditionFixtures(page);
@@ -34,7 +34,7 @@ for (const reducedMotion of ['reduce', 'no-preference'] as const) {
 test('continues to the next slide from the result dialog', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/2025');
-  await page.getByRole('button', { name: 'Starten', exact: true }).click();
+  await storyStart(page).click();
   await jumpToSlide(page, 'quiz-topics');
   const quiz = page.locator('#quiz-topics');
   await quiz.getByRole('button').first().click();
@@ -48,7 +48,7 @@ test('continues to the next slide from the result dialog', async ({ page }) => {
 test('starts again from the cover after coming back to it', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/2025');
-  const start = page.getByRole('button', { name: 'Starten', exact: true });
+  const start = storyStart(page);
   await start.click();
   await expect(page.locator('#intro')).toHaveAttribute('data-active', 'false');
   await page.keyboard.press('ArrowUp');

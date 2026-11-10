@@ -162,6 +162,11 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
 
   // A failed load must not stay hidden behind the boot cover.
   useEffect(() => { if (error) dismissBootCover(); }, [error]);
+  // Restoring to a later slide: the cover slide stays hidden (its effects do
+  // not run), so the boot cover would never be adopted. Drop it instead.
+  useEffect(() => {
+    if (data && initialSection && initialSection !== 'intro') dismissBootCover();
+  }, [data, initialSection]);
 
   if (loading) {
     return null;

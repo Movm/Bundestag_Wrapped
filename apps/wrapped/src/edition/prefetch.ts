@@ -1,15 +1,17 @@
 /**
  * Edition JSON requests the cover boot script started during HTML parsing
  * (src/cover/boot.ts), keyed by URL. Each response is handed out once, so the
- * loader still owns parsing, validation and error handling.
+ * loader still owns parsing, validation and error handling. Uses globalThis:
+ * the loader also runs in the search worker, which has no window.
  */
 declare global {
-  interface Window { __btPrefetch?: Map<string, Promise<Response>> }
+  var __btPrefetch: Map<string, Promise<Response>> | undefined;
 }
 
 export function takePrefetched(url: string): Promise<Response> | null {
-  const pending = window.__btPrefetch?.get(url);
-  if (!pending) return null;
-  window.__btPrefetch!.delete(url);
+  const cache = globalThis.__btPrefetch;
+  const pending = cache?.get(url);
+  if (!cache || !pending) return null;
+  cache.delete(url);
   return pending;
 }

@@ -1,4 +1,4 @@
-import { jumpToSlide, closeQuizResult } from './story-navigation';
+import { jumpToSlide, closeQuizResult, storyStart } from './story-navigation';
 import { expect, test } from 'playwright/test';
 import { installEditionFixtures } from './fixtures';
 
@@ -44,7 +44,7 @@ test('searches in the worker, bounds every page and loads full text on demand', 
 
 test('keeps snap sections but activates only the current slide and neighbours', async ({ page }) => {
   await page.goto('/2025');
-  await expect(page.getByRole('button', { name: 'Starten', exact: true })).toBeVisible();
+  await expect(storyStart(page)).toBeVisible();
   expect(await page.locator('[data-slide-id]').count()).toBeGreaterThan(20);
   expect(await page.locator('[data-slide-mounted="true"]').count()).toBeLessThanOrEqual(3);
   const target = page.locator('[data-slide-id="reveal-topics"]');
@@ -57,7 +57,7 @@ test('keeps snap sections but activates only the current slide and neighbours', 
 test('does not let an old quiz overlay pull the reader back after navigation', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/2025');
-  await page.getByRole('button', { name: 'Starten', exact: true }).click();
+  await storyStart(page).click();
   const quiz = page.locator('[data-slide-id="quiz-topics"]');
   await jumpToSlide(page, (await quiz.getAttribute('id'))!);
   const answer = quiz.getByRole('button').first();
@@ -123,7 +123,7 @@ test('pauses offscreen speaker-share confetti in reading mode', async ({ page })
 
 test('reveals a distant scroll destination in the same commit that selects it', async ({ page }) => {
   await page.goto('/2025');
-  await expect(page.getByRole('button', { name: 'Starten', exact: true })).toBeVisible();
+  await expect(storyStart(page)).toBeVisible();
   await page.evaluate(() => {
     const blanks: string[] = [];
     Object.assign(window, { __blankSelectedSlides: blanks });
@@ -141,7 +141,7 @@ test('reveals a distant scroll destination in the same commit that selects it', 
 
 test('retains the height of tall visited content when its effects are suspended', async ({ page }) => {
   await page.goto('/2025');
-  await expect(page.getByRole('button', { name: 'Starten', exact: true })).toBeVisible();
+  await expect(storyStart(page)).toBeVisible();
   await page.addStyleTag({ content: '[data-slide-id="info-disclaimer"] > * { min-height: 1600px !important; }' });
   const tall = page.locator('[data-slide-id="info-disclaimer"]');
   await jumpToSlide(page, (await tall.getAttribute('id'))!);
@@ -155,7 +155,7 @@ test('retains the height of tall visited content when its effects are suspended'
 
 test('keeps selection aligned with the viewport after content reflows without scrolling', async ({ page }) => {
   await page.goto('/2025');
-  await expect(page.getByRole('button', { name: 'Starten', exact: true })).toBeVisible();
+  await expect(storyStart(page)).toBeVisible();
   await page.addStyleTag({ content: '[data-story-scroll] { overflow-anchor: none; }' });
   await jumpToSlide(page, (await page.locator('[data-slide-id="reveal-topics"]').getAttribute('id'))!);
   await expect(page.locator('[data-slide-id="reveal-topics"]')).toHaveAttribute('data-slide-effects-active', 'true');

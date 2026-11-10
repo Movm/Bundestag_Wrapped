@@ -1,4 +1,4 @@
-import { jumpToSlide, closeQuizResult } from './story-navigation';
+import { jumpToSlide, closeQuizResult, storyStart } from './story-navigation';
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from 'playwright/test';
 
@@ -39,7 +39,7 @@ test('redirects to the fixture current edition and starts a keyboard-operable jo
   await page.goto('/');
   await expect(page).toHaveURL(/\/2025$/);
 
-  const start = page.getByRole('button', { name: 'Starten', exact: true });
+  const start = storyStart(page);
   await start.focus();
   await expect(start).toBeFocused();
   await page.keyboard.press('Enter');
@@ -58,7 +58,7 @@ test('completes the fixture journey with a quiz gate, mixed answers, and the act
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/2025');
 
-  await page.getByRole('button', { name: 'Starten', exact: true }).click();
+  await storyStart(page).click();
   await expect(page.locator('[data-slide-id="info-disclaimer"]')).toBeVisible();
 
   const activeSlides = [
@@ -183,7 +183,7 @@ test('keeps annual navigation, share FAB and its dialog accessible', async ({ pa
 
 test('restores different answers when switching between annual routes', async ({ page }) => {
   await page.goto('/2025');
-  await page.getByRole('button', { name: 'Starten', exact: true }).click();
+  await storyStart(page).click();
   await jumpToSlide(page, 'quiz-topics');
   await page.locator('[data-slide-id="quiz-topics"]').getByRole('button').first().click();
 
@@ -309,7 +309,7 @@ test('restarts only the active annual scope from the keyboard-operated menu', as
   const restart = page.getByRole('button', { name: 'Neu starten' });
   await restart.focus();
   await page.keyboard.press('Enter');
-  await expect(page.getByRole('button', { name: 'Starten', exact: true })).toBeVisible();
+  await expect(storyStart(page)).toBeVisible();
 
   const state = await page.evaluate(() => ({
     progress2025: localStorage.getItem('bundestag-wrapped-progress:2025:fixture-a'),
@@ -344,9 +344,9 @@ test('runs Axe against the annual start, answered quiz, search, speaker index, p
   };
 
   await page.goto('/2025');
-  await expect(page.getByRole('button', { name: 'Starten', exact: true })).toBeVisible();
+  await expect(storyStart(page)).toBeVisible();
   await scan();
-  await page.getByRole('button', { name: 'Starten', exact: true }).click();
+  await storyStart(page).click();
   await jumpToSlide(page, 'quiz-topics');
   const answer = page.locator('[data-slide-id="quiz-topics"]').getByRole('button').first();
   await answer.focus();

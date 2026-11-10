@@ -131,6 +131,8 @@ export function createCover(root: HTMLElement, options: { eagleSrc: string; year
   let paused = false;
   /** After the wipe: the seats sit in the centre until the cover is shown again. */
   let collapsed = false;
+  /** The wave is due but the cover was off screen; `resume` starts it. */
+  let wavePending = false;
 
   const later = (fn: () => void, ms: number) => { timers.push(window.setTimeout(fn, ms)); };
   const clearTimers = () => { timers.forEach(clearTimeout); timers = []; };
@@ -181,6 +183,8 @@ export function createCover(root: HTMLElement, options: { eagleSrc: string; year
 
   /** A slow light wave through the rows every ten seconds: one looping animation per seat, created once. */
   function wave() {
+    if (paused) { wavePending = true; return; }
+    wavePending = false;
     dots.forEach((dot, i) => {
       const seat = seats[i];
       animate(story, dot, [
@@ -331,6 +335,7 @@ export function createCover(root: HTMLElement, options: { eagleSrc: string; year
     replay() {
       exiting = false;
       collapsed = false;
+      wavePending = false;
       resetStory();
       if (!reducedMotion()) assemble();
     },
@@ -345,6 +350,7 @@ export function createCover(root: HTMLElement, options: { eagleSrc: string; year
       paused = false;
       if (collapsed) controller.replay();
       else story.forEach(a => a.play());
+      if (wavePending) wave();
       startAmbient();
     },
   };
