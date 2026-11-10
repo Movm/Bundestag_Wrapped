@@ -67,7 +67,7 @@ function RedirectError({ message }: { message: string }) {
       <div className="text-center">
         <div className="text-6xl mb-4">⚠️</div>
         <p className="text-red-400 mb-2">Fehler beim Laden</p>
-        <p className="text-white/40 text-sm">{message}</p>
+        <p className="text-on-muted text-sm">{message}</p>
       </div>
     </div>
   );
