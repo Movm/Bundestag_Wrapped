@@ -118,8 +118,13 @@ export default defineConfig({
         ],
         // Pre-cache critical assets
         globPatterns: ['**/*.{js,css,html,svg,png,webp,woff2}'],
-        // Don't pre-cache large JSON files (they'll be runtime cached)
-        globIgnores: ['**/speeches_*.json', '**/words_index.json', '**/word_rankings.json'],
+        // Don't pre-cache large JSON files (they'll be runtime cached). The
+        // password page (/zugang/) is served by nginx, never from the cache.
+        globIgnores: ['**/speeches_*.json', '**/words_index.json', '**/word_rankings.json', 'zugang/**'],
+        // The protected preview and its password page must reach nginx: a cached
+        // app shell for /2026 skips the password check, and one for /zugang
+        // renders the app instead of the password page ("Unknown edition: zugang").
+        navigateFallbackDenylist: [/^\/zugang(?:\/|$)/, /^\/2026(?:\/|$)/],
       },
     }),
   ],
