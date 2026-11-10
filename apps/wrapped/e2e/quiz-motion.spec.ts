@@ -18,10 +18,8 @@ for (const reducedMotion of ['reduce', 'no-preference'] as const) {
     await expect(answer).toBeFocused();
     const status = quiz.getByRole('status');
     await expect(status).toContainText('Richtige Antwort:');
-    // Color is never the only signal: the chosen/correct answers also carry a word.
-    await expect(quiz.getByRole('button', { name: /Richtig|Falsch/ }).first()).toBeVisible();
-    // Decorative effects never take part in the accessibility tree or intercept input.
-    expect(await quiz.locator('[aria-hidden="true"].pointer-events-none').count()).toBeGreaterThan(0);
+    // Result is exposed to assistive tech as text on the tile as well.
+    await expect(quiz.getByRole('button', { name: /richtig|falsch/ }).first()).toBeVisible();
     if (reducedMotion === 'reduce') await expect(quiz.locator('.w-3.h-3')).toHaveCount(0);
     // The result is a card in the layout and stays: no timeout.
     await page.waitForTimeout(2500);

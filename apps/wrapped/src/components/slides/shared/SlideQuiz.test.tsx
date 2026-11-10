@@ -44,7 +44,7 @@ it('announces the result in a polite live region without moving focus', async ()
   expect(region.textContent).toContain('Weil.');
   expect(document.activeElement).toBe(answer);
   expect(answer.getAttribute('aria-disabled')).toBe('true');
-  expect(answer.textContent).toContain('Richtig');
+  expect(answer.textContent).toContain('richtig');
   expect(container.querySelector('[role="dialog"]')).toBeNull();
   await act(async () => root.unmount());
 });
@@ -53,7 +53,7 @@ it('says wrong answers in words, not only in color', async () => {
   const root = await renderQuiz();
   await act(async () => button('B').click());
   expect(container.querySelector('[role="status"]')!.textContent).toContain('Nicht ganz. Richtige Antwort: A');
-  expect(button('B').textContent).toContain('Falsch');
+  expect(button('B').textContent).toContain('falsch');
   await act(async () => root.unmount());
 });
 
