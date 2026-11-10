@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { applyEditionQuizConfiguration, buildEditionQuizModel } from './edition-quiz';
+import { applyEditionQuizConfiguration, buildEditionQuizModel, pickRiserOptions } from './edition-quiz';
 import edition2025 from '../../public/data/2025/final/wrapped.json';
 import content2025 from '../../public/data/2025/final/content.json';
 import quiz2026 from '../../config/2026/quiz.json';
@@ -79,7 +79,7 @@ describe('buildEditionQuizModel', () => {
         ],
         words: [
           { label: 'mensch', currentRank: 1, previousRank: 3, rankChange: 2 },
-          { label: 'dank', currentRank: 2, previousRank: 4, rankChange: 2 },
+          { label: 'dank', currentRank: 2, previousRank: 3, rankChange: 1 },
           { label: 'land', currentRank: 3, previousRank: 1, rankChange: -2 },
           { label: 'euro', currentRank: 4, previousRank: 2, rankChange: -2 },
         ],
@@ -108,6 +108,44 @@ describe('buildEditionQuizModel', () => {
     expect(model['quiz-word-riser']?.question).toBe('Was ist das Aufsteigerwort des Jahres?');
     expect(model['quiz-youth-language']?.correctAnswer).toBe('safe');
     expect(model['quiz-youth-language']?.explanation).toContain('Partei A');
+  });
+});
+
+describe('riser ties', () => {
+  const words = [
+    { label: 'kind', currentRank: 6, previousRank: 13, rankChange: 7 },
+    { label: 'staat', currentRank: 7, previousRank: 14, rankChange: 7 },
+    { label: 'mensch', currentRank: 1, previousRank: 3, rankChange: 2 },
+    { label: 'land', currentRank: 3, previousRank: 1, rankChange: -2 },
+    { label: 'weg', currentRank: 11, previousRank: 5, rankChange: -6 },
+  ];
+
+  it('breaks a tie by the better current rank and never offers the tied entry', () => {
+    // Input order must not matter.
+    for (const items of [words, [...words].reverse()]) {
+      const picked = pickRiserOptions(items);
+      expect(picked?.winner.label).toBe('kind');
+      expect(picked?.options).not.toContain('staat');
+      expect(new Set(picked?.options)).toEqual(new Set(['kind', 'mensch', 'land', 'weg']));
+    }
+  });
+
+  it('omits the question when too few untied options remain', () => {
+    const data = {
+      ...fixture('Europa', 'Partei A'),
+      yearOverYear: {
+        baseline: { editionId: '2025', start: '2025-01-01', end: '2025-12-31' },
+        topics: [
+          { label: 'A', currentRank: 1, previousRank: 2, rankChange: 1 },
+          { label: 'B', currentRank: 2, previousRank: 3, rankChange: 1 },
+          { label: 'C', currentRank: 3, previousRank: 4, rankChange: 1 },
+          { label: 'D', currentRank: 4, previousRank: 4, rankChange: 0 },
+        ],
+        words: [],
+        youthLanguage: { lexiconVersion: 'x', words: [], byParty: [] },
+      },
+    };
+    expect(buildEditionQuizModel(data as never)['quiz-topic-riser']).toBeUndefined();
   });
 });
 
