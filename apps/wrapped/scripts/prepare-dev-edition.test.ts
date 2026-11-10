@@ -15,7 +15,7 @@ describe('local preview registry', () => {
     expect(registry.currentEdition).toBe('2025');
     expect(registry.editions).toEqual([
       { id: '2025', year: 2025, status: 'published', manifestUrl: '/data/2025/final/manifest.json' },
-      { id: '2026', year: 2026, status: 'preview', manifestUrl: '/__dev-editions/2026/preview-2026-10-12/manifest.json' },
+      { id: '2026', year: 2026, status: 'preview', manifestUrl: '/data/__dev-editions/2026/preview-2026-10-12/manifest.json' },
     ]);
   });
 });

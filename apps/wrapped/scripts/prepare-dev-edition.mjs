@@ -63,7 +63,7 @@ function readJson(file) {
 export function buildDevRegistry(productionRegistry, manifest, version) {
   const preview = {
     id: manifest.editionId,
-    manifestUrl: `/__dev-editions/${manifest.editionId}/${version}/manifest.json`,
+    manifestUrl: `/data/__dev-editions/${manifest.editionId}/${version}/manifest.json`,
     status: 'preview',
     year: manifest.year,
   };
