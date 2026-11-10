@@ -993,6 +993,42 @@
         }
       }
     },
+    "TopicSpeaker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "party",
+        "vsAverage"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "vsAverage": {
+          "$ref": "#/$defs/Ratio"
+        }
+      }
+    },
+    "TopicWord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "word",
+        "count"
+      ],
+      "properties": {
+        "word": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "count": {
+          "$ref": "#/$defs/Count"
+        }
+      }
+    },
     "TopicAnalysis": {
       "type": "object",
       "additionalProperties": false,
@@ -1021,6 +1057,24 @@
           "type": "array",
           "items": {
             "$ref": "#/$defs/TopicScore"
+          }
+        },
+        "topWords": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/TopicWord"
+            }
+          }
+        },
+        "topSpeakers": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/TopicSpeaker"
+            }
           }
         }
       }
@@ -1130,6 +1184,21 @@
           "items": {
             "$ref": "#/$defs/MentionSpeaker"
           }
+        },
+        "background": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NonEmptyString"
+          }
+        },
+        "source": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "headline": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "subtitle": {
+          "$ref": "#/$defs/NonEmptyString"
         }
       }
     },

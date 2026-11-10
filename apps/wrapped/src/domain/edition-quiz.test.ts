@@ -253,8 +253,8 @@ describe('Jugendwort speaker question', () => {
 });
 
 describe('edition quiz configuration', () => {
-  it('runs the 2026 edition as topic riser, signature words and youth language', () => {
-    expect(quiz2026.groups.map(group => group.id)).toEqual(['quiz-topic-riser', 'quiz-signature', 'quiz-youth-language']);
+  it('runs the 2026 edition as topic riser, signature words, youth language and the moment of the year', () => {
+    expect(quiz2026.groups.map(group => group.id)).toEqual(['quiz-topic-riser', 'quiz-signature', 'quiz-youth-language', 'quiz-mention']);
   });
 
   it('preserves the rendered 2025 quiz model when no configuration exists', () => {
@@ -293,5 +293,21 @@ describe('edition quiz configuration', () => {
     expect(() => applyEditionQuizConfiguration(generated, { version: 1, groups: [{ id: 'quiz-topics' }, { id: 'quiz-topics' }] })).toThrow('duplicate group ID');
     expect(() => applyEditionQuizConfiguration(generated, { version: 1, groups: [{ id: 'quiz-missing' }] })).toThrow('unavailable group');
     expect(() => applyEditionQuizConfiguration(generated, { version: 1, groups: [{ id: 'quiz-bonus', question: { id: 'quiz-bonus', type: 'prediction', question: 'Bonus?', options: ['A', 'B', 'C', 'D'], correctAnswer: 'Z', explanation: 'Testdaten' } }] })).toThrow('matching correct answer');
+  });
+
+  it('asks who talked most about the moment of the year, only with a clear leader', () => {
+    const speakers = [
+      { name: 'Zoe', party: 'GRÜNE', count: 2, date: '2026-04-15', quote: 'q' },
+      { name: 'Daniel', party: 'SPD', count: 1, date: '2026-05-21', quote: 'q' },
+      { name: 'Fabian', party: 'DIE LINKE', count: 1, date: '2026-04-24', quote: 'q' },
+      { name: 'Vanessa', party: 'CDU/CSU', count: 1, date: '2026-04-23', quote: 'q' },
+    ];
+    const base = fixture('Europa', 'Partei A') as WrappedData;
+    const quiz = buildEditionQuizModel({ ...base, mentions: [{ id: 'timmy', label: 'Timmy der Wal', count: 5, speakers }] })['quiz-mention'];
+    expect(quiz?.question).toBe('Wer hat im Bundestag am häufigsten über Timmy der Wal gesprochen?');
+    expect(quiz?.correctAnswer).toBe('Zoe (GRÜNE)');
+    expect(quiz?.options).toHaveLength(4);
+    const tie = speakers.map(speaker => ({ ...speaker, count: 1 }));
+    expect(buildEditionQuizModel({ ...base, mentions: [{ id: 'timmy', label: 'Timmy', count: 4, speakers: tie }] })['quiz-mention']).toBeUndefined();
   });
 });

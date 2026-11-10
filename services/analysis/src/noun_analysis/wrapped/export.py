@@ -1046,6 +1046,11 @@ class ExportMixin:
         # Count topics per party
         party_topic_counts: dict[str, dict[str, int]] = {}
         party_word_counts: dict[str, int] = {}
+        # Which lexicon words carry each topic, Bundestag-wide.
+        topic_word_counts: dict[str, Counter[str]] = {t: Counter() for t in topic_names}
+        # Per MP, to name who talks about a topic most relative to their own speech volume.
+        speaker_topic_counts: dict[tuple[str, str], Counter[str]] = {}
+        speaker_word_counts: Counter[tuple[str, str]] = Counter()
 
         for speech in self.all_speeches:
             party = speech.get("party", "")
@@ -1059,11 +1064,19 @@ class ExportMixin:
 
             words = word_pattern.findall(text)
             party_word_counts[party] += len(words)
+            # Government members speak for the cabinet, not as MPs: not ranked.
+            speaker = "" if speech.get("is_government") else (speech.get("speaker") or "")
+            speaker_key = (speaker, party)
+            if speaker:
+                speaker_word_counts[speaker_key] += len(words)
 
             for word in words:
                 if word in topic_set:
                     topic = word_to_topic[word]
                     party_topic_counts[party][topic] += 1
+                    topic_word_counts[topic][word] += 1
+                    if speaker:
+                        speaker_topic_counts.setdefault(speaker_key, Counter())[topic] += 1
 
         # Calculate per-1000 frequencies
         party_scores: dict[str, dict[str, float]] = {}
@@ -1102,4 +1115,39 @@ class ExportMixin:
                 {"topic": topic, "score": score, "rank": i + 1}
                 for i, (topic, score) in enumerate(sorted_topics[:6])
             ],
+            "topSpeakers": self._topic_top_speakers(speaker_topic_counts, speaker_word_counts, bundestag_scores),
+            "topWords": {
+                topic: [{"word": word, "count": count} for word, count in counter.most_common(8)]
+                for topic, counter in topic_word_counts.items()
+                if counter
+            },
         }
+
+    # Fewer words than this make a per-1000 share too noisy to rank an MP.
+    TOPIC_SPEAKER_MIN_WORDS = 3000
+
+    def _topic_top_speakers(
+        self,
+        topic_counts: dict[tuple[str, str], "Counter[str]"],
+        word_counts: "Counter[tuple[str, str]]",
+        bundestag_scores: dict[str, float],
+    ) -> dict[str, list[dict]]:
+        """Top five MPs per topic by share of their own speech, relative to the Bundestag."""
+        result: dict[str, list[dict]] = {}
+        for topic, average in bundestag_scores.items():
+            if average <= 0:
+                continue
+            ranked = sorted(
+                (
+                    (counts[topic] / word_counts[key] * 1000, key)
+                    for key, counts in topic_counts.items()
+                    if word_counts[key] >= self.TOPIC_SPEAKER_MIN_WORDS and counts[topic] > 0 and key[1] != "fraktionslos"
+                ),
+                key=lambda item: (-item[0], item[1]),
+            )[:5]
+            if ranked:
+                result[topic] = [
+                    {"name": name, "party": party, "vsAverage": round(score / average, 2)}
+                    for score, (name, party) in ranked
+                ]
+        return result

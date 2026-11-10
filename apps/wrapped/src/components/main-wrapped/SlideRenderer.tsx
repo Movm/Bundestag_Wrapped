@@ -26,7 +26,8 @@ import {
   YouthLanguageResultSlide,
   YouthLanguagePartySlide,
   YouthLanguageSpeakerSlide,
-  MentionSlide,
+  MentionIntroSlide,
+  MentionInfoSlide,
 } from '@/components/slides';
 import { SlideInfo } from '@/components/slides/shared';
 import type { SlideData } from '@/lib/slide-sharepics';
@@ -220,11 +221,11 @@ function YouthLanguageSpeakerSlideWrapper() {
   return <YouthLanguageSpeakerSlide analysis={data.yearOverYear} />;
 }
 
-function MentionSlideWrapper() {
+function MentionSlideWrapper({ part }: { part: 'intro' | 'info' }) {
   const data = useFullWrappedData();
   const mention = data?.mentions?.[0];
   if (!mention) return null;
-  return <MentionSlide mention={mention} />;
+  return part === 'intro' ? <MentionIntroSlide mention={mention} /> : <MentionInfoSlide mention={mention} />;
 }
 
 // ============================================================================
@@ -337,7 +338,8 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'quiz-discriminatory':
     case 'quiz-common-words':
     case 'quiz-tone':
-    case 'quiz-gender': {
+    case 'quiz-gender':
+    case 'quiz-mention': {
       const question = quizzes[slide];
       if (!question) return null;
       return (
@@ -390,8 +392,12 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'reveal-youth-speakers':
       return <YouthLanguageSpeakerSlideWrapper />;
 
-    case 'reveal-mention':
-      return <MentionSlideWrapper />;
+    case 'intro-mention':
+      return <MentionSlideWrapper part="intro" />;
+
+    case 'info-mention':
+      return <MentionSlideWrapper part="info" />;
+
 
     case 'reveal-drama':
       return <DramaSlideWrapper phase="result" />;

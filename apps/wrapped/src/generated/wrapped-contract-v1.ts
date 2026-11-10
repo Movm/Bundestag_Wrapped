@@ -254,10 +254,23 @@ export interface TopicScore {
   "rank": Count;
 }
 
+export interface TopicSpeaker {
+  "name": NonEmptyString;
+  "party": NonEmptyString;
+  "vsAverage": Ratio;
+}
+
+export interface TopicWord {
+  "word": NonEmptyString;
+  "count": Count;
+}
+
 export interface TopicAnalysis {
   "byParty": Record<string, Record<string, Ratio>>;
   "overall": Record<string, Ratio>;
   "topTopics": Array<TopicScore>;
+  "topWords"?: Record<string, Array<TopicWord>>;
+  "topSpeakers"?: Record<string, Array<TopicSpeaker>>;
 }
 
 export interface ComparisonPeriod {
@@ -286,6 +299,10 @@ export interface Mention {
   "label": NonEmptyString;
   "count": Count;
   "speakers": Array<MentionSpeaker>;
+  "background"?: Array<NonEmptyString>;
+  "source"?: NonEmptyString;
+  "headline"?: NonEmptyString;
+  "subtitle"?: NonEmptyString;
 }
 
 export interface YouthWordSpeaker {

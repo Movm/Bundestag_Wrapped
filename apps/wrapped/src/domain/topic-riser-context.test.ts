@@ -25,6 +25,11 @@ const analysis = {
 
 const topics = {
   overall: { wirtschaft: 5 },
+  topWords: { wirtschaft: [{ word: 'wachstum', count: 9 }, { word: 'bip', count: 4 }] },
+  topSpeakers: { wirtschaft: [
+    { name: 'A', party: 'SPD', vsAverage: 3.1 }, { name: 'B', party: 'CDU/CSU', vsAverage: 2.4 },
+    { name: 'C', party: 'AfD', vsAverage: 2 }, { name: 'D', party: 'SPD', vsAverage: 1.9 },
+  ] },
   byParty: {
     SPD: { wirtschaft: 4 },
     'CDU/CSU': { wirtschaft: 6 },
@@ -41,14 +46,14 @@ describe('topic riser context', () => {
     expect(pickRiserOptions(analysis.topics)?.winner.label).toBe(context?.riser.label);
   });
 
-  it('pairs the riser with the biggest faller and ranks groups against the average', () => {
+  it('lists the words behind the topic and ranks groups against the average', () => {
     const context = buildTopicRiserContext(analysis, topics);
-    expect(context?.faller?.label).toBe('finanzen');
+    expect(context?.words).toEqual(['Wachstum', 'BIP']);
+    expect(context?.speakers.map(item => item.name)).toEqual(['A', 'B', 'C']);
     expect(context?.parties).toEqual([
       { party: 'CDU/CSU', vsAverage: 1.2 },
       { party: 'SPD', vsAverage: 0.8 },
     ]);
-    expect(context?.leader).toEqual({ party: 'CDU/CSU', newSignatureWords: ['wachstum', 'mitte'] });
   });
 
   it('is empty when nothing moved up', () => {
@@ -59,6 +64,6 @@ describe('topic riser context', () => {
   it('degrades without topic scores', () => {
     const context = buildTopicRiserContext(analysis, null);
     expect(context?.parties).toEqual([]);
-    expect(context?.leader).toBeNull();
+    expect(context?.words).toEqual([]);
   });
 });

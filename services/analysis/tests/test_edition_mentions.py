@@ -51,3 +51,10 @@ def test_shortens_a_long_sentence_around_the_match(tmp_path):
 def test_rejects_invalid_config(tmp_path, mention):
     with pytest.raises(ValueError):
         build_mentions([], write_config(tmp_path, [mention]))
+
+
+def test_carries_background_and_source_from_the_config(tmp_path):
+    config = write_config(tmp_path, [{"id": "timmy", "label": "Timmy", "aliases": ["timmy"], "background": ["3. März: Gesichtet."], "source": "Wikipedia", "headline": "Er hat sich das nicht ausgesucht.", "subtitle": "Ein Wal."}])
+    [mention] = build_mentions([{"speaker": "A", "party": "X", "text": "Timmy.", "protocolDate": "2026-01-01"}], config)
+    assert mention["background"] == ["3. März: Gesichtet."] and mention["source"] == "Wikipedia"
+    assert mention["headline"] == "Er hat sich das nicht ausgesucht." and mention["subtitle"] == "Ein Wal."

@@ -31,10 +31,19 @@ def _config(path: Path) -> list[dict[str, Any]]:
             raise ValueError(f"mention {mention_id!r} requires a label")
         if not isinstance(aliases, list) or not aliases or not all(isinstance(a, str) and a.strip() for a in aliases):
             raise ValueError(f"mention {mention_id!r} requires non-empty aliases")
+        background = item.get("background", [])
+        if not isinstance(background, list) or not all(isinstance(line, str) and line.strip() for line in background):
+            raise ValueError(f"mention {mention_id!r} has an invalid background")
+        texts = {key: item.get(key) for key in ("source", "headline", "subtitle")}
+        for key, value in texts.items():
+            if value is not None and (not isinstance(value, str) or not value.strip()):
+                raise ValueError(f"mention {mention_id!r} has an invalid {key}")
         seen.add(mention_id)
         normalized.append({
+            **{key: value.strip() if value else None for key, value in texts.items()},
             "id": mention_id,
             "label": label.strip(),
+            "background": [line.strip() for line in background],
             "patterns": [_term_pattern(alias.strip().casefold()) for alias in aliases],
         })
     return normalized
@@ -93,5 +102,7 @@ def build_mentions(speeches: list[dict[str, Any]], config_path: Path) -> list[di
             "label": mention["label"],
             "count": sum(counts.values()),
             "speakers": speakers,
+            **({"background": mention["background"]} if mention["background"] else {}),
+            **{key: mention[key] for key in ("headline", "subtitle", "source") if mention[key]},
         })
     return results

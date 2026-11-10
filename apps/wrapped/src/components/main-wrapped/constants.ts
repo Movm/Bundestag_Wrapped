@@ -68,8 +68,10 @@ export const SLIDES = [
   'reveal-youth-language',
   'reveal-youth-parties',
   'reveal-youth-speakers',
-  // Moment of the year (e.g. Timmy der Wal), shown when the edition has mentions
-  'reveal-mention',
+  // Moment of the year (e.g. Timmy der Wal), from the edition's mentions
+  'intro-mention',
+  'quiz-mention',
+  'info-mention',
 
   // Moin
   'intro-moin',
@@ -111,6 +113,7 @@ export const AUTO_SCROLL_SLIDES = new Set<SlideType>([
   'intro-drama',
   'intro-discriminatory',
   'intro-common-words',
+  'intro-mention',
   'intro-moin',
   'intro-tone',
   // Info slides also auto-scroll

@@ -1,4 +1,4 @@
-import type { RankMovement, SignatureWordMovement, YearOverYearAnalysis } from '@/generated/wrapped-contract-v1';
+import type { SignatureWordMovement, YearOverYearAnalysis } from '@/generated/wrapped-contract-v1';
 import { getPartyTone } from '@/lib/party-colors';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
@@ -6,8 +6,7 @@ import { TOPIC_BY_ID } from '@/shared/constants/topics';
 import type { TopicRiserContext } from '@/domain/topic-riser-context';
 import { Enter, Slide } from '@/design-system/components/Slide';
 import { Display, Eyebrow, FitWord, Lead, Mark, Note } from '@/design-system/components/Type';
-import { Block, ChipCloud, Delta, DivergingBars, RankCard } from '@/design-system/components/Data';
-import { Glyph } from '@/design-system/components/Glyph';
+import { ChipCloud, Delta, RankCard } from '@/design-system/components/Data';
 import { PartyBlock, PartyGrid } from '@/design-system/components/PartyBlock';
 
 type RankingKind = 'topics' | 'words';
@@ -214,52 +213,45 @@ function topicName(id: string): string {
   return TOPIC_BY_ID[id]?.name ?? id;
 }
 
-function RankSwap({ item, tone }: { item: RankMovement; tone: 'up' | 'down' }) {
-  const up = tone === 'up';
-  return (
-    <Block tone={up ? 'pink' : 'card'} className={up ? 'ds-swap' : 'ds-swap ds-swap--down'}>
-      <div className="flex min-w-0 flex-col gap-2">
-        <span className="ds-eyebrow text-on-accent"><Glyph name={up ? 'up' : 'down'} /> {up ? 'Aufgestiegen' : 'Abgestiegen'}</span>
-        <span className="ds-swap__name">{topicName(item.label)}</span>
-      </div>
-      <span className="ds-swap__ranks">
-        <span aria-hidden="true">{item.previousRank} → {item.currentRank}</span>
-        <span className="sr-only">von Platz {item.previousRank} auf Platz {item.currentRank}</span>
-      </span>
-    </Block>
-  );
-}
+const timesAverage = (ratio: number) => `${new Intl.NumberFormat('de-DE', { maximumFractionDigits: 1 }).format(ratio)}× so viel wie der Schnitt`;
 
-/** "Warum Wirtschaft?": rank swap, party emphasis around the average, new signature words. */
+/** "Warum Wirtschaft?": the words behind the topic, the party and the MPs who talk about it most. */
 export function TopicRiserContextSlide({ context, baselineYear }: { context: TopicRiserContext; baselineYear: string }) {
-  const { riser, faller, parties, leader } = context;
+  const { riser, parties, words, speakers } = context;
   const name = topicName(riser.label);
+  const leader = parties[0];
   return (
-    <Slide
-      shapes="corner"
-      footer={<Note className="ds-note--plate">Themenanteil am Redeinhalt im Vergleich zum Bundestagsschnitt · gleicher Kalenderzeitraum wie im Vorjahr</Note>}
-    >
+    <Slide shapes="corner">
       <div className="flex flex-col items-start gap-3">
         <Display size="xl">Warum <Mark>{name}?</Mark></Display>
-        <Lead>Was hinter dem Aufstieg gegenüber {baselineYear} steckt.</Lead>
+        <Lead>Von Platz {riser.previousRank} auf Platz {riser.currentRank} seit {baselineYear}.</Lead>
       </div>
-      <div className="grid gap-3 [grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr))]">
-        <RankSwap item={riser} tone="up" />
-        {faller && <RankSwap item={faller} tone="down" />}
+      {words.length > 0 && <ChipCloud words={words} label={`Häufigste Wörter zum Thema ${name}`} />}
+      <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)]">
+      {leader && leader.vsAverage > 1 && (
+        <PartyGrid label={`Fraktion, die am meisten über ${name} spricht`}>
+          <PartyBlock party={leader.party}>
+            <FitWord word={`+${Math.round((leader.vsAverage - 1) * 100)} %`} />
+            <p className="m-0 text-base font-semibold">mehr {name} als der Bundestagsschnitt</p>
+          </PartyBlock>
+        </PartyGrid>
+      )}
+      {speakers.length > 0 && (
+        <ol className="m-0 flex list-none flex-col gap-3 p-0" aria-label={`Abgeordnete, die im Verhältnis am meisten über ${name} sprechen`}>
+          {speakers.map((item, index) => (
+            <li key={`${item.name}-${item.party}`}>
+              <RankCard
+                rank={index + 1}
+                label={item.name}
+                detail={<><span style={{ color: getPartyTone(item.party, 'light') }}>{item.party}</span> · {timesAverage(item.vsAverage)}</>}
+                tone="white"
+                step={index}
+              />
+            </li>
+          ))}
+        </ol>
+      )}
       </div>
-      {parties.length > 0 && (
-        <DivergingBars
-          title={`Wer spricht am meisten über ${name}?`}
-          caption={`Anteil des Themas ${name} je Fraktion im Vergleich zum Bundestagsschnitt`}
-          rows={parties.map(item => ({ label: item.party, party: item.party, ratio: item.vsAverage }))}
-        />
-      )}
-      {leader && (
-        <Enter className="flex flex-col items-start gap-3">
-          <p className="m-0 text-base font-semibold">Neu in den Top-Signature-Words der <strong>{leader.party}</strong>:</p>
-          <ChipCloud words={leader.newSignatureWords} label={`Neue Signature-Words der ${leader.party}`} />
-        </Enter>
-      )}
     </Slide>
   );
 }
