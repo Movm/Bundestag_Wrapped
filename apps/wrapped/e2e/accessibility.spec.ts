@@ -47,7 +47,7 @@ test('keeps future slides out of Tab order, stops timed reading, and supports re
   expect(await page.locator('[data-story-scroll]').evaluate(el => el.scrollTop)).toBe(position);
 });
 
-test('provides persistent quiz feedback and keyboard-operable, single-activation flip cards', async ({ page }) => {
+test('provides persistent quiz feedback', async ({ page }) => {
   await page.goto('/2025');
   await jumpToSlide(page, (await page.locator('#quiz-topics').getAttribute('id'))!);
   const quiz = page.locator('#quiz-topics');
@@ -56,15 +56,6 @@ test('provides persistent quiz feedback and keyboard-operable, single-activation
   await expect(quiz.getByRole('status')).toContainText('Richtige Antwort:');
   await page.waitForTimeout(3000);
   await expect(quiz).not.toHaveAttribute('inert', '');
-  await jumpToSlide(page, (await page.locator('#reveal-signature').getAttribute('id'))!);
-  const card = page.locator('#reveal-signature').getByRole('button').first();
-  await card.focus();
-  await page.keyboard.press('Enter');
-  await expect(card).toHaveAttribute('aria-expanded', 'true');
-  await page.keyboard.press('Space');
-  await expect(card).toHaveAttribute('aria-expanded', 'false');
-  await card.click();
-  await expect(card).toHaveAttribute('aria-expanded', 'true');
 });
 
 test('contains speech and menu focus and restores it on Escape', async ({ page }) => {

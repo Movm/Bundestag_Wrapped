@@ -51,3 +51,16 @@ export function Note({ children, className }: { children: ReactNode; className?:
 export function BigNumber({ children, className, muted = false }: { children: ReactNode; className?: string; muted?: boolean }) {
   return <span className={cn('ds-number', muted && 'opacity-60', className)}>{children}</span>;
 }
+
+/**
+ * One big word that shrinks to fit its column instead of breaking into
+ * syllables. Needs a size container (`ds-fit-scope`, set on PartyBlock / Block).
+ */
+export function FitWord({ word, max = '3.25rem', className }: { word: string; max?: string; className?: string }) {
+  const chars = Math.max(4, [...word].length);
+  return (
+    <span lang="de" className={cn('ds-fit-word', className)} style={{ '--chars': chars, '--fit-max': max } as React.CSSProperties}>
+      {word}
+    </span>
+  );
+}

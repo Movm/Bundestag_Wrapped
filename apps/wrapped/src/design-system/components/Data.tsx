@@ -26,13 +26,13 @@ export function Block({ tone = 'white', children, className, enter = 'slide' }: 
 /* ─── Rank movement ───────────────────────────────────────────────────── */
 
 /** ▲ / ▼ / = with a spoken equivalent; the glyph alone is never announced. */
-export function Delta({ change, className }: { change: number; className?: string }) {
+export function Delta({ change, className, size = 'md' }: { change: number; className?: string; size?: 'sm' | 'md' }) {
   const glyph = change === 0 ? '=' : (
     <svg width="0.7em" height="0.7em" viewBox="0 0 10 10" className={change < 0 ? 'rotate-180' : undefined}><path d="M5 1 9.5 9h-9z" fill="currentColor" /></svg>
   );
   const spoken = change === 0 ? 'unverändert' : `${Math.abs(change)} ${Math.abs(change) === 1 ? 'Platz' : 'Plätze'} ${change > 0 ? 'aufgestiegen' : 'abgestiegen'}`;
   return (
-    <span className={cn('ds-delta ds-contrast', className)}>
+    <span className={cn('ds-delta ds-contrast', size === 'sm' && 'ds-delta--sm', className)}>
       <span aria-hidden="true" className="inline-flex items-center gap-[0.3em]">{glyph}{change === 0 ? '' : Math.abs(change)}</span>
       <span className="sr-only">{spoken}</span>
     </span>

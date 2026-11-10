@@ -6,7 +6,7 @@ import { TOPIC_BY_ID } from '@/shared/constants/topics';
 import type { TopicRiserContext } from '@/domain/topic-riser-context';
 import { SlideContainer, SlideHeader, ScrollHint, itemVariants } from '../shared';
 import { Enter, Slide } from '@/design-system/components/Slide';
-import { Display, Eyebrow, Lead, Mark, Note } from '@/design-system/components/Type';
+import { Display, Eyebrow, FitWord, Lead, Mark, Note } from '@/design-system/components/Type';
 import { Block, ChipCloud, Delta, DivergingBars, RankCard } from '@/design-system/components/Data';
 import { PartyBlock, PartyGrid } from '@/design-system/components/PartyBlock';
 
@@ -65,10 +65,11 @@ export function RankingMovementSlide({ analysis, kind }: { analysis: YearOverYea
   );
 }
 
-function MovementBadge({ item }: { item: SignatureWordMovement }) {
-  if (item.previousRank === null) return <span className="ds-contrast ds-delta">Neu</span>;
-  if (item.currentRank === null) return <span className="ds-contrast ds-delta">Raus</span>;
-  return <Delta change={item.previousRank - item.currentRank} />;
+function MovementBadge({ item, size = 'md' }: { item: SignatureWordMovement; size?: 'sm' | 'md' }) {
+  const small = size === 'sm' ? ' ds-delta--sm' : '';
+  if (item.previousRank === null) return <span className={`ds-contrast ds-delta${small}`}>Neu</span>;
+  if (item.currentRank === null) return <span className={`ds-contrast ds-delta${small}`}>Raus</span>;
+  return <Delta change={item.previousRank - item.currentRank} size={size} />;
 }
 
 export function SignatureWordMovementSlide({ analysis }: { analysis: YearOverYearAnalysis }) {
@@ -89,18 +90,16 @@ export function SignatureWordMovementSlide({ analysis }: { analysis: YearOverYea
           const [lead, ...rest] = [...party.risers.slice(0, 2), ...party.fallers.slice(0, 2)];
           return (
             <PartyBlock key={party.party} party={party.party}>
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-                <p lang="de" className="m-0 min-w-0 font-wide text-[clamp(1.5rem,0.9rem+2.4vw,3.25rem)] font-black uppercase leading-[0.95] [hyphens:auto] [overflow-wrap:anywhere]">
-                  {lead.word}
-                </p>
+              <div className="flex flex-col items-start gap-2">
+                <FitWord word={lead.word} />
                 <MovementBadge item={lead} />
               </div>
               {rest.length > 0 && (
                 <ul className="m-0 flex list-none flex-wrap gap-2 p-0" aria-label={`Weitere Veränderungen bei ${party.party}`}>
                   {rest.map(item => (
-                    <li key={item.word} lang="de" className="inline-flex items-center gap-2 rounded-full bg-white py-1 pl-3 pr-1 text-sm font-bold text-wr-ink">
-                      <span className="[overflow-wrap:anywhere]">{item.word}</span>
-                      <MovementBadge item={item} />
+                    <li key={item.word} lang="de" data-surface="light" className="inline-flex max-w-full items-center gap-2 rounded-full py-1 pl-3 pr-1 font-wide text-base font-extrabold">
+                      <span className="min-w-0 [overflow-wrap:anywhere]">{item.word}</span>
+                      <MovementBadge item={item} size="sm" />
                     </li>
                   ))}
                 </ul>

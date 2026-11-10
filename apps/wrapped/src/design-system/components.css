@@ -100,6 +100,7 @@
 /* ─── Type ─────────────────────────────────────────────────────────── */
 .ds-display {
   margin: 0;
+  hyphenate-limit-chars: 12 5 5;
   font-family: var(--font-heading);
   font-weight: 800;
   text-transform: uppercase;
@@ -352,3 +353,8 @@
 .ds-swap__ranks { font-family: var(--font-wide); font-weight: 900; font-stretch: 125%; font-size: clamp(1.875rem, 1.25rem + min(2.2vw, 3.4vh), 3.25rem); line-height: 0.9; letter-spacing: -0.04em; white-space: nowrap; color: var(--surface-accent); }
 /* A note on an ink plate stays readable even where it crosses a shape. */
 .ds-note--plate { background: var(--color-wr-ink); color: color-mix(in srgb, #fff 82%, var(--color-wr-ink)); padding: 0.625rem 0.875rem; border-radius: 0.75rem; }
+
+/* Fit a single word to its column (see FitWord). 0.95em ≈ average uppercase advance of Archivo 900 at 110% incl. safety. */
+.ds-fit-scope { container-type: inline-size; }
+.ds-fit-word { display: block; font-family: var(--font-wide); font-weight: 900; font-stretch: 110%; text-transform: uppercase; line-height: 0.95; letter-spacing: -0.03em; hyphens: auto; hyphenate-limit-chars: 12 6 6; overflow-wrap: anywhere; font-size: clamp(1.125rem, calc(100cqi / (var(--chars) * 0.88)), var(--fit-max)); }
+.ds-delta--sm { font-size: 0.8125rem; padding: 0.3em 0.7em; }
