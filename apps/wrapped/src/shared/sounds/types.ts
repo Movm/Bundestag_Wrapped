@@ -39,7 +39,7 @@ const SWIPES = ['swipe_01', 'swipe_02', 'swipe_03', 'swipe_04', 'swipe_05'] as c
 export const SOUND_SPRITES: Partial<Record<SoundType, readonly string[]>> = {
   click: ['button'],
   hover: TAPS,
-  correct: ['notification'],
+  correct: ['celebration'],
   wrong: ['disabled'],
   whoosh: SWIPES,
   tick: TAPS,
