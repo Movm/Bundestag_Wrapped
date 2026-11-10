@@ -5,9 +5,10 @@ name: Publish Wrapped image
 # Several merges in a row: the concurrency group cancels superseded runs, so
 # only the newest commit is built and deployed.
 #
-# Coolify side (one-time): set the Wrapped app's build pack to "Docker Image"
-# = ghcr.io/movm/bundestag-wrapped:main and keep PREVIEW_ACCESS_CODE as a
-# runtime variable. Then add the secret COOLIFY_API_TOKEN and the variables
+# Coolify side (one-time): the existing git app cannot become a "Docker Image"
+# app, so it keeps the Dockerfile build pack with Dockerfile Location
+# /apps/wrapped/Dockerfile.deploy (a single FROM of this image) and git
+# auto-deploy off; PREVIEW_ACCESS_CODE stays a runtime variable. Then add the secret COOLIFY_API_TOKEN and the variables
 # COOLIFY_WRAPPED_APP_UUID (+ COOLIFY_URL if not app.coolify.io) so this
 # workflow triggers the redeploy. Umami needs the repository variables
 # VITE_UMAMI_URL and VITE_UMAMI_WEBSITE_ID (build-time, baked into the bundle).

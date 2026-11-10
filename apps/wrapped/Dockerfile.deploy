@@ -1,0 +1,12 @@
+# Deploy-only Dockerfile for the existing git-based Coolify app.
+#
+# The real build runs in GitHub Actions (.github/workflows/publish-wrapped.yml),
+# which pushes ghcr.io/movm/bundestag-wrapped:main and then triggers the Coolify
+# redeploy. Coolify's "build" with this file is just a pull of that image, so
+# the deploy host never compiles the app.
+#
+# Coolify: Dockerfile Location = /apps/wrapped/Dockerfile.deploy, auto-deploy
+# from git off (the workflow triggers the deploy after the image is pushed).
+# Runtime variables (PREVIEW_ACCESS_CODE) stay on the Coolify app; the image's
+# entrypoint and port 8080 are unchanged.
+FROM ghcr.io/movm/bundestag-wrapped:main
