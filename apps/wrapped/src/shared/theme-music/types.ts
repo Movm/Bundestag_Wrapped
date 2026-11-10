@@ -12,7 +12,8 @@ const CC_BY_NC_ND_4: License = { name: 'CC BY-NC-ND 4.0', url: 'https://creative
 const CC_BY_NC_ND_3: License = { name: 'CC BY-NC-ND 3.0', url: 'https://creativecommons.org/licenses/by-nc-nd/3.0/' };
 const CC_BY_NC_3: License = { name: 'CC BY-NC 3.0', url: 'https://creativecommons.org/licenses/by-nc/3.0/' };
 const CC_BY_SA_3: License = { name: 'CC BY-SA 3.0', url: 'https://creativecommons.org/licenses/by-sa/3.0/' };
-const CC_BY_4: License = { name: 'CC BY 4.0', url: 'https://creativecommons.org/licenses/by/4.0/' };
+// The files' tags say only "CC-BY" without a version; the link points to the current 4.0.
+const CC_BY: License = { name: 'CC BY', url: 'https://creativecommons.org/licenses/by/4.0/' };
 const FMA = { name: 'Free Music Archive', url: 'https://freemusicarchive.org' };
 const JAMENDO = { name: 'Jamendo', url: 'https://www.jamendo.com' };
 const CLASSICALS = { name: 'Classicals.de', url: 'https://www.classicals.de' };
@@ -45,10 +46,10 @@ export const TRACKS = {
   'only-alone': { path: '/sounds/basxhkzir-only-alone.mp3', title: 'Only Alone', artist: 'BASXHKZIR', license: CC_BY_NC_ND_3, source: JAMENDO },
   saturday: { path: '/sounds/crumbsnatchers-saturday.mp3', title: 'Saturday', artist: 'CrumbSnatchers', license: CC_BY_NC_ND_3, source: JAMENDO },
   'get-popular': { path: '/sounds/toussaint-morrison-get-popular.mp3', title: 'Get Popular', artist: 'Toussaint Morrison', license: CC_BY_NC_3, source: { name: 'Free Music Archive', url: 'https://freemusicarchive.org/music/Toussaint_Morrison/Toussaint_Morrison_Is_Not_My_Boyfriend/Toussaint_Morrison_-_Toussaint_Morrison_Is_Not_My_Boyfriend_-_13_Get_Popular1' } },
-  'popular-bean-soup': { path: '/sounds/lopkerjo-popular-bean-soup.mp3', title: 'Popular Bean Soup', artist: 'Lopkerjo', license: CC_BY_4 },
-  'maybe-today-blues': { path: '/sounds/lopkerjo-maybe-today-blues.mp3', title: 'Maybe Today Blues', artist: 'Lopkerjo', license: CC_BY_4 },
-  'big-bully': { path: '/sounds/nokings-xxx-big-bully.mp3', title: 'Big Bully', artist: 'NoKings XXX', license: CC_BY_4 },
-  'your-dishonor-remains': { path: '/sounds/nokings-xxx-your-dishonor-remains.mp3', title: 'Your Dishonor Remains', artist: 'NoKings XXX', license: CC_BY_4 },
+  'popular-bean-soup': { path: '/sounds/lopkerjo-popular-bean-soup.mp3', title: 'Popular Bean Soup', artist: 'Lopkerjo', license: CC_BY },
+  'maybe-today-blues': { path: '/sounds/lopkerjo-maybe-today-blues.mp3', title: 'Maybe Today Blues', artist: 'Lopkerjo', license: CC_BY },
+  'big-bully': { path: '/sounds/nokings-xxx-big-bully.mp3', title: 'Big Bully', artist: 'NoKings XXX', license: CC_BY },
+  'your-dishonor-remains': { path: '/sounds/nokings-xxx-your-dishonor-remains.mp3', title: 'Your Dishonor Remains', artist: 'NoKings XXX', license: CC_BY },
   'vivaldi-spring': { path: '/sounds/vivaldi-spring-allegro-john-harrison.mp3', title: 'Vivaldi: Frühling, 1. Satz (Allegro)', artist: 'John Harrison & Wichita State University Chamber Players', license: CC_BY_SA_3, source: CLASSICALS },
 } as const satisfies Record<string, Track>;
 
