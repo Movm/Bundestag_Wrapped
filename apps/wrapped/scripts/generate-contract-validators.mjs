@@ -9,7 +9,7 @@ addFormats(ajv);
 ajv.addSchema(schema);
 const names = [
   'EditionsIndex', 'EditionManifest', 'EditionContent', 'WrappedData', 'SpeakerIndexAsset',
-  'SpeakerWrappedAsset', 'SpeechesAsset', 'WordsAsset', 'WordRankingsAsset', 'TopicRankingsAsset',
+  'SpeakerWrappedAsset', 'SpeechesAsset', 'WordsAsset', 'WordRankingsAsset', 'TopicRankingsAsset', 'MatchAsset',
 ];
 let code = standalone(ajv, Object.fromEntries(names.map(name => [name, `${schema.$id}#/$defs/${name}`])));
 // Ajv standalone emits CommonJS helper references even with esm=true.

@@ -21,9 +21,17 @@ def _json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def _write_json(path: Path, payload: Any) -> None:
+# Assets the browser downloads for every visitor; written without indentation.
+COMPACT_ARTIFACTS = frozenset({"match.json"})
+
+
+def _write_json(path: Path, payload: Any, compact: bool = False) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    if compact:
+        text = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+    else:
+        text = json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True)
+    path.write_text(text + "\n", encoding="utf-8")
 
 
 def _checksum(path: Path) -> str:
@@ -126,6 +134,12 @@ def validate_edition(root: Path) -> None:
         validate_contract_document(_json(wrapped_path), "WrappedData", str(wrapped_path))
     except ContractValidationError as error:
         raise EditionValidationError(str(error)) from error
+    if "match" in manifest["assets"]:
+        match_path = root / manifest["assets"]["match"]
+        try:
+            validate_contract_document(_json(match_path), "MatchAsset", str(match_path))
+        except ContractValidationError as error:
+            raise EditionValidationError(str(error)) from error
     _validate_invariants(root, manifest)
 
 
@@ -144,7 +158,7 @@ def publish_edition(
     stage = Path(mkdtemp(prefix=f".{edition_id}-{data_version}-", dir=output_root))
     try:
         for relative, payload in artifacts.items():
-            _write_json(stage / relative, payload)
+            _write_json(stage / relative, payload, compact=relative in COMPACT_ARTIFACTS)
         _write_json(stage / "manifest.json", manifest)
         checksums = {path.relative_to(stage).as_posix(): _checksum(path) for path in _all_files(stage)}
         _write_json(stage / manifest["checksums"], checksums)
@@ -167,9 +181,13 @@ def build_manifest(
     wahlperioden: list[int],
     speeches: list[dict[str, Any]],
     frozen: bool,
+    with_match: bool = False,
 ) -> dict[str, Any]:
     """Build a manifest from already date-filtered speech metadata."""
     protocol_dates = sorted({speech["protocolDate"] for speech in speeches})
+    assets = {"wrapped": "wrapped.json", "speakerIndex": "speakers/index.json", "speakersBase": "speakers", "speeches": "speeches.json", "words": "words.json", "wordRankings": "word_rankings.json", "topicRankings": "topic_rankings.json"}
+    if with_match:
+        assets["match"] = "match.json"
     if not protocol_dates:
         raise EditionValidationError("cannot export an edition without dated speeches")
     if any(date.fromisoformat(value) < date.fromisoformat(period_start) or date.fromisoformat(value) > date.fromisoformat(period_end) for value in protocol_dates):
@@ -184,7 +202,7 @@ def build_manifest(
         "dataVersion": data_version,
         "generatedAt": generated_at,
         "coverage": {"protocolCount": len({speech["protocolId"] for speech in speeches}), "firstProtocolDate": protocol_dates[0], "lastProtocolDate": protocol_dates[-1], "complete": frozen},
-        "assets": {"wrapped": "wrapped.json", "speakerIndex": "speakers/index.json", "speakersBase": "speakers", "speeches": "speeches.json", "words": "words.json", "wordRankings": "word_rankings.json", "topicRankings": "topic_rankings.json"},
+        "assets": assets,
         "content": "content.json",
         "checksums": "checksums.json",
     }

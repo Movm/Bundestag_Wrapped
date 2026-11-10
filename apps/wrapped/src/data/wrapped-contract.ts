@@ -12,7 +12,8 @@ export type ContractDocument =
   | 'SpeechesAsset'
   | 'WordsAsset'
   | 'WordRankingsAsset'
-  | 'TopicRankingsAsset';
+  | 'TopicRankingsAsset'
+  | 'MatchAsset';
 
 function formatErrors(errors: ErrorObject[] | null | undefined, filename: string): string {
   return (errors ?? [])

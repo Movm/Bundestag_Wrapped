@@ -23,3 +23,10 @@ build.
 Both the browser and Python validate JSON against this schema at runtime. The
 closed objects reject undeclared fields; the few maps marked with
 `additionalProperties` are intentionally extensible analysis data.
+
+## Optional assets
+
+`EditionAssets.match` points at `match.json` (`MatchAsset`), the compact payload of the
+Perfect Match feature. It is optional: editions published before it (2025) have no such
+asset, and the web app must treat its absence as "feature unavailable". The pipeline
+decides which words appear in it; see `noun_analysis/wrapped/speaker_export/match.py`.

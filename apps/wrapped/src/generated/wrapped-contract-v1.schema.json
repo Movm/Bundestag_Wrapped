@@ -2023,6 +2023,141 @@
         }
       }
     },
+    "MatchWord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "word",
+        "topic"
+      ],
+      "properties": {
+        "word": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "topic": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Topic id the word belongs to, or null when it carries no topic."
+        }
+      }
+    },
+    "MatchAnimal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "emoji",
+        "name",
+        "count"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "emoji": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "name": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "count": {
+          "$ref": "#/$defs/Count"
+        }
+      }
+    },
+    "MatchMp": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "slug",
+        "name",
+        "party",
+        "animal",
+        "topics",
+        "words"
+      ],
+      "properties": {
+        "slug": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "name": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "party": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Index into MatchAsset.parties."
+        },
+        "animal": {
+          "type": "integer",
+          "minimum": -1,
+          "description": "Index into MatchAsset.animals, -1 when the MP has no spirit animal."
+        },
+        "topics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Count"
+          },
+          "description": "Per topic, aligned with MatchAsset.topics: topic score per 1000 words times 100, rounded."
+        },
+        "words": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Count"
+          },
+          "description": "Per candidate word, aligned with MatchAsset.words: smoothed rate ratio versus the four-party corpus times 10, rounded."
+        }
+      }
+    },
+    "MatchAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "parties",
+        "topics",
+        "words",
+        "animals",
+        "mps"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "parties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NonEmptyString"
+          }
+        },
+        "topics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NonEmptyString"
+          }
+        },
+        "words": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/MatchWord"
+          }
+        },
+        "animals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/MatchAnimal"
+          }
+        },
+        "mps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/MatchMp"
+          }
+        }
+      }
+    },
     "EditionStatus": {
       "enum": [
         "draft",
@@ -2118,6 +2253,10 @@
         },
         "topicRankings": {
           "$ref": "#/$defs/NonEmptyString"
+        },
+        "match": {
+          "$ref": "#/$defs/NonEmptyString",
+          "description": "Optional compact Perfect Match asset; editions before 2026 do not have one."
         }
       }
     },

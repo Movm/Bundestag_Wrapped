@@ -9,3 +9,4 @@ export const SpeechesAsset: ValidateFunction;
 export const WordsAsset: ValidateFunction;
 export const WordRankingsAsset: ValidateFunction;
 export const TopicRankingsAsset: ValidateFunction;
+export const MatchAsset: ValidateFunction;

@@ -460,6 +460,36 @@ export interface TopicRankingsAsset {
   "topics": Array<NonEmptyString>;
 }
 
+export interface MatchWord {
+  "word": NonEmptyString;
+  "topic": string | null;
+}
+
+export interface MatchAnimal {
+  "id": NonEmptyString;
+  "emoji": NonEmptyString;
+  "name": NonEmptyString;
+  "count": Count;
+}
+
+export interface MatchMp {
+  "slug": NonEmptyString;
+  "name": NonEmptyString;
+  "party": number;
+  "animal": number;
+  "topics": Array<Count>;
+  "words": Array<Count>;
+}
+
+export interface MatchAsset {
+  "schemaVersion": 1;
+  "parties": Array<NonEmptyString>;
+  "topics": Array<NonEmptyString>;
+  "words": Array<MatchWord>;
+  "animals": Array<MatchAnimal>;
+  "mps": Array<MatchMp>;
+}
+
 export type EditionStatus = "draft" | "preview" | "frozen" | "published" | "superseded";
 
 export interface EditionPeriod {
@@ -484,6 +514,7 @@ export interface EditionAssets {
   "words": NonEmptyString;
   "wordRankings": NonEmptyString;
   "topicRankings": NonEmptyString;
+  "match"?: NonEmptyString;
 }
 
 export interface EditionManifest {
