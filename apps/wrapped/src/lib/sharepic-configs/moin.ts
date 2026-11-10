@@ -1,7 +1,6 @@
 import type { SlideConfig, ChampionCardConfig } from './types';
 
 export const moinConfig: SlideConfig = {
-  emoji: '👋',
   title: 'Die Moin-Champions',
   subtitle: 'Norddeutsche Grüße im Bundestag',
   filename: 'bundestag-wrapped-moin',

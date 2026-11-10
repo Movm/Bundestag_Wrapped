@@ -20,6 +20,7 @@ import {
   SOUND_VOLUMES,
   createSlideTransitionSoundHook,
 } from '@/shared/sounds';
+import { whenTrulyIdle } from './when-idle';
 import { IS_DEV_AUDIO_DISABLED, useAudioStore } from '@/stores/audioStore';
 
 export type { SoundType };
@@ -51,23 +52,42 @@ if (typeof window !== 'undefined' && !IS_DEV_AUDIO_DISABLED) {
   document.addEventListener('click', unlockAudio);
   document.addEventListener('touchstart', unlockAudio);
   document.addEventListener('keydown', unlockAudio);
+
+  // Creating and loading audio needs no user gesture (only play() does). Doing it
+  // while the page is idle keeps the media setup out of the "Starten" click,
+  // where it cost a dropped frame.
+  whenTrulyIdle(() => initSounds());
 }
 
 /**
  * Initialize and preload all sounds.
  * Call this on first user interaction to comply with autoplay policies.
  */
+function loadSound(type: SoundType): HTMLAudioElement {
+  const cached = audioCache[type];
+  if (cached) return cached;
+  const audio = new Audio(SOUND_PATHS[type]);
+  audio.preload = 'auto';
+  audio.load();
+  audioCache[type] = audio;
+  return audio;
+}
+
+/**
+ * Preload all sounds, one media element per task: creating an Audio element
+ * is native main-thread work, and doing all of them in one task cost a frame.
+ */
 export function initSounds(): void {
   if (IS_DEV_AUDIO_DISABLED || isInitialized) return;
-
-  Object.entries(SOUND_PATHS).forEach(([type, path]) => {
-    const audio = new Audio(path);
-    audio.preload = 'auto';
-    audio.load();
-    audioCache[type as SoundType] = audio;
-  });
-
   isInitialized = true;
+  const pending = Object.keys(SOUND_PATHS) as SoundType[];
+  const next = () => {
+    const type = pending.shift();
+    if (!type) return;
+    loadSound(type);
+    window.setTimeout(next, 120);
+  };
+  next();
 }
 
 /**
@@ -80,14 +100,9 @@ export function playSound(type: SoundType): void {
   if (useAudioStore.getState().isMuted) return;
   if (typeof window === 'undefined') return;
 
-  // Initialize on first play if not already done
-  if (!isInitialized) {
-    initSounds();
-  }
-
-  // Use cached audio element - reset position and play
-  const audio = audioCache[type];
-  if (!audio) return;
+  // Only the sound needed now is created on demand; the rest preloads in the background.
+  const audio = loadSound(type);
+  if (!isInitialized) initSounds();
 
   audio.currentTime = 0;
   audio.volume = SOUND_VOLUMES[type];

@@ -327,6 +327,8 @@ export interface QuizQuestion {
   "ratio"?: Ratio;
   "swiftie"?: NamedParty;
   "decoys"?: Array<NamedParty>;
+  "layout"?: "stack" | "tiles" | "fan" | "gap" | "quadrants" | "stickers" | "swipe";
+  "gapSentence"?: string;
 }
 
 export interface NamedParty {
@@ -440,6 +442,8 @@ export interface EditionManifest {
 export interface EditionQuizTextOverrides {
   "question"?: NonEmptyString;
   "explanation"?: NonEmptyString;
+  "layout"?: "stack" | "tiles" | "fan" | "gap" | "quadrants" | "stickers" | "swipe";
+  "gapSentence"?: string;
 }
 
 export interface EditionQuizGroup {

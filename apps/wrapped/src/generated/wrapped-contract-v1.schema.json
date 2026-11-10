@@ -1313,6 +1313,21 @@
           "items": {
             "$ref": "#/$defs/NamedParty"
           }
+        },
+        "layout": {
+          "enum": [
+            "stack",
+            "tiles",
+            "fan",
+            "gap",
+            "quadrants",
+            "stickers",
+            "swipe"
+          ]
+        },
+        "gapSentence": {
+          "type": "string",
+          "pattern": "\\{answer\\}"
         }
       }
     },
@@ -1915,6 +1930,21 @@
         },
         "explanation": {
           "$ref": "#/$defs/NonEmptyString"
+        },
+        "layout": {
+          "enum": [
+            "stack",
+            "tiles",
+            "fan",
+            "gap",
+            "quadrants",
+            "stickers",
+            "swipe"
+          ]
+        },
+        "gapSentence": {
+          "type": "string",
+          "pattern": "\\{answer\\}"
         }
       }
     },

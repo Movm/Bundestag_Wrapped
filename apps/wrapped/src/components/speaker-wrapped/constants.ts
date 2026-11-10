@@ -26,9 +26,3 @@ export const SPEAKER_QUIZ_SLIDES = new Set<SpeakerSlideType>(['speaker-quiz']);
 
 // No auto-scroll for speaker wrapped (shorter experience, user-driven)
 export const SPEAKER_AUTO_SCROLL_SLIDES = new Set<SpeakerSlideType>([]);
-
-// Slides where progress bar is hidden
-export const SPEAKER_HIDE_PROGRESS_SLIDES = new Set<SpeakerSlideType>([
-  'speaker-intro',
-  'speaker-share',
-]);

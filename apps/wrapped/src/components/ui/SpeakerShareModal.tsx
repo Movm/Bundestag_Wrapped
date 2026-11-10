@@ -2,8 +2,10 @@ import { AccessibleDialog } from './AccessibleDialog';
 import { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Download, Share2, X } from 'lucide-react';
+import { ActionButton } from '@/design-system/components/ActionButton';
 import {
   renderSpeakerShareImage,
+  preloadLogo,
   downloadSpeakerShareImage,
   shareSpeakerImage,
   type SpeakerShareData,
@@ -24,7 +26,9 @@ export function SpeakerShareModal({ isOpen, onClose, data }: SpeakerShareModalPr
 
   useEffect(() => {
     if (isOpen && canvasRef.current) {
-      renderSpeakerShareImage(canvasRef.current, { ...data, editionTitle: surface.title, editionId: surface.editionId });
+      preloadLogo().then(() => {
+        if (canvasRef.current) renderSpeakerShareImage(canvasRef.current, { ...data, editionTitle: surface.title, editionId: surface.editionId });
+      });
     }
   }, [isOpen, data, surface.editionId, surface.title]);
 
@@ -55,32 +59,24 @@ export function SpeakerShareModal({ isOpen, onClose, data }: SpeakerShareModalPr
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={handleBackdropClick}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-wr-ink/90 p-4"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-h-[calc(100dvh-2rem)] overflow-y-auto max-w-[320px] sm:max-w-sm md:max-w-md modal-bg rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-white/10 shadow-2xl"
+            data-surface="ink"
+            className="relative w-full max-h-[calc(100dvh-2rem)] overflow-y-auto max-w-[320px] sm:max-w-sm md:max-w-md rounded-[1.75rem] p-5 sm:p-7"
           >
-            {/* Close button */}
-            <button
-              onClick={onClose}
-              aria-label="Teilen schließen"
-              className="absolute top-3 right-3 sm:top-4 sm:right-4 p-1.5 sm:p-2 text-white/60 hover:text-white hover:bg-white/10 rounded-full transition-colors"
-            >
-              <X size={20} className="sm:w-6 sm:h-6" />
+            <button type="button" onClick={onClose} aria-label="Teilen schließen" className="ds-icon-button absolute top-4 right-4">
+              <X size={20} strokeWidth={2.6} aria-hidden="true" />
             </button>
 
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2 text-center">
-              Teile das Ergebnis!
-            </h2>
-            <p className="text-white/60 text-xs sm:text-sm mb-4 sm:mb-6 text-center">
-              {data.name}'s Bundestag Wrapped
-            </p>
+            <h2 className="ds-display ds-display--md mb-2 pr-14">Teile das <span className="text-display-accent">Ergebnis</span></h2>
+            <p className="ds-note mb-5">{data.name}'s Bundestag Wrapped</p>
 
             {/* Canvas Preview */}
-            <div className="rounded-xl sm:rounded-2xl overflow-hidden border border-white/10 mb-4 sm:mb-6 max-w-[200px] sm:max-w-[280px] md:max-w-none mx-auto">
+            <div className="mx-auto mb-6 max-w-[240px] overflow-hidden rounded-2xl sm:max-w-[320px] md:max-w-none">
               <canvas
                 ref={canvasRef}
                 role="img" aria-label="Vorschau des persönlichen Ergebnisses"
@@ -89,29 +85,9 @@ export function SpeakerShareModal({ isOpen, onClose, data }: SpeakerShareModalPr
               />
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex gap-2 sm:gap-3">
-              <motion.button
-                onClick={handleDownload}
-                className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-pink-600 to-pink-400 rounded-full text-white text-sm sm:text-base font-bold"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Download size={18} className="sm:w-5 sm:h-5" />
-                Speichern
-              </motion.button>
-
-              {canShare && (
-                <motion.button
-                  onClick={handleShare}
-                  className="flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-white/10 border border-white/20 rounded-full text-white text-sm sm:text-base font-bold"
-                  whileHover={{ scale: 1.02, backgroundColor: 'rgba(255,255,255,0.15)' }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Share2 size={18} className="sm:w-5 sm:h-5" />
-                  Teilen
-                </motion.button>
-              )}
+            <div className="flex flex-wrap gap-3">
+              <ActionButton icon="none" onClick={handleDownload}><Download size={20} aria-hidden="true" />Speichern</ActionButton>
+              {canShare && <ActionButton icon="none" variant="outline" onClick={handleShare}><Share2 size={20} aria-hidden="true" />Teilen</ActionButton>}
             </div>
           </motion.div>
         </motion.div>

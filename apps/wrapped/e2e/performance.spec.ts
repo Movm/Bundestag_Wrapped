@@ -1,4 +1,4 @@
-import { jumpToSlide } from './story-navigation';
+import { jumpToSlide, closeQuizResult } from './story-navigation';
 import { expect, test } from 'playwright/test';
 import { installEditionFixtures } from './fixtures';
 
@@ -63,6 +63,7 @@ test('does not let an old quiz overlay pull the reader back after navigation', a
   const answer = quiz.getByRole('button').first();
   await answer.click();
   await expect(answer).toBeDisabled();
+  await closeQuizResult(page);
   const target = page.locator('[data-slide-id="reveal-drama"]');
   await jumpToSlide(page, (await target.getAttribute('id'))!);
   await expect(target).toHaveAttribute('data-slide-active', 'true');
@@ -103,7 +104,8 @@ test('pauses offscreen decoration in reading mode while retaining all slide cont
     ).length,
   );
   expect(offscreenLoops).toBe(0);
-  await expect(page.locator('[data-slide-id="intro"] h1')).toContainText('BUNDESTAG');
+  // Uppercase is a CSS transform; the text itself reads "Bundestag Wrapped".
+  await expect(page.locator('[data-slide-id="intro"] h1')).toContainText('Bundestag Wrapped');
 });
 
 

@@ -17,24 +17,8 @@ export {
 } from './animations';
 
 // Shared slide components
-export { Confetti } from './Confetti';
-export {
-  DecorativeAccents,
-  RibbonDecoration,
-  WaveDecoration,
-  BarsDecoration,
-  LightningDecoration,
-  PulseDecoration,
-  OrbsDecoration,
-  SparkleDecoration,
-  GradientDecoration,
-} from './DecorativeAccents';
-export { FlipCard } from './FlipCard';
 export { FloatingParticles } from './FloatingParticles';
-export { LaunchEffects, CHARGE_DURATION, FLIGHT_DURATION } from './FlyingBird';
-export { ScrollHint } from './ScrollHint';
 export { SlideContainer, type SparklesConfig } from './SlideContainer';
-export { SlideHeader } from './SlideHeader';
 export { SlideInfo } from './SlideInfo';
 export { SlideIntro } from './SlideIntro';
 export {
@@ -44,4 +28,3 @@ export {
   type QuizOptionWithCorrect,
 } from './SlideQuiz';
 export { SlideShareFAB } from './SlideShareFAB';
-export { TopicsTicker } from './TopicsTicker';

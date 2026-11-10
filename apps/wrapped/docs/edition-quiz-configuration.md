@@ -38,3 +38,10 @@ and question IDs must match, be unique, start with `quiz-`, and have distinct
 options containing the correct answer. Pass the quiz object (not the enclosing
 `content.json`) to `generate-edition --quiz-config path/to/quiz.json`; it is
 validated and checksummed along with the immutable edition artifacts.
+
+## Choosing a quiz layout
+
+Every group may pin how its quiz looks via `text.layout` (or `question.layout` for a fully custom question):
+`stack`, `tiles`, `fan`, `gap`, `quadrants`, `stickers` or `swipe`. `gap` also needs `text.gapSentence`, a sentence
+with `{answer}` where the answer goes, e.g. `"Platz 1 ist jetzt {answer}."`. Without a layout, or when the pinned one
+does not fit the options, the design system rotates through the fitting layouts (see `docs/design-system.md`).

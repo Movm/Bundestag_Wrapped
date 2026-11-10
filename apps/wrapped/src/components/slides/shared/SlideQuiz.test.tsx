@@ -13,6 +13,9 @@ function stubMatchMedia(reduce: boolean) {
   })) as typeof window.matchMedia;
 }
 
+// jsdom has no IntersectionObserver; slide entrances (whileInView) need one.
+globalThis.IntersectionObserver ??= class { observe() {} unobserve() {} disconnect() {} takeRecords() { return []; } root = null; rootMargin = ''; thresholds = []; } as unknown as typeof IntersectionObserver;
+
 let container: HTMLDivElement;
 beforeEach(() => { container = document.createElement('div'); document.body.append(container); });
 afterEach(() => { container.remove(); });
@@ -72,5 +75,23 @@ it('drops confetti but keeps the result under reduced motion', async () => {
   await act(async () => button('A').click());
   expect(container.querySelector('.w-3.h-3')).toBeNull();
   expect(container.querySelector('[role="status"]')!.textContent).toContain('Richtig!');
+  await act(async () => root.unmount());
+});
+
+it('opens the result as a modal dialog with the answer in words, and closes back to the quiz', async () => {
+  // jsdom lacks the modal dialog API; the component only needs it to exist.
+  HTMLDialogElement.prototype.showModal ??= function (this: HTMLDialogElement) { this.setAttribute('open', ''); };
+  HTMLDialogElement.prototype.close ??= function (this: HTMLDialogElement) { this.removeAttribute('open'); };
+  const root = await renderQuiz();
+  await act(async () => button('B').click());
+  await act(async () => { await new Promise(resolve => setTimeout(resolve, 700)); });
+  const dialog = document.querySelector('dialog')!;
+  expect(dialog.hasAttribute('open')).toBe(true);
+  expect(dialog.textContent).toContain('Knapp daneben.');
+  expect(dialog.textContent).toContain('Richtige Antwort');
+  expect(dialog.textContent).toContain('A');
+  const close = [...dialog.querySelectorAll('button')].find(b => b.textContent?.includes('Zum Quiz'))!;
+  await act(async () => close.click());
+  expect(document.querySelector('dialog')?.hasAttribute('open') ?? false).toBe(false);
   await act(async () => root.unmount());
 });

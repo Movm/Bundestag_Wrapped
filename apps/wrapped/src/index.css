@@ -1,7 +1,6 @@
 @import "tailwindcss";
-
-/* === Icon Animations === */
-@import "./components/icons/intro-icons/animations.css";
+@import "./design-system/tokens.css";
+@import "./design-system/components.css" layer(components);
 
 /* === Local Fonts (GDPR compliant) === */
 
@@ -97,8 +96,11 @@ body {
   color: white;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
+/* Base layer, so design-system components (e.g. .ds-display) can set their own face. */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
 }
 
 /* Custom scrollbar */
@@ -543,4 +545,6 @@ body:has([data-story-scroll]) { overflow: hidden; }
 .story-scroll { touch-action: pan-y pinch-zoom; }
 .story-scroll:not([data-reading-mode="true"]) { scroll-snap-type: y mandatory; }
 .story-section { scroll-snap-align: start; scroll-snap-stop: always; }
-.story-next { position: absolute; bottom: max(.5rem, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); z-index: 40; min-height: 44px; padding: .5rem 1rem; border-radius: 999px; background: #12121a; color: white; }
+.story-next { position: absolute; bottom: max(1rem, env(safe-area-inset-bottom)); right: max(1.25rem, env(safe-area-inset-right, 0px)); z-index: 40; min-height: 3rem; padding: 0 1.4rem; font-size: 1rem; }
+/* When a slide offers sharing, the round share button takes the corner and "Weiter" moves left of it. */
+main:has(.story-share-trigger) .story-next { right: calc(max(1.25rem, env(safe-area-inset-right, 0px)) + 4.25rem); }

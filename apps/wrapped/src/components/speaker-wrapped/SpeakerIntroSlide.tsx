@@ -1,26 +1,24 @@
 import { motion } from 'motion/react';
 import type { SpeakerWrapped } from '@/data/speaker-wrapped';
-import { SlideContainer } from '@/components/slides/shared/SlideContainer';
-import { itemVariants } from '@/components/slides/shared/animations';
-import { getPartyColor, PARTY_BG_CLASSES } from './party-colors';
+import { Slide } from '@/design-system/components/Slide';
+import { Display, Eyebrow } from '@/design-system/components/Type';
+import { ActionButton } from '@/design-system/components/ActionButton';
+import { ENTER } from '@/design-system/motion';
+import { getPartyTone } from '@/lib/party-colors';
 import { playSound } from '@/lib/sounds';
 import { displaySpeakerName } from '@/lib/speaker-profile-utils';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
+import './speaker.css';
 
 interface SpeakerIntroSlideProps {
   speaker: SpeakerWrapped;
   onStart?: () => void;
 }
 
-/**
- * Speaker Wrapped intro slide.
- * Shows speaker name, party badge, and start button.
- * Button unlocks scroll to next slide.
- */
+/** Speaker cover: huge name, party pill, start button (unlocks the scroll). */
 export function SpeakerIntroSlide({ speaker, onStart }: SpeakerIntroSlideProps) {
   const surface = editionSurface(useOptionalEdition());
-  const partyColor = getPartyColor(speaker.party);
 
   const handleStart = () => {
     playSound('click');
@@ -28,33 +26,17 @@ export function SpeakerIntroSlide({ speaker, onStart }: SpeakerIntroSlideProps) 
   };
 
   return (
-    <SlideContainer sparkles>
-      {/* Header section */}
-      <motion.div variants={itemVariants} className="text-center">
-        <span className="text-6xl mb-6 block">🏛️</span>
-        <h1 className="text-3xl md:text-4xl font-black text-white mb-4">
-          {displaySpeakerName(speaker)}
-        </h1>
-        <span
-          className={`inline-block px-4 py-1.5 rounded-full text-sm font-medium text-white mb-4 ${
-            PARTY_BG_CLASSES[speaker.party] || 'bg-gray-500'
-          }`}
-        >
-          {speaker.party}
-        </span>
-        <p className="text-white/60 text-lg mb-8">Dein {surface.title}</p>
+    <Slide shapes="cover">
+      <motion.div variants={ENTER.stamp} className="self-start rotate-[-4deg]">
+        <Eyebrow>Dein {surface.title}</Eyebrow>
       </motion.div>
-
-      {/* Start button */}
-      <motion.div variants={itemVariants} className="flex justify-center">
-        <button
-          onClick={handleStart}
-          className="px-8 py-4 text-lg font-semibold rounded-2xl text-white transition-all hover:scale-105 active:scale-95"
-          style={{ backgroundColor: partyColor }}
-        >
-          Los geht's
-        </button>
+      <Display level={1} size="xl">{displaySpeakerName(speaker)}</Display>
+      <motion.span variants={ENTER.pop} className="sp-party" style={{ background: getPartyTone(speaker.party, 'light') }}>
+        {speaker.party}
+      </motion.span>
+      <motion.div variants={ENTER.rise}>
+        <ActionButton size="lg" icon="right" onClick={handleStart}>Los geht's</ActionButton>
       </motion.div>
-    </SlideContainer>
+    </Slide>
   );
 }

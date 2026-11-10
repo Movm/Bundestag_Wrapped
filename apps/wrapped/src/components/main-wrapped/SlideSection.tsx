@@ -3,6 +3,7 @@ import { Activity, useContext, useState, useRef, useLayoutEffect, type ReactNode
 import { cn } from '@/lib/utils';
 import { StoryContext } from './StoryContext';
 import { SlideEffectsContext } from './SlideEffectsContext';
+import { surfaceForSlide } from '@/design-system/surfaces';
 
 interface SlideSectionProps { id: string; children: ReactNode; className?: string; active?: boolean; forwardBlocked?: boolean; }
 
@@ -36,7 +37,7 @@ export function SlideSection({ id, children, className, active = true, forwardBl
   }, [visible, pageVisible]);
   const effectsActive = pageVisible && (activeId ? activeId === id : active);
   return (
-    <section ref={sectionRef} id={id} data-slide-id={id} data-forward-blocked={forwardBlocked} data-active={activeId === id} tabIndex={-1}
+    <section ref={sectionRef} id={id} data-slide-id={id} data-surface={surfaceForSlide(id)} data-forward-blocked={forwardBlocked} data-active={activeId === id} tabIndex={-1}
       data-slide-active={visible} data-slide-mounted={visited} data-slide-effects-active={effectsActive}
       inert={!readingMode && activeId !== '' && activeId !== id}
       aria-hidden={!readingMode && activeId !== '' && activeId !== id}

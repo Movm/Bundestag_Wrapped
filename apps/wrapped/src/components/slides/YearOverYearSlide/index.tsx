@@ -1,9 +1,14 @@
-import { motion } from 'motion/react';
 import type { RankMovement, SignatureWordMovement, YearOverYearAnalysis } from '@/generated/wrapped-contract-v1';
-import { getPartyBgColor, getPartyTextColor } from '@/lib/party-colors';
+import { getPartyTone } from '@/lib/party-colors';
+import { useOptionalEdition } from '@/edition/EditionProvider';
+import { editionSurface } from '@/edition/surface';
 import { TOPIC_BY_ID } from '@/shared/constants/topics';
 import type { TopicRiserContext } from '@/domain/topic-riser-context';
-import { SlideContainer, SlideHeader, ScrollHint, itemVariants } from '../shared';
+import { Enter, Slide } from '@/design-system/components/Slide';
+import { Display, Eyebrow, FitWord, Lead, Mark, Note } from '@/design-system/components/Type';
+import { Block, ChipCloud, Delta, DivergingBars, RankCard } from '@/design-system/components/Data';
+import { Glyph } from '@/design-system/components/Glyph';
+import { PartyBlock, PartyGrid } from '@/design-system/components/PartyBlock';
 
 type RankingKind = 'topics' | 'words';
 
@@ -15,113 +20,95 @@ function signed(value: number): string {
   return number.format(value);
 }
 
-function MovementRow({ item, index }: { item: RankMovement; index: number }) {
-  const isNew = item.previousRank === null;
-  const movementLabel = signed(item.rankChange);
-  return (
-    <motion.li
-      variants={itemVariants}
-      className="grid grid-cols-[2rem_1fr_auto] items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-left"
-    >
-      <span className="text-center text-lg font-black text-white/35">{index + 1}</span>
-      <div className="min-w-0">
-        <div className="truncate text-lg font-bold text-white md:text-xl">{item.label}</div>
-        <div className="text-sm text-white/50">
-          {isNew ? `Neu auf Platz ${item.currentRank}` : `Platz ${item.previousRank} → ${item.currentRank}`}
-        </div>
-      </div>
-      <span className={`rounded-full px-3 py-1 text-sm font-black ${isNew ? 'bg-blue-400/15 text-blue-300' : 'bg-green-400/15 text-green-300'}`}>
-        {isNew ? 'NEU' : movementLabel}
-      </span>
-    </motion.li>
-  );
+const RANK_TONES = ['white', 'violet', 'pink', 'card'] as const;
+
+function movementName(kind: RankingKind, label: string): string {
+  return kind === 'topics' ? topicName(label) : label;
 }
 
+/** "Diese Themen sind aufgestiegen": stair-stepped rank cards, biggest riser first. */
 export function RankingMovementSlide({ analysis, kind }: { analysis: YearOverYearAnalysis; kind: RankingKind }) {
   const items = analysis[kind]
     .filter(item => item.previousRank !== null && item.rankChange > 0)
-    .slice(0, 6);
+    .slice(0, 4);
   const isTopics = kind === 'topics';
+  const year = editionSurface(useOptionalEdition()).year;
   return (
-    <SlideContainer innerClassName="mx-auto max-w-3xl">
-      <SlideHeader
-        emoji={isTopics ? '📈' : '🔤'}
-        title={isTopics ? 'Diese Themen sind aufgestiegen' : 'Diese Wörter sind aufgestiegen'}
-        subtitle={`Rangveränderung gegenüber ${analysis.baseline.editionId}`}
-        slideId={isTopics ? 'reveal-topic-risers' : 'reveal-word-risers'}
-      />
-      <motion.ol variants={itemVariants} className="space-y-2">
-        {items.map((item, index) => <MovementRow key={item.label} item={item} index={index} />)}
-      </motion.ol>
-      <p className="mt-6 text-center text-xs text-white/40">
-        Gezeigt werden Einträge, die in beiden Jahren vorkommen und Rangplätze gewonnen haben.
-      </p>
-      <ScrollHint delay={1.4} />
-    </SlideContainer>
+    <Slide
+      shapes="corner"
+      footer={<Note className="ds-note--plate">Gezeigt werden Einträge, die in beiden Jahren vorkommen und Rangplätze gewonnen haben.</Note>}
+    >
+      <div className="flex flex-col items-start gap-4">
+        <Enter className="flex flex-wrap items-center gap-3">
+          <Eyebrow>{analysis.baseline.editionId}{year ? ` → ${year}` : ''}</Eyebrow>
+          <span className="ds-eyebrow">Rangveränderung</span>
+        </Enter>
+        <Display size="xl" face="wide">
+          Diese {isTopics ? 'Themen' : 'Wörter'} sind <Mark>aufgestiegen.</Mark>
+        </Display>
+      </div>
+      <ol className="flex flex-col gap-3" aria-label={isTopics ? 'Aufgestiegene Themen' : 'Aufgestiegene Wörter'}>
+        {items.map((item, index) => (
+          <li key={item.label}>
+            <RankCard
+              rank={item.currentRank ?? index + 1}
+              label={movementName(kind, item.label)}
+              detail={`Platz ${item.previousRank} → ${item.currentRank}`}
+              change={item.rankChange}
+              tone={RANK_TONES[index % RANK_TONES.length]}
+              step={index}
+            />
+          </li>
+        ))}
+      </ol>
+    </Slide>
   );
 }
 
-function signatureMovementLabel(item: SignatureWordMovement): string {
-  if (item.previousRank === null) return 'NEU';
-  if (item.currentRank === null) return 'RAUS';
-  return `${item.previousRank} → ${item.currentRank}`;
+function MovementBadge({ item, size = 'md' }: { item: SignatureWordMovement; size?: 'sm' | 'md' }) {
+  const small = size === 'sm' ? ' ds-delta--sm' : '';
+  if (item.previousRank === null) return <span className={`ds-contrast ds-delta${small}`}>Neu</span>;
+  if (item.currentRank === null) return <span className={`ds-contrast ds-delta${small}`}>Raus</span>;
+  return <Delta change={item.previousRank - item.currentRank} size={size} />;
 }
 
 export function SignatureWordMovementSlide({ analysis }: { analysis: YearOverYearAnalysis }) {
   const parties = analysis.signatureWords.filter(item => item.risers.length > 0 || item.fallers.length > 0);
   return (
-    <SlideContainer innerClassName="mx-auto max-w-3xl" className="py-6 sm:py-8">
-      <SlideHeader
-        emoji="↕️"
-        title="Signature Words im Wandel"
-        subtitle={`Auf- und Absteiger gegenüber ${analysis.baseline.editionId}`}
-        className="mb-3 sm:mb-5"
-        slideId="reveal-signature-movements"
-      />
-      <motion.div variants={itemVariants} className="grid gap-2 sm:gap-2.5">
-        {parties.map(party => (
-          <motion.div
-            key={party.party}
-            variants={itemVariants}
-            className="overflow-hidden rounded-2xl border border-white/10 bg-white/5"
-          >
-            <div className="border-b border-white/10 px-3 py-1.5 text-xs font-black sm:text-sm" style={{ color: getPartyTextColor(party.party) }}>
-              {party.party}
-            </div>
-            <div className="grid grid-cols-2">
-              <div className="px-2.5 py-1.5 sm:py-2">
-                <div className="mb-0.5 text-[10px] font-black uppercase tracking-wider text-green-300">↑ Aufsteiger</div>
-                <div className="space-y-0.5">
-                  {party.risers.slice(0, 2).map(item => (
-                    <div key={item.word} className="flex min-w-0 items-center justify-between gap-1 text-[11px] sm:text-sm">
-                      <span className="truncate font-bold text-white">{item.word}</span>
-                      <span className="shrink-0 text-[9px] font-black text-green-300 sm:text-[10px]">{signatureMovementLabel(item)}</span>
-                    </div>
-                  ))}
-                  {party.risers.length === 0 && <span className="text-xs text-white/30">–</span>}
-                </div>
+    <Slide
+      shapes="corner"
+      footer={<Note className="ds-note--plate">„Neu“ und „Raus“ beziehen sich auf die fünf stärksten Signature Words jeder Fraktion.</Note>}
+    >
+      <div className="flex flex-col gap-4">
+        <Enter><Eyebrow>Auf- und Absteiger gegenüber {analysis.baseline.editionId}</Eyebrow></Enter>
+        <Display size="xl" face="wide">
+          Signature Words <Mark>im Wandel.</Mark>
+        </Display>
+      </div>
+      <PartyGrid label="Signature Words im Wandel je Fraktion">
+        {parties.map(party => {
+          const [lead, ...rest] = [...party.risers.slice(0, 2), ...party.fallers.slice(0, 2)];
+          return (
+            <PartyBlock key={party.party} party={party.party}>
+              <div className="flex flex-col items-start gap-2">
+                <FitWord word={lead.word} />
+                <MovementBadge item={lead} />
               </div>
-              <div className="border-l border-white/10 px-2.5 py-1.5 sm:py-2">
-                <div className="mb-0.5 text-[10px] font-black uppercase tracking-wider text-rose-300">↓ Absteiger</div>
-                <div className="space-y-0.5">
-                  {party.fallers.slice(0, 2).map(item => (
-                    <div key={item.word} className="flex min-w-0 items-center justify-between gap-1 text-[11px] sm:text-sm">
-                      <span className="truncate font-bold text-white">{item.word}</span>
-                      <span className="shrink-0 text-[9px] font-black text-rose-300 sm:text-[10px]">{signatureMovementLabel(item)}</span>
-                    </div>
+              {rest.length > 0 && (
+                <ul className="m-0 flex list-none flex-wrap gap-2 p-0" aria-label={`Weitere Veränderungen bei ${party.party}`}>
+                  {rest.map(item => (
+                    <li key={item.word} lang="de" data-surface="light" className="inline-flex max-w-full items-center gap-2 rounded-full py-1 pl-3 pr-1 font-wide text-base font-extrabold">
+                      <span className="min-w-0 [overflow-wrap:anywhere]">{item.word}</span>
+                      <MovementBadge item={item} size="sm" />
+                    </li>
                   ))}
-                  {party.fallers.length === 0 && <span className="text-xs text-white/30">–</span>}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
-      <p className="mt-3 text-center text-[11px] text-white/40 sm:mt-4 sm:text-xs">
-        „Neu“ und „raus“ beziehen sich auf die fünf stärksten Signature Words jeder Fraktion.
-      </p>
-      <ScrollHint delay={1.3} />
-    </SlideContainer>
+                </ul>
+              )}
+            </PartyBlock>
+          );
+        })}
+      </PartyGrid>
+    </Slide>
   );
 }
 
@@ -130,31 +117,32 @@ export function YouthLanguageResultSlide({ analysis }: { analysis: YearOverYearA
   const words = youth.words.filter(item => item.count > 0);
   const currentWinner = youth.words.find(item => item.word === 'ragebait');
   return (
-    <SlideContainer innerClassName="mx-auto max-w-2xl" className="py-8">
-      <SlideHeader
-        emoji="🗣️"
-        title="Die häufigsten Jugendwörter"
-        subtitle={currentWinner && words[0]
-          ? `Ragebait: ${number.format(currentWinner.count)} Treffer · Bundestag-Spitze: ${words[0].word}`
-          : `Kontextgeprüfte Treffer · Vergleich mit ${analysis.baseline.editionId}`}
-        className="mb-5"
-        slideId="reveal-youth-language"
-      />
-      <motion.ol variants={itemVariants} className="grid gap-2.5">
+    <Slide
+      shapes="corner"
+      footer={<Note className="ds-note--plate">Kontextgeprüft · Veränderung gegenüber {analysis.baseline.editionId}</Note>}
+    >
+      <div className="flex flex-col items-start gap-3">
+        <Display size="xl" face="wide">Die häufigsten <Mark>Jugendwörter.</Mark></Display>
+        <Lead>
+          {currentWinner && words[0]
+            ? `Ragebait: ${number.format(currentWinner.count)} Treffer · Bundestag-Spitze: ${words[0].word}`
+            : `Kontextgeprüfte Treffer · Vergleich mit ${analysis.baseline.editionId}`}
+        </Lead>
+      </div>
+      <ol className="m-0 flex list-none flex-col gap-3 p-0" aria-label="Häufigste Jugendwörter">
         {words.slice(0, 5).map((item, index) => (
-          <motion.li key={item.word} variants={itemVariants} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-2.5">
-            <span className="w-7 text-center text-lg font-black text-white/35">{index + 1}</span>
-            <span className="min-w-0 flex-1 truncate text-lg font-bold text-white">{item.word}</span>
-            <div className="text-right">
-              <div className="font-black text-pink-300">{number.format(item.count)}×</div>
-              <div className="text-xs text-white/40">{signed(item.change)}</div>
-            </div>
-          </motion.li>
+          <li key={item.word}>
+            <RankCard
+              rank={index + 1}
+              label={item.word}
+              detail={`${number.format(item.count)}× · ${signed(item.change)} zum Vorjahr`}
+              tone={RANK_TONES[index % RANK_TONES.length]}
+              step={index}
+            />
+          </li>
         ))}
-      </motion.ol>
-      <p className="mt-4 text-center text-xs text-white/40">Kontextgeprüft · Veränderung gegenüber {analysis.baseline.editionId}</p>
-      <ScrollHint delay={1.3} />
-    </SlideContainer>
+      </ol>
+    </Slide>
   );
 }
 
@@ -163,70 +151,62 @@ export function YouthLanguagePartySlide({ analysis }: { analysis: YearOverYearAn
   const parties = youth.byParty.filter(item => item.party !== 'fraktionslos').slice(0, 5);
   const additionalWords = youth.words.filter(item => item.count > 0).slice(5, 8);
   return (
-    <SlideContainer innerClassName="mx-auto max-w-2xl" className="py-8">
-      <SlideHeader
-        emoji="🏛️"
-        title="Wer nutzt Jugendwörter?"
-        subtitle="Treffer nach Fraktion"
-        className="mb-5"
-        slideId="reveal-youth-parties"
-      />
-      <motion.ol variants={itemVariants} className="grid grid-cols-2 gap-2.5">
+    <Slide
+      shapes="corner"
+      footer={<Note className="ds-note--plate">Mehrdeutige Wörter zählen nur, wenn ihre Verwendung zur Jugendwort-Bedeutung passt.</Note>}
+    >
+      <div className="flex flex-col items-start gap-3">
+        <Display size="xl" face="wide">Wer nutzt <Mark>Jugendwörter?</Mark></Display>
+        <Lead>Treffer nach Fraktion.</Lead>
+      </div>
+      <ol className="m-0 flex list-none flex-col gap-3 p-0" aria-label="Jugendwort-Treffer nach Fraktion">
         {parties.map((item, index) => (
-          <motion.li
-            key={item.party}
-            variants={itemVariants}
-            className={`rounded-2xl border border-white/10 bg-white/5 px-3 py-3 text-center ${index === parties.length - 1 && parties.length % 2 === 1 ? 'col-span-2' : ''}`}
-          >
-            <div className="text-xs font-bold uppercase tracking-wider text-white/45">{index + 1}. {item.party}</div>
-            <div className="mt-1 text-xl font-black text-pink-300">{number.format(item.count)}×</div>
-          </motion.li>
+          <li key={item.party}>
+            <RankCard
+              rank={index + 1}
+              label={item.party}
+              detail={<span style={{ color: getPartyTone(item.party, 'light') }}>{number.format(item.count)}× Treffer</span>}
+              tone="white"
+              step={index}
+            />
+          </li>
         ))}
-      </motion.ol>
+      </ol>
       {additionalWords.length > 0 && (
-        <motion.div variants={itemVariants} className="mt-5 text-center">
-          <h3 className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-white/40">Weitere Treffer</h3>
-          <div className="flex flex-wrap justify-center gap-2">
-            {additionalWords.map(item => (
-              <span key={item.word} className="rounded-full bg-white/10 px-3 py-1.5 text-sm text-white/75">
-                {item.word} <strong className="text-white">{number.format(item.count)}×</strong>
-              </span>
-            ))}
-          </div>
-        </motion.div>
+        <Enter className="flex flex-col items-start gap-3">
+          <p className="m-0 text-base font-semibold">Weitere Treffer:</p>
+          <ChipCloud words={additionalWords.map(item => `${item.word} ${number.format(item.count)}×`)} label="Weitere Jugendwörter" />
+        </Enter>
       )}
-      <p className="mt-4 text-center text-xs text-white/40">Mehrdeutige Wörter zählen nur, wenn ihre Verwendung zur Jugendwort-Bedeutung passt.</p>
-      <ScrollHint delay={1.3} />
-    </SlideContainer>
+    </Slide>
   );
 }
 
 export function YouthLanguageSpeakerSlide({ analysis }: { analysis: YearOverYearAnalysis }) {
   const speakers = analysis.youthLanguage.bySpeaker.slice(0, 5);
   return (
-    <SlideContainer innerClassName="mx-auto max-w-2xl" className="py-8">
-      <SlideHeader
-        emoji="🎙️"
-        title="Top-Abgeordnete"
-        subtitle="Die meisten Treffer in ihren Redebeiträgen"
-        className="mb-5"
-        slideId="reveal-youth-speakers"
-      />
-      <motion.ol variants={itemVariants} className="grid gap-2.5">
+    <Slide
+      shapes="corner"
+      footer={<Note className="ds-note--plate">Kontextgeprüfte Treffer – Zitate bleiben als tatsächliche Verwendung sichtbar.</Note>}
+    >
+      <div className="flex flex-col items-start gap-3">
+        <Display size="xl" face="wide">Top-<Mark>Abgeordnete.</Mark></Display>
+        <Lead>Die meisten Treffer in ihren Redebeiträgen.</Lead>
+      </div>
+      <ol className="m-0 flex list-none flex-col gap-3 p-0" aria-label="Abgeordnete mit den meisten Jugendwort-Treffern">
         {speakers.map((item, index) => (
-          <motion.li key={`${item.name}-${item.party}`} variants={itemVariants} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-2.5">
-            <span className="w-7 text-center text-lg font-black text-white/35">{index + 1}</span>
-            <div className="min-w-0 flex-1">
-              <div className="truncate text-base font-bold text-white md:text-lg">{item.name}</div>
-              <div className="truncate text-xs font-semibold uppercase tracking-wider text-white/40">{item.party}</div>
-            </div>
-            <div className="text-lg font-black text-pink-300">{number.format(item.count)}×</div>
-          </motion.li>
+          <li key={`${item.name}-${item.party}`}>
+            <RankCard
+              rank={index + 1}
+              label={item.name}
+              detail={<><span style={{ color: getPartyTone(item.party, 'light') }}>{item.party}</span> · {number.format(item.count)}× Treffer</>}
+              tone="white"
+              step={index}
+            />
+          </li>
         ))}
-      </motion.ol>
-      <p className="mt-4 text-center text-xs text-white/40">Kontextgeprüfte Treffer – Zitate bleiben als tatsächliche Verwendung sichtbar.</p>
-      <ScrollHint delay={1.3} />
-    </SlideContainer>
+      </ol>
+    </Slide>
   );
 }
 
@@ -234,81 +214,52 @@ function topicName(id: string): string {
   return TOPIC_BY_ID[id]?.name ?? id;
 }
 
-function vsAverageLabel(ratio: number): string {
-  const percent = Math.round((ratio - 1) * 100);
-  if (percent === 0) return 'wie der Schnitt';
-  return `${percent > 0 ? '+' : '−'}${number.format(Math.abs(percent))} % ${percent > 0 ? 'über' : 'unter'} Schnitt`;
-}
-
 function RankSwap({ item, tone }: { item: RankMovement; tone: 'up' | 'down' }) {
   const up = tone === 'up';
   return (
-    <motion.div variants={itemVariants} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-      <div className={`text-[11px] font-black uppercase tracking-wider ${up ? 'text-green-300' : 'text-rose-300'}`}>
-        {up ? '↑ Aufgestiegen' : '↓ Abgestiegen'}
+    <Block tone={up ? 'pink' : 'card'} className={up ? 'ds-swap' : 'ds-swap ds-swap--down'}>
+      <div className="flex min-w-0 flex-col gap-2">
+        <span className="ds-eyebrow text-on-accent"><Glyph name={up ? 'up' : 'down'} /> {up ? 'Aufgestiegen' : 'Abgestiegen'}</span>
+        <span className="ds-swap__name">{topicName(item.label)}</span>
       </div>
-      <div className="mt-1 flex items-baseline justify-between gap-3">
-        <span className="truncate text-xl font-black text-white md:text-2xl">
-          <span aria-hidden="true">{TOPIC_BY_ID[item.label]?.emoji} </span>{topicName(item.label)}
-        </span>
-        <span className="shrink-0 text-sm font-bold text-white/70">
-          Platz {item.previousRank} → {item.currentRank}
-        </span>
-      </div>
-    </motion.div>
+      <span className="ds-swap__ranks">
+        <span aria-hidden="true">{item.previousRank} → {item.currentRank}</span>
+        <span className="sr-only">von Platz {item.previousRank} auf Platz {item.currentRank}</span>
+      </span>
+    </Block>
   );
 }
 
+/** "Warum Wirtschaft?": rank swap, party emphasis around the average, new signature words. */
 export function TopicRiserContextSlide({ context, baselineYear }: { context: TopicRiserContext; baselineYear: string }) {
   const { riser, faller, parties, leader } = context;
-  const max = Math.max(...parties.map(item => item.vsAverage), 1);
+  const name = topicName(riser.label);
   return (
-    <SlideContainer innerClassName="mx-auto max-w-2xl" className="py-6 sm:py-8">
-      <SlideHeader
-        emoji={TOPIC_BY_ID[riser.label]?.emoji ?? '📈'}
-        title={`Warum ${topicName(riser.label)}?`}
-        subtitle={`Was hinter dem Aufstieg gegenüber ${baselineYear} steckt`}
-        className="mb-4 sm:mb-5"
-        slideId="reveal-topic-riser-context"
-      />
-      <motion.div variants={itemVariants} className="grid gap-2 sm:grid-cols-2">
+    <Slide
+      shapes="corner"
+      footer={<Note className="ds-note--plate">Themenanteil am Redeinhalt im Vergleich zum Bundestagsschnitt · gleicher Kalenderzeitraum wie im Vorjahr</Note>}
+    >
+      <div className="flex flex-col items-start gap-3">
+        <Display size="xl">Warum <Mark>{name}?</Mark></Display>
+        <Lead>Was hinter dem Aufstieg gegenüber {baselineYear} steckt.</Lead>
+      </div>
+      <div className="grid gap-3 [grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr))]">
         <RankSwap item={riser} tone="up" />
         {faller && <RankSwap item={faller} tone="down" />}
-      </motion.div>
-
+      </div>
       {parties.length > 0 && (
-        <motion.section variants={itemVariants} className="mt-4" aria-labelledby="topic-riser-parties">
-          <h3 id="topic-riser-parties" className="mb-2 text-sm font-bold text-white/70">
-            Wer spricht am meisten über {topicName(riser.label)}?
-          </h3>
-          <ol className="grid gap-1.5">
-            {parties.map(item => (
-              <li key={item.party} className="grid grid-cols-[6.5rem_1fr_auto] items-center gap-2 text-sm">
-                <span className="truncate font-bold" style={{ color: getPartyTextColor(item.party) }}>{item.party}</span>
-                <span className="h-2 overflow-hidden rounded-full bg-white/10" aria-hidden="true">
-                  <span
-                    className="block h-full rounded-full"
-                    style={{ width: `${(item.vsAverage / max) * 100}%`, backgroundColor: getPartyBgColor(item.party) }}
-                  />
-                </span>
-                <span className="text-right text-xs font-semibold text-white/70">{vsAverageLabel(item.vsAverage)}</span>
-              </li>
-            ))}
-          </ol>
-        </motion.section>
+        <DivergingBars
+          title={`Wer spricht am meisten über ${name}?`}
+          caption={`Anteil des Themas ${name} je Fraktion im Vergleich zum Bundestagsschnitt`}
+          rows={parties.map(item => ({ label: item.party, party: item.party, ratio: item.vsAverage }))}
+        />
       )}
-
       {leader && (
-        <motion.p variants={itemVariants} className="mt-4 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80">
-          Neu in den Top-Signature-Words der <span className="font-bold" style={{ color: getPartyTextColor(leader.party) }}>{leader.party}</span>:{' '}
-          <span className="font-bold text-white">{leader.newSignatureWords.join(', ')}</span>
-        </motion.p>
+        <Enter className="flex flex-col items-start gap-3">
+          <p className="m-0 text-base font-semibold">Neu in den Top-Signature-Words der <strong>{leader.party}</strong>:</p>
+          <ChipCloud words={leader.newSignatureWords} label={`Neue Signature-Words der ${leader.party}`} />
+        </Enter>
       )}
-
-      <p className="mt-4 text-center text-[11px] text-white/40 sm:text-xs">
-        Themenanteil am Redeinhalt im Vergleich zum Bundestagsschnitt · gleicher Kalenderzeitraum wie im Vorjahr
-      </p>
-      <ScrollHint delay={1.4} />
-    </SlideContainer>
+    </Slide>
   );
 }

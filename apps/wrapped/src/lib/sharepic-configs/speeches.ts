@@ -1,7 +1,6 @@
 import type { SlideConfig, CardConfig } from './types';
 
 export const speechesConfig: SlideConfig = {
-  emoji: '🎤',
   title: 'Die Reden',
   subtitle: 'Wer hat am meisten gesprochen?',
   filename: 'bundestag-wrapped-speeches',

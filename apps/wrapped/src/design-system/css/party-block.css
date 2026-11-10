@@ -1,0 +1,15 @@
+/* Flat block in a party's colour. Text is white on the PARTY_BG tones (>= 4.5:1). */
+.ds-party-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: clamp(0.75rem, 0.5rem + 1vw, 1.25rem); margin: 0; padding: 0; list-style: none; }
+.ds-party-block {
+  container-type: inline-size;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 0.3rem + 0.8vw, 1rem);
+  padding: clamp(1rem, 0.7rem + 1.2vw, 1.75rem);
+  border-radius: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  background: var(--party-bg);
+  color: #fff;
+  border: 2px solid var(--surface-track);
+}
+.ds-party-block__name { margin: 0; font-family: var(--font-wide); font-weight: 900; font-stretch: 110%; font-size: clamp(0.875rem, 0.8rem + 0.4vw, 1.125rem); letter-spacing: 0.1em; text-transform: uppercase; }

@@ -1,215 +1,47 @@
+import { memo, useCallback } from 'react';
+import { motion } from 'motion/react';
 import { useSlideEffectsActive } from '@/components/main-wrapped/SlideEffectsContext';
-import { memo, useState, useCallback, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
-import {
-  LaunchEffects,
-  CHARGE_DURATION,
-  FLIGHT_DURATION,
-} from '../shared';
 import { playSound } from '@/lib/sounds';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
 import { previewCoverageLabel } from '@/edition/labels';
-
-const TEXT_HIDE_DURATION = 0.4;
+import { Slide } from '@/design-system/components/Slide';
+import { Eyebrow, Lead } from '@/design-system/components/Type';
+import { ActionButton } from '@/design-system/components/ActionButton';
+import { ENTER } from '@/design-system/motion';
 
 interface IntroSlideProps {
   onStart?: () => void;
 }
 
+/** Cover: eagle, huge two-line wordmark with a tilted year pill, start button. */
 export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps) {
   const edition = useOptionalEdition();
   const surface = editionSurface(edition);
   const previewLabel = previewCoverageLabel(edition?.manifest);
-  const [launchPhase, setLaunchPhase] = useState<
-    'idle' | 'hiding' | 'charging' | 'launching'
-  >('idle');
-
   const active = useSlideEffectsActive();
-  const reduced = useReducedMotion();
-  const timers = useRef<number[]>([]);
-  useEffect(() => {
-    if (!active) return;
-    return () => {
-      for (const timer of timers.current) window.clearTimeout(timer);
-      timers.current = [];
-      setLaunchPhase('idle');
-    };
-  }, [active]);
 
   const handleStart = useCallback(() => {
-    if (!active || launchPhase !== 'idle') return;
-    if (reduced) { playSound('start'); onStart?.(); return; }
+    if (!active) return;
     playSound('start');
-    // Theme music is started by MainWrappedPage when introStarted becomes true
-    setLaunchPhase('hiding');
-
-    timers.current.push(window.setTimeout(() => {
-      setLaunchPhase('charging');
-    }, TEXT_HIDE_DURATION * 1000));
-
-    timers.current.push(window.setTimeout(() => {
-      setLaunchPhase('launching');
-    }, (TEXT_HIDE_DURATION + CHARGE_DURATION) * 1000));
-
-    timers.current.push(window.setTimeout(() => {
-      onStart?.();
-    }, (TEXT_HIDE_DURATION + CHARGE_DURATION) * 1000)); // Immediate after charge
-
-    timers.current.push(window.setTimeout(() => {
-      setLaunchPhase('idle');
-    }, (TEXT_HIDE_DURATION + CHARGE_DURATION + FLIGHT_DURATION) * 1000 + 100));
-  }, [onStart, active, reduced, launchPhase]);
-
-  const isAnimating = launchPhase !== 'idle';
-  const isHiding = launchPhase !== 'idle';
-  const isCharging = launchPhase === 'charging' || launchPhase === 'launching';
-
-  const TEXT_FADE_DURATION = TEXT_HIDE_DURATION;
-  const TEXT_STAGGER = 0.08;
+    onStart?.();
+  }, [onStart, active]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">
-      <AnimatePresence>
-        {isCharging && (
-          <LaunchEffects phase={launchPhase as 'charging' | 'launching'} />
-        )}
-      </AnimatePresence>
-
-      <div className="text-center z-10">
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="mb-6 flex justify-center"
-        >
-          <motion.img
-            src="/logo.png"
-            alt=""
-            className="h-24 w-auto md:h-36"
-            initial={{ y: -100, opacity: 0, scale: 0.8 }}
-            whileInView={{ y: 0, opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            animate={
-              launchPhase === 'charging'
-                ? {
-                    y: [0, -5, 0, -3, 0, -8, 0],
-                    scale: [1, 1.05, 1, 1.08, 1, 1.12, 1.15],
-                    rotate: [0, -2, 2, -1, 1, -3, 0],
-                  }
-                : launchPhase === 'launching'
-                  ? {
-                      y: '-100vh',
-                      scale: [1.15, 1.25, 1.15, 1],
-                      rotate: [0, -3, 3, 0],
-                      opacity: [1, 1, 0.6, 0],
-                    }
-                  : {}
-            }
-            transition={
-              launchPhase === 'charging'
-                ? {
-                    duration: CHARGE_DURATION,
-                    ease: 'easeInOut',
-                    times: [0, 0.15, 0.3, 0.45, 0.6, 0.8, 1],
-                  }
-                : launchPhase === 'launching'
-                  ? {
-                      duration: FLIGHT_DURATION,
-                      ease: [0.15, 0.8, 0.3, 1],
-                      y: { duration: FLIGHT_DURATION, ease: [0.15, 0.8, 0.3, 1] },
-                      opacity: { times: [0, 0.4, 0.75, 1] },
-                    }
-                  : {
-                      duration: 0.8,
-                      delay: 0.2,
-                      ease: [0.34, 1.56, 0.64, 1],
-                    }
-            }
-          />
-        </motion.div>
-
-        <motion.h1
-          className="text-[clamp(1.75rem,10vw,4.5rem)] font-black mb-4 gradient-text"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{
-            opacity: isHiding ? 0 : 1,
-            y: isHiding ? -30 : 0,
-          }}
-          transition={{
-            delay: isHiding ? TEXT_STAGGER * 0 : 0.4,
-            duration: isHiding ? TEXT_FADE_DURATION : 0.6,
-            ease: isHiding ? [0.4, 0, 1, 1] : 'easeOut',
-          }}
-        >
-          BUNDESTAG
-        </motion.h1>
-
-        <motion.h2
-          className="text-4xl md:text-6xl font-black text-white mb-2"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{
-            opacity: isHiding ? 0 : 1,
-            y: isHiding ? -30 : 0,
-          }}
-          transition={{
-            delay: isHiding ? TEXT_STAGGER * 1 : 0.6,
-            duration: isHiding ? TEXT_FADE_DURATION : 0.6,
-            ease: isHiding ? [0.4, 0, 1, 1] : 'easeOut',
-          }}
-        >
-          WRAPPED
-        </motion.h2>
-
-        <motion.p
-          className={`text-2xl md:text-3xl font-bold text-pink-400 ${previewLabel ? 'mb-3' : 'mb-12'}`}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{
-            opacity: isHiding ? 0 : 1,
-            y: isHiding ? -20 : 0,
-          }}
-          transition={{
-            delay: isHiding ? TEXT_STAGGER * 2 : 0.8,
-            duration: isHiding ? TEXT_FADE_DURATION : 0.6,
-            ease: isHiding ? [0.4, 0, 1, 1] : 'easeOut',
-          }}
-        >
-          {surface.year ?? ''}
-        </motion.p>
-
-        {previewLabel && (
-          <motion.p
-            className="mb-12 text-sm font-semibold tracking-wide text-white/65"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: isHiding ? 0 : 1, y: isHiding ? -16 : 0 }}
-            transition={{ delay: isHiding ? TEXT_STAGGER * 3 : 0.95, duration: TEXT_FADE_DURATION }}
-          >
-            {previewLabel}
-          </motion.p>
-        )}
-
-        <motion.button
-          onClick={handleStart}
-          disabled={isAnimating}
-          className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full text-white font-bold text-xl hover:from-pink-400 hover:to-purple-500 transition-all duration-300 shadow-lg shadow-pink-500/30 disabled:opacity-50 disabled:cursor-not-allowed"
-          whileHover={{ scale: isAnimating ? 1 : 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{
-            opacity: isAnimating ? 0 : 1,
-            scale: isAnimating ? 0.9 : 1,
-            y: 0,
-          }}
-          transition={{
-            delay: isAnimating ? 0 : 1.2,
-            duration: isAnimating ? TEXT_HIDE_DURATION * 0.6 : 0.6,
-            ease: 'easeOut',
-          }}
-        >
-          Starten
-        </motion.button>
-      </div>
-    </div>
+    <Slide shapes="cover">
+      {previewLabel && <motion.div variants={ENTER.rise}><Eyebrow>{previewLabel}</Eyebrow></motion.div>}
+      <motion.img src="/logo.png" alt="" className="ds-cover__logo" variants={ENTER.stamp} />
+      <h1 className="ds-display ds-display--hero ds-cover__title">
+        <motion.span className="block text-wr-pink" variants={ENTER.rise}>Bundestag</motion.span>{' '}
+        <motion.span className="ds-cover__line" variants={ENTER.rise}>
+          <span>Wrapped</span>
+          {surface.year && <>{' '}<span className="ds-cover__year">{surface.year}</span></>}
+        </motion.span>
+      </h1>
+      <motion.div className="ds-cover__start" variants={ENTER.rise}>
+        <ActionButton size="lg" icon="right" onClick={handleStart}>Starten</ActionButton>
+        <Lead className="max-w-[22rem]">Dein Jahr im Parlament – Themen, Reden, Aufsteiger.</Lead>
+      </motion.div>
+    </Slide>
   );
 });

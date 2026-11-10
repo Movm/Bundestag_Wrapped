@@ -1,4 +1,4 @@
-import { jumpToSlide } from './story-navigation';
+import { jumpToSlide, closeQuizResult } from './story-navigation';
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from 'playwright/test';
 
@@ -79,6 +79,7 @@ test('completes the fixture journey with a quiz gate, mixed answers, and the act
       await answers.nth(slide === 'quiz-signature' ? 1 : 0).click();
       // Feedback stays on the slide until the user explicitly continues.
       await expect(answers.first()).toBeDisabled();
+      await closeQuizResult(page);
       await scrollToNextSlide(page, slide, nextSlide);
       continue;
     }
@@ -351,7 +352,10 @@ test('runs Axe against the annual start, answered quiz, search, speaker index, p
   await answer.focus();
   await page.keyboard.press('Enter');
   await expect(answer).toBeDisabled();
+  // The result dialog must pass Axe too; scan it open, then close it.
+  await expect(page.getByRole('dialog')).toBeVisible();
   await scan();
+  await closeQuizResult(page);
 
   for (const path of ['/2025/suche', '/2025/abgeordnete', '/2025/abgeordnete/shared-speaker', '/does-not-exist']) {
     await page.goto(path);

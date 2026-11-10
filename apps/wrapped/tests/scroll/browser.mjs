@@ -33,7 +33,7 @@ try {
   await page.waitForTimeout(3000);
   assert.equal(await active(), 'quiz', 'quiz never auto advances');
   assert.match(await page.locator('#quiz [role=status]').textContent(), /persistent explanation/);
-  await page.getByRole('button', { name: 'Nächste Slide' }).click();
+  await page.getByRole('button', { name: 'Weiter zur nächsten Folie' }).click();
   await wait('long');
   await page.locator('#long').focus();
   await page.keyboard.press('PageDown');
@@ -43,7 +43,7 @@ try {
   await page.waitForTimeout(180);
   if (await active() === 'long') await page.keyboard.press('PageDown');
   await wait('last');
-  assert.equal(await page.getByRole('button', { name: 'Nächste Slide' }).count(), 0);
+  assert.equal(await page.getByRole('button', { name: 'Weiter zur nächsten Folie' }).count(), 0);
   await page.getByRole('button', { name: 'Restart' }).click();
   await wait('first');
   await wheel(100);

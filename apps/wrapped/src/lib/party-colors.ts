@@ -73,3 +73,23 @@ const PARTY_TEXT_COLORS: Record<string, string> = {
 export function getPartyTextColor(party: string): string {
   return PARTY_TEXT_COLORS[party] || getPartyColor(party);
 }
+
+/**
+ * Party colours as readable text/marks (≥ 4.5:1) on the two kinds of ground the
+ * design system uses. `light` = white cards, `dark` = ink/deep/card surfaces.
+ * Measured values are pinned in party-tone.test.ts.
+ */
+const PARTY_ON_DARK: Record<string, string> = {
+  SPD: '#FF6B6B',
+  'CDU/CSU': '#E4E4E7',
+  GRÜNE: '#3DDC84',
+  AfD: '#4FC3F7',
+  'DIE LINKE': '#F06BB0',
+  BSW: '#FF9466',
+  fraktionslos: '#A1A1AA',
+};
+
+export function getPartyTone(party: string, ground: 'light' | 'dark'): string {
+  const table = ground === 'light' ? PARTY_BG_COLORS : PARTY_ON_DARK;
+  return table[party] ?? table.fraktionslos;
+}

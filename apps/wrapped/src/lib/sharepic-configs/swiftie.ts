@@ -1,7 +1,6 @@
 import type { SlideConfig } from './types';
 
 export const swiftieConfig: SlideConfig = {
-  emoji: '💜',
   title: 'Der einzige Swiftie',
   subtitle: 'im Bundestag',
   filename: 'bundestag-wrapped-swiftie',

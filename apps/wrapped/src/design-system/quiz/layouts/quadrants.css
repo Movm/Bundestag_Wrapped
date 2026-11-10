@@ -1,0 +1,30 @@
+/* quadrants: four big colour fields filling a 2x2 grid; a hint chip sits in the centre. */
+.ds-quiz-quadrants { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); min-height: clamp(16rem, 8rem + 26vh, 26rem); }
+@media (max-width: 30rem) { .ds-quiz-quadrants { grid-template-columns: minmax(0, 1fr); } }
+.ds-choice--field {
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 7rem;
+  padding: clamp(1rem, 0.6rem + 1.6vw, 2.5rem);
+  border-radius: 0;
+}
+.ds-choice--field:nth-child(1) { border-top-left-radius: clamp(1.25rem, 1rem + 1vw, 2rem); }
+.ds-choice--field:nth-child(2) { border-top-right-radius: clamp(1.25rem, 1rem + 1vw, 2rem); align-items: flex-end; text-align: right; }
+.ds-choice--field:nth-child(3) { border-bottom-left-radius: clamp(1.25rem, 1rem + 1vw, 2rem); flex-direction: column-reverse; justify-content: flex-end; }
+.ds-choice--field:nth-child(4) { border-bottom-right-radius: clamp(1.25rem, 1rem + 1vw, 2rem); flex-direction: column-reverse; justify-content: flex-end; align-items: flex-end; text-align: right; }
+@media (max-width: 30rem) {
+  .ds-choice--field:nth-child(n) { border-radius: 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; text-align: left; }
+  .ds-choice--field:nth-child(1) { border-radius: 1.25rem 1.25rem 0 0; }
+  .ds-choice--field:nth-child(4) { border-radius: 0 0 1.25rem 1.25rem; }
+}
+.ds-choice--field .ds-choice__label { font-size: clamp(1.25rem, 0.7rem + 2.8vw, 4.75rem); font-stretch: 115%; text-transform: uppercase; letter-spacing: -0.045em; hyphens: auto; }
+.ds-choice--field:focus-visible { z-index: 2; outline-offset: -6px; }
+.ds-quiz-quadrants__hint {
+  position: absolute; left: 50%; top: 50%; translate: -50% -50%; z-index: 1;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0.25rem;
+  width: clamp(6rem, 4rem + 9vw, 11rem); aspect-ratio: 1; padding: 0.75rem; border-radius: 50%;
+  background: var(--color-wr-ink); color: #fff; border: 3px solid #fff; pointer-events: none;
+  font-family: var(--font-wide); font-weight: 900; font-stretch: 125%; text-transform: uppercase; letter-spacing: -0.03em; line-height: 0.95;
+  font-size: clamp(0.8125rem, 0.6rem + 0.9vw, 1.5rem);
+}
+@media (max-width: 30rem) { .ds-quiz-quadrants__hint { display: none; } }

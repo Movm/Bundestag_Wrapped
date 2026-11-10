@@ -1,202 +1,62 @@
-import { LoopMotion } from '@/components/slides/shared/LoopMotion';
-import { memo, useMemo } from 'react';
-import { motion } from 'motion/react';
+import { useMemo } from 'react';
 import type { TopicAnalysis } from '@/data/wrapped';
-import { BUBBLE_POSITIONS, FLOAT_ANIMATIONS, FlipCard, TopicsTicker } from '../shared';
-import { TOPIC_BY_ID, type TopicMeta } from './constants';
-import { getPartyBgColor } from '@/lib/party-colors';
+import { Enter, Slide } from '@/design-system/components/Slide';
+import { Display, Eyebrow, Mark, Note } from '@/design-system/components/Type';
+import { ChipCloud, RankCard } from '@/design-system/components/Data';
+import { TOPIC_BY_ID } from './constants';
 
 interface ResultViewProps {
   topicAnalysis: TopicAnalysis;
 }
 
-interface PartyRanking {
-  party: string;
-  score: number;
+const RANK_TONES = ['white', 'violet', 'pink', 'card', 'white'] as const;
+
+function topPartiesFor(byParty: TopicAnalysis['byParty'], topic: string, count: number): string[] {
+  return Object.entries(byParty)
+    .filter(([party]) => party !== 'fraktionslos')
+    .map(([party, topics]) => ({ party, score: topics[topic] || 0 }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, count)
+    .map(item => item.party);
 }
-
-interface TopicBubbleProps {
-  topic: TopicMeta;
-  rank: number;
-  index: number;
-  position: { top: string; left: string };
-  floatOffset: { x: number[]; y: number[] };
-  duration: number;
-  partyRankings: PartyRanking[];
-}
-
-const TopicBubble = memo(function TopicBubble({
-  topic,
-  rank,
-  index,
-  position,
-  floatOffset,
-  duration,
-  partyRankings,
-}: TopicBubbleProps) {
-  const bubbleClasses = `
-    w-full h-full
-    rounded-full
-    shadow-2xl shadow-black/30
-    flex flex-col items-center justify-center
-    p-3 text-center
-  `;
-
-  const frontContent = (
-    <div
-      className={bubbleClasses}
-      style={{ background: `linear-gradient(135deg, ${topic.color}, ${topic.color}dd)` }}
-    >
-      <span className="text-white/70 font-black text-2xl md:text-3xl">{rank}</span>
-      <p className="text-white font-bold text-sm md:text-base drop-shadow-md mt-1">
-        {topic.name}
-      </p>
-    </div>
-  );
-
-  const backContent = (
-    <div
-      className={bubbleClasses}
-      style={{ background: `linear-gradient(135deg, ${topic.color}ee, ${topic.color}cc)` }}
-    >
-      <div className="space-y-0.5 px-1">
-        {partyRankings.slice(0, 5).map((pr, i) => (
-          <div key={pr.party} className="flex items-center gap-1.5 justify-center">
-            <span className="text-white/60 text-[10px] md:text-xs w-3">{i + 1}.</span>
-            <div
-              className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full flex-shrink-0"
-              style={{ backgroundColor: getPartyBgColor(pr.party) }}
-            />
-            <span className="text-white text-[10px] md:text-xs font-semibold truncate max-w-[60px] md:max-w-[80px]">
-              {pr.party}
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-
-  // Alternate tilt directions for visual interest
-  const tiltAngle = index % 2 === 0 ? -8 : 8;
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0, rotate: tiltAngle }}
-      whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-      viewport={{ once: true }}
-      transition={{
-        delay: index * 0.4,
-        type: 'spring',
-        stiffness: 110,
-        damping: 12,
-      }}
-      style={{
-        position: 'absolute',
-        top: position.top,
-        left: position.left,
-      }}
-    >
-      <LoopMotion
-        animate={{ x: floatOffset.x, y: floatOffset.y }}
-        transition={{
-          repeat: Infinity,
-          duration,
-          ease: 'easeInOut',
-        }}
-        style={{ willChange: 'transform' }}
-      >
-        <FlipCard
-          label={topic.name}
-          front={frontContent}
-          back={backContent}
-          className="w-[28vw] h-[28vw] max-w-[200px] max-h-[200px] min-w-[110px] min-h-[110px]"
-        />
-      </LoopMotion>
-    </motion.div>
-  );
-});
 
 export function ResultView({ topicAnalysis }: ResultViewProps) {
   const { topTopics, byParty } = topicAnalysis;
 
-  // Get top 5 topics for the bubble layout
-  const displayTopics = useMemo(() => topTopics.slice(0, 5), [topTopics]);
-
-  // Get topics 6-13 for the news ticker
-  const tickerTopics = useMemo(() => topTopics.slice(5, 13), [topTopics]);
-
-  // Pre-compute party rankings for all displayed topics at once
-  // This avoids recalculating rankings for each bubble on every render
-  const allPartyRankings = useMemo(() => {
-    const result: Record<string, PartyRanking[]> = {};
-    for (const topicScore of displayTopics) {
-      const rankings: PartyRanking[] = [];
-      for (const [party, topics] of Object.entries(byParty)) {
-        if (party === 'fraktionslos') continue;
-        const score = topics[topicScore.topic] || 0;
-        rankings.push({ party, score });
-      }
-      result[topicScore.topic] = rankings.sort((a, b) => b.score - a.score);
-    }
-    return result;
-  }, [displayTopics, byParty]);
-
-  // Prepare ticker data with topic names and top 3 parties
-  const tickerData = useMemo(() => {
-    return tickerTopics.map((topicScore) => {
-      const topic = TOPIC_BY_ID[topicScore.topic];
-      const rankings: PartyRanking[] = [];
-      for (const [party, topics] of Object.entries(byParty)) {
-        if (party === 'fraktionslos') continue;
-        const score = topics[topicScore.topic] || 0;
-        rankings.push({ party, score });
-      }
-      rankings.sort((a, b) => b.score - a.score);
-      return {
-        topic: topic?.name || topicScore.topic,
-        rank: topicScore.rank,
-        topParties: rankings.slice(0, 3),
-      };
-    });
-  }, [tickerTopics, byParty]);
+  const leaders = useMemo(
+    () => topTopics.slice(0, 5).map(item => ({ ...item, parties: topPartiesFor(byParty, item.topic, 3) })),
+    [topTopics, byParty],
+  );
+  const others = useMemo(
+    () => topTopics.slice(5, 13).map(item => TOPIC_BY_ID[item.topic]?.name ?? item.topic),
+    [topTopics],
+  );
 
   return (
-    <div className="bubble-slide min-h-screen relative w-full">
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="absolute top-8 left-0 right-0 text-center z-20"
-      >
-        <h2 className="text-2xl md:text-3xl font-black text-white mb-1">
-          Die Themen des Bundestags
-        </h2>
-        <p className="text-white/50 text-xs md:text-sm">
-          Worüber wurde am meisten gesprochen?
-        </p>
-      </motion.div>
-
-      <div className="bubble-grid absolute inset-0 z-10">
-        {displayTopics.map((topicScore, i) => {
-          const topic = TOPIC_BY_ID[topicScore.topic];
-          if (!topic) return null;
-          return (
-            <TopicBubble
-              key={topicScore.topic}
-              topic={topic}
-              rank={topicScore.rank}
-              index={i}
-              position={BUBBLE_POSITIONS[i]}
-              floatOffset={FLOAT_ANIMATIONS[i]}
-              duration={FLOAT_ANIMATIONS[i].duration}
-              partyRankings={allPartyRankings[topicScore.topic]}
-            />
-          );
-        })}
+    <Slide
+      shapes="corner"
+      footer={<Note className="ds-note--plate">Am meisten gesprochen wurde über diese Themen. Darunter: wer sie am stärksten besetzt.</Note>}
+    >
+      <div className="flex flex-col gap-4">
+        <Enter><Eyebrow>Worüber wurde am meisten gesprochen?</Eyebrow></Enter>
+        <Display size="xl" face="wide">
+          Die Themen des <Mark>Bundestags.</Mark>
+        </Display>
       </div>
-
-      {/* News ticker for topics 6-13 */}
-      {tickerData.length > 0 && <TopicsTicker topics={tickerData} />}
-    </div>
+      <ol className="flex flex-col gap-3" aria-label="Die häufigsten Themen">
+        {leaders.map((item, index) => (
+          <li key={item.topic}>
+            <RankCard
+              rank={item.rank}
+              label={TOPIC_BY_ID[item.topic]?.name ?? item.topic}
+              detail={item.parties.length > 0 ? `Vorn: ${item.parties.join(', ')}` : undefined}
+              tone={RANK_TONES[index % RANK_TONES.length]}
+              step={index}
+            />
+          </li>
+        ))}
+      </ol>
+      {others.length > 0 && <ChipCloud words={others} label="Weitere Themen" />}
+    </Slide>
   );
 }

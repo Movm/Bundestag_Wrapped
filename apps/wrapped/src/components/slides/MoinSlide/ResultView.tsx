@@ -1,13 +1,9 @@
-import { LoopSpan } from '@/components/slides/shared/LoopMotion';
 import { useMemo } from 'react';
-import { motion } from 'motion/react';
-import { WavingCard } from './WavingCard';
-
-interface MoinSpeaker {
-  name: string;
-  party: string;
-  count: number;
-}
+import { getPartyTone } from '@/lib/party-colors';
+import { Slide } from '@/design-system/components/Slide';
+import { Display, Eyebrow, Lead, Mark } from '@/design-system/components/Type';
+import { RankCard } from '@/design-system/components/Data';
+import type { MoinSpeaker } from './moin-quiz';
 
 interface ResultViewProps {
   speakers: MoinSpeaker[];
@@ -17,68 +13,25 @@ export function ResultView({ speakers }: ResultViewProps) {
   const topSpeakers = useMemo(() => speakers.slice(0, 4), [speakers]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6 py-8">
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-10"
-      >
-        <LoopSpan
-          animate={{ rotate: [0, 15, -10, 15, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 3 }}
-          className="text-5xl md:text-6xl mb-4 block"
-        >
-          👋
-        </LoopSpan>
-        <h2 className="text-2xl md:text-4xl font-black text-white">
-          Die Moin-Champions
-        </h2>
-        <p className="text-white/60 mt-2 text-base md:text-lg">
-          Norddeutsche Grüße im Bundestag
-        </p>
-      </motion.div>
-
-      {/* Champion - always full display */}
-      {topSpeakers[0] && (
-        <div className="mb-6 w-full max-w-xs">
-          <WavingCard
-            speaker={topSpeakers[0]}
-            rank={1}
-            delay={0.1}
-            isChampion={true}
-          />
-        </div>
-      )}
-
-      {/* 2nd and 3rd place - compact on mobile, side by side */}
-      {topSpeakers.length > 1 && (
-        <div className="grid grid-cols-2 gap-3 md:gap-6 w-full max-w-md mb-6">
-          {topSpeakers.slice(1, 3).map((speaker, index) => (
-            <WavingCard
-              key={speaker.name}
-              speaker={speaker}
-              rank={index + 2}
-              delay={0.25 + index * 0.15}
-              isChampion={false}
-              compact={true}
+    <Slide shapes="corner">
+      <div className="flex flex-col items-start gap-4">
+        <Eyebrow>Norddeutsche Grüße im Bundestag</Eyebrow>
+        <Display size="xl" face="wide">Die <Mark>Moin</Mark>-Champions.</Display>
+        <Lead>Wer grüßt am häufigsten mit „Moin“?</Lead>
+      </div>
+      <ol className="m-0 flex list-none flex-col gap-3 p-0" aria-label="Moin-Champions">
+        {topSpeakers.map((speaker, index) => (
+          <li key={speaker.name}>
+            <RankCard
+              rank={index + 1}
+              label={speaker.name}
+              detail={<><span style={{ color: getPartyTone(speaker.party, 'light') }}>{speaker.party}</span> · {speaker.count}× „Moin“</>}
+              tone="white"
+              step={index}
             />
-          ))}
-        </div>
-      )}
-
-      {/* 4th place if exists - also compact */}
-      {topSpeakers[3] && (
-        <div className="w-full max-w-[10rem]">
-          <WavingCard
-            speaker={topSpeakers[3]}
-            rank={4}
-            delay={0.55}
-            isChampion={false}
-            compact={true}
-          />
-        </div>
-      )}
-    </div>
+          </li>
+        ))}
+      </ol>
+    </Slide>
   );
 }
