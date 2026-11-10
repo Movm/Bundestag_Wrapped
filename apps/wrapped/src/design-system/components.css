@@ -270,10 +270,26 @@
 /* Full-bleed band: the box stays inside the column; the shadow paints to the edges without creating scroll overflow. */
 .ds-quiz-stack__band { position: absolute; left: 0; right: 0; top: 22%; height: 56%; background: var(--color-wr-ink); box-shadow: 0 0 0 100vmax var(--color-wr-ink); clip-path: inset(0 -100vmax); rotate: -5deg; transform-origin: left; }
 .ds-quiz-stack__list { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 0.25rem; }
-.ds-choice--word { align-items: baseline; gap: clamp(0.75rem, 0.5rem + 1.4vw, 1.75rem); padding: 0.25rem 0.5rem 0.25rem 0; color: #fff; transition: transform 0.35s var(--ease-wr-pop), opacity 0.3s; }
+.ds-choice--word { align-items: baseline; gap: clamp(0.75rem, 0.5rem + 1.4vw, 1.75rem); padding: 0.25rem 0.5rem 0.25rem 0; color: #fff; }
 .ds-choice--word .ds-choice__label { font-size: clamp(2.375rem, 1rem + min(7.4vw, 9vh), 7.75rem); text-transform: uppercase; letter-spacing: -0.05em; }
 .ds-choice--word .ds-choice__tag { align-self: center; }
-@media (hover: hover) and (pointer: fine) { .ds-choice--word:not([aria-disabled='true']):hover { transform: translateX(1rem); } }
+/* Big hover: the word steps out, grows and tilts with a pink underline; the
+   others fall back. Keyboard focus gets the same. transform/opacity animate,
+   each word sits on its own layer from the start (no first-hover frame cost). */
+.ds-choice--word { will-change: transform; transform-origin: left center; transition: translate 0.35s var(--ease-wr-pop), scale 0.35s var(--ease-wr-pop), rotate 0.35s var(--ease-wr-pop); }
+.ds-choice--word .ds-choice__label { text-decoration: underline 0.1em transparent; text-underline-offset: 0.06em; transition: text-decoration-color 0.2s; }
+.ds-choice--word > * { transition: opacity 0.25s; }
+@media (hover: hover) and (pointer: fine) {
+  .ds-choice--word:not([aria-disabled='true']):hover { translate: 1.5rem 0; scale: 1.12; rotate: -3deg; }
+  .ds-choice--word:not([aria-disabled='true']):hover .ds-choice__label { text-decoration-color: var(--color-wr-pink); }
+  .ds-quiz-stack__list:has(.ds-choice--word:not([aria-disabled='true']):hover) .ds-choice--word:not(:hover) > * { opacity: 0.4; }
+}
+.ds-choice--word:not([aria-disabled='true']):focus-visible { translate: 1.5rem 0; scale: 1.12; rotate: -3deg; }
+.ds-choice--word:not([aria-disabled='true']):focus-visible .ds-choice__label { text-decoration-color: var(--color-wr-pink); }
+.ds-quiz-stack__list:has(.ds-choice--word:not([aria-disabled='true']):focus-visible) .ds-choice--word:not(:focus-visible) > * { opacity: 0.4; }
+@media (prefers-reduced-motion: reduce) {
+  .ds-choice--word:not([aria-disabled='true']):hover, .ds-choice--word:not([aria-disabled='true']):focus-visible { translate: none; scale: none; rotate: none; }
+}
 /* answered: correct = solid ink plate (19.6:1), others recede but stay ≥ 4.5:1 on violet/ink */
 .ds-choice--word[data-status='correct'] .ds-choice__label { background: var(--color-wr-ink); color: #fff; padding: 0.05em 0.2em; border-radius: 0.12em; box-shadow: 0 0 0 3px #fff; }
 .ds-choice--word[data-status='wrong'] .ds-choice__label { text-decoration: line-through; text-decoration-thickness: 0.08em; }
@@ -354,11 +370,6 @@
 .ds-statement { margin: 0; max-width: 55rem; font-family: var(--font-wide); font-weight: 800; font-stretch: 105%; font-size: clamp(1.25rem, 0.9rem + min(1.9vw, 3vh), 2.875rem); line-height: 1.15; letter-spacing: -0.02em; text-wrap: pretty; }
 .ds-statement--long { font-size: clamp(1.125rem, 0.9rem + min(1.1vw, 1.8vh), 1.875rem); line-height: 1.25; }
 
-/* Rank swap (riser / faller) */
-.ds-swap { display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; padding: 1.375rem 1.75rem; }
-.ds-swap--down { border: 2px solid var(--color-wr-violet); }
-.ds-swap__name { font-family: var(--font-wide); font-weight: 900; font-stretch: 110%; font-size: clamp(1.75rem, 1.2rem + min(2vw, 3vh), 3rem); line-height: 1; letter-spacing: -0.03em; overflow-wrap: break-word; }
-.ds-swap__ranks { font-family: var(--font-wide); font-weight: 900; font-stretch: 125%; font-size: clamp(1.875rem, 1.25rem + min(2.2vw, 3.4vh), 3.25rem); line-height: 0.9; letter-spacing: -0.04em; white-space: nowrap; color: var(--surface-accent); }
 /* A note on an ink plate stays readable even where it crosses a shape. */
 .ds-note--plate { background: var(--color-wr-ink); color: color-mix(in srgb, #fff 82%, var(--color-wr-ink)); padding: 0.625rem 0.875rem; border-radius: 0.75rem; }
 
