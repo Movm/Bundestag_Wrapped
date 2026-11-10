@@ -431,6 +431,7 @@ body {
 .story-scroll { scroll-behavior: auto; scrollbar-gutter: stable; }
 .story-section { min-height: var(--story-height); padding-top: 4rem; padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px)); overflow-wrap: anywhere; }
 .story-section > * { width: 100%; }
+.story-section--cover { padding: 0; }
 .story-section .min-h-screen { min-height: calc(var(--story-height) - 8rem); }
 .story-navigation[hidden] { display: none; }
 .story-navigation-toggle {

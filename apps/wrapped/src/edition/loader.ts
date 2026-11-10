@@ -4,6 +4,7 @@ import type { SpeakerIndex, SpeakerWrapped } from '@/data/speaker-wrapped';
 import type { Speech, TopicRankingsData } from '@/lib/search-utils';
 import { resolveAssetUrl, type Edition, type EditionRegistry } from './registry';
 import type { EditionContent, EditionSummary, WordsAsset, WordRankingsAsset } from '@/generated/wrapped-contract-v1';
+import { takePrefetched } from './prefetch';
 
 export type EditionLoadErrorKind = 'unknown-edition' | 'invalid-contract' | 'missing-asset' | 'http' | 'network';
 
@@ -66,7 +67,7 @@ export async function fetchJson(url: string, timing?: EditionAssetTiming): Promi
   const started = performance.now();
   let response: Response;
   try {
-    response = await fetch(url, { redirect: 'error' });
+    response = await (takePrefetched(url) ?? fetch(url, { redirect: 'error' }));
   } catch {
     throw new EditionLoadError('network', `Network error while loading ${url}`, url);
   }

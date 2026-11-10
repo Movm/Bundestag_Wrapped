@@ -8,6 +8,7 @@ import { SEO } from '@/components/seo/SEO';
 import { SITE_CONFIG } from '@/components/seo/constants';
 import { themeMusic, getThemeForSlide } from '@/lib/theme-music';
 import { whenTrulyIdle } from '@/lib/when-idle';
+import { dismissBootCover } from '@/cover/shell';
 import { clearWrappedProgress } from '@/lib/wrapped-storage';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
@@ -159,6 +160,9 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
   const isShareable = SHAREABLE_SLIDES.has(currentSection);
   const shareData = useSlideShareData(isShareable ? currentSection : 'intro');
 
+  // A failed load must not stay hidden behind the boot cover.
+  useEffect(() => { if (error) dismissBootCover(); }, [error]);
+
   if (loading) {
     return null;
   }
@@ -204,7 +208,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
           onSectionChange={handleSectionChange}
         >
           {activeSlides.map((slideId, index) => (
-            <SlideSection key={slideId} id={slideId} forwardBlocked={(slideId === 'intro' && !introStarted) || (slideId.startsWith('quiz-') && !(slideId in (quizAnswers ?? {})))} active={Math.abs(index - activeSlides.findIndex(id => id === currentSection)) <= 1}>
+            <SlideSection key={slideId} id={slideId} className={slideId === 'intro' ? 'story-section--cover' : undefined} forwardBlocked={(slideId === 'intro' && !introStarted) || (slideId.startsWith('quiz-') && !(slideId in (quizAnswers ?? {})))} active={Math.abs(index - activeSlides.findIndex(id => id === currentSection)) <= 1}>
               <SlideRenderer
                 slide={slideId}
                 onComplete={slideCallbacks[slideId].onComplete}
