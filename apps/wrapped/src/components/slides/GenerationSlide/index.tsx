@@ -38,9 +38,9 @@ function Dots({ total, highlighted }: { total: number; highlighted: number }) {
 export function GenerationIntroSlide({ generations }: { generations: GenerationComparison }) {
   return (
     <Slide shapes="orbit">
-      <Display size="xl"><Mark>Gen Z</Mark> im Bundestag.</Display>
+      <Display size="xl">Wie jung ist das <Mark>Rednerpult?</Mark></Display>
       <motion.p variants={ENTER.rise} className="ds-statement">
-        {number.format(generations.speakerCount)} von {number.format(generations.totalSpeakers)} Abgeordneten am Rednerpult sind {generations.bornFrom} oder später geboren.
+        {number.format(generations.speakerCount)} von {number.format(generations.totalSpeakers)} Abgeordneten, die gesprochen haben, sind ab {generations.bornFrom} geboren. Das ist die Gen Z.
       </motion.p>
       <Dots total={generations.totalSpeakers} highlighted={generations.speakerCount} />
     </Slide>
@@ -57,11 +57,11 @@ export function GenerationInfoSlide({ generations }: { generations: GenerationCo
       footer={<Note className="ds-note--plate">Gen Z: geboren ab {generations.bornFrom}, laut Stammdaten des Bundestags. Verglichen mit älteren Abgeordneten derselben Fraktionen.</Note>}
     >
       <motion.div variants={ENTER.stamp} className="self-start rotate-[-4deg]">
-        <Eyebrow>So spricht die Gen Z</Eyebrow>
+        <Eyebrow>So reden die Jüngeren</Eyebrow>
       </motion.div>
       {words.length > 0 && (
         <div className="flex flex-col items-start gap-3">
-          <Display size="md">Sagt öfter</Display>
+          <Display size="md">Öfter als ältere Abgeordnete derselben Fraktion</Display>
           <ChipCloud words={words} label="Wörter, die Gen-Z-Abgeordnete öfter sagen" />
           {fewer.length > 0 && <motion.p variants={ENTER.rise} className="m-0 text-base font-semibold">Seltener: {fewer.join(', ')}</motion.p>}
         </div>

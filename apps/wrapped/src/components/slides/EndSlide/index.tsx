@@ -3,7 +3,9 @@ import { Link } from 'react-router';
 import { Display, Eyebrow, Lead, Note } from '@/design-system/components/Type';
 import { ActionButton } from '@/design-system/components/ActionButton';
 import { Enter, Slide } from '@/design-system/components/Slide';
-import { END_SLIDE_CONTENT } from '@/shared/end-slide';
+import { END_SLIDE_CONTENT, quizTier } from '@/shared/end-slide';
+import { useCorrectCount } from '@/stores/quizStore';
+import type { SlideType } from '@/components/main-wrapped/constants';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionPath, editionSurface } from '@/edition/surface';
 
@@ -45,6 +47,8 @@ function InstagramIcon() {
 
 interface EndSlideProps {
   onRestart?: () => void;
+  totalQuestions?: number;
+  quizSlideIds?: readonly SlideType[];
 }
 
 const SOCIAL_ICONS: Record<string, React.FC> = {
@@ -56,8 +60,10 @@ const SOCIAL_ICONS: Record<string, React.FC> = {
 
 const LINK_BUTTON = 'ds-button ds-button--md ds-button--outline';
 
-export const EndSlide = memo(function EndSlide({ onRestart }: EndSlideProps) {
+export const EndSlide = memo(function EndSlide({ onRestart, totalQuestions = 0, quizSlideIds = [] }: EndSlideProps) {
   const surface = editionSurface(useOptionalEdition());
+  const correctCount = useCorrectCount(surface, quizSlideIds);
+  const tier = quizTier(correctCount, totalQuestions);
   return (
     <Slide shapes="cover">
       <Enter><Eyebrow>{END_SLIDE_CONTENT.header.label}</Eyebrow></Enter>
@@ -65,6 +71,11 @@ export const EndSlide = memo(function EndSlide({ onRestart }: EndSlideProps) {
         <span className="block text-wr-pink">Bundestag</span>{' '}
         <span className="block">Wrapped{surface.year ? ` ${surface.year}` : ''}</span>
       </Display>
+      {tier && (
+        <Lead className="max-w-[38rem]">
+          <strong>{correctCount} von {totalQuestions} richtig: {tier.label}.</strong> {tier.line}
+        </Lead>
+      )}
       <Lead className="max-w-[38rem]">{END_SLIDE_CONTENT.message.primary}</Lead>
       <Enter className="flex flex-wrap items-center gap-3">
         <ActionButton size="lg" icon="right" onClick={onRestart}>{END_SLIDE_CONTENT.buttons.restart}</ActionButton>

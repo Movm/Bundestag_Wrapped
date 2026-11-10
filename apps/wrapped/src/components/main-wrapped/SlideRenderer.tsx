@@ -415,7 +415,7 @@ export const SlideRenderer = memo(function SlideRenderer({
       return <ShareSlide totalQuestions={activeQuizSlides.length} quizSlideIds={activeQuizSlides} />;
 
     case 'finale':
-      return <EndSlide onRestart={onRestart} />;
+      return <EndSlide onRestart={onRestart} totalQuestions={activeQuizSlides.length} quizSlideIds={activeQuizSlides} />;
 
     default:
       return null;
