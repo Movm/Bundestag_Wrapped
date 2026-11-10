@@ -25,19 +25,21 @@ export function SwipeLayout({ engine, questionId }: QuizLayoutProps) {
               type="button"
               className="ds-swipe-btn ds-swipe-btn--no"
               aria-disabled={answered || undefined}
+              aria-label="Nein, nächste Karte"
               onClick={() => { if (!answered) setIndex((index + 1) % options.length); }}
             >
-              <span aria-hidden="true">✕ </span>Nein<span className="sr-only">, nächste Karte</span>
+              <span aria-hidden="true">✕ </span>Nein
             </button>
             <button
               type="button"
               className="ds-swipe-btn ds-swipe-btn--yes"
               data-status={shown.status}
               aria-disabled={answered || undefined}
+              aria-label={`Ja, ${shown.text}${shown.statusWord ? `, ${shown.statusWord}` : ''}`}
               onClick={() => { if (!answered) shown.select(); }}
             >
-              <span aria-hidden="true">✓ </span>Ja<span className="sr-only">, {shown.text}</span>
-              {shown.statusWord && <span className="ds-choice__tag">{shown.status === 'correct' ? '✓ ' : '✕ '}{shown.statusWord}</span>}
+              <span aria-hidden="true">✓ </span>Ja
+              {shown.statusWord && <span className="ds-choice__tag" aria-hidden="true">{shown.status === 'correct' ? '✓ ' : '✕ '}{shown.statusWord}</span>}
             </button>
           </div>
         </div>
