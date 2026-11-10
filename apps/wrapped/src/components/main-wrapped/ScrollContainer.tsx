@@ -1,4 +1,4 @@
-import { useCallback, useRef, useImperativeHandle, forwardRef, useLayoutEffect, useEffect, useState, useId, Children, isValidElement, type RefObject, type ReactNode } from 'react';
+import { startTransition, useCallback, useRef, useImperativeHandle, forwardRef, useLayoutEffect, useEffect, useState, useId, Children, isValidElement, type RefObject, type ReactNode } from 'react';
 import { ProgressSegments } from '@/design-system/components/ProgressSegments';
 import { surfaceForSlide } from '@/design-system/surfaces';
 import { MotionConfig } from 'motion/react';
@@ -97,11 +97,18 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
         const shouldFocus = (focusOnArrival && !focusMoved) || (focused instanceof HTMLElement && container.contains(focused) && !sections[active].contains(focused));
         focusOnArrival = false;
         const id = sections[active].id;
-        setActiveId(id);
         contentFraction = Math.max(0, container.scrollTop - top(active)) / Math.max(1, sections[active].offsetHeight - container.clientHeight);
         readingFraction = (container.scrollTop - top(active) + container.clientHeight / 2) / Math.max(1, sections[active].offsetHeight);
-        callback.current?.(id);
-        updatePosition();
+        // Re-rendering the story for the arrival is the biggest update of a step.
+        // As a transition React renders it interruptibly, so it never shares a
+        // frame with the browser's own work for the scroll (Chrome trace: one
+        // partially presented frame on the first arrival otherwise). Focus and
+        // inert below are set on the DOM directly and do not wait for it.
+        startTransition(() => {
+          setActiveId(id);
+          callback.current?.(id);
+          updatePosition();
+        });
         if (shouldFocus) {
           sections[index].inert = false;
           sections[index].removeAttribute('aria-hidden');

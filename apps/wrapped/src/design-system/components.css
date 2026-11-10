@@ -152,8 +152,12 @@
 .ds-button--lg { min-height: 4rem; padding: 0 2.1rem; font-size: 1.25rem; }
 .ds-button--contrast { background: var(--surface-contrast); color: var(--surface-on-contrast); border: 0; }
 .ds-button--outline { background: transparent; color: var(--surface-on); border: 2px solid currentColor; }
+/* Own compositor layer from the start, and no rotation on hover: promoting the
+   button and re-rasterising its rotated label on first hover cost a frame
+   (Chrome trace, 4× CPU, 5/5 runs; with this rule 0/5). */
+.ds-button { will-change: transform; }
 @media (hover: hover) and (pointer: fine) {
-  .ds-button:hover { transform: scale(1.05) rotate(-2deg); }
+  .ds-button:hover { transform: scale(1.04); }
 }
 .ds-button:active { transform: scale(0.97); }
 
