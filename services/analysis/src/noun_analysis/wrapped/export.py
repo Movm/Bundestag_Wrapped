@@ -986,6 +986,7 @@ class ExportMixin:
                 "male": distribution["male"],
                 "female": distribution["female"],
                 "unknown": distribution["unknown"],
+                "bySource": self.get_gender_source_counts(),
                 "femalePercent": round((distribution["female"] / total_known) * 100, 1) if total_known > 0 else 0,
             },
             "byParty": parties_gender,
