@@ -12,7 +12,7 @@ export const POP: Transition = { type: 'spring', stiffness: 260, damping: 22, ma
 const FADE: Transition = { duration: 0.35, ease: [0.23, 1, 0.32, 1] };
 
 export const ENTER = {
-  rise: { hidden: { opacity: 0, y: 48 }, visible: { opacity: 1, y: 0, transition: { ...POP, opacity: FADE } } },
+  rise: { hidden: { opacity: 0, y: 32 }, visible: { opacity: 1, y: 0, transition: { ...POP, opacity: FADE } } },
   slide: { hidden: { opacity: 0, x: -96, rotate: -3 }, visible: { opacity: 1, x: 0, rotate: 0, transition: { ...POP, opacity: FADE } } },
   stamp: { hidden: { opacity: 0, scale: 1.8, rotate: -24 }, visible: { opacity: 1, scale: 1, rotate: 0, transition: { ...POP, opacity: FADE } } },
   pop: { hidden: { opacity: 0, scale: 0 }, visible: { opacity: 1, scale: 1, transition: { ...POP, opacity: FADE } } },
@@ -25,8 +25,8 @@ export type EnterKind = keyof typeof ENTER;
 
 export const STAGGER: Variants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.11, delayChildren: 0.12 } },
+  visible: { transition: { staggerChildren: 0.07, delayChildren: 0.04 } },
 };
 
-/** Slides enter when about a third is on screen, once per mount. */
-export const IN_VIEW = { once: true, amount: 0.3 } as const;
+/** Slides enter when about a fifth is on screen, once per mount. */
+export const IN_VIEW = { once: true, amount: 0.2 } as const;
