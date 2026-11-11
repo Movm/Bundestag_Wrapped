@@ -18,4 +18,5 @@ export { ShareSlide } from './ShareSlide';
 export { EndSlide } from './EndSlide';
 export { MentionIntroSlide, MentionInfoSlide } from './MentionSlide';
 export { GenerationIntroSlide, GenerationInfoSlide } from './GenerationSlide';
+export { ChancellorIntroSlide, ChancellorSplitSlide, ChancellorTopicsSlide, ChancellorWordsSlide } from './ChancellorSlide';
 export { RankingMovementSlide, SignatureWordMovementSlide, TopicRiserContextSlide, YouthHistorySlide, YouthLanguageResultSlide } from './YearOverYearSlide';

@@ -30,6 +30,10 @@ import {
   MentionInfoSlide,
   GenerationIntroSlide,
   GenerationInfoSlide,
+  ChancellorIntroSlide,
+  ChancellorSplitSlide,
+  ChancellorTopicsSlide,
+  ChancellorWordsSlide,
 } from '@/components/slides';
 import { SlideInfo } from '@/components/slides/shared';
 import type { SlideData } from '@/lib/slide-sharepics';
@@ -261,6 +265,18 @@ function GenerationSlideWrapper({ part }: { part: 'intro' | 'info' }) {
     : <GenerationInfoSlide generations={generations} saidNoYouthWord={youthGeneration === 'older'} />;
 }
 
+function ChancellorSlideWrapper({ part }: { part: 'intro' | 'split' | 'topics' | 'words' }) {
+  const chancellor = useFullWrappedData()?.chancellor;
+  const year = editionSurface(useOptionalEdition()).year;
+  if (!chancellor) return null;
+  switch (part) {
+    case 'intro': return <ChancellorIntroSlide chancellor={chancellor} year={year} />;
+    case 'split': return <ChancellorSplitSlide chancellor={chancellor} year={year} />;
+    case 'topics': return <ChancellorTopicsSlide chancellor={chancellor} />;
+    case 'words': return <ChancellorWordsSlide chancellor={chancellor} />;
+  }
+}
+
 // ============================================================================
 // Main SlideRenderer
 // ============================================================================
@@ -373,6 +389,7 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'quiz-tone':
     case 'quiz-gender':
     case 'quiz-mention':
+    case 'quiz-chancellor':
     case 'quiz-genz': {
       const question = quizzes[slide];
       if (!question) return null;
@@ -403,6 +420,7 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'info-moin':
     case 'info-tone':
     case 'info-gender':
+    case 'info-chancellor':
       return <InfoSlideWrapper slide={slide} />;
 
     case 'reveal-topic-risers':
@@ -429,6 +447,18 @@ export const SlideRenderer = memo(function SlideRenderer({
 
     case 'info-mention':
       return <MentionSlideWrapper part="info" />;
+
+    case 'intro-chancellor':
+      return <ChancellorSlideWrapper part="intro" />;
+
+    case 'reveal-chancellor':
+      return <ChancellorSlideWrapper part="split" />;
+
+    case 'reveal-chancellor-topics':
+      return <ChancellorSlideWrapper part="topics" />;
+
+    case 'reveal-chancellor-words':
+      return <ChancellorSlideWrapper part="words" />;
 
     case 'intro-genz':
       return <GenerationSlideWrapper part="intro" />;

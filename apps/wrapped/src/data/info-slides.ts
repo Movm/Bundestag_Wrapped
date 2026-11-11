@@ -77,6 +77,12 @@ export const INFO_SLIDES: Record<string, InfoSlideContent> = {
     title: 'Redezeit nach Geschlecht',
     body: 'Der Frauenanteil bei Bundestagsreden variiert zwischen Fraktionen. Die Einordnung bezieht sich ausschließlich auf die Daten dieser Edition.',
   },
+  'info-chancellor': {
+    emoji: '🧭',
+    title: 'Innen oder außen? So zählen wir.',
+    body: 'Wir zählen Themenwörter aus seinen Reden und Antworten, keine Zwischenrufe. Europa, Außenpolitik, Verteidigung und Außenhandel sind außen. Der Rest ist innen.',
+    highlight: 'Europa, Außenpolitik, Verteidigung und Außenhandel sind außen.',
+  },
   'info-discriminatory': {
     emoji: '⚠️',
     title: 'Diskriminierende Sprache',
