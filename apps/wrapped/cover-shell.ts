@@ -32,19 +32,31 @@ async function bootScript(): Promise<string> {
   return result.output[0].type === 'chunk' ? result.output[0].code : '';
 }
 
-function currentEditionYear(): string | null {
+interface CoverRegistry { year: string | null; retired: string[] }
+
+/**
+ * The current year for "/" and the story routes that must not show the cover:
+ * superseded editions show the construction page instead, and "" stands for "/"
+ * while the current edition itself is superseded.
+ */
+function coverRegistry(): CoverRegistry {
   try {
-    const registry = JSON.parse(readFileSync(path.resolve(import.meta.dirname, 'public/data/editions.json'), 'utf8'));
-    return /^\d{4}$/.test(registry.currentEdition) ? registry.currentEdition : null;
+    const registry = JSON.parse(readFileSync(path.resolve(import.meta.dirname, 'public/data/editions.json'), 'utf8')) as {
+      currentEdition: string; editions: { id: string; status: string }[];
+    };
+    const retired = registry.editions.filter(edition => edition.status === 'superseded').map(edition => edition.id);
+    if (retired.includes(registry.currentEdition)) retired.push('');
+    return { year: /^\d{4}$/.test(registry.currentEdition) ? registry.currentEdition : null, retired };
   } catch {
-    return null;
+    return { year: null, retired: [] };
   }
 }
 
 /**
  * Puts the story cover into index.html so it paints and animates before the
  * app bundle has loaded. React's IntroSlide later adopts the same element
- * (src/cover/shell.ts). Only story routes ("/" and "/<year>") show it.
+ * (src/cover/shell.ts). Only story routes ("/" and "/<year>") of an edition
+ * that is not superseded show it; boot.ts follows the `cover-boot` class set here.
  */
 export function coverShellPlugin(): Plugin {
   let isBuild = false;
@@ -55,14 +67,14 @@ export function coverShellPlugin(): Plugin {
       isBuild = config.command === 'build';
     },
     async transformIndexHtml(_html, context) {
-      const year = currentEditionYear();
+      const { year, retired } = coverRegistry();
       const storyChunk = context.bundle && Object.values(context.bundle).find(
         chunk => chunk.type === 'chunk' && chunk.facadeModuleId?.endsWith('src/components/MainWrappedPage.tsx'),
       );
       // Runs before first paint: dark ground, current year for "/", and an
       // early fetch of the story chunk, all only on story routes.
       const preload = (rel: string, href: string, extra = '') => `l=document.createElement('link');l.rel='${rel}';l.href='${href}';${extra}document.head.appendChild(l);`;
-      const head = `if(${STORY_ROUTE}.test(location.pathname)){var d=document.documentElement,l;d.classList.add('cover-boot');${year ? `d.dataset.coverYear='${year}';` : ''}`
+      const head = `var m=location.pathname.match(${STORY_ROUTE});if(m&&${JSON.stringify(retired)}.indexOf(m[1]||'')<0){var d=document.documentElement,l;d.classList.add('cover-boot');${year ? `d.dataset.coverYear='${year}';` : ''}`
         + preload('preload', '/cover-adler.webp', "l.as='image';l.fetchPriority='high';")
         + (storyChunk ? preload('modulepreload', `/${storyChunk.fileName}`) : '')
         + '}';

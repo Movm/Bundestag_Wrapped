@@ -32,6 +32,23 @@ describe('production edition guard', () => {
     expect(checkProductionEditions(root).currentEdition).toBe('2025');
   });
 
+  it('accepts a superseded current edition as the closed front door, but not a draft', ({ task }) => {
+    const root = path.join('/tmp', `wrapped-superseded-${task.id}`);
+    writeJson(path.join(root, 'editions.json'), {
+      currentEdition: '2025',
+      editions: [
+        { id: '2025', status: 'superseded' },
+        { id: '2026', status: 'preview', access: 'basic-auth', manifestUrl: '/data/2026/preview/manifest.json' },
+      ],
+    });
+    writeJson(path.join(root, '2026/preview/manifest.json'), { status: 'preview' });
+    expect(checkProductionEditions(root).currentEdition).toBe('2025');
+
+    const draftRoot = path.join('/tmp', `wrapped-draft-current-${task.id}`);
+    writeJson(path.join(draftRoot, 'editions.json'), { currentEdition: '2025', editions: [{ id: '2025', status: 'draft' }] });
+    expect(() => checkProductionEditions(draftRoot)).toThrow('published or superseded');
+  });
+
   it('rejects unprotected registry entries and unregistered preview artifacts', ({ task }) => {
     const registryRoot = path.join('/tmp', `wrapped-registry-preview-${task.id}`);
     writeJson(path.join(registryRoot, 'editions.json'), {
