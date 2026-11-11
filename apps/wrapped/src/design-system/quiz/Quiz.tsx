@@ -66,9 +66,12 @@ export function Quiz({ quiz, isAnswered, onAnswer, seed, layout, gapSentence, ba
             transition={{ type: 'spring', stiffness: 260, damping: 22 }}
           >
             <p className="ds-result__verdict">
-              <span aria-hidden="true">{engine.verdict}</span>
+              <span aria-hidden="true">{engine.selected === null ? engine.verdict : engine.isCorrect ? 'Genau richtig!' : 'Diesmal nicht.'}</span>
               <span className="sr-only">{engine.spoken}</span>
             </p>
+            {engine.selected !== null && !engine.isCorrect && (
+              <p aria-hidden="true" className="ds-result__answer"><span className="ds-eyebrow ds-eyebrow--contrast">Richtig ist:</span> <strong>{engine.quiz.correctAnswer}</strong></p>
+            )}
             {engine.quiz.explanation.map((line, index) => <p key={index} className="ds-result__text">{line}</p>)}
           </motion.div>
         )}

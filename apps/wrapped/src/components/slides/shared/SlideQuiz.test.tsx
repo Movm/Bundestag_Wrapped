@@ -84,6 +84,7 @@ it('keeps the result on the slide with the answer in words and opens no popup', 
   await act(async () => { await new Promise(resolve => setTimeout(resolve, 700)); });
   expect(document.querySelector('dialog')).toBeNull();
   const result = container.querySelector('[data-testid="quiz-result"]')!;
-  expect(result.textContent).toContain('Diesmal nicht. Richtig ist: A');
+  expect(result.querySelector('.ds-result__verdict [aria-hidden]')!.textContent).toBe('Diesmal nicht.');
+  expect(result.querySelector('.ds-result__answer')!.textContent).toBe('Richtig ist: A');
   await act(async () => root.unmount());
 });
