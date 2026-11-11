@@ -15,6 +15,8 @@ export interface CoverController {
   readonly root: HTMLElement;
   /** Called on the "Los geht’s" press itself (sound, music). */
   onPress: (() => void) | null;
+  /** Called when a mouse pointer enters "Los geht’s" (sound). */
+  onHover: (() => void) | null;
   /** Called when the seats start assembling (sound). */
   onAssemble: (() => void) | null;
   /** Called once the pink wipe covers the screen (or at once with reduced motion). */
@@ -333,6 +335,7 @@ export function createCover(root: HTMLElement, options: { eagleSrc: string; year
   const controller: CoverController = {
     root,
     onPress: null,
+    onHover: null,
     onAssemble: null,
     onStart: null,
     get exiting() { return exiting; },
@@ -365,6 +368,7 @@ export function createCover(root: HTMLElement, options: { eagleSrc: string; year
   };
 
   startButton.addEventListener('click', exit);
+  startButton.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse' && !exiting) controller.onHover?.(); });
   controller.setYear(options.year);
   // Stars are drawn at the layer's real size: on first attach (a cover can be
   // created detached) and again whenever that size changes.

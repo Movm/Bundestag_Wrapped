@@ -1,6 +1,6 @@
 import type { PartyStats } from '@/data/wrapped';
-import { Enter, Slide } from '@/design-system/components/Slide';
-import { Display, Eyebrow, Mark, FitWord, Note } from '@/design-system/components/Type';
+import { Slide } from '@/design-system/components/Slide';
+import { Display, Mark, FitWord, Note } from '@/design-system/components/Type';
 
 const factor = new Intl.NumberFormat('de-DE', { maximumFractionDigits: 1 });
 import { PartyBlock, PartyGrid } from '@/design-system/components/PartyBlock';
@@ -17,12 +17,9 @@ export function ResultView({ parties }: ResultViewProps) {
       shapes="corner"
       footer={<Note className="ds-note--plate">Jeweils im Vergleich zum Durchschnitt der übrigen Fraktionen, gemessen pro 1.000 Wörter. Ein besonders hoher Faktor kann entstehen, wenn ein Wort bei den anderen kaum vorkommt.</Note>}
     >
-      <div className="flex flex-col gap-4">
-        <Enter><Eyebrow>Jede Fraktion setzt andere Akzente</Eyebrow></Enter>
-        <Display size="xl" face="wide">
-          An diesen Wörtern bleibt <Mark>man hängen.</Mark>
-        </Display>
-      </div>
+      <Display size="xl" face="wide">
+        Die <Mark>Top-Wörter</Mark> der Parteien
+      </Display>
       <PartyGrid label="Typische Wörter je Fraktion">
         {topParties.map(party => {
           const [lead, ...rest] = party.signatureWords;
