@@ -117,8 +117,8 @@ for (const viewport of [{ width: 320, height: 568 }, { width: 390, height: 844 }
         await section.evaluate(element => element.parentElement!.scrollTo({ top: element.offsetTop, behavior: 'instant' }));
         await expect(section).toHaveAttribute('data-slide-effects-active', 'true');
         await expect(section).not.toHaveAttribute('inert', '');
-        const bounds = await section.evaluate(element => ({ content: element.scrollWidth, width: element.clientWidth }));
-        expect(bounds.content, await section.getAttribute('id') ?? path).toBeLessThanOrEqual(bounds.width + 1);
+        // Entrances may overshoot for a few frames (a stamp starts scaled up); judge the settled layout.
+        await expect.poll(() => section.evaluate(element => element.scrollWidth - element.clientWidth), { message: await section.getAttribute('id') ?? path }).toBeLessThanOrEqual(1);
       }
     }
   });
