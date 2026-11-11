@@ -76,8 +76,8 @@ export function RankingMovementSlide({ analysis, kind }: { analysis: YearOverYea
 
 function MovementBadge({ item, size = 'md' }: { item: SignatureWordMovement; size?: 'sm' | 'md' }) {
   const small = size === 'sm' ? ' ds-delta--sm' : '';
-  if (item.previousRank === null) return <span className={`ds-contrast ds-delta${small}`}>Neu</span>;
-  if (item.currentRank === null) return <span className={`ds-contrast ds-delta${small}`}>Raus</span>;
+  if (item.previousRank === null) return <span className={`ds-contrast ds-delta${small}`}>Neu dabei</span>;
+  if (item.currentRank === null) return <span className={`ds-contrast ds-delta${small}`}>Nicht mehr dabei</span>;
   return <Delta change={item.previousRank - item.currentRank} size={size} />;
 }
 
@@ -86,13 +86,14 @@ export function SignatureWordMovementSlide({ analysis }: { analysis: YearOverYea
   return (
     <Slide
       shapes="corner"
-      footer={<Note className="ds-note--plate">„Neu“ und „Raus“: Wechsel unter den fünf auffälligsten Wörtern jeder Fraktion.</Note>}
+      footer={<Note className="ds-note--plate">„Neu dabei“ heißt: neu unter den ersten fünf. Das Wort kann schon im Vorjahr gefallen sein.</Note>}
     >
       <div className="flex flex-col gap-4">
-        <Enter><Eyebrow>Verglichen mit {analysis.baseline.editionId}</Eyebrow></Enter>
+        <Enter><Eyebrow>Im Vergleich zu {analysis.baseline.editionId}</Eyebrow></Enter>
         <Display size="xl" face="wide">
-          Typische Wörter <Mark>im Wandel.</Mark>
+          Neue Wörter vorn. <Mark>Andere fallen raus.</Mark>
         </Display>
+        <Lead>So haben sich die fünf typischsten Wörter jeder Fraktion verändert.</Lead>
       </div>
       <PartyGrid label="Typische Wörter im Wandel je Fraktion">
         {parties.map(party => {
