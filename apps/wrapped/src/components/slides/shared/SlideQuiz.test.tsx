@@ -43,7 +43,7 @@ it('announces the result in a polite live region without moving focus', async ()
   const answer = button('A');
   answer.focus();
   await act(async () => answer.click());
-  expect(region.textContent).toContain('Richtig! Richtige Antwort: A');
+  expect(region.textContent).toContain('Deine Antwort ist richtig.');
   expect(region.textContent).toContain('Weil.');
   expect(document.activeElement).toBe(answer);
   expect(answer.getAttribute('aria-disabled')).toBe('true');
@@ -55,7 +55,7 @@ it('announces the result in a polite live region without moving focus', async ()
 it('says wrong answers in words, not only in color', async () => {
   const root = await renderQuiz();
   await act(async () => button('B').click());
-  expect(container.querySelector('[role="status"]')!.textContent).toContain('Nicht ganz. Richtige Antwort: A');
+  expect(container.querySelector('[role="status"]')!.textContent).toContain('Deine Antwort ist falsch. Richtig ist: A.');
   expect(button('B').textContent).toContain('falsch');
   await act(async () => root.unmount());
 });
@@ -74,7 +74,7 @@ it('drops confetti but keeps the result under reduced motion', async () => {
   const root = await renderQuiz(true);
   await act(async () => button('A').click());
   expect(container.querySelector('.w-3.h-3')).toBeNull();
-  expect(container.querySelector('[role="status"]')!.textContent).toContain('Richtig!');
+  expect(container.querySelector('[role="status"]')!.textContent).toContain('Genau richtig!');
   await act(async () => root.unmount());
 });
 
@@ -87,10 +87,10 @@ it('opens the result as a modal dialog with the answer in words, and closes back
   await act(async () => { await new Promise(resolve => setTimeout(resolve, 700)); });
   const dialog = document.querySelector('dialog')!;
   expect(dialog.hasAttribute('open')).toBe(true);
-  expect(dialog.textContent).toContain('Knapp daneben.');
-  expect(dialog.textContent).toContain('Richtige Antwort');
+  expect(dialog.textContent).toContain('Diesmal nicht.');
+  expect(dialog.textContent).toContain('Richtig ist:');
   expect(dialog.textContent).toContain('A');
-  const close = [...dialog.querySelectorAll('button')].find(b => b.textContent?.includes('Zum Quiz'))!;
+  const close = [...dialog.querySelectorAll('button')].find(b => b.textContent?.includes('Zurück zur Frage'))!;
   await act(async () => close.click());
   expect(document.querySelector('dialog')?.hasAttribute('open') ?? false).toBe(false);
   await act(async () => root.unmount());

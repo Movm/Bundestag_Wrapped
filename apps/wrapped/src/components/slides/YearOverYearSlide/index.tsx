@@ -4,7 +4,8 @@ import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
 import { TOPIC_BY_ID } from '@/shared/constants/topics';
 import type { TopicRiserContext } from '@/domain/topic-riser-context';
-import { youthWordMeaning, type YouthGeneration } from '@/domain/youth-words';
+import type { YouthGeneration } from '@/domain/youth-words';
+import { atParty, capitalize, cardinal, times } from '@/lib/german-count';
 import { Enter, Slide } from '@/design-system/components/Slide';
 import { Display, Eyebrow, FitWord, Lead, Mark, Note } from '@/design-system/components/Type';
 import { ChipCloud, Delta, RankCard } from '@/design-system/components/Data';
@@ -20,7 +21,17 @@ function movementName(kind: RankingKind, label: string): string {
   return kind === 'topics' ? topicName(label) : label;
 }
 
-/** "Über diese Themen wird mehr geredet": stair-stepped rank cards, biggest riser first. */
+/** Same gain for every shown topic ("Alle drei gewinnen einen Platz …"), otherwise a neutral line. */
+function topicRisersFooter(items: ReadonlyArray<{ rankChange: number }>): string {
+  const gain = items[0]?.rankChange ?? 0;
+  if (items.length > 1 && items.every(item => item.rankChange === gain)) {
+    const places = gain === 1 ? 'einen Platz' : `${cardinal(gain)} Plätze`;
+    return `${items.length === 2 ? 'Beide' : `Alle ${cardinal(items.length)}`} gewinnen ${places} in unserer Themenrangliste.`;
+  }
+  return 'Gezeigt werden Themen, die in beiden Jahren in unserer Themenrangliste stehen.';
+}
+
+/** "Drei Themen rücken nach vorn": stair-stepped rank cards, biggest riser first. */
 export function RankingMovementSlide({ analysis, kind }: { analysis: YearOverYearAnalysis; kind: RankingKind }) {
   const items = analysis[kind]
     .filter(item => item.previousRank !== null && item.rankChange > 0)
@@ -31,17 +42,17 @@ export function RankingMovementSlide({ analysis, kind }: { analysis: YearOverYea
     <Slide
       shapes="corner"
       footer={<Note className="ds-note--plate">{isTopics
-        ? 'Der Rang zeigt, wie viele Wörter in allen Reden zum Thema gehören, nicht die Zahl der Reden. Gezeigt werden Themen, die in beiden Jahren vorkommen.'
+        ? topicRisersFooter(items)
         : 'Gezeigt werden Einträge, die in beiden Jahren vorkommen und Rangplätze gewonnen haben.'}</Note>}
     >
       <div className="flex flex-col items-start gap-4">
         <Enter className="flex flex-wrap items-center gap-3">
           <Eyebrow>{analysis.baseline.editionId}{year ? ` → ${year}` : ''}</Eyebrow>
-          <span className="ds-eyebrow">Rangveränderung</span>
+          {!isTopics && <span className="ds-eyebrow">Rangveränderung</span>}
         </Enter>
         <Display size="xl" face="wide">
           {isTopics
-            ? <>Über diese Themen wird <Mark>mehr geredet.</Mark></>
+            ? <>{items.length === 1 ? 'Ein Thema rückt' : `${capitalize(cardinal(items.length))} Themen rücken`} <Mark>nach vorn.</Mark></>
             : <>Diese Wörter sind <Mark>aufgestiegen.</Mark></>}
         </Display>
       </div>
@@ -51,7 +62,7 @@ export function RankingMovementSlide({ analysis, kind }: { analysis: YearOverYea
             <RankCard
               rank={item.currentRank ?? index + 1}
               label={movementName(kind, item.label)}
-              detail={`Platz ${item.previousRank} → ${item.currentRank}`}
+              detail={`Von Platz ${item.previousRank} auf Platz ${item.currentRank}`}
               change={item.rankChange}
               tone={RANK_TONES[index % RANK_TONES.length]}
               step={index}
@@ -122,33 +133,34 @@ export function YouthLanguageResultSlide({ analysis, generation }: { analysis: Y
   const top = hits[0];
   const speakers = youth.bySpeaker.slice(0, 6);
   const parties = youth.byParty.filter(item => item.party !== 'fraktionslos');
-  const meaning = top ? youthWordMeaning(top.word) : undefined;
-  const winnerLabel = top?.winnerYear ? `Jugendwort ${top.winnerYear}` : 'Jugendwort-Kandidat';
+  const speakersLead = youth.bySpeaker.length > speakers.length
+    ? 'Am häufigsten gesagt haben es:'
+    : speakers.length === 1 ? 'Diese Person hat’s gesagt:' : speakers.length === 2 ? 'Diese beiden haben’s gesagt:' : `Diese ${cardinal(speakers.length)} haben’s gesagt:`;
   return (
     <Slide
       shapes="corner"
-      footer={<Note className="ds-note--plate">Nur Treffer im passenden Zusammenhang, Zitate zählen mit · Vergleich mit {analysis.baseline.editionId}</Note>}
+      footer={<Note className="ds-note--plate">Gezählt werden auch Zitate. Ein Treffer allein verrät noch keine Haltung.</Note>}
     >
       {top ? (
         <div className="flex flex-col items-start gap-3">
-          <Enter><Eyebrow>{winnerLabel}</Eyebrow></Enter>
-          <Display size="xl" face="wide">„{top.word}“ fiel <Mark>{number.format(top.count)}×</Mark> im Bundestag.</Display>
+          <Enter><Eyebrow>Jugendsprache im Plenum</Eyebrow></Enter>
+          <Display size="xl" face="wide">„{capitalize(top.word)}“. <Mark>{capitalize(times(top.count))}.</Mark></Display>
           <Lead>
-            {meaning ? `${meaning} ` : ''}
-            {top.previousCount === 0 ? `Im Vorjahr fiel es kein einziges Mal.` : `Im Vorjahr: ${number.format(top.previousCount)}×.`}
+            {top.previousCount === 0
+              ? `Im gleichen Zeitraum ${analysis.baseline.editionId}: kein Treffer.`
+              : `Im gleichen Zeitraum ${analysis.baseline.editionId}: ${times(top.previousCount)}.`}
           </Lead>
         </div>
       ) : (
         <div className="flex flex-col items-start gap-3">
-          <Display size="xl" face="wide">Kein <Mark>Jugendwort</Mark> im Bundestag.</Display>
-          <Lead>Keiner der Kandidaten fiel in einer Rede.</Lead>
+          <Enter><Eyebrow>Jugendsprache im Plenum</Eyebrow></Enter>
+          <Display size="xl" face="wide">Diesmal ohne <Mark>Jugendwort.</Mark></Display>
+          <Lead>Keiner der {cardinal(youth.words.length)} gesuchten Begriffe wurde in den ausgewerteten Reden im passenden Zusammenhang gefunden.</Lead>
         </div>
       )}
       {speakers.length > 0 && (
         <div className="flex flex-col gap-3">
-          <Enter as="p" className="m-0 text-base font-semibold">
-            Gesagt haben es <span className="font-normal">· Das heißt nicht, dass sie das Wort gut finden.</span>
-          </Enter>
+          <Enter as="p" className="m-0 text-base font-semibold">{speakersLead}</Enter>
           <ul className="m-0 flex list-none flex-wrap gap-2 p-0" aria-label="Abgeordnete mit Jugendwort-Treffern">
             {speakers.map(item => (
               <Enter as="li" key={`${item.name}-${item.party}`} kind="pop">
@@ -170,13 +182,13 @@ export function YouthLanguageResultSlide({ analysis, generation }: { analysis: Y
       )}
       {hits.length > 1 && (
         <Enter className="flex flex-col items-start gap-3">
-          <p className="m-0 text-base font-semibold">Auch gefallen</p>
+          <p className="m-0 text-base font-semibold">Diese Wörter fielen auch:</p>
           <ChipCloud words={hits.slice(1, 6).map(item => `${item.word} ${number.format(item.count)}×`)} label="Weitere Jugendwörter" />
         </Enter>
       )}
-      {misses.length > 0 && (
+      {top && misses.length > 0 && (
         <Enter as="p" className="m-0 max-w-[40rem] text-base">
-          <strong>Kam nie vor:</strong> {misses.map(word => `„${word}“`).join(', ')}.
+          <strong>{misses.length === 1 ? 'Der andere Begriff' : `Die anderen ${cardinal(misses.length)}`}? Kein Treffer.</strong> {misses.map(word => `„${word}“`).join(', ')}.
         </Enter>
       )}
     </Slide>
@@ -187,30 +199,35 @@ function topicName(id: string): string {
   return TOPIC_BY_ID[id]?.name ?? id;
 }
 
-const timesAverage = (ratio: number) => `${new Intl.NumberFormat('de-DE', { maximumFractionDigits: 1 }).format(ratio)}× so oft wie der Bundestagsschnitt`;
+const timesAverage = (ratio: number) => `${new Intl.NumberFormat('de-DE', { maximumFractionDigits: 1 }).format(ratio)}-facher Bundestagsdurchschnitt`;
 
 /** "Wo steckt Wirtschaft drin?": the words behind the topic, the party and the MPs who talk about it most. */
-export function TopicRiserContextSlide({ context, baselineYear }: { context: TopicRiserContext; baselineYear: string }) {
+export function TopicRiserContextSlide({ context }: { context: TopicRiserContext }) {
   const { riser, parties, words, speakers } = context;
   const name = topicName(riser.label);
   const leader = parties[0];
   return (
-    <Slide shapes="corner">
+    <Slide shapes="corner" footer={<Note className="ds-note--plate">Verglichen wird der Anteil an den jeweils gesprochenen Wörtern.</Note>}>
       <div className="flex flex-col items-start gap-3">
-        <Display size="xl">Wo steckt <Mark>{name}</Mark> drin?</Display>
-        <Lead>Von Platz {riser.previousRank} auf Platz {riser.currentRank} seit {baselineYear}. Diese Wörter prägen das Thema:</Lead>
+        <Display size="xl">{riser.currentRank === 1 ? <><Mark>{name}</Mark> liegt vorn.</> : <><Mark>{name}</Mark> ist aufgestiegen.</>} Was steckt dahinter?</Display>
+        <Lead>Diese Wörter zählen zum Thema:</Lead>
       </div>
       {words.length > 0 && <ChipCloud words={words} label={`Häufigste Wörter zum Thema ${name}`} />}
       <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)]">
       {leader && leader.vsAverage > 1 && (
-        <PartyGrid label={`Fraktion, die am meisten über ${name} spricht`}>
-          <PartyBlock party={leader.party}>
-            <FitWord word={`${new Intl.NumberFormat('de-DE', { maximumFractionDigits: 1 }).format(leader.vsAverage)}×`} />
-            <p className="m-0 text-base font-semibold">so oft über {name} wie der Bundestag insgesamt</p>
-          </PartyBlock>
-        </PartyGrid>
+        <div className="flex flex-col gap-3">
+          <Enter as="p" className="m-0 text-base font-semibold">Besonders präsent {atParty(leader.party)}</Enter>
+          <PartyGrid label={`Fraktion, die am meisten über ${name} spricht`}>
+            <PartyBlock party={leader.party}>
+              <FitWord word={`${new Intl.NumberFormat('de-DE', { maximumFractionDigits: 1 }).format(leader.vsAverage)}×`} />
+              <p className="m-0 text-base font-semibold">so hoch ist der Anteil von Wörtern zum Thema {name} im Vergleich zum gesamten Bundestag.</p>
+            </PartyBlock>
+          </PartyGrid>
+        </div>
       )}
       {speakers.length > 0 && (
+        <div className="flex flex-col gap-3">
+        <Enter as="p" className="m-0 text-base font-semibold">Bei diesen Abgeordneten ist der Anteil am höchsten:</Enter>
         <ol className="m-0 flex list-none flex-col gap-3 p-0" aria-label={`Abgeordnete, die im Verhältnis am meisten über ${name} sprechen`}>
           {speakers.map((item, index) => (
             <li key={`${item.name}-${item.party}`}>
@@ -224,6 +241,7 @@ export function TopicRiserContextSlide({ context, baselineYear }: { context: Top
             </li>
           ))}
         </ol>
+        </div>
       )}
       </div>
     </Slide>

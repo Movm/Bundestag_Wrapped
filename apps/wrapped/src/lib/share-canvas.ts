@@ -1,6 +1,7 @@
 import {
   SIZE, MARGIN, drawField, drawBrandHeader, drawFooterUrl, drawHeading, fitSize, setFont, wrapLines, roundedRect, preloadShareAssets,
 } from './share-kit';
+import { resultTitle } from './result-title';
 
 export interface ShareImageData {
   correctCount: number;
@@ -15,65 +16,13 @@ export type ShareCanvasVariant = 'score' | 'title';
 /** Logo and fonts: canvas drawing needs both loaded before the first render. */
 export const preloadLogo = preloadShareAssets;
 
-function getResultMessage(correctCount: number, totalQuestions: number): { title: string; tagline: string } {
-  // Normalize to 0-10 scale
-  const score = Math.round((correctCount / totalQuestions) * 10);
-
-  switch (score) {
-    case 10: return {
-      title: 'Legende!',
-      tagline: 'Perfekt! Du könntest im Bundestag hospitieren.'
-    };
-    case 9: return {
-      title: 'Legende!',
-      tagline: 'Deine Eltern wären so stolz auf dich.'
-    };
-    case 8: return {
-      title: 'Legende!',
-      tagline: 'Fast makellos – da wackelt der Kanzlerstuhl.'
-    };
-    case 7: return {
-      title: 'Demokratie-Star!',
-      tagline: 'Mit dir würden wir in eine Koalition gehen.'
-    };
-    case 6: return {
-      title: 'Demokratie-Star!',
-      tagline: 'Solide! Die Fraktion wäre beeindruckt.'
-    };
-    case 5: return {
-      title: 'Politik-Talent!',
-      tagline: 'Die Hälfte ist geschafft, weiter so!'
-    };
-    case 4: return {
-      title: 'Politik-Talent!',
-      tagline: 'Du bist auf einem guten Weg, bleib dran!'
-    };
-    case 3: return {
-      title: 'Rising Star!',
-      tagline: 'Rom wurde auch nicht an einem Tag erbaut.'
-    };
-    case 2: return {
-      title: 'Rising Star!',
-      tagline: 'Jeder Profi hat mal klein angefangen.'
-    };
-    case 1: return {
-      title: 'Rising Star!',
-      tagline: 'Ein Punkt ist besser als kein Punkt!'
-    };
-    default: return {
-      title: 'Rising Star!',
-      tagline: "Nächstes Mal wird's besser, versprochen!"
-    };
-  }
-}
-
 export function renderShareImage(
   canvas: HTMLCanvasElement,
   data: ShareImageData,
   variant: ShareCanvasVariant = 'score'
 ): void {
   const { correctCount, totalQuestions, userName } = data;
-  const result = getResultMessage(correctCount, totalQuestions);
+  const result = resultTitle(correctCount, totalQuestions) ?? { title: '', line: '' };
   const name = userName?.trim();
 
   canvas.width = SIZE;
@@ -86,17 +35,16 @@ export function renderShareImage(
   const p = drawField(ctx, 'pink', 'corner');
   drawBrandHeader(ctx, p, data.editionTitle ?? 'Bundestag Wrapped');
 
-  // Lead line, then (score variant) the result title as a huge heading.
-  const line1 = variant === 'title'
-    ? (name ? `${name}, du bist eine:` : 'Du bist eine:')
-    : (name ? (name.length <= 14 ? `${name}, du bist` : `${name} ist`) : 'Du bist');
+  // "Das Ergebnis von {Name}", then "{n} von {total} richtig". The title variant
+  // sets the result title as the huge heading, the score variant keeps the numbers big.
   let y = 190;
-  y = drawHeading(ctx, line1, y, p.on, 64, 40) + 6;
-  if (variant === 'score') y = drawHeading(ctx, result.title, y, p.on, 150, 70);
+  if (name) y = drawHeading(ctx, `Das Ergebnis von ${name}`, y, p.on, 44, 28) + 6;
+  y = drawHeading(ctx, `${correctCount} von ${totalQuestions} richtig`, y, p.on, 64, 40) + 6;
+  y = drawHeading(ctx, result.title, y, p.on, variant === 'title' ? 150 : 64, variant === 'title' ? 70 : 40);
 
   // Score on a white plate: huge wide numerals.
   const score = `${correctCount}/${totalQuestions}`;
-  const scoreSize = fitSize(ctx, 'wide', score, SIZE - MARGIN * 2 - 80, variant === 'title' ? 260 : 200, 100);
+  const scoreSize = fitSize(ctx, 'wide', score, SIZE - MARGIN * 2 - 80, variant === 'title' ? 140 : 220, 100);
   const plateY = Math.max(y + 30, variant === 'title' ? 340 : 470);
   const plateH = scoreSize + 70;
   roundedRect(ctx, MARGIN, plateY, SIZE - MARGIN * 2, plateH, 40);
@@ -111,11 +59,11 @@ export function renderShareImage(
   setFont(ctx, 'heading', 38, 800);
   ctx.fillStyle = p.on;
   ctx.textAlign = 'left';
-  wrapLines(ctx, result.tagline, SIZE - MARGIN * 2).slice(0, 2).forEach((line, i) => {
+  wrapLines(ctx, result.line, SIZE - MARGIN * 2).slice(0, 2).forEach((line, i) => {
     ctx.fillText(line, MARGIN, plateY + plateH + 66 + i * 48);
   });
 
-  drawFooterUrl(ctx, p, 'Wie gut kennst du den Bundestag? Teste dein Wissen auf');
+  drawFooterUrl(ctx, p, 'Und wie gut kennst du den Bundestag? Spiel mit:');
 }
 
 function shareFilename(editionId = 'edition', userName?: string): string {

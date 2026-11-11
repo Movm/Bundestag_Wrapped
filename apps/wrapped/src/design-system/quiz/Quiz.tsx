@@ -95,17 +95,17 @@ export function Quiz({ quiz, isAnswered, onAnswer, seed, layout, gapSentence, ba
           </motion.div>
         )}
       </div>
-      {engine.answered && <p className="sr-only">Scroll weiter oder wähle „Weiter“.</p>}
+      {engine.answered && <p className="sr-only">Wähle „Weiter“, um fortzufahren.</p>}
       <AccessibleDialog open={resultOpen} onClose={() => setResultOpen(false)} labelledBy={verdictId}>
         <div className="ds-result-dialog">
           <div className="ds-result-dialog__card" data-surface={engine.isCorrect ? 'pink' : 'ink'}>
             <span aria-hidden="true" className="ds-result-dialog__shape" />
-            <h2 id={verdictId} className="ds-result-dialog__verdict">{engine.isCorrect ? 'Richtig!' : 'Knapp daneben.'}</h2>
-            <p className="ds-result-dialog__answer"><span className="ds-eyebrow ds-eyebrow--contrast">Richtige Antwort</span> <strong>{engine.quiz.correctAnswer}</strong></p>
+            <h2 id={verdictId} className="ds-result-dialog__verdict">{engine.isCorrect ? 'Genau richtig!' : 'Diesmal nicht.'}</h2>
+            <p className="ds-result-dialog__answer"><span className="ds-eyebrow ds-eyebrow--contrast">Richtig ist:</span> <strong>{engine.quiz.correctAnswer}</strong></p>
             {engine.quiz.explanation.map((line, index) => <p key={index} className="ds-result__text">{line}</p>)}
             <div className="ds-result-dialog__actions">
               <ActionButton icon="down" onClick={() => { const from = story.activeId; setResultOpen(false); requestAnimationFrame(() => story.next?.(from)); }}>Weiter</ActionButton>
-              <ActionButton icon="none" variant="outline" onClick={() => setResultOpen(false)}>Zum Quiz</ActionButton>
+              <ActionButton icon="none" variant="outline" onClick={() => setResultOpen(false)}>Zurück zur Frage</ActionButton>
             </div>
           </div>
         </div>

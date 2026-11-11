@@ -44,7 +44,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
   const scrollContainerRef = useRef<ScrollContainerRef>(null);
   const scrollElementRef = useRef<HTMLDivElement>(null);
   const quizConfiguration = useOptionalEdition()?.content?.quiz;
-  const quizModel = useMemo(() => (data ? buildConfiguredEditionQuizModel(data, quizConfiguration) : {}), [data, quizConfiguration]);
+  const quizModel = useMemo(() => (data ? buildConfiguredEditionQuizModel(data, quizConfiguration, surface.year) : {}), [data, quizConfiguration, surface.year]);
   const activeSlides = useMemo(
     () => data ? buildActiveSlidePlan(quizModel, data.moinSpeakers, quizConfiguration, Boolean(data.yearOverYear), Boolean(data.yearOverYear?.youthLanguage.pastWinners?.length)) : SLIDES,
     [data, quizModel, quizConfiguration],
@@ -67,7 +67,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
   );
 
   // Switch the theme music with the section. The first track is started by
-  // "Starten" itself (IntroSlide → themeMusic.startPrimed), inside the click,
+  // "Los geht’s" itself (IntroSlide → themeMusic.startPrimed), inside the click,
   // because browsers only allow audio to start inside a user activation.
   useEffect(() => {
     if (!introStarted) return;
@@ -83,7 +83,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
   }, [introStarted, nextThemeSlide, surface.editionId]);
 
   // Prime the first theme while the reader is still on the cover, so pressing
-  // "Starten" only starts playback, and does so inside the click.
+  // "Los geht’s" only starts playback, and does so inside the click.
   const firstThemeSlide = activeSlides[1];
   useEffect(() => {
     if (introStarted || !firstThemeSlide) return;
@@ -97,7 +97,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
     };
   }, []);
 
-  // "Starten": rendering the started story is a big update. Run it as a
+  // "Los geht’s": rendering the started story is a big update. Run it as a
   // transition (time-sliced, so the click frame stays short) and scroll only
   // after it has committed — before that, the cover is still forward-blocked.
   // A reader who comes back to the cover is already started: just move on.

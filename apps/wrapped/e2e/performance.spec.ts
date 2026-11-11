@@ -75,7 +75,7 @@ test('does not let an old quiz overlay pull the reader back after navigation', a
 test('cancels an intro launch when navigating away and permits starting again', async ({ page }) => {
   await page.goto('/2025');
   const intro = page.locator('[data-slide-id="intro"]');
-  await intro.getByRole('button', { name: 'Starten', exact: true }).click();
+  await intro.getByRole('button', { name: 'Los geht’s', exact: true }).click();
   const target = page.locator('[data-slide-id="reveal-drama"]');
   await jumpToSlide(page, (await target.getAttribute('id'))!);
   await expect(target).toHaveAttribute('data-slide-effects-active', 'true');
@@ -83,7 +83,7 @@ test('cancels an intro launch when navigating away and permits starting again', 
   await expect(target).toHaveAttribute('data-slide-effects-active', 'true');
   await jumpToSlide(page, (await intro.getAttribute('id'))!);
   await expect(intro).toHaveAttribute('data-slide-effects-active', 'true');
-  await expect(intro.getByRole('button', { name: 'Starten', exact: true })).toBeEnabled();
+  await expect(intro.getByRole('button', { name: 'Los geht’s', exact: true })).toBeEnabled();
 });
 
 test('pauses offscreen decoration in reading mode while retaining all slide content', async ({ page }) => {

@@ -1,6 +1,6 @@
 /** Plain-language meaning of a Jugendwort, where the edition explains it. */
 const MEANINGS: Record<string, string> = {
-  ragebait: 'Gemeint sind Inhalte, die gezielt Wut provozieren sollen, um Reichweite zu erzeugen.',
+  ragebait: 'Gemeint sind Inhalte, die absichtlich wütend machen sollen, um Aufmerksamkeit zu bekommen.',
 };
 
 export function youthWordMeaning(word: string): string | undefined {

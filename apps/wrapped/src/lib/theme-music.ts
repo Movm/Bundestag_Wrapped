@@ -16,7 +16,7 @@
  *   confirmed playing. Only a resolved `play()` sets `playing`, so a refused
  *   start is never mistaken for a running one.
  * - A refused start is retried inside the reader's next press.
- * - "Starten" calls `startPrimed()` synchronously in its click, so the first
+ * - "Los geht’s" calls `startPrimed()` synchronously in its click, so the first
  *   track starts with the button, not at some later idle moment.
  * - The idle deck preloads the next section's track, so a change only fades.
  */
@@ -172,7 +172,7 @@ export class ThemeMusicManager {
   }
 
   /**
-   * Remember the first track at once (so an early "Starten" can start it) and
+   * Remember the first track at once (so an early "Los geht’s" can start it) and
    * preload it when the page is idle, so pressing play only has to play.
    */
   prime(theme: ThemeType): () => void {
@@ -180,7 +180,7 @@ export class ThemeMusicManager {
     return whenTrulyIdle(() => this.preload(theme));
   }
 
-  /** Call synchronously inside the "Starten" click: starts the primed track with the button. */
+  /** Call synchronously inside the "Los geht’s" click: starts the primed track with the button. */
   startPrimed(): void {
     if (this.primed) this.playTheme(this.primed);
   }

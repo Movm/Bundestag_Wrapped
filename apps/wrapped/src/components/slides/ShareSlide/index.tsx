@@ -37,14 +37,14 @@ const CanvasPreview = memo(function CanvasPreview({
     <Block tone="white" className="share-preview">
       <canvas ref={canvasRef} className="share-preview__canvas" role="img" aria-label={label} />
       <div className="share-preview__actions">
-        <ActionButton icon="none" onClick={onDownload} aria-label={`${label} speichern`}>
+        <ActionButton icon="none" onClick={onDownload} aria-label={`Bild speichern: ${label}`}>
           <Download size={18} aria-hidden="true" />
-          Speichern
+          Bild speichern
         </ActionButton>
         {canShare && (
-          <ActionButton icon="none" variant="outline" onClick={onShare} aria-label={`${label} teilen`}>
+          <ActionButton icon="none" variant="outline" onClick={onShare} aria-label={`Ergebnis teilen: ${label}`}>
             <Share2 size={18} aria-hidden="true" />
-            Teilen
+            Ergebnis teilen
           </ActionButton>
         )}
       </div>
@@ -139,16 +139,20 @@ export const ShareSlide = memo(function ShareSlide({
     <div ref={containerRef}>
       <Slide shapes="ring">
         <div className="flex flex-col items-start gap-3">
-          <Display size="lg" face="wide">Wie gut kennst du den <Mark>Bundestag?</Mark></Display>
-          <Lead>Teile dein Ergebnis. Schaffen deine Freund:innen mehr als {correctCount} von {totalQuestions}?</Lead>
+          <Display size="lg" face="wide">Du hast deinen Tipp abgegeben. <Mark>Jetzt sind die anderen dran.</Mark></Display>
+          <Lead>
+            {totalQuestions > 0 && correctCount === totalQuestions
+              ? `Alle ${totalQuestions} richtig! Mal sehen, wer mit dir mithalten kann.`
+              : `${correctCount} von ${totalQuestions} richtig. Teile dein Ergebnis und fordere deine Freund:innen heraus.`}
+          </Lead>
         </div>
         <label className="share-name">
-          <span className="sr-only">Dein Name (optional)</span>
+          <span className="sr-only">Dein Name – wenn du magst</span>
           <input
             type="text"
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
-            placeholder="Dein Name (optional)"
+            placeholder="Dein Name – wenn du magst"
             maxLength={30}
             className="share-name__input"
           />
@@ -159,14 +163,14 @@ export const ShareSlide = memo(function ShareSlide({
             onDownload={handleDownloadScore}
             onShare={handleShareScore}
             canShare={canShare}
-            label="Sharepic mit Punktzahl"
+            label="Dein Punktestand"
           />
           <CanvasPreview
             canvasRef={canvasRefTitle}
             onDownload={handleDownloadTitle}
             onShare={handleShareTitle}
             canShare={canShare}
-            label="Sharepic mit Titel"
+            label="Dein Quiztitel"
           />
         </div>
       </Slide>

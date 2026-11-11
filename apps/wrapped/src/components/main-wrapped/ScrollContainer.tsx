@@ -261,7 +261,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
               setNavigationOpen(!navigationOpen);
             }}>{navigationOpen ? 'Navigation schließen' : 'Foliennavigation'}</button>
           <nav id={navigationId} hidden={!navigationOpen} aria-label="Foliennavigation" className="story-navigation">
-            <button type="button" disabled={position.index === 0} onClick={event => controller.current.previous(event.detail === 0)}>Zurück</button>
+            <button type="button" disabled={position.index === 0} onClick={event => controller.current.previous(event.detail === 0)}>Zur vorherigen Folie</button>
             <span className="text-xs text-white/80" aria-hidden="true">Folie {position.index + 1} von {position.count}</span>
             <button type="button" disabled={(!readingMode && position.blocked) || position.index === position.count - 1} onClick={event => controller.current.next(undefined, event.detail === 0)}>Weiter</button>
             <label className="flex items-center justify-center gap-2 min-h-11 text-sm col-span-3">

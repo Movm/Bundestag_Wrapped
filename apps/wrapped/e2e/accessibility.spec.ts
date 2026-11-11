@@ -53,7 +53,7 @@ test('provides persistent quiz feedback', async ({ page }) => {
   const quiz = page.locator('#quiz-topics');
   await expect(quiz).not.toHaveAttribute('inert', '');
   await quiz.getByRole('button').first().click();
-  await expect(quiz.getByRole('status')).toContainText('Richtige Antwort:');
+  await expect(quiz.getByRole('status')).toContainText(/Deine Antwort (ist richtig|ist falsch|wurde gespeichert)/);
   await closeQuizResult(page);
   await page.waitForTimeout(3000);
   await expect(quiz).not.toHaveAttribute('inert', '');

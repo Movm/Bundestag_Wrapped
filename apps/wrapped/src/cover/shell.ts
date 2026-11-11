@@ -8,7 +8,7 @@ export const EAGLE_SRC = '/cover-adler.webp';
 export interface CoverShell {
   controller: CoverController;
   host: HTMLElement;
-  /** "Starten" was pressed before React was ready; the wipe already ran. */
+  /** "Los geht’s" was pressed before React was ready; the wipe already ran. */
   startRequested: boolean;
 }
 

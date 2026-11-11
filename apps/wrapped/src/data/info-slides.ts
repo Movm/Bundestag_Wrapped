@@ -1,3 +1,5 @@
+import { cardinal } from '@/lib/german-count';
+
 /**
  * Info slide content - educational context shown between quiz and reveal
  */
@@ -6,7 +8,7 @@ export interface InfoSlideContent {
   emoji: string;
   title: string;
   body: string;
-  /** Small label above the title; defaults to "Gut zu wissen". */
+  /** Small label above the title; defaults to "Kurz erklärt". */
   eyebrow?: string;
   /** Exact phrase inside `body` to set as a highlighted block. */
   highlight?: string;
@@ -15,15 +17,15 @@ export interface InfoSlideContent {
 export const INFO_SLIDES: Record<string, InfoSlideContent> = {
   'info-disclaimer': {
     emoji: '🧮',
-    title: 'Wir zählen, wir urteilen nicht.',
-    eyebrow: 'So zählen wir',
-    body: 'Gleiche Regeln für alle Fraktionen. Zahlen sind Zählungen, keine Meinung. Verzählt haben wir uns vielleicht trotzdem.',
-    highlight: 'Zahlen sind Zählungen, keine Meinung.',
+    title: 'Wir haben mitgezählt.',
+    eyebrow: 'Kurz, bevor’s losgeht',
+    body: 'Unsere Zahlen kommen aus den Plenarprotokollen. Für alle Fraktionen gelten dieselben Regeln. Wie wir zählen, erklären wir unterwegs.',
+    highlight: 'Für alle Fraktionen gelten dieselben Regeln.',
   },
   'info-topic-riser': {
     emoji: '📈',
-    title: 'Was heißt „aufgestiegen“?',
-    body: 'Wir vergleichen mit demselben Zeitraum im Vorjahr. Der Rang zeigt, wie viele Wörter in den Reden zum Thema gehören.',
+    title: 'Wie kommt ein Thema nach oben?',
+    body: 'Wir zählen passende Begriffe und setzen sie ins Verhältnis zu allen gesprochenen Wörtern. Je größer der Anteil, desto höher der Platz.',
   },
   'info-word-riser': {
     emoji: '🔤',
@@ -32,8 +34,8 @@ export const INFO_SLIDES: Record<string, InfoSlideContent> = {
   },
   'info-youth-language': {
     emoji: '🗣️',
-    title: 'So zählen wir Jugendwörter',
-    body: 'Die Kandidaten von Langenscheidt und die Jugendwörter der Vorjahre, alle Reden. Zitate zählen mit, mehrdeutige Wörter nur im passenden Zusammenhang.',
+    title: 'Jugendsprache trifft Plenarprotokoll.',
+    body: 'Wir haben nach Begriffen aus der Jugendwort-Auswahl gesucht. Zitate zählen mit. Bei mehrdeutigen Wörtern prüfen wir den Zusammenhang.',
   },
   'info-topics': {
     emoji: '📊',
@@ -47,8 +49,8 @@ export const INFO_SLIDES: Record<string, InfoSlideContent> = {
   },
   'info-signature': {
     emoji: '📊',
-    title: 'Was heißt „typisch“?',
-    body: 'Häufiger als bei den anderen Fraktionen. Nicht besser, nicht schlechter, nur anders.',
+    title: 'Was macht ein Wort typisch?',
+    body: 'Es fällt in einer Fraktion häufig – und deutlich häufiger als bei den anderen. Beides zusammen bestimmt den Platz in unserer Liste.',
   },
   'info-speeches': {
     emoji: '🎤',
@@ -81,3 +83,33 @@ export const INFO_SLIDES: Record<string, InfoSlideContent> = {
     body: 'Wir tracken vier Kategorien: fremdenfeindlich (z.B. "Überfremdung"), homophob (z.B. "Genderideologie"), islamophob (z.B. "Islamisierung") und Dog Whistles (z.B. "Remigration"). Aber wie oft verwenden die Parteien diskriminierende oder herablassende Sprache pro 1000 Wörter?',
   },
 };
+
+/** What the edition's data adds to the static info slides (years, counts). */
+export interface InfoSlideContext {
+  year?: number | null;
+  baselineYear?: string | null;
+  /** Candidates of the Jugendwort lexicon this edition searched for. */
+  youthWordCount?: number;
+  /** Jugendwörter of earlier years are counted too. */
+  hasPastWinners?: boolean;
+}
+
+/** The info slide with the numbers its text names filled in from the data. */
+export function resolveInfoSlide(slide: string, context: InfoSlideContext): InfoSlideContent {
+  const content = INFO_SLIDES[slide];
+  if (slide === 'info-topic-riser') {
+    const period = context.baselineYear && context.year
+      ? `Verglichen wird derselbe Zeitraum ${context.baselineYear} und ${context.year}.`
+      : 'Verglichen wird jeweils derselbe Zeitraum des Vorjahres.';
+    return { ...content, body: `${content.body} ${period}` };
+  }
+  if (slide === 'info-youth-language') {
+    const count = context.youthWordCount && context.youthWordCount > 1 ? ` ${cardinal(context.youthWordCount)}` : '';
+    const history = context.hasPastWinners ? ' Die Jugendwörter früherer Jahre zählen wir mit.' : '';
+    return {
+      ...content,
+      body: `Wir haben nach${count} Begriffen aus der Jugendwort-Auswahl gesucht.${history} Zitate zählen mit. Bei mehrdeutigen Wörtern prüfen wir den Zusammenhang.`,
+    };
+  }
+  return content;
+}

@@ -87,12 +87,12 @@ test('completes the fixture journey with a quiz gate, mixed answers, and the act
     await scrollToNextSlide(page, slide, nextSlide);
   }
 
-  await expect(page.locator('[data-slide-id="share"]')).toContainText('Wie gut kennst du den Bundestag?');
+  await expect(page.locator('[data-slide-id="share"]')).toContainText('Jetzt sind die anderen dran.');
   await expect(page.locator('[data-slide-id^="quiz-"]')).toHaveCount(6);
   await expect.poll(() => page.evaluate(() => localStorage.getItem('quiz-storage-v2'))).toContain('"quiz-signature":false');
   await expect.poll(() => page.evaluate(() => localStorage.getItem('quiz-storage-v2'))).toContain('"quiz-topics":true');
   await scrollToNextSlide(page, 'share', 'finale');
-  await expect(page.locator('[data-slide-id="finale"]').getByRole('heading', { name: 'Bundestag Wrapped' })).toBeVisible();
+  await expect(page.locator('[data-slide-id="finale"]').getByRole('heading', { name: /Ein paar Überraschungen/ })).toBeVisible();
 });
 
 test('uses the active edition for share and download output', async ({ page }) => {
@@ -113,7 +113,7 @@ test('uses the active edition for share and download output', async ({ page }) =
   await jumpToSlide(page, 'share');
 
   const shareSlide = page.locator('[data-slide-id="share"]');
-  await expect(shareSlide.getByRole('heading', { name: 'Wie gut kennst du den Bundestag?' })).toBeVisible();
+  await expect(shareSlide.getByRole('heading', { name: /Jetzt sind die anderen dran/ })).toBeVisible();
   await expect(shareSlide.getByRole('button', { name: 'Teilen' }).first()).toBeVisible();
 
   const downloadPromise = page.waitForEvent('download');
@@ -196,7 +196,7 @@ test('restores different answers when switching between annual routes', async ({
   await page.goto('/2025');
   await jumpToSlide(page, 'quiz-topics');
   await expect(page.locator('[data-slide-id="quiz-topics"]').getByRole('button').first()).toBeDisabled();
-  await expect(page.locator('[data-slide-id="quiz-topics"]').getByText('Scroll weiter oder wähle „Weiter“.')).toBeVisible();
+  await expect(page.locator('[data-slide-id="quiz-topics"]').getByText('Wähle „Weiter“, um fortzufahren.')).toBeVisible();
   const scopes = await page.evaluate(() => JSON.parse(localStorage.getItem('quiz-storage-v2') ?? '{}').state?.answersByScope);
   expect(scopes['quiz:2025:fixture-a']['quiz-topics']).toBe(true);
   expect(scopes['quiz:2026:fixture-b']['quiz-topics']).toBe(false);

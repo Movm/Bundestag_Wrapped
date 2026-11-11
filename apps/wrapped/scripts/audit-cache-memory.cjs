@@ -29,7 +29,7 @@ const expect = baseExpect.configure({ timeout: 20000 });
     const info = await context.request.get(`${base}/build-info.json`);
     if (info.ok()) report.buildInfo = await info.json();
     await page.goto(`${base}/2025`);
-    await page.getByRole('button', { name: 'Starten', exact: true }).waitFor();
+    await page.getByRole('button', { name: 'Los geht’s', exact: true }).waitFor();
     await page.waitForFunction(async () => Boolean((await navigator.serviceWorker.getRegistration())?.active));
     await page.reload();
     await page.waitForFunction(() => Boolean(navigator.serviceWorker.controller));

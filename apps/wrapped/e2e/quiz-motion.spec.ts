@@ -17,7 +17,7 @@ for (const reducedMotion of ['reduce', 'no-preference'] as const) {
     await expect(answer).toHaveAttribute('aria-disabled', 'true');
     await expect(answer).toBeFocused();
     const status = quiz.getByRole('status');
-    await expect(status).toContainText('Richtige Antwort:');
+    await expect(status).toContainText(/Deine Antwort (ist richtig|ist falsch|wurde gespeichert)/);
     // Result is exposed to assistive tech as text on the tile as well.
     await expect(quiz.getByRole('button', { name: /richtig|falsch/ }).first()).toBeVisible();
     // The result also opens as a modal dialog; closing it returns focus to the answer.
@@ -26,7 +26,7 @@ for (const reducedMotion of ['reduce', 'no-preference'] as const) {
     if (reducedMotion === 'reduce') await expect(quiz.locator('.w-3.h-3')).toHaveCount(0);
     // The result is a card in the layout and stays: no timeout.
     await page.waitForTimeout(2500);
-    await expect(status).toContainText('Richtige Antwort:');
+    await expect(status).toContainText(/Deine Antwort (ist richtig|ist falsch|wurde gespeichert)/);
     await expect(answer).toBeFocused();
   });
 }

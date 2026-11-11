@@ -11,7 +11,7 @@ describe('edition music', () => {
 
   it('loads the 2026 music.json', () => {
     expect(Object.keys(EDITION_MUSIC)).toContain('2026');
-    // Music starts with "Starten", so the cover and disclaimer already carry the first story track.
+    // Music starts with "Los geht’s", so the cover and disclaimer already carry the first story track.
     expect(themeForSlide('intro', '2026')).toBe('pressure');
     expect(themeForSlide('info-disclaimer', '2026')).toBe('pressure');
     expect(themeForSlide('quiz-youth-language', '2026')).toBe('only-alone');

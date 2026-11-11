@@ -160,7 +160,7 @@ describe('share-canvas', () => {
       const userNameCall = fillTextCalls.find(
         (call: unknown[]) => typeof call[0] === 'string' && call[0].toLowerCase().includes('max')
       );
-      expect(userNameCall?.[0]).toBe('MAX, DU BIST');
+      expect(userNameCall?.[0]).toBe('DAS ERGEBNIS VON MAX');
     });
 
     it('should draw decorative orbs using arc', () => {
@@ -190,7 +190,7 @@ describe('share-canvas', () => {
       expect(hasScore).toBe(true);
     });
 
-    it('should show Legende for 80%+ score', () => {
+    it('should show Parlamentsprofi for 80%+ score', () => {
       const data: ShareImageData = {
         correctCount: 12,
         totalQuestions: 14,
@@ -200,14 +200,14 @@ describe('share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       const hasTitle = fillTextCalls.some(
-        (call: unknown[]) => typeof call[0] === 'string' && call[0].toLowerCase().includes('legende!')
+        (call: unknown[]) => typeof call[0] === 'string' && call[0].toLowerCase().includes('parlamentsprofi')
       );
       expect(hasTitle).toBe(true);
     });
 
-    it('should show Demokratie-Star for 60-79% score', () => {
+    it('should show Stammgast im Plenum for 41-60% score', () => {
       const data: ShareImageData = {
-        correctCount: 9,
+        correctCount: 7,
         totalQuestions: 14,
       };
 
@@ -215,14 +215,14 @@ describe('share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       const hasTitle = fillTextCalls.some(
-        (call: unknown[]) => typeof call[0] === 'string' && call[0].toLowerCase().includes('demokratie-star!')
+        (call: unknown[]) => typeof call[0] === 'string' && call[0].toLowerCase().includes('stammgast im plenum')
       );
       expect(hasTitle).toBe(true);
     });
 
-    it('should show Politik-Talent for 40-59% score', () => {
+    it('should show Mit Blick fürs Plenum for 21-40% score', () => {
       const data: ShareImageData = {
-        correctCount: 6,
+        correctCount: 5,
         totalQuestions: 14,
       };
 
@@ -230,14 +230,14 @@ describe('share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       const hasTitle = fillTextCalls.some(
-        (call: unknown[]) => typeof call[0] === 'string' && call[0].toLowerCase().includes('politik-talent!')
+        (call: unknown[]) => typeof call[0] === 'string' && call[0].toLowerCase().includes('mit blick fürs plenum')
       );
       expect(hasTitle).toBe(true);
     });
 
-    it('should show Rising Star for <40% score', () => {
+    it('should show Auf Entdeckungstour for up to 20% score', () => {
       const data: ShareImageData = {
-        correctCount: 3,
+        correctCount: 2,
         totalQuestions: 14,
       };
 
@@ -245,7 +245,7 @@ describe('share-canvas', () => {
 
       const fillTextCalls = (mockCtx.fillText as ReturnType<typeof vi.fn>).mock.calls;
       const hasTitle = fillTextCalls.some(
-        (call: unknown[]) => typeof call[0] === 'string' && call[0].toLowerCase().includes('rising star!')
+        (call: unknown[]) => typeof call[0] === 'string' && call[0].toLowerCase().includes('auf entdeckungstour')
       );
       expect(hasTitle).toBe(true);
     });

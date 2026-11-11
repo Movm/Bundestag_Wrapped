@@ -33,8 +33,11 @@ describe('buildEditionQuizModel', () => {
 
     expect(buildEditionQuizModel(data as never)['quiz-signature']?.question).toContain('AfD');
     const pinned = buildEditionQuizModel(data as never, { version: 1, groups: [{ id: 'quiz-signature', party: 'SPD' }] })['quiz-signature'];
-    expect(pinned?.question).toContain('SPD');
-    expect(pinned?.correctAnswer).toBe('bafög');
+    expect(pinned?.question).toBe('Welches Wort steht bei der SPD auf Platz 1 unserer Liste typischer Wörter?');
+    expect(pinned?.correctAnswer).toBe('Bafög');
+    expect(pinned?.explanation).toContain('Die SPD verwendet das Wort 1,3-mal so häufig wie die übrigen Fraktionen im Schnitt');
+    // the frozen wording stays for editions without a configuration
+    expect(buildEditionQuizModel(data as never)['quiz-signature']?.correctAnswer).toBe('Europawort');
   });
 
   it('keeps independent later questions when the top-topic metric is missing', () => {
@@ -114,6 +117,8 @@ describe('buildEditionQuizModel', () => {
     const model = buildEditionQuizModel(data as never);
 
     expect(model['quiz-topic-riser']?.correctAnswer).toBe('Wirtschaft');
+    expect(buildEditionQuizModel(data as never, undefined, 2026)['quiz-topic-riser']?.question).toBe('Welches Thema hat sich 2026 auf Platz 1 geschoben?');
+    expect(model['quiz-topic-riser']?.explanation).toBe('Wirtschaft! Im gleichen Zeitraum 2025 noch auf Platz 4, liegt das Thema dieses Mal vorn.');
     expect(model['quiz-word-riser']?.correctAnswer).toBe('mensch');
     expect(model['quiz-word-riser']?.question).toBe('Was ist das Aufsteigerwort des Jahres?');
     expect(model['quiz-youth-language']?.correctAnswer).toBe('safe');
@@ -182,7 +187,7 @@ describe('Jugendwort question', () => {
     expect(quiz?.correctAnswer).toBe('1');
     expect(quiz?.options).toEqual(['1', '3', '5', '0']);
     expect(quiz?.explanation).toContain('1 kontextuell bestätigte Treffer');
-    expect(quiz?.explanation).toContain('Wut provozieren');
+    expect(quiz?.explanation).toContain('absichtlich wütend machen');
   });
 
   it('follows the count and keeps options distinct', () => {
@@ -232,7 +237,8 @@ describe('Jugendwort speaker question', () => {
     const quiz = quizOf(withGenz(['Luke Hoß'])(build(sayers, sayers)));
     expect(quiz?.options).toEqual(['Die Gen Z', 'Die Älteren', 'Beide', 'Niemand']);
     expect(quiz?.correctAnswer).toBe('Die Älteren');
-    expect(quiz?.explanation).toBe('Gesagt haben es Marcel Emmerich (GRÜNE) und Awet Tesfaiesus (GRÜNE). Niemand davon gehört zur Gen Z.');
+    expect(quiz?.explanation).toBe('Gesagt haben es Marcel Emmerich (GRÜNE) und Awet Tesfaiesus (GRÜNE). Niemand davon gehört zur Gen Z. Gemeint sind Inhalte, die absichtlich wütend machen sollen, um Aufmerksamkeit zu bekommen.');
+    expect(quiz?.question).toBe('„Ragebait“ im Bundestag. Wer hat’s gesagt?');
   });
 
   it('counts a titled name as the same Gen Z person', () => {
@@ -242,20 +248,20 @@ describe('Jugendwort speaker question', () => {
 
   it('asks who said the word, excludes the other sayer and mentions them', () => {
     const quiz = quizOf(build(sayers, [...sayers, ...others]));
-    expect(quiz?.question).toBe('Das Jugendwort 2026 heißt „ragebait“. Wer hat es im Bundestag gesagt?');
+    expect(quiz?.question).toBe('„Ragebait“ im Bundestag. Wer hat’s gesagt?');
     // tie: alphabetically first name is the answer, the other sayer is not offered
     expect(quiz?.correctAnswer).toBe('Marcel Emmerich (GRÜNE)');
     expect(quiz?.options).toEqual(['Marcel Emmerich (GRÜNE)', 'Beatrix von Storch (AfD)', 'Mandy Eißing (DIE LINKE)', 'Caroline Bosbach (CDU/CSU)']);
     expect(quiz?.options.join()).not.toContain('Tesfaiesus');
     expect(quiz?.explanation).toContain('Marcel Emmerich (GRÜNE) sagte „ragebait“ einmal.');
     expect(quiz?.explanation).toContain('Awet Tesfaiesus (GRÜNE, einmal)');
-    expect(quiz?.explanation).toContain('Wut provozieren');
+    expect(quiz?.explanation).toContain('absichtlich wütend machen');
   });
 
   it('uses the most frequent speaker as the answer for a single sayer', () => {
     const quiz = quizOf(build([{ name: 'Awet Tesfaiesus', party: 'GRÜNE', count: 3 }], others));
     expect(quiz?.correctAnswer).toBe('Awet Tesfaiesus (GRÜNE)');
-    expect(quiz?.explanation).toContain('3-mal');
+    expect(quiz?.explanation).toContain('dreimal');
     expect(quiz?.explanation).not.toContain('Auch gesagt');
   });
 
@@ -289,6 +295,9 @@ describe('edition quiz configuration', () => {
     const quizOf = (list: typeof parties) => buildEditionQuizModel({ ...fixture('Europa', 'A'), generations: { speakerCount: 19, parties: list } } as never)['quiz-genz'];
     const quiz = quizOf(parties);
     expect(quiz?.correctAnswer).toBe('DIE LINKE');
+    expect(quiz?.question).toBe('Welche Fraktion bringt die meisten Stimmen der Gen Z ans Rednerpult?');
+    expect(quiz?.explanation).toBe('DIE LINKE: 10 der 19 erfassten Gen-Z-Abgeordneten gehören zu ihrer Fraktion. Damit stellt sie mehr als die Hälfte.');
+    expect(quizOf([{ party: 'DIE LINKE', count: 8 }, { party: 'AfD', count: 3 }, { party: 'GRÜNE', count: 3 }, { party: 'SPD', count: 2 }, { party: 'CDU/CSU', count: 3 }])?.explanation).not.toContain('Hälfte');
     expect(quiz?.options).toHaveLength(4);
     expect(quizOf([{ party: 'A', count: 3 }, { party: 'B', count: 3 }, { party: 'C', count: 1 }, { party: 'D', count: 1 }])).toBeUndefined();
   });
@@ -340,8 +349,9 @@ describe('edition quiz configuration', () => {
     ];
     const base = fixture('Europa', 'Partei A') as WrappedData;
     const quiz = buildEditionQuizModel({ ...base, mentions: [{ id: 'timmy', label: 'Timmy der Wal', count: 5, speakers }] })['quiz-mention'];
-    expect(quiz?.question).toBe('Wer hat „Timmy der Wal“ im Plenum am häufigsten erwähnt?');
+    expect(quiz?.question).toBe('Wer hat Timmy der Wal im Plenum am häufigsten erwähnt?');
     expect(quiz?.correctAnswer).toBe('Zoe (GRÜNE)');
+    expect(quiz?.explanation).toBe('Zoe erwähnte Timmy der Wal zweimal. Bei allen anderen, die den Namen nannten, blieb es bei einem Mal.');
     expect(quiz?.options).toHaveLength(4);
     const tie = speakers.map(speaker => ({ ...speaker, count: 1 }));
     expect(buildEditionQuizModel({ ...base, mentions: [{ id: 'timmy', label: 'Timmy', count: 4, speakers: tie }] })['quiz-mention']).toBeUndefined();
