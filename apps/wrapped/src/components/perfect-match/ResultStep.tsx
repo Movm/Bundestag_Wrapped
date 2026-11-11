@@ -6,11 +6,18 @@ import { getPartyTone } from '@/lib/party-colors';
 import { useSpeakerPortraits } from '@/hooks/useDataQueries';
 import type { MatchResult } from '@/lib/perfect-match';
 
+/** "Dr. Saskia Ludwig" → "SL": first and last name, academic titles skipped. */
+function initials(name: string): string {
+  const parts = name.split(/\s+/).filter(part => part && !part.endsWith('.'));
+  return [parts[0], parts.length > 1 ? parts.at(-1) : null].filter(Boolean).map(part => part![0]).join('').toLocaleUpperCase('de-DE');
+}
+
 const CARD_COLORS = [['var(--color-wr-pink)', 'var(--color-wr-ink)'], ['var(--color-wr-violet)', '#fff'], ['#fff', 'var(--color-wr-ink)']];
 
 /** Step 5: the top three MPs, each linking to their profile. */
 export function ResultStep({ matches, profileUrl, onRestart }: { matches: MatchResult[]; profileUrl: (slug: string) => string; onRestart: () => void }) {
   const [note, setNote] = useState('');
+  const [failed, setFailed] = useState<string[]>([]);
   const portraits = useSpeakerPortraits(matches.map(match => match.slug));
 
   const share = async () => {
@@ -30,7 +37,7 @@ export function ResultStep({ matches, profileUrl, onRestart }: { matches: MatchR
       <ol className="pm-matches" aria-label="Deine drei besten Matches">
         {matches.map((match, index) => {
           const [bg, ink] = CARD_COLORS[index] ?? CARD_COLORS[2];
-          const photo = portraits[match.slug];
+          const photo = failed.includes(match.slug) ? null : portraits[match.slug];
           return (
             <motion.li key={match.slug} variants={ENTER.rise}>
               <Link
@@ -40,7 +47,8 @@ export function ResultStep({ matches, profileUrl, onRestart }: { matches: MatchR
                 aria-label={`Platz ${index + 1}: ${match.name}, ${match.party}, ${match.pct} Prozent Übereinstimmung. Zum Profil`}
               >
                 <div className="pm-match__visual" data-photo={Boolean(photo)} aria-hidden="true">
-                  {photo && <img className="pm-match__photo" src={photo.thumbnailUrl ?? photo.url} alt="" loading="lazy" onError={event => { event.currentTarget.hidden = true; }} />}
+                  {photo && <img className="pm-match__photo" src={photo.thumbnailUrl ?? photo.url} alt="" loading="lazy" onError={() => setFailed(list => [...list, match.slug])} />}
+                  {!photo && <span className="pm-match__initials">{initials(match.name)}</span>}
                   <span className="pm-match__pct">{match.pct}<span>%</span></span>
                   {match.animal && <span className="pm-match__emoji">{match.animal.emoji}</span>}
                 </div>

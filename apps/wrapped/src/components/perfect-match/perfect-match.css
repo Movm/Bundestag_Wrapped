@@ -118,6 +118,7 @@
 .pm-match__visual { position: relative; aspect-ratio: 4 / 3; border-radius: 1.5rem; overflow: hidden; background: var(--pm-party); color: var(--color-wr-ink); display: flex; justify-content: space-between; align-items: flex-end; padding: clamp(1rem, 2vw, 1.5rem); }
 .pm-match__visual::before { content: ''; position: absolute; width: 70%; aspect-ratio: 1; border-radius: 50%; top: -30%; right: -18%; background: rgb(255 255 255 / 0.22); }
 .pm-match__visual > * { position: relative; }
+.pm-match__initials { position: absolute; top: clamp(0.75rem, 1.6vw, 1.25rem); left: clamp(1rem, 2vw, 1.5rem); font-weight: 900; font-stretch: 125%; font-size: clamp(4.5rem, 8vw, 6.5rem); line-height: 0.8; letter-spacing: -0.06em; opacity: 0.35; }
 .pm-match__photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
 /* The percentage sits on a band of party colour so it stays legible on any photo. */
 .pm-match__visual[data-photo='true']::before { inset: auto 0 0 0; width: 100%; height: 62%; aspect-ratio: auto; border-radius: 0; z-index: 1; background: linear-gradient(to bottom, transparent, var(--pm-party) 62%); }
