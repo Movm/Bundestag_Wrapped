@@ -308,6 +308,43 @@ export interface GenerationSpeaker {
   "speeches": number;
 }
 
+export interface ChancellorArea {
+  "id": string;
+  "side": "innen" | "aussen";
+  "count": number;
+  "perThousand": number;
+  "chamberPerThousand": number;
+}
+
+export interface ChancellorHotWord {
+  "word": NonEmptyString;
+  "count": number;
+  "ratio": number;
+  "zScore": number;
+}
+
+export interface ChancellorAnalysis {
+  "name": NonEmptyString;
+  "party": NonEmptyString;
+  "contributions": number;
+  "speeches": Count;
+  "answers": Count;
+  "words": Count;
+  "topicWords": number;
+  "foreignShare": number;
+  "chamberForeignShare": number;
+  "areas": Array<ChancellorArea>;
+  "foreignWords": Array<WordCount>;
+  "domesticWords": Array<WordCount>;
+  "hotWords": Array<ChancellorHotWord>;
+  "previous"?: {
+  "year": number;
+  "contributions": number;
+  "words": Count;
+  "foreignShare": number;
+};
+}
+
 export interface GenerationComparison {
   "cohort": "genz";
   "bornFrom": number;
@@ -435,6 +472,7 @@ export interface WrappedData {
   "yearOverYear"?: YearOverYearAnalysis;
   "mentions"?: Array<Mention>;
   "generations"?: GenerationComparison;
+  "chancellor"?: ChancellorAnalysis;
 }
 
 export type SpeakerIndexAsset = Record<string, unknown>;

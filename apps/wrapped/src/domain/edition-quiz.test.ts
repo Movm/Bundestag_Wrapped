@@ -306,8 +306,19 @@ describe('Jugendwort speaker question', () => {
 });
 
 describe('edition quiz configuration', () => {
-  it('runs the 2026 edition as topic riser, signature words, youth language, the moment of the year and Gen Z', () => {
-    expect(quiz2026.groups.map(group => group.id)).toEqual(['quiz-topic-riser', 'quiz-signature', 'quiz-youth-language', 'quiz-mention', 'quiz-genz']);
+  it('runs the 2026 edition as topic riser, signature words, youth language, the moment of the year, the chancellor and Gen Z', () => {
+    expect(quiz2026.groups.map(group => group.id)).toEqual(['quiz-topic-riser', 'quiz-signature', 'quiz-youth-language', 'quiz-mention', 'quiz-chancellor', 'quiz-genz']);
+  });
+
+  it('asks for the chancellor’s foreign share with the real number in the explanation', () => {
+    const base = fixture('Europa', 'Partei A') as WrappedData;
+    const chancellor = { name: 'Friedrich Merz', foreignShare: 44.3, chamberForeignShare: 16 } as WrappedData['chancellor'];
+    const quiz = buildEditionQuizModel({ ...base, chancellor })['quiz-chancellor'];
+    expect(quiz?.question).toBe('Wie viel von dem, worüber Merz im Plenum spricht, ist Außenpolitik?');
+    expect(quiz?.correctAnswer).toBe('44 %');
+    expect(quiz?.options).toEqual(['44 %', '30 %', '58 %', '16 %']);
+    expect(quiz?.explanation).toBe('44 % seiner Themenwörter gehören zur Außenpolitik, 56 % zur Innenpolitik. Im restlichen Bundestag liegt der Außen-Anteil bei 16 %.');
+    expect(buildEditionQuizModel(base)['quiz-chancellor']).toBeUndefined();
   });
 
   it('asks which group has the most Gen Z MPs only with a clear leader', () => {
