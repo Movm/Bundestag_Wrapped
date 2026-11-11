@@ -158,9 +158,11 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
   useEffect(() => { if (error) dismissBootCover(); }, [error]);
   // Restoring to a later slide: the cover slide stays hidden (its effects do
   // not run), so the boot cover would never be adopted. Drop it instead.
+  // A #slideId link lands on a later slide without `initialSection`, so the
+  // section the container settles on counts too.
   useEffect(() => {
-    if (data && initialSection && initialSection !== 'intro') dismissBootCover();
-  }, [data, initialSection]);
+    if (data && ((initialSection && initialSection !== 'intro') || currentSection !== 'intro')) dismissBootCover();
+  }, [data, initialSection, currentSection]);
 
   if (loading) {
     return null;
