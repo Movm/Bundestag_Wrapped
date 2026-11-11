@@ -1,1 +1,1 @@
-export { END_SLIDE_CONTENT, quizTier } from './content';
+export { END_SLIDE_CONTENT } from './content';

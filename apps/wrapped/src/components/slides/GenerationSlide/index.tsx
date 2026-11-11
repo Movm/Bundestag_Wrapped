@@ -37,35 +37,45 @@ function Dots({ total, highlighted }: { total: number; highlighted: number }) {
 /** Opener: how few MPs at the lectern are Gen Z. */
 export function GenerationIntroSlide({ generations }: { generations: GenerationComparison }) {
   return (
-    <Slide shapes="orbit">
-      <Display size="xl">Wie jung ist das <Mark>Rednerpult?</Mark></Display>
+    <Slide
+      shapes="orbit"
+      footer={<Note className="ds-note--plate">Erfasst sind Abgeordnete mit Fraktionszugehörigkeit und bekanntem Geburtsjahr. Regierungsmitglieder sind in diesem Vergleich nicht enthalten.</Note>}
+    >
+      <Display size="lg">Die nächste Generation steht schon am <Mark>Rednerpult.</Mark></Display>
       <motion.p variants={ENTER.rise} className="ds-statement">
-        {number.format(generations.speakerCount)} von {number.format(generations.totalSpeakers)} Abgeordneten, die gesprochen haben, sind ab {generations.bornFrom} geboren. Das ist die Gen Z.
+        {number.format(generations.speakerCount)} von {number.format(generations.totalSpeakers)} erfassten Abgeordneten mit Redebeiträgen wurden ab {generations.bornFrom} geboren. Sie zählen in unserer Auswertung zur Gen Z.
       </motion.p>
       <Dots total={generations.totalSpeakers} highlighted={generations.speakerCount} />
+      <Note>Ein Punkt, eine Person. Rosa zeigt die Gen Z.</Note>
     </Slide>
   );
 }
 
 /** What Gen Z MPs say more often than older MPs of the same parties, and where they sit. */
-export function GenerationInfoSlide({ generations }: { generations: GenerationComparison }) {
+export function GenerationInfoSlide({ generations, saidNoYouthWord = false }: { generations: GenerationComparison; saidNoYouthWord?: boolean }) {
   const words = generations.words.slice(0, 6).map(item => displayWord(item.word));
   const fewer = generations.fewerWords.slice(0, 3).map(item => displayWord(item.word));
   return (
     <Slide
       shapes={false}
-      footer={<Note className="ds-note--plate">Gen Z: geboren ab {generations.bornFrom}, laut Stammdaten des Bundestags. Verglichen mit älteren Abgeordneten derselben Fraktionen.</Note>}
+      footer={<Note className="ds-note--plate">Gen Z: geboren ab {generations.bornFrom}. Der Wortvergleich berücksichtigt die unterschiedliche Zusammensetzung der Fraktionen. Geburtsjahre: Bundestag und Abgeordnetenwatch.</Note>}
     >
       <motion.div variants={ENTER.stamp} className="self-start rotate-[-4deg]">
-        <Eyebrow>So reden die Jüngeren</Eyebrow>
+        <Eyebrow>So sprechen die Jüngeren</Eyebrow>
       </motion.div>
       {words.length > 0 && (
         <div className="flex flex-col items-start gap-3">
-          <Display size="md">Öfter als ältere Abgeordnete derselben Fraktion</Display>
+          <Display size="md">Andere Generation. <Mark>Andere Wörter.</Mark></Display>
+          <motion.p variants={ENTER.rise} className="m-0 text-base font-semibold">
+            {saidNoYouthWord
+              ? 'Jugendwörter? Keins. Dafür diese hier, häufiger als bei älteren Kolleg:innen:'
+              : 'Diese Wörter verwenden jüngere Abgeordnete häufiger als ihre älteren Kolleg:innen:'}
+          </motion.p>
           <ChipCloud words={words} label="Wörter, die Gen-Z-Abgeordnete öfter sagen" />
-          {fewer.length > 0 && <motion.p variants={ENTER.rise} className="m-0 text-base font-semibold">Seltener: {fewer.join(', ')}</motion.p>}
+          {fewer.length > 0 && <motion.p variants={ENTER.rise} className="m-0 text-base font-semibold">Seltener fallen: {fewer.join(', ')}</motion.p>}
         </div>
       )}
+      <motion.p variants={ENTER.rise} className="m-0 text-base font-semibold">Die {number.format(generations.speakerCount)} verteilen sich so:</motion.p>
       <PartyGrid label="Gen-Z-Abgeordnete nach Fraktion">
         {generations.parties.map(item => (
           <PartyBlock key={item.party} party={item.party}>

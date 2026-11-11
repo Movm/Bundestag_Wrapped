@@ -27,7 +27,7 @@ async function renderQuiz(reduce = false) {
   vi.doMock('motion/react', async (importOriginal) => ({ ...(await importOriginal<typeof import('motion/react')>()), useReducedMotion: () => reduce }));
   const { SlideQuiz } = await import('./SlideQuiz');
   const root = createRoot(container);
-  await act(async () => root.render(<SlideQuiz quiz={quiz} onAnswer={() => {}} onComplete={() => {}} />));
+  await act(async () => root.render(<SlideQuiz quiz={quiz} onAnswer={() => {}} onComplete={() => {}} shuffle={false} />));
   return root;
 }
 
@@ -43,7 +43,7 @@ it('announces the result in a polite live region without moving focus', async ()
   const answer = button('A');
   answer.focus();
   await act(async () => answer.click());
-  expect(region.textContent).toContain('Richtig! Richtige Antwort: A');
+  expect(region.textContent).toContain('Deine Antwort ist richtig.');
   expect(region.textContent).toContain('Weil.');
   expect(document.activeElement).toBe(answer);
   expect(answer.getAttribute('aria-disabled')).toBe('true');
@@ -55,7 +55,7 @@ it('announces the result in a polite live region without moving focus', async ()
 it('says wrong answers in words, not only in color', async () => {
   const root = await renderQuiz();
   await act(async () => button('B').click());
-  expect(container.querySelector('[role="status"]')!.textContent).toContain('Nicht ganz. Richtige Antwort: A');
+  expect(container.querySelector('[role="status"]')!.textContent).toContain('Deine Antwort ist falsch. Richtig ist: A.');
   expect(button('B').textContent).toContain('falsch');
   await act(async () => root.unmount());
 });
@@ -74,24 +74,17 @@ it('drops confetti but keeps the result under reduced motion', async () => {
   const root = await renderQuiz(true);
   await act(async () => button('A').click());
   expect(container.querySelector('.w-3.h-3')).toBeNull();
-  expect(container.querySelector('[role="status"]')!.textContent).toContain('Richtig!');
+  expect(container.querySelector('[role="status"]')!.textContent).toContain('Genau richtig!');
   await act(async () => root.unmount());
 });
 
-it('opens the result as a modal dialog with the answer in words, and closes back to the quiz', async () => {
-  // jsdom lacks the modal dialog API; the component only needs it to exist.
-  HTMLDialogElement.prototype.showModal ??= function (this: HTMLDialogElement) { this.setAttribute('open', ''); };
-  HTMLDialogElement.prototype.close ??= function (this: HTMLDialogElement) { this.removeAttribute('open'); };
+it('keeps the result on the slide with the answer in words and opens no popup', async () => {
   const root = await renderQuiz();
   await act(async () => button('B').click());
   await act(async () => { await new Promise(resolve => setTimeout(resolve, 700)); });
-  const dialog = document.querySelector('dialog')!;
-  expect(dialog.hasAttribute('open')).toBe(true);
-  expect(dialog.textContent).toContain('Knapp daneben.');
-  expect(dialog.textContent).toContain('Richtige Antwort');
-  expect(dialog.textContent).toContain('A');
-  const close = [...dialog.querySelectorAll('button')].find(b => b.textContent?.includes('Zum Quiz'))!;
-  await act(async () => close.click());
-  expect(document.querySelector('dialog')?.hasAttribute('open') ?? false).toBe(false);
+  expect(document.querySelector('dialog')).toBeNull();
+  const result = container.querySelector('[data-testid="quiz-result"]')!;
+  expect(result.querySelector('.ds-result__verdict [aria-hidden]')!.textContent).toBe('Diesmal nicht.');
+  expect(result.querySelector('.ds-result__answer')!.textContent).toBe('Richtig ist: A');
   await act(async () => root.unmount());
 });

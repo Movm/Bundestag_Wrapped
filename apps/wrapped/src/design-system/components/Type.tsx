@@ -18,13 +18,15 @@ interface DisplayProps {
 }
 
 /** Huge uppercase headline. Sizes scale with rem and viewport, never vw alone. */
-export function Display({ children, size = 'xl', level = 2, face = 'heading', enter = 'rise', className, id }: DisplayProps) {
+export function Display({ children, size = 'xl', level = 2, face = 'heading', enter = size === 'xl' || size === 'hero' ? 'mask' : 'rise', className, id }: DisplayProps) {
   const Tag = motion[`h${level}`];
-  return (
+  const heading = (
     <Tag id={id} variants={enter ? ENTER[enter] : undefined} className={cn('ds-display', `ds-display--${size}`, face === 'wide' && 'ds-display--wide', className)}>
       {children}
     </Tag>
   );
+  // The clip needs a box of its own; the padding (in em of the same size class) keeps umlauts and descenders inside it.
+  return enter === 'mask' ? <div className={cn('ds-mask', `ds-display--${size}`)}>{heading}</div> : heading;
 }
 
 /** Highlighted word inside a Display — uses the surface's display accent (large text only). */

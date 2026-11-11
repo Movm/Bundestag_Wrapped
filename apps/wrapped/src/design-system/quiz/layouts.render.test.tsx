@@ -39,7 +39,7 @@ describe.each(LAYOUTS)('quiz layout %s', (layout) => {
     await act(async () => control.click());
 
     expect(onAnswer).toHaveBeenCalledWith(true);
-    expect(region.textContent).toContain('Richtige Antwort:');
+    expect(region.textContent).toContain('Deine Antwort ist richtig.');
     expect(control.getAttribute('aria-disabled')).toBe('true');
     expect(control.textContent).toContain('richtig');
     expect(document.activeElement).toBe(control);

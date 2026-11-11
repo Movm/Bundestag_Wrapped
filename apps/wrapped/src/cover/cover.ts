@@ -1,6 +1,6 @@
 /**
  * The story cover ("Start Sitzreihen"): 630 seats assemble into the Bundestag
- * hemicycle under a starry sky, then collapse into a pink wipe on "Starten".
+ * hemicycle under a starry sky, then collapse into a pink wipe on "Los geht’s".
  *
  * Framework-free on purpose. The same controller runs twice without ever
  * existing twice: an inline boot script mounts it at first paint (index.html),
@@ -13,15 +13,19 @@ import { buildSeats, type Seat } from './seats';
 
 export interface CoverController {
   readonly root: HTMLElement;
-  /** Called on the "Starten" press itself (sound, music). */
+  /** Called on the "Los geht’s" press itself (sound, music). */
   onPress: (() => void) | null;
   /** Called when the seats start assembling (sound). */
   onAssemble: (() => void) | null;
   /** Called once the pink wipe covers the screen (or at once with reduced motion). */
   onStart: (() => void) | null;
-  /** True between "Starten" and the end of the wipe. */
+  /** True between "Los geht’s" and the end of the wipe. */
   readonly exiting: boolean;
   setYear(year: string | null): void;
+  /** "Fünf Fragen." in the tagline; null while the number of questions is not known. */
+  setQuestions(label: string | null): void;
+  /** Small line under the tagline (preview editions), null to hide it. */
+  setNote(note: string | null): void;
   /** Plays the assembly again from the seed (after coming back to the cover). */
   replay(): void;
   /** Stops all motion while the cover is off screen; `resume` restarts the ambient layer. */
@@ -73,7 +77,9 @@ function markup(eagleSrc: string): string {
     + `<div class="cv-stage" aria-hidden="true"><div class="cv-seed"></div><img class="cv-eagle" src="${eagleSrc}" alt="" width="506" height="316" decoding="async" fetchpriority="high"></div>`
     + '<div class="cv-title">'
     + '<h1 class="cv-h1"><span data-in="up" data-delay="1350">Bundestag</span> <span class="cv-pink" data-in="up" data-delay="1430">Wrapped</span> <span class="cv-year" data-in="pop" data-delay="1600" hidden></span></h1>'
-    + `<button type="button" class="cv-start" data-in="up" data-delay="1650">Starten ${ARROW}</button>`
+    + '<p class="cv-tagline" data-in="up" data-delay="1500">Viele Worte. <span class="cv-questions" hidden></span> Wie gut kennst du den Bundestag?</p>'
+    + '<p class="cv-preview" data-in="up" data-delay="1560" hidden></p>'
+    + `<button type="button" class="cv-start" data-in="up" data-delay="1650">Los geht’s ${ARROW}</button>`
     + '</div></div>'
     + '<div class="cv-burst" aria-hidden="true"></div>';
 }
@@ -112,6 +118,8 @@ export function createCover(root: HTMLElement, options: { eagleSrc: string; year
   const burst = root.querySelector<HTMLElement>('.cv-burst')!;
   const startButton = root.querySelector<HTMLButtonElement>('.cv-start')!;
   const year = root.querySelector<HTMLElement>('.cv-year')!;
+  const questions = root.querySelector<HTMLElement>('.cv-questions')!;
+  const note = root.querySelector<HTMLElement>('.cv-preview')!;
   const bg = root.querySelector<HTMLElement>('.cv-bg')!;
   const layers = [...root.querySelectorAll<HTMLElement>('.cv-stars')];
 
@@ -338,6 +346,8 @@ export function createCover(root: HTMLElement, options: { eagleSrc: string; year
     onStart: null,
     get exiting() { return exiting; },
     setYear(value) { year.textContent = value ?? ''; year.hidden = !value; },
+    setQuestions(label) { questions.textContent = label ?? ''; questions.hidden = !label; },
+    setNote(text) { note.textContent = text ?? ''; note.hidden = !text; },
     replay() {
       exiting = false;
       collapsed = false;

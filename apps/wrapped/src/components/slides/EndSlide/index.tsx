@@ -3,7 +3,8 @@ import { Link } from 'react-router';
 import { Display, Eyebrow, Lead, Note } from '@/design-system/components/Type';
 import { ActionButton } from '@/design-system/components/ActionButton';
 import { Enter, Slide } from '@/design-system/components/Slide';
-import { END_SLIDE_CONTENT, quizTier } from '@/shared/end-slide';
+import { END_SLIDE_CONTENT } from '@/shared/end-slide';
+import { resultTitle } from '@/lib/result-title';
 import { useCorrectCount } from '@/stores/quizStore';
 import type { SlideType } from '@/components/main-wrapped/constants';
 import { useOptionalEdition } from '@/edition/EditionProvider';
@@ -63,17 +64,17 @@ const LINK_BUTTON = 'ds-button ds-button--md ds-button--outline';
 export const EndSlide = memo(function EndSlide({ onRestart, totalQuestions = 0, quizSlideIds = [] }: EndSlideProps) {
   const surface = editionSurface(useOptionalEdition());
   const correctCount = useCorrectCount(surface, quizSlideIds);
-  const tier = quizTier(correctCount, totalQuestions);
+  const tier = resultTitle(correctCount, totalQuestions);
   return (
     <Slide shapes="cover">
       <Enter><Eyebrow>{END_SLIDE_CONTENT.header.label}</Eyebrow></Enter>
-      <Display level={2} size="hero" className="hyphens-none">
-        <span className="block text-wr-pink">Bundestag</span>{' '}
-        <span className="block">Wrapped{surface.year ? ` ${surface.year}` : ''}</span>
+      <Display level={2} size="xl" className="hyphens-none">
+        <span className="block text-wr-pink">Viele Worte.</span>{' '}
+        <span className="block">Ein paar Überraschungen.</span>
       </Display>
       {tier && (
         <Lead className="max-w-[38rem]">
-          <strong>{correctCount} von {totalQuestions} richtig: {tier.label}.</strong> {tier.line}
+          Du hast {correctCount} von {totalQuestions} Fragen richtig beantwortet. <strong>{tier.title}.</strong> {tier.line}
         </Lead>
       )}
       <Lead className="max-w-[38rem]">{END_SLIDE_CONTENT.message.primary}</Lead>

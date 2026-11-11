@@ -121,6 +121,28 @@ describe('active slide plan', () => {
     ]);
   });
 
+  it('tells youth words and Gen Z as one story, with the twist at the end', () => {
+    const configuration = { version: 1 as const, groups: [{ id: 'quiz-youth-language' }, { id: 'quiz-mention' }, { id: 'quiz-genz' }] };
+    const model = quizModel(['quiz-youth-language', 'quiz-mention', 'quiz-genz']);
+    expect(buildActiveSlidePlan(model, [], configuration, true, true)).toEqual([
+      'intro', 'info-disclaimer',
+      'quiz-youth-language', 'intro-genz', 'quiz-genz', 'info-genz', 'info-youth-language', 'reveal-youth-language', 'reveal-youth-history',
+      'intro-mention', 'quiz-mention', 'info-mention',
+      'share', 'finale',
+    ]);
+    // Without counted past winners there is no history slide; without a Gen Z question no Gen Z chapter.
+    const plain = buildActiveSlidePlan(quizModel(['quiz-youth-language']), [], configuration, true, false);
+    expect(plain).not.toContain('reveal-youth-history');
+    expect(plain).not.toContain('intro-genz');
+  });
+
+  it('keeps the Gen Z chapter on its own when there is no youth question', () => {
+    const configuration = { version: 1 as const, groups: [{ id: 'quiz-youth-language' }, { id: 'quiz-genz' }] };
+    expect(buildActiveSlidePlan(quizModel(['quiz-genz']), [], configuration)).toEqual([
+      'intro', 'info-disclaimer', 'intro-genz', 'quiz-genz', 'info-genz', 'share', 'finale',
+    ]);
+  });
+
   it('adds the mention section after the youth language when its question exists', () => {
     const configuration = { version: 1 as const, groups: [{ id: 'quiz-youth-language' }, { id: 'quiz-mention' }] };
     expect(buildActiveSlidePlan(quizModel(['quiz-youth-language']), [], configuration)).not.toContain('intro-mention');

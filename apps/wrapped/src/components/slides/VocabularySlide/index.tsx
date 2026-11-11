@@ -1,6 +1,6 @@
 import { memo, useMemo } from 'react';
 import type { PartyStats } from '@/data/wrapped';
-import { INTRO_SLIDES } from '@/data/intro-slides';
+import { vocabularyIntro } from '@/data/intro-slides';
 import {
   SlideIntro,
   SlideQuiz,
@@ -11,6 +11,8 @@ import { ResultView } from './ResultView';
 
 interface VocabularySlideProps {
   parties: PartyStats[];
+  /** Group the edition's signature-word quiz is about; names the chapter intro's closing question. */
+  signatureParty?: string;
   phase: SlidePhase;
   onQuizAnswer?: (isCorrect: boolean) => void;
   onComplete?: () => void;
@@ -18,6 +20,7 @@ interface VocabularySlideProps {
 
 export const VocabularySlide = memo(function VocabularySlide({
   parties,
+  signatureParty,
   phase,
   onQuizAnswer,
   onComplete,
@@ -39,7 +42,7 @@ export const VocabularySlide = memo(function VocabularySlide({
   });
 
   if (phase === 'intro') {
-    const intro = INTRO_SLIDES['intro-vocabulary'];
+    const intro = vocabularyIntro(parties, signatureParty);
     return (
       <SlideIntro
         emoji={intro.emoji}

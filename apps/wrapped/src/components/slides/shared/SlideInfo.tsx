@@ -21,7 +21,7 @@ function withHighlight(body: string, highlight?: string) {
 }
 
 /** Info slide (pink surface): stamped label, huge title, one or two big sentences. */
-export const SlideInfo = memo(function SlideInfo({ title, body, eyebrow = 'Gut zu wissen', highlight }: SlideInfoProps) {
+export const SlideInfo = memo(function SlideInfo({ title, body, eyebrow = 'Kurz erklärt', highlight }: SlideInfoProps) {
   return (
     <Slide shapes="ring">
       <motion.div variants={ENTER.stamp} className="self-start rotate-[-4deg]">

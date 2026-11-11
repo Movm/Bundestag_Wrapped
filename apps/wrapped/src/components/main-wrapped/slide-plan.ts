@@ -13,9 +13,14 @@ type DataQuizSlide = Exclude<(typeof QUIZ_SLIDES)[number], 'quiz-moin'>;
 
 interface StoryGroup {
   readonly quiz: (typeof QUIZ_SLIDES)[number];
-  readonly slides: readonly SlideType[];
+  /** A nested group is a chapter inside the story, shown only when its own quiz is answerable. */
+  readonly slides: readonly (SlideType | StoryGroup)[];
   readonly comparisonSlides?: readonly SlideType[];
+  /** Shown only when the edition counted earlier Jugendwörter (yearOverYear.youthLanguage.pastWinners). */
+  readonly youthHistorySlides?: readonly SlideType[];
 }
+
+const GENZ_GROUP: StoryGroup = { quiz: 'quiz-genz', slides: ['intro-genz', 'quiz-genz', 'info-genz'] };
 
 /**
  * The product story is intentionally expressed as explicit groups. A group is
@@ -33,11 +38,17 @@ const STORY_TEMPLATE: readonly (SlideType | StoryGroup)[] = [
   { quiz: 'quiz-drama', slides: ['intro-drama', 'quiz-drama', 'info-drama', 'reveal-drama'] },
   { quiz: 'quiz-discriminatory', slides: ['intro-discriminatory', 'quiz-discriminatory', 'info-discriminatory', 'reveal-discriminatory'] },
   { quiz: 'quiz-common-words', slides: ['intro-common-words', 'quiz-common-words', 'reveal-common-words'] },
-  { quiz: 'quiz-youth-language', slides: ['quiz-youth-language', 'info-youth-language', 'reveal-youth-language'] },
+  // One story: who says Jugendwörter? The Gen Z chapter sits between the
+  // question and its answer, so the twist (not the young MPs) lands at the end.
+  {
+    quiz: 'quiz-youth-language',
+    slides: ['quiz-youth-language', GENZ_GROUP, 'info-youth-language', 'reveal-youth-language'],
+    youthHistorySlides: ['reveal-youth-history'],
+  },
   // Moment of the year (e.g. Timmy der Wal), from the edition's mentions.
   { quiz: 'quiz-mention', slides: ['intro-mention', 'quiz-mention', 'info-mention'] },
   // Gen Z MPs against older MPs, from the edition's generations section.
-  { quiz: 'quiz-genz', slides: ['intro-genz', 'quiz-genz', 'info-genz'] },
+  GENZ_GROUP,
   { quiz: 'quiz-moin', slides: ['intro-moin', 'quiz-moin', 'info-moin', 'reveal-moin'] },
   { quiz: 'quiz-tone', slides: ['intro-tone', 'quiz-tone', 'info-tone', 'reveal-tone'] },
   { quiz: 'quiz-gender', slides: ['quiz-gender', 'info-gender', 'reveal-gender'] },
@@ -69,16 +80,23 @@ export function buildActiveSlidePlan(
   moinSpeakers: readonly MoinQuizCandidate[] | null | undefined,
   configuration?: EditionQuizConfiguration,
   hasYearOverYear = false,
+  hasYouthHistory = false,
 ): SlideType[] {
   const groupSlides = (group: StoryGroup): SlideType[] => [
-    ...group.slides,
+    ...group.slides.flatMap((entry) => {
+      if (!isStoryGroup(entry)) return [entry];
+      return hasQuiz(model, entry.quiz as DataQuizSlide) ? groupSlides(entry) : [];
+    }),
     ...(hasYearOverYear ? group.comparisonSlides ?? [] : []),
+    ...(hasYouthHistory ? group.youthHistorySlides ?? [] : []),
   ];
+  // A chapter nested in an earlier story is not repeated when its own group comes up.
+  const once = (slides: SlideType[]) => slides.filter((slide, index) => slides.indexOf(slide) === index);
   if (configuration) {
     const groups = new Map(
       STORY_TEMPLATE.filter(isStoryGroup).map((group) => [group.quiz, group]),
     );
-    return [
+    return once([
       'intro',
       'info-disclaimer',
       ...configuration.groups.flatMap(({ id }) => {
@@ -89,15 +107,15 @@ export function buildActiveSlidePlan(
       }),
       'share',
       'finale',
-    ];
+    ]);
   }
-  return STORY_TEMPLATE.flatMap((entry) => {
+  return once(STORY_TEMPLATE.flatMap((entry) => {
     if (!isStoryGroup(entry)) return [entry];
     const available = entry.quiz === 'quiz-moin'
       ? hasAvailableMoinQuiz(moinSpeakers)
       : hasQuiz(model, entry.quiz);
     return available ? groupSlides(entry) : [];
-  });
+  }));
 }
 
 export function getQuizSlides(slides: readonly SlideType[]): `quiz-${string}`[] {
