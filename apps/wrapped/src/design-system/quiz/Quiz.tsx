@@ -27,6 +27,8 @@ export interface QuizProps {
   gapSentence?: string;
   /** Small label above the question, e.g. section name. */
   badge?: string;
+  /** Mix the options per question (stable by seed); questions are built answer-first. */
+  shuffle?: boolean;
 }
 
 /**
@@ -36,13 +38,13 @@ export interface QuizProps {
  * dialog (AccessibleDialog) with "Weiter". Closing it returns focus to the
  * chosen answer.
  */
-export function Quiz({ quiz, isAnswered, onAnswer, seed, layout, gapSentence, badge }: QuizProps) {
+export function Quiz({ quiz, isAnswered, onAnswer, seed, layout, gapSentence, badge, shuffle = false }: QuizProps) {
   const reduce = useReducedMotion();
   const slideActive = useSlideEffectsActive();
   const story = useContext(StoryContext);
   const [confetti, setConfetti] = useState(false);
   const [resultOpen, setResultOpen] = useState(false);
-  const engine = useQuizEngine(quiz, { isAnswered, onAnswer, onCorrect: () => { if (!reduce) setConfetti(true); } });
+  const engine = useQuizEngine(quiz, { isAnswered, onAnswer, onCorrect: () => { if (!reduce) setConfetti(true); }, shuffleSeed: shuffle ? `${seed ?? ''}:${quiz.question}` : undefined });
   const questionId = useId();
   const verdictId = useId();
   const spec = useMemo(

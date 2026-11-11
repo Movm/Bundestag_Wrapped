@@ -27,7 +27,7 @@ async function renderQuiz(reduce = false) {
   vi.doMock('motion/react', async (importOriginal) => ({ ...(await importOriginal<typeof import('motion/react')>()), useReducedMotion: () => reduce }));
   const { SlideQuiz } = await import('./SlideQuiz');
   const root = createRoot(container);
-  await act(async () => root.render(<SlideQuiz quiz={quiz} onAnswer={() => {}} onComplete={() => {}} />));
+  await act(async () => root.render(<SlideQuiz quiz={quiz} onAnswer={() => {}} onComplete={() => {}} shuffle={false} />));
   return root;
 }
 

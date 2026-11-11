@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { playSound } from '@/lib/sounds';
+import { hashSeed } from './layouts';
 
 /** Input shapes accepted from slides (legacy config + edition questions). */
 export interface QuizConfig {
@@ -38,6 +39,28 @@ export function normalizeQuiz(config: AnyQuizConfig): NormalizedQuiz {
   };
 }
 
+/**
+ * Same order for the same seed on every render and reload, but the correct
+ * answer is not always first: questions are built answer-first.
+ */
+export function seededShuffle<T>(items: readonly T[], seed: string): T[] {
+  let state = hashSeed(seed) || 1;
+  const random = () => {
+    // mulberry32
+    state = (state + 0x6d2b79f5) >>> 0;
+    let t = state;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+  const result = [...items];
+  for (let index = result.length - 1; index > 0; index--) {
+    const other = Math.floor(random() * (index + 1));
+    [result[index], result[other]] = [result[other], result[index]];
+  }
+  return result;
+}
+
 export type OptionStatus = 'idle' | 'correct' | 'wrong' | 'other';
 
 export interface QuizOption {
@@ -70,8 +93,15 @@ const LETTERS = 'ABCDEFGH';
  * same engine, so scoring, sounds and announcements behave identically
  * whichever variant a quiz uses.
  */
-export function useQuizEngine(config: AnyQuizConfig, options: { isAnswered?: boolean; onAnswer: (correct: boolean) => void; onCorrect?: () => void }): QuizEngine {
-  const quiz = useMemo(() => normalizeQuiz(config), [config]);
+export function useQuizEngine(
+  config: AnyQuizConfig,
+  options: { isAnswered?: boolean; onAnswer: (correct: boolean) => void; onCorrect?: () => void; shuffleSeed?: string },
+): QuizEngine {
+  const { shuffleSeed } = options;
+  const quiz = useMemo(() => {
+    const normalized = normalizeQuiz(config);
+    return shuffleSeed ? { ...normalized, options: seededShuffle(normalized.options, shuffleSeed) } : normalized;
+  }, [config, shuffleSeed]);
   const [selected, setSelected] = useState<string | null>(null);
   const answered = options.isAnswered === true || selected !== null;
   const isCorrect = selected === quiz.correctAnswer;
