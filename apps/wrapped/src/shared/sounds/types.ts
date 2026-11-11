@@ -27,7 +27,7 @@ export type SoundType =
 /** Sounds served as files of their own. */
 export const SOUND_FILES: Partial<Record<SoundType, string>> = {
   start: '/sounds/start.wav',
-  /** A soft descending "uh-oh" (G4 to E♭4), synthesised for the quiz; SND has no fitting answer to `correct`. */
+  /** A soft descending "uh-oh" (G4 to E♭4), synthesised for the quiz; SND has no fitting counterpart to `correct`. */
   wrong: '/sounds/wrong.wav',
 };
 
@@ -53,7 +53,7 @@ export const SOUND_SPRITES: Partial<Record<SoundType, readonly string[]>> = {
 export const SOUND_VOLUMES: Record<SoundType, number> = {
   click: 0.6,
   correct: 0.8,
-  wrong: 0.55,
+  wrong: 1, // the file itself is quiet (peak −9 dBFS); it plays as previewed
   start: 0.9,
   assemble: 0.6,
   whoosh: 0.45,
