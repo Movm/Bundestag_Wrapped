@@ -420,7 +420,6 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'info-moin':
     case 'info-tone':
     case 'info-gender':
-    case 'info-chancellor':
       return <InfoSlideWrapper slide={slide} />;
 
     case 'reveal-topic-risers':

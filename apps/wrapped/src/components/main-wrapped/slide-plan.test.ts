@@ -158,7 +158,7 @@ describe('active slide plan', () => {
     expect(buildActiveSlidePlan(quizModel(['quiz-mention', 'quiz-chancellor']), [], configuration)).toEqual([
       'intro', 'info-disclaimer',
       'intro-mention', 'quiz-mention', 'info-mention',
-      'intro-chancellor', 'quiz-chancellor', 'info-chancellor', 'reveal-chancellor-topics', 'reveal-chancellor', 'reveal-chancellor-focus',
+      'intro-chancellor', 'quiz-chancellor', 'reveal-chancellor-topics', 'reveal-chancellor', 'reveal-chancellor-focus',
       'share', 'finale',
     ]);
   });

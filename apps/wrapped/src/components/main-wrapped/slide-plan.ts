@@ -50,7 +50,7 @@ const STORY_TEMPLATE: readonly (SlideType | StoryGroup)[] = [
   // Innen- oder Außenkanzler, from the edition's chancellor section.
   {
     quiz: 'quiz-chancellor',
-    slides: ['intro-chancellor', 'quiz-chancellor', 'info-chancellor', 'reveal-chancellor-topics', 'reveal-chancellor', 'reveal-chancellor-focus'],
+    slides: ['intro-chancellor', 'quiz-chancellor', 'reveal-chancellor-topics', 'reveal-chancellor', 'reveal-chancellor-focus'],
   },
   // Gen Z MPs against older MPs, from the edition's generations section.
   GENZ_GROUP,

@@ -74,7 +74,6 @@ export const SLIDES = [
   // Innen- oder Außenkanzler, from the edition's chancellor section
   'intro-chancellor',
   'quiz-chancellor',
-  'info-chancellor',
   'reveal-chancellor',
   'reveal-chancellor-focus',
   'reveal-chancellor-topics',
@@ -137,7 +136,6 @@ export const AUTO_SCROLL_SLIDES = new Set<SlideType>([
   'info-tone',
   'info-gender',
   'info-youth-language',
-  'info-chancellor',
 ]);
 
 export const AUTO_SCROLL_DELAY = 4000; // 4 seconds
