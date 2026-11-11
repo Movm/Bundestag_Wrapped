@@ -38,11 +38,13 @@ export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps)
     controller.onPress = () => { playSound('start'); themeMusic.startPrimed(); };
     // Silent on a first visit (no press yet, browsers forbid sound); heard after "Neu starten".
     controller.onAssemble = () => playSound('assemble');
+    // Like the quiz options; silent until the first press, as every sound is.
+    controller.onHover = () => playSound('hover');
     controller.onStart = () => onStartRef.current?.();
     coverRef.current = controller;
     // "Los geht’s" was pressed on the boot cover before the story was ready.
     if (startRequested) onStartRef.current?.();
-    return () => { controller.onStart = null; controller.onPress = null; controller.onAssemble = null; };
+    return () => { controller.onStart = null; controller.onPress = null; controller.onHover = null; controller.onAssemble = null; };
   }, []);
 
   useEffect(() => { coverRef.current?.setYear(year ? String(year) : null); }, [year]);

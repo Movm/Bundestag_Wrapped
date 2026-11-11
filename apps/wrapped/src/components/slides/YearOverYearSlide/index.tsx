@@ -109,7 +109,9 @@ export function TopicRiserContextSlide({ context }: { context: TopicRiserContext
   return (
     <Slide shapes="corner" footer={<Note className="ds-note--plate">Verglichen wird der Anteil an den jeweils gesprochenen Wörtern.</Note>}>
       <div className="flex flex-col items-start gap-3">
-        <Display size="xl">{riser.currentRank === 1 ? <><Mark>{name}</Mark> liegt vorn.</> : <><Mark>{name}</Mark> ist aufgestiegen.</>} Was steckt dahinter?</Display>
+        <Display size="xl">{riser.label === 'wirtschaft' && riser.currentRank === 1
+          ? <>It’s the <Mark>Economy</Mark>.</>
+          : <>{riser.currentRank === 1 ? <><Mark>{name}</Mark> liegt vorn.</> : <><Mark>{name}</Mark> ist aufgestiegen.</>} Was steckt dahinter?</>}</Display>
         <Lead>Diese Wörter zählen zum Thema:</Lead>
       </div>
       {words.length > 0 && <ChipCloud words={words} label={`Häufigste Wörter zum Thema ${name}`} />}
