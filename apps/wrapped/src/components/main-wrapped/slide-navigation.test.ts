@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { boundedTarget, WheelGesture } from './slide-navigation';
+import { boundedTarget, isChapterCut, WheelGesture } from './slide-navigation';
 
 describe('wheel intent', () => {
   it('accumulates small deltas but consumes the entire momentum tail once', () => {
@@ -26,5 +26,16 @@ describe('navigation gates', () => {
     expect(boundedTarget(2, 0, [true, true, true])).toBe(0);
     expect(boundedTarget(0, -1, [false, false])).toBe(0);
     expect(boundedTarget(1, 10, [false, false])).toBe(1);
+  });
+});
+
+describe('chapter cuts', () => {
+  it('marks the start and chapter openings, not moves inside a chapter', () => {
+    expect(isChapterCut('intro', 'info-disclaimer')).toBe(true);
+    expect(isChapterCut('reveal-topics', 'intro-vocabulary')).toBe(true);
+    expect(isChapterCut('reveal-gender', 'share')).toBe(true);
+    expect(isChapterCut('intro-topics', 'quiz-topics')).toBe(false);
+    expect(isChapterCut('quiz-topics', 'info-topics')).toBe(false);
+    expect(isChapterCut('reveal-gender', 'finale')).toBe(false); // ink to ink
   });
 });

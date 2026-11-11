@@ -3,7 +3,8 @@ import { ProgressSegments } from '@/design-system/components/ProgressSegments';
 import { surfaceForSlide } from '@/design-system/surfaces';
 import { MotionConfig } from 'motion/react';
 import { cn } from '@/lib/utils';
-import { boundedTarget, WheelGesture } from './slide-navigation';
+import { boundedTarget, isChapterCut, WheelGesture } from './slide-navigation';
+import { SurfaceFlood, type SurfaceFloodRef } from './SurfaceFlood';
 import { StoryContext, type Arrival } from './StoryContext';
 
 interface ScrollContainerProps {
@@ -43,6 +44,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
     const callback = useRef(onSectionChange);
     useLayoutEffect(() => { callback.current = onSectionChange; });
     const arrival = useRef<Arrival>('smooth');
+    const flood = useRef<SurfaceFloodRef>(null);
     const cancelNavigation = useRef(() => {});
     const controller = useRef({ next: (_id?: string, _instant?: boolean) => {}, previous: (_instant?: boolean) => {}, restore: (_id: string) => {} });
     const [activeId, setActiveId] = useState(initialSection ?? ids[0] ?? '');
@@ -122,6 +124,12 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
         target = index;
         arrival.current = instant || reduced.matches ? 'instant' : 'smooth';
         if (instant) wantFocus();
+        // Only a deliberate cut into a new chapter gets a colour flood: not a restore, not a move inside a chapter.
+        if (instant && !restore && !reduced.matches && index !== active && isChapterCut(sections[active].id, sections[index].id)) {
+          const trigger = document.activeElement instanceof HTMLButtonElement ? document.activeElement.getBoundingClientRect() : null;
+          flood.current?.play(surfaceForSlide(sections[active].id), surfaceForSlide(sections[index].id),
+            trigger ? { x: trigger.left + trigger.width / 2, y: trigger.top + trigger.height / 2 } : { x: window.innerWidth / 2, y: window.innerHeight * 0.85 });
+        }
         container.scrollTo({ top: top(index), behavior: instant || reduced.matches ? 'instant' : 'smooth' });
         schedule();
       };
@@ -253,6 +261,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
             className={cn('story-scroll relative overflow-y-auto overscroll-contain', className)}>
             <StoryContext value={{ activeId, readingMode, next: goNext, arrival }}>{children}</StoryContext>
           </div>
+          <SurfaceFlood ref={flood} />
           <ProgressSegments index={position.index} count={position.count} surface={surfaceForSlide(activeId)} />
           <span className="sr-only" role="status" aria-live="polite">Folie {position.index + 1} von {position.count}</span>
           {!position.blocked && position.index < position.count - 1 && !navigationOpen && <button
