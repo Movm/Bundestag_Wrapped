@@ -93,7 +93,7 @@ export interface InfoSlideContext {
   /** Jugendwörter of earlier years are counted too. */
   hasPastWinners?: boolean;
   /** What the youth-word chapter found; replaces the method text when present. */
-  youthSummary?: { body: string; highlight?: string };
+  youthSummary?: { body: string };
 }
 
 /** The info slide with the numbers its text names filled in from the data. */
