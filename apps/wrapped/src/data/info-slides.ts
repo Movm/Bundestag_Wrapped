@@ -105,7 +105,7 @@ export function resolveInfoSlide(slide: string, context: InfoSlideContext): Info
   }
   if (slide === 'info-youth-language') {
     const count = context.youthWordCount && context.youthWordCount > 1 ? ` ${cardinal(context.youthWordCount)}` : '';
-    const history = context.hasPastWinners ? ' Die Jugendwörter früherer Jahre zählen wir mit.' : '';
+    const history = context.hasPastWinners ? ' Dazu kommen die Jugendwörter früherer Jahre.' : '';
     return {
       ...content,
       body: `Wir haben nach${count} Begriffen aus der Jugendwort-Auswahl gesucht.${history} Zitate zählen mit. Bei mehrdeutigen Wörtern prüfen wir den Zusammenhang.`,
