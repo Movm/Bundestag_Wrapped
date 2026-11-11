@@ -90,8 +90,14 @@ test('completes the fixture journey with a quiz gate, mixed answers, and the act
   await expect(page.locator('[data-slide-id^="quiz-"]')).toHaveCount(6);
   await expect.poll(() => page.evaluate(() => localStorage.getItem('quiz-storage-v2'))).toContain('"quiz-signature":false');
   await expect.poll(() => page.evaluate(() => localStorage.getItem('quiz-storage-v2'))).toContain('"quiz-topics":true');
-  await scrollToNextSlide(page, 'share', 'finale');
-  await expect(page.locator('[data-slide-id="finale"]').getByRole('heading', { name: /Ein paar Überraschungen/ })).toBeVisible();
+  await scrollToNextSlide(page, 'share', 'outro');
+  await expect(page.locator('[data-slide-id="outro"]').getByRole('heading', { name: /Bundestag\s*Wrapped/i })).toBeVisible();
+  await scrollToNextSlide(page, 'outro', 'finale');
+  const finale = page.locator('[data-slide-id="finale"]');
+  await expect(finale.getByRole('heading', { name: 'Danke' })).toBeVisible();
+  // The credits follow the thanks on their own.
+  await expect(finale.getByRole('button', { name: 'Nochmal' })).toBeVisible({ timeout: 8_000 });
+  await expect(finale.getByRole('heading', { name: 'Danke & bis bald' })).toBeVisible();
 });
 
 test('uses the active edition for share and download output', async ({ page }) => {

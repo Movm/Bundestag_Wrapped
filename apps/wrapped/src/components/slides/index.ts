@@ -16,7 +16,7 @@ export { DiscriminatorySlide } from './DiscriminatorySlide';
 export { GenderSlide } from './GenderSlide';
 export { MoinSlide } from './MoinSlide';
 export { ShareSlide } from './ShareSlide';
-export { EndSlide } from './EndSlide';
+export { EndSlide, OutroSlide } from './EndSlide';
 export { MentionIntroSlide, MentionInfoSlide } from './MentionSlide';
 export { GenerationIntroSlide, GenerationInfoSlide } from './GenerationSlide';
 export { ChancellorFocusSlide, ChancellorIntroSlide, ChancellorSplitSlide, ChancellorTopicsSlide } from './ChancellorSlide';

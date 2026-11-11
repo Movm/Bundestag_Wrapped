@@ -101,7 +101,8 @@ export const SLIDES = [
   // Share
   'share',
 
-  // Finale
+  // Finale: "Das war …", then the thanks and credits
+  'outro',
   'finale',
 ] as const;
 

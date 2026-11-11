@@ -513,3 +513,59 @@
   transition: border-color 0.2s;
 }
 .ds-menu-pill:hover { border-color: #fff; }
+
+/* ─── Finale: "Das war …" (OutroSlide), then the thanks with credits (EndSlide). data-on plays each part. ─── */
+.ds-end { --end-pop: cubic-bezier(.2, 1.25, .4, 1); --end-rise: cubic-bezier(.2, 1, .3, 1); --end-fold: cubic-bezier(.7, 0, .2, 1); }
+.ds-end--thanks { cursor: pointer; }
+.ds-end .ds-shape { transition: translate 1.2s var(--end-pop), scale 1.2s var(--end-pop), rotate 1.2s var(--end-pop); }
+.ds-end .ds-shape--b { transition-delay: .08s; }
+.ds-end .ds-shape--c { transition-delay: .16s; }
+.ds-end--thanks .ds-shape--a { translate: -6vw 8vw; scale: .82; }
+.ds-end--thanks .ds-shape--b { translate: 0 -4vw; rotate: 5deg; }
+.ds-end--thanks .ds-shape--c { translate: 82vw -6vw; rotate: -30deg; scale: .7; }
+.ds-end--thanks[data-credits] .ds-shape--a { translate: -48vw 34vw; scale: .7; }
+.ds-end--thanks[data-credits] .ds-shape--b { translate: 0 3vw; rotate: -11deg; }
+.ds-end--thanks[data-credits] .ds-shape--c { translate: -2vw 15vmin; rotate: 108deg; scale: 1.15; }
+
+.ds-end__beat { display: flex; flex-direction: column; gap: clamp(1.25rem, 3vw, 2.25rem); min-width: 0; }
+.ds-end__eyebrow { margin: 0; font-family: var(--font-mono); font-weight: 700; font-size: clamp(.8125rem, 1.2vw, 1rem); letter-spacing: .14em; text-transform: uppercase; }
+.ds-end__title { display: flex; flex-direction: column; text-transform: uppercase; font-weight: 800; line-height: .86; letter-spacing: -.045em; hyphens: none; }
+.ds-end__pink { color: var(--color-wr-pink); }
+.ds-end__row { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(.75rem, 2vw, 1.75rem); }
+.ds-end__year { font-size: .32em; letter-spacing: -.03em; line-height: 1; padding: .08em .32em .12em; border-radius: 999px; background: var(--color-wr-pink); color: var(--color-wr-ink); rotate: -6deg; }
+
+/* Parts fade and rise in once shown, and leave at once. */
+.ds-end__in { opacity: 0; translate: 0 1.5rem; transition: opacity .3s ease, translate .4s ease; }
+.ds-end__beat[data-on] > .ds-end__in,
+.ds-end__beat[data-on] > .ds-end__title > .ds-end__in,
+.ds-end__in[data-on] { opacity: 1; translate: none; transition: opacity .5s ease var(--delay, 0s), translate .9s var(--end-pop) var(--delay, 0s); }
+
+/* "Danke" letter by letter; it shrinks to make room for "& bis bald". */
+.ds-end__thanks { font-size: clamp(2.5rem, 0.25rem + min(12.5vw, 15vh), 12.5rem); }
+.ds-end__danke { font-size: clamp(3.5rem, min(20vw, 24vh), 18.75rem); transition: font-size 1s var(--end-fold); }
+.ds-end__danke[data-small] { font-size: 1em; }
+.ds-end__word { display: flex; }
+.ds-end__clip { display: inline-block; overflow: hidden; padding-block: .04em; }
+.ds-end__letter { display: inline-block; white-space: pre; translate: 0 105%; rotate: 8deg; transition: translate .3s ease, rotate .3s ease; }
+.ds-end__beat[data-on] .ds-end__danke .ds-end__letter,
+.ds-end__bald[data-on] .ds-end__letter { translate: none; rotate: none; transition: translate .9s var(--end-rise) var(--delay), rotate .9s var(--end-rise) var(--delay); }
+
+/* Rows that open and close in place: the quote gives way to the credits. */
+/* A closed row is also invisible, once it has folded, so its text never counts as on screen. */
+.ds-end__fold { display: grid; grid-template-rows: 0fr; visibility: hidden; transition: grid-template-rows 1s var(--end-fold), visibility 0s 1s; }
+.ds-end__fold[data-open] { grid-template-rows: 1fr; visibility: visible; transition: grid-template-rows 1s var(--end-fold), visibility 0s; }
+.ds-end__fold > * { min-height: 0; overflow: hidden; }
+.ds-end__quote { margin: 0; max-width: 29rem; font-size: clamp(1rem, 1.4vw, 1.1875rem); font-weight: 700; line-height: 1.35; text-wrap: pretty; text-transform: none; letter-spacing: normal; hyphens: manual; }
+.ds-end__credits { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; padding-top: clamp(.5rem, 1.5vw, 1.25rem); font-size: clamp(1rem, 1.4vw, 1.1875rem); }
+.ds-end__credits p { max-width: 21rem; line-height: 1.35; }
+.ds-end__links { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; font-family: var(--font-mono); font-weight: 700; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; }
+.ds-end__links a { color: inherit; text-decoration: none; }
+.ds-end__links a:hover { color: var(--color-wr-pink); }
+.ds-end__links a:focus-visible { outline: 3px solid var(--color-wr-pink); outline-offset: 3px; }
+/* Phones: the shapes move less, so the circle stays off the title and the band off the links. */
+@media (max-width: 40rem) {
+  .ds-end--thanks .ds-shape--c { translate: 70vw -4vw; }
+  .ds-end--thanks[data-credits] .ds-shape--a { translate: -14vw -6vw; scale: .8; }
+  .ds-end--thanks[data-credits] .ds-shape--b { translate: 0 2vw; rotate: -4deg; }
+  .ds-end--thanks[data-credits] .ds-shape--c { translate: 76vw -62vh; rotate: 108deg; scale: .8; }
+}

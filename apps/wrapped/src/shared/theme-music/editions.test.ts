@@ -21,6 +21,7 @@ describe('edition music', () => {
       expect(themeForSlide(slide, '2026')).toBe('i-still-break');
     }
     expect(themeForSlide('finale', '2026')).toBe('vivaldi-spring');
+    expect(themeForSlide('outro', '2026')).toBe('vivaldi-spring');
   });
 
   it('falls back to the edition default for an unlisted section', () => {
