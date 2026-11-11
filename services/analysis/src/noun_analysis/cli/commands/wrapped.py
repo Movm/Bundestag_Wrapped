@@ -15,6 +15,7 @@ from noun_analysis.wrapped.speaker_export import SpeakerExporter
 from noun_analysis.wrapped.speaker_export.match import build_match_from_exporter, noun_counts_from_frame
 from noun_analysis.edition.export import EditionValidationError, build_manifest, publish_edition
 from noun_analysis.edition.comparison import build_year_over_year
+from noun_analysis.edition.chancellor import build_chancellor
 from noun_analysis.edition.generations import build_generations
 from noun_analysis.edition.mentions import build_mentions
 from noun_analysis.edition.release import build_release_report
@@ -53,6 +54,7 @@ def _apply_signature_configs(data, config_paths: tuple[str, ...]) -> None:
 @click.option("--youth-words", type=click.Path(exists=True, dir_okay=False), help="Versioned youth-word lexicon JSON")
 @click.option("--mentions", "mentions_config", type=click.Path(exists=True, dir_okay=False), help="Versioned mentions config (who talked about a named moment)")
 @click.option("--generations", is_flag=True, help="Add the Gen Z comparison (birth years from the MdB Stammdaten)")
+@click.option("--chancellor", "chancellor_name", help="Add the Innen-/Außenkanzler analysis for this speaker, e.g. \"Friedrich Merz\"")
 @click.option("--signature-config", "signature_configs", multiple=True, type=click.Path(exists=True, dir_okay=False), help="Repeatable signature-word filter configuration")
 @click.option("--freeze", is_flag=True, help="Mark this explicitly complete and frozen")
 def generate_edition(
@@ -69,6 +71,7 @@ def generate_edition(
     youth_words: str | None,
     mentions_config: str | None,
     generations: bool,
+    chancellor_name: str | None,
     signature_configs: tuple[str, ...],
     freeze: bool,
 ):
@@ -110,6 +113,16 @@ def generate_edition(
             cohort = build_generations(speeches, set(WordAnalyzer.STOPWORD_GENERIC) | data.signature_stopwords)
             if cohort:
                 wrapped_data["generations"] = cohort
+        if chancellor_name:
+            previous = None
+            if compare_with:
+                baseline = Path(compare_with)
+                previous_year = int(json.loads((baseline / "manifest.json").read_text(encoding="utf-8"))["year"])
+                previous_payload = json.loads((baseline / "speeches.json").read_text(encoding="utf-8"))
+                previous = (previous_year, previous_payload["speeches"] if isinstance(previous_payload, dict) else previous_payload)
+            chancellor = build_chancellor(speeches, chancellor_name, set(WordAnalyzer.STOPWORD_GENERIC) | data.signature_stopwords, previous)
+            if chancellor:
+                wrapped_data["chancellor"] = chancellor
         exporter = SpeakerExporter(data)
         speaker_index = exporter.generate_index()
         content: dict[str, object] = {"editionId": edition_id, "year": year}
