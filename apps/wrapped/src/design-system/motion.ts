@@ -23,9 +23,15 @@ export const ENTER = {
 
 export type EnterKind = keyof typeof ENTER;
 
+/**
+ * After a cut (keyboard, start) there is no scroll to wait for: start at once and
+ * run a little tighter. `custom` is the story's arrival ref (see StoryContext).
+ */
 export const STAGGER: Variants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.07, delayChildren: 0.04 } },
+  visible: (arrival?: { current: string }) => ({
+    transition: arrival?.current === 'instant' ? { staggerChildren: 0.05, delayChildren: 0 } : { staggerChildren: 0.07, delayChildren: 0.04 },
+  }),
 };
 
 /** Slides enter when about a fifth is on screen, once per mount. */

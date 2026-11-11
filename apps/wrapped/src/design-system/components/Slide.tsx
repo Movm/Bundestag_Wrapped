@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
-import { type ReactNode } from 'react';
+import { useContext, type ReactNode } from 'react';
+import { StoryContext } from '@/components/main-wrapped/StoryContext';
 import { cn } from '@/lib/utils';
 import { ENTER, IN_VIEW, STAGGER, type EnterKind } from '../motion';
 import { Shapes, type ShapePreset } from './Shapes';
@@ -22,12 +23,14 @@ interface SlideProps {
  * a Slide never chooses its own background.
  */
 export function Slide({ children, shapes, footer, className, align = 'start' }: SlideProps) {
+  const { arrival } = useContext(StoryContext);
   return (
     <div className={cn('ds-slide', className)}>
       {shapes !== false && shapes && <Shapes preset={shapes} />}
       <motion.div
         className={cn('ds-slide__body', align === 'center' && 'items-center text-center')}
         variants={STAGGER}
+        custom={arrival}
         initial="hidden"
         whileInView="visible"
         viewport={IN_VIEW}

@@ -4,7 +4,7 @@ import { surfaceForSlide } from '@/design-system/surfaces';
 import { MotionConfig } from 'motion/react';
 import { cn } from '@/lib/utils';
 import { boundedTarget, WheelGesture } from './slide-navigation';
-import { StoryContext } from './StoryContext';
+import { StoryContext, type Arrival } from './StoryContext';
 
 interface ScrollContainerProps {
   children: ReactNode;
@@ -42,6 +42,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
     }, [navigationOpen, containerRef]);
     const callback = useRef(onSectionChange);
     useLayoutEffect(() => { callback.current = onSectionChange; });
+    const arrival = useRef<Arrival>('smooth');
     const cancelNavigation = useRef(() => {});
     const controller = useRef({ next: (_id?: string, _instant?: boolean) => {}, previous: (_instant?: boolean) => {}, restore: (_id: string) => {} });
     const [activeId, setActiveId] = useState(initialSection ?? ids[0] ?? '');
@@ -119,6 +120,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
       const navigate = (requested: number, instant = false, restore = false) => {
         const index = restore ? Math.max(0, Math.min(requested, sections.length - 1)) : boundedTarget(active, requested, blocked());
         target = index;
+        arrival.current = instant || reduced.matches ? 'instant' : 'smooth';
         if (instant) wantFocus();
         container.scrollTo({ top: top(index), behavior: instant || reduced.matches ? 'instant' : 'smooth' });
         schedule();
@@ -157,6 +159,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
       const touchStart = (event: TouchEvent) => {
         if (event.touches.length !== 1) return;
         touching = true;
+        arrival.current = 'smooth';
         touchY = event.touches[0].clientY;
         touchX = event.touches[0].clientX;
         target = null;
@@ -248,7 +251,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
           <div ref={containerRef} data-story-scroll tabIndex={0} role="region" aria-label="Wrapped-Folien"
             data-reading-mode={readingMode}
             className={cn('story-scroll relative overflow-y-auto overscroll-contain', className)}>
-            <StoryContext value={{ activeId, readingMode, next: goNext }}>{children}</StoryContext>
+            <StoryContext value={{ activeId, readingMode, next: goNext, arrival }}>{children}</StoryContext>
           </div>
           <ProgressSegments index={position.index} count={position.count} surface={surfaceForSlide(activeId)} />
           <span className="sr-only" role="status" aria-live="polite">Folie {position.index + 1} von {position.count}</span>
