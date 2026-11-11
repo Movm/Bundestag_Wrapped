@@ -223,6 +223,23 @@ describe('Jugendwort speaker question', () => {
   });
   const quizOf = (data: unknown) => buildEditionQuizModel(data as never)['quiz-youth-language'];
 
+  const withGenz = (names: string[]) => (data: object) => ({
+    ...data,
+    generations: { bornFrom: 1997, cohort: 'genz', speakerCount: names.length, totalSpeakers: 500, unknownSpeakers: 0, speechesPerSpeaker: 1, olderSpeechesPerSpeaker: 1, parties: [], words: [], fewerWords: [], speakers: names.map(name => ({ name, party: 'GRÜNE', birthYear: 1999, speeches: 1 })) },
+  });
+
+  it('asks which generation said the word when Gen Z MPs are known', () => {
+    const quiz = quizOf(withGenz(['Luke Hoß'])(build(sayers, sayers)));
+    expect(quiz?.options).toEqual(['Die Gen Z', 'Die Älteren', 'Beide', 'Niemand']);
+    expect(quiz?.correctAnswer).toBe('Die Älteren');
+    expect(quiz?.explanation).toBe('Gesagt haben es Marcel Emmerich (GRÜNE) und Awet Tesfaiesus (GRÜNE). Niemand davon gehört zur Gen Z.');
+  });
+
+  it('counts a titled name as the same Gen Z person', () => {
+    const quiz = quizOf(withGenz(['Marcel Emmerich', 'Awet Tesfaiesus'])(build([{ name: 'Dr. Marcel Emmerich', party: 'GRÜNE', count: 1 }, { name: 'Zoe', party: 'SPD', count: 1 }], [])));
+    expect(quiz?.correctAnswer).toBe('Beide');
+  });
+
   it('asks who said the word, excludes the other sayer and mentions them', () => {
     const quiz = quizOf(build(sayers, [...sayers, ...others]));
     expect(quiz?.question).toBe('Das Jugendwort 2026 heißt „ragebait“. Wer hat es im Bundestag gesagt?');
@@ -231,7 +248,7 @@ describe('Jugendwort speaker question', () => {
     expect(quiz?.options).toEqual(['Marcel Emmerich (GRÜNE)', 'Beatrix von Storch (AfD)', 'Mandy Eißing (DIE LINKE)', 'Caroline Bosbach (CDU/CSU)']);
     expect(quiz?.options.join()).not.toContain('Tesfaiesus');
     expect(quiz?.explanation).toContain('Marcel Emmerich (GRÜNE) sagte „ragebait“ einmal.');
-    expect(quiz?.explanation).toContain('Awet Tesfaiesus (GRÜNE) (einmal)');
+    expect(quiz?.explanation).toContain('Awet Tesfaiesus (GRÜNE, einmal)');
     expect(quiz?.explanation).toContain('Wut provozieren');
   });
 
@@ -323,7 +340,7 @@ describe('edition quiz configuration', () => {
     ];
     const base = fixture('Europa', 'Partei A') as WrappedData;
     const quiz = buildEditionQuizModel({ ...base, mentions: [{ id: 'timmy', label: 'Timmy der Wal', count: 5, speakers }] })['quiz-mention'];
-    expect(quiz?.question).toBe('Wer hat Timmy der Wal im Plenum am häufigsten erwähnt?');
+    expect(quiz?.question).toBe('Wer hat „Timmy der Wal“ im Plenum am häufigsten erwähnt?');
     expect(quiz?.correctAnswer).toBe('Zoe (GRÜNE)');
     expect(quiz?.options).toHaveLength(4);
     const tie = speakers.map(speaker => ({ ...speaker, count: 1 }));

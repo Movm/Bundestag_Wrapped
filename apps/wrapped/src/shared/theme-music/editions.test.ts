@@ -15,7 +15,7 @@ describe('edition music', () => {
     expect(themeForSlide('intro', '2026')).toBe('pressure');
     expect(themeForSlide('info-disclaimer', '2026')).toBe('pressure');
     expect(themeForSlide('quiz-youth-language', '2026')).toBe('only-alone');
-    expect(themeForSlide('quiz-genz', '2026')).toBe('gloss-that');
+    expect(themeForSlide('quiz-genz', '2026')).toBe('only-alone');
     expect(themeForSlide('reveal-mention', '2026')).toBe('i-still-break');
     expect(themeForSlide('finale', '2026')).toBe('vivaldi-spring');
   });

@@ -66,6 +66,7 @@ export const SLIDES = [
   'quiz-youth-language',
   'info-youth-language',
   'reveal-youth-language',
+  'reveal-youth-history',
   // Moment of the year (e.g. Timmy der Wal), from the edition's mentions
   'intro-mention',
   'quiz-mention',

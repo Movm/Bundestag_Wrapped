@@ -4,7 +4,7 @@ import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
 import { TOPIC_BY_ID } from '@/shared/constants/topics';
 import type { TopicRiserContext } from '@/domain/topic-riser-context';
-import { youthWordMeaning } from '@/domain/youth-words';
+import { youthWordMeaning, type YouthGeneration } from '@/domain/youth-words';
 import { Enter, Slide } from '@/design-system/components/Slide';
 import { Display, Eyebrow, FitWord, Lead, Mark, Note } from '@/design-system/components/Type';
 import { ChipCloud, Delta, RankCard } from '@/design-system/components/Data';
@@ -115,7 +115,7 @@ export function SignatureWordMovementSlide({ analysis }: { analysis: YearOverYea
  * its meaning, who said it, other hits, and the candidates that never came up.
  * The data is usually thin (a handful of hits), so it reads as text, not charts.
  */
-export function YouthLanguageResultSlide({ analysis }: { analysis: YearOverYearAnalysis }) {
+export function YouthLanguageResultSlide({ analysis, generation }: { analysis: YearOverYearAnalysis; generation?: YouthGeneration | null }) {
   const youth = analysis.youthLanguage;
   const hits = youth.words.filter(item => item.count > 0);
   const misses = youth.words.filter(item => item.count === 0).map(item => item.word);
@@ -160,6 +160,7 @@ export function YouthLanguageResultSlide({ analysis }: { analysis: YearOverYearA
               </Enter>
             ))}
           </ul>
+          {generation === 'older' && <Lead><strong>Niemand davon gehört zur Gen Z.</strong></Lead>}
           {parties.length > 1 && (
             <Enter as="p" className="m-0 text-base font-semibold">
               Nach Fraktion: {parties.map(item => `${item.party} ${number.format(item.count)}×`).join(' · ')}
@@ -225,6 +226,56 @@ export function TopicRiserContextSlide({ context, baselineYear }: { context: Top
         </ol>
       )}
       </div>
+    </Slide>
+  );
+}
+
+const SMALL = ['Kein', 'Ein', 'Zwei', 'Drei', 'Vier', 'Fünf', 'Sechs', 'Sieben', 'Acht', 'Neun', 'Zehn', 'Elf', 'Zwölf'];
+const spelled = (value: number) => SMALL[value] ?? number.format(value);
+
+/**
+ * The end of the youth story: the Jugendwörter of earlier years, struck out
+ * when nobody said them. The closing line only runs when the data carries it:
+ * no youth word came from a Gen Z MP, and Gen Z MPs were identified at all.
+ */
+export function YouthHistorySlide({ analysis, generation }: { analysis: YearOverYearAnalysis; generation?: YouthGeneration | null }) {
+  const past = analysis.youthLanguage.pastWinners ?? [];
+  if (past.length === 0) return null;
+  const survivors = past.filter(item => item.count > 0);
+  const years = past.map(item => item.winnerYear);
+  const gaps = Array.from({ length: Math.max(...years) - Math.min(...years) + 1 }, (_, index) => Math.min(...years) + index).filter(year => !years.includes(year));
+  const parties = (item: (typeof past)[number]) => [...new Set((item.speakers ?? []).map(speaker => speaker.party))].join(', ');
+  return (
+    <Slide
+      shapes="corner"
+      footer={<Note className="ds-note--plate">Kleine Zahlen, nur Treffer im passenden Zusammenhang{gaps.length ? ` · ${gaps.join(', ')} wurde kein Jugendwort gewählt` : ''}</Note>}
+    >
+      <div className="flex flex-col items-start gap-3">
+        <Enter><Eyebrow>Jugendwörter seit {Math.min(...years)}</Eyebrow></Enter>
+        <Display size="lg" face="wide">
+          {spelled(past.length)} alte Jugendwörter. <Mark>{survivors.length === 0 ? 'Keins kam vor.' : survivors.length === 1 ? 'Eins hat überlebt.' : `${spelled(survivors.length)} haben überlebt.`}</Mark>
+        </Display>
+      </div>
+      <ul className="m-0 flex list-none flex-wrap gap-2 p-0" aria-label="Jugendwörter der Vorjahre">
+        {past.map(item => (
+          <Enter as="li" key={item.word} kind="pop">
+            <span
+              data-surface={item.count > 0 ? 'light' : undefined}
+              className={`inline-flex items-baseline gap-2 rounded-full px-4 py-2 font-wide text-lg font-extrabold ${item.count > 0 ? '' : 'line-through opacity-50'}`}
+            >
+              <span className="text-sm font-bold">{item.winnerYear}</span>
+              <span>{item.word}</span>
+              <span className="text-sm font-bold">{number.format(item.count)}×</span>
+            </span>
+          </Enter>
+        ))}
+      </ul>
+      {survivors.map(item => (
+        <Lead key={item.word}>„{item.word}“ ist von {item.winnerYear} und fiel {number.format(item.count)}× im Plenum{parties(item) ? `: ${parties(item)}` : ''}.</Lead>
+      ))}
+      {generation === 'older' && (
+        <Display size="md" face="wide">Die Jungen reden wie Erwachsene. <Mark>Die Erwachsenen reden wie die Jungen.</Mark></Display>
+      )}
     </Slide>
   );
 }

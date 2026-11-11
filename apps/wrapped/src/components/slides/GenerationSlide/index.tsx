@@ -48,7 +48,7 @@ export function GenerationIntroSlide({ generations }: { generations: GenerationC
 }
 
 /** What Gen Z MPs say more often than older MPs of the same parties, and where they sit. */
-export function GenerationInfoSlide({ generations }: { generations: GenerationComparison }) {
+export function GenerationInfoSlide({ generations, saidNoYouthWord = false }: { generations: GenerationComparison; saidNoYouthWord?: boolean }) {
   const words = generations.words.slice(0, 6).map(item => displayWord(item.word));
   const fewer = generations.fewerWords.slice(0, 3).map(item => displayWord(item.word));
   return (
@@ -61,8 +61,18 @@ export function GenerationInfoSlide({ generations }: { generations: GenerationCo
       </motion.div>
       {words.length > 0 && (
         <div className="flex flex-col items-start gap-3">
-          <Display size="md">Öfter als ältere Abgeordnete derselben Fraktion</Display>
-          <ChipCloud words={words} label="Wörter, die Gen-Z-Abgeordnete öfter sagen" />
+          {saidNoYouthWord ? (
+            <>
+              <Display size="md">Kein einziges Jugendwort. <Mark>Dafür das hier:</Mark></Display>
+              <ChipCloud words={words} label="Wörter, die Gen-Z-Abgeordnete öfter sagen" />
+              <motion.p variants={ENTER.rise} className="m-0 text-base font-semibold">Öfter als ältere Abgeordnete derselben Fraktion.</motion.p>
+            </>
+          ) : (
+            <>
+              <Display size="md">Öfter als ältere Abgeordnete derselben Fraktion</Display>
+              <ChipCloud words={words} label="Wörter, die Gen-Z-Abgeordnete öfter sagen" />
+            </>
+          )}
           {fewer.length > 0 && <motion.p variants={ENTER.rise} className="m-0 text-base font-semibold">Seltener: {fewer.join(', ')}</motion.p>}
         </div>
       )}

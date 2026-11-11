@@ -33,7 +33,7 @@ export const INFO_SLIDES: Record<string, InfoSlideContent> = {
   'info-youth-language': {
     emoji: '🗣️',
     title: 'So zählen wir Jugendwörter',
-    body: 'Zehn Kandidaten von Langenscheidt, alle Reden. Zitate zählen mit, mehrdeutige Wörter nur im passenden Zusammenhang.',
+    body: 'Die Kandidaten von Langenscheidt und die Jugendwörter der Vorjahre, alle Reden. Zitate zählen mit, mehrdeutige Wörter nur im passenden Zusammenhang.',
   },
   'info-topics': {
     emoji: '📊',

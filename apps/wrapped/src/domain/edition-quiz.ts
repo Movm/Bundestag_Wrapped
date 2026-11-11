@@ -1,5 +1,6 @@
 import type { QuizQuestion, WrappedData } from '@/data/wrapped';
-import { youthWordMeaning } from './youth-words';
+import { TOPIC_BY_ID } from '@/shared/constants/topics';
+import { youthGeneration, youthWordMeaning, type YouthGeneration } from './youth-words';
 import type { EditionQuizConfiguration } from '@/generated/wrapped-contract-v1';
 import { MissingMetricError, topInterrupter, topSpeakerByWords, topTopic } from './metrics';
 
@@ -101,7 +102,7 @@ function jugendwortSpeakerQuestion(
   const answer = speakerLabel(winner);
   const times = (count: number) => (count === 1 ? 'einmal' : `${number.format(count)}-mal`);
   const alsoSaid = others.length
-    ? ` Auch gesagt haben es ${others.map(speaker => `${speakerLabel(speaker)} (${times(speaker.count)})`).join(', ')}.`
+    ? ` Auch gesagt haben es ${others.map(speaker => `${speaker.name} (${speaker.party}, ${times(speaker.count)})`).join(', ')}.`
     : '';
   const meaning = youthWordMeaning(word.word) ? ` ${youthWordMeaning(word.word)}` : '';
   return question(
@@ -110,6 +111,38 @@ function jugendwortSpeakerQuestion(
     [answer, ...picked.map(speakerLabel)],
     answer,
     `${answer} sagte „${word.word}“ ${times(winner.count)}.${alsoSaid}${meaning} Das sagt nur, dass das Wort fiel, nicht, wie es gemeint war.`,
+  );
+}
+
+const GENERATION_OPTIONS: Record<YouthGeneration | 'none', string> = {
+  genz: 'Die Gen Z',
+  older: 'Die Älteren',
+  both: 'Beide',
+  none: 'Niemand',
+};
+
+/**
+ * Opens the youth story: did the Jugendwort come from the young MPs? Fixed
+ * option order (young, older, both, nobody), so the answer is not always first.
+ */
+function jugendwortGenerationQuestion(
+  word: YouthWord & { speakers: WordSpeaker[] },
+  genzSpeakers: ReadonlyArray<{ name: string }>,
+): QuizQuestion | undefined {
+  const generation = youthGeneration(word.speakers, genzSpeakers);
+  if (!generation) return undefined;
+  const names = new Intl.ListFormat('de', { type: 'conjunction' }).format(word.speakers.map(speakerLabel));
+  const verdict = {
+    genz: 'Alle gehören zur Gen Z.',
+    older: word.speakers.length === 1 ? 'Nicht aus der Gen Z.' : 'Niemand davon gehört zur Gen Z.',
+    both: 'Jung und Alt.',
+  }[generation];
+  return question(
+    'quiz-youth-language',
+    `Das Jugendwort ${word.winnerYear} heißt „${word.word}“. Wer hat es im Bundestag gesagt?`,
+    [GENERATION_OPTIONS.genz, GENERATION_OPTIONS.older, GENERATION_OPTIONS.both, GENERATION_OPTIONS.none],
+    GENERATION_OPTIONS[generation],
+    `Gesagt haben es ${names}. ${verdict}`,
   );
 }
 
@@ -141,10 +174,10 @@ function mentionQuestion(mention: { label: string; speakers: Array<{ name: strin
   const times = winner.count === 1 ? 'einmal' : `${number.format(winner.count)}-mal`;
   return question(
     'quiz-mention',
-    `Wer hat ${mention.label} im Plenum am häufigsten erwähnt?`,
+    `Wer hat „${mention.label}“ im Plenum am häufigsten erwähnt?`,
     [answer, ...others.slice(0, 3).map(speakerLabel)],
     answer,
-    `${answer} erwähnte ${mention.label} ${times}, alle anderen höchstens ${others[0]?.count === 1 ? 'einmal' : `${number.format(others[0]?.count ?? 0)}-mal`}. Gezählt wird, wie oft der Name fiel, nicht in welchem Zusammenhang.`,
+    `${answer} erwähnte „${mention.label}“ ${times}, alle anderen höchstens ${others[0]?.count === 1 ? 'einmal' : `${number.format(others[0]?.count ?? 0)}-mal`}. Gezählt wird, wie oft der Name fiel, nicht in welchem Zusammenhang.`,
   );
 }
 
@@ -160,12 +193,13 @@ export function buildEditionQuizModel(data: WrappedData, configuration?: Edition
     const movement = winner.previousRank === null
       ? `neu auf Platz ${winner.currentRank}`
       : `von Platz ${winner.previousRank} auf Platz ${winner.currentRank}`;
+    const name = (id: string) => TOPIC_BY_ID[id]?.name ?? id;
     return question(
       'quiz-topic-riser',
-      `Über welches Thema wird gegenüber ${baseline} deutlich mehr geredet?`,
-      picked.options,
-      winner.label,
-      `${winner.label} stieg ${movement}. Gemessen daran, wie viele Wörter in den Reden zum Thema gehören, nicht an der Zahl der Reden.`,
+      `Welches Thema ist gegenüber ${baseline} am weitesten nach oben geklettert?`,
+      picked.options.map(name),
+      name(winner.label),
+      `${name(winner.label)} stieg ${movement}. Gemessen daran, wie viele Wörter in den Reden zum Thema gehören, nicht an der Zahl der Reden.`,
     );
   });
 
@@ -196,6 +230,9 @@ export function buildEditionQuizModel(data: WrappedData, configuration?: Edition
     const jugendwort = [...(comparison?.youthLanguage.words ?? [])]
       .filter(item => item.winnerYear !== undefined)
       .sort((a, b) => (b.winnerYear ?? 0) - (a.winnerYear ?? 0))[0];
+    if (jugendwort?.speakers?.length && data.generations?.speakers.length) {
+      return jugendwortGenerationQuestion({ ...jugendwort, speakers: jugendwort.speakers }, data.generations.speakers);
+    }
     if (jugendwort?.speakers?.length) {
       return jugendwortSpeakerQuestion(
         { ...jugendwort, speakers: jugendwort.speakers },
