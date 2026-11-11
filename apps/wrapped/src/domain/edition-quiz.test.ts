@@ -117,7 +117,7 @@ describe('buildEditionQuizModel', () => {
     const model = buildEditionQuizModel(data as never);
 
     expect(model['quiz-topic-riser']?.correctAnswer).toBe('Wirtschaft');
-    expect(buildEditionQuizModel(data as never, undefined, 2026)['quiz-topic-riser']?.question).toBe('Welches Thema hat sich 2026 auf Platz 1 geschoben?');
+    expect(buildEditionQuizModel(data as never)['quiz-topic-riser']?.question).toBe('Über welches Thema wurde dieses Jahr im Bundestag am meisten gesprochen?');
     expect(model['quiz-topic-riser']?.explanation).toBe('Wirtschaft! Im gleichen Zeitraum 2025 noch auf Platz 4, liegt das Thema dieses Mal vorn.');
     expect(model['quiz-word-riser']?.correctAnswer).toBe('mensch');
     expect(model['quiz-word-riser']?.question).toBe('Was ist das Aufsteigerwort des Jahres?');
@@ -241,6 +241,26 @@ describe('Jugendwort speaker question', () => {
     expect(quiz?.question).toBe('„Ragebait“ im Bundestag. Wer hat’s gesagt?');
   });
 
+  it('asks which pair said the word when two MPs did, against same-party pairs and the young pair', () => {
+    const pool: Sayer[] = [
+      ...others,
+      { name: 'Jens Spahn', party: 'CDU/CSU', count: 0 },
+      { name: 'Helge Lindh', party: 'SPD', count: 0 },
+      { name: 'Carmen Wegge', party: 'SPD', count: 0 },
+      { name: 'Luke Hoß', party: 'DIE LINKE', count: 0 },
+    ];
+    const quiz = quizOf(withGenz(['Luke Hoß'])({ ...build(sayers, sayers), topSpeakersByWords: pool }));
+    expect(quiz?.question).toBe('„Ragebait“ im Bundestag. Wer hat’s gesagt?');
+    expect(quiz?.correctAnswer).toBe('Marcel Emmerich & Awet Tesfaiesus (GRÜNE)');
+    expect(quiz?.options).toEqual([
+      'Marcel Emmerich & Awet Tesfaiesus (GRÜNE)',
+      'Mandy Eißing & Luke Hoß (DIE LINKE)',
+      'Helge Lindh & Carmen Wegge (SPD)',
+      'Philipp Amthor & Anna Aeikens (CDU/CSU)',
+    ]);
+    expect(quiz?.explanation).toBe('Gesagt haben es Marcel Emmerich (GRÜNE) und Awet Tesfaiesus (GRÜNE), je einmal. Keiner von beiden gehört zur Gen Z. Gemeint sind Inhalte, die absichtlich wütend machen sollen, um Aufmerksamkeit zu bekommen.');
+  });
+
   it('counts a titled name as the same Gen Z person', () => {
     const quiz = quizOf(withGenz(['Marcel Emmerich', 'Awet Tesfaiesus'])(build([{ name: 'Dr. Marcel Emmerich', party: 'GRÜNE', count: 1 }, { name: 'Zoe', party: 'SPD', count: 1 }], [])));
     expect(quiz?.correctAnswer).toBe('Beide');
@@ -286,8 +306,19 @@ describe('Jugendwort speaker question', () => {
 });
 
 describe('edition quiz configuration', () => {
-  it('runs the 2026 edition as topic riser, signature words, youth language, the moment of the year and Gen Z', () => {
-    expect(quiz2026.groups.map(group => group.id)).toEqual(['quiz-topic-riser', 'quiz-signature', 'quiz-youth-language', 'quiz-mention', 'quiz-genz']);
+  it('runs the 2026 edition as topic riser, signature words, youth language, the moment of the year, the chancellor and Gen Z', () => {
+    expect(quiz2026.groups.map(group => group.id)).toEqual(['quiz-topic-riser', 'quiz-signature', 'quiz-youth-language', 'quiz-mention', 'quiz-chancellor', 'quiz-genz']);
+  });
+
+  it('asks for the chancellor’s foreign share with the real number in the explanation', () => {
+    const base = fixture('Europa', 'Partei A') as WrappedData;
+    const chancellor = { name: 'Friedrich Merz', foreignShare: 44.3, chamberForeignShare: 16 } as WrappedData['chancellor'];
+    const quiz = buildEditionQuizModel({ ...base, chancellor })['quiz-chancellor'];
+    expect(quiz?.question).toBe('Wie viel von dem, worüber Merz im Plenum spricht, ist Außenpolitik?');
+    expect(quiz?.correctAnswer).toBe('44 %');
+    expect(quiz?.options).toEqual(['44 %', '30 %', '58 %', '16 %']);
+    expect(quiz?.explanation).toBe('44 % seiner Themenwörter gehören zur Außenpolitik, 56 % zur Innenpolitik. Im restlichen Bundestag liegt der Außen-Anteil bei 16 %.');
+    expect(buildEditionQuizModel(base)['quiz-chancellor']).toBeUndefined();
   });
 
   it('asks which group has the most Gen Z MPs only with a clear leader', () => {

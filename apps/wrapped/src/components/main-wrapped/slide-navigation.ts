@@ -40,3 +40,21 @@ export function boundedTarget(from: number, requested: number, blocked: boolean[
   for (let i = from; i < target; i++) if (blocked[i]) return i;
   return target;
 }
+
+/**
+ * Index of the slide a `#<slideId>` URL hash names, or -1 (empty, unknown, malformed).
+ * Unknown ids are ignored so the story simply starts normally.
+ */
+export function slideIndexFromHash(hash: string, ids: readonly string[]): number {
+  let id: string;
+  try { id = decodeURIComponent(hash.replace(/^#/, '')); } catch { return -1; }
+  return id ? ids.indexOf(id) : -1;
+}
+
+/**
+ * Where a deep link lands. Development ignores the quiz and intro gates so any slide is
+ * reachable; production keeps them: a link past an unanswered quiz stops at that quiz.
+ */
+export function hashJumpTarget(from: number, requested: number, blocked: boolean[], ungated: boolean): number {
+  return ungated ? requested : boundedTarget(from, requested, blocked);
+}

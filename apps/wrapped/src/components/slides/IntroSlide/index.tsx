@@ -4,15 +4,11 @@ import { playSound } from '@/lib/sounds';
 import { themeMusic } from '@/lib/theme-music';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
-import { previewProtocolsLabel } from '@/edition/labels';
-import { capitalize, cardinal } from '@/lib/german-count';
 import { acquireCover, releaseBootShell } from '@/cover/shell';
 import type { CoverController } from '@/cover/cover';
 
 interface IntroSlideProps {
   onStart?: () => void;
-  /** Active quiz questions, spelled out in the tagline; omitted until known. */
-  questionCount?: number;
 }
 
 /**
@@ -20,10 +16,9 @@ interface IntroSlideProps {
  * (src/cover/cover.ts) and usually already painted by the inline boot script;
  * this slide adopts that element, so the first visit never waits for React.
  */
-export const IntroSlide = memo(function IntroSlide({ onStart, questionCount = 0 }: IntroSlideProps) {
+export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps) {
   const edition = useOptionalEdition();
   const year = editionSurface(edition).year;
-  const note = previewProtocolsLabel(edition?.manifest);
   const active = useSlideEffectsActive();
   const hostRef = useRef<HTMLDivElement>(null);
   const coverRef = useRef<CoverController | null>(null);
@@ -51,10 +46,6 @@ export const IntroSlide = memo(function IntroSlide({ onStart, questionCount = 0 
   }, []);
 
   useEffect(() => { coverRef.current?.setYear(year ? String(year) : null); }, [year]);
-  useEffect(() => {
-    coverRef.current?.setQuestions(questionCount > 1 ? `${capitalize(cardinal(questionCount))} Fragen.` : null);
-  }, [questionCount]);
-  useEffect(() => { coverRef.current?.setNote(note); }, [note]);
 
   useEffect(() => {
     const cover = coverRef.current;

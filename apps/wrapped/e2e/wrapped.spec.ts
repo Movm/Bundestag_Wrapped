@@ -195,7 +195,7 @@ test('restores different answers when switching between annual routes', async ({
   await page.goto('/2025');
   await jumpToSlide(page, 'quiz-topics');
   await expect(page.locator('[data-slide-id="quiz-topics"]').getByRole('button').first()).toBeDisabled();
-  await expect(page.locator('[data-slide-id="quiz-topics"]').getByText('Weiter geht es mit der nächsten Folie.')).toBeVisible();
+  await expect(page.locator('[data-slide-id="quiz-topics"] [data-testid="quiz-result"]')).toHaveText(/Deine Antwort ist richtig\./);
   const scopes = await page.evaluate(() => JSON.parse(localStorage.getItem('quiz-storage-v2') ?? '{}').state?.answersByScope);
   expect(scopes['quiz:2025:fixture-a']['quiz-topics']).toBe(true);
   expect(scopes['quiz:2026:fixture-b']['quiz-topics']).toBe(false);

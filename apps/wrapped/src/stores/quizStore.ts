@@ -63,8 +63,9 @@ export function useCorrectCount(surface: QuizSurface, activeSlides?: readonly Sl
   return useQuizStore((state) => countCorrectAnswers(answersFor(state, surface), activeSlides));
 }
 
-export function useIsQuizAnswered(surface: QuizSurface, slideId: SlideType): boolean {
-  return useQuizStore((state) => slideId in answersFor(state, surface));
+/** Stored result of one quiz: true = right, false = wrong, null = not answered yet. */
+export function useQuizAnswer(surface: QuizSurface, slideId: SlideType): boolean | null {
+  return useQuizStore((state) => answersFor(state, surface)[slideId] ?? null);
 }
 
 export function useHasAnsweredAny(surface: QuizSurface): boolean {

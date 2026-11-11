@@ -25,5 +25,7 @@ export default defineConfig({
     command: 'pnpm build && pnpm preview --host 127.0.0.1 --port 4173',
     url: 'http://127.0.0.1:4173',
     reuseExistingServer: !process.env.CI,
+    // The build writes the search index of every edition first (~55 s locally); Playwright's default is 60 s.
+    timeout: 180_000,
   },
 });

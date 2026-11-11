@@ -5,6 +5,10 @@ interface ConfettiProps {
   colors: string[];
   /** Seconds each piece flies. */
   duration?: number;
+  /** Widest sideways flight in px; pieces also rise up to half the viewport. */
+  spread?: number;
+  /** Edge of a piece in px. */
+  size?: number;
 }
 
 /**
@@ -13,18 +17,20 @@ interface ConfettiProps {
  * JavaScript per frame. Render it inside an aria-hidden, pointer-events-none
  * layer and only when motion is allowed.
  */
-export const Confetti = memo(function Confetti({ count = 20, colors, duration = 0.8 }: ConfettiProps) {
+export const Confetti = memo(function Confetti({ count = 20, colors, duration = 0.8, spread = 100, size = 12 }: ConfettiProps) {
   const pieces = useMemo(
     () => Array.from({ length: count }, (_, i) => ({
       left: `${Math.random() * 100}%`,
-      '--x': `${Math.random() * 200 - 100}px`,
+      '--x': `${(Math.random() * 2 - 1) * spread}px`,
+      width: `${size}px`,
+      height: `${size * (0.6 + Math.random() * 0.6)}px`,
       '--y': `${Math.random() * -50 - 10}vh`,
       '--r': `${Math.random() * 720 - 360}deg`,
       '--d': `${duration}s`,
       '--delay': `${Math.random() * Math.min(0.3, duration * 0.2)}s`,
       background: colors[i % colors.length],
     }) as CSSProperties),
-    [count, colors, duration],
+    [count, colors, duration, spread, size],
   );
-  return <>{pieces.map((style, i) => <span key={i} className="ds-confetti absolute w-3 h-3 rounded-sm" style={style} />)}</>;
+  return <>{pieces.map((style, i) => <span key={i} className="ds-confetti absolute rounded-sm" style={style} />)}</>;
 });

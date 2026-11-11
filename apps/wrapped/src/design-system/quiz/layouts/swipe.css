@@ -31,8 +31,8 @@
   background: #fff; color: var(--color-wr-ink);
   transition: rotate 0.45s var(--ease-wr-pop), background 0.3s;
 }
-.ds-swipe-card[data-status='correct'] { background: var(--color-wr-pink); rotate: -3deg; }
-.ds-swipe-card[data-status='wrong'] { rotate: 3deg; }
+.ds-swipe-card[data-status='correct'] { background: var(--color-wr-mint); color: var(--color-wr-ink); rotate: -3deg; }
+.ds-swipe-card[data-status='wrong'] { background: var(--color-wr-red); color: #fff; rotate: 3deg; }
 .ds-swipe-card__meta { font-family: var(--font-wide); font-weight: 800; font-size: 1rem; }
 .ds-swipe-card__label { font-family: var(--font-wide); font-weight: 900; font-size: clamp(1.75rem, 1rem + 3.4vw, 3.75rem); line-height: 0.95; letter-spacing: -0.04em; text-transform: uppercase; overflow-wrap: anywhere; hyphens: auto; }
 @media (prefers-reduced-motion: reduce) { .ds-swipe-card, .ds-swipe-btn { transition: none; } }

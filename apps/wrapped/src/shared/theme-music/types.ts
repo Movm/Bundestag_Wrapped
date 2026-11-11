@@ -18,6 +18,8 @@ const FMA = { name: 'Free Music Archive', url: 'https://freemusicarchive.org' };
 const EPIDEMIC = { name: 'Epidemic Sound', url: 'https://www.epidemicsound.com' };
 const JAMENDO = { name: 'Jamendo', url: 'https://www.jamendo.com' };
 const CLASSICALS = { name: 'Classicals.de', url: 'https://www.classicals.de' };
+const SUNO = { name: 'Suno', url: 'https://suno.com' };
+const SUNO_TERMS: License = { name: 'Suno-Nutzungsbedingungen', url: 'https://suno.com/terms' };
 
 export interface Track {
   path: string;
@@ -51,6 +53,8 @@ export const TRACKS = {
   'gloss-that': { path: '/sounds/loreana-gloss-that.mp3', title: 'GLOSS THAT', artist: 'Loreana', license: EPIDEMIC_LICENSE, source: EPIDEMIC },
   pressure: { path: '/sounds/nyck-caution-pressure.mp3', title: 'PRESSURE!', artist: 'Nyck Caution', license: EPIDEMIC_LICENSE, source: EPIDEMIC },
   'i-still-break': { path: '/sounds/parellite-i-still-break.mp3', title: 'I Still Break', artist: 'Parellite', license: EPIDEMIC_LICENSE, source: EPIDEMIC },
+  // Written for the Timmy chapter, made with Suno; the first 55 seconds with a 2 s fade-out.
+  timmy: { path: '/sounds/suno-er-hat-sich-das-nicht-ausgesucht.mp3', title: 'Er hat sich das nicht ausgesucht', artist: 'Eigene Kreation', license: SUNO_TERMS, source: SUNO },
   'take-2': { path: '/sounds/mushkilla-take-2-harrison-first-rework.mp3', title: 'Take 2 (Harrison First Rework)', artist: 'Mushkilla & Harrison First', license: EPIDEMIC_LICENSE, source: EPIDEMIC },
 } as const satisfies Record<string, Track>;
 

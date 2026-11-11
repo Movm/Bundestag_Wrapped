@@ -47,16 +47,16 @@ test('keeps future slides out of Tab order, stops timed reading, and supports re
   expect(await page.locator('[data-story-scroll]').evaluate(el => el.scrollTop)).toBe(position);
 });
 
-test('provides persistent quiz feedback', async ({ page }) => {
+test('announces quiz feedback, then moves on to the next slide', async ({ page }) => {
   await page.goto('/2025');
   await jumpToSlide(page, (await page.locator('#quiz-topics').getAttribute('id'))!);
   const quiz = page.locator('#quiz-topics');
   await expect(quiz).not.toHaveAttribute('inert', '');
   await quiz.getByRole('button').first().click();
-  await expect(quiz.getByRole('status')).toContainText(/Deine Antwort (ist richtig|ist falsch|wurde gespeichert)/);
+  await expect(quiz.getByRole('status')).toContainText(/Deine Antwort ist (richtig|falsch)\..*Weiter geht es mit der nächsten Folie\./);
   await expectInlineQuizResult(page);
-  await page.waitForTimeout(3000);
-  await expect(quiz).not.toHaveAttribute('inert', '');
+  // After the pause on the marked answer the story leaves the quiz by itself.
+  await expect(quiz).toHaveAttribute('inert', '', { timeout: 5000 });
 });
 
 test('contains speech and menu focus and restores it on Escape', async ({ page }) => {

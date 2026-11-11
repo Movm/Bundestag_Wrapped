@@ -6,7 +6,7 @@ export const QUIZ_SLIDES = [
   'quiz-topic-riser', 'quiz-word-riser', 'quiz-youth-language',
   'quiz-topics', 'quiz-signature', 'quiz-speeches', 'quiz-drama',
   'quiz-discriminatory', 'quiz-common-words', 'quiz-moin',
-  'quiz-tone', 'quiz-gender', 'quiz-mention', 'quiz-genz',
+  'quiz-tone', 'quiz-gender', 'quiz-mention', 'quiz-genz', 'quiz-chancellor',
 ] as const;
 
 type DataQuizSlide = Exclude<(typeof QUIZ_SLIDES)[number], 'quiz-moin'>;
@@ -16,8 +16,6 @@ interface StoryGroup {
   /** A nested group is a chapter inside the story, shown only when its own quiz is answerable. */
   readonly slides: readonly (SlideType | StoryGroup)[];
   readonly comparisonSlides?: readonly SlideType[];
-  /** Shown only when the edition counted earlier Jugendwörter (yearOverYear.youthLanguage.pastWinners). */
-  readonly youthHistorySlides?: readonly SlideType[];
 }
 
 const GENZ_GROUP: StoryGroup = { quiz: 'quiz-genz', slides: ['intro-genz', 'quiz-genz', 'info-genz'] };
@@ -42,11 +40,15 @@ const STORY_TEMPLATE: readonly (SlideType | StoryGroup)[] = [
   // question and its answer, so the twist (not the young MPs) lands at the end.
   {
     quiz: 'quiz-youth-language',
-    slides: ['quiz-youth-language', GENZ_GROUP, 'info-youth-language', 'reveal-youth-language'],
-    youthHistorySlides: ['reveal-youth-history'],
+    slides: ['intro-youth-language', 'quiz-youth-language', GENZ_GROUP, 'info-youth-language'],
   },
   // Moment of the year (e.g. Timmy der Wal), from the edition's mentions.
   { quiz: 'quiz-mention', slides: ['intro-mention', 'quiz-mention', 'info-mention'] },
+  // Innen- oder Außenkanzler, from the edition's chancellor section.
+  {
+    quiz: 'quiz-chancellor',
+    slides: ['intro-chancellor', 'quiz-chancellor', 'reveal-chancellor-topics', 'reveal-chancellor', 'reveal-chancellor-focus'],
+  },
   // Gen Z MPs against older MPs, from the edition's generations section.
   GENZ_GROUP,
   { quiz: 'quiz-moin', slides: ['intro-moin', 'quiz-moin', 'info-moin', 'reveal-moin'] },
@@ -80,7 +82,6 @@ export function buildActiveSlidePlan(
   moinSpeakers: readonly MoinQuizCandidate[] | null | undefined,
   configuration?: EditionQuizConfiguration,
   hasYearOverYear = false,
-  hasYouthHistory = false,
 ): SlideType[] {
   const groupSlides = (group: StoryGroup): SlideType[] => [
     ...group.slides.flatMap((entry) => {
@@ -88,7 +89,6 @@ export function buildActiveSlidePlan(
       return hasQuiz(model, entry.quiz as DataQuizSlide) ? groupSlides(entry) : [];
     }),
     ...(hasYearOverYear ? group.comparisonSlides ?? [] : []),
-    ...(hasYouthHistory ? group.youthHistorySlides ?? [] : []),
   ];
   // A chapter nested in an earlier story is not repeated when its own group comes up.
   const once = (slides: SlideType[]) => slides.filter((slide, index) => slides.indexOf(slide) === index);

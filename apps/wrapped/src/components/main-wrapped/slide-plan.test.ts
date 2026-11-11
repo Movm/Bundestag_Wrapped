@@ -95,9 +95,9 @@ describe('active slide plan', () => {
       'quiz-word-riser',
       'info-word-riser',
       'reveal-word-risers',
+      'intro-youth-language',
       'quiz-youth-language',
       'info-youth-language',
-      'reveal-youth-language',
       'share',
       'finale',
     ]);
@@ -124,15 +124,14 @@ describe('active slide plan', () => {
   it('tells youth words and Gen Z as one story, with the twist at the end', () => {
     const configuration = { version: 1 as const, groups: [{ id: 'quiz-youth-language' }, { id: 'quiz-mention' }, { id: 'quiz-genz' }] };
     const model = quizModel(['quiz-youth-language', 'quiz-mention', 'quiz-genz']);
-    expect(buildActiveSlidePlan(model, [], configuration, true, true)).toEqual([
+    expect(buildActiveSlidePlan(model, [], configuration, true)).toEqual([
       'intro', 'info-disclaimer',
-      'quiz-youth-language', 'intro-genz', 'quiz-genz', 'info-genz', 'info-youth-language', 'reveal-youth-language', 'reveal-youth-history',
+      'intro-youth-language', 'quiz-youth-language', 'intro-genz', 'quiz-genz', 'info-genz', 'info-youth-language',
       'intro-mention', 'quiz-mention', 'info-mention',
       'share', 'finale',
     ]);
-    // Without counted past winners there is no history slide; without a Gen Z question no Gen Z chapter.
-    const plain = buildActiveSlidePlan(quizModel(['quiz-youth-language']), [], configuration, true, false);
-    expect(plain).not.toContain('reveal-youth-history');
+    // Without a Gen Z question there is no Gen Z chapter.
+    const plain = buildActiveSlidePlan(quizModel(['quiz-youth-language']), [], configuration, true);
     expect(plain).not.toContain('intro-genz');
   });
 
@@ -147,8 +146,19 @@ describe('active slide plan', () => {
     const configuration = { version: 1 as const, groups: [{ id: 'quiz-youth-language' }, { id: 'quiz-mention' }] };
     expect(buildActiveSlidePlan(quizModel(['quiz-youth-language']), [], configuration)).not.toContain('intro-mention');
     const plan = buildActiveSlidePlan(quizModel(['quiz-youth-language', 'quiz-mention']), [], configuration);
-    expect(plan.slice(plan.indexOf('reveal-youth-language'), plan.indexOf('reveal-youth-language') + 4)).toEqual([
-      'reveal-youth-language', 'intro-mention', 'quiz-mention', 'info-mention',
+    expect(plan.slice(plan.indexOf('info-youth-language'), plan.indexOf('info-youth-language') + 4)).toEqual([
+      'info-youth-language', 'intro-mention', 'quiz-mention', 'info-mention',
+    ]);
+  });
+
+  it('tells the chancellor chapter after the mention only when its question exists', () => {
+    const configuration = { version: 1 as const, groups: [{ id: 'quiz-mention' }, { id: 'quiz-chancellor' }] };
+    expect(buildActiveSlidePlan(quizModel(['quiz-mention']), [], configuration)).not.toContain('intro-chancellor');
+    expect(buildActiveSlidePlan(quizModel(['quiz-mention', 'quiz-chancellor']), [], configuration)).toEqual([
+      'intro', 'info-disclaimer',
+      'intro-mention', 'quiz-mention', 'info-mention',
+      'intro-chancellor', 'quiz-chancellor', 'reveal-chancellor-topics', 'reveal-chancellor', 'reveal-chancellor-focus',
+      'share', 'finale',
     ]);
   });
 });

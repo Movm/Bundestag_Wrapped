@@ -3,7 +3,7 @@ import { useDebugRender } from '@/hooks/useDebugRender';
 import { buildConfiguredEditionQuizModel, signatureQuizParty, type EditionQuizModel } from '@/domain/edition-quiz';
 import { resolveInfoSlide } from '@/data/info-slides';
 import { buildTopicRiserContext } from '@/domain/topic-riser-context';
-import { youthGeneration, type YouthGeneration } from '@/domain/youth-words';
+import { youthGeneration, youthSummary, type YouthGeneration } from '@/domain/youth-words';
 import { SLIDES, type SlideType } from './constants';
 import { getQuizSlides } from './slide-plan';
 import {
@@ -24,16 +24,19 @@ import {
   RankingMovementSlide,
   SignatureWordMovementSlide,
   TopicRiserContextSlide,
-  YouthLanguageResultSlide,
-  YouthHistorySlide,
   MentionIntroSlide,
   MentionInfoSlide,
   GenerationIntroSlide,
   GenerationInfoSlide,
+  YouthIntroSlide,
+  ChancellorIntroSlide,
+  ChancellorSplitSlide,
+  ChancellorTopicsSlide,
+  ChancellorFocusSlide,
 } from '@/components/slides';
 import { SlideInfo } from '@/components/slides/shared';
 import type { SlideData } from '@/lib/slide-sharepics';
-import { useIsQuizAnswered, useAnswerQuiz } from '@/stores/quizStore';
+import { useQuizAnswer, useAnswerQuiz } from '@/stores/quizStore';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
 import {
@@ -138,11 +141,13 @@ function VocabularySlideWrapper({ phase }: { phase: 'intro' | 'result' }) {
 function InfoSlideWrapper({ slide }: { slide: string }) {
   const data = useFullWrappedData();
   const youth = data?.yearOverYear?.youthLanguage;
+  const youthGen = useYouthGeneration();
   const content = resolveInfoSlide(slide, {
     year: editionSurface(useOptionalEdition()).year,
     baselineYear: data?.yearOverYear?.baseline.editionId,
     youthWordCount: youth?.words.length,
     hasPastWinners: Boolean(youth?.pastWinners?.length),
+    youthSummary: slide === 'info-youth-language' && youth ? youthSummary(youth, youthGen) : undefined,
   });
   return <SlideInfo {...content} slideId={slide} />;
 }
@@ -231,20 +236,6 @@ function useYouthGeneration(): YouthGeneration | null {
   return youthGeneration(speakers, genz);
 }
 
-function YouthLanguageResultSlideWrapper() {
-  const data = useFullWrappedData();
-  const generation = useYouthGeneration();
-  if (!data?.yearOverYear) return null;
-  return <YouthLanguageResultSlide analysis={data.yearOverYear} generation={generation} />;
-}
-
-function YouthHistorySlideWrapper() {
-  const data = useFullWrappedData();
-  const generation = useYouthGeneration();
-  if (!data?.yearOverYear) return null;
-  return <YouthHistorySlide analysis={data.yearOverYear} generation={generation} />;
-}
-
 function MentionSlideWrapper({ part }: { part: 'intro' | 'info' }) {
   const data = useFullWrappedData();
   const mention = data?.mentions?.[0];
@@ -254,11 +245,22 @@ function MentionSlideWrapper({ part }: { part: 'intro' | 'info' }) {
 
 function GenerationSlideWrapper({ part }: { part: 'intro' | 'info' }) {
   const generations = useFullWrappedData()?.generations;
-  const youthGeneration = useYouthGeneration();
   if (!generations) return null;
   return part === 'intro'
     ? <GenerationIntroSlide generations={generations} />
-    : <GenerationInfoSlide generations={generations} saidNoYouthWord={youthGeneration === 'older'} />;
+    : <GenerationInfoSlide generations={generations} />;
+}
+
+function ChancellorSlideWrapper({ part }: { part: 'intro' | 'split' | 'focus' | 'topics' }) {
+  const chancellor = useFullWrappedData()?.chancellor;
+  const year = editionSurface(useOptionalEdition()).year;
+  if (!chancellor) return null;
+  switch (part) {
+    case 'intro': return <ChancellorIntroSlide chancellor={chancellor} year={year} />;
+    case 'split': return <ChancellorSplitSlide chancellor={chancellor} />;
+    case 'focus': return <ChancellorFocusSlide chancellor={chancellor} />;
+    case 'topics': return <ChancellorTopicsSlide chancellor={chancellor} />;
+  }
 }
 
 // ============================================================================
@@ -275,10 +277,10 @@ export const SlideRenderer = memo(function SlideRenderer({
   const edition = useOptionalEdition();
   const surface = editionSurface(edition);
   // Quiz state from store
-  const isQuizAnswered = useIsQuizAnswered(surface, slide);
+  const quizAnswer = useQuizAnswer(surface, slide);
   const answerQuiz = useAnswerQuiz(surface);
   const data = useFullWrappedData();
-  const quizzes = quizModel ?? (data ? buildConfiguredEditionQuizModel(data, edition?.content?.quiz, surface.year) : {});
+  const quizzes = quizModel ?? (data ? buildConfiguredEditionQuizModel(data, edition?.content?.quiz) : {});
   // The web route supplies its active plan. The optional fallback only preserves
   // compatibility for the unused legacy mobile wrapper while it is decommissioned.
   const activeQuizSlides = quizSlides ?? getQuizSlides(SLIDES);
@@ -298,11 +300,11 @@ export const SlideRenderer = memo(function SlideRenderer({
     // replacement for quiz-moin does not retain its data-derived interaction.
     if (quizzes[slide] && (slide === 'quiz-moin' || !(SLIDES as readonly string[]).includes(slide))) {
       const question = quizzes[slide];
-      return <QuizSlide question={question} questionNumber={quizNumber} totalQuestions={activeQuizSlides.length} isAnswered={isQuizAnswered} onAnswer={handleQuizAnswer} onComplete={onComplete} slideId={slide} />;
+      return <QuizSlide question={question} questionNumber={quizNumber} totalQuestions={activeQuizSlides.length} storedAnswer={quizAnswer} onAnswer={handleQuizAnswer} onComplete={onComplete} slideId={slide} />;
     }
     switch (slide) {
     case 'intro':
-      return <IntroSlide onStart={onComplete} questionCount={activeQuizSlides.length} />;
+      return <IntroSlide onStart={onComplete} />;
 
     // Topics: intro -> result (first section)
     case 'intro-topics':
@@ -373,6 +375,7 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'quiz-tone':
     case 'quiz-gender':
     case 'quiz-mention':
+    case 'quiz-chancellor':
     case 'quiz-genz': {
       const question = quizzes[slide];
       if (!question) return null;
@@ -381,7 +384,7 @@ export const SlideRenderer = memo(function SlideRenderer({
           question={question}
           questionNumber={quizNumber}
           totalQuestions={activeQuizSlides.length}
-          isAnswered={isQuizAnswered}
+          storedAnswer={quizAnswer}
           onAnswer={handleQuizAnswer}
           onComplete={onComplete}
           slideId={slide}
@@ -417,18 +420,29 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'reveal-signature-movements':
       return <SignatureWordMovementSlideWrapper />;
 
-    case 'reveal-youth-language':
-      return <YouthLanguageResultSlideWrapper />;
-    case 'reveal-youth-history':
-      return <YouthHistorySlideWrapper />;
 
 
+
+    case 'intro-youth-language':
+      return <YouthIntroSlide />;
 
     case 'intro-mention':
       return <MentionSlideWrapper part="intro" />;
 
     case 'info-mention':
       return <MentionSlideWrapper part="info" />;
+
+    case 'intro-chancellor':
+      return <ChancellorSlideWrapper part="intro" />;
+
+    case 'reveal-chancellor':
+      return <ChancellorSlideWrapper part="split" />;
+
+    case 'reveal-chancellor-focus':
+      return <ChancellorSlideWrapper part="focus" />;
+
+    case 'reveal-chancellor-topics':
+      return <ChancellorSlideWrapper part="topics" />;
 
     case 'intro-genz':
       return <GenerationSlideWrapper part="intro" />;

@@ -19,6 +19,8 @@ STOPWORD_NOUNS = {
         # Party names (analyzed separately)
         "spd", "cdu", "csu", "cdu/csu", "fdp", "afd", "grüne", "grünen",
         "linke", "bsw", "bündnis", "fraktion",
+        # "Union" names CDU/CSU as often as the EU; ambiguous either way
+        "union",
         # Names/titles
         "dr.", "prof.", "dr", "prof",
     }
@@ -28,7 +30,7 @@ STOPWORD_GENERIC = {
         'dass', 'wird', 'werden', 'haben', 'sind', 'sein', 'eine', 'einer',
         'einem', 'einen', 'auch', 'aber', 'oder', 'wenn', 'noch', 'mehr',
         'schon', 'kann', 'muss', 'hier', 'diese', 'dieser', 'diesem',
-        'dieses', 'sehr', 'denn', 'weil', 'nach', 'über', 'unter', 'nicht',
+        'dieses', 'diesen', 'sehr', 'denn', 'weil', 'nach', 'über', 'unter', 'nicht',
         'sich', 'für', 'mit', 'von', 'bei', 'auf', 'aus', 'zum', 'zur',
         'das', 'der', 'die', 'und', 'ist', 'ich', 'sie', 'wir', 'uns', 'ihnen',
         'meine', 'damen', 'herren', 'kolleginnen', 'kollegen', 'frau',
