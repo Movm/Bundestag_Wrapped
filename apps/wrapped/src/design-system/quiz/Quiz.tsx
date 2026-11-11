@@ -13,6 +13,8 @@ import { QUIZ_LAYOUT_REGISTRY } from './registry';
 const CONFETTI_MS = 1000;
 /** Time to see the marked answers before the result card opens. */
 const RESULT_DELAY_MS = 650;
+/** Exit of the result card; must match `ds-result-out` in components.css. */
+const DIALOG_EXIT_MS = 140;
 const CONFETTI_COLORS = ['#ff4fa0', '#7b3ff2', '#ffffff', '#0e0a14'];
 
 export interface QuizProps {
@@ -96,7 +98,7 @@ export function Quiz({ quiz, isAnswered, onAnswer, seed, layout, gapSentence, ba
         )}
       </div>
       {engine.answered && <p className="sr-only">Wähle „Weiter“, um fortzufahren.</p>}
-      <AccessibleDialog open={resultOpen} onClose={() => setResultOpen(false)} labelledBy={verdictId}>
+      <AccessibleDialog open={resultOpen} onClose={() => setResultOpen(false)} labelledBy={verdictId} exitMs={DIALOG_EXIT_MS}>
         <div className="ds-result-dialog">
           <div className="ds-result-dialog__card" data-surface={engine.isCorrect ? 'pink' : 'ink'}>
             <span aria-hidden="true" className="ds-result-dialog__shape" />
@@ -104,7 +106,7 @@ export function Quiz({ quiz, isAnswered, onAnswer, seed, layout, gapSentence, ba
             <p className="ds-result-dialog__answer"><span className="ds-eyebrow ds-eyebrow--contrast">Richtig ist:</span> <strong>{engine.quiz.correctAnswer}</strong></p>
             {engine.quiz.explanation.map((line, index) => <p key={index} className="ds-result__text">{line}</p>)}
             <div className="ds-result-dialog__actions">
-              <ActionButton icon="down" onClick={() => { const from = story.activeId; setResultOpen(false); requestAnimationFrame(() => story.next?.(from)); }}>Weiter</ActionButton>
+              <ActionButton icon="down" onClick={() => { story.next?.(story.activeId); setResultOpen(false); }}>Weiter</ActionButton>
               <ActionButton icon="none" variant="outline" onClick={() => setResultOpen(false)}>Zurück zur Frage</ActionButton>
             </div>
           </div>

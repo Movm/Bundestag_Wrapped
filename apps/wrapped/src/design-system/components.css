@@ -408,6 +408,10 @@
 .ds-result-dialog__verdict { position: relative; margin: 0; font-family: var(--font-wide); font-weight: 900; font-stretch: 125%; font-size: clamp(2.5rem, 1.5rem + min(4vw, 6vh), 5.5rem); line-height: 0.85; letter-spacing: -0.045em; text-transform: uppercase; }
 .ds-result-dialog__answer { position: relative; margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; font-family: var(--font-wide); font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem); line-height: 1.1; overflow-wrap: anywhere; }
 .ds-result-dialog__actions { position: relative; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.accessible-dialog[data-closing] .ds-result-dialog__card { animation: ds-result-out 0.14s var(--ease-wr-out) forwards; }
+.accessible-dialog[data-closing]::backdrop { animation: ds-fade-out 0.14s var(--ease-wr-out) forwards; }
+@keyframes ds-result-out { to { opacity: 0; transform: translateY(0.75rem); } }
+@keyframes ds-fade-out { to { opacity: 0; } }
 @keyframes ds-result-pop {
   from { opacity: 0; transform: translateY(3.75rem) scale(0.85) rotate(-4deg); }
   to { opacity: 1; transform: none; }

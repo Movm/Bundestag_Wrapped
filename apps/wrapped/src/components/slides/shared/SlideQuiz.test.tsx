@@ -92,6 +92,8 @@ it('opens the result as a modal dialog with the answer in words, and closes back
   expect(dialog.textContent).toContain('A');
   const close = [...dialog.querySelectorAll('button')].find(b => b.textContent?.includes('Zurück zur Frage'))!;
   await act(async () => close.click());
+  // The card plays a short exit before the dialog closes.
+  await act(async () => { await new Promise(resolve => setTimeout(resolve, 200)); });
   expect(document.querySelector('dialog')?.hasAttribute('open') ?? false).toBe(false);
   await act(async () => root.unmount());
 });
