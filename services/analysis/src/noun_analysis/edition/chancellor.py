@@ -33,6 +33,7 @@ from typing import Any
 from noun_analysis.edition.comparison import _deduplicate_protocols
 from noun_analysis.lexicons import TOPIC_LEXICONS
 from noun_analysis.wrapped.speaker_export.constants import WORD_PATTERN
+from noun_analysis.stopwords import is_content_word
 from noun_analysis.wrapped.speaker_export.signature_scoring import MIN_Z_SCORE, log_odds_score
 
 FOREIGN_TOPICS = frozenset({"europa"})
@@ -49,11 +50,8 @@ FOREIGN_AREAS = FOREIGN_TOPICS | {"verteidigung", "aussenhandel"}
 
 # Hot words: capitalised words (German nouns and names) not at a sentence start.
 NOUN_PATTERN = re.compile(r"[A-ZÄÖÜ][a-zäöüß]{4,}\b")
-# Forms of address and time units say nothing about the topic of a contribution.
-HOT_WORD_STOPWORDS = frozenset({
-    "kollegin", "kollege", "kolleginnen", "kollegen", "präsident", "präsidentin",
-    "augenblick", "moment", "minuten", "stunden", "tagen", "wochen", "monaten", "jahren",
-})
+# Capitalised adjectives inside names ("Europäischen Union", "Amerikanischen …") are not nouns.
+NAME_ADJECTIVE = re.compile(r"isch(?:e|en|er|es|em)$")
 MIN_HOT_WORD_COUNT = 8
 MIN_HOT_WORD_CONTRIBUTIONS = 3  # A recurring word, not one speech's subject.
 HOT_WORD_LIMIT = 8
@@ -111,20 +109,24 @@ def _nouns(text: str) -> list[str]:
         before = text[:start].rstrip(" „“\"'(")
         if not before or before[-1] in ".!?:":
             continue  # Sentence starts are capitalised whatever the word is.
-        nouns.append(match.group().lower())
+        word = match.group().lower()
+        if NAME_ADJECTIVE.search(word):
+            continue
+        nouns.append(word)
     return nouns
 
 
 def _hot_words(own: list[dict[str, Any]], others: list[dict[str, Any]], stopwords: set[str]) -> list[dict[str, Any]]:
     """Nouns the chancellor uses distinctly more often than the rest of the chamber."""
     names = {str(s.get("last_name") or "").lower() for s in own + others}
-    excluded = stopwords | HOT_WORD_STOPWORDS | names
+    excluded = stopwords | names
 
     def count(speeches: list[dict[str, Any]]) -> tuple[Counter[str], dict[str, int]]:
         counts: Counter[str] = Counter()
         spread: Counter[str] = Counter()
         for speech in speeches:
-            nouns = [w for w in _nouns(str(speech.get("text", ""))) if w not in excluded]
+            # Same filters as the signature words: shared stopwords plus the configured exclusions.
+            nouns = [w for w in _nouns(str(speech.get("text", ""))) if w not in excluded and is_content_word(w)]
             counts.update(nouns)
             spread.update(set(nouns))
         return counts, spread

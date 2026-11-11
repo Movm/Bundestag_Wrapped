@@ -72,3 +72,16 @@ def test_previous_year_counts_only_contributions_as_chancellor():
 def test_no_section_without_contributions_as_chancellor():
     speeches = [s for s in _speeches() if s["speaker"] != CHANCELLOR]
     assert build_chancellor(speeches, CHANCELLOR, set()) is None
+
+
+def test_hot_words_use_the_signature_word_filters():
+    base = _speeches()
+    filler = "Die Lage unseres Landes. Das Wohl der Bundesrepublik. Die Europäische Union. Eine Frage der Kommission. "
+    base[1]["text"] += filler * 200
+    base[2]["text"] += filler * 50
+    base[3]["text"] += filler * 50
+    words = [item["word"] for item in build_chancellor(base, CHANCELLOR, {"landes", "bundesrepublik"})["hotWords"]]
+    # Configured exclusions (signature-words.json), shared stopwords ("frage", "union")
+    # and capitalised adjectives of names ("Europäische") never become hot words.
+    assert "kommission" in words
+    assert not {"landes", "bundesrepublik", "frage", "union", "europäische"} & set(words)

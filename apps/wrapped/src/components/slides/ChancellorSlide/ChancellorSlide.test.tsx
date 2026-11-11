@@ -46,8 +46,8 @@ describe('chancellor chapter on the 2026 preview data', () => {
 
   it('shows his typical words and the top topic words per side', async () => {
     const text = await render(<ChancellorWordsSlide chancellor={chancellor} />);
-    expect([...container.querySelectorAll('.ds-chip')].map(chip => chip.textContent)).toEqual(['Europäischen', 'Kommission', 'Europa', 'Landes', 'Union', 'Staaten']);
-    expect(text).toContain('Vorn: „Europäischen“, mindestens 8,1-mal so oft wie im restlichen Bundestag.');
+    expect([...container.querySelectorAll('.ds-chip')].map(chip => chip.textContent)).toEqual(['Kommission', 'Europa', 'Handel', 'Anstrengungen', 'Bürokratierückbau', 'Ukraine']);
+    expect(text).toContain('Vorn: „Kommission“, mindestens 5,6-mal so oft wie im restlichen Bundestag.');
     expect(text).toContain('Außen am häufigsten: Europa (83‑mal), Ukraine (39‑mal), Frieden (20‑mal)');
     expect(text).toContain('Innen am häufigsten: Unternehmen (33‑mal), Gerechtigkeit (17‑mal), Wettbewerbsfähigkeit (16‑mal)');
   });
