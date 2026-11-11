@@ -35,52 +35,32 @@ export function renderShareImage(
   const p = drawField(ctx, 'pink', 'corner');
   drawBrandHeader(ctx, p, data.editionTitle ?? 'Bundestag Wrapped');
 
-  // "Das Ergebnis von {Name}", then "{n} von {total} richtig". The score variant
-  // puts the numbers on a big white plate; the title variant sets the result
-  // title itself as the hero, over up to three lines.
+  // "Das Ergebnis von {Name}", then "{n} von {total} richtig". The title variant
+  // sets the result title as the huge heading, the score variant keeps the numbers big.
   let y = 190;
   if (name) y = drawHeading(ctx, `Das Ergebnis von ${name}`, y, p.on, 44, 28) + 6;
   y = drawHeading(ctx, `${correctCount} von ${totalQuestions} richtig`, y, p.on, 64, 40) + 6;
+  y = drawHeading(ctx, result.title, y, p.on, variant === 'title' ? 150 : 64, variant === 'title' ? 70 : 40);
 
-  let lineY: number;
-  if (variant === 'title') {
-    const words = result.title.toUpperCase();
-    let size = 150;
-    let lines: string[] = [];
-    const width = SIZE - MARGIN * 2;
-    for (; size > 56; size -= 6) {
-      setFont(ctx, 'wide', size);
-      lines = wrapLines(ctx, words, width);
-      if (lines.length <= 3 && lines.every(line => ctx.measureText(line).width <= width)) break;
-    }
-    ctx.textAlign = 'left';
-    ctx.fillStyle = p.on;
-    y += 40;
-    lines.forEach((line, i) => ctx.fillText(line, MARGIN, y + size * 0.82 + i * size * 0.98));
-    lineY = y + lines.length * size * 0.98 + 40;
-  } else {
-    y = drawHeading(ctx, result.title, y, p.on, 64, 40);
-    // Score on a white plate: huge wide numerals.
-    const score = `${correctCount}/${totalQuestions}`;
-    const scoreSize = fitSize(ctx, 'wide', score, SIZE - MARGIN * 2 - 80, 220, 100);
-    const plateY = Math.max(y + 30, 470);
-    const plateH = scoreSize + 70;
-    roundedRect(ctx, MARGIN, plateY, SIZE - MARGIN * 2, plateH, 40);
-    ctx.fillStyle = '#ffffff';
-    ctx.fill();
-    setFont(ctx, 'wide', scoreSize);
-    ctx.textAlign = 'center';
-    ctx.fillStyle = p.on;
-    ctx.fillText(score, SIZE / 2, plateY + 35 + scoreSize * 0.78);
-    lineY = plateY + plateH + 30;
-  }
+  // Score on a white plate: huge wide numerals.
+  const score = `${correctCount}/${totalQuestions}`;
+  const scoreSize = fitSize(ctx, 'wide', score, SIZE - MARGIN * 2 - 80, variant === 'title' ? 140 : 220, 100);
+  const plateY = Math.max(y + 30, variant === 'title' ? 340 : 470);
+  const plateH = scoreSize + 70;
+  roundedRect(ctx, MARGIN, plateY, SIZE - MARGIN * 2, plateH, 40);
+  ctx.fillStyle = '#ffffff';
+  ctx.fill();
+  setFont(ctx, 'wide', scoreSize);
+  ctx.textAlign = 'center';
+  ctx.fillStyle = p.on;
+  ctx.fillText(score, SIZE / 2, plateY + 35 + scoreSize * 0.78);
 
   // Tagline
   setFont(ctx, 'heading', 38, 800);
   ctx.fillStyle = p.on;
   ctx.textAlign = 'left';
   wrapLines(ctx, result.line, SIZE - MARGIN * 2).slice(0, 2).forEach((line, i) => {
-    ctx.fillText(line, MARGIN, lineY + 36 + i * 48);
+    ctx.fillText(line, MARGIN, plateY + plateH + 66 + i * 48);
   });
 
   drawFooterUrl(ctx, p, 'Und wie gut kennst du den Bundestag? Spiel mit:');
