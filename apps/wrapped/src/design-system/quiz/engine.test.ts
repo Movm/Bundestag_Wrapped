@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { seededShuffle } from './engine';
+import { seededShuffle } from './layouts';
 
 describe('seededShuffle', () => {
   const options = ['richtig', 'b', 'c', 'd'];

@@ -1,4 +1,4 @@
-import { jumpToSlide, closeQuizResult, storyStart } from './story-navigation';
+import { answerQuiz, jumpToSlide, closeQuizResult, storyStart } from './story-navigation';
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from 'playwright/test';
 
@@ -75,8 +75,7 @@ test('completes the fixture journey with a quiz gate, mixed answers, and the act
     const section = page.locator(`[data-slide-id="${slide}"]`);
     if (slide.startsWith('quiz-')) {
       const answers = section.getByRole('button');
-      await expect(answers.first()).toBeVisible();
-      await answers.nth(slide === 'quiz-signature' ? 1 : 0).click();
+      await answerQuiz(page, slide, slide !== 'quiz-signature');
       // Feedback stays on the slide until the user explicitly continues.
       await expect(answers.first()).toBeDisabled();
       await closeQuizResult(page);
@@ -185,13 +184,13 @@ test('restores different answers when switching between annual routes', async ({
   await page.goto('/2025');
   await storyStart(page).click();
   await jumpToSlide(page, 'quiz-topics');
-  await page.locator('[data-slide-id="quiz-topics"]').getByRole('button').first().click();
+  await answerQuiz(page, 'quiz-topics', true);
 
   await page.goto('/2026');
   await jumpToSlide(page, 'quiz-topics');
   const secondEditionAnswers = page.locator('[data-slide-id="quiz-topics"]').getByRole('button');
   await expect(secondEditionAnswers.first()).toBeEnabled();
-  await secondEditionAnswers.nth(1).click();
+  await answerQuiz(page, 'quiz-topics', false);
 
   await page.goto('/2025');
   await jumpToSlide(page, 'quiz-topics');

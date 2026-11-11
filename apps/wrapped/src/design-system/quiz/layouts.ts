@@ -48,6 +48,28 @@ export function hashSeed(value: string): number {
 }
 
 /**
+ * Same order for the same seed on every render and reload, but the correct
+ * answer is not always first: questions are built answer-first.
+ */
+export function seededShuffle<T>(items: readonly T[], seed: string): T[] {
+  let state = hashSeed(seed) || 1;
+  const random = () => {
+    // mulberry32
+    state = (state + 0x6d2b79f5) >>> 0;
+    let t = state;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+  const result = [...items];
+  for (let index = result.length - 1; index > 0; index--) {
+    const other = Math.floor(random() * (index + 1));
+    [result[index], result[other]] = [result[other], result[index]];
+  }
+  return result;
+}
+
+/**
  * Picks a layout: an explicit choice wins if it fits; otherwise rotate over the
  * fitting layouts by seed (slide id), so neighbouring quizzes look different.
  * Opt-in layouts are skipped by the rotation. `tiles` fits everything and is

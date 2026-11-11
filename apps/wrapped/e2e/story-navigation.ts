@@ -1,4 +1,5 @@
 import { expect, type Page } from 'playwright/test';
+import { seededShuffle } from '../src/design-system/quiz/layouts';
 
 /** Explicit reading-mode jump for tests inspecting distant content, not quiz progression. */
 export async function jumpToSlide(page: Page, id: string) {
@@ -37,4 +38,18 @@ export async function closeQuizResult(page: Page) {
  */
 export function storyStart(page: Page) {
   return page.locator('#intro').getByRole('button', { name: 'Los geht’s', exact: true });
+}
+
+/**
+ * Answer buttons are shuffled per question (seed `${slideId}:${question}`) and the
+ * correct one is built first, so the same shuffle over indices says where it is.
+ */
+export async function answerQuiz(page: Page, slideId: string, correct: boolean) {
+  const group = page.locator(`[data-slide-id="${slideId}"] [role="group"][aria-labelledby]`);
+  const question = await group.evaluate(el => document.getElementById(el.getAttribute('aria-labelledby')!)!.textContent!);
+  const answers = group.getByRole('button');
+  await expect(answers.first()).toBeVisible();
+  const order = seededShuffle([...Array(await answers.count()).keys()], `${slideId}:${question}`);
+  const correctAt = order.indexOf(0);
+  await answers.nth(correct ? correctAt : (correctAt + 1) % order.length).click();
 }
