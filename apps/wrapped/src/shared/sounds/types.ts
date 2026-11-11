@@ -2,8 +2,8 @@
  * Shared Sound Types
  *
  * Sound type definitions and constants for browser audio. The short UI sounds
- * are segments of the SND sprite (`lib/snd-sprite.ts`); only the long intro
- * sound is a file of its own.
+ * are segments of the SND sprite (`lib/snd-sprite.ts`); the long intro sound
+ * and the quiz's wrong-answer sound are files of their own.
  */
 
 export type SoundType =
@@ -27,6 +27,8 @@ export type SoundType =
 /** Sounds served as files of their own. */
 export const SOUND_FILES: Partial<Record<SoundType, string>> = {
   start: '/sounds/start.wav',
+  /** A soft descending "uh-oh" (G4 to E♭4), synthesised for the quiz; SND has no fitting answer to `correct`. */
+  wrong: '/sounds/wrong.wav',
 };
 
 const TAPS = ['tap_01', 'tap_02', 'tap_03', 'tap_04', 'tap_05'] as const;
@@ -40,7 +42,6 @@ export const SOUND_SPRITES: Partial<Record<SoundType, readonly string[]>> = {
   click: ['button'],
   hover: TAPS,
   correct: ['celebration'],
-  wrong: ['disabled'],
   whoosh: SWIPES,
   tick: TAPS,
   lift: ['select'],
@@ -52,7 +53,7 @@ export const SOUND_SPRITES: Partial<Record<SoundType, readonly string[]>> = {
 export const SOUND_VOLUMES: Record<SoundType, number> = {
   click: 0.6,
   correct: 0.8,
-  wrong: 0.7,
+  wrong: 0.55,
   start: 0.9,
   assemble: 0.6,
   whoosh: 0.45,
