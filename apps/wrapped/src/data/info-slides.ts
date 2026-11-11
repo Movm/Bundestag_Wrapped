@@ -8,8 +8,8 @@ export interface InfoSlideContent {
   emoji: string;
   title: string;
   body: string;
-  /** Small label above the title; defaults to "Kurz erklärt". */
-  eyebrow?: string;
+  /** Small label above the title; defaults to "Kurz erklärt", `null` shows none. */
+  eyebrow?: string | null;
   /** Exact phrase inside `body` to set as a highlighted block. */
   highlight?: string;
 }
@@ -17,10 +17,10 @@ export interface InfoSlideContent {
 export const INFO_SLIDES: Record<string, InfoSlideContent> = {
   'info-disclaimer': {
     emoji: '🧮',
-    title: 'Wir haben mitgezählt.',
-    eyebrow: 'Kurz, bevor’s losgeht',
-    body: 'Unsere Zahlen kommen aus den Plenarprotokollen. Für alle Fraktionen gelten dieselben Regeln. Wie wir zählen, erklären wir unterwegs.',
-    highlight: 'Für alle Fraktionen gelten dieselben Regeln.',
+    title: 'So funktioniert’s.',
+    eyebrow: null,
+    body: 'Bundestag Wrapped hat alle Plenarprotokolle maschinell aufbereitet und durchsucht. Auf Basis dieser Zahlen sind neutrale Analysen über den Bundestag entstanden. Bundestag Wrapped ist politisch neutral, aber nicht demokratisch neutral. Abgeordnete der AfD werden daher gesondert behandelt.',
+    highlight: 'Bundestag Wrapped ist politisch neutral, aber nicht demokratisch neutral.',
   },
   'info-topic-riser': {
     emoji: '📈',
@@ -92,6 +92,8 @@ export interface InfoSlideContext {
   youthWordCount?: number;
   /** Jugendwörter of earlier years are counted too. */
   hasPastWinners?: boolean;
+  /** What the youth-word chapter found; replaces the method text when present. */
+  youthSummary?: { body: string; highlight?: string };
 }
 
 /** The info slide with the numbers its text names filled in from the data. */
@@ -102,6 +104,9 @@ export function resolveInfoSlide(slide: string, context: InfoSlideContext): Info
       ? `Verglichen wird derselbe Zeitraum ${context.baselineYear} und ${context.year}.`
       : 'Verglichen wird jeweils derselbe Zeitraum des Vorjahres.';
     return { ...content, body: `${content.body} ${period}` };
+  }
+  if (slide === 'info-youth-language' && context.youthSummary) {
+    return { ...content, eyebrow: null, title: 'Jugendsprache im Plenum.', ...context.youthSummary };
   }
   if (slide === 'info-youth-language') {
     const count = context.youthWordCount && context.youthWordCount > 1 ? ` ${cardinal(context.youthWordCount)}` : '';

@@ -44,9 +44,9 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
   const scrollContainerRef = useRef<ScrollContainerRef>(null);
   const scrollElementRef = useRef<HTMLDivElement>(null);
   const quizConfiguration = useOptionalEdition()?.content?.quiz;
-  const quizModel = useMemo(() => (data ? buildConfiguredEditionQuizModel(data, quizConfiguration, surface.year) : {}), [data, quizConfiguration, surface.year]);
+  const quizModel = useMemo(() => (data ? buildConfiguredEditionQuizModel(data, quizConfiguration) : {}), [data, quizConfiguration]);
   const activeSlides = useMemo(
-    () => data ? buildActiveSlidePlan(quizModel, data.moinSpeakers, quizConfiguration, Boolean(data.yearOverYear), Boolean(data.yearOverYear?.youthLanguage.pastWinners?.length)) : SLIDES,
+    () => data ? buildActiveSlidePlan(quizModel, data.moinSpeakers, quizConfiguration, Boolean(data.yearOverYear)) : SLIDES,
     [data, quizModel, quizConfiguration],
   );
   const activeQuizSlides = useMemo(() => getQuizSlides(activeSlides), [activeSlides]);

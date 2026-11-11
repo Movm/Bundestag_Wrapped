@@ -20,14 +20,16 @@ let container: HTMLDivElement;
 beforeEach(() => { container = document.createElement('div'); document.body.append(container); });
 afterEach(() => { container.remove(); });
 
-async function renderQuiz(reduce = false) {
+async function renderQuiz(reduce = false, storedAnswer: boolean | null = null, story?: { next: (id: string) => void; readingMode?: boolean }) {
   stubMatchMedia(reduce);
   // motion caches the reduced-motion preference per process, so pin the hook.
   vi.resetModules();
   vi.doMock('motion/react', async (importOriginal) => ({ ...(await importOriginal<typeof import('motion/react')>()), useReducedMotion: () => reduce }));
   const { SlideQuiz } = await import('./SlideQuiz');
+  const { StoryContext } = await import('@/components/main-wrapped/StoryContext');
   const root = createRoot(container);
-  await act(async () => root.render(<SlideQuiz quiz={quiz} onAnswer={() => {}} onComplete={() => {}} shuffle={false} />));
+  const slide = <SlideQuiz quiz={quiz} storedAnswer={storedAnswer} onAnswer={() => {}} onComplete={() => {}} shuffle={false} slideId="quiz-test" />;
+  await act(async () => root.render(story ? <StoryContext value={{ activeId: 'quiz-test', readingMode: story.readingMode ?? false, next: story.next }}>{slide}</StoryContext> : slide));
   return root;
 }
 
@@ -44,7 +46,6 @@ it('announces the result in a polite live region without moving focus', async ()
   answer.focus();
   await act(async () => answer.click());
   expect(region.textContent).toContain('Deine Antwort ist richtig.');
-  expect(region.textContent).toContain('Weil.');
   expect(document.activeElement).toBe(answer);
   expect(answer.getAttribute('aria-disabled')).toBe('true');
   expect(answer.textContent).toContain('richtig');
@@ -63,7 +64,7 @@ it('says wrong answers in words, not only in color', async () => {
 it('renders confetti only inside an aria-hidden, non-interactive layer', async () => {
   const root = await renderQuiz();
   await act(async () => button('A').click());
-  const piece = container.querySelector('.w-3.h-3');
+  const piece = container.querySelector('.ds-confetti');
   expect(piece).not.toBeNull();
   const layer = piece!.closest('[aria-hidden="true"]')!;
   expect(layer.className).toContain('pointer-events-none');
@@ -73,18 +74,65 @@ it('renders confetti only inside an aria-hidden, non-interactive layer', async (
 it('drops confetti but keeps the result under reduced motion', async () => {
   const root = await renderQuiz(true);
   await act(async () => button('A').click());
-  expect(container.querySelector('.w-3.h-3')).toBeNull();
-  expect(container.querySelector('[role="status"]')!.textContent).toContain('Genau richtig!');
+  expect(container.querySelector('.ds-confetti')).toBeNull();
+  expect(container.querySelector('[role="status"]')!.textContent).toContain('Deine Antwort ist richtig.');
   await act(async () => root.unmount());
 });
 
-it('keeps the result on the slide with the answer in words and opens no popup', async () => {
+it('marks the pick wrong and the right answer instead of showing an answer card', async () => {
   const root = await renderQuiz();
   await act(async () => button('B').click());
-  await act(async () => { await new Promise(resolve => setTimeout(resolve, 700)); });
   expect(document.querySelector('dialog')).toBeNull();
-  const result = container.querySelector('[data-testid="quiz-result"]')!;
-  expect(result.querySelector('.ds-result__verdict [aria-hidden]')!.textContent).toBe('Diesmal nicht.');
-  expect(result.querySelector('.ds-result__answer')!.textContent).toBe('Richtig ist: A');
+  expect(container.querySelector('.ds-result')).toBeNull();
+  expect(button('B').dataset.status).toBe('wrong');
+  expect(button('A').dataset.status).toBe('correct');
+  expect(container.querySelector('[data-testid="quiz-result"]')!.getAttribute('data-correct')).toBe('false');
   await act(async () => root.unmount());
+});
+
+it('shows a restored answer as right or wrong and does not move on by itself', async () => {
+  vi.useFakeTimers();
+  const next = vi.fn();
+  let root = await renderQuiz(false, false, { next });
+  expect(button('A').dataset.status).toBe('correct');
+  const status = container.querySelector('[data-testid="quiz-result"]')!;
+  expect(status.textContent).toBe('Deine Antwort ist falsch. Richtig ist: A.');
+  expect(container.textContent).not.toContain('gespeichert');
+  await act(async () => { vi.advanceTimersByTime(5000); });
+  expect(next).not.toHaveBeenCalled();
+  await act(async () => root.unmount());
+
+  root = await renderQuiz(false, true, { next });
+  expect(container.querySelector('[data-testid="quiz-result"]')!.getAttribute('data-correct')).toBe('true');
+  await act(async () => root.unmount());
+  vi.useRealTimers();
+});
+
+it('moves on to the next slide after a pick, later after a miss, never in reading mode', async () => {
+  vi.useFakeTimers();
+  const next = vi.fn();
+  let root = await renderQuiz(false, null, { next });
+  await act(async () => button('A').click());
+  await act(async () => { vi.advanceTimersByTime(1400); });
+  expect(next).not.toHaveBeenCalled();
+  await act(async () => { vi.advanceTimersByTime(200); });
+  expect(next).toHaveBeenCalledWith('quiz-test');
+  await act(async () => root.unmount());
+
+  next.mockClear();
+  root = await renderQuiz(false, null, { next });
+  await act(async () => button('B').click());
+  await act(async () => { vi.advanceTimersByTime(2000); });
+  expect(next).not.toHaveBeenCalled();
+  await act(async () => { vi.advanceTimersByTime(700); });
+  expect(next).toHaveBeenCalledTimes(1);
+  await act(async () => root.unmount());
+
+  next.mockClear();
+  root = await renderQuiz(false, null, { next, readingMode: true });
+  await act(async () => button('A').click());
+  await act(async () => { vi.advanceTimersByTime(5000); });
+  expect(next).not.toHaveBeenCalled();
+  await act(async () => root.unmount());
+  vi.useRealTimers();
 });

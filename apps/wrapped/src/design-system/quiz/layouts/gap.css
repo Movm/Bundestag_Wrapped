@@ -7,8 +7,8 @@
   font-stretch: 110%;
   overflow-wrap: anywhere;
 }
-.ds-quiz-gap__slot[data-state='filled'] { background: #fff; color: var(--color-wr-ink); border: 0.06em solid var(--color-wr-ink); }
-.ds-quiz-gap__slot[data-state='wrong'] { background: var(--color-wr-ink); color: #fff; border: 0.06em solid #fff; }
+/* The slot always shows the right answer, so it is green after a wrong pick too (the wrong pill turns red). */
+.ds-quiz-gap__slot[data-state='filled'], .ds-quiz-gap__slot[data-state='wrong'] { background: var(--color-wr-mint); color: var(--color-wr-ink); border: 0.06em solid var(--color-wr-ink); }
 .ds-quiz-gap__pills { display: flex; flex-wrap: wrap; gap: clamp(0.5rem, 0.4rem + 0.5vw, 0.875rem); }
 .ds-choice--pill {
   align-items: center; gap: 0.6em;

@@ -63,10 +63,9 @@ export const SLIDES = [
   'reveal-common-words',
 
   // Youth language
+  'intro-youth-language',
   'quiz-youth-language',
   'info-youth-language',
-  'reveal-youth-language',
-  'reveal-youth-history',
   // Moment of the year (e.g. Timmy der Wal), from the edition's mentions
   'intro-mention',
   'quiz-mention',
@@ -122,6 +121,7 @@ export const AUTO_SCROLL_SLIDES = new Set<SlideType>([
   'intro-drama',
   'intro-discriminatory',
   'intro-common-words',
+  'intro-youth-language',
   'intro-mention',
   'intro-chancellor',
   'intro-genz',

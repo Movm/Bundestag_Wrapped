@@ -7,7 +7,8 @@ export type { QuizConfig, QuizConfigAlt, QuizOptionWithCorrect } from '@/design-
 
 interface SlideQuizProps {
   quiz: AnyQuizConfig;
-  isAnswered?: boolean;
+  /** Stored result: true = right, false = wrong, null = not answered yet. */
+  storedAnswer?: boolean | null;
   onAnswer: (isCorrect: boolean) => void;
   /** Kept for existing callers; navigation runs through the story shell. */
   onComplete?: () => void;
@@ -24,10 +25,10 @@ interface SlideQuizProps {
 }
 
 /** A quiz slide: the design-system Quiz on the quiz surface. */
-export function SlideQuiz({ quiz, isAnswered, onAnswer, title, badge, slideId, layout, gapSentence, shuffle = true }: SlideQuizProps) {
+export function SlideQuiz({ quiz, storedAnswer, onAnswer, title, badge, slideId, layout, gapSentence, shuffle = true }: SlideQuizProps) {
   return (
     <Slide shapes="band">
-      <Quiz quiz={quiz} isAnswered={isAnswered} onAnswer={onAnswer} seed={slideId} layout={layout} gapSentence={gapSentence} badge={badge ?? title} shuffle={shuffle} />
+      <Quiz quiz={quiz} storedAnswer={storedAnswer} onAnswer={onAnswer} seed={slideId} layout={layout} gapSentence={gapSentence} badge={badge ?? title} shuffle={shuffle} />
     </Slide>
   );
 }

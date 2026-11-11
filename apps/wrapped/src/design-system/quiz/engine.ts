@@ -58,7 +58,7 @@ export interface QuizEngine {
   /** null while unanswered or when restored from storage without the pick. */
   selected: string | null;
   isCorrect: boolean;
-  /** Short visible verdict ("Genau richtig!", "Diesmal nicht. Richtig ist: X", "Deine Antwort ist gespeichert."). */
+  /** Short visible verdict ("Genau richtig!" or "Diesmal nicht. Richtig ist: X"), also for a restored answer. */
   verdict: string;
   /** Full sentence for the live region; e2e and unit tests pin "Richtig ist:". */
   spoken: string;
@@ -73,7 +73,7 @@ const LETTERS = 'ABCDEFGH';
  */
 export function useQuizEngine(
   config: AnyQuizConfig,
-  options: { isAnswered?: boolean; onAnswer: (correct: boolean) => void; onCorrect?: () => void; shuffleSeed?: string },
+  options: { storedAnswer?: boolean | null; onAnswer: (correct: boolean) => void; onCorrect?: () => void; shuffleSeed?: string },
 ): QuizEngine {
   const { shuffleSeed } = options;
   const quiz = useMemo(() => {
@@ -81,8 +81,10 @@ export function useQuizEngine(
     return shuffleSeed ? { ...normalized, options: seededShuffle(normalized.options, shuffleSeed) } : normalized;
   }, [config, shuffleSeed]);
   const [selected, setSelected] = useState<string | null>(null);
-  const answered = options.isAnswered === true || selected !== null;
-  const isCorrect = selected === quiz.correctAnswer;
+  const stored = options.storedAnswer ?? null;
+  const answered = stored !== null || selected !== null;
+  // A restored answer only knows right or wrong, not which option was picked.
+  const isCorrect = selected === null ? stored === true : selected === quiz.correctAnswer;
 
   const choose = (option: string) => {
     if (answered) return;
@@ -110,9 +112,7 @@ export function useQuizEngine(
     answered,
     selected,
     isCorrect,
-    verdict: selected === null ? 'Deine Antwort ist gespeichert.' : isCorrect ? 'Genau richtig!' : `Diesmal nicht. Richtig ist: ${quiz.correctAnswer}`,
-    spoken: selected === null
-      ? `Deine Antwort wurde gespeichert. Richtig ist: ${quiz.correctAnswer}.`
-      : isCorrect ? 'Deine Antwort ist richtig.' : `Deine Antwort ist falsch. Richtig ist: ${quiz.correctAnswer}.`,
+    verdict: isCorrect ? 'Genau richtig!' : `Diesmal nicht. Richtig ist: ${quiz.correctAnswer}`,
+    spoken: isCorrect ? 'Deine Antwort ist richtig.' : `Deine Antwort ist falsch. Richtig ist: ${quiz.correctAnswer}.`,
   };
 }

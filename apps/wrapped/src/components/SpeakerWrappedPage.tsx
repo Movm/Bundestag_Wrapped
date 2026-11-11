@@ -11,7 +11,7 @@ import {
 } from './speaker-wrapped/constants';
 import { useSpeakerScrollWrapped } from './speaker-wrapped/useSpeakerScrollWrapped';
 import {
-  useSpeakerQuizStore, useSpeakerQuizAnswered,
+  useSpeakerQuizStore, useSpeakerQuizCorrect,
 } from '@/stores/speakerQuizStore';
 import { SpeakerSlideRenderer } from './speaker-wrapped/SpeakerSlideRenderer';
 import { useOptionalEdition } from '@/edition/EditionProvider';
@@ -28,7 +28,8 @@ export function SpeakerWrappedPage() {
   const { currentSection, initialSection, setCurrentSection, handleRestart: clearSpeakerProgress } = useSpeakerScrollWrapped(slug);
 
   const [introStarted, setIntroStarted] = useState(() => !!initialSection && initialSection !== 'speaker-intro');
-  const isQuizAnswered = useSpeakerQuizAnswered(surface, slug);
+  const quizAnswer = useSpeakerQuizCorrect(surface, slug);
+  const isQuizAnswered = quizAnswer !== null;
   const [restartCount, setRestartCount] = useState(0);
   const answerQuiz = useSpeakerQuizStore((state) => state.answerQuiz);
 
@@ -112,7 +113,7 @@ export function SpeakerWrappedPage() {
             <SlideSection key={slideId} id={slideId} forwardBlocked={(slideId === 'speaker-intro' && !introStarted) || (slideId === 'speaker-quiz' && !!data.signatureQuiz && !isQuizAnswered)} active={Math.abs(index - sectionIndex) <= 1}>
               <SpeakerSlideRenderer
                 key={restartCount}
-                isQuizAnswered={isQuizAnswered}
+                quizAnswer={quizAnswer}
                 slide={slideId}
                 speaker={data}
                 onStart={handleIntroStart}

@@ -3,7 +3,7 @@ import type { GenerationComparison } from '@/generated/wrapped-contract-v1';
 import { Slide } from '@/design-system/components/Slide';
 import { ChipCloud } from '@/design-system/components/Data';
 import { PartyBlock, PartyGrid } from '@/design-system/components/PartyBlock';
-import { Display, Eyebrow, FitWord, Mark, Note } from '@/design-system/components/Type';
+import { Display, FitWord, Mark, Note } from '@/design-system/components/Type';
 import { ENTER } from '@/design-system/motion';
 
 const number = new Intl.NumberFormat('de-DE');
@@ -51,28 +51,32 @@ export function GenerationIntroSlide({ generations }: { generations: GenerationC
   );
 }
 
-/** What Gen Z MPs say more often than older MPs of the same parties, and where they sit. */
-export function GenerationInfoSlide({ generations, saidNoYouthWord = false }: { generations: GenerationComparison; saidNoYouthWord?: boolean }) {
-  const words = generations.words.slice(0, 6).map(item => displayWord(item.word));
-  const fewer = generations.fewerWords.slice(0, 3).map(item => displayWord(item.word));
+/** One column of the word comparison: a label over its chips. */
+function WordColumn({ label, words }: { label: string; words: string[] }) {
+  return (
+    <div className="flex min-w-0 flex-col gap-3">
+      <motion.span variants={ENTER.rise} className="ds-genz-label">{label}</motion.span>
+      <ChipCloud words={words} label={`Wörter, die Gen-Z-Abgeordnete ${label.toLowerCase()} sagen`} />
+    </div>
+  );
+}
+
+/** What Gen Z MPs say more and less often than older MPs of the same parties, and where they sit. */
+export function GenerationInfoSlide({ generations }: { generations: GenerationComparison }) {
+  const more = generations.words.slice(0, 6).map(item => displayWord(item.word));
+  const fewer = generations.fewerWords.slice(0, 6).map(item => displayWord(item.word));
   return (
     <Slide
       shapes={false}
       footer={<Note className="ds-note--plate">Gen Z: geboren ab {generations.bornFrom}. Der Wortvergleich berücksichtigt die unterschiedliche Zusammensetzung der Fraktionen. Geburtsjahre: Bundestag und Abgeordnetenwatch.</Note>}
     >
-      <motion.div variants={ENTER.stamp} className="self-start rotate-[-4deg]">
-        <Eyebrow>So sprechen die Jüngeren</Eyebrow>
-      </motion.div>
-      {words.length > 0 && (
-        <div className="flex flex-col items-start gap-3">
-          <Display size="md">Andere Generation. <Mark>Andere Wörter.</Mark></Display>
-          <motion.p variants={ENTER.rise} className="m-0 text-base font-semibold">
-            {saidNoYouthWord
-              ? 'Jugendwörter? Keins. Dafür diese hier, häufiger als bei älteren Kolleg:innen:'
-              : 'Diese Wörter verwenden jüngere Abgeordnete häufiger als ihre älteren Kolleg:innen:'}
-          </motion.p>
-          <ChipCloud words={words} label="Wörter, die Gen-Z-Abgeordnete öfter sagen" />
-          {fewer.length > 0 && <motion.p variants={ENTER.rise} className="m-0 text-base font-semibold">Seltener fallen: {fewer.join(', ')}</motion.p>}
+      {more.length > 0 && (
+        <div className="flex flex-col gap-5">
+          <Display size="md">So sprechen die <Mark>Jüngeren.</Mark></Display>
+          <div className="ds-genz-words">
+            <WordColumn label="Häufiger" words={more} />
+            {fewer.length > 0 && <WordColumn label="Seltener" words={fewer} />}
+          </div>
         </div>
       )}
       <motion.p variants={ENTER.rise} className="m-0 text-base font-semibold">Die {number.format(generations.speakerCount)} verteilen sich so:</motion.p>

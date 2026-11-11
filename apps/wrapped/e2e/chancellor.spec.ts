@@ -38,7 +38,8 @@ test('tells the Innen-/Außenkanzler chapter only when the edition has the secti
   await jumpToSlide(page, 'quiz-chancellor');
   await answerQuiz(page, 'quiz-chancellor', true);
   await expectInlineQuizResult(page);
-  await expect(page.locator('#quiz-chancellor [data-testid="quiz-result"]')).toContainText('44 % seiner Themenwörter gehören zur Außenpolitik');
+  await expect(page.locator('#quiz-chancellor [data-testid="quiz-result"]')).toContainText('Deine Antwort ist richtig.');
+  await expect(page.locator('#quiz-chancellor').getByRole('button', { name: /44 %.*richtig/ })).toBeVisible();
 
   await jumpToSlide(page, 'reveal-chancellor');
   await settle(page, 'reveal-chancellor');

@@ -273,7 +273,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
           <SurfaceFlood ref={flood} />
           <ProgressSegments index={position.index} count={position.count} surface={surfaceForSlide(activeId)} />
           <span className="sr-only" role="status" aria-live="polite">Folie {position.index + 1} von {position.count}</span>
-          {!position.blocked && position.index < position.count - 1 && !navigationOpen && <button
+          {position.index > 0 && !position.blocked && position.index < position.count - 1 && !navigationOpen && <button
             type="button" className="story-next ds-button ds-button--contrast ds-contrast" data-surface={surfaceForSlide(activeId)} aria-label="Weiter zur nächsten Folie"
             onClick={event => controller.current.next(undefined, event.detail === 0)}>Weiter<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14M5 12l7 7 7-7" /></svg></button>}
           <button type="button" className="story-navigation-toggle" aria-expanded={navigationOpen}

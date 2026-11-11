@@ -39,18 +39,30 @@ export function Delta({ change, className, size = 'md' }: { change: number; clas
   );
 }
 
+/** Rank movement as "3 → 2", read out as "von Platz 3 auf Platz 2". */
+export function RankShift({ from, to }: { from: number; to: number }) {
+  return (
+    <span className="ds-delta ds-contrast">
+      <span aria-hidden="true">{from} → {to}</span>
+      <span className="sr-only">von Platz {from} auf Platz {to}</span>
+    </span>
+  );
+}
+
 interface RankCardProps {
   rank: number;
   label: string;
   detail?: ReactNode;
   change?: number;
+  /** Previous rank: shows the movement as "previous → rank" instead of a change arrow. */
+  previousRank?: number;
   tone?: BlockTone;
   /** 0 = biggest (leader), higher = smaller and indented — the stair-step of the design. */
   step?: number;
 }
 
 /** One entry of a ranking: big rank number, label, detail line, movement badge. */
-export function RankCard({ rank, label, detail, change, tone = 'white', step = 0 }: RankCardProps) {
+export function RankCard({ rank, label, detail, change, previousRank, tone = 'white', step = 0 }: RankCardProps) {
   return (
     <Block tone={tone} className={cn('ds-rank', `ds-rank--step-${Math.min(step, 3)}`)}>
       <span className="ds-rank__number" aria-hidden="true">{rank}</span>
@@ -58,7 +70,7 @@ export function RankCard({ rank, label, detail, change, tone = 'white', step = 0
         <span className="ds-rank__label"><span className="sr-only">Platz {rank}: </span>{label}</span>
         {detail && <span className="ds-rank__detail">{detail}</span>}
       </div>
-      {change !== undefined && <Delta change={change} />}
+      {previousRank !== undefined ? <RankShift from={previousRank} to={rank} /> : change !== undefined && <Delta change={change} />}
     </Block>
   );
 }

@@ -179,6 +179,8 @@
 .ds-block { border-radius: clamp(1.25rem, 1rem + 1vw, 1.75rem); background: var(--surface-bg); color: var(--surface-on); }
 /* Moment of the year: the whale on the section opener. */
 .ds-mention-whale { width: min(26rem, 70%); height: auto; align-self: flex-end; margin-top: auto; }
+.ds-genz-words { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 3vw, 2.5rem); }
+.ds-genz-label { font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--surface-on-muted); }
 .ds-genz-dots { width: min(34rem, 100%); height: auto; margin-top: auto; }
 /* Innen- oder Außenkanzler: house and EU stars on the opener. */
 .ds-chancellor-art { width: min(24rem, 72%); height: auto; margin-top: auto; }
@@ -294,6 +296,8 @@
 .ds-chips { display: flex; flex-wrap: wrap; gap: 0.625rem; margin: 0; padding: 0; list-style: none; }
 .ds-chip { padding: 0.5rem 1.125rem; border-radius: 999px; font-family: var(--font-wide); font-weight: 900; font-size: clamp(1.0625rem, 0.9rem + 0.8vw, 1.5rem); rotate: var(--chip-tilt, 0deg); }
 .ds-chip--pink { background: var(--color-wr-pink); color: var(--color-wr-ink); }
+/* On pink ground a pink chip disappears; it turns ink there. */
+[data-surface='pink'] .ds-chip--pink { background: var(--color-wr-ink); color: #fff; }
 .ds-chip--violet { background: var(--color-wr-violet); color: #fff; }
 .ds-chip--white { background: #fff; color: var(--color-wr-ink); }
 .ds-chip--outline { border: 2px solid var(--surface-accent); color: var(--surface-accent); padding: 0.375rem 1rem; }
@@ -363,8 +367,8 @@
   .ds-choice--word:not([aria-disabled='true']):hover, .ds-choice--word:not([aria-disabled='true']):focus-visible { translate: none; scale: none; rotate: none; }
 }
 /* answered: correct = solid ink plate (19.6:1), others recede but stay ≥ 4.5:1 on violet/ink */
-.ds-choice--word[data-status='correct'] .ds-choice__label { background: var(--color-wr-ink); color: #fff; padding: 0.05em 0.2em; border-radius: 0.12em; box-shadow: 0 0 0 3px #fff; }
-.ds-choice--word[data-status='wrong'] .ds-choice__label { text-decoration: line-through; text-decoration-thickness: 0.08em; }
+.ds-choice--word[data-status='correct'] .ds-choice__label { background: var(--color-wr-mint); color: var(--color-wr-ink); padding: 0.05em 0.2em; border-radius: 0.12em; box-shadow: 0 0 0 3px #fff; }
+.ds-choice--word[data-status='wrong'] .ds-choice__label { background: var(--color-wr-red); color: #fff; padding: 0.05em 0.2em; border-radius: 0.12em; text-decoration: line-through; text-decoration-thickness: 0.08em; }
 
 /* tiles */
 .ds-quiz-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(0.625rem, 0.5rem + 0.6vw, 0.875rem); }
@@ -387,26 +391,11 @@
 .ds-tone--white { background: #fff; color: var(--color-wr-ink); }
 .ds-tone--card { background: var(--color-wr-card); color: #fff; border-color: #fff; }
 @media (hover: hover) and (pointer: fine) { .ds-choice--tile:not([aria-disabled='true']):hover { scale: 1.03; rotate: -1deg; } }
-.ds-choice--tile[data-status='correct'] { background: #fff; color: var(--color-wr-ink); border-color: var(--color-wr-ink); box-shadow: 0 0 0 4px #fff; }
-.ds-choice--tile[data-status='wrong'] { background: var(--color-wr-ink); color: #fff; border-color: #fff; }
+.ds-choice--tile[data-status='correct'] { background: var(--color-wr-mint); color: var(--color-wr-ink); border-color: var(--color-wr-ink); box-shadow: 0 0 0 4px #fff; }
+.ds-choice--tile[data-status='wrong'] { background: var(--color-wr-red); color: #fff; border-color: #fff; }
 .ds-choice--tile[data-status='wrong'] .ds-choice__label { text-decoration: line-through; }
 .ds-choice--tile[data-status='other'] { opacity: 0.7; } /* inactive control (aria-disabled) */
 
-/* result card */
-.ds-result {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  max-width: 40rem;
-  padding: clamp(1.25rem, 1rem + 1.4vw, 2rem);
-  border-radius: clamp(1.5rem, 1rem + 1.4vw, 2.25rem);
-  background: var(--color-wr-pink);
-  color: var(--color-wr-ink);
-}
-.ds-result[data-correct='false'] { background: var(--color-wr-ink); color: #fff; }
-.ds-result__verdict { margin: 0; font-family: var(--font-wide); font-weight: 900; font-stretch: 125%; font-size: clamp(2rem, 1.25rem + min(3.4vw, 5vh), 4.25rem); line-height: 0.9; letter-spacing: -0.045em; text-transform: uppercase; }
-.ds-result__answer { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; font-family: var(--font-wide); font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem); line-height: 1.1; overflow-wrap: anywhere; }
-.ds-result__text { margin: 0; font-size: 1.0625rem; font-weight: 600; line-height: 1.4; text-wrap: pretty; }
 
 /* ─── Shell (toolbar, next button, navigation) ─────────────────────── */
 .ds-icon-button {

@@ -6,13 +6,13 @@ import { Display, Lead, Mark } from '@/design-system/components/Type';
 
 interface SpeakerQuizSlideProps {
   speaker: SpeakerWrapped;
-  isAnswered?: boolean;
+  storedAnswer?: boolean | null;
   onQuizAnswer?: (isCorrect: boolean) => void;
   onComplete?: () => void;
 }
 
 /** Signature-word quiz (one question) on the quiz surface; same engine as the main story. */
-export function SpeakerQuizSlide({ speaker, isAnswered, onQuizAnswer, onComplete }: SpeakerQuizSlideProps) {
+export function SpeakerQuizSlide({ speaker, storedAnswer, onQuizAnswer, onComplete }: SpeakerQuizSlideProps) {
   const nounQuiz = speaker.signatureQuiz;
 
   const quizConfig = useMemo((): QuizConfigAlt | null => {
@@ -40,7 +40,7 @@ export function SpeakerQuizSlide({ speaker, isAnswered, onQuizAnswer, onComplete
   return (
     <SlideQuiz
       quiz={quizConfig}
-      isAnswered={isAnswered}
+      storedAnswer={storedAnswer}
       onAnswer={onQuizAnswer ?? (() => {})}
       onComplete={onComplete ?? (() => {})}
       title="Wort-Quiz"
