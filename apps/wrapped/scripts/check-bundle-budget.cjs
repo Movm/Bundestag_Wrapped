@@ -8,7 +8,7 @@ const path = require('path');
 
 const dist = path.resolve(__dirname, '../dist');
 const manifestPath = path.join(dist, '.vite/manifest.json');
-const MAX_INITIAL_JS_BYTES = 760 * 1024;
+const MAX_INITIAL_JS_BYTES = 500 * 1024;
 const MAX_INITIAL_CSS_BYTES = 150 * 1024;
 
 function fileSize(relativePath) {
@@ -33,6 +33,11 @@ addChunk(entry);
 const annualStory = manifest['src/components/MainWrappedPage.tsx'];
 if (!annualStory?.isDynamicEntry || chunks.has(annualStory.file)) {
   throw new Error('Annual story must stay outside the shared initial JavaScript graph.');
+}
+// The compiled contract validators (~300 KiB) load with the first data fetch, not with the page.
+const validators = manifest['src/generated/wrapped-contract-validators.js'];
+if (!validators?.isDynamicEntry || chunks.has(validators.file)) {
+  throw new Error('Contract validators must stay outside the shared initial JavaScript graph.');
 }
 
 const initialJsBytes = [...chunks.values()].reduce((total, chunk) => total + fileSize(chunk.file), 0);

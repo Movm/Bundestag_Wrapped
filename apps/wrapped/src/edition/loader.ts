@@ -1,4 +1,4 @@
-import { validateContractDocument, validateEditionContent, validateWrappedData } from '@/data/wrapped-contract';
+import { loadContractValidators, validateContractDocument, validateEditionContent, validateWrappedData } from '@/data/wrapped-contract';
 import type { WrappedData } from '@/data/wrapped';
 import type { SpeakerIndex, SpeakerWrapped } from '@/data/speaker-wrapped';
 import type { Speech, TopicRankingsData } from '@/lib/search-utils';
@@ -66,6 +66,8 @@ export async function fetchJson(url: string, timing?: EditionAssetTiming): Promi
   if (!/^\/data\/(?:[A-Za-z0-9_-][A-Za-z0-9_.-]*\/)*[A-Za-z0-9_-][A-Za-z0-9_.-]*\.json$/.test(url)) {
     throw new EditionLoadError('invalid-contract', 'Untrusted edition asset URL', url);
   }
+  // Every fetched document is validated next; fetch the validator chunk alongside it.
+  loadContractValidators().catch(() => {});
   const started = performance.now();
   let response: Response;
   try {
@@ -101,9 +103,14 @@ export async function fetchJson(url: string, timing?: EditionAssetTiming): Promi
   }
 }
 
-function validate<T>(fn: () => T, filename: string): T {
+async function validate<T>(fn: () => Promise<T>, filename: string): Promise<T> {
   try {
-    return fn();
+    await loadContractValidators();
+  } catch {
+    throw new EditionLoadError('network', `Network error while loading the contract validators for ${filename}`, filename);
+  }
+  try {
+    return await fn();
   } catch (error) {
     throw new EditionLoadError(
       'invalid-contract',
@@ -145,7 +152,7 @@ export async function loadEditionAsset<Document extends EditionAssetDocument>(
   const url = resolveAssetUrl(manifestUrl, asset);
   const payload = await fetchJson(url, timing);
   const started = performance.now();
-  const result = validate(() => validateContractDocument<EditionAssetData[Document]>(document, payload, url), url);
+  const result = await validate(() => validateContractDocument<EditionAssetData[Document]>(document, payload, url), url);
   if (timing) timing.validationMs = performance.now() - started;
   return result;
 }
