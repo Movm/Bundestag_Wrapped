@@ -7,7 +7,7 @@ import { answerQuiz, expectInlineQuizResult, jumpToSlide, storyStart } from './s
 // The real section of the 2026 preview, on top of the small fixture edition.
 const chancellor = JSON.parse(readFileSync(new URL('../public/data/2026/preview-2026-11-10-match/wrapped.json', import.meta.url), 'utf8')).chancellor;
 
-const SLIDES = ['intro-chancellor', 'quiz-chancellor', 'info-chancellor', 'reveal-chancellor', 'reveal-chancellor-topics', 'reveal-chancellor-words'];
+const SLIDES = ['intro-chancellor', 'quiz-chancellor', 'info-chancellor', 'reveal-chancellor', 'reveal-chancellor-focus', 'reveal-chancellor-topics', 'reveal-chancellor-words'];
 
 test.beforeEach(async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });

@@ -2,9 +2,9 @@ import { motion } from 'motion/react';
 import type { ChancellorAnalysis } from '@/generated/wrapped-contract-v1';
 import { Enter, Slide } from '@/design-system/components/Slide';
 import { Block, ChipCloud, RankCard } from '@/design-system/components/Data';
-import { Display, Eyebrow, Mark, Note } from '@/design-system/components/Type';
+import { BigNumber, Display, Eyebrow, Mark, Note } from '@/design-system/components/Type';
 import { ENTER } from '@/design-system/motion';
-import { againstChamber, areaName, chancellorVerdict, lastName, sideName, split, timesAs } from '@/domain/chancellor';
+import { againstChamber, areaName, chancellorVerdict, focusArea, focusName, lastName, sideName, split, timesAs } from '@/domain/chancellor';
 import { capitalize, cardinal, times } from '@/lib/german-count';
 
 const number = new Intl.NumberFormat('de-DE');
@@ -131,6 +131,73 @@ export function ChancellorSplitSlide({ chancellor, year }: { chancellor: Chancel
   );
 }
 
+/** "3" for 2,98, otherwise one decimal: the factor in the big number. */
+const factor = (ratio: number) => (Math.abs(ratio - Math.round(ratio)) <= 0.15 ? String(Math.round(ratio)) : decimal(ratio));
+
+/** Words drawn with a non-breaking hyphen: "83‑mal" never breaks. */
+const counted = (words: { word: string; count: number }[]) =>
+  words.map(item => `${displayWord(item.word)} (${times(item.count).replace('-', '\u2011')})`).join(', ');
+
+/**
+ * The twist after the verdict: the area that sets him apart from the chamber,
+ * as a factor and as two bars per 1,000 words. A factor below 1.5 is no twist,
+ * so the title then only names the area.
+ */
+export function ChancellorFocusSlide({ chancellor }: { chancellor: ChancellorAnalysis }) {
+  const focus = focusArea(chancellor.areas);
+  if (!focus) return null;
+  const { area, ratio } = focus;
+  const name = focusName(area.id);
+  const max = Math.max(area.perThousand, area.chamberPerThousand) || 1;
+  const bars = [
+    { label: lastName(chancellor.name), value: area.perThousand, tone: 'him' },
+    { label: 'Restlicher Bundestag', value: area.chamberPerThousand, tone: 'rest' },
+  ];
+  const words = (area.side === 'aussen' ? chancellor.foreignWords : chancellor.domesticWords).slice(0, 3);
+  return (
+    <Slide
+      shapes={false}
+      footer={<Note className="ds-note--plate">{areaName(area.id)}: Themenwörter pro 1.000 Wörter, verglichen mit allen anderen Redebeiträgen dieser Edition.</Note>}
+    >
+      <div className="flex flex-col gap-4">
+        <motion.div variants={ENTER.stamp} className="self-start rotate-[-4deg]">
+          <Eyebrow>{ratio >= 1.5 ? 'Aber vor allem' : 'Sein Schwerpunkt'}</Eyebrow>
+        </motion.div>
+        <Display size="xl" face="wide">{ratio >= 1.5 ? <><Mark>{name}</Mark>-Kanzler.</> : <Mark>{name}.</Mark>}</Display>
+      </div>
+      <Block tone="white" enter="rise" className="ds-focus">
+        {ratio >= 1.1 && (
+          <p className="ds-focus__factor">
+            <BigNumber>{factor(ratio)}×</BigNumber>
+            <span>so oft über {name} wie der restliche Bundestag</span>
+          </p>
+        )}
+        <dl className="ds-focus__bars">
+          {bars.map(bar => (
+            <div key={bar.tone} className="ds-focus__row">
+              <dt>{bar.label}</dt>
+              <dd>
+                <motion.span
+                  variants={ENTER.grow}
+                  className={`ds-focus__bar ds-focus__bar--${bar.tone}`}
+                  style={{ width: `${Math.max(4, (bar.value / max) * 100)}%` }}
+                  aria-hidden="true"
+                />
+                <span className="ds-focus__value">{bar.value.toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} pro 1.000 Wörter</span>
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </Block>
+      {words.length > 0 && (
+        <motion.p variants={ENTER.rise} className="m-0 text-base font-semibold">
+          <span className="ds-chancellor-side">{sideName(area.side)} am häufigsten:</span> {counted(words)}
+        </motion.p>
+      )}
+    </Slide>
+  );
+}
+
 const RANK_TONES = ['white', 'violet', 'pink', 'card', 'white'] as const;
 
 /** His five biggest topic areas, each against the rest of the chamber. */
@@ -163,37 +230,26 @@ function displayWord(word: string): string {
   return word.length <= 3 ? word.toUpperCase() : capitalize(word);
 }
 
-/** Typical nouns, and the topic words he used most on each side ("83‑mal" keeps its hyphen unbroken). */
+/** Typical nouns: the words he uses far more often than the rest of the chamber. */
 export function ChancellorWordsSlide({ chancellor }: { chancellor: ChancellorAnalysis }) {
   const hot = chancellor.hotWords.slice(0, 6);
   const [leader] = hot;
-  const sides = [
-    { label: 'Außen am häufigsten', words: chancellor.foreignWords.slice(0, 3) },
-    { label: 'Innen am häufigsten', words: chancellor.domesticWords.slice(0, 3) },
-  ].filter(side => side.words.length > 0);
+  if (!leader) return null;
   return (
     <Slide
       shapes={false}
       footer={<Note className="ds-note--plate">Typisch: Hauptwörter, die er deutlich häufiger nutzt als alle anderen Redner*innen dieser Edition, in mindestens drei Beiträgen. Anrede- und Zeitwörter sind ausgenommen.</Note>}
     >
-      <motion.div variants={ENTER.stamp} className="self-start rotate-[-4deg]">
-        <Eyebrow>Typisch {lastName(chancellor.name)}</Eyebrow>
-      </motion.div>
-      {leader && (
-        <div className="flex flex-col items-start gap-3">
-          <Display size="md">Seine <Mark>typischen Wörter.</Mark></Display>
-          <ChipCloud words={hot.map(item => displayWord(item.word))} label={`Wörter, die ${chancellor.name} öfter sagt als der restliche Bundestag`} />
-          <motion.p variants={ENTER.rise} className="m-0 text-base font-semibold">
-            Vorn: „{displayWord(leader.word)}“, mindestens {decimal(leader.ratio)}-mal so oft wie im restlichen Bundestag.
-          </motion.p>
-        </div>
-      )}
-      {sides.map(side => (
-        <motion.p key={side.label} variants={ENTER.rise} className="m-0 text-base font-semibold">
-          <span className="ds-chancellor-side">{side.label}:</span>{' '}
-          {side.words.map(item => `${displayWord(item.word)} (${times(item.count).replace('-', '\u2011')})`).join(', ')}
-        </motion.p>
-      ))}
+      <div className="flex flex-col gap-4">
+        <motion.div variants={ENTER.stamp} className="self-start rotate-[-4deg]">
+          <Eyebrow>Typisch {lastName(chancellor.name)}</Eyebrow>
+        </motion.div>
+        <Display size="lg" face="wide">Seine <Mark>typischen Wörter.</Mark></Display>
+      </div>
+      <ChipCloud words={hot.map(item => displayWord(item.word))} label={`Wörter, die ${chancellor.name} öfter sagt als der restliche Bundestag`} />
+      <motion.p variants={ENTER.rise} className="ds-statement ds-statement--long">
+        Vorn: „{displayWord(leader.word)}“, mindestens {decimal(leader.ratio)}-mal so oft wie im restlichen Bundestag.
+      </motion.p>
     </Slide>
   );
 }

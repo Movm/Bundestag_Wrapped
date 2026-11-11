@@ -69,3 +69,17 @@ export function shareOptions(share: number): string[] {
     .slice(0, 3);
   return [answer, ...distractors].map(value => `${value} %`);
 }
+
+const ratioOf = (area: ChancellorArea) => (area.chamberPerThousand > 0 ? area.perThousand / area.chamberPerThousand : 0);
+
+/**
+ * The area that sets him apart: of his three biggest areas, the one he talks
+ * about most often compared with the rest of the chamber. Null without areas.
+ */
+export function focusArea(areas: readonly ChancellorArea[]): { area: ChancellorArea; ratio: number } | null {
+  const [area] = [...areas.slice(0, 3)].sort((a, b) => ratioOf(b) - ratioOf(a));
+  return area ? { area, ratio: ratioOf(area) } : null;
+}
+
+/** "Europa" from "Europa/Außen": the word in front of "-Kanzler". */
+export const focusName = (id: string) => areaName(id).split('/')[0];

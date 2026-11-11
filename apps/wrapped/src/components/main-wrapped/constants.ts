@@ -76,6 +76,7 @@ export const SLIDES = [
   'quiz-chancellor',
   'info-chancellor',
   'reveal-chancellor',
+  'reveal-chancellor-focus',
   'reveal-chancellor-topics',
   'reveal-chancellor-words',
   // Gen Z MPs against older MPs

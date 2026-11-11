@@ -3,7 +3,7 @@ import { createRoot, type Root } from 'react-dom/client';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import preview2026 from '../../../../public/data/2026/preview-2026-11-10-match/wrapped.json';
 import type { ChancellorAnalysis } from '@/generated/wrapped-contract-v1';
-import { ChancellorIntroSlide, ChancellorSplitSlide, ChancellorTopicsSlide, ChancellorWordsSlide } from '.';
+import { ChancellorFocusSlide, ChancellorIntroSlide, ChancellorSplitSlide, ChancellorTopicsSlide, ChancellorWordsSlide } from '.';
 
 // jsdom has no IntersectionObserver; slide entrances (whileInView) need one.
 globalThis.IntersectionObserver ??= class { observe() {} unobserve() {} disconnect() {} takeRecords() { return []; } root = null; rootMargin = ''; thresholds = []; } as unknown as typeof IntersectionObserver;
@@ -44,12 +44,30 @@ describe('chancellor chapter on the 2026 preview data', () => {
     expect(labels).toHaveLength(5);
   });
 
-  it('shows his typical words and the top topic words per side', async () => {
+  it('turns to his focus: Europa, about three times as often as the chamber', async () => {
+    const text = await render(<ChancellorFocusSlide chancellor={chancellor} />);
+    expect(text).toContain('Aber vor allem');
+    expect(text).toContain('Europa-Kanzler.');
+    expect(text).toContain('3×so oft über Europa wie der restliche Bundestag');
+    expect([...container.querySelectorAll('.ds-focus__row')].map(row => row.textContent)).toEqual([
+      'Merz14,9 pro 1.000 Wörter',
+      'Restlicher Bundestag5,0 pro 1.000 Wörter',
+    ]);
+    expect(text).toContain('Außen am häufigsten: Europa (83‑mal), Ukraine (39‑mal), Frieden (20‑mal)');
+  });
+
+  it('only names the area when it barely stands out', async () => {
+    const areas = chancellor.areas.map(area => ({ ...area, chamberPerThousand: area.perThousand }));
+    const text = await render(<ChancellorFocusSlide chancellor={{ ...chancellor, areas }} />);
+    expect(text).toContain('Sein Schwerpunkt');
+    expect(text).not.toContain('Kanzler.');
+    expect(text).not.toContain('×');
+  });
+
+  it('shows his typical words', async () => {
     const text = await render(<ChancellorWordsSlide chancellor={chancellor} />);
     expect([...container.querySelectorAll('.ds-chip')].map(chip => chip.textContent)).toEqual(['Kommission', 'Europa', 'Handel', 'Anstrengungen', 'Bürokratierückbau', 'Ukraine']);
     expect(text).toContain('Vorn: „Kommission“, mindestens 5,6-mal so oft wie im restlichen Bundestag.');
-    expect(text).toContain('Außen am häufigsten: Europa (83‑mal), Ukraine (39‑mal), Frieden (20‑mal)');
-    expect(text).toContain('Innen am häufigsten: Unternehmen (33‑mal), Gerechtigkeit (17‑mal), Wettbewerbsfähigkeit (16‑mal)');
   });
 
   it('leaves out the prior year when the edition has none', async () => {

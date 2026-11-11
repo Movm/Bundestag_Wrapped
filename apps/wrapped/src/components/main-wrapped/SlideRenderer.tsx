@@ -34,6 +34,7 @@ import {
   ChancellorSplitSlide,
   ChancellorTopicsSlide,
   ChancellorWordsSlide,
+  ChancellorFocusSlide,
 } from '@/components/slides';
 import { SlideInfo } from '@/components/slides/shared';
 import type { SlideData } from '@/lib/slide-sharepics';
@@ -265,13 +266,14 @@ function GenerationSlideWrapper({ part }: { part: 'intro' | 'info' }) {
     : <GenerationInfoSlide generations={generations} saidNoYouthWord={youthGeneration === 'older'} />;
 }
 
-function ChancellorSlideWrapper({ part }: { part: 'intro' | 'split' | 'topics' | 'words' }) {
+function ChancellorSlideWrapper({ part }: { part: 'intro' | 'split' | 'focus' | 'topics' | 'words' }) {
   const chancellor = useFullWrappedData()?.chancellor;
   const year = editionSurface(useOptionalEdition()).year;
   if (!chancellor) return null;
   switch (part) {
     case 'intro': return <ChancellorIntroSlide chancellor={chancellor} year={year} />;
     case 'split': return <ChancellorSplitSlide chancellor={chancellor} year={year} />;
+    case 'focus': return <ChancellorFocusSlide chancellor={chancellor} />;
     case 'topics': return <ChancellorTopicsSlide chancellor={chancellor} />;
     case 'words': return <ChancellorWordsSlide chancellor={chancellor} />;
   }
@@ -453,6 +455,9 @@ export const SlideRenderer = memo(function SlideRenderer({
 
     case 'reveal-chancellor':
       return <ChancellorSlideWrapper part="split" />;
+
+    case 'reveal-chancellor-focus':
+      return <ChancellorSlideWrapper part="focus" />;
 
     case 'reveal-chancellor-topics':
       return <ChancellorSlideWrapper part="topics" />;
