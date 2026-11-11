@@ -87,14 +87,27 @@
 .ds-shapes--band .ds-shape--b { width: clamp(5rem, 18vmin, 16rem); aspect-ratio: 1; bottom: -7vmin; right: -5vmin; rotate: 18deg; transform-origin: center; }
 /* ring (info/share): thick ring bottom-right, square upper-right */
 .ds-shapes--ring .ds-shape--a { width: 52vmax; max-width: 47rem; aspect-ratio: 1; bottom: -26vmax; right: -16vmax; background: none; border: clamp(2.5rem, 6vmin, 5.5rem) solid var(--surface-shape-a); }
-.ds-shapes--ring .ds-shape--b { width: clamp(4rem, 12vmin, 12rem); aspect-ratio: 1; top: 14%; right: 8%; rotate: 18deg; }
+.ds-shapes--ring .ds-shape--b { width: clamp(4rem, 12vmin, 12rem); aspect-ratio: 1; top: -7vmin; right: -4vmin; rotate: 18deg; }
 /* corner (reveal): circle top-right, square bottom-left */
 .ds-shapes--corner .ds-shape--a { width: 58vmax; max-width: 55rem; aspect-ratio: 1; top: -26vmax; right: -20vmax; }
 .ds-shapes--corner .ds-shape--b { width: clamp(6rem, 24vmin, 24rem); aspect-ratio: 1; bottom: -12vmin; left: -10vmin; rotate: 18deg; }
-/* On narrow screens shapes shrink further into the corners so text stays on plain ground. */
-@media (max-width: 40rem) {
+/*
+ * Phones and portrait tablets (narrow or short screens): a shape never overlaps the content box.
+ * The big shape shrinks to a bounded corner and the slide reserves exactly that
+ * depth as padding on the same edge, so text — however long, however tall the
+ * slide grows — stays on plain ground. Ink on an ink ring, or an accent on its
+ * own shape, cannot be made readable by stacking order alone.
+ * Depths are in vmin (portrait: width) so portrait and landscape phones agree.
+ */
+@media (max-width: 48rem), (max-height: 40rem) {
   .ds-shapes--ring .ds-shape--b, .ds-shapes--orbit .ds-shape--b { display: none; }
   .ds-shapes--corner .ds-shape--b, .ds-shapes--cover .ds-shape--c { width: 5rem; bottom: -2.5rem; }
+  .ds-shapes--ring .ds-shape--a { width: 46vmin; max-width: 47rem; bottom: -23vmin; right: -14vmin; border-width: clamp(1.25rem, 4.5vmin, 2.5rem); }
+  .ds-shapes--orbit .ds-shape--a { width: 40vmin; top: -20vmin; left: -12vmin; }
+  .ds-shapes--corner .ds-shape--a { width: 42vmin; top: -21vmin; right: -13vmin; }
+  .ds-slide[data-shapes='ring'] { padding-block-end: 23vmin; }
+  .ds-slide[data-shapes='orbit'] { padding-block-start: 20vmin; }
+  .ds-slide[data-shapes='corner'] { padding-block: 21vmin 3.5rem; }
 }
 
 /* ─── Type ─────────────────────────────────────────────────────────── */
