@@ -71,6 +71,12 @@ export const SLIDES = [
   'intro-mention',
   'quiz-mention',
   'info-mention',
+  // Innen- oder Außenkanzler, from the edition's chancellor section
+  'intro-chancellor',
+  'quiz-chancellor',
+  'reveal-chancellor',
+  'reveal-chancellor-focus',
+  'reveal-chancellor-topics',
   // Gen Z MPs against older MPs
   'intro-genz',
   'quiz-genz',
@@ -117,6 +123,7 @@ export const AUTO_SCROLL_SLIDES = new Set<SlideType>([
   'intro-discriminatory',
   'intro-common-words',
   'intro-mention',
+  'intro-chancellor',
   'intro-genz',
   'intro-moin',
   'intro-tone',

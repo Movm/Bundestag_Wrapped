@@ -151,4 +151,15 @@ describe('active slide plan', () => {
       'reveal-youth-language', 'intro-mention', 'quiz-mention', 'info-mention',
     ]);
   });
+
+  it('tells the chancellor chapter after the mention only when its question exists', () => {
+    const configuration = { version: 1 as const, groups: [{ id: 'quiz-mention' }, { id: 'quiz-chancellor' }] };
+    expect(buildActiveSlidePlan(quizModel(['quiz-mention']), [], configuration)).not.toContain('intro-chancellor');
+    expect(buildActiveSlidePlan(quizModel(['quiz-mention', 'quiz-chancellor']), [], configuration)).toEqual([
+      'intro', 'info-disclaimer',
+      'intro-mention', 'quiz-mention', 'info-mention',
+      'intro-chancellor', 'quiz-chancellor', 'reveal-chancellor-topics', 'reveal-chancellor', 'reveal-chancellor-focus',
+      'share', 'finale',
+    ]);
+  });
 });

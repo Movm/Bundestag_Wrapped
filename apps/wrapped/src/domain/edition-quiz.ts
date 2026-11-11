@@ -1,6 +1,7 @@
 import type { QuizQuestion, WrappedData } from '@/data/wrapped';
 import { TOPIC_BY_ID } from '@/shared/constants/topics';
 import { youthGeneration, youthWordMeaning, type YouthGeneration } from './youth-words';
+import { lastName, shareOptions, split } from './chancellor';
 import type { EditionQuizConfiguration } from '@/generated/wrapped-contract-v1';
 import { MissingMetricError, topInterrupter, topSpeakerByWords, topTopic } from './metrics';
 import { atParty, capitalize, theParty, times as spelledTimes } from '@/lib/german-count';
@@ -189,6 +190,22 @@ function mentionQuestion(mention: { label: string; speakers: Array<{ name: strin
 }
 
 /**
+ * Innen- oder Außenkanzler: how much of what the chancellor talks about is
+ * foreign policy. Options are the real share and three others 14 points apart.
+ */
+function chancellorQuestion(chancellor: { name: string; foreignShare: number; chamberForeignShare: number }): QuizQuestion | undefined {
+  const { foreign, domestic } = split(chancellor.foreignShare);
+  const chamber = split(chancellor.chamberForeignShare).foreign;
+  return question(
+    'quiz-chancellor',
+    `Wie viel von dem, worüber ${lastName(chancellor.name)} im Plenum spricht, ist Außenpolitik?`,
+    shareOptions(chancellor.foreignShare),
+    `${foreign} %`,
+    `${foreign} % seiner Themenwörter gehören zur Außenpolitik, ${domestic} % zur Innenpolitik. Im restlichen Bundestag liegt der Außen-Anteil bei ${chamber} %.`,
+  );
+}
+
+/**
  * The group the signature-word quiz is about: pinned by the edition, otherwise
  * the one whose strongest word stands out most. The chapter intro uses it too.
  */
@@ -291,6 +308,8 @@ export function buildEditionQuizModel(data: WrappedData, configuration?: Edition
     const mention = data.mentions?.[0];
     return mention ? mentionQuestion(mention) : undefined;
   });
+
+  addQuestion(model, 'quiz-chancellor', () => (data.chancellor ? chancellorQuestion(data.chancellor) : undefined));
 
   addQuestion(model, 'quiz-genz', () => {
     const generations = data.generations;

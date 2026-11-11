@@ -6,7 +6,7 @@ export const QUIZ_SLIDES = [
   'quiz-topic-riser', 'quiz-word-riser', 'quiz-youth-language',
   'quiz-topics', 'quiz-signature', 'quiz-speeches', 'quiz-drama',
   'quiz-discriminatory', 'quiz-common-words', 'quiz-moin',
-  'quiz-tone', 'quiz-gender', 'quiz-mention', 'quiz-genz',
+  'quiz-tone', 'quiz-gender', 'quiz-mention', 'quiz-genz', 'quiz-chancellor',
 ] as const;
 
 type DataQuizSlide = Exclude<(typeof QUIZ_SLIDES)[number], 'quiz-moin'>;
@@ -47,6 +47,11 @@ const STORY_TEMPLATE: readonly (SlideType | StoryGroup)[] = [
   },
   // Moment of the year (e.g. Timmy der Wal), from the edition's mentions.
   { quiz: 'quiz-mention', slides: ['intro-mention', 'quiz-mention', 'info-mention'] },
+  // Innen- oder Außenkanzler, from the edition's chancellor section.
+  {
+    quiz: 'quiz-chancellor',
+    slides: ['intro-chancellor', 'quiz-chancellor', 'reveal-chancellor-topics', 'reveal-chancellor', 'reveal-chancellor-focus'],
+  },
   // Gen Z MPs against older MPs, from the edition's generations section.
   GENZ_GROUP,
   { quiz: 'quiz-moin', slides: ['intro-moin', 'quiz-moin', 'info-moin', 'reveal-moin'] },
