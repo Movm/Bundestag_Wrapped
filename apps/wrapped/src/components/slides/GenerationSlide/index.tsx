@@ -54,7 +54,7 @@ export function GenerationInfoSlide({ generations, saidNoYouthWord = false }: { 
   return (
     <Slide
       shapes={false}
-      footer={<Note className="ds-note--plate">Gen Z: geboren ab {generations.bornFrom}, laut Stammdaten des Bundestags. Verglichen mit älteren Abgeordneten derselben Fraktionen.</Note>}
+      footer={<Note className="ds-note--plate">Gen Z: geboren ab {generations.bornFrom}, laut Stammdaten des Bundestags, in Einzelfällen Abgeordnetenwatch. Verglichen mit älteren Abgeordneten derselben Fraktionen.</Note>}
     >
       <motion.div variants={ENTER.stamp} className="self-start rotate-[-4deg]">
         <Eyebrow>So reden die Jüngeren</Eyebrow>
