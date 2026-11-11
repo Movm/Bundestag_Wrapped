@@ -1,4 +1,4 @@
-import { answerQuiz, jumpToSlide, closeQuizResult, storyStart } from './story-navigation';
+import { answerQuiz, jumpToSlide, expectInlineQuizResult, storyStart } from './story-navigation';
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from 'playwright/test';
 
@@ -78,7 +78,7 @@ test('completes the fixture journey with a quiz gate, mixed answers, and the act
       await answerQuiz(page, slide, slide !== 'quiz-signature');
       // Feedback stays on the slide until the user explicitly continues.
       await expect(answers.first()).toBeDisabled();
-      await closeQuizResult(page);
+      await expectInlineQuizResult(page);
       await scrollToNextSlide(page, slide, nextSlide);
       continue;
     }
@@ -195,7 +195,7 @@ test('restores different answers when switching between annual routes', async ({
   await page.goto('/2025');
   await jumpToSlide(page, 'quiz-topics');
   await expect(page.locator('[data-slide-id="quiz-topics"]').getByRole('button').first()).toBeDisabled();
-  await expect(page.locator('[data-slide-id="quiz-topics"]').getByText('Wähle „Weiter“, um fortzufahren.')).toBeVisible();
+  await expect(page.locator('[data-slide-id="quiz-topics"]').getByText('Weiter geht es mit der nächsten Folie.')).toBeVisible();
   const scopes = await page.evaluate(() => JSON.parse(localStorage.getItem('quiz-storage-v2') ?? '{}').state?.answersByScope);
   expect(scopes['quiz:2025:fixture-a']['quiz-topics']).toBe(true);
   expect(scopes['quiz:2026:fixture-b']['quiz-topics']).toBe(false);
@@ -351,10 +351,8 @@ test('runs Axe against the annual start, answered quiz, search, speaker index, p
   await answer.focus();
   await page.keyboard.press('Enter');
   await expect(answer).toBeDisabled();
-  // The result dialog must pass Axe too; scan it open, then close it.
-  await expect(page.getByRole('dialog')).toBeVisible();
+  await expectInlineQuizResult(page);
   await scan();
-  await closeQuizResult(page);
 
   for (const path of ['/2025/suche', '/2025/abgeordnete', '/2025/abgeordnete/shared-speaker', '/does-not-exist']) {
     await page.goto(path);

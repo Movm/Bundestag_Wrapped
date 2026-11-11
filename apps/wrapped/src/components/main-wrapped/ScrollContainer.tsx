@@ -154,8 +154,10 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
         if (direction) step(direction);
       };
       const key = (event: KeyboardEvent) => {
-        if (reading.current || event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey ||
-          (event.target as HTMLElement).closest('button, input, textarea, select, a, [contenteditable="true"], [role="dialog"]')) return;
+        if (reading.current || event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey) return;
+        const control = (event.target as HTMLElement).closest('button, input, textarea, select, a, [contenteditable="true"], [role="dialog"]');
+        // An answered quiz option is inert (aria-disabled) and keeps focus, so the keys move the story on from there.
+        if (control && control.getAttribute('aria-disabled') !== 'true') return;
         // Also support keyboard navigation before the first pointer interaction.
         if (event.target !== document.body && !container.contains(event.target as Node)) return;
         const direction = ['ArrowDown', 'PageDown', ' '].includes(event.key) ? (event.shiftKey ? -1 : 1)

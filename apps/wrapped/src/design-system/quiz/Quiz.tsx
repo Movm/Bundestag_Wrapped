@@ -1,9 +1,5 @@
 import { motion, useReducedMotion } from 'motion/react';
-import { useContext, useEffect, useId, useMemo, useState } from 'react';
-import { AccessibleDialog } from '@/components/ui/AccessibleDialog';
-import { useSlideEffectsActive } from '@/components/main-wrapped/SlideEffectsContext';
-import { StoryContext } from '@/components/main-wrapped/StoryContext';
-import { ActionButton } from '../components/ActionButton';
+import { useEffect, useId, useMemo, useState } from 'react';
 import { Confetti } from '../components/Confetti';
 import { ENTER } from '../motion';
 import { useQuizEngine, type AnyQuizConfig } from './engine';
@@ -11,10 +7,6 @@ import { pickQuizLayout, type QuizLayoutId } from './layouts';
 import { QUIZ_LAYOUT_REGISTRY } from './registry';
 
 const CONFETTI_MS = 1000;
-/** Time to see the marked answers before the result card opens. */
-const RESULT_DELAY_MS = 650;
-/** Exit of the result card; must match `ds-result-out` in components.css. */
-const DIALOG_EXIT_MS = 140;
 const CONFETTI_COLORS = ['#ff4fa0', '#7b3ff2', '#ffffff', '#0e0a14'];
 
 export interface QuizProps {
@@ -36,37 +28,19 @@ export interface QuizProps {
 /**
  * A quiz in the design system: one engine, any registered layout, the same
  * result. The answer is announced at once in a polite status region and stays
- * on the slide as a card; shortly after, the result also opens as a modal
- * dialog (AccessibleDialog) with "Weiter". Closing it returns focus to the
- * chosen answer.
+ * on the slide as a card, so the reader can scroll straight on; focus stays
+ * on the chosen answer.
  */
 export function Quiz({ quiz, isAnswered, onAnswer, seed, layout, gapSentence, badge, shuffle = false }: QuizProps) {
   const reduce = useReducedMotion();
-  const slideActive = useSlideEffectsActive();
-  const story = useContext(StoryContext);
   const [confetti, setConfetti] = useState(false);
-  const [resultOpen, setResultOpen] = useState(false);
-  // Where the answer was tapped: the result colour floods out from there.
-  const [origin, setOrigin] = useState<{ x: number; y: number } | null>(null);
   const engine = useQuizEngine(quiz, { isAnswered, onAnswer, onCorrect: () => { if (!reduce) setConfetti(true); }, shuffleSeed: shuffle ? `${seed ?? ''}:${quiz.question}` : undefined });
   const questionId = useId();
-  const verdictId = useId();
   const spec = useMemo(
     () => pickQuizLayout(QUIZ_LAYOUT_REGISTRY, engine.quiz.options, { preferred: layout, seed: seed ?? engine.quiz.question, gapSentence }),
     [engine.quiz.options, engine.quiz.question, layout, seed, gapSentence],
   );
   const Layout = spec.component;
-
-  // Open the result dialog after a fresh answer, only while this slide is the
-  // active one (never for answers restored from storage, never after leaving).
-  const freshAnswer = engine.selected !== null;
-  useEffect(() => {
-    if (!freshAnswer || !slideActive) return;
-    const timer = setTimeout(() => setResultOpen(true), RESULT_DELAY_MS);
-    return () => clearTimeout(timer);
-  }, [freshAnswer, slideActive]);
-  // Leaving the slide closes the dialog (state adjusted during render, no effect).
-  if (!slideActive && resultOpen) setResultOpen(false);
 
   useEffect(() => {
     if (!confetti) return;
@@ -75,7 +49,7 @@ export function Quiz({ quiz, isAnswered, onAnswer, seed, layout, gapSentence, ba
   }, [confetti]);
 
   return (
-    <div className="ds-quiz-frame" data-quiz-layout={spec.id} onPointerDownCapture={event => { if (!engine.answered) setOrigin({ x: event.clientX, y: event.clientY }); }}>
+    <div className="ds-quiz-frame" data-quiz-layout={spec.id}>
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
         {confetti && <Confetti count={20} duration={0.8} colors={CONFETTI_COLORS} />}
       </div>
@@ -99,22 +73,7 @@ export function Quiz({ quiz, isAnswered, onAnswer, seed, layout, gapSentence, ba
           </motion.div>
         )}
       </div>
-      {engine.answered && <p className="sr-only">Wähle „Weiter“, um fortzufahren.</p>}
-      <AccessibleDialog open={resultOpen} onClose={() => setResultOpen(false)} labelledBy={verdictId} exitMs={DIALOG_EXIT_MS}>
-        <div className="ds-result-dialog">
-          <span aria-hidden="true" className="ds-flood" data-surface={engine.isCorrect ? 'pink' : 'ink'} style={origin ? { left: origin.x, top: origin.y } : undefined} />
-          <div className="ds-result-dialog__card" data-surface={engine.isCorrect ? 'pink' : 'ink'}>
-            <span aria-hidden="true" className="ds-result-dialog__shape" />
-            <h2 id={verdictId} className="ds-result-dialog__verdict">{engine.isCorrect ? 'Genau richtig!' : 'Diesmal nicht.'}</h2>
-            <p className="ds-result-dialog__answer"><span className="ds-eyebrow ds-eyebrow--contrast">Richtig ist:</span> <strong>{engine.quiz.correctAnswer}</strong></p>
-            {engine.quiz.explanation.map((line, index) => <p key={index} className="ds-result__text">{line}</p>)}
-            <div className="ds-result-dialog__actions">
-              <ActionButton icon="down" onClick={() => { story.next?.(story.activeId); setResultOpen(false); }}>Weiter</ActionButton>
-              <ActionButton icon="none" variant="outline" onClick={() => setResultOpen(false)}>Zurück zur Frage</ActionButton>
-            </div>
-          </div>
-        </div>
-      </AccessibleDialog>
+      {engine.answered && <p className="sr-only">Weiter geht es mit der nächsten Folie.</p>}
     </div>
   );
 }

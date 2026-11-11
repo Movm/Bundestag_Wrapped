@@ -78,22 +78,12 @@ it('drops confetti but keeps the result under reduced motion', async () => {
   await act(async () => root.unmount());
 });
 
-it('opens the result as a modal dialog with the answer in words, and closes back to the quiz', async () => {
-  // jsdom lacks the modal dialog API; the component only needs it to exist.
-  HTMLDialogElement.prototype.showModal ??= function (this: HTMLDialogElement) { this.setAttribute('open', ''); };
-  HTMLDialogElement.prototype.close ??= function (this: HTMLDialogElement) { this.removeAttribute('open'); };
+it('keeps the result on the slide with the answer in words and opens no popup', async () => {
   const root = await renderQuiz();
   await act(async () => button('B').click());
   await act(async () => { await new Promise(resolve => setTimeout(resolve, 700)); });
-  const dialog = document.querySelector('dialog')!;
-  expect(dialog.hasAttribute('open')).toBe(true);
-  expect(dialog.textContent).toContain('Diesmal nicht.');
-  expect(dialog.textContent).toContain('Richtig ist:');
-  expect(dialog.textContent).toContain('A');
-  const close = [...dialog.querySelectorAll('button')].find(b => b.textContent?.includes('Zurück zur Frage'))!;
-  await act(async () => close.click());
-  // The card plays a short exit before the dialog closes.
-  await act(async () => { await new Promise(resolve => setTimeout(resolve, 200)); });
-  expect(document.querySelector('dialog')?.hasAttribute('open') ?? false).toBe(false);
+  expect(document.querySelector('dialog')).toBeNull();
+  const result = container.querySelector('[data-testid="quiz-result"]')!;
+  expect(result.textContent).toContain('Diesmal nicht. Richtig ist: A');
   await act(async () => root.unmount());
 });

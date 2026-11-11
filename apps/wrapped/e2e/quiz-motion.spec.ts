@@ -1,6 +1,6 @@
 import { expect, test } from 'playwright/test';
 import { installEditionFixtures } from './fixtures';
-import { jumpToSlide, closeQuizResult, storyStart } from './story-navigation';
+import { jumpToSlide, expectInlineQuizResult, storyStart } from './story-navigation';
 
 test.beforeEach(async ({ page }) => {
   await installEditionFixtures(page);
@@ -20,8 +20,8 @@ for (const reducedMotion of ['reduce', 'no-preference'] as const) {
     await expect(status).toContainText(/Deine Antwort (ist richtig|ist falsch|wurde gespeichert)/);
     // Result is exposed to assistive tech as text on the tile as well.
     await expect(quiz.getByRole('button', { name: /richtig|falsch/ }).first()).toBeVisible();
-    // The result also opens as a modal dialog; closing it returns focus to the answer.
-    await closeQuizResult(page);
+    // No popup: the answer keeps focus.
+    await expectInlineQuizResult(page);
     await expect(answer).toBeFocused();
     if (reducedMotion === 'reduce') await expect(quiz.locator('.w-3.h-3')).toHaveCount(0);
     // The result is a card in the layout and stays: no timeout.
@@ -31,18 +31,19 @@ for (const reducedMotion of ['reduce', 'no-preference'] as const) {
   });
 }
 
-test('continues to the next slide from the result dialog', async ({ page }) => {
+test('scrolls straight on after answering', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/2025');
   await storyStart(page).click();
   await jumpToSlide(page, 'quiz-topics');
   const quiz = page.locator('#quiz-topics');
   await quiz.getByRole('button').first().click();
-  const dialog = page.getByRole('dialog');
-  await expect(dialog).toBeVisible();
-  await dialog.getByRole('button', { name: 'Weiter' }).click();
-  await expect(dialog).toBeHidden();
-  await expect(quiz).toHaveAttribute('data-active', 'false');
+  await expectInlineQuizResult(page);
+  // A tall slide first scrolls its own overflow; the key keeps working from the answered option.
+  await expect(async () => {
+    await page.keyboard.press('ArrowDown');
+    await expect(quiz).toHaveAttribute('data-active', 'false', { timeout: 600 });
+  }).toPass({ timeout: 6000 });
 });
 
 test('starts again from the cover after coming back to it', async ({ page }) => {

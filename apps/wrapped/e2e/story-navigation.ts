@@ -23,13 +23,11 @@ export async function jumpToSlide(page: Page, id: string) {
   await page.getByRole('button', { name: 'Navigation schließen' }).click();
 }
 
-/** A fresh answer opens the result dialog shortly after; close it ("Zurück zur Frage") and return to the slide. */
-export async function closeQuizResult(page: Page) {
-  const dialog = page.getByRole('dialog');
-  await expect(dialog).toBeVisible();
-  await expect(dialog).toContainText('Richtig ist:');
-  await dialog.getByRole('button', { name: 'Zurück zur Frage' }).click();
-  await expect(dialog).toBeHidden();
+/** The result stays on the slide as a card; no popup opens, so the reader can scroll straight on. */
+export async function expectInlineQuizResult(page: Page) {
+  await expect(page.locator('[data-active="true"] [data-testid="quiz-result"]')).toBeVisible();
+  await page.waitForTimeout(800);
+  await expect(page.locator('dialog[open]')).toHaveCount(0);
 }
 
 /**
