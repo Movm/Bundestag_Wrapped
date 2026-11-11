@@ -171,7 +171,7 @@ export class StaticSpeechSearchEngine {
     if (!Number.isSafeInteger(id) || !this.index.entries[id]) throw new Error('Rede nicht gefunden');
     const url = `${this.base}/details/${id}.json`;
     const payload = await fetchJson(url);
-    const data = validateContractDocument<SpeechesData>('SpeechesAsset', { speeches: [payload] }, url);
+    const data = await validateContractDocument<SpeechesData>('SpeechesAsset', { speeches: [payload] }, url);
     if (data.speeches[0].id !== id) throw new Error('Speech detail identity mismatch');
     return data.speeches[0];
   }

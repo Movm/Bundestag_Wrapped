@@ -12,7 +12,7 @@ import { TOPIC_BY_ID } from '@/shared/constants/topics';
  *   relative to the MP's own strongest topic, weighted .5 / .3 / .2 by slot
  * - words (25 %): mean over the picked words of log2(ratio) / 3, clamped,
  *   so "8× as often as the Bundestag" is a full hit and "as often" is none
- * - animal (10 %): the user liked the MP's spirit animal
+ * - animal (10 %): the MP has the spirit animal the user picked
  * The percentage shown is that sum × 100, so 100 % means a perfect answer set.
  */
 
@@ -26,8 +26,8 @@ export interface MatchAnswers {
   /** Topic ids, slot 1 first. */
   topics: string[];
   words: string[];
-  /** Ids of the animals the user liked. */
-  likedAnimals: string[];
+  /** Id of the spirit animal the user picked. */
+  animal: string | null;
 }
 
 export interface MatchResult {
@@ -46,8 +46,8 @@ const WEIGHTS = { party: 0.35, topics: 0.3, words: 0.25, animal: 0.1 };
 const TOPIC_REASON_SHARE = 0.5;
 const WORD_REASON_RATIO = 1.5;
 
-/** Animals for the swipe deck: the most common ones first. */
-export const DECK_SIZE = 8;
+/** Animals to pick from: the most common ones. */
+export const ANIMAL_CHOICES = 8;
 
 export function topicName(id: string): string {
   return TOPIC_BY_ID[id]?.name ?? id;
@@ -67,7 +67,6 @@ export function wordPoints(ratio: number): number {
 export function scoreMatches(data: MatchData, answers: MatchAnswers, limit = 3): MatchResult[] {
   const topicIndex = answers.topics.map(id => data.topics.indexOf(id));
   const wordIndex = answers.words.map(word => data.words.findIndex(item => item.word === word)).filter(index => index >= 0);
-  const liked = new Set(answers.likedAnimals);
 
   const scored = data.mps.map(mp => {
     const party = data.parties[mp.party];
@@ -82,7 +81,7 @@ export function scoreMatches(data: MatchData, answers: MatchAnswers, limit = 3):
     const wordScore = ratios.length ? ratios.reduce((sum, ratio) => sum + wordPoints(ratio), 0) / ratios.length : 0;
 
     const animal = mp.animal >= 0 ? data.animals[mp.animal] ?? null : null;
-    const animalScore = animal && liked.has(animal.id) ? 1 : 0;
+    const animalScore = animal && animal.id === answers.animal ? 1 : 0;
 
     const total = WEIGHTS.party * partyScore + WEIGHTS.topics * topicScore + WEIGHTS.words * wordScore + WEIGHTS.animal * animalScore;
     return { mp, party, rank, shares, ratios, animal, animalScore, total };

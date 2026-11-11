@@ -154,3 +154,13 @@ def test_manifest_without_match_stays_valid():
     speeches = [{"protocolId": 1, "protocolDate": "2026-01-01"}]
     manifest = build_manifest("2026", 2026, "t", "2027-01-02T08:00:00Z", "2026-01-01", "2026-12-31", [21], speeches, False)
     assert "match" not in manifest["assets"]
+
+
+def test_match_animal_text_has_no_stat_placeholders():
+    from noun_analysis.wrapped.speaker_export.constants import SPIRIT_ANIMALS
+    from noun_analysis.wrapped.speaker_export.match import match_animal
+
+    for animal_id, animal in SPIRIT_ANIMALS.items():
+        entry = match_animal(animal_id, animal, 1)
+        assert entry["title"] and entry["text"]
+        assert "{" not in entry["text"], animal_id

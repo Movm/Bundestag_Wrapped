@@ -60,6 +60,7 @@ SPIRIT_ANIMALS = {
         "title_f": "Wortgewaltige Rednerin",
         "title_n": "Wortgewaltige:r Redner:in",
         "reason": "Mit {words} Wörtern gehörst du zu den wortreichsten Abgeordneten.",
+        "match_text": "Du redest viel und gehörst zu den Wortreichsten im Plenum.",
     },
     "adler": {
         "emoji": "🦅",
@@ -68,6 +69,7 @@ SPIRIT_ANIMALS = {
         "title_f": "Parlamentarische Überfliegerin",
         "title_n": "Parlamentarische:r Überflieger:in",
         "reason": "Top {speech_rank} bei Reden UND Top {words_rank} bei Wörtern – ein echter Überflieger!",
+        "match_text": "Ganz vorn bei Reden und bei Wörtern: ein echter Überflieger.",
     },
     "loewe": {
         "emoji": "🦁",
@@ -76,6 +78,7 @@ SPIRIT_ANIMALS = {
         "title_f": "Fraktionsstimme",
         "title_n": "Fraktionsstimme",
         "reason": "Als #{party_rank} in der {party}-Fraktion bist du eine führende Stimme.",
+        "match_text": "In deiner Fraktion bist du eine der führenden Stimmen.",
     },
     # Tier 2: Specialists
     "eule": {
@@ -85,6 +88,7 @@ SPIRIT_ANIMALS = {
         "title_f": "Themenexpertin",
         "title_n": "Themenexpert:in",
         "reason": "Dein Fachwort \"{signature_word}\" nutzt du {ratio}× häufiger als deine Fraktion.",
+        "match_text": "Du hast ein Fachwort, das du viel öfter sagst als deine Fraktion.",
     },
     "pfau": {
         "emoji": "🦚",
@@ -93,6 +97,7 @@ SPIRIT_ANIMALS = {
         "title_f": "Eloquente Rednerin",
         "title_n": "Eloquente:r Redner:in",
         "reason": "Mit Ø {avg_words} Wörtern pro Rede gehörst du zu den ausführlichsten Rednern.",
+        "match_text": "Deine Reden sind lang und gründlich, du nimmst dir Zeit.",
     },
     "wolf": {
         "emoji": "🐺",
@@ -101,6 +106,7 @@ SPIRIT_ANIMALS = {
         "title_f": "Mutige Einwerferin",
         "title_n": "Mutige:r Einwerfer:in",
         "reason": "Mit {interruptions} Zwischenrufen mischst du aktiv in Debatten mit.",
+        "match_text": "Mit Zwischenrufen mischst du in Debatten mit.",
     },
     "baer": {
         "emoji": "🐻",
@@ -109,6 +115,7 @@ SPIRIT_ANIMALS = {
         "title_f": "Standhafte Debattiererin",
         "title_n": "Standhafte:r Debattierer:in",
         "reason": "Trotz {interrupted}× unterbrochen zu werden, bleibst du standhaft.",
+        "match_text": "Du wirst oft unterbrochen und bleibst trotzdem standhaft.",
     },
     "papagei": {
         "emoji": "🦜",
@@ -126,6 +133,7 @@ SPIRIT_ANIMALS = {
         "title_f": "Fleißige Debattiererin",
         "title_n": "Fleißige:r Debattierer:in",
         "reason": "Mit {speeches} Reden gehörst du zu den aktivsten Abgeordneten.",
+        "match_text": "Du stehst ständig am Pult und gehörst zu den Aktivsten im Plenum.",
     },
     "kolibri": {
         "emoji": "🐦",
@@ -200,6 +208,7 @@ SPIRIT_ANIMALS = {
         "title_f": "Wortgewaltige Kämpferin",
         "title_n": "Wortgewaltige:r Kämpfer:in",
         "reason": "Mit {words} Wörtern und klarer Kante dominierst du Debatten.",
+        "match_text": "Mit vielen Worten und klarer Kante dominierst du Debatten.",
     },
     "biber": {
         "emoji": "🦫",

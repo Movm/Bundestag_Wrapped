@@ -28,7 +28,7 @@
 .pm__hint { margin: 0; max-width: 34rem; font-size: 1.0625rem; font-weight: 600; line-height: 1.35; color: var(--mp-muted); }
 .pm__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; }
 .pm .mp-btn:disabled { opacity: 0.35; cursor: not-allowed; }
-.pm .mp-btn:focus-visible, .pm-chip:focus-visible, .pm-slot:focus-visible, .pm-word:focus-visible, .pm-rank__item:focus-visible, .pm-swipe__btn:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.pm .mp-btn:focus-visible, .pm-chip:focus-visible, .pm-slot:focus-visible, .pm-word:focus-visible, .pm-rank__item:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 
 /* ── 1 · Party ranking ─────────────────────────────────────────── */
 .pm-rank { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 26.25rem), 1fr)); align-items: center; gap: clamp(1.75rem, 5vw, 4.5rem); }
@@ -88,31 +88,21 @@
 .pm-word[aria-pressed='true'] { background: var(--pm-pick); border-color: var(--pm-pick); color: var(--pm-pick-ink); transform: rotate(var(--pm-tilt)); }
 .pm-word:disabled { opacity: 0.3; cursor: not-allowed; }
 
-/* ── 4 · Swipe ─────────────────────────────────────────────────── */
-.pm-swipe { align-items: center; }
-.pm-swipe .pm__title { text-align: center; }
-.pm-swipe__stack { position: relative; width: min(100%, 22.5rem); height: min(28.75rem, 58svh); outline: none; }
-.pm-swipe__card {
-  position: absolute; inset: 0; border-radius: 2.25rem; background: var(--pm-card); color: var(--pm-card-ink);
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.125rem; padding: 1.75rem; overflow: hidden;
-  touch-action: none; user-select: none; -webkit-user-select: none; box-shadow: 0 24px 60px rgb(0 0 0 / 0.35);
+/* ── 4 · Spirit animal ────────────────────────────────────────── */
+.pm-animals { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 17.5rem), 1fr)); gap: 0.75rem; }
+.pm-animal {
+  position: relative; display: flex; align-items: flex-start; gap: 1rem; padding: 1.125rem 1.25rem;
+  border: 2px solid #3a2a55; border-radius: 1.5rem; background: var(--color-wr-card); color: #fff; cursor: pointer;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s, transform 0.35s cubic-bezier(0.2, 1.4, 0.4, 1);
 }
-.pm-swipe__card[data-top='true'] { cursor: grab; }
-.pm-swipe__card[data-top='true']:active { cursor: grabbing; }
-.pm-swipe__emoji { font-size: clamp(6rem, 22svh, 9.375rem); line-height: 1; pointer-events: none; }
-.pm-swipe__name { font-weight: 900; font-stretch: 115%; font-size: 2.5rem; line-height: 1; letter-spacing: -0.03em; text-transform: uppercase; text-align: center; pointer-events: none; overflow-wrap: anywhere; }
-.pm-swipe__stamp { position: absolute; top: 1.625rem; padding: 0.375rem 0.875rem; border: 4px solid currentColor; border-radius: 0.75rem; background: var(--color-wr-ink); font-weight: 900; font-size: 1.625rem; letter-spacing: 0.04em; pointer-events: none; }
-.pm-swipe__stamp--like { left: 1.5rem; color: #46d17a; rotate: -12deg; }
-.pm-swipe__stamp--nope { right: 1.5rem; color: #ff4b4b; rotate: 12deg; }
-.pm-swipe__buttons { display: flex; gap: 1.25rem; }
-.pm-swipe__btn { width: 4.5rem; height: 4.5rem; border-radius: 50%; border: 2px solid #3a2a55; background: var(--color-wr-card); display: grid; place-items: center; cursor: pointer; transition: border-color 0.2s, transform 0.2s var(--ease-wr-out); }
-.pm-swipe__btn:active { transform: scale(0.94); }
-.pm-swipe__btn--nope { color: #ff4b4b; }
-.pm-swipe__btn--like { color: #46d17a; }
-@media (hover: hover) and (pointer: fine) {
-  .pm-swipe__btn--nope:hover { border-color: #ff4b4b; }
-  .pm-swipe__btn--like:hover { border-color: #46d17a; }
-}
+.pm-animal[data-on='true'] { background: var(--pm-pick); border-color: var(--pm-pick); color: var(--pm-pick-ink); transform: rotate(var(--pm-tilt)); }
+.pm-animal:has(input:focus-visible) { outline: 3px solid #fff; outline-offset: 3px; }
+.pm-animal__emoji { flex: none; font-size: 3rem; line-height: 1; }
+.pm-animal__body { display: flex; flex-direction: column; gap: 0.25rem; min-width: 0; }
+.pm-animal__name { font-weight: 900; font-stretch: 105%; font-size: 1.375rem; line-height: 1.05; letter-spacing: -0.02em; text-transform: uppercase; hyphens: auto; }
+.pm-animal__title { font-family: var(--font-mono); font-weight: 700; font-size: 0.8125rem; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.8; }
+.pm-animal__text { margin-top: 0.25rem; font-size: 0.9375rem; font-weight: 600; line-height: 1.35; }
+@media (hover: hover) and (pointer: fine) { .pm-animal[data-on='false']:hover { border-color: var(--pm-pick); } }
 
 /* ── 5 · Result ────────────────────────────────────────────────── */
 .pm-result__title { margin: 0; font-weight: 900; font-stretch: 125%; font-size: clamp(2.75rem, 7vw, 7rem); line-height: 0.85; letter-spacing: -0.05em; text-transform: uppercase; }
@@ -128,6 +118,12 @@
 .pm-match__visual { position: relative; aspect-ratio: 4 / 3; border-radius: 1.5rem; overflow: hidden; background: var(--pm-party); color: var(--color-wr-ink); display: flex; justify-content: space-between; align-items: flex-end; padding: clamp(1rem, 2vw, 1.5rem); }
 .pm-match__visual::before { content: ''; position: absolute; width: 70%; aspect-ratio: 1; border-radius: 50%; top: -30%; right: -18%; background: rgb(255 255 255 / 0.22); }
 .pm-match__visual > * { position: relative; }
+.pm-match__initials { position: absolute; top: clamp(0.75rem, 1.6vw, 1.25rem); left: clamp(1rem, 2vw, 1.5rem); font-weight: 900; font-stretch: 125%; font-size: clamp(4.5rem, 8vw, 6.5rem); line-height: 0.8; letter-spacing: -0.06em; opacity: 0.35; }
+.pm-match__photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+/* The percentage sits on a band of party colour so it stays legible on any photo. */
+.pm-match__visual[data-photo='true']::before { inset: auto 0 0 0; width: 100%; height: 62%; aspect-ratio: auto; border-radius: 0; z-index: 1; background: linear-gradient(to bottom, transparent, var(--pm-party) 62%); }
+.pm-match__visual > :not(.pm-match__photo) { z-index: 2; }
+.pm-match__credit { margin-top: -0.75rem; padding: 0 clamp(0.625rem, 1.4vw, 1.125rem); font-size: 0.6875rem; font-weight: 600; opacity: 0.7; overflow-wrap: anywhere; }
 .pm-match__pct { font-weight: 900; font-stretch: 125%; font-size: clamp(3.5rem, 6vw, 5.5rem); line-height: 0.8; letter-spacing: -0.055em; font-variant-numeric: tabular-nums; }
 .pm-match__pct span { font-size: 0.5em; }
 .pm-match__emoji { font-size: clamp(3rem, 5vw, 4rem); line-height: 1; }

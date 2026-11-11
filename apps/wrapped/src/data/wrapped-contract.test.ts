@@ -19,70 +19,70 @@ const fixture = {
 };
 
 describe('Wrapped v1 contract', () => {
-  it('accepts the valid manifest fixture', () => {
-    expect(validateContractDocument('EditionManifest', fixture, 'manifest.json')).toEqual(fixture);
+  it('accepts the valid manifest fixture', async () => {
+    await expect(validateContractDocument('EditionManifest', fixture, 'manifest.json')).resolves.toEqual(fixture);
   });
 
-  it('rejects missing required fields with a filename and JSON path', () => {
+  it('rejects missing required fields with a filename and JSON path', async () => {
     const invalid: Record<string, unknown> = { ...fixture };
     Reflect.deleteProperty(invalid, 'title');
-    expect(() => validateContractDocument('EditionManifest', invalid, 'manifest.json')).toThrow(
+    await expect(validateContractDocument('EditionManifest', invalid, 'manifest.json')).rejects.toThrow(
       'manifest.json/: must have required property',
     );
   });
 
-  it('rejects invalid dates, unknown statuses, and wrong field types', () => {
-    expect(() => validateContractDocument('EditionManifest', { ...fixture, status: 'unknown' }, 'manifest.json')).toThrow('status');
-    expect(() => validateContractDocument('EditionManifest', { ...fixture, period: { ...fixture.period, start: '2026-99-99' } }, 'manifest.json')).toThrow('start');
-    expect(() => validateContractDocument('EditionManifest', { ...fixture, year: '2026' }, 'manifest.json')).toThrow('year');
+  it('rejects invalid dates, unknown statuses, and wrong field types', async () => {
+    await expect(validateContractDocument('EditionManifest', { ...fixture, status: 'unknown' }, 'manifest.json')).rejects.toThrow('status');
+    await expect(validateContractDocument('EditionManifest', { ...fixture, period: { ...fixture.period, start: '2026-99-99' } }, 'manifest.json')).rejects.toThrow('start');
+    await expect(validateContractDocument('EditionManifest', { ...fixture, year: '2026' }, 'manifest.json')).rejects.toThrow('year');
   });
 
-  it('accepts the checked-in Wrapped production payload', () => {
-    expect(validateWrappedData(wrapped, 'wrapped.json')).toEqual(wrapped);
+  it('accepts the checked-in Wrapped production payload', async () => {
+    await expect(validateWrappedData(wrapped, 'wrapped.json')).resolves.toEqual(wrapped);
   });
 
-  it('validates the minimal edition content contract', () => {
-    expect(validateEditionContent({ editionId: 'fixture-edition', year: 2042 }, 'content.json')).toEqual({ editionId: 'fixture-edition', year: 2042 });
-    expect(() => validateEditionContent({ editionId: 'fixture-edition' }, 'content.json')).toThrow('content.json/');
+  it('validates the minimal edition content contract', async () => {
+    await expect(validateEditionContent({ editionId: 'fixture-edition', year: 2042 }, 'content.json')).resolves.toEqual({ editionId: 'fixture-edition', year: 2042 });
+    await expect(validateEditionContent({ editionId: 'fixture-edition' }, 'content.json')).rejects.toThrow('content.json/');
   });
 
-  it('validates versioned quiz configuration and rejects unknown quiz formats', () => {
+  it('validates versioned quiz configuration and rejects unknown quiz formats', async () => {
     const content = {
       editionId: 'fixture-edition', year: 2042,
       quiz: { version: 1, groups: [{ id: 'quiz-bonus', question: { id: 'quiz-bonus', type: 'prediction', question: 'Test?', options: ['A', 'B'], correctAnswer: 'A', explanation: 'Test.' } }] },
     };
-    expect(validateEditionContent(content, 'content.json')).toEqual(content);
-    expect(() => validateEditionContent({ ...content, quiz: { ...content.quiz, version: 2 } }, 'content.json')).toThrow('version');
-    expect(() => validateEditionContent({ ...content, quiz: { ...content.quiz, groups: [{ ...content.quiz.groups[0], question: { ...content.quiz.groups[0].question, type: 'new-format' } }] } }, 'content.json')).toThrow('type');
+    await expect(validateEditionContent(content, 'content.json')).resolves.toEqual(content);
+    await expect(validateEditionContent({ ...content, quiz: { ...content.quiz, version: 2 } }, 'content.json')).rejects.toThrow('version');
+    await expect(validateEditionContent({ ...content, quiz: { ...content.quiz, groups: [{ ...content.quiz.groups[0], question: { ...content.quiz.groups[0].question, type: 'new-format' } }] } }, 'content.json')).rejects.toThrow('type');
   });
 
-  it('validates each manifest-referenced runtime asset shape', () => {
-    expect(validateContractDocument('SpeakerIndexAsset', {
+  it('validates each manifest-referenced runtime asset shape', async () => {
+    await expect(validateContractDocument('SpeakerIndexAsset', {
       speakers: [{ slug: 'fixture-speaker', name: 'Fixture Speaker', party: 'Fixture Party', speeches: 1, wortbeitraege: 0, words: 5 }],
-    }, 'speakers/index.json')).toBeDefined();
-    expect(validateContractDocument('SpeakerWrappedAsset', {
+    }, 'speakers/index.json')).resolves.toBeDefined();
+    await expect(validateContractDocument('SpeakerWrappedAsset', {
       name: 'Fixture Speaker', party: 'Fixture Party', slug: 'fixture-speaker', speeches: 1, wortbeitraege: 0,
       totalWords: 5, avgWords: 5, minWords: 5, maxWords: 5, rankings: {}, drama: {}, words: {}, comparison: {}, funFacts: [],
-    }, 'speakers/fixture-speaker.json')).toBeDefined();
-    expect(validateContractDocument('SpeechesAsset', {
+    }, 'speakers/fixture-speaker.json')).resolves.toBeDefined();
+    await expect(validateContractDocument('SpeechesAsset', {
       speeches: [{ speaker: 'Fixture Speaker', party: 'Fixture Party', category: 'rede', words: 5, text: 'Fixture speech.' }],
-    }, 'speeches.json')).toBeDefined();
-    expect(validateContractDocument('WordsAsset', {
+    }, 'speeches.json')).resolves.toBeDefined();
+    await expect(validateContractDocument('WordsAsset', {
       parties: [{ party: 'Fixture Party', words: [{ word: 'fixture', count: 1 }] }],
-    }, 'words.json')).toBeDefined();
-    expect(validateContractDocument('WordRankingsAsset', {
+    }, 'words.json')).resolves.toBeDefined();
+    await expect(validateContractDocument('WordRankingsAsset', {
       parties: [{ party: 'Fixture Party', signatureWords: [{ word: 'fixture', ratio: 1.5 }] }],
-    }, 'word-rankings.json')).toBeDefined();
-    expect(validateContractDocument('TopicRankingsAsset', { topics: ['fixture'] }, 'topic-rankings.json')).toBeDefined();
+    }, 'word-rankings.json')).resolves.toBeDefined();
+    await expect(validateContractDocument('TopicRankingsAsset', { topics: ['fixture'] }, 'topic-rankings.json')).resolves.toBeDefined();
   });
 
-  it('rejects wrong runtime asset fields with an asset path', () => {
-    expect(() => validateContractDocument('SpeechesAsset', {
+  it('rejects wrong runtime asset fields with an asset path', async () => {
+    await expect(validateContractDocument('SpeechesAsset', {
       speeches: [{ speaker: 'Fixture Speaker', party: 'Fixture Party', category: 'rede', words: 'five', text: 'Fixture speech.' }],
-    }, 'speeches.json')).toThrow('speeches.json/speeches/0/words');
-    expect(() => validateContractDocument('WordsAsset', {
+    }, 'speeches.json')).rejects.toThrow('speeches.json/speeches/0/words');
+    await expect(validateContractDocument('WordsAsset', {
       parties: [{ party: 'Fixture Party', words: [{ word: 'fixture', count: 'one' }] }],
-    }, 'words.json')).toThrow('words.json/parties/0/words/0/count');
+    }, 'words.json')).rejects.toThrow('words.json/parties/0/words/0/count');
   });
 
   describe('youth-word speakers', () => {
@@ -98,13 +98,13 @@ describe('Wrapped v1 contract', () => {
       },
     });
 
-    it('accepts words with and without the optional speakers field', () => {
-      expect(() => validateWrappedData(withWord({}), 'wrapped.json')).not.toThrow();
-      expect(() => validateWrappedData(withWord({ speakers: [{ name: 'Fixture Speaker', party: 'GRÜNE', count: 1 }] }), 'wrapped.json')).not.toThrow();
+    it('accepts words with and without the optional speakers field', async () => {
+      await expect(validateWrappedData(withWord({}), 'wrapped.json')).resolves.toBeDefined();
+      await expect(validateWrappedData(withWord({ speakers: [{ name: 'Fixture Speaker', party: 'GRÜNE', count: 1 }] }), 'wrapped.json')).resolves.toBeDefined();
     });
 
-    it('rejects malformed speakers', () => {
-      expect(() => validateWrappedData(withWord({ speakers: [{ name: 'Fixture Speaker', party: 'GRÜNE' }] }), 'wrapped.json')).toThrow('speakers/0');
+    it('rejects malformed speakers', async () => {
+      await expect(validateWrappedData(withWord({ speakers: [{ name: 'Fixture Speaker', party: 'GRÜNE' }] }), 'wrapped.json')).rejects.toThrow('speakers/0');
     });
   });
 });
