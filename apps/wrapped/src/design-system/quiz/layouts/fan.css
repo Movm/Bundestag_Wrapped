@@ -16,8 +16,14 @@
 .ds-choice--card .ds-choice__label {
   font-size: clamp(0.8125rem, 0.5rem + 1.5vw, 2.5rem);
   text-transform: uppercase;
-  hyphens: auto;
-  overflow-wrap: anywhere;
+}
+/* Phones: a fanned hand leaves ~100px per card and splits every word; a 2×2 grid of upright cards uses the free height instead. */
+@media (max-width: 30rem) {
+  .ds-quiz-fan { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(6.5rem, 1fr); align-content: center; align-items: stretch; gap: 0.625rem; padding-block: 0.25rem 0; flex: 1 1 auto; max-height: 28rem; }
+  .ds-choice--card { aspect-ratio: auto; min-height: 6.5rem; margin-inline: 0; rotate: none; translate: none; padding: 0.75rem 0.875rem; border-radius: 1.125rem; }
+  /* Card answers are single terms ("Angriffskrieg"): mixed case is narrower, and a hyphen beats a bare split. */
+  .ds-choice--card .ds-choice__label { font-size: clamp(1.0625rem, min(0.25rem + 2.6svh, 5.2vw), 1.625rem); line-height: 1.05; text-transform: none; hyphens: auto; -webkit-hyphens: auto; hyphenate-limit-chars: 8 4 4; }
+  .ds-choice--card:focus-visible:not([aria-disabled='true']), .ds-choice--card[data-status='correct'] { translate: none; }
 }
 .ds-choice--card .ds-choice__tag { align-self: flex-start; font-size: clamp(0.6875rem, 0.55rem + 0.4vw, 0.875rem); }
 .ds-choice--card:focus-visible { z-index: 2; }
