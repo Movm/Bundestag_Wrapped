@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import type { CSSProperties } from 'react';
 import type { GenerationComparison } from '@/generated/wrapped-contract-v1';
 import { Slide } from '@/design-system/components/Slide';
 import { ChipCloud } from '@/design-system/components/Data';
@@ -19,7 +20,14 @@ function Dots({ total, highlighted }: { total: number; highlighted: number }) {
   const step = total / highlighted;
   const pink = new Set(Array.from({ length: highlighted }, (_, index) => Math.floor(step * index + step / 2)));
   return (
-    <motion.svg variants={ENTER.slide} viewBox={`0 0 ${COLUMNS * 10} ${rows * 10}`} className="ds-genz-dots" aria-hidden="true" focusable="false">
+    <motion.svg
+      variants={ENTER.slide}
+      viewBox={`0 0 ${COLUMNS * 10} ${rows * 10}`}
+      className="ds-genz-dots"
+      style={{ '--dots-ratio': COLUMNS / rows } as CSSProperties}
+      aria-hidden="true"
+      focusable="false"
+    >
       {Array.from({ length: total }, (_, index) => (
         <circle
           key={index}
@@ -39,14 +47,13 @@ export function GenerationIntroSlide({ generations }: { generations: GenerationC
   return (
     <Slide
       shapes="orbit"
-      footer={<Note className="ds-note--plate">Erfasst sind Abgeordnete mit Fraktionszugehörigkeit und bekanntem Geburtsjahr. Regierungsmitglieder sind in diesem Vergleich nicht enthalten.</Note>}
+      footer={<Note className="ds-note--plate">Erfasst sind Abgeordnete mit Fraktionszugehörigkeit und bekanntem Geburtsjahr.</Note>}
     >
       <Display size="lg">Die nächste Generation steht schon am <Mark>Rednerpult.</Mark></Display>
-      <motion.p variants={ENTER.rise} className="ds-statement">
+      <motion.p variants={ENTER.rise} className="ds-statement ds-genz-statement">
         {number.format(generations.speakerCount)} von {number.format(generations.totalSpeakers)} erfassten Abgeordneten mit Redebeiträgen wurden ab {generations.bornFrom} geboren. Sie zählen in unserer Auswertung zur Gen Z.
       </motion.p>
       <Dots total={generations.totalSpeakers} highlighted={generations.speakerCount} />
-      <Note>Ein Punkt, eine Person. Rosa zeigt die Gen Z.</Note>
     </Slide>
   );
 }

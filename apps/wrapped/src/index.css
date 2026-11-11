@@ -407,7 +407,7 @@ body {
 .speaker-story { padding-top: calc(3.5rem + env(safe-area-inset-top, 0px)); }
 .speaker-story .story-shell { height: calc(100dvh - 3.5rem - env(safe-area-inset-top, 0px)); --story-height: calc(100dvh - 3.5rem - env(safe-area-inset-top, 0px)); }
 .story-scroll { scroll-behavior: auto; scrollbar-gutter: stable; }
-.story-section { min-height: var(--story-height); padding-top: 4rem; padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px)); overflow-wrap: anywhere; }
+.story-section { min-height: var(--story-height); padding-top: 4rem; padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px)); overflow-wrap: break-word; }
 .story-section > * { width: 100%; }
 .story-section--cover { padding: 0; }
 .story-section .min-h-screen { min-height: calc(var(--story-height) - 8rem); }
