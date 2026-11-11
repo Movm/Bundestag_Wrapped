@@ -34,7 +34,8 @@ function prefetch(match: RegExpMatchArray) {
 window.__btCreateCover = createCover;
 const host = document.getElementById('cover-shell');
 const match = location.pathname.match(COVER_ROUTE);
-if (host && match) {
+// The head script sets `cover-boot` only on story routes that show the cover (not on superseded editions).
+if (host && match && document.documentElement.classList.contains('cover-boot')) {
   prefetch(match);
   const root = document.createElement('div');
   host.appendChild(root);

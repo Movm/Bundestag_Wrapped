@@ -16,6 +16,15 @@ export function resolveAssetUrl(manifestUrl: string, asset: string): string {
   return new URL(asset, new URL('.', manifest)).pathname;
 }
 
+/**
+ * A superseded edition is offline: its routes show the construction page. When
+ * the current edition is superseded, the front door ("/") shows it too, until the
+ * next edition is published and becomes current.
+ */
+export function isRetired(registry: EditionRegistry, editionId: string): boolean {
+  return registry.editions.find(item => item.id === editionId)?.status === 'superseded';
+}
+
 export function currentEditionPath(registry: EditionRegistry): string {
   const edition = registry.editions.find(item => item.id === registry.currentEdition);
   if (!edition) throw new Error(`Invalid editions index: current edition ${registry.currentEdition} is not listed`);

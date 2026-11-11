@@ -22,6 +22,11 @@ export const PAGE_META = {
     description:
       'Finde deinen Bundestagsabgeordneten und entdecke personliche Statistiken. 600+ Abgeordnete mit individuellen Wrapped-Profilen.',
   },
+  construction: {
+    title: 'Wir bauen 2026',
+    description:
+      'Bundestag Wrapped 2026 ist in Arbeit: Reden, Wörter und Jugendwörter aus dem Bundestag, bald hier. Der MCP-Server bleibt erreichbar.',
+  },
   privacy: {
     title: 'Datenschutz',
     description:

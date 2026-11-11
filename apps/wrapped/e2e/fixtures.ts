@@ -52,10 +52,10 @@ function respond(route: Route, payload: unknown) {
 }
 
 /** Routes edition bootstrap requests to small, deterministic browser fixtures. */
-export async function installEditionFixtures(page: Page, { includeMoinSpeakers = false, wrappedExtras = {} as Record<string, unknown> } = {}) {
+export async function installEditionFixtures(page: Page, { includeMoinSpeakers = false, superseded = [] as string[], wrappedExtras = {} as Record<string, unknown> } = {}) {
   await page.route('**/data/**', async (route) => {
     const path = new URL(route.request().url()).pathname;
-    if (path === '/data/editions.json') return respond(route, { schemaVersion: 1, currentEdition: '2025', editions: Object.entries(editions).map(([id, edition]) => ({ id, year: edition.manifest.year, status: edition.manifest.status, manifestUrl: `/data/fixtures/${id}/manifest.json` })) });
+    if (path === '/data/editions.json') return respond(route, { schemaVersion: 1, currentEdition: '2025', editions: Object.entries(editions).map(([id, edition]) => ({ id, year: edition.manifest.year, status: superseded.includes(id) ? 'superseded' : edition.manifest.status, manifestUrl: `/data/fixtures/${id}/manifest.json` })) });
     const match = path.match(/^\/data\/fixtures\/(2025|2026)\/(.+)$/);
     if (!match) return route.continue();
     const [, editionId, asset] = match;

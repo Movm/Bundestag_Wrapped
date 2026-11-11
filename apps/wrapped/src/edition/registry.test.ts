@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { currentEditionPath, isEditionId, resolveAssetUrl, resolveLegacyEditionPath } from './registry';
+import { currentEditionPath, isEditionId, isRetired, resolveAssetUrl, resolveLegacyEditionPath } from './registry';
 import type { EditionRegistry } from './registry';
 
 const registry: EditionRegistry = {
@@ -35,5 +35,13 @@ describe('edition routing helpers', () => {
     expect(resolveLegacyEditionPath(registry, '/dokumentation')).toBe('/edition-b/dokumentation');
     expect(resolveLegacyEditionPath(registry, '/mcp')).toBeNull();
     expect(resolveLegacyEditionPath(registry, '/datenschutz')).toBeNull();
+  });
+
+  it('treats only superseded editions as retired', () => {
+    const closed: EditionRegistry = { ...registry, editions: [{ ...registry.editions[0], status: 'superseded' }, registry.editions[1]] };
+    expect(isRetired(closed, 'edition-a')).toBe(true);
+    expect(isRetired(closed, 'edition-b')).toBe(false);
+    expect(isRetired(registry, 'edition-a')).toBe(false);
+    expect(isRetired(registry, 'unknown')).toBe(false);
   });
 });
