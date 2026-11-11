@@ -31,6 +31,8 @@ test.describe('construction front door while the current edition is superseded',
     await expect(page.getByRole('heading', { level: 1, name: /Wir bauen 2026/i })).toBeVisible();
     const width = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     expect(width).toBeLessThanOrEqual(1);
+    // Judge contrast at rest, not mid-entrance (Firefox is still fading the headline in).
+    for (const element of await page.locator('h1, .bw-site__main > *').all()) await expect(element).toHaveCSS('opacity', '1');
     const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze();
     expect(results.violations).toEqual([]);
   });
