@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { boundedTarget, isChapterCut, WheelGesture } from './slide-navigation';
+import { boundedTarget, hashJumpTarget, isChapterCut, slideIndexFromHash, WheelGesture } from './slide-navigation';
 
 describe('wheel intent', () => {
   it('accumulates small deltas but consumes the entire momentum tail once', () => {
@@ -37,5 +37,25 @@ describe('chapter cuts', () => {
     expect(isChapterCut('intro-topics', 'quiz-topics')).toBe(false);
     expect(isChapterCut('quiz-topics', 'info-topics')).toBe(false);
     expect(isChapterCut('reveal-gender', 'finale')).toBe(false); // ink to ink
+  });
+});
+
+describe('slide deep links', () => {
+  const ids = ['intro', 'quiz-a', 'reveal-a', 'share'];
+
+  it('finds the slide a hash names and ignores everything else', () => {
+    expect(slideIndexFromHash('#reveal-a', ids)).toBe(2);
+    expect(slideIndexFromHash('reveal-a', ids)).toBe(2);
+    expect(slideIndexFromHash('#nope', ids)).toBe(-1);
+    expect(slideIndexFromHash('', ids)).toBe(-1);
+    expect(slideIndexFromHash('#', ids)).toBe(-1);
+    expect(slideIndexFromHash('#%E0%A4%A', ids)).toBe(-1);
+  });
+
+  it('stops at an unanswered quiz outside development and skips the gates inside it', () => {
+    const blocked = [false, true, false, false];
+    expect(hashJumpTarget(0, 3, blocked, false)).toBe(1);
+    expect(hashJumpTarget(0, 3, blocked, true)).toBe(3);
+    expect(hashJumpTarget(2, 0, blocked, false)).toBe(0);
   });
 });
