@@ -60,13 +60,13 @@ export function MobileMenu({ isOpen, onClose, onRestart }: MobileMenuProps) {
     onRestart?.();
   };
 
-  const spring = { type: 'spring', stiffness: 260, damping: 20 } as const;
+  const spring = { type: 'spring', stiffness: 420, damping: 34 } as const;
   const cardMotion = (i: number) =>
     reduceMotion
       ? { initial: false, animate: { opacity: 1 }, exit: { opacity: 0 }, transition: { duration: 0.15 } }
       : {
-          initial: { opacity: 0, x: 140, y: 30, scale: 0.8 },
-          animate: { opacity: 1, x: 0, y: 0, scale: 1, transition: { ...spring, delay: 0.3 + i * 0.09 } },
+          initial: { opacity: 0, x: 48, scale: 0.96 },
+          animate: { opacity: 1, x: 0, y: 0, scale: 1, transition: { ...spring, delay: 0.06 + i * 0.035 } },
           exit: { opacity: 0, x: 120, scale: 0.9, transition: { duration: 0.2, ease: 'easeIn' as const } },
         };
   const fadeUp = (delay: number) =>
@@ -74,7 +74,7 @@ export function MobileMenu({ isOpen, onClose, onRestart }: MobileMenuProps) {
       ? { initial: false, animate: { opacity: 1 } }
       : {
           initial: { opacity: 0, y: 16 },
-          animate: { opacity: 1, y: 0, transition: { duration: 0.42, delay, ease: [0.22, 1, 0.36, 1] as const } },
+          animate: { opacity: 1, y: 0, transition: { duration: 0.3, delay, ease: [0.22, 1, 0.36, 1] as const } },
           exit: { opacity: 0, transition: { duration: 0.15 } },
         };
 
@@ -122,7 +122,7 @@ export function MobileMenu({ isOpen, onClose, onRestart }: MobileMenuProps) {
               initial={reduceMotion ? { opacity: 0 } : { x: '105%' }}
               animate={reduceMotion ? { opacity: 1 } : { x: 0 }}
               exit={reduceMotion ? { opacity: 0 } : { x: '105%' }}
-              transition={reduceMotion ? { duration: 0.15 } : { duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              transition={reduceMotion ? { duration: 0.15 } : { duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               aria-label="Hauptnavigation"
             >
               <div className="flex min-h-full flex-col gap-7 px-[1.375rem] pb-7 pt-6">
@@ -145,7 +145,7 @@ export function MobileMenu({ isOpen, onClose, onRestart }: MobileMenuProps) {
 
                 {/* Restart option - only on main wrapped page */}
                 {isMainPage && (
-                  <motion.div {...fadeUp(0.7)}>
+                  <motion.div {...fadeUp(0.2)}>
                     <button onClick={handleRestart} className="ds-menu-pill">
                       <RotateCcw size={18} strokeWidth={2.4} aria-hidden="true" />
                       Neu starten
@@ -153,7 +153,7 @@ export function MobileMenu({ isOpen, onClose, onRestart }: MobileMenuProps) {
                   </motion.div>
                 )}
 
-                <motion.div className="mt-auto flex flex-col gap-3" {...fadeUp(0.8)}>
+                <motion.div className="mt-auto flex flex-col gap-3" {...fadeUp(0.26)}>
                   <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
                     {FOOTER_LINKS.map((item) => {
                       const cls = 'inline-flex min-h-11 items-center text-sm font-semibold text-on underline underline-offset-4 hover:text-wr-pink';
