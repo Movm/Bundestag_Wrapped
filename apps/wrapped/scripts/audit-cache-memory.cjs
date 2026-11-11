@@ -13,6 +13,15 @@ const expect = baseExpect.configure({ timeout: 20000 });
   if (!['http:', 'https:'].includes(url.protocol) || url.username || url.password) throw new Error('Use an HTTP(S) origin without credentials');
   const cycles = Number(process.env.PERF_CYCLES || 30);
   if (!Number.isInteger(cycles) || cycles < 1 || cycles > 100) throw new Error('PERF_CYCLES must be 1–100');
+  // Measures the public edition's PWA caching. While the current edition is
+  // superseded (construction page) there is no public story or search to measure.
+  const registry = await (await fetch(`${base}/data/editions.json`)).json();
+  const current = registry.editions.find(edition => edition.id === registry.currentEdition);
+  if (current?.status !== 'published') {
+    console.log(JSON.stringify({ status: 'skipped', reason: `current edition ${registry.currentEdition} is ${current?.status ?? 'missing'}, no public edition to measure` }));
+    return;
+  }
+  const protectedData = registry.editions.filter(edition => edition.access === 'basic-auth').map(edition => `/data/${edition.id}/`);
   const output = fs.mkdtempSync(path.join(os.tmpdir(), 'wrapped-cache-memory-'));
   const report = { base, cycles, time: new Date().toISOString(), viewport: { width: 390, height: 844 },
     profile: { cpu: 1, network: 'unthrottled', serviceWorkers: 'allow', heapScope: 'main renderer after GC' },
@@ -28,12 +37,12 @@ const expect = baseExpect.configure({ timeout: 20000 });
     page.on('pageerror', error => report.errors.push(error.message));
     const info = await context.request.get(`${base}/build-info.json`);
     if (info.ok()) report.buildInfo = await info.json();
-    await page.goto(`${base}/2025`);
+    await page.goto(`${base}/${current.id}`);
     await page.getByRole('button', { name: 'Los geht’s', exact: true }).waitFor();
     await page.waitForFunction(async () => Boolean((await navigator.serviceWorker.getRegistration())?.active));
     await page.reload();
     await page.waitForFunction(() => Boolean(navigator.serviceWorker.controller));
-    await page.goto(`${base}/2025/suche?q=Klima`);
+    await page.goto(`${base}/${current.id}/suche?q=Klima`);
     const panel = page.locator('#search-results'), cards = panel.locator('button.group');
     await expect(cards).toHaveCount(50);
     await cards.first().click();
@@ -64,7 +73,7 @@ const expect = baseExpect.configure({ timeout: 20000 });
     assert(resources.some(resource => resource.includes('/details/')), 'Missing cached full-text detail');
     assert.deepEqual(report.corpusRequests, [], 'Unexpected legacy corpus fallback');
     assert(!resources.some(resource => resource.endsWith('/texts.bin')), 'Unbounded text source entered cache');
-    assert(!resources.some(resource => resource.startsWith('/data/2026/')), 'Protected preview entered public cache');
+    assert(!resources.some(resource => protectedData.some(prefix => resource.startsWith(prefix))), 'Protected preview entered public cache');
     assert.deepEqual(report.errors, []);
     report.status = 'passed';
     console.log(JSON.stringify({ status: report.status, workersCreated: report.workersCreated,
