@@ -399,14 +399,22 @@
   .ds-choice--tile { flex-direction: row; align-items: center; justify-content: flex-start; gap: 0.875rem; min-height: 3.5rem; padding: 0.625rem 1rem; border-radius: 1.125rem; }
   .ds-choice--tile .ds-choice__label { font-size: clamp(1.125rem, 0.9rem + 1.6vw, 1.375rem); line-height: 1.05; text-wrap: balance; }
 }
-/* Phones: the quiz needs every pixel, so the gaps shrink with the screen height. */
+/* Phones: the gaps shrink with the screen height, and the answers take the height that is left.
+   Each answer grows up to a cap and its text grows with the screen, so small phones stay compact
+   and tall ones are filled instead of leaving an empty lower half. */
 @media (max-width: 30rem) {
   .ds-quiz-frame, .ds-quiz { gap: clamp(0.75rem, 0.25rem + 2svh, 1.25rem); }
+  .ds-slide__body:has(> .ds-quiz-frame) { justify-content: flex-start; }
+  .ds-quiz-frame, .ds-quiz { flex: 1 1 auto; }
+  .ds-quiz-tiles { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; }
+  .ds-choice--tile { flex: 1 1 auto; max-height: 7.5rem; }
+  .ds-choice--tile .ds-choice__label { font-size: clamp(1.125rem, 0.25rem + 3svh, 1.875rem); }
+  .ds-quiz-tiles[data-long] .ds-choice__label { font-size: clamp(1.0625rem, 0.4rem + 2svh, 1.5rem); }
 }
 /* Small phones (iPhone SE size): denser rows, still 44px+ to tap. */
 @media (max-width: 30rem) and (max-height: 37.5rem) {
   .ds-choice--tile { min-height: 3rem; padding-block: 0.5rem; gap: 0.75rem; }
-  .ds-choice--tile .ds-choice__label { font-size: 1rem; }
+  .ds-choice--tile .ds-choice__label, .ds-quiz-tiles[data-long] .ds-choice__label { font-size: 1rem; }
   .ds-quiz-tiles { gap: 0.375rem; }
 }
 .ds-tone--pink { background: var(--color-wr-pink); color: var(--color-wr-ink); }

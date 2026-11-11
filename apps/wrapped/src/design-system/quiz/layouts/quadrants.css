@@ -1,6 +1,9 @@
 /* quadrants: four big colour fields filling a 2x2 grid; a hint chip sits in the centre. */
 .ds-quiz-quadrants { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); min-height: clamp(16rem, 8rem + 26vh, 26rem); }
-@media (max-width: 30rem) { .ds-quiz-quadrants { grid-template-columns: minmax(0, 1fr); min-height: 0; } }
+@media (max-width: 30rem) {
+  .ds-quiz-quadrants { display: flex; flex-direction: column; justify-content: center; flex: 1 1 auto; min-height: 0; }
+  .ds-quiz-quadrants .ds-choice--field { flex: 1 1 auto; max-height: 7.5rem; } /* the options sit in a display:contents group */
+}
 .ds-choice--field {
   flex-direction: column;
   gap: 0.5rem;
@@ -18,6 +21,7 @@
   .ds-choice--field:nth-child(4) { border-radius: 0 0 1.25rem 1.25rem; }
 }
 .ds-choice--field .ds-choice__label { font-size: clamp(1.25rem, 0.7rem + 2.8vw, 4.75rem); font-stretch: 115%; text-transform: uppercase; letter-spacing: -0.045em; }
+@media (max-width: 30rem) { .ds-choice--field .ds-choice__label { font-size: clamp(1.25rem, 0.25rem + 3.4svh, 2.25rem); } }
 .ds-choice--field:focus-visible { z-index: 2; outline-offset: -6px; }
 .ds-choice--field { transition: box-shadow 0.2s; }
 .ds-choice--field .ds-choice__label { transition: scale 0.3s var(--ease-wr-pop); }
