@@ -35,10 +35,9 @@ export function youthGeneration(
 
 /**
  * What the chapter found, in a few sentences: this year's Jugendwörter, the
- * earlier ones that are still said, and who said them. `highlight` is the
- * sentence the slide marks.
+ * earlier ones that are still said, and who said them.
  */
-export function youthSummary(youth: YouthLanguageAnalysis, generation: YouthGeneration | null): { body: string; highlight?: string } {
+export function youthSummary(youth: YouthLanguageAnalysis, generation: YouthGeneration | null): { body: string } {
   const sentences: string[] = [];
   const hits = youth.words.filter(item => item.count > 0);
   const parties = youth.byParty.filter(item => item.count > 0);
@@ -62,12 +61,10 @@ export function youthSummary(youth: YouthLanguageAnalysis, generation: YouthGene
         ? `Von den Jugendwörtern seit ${since} hat nur „${first.word}“ (${first.winnerYear}) überlebt: ${times(first.count)} im Plenum.`
         : `Von den Jugendwörtern seit ${since} kamen ${cardinal(survivors.length)} vor, am häufigsten „${first.word}“ (${first.winnerYear}, ${times(first.count)}).`);
   }
-  let highlight: string | undefined;
   if (generation === 'older') {
-    highlight = 'Die Jungen reden wie Erwachsene, die Erwachsenen wie die Jungen.';
-    sentences.push(`Niemand davon gehört zur Gen Z. ${highlight}`);
+    sentences.push('Niemand davon gehört zur Gen Z.');
   } else if (generation === 'genz') {
     sentences.push('Gesagt haben sie nur Abgeordnete der Gen Z.');
   }
-  return { body: sentences.join(' '), highlight };
+  return { body: sentences.join(' ') };
 }
