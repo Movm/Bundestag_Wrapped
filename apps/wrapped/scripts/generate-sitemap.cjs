@@ -11,6 +11,8 @@ const SITE_URL = 'https://bundestag-wrapped.de';
 const STATIC_LASTMOD = '2025-01-01';
 
 const STATIC_PAGES = [
+  // The front door: the current edition, or the construction page while it is superseded.
+  { path: '/', priority: '1.0', changefreq: 'weekly' },
   { path: '/mcp', priority: '0.6', changefreq: 'monthly' },
   { path: '/mcp/technik', priority: '0.4', changefreq: 'monthly' },
   { path: '/datenschutz', priority: '0.3', changefreq: 'yearly' },

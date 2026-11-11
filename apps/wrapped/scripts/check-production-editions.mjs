@@ -21,12 +21,15 @@ export function checkProductionEditions(dataRoot) {
   if (!existsSync(registryFile)) throw new Error(`Missing production edition registry: ${registryFile}`);
   const registry = readJson(registryFile);
   const current = registry.editions?.find(edition => edition.id === registry.currentEdition);
-  if (!current || current.status !== 'published') {
-    throw new Error('Production currentEdition must reference a published edition');
+  // A superseded current edition is a deliberate closed front door: the app shows
+  // the construction page until the next edition is published.
+  if (!current || (current.status !== 'published' && current.status !== 'superseded')) {
+    throw new Error('Production currentEdition must reference a published or superseded edition');
   }
   const protectedManifestFiles = new Set();
   for (const edition of registry.editions) {
-    if (edition.status === 'published') continue;
+    // Superseded editions were public before and stay public data; only their routes close.
+    if (edition.status === 'published' || edition.status === 'superseded') continue;
     if (edition.status !== 'preview' || edition.access !== 'basic-auth') {
       throw new Error(`Production registry contains unprotected non-published edition: ${edition.id}`);
     }

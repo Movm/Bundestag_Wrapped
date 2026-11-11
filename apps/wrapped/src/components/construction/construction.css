@@ -1,0 +1,53 @@
+/* Construction front door. Colours come from the violet surface roles. */
+.bw-site {
+  position: relative;
+  min-height: 100dvh;
+  overflow: clip;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding-block: max(5rem, env(safe-area-inset-top, 0px)) max(2.5rem, env(safe-area-inset-bottom, 0px));
+  padding-inline: max(1.25rem, env(safe-area-inset-left, 0px)) max(1.25rem, env(safe-area-inset-right, 0px));
+}
+.bw-site__logo { position: absolute; z-index: 2; top: max(1rem, env(safe-area-inset-top, 0px)); left: max(1rem, env(safe-area-inset-left, 0px)); }
+.bw-site__logo img { display: block; height: 2rem; width: auto; }
+
+/* Barrier tape under the content (in the flow, so it never covers text): pink with ink stripes, scrolling slowly. */
+.bw-site__tape {
+  flex: none;
+  width: 120vw;
+  transform: rotate(-3deg);
+  overflow: hidden;
+  white-space: nowrap;
+  padding-block: 0.6rem;
+  background: repeating-linear-gradient(-45deg, var(--color-wr-pink) 0 1.5rem, var(--color-wr-ink) 1.5rem 3rem);
+  pointer-events: none;
+}
+.bw-site__tape span {
+  display: inline-block;
+  padding-inline: 0.75rem;
+  background: var(--color-wr-pink);
+  color: var(--color-wr-ink);
+  font: 800 0.875rem/1.6 var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bw-site__tape span { animation: bw-tape 40s linear infinite; }
+  @keyframes bw-tape { to { transform: translateX(-50%); } }
+}
+
+.bw-site__main {
+  position: relative;
+  margin-block: auto;
+  width: min(100%, 46rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 1rem + 1vw, 2rem);
+}
+.bw-site__lead { margin: 0; max-width: 36rem; font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem); font-weight: 600; line-height: 1.45; color: var(--surface-on-muted); text-wrap: pretty; }
+
+.bw-site__links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; }
+.bw-site__links a:not(.ds-button) { color: var(--surface-on); font-weight: 700; text-decoration: underline; text-underline-offset: 0.2em; }
+.bw-site__links a:not(.ds-button):hover { text-decoration-thickness: 2px; }

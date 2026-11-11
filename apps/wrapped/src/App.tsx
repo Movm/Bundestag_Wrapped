@@ -7,9 +7,10 @@ import { useMenuState } from '@/hooks/useMenuState';
 import { UmamiAnalytics } from '@/components/analytics/UmamiAnalytics';
 import { EditionProvider, useEdition } from '@/edition/EditionProvider';
 import { loadRegistry } from '@/edition/loader';
-import { currentEditionPath, resolveLegacyEditionPath } from '@/edition/registry';
+import { currentEditionPath, isRetired, resolveLegacyEditionPath } from '@/edition/registry';
 import { dismissBootCover } from '@/cover/shell';
 
+const ConstructionPage = lazy(() => import('@/components/construction/ConstructionPage').then(m => ({ default: m.ConstructionPage })));
 const MainWrappedPage = lazy(() => import('@/components/MainWrappedPage').then(m => ({ default: m.MainWrappedPage })));
 const SpeakerWrappedPage = lazy(() => import('@/components/SpeakerWrappedPage').then(m => ({ default: m.SpeakerWrappedPage })));
 
@@ -83,6 +84,8 @@ function CurrentEditionRedirect({ legacy }: { legacy: boolean }) {
 
   if (registry.isLoading) return <PageLoader />;
   if (registry.error || !registry.data) return <RedirectError message={registry.error?.message ?? 'Editionsindex ist nicht verfügbar'} />;
+  // The current edition was taken down and the next one is not public yet.
+  if (isRetired(registry.data, registry.data.currentEdition)) return <ConstructionPage />;
 
   let target: string | null = null;
   let routeError: string | null = null;
@@ -110,12 +113,22 @@ function ValidatedEdition({ children }: { children: ReactNode }) {
   return children;
 }
 
+/** Routes of a superseded edition show the construction page instead of loading its data. */
+function OpenEdition({ editionId, children }: { editionId: string; children: ReactNode }) {
+  const registry = useQuery({ queryKey: ['editions'], queryFn: loadRegistry, staleTime: Infinity });
+  if (registry.isLoading) return <PageLoader />;
+  if (registry.data && isRetired(registry.data, editionId)) return <ConstructionPage />;
+  return children;
+}
+
 function EditionMainRoute() {
   const { editionId = '' } = useParams();
   return (
-    <EditionProvider editionId={editionId}>
-      <ValidatedEdition><MainWrappedRoute /></ValidatedEdition>
-    </EditionProvider>
+    <OpenEdition editionId={editionId}>
+      <EditionProvider editionId={editionId}>
+        <ValidatedEdition><MainWrappedRoute /></ValidatedEdition>
+      </EditionProvider>
+    </OpenEdition>
   );
 }
 
@@ -128,18 +141,22 @@ function EditionMainRoute() {
 function EditionDarkLayout() {
   const { editionId = '' } = useParams();
   return (
-    <EditionProvider editionId={editionId}>
-      <ValidatedEdition><DarkLayout /></ValidatedEdition>
-    </EditionProvider>
+    <OpenEdition editionId={editionId}>
+      <EditionProvider editionId={editionId}>
+        <ValidatedEdition><DarkLayout /></ValidatedEdition>
+      </EditionProvider>
+    </OpenEdition>
   );
 }
 
 function EditionLightLayout() {
   const { editionId = '' } = useParams();
   return (
-    <EditionProvider editionId={editionId}>
-      <ValidatedEdition><LightLayout /></ValidatedEdition>
-    </EditionProvider>
+    <OpenEdition editionId={editionId}>
+      <EditionProvider editionId={editionId}>
+        <ValidatedEdition><LightLayout /></ValidatedEdition>
+      </EditionProvider>
+    </OpenEdition>
   );
 }
 
