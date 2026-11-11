@@ -1,4 +1,5 @@
 // Re-export shared utilities for external use
+export { YouthIntroSlide } from './YouthIntroSlide';
 export { type SlidePhase } from './shared';
 
 // Slide components
@@ -18,4 +19,4 @@ export { ShareSlide } from './ShareSlide';
 export { EndSlide } from './EndSlide';
 export { MentionIntroSlide, MentionInfoSlide } from './MentionSlide';
 export { GenerationIntroSlide, GenerationInfoSlide } from './GenerationSlide';
-export { RankingMovementSlide, SignatureWordMovementSlide, TopicRiserContextSlide, YouthHistorySlide, YouthLanguageResultSlide } from './YearOverYearSlide';
+export { RankingMovementSlide, SignatureWordMovementSlide, TopicRiserContextSlide } from './YearOverYearSlide';

@@ -9,7 +9,8 @@ interface SlideInfoProps {
   emoji?: string;
   title: string;
   body: string;
-  eyebrow?: string;
+  /** Label above the title; `null` shows none. */
+  eyebrow?: string | null;
   highlight?: string;
   slideId?: string;
 }
@@ -24,9 +25,11 @@ function withHighlight(body: string, highlight?: string) {
 export const SlideInfo = memo(function SlideInfo({ title, body, eyebrow = 'Kurz erklärt', highlight }: SlideInfoProps) {
   return (
     <Slide shapes="ring">
-      <motion.div variants={ENTER.stamp} className="self-start rotate-[-4deg]">
-        <Eyebrow>{eyebrow}</Eyebrow>
-      </motion.div>
+      {eyebrow !== null && (
+        <motion.div variants={ENTER.stamp} className="self-start rotate-[-4deg]">
+          <Eyebrow>{eyebrow}</Eyebrow>
+        </motion.div>
+      )}
       <Display size={title.length > 18 ? 'lg' : 'hero'}>{title}</Display>
       <motion.p variants={ENTER.rise} className={body.length > 160 ? 'ds-statement ds-statement--long' : 'ds-statement'}>{withHighlight(body, highlight)}</motion.p>
     </Slide>

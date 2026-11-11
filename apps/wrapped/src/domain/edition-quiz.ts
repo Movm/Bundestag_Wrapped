@@ -120,6 +120,63 @@ function jugendwortSpeakerQuestion(
   );
 }
 
+/** "Awet Tesfaiesus & Marcel Emmerich (GRÜNE)", or each with its party when they differ. */
+function pairLabel([first, second]: readonly [{ name: string; party: string }, { name: string; party: string }]): string {
+  return first.party === second.party
+    ? `${first.name} & ${second.name} (${first.party})`
+    : `${speakerLabel(first)} & ${speakerLabel(second)}`;
+}
+
+/**
+ * A young pair the editors put among the wrong answers. It replaces the
+ * data-picked pair of its parliamentary group, unless one of them said the word.
+ */
+const YOUNG_PAIR = [{ name: 'Philipp Amthor', party: 'CDU/CSU' }, { name: 'Anna Aeikens', party: 'CDU/CSU' }] as const;
+
+/**
+ * Asks which pair of MPs said the Jugendwort, when exactly two did. The wrong
+ * pairs are two speakers of the same parliamentary group each (prominent
+ * speakers first, then Gen Z MPs; other groups than the answer's first, no
+ * AfD), so the pairing itself gives nothing away; nobody who said the word
+ * appears in a wrong pair.
+ */
+function jugendwortPairQuestion(
+  word: YouthWord & { speakers: WordSpeaker[] },
+  pool: ReadonlyArray<{ name: string; party: string }>,
+  genzSpeakers: ReadonlyArray<{ name: string }>,
+): QuizQuestion | undefined {
+  if (word.speakers.length !== 2) return undefined;
+  const sayers = [word.speakers[0], word.speakers[1]] as const;
+  const said = new Set(sayers.map(speaker => plainName(speaker.name)));
+  const byParty = new Map<string, Array<{ name: string; party: string }>>();
+  for (const speaker of pool) {
+    // AfD MPs are treated separately in Wrapped, so they are not offered as a playful wrong answer here.
+    if (said.has(plainName(speaker.name)) || speaker.party === 'fraktionslos' || speaker.party === 'AfD') continue;
+    const members = byParty.get(speaker.party) ?? [];
+    if (!members.some(member => member.name === speaker.name)) byParty.set(speaker.party, [...members, speaker]);
+  }
+  const groups = [...byParty.entries()]
+    .filter(([, members]) => members.length >= 2)
+    .sort(([a], [b]) => Number(a === sayers[0].party) - Number(b === sayers[0].party));
+  const young = YOUNG_PAIR.some(speaker => said.has(plainName(speaker.name))) ? null : YOUNG_PAIR;
+  const picked = groups.filter(([party]) => !young || party !== young[0].party).slice(0, young ? 2 : 3);
+  const pairs = [
+    ...picked.map(([, members]) => pairLabel([members[0], members[1]])),
+    ...(young ? [pairLabel(young)] : []),
+  ];
+  const answer = pairLabel(sayers);
+  const generation = youthGeneration(word.speakers, genzSpeakers);
+  const verdict = generation === 'older' ? ' Keiner von beiden gehört zur Gen Z.' : generation === 'genz' ? ' Beide gehören zur Gen Z.' : '';
+  const counts = sayers[0].count === 1 && sayers[1].count === 1 ? ', je einmal' : '';
+  return question(
+    'quiz-youth-language',
+    youthQuestion(word.word),
+    [answer, ...pairs],
+    answer,
+    `Gesagt haben es ${speakerLabel(sayers[0])} und ${speakerLabel(sayers[1])}${counts}.${verdict}${youthWordMeaning(word.word) ? ` ${youthWordMeaning(word.word)}` : ''}`,
+  );
+}
+
 const GENERATION_OPTIONS: Record<YouthGeneration | 'none', string> = {
   genz: 'Die Gen Z',
   older: 'Die Älteren',
@@ -207,7 +264,7 @@ function ratioPhrase(ratio: number): string {
 }
 
 /** Builds deterministic, evidence-backed quiz questions for one edition. */
-export function buildEditionQuizModel(data: WrappedData, configuration?: EditionQuizConfiguration, year?: number | null): EditionQuizModel {
+export function buildEditionQuizModel(data: WrappedData, configuration?: EditionQuizConfiguration): EditionQuizModel {
   const model: EditionQuizModel = {};
   addQuestion(model, 'quiz-topic-riser', () => {
     const comparison = data.yearOverYear;
@@ -224,7 +281,7 @@ export function buildEditionQuizModel(data: WrappedData, configuration?: Edition
     return question(
       'quiz-topic-riser',
       leads
-        ? `Welches Thema hat sich${year ? ` ${year}` : ''} auf Platz 1 geschoben?`
+        ? 'Über welches Thema wurde dieses Jahr im Bundestag am meisten gesprochen?'
         : `Welches Thema ist gegenüber ${baseline} am weitesten nach oben geklettert?`,
       picked.options.map(name),
       name(winner.label),
@@ -261,6 +318,14 @@ export function buildEditionQuizModel(data: WrappedData, configuration?: Edition
     const jugendwort = [...(comparison?.youthLanguage.words ?? [])]
       .filter(item => item.winnerYear !== undefined)
       .sort((a, b) => (b.winnerYear ?? 0) - (a.winnerYear ?? 0))[0];
+    if (jugendwort?.speakers?.length === 2) {
+      const pair = jugendwortPairQuestion(
+        { ...jugendwort, speakers: jugendwort.speakers },
+        [...(comparison?.youthLanguage.bySpeaker ?? []), ...(data.topSpeakersByWords ?? []), ...(data.generations?.speakers ?? [])],
+        data.generations?.speakers ?? [],
+      );
+      if (pair) return pair;
+    }
     if (jugendwort?.speakers?.length && data.generations?.speakers.length) {
       return jugendwortGenerationQuestion({ ...jugendwort, speakers: jugendwort.speakers }, data.generations.speakers);
     }
@@ -401,7 +466,6 @@ export function applyEditionQuizConfiguration(
 export function buildConfiguredEditionQuizModel(
   data: WrappedData,
   configuration?: EditionQuizConfiguration,
-  year?: number | null,
 ): EditionQuizModel {
-  return applyEditionQuizConfiguration(buildEditionQuizModel(data, configuration, year), configuration);
+  return applyEditionQuizConfiguration(buildEditionQuizModel(data, configuration), configuration);
 }
