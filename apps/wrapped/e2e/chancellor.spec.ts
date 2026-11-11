@@ -35,9 +35,9 @@ test('tells the Innen-/Außenkanzler chapter only when the edition has the secti
 
   for (const slide of SLIDES) {
     await jumpToSlide(page, slide);
-    // Axe measures colours as rendered: wait until the entrances on screen have faded in.
+    // Axe measures colours as rendered: wait until the entrances on screen (at least a fifth visible, like IN_VIEW) have faded in.
     await page.waitForFunction(id => [...document.querySelectorAll(`#${id} [style*="opacity"]`)]
-      .filter(el => el.getBoundingClientRect().top < innerHeight)
+      .filter(el => { const rect = el.getBoundingClientRect(); return rect.top < innerHeight - rect.height * 0.2; })
       .every(el => getComputedStyle(el).opacity === '1'), slide);
     const results = await new AxeBuilder({ page }).include(`#${slide}`).withTags(['wcag2a', 'wcag2aa', 'wcag22aa']).analyze();
     expect(results.violations, slide).toEqual([]);

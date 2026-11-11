@@ -33,7 +33,7 @@ describe('chancellor chapter on the 2026 preview data', () => {
     const rows = [...container.querySelectorAll('tbody tr')].map(row => row.querySelector('th')?.firstChild?.textContent + ': ' + row.querySelector('.sr-only')?.textContent);
     expect(rows).toEqual(['Merz 2026: 56 % innen, 44 % außen', 'Merz 2025: 53 % innen, 47 % außen', 'Restlicher Bundestag: 84 % innen, 16 % außen']);
     expect(text).toContain('Sein Außen-Anteil ist 2,8-mal so hoch wie im restlichen Bundestag.');
-    expect(text).toContain('Gezählt: 109 Beiträge als Kanzler, 2025 im gleichen Zeitraum 41. Restlicher Bundestag');
+    expect(text).toContain('109 Beiträge als Kanzler, 2025 gleicher Zeitraum: 41');
   });
 
   it('ranks his topic areas against the chamber', async () => {

@@ -169,6 +169,10 @@
 .ds-genz-dots { width: min(34rem, 100%); height: auto; margin-top: auto; }
 /* Innen- oder Außenkanzler: house and globe on the opener, 100 % split bars on the answer. */
 .ds-chancellor-art { width: min(24rem, 72%); height: auto; margin-top: auto; }
+/* EU circle of stars on the Europe slide; dropped on short phones, where the bars need the room. */
+.ds-chancellor-words { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.ds-chancellor-stars { flex: none; width: clamp(5rem, 6vw, 8rem); height: auto; }
+@media (max-height: 780px) { .ds-chancellor-stars { display: none; } }
 .ds-chancellor-side { font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 /* The twist after the verdict: factor plus two bars per 1,000 words. */
 .ds-focus { display: flex; flex-direction: column; gap: 1.25rem; padding: clamp(1.25rem, 1rem + 1.2vw, 2rem); }
@@ -190,7 +194,6 @@
 .ds-split__key--aussen, .ds-split__part--aussen { background: var(--color-wr-violet); color: #fff; }
 .ds-split__table { width: 100%; border-collapse: separate; border-spacing: 0 0.75rem; margin-block: -0.75rem; }
 .ds-split__label { text-align: left; font-weight: 800; font-size: 1.0625rem; padding-right: 1rem; white-space: nowrap; width: 1%; }
-.ds-split__value { display: block; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; color: var(--surface-on-muted); }
 .ds-split__track { width: 100%; }
 .ds-split__bar { display: flex; height: 2rem; border-radius: 999px; overflow: hidden; transform-origin: left; }
 .ds-split__part { display: flex; align-items: center; justify-content: center; min-width: 0; font-family: var(--font-wide); font-weight: 800; font-size: 0.9375rem; font-variant-numeric: tabular-nums; white-space: nowrap; }

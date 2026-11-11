@@ -10,16 +10,47 @@ import { capitalize, cardinal, times } from '@/lib/german-count';
 const number = new Intl.NumberFormat('de-DE');
 const decimal = (value: number) => value.toLocaleString('de-DE', { maximumFractionDigits: 1 });
 
-/** A house and a globe: inside and outside. Decoration only. */
-function HouseAndGlobe() {
+/** Five-pointed star as an SVG point list, centred on (cx, cy). */
+function starPoints(cx: number, cy: number, outer: number): string {
+  const inner = outer * 0.382;
+  return Array.from({ length: 10 }, (_, i) => {
+    const radius = i % 2 === 0 ? outer : inner;
+    const angle = (Math.PI / 5) * i - Math.PI / 2;
+    return `${(cx + radius * Math.cos(angle)).toFixed(1)},${(cy + radius * Math.sin(angle)).toFixed(1)}`;
+  }).join(' ');
+}
+
+/** The EU's circle of twelve stars, computed. Palette tokens only. Decoration. */
+function StarRing({ cx, cy, ring, star, fill }: { cx: number; cy: number; ring: number; star: number; fill: string }) {
+  return (
+    <>
+      {Array.from({ length: 12 }, (_, i) => {
+        const angle = (Math.PI / 6) * i - Math.PI / 2;
+        return <polygon key={i} points={starPoints(cx + ring * Math.cos(angle), cy + ring * Math.sin(angle), star)} fill={fill} />;
+      })}
+    </>
+  );
+}
+
+/** A house and the circle of EU stars: inside and outside. Decoration only. */
+function HouseAndStars() {
   return (
     <motion.svg variants={ENTER.slide} viewBox="0 0 260 120" className="ds-chancellor-art" aria-hidden="true" focusable="false">
-      <path d="M14 62 62 22l48 40v50H14Z" fill="#ff4fa0" />
-      <path d="M48 112V80h28v32" fill="#3a1670" />
-      <path d="M118 66h28" stroke="#b98cff" strokeWidth="5" strokeLinecap="round" strokeDasharray="2 10" />
-      <circle cx="206" cy="64" r="46" fill="none" stroke="#b98cff" strokeWidth="6" />
-      <ellipse cx="206" cy="64" rx="20" ry="46" fill="none" stroke="#b98cff" strokeWidth="4" />
-      <path d="M160 64h92M166 40h80M166 88h80" fill="none" stroke="#b98cff" strokeWidth="4" />
+      <path d="M14 62 62 22l48 40v50H14Z" fill="var(--color-wr-pink)" />
+      <path d="M48 112V80h28v32" fill="var(--color-wr-deep)" />
+      <path d="M118 66h28" stroke="var(--color-wr-lilac)" strokeWidth="5" strokeLinecap="round" strokeDasharray="2 10" />
+      <circle cx="206" cy="64" r="40" fill="var(--color-wr-violet)" />
+      <StarRing cx={206} cy={64} ring={40} star={8} fill="var(--color-wr-white)" />
+    </motion.svg>
+  );
+}
+
+/** The star ring on its own, for the Europe slide. Decoration only. */
+function EuropeStars() {
+  return (
+    <motion.svg variants={ENTER.slide} viewBox="0 0 120 120" className="ds-chancellor-stars" aria-hidden="true" focusable="false">
+      <circle cx="60" cy="60" r="44" fill="var(--color-wr-violet)" />
+      <StarRing cx={60} cy={60} ring={44} star={9} fill="var(--color-wr-white)" />
     </motion.svg>
   );
 }
@@ -44,7 +75,7 @@ export function ChancellorIntroSlide({ chancellor, year }: { chancellor: Chancel
       <motion.p variants={ENTER.rise} className="ds-statement">
         {chancellor.name} kommt {year ? `${year} ` : ''}auf {contributions(chancellor)}. Zusammen {number.format(chancellor.words)} Wörter. Wohin schaut er öfter: nach innen oder nach außen?
       </motion.p>
-      <HouseAndGlobe />
+      <HouseAndStars />
     </Slide>
   );
 }
@@ -60,22 +91,19 @@ function SplitBars({ rows }: { rows: SplitRow[] }) {
         <span><span className="ds-split__key ds-split__key--aussen" />Außen</span>
       </span>
       <table className="ds-split__table">
-        <caption className="sr-only">Anteil von Innen- und Außenpolitik an allen Themenwörtern</caption>
+        <caption className="sr-only">Anteil von Innen- und Außenpolitik an allen Themenwörtern. Restlicher Bundestag: alle anderen Redebeiträge dieser Edition.</caption>
         <thead className="sr-only"><tr><th scope="col">Wer</th><th scope="col">Anteil</th></tr></thead>
         <tbody>
           {rows.map(row => {
             const { foreign, domestic } = split(row.share);
             return (
               <tr key={row.label}>
-                <th scope="row" className="ds-split__label">
-                  {row.label}
-                  <span className="ds-split__value" aria-hidden="true">{foreign} % außen</span>
-                </th>
+                <th scope="row" className="ds-split__label">{row.label}</th>
                 <td className="ds-split__track">
                   <span className="sr-only">{domestic} % innen, {foreign} % außen</span>
                   <motion.span className="ds-split__bar" variants={ENTER.grow} aria-hidden="true">
-                    <span className="ds-split__part ds-split__part--innen" style={{ flexGrow: domestic }}>{domestic >= 18 ? `${domestic} %` : ''}</span>
-                    <span className="ds-split__part ds-split__part--aussen" style={{ flexGrow: foreign }}>{foreign >= 18 ? `${foreign} %` : ''}</span>
+                    <span className="ds-split__part ds-split__part--innen" style={{ flexGrow: domestic }}>{domestic >= 12 ? `${domestic} %` : ''}</span>
+                    <span className="ds-split__part ds-split__part--aussen" style={{ flexGrow: foreign }}>{foreign >= 12 ? `${foreign} %` : ''}</span>
                   </motion.span>
                 </td>
               </tr>
@@ -109,9 +137,8 @@ export function ChancellorSplitSlide({ chancellor, year }: { chancellor: Chancel
       shapes="corner"
       footer={(
         <Note className="ds-note--plate">
-          Anteil an allen Themenwörtern. Gezählt: {number.format(chancellor.contributions)} Beiträge als Kanzler
-          {chancellor.previous ? `, ${chancellor.previous.year} im gleichen Zeitraum ${number.format(chancellor.previous.contributions)}` : ''}.
-          {' '}Restlicher Bundestag: alle anderen Redebeiträge dieser Edition.
+          Anteil an Themenwörtern · {number.format(chancellor.contributions)} Beiträge als Kanzler
+          {chancellor.previous ? `, ${chancellor.previous.year} gleicher Zeitraum: ${number.format(chancellor.previous.contributions)}` : ''}
         </Note>
       )}
     >
@@ -157,7 +184,7 @@ export function ChancellorFocusSlide({ chancellor }: { chancellor: ChancellorAna
   return (
     <Slide
       shapes={false}
-      footer={<Note className="ds-note--plate">{areaName(area.id)}: Themenwörter pro 1.000 Wörter, verglichen mit allen anderen Redebeiträgen dieser Edition.</Note>}
+      footer={<Note className="ds-note--plate">Themenwörter pro 1.000 Wörter, verglichen mit allen anderen Redebeiträgen dieser Edition.</Note>}
     >
       <div className="flex flex-col gap-4">
         <motion.div variants={ENTER.stamp} className="self-start rotate-[-4deg]">
@@ -183,17 +210,20 @@ export function ChancellorFocusSlide({ chancellor }: { chancellor: ChancellorAna
                   style={{ width: `${Math.max(4, (bar.value / max) * 100)}%` }}
                   aria-hidden="true"
                 />
-                <span className="ds-focus__value">{bar.value.toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} pro 1.000 Wörter</span>
+                <span className="ds-focus__value">{bar.value.toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 })}<span className="sr-only"> pro 1.000 Wörter</span></span>
               </dd>
             </div>
           ))}
         </dl>
       </Block>
-      {words.length > 0 && (
-        <motion.p variants={ENTER.rise} className="m-0 text-base font-semibold">
-          <span className="ds-chancellor-side">{sideName(area.side)} am häufigsten:</span> {counted(words)}
-        </motion.p>
-      )}
+      <div className="ds-chancellor-words">
+        {words.length > 0 && (
+          <motion.p variants={ENTER.rise} className="m-0 text-base font-semibold">
+            <span className="ds-chancellor-side">{sideName(area.side)} am häufigsten:</span> {counted(words)}
+          </motion.p>
+        )}
+        {area.id === 'europa' && <EuropeStars />}
+      </div>
     </Slide>
   );
 }
@@ -204,12 +234,12 @@ const RANK_TONES = ['white', 'violet', 'pink', 'card', 'white'] as const;
 export function ChancellorTopicsSlide({ chancellor }: { chancellor: ChancellorAnalysis }) {
   const areas = chancellor.areas.slice(0, 5);
   return (
-    <Slide shapes={false} footer={<Note className="ds-note--plate">Gemessen pro 1.000 Wörter, verglichen mit allen anderen Redebeiträgen.</Note>}>
+    <Slide shapes={false}>
       <div className="flex flex-col gap-4">
         <Enter><Eyebrow>Seine Themen</Eyebrow></Enter>
         <Display size="lg" face="wide">Worüber {lastName(chancellor.name)} <Mark>spricht.</Mark></Display>
       </div>
-      <ol className="flex flex-col gap-3" aria-label={`Die häufigsten Themen von ${chancellor.name}`}>
+      <ol className="flex flex-col gap-3" aria-label={`Die häufigsten Themen von ${chancellor.name}, gemessen pro 1.000 Wörter und verglichen mit allen anderen Redebeiträgen`}>
         {areas.map((area, index) => (
           <li key={area.id}>
             <RankCard
@@ -238,11 +268,11 @@ export function ChancellorWordsSlide({ chancellor }: { chancellor: ChancellorAna
   return (
     <Slide
       shapes={false}
-      footer={<Note className="ds-note--plate">Typisch: Hauptwörter, die er deutlich häufiger nutzt als alle anderen Redner*innen dieser Edition, in mindestens drei Beiträgen. Anrede- und Zeitwörter sind ausgenommen.</Note>}
+      footer={<Note className="ds-note--plate">Hauptwörter, die er deutlich öfter nutzt als alle anderen dieser Edition, in mindestens drei Beiträgen. Ohne Anrede- und Zeitwörter.</Note>}
     >
       <div className="flex flex-col gap-4">
         <motion.div variants={ENTER.stamp} className="self-start rotate-[-4deg]">
-          <Eyebrow>Typisch {lastName(chancellor.name)}</Eyebrow>
+          <Eyebrow>{lastName(chancellor.name)}</Eyebrow>
         </motion.div>
         <Display size="lg" face="wide">Seine <Mark>typischen Wörter.</Mark></Display>
       </div>
