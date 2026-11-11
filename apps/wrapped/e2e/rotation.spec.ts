@@ -10,20 +10,21 @@ test('retains the active slide through rotation and allows subsequent navigation
   const slide = page.locator('#quiz-drama');
   await jumpToSlide(page, (await slide.getAttribute('id'))!);
   await expect(slide).not.toHaveAttribute('inert', '');
-  const answer = slide.getByRole('button').first();
-  await answer.click();
-  await expect(slide.getByRole('status')).toContainText(/Deine Antwort ist (richtig|falsch)/);
-  await expectInlineQuizResult(page);
   await slide.focus();
   await expect(slide).toBeFocused();
+  // Rotate while the quiz is open: the slide and focus stay.
   await page.setViewportSize({ width: 844, height: 390 });
   await page.waitForTimeout(300);
   await expect(slide).not.toHaveAttribute('inert', '');
   await expect(slide).toBeFocused();
-  await expect(slide.getByRole('status')).toContainText(/Deine Antwort ist (richtig|falsch)/);
   await page.setViewportSize({ width: 390, height: 844 });
   await page.waitForTimeout(300);
   await expect(slide).not.toHaveAttribute('inert', '');
+  // Answering still works after rotating, and the story moves on by itself.
+  await slide.getByRole('button').first().click();
+  await expect(slide.getByRole('status')).toContainText(/Deine Antwort ist (richtig|falsch)/);
+  await expectInlineQuizResult(page);
+  await expect(slide).toHaveAttribute('inert', '', { timeout: 5000 });
   const next = page.locator('#quiz-gender');
   await jumpToSlide(page, (await next.getAttribute('id'))!);
   await expect(next).not.toHaveAttribute('inert', '');
