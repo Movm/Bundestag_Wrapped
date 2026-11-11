@@ -55,10 +55,6 @@ export const useSpeakerQuizStore = create<SpeakerQuizState>()(
   ),
 );
 
-export function useSpeakerQuizAnswered(surface: SpeakerSurface, slug: string): boolean {
-  return useSpeakerQuizStore((state) => slug in answersFor(state, surface, slug));
-}
-
 export function useSpeakerQuizCorrect(surface: SpeakerSurface, slug: string): boolean | null {
   return useSpeakerQuizStore((state) => answersFor(state, surface, slug)[slug] ?? null);
 }

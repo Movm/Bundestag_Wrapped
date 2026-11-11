@@ -12,7 +12,7 @@ test('retains the active slide through rotation and allows subsequent navigation
   await expect(slide).not.toHaveAttribute('inert', '');
   const answer = slide.getByRole('button').first();
   await answer.click();
-  await expect(slide.getByRole('status')).toContainText(/Deine Antwort (ist richtig|ist falsch|wurde gespeichert)/);
+  await expect(slide.getByRole('status')).toContainText(/Deine Antwort ist (richtig|falsch)/);
   await expectInlineQuizResult(page);
   await slide.focus();
   await expect(slide).toBeFocused();
@@ -20,7 +20,7 @@ test('retains the active slide through rotation and allows subsequent navigation
   await page.waitForTimeout(300);
   await expect(slide).not.toHaveAttribute('inert', '');
   await expect(slide).toBeFocused();
-  await expect(slide.getByRole('status')).toContainText(/Deine Antwort (ist richtig|ist falsch|wurde gespeichert)/);
+  await expect(slide.getByRole('status')).toContainText(/Deine Antwort ist (richtig|falsch)/);
   await page.setViewportSize({ width: 390, height: 844 });
   await page.waitForTimeout(300);
   await expect(slide).not.toHaveAttribute('inert', '');

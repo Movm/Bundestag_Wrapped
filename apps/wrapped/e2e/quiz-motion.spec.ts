@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 for (const reducedMotion of ['reduce', 'no-preference'] as const) {
-  test(`answers a quiz and keeps persistent feedback with reducedMotion=${reducedMotion}`, async ({ page }) => {
+  test(`answers a quiz, marks the result and moves on with reducedMotion=${reducedMotion}`, async ({ page }) => {
     await page.emulateMedia({ reducedMotion });
     await page.goto('/2025');
     await jumpToSlide(page, (await page.locator('#quiz-topics').getAttribute('id'))!);
@@ -17,17 +17,15 @@ for (const reducedMotion of ['reduce', 'no-preference'] as const) {
     await expect(answer).toHaveAttribute('aria-disabled', 'true');
     await expect(answer).toBeFocused();
     const status = quiz.getByRole('status');
-    await expect(status).toContainText(/Deine Antwort (ist richtig|ist falsch|wurde gespeichert)/);
+    await expect(status).toContainText(/Deine Antwort ist (richtig|falsch)/);
     // Result is exposed to assistive tech as text on the tile as well.
     await expect(quiz.getByRole('button', { name: /richtig|falsch/ }).first()).toBeVisible();
     // No popup: the answer keeps focus.
     await expectInlineQuizResult(page);
     await expect(answer).toBeFocused();
-    if (reducedMotion === 'reduce') await expect(quiz.locator('.w-3.h-3')).toHaveCount(0);
-    // The result is a card in the layout and stays: no timeout.
-    await page.waitForTimeout(2500);
-    await expect(status).toContainText(/Deine Antwort (ist richtig|ist falsch|wurde gespeichert)/);
-    await expect(answer).toBeFocused();
+    if (reducedMotion === 'reduce') await expect(quiz.locator('.ds-confetti')).toHaveCount(0);
+    // The marked answer stays briefly, then the story moves on by itself.
+    await expect(quiz).toHaveAttribute('inert', '', { timeout: 5000 });
   });
 }
 

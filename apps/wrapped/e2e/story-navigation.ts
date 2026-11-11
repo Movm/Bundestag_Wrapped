@@ -23,7 +23,7 @@ export async function jumpToSlide(page: Page, id: string) {
   await page.getByRole('button', { name: 'Navigation schließen' }).click();
 }
 
-/** The result stays on the slide as a card; no popup opens, so the reader can scroll straight on. */
+/** The result is announced on the slide (the options show it); no popup opens. */
 export async function expectInlineQuizResult(page: Page) {
   await expect(page.locator('[data-active="true"] [data-testid="quiz-result"]')).toBeVisible();
   await page.waitForTimeout(800);

@@ -11,7 +11,7 @@ import { SpeakerShareSlide } from './SpeakerShareSlide';
 interface SpeakerSlideRendererProps {
   slide: SpeakerSlideType;
   speaker: SpeakerWrapped;
-  isQuizAnswered?: boolean;
+  quizAnswer?: boolean | null;
   onStart?: () => void;
   onQuizAnswer?: (isCorrect: boolean) => void;
   onQuizComplete?: () => void;
@@ -26,7 +26,7 @@ interface SpeakerSlideRendererProps {
 export const SpeakerSlideRenderer = memo(function SpeakerSlideRenderer({
   slide,
   speaker,
-  isQuizAnswered,
+  quizAnswer,
   onStart,
   onQuizAnswer,
   onQuizComplete,
@@ -43,7 +43,7 @@ export const SpeakerSlideRenderer = memo(function SpeakerSlideRenderer({
       return (
         <SpeakerQuizSlide
           speaker={speaker}
-          isAnswered={isQuizAnswered}
+          storedAnswer={quizAnswer}
           onQuizAnswer={onQuizAnswer}
           onComplete={onQuizComplete}
         />
