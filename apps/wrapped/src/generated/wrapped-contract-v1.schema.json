@@ -1209,6 +1209,175 @@
         }
       }
     },
+    "ChancellorArea": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "side",
+        "count",
+        "perThousand",
+        "chamberPerThousand"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z]+$"
+        },
+        "side": {
+          "enum": [
+            "innen",
+            "aussen"
+          ]
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "perThousand": {
+          "type": "number",
+          "minimum": 0
+        },
+        "chamberPerThousand": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "ChancellorHotWord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "word",
+        "count",
+        "ratio",
+        "zScore"
+      ],
+      "properties": {
+        "word": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ratio": {
+          "type": "number",
+          "minimum": 0
+        },
+        "zScore": {
+          "type": "number"
+        }
+      }
+    },
+    "ChancellorAnalysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Innen- oder Außenkanzler: topic words of the chancellor's own speeches and Befragung answers, split into domestic and foreign policy, against every other contribution of the edition.",
+      "required": [
+        "name",
+        "party",
+        "contributions",
+        "speeches",
+        "answers",
+        "words",
+        "topicWords",
+        "foreignShare",
+        "chamberForeignShare",
+        "areas",
+        "foreignWords",
+        "domesticWords",
+        "hotWords"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "contributions": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "speeches": {
+          "$ref": "#/$defs/Count"
+        },
+        "answers": {
+          "$ref": "#/$defs/Count"
+        },
+        "words": {
+          "$ref": "#/$defs/Count"
+        },
+        "topicWords": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "foreignShare": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "chamberForeignShare": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "areas": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/ChancellorArea"
+          }
+        },
+        "foreignWords": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/WordCount"
+          }
+        },
+        "domesticWords": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/WordCount"
+          }
+        },
+        "hotWords": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ChancellorHotWord"
+          }
+        },
+        "previous": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "year",
+            "contributions",
+            "words",
+            "foreignShare"
+          ],
+          "properties": {
+            "year": {
+              "type": "integer",
+              "minimum": 1949
+            },
+            "contributions": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "words": {
+              "$ref": "#/$defs/Count"
+            },
+            "foreignShare": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            }
+          }
+        }
+      }
+    },
     "GenerationComparison": {
       "type": "object",
       "additionalProperties": false,
@@ -1799,6 +1968,9 @@
         },
         "generations": {
           "$ref": "#/$defs/GenerationComparison"
+        },
+        "chancellor": {
+          "$ref": "#/$defs/ChancellorAnalysis"
         }
       }
     },
