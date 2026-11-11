@@ -1,9 +1,30 @@
 import { usePageVisible } from '@/hooks/usePageVisible';
-import { Activity, useContext, useState, useRef, useLayoutEffect, type ReactNode } from 'react';
+import { Activity, useContext, useEffect, useState, useRef, useLayoutEffect, type ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 import { StoryContext } from './StoryContext';
 import { SlideEffectsContext } from './SlideEffectsContext';
 import { surfaceForSlide } from '@/design-system/surfaces';
+
+/**
+ * Hiding an Activity detaches every motion element in it. An entrance still in
+ * flight then ends against detached elements: motion drops its value
+ * subscriptions on detach, so `latestValues` keeps the hidden state while the
+ * motion values reach the target. On reveal, motion renders the stale values and
+ * skips the replay because the values already sit at the target — the element
+ * stays at opacity 0 / scale 0. Revealing is immediate; hiding waits until every
+ * entrance (stagger + spring, a few seconds at most) has finished.
+ */
+export const ENTRANCE_SETTLE_MS = 4000;
+
+function useSettledHide(hide: boolean) {
+  const [settled, setSettled] = useState(false);
+  useEffect(() => {
+    if (!hide) return;
+    const timer = setTimeout(() => setSettled(true), ENTRANCE_SETTLE_MS);
+    return () => { clearTimeout(timer); setSettled(false); };
+  }, [hide]);
+  return hide && settled;
+}
 
 interface SlideSectionProps { id: string; children: ReactNode; className?: string; active?: boolean; forwardBlocked?: boolean; }
 
@@ -35,6 +56,7 @@ export function SlideSection({ id, children, className, active = true, forwardBl
     observer.observe(section);
     return () => observer.disconnect();
   }, [visible, pageVisible]);
+  const hidden = useSettledHide(!visible || !pageVisible);
   const effectsActive = pageVisible && (activeId ? activeId === id : active);
   return (
     <section ref={sectionRef} id={id} data-slide-id={id} data-surface={surfaceForSlide(id)} data-forward-blocked={forwardBlocked} data-active={activeId === id} tabIndex={-1}
@@ -43,7 +65,7 @@ export function SlideSection({ id, children, className, active = true, forwardBl
       aria-hidden={!readingMode && activeId !== '' && activeId !== id}
       aria-label={`Folie: ${id.replace(/^(speaker|intro|info|quiz|reveal|chart|fun)-/, '').replaceAll('-', ' ')}`}
       className={cn('story-section w-full flex flex-col items-center justify-center', className)}>
-      {visited && <SlideEffectsContext value={effectsActive}><Activity mode={visible && pageVisible ? 'visible' : 'hidden'}>{children}</Activity></SlideEffectsContext>}
+      {visited && <SlideEffectsContext value={effectsActive}><Activity mode={hidden ? 'hidden' : 'visible'}>{children}</Activity></SlideEffectsContext>}
     </section>
   );
 }
