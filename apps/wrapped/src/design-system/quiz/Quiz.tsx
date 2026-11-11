@@ -46,6 +46,8 @@ export function Quiz({ quiz, isAnswered, onAnswer, seed, layout, gapSentence, ba
   const story = useContext(StoryContext);
   const [confetti, setConfetti] = useState(false);
   const [resultOpen, setResultOpen] = useState(false);
+  // Where the answer was tapped: the result colour floods out from there.
+  const [origin, setOrigin] = useState<{ x: number; y: number } | null>(null);
   const engine = useQuizEngine(quiz, { isAnswered, onAnswer, onCorrect: () => { if (!reduce) setConfetti(true); }, shuffleSeed: shuffle ? `${seed ?? ''}:${quiz.question}` : undefined });
   const questionId = useId();
   const verdictId = useId();
@@ -73,7 +75,7 @@ export function Quiz({ quiz, isAnswered, onAnswer, seed, layout, gapSentence, ba
   }, [confetti]);
 
   return (
-    <div className="ds-quiz-frame" data-quiz-layout={spec.id}>
+    <div className="ds-quiz-frame" data-quiz-layout={spec.id} onPointerDownCapture={event => { if (!engine.answered) setOrigin({ x: event.clientX, y: event.clientY }); }}>
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
         {confetti && <Confetti count={20} duration={0.8} colors={CONFETTI_COLORS} />}
       </div>
@@ -100,6 +102,7 @@ export function Quiz({ quiz, isAnswered, onAnswer, seed, layout, gapSentence, ba
       {engine.answered && <p className="sr-only">Wähle „Weiter“, um fortzufahren.</p>}
       <AccessibleDialog open={resultOpen} onClose={() => setResultOpen(false)} labelledBy={verdictId} exitMs={DIALOG_EXIT_MS}>
         <div className="ds-result-dialog">
+          <span aria-hidden="true" className="ds-flood" data-surface={engine.isCorrect ? 'pink' : 'ink'} style={origin ? { left: origin.x, top: origin.y } : undefined} />
           <div className="ds-result-dialog__card" data-surface={engine.isCorrect ? 'pink' : 'ink'}>
             <span aria-hidden="true" className="ds-result-dialog__shape" />
             <h2 id={verdictId} className="ds-result-dialog__verdict">{engine.isCorrect ? 'Genau richtig!' : 'Diesmal nicht.'}</h2>
