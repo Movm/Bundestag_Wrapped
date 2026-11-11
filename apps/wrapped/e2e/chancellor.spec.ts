@@ -1,17 +1,28 @@
 import { readFileSync } from 'node:fs';
 import AxeBuilder from '@axe-core/playwright';
-import { expect, test } from 'playwright/test';
+import { expect, test, type Page } from 'playwright/test';
 import { installEditionFixtures } from './fixtures';
 import { answerQuiz, expectInlineQuizResult, jumpToSlide, storyStart } from './story-navigation';
 
 // The real section of the 2026 preview, on top of the small fixture edition.
 const chancellor = JSON.parse(readFileSync(new URL('../public/data/2026/preview-2026-11-10-match/wrapped.json', import.meta.url), 'utf8')).chancellor;
 
-const SLIDES = ['intro-chancellor', 'quiz-chancellor', 'info-chancellor', 'reveal-chancellor', 'reveal-chancellor-focus', 'reveal-chancellor-topics', 'reveal-chancellor-words'];
+const SLIDES = ['intro-chancellor', 'quiz-chancellor', 'info-chancellor', 'reveal-chancellor-topics', 'reveal-chancellor', 'reveal-chancellor-focus'];
 
 test.beforeEach(async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
 });
+
+/**
+ * Waits until the entrances on screen (at least a fifth visible, like IN_VIEW) have faded in.
+ * Axe measures colours as rendered, and leaving a slide mid-entrance can leave a
+ * `once` shape entrance unfinished.
+ */
+async function settle(page: Page, id: string) {
+  await page.waitForFunction(slide => [...document.querySelectorAll(`#${slide} [style*="opacity"]`)]
+    .filter(el => { const rect = el.getBoundingClientRect(); return rect.top < innerHeight - rect.height * 0.2; })
+    .every(el => getComputedStyle(el).opacity === '1'), id);
+}
 
 test('tells the Innen-/Außenkanzler chapter only when the edition has the section', async ({ page }) => {
   await installEditionFixtures(page, { wrappedExtras: { chancellor } });
@@ -30,15 +41,17 @@ test('tells the Innen-/Außenkanzler chapter only when the edition has the secti
   await expect(page.locator('#quiz-chancellor [data-testid="quiz-result"]')).toContainText('44 % seiner Themenwörter gehören zur Außenpolitik');
 
   await jumpToSlide(page, 'reveal-chancellor');
-  await expect(page.locator('#reveal-chancellor')).toContainText('Innenkanzler. Knapp.');
-  await expect(page.locator('#reveal-chancellor tbody tr')).toHaveCount(3);
+  await settle(page, 'reveal-chancellor');
+  await expect(page.locator('#reveal-chancellor')).toContainText('Merz spricht etwas mehr über innen- als über außenpolitische Themen.');
+  await expect(page.locator('#reveal-chancellor .ds-io')).toHaveCount(2);
+
+  await jumpToSlide(page, 'reveal-chancellor-focus');
+  await settle(page, 'reveal-chancellor-focus');
+  await expect(page.locator('#reveal-chancellor-focus')).toContainText('Europa-Kanzler?');
 
   for (const slide of SLIDES) {
     await jumpToSlide(page, slide);
-    // Axe measures colours as rendered: wait until the entrances on screen (at least a fifth visible, like IN_VIEW) have faded in.
-    await page.waitForFunction(id => [...document.querySelectorAll(`#${id} [style*="opacity"]`)]
-      .filter(el => { const rect = el.getBoundingClientRect(); return rect.top < innerHeight - rect.height * 0.2; })
-      .every(el => getComputedStyle(el).opacity === '1'), slide);
+    await settle(page, slide);
     const results = await new AxeBuilder({ page }).include(`#${slide}`).withTags(['wcag2a', 'wcag2aa', 'wcag22aa']).analyze();
     expect(results.violations, slide).toEqual([]);
   }

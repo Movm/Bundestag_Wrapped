@@ -18,5 +18,5 @@ export { ShareSlide } from './ShareSlide';
 export { EndSlide } from './EndSlide';
 export { MentionIntroSlide, MentionInfoSlide } from './MentionSlide';
 export { GenerationIntroSlide, GenerationInfoSlide } from './GenerationSlide';
-export { ChancellorFocusSlide, ChancellorIntroSlide, ChancellorSplitSlide, ChancellorTopicsSlide, ChancellorWordsSlide } from './ChancellorSlide';
+export { ChancellorFocusSlide, ChancellorIntroSlide, ChancellorSplitSlide, ChancellorTopicsSlide } from './ChancellorSlide';
 export { RankingMovementSlide, SignatureWordMovementSlide, TopicRiserContextSlide, YouthHistorySlide, YouthLanguageResultSlide } from './YearOverYearSlide';

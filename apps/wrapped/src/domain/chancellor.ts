@@ -49,13 +49,16 @@ export function timesAs(ratio: number): string {
   return `${decimal(ratio)}-mal so`;
 }
 
-/** How an area compares with the rest of the chamber, per 1,000 words. */
-export function againstChamber(area: ChancellorArea): string {
-  if (area.chamberPerThousand <= 0) return 'im restlichen Bundestag kaum ein Thema';
+/**
+ * How an area compares with the rest of the chamber, per 1,000 words.
+ * `short` drops the comparison once the first entry has named it.
+ */
+export function againstChamber(area: ChancellorArea, short = false): string {
+  if (area.chamberPerThousand <= 0) return short ? 'sonst kaum ein Thema' : 'im restlichen Bundestag kaum ein Thema';
   const ratio = area.perThousand / area.chamberPerThousand;
-  if (ratio >= 1.1) return `${timesAs(ratio)} oft wie im restlichen Bundestag`;
-  if (ratio <= 0.9) return 'seltener als im restlichen Bundestag';
-  return 'etwa so oft wie im restlichen Bundestag';
+  if (ratio >= 1.1) return `${timesAs(ratio)} oft${short ? '' : ' wie im restlichen Bundestag'}`;
+  if (ratio <= 0.9) return short ? 'seltener als der Rest' : 'seltener als im restlichen Bundestag';
+  return short ? 'etwa so oft wie der Rest' : 'etwa so oft wie im restlichen Bundestag';
 }
 
 /**

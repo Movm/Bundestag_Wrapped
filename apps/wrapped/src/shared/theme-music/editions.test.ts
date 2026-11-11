@@ -17,7 +17,7 @@ describe('edition music', () => {
     expect(themeForSlide('quiz-youth-language', '2026')).toBe('only-alone');
     expect(themeForSlide('quiz-genz', '2026')).toBe('only-alone');
     expect(themeForSlide('reveal-mention', '2026')).toBe('i-still-break');
-    for (const slide of ['intro-chancellor', 'quiz-chancellor', 'info-chancellor', 'reveal-chancellor', 'reveal-chancellor-focus', 'reveal-chancellor-topics', 'reveal-chancellor-words']) {
+    for (const slide of ['intro-chancellor', 'quiz-chancellor', 'info-chancellor', 'reveal-chancellor-topics', 'reveal-chancellor', 'reveal-chancellor-focus']) {
       expect(themeForSlide(slide, '2026')).toBe('gloss-that');
     }
     expect(themeForSlide('finale', '2026')).toBe('vivaldi-spring');

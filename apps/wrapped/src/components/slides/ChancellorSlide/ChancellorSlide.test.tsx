@@ -3,7 +3,7 @@ import { createRoot, type Root } from 'react-dom/client';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import preview2026 from '../../../../public/data/2026/preview-2026-11-10-match/wrapped.json';
 import type { ChancellorAnalysis } from '@/generated/wrapped-contract-v1';
-import { ChancellorFocusSlide, ChancellorIntroSlide, ChancellorSplitSlide, ChancellorTopicsSlide, ChancellorWordsSlide } from '.';
+import { ChancellorFocusSlide, ChancellorIntroSlide, ChancellorSplitSlide, ChancellorTopicsSlide } from '.';
 
 // jsdom has no IntersectionObserver; slide entrances (whileInView) need one.
 globalThis.IntersectionObserver ??= class { observe() {} unobserve() {} disconnect() {} takeRecords() { return []; } root = null; rootMargin = ''; thresholds = []; } as unknown as typeof IntersectionObserver;
@@ -27,51 +27,46 @@ describe('chancellor chapter on the 2026 preview data', () => {
     expect(text).toContain('Friedrich Merz kommt 2026 auf acht Reden und 101 Antworten in der Regierungsbefragung. Zusammen 28.655 Wörter.');
   });
 
-  it('answers with the split for him, the same period last year and the rest of the chamber', async () => {
-    const text = await render(<ChancellorSplitSlide chancellor={chancellor} year={2026} />);
-    expect(text).toContain('Innenkanzler. Knapp.');
-    const rows = [...container.querySelectorAll('tbody tr')].map(row => row.querySelector('th')?.firstChild?.textContent + ': ' + row.querySelector('.sr-only')?.textContent);
-    expect(rows).toEqual(['Merz 2026: 56 % innen, 44 % außen', 'Merz 2025: 53 % innen, 47 % außen', 'Restlicher Bundestag: 84 % innen, 16 % außen']);
-    expect(text).toContain('Sein Außen-Anteil ist 2,8-mal so hoch wie im restlichen Bundestag.');
-    expect(text).toContain('109 Beiträge als Kanzler, 2025 gleicher Zeitraum: 41');
+  it('answers with his split against the rest of the chamber', async () => {
+    const text = await render(<ChancellorSplitSlide chancellor={chancellor} />);
+    expect(text).toContain('Merz spricht etwas mehr über innen- als über außenpolitische Themen. Im Vergleich zum Rest des Bundestages dominiert aber die Außenpolitik.');
+    expect([...container.querySelectorAll('.ds-io .sr-only')].map(row => row.textContent)).toEqual([
+      'Merz: 56 % innen, 44 % außen',
+      'Rest des Bundestages: 84 % innen, 16 % außen',
+    ]);
   });
 
-  it('ranks his topic areas against the chamber', async () => {
+  it('says so plainly when he talks about foreign policy as often as the chamber', async () => {
+    const text = await render(<ChancellorSplitSlide chancellor={{ ...chancellor, chamberForeignShare: 40 }} />);
+    expect(text).toContain('Merz spricht etwas mehr über innen- als über außenpolitische Themen.');
+    expect(text).not.toContain('dominiert');
+  });
+
+  it('ranks his three biggest topic areas next to his typical words', async () => {
     await render(<ChancellorTopicsSlide chancellor={chancellor} />);
     const labels = [...container.querySelectorAll('.ds-rank__label')].map(label => label.textContent);
-    expect(labels[0]).toBe('Platz 1: Europa/Außen');
-    expect(container.querySelector('.ds-rank__detail')?.textContent).toBe('Außen · Rund dreimal so oft wie im restlichen Bundestag');
-    expect(labels).toHaveLength(5);
+    expect(labels).toEqual(['Platz 1: Europa/Außen', 'Platz 2: Wirtschaft', 'Platz 3: Soziales']);
+    expect([...container.querySelectorAll('.ds-rank__detail')].map(detail => detail.textContent)).toEqual([
+      'Außen · rund dreimal so oft wie im restlichen Bundestag',
+      'Innen · 1,5-mal so oft',
+      'Innen · seltener als der Rest',
+    ]);
+    expect([...container.querySelectorAll('.ds-chip')].map(chip => chip.textContent)).toEqual(['Kommission', 'Europa', 'Handel', 'Anstrengungen', 'Bürokratierückbau', 'Ukraine']);
   });
 
   it('turns to his focus: Europa, about three times as often as the chamber', async () => {
     const text = await render(<ChancellorFocusSlide chancellor={chancellor} />);
-    expect(text).toContain('Aber vor allem');
-    expect(text).toContain('Europa-Kanzler.');
-    expect(text).toContain('3×so oft über Europa wie der restliche Bundestag');
-    expect([...container.querySelectorAll('.ds-focus__row')].map(row => row.textContent)).toEqual([
-      'Merz14,9 pro 1.000 Wörter',
-      'Restlicher Bundestag5,0 pro 1.000 Wörter',
-    ]);
-    expect(text).toContain('Außen am häufigsten: Europa (83‑mal), Ukraine (39‑mal), Frieden (20‑mal)');
+    expect(text).toContain('Oder ist er der Europa-Kanzler?');
+    expect(text).toContain('Friedrich Merz spricht 3× so oft über das Thema Europa wie der Rest des Bundestages.');
+    expect([...container.querySelectorAll('.ds-chip')].map(chip => chip.textContent)).toEqual(['Europa · 83×', 'Ukraine · 39×', 'Frieden · 20×']);
+    expect(container.querySelectorAll('.ds-eu-ring__star')).toHaveLength(12);
   });
 
   it('only names the area when it barely stands out', async () => {
     const areas = chancellor.areas.map(area => ({ ...area, chamberPerThousand: area.perThousand }));
     const text = await render(<ChancellorFocusSlide chancellor={{ ...chancellor, areas }} />);
-    expect(text).toContain('Sein Schwerpunkt');
-    expect(text).not.toContain('Kanzler.');
-    expect(text).not.toContain('×');
-  });
-
-  it('shows his typical words', async () => {
-    const text = await render(<ChancellorWordsSlide chancellor={chancellor} />);
-    expect([...container.querySelectorAll('.ds-chip')].map(chip => chip.textContent)).toEqual(['Kommission', 'Europa', 'Handel', 'Anstrengungen', 'Bürokratierückbau', 'Ukraine']);
-    expect(text).toContain('Vorn: „Kommission“, mindestens 5,6-mal so oft wie im restlichen Bundestag.');
-  });
-
-  it('leaves out the prior year when the edition has none', async () => {
-    await render(<ChancellorSplitSlide chancellor={{ ...chancellor, previous: undefined }} year={2026} />);
-    expect(container.querySelectorAll('tbody tr')).toHaveLength(2);
+    expect(text).toContain('Sein Schwerpunkt:');
+    expect(text).not.toContain('Kanzler?');
+    expect(text).not.toContain('so oft');
   });
 });
