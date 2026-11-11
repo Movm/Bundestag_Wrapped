@@ -1,8 +1,9 @@
 import { memo } from 'react';
 import { useDebugRender } from '@/hooks/useDebugRender';
-import { buildConfiguredEditionQuizModel, type EditionQuizModel } from '@/domain/edition-quiz';
-import { INFO_SLIDES } from '@/data/info-slides';
+import { buildConfiguredEditionQuizModel, signatureQuizParty, type EditionQuizModel } from '@/domain/edition-quiz';
+import { resolveInfoSlide } from '@/data/info-slides';
 import { buildTopicRiserContext } from '@/domain/topic-riser-context';
+import { youthGeneration, type YouthGeneration } from '@/domain/youth-words';
 import { SLIDES, type SlideType } from './constants';
 import { getQuizSlides } from './slide-plan';
 import {
@@ -24,6 +25,7 @@ import {
   SignatureWordMovementSlide,
   TopicRiserContextSlide,
   YouthLanguageResultSlide,
+  YouthHistorySlide,
   MentionIntroSlide,
   MentionInfoSlide,
   GenerationIntroSlide,
@@ -125,8 +127,24 @@ function PartyTopicsSlideWrapper() {
 
 function VocabularySlideWrapper({ phase }: { phase: 'intro' | 'result' }) {
   const parties = useParties();
+  const data = useFullWrappedData();
+  const quizConfiguration = useOptionalEdition()?.content?.quiz;
   if (!parties) return null;
-  return <VocabularySlide parties={parties} phase={phase} />;
+  const quizParty = data ? signatureQuizParty(data, quizConfiguration)?.party : undefined;
+  return <VocabularySlide parties={parties} signatureParty={quizParty} phase={phase} />;
+}
+
+/** Info slides: static text, with the years and counts its sentences name taken from the data. */
+function InfoSlideWrapper({ slide }: { slide: string }) {
+  const data = useFullWrappedData();
+  const youth = data?.yearOverYear?.youthLanguage;
+  const content = resolveInfoSlide(slide, {
+    year: editionSurface(useOptionalEdition()).year,
+    baselineYear: data?.yearOverYear?.baseline.editionId,
+    youthWordCount: youth?.words.length,
+    hasPastWinners: Boolean(youth?.pastWinners?.length),
+  });
+  return <SlideInfo {...content} slideId={slide} />;
 }
 
 function SpeechesSlideWrapper({ phase }: { phase: 'intro' | 'result' }) {
@@ -194,7 +212,7 @@ function TopicRiserContextSlideWrapper() {
   const data = useFullWrappedData();
   const context = data?.yearOverYear ? buildTopicRiserContext(data.yearOverYear, data.topicAnalysis) : null;
   if (!data?.yearOverYear || !context) return null;
-  return <TopicRiserContextSlide context={context} baselineYear={data.yearOverYear.baseline.editionId} />;
+  return <TopicRiserContextSlide context={context} />;
 }
 
 function SignatureWordMovementSlideWrapper() {
@@ -203,10 +221,28 @@ function SignatureWordMovementSlideWrapper() {
   return <SignatureWordMovementSlide analysis={data.yearOverYear} />;
 }
 
+/** Who said the youth words, this year's and earlier ones: Gen Z, older MPs, or both. */
+function useYouthGeneration(): YouthGeneration | null {
+  const data = useFullWrappedData();
+  const youth = data?.yearOverYear?.youthLanguage;
+  const genz = data?.generations?.speakers;
+  if (!youth || !genz?.length) return null;
+  const speakers = [...youth.bySpeaker, ...(youth.pastWinners ?? []).flatMap(item => item.speakers ?? [])];
+  return youthGeneration(speakers, genz);
+}
+
 function YouthLanguageResultSlideWrapper() {
   const data = useFullWrappedData();
+  const generation = useYouthGeneration();
   if (!data?.yearOverYear) return null;
-  return <YouthLanguageResultSlide analysis={data.yearOverYear} />;
+  return <YouthLanguageResultSlide analysis={data.yearOverYear} generation={generation} />;
+}
+
+function YouthHistorySlideWrapper() {
+  const data = useFullWrappedData();
+  const generation = useYouthGeneration();
+  if (!data?.yearOverYear) return null;
+  return <YouthHistorySlide analysis={data.yearOverYear} generation={generation} />;
 }
 
 function MentionSlideWrapper({ part }: { part: 'intro' | 'info' }) {
@@ -218,8 +254,11 @@ function MentionSlideWrapper({ part }: { part: 'intro' | 'info' }) {
 
 function GenerationSlideWrapper({ part }: { part: 'intro' | 'info' }) {
   const generations = useFullWrappedData()?.generations;
+  const youthGeneration = useYouthGeneration();
   if (!generations) return null;
-  return part === 'intro' ? <GenerationIntroSlide generations={generations} /> : <GenerationInfoSlide generations={generations} />;
+  return part === 'intro'
+    ? <GenerationIntroSlide generations={generations} />
+    : <GenerationInfoSlide generations={generations} saidNoYouthWord={youthGeneration === 'older'} />;
 }
 
 // ============================================================================
@@ -239,7 +278,7 @@ export const SlideRenderer = memo(function SlideRenderer({
   const isQuizAnswered = useIsQuizAnswered(surface, slide);
   const answerQuiz = useAnswerQuiz(surface);
   const data = useFullWrappedData();
-  const quizzes = quizModel ?? (data ? buildConfiguredEditionQuizModel(data, edition?.content?.quiz) : {});
+  const quizzes = quizModel ?? (data ? buildConfiguredEditionQuizModel(data, edition?.content?.quiz, surface.year) : {});
   // The web route supplies its active plan. The optional fallback only preserves
   // compatibility for the unused legacy mobile wrapper while it is decommissioned.
   const activeQuizSlides = quizSlides ?? getQuizSlides(SLIDES);
@@ -263,7 +302,7 @@ export const SlideRenderer = memo(function SlideRenderer({
     }
     switch (slide) {
     case 'intro':
-      return <IntroSlide onStart={onComplete} />;
+      return <IntroSlide onStart={onComplete} questionCount={activeQuizSlides.length} />;
 
     // Topics: intro -> result (first section)
     case 'intro-topics':
@@ -364,7 +403,7 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'info-moin':
     case 'info-tone':
     case 'info-gender':
-      return <SlideInfo {...INFO_SLIDES[slide]} slideId={slide} />;
+      return <InfoSlideWrapper slide={slide} />;
 
     case 'reveal-topic-risers':
       return <RankingMovementSlideWrapper kind="topics" />;
@@ -380,6 +419,8 @@ export const SlideRenderer = memo(function SlideRenderer({
 
     case 'reveal-youth-language':
       return <YouthLanguageResultSlideWrapper />;
+    case 'reveal-youth-history':
+      return <YouthHistorySlideWrapper />;
 
 
 

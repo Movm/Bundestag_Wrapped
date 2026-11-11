@@ -1,4 +1,4 @@
-import { jumpToSlide, closeQuizResult, storyStart } from './story-navigation';
+import { jumpToSlide, expectInlineQuizResult, storyStart } from './story-navigation';
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from 'playwright/test';
 import { installEditionFixtures } from './fixtures';
@@ -53,8 +53,8 @@ test('provides persistent quiz feedback', async ({ page }) => {
   const quiz = page.locator('#quiz-topics');
   await expect(quiz).not.toHaveAttribute('inert', '');
   await quiz.getByRole('button').first().click();
-  await expect(quiz.getByRole('status')).toContainText('Richtige Antwort:');
-  await closeQuizResult(page);
+  await expect(quiz.getByRole('status')).toContainText(/Deine Antwort (ist richtig|ist falsch|wurde gespeichert)/);
+  await expectInlineQuizResult(page);
   await page.waitForTimeout(3000);
   await expect(quiz).not.toHaveAttribute('inert', '');
 });
@@ -117,8 +117,8 @@ for (const viewport of [{ width: 320, height: 568 }, { width: 390, height: 844 }
         await section.evaluate(element => element.parentElement!.scrollTo({ top: element.offsetTop, behavior: 'instant' }));
         await expect(section).toHaveAttribute('data-slide-effects-active', 'true');
         await expect(section).not.toHaveAttribute('inert', '');
-        const bounds = await section.evaluate(element => ({ content: element.scrollWidth, width: element.clientWidth }));
-        expect(bounds.content, await section.getAttribute('id') ?? path).toBeLessThanOrEqual(bounds.width + 1);
+        // Entrances may overshoot for a few frames (a stamp starts scaled up); judge the settled layout.
+        await expect.poll(() => section.evaluate(element => element.scrollWidth - element.clientWidth), { message: await section.getAttribute('id') ?? path }).toBeLessThanOrEqual(1);
       }
     }
   });

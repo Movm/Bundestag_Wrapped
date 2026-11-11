@@ -1,6 +1,6 @@
 {
-  "version": "2026-nominees-v4",
-  "description": "Die Top-10-Kandidaten von Langenscheidt für das Jugendwort 2026 ohne „Schere“, dessen Gebrauch als Entschuldigung sich in Reden nicht verlässlich von der Werkzeug- und Gerechtigkeitsschere trennen lässt. Mehrdeutige Wörter werden nur in redaktionell definierten Kontexten gezählt.",
+  "version": "2026-nominees-v5",
+  "description": "Die Top-10-Kandidaten von Langenscheidt für das Jugendwort 2026 ohne „Schere“, dessen Gebrauch als Entschuldigung sich in Reden nicht verlässlich von der Werkzeug- und Gerechtigkeitsschere trennen lässt. Mehrdeutige Wörter werden nur in redaktionell definierten Kontexten gezählt. „pastWinners“ sind die Jugendwörter der Vorjahre (2019 wurde keins gewählt); sie werden getrennt gezählt.",
   "terms": [
     {
       "word": "67",
@@ -15,5 +15,16 @@
     { "word": "peak", "years": [2026], "includeContexts": ["(?:ist|war|einfach|absolut)\\s+peak"] },
     { "word": "ragebait", "years": [2026], "winner": 2026 },
     { "word": "süper", "years": [2026] }
+  ],
+  "pastWinners": [
+    {"word": "fly", "winner": 2016, "includeContexts": ["(?:bin|bist|ist|sind|so|voll|mega)\\s+fly\\b"]},
+    {"word": "i bims", "winner": 2017},
+    {"word": "ehrenmann", "aliases": ["ehrenmann", "ehrenmänner", "ehrenfrau"], "winner": 2018},
+    {"word": "lost", "winner": 2020, "includeContexts": ["(?:komplett|völlig|total|voll|irgendwie|so|einfach|ziemlich|ganz)\\s+lost\\b"]},
+    {"word": "cringe", "winner": 2021},
+    {"word": "smash", "winner": 2022},
+    {"word": "goofy", "winner": 2023},
+    {"word": "aura", "winner": 2024, "includeContexts": ["aura[\\s-]?(?:farming|punkte|points)", "(?:null|krasse|viel|hat|haben)\\s+aura\\b"]},
+    {"word": "das crazy", "winner": 2025}
   ]
 }

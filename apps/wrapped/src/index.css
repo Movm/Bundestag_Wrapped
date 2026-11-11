@@ -524,6 +524,32 @@ body:has([data-story-scroll]) { overflow: hidden; }
 .story-scroll { touch-action: pan-y pinch-zoom; }
 .story-scroll:not([data-reading-mode="true"]) { scroll-snap-type: y mandatory; }
 .story-section { scroll-snap-align: start; scroll-snap-stop: always; }
+/* Push with depth: while the next slide scrolls in, the one leaving recedes at a
+   slower pace and dims. The timeline is the scroll position itself, so a finger
+   that holds, reverses or flings stays in control. Composite-only. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .story-scroll:not([data-reading-mode="true"]) .ds-slide {
+      animation: story-recede linear both;
+      animation-timeline: view(block);
+      animation-range: exit 0% exit 100%;
+    }
+    @keyframes story-recede {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(14vh); opacity: 0.35; }
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) and (max-width: 767px) {
+    @keyframes story-recede {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(8vh); opacity: 0.35; }
+    }
+  }
+}
 .story-next { position: absolute; bottom: max(1rem, env(safe-area-inset-bottom)); right: max(1.25rem, env(safe-area-inset-right, 0px)); z-index: 40; min-height: 3rem; padding: 0 1.4rem; font-size: 1rem; }
 /* When a slide offers sharing, the round share button takes the corner and "Weiter" moves left of it. */
 main:has(.story-share-trigger) .story-next { right: calc(max(1.25rem, env(safe-area-inset-right, 0px)) + 4.25rem); }
+
+/* Cut cover (SurfaceFlood): sits under the controls, never takes input. */
+.story-flood { position: absolute; inset: 0; z-index: 30; overflow: hidden; pointer-events: none; }
+.story-flood__disc { position: absolute; width: 200vmax; aspect-ratio: 1; border-radius: 50%; translate: -50% -50%; transform: scale(0.02); }

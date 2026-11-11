@@ -3,8 +3,7 @@ import type { Mention } from '@/generated/wrapped-contract-v1';
 import { Slide } from '@/design-system/components/Slide';
 import { Display, Eyebrow, Note } from '@/design-system/components/Type';
 import { ENTER } from '@/design-system/motion';
-
-const number = new Intl.NumberFormat('de-DE');
+import { times } from '@/lib/german-count';
 
 /** Flat humpback whale in the system's colours; decoration only. */
 function Whale() {
@@ -25,21 +24,29 @@ export function MentionIntroSlide({ mention }: { mention: Mention }) {
     <Slide shapes="orbit">
       <Display size="xl">{mention.headline ?? mention.label}</Display>
       <motion.p variants={ENTER.rise} className="ds-statement">
-        {mention.subtitle ?? `${number.format(mention.count)}× im Bundestag.`}
+        {mention.subtitle ? `${mention.subtitle} ` : ''}Sein Name fiel dort {times(mention.count)}.
       </motion.p>
       <Whale />
     </Slide>
   );
 }
 
-/** What happened, as one big statement, with the source of the facts. */
+/**
+ * What happened, with the source of the facts. With several background lines
+ * the first one is the heading ("Die Rettungsversuche blieben erfolglos."),
+ * the rest is the story.
+ */
 export function MentionInfoSlide({ mention }: { mention: Mention }) {
+  const background = mention.background ?? [];
+  const [heading, ...story] = background.length > 1 ? background : [null, ...background];
+  const sources = mention.source ? `${mention.source.includes(';') ? 'Quellen' : 'Quelle'}: ${mention.source}` : null;
   return (
-    <Slide shapes={false} footer={mention.source && <Note className="ds-note--plate">Quelle: {mention.source}</Note>}>
+    <Slide shapes={false} footer={sources && <Note className="ds-note--plate">{sources}</Note>}>
       <motion.div variants={ENTER.stamp} className="self-start rotate-[-4deg]">
-        <Eyebrow>Was geschah</Eyebrow>
+        <Eyebrow>Die Geschichte dahinter</Eyebrow>
       </motion.div>
-      {(mention.background ?? []).map(line => (
+      {heading && <Display size="lg">{heading}</Display>}
+      {story.map(line => (
         <motion.p key={line} variants={ENTER.rise} className="ds-statement">{line}</motion.p>
       ))}
     </Slide>

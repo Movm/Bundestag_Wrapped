@@ -1,4 +1,4 @@
-import { jumpToSlide, closeQuizResult } from './story-navigation';
+import { jumpToSlide, expectInlineQuizResult } from './story-navigation';
 import { expect, test } from 'playwright/test';
 import { installEditionFixtures } from './fixtures';
 
@@ -12,15 +12,15 @@ test('retains the active slide through rotation and allows subsequent navigation
   await expect(slide).not.toHaveAttribute('inert', '');
   const answer = slide.getByRole('button').first();
   await answer.click();
-  await expect(slide.getByRole('status')).toContainText('Richtige Antwort:');
-  await closeQuizResult(page);
+  await expect(slide.getByRole('status')).toContainText(/Deine Antwort (ist richtig|ist falsch|wurde gespeichert)/);
+  await expectInlineQuizResult(page);
   await slide.focus();
   await expect(slide).toBeFocused();
   await page.setViewportSize({ width: 844, height: 390 });
   await page.waitForTimeout(300);
   await expect(slide).not.toHaveAttribute('inert', '');
   await expect(slide).toBeFocused();
-  await expect(slide.getByRole('status')).toContainText('Richtige Antwort:');
+  await expect(slide.getByRole('status')).toContainText(/Deine Antwort (ist richtig|ist falsch|wurde gespeichert)/);
   await page.setViewportSize({ width: 390, height: 844 });
   await page.waitForTimeout(300);
   await expect(slide).not.toHaveAttribute('inert', '');

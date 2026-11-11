@@ -75,6 +75,38 @@ def _speeches(payload: Any) -> list[dict[str, Any]]:
     raise ValueError("comparison speeches.json must contain a speeches array")
 
 
+def _normalize_term(value: Any, seen: set[str]) -> dict[str, Any]:
+    """One lexicon term: word, casefolded aliases, context rules, winner year."""
+    if isinstance(value, str) and value.strip():
+        value = {"word": value, "aliases": [value]}
+    if not isinstance(value, dict):
+        raise ValueError("youth-word lexicon terms must be strings or objects")
+    word = value.get("word")
+    aliases = value.get("aliases", [word])
+    include_contexts = value.get("includeContexts", [])
+    exclude_contexts = value.get("excludeContexts", [])
+    if not isinstance(word, str) or not word.strip():
+        raise ValueError("each youth-word term requires a non-empty word")
+    if not isinstance(aliases, list) or not aliases or not all(isinstance(alias, str) and alias.strip() for alias in aliases):
+        raise ValueError(f"youth-word term {word!r} requires non-empty aliases")
+    if not all(isinstance(pattern, str) and pattern for pattern in include_contexts + exclude_contexts):
+        raise ValueError(f"youth-word term {word!r} has invalid context patterns")
+    winner = value.get("winner")
+    if winner is not None and (not isinstance(winner, int) or isinstance(winner, bool)):
+        raise ValueError(f"youth-word term {word!r} has an invalid winner year")
+    key = word.strip().casefold()
+    if key in seen:
+        raise ValueError(f"duplicate youth-word term: {word}")
+    seen.add(key)
+    return {
+        "word": key,
+        "aliases": list(dict.fromkeys(alias.strip().casefold() for alias in aliases)),
+        "includeContexts": include_contexts,
+        "excludeContexts": exclude_contexts,
+        "winner": winner,
+    }
+
+
 def _lexicon(path: Path) -> tuple[str, list[dict[str, Any]]]:
     payload = _json(path)
     version = payload.get("version")
@@ -83,40 +115,27 @@ def _lexicon(path: Path) -> tuple[str, list[dict[str, Any]]]:
         raise ValueError("youth-word lexicon requires a non-empty version")
     if not isinstance(terms, list):
         raise ValueError("youth-word lexicon requires a terms array")
-    normalized: list[dict[str, Any]] = []
     seen: set[str] = set()
-    for value in terms:
-        if isinstance(value, str) and value.strip():
-            value = {"word": value, "aliases": [value]}
-        if not isinstance(value, dict):
-            raise ValueError("youth-word lexicon terms must be strings or objects")
-        word = value.get("word")
-        aliases = value.get("aliases", [word])
-        include_contexts = value.get("includeContexts", [])
-        exclude_contexts = value.get("excludeContexts", [])
-        if not isinstance(word, str) or not word.strip():
-            raise ValueError("each youth-word term requires a non-empty word")
-        if not isinstance(aliases, list) or not aliases or not all(isinstance(alias, str) and alias.strip() for alias in aliases):
-            raise ValueError(f"youth-word term {word!r} requires non-empty aliases")
-        if not all(isinstance(pattern, str) and pattern for pattern in include_contexts + exclude_contexts):
-            raise ValueError(f"youth-word term {word!r} has invalid context patterns")
-        winner = value.get("winner")
-        if winner is not None and (not isinstance(winner, int) or isinstance(winner, bool)):
-            raise ValueError(f"youth-word term {word!r} has an invalid winner year")
-        key = word.strip().casefold()
-        if key in seen:
-            raise ValueError(f"duplicate youth-word term: {word}")
-        seen.add(key)
-        normalized.append({
-            "word": key,
-            "aliases": list(dict.fromkeys(alias.strip().casefold() for alias in aliases)),
-            "includeContexts": include_contexts,
-            "excludeContexts": exclude_contexts,
-            "winner": winner,
-        })
+    normalized = [_normalize_term(value, seen) for value in terms]
     if len(normalized) < 4:
         raise ValueError("youth-word lexicon requires at least four distinct terms")
     return version, normalized
+
+
+def _past_winners(path: Path) -> list[dict[str, Any]]:
+    """Jugendwörter of earlier years, counted apart from this year's candidates.
+
+    Optional ``pastWinners`` array in the lexicon; each term needs a winner year.
+    Kept separate so the candidate totals (by party, by speaker) stay about the
+    current vote.
+    """
+    payload = _json(path)
+    seen: set[str] = set()
+    terms = [_normalize_term(value, seen) for value in payload.get("pastWinners", [])]
+    for term in terms:
+        if term["winner"] is None:
+            raise ValueError(f"past youth-word winner {term['word']!r} requires a winner year")
+    return sorted(terms, key=lambda term: term["winner"])
 
 
 # Inflection endings accepted after the last word of an alias: English/German plural
@@ -272,6 +291,14 @@ def build_year_over_year(
         **({"speakers": _speaker_list(word_speakers[term["word"]])} if word_speakers.get(term["word"]) else {}),
     } for term in terms]
     youth_words.sort(key=lambda item: (-item["count"], -item["change"], item["word"]))
+    past_terms = _past_winners(youth_words_path)
+    past_counts, _, _, past_speakers = _youth_counts(current_speeches, past_terms)
+    past_winners = [{
+        "word": term["word"],
+        "winnerYear": term["winner"],
+        "count": past_counts[term["word"]],
+        **({"speakers": _speaker_list(past_speakers[term["word"]])} if past_speakers.get(term["word"]) else {}),
+    } for term in past_terms]
 
     return {
         "baseline": {
@@ -288,6 +315,7 @@ def build_year_over_year(
         "youthLanguage": {
             "lexiconVersion": lexicon_version,
             "words": youth_words,
+            **({"pastWinners": past_winners} if past_winners else {}),
             "byParty": [
                 {"party": party, "count": count}
                 for party, count in sorted(party_current.items(), key=lambda item: (-item[1], item[0]))

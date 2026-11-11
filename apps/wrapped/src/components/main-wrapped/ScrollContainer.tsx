@@ -3,8 +3,9 @@ import { ProgressSegments } from '@/design-system/components/ProgressSegments';
 import { surfaceForSlide } from '@/design-system/surfaces';
 import { MotionConfig } from 'motion/react';
 import { cn } from '@/lib/utils';
-import { boundedTarget, WheelGesture } from './slide-navigation';
-import { StoryContext } from './StoryContext';
+import { boundedTarget, isChapterCut, WheelGesture } from './slide-navigation';
+import { SurfaceFlood, type SurfaceFloodRef } from './SurfaceFlood';
+import { StoryContext, type Arrival } from './StoryContext';
 
 interface ScrollContainerProps {
   children: ReactNode;
@@ -42,6 +43,8 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
     }, [navigationOpen, containerRef]);
     const callback = useRef(onSectionChange);
     useLayoutEffect(() => { callback.current = onSectionChange; });
+    const arrival = useRef<Arrival>('smooth');
+    const flood = useRef<SurfaceFloodRef>(null);
     const cancelNavigation = useRef(() => {});
     const controller = useRef({ next: (_id?: string, _instant?: boolean) => {}, previous: (_instant?: boolean) => {}, restore: (_id: string) => {} });
     const [activeId, setActiveId] = useState(initialSection ?? ids[0] ?? '');
@@ -119,7 +122,14 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
       const navigate = (requested: number, instant = false, restore = false) => {
         const index = restore ? Math.max(0, Math.min(requested, sections.length - 1)) : boundedTarget(active, requested, blocked());
         target = index;
+        arrival.current = instant || reduced.matches ? 'instant' : 'smooth';
         if (instant) wantFocus();
+        // Only a deliberate cut into a new chapter gets a colour flood: not a restore, not a move inside a chapter.
+        if (instant && !restore && !reduced.matches && index !== active && isChapterCut(sections[active].id, sections[index].id)) {
+          const trigger = document.activeElement instanceof HTMLButtonElement ? document.activeElement.getBoundingClientRect() : null;
+          flood.current?.play(surfaceForSlide(sections[active].id), surfaceForSlide(sections[index].id),
+            trigger ? { x: trigger.left + trigger.width / 2, y: trigger.top + trigger.height / 2 } : { x: window.innerWidth / 2, y: window.innerHeight * 0.85 });
+        }
         container.scrollTo({ top: top(index), behavior: instant || reduced.matches ? 'instant' : 'smooth' });
         schedule();
       };
@@ -144,8 +154,10 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
         if (direction) step(direction);
       };
       const key = (event: KeyboardEvent) => {
-        if (reading.current || event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey ||
-          (event.target as HTMLElement).closest('button, input, textarea, select, a, [contenteditable="true"], [role="dialog"]')) return;
+        if (reading.current || event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey) return;
+        const control = (event.target as HTMLElement).closest('button, input, textarea, select, a, [contenteditable="true"], [role="dialog"]');
+        // An answered quiz option is inert (aria-disabled) and keeps focus, so the keys move the story on from there.
+        if (control && control.getAttribute('aria-disabled') !== 'true') return;
         // Also support keyboard navigation before the first pointer interaction.
         if (event.target !== document.body && !container.contains(event.target as Node)) return;
         const direction = ['ArrowDown', 'PageDown', ' '].includes(event.key) ? (event.shiftKey ? -1 : 1)
@@ -157,6 +169,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
       const touchStart = (event: TouchEvent) => {
         if (event.touches.length !== 1) return;
         touching = true;
+        arrival.current = 'smooth';
         touchY = event.touches[0].clientY;
         touchX = event.touches[0].clientX;
         target = null;
@@ -248,8 +261,9 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
           <div ref={containerRef} data-story-scroll tabIndex={0} role="region" aria-label="Wrapped-Folien"
             data-reading-mode={readingMode}
             className={cn('story-scroll relative overflow-y-auto overscroll-contain', className)}>
-            <StoryContext value={{ activeId, readingMode, next: goNext }}>{children}</StoryContext>
+            <StoryContext value={{ activeId, readingMode, next: goNext, arrival }}>{children}</StoryContext>
           </div>
+          <SurfaceFlood ref={flood} />
           <ProgressSegments index={position.index} count={position.count} surface={surfaceForSlide(activeId)} />
           <span className="sr-only" role="status" aria-live="polite">Folie {position.index + 1} von {position.count}</span>
           {!position.blocked && position.index < position.count - 1 && !navigationOpen && <button
@@ -261,7 +275,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
               setNavigationOpen(!navigationOpen);
             }}>{navigationOpen ? 'Navigation schließen' : 'Foliennavigation'}</button>
           <nav id={navigationId} hidden={!navigationOpen} aria-label="Foliennavigation" className="story-navigation">
-            <button type="button" disabled={position.index === 0} onClick={event => controller.current.previous(event.detail === 0)}>Zurück</button>
+            <button type="button" disabled={position.index === 0} onClick={event => controller.current.previous(event.detail === 0)}>Zur vorherigen Folie</button>
             <span className="text-xs text-white/80" aria-hidden="true">Folie {position.index + 1} von {position.count}</span>
             <button type="button" disabled={(!readingMode && position.blocked) || position.index === position.count - 1} onClick={event => controller.current.next(undefined, event.detail === 0)}>Weiter</button>
             <label className="flex items-center justify-center gap-2 min-h-11 text-sm col-span-3">

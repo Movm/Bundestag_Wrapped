@@ -1,7 +1,8 @@
 """How the Gen Z MPs at the lectern differ from their older colleagues.
 
 Birth years come from the committed lookup built out of the Bundestag MdB
-Stammdaten (scripts/build_speaker_gender.py). The word comparison holds the
+Stammdaten (scripts/build_speaker_gender.py), plus a few Abgeordnetenwatch
+entries for MPs missing there; the Stammdaten win where both exist. The word comparison holds the
 party mix constant: older MPs' counts are reweighted to the Gen Z party shares,
 so a word does not rank only because most Gen Z MPs sit in one party.
 """

@@ -1377,6 +1377,32 @@
         }
       }
     },
+    "YouthPastWinner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "word",
+        "winnerYear",
+        "count"
+      ],
+      "properties": {
+        "word": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "winnerYear": {
+          "$ref": "#/$defs/Count"
+        },
+        "count": {
+          "$ref": "#/$defs/Count"
+        },
+        "speakers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/YouthWordSpeaker"
+          }
+        }
+      }
+    },
     "YouthLanguageAnalysis": {
       "type": "object",
       "additionalProperties": false,
@@ -1406,6 +1432,13 @@
           "type": "array",
           "items": {
             "$ref": "#/$defs/NamedPartyCount"
+          }
+        },
+        "pastWinners": {
+          "type": "array",
+          "description": "Jugendwörter of earlier years, oldest first, counted apart from the candidates.",
+          "items": {
+            "$ref": "#/$defs/YouthPastWinner"
           }
         }
       }

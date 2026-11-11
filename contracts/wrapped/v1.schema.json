@@ -216,9 +216,13 @@
       "type": "object", "additionalProperties": false, "required": ["word", "count", "previousCount", "change"],
       "properties": { "word": { "$ref": "#/$defs/NonEmptyString" }, "count": { "$ref": "#/$defs/Count" }, "previousCount": { "$ref": "#/$defs/Count" }, "change": { "type": "integer" }, "winnerYear": { "$ref": "#/$defs/Count" }, "speakers": { "type": "array", "items": { "$ref": "#/$defs/YouthWordSpeaker" } } }
     },
+    "YouthPastWinner": {
+      "type": "object", "additionalProperties": false, "required": ["word", "winnerYear", "count"],
+      "properties": { "word": { "$ref": "#/$defs/NonEmptyString" }, "winnerYear": { "$ref": "#/$defs/Count" }, "count": { "$ref": "#/$defs/Count" }, "speakers": { "type": "array", "items": { "$ref": "#/$defs/YouthWordSpeaker" } } }
+    },
     "YouthLanguageAnalysis": {
       "type": "object", "additionalProperties": false, "required": ["lexiconVersion", "words", "byParty", "bySpeaker"],
-      "properties": { "lexiconVersion": { "$ref": "#/$defs/NonEmptyString" }, "words": { "type": "array", "items": { "$ref": "#/$defs/YouthWordCount" } }, "byParty": { "type": "array", "items": { "$ref": "#/$defs/PartyCount" } }, "bySpeaker": { "type": "array", "items": { "$ref": "#/$defs/NamedPartyCount" } } }
+      "properties": { "lexiconVersion": { "$ref": "#/$defs/NonEmptyString" }, "words": { "type": "array", "items": { "$ref": "#/$defs/YouthWordCount" } }, "byParty": { "type": "array", "items": { "$ref": "#/$defs/PartyCount" } }, "bySpeaker": { "type": "array", "items": { "$ref": "#/$defs/NamedPartyCount" } }, "pastWinners": { "type": "array", "description": "Jugendwörter of earlier years, oldest first, counted apart from the candidates.", "items": { "$ref": "#/$defs/YouthPastWinner" } } }
     },
     "SignatureWordMovement": {
       "type": "object", "additionalProperties": false, "required": ["word", "currentRank", "previousRank"],

@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { playSound } from '@/lib/sounds';
+import { seededShuffle } from './layouts';
 
 /** Input shapes accepted from slides (legacy config + edition questions). */
 export interface QuizConfig {
@@ -57,9 +58,9 @@ export interface QuizEngine {
   /** null while unanswered or when restored from storage without the pick. */
   selected: string | null;
   isCorrect: boolean;
-  /** Short visible verdict ("Richtig!", "Daneben – X", "Gespeichert"). */
+  /** Short visible verdict ("Genau richtig!", "Diesmal nicht. Richtig ist: X", "Deine Antwort ist gespeichert."). */
   verdict: string;
-  /** Full sentence for the live region; e2e and unit tests pin "Richtige Antwort:". */
+  /** Full sentence for the live region; e2e and unit tests pin "Richtig ist:". */
   spoken: string;
 }
 
@@ -70,8 +71,15 @@ const LETTERS = 'ABCDEFGH';
  * same engine, so scoring, sounds and announcements behave identically
  * whichever variant a quiz uses.
  */
-export function useQuizEngine(config: AnyQuizConfig, options: { isAnswered?: boolean; onAnswer: (correct: boolean) => void; onCorrect?: () => void }): QuizEngine {
-  const quiz = useMemo(() => normalizeQuiz(config), [config]);
+export function useQuizEngine(
+  config: AnyQuizConfig,
+  options: { isAnswered?: boolean; onAnswer: (correct: boolean) => void; onCorrect?: () => void; shuffleSeed?: string },
+): QuizEngine {
+  const { shuffleSeed } = options;
+  const quiz = useMemo(() => {
+    const normalized = normalizeQuiz(config);
+    return shuffleSeed ? { ...normalized, options: seededShuffle(normalized.options, shuffleSeed) } : normalized;
+  }, [config, shuffleSeed]);
   const [selected, setSelected] = useState<string | null>(null);
   const answered = options.isAnswered === true || selected !== null;
   const isCorrect = selected === quiz.correctAnswer;
@@ -102,7 +110,9 @@ export function useQuizEngine(config: AnyQuizConfig, options: { isAnswered?: boo
     answered,
     selected,
     isCorrect,
-    verdict: selected === null ? 'Gespeichert' : isCorrect ? 'Richtig!' : `Daneben – ${quiz.correctAnswer}`,
-    spoken: `${selected === null ? 'Antwort gespeichert.' : isCorrect ? 'Richtig!' : 'Nicht ganz.'} Richtige Antwort: ${quiz.correctAnswer}`,
+    verdict: selected === null ? 'Deine Antwort ist gespeichert.' : isCorrect ? 'Genau richtig!' : `Diesmal nicht. Richtig ist: ${quiz.correctAnswer}`,
+    spoken: selected === null
+      ? `Deine Antwort wurde gespeichert. Richtig ist: ${quiz.correctAnswer}.`
+      : isCorrect ? 'Deine Antwort ist richtig.' : `Deine Antwort ist falsch. Richtig ist: ${quiz.correctAnswer}.`,
   };
 }

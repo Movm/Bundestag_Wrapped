@@ -348,11 +348,19 @@ export interface YouthWordCount {
   "speakers"?: Array<YouthWordSpeaker>;
 }
 
+export interface YouthPastWinner {
+  "word": NonEmptyString;
+  "winnerYear": Count;
+  "count": Count;
+  "speakers"?: Array<YouthWordSpeaker>;
+}
+
 export interface YouthLanguageAnalysis {
   "lexiconVersion": NonEmptyString;
   "words": Array<YouthWordCount>;
   "byParty": Array<PartyCount>;
   "bySpeaker": Array<NamedPartyCount>;
+  "pastWinners"?: Array<YouthPastWinner>;
 }
 
 export interface SignatureWordMovement {

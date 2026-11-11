@@ -1,7 +1,9 @@
 import type { QuizQuestion, WrappedData } from '@/data/wrapped';
-import { youthWordMeaning } from './youth-words';
+import { TOPIC_BY_ID } from '@/shared/constants/topics';
+import { youthGeneration, youthWordMeaning, type YouthGeneration } from './youth-words';
 import type { EditionQuizConfiguration } from '@/generated/wrapped-contract-v1';
 import { MissingMetricError, topInterrupter, topSpeakerByWords, topTopic } from './metrics';
+import { atParty, capitalize, theParty, times as spelledTimes } from '@/lib/german-count';
 
 export type EditionQuizModel = Record<string, QuizQuestion>;
 
@@ -65,6 +67,12 @@ function jugendwortQuestion(word: { word: string; count: number; winnerYear?: nu
 interface WordSpeaker { name: string; party: string; count: number }
 type YouthWord = { word: string; count: number; winnerYear?: number; speakers?: WordSpeaker[] };
 
+/** Who said it: the word is the question, not a claim that it won a Jugendwort title. */
+const youthQuestion = (word: string) => `„${capitalize(word)}“ im Bundestag. Wer hat’s gesagt?`;
+
+/** "Dr. Zoe Mayer" → "Zoe Mayer": titles end in a dot. */
+const plainName = (name: string) => name.split(/\s+/).filter(part => part && !part.endsWith('.')).join(' ');
+
 const speakerLabel = (speaker: { name: string; party: string }) => `${speaker.name} (${speaker.party})`;
 
 /**
@@ -99,17 +107,48 @@ function jugendwortSpeakerQuestion(
     if (!picked.includes(speaker)) picked.push(speaker);
   }
   const answer = speakerLabel(winner);
-  const times = (count: number) => (count === 1 ? 'einmal' : `${number.format(count)}-mal`);
   const alsoSaid = others.length
-    ? ` Auch gesagt haben es ${others.map(speaker => `${speakerLabel(speaker)} (${times(speaker.count)})`).join(', ')}.`
+    ? ` Auch gesagt haben es ${others.map(speaker => `${speaker.name} (${speaker.party}, ${spelledTimes(speaker.count)})`).join(', ')}.`
     : '';
   const meaning = youthWordMeaning(word.word) ? ` ${youthWordMeaning(word.word)}` : '';
   return question(
     'quiz-youth-language',
-    `Das Jugendwort ${word.winnerYear} heißt „${word.word}“. Wer hat es im Bundestag gesagt?`,
+    youthQuestion(word.word),
     [answer, ...picked.map(speakerLabel)],
     answer,
-    `${answer} sagte „${word.word}“ ${times(winner.count)}.${alsoSaid}${meaning} Das sagt nur, dass das Wort fiel, nicht, wie es gemeint war.`,
+    `${answer} sagte „${word.word}“ ${spelledTimes(winner.count)}.${alsoSaid}${meaning} Das sagt nur, dass das Wort fiel, nicht, wie es gemeint war.`,
+  );
+}
+
+const GENERATION_OPTIONS: Record<YouthGeneration | 'none', string> = {
+  genz: 'Die Gen Z',
+  older: 'Die Älteren',
+  both: 'Beide',
+  none: 'Niemand',
+};
+
+/**
+ * Opens the youth story: did the Jugendwort come from the young MPs? Fixed
+ * option order (young, older, both, nobody), so the answer is not always first.
+ */
+function jugendwortGenerationQuestion(
+  word: YouthWord & { speakers: WordSpeaker[] },
+  genzSpeakers: ReadonlyArray<{ name: string }>,
+): QuizQuestion | undefined {
+  const generation = youthGeneration(word.speakers, genzSpeakers);
+  if (!generation) return undefined;
+  const names = new Intl.ListFormat('de', { type: 'conjunction' }).format(word.speakers.map(speakerLabel));
+  const verdict = {
+    genz: 'Alle gehören zur Gen Z.',
+    older: word.speakers.length === 1 ? 'Nicht aus der Gen Z.' : 'Niemand davon gehört zur Gen Z.',
+    both: 'Jung und Alt.',
+  }[generation];
+  return question(
+    'quiz-youth-language',
+    youthQuestion(word.word),
+    [GENERATION_OPTIONS.genz, GENERATION_OPTIONS.older, GENERATION_OPTIONS.both, GENERATION_OPTIONS.none],
+    GENERATION_OPTIONS[generation],
+    `Gesagt haben es ${names}. ${verdict}${youthWordMeaning(word.word) ? ` ${youthWordMeaning(word.word)}` : ''}`,
   );
 }
 
@@ -122,10 +161,10 @@ function genzPartyQuestion(generations: { speakerCount: number; parties: Array<{
   if (!winner || others.some(item => item.count >= winner.count)) return undefined;
   return question(
     'quiz-genz',
-    'Welche Fraktion hat die meisten Gen-Z-Abgeordneten, die gesprochen haben?',
+    'Welche Fraktion bringt die meisten Stimmen der Gen Z ans Rednerpult?',
     [winner.party, ...others.map(item => item.party)],
     winner.party,
-    `${winner.party}: ${number.format(winner.count)} der ${number.format(generations.speakerCount)} Gen-Z-Abgeordneten, die im Plenum sprachen.`,
+    `${winner.party}: ${number.format(winner.count)} der ${number.format(generations.speakerCount)} erfassten Gen-Z-Abgeordneten gehören zu ihrer Fraktion.${winner.count * 2 > generations.speakerCount ? ' Damit stellt sie mehr als die Hälfte.' : ''}`,
   );
 }
 
@@ -138,18 +177,37 @@ function mentionQuestion(mention: { label: string; speakers: Array<{ name: strin
   const [winner, ...others] = mention.speakers;
   if (!winner || others.some(speaker => speaker.count >= winner.count)) return undefined;
   const answer = speakerLabel(winner);
-  const times = winner.count === 1 ? 'einmal' : `${number.format(winner.count)}-mal`;
+  const runnerUp = others[0]?.count ?? 0;
+  const rest = runnerUp === 1 ? 'Bei allen anderen, die den Namen nannten, blieb es bei einem Mal.' : `Alle anderen kamen auf höchstens ${spelledTimes(runnerUp)}.`;
   return question(
     'quiz-mention',
     `Wer hat ${mention.label} im Plenum am häufigsten erwähnt?`,
     [answer, ...others.slice(0, 3).map(speakerLabel)],
     answer,
-    `${answer} erwähnte ${mention.label} ${times}, alle anderen höchstens ${others[0]?.count === 1 ? 'einmal' : `${number.format(others[0]?.count ?? 0)}-mal`}. Gezählt wird, wie oft der Name fiel, nicht in welchem Zusammenhang.`,
+    `${plainName(winner.name)} erwähnte ${mention.label} ${spelledTimes(winner.count)}. ${rest}`,
   );
 }
 
+/**
+ * The group the signature-word quiz is about: pinned by the edition, otherwise
+ * the one whose strongest word stands out most. The chapter intro uses it too.
+ */
+export function signatureQuizParty(data: WrappedData, configuration?: EditionQuizConfiguration) {
+  const pinned = configuration?.groups.find(group => group.id === 'quiz-signature')?.party;
+  return [...data.parties]
+    .filter(party => party.signatureWords.length >= 4 && (!pinned || party.party === pinned))
+    .sort((a, b) => (b.signatureWords[0]?.ratio ?? 0) - (a.signatureWords[0]?.ratio ?? 0))[0];
+}
+
+/** "rund doppelt so häufig", "rund dreimal …", otherwise "2,6-mal so häufig". */
+function ratioPhrase(ratio: number): string {
+  if (Math.abs(ratio - 2) <= 0.15) return 'rund doppelt so häufig';
+  if (Math.abs(ratio - 3) <= 0.15) return 'rund dreimal so häufig';
+  return `${ratio.toLocaleString('de-DE', { maximumFractionDigits: 1 })}-mal so häufig`;
+}
+
 /** Builds deterministic, evidence-backed quiz questions for one edition. */
-export function buildEditionQuizModel(data: WrappedData, configuration?: EditionQuizConfiguration): EditionQuizModel {
+export function buildEditionQuizModel(data: WrappedData, configuration?: EditionQuizConfiguration, year?: number | null): EditionQuizModel {
   const model: EditionQuizModel = {};
   addQuestion(model, 'quiz-topic-riser', () => {
     const comparison = data.yearOverYear;
@@ -160,12 +218,19 @@ export function buildEditionQuizModel(data: WrappedData, configuration?: Edition
     const movement = winner.previousRank === null
       ? `neu auf Platz ${winner.currentRank}`
       : `von Platz ${winner.previousRank} auf Platz ${winner.currentRank}`;
+    const name = (id: string) => TOPIC_BY_ID[id]?.name ?? id;
+    // "Platz 1" is only promised when the winner really leads and had a prior rank.
+    const leads = winner.currentRank === 1 && winner.previousRank !== null;
     return question(
       'quiz-topic-riser',
-      `Über welches Thema wird gegenüber ${baseline} deutlich mehr geredet?`,
-      picked.options,
-      winner.label,
-      `${winner.label} stieg ${movement}. Gemessen daran, wie viele Wörter in den Reden zum Thema gehören, nicht an der Zahl der Reden.`,
+      leads
+        ? `Welches Thema hat sich${year ? ` ${year}` : ''} auf Platz 1 geschoben?`
+        : `Welches Thema ist gegenüber ${baseline} am weitesten nach oben geklettert?`,
+      picked.options.map(name),
+      name(winner.label),
+      leads
+        ? `${name(winner.label)}! Im gleichen Zeitraum ${baseline} noch auf Platz ${winner.previousRank}, liegt das Thema dieses Mal vorn.`
+        : `${name(winner.label)} stieg ${movement}. Gemessen daran, wie viele Wörter in den Reden zum Thema gehören, nicht an der Zahl der Reden.`,
     );
   });
 
@@ -196,6 +261,9 @@ export function buildEditionQuizModel(data: WrappedData, configuration?: Edition
     const jugendwort = [...(comparison?.youthLanguage.words ?? [])]
       .filter(item => item.winnerYear !== undefined)
       .sort((a, b) => (b.winnerYear ?? 0) - (a.winnerYear ?? 0))[0];
+    if (jugendwort?.speakers?.length && data.generations?.speakers.length) {
+      return jugendwortGenerationQuestion({ ...jugendwort, speakers: jugendwort.speakers }, data.generations.speakers);
+    }
     if (jugendwort?.speakers?.length) {
       return jugendwortSpeakerQuestion(
         { ...jugendwort, speakers: jugendwort.speakers },
@@ -237,16 +305,19 @@ export function buildEditionQuizModel(data: WrappedData, configuration?: Edition
 
   addQuestion(model, 'quiz-signature', () => {
     // An edition can pin the party; otherwise the strongest signature word wins.
-    const pinned = configuration?.groups.find(group => group.id === 'quiz-signature')?.party;
-    const signatureParty = [...data.parties]
-      .filter(party => party.signatureWords.length >= 4 && (!pinned || party.party === pinned))
-      .sort((a, b) => (b.signatureWords[0]?.ratio ?? 0) - (a.signatureWords[0]?.ratio ?? 0))[0];
+    const signatureParty = signatureQuizParty(data, configuration);
     if (signatureParty?.signatureWords[0]) {
       const winnerWord = signatureParty.signatureWords[0];
       const ratio = winnerWord.ratio.toLocaleString('de-DE', { maximumFractionDigits: 1 });
       // The frozen 2025 edition (no configuration) keeps its published wording.
       return configuration
-        ? question('quiz-signature', `Welches Wort fällt bei ${signatureParty.party} im Vergleich zu den anderen Fraktionen besonders auf?`, signatureParty.signatureWords.map(word => word.word), winnerWord.word, `„${winnerWord.word}“ sagt ${signatureParty.party} ${ratio}× so oft wie die anderen Fraktionen im Schnitt, gemessen pro 1.000 Wörter.`)
+        ? question(
+          'quiz-signature',
+          `Welches Wort steht ${atParty(signatureParty.party)} auf Platz 1 unserer Liste typischer Wörter?`,
+          signatureParty.signatureWords.map(word => capitalize(word.word)),
+          capitalize(winnerWord.word),
+          `„${capitalize(winnerWord.word)}“ liegt vorn. ${theParty(signatureParty.party)} verwendet das Wort ${ratioPhrase(winnerWord.ratio)} wie die übrigen Fraktionen im Schnitt – gemessen pro 1.000 Wörter. Für unsere Rangliste zählt beides: wie häufig ein Wort fällt und wie stark es sich von den anderen Fraktionen abhebt.`,
+        )
         : question('quiz-signature', `Welches Wort nutzt ${signatureParty.party} am meisten im Vergleich zu anderen?`, signatureParty.signatureWords.map(word => word.word), winnerWord.word, `„${winnerWord.word}“ ist bei ${signatureParty.party} ${ratio}× häufiger vertreten.`);
     }
     return undefined;
@@ -330,6 +401,7 @@ export function applyEditionQuizConfiguration(
 export function buildConfiguredEditionQuizModel(
   data: WrappedData,
   configuration?: EditionQuizConfiguration,
+  year?: number | null,
 ): EditionQuizModel {
-  return applyEditionQuizConfiguration(buildEditionQuizModel(data, configuration), configuration);
+  return applyEditionQuizConfiguration(buildEditionQuizModel(data, configuration, year), configuration);
 }

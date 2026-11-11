@@ -110,6 +110,7 @@
   overflow-wrap: break-word;
   color: inherit;
 }
+.ds-mask { overflow: clip; padding-block: 0.22em 0.16em; margin-block: -0.22em -0.16em; }
 .ds-display--wide { font-family: var(--font-wide); font-weight: 900; font-stretch: 118%; letter-spacing: -0.035em; }
 .ds-display--hero { font-size: clamp(2.5rem, 0.25rem + min(12.5vw, 15vh), 12.5rem); line-height: 0.84; letter-spacing: -0.045em; }
 .ds-display--xl { font-size: clamp(2.25rem, 1rem + min(7.4vw, 10vh), 8rem); line-height: 0.86; }
@@ -333,6 +334,7 @@
 }
 .ds-result[data-correct='false'] { background: var(--color-wr-ink); color: #fff; }
 .ds-result__verdict { margin: 0; font-family: var(--font-wide); font-weight: 900; font-stretch: 125%; font-size: clamp(2rem, 1.25rem + min(3.4vw, 5vh), 4.25rem); line-height: 0.9; letter-spacing: -0.045em; text-transform: uppercase; }
+.ds-result__answer { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; font-family: var(--font-wide); font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem); line-height: 1.1; overflow-wrap: anywhere; }
 .ds-result__text { margin: 0; font-size: 1.0625rem; font-weight: 600; line-height: 1.4; text-wrap: pretty; }
 
 /* ─── Shell (toolbar, next button, navigation) ─────────────────────── */

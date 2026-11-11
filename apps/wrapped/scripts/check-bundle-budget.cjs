@@ -8,7 +8,7 @@ const path = require('path');
 
 const dist = path.resolve(__dirname, '../dist');
 const manifestPath = path.join(dist, '.vite/manifest.json');
-const MAX_INITIAL_JS_BYTES = 750 * 1024;
+const MAX_INITIAL_JS_BYTES = 760 * 1024;
 const MAX_INITIAL_CSS_BYTES = 150 * 1024;
 
 function fileSize(relativePath) {

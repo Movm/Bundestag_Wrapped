@@ -92,10 +92,10 @@ const os = require('node:os');
   }
   try {
     await page.goto(`${base}/${edition}`);
-    await page.getByRole('button', { name: 'Starten', exact: true }).waitFor();
+    await page.getByRole('button', { name: 'Los geht’s', exact: true }).waitFor();
     await page.waitForTimeout(1000);
     await sample('intro-idle', async () => {});
-    await sample('intro-start', () => page.getByRole('button', { name: 'Starten', exact: true }).click(), 1200);
+    await sample('intro-start', () => page.getByRole('button', { name: 'Los geht’s', exact: true }).click(), 1200);
     for (const id of ['reveal-topics', 'chart-speeches', 'reveal-tone']) {
       await sample(id, () => page.locator(`[data-slide-id="${id}"]`).evaluate(section => {
         section.parentElement.scrollTo({ top: section.offsetTop, behavior: 'instant' });

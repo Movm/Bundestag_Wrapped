@@ -58,7 +58,7 @@ describe('ThemeMusicManager', () => {
     expect(music.getCurrentTheme()).toBe('pressure');
   });
 
-  it('starts the primed track synchronously inside the "Starten" click', () => {
+  it('starts the primed track synchronously inside the "Los geht’s" click', () => {
     const music = new ThemeMusicManager();
     music.prime('pressure');
     music.startPrimed();

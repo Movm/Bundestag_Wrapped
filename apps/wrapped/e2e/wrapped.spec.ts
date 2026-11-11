@@ -1,4 +1,4 @@
-import { jumpToSlide, closeQuizResult, storyStart } from './story-navigation';
+import { answerQuiz, jumpToSlide, expectInlineQuizResult, storyStart } from './story-navigation';
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from 'playwright/test';
 
@@ -75,11 +75,10 @@ test('completes the fixture journey with a quiz gate, mixed answers, and the act
     const section = page.locator(`[data-slide-id="${slide}"]`);
     if (slide.startsWith('quiz-')) {
       const answers = section.getByRole('button');
-      await expect(answers.first()).toBeVisible();
-      await answers.nth(slide === 'quiz-signature' ? 1 : 0).click();
+      await answerQuiz(page, slide, slide !== 'quiz-signature');
       // Feedback stays on the slide until the user explicitly continues.
       await expect(answers.first()).toBeDisabled();
-      await closeQuizResult(page);
+      await expectInlineQuizResult(page);
       await scrollToNextSlide(page, slide, nextSlide);
       continue;
     }
@@ -87,12 +86,12 @@ test('completes the fixture journey with a quiz gate, mixed answers, and the act
     await scrollToNextSlide(page, slide, nextSlide);
   }
 
-  await expect(page.locator('[data-slide-id="share"]')).toContainText('Wie gut kennst du den Bundestag?');
+  await expect(page.locator('[data-slide-id="share"]')).toContainText('Jetzt sind die anderen dran.');
   await expect(page.locator('[data-slide-id^="quiz-"]')).toHaveCount(6);
   await expect.poll(() => page.evaluate(() => localStorage.getItem('quiz-storage-v2'))).toContain('"quiz-signature":false');
   await expect.poll(() => page.evaluate(() => localStorage.getItem('quiz-storage-v2'))).toContain('"quiz-topics":true');
   await scrollToNextSlide(page, 'share', 'finale');
-  await expect(page.locator('[data-slide-id="finale"]').getByRole('heading', { name: 'Bundestag Wrapped' })).toBeVisible();
+  await expect(page.locator('[data-slide-id="finale"]').getByRole('heading', { name: /Ein paar Überraschungen/ })).toBeVisible();
 });
 
 test('uses the active edition for share and download output', async ({ page }) => {
@@ -113,7 +112,7 @@ test('uses the active edition for share and download output', async ({ page }) =
   await jumpToSlide(page, 'share');
 
   const shareSlide = page.locator('[data-slide-id="share"]');
-  await expect(shareSlide.getByRole('heading', { name: 'Wie gut kennst du den Bundestag?' })).toBeVisible();
+  await expect(shareSlide.getByRole('heading', { name: /Jetzt sind die anderen dran/ })).toBeVisible();
   await expect(shareSlide.getByRole('button', { name: 'Teilen' }).first()).toBeVisible();
 
   const downloadPromise = page.waitForEvent('download');
@@ -185,18 +184,18 @@ test('restores different answers when switching between annual routes', async ({
   await page.goto('/2025');
   await storyStart(page).click();
   await jumpToSlide(page, 'quiz-topics');
-  await page.locator('[data-slide-id="quiz-topics"]').getByRole('button').first().click();
+  await answerQuiz(page, 'quiz-topics', true);
 
   await page.goto('/2026');
   await jumpToSlide(page, 'quiz-topics');
   const secondEditionAnswers = page.locator('[data-slide-id="quiz-topics"]').getByRole('button');
   await expect(secondEditionAnswers.first()).toBeEnabled();
-  await secondEditionAnswers.nth(1).click();
+  await answerQuiz(page, 'quiz-topics', false);
 
   await page.goto('/2025');
   await jumpToSlide(page, 'quiz-topics');
   await expect(page.locator('[data-slide-id="quiz-topics"]').getByRole('button').first()).toBeDisabled();
-  await expect(page.locator('[data-slide-id="quiz-topics"]').getByText('Scroll weiter oder wähle „Weiter“.')).toBeVisible();
+  await expect(page.locator('[data-slide-id="quiz-topics"]').getByText('Weiter geht es mit der nächsten Folie.')).toBeVisible();
   const scopes = await page.evaluate(() => JSON.parse(localStorage.getItem('quiz-storage-v2') ?? '{}').state?.answersByScope);
   expect(scopes['quiz:2025:fixture-a']['quiz-topics']).toBe(true);
   expect(scopes['quiz:2026:fixture-b']['quiz-topics']).toBe(false);
@@ -352,10 +351,8 @@ test('runs Axe against the annual start, answered quiz, search, speaker index, p
   await answer.focus();
   await page.keyboard.press('Enter');
   await expect(answer).toBeDisabled();
-  // The result dialog must pass Axe too; scan it open, then close it.
-  await expect(page.getByRole('dialog')).toBeVisible();
+  await expectInlineQuizResult(page);
   await scan();
-  await closeQuizResult(page);
 
   for (const path of ['/2025/suche', '/2025/abgeordnete', '/2025/abgeordnete/shared-speaker', '/does-not-exist']) {
     await page.goto(path);

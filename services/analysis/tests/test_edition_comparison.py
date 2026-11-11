@@ -214,3 +214,36 @@ def test_speakers_sort_by_count_then_name(tmp_path):
     result = build_year_over_year({}, speeches, baseline, lexicon)
     safe = next(item for item in result["youthLanguage"]["words"] if item["word"] == "safe")
     assert [item["name"] for item in safe["speakers"]] == ["Mia", "Adam", "Zora"]
+
+
+def test_past_winners_are_counted_apart_from_the_candidates(tmp_path):
+    baseline = tmp_path / "baseline"
+    write_json(baseline / "manifest.json", {"editionId": "2025", "period": {"start": "a", "end": "b"}})
+    write_json(baseline / "wrapped.json", {})
+    write_json(baseline / "speeches.json", {"speeches": []})
+    lexicon = tmp_path / "youth.json"
+    write_json(lexicon, {"version": "t", "terms": ["safe", "wild", "bro", "lowkey"], "pastWinners": [
+        {"word": "lost", "winner": 2020, "includeContexts": ["(?:komplett|völlig)\\s+lost\\b"]},
+        {"word": "cringe", "winner": 2021},
+    ]})
+    speeches = [
+        {"speaker": "Jens Spahn", "party": "CDU/CSU", "text": "Sie sind doch völlig lost mit Ihrer Außenpolitik."},
+        {"speaker": "Anna", "party": "SPD", "text": "Ein Lost Place in Brandenburg."},
+    ]
+    youth = build_year_over_year({}, speeches, baseline, lexicon)["youthLanguage"]
+    assert youth["pastWinners"] == [
+        {"word": "lost", "winnerYear": 2020, "count": 1, "speakers": [{"name": "Jens Spahn", "party": "CDU/CSU", "count": 1}]},
+        {"word": "cringe", "winnerYear": 2021, "count": 0},
+    ]
+    # Candidate totals stay about this year's vote.
+    assert youth["bySpeaker"] == [] and youth["byParty"] == []
+
+
+def test_lexicon_without_past_winners_omits_the_field(tmp_path):
+    baseline = tmp_path / "baseline"
+    write_json(baseline / "manifest.json", {"editionId": "2025", "period": {"start": "a", "end": "b"}})
+    write_json(baseline / "wrapped.json", {})
+    write_json(baseline / "speeches.json", {"speeches": []})
+    lexicon = tmp_path / "youth.json"
+    write_json(lexicon, {"version": "t", "terms": ["safe", "wild", "bro", "lowkey"]})
+    assert "pastWinners" not in build_year_over_year({}, [], baseline, lexicon)["youthLanguage"]
