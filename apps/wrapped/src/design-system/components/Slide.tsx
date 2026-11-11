@@ -25,7 +25,7 @@ interface SlideProps {
 export function Slide({ children, shapes, footer, className, align = 'start' }: SlideProps) {
   const { arrival } = useContext(StoryContext);
   return (
-    <div className={cn('ds-slide', className)}>
+    <div className={cn('ds-slide', className)} data-shapes={shapes || undefined}>
       {shapes !== false && shapes && <Shapes preset={shapes} />}
       <motion.div
         className={cn('ds-slide__body', align === 'center' && 'items-center text-center')}
