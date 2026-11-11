@@ -135,7 +135,7 @@ test('reveals a distant scroll destination in the same commit that selects it', 
   });
   await jumpToSlide(page, (await page.locator('[data-slide-id="finale"]').getAttribute('id'))!);
   await expect(page.locator('[data-slide-id="finale"]')).toHaveAttribute('data-slide-effects-active', 'true');
-  await expect(page.locator('[data-slide-id="finale"]')).toContainText('Bundestag Wrapped');
+  await expect(page.locator('[data-slide-id="finale"]')).toContainText('Gemacht von Moritz Wächter.');
   expect(await page.evaluate(() => Reflect.get(window, '__blankSelectedSlides'))).toEqual([]);
 });
 

@@ -21,6 +21,7 @@ import {
   GenderSlide,
   ShareSlide,
   EndSlide,
+  OutroSlide,
   RankingMovementSlide,
   SignatureWordMovementSlide,
   TopicRiserContextSlide,
@@ -469,8 +470,11 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'share':
       return <ShareSlide totalQuestions={activeQuizSlides.length} quizSlideIds={activeQuizSlides} />;
 
+    case 'outro':
+      return <OutroSlide />;
+
     case 'finale':
-      return <EndSlide onRestart={onRestart} totalQuestions={activeQuizSlides.length} quizSlideIds={activeQuizSlides} />;
+      return <EndSlide onRestart={onRestart} />;
 
     default:
       return null;

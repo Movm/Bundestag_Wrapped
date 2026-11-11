@@ -55,6 +55,7 @@ const STORY_TEMPLATE: readonly (SlideType | StoryGroup)[] = [
   { quiz: 'quiz-tone', slides: ['intro-tone', 'quiz-tone', 'info-tone', 'reveal-tone'] },
   { quiz: 'quiz-gender', slides: ['quiz-gender', 'info-gender', 'reveal-gender'] },
   'share',
+  'outro',
   'finale',
 ];
 
@@ -106,6 +107,7 @@ export function buildActiveSlidePlan(
         return model[id] ? [id as SlideType] : [];
       }),
       'share',
+      'outro',
       'finale',
     ]);
   }

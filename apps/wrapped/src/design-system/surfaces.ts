@@ -23,7 +23,7 @@ export function slideRole(slideId: string): SlideRole {
   const id = slideId.replace(/^speaker-/, '');
   if (id === 'intro') return 'cover';
   if (id === 'share') return 'share';
-  if (id === 'finale') return 'finale';
+  if (id === 'outro' || id === 'finale') return 'finale';
   if (id.startsWith('quiz')) return 'quiz';
   if (id.startsWith('info')) return 'info';
   if (id.startsWith('intro-')) return 'section';

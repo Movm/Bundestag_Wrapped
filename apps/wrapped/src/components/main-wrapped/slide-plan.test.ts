@@ -99,6 +99,7 @@ describe('active slide plan', () => {
       'quiz-youth-language',
       'info-youth-language',
       'share',
+      'outro',
       'finale',
     ]);
   });
@@ -117,6 +118,7 @@ describe('active slide plan', () => {
       'reveal-signature',
       'reveal-signature-movements',
       'share',
+      'outro',
       'finale',
     ]);
   });
@@ -128,7 +130,7 @@ describe('active slide plan', () => {
       'intro', 'info-disclaimer',
       'intro-youth-language', 'quiz-youth-language', 'intro-genz', 'quiz-genz', 'info-genz', 'info-youth-language',
       'intro-mention', 'quiz-mention', 'info-mention',
-      'share', 'finale',
+      'share', 'outro', 'finale',
     ]);
     // Without a Gen Z question there is no Gen Z chapter.
     const plain = buildActiveSlidePlan(quizModel(['quiz-youth-language']), [], configuration, true);
@@ -138,7 +140,7 @@ describe('active slide plan', () => {
   it('keeps the Gen Z chapter on its own when there is no youth question', () => {
     const configuration = { version: 1 as const, groups: [{ id: 'quiz-youth-language' }, { id: 'quiz-genz' }] };
     expect(buildActiveSlidePlan(quizModel(['quiz-genz']), [], configuration)).toEqual([
-      'intro', 'info-disclaimer', 'intro-genz', 'quiz-genz', 'info-genz', 'share', 'finale',
+      'intro', 'info-disclaimer', 'intro-genz', 'quiz-genz', 'info-genz', 'share', 'outro', 'finale',
     ]);
   });
 
@@ -158,7 +160,7 @@ describe('active slide plan', () => {
       'intro', 'info-disclaimer',
       'intro-mention', 'quiz-mention', 'info-mention',
       'intro-chancellor', 'quiz-chancellor', 'reveal-chancellor-topics', 'reveal-chancellor', 'reveal-chancellor-focus',
-      'share', 'finale',
+      'share', 'outro', 'finale',
     ]);
   });
 });
