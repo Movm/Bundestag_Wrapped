@@ -43,7 +43,7 @@ export function WordsStep({ words, picked, onChange, onDone }: { words: MatchWor
         })}
       </ul>
       <div className="pm__actions">
-        <button type="button" className="mp-btn mp-btn--pink mp-btn--lg" disabled={picked.length !== MAX_WORDS} onClick={onDone}>Match finden<ArrowIcon /></button>
+        <button type="button" className="mp-btn mp-btn--pink mp-btn--lg" disabled={picked.length !== MAX_WORDS} onClick={onDone}>Weiter<ArrowIcon /></button>
         <p className="pm__note">Die Wörter stammen aus den Reden: Sie trennen die Fraktionen am deutlichsten.</p>
       </div>
     </>

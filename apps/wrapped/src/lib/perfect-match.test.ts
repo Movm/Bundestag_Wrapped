@@ -14,7 +14,7 @@ const data: MatchData = {
   ],
 };
 
-const answers = { order: ['GRÜNE', 'SPD', 'DIE LINKE', 'CDU/CSU'], topics: ['klima', 'soziales', 'wirtschaft'], words: ['klimaschutz'], likedAnimals: ['biber'] };
+const answers = { order: ['GRÜNE', 'SPD', 'DIE LINKE', 'CDU/CSU'], topics: ['klima', 'soziales', 'wirtschaft'], words: ['klimaschutz'], animal: 'biber' };
 
 describe('scoreMatches', () => {
   it('ranks the MP that fits every answer first', () => {
@@ -39,7 +39,7 @@ describe('scoreMatches', () => {
   });
 
   it('lets the party ranking move results', () => {
-    const [first] = scoreMatches(data, { ...answers, order: ['CDU/CSU', 'SPD', 'GRÜNE', 'DIE LINKE'], topics: ['wirtschaft', 'klima', 'soziales'], words: [], likedAnimals: [] });
+    const [first] = scoreMatches(data, { ...answers, order: ['CDU/CSU', 'SPD', 'GRÜNE', 'DIE LINKE'], topics: ['wirtschaft', 'klima', 'soziales'], words: [], animal: null });
     expect(first.slug).toBe('cdu');
   });
 

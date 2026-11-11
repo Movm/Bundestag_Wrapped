@@ -469,6 +469,8 @@ export interface MatchAnimal {
   "id": NonEmptyString;
   "emoji": NonEmptyString;
   "name": NonEmptyString;
+  "title"?: NonEmptyString;
+  "text"?: NonEmptyString;
   "count": Count;
 }
 

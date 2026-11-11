@@ -1,10 +1,10 @@
 import { buildWordSearchIndex } from '@/domain/word-search-data';
 import type { MatchAsset, WordRankingsAsset } from '@/generated/wrapped-contract-v1';
 import { useEffect } from 'react';
-import { useQuery } from '@tanstack/react-query';
+import { useQueries, useQuery } from '@tanstack/react-query';
 import type { UseQueryResult } from '@tanstack/react-query';
 import type { WrappedData } from '@/data/wrapped';
-import { enrichSpeakerData, type SpeakerIndex, type SpeakerWrapped } from '@/data/speaker-wrapped';
+import { enrichSpeakerData, loadSpeakerEnrichment, speakerPortrait, type ProfileImageMetadata, type SpeakerIndex, type SpeakerWrapped } from '@/data/speaker-wrapped';
 import type { TopicRankingsData, WordsIndex } from '@/lib/search-utils';
 import { loadEditionAsset, type EditionAssetDocument, type SpeechesData } from '@/edition/loader';
 import { useOptionalEdition } from '@/edition/EditionProvider';
@@ -164,4 +164,16 @@ export function useMatchData(options?: { enabled?: boolean }) {
     (edition, asset) => editionAsset(edition, asset, 'MatchAsset'),
     options?.enabled ?? true,
   );
+}
+
+/** Profile photos for a few MPs, keyed by slug; a missing photo is null. */
+export function useSpeakerPortraits(slugs: string[]): Record<string, ProfileImageMetadata | null> {
+  return useQueries({
+    queries: slugs.map(slug => ({
+      queryKey: ['speaker-portrait', slug],
+      queryFn: async () => speakerPortrait(await loadSpeakerEnrichment(slug)),
+      ...STATIC_DATA_OPTIONS,
+    })),
+    combine: results => Object.fromEntries(slugs.map((slug, index) => [slug, results[index]?.data ?? null])),
+  });
 }

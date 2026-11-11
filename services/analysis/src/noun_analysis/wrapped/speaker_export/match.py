@@ -210,6 +210,18 @@ def word_ratio(count: int, total: int, rate: float) -> int:
     return round((count + 1) / (rate * total + 1) * 10)
 
 
+def match_animal(animal_id: str, animal: Mapping, count: int) -> dict:
+    """One pickable animal. ``text`` is the profile reason without stats:
+    ``match_text`` replaces a reason that needs the MP's numbers."""
+    entry = {"id": animal_id, "emoji": animal["emoji"], "name": animal["name"], "count": count}
+    if animal.get("title_n"):
+        entry["title"] = animal["title_n"]
+    text = animal.get("match_text") or animal.get("reason")
+    if text:
+        entry["text"] = text
+    return entry
+
+
 def build_match_payload(
     speakers: Iterable[Mapping],
     word_counts: Mapping[str, Mapping[str, int]],
@@ -270,10 +282,7 @@ def build_match_payload(
         "parties": list(MATCH_PARTIES),
         "topics": list(topic_ids),
         "words": [{"word": c.word, "topic": c.topic} for c in choices],
-        "animals": [
-            {"id": a, "emoji": animals[a]["emoji"], "name": animals[a]["name"], "count": animal_counts[a]}
-            for a in animal_ids
-        ],
+        "animals": [match_animal(a, animals[a], animal_counts[a]) for a in animal_ids],
         "mps": mps,
     }
     return payload, choices

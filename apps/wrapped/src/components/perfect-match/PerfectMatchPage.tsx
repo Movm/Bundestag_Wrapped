@@ -7,18 +7,16 @@ import { STAGGER } from '@/design-system/motion';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionPath, editionSurface } from '@/edition/surface';
 import { TOPICS } from '@/shared/constants/topics';
-import { DECK_SIZE, scoreMatches, type MatchData } from '@/lib/perfect-match';
+import { ANIMAL_CHOICES, scoreMatches, type MatchData } from '@/lib/perfect-match';
 import { RankStep } from './RankStep';
 import { TopicsStep, type Slots } from './TopicsStep';
 import { WordsStep } from './WordsStep';
-import { SwipeStep } from './SwipeStep';
+import { AnimalStep } from './AnimalStep';
 import { ResultStep } from './ResultStep';
 import './perfect-match.css';
 import { playSound } from '@/lib/sounds';
 
 const STEPS = ['Fraktionen', 'Themen', 'Wörter', 'Spirit Animal', 'Ergebnis'] as const;
-/** Time to see the last card fly out before the result opens. */
-const RESULT_DELAY_MS = 450;
 const EMPTY_SLOTS: Slots = [null, null, null];
 
 function PerfectMatch({ data, homeUrl, profileUrl }: { data: MatchData; homeUrl: string; profileUrl: (slug: string) => string }) {
@@ -29,14 +27,13 @@ function PerfectMatch({ data, homeUrl, profileUrl }: { data: MatchData; homeUrl:
   const [order, setOrder] = useState<string[]>(data.parties);
   const [slots, setSlots] = useState<Slots>(EMPTY_SLOTS);
   const [words, setWords] = useState<string[]>([]);
-  const [liked, setLiked] = useState<string[]>([]);
-  const [decided, setDecided] = useState(0);
+  const [animal, setAnimal] = useState<string | null>(null);
 
   const topics = useMemo(() => TOPICS.map(topic => topic.id).filter(id => data.topics.includes(id)), [data.topics]);
-  const deck = useMemo(() => [...data.animals].sort((a, b) => b.count - a.count).slice(0, DECK_SIZE), [data.animals]);
+  const animals = useMemo(() => [...data.animals].sort((a, b) => b.count - a.count).slice(0, ANIMAL_CHOICES), [data.animals]);
   const matches = useMemo(
-    () => (step === 4 ? scoreMatches(data, { order, topics: slots.filter((id): id is string => Boolean(id)), words, likedAnimals: liked }) : []),
-    [step, data, order, slots, words, liked],
+    () => (step === 4 ? scoreMatches(data, { order, topics: slots.filter((id): id is string => Boolean(id)), words, animal }) : []),
+    [step, data, order, slots, words, animal],
   );
 
   const shown = useRef(`${attempt}-${step}`);
@@ -48,21 +45,13 @@ function PerfectMatch({ data, homeUrl, profileUrl }: { data: MatchData; homeUrl:
     stageRef.current?.focus({ preventScroll: true });
   }, [step, attempt]);
 
-  const decide = useCallback((direction: 1 | -1) => {
-    const animal = deck[decided];
-    if (!animal) return;
-    if (direction > 0) setLiked(previous => [...previous, animal.id]);
-    const next = decided + 1;
-    setDecided(next);
-    if (next >= deck.length) window.setTimeout(() => { playSound('match'); setStep(4); }, reduce ? 0 : RESULT_DELAY_MS);
-  }, [deck, decided, reduce]);
+  const showResult = () => { playSound('match'); setStep(4); };
 
   const restart = () => {
     setOrder(data.parties);
     setSlots(EMPTY_SLOTS);
     setWords([]);
-    setLiked([]);
-    setDecided(0);
+    setAnimal(null);
     setStep(0);
     setAttempt(value => value + 1);
   };
@@ -85,7 +74,7 @@ function PerfectMatch({ data, homeUrl, profileUrl }: { data: MatchData; homeUrl:
         key={`${attempt}-${step}`}
         ref={stageRef}
         tabIndex={-1}
-        className={`pm__stage outline-none${step === 3 ? ' pm-swipe' : ''}`}
+        className="pm__stage outline-none"
         variants={STAGGER}
         initial={reduce ? false : 'hidden'}
         animate="visible"
@@ -93,7 +82,7 @@ function PerfectMatch({ data, homeUrl, profileUrl }: { data: MatchData; homeUrl:
         {step === 0 && <RankStep order={order} onChange={setOrder} onDone={() => setStep(1)} />}
         {step === 1 && <TopicsStep topics={topics} slots={slots} onChange={setSlots} onDone={() => setStep(2)} />}
         {step === 2 && <WordsStep words={data.words} picked={words} onChange={setWords} onDone={() => setStep(3)} />}
-        {step === 3 && <SwipeStep animals={deck} decided={decided} onDecide={decide} />}
+        {step === 3 && <AnimalStep animals={animals} picked={animal} onChange={setAnimal} onDone={showResult} />}
         {step === 4 && <ResultStep matches={matches} profileUrl={profileUrl} onRestart={restart} />}
       </motion.div>
     </MotionConfig>
@@ -132,7 +121,7 @@ export function PerfectMatchPage() {
     <>
       <SEO
         title="Perfect Match: Wer im Bundestag passt zu dir?"
-        description="Fraktionen sortieren, Themen ziehen, Wörter wählen, swipen: Welche Abgeordneten passen zu dir? Berechnet aus allen Reden des Jahres."
+        description="Fraktionen sortieren, Themen ziehen, Wörter und dein Tier wählen: Welche Abgeordneten passen zu dir? Berechnet aus allen Reden des Jahres."
         canonicalUrl={editionPath(surface, 'perfect-match')}
       />
       {body ? (

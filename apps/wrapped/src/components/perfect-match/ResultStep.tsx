@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { ENTER } from '@/design-system/motion';
 import { getPartyTone } from '@/lib/party-colors';
+import { useSpeakerPortraits } from '@/hooks/useDataQueries';
 import type { MatchResult } from '@/lib/perfect-match';
 
 const CARD_COLORS = [['var(--color-wr-pink)', 'var(--color-wr-ink)'], ['var(--color-wr-violet)', '#fff'], ['#fff', 'var(--color-wr-ink)']];
@@ -10,6 +11,7 @@ const CARD_COLORS = [['var(--color-wr-pink)', 'var(--color-wr-ink)'], ['var(--co
 /** Step 5: the top three MPs, each linking to their profile. */
 export function ResultStep({ matches, profileUrl, onRestart }: { matches: MatchResult[]; profileUrl: (slug: string) => string; onRestart: () => void }) {
   const [note, setNote] = useState('');
+  const portraits = useSpeakerPortraits(matches.map(match => match.slug));
 
   const share = async () => {
     const [first] = matches;
@@ -28,6 +30,7 @@ export function ResultStep({ matches, profileUrl, onRestart }: { matches: MatchR
       <ol className="pm-matches" aria-label="Deine drei besten Matches">
         {matches.map((match, index) => {
           const [bg, ink] = CARD_COLORS[index] ?? CARD_COLORS[2];
+          const photo = portraits[match.slug];
           return (
             <motion.li key={match.slug} variants={ENTER.rise}>
               <Link
@@ -36,10 +39,12 @@ export function ResultStep({ matches, profileUrl, onRestart }: { matches: MatchR
                 style={{ '--pm-card': bg, '--pm-card-ink': ink, '--pm-party': getPartyTone(match.party, 'dark') } as CSSProperties}
                 aria-label={`Platz ${index + 1}: ${match.name}, ${match.party}, ${match.pct} Prozent Übereinstimmung. Zum Profil`}
               >
-                <div className="pm-match__visual" aria-hidden="true">
+                <div className="pm-match__visual" data-photo={Boolean(photo)} aria-hidden="true">
+                  {photo && <img className="pm-match__photo" src={photo.thumbnailUrl ?? photo.url} alt="" loading="lazy" onError={event => { event.currentTarget.hidden = true; }} />}
                   <span className="pm-match__pct">{match.pct}<span>%</span></span>
                   {match.animal && <span className="pm-match__emoji">{match.animal.emoji}</span>}
                 </div>
+                {photo && <span className="pm-match__credit">Foto: {photo.credit}</span>}
                 <div className="pm-match__body">
                   <span className="pm-match__party">{match.party}</span>
                   <span className="pm-match__name">{match.name}</span>

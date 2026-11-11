@@ -312,7 +312,7 @@ export interface SpeakerWrapped {
   abgeordnetenwatch?: AbgeordnetenwatchProfile | null;
 }
 
-interface SpeakerEnrichment {
+export interface SpeakerEnrichment {
   officialImage?: OfficialImageMetadata | null;
   profileImage?: ProfileImageMetadata | null;
   profileDescription?: ProfileDescription | null;
@@ -326,24 +326,31 @@ interface SpeakerEnrichment {
  * manifest by useSpeakerData.
  */
 export async function enrichSpeakerData(speaker: SpeakerWrapped, slug: string): Promise<SpeakerWrapped> {
-  try {
-    const enrichmentResponse = await fetch(`/speaker-enrichment/${slug}.json`);
-    if (!enrichmentResponse.ok) {
-      return speaker;
-    }
+  const enrichment = await loadSpeakerEnrichment(slug);
+  if (!enrichment) return speaker;
+  return {
+    ...speaker,
+    officialImage: enrichment.officialImage ?? speaker.officialImage ?? null,
+    profileImage: enrichment.profileImage ?? speaker.profileImage ?? enrichment.officialImage ?? speaker.officialImage ?? null,
+    profileDescription: enrichment.profileDescription ?? speaker.profileDescription ?? null,
+    biography: enrichment.biography ?? speaker.biography ?? null,
+    abgeordnetenwatch: enrichment.abgeordnetenwatch ?? speaker.abgeordnetenwatch ?? null,
+  };
+}
 
-    const enrichment = await enrichmentResponse.json() as SpeakerEnrichment;
-    return {
-      ...speaker,
-      officialImage: enrichment.officialImage ?? speaker.officialImage ?? null,
-      profileImage: enrichment.profileImage ?? speaker.profileImage ?? enrichment.officialImage ?? speaker.officialImage ?? null,
-      profileDescription: enrichment.profileDescription ?? speaker.profileDescription ?? null,
-      biography: enrichment.biography ?? speaker.biography ?? null,
-      abgeordnetenwatch: enrichment.abgeordnetenwatch ?? speaker.abgeordnetenwatch ?? null,
-    };
+/** Optional biography data for one MP; null when there is none or it fails to load. */
+export async function loadSpeakerEnrichment(slug: string): Promise<SpeakerEnrichment | null> {
+  try {
+    const response = await fetch(`/speaker-enrichment/${slug}.json`);
+    return response.ok ? await response.json() as SpeakerEnrichment : null;
   } catch {
-    return speaker;
+    return null;
   }
+}
+
+/** The photo the profile page shows. */
+export function speakerPortrait(enrichment: SpeakerEnrichment | null): ProfileImageMetadata | null {
+  return enrichment?.profileImage ?? enrichment?.officialImage ?? null;
 }
 
 /**

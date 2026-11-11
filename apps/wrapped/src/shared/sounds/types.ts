@@ -21,8 +21,6 @@ export type SoundType =
   | 'lift'
   /** Perfect Match: a chip lands in a slot. */
   | 'drop'
-  | 'like'
-  | 'nope'
   /** Perfect Match: the result appears. */
   | 'match';
 
@@ -47,8 +45,6 @@ export const SOUND_SPRITES: Partial<Record<SoundType, readonly string[]>> = {
   tick: TAPS,
   lift: ['select'],
   drop: ['toggle_on'],
-  like: SWIPES,
-  nope: SWIPES,
   match: ['celebration'],
   assemble: ['transition_up'],
 };
@@ -64,7 +60,5 @@ export const SOUND_VOLUMES: Record<SoundType, number> = {
   tick: 0.35,
   lift: 0.45,
   drop: 0.7,
-  like: 0.6,
-  nope: 0.6,
   match: 0.85,
 };

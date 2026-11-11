@@ -2062,6 +2062,14 @@
         "name": {
           "$ref": "#/$defs/NonEmptyString"
         },
+        "title": {
+          "$ref": "#/$defs/NonEmptyString",
+          "description": "Profile type, gender-neutral."
+        },
+        "text": {
+          "$ref": "#/$defs/NonEmptyString",
+          "description": "One sentence on the type, without the MP's numbers."
+        },
         "count": {
           "$ref": "#/$defs/Count"
         }
