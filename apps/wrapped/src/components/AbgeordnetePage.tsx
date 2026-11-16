@@ -191,7 +191,7 @@ export function AbgeordnetePage() {
                             {speaker.speeches} Reden
                           </span>
                           <Link
-                            to={editionPath(surface, `wrapped/${speaker.slug}`)}
+                            to={editionPath(surface, `abgeordnete/${speaker.slug}/quiz`)}
                             className="text-xs text-on-accent hover:text-on-accent"
                           >
                             Wrapped
