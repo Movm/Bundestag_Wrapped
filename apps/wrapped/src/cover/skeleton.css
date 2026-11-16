@@ -1,0 +1,72 @@
+/*
+ * Loading placeholders. Inlined into index.html as critical CSS, so the page
+ * placeholder (markup: skeleton.ts) paints before any stylesheet or script has
+ * loaded, and every later skeleton (SkeletonShimmer) uses the same block.
+ *
+ * The shimmer runs while the main thread parses and runs the app bundle or
+ * renders a route, so it animates only `transform` with a CSS animation: that
+ * stays on the compositor and keeps moving even when JavaScript blocks frames.
+ * Block and shine derive from currentColor, so they fit every surface.
+ */
+body { margin: 0; } /* the app's preflight does the same once its stylesheet is in */
+
+/* In the components layer, so Tailwind utilities (size, radius) on a block win. */
+@layer components {
+  .bt-skel-block {
+    position: relative;
+    overflow: hidden;
+    background: color-mix(in srgb, currentColor 10%, transparent);
+  }
+  .bt-skel-block::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, color-mix(in srgb, currentColor 9%, transparent), transparent);
+    transform: translateX(-100%);
+    animation: bt-skel-shine 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+}
+@keyframes bt-skel-shine { to { transform: translateX(100%); } }
+
+.bt-skel {
+  position: relative;
+  min-height: 100dvh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: max(5rem, env(safe-area-inset-top, 0px)) max(2.5rem, env(safe-area-inset-bottom, 0px));
+  padding-inline: max(1.25rem, env(safe-area-inset-left, 0px)) max(1.25rem, env(safe-area-inset-right, 0px));
+  background: #0e0a14;
+  color: #fff;
+}
+html[data-boot-surface='violet'] .bt-skel { background: #7b3ff2; }
+
+.bt-skel .bt-skel-block { display: block; border-radius: 0.5rem; }
+.bt-skel__logo {
+  position: absolute !important;
+  top: max(1rem, env(safe-area-inset-top, 0px));
+  left: max(1rem, env(safe-area-inset-left, 0px));
+  width: 10rem;
+  height: 2rem;
+}
+.bt-skel__main {
+  width: min(100%, 44rem);
+  margin-block: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+}
+.bt-skel .bt-skel__title { width: 88%; height: clamp(2.75rem, 9vw, 5.5rem); border-radius: 0.75rem; }
+.bt-skel .bt-skel__title--short { width: 56%; margin-bottom: 1rem; }
+.bt-skel__line { width: 100%; height: 1.05rem; }
+.bt-skel__line--short { width: 70%; }
+.bt-skel .bt-skel__button { width: 15rem; height: 3rem; margin-top: 1.5rem; border-radius: 999px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bt-skel-block::after { animation: none; display: none; }
+}
+@media (forced-colors: active) {
+  .bt-skel-block { border: 1px solid CanvasText; }
+}

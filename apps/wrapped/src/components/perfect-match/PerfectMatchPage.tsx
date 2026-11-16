@@ -15,6 +15,7 @@ import { AnimalStep } from './AnimalStep';
 import { ResultStep } from './ResultStep';
 import './perfect-match.css';
 import { playSound } from '@/lib/sounds';
+import { PerfectMatchSkeleton } from '@/components/skeletons/PageSkeletons';
 
 const STEPS = ['Fraktionen', 'Themen', 'Wörter', 'Spirit Animal', 'Ergebnis'] as const;
 const EMPTY_SLOTS: Slots = [null, null, null];
@@ -114,7 +115,7 @@ export function PerfectMatchPage() {
       </div>
     );
   } else if (isLoading || !data) {
-    body = <p role="status" className="mp-muted">Lade Perfect Match …</p>;
+    body = <PerfectMatchSkeleton />;
   }
 
   return (

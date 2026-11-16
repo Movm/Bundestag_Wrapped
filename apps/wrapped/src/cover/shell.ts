@@ -46,6 +46,8 @@ export function acquireCover(): { controller: CoverController; startRequested: b
 export function releaseBootShell(host: HTMLElement | null) {
   host?.remove();
   document.documentElement.classList.remove('cover-boot');
+  // The construction page has painted over the violet skeleton; later loaders use the default ground.
+  delete document.documentElement.dataset.bootSurface;
 }
 
 /** Error screens on a story route: drop the boot cover so the message is visible. */

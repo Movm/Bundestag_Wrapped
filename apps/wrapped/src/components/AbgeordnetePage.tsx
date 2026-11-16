@@ -9,6 +9,7 @@ import { useDebounce } from '@/hooks/useSearchState';
 import { PARTY_BG_CLASSES } from '@/lib/party-colors';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionPath, editionSurface } from '@/edition/surface';
+import { AbgeordneteSkeleton } from './skeletons/PageSkeletons';
 
 const MotionLink = motion.create(Link);
 
@@ -39,13 +40,7 @@ export function AbgeordnetePage() {
   const showResults = debouncedQuery.trim().length > 0;
 
   if (loading) {
-    return (
-      <div className="min-h-screen page-bg flex items-center justify-center pt-14">
-        <div className="text-center">
-          <p className="text-on-muted">Lade Abgeordnete...</p>
-        </div>
-      </div>
-    );
+    return <AbgeordneteSkeleton />;
   }
 
   if (error) {

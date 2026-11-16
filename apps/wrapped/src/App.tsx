@@ -9,6 +9,7 @@ import { EditionProvider, useEdition } from '@/edition/EditionProvider';
 import { loadRegistry } from '@/edition/loader';
 import { currentEditionPath, isRetired, resolveLegacyEditionPath } from '@/edition/registry';
 import { dismissBootCover } from '@/cover/shell';
+import { SKELETON_HTML } from '@/cover/skeleton';
 
 const ConstructionPage = lazy(() => import('@/components/construction/ConstructionPage').then(m => ({ default: m.ConstructionPage })));
 const MainWrappedPage = lazy(() => import('@/components/MainWrappedPage').then(m => ({ default: m.MainWrappedPage })));
@@ -36,15 +37,10 @@ const PerfectMatchPage = lazy(() => import('@/components/perfect-match/PerfectMa
 // const GeschlechtPage = lazy(() => import('@/components/statistiken/pages/GeschlechtPage'));
 // const ThemenPage = lazy(() => import('@/components/statistiken/pages/ThemenPage'));
 
+/** Same placeholder index.html paints before the bundle (src/cover/skeleton.ts), so the hand-over does not jump. */
 function PageLoader() {
-  return (
-    <div className="min-h-screen page-bg flex items-center justify-center">
-      <div className="text-center">
-        <div className="text-6xl mb-4 animate-pulse">🏛️</div>
-        <p className="text-white/60">Lade...</p>
-      </div>
-    </div>
-  );
+  // Static markup from our own module, no user content.
+  return <div className="contents" dangerouslySetInnerHTML={{ __html: SKELETON_HTML }} />;
 }
 
 // Special wrapper for MainWrappedPage which manages its own header

@@ -9,11 +9,12 @@ import { COVER_ROUTE, EAGLE_SRC, type CoverShell } from './shell';
 const DATA_PATH = /^\/data\/(?:[A-Za-z0-9_-][A-Za-z0-9_.-]*\/)*[A-Za-z0-9_-][A-Za-z0-9_.-]*\.json$/;
 
 function prefetch(match: RegExpMatchArray) {
-  const cache = new Map<string, Promise<Response>>();
+  // The head script already started the edition index; continue from that request.
+  const cache = window.__btPrefetch ?? new Map<string, Promise<Response>>();
   window.__btPrefetch = cache;
   const get = (url: string) => {
     if (!DATA_PATH.test(url)) return Promise.reject(new Error('untrusted'));
-    const request = fetch(url, { redirect: 'error' });
+    const request = cache.get(url) ?? fetch(url, { redirect: 'error' });
     cache.set(url, request);
     return request.then(response => (response.ok ? response.clone().json() : Promise.reject(new Error(String(response.status)))));
   };

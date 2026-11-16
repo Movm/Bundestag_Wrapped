@@ -23,6 +23,7 @@ import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionPath, editionSurface } from '@/edition/surface';
 import { ArrowIcon, GrowBar, PartyPill, RatioBars, Reveal } from './mdb-profile/shared';
 import { partyStyle } from './mdb-profile/party-style';
+import { ProfileSkeleton } from './skeletons/PageSkeletons';
 
 const number = new Intl.NumberFormat('de-DE');
 const euro = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
@@ -314,11 +315,7 @@ export function MdbProfilePage() {
   const num = (id: ChapterId) => String(chapters.indexOf(id) + 1).padStart(2, '0');
 
   if (isLoading) {
-    return (
-      <div className="mp-page grid place-items-center">
-        <p role="status" className="mp-muted">Lade Profil …</p>
-      </div>
-    );
+    return <ProfileSkeleton />;
   }
 
   if (error || !speaker) {

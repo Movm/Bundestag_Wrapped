@@ -327,20 +327,6 @@ body {
   touch-action: none;
 }
 
-/* Skeleton shimmer animation */
-@keyframes shimmer {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-.animate-shimmer {
-  animation: shimmer 1.5s ease-in-out infinite;
-}
-
 /* News ticker scrolling animation */
 @keyframes ticker-scroll {
   0% {
@@ -366,10 +352,6 @@ body {
   }
 
   .celebration-glow {
-    animation: none;
-  }
-
-  .animate-shimmer {
     animation: none;
   }
 
