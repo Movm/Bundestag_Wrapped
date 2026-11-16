@@ -16,6 +16,7 @@ import {
 import { SpeakerSlideRenderer } from './speaker-wrapped/SpeakerSlideRenderer';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
+import { SpeakerStorySkeleton } from './skeletons/PageSkeletons';
 
 export function SpeakerWrappedPage() {
   const surface = editionSurface(useOptionalEdition());
@@ -77,7 +78,7 @@ export function SpeakerWrappedPage() {
     return (
       <div data-surface="ink" className="speaker-story">
         <div className="story-shell grid place-items-center px-6">
-          <p role="status" className="ds-display ds-display--lg">Lade Wrapped…</p>
+          <SpeakerStorySkeleton />
         </div>
       </div>
     );

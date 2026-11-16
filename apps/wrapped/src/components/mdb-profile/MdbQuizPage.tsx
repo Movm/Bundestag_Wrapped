@@ -25,6 +25,7 @@ import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionPath, editionSurface } from '@/edition/surface';
 import { ArrowIcon, GrowBar, PartyPill, RatioBars } from './shared';
 import { partyStyle } from './party-style';
+import { QuizSkeleton } from '@/components/skeletons/PageSkeletons';
 
 /** Time to see the marked answer before the result card opens. */
 const RESULT_DELAY_MS = 650;
@@ -265,7 +266,7 @@ export function MdbQuizPage() {
   const profileUrl = editionPath(surface, `abgeordnete/${slug}`);
 
   if (isLoading) {
-    return <div className="mp-page grid place-items-center"><p role="status" className="mp-muted">Lade Quiz …</p></div>;
+    return <QuizSkeleton />;
   }
 
   if (error || !speaker || !quiz) {
