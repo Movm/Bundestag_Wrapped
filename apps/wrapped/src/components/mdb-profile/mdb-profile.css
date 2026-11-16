@@ -249,18 +249,6 @@ a.mp-vote:hover .mp-vote__title { text-decoration: underline; }
 .mp-bio { border-radius: 2rem; background: var(--color-wr-card); padding: clamp(1.5rem, 3vw, 2.25rem); display: flex; flex-direction: column; gap: 1rem; }
 .mp-bio p { margin: 0; max-width: 46rem; font-size: 1.0625rem; line-height: 1.6; color: color-mix(in srgb, #fff 90%, var(--color-wr-lilac)); white-space: pre-line; }
 
-/* Closing quiz banner */
-.mp-cta {
-  position: relative; overflow: hidden; border-radius: clamp(1.75rem, 3vw, 2.75rem);
-  background: var(--color-wr-violet); color: #fff; padding: clamp(1.75rem, 5vw, 4rem);
-  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.75rem;
-}
-.mp-cta::before { content: ''; position: absolute; width: 16rem; aspect-ratio: 1; background: var(--color-wr-pink); bottom: -9.375rem; right: -3.75rem; transform: rotate(18deg); }
-.mp-cta > * { position: relative; }
-.mp-cta__text { display: flex; flex-direction: column; gap: 0.875rem; max-width: 45rem; }
-.mp-cta__title { margin: 0; font-weight: 900; font-stretch: 120%; font-size: clamp(2.125rem, 1.5rem + 2.8vw, 4rem); line-height: 0.92; letter-spacing: -0.04em; text-transform: uppercase; text-wrap: balance; }
-.mp-cta__text p { margin: 0; font-size: 1.125rem; font-weight: 600; }
-
 /* ── Quiz page ─────────────────────────────────────────────────── */
 .mpq {
   display: flex; flex-direction: column; overflow: hidden;

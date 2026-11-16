@@ -586,17 +586,6 @@ export function MdbProfilePage() {
           {chapters.includes('mandat') && (
             <MandateChapter num={num('mandat')} speaker={speaker} profile={profile} bioText={bioText} bioSource={bioSource} />
           )}
-
-          {quiz && (
-            <Reveal className="mp-cta">
-              <div className="mp-cta__text">
-                <span className="mp-mono text-sm">Quiz · {quiz.rounds.length} Runden</span>
-                <h2 className="mp-cta__title">Kennst du {genitive(first)} Signature Words?</h2>
-                <p>{genitive(first)} Wörter gegen den Bundestag – und gegen die eigene Fraktion.</p>
-              </div>
-              <Link to={quizUrl} className="mp-btn mp-btn--white mp-btn--lg">Quiz starten<ArrowIcon /></Link>
-            </Reveal>
-          )}
         </div>
       </div>
     </>
