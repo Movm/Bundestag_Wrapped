@@ -1270,6 +1270,226 @@
         }
       }
     },
+    "GenderSplit": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Percent of the party-standardised usage: male + female = 100.",
+      "required": [
+        "male",
+        "female"
+      ],
+      "properties": {
+        "male": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "female": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
+    },
+    "GenderSide": {
+      "enum": [
+        "male",
+        "female"
+      ]
+    },
+    "GenderPartyRate": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Occurrences per 10,000 words in this party's speeches, by gender.",
+      "required": [
+        "party",
+        "male",
+        "female"
+      ],
+      "properties": {
+        "party": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "male": {
+          "type": "number",
+          "minimum": 0
+        },
+        "female": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "GenderDuel": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "One Männer-or-Frauen question: who uses the term more, at the same party mix.",
+      "required": [
+        "term",
+        "answer",
+        "split",
+        "factor",
+        "consistentParties",
+        "totalParties",
+        "parties"
+      ],
+      "properties": {
+        "term": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "answer": {
+          "$ref": "#/$defs/GenderSide"
+        },
+        "split": {
+          "$ref": "#/$defs/GenderSplit"
+        },
+        "factor": {
+          "type": "number",
+          "minimum": 1
+        },
+        "consistentParties": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "totalParties": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "parties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/GenderPartyRate"
+          }
+        },
+        "topSpeaker": {
+          "$ref": "#/$defs/NamedPartyCount"
+        }
+      }
+    },
+    "GenderWord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "word",
+        "factor",
+        "consistentParties",
+        "count"
+      ],
+      "properties": {
+        "word": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "factor": {
+          "type": "number",
+          "minimum": 1
+        },
+        "consistentParties": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "GenderTopic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "topic",
+        "side",
+        "factor",
+        "consistentParties"
+      ],
+      "properties": {
+        "topic": {
+          "$ref": "#/$defs/NonEmptyString"
+        },
+        "side": {
+          "$ref": "#/$defs/GenderSide"
+        },
+        "factor": {
+          "type": "number",
+          "minimum": 1
+        },
+        "consistentParties": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "GenderCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Männer gegen Frauen: words and topics of formal speeches by gender, compared at the same party mix.",
+      "required": [
+        "speeches",
+        "totalParties",
+        "wordDuel",
+        "topicDuel",
+        "topics",
+        "words"
+      ],
+      "properties": {
+        "speeches": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "female": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "totalParties": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "wordDuel": {
+          "$ref": "#/$defs/GenderDuel"
+        },
+        "topicDuel": {
+          "$ref": "#/$defs/GenderDuel"
+        },
+        "topics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/GenderTopic"
+          }
+        },
+        "words": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "male",
+            "female"
+          ],
+          "properties": {
+            "male": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/GenderWord"
+              }
+            },
+            "female": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/GenderWord"
+              }
+            }
+          }
+        }
+      }
+    },
     "ChancellorAnalysis": {
       "type": "object",
       "additionalProperties": false,
@@ -1772,7 +1992,8 @@
             "gap",
             "quadrants",
             "stickers",
-            "swipe"
+            "swipe",
+            "duel"
           ]
         },
         "gapSentence": {
@@ -1971,6 +2192,9 @@
         },
         "chancellor": {
           "$ref": "#/$defs/ChancellorAnalysis"
+        },
+        "genderCheck": {
+          "$ref": "#/$defs/GenderCheck"
         }
       }
     },
@@ -2548,7 +2772,8 @@
             "gap",
             "quadrants",
             "stickers",
-            "swipe"
+            "swipe",
+            "duel"
           ]
         },
         "gapSentence": {

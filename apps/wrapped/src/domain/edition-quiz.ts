@@ -2,6 +2,7 @@ import type { QuizQuestion, WrappedData } from '@/data/wrapped';
 import { TOPIC_BY_ID } from '@/shared/constants/topics';
 import { youthGeneration, youthWordMeaning, type YouthGeneration } from './youth-words';
 import { lastName, shareOptions, split } from './chancellor';
+import { genderTopicQuestion, genderWordQuestion } from './gender-check';
 import type { EditionQuizConfiguration } from '@/generated/wrapped-contract-v1';
 import { MissingMetricError, topInterrupter, topSpeakerByWords, topTopic } from './metrics';
 import { atParty, capitalize, theParty, times as spelledTimes } from '@/lib/german-count';
@@ -449,6 +450,10 @@ export function buildEditionQuizModel(data: WrappedData, configuration?: Edition
       ? question('quiz-tone', `Welches Emoji passt zu ${tone[0].party}?`, tone.slice(0, 4).map(item => item.emoji), tone[0].emoji, `${tone[0].party}: ${tone[0].description}`, tone[0].party)
       : undefined;
   });
+
+  // Männer gegen Frauen: two duels from the edition's gender check.
+  addQuestion(model, 'quiz-gender-word', () => genderWordQuestion(data.genderCheck?.wordDuel));
+  addQuestion(model, 'quiz-gender-topic', () => genderTopicQuestion(data.genderCheck?.topicDuel));
   return model;
 }
 

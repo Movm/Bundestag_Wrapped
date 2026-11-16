@@ -25,6 +25,8 @@ export interface QuizProps {
   badge?: string;
   /** Mix the options per question (stable by seed); questions are built answer-first. */
   shuffle?: boolean;
+  /** Percent per option for the duel layout. */
+  shares?: Readonly<Record<string, number>>;
 }
 
 /** Pause on the marked answer before the story moves on: a hit reads faster than a miss. */
@@ -37,7 +39,7 @@ const ADVANCE_MS = { right: 1500, wrong: 2600 };
  * region, and the story moves on to the next slide by itself. Answers
  * restored from storage only show the marking; reading mode never auto-advances.
  */
-export function Quiz({ quiz, storedAnswer, onAnswer, seed, layout, gapSentence, badge, shuffle = false }: QuizProps) {
+export function Quiz({ quiz, storedAnswer, onAnswer, seed, layout, gapSentence, badge, shuffle = false, shares }: QuizProps) {
   const reduce = useReducedMotion();
   const { next, readingMode } = use(StoryContext);
   const [confetti, setConfetti] = useState(false);
@@ -58,11 +60,12 @@ export function Quiz({ quiz, storedAnswer, onAnswer, seed, layout, gapSentence, 
   // Only a pick made here moves on, not an answer restored from storage.
   const picked = engine.selected !== null;
   const right = engine.isCorrect;
+  const pause = spec.advanceMs ?? ADVANCE_MS;
   useEffect(() => {
     if (!picked || readingMode || !next || !seed) return;
-    const timer = setTimeout(() => next(seed), right ? ADVANCE_MS.right : ADVANCE_MS.wrong);
+    const timer = setTimeout(() => next(seed), right ? pause.right : pause.wrong);
     return () => clearTimeout(timer);
-  }, [picked, right, readingMode, next, seed]);
+  }, [picked, right, readingMode, next, seed, pause]);
 
   return (
     <div className="ds-quiz-frame" data-quiz-layout={spec.id}>
@@ -70,7 +73,7 @@ export function Quiz({ quiz, storedAnswer, onAnswer, seed, layout, gapSentence, 
         {confetti && <Confetti count={90} duration={1.4} spread={240} size={14} colors={CONFETTI_COLORS} />}
       </div>
       {badge && <motion.span variants={ENTER.rise} className="ds-eyebrow ds-eyebrow--contrast self-start">{badge}</motion.span>}
-      <Layout engine={engine} questionId={questionId} gapSentence={gapSentence} />
+      <Layout engine={engine} questionId={questionId} gapSentence={gapSentence} shares={shares} />
       <p data-testid="quiz-result" data-correct={engine.answered ? engine.isCorrect : undefined} role="status" aria-live="polite" aria-atomic="true" className="sr-only">
         {engine.answered ? `${engine.spoken}${picked && !readingMode ? ' Weiter geht es mit der nächsten Folie.' : ''}` : ''}
       </p>

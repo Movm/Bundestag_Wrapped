@@ -79,6 +79,13 @@ export const SLIDES = [
   'intro-genz',
   'quiz-genz',
   'info-genz',
+  // Männer gegen Frauen, from the edition's gender check
+  'intro-gender-check',
+  'quiz-gender-word',
+  'reveal-gender-word',
+  'reveal-gender-words',
+  'quiz-gender-topic',
+  'reveal-gender-topics',
 
   // Moin
   'intro-moin',
@@ -125,6 +132,7 @@ export const AUTO_SCROLL_SLIDES = new Set<SlideType>([
   'intro-mention',
   'intro-chancellor',
   'intro-genz',
+  'intro-gender-check',
   'intro-moin',
   'intro-tone',
   // Info slides also auto-scroll

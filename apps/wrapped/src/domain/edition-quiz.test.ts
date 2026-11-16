@@ -306,8 +306,33 @@ describe('Jugendwort speaker question', () => {
 });
 
 describe('edition quiz configuration', () => {
-  it('runs the 2026 edition as topic riser, signature words, youth language, the chancellor, the moment of the year and Gen Z', () => {
-    expect(quiz2026.groups.map(group => group.id)).toEqual(['quiz-topic-riser', 'quiz-signature', 'quiz-youth-language', 'quiz-chancellor', 'quiz-mention', 'quiz-genz']);
+  it('runs the 2026 edition as topic riser, signature words, youth language, the chancellor, the moment of the year, Gen Z and Männer gegen Frauen', () => {
+    expect(quiz2026.groups.map(group => group.id)).toEqual(['quiz-topic-riser', 'quiz-signature', 'quiz-youth-language', 'quiz-chancellor', 'quiz-mention', 'quiz-genz', 'quiz-gender-word', 'quiz-gender-topic']);
+  });
+
+  it('asks the gender duels as Männer or Frauen with the real split', () => {
+    const base = fixture('Europa', 'Partei A') as WrappedData;
+    const duel = (term: string, answer: 'male' | 'female', male: number, consistentParties = 5) => ({
+      term, answer, split: { male, female: 100 - male }, factor: 2.48, consistentParties, totalParties: 5, parties: [],
+    });
+    const genderCheck = { wordDuel: duel('Männer', 'female', 29), topicDuel: duel('klima', 'male', 59) } as unknown as WrappedData['genderCheck'];
+    const model = buildEditionQuizModel({ ...base, genderCheck });
+    const word = model['quiz-gender-word'];
+    expect(word?.question).toBe('Wer sagt im Bundestag öfter „Männer“?');
+    expect(word?.options).toEqual(['Männer', 'Frauen']);
+    expect(word?.correctAnswer).toBe('Frauen');
+    expect(word?.layout).toBe('duel');
+    expect(word?.optionShares).toEqual({ Männer: 29, Frauen: 71 });
+    expect(word?.explanation).toBe('Frauen sagen „Männer“ 2,5-mal so oft wie Männer, in allen fünf Fraktionen. Frauen 71 %, Männer 29 %.');
+    const topic = model['quiz-gender-topic'];
+    expect(topic?.question).toBe('Wer redet mehr über Klima?');
+    expect(topic?.correctAnswer).toBe('Männer');
+    expect(topic?.explanation).toContain('in allen fünf Fraktionen');
+    // A difference that holds in only three groups is not asked.
+    const weak = { wordDuel: duel('Männer', 'female', 29, 3), topicDuel: duel('klima', 'male', 59, 4) } as unknown as WrappedData['genderCheck'];
+    expect(buildEditionQuizModel({ ...base, genderCheck: weak })['quiz-gender-word']).toBeUndefined();
+    expect(buildEditionQuizModel({ ...base, genderCheck: weak })['quiz-gender-topic']?.explanation).toContain('in vier von fünf Fraktionen');
+    expect(buildEditionQuizModel(base)['quiz-gender-word']).toBeUndefined();
   });
 
   it('asks for the chancellor’s foreign share with the real number in the explanation', () => {

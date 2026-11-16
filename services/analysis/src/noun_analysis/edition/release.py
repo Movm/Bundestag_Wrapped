@@ -17,6 +17,7 @@ BUILT_IN_QUIZ_GROUPS = (
     "quiz-topics", "quiz-signature", "quiz-speeches", "quiz-drama",
     "quiz-discriminatory", "quiz-common-words", "quiz-moin", "quiz-tone", "quiz-gender",
     "quiz-mention", "quiz-genz", "quiz-chancellor",
+    "quiz-gender-word", "quiz-gender-topic",
 )
 
 

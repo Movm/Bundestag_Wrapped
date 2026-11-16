@@ -35,6 +35,10 @@ import {
   ChancellorSplitSlide,
   ChancellorTopicsSlide,
   ChancellorFocusSlide,
+  GenderCheckIntroSlide,
+  GenderWordSlide,
+  GenderWordsSlide,
+  GenderTopicsSlide,
 } from '@/components/slides';
 import { SlideInfo } from '@/components/slides/shared';
 import type { SlideData } from '@/lib/slide-sharepics';
@@ -251,6 +255,17 @@ function GenerationSlideWrapper({ part }: { part: 'intro' | 'info' }) {
     : <GenerationInfoSlide generations={generations} />;
 }
 
+function GenderCheckSlideWrapper({ part }: { part: 'intro' | 'word' | 'words' | 'topics' }) {
+  const check = useFullWrappedData()?.genderCheck;
+  if (!check) return null;
+  switch (part) {
+    case 'intro': return <GenderCheckIntroSlide check={check} />;
+    case 'word': return <GenderWordSlide check={check} />;
+    case 'words': return <GenderWordsSlide check={check} />;
+    case 'topics': return <GenderTopicsSlide check={check} />;
+  }
+}
+
 function ChancellorSlideWrapper({ part }: { part: 'intro' | 'split' | 'focus' | 'topics' }) {
   const chancellor = useFullWrappedData()?.chancellor;
   if (!chancellor) return null;
@@ -375,6 +390,8 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'quiz-gender':
     case 'quiz-mention':
     case 'quiz-chancellor':
+    case 'quiz-gender-word':
+    case 'quiz-gender-topic':
     case 'quiz-genz': {
       const question = quizzes[slide];
       if (!question) return null;
@@ -441,6 +458,18 @@ export const SlideRenderer = memo(function SlideRenderer({
 
     case 'reveal-chancellor-topics':
       return <ChancellorSlideWrapper part="topics" />;
+
+    case 'intro-gender-check':
+      return <GenderCheckSlideWrapper part="intro" />;
+
+    case 'reveal-gender-word':
+      return <GenderCheckSlideWrapper part="word" />;
+
+    case 'reveal-gender-words':
+      return <GenderCheckSlideWrapper part="words" />;
+
+    case 'reveal-gender-topics':
+      return <GenderCheckSlideWrapper part="topics" />;
 
     case 'intro-genz':
       return <GenerationSlideWrapper part="intro" />;

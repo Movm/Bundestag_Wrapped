@@ -323,6 +323,59 @@ export interface ChancellorHotWord {
   "zScore": number;
 }
 
+export interface GenderSplit {
+  "male": number;
+  "female": number;
+}
+
+export type GenderSide = "male" | "female";
+
+export interface GenderPartyRate {
+  "party": NonEmptyString;
+  "male": number;
+  "female": number;
+}
+
+export interface GenderDuel {
+  "term": NonEmptyString;
+  "answer": GenderSide;
+  "split": GenderSplit;
+  "factor": number;
+  "consistentParties": number;
+  "totalParties": number;
+  "parties": Array<GenderPartyRate>;
+  "topSpeaker"?: NamedPartyCount;
+}
+
+export interface GenderWord {
+  "word": NonEmptyString;
+  "factor": number;
+  "consistentParties": number;
+  "count": number;
+}
+
+export interface GenderTopic {
+  "topic": NonEmptyString;
+  "side": GenderSide;
+  "factor": number;
+  "consistentParties": number;
+}
+
+export interface GenderCheck {
+  "speeches": {
+  "male": number;
+  "female": number;
+};
+  "totalParties": number;
+  "wordDuel": GenderDuel;
+  "topicDuel": GenderDuel;
+  "topics": Array<GenderTopic>;
+  "words": {
+  "male": Array<GenderWord>;
+  "female": Array<GenderWord>;
+};
+}
+
 export interface ChancellorAnalysis {
   "name": NonEmptyString;
   "party": NonEmptyString;
@@ -432,7 +485,7 @@ export interface QuizQuestion {
   "ratio"?: Ratio;
   "swiftie"?: NamedParty;
   "decoys"?: Array<NamedParty>;
-  "layout"?: "stack" | "tiles" | "fan" | "gap" | "quadrants" | "stickers" | "swipe";
+  "layout"?: "stack" | "tiles" | "fan" | "gap" | "quadrants" | "stickers" | "swipe" | "duel";
   "gapSentence"?: string;
 }
 
@@ -473,6 +526,7 @@ export interface WrappedData {
   "mentions"?: Array<Mention>;
   "generations"?: GenerationComparison;
   "chancellor"?: ChancellorAnalysis;
+  "genderCheck"?: GenderCheck;
 }
 
 export type SpeakerIndexAsset = Record<string, unknown>;
@@ -583,7 +637,7 @@ export interface EditionManifest {
 export interface EditionQuizTextOverrides {
   "question"?: NonEmptyString;
   "explanation"?: NonEmptyString;
-  "layout"?: "stack" | "tiles" | "fan" | "gap" | "quadrants" | "stickers" | "swipe";
+  "layout"?: "stack" | "tiles" | "fan" | "gap" | "quadrants" | "stickers" | "swipe" | "duel";
   "gapSentence"?: string;
 }
 

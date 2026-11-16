@@ -154,6 +154,17 @@ describe('active slide plan', () => {
     ]);
   });
 
+  it('tells Männer gegen Frauen as two duels, the opener only with the word duel', () => {
+    const configuration = { version: 1 as const, groups: [{ id: 'quiz-gender-word' }, { id: 'quiz-gender-topic' }] };
+    expect(buildActiveSlidePlan(quizModel(['quiz-gender-word', 'quiz-gender-topic']), [], configuration)).toEqual([
+      'intro', 'info-disclaimer',
+      'intro-gender-check', 'quiz-gender-word', 'reveal-gender-word', 'reveal-gender-words',
+      'quiz-gender-topic', 'reveal-gender-topics',
+      'share', 'outro', 'next', 'finale',
+    ]);
+    expect(buildActiveSlidePlan(quizModel(['quiz-gender-topic']), [], configuration)).not.toContain('intro-gender-check');
+  });
+
   it('tells the chancellor chapter after the mention only when its question exists', () => {
     const configuration = { version: 1 as const, groups: [{ id: 'quiz-mention' }, { id: 'quiz-chancellor' }] };
     expect(buildActiveSlidePlan(quizModel(['quiz-mention']), [], configuration)).not.toContain('intro-chancellor');

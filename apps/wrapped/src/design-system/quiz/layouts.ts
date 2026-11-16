@@ -9,7 +9,7 @@ import type { QuizEngine } from './engine';
  *   2. register it in QUIZ_LAYOUT_REGISTRY (quiz/registry.tsx) with its constraints.
  * Nothing else changes — every quiz can then use it via `layout` or the rotation.
  */
-export const QUIZ_LAYOUTS = ['stack', 'tiles', 'fan', 'gap', 'quadrants', 'stickers', 'swipe'] as const;
+export const QUIZ_LAYOUTS = ['stack', 'tiles', 'fan', 'gap', 'quadrants', 'stickers', 'swipe', 'duel'] as const;
 export type QuizLayoutId = (typeof QUIZ_LAYOUTS)[number];
 
 export interface QuizLayoutProps {
@@ -18,6 +18,8 @@ export interface QuizLayoutProps {
   questionId: string;
   /** "Platz 1 ist {answer}." — only the gap layout uses it. */
   gapSentence?: string;
+  /** Percent per option, revealed once answered — only the duel layout uses it. */
+  shares?: Readonly<Record<string, number>>;
 }
 
 export interface QuizLayoutSpec {
@@ -30,6 +32,8 @@ export interface QuizLayoutSpec {
    * sentence) are used only when an edition pins them, never by rotation.
    */
   optIn?: boolean;
+  /** How long the marked answer stays before the story moves on; layouts that turn into a chart need longer. */
+  advanceMs?: { right: number; wrong: number };
 }
 
 const longest = (options: string[]) => Math.max(0, ...options.map(option => option.length));

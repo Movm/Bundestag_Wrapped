@@ -1,4 +1,5 @@
 import { FITS, type QuizLayoutSpec } from './layouts';
+import { DuelLayout } from './layouts/DuelLayout';
 import { FanLayout } from './layouts/FanLayout';
 import { GAP_MARK, GapLayout } from './layouts/GapLayout';
 import { QuadrantsLayout } from './layouts/QuadrantsLayout';
@@ -20,5 +21,7 @@ export const QUIZ_LAYOUT_REGISTRY: readonly QuizLayoutSpec[] = [
   { id: 'swipe', component: SwipeLayout, optIn: true, fits: options => FITS.count(options, 2, 5) },
   { id: 'gap', component: GapLayout, optIn: true, fits: (options, { gapSentence }) => Boolean(gapSentence?.includes(GAP_MARK)) && FITS.count(options, 2, 6) },
   { id: 'stickers', component: StickersLayout, fits: options => FITS.count(options, 2, 6) && FITS.shortLabels(options, 18) },
+  // Two halves that become the result chart: only for questions that bring their own shares.
+  { id: 'duel', component: DuelLayout, optIn: true, fits: options => options.length === 2, advanceMs: { right: 3200, wrong: 4200 } },
   { id: 'tiles', component: TilesLayout, fits: () => true },
 ];

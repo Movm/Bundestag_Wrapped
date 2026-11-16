@@ -59,3 +59,31 @@ it('swipe turns to the next card on Nein and wraps around', async () => {
   expect(card()).toContain('Karte 2 von 4');
   await act(async () => root.unmount());
 });
+
+it('duel: two halves in fixed order that grow to the real split once answered', async () => {
+  const onAnswer = vi.fn();
+  const root = createRoot(container);
+  const duel = { question: 'Wer sagt öfter „Männer“?', options: ['Männer', 'Frauen'], correctAnswer: 'Frauen', explanation: 'Frauen sagen es 2,5-mal so oft.' };
+  await act(async () => root.render(<Quiz quiz={duel} layout="duel" shares={{ Männer: 29, Frauen: 71 }} onAnswer={onAnswer} />));
+  expect(container.querySelector('[data-quiz-layout]')!.getAttribute('data-quiz-layout')).toBe('duel');
+  const group = container.querySelector('[role="group"]')!;
+  expect(group.getAttribute('aria-labelledby')).toBe(container.querySelector('h2')!.id);
+  const [men, women] = [...group.querySelectorAll('button')];
+  expect(men.textContent).toContain('Männer');
+  expect(women.textContent).toContain('Frauen');
+  // No numbers before the answer: the split is the solution.
+  expect(container.textContent).not.toContain('71 %');
+
+  men.focus();
+  await act(async () => men.click());
+  expect(onAnswer).toHaveBeenCalledWith(false);
+  expect(men.getAttribute('aria-disabled')).toBe('true');
+  expect(men.textContent).toContain('29 %');
+  expect(men.textContent).toContain('falsch');
+  expect(women.textContent).toContain('71 %');
+  expect(women.textContent).toContain('richtig');
+  expect(women.getAttribute('style')).toContain('--grow: 71');
+  expect(container.textContent).toContain('Frauen sagen es 2,5-mal so oft.');
+  expect(document.activeElement).toBe(men);
+  await act(async () => root.unmount());
+});

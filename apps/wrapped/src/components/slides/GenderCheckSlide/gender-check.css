@@ -1,0 +1,53 @@
+/* Männer gegen Frauen: Frauen in pink, Männer in lilac — always with a text label, never colour alone. */
+.ds-gender--female { --gender: var(--color-wr-pink); }
+.ds-gender--male { --gender: var(--color-wr-lilac); }
+.ds-gender-label { color: var(--color-wr-lilac); }
+.ds-gender-text { color: var(--gender); }
+.ds-gender-key { display: inline-flex; align-items: center; gap: 0.5rem; margin: 0; font-family: var(--font-mono); font-weight: 700; font-size: 0.8125rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.ds-gender-key::before { content: ''; width: 0.85rem; height: 0.85rem; border-radius: 3px; background: var(--gender); flex: none; }
+
+.ds-gender-hero { display: flex; flex-wrap: wrap; align-items: flex-end; gap: clamp(1rem, 3vw, 2.5rem); }
+.ds-gender-hero__factor { font-size: clamp(4.5rem, 2rem + min(13vw, 17vh), 12rem); color: var(--gender); }
+.ds-gender-hero__text { display: flex; flex-direction: column; gap: 0.5rem; padding-bottom: 0.4em; min-width: 0; }
+
+.ds-gender-parties { display: flex; flex-direction: column; gap: 0.7rem; width: 100%; max-width: 44rem; margin: 0; padding: 0; list-style: none; }
+.ds-gender-party { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr) 6rem; gap: 1rem; align-items: center; }
+.ds-gender-party__name { font-family: var(--font-wide); font-weight: 800; font-stretch: 110%; font-size: 1.0625rem; }
+.ds-gender-party__track { height: 1.5rem; border-radius: 999px; background: color-mix(in srgb, #fff 10%, var(--surface-bg)); overflow: hidden; }
+.ds-gender-party__fill { display: block; height: 100%; border-radius: 999px; background: var(--gender); transform-origin: left; }
+.ds-gender-party__value { font-family: var(--font-wide); font-weight: 900; font-variant-numeric: tabular-nums; text-align: right; font-size: 1.25rem; white-space: nowrap; }
+.ds-gender-speaker { align-self: flex-start; display: inline-flex; flex-wrap: wrap; gap: 0.35rem 0.6rem; align-items: baseline; padding: 0.6rem 1rem; border-radius: 999px; background: var(--color-wr-card); font-family: var(--font-mono); font-size: 0.875rem; }
+.ds-gender-speaker b { font-family: var(--font-wide); font-weight: 900; font-size: 1rem; }
+
+.ds-gender-words { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: clamp(1rem, 3vw, 2.5rem); }
+.ds-gender-words__col { display: flex; flex-direction: column; gap: 0.75rem; padding: clamp(1rem, 0.8rem + 1vw, 1.5rem) clamp(1.25rem, 1rem + 1.4vw, 2rem); border-radius: clamp(1.25rem, 1rem + 1vw, 1.75rem); border: 2px solid var(--gender); }
+.ds-gender-words__list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+.ds-gender-words__list li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.3rem 0; border-bottom: 1px solid color-mix(in srgb, #fff 14%, transparent); }
+.ds-gender-words__list li:last-child { border-bottom: 0; }
+.ds-gender-words__word { min-width: 0; overflow-wrap: anywhere; hyphens: auto; font-family: var(--font-wide); font-weight: 900; font-stretch: 112%; letter-spacing: -0.03em; text-transform: uppercase; line-height: 0.95; font-size: clamp(1.0625rem, 0.8rem + 0.9vw, 1.625rem); }
+.ds-gender-words__list li:first-child .ds-gender-words__word { font-size: clamp(1.375rem, 0.9rem + 1.4vw, 2.25rem); }
+.ds-gender-words__factor { font-family: var(--font-wide); font-weight: 900; font-variant-numeric: tabular-nums; color: var(--gender); font-size: clamp(1.125rem, 0.9rem + 0.8vw, 1.75rem); white-space: nowrap; }
+
+.ds-gender-topics { width: 100%; border-collapse: separate; border-spacing: 0 0.25rem; table-layout: fixed; }
+.ds-gender-topics thead th { padding-bottom: 0.4rem; font-weight: inherit; }
+.ds-gender-topics th:nth-child(2) { width: clamp(7rem, 5rem + 6vw, 10rem); }
+.ds-gender-topics__side { text-align: left; }
+.ds-gender-topics__side--male { text-align: right; }
+.ds-gender-topics__cell { height: 1.75rem; }
+.ds-gender-topics__row { display: flex; align-items: center; gap: 0.6rem; }
+.ds-gender-topics__row--female { flex-direction: row-reverse; }
+.ds-gender-topics__bar { display: block; flex: none; height: 1.5rem; border-radius: 999px; background: var(--gender); transform-origin: left; }
+.ds-gender-topics__row--female .ds-gender-topics__bar { transform-origin: right; }
+.ds-gender-topics__value { font-family: var(--font-wide); font-weight: 900; font-variant-numeric: tabular-nums; font-size: 1.0625rem; white-space: nowrap; }
+.ds-gender-topics__name { text-align: center; font-family: var(--font-wide); font-weight: 900; font-stretch: 110%; font-size: clamp(1rem, 0.85rem + 0.6vw, 1.375rem); line-height: 1; }
+.ds-gender-topics__name small { display: block; margin-top: 0.25rem; font-family: var(--font-mono); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.06em; color: var(--surface-on-muted); }
+.ds-gender-topics tr[data-duel] .ds-gender-topics__name { color: var(--color-wr-lilac); }
+
+@media (max-width: 30rem) {
+  .ds-gender-party { grid-template-columns: 5.25rem minmax(0, 1fr) 4.5rem; gap: 0.6rem; }
+  .ds-gender-party__name { font-size: 0.9375rem; }
+  .ds-gender-topics th:nth-child(2) { width: 6.5rem; }
+  .ds-gender-topics__name { font-size: 0.9375rem; hyphens: auto; }
+  .ds-gender-topics__unit { display: none; }
+  .ds-gender-topics__value { font-size: 0.875rem; }
+}

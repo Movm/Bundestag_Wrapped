@@ -22,13 +22,15 @@ interface SlideQuizProps {
   gapSentence?: string;
   /** Story quizzes mix their options; off only where a test needs a fixed order. */
   shuffle?: boolean;
+  /** Percent per option for the duel layout. */
+  shares?: Readonly<Record<string, number>>;
 }
 
 /** A quiz slide: the design-system Quiz on the quiz surface. */
-export function SlideQuiz({ quiz, storedAnswer, onAnswer, title, badge, slideId, layout, gapSentence, shuffle = true }: SlideQuizProps) {
+export function SlideQuiz({ quiz, storedAnswer, onAnswer, title, badge, slideId, layout, gapSentence, shuffle = true, shares }: SlideQuizProps) {
   return (
     <Slide shapes="band">
-      <Quiz quiz={quiz} storedAnswer={storedAnswer} onAnswer={onAnswer} seed={slideId} layout={layout} gapSentence={gapSentence} badge={badge ?? title} shuffle={shuffle} />
+      <Quiz quiz={quiz} storedAnswer={storedAnswer} onAnswer={onAnswer} seed={slideId} layout={layout} gapSentence={gapSentence} badge={badge ?? title} shuffle={shuffle} shares={shares} />
     </Slide>
   );
 }

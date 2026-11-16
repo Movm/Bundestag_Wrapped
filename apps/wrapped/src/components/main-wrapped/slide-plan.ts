@@ -7,6 +7,7 @@ export const QUIZ_SLIDES = [
   'quiz-topics', 'quiz-signature', 'quiz-speeches', 'quiz-drama',
   'quiz-discriminatory', 'quiz-common-words', 'quiz-moin',
   'quiz-tone', 'quiz-gender', 'quiz-mention', 'quiz-genz', 'quiz-chancellor',
+  'quiz-gender-word', 'quiz-gender-topic',
 ] as const;
 
 type DataQuizSlide = Exclude<(typeof QUIZ_SLIDES)[number], 'quiz-moin'>;
@@ -51,6 +52,9 @@ const STORY_TEMPLATE: readonly (SlideType | StoryGroup)[] = [
   { quiz: 'quiz-mention', slides: ['intro-mention', 'quiz-mention', 'info-mention'] },
   // Gen Z MPs against older MPs, from the edition's generations section.
   GENZ_GROUP,
+  // Männer gegen Frauen: two duels, from the edition's gender check.
+  { quiz: 'quiz-gender-word', slides: ['intro-gender-check', 'quiz-gender-word', 'reveal-gender-word', 'reveal-gender-words'] },
+  { quiz: 'quiz-gender-topic', slides: ['quiz-gender-topic', 'reveal-gender-topics'] },
   { quiz: 'quiz-moin', slides: ['intro-moin', 'quiz-moin', 'info-moin', 'reveal-moin'] },
   { quiz: 'quiz-tone', slides: ['intro-tone', 'quiz-tone', 'info-tone', 'reveal-tone'] },
   { quiz: 'quiz-gender', slides: ['quiz-gender', 'info-gender', 'reveal-gender'] },
