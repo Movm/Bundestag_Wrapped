@@ -37,6 +37,7 @@ export function planSources(sources, f = {}) {
       speakers: f.speaker,
       wahlperioden: f.wahlperiode,
       speechTypes: f.section_type,
+      herausgeberAny: f.herausgeber,
       dateFrom: f.from,
       dateTo: f.to
     });
@@ -49,6 +50,7 @@ export function planSources(sources, f = {}) {
         urheberAny: f.urheber,
         wahlperioden: f.wahlperiode,
         chunkTypes: f.section_type,
+        herausgeberAny: f.herausgeber,
         dateFrom: f.from,
         dateTo: f.to
       });

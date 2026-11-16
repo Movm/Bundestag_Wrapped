@@ -202,6 +202,7 @@ export async function searchDrucksachen(params = {}, options = {}) {
   if (params.wahlperiode) apiParams['f.wahlperiode'] = params.wahlperiode;
   if (params.dokumentnummer) apiParams['f.dokumentnummer'] = params.dokumentnummer;
   if (params.drucksachetyp) apiParams['f.drucksachetyp'] = params.drucksachetyp;
+  if (params.zuordnung) apiParams['f.zuordnung'] = params.zuordnung;
   if (params.datum_start) apiParams['f.datum.start'] = params.datum_start;
   if (params.datum_end) apiParams['f.datum.end'] = params.datum_end;
   if (params.urheber) apiParams['f.urheber'] = normalizeDipFaction(params.urheber);

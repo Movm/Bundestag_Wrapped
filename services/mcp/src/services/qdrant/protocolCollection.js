@@ -263,6 +263,10 @@ export function buildProtocolFilter(params) {
     });
   }
 
+  if (params.herausgeberAny && params.herausgeberAny.length > 0) {
+    conditions.push({ key: 'herausgeber', match: { any: params.herausgeberAny } });
+  }
+
   if (params.chunkType) {
     conditions.push({
       key: 'chunk_type',

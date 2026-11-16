@@ -78,6 +78,13 @@ describe('planSources', () => {
     });
   });
 
+  it('passes herausgeber to both sources', () => {
+    const plan = planSources(undefined, { herausgeber: ['BR'] });
+    const condition = { key: 'herausgeber', match: { any: ['BR'] } };
+    expect(plan.speeches.must).toContainEqual(condition);
+    expect(plan.documents.must).toContainEqual(condition);
+  });
+
   it('widens day bounds to the whole day', () => {
     const plan = planSources(['speeches'], { from: '2026-01-01', to: '2026-06-30' });
     expect(plan.speeches.must).toContainEqual({
@@ -193,6 +200,24 @@ describe('REST door', () => {
     expect(await res.json()).toEqual({ values: [{ value: 'GRÜNE', count: 35 }] });
     expect(client.facet.mock.calls[0][1].filter.must).toContainEqual({ key: 'chunk_part', match: { value: 0 } });
     expect(client.facet.mock.calls[1][1].filter.must).toContainEqual({ key: 'chunk_index', match: { value: 0 } });
+  });
+
+  it('accepts herausgeber BT/BR and rejects other values', async () => {
+    searchProtocolChunks.mockResolvedValue([]);
+    searchDocumentChunks.mockResolvedValue([]);
+    expect((await post('/search', { query: 'x', filters: { herausgeber: ['BR'] } })).status).toBe(200);
+    expect((await post('/search', { query: 'x', filters: { herausgeber: ['XX'] } })).status).toBe(400);
+  });
+
+  it('facets honour herausgeber', async () => {
+    client.facet.mockResolvedValue({ hits: [{ value: 'Antrag', count: 3 }] });
+
+    await post('/facets', { field: 'drucksachetyp', filters: { herausgeber: ['BR'] } });
+
+    expect(client.facet.mock.calls[0][1].filter.must).toContainEqual({
+      key: 'herausgeber',
+      match: { any: ['BR'] }
+    });
   });
 
   it('answers 503, not an empty list, when Qdrant fails', async () => {

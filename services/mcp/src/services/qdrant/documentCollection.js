@@ -27,7 +27,9 @@ const INDEXES = [
   { field: 'datum', type: 'datetime' },
   // Document heads (`chunk_index = 0`) for per-document facet counts.
   { field: 'chunk_index', type: 'integer' },
-  { field: 'urheber', type: 'keyword' }
+  { field: 'urheber', type: 'keyword' },
+  // BT | BR — the DIP files Bundesrat-Drucksachen in the same endpoint.
+  { field: 'herausgeber', type: 'keyword' }
 ];
 
 /**
@@ -152,6 +154,10 @@ export function buildDocumentFilter(params) {
 
   if (params.wahlperioden && params.wahlperioden.length > 0) {
     conditions.push({ key: 'wahlperiode', match: { any: params.wahlperioden } });
+  }
+
+  if (params.herausgeberAny && params.herausgeberAny.length > 0) {
+    conditions.push({ key: 'herausgeber', match: { any: params.herausgeberAny } });
   }
 
   if (params.drucksacheId) {

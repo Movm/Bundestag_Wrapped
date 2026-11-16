@@ -380,6 +380,12 @@ initiating factions from `urheber`. `excerpt` is the best ≤1800-character
 window of a long chunk for the query. Facets count per unit, except
 `section_type` on Drucksachen (per chunk).
 
+`herausgeber` (`BT` | `BR`) separates the chambers: the DIP serves
+Bundesrat-Drucksachen from the same endpoint, so the document index holds
+both. Chunks indexed before the field existed get it from
+`node scripts/backfill-document-herausgeber.mjs` (idempotent, `--dry-run`
+counts only). Speeches are Bundestag-only.
+
 ```bash
 curl -s https://mcp.bundestag-wrapped.de/api/v1/search \
   -H "Authorization: Bearer $KEY" -H 'content-type: application/json' \

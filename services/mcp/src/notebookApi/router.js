@@ -33,6 +33,7 @@ export const filtersSchema = z
     speaker: list(z.string()),
     drucksachetyp: list(z.string()),
     urheber: list(z.string()),
+    herausgeber: list(z.enum(['BT', 'BR'])),
     section_type: list(z.string()),
     from: day.optional(),
     to: day.optional()
