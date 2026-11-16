@@ -21,10 +21,10 @@ async function render(node: React.ReactNode) {
 }
 
 describe('chancellor chapter on the 2026 preview data', () => {
-  it('opens with the question and how much he said', async () => {
-    const text = await render(<ChancellorIntroSlide chancellor={chancellor} year={2026} />);
+  it('opens with the question as a check of his reputation', async () => {
+    const text = await render(<ChancellorIntroSlide chancellor={chancellor} />);
     expect(text).toContain('Innen- oder Außen­kanzler?');
-    expect(text).toContain('Friedrich Merz kommt 2026 auf acht Reden und 101 Antworten in der Regierungsbefragung. Zusammen 28.655 Wörter.');
+    expect(text).toContain('Viele nennen ihn den Außenkanzler. Bundestag Wrapped hat nachgezählt, worüber Friedrich Merz im Bundestag wirklich spricht.');
   });
 
   it('answers with his split against the rest of the chamber', async () => {

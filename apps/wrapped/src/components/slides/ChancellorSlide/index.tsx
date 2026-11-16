@@ -5,9 +5,8 @@ import { Block, ChipCloud, RankCard } from '@/design-system/components/Data';
 import { Display, Eyebrow, Mark } from '@/design-system/components/Type';
 import { ENTER } from '@/design-system/motion';
 import { againstChamber, areaName, chancellorVerdict, focusArea, focusName, lastName, sideName, split } from '@/domain/chancellor';
-import { capitalize, cardinal } from '@/lib/german-count';
+import { capitalize } from '@/lib/german-count';
 
-const number = new Intl.NumberFormat('de-DE');
 const decimal = (value: number) => value.toLocaleString('de-DE', { maximumFractionDigits: 1 });
 
 /** Five-pointed star as an SVG point list, centred on (cx, cy). */
@@ -45,17 +44,8 @@ function HouseAndStars() {
   );
 }
 
-/** "acht Reden und 101 Antworten in der Regierungsbefragung" — parts without a count are left out. */
-function contributions(chancellor: ChancellorAnalysis): string {
-  const parts = [
-    chancellor.speeches > 0 && `${cardinal(chancellor.speeches)} ${chancellor.speeches === 1 ? 'Rede' : 'Reden'}`,
-    chancellor.answers > 0 && `${cardinal(chancellor.answers)} ${chancellor.answers === 1 ? 'Antwort' : 'Antworten'} in der Regierungsbefragung`,
-  ].filter(Boolean);
-  return parts.length ? parts.join(' und ') : `${cardinal(chancellor.contributions)} Beiträge`;
-}
-
-/** Opener: the question and how much the chancellor said. */
-export function ChancellorIntroSlide({ chancellor, year }: { chancellor: ChancellorAnalysis; year?: number | null }) {
+/** Opener: the question, framed as a check of his reputation as "Außenkanzler". */
+export function ChancellorIntroSlide({ chancellor }: { chancellor: ChancellorAnalysis }) {
   return (
     <Slide shapes="orbit">
       <motion.div variants={ENTER.stamp} className="self-start rotate-[-4deg]">
@@ -63,7 +53,7 @@ export function ChancellorIntroSlide({ chancellor, year }: { chancellor: Chancel
       </motion.div>
       <Display size="xl">Innen- oder <Mark>Außen&shy;kanzler?</Mark></Display>
       <motion.p variants={ENTER.rise} className="ds-statement">
-        {chancellor.name} kommt {year ? `${year} ` : ''}auf {contributions(chancellor)}. Zusammen {number.format(chancellor.words)} Wörter. Wohin schaut er öfter: nach innen oder nach außen?
+        Viele nennen ihn den Außenkanzler. Bundestag Wrapped hat nachgezählt, worüber {chancellor.name} im Bundestag wirklich spricht.
       </motion.p>
       <HouseAndStars />
     </Slide>
