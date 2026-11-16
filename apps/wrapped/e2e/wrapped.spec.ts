@@ -379,7 +379,7 @@ test('keeps an index result and its destinations within the active preview editi
   await page.getByRole('textbox', { name: 'Abgeordneten suchen' }).fill('Bea');
   const profile = page.getByRole('link', { name: 'Bea Ausgabe Zwei Partei Beta' });
   await expect(profile).toHaveAttribute('href', '/2026/abgeordnete/shared-speaker');
-  await expect(page.getByRole('link', { name: 'Wrapped', exact: true })).toHaveAttribute('href', '/2026/wrapped/shared-speaker');
+  await expect(page.getByRole('link', { name: 'Wrapped', exact: true })).toHaveAttribute('href', '/2026/abgeordnete/shared-speaker/quiz');
   await expect(page.getByText('Alex Ausgabe Eins')).toHaveCount(0);
 });
 
