@@ -306,8 +306,8 @@ describe('Jugendwort speaker question', () => {
 });
 
 describe('edition quiz configuration', () => {
-  it('runs the 2026 edition as topic riser, signature words, youth language, the moment of the year, the chancellor and Gen Z', () => {
-    expect(quiz2026.groups.map(group => group.id)).toEqual(['quiz-topic-riser', 'quiz-signature', 'quiz-youth-language', 'quiz-mention', 'quiz-chancellor', 'quiz-genz']);
+  it('runs the 2026 edition as topic riser, signature words, youth language, the chancellor, the moment of the year and Gen Z', () => {
+    expect(quiz2026.groups.map(group => group.id)).toEqual(['quiz-topic-riser', 'quiz-signature', 'quiz-youth-language', 'quiz-chancellor', 'quiz-mention', 'quiz-genz']);
   });
 
   it('asks for the chancellor’s foreign share with the real number in the explanation', () => {

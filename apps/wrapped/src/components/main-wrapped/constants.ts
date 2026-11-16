@@ -65,16 +65,16 @@ export const SLIDES = [
   'intro-youth-language',
   'quiz-youth-language',
   'info-youth-language',
-  // Moment of the year (e.g. Timmy der Wal), from the edition's mentions
-  'intro-mention',
-  'quiz-mention',
-  'info-mention',
   // Innen- oder Außenkanzler, from the edition's chancellor section
   'intro-chancellor',
   'quiz-chancellor',
   'reveal-chancellor',
   'reveal-chancellor-focus',
   'reveal-chancellor-topics',
+  // Moment of the year (e.g. Timmy der Wal), from the edition's mentions
+  'intro-mention',
+  'quiz-mention',
+  'info-mention',
   // Gen Z MPs against older MPs
   'intro-genz',
   'quiz-genz',

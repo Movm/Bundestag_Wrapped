@@ -42,13 +42,13 @@ const STORY_TEMPLATE: readonly (SlideType | StoryGroup)[] = [
     quiz: 'quiz-youth-language',
     slides: ['intro-youth-language', 'quiz-youth-language', GENZ_GROUP, 'info-youth-language'],
   },
-  // Moment of the year (e.g. Timmy der Wal), from the edition's mentions.
-  { quiz: 'quiz-mention', slides: ['intro-mention', 'quiz-mention', 'info-mention'] },
   // Innen- oder Außenkanzler, from the edition's chancellor section.
   {
     quiz: 'quiz-chancellor',
     slides: ['intro-chancellor', 'quiz-chancellor', 'reveal-chancellor', 'reveal-chancellor-focus', 'reveal-chancellor-topics'],
   },
+  // Moment of the year (e.g. Timmy der Wal), from the edition's mentions.
+  { quiz: 'quiz-mention', slides: ['intro-mention', 'quiz-mention', 'info-mention'] },
   // Gen Z MPs against older MPs, from the edition's generations section.
   GENZ_GROUP,
   { quiz: 'quiz-moin', slides: ['intro-moin', 'quiz-moin', 'info-moin', 'reveal-moin'] },
