@@ -253,10 +253,9 @@ function GenerationSlideWrapper({ part }: { part: 'intro' | 'info' }) {
 
 function ChancellorSlideWrapper({ part }: { part: 'intro' | 'split' | 'focus' | 'topics' }) {
   const chancellor = useFullWrappedData()?.chancellor;
-  const year = editionSurface(useOptionalEdition()).year;
   if (!chancellor) return null;
   switch (part) {
-    case 'intro': return <ChancellorIntroSlide chancellor={chancellor} year={year} />;
+    case 'intro': return <ChancellorIntroSlide chancellor={chancellor} />;
     case 'split': return <ChancellorSplitSlide chancellor={chancellor} />;
     case 'focus': return <ChancellorFocusSlide chancellor={chancellor} />;
     case 'topics': return <ChancellorTopicsSlide chancellor={chancellor} />;

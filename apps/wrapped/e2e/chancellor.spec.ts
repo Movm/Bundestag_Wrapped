@@ -33,7 +33,7 @@ test('tells the Innen-/Außenkanzler chapter only when the edition has the secti
   await storyStart(page).click();
 
   await jumpToSlide(page, 'intro-chancellor');
-  await expect(page.locator('#intro-chancellor')).toContainText('Friedrich Merz kommt 2026 auf acht Reden und 101 Antworten in der Regierungsbefragung.');
+  await expect(page.locator('#intro-chancellor')).toContainText('Bundestag Wrapped hat nachgezählt, worüber Friedrich Merz im Bundestag wirklich spricht.');
 
   await jumpToSlide(page, 'quiz-chancellor');
   await answerQuiz(page, 'quiz-chancellor', true);
