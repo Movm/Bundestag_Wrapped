@@ -77,7 +77,7 @@ def main() -> None:
     checksums = {path.relative_to(root).as_posix(): _checksum(path) for path in _all_files(root)}
     _write_json(root / manifest["checksums"], checksums)
     validate_edition(root)
-    print(json.dumps(section, ensure_ascii=False, indent=2))
+    print(f"genderCheck written to {root / manifest['assets']['wrapped']}")
 
 
 if __name__ == "__main__":
