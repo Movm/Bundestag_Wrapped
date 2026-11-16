@@ -7,26 +7,29 @@ import { Display, FitWord, Lead, Mark, Note } from '@/design-system/components/T
 import { ChipCloud, Delta, RankCard } from '@/design-system/components/Data';
 import { PartyBlock, PartyGrid } from '@/design-system/components/PartyBlock';
 
+type RankingKind = 'topics' | 'words';
+
 const RANK_TONES = ['white', 'violet', 'pink', 'card'] as const;
 
-/** "Diese Wörter sind aufgestiegen": stair-stepped rank cards, biggest riser first. */
-export function RankingMovementSlide({ analysis }: { analysis: YearOverYearAnalysis }) {
-  const items = analysis.words
+/** "Die Top-Themen" / "Diese Wörter sind aufgestiegen": stair-stepped rank cards, biggest riser first. */
+export function RankingMovementSlide({ analysis, kind }: { analysis: YearOverYearAnalysis; kind: RankingKind }) {
+  const items = analysis[kind]
     .filter(item => item.previousRank !== null && item.rankChange > 0)
     .slice(0, 4);
+  const isTopics = kind === 'topics';
   return (
     <Slide shapes="corner">
       <div className="flex flex-col items-start gap-4">
         <Display size="xl" face="wide">
-          Diese Wörter sind <Mark>aufgestiegen.</Mark>
+          {isTopics ? <>Die <Mark>Top-Themen.</Mark></> : <>Diese Wörter sind <Mark>aufgestiegen.</Mark></>}
         </Display>
       </div>
-      <ol className="flex flex-col gap-3" aria-label="Aufgestiegene Wörter">
+      <ol className="flex flex-col gap-3" aria-label={isTopics ? 'Aufgestiegene Themen' : 'Aufgestiegene Wörter'}>
         {items.map((item, index) => (
           <li key={item.label}>
             <RankCard
               rank={item.currentRank ?? index + 1}
-              label={item.label}
+              label={isTopics ? topicName(item.label) : item.label}
               previousRank={item.previousRank ?? undefined}
               tone={RANK_TONES[index % RANK_TONES.length]}
               step={index}
