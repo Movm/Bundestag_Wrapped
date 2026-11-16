@@ -207,10 +207,10 @@ function GenderSlideWrapper() {
   return <GenderSlide genderAnalysis={genderAnalysis} phase="result" />;
 }
 
-function RankingMovementSlideWrapper() {
+function RankingMovementSlideWrapper({ kind }: { kind: 'topics' | 'words' }) {
   const data = useFullWrappedData();
   if (!data?.yearOverYear) return null;
-  return <RankingMovementSlide analysis={data.yearOverYear} />;
+  return <RankingMovementSlide analysis={data.yearOverYear} kind={kind} />;
 }
 
 function TopicRiserContextSlideWrapper() {
@@ -410,8 +410,11 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'reveal-topic-riser-context':
       return <TopicRiserContextSlideWrapper />;
 
+    case 'reveal-topic-risers':
+      return <RankingMovementSlideWrapper kind="topics" />;
+
     case 'reveal-word-risers':
-      return <RankingMovementSlideWrapper />;
+      return <RankingMovementSlideWrapper kind="words" />;
 
     case 'reveal-signature-movements':
       return <SignatureWordMovementSlideWrapper />;

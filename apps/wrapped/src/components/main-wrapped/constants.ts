@@ -17,6 +17,7 @@ export const SLIDES = [
 
   // Year-over-year movements
   'quiz-topic-riser',
+  'reveal-topic-risers',
   'reveal-topic-riser-context',
   'quiz-word-riser',
   'info-word-riser',

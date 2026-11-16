@@ -28,7 +28,7 @@ const GENZ_GROUP: StoryGroup = { quiz: 'quiz-genz', slides: ['intro-genz', 'quiz
 const STORY_TEMPLATE: readonly (SlideType | StoryGroup)[] = [
   'intro',
   'info-disclaimer',
-  { quiz: 'quiz-topic-riser', slides: ['quiz-topic-riser', 'reveal-topic-riser-context'] },
+  { quiz: 'quiz-topic-riser', slides: ['quiz-topic-riser', 'reveal-topic-risers', 'reveal-topic-riser-context'] },
   { quiz: 'quiz-word-riser', slides: ['quiz-word-riser', 'info-word-riser', 'reveal-word-risers'] },
   { quiz: 'quiz-topics', slides: ['intro-topics', 'quiz-topics', 'info-topics', 'reveal-topics', 'info-party-topics', 'reveal-party-topics'] },
   { quiz: 'quiz-signature', slides: ['intro-vocabulary', 'quiz-signature', 'info-signature', 'reveal-signature'], comparisonSlides: ['reveal-signature-movements'] },
