@@ -16,6 +16,7 @@ from noun_analysis.wrapped.speaker_export.match import build_match_from_exporter
 from noun_analysis.edition.export import EditionValidationError, build_manifest, publish_edition
 from noun_analysis.edition.comparison import build_year_over_year
 from noun_analysis.edition.chancellor import build_chancellor
+from noun_analysis.edition.gender_check import build_gender_check
 from noun_analysis.edition.generations import build_generations
 from noun_analysis.edition.mentions import build_mentions
 from noun_analysis.edition.release import build_release_report
@@ -54,6 +55,7 @@ def _apply_signature_configs(data, config_paths: tuple[str, ...]) -> None:
 @click.option("--youth-words", type=click.Path(exists=True, dir_okay=False), help="Versioned youth-word lexicon JSON")
 @click.option("--mentions", "mentions_config", type=click.Path(exists=True, dir_okay=False), help="Versioned mentions config (who talked about a named moment)")
 @click.option("--generations", is_flag=True, help="Add the Gen Z comparison (birth years from the MdB Stammdaten)")
+@click.option("--gender-check", "gender_check_config", type=click.Path(exists=True), help="Add the Männer-gegen-Frauen analysis from this config JSON")
 @click.option("--chancellor", "chancellor_name", help="Add the Innen-/Außenkanzler analysis for this speaker, e.g. \"Friedrich Merz\"")
 @click.option("--signature-config", "signature_configs", multiple=True, type=click.Path(exists=True, dir_okay=False), help="Repeatable signature-word filter configuration")
 @click.option("--freeze", is_flag=True, help="Mark this explicitly complete and frozen")
@@ -72,6 +74,7 @@ def generate_edition(
     mentions_config: str | None,
     generations: bool,
     chancellor_name: str | None,
+    gender_check_config: str | None,
     signature_configs: tuple[str, ...],
     freeze: bool,
 ):
@@ -113,6 +116,15 @@ def generate_edition(
             cohort = build_generations(speeches, set(WordAnalyzer.STOPWORD_GENERIC) | data.signature_stopwords)
             if cohort:
                 wrapped_data["generations"] = cohort
+        if gender_check_config:
+            gender_check = build_gender_check(
+                speeches,
+                json.loads(Path(gender_check_config).read_text(encoding="utf-8")),
+                set(WordAnalyzer.STOPWORD_GENERIC) | data.signature_stopwords,
+            )
+            if gender_check is None:
+                raise click.ClickException("gender check is not usable: a duel has fewer than 4 consistent parties")
+            wrapped_data["genderCheck"] = gender_check
         if chancellor_name:
             previous = None
             if compare_with:

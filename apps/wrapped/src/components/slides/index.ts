@@ -21,4 +21,5 @@ export { NextSlide } from './NextSlide';
 export { MentionIntroSlide, MentionInfoSlide } from './MentionSlide';
 export { GenerationIntroSlide, GenerationInfoSlide } from './GenerationSlide';
 export { ChancellorFocusSlide, ChancellorIntroSlide, ChancellorSplitSlide, ChancellorTopicsSlide } from './ChancellorSlide';
+export { GenderCheckIntroSlide, GenderTopicsSlide, GenderWordSlide, GenderWordsSlide } from './GenderCheckSlide';
 export { RankingMovementSlide, SignatureWordMovementSlide, TopicRiserContextSlide } from './YearOverYearSlide';

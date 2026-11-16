@@ -62,6 +62,8 @@ export interface QuizQuestion {
   layout?: import('@/generated/wrapped-contract-v1').QuizQuestion['layout'];
   /** Sentence containing "{answer}" for the gap layout. */
   gapSentence?: string;
+  /** Percent per option, shown by the duel layout once answered (e.g. { Männer: 29, Frauen: 71 }). */
+  optionShares?: Record<string, number>;
 }
 
 export interface FunFact {
