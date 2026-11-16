@@ -290,7 +290,7 @@ test('keeps the annual shell hidden until its manifest is validated', async ({ p
 
   const navigation = page.goto('/2026/abgeordnete');
   await requested;
-  await expect(page.getByText('Lade...', { exact: true })).toBeVisible();
+  await expect(page.getByRole('status', { name: 'Seite wird geladen' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Bundestag Wrapped - Zur Startseite' })).toHaveCount(0);
   releaseManifest();
   await navigation;
