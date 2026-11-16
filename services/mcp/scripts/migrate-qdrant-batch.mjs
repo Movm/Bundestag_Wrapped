@@ -6,7 +6,11 @@
 
 const LOCAL_URL = process.env.LOCAL_QDRANT_URL || 'http://localhost:6333';
 const HOSTED_URL = process.env.HOSTED_QDRANT_URL || 'http://bundestagapi.moritz-waechter.de:16333';
-const API_KEY = process.env.QDRANT_API_KEY || 'YudVuRv1hENeiAn0cAb0CDebhT4HzrIL-0O3iYKFONA';
+const API_KEY = process.env.QDRANT_API_KEY;
+if (!API_KEY) {
+  console.error('QDRANT_API_KEY is required');
+  process.exit(1);
+}
 const BATCH_SIZE = 100;
 
 const COLLECTIONS = ['bundestag-docs', 'bundestag-protocol-chunks', 'bundestag-document-chunks'];
