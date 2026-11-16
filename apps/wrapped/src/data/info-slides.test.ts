@@ -3,11 +3,6 @@ import { resolveInfoSlide } from './info-slides';
 import { vocabularyIntro } from './intro-slides';
 
 describe('resolveInfoSlide', () => {
-  it('names the compared years from the data', () => {
-    expect(resolveInfoSlide('info-topic-riser', { year: 2026, baselineYear: '2025' }).body).toContain('Verglichen wird derselbe Zeitraum 2025 und 2026.');
-    expect(resolveInfoSlide('info-topic-riser', {}).body).toContain('derselbe Zeitraum des Vorjahres');
-  });
-
   it('spells the number of searched Jugendwörter and mentions earlier years only when counted', () => {
     const body = resolveInfoSlide('info-youth-language', { youthWordCount: 9, hasPastWinners: true }).body;
     expect(body).toContain('nach neun Begriffen');

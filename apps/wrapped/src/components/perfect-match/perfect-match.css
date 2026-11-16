@@ -108,8 +108,9 @@
 .pm-result__title { margin: 0; font-weight: 900; font-stretch: 125%; font-size: clamp(2.75rem, 7vw, 7rem); line-height: 0.85; letter-spacing: -0.05em; text-transform: uppercase; }
 .pm-result__title span { color: var(--color-wr-pink); }
 .pm-matches { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 0.875rem; align-items: stretch; margin: 0; padding: 0; list-style: none; }
+.pm-matches__item { display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; }
 .pm-match {
-  position: relative; height: 100%; overflow: hidden; border-radius: 2rem; background: var(--pm-card); color: var(--pm-card-ink);
+  position: relative; flex: 1; overflow: hidden; border-radius: 2rem; background: var(--pm-card); color: var(--pm-card-ink);
   padding: 0.75rem 0.75rem clamp(1.25rem, 2.4vw, 1.75rem); display: flex; flex-direction: column; gap: 1.25rem; text-decoration: none;
   transition: transform 0.25s var(--ease-wr-out);
 }
@@ -127,6 +128,13 @@
 .pm-match__pct { font-weight: 900; font-stretch: 125%; font-size: clamp(3.5rem, 6vw, 5.5rem); line-height: 0.8; letter-spacing: -0.055em; font-variant-numeric: tabular-nums; }
 .pm-match__pct span { font-size: 0.5em; }
 .pm-match__emoji { font-size: clamp(3rem, 5vw, 4rem); line-height: 1; }
+.pm-match__quiz {
+  display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; min-height: 3rem; padding: 0.5rem 1.25rem;
+  border: 2px solid rgb(255 255 255 / 0.3); border-radius: 999px; color: #fff; text-decoration: none; font-weight: 800; font-size: 0.9375rem;
+  transition: border-color 0.2s;
+}
+.pm-match__quiz:hover { border-color: #fff; }
+.pm-match__quiz:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 .pm-match__body { padding: 0 clamp(0.625rem, 1.4vw, 1.125rem); display: flex; flex-direction: column; gap: 0.625rem; }
 .pm-match__party { font-family: var(--font-mono); font-weight: 700; font-size: 0.875rem; letter-spacing: 0.08em; text-transform: uppercase; }
 .pm-match__name { font-weight: 900; font-stretch: 110%; font-size: clamp(1.875rem, 3vw, 2.75rem); line-height: 0.95; letter-spacing: -0.03em; text-wrap: balance; overflow-wrap: anywhere; }

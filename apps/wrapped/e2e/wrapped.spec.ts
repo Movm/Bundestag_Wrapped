@@ -92,7 +92,11 @@ test('completes the fixture journey with a quiz gate, mixed answers, and the act
   await expect.poll(() => page.evaluate(() => localStorage.getItem('quiz-storage-v2'))).toContain('"quiz-topics":true');
   await scrollToNextSlide(page, 'share', 'outro');
   await expect(page.locator('[data-slide-id="outro"]').getByRole('heading', { name: /Bundestag\s*Wrapped/i })).toBeVisible();
-  await scrollToNextSlide(page, 'outro', 'finale');
+  await scrollToNextSlide(page, 'outro', 'next');
+  const next = page.locator('[data-slide-id="next"]');
+  await expect(next.getByRole('heading', { name: /persönlich/i })).toBeVisible();
+  await expect(next.getByRole('link', { name: 'Alle Abgeordneten' })).toHaveAttribute('href', /\/abgeordnete$/);
+  await scrollToNextSlide(page, 'next', 'finale');
   const finale = page.locator('[data-slide-id="finale"]');
   await expect(finale.getByRole('heading', { name: 'Danke' })).toBeVisible();
   // The credits follow the thanks on their own.

@@ -9,7 +9,7 @@ describe('slide surfaces', () => {
     expect(surfaceForSlide('info-disclaimer')).toBe('pink');
     expect(surfaceForSlide('quiz-topic-riser')).toBe('violet');
     expect(surfaceForSlide('intro-topics')).toBe('deep');
-    expect(surfaceForSlide('reveal-topic-risers')).toBe('ink');
+    expect(surfaceForSlide('reveal-word-risers')).toBe('ink');
     expect(surfaceForSlide('chart-speeches')).toBe('ink');
   });
 

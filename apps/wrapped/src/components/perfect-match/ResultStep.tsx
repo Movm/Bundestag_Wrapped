@@ -5,6 +5,7 @@ import { ENTER } from '@/design-system/motion';
 import { getPartyTone } from '@/lib/party-colors';
 import { useSpeakerPortraits } from '@/hooks/useDataQueries';
 import type { MatchResult } from '@/lib/perfect-match';
+import { firstName, genitive } from '@/lib/mdb-quiz';
 
 /** "Dr. Saskia Ludwig" → "SL": first and last name, academic titles skipped. */
 function initials(name: string): string {
@@ -14,7 +15,7 @@ function initials(name: string): string {
 
 const CARD_COLORS = [['var(--color-wr-pink)', 'var(--color-wr-ink)'], ['var(--color-wr-violet)', '#fff'], ['#fff', 'var(--color-wr-ink)']];
 
-/** Step 5: the top three MPs, each linking to their profile. */
+/** Step 5: the top three MPs, each linking to their profile and to their quiz. */
 export function ResultStep({ matches, profileUrl, onRestart }: { matches: MatchResult[]; profileUrl: (slug: string) => string; onRestart: () => void }) {
   const [note, setNote] = useState('');
   const [failed, setFailed] = useState<string[]>([]);
@@ -39,7 +40,7 @@ export function ResultStep({ matches, profileUrl, onRestart }: { matches: MatchR
           const [bg, ink] = CARD_COLORS[index] ?? CARD_COLORS[2];
           const photo = failed.includes(match.slug) ? null : portraits[match.slug];
           return (
-            <motion.li key={match.slug} variants={ENTER.rise}>
+            <motion.li key={match.slug} variants={ENTER.rise} className="pm-matches__item">
               <Link
                 to={profileUrl(match.slug)}
                 className="pm-match"
@@ -60,6 +61,10 @@ export function ResultStep({ matches, profileUrl, onRestart }: { matches: MatchR
                     {match.reasons.map(reason => <li key={reason}>{reason}</li>)}
                   </ul>
                 </div>
+              </Link>
+              <Link to={`${profileUrl(match.slug)}/quiz`} className="pm-match__quiz">
+                Quiz: {genitive(firstName({ name: match.name, academicTitle: null }))} Wörter erraten
+                <span aria-hidden="true">→</span>
               </Link>
             </motion.li>
           );

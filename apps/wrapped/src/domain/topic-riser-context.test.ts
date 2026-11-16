@@ -46,14 +46,10 @@ describe('topic riser context', () => {
     expect(pickRiserOptions(analysis.topics)?.winner.label).toBe(context?.riser.label);
   });
 
-  it('lists the words behind the topic and ranks groups against the average', () => {
+  it('lists the words behind the topic and the MPs who talk about it most', () => {
     const context = buildTopicRiserContext(analysis, topics);
     expect(context?.words).toEqual(['Wachstum', 'BIP']);
-    expect(context?.speakers.map(item => item.name)).toEqual(['A', 'B', 'C']);
-    expect(context?.parties).toEqual([
-      { party: 'CDU/CSU', vsAverage: 1.2 },
-      { party: 'SPD', vsAverage: 0.8 },
-    ]);
+    expect(context?.speakers.map(item => item.name)).toEqual(['A', 'B', 'C', 'D']);
   });
 
   it('is empty when nothing moved up', () => {
@@ -63,7 +59,6 @@ describe('topic riser context', () => {
 
   it('degrades without topic scores', () => {
     const context = buildTopicRiserContext(analysis, null);
-    expect(context?.parties).toEqual([]);
     expect(context?.words).toEqual([]);
   });
 });

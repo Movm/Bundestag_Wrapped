@@ -2,42 +2,31 @@ import type { SignatureWordMovement, YearOverYearAnalysis } from '@/generated/wr
 import { getPartyTone } from '@/lib/party-colors';
 import { TOPIC_BY_ID } from '@/shared/constants/topics';
 import type { TopicRiserContext } from '@/domain/topic-riser-context';
-import { atParty, capitalize, cardinal } from '@/lib/german-count';
 import { Enter, Slide } from '@/design-system/components/Slide';
 import { Display, FitWord, Lead, Mark, Note } from '@/design-system/components/Type';
 import { ChipCloud, Delta, RankCard } from '@/design-system/components/Data';
 import { PartyBlock, PartyGrid } from '@/design-system/components/PartyBlock';
 
-type RankingKind = 'topics' | 'words';
-
-
 const RANK_TONES = ['white', 'violet', 'pink', 'card'] as const;
 
-function movementName(kind: RankingKind, label: string): string {
-  return kind === 'topics' ? topicName(label) : label;
-}
-
-/** "Drei Themen rücken nach vorn": stair-stepped rank cards, biggest riser first. */
-export function RankingMovementSlide({ analysis, kind }: { analysis: YearOverYearAnalysis; kind: RankingKind }) {
-  const items = analysis[kind]
+/** "Diese Wörter sind aufgestiegen": stair-stepped rank cards, biggest riser first. */
+export function RankingMovementSlide({ analysis }: { analysis: YearOverYearAnalysis }) {
+  const items = analysis.words
     .filter(item => item.previousRank !== null && item.rankChange > 0)
     .slice(0, 4);
-  const isTopics = kind === 'topics';
   return (
     <Slide shapes="corner">
       <div className="flex flex-col items-start gap-4">
         <Display size="xl" face="wide">
-          {isTopics
-            ? <>{items.length === 1 ? 'Ein Thema rückt' : `${capitalize(cardinal(items.length))} Themen rücken`} <Mark>nach vorn.</Mark></>
-            : <>Diese Wörter sind <Mark>aufgestiegen.</Mark></>}
+          Diese Wörter sind <Mark>aufgestiegen.</Mark>
         </Display>
       </div>
-      <ol className="flex flex-col gap-3" aria-label={isTopics ? 'Aufgestiegene Themen' : 'Aufgestiegene Wörter'}>
+      <ol className="flex flex-col gap-3" aria-label="Aufgestiegene Wörter">
         {items.map((item, index) => (
           <li key={item.label}>
             <RankCard
               rank={item.currentRank ?? index + 1}
-              label={movementName(kind, item.label)}
+              label={item.label}
               previousRank={item.previousRank ?? undefined}
               tone={RANK_TONES[index % RANK_TONES.length]}
               step={index}
@@ -101,11 +90,10 @@ function topicName(id: string): string {
 
 const timesAverage = (ratio: number) => `${new Intl.NumberFormat('de-DE', { maximumFractionDigits: 1 }).format(ratio)}-facher Bundestagsdurchschnitt`;
 
-/** "Wo steckt Wirtschaft drin?": the words behind the topic, the party and the MPs who talk about it most. */
+/** "Wo steckt Wirtschaft drin?": the words behind the topic and the MPs who talk about it most. */
 export function TopicRiserContextSlide({ context }: { context: TopicRiserContext }) {
-  const { riser, parties, words, speakers } = context;
+  const { riser, words, speakers } = context;
   const name = topicName(riser.label);
-  const leader = parties[0];
   return (
     <Slide shapes="corner" footer={<Note className="ds-note--plate">Verglichen wird der Anteil an den jeweils gesprochenen Wörtern.</Note>}>
       <div className="flex flex-col items-start gap-3">
@@ -114,35 +102,24 @@ export function TopicRiserContextSlide({ context }: { context: TopicRiserContext
           : <>{riser.currentRank === 1 ? <><Mark>{name}</Mark> liegt vorn.</> : <><Mark>{name}</Mark> ist aufgestiegen.</>} Was steckt dahinter?</>}</Display>
         <Lead>Diese Wörter zählen zum Thema:</Lead>
       </div>
+      <div className="ds-topic-context">
       {words.length > 0 && <ChipCloud words={words} label={`Häufigste Wörter zum Thema ${name}`} />}
-      <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)]">
-      {leader && leader.vsAverage > 1 && (
-        <div className="flex flex-col gap-3">
-          <Enter as="p" className="m-0 text-base font-semibold">Besonders präsent {atParty(leader.party)}</Enter>
-          <PartyGrid label={`Fraktion, die am meisten über ${name} spricht`}>
-            <PartyBlock party={leader.party}>
-              <FitWord word={`${new Intl.NumberFormat('de-DE', { maximumFractionDigits: 1 }).format(leader.vsAverage)}×`} />
-              <p className="m-0 text-base font-semibold">so hoch ist der Anteil von Wörtern zum Thema {name} im Vergleich zum gesamten Bundestag.</p>
-            </PartyBlock>
-          </PartyGrid>
-        </div>
-      )}
       {speakers.length > 0 && (
-        <div className="flex flex-col gap-3">
-        <Enter as="p" className="m-0 text-base font-semibold">Bei diesen Abgeordneten ist der Anteil am höchsten:</Enter>
-        <ol className="m-0 flex list-none flex-col gap-3 p-0" aria-label={`Abgeordnete, die im Verhältnis am meisten über ${name} sprechen`}>
-          {speakers.map((item, index) => (
-            <li key={`${item.name}-${item.party}`}>
-              <RankCard
-                rank={index + 1}
-                label={item.name}
-                detail={<><span style={{ color: getPartyTone(item.party, 'light') }}>{item.party}</span> · {timesAverage(item.vsAverage)}</>}
-                tone="white"
-                step={index}
-              />
-            </li>
-          ))}
-        </ol>
+        <div className="flex min-w-0 flex-col gap-3">
+          <Enter as="p" className="m-0 text-base font-semibold">Bei diesen Abgeordneten ist der Anteil am höchsten:</Enter>
+          <ol className="ds-topic-speakers" aria-label={`Abgeordnete, die im Verhältnis am meisten über ${name} sprechen`}>
+            {speakers.map((item, index) => (
+              <li key={`${item.name}-${item.party}`}>
+                <RankCard
+                  rank={index + 1}
+                  label={item.name}
+                  detail={<><span style={{ color: getPartyTone(item.party, 'light') }}>{item.party}</span> · {timesAverage(item.vsAverage)}</>}
+                  tone="white"
+                  step={index === 0 ? 0 : 1}
+                />
+              </li>
+            ))}
+          </ol>
         </div>
       )}
       </div>
