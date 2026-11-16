@@ -28,7 +28,7 @@ const GENZ_GROUP: StoryGroup = { quiz: 'quiz-genz', slides: ['intro-genz', 'quiz
 const STORY_TEMPLATE: readonly (SlideType | StoryGroup)[] = [
   'intro',
   'info-disclaimer',
-  { quiz: 'quiz-topic-riser', slides: ['quiz-topic-riser', 'info-topic-riser', 'reveal-topic-risers', 'reveal-topic-riser-context'] },
+  { quiz: 'quiz-topic-riser', slides: ['quiz-topic-riser', 'reveal-topic-riser-context'] },
   { quiz: 'quiz-word-riser', slides: ['quiz-word-riser', 'info-word-riser', 'reveal-word-risers'] },
   { quiz: 'quiz-topics', slides: ['intro-topics', 'quiz-topics', 'info-topics', 'reveal-topics', 'info-party-topics', 'reveal-party-topics'] },
   { quiz: 'quiz-signature', slides: ['intro-vocabulary', 'quiz-signature', 'info-signature', 'reveal-signature'], comparisonSlides: ['reveal-signature-movements'] },
@@ -47,7 +47,7 @@ const STORY_TEMPLATE: readonly (SlideType | StoryGroup)[] = [
   // Innen- oder Außenkanzler, from the edition's chancellor section.
   {
     quiz: 'quiz-chancellor',
-    slides: ['intro-chancellor', 'quiz-chancellor', 'reveal-chancellor-topics', 'reveal-chancellor', 'reveal-chancellor-focus'],
+    slides: ['intro-chancellor', 'quiz-chancellor', 'reveal-chancellor', 'reveal-chancellor-focus', 'reveal-chancellor-topics'],
   },
   // Gen Z MPs against older MPs, from the edition's generations section.
   GENZ_GROUP,
@@ -56,6 +56,7 @@ const STORY_TEMPLATE: readonly (SlideType | StoryGroup)[] = [
   { quiz: 'quiz-gender', slides: ['quiz-gender', 'info-gender', 'reveal-gender'] },
   'share',
   'outro',
+  'next',
   'finale',
 ];
 
@@ -108,6 +109,7 @@ export function buildActiveSlidePlan(
       }),
       'share',
       'outro',
+      'next',
       'finale',
     ]);
   }

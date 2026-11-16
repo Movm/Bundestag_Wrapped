@@ -120,8 +120,8 @@ export const TRACK_INFO_DISPLAY_DURATION = 3000; // 3 seconds
 
 /** The section a slide belongs to, e.g. 'quiz-topics' → 'topics'. */
 export function sectionOfSlide(slideId: string): string {
-  // "Das war …" opens the finale and already plays its music.
-  if (slideId === 'outro') return 'finale';
+  // "Das war …" opens the finale and already plays its music; "Weiter" keeps it.
+  if (slideId === 'outro' || slideId === 'next') return 'finale';
   return slideId === 'intro' ? 'intro' : slideId.replace(/^(intro|quiz|info|reveal|chart|details)-/, '');
 }
 

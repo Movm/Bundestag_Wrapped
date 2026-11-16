@@ -247,6 +247,7 @@ export const SECTION_BACKGROUNDS: Record<string, BackgroundTheme> = {
 
   // Finale
   outro: 'finale',
+  next: 'finale',
   finale: 'finale',
 
   // Speaker Wrapped slides

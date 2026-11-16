@@ -22,11 +22,6 @@ export const INFO_SLIDES: Record<string, InfoSlideContent> = {
     body: 'Bundestag Wrapped hat alle Plenarprotokolle maschinell aufbereitet und durchsucht. Auf Basis dieser Zahlen sind neutrale Analysen über den Bundestag entstanden. Bundestag Wrapped ist politisch neutral, aber nicht demokratisch neutral. Abgeordnete der AfD werden daher gesondert behandelt.',
     highlight: 'Bundestag Wrapped ist politisch neutral, aber nicht demokratisch neutral.',
   },
-  'info-topic-riser': {
-    emoji: '📈',
-    title: 'Wie kommt ein Thema nach oben?',
-    body: 'Wir zählen passende Begriffe und setzen sie ins Verhältnis zu allen gesprochenen Wörtern. Je größer der Anteil, desto höher der Platz.',
-  },
   'info-word-riser': {
     emoji: '🔤',
     title: 'Wörter im Jahresvergleich',
@@ -84,10 +79,8 @@ export const INFO_SLIDES: Record<string, InfoSlideContent> = {
   },
 };
 
-/** What the edition's data adds to the static info slides (years, counts). */
+/** What the edition's data adds to the static info slides (counts). */
 export interface InfoSlideContext {
-  year?: number | null;
-  baselineYear?: string | null;
   /** Candidates of the Jugendwort lexicon this edition searched for. */
   youthWordCount?: number;
   /** Jugendwörter of earlier years are counted too. */
@@ -99,12 +92,6 @@ export interface InfoSlideContext {
 /** The info slide with the numbers its text names filled in from the data. */
 export function resolveInfoSlide(slide: string, context: InfoSlideContext): InfoSlideContent {
   const content = INFO_SLIDES[slide];
-  if (slide === 'info-topic-riser') {
-    const period = context.baselineYear && context.year
-      ? `Verglichen wird derselbe Zeitraum ${context.baselineYear} und ${context.year}.`
-      : 'Verglichen wird jeweils derselbe Zeitraum des Vorjahres.';
-    return { ...content, body: `${content.body} ${period}` };
-  }
   if (slide === 'info-youth-language' && context.youthSummary) {
     return { ...content, eyebrow: null, title: 'Jugendsprache im Plenum.', ...context.youthSummary };
   }

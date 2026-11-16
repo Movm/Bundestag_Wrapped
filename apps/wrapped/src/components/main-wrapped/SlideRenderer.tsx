@@ -22,6 +22,7 @@ import {
   ShareSlide,
   EndSlide,
   OutroSlide,
+  NextSlide,
   RankingMovementSlide,
   SignatureWordMovementSlide,
   TopicRiserContextSlide,
@@ -144,8 +145,6 @@ function InfoSlideWrapper({ slide }: { slide: string }) {
   const youth = data?.yearOverYear?.youthLanguage;
   const youthGen = useYouthGeneration();
   const content = resolveInfoSlide(slide, {
-    year: editionSurface(useOptionalEdition()).year,
-    baselineYear: data?.yearOverYear?.baseline.editionId,
     youthWordCount: youth?.words.length,
     hasPastWinners: Boolean(youth?.pastWinners?.length),
     youthSummary: slide === 'info-youth-language' && youth ? youthSummary(youth, youthGen) : undefined,
@@ -208,10 +207,10 @@ function GenderSlideWrapper() {
   return <GenderSlide genderAnalysis={genderAnalysis} phase="result" />;
 }
 
-function RankingMovementSlideWrapper({ kind }: { kind: 'topics' | 'words' }) {
+function RankingMovementSlideWrapper() {
   const data = useFullWrappedData();
   if (!data?.yearOverYear) return null;
-  return <RankingMovementSlide analysis={data.yearOverYear} kind={kind} />;
+  return <RankingMovementSlide analysis={data.yearOverYear} />;
 }
 
 function TopicRiserContextSlideWrapper() {
@@ -395,7 +394,6 @@ export const SlideRenderer = memo(function SlideRenderer({
 
     // Info slides - educational context (no data needed, uses INFO_SLIDES constant)
     case 'info-disclaimer':
-    case 'info-topic-riser':
     case 'info-word-riser':
     case 'info-youth-language':
     case 'info-topics':
@@ -409,14 +407,11 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'info-gender':
       return <InfoSlideWrapper slide={slide} />;
 
-    case 'reveal-topic-risers':
-      return <RankingMovementSlideWrapper kind="topics" />;
-
     case 'reveal-topic-riser-context':
       return <TopicRiserContextSlideWrapper />;
 
     case 'reveal-word-risers':
-      return <RankingMovementSlideWrapper kind="words" />;
+      return <RankingMovementSlideWrapper />;
 
     case 'reveal-signature-movements':
       return <SignatureWordMovementSlideWrapper />;
@@ -472,6 +467,9 @@ export const SlideRenderer = memo(function SlideRenderer({
 
     case 'outro':
       return <OutroSlide />;
+
+    case 'next':
+      return <NextSlide />;
 
     case 'finale':
       return <EndSlide onRestart={onRestart} />;

@@ -17,8 +17,6 @@ export const SLIDES = [
 
   // Year-over-year movements
   'quiz-topic-riser',
-  'info-topic-riser',
-  'reveal-topic-risers',
   'reveal-topic-riser-context',
   'quiz-word-riser',
   'info-word-riser',
@@ -103,6 +101,7 @@ export const SLIDES = [
 
   // Finale: "Das war …", then the thanks and credits
   'outro',
+  'next',
   'finale',
 ] as const;
 
@@ -112,7 +111,6 @@ export type SlideType = (typeof SLIDES)[number] | `quiz-${string}`;
 // Slides that auto-scroll to next after a delay (section intros and info slides)
 export const AUTO_SCROLL_SLIDES = new Set<SlideType>([
   'info-disclaimer',
-  'info-topic-riser',
   'info-word-riser',
   'intro-topics',
   'info-topics',

@@ -216,6 +216,16 @@
   .ds-chancellor-words .ds-chip--outline { padding: 0.25rem 0.75rem; }
   .ds-chancellor-words .ds-chip:first-child { font-size: 1.5rem; padding: 0.5rem 1.25rem; }
 }
+/* Topic riser: the words on the left, the five MPs behind the topic as a compact ranking on the right. */
+.ds-topic-context { display: grid; gap: clamp(1.5rem, 1rem + 2vw, 2.5rem); align-items: start; }
+@media (min-width: 64rem) { .ds-topic-context { grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); } }
+.ds-topic-speakers { display: flex; flex-direction: column; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.ds-topic-context .ds-topic-speakers .ds-rank { margin-left: 0; padding-block: clamp(0.625rem, 0.4rem + 0.6vw, 0.875rem); gap: clamp(0.875rem, 0.5rem + 1.2vw, 1.5rem); }
+.ds-topic-context .ds-topic-speakers .ds-rank__number { min-width: clamp(2.5rem, 1.75rem + 2vw, 3.75rem); text-align: center; font-size: clamp(1.75rem, 1rem + 1.6vw, 2.75rem); }
+.ds-topic-context .ds-topic-speakers .ds-rank__label { font-size: clamp(1.125rem, 0.85rem + 0.9vw, 1.625rem); }
+.ds-topic-context .ds-topic-speakers .ds-rank--step-0 .ds-rank__number { font-size: clamp(2.25rem, 1.25rem + 2.4vw, 3.75rem); }
+.ds-topic-context .ds-topic-speakers .ds-rank--step-0 .ds-rank__label { font-size: clamp(1.375rem, 1rem + 1.2vw, 2.125rem); }
+
 /* Split: a big 100 % bar for him, a slimmer one for the rest of the chamber. */
 .ds-io { display: flex; flex-direction: column; gap: 0.625rem; }
 .ds-io--lead .ds-chancellor-label { color: var(--color-wr-white); }
@@ -600,3 +610,94 @@
   .ds-end--thanks[data-credits] .ds-shape--b { translate: 0 2vw; rotate: -4deg; }
   .ds-end--thanks[data-credits] .ds-shape--c { translate: 76vw -62vh; rotate: 108deg; scale: .8; }
 }
+
+/* ─── Finale: "Jetzt wird's persönlich" (NextSlide) — two stickers in the menu's colours, Perfect Match and the MP quiz. ─── */
+.ds-next__head { display: flex; flex-direction: column; gap: 0.875rem; }
+.ds-next__accent { color: var(--color-wr-pink); }
+.ds-next__cards { display: grid; gap: clamp(1rem, 0.5rem + 2vw, 1.75rem); align-items: stretch; }
+.ds-next__cards[data-single] { max-width: 42rem; }
+@media (min-width: 52rem) { .ds-next__cards:not([data-single]) { grid-template-columns: 1fr 1.15fr; } }
+.ds-next__slot { display: grid; min-width: 0; }
+.ds-next__card {
+  --card-bg: var(--color-wr-violet); --card-ink: #fff;
+  position: relative; overflow: hidden; display: flex; flex-direction: column; gap: clamp(0.875rem, 0.5rem + 1vw, 1.25rem);
+  min-width: 0; padding: clamp(1.25rem, 0.75rem + 2.4vw, 2.25rem); border-radius: clamp(1.5rem, 1rem + 2vw, 2.25rem);
+  background: var(--card-bg); color: var(--card-ink); text-decoration: none;
+  transform: rotate(var(--rot, 0deg)); transition: transform 0.35s var(--ease-wr-pop);
+}
+.ds-next__card > * { position: relative; }
+.ds-next__card--match { --card-bg: var(--color-wr-mint); --card-ink: var(--color-wr-ink); --rot: -1.25deg; }
+.ds-next__card--mdb { --rot: 0.75deg; }
+/* One shape per sticker, off the corner, never behind text that has to be read. */
+.ds-next__card::before { content: ''; position: absolute; pointer-events: none; }
+.ds-next__card--match::before { width: 13rem; aspect-ratio: 1; border-radius: 50%; top: -6.5rem; right: -5rem; background: rgb(255 255 255 / 0.28); }
+.ds-next__card--mdb::before { width: 9rem; aspect-ratio: 1; top: -4.5rem; right: -3rem; rotate: 18deg; background: var(--color-wr-pink); }
+.ds-next__card--match:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .ds-next__card--match:hover { transform: rotate(0deg) scale(1.02); }
+  .ds-next__card--match:hover .ds-next__cta svg { translate: 0.25rem 0; }
+}
+@media (prefers-reduced-motion: reduce) { .ds-next__card { transform: none; transition: none; } }
+
+.ds-next__kicker {
+  align-self: flex-start; padding: 0.45em 0.9em; border-radius: 999px; background: var(--card-ink); color: var(--card-bg);
+  font-family: var(--font-mono); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.2;
+}
+.ds-next__title {
+  margin: 0; max-width: 15ch; font-family: var(--font-wide); font-weight: 900; font-stretch: 118%;
+  font-size: clamp(1.625rem, 1rem + 2.2vw, 2.875rem); line-height: 0.92; letter-spacing: -0.04em; text-transform: uppercase; text-wrap: balance;
+}
+.ds-next__lead { margin: 0; max-width: 30rem; font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem); font-weight: 600; line-height: 1.35; text-wrap: pretty; }
+
+/* Perfect Match: the four steps as numbered rows, then the button. */
+.ds-next__steps { counter-reset: step; display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; border-top: 2px solid currentColor; }
+.ds-next__steps li {
+  counter-increment: step; display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 0.5em; row-gap: 0.125rem;
+  padding: 0.625rem 0 0.625rem 2.25rem; position: relative; border-bottom: 2px solid currentColor;
+  font-size: clamp(0.9375rem, 0.875rem + 0.3vw, 1.0625rem); font-weight: 600; line-height: 1.25;
+}
+.ds-next__steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 0.5rem; display: grid; place-items: center; width: 1.625rem; height: 1.625rem; border-radius: 50%;
+  background: var(--card-ink); color: var(--card-bg); font-family: var(--font-mono); font-weight: 700; font-size: 0.8125rem;
+}
+.ds-next__steps strong { font-family: var(--font-wide); font-weight: 900; font-stretch: 110%; font-size: 1.125em; text-transform: uppercase; letter-spacing: -0.02em; }
+.ds-next__cta {
+  margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 0.6rem; min-height: 3.5rem; padding: 0 1.75rem;
+  border-radius: 999px; background: var(--color-wr-ink); color: var(--color-wr-mint);
+  font-family: var(--font-wide); font-weight: 800; font-stretch: 105%; font-size: 1.125rem; line-height: 1;
+}
+.ds-next__cta svg { transition: translate 0.3s var(--ease-wr-pop); }
+
+/* MP quiz: search field on the sticker, hits as rows that open the quiz. */
+.ds-next__search { display: flex; flex-direction: column; gap: 0.5rem; }
+.ds-next__label, .ds-next__hint { font-family: var(--font-mono); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.ds-next__hint { margin: 0.25rem 0 0; color: color-mix(in srgb, #fff 82%, var(--color-wr-violet)); }
+.ds-next__field {
+  display: flex; align-items: center; gap: 0.75rem; min-height: 3.5rem; padding-inline: 1.25rem; border-radius: 999px;
+  background: #fff; color: var(--color-wr-ink);
+}
+.ds-next__field:focus-within { outline: 3px solid var(--color-wr-pink); outline-offset: 3px; }
+.ds-next__field svg { flex: none; }
+.ds-next__field input {
+  flex: 1; min-width: 0; height: 3.5rem; border: 0; background: transparent; color: inherit; outline: none;
+  font: inherit; font-size: 1.125rem; font-weight: 700;
+}
+.ds-next__field input::placeholder { color: color-mix(in srgb, var(--color-wr-ink) 55%, #fff); font-weight: 600; }
+.ds-next__field input::-webkit-search-cancel-button { cursor: pointer; }
+.ds-next__hits { display: flex; flex-direction: column; gap: 0.375rem; margin: 0; padding: 0; list-style: none; }
+.ds-next__hit {
+  display: flex; align-items: center; gap: 0.75rem; min-height: 3rem; padding: 0.625rem 1rem; border-radius: 1rem;
+  background: rgb(14 10 20 / 0.22); color: #fff; text-decoration: none; transition: background-color 0.2s;
+}
+.ds-next__hit:hover { background: rgb(14 10 20 / 0.4); }
+.ds-next__hit:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.ds-next__dot { flex: none; width: 0.75rem; height: 0.75rem; border-radius: 50%; background: var(--party); box-shadow: 0 0 0 2px rgb(255 255 255 / 0.6); }
+.ds-next__name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 800; }
+.ds-next__party { flex: none; font-family: var(--font-mono); font-weight: 700; font-size: 0.6875rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.ds-next__hit svg { flex: none; }
+.ds-next__all {
+  margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 0.5rem; padding-block: 0.5rem;
+  color: #fff; text-decoration: none; font-family: var(--font-mono); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+}
+.ds-next__all:hover { text-decoration: underline; text-underline-offset: 0.25em; }
+.ds-next__all:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
