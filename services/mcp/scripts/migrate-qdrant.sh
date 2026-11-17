@@ -6,7 +6,7 @@
 #   ./scripts/migrate-qdrant.sh
 #
 # Example:
-#   export QDRANT_API_KEY="/F/Iyf5fTjl2DMqOHxv/auYQZL8tDOiEUqsYn/P0/Sk="
+#   export QDRANT_API_KEY="<hosted qdrant api key>"
 #   ./scripts/migrate-qdrant.sh
 #
 # Environment variables:
@@ -19,7 +19,7 @@ set -e
 
 LOCAL_QDRANT_URL="${LOCAL_QDRANT_URL:-http://localhost:6333}"
 HOSTED_QDRANT_URL="${HOSTED_QDRANT_URL:-http://bundestagapi.moritz-waechter.de:16333}"
-QDRANT_API_KEY="${QDRANT_API_KEY:-YudVuRv1hENeiAn0cAb0CDebhT4HzrIL-0O3iYKFONA}"
+QDRANT_API_KEY="${QDRANT_API_KEY:-}"
 
 COLLECTIONS=("bundestag-docs" "bundestag-protocol-chunks" "bundestag-document-chunks")
 SNAPSHOT_DIR="./snapshots"
