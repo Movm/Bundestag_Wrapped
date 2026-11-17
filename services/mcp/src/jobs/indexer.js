@@ -1042,6 +1042,7 @@ async function indexDrucksache(drucksache) {
           datum: parsed.metadata.datum,
           titel: parsed.metadata.titel,
           urheber: parsed.metadata.urheber,
+          herausgeber: drucksache.herausgeber || 'BT',
           chunk_index: chunk.chunk_index,
           chunk_part: chunk.chunk_part || 0,
           chunk_type: chunk.chunk_type,
