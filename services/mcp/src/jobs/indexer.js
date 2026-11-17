@@ -18,6 +18,7 @@ import { parseProtokoll } from '../services/protokollParser.js';
 import { parseDrucksache } from '../services/drucksacheParser.js';
 import * as analysisService from '../services/analysisService.js';
 import * as indexerState from '../services/indexerState.js';
+import { backfillDocumentHerausgeber } from './herausgeberBackfill.js';
 
 let indexerInterval = null;
 let protocolInterval = null;
@@ -1183,6 +1184,19 @@ export async function runDocumentChunkIndexing() {
   const startTime = Date.now();
   let totalDocuments = 0;
   let totalChunks = 0;
+
+  try {
+    const marked = await backfillDocumentHerausgeber({
+      qdrant: qdrant.getClient(),
+      collection: config.qdrant.documentCollection,
+      wahlperioden: config.indexer.wahlperioden,
+      searchDrucksachen: api.searchDrucksachen
+    });
+    if (marked.bundestag > 0) logger.info('INDEXER', 'Backfilled herausgeber on document chunks', marked);
+  } catch (err) {
+    // Indexing goes on; the next pass retries the unmarked chunks.
+    logger.error('INDEXER', `herausgeber backfill failed: ${err.message}`);
+  }
   const OVERLAP_MS = 20 * 60 * 1000;
 
   try {
