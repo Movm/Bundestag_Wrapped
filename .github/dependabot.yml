@@ -6,8 +6,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "monday"
+      interval: "daily"
       time: "04:00"
       timezone: "Europe/Berlin"
     open-pull-requests-limit: 8
@@ -67,8 +66,7 @@ updates:
   - package-ecosystem: "pip"
     directory: "/services/analysis"
     schedule:
-      interval: "weekly"
-      day: "monday"
+      interval: "daily"
       time: "04:20"
       timezone: "Europe/Berlin"
     open-pull-requests-limit: 5
@@ -97,8 +95,7 @@ updates:
       - "/services/mcp"
       - "/services/analysis"
     schedule:
-      interval: "weekly"
-      day: "monday"
+      interval: "daily"
       time: "04:40"
       timezone: "Europe/Berlin"
     open-pull-requests-limit: 4
@@ -121,8 +118,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "monday"
+      interval: "daily"
       time: "05:00"
       timezone: "Europe/Berlin"
     open-pull-requests-limit: 4
