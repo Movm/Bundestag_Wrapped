@@ -14,7 +14,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path } from 'react-native-svg';
 import { type MenuColor, type MenuEntry } from '../../../wrapped/src/shared/native-bridge/protocol';
-import { cardLabel, cardRotation, drawerWidth, splitMenu, tileTitleSize, wideTitleSize } from './menuLayout';
+import { cardAccessibilityLabel, cardLabel, cardRotation, drawerWidth, splitMenu, tileTitleSize, wideTitleSize } from './menuLayout';
 import { type useMenuBridge } from './useMenuBridge';
 
 const INK = '#0e0a14';
@@ -60,6 +60,7 @@ function Card({ entry, index, width, reduceMotion, onChoose }: { entry: MenuEntr
   return (
     <Pressable
       accessibilityRole="link"
+      accessibilityLabel={cardAccessibilityLabel(entry)}
       accessibilityState={{ selected: entry.active }}
       onPress={() => onChoose(entry)}
       style={{
@@ -91,15 +92,15 @@ function Card({ entry, index, width, reduceMotion, onChoose }: { entry: MenuEntr
   );
 }
 
-export function NativeMenu({ state, choose, restart, close }: Props) {
+export function NativeMenu({ state, choose, restart, close, dismissed }: Props) {
   return (
-    <Modal visible={state !== null} transparent animationType="none" statusBarTranslucent onRequestClose={close}>
+    <Modal visible={state !== null} transparent animationType="none" statusBarTranslucent onRequestClose={close} onDismiss={dismissed}>
       {state && <MenuBody state={state} choose={choose} restart={restart} close={close} />}
     </Modal>
   );
 }
 
-function MenuBody({ state, choose, restart, close }: Omit<Props, 'state' | 'open'> & { state: NonNullable<Props['state']> }) {
+function MenuBody({ state, choose, restart, close }: Omit<Props, 'state' | 'open' | 'dismissed'> & { state: NonNullable<Props['state']> }) {
   const { width } = useWindowDimensions();
   const insets = useSafeAreaInsets();
   const reduceMotion = useReducedMotion();

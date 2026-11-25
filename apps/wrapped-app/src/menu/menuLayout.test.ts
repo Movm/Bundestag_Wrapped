@@ -1,5 +1,5 @@
 import { type MenuEntry } from '../../../wrapped/src/shared/native-bridge/protocol';
-import { cardLabel, cardRotation, drawerWidth, splitMenu, tileTitleSize, wideTitleSize } from './menuLayout';
+import { cardAccessibilityLabel, cardLabel, cardRotation, drawerWidth, splitMenu, tileTitleSize, wideTitleSize } from './menuLayout';
 
 const entry = (title: string, tile: boolean, active = false): MenuEntry => ({
   href: `/${title}`,
@@ -67,5 +67,12 @@ describe('sizes', () => {
     expect(tileTitleSize(402)).toBeCloseTo(15.614, 3);
     expect(tileTitleSize(375)).toBeCloseTo(15.425, 3);
     expect(tileTitleSize(1024)).toBe(17);
+  });
+});
+
+describe('cardAccessibilityLabel', () => {
+  it('announces the active card as current page and strips soft hyphens', () => {
+    expect(cardAccessibilityLabel(entry('Wrapped', false, true))).toBe('Wrapped, aktuelle Seite');
+    expect(cardAccessibilityLabel(entry('Doku\u00admentation', true))).toBe('Dokumentation');
   });
 });

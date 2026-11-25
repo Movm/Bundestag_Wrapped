@@ -27,3 +27,7 @@ export function cardLabel(entry: MenuEntry, index: number): string {
   const number = String(index + 1).padStart(2, '0');
   return entry.active && !entry.tile ? `${number} · Du bist hier` : number;
 }
+
+/** Screen-reader name: the title without soft hyphens, plus ", aktuelle Seite" on the active card. */
+export const cardAccessibilityLabel = (entry: MenuEntry) =>
+  `${entry.title.replace(/\u00ad/g, '')}${entry.active ? ', aktuelle Seite' : ''}`;

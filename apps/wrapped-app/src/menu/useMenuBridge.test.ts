@@ -73,4 +73,33 @@ describe('menu bridge', () => {
     expect(state()).toBeNull();
     expect(send).not.toHaveBeenCalled();
   });
+
+  it('restart sends once even when tapped twice', () => {
+    const { bridge, send } = setup();
+    bridge.open(open);
+    bridge.restart();
+    bridge.restart();
+    expect(send).toHaveBeenCalledTimes(1);
+  });
+
+  it('with deferred external links the browser opens only after the modal dismissed, exactly once', () => {
+    const send = jest.fn();
+    let state: MenuState | null = null;
+    const bridge = createMenuBridge(send, next => { state = next; }, true);
+    bridge.open(open);
+    bridge.choose('https://x.test/a');
+    bridge.choose('https://x.test/a');
+    expect(state).toBeNull();
+    expect(WebBrowser.openBrowserAsync).not.toHaveBeenCalled();
+    bridge.dismissed();
+    bridge.dismissed();
+    expect(WebBrowser.openBrowserAsync).toHaveBeenCalledTimes(1);
+    expect(WebBrowser.openBrowserAsync).toHaveBeenCalledWith('https://x.test/a');
+  });
+
+  it('dismissed without a pending link does nothing', () => {
+    const { bridge } = setup();
+    bridge.dismissed();
+    expect(WebBrowser.openBrowserAsync).not.toHaveBeenCalled();
+  });
 });
