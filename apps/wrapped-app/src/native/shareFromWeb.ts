@@ -20,7 +20,9 @@ export async function shareFromWeb(message: ShareMessage): Promise<boolean> {
     const text = [message.text, message.url].filter(Boolean).join('\n');
     const result = await Share.share(message.url && !message.text ? { url: message.url, message: message.url, title: message.title } : { message: text, title: message.title });
     return result.action !== Share.dismissedAction;
-  } catch {
+  } catch (error) {
+    // Native console: the web side only learns `ok: false`, so without this a failed share leaves no trace.
+    console.error('[wrapped-share] share failed', error);
     return false;
   }
 }
