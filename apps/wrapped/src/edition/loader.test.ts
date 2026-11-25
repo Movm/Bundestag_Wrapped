@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
+import { configureSite } from '@/lib/site';
 import { assertEditionConsistency, loadEditionAsset, loadEditionContent, loadManifest, type EditionAssetTiming } from './loader';
 import type { Edition } from './registry';
 
@@ -18,9 +19,20 @@ const manifest = {
   checksums: 'checksums.json',
 } satisfies Edition;
 
-afterEach(() => vi.unstubAllGlobals());
+afterEach(() => {
+  vi.unstubAllGlobals();
+  configureSite({ embedded: false });
+});
 
 describe('edition runtime loader', () => {
+  it.each([[false, 1], [true, 0]])('on a 401 redirects to /zugang only in the browser (embedded=%s)', async (embedded, redirects) => {
+    const assign = vi.fn();
+    vi.stubGlobal('location', { pathname: '/2026', search: '', hash: '', href: 'http://localhost/2026', origin: 'http://localhost', assign });
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response('', { status: 401 })));
+    configureSite({ embedded });
+    await expect(loadManifest('/data/2025/manifest.json')).rejects.toMatchObject({ kind: 'http' });
+    expect(assign).toHaveBeenCalledTimes(redirects);
+  });
   it.each([
     'https://evil.example/data/manifest.json', '//evil.example/data/manifest.json',
     '/api/delete.json', '/data/../api/delete.json', '/data/%2e%2e/api.json',
