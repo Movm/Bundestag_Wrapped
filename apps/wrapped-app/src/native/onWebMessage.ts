@@ -20,6 +20,7 @@ export function createWebMessageHandler(
   openMenu: (message: Extract<WebToNative, { type: 'menu.open' }>) => void = () => {},
 ) {
   return async (message: WebToNative): Promise<void> => {
+    if (typeof message !== 'object' || message === null) return;
     switch (message.type) {
       case 'share': {
         const ok = await shareFromWeb(message);

@@ -14,6 +14,37 @@ export interface MenuBridge {
   dismissed(): void;
 }
 
+const COLORS: readonly string[] = ['pink', 'violet', 'white', 'mint'];
+const str = (v: unknown): v is string => typeof v === 'string';
+
+/** The payload comes from the web view: drop malformed entries, fall back to white for an unknown colour; null = nothing usable. */
+export function parseMenuOpen(m: unknown): MenuState | null {
+  if (typeof m !== 'object' || m === null) return null;
+  const { entries, footer, canRestart } = m as Record<string, unknown>;
+  if (!Array.isArray(entries)) return null;
+  const valid: MenuEntry[] = [];
+  for (const e of entries) {
+    if (typeof e !== 'object' || e === null) continue;
+    const r = e as Record<string, unknown>;
+    if (!str(r.href) || !str(r.label) || !str(r.title)) continue;
+    valid.push({
+      href: r.href,
+      label: r.label,
+      title: r.title,
+      color: COLORS.includes(r.color as string) ? (r.color as MenuEntry['color']) : 'white',
+      rotate: typeof r.rotate === 'number' && Number.isFinite(r.rotate) ? r.rotate : 0,
+      tile: r.tile === true,
+      active: r.active === true,
+    });
+  }
+  if (valid.length === 0) return null;
+  const links = (Array.isArray(footer) ? footer : []).flatMap((f): MenuFooterLink[] => {
+    const r = f as Record<string, unknown> | null;
+    return r && str(r.href) && str(r.label) ? [{ href: r.href, label: r.label, external: r.external === true }] : [];
+  });
+  return { entries: valid, footer: links, canRestart: canRestart === true };
+}
+
 /** Plain logic behind the hook: `onState(null)` means closed. */
 export function createMenuBridge(
   send: (m: NativeToWeb) => void,
@@ -25,8 +56,10 @@ export function createMenuBridge(
   const close = () => onState(null);
   return {
     open(m) {
+      const next = parseMenuOpen(m);
+      if (!next) return;
       chosen = false;
-      onState({ entries: m.entries, footer: m.footer, canRestart: m.canRestart });
+      onState(next);
     },
     choose(href) {
       if (chosen) return;

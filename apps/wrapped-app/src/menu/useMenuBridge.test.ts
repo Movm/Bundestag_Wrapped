@@ -1,6 +1,6 @@
 import * as WebBrowser from 'expo-web-browser';
 import { type MenuEntry, type WebToNative } from '../../../wrapped/src/shared/native-bridge/protocol';
-import { createMenuBridge, type MenuState } from './useMenuBridge';
+import { createMenuBridge, parseMenuOpen, type MenuState } from './useMenuBridge';
 
 jest.mock('expo-web-browser', () => ({ openBrowserAsync: jest.fn(async () => ({})) }));
 
@@ -100,6 +100,36 @@ describe('menu bridge', () => {
   it('dismissed without a pending link does nothing', () => {
     const { bridge } = setup();
     bridge.dismissed();
+    expect(WebBrowser.openBrowserAsync).not.toHaveBeenCalled();
+  });
+});
+
+describe('menu.open payload validation', () => {
+  it('falls back to white for an unknown colour and drops malformed entries and links', () => {
+    const parsed = parseMenuOpen({
+      type: 'menu.open',
+      entries: [{ ...entry, color: 'teal' }, null, { href: 5 }, 'x'],
+      footer: [{ href: '/x', label: 'X' }, { href: 1 }, null],
+      canRestart: 'yes',
+    });
+    expect(parsed?.entries).toHaveLength(1);
+    expect(parsed?.entries[0].color).toBe('white');
+    expect(parsed?.footer).toEqual([{ href: '/x', label: 'X', external: false }]);
+    expect(parsed?.canRestart).toBe(false);
+  });
+
+  it('ignores a payload without usable entries: no state change', () => {
+    const { bridge, state } = setup();
+    bridge.open({ type: 'menu.open', entries: 'nope', footer: [], canRestart: false } as never);
+    bridge.open({ type: 'menu.open', entries: [], footer: [], canRestart: false });
+    expect(state()).toBeNull();
+  });
+
+  it('treats an http:// link as in-app navigate, not an external open', () => {
+    const { bridge, send } = setup();
+    bridge.open(open);
+    bridge.choose('http://x.test');
+    expect(send).toHaveBeenCalledWith({ type: 'navigate', href: 'http://x.test' });
     expect(WebBrowser.openBrowserAsync).not.toHaveBeenCalled();
   });
 });
