@@ -75,3 +75,13 @@ describe('WrappedAppRoot', () => {
     expect(requested.some(url => url.includes(`/speakers/${SLUG}`))).toBe(true);
   });
 });
+
+describe('WrappedAppRoot with the data host unreachable', () => {
+  for (const path of ['/2026', '/']) {
+    it(`shows the error page for ${path}`, async () => {
+      vi.stubGlobal('fetch', vi.fn(() => Promise.reject(new TypeError('Network request failed'))));
+      await renderAt(path, () => container.textContent?.includes('Fehler beim Laden') ?? false);
+      expect(container.textContent).toContain('Fehler beim Laden');
+    }, 15000);
+  }
+});

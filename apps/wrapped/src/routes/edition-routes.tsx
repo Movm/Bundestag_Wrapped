@@ -5,7 +5,7 @@ import { DarkLayout, LightLayout } from '@/layouts/MainLayout';
 import { MobileMenu } from '@/components/ui/MobileMenu';
 import { useMenuState } from '@/hooks/useMenuState';
 import { EditionProvider, useEdition } from '@/edition/EditionProvider';
-import { loadRegistry } from '@/edition/loader';
+import { registryQuery } from '@/edition/registryQuery';
 import { currentEditionPath, isRetired, resolveLegacyEditionPath } from '@/edition/registry';
 import { dismissBootCover } from '@/cover/shell';
 import { SKELETON_HTML } from '@/cover/skeleton';
@@ -52,7 +52,7 @@ export function RedirectError({ message }: { message: string }) {
 
 export function CurrentEditionRedirect({ legacy }: { legacy: boolean }) {
   const location = useLocation();
-  const registry = useQuery({ queryKey: ['editions'], queryFn: loadRegistry, staleTime: Infinity });
+  const registry = useQuery(registryQuery);
 
   if (registry.isLoading) return <PageLoader />;
   if (registry.error || !registry.data) return <RedirectError message={registry.error?.message ?? 'Editionsindex ist nicht verfügbar'} />;
@@ -87,7 +87,7 @@ export function ValidatedEdition({ children }: { children: ReactNode }) {
 
 /** Routes of a superseded edition show the construction page instead of loading its data. */
 export function OpenEdition({ editionId, children }: { editionId: string; children: ReactNode }) {
-  const registry = useQuery({ queryKey: ['editions'], queryFn: loadRegistry, staleTime: Infinity });
+  const registry = useQuery(registryQuery);
   if (registry.isLoading) return <PageLoader />;
   if (registry.data && isRetired(registry.data, editionId)) return <ConstructionPage />;
   return children;
