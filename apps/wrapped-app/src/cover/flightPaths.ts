@@ -36,6 +36,10 @@ export function freePath(box: Box, blocked: Blocked, rand: () => number): { x1: 
   return null;
 }
 
+/** The web's `48rem` breakpoint: below it the stroke never fits (0 % at 402 px), so the loop is not scheduled at all. */
+export const SHOOTING_STAR_MIN_WIDTH = 768;
+export const hasShootingStar = (box: Box): boolean => box.w >= SHOOTING_STAR_MIN_WIDTH;
+
 /** Start point and travel distance `d` (the path runs `d * (0.91, 0.41)`), or null. */
 export function shootingStarStart(box: Box, blocked: Blocked, rand: () => number): { x: number; y: number; d: number } | null {
   'worklet';

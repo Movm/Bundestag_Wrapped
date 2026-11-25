@@ -3,7 +3,7 @@ import { AppState } from 'react-native';
 import { type SharedValue, useFrameCallback, useSharedValue } from 'react-native-reanimated';
 import { addFlight, type Flight, type FlyerKind, isAppActive, makeFlight, makeShot, type Shot } from './ambient';
 import { type AmbientLoop, ambientSchedule } from './coverMath';
-import { type Box, blockedArea, freePath, type Rect, shootingStarStart } from './flightPaths';
+import { type Box, blockedArea, freePath, hasShootingStar, type Rect, shootingStarStart } from './flightPaths';
 
 export interface AmbientClocks {
   /** ms since the ambient layer (re)started, −1 while it is stopped. */
@@ -93,7 +93,8 @@ export function useAmbient(running: boolean, geometry: { box: Box; stage: Rect |
       };
       arm(go, schedule.first[name]);
     };
-    (['shootingStar', 'rocket', 'ufo', 'satellite'] as const).forEach(loop);
+    // Phone width: the shooting star can never be placed, so its loop is not armed.
+    (['shootingStar', 'rocket', 'ufo', 'satellite'] as const).filter(name => name !== 'shootingStar' || hasShootingStar(geo.current.box)).forEach(loop);
 
     return () => {
       timers.forEach(clearTimeout);

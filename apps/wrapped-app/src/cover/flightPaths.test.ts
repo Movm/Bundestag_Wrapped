@@ -1,5 +1,5 @@
 import { random } from '../../../wrapped/src/shared/cover/random';
-import { blockedArea, freePath, shootingStarStart } from './flightPaths';
+import { blockedArea, freePath, hasShootingStar, shootingStarStart } from './flightPaths';
 
 const box = { w: 402, h: 874 };
 const stage = { x: -90, y: 168, width: 583, height: 303 };
@@ -39,5 +39,14 @@ describe('shootingStarStart', () => {
     expect(s).not.toBeNull();
     expect(s!.x + (s!.d + 160) * 0.91).toBeLessThanOrEqual(1024);
     expect(s!.d).toBeGreaterThanOrEqual(260);
+  });
+});
+
+describe('hasShootingStar', () => {
+  it('is off below 768 px wide and on from there', () => {
+    expect(hasShootingStar({ w: 402, h: 874 })).toBe(false);
+    expect(hasShootingStar({ w: 767, h: 1000 })).toBe(false);
+    expect(hasShootingStar({ w: 768, h: 1024 })).toBe(true);
+    expect(hasShootingStar({ w: 1024, h: 1366 })).toBe(true);
   });
 });
