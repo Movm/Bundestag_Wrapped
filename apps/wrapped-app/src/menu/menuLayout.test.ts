@@ -1,5 +1,5 @@
 import { type MenuEntry } from '../../../wrapped/src/shared/native-bridge/protocol';
-import { cardAccessibilityLabel, cardLabel, cardRotation, drawerWidth, splitMenu, tileTitleSize, wideTitleSize } from './menuLayout';
+import { cardAccessibilityLabel, cardLabel, cardRotation, drawerWidth, hyphenateTitle, splitMenu, tileTitleSize, wideTitleSize } from './menuLayout';
 
 const entry = (title: string, tile: boolean, active = false): MenuEntry => ({
   href: `/${title}`,
@@ -74,5 +74,23 @@ describe('cardAccessibilityLabel', () => {
   it('announces the active card as current page and strips soft hyphens', () => {
     expect(cardAccessibilityLabel(entry('Wrapped', false, true))).toBe('Wrapped, aktuelle Seite');
     expect(cardAccessibilityLabel(entry('Doku\u00admentation', true))).toBe('Dokumentation');
+  });
+});
+
+describe('hyphenateTitle', () => {
+  const SHY = '\u00ad';
+  it('breaks PERFECT after the syllable like the web does', () => {
+    expect(hyphenateTitle('Perfect Match')).toBe(`Per${SHY}fect Match`);
+  });
+  it('leaves short words and existing hyphens alone', () => {
+    expect(hyphenateTitle('MCP-Server')).toBe('MCP-Server');
+  });
+  it('keeps manual soft hyphens', () => {
+    expect(hyphenateTitle(`Doku${SHY}mentation`)).toBe(`Doku${SHY}mentation`);
+  });
+  it('never changes the visible letters', () => {
+    for (const t of ['Bundestag Wrapped', 'Abgeordnete-Wrapped', 'Dokumentation', 'Perfect Match', 'MCP-Server']) {
+      expect(hyphenateTitle(t).replace(/\u00ad/g, '')).toBe(t);
+    }
   });
 });

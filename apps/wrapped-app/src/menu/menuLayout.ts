@@ -31,3 +31,25 @@ export function cardLabel(entry: MenuEntry, index: number): string {
 /** Screen-reader name: the title without soft hyphens, plus ", aktuelle Seite" on the active card. */
 export const cardAccessibilityLabel = (entry: MenuEntry) =>
   `${entry.title.replace(/\u00ad/g, '')}${entry.active ? ', aktuelle Seite' : ''}`;
+
+const isVowel = (c: string | undefined) => !!c && /[aeiouyäöü]/i.test(c);
+const LONG_WORD = /[A-Za-zÄÖÜäöüß\u00ad]{7,}/g;
+
+/** One break point per long word (VC|CV or V|CV), the one closest to the middle; none found → unchanged. */
+function softBreak(word: string): string {
+  if (word.includes('\u00ad')) return word;
+  let best = -1;
+  for (let i = 3; i <= word.length - 3; i++) {
+    const vccv = isVowel(word[i - 2]) && !isVowel(word[i - 1]) && !isVowel(word[i]) && isVowel(word[i + 1]);
+    const vcv = isVowel(word[i - 1]) && !isVowel(word[i]) && isVowel(word[i + 1]);
+    if (!vccv && !vcv) continue;
+    if (best === -1 || Math.abs(i - word.length / 2) < Math.abs(best - word.length / 2)) best = i;
+  }
+  return best === -1 ? word : `${word.slice(0, best)}\u00ad${word.slice(best)}`;
+}
+
+/**
+ * iOS has no automatic hyphenation: without a soft hyphen a long word in a half-width tile breaks
+ * mid-word ("PERFEC / T"). The web title stays untouched; this only affects the native text.
+ */
+export const hyphenateTitle = (title: string) => title.replace(LONG_WORD, softBreak);
