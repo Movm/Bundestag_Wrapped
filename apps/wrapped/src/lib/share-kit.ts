@@ -4,7 +4,7 @@
  * 2D calls (no rotate/translate) so it also runs against minimal test contexts.
  */
 import { BRAND_COLORS } from './design-tokens';
-import { assetUrl } from './site';
+import { assetUrl, isEmbedded } from './site';
 
 export const SIZE = 1080;
 export const MARGIN = 70;
@@ -93,6 +93,8 @@ function loadLogo(): Promise<HTMLImageElement | ImageBitmap> {
       decoded.then(bitmap => { logoImage = bitmap; }, () => { logoImage = img; }).finally(() => resolve(img));
     };
     img.onerror = reject;
+    // Embedded the logo comes from another origin; without CORS it would taint the canvas.
+    if (isEmbedded()) img.crossOrigin = 'anonymous';
     img.src = assetUrl('/logo.png');
   });
   return logoLoadPromise;
