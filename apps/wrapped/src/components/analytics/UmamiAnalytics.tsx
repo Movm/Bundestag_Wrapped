@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
+import { env } from '@/lib/env';
 
 export function UmamiAnalytics() {
   useEffect(() => {
-    if (!import.meta.env.PROD) return;
+    if (!env.PROD) return;
 
-    const url = import.meta.env.VITE_UMAMI_URL;
-    const websiteId = import.meta.env.VITE_UMAMI_WEBSITE_ID;
+    const url = env.VITE_UMAMI_URL;
+    const websiteId = env.VITE_UMAMI_WEBSITE_ID;
 
     if (!url || !websiteId) return;
 

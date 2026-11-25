@@ -11,6 +11,7 @@
  */
 
 import { create } from 'zustand';
+import { env } from '@/lib/env';
 import { type ThemeType, THEME_TRACK_INFO } from '@/shared/theme-music';
 
 const STORAGE_KEY = 'bundestag-wrapped-sound-muted';
@@ -28,7 +29,7 @@ function getBrowserStorage(): Storage | undefined {
  * Sound plays in development too (mute it in the toolbar). Set
  * VITE_DEV_AUDIO=off to keep a local session completely silent.
  */
-export const IS_DEV_AUDIO_DISABLED = import.meta.env.DEV && import.meta.env.VITE_DEV_AUDIO === 'off';
+export const IS_DEV_AUDIO_DISABLED = env.DEV && env.VITE_DEV_AUDIO === 'off';
 
 interface AudioState {
   // State
