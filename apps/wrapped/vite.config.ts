@@ -158,6 +158,8 @@ export default defineConfig({
     // dependencies their own React copies; inline them so the alias below applies.
     server: { deps: { inline: [/node_modules/] } },
     alias: [
+      // CJS entry (exports "node") would require its own nested React; take the ESM build so the aliases below apply.
+      { find: /^lucide-react$/, replacement: 'lucide-react/dist/esm/lucide-react.mjs' },
       { find: /^react$/, replacement: path.resolve(import.meta.dirname, 'node_modules/react') },
       { find: /^react\/(.*)$/, replacement: path.resolve(import.meta.dirname, 'node_modules/react') + '/$1' },
       { find: /^react-dom$/, replacement: path.resolve(import.meta.dirname, 'node_modules/react-dom') },
