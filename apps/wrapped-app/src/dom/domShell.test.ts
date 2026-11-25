@@ -1,5 +1,5 @@
 /** @jest-environment jsdom */
-import { interceptLinks, polyfillShare, reportCrashes } from './domShell';
+import { interceptLinks, polyfillShare, reportCrashes, setDocumentLanguage } from './domShell';
 
 const isAppRoute = (p: string) => ['/2026', '/2026/perfect-match', '/'].includes(p);
 
@@ -101,5 +101,13 @@ describe('reportCrashes', () => {
     window.dispatchEvent(new ErrorEvent('error', { message: 'first' }));
     expect(post).toHaveBeenCalledTimes(1);
     off();
+  });
+});
+
+describe('setDocumentLanguage', () => {
+  it('sets lang=de so hyphens: auto has a dictionary', () => {
+    document.documentElement.removeAttribute('lang');
+    setDocumentLanguage();
+    expect(document.documentElement.lang).toBe('de');
   });
 });

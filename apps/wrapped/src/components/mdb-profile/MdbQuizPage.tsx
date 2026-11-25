@@ -24,7 +24,7 @@ import {
 } from '@/lib/mdb-quiz';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionPath, editionSurface } from '@/edition/surface';
-import { appHas } from '@/app-entry/app-routes';
+import { appHas } from '@/edition/registry';
 import { ArrowIcon, GrowBar, PartyPill, RatioBars } from './shared';
 import { partyStyle } from './party-style';
 import { QuizSkeleton } from '@/components/skeletons/PageSkeletons';
