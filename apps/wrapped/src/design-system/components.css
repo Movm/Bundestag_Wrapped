@@ -475,6 +475,8 @@
 /* Big statement copy (info slides, section intros). */
 .ds-statement { margin: 0; max-width: 55rem; font-family: var(--font-wide); font-weight: 800; font-stretch: 105%; font-size: clamp(1.25rem, 0.9rem + min(1.9vw, 3vh), 2.875rem); line-height: 1.15; letter-spacing: -0.02em; text-wrap: pretty; }
 .ds-statement--long { font-size: clamp(1.125rem, 0.9rem + min(1.1vw, 1.8vh), 1.875rem); line-height: 1.25; }
+/* Tablets/desktop: long info texts sit only slightly below .ds-statement; the vh cap protects short windows. */
+@media (min-width: 40rem) and (min-height: 40rem) { .ds-statement--long { font-size: clamp(1.25rem, 0.9rem + min(1.7vw, 2.4vh), 2.125rem); } }
 
 /* A note on an ink plate stays readable even where it crosses a shape. */
 .ds-note--plate { background: var(--color-wr-ink); color: color-mix(in srgb, #fff 82%, var(--color-wr-ink)); padding: 0.625rem 0.875rem; border-radius: 0.75rem; }
