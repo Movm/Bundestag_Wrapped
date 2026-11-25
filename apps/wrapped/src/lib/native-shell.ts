@@ -9,6 +9,8 @@ type Handler = (message: NativeToWeb) => void;
 let send: ((message: WebToNative) => void) | null = null;
 const handlers = new Map<NativeToWeb['type'], Set<Handler>>();
 const pending: NativeToWeb[] = [];
+/** Only meaningful at the moment they are sent: without a subscriber they are dropped, not queued. */
+const TRANSIENT: ReadonlySet<NativeToWeb['type']> = new Set(['menu.closed']);
 
 /** False in the browser. The app entry calls `installNativeShell` once; nothing else flips it. */
 export function isNativeShell(): boolean {
@@ -48,7 +50,7 @@ export function installNativeShell(post: (message: WebToNative) => void): { rece
   send = post;
   return {
     receive(message) {
-      if (!deliver(message)) pending.push(message);
+      if (!deliver(message) && !TRANSIENT.has(message.type)) pending.push(message);
     },
   };
 }
