@@ -5,6 +5,7 @@ import { themeMusic } from '@/lib/theme-music';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
 import { isNativeShell, onNativeMessage } from '@/lib/native-shell';
+import { usePageVisible } from '@/hooks/usePageVisible';
 import { reportCover } from '@/lib/native-cover';
 import { useAudioStore } from '@/stores/audioStore';
 import { acquireCover, releaseBootShell } from '@/cover/shell';
@@ -62,29 +63,52 @@ export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps)
   }, [active]);
 
   // Native shell: it paints the cover; this slide only reports visibility and relays "Los geht's".
+  // `active` is false while the page is hidden (app switch), but backgrounding does not leave the
+  // cover: the last report holds until the page is visible again, so native neither hides the cover
+  // nor replays its assembly on return, and a press in flight still lands.
+  const pageVisible = usePageVisible();
   const reportRef = useRef({ year: year ?? null, muted });
   const startedRef = useRef(false);
-  const activeRef = useRef(false);
-  // Only the move to visible re-arms "Los geht's"; a mute or year change inside the same visible period must not.
-  useEffect(() => {
-    activeRef.current = active;
-    if (active) startedRef.current = false;
-  }, [active]);
+  /** What this slide last told native; only a cover reported visible takes "Los geht's". */
+  const reportedVisibleRef = useRef(false);
+  /** Counts this slide's moves to a reported-visible cover. */
+  const coverEpochRef = useRef(0);
+  /** The cover report when the story.start listener went away; `null` until it did once. */
+  const unsubscribedAtRef = useRef<{ epoch: number; visible: boolean } | null>(null);
   useEffect(() => {
     if (!native) return;
     reportRef.current = { year: year ?? null, muted };
+    if (!pageVisible) return;
+    // Only the move to visible re-arms "Los geht's"; a mute or year change inside the same visible period must not.
+    if (active && !reportedVisibleRef.current) {
+      coverEpochRef.current += 1;
+      startedRef.current = false;
+    }
+    reportedVisibleRef.current = active;
     reportCover({ visible: active, ...reportRef.current });
-  }, [native, active, year, muted]);
+  }, [native, active, year, muted, pageVisible]);
   useEffect(() => {
     if (!native) return;
+    // native-shell hands over story.start messages that came while nobody listened. They answer a
+    // cover this slide still shows only if it stayed reported visible since the listener went away;
+    // anything older (before this mount, or before the cover went and came back) is dropped.
+    const before = unsubscribedAtRef.current;
+    const bufferCurrent = before !== null && before.visible && before.epoch === coverEpochRef.current;
+    let draining = true;
     const off = onNativeMessage('story.start', () => {
-      if (!activeRef.current || startedRef.current) return;
+      if (draining && !bufferCurrent) return;
+      if (!reportedVisibleRef.current || startedRef.current) return;
       startedRef.current = true;
       themeMusic.startPrimed();
       onStartRef.current?.();
     });
+    draining = false;
     return () => {
       off();
+      unsubscribedAtRef.current = { epoch: coverEpochRef.current, visible: reportedVisibleRef.current };
+      // The Activity hid a backgrounded slide: the cover is still on.
+      if (document.visibilityState === 'hidden') return;
+      reportedVisibleRef.current = false;
       reportCover({ visible: false, ...reportRef.current });
     };
   }, [native]);
