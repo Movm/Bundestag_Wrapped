@@ -10,6 +10,10 @@
  */
 body { margin: 0; } /* the app's preflight does the same once its stylesheet is in */
 
+/* Declare Tailwind's layer order first: the first appearance of a layer name fixes its rank, and this
+   inline block precedes the main stylesheet. Without it `components` ranks below `base` (preflight). */
+@layer theme, base, components, utilities;
+
 /* In the components layer, so Tailwind utilities (size, radius) on a block win. */
 @layer components {
   .bt-skel-block {
