@@ -1,0 +1,137 @@
+import { type CoverEffect, type CoverEvent, type CoverState, initialCoverState, reduce } from './coverMachine';
+import { COVER_TIMING } from './coverMath';
+
+/** Feeds events in order and collects every effect, like the hook does. */
+function run(state: CoverState, steps: [CoverEvent, number][]) {
+  const effects: CoverEffect[] = [];
+  for (const [event, now] of steps) {
+    const result = reduce(state, event, now);
+    state = result.state;
+    effects.push(...result.effects);
+  }
+  return { state, effects };
+}
+
+const visible = (year: number | null = 2026, muted = false): CoverEvent => ({ type: 'web.cover', visible: true, year, muted });
+const gone: CoverEvent = { type: 'web.cover', visible: false, year: 2026, muted: false };
+const press: CoverEvent = { type: 'press' };
+const tick: CoverEvent = { type: 'tick' };
+const count = (effects: CoverEffect[], effect: CoverEffect) => effects.filter(e => e === effect).length;
+
+describe('coverMachine', () => {
+  const fresh = () => initialCoverState({ reducedMotion: false });
+
+  it('starts showing, not web-ready, without a year', () => {
+    expect(fresh()).toMatchObject({ phase: { name: 'showing' }, webReady: false, year: null });
+  });
+
+  it('press before the web is ready: wipe, then wait, then exactly one story.start on the first web.cover', () => {
+    let r = run(fresh(), [[tick, 0], [press, 100]]);
+    expect(r.state.phase).toEqual({ name: 'exiting', since: 100 });
+    expect(r.effects).not.toContain('sendStoryStart');
+
+    r = run(r.state, [[tick, 100 + COVER_TIMING.exitDone]]);
+    expect(r.state.phase.name).toBe('handingOver');
+    expect(r.effects).toEqual([]);
+
+    // The pink screen waits for the web, however long the ticks run (inside the 12 s fallback).
+    r = run(r.state, [[tick, 5000], [tick, 8000]]);
+    expect(r.state.phase.name).toBe('handingOver');
+    expect(r.effects).toEqual([]);
+
+    r = run(r.state, [[visible(), 9000], [visible(2026, true), 9100], [tick, 9200]]);
+    expect(count(r.effects, 'sendStoryStart')).toBe(1);
+    expect(r.state.phase.name).toBe('handingOver');
+
+    // The web confirms by hiding its cover.
+    r = run(r.state, [[gone, 9300]]);
+    expect(r.effects).toEqual(['fadeOut']);
+    expect(r.state.phase.name).toBe('hidden');
+  });
+
+  it('press after the web is ready: story.start once the wipe is done, not before', () => {
+    let r = run(fresh(), [[visible(), 0], [press, 1000], [tick, 1000 + COVER_TIMING.exitDone - 1]]);
+    expect(r.effects).not.toContain('sendStoryStart');
+    r = run(r.state, [[tick, 1000 + COVER_TIMING.exitDone]]);
+    expect(r.effects).toEqual(['sendStoryStart']);
+  });
+
+  it('double press sends one story start, one sound, one haptic', () => {
+    const r = run(fresh(), [[visible(), 0], [press, 500], [press, 520], [tick, 600], [press, 700], [tick, 500 + COVER_TIMING.exitDone], [press, 3000], [tick, 3100]]);
+    expect(count(r.effects, 'sendStoryStart')).toBe(1);
+    expect(count(r.effects, 'playStartSound')).toBe(1);
+    expect(count(r.effects, 'haptic')).toBe(1);
+  });
+
+  it('web.cover visible false while showing fades out without a wipe', () => {
+    const r = run(fresh(), [[visible(), 0], [tick, 100], [gone, 200]]);
+    expect(r.effects).toEqual(['fadeOut']);
+    expect(r.state.phase).toEqual({ name: 'hidden' });
+  });
+
+  it('no confirmation within 3000 ms after story.start still fades out', () => {
+    let r = run(fresh(), [[visible(), 0], [press, 0], [tick, COVER_TIMING.exitDone]]);
+    expect(r.effects).toContain('sendStoryStart');
+    r = run(r.state, [[tick, COVER_TIMING.exitDone + 2999]]);
+    expect(r.effects).toEqual([]);
+    r = run(r.state, [[tick, COVER_TIMING.exitDone + 3000]]);
+    expect(r.effects).toEqual(['fadeOut']);
+    expect(r.state.phase.name).toBe('hidden');
+    // A late confirmation changes nothing.
+    expect(run(r.state, [[gone, 6000]]).effects).toEqual([]);
+  });
+
+  it('no web message at all: fades out after 12 000 ms', () => {
+    let r = run(fresh(), [[tick, 0], [tick, 11_999]]);
+    expect(r.effects).toEqual([]);
+    r = run(r.state, [[tick, 12_000]]);
+    expect(r.effects).toEqual(['fadeOut']);
+    expect(r.state.phase.name).toBe('hidden');
+    // Also when "Los geht's" was pressed and the pink screen waits for a web that never comes.
+    const pressed = run(fresh(), [[tick, 0], [press, 1000], [tick, 4000], [tick, 12_000]]);
+    expect(pressed.effects).toContain('fadeOut');
+    expect(pressed.state.phase.name).toBe('hidden');
+    // Once the web has spoken, the fallback is off.
+    expect(run(fresh(), [[tick, 0], [visible(), 100], [tick, 20_000]]).effects).toEqual([]);
+  });
+
+  it('visible true while hidden shows the cover again and restarts the assembly', () => {
+    let r = run(fresh(), [[visible(), 0], [gone, 100]]);
+    expect(r.state.phase.name).toBe('hidden');
+    r = run(r.state, [[visible(2026), 5000]]);
+    expect(r.effects).toEqual(['startAssembly']);
+    expect(r.state).toMatchObject({ phase: { name: 'showing' }, webReady: true });
+    // And "Los geht's" works again, once.
+    r = run(r.state, [[press, 6000], [tick, 6000 + COVER_TIMING.exitDone]]);
+    expect(count(r.effects, 'sendStoryStart')).toBe(1);
+  });
+
+  it('a wipe that ran out in the background hands over on appActive', () => {
+    let r = run(fresh(), [[visible(), 0], [press, 1000]]);
+    // No ticks while the app is in the background.
+    r = run(r.state, [[{ type: 'appActive' }, 60_000]]);
+    expect(r.effects).toEqual(['sendStoryStart']);
+    expect(r.state.phase).toMatchObject({ name: 'handingOver', since: 60_000 });
+    // The confirmation window starts at the hand-over, not at the press.
+    expect(run(r.state, [[tick, 60_100]]).effects).toEqual([]);
+    expect(run(r.state, [[tick, 63_000]]).effects).toEqual(['fadeOut']);
+  });
+
+  it('reduced motion: press sends story.start at once', () => {
+    const r = run(initialCoverState({ reducedMotion: true }), [[visible(), 0], [press, 500]]);
+    expect(r.effects).toEqual(['playStartSound', 'haptic', 'sendStoryStart']);
+    expect(r.state.phase).toMatchObject({ name: 'handingOver', since: 500 });
+  });
+
+  it('muted: no start sound', () => {
+    const r = run(fresh(), [[visible(2026, true), 0], [press, 100]]);
+    expect(r.effects).toEqual(['haptic']);
+  });
+
+  it('keeps the year the web reports; null until it does', () => {
+    let r = run(fresh(), [[tick, 0]]);
+    expect(r.state.year).toBeNull();
+    r = run(r.state, [[visible(2026), 10]]);
+    expect(r.state.year).toBe(2026);
+  });
+});
