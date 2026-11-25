@@ -154,5 +154,14 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     exclude: ['e2e/**', 'node_modules/**', 'dist/**'],
+    // Hoisted installs (apps/wrapped-app pins another React at the root) give
+    // dependencies their own React copies; inline them so the alias below applies.
+    server: { deps: { inline: [/node_modules/] } },
+    alias: [
+      { find: /^react$/, replacement: path.resolve(import.meta.dirname, 'node_modules/react') },
+      { find: /^react\/(.*)$/, replacement: path.resolve(import.meta.dirname, 'node_modules/react') + '/$1' },
+      { find: /^react-dom$/, replacement: path.resolve(import.meta.dirname, 'node_modules/react-dom') },
+      { find: /^react-dom\/(.*)$/, replacement: path.resolve(import.meta.dirname, 'node_modules/react-dom') + '/$1' },
+    ],
   },
 })
