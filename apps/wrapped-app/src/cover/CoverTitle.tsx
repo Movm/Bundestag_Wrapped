@@ -1,5 +1,5 @@
 import { type ReactNode, useEffect } from 'react';
-import { Platform, Pressable, StyleSheet, Text, View } from 'react-native';
+import { type LayoutChangeEvent, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import Animated, { Easing, type SharedValue, useAnimatedStyle, useSharedValue, withDelay, withTiming } from 'react-native-reanimated';
 import { COVER_TIMING, EASE_IN, type Sample, sampleKeyframes } from './coverMath';
 import { type CoverElement, ENTRANCE_POP, sampleElement } from './coverMotion';
@@ -44,12 +44,12 @@ function YearPill({ year, size, clocks, reducedMotion }: { year: number; size: n
 }
 
 /** „Bundestag Wrapped" with the year pill, and „Los geht’s". */
-export function CoverTitle({ layout, year, clocks, reducedMotion, onPress }: { layout: CoverLayout; year: number | null; clocks: Clocks; reducedMotion: boolean; onPress: () => void }) {
+export function CoverTitle({ layout, year, clocks, reducedMotion, onPress, onLayout }: { layout: CoverLayout; year: number | null; clocks: Clocks; reducedMotion: boolean; onPress: () => void; onLayout?: (event: LayoutChangeEvent) => void }) {
   const size = layout.titleSize;
   const word = { fontSize: size, lineHeight: size * 0.84, letterSpacing: -0.045 * size };
   const label = year === null ? 'Bundestag Wrapped' : `Bundestag Wrapped ${year}`;
   return (
-    <View style={[styles.title, { gap: layout.gapTitleButton }]}>
+    <View onLayout={onLayout} style={[styles.title, { gap: layout.gapTitleButton }]}>
       <View accessible accessibilityRole="header" accessibilityLabel={label} style={[styles.h1, { columnGap: 0.22 * size, rowGap: 0.08 * size }]}>
         <Animate element="bundestag" clocks={clocks}><Text style={[styles.display, word]}>Bundestag</Text></Animate>
         <Animate element="wrapped" clocks={clocks}><Text style={[styles.display, word, { color: PINK }]}>Wrapped</Text></Animate>

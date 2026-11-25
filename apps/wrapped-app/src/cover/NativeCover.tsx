@@ -11,6 +11,8 @@ import { ASSEMBLY_END, sampleElement } from './coverMotion';
 import { coverLayout } from './coverLayout';
 import { CoverTitle, transformOf } from './CoverTitle';
 import { SeatsLayer, type StageRect, WipeLayer } from './SeatsLayer';
+import { SkyLayer } from './SkyLayer';
+import { useAmbient, useAppActive } from './useAmbient';
 import { type useCoverBridge } from './useCoverBridge';
 
 type Props = ReturnType<typeof useCoverBridge>;
@@ -81,12 +83,17 @@ function CoverScene({ state, press }: Pick<Props, 'state' | 'press'>) {
   // re-registered on re-renders; anchored clocks don't mind (see coverClock.ts).
   const assemblyStart = useSharedValue(-1);
   const exitStart = useSharedValue(-1);
+  // The idle wave: ms since `waveStart` into the assembly, −1 before it, with reduced motion and once exiting
+  // (the exit cancels it, as `resetStory()` does).
+  const wave = useSharedValue(-1);
   useFrameCallback(() => {
     'worklet';
     const now = Date.now();
     if (assemblyStart.value >= 0 && assembly.value < ASSEMBLY_END) assembly.value = clockValue(now, assemblyStart.value, ASSEMBLY_END);
     if (exitStart.value >= 0 && exit.value < COVER_TIMING.exitDone) exit.value = clockValue(now, exitStart.value, COVER_TIMING.exitDone);
-    // Task 4: the idle wave reads its own anchor here.
+    const waving = assemblyStart.value >= 0 && exitStart.value < 0 ? now - assemblyStart.value - COVER_TIMING.waveStart : -1;
+    const next = waving < 0 ? -1 : waving;
+    if (wave.value !== next) wave.value = next;
   });
 
   const [stage, setStage] = useState<StageRect | null>(null);
@@ -96,6 +103,18 @@ function CoverScene({ state, press }: Pick<Props, 'state' | 'press'>) {
     const next = { x, y, width, height };
     setStage(prev => (prev && prev.x === next.x && prev.y === next.y && prev.width === next.width && prev.height === next.height ? prev : next));
   };
+
+  const [title, setTitle] = useState<StageRect | null>(null);
+  const onTitleLayout = (event: LayoutChangeEvent) => {
+    const { x, y, width, height } = event.nativeEvent.layout;
+    setTitle(prev => (prev && prev.x === x && prev.y === y && prev.width === width && prev.height === height ? prev : { x, y, width, height }));
+  };
+
+  // The ambient layer runs while the cover shows and the app is in front; it starts afresh on return.
+  const appActive = useAppActive();
+  const showing = state.phase.name !== 'hidden';
+  const box = useMemo(() => ({ w: size.width, h: size.height }), [size]);
+  const ambient = useAmbient(!reducedMotion && appActive && showing && stage !== null && title !== null, { box, stage, title });
 
   const measured = stage !== null;
   useEffect(() => {
@@ -113,14 +132,15 @@ function CoverScene({ state, press }: Pick<Props, 'state' | 'press'>) {
 
   return (
     <View style={[styles.box, size]}>
-      {stage && <SeatsLayer size={size} stage={stage} assembly={assembly} exit={exit} />}
+      <SkyLayer size={size} window={window} planet={layout.planet} assembly={assembly} ambient={ambient} />
+      {stage && <SeatsLayer size={size} stage={stage} assembly={assembly} exit={exit} wave={wave} />}
       <View style={[styles.main, { paddingTop: layout.padding.top, paddingRight: layout.padding.right, paddingBottom: layout.padding.bottom, paddingLeft: layout.padding.left, gap: layout.gapStageTitle }]}>
         <View onLayout={onStageLayout} style={{ width: layout.stageWidth, height: layout.stageHeight }} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
           <Animated.View style={[styles.eagle, { width: layout.stageWidth * 0.2, height: layout.stageWidth * 0.2 * EAGLE_RATIO, marginLeft: -layout.stageWidth * 0.1 }, eagle]}>
             <Image source={EAGLE} style={StyleSheet.absoluteFill} contentFit="contain" accessible={false} />
           </Animated.View>
         </View>
-        <CoverTitle layout={layout} year={state.year} clocks={clocks} reducedMotion={reducedMotion} onPress={press} />
+        <CoverTitle layout={layout} year={state.year} clocks={clocks} reducedMotion={reducedMotion} onPress={press} onLayout={onTitleLayout} />
       </View>
       {stage && <WipeLayer size={size} stage={stage} exit={exit} />}
     </View>

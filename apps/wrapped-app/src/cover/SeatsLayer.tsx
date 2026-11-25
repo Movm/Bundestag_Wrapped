@@ -3,12 +3,13 @@ import { StyleSheet, View } from 'react-native';
 import { Canvas, Circle, createPicture, Picture, Skia } from '@shopify/react-native-skia';
 import { type SharedValue, useDerivedValue } from 'react-native-reanimated';
 import { buildSeats } from '../../../wrapped/src/shared/cover/seats';
-import { assemblyPlan, COVER_TIMING, exitPlan, sampleKeyframes, wipeRadii } from './coverMath';
+import { assemblyPlan, COVER_TIMING, EASE_IN_OUT, exitPlan, sampleKeyframes, waveProgress, wavePlan, wipeRadii } from './coverMath';
 import { progressAt, seedScale, wipeProgress } from './coverMotion';
 
 export interface StageRect { x: number; y: number; width: number; height: number }
 
 const PINK = Skia.Color('#ff4fa0');
+const REST = { tx: 0, ty: 0, scale: 1, opacity: 1, rotate: 0 };
 
 interface ClockProps {
   /** ms since the assembly started (or its end with reduced motion). */
@@ -17,29 +18,42 @@ interface ClockProps {
   exit: SharedValue<number>;
 }
 
+interface WaveProps {
+  /** ms since the idle wave started (`COVER_TIMING.waveStart` into the assembly), −1 before it or without one. */
+  wave: SharedValue<number>;
+}
+
 /**
  * The 630 seats and the seed, drawn into one Picture per frame. The canvas spans the whole cover
  * (seats fly beyond the stage), the stage rect places the hemicycle in it. Plans are built once per
  * geometry on the JS thread; only the sampling runs in the worklet.
  */
-export function SeatsLayer({ size, stage, assembly, exit }: ClockProps & { size: { width: number; height: number }; stage: StageRect }) {
+export function SeatsLayer({ size, stage, assembly, exit, wave }: ClockProps & WaveProps & { size: { width: number; height: number }; stage: StageRect }) {
   const seats = useMemo(() => buildSeats(), []);
   const colors = useMemo(() => seats.map(seat => Skia.Color(seat.color)), [seats]);
   const geometry = useMemo(() => ({ width: stage.width, height: stage.height, cx: stage.width / 2, cy: stage.height * 0.55 }), [stage.width, stage.height]);
   const built = useMemo(() => assemblyPlan(geometry, seats), [geometry, seats]);
   const fallen = useMemo(() => exitPlan(geometry, seats), [geometry, seats]);
+  const waving = useMemo(() => wavePlan(seats), [seats]);
   const points = useMemo(() => seats.map(seat => ({ x: stage.x + seat.x / 100 * stage.width, y: stage.y + seat.y / 100 * stage.height })), [seats, stage]);
 
-  // Task 4: the idle wave (`wavePlan`, from `COVER_TIMING.waveStart`) multiplies the resting seat scale here.
   const picture = useDerivedValue(() => {
-    const a = assembly.value, e = exit.value;
+    const a = assembly.value, e = exit.value, w = wave.value;
     const seatRadius = stage.width * 0.0065, seedRadius = stage.width * 0.013;
     return createPicture(canvas => {
       const paint = Skia.Paint();
       paint.setAntiAlias(true);
       for (let i = 0; i < points.length; i++) {
-        const track = e >= 0 ? fallen[i] : built[i];
-        const s = sampleKeyframes(track.frames, progressAt(e >= 0 ? e : a, track.delay, track.duration));
+        let s;
+        if (e >= 0) {
+          s = sampleKeyframes(fallen[i].frames, progressAt(e, fallen[i].delay, fallen[i].duration));
+        } else if (w >= 0) {
+          // The wave replaces the (finished) assembly transform; outside its iterations the seat rests.
+          const p = waveProgress(w, waving[i].delay, waving[i].duration);
+          s = p < 0 ? REST : sampleKeyframes(waving[i].frames, p, EASE_IN_OUT);
+        } else {
+          s = sampleKeyframes(built[i].frames, progressAt(a, built[i].delay, built[i].duration));
+        }
         if (s.scale <= 0) continue;
         paint.setColor(colors[i]);
         canvas.drawCircle(points[i].x + s.tx, points[i].y + s.ty, seatRadius * s.scale, paint);
