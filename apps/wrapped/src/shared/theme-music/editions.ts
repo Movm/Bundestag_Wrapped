@@ -1,3 +1,4 @@
+import { EDITION_MUSIC_FILES } from '@/generated/edition-music';
 import { getThemeForSlide as defaultThemeForSlide, sectionOfSlide, TRACKS, type ThemeType } from './types';
 
 /**
@@ -26,10 +27,8 @@ export function parseEditionMusic(value: unknown, source: string): EditionMusic 
   return config as EditionMusic;
 }
 
-const files = import.meta.glob<unknown>('/config/*/music.json', { eager: true, import: 'default' });
-
 export const EDITION_MUSIC: Record<string, EditionMusic> = Object.fromEntries(
-  Object.entries(files).map(([file, value]) => [file.split('/')[2], parseEditionMusic(value, file)]),
+  Object.entries(EDITION_MUSIC_FILES).map(([id, value]) => [id, parseEditionMusic(value, `config/${id}/music.json`)]),
 );
 
 /** The track for a slide in a given edition. */

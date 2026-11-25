@@ -2,6 +2,8 @@
  * Types and loaders for individual speaker Bundestag Wrapped data.
  */
 
+import { assetUrl } from '@/lib/site';
+
 export interface SpeakerSummary {
   slug: string;
   name: string;
@@ -341,7 +343,7 @@ export async function enrichSpeakerData(speaker: SpeakerWrapped, slug: string): 
 /** Optional biography data for one MP; null when there is none or it fails to load. */
 export async function loadSpeakerEnrichment(slug: string): Promise<SpeakerEnrichment | null> {
   try {
-    const response = await fetch(`/speaker-enrichment/${slug}.json`);
+    const response = await fetch(assetUrl(`/speaker-enrichment/${slug}.json`));
     return response.ok ? await response.json() as SpeakerEnrichment : null;
   } catch {
     return null;

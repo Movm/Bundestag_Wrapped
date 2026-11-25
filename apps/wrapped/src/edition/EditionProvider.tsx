@@ -1,6 +1,7 @@
 import { createContext, type ReactNode, useContext } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { assertEditionConsistency, EditionLoadError, loadEditionContent, loadEditionWrapped, loadManifest, loadRegistry } from './loader';
+import { assertEditionConsistency, EditionLoadError, loadEditionContent, loadEditionWrapped, loadManifest } from './loader';
+import { registryQuery } from './registryQuery';
 import { LEGACY_EDITION_ID, resolveAssetUrl } from './registry';
 import type { EditionContextValue } from './types';
 
@@ -9,7 +10,7 @@ export type { EditionContextValue } from './types';
 const EditionContext = createContext<EditionContextValue | null>(null);
 
 export function EditionProvider({ editionId, children }: { editionId: string; children: ReactNode }) {
-  const registry = useQuery({ queryKey: ['editions'], queryFn: loadRegistry, staleTime: Infinity });
+  const registry = useQuery(registryQuery);
   const summary = registry.data?.editions.find(item => item.id === editionId);
   const manifest = useQuery({ queryKey: ['edition', summary?.id, 'manifest'], queryFn: () => loadManifest(summary!.manifestUrl), enabled: Boolean(summary), staleTime: Infinity });
   const content = useQuery({
@@ -39,6 +40,10 @@ export function EditionProvider({ editionId, children }: { editionId: string; ch
     ? manifest.error ?? content.error ?? consistencyError ?? wrapped.error
     : registry.data ? new EditionLoadError('unknown-edition', `Unknown edition: ${editionId}`) : null);
   const manifestUrl = summary?.manifestUrl;
+  // Only a user action refetches: registryQuery keeps retryOnMount off so a failure cannot loop.
+  const retry = () => {
+    for (const query of [registry, manifest, content, wrapped]) if (query.isError) void query.refetch();
+  };
   return <EditionContext.Provider value={{
     editionId: editionId || LEGACY_EDITION_ID,
     manifestUrl,
@@ -46,6 +51,7 @@ export function EditionProvider({ editionId, children }: { editionId: string; ch
     content: content.data,
     data: wrapped.data,
     error,
+    retry,
     isLoading: registry.isLoading || manifest.isLoading || content.isLoading || wrapped.isLoading,
     resolveAssetUrl: (asset) => manifestUrl ? resolveAssetUrl(manifestUrl, asset) : asset,
   }}>{children}</EditionContext.Provider>;

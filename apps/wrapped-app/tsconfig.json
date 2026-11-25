@@ -1,0 +1,9 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "types": ["jest", "vite/client"],
+    "paths": { "@/*": ["../wrapped/src/*"] }
+  },
+  "exclude": ["node_modules", "dist-check"]
+}

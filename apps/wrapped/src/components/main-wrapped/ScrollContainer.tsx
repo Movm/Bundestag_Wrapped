@@ -3,6 +3,7 @@ import { ProgressSegments } from '@/design-system/components/ProgressSegments';
 import { surfaceForSlide } from '@/design-system/surfaces';
 import { MotionConfig } from 'motion/react';
 import { cn } from '@/lib/utils';
+import { env } from '@/lib/env';
 import { boundedTarget, hashJumpTarget, isChapterCut, slideIndexFromHash, WheelGesture } from './slide-navigation';
 import { SurfaceFlood, type SurfaceFloodRef } from './SurfaceFlood';
 import { StoryContext, type Arrival } from './StoryContext';
@@ -63,7 +64,7 @@ export const ScrollContainer = forwardRef<ScrollContainerRef, ScrollContainerPro
       if (!hashHandled.current) {
         hashHandled.current = true;
         const requested = slideIndexFromHash(window.location.hash, sections.map(section => section.id));
-        if (requested >= 0) active = hashJumpTarget(active, requested, blocked(), import.meta.env.DEV);
+        if (requested >= 0) active = hashJumpTarget(active, requested, blocked(), env.DEV);
       }
       let target: number | null = null;
       let origin = active;

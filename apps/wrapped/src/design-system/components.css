@@ -333,6 +333,8 @@
 }
 .ds-progress__segment { flex: 1; height: 4px; border-radius: 2px; overflow: hidden; background: var(--surface-track); }
 .ds-progress__fill { display: block; height: 100%; background: var(--surface-on); transform-origin: left; transition: transform 0.4s var(--ease-wr-out); }
+/* Below the md breakpoint the segments collide with slide content; the sr-only live region still announces progress. */
+@media (max-width: 47.99rem), (pointer: coarse) { .ds-progress { display: none; } }
 
 /* ─── Quiz ─────────────────────────────────────────────────────────── */
 .ds-quiz-frame { position: relative; display: flex; flex-direction: column; gap: clamp(1.25rem, 0.75rem + 2.4vw, 3rem); }

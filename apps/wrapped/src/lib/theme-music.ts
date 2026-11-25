@@ -26,6 +26,7 @@ import type { SlideType } from '@/components/main-wrapped/constants';
 import { useAudioStore } from '@/stores/audioStore';
 import { onUserActivation } from './audio-unlock';
 import { whenTrulyIdle } from './when-idle';
+import { assetUrl } from './site';
 import {
   type ThemeType,
   THEME_PATHS,
@@ -117,7 +118,7 @@ export class ThemeMusicManager {
   private load(deck: Deck, theme: ThemeType) {
     if (deck.theme === theme) return;
     deck.theme = theme;
-    deck.audio.src = THEME_PATHS[theme];
+    deck.audio.src = assetUrl(THEME_PATHS[theme]);
     deck.audio.load();
   }
 

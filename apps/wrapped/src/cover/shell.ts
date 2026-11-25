@@ -1,4 +1,5 @@
 import type { CoverController, createCover } from './cover';
+import { assetUrl } from '@/lib/site';
 
 /** Story routes that open on the cover: "/" and "/<edition year>". */
 export const COVER_ROUTE = /^\/(\d{4})?\/?$/;
@@ -37,7 +38,7 @@ export function acquireCover(): { controller: CoverController; startRequested: b
   if (!instance) {
     const create = window.__btCreateCover;
     if (!create) throw new Error('Cover boot script missing from index.html');
-    instance = create(document.createElement('div'), { eagleSrc: EAGLE_SRC, year: null });
+    instance = create(document.createElement('div'), { eagleSrc: assetUrl(EAGLE_SRC), year: null });
   }
   return { controller: instance, startRequested: false };
 }

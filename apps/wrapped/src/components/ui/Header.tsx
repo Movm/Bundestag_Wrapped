@@ -6,6 +6,7 @@ import { toggleBackgroundMusic, isBackgroundMusicPlaying } from '@/lib/sounds';
 import { IS_DEV_AUDIO_DISABLED, useAudioStore } from '@/stores/audioStore';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionPath, editionSurface } from '@/edition/surface';
+import { assetUrl } from '@/lib/site';
 
 interface HeaderProps {
   variant?: 'dark' | 'light';
@@ -37,7 +38,7 @@ export function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
           className="transition-opacity hover:opacity-80"
           aria-label="Bundestag Wrapped - Zur Startseite"
         >
-          <img src="/logo.png" alt="Bundestag Wrapped" className="h-8 w-auto" />
+          <img src={assetUrl('/logo.png')} alt="Bundestag Wrapped" className="h-8 w-auto" />
         </Link>
 
         <div className="flex items-center gap-2">

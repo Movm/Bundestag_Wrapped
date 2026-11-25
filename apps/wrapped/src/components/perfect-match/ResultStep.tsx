@@ -1,11 +1,12 @@
 import { useState, type CSSProperties } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import { motion } from 'motion/react';
 import { ENTER } from '@/design-system/motion';
 import { getPartyTone } from '@/lib/party-colors';
 import { useSpeakerPortraits } from '@/hooks/useDataQueries';
 import type { MatchResult } from '@/lib/perfect-match';
 import { firstName, genitive } from '@/lib/mdb-quiz';
+import { assetUrl, shareableUrl } from '@/lib/site';
 
 /** "Dr. Saskia Ludwig" → "SL": first and last name, academic titles skipped. */
 function initials(name: string): string {
@@ -17,6 +18,7 @@ const CARD_COLORS = [['var(--color-wr-pink)', 'var(--color-wr-ink)'], ['var(--co
 
 /** Step 5: the top three MPs, each linking to their profile and to their quiz. */
 export function ResultStep({ matches, profileUrl, onRestart }: { matches: MatchResult[]; profileUrl: (slug: string) => string; onRestart: () => void }) {
+  const route = useLocation();
   const [note, setNote] = useState('');
   const [failed, setFailed] = useState<string[]>([]);
   const portraits = useSpeakerPortraits(matches.map(match => match.slug));
@@ -24,7 +26,7 @@ export function ResultStep({ matches, profileUrl, onRestart }: { matches: MatchR
   const share = async () => {
     const [first] = matches;
     const text = first ? `Mein Perfect Match im Bundestag: ${first.name} (${first.party}), ${first.pct} %.` : 'Mein Perfect Match im Bundestag';
-    const url = window.location.href;
+    const url = shareableUrl(route.pathname, route.search);
     if (navigator.share) {
       try { await navigator.share({ title: 'Bundestag Wrapped', text, url }); } catch { /* dismissed */ }
       return;
@@ -48,7 +50,7 @@ export function ResultStep({ matches, profileUrl, onRestart }: { matches: MatchR
                 aria-label={`Platz ${index + 1}: ${match.name}, ${match.party}, ${match.pct} Prozent Übereinstimmung. Zum Profil`}
               >
                 <div className="pm-match__visual" data-photo={Boolean(photo)} aria-hidden="true">
-                  {photo && <img className="pm-match__photo" src={photo.thumbnailUrl ?? photo.url} alt="" loading="lazy" onError={() => setFailed(list => [...list, match.slug])} />}
+                  {photo && <img className="pm-match__photo" src={assetUrl(photo.thumbnailUrl ?? photo.url)} alt="" loading="lazy" onError={() => setFailed(list => [...list, match.slug])} />}
                   {!photo && <span className="pm-match__initials">{initials(match.name)}</span>}
                   <span className="pm-match__pct">{match.pct}<span>%</span></span>
                   {match.animal && <span className="pm-match__emoji">{match.animal.emoji}</span>}

@@ -9,6 +9,12 @@ describe('edition music', () => {
     expect(missing).toEqual([]);
   });
 
+  it('EDITION_MUSIC is built from the generated index, one entry per config/*/music.json', () => {
+    expect(Object.keys(EDITION_MUSIC).sort()).toEqual(
+      Object.keys(import.meta.glob('/config/*/music.json')).map(file => file.split('/')[2]).sort(),
+    );
+  });
+
   it('loads the 2026 music.json', () => {
     expect(Object.keys(EDITION_MUSIC)).toContain('2026');
     // Music starts with "Los geht’s", so the cover and disclaimer already carry the first story track.

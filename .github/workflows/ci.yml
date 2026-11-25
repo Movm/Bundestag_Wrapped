@@ -66,6 +66,11 @@ jobs:
       - name: Check web bundle budget
         run: pnpm --filter bundestag-wrapped check:bundle-budget
 
+      # Without this the app breaks silently on web changes (Metro bundles apps/wrapped).
+      - name: Check Expo DOM export (wrapped-app)
+        if: ${{ !cancelled() && matrix.node-version == 22 }}
+        run: pnpm --filter wrapped-app export:check
+
   python:
     name: Python analysis (pytest)
     runs-on: ubuntu-latest

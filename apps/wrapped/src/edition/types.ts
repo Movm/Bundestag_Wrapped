@@ -10,5 +10,7 @@ export interface EditionContextValue {
   data?: WrappedData;
   error?: Error | null;
   isLoading: boolean;
+  /** Explicit user retry: refetches the failed edition queries once each. */
+  retry: () => void;
   resolveAssetUrl: (asset: string) => string;
 }

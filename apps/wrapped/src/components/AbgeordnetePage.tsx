@@ -9,12 +9,14 @@ import { useDebounce } from '@/hooks/useSearchState';
 import { PARTY_BG_CLASSES } from '@/lib/party-colors';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionPath, editionSurface } from '@/edition/surface';
+import { appHas } from '@/edition/registry';
 import { AbgeordneteSkeleton } from './skeletons/PageSkeletons';
 
 const MotionLink = motion.create(Link);
 
 export function AbgeordnetePage() {
   const surface = editionSurface(useOptionalEdition());
+  const searchUrl = `${editionPath(surface, 'suche')}?tab=speakers`;
   const { data: speakerIndex, isLoading: loading, error } = useSpeakerIndex();
   const [searchQuery, setSearchQuery] = useState('');
   const [inputFocused, setInputFocused] = useState(false);
@@ -167,7 +169,7 @@ export function AbgeordnetePage() {
                         className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 hover:bg-bg-elevated transition-colors group"
                       >
                         <Link
-                          to={editionPath(surface, `abgeordnete/${speaker.slug}`)}
+                          to={editionPath(surface, appHas(editionPath(surface, `abgeordnete/${speaker.slug}`)) ? `abgeordnete/${speaker.slug}` : `abgeordnete/${speaker.slug}/quiz`)}
                           className="flex min-w-0 flex-1 flex-wrap items-center gap-3"
                         >
                           <span className="text-on font-medium group-hover:text-on-accent transition-colors">
@@ -220,15 +222,17 @@ export function AbgeordnetePage() {
         </motion.p>
 
         {/* Link to full search */}
-        <MotionLink
-          to={`${editionPath(surface, 'suche')}?tab=speakers`}
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="mt-4 text-on-accent hover:text-on-accent text-sm transition-colors"
-        >
-          Alle Abgeordneten durchsuchen →
-        </MotionLink>
+        {appHas(searchUrl) && (
+          <MotionLink
+            to={searchUrl}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="mt-4 text-on-accent hover:text-on-accent text-sm transition-colors"
+          >
+            Alle Abgeordneten durchsuchen →
+          </MotionLink>
+        )}
       </div>
 
       {/* Footer */}
