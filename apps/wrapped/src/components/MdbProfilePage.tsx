@@ -21,6 +21,7 @@ import type {
 import type { Speech } from '@/lib/search-utils';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionPath, editionSurface } from '@/edition/surface';
+import { assetUrl } from '@/lib/site';
 import { ArrowIcon, GrowBar, PartyPill, RatioBars, Reveal } from './mdb-profile/shared';
 import { partyStyle } from './mdb-profile/party-style';
 import { ProfileSkeleton } from './skeletons/PageSkeletons';
@@ -124,7 +125,7 @@ function Portrait({ speaker, name }: { speaker: SpeakerWrapped; name: string }) 
         <div className="mp-portrait__frame">
           <span className="mp-portrait__initials" aria-hidden="true">{initials}</span>
           {image && !failed && (
-            <img src={image.thumbnailUrl ?? image.url} alt={image.alt ?? `Porträt von ${name}`} loading="eager" onError={() => setFailed(true)} />
+            <img src={assetUrl(image.thumbnailUrl ?? image.url)} alt={image.alt ?? `Porträt von ${name}`} loading="eager" onError={() => setFailed(true)} />
           )}
         </div>
         <figcaption>

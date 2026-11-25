@@ -1,4 +1,5 @@
 import type { EditionManifest, EditionsIndex } from '@/generated/wrapped-contract-v1';
+import { siteBase } from '@/lib/site';
 
 export type EditionRegistry = EditionsIndex;
 export type Edition = EditionManifest;
@@ -11,8 +12,7 @@ export function isEditionId(value: string | undefined): value is string {
 }
 
 export function resolveAssetUrl(manifestUrl: string, asset: string): string {
-  const origin = typeof window === 'undefined' ? 'http://localhost' : window.location.origin;
-  const manifest = new URL(manifestUrl, origin);
+  const manifest = new URL(manifestUrl, siteBase());
   return new URL(asset, new URL('.', manifest)).pathname;
 }
 

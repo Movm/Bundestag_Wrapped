@@ -6,6 +6,7 @@ import { PAGE_META } from '@/components/seo/constants';
 import { Display, Mark } from '@/design-system/components/Type';
 import { ENTER } from '@/design-system/motion';
 import { dismissBootCover } from '@/cover/shell';
+import { assetUrl } from '@/lib/site';
 import './construction.css';
 
 const TAPE = 'Baustelle · Bundestag Wrapped 2026 · ';
@@ -20,7 +21,7 @@ export function ConstructionPage() {
   return (
     <div className="bw-site" data-surface="violet">
       <SEO title={PAGE_META.construction.title} description={PAGE_META.construction.description} canonicalUrl="/" />
-      <a className="bw-site__logo" href="/"><img src="/logo.png" alt="Bundestag Wrapped" width="160" height="32" /></a>
+      <a className="bw-site__logo" href="/"><img src={assetUrl('/logo.png')} alt="Bundestag Wrapped" width="160" height="32" /></a>
 
       <motion.main className="bw-site__main" initial="hidden" animate="visible" transition={{ staggerChildren: 0.07 }}>
         <Display size="hero" level={1} face="wide">Wir bauen <Mark>2026</Mark></Display>

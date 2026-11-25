@@ -29,11 +29,11 @@ import {
 } from '@/shared/sounds';
 import { hasUserActivation, onUserActivation } from './audio-unlock';
 import { whenTrulyIdle } from './when-idle';
+import { assetUrl } from './site';
 import { IS_DEV_AUDIO_DISABLED, useAudioStore } from '@/stores/audioStore';
 
 export type { SoundType };
 
-const BACKGROUND_MUSIC_PATH = '/sounds/background.mp3';
 const BACKGROUND_VOLUME = 0.08;
 
 // Background music instance
@@ -61,7 +61,7 @@ function audioContext(): AudioContext | null {
 async function decodeFirst(ctx: AudioContext, urls: string[]): Promise<AudioBuffer | null> {
   for (const url of urls) {
     try {
-      return await ctx.decodeAudioData(await (await fetch(url)).arrayBuffer());
+      return await ctx.decodeAudioData(await (await fetch(assetUrl(url))).arrayBuffer());
     } catch (error) {
       console.debug(`Sound ${url} failed to load:`, error instanceof Error ? error.message : error);
     }
@@ -162,7 +162,7 @@ export function playSound(type: SoundType): void {
  */
 function initBackgroundMusic(): HTMLAudioElement {
   if (!backgroundMusic) {
-    backgroundMusic = new Audio(BACKGROUND_MUSIC_PATH);
+    backgroundMusic = new Audio(assetUrl('/sounds/background.mp3'));
     backgroundMusic.loop = true;
     backgroundMusic.volume = BACKGROUND_VOLUME;
     backgroundMusic.preload = 'auto';

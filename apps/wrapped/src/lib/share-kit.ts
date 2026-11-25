@@ -4,6 +4,7 @@
  * 2D calls (no rotate/translate) so it also runs against minimal test contexts.
  */
 import { BRAND_COLORS } from './design-tokens';
+import { assetUrl } from './site';
 
 export const SIZE = 1080;
 export const MARGIN = 70;
@@ -92,7 +93,7 @@ function loadLogo(): Promise<HTMLImageElement | ImageBitmap> {
       decoded.then(bitmap => { logoImage = bitmap; }, () => { logoImage = img; }).finally(() => resolve(img));
     };
     img.onerror = reject;
-    img.src = '/logo.png';
+    img.src = assetUrl('/logo.png');
   });
   return logoLoadPromise;
 }

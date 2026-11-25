@@ -6,6 +6,7 @@ import { getPartyTone } from '@/lib/party-colors';
 import { useSpeakerPortraits } from '@/hooks/useDataQueries';
 import type { MatchResult } from '@/lib/perfect-match';
 import { firstName, genitive } from '@/lib/mdb-quiz';
+import { assetUrl } from '@/lib/site';
 
 /** "Dr. Saskia Ludwig" → "SL": first and last name, academic titles skipped. */
 function initials(name: string): string {
@@ -48,7 +49,7 @@ export function ResultStep({ matches, profileUrl, onRestart }: { matches: MatchR
                 aria-label={`Platz ${index + 1}: ${match.name}, ${match.party}, ${match.pct} Prozent Übereinstimmung. Zum Profil`}
               >
                 <div className="pm-match__visual" data-photo={Boolean(photo)} aria-hidden="true">
-                  {photo && <img className="pm-match__photo" src={photo.thumbnailUrl ?? photo.url} alt="" loading="lazy" onError={() => setFailed(list => [...list, match.slug])} />}
+                  {photo && <img className="pm-match__photo" src={assetUrl(photo.thumbnailUrl ?? photo.url)} alt="" loading="lazy" onError={() => setFailed(list => [...list, match.slug])} />}
                   {!photo && <span className="pm-match__initials">{initials(match.name)}</span>}
                   <span className="pm-match__pct">{match.pct}<span>%</span></span>
                   {match.animal && <span className="pm-match__emoji">{match.animal.emoji}</span>}
