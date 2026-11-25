@@ -2,7 +2,7 @@ import { afterEach, describe, expect, it } from 'vitest';
 
 import { editionShareUrl, type EditionSurface } from '@/edition/surface';
 import { resolveAssetUrl } from '@/edition/registry';
-import { assetUrl, configureSite, isEmbedded, siteBase, SITE_ORIGIN } from './site';
+import { assetUrl, configureSite, isEmbedded, shareableUrl, siteBase, SITE_ORIGIN } from './site';
 
 afterEach(() => configureSite({ embedded: false }));
 
@@ -37,5 +37,11 @@ describe('site base', () => {
   it('resolveAssetUrl stays a same-origin path when embedded', () => {
     configureSite({ embedded: true });
     expect(resolveAssetUrl('/data/2026/preview/manifest.json', 'speakers/index.json')).toBe('/data/2026/preview/speakers/index.json');
+  });
+
+  it('shareableUrl is the page URL in the browser and the site path when embedded', () => {
+    expect(shareableUrl('/2026/abgeordnete/x/quiz', '?a=1')).toBe(window.location.href);
+    configureSite({ embedded: true });
+    expect(shareableUrl('/2026/abgeordnete/x/quiz', '?a=1')).toBe('https://bundestag-wrapped.de/2026/abgeordnete/x/quiz?a=1');
   });
 });

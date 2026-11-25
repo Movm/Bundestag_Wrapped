@@ -18,6 +18,15 @@ describe('web message handler', () => {
     expect(WebBrowser.openBrowserAsync).toHaveBeenCalledWith('https://x.test/a');
   });
 
+  it('refuses non-http(s) urls', async () => {
+    (WebBrowser.openBrowserAsync as jest.Mock).mockClear();
+    const handle = createWebMessageHandler(jest.fn());
+    for (const url of ['javascript:alert(1)', 'file:///etc/passwd', 'intent://x#Intent;end', 'not a url']) {
+      await handle({ type: 'openUrl', url });
+    }
+    expect(WebBrowser.openBrowserAsync).not.toHaveBeenCalled();
+  });
+
   it('ignores unknown message types', async () => {
     const receive = jest.fn();
     await expect(createWebMessageHandler(receive)({ type: 'from-the-future' } as never)).resolves.toBeUndefined();

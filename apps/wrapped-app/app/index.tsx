@@ -1,5 +1,6 @@
 import { useMemo, useRef } from 'react';
-import { View } from 'react-native';
+import { Platform, View } from 'react-native';
+import Constants from 'expo-constants';
 import WrappedDom, { type WrappedDomHandle } from '../src/dom/WrappedDom';
 import { createWebMessageHandler } from '../src/native/onWebMessage';
 
@@ -11,6 +12,8 @@ export default function Index() {
       <WrappedDom
         ref={dom}
         initialPath="/"
+        platform={Platform.OS === 'android' ? 'android' : 'ios'}
+        appVersion={Constants.expoConfig?.version ?? '0'}
         onWebMessage={onWebMessage}
         // Task 6 replaces 'never' with the safe-area handling it settles on.
         dom={{ style: { flex: 1 }, contentInsetAdjustmentBehavior: 'never', webviewDebuggingEnabled: __DEV__ }}

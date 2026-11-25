@@ -1,4 +1,8 @@
-import { type NativeToWeb, type WebToNative } from '@/shared/native-bridge/protocol';
+import { type NativeShellInfo, type NativeToWeb, type WebToNative } from '@/shared/native-bridge/protocol';
+
+declare global {
+  interface Window { __WRAPPED_NATIVE__?: NativeShellInfo }
+}
 
 type Handler = (message: NativeToWeb) => void;
 
@@ -49,9 +53,15 @@ export function installNativeShell(post: (message: WebToNative) => void): { rece
   };
 }
 
+/** Publishes `window.__WRAPPED_NATIVE__` (protocol rule: `protocol` is 1 until a 2 exists). Idempotent. */
+export function setNativeShellInfo(info: NativeShellInfo): void {
+  window.__WRAPPED_NATIVE__ = info;
+}
+
 /** Tests only. */
 export function _resetNativeShellForTesting(): void {
   send = null;
   handlers.clear();
   pending.length = 0;
+  delete window.__WRAPPED_NATIVE__;
 }

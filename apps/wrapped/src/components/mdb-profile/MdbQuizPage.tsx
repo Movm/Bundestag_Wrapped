@@ -1,5 +1,5 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
-import { Link, useParams } from 'react-router';
+import { Link, useLocation, useParams } from 'react-router';
 import { motion, useReducedMotion } from 'motion/react';
 import { AccessibleDialog } from '@/components/ui/AccessibleDialog';
 import { SEO } from '@/components/seo/SEO';
@@ -8,6 +8,7 @@ import { useQuizEngine } from '@/design-system/quiz/engine';
 import { TilesLayout } from '@/design-system/quiz/layouts/TilesLayout';
 import { ENTER, STAGGER } from '@/design-system/motion';
 import { playSound } from '@/lib/sounds';
+import { shareableUrl } from '@/lib/site';
 import { displaySpeakerName } from '@/lib/speaker-profile-utils';
 import {
   buildMdbQuiz,
@@ -120,6 +121,7 @@ function FinalTable({ quiz }: { quiz: MdbQuiz }) {
 
 function Quiz({ quiz, name, party, profileUrl, toList }: { quiz: MdbQuiz; name: string; party: string; profileUrl: string; toList: boolean }) {
   const reduce = useReducedMotion();
+  const route = useLocation();
   const [step, setStep] = useState(0);
   const [outcomes, setOutcomes] = useState<Outcome[]>([]);
   const [resultOpen, setResultOpen] = useState(false);
@@ -161,7 +163,7 @@ function Quiz({ quiz, name, party, profileUrl, toList }: { quiz: MdbQuiz; name: 
 
   const shareResult = async () => {
     const text = `Ich habe ${score} von ${total} Signature Words von ${name} erkannt.`;
-    const url = window.location.href;
+    const url = shareableUrl(route.pathname, route.search);
     if (navigator.share) {
       try { await navigator.share({ title: 'Bundestag Wrapped', text, url }); } catch { /* dismissed */ }
       return;

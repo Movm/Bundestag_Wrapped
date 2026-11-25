@@ -53,15 +53,18 @@ export function interceptLinks(post: Post, isAppRoute: (pathname: string) => boo
     if (href === '' || href.startsWith('#')) return;
     let url: URL;
     try { url = new URL(href, location.href); } catch { return; }
-    const internal = url.origin === location.origin || url.protocol === 'file:';
-    if (!internal) {
+    // file: pages (release build) have the opaque origin "null" for every scheme, so compare protocols first.
+    const internal = url.protocol === location.protocol && (url.protocol === 'file:' || url.origin === location.origin);
+    if (internal) {
+      if (isAppRoute(url.pathname)) return;
       event.preventDefault();
-      post({ type: 'openUrl', url: url.href });
+      post({ type: 'openUrl', url: SITE_ORIGIN + url.pathname + url.search + url.hash });
       return;
     }
-    if (isAppRoute(url.pathname)) return;
+    // Only web links go to the in-app browser. mailto:, tel: etc. keep the WebView's default handling.
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') return;
     event.preventDefault();
-    post({ type: 'openUrl', url: SITE_ORIGIN + url.pathname + url.search + url.hash });
+    post({ type: 'openUrl', url: url.href });
   };
   document.addEventListener('click', onClick, true);
   return () => document.removeEventListener('click', onClick, true);

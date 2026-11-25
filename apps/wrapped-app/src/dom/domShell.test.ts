@@ -43,6 +43,14 @@ describe('interceptLinks', () => {
     expect(post).not.toHaveBeenCalled();
   });
 
+  it('non-http schemes are never posted and keep default handling', () => {
+    const { event } = click('mailto:a@b.de');
+    click('tel:+4930123');
+    click('javascript:void(0)');
+    expect(post).not.toHaveBeenCalled();
+    expect(event.defaultPrevented).toBe(false);
+  });
+
   it('hash-only links and clicks outside links are ignored', () => {
     click('#top');
     document.body.dispatchEvent(new MouseEvent('click', { bubbles: true }));

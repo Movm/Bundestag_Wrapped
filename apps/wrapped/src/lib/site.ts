@@ -26,3 +26,9 @@ export function assetUrl(path: string): string {
   if (!embedded || !path.startsWith('/') || path.startsWith('//')) return path;
   return SITE_ORIGIN + path;
 }
+
+/** The public URL of a page for sharing. Embedded, the WebView location is a file or dev-server URL, so use the router path on the site. */
+export function shareableUrl(pathname: string, search: string): string {
+  if (embedded) return SITE_ORIGIN + pathname + search;
+  return typeof window === 'undefined' ? SITE_ORIGIN + pathname + search : window.location.href;
+}
