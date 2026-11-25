@@ -87,10 +87,20 @@ describe('coverMachine', () => {
     r = run(r.state, [[tick, 12_000]]);
     expect(r.effects).toEqual(['fadeOut']);
     expect(r.state.phase.name).toBe('hidden');
-    // Also when "Los geht's" was pressed and the pink screen waits for a web that never comes.
-    const pressed = run(fresh(), [[tick, 0], [press, 1000], [tick, 4000], [tick, 12_000]]);
-    expect(pressed.effects).toContain('fadeOut');
+    // Once "Los geht's" was pressed, the pink screen waits longer for the web: 30 000 ms, not 12 000.
+    let pressed = run(fresh(), [[tick, 0], [press, 1000], [tick, 4000], [tick, 12_000]]);
+    expect(pressed.effects).not.toContain('fadeOut');
+    expect(pressed.state).toMatchObject({ phase: { name: 'handingOver', storyStartSent: false } });
+    pressed = run(pressed.state, [[tick, 29_999]]);
+    expect(pressed.effects).toEqual([]);
+    pressed = run(pressed.state, [[tick, 30_000]]);
+    expect(pressed.effects).toEqual(['fadeOut']);
     expect(pressed.state.phase.name).toBe('hidden');
+    // The press also holds the cover while the wipe still runs.
+    expect(run(fresh(), [[tick, 0], [press, 11_000], [tick, 12_000]]).state.phase.name).toBe('exiting');
+    // A web that turns up inside the longer wait still gets its story.start.
+    const late = run(fresh(), [[tick, 0], [press, 1000], [tick, 4000], [visible(), 20_000]]);
+    expect(count(late.effects, 'sendStoryStart')).toBe(1);
     // Once the web has spoken, the fallback is off.
     expect(run(fresh(), [[tick, 0], [visible(), 100], [tick, 20_000]]).effects).toEqual([]);
   });

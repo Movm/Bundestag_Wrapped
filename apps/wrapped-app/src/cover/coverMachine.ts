@@ -9,6 +9,8 @@ import { COVER_TIMING } from './coverMath';
 export const CONFIRM_TIMEOUT = 3000;
 /** Without any web message (no cover in the web: error page, offline, deep link), the cover goes after this. */
 export const NO_WEB_TIMEOUT = 12_000;
+/** Once "Los geht's" was pressed and `story.start` is still unsent, the pink screen waits this long for the web. */
+export const NO_WEB_TIMEOUT_AFTER_PRESS = 30_000;
 
 export type CoverPhase =
   | { name: 'showing' }
@@ -22,7 +24,7 @@ export interface CoverState {
   phase: CoverPhase;
   /** The web shows its cover slide, so `story.start` lands. */
   webReady: boolean;
-  /** Any `web.cover` arrived; switches off the 12 s fallback. */
+  /** Any `web.cover` arrived; switches off the 12 s (30 s after a press) fallback. */
   webSeen: boolean;
   year: number | null;
   muted: boolean;
@@ -65,7 +67,9 @@ function advance(state: CoverState, now: number): Result {
   if (phase.name === 'exiting' && now - phase.since >= COVER_TIMING.exitDone) result = handOver(result.state, now, []);
   const after = result.state.phase;
   if (after.name === 'handingOver' && after.storyStartSent && now - after.since >= CONFIRM_TIMEOUT) return hide(result.state, result.effects);
-  if (after.name !== 'hidden' && !result.state.webSeen && now - (result.state.startedAt ?? now) >= NO_WEB_TIMEOUT) return hide(result.state, result.effects);
+  const pressWaiting = after.name === 'exiting' || (after.name === 'handingOver' && !after.storyStartSent);
+  const noWebTimeout = pressWaiting ? NO_WEB_TIMEOUT_AFTER_PRESS : NO_WEB_TIMEOUT;
+  if (after.name !== 'hidden' && !result.state.webSeen && now - (result.state.startedAt ?? now) >= noWebTimeout) return hide(result.state, result.effects);
   return result;
 }
 
