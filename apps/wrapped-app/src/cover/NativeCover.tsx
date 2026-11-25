@@ -1,11 +1,12 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { type LayoutChangeEvent, StyleSheet, useWindowDimensions, View } from 'react-native';
 import { Image } from 'expo-image';
 import * as SplashScreen from 'expo-splash-screen';
-import Animated, { cancelAnimation, useAnimatedStyle, useFrameCallback, useSharedValue, withTiming } from 'react-native-reanimated';
+import Animated, { cancelAnimation, useAnimatedStyle, useFrameCallback, useSharedValue, withDelay, withTiming } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { scheduleOnRN } from 'react-native-worklets';
 import { COVER_TIMING } from './coverMath';
+import { clockValue, wipeDoneAt } from './coverClock';
 import { ASSEMBLY_END, sampleElement } from './coverMotion';
 import { coverLayout } from './coverLayout';
 import { CoverTitle, transformOf } from './CoverTitle';
@@ -30,6 +31,10 @@ export function NativeCover({ state, assemblyRun, press }: Props) {
   const hidden = state.phase.name === 'hidden';
   const [gone, setGone] = useState(false);
   const opacity = useSharedValue(1);
+  // The fade never starts before the wipe has covered the screen.
+  const wipeDone = useRef(0);
+  const exitSince = state.phase.name === 'exiting' && !state.reducedMotion ? state.phase.since : null;
+  useEffect(() => { if (exitSince !== null) wipeDone.current = wipeDoneAt(exitSince); }, [exitSince]);
   useEffect(() => {
     if (!hidden) {
       cancelAnimation(opacity);
@@ -37,7 +42,8 @@ export function NativeCover({ state, assemblyRun, press }: Props) {
       setGone(false);
       return;
     }
-    opacity.value = withTiming(0, { duration: FADE_MS }, finished => { if (finished) scheduleOnRN(setGone, true); });
+    const wait = Math.max(0, wipeDone.current - Date.now());
+    opacity.value = withDelay(wait, withTiming(0, { duration: FADE_MS }, finished => { if (finished) scheduleOnRN(setGone, true); }));
   }, [hidden, opacity]);
   const fade = useAnimatedStyle(() => ({ opacity: opacity.value }));
 
@@ -71,15 +77,17 @@ function CoverScene({ state, press }: Pick<Props, 'state' | 'press'>) {
   const assembly = useSharedValue(reducedMotion ? ASSEMBLY_END : 0);
   const exit = useSharedValue(-1);
   const clocks = useMemo(() => ({ assembly, exit }), [assembly, exit]);
-  // One clock per phase; each stops writing once its phase is at rest. Task 4 runs the wave on.
-  const assemblyClock = useFrameCallback(frame => {
+  // Wall-clock anchors (Date.now(), as the machine), −1 = not started. The frame callback is
+  // re-registered on re-renders; anchored clocks don't mind (see coverClock.ts).
+  const assemblyStart = useSharedValue(-1);
+  const exitStart = useSharedValue(-1);
+  useFrameCallback(() => {
     'worklet';
-    if (assembly.value < ASSEMBLY_END) assembly.value = Math.min(frame.timeSinceFirstFrame, ASSEMBLY_END);
-  }, false);
-  const exitClock = useFrameCallback(frame => {
-    'worklet';
-    if (exit.value < COVER_TIMING.exitDone) exit.value = Math.min(frame.timeSinceFirstFrame, COVER_TIMING.exitDone);
-  }, false);
+    const now = Date.now();
+    if (assemblyStart.value >= 0 && assembly.value < ASSEMBLY_END) assembly.value = clockValue(now, assemblyStart.value, ASSEMBLY_END);
+    if (exitStart.value >= 0 && exit.value < COVER_TIMING.exitDone) exit.value = clockValue(now, exitStart.value, COVER_TIMING.exitDone);
+    // Task 4: the idle wave reads its own anchor here.
+  });
 
   const [stage, setStage] = useState<StageRect | null>(null);
   const onStageLayout = (event: LayoutChangeEvent) => {
@@ -91,20 +99,15 @@ function CoverScene({ state, press }: Pick<Props, 'state' | 'press'>) {
 
   const measured = stage !== null;
   useEffect(() => {
-    if (!measured || reducedMotion) return;
-    assemblyClock.setActive(true);
-    return () => assemblyClock.setActive(false);
-  }, [measured, reducedMotion, assemblyClock]);
+    // Once per scene (a new assembly remounts it): the first layout starts the assembly.
+    if (measured && !reducedMotion && assemblyStart.value < 0) assemblyStart.value = Date.now();
+  }, [measured, reducedMotion, assemblyStart]);
 
-  const exiting = state.phase.name === 'exiting' || (state.phase.name === 'handingOver' && !reducedMotion);
+  // The exit runs on the press timestamp itself, the one the machine hands over from.
+  const exitSince = state.phase.name === 'exiting' && !reducedMotion ? state.phase.since : null;
   useEffect(() => {
-    if (!exiting || reducedMotion) return;
-    assemblyClock.setActive(false);
-    exit.value = 0;
-    exitClock.setActive(true);
-    return () => exitClock.setActive(false);
-    // Only the move into the exit starts the clock; handingOver continues it.
-  }, [exiting, reducedMotion, assemblyClock, exitClock, exit]);
+    if (exitSince !== null && exitStart.value < 0) exitStart.value = exitSince;
+  }, [exitSince, exitStart]);
 
   const eagle = useAnimatedStyle(() => transformOf(sampleElement('eagle', assembly.value, exit.value)));
 
