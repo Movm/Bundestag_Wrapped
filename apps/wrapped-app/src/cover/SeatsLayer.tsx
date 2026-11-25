@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { Canvas, Circle, createPicture, Picture, Skia } from '@shopify/react-native-skia';
 import { type SharedValue, useDerivedValue } from 'react-native-reanimated';
 import { buildSeats } from '../../../wrapped/src/shared/cover/seats';
-import { assemblyPlan, COVER_TIMING, EASE_IN_OUT, exitPlan, sampleKeyframes, waveProgress, wavePlan, wipeRadii } from './coverMath';
+import { assemblyPlan, COVER_TIMING, exitPlan, sampleKeyframes, WAVE_RESTING, wavePlan, waveSeatScale, wipeRadii } from './coverMath';
 import { progressAt, seedScale, wipeProgress } from './coverMotion';
 
 export interface StageRect { x: number; y: number; width: number; height: number }
@@ -19,7 +19,7 @@ interface ClockProps {
 }
 
 interface WaveProps {
-  /** ms since the idle wave started (`COVER_TIMING.waveStart` into the assembly), −1 before it or without one. */
+  /** ms since the idle wave started (`COVER_TIMING.waveStart` into the assembly), −1 before it or without one, `WAVE_RESTING` while every seat rests. */
   wave: SharedValue<number>;
 }
 
@@ -47,10 +47,12 @@ export function SeatsLayer({ size, stage, assembly, exit, wave }: ClockProps & W
         let s;
         if (e >= 0) {
           s = sampleKeyframes(fallen[i].frames, progressAt(e, fallen[i].delay, fallen[i].duration));
+        } else if (w === WAVE_RESTING) {
+          s = REST;
         } else if (w >= 0) {
-          // The wave replaces the (finished) assembly transform; outside its iterations the seat rests.
-          const p = waveProgress(w, waving[i].delay, waving[i].duration);
-          s = p < 0 ? REST : sampleKeyframes(waving[i].frames, p, EASE_IN_OUT);
+          // The wave replaces the (finished) assembly transform; outside its active part the seat rests.
+          const scale = waveSeatScale(waving[i], w);
+          s = scale === 1 ? REST : { tx: 0, ty: 0, scale, opacity: 1, rotate: 0 };
         } else {
           s = sampleKeyframes(built[i].frames, progressAt(a, built[i].delay, built[i].duration));
         }

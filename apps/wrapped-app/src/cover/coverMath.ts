@@ -174,18 +174,21 @@ export function exitPlan(geometry: StageGeometry, seats: Seat[] = buildSeats()):
   });
 }
 
+// Before `wavePlan`: worklet closures capture their free variables where they are defined.
+const WAVE_FRAMES: Frame[] = [
+  { offset: 0, scale: 1 },
+  { offset: 0.07, scale: 1.25 },
+  { offset: 0.14, scale: 1 },
+  { offset: 1, scale: 1 },
+];
+
 /** Idle wave, looping every `COVER_TIMING.wavePeriod` with the effect easing `EASE_IN_OUT`. */
 export function wavePlan(seats: Seat[] = buildSeats()): SeatTrack[] {
   'worklet';
   return seats.map(seat => ({
     delay: seat.t * COVER_TIMING.waveDelayT + seat.row * COVER_TIMING.waveDelayRow,
     duration: COVER_TIMING.wavePeriod,
-    frames: [
-      { offset: 0, scale: 1 },
-      { offset: 0.07, scale: 1.25 },
-      { offset: 0.14, scale: 1 },
-      { offset: 1, scale: 1 },
-    ],
+    frames: WAVE_FRAMES,
   }));
 }
 
@@ -238,4 +241,60 @@ export function ambientSchedule(rand: () => number) {
       return ranAt + min + rand() * (max - min);
     },
   };
+}
+
+/** Offset from which every later wave keyframe is at rest (scale 1, no translate): 0.14. */
+function waveRestOffset(frames: Frame[]): number {
+  const rests = (f: Frame) => (f.scale ?? 1) === 1 && !f.tx && !f.ty;
+  let i = frames.length - 1;
+  while (i > 0 && rests(frames[i - 1])) i--;
+  return frames[i].offset;
+}
+
+/** Smallest raw progress whose `EASE_IN_OUT` value reaches `target` (bisection; the curve is monotone). */
+function invertEasing(easing: Easing, target: number): number {
+  let lo = 0, hi = 1;
+  for (let k = 0; k < 60; k++) {
+    const mid = (lo + hi) / 2;
+    if (easing(mid) >= target) hi = mid; else lo = mid;
+  }
+  return hi;
+}
+
+/**
+ * Raw iteration progress from which a seat rests until the period ends: the effect easing
+ * (`ease-in-out`) inverted at the rest offset of the keyframes (≈ 0.26, i.e. ≈ 2.6 s of 10 s).
+ */
+export const WAVE_REST_PROGRESS = invertEasing(EASE_IN_OUT, waveRestOffset(WAVE_FRAMES));
+
+/** Clock value meaning "every seat rests": distinct from −1 (no wave), so the seats keep the rest pose. */
+export const WAVE_RESTING = -2;
+
+/**
+ * Phase window (ms within each period, measured from the wave start) in which every seat rests:
+ * from the rest point of the seat with the longest delay to the end of the period.
+ */
+export function waveRestWindow(plan: SeatTrack[]): { from: number; to: number } {
+  let longest = 0;
+  for (const track of plan) longest = Math.max(longest, track.delay);
+  return { from: WAVE_REST_PROGRESS * COVER_TIMING.wavePeriod + longest, to: COVER_TIMING.wavePeriod };
+}
+
+/**
+ * The wave clock as the seats should see it: −1 before the wave, `WAVE_RESTING` while every seat
+ * rests (one constant value, so the seat picture is not re-recorded every frame), else `waving`.
+ */
+export function waveClock(waving: number, window: { from: number; to: number }): number {
+  'worklet';
+  if (waving < 0) return -1;
+  const phase = waving % COVER_TIMING.wavePeriod;
+  return phase >= window.from && phase < window.to ? WAVE_RESTING : waving;
+}
+
+/** One seat's wave scale at wave clock `w` (≥ 0); skips the easing once the seat rests in its iteration. */
+export function waveSeatScale(track: SeatTrack, w: number): number {
+  'worklet';
+  const p = waveProgress(w, track.delay, track.duration);
+  if (p < 0 || p >= WAVE_REST_PROGRESS) return 1;
+  return sampleKeyframes(track.frames, p, EASE_IN_OUT).scale;
 }

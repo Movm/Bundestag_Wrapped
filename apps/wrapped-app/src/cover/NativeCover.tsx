@@ -5,7 +5,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import Animated, { cancelAnimation, useAnimatedStyle, useFrameCallback, useSharedValue, withDelay, withTiming } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { scheduleOnRN } from 'react-native-worklets';
-import { COVER_TIMING } from './coverMath';
+import { COVER_TIMING, waveClock, wavePlan, waveRestWindow } from './coverMath';
 import { clockValue, wipeDoneAt } from './coverClock';
 import { ASSEMBLY_END, sampleElement } from './coverMotion';
 import { coverLayout } from './coverLayout';
@@ -21,6 +21,8 @@ const INK = '#0e0a14';
 const FADE_MS = 220;
 const EAGLE = require('../../../wrapped/public/cover-adler.webp');
 const EAGLE_RATIO = 316 / 506;
+/** Phase window in which every seat rests (built once; the seats are fixed). */
+const WAVE_REST = waveRestWindow(wavePlan());
 
 let splashHidden = false;
 
@@ -84,7 +86,8 @@ function CoverScene({ state, press }: Pick<Props, 'state' | 'press'>) {
   const assemblyStart = useSharedValue(-1);
   const exitStart = useSharedValue(-1);
   // The idle wave: ms since `waveStart` into the assembly, −1 before it, with reduced motion and once exiting
-  // (the exit cancels it, as `resetStory()` does).
+  // (the exit cancels it, as `resetStory()` does). While every seat rests it stays on `WAVE_RESTING`, so the
+  // seat picture is recorded once per rest window instead of every frame.
   const wave = useSharedValue(-1);
   useFrameCallback(() => {
     'worklet';
@@ -92,7 +95,7 @@ function CoverScene({ state, press }: Pick<Props, 'state' | 'press'>) {
     if (assemblyStart.value >= 0 && assembly.value < ASSEMBLY_END) assembly.value = clockValue(now, assemblyStart.value, ASSEMBLY_END);
     if (exitStart.value >= 0 && exit.value < COVER_TIMING.exitDone) exit.value = clockValue(now, exitStart.value, COVER_TIMING.exitDone);
     const waving = assemblyStart.value >= 0 && exitStart.value < 0 ? now - assemblyStart.value - COVER_TIMING.waveStart : -1;
-    const next = waving < 0 ? -1 : waving;
+    const next = waveClock(waving, WAVE_REST);
     if (wave.value !== next) wave.value = next;
   });
 
