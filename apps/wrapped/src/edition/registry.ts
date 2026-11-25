@@ -5,7 +5,8 @@ export type EditionRegistry = EditionsIndex;
 export type Edition = EditionManifest;
 
 export const LEGACY_EDITION_ID = 'legacy';
-export const RESERVED_ROUTES = new Set(['abgeordnete', 'datenschutz', 'dokumentation', 'mcp', 'reden', 'suche', 'wrapped']);
+/** Static top-level names that are pages, never edition ids (pinned to App.tsx by routes/reserved-routes.test.ts). */
+export const RESERVED_ROUTES = new Set(['abgeordnete', 'datenschutz', 'dokumentation', 'mcp', 'reden', 'statistiken', 'suche', 'terms', 'wrapped']);
 
 export function isEditionId(value: string | undefined): value is string {
   return Boolean(value) && !RESERVED_ROUTES.has(value!);

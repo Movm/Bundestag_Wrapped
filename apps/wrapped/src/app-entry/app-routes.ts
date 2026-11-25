@@ -10,15 +10,13 @@ export const APP_ROUTE_PATTERNS = [
   '/:editionId/perfect-match',
 ] as const;
 
-/** Edition ids are years; this keeps static top-level pages such as `/terms` out. */
-const EDITION_ID = /^\d{4}$/;
-
+/** Takes a pathname (`URL.pathname`), not a href: a query or hash never matches. */
 export function isAppRoute(pathname: string): boolean {
   return APP_ROUTE_PATTERNS.some(pattern => {
     const match = matchPath(pattern, pathname);
     if (!match) return false;
     const editionId = match.params.editionId;
     if (editionId === undefined) return true;
-    return !RESERVED_ROUTES.has(editionId) && EDITION_ID.test(editionId);
+    return !RESERVED_ROUTES.has(editionId);
   });
 }
