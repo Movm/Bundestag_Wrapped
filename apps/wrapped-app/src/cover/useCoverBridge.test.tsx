@@ -16,9 +16,9 @@ jest.mock('../../../wrapped/public/sounds/start.wav', () => 1, { virtual: true }
 
 const cover = (visible: boolean, year: number | null = 2026) => ({ type: 'cover' as const, visible, year });
 
-function setup() {
+async function setup() {
   const receive = jest.fn<void, [NativeToWeb]>();
-  const hook = renderHook(() => useCoverBridge(receive));
+  const hook = await renderHook(() => useCoverBridge(receive));
   return { receive, hook };
 }
 const starts = (receive: jest.Mock) => receive.mock.calls.filter(([m]) => m.type === 'story.start').length;
@@ -27,10 +27,10 @@ describe('useCoverBridge', () => {
   beforeEach(() => { jest.useFakeTimers({ now: 1_000_000 }); });
   afterEach(() => { jest.useRealTimers(); });
 
-  it('ignores unknown and malformed messages', () => {
-    const { hook } = setup();
+  it('ignores unknown and malformed messages', async () => {
+    const { hook } = await setup();
     const before = hook.result.current.state;
-    act(() => {
+    await act(async () => {
       hook.result.current.onWebCover({ type: 'from-the-future' } as never);
       hook.result.current.onWebCover(undefined as never);
       hook.result.current.onWebCover(null as never);
@@ -43,40 +43,40 @@ describe('useCoverBridge', () => {
     expect(hook.result.current.state).toBe(before);
   });
 
-  it('a web that reports after the 12 s fallback does not make the cover flicker back', () => {
-    const { receive, hook } = setup();
-    act(() => { jest.advanceTimersByTime(12_200); });
+  it('a web that reports after the 12 s fallback does not make the cover flicker back', async () => {
+    const { receive, hook } = await setup();
+    await act(async () => { jest.advanceTimersByTime(12_200); });
     expect(hook.result.current.state.phase.name).toBe('hidden');
     const run = hook.result.current.assemblyRun;
-    act(() => hook.result.current.onWebCover(cover(true)));
+    await act(async () => hook.result.current.onWebCover(cover(true)));
     expect(hook.result.current.state.phase.name).toBe('hidden');
     expect(hook.result.current.assemblyRun).toBe(run);
     expect(starts(receive)).toBe(1);
   });
 
-  it('takes the year from a web.cover and stays showing', () => {
-    const { hook } = setup();
-    act(() => hook.result.current.onWebCover(cover(true)));
+  it('takes the year from a web.cover and stays showing', async () => {
+    const { hook } = await setup();
+    await act(async () => hook.result.current.onWebCover(cover(true)));
     expect(hook.result.current.state).toMatchObject({ year: 2026, webReady: true, phase: { name: 'showing' } });
   });
 
-  it('a lost story.start never ends in "no cover, web still on its intro"', () => {
-    const { receive, hook } = setup();
-    act(() => hook.result.current.onWebCover(cover(true)));
-    act(() => hook.result.current.press());
-    act(() => { jest.advanceTimersByTime(COVER_TIMING.exitDone + 200); });
+  it('a lost story.start never ends in "no cover, web still on its intro"', async () => {
+    const { receive, hook } = await setup();
+    await act(async () => hook.result.current.onWebCover(cover(true)));
+    await act(async () => hook.result.current.press());
+    await act(async () => { jest.advanceTimersByTime(COVER_TIMING.exitDone + 200); });
     expect(starts(receive)).toBe(1);
     // The web drops it and keeps reporting visible: true. First timeout: resend.
-    act(() => { jest.advanceTimersByTime(CONFIRM_TIMEOUT + 200); });
+    await act(async () => { jest.advanceTimersByTime(CONFIRM_TIMEOUT + 200); });
     expect(starts(receive)).toBe(2);
     expect(hook.result.current.state.phase.name).toBe('handingOver');
     // Second timeout: the cover comes back, a fresh assembly.
     const run = hook.result.current.assemblyRun;
-    act(() => { jest.advanceTimersByTime(CONFIRM_TIMEOUT + 200); });
+    await act(async () => { jest.advanceTimersByTime(CONFIRM_TIMEOUT + 200); });
     expect(hook.result.current.state.phase.name).toBe('showing');
     expect(hook.result.current.assemblyRun).toBe(run + 1);
     // And "Los geht's" works again.
-    act(() => hook.result.current.press());
+    await act(async () => hook.result.current.press());
     expect(hook.result.current.state.phase.name).toBe('exiting');
   });
 });

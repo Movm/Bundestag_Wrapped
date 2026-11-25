@@ -24,30 +24,30 @@ const title = (year: number | null, onPress = jest.fn()) =>
   render(<CoverTitle layout={layout} year={year} clocks={clocks} reducedMotion={false} onPress={onPress} />);
 
 describe('CoverTitle', () => {
-  it('exposes the title as a header and the button as a button', () => {
+  it('exposes the title as a header and the button as a button', async () => {
     const onPress = jest.fn();
-    title(2026, onPress);
+    await title(2026, onPress);
     expect(screen.getByRole('header', { name: 'Bundestag Wrapped 2026' })).toBeTruthy();
-    fireEvent.press(screen.getByRole('button', { name: 'Los geht’s' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Los geht’s' }));
     expect(onPress).toHaveBeenCalledTimes(1);
   });
 
-  it('labels the header without a year until the year is known', () => {
-    title(null);
+  it('labels the header without a year until the year is known', async () => {
+    await title(null);
     expect(screen.getByRole('header', { name: 'Bundestag Wrapped' })).toBeTruthy();
   });
 
-  it('keeps the title lines at 0.84 of the size, with the clip-proof bleed cancelled by margins', () => {
-    title(2026);
+  it('keeps the title lines at 0.84 of the size, with the clip-proof bleed cancelled by margins', async () => {
+    await title(2026);
     const word = StyleSheet.flatten(screen.getByText('Bundestag').props.style);
     expect(word.lineHeight + 2 * word.marginVertical).toBeCloseTo(LINE_HEIGHT * layout.titleSize);
     expect(word.marginVertical).toBeCloseTo(-LINE_BLEED * layout.titleSize);
   });
 
-  it('reserves the year pill from the first render (no layout shift when the year arrives)', () => {
-    const { rerender } = title(null);
+  it('reserves the year pill from the first render (no layout shift when the year arrives)', async () => {
+    const { rerender } = await title(null);
     expect(screen.getByText('2026', { includeHiddenElements: true })).toBeTruthy();
-    rerender(<CoverTitle layout={layout} year={2027} clocks={clocks} reducedMotion={false} onPress={jest.fn()} />);
+    await rerender(<CoverTitle layout={layout} year={2027} clocks={clocks} reducedMotion={false} onPress={jest.fn()} />);
     expect(screen.getByText('2027', { includeHiddenElements: true })).toBeTruthy();
   });
 });
