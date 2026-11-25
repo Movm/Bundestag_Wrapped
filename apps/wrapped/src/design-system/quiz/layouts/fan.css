@@ -25,7 +25,7 @@
   .ds-choice--card .ds-choice__label { font-size: clamp(1.0625rem, min(0.25rem + 2.6svh, 5.2vw), 1.625rem); line-height: 1.05; text-transform: none; hyphens: auto; -webkit-hyphens: auto; hyphenate-limit-chars: 8 4 4; }
   .ds-choice--card:focus-visible:not([aria-disabled='true']), .ds-choice--card[data-status='correct'] { translate: none; }
 }
-.ds-choice--card .ds-choice__tag { align-self: flex-start; font-size: clamp(0.6875rem, 0.55rem + 0.4vw, 0.875rem); }
+.ds-choice--card .ds-choice__tag { align-self: flex-start; font-size: clamp(0.75rem, 0.55rem + 0.4vw, 0.875rem); }
 /* Wider screens keep the fan: bigger cards, and the label size derives from the card width (cqi) so no word splits.
    86cqi = visible width (the next card covers ~12%); 0.76em = measured uppercase glyph width at weight 900. */
 @media (min-width: 56.0625rem) {
