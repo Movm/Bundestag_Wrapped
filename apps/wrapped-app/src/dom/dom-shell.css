@@ -1,0 +1,5 @@
+/* App shell only; the browser build never loads this file.
+ *
+ * #root: Expo's DOM template makes it a flex row, the site expects a block (H10).
+ * Fonts live in dom-fonts.css. */
+#root { display: block; }
