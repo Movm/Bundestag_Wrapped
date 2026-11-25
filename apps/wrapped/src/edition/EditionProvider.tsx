@@ -40,6 +40,10 @@ export function EditionProvider({ editionId, children }: { editionId: string; ch
     ? manifest.error ?? content.error ?? consistencyError ?? wrapped.error
     : registry.data ? new EditionLoadError('unknown-edition', `Unknown edition: ${editionId}`) : null);
   const manifestUrl = summary?.manifestUrl;
+  // Only a user action refetches: registryQuery keeps retryOnMount off so a failure cannot loop.
+  const retry = () => {
+    for (const query of [registry, manifest, content, wrapped]) if (query.isError) void query.refetch();
+  };
   return <EditionContext.Provider value={{
     editionId: editionId || LEGACY_EDITION_ID,
     manifestUrl,
@@ -47,6 +51,7 @@ export function EditionProvider({ editionId, children }: { editionId: string; ch
     content: content.data,
     data: wrapped.data,
     error,
+    retry,
     isLoading: registry.isLoading || manifest.isLoading || content.isLoading || wrapped.isLoading,
     resolveAssetUrl: (asset) => manifestUrl ? resolveAssetUrl(manifestUrl, asset) : asset,
   }}>{children}</EditionContext.Provider>;

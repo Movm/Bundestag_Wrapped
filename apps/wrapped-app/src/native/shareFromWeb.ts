@@ -13,7 +13,10 @@ export async function shareFromWeb(message: ShareMessage): Promise<boolean> {
       // Cache names come from the page; keep only the base name so a file cannot leave the cache dir.
       const name = first.name.split(/[\\/]/).pop() || 'share';
       const file = new File(Paths.cache, name);
+      const started = Date.now();
       file.write(first.base64, { encoding: 'base64' });
+      // Stage timing for device runs: the native write is the only native step before the sheet.
+      console.log(`[wrapped-share] wrote ${first.base64.length} base64 chars in ${Date.now() - started} ms`);
       await Sharing.shareAsync(file.uri, { mimeType: first.type });
       return true;
     }
