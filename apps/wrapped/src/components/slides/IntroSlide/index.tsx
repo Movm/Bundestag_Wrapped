@@ -64,16 +64,21 @@ export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps)
   // Native shell: it paints the cover; this slide only reports visibility and relays "Los geht's".
   const reportRef = useRef({ year: year ?? null, muted });
   const startedRef = useRef(false);
+  const activeRef = useRef(false);
+  // Only the move to visible re-arms "Los geht's"; a mute or year change inside the same visible period must not.
+  useEffect(() => {
+    activeRef.current = active;
+    if (active) startedRef.current = false;
+  }, [active]);
   useEffect(() => {
     if (!native) return;
     reportRef.current = { year: year ?? null, muted };
-    if (active) startedRef.current = false;
     reportCover({ visible: active, ...reportRef.current });
   }, [native, active, year, muted]);
   useEffect(() => {
     if (!native) return;
     const off = onNativeMessage('story.start', () => {
-      if (startedRef.current) return;
+      if (!activeRef.current || startedRef.current) return;
       startedRef.current = true;
       themeMusic.startPrimed();
       onStartRef.current?.();

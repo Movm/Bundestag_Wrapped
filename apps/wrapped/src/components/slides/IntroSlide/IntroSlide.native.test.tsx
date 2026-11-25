@@ -65,6 +65,22 @@ describe('IntroSlide in the native shell', () => {
     expect(onStart).toHaveBeenCalledTimes(2);
   });
 
+  it('ignores a second story.start after a mute toggle inside the same visible period', () => {
+    act(() => root.render(slide(true)));
+    act(() => shell.receive({ type: 'story.start' }));
+    act(() => useAudioStore.setState({ isMuted: true }));
+    act(() => shell.receive({ type: 'story.start' }));
+    expect(startPrimed).toHaveBeenCalledTimes(1);
+    expect(onStart).toHaveBeenCalledTimes(1);
+  });
+
+  it('ignores story.start while the cover is not visible', () => {
+    act(() => root.render(slide(false)));
+    act(() => shell.receive({ type: 'story.start' }));
+    expect(startPrimed).not.toHaveBeenCalled();
+    expect(onStart).not.toHaveBeenCalled();
+  });
+
   it('posts visible false when the slide becomes inactive and on unmount', () => {
     act(() => root.render(slide(true)));
     act(() => root.render(slide(false)));
@@ -86,11 +102,12 @@ describe('IntroSlide in the native shell', () => {
   it('dismissBootCover posts visible false in the shell and nothing in the browser', () => {
     dismissBootCover();
     expect(send).toHaveBeenCalledWith({ type: 'cover', visible: false, year: null, muted: false });
+    expect(send).toHaveBeenCalledTimes(1);
+    // Browser: once the shell is gone, nothing is posted anywhere.
+    send.mockClear();
     _resetNativeShellForTesting();
     _resetNativeCoverForTesting();
-    const browserSend = vi.fn();
     dismissBootCover();
-    expect(browserSend).not.toHaveBeenCalled();
-    expect(send).toHaveBeenCalledTimes(1);
+    expect(send).not.toHaveBeenCalled();
   });
 });
