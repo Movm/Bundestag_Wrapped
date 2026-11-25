@@ -63,6 +63,24 @@ updates:
       prefix: "chore"
       include: "scope"
 
+  # apps/wrapped-app pins react/react-dom to the exact Expo SDK version; bump them
+  # only via `npx expo install react react-dom` during an SDK upgrade.
+  - package-ecosystem: "npm"
+    directory: "/apps/wrapped-app"
+    schedule:
+      interval: "daily"
+      time: "04:10"
+      timezone: "Europe/Berlin"
+    open-pull-requests-limit: 4
+    cooldown:
+      default-days: 3
+    ignore:
+      - dependency-name: "react"
+      - dependency-name: "react-dom"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
   - package-ecosystem: "pip"
     directory: "/services/analysis"
     schedule:
