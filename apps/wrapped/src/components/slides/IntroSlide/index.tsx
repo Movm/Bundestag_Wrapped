@@ -4,6 +4,9 @@ import { playSound } from '@/lib/sounds';
 import { themeMusic } from '@/lib/theme-music';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
+import { isNativeShell, onNativeMessage } from '@/lib/native-shell';
+import { reportCover } from '@/lib/native-cover';
+import { useAudioStore } from '@/stores/audioStore';
 import { acquireCover, releaseBootShell } from '@/cover/shell';
 import type { CoverController } from '@/cover/cover';
 
@@ -20,6 +23,8 @@ export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps)
   const edition = useOptionalEdition();
   const year = editionSurface(edition).year;
   const active = useSlideEffectsActive();
+  const native = isNativeShell();
+  const muted = useAudioStore(state => state.isMuted);
   const hostRef = useRef<HTMLDivElement>(null);
   const coverRef = useRef<CoverController | null>(null);
   const onStartRef = useRef(onStart);
@@ -27,7 +32,7 @@ export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps)
 
   useLayoutEffect(() => {
     const host = hostRef.current;
-    if (!host) return;
+    if (!host || native) return;
     const bootHost = window.__btCover?.host ?? null;
     const { controller, startRequested } = acquireCover();
     const hadFocus = controller.root.contains(document.activeElement);
@@ -45,7 +50,7 @@ export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps)
     // "Los geht’s" was pressed on the boot cover before the story was ready.
     if (startRequested) onStartRef.current?.();
     return () => { controller.onStart = null; controller.onPress = null; controller.onHover = null; controller.onAssemble = null; };
-  }, []);
+  }, [native]);
 
   useEffect(() => { coverRef.current?.setYear(year ? String(year) : null); }, [year]);
 
@@ -56,5 +61,29 @@ export const IntroSlide = memo(function IntroSlide({ onStart }: IntroSlideProps)
     else cover.pause();
   }, [active]);
 
+  // Native shell: it paints the cover; this slide only reports visibility and relays "Los geht's".
+  const reportRef = useRef({ year: year ?? null, muted });
+  const startedRef = useRef(false);
+  useEffect(() => {
+    if (!native) return;
+    reportRef.current = { year: year ?? null, muted };
+    if (active) startedRef.current = false;
+    reportCover({ visible: active, ...reportRef.current });
+  }, [native, active, year, muted]);
+  useEffect(() => {
+    if (!native) return;
+    const off = onNativeMessage('story.start', () => {
+      if (startedRef.current) return;
+      startedRef.current = true;
+      themeMusic.startPrimed();
+      onStartRef.current?.();
+    });
+    return () => {
+      off();
+      reportCover({ visible: false, ...reportRef.current });
+    };
+  }, [native]);
+
+  if (native) return <div className="h-full w-full" style={{ background: '#0e0a14' }} />;
   return <div ref={hostRef} className="h-full w-full" />;
 });

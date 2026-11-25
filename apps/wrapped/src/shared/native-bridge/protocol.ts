@@ -11,7 +11,7 @@ export interface ShareFile { name: string; type: string; base64: string }
 
 export type WebToNative =
   | { type: 'menu.open'; entries: MenuEntry[]; footer: MenuFooterLink[]; canRestart: boolean } // Plan 02
-  | { type: 'cover'; visible: boolean; year: number | null } // Plan 03
+  | { type: 'cover'; visible: boolean; year: number | null; muted?: boolean } // Plan 03
   | { type: 'music'; command: MusicCommand } // Plan 04
   | { type: 'share'; id: number; title?: string; text?: string; url?: string; files?: ShareFile[] } // Plan 01 (share polyfill)
   | { type: 'openUrl'; url: string } // Plan 01 (link switch)

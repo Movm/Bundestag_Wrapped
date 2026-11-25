@@ -1,5 +1,6 @@
 import type { CoverController, createCover } from './cover';
 import { assetUrl } from '@/lib/site';
+import { lastReportedMuted, reportCover } from '@/lib/native-cover';
 
 /** Story routes that open on the cover: "/" and "/<edition year>". */
 export const COVER_ROUTE = /^\/(\d{4})?\/?$/;
@@ -56,4 +57,5 @@ export function dismissBootCover() {
   const shell = window.__btCover;
   window.__btCover = undefined;
   releaseBootShell(shell?.host ?? null);
+  reportCover({ visible: false, year: null, muted: lastReportedMuted() });
 }
