@@ -63,8 +63,8 @@ updates:
       prefix: "chore"
       include: "scope"
 
-  # apps/wrapped-app pins react/react-dom to the exact Expo SDK version; bump them
-  # only via `npx expo install react react-dom` during an SDK upgrade.
+  # apps/wrapped-app pins react/react-dom and the Expo/React Native families to the
+  # exact Expo SDK versions; bump them only via `npx expo install` during an SDK upgrade.
   - package-ecosystem: "npm"
     directory: "/apps/wrapped-app"
     schedule:
@@ -77,6 +77,11 @@ updates:
     ignore:
       - dependency-name: "react"
       - dependency-name: "react-dom"
+      - dependency-name: "expo"
+      - dependency-name: "expo-*"
+      - dependency-name: "@expo/*"
+      - dependency-name: "react-native"
+      - dependency-name: "react-native-*"
     commit-message:
       prefix: "chore"
       include: "scope"
