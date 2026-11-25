@@ -9,7 +9,8 @@
  * the Web Animations API, so motion stays on the compositor while the main
  * bundle parses.
  */
-import { buildSeats, type Seat } from './seats';
+import { buildSeats, type Seat } from '@/shared/cover/seats';
+import { random } from '@/shared/cover/random';
 
 export interface CoverController {
   readonly root: HTMLElement;
@@ -33,17 +34,6 @@ export interface CoverController {
 
 const EASE_IN = 'cubic-bezier(.2,1.25,.4,1)';
 const reducedMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-/** Small deterministic PRNG: the same cover on every load and in every test. */
-function random(seed: number) {
-  return () => {
-    seed = (seed + 0x6d2b79f5) | 0;
-    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
 
 const ROCKET = '<div style="position:relative;width:60px;height:24px;margin:-12px 0 0 -30px">'
   + '<i data-trail="0" style="left:-12px;top:8px;width:8px;height:8px;border-radius:50%;background:#ff4fa0"></i>'

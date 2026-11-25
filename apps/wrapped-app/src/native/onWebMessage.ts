@@ -18,6 +18,7 @@ function isWebUrl(value: string): boolean {
 export function createWebMessageHandler(
   receive: (message: NativeToWeb) => void,
   openMenu: (message: Extract<WebToNative, { type: 'menu.open' }>) => void = () => {},
+  onCover?: (message: Extract<WebToNative, { type: 'cover' }>) => void,
 ) {
   return async (message: WebToNative): Promise<void> => {
     if (typeof message !== 'object' || message === null) return;
@@ -37,7 +38,9 @@ export function createWebMessageHandler(
       case 'menu.open':
         openMenu(message);
         return;
-      case 'cover': // Plan 03
+      case 'cover':
+        onCover?.(message);
+        return;
       case 'music': // Plan 04
         return;
       default:

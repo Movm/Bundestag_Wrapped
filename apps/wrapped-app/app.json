@@ -42,6 +42,15 @@
       ],
       "expo-status-bar",
       "expo-sharing",
+      [
+        "expo-audio",
+        {
+          "microphonePermission": false,
+          "recordAudioAndroid": false,
+          "enableBackgroundPlayback": false
+        }
+      ],
+      "expo-image",
       "expo-font"
     ],
     "extra": {

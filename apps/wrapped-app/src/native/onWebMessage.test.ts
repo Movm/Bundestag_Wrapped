@@ -27,6 +27,13 @@ describe('web message handler', () => {
     expect(WebBrowser.openBrowserAsync).not.toHaveBeenCalled();
   });
 
+  it('passes cover reports to the native cover', async () => {
+    const cover = jest.fn();
+    const message = { type: 'cover', visible: true, year: 2026, muted: false } as const;
+    await createWebMessageHandler(jest.fn(), undefined, cover)(message);
+    expect(cover).toHaveBeenCalledWith(message);
+  });
+
   it('ignores unknown message types', async () => {
     const receive = jest.fn();
     await expect(createWebMessageHandler(receive)({ type: 'from-the-future' } as never)).resolves.toBeUndefined();
