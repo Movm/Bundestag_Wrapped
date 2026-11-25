@@ -14,6 +14,8 @@ export interface Frame {
   ty?: number;
   scale?: number;
   opacity?: number;
+  /** Degrees. */
+  rotate?: number;
   /** Easing of the segment that starts at this frame (CSS `easing` on a keyframe). */
   easing?: Easing;
 }
@@ -23,6 +25,8 @@ export interface Sample {
   ty: number;
   scale: number;
   opacity: number;
+  /** Degrees. */
+  rotate: number;
 }
 
 /** Same as CSS `cubic-bezier(x1, y1, x2, y2)`: Newton iteration, bisection as fallback. */
@@ -86,6 +90,7 @@ export function sampleKeyframes(frames: Frame[], progress: number, effectEasing?
     ty: mix(a.ty ?? 0, b.ty ?? 0),
     scale: mix(a.scale ?? 1, b.scale ?? 1),
     opacity: opacity < 0 ? 0 : opacity > 1 ? 1 : opacity,
+    rotate: mix(a.rotate ?? 0, b.rotate ?? 0),
   };
 }
 

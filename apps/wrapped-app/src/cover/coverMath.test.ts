@@ -64,6 +64,13 @@ describe('sampleKeyframes', () => {
     const frames = [{ offset: 0, tx: 0, easing: EASE_OUT }, { offset: 1, tx: 100 }];
     expect(sampleKeyframes(frames, 0.5).tx).toBeCloseTo(68.46, 1);
   });
+  it('mixes rotate in degrees and lets it overshoot with the effect easing (year pill pop)', () => {
+    const frames = [{ offset: 0, rotate: -40, scale: 0, opacity: 0 }, { offset: 1, rotate: -6, scale: 1, opacity: 1 }];
+    expect(sampleKeyframes(frames, 0).rotate).toBe(-40);
+    expect(sampleKeyframes(frames, 1).rotate).toBe(-6);
+    expect(sampleKeyframes(frames, 0.5, EASE_IN).rotate).toBeCloseTo(-40 + 34 * 1.0169, 2);
+    expect(sampleKeyframes([{ offset: 0 }, { offset: 1 }], 0.5).rotate).toBe(0);
+  });
 });
 
 describe('assemblyPlan', () => {
@@ -71,8 +78,8 @@ describe('assemblyPlan', () => {
   it('starts every seat at the centre with scale 0 and ends in place', () => {
     expect(plan).toHaveLength(630);
     expect(sampleKeyframes(plan[0].frames, 0)).toMatchObject({ scale: 0 });
-    expect(sampleKeyframes(plan[0].frames, 1)).toEqual({ tx: 0, ty: 0, scale: 1, opacity: 1 });
-    expect(sampleKeyframes(plan[629].frames, 1)).toEqual({ tx: 0, ty: 0, scale: 1, opacity: 1 });
+    expect(sampleKeyframes(plan[0].frames, 1)).toEqual({ tx: 0, ty: 0, scale: 1, opacity: 1, rotate: 0 });
+    expect(sampleKeyframes(plan[629].frames, 1)).toEqual({ tx: 0, ty: 0, scale: 1, opacity: 1, rotate: 0 });
   });
   it('delays match cover.ts for seat 0 and seat 629', () => {
     expect(plan[0].delay).toBeCloseTo(510.0533, 3);

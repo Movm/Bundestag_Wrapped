@@ -15,7 +15,12 @@ function isWebUrl(value: string): boolean {
  * Handles messages from the web app. Unknown types are ignored: the protocol is additive,
  * so a newer web build may send what this binary does not know yet.
  */
-export function createWebMessageHandler(receive: (message: NativeToWeb) => void) {
+export function createWebMessageHandler(
+  receive: (message: NativeToWeb) => void,
+  // Plan 02 fills this slot with the menu; positional so both plans merge without reshaping the call.
+  _openMenu?: (message: Extract<WebToNative, { type: 'menu.open' }>) => void,
+  onCover?: (message: Extract<WebToNative, { type: 'cover' }>) => void,
+) {
   return async (message: WebToNative): Promise<void> => {
     switch (message.type) {
       case 'share': {
@@ -30,8 +35,10 @@ export function createWebMessageHandler(receive: (message: NativeToWeb) => void)
       case 'log':
         console.error(`[wrapped-web] ${message.text}`);
         return;
+      case 'cover':
+        onCover?.(message);
+        return;
       case 'menu.open': // Plan 02
-      case 'cover': // Plan 03
       case 'music': // Plan 04
         return;
       default:
