@@ -22,4 +22,5 @@ export type NativeToWeb =
   | { type: 'restart' } // Plan 02
   | { type: 'story.start' } // Plan 03
   | { type: 'music.playing'; theme: ThemeType | null } // Plan 04
-  | { type: 'share.result'; id: number; ok: boolean }; // Plan 01 (handled by the polyfill itself)
+  | { type: 'share.result'; id: number; ok: boolean } // Plan 01 (handled by the polyfill itself)
+  | { type: 'preview.code'; code: string }; // preview code from the bundestag-wrapped://zugang?code=… deep link

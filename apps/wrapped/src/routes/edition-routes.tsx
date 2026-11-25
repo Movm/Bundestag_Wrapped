@@ -8,6 +8,9 @@ import { EditionProvider, useEdition } from '@/edition/EditionProvider';
 import { registryQuery } from '@/edition/registryQuery';
 import { currentEditionPath, isRetired, resolveLegacyEditionPath } from '@/edition/registry';
 import { dismissBootCover } from '@/cover/shell';
+import { PreviewCodeGate } from '@/components/preview/PreviewCodeGate';
+import { EditionLoadError } from '@/edition/loader';
+import { isEmbedded } from '@/lib/site';
 import { SKELETON_HTML } from '@/cover/skeleton';
 
 const ConstructionPage = lazy(() => import('@/components/construction/ConstructionPage').then(m => ({ default: m.ConstructionPage })));
@@ -78,6 +81,9 @@ export function ValidatedEdition({ children }: { children: ReactNode }) {
   const edition = useEdition();
 
   if (edition.isLoading) return <PageLoader />;
+  if (edition.error instanceof EditionLoadError && edition.error.kind === 'unauthorized' && isEmbedded()) {
+    return <PreviewCodeGate probePath={edition.error.url ?? null} onUnlocked={edition.retry} />;
+  }
   if (edition.error || !edition.manifest || !edition.content || !edition.data) {
     return <RedirectError message={edition.error?.message ?? 'Edition ist nicht verfügbar'} />;
   }
