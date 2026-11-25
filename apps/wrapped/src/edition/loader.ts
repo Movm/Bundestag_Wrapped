@@ -4,7 +4,7 @@ import type { SpeakerIndex, SpeakerWrapped } from '@/data/speaker-wrapped';
 import type { Speech, TopicRankingsData } from '@/lib/search-utils';
 import { resolveAssetUrl, type Edition, type EditionRegistry } from './registry';
 import type { EditionContent, EditionSummary, MatchAsset, WordsAsset, WordRankingsAsset } from '@/generated/wrapped-contract-v1';
-import { assetUrl } from '@/lib/site';
+import { assetUrl, isEmbedded } from '@/lib/site';
 import { takePrefetched } from './prefetch';
 
 export type EditionLoadErrorKind = 'unknown-edition' | 'invalid-contract' | 'missing-asset' | 'http' | 'network';
@@ -76,7 +76,7 @@ export async function fetchJson(url: string, timing?: EditionAssetTiming): Promi
   } catch {
     throw new EditionLoadError('network', `Network error while loading ${url}`, url);
   }
-  if (response.status === 401 && typeof window !== 'undefined' && !window.location.pathname.startsWith('/zugang')) {
+  if (response.status === 401 && !isEmbedded() && typeof window !== 'undefined' && !window.location.pathname.startsWith('/zugang')) {
     // A protected preview without the password cookie (nginx answers data with 401).
     const here = window.location.pathname + window.location.search + window.location.hash;
     window.location.assign(`/zugang/?next=${encodeURIComponent(here)}`);

@@ -44,6 +44,14 @@ export function polyfillShare(post: Post, awaitResult: (id: number) => Promise<b
   });
 }
 
+/**
+ * The web build gets `lang="de"` from index.html. The DOM component's page has no language, and
+ * without it `hyphens: auto` has no dictionary: headings then break mid-word (overflow-wrap) instead of at syllables.
+ */
+export function setDocumentLanguage(lang = 'de'): void {
+  document.documentElement.lang = lang;
+}
+
 /** Capture-phase click handler: external links and non-app site paths open in the in-app browser. */
 export function interceptLinks(post: Post, isAppRoute: (pathname: string) => boolean): () => void {
   const onClick = (event: MouseEvent) => {

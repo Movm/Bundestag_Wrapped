@@ -72,3 +72,27 @@ describe('AbgeordnetePage search link', () => {
     expect(link?.getAttribute('href')).toBe('/2026/suche?tab=speakers');
   });
 });
+
+describe('AbgeordnetePage person links', () => {
+  async function searchHain(browser: boolean) {
+    await renderAt('/2026/abgeordnete', () => text().includes('Abgeordnete verfügbar'), browser);
+    const input = container.querySelector('input')!;
+    await act(async () => {
+      Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')!.set!.call(input, 'Hain');
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+    for (let i = 0; i < 40 && !container.querySelector('a[href*="/abgeordnete/"]'); i++) {
+      await act(async () => { await new Promise(r => setTimeout(r, 50)); });
+    }
+    return [...container.querySelectorAll('a[href*="/abgeordnete/"]')].map(a => a.getAttribute('href')!);
+  }
+  it('sends every result link to the quiz when embedded', async () => {
+    const hrefs = await searchHain(false);
+    expect(hrefs.length).toBeGreaterThan(0);
+    for (const href of hrefs) expect(href).toMatch(/^\/2026\/abgeordnete\/[^/]+\/quiz$/);
+  });
+  it('keeps the profile link in the browser', async () => {
+    const hrefs = await searchHain(true);
+    expect(hrefs.some(h => /^\/2026\/abgeordnete\/[^/]+$/.test(h))).toBe(true);
+  });
+});

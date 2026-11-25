@@ -9,7 +9,7 @@ import WrappedAppRoot from '../../../wrapped/src/app-entry/WrappedAppRoot';
 import { isAppRoute } from '../../../wrapped/src/app-entry/app-routes';
 import { installNativeShell, onNativeMessage, setNativeShellInfo } from '../../../wrapped/src/lib/native-shell';
 import { NATIVE_PROTOCOL, type NativeToWeb, type WebToNative } from '../../../wrapped/src/shared/native-bridge/protocol';
-import { interceptLinks, polyfillShare, reportCrashes } from './domShell';
+import { interceptLinks, polyfillShare, reportCrashes, setDocumentLanguage } from './domShell';
 
 export type WrappedDomHandle = { receive: (message: NativeToWeb) => void };
 
@@ -32,6 +32,7 @@ onNativeMessage('share.result', message => {
   waiting.get(message.id)?.(message.ok);
   waiting.delete(message.id);
 });
+setDocumentLanguage();
 polyfillShare(send, id => new Promise<boolean>(resolve => { waiting.set(id, resolve); }));
 interceptLinks(send, isAppRoute);
 reportCrashes(send);

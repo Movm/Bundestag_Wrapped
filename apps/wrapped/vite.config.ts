@@ -3,12 +3,18 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import path from 'path'
+import { createRequire } from 'module'
 import { EDITION_ASSET_PATTERNS } from './pwa-cache-routes.ts'
 import { devEditionsPlugin } from './dev-editions.ts'
 import { coverShellPlugin } from './cover-shell.ts'
 
 // Bump this only when the runtime-data cache schema changes. Workbox then removes
 // the old named caches while leaving unrelated browser storage untouched.
+// Same targets as apps/wrapped/node_modules/{react,react-dom}, resolved instead of hard-coded.
+const localRequire = createRequire(import.meta.url)
+const reactDir = path.dirname(localRequire.resolve('react/package.json'))
+const reactDomDir = path.dirname(localRequire.resolve('react-dom/package.json'))
+
 const editionCacheVersion = process.env.VITE_EDITION_CACHE_VERSION ?? 'edition-v2'
 
 export default defineConfig({
@@ -160,10 +166,10 @@ export default defineConfig({
     alias: [
       // CJS entry (exports "node") would require its own nested React; take the ESM build so the aliases below apply.
       { find: /^lucide-react$/, replacement: 'lucide-react/dist/esm/lucide-react.mjs' },
-      { find: /^react$/, replacement: path.resolve(import.meta.dirname, 'node_modules/react') },
-      { find: /^react\/(.*)$/, replacement: path.resolve(import.meta.dirname, 'node_modules/react') + '/$1' },
-      { find: /^react-dom$/, replacement: path.resolve(import.meta.dirname, 'node_modules/react-dom') },
-      { find: /^react-dom\/(.*)$/, replacement: path.resolve(import.meta.dirname, 'node_modules/react-dom') + '/$1' },
+      { find: /^react$/, replacement: reactDir },
+      { find: /^react\/(.*)$/, replacement: reactDir + '/$1' },
+      { find: /^react-dom$/, replacement: reactDomDir },
+      { find: /^react-dom\/(.*)$/, replacement: reactDomDir + '/$1' },
     ],
   },
 })

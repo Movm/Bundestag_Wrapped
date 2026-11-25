@@ -68,7 +68,7 @@ jobs:
 
       # Without this the app breaks silently on web changes (Metro bundles apps/wrapped).
       - name: Check Expo DOM export (wrapped-app)
-        if: matrix.node-version == 22
+        if: ${{ !cancelled() && matrix.node-version == 22 }}
         run: pnpm --filter wrapped-app export:check
 
   python:
