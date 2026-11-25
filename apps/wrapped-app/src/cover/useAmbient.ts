@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { AppState } from 'react-native';
 import { type SharedValue, useFrameCallback, useSharedValue } from 'react-native-reanimated';
-import { addFlight, type Flight, type FlyerKind, makeFlight, makeShot, type Shot } from './ambient';
+import { addFlight, type Flight, type FlyerKind, isAppActive, makeFlight, makeShot, type Shot } from './ambient';
 import { type AmbientLoop, ambientSchedule } from './coverMath';
 import { type Box, blockedArea, freePath, type Rect, shootingStarStart } from './flightPaths';
 
@@ -13,9 +13,9 @@ export interface AmbientClocks {
 }
 
 export function useAppActive(): boolean {
-  const [active, setActive] = useState(AppState.currentState === 'active');
+  const [active, setActive] = useState(() => isAppActive(AppState.currentState));
   useEffect(() => {
-    const sub = AppState.addEventListener('change', next => setActive(next === 'active'));
+    const sub = AppState.addEventListener('change', next => setActive(isAppActive(next)));
     return () => sub.remove();
   }, []);
   return active;

@@ -1,6 +1,6 @@
 import { random } from '../../../wrapped/src/shared/cover/random';
 import {
-  addFlight, alternateProgress, blinkOpacity, buildStars, cssRadii, FLYERS, flyerPivot, glowColors, glowMotion, GLOWS,
+  addFlight, alternateProgress, isAppActive, blinkOpacity, buildStars, cssRadii, FLYERS, flyerPivot, glowColors, glowMotion, GLOWS,
   makeFlight, makeShot, planetMotion, sampleFlight, sampleShot, STAR_LAYERS, starLayerOpacity, steps2, trailMotion, wobbleMotion,
 } from './ambient';
 
@@ -141,5 +141,16 @@ describe('sampleShot', () => {
     expect(mid.opacity).toBeCloseTo((1 - 0.5) / 0.75, 3);
     expect(mid.x).toBeCloseTo(100 + 300 * 0.91 * 0.5, 3);
     expect(sampleShot([shot], 1900)).toBeNull();
+  });
+});
+
+describe('isAppActive', () => {
+  it('counts only background and inactive as away; unknown or no state at launch is active', () => {
+    expect(isAppActive('active')).toBe(true);
+    expect(isAppActive('unknown')).toBe(true);
+    expect(isAppActive(null)).toBe(true);
+    expect(isAppActive(undefined)).toBe(true);
+    expect(isAppActive('background')).toBe(false);
+    expect(isAppActive('inactive')).toBe(false);
   });
 });

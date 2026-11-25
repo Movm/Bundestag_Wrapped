@@ -18,6 +18,14 @@ export const SKY = {
   white: '#fff',
 } as const;
 
+/**
+ * Whether the ambient layer may run for an `AppState`: only `background` and `inactive` count as away;
+ * `unknown` (or no state yet, briefly at launch) counts as active, or the sky would wait for a change event.
+ */
+export function isAppActive(state: string | null | undefined): boolean {
+  return state !== 'background' && state !== 'inactive';
+}
+
 // ─── Stars ──────────────────────────────────────────────────────────────
 
 export interface StarLayerSpec { count: number; size: number; alpha: [number, number]; colors: string[]; glow: boolean }

@@ -63,7 +63,8 @@ function usePlanetPicture(diameter: number) {
       canvas.rotate(geo.ringRotate, r, r);
       canvas.drawOval(Skia.XYWHRect(ring.x + ringBorder / 2, ring.y + ringBorder / 2, ring.width - ringBorder, ring.height - ringBorder), paint);
       canvas.restore();
-    }, { width: diameter, height: diameter });
+    }, // Cull rect: the rotated ring reaches ≈ −0.38·d … 1.38·d sideways, far past the body.
+    Skia.XYWHRect(-0.4 * diameter, 0, 1.8 * diameter, diameter));
   }, [diameter]);
 }
 
