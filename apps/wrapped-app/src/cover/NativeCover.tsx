@@ -62,6 +62,7 @@ export function NativeCover({ state, assemblyRun, press }: Props) {
     <Animated.View
       style={[StyleSheet.absoluteFill, styles.root, fade]}
       pointerEvents={hidden ? 'none' : 'auto'}
+      accessible={false}
       accessibilityViewIsModal={!hidden}
       onLayout={onLayout}
     >
@@ -134,10 +135,10 @@ function CoverScene({ state, press }: Pick<Props, 'state' | 'press'>) {
   const eagle = useAnimatedStyle(() => transformOf(sampleElement('eagle', assembly.value, exit.value)));
 
   return (
-    <View style={[styles.box, size]}>
+    <View accessible={false} style={[styles.box, size]}>
       <SkyLayer size={size} window={window} planet={layout.planet} assembly={assembly} ambient={ambient} />
       {stage && <SeatsLayer size={size} stage={stage} assembly={assembly} exit={exit} wave={wave} />}
-      <View style={[styles.main, { paddingTop: layout.padding.top, paddingRight: layout.padding.right, paddingBottom: layout.padding.bottom, paddingLeft: layout.padding.left, gap: layout.gapStageTitle }]}>
+      <View accessible={false} style={[styles.main, { paddingTop: layout.padding.top, paddingRight: layout.padding.right, paddingBottom: layout.padding.bottom, paddingLeft: layout.padding.left, gap: layout.gapStageTitle }]}>
         <View onLayout={onStageLayout} style={{ width: layout.stageWidth, height: layout.stageHeight }} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
           <Animated.View style={[styles.eagle, { width: layout.stageWidth * 0.2, height: layout.stageWidth * 0.2 * EAGLE_RATIO, marginLeft: -layout.stageWidth * 0.1 }, eagle]}>
             <Image source={EAGLE} style={StyleSheet.absoluteFill} contentFit="contain" accessible={false} />
