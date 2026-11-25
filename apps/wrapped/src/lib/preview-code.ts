@@ -7,7 +7,7 @@ import { assetUrl, isEmbedded } from '@/lib/site';
  * on the gated data paths. A garden fence, not a vault.
  */
 const STORAGE_KEY = 'gartenzaun';
-const GATED_PREFIX = '/data/2026/';
+const GATED_PREFIX = '/data/2026/'; // asset-path-ok: a path prefix to match against, never fetched
 
 /** Same normalisation as /zugang/ and the entrypoint: lowercase, [a-z0-9_-] only. */
 export function normalizePreviewCode(value: string): string {
