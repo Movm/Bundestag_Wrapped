@@ -27,7 +27,10 @@ export default function Index() {
   ), [onWebMessage]);
   return (
     <View style={{ flex: 1, backgroundColor: '#0e0a14' }}>
-      {web}
+      {/* accessibilityViewIsModal on the cover is iOS-only; TalkBack must not reach the web under it either. */}
+      <View style={{ flex: 1 }} importantForAccessibility={cover.state.phase.name === 'hidden' ? 'auto' : 'no-hide-descendants'}>
+        {web}
+      </View>
       <NativeCover {...cover} />
     </View>
   );
