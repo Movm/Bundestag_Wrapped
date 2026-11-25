@@ -15,6 +15,7 @@ const FAN: Record<number, { rot: number; drop: number }[]> = {
 /** "Karten-Fächer": 3–4 answer cards fanned like a hand; the picked card lifts. */
 export function FanLayout({ engine, questionId }: QuizLayoutProps) {
   const poses = FAN[engine.options.length] ?? FAN[4];
+  const chars = Math.max(...engine.options.map((option) => option.text.length));
   return (
     <div className="ds-quiz ds-quiz--fan">
       <QuizQuestion id={questionId} text={engine.quiz.question} />
@@ -27,7 +28,7 @@ export function FanLayout({ engine, questionId }: QuizLayoutProps) {
               option={option}
               answered={engine.answered}
               className={`ds-solid ds-choice--card ds-tone--${TONES[index % TONES.length]}`}
-              style={{ '--fan-rot': `${pose.rot}deg`, '--fan-drop': `${pose.drop}rem` } as CSSProperties}
+              style={{ '--fan-rot': `${pose.rot}deg`, '--fan-drop': `${pose.drop}rem`, '--chars': chars } as CSSProperties}
             />
           );
         })}
