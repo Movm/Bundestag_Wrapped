@@ -1,33 +1,18 @@
+import { useEffect, useRef } from 'react';
 import { AccessibleDialog } from './AccessibleDialog';
-import { Link, useLocation } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { X, RotateCcw } from 'lucide-react';
 import { clearWrappedProgress } from '@/lib/wrapped-storage';
 import { useQuizStore } from '@/stores/quizStore';
 import { useOptionalEdition } from '@/edition/EditionProvider';
-import { editionPath, editionSurface } from '@/edition/surface';
+import { editionSurface } from '@/edition/surface';
+import type { MenuEntry } from '@/shared/native-bridge/protocol';
+import { buildMenu } from './menu-model';
+import { isNativeShell, onNativeMessage, postToNative } from '@/lib/native-shell';
+import { isAppRoute } from '@/app-entry/app-routes';
 
-interface NavItem {
-  href: string;
-  label: string;
-  /** Visible title; soft hyphens keep long German words from overflowing the narrow tiles. */
-  title: string;
-  color: 'pink' | 'violet' | 'white' | 'mint';
-  rotate: number;
-  tile?: boolean;
-}
-
-interface FooterLink {
-  href: string;
-  label: string;
-  external?: boolean;
-}
-
-const FOOTER_LINKS: FooterLink[] = [
-  { href: '/datenschutz', label: 'Datenschutz' },
-  { href: '/terms', label: 'Nutzungsbedingungen' },
-  { href: 'https://www.moritz-waechter.de/impressum', label: 'Impressum', external: true },
-];
+const isSafePath = (href: string) => href.startsWith('/') && !href.startsWith('//');
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -38,19 +23,19 @@ interface MobileMenuProps {
 
 export function MobileMenu({ isOpen, onClose, onRestart }: MobileMenuProps) {
   const location = useLocation();
+  const navigate = useNavigate();
+  const native = isNativeShell();
   const edition = useOptionalEdition();
   const surface = editionSurface(edition);
   const reduceMotion = useReducedMotion();
-  const suffix = `${location.search}${location.hash}`;
-  const navItems: NavItem[] = [
-    { href: `${editionPath(surface)}${suffix}`, label: 'Bundestag Wrapped', title: 'Bundestag Wrapped', color: 'pink', rotate: -2 },
-    { href: `${editionPath(surface, 'abgeordnete')}${suffix}`, label: 'Abgeordnete-Wrapped', title: 'Abgeordnete-Wrapped', color: 'violet', rotate: 1.5 },
-    ...(edition?.manifest?.assets.match ? [{ href: `${editionPath(surface, 'perfect-match')}${suffix}`, label: 'Perfect Match', title: 'Perfect Match', color: 'mint', rotate: -1.5 } satisfies NavItem] : []),
-    { href: `${editionPath(surface, 'dokumentation')}${suffix}`, label: 'Dokumentation', title: 'Doku­mentation', color: 'white', rotate: -1, tile: true },
-    { href: '/mcp', label: 'MCP-Server', title: 'MCP-Server', color: 'mint', rotate: 2, tile: true },
-  ];
-  const currentPath = location.pathname;
-  const isMainPage = currentPath === editionPath(surface);
+  const { entries: navItems, footer: footerLinks, isMainPage } = buildMenu({
+    pathname: location.pathname,
+    search: location.search,
+    hash: location.hash,
+    surface,
+    hasMatch: !!edition?.manifest?.assets.match,
+    appRoutesOnly: native ? isAppRoute : undefined,
+  });
   const resetQuiz = useQuizStore((state) => state.reset);
 
   const handleRestart = () => {
@@ -59,6 +44,44 @@ export function MobileMenu({ isOpen, onClose, onRestart }: MobileMenuProps) {
     resetQuiz(surface);
     onRestart?.();
   };
+
+  // The native shell draws the menu: hand it over once per open, then close the web side right away.
+  const latest = useRef({ navItems, canRestart: isMainPage && !!onRestart, onClose, handleRestart, navigate });
+  useEffect(() => {
+    latest.current = { navItems, canRestart: isMainPage && !!onRestart, onClose, handleRestart, navigate };
+  });
+
+  // The element that opened the menu; focus goes back to it when the native menu reports it is gone.
+  const opener = useRef<HTMLElement | null>(null);
+  useEffect(() => {
+    if (!native || !isOpen) return;
+    const { navItems: entries, canRestart, onClose: close } = latest.current;
+    const active = document.activeElement;
+    opener.current = active instanceof HTMLElement && active !== document.body ? active : null;
+    postToNative({ type: 'menu.open', entries, canRestart });
+    close();
+  }, [native, isOpen]);
+
+  useEffect(() => {
+    if (!native) return;
+    const offNavigate = onNativeMessage('navigate', (m) => {
+      if (isSafePath(m.href) && isAppRoute(m.href.split(/[?#]/)[0])) latest.current.navigate(m.href);
+    });
+    const offRestart = onNativeMessage('restart', () => latest.current.handleRestart());
+    const offClosed = onNativeMessage('menu.closed', () => {
+      // Taps do not always focus a button in a WebView, so fall back to the header's open button.
+      const target = opener.current?.isConnected
+        ? opener.current
+        : document.querySelector<HTMLElement>('button[aria-label="Menü öffnen"]');
+      opener.current = null;
+      target?.focus();
+    });
+    return () => {
+      offNavigate();
+      offRestart();
+      offClosed();
+    };
+  }, [native]);
 
   const spring = { type: 'spring', stiffness: 420, damping: 34 } as const;
   const cardMotion = (i: number) =>
@@ -78,8 +101,8 @@ export function MobileMenu({ isOpen, onClose, onRestart }: MobileMenuProps) {
           exit: { opacity: 0, transition: { duration: 0.15 } },
         };
 
-  const renderCard = (item: NavItem, i: number) => {
-    const isActive = currentPath === item.href.split(/[?#]/)[0];
+  const renderCard = (item: MenuEntry, i: number) => {
+    const isActive = item.active;
     const number = String(i + 1).padStart(2, '0');
     return (
       <motion.li key={item.href} className={item.tile ? 'min-w-0' : undefined} {...cardMotion(i)}>
@@ -101,6 +124,8 @@ export function MobileMenu({ isOpen, onClose, onRestart }: MobileMenuProps) {
   };
 
   const [primary, secondary, ...tiles] = navItems;
+
+  if (native) return null;
 
   return (
     <AccessibleDialog open={isOpen} onClose={onClose} label="Hauptnavigation">
@@ -155,7 +180,7 @@ export function MobileMenu({ isOpen, onClose, onRestart }: MobileMenuProps) {
 
                 <motion.div className="mt-auto flex flex-col gap-3" {...fadeUp(0.26)}>
                   <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
-                    {FOOTER_LINKS.map((item) => {
+                    {footerLinks.map((item) => {
                       const cls = 'inline-flex min-h-11 items-center text-sm font-semibold text-on underline underline-offset-4 hover:text-wr-pink';
                       return item.external ? (
                         <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" className={cls}>
