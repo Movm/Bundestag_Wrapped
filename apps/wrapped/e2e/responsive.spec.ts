@@ -49,7 +49,8 @@ for (const viewport of VIEWPORTS) {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.setViewportSize({ width: viewport.width, height: viewport.height });
     await openReadingMode(page);
-    await expect(page.getByRole('progressbar', { name: 'Fortschritt' })).toHaveAttribute('aria-valuetext', /^Folie \d+ von \d+$/);
+    // The segments are display:none below md, so getByRole (visibility-filtered) cannot find them there; the element itself stays in the DOM.
+    await expect(page.locator('[role="progressbar"][aria-label="Fortschritt"]')).toHaveAttribute('aria-valuetext', /^Folie \d+ von \d+$/);
     const ids = await page.$$eval('[data-slide-id]', sections => sections.map(section => section.getAttribute('data-slide-id')!));
     const problems: string[] = [];
     for (const id of ids) {
