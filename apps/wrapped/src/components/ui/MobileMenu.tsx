@@ -1,5 +1,6 @@
+import { useEffect, useRef } from 'react';
 import { AccessibleDialog } from './AccessibleDialog';
-import { Link, useLocation } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { X, RotateCcw } from 'lucide-react';
 import { clearWrappedProgress } from '@/lib/wrapped-storage';
@@ -8,6 +9,10 @@ import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionSurface } from '@/edition/surface';
 import type { MenuEntry } from '@/shared/native-bridge/protocol';
 import { buildMenu } from './menu-model';
+import { isNativeShell, onNativeMessage, postToNative } from '@/lib/native-shell';
+import { isAppRoute } from '@/app-entry/app-routes';
+
+const isSafePath = (href: string) => href.startsWith('/') && !href.startsWith('//');
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -18,6 +23,8 @@ interface MobileMenuProps {
 
 export function MobileMenu({ isOpen, onClose, onRestart }: MobileMenuProps) {
   const location = useLocation();
+  const navigate = useNavigate();
+  const native = isNativeShell();
   const edition = useOptionalEdition();
   const surface = editionSurface(edition);
   const reduceMotion = useReducedMotion();
@@ -27,6 +34,7 @@ export function MobileMenu({ isOpen, onClose, onRestart }: MobileMenuProps) {
     hash: location.hash,
     surface,
     hasMatch: !!edition?.manifest?.assets.match,
+    appRoutesOnly: native ? isAppRoute : undefined,
   });
   const resetQuiz = useQuizStore((state) => state.reset);
 
@@ -36,6 +44,31 @@ export function MobileMenu({ isOpen, onClose, onRestart }: MobileMenuProps) {
     resetQuiz(surface);
     onRestart?.();
   };
+
+  // The native shell draws the menu: hand it over once per open, then close the web side right away.
+  const latest = useRef({ navItems, footerLinks, canRestart: isMainPage && !!onRestart, onClose, handleRestart, navigate });
+  useEffect(() => {
+    latest.current = { navItems, footerLinks, canRestart: isMainPage && !!onRestart, onClose, handleRestart, navigate };
+  });
+
+  useEffect(() => {
+    if (!native || !isOpen) return;
+    const { navItems: entries, footerLinks: footer, canRestart, onClose: close } = latest.current;
+    postToNative({ type: 'menu.open', entries, footer, canRestart });
+    close();
+  }, [native, isOpen]);
+
+  useEffect(() => {
+    if (!native) return;
+    const offNavigate = onNativeMessage('navigate', (m) => {
+      if (isSafePath(m.href) && isAppRoute(m.href.split(/[?#]/)[0])) latest.current.navigate(m.href);
+    });
+    const offRestart = onNativeMessage('restart', () => latest.current.handleRestart());
+    return () => {
+      offNavigate();
+      offRestart();
+    };
+  }, [native]);
 
   const spring = { type: 'spring', stiffness: 420, damping: 34 } as const;
   const cardMotion = (i: number) =>
@@ -78,6 +111,8 @@ export function MobileMenu({ isOpen, onClose, onRestart }: MobileMenuProps) {
   };
 
   const [primary, secondary, ...tiles] = navItems;
+
+  if (native) return null;
 
   return (
     <AccessibleDialog open={isOpen} onClose={onClose} label="Hauptnavigation">
