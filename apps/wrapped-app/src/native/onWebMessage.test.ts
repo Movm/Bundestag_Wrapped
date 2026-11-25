@@ -35,7 +35,7 @@ describe('web message handler', () => {
 
   it('routes menu.open to openMenu', async () => {
     const openMenu = jest.fn();
-    const message = { type: 'menu.open' as const, entries: [], footer: [], canRestart: false };
+    const message = { type: 'menu.open' as const, entries: [], canRestart: false };
     await createWebMessageHandler(jest.fn(), openMenu)(message);
     expect(openMenu).toHaveBeenCalledWith(message);
   });

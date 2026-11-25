@@ -77,7 +77,7 @@ describe('MobileMenu in the native shell', () => {
     expect(msg.canRestart).toBe(true);
     expect(msg.entries[0].href).toBe('/2026');
     expect(msg.entries.find((e) => e.label === 'MCP-Server')?.href).toMatch(/^https?:\/\//);
-    expect(msg.footer.length).toBeGreaterThan(0);
+    expect('footer' in msg).toBe(false);
     expect(onClose).toHaveBeenCalledTimes(1);
   });
 
@@ -110,6 +110,30 @@ describe('MobileMenu in the native shell', () => {
     expect(resetQuiz).toHaveBeenCalledTimes(1);
     expect(onRestart).toHaveBeenCalledTimes(1);
     expect(onClose).toHaveBeenCalledTimes(1);
+  });
+
+  it('menu.closed focuses the element that opened the menu', async () => {
+    const button = document.createElement('button');
+    document.body.append(button);
+    button.focus();
+    await mount('/2026', true);
+    const other = document.createElement('button');
+    document.body.append(other);
+    other.focus();
+    await act(async () => receive({ type: 'menu.closed' }));
+    expect(document.activeElement).toBe(button);
+    button.remove();
+    other.remove();
+  });
+
+  it('menu.closed falls back to the open button when nothing was focused', async () => {
+    const button = document.createElement('button');
+    button.setAttribute('aria-label', 'Menü öffnen');
+    document.body.append(button);
+    await mount('/2026', true);
+    await act(async () => receive({ type: 'menu.closed' }));
+    expect(document.activeElement).toBe(button);
+    button.remove();
   });
 
   it('unsubscribes on unmount', async () => {

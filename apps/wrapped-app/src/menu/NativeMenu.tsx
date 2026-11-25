@@ -205,21 +205,6 @@ function MenuBody({ state, choose, restart, close }: Omit<Props, 'state' | 'open
               </Pressable>
             </FadeUp>
           )}
-
-          <View style={{ marginTop: 'auto' }}>
-            <FadeUp delay={0.26} reduceMotion={reduceMotion}>
-              <View style={{ gap: 12 }}>
-                <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', columnGap: 20, rowGap: 4 }}>
-                  {state.footer.map(link => (
-                    <Pressable key={link.href} accessibilityRole="link" onPress={() => choose(link.href)} style={{ minHeight: 44, justifyContent: 'center' }}>
-                      <Text style={{ fontFamily: 'Roboto-SemiBold', fontSize: 14, lineHeight: 20, color: '#fff', textDecorationLine: 'underline' }}>{link.label}</Text>
-                    </Pressable>
-                  ))}
-                </View>
-                <Text style={{ fontFamily: 'Roboto-Regular', fontSize: 14, lineHeight: 20, color: MUTED }}>Daten aus der 21. Wahlperiode</Text>
-              </View>
-            </FadeUp>
-          </View>
         </ScrollView>
       </Animated.View>
     </View>

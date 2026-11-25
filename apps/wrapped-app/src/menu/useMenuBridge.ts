@@ -1,9 +1,9 @@
 import { Platform } from 'react-native';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import * as WebBrowser from 'expo-web-browser';
-import { type MenuEntry, type MenuFooterLink, type NativeToWeb, type WebToNative } from '../../../wrapped/src/shared/native-bridge/protocol';
+import { type MenuEntry, type NativeToWeb, type WebToNative } from '../../../wrapped/src/shared/native-bridge/protocol';
 
-export interface MenuState { entries: MenuEntry[]; footer: MenuFooterLink[]; canRestart: boolean }
+export interface MenuState { entries: MenuEntry[]; canRestart: boolean }
 
 export interface MenuBridge {
   open(m: Extract<WebToNative, { type: 'menu.open' }>): void;
@@ -20,7 +20,7 @@ const str = (v: unknown): v is string => typeof v === 'string';
 /** The payload comes from the web view: drop malformed entries, fall back to white for an unknown colour; null = nothing usable. */
 export function parseMenuOpen(m: unknown): MenuState | null {
   if (typeof m !== 'object' || m === null) return null;
-  const { entries, footer, canRestart } = m as Record<string, unknown>;
+  const { entries, canRestart } = m as Record<string, unknown>;
   if (!Array.isArray(entries)) return null;
   const valid: MenuEntry[] = [];
   for (const e of entries) {
@@ -38,11 +38,7 @@ export function parseMenuOpen(m: unknown): MenuState | null {
     });
   }
   if (valid.length === 0) return null;
-  const links = (Array.isArray(footer) ? footer : []).flatMap((f): MenuFooterLink[] => {
-    const r = f as Record<string, unknown> | null;
-    return r && str(r.href) && str(r.label) ? [{ href: r.href, label: r.label, external: r.external === true }] : [];
-  });
-  return { entries: valid, footer: links, canRestart: canRestart === true };
+  return { entries: valid, canRestart: canRestart === true };
 }
 
 /** Plain logic behind the hook: `onState(null)` means closed. */
@@ -52,13 +48,31 @@ export function createMenuBridge(
   deferExternal = false,
 ): MenuBridge {
   let chosen = false;
+  let isOpen = false;
+  let awaitingDismiss = false;
   let pendingUrl: string | null = null;
-  const close = () => onState(null);
+  const closed = () => send({ type: 'menu.closed' });
+  // Closing is only announced to the web page once the modal is really gone (iOS: onDismiss), and after an in-app browser returns.
+  const finish = () => {
+    const url = pendingUrl;
+    pendingUrl = null;
+    if (url) void WebBrowser.openBrowserAsync(url).finally(closed);
+    else closed();
+  };
+  const close = () => {
+    if (!isOpen) return;
+    isOpen = false;
+    onState(null);
+    if (deferExternal) awaitingDismiss = true;
+    else finish();
+  };
   return {
     open(m) {
       const next = parseMenuOpen(m);
       if (!next) return;
       chosen = false;
+      isOpen = true;
+      awaitingDismiss = false;
       onState(next);
     },
     choose(href) {
@@ -66,9 +80,8 @@ export function createMenuBridge(
       chosen = true;
       if (href.startsWith('https://')) {
         // iOS can refuse to present a browser while the Modal is still dismissing: close first, open on dismiss.
-        if (deferExternal) pendingUrl = href;
+        pendingUrl = href;
         close();
-        if (!deferExternal) void WebBrowser.openBrowserAsync(href);
         return;
       }
       send({ type: 'navigate', href });
@@ -82,9 +95,9 @@ export function createMenuBridge(
     },
     close,
     dismissed() {
-      const url = pendingUrl;
-      pendingUrl = null;
-      if (url) void WebBrowser.openBrowserAsync(url);
+      if (!awaitingDismiss) return;
+      awaitingDismiss = false;
+      finish();
     },
   };
 }

@@ -46,15 +46,19 @@ export function MobileMenu({ isOpen, onClose, onRestart }: MobileMenuProps) {
   };
 
   // The native shell draws the menu: hand it over once per open, then close the web side right away.
-  const latest = useRef({ navItems, footerLinks, canRestart: isMainPage && !!onRestart, onClose, handleRestart, navigate });
+  const latest = useRef({ navItems, canRestart: isMainPage && !!onRestart, onClose, handleRestart, navigate });
   useEffect(() => {
-    latest.current = { navItems, footerLinks, canRestart: isMainPage && !!onRestart, onClose, handleRestart, navigate };
+    latest.current = { navItems, canRestart: isMainPage && !!onRestart, onClose, handleRestart, navigate };
   });
 
+  // The element that opened the menu; focus goes back to it when the native menu reports it is gone.
+  const opener = useRef<HTMLElement | null>(null);
   useEffect(() => {
     if (!native || !isOpen) return;
-    const { navItems: entries, footerLinks: footer, canRestart, onClose: close } = latest.current;
-    postToNative({ type: 'menu.open', entries, footer, canRestart });
+    const { navItems: entries, canRestart, onClose: close } = latest.current;
+    const active = document.activeElement;
+    opener.current = active instanceof HTMLElement && active !== document.body ? active : null;
+    postToNative({ type: 'menu.open', entries, canRestart });
     close();
   }, [native, isOpen]);
 
@@ -64,9 +68,18 @@ export function MobileMenu({ isOpen, onClose, onRestart }: MobileMenuProps) {
       if (isSafePath(m.href) && isAppRoute(m.href.split(/[?#]/)[0])) latest.current.navigate(m.href);
     });
     const offRestart = onNativeMessage('restart', () => latest.current.handleRestart());
+    const offClosed = onNativeMessage('menu.closed', () => {
+      // Taps do not always focus a button in a WebView, so fall back to the header's open button.
+      const target = opener.current?.isConnected
+        ? opener.current
+        : document.querySelector<HTMLElement>('button[aria-label="Menü öffnen"]');
+      opener.current = null;
+      target?.focus();
+    });
     return () => {
       offNavigate();
       offRestart();
+      offClosed();
     };
   }, [native]);
 

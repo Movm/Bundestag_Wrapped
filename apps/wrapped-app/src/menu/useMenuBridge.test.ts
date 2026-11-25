@@ -8,7 +8,6 @@ const entry: MenuEntry = { href: '/2026', label: 'a', title: 'A', color: 'pink',
 const open: Extract<WebToNative, { type: 'menu.open' }> = {
   type: 'menu.open',
   entries: [entry],
-  footer: [{ href: '/datenschutz', label: 'Datenschutz', external: false }],
   canRestart: true,
 };
 
@@ -27,7 +26,7 @@ describe('menu bridge', () => {
   it('open stores the payload without the message type', () => {
     const { bridge, state } = setup();
     bridge.open(open);
-    expect(state()).toEqual({ entries: open.entries, footer: open.footer, canRestart: true });
+    expect(state()).toEqual({ entries: open.entries, canRestart: true });
   });
 
   it('choose sends navigate once even when tapped twice, then closes', () => {
@@ -35,7 +34,7 @@ describe('menu bridge', () => {
     bridge.open(open);
     bridge.choose('/2026/abgeordnete');
     bridge.choose('/2026/abgeordnete');
-    expect(send).toHaveBeenCalledTimes(1);
+    expect(send.mock.calls.filter(([m]) => m.type === 'navigate')).toHaveLength(1);
     expect(send).toHaveBeenCalledWith({ type: 'navigate', href: '/2026/abgeordnete' });
     expect(state()).toBeNull();
   });
@@ -46,7 +45,7 @@ describe('menu bridge', () => {
     bridge.choose('/a');
     bridge.open(open);
     bridge.choose('/b');
-    expect(send).toHaveBeenCalledTimes(2);
+    expect(send.mock.calls.filter(([m]) => m.type === 'navigate')).toHaveLength(2);
   });
 
   it('absolute https hrefs (cards and footer) open the in-app browser instead of navigating', () => {
@@ -71,7 +70,44 @@ describe('menu bridge', () => {
     bridge.open(open);
     bridge.close();
     expect(state()).toBeNull();
+    expect(send).toHaveBeenCalledTimes(1);
+    expect(send).toHaveBeenCalledWith({ type: 'menu.closed' });
+  });
+
+  it('menu.closed is sent once per open, also after close and choose together', () => {
+    const { bridge, send } = setup();
+    bridge.open(open);
+    bridge.close();
+    bridge.close();
+    expect(send.mock.calls.filter(([m]) => m.type === 'menu.closed')).toHaveLength(1);
+    bridge.open(open);
+    bridge.choose('/a');
+    bridge.close();
+    expect(send.mock.calls.filter(([m]) => m.type === 'menu.closed')).toHaveLength(2);
+  });
+
+  it('with a deferred modal (iOS) menu.closed waits for onDismiss', () => {
+    const send = jest.fn();
+    const bridge = createMenuBridge(send, () => {}, true);
+    bridge.open(open);
+    bridge.close();
     expect(send).not.toHaveBeenCalled();
+    bridge.dismissed();
+    bridge.dismissed();
+    expect(send).toHaveBeenCalledTimes(1);
+    expect(send).toHaveBeenCalledWith({ type: 'menu.closed' });
+  });
+
+  it('after an external link menu.closed follows the in-app browser', async () => {
+    const send = jest.fn();
+    const bridge = createMenuBridge(send, () => {}, true);
+    bridge.open(open);
+    bridge.choose('https://x.test/a');
+    bridge.dismissed();
+    expect(send).not.toHaveBeenCalled();
+    await Promise.resolve();
+    await Promise.resolve();
+    expect(send).toHaveBeenCalledWith({ type: 'menu.closed' });
   });
 
   it('restart sends once even when tapped twice', () => {
@@ -79,7 +115,7 @@ describe('menu bridge', () => {
     bridge.open(open);
     bridge.restart();
     bridge.restart();
-    expect(send).toHaveBeenCalledTimes(1);
+    expect(send.mock.calls.filter(([m]) => m.type === 'restart')).toHaveLength(1);
   });
 
   it('with deferred external links the browser opens only after the modal dismissed, exactly once', () => {
@@ -109,19 +145,18 @@ describe('menu.open payload validation', () => {
     const parsed = parseMenuOpen({
       type: 'menu.open',
       entries: [{ ...entry, color: 'teal' }, null, { href: 5 }, 'x'],
-      footer: [{ href: '/x', label: 'X' }, { href: 1 }, null],
       canRestart: 'yes',
     });
     expect(parsed?.entries).toHaveLength(1);
     expect(parsed?.entries[0].color).toBe('white');
-    expect(parsed?.footer).toEqual([{ href: '/x', label: 'X', external: false }]);
+    expect(parsed).not.toHaveProperty('footer');
     expect(parsed?.canRestart).toBe(false);
   });
 
   it('ignores a payload without usable entries: no state change', () => {
     const { bridge, state } = setup();
-    bridge.open({ type: 'menu.open', entries: 'nope', footer: [], canRestart: false } as never);
-    bridge.open({ type: 'menu.open', entries: [], footer: [], canRestart: false });
+    bridge.open({ type: 'menu.open', entries: 'nope', canRestart: false } as never);
+    bridge.open({ type: 'menu.open', entries: [], canRestart: false });
     expect(state()).toBeNull();
   });
 

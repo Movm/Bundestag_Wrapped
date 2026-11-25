@@ -33,7 +33,6 @@ const state: MenuState = {
     { href: '/2026/perfect-match', label: 'Perfect Match', title: 'Perfect Match', color: 'mint', rotate: -1.5, tile: false, active: false },
     { href: '/2026/dokumentation', label: 'Dokumentation', title: 'Doku­mentation', color: 'white', rotate: -1, tile: true, active: false },
   ],
-  footer: [{ href: '/datenschutz', label: 'Datenschutz', external: false }],
   canRestart: true,
 };
 
@@ -59,10 +58,11 @@ describe('NativeMenu', () => {
     expect((await render(null)).container.queryAll(i => i.type === 'Text')).toHaveLength(0);
   });
 
-  it('renders the entries, the close button label and the footer line', async () => {
+  it('renders the entries, the close button label and no footer', async () => {
     const root = await render(state);
     const all = texts(root).map(t => t.replace(/\u00ad/g, ''));
-    expect(all).toEqual(expect.arrayContaining(['Menü', '01 · Du bist hier', 'Bundestag Wrapped', 'Abgeordnete-Wrapped', 'Neu starten', 'Datenschutz', 'Daten aus der 21. Wahlperiode']));
+    expect(all).toEqual(expect.arrayContaining(['Menü', '01 · Du bist hier', 'Bundestag Wrapped', 'Abgeordnete-Wrapped', 'Neu starten']));
+    expect(all.join(' ')).not.toMatch(/Wahlperiode|Datenschutz/);
     const close = root.container.queryAll(i => i.props.accessibilityLabel === 'Menü schließen');
     expect(close.length).toBeGreaterThan(0);
   });
