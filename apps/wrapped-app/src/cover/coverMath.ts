@@ -200,3 +200,42 @@ export function wipeRadii(centre: { x: number; y: number }, stageWidth: number, 
     end: Math.hypot(Math.max(centre.x, screen.width - centre.x), Math.max(centre.y, screen.height - centre.y)) + 20,
   };
 }
+
+/**
+ * Iteration progress (0 ≤ p < 1) of one seat's idle wave, `elapsed` ms after the wave started
+ * (`COVER_TIMING.waveStart` into the assembly). The web runs it with `iterations: Infinity` and no
+ * fill, so before the seat's delay it is −1 (the seat rests) and after it wraps every `period`.
+ */
+export function waveProgress(elapsed: number, delay: number, period: number): number {
+  'worklet';
+  const local = elapsed - delay;
+  if (elapsed < 0 || local < 0) return -1;
+  return (local % period) / period;
+}
+
+/** The ambient loops of `startAmbient()` in cover.ts, ms. */
+export const AMBIENT_LOOPS = {
+  shootingStar: { min: 5000, max: 10_000 },
+  rocket: { min: 9000, max: 15_000 },
+  ufo: { min: 15_000, max: 24_000 },
+  satellite: { min: 24_000, max: 36_000 },
+} as const;
+
+export type AmbientLoop = keyof typeof AMBIENT_LOOPS;
+
+/**
+ * cover.ts `loop(fn, min, max)`: the first run is `min * 0.4` after the ambient layer starts, and
+ * every run schedules the next one `min + rand() * (max - min)` after itself. Times in ms on any
+ * common clock; `next` draws exactly one value from `rand` (`Math.random`, as on the web).
+ */
+export function ambientSchedule(rand: () => number) {
+  const first = {} as Record<AmbientLoop, number>;
+  for (const loop of Object.keys(AMBIENT_LOOPS) as AmbientLoop[]) first[loop] = AMBIENT_LOOPS[loop].min * 0.4;
+  return {
+    first,
+    next(loop: AmbientLoop, ranAt: number): number {
+      const { min, max } = AMBIENT_LOOPS[loop];
+      return ranAt + min + rand() * (max - min);
+    },
+  };
+}
