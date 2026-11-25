@@ -3,7 +3,7 @@
     "name": "Bundestag Wrapped",
     "slug": "bundestag-wrapped",
     "owner": "moritzius",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "runtimeVersion": { "policy": "fingerprint" },
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,7 +13,8 @@
     "ios": {
       "bundleIdentifier": "de.bundestag.wrapped",
       "supportsTablet": true,
-      "requireFullScreen": true
+      "requireFullScreen": true,
+      "buildNumber": "9"
     },
     "android": {
       "package": "de.bundestag.wrapped",
@@ -21,7 +22,8 @@
         "backgroundColor": "#0e0a14",
         "foregroundImage": "./assets/adaptive-icon.png",
         "monochromeImage": "./assets/monochrome-icon.png"
-      }
+      },
+      "versionCode": 3
     },
     "web": {
       "favicon": "./assets/favicon.png"
