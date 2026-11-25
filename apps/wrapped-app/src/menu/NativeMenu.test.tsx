@@ -1,0 +1,89 @@
+import { act } from 'react';
+import { createRoot } from 'test-renderer';
+import { NativeMenu } from './NativeMenu';
+import { type MenuState } from './useMenuBridge';
+
+jest.mock('expo-haptics', () => ({ selectionAsync: jest.fn(async () => {}) }));
+jest.mock('react-native-safe-area-context', () => ({ useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }) }));
+jest.mock('react-native-reanimated', () => {
+  const { View } = require('react-native');
+  const value = (v: number) => ({ value: v });
+  return {
+    __esModule: true,
+    default: { View },
+    Easing: { bezier: () => (t: number) => t },
+    interpolate: (x: number) => x,
+    useAnimatedStyle: () => ({}),
+    useReducedMotion: () => false,
+    useSharedValue: value,
+    withDelay: (_d: number, v: number) => v,
+    withSpring: (v: number) => v,
+    withTiming: (v: number) => v,
+  };
+});
+jest.mock('react-native-svg', () => {
+  const { View } = require('react-native');
+  return { __esModule: true, default: View, Path: View };
+});
+
+const state: MenuState = {
+  entries: [
+    { href: '/2026', label: 'Bundestag Wrapped', title: 'Bundestag Wrapped', color: 'pink', rotate: -2, tile: false, active: true },
+    { href: '/2026/abgeordnete', label: 'Abgeordnete-Wrapped', title: 'Abgeordnete-Wrapped', color: 'violet', rotate: 1.5, tile: false, active: false },
+    { href: '/2026/perfect-match', label: 'Perfect Match', title: 'Perfect Match', color: 'mint', rotate: -1.5, tile: false, active: false },
+    { href: '/2026/dokumentation', label: 'Dokumentation', title: 'Doku­mentation', color: 'white', rotate: -1, tile: true, active: false },
+  ],
+  footer: [{ href: '/datenschutz', label: 'Datenschutz', external: false }],
+  canRestart: true,
+};
+
+const noop = () => {};
+const mounted: ReturnType<typeof createRoot>[] = [];
+afterEach(async () => {
+  // Unmount so the focus timer of the menu body is cleared.
+  for (const r of mounted.splice(0)) await act(async () => r.unmount());
+});
+async function render(s: MenuState | null) {
+  const root = createRoot();
+  mounted.push(root);
+  await act(async () => {
+    root.render(<NativeMenu state={s} open={noop} choose={noop} restart={noop} close={noop} dismissed={noop} />);
+  });
+  return root;
+}
+const texts = (root: Awaited<ReturnType<typeof render>>) =>
+  root.container.queryAll(i => i.type === 'Text').map(i => i.children.join(''));
+
+describe('NativeMenu', () => {
+  it('renders nothing while closed', async () => {
+    expect((await render(null)).container.queryAll(i => i.type === 'Text')).toHaveLength(0);
+  });
+
+  it('renders the entries, the close button label and the footer line', async () => {
+    const root = await render(state);
+    const all = texts(root).map(t => t.replace(/\u00ad/g, ''));
+    expect(all).toEqual(expect.arrayContaining(['Menü', '01 · Du bist hier', 'Bundestag Wrapped', 'Abgeordnete-Wrapped', 'Neu starten', 'Datenschutz', 'Daten aus der 21. Wahlperiode']));
+    const close = root.container.queryAll(i => i.props.accessibilityLabel === 'Menü schließen');
+    expect(close.length).toBeGreaterThan(0);
+  });
+
+  it('announces the active card once (label suffix, no selected state)', async () => {
+    const root = await render(state);
+    const active = root.container.queryAll(i => i.props.accessibilityLabel === 'Bundestag Wrapped, aktuelle Seite')[0];
+    expect(active.props.accessibilityState?.selected).toBeFalsy();
+  });
+
+  it('gives the wide Perfect Match card a soft hyphen so it never breaks mid-word', async () => {
+    const title = texts(await render(state)).find(t => t.replace(/­/g, '') === 'Perfect Match');
+    expect(title).toBe('Per­fect Match');
+  });
+
+  it('hides the restart pill without canRestart', async () => {
+    expect(texts(await render({ ...state, canRestart: false }))).not.toContain('Neu starten');
+  });
+
+  it('survives an unknown colour at render time', async () => {
+    const bad = { ...state, entries: [{ ...state.entries[0], color: 'teal' as never }] };
+    await expect(render(bad)).resolves.toBeDefined();
+  });
+});

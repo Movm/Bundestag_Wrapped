@@ -1,5 +1,5 @@
 import { useEffect, useRef, type ComponentRef, type ReactNode } from 'react';
-import { AccessibilityInfo, Modal, Pressable, ScrollView, Text, View, findNodeHandle, useWindowDimensions } from 'react-native';
+import { AccessibilityInfo, Modal, Pressable, ScrollView, Text, View, useWindowDimensions } from 'react-native';
 import Animated, {
   Easing,
   interpolate,
@@ -14,7 +14,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path } from 'react-native-svg';
 import { type MenuColor, type MenuEntry } from '../../../wrapped/src/shared/native-bridge/protocol';
-import { cardAccessibilityLabel, cardLabel, cardRotation, drawerWidth, splitMenu, tileTitleSize, wideTitleSize } from './menuLayout';
+import { cardAccessibilityLabel, cardLabel, cardRotation, drawerWidth, hyphenateTitle, splitMenu, tileTitleSize, wideTitleSize } from './menuLayout';
 import { type useMenuBridge } from './useMenuBridge';
 
 const INK = '#0e0a14';
@@ -55,13 +55,12 @@ function CardReveal({ index, reduceMotion, style, children }: { index: number; r
 }
 
 function Card({ entry, index, width, reduceMotion, onChoose }: { entry: MenuEntry; index: number; width: number; reduceMotion: boolean; onChoose: (e: MenuEntry) => void }) {
-  const { bg, fg } = CARD_COLORS[entry.color];
+  const { bg, fg } = CARD_COLORS[entry.color] ?? CARD_COLORS.white;
   const size = entry.tile ? tileTitleSize(width) : wideTitleSize(width);
   return (
     <Pressable
       accessibilityRole="link"
       accessibilityLabel={cardAccessibilityLabel(entry)}
-      accessibilityState={{ selected: entry.active }}
       onPress={() => onChoose(entry)}
       style={{
         flexGrow: 1,
@@ -86,7 +85,7 @@ function Card({ entry, index, width, reduceMotion, onChoose }: { entry: MenuEntr
             : { fontFamily: 'Archivo-Black-Expanded', fontSize: size, lineHeight: size * 0.9, letterSpacing: -0.04 * size, textTransform: 'uppercase', color: fg }
         }
       >
-        {entry.title}
+        {hyphenateTitle(entry.title)}
       </Text>
     </Pressable>
   );
@@ -117,8 +116,10 @@ function MenuBody({ state, choose, restart, close }: Omit<Props, 'state' | 'open
     else slide.value = withTiming(0, { duration: 300, easing: EASE });
   }, [backdrop, slide, fade, reduceMotion]);
   useEffect(() => {
-    const handle = closeRef.current ? findNodeHandle(closeRef.current) : null;
-    const t = setTimeout(() => handle && AccessibilityInfo.setAccessibilityFocus(handle), 350);
+    // After the 300 ms slide-in, move the screen reader to the close button.
+    const t = setTimeout(() => {
+      if (closeRef.current) AccessibilityInfo.sendAccessibilityEvent(closeRef.current, 'focus');
+    }, 350);
     return () => clearTimeout(t);
   }, []);
 
