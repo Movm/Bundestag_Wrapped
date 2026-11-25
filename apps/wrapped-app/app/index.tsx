@@ -6,15 +6,19 @@ import { createWebMessageHandler } from '../src/native/onWebMessage';
 import { VIEWPORT_FIT_SCRIPT } from '../src/dom/viewportFitScript';
 import { NativeCover } from '../src/cover/NativeCover';
 import { useCoverBridge } from '../src/cover/useCoverBridge';
+import { NativeMenu } from '../src/menu/NativeMenu';
+import { useMenuBridge } from '../src/menu/useMenuBridge';
 import { type NativeToWeb } from '../../wrapped/src/shared/native-bridge/protocol';
 
 export default function Index() {
   const dom = useRef<WrappedDomHandle>(null);
   const receive = useCallback((message: NativeToWeb) => dom.current?.receive(message), []);
   const cover = useCoverBridge(receive);
+  const menu = useMenuBridge(receive);
   const { onWebCover } = cover;
-  const onWebMessage = useMemo(() => createWebMessageHandler(receive, undefined, onWebCover), [receive, onWebCover]);
-  // The cover re-renders this screen; the web view must not re-render (and re-send its props) with it.
+  const { open: openMenu } = menu;
+  const onWebMessage = useMemo(() => createWebMessageHandler(receive, openMenu, onWebCover), [receive, openMenu, onWebCover]);
+  // The cover and the menu re-render this screen; the web view must not re-render (and re-send its props) with it.
   const web = useMemo(() => (
     <WrappedDom
       ref={dom}
@@ -32,6 +36,7 @@ export default function Index() {
         {web}
       </View>
       <NativeCover {...cover} />
+      <NativeMenu {...menu} />
     </View>
   );
 }

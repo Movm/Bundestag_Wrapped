@@ -36,6 +36,16 @@ describe('native shell', () => {
     expect(handler).toHaveBeenCalledTimes(1);
   });
 
+  it('menu.closed before subscribe is not delivered later', () => {
+    const shell = installNativeShell(vi.fn());
+    shell.receive({ type: 'menu.closed' });
+    const handler = vi.fn();
+    onNativeMessage('menu.closed', handler);
+    expect(handler).not.toHaveBeenCalled();
+    shell.receive({ type: 'menu.closed' });
+    expect(handler).toHaveBeenCalledTimes(1);
+  });
+
   it('publishes window.__WRAPPED_NATIVE__', () => {
     expect(window.__WRAPPED_NATIVE__).toBeUndefined();
     setNativeShellInfo({ protocol: 1, platform: 'ios', appVersion: '1.0.0' });

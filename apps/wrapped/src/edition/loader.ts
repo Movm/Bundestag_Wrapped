@@ -25,6 +25,14 @@ export class EditionLoadError extends Error {
   }
 }
 
+/** German, user-facing text for a load failure; the technical message stays on the error for logs. */
+export function loadErrorMessage(error: unknown): string {
+  const kind = error instanceof EditionLoadError ? error.kind : null;
+  if (kind === 'network') return 'Keine Verbindung. Bitte prüfe dein Internet und versuche es erneut.';
+  if (kind === 'http' || kind === 'missing-asset') return 'Die Daten sind gerade nicht erreichbar. Bitte versuche es später erneut.';
+  return 'Die Daten konnten nicht geladen werden. Bitte versuche es später erneut.';
+}
+
 export interface SpeechesData {
   speeches: Speech[];
 }

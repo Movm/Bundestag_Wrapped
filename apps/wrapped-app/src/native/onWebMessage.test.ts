@@ -39,4 +39,20 @@ describe('web message handler', () => {
     await expect(createWebMessageHandler(receive)({ type: 'from-the-future' } as never)).resolves.toBeUndefined();
     expect(receive).not.toHaveBeenCalled();
   });
+
+  it('routes menu.open to openMenu', async () => {
+    const openMenu = jest.fn();
+    const message = { type: 'menu.open' as const, entries: [], canRestart: false };
+    await createWebMessageHandler(jest.fn(), openMenu)(message);
+    expect(openMenu).toHaveBeenCalledWith(message);
+  });
+
+  it('ignores malformed messages without throwing', async () => {
+    const receive = jest.fn();
+    const openMenu = jest.fn();
+    const handle = createWebMessageHandler(receive, openMenu);
+    for (const m of [null, 'menu.open', 42]) await expect(handle(m as never)).resolves.toBeUndefined();
+    expect(receive).not.toHaveBeenCalled();
+    expect(openMenu).not.toHaveBeenCalled();
+  });
 });

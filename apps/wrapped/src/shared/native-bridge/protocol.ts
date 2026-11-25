@@ -10,7 +10,7 @@ export interface MenuFooterLink { href: string; label: string; external: boolean
 export interface ShareFile { name: string; type: string; base64: string }
 
 export type WebToNative =
-  | { type: 'menu.open'; entries: MenuEntry[]; footer: MenuFooterLink[]; canRestart: boolean } // Plan 02
+  | { type: 'menu.open'; entries: MenuEntry[]; canRestart: boolean } // Plan 02
   | { type: 'cover'; visible: boolean; year: number | null; muted?: boolean } // Plan 03
   | { type: 'music'; command: MusicCommand } // Plan 04
   | { type: 'share'; id: number; title?: string; text?: string; url?: string; files?: ShareFile[] } // Plan 01 (share polyfill)
@@ -20,6 +20,7 @@ export type WebToNative =
 export type NativeToWeb =
   | { type: 'navigate'; href: string } // Plan 02
   | { type: 'restart' } // Plan 02
+  | { type: 'menu.closed' } // Plan 02: the native menu is gone; the web side returns focus to the menu button
   | { type: 'story.start' } // Plan 03
   | { type: 'music.playing'; theme: ThemeType | null } // Plan 04
   | { type: 'share.result'; id: number; ok: boolean }; // Plan 01 (handled by the polyfill itself)

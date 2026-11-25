@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { configureSite } from '@/lib/site';
-import { assertEditionConsistency, loadEditionAsset, loadEditionContent, loadManifest, type EditionAssetTiming } from './loader';
+import { assertEditionConsistency, EditionLoadError, loadErrorMessage, loadEditionAsset, loadEditionContent, loadManifest, type EditionAssetTiming } from './loader';
 import type { Edition } from './registry';
 
 const manifest = {
@@ -103,4 +103,15 @@ it('separates transfer/parsing/validation timing without changing validated asse
   await expect(loadEditionAsset('/data/fixtures/manifest.json', 'words.json', 'WordsAsset', timing)).resolves.toEqual(payload);
   expect(timing).toMatchObject({ contentEncoding: 'gzip', encodedBytes: 12, decodedBytes: 34 });
   for (const duration of [timing.headersMs, timing.bodyMs, timing.jsonMs, timing.validationMs]) expect(duration).toBeGreaterThanOrEqual(0);
+});
+
+describe('loadErrorMessage', () => {
+  it('shows German copy and never the technical message', () => {
+    const network = new EditionLoadError('network', 'Network error while loading /data/editions.json', '/data/editions.json');
+    expect(loadErrorMessage(network)).toMatch(/Verbindung/);
+    expect(loadErrorMessage(network)).not.toMatch(/Network error|editions\.json/);
+    expect(loadErrorMessage(new EditionLoadError('http', '/data/x.json: 500'))).toMatch(/nicht erreichbar/);
+    expect(loadErrorMessage(new Error('boom'))).toMatch(/nicht geladen/);
+    expect(loadErrorMessage(null)).toMatch(/nicht geladen/);
+  });
 });

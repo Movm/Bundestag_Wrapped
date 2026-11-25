@@ -17,11 +17,11 @@ function isWebUrl(value: string): boolean {
  */
 export function createWebMessageHandler(
   receive: (message: NativeToWeb) => void,
-  // Plan 02 fills this slot with the menu; positional so both plans merge without reshaping the call.
-  _openMenu?: (message: Extract<WebToNative, { type: 'menu.open' }>) => void,
+  openMenu: (message: Extract<WebToNative, { type: 'menu.open' }>) => void = () => {},
   onCover?: (message: Extract<WebToNative, { type: 'cover' }>) => void,
 ) {
   return async (message: WebToNative): Promise<void> => {
+    if (typeof message !== 'object' || message === null) return;
     switch (message.type) {
       case 'share': {
         const ok = await shareFromWeb(message);
@@ -35,10 +35,12 @@ export function createWebMessageHandler(
       case 'log':
         console.error(`[wrapped-web] ${message.text}`);
         return;
+      case 'menu.open':
+        openMenu(message);
+        return;
       case 'cover':
         onCover?.(message);
         return;
-      case 'menu.open': // Plan 02
       case 'music': // Plan 04
         return;
       default:
