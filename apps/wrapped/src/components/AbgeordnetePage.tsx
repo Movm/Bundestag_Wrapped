@@ -169,7 +169,7 @@ export function AbgeordnetePage() {
                         className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 hover:bg-bg-elevated transition-colors group"
                       >
                         <Link
-                          to={editionPath(surface, `abgeordnete/${speaker.slug}`)}
+                          to={editionPath(surface, appHas(editionPath(surface, `abgeordnete/${speaker.slug}`)) ? `abgeordnete/${speaker.slug}` : `abgeordnete/${speaker.slug}/quiz`)}
                           className="flex min-w-0 flex-1 flex-wrap items-center gap-3"
                         >
                           <span className="text-on font-medium group-hover:text-on-accent transition-colors">
