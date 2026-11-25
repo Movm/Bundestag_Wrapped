@@ -105,6 +105,24 @@ describe('coverMachine', () => {
     expect(run(fresh(), [[tick, 0], [visible(), 100], [tick, 20_000]]).effects).toEqual([]);
   });
 
+  it('a slow web after the fallback never brings the cover back, it just starts its story', () => {
+    const gaveUp = run(fresh(), [[tick, 0], [tick, 12_000]]);
+    expect(gaveUp.state).toMatchObject({ phase: { name: 'hidden' }, gaveUp: true });
+    const late = run(gaveUp.state, [[visible(), 20_000]]);
+    expect(late.state.phase.name).toBe('hidden');
+    expect(late.effects).toEqual(['sendStoryStart']);
+    expect(late.state.gaveUp).toBe(false);
+    // The confirmation changes nothing, and later reports behave normally again (restart shows the cover).
+    expect(run(late.state, [[gone, 20_500]]).effects).toEqual([]);
+    expect(run(late.state, [[visible(), 30_000]]).effects).toEqual(['startAssembly']);
+    // A late "no cover" report is also just absorbed.
+    const none = run(gaveUp.state, [[gone, 20_000]]);
+    expect(none.effects).toEqual([]);
+    expect(none.state.phase.name).toBe('hidden');
+    // Never for a web that spoke before the timeout.
+    expect(run(fresh(), [[visible(), 0], [gone, 100]]).state.gaveUp).toBe(false);
+  });
+
   it('visible true while hidden shows the cover again and restarts the assembly', () => {
     let r = run(fresh(), [[visible(), 0], [gone, 100]]);
     expect(r.state.phase.name).toBe('hidden');

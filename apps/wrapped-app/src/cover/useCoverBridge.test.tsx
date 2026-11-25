@@ -43,6 +43,17 @@ describe('useCoverBridge', () => {
     expect(hook.result.current.state).toBe(before);
   });
 
+  it('a web that reports after the 12 s fallback does not make the cover flicker back', () => {
+    const { receive, hook } = setup();
+    act(() => { jest.advanceTimersByTime(12_200); });
+    expect(hook.result.current.state.phase.name).toBe('hidden');
+    const run = hook.result.current.assemblyRun;
+    act(() => hook.result.current.onWebCover(cover(true)));
+    expect(hook.result.current.state.phase.name).toBe('hidden');
+    expect(hook.result.current.assemblyRun).toBe(run);
+    expect(starts(receive)).toBe(1);
+  });
+
   it('takes the year from a web.cover and stays showing', () => {
     const { hook } = setup();
     act(() => hook.result.current.onWebCover(cover(true)));

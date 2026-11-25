@@ -36,6 +36,12 @@ export interface CoverState {
   reducedMotion: boolean;
   /** Time of the first event; the 12 s fallback counts from here. */
   startedAt: number | null;
+  /**
+   * The no-web fallback hid the cover before the web ever reported. The first late message must not
+   * bring the cover back (hide, then reappear and re-assemble, is the jarring flicker); it only lets
+   * the web leave its intro.
+   */
+  gaveUp: boolean;
 }
 
 export type CoverEvent =
@@ -47,7 +53,7 @@ export type CoverEvent =
 export type CoverEffect = 'playStartSound' | 'haptic' | 'sendStoryStart' | 'fadeOut' | 'startAssembly';
 
 export function initialCoverState({ reducedMotion }: { reducedMotion: boolean }): CoverState {
-  return { phase: { name: 'showing' }, webReady: false, webSeen: false, webVisible: false, year: null, muted: false, reducedMotion, startedAt: null };
+  return { phase: { name: 'showing' }, webReady: false, webSeen: false, webVisible: false, year: null, muted: false, reducedMotion, startedAt: null, gaveUp: false };
 }
 
 type Result = { state: CoverState; effects: CoverEffect[] };
@@ -82,13 +88,20 @@ function advance(state: CoverState, now: number): Result {
   }
   const pressWaiting = after.name === 'exiting' || (after.name === 'handingOver' && !after.storyStartSent);
   const noWebTimeout = pressWaiting ? NO_WEB_TIMEOUT_AFTER_PRESS : NO_WEB_TIMEOUT;
-  if (after.name !== 'hidden' && !result.state.webSeen && now - (result.state.startedAt ?? now) >= noWebTimeout) return hide(result.state, result.effects);
+  if (after.name !== 'hidden' && !result.state.webSeen && now - (result.state.startedAt ?? now) >= noWebTimeout) {
+    const hidden = hide(result.state, result.effects);
+    return { ...hidden, state: { ...hidden.state, gaveUp: true } };
+  }
   return result;
 }
 
 function onWebCover(state: CoverState, event: Extract<CoverEvent, { type: 'web.cover' }>, now: number, effects: CoverEffect[]): Result {
-  const next: CoverState = { ...state, webSeen: true, webVisible: event.visible, year: event.year, muted: event.muted ?? false };
+  const next: CoverState = { ...state, webSeen: true, webVisible: event.visible, year: event.year, muted: event.muted ?? false, gaveUp: false };
   const { phase } = state;
+  if (state.gaveUp && phase.name === 'hidden') {
+    // The web finally woke up after the fallback: stay hidden, just let it start its story.
+    return event.visible ? { state: { ...next, webReady: true }, effects: [...effects, 'sendStoryStart'] } : { state: next, effects };
+  }
   if (!event.visible) {
     // Showing: the web has no cover (or left it) → go without a wipe. Exiting: same.
     // Handing over: this is the confirmation (or the web never had a cover) → go.
