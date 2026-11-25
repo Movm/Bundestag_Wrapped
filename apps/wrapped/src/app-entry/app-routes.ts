@@ -1,5 +1,6 @@
 import { matchPath } from 'react-router';
 import { RESERVED_ROUTES } from '@/edition/registry';
+import { isEmbedded } from '@/lib/site';
 
 /** The only routes the app renders itself; every other internal path opens on the website. */
 export const APP_ROUTE_PATTERNS = [
@@ -19,4 +20,10 @@ export function isAppRoute(pathname: string): boolean {
     if (editionId === undefined) return true;
     return !RESERVED_ROUTES.has(editionId);
   });
+}
+
+/** In the browser every page exists; embedded, only the app routes do. `path` may carry a query or hash. */
+export function appHas(path: string): boolean {
+  if (!isEmbedded()) return true;
+  return isAppRoute(path.split(/[?#]/)[0]);
 }

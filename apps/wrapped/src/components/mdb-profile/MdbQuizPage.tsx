@@ -23,6 +23,7 @@ import {
 } from '@/lib/mdb-quiz';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionPath, editionSurface } from '@/edition/surface';
+import { appHas } from '@/app-entry/app-routes';
 import { ArrowIcon, GrowBar, PartyPill, RatioBars } from './shared';
 import { partyStyle } from './party-style';
 import { QuizSkeleton } from '@/components/skeletons/PageSkeletons';
@@ -117,7 +118,7 @@ function FinalTable({ quiz }: { quiz: MdbQuiz }) {
   );
 }
 
-function Quiz({ quiz, name, party, profileUrl }: { quiz: MdbQuiz; name: string; party: string; profileUrl: string }) {
+function Quiz({ quiz, name, party, profileUrl, toList }: { quiz: MdbQuiz; name: string; party: string; profileUrl: string; toList: boolean }) {
   const reduce = useReducedMotion();
   const [step, setStep] = useState(0);
   const [outcomes, setOutcomes] = useState<Outcome[]>([]);
@@ -179,7 +180,7 @@ function Quiz({ quiz, name, party, profileUrl }: { quiz: MdbQuiz; name: string; 
           </div>
           <div className="mpq__name"><PartyPill party={party} />{name} · Signature Words</div>
         </div>
-        <Link to={profileUrl} className="mpq__close" aria-label={`Quiz beenden, zurück zum Profil von ${name}`}>
+        <Link to={profileUrl} className="mpq__close" aria-label={toList ? 'Quiz beenden, zurück zur Abgeordneten-Liste' : `Quiz beenden, zurück zum Profil von ${name}`}>
           <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round"><path d="M6 6l12 12M18 6 6 18" /></svg>
         </Link>
       </div>
@@ -225,7 +226,7 @@ function Quiz({ quiz, name, party, profileUrl }: { quiz: MdbQuiz; name: string; 
             <motion.div variants={ENTER.rise} className="mpq-actions">
               <button type="button" className="mp-btn mp-btn--pink mp-btn--lg" onClick={restart}>Nochmal spielen</button>
               <button type="button" className="mp-btn mp-btn--ghost mp-btn--lg" onClick={() => void shareResult()}>Ergebnis teilen</button>
-              <Link to={profileUrl} className="mp-btn mp-btn--lg text-white">Zum Profil<ArrowIcon /></Link>
+              <Link to={profileUrl} className="mp-btn mp-btn--lg text-white">{toList ? 'Zur Abgeordneten-Liste' : 'Zum Profil'}<ArrowIcon /></Link>
               <span role="status" className="sr-only">{shareNote}</span>
             </motion.div>
           </>
@@ -263,7 +264,8 @@ export function MdbQuizPage() {
   const { slug = '' } = useParams<{ slug: string }>();
   const { data: speaker, isLoading, error } = useSpeakerData(slug);
   const quiz = useMemo(() => (speaker ? buildMdbQuiz(speaker) : null), [speaker]);
-  const profileUrl = editionPath(surface, `abgeordnete/${slug}`);
+  const toList = !appHas(editionPath(surface, `abgeordnete/${slug}`));
+  const profileUrl = toList ? editionPath(surface, 'abgeordnete') : editionPath(surface, `abgeordnete/${slug}`);
 
   if (isLoading) {
     return <QuizSkeleton />;
@@ -275,7 +277,7 @@ export function MdbQuizPage() {
         <div role="alert" className="flex flex-col items-start gap-4">
           <p className="mp-h2">{speaker ? 'Für dieses Profil gibt es noch kein Quiz' : 'Profil nicht gefunden'}</p>
           <p className="mp-muted m-0">{speaker ? 'Dafür braucht es mindestens zwei Signaturwörter mit Vergleichswerten.' : error?.message}</p>
-          <Link to={speaker ? profileUrl : editionPath(surface, 'abgeordnete')} className="mp-link">{speaker ? 'Zum Profil' : 'Zur Abgeordneten-Suche'}</Link>
+          <Link to={speaker ? profileUrl : editionPath(surface, 'abgeordnete')} className="mp-link">{speaker ? (toList ? 'Zur Abgeordneten-Liste' : 'Zum Profil') : 'Zur Abgeordneten-Suche'}</Link>
         </div>
       </div>
     );
@@ -290,7 +292,7 @@ export function MdbQuizPage() {
         canonicalUrl={editionPath(surface, `abgeordnete/${speaker.slug}/quiz`)}
       />
       <div className="mp-page mpq" style={partyStyle(speaker.party)}>
-        <Quiz quiz={quiz} name={quiz.firstName} party={speaker.party} profileUrl={profileUrl} />
+        <Quiz quiz={quiz} name={quiz.firstName} party={speaker.party} profileUrl={profileUrl} toList={toList} />
       </div>
     </>
   );
