@@ -8,6 +8,7 @@ import { SEO } from '@/components/seo/SEO';
 import { SITE_CONFIG } from '@/components/seo/constants';
 import { themeMusic, getThemeForSlide } from '@/lib/theme-music';
 import { whenTrulyIdle } from '@/lib/when-idle';
+import { loadErrorMessage } from '@/edition/loader';
 import { dismissBootCover } from '@/cover/shell';
 import { clearWrappedProgress } from '@/lib/wrapped-storage';
 import { useOptionalEdition } from '@/edition/EditionProvider';
@@ -155,7 +156,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
   const shareData = useSlideShareData(isShareable ? currentSection : 'intro');
 
   // A failed load must not stay hidden behind the boot cover.
-  useEffect(() => { if (error) dismissBootCover(); }, [error]);
+  useEffect(() => { if (error) { console.error(error); dismissBootCover(); } }, [error]);
   // Restoring to a later slide: the cover slide stays hidden (its effects do
   // not run), so the boot cover would never be adopted. Drop it instead.
   // A #slideId link lands on a later slide without `initialSection`, so the
@@ -174,7 +175,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
         <div className="text-center">
           <div className="text-6xl mb-4">⚠️</div>
           <p className="text-red-400 mb-2">Fehler beim Laden</p>
-          <p className="text-on-muted text-sm">{error?.message}</p>
+          <p className="text-on-muted text-sm">{loadErrorMessage(error)}</p>
         </div>
       </div>
     );
