@@ -8,7 +8,7 @@ import { SEO } from '@/components/seo/SEO';
 import { SITE_CONFIG } from '@/components/seo/constants';
 import { themeMusic, getThemeForSlide } from '@/lib/theme-music';
 import { whenTrulyIdle } from '@/lib/when-idle';
-import { loadErrorMessage } from '@/edition/loader';
+import { LoadErrorPage } from '@/components/LoadErrorPage';
 import { dismissBootCover } from '@/cover/shell';
 import { clearWrappedProgress } from '@/lib/wrapped-storage';
 import { useOptionalEdition } from '@/edition/EditionProvider';
@@ -38,7 +38,8 @@ interface MainWrappedPageProps {
 }
 
 export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWrappedPageProps) {
-  const surface = editionSurface(useOptionalEdition());
+  const edition = useOptionalEdition();
+  const surface = editionSurface(edition);
   // React Query fetches data and syncs to wrappedStore
   // Slides use store selectors directly, not data prop
   const { isLoading: loading, error, data } = useWrappedData();
@@ -170,15 +171,7 @@ export function MainWrappedPage({ isMenuOpen, onMenuToggle, onRestart }: MainWra
   }
 
   if (error || !data) {
-    return (
-      <div className="min-h-screen page-bg flex items-center justify-center pt-14">
-        <div className="text-center">
-          <div className="text-6xl mb-4">⚠️</div>
-          <p className="text-red-400 mb-2">Fehler beim Laden</p>
-          <p className="text-on-muted text-sm">{loadErrorMessage(error)}</p>
-        </div>
-      </div>
-    );
+    return <LoadErrorPage error={error} onRetry={edition?.retry} />;
   }
 
 
