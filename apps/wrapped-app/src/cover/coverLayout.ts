@@ -1,4 +1,4 @@
-/** The CSS layout of cover.css, evaluated for a window (1rem = 16). Safe-area insets add to top/bottom padding. */
+/** The CSS layout of cover.css, evaluated for a window (1rem = 16). Safe-area insets add to top/bottom padding and to the planet top. */
 
 const clamp = (min: number, value: number, max: number) => Math.min(max, Math.max(min, value));
 
@@ -35,6 +35,6 @@ export function coverLayout(window: { width: number; height: number }, insets: {
     gapTitleButton: clamp(36, H * 0.06, 64),
     titleSize: clamp(40, Math.min(W * 0.13, H * 0.11), 112),
     button: narrow ? { height: 56, paddingX: 28, fontSize: 18 } : { height: 64, paddingX: 34, fontSize: 20 },
-    planet: { size: clamp(52, W * 0.06, 96), left: clamp(28, W * 0.05, 80), top: clamp(24, H * 0.04, 48) },
+    planet: { size: clamp(52, W * 0.06, 96), left: clamp(28, W * 0.05, 80), top: clamp(24, H * 0.04, 48) + insets.top },
   };
 }

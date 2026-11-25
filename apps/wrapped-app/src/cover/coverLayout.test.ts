@@ -51,4 +51,9 @@ describe('coverLayout', () => {
     expect(l.padding.top).toBeCloseTo(79, 1);
     expect(l.padding.bottom).toBeCloseTo(58, 1);
   });
+  it('keeps the planet below the status bar: its top adds the top inset', () => {
+    const l = coverLayout({ width: 402, height: 874 }, { top: 59, bottom: 34 });
+    expect(l.planet.top).toBeCloseTo(34.96 + 59, 2);
+    expect(l.planet.left).toBe(28);
+  });
 });
