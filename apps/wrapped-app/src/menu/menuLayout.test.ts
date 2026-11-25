@@ -83,6 +83,8 @@ describe('hyphenateTitle', () => {
   const tile = (width: number, index: number) => ({ width: titleBoxWidth(width, { tile: true }, index), size: tileTitleSize(width), advance: TITLE_ADVANCE.tile });
   it('hyphenates a word that cannot fit the half tile (PERFECT on a phone)', () => {
     expect(hyphenateTitle('Perfect Match', wide(402, 2))).toBe(`Per${SHY}fect Match`);
+    // iPhone 17 Pro Max: the estimate said it fits, the device broke it as "PERFEC / T".
+    expect(hyphenateTitle('Perfect Match', wide(440, 2))).toBe(`Per${SHY}fect Match`);
   });
   it('leaves words that fit alone: wide cards wrap between words', () => {
     expect(hyphenateTitle('Bundestag Wrapped', wide(402, 0))).toBe('Bundestag Wrapped');

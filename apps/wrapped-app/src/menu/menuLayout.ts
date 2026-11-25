@@ -51,6 +51,9 @@ function softBreak(word: string): string {
 /** Measured on device (iPad, drawer 448): average advance incl. letter-spacing, in em, per title font. */
 export const TITLE_ADVANCE = { wide: 0.82, tile: 0.85 } as const;
 
+/** The advance is an average; wide glyph runs ("PERFECT" on a 440 pt phone) come out wider. A word counts as fitting only below this share of the box. */
+const FIT_SHARE = 0.85;
+
 const DRAWER_PADDING_X = 22;
 const GRID_GAP = 12;
 
@@ -69,5 +72,5 @@ export function titleBoxWidth(screenWidth: number, entry: { tile: boolean }, ind
 export function hyphenateTitle(title: string, box: { width: number; size: number; advance: number }): string {
   return title
     .replace(/\u00ad/g, '')
-    .replace(LONG_WORD, word => (word.length * box.size * box.advance > box.width ? softBreak(word) : word));
+    .replace(LONG_WORD, word => (word.length * box.size * box.advance > box.width * FIT_SHARE ? softBreak(word) : word));
 }
