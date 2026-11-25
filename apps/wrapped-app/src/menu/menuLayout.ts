@@ -48,8 +48,26 @@ function softBreak(word: string): string {
   return best === -1 ? word : `${word.slice(0, best)}\u00ad${word.slice(best)}`;
 }
 
+/** Measured on device (iPad, drawer 448): average advance incl. letter-spacing, in em, per title font. */
+export const TITLE_ADVANCE = { wide: 0.82, tile: 0.85 } as const;
+
+const DRAWER_PADDING_X = 22;
+const GRID_GAP = 12;
+
+/** Width the title text can use: full drawer content for the lead cards, one grid column otherwise (index >= 2), minus the card padding. */
+export function titleBoxWidth(screenWidth: number, entry: { tile: boolean }, index: number): number {
+  const content = drawerWidth(screenWidth) - 2 * DRAWER_PADDING_X;
+  const column = index >= 2 ? (content - GRID_GAP) / 2 : content;
+  return column - 2 * (entry.tile ? 18 : 22);
+}
+
 /**
- * iOS has no automatic hyphenation: without a soft hyphen a long word in a half-width tile breaks
- * mid-word ("PERFEC / T"). The web title stays untouched; this only affects the native text.
+ * iOS has no automatic hyphenation: a word wider than its box breaks mid-word ("PERFEC / T"). So a soft hyphen goes only
+ * into words that cannot fit the box at all; words that fit stay whole and wrap between words. Manual soft hyphens
+ * from the web title are dropped first, the decision is made here. The web title stays untouched.
  */
-export const hyphenateTitle = (title: string) => title.replace(LONG_WORD, softBreak);
+export function hyphenateTitle(title: string, box: { width: number; size: number; advance: number }): string {
+  return title
+    .replace(/\u00ad/g, '')
+    .replace(LONG_WORD, word => (word.length * box.size * box.advance > box.width ? softBreak(word) : word));
+}

@@ -455,7 +455,7 @@ button, a, input, select, textarea { touch-action: manipulation; }
 button { -webkit-user-select: none; user-select: none; }
 button[aria-label], button:has(> svg) { min-width: 44px; min-height: 44px; }
 input:not([type="checkbox"]), select, textarea { font-size: max(1rem, 16px); }
-header.fixed { padding-top: env(safe-area-inset-top, 0px); }
+header.fixed { padding-top: env(safe-area-inset-top, 0px); height: calc(4rem + env(safe-area-inset-top, 0px)); }
 header.fixed img { max-width: 100%; object-fit: contain; }
 header.fixed a { min-width: 0; }
 header.fixed > div > div { flex-shrink: 0; }

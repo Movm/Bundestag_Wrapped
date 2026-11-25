@@ -38,7 +38,7 @@ export function RankStep({ order, onChange, onDone }: { order: string[]; onChang
     <div className="pm-rank">
       <motion.div variants={ENTER.rise} className="pm-rank__intro">
         <h1 className="pm__title">Wer steht dir am nächsten?</h1>
-        <p className="pm__hint">Zieh die Fraktionen in deine Reihenfolge. Mit der Tastatur: Karte fokussieren, dann Pfeil hoch oder runter.</p>
+        <p className="pm__hint">Zieh die Fraktionen in deine Reihenfolge.<span className="pm__kbd"> Mit der Tastatur: Karte fokussieren, dann Pfeil hoch oder runter.</span></p>
         <button type="button" className="mp-btn mp-btn--pink mp-btn--lg" onClick={onDone}>Passt so<ArrowIcon /></button>
       </motion.div>
       <motion.div variants={ENTER.slide}>

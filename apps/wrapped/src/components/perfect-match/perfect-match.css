@@ -9,7 +9,7 @@
  */
 .pm {
   display: flex; flex-direction: column; overflow: hidden;
-  padding: 5rem var(--mp-pad-right) max(1.5rem, env(safe-area-inset-bottom, 0px)) var(--mp-pad-left);
+  padding: calc(5rem + env(safe-area-inset-top, 0px)) var(--mp-pad-right) max(1.5rem, env(safe-area-inset-bottom, 0px)) var(--mp-pad-left);
 }
 .pm::before { content: ''; position: absolute; width: 56vw; max-width: 50rem; aspect-ratio: 1; border-radius: 50%; top: -24vw; right: -16vw; background: #2a1550; }
 .pm::after { content: ''; position: absolute; width: 22vw; max-width: 20rem; aspect-ratio: 1; background: var(--color-wr-pink); bottom: -9vw; left: -6vw; transform: rotate(18deg); }
@@ -147,3 +147,8 @@
 
 .pm-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .pm__stage:focus { outline: none; }
+
+/* Keyboard hint is meaningless on touch: visually hidden there, still read by screen readers. */
+@media (pointer: coarse) {
+  .pm__kbd { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}

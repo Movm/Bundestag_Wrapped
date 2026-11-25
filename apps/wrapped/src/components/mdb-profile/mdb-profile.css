@@ -51,7 +51,7 @@
 .mp-top {
   position: relative; z-index: 3;
   display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.75rem 1rem;
-  padding: 5rem var(--mp-pad-right) 0 var(--mp-pad-left);
+  padding: calc(5rem + env(safe-area-inset-top, 0px)) var(--mp-pad-right) 0 var(--mp-pad-left);
 }
 .mp-back { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; font-weight: 700; color: #fff; text-decoration: none; }
 .mp-back:hover { color: var(--color-wr-pink); }
@@ -252,7 +252,7 @@ a.mp-vote:hover .mp-vote__title { text-decoration: underline; }
 /* ── Quiz page ─────────────────────────────────────────────────── */
 .mpq {
   display: flex; flex-direction: column; overflow: hidden;
-  padding: 5rem var(--mp-pad-right) max(1.5rem, env(safe-area-inset-bottom, 0px)) var(--mp-pad-left);
+  padding: calc(5rem + env(safe-area-inset-top, 0px)) var(--mp-pad-right) max(1.5rem, env(safe-area-inset-bottom, 0px)) var(--mp-pad-left);
 }
 .mpq::before { content: ''; position: absolute; width: 56vw; max-width: 50rem; aspect-ratio: 1; border-radius: 50%; top: -24vw; right: -16vw; background: color-mix(in srgb, var(--mp-party) 24%, var(--color-wr-ink)); }
 .mpq::after { content: ''; position: absolute; width: 22vw; max-width: 20rem; aspect-ratio: 1; background: var(--color-wr-violet); bottom: -9vw; left: -6vw; transform: rotate(18deg); }

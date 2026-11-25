@@ -73,9 +73,30 @@ describe('NativeMenu', () => {
     expect(active.props.accessibilityState?.selected).toBeFalsy();
   });
 
-  it('gives the wide Perfect Match card a soft hyphen so it never breaks mid-word', async () => {
-    const title = texts(await render(state)).find(t => t.replace(/­/g, '') === 'Perfect Match');
-    expect(title).toBe('Per­fect Match');
+  const fullState: MenuState = {
+    ...state,
+    entries: [
+      state.entries[0],
+      state.entries[1],
+      { ...state.entries[2], tile: false },
+      state.entries[3],
+    ],
+  };
+  const atWidth = (width: number) => jest.spyOn(require('react-native'), 'useWindowDimensions').mockReturnValue({ width, height: 900, scale: 3, fontScale: 1 });
+
+  it.each([402, 768])('wraps Wrapped between words, no soft hyphen (%i pt)', async width => {
+    atWidth(width);
+    const t = texts(await render(fullState));
+    expect(t).toContain('Bundestag Wrapped');
+    expect(t).toContain('Abgeordnete-Wrapped');
+    jest.restoreAllMocks();
+  });
+
+  it('hyphenates PERFECT in the half tile when it cannot fit (phone)', async () => {
+    atWidth(402);
+    const title = texts(await render(fullState)).find(t => t.replace(/\u00ad/g, '') === 'Perfect Match');
+    expect(title).toBe('Per\u00adfect Match');
+    jest.restoreAllMocks();
   });
 
   it('hides the restart pill without canRestart', async () => {
