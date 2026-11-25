@@ -1,4 +1,4 @@
-import { type CoverEffect, type CoverEvent, type CoverState, initialCoverState, reduce } from './coverMachine';
+import { CONFIRM_TIMEOUT, type CoverEffect, type CoverEvent, type CoverState, initialCoverState, reduce } from './coverMachine';
 import { COVER_TIMING } from './coverMath';
 
 /** Feeds events in order and collects every effect, like the hook does. */
@@ -69,16 +69,16 @@ describe('coverMachine', () => {
     expect(r.state.phase).toEqual({ name: 'hidden' });
   });
 
-  it('no confirmation within 3000 ms after story.start still fades out', () => {
+  it('no confirmation within 3000 ms after story.start resends instead of fading out', () => {
     let r = run(fresh(), [[visible(), 0], [press, 0], [tick, COVER_TIMING.exitDone]]);
     expect(r.effects).toContain('sendStoryStart');
     r = run(r.state, [[tick, COVER_TIMING.exitDone + 2999]]);
     expect(r.effects).toEqual([]);
     r = run(r.state, [[tick, COVER_TIMING.exitDone + 3000]]);
-    expect(r.effects).toEqual(['fadeOut']);
-    expect(r.state.phase.name).toBe('hidden');
-    // A late confirmation changes nothing.
-    expect(run(r.state, [[gone, 6000]]).effects).toEqual([]);
+    expect(r.effects).toEqual(['sendStoryStart']);
+    expect(r.state.phase.name).toBe('handingOver');
+    // The confirmation of the resend hides the cover.
+    expect(run(r.state, [[gone, 6000]]).effects).toEqual(['fadeOut']);
   });
 
   it('no web message at all: fades out after 12 000 ms', () => {
@@ -124,7 +124,7 @@ describe('coverMachine', () => {
     expect(r.state.phase).toMatchObject({ name: 'handingOver', since: 60_000 });
     // The confirmation window starts at the hand-over, not at the press.
     expect(run(r.state, [[tick, 60_100]]).effects).toEqual([]);
-    expect(run(r.state, [[tick, 63_000]]).effects).toEqual(['fadeOut']);
+    expect(run(r.state, [[tick, 63_000]]).effects).toEqual(['sendStoryStart']);
   });
 
   it('reduced motion: press sends story.start at once', () => {
@@ -143,5 +143,39 @@ describe('coverMachine', () => {
     expect(r.state.year).toBeNull();
     r = run(r.state, [[visible(2026), 10]]);
     expect(r.state.year).toBe(2026);
+  });
+  describe('a lost story.start (web still reports its cover as visible)', () => {
+    const sent = () => run(fresh(), [[visible(), 0], [press, 100], [tick, 100 + COVER_TIMING.exitDone]]);
+
+    it('does not hide at the confirm timeout: resends once', () => {
+      const s = sent();
+      expect(count(s.effects, 'sendStoryStart')).toBe(1);
+      const t = 100 + COVER_TIMING.exitDone;
+      const r = run(s.state, [[tick, t + CONFIRM_TIMEOUT]]);
+      expect(r.state.phase).toMatchObject({ name: 'handingOver', resent: true, since: t + CONFIRM_TIMEOUT });
+      expect(count(r.effects, 'sendStoryStart')).toBe(1);
+      expect(r.effects).not.toContain('fadeOut');
+    });
+
+    it('a second silent timeout brings the cover back instead of hiding', () => {
+      const t = 100 + COVER_TIMING.exitDone;
+      const r = run(sent().state, [[tick, t + CONFIRM_TIMEOUT], [tick, t + 2 * CONFIRM_TIMEOUT]]);
+      expect(r.state.phase).toEqual({ name: 'showing' });
+      expect(r.state.webReady).toBe(true);
+      expect(r.effects).toContain('startAssembly');
+      expect(r.effects).not.toContain('fadeOut');
+    });
+
+    it('the resend is answered: the web leaves its cover and the cover hides', () => {
+      const t = 100 + COVER_TIMING.exitDone;
+      const r = run(sent().state, [[tick, t + CONFIRM_TIMEOUT], [gone, t + CONFIRM_TIMEOUT + 200]]);
+      expect(r.state.phase.name).toBe('hidden');
+    });
+
+    it('still hides at the timeout when the web has left its cover (visible: false was lost)', () => {
+      const t = 100 + COVER_TIMING.exitDone;
+      const r = run(fresh(), [[visible(), 0], [press, 100], [tick, t], [{ ...gone }, t + 10]]);
+      expect(r.state.phase.name).toBe('hidden');
+    });
   });
 });

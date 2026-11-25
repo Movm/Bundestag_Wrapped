@@ -7,6 +7,8 @@ import { COVER_TIMING } from './coverMath';
 
 /** After `story.start`, the web confirms by reporting `visible: false`; without it the cover goes anyway. */
 export const CONFIRM_TIMEOUT = 3000;
+// If the web still reports its cover as visible at that point, `story.start` was lost: it is resent once,
+// and when that goes unanswered too the cover comes back (never "no cover, web still on its blank intro").
 /** Without any web message (no cover in the web: error page, offline, deep link), the cover goes after this. */
 export const NO_WEB_TIMEOUT = 12_000;
 /** Once "Los geht's" was pressed and `story.start` is still unsent, the pink screen waits this long for the web. */
@@ -17,7 +19,7 @@ export type CoverPhase =
   /** The wipe runs, from the press at `since`. */
   | { name: 'exiting'; since: number }
   /** The screen is pink. `since` is the moment `story.start` went out (or the wipe ended, while waiting for the web). */
-  | { name: 'handingOver'; since: number; storyStartSent: boolean }
+  | { name: 'handingOver'; since: number; storyStartSent: boolean; resent: boolean }
   | { name: 'hidden' };
 
 export interface CoverState {
@@ -26,6 +28,8 @@ export interface CoverState {
   webReady: boolean;
   /** Any `web.cover` arrived; switches off the 12 s (30 s after a press) fallback. */
   webSeen: boolean;
+  /** The web's last report: its cover slide is (still) on screen. */
+  webVisible: boolean;
   year: number | null;
   muted: boolean;
   /** Fixed at creation (the OS setting). */
@@ -43,7 +47,7 @@ export type CoverEvent =
 export type CoverEffect = 'playStartSound' | 'haptic' | 'sendStoryStart' | 'fadeOut' | 'startAssembly';
 
 export function initialCoverState({ reducedMotion }: { reducedMotion: boolean }): CoverState {
-  return { phase: { name: 'showing' }, webReady: false, webSeen: false, year: null, muted: false, reducedMotion, startedAt: null };
+  return { phase: { name: 'showing' }, webReady: false, webSeen: false, webVisible: false, year: null, muted: false, reducedMotion, startedAt: null };
 }
 
 type Result = { state: CoverState; effects: CoverEffect[] };
@@ -55,7 +59,7 @@ const hide = (state: CoverState, effects: CoverEffect[]): Result =>
 function handOver(state: CoverState, now: number, effects: CoverEffect[]): Result {
   const sent = state.webReady;
   return {
-    state: { ...state, phase: { name: 'handingOver', since: now, storyStartSent: sent } },
+    state: { ...state, phase: { name: 'handingOver', since: now, storyStartSent: sent, resent: false } },
     effects: sent ? [...effects, 'sendStoryStart'] : effects,
   };
 }
@@ -66,7 +70,16 @@ function advance(state: CoverState, now: number): Result {
   const { phase } = result.state;
   if (phase.name === 'exiting' && now - phase.since >= COVER_TIMING.exitDone) result = handOver(result.state, now, []);
   const after = result.state.phase;
-  if (after.name === 'handingOver' && after.storyStartSent && now - after.since >= CONFIRM_TIMEOUT) return hide(result.state, result.effects);
+  if (after.name === 'handingOver' && after.storyStartSent && now - after.since >= CONFIRM_TIMEOUT) {
+    // The web never left its cover slide: `story.start` got lost. Never hide over that.
+    if (result.state.webVisible && !after.resent) {
+      return { state: { ...result.state, phase: { ...after, since: now, resent: true } }, effects: [...result.effects, 'sendStoryStart'] };
+    }
+    if (result.state.webVisible) {
+      return { state: { ...result.state, phase: { name: 'showing' } }, effects: [...result.effects, 'startAssembly'] };
+    }
+    return hide(result.state, result.effects);
+  }
   const pressWaiting = after.name === 'exiting' || (after.name === 'handingOver' && !after.storyStartSent);
   const noWebTimeout = pressWaiting ? NO_WEB_TIMEOUT_AFTER_PRESS : NO_WEB_TIMEOUT;
   if (after.name !== 'hidden' && !result.state.webSeen && now - (result.state.startedAt ?? now) >= noWebTimeout) return hide(result.state, result.effects);
@@ -74,7 +87,7 @@ function advance(state: CoverState, now: number): Result {
 }
 
 function onWebCover(state: CoverState, event: Extract<CoverEvent, { type: 'web.cover' }>, now: number, effects: CoverEffect[]): Result {
-  const next: CoverState = { ...state, webSeen: true, year: event.year, muted: event.muted ?? false };
+  const next: CoverState = { ...state, webSeen: true, webVisible: event.visible, year: event.year, muted: event.muted ?? false };
   const { phase } = state;
   if (!event.visible) {
     // Showing: the web has no cover (or left it) → go without a wipe. Exiting: same.

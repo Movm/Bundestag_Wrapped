@@ -67,6 +67,10 @@ export function useCoverBridge(receive: (message: NativeToWeb) => void) {
   }, [dispatch]);
 
   const onWebCover = useCallback((m: Extract<WebToNative, { type: 'cover' }>) => {
+    // The page is remote code: a malformed or foreign message is dropped, never reduced.
+    if (typeof m !== 'object' || m === null || m.type !== 'cover' || typeof m.visible !== 'boolean') return;
+    if (m.year !== null && typeof m.year !== 'number') return;
+    if (m.muted !== undefined && typeof m.muted !== 'boolean') return;
     dispatch({ type: 'web.cover', visible: m.visible, year: m.year, muted: m.muted });
   }, [dispatch]);
   const press = useCallback(() => dispatch({ type: 'press' }), [dispatch]);
