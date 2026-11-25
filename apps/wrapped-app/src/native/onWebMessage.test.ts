@@ -27,9 +27,32 @@ describe('web message handler', () => {
     expect(WebBrowser.openBrowserAsync).not.toHaveBeenCalled();
   });
 
+  it('passes cover reports to the native cover', async () => {
+    const cover = jest.fn();
+    const message = { type: 'cover', visible: true, year: 2026, muted: false } as const;
+    await createWebMessageHandler(jest.fn(), undefined, cover)(message);
+    expect(cover).toHaveBeenCalledWith(message);
+  });
+
   it('ignores unknown message types', async () => {
     const receive = jest.fn();
     await expect(createWebMessageHandler(receive)({ type: 'from-the-future' } as never)).resolves.toBeUndefined();
     expect(receive).not.toHaveBeenCalled();
+  });
+
+  it('routes menu.open to openMenu', async () => {
+    const openMenu = jest.fn();
+    const message = { type: 'menu.open' as const, entries: [], canRestart: false };
+    await createWebMessageHandler(jest.fn(), openMenu)(message);
+    expect(openMenu).toHaveBeenCalledWith(message);
+  });
+
+  it('ignores malformed messages without throwing', async () => {
+    const receive = jest.fn();
+    const openMenu = jest.fn();
+    const handle = createWebMessageHandler(receive, openMenu);
+    for (const m of [null, 'menu.open', 42]) await expect(handle(m as never)).resolves.toBeUndefined();
+    expect(receive).not.toHaveBeenCalled();
+    expect(openMenu).not.toHaveBeenCalled();
   });
 });

@@ -4,11 +4,9 @@ import { Component, useEffect, type ReactNode, type Ref } from 'react';
 import { useDOMImperativeHandle, type DOMImperativeFactory, type DOMProps } from 'expo/dom';
 import './dom-shell.css';
 import '../../../wrapped/src/index.css';
-import '../../../wrapped/src/cover/cover.css';
 import './dom-fonts.css';
 import WrappedAppRoot from '../../../wrapped/src/app-entry/WrappedAppRoot';
 import { isAppRoute } from '../../../wrapped/src/app-entry/app-routes';
-import { createCover } from '../../../wrapped/src/cover/cover';
 import { installNativeShell, onNativeMessage, setNativeShellInfo } from '../../../wrapped/src/lib/native-shell';
 import { NATIVE_PROTOCOL, type NativeToWeb, type WebToNative } from '../../../wrapped/src/shared/native-bridge/protocol';
 import { interceptLinks, polyfillShare, reportCrashes, setDocumentLanguage } from './domShell';
@@ -23,10 +21,6 @@ interface Props {
   ref: Ref<WrappedDomHandle>;
   dom?: DOMProps;
 }
-
-// H12: the cover boot script is inlined by Vite in the browser; here the entry provides the factory.
-// Goes away once Plan 03 renders the cover natively.
-window.__btCreateCover = createCover;
 
 let post: (message: WebToNative) => void = () => {};
 const send = (message: WebToNative) => post(message);
