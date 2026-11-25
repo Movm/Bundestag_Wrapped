@@ -9,7 +9,7 @@ import { useDebounce } from '@/hooks/useSearchState';
 import { PARTY_BG_CLASSES } from '@/lib/party-colors';
 import { useOptionalEdition } from '@/edition/EditionProvider';
 import { editionPath, editionSurface } from '@/edition/surface';
-import { appHas } from '@/app-entry/app-routes';
+import { appHas } from '@/edition/registry';
 import { AbgeordneteSkeleton } from './skeletons/PageSkeletons';
 
 const MotionLink = motion.create(Link);
