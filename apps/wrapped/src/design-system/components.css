@@ -179,8 +179,13 @@
 
 /* ─── Blocks / data ────────────────────────────────────────────────── */
 .ds-block { border-radius: clamp(1.25rem, 1rem + 1vw, 1.75rem); background: var(--surface-bg); color: var(--surface-on); }
-/* Moment of the year: the whale on the section opener. */
-.ds-mention-whale { width: min(26rem, 70%); height: auto; align-self: flex-end; margin-top: auto; }
+/* Moment of the year: the illustration on the section opener (whale, palms). */
+.ds-mention-art { width: min(26rem, 70%); height: auto; align-self: flex-end; margin-top: auto; }
+/* Mention reveal: each rank card with the sentence the MP said it in. */
+.ds-mention-speaker { display: flex; flex-direction: column; gap: 0.5rem; }
+.ds-mention-speaker:nth-child(2) .ds-mention-quote { margin-left: clamp(0rem, 4vw - 1.5rem, 4rem); }
+.ds-mention-speaker:nth-child(n + 3) .ds-mention-quote { margin-left: clamp(0rem, 8vw - 3rem, 8rem); }
+.ds-mention-quote { margin: 0; max-width: 50rem; padding-inline: clamp(1.125rem, 0.75rem + 2vw, 2.5rem); font-weight: 600; font-size: clamp(1rem, 0.9rem + 0.45vw, 1.3125rem); line-height: 1.35; color: var(--surface-on-muted); text-wrap: pretty; }
 .ds-genz-words { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 3vw, 2.5rem); }
 .ds-genz-label { font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--surface-on-muted); }
 .ds-genz-dots { width: min(34rem, 100%); height: auto; margin-top: auto; }

@@ -306,8 +306,8 @@ describe('Jugendwort speaker question', () => {
 });
 
 describe('edition quiz configuration', () => {
-  it('runs the 2026 edition as topic riser, signature words, youth language, the chancellor, the moment of the year, Gen Z and Männer gegen Frauen', () => {
-    expect(quiz2026.groups.map(group => group.id)).toEqual(['quiz-topic-riser', 'quiz-signature', 'quiz-youth-language', 'quiz-chancellor', 'quiz-mention', 'quiz-genz', 'quiz-gender-word', 'quiz-gender-topic']);
+  it('runs the 2026 edition as topic riser, signature words, youth language, the chancellor, the moment of the year, GTA 6, Gen Z and Männer gegen Frauen', () => {
+    expect(quiz2026.groups.map(group => group.id)).toEqual(['quiz-topic-riser', 'quiz-signature', 'quiz-youth-language', 'quiz-chancellor', 'quiz-mention', 'quiz-gta', 'quiz-genz', 'quiz-gender-word', 'quiz-gender-topic']);
   });
 
   it('asks the gender duels as Männer or Frauen with the real split', () => {
@@ -411,5 +411,34 @@ describe('edition quiz configuration', () => {
     expect(quiz?.options).toHaveLength(4);
     const tie = speakers.map(speaker => ({ ...speaker, count: 1 }));
     expect(buildEditionQuizModel({ ...base, mentions: [{ id: 'timmy', label: 'Timmy', count: 4, speakers: tie }] })['quiz-mention']).toBeUndefined();
+  });
+
+  it('asks about GTA by mention id and fills the options with prominent MPs who never mentioned it', () => {
+    const base = fixture('Europa', 'Partei A') as WrappedData;
+    const gta = {
+      id: 'gta-6', label: 'GTA', count: 3, speakers: [
+        { name: 'Anne-Mieke Bremer', party: 'DIE LINKE', count: 2, date: '2026-11-24', quote: 'q' },
+        { name: 'Sergej Minich', party: 'AfD', count: 1, date: '2026-11-24', quote: 'q' },
+      ],
+    };
+    const prominent = [
+      { name: 'Anne-Mieke Bremer', party: 'DIE LINKE', totalWords: 9, speeches: 1 },
+      { name: 'Alice Weidel', party: 'AfD', totalWords: 8, speeches: 1 },
+      { name: 'Friedrich Merz', party: 'CDU/CSU', totalWords: 7, speeches: 1 },
+      { name: 'Jens Spahn', party: 'CDU/CSU', totalWords: 6, speeches: 1 },
+      { name: 'Lars Klingbeil', party: 'SPD', totalWords: 5, speeches: 1 },
+    ];
+    const model = buildEditionQuizModel({ ...base, topSpeakersByWords: prominent, mentions: [gta] } as unknown as WrappedData);
+    expect(model['quiz-mention']).toBeUndefined();
+    const quiz = model['quiz-gta'];
+    expect(quiz?.question).toBe('Wer hat GTA im Plenum am häufigsten erwähnt?');
+    expect(quiz?.correctAnswer).toBe('Anne-Mieke Bremer (DIE LINKE)');
+    expect(quiz?.options).toEqual(['Anne-Mieke Bremer (DIE LINKE)', 'Sergej Minich (AfD)', 'Friedrich Merz (CDU/CSU)', 'Lars Klingbeil (SPD)']);
+    expect(quiz?.explanation).toBe('Anne-Mieke Bremer erwähnte GTA zweimal. Bei allen anderen, die den Namen nannten, blieb es bei einem Mal.');
+
+    const alone = buildEditionQuizModel({ ...base, topSpeakersByWords: prominent, mentions: [{ ...gta, count: 2, speakers: [gta.speakers[0]] }] } as unknown as WrappedData)['quiz-gta'];
+    expect(alone?.question).toBe('Wer hat GTA im Plenum erwähnt?');
+    expect(alone?.explanation).toBe('Anne-Mieke Bremer erwähnte GTA zweimal. Sonst nannte niemand den Namen im Plenum.');
+    expect(alone?.options).toHaveLength(4);
   });
 });

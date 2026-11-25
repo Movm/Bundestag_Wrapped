@@ -6,7 +6,7 @@ export const QUIZ_SLIDES = [
   'quiz-topic-riser', 'quiz-word-riser', 'quiz-youth-language',
   'quiz-topics', 'quiz-signature', 'quiz-speeches', 'quiz-drama',
   'quiz-discriminatory', 'quiz-common-words', 'quiz-moin',
-  'quiz-tone', 'quiz-gender', 'quiz-mention', 'quiz-genz', 'quiz-chancellor',
+  'quiz-tone', 'quiz-gender', 'quiz-mention', 'quiz-gta', 'quiz-genz', 'quiz-chancellor',
   'quiz-gender-word', 'quiz-gender-topic',
 ] as const;
 
@@ -50,6 +50,8 @@ const STORY_TEMPLATE: readonly (SlideType | StoryGroup)[] = [
   },
   // Moment of the year (e.g. Timmy der Wal), from the edition's mentions.
   { quiz: 'quiz-mention', slides: ['intro-mention', 'quiz-mention', 'info-mention'] },
+  // The GTA 6 release (2026), from the edition's mentions: who said it, then the story behind it.
+  { quiz: 'quiz-gta', slides: ['intro-gta', 'quiz-gta', 'reveal-gta', 'info-gta'] },
   // Gen Z MPs against older MPs, from the edition's generations section.
   GENZ_GROUP,
   // Männer gegen Frauen: two duels, from the edition's gender check.

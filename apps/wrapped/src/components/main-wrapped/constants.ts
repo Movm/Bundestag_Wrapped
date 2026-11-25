@@ -75,6 +75,11 @@ export const SLIDES = [
   'intro-mention',
   'quiz-mention',
   'info-mention',
+  // The GTA 6 release, from the edition's mentions
+  'intro-gta',
+  'quiz-gta',
+  'reveal-gta',
+  'info-gta',
   // Gen Z MPs against older MPs
   'intro-genz',
   'quiz-genz',
@@ -130,6 +135,7 @@ export const AUTO_SCROLL_SLIDES = new Set<SlideType>([
   'intro-common-words',
   'intro-youth-language',
   'intro-mention',
+  'intro-gta',
   'intro-chancellor',
   'intro-genz',
   'intro-gender-check',

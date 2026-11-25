@@ -30,6 +30,23 @@ def test_counts_mentions_per_speaker_with_the_first_quote(tmp_path):
     assert timmy["speakers"][1]["quote"] == "Nein, es wird nicht um Timmy gehen."
 
 
+def test_counts_a_short_acronym_with_numbers_and_quotes_but_not_inside_words(tmp_path):
+    config = write_config(tmp_path, [{"id": "gta-6", "label": "GTA", "aliases": ["gta", "grand theft auto"]}])
+    speeches = [
+        {"speaker": "A", "party": "X", "protocolId": 1, "protocolDate": "2026-11-24", "speechPosition": 1,
+         "text": "Das beste Beispiel war das Release von GTA 6 letzte Woche. Vielleicht schaffen Sie es zu GTA 7."},
+        {"speaker": "B", "party": "Y", "protocolId": 1, "protocolDate": "2026-11-24", "speechPosition": 2,
+         "text": "Wer glaubt, diese Spiele lägen auf dem Niveau von „GTA“ oder „Roblox“, der irrt. Grand Theft Auto auch."},
+        {"speaker": "C", "party": "Z", "protocolId": 1, "protocolDate": "2026-11-24", "speechPosition": 3,
+         "text": "Die GTAs, Gtaad und Ultima Ratio sind kein Treffer."},
+    ]
+
+    [gta] = build_mentions(speeches, config)
+
+    assert [(s["name"], s["count"]) for s in gta["speakers"]] == [("A", 2), ("B", 2)]
+    assert gta["speakers"][0]["quote"] == "Das beste Beispiel war das Release von GTA 6 letzte Woche."
+
+
 def test_omits_a_mention_nobody_made(tmp_path):
     config = write_config(tmp_path, [{"id": "timmy", "label": "Timmy", "aliases": ["timmy"]}])
     assert build_mentions([{"speaker": "A", "party": "X", "text": "Nichts.", "protocolDate": "2026-01-01"}], config) == []
