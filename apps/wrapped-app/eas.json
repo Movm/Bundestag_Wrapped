@@ -20,8 +20,7 @@
         "buildType": "apk",
         "env": {
           "EXPO_NO_BUNDLE_SPLITTING": "1",
-          "ORG_GRADLE_PROJECT_reactNativeArchitectures": "armeabi-v7a,arm64-v8a",
-          "GRADLE_OPTS": "-Dorg.gradle.jvmargs=\"-Xmx3g -XX:MaxMetaspaceSize=1g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8\" -Dorg.gradle.parallel=false -Dorg.gradle.workers.max=2 -Dorg.gradle.daemon=false"
+          "ORG_GRADLE_PROJECT_reactNativeArchitectures": "armeabi-v7a,arm64-v8a"
         }
       }
     },
@@ -33,9 +32,9 @@
       "android": {
         "env": {
           "EXPO_NO_BUNDLE_SPLITTING": "1",
-          "ORG_GRADLE_PROJECT_reactNativeArchitectures": "armeabi-v7a,arm64-v8a",
-          "GRADLE_OPTS": "-Dorg.gradle.jvmargs=\"-Xmx3g -XX:MaxMetaspaceSize=1g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8\" -Dorg.gradle.parallel=false -Dorg.gradle.workers.max=2 -Dorg.gradle.daemon=false"
-        }
+          "ORG_GRADLE_PROJECT_reactNativeArchitectures": "armeabi-v7a,arm64-v8a"
+        },
+        "resourceClass": "large"
       }
     }
   },
