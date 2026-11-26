@@ -44,7 +44,7 @@ function getSavedProgress(slug: string, surface: ReturnType<typeof editionSurfac
 
     return null;
   } catch {
-    localStorage.removeItem(getStorageKey(slug, surface));
+    clearProgress(slug, surface);
     return null;
   }
 }

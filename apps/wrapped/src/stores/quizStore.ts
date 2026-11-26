@@ -44,7 +44,7 @@ export const useQuizStore = create<QuizState>()(
       name: 'quiz-storage-v2',
       // The former unscoped answers cannot safely be assigned to a year. Discard
       // them once instead of allowing a legacy answer to unlock an edition route.
-      onRehydrateStorage: () => () => localStorage.removeItem('quiz-storage'),
+      onRehydrateStorage: () => () => { try { localStorage?.removeItem('quiz-storage'); } catch { /* storage unavailable */ } },
     },
   ),
 );

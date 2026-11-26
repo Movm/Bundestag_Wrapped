@@ -37,6 +37,7 @@ Grünerator).
 - **Dependencies only via `npx expo install`** so the SDK 58 versions match.
 - **Shared code lives in the web package** under `apps/wrapped/src/shared/`: plain TypeScript, no `import.meta`, no DOM, no Vite. The app imports it by relative path. `apps/wrapped/src/shared/theme-music/index.ts` must **not** be imported natively; only `types.ts` and `bridge.ts`.
 - **`EXPO_NO_BUNDLE_SPLITTING=1` is mandatory** for every export/build (Expo bug H2): in the `package.json` scripts and in `eas.json` (`build.*.env`).
+- **`@expo/dom-webview` is patched** (`patches/`, `patchedDependencies`): its Android WebView never sets `domStorageEnabled`, so `localStorage` is `null` in the DOM component (preview code and progress cannot be saved). Drop the patch once Expo ships the setting. Android also lays the WebView out inside the safe-area insets (`app/index.tsx`), because its WebView reports no `env(safe-area-inset-*)`.
 - **No search, no Web Workers in the app** (they need bundle splitting).
 - **Every web change must also pass `pnpm --filter wrapped-app export:check`** (CI runs it).
 
