@@ -6,7 +6,7 @@ import { MobileMenu } from '@/components/ui/MobileMenu';
 import { useMenuState } from '@/hooks/useMenuState';
 import { EditionProvider, useEdition } from '@/edition/EditionProvider';
 import { registryQuery } from '@/edition/registryQuery';
-import { currentEditionPath, isRetired, resolveLegacyEditionPath } from '@/edition/registry';
+import { currentEditionPath, isRetired, previewEditionId, resolveLegacyEditionPath } from '@/edition/registry';
 import { dismissBootCover } from '@/cover/shell';
 import { PreviewCodeGate } from '@/components/preview/PreviewCodeGate';
 import { EditionLoadError } from '@/edition/loader';
@@ -60,7 +60,7 @@ export function CurrentEditionRedirect({ legacy }: { legacy: boolean }) {
   if (registry.isLoading) return <PageLoader />;
   if (registry.error || !registry.data) return <RedirectError message={registry.error?.message ?? 'Editionsindex ist nicht verfügbar'} />;
   // The current edition was taken down and the next one is not public yet.
-  if (isRetired(registry.data, registry.data.currentEdition)) return <ConstructionPage />;
+  if (isRetired(registry.data, registry.data.currentEdition)) return <ConstructionPage previewEditionId={previewEditionId(registry.data)} />;
 
   let target: string | null = null;
   let routeError: string | null = null;
@@ -95,7 +95,7 @@ export function ValidatedEdition({ children }: { children: ReactNode }) {
 export function OpenEdition({ editionId, children }: { editionId: string; children: ReactNode }) {
   const registry = useQuery(registryQuery);
   if (registry.isLoading) return <PageLoader />;
-  if (registry.data && isRetired(registry.data, editionId)) return <ConstructionPage />;
+  if (registry.data && isRetired(registry.data, editionId)) return <ConstructionPage previewEditionId={previewEditionId(registry.data)} />;
   return children;
 }
 
