@@ -17,6 +17,7 @@ RUN npm install -g pnpm@10.0.0
 
 WORKDIR /workspace
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
+COPY patches patches
 COPY services/mcp/package.json services/mcp/package.json
 RUN pnpm install --prod --frozen-lockfile --filter bundestag-mcp --config.node-linker=isolated
 COPY services/mcp/src services/mcp/src

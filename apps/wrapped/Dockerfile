@@ -18,6 +18,7 @@ ENV VITE_UMAMI_URL=$VITE_UMAMI_URL
 ENV VITE_UMAMI_WEBSITE_ID=$VITE_UMAMI_WEBSITE_ID
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
+COPY patches patches
 COPY apps/wrapped/package.json apps/wrapped/package.json
 RUN pnpm install --frozen-lockfile --filter bundestag-wrapped --config.node-linker=isolated
 

@@ -39,8 +39,8 @@ function PreviewCodeLink() {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  const atFrontDoor = useRef(false);
-  atFrontDoor.current = pathname === '/';
+  const atFrontDoor = useRef(pathname === '/');
+  useEffect(() => { atFrontDoor.current = pathname === '/'; }, [pathname]);
 
   useEffect(() => onNativeMessage('preview.code', message => {
     if (!setPreviewCode(message.code)) return;
