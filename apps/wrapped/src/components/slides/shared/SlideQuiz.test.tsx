@@ -1,8 +1,17 @@
 import { act } from 'react';
 import { createRoot } from 'react-dom/client';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
+import { StoryContext } from '@/components/main-wrapped/StoryContext';
+import { SlideQuiz } from './SlideQuiz';
 
 vi.mock('@/lib/sounds', () => ({ playSound: vi.fn() }));
+
+// motion caches the reduced-motion preference per process, so pin the hook to a
+// switch instead. Importing statically keeps the cold module load out of the
+// first test's timeout; an import inside the test body timed out on CI and the
+// abandoned test then rendered into the next tests' containers.
+const motionPref = vi.hoisted(() => ({ reduce: false }));
+vi.mock('motion/react', async (importOriginal) => ({ ...(await importOriginal<typeof import('motion/react')>()), useReducedMotion: () => motionPref.reduce }));
 
 const quiz = { question: 'Frage?', options: ['A', 'B'], correctAnswer: 'A', explanation: 'Weil.' };
 
@@ -22,11 +31,7 @@ afterEach(() => { container.remove(); });
 
 async function renderQuiz(reduce = false, storedAnswer: boolean | null = null, story?: { next: (id: string) => void; readingMode?: boolean }) {
   stubMatchMedia(reduce);
-  // motion caches the reduced-motion preference per process, so pin the hook.
-  vi.resetModules();
-  vi.doMock('motion/react', async (importOriginal) => ({ ...(await importOriginal<typeof import('motion/react')>()), useReducedMotion: () => reduce }));
-  const { SlideQuiz } = await import('./SlideQuiz');
-  const { StoryContext } = await import('@/components/main-wrapped/StoryContext');
+  motionPref.reduce = reduce;
   const root = createRoot(container);
   const slide = <SlideQuiz quiz={quiz} storedAnswer={storedAnswer} onAnswer={() => {}} onComplete={() => {}} shuffle={false} slideId="quiz-test" />;
   await act(async () => root.render(story ? <StoryContext value={{ activeId: 'quiz-test', readingMode: story.readingMode ?? false, next: story.next }}>{slide}</StoryContext> : slide));
