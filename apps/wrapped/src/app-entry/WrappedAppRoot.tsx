@@ -1,8 +1,10 @@
-import { lazy, Suspense, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { MemoryRouter, Route, Routes } from 'react-router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { MotionConfig } from 'motion/react';
 import { configureSite } from '@/lib/site';
+import { onNativeMessage } from '@/lib/native-shell';
+import { setPreviewCode } from '@/lib/preview-code';
 import {
   CurrentEditionRedirect,
   EditionDarkLayout,
@@ -33,6 +35,11 @@ export default function WrappedAppRoot({ initialPath }: { initialPath: string })
     configureSite({ embedded: true });
     return createQueryClient();
   });
+
+  // Deep link `bundestag-wrapped://zugang?code=…`: keep the code and load everything again.
+  useEffect(() => onNativeMessage('preview.code', message => {
+    if (setPreviewCode(message.code)) void queryClient.resetQueries();
+  }), [queryClient]);
 
   return (
     <QueryClientProvider client={queryClient}>
