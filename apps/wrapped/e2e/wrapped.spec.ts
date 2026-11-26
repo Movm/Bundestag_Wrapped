@@ -125,11 +125,14 @@ test('uses the active edition for share and download output', async ({ page }) =
   await expect(shareSlide.getByRole('heading', { name: /Jetzt sind die anderen dran/ })).toBeVisible();
   await expect(shareSlide.getByRole('button', { name: 'Teilen' }).first()).toBeVisible();
 
+  // At 1280×720 the buttons sit below the fold. Firefox snaps Playwright's click-time
+  // scroll-into-view onto the next slide (`scroll-snap-type: y mandatory`), leaving this
+  // one inert; focus scrolls within the slide in every browser, so activate by keyboard.
   const downloadPromise = page.waitForEvent('download');
-  await shareSlide.getByRole('button', { name: 'Speichern' }).first().click();
+  await shareSlide.getByRole('button', { name: 'Speichern' }).first().press('Enter');
   expect((await downloadPromise).suggestedFilename()).toBe('bundestag-wrapped-2026.png');
 
-  await shareSlide.getByRole('button', { name: 'Teilen' }).first().click();
+  await shareSlide.getByRole('button', { name: 'Teilen' }).first().press('Enter');
   await expect.poll(() => page.evaluate(() => localStorage.getItem('fixture-share'))).toBe(JSON.stringify({
     filename: 'bundestag-wrapped-2026.png',
     title: 'Mein Fixture Wrapped 2026',
