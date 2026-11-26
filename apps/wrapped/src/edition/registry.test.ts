@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { currentEditionPath, isEditionId, isRetired, resolveAssetUrl, resolveLegacyEditionPath } from './registry';
+import { currentEditionPath, isEditionId, isRetired, previewEditionId, resolveAssetUrl, resolveLegacyEditionPath } from './registry';
 import type { EditionRegistry } from './registry';
 
 const registry: EditionRegistry = {
@@ -43,5 +43,11 @@ describe('edition routing helpers', () => {
     expect(isRetired(closed, 'edition-b')).toBe(false);
     expect(isRetired(registry, 'edition-a')).toBe(false);
     expect(isRetired(registry, 'unknown')).toBe(false);
+  });
+
+  it('finds the edition that is still a protected preview', () => {
+    expect(previewEditionId(registry)).toBe('edition-b');
+    const noPreview: EditionRegistry = { ...registry, editions: [registry.editions[0]] };
+    expect(previewEditionId(noPreview)).toBeNull();
   });
 });
