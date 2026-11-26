@@ -6,7 +6,7 @@ import { PAGE_META } from '@/components/seo/constants';
 import { Display, Mark } from '@/design-system/components/Type';
 import { ENTER } from '@/design-system/motion';
 import { dismissBootCover } from '@/cover/shell';
-import { assetUrl } from '@/lib/site';
+import { assetUrl, isEmbedded } from '@/lib/site';
 import './construction.css';
 
 const TAPE = 'Baustelle · Bundestag Wrapped 2026 · ';
@@ -14,8 +14,10 @@ const TAPE = 'Baustelle · Bundestag Wrapped 2026 · ';
 /**
  * Front door while no edition is public: the previous edition is superseded
  * and the next one is still a protected preview (see `isRetired` in edition/registry).
+ * A small link opens that preview: in the app its route shows the code gate, on the
+ * web nginx guards it with the /zugang/ password page.
  */
-export function ConstructionPage() {
+export function ConstructionPage({ previewEditionId }: { previewEditionId: string | null }) {
   useEffect(dismissBootCover, []);
 
   return (
@@ -34,6 +36,9 @@ export function ConstructionPage() {
           <Link to="/mcp" className="ds-button ds-button--md ds-button--contrast ds-contrast">MCP-Server für deine KI</Link>
           <Link to="/datenschutz">Datenschutz</Link>
           <Link to="/terms">Nutzungsbedingungen</Link>
+          {previewEditionId && (isEmbedded()
+            ? <Link to={`/${previewEditionId}`}>Vorschau testen</Link>
+            : <a href="/zugang/">Vorschau testen</a> /* asset-path-ok: a page link, not an asset */)}
           <a href="https://www.moritz-waechter.de/impressum" target="_blank" rel="noopener noreferrer">Impressum</a>
         </motion.nav>
       </motion.main>

@@ -53,6 +53,11 @@ export function isRetired(registry: EditionRegistry, editionId: string): boolean
   return registry.editions.find(item => item.id === editionId)?.status === 'superseded';
 }
 
+/** The edition that is still behind the preview code, if any (the construction page links to it). */
+export function previewEditionId(registry: EditionRegistry): string | null {
+  return registry.editions.find(item => item.status === 'preview')?.id ?? null;
+}
+
 export function currentEditionPath(registry: EditionRegistry): string {
   const edition = registry.editions.find(item => item.id === registry.currentEdition);
   if (!edition) throw new Error(`Invalid editions index: current edition ${registry.currentEdition} is not listed`);
