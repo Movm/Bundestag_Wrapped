@@ -1,5 +1,5 @@
 import { type MenuEntry } from '../../../wrapped/src/shared/native-bridge/protocol';
-import { cardAccessibilityLabel, cardLabel, cardRotation, drawerWidth, hyphenateTitle, splitMenu, tileTitleSize, wideTitleSize } from './menuLayout';
+import { cardAccessibilityLabel, cardLabel, cardRotation, drawerWidth, hyphenateTitle, splitMenu, TITLE_ADVANCE, tileTitleSize, titleBoxWidth, wideTitleSize } from './menuLayout';
 
 const entry = (title: string, tile: boolean, active = false): MenuEntry => ({
   href: `/${title}`,
@@ -79,18 +79,28 @@ describe('cardAccessibilityLabel', () => {
 
 describe('hyphenateTitle', () => {
   const SHY = '\u00ad';
-  it('breaks PERFECT after the syllable like the web does', () => {
-    expect(hyphenateTitle('Perfect Match')).toBe(`Per${SHY}fect Match`);
+  const wide = (width: number, index: number) => ({ width: titleBoxWidth(width, { tile: false }, index), size: wideTitleSize(width), advance: TITLE_ADVANCE.wide });
+  const tile = (width: number, index: number) => ({ width: titleBoxWidth(width, { tile: true }, index), size: tileTitleSize(width), advance: TITLE_ADVANCE.tile });
+  it('hyphenates a word that cannot fit the half tile (PERFECT on a phone)', () => {
+    expect(hyphenateTitle('Perfect Match', wide(402, 2))).toBe(`Per${SHY}fect Match`);
+    // iPhone 17 Pro Max: the estimate said it fits, the device broke it as "PERFEC / T".
+    expect(hyphenateTitle('Perfect Match', wide(440, 2))).toBe(`Per${SHY}fect Match`);
+  });
+  it('leaves words that fit alone: wide cards wrap between words', () => {
+    expect(hyphenateTitle('Bundestag Wrapped', wide(402, 0))).toBe('Bundestag Wrapped');
+    expect(hyphenateTitle('Bundestag Wrapped', wide(768, 0))).toBe('Bundestag Wrapped');
+    expect(hyphenateTitle('Abgeordnete-Wrapped', wide(402, 1))).toBe('Abgeordnete-Wrapped');
   });
   it('leaves short words and existing hyphens alone', () => {
-    expect(hyphenateTitle('MCP-Server')).toBe('MCP-Server');
+    expect(hyphenateTitle('MCP-Server', tile(402, 4))).toBe('MCP-Server');
   });
-  it('keeps manual soft hyphens', () => {
-    expect(hyphenateTitle(`Doku${SHY}mentation`)).toBe(`Doku${SHY}mentation`);
+  it('drops the web soft hyphen when the word fits, re-adds one when it does not', () => {
+    expect(hyphenateTitle(`Doku${SHY}mentation`, { width: 1000, size: 17, advance: 0.85 })).toBe('Dokumentation');
+    expect(hyphenateTitle(`Doku${SHY}mentation`, tile(402, 3))).toContain(SHY);
   });
   it('never changes the visible letters', () => {
     for (const t of ['Bundestag Wrapped', 'Abgeordnete-Wrapped', 'Dokumentation', 'Perfect Match', 'MCP-Server']) {
-      expect(hyphenateTitle(t).replace(/\u00ad/g, '')).toBe(t);
+      expect(hyphenateTitle(t, tile(402, 3)).replace(/\u00ad/g, '')).toBe(t);
     }
   });
 });

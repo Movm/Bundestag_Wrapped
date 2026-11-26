@@ -14,7 +14,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Haptics from 'expo-haptics';
 import Svg, { Path } from 'react-native-svg';
 import { type MenuColor, type MenuEntry } from '../../../wrapped/src/shared/native-bridge/protocol';
-import { cardAccessibilityLabel, cardLabel, cardRotation, drawerWidth, hyphenateTitle, splitMenu, tileTitleSize, wideTitleSize } from './menuLayout';
+import { cardAccessibilityLabel, cardLabel, cardRotation, drawerWidth, hyphenateTitle, splitMenu, TITLE_ADVANCE, tileTitleSize, titleBoxWidth, wideTitleSize } from './menuLayout';
 import { type useMenuBridge } from './useMenuBridge';
 
 const INK = '#0e0a14';
@@ -85,7 +85,7 @@ function Card({ entry, index, width, reduceMotion, onChoose }: { entry: MenuEntr
             : { fontFamily: 'Archivo-Black-Expanded', fontSize: size, lineHeight: size * 0.9, letterSpacing: -0.04 * size, textTransform: 'uppercase', color: fg }
         }
       >
-        {hyphenateTitle(entry.title)}
+        {hyphenateTitle(entry.title, { width: titleBoxWidth(width, entry, index), size, advance: entry.tile ? TITLE_ADVANCE.tile : TITLE_ADVANCE.wide })}
       </Text>
     </Pressable>
   );
