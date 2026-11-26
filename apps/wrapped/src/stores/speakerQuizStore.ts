@@ -50,7 +50,7 @@ export const useSpeakerQuizStore = create<SpeakerQuizState>()(
     {
       name: 'speaker-quiz-storage-v2',
       // Global legacy speaker answers have no reliable edition ownership.
-      onRehydrateStorage: () => () => localStorage.removeItem('speaker-quiz-storage'),
+      onRehydrateStorage: () => () => { try { localStorage?.removeItem('speaker-quiz-storage'); } catch { /* storage unavailable */ } },
     },
   ),
 );

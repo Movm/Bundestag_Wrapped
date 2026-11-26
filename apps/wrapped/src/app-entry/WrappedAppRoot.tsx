@@ -1,10 +1,12 @@
-import { lazy, Suspense, useEffect, useState } from 'react';
-import { MemoryRouter, Route, Routes } from 'react-router';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import { MemoryRouter, Route, Routes, useLocation, useNavigate } from 'react-router';
+import { QueryClient, QueryClientProvider, useQueryClient } from '@tanstack/react-query';
 import { MotionConfig } from 'motion/react';
 import { configureSite } from '@/lib/site';
 import { onNativeMessage } from '@/lib/native-shell';
 import { setPreviewCode } from '@/lib/preview-code';
+import { registryQuery } from '@/edition/registryQuery';
+import { isRetired, previewEditionId } from '@/edition/registry';
 import {
   CurrentEditionRedirect,
   EditionDarkLayout,
@@ -28,6 +30,36 @@ function createQueryClient() {
   });
 }
 
+/**
+ * Deep link `bundestag-wrapped://zugang?code=…`: keep the code and load everything again. When the
+ * front door shows the construction page (current edition retired), land on the preview edition
+ * the code opens instead of staying there.
+ */
+function PreviewCodeLink() {
+  const queryClient = useQueryClient();
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const atFrontDoor = useRef(false);
+  atFrontDoor.current = pathname === '/';
+
+  useEffect(() => onNativeMessage('preview.code', message => {
+    if (!setPreviewCode(message.code)) return;
+    void (async () => {
+      await queryClient.resetQueries();
+      if (!atFrontDoor.current) return;
+      try {
+        const registry = await queryClient.fetchQuery(registryQuery);
+        const preview = previewEditionId(registry);
+        if (preview && isRetired(registry, registry.currentEdition)) navigate(`/${preview}`, { replace: true });
+      } catch {
+        // The index is unreachable: the front door shows its own error page.
+      }
+    })();
+  }), [queryClient, navigate]);
+
+  return null;
+}
+
 /** App entry: story, member list, quiz and perfect match only, no analytics. */
 export default function WrappedAppRoot({ initialPath }: { initialPath: string }) {
   // Must run before the first render: data and asset paths resolve against the site origin.
@@ -36,15 +68,11 @@ export default function WrappedAppRoot({ initialPath }: { initialPath: string })
     return createQueryClient();
   });
 
-  // Deep link `bundestag-wrapped://zugang?code=…`: keep the code and load everything again.
-  useEffect(() => onNativeMessage('preview.code', message => {
-    if (setPreviewCode(message.code)) void queryClient.resetQueries();
-  }), [queryClient]);
-
   return (
     <QueryClientProvider client={queryClient}>
       <MotionConfig reducedMotion="user">
         <MemoryRouter initialEntries={[initialPath]}>
+          <PreviewCodeLink />
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<CurrentEditionRedirect legacy={false} />} />

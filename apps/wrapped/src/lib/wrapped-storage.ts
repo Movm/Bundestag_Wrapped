@@ -60,7 +60,11 @@ export function getWrappedProgress(
     return data;
   } catch {
     // Invalid JSON or other error - clear corrupted data
-    window.localStorage.removeItem(keyFor(surface));
+    try {
+      window.localStorage.removeItem(keyFor(surface));
+    } catch {
+      // Storage unavailable
+    }
     return null;
   }
 }

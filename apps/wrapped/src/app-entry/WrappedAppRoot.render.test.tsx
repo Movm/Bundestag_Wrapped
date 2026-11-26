@@ -120,4 +120,16 @@ describe('WrappedAppRoot behind the preview fence', () => {
     expect(getPreviewCode()).toBe('aigner');
     expect(container.querySelector('#intro')).not.toBeNull();
   }, 15000);
+
+  it('lands on the preview edition when the deep link arrives at the retired front door', async () => {
+    fenced('testcode');
+    const shell = installNativeShell(() => {});
+    await renderAt('/', () => container.textContent?.includes('Vorschau') ?? false);
+    expect(container.querySelector('#intro')).toBeNull();
+    await act(async () => shell.receive({ type: 'preview.code', code: 'testcode' }));
+    for (let i = 0; i < 100 && container.querySelector('#intro') === null; i++) {
+      await act(async () => { await new Promise(r => setTimeout(r, 50)); });
+    }
+    expect(container.querySelector('#intro')).not.toBeNull();
+  }, 15000);
 });

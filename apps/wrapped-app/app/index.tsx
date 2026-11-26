@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { Platform, View } from 'react-native';
 import Constants from 'expo-constants';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useLinkingURL } from 'expo-linking';
 import WrappedDom, { type WrappedDomHandle } from '../src/dom/WrappedDom';
 import { type NativeToWeb, type WebToNative } from '../../wrapped/src/shared/native-bridge/protocol';
@@ -14,6 +15,7 @@ import { useMenuBridge } from '../src/menu/useMenuBridge';
 
 export default function Index() {
   const dom = useRef<WrappedDomHandle>(null);
+  const insets = useSafeAreaInsets();
   const receive = useCallback((message: NativeToWeb) => dom.current?.receive(message), []);
   const cover = useCoverBridge(receive);
   const menu = useMenuBridge(receive);
@@ -42,7 +44,8 @@ export default function Index() {
   return (
     <View style={{ flex: 1, backgroundColor: '#0e0a14' }}>
       {/* accessibilityViewIsModal on the cover is iOS-only; TalkBack must not reach the web under it either. */}
-      <View style={{ flex: 1 }} importantForAccessibility={cover.state.phase.name === 'hidden' ? 'auto' : 'no-hide-descendants'}>
+      {/* Android draws edge to edge and its WebView reports no safe-area insets, so the web is laid out inside them. iOS gets them from the web's env(). */}
+      <View style={{ flex: 1, paddingTop: Platform.OS === 'android' ? insets.top : 0, paddingBottom: Platform.OS === 'android' ? insets.bottom : 0 }} importantForAccessibility={cover.state.phase.name === 'hidden' ? 'auto' : 'no-hide-descendants'}>
         {web}
       </View>
       <NativeCover {...cover} />
