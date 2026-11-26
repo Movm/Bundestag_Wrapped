@@ -475,6 +475,8 @@
 /* Big statement copy (info slides, section intros). */
 .ds-statement { margin: 0; max-width: 55rem; font-family: var(--font-wide); font-weight: 800; font-stretch: 105%; font-size: clamp(1.25rem, 0.9rem + min(1.9vw, 3vh), 2.875rem); line-height: 1.15; letter-spacing: -0.02em; text-wrap: pretty; }
 .ds-statement--long { font-size: clamp(1.125rem, 0.9rem + min(1.1vw, 1.8vh), 1.875rem); line-height: 1.25; }
+/* Tablets/desktop: long info texts sit only slightly below .ds-statement; the vh cap protects short windows. */
+@media (min-width: 40rem) and (min-height: 40rem) { .ds-statement--long { font-size: clamp(1.25rem, 0.9rem + min(1.7vw, 2.4vh), 2.125rem); } }
 
 /* A note on an ink plate stays readable even where it crosses a shape. */
 .ds-note--plate { background: var(--color-wr-ink); color: color-mix(in srgb, #fff 82%, var(--color-wr-ink)); padding: 0.625rem 0.875rem; border-radius: 0.75rem; }
@@ -695,7 +697,7 @@
 .ds-next__hit:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
 .ds-next__dot { flex: none; width: 0.75rem; height: 0.75rem; border-radius: 50%; background: var(--party); box-shadow: 0 0 0 2px rgb(255 255 255 / 0.6); }
 .ds-next__name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 800; }
-.ds-next__party { flex: none; font-family: var(--font-mono); font-weight: 700; font-size: 0.6875rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.ds-next__party { flex: none; font-family: var(--font-mono); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
 .ds-next__hit svg { flex: none; }
 .ds-next__all {
   margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 0.5rem; padding-block: 0.5rem;
