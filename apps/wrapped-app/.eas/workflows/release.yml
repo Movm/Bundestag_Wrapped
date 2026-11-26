@@ -24,7 +24,7 @@ on:
       testflight_group:
         type: string
         description: TestFlight external group (closed/open only)
-        default: Beta
+        default: Testgruppe
       changelog:
         type: string
         description: What to test
@@ -56,7 +56,7 @@ jobs:
     type: testflight
     params:
       build_id: ${{ needs.build_ios.outputs.build_id }}
-      external_groups: ['${{ inputs.testflight_group || ''Beta'' }}']
+      external_groups: ['${{ inputs.testflight_group || ''Testgruppe'' }}']
       changelog: ${{ inputs.changelog }}
 
   testflight_internal:
