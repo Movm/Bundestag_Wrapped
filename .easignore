@@ -1,0 +1,115 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Data / generated artifacts
+data/
+web-output/
+exports/
+results/
+work/
+apps/wrapped/.dev-editions/
+!apps/wrapped/public/data/
+!apps/wrapped/public/data/2026/
+!apps/wrapped/public/data/2026/**
+
+# Logs / OS
+*.log
+.DS_Store
+
+# Editor
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Root .gitignore has a bare `data/`; the app bundles apps/wrapped/src/data (tracked).
+!apps/wrapped/src/data/
+
+# --- EAS upload only (.easignore replaces .gitignore for `eas build`) ---
+# The app loads edition data, speaker files and sounds from https://bundestag-wrapped.de
+# at runtime; only the files it require()s are bundled (cover eagle, start sound).
+apps/wrapped/public/data/
+apps/wrapped/public/speakers/
+apps/wrapped/public/speaker-enrichment/
+apps/wrapped/public/*.json
+apps/wrapped/public/sounds/*
+!apps/wrapped/public/sounds/start.wav
+apps/wrapped/screenshots/
+apps/wrapped/docs/
+services/analysis/
+
+# --- nested .gitignore files (an .easignore replaces all of them) ---
+apps/wrapped-app/**/node_modules
+apps/wrapped-app/**/dist-check
+apps/wrapped-app/**/.expo
+apps/wrapped-app/**/ios
+apps/wrapped-app/**/android
+apps/wrapped/**/logs
+apps/wrapped/**/*.log
+apps/wrapped/**/npm-debug.log*
+apps/wrapped/**/yarn-debug.log*
+apps/wrapped/**/yarn-error.log*
+apps/wrapped/**/pnpm-debug.log*
+apps/wrapped/**/lerna-debug.log*
+apps/wrapped/**/node_modules
+apps/wrapped/**/dist
+apps/wrapped/**/dist-ssr
+apps/wrapped/**/*.local
+apps/wrapped/**/.env
+apps/wrapped/.vscode/*
+!apps/wrapped/.vscode/extensions.json
+apps/wrapped/**/.idea
+apps/wrapped/**/.DS_Store
+apps/wrapped/**/*.suo
+apps/wrapped/**/*.ntvs*
+apps/wrapped/**/*.njsproj
+apps/wrapped/**/*.sln
+apps/wrapped/**/*.sw?
+apps/wrapped/**/*.keystore
+apps/wrapped/**/*.jks
+apps/wrapped/**/.claude/
+apps/wrapped/api/node_modules
+apps/wrapped/api/.cache
+apps/wrapped/**/test-results/
+apps/wrapped/**/playwright-report/
+services/mcp/**/node_modules/
+services/mcp/**/.env
+services/mcp/**/.env.local
+services/mcp/**/.env.*.local
+services/mcp/**/logs/
+services/mcp/**/*.log
+services/mcp/**/npm-debug.log*
+services/mcp/**/.DS_Store
+services/mcp/**/Thumbs.db
+services/mcp/**/.vscode/
+services/mcp/**/.idea/
+services/mcp/**/*.swp
+services/mcp/**/*.swo
+services/mcp/**/dist/
+services/mcp/**/build/
+services/mcp/**/.cache/
+services/mcp/**/*.cache
+services/mcp/**/coverage/
+services/mcp/**/.claude/
+
+# Not needed on the build server; the commit hash travels as build metadata.
+.git
