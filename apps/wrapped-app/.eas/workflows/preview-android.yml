@@ -1,0 +1,46 @@
+# Installable Android test build (APK, internal distribution) without touching the stores.
+# Fast path: if a preview build with the same native fingerprint exists, only the JS
+# bundle and app metadata are repacked into it (minutes instead of a full Gradle build).
+# Any native change (app.json native config, new native module, SDK bump) changes the
+# fingerprint and falls back to a full build.
+# Store releases (release.yml) always do full builds: Expo does not recommend repack
+# for store builds (symbolication, signing).
+#   npx eas-cli@latest workflow:run .eas/workflows/preview-android.yml
+name: Preview build (Android)
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  fingerprint:
+    name: Fingerprint
+    type: fingerprint
+    environment: preview
+    env:
+      EXPO_NO_BUNDLE_SPLITTING: '1'
+
+  get_build:
+    name: Find a matching build
+    needs: [fingerprint]
+    type: get-build
+    params:
+      platform: android
+      profile: preview
+      fingerprint_hash: ${{ needs.fingerprint.outputs.android_fingerprint_hash }}
+
+  repack:
+    name: Repack JS into the existing build
+    needs: [get_build]
+    if: ${{ needs.get_build.outputs.build_id }}
+    type: repack
+    params:
+      build_id: ${{ needs.get_build.outputs.build_id }}
+
+  build:
+    name: Full build
+    needs: [get_build]
+    if: ${{ !needs.get_build.outputs.build_id }}
+    type: build
+    params:
+      platform: android
+      profile: preview

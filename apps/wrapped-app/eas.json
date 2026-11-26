@@ -15,22 +15,57 @@
       "distribution": "internal",
       "env": {
         "EXPO_NO_BUNDLE_SPLITTING": "1"
+      },
+      "android": {
+        "buildType": "apk",
+        "env": {
+          "EXPO_NO_BUNDLE_SPLITTING": "1",
+          "ORG_GRADLE_PROJECT_reactNativeArchitectures": "armeabi-v7a,arm64-v8a"
+        }
       }
     },
     "production": {
       "autoIncrement": true,
       "env": {
         "EXPO_NO_BUNDLE_SPLITTING": "1"
+      },
+      "android": {
+        "env": {
+          "EXPO_NO_BUNDLE_SPLITTING": "1",
+          "ORG_GRADLE_PROJECT_reactNativeArchitectures": "armeabi-v7a,arm64-v8a"
+        },
+        "resourceClass": "large"
       }
     }
   },
   "submit": {
     "production": {
       "ios": {
-        "ascAppId": "6757131770"
+        "ascAppId": "6757131770",
+        "appleTeamId": "P74W7SGX8R"
       },
       "android": {
         "track": "alpha",
+        "releaseStatus": "completed"
+      }
+    },
+    "internal": {
+      "ios": {
+        "ascAppId": "6757131770",
+        "appleTeamId": "P74W7SGX8R"
+      },
+      "android": {
+        "track": "internal",
+        "releaseStatus": "completed"
+      }
+    },
+    "open-testing": {
+      "ios": {
+        "ascAppId": "6757131770",
+        "appleTeamId": "P74W7SGX8R"
+      },
+      "android": {
+        "track": "beta",
         "releaseStatus": "completed"
       }
     }
