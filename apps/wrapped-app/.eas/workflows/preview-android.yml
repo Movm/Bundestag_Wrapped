@@ -1,0 +1,15 @@
+# Installable Android test build (APK, internal distribution) without touching the stores.
+# The build page on expo.dev shows a QR code / link to install it.
+#   npx eas-cli@latest workflow:run .eas/workflows/preview-android.yml
+name: Preview build (Android)
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  build_android:
+    name: Build Android APK
+    type: build
+    params:
+      platform: android
+      profile: preview

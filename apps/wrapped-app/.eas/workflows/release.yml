@@ -1,10 +1,14 @@
-# Store release: build iOS + Android (production profile), then
-# iOS → TestFlight (external group, goes to Beta App Review) and
-# Android → Play closed testing track "alpha" (submit profile in eas.json).
+# Store release: build iOS + Android (production profile) and hand both to the stores.
 #
-# Start it: push a tag `app-v1.1.0`, run it on expo.dev, or
+#   track      Android (eas.json submit profile)     iOS
+#   closed     Play closed testing "alpha"            TestFlight external group (Beta App Review)
+#   internal   Play internal testing                  TestFlight, internal testers only
+#   open       Play open testing "beta"               TestFlight external group (Beta App Review)
+#
+# Start: tag `app-v1.2.0` (= closed), "Run" on expo.dev, or
 #   npx eas-cli@latest workflow:run .eas/workflows/release.yml
-# Needs the GitHub repo connected on expo.dev with base directory apps/wrapped-app.
+# Every run is two store builds. Bump expo.version in app.json first; build numbers are remote.
+# The production App Store / Play release itself stays a manual click in the consoles.
 name: Store release
 
 on:
@@ -12,13 +16,18 @@ on:
     tags: ['app-v*']
   workflow_dispatch:
     inputs:
+      track:
+        type: choice
+        description: Where the builds go
+        options: [closed, internal, open]
+        default: closed
       testflight_group:
-        description: TestFlight external group
         type: string
+        description: TestFlight external group (closed/open only)
         default: Beta
       changelog:
-        description: What to test
         type: string
+        description: What to test
         default: ''
 
 concurrency:
@@ -40,19 +49,29 @@ jobs:
       platform: android
       profile: production
 
-  testflight:
-    name: TestFlight
+  testflight_external:
+    name: TestFlight (external)
     needs: [build_ios]
+    if: ${{ inputs.track != 'internal' }}
     type: testflight
     params:
       build_id: ${{ needs.build_ios.outputs.build_id }}
       external_groups: ['${{ inputs.testflight_group || ''Beta'' }}']
       changelog: ${{ inputs.changelog }}
 
-  play_alpha:
-    name: Play closed testing
+  testflight_internal:
+    name: TestFlight (internal)
+    needs: [build_ios]
+    if: ${{ inputs.track == 'internal' }}
+    type: testflight
+    params:
+      build_id: ${{ needs.build_ios.outputs.build_id }}
+      changelog: ${{ inputs.changelog }}
+
+  play:
+    name: Google Play
     needs: [build_android]
     type: submit
     params:
       build_id: ${{ needs.build_android.outputs.build_id }}
-      profile: production
+      profile: ${{ inputs.track == 'internal' && 'internal' || (inputs.track == 'open' && 'open-testing' || 'production') }}
