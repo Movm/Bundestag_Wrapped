@@ -4,6 +4,7 @@ import { youthGeneration, youthWordMeaning, type YouthGeneration } from './youth
 import { lastName, shareOptions, split } from './chancellor';
 import { genderTopicQuestion, genderWordQuestion } from './gender-check';
 import type { EditionQuizConfiguration } from '@/generated/wrapped-contract-v1';
+import { findMention, GTA_MENTION_ID, WHALE_MENTION_ID } from './mentions';
 import { MissingMetricError, topInterrupter, topSpeakerByWords, topTopic } from './metrics';
 import { atParty, capitalize, theParty, times as spelledTimes } from '@/lib/german-count';
 
@@ -228,20 +229,44 @@ function genzPartyQuestion(generations: { speakerCount: number; parties: Array<{
 }
 
 /**
- * Asks who talked most about the edition's moment of the year (e.g. "Timmy der
- * Wal"). Only asked when one MP clearly leads; the wrong options are other MPs
- * who mentioned it less often, so no second answer is correct.
+ * Asks who talked most about one of the edition's mentions (e.g. "Timmy der
+ * Wal", "GTA"). Only asked when one MP clearly leads. The wrong options are
+ * first the others who mentioned it less often, then prominent speakers who
+ * never mentioned it (other parties first, no AfD, as with the youth words), so
+ * no second answer is correct. A mention with a single speaker is then asked
+ * without "am häufigsten".
  */
-function mentionQuestion(mention: { label: string; speakers: Array<{ name: string; party: string; count: number }> }): QuizQuestion | undefined {
+function mentionQuestion(
+  id: QuizQuestion['id'],
+  mention: { label: string; speakers: Array<{ name: string; party: string; count: number }> },
+  prominentSpeakers: ReadonlyArray<{ name: string; party: string }>,
+): QuizQuestion | undefined {
   const [winner, ...others] = mention.speakers;
   if (!winner || others.some(speaker => speaker.count >= winner.count)) return undefined;
+  const mentioned = new Set(mention.speakers.map(speaker => plainName(speaker.name)));
+  const pool = prominentSpeakers.filter(speaker => !mentioned.has(plainName(speaker.name)) && speaker.party !== 'fraktionslos' && speaker.party !== 'AfD');
+  const unique = pool.filter((speaker, index) => pool.findIndex(other => other.name === speaker.name) === index);
+  const picked: Array<{ name: string; party: string }> = others.slice(0, 3);
+  const usedParties = new Set([winner, ...picked].map(speaker => speaker.party));
+  for (const speaker of unique) {
+    if (picked.length === 3) break;
+    if (usedParties.has(speaker.party)) continue;
+    usedParties.add(speaker.party);
+    picked.push(speaker);
+  }
+  for (const speaker of unique) {
+    if (picked.length === 3) break;
+    if (!picked.includes(speaker)) picked.push(speaker);
+  }
   const answer = speakerLabel(winner);
   const runnerUp = others[0]?.count ?? 0;
-  const rest = runnerUp === 1 ? 'Bei allen anderen, die den Namen nannten, blieb es bei einem Mal.' : `Alle anderen kamen auf höchstens ${spelledTimes(runnerUp)}.`;
+  const rest = runnerUp === 0
+    ? 'Sonst nannte niemand den Namen im Plenum.'
+    : runnerUp === 1 ? 'Bei allen anderen, die den Namen nannten, blieb es bei einem Mal.' : `Alle anderen kamen auf höchstens ${spelledTimes(runnerUp)}.`;
   return question(
-    'quiz-mention',
-    `Wer hat ${mention.label} im Plenum am häufigsten erwähnt?`,
-    [answer, ...others.slice(0, 3).map(speakerLabel)],
+    id,
+    others.length ? `Wer hat ${mention.label} im Plenum am häufigsten erwähnt?` : `Wer hat ${mention.label} im Plenum erwähnt?`,
+    [answer, ...picked.map(speakerLabel)],
     answer,
     `${plainName(winner.name)} erwähnte ${mention.label} ${spelledTimes(winner.count)}. ${rest}`,
   );
@@ -371,8 +396,13 @@ export function buildEditionQuizModel(data: WrappedData, configuration?: Edition
   });
 
   addQuestion(model, 'quiz-mention', () => {
-    const mention = data.mentions?.[0];
-    return mention ? mentionQuestion(mention) : undefined;
+    const mention = findMention(data.mentions, WHALE_MENTION_ID);
+    return mention ? mentionQuestion('quiz-mention', mention, data.topSpeakersByWords ?? []) : undefined;
+  });
+
+  addQuestion(model, 'quiz-gta', () => {
+    const mention = findMention(data.mentions, GTA_MENTION_ID);
+    return mention ? mentionQuestion('quiz-gta', mention, data.topSpeakersByWords ?? []) : undefined;
   });
 
   addQuestion(model, 'quiz-chancellor', () => (data.chancellor ? chancellorQuestion(data.chancellor) : undefined));

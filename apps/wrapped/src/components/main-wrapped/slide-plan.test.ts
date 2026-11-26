@@ -154,6 +154,17 @@ describe('active slide plan', () => {
     ]);
   });
 
+  it('tells the GTA 6 story after the moment of the year, only when its question exists', () => {
+    const configuration = { version: 1 as const, groups: [{ id: 'quiz-mention' }, { id: 'quiz-gta' }] };
+    expect(buildActiveSlidePlan(quizModel(['quiz-mention']), [], configuration)).not.toContain('intro-gta');
+    expect(buildActiveSlidePlan(quizModel(['quiz-mention', 'quiz-gta']), [], configuration)).toEqual([
+      'intro', 'info-disclaimer',
+      'intro-mention', 'quiz-mention', 'info-mention',
+      'intro-gta', 'quiz-gta', 'reveal-gta', 'info-gta',
+      'share', 'outro', 'next', 'finale',
+    ]);
+  });
+
   it('tells Männer gegen Frauen as two duels, the opener only with the word duel', () => {
     const configuration = { version: 1 as const, groups: [{ id: 'quiz-gender-word' }, { id: 'quiz-gender-topic' }] };
     expect(buildActiveSlidePlan(quizModel(['quiz-gender-word', 'quiz-gender-topic']), [], configuration)).toEqual([

@@ -4,6 +4,8 @@ import { buildConfiguredEditionQuizModel, signatureQuizParty, type EditionQuizMo
 import { resolveInfoSlide } from '@/data/info-slides';
 import { buildTopicRiserContext } from '@/domain/topic-riser-context';
 import { youthGeneration, youthSummary, type YouthGeneration } from '@/domain/youth-words';
+import { findMention, GTA_MENTION_ID, WHALE_MENTION_ID } from '@/domain/mentions';
+import { times } from '@/lib/german-count';
 import { SLIDES, type SlideType } from './constants';
 import { getQuizSlides } from './slide-plan';
 import {
@@ -28,6 +30,8 @@ import {
   TopicRiserContextSlide,
   MentionIntroSlide,
   MentionInfoSlide,
+  MentionRevealSlide,
+  PalmSunset,
   GenerationIntroSlide,
   GenerationInfoSlide,
   YouthIntroSlide,
@@ -242,9 +246,19 @@ function useYouthGeneration(): YouthGeneration | null {
 
 function MentionSlideWrapper({ part }: { part: 'intro' | 'info' }) {
   const data = useFullWrappedData();
-  const mention = data?.mentions?.[0];
+  const mention = findMention(data?.mentions, WHALE_MENTION_ID);
   if (!mention) return null;
   return part === 'intro' ? <MentionIntroSlide mention={mention} /> : <MentionInfoSlide mention={mention} />;
+}
+
+/** The GTA 6 release: opener with palms, who said it, the story behind it. */
+function GtaSlideWrapper({ part }: { part: 'intro' | 'reveal' | 'info' }) {
+  const data = useFullWrappedData();
+  const mention = findMention(data?.mentions, GTA_MENTION_ID);
+  if (!mention) return null;
+  if (part === 'intro') return <MentionIntroSlide mention={mention} art={<PalmSunset />} countSentence={count => `Im Plenum fiel der Name ${times(count)}.`} />;
+  if (part === 'reveal') return <MentionRevealSlide mention={mention} eyebrow="Gesagt im Plenum" heading={<>Wer über <span className="text-display-accent">GTA</span> sprach.</>} />;
+  return <MentionInfoSlide mention={mention} />;
 }
 
 function GenerationSlideWrapper({ part }: { part: 'intro' | 'info' }) {
@@ -389,6 +403,7 @@ export const SlideRenderer = memo(function SlideRenderer({
     case 'quiz-tone':
     case 'quiz-gender':
     case 'quiz-mention':
+    case 'quiz-gta':
     case 'quiz-chancellor':
     case 'quiz-gender-word':
     case 'quiz-gender-topic':
@@ -446,6 +461,15 @@ export const SlideRenderer = memo(function SlideRenderer({
 
     case 'info-mention':
       return <MentionSlideWrapper part="info" />;
+
+    case 'intro-gta':
+      return <GtaSlideWrapper part="intro" />;
+
+    case 'reveal-gta':
+      return <GtaSlideWrapper part="reveal" />;
+
+    case 'info-gta':
+      return <GtaSlideWrapper part="info" />;
 
     case 'intro-chancellor':
       return <ChancellorSlideWrapper part="intro" />;
