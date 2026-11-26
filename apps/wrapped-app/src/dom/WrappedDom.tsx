@@ -1,6 +1,6 @@
 'use dom';
 
-import { Component, type ReactNode, type Ref } from 'react';
+import { Component, useEffect, type ReactNode, type Ref } from 'react';
 import { useDOMImperativeHandle, type DOMImperativeFactory, type DOMProps } from 'expo/dom';
 import './dom-shell.css';
 import '../../../wrapped/src/index.css';
@@ -63,6 +63,8 @@ export default function WrappedDom({ initialPath, platform, appVersion, onWebMes
   post = m => { void onWebMessage(m).catch(() => {}); };
   // Boundary cast: Expo types handle methods as taking JSON values; the native caller is typed by WrappedDomHandle.
   useDOMImperativeHandle(ref as unknown as Ref<DOMImperativeFactory>, () => ({ receive: (message: NativeToWeb) => shell.receive(message) }) as unknown as DOMImperativeFactory, []);
+  // Proves the bridge is alive, so native may deliver anything it held back (deep-link preview code).
+  useEffect(() => { send({ type: 'ready' }); }, []);
   return (
     <CrashBoundary>
       <WrappedAppRoot initialPath={initialPath} />

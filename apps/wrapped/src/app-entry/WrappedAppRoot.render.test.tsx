@@ -3,6 +3,8 @@ import { createRoot, type Root } from 'react-dom/client';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { createCover } from '@/cover/cover';
 import { configureSite, SITE_ORIGIN } from '@/lib/site';
+import { _resetNativeShellForTesting, installNativeShell } from '@/lib/native-shell';
+import { getPreviewCode } from '@/lib/preview-code';
 import WrappedAppRoot from './WrappedAppRoot';
 
 // Raw JSON from apps/wrapped/public, loaded lazily per requested file.
@@ -52,6 +54,8 @@ afterEach(async () => {
   vi.unstubAllGlobals();
   configureSite({ embedded: false });
   delete window.__btCreateCover;
+  localStorage.clear();
+  _resetNativeShellForTesting();
 });
 
 async function renderAt(initialPath: string, until: () => boolean) {
@@ -84,4 +88,36 @@ describe('WrappedAppRoot with the data host unreachable', () => {
       expect(container.textContent).toContain('Fehler beim Laden');
     }, 15000);
   }
+});
+
+describe('WrappedAppRoot behind the preview fence', () => {
+  /** Like nginx: /data/2026/ answers 401 unless the X-Gartenzaun header carries the code. */
+  function fenced(code: string) {
+    vi.stubGlobal('fetch', vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+      const raw = typeof input === 'string' ? input : input instanceof URL ? input.href : input.url;
+      if (new URL(raw, SITE_ORIGIN).pathname.startsWith('/data/2026/') && (init?.headers as Record<string, string> | undefined)?.['X-Gartenzaun'] !== code) {
+        return new Response('', { status: 401 });
+      }
+      return servePublic(input);
+    }));
+  }
+
+  it('asks for the code instead of showing the error page', async () => {
+    fenced('aigner');
+    await renderAt('/2026', () => container.textContent?.includes('Zugangscode') ?? false);
+    expect(container.textContent).toContain('Zugangscode');
+    expect(container.textContent).not.toContain('Fehler beim Laden');
+  }, 15000);
+
+  it('unlocks from the deep link message and loads the story', async () => {
+    fenced('aigner');
+    const shell = installNativeShell(() => {});
+    await renderAt('/2026', () => container.textContent?.includes('Zugangscode') ?? false);
+    await act(async () => shell.receive({ type: 'preview.code', code: 'aigner' }));
+    for (let i = 0; i < 100 && container.querySelector('#intro') === null; i++) {
+      await act(async () => { await new Promise(r => setTimeout(r, 50)); });
+    }
+    expect(getPreviewCode()).toBe('aigner');
+    expect(container.querySelector('#intro')).not.toBeNull();
+  }, 15000);
 });

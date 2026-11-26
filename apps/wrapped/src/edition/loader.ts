@@ -5,9 +5,10 @@ import type { Speech, TopicRankingsData } from '@/lib/search-utils';
 import { resolveAssetUrl, type Edition, type EditionRegistry } from './registry';
 import type { EditionContent, EditionSummary, MatchAsset, WordsAsset, WordRankingsAsset } from '@/generated/wrapped-contract-v1';
 import { assetUrl, isEmbedded } from '@/lib/site';
+import { previewHeaders } from '@/lib/preview-code';
 import { takePrefetched } from './prefetch';
 
-export type EditionLoadErrorKind = 'unknown-edition' | 'invalid-contract' | 'missing-asset' | 'http' | 'network';
+export type EditionLoadErrorKind = 'unknown-edition' | 'invalid-contract' | 'missing-asset' | 'http' | 'network' | 'unauthorized';
 
 export class EditionLoadError extends Error {
   readonly kind: EditionLoadErrorKind;
@@ -68,6 +69,12 @@ export interface EditionAssetTiming {
   contentEncoding?: string | null;
 }
 
+/** Request options that carry the preview code; empty unless the app has one for a gated path. */
+function fenceInit(url: string): { headers?: Record<string, string> } {
+  const headers = previewHeaders(url);
+  return Object.keys(headers).length ? { headers } : {};
+}
+
 export async function fetchJson(url: string, timing?: EditionAssetTiming): Promise<unknown> {
   // Edition documents are static, root-relative JSON resources under /data/.
   // Validate the raw path before fetch: no hostnames, encoded separators,
@@ -80,7 +87,7 @@ export async function fetchJson(url: string, timing?: EditionAssetTiming): Promi
   const started = performance.now();
   let response: Response;
   try {
-    response = await (takePrefetched(url) ?? fetch(assetUrl(url), { redirect: 'error' }));
+    response = await (takePrefetched(url) ?? fetch(assetUrl(url), { redirect: 'error', ...fenceInit(url) }));
   } catch {
     throw new EditionLoadError('network', `Network error while loading ${url}`, url);
   }
@@ -88,6 +95,10 @@ export async function fetchJson(url: string, timing?: EditionAssetTiming): Promi
     // A protected preview without the password cookie (nginx answers data with 401).
     const here = window.location.pathname + window.location.search + window.location.hash;
     window.location.assign(`/zugang/?next=${encodeURIComponent(here)}`);
+  }
+  // In the app there is no /zugang/ page to go to: the edition shows its own code entry.
+  if (response.status === 401 && isEmbedded()) {
+    throw new EditionLoadError('unauthorized', `${url}: 401 ${response.statusText}`, url);
   }
   if (!response.ok) {
     const kind = response.status === 404 ? 'missing-asset' : 'http';

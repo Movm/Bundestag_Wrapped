@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { configureSite } from '@/lib/site';
+import { setPreviewCode } from '@/lib/preview-code';
 import { assertEditionConsistency, EditionLoadError, loadErrorMessage, loadEditionAsset, loadEditionContent, loadManifest, type EditionAssetTiming } from './loader';
 import type { Edition } from './registry';
 
@@ -21,16 +22,17 @@ const manifest = {
 
 afterEach(() => {
   vi.unstubAllGlobals();
+  localStorage.clear();
   configureSite({ embedded: false });
 });
 
 describe('edition runtime loader', () => {
-  it.each([[false, 1], [true, 0]])('on a 401 redirects to /zugang only in the browser (embedded=%s)', async (embedded, redirects) => {
+  it.each([[false, 1, 'http'], [true, 0, 'unauthorized']])('on a 401 redirects to /zugang only in the browser (embedded=%s)', async (embedded, redirects, kind) => {
     const assign = vi.fn();
     vi.stubGlobal('location', { pathname: '/2026', search: '', hash: '', href: 'http://localhost/2026', origin: 'http://localhost', assign });
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response('', { status: 401 })));
     configureSite({ embedded });
-    await expect(loadManifest('/data/2025/manifest.json')).rejects.toMatchObject({ kind: 'http' });
+    await expect(loadManifest('/data/2025/manifest.json')).rejects.toMatchObject({ kind });
     expect(assign).toHaveBeenCalledTimes(redirects);
   });
   it.each([
@@ -113,5 +115,42 @@ describe('loadErrorMessage', () => {
     expect(loadErrorMessage(new EditionLoadError('http', '/data/x.json: 500'))).toMatch(/nicht erreichbar/);
     expect(loadErrorMessage(new Error('boom'))).toMatch(/nicht geladen/);
     expect(loadErrorMessage(null)).toMatch(/nicht geladen/);
+  });
+});
+
+describe('preview code (garden fence) in the app', () => {
+  const ok = () => vi.fn().mockImplementation(async () => new Response('{}', { status: 200 }));
+  const sentHeaders = (fetch: ReturnType<typeof vi.fn>) => (fetch.mock.calls[0][1] as RequestInit).headers;
+
+  it('sends X-Gartenzaun on gated data paths when embedded and a code is stored', async () => {
+    const fetch = ok();
+    vi.stubGlobal('fetch', fetch);
+    configureSite({ embedded: true });
+    setPreviewCode(' Aigner ');
+    await loadManifest('/data/2026/v1/manifest.json').catch(() => {});
+    expect(fetch.mock.calls[0][0]).toBe('https://bundestag-wrapped.de/data/2026/v1/manifest.json');
+    expect(sentHeaders(fetch)).toEqual({ 'X-Gartenzaun': 'aigner' });
+  });
+
+  it.each([
+    ['embedded without a stored code', true, null, '/data/2026/v1/manifest.json'],
+    ['embedded, public edition', true, 'aigner', '/data/2025/v1/manifest.json'],
+    ['the browser, even with a code in storage', false, 'aigner', '/data/2026/v1/manifest.json'],
+  ])('sends no header: %s', async (_name, embedded, code, url) => {
+    const fetch = ok();
+    vi.stubGlobal('fetch', fetch);
+    configureSite({ embedded });
+    if (code) setPreviewCode(code);
+    await loadManifest(url).catch(() => {});
+    expect(sentHeaders(fetch)).toBeUndefined();
+  });
+
+  it('turns a 401 into an unauthorized error in the app, without redirecting', async () => {
+    const assign = vi.fn();
+    vi.stubGlobal('location', { pathname: '/', search: '', hash: '', href: 'http://localhost/', origin: 'http://localhost', assign });
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response('', { status: 401 })));
+    configureSite({ embedded: true });
+    await expect(loadManifest('/data/2026/v1/manifest.json')).rejects.toMatchObject({ kind: 'unauthorized', url: '/data/2026/v1/manifest.json' });
+    expect(assign).not.toHaveBeenCalled();
   });
 });

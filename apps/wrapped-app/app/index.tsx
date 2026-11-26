@@ -1,14 +1,16 @@
-import { useCallback, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { Platform, View } from 'react-native';
 import Constants from 'expo-constants';
+import { useLinkingURL } from 'expo-linking';
 import WrappedDom, { type WrappedDomHandle } from '../src/dom/WrappedDom';
+import { type NativeToWeb, type WebToNative } from '../../wrapped/src/shared/native-bridge/protocol';
 import { createWebMessageHandler } from '../src/native/onWebMessage';
+import { createPreviewCodeDelivery } from '../src/native/previewCodeDelivery';
 import { VIEWPORT_FIT_SCRIPT } from '../src/dom/viewportFitScript';
 import { NativeCover } from '../src/cover/NativeCover';
 import { useCoverBridge } from '../src/cover/useCoverBridge';
 import { NativeMenu } from '../src/menu/NativeMenu';
 import { useMenuBridge } from '../src/menu/useMenuBridge';
-import { type NativeToWeb } from '../../wrapped/src/shared/native-bridge/protocol';
 
 export default function Index() {
   const dom = useRef<WrappedDomHandle>(null);
@@ -17,7 +19,15 @@ export default function Index() {
   const menu = useMenuBridge(receive);
   const { onWebCover } = cover;
   const { open: openMenu } = menu;
-  const onWebMessage = useMemo(() => createWebMessageHandler(receive, openMenu, onWebCover), [receive, openMenu, onWebCover]);
+  const delivery = useMemo(() => createPreviewCodeDelivery(receive), [receive]);
+  const onWebMessage = useMemo(() => {
+    const handle = createWebMessageHandler(receive, openMenu, onWebCover);
+    // Any web message proves the bridge is up: only then does a held preview code go out.
+    return (message: WebToNative) => { delivery.webAlive(); return handle(message); };
+  }, [receive, openMenu, onWebCover, delivery]);
+  // Tester link `bundestag-wrapped://zugang?code=…`: hand the code to the web, which keeps it and reloads.
+  const url = useLinkingURL();
+  useEffect(() => { delivery.link(url); }, [url, delivery]);
   // The cover and the menu re-render this screen; the web view must not re-render (and re-send its props) with it.
   const web = useMemo(() => (
     <WrappedDom
